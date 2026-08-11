@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #0a0e1a;
+  color: #e5e7eb;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* React Flow overrides */
+.react-flow__background {
+  background-color: #0f172a;
+}
+
+/* Overlap/conflict mark — cycles through category colors (no rose — rose is reserved for nothing) */
+@keyframes overlap-flash {
+  0%, 100% { background-color: rgba(239, 68, 68, 0.8);  color: #fff1f2; }
+  17%       { background-color: rgba(245, 158, 11, 0.6); color: #fef3c7; }
+  33%       { background-color: rgba(139, 92, 246, 0.6); color: #ede9fe; }
+  50%       { background-color: rgba(6, 182, 212, 0.6);  color: #cffafe; }
+  67%       { background-color: rgba(249, 115, 22, 0.6); color: #ffedd5; }
+  83%       { background-color: rgba(132, 204, 22, 0.6); color: #ecfccb; }
+}
+.animate-overlap {
+  animation: overlap-flash 12s ease-in-out infinite;
+}
+
+/* Post body flash on navigation — fades from white to transparent once */
+@keyframes body-flash {
+  0%   { background-color: rgba(255, 255, 255, 0.18); }
+  100% { background-color: transparent; }
+}
+.animate-body-flash {
+  animation: body-flash 1.8s ease-out forwards;
+}
+
+/* Request that is also a question (ends with ?) — flashes green ↔ blue */
+@keyframes req-question-flash {
+  0%, 100% { background-color: rgba(34, 197, 94, 0.4);  color: #bbf7d0; }
+  50%       { background-color: rgba(59, 130, 246, 0.4); color: #bfdbfe; }
+}
+.animate-req-question {
+  animation: req-question-flash 2s ease-in-out infinite;
+}
+
+/* Generic highlight flash — white ↔ near-transparent (for questions, requests) */
+@keyframes text-flash {
+  0%, 100% { background-color: rgba(255, 255, 255, 0.95); color: #1f2937; }
+  50%       { background-color: rgba(59, 130, 246, 0.5); color: rgb(219, 234, 254); }
+}
+.animate-flash {
+  animation: text-flash 1.5s ease-in-out infinite;
+}
+
+/* Per-category flash animations — white ↔ exact category color (infinite) */
+@keyframes flash-claims {
+  0%, 100% { background-color: rgba(255,255,255,0.95); color: #111827; }
+  50%       { background-color: rgba(245,158,11,0.65); color: rgb(255,251,235); }
+}
+.animate-flash-claims { animation: flash-claims 1.5s ease-in-out infinite; }
+
+@keyframes flash-predictions {
+  0%, 100% { background-color: rgba(255,255,255,0.95); color: #111827; }
+  50%       { background-color: rgba(139,92,246,0.65); color: rgb(245,243,255); }
+}
+.animate-flash-predictions { animation: flash-predictions 1.5s ease-in-out infinite; }
+
+@keyframes flash-entities {
+  0%, 100% { background-color: rgba(255,255,255,0.95); color: #111827; }
+  50%       { background-color: rgba(6,182,212,0.65); color: rgb(236,254,255); }
+}
+.animate-flash-entities { animation: flash-entities 1.5s ease-in-out infinite; }
+
+@keyframes flash-themes {
+  0%, 100% { background-color: rgba(255,255,255,0.95); color: #111827; }
+  50%       { background-color: rgba(99,102,241,0.65); color: rgb(238,242,255); }
+}
+.animate-flash-themes { animation: flash-themes 1.5s ease-in-out infinite; }
+
+@keyframes flash-conclusions {
+  0%, 100% { background-color: rgba(255,255,255,0.95); color: #111827; }
+  50%       { background-color: rgba(249,115,22,0.65); color: rgb(255,247,237); }
+}
+.animate-flash-conclusions { animation: flash-conclusions 1.5s ease-in-out infinite; }
+
+@keyframes flash-hooks {
+  0%, 100% { background-color: rgba(255,255,255,0.95); color: #111827; }
+  50%       { background-color: rgba(234,179,8,0.65); color: rgb(254,252,232); }
+}
+.animate-flash-hooks { animation: flash-hooks 1.5s ease-in-out infinite; }
+
+/* Sidebar link click flash — brief white overlay fading out */
+@keyframes nav-flash {
+  0%   { background-color: rgba(255, 255, 255, 0.22); }
+  100% { background-color: transparent; }
+}
+.animate-nav-flash {
+  animation: nav-flash 1.8s ease-out forwards;
+}
+
+@keyframes btn-flash-white {
+  0%, 100% { color: #9ca3af; border-color: #374151; background-color: #1f2937; }
+  50%       { color: #ffffff; border-color: #ffffff; background-color: #374151; }
+}
+.animate-btn-flash {
+  animation: btn-flash-white 1.2s ease-in-out infinite;
+}
+
+/* Custom scrollbar — wide & high-contrast so users can clearly see they can scroll */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+::-webkit-scrollbar-track {
+  background: #0b1220;
+  border-left: 1px solid #1f2937;
+}
+::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 8px;
+  border: 3px solid #0b1220; /* inset padding so the thumb reads as a rounded pill */
+  min-height: 48px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #f59e0b;
+}
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #4b5563 #0b1220;
+}

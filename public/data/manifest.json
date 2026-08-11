@@ -1,0 +1,30 @@
+{
+  "exportedAt": "2026-08-11T11:12:19.675Z",
+  "collections": {
+    "posts": {
+      "count": 4966,
+      "bytes": 6545584
+    },
+    "questions": {
+      "count": 10158,
+      "bytes": 1865402
+    },
+    "topics": {
+      "count": 100,
+      "bytes": 34094
+    },
+    "resources": {
+      "count": 0,
+      "bytes": 2
+    },
+    "analysisConfirmed": {
+      "count": 286,
+      "bytes": 40684
+    },
+    "infographs": {
+      "count": 0,
+      "bytes": 2
+    }
+  },
+  "totalBytes": 8485768
+}
