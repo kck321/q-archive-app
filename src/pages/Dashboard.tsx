@@ -1698,7 +1698,7 @@ export default function Dashboard() {
             <h2 className="text-lg font-semibold text-white">Recent Posts</h2>
             <Link to="/posts" className="text-sm text-q-accent hover:underline">View all →</Link>
           </div>
-          <div className="grid gap-3">
+          <div className="grid gap-3 w-full max-w-3xl">
             {recent.map(p => <PostCard key={p.id} post={p} questionTexts={postQuestions[p.id]} />)}
           </div>
         </div>
@@ -1710,7 +1710,7 @@ export default function Dashboard() {
           <div className="flex items-center justify-between mb-3">
             <h2 className="text-lg font-semibold text-white">⭐ Top Rated Posts</h2>
           </div>
-          <div className="grid gap-3">
+          <div className="grid gap-3 w-full max-w-3xl">
             {topRated.map(p => <PostCard key={p.id} post={p} questionTexts={postQuestions[p.id]} />)}
           </div>
         </div>

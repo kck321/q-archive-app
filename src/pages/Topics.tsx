@@ -182,7 +182,7 @@ export default function Topics() {
                 </div>
 
                 {/* ── Full post content — scrolls below the info panel ── */}
-                <div className="space-y-3">
+                <div className="space-y-3 w-full max-w-3xl">
                   <p className="text-xs text-gray-600 px-1">
                     — {selected.postIds.length} posts in this cluster, oldest to newest —
                   </p>
