@@ -10,6 +10,7 @@ import {
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis,
   Tooltip, CartesianGrid, Legend, Cell, LabelList,
 } from 'recharts'
+import { MonthYearTick, yearStartsOf } from '../lib/chartAxis'
 import ScrollableChart from '../components/ScrollableChart'
 import TermPresenceBar from '../components/TermPresenceBar'
 
@@ -43,30 +44,6 @@ function extractBrackets(text: string): string[] {
   return results
 }
 
-function buildDeltaMonths(): Map<string, number> {
-  const now = new Date()
-  const map = new Map<string, number>()
-  for (let delta = 1; delta <= 20; delta++) {
-    const d = new Date(now)
-    d.setFullYear(d.getFullYear() - delta)
-    const month = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`
-    map.set(month, delta)
-  }
-  return map
-}
-const DELTA_MONTHS = buildDeltaMonths()
-
-function CustomXAxisTick({ x, y, payload }: { x?: number; y?: number; payload?: { value: string } }) {
-  if (x === undefined || y === undefined || !payload) return <g />
-  const delta = DELTA_MONTHS.get(payload.value)
-  if (!delta) return <g />
-  return (
-    <g transform={`translate(${x},${y})`}>
-      <text x={0} y={0} dy={12} textAnchor="middle" fill="#6b7280" fontSize={10}>{delta} yr</text>
-      <text x={0} y={0} dy={24} textAnchor="middle" fill="#4b5563" fontSize={9}>Delta</text>
-    </g>
-  )
-}
 
 export default function QBrackets() {
   const [posts, setPosts] = useState<QPost[]>([])
@@ -248,6 +225,9 @@ export default function QBrackets() {
     return `${names[parseInt(mo) - 1]} '${yr.slice(2)}`
   }
 
+  // Year labels on the month axis — same tick as every other chart.
+  const yearStarts = useMemo(() => yearStartsOf(chartData), [chartData])
+
   return (
     <div className="flex-1 overflow-y-auto bg-q-bg">
       {/* Sticky header */}
@@ -334,7 +314,7 @@ export default function QBrackets() {
                 onMouseLeave={() => setHoverMonth(null)}
                 onClick={(d) => handleBarClick(d as { activePayload?: { payload: TimelineEntry }[] })} style={{ cursor: 'pointer' }} barGap={2} barCategoryGap="30%">
                 <CartesianGrid strokeDasharray="3 3" stroke="#1f2937" vertical={false} />
-                <XAxis dataKey="month" tick={<CustomXAxisTick />} tickLine={false} axisLine={false} height={36} interval={2} />
+                <XAxis dataKey="month" tick={(props: any) => <MonthYearTick {...props} yearStarts={yearStarts} />} tickLine={false} axisLine={false} interval={0} height={52} />
                 <YAxis yAxisId="left" tick={{ fill: '#6b7280', fontSize: 10 }} tickLine={false} axisLine={false} width={32} />
                 {searchMatchMonths && (
                   <YAxis yAxisId="matches" orientation="right" hide domain={[0, matchAxisMax(searchMatchMax)]} />

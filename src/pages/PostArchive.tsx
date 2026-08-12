@@ -9,6 +9,7 @@ import {
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis,
   Tooltip, CartesianGrid, Cell, LabelList,
 } from 'recharts'
+import { MonthYearTick, yearStartsOf } from '../lib/chartAxis'
 import ScrollableChart from '../components/ScrollableChart'
 import TermPresenceBar from '../components/TermPresenceBar'
 import { matchAxisMax, MatchCountLabel, NO_MATCH_GREY } from '../lib/chartSearch'
@@ -142,18 +143,6 @@ const CHART_TABS: { key: string; label: string; dataKey: string; color: string; 
   { key: 'emphasis',           label: 'Q Emphasis',    dataKey: 'emphasis',           color: '#94a3b8', dimColor: '#334155', to: '/analysis?tab=emphasis' },
 ]
 
-function buildDeltaMonths(): Map<string, number> {
-  const now = new Date()
-  const map = new Map<string, number>()
-  for (let delta = 1; delta <= 20; delta++) {
-    const d = new Date(now)
-    d.setFullYear(d.getFullYear() - delta)
-    const month = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`
-    map.set(month, delta)
-  }
-  return map
-}
-const DELTA_MONTHS = buildDeltaMonths()
 
 /**
  * X-axis tick: the year the timeline has reached, plus the delta marker.
@@ -163,30 +152,6 @@ const DELTA_MONTHS = buildDeltaMonths()
  * year — at its first month present in the data — with a tick mark, which is enough to
  * place any bar without crowding ~62 months of labels into 920px.
  */
-function CustomXAxisTick({ x, y, payload, yearStarts }: {
-  x?: number; y?: number; payload?: { value: string }; yearStarts?: Set<string>
-}) {
-  if (x === undefined || y === undefined || !payload) return <g />
-  const delta = DELTA_MONTHS.get(payload.value)
-  const showYear = yearStarts?.has(payload.value)
-  if (!delta && !showYear) return <g />
-  const year = payload.value.slice(0, 4)
-  return (
-    <g transform={`translate(${x},${y})`}>
-      {delta && <>
-        <text x={0} y={0} dy={12} textAnchor="middle" fill="#6b7280" fontSize={10}>{delta} yr</text>
-        <text x={0} y={0} dy={24} textAnchor="middle" fill="#4b5563" fontSize={9}>Delta</text>
-      </>}
-      {showYear && <>
-        <line x1={0} y1={0} x2={0} y2={5} stroke="#4b5563" strokeWidth={1} />
-        <text x={0} y={0} dy={delta ? 38 : 17} textAnchor="middle" fill="#9ca3af" fontSize={11} fontWeight={700}>
-          {year}
-        </text>
-      </>}
-    </g>
-  )
-}
-
 export default function PostArchive() {
   const navigate = useNavigate()
   const [urlParams, setUrlParams] = useSearchParams()
@@ -616,15 +581,7 @@ export default function PostArchive() {
   const [tappedMonth, setTappedMonth] = useState<string | null>(null)
 
   // First month present for each year — where the year label and its tick are drawn.
-  const yearStarts = useMemo(() => {
-    const seen = new Set<string>()
-    const out = new Set<string>()
-    for (const e of timeline) {
-      const yr = e.month.slice(0, 4)
-      if (!seen.has(yr)) { seen.add(yr); out.add(e.month) }
-    }
-    return out
-  }, [timeline])
+  const yearStarts = useMemo(() => yearStartsOf(timeline), [timeline])
 
   const chartData = useMemo(
     () => timeline.map(e => ({ ...e, matches: chartMatchMonths?.get(e.month) ?? 0 })),
@@ -952,7 +909,7 @@ export default function PostArchive() {
                       onMouseLeave={() => setHoverMonth(null)}
                       onClick={d => { const p = (d as { activePayload?: { payload: { month: string } }[] }); if (p) handleBarClick(p.activePayload?.[0]?.payload) }}>
                       <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
-                      <XAxis dataKey="month" tick={(props: any) => <CustomXAxisTick {...props} yearStarts={yearStarts} />} interval={0} height={52} />
+                      <XAxis dataKey="month" tick={(props: any) => <MonthYearTick {...props} yearStarts={yearStarts} />} interval={0} height={52} />
                       <YAxis yAxisId="left" tick={{ fill: '#6b7280', fontSize: 10 }} />
                       {chartMatchMonths && (
                         <YAxis yAxisId="matches" orientation="right" hide domain={[0, matchAxisMax(chartMatchMax)]} />

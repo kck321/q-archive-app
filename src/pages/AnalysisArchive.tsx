@@ -14,6 +14,7 @@ import {
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis,
   Tooltip, CartesianGrid, Legend, Cell, LabelList,
 } from 'recharts'
+import { MonthYearTick, yearStartsOf } from '../lib/chartAxis'
 import ScrollableChart from '../components/ScrollableChart'
 import TermPresenceBar from '../components/TermPresenceBar'
 import { catColor } from '../lib/categoryColors'
@@ -42,29 +43,6 @@ const CAT_CHART: Record<AnalysisCategoryFreq['category'], { color: string; dimCo
   emphasis:           { color: catColor('emphasis'), dimColor: '#334155', dataKey: 'emphasis' },
 }
 
-function buildDeltaMonths(): Map<string, number> {
-  const now = new Date()
-  const map = new Map<string, number>()
-  for (let delta = 1; delta <= 20; delta++) {
-    const d = new Date(now)
-    d.setFullYear(d.getFullYear() - delta)
-    map.set(`${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`, delta)
-  }
-  return map
-}
-const DELTA_MONTHS = buildDeltaMonths()
-
-function CustomXAxisTick({ x, y, payload }: { x?: number; y?: number; payload?: { value: string } }) {
-  if (x === undefined || y === undefined || !payload) return <g />
-  const delta = DELTA_MONTHS.get(payload.value)
-  if (!delta) return <g />
-  return (
-    <g transform={`translate(${x},${y})`}>
-      <text x={0} y={0} dy={12} textAnchor="middle" fill="#6b7280" fontSize={10}>{delta} yr</text>
-      <text x={0} y={0} dy={24} textAnchor="middle" fill="#4b5563" fontSize={9}>Delta</text>
-    </g>
-  )
-}
 
 type Cat = AnalysisCategoryFreq['category'] | 'all' | 'overlaps'
 
@@ -487,6 +465,9 @@ export default function AnalysisArchive() {
     // aliasTick: recount when an alias is added/removed elsewhere.
   }, [items, activeTab, monthPostNums, aliasTick])
 
+  // Year labels on the month axis — same tick as every other chart.
+  const yearStarts = useMemo(() => yearStartsOf(chartData), [chartData])
+
   return (
     <div className="flex flex-col">
 
@@ -587,7 +568,7 @@ export default function AnalysisArchive() {
                 )}
               >
                 <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
-                <XAxis dataKey="month" tick={<CustomXAxisTick />} interval={0} height={44} />
+                <XAxis dataKey="month" tick={(props: any) => <MonthYearTick {...props} yearStarts={yearStarts} />} interval={0} height={52} />
                 <YAxis yAxisId="left" tick={{ fill: '#6b7280', fontSize: 10 }} />
                 {/* Matches get their OWN axis. Sharing the left one made a 2-post result
                     half a percent of an axis scaled to ~400 total posts — invisible. */}

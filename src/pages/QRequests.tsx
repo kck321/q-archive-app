@@ -8,6 +8,7 @@ import {
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis,
   Tooltip, CartesianGrid, Legend, Cell, LabelList,
 } from 'recharts'
+import { MonthYearTick, yearStartsOf } from '../lib/chartAxis'
 import ScrollableChart from '../components/ScrollableChart'
 import { catColor } from '../lib/categoryColors'
 import TermPresenceBar from '../components/TermPresenceBar'
@@ -33,30 +34,6 @@ interface TimelineEntry {
 // answer "is this the same phrase?" identically.
 const normalize = normalizeItemKey
 
-function buildDeltaMonths(): Map<string, number> {
-  const now = new Date()
-  const map = new Map<string, number>()
-  for (let delta = 1; delta <= 20; delta++) {
-    const d = new Date(now)
-    d.setFullYear(d.getFullYear() - delta)
-    const month = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`
-    map.set(month, delta)
-  }
-  return map
-}
-const DELTA_MONTHS = buildDeltaMonths()
-
-function CustomXAxisTick({ x, y, payload }: { x?: number; y?: number; payload?: { value: string } }) {
-  if (x === undefined || y === undefined || !payload) return <g />
-  const delta = DELTA_MONTHS.get(payload.value)
-  if (!delta) return <g />
-  return (
-    <g transform={`translate(${x},${y})`}>
-      <text x={0} y={0} dy={12} textAnchor="middle" fill="#6b7280" fontSize={10}>{delta} yr</text>
-      <text x={0} y={0} dy={24} textAnchor="middle" fill="#4b5563" fontSize={9}>Delta</text>
-    </g>
-  )
-}
 
 export default function QRequests() {
   const [posts, setPosts] = useState<QPost[]>([])
@@ -259,6 +236,9 @@ export default function QRequests() {
   const repeatedRequests = allRequests.filter(r => r.postNums.length > 1)
   const onceRequests = allRequests.filter(r => r.postNums.length === 1)
 
+  // Year labels on the month axis — same tick as every other chart.
+  const yearStarts = useMemo(() => yearStartsOf(chartData), [chartData])
+
   return (
     <div className="flex flex-col">
 
@@ -324,7 +304,7 @@ export default function QRequests() {
                 if (dd?.activePayload?.[0]?.payload) handleBarClick(dd.activePayload[0].payload)
               }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
-              <XAxis dataKey="month" tick={<CustomXAxisTick />} interval={0} height={44} />
+              <XAxis dataKey="month" tick={(props: any) => <MonthYearTick {...props} yearStarts={yearStarts} />} interval={0} height={52} />
               <YAxis yAxisId="left" tick={{ fill: '#6b7280', fontSize: 10 }} />
               {/* Matches scale on their own axis — sharing the left one makes a 2-post
                   result invisible next to a ~400-post total. */}

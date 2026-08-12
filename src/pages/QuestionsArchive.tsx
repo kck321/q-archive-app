@@ -11,6 +11,7 @@ import {
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis,
   Tooltip, CartesianGrid, Legend, Cell, LabelList,
 } from 'recharts'
+import { MonthYearTick, yearStartsOf } from '../lib/chartAxis'
 import ScrollableChart from '../components/ScrollableChart'
 import { catColor } from '../lib/categoryColors'
 import TermPresenceBar from '../components/TermPresenceBar'
@@ -67,30 +68,6 @@ function ChartTooltip({ active, payload, label, keyword, matchCounts, matchMax }
   )
 }
 
-function buildDeltaMonths(): Map<string, number> {
-  const now = new Date()
-  const map = new Map<string, number>()
-  for (let delta = 1; delta <= 20; delta++) {
-    const d = new Date(now)
-    d.setFullYear(d.getFullYear() - delta)
-    const month = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`
-    map.set(month, delta)
-  }
-  return map
-}
-const DELTA_MONTHS = buildDeltaMonths()
-
-function CustomXAxisTick({ x, y, payload }: { x?: number; y?: number; payload?: { value: string } }) {
-  if (x === undefined || y === undefined || !payload) return <g />
-  const delta = DELTA_MONTHS.get(payload.value)
-  if (!delta) return <g />
-  return (
-    <g transform={`translate(${x},${y})`}>
-      <text x={0} y={0} dy={12} textAnchor="middle" fill="#6b7280" fontSize={10}>{delta} yr</text>
-      <text x={0} y={0} dy={24} textAnchor="middle" fill="#4b5563" fontSize={9}>Delta</text>
-    </g>
-  )
-}
 
 function formatMonth(m: string) {
   const [y, mo] = m.split('-')
@@ -195,6 +172,8 @@ export default function QuestionsArchive() {
   // ?q= lets the "also found in" chips hand a term over from another section.
   useEffect(() => { const q = searchParams.get('q'); if (q !== null) setSearch(q) }, [searchParams])
   const [timeline, setTimeline] = useState<TimelineEntry[]>([])
+  // Year labels on the month axis — same tick as every other chart.
+  const yearStarts = useMemo(() => yearStartsOf(timeline), [timeline])
   const [postNumsByMonth, setPostNumsByMonth] = useState<Record<string, number[]>>({})
   const [selectedMonth, setSelectedMonth] = useState<string | null>(null)
   const [hoverMonth, setHoverMonth] = useState<string | null>(null)
@@ -546,9 +525,9 @@ export default function QuestionsArchive() {
                 <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
                 <XAxis
                   dataKey="month"
-                  tick={<CustomXAxisTick />}
+                  tick={(props: any) => <MonthYearTick {...props} yearStarts={yearStarts} />}
                   interval={0}
-                  height={44}
+                  height={52}
                 />
                 <YAxis yAxisId="left" tick={{ fill: '#6b7280', fontSize: 10 }} />
                 {searchMatchMonths && (
