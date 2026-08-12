@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom'
 import { isTauri, openExternal } from './lib/openExternal'
 import { initLocalMedia } from './lib/localMedia'
-import { getAnalysisFrequency } from './lib/posts'
+import { getAnalysisFrequency, getQuestionFrequency } from './lib/posts'
 import HighlightToggle from './components/HighlightToggle'
 import { loadAliasesFromCloud } from './lib/aliases'
 import Sidebar from './components/Sidebar'
@@ -40,7 +40,11 @@ export default function App() {
   // and watching. Started here it is usually finished before they navigate — and the result
   // is cached in IndexedDB, so it is only ever paid once per data version.
   useEffect(() => {
-    const warm = () => { getAnalysisFrequency().catch(() => { /* section will retry */ }) }
+    const warm = () => {
+      // Both indexes, since every section needs one or the other.
+      getAnalysisFrequency().catch(() => { /* section will retry */ })
+      getQuestionFrequency(1).catch(() => { /* section will retry */ })
+    }
     const w = window as unknown as { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number }
     if (w.requestIdleCallback) w.requestIdleCallback(warm, { timeout: 3000 })
     else setTimeout(warm, 1200)

@@ -49,7 +49,8 @@ export interface TextIndex {
 // Both are dropped whenever the store is written, so an edit can never be served stale data.
 let _textIndex: TextIndex | null = null
 let _freqPromise: Promise<AnalysisCategoryFreq[]> | null = null
-onStoreMutated(() => { _textIndex = null; _freqPromise = null })
+let _qFreqPromise: Promise<QuestionFrequency[]> | null = null
+onStoreMutated(() => { _textIndex = null; _freqPromise = null; _qFreqPromise = null })
 
 /** Shared text index, built once per data version. */
 export async function getTextIndex(): Promise<TextIndex> {
@@ -226,8 +227,28 @@ export async function backfillQuestionFromText(questionText: string, postNums: n
   if (!rx) return
   const raw = await getRawTextIndex()
   const seen = new Set(postNums)
-  for (const [num, text] of raw) {
+
+  // Narrow the candidates with the word index BEFORE running the regex.
+  //
+  // This used to test every question against every post: 6,450 distinct questions x 4,966
+  // posts = 32 MILLION regex runs over full post text, ~6.9s on a desktop and the reason
+  // Q Questions took ~7s to open while every other section was instant. The analysis
+  // backfill has always narrowed this way; this path simply never did.
+  //
+  // The regex still decides — narrowing only chooses who to ask. A post cannot match the
+  // question unless it contains every word of it, so posts without them cannot be lost.
+  const words = normalizeItemKey(questionText).split(' ').filter(Boolean)
+  let candidates: number[] | null = null
+  for (const w of words) {
+    const list = (await getTextIndex()).byWord.get(w)
+    if (!list) { candidates = []; break }     // a word appears nowhere → nothing can match
+    if (!candidates || list.length < candidates.length) candidates = list
+  }
+
+  for (const num of candidates ?? raw.keys()) {
     if (seen.has(num)) continue
+    const text = raw.get(num)
+    if (!text) continue
     rx.lastIndex = 0
     if (rx.test(text)) { seen.add(num); postNums.push(num) }
   }
@@ -928,7 +949,32 @@ const STATUS_RANK: Record<import('../types').AnswerStatus, number> = {
   green: 3, yellow: 2, red: 1, unprocessed: 0,
 }
 
+// Memoised per session and cached across sessions, like the analysis index — same reason:
+// it is a pure function of the data, and rebuilding it on every visit is wasted work.
+const QFREQ_CACHE_KEY = '__question_freq__'
+
 export async function getQuestionFrequency(minCount = 2): Promise<QuestionFrequency[]> {
+  if (minCount === 1) {
+    if (!_qFreqPromise) {
+      _qFreqPromise = (async () => {
+        const { questions, posts } = await loadLocalData()
+        const stamp = `${posts.length}:${questions.length}`
+        try {
+          const c = await idbGetRaw<{ stamp: string; rows: QuestionFrequency[] }>(QFREQ_CACHE_KEY)
+          if (c?.stamp === stamp && Array.isArray(c.rows) && c.rows.length) return c.rows
+        } catch { /* private mode */ }
+        const rows = await computeQuestionFrequency(1)
+        try { await idbSetRaw(QFREQ_CACHE_KEY, { stamp, rows }) } catch { /* non-fatal */ }
+        return rows
+      })().catch(err => { _qFreqPromise = null; throw err })
+    }
+    return _qFreqPromise
+  }
+  const all = await getQuestionFrequency(1)
+  return all.filter(g => g.postNums.length >= minCount)
+}
+
+async function computeQuestionFrequency(minCount = 2): Promise<QuestionFrequency[]> {
   const { questions } = await loadLocalData()
 
   const groups: Record<string, { count: number; postNums: number[]; originalText: string; topStatus: import('../types').AnswerStatus }> = {}
