@@ -443,7 +443,7 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
       {/* Attachments. These were missing from the card entirely, so a search result never
           showed the image even when the image WAS the post. */}
       {dedupeMedia(post.media).length > 0 && (
-        <div className="mt-3 flex flex-wrap gap-2">
+        <div className="mt-3 space-y-2">
           {dedupeMedia(post.media).map(m => {
             if (!m.url) return null
             const isNonImage = /\.(pdf|mp4|webm|mov|doc|docx|xls|xlsx)$/i.test(m.url)
@@ -459,7 +459,7 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
                   src={mediaUrl(m.url)}
                   alt={m.filename}
                   loading="lazy"
-                  className="max-h-64 w-auto block"
+                  className="max-w-full h-auto block"
                   onError={e => { (e.currentTarget.closest('a') as HTMLElement).style.display = 'none' }}
                 />
               </a>

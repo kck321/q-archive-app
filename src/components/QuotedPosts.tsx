@@ -95,21 +95,24 @@ export default function QuotedPosts({
               )}
             </div>
 
+            {/* No height cap: a quoted post is shown in full, like the drop's own text. A
+                scroll box hid the top of the quote — including, for a search, the very line
+                that matched. */}
             {q.text && (
-              <pre className="px-3 pb-2 text-xs leading-relaxed text-gray-400 whitespace-pre-wrap font-mono max-h-72 overflow-y-auto">
+              <pre className="px-3 pb-2 text-xs leading-relaxed text-gray-400 whitespace-pre-wrap font-mono">
                 {linkify(highlightQuoted(q.text, searchKeyword))}
               </pre>
             )}
 
             {dedupeMedia(q.media).length > 0 && (
-              <div className="flex flex-wrap gap-2 px-3 pb-3">
+              <div className="space-y-2 px-3 pb-3">
                 {dedupeMedia(q.media).map((m, j) => (
                   <a key={j} href={mediaUrl(m.url)} target="_blank" rel="noopener noreferrer">
                     <img
                       src={mediaUrl(m.url)}
                       alt={m.filename ?? 'quoted attachment'}
                       loading="lazy"
-                      className="max-h-40 rounded border border-gray-700 hover:border-gray-500"
+                      className="max-w-full h-auto block rounded border border-gray-700 hover:border-gray-500"
                     />
                   </a>
                 ))}
