@@ -442,7 +442,16 @@ export default function QBrackets() {
                 Showing {filtered.length} bracket code{filtered.length !== 1 ? 's' : ''} from <span className="text-red-400 font-medium">{formatMonthLabel(selectedMonth)}</span>
               </p>
             )}
-            {filtered.slice(0, visibleCount).map((entry, idx) => (
+            {selectedMonth && !search.trim() ? (
+              <p className="text-xs text-gray-500">
+                The panel above lists every bracket code used in{' '}
+                <span className="text-gray-300 font-medium">{formatMonthLabel(selectedMonth)}</span>.{' '}
+                <button onClick={() => setSelectedMonth(null)} className="text-blue-400 hover:text-blue-300 hover:underline">
+                  Clear the month
+                </button>{' '}
+                to browse the whole archive.
+              </p>
+            ) : filtered.slice(0, visibleCount).map((entry, idx) => (
               <div key={entry.code} className="bg-q-panel border border-q-border rounded-xl p-4 transition-colors">
                 <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3">
                   {/* Same left column as every other section. */}

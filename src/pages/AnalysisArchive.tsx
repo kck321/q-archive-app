@@ -723,6 +723,17 @@ export default function AnalysisArchive() {
             ? 'No analysis data yet — run "Analyze All Posts" from the Dashboard first.'
             : 'No entries match your search.'}
         </div>
+      ) : /* With a month selected the panel above IS the list for that month, ranked by how
+             often each appeared in it. Showing the archive-wide list underneath as well gave
+             two lists for one click, with different rankings and different counts. */
+        selectedMonth && !search.trim() ? (
+        <p className="text-xs text-gray-500">
+          Showing <span className="text-gray-300 font-medium">{formatMonth(selectedMonth)}</span> only.{' '}
+          <button onClick={() => setSelectedMonth(null)} className="text-blue-400 hover:text-blue-300 hover:underline">
+            Clear the month
+          </button>{' '}
+          to browse the whole archive.
+        </p>
       ) : activeTab !== 'overlaps' ? (
         <div className="space-y-3">
           {filtered.slice(0, visibleCount).map((item, idx) => {

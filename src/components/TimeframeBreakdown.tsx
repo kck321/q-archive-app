@@ -71,7 +71,10 @@ export default function TimeframeBreakdown({
       {ranked.length === 0 ? (
         <p className="text-gray-500 text-sm py-2">Nothing recorded for this month.</p>
       ) : (
-        <div className="space-y-1.5 max-h-[60vh] overflow-y-auto pr-1">
+        // No inner scroll box: every item for the month is listed and the PAGE scrolls. A
+        // 60vh scroller inside a scrolling page is awkward on a phone and made the list look
+        // truncated.
+        <div className="space-y-1.5">
           {ranked.map((r, i) => (
             <div key={i} className="flex items-start gap-2.5 bg-black/20 border border-q-border rounded-lg px-3 py-2">
               <span className={`shrink-0 text-xs font-bold px-2 py-0.5 rounded-full border ${a.badge}`} title={`Appeared ${r.inMonth.length}× this month`}>
