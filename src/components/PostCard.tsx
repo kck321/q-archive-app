@@ -111,6 +111,7 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
     { key: 'impliedConclusions', label: 'Impl. Conclusions',   color: 'text-orange-400', chip: 'bg-orange-500/20 text-orange-200 border-orange-700/50' },
     { key: 'verificationHooks',  label: 'Checkable Claims',        color: 'text-fuchsia-400', chip: 'bg-fuchsia-500/20 text-fuchsia-200 border-fuchsia-700/50' },
     { key: 'themes',             label: 'Themes',              color: 'text-indigo-400', chip: 'bg-indigo-500/20 text-indigo-200 border-indigo-700/50' },
+    { key: 'emphasis',           label: 'Emphasis',            color: 'text-slate-400',  chip: 'bg-slate-500/20 text-slate-200 border-slate-600/50' },
   ]
 
   async function handleAddItem(key: keyof PostAnalysis, text: string) {

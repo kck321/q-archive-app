@@ -29,6 +29,7 @@ interface TimelineEntry {
   themes: number
   impliedConclusions: number
   verificationHooks: number
+  emphasis: number
 }
 
 const CAT_CHART: Record<AnalysisCategoryFreq['category'], { color: string; dimColor: string; dataKey: string }> = {
@@ -38,6 +39,7 @@ const CAT_CHART: Record<AnalysisCategoryFreq['category'], { color: string; dimCo
   themes:             { color: catColor('themes'), dimColor: '#312e81', dataKey: 'themes' },
   impliedConclusions: { color: catColor('impliedConclusions'), dimColor: '#7c2d12', dataKey: 'impliedConclusions' },
   verificationHooks:  { color: catColor('verificationHooks'), dimColor: '#701a75', dataKey: 'verificationHooks' },
+  emphasis:           { color: catColor('emphasis'), dimColor: '#334155', dataKey: 'emphasis' },
 }
 
 function buildDeltaMonths(): Map<string, number> {
@@ -73,6 +75,7 @@ const CAT_LABELS: Record<AnalysisCategoryFreq['category'], string> = {
   themes: 'Themes',
   impliedConclusions: 'Implied Conclusions',
   verificationHooks: 'Checkable Claims',
+  emphasis: 'Emphasis',
 }
 
 const CAT_COLORS: Record<AnalysisCategoryFreq['category'], string> = {
@@ -82,6 +85,7 @@ const CAT_COLORS: Record<AnalysisCategoryFreq['category'], string> = {
   themes: 'bg-indigo-500/25 text-indigo-300 border border-indigo-700/50',
   impliedConclusions: 'bg-orange-500/25 text-orange-300 border border-orange-700/50',
   verificationHooks: 'bg-fuchsia-500/25 text-fuchsia-300 border border-fuchsia-700/50',
+  emphasis: 'bg-slate-500/25 text-slate-300 border border-slate-600/50',
 }
 
 const CAT_BADGE: Record<AnalysisCategoryFreq['category'], string> = {
@@ -91,6 +95,7 @@ const CAT_BADGE: Record<AnalysisCategoryFreq['category'], string> = {
   themes: 'bg-indigo-900/60 text-indigo-400 border border-indigo-700/60',
   impliedConclusions: 'bg-orange-900/60 text-orange-400 border border-orange-700/60',
   verificationHooks: 'bg-fuchsia-900/60 text-fuchsia-400 border border-fuchsia-700/60',
+  emphasis: 'bg-slate-800/60 text-slate-400 border border-slate-600/60',
 }
 
 const OVERLAP_CAT_COLORS: Record<OverlapCat, string> = {
@@ -100,6 +105,7 @@ const OVERLAP_CAT_COLORS: Record<OverlapCat, string> = {
   themes: 'bg-indigo-900/60 text-indigo-300 border-indigo-700/60',
   impliedConclusions: 'bg-orange-900/60 text-orange-300 border-orange-700/60',
   verificationHooks: 'bg-fuchsia-900/60 text-fuchsia-300 border-fuchsia-700/60',
+  emphasis: 'bg-slate-800/60 text-slate-300 border-slate-600/60',
   request: 'bg-green-900/60 text-green-300 border-green-700/60',
   question: 'bg-blue-900/60 text-blue-300 border-blue-700/60',
 }
@@ -112,6 +118,7 @@ const OVERLAP_BTN_COLORS: Record<OverlapCat, string> = {
   themes: 'bg-indigo-800/60 hover:bg-indigo-700/80 text-indigo-200 border-indigo-600',
   impliedConclusions: 'bg-orange-800/60 hover:bg-orange-700/80 text-orange-200 border-orange-600',
   verificationHooks: 'bg-fuchsia-800/60 hover:bg-fuchsia-700/80 text-fuchsia-200 border-fuchsia-600',
+  emphasis: 'bg-slate-700/60 hover:bg-slate-600/80 text-slate-200 border-slate-500',
   request: 'bg-green-800/60 hover:bg-green-700/80 text-green-200 border-green-600',
   question: 'bg-blue-800/60 hover:bg-blue-700/80 text-blue-200 border-blue-600',
 }
@@ -214,7 +221,7 @@ export default function AnalysisArchive() {
       .then(setItems)
       .finally(() => setLoading(false))
     loadAnalysisConfirmed().then(setConfirmedMap)
-    getQuestionsTimeline().then(data => setTimeline(data as TimelineEntry[]))
+    getQuestionsTimeline().then(data => setTimeline(data as unknown as TimelineEntry[]))
     getPostNumsByMonth().then(setPostNumsByMonth)
   }, [])
 
@@ -266,7 +273,7 @@ export default function AnalysisArchive() {
       setConfirmedMap(prev => new Map(prev).set(key, category))
 
       // Remove text from all other analysis categories on this post
-      const analysisCats = ['claims','predictions','namedEntities','themes','impliedConclusions','verificationHooks']
+      const analysisCats = ['claims','predictions','namedEntities','themes','impliedConclusions','verificationHooks','emphasis']
       const othersToRemove = allCategories
         .filter(c => c !== category && analysisCats.includes(c))
         .map(c => ({ category: c as AnalysisCategoryFreq['category'], text, postNums: [postNum] }))
@@ -672,8 +679,8 @@ export default function AnalysisArchive() {
 
       {selectedMonth && monthPostNums && !search.trim() && activeTab !== 'all' && activeTab !== 'overlaps' && (() => {
         const cat = activeTab as AnalysisCategoryFreq['category']
-        const ACCENT_BY_CAT: Record<AnalysisCategoryFreq['category'], 'amber' | 'violet' | 'cyan' | 'indigo' | 'orange' | 'fuchsia'> = {
-          claims: 'amber', predictions: 'violet', namedEntities: 'cyan', themes: 'indigo', impliedConclusions: 'orange', verificationHooks: 'fuchsia',
+        const ACCENT_BY_CAT: Record<AnalysisCategoryFreq['category'], 'amber' | 'violet' | 'cyan' | 'indigo' | 'orange' | 'fuchsia' | 'slate'> = {
+          claims: 'amber', predictions: 'violet', namedEntities: 'cyan', themes: 'indigo', impliedConclusions: 'orange', verificationHooks: 'fuchsia', emphasis: 'slate',
         }
         return (
           <div ref={breakdownRef} className="scroll-mt-4">

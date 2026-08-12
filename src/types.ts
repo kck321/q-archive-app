@@ -7,6 +7,13 @@ export interface PostAnalysis {
   impliedConclusions?: string[]
   emotionalTone?: string        // single descriptor string
   verificationHooks?: string[]
+  /**
+   * Q's staccato one-to-three-word beats: "Old." / "Connection." / "News." / "BOOM."
+   * 59% of everything left unhighlighted was this shape. They are not claims (no
+   * assertion), predictions, entities or questions, so filing them under any existing
+   * category would corrupt that category's counts. Detected structurally, no API calls.
+   */
+  emphasis?: string[]
 }
 
 // ─── Post ────────────────────────────────────────────────────────────────────

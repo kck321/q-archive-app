@@ -114,6 +114,47 @@ function dedupeQuestions(qs: QQuestion[], posts: QPost[]): QQuestion[] {
   return out
 }
 
+/**
+ * Strip the board's own markup out of post text.
+ *
+ * 8chan renders `//text//` as italics, so every `https://` in a drop was stored as
+ * `https:<em>//</em>example.com` — literal tags, in 1,448 posts (2,054 pairs), plus a few
+ * <u>/<span>/<p>. They are in qalerts' data too, so this is the SOURCE's markup, not a bug
+ * in our ingest — but it splits every URL in half, which is why the Twitter links in #2880
+ * were not clickable and why "twitter" highlighted separately from ".com/…".
+ *
+ * Done here rather than in posts.json so the bundle stays byte-identical to the source and
+ * the qalerts audit keeps passing. Applied to quoted posts and stored analysis items too,
+ * or a claim carrying a tag would stop matching the text it came from.
+ */
+const MARKUP = /<\/?(?:em|u|span|p|b|i|strong|s)\b[^>]*>/gi
+// HTML entities were stored raw as well: 607 "&gt;", 561 "&amp;", 26 "&lt;" across 575 posts.
+// "&amp;" is what Q typed as "&", so leaving it makes the text wrong and unsearchable.
+// "&gt;" is decoded LAST, so a decoded ">" can never be re-read as markup.
+const ENTITIES: [RegExp, string][] = [
+  [/&amp;/gi, '&'], [/&nbsp;/gi, ' '], [/&quot;/gi, '"'], [/&#0?39;|&apos;/gi, "'"],
+  [/&lt;/gi, '<'], [/&gt;/gi, '>'],
+]
+
+function stripBoardMarkup(posts: QPost[]): void {
+  const clean = (t: string) => {
+    if (!t) return t
+    let out = t.includes('<') ? t.replace(MARKUP, '') : t
+    if (out.includes('&')) for (const [rx, ch] of ENTITIES) out = out.replace(rx, ch)
+    return out
+  }
+  const cleanArr = (arr?: string[]) => Array.isArray(arr) ? arr.map(clean) : arr
+  const cats = ['claims', 'predictions', 'namedEntities', 'themes', 'impliedConclusions', 'verificationHooks']
+  for (const p of posts) {
+    if (p.text) p.text = clean(p.text)
+    const a = p.postAnalysis as Record<string, unknown> | undefined
+    if (a) for (const c of cats) { if (Array.isArray(a[c])) a[c] = cleanArr(a[c] as string[]) }
+    p.actionRequests = cleanArr(p.actionRequests)
+    p.customBrackets = cleanArr(p.customBrackets)
+    if (p.quotedPosts) for (const q of p.quotedPosts) { if (q.text) q.text = clean(q.text) }
+  }
+}
+
 // Remove exact within-post duplicate items from a post's analysis/request/bracket arrays.
 function dedupePostArrays(posts: QPost[]): void {
   const norm = (t: string) => (t ?? '').toLowerCase().trim().replace(/\s+/g, ' ').replace(/[?.!,;:]+$/, '')
@@ -162,6 +203,8 @@ export function loadLocalData(): Promise<LocalStore> {
       // Drop spurious duplicate questions (keeps genuine in-body repeats) so counts are
       // accurate. Idempotent — safe to run every load.
       raw.questions = dedupeQuestions(raw.questions as QQuestion[], raw.posts as QPost[])
+      stripBoardMarkup(raw.posts as QPost[])
+      for (const q of raw.questions as QQuestion[]) if (q.text) q.text = q.text.replace(MARKUP, '')
       dedupePostArrays(raw.posts as QPost[])
 
       cache = buildIndexes(raw)

@@ -121,6 +121,15 @@ for (const name of COLLECTIONS) {
   }
   process.stdout.write('Re-applying quoted post content… ')
   execFileSync(process.execPath, [applyScript], { stdio: 'inherit' })
+
+  // Same reasoning for the derived analysis: the dump replaces posts.json wholesale, so the
+  // recall backfill and the emphasis detection have to be reapplied or they vanish silently.
+  // Both are deterministic and idempotent, so re-running is always safe.
+  for (const step of ['backfill-analysis.mjs', 'detect-emphasis.mjs']) {
+    console.log(`
+Re-running ${step}…`)
+    execFileSync(process.execPath, [join(root, 'scripts', step), '--apply'], { stdio: 'inherit' })
+  }
 }
 
 manifest.totalBytes = statSync(join(outDir, 'posts.json')).size + grandBytes

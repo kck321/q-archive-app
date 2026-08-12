@@ -51,6 +51,7 @@ export const HIGHLIGHT_CLS: Record<string, string> = {
   theme:             'bg-indigo-500/40 text-indigo-100',
   impliedConclusion: 'bg-orange-500/40 text-orange-100',
   verificationHook:  'bg-fuchsia-500/40 text-fuchsia-100',
+  emphasis:          'bg-slate-400/30 text-slate-100',
   bracketCode:       'bg-red-800/50 text-red-200 font-mono text-[0.9em]',
   milIntel:          'bg-sky-500/40 text-sky-100 font-semibold',
   qSignature:        'bg-purple-400/30 text-purple-200 italic',

@@ -10,6 +10,7 @@ export const CATEGORY_COLOR: Record<string, string> = {
   themes:             '#6366f1', // indigo
   impliedConclusions: '#f97316', // orange
   verificationHooks:  '#d946ef', // fuchsia
+  emphasis:           '#94a3b8', // slate — deliberately quiet, it is Q's punctuation
   overlaps:           '#eab308', // gold
   questionsAll:       '#3b82f6',
 }
@@ -36,6 +37,7 @@ export const SERIES_COLOR: Record<string, string> = {
   'Impl. Conclusions':    CATEGORY_COLOR.impliedConclusions,
   'Implied Conclusions':  CATEGORY_COLOR.impliedConclusions,
   'Checkable Claims':     CATEGORY_COLOR.verificationHooks,
+  'Emphasis':             CATEGORY_COLOR.emphasis,
   'Brackets':             CATEGORY_COLOR.brackets,
   'brackets':             CATEGORY_COLOR.brackets,
 }

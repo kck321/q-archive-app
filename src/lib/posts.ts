@@ -327,7 +327,7 @@ export interface UncategorizedReport {
 export async function getUncategorizedReport(): Promise<UncategorizedReport> {
   const { posts, questions } = await loadLocalData()
   const qPostIds = new Set(questions.map(q => q.postId))
-  const cats: (keyof PostAnalysis)[] = ['claims', 'predictions', 'namedEntities', 'themes', 'impliedConclusions', 'verificationHooks']
+  const cats: (keyof PostAnalysis)[] = ['claims', 'predictions', 'namedEntities', 'themes', 'impliedConclusions', 'verificationHooks', 'emphasis']
   let highlighted = 0
   for (const p of posts) {
     const a = p.postAnalysis
@@ -372,7 +372,7 @@ export async function getUncategorizedRepeats(minPosts = 1, limit = 800): Promis
 
   // Everything already covered: analysis categories + requests + question texts (lowercased).
   const covered = new Set<string>()
-  const cats: (keyof PostAnalysis)[] = ['claims', 'predictions', 'namedEntities', 'themes', 'impliedConclusions', 'verificationHooks']
+  const cats: (keyof PostAnalysis)[] = ['claims', 'predictions', 'namedEntities', 'themes', 'impliedConclusions', 'verificationHooks', 'emphasis']
   for (const p of posts) {
     const a = p.postAnalysis
     if (a) for (const c of cats) {
@@ -1137,7 +1137,7 @@ export async function getResources(): Promise<QResource[]> {
 }
 
 // ─── Post Analysis Frequency ──────────────────────────────────────────────────
-const ANALYSIS_CATS = ['claims', 'predictions', 'namedEntities', 'themes', 'impliedConclusions', 'verificationHooks'] as const
+const ANALYSIS_CATS = ['claims', 'predictions', 'namedEntities', 'themes', 'impliedConclusions', 'verificationHooks', 'emphasis'] as const
 type AnalysisCat = typeof ANALYSIS_CATS[number]
 
 export interface AnalysisCategoryFreq {
@@ -1258,6 +1258,7 @@ export interface OverlapItem {
 
 const OVERLAP_CAT_LABELS: Record<OverlapCat, string> = {
   claims: 'Claim',
+  emphasis: 'Emphasis',
   predictions: 'Prediction',
   namedEntities: 'Named Entity',
   themes: 'Theme',

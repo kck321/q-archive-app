@@ -92,7 +92,7 @@ function renderPostBody(
   analysis?: PostAnalysis,
   highlightCat?: string
 ) {
-  type Kind = 'highlight' | 'request' | 'requestQuestion' | 'topic' | 'question' | 'namedEntity' | 'claim' | 'prediction' | 'theme' | 'impliedConclusion' | 'verificationHook' | 'bracketCode' | 'milIntel' | 'qSignature' | 'url'
+  type Kind = 'highlight' | 'request' | 'requestQuestion' | 'topic' | 'question' | 'namedEntity' | 'claim' | 'prediction' | 'theme' | 'impliedConclusion' | 'verificationHook' | 'emphasis' | 'bracketCode' | 'milIntel' | 'qSignature' | 'url'
   type Seg = { start: number; end: number; kind: Kind; matchText: string; questionId?: string }
   const segs: Seg[] = []
 
@@ -160,6 +160,7 @@ function renderPostBody(
       // verbatim in the post — they only highlight when the exact text is present.
       ['impliedConclusion', analysis.impliedConclusions ?? []],
       ['verificationHook', analysis.verificationHooks ?? []],
+      ['emphasis', analysis.emphasis ?? []],
     ]
     for (const [kind, items] of analysisPairs) {
       for (const item of items) {
@@ -243,7 +244,8 @@ function renderPostBody(
   const priority: Record<Kind, number> = {
     highlight: 0, request: 1, requestQuestion: 1, topic: 2, question: 3,
     namedEntity: 4, claim: 5, prediction: 6, theme: 7, impliedConclusion: 8, verificationHook: 9,
-    bracketCode: 10, milIntel: 11, qSignature: 12, url: 13,
+    // emphasis last: it is Q's punctuation, so anything else on the same span wins.
+    bracketCode: 10, milIntel: 11, qSignature: 12, url: 13, emphasis: 14,
   }
 
   // Decompose text into sub-intervals where the set of active segments is constant.
@@ -1687,6 +1689,7 @@ export default function PostDetail() {
           { key: 'impliedConclusions', label: 'Implied Conclusions', color: 'text-orange-400', chip: 'bg-orange-500/20 text-orange-200 border-orange-700/50' },
           { key: 'verificationHooks',  label: 'Checkable Claims',  color: 'text-fuchsia-400', chip: 'bg-fuchsia-500/20 text-fuchsia-200 border-fuchsia-700/50' },
           { key: 'themes',             label: 'Themes',              color: 'text-indigo-400', chip: 'bg-indigo-500/20 text-indigo-200 border-indigo-700/50' },
+          { key: 'emphasis',           label: 'Emphasis',            color: 'text-slate-400',  chip: 'bg-slate-500/20 text-slate-200 border-slate-600/50' },
         ]
         // Auto-detected brackets from post text
         const autoBrackets: string[] = []

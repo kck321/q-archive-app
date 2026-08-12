@@ -13,7 +13,7 @@ export interface FreqItem {
   repeats?: Record<number, number>
 }
 
-type Accent = 'blue' | 'cyan' | 'amber' | 'violet' | 'indigo' | 'orange' | 'yellow' | 'fuchsia' | 'green' | 'red'
+type Accent = 'blue' | 'cyan' | 'amber' | 'violet' | 'indigo' | 'orange' | 'yellow' | 'fuchsia' | 'green' | 'red' | 'slate'
 
 const ACCENT: Record<Accent, { border: string; text: string; badge: string; chip: string }> = {
   blue:   { border: 'border-blue-800/50',   text: 'text-blue-300',   badge: 'bg-blue-900/50 text-blue-300 border-blue-700/60',     chip: 'hover:bg-blue-900/50 hover:text-blue-300 hover:border-blue-600' },
@@ -23,6 +23,7 @@ const ACCENT: Record<Accent, { border: string; text: string; badge: string; chip
   indigo: { border: 'border-indigo-800/50', text: 'text-indigo-300', badge: 'bg-indigo-900/50 text-indigo-300 border-indigo-700/60', chip: 'hover:bg-indigo-900/50 hover:text-indigo-300 hover:border-indigo-600' },
   orange: { border: 'border-orange-800/50', text: 'text-orange-300', badge: 'bg-orange-900/50 text-orange-300 border-orange-700/60', chip: 'hover:bg-orange-900/50 hover:text-orange-300 hover:border-orange-600' },
   yellow: { border: 'border-yellow-800/50', text: 'text-yellow-300', badge: 'bg-yellow-900/50 text-yellow-300 border-yellow-700/60', chip: 'hover:bg-yellow-900/50 hover:text-yellow-300 hover:border-yellow-600' },
+  slate:  { border: 'border-slate-700/50',  text: 'text-slate-300',  badge: 'bg-slate-800/50 text-slate-300 border-slate-600/60',  chip: 'hover:bg-slate-800/50 hover:text-slate-200 hover:border-slate-500' },
   fuchsia:{ border: 'border-fuchsia-800/50',text: 'text-fuchsia-300',badge: 'bg-fuchsia-900/50 text-fuchsia-300 border-fuchsia-700/60', chip: 'hover:bg-fuchsia-900/50 hover:text-fuchsia-300 hover:border-fuchsia-600' },
   green:  { border: 'border-green-800/50',  text: 'text-green-300',  badge: 'bg-green-900/50 text-green-300 border-green-700/60',   chip: 'hover:bg-green-900/50 hover:text-green-300 hover:border-green-600' },
   red:    { border: 'border-red-800/50',    text: 'text-red-300',    badge: 'bg-red-900/50 text-red-300 border-red-700/60',         chip: 'hover:bg-red-900/50 hover:text-red-300 hover:border-red-600' },

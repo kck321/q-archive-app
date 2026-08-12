@@ -12,7 +12,7 @@ import type { PostAnalysis } from '../types'
 //
 // Extracted verbatim; PostCard re-exports it rather than keeping a second copy.
 
-type Kind = 'keyword' | 'question' | 'request' | 'requestQuestion' | 'url' | 'namedEntity' | 'claim' | 'prediction' | 'theme' | 'impliedConclusion' | 'verificationHook' | 'bracketCode' | 'milIntel' | 'qSignature' | 'topic'
+type Kind = 'keyword' | 'question' | 'request' | 'requestQuestion' | 'url' | 'namedEntity' | 'claim' | 'prediction' | 'theme' | 'impliedConclusion' | 'verificationHook' | 'emphasis' | 'bracketCode' | 'milIntel' | 'qSignature' | 'topic'
 type Seg = { start: number; end: number; kind: Kind }
 
 // Dominant kinds take sole ownership — no overlap with stackable kinds
@@ -69,6 +69,7 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
     addSegs(segs, text, withAliases(analysis.themes ?? []), 'theme')
     addSegs(segs, text, withAliases(analysis.impliedConclusions ?? []), 'impliedConclusion')
     addSegs(segs, text, withAliases(analysis.verificationHooks ?? []), 'verificationHook')
+    addSegs(segs, text, analysis.emphasis ?? [], 'emphasis')
   }
 
   // Static entities always highlighted as namedEntity
