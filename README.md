@@ -2,7 +2,7 @@
 
 An open archive for Q research — every drop, searchable and cross-referenced.
 
-**Live site:** https://kck321.github.io/q-archive-app/
+**Live site:** https://qdrops.app
 
 Built for researching the *language* of the posts: each drop is broken down into what it
 asked, claimed, predicted and named, with the analysis searchable across all 4,966 posts.

@@ -20,7 +20,7 @@ set -e
 #     branch, and this script FORCE-PUSHES that branch — so the very next deploy would
 #     delete it and silently unset the custom domain. Writing it as part of the build makes
 #     it survive every deploy.
-SITE_DOMAIN="${SITE_DOMAIN:-}"
+SITE_DOMAIN="${SITE_DOMAIN:-qdrops.app}"
 
 # The public build reads NO Firestore, so the bundle must carry the current edits and
 # aliases. Skipping this ships a site that silently lacks your latest analysis work.

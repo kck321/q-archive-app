@@ -109,12 +109,15 @@ Auto-renews while a valid card is on file. A lapse is the one failure here that 
 undone — an expired .app name can be registered by anyone. The Dashboard shows a countdown
 (`src/components/RenewalReminder.tsx`, admin build only).
 
-Deploying to it takes `SITE_DOMAIN=qdrops.app npm run deploy:web`, which does two things the
-plain deploy does not:
+**Live since 12 Aug 2026.** `npm run deploy:web` now defaults to it, and does two things the
+old subpath deploy did not:
 - builds with base `/` instead of `/q-archive-app/` (the subpath build renders a BLANK PAGE
   on an apex domain — every asset would be fetched from qdrops.app/q-archive-app/assets/…)
 - writes `dist/CNAME`, because the deploy force-pushes `gh-pages` and would otherwise delete
   the CNAME file GitHub's "Custom domain" box puts there, silently unsetting the domain
+
+`kck321.github.io/q-archive-app/` now redirects here — GitHub Pages serves one domain per
+site, so the old URL is no longer a separate address.
 
 ## Safety net
 
