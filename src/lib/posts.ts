@@ -771,10 +771,27 @@ export async function searchAllPosts(term: string, exact = false): Promise<QPost
     // Attachment filenames are searchable content we already hold and were ignoring —
     // names like "187_Site_E.jpg" or "Free_Speech_Systems.png" often carry the only
     // reference to a subject in an image-only drop. qalerts indexes these; we didn't.
-    const names = [...(p.media ?? []), ...(p.refMedia ?? [])]
+    const names = [
+      ...(p.media ?? []),
+      ...(p.refMedia ?? []),
+      ...(p.quotedPosts ?? []).flatMap(q => q.media ?? []),
+    ]
       .map(m => (m?.filename ?? '').replace(/[_\-.]+/g, ' '))
       .join(' ')
-    const text = `${(p.text ?? '').replace(/>>\d+/g, '')} ${names}`.toLowerCase()
+    // The post a drop replies to is searchable content too — it is what the drop is ABOUT.
+    // Drop #2124 is nothing but ">>2950820"; searching its subject matched nothing before.
+    // This is also why qalerts reported more hits than we did (MOSSAD: 4 vs our 2).
+    // Quoted text feeds SEARCH ONLY — it is anon words 74% of the time, so it is kept out of
+    // the analysis index that extracts Q's questions, claims and predictions.
+    // Depth ≤ 1 only. The stored chain runs 4 deep, but a subject three hops upstream is not
+    // what the drop is about — indexing all of it returned 6 posts for MOSSAD where qalerts
+    // returns 4. One hop reproduces qalerts exactly (#1489, #2104, #2123, #2124); the deeper
+    // links stay readable on the post page.
+    const quoted = (p.quotedPosts ?? [])
+      .filter(q => (q.depth ?? 0) <= 1)
+      .map(q => (q.text ?? '').replace(/>>\d+/g, ''))
+      .join(' ')
+    const text = `${(p.text ?? '').replace(/>>\d+/g, '')} ${names} ${quoted}`.toLowerCase()
     return matchers.some(mx => typeof mx === 'string' ? text.includes(mx) : mx.test(text))
   })
 }

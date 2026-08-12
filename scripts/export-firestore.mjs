@@ -5,7 +5,7 @@
 // database the app uses ('default'), and writes one JSON file per collection into
 // public/data/, plus a manifest with counts + byte sizes.
 
-import { readFileSync, writeFileSync, mkdirSync, statSync } from 'node:fs'
+import { readFileSync, writeFileSync, mkdirSync, statSync, existsSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 import { initializeApp } from 'firebase/app'
@@ -105,7 +105,26 @@ for (const name of COLLECTIONS) {
   console.log(`${Object.keys(aliasMap).length} alias groups`)
 }
 
-manifest.totalBytes = grandBytes
+// ── Re-apply recovered reference content ────────────────────────────────────────
+// The dump above overwrites posts.json wholesale, and `quotedPosts` does not live in
+// Firestore — it was scraped back from qalerts after the original `references` field was
+// destroyed at ingest. Without this step every export silently re-blanks 205 pointer-only
+// drops and drops half a million characters of quoted text.
+{
+  const { execFileSync } = await import('node:child_process')
+  const applyScript = join(root, 'scripts', 'apply-references.mjs')
+  const cache = join(root, 'scripts', '.cache', 'references.jsonl')
+  if (!existsSync(cache)) {
+    console.error('\n❌ scripts/.cache/references.jsonl is missing — quoted post content would')
+    console.error('   be lost from this export. Run: node scripts/scrape-references.mjs')
+    process.exit(1)
+  }
+  process.stdout.write('Re-applying quoted post content… ')
+  execFileSync(process.execPath, [applyScript], { stdio: 'inherit' })
+}
+
+manifest.totalBytes = statSync(join(outDir, 'posts.json')).size + grandBytes
+  - manifest.collections.posts.bytes
 writeFileSync(join(outDir, 'manifest.json'), JSON.stringify(manifest, null, 2))
 
 console.log(`\n✅ Total bundle: ${(grandBytes / 1024 / 1024).toFixed(2)} MB → public/data/`)

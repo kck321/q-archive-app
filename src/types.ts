@@ -17,6 +17,24 @@ export interface ThreadAnswer {
   confidence: 'high' | 'medium' | 'low'
 }
 
+/**
+ * A post quoted by a drop via ">>NNNNNNN". Usually an anon (74%), sometimes another Q drop.
+ * These are NOT Q's words — they are excluded from question/claim/prediction extraction and
+ * surface only as reading context and in search.
+ */
+export interface QuotedPost {
+  boardId: string        // the ">>NNNNNNN" id
+  link: string           // permalink on the original board / 4plebs archive
+  name: string           // "Anonymous", "Q", …
+  trip: string
+  userId: string
+  time: string
+  text: string
+  media: QMedia[]
+  /** 0 = quoted by the drop itself; 1 = quoted by that quote, and so on up the chain. */
+  depth: number
+}
+
 export interface QPost {
   id: string            // Firestore doc ID (stringified post id)
   postNum: number       // sequential Q post number
@@ -31,7 +49,9 @@ export interface QPost {
   link: string
   media: QMedia[]
   refMedia?: QMedia[]       // images fetched from 4plebs for >>referenced posts
-  references: string[]
+  references: string[]      // legacy — destroyed at ingest, every entry is "[object Object]"
+  /** The posts quoted by this drop's ">>NNNNNNN" pointers, recovered by scrape-references. */
+  quotedPosts?: QuotedPost[]
   hasQuestions: boolean
   hasRequests?: boolean
   actionRequests?: string[]

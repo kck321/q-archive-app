@@ -5,7 +5,7 @@ import {
   getTopics, addPostToTopic, removePostFromTopic,
   getQuestionsForPost, updatePost, addQuestions, removeQuestionById, setQuestionStatuses,
   applyAnalysisToMatchingPosts, addQuestionToMatchingPosts, addRequestToMatchingPosts, addBracketToMatchingPosts,
-  normalizeItemKey,
+  normalizeItemKey, getAllPosts,
 } from '../lib/posts'
 import { detectQuestionsWithVerification, classifyQuestions, detectActionRequests, analyzePost, correlateNews } from '../lib/claude'
 import QuestionBadge from '../components/QuestionBadge'
@@ -13,11 +13,13 @@ import BackButton from '../components/BackButton'
 import { useAdmin } from '../components/AdminContext'
 import { sourceLink } from '../lib/sourceLink'
 import { mediaUrl } from '../lib/mediaUrl'
+import { buildReferenceIndex, resolveReferences } from '../lib/references'
+import QuotedPosts from '../components/QuotedPosts'
 import FlagIssue from '../components/FlagIssue'
 import { CAN_EDIT } from '../lib/appMode'
 import { getAliasesFor, getAliasGroup, addAlias, removeAlias, subscribeAliases } from '../lib/aliases'
 import { STATIC_ENTITIES, MIL_INTEL_TERMS, Q_SIGNATURES, HIGHLIGHT_CLS, wordBoundaryPattern } from '../lib/highlightConstants'
-import type { QPost, QQuestion, PostAnalysis, CorrelatedArticle } from '../types'
+import type { QPost, QQuestion, PostAnalysis, CorrelatedArticle, QuotedPost } from '../types'
 
 const STOP_WORDS = new Set(['the','and','for','with','from','this','that','are','was','were','have','been','will','into','about','its','their','which','posts'])
 
@@ -496,6 +498,40 @@ export default function PostDetail() {
 
   // Related posts that share the same analysis item (entity/claim/etc.) the user clicked from.
   // Populated only when arriving via an analysis chip (highlight + cat present in the URL).
+  // Board post id → Q drop, so a quoted post that is itself one of ours links through to it.
+  // Also the fallback source of quoted text where the scrape came up empty.
+  const [refIndex, setRefIndex] = useState<Map<string, QPost> | null>(null)
+  useEffect(() => {
+    if (!post?.text?.includes('>>')) return
+    let cancelled = false
+    getAllPosts().then(all => { if (!cancelled) setRefIndex(buildReferenceIndex(all)) })
+    return () => { cancelled = true }
+  }, [post])
+
+  const qDropFor = useMemo(
+    () => (boardId: string) => refIndex?.get(boardId) ?? null,
+    [refIndex]
+  )
+
+  const quotedPosts = useMemo<QuotedPost[]>(() => {
+    if (post?.quotedPosts?.length) return post.quotedPosts
+    if (!post?.text?.includes('>>') || !refIndex) return []
+    // Fallback: synthesise from the drop the pointer resolves to.
+    return resolveReferences(post.text, refIndex)
+      .filter(r => r.post)
+      .map(r => ({
+        boardId: r.boardId,
+        link: r.post!.link ?? '',
+        name: r.post!.name || 'Q',
+        trip: r.post!.trip ?? '',
+        userId: r.post!.userId ?? '',
+        time: '',
+        text: r.post!.text ?? '',
+        media: r.post!.media ?? [],
+        depth: 0,
+      }))
+  }, [post, refIndex])
+
   const [relatedPosts, setRelatedPosts] = useState<{ postNum: number; id: string; text: string; timestamp: number }[] | null>(null)
   const [relatedLoading, setRelatedLoading] = useState(false)
   const [relatedOpen, setRelatedOpen] = useState(true)
@@ -1394,6 +1430,10 @@ export default function PostDetail() {
             </p>
           </div>
         )}
+
+        {/* What this drop quotes. Scraped content when we have it; otherwise the Q drop the
+            pointer resolves to internally, so a reply is never just a bare number. */}
+        <QuotedPosts quoted={quotedPosts} qDropFor={qDropFor} />
 
         {/* Post body */}
         <pre
