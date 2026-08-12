@@ -396,6 +396,28 @@ export default function PostArchive() {
     }), { requests: 0, claims: 0, predictions: 0, namedEntities: 0, themes: 0, impliedConclusions: 0, verificationHooks: 0 })
   }, [timeline])
 
+  // Close any open chart tooltip when the page scrolls.
+  //
+  // Recharts hides a tooltip on mouseleave, which never fires on a touchscreen: tapping the
+  // chart opens it and nothing closes it, so it stays pinned over the page as you scroll.
+  // Dispatching the leave events the library is listening for is what actually dismisses it;
+  // hiding it with CSS only makes it reappear when scrolling stops.
+  useEffect(() => {
+    let timer: number | undefined
+    const dismiss = () => {
+      window.clearTimeout(timer)
+      timer = window.setTimeout(() => {
+        for (const el of document.querySelectorAll('.recharts-wrapper')) {
+          for (const type of ['pointerleave', 'mouseleave', 'mouseout']) {
+            el.dispatchEvent(new MouseEvent(type, { bubbles: true }))
+          }
+        }
+      }, 60)
+    }
+    window.addEventListener('scroll', dismiss, { passive: true, capture: true })
+    return () => { window.clearTimeout(timer); window.removeEventListener('scroll', dismiss, true) }
+  }, [])
+
   // Search results ordered with the EXACT searched-term posts first (so they're read first).
   const { searchedNums, quotedNums, orderedResults: allOrdered } = useMemo(() => {
     const termLower = searchTerm.toLowerCase().trim()
@@ -541,16 +563,11 @@ export default function PostArchive() {
     <div className="flex flex-col">
 
       {/* ── Sticky toolbar ─────────────────────────────────────────────── */}
-      <div className="sticky top-0 z-20 bg-[#0a0e1a] border-b border-q-border px-6 pt-5 pb-4 space-y-3 shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
-
-        {/* What this site is — public build only. On the editing build it is just noise:
-            you already know what the app does, and the toolbar is crowded enough. */}
-        {IS_PUBLIC_SITE && (
-          <p className="text-sm text-gray-400 leading-relaxed max-w-3xl">
-            Built for researching the <span className="text-gray-200 font-medium">language</span> of
-            the Q posts. Every drop broken down into what it asked, claimed, predicted and named.
-          </p>
-        )}
+      {/* Only the title + search stay pinned. Everything else was pinned too, which ate
+          most of a phone screen before a single post was visible. z-30 keeps it above the
+          chart tooltip, which paints at a higher z-index than the old z-20 and so hung over
+          this bar while scrolling past. */}
+      <div className="sticky top-0 z-30 bg-[#0a0e1a] border-b border-q-border px-4 sm:px-6 pt-3 sm:pt-5 pb-3 sm:pb-4 space-y-3 shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
 
         {/* Title + search row */}
         <div className="flex items-center gap-3 flex-wrap">
@@ -592,6 +609,19 @@ export default function PostArchive() {
             </button>
           )}
         </div>
+
+      </div>
+
+      {/* ── Scrollable content ──────────────────────────────────────────── */}
+      <div className="px-4 sm:px-6 py-4 space-y-4 w-full max-w-5xl">
+
+        {/* What this site is — public build only. On the editing build it is just noise. */}
+        {IS_PUBLIC_SITE && (
+          <p className="text-sm text-gray-400 leading-relaxed max-w-3xl">
+            Built for researching the <span className="text-gray-200 font-medium">language</span> of
+            the Q posts. Every drop broken down into what it asked, claimed, predicted and named.
+          </p>
+        )}
 
         {/* Go to post # + filter tabs */}
         <div className="flex items-center gap-3 flex-wrap">
@@ -638,12 +668,7 @@ export default function PostArchive() {
               <span className="text-red-400 text-xs">{postNumError}</span>
             )}
           </div>
-
         </div>
-      </div>
-
-      {/* ── Scrollable content ──────────────────────────────────────────── */}
-      <div className="px-6 py-4 space-y-4 w-full max-w-5xl">
 
         {/* Which analysis sections also carry this term. Renders nothing at all when the
             term appears in none of them, so an unmatched search adds no empty furniture. */}
@@ -775,7 +800,7 @@ export default function PostArchive() {
                       {chartMatchMonths && (
                         <YAxis yAxisId="matches" orientation="right" hide domain={[0, matchAxisMax(chartMatchMax)]} />
                       )}
-                      <Tooltip offset={28} cursor={{ fill: 'rgba(255,255,255,0.06)' }} wrapperStyle={{ zIndex: 50 }} content={(props: any) => <ChartTooltip {...props} keyword={chartMatchMonths ? chartSearch : null} matchCounts={chartMatchMonths} matchMax={chartMatchMax} />} />
+                      <Tooltip offset={28} cursor={{ fill: 'rgba(255,255,255,0.06)' }} wrapperStyle={{ zIndex: 10 }} content={(props: any) => <ChartTooltip {...props} keyword={chartMatchMonths ? chartSearch : null} matchCounts={chartMatchMonths} matchMax={chartMatchMax} />} />
 
                       {/* Posts bar — always shown */}
                       <Bar yAxisId="left" dataKey="posts" name="Q Posts" radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }}
