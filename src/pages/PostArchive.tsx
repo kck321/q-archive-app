@@ -628,7 +628,7 @@ export default function PostArchive() {
       {/* Sticks BELOW the fixed "Q Drops" bar on phones (that bar is h-12), and at the
           very top on desktop where there is no such bar. z-20 keeps it under the header and
           over the chart tooltip, which sits at z-10. */}
-      <div className={`sticky top-12 lg:top-0 z-20 bg-[#0a0e1a] px-4 sm:px-6 pt-3 sm:pt-5 pb-3 sm:pb-4 space-y-3 shadow-[0_2px_12px_rgba(0,0,0,0.6)] transition-transform duration-200 lg:!translate-y-0 ${hideBar ? '-translate-y-[130%]' : 'translate-y-0'}`}>
+      <div className={`sticky top-12 lg:top-0 z-20 bg-[#0a0e1a] border-b border-q-border px-4 sm:px-6 pt-3 sm:pt-5 pb-3 sm:pb-4 space-y-3 shadow-[0_2px_12px_rgba(0,0,0,0.6)] transition-transform duration-200 lg:!translate-y-0 ${hideBar ? '-translate-y-[130%]' : 'translate-y-0'}`}>
 
         {/* Title + search row */}
         {/* One line, always. flex-wrap plus a 220px minimum on the input meant the button
@@ -680,13 +680,6 @@ export default function PostArchive() {
           )}
         </div>
 
-      </div>
-
-      {/* ── Scrollable content ──────────────────────────────────────────── */}
-      <div className="px-4 sm:px-6 py-4 space-y-4 w-full max-w-5xl">
-
-        {/* Go to post # + filter tabs */}
-        <div className="flex items-center gap-3 flex-wrap">
           {/* Post # jump + sort direction */}
           <div className="flex items-center gap-2 flex-wrap">
             <div className="relative">
@@ -704,7 +697,7 @@ export default function PostArchive() {
             <button
               onClick={handleGoToPost}
               disabled={!postNumInput.trim()}
-              className="bg-gray-700 hover:bg-gray-600 disabled:opacity-40 text-white font-medium px-3 py-1.5 rounded-lg transition-colors text-sm shrink-0 whitespace-nowrap"
+              className="bg-blue-600 hover:bg-blue-500 disabled:opacity-40 text-white font-medium px-3 py-1.5 rounded-lg transition-colors text-sm shrink-0 whitespace-nowrap"
             >
               Go<span className="hidden sm:inline"> to Post</span>
             </button>
@@ -729,7 +722,6 @@ export default function PostArchive() {
               <span className="text-red-400 text-xs">{postNumError}</span>
             )}
           </div>
-        </div>
 
         {/* "Deltas" — every drop posted on today's month and day, in any year. The search
             already understands a bare date ("Aug 12" → month + day, year unspecified), so
@@ -749,8 +741,12 @@ export default function PostArchive() {
           </button>
         </div>
 
-        {/* Closes the search group: title/search, post-number jump, sort, deltas. */}
-        <hr className="border-q-border" />
+
+      </div>
+
+      {/* ── Scrollable content ──────────────────────────────────────────── */}
+      <div className="px-4 sm:px-6 py-4 space-y-4 w-full max-w-5xl">
+
 
         {IS_PUBLIC_SITE && (
           <p className="text-sm text-gray-400 leading-relaxed max-w-3xl">
