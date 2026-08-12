@@ -217,7 +217,8 @@ export default function PostArchive() {
   const [bracketCount, setBracketCount] = useState<number | null>(null)
 
   // Sort direction
-  const [sortDir, setSortDir] = useState<'asc' | 'desc'>('asc')
+  // Newest first: the archive opens on the most recent drops rather than October 2017.
+  const [sortDir, setSortDir] = useState<'asc' | 'desc'>('desc')
 
   // Timeline chart
   const [timeline, setTimeline] = useState<{ month: string; questions: number; posts: number; requests: number; claims: number; predictions: number; namedEntities: number; themes: number; impliedConclusions: number; verificationHooks: number; brackets: number }[]>([])
@@ -754,6 +755,13 @@ export default function PostArchive() {
             )}
           </div>
 
+
+
+      </div>
+
+      {/* ── Scrollable content ──────────────────────────────────────────── */}
+      <div className="px-4 sm:px-6 py-4 space-y-4 w-full max-w-5xl">
+
         {/* "Deltas" — every drop posted on today's month and day, in any year. The search
             already understands a bare date ("Aug 12" → month + day, year unspecified), so
             this is the same query you could type, one tap away. */}
@@ -772,11 +780,6 @@ export default function PostArchive() {
           </button>
         </div>
 
-
-      </div>
-
-      {/* ── Scrollable content ──────────────────────────────────────────── */}
-      <div className="px-4 sm:px-6 py-4 space-y-4 w-full max-w-5xl">
 
 
         {IS_PUBLIC_SITE && (
