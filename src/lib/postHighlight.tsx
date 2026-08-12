@@ -2,7 +2,7 @@ import React from 'react'
 import { getAliasesFor, getAliasGroup } from './aliases'
 import { STATIC_ENTITIES, MIL_INTEL_TERMS, Q_SIGNATURES, HIGHLIGHT_CLS, wordBoundaryPattern } from './highlightConstants'
 import type { PostAnalysis } from '../types'
-import { expandToSentence } from './posts'
+import { expandToSentence, questionHighlightRegex } from './posts'
 import { highlightsEnabled } from './highlightPrefs'
 
 // The extractor stored claims/predictions/checkable-claims as fragments, so the highlight
@@ -65,7 +65,19 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
   // URLs still stand out, since those are how you move around rather than what the app
   // concluded about the writing.
   const lang = highlightsEnabled()
-  if (lang) addSegs(segs, text, questionTexts, 'question')
+  if (lang) {
+    // Same question-form rule as the matching — see questionHighlightRegex.
+    for (const qt of questionTexts) {
+      const rx = questionHighlightRegex(qt)
+      if (!rx) continue
+      let m: RegExpExecArray | null
+      rx.lastIndex = 0
+      while ((m = rx.exec(text)) !== null) {
+        segs.push({ start: m.index, end: m.index + m[0].length, kind: 'question' })
+        if (m.index === rx.lastIndex) rx.lastIndex++
+      }
+    }
+  }
 
   for (const rt of lang ? requestTexts : []) {
     const escaped = escapeAndNormalize(rt)

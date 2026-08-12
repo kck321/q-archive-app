@@ -5,7 +5,7 @@ import {
   getTopics, addPostToTopic, removePostFromTopic,
   getQuestionsForPost, updatePost, addQuestions, removeQuestionById, setQuestionStatuses,
   applyAnalysisToMatchingPosts, addQuestionToMatchingPosts, addRequestToMatchingPosts, addBracketToMatchingPosts,
-  normalizeItemKey, expandToSentence,
+  normalizeItemKey, expandToSentence, questionHighlightRegex,
 } from '../lib/posts'
 import { detectQuestionsWithVerification, classifyQuestions, detectActionRequests, analyzePost, correlateNews } from '../lib/claude'
 import QuestionBadge from '../components/QuestionBadge'
@@ -15,8 +15,9 @@ import { sourceLink } from '../lib/sourceLink'
 import { timeAgo } from '../lib/timeAgo'
 import { highlightsEnabled, useHighlightsEnabled } from '../lib/highlightPrefs'
 import { mediaUrl, dedupeMedia } from '../lib/mediaUrl'
-import { resolveReferences, getQuotedContext } from '../lib/references'
+import { resolveReferences, getQuotedContext, type QuotedContext } from '../lib/references'
 import QuotedPosts from '../components/QuotedPosts'
+import { highlightText } from '../lib/postHighlight'
 import { linkify } from '../lib/linkify'
 import FlagIssue from '../components/FlagIssue'
 import { CAN_EDIT } from '../lib/appMode'
@@ -125,9 +126,10 @@ function renderPostBody(
 
   // Question segments
   for (const q of langOn ? questions : questions.filter(q => !!highlight && normHL(q.text) === normHL(highlight))) {
-    const escaped = escapeAndNormalize(q.text)
     const isHL = !!highlight && normHL(q.text) === normHL(highlight)
-    const regex = new RegExp(wordBoundaryPattern(escaped, q.text), 'gi')
+    // Question FORM, not the literal string: a drop asking "Power." is credited with the
+    // question "Power?", so the highlight has to accept the same variants the match did.
+    const regex = questionHighlightRegex(q.text) ?? new RegExp(wordBoundaryPattern(escapeAndNormalize(q.text), q.text), 'gi')
     let m: RegExpExecArray | null
     while ((m = regex.exec(text)) !== null) {
       segs.push({ start: m.index, end: m.index + m[0].length, kind: isHL ? 'highlight' : 'question', matchText: m[0], questionId: q.id })
@@ -400,44 +402,6 @@ const ALIAS_HL_PALETTE = [
 
 type AliasColor = { variant: string; cls: string }
 
-// Render a full post body with every occurrence of `term` (the entity being researched) highlighted.
-// When `aliasColors` carries a multi-member alias group, each alias gets its own color; otherwise the
-// whole group renders red. Lightweight vs. renderPostBody — used in the related-posts reader feed.
-function highlightEntity(text: string, term: string, aliasColors?: AliasColor[]): (string | React.JSX.Element)[] | string {
-  if (!term) return text
-  // Full alias group so arriving on ANY member (canonical or alias) lights up the whole set.
-  const list: AliasColor[] = (aliasColors && aliasColors.length)
-    ? aliasColors
-    : [...new Set([term, ...getAliasGroup(term)])].map(v => ({ variant: v, cls: 'bg-red-500/50 text-red-50' }))
-  // Longest variants first so "POTUS" wins over a bare "P", and each variant is its OWN capture group
-  // so we know which alias (and thus which color) produced each match.
-  const ordered = list.filter(o => o.variant && o.variant.trim()).sort((a, b) => b.variant.length - a.variant.length)
-  if (!ordered.length) return text
-  let rx: RegExp
-  try {
-    rx = new RegExp(ordered.map(o => `(${escapeAndNormalize(o.variant)})`).join('|'), 'gi')
-  } catch {
-    return text
-  }
-  const out: (string | React.JSX.Element)[] = []
-  let last = 0
-  let i = 0
-  let m: RegExpExecArray | null
-  while ((m = rx.exec(text)) !== null) {
-    if (m.index > last) out.push(text.slice(last, m.index))
-    let gi = 1
-    while (gi < m.length && m[gi] === undefined) gi++
-    const cls = ordered[gi - 1]?.cls ?? 'bg-red-500/50 text-red-50'
-    out.push(
-      <mark key={i++} className={`${cls} font-semibold rounded px-0.5 not-italic`}>{m[0]}</mark>
-    )
-    last = m.index + m[0].length
-    if (m.index === rx.lastIndex) rx.lastIndex++ // guard against zero-length matches
-  }
-  if (last < text.length) out.push(text.slice(last))
-  return out.length ? out : text
-}
-
 export default function PostDetail() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
@@ -521,6 +485,11 @@ export default function PostDetail() {
   // Populated only when arriving via an analysis chip (highlight + cat present in the URL).
   // Board post id → Q drop, so a quoted post that is itself one of ours links through to it.
   // Also the fallback source of quoted text where the scrape came up empty.
+  // Shared context (board-id → drop, postId → questions), used by the reader feed to
+  // highlight each post with its OWN questions rather than only the searched term.
+  const [readerCtx, setReaderCtx] = useState<QuotedContext | null>(null)
+  useEffect(() => { getQuotedContext().then(setReaderCtx).catch(() => {}) }, [])
+
   const [refIndex, setRefIndex] = useState<Map<string, QPost> | null>(null)
   useEffect(() => {
     if (!post?.text?.includes('>>')) return
@@ -555,7 +524,7 @@ export default function PostDetail() {
       }))
   }, [post, refIndex])
 
-  const [relatedPosts, setRelatedPosts] = useState<{ postNum: number; id: string; text: string; timestamp: number; quotedPosts?: QuotedPost[] }[] | null>(null)
+  const [relatedPosts, setRelatedPosts] = useState<QPost[] | null>(null)
   const [relatedLoading, setRelatedLoading] = useState(false)
   const [relatedOpen, setRelatedOpen] = useState(true)
   const feedRef = useRef<HTMLDivElement | null>(null)
@@ -607,7 +576,7 @@ export default function PostDetail() {
     setRelatedLoading(true)
 
     // Resolve the sibling posts for whichever reader kind we're in.
-    let postsPromise: Promise<{ postNum: number; id: string; text: string; timestamp: number; quotedPosts?: QuotedPost[] }[]>
+    let postsPromise: Promise<QPost[]>
     if (readerKind === 'question') {
       // Same question asked across posts → question frequency index
       const normQ = (t: string) => t.toLowerCase().trim().replace(/\s+/g, ' ').replace(/[?.!,;:]+$/, '')
@@ -638,7 +607,7 @@ export default function PostDetail() {
       .then(posts => {
         if (cancelled) return
         const list = posts
-          .map(p => ({ postNum: p.postNum, id: p.id, text: p.text, timestamp: p.timestamp, quotedPosts: p.quotedPosts }))
+          .map(p => p)
           .sort((a, b) => a.postNum - b.postNum)
         setRelatedPosts(list)
       })
@@ -1300,8 +1269,18 @@ export default function PostDetail() {
                       </span>
                     </div>
                     <QuotedPosts quoted={rp.quotedPosts ?? []} searchKeyword={highlight} />
+                    {/* The full highlighter, not just the term. This feed used to render
+                        plain text with only the searched phrase marked, so every post you
+                        scrolled through lost its questions, claims and entities — the whole
+                        point of the archive. */}
                     <pre className="text-gray-200 post-text whitespace-pre-wrap break-words">
-                      {linkify(highlightEntity(rp.text, highlight, aliasColors))}
+                      {linkify(highlightText(
+                        rp.text,
+                        readerCtx?.questionsByPostId.get(rp.id) ?? [],
+                        highlight,
+                        rp.actionRequests ?? [],
+                        rp.postAnalysis,
+                      ))}
                     </pre>
                   </div>
                 )

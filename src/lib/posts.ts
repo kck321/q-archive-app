@@ -197,6 +197,18 @@ async function getRawTextIndex(): Promise<Map<number, string>> {
   return _rawText
 }
 
+/**
+ * The regex that decides whether a post asks a question — exported so the HIGHLIGHTERS use
+ * the same rule as the matching.
+ *
+ * They disagreed: a post is credited with the question "Power?" when it contains "power."
+ * (the ?/./! grouping), but the highlighter searched for the literal "Power?" and found
+ * nothing. So #120 was listed under Power? with nothing marked in it.
+ */
+export function questionHighlightRegex(questionText: string): RegExp | null {
+  return questionRegex(questionText)
+}
+
 function questionRegex(questionText: string): RegExp | null {
   // Match the phrase where it ENDS A SENTENCE — followed by ? . or !
   //
