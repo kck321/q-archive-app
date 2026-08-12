@@ -2,6 +2,15 @@ import React from 'react'
 import { getAliasesFor, getAliasGroup } from './aliases'
 import { STATIC_ENTITIES, MIL_INTEL_TERMS, Q_SIGNATURES, HIGHLIGHT_CLS, wordBoundaryPattern } from './highlightConstants'
 import type { PostAnalysis } from '../types'
+import { expandToSentence } from './posts'
+
+// The extractor stored claims/predictions/checkable-claims as fragments, so the highlight
+// stopped mid-sentence: #36's prediction ends at "...prepared to do the unthinkable" and
+// left "(this was leaked internally and kept the delegate recount scam and BO from
+// declaring fraud)." unmarked. The analysis LISTS already expand these to the full
+// sentence; the highlighter did not, so the same item looked different in the two places.
+// expandToSentence returns the item untouched when it is a paraphrase that is not in the
+// text, so nothing over-extends.
 
 // The post-body highlighter, lifted out of PostCard so quoted posts can use the SAME logic.
 //
@@ -63,12 +72,13 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
 
   if (analysis) {
     const withAliases = (arr: string[]) => arr.flatMap(t => [t, ...getAliasesFor(t)])
+    const whole = (arr: string[] = []) => arr.map(t => expandToSentence(t, text))
     addSegs(segs, text, withAliases(analysis.namedEntities ?? []), 'namedEntity')
-    addSegs(segs, text, withAliases(analysis.claims ?? []), 'claim')
-    addSegs(segs, text, withAliases(analysis.predictions ?? []), 'prediction')
+    addSegs(segs, text, withAliases(whole(analysis.claims)), 'claim')
+    addSegs(segs, text, withAliases(whole(analysis.predictions)), 'prediction')
     addSegs(segs, text, withAliases(analysis.themes ?? []), 'theme')
     addSegs(segs, text, withAliases(analysis.impliedConclusions ?? []), 'impliedConclusion')
-    addSegs(segs, text, withAliases(analysis.verificationHooks ?? []), 'verificationHook')
+    addSegs(segs, text, withAliases(whole(analysis.verificationHooks)), 'verificationHook')
     addSegs(segs, text, analysis.emphasis ?? [], 'emphasis')
   }
 

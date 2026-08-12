@@ -1167,9 +1167,21 @@ export function getAnalysisFrequency(): Promise<AnalysisCategoryFreq[]> {
 async function computeAnalysisFrequency(): Promise<AnalysisCategoryFreq[]> {
   const { posts } = await loadLocalData()
 
-  const groups: Record<string, { category: AnalysisCat; count: number; postNums: number[]; originalText: string }> = {}
+  const groups: Record<string, { category: AnalysisCat; count: number; postNums: number[]; seen: Set<number>; originalText: string }> = {}
+
+  // Yield to the browser every so often. This walks ~56,000 analysis items and, run as one
+  // unbroken task, it froze the page for the length of the whole computation — which is what
+  // made opening a post from the archive feel slow: the post had already rendered, then the
+  // main thread locked up behind this.
+  let sinceYield = 0
+  const breathe = async () => {
+    if (++sinceYield < 400) return
+    sinceYield = 0
+    await new Promise(r => setTimeout(r, 0))
+  }
 
   for (const post of posts) {
+    await breathe()
     if (!post.analysisScanned) continue
     const analysis = post.postAnalysis as PostAnalysis | undefined
     if (!analysis) continue
@@ -1189,9 +1201,13 @@ async function computeAnalysisFrequency(): Promise<AnalysisCategoryFreq[]> {
           if (/^\d+$/.test(trimmed)) continue
         }
         const key = `${cat}::${normalizeItemKey(trimmed)}`
-        if (!groups[key]) groups[key] = { category: cat, count: 0, postNums: [], originalText: trimmed }
+        if (!groups[key]) groups[key] = { category: cat, count: 0, postNums: [], seen: new Set(), originalText: trimmed }
         groups[key].count++
-        if (!groups[key].postNums.includes(post.postNum)) {
+        // Set membership, not postNums.includes(): a chip like "POTUS" collects thousands of
+        // post numbers, and re-scanning that array for every one of its items made this
+        // quadratic — the single biggest cost in opening a post.
+        if (!groups[key].seen.has(post.postNum)) {
+          groups[key].seen.add(post.postNum)
           groups[key].postNums.push(post.postNum)
         }
       }
@@ -1203,7 +1219,9 @@ async function computeAnalysisFrequency(): Promise<AnalysisCategoryFreq[]> {
   // posts that only ever say "Hillary". Before this the chip read 113 while searching
   // "hrc" returned 140, because search already expanded aliases — one number, two answers.
   const textIndex = await getTextIndex()
+  sinceYield = 0
   for (const g of Object.values(groups)) {
+    await breathe()
     backfillFromText(textIndex, g.originalText, g.postNums, { withAliases: true })
   }
 

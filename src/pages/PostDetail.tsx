@@ -5,7 +5,7 @@ import {
   getTopics, addPostToTopic, removePostFromTopic,
   getQuestionsForPost, updatePost, addQuestions, removeQuestionById, setQuestionStatuses,
   applyAnalysisToMatchingPosts, addQuestionToMatchingPosts, addRequestToMatchingPosts, addBracketToMatchingPosts,
-  normalizeItemKey, getAllPosts,
+  normalizeItemKey, expandToSentence,
 } from '../lib/posts'
 import { detectQuestionsWithVerification, classifyQuestions, detectActionRequests, analyzePost, correlateNews } from '../lib/claude'
 import QuestionBadge from '../components/QuestionBadge'
@@ -13,7 +13,7 @@ import BackButton from '../components/BackButton'
 import { useAdmin } from '../components/AdminContext'
 import { sourceLink } from '../lib/sourceLink'
 import { mediaUrl, dedupeMedia } from '../lib/mediaUrl'
-import { buildReferenceIndex, resolveReferences } from '../lib/references'
+import { resolveReferences, getQuotedContext } from '../lib/references'
 import QuotedPosts from '../components/QuotedPosts'
 import { linkify } from '../lib/linkify'
 import FlagIssue from '../components/FlagIssue'
@@ -151,15 +151,21 @@ function renderPostBody(
 
   // Analysis segments (lower priority than questions/requests)
   if (analysis) {
+    // Claims/predictions/checkable-claims were stored as fragments, so the highlight stopped
+    // mid-sentence — #36's prediction ended at "...prepared to do the unthinkable", leaving
+    // the "(this was leaked internally…)" clause unmarked. The analysis lists already show
+    // these expanded; now the highlight agrees. Paraphrases that are not in the text come
+    // back unchanged, so nothing over-extends.
+    const wholeSentences = (arr?: string[]) => (arr ?? []).map(t => expandToSentence(t, text))
     const analysisPairs: [Kind, string[]][] = [
       ['namedEntity', analysis.namedEntities ?? []],
-      ['claim', analysis.claims ?? []],
-      ['prediction', analysis.predictions ?? []],
+      ['claim', wholeSentences(analysis.claims)],
+      ['prediction', wholeSentences(analysis.predictions)],
       ['theme', analysis.themes ?? []],
       // Implied conclusions / verification hooks are often paraphrases that aren't
       // verbatim in the post — they only highlight when the exact text is present.
       ['impliedConclusion', analysis.impliedConclusions ?? []],
-      ['verificationHook', analysis.verificationHooks ?? []],
+      ['verificationHook', wholeSentences(analysis.verificationHooks)],
       ['emphasis', analysis.emphasis ?? []],
     ]
     for (const [kind, items] of analysisPairs) {
@@ -507,7 +513,9 @@ export default function PostDetail() {
   useEffect(() => {
     if (!post?.text?.includes('>>')) return
     let cancelled = false
-    getAllPosts().then(all => { if (!cancelled) setRefIndex(buildReferenceIndex(all)) })
+    // The shared, cached context — this used to call getAllPosts() and rebuild a 4,867-entry
+    // map on EVERY post you opened, which was my own regression from the quoted-post work.
+    getQuotedContext().then(c => { if (!cancelled) setRefIndex(c.byBoardId) })
     return () => { cancelled = true }
   }, [post])
 
