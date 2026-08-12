@@ -1,30 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import type { QPost, QuotedPost } from '../types'
 import { mediaUrl, dedupeMedia } from '../lib/mediaUrl'
-import { wordBoundaryPattern } from '../lib/highlightConstants'
 import { linkify } from '../lib/linkify'
-
-/**
- * Highlight the search term inside quoted text. A search can match here and nowhere in the
- * drop's own words — "Breitbart article" only appears in the post #2124 replies to — so
- * without this the row looks like a false positive.
- */
-function highlightQuoted(text: string, term: string) {
-  if (!term.trim()) return text
-  const escaped = term.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-  let re: RegExp
-  try { re = new RegExp(`(${wordBoundaryPattern(escaped, term.trim())})`, 'gi') } catch { return text }
-  // split() with one capture group puts the matches at the odd indices — no re.test() here,
-  // a /g/ regex carries lastIndex between calls and would skip every other match.
-  const parts = text.split(re)
-  if (parts.length === 1) return text
-  return parts.map((part, i) =>
-    i % 2 === 1
-      ? <mark key={i} className="bg-amber-500/30 text-amber-200 rounded px-0.5">{part}</mark>
-      : <span key={i}>{part}</span>
-  )
-}
+import { highlightText } from '../lib/postHighlight'
+import { getQuotedContext, type QuotedContext } from '../lib/references'
 
 /**
  * The reply chain behind a drop's ">>NNNNNNN" pointers.
@@ -46,6 +26,20 @@ export default function QuotedPosts({
   searchKeyword?: string
 }) {
   const [showChain, setShowChain] = useState(false)
+
+  // A quoted post that is itself a drop we hold carries its own questions, requests and
+  // analysis, so it can be marked up exactly as it is on its own page. Without this the
+  // quote renders flat while the drop's own words are fully highlighted, and the reply looks
+  // unanalysed — #1102 quotes #1100, which has 5 stored claims and a request.
+  const [ctx, setCtx] = useState<QuotedContext | null>(null)
+  const hasQuotes = !!quoted?.length
+  useEffect(() => {
+    if (!hasQuotes) return
+    let cancelled = false
+    getQuotedContext().then(c => { if (!cancelled) setCtx(c) })
+    return () => { cancelled = true }
+  }, [hasQuotes])
+
   if (!quoted?.length) return null
 
   const direct = quoted.filter(q => (q.depth ?? 0) === 0)
@@ -56,7 +50,7 @@ export default function QuotedPosts({
     <div className="mt-3 space-y-2">
       {shown.map((q, i) => {
         const depth = q.depth ?? 0
-        const drop = qDropFor?.(q.boardId) ?? null
+        const drop = ctx?.byBoardId.get(q.boardId) ?? qDropFor?.(q.boardId) ?? null
         const isQ = q.name === 'Q' || !!drop
         return (
           <div
@@ -100,7 +94,19 @@ export default function QuotedPosts({
                 that matched. */}
             {q.text && (
               <pre className="px-3 pb-2 text-xs leading-relaxed text-gray-400 whitespace-pre-wrap font-mono">
-                {linkify(highlightQuoted(q.text, searchKeyword))}
+                {linkify(
+                  drop
+                    ? highlightText(
+                        q.text,
+                        ctx?.questionsByPostId.get(drop.id) ?? [],
+                        searchKeyword,
+                        drop.actionRequests ?? [],
+                        drop.postAnalysis,
+                      )
+                    // No stored analysis for an anon quote — highlightText still marks
+                    // entities, [brackets], mil-intel terms and the search term.
+                    : highlightText(q.text, [], searchKeyword)
+                )}
               </pre>
             )}
 

@@ -13,6 +13,7 @@
 // pointer-only posts stop being blank rows. The remaining 1,179 point at anon posts and
 // need scraping — a separate job.
 import type { QPost } from '../types'
+import { loadLocalData, onStoreMutated } from './localData'
 
 export interface ResolvedReference {
   /** The ">>NNNNNNN" board post id as written in the text. */
@@ -30,6 +31,39 @@ export function buildReferenceIndex(posts: QPost[]): Map<string, QPost> {
   }
   return index
 }
+
+/**
+ * Everything needed to render a quoted post with the same markup as a real drop.
+ *
+ * 48% of quoted posts ARE drops we already hold and have already analysed, so a quote can be
+ * highlighted from that drop's own stored questions, requests and analysis rather than
+ * re-deriving anything. Built once and shared: a search results page renders 150 cards, and
+ * each one reading the store separately would be 150 round trips.
+ */
+export interface QuotedContext {
+  byBoardId: Map<string, QPost>
+  questionsByPostId: Map<string, string[]>
+}
+
+let _quotedCtx: Promise<QuotedContext> | null = null
+
+export function getQuotedContext(): Promise<QuotedContext> {
+  if (!_quotedCtx) {
+    _quotedCtx = loadLocalData().then(({ posts, questions }) => {
+      const questionsByPostId = new Map<string, string[]>()
+      for (const q of questions as { postId?: string; text?: string }[]) {
+        if (!q?.postId || !q.text) continue
+        const list = questionsByPostId.get(q.postId)
+        if (list) list.push(q.text)
+        else questionsByPostId.set(q.postId, [q.text])
+      }
+      return { byBoardId: buildReferenceIndex(posts), questionsByPostId }
+    })
+  }
+  return _quotedCtx
+}
+
+onStoreMutated(() => { _quotedCtx = null })
 
 /**
  * Reading text for a drop, for previews and snippets.
