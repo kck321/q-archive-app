@@ -309,6 +309,10 @@ export default function PostArchive() {
     }
   }
 
+  // Recomputed per render; the page is not open long enough for the date to change, and
+  // pinning it in state would go stale across midnight for anyone who leaves a tab open.
+  const todaysDelta = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+
   async function handleSearch() {
     const raw = searchInput.trim()
     // "BO" (quoted) → exact word-boundary match; BO (unquoted) → substring match
@@ -638,20 +642,11 @@ export default function PostArchive() {
       {/* ── Scrollable content ──────────────────────────────────────────── */}
       <div className="px-4 sm:px-6 py-4 space-y-4 w-full max-w-5xl">
 
-        {/* What this site is — public build only. On the editing build it is just noise. */}
-        {IS_PUBLIC_SITE && (
-          <p className="text-sm text-gray-400 leading-relaxed max-w-3xl">
-            Built for researching the <span className="text-gray-200 font-medium">language</span> of
-            the Q posts. Every drop broken down into what it asked, claimed, predicted and named.
-          </p>
-        )}
-
         {/* Go to post # + filter tabs */}
         <div className="flex items-center gap-3 flex-wrap">
           {/* Post # jump + sort direction */}
           <div className="flex items-center gap-2 flex-wrap">
             <div className="relative">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xs">#</span>
               <input
                 type="number"
                 min={1}
@@ -660,7 +655,7 @@ export default function PostArchive() {
                 onChange={e => { setPostNumInput(e.target.value); setPostNumError('') }}
                 onKeyDown={e => e.key === 'Enter' && handleGoToPost()}
                 placeholder="Post #"
-                className="w-[4.5rem] bg-q-panel border border-q-border rounded-lg pl-6 pr-2 py-1.5 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-q-accent transition-colors [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                className="w-[4.5rem] bg-q-panel border border-q-border rounded-lg px-2 py-1.5 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-q-accent transition-colors [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
               />
             </div>
             <button
@@ -691,6 +686,34 @@ export default function PostArchive() {
               <span className="text-red-400 text-xs">{postNumError}</span>
             )}
           </div>
+        </div>
+
+
+        {/* Mission statement, then today's deltas. Both sit under the controls: the controls
+            are what you came to use, the statement is what you read once. */}
+        {IS_PUBLIC_SITE && (
+          <p className="text-sm text-gray-400 leading-relaxed max-w-3xl">
+            Built for researching the <span className="text-gray-200 font-medium">language</span> of
+            the Q posts. Every drop broken down into what it asked, claimed, predicted and named.
+          </p>
+        )}
+
+        {/* "Deltas" — every drop posted on today's month and day, in any year. The search
+            already understands a bare date ("Aug 12" → month + day, year unspecified), so
+            this is the same query you could type, one tap away. */}
+        <div className="flex flex-wrap items-center gap-2">
+          <button
+            onClick={() => { setSearchInput(todaysDelta); runSearch(todaysDelta, false) }}
+            className="text-xs bg-amber-900/30 hover:bg-amber-900/50 text-amber-200 border border-amber-700/60 hover:border-amber-500 px-3 py-1.5 rounded-lg transition-colors"
+            title={`Every drop posted on ${todaysDelta}, across all years`}
+          >
+            📅 See today's deltas — {todaysDelta}
+          </button>
+          {isSearchMode && searchTerm === todaysDelta && (
+            <span className="text-xs text-gray-500">
+              {searchResults.length} drop{searchResults.length === 1 ? '' : 's'} posted on this day
+            </span>
+          )}
         </div>
 
         {/* Which analysis sections also carry this term. Renders nothing at all when the

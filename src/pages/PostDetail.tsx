@@ -1451,7 +1451,7 @@ export default function PostDetail() {
         {/* Post body */}
         <pre
           ref={bodyRef}
-          className={`text-gray-200 text-base sm:text-sm leading-relaxed whitespace-pre-wrap font-mono rounded-lg p-4 overflow-x-auto transition-colors ${
+          className={`text-gray-200 text-[15px] sm:text-sm leading-relaxed whitespace-pre-wrap font-mono rounded-lg p-4 overflow-x-auto transition-colors ${
             selectMode ? 'bg-blue-950/30 cursor-text select-text border border-blue-800' : 'bg-black/30'
           } ${bodyFlash ? 'animate-body-flash' : ''}`}
         >

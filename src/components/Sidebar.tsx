@@ -9,13 +9,13 @@ const links = [
 // Colors here mirror src/lib/categoryColors.ts (tailwind -500 == those hex values) so the
 // sidebar matches the chart tabs/bars exactly.
 const analysisLinks = [
-  { tab: 'claims',            label: 'Q Claims',       dot: 'bg-amber-500',  color: 'text-amber-500 hover:text-amber-400' },
-  { tab: 'predictions',       label: 'Q Predictions',  dot: 'bg-violet-500', color: 'text-violet-500 hover:text-violet-400' },
-  { tab: 'namedEntities',     label: 'Q Entities',     dot: 'bg-cyan-500',   color: 'text-cyan-500 hover:text-cyan-400' },
-  { tab: 'themes',            label: 'Q Themes',       dot: 'bg-indigo-500', color: 'text-indigo-500 hover:text-indigo-400' },
-  { tab: 'impliedConclusions',label: 'Q Conclusions',  dot: 'bg-orange-500', color: 'text-orange-500 hover:text-orange-400' },
-  { tab: 'verificationHooks', label: 'Checkable Claims',        dot: 'bg-fuchsia-500', color: 'text-fuchsia-500 hover:text-fuchsia-400' },
-  { tab: 'overlaps',          label: '⚠ Overlaps',    dot: 'bg-yellow-500', color: 'text-yellow-500 hover:text-yellow-400' },
+  { tab: 'claims',            label: 'Q Claims',       dot: 'bg-gray-500',  color: 'text-amber-500 hover:text-amber-400' },
+  { tab: 'predictions',       label: 'Q Predictions',  dot: 'bg-gray-500', color: 'text-violet-500 hover:text-violet-400' },
+  { tab: 'namedEntities',     label: 'Q Entities',     dot: 'bg-gray-500',   color: 'text-cyan-500 hover:text-cyan-400' },
+  { tab: 'themes',            label: 'Q Themes',       dot: 'bg-gray-500', color: 'text-indigo-500 hover:text-indigo-400' },
+  { tab: 'impliedConclusions',label: 'Q Conclusions',  dot: 'bg-gray-500', color: 'text-orange-500 hover:text-orange-400' },
+  { tab: 'verificationHooks', label: 'Checkable Claims',        dot: 'bg-gray-500', color: 'text-fuchsia-500 hover:text-fuchsia-400' },
+  { tab: 'overlaps',          label: '⚠ Overlaps',    dot: 'bg-gray-500', color: 'text-yellow-500 hover:text-yellow-400' },
 ]
 
 const bottomLinks = [
@@ -54,7 +54,7 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
       <div className="px-5 py-5 border-b border-q-border">
         <div className="flex items-center gap-2">
           <span className="text-2xl font-black text-gray-400 tracking-wider">Q</span>
-          <span className="text-lg font-semibold text-gray-200">Archive</span>
+          <span className="text-lg font-semibold text-gray-200">Drops</span>
         </div>
         <p className="text-xs text-gray-500 mt-1">4,966 Intelligence Drops</p>
       </div>
