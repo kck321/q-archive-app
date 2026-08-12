@@ -1,5 +1,6 @@
 import { NavLink, Link, useLocation } from 'react-router-dom'
 import { useState, useCallback, Fragment } from 'react'
+import { CAN_EDIT } from '../lib/appMode'
 
 const links = [
   { to: '/posts',     label: 'Post Archive', icon: '📜' },
@@ -8,6 +9,10 @@ const links = [
 
 // Colors here mirror src/lib/categoryColors.ts (tailwind -500 == those hex values) so the
 // sidebar matches the chart tabs/bars exactly.
+// Overlaps shows items the extractor filed under two categories at once — a data-quality
+// view for fixing them, not research. It is appended for the editing build only.
+const OVERLAPS_LINK = { tab: 'overlaps', label: '⚠ Overlaps', dot: 'bg-gray-500', color: 'text-yellow-500 hover:text-yellow-400' }
+
 const analysisLinks = [
   { tab: 'claims',            label: 'Q Claims',       dot: 'bg-gray-500',  color: 'text-amber-500 hover:text-amber-400' },
   { tab: 'predictions',       label: 'Q Predictions',  dot: 'bg-gray-500', color: 'text-violet-500 hover:text-violet-400' },
@@ -15,7 +20,7 @@ const analysisLinks = [
   { tab: 'themes',            label: 'Q Themes',       dot: 'bg-gray-500', color: 'text-indigo-500 hover:text-indigo-400' },
   { tab: 'impliedConclusions',label: 'Q Conclusions',  dot: 'bg-gray-500', color: 'text-orange-500 hover:text-orange-400' },
   { tab: 'verificationHooks', label: 'Checkable Claims',        dot: 'bg-gray-500', color: 'text-fuchsia-500 hover:text-fuchsia-400' },
-  { tab: 'overlaps',          label: '⚠ Overlaps',    dot: 'bg-gray-500', color: 'text-yellow-500 hover:text-yellow-400' },
+  ...(CAN_EDIT ? [OVERLAPS_LINK] : []),
 ]
 
 const bottomLinks = [

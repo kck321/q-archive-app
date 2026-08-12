@@ -188,13 +188,13 @@ export default function AnalysisArchive() {
   const [loading, setLoading] = useState(true)
   const [activeTab, setActiveTab] = useState<Cat>(() => {
     const t = searchParams.get('tab') as Cat | null
-    return t && (t === 'all' || t === 'overlaps' || t in CAT_LABELS) ? t : 'all'
+    return t && (t === 'all' || (t === 'overlaps' && CAN_EDIT) || t in CAT_LABELS) ? t : 'all'
   })
 
   // Sync tab when URL param changes (e.g. clicking sidebar links while already on this page)
   useEffect(() => {
     const t = searchParams.get('tab') as Cat | null
-    const next = t && (t === 'all' || t === 'overlaps' || t in CAT_LABELS) ? t : 'all'
+    const next = t && (t === 'all' || (t === 'overlaps' && CAN_EDIT) || t in CAT_LABELS) ? t : 'all'
     setActiveTab(next)
     // ?q= lets the "also found in" chips hand a term from one section to another.
     const q = searchParams.get('q')

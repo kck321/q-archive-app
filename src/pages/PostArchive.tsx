@@ -2,7 +2,7 @@ import { useEffect, useState, useMemo, useRef } from 'react'
 import { useNavigate, Link, useSearchParams } from 'react-router-dom'
 import { getAliasGroup } from '../lib/aliases'
 import { SEARCHED_CHIP, assignAliasColors } from '../lib/aliasColors'
-import { countPhraseOccurrences, normalizeItemKey, getTermPresence, type TermPresence, getPosts, searchAllPosts, getQuestionsForPosts, addManualQuestion, getQuestionsTimeline, getPostNumsByMonth, getPostsByNums, getStats, countPostsWithBrackets, getBracketsByMonth } from '../lib/posts'
+import { countPhraseOccurrences, normalizeItemKey, countPostsOnMonthDay, getTermPresence, type TermPresence, getPosts, searchAllPosts, getQuestionsForPosts, addManualQuestion, getQuestionsTimeline, getPostNumsByMonth, getPostsByNums, getStats, countPostsWithBrackets, getBracketsByMonth } from '../lib/posts'
 import PostCard from '../components/PostCard'
 import type { QPost } from '../types'
 import {
@@ -312,6 +312,13 @@ export default function PostArchive() {
   // Recomputed per render; the page is not open long enough for the date to change, and
   // pinning it in state would go stale across midnight for anyone who leaves a tab open.
   const todaysDelta = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+
+  // Shown on the button itself, so the count is known before tapping.
+  const [deltaCount, setDeltaCount] = useState<number | null>(null)
+  useEffect(() => {
+    const now = new Date()
+    countPostsOnMonthDay(now.getMonth(), now.getDate()).then(setDeltaCount)
+  }, [])
 
   async function handleSearch() {
     const raw = searchInput.trim()
@@ -733,13 +740,13 @@ export default function PostArchive() {
             className="text-xs bg-amber-900/30 hover:bg-amber-900/50 text-amber-200 border border-amber-700/60 hover:border-amber-500 px-3 py-1.5 rounded-lg transition-colors"
             title={`Every drop posted on ${todaysDelta}, across all years`}
           >
-            📅 See today's deltas — {todaysDelta}
+            📅 See Today's Delta — {todaysDelta}
+            {deltaCount !== null && (
+              <span className="ml-1.5 font-semibold">
+                · {deltaCount} post{deltaCount === 1 ? '' : 's'}
+              </span>
+            )}
           </button>
-          {isSearchMode && searchTerm === todaysDelta && (
-            <span className="text-xs text-gray-500">
-              {searchResults.length} drop{searchResults.length === 1 ? '' : 's'} posted on this day
-            </span>
-          )}
         </div>
 
         {/* Closes the search group: title/search, post-number jump, sort, deltas. */}

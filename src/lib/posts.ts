@@ -1116,6 +1116,23 @@ export interface QTextLink {
  *
  * A post can carry several links, so this is flattened: 2,614 links across 1,715 posts.
  */
+/**
+ * How many drops fall on a given month/day in ANY year — the "delta" for that date.
+ *
+ * Counted directly rather than by running the search, so the number can be shown on the
+ * button before anyone taps it.
+ */
+export async function countPostsOnMonthDay(month: number, day: number): Promise<number> {
+  const { posts } = await loadLocalData()
+  let n = 0
+  for (const p of posts) {
+    if (!p.timestamp) continue
+    const d = new Date(p.timestamp * 1000)
+    if (d.getMonth() === month && d.getDate() === day) n++
+  }
+  return n
+}
+
 export async function getAllTextLinks(): Promise<QTextLink[]> {
   const { posts } = await loadLocalData()
   const rx = /https?:\/\/[^\s<>'")\]]+/g
