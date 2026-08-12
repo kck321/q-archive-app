@@ -526,6 +526,29 @@ export default function PostArchive() {
   // Same shape as every other section: a dedicated `matches` series beside the grey posts
   // bar, rather than tinting the posts bar itself. Tinting hid the actual match count —
   // a month with 1 hit and a month with 9 were the same height, only a different shade.
+  // Hide the toolbar while scrolling DOWN, bring it back on the first scroll UP — so the
+  // search is one flick away without permanently costing a phone screen its top strip.
+  // It slides back to just under the fixed "Q Drops" bar rather than over it.
+  const [hideBar, setHideBar] = useState(false)
+  useEffect(() => {
+    let last = window.scrollY
+    let frame = 0
+    const onScroll = () => {
+      if (frame) return
+      frame = requestAnimationFrame(() => {
+        frame = 0
+        const y = window.scrollY
+        // Near the top it is always shown, and small jitters are ignored so it does not
+        // flicker as the browser's own address bar collapses.
+        if (y < 90) setHideBar(false)
+        else if (Math.abs(y - last) > 8) setHideBar(y > last)
+        last = y
+      })
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => { if (frame) cancelAnimationFrame(frame); window.removeEventListener('scroll', onScroll) }
+  }, [])
+
   // Month tapped on a phone, for the readout under the chart.
   const [tappedMonth, setTappedMonth] = useState<string | null>(null)
 
@@ -598,7 +621,7 @@ export default function PostArchive() {
       {/* Sticks BELOW the fixed "Q Drops" bar on phones (that bar is h-12), and at the
           very top on desktop where there is no such bar. z-20 keeps it under the header and
           over the chart tooltip, which sits at z-10. */}
-      <div className="sticky top-12 lg:top-0 z-20 bg-[#0a0e1a] border-b border-q-border px-4 sm:px-6 pt-3 sm:pt-5 pb-3 sm:pb-4 space-y-3 shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
+      <div className={`sticky top-12 lg:top-0 z-20 bg-[#0a0e1a] border-b border-q-border px-4 sm:px-6 pt-3 sm:pt-5 pb-3 sm:pb-4 space-y-3 shadow-[0_2px_12px_rgba(0,0,0,0.6)] transition-transform duration-200 lg:!translate-y-0 ${hideBar ? '-translate-y-[130%]' : 'translate-y-0'}`}>
 
         {/* Title + search row */}
         {/* One line, always. flex-wrap plus a 220px minimum on the input meant the button
