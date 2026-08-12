@@ -445,14 +445,17 @@ export default function QRequests() {
                       </span>
                     </p>
                     <div className="flex flex-wrap gap-1.5">
-                      {(expandedChips.has(item.text) ? item.postNums : item.postNums.slice(0, CHIPS)).map(num => {
+                      {/* A selected month narrows each row to THAT month's posts. Without
+                          this the row kept every post it ever had, so the month you clicked
+                          could sit past the chip cap and the row looked empty of it. */}
+                      {(() => { const mn = monthPostNums ? item.postNums.filter(n => monthPostNums.has(n)) : item.postNums; return (expandedChips.has(item.text) ? mn : mn.slice(0, CHIPS)) })().map(num => {
                         const inMonth = monthPostNums?.has(num) ?? null
                         const pulsing = hoverPostNums?.has(num) ?? false
                         return (
                           <Link key={num} to={`/post/${num}?flash=1&highlight=${encodeURIComponent(item.text)}&rk=request`}
                             title={inMonth ? 'in the selected month' : undefined}
                             className={`text-xs bg-gray-800 hover:bg-gray-700 border border-gray-700 hover:border-green-700 text-gray-400 hover:text-green-300 rounded px-1.5 py-0.5 transition-all font-mono ${
-                              inMonth === null ? '' : inMonth ? 'ring-2 ring-white/70 text-white font-bold' : 'opacity-30'
+                              inMonth ? 'ring-2 ring-white/70 text-white font-bold' : ''
                             } ${item.repeats[num] > 1 ? 'border-amber-500/70' : ''} ${pulsing || (inMonth && flashMonth) ? 'animate-chip-pulse font-bold z-10 relative' : ''}`}>
                             #{num}
                             {item.repeats[num] > 1 && (

@@ -492,7 +492,9 @@ export default function QBrackets() {
                       </span>
                     </p>
                     <div className="flex flex-wrap gap-1.5">
-                      {(expandedChips.has(entry.code) ? entry.postNums : entry.postNums.slice(0, CHIPS)).map(num => {
+                      {/* A selected month narrows the row to THAT month's posts; otherwise
+                          the month clicked could sit past the chip cap. */}
+                      {(() => { const mn = monthPostNums ? entry.postNums.filter(n => monthPostNums.has(n)) : entry.postNums; return (expandedChips.has(entry.code) ? mn : mn.slice(0, CHIPS)) })().map(num => {
                         const inMonth = monthPostNums?.has(num) ?? null
                         const pulsing = hoverPostNums?.has(num) ?? false
                         return (
@@ -501,7 +503,7 @@ export default function QBrackets() {
                           to={`/post/${num}?flash=1&highlight=${encodeURIComponent(entry.code)}&rk=bracket`}
                           title={inMonth ? 'in the selected month' : undefined}
                           className={`text-xs bg-gray-800 hover:bg-gray-700 border border-gray-700 hover:border-red-700 text-gray-400 hover:text-red-300 rounded px-1.5 py-0.5 transition-all font-mono ${
-                            inMonth === null ? '' : inMonth ? 'ring-2 ring-white/70 text-white font-bold' : 'opacity-30'
+                            inMonth ? 'ring-2 ring-white/70 text-white font-bold' : ''
                           } ${(entry.repeats?.[num] ?? 0) > 1 ? 'border-amber-500/70' : ''} ${pulsing || (inMonth && flashMonth) ? 'animate-chip-pulse font-bold z-10 relative' : ''}`}
                         >
                           #{num}
@@ -520,7 +522,7 @@ export default function QBrackets() {
                           })}
                           className="text-xs px-2 py-0.5 rounded border border-gray-600 bg-gray-800 text-gray-300 hover:text-white hover:border-gray-400 transition-colors font-mono"
                         >
-                          {expandedChips.has(entry.code) ? '− show fewer' : `+${(entry.postNums.length - CHIPS).toLocaleString()} more`}
+                          {expandedChips.has(entry.code) ? '− show fewer' : `+${((monthPostNums ? entry.postNums.filter(n => monthPostNums.has(n)) : entry.postNums).length - CHIPS).toLocaleString()} more`}
                         </button>
                       )}
                       {entry.postNums.length > 30 && (

@@ -26,10 +26,29 @@
   <!-- Q tail -->
   <path d="M 330 322 L 400 400" stroke="url(#ring)" stroke-width="34" stroke-linecap="round" fill="none"/>
 
-  <!-- A single drop above the wordmark, so the icon still reads as "drops" at 48px where
-       the lettering is too small to make out. -->
-  <path d="M 256 150 C 256 150 232 186 232 202 a 24 24 0 0 0 48 0 c 0 -16 -24 -52 -24 -52 z"
-        fill="url(#drop)"/>
+  <!-- Popcorn above the wordmark. Drawn rather than set as an emoji character: emoji render
+       from a system font, and the icon has to look identical on Android, iOS, Windows and in
+       the browser tab — a font-dependent glyph would differ on each, or fail to render at all
+       in the SVG rasteriser used at build time. -->
+  <g transform="translate(256 176)">
+    <!-- Popped kernels -->
+    <g fill="#fde68a">
+      <circle cx="-26" cy="-24" r="15"/>
+      <circle cx="-2"  cy="-34" r="16"/>
+      <circle cx="24"  cy="-24" r="15"/>
+      <circle cx="-14" cy="-10" r="14"/>
+      <circle cx="12"  cy="-10" r="14"/>
+    </g>
+    <g fill="#fffbeb" opacity="0.85">
+      <circle cx="-20" cy="-30" r="6"/>
+      <circle cx="4"   cy="-40" r="6"/>
+      <circle cx="18"  cy="-28" r="5"/>
+    </g>
+    <!-- Striped tub -->
+    <path d="M -30 -2 L -22 52 L 22 52 L 30 -2 Z" fill="#ef4444"/>
+    <path d="M -21 -2 L -15 52 L -6 52 L -9 -2 Z" fill="#fef2f2"/>
+    <path d="M 3 -2 L 6 52 L 15 52 L 21 -2 Z" fill="#fef2f2"/>
+  </g>
 
   <!-- DROPS across the middle of the Q -->
   <text x="256" y="284" text-anchor="middle"

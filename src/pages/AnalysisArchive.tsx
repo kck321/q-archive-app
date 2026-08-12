@@ -747,6 +747,13 @@ export default function AnalysisArchive() {
             // Chronological. Density is already visible on each chip as "×N", so ordering
             // by it as well made the post numbers impossible to scan or cross-reference.
             chips.sort((a, b) => a.num - b.num)
+            // With a month selected, show only THAT month's posts under each term.
+            //
+            // Selecting a month already filtered which terms appear, but every term still
+            // listed all of its posts — so for a term used across five years, the month you
+            // clicked could sit hundreds of chips down and past the 40-chip cap, leaving a
+            // row that appeared to contain none of the month you asked for.
+            const monthChips = monthPostNums ? chips.filter(c => monthPostNums.has(c.num)) : chips
             return (
               <div
                 key={`${item.category}-${idx}`}
@@ -793,21 +800,21 @@ export default function AnalysisArchive() {
                         badge-less rows reading as ambiguous, but the rank number now sits
                         above every row, so a row with no count badge unambiguously means
                         one post.) */}
-                    {chips.length > 1 && (
+                    {monthChips.length > 1 && (
                     <span
                       className="text-xs font-bold px-2 py-0.5 rounded-full border whitespace-nowrap text-white bg-gray-700 border-gray-600"
                       title={
                         aliases.length > 0
                           ? `${item.postNums.length} for "${item.text}" + alias mentions = ${chips.length} posts`
-                          : `${chips.length} post${chips.length !== 1 ? 's' : ''}`
+                          : `${monthChips.length} post${monthChips.length !== 1 ? 's' : ''}`
                       }
                     >
-                      ×{chips.length} posts
+                      ×{monthChips.length} posts
                     </span>
                     )}
                     {/* Month span of this item's posts — month granularity only. */}
                     {(() => {
-                      const span = monthSpanLabel(chips.map(c => c.num), n => monthOfPost.get(n))
+                      const span = monthSpanLabel(monthChips.map(c => c.num), n => monthOfPost.get(n))
                       return span ? (
                         <span className="text-[10px] text-gray-600 leading-tight text-center whitespace-nowrap">
                           {span}
@@ -840,7 +847,7 @@ export default function AnalysisArchive() {
                       </p>
                     )}
                     <div className="flex flex-wrap gap-1 mb-2">
-                      {(expandedChips.has(key) ? chips : chips.slice(0, CHIPS)).map(({ num, term }) => {
+                      {(expandedChips.has(key) ? monthChips : monthChips.slice(0, CHIPS)).map(({ num, term }) => {
                         // Clicking a month bar should point AT the posts from that month,
                         // not just shorten the list — ring the ones that belong to it and
                         // fade the rest so the answer is visible inside each row.
@@ -856,9 +863,7 @@ export default function AnalysisArchive() {
                                 : term !== item.text ? `mentions "${term}"` : undefined
                             }
                             className={`text-xs px-2 py-0.5 border rounded font-mono transition-all ${termColor.get(term.toLowerCase()) ?? CANON_CHIP} ${
-                              inMonth === null ? '' : inMonth
-                                ? 'ring-2 ring-white/70 font-bold scale-105'
-                                : 'opacity-30'
+                              inMonth ? 'ring-2 ring-white/70 font-bold' : ''
                             } ${item.repeats[num] > 1 ? 'border-amber-500/70' : ''} ${
                               pulsing || (inMonth && flashMonth) ? 'animate-chip-pulse font-bold z-10 relative' : ''
                             }`}
@@ -870,7 +875,7 @@ export default function AnalysisArchive() {
                           </Link>
                         )
                       })}
-                      {chips.length > CHIPS && (
+                      {monthChips.length > CHIPS && (
                         <button
                           onClick={() => setExpandedChips(prev => {
                             const next = new Set(prev)
@@ -881,7 +886,7 @@ export default function AnalysisArchive() {
                         >
                           {expandedChips.has(key)
                             ? '− show fewer'
-                            : `+${(chips.length - CHIPS).toLocaleString()} more`}
+                            : `+${(monthChips.length - CHIPS).toLocaleString()} more`}
                         </button>
                       )}
                     </div>

@@ -114,7 +114,10 @@ function QuestionCard({ r, selectedNums, hoverNums, flashNums, rank, monthOf }: 
   const span = monthSpanLabel(r.postNums, monthOf)
   // Same 40-chip cap as every other section.
   const [expanded, setExpanded] = useState(false)
-  const shown = expanded ? r.postNums : r.postNums.slice(0, CHIPS)
+  // A selected month narrows the row to THAT month's posts — otherwise the month clicked
+  // could sit past the chip cap, and the row read as if it had none of it.
+  const nums = selectedNums ? r.postNums.filter(n => selectedNums.has(n)) : r.postNums
+  const shown = expanded ? nums : nums.slice(0, CHIPS)
   return (
     <div className="bg-q-panel border border-q-border rounded-xl p-4">
       <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3">
@@ -162,12 +165,12 @@ function QuestionCard({ r, selectedNums, hoverNums, flashNums, rank, monthOf }: 
               )}
             </Link>
           ))}
-          {r.postNums.length > CHIPS && (
+          {nums.length > CHIPS && (
             <button
               onClick={() => setExpanded(v => !v)}
               className="text-xs px-2 py-0.5 rounded border border-gray-600 bg-gray-800 text-gray-300 hover:text-white hover:border-gray-400 transition-colors font-mono"
             >
-              {expanded ? '− show fewer' : `+${(r.postNums.length - CHIPS).toLocaleString()} more`}
+              {expanded ? '− show fewer' : `+${(nums.length - CHIPS).toLocaleString()} more`}
             </button>
           )}
         </div>
