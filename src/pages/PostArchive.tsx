@@ -660,7 +660,7 @@ export default function PostArchive() {
       {/* Sticks BELOW the fixed "Q Drops" bar on phones (that bar is h-12), and at the
           very top on desktop where there is no such bar. z-20 keeps it under the header and
           over the chart tooltip, which sits at z-10. */}
-      <div className={`sticky top-12 lg:top-0 z-20 bg-[#0a0e1a] border-b border-q-border px-4 sm:px-6 pt-3 sm:pt-5 pb-3 sm:pb-4 space-y-3 shadow-[0_2px_12px_rgba(0,0,0,0.6)] transition-transform duration-200 lg:!translate-y-0 ${hideBar ? '-translate-y-[130%]' : 'translate-y-0'}`}>
+      <div className={`sticky top-[calc(3rem+env(safe-area-inset-top))] lg:top-0 z-20 bg-[#0a0e1a] border-b border-q-border px-4 sm:px-6 pt-3 sm:pt-5 pb-3 sm:pb-4 space-y-3 shadow-[0_2px_12px_rgba(0,0,0,0.6)] transition-transform duration-200 lg:!translate-y-0 ${hideBar ? '-translate-y-[130%]' : 'translate-y-0'}`}>
 
         {/* Title + search row */}
         {/* One line, always. flex-wrap plus a 220px minimum on the input meant the button

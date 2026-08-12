@@ -47,6 +47,15 @@ fi
 # SPA fallback so deep-link refreshes (e.g. /posts) still load the app.
 cp dist/index.html dist/404.html
 
+# Stamp the service worker with this deploy's version. Without this an installed app keeps
+# serving the build it first cached — the classic way a PWA strands users on old code.
+SW_VERSION="qdrops-$(date +%Y%m%d-%H%M%S)"
+if [ -f dist/sw.js ]; then
+  sed -i.bak "s/const CACHE_VERSION = '[^']*'/const CACHE_VERSION = '$SW_VERSION'/" dist/sw.js
+  rm -f dist/sw.js.bak
+  echo "Service worker cache version: $SW_VERSION"
+fi
+
 # Re-assert the custom domain on every deploy (see the note at the top).
 if [ -n "$SITE_DOMAIN" ]; then
   echo "$SITE_DOMAIN" > dist/CNAME

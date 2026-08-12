@@ -60,7 +60,7 @@ export default function App() {
         <UpdateBanner />
 
         {/* Mobile top bar with hamburger (hidden on lg+) */}
-        <header className="lg:hidden fixed top-0 inset-x-0 z-30 h-12 bg-q-panel border-b border-q-border flex items-center gap-3 px-4">
+        <header className="lg:hidden fixed top-0 inset-x-0 z-30 h-[calc(3rem+env(safe-area-inset-top))] pt-[env(safe-area-inset-top)] bg-q-panel border-b border-q-border flex items-center gap-3 px-4">
           <button onClick={() => setNavOpen(true)} aria-label="Open menu" className="text-gray-300 hover:text-white p-1 -ml-1">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
           </button>
@@ -73,7 +73,7 @@ export default function App() {
         )}
 
         <Sidebar open={navOpen} onClose={() => setNavOpen(false)} />
-        <main ref={mainRef} className="flex-1 min-w-0 lg:overflow-y-auto pt-12 lg:pt-0">
+        <main ref={mainRef} className="flex-1 min-w-0 lg:overflow-y-auto pt-[calc(3rem+env(safe-area-inset-top))] lg:pt-0 pb-[env(safe-area-inset-bottom)]">
           <ScrollRestoration containerRef={mainRef} />
           <Routes>
             <Route path="/"              element={<Navigate to="/posts" replace />} />
