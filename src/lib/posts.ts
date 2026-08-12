@@ -1063,7 +1063,7 @@ async function computeQuestionFrequency(minCount = 2): Promise<QuestionFrequency
 export async function getQuestionsTimeline(): Promise<{
   month: string; questions: number; posts: number; requests: number
   claims: number; predictions: number; namedEntities: number
-  themes: number; impliedConclusions: number; verificationHooks: number
+  themes: number; impliedConclusions: number; verificationHooks: number; emphasis: number
 }[]> {
   // Load all posts to build postId → timestamp map and count per-category by month
   const { posts: allPostsTL, questions: allQuestionsTL } = await loadLocalData()
@@ -1076,6 +1076,7 @@ export async function getQuestionsTimeline(): Promise<{
   const themesByMonth: Record<string, number> = {}
   const impliedConclusionsByMonth: Record<string, number> = {}
   const verificationHooksByMonth: Record<string, number> = {}
+  const emphasisByMonth: Record<string, number> = {}
 
   for (const post of allPostsTL) {
     tsByPostId[post.id] = post.timestamp
@@ -1095,6 +1096,7 @@ export async function getQuestionsTimeline(): Promise<{
       themesByMonth[month] = (themesByMonth[month] ?? 0) + (a.themes?.length ?? 0)
       impliedConclusionsByMonth[month] = (impliedConclusionsByMonth[month] ?? 0) + (a.impliedConclusions?.length ?? 0)
       verificationHooksByMonth[month] = (verificationHooksByMonth[month] ?? 0) + (a.verificationHooks?.length ?? 0)
+      emphasisByMonth[month] = (emphasisByMonth[month] ?? 0) + (a.emphasis?.length ?? 0)
     }
   }
 
@@ -1125,6 +1127,7 @@ export async function getQuestionsTimeline(): Promise<{
       themes: themesByMonth[month] ?? 0,
       impliedConclusions: impliedConclusionsByMonth[month] ?? 0,
       verificationHooks: verificationHooksByMonth[month] ?? 0,
+      emphasis: emphasisByMonth[month] ?? 0,
     }))
 }
 

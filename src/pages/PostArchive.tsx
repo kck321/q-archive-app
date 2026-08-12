@@ -222,7 +222,7 @@ export default function PostArchive() {
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('desc')
 
   // Timeline chart
-  const [timeline, setTimeline] = useState<{ month: string; questions: number; posts: number; requests: number; claims: number; predictions: number; namedEntities: number; themes: number; impliedConclusions: number; verificationHooks: number; brackets: number }[]>([])
+  const [timeline, setTimeline] = useState<{ month: string; questions: number; posts: number; requests: number; claims: number; predictions: number; namedEntities: number; themes: number; impliedConclusions: number; verificationHooks: number; emphasis: number; brackets: number }[]>([])
   const [postNumsByMonth, setPostNumsByMonth] = useState<Record<string, number[]>>({})
   const [selectedMonth, setSelectedMonth] = useState<string | null>(null)
   const [hoverMonth, setHoverMonth] = useState<string | null>(null)
@@ -465,7 +465,8 @@ export default function PostArchive() {
       themes: acc.themes + e.themes,
       impliedConclusions: acc.impliedConclusions + e.impliedConclusions,
       verificationHooks: acc.verificationHooks + e.verificationHooks,
-    }), { requests: 0, claims: 0, predictions: 0, namedEntities: 0, themes: 0, impliedConclusions: 0, verificationHooks: 0 })
+      emphasis: acc.emphasis + (e.emphasis ?? 0),
+    }), { requests: 0, claims: 0, predictions: 0, namedEntities: 0, themes: 0, impliedConclusions: 0, verificationHooks: 0, emphasis: 0 })
   }, [timeline])
 
   // Phone-sized screens get a PINNED tooltip (see the Tooltip props below).
@@ -672,6 +673,7 @@ export default function PostArchive() {
     themes:             analysisTotals?.themes ?? null,
     impliedConclusions: analysisTotals?.impliedConclusions ?? null,
     verificationHooks:  analysisTotals?.verificationHooks ?? null,
+    emphasis:           analysisTotals?.emphasis ?? null,
     brackets:           bracketCount,
   }
 

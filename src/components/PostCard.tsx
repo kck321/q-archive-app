@@ -234,6 +234,11 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
               {post.postAnalysis.verificationHooks!.length} checkable claim{post.postAnalysis.verificationHooks!.length !== 1 ? 's' : ''}
             </span>
           )}
+          {post.postAnalysis && (post.postAnalysis.emphasis?.length ?? 0) > 0 && (
+            <span className="text-xs bg-slate-800/60 text-slate-300 border border-slate-600/60 px-2 py-0.5 rounded font-medium">
+              {post.postAnalysis.emphasis!.length} emphasis
+            </span>
+          )}
           {(post.qThreadReplies?.length ?? 0) > 0 && (
             <span className="text-xs bg-yellow-900/50 text-yellow-300 border border-yellow-700/60 px-2 py-0.5 rounded font-medium">
               🔐 Q replied ×{post.qThreadReplies!.length}
