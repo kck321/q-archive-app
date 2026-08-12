@@ -4,22 +4,18 @@ import { CATEGORY_COLOR } from '../lib/categoryColors'
 /**
  * Turn the language highlighting off, so the archive reads as a plain post search.
  *
- * The BOX carries the meaning: it is filled with a blend of every category colour in the
- * order they appear in the app — questions blue, requests green, claims amber, through to
- * checkable-claims fuchsia — so the control shows what it switches off. Tick it and the box
- * drains to grey, which is what the posts do too. The label stays plain text; colouring both
- * was noise.
+ * The BOX carries the meaning: it is filled with a blend of the highlight colours — blue,
+ * green, red, orange — so the control shows what it switches off. Tick it and the box drains
+ * to grey, which is what the posts do too. The label stays plain text; colouring both was
+ * noise.
  */
+// Four stops, not all nine. Nine colours in a 16px square blur into mud; four hold their
+// edges at that size and still read as "the highlight colours".
 const STOPS = [
-  CATEGORY_COLOR.questions,
-  CATEGORY_COLOR.requests,
-  CATEGORY_COLOR.claims,
-  CATEGORY_COLOR.predictions,
-  CATEGORY_COLOR.namedEntities,
-  CATEGORY_COLOR.brackets,
-  CATEGORY_COLOR.themes,
-  CATEGORY_COLOR.impliedConclusions,
-  CATEGORY_COLOR.verificationHooks,
+  CATEGORY_COLOR.questions,           // blue
+  CATEGORY_COLOR.requests,            // green
+  CATEGORY_COLOR.brackets,            // red
+  CATEGORY_COLOR.impliedConclusions,  // orange
 ]
 
 const GRADIENT = `linear-gradient(135deg, ${STOPS.join(', ')})`
