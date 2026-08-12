@@ -68,9 +68,10 @@ export const NOUN_SUBJECT_VERB = /^[\w\d]+(?:\s+(?!the\b|a\b|an\b|this\b|that\b|
 const NOUN_USAGE = /^\w+\s+(is|are|was|were|will|would|can|could|should|may|might|must|has|have|had|of|\d)/i
 
 // Fixed instruction idioms with no leading verb.
-// "nothing to see here" was in this list and does not belong: it is Q characterising what the
-// other side says, a statement, not an instruction to the reader.
-const IDIOMS = /^(eyes on|godspeed|god speed|wheels up|game over|full steam|all hands|heads up|hands on deck|attention on deck)\b/i
+// Only idioms that actually INSTRUCT. "nothing to see here", "game over" and "wheels up" were
+// in this list and forced three statements into imperative mood — Q characterising a situation
+// ("GAME OVER.", "Wheels up.") is not an instruction to the reader.
+const IDIOMS = /^(eyes on|godspeed|god speed|all hands|heads up|hands on deck|attention on deck)\b/i
 
 // Words that are equally common as noun and verb. Standing alone they are undecidable.
 const AMBIGUOUS_SOLO = new Set('panic focus trust fight watch stand hold name question answer drop link record report count source review check note post map search trace list study rest change turn help support love hope play win control power order command force press guard rush stop'.split(' '))
@@ -172,16 +173,43 @@ export function imperativeMood(text, extraVerbs) {
 
 // Family is assigned only AFTER mood is confirmed.
 const FAMILY_RULES = [
-  ['prohibition', /^(do not|don'?t|never|stop|cease|avoid|ignore|dismiss|reject|refuse|deny)\b/i],
-  ['morale', /^(trust|pray|have faith|keep faith|stay|stand|hold the line|be strong|be vigilant|be ready|be safe|be well|be brave|be patient|remain|prepare|fight|defend|protect|unite|enjoy|relax|sit back|buckle|godspeed|rest|breathe|smile|celebrate|endure|persist|go with god|god bless|keep going|have hope|believe)\b/i],
-  ['attention', /^(read|re-?read|re_?read|watch|listen|observe|note|notice|see|view|look|revisit|refer|focus|monitor|scan|zoom|eyes on|pay attention|stay tuned|keep watching)\b/i],
-  ['cognition', /^(think|remember|recall|consider|understand|learn|digest|imagine|apply|expand|reflect|realize|realise|recogni[sz]e|picture|visuali[sz]e|gauge|weigh|judge|decide|use logic|use your|open your eyes|open their eyes|wake|awaken|rethink|paint the picture)\b/i],
-  ['dissemination', /^(share|spread|meme|archive|save|screenshot|post|publish|broadcast|organi[sz]e|rally|mobili[sz]e|educate|inform|tell|show|teach|warn|alert|vote|call|contact|demand|speak|amplify|push|distribute|release|announce|update|be heard|be loud)\b/i],
+  // The apostrophe class matters: Q writes "Don’t forget about Huma." with a CURLY
+  // apostrophe, and a straight-quote-only pattern sent all 7 of those to no-family.
+  ['prohibition', /^(do not|don['’]?t|never|stop|cease|avoid|ignore|dismiss|reject|refuse|deny)\b/i],
+  // "be" + a disposition adjective is morale generically — a fixed "be strong|be ready" list
+  // left "Be proud.", "Be prepared.", "Be careful who you follow." and "Be aware of your
+  // surroundings." with no family. "Be here tomorrow." is deliberately NOT covered: that is
+  // operational, and the adjective list keeps the two apart.
+  ['morale', /^(trust|pray|have faith|keep faith|have a (nice|wonderful|great|good|blessed)|stay|stand|hold the line|be\s+(strong|vigilant|ready|safe|well|brave|patient|proud|prepared|careful|aware|calm|smart|wise|kind|good|blessed|encouraged|fearless|confident)|remain|prepare|fight|defend|protect|unite|unify|rise up|enjoy|relax|sit back|buckle|godspeed|rest|breathe|smile|celebrate|endure|persist|go with god|god bless|keep going|have hope|believe)\b/i],
+  ['attention', /^(attention on deck|all hands on deck|eyes on|read|re-?read|re_?read|watch|listen|observe|note|notice|see|view|look|revisit|refer|focus|monitor|scan|zoom|eyes on|pay attention|stay tuned|keep watching)\b/i],
+  // "ask yourself" and "question everything" are cognition instructions, not research: the
+  // deliverable is a realisation, not a finding. They were in the old adjudicator's family map
+  // and were lost when it moved here, sending 12 units to no-family.
+  ['cognition', /^(think|remember|recall|consider|understand|learn|digest|imagine|apply|expand|reflect|realize|realise|recogni[sz]e|picture|visuali[sz]e|gauge|weigh|judge|decide|use logic|use your|open your eyes|open their eyes|wake|awaken|rethink|paint the picture|ask yourself|question everything|wonder)\b/i],
+  ['dissemination', /^(share|spread|meme|archive|save|screenshot|post|publish|broadcast|organi[sz]e|rally|mobili[sz]e|educate|inform|tell|show|teach|warn|alert|vote|call|contact|demand|speak|amplify|push|distribute|release|announce|update|report|relay|flag|be heard|be loud)\b/i],
   ['research', /^(follow|dig|research|trace|compare|reconcile|cross|connect|map|investigate|verify|confirm|check|track|search|source|corroborate|audit|analy[sz]e|calculate|count|measure|locate|find|identify|gather|collect|review|study|examine|inspect|dissect|decode|decipher|solve|test|probe|hunt|chase|pursue|uncover|expose|reveal|define|list|name)\b/i],
+  // OPERATIONAL — the seventh family. Directives whose primary function is to perform,
+  // initiate, maintain, alter, prepare, organise or control an action or state, rather than to
+  // research, think, attend, sustain morale, spread, or forbid.
+  //
+  //   "Keep open (+6 mo)."   "Open source."   "Make a list."
+  //   "Control the information (THEY)."   "READY THE MEMES."   "DISARM."
+  //
+  // Last in the list so it can only take what the other six leave. It is deliberately a verb
+  // set and NOT a bare catch-all: a genuine no-family residue has to stay visible for
+  // adjudication rather than being quietly absorbed here.
+  ['operational', /^(keep|make|put|take|start|begin|end|add|remove|set|handle|get|give|select|clear|clean|build|create|continue|buy|sell|trade|wait|pause|come|close|deploy|launch|execute|engage|disengage|pick|choose|join|leave|move|turn|change|fix|repair|adjust|replace|restore|reset|control|ready|disarm|arm|activate|initiate|maintain|organi[sz]e|return|go|drop|use|do|open|feed|water|plant|harvest|cut|break|mark|flag|link|tie|bind|sort|rank|order|filter|split|merge|pass|run|deliver|send|bring|carry|cover|reach|draw|write|walk|drive|catch|throw|hit|strike|grow|act|hold|correct|assemble|install|remain)\b/i],
 ]
 
 export function familyOf(text) {
   const bare = (text ?? '').replace(/^[>\s]+/, '').trim()
   for (const [family, rx] of FAMILY_RULES) if (rx.test(bare)) return family
+  // The mood test already strips a leading adverb; family assignment did not, so "Please pray."
+  // (11 units) and "Now think about the timing…" landed in no-family despite being plain
+  // morale and cognition. Same strip, same rules — never a different rule.
+  if (LEADING_ADVERB.test(bare)) {
+    const after = bare.replace(LEADING_ADVERB, '')
+    for (const [family, rx] of FAMILY_RULES) if (rx.test(after)) return family
+  }
   return 'other'
 }

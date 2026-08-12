@@ -3,32 +3,33 @@
  "questionsFrozen": true,
  "productionChanged": false,
  "totals": {
-  "directiveOccurrences": 1974,
-  "distinct": 1159,
-  "posts": 1208,
+  "directiveOccurrences": 2277,
+  "distinct": 1390,
+  "posts": 1351,
   "byFamily": {
-   "cognition": 658,
+   "cognition": 673,
    "research": 493,
-   "morale": 400,
-   "attention": 284,
-   "dissemination": 84,
-   "prohibition": 55
+   "operational": 243,
+   "morale": 427,
+   "attention": 291,
+   "dissemination": 88,
+   "prohibition": 62
   },
   "alsoCertifiedQuestions": 228,
-  "notCurrentlyStored": 302,
-  "storedButNotDirective": 1074,
+  "notCurrentlyStored": 428,
+  "storedButNotDirective": 897,
   "needsContext": 60,
-  "unfamilied": 359
+  "unfamilied": 52
  },
  "pipeline": {
-  "NOT_A_DIRECTIVE": 20190,
-  "DIRECTIVE_CERTIFIABLE": 1746,
+  "NOT_A_DIRECTIVE": 20194,
+  "DIRECTIVE_CERTIFIABLE": 2049,
   "CERTIFIED_QUESTION_ONLY": 6368,
   "INFO_REQUEST_BOTH": 177,
   "NEEDS_CONTEXT": 60,
-  "DIRECTIVE_UNFAMILIED": 359,
   "SEGMENTATION_ERROR": 326,
   "DIRECTIVE_LEARNED_VERB": 263,
+  "DIRECTIVE_UNFAMILIED": 52,
   "QUESTION_MARK_NOT_CERTIFIED": 29,
   "DIRECTIVE_WITH_EMBEDDED_QUESTION": 51
  },
@@ -211,12 +212,12 @@
     "after": "Who was arrested?"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"open\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"open\" and has no subject — operational"
   },
   {
    "postNum": 1008,
@@ -247,12 +248,12 @@
     "after": "Carter Page was a plant."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"open\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"open\" and has no subject — operational"
   },
   {
    "postNum": 1008,
@@ -283,12 +284,12 @@
     "after": "Why is Mueller going after 'inside plants'?"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"open\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"open\" and has no subject — operational"
   },
   {
    "postNum": 1008,
@@ -381,12 +382,12 @@
     "after": "AIR"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"water\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"water\" and has no subject — operational"
   },
   {
    "postNum": 1010,
@@ -659,12 +660,12 @@
     "after": "Godspeed."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"come\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"come\" and has no subject — operational"
   },
   {
    "postNum": 103,
@@ -917,12 +918,12 @@
     "after": "Operators are in harms way."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "adverb \"please\" in front of the base-form verb \"pray\" — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "adverb \"please\" in front of the base-form verb \"pray\" — morale"
   },
   {
    "postNum": 105,
@@ -935,12 +936,12 @@
     "after": "More to follow."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "adverb \"please\" in front of the base-form verb \"pause\" — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "adverb \"please\" in front of the base-form verb \"pause\" — operational"
   },
   {
    "postNum": 1050,
@@ -1055,12 +1056,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"open\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"open\" and has no subject — operational"
   },
   {
    "postNum": 1056,
@@ -1091,12 +1092,12 @@
     "after": "Watch what happens."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "dissemination",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"report\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"report\" and has no subject — dissemination"
   },
   {
    "postNum": 1057,
@@ -1127,12 +1128,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"end\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"end\" and has no subject — operational"
   },
   {
    "postNum": 1059,
@@ -1196,12 +1197,12 @@
     "after": "@Snowden"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"open\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"open\" and has no subject — operational"
   },
   {
    "postNum": 1063,
@@ -1214,12 +1215,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"close\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"close\" and has no subject — operational"
   },
   {
    "postNum": 1068,
@@ -1418,12 +1419,12 @@
     "after": "Fly High."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "dissemination",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"relay\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"relay\" and has no subject — dissemination"
   },
   {
    "postNum": 1079,
@@ -1562,12 +1563,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"open\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"open\" and has no subject — operational"
   },
   {
    "postNum": 1091,
@@ -1634,12 +1635,12 @@
     "after": "SEC detail background."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "dissemination",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"flag\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"flag\" and has no subject — dissemination"
   },
   {
    "postNum": 1094,
@@ -1754,12 +1755,12 @@
     "after": "Loud w/ findings."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 1100,
@@ -1877,12 +1878,12 @@
     "after": "MIL assets on the ground locked out of GZ."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"hold\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"hold\" and has no subject — operational"
   },
   {
    "postNum": 1106,
@@ -2119,12 +2120,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"start\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"start\" and has no subject — operational"
   },
   {
    "postNum": 1122,
@@ -2242,12 +2243,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"end\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"end\" and has no subject — operational"
   },
   {
    "postNum": 1127,
@@ -2670,12 +2671,12 @@
     "after": "Direct discussions avail [now] w/ Mueller."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"join\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"join\" and has no subject — operational"
   },
   {
    "postNum": 1180,
@@ -2985,12 +2986,12 @@
     "after": "All."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"build\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"build\" and has no subject — operational"
   },
   {
    "postNum": 119,
@@ -3074,12 +3075,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 1199,
@@ -3143,12 +3144,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"open\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"open\" and has no subject — operational"
   },
   {
    "postNum": 1209,
@@ -3176,12 +3177,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"end\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"end\" and has no subject — operational"
   },
   {
    "postNum": 121,
@@ -3230,12 +3231,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"open\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"open\" and has no subject — operational"
   },
   {
    "postNum": 1218,
@@ -3593,12 +3594,12 @@
     "after": "On the clock."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "adverb \"please\" in front of the base-form verb \"stand\" — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "adverb \"please\" in front of the base-form verb \"stand\" — morale"
   },
   {
    "postNum": 1235,
@@ -3611,12 +3612,12 @@
     "after": "AWAN."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "prohibition",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"don\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"don\" and has no subject — prohibition"
   },
   {
    "postNum": 1238,
@@ -4330,12 +4331,12 @@
     "after": "Why?"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"open\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"open\" and has no subject — operational"
   },
   {
    "postNum": 1266,
@@ -4836,12 +4837,12 @@
     "after": "There is an active war on your mind."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "attention",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "fixed instruction idiom — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "fixed instruction idiom — attention"
   },
   {
    "postNum": 128,
@@ -5095,12 +5096,12 @@
     "after": "Can the investigation officially/publicly drop POTUS from review & continue?"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"add\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"add\" and has no subject — operational"
   },
   {
    "postNum": 1287,
@@ -5149,12 +5150,12 @@
     "after": "Timing important."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "cognition",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"question\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"question\" and has no subject — cognition"
   },
   {
    "postNum": 1288,
@@ -5287,12 +5288,12 @@
     "after": "What do you see?"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"remove\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"remove\" and has no subject — operational"
   },
   {
    "postNum": 1291,
@@ -5392,12 +5393,12 @@
     "after": "Some are profiting off this movement."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "\"be\" + complement — imperative — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "\"be\" + complement — imperative — morale"
   },
   {
    "postNum": 1295,
@@ -5545,12 +5546,12 @@
     "after": null
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "cognition",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "adverb \"now\" in front of the base-form verb \"think\" — no family in the agreed six"
+   "why": "adverb \"now\" in front of the base-form verb \"think\" — cognition"
   },
   {
    "postNum": 13,
@@ -5715,12 +5716,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "adverb \"please\" in front of the base-form verb \"stand\" — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "adverb \"please\" in front of the base-form verb \"stand\" — morale"
   },
   {
    "postNum": 1316,
@@ -6018,12 +6019,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"correct\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"correct\" and has no subject — operational"
   },
   {
    "postNum": 1320,
@@ -6292,12 +6293,12 @@
     "after": "DOJ, FBI, C_A, State."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"rank\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"rank\" and has no subject — operational"
   },
   {
    "postNum": 1334,
@@ -6484,7 +6485,7 @@
     "after": "Harness followers / profiteering (THEY)."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
+   "family": "operational",
    "countsAsDirective": false,
    "needsAdjudication": true,
    "verbEvidence": "corpus-learned",
@@ -6519,12 +6520,12 @@
     "after": "Define 'Patriot'."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "\"be\" + complement — imperative — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "\"be\" + complement — imperative — morale"
   },
   {
    "postNum": 1339,
@@ -7148,12 +7149,12 @@
     "after": "What about Total S.A.?"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"trade\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"trade\" and has no subject — operational"
   },
   {
    "postNum": 1359,
@@ -7353,12 +7354,12 @@
     "after": "TOGETHER."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "\"be\" + complement — imperative — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "\"be\" + complement — imperative — morale"
   },
   {
    "postNum": 1375,
@@ -7422,12 +7423,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"start\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"start\" and has no subject — operational"
   },
   {
    "postNum": 1380,
@@ -7491,12 +7492,12 @@
     "after": "https://www.youtube.com/watch?v=JDVT-8tUfiE"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"do\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"do\" and has no subject — operational"
   },
   {
    "postNum": 139,
@@ -7542,12 +7543,12 @@
     "after": "Strings cut (+++)."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"return\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"return\" and has no subject — operational"
   },
   {
    "postNum": 140,
@@ -7737,12 +7738,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"end\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"end\" and has no subject — operational"
   },
   {
    "postNum": 1415,
@@ -7914,12 +7915,12 @@
     "after": "TRUST the plan."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "\"be\" + complement — imperative — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "\"be\" + complement — imperative — morale"
   },
   {
    "postNum": 1425,
@@ -7950,12 +7951,12 @@
     "after": "Signatures are IMPORTANT."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"go\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"go\" and has no subject — operational"
   },
   {
    "postNum": 1430,
@@ -7986,12 +7987,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "\"be\" + complement — imperative — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "\"be\" + complement — imperative — morale"
   },
   {
    "postNum": 1432,
@@ -8004,12 +8005,12 @@
     "after": "– Ephesians 6:10-18"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"put\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"put\" and has no subject — operational"
   },
   {
    "postNum": 1432,
@@ -8040,12 +8041,12 @@
     "after": "– Ephesians 6:10-18"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"take\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"take\" and has no subject — operational"
   },
   {
    "postNum": 1432,
@@ -8289,12 +8290,12 @@
     "after": "A Week to [Remember]."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"start\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"start\" and has no subject — operational"
   },
   {
    "postNum": 1441,
@@ -8325,12 +8326,12 @@
     "after": "FBI agents willing to testify +24"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"do\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"do\" and has no subject — operational"
   },
   {
    "postNum": 1445,
@@ -9186,12 +9187,12 @@
     "after": "APPOINTMENT OF A 2ND SC WOULD FAIL."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"continue\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"continue\" and has no subject — operational"
   },
   {
    "postNum": 1492,
@@ -9381,12 +9382,12 @@
     "after": "Trust in your President!"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"have\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"have\" and has no subject — morale"
   },
   {
    "postNum": 1505,
@@ -9486,12 +9487,12 @@
     "after": "POTUS is not going through this for nothing."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 1510,
@@ -9740,12 +9741,12 @@
     "after": "Reconcile."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"make\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"make\" and has no subject — operational"
   },
   {
    "postNum": 153,
@@ -9989,12 +9990,12 @@
     "after": "and lead us not into temptation,"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"give\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"give\" and has no subject — operational"
   },
   {
    "postNum": 1540,
@@ -10385,12 +10386,12 @@
     "after": "Hussein WH SR Staffer ON RECORD."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"rank\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"rank\" and has no subject — operational"
   },
   {
    "postNum": 1575,
@@ -10627,12 +10628,12 @@
     "after": "SCAM."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"set\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"set\" and has no subject — operational"
   },
   {
    "postNum": 1589,
@@ -10714,12 +10715,12 @@
     "after": null
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"get\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"get\" and has no subject — operational"
   },
   {
    "postNum": 16,
@@ -10768,12 +10769,12 @@
     "after": "This will be a very common theme known only to you."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 1601,
@@ -10834,12 +10835,12 @@
     "after": "At some point military generals will act w/ the will of the people simply because their soldiers ARE THOSE SAME PEOPLE and have no choice."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"rise\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"rise\" and has no subject — morale"
   },
   {
    "postNum": 1604,
@@ -10921,12 +10922,12 @@
     "after": "'SILENT' MAJORITY NO MORE."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"do\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"do\" and has no subject — operational"
   },
   {
    "postNum": 1609,
@@ -10957,12 +10958,12 @@
     "after": "Busy day!"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"link\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"link\" and has no subject — operational"
   },
   {
    "postNum": 1612,
@@ -11077,12 +11078,12 @@
     "after": "Special operators on guard."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"put\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"put\" and has no subject — operational"
   },
   {
    "postNum": 1633,
@@ -11131,12 +11132,12 @@
     "after": "Haspel must find & term clas program."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"end\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"end\" and has no subject — operational"
   },
   {
    "postNum": 1637,
@@ -11203,12 +11204,12 @@
     "after": "It’s spreading."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 1641,
@@ -11413,12 +11414,12 @@
     "after": "https://m.youtube.com/watch?v=JDVT-8tUfiE"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "\"be\" + complement — imperative — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "\"be\" + complement — imperative — morale"
   },
   {
    "postNum": 1645,
@@ -11796,12 +11797,12 @@
     "after": "Rep Gowdy is a Patriot."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"make\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"make\" and has no subject — operational"
   },
   {
    "postNum": 1657,
@@ -12137,12 +12138,12 @@
     "after": "FBI/DOJ to State / Hussein WH (inc C_A / other appointment Start) to Foreign Bad Actors."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"turn\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"turn\" and has no subject — operational"
   },
   {
    "postNum": 167,
@@ -12278,12 +12279,12 @@
     "after": "https://www.npr.org/2018/07/03/625581627/another-top-justice-department-lawyer-steps-down-following-earlier-departures"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"add\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"add\" and has no subject — operational"
   },
   {
    "postNum": 1676,
@@ -12655,12 +12656,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"go\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"go\" and has no subject — operational"
   },
   {
    "postNum": 1708,
@@ -12829,12 +12830,12 @@
     "after": "-Colossians 3:5"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"put\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"put\" and has no subject — operational"
   },
   {
    "postNum": 1717,
@@ -12865,12 +12866,12 @@
     "after": "This is not a game."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 1724,
@@ -13228,12 +13229,12 @@
     "after": "People are more aware of current events."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"start\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"start\" and has no subject — operational"
   },
   {
    "postNum": 1753,
@@ -13597,12 +13598,12 @@
     "after": "We will scrub the web to find the source no matter where posted."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "dissemination",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "adverb \"please\" in front of the base-form verb \"post\" — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "adverb \"please\" in front of the base-form verb \"post\" — dissemination"
   },
   {
    "postNum": 1777,
@@ -13768,12 +13769,12 @@
     "after": "The Great Awakening."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"handle\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"handle\" and has no subject — operational"
   },
   {
    "postNum": 1786,
@@ -13855,12 +13856,12 @@
     "after": "(Movie idea – thoughts?)"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"act\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"act\" and has no subject — operational"
   },
   {
    "postNum": 1791,
@@ -14121,12 +14122,12 @@
     "after": "See something."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "\"be\" + complement — imperative — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "\"be\" + complement — imperative — morale"
   },
   {
    "postNum": 1817,
@@ -15407,12 +15408,12 @@
     "after": "– Ephesians 6:10-18"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"put\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"put\" and has no subject — operational"
   },
   {
    "postNum": 1886,
@@ -15443,12 +15444,12 @@
     "after": "– Ephesians 6:10-18"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"take\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"take\" and has no subject — operational"
   },
   {
    "postNum": 1887,
@@ -15648,12 +15649,12 @@
     "after": "They never thought they'd be hunted."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"open\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"open\" and has no subject — operational"
   },
   {
    "postNum": 1898,
@@ -15819,12 +15820,12 @@
     "after": "If ES was trying to travel to UIO from HKG."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "cognition",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"ask\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"ask\" and has no subject — cognition"
   },
   {
    "postNum": 1908,
@@ -16675,12 +16676,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"open\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"open\" and has no subject — operational"
   },
   {
    "postNum": 1948,
@@ -16880,12 +16881,12 @@
     "after": "Buy a history book published 10 years ago."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"buy\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"buy\" and has no subject — operational"
   },
   {
    "postNum": 1957,
@@ -16898,12 +16899,12 @@
     "after": "Buy a history book published this year."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"buy\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"buy\" and has no subject — operational"
   },
   {
    "postNum": 1957,
@@ -16916,12 +16917,12 @@
     "after": "Compare."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"buy\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"buy\" and has no subject — operational"
   },
   {
    "postNum": 1957,
@@ -17622,12 +17623,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"have\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"have\" and has no subject — morale"
   },
   {
    "postNum": 2029,
@@ -17941,12 +17942,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"pick\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"pick\" and has no subject — operational"
   },
   {
    "postNum": 2051,
@@ -18145,12 +18146,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"add\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"add\" and has no subject — operational"
   },
   {
    "postNum": 2089,
@@ -18163,12 +18164,12 @@
     "after": "Why are the majority of 'Q' attacks by \"PRO_MAGA\" supporters coming from AJ [MOS backed] and/or AJ known associates?"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "cognition",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"ask\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"ask\" and has no subject — cognition"
   },
   {
    "postNum": 209,
@@ -18340,7 +18341,7 @@
     "after": "Think Mueller."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
+   "family": "operational",
    "countsAsDirective": false,
    "needsAdjudication": true,
    "verbEvidence": "corpus-learned",
@@ -18769,12 +18770,12 @@
     "after": "WE STAND TOGETHER."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 2126,
@@ -18883,12 +18884,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"make\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"make\" and has no subject — operational"
   },
   {
    "postNum": 2146,
@@ -18919,12 +18920,12 @@
     "after": "BATTLE STATIONS."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "attention",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "fixed instruction idiom — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "fixed instruction idiom — attention"
   },
   {
    "postNum": 2147,
@@ -19424,12 +19425,12 @@
     "after": "Memes at the ready."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "attention",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "fixed instruction idiom — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "fixed instruction idiom — attention"
   },
   {
    "postNum": 2189,
@@ -19571,12 +19572,12 @@
     "after": null
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"clean\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"clean\" and has no subject — operational"
   },
   {
    "postNum": 2204,
@@ -19693,24 +19694,6 @@
    "countsAsDirective": false,
    "confidence": "LOW",
    "why": "\"FIGHT\" standing alone is equally a noun and a command — needs the surrounding drop"
-  },
-  {
-   "postNum": 2207,
-   "postId": "2207",
-   "qSourceText": "GAME OVER.",
-   "storedAsActionRequest": false,
-   "segConfidence": "HIGH",
-   "context": {
-    "before": "PANIC?",
-    "after": "Q"
-   },
-   "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
-   "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "fixed instruction idiom — no family in the agreed six"
   },
   {
    "postNum": 2208,
@@ -19945,12 +19928,12 @@
     "after": "What does that tell you when it continually happens?"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"correct\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"correct\" and has no subject — operational"
   },
   {
    "postNum": 2234,
@@ -20195,12 +20178,12 @@
     "after": "Map currently has 43 confirmed connections."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"make\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"make\" and has no subject — operational"
   },
   {
    "postNum": 225,
@@ -20813,12 +20796,12 @@
     "after": "SILENT MAJORITY NO MORE"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"drop\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"drop\" and has no subject — operational"
   },
   {
    "postNum": 2298,
@@ -21423,7 +21406,7 @@
     "after": "Routing through various networks ('jumpers') randomly has created connection/sec issues."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
+   "family": "operational",
    "countsAsDirective": false,
    "needsAdjudication": true,
    "verbEvidence": "corpus-learned",
@@ -21441,12 +21424,12 @@
     "after": "Stay strong."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"select\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"select\" and has no subject — operational"
   },
   {
    "postNum": 234,
@@ -22438,12 +22421,12 @@
     "after": "Who must authorize firing of FBI/DOJ officials?"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"use\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"use\" and has no subject — operational"
   },
   {
    "postNum": 2382,
@@ -22510,12 +22493,12 @@
     "after": "Why is the FAKE NEWS media continually expending resources to defame, debunk, and cast as a conspiracy, for, as they say, a nobody who started on 4chan?"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "cognition",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"ask\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"ask\" and has no subject — cognition"
   },
   {
    "postNum": 2386,
@@ -22723,12 +22706,12 @@
     "after": "Midterms & Memes."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 2397,
@@ -22777,12 +22760,12 @@
     "after": "———————–"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"use\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"use\" and has no subject — operational"
   },
   {
    "postNum": 2397,
@@ -22972,12 +22955,12 @@
     "after": "– Ephesians 6:10-18"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"put\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"put\" and has no subject — operational"
   },
   {
    "postNum": 2403,
@@ -23008,12 +22991,12 @@
     "after": "– Ephesians 6:10-18"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"take\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"take\" and has no subject — operational"
   },
   {
    "postNum": 2404,
@@ -23059,12 +23042,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "attention",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "fixed instruction idiom — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "fixed instruction idiom — attention"
   },
   {
    "postNum": 2406,
@@ -23766,12 +23749,12 @@
     "after": "RETURN OLD GLORY TO HER FORMER STATE."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"return\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"return\" and has no subject — operational"
   },
   {
    "postNum": 2437,
@@ -23784,12 +23767,12 @@
     "after": "WE HONOR THOSE WHO FOUGHT (& CONTINUE TO FIGHT) TO SAVE & DEFEND THIS GREAT COUNTRY."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"return\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"return\" and has no subject — operational"
   },
   {
    "postNum": 2437,
@@ -23892,12 +23875,12 @@
     "after": "TODAY, LIKE IN 2016, YOU ARE, IN ONE UNITED VOICE, RISING UP TO DEFEND THIS GREAT NATION."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "\"be\" + complement — imperative — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "\"be\" + complement — imperative — morale"
   },
   {
    "postNum": 2440,
@@ -24180,7 +24163,7 @@
     "after": "Why are the biggest news co's in the world continuing to attack this movement?"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
+   "family": "operational",
    "countsAsDirective": false,
    "needsAdjudication": true,
    "verbEvidence": "corpus-learned",
@@ -24579,12 +24562,12 @@
     "after": "This all has meaning - everything stated. Big picture stuff - few positions allow for this direct knowledge."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"return\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"return\" and has no subject — operational"
   },
   {
    "postNum": 25,
@@ -24597,12 +24580,12 @@
     "after": "God bless."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 25,
@@ -24739,12 +24722,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"do\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"do\" and has no subject — operational"
   },
   {
    "postNum": 251,
@@ -24844,12 +24827,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"do\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"do\" and has no subject — operational"
   },
   {
    "postNum": 2514,
@@ -25073,12 +25056,12 @@
     "after": "Where We Go One > We Go ALL!!!"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"open\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"open\" and has no subject — operational"
   },
   {
    "postNum": 2529,
@@ -25204,12 +25187,12 @@
     "after": "The World is about to change."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "\"be\" + complement — imperative — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "\"be\" + complement — imperative — morale"
   },
   {
    "postNum": 2539,
@@ -25459,12 +25442,12 @@
     "after": "For God & Country."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "attention",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "fixed instruction idiom — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "fixed instruction idiom — attention"
   },
   {
    "postNum": 2552,
@@ -25513,12 +25496,12 @@
     "after": "See something."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"move\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"move\" and has no subject — operational"
   },
   {
    "postNum": 2554,
@@ -25653,12 +25636,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"come\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"come\" and has no subject — operational"
   },
   {
    "postNum": 2566,
@@ -25701,12 +25684,12 @@
     "after": "At what point do people wake up?"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"add\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"add\" and has no subject — operational"
   },
   {
    "postNum": 2568,
@@ -25753,12 +25736,12 @@
     "after": "EVIL HAS NO PLACE HERE."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"add\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"add\" and has no subject — operational"
   },
   {
    "postNum": 2570,
@@ -25804,12 +25787,12 @@
     "after": "You are never alone."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 258,
@@ -25945,12 +25928,12 @@
     "after": "GOOG says NO PLAN TO LAUNCH……."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"start\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"start\" and has no subject — operational"
   },
   {
    "postNum": 2588,
@@ -26391,12 +26374,12 @@
     "after": "One connects to another."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"take\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"take\" and has no subject — operational"
   },
   {
    "postNum": 262,
@@ -26595,12 +26578,12 @@
     "after": "US SEN NO NAME>"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"drop\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"drop\" and has no subject — operational"
   },
   {
    "postNum": 2633,
@@ -26855,12 +26838,12 @@
     "after": "FAKE NEWS push of racism, fascism, sexism, every other …'ism' etc…. against those seeking to END GLOBALISM in favor of NATIONALISM (pride of heritage and culture - preservation & security/safety) is DESIGNED TO KEEP YOU SUBMISSIVE."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"make\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"make\" and has no subject — operational"
   },
   {
    "postNum": 2646,
@@ -26999,12 +26982,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"get\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"get\" and has no subject — operational"
   },
   {
    "postNum": 2660,
@@ -27408,12 +27391,12 @@
     "after": "Control volume."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"deploy\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"deploy\" and has no subject — operational"
   },
   {
    "postNum": 2683,
@@ -27426,7 +27409,7 @@
     "after": "The media no longer represents the will of the people."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
+   "family": "operational",
    "countsAsDirective": false,
    "needsAdjudication": true,
    "verbEvidence": "corpus-learned",
@@ -27516,12 +27499,12 @@
     "after": "Given the amount of evidence demonstrating illegal & disturbing activities by [PP]- where is the FBI investigation?"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "cognition",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"ask\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"ask\" and has no subject — cognition"
   },
   {
    "postNum": 2687,
@@ -27926,12 +27909,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"use\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"use\" and has no subject — operational"
   },
   {
    "postNum": 2718,
@@ -28084,12 +28067,12 @@
     "after": "Read carefully."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "\"be\" + complement — imperative — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "\"be\" + complement — imperative — morale"
   },
   {
    "postNum": 2735,
@@ -28120,12 +28103,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "\"be\" + complement — imperative — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "\"be\" + complement — imperative — morale"
   },
   {
    "postNum": 274,
@@ -28138,12 +28121,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "\"be\" + complement — imperative — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "\"be\" + complement — imperative — morale"
   },
   {
    "postNum": 2740,
@@ -28318,12 +28301,12 @@
     "after": "#FLYSIDFLY#"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"add\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"add\" and has no subject — operational"
   },
   {
    "postNum": 2771,
@@ -28688,12 +28671,12 @@
     "after": "Search ‘Qanon’"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"pick\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"pick\" and has no subject — operational"
   },
   {
    "postNum": 2801,
@@ -28904,12 +28887,12 @@
     "after": "(Small) sampling of proofs."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"start\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"start\" and has no subject — operational"
   },
   {
    "postNum": 2810,
@@ -29203,12 +29186,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"handle\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"handle\" and has no subject — operational"
   },
   {
    "postNum": 2849,
@@ -29338,12 +29321,12 @@
     "after": "_Conf_^_y_7"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"strike\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"strike\" and has no subject — operational"
   },
   {
    "postNum": 2861,
@@ -29425,12 +29408,12 @@
     "after": "CROOKED [[[HILLARY]]]."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"link\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"link\" and has no subject — operational"
   },
   {
    "postNum": 2883,
@@ -29644,12 +29627,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"put\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"put\" and has no subject — operational"
   },
   {
    "postNum": 2904,
@@ -29680,12 +29663,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"take\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"take\" and has no subject — operational"
   },
   {
    "postNum": 2913,
@@ -30052,12 +30035,12 @@
     "after": "What is a FISA warrant/application?"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "cognition",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"ask\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"ask\" and has no subject — cognition"
   },
   {
    "postNum": 2938,
@@ -30303,12 +30286,12 @@
     "after": "[-48]"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"clear\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"clear\" and has no subject — operational"
   },
   {
    "postNum": 2966,
@@ -30583,12 +30566,12 @@
     "after": ">Truth, Transparency, and Equal Justice Under the Law."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"return\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"return\" and has no subject — operational"
   },
   {
    "postNum": 2988,
@@ -30888,12 +30871,12 @@
     "after": "Why did POTUS meet Bob under the cover of FBI Dir interview?"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "prohibition",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"don\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"don\" and has no subject — prohibition"
   },
   {
    "postNum": 3,
@@ -30996,12 +30979,12 @@
     "after": "Check off and log."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 3000,
@@ -31059,12 +31042,12 @@
     "after": ">hold offenders accountable"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"clear\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"clear\" and has no subject — operational"
   },
   {
    "postNum": 3006,
@@ -31599,12 +31582,12 @@
     "after": "When They Go Low, We Go High."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"change\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"change\" and has no subject — operational"
   },
   {
    "postNum": 3040,
@@ -31662,12 +31645,12 @@
     "after": "[                                  ]"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"take\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"take\" and has no subject — operational"
   },
   {
    "postNum": 3048,
@@ -31830,12 +31813,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"do\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"do\" and has no subject — operational"
   },
   {
    "postNum": 3069,
@@ -31848,12 +31831,12 @@
     "after": "Read FREE."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"clear\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"clear\" and has no subject — operational"
   },
   {
    "postNum": 3069,
@@ -32417,12 +32400,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"start\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"start\" and has no subject — operational"
   },
   {
    "postNum": 3131,
@@ -32435,12 +32418,12 @@
     "after": "[Will the rich & powerful influence the court to prevent the unsealing?]"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"drop\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"drop\" and has no subject — operational"
   },
   {
    "postNum": 3131,
@@ -32525,12 +32508,12 @@
     "after": "RACHEL CHANDLER IS KEY."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 316,
@@ -32783,12 +32766,12 @@
     "after": "Follow the money."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "\"be\" + complement — imperative — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "\"be\" + complement — imperative — morale"
   },
   {
    "postNum": 3182,
@@ -32852,12 +32835,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"have\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"have\" and has no subject — morale"
   },
   {
    "postNum": 3197,
@@ -33020,12 +33003,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"start\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"start\" and has no subject — operational"
   },
   {
    "postNum": 322,
@@ -33152,12 +33135,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 3223,
@@ -33242,12 +33225,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"set\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"set\" and has no subject — operational"
   },
   {
    "postNum": 3232,
@@ -33260,12 +33243,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"set\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"set\" and has no subject — operational"
   },
   {
    "postNum": 3234,
@@ -33296,12 +33279,12 @@
     "after": "Good people in harms way."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "adverb \"please\" in front of the base-form verb \"pray\" — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "adverb \"please\" in front of the base-form verb \"pray\" — morale"
   },
   {
    "postNum": 3248,
@@ -33767,12 +33750,12 @@
     "after": "#FLAGSOUT"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"make\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"make\" and has no subject — operational"
   },
   {
    "postNum": 33,
@@ -33803,12 +33786,12 @@
     "after": null
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"take\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"take\" and has no subject — operational"
   },
   {
    "postNum": 33,
@@ -34864,12 +34847,12 @@
     "after": "NXIVM > Who Pleaded Guilty?"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"go\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"go\" and has no subject — operational"
   },
   {
    "postNum": 3417,
@@ -34969,12 +34952,12 @@
     "after": "Find [4]"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"open\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"open\" and has no subject — operational"
   },
   {
    "postNum": 3428,
@@ -35881,12 +35864,12 @@
     "after": "How did someone die from this type of accident?"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "cognition",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"ask\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"ask\" and has no subject — cognition"
   },
   {
    "postNum": 3524,
@@ -35899,12 +35882,12 @@
     "after": "Pause, re-read above (again)."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"pause\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"pause\" and has no subject — operational"
   },
   {
    "postNum": 3524,
@@ -35917,12 +35900,12 @@
     "after": "Nature is unpredictable."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"pause\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"pause\" and has no subject — operational"
   },
   {
    "postNum": 3528,
@@ -36493,12 +36476,12 @@
     "after": "https://www.youtube.com/watch?v=G2qIXXafxCQ"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"return\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"return\" and has no subject — operational"
   },
   {
    "postNum": 3590,
@@ -36595,12 +36578,12 @@
     "after": "Prepare."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"put\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"put\" and has no subject — operational"
   },
   {
    "postNum": 3593,
@@ -36631,12 +36614,12 @@
     "after": "Prepare."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"take\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"take\" and has no subject — operational"
   },
   {
    "postNum": 3593,
@@ -36682,12 +36665,12 @@
     "after": "Prepare."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"put\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"put\" and has no subject — operational"
   },
   {
    "postNum": 3594,
@@ -36718,12 +36701,12 @@
     "after": "Prepare."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"take\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"take\" and has no subject — operational"
   },
   {
    "postNum": 3594,
@@ -36889,12 +36872,12 @@
     "after": null
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "adverb \"please\" in front of the base-form verb \"be\" — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "adverb \"please\" in front of the base-form verb \"be\" — morale"
   },
   {
    "postNum": 3600,
@@ -37088,24 +37071,6 @@
    "why": "opens with \"information\", used as a verb elsewhere in the corpus — verb evidence is corpus-only, needs review"
   },
   {
-   "postNum": 3615,
-   "postId": "3615",
-   "qSourceText": "Game Over.",
-   "storedAsActionRequest": false,
-   "segConfidence": "HIGH",
-   "context": {
-    "before": "https://twitter.com/EYEDROPMEDIA/status/1197673464326492161",
-    "after": "Q"
-   },
-   "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
-   "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "fixed instruction idiom — no family in the agreed six"
-  },
-  {
    "postNum": 3616,
    "postId": "3616",
    "qSourceText": "You are the news now.",
@@ -37131,12 +37096,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"handle\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"handle\" and has no subject — operational"
   },
   {
    "postNum": 3618,
@@ -37500,12 +37465,12 @@
     "after": ">Use 'pro-narrative minded' authorities on subject to provide foundation to support"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"create\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"create\" and has no subject — operational"
   },
   {
    "postNum": 3647,
@@ -37518,12 +37483,12 @@
     "after": ">Deploy 'circular reporting' and 'group-think' tactics (echo chamber) to artificially raise 'public outcry'"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"use\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"use\" and has no subject — operational"
   },
   {
    "postNum": 3647,
@@ -37536,12 +37501,12 @@
     "after": ">Use 'public outcry' to justify billion dollar taxpayer spend"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"deploy\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"deploy\" and has no subject — operational"
   },
   {
    "postNum": 3647,
@@ -37554,12 +37519,12 @@
     "after": ">Rinse/repeat"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"use\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"use\" and has no subject — operational"
   },
   {
    "postNum": 3647,
@@ -37656,12 +37621,12 @@
     "after": "http://www.merriam-webster.com/dictionary/evil"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "attention",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "fixed instruction idiom — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "fixed instruction idiom — attention"
   },
   {
    "postNum": 3659,
@@ -37742,12 +37707,12 @@
     "after": "You awake, and thinking for yourself, is their greatest fear."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"do\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"do\" and has no subject — operational"
   },
   {
    "postNum": 3663,
@@ -38657,12 +38622,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 3754,
@@ -39610,7 +39575,7 @@
     "after": "Control over the media has kept people at heel (behind)."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
+   "family": "operational",
    "countsAsDirective": false,
    "needsAdjudication": true,
    "verbEvidence": "corpus-learned",
@@ -39628,7 +39593,7 @@
     "after": "Control over the media has kept people focused on falsehoods."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
+   "family": "operational",
    "countsAsDirective": false,
    "needsAdjudication": true,
    "verbEvidence": "corpus-learned",
@@ -39646,7 +39611,7 @@
     "after": "Control over the media has kept people in a constant state of fear."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
+   "family": "operational",
    "countsAsDirective": false,
    "needsAdjudication": true,
    "verbEvidence": "corpus-learned",
@@ -39664,7 +39629,7 @@
     "after": "Control over the media has divided our Republic into segments:"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
+   "family": "operational",
    "countsAsDirective": false,
    "needsAdjudication": true,
    "verbEvidence": "corpus-learned",
@@ -39682,7 +39647,7 @@
     "after": ">Race"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
+   "family": "operational",
    "countsAsDirective": false,
    "needsAdjudication": true,
    "verbEvidence": "corpus-learned",
@@ -39977,24 +39942,6 @@
    "why": "information-request imperative — instructs the reader AND the deliverable is an answer. Certified as a question; gains a directive cross-link rather than being recounted."
   },
   {
-   "postNum": 3872,
-   "postId": "3872",
-   "qSourceText": "GAME OVER.",
-   "storedAsActionRequest": false,
-   "segConfidence": "HIGH",
-   "context": {
-    "before": "To be blunt….",
-    "after": "Q"
-   },
-   "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
-   "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "fixed instruction idiom — no family in the agreed six"
-  },
-  {
    "postNum": 3876,
    "postId": "3876",
    "qSourceText": "Thank you, Baker(s)!",
@@ -40168,12 +40115,12 @@
     "after": "And pray in the Spirit on all occasions with all kinds of prayers and requests. With this in mind, be alert and always keep on praying for all the Lord’s people."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"put\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"put\" and has no subject — operational"
   },
   {
    "postNum": 3887,
@@ -40204,12 +40151,12 @@
     "after": "And pray in the Spirit on all occasions with all kinds of prayers and requests. With this in mind, be alert and always keep on praying for all the Lord’s people."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"take\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"take\" and has no subject — operational"
   },
   {
    "postNum": 3889,
@@ -41465,12 +41412,12 @@
     "after": "[Knowingly]"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"start\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"start\" and has no subject — operational"
   },
   {
    "postNum": 3975,
@@ -41483,12 +41430,12 @@
     "after": "Heal."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"clear\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"clear\" and has no subject — operational"
   },
   {
    "postNum": 3975,
@@ -41657,12 +41604,12 @@
     "after": "Operation Mockingbird"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "prohibition",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"don\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"don\" and has no subject — prohibition"
   },
   {
    "postNum": 4,
@@ -41708,12 +41655,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"close\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"close\" and has no subject — operational"
   },
   {
    "postNum": 4006,
@@ -41830,7 +41777,7 @@
     "after": "THE NEWS IS FAKE."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
+   "family": "operational",
    "countsAsDirective": false,
    "needsAdjudication": true,
    "verbEvidence": "corpus-learned",
@@ -41950,12 +41897,12 @@
     "after": "Complex."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"pass\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"pass\" and has no subject — operational"
   },
   {
    "postNum": 4040,
@@ -42217,12 +42164,12 @@
     "after": "Anon(s) changed our mind re: Private / Public."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"correct\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"correct\" and has no subject — operational"
   },
   {
    "postNum": 409,
@@ -42377,12 +42324,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"use\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"use\" and has no subject — operational"
   },
   {
    "postNum": 4102,
@@ -42799,12 +42746,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"handle\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"handle\" and has no subject — operational"
   },
   {
    "postNum": 415,
@@ -42889,24 +42836,6 @@
    "verbEvidence": "curated",
    "confidence": "HIGH",
    "why": "opens with the base-form verb \"fight\" and has no subject — morale"
-  },
-  {
-   "postNum": 416,
-   "postId": "416",
-   "qSourceText": "Game over.",
-   "storedAsActionRequest": false,
-   "segConfidence": "HIGH",
-   "context": {
-    "before": "Day of days.",
-    "after": "Q"
-   },
-   "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
-   "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "fixed instruction idiom — no family in the agreed six"
   },
   {
    "postNum": 4160,
@@ -43185,12 +43114,12 @@
     "after": "And pray in the Spirit on all occasions with all kinds of prayers and requests. With this in mind, be alert and always keep on praying for all the Lord’s people."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"put\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"put\" and has no subject — operational"
   },
   {
    "postNum": 4207,
@@ -43221,12 +43150,12 @@
     "after": "And pray in the Spirit on all occasions with all kinds of prayers and requests. With this in mind, be alert and always keep on praying for all the Lord’s people."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"take\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"take\" and has no subject — operational"
   },
   {
    "postNum": 4207,
@@ -43353,12 +43282,12 @@
     "after": "https://www.nbcnews.com/politics/politics-news/what-mueller-report-says-about-jared-kushner-ivanka-trump-donald-n995866"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"go\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"go\" and has no subject — operational"
   },
   {
    "postNum": 4235,
@@ -43568,12 +43497,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"go\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"go\" and has no subject — operational"
   },
   {
    "postNum": 4255,
@@ -43604,12 +43533,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"go\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"go\" and has no subject — operational"
   },
   {
    "postNum": 426,
@@ -43657,12 +43586,12 @@
     "after": "Flood unstoppable."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 4292,
@@ -43924,12 +43853,12 @@
     "after": "Use 1, 2, 3 and 4 to drive echo-chamber false [idiotic] narrative bad [pro slavery][D]s switched to [R] party and good [anti-slavery][R]s switched to [D] party."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"use\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"use\" and has no subject — operational"
   },
   {
    "postNum": 4320,
@@ -44305,12 +44234,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"have\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"have\" and has no subject — morale"
   },
   {
    "postNum": 4358,
@@ -44710,12 +44639,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"put\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"put\" and has no subject — operational"
   },
   {
    "postNum": 44,
@@ -44911,12 +44840,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"change\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"change\" and has no subject — operational"
   },
   {
    "postNum": 4423,
@@ -45048,12 +44977,12 @@
     "after": "And pray in the Spirit on all occasions with all kinds of prayers and requests. With this in mind, be alert and always keep on praying for all the Lord’s people."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"put\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"put\" and has no subject — operational"
   },
   {
    "postNum": 4429,
@@ -45210,12 +45139,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"end\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"end\" and has no subject — operational"
   },
   {
    "postNum": 4445,
@@ -45375,12 +45304,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"put\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"put\" and has no subject — operational"
   },
   {
    "postNum": 4464,
@@ -45477,12 +45406,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"correct\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"correct\" and has no subject — operational"
   },
   {
    "postNum": 4488,
@@ -45513,12 +45442,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 4489,
@@ -45738,12 +45667,12 @@
     "after": "Test your strengths."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"use\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"use\" and has no subject — operational"
   },
   {
    "postNum": 4498,
@@ -45858,12 +45787,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"take\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"take\" and has no subject — operational"
   },
   {
    "postNum": 4505,
@@ -45909,12 +45838,12 @@
     "after": "Organize and connect [bridge through linking]."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"use\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"use\" and has no subject — operational"
   },
   {
    "postNum": 4509,
@@ -46026,12 +45955,12 @@
     "after": "Mission forward."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"take\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"take\" and has no subject — operational"
   },
   {
    "postNum": 4510,
@@ -46092,12 +46021,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"handle\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"handle\" and has no subject — operational"
   },
   {
    "postNum": 4517,
@@ -46796,12 +46725,12 @@
     "after": "[How to herd the sheep (you) 101]"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"select\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"select\" and has no subject — operational"
   },
   {
    "postNum": 4554,
@@ -46829,12 +46758,12 @@
     "after": "https://blacklivesmatter.com"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"start\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"start\" and has no subject — operational"
   },
   {
    "postNum": 4555,
@@ -46862,12 +46791,12 @@
     "after": "[How to herd the sheep (you) 101]"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"select\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"select\" and has no subject — operational"
   },
   {
    "postNum": 4558,
@@ -46895,12 +46824,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"add\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"add\" and has no subject — operational"
   },
   {
    "postNum": 4565,
@@ -46913,12 +46842,12 @@
     "after": "Maxwell family background?"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"feed\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"feed\" and has no subject — operational"
   },
   {
    "postNum": 4566,
@@ -47075,12 +47004,12 @@
     "after": "You are safe."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "adverb \"please\" in front of the base-form verb \"pray\" — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "adverb \"please\" in front of the base-form verb \"pray\" — morale"
   },
   {
    "postNum": 458,
@@ -47555,12 +47484,12 @@
     "after": "Why is everything re: 'Q' being censored, banned, and attacked?"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "cognition",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"ask\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"ask\" and has no subject — cognition"
   },
   {
    "postNum": 4627,
@@ -47883,12 +47812,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 4645,
@@ -47919,12 +47848,12 @@
     "after": "THE SHADOW PRESIDENCY OF 44"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"clear\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"clear\" and has no subject — operational"
   },
   {
    "postNum": 4645,
@@ -48057,12 +47986,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "prohibition",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"don\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"don\" and has no subject — prohibition"
   },
   {
    "postNum": 4651,
@@ -48246,12 +48175,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "cognition",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "adverb \"now\" in front of the base-form verb \"think\" — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "adverb \"now\" in front of the base-form verb \"think\" — cognition"
   },
   {
    "postNum": 4678,
@@ -48452,12 +48381,12 @@
     "after": "9. Create division hatred fear campaign primarily scare senior citizens from voting in person on election day _riots _protests _C19 death _eliminate enough senior [R] votes counteract [D] to [R] defection(s)"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"create\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"create\" and has no subject — operational"
   },
   {
    "postNum": 4688,
@@ -48470,12 +48399,12 @@
     "after": "10. Create impression country divided _use EU-early war election gaming tactics against current administration"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"create\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"create\" and has no subject — operational"
   },
   {
    "postNum": 4688,
@@ -48488,12 +48417,12 @@
     "after": "11. Propaganda blame attack current administration economic hardship(s), death toll, attack plan re: safety and wellbeing re: C19 failed _push Biden _stage Biden had answer to Pandemic early on _country will heal w: Biden victory _violence will end w: Biden victory"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"create\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"create\" and has no subject — operational"
   },
   {
    "postNum": 4688,
@@ -48506,12 +48435,12 @@
     "after": "13. Isolate faithful from each other _remove ability to attend Church [house of worship]"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"change\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"change\" and has no subject — operational"
   },
   {
    "postNum": 4688,
@@ -48524,12 +48453,12 @@
     "after": "16. Avoid/delay public exposure of corruption & accountability _prevent loss of control/power"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"leave\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"leave\" and has no subject — operational"
   },
   {
    "postNum": 4688,
@@ -48701,12 +48630,12 @@
     "after": "1. Virus"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"add\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"add\" and has no subject — operational"
   },
   {
    "postNum": 4722,
@@ -48719,12 +48648,12 @@
     "after": "Make no mistake, they will contest this legally in battleground states."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"make\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"make\" and has no subject — operational"
   },
   {
    "postNum": 4722,
@@ -48737,12 +48666,12 @@
     "after": "Make no mistake, they will project doubt in the election results"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"make\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"make\" and has no subject — operational"
   },
   {
    "postNum": 4722,
@@ -48755,12 +48684,12 @@
     "after": "Make no mistake, they will organize massive riots and attempt Anarchy-99 design"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"make\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"make\" and has no subject — operational"
   },
   {
    "postNum": 4722,
@@ -48773,12 +48702,12 @@
     "after": "Playbook known."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"make\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"make\" and has no subject — operational"
   },
   {
    "postNum": 4723,
@@ -48881,12 +48810,12 @@
     "after": "Drop all references re: 'Q' 'Qanon' etc. to avoid ban/termination _censorship install."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"deploy\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"deploy\" and has no subject — operational"
   },
   {
    "postNum": 4734,
@@ -48899,12 +48828,12 @@
     "after": "Algos [sniffers] bypass."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"drop\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"drop\" and has no subject — operational"
   },
   {
    "postNum": 4734,
@@ -48932,12 +48861,12 @@
     "after": "[Revere's 'Midnight' Ride]"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 4736,
@@ -48983,12 +48912,12 @@
     "after": ""
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"make\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"make\" and has no subject — operational"
   },
   {
    "postNum": 4739,
@@ -49001,12 +48930,12 @@
     "after": ""
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"give\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"give\" and has no subject — operational"
   },
   {
    "postNum": 4739,
@@ -49130,12 +49059,12 @@
     "after": "Zero bubble."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"make\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"make\" and has no subject — operational"
   },
   {
    "postNum": 4756,
@@ -49696,12 +49625,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"use\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"use\" and has no subject — operational"
   },
   {
    "postNum": 4808,
@@ -49714,12 +49643,12 @@
     "after": "Nightwatch."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 481,
@@ -49930,12 +49859,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 4843,
@@ -50026,12 +49955,12 @@
     "after": "https://www.youtube.com/watch?v=_Ci0Kgdpgsw"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 4855,
@@ -50575,12 +50504,12 @@
     "after": "Next question - how are they allowed to operate?"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "\"be\" + complement — imperative — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "\"be\" + complement — imperative — morale"
   },
   {
    "postNum": 4938,
@@ -50593,12 +50522,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "adverb \"please\" in front of the base-form verb \"fix\" — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "adverb \"please\" in front of the base-form verb \"fix\" — operational"
   },
   {
    "postNum": 4943,
@@ -50629,12 +50558,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"mark\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"mark\" and has no subject — operational"
   },
   {
    "postNum": 4956,
@@ -50736,12 +50665,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"add\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"add\" and has no subject — operational"
   },
   {
    "postNum": 4960,
@@ -50805,12 +50734,12 @@
     "after": "1913."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"put\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"put\" and has no subject — operational"
   },
   {
    "postNum": 4963,
@@ -50886,12 +50815,12 @@
     "after": "I am not a prophet."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "\"be\" + complement — imperative — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "\"be\" + complement — imperative — morale"
   },
   {
    "postNum": 4964,
@@ -51315,12 +51244,12 @@
     "after": "WE ARE FIGHTING FOR OUR COUNTRY!\""
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"get\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"get\" and has no subject — operational"
   },
   {
    "postNum": 520,
@@ -51423,12 +51352,12 @@
     "after": "WHERE WE GO ONE, WE GO ALL."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"use\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"use\" and has no subject — operational"
   },
   {
    "postNum": 522,
@@ -51703,12 +51632,12 @@
     "after": "MAKING AMERICA GREAT AGAIN!"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"make\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"make\" and has no subject — operational"
   },
   {
    "postNum": 533,
@@ -51775,12 +51704,12 @@
     "after": "WILL GUIDE."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"start\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"start\" and has no subject — operational"
   },
   {
    "postNum": 534,
@@ -52303,12 +52232,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"make\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"make\" and has no subject — operational"
   },
   {
    "postNum": 568,
@@ -52354,12 +52283,12 @@
     "after": "Command away from generals"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"cut\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"cut\" and has no subject — operational"
   },
   {
    "postNum": 570,
@@ -52372,12 +52301,12 @@
     "after": "SAP sell-off"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"launch\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"launch\" and has no subject — operational"
   },
   {
    "postNum": 570,
@@ -52408,12 +52337,12 @@
     "after": "Blind-eye NK [nuke build]"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"open\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"open\" and has no subject — operational"
   },
   {
    "postNum": 570,
@@ -52462,12 +52391,12 @@
     "after": "Revise Constitution"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"open\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"open\" and has no subject — operational"
   },
   {
    "postNum": 570,
@@ -52579,12 +52508,12 @@
     "after": "AS THE WORLD TURNS."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "morale",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "\"be\" + complement — imperative — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "\"be\" + complement — imperative — morale"
   },
   {
    "postNum": 586,
@@ -52789,12 +52718,12 @@
     "after": "Follow the money, it’s the key."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "prohibition",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"don\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"don\" and has no subject — prohibition"
   },
   {
    "postNum": 6,
@@ -52876,12 +52805,12 @@
     "after": "As discussed, we've anticipated the Twitter and other social media blackouts."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "attention",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "adverb \"please\" in front of the base-form verb \"refer\" — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "adverb \"please\" in front of the base-form verb \"refer\" — attention"
   },
   {
    "postNum": 610,
@@ -52912,12 +52841,12 @@
     "after": "Where there was once darkness, there will now be LIGHT."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"continue\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"continue\" and has no subject — operational"
   },
   {
    "postNum": 611,
@@ -52948,12 +52877,12 @@
     "after": "Imagine if these people were removed."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"select\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"select\" and has no subject — operational"
   },
   {
    "postNum": 617,
@@ -53197,12 +53126,12 @@
     "after": "The choice is yours."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"make\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"make\" and has no subject — operational"
   },
   {
    "postNum": 630,
@@ -53230,12 +53159,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"set\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"set\" and has no subject — operational"
   },
   {
    "postNum": 631,
@@ -53481,12 +53410,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"put\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"put\" and has no subject — operational"
   },
   {
    "postNum": 656,
@@ -53925,12 +53854,12 @@
     "after": "AS 187."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"build\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"build\" and has no subject — operational"
   },
   {
    "postNum": 678,
@@ -54153,12 +54082,12 @@
     "after": "Important."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"make\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"make\" and has no subject — operational"
   },
   {
    "postNum": 699,
@@ -54186,12 +54115,12 @@
     "after": null
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"put\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"put\" and has no subject — operational"
   },
   {
    "postNum": 7,
@@ -54744,12 +54673,12 @@
     "after": "Be the autists we know you are."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "cognition",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"ask\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"ask\" and has no subject — cognition"
   },
   {
    "postNum": 725,
@@ -54780,12 +54709,12 @@
     "after": "Learn."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"drop\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"drop\" and has no subject — operational"
   },
   {
    "postNum": 728,
@@ -54870,12 +54799,12 @@
     "after": "Learn."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"drop\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"drop\" and has no subject — operational"
   },
   {
    "postNum": 731,
@@ -54960,12 +54889,12 @@
     "after": "\"He's not a war hero.\""
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "cognition",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"wonder\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"wonder\" and has no subject — cognition"
   },
   {
    "postNum": 732,
@@ -55279,12 +55208,12 @@
     "after": "Now comes the 'conspiracy' label."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "cognition",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"wonder\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"wonder\" and has no subject — cognition"
   },
   {
    "postNum": 749,
@@ -55366,12 +55295,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"make\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"make\" and has no subject — operational"
   },
   {
    "postNum": 76,
@@ -55474,12 +55403,12 @@
     "after": "MAP provides the KEY."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"continue\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"continue\" and has no subject — operational"
   },
   {
    "postNum": 764,
@@ -55896,12 +55825,12 @@
     "after": "WE'VE PROVIDED MANY PROOFS THAT CANNOT BE DISPUTED AS COINCIDENCES."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"build\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"build\" and has no subject — operational"
   },
   {
    "postNum": 778,
@@ -56141,12 +56070,12 @@
     "after": "HIGHEST AUTHORITY."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"clean\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"clean\" and has no subject — operational"
   },
   {
    "postNum": 797,
@@ -56324,12 +56253,12 @@
     "after": "Keep talking."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "cognition",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"question\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"question\" and has no subject — cognition"
   },
   {
    "postNum": 812,
@@ -56342,12 +56271,12 @@
     "after": "Stand up."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 812,
@@ -56465,12 +56394,12 @@
     "after": "Analyze shooter (pawn)."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"take\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"take\" and has no subject — operational"
   },
   {
    "postNum": 817,
@@ -56588,12 +56517,12 @@
     "after": "Be HEARD."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"get\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"get\" and has no subject — operational"
   },
   {
    "postNum": 828,
@@ -56657,12 +56586,12 @@
     "after": "We are WITH you."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"make\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"make\" and has no subject — operational"
   },
   {
    "postNum": 828,
@@ -56675,12 +56604,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"make\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"make\" and has no subject — operational"
   },
   {
    "postNum": 829,
@@ -56986,12 +56915,12 @@
     "after": "Organized and in order."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "adverb \"please\" in front of the base-form verb \"add\" — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "adverb \"please\" in front of the base-form verb \"add\" — operational"
   },
   {
    "postNum": 84,
@@ -57049,12 +56978,12 @@
     "after": "Why is this event BIG?"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"water\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"water\" and has no subject — operational"
   },
   {
    "postNum": 847,
@@ -57258,12 +57187,12 @@
     "after": "Sabotage."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"wait\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"wait\" and has no subject — operational"
   },
   {
    "postNum": 859,
@@ -57321,12 +57250,12 @@
     "after": "Saudi Arabia - The Bloody Wonderland."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"correct\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"correct\" and has no subject — operational"
   },
   {
    "postNum": 86,
@@ -57354,12 +57283,12 @@
     "after": "They all have foundations & institutes for a reason."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 862,
@@ -57444,12 +57373,12 @@
     "after": "Re_read drops - you have more than you know."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"wait\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"wait\" and has no subject — operational"
   },
   {
    "postNum": 864,
@@ -57864,12 +57793,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"break\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"break\" and has no subject — operational"
   },
   {
    "postNum": 895,
@@ -57882,12 +57811,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "prohibition",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"don\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"don\" and has no subject — prohibition"
   },
   {
    "postNum": 897,
@@ -58080,12 +58009,12 @@
     "after": "Remember he lied about knowing but that ultimately came out in the dump. Poof!"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"put\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"put\" and has no subject — operational"
   },
   {
    "postNum": 91,
@@ -58149,12 +58078,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"wait\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"wait\" and has no subject — operational"
   },
   {
    "postNum": 919,
@@ -58236,12 +58165,12 @@
     "after": "Important."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 922,
@@ -58254,12 +58183,12 @@
     "after": "Important."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 923,
@@ -58308,12 +58237,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "prohibition",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"don\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"don\" and has no subject — prohibition"
   },
   {
    "postNum": 928,
@@ -58356,12 +58285,12 @@
     "after": "Q"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
    "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 936,
@@ -58599,12 +58528,12 @@
     "after": "God bless."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"keep\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"keep\" and has no subject — operational"
   },
   {
    "postNum": 95,
@@ -59019,12 +58948,12 @@
     "after": "Purpose."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"clean\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"clean\" and has no subject — operational"
   },
   {
    "postNum": 969,
@@ -59121,12 +59050,12 @@
     "after": "Who wins?"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"set\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"set\" and has no subject — operational"
   },
   {
    "postNum": 97,
@@ -59280,12 +59209,12 @@
     "after": "Fire in the hole."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "cognition",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"wonder\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"wonder\" and has no subject — cognition"
   },
   {
    "postNum": 98,
@@ -59465,12 +59394,12 @@
     "after": "Who are the puppets?"
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"open\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"open\" and has no subject — operational"
   },
   {
    "postNum": 992,
@@ -59534,12 +59463,12 @@
     "after": "Stage."
    },
    "klass": "Q_DIRECTIVE",
-   "family": "other",
-   "countsAsDirective": false,
-   "needsAdjudication": true,
+   "family": "operational",
+   "countsAsDirective": true,
+   "needsAdjudication": false,
    "verbEvidence": "curated",
-   "confidence": "MEDIUM",
-   "why": "opens with the base-form verb \"clean\" and has no subject — no family in the agreed six"
+   "confidence": "HIGH",
+   "why": "opens with the base-form verb \"clean\" and has no subject — operational"
   },
   {
    "postNum": 993,
