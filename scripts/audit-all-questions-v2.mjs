@@ -52,7 +52,14 @@ const WH_LEAD = new RegExp(`^(${WH})\\b`, 'i')
 // faith." and "Will become relevant." fail because a bare noun or verb follows.
 const AUX_INVERSION = new RegExp(`^(${AUX})\\s+(i|you|we|they|he|she|it|there|the|this|that|these|those|any|all|[A-Z][a-z]+)\\b`)
 // Imperatives that request INFORMATION — questions in the agreed model.
-const ASKS_INFO = /^(define|list|identify|explain|compare|reconcile|clarify|describe|name)\b/i
+const ASKS_INFO = /^(define|list|identify|explain|compare|reconcile|clarify|describe)\b/i
+// "name" is both a verb and a noun, and Q uses both. Unconditionally treating it as an
+// information request swept up "Name worth remembering." and "Name can be found due to
+// filing." It now qualifies only when an OBJECT follows the imperative…
+const NAME_REQUEST = /^name\s+(the|all|every|each|any|both|those|these|his|her|their|our|its|top|\d+)\b/i
+// …and is rejected outright where "Name" is the SUBJECT: followed by an auxiliary
+// ("Name can be found"), a pronoun ("Name we don't say") or a preposition.
+const NAME_AS_NOUN = /^name\s+(is|are|was|were|can|could|will|would|shall|should|may|might|must|has|have|had|we|you|they|i|he|she|it|worth|of|for|in|on|to)\b/i
 // Imperatives that request ACTION — directives.
 const DIRECTIVE = /^(follow|think|read|watch|listen|dig|expand|learn|study|trust|pray|share|meme|archive|save|review|refer|apply|remember|consider|look|note|track|search|find|ask|keep|stay|protect|defend|prepare|organize|spread|rally|stand|fight|hold|use|check|verify|confirm|understand|be|have|let|do not|don't|never|always)\b/i
 const SIGNATURE = /^(q|q\+|wwg1wga|ncswic|where we go one,? we go all)\b/i
@@ -131,14 +138,33 @@ function score(unit) {
   if (WH_INVERSION.test(t)) { s += 0.5; signals.push('wh + auxiliary inversion') }
   else if (WH_LEAD.test(t)) { s += 0.1; signals.push('wh lead, no inversion') }
   if (AUX_INVERSION.test(t)) { s += 0.25; signals.push('auxiliary + subject') }
-  if (ASKS_INFO.test(t)) { s += 0.5; signals.push('requests information') }
+  const asksInfo = ASKS_INFO.test(t) || (NAME_REQUEST.test(t) && !NAME_AS_NOUN.test(t))
+  if (asksInfo) { s += 0.5; signals.push('requests information') }
   if (!qMark && askedWithMark.has(k)) { s += 0.35; signals.push('asked with "?" elsewhere in the corpus') }
-  if (DIRECTIVE.test(t) && !ASKS_INFO.test(t)) { s -= 0.6; signals.push('imperative action verb') }
+  if (DIRECTIVE.test(t) && !asksInfo) { s -= 0.6; signals.push('imperative action verb') }
 
   return { s: Math.max(0, Math.min(1, s)), qMark, signals, nonAnalytic: false }
 }
 
+// A unit ending on an abbreviation or a lone initial is almost certainly a sentence cut in
+// half — "Why was the U.S.", "Why would H." — not a question Q asked. These stay in
+// adjudication and may never enter production automatically, whatever they score.
+const SEGMENTATION_RISK = /(?:\b(?:[A-Z]\.){2,}|\b[A-Z]\.|\b(?:Adm|Gen|Sen|Rep|Dr|Mr|Mrs|Ms|St|Jr|Sr|vs|v|No|Inc|Co|Corp|Dept|Est|approx|etc|al)\.)\s*$/i
+
 const THRESHOLD = 0.5
+
+// A "Define X." is imperative in FORM but seeks an answer in FUNCTION. Recording both keeps
+// it in the Q Questions family without pretending it is syntactically interrogative — and it
+// is what will separate "Define the connection." from "Follow the money." when Q Directives
+// is built.
+function formAndFunction(t) {
+  const asksInfo = ASKS_INFO.test(t) || (NAME_REQUEST.test(t) && !NAME_AS_NOUN.test(t))
+  if (asksInfo) return { grammaticalForm: 'imperative', semanticFunction: 'information_request' }
+  if (/\?$/.test(t) || WH_INVERSION.test(t) || AUX_INVERSION.test(t)) {
+    return { grammaticalForm: 'interrogative', semanticFunction: 'question' }
+  }
+  return { grammaticalForm: 'declarative', semanticFunction: 'question' }
+}
 
 function subtypeOf(t) {
   const m = t.match(WH_LEAD)
@@ -151,9 +177,13 @@ function subtypeOf(t) {
 // ── self-test on GPT's examples ──────────────────────────────────────────────
 if (process.argv.includes('--selftest')) {
   const mustNot = ['Have faith.', 'Will of the people.', 'Will become relevant.', 'Where we go one, we go ALL.',
-    'When you are divided, you are weak.', 'May God bless you...', 'Must end now!', 'Follow the money.', 'Think logically.']
+    'When you are divided, you are weak.', 'May God bless you...', 'Must end now!', 'Follow the money.', 'Think logically.',
+    // v2.1 — "name" as a noun rather than an imperative verb
+    'Name worth remembering.', 'Name can be found due to filing.', "Name we don't say AZ road block."]
   const must = ['Coincidence?', 'Why did HRC lose.', "Define 'State Secrets'.", 'List the estimated wealth of religious organizations.',
-    'Reconcile.', 'Clarify.', 'Is Flynn safe?', 'Who is Q?']
+    'Reconcile.', 'Clarify.', 'Is Flynn safe?', 'Who is Q?',
+    // v2.1 — "name" as a genuine information request
+    'Name the person.', 'Name all individuals involved.']
   let bad = 0
   console.log('\nMUST NOT be questions:')
   for (const t of mustNot) {
@@ -188,7 +218,7 @@ const totals = {
   posts: posts.length, postsWithQuestions: 0, questionUnits: 0, distinct: 0,
   confirmed: 0, missed: 0,
   storedPresentSegDiff: 0, storedNotPresent: 0,
-  anonExcluded: 0,
+  anonExcluded: 0, segmentationRisk: 0,
   byScoreBand: { 'certain (>=0.85)': 0, 'likely (0.6-0.85)': 0, 'borderline (0.5-0.6)': 0 },
   bySubtype: {}, byTerminal: {},
 }
@@ -221,9 +251,17 @@ for (const p of posts) {
     distinct.add(k)
     if (isStored) totals.confirmed++; else totals.missed++
 
+    const risky = SEGMENTATION_RISK.test(u.text)
+    if (risky) totals.segmentationRisk++
+    const ff = formAndFunction(u.text)
+
     const rec = {
       postNum: p.postNum, postId: p.id,
       sourceText: u.text,
+      grammaticalForm: ff.grammaticalForm,
+      semanticFunction: ff.semanticFunction,
+      segmentationRisk: risky,
+      autoAddEligible: !risky && r.s >= 0.85 && u.segConfidence === 'HIGH',
       sourceLines: [u.startLine, u.endLine],
       reconstructed: u.endLine > u.startLine,
       questionMarkPresent: r.qMark,
@@ -237,7 +275,7 @@ for (const p of posts) {
     records.push(rec)
 
     // Adjudication queue: anything not plainly certain.
-    if (r.s < 0.85 || u.segConfidence !== 'HIGH' || !isStored) {
+    if (r.s < 0.85 || u.segConfidence !== 'HIGH' || !isStored || risky) {
       adjudication.push({
         ...rec,
         neighbours: {
@@ -295,6 +333,7 @@ md.push(`| Missed (in text, not stored) | 291 | ${totals.missed.toLocaleString()
 md.push(`| Stored, present verbatim (do NOT delete) | 1,181 | ${totals.storedPresentSegDiff.toLocaleString()} |`)
 md.push(`| Stored, NOT in Q source (removal candidates) | 144 | ${totals.storedNotPresent.toLocaleString()} |`)
 md.push(`| Anon/quoted questions excluded | 2,144 | ${totals.anonExcluded.toLocaleString()} |`)
+md.push(`| Segmentation-risk units (never auto-added) | — | ${totals.segmentationRisk.toLocaleString()} |`)
 md.push('\n## Semantic score bands\n')
 md.push('| Band | Count | Share |')
 md.push('|---|---|---|')

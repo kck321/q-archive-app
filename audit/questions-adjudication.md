@@ -152,11 +152,10 @@ Only cases needing a human decision. Source text is exact; nothing here has been
 | #972 | `Is listening active?` |  |  |  | `Is listening active?` | stored text NOT present in Q source | `` | `` |
 | #972 | `What is the timing of release?` |  |  |  | `What is the timing of release?` | stored text NOT present in Q source | `` | `` |
 
-## Not stored — candidate additions (102)
+## Not stored — candidate additions (98)
 
 | Post | Source text (exact) | Reconstructed | Score | Seg | Stored value | Signals | Before | After |
 |---|---|---|---|---|---|---|---|---|
-| #1009 | `Name we don't say AZ road block.` |  | 0.5 | HIGH | `` | requests information | `China/Russia pass-through-intel-pull roa` | `Jeff Flake AZ road block.` |
 | #1021 | `List the estimated wealth of religious organizations.` |  | 0.5 | HIGH | `` | requests information | `` | `Billions.` |
 | #1120 | `Clarify.` |  | 0.5 | HIGH | `` | requests information | `` | `Chongqing.` |
 | #117 | `Define.` |  | 0.5 | MEDIUM | `` | requests information | `Why did Alwaleed finance BO pre-politica` | `What book was BO caught reading?` |
@@ -176,7 +175,6 @@ Only cases needing a human decision. Source text is exact; nothing here has been
 | #144 | `C. attacked (hack-attempt)?` |  | 0.6 | MEDIUM | `` | question mark | `How are people inform[e]d?` | `Why was Op[e]ration Mockingbird repeated` |
 | #153 | `Reconcile.` |  | 0.85 | HIGH | `` | requests information, asked with "?" elsewhere in the corpus | `Photo ID? When is it necessary and must ` | `Would the chances of defeating evil grow` |
 | #157 | `Define ‘controlled’ censorship.` |  | 0.5 | HIGH | `` | requests information | `Define censorship.` | `What action is Twitter taking effective ` |
-| #1636 | `Name can be found due to filing.` |  | 0.5 | HIGH | `` | requests information | `Error made.` | `Fake?` |
 | #165 | `Define the ‘known’ action.` |  | 0.5 | HIGH | `` | requests information | `Would POTUS be able to use Twitter post ` | `Why is the MSM ignoring this action?` |
 | #166 | `Define the ‘known’ action.` |  | 0.5 | HIGH | `` | requests information | `Would POTUS be able to use Twitter post ` | `Why is the MSM ignoring this action?` |
 | #1682 | `Define evidence.` |  | 0.5 | HIGH | `` | requests information | `Who does Huber report to [directly]?` | `Who has the server?` |
@@ -206,7 +204,6 @@ Only cases needing a human decision. Source text is exact; nothing here has been
 | #2360 | `POTUS?` |  | 0.6 | MEDIUM | `` | question mark | `"Wrap-Up Smear" deployed v. Justice K?` | `These people are SICK!` |
 | #2381 | `How do you ensure 'appeals' to the U.S.` |  | 0.5 | MEDIUM | `` | wh + auxiliary inversion | `Think Federal Judge rulings [obstruction` | `Think Justice K (5 to 4).` |
 | #2462 | `POTUS?` |  | 0.6 | MEDIUM | `` | question mark | `>NAT SEC ADVISOR TO SESSIONS [counterint` | `https://www.businessinsider.com/ezra-coh` |
-| #2581 | `Name IDEN Public > FBI 'intrusion' > Lawsuit > Response to Lawsuit > Public Reveal (otherw` |  | 0.5 | HIGH | `` | requests information | `How do you protect the chain of custody ` | `Moves & Countermoves.` |
 | #2639 | `Compare & Contrast.` |  | 0.85 | HIGH | `` | requests information, asked with "?" elsewhere in the corpus | `Anons can play this game all day long.` | `FAKE! FAKE! FAKE!` |
 | #2646 | `RECONCILE.` |  | 0.85 | HIGH | `` | requests information, asked with "?" elsewhere in the corpus | `POTUS & BLACK COMMUNITY POST_CANDIDACY?` | `They want you DIVIDED.` |
 | #2664 | `Compare & Contrast.` |  | 0.85 | HIGH | `` | requests information, asked with "?" elsewhere in the corpus | `"With all of the success that our Countr` | `Ring a Bell?` |
@@ -228,7 +225,6 @@ Only cases needing a human decision. Source text is exact; nothing here has been
 | #3586 | `POTUS?` |  | 0.6 | MEDIUM | `` | question mark | `@Snowden base of ops [geo location]?` | `Former C_A?` |
 | #3597 | `Reconcile.` |  | 0.85 | HIGH | `` | requests information, asked with "?" elsewhere in the corpus | `Date ‘anons’ became aware?` | `Do you think we are targeted and attacke` |
 | #365 | `Unlock?` |  | 0.6 | HIGH | `` | question mark | `POTUS today.` | `CLAS_OP_IAD_(future).` |
-| #3699 | `Name worth remembering.` |  | 0.5 | HIGH | `` | requests information | `https://www.gchq.gov.uk/person/jeremy-fl` | `Q` |
 | #3909 | `Why was impeachment pushed through H fast? [did they count on R’s blocking new witnesses?]` |  | 0.5 | HIGH | `` | wh + auxiliary inversion | `Why does FAKE NEWS push anti-hydroxychlo` | `Time sensitive?` |
 | #3990 | `FBI CHAIN OF COMMAND FISA-RUSSIA-POTUS-FLYNN-STONE-PAPADOP-MANAF? [CIA BRIDGE_BRENNAN_INTE` |  | 0.6 | HIGH | `` | question mark | `FBI CHAIN OF COMMAND MIDYEAR INVESTIGATI` | `FBI CHAIN OF COMMAND DNC HACK? [CIA BRID` |
 | #3990 | `FBI CHAIN OF COMMAND DNC HACK? [CIA BRIDGE > UKRAINE CROWDSTRIKE_BRENNAN]?` |  | 0.6 | HIGH | `` | question mark | `FBI CHAIN OF COMMAND FISA-RUSSIA-POTUS-F` | `RECONCILE.` |
@@ -666,7 +662,7 @@ Only cases needing a human decision. Source text is exact; nothing here has been
 
 _…and 842 more in questions-adjudication.json._
 
-## Confirmed but below certainty, or reconstructed across lines (4,340)
+## Confirmed but below certainty, or reconstructed across lines (4,341)
 
 | Post | Source text (exact) | Reconstructed | Score | Seg | Stored value | Signals | Before | After |
 |---|---|---|---|---|---|---|---|---|
@@ -1071,4 +1067,4 @@ _…and 842 more in questions-adjudication.json._
 | #1318 | `If POTUS was NOT IN CONTROL would they be retreating?` |  | 0.6 | HIGH | `If POTUS was NOT IN CONTROL would they be retreating?` | question mark | `Who has the CONTROL?` | `Who is the AG?` |
 | #1318 | `If SESSIONS & WRAY are DC SWAMP/DEEP STATE why are they cleaning their respective houses?` |  | 0.6 | HIGH | `If SESSIONS &amp; WRAY are DC SWAMP/DEEP STATE why are they ` | question mark | `Re_read FBI org change (open source - mo` | `Use LOGIC.` |
 
-_…and 3,940 more in questions-adjudication.json._
+_…and 3,941 more in questions-adjudication.json._

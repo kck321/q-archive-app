@@ -7,30 +7,31 @@
 
 | Measure | v1 | v2 |
 |---|---|---|
-| Q-authored question units | 6,815 | **6,389** |
-| Distinct questions | 5,564 | **5,244** |
-| Posts with >=1 question | 1,836 | 1,686 (34.0%) |
+| Q-authored question units | 6,815 | **6,385** |
+| Distinct questions | 5,564 | **5,240** |
+| Posts with >=1 question | 1,836 | 1,685 (33.9%) |
 | Confirmed against questions.json | 6,524 | 6,287 |
-| Missed (in text, not stored) | 291 | 102 |
+| Missed (in text, not stored) | 291 | 98 |
 | Stored, present verbatim (do NOT delete) | 1,181 | 1,242 |
 | Stored, NOT in Q source (removal candidates) | 144 | 144 |
 | Anon/quoted questions excluded | 2,144 | 2,144 |
+| Segmentation-risk units (never auto-added) | — | 13 |
 
 ## Semantic score bands
 
 | Band | Count | Share |
 |---|---|---|
-| certain (>=0.85) | 2,008 | 31.4% |
-| likely (0.6-0.85) | 4,201 | 65.8% |
-| borderline (0.5-0.6) | 180 | 2.8% |
+| certain (>=0.85) | 2,007 | 31.4% |
+| likely (0.6-0.85) | 4,202 | 65.8% |
+| borderline (0.5-0.6) | 176 | 2.8% |
 
 ## Terminal punctuation
 
 | Ends with | Count | Share |
 |---|---|---|
-| `?` | 6,123 | 95.8% |
-| `.` | 243 | 3.8% |
-| `(none)` | 18 | 0.3% |
+| `?` | 6,123 | 95.9% |
+| `.` | 240 | 3.8% |
+| `(none)` | 17 | 0.3% |
 | `:` | 4 | 0.1% |
 | `!` | 1 | 0.0% |
 
@@ -39,22 +40,21 @@
 | Subtype | Count |
 |---|---|
 | Other | 1,276 |
-| Elliptical | 1,047 |
+| Elliptical | 1,048 |
 | What | 941 |
 | Why | 909 |
 | Yes/No | 758 |
 | Who | 538 |
 | How | 473 |
-| Information request | 236 |
+| Information request | 231 |
 | When | 120 |
 | Where | 77 |
 | Which | 14 |
 
-## Missed — in Q's text, absent from questions.json (102)
+## Missed — in Q's text, absent from questions.json (98)
 
 | Post | Source text (exact) | Score | Signals |
 |---|---|---|---|
-| #1009 | `Name we don't say AZ road block.` | 0.5 | requests information |
 | #1021 | `List the estimated wealth of religious organizations.` | 0.5 | requests information |
 | #1120 | `Clarify.` | 0.5 | requests information |
 | #117 | `Define.` | 0.5 | requests information |
@@ -74,7 +74,6 @@
 | #144 | `C. attacked (hack-attempt)?` | 0.6 | question mark |
 | #153 | `Reconcile.` | 0.85 | requests information, asked with "?" elsewhere in the corpus |
 | #157 | `Define ‘controlled’ censorship.` | 0.5 | requests information |
-| #1636 | `Name can be found due to filing.` | 0.5 | requests information |
 | #165 | `Define the ‘known’ action.` | 0.5 | requests information |
 | #166 | `Define the ‘known’ action.` | 0.5 | requests information |
 | #1682 | `Define evidence.` | 0.5 | requests information |
@@ -104,7 +103,6 @@
 | #2360 | `POTUS?` | 0.6 | question mark |
 | #2381 | `How do you ensure 'appeals' to the U.S.` | 0.5 | wh + auxiliary inversion |
 | #2462 | `POTUS?` | 0.6 | question mark |
-| #2581 | `Name IDEN Public > FBI 'intrusion' > Lawsuit > Response to Lawsuit > Public Reveal (otherwise sealed` | 0.5 | requests information |
 | #2639 | `Compare & Contrast.` | 0.85 | requests information, asked with "?" elsewhere in the corpus |
 | #2646 | `RECONCILE.` | 0.85 | requests information, asked with "?" elsewhere in the corpus |
 | #2664 | `Compare & Contrast.` | 0.85 | requests information, asked with "?" elsewhere in the corpus |
@@ -126,7 +124,6 @@
 | #3586 | `POTUS?` | 0.6 | question mark |
 | #3597 | `Reconcile.` | 0.85 | requests information, asked with "?" elsewhere in the corpus |
 | #365 | `Unlock?` | 0.6 | question mark |
-| #3699 | `Name worth remembering.` | 0.5 | requests information |
 | #3909 | `Why was impeachment pushed through H fast? [did they count on R’s blocking new witnesses?]` | 0.5 | wh + auxiliary inversion |
 | #3990 | `FBI CHAIN OF COMMAND FISA-RUSSIA-POTUS-FLYNN-STONE-PAPADOP-MANAF? [CIA BRIDGE_BRENNAN_INTEL ASSESS[1` | 0.6 | question mark |
 | #3990 | `FBI CHAIN OF COMMAND DNC HACK? [CIA BRIDGE > UKRAINE CROWDSTRIKE_BRENNAN]?` | 0.6 | question mark |
