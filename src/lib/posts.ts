@@ -205,16 +205,57 @@ async function getRawTextIndex(): Promise<Map<number, string>> {
  * (the ?/./! grouping), but the highlighter searched for the literal "Power?" and found
  * nothing. So #120 was listed under Power? with nothing marked in it.
  */
+/**
+ * EXACT matcher for a certified occurrence — the actual source span, including its actual
+ * terminal punctuation, anchored so it cannot match inside a longer question.
+ *
+ * `questionRegex` below is deliberately tolerant: it strips the terminator and accepts any of
+ * `? . !`, because Q writes the same semantic question with different punctuation and that
+ * tolerance is what makes DISCOVERY work. It must never decide a count or a highlight.
+ *
+ * Left unchecked it inflated "Coincidence?" from its true 88 to 142, in two different ways:
+ *   - "Coincidence." and "Coincidence!" (29 + 4) counted as the question "Coincidence?"
+ *   - the bare token matched INSIDE longer questions — "Think Merkel is a coincidence?",
+ *     "Border state - coincidence?", and even the declarative
+ *     'We started asking "coincidence?" long ago for a specific reason.'
+ *
+ * So the certified matcher keeps the punctuation and requires the span to START a unit:
+ * beginning of text, a line break, or straight after a sentence terminator. Whitespace stays
+ * flexible because a question reconstructed across two lines is stored with a single space
+ * where the post has a newline.
+ */
+export function certifiedQuestionRegex(questionText: string): RegExp | null {
+  const core = questionText.replace(/\s+/g, ' ').trim()
+  if (!core) return null
+  const escaped = core.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+')
+  return new RegExp(`${UNIT_START}\\s*${escaped}(?![a-zA-Z0-9])`, 'gi')
+}
+
+// Where a Q-authored unit may begin: start of text, a line break, or straight after a sentence
+// terminator (optionally through a closing quote or bracket).
+//
+// The last alternative is for the 51 directive-wrapped questions. "why are they panicking?" is
+// a certified question whose unit is "Ask yourself, why are they panicking?" — it begins after
+// a COMMA, so the sentence-terminator anchor alone missed all 50 of them. Admitting commas in
+// general would undo the fix: "Border state - coincidence?" is exactly the kind of longer
+// question whose tail must not match the shorter certified question "Coincidence?". So only
+// the two wrapper forms the audit actually found are allowed to open a unit.
+const UNIT_START = `(?<=^|[\\n\\r]|[.?!…:]["'”’)\\]]?\\s|(?:ask\\s+yourself|think)[^\\n\\r]{0,60}?[,\\-–—:]\\s)`
+
+/**
+ * What the highlighters use. Now the CERTIFIED matcher, not the tolerant one.
+ *
+ * Every question reaching a highlighter comes from the certified dataset, which stores the
+ * exact source span for each occurrence — so the highlight can and must be exact. Sharing the
+ * tolerant `questionRegex` here meant clicking "Coincidence?" lit up "Coincidence." in a post
+ * that never asked the question, and lit up the fragment inside "Think Merkel is a
+ * coincidence?" — a different certified question with its own highlight.
+ *
+ * Case-insensitive: the highlighters run against the post's ORIGINAL text, where
+ * "What is coded in your DNA?" never matches a lowercased pattern.
+ */
 export function questionHighlightRegex(questionText: string): RegExp | null {
-  const rx = questionRegex(questionText)
-  // CASE-INSENSITIVE, unlike the matching version.
-  //
-  // questionRegex builds its pattern from lowercased text and runs against the lowercased
-  // raw-text index, so it needs no 'i' flag. The highlighters run against the post's ORIGINAL
-  // text, where "What is coded in your DNA?" never matches a lowercase pattern — which is why
-  // not one question was highlighted anywhere in the app while the analysis panel below the
-  // post listed them all correctly.
-  return rx ? new RegExp(rx.source, 'gi') : null
+  return certifiedQuestionRegex(questionText)
 }
 
 function questionRegex(questionText: string): RegExp | null {
@@ -1002,65 +1043,49 @@ export async function getQuestionFrequency(minCount = 2): Promise<QuestionFreque
 async function computeQuestionFrequency(minCount = 2): Promise<QuestionFrequency[]> {
   const { questions } = await loadLocalData()
 
-  const groups: Record<string, { count: number; postNums: number[]; originalText: string; topStatus: import('../types').AnswerStatus }> = {}
+  // THE CERTIFIED DATASET IS THE COUNT. No text re-scan, no backfill.
+  //
+  // This used to group the stored rows, then re-derive the post list and the mention count by
+  // scanning post text with the tolerant `questionRegex`. Both steps are now wrong and one was
+  // visibly wrong: "Coincidence?" displayed 142 mentions across 135 posts for a question Q
+  // actually asks 88 times in 86 posts. The scan added "Coincidence." and "Coincidence!", and
+  // matched the bare token inside longer questions like "Think Merkel is a coincidence?".
+  //
+  // The backfill existed because extraction was incomplete — a question asked in 10 posts
+  // might only have been stored against 7. The audit closed that gap: every occurrence is now
+  // a certified row carrying its exact source span, and `occurrences` records how many times
+  // one post asks it. Re-deriving from text can now only reintroduce error.
+  const groups: Record<string, {
+    postNums: number[]; originalText: string; occurrences: number
+    repeats: Record<number, number>; topStatus: import('../types').AnswerStatus
+  }> = {}
 
   for (const q of questions) {
+    // Editorial normalisations stay searchable but are never Q's words, so they never count.
+    if (q.editorialNormalization || q.neverDisplayAsQ) continue
     // Same key as every other frequency list — see normalizeItemKey.
     const key = normalizeItemKey(q.text)
     if (!groups[key]) {
-      groups[key] = { count: 0, postNums: [], originalText: q.text, topStatus: 'unprocessed' }
+      groups[key] = { postNums: [], originalText: q.text, occurrences: 0, repeats: {}, topStatus: 'unprocessed' }
     }
-    groups[key].count++
-    if (!groups[key].postNums.includes(q.postNum)) {
-      groups[key].postNums.push(q.postNum)
-    }
-    // Track the best status seen for this group
-    if (STATUS_RANK[q.status] > STATUS_RANK[groups[key].topStatus]) {
-      groups[key].topStatus = q.status
-    }
-  }
-
-  // A question asked in 10 posts but only extracted from 7 should list all 10 — but ONLY
-  // where it is actually asked. Using the generic phrase backfill here stripped the "?" and
-  // matched bare mentions, so the question "Twitter?" claimed 960 posts instead of 6.
-  // No alias folding either — aliases are an entity concept, not a question one.
-  const rawText = await getRawTextIndex()
-  for (const g of Object.values(groups)) {
-    // Same rule as the analysis lists: a post listed under a question must actually ask it.
-    // 152 stored question rows point at posts whose text does not contain the question, and
-    // clicking those chips opened a post with nothing highlighted.
-    const rx = questionRegex(g.originalText)
-    if (rx) {
-      g.postNums = g.postNums.filter(n => {
-        const text = rawText.get(n)
-        if (text === undefined) return true
-        rx.lastIndex = 0
-        return rx.test(text)
-      })
-    }
-    await backfillQuestionFromText(g.originalText, g.postNums)
+    const g = groups[key]
+    const n = q.occurrences ?? 1
+    g.occurrences += n
+    if (n > 1) g.repeats[q.postNum] = n
+    if (!g.postNums.includes(q.postNum)) g.postNums.push(q.postNum)
+    if (STATUS_RANK[q.status] > STATUS_RANK[g.topStatus]) g.topStatus = q.status
   }
 
   return Object.values(groups)
     .filter(g => g.postNums.length >= minCount)
-    .map(g => {
-      // Mentions: the same phrase said twice in one drop counts twice.
-      let occurrences = 0
-      const repeats: Record<number, number> = {}
-      for (const n of g.postNums) {
-        const c = Math.max(1, countQuestionOccurrences(rawText.get(n) ?? '', g.originalText))
-        occurrences += c
-        if (c > 1) repeats[n] = c
-      }
-      return {
-        text: g.originalText,
-        count: g.postNums.length,
-        postNums: g.postNums.sort((a, b) => a - b),
-        topStatus: g.topStatus,
-        occurrences,
-        repeats,
-      }
-    })
+    .map(g => ({
+      text: g.originalText,
+      count: g.postNums.length,
+      postNums: g.postNums.sort((a, b) => a - b),
+      topStatus: g.topStatus,
+      occurrences: g.occurrences,
+      repeats: g.repeats,
+    }))
     .sort((a, b) => b.count - a.count)
 }
 

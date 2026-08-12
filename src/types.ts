@@ -124,6 +124,24 @@ export interface QQuestion {
   editorialNormalization?: boolean
   neverDisplayAsQ?: boolean
   qAuthoredSource?: string | null
+  /**
+   * How many times THIS post asks it, from the same segmentation the audit used. Usually 1;
+   * "Coincidence?" is asked twice in #1176 and #1266. The frequency list sums this rather
+   * than re-scanning post text, which is what inflated it to 142.
+   */
+  occurrences?: number
+  /**
+   * The full Q-authored unit the span came from. For a directive-wrapped question the unit is
+   * "Ask yourself, why are they panicking?" while `text` is the counted span
+   * "why are they panicking?".
+   */
+  unitText?: string
+  /** A question Q asked inside a directive. Counts as a question, stays a directive. */
+  directiveWrapped?: boolean
+  directiveFamily?: string
+  directiveSource?: string
+  /** Recovered from inside a malformed unit — the enclosing segment never counts, this does. */
+  recoveredFromSegmentationError?: boolean
 }
 
 // ─── Infograph ───────────────────────────────────────────────────────────────

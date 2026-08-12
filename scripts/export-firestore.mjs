@@ -125,7 +125,11 @@ for (const name of COLLECTIONS) {
   // Same reasoning for the derived analysis: the dump replaces posts.json wholesale, so the
   // recall backfill and the emphasis detection have to be reapplied or they vanish silently.
   // Both are deterministic and idempotent, so re-running is always safe.
-  for (const step of ['backfill-analysis.mjs', 'detect-emphasis.mjs', 'apply-questions.mjs']) {
+  // apply-questions.mjs rebuilds the 6,299 certified base from audit/questions-final.json;
+  // apply-questions-final.mjs then layers on the 143 occurrences the uncovered-"?" audit
+  // recovered, taking it to 6,442. They MUST run in that order and both must run — dropping
+  // the second one silently reverts the live count to 6,299 on the next export.
+  for (const step of ['backfill-analysis.mjs', 'detect-emphasis.mjs', 'apply-questions.mjs', 'apply-questions-final.mjs']) {
     console.log(`
 Re-running ${step}…`)
     execFileSync(process.execPath, [join(root, 'scripts', step), '--apply'], { stdio: 'inherit' })
