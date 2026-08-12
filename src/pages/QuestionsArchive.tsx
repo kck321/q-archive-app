@@ -697,8 +697,30 @@ export default function QuestionsArchive() {
         })()}
 
         {/* ── Repeated Questions (2+) ──────────────────────────────────── */}
+        {/*
+          Hidden while a month is selected, and this is not cosmetic.
+
+          The month panel above counts things IN that month: "24 repeated" means asked more
+          than once DURING August 2018. This list counts questions repeated across the WHOLE
+          archive that happen to have an ask in August 2018 — a different question with a
+          different answer (83). Both were labelled "August 2018", so the page showed two
+          contradictory counts for what looked like the same thing.
+
+          The month panel already ranks every question in that month by how often it was
+          asked, so it answers what the click was asking. These lists are the all-time view
+          and come back when the month is cleared.
+        */}
         {loading ? (
           <div className="text-center py-12 text-gray-500">Loading questions…</div>
+        ) : selectedMonth ? (
+          <p className="text-xs text-gray-500 border-t border-q-border pt-3">
+            Showing <span className="text-gray-300 font-medium">{formatMonth(selectedMonth)}</span> only —
+            the panel above ranks every question asked that month.{' '}
+            <button onClick={() => setSelectedMonth(null)} className="text-blue-400 hover:text-blue-300 hover:underline">
+              Clear the month
+            </button>{' '}
+            to browse the whole archive by how often each question repeats.
+          </p>
         ) : (
           <>
             <div ref={listRef} className="scroll-mt-24">
