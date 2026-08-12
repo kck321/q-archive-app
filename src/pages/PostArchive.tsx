@@ -926,6 +926,9 @@ export default function PostArchive() {
                         // follows the tap, offset 28px to the right, lands off-screen for any
                         // bar in the right half. On narrow screens it is pinned to the top-left
                         // of the chart instead, where it is always readable.
+                        // Pinned to the top of the plot area: it never covers the bar you are
+                        // pointing at, and cannot run off the bottom of a short chart.
+                        position={{ y: 0 }}
                         offset={28}
                         // Suppressed on phones — the readout is rendered under the chart
                         // instead, so it covers nothing and has a visible way to close.

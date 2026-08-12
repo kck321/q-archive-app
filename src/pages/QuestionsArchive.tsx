@@ -551,7 +551,7 @@ export default function QuestionsArchive() {
                 {searchMatchMonths && (
                   <YAxis yAxisId="matches" orientation="right" hide domain={[0, matchAxisMax(searchMatchMax)]} />
                 )}
-                <Tooltip content={(props: any) => <ChartTooltip {...props} keyword={searchMatchMonths ? search : null} matchCounts={searchMatchMonths} matchMax={searchMatchMax} />} />
+                <Tooltip position={{ y: 0 }} content={(props: any) => <ChartTooltip {...props} keyword={searchMatchMonths ? search : null} matchCounts={searchMatchMonths} matchMax={searchMatchMax} />} />
                 <Legend content={() => (
                   <div style={{ display: 'flex', gap: 16, justifyContent: 'center', fontSize: 11, paddingTop: 4 }}>
                     {[{ name: 'Q Posts', color: '#9ca3af' }, searchMatchMonths ? { name: `"${search}" matches`, color: gradientColor(searchMatchMax, searchMatchMax) } : { name: 'Questions', color: '#3b82f6' }].map(item => (

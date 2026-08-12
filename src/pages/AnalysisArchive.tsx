@@ -587,7 +587,7 @@ export default function AnalysisArchive() {
                 {searchMatchMonths && (
                   <YAxis yAxisId="matches" orientation="right" hide domain={[0, matchAxisMax(searchMatchMax)]} />
                 )}
-                <Tooltip content={({ active, payload, label: lbl }) => {
+                <Tooltip position={{ y: 0 }} content={({ active, payload, label: lbl }) => {
                   if (!active || !payload || !lbl) return null
                   return (
                     <div style={{ background: '#1a1a1a', border: '1px solid #333', borderRadius: 8, padding: '8px 12px', fontSize: 12 }}>

@@ -340,6 +340,7 @@ export default function QBrackets() {
                   <YAxis yAxisId="matches" orientation="right" hide domain={[0, matchAxisMax(searchMatchMax)]} />
                 )}
                 <Tooltip
+                  position={{ y: 0 }}
                   cursor={{ fill: 'rgba(255,255,255,0.06)' }}
                   content={({ active, payload, label }) => {
                     if (!active || !payload || !payload.length) return null

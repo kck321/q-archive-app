@@ -1612,7 +1612,7 @@ export default function Dashboard() {
                     <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
                     <XAxis dataKey="month" tick={<CustomXAxisTick />} interval={0} height={44} />
                     <YAxis tick={{ fill: '#6b7280', fontSize: 10 }} />
-                    <Tooltip content={(props: any) => <ChartTooltip {...props} keyword={chartMatchMonths ? chartSearch : null} matchCounts={chartMatchMonths} matchMax={chartMatchMax} />} />
+                    <Tooltip position={{ y: 0 }} content={(props: any) => <ChartTooltip {...props} keyword={chartMatchMonths ? chartSearch : null} matchCounts={chartMatchMonths} matchMax={chartMatchMax} />} />
                     <Legend content={() => {
                       const items: Array<{ name: string; color: string }> = [{ name: 'Q Posts', color: '#9ca3af' }]
                       if (isAll) {

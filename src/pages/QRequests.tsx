@@ -320,7 +320,7 @@ export default function QRequests() {
               {searchMatchMonths && (
                 <YAxis yAxisId="matches" orientation="right" hide domain={[0, matchAxisMax(searchMatchMax)]} />
               )}
-              <Tooltip content={({ active, payload, label }) => {
+              <Tooltip position={{ y: 0 }} content={({ active, payload, label }) => {
                 if (!active || !payload || !label) return null
                 const [y, mo] = String(label).split('-')
                 const monthLabel = new Date(Number(y), Number(mo) - 1).toLocaleString('default', { month: 'long', year: 'numeric' })
