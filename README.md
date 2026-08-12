@@ -1,73 +1,60 @@
-# React + TypeScript + Vite
+# Q Archive
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An open archive for Q research — every drop, searchable and cross-referenced.
 
-Currently, two official plugins are available:
+**Live site:** https://kck321.github.io/q-archive-app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Built for researching the *language* of the posts: each drop is broken down into what it
+asked, claimed, predicted and named, with the analysis searchable across all 4,966 posts.
 
-## React Compiler
+## Download the desktop app
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Grab an installer from the [**Releases**](../../releases/latest) page — Windows (`.msi`),
+macOS (`.dmg`, universal), or Linux (`.AppImage` / `.deb`). The whole archive works offline
+once installed; nothing is sent anywhere.
 
-## Expanding the ESLint configuration
+The installers are not code-signed, so the OS warns on first launch. On Windows choose
+**More info → Run anyway**; on macOS right-click the app and choose **Open**. Unsigned means
+unsigned, not unsafe — every build is produced by GitHub Actions from the source in this
+repo, and you can read the build log for any release.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## The two builds
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+One codebase, two products, switched by `VITE_PUBLIC_SITE` at compile time:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+| | Public build | Editing build |
+|---|---|---|
+| Command | `npm run dev:public` | `npm run dev` |
+| `CAN_EDIT` | `false` | `true` |
+| Edit controls, admin PIN | stripped at compile time | present |
+| Firestore reads | none | overlays synced |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+The published site and the downloadable app are both the **public** build. `CAN_EDIT` is a
+build-time constant, so Rollup removes the edit controls entirely rather than hiding them —
+they are not in the shipped JavaScript at all. The release workflow greps each bundle and
+fails the build if an admin string survives.
+
+## Data
+
+The archive ships as JSON in `public/data/`, seeded into IndexedDB on first load, so
+browsing and searching need no network and no database. `scripts/audit-vs-qalerts.mjs`
+compares every post against the source archive field by field and currently reports text,
+attachments, tripcodes and timestamps matching on 4,966 of 4,966.
+
+## Development
+
+```bash
+npm install
+npm run dev            # editing build,  http://localhost:5173
+npm run dev:public     # what the public sees
+npm run build          # web build
+npm run app:dev        # desktop app (Tauri)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Releases are cut by tagging: `git tag v0.7.0 && git push origin v0.7.0` runs
+`.github/workflows/release-desktop.yml`, which builds all three platforms and opens a draft
+release.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## License
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The code is open. The Q posts themselves are public record.
