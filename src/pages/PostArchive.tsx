@@ -621,7 +621,7 @@ export default function PostArchive() {
       {/* Sticks BELOW the fixed "Q Drops" bar on phones (that bar is h-12), and at the
           very top on desktop where there is no such bar. z-20 keeps it under the header and
           over the chart tooltip, which sits at z-10. */}
-      <div className={`sticky top-12 lg:top-0 z-20 bg-[#0a0e1a] border-b border-q-border px-4 sm:px-6 pt-3 sm:pt-5 pb-3 sm:pb-4 space-y-3 shadow-[0_2px_12px_rgba(0,0,0,0.6)] transition-transform duration-200 lg:!translate-y-0 ${hideBar ? '-translate-y-[130%]' : 'translate-y-0'}`}>
+      <div className={`sticky top-12 lg:top-0 z-20 bg-[#0a0e1a] px-4 sm:px-6 pt-3 sm:pt-5 pb-3 sm:pb-4 space-y-3 shadow-[0_2px_12px_rgba(0,0,0,0.6)] transition-transform duration-200 lg:!translate-y-0 ${hideBar ? '-translate-y-[130%]' : 'translate-y-0'}`}>
 
         {/* Title + search row */}
         {/* One line, always. flex-wrap plus a 220px minimum on the input meant the button
@@ -718,16 +718,6 @@ export default function PostArchive() {
           </div>
         </div>
 
-
-        {/* Mission statement, then today's deltas. Both sit under the controls: the controls
-            are what you came to use, the statement is what you read once. */}
-        {IS_PUBLIC_SITE && (
-          <p className="text-sm text-gray-400 leading-relaxed max-w-3xl">
-            Built for researching the <span className="text-gray-200 font-medium">language</span> of
-            the Q posts. Every drop broken down into what it asked, claimed, predicted and named.
-          </p>
-        )}
-
         {/* "Deltas" — every drop posted on today's month and day, in any year. The search
             already understands a bare date ("Aug 12" → month + day, year unspecified), so
             this is the same query you could type, one tap away. */}
@@ -745,6 +735,18 @@ export default function PostArchive() {
             </span>
           )}
         </div>
+
+        {/* Closes the search group: title/search, post-number jump, sort, deltas. */}
+        <hr className="border-q-border" />
+
+        {IS_PUBLIC_SITE && (
+          <p className="text-sm text-gray-400 leading-relaxed max-w-3xl">
+            Built for researching the <span className="text-gray-200 font-medium">language</span> of
+            the Q posts. Every drop broken down into what it asked, claimed, predicted and named.
+          </p>
+        )}
+
+
 
         {/* Which analysis sections also carry this term. Renders nothing at all when the
             term appears in none of them, so an unmatched search adds no empty furniture. */}
