@@ -33,3 +33,6 @@ dist-ssr
 
 # Data snapshots — local rollback points, not for the repo or the website
 .snapshots/
+
+# Re-downloadable audit input (unlike references.jsonl, which is the only copy)
+scripts/.cache/qalerts-posts.json

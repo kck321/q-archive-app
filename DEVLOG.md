@@ -1635,3 +1635,50 @@ of the card and every post parsed as zero references. The trailing space fixes i
 
 **Deliberately NOT done:** quoted text is kept out of the analysis index. 52% of it is anon
 words and must not become Q's questions, claims or predictions.
+
+
+---
+
+## Truth audit vs qalerts + clickable links (Aug 12, 2026)
+
+**Request:** "i want all the post to be true throughout this whole app… why do i not see the
+whole post for 2124? i also want any links within the post that are links to be clickable"
+
+### Full field-by-field audit
+Joined all 4,966 posts against qalerts' own `posts.json` on **board + post id** (host-agnostic;
+matching on the bare `#anchor` is WRONG — post ids collide across /qresearch/, /cbts/ and /pol/,
+which produced ~97 phantom diffs).
+
+Result: **text identical on all 4,966. Tripcodes identical. Timestamps identical.** The only
+divergence was media — and ours was the wrong one.
+
+### What the audit found (all fixed)
+- **475 attachments recorded from a Tor `.onion` mirror** plus 57 from `media.8kun.top`, all
+  protocol-relative and unloadable in any browser. **298 posts had no other copy, so their
+  images simply never appeared.** qalerts mirrors them under the same content hash (verified
+  200, 1.5 MB), so `mediaUrl` now rewrites *any* `file_store/<hash>` URL whatever host
+  recorded it.
+- **82 posts recorded the same image twice** — once live, once on a dead mirror — rendering
+  as the image followed by a broken copy of itself. `dedupeMedia()` collapses them *after*
+  rewriting, since both then resolve to the same URL.
+- **PostCard rendered no images at all**, so a search result never showed the attachment even
+  when the image WAS the post.
+
+Every attachment now resolves to a live host: 1,976 qalerts, 26 4plebs, 1 archive.fo.
+**Zero onion, zero dead.**
+
+### Why #2124 still looked wrong
+The quoted content was rendering on the post page but not in the results list, and the reader
+feed mapped posts to a trimmed shape that dropped `quotedPosts` entirely. Both fixed; results
+now bucket three ways (Q's own words / in the post being replied to / alias), because #2124
+was sitting under a divider claiming it did not contain the search term when it does — in the
+post it replies to.
+
+### Clickable links
+`src/lib/linkify.tsx` runs over the **result** of the highlighters, not the raw text, and
+recurses into their elements — Q puts URLs inside lines that get highlighted as claims, so a
+top-level-only pass would leave most links dead. Applied to the post body, search/browse
+cards, the reader feed and quoted text. Links carry `rel="noopener noreferrer nofollow"`.
+
+**Audit script kept:** the join-key logic is the reusable part — re-run it after any ingest
+change to prove the archive still matches the source.
