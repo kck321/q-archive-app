@@ -95,9 +95,22 @@ it is counting before assuming the maths is broken.**
 
 ## Still open before launch
 
-1. **Firebase Auth, then Firestore rules.** Rules are still wide open — anyone can read,
-   overwrite or delete. Locking writes without Auth first would break the
-   edit → export → publish chain, so Auth comes first.
+1. **Firestore rules are DEPLOYED and verified** (`firestore.rules`, 12 Aug 2026). Reads are
+   public — the same data is already published in `public/data/*.json`, and denying reads
+   would break `export-firestore.mjs` while protecting nothing. Writes are denied everywhere
+   except `feedback` create. Verified against the LIVE rules, not by reading them:
+   vandalism, deletion, feedback enumeration, oversize and bad-kind submissions all denied;
+   feedback create and postEdits read still work.
+   - **Do not add a `match /{document=**} { allow read: if true }` catch-all.** Firestore ORs
+     matching rules, so it re-opened the feedback drop box even though the specific rule said
+     `allow read: if false`. Collections are listed one by one for that reason.
+   - **Consequence:** the editing build's Firestore sync is now denied. Edits still save to
+     IndexedDB (every push is wrapped in try/catch), but new edits no longer reach
+     `postEdits`, so the export cannot bake them. Restoring that needs Firebase Auth +
+     a rule granting that one account.
+   - A Firebase web API key is an identifier, not a credential. It is in the public bundle
+     because the feedback form needs it, it cannot be hidden in a client app, and that is
+     fine — these rules are the actual protection.
 2. **Wallet addresses** — Support page renders empty until they are filled in.
 3. **Dashboard still ships publicly** — user's explicit choice, to be pulled last.
 4. API key HTTP-referrer restriction; Firebase App Check for feedback spam.

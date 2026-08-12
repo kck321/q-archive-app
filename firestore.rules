@@ -1,0 +1,62 @@
+rules_version = '2';
+
+// Firestore security rules for q-app-2ce0a.
+//
+// Context: the site is public and its JavaScript necessarily contains the Firebase project
+// ID and web API key. That is not a leak — a Firebase web key is an identifier, not a
+// credential, and cannot be hidden in a client app. These rules are the only thing that
+// actually protects the data, and until now there were none: anyone reading the bundle could
+// read, overwrite or delete the entire archive.
+//
+// Reads stay open. Every one of these collections is already published verbatim in
+// public/data/*.json on the site, so denying reads would protect nothing while breaking
+// scripts/export-firestore.mjs, which reads them to build the bundle.
+//
+// Writes are denied everywhere except the feedback drop box. Client writes only ever came
+// from the editing build on one machine, and every one of them is wrapped in try/catch with
+// IndexedDB as the source of truth, so a denied write cannot lose an edit — it just stops
+// syncing to the cloud until Firebase Auth is added and this file grants that account.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── Visitor feedback: a WRITE-ONLY drop box ──────────────────────────────
+    // Create only. No read, so there is no public comment wall to deface or moderate and
+    // no way to enumerate what others submitted. Size caps are enforced in the client too,
+    // but that is a courtesy — this rule is what actually stops a crafted request.
+    match /feedback/{id} {
+      allow create: if request.resource.data.keys().hasOnly(['kind', 'message', 'contact', 'postNum', 'createdAt'])
+                    && request.resource.data.keys().hasAll(['kind', 'message', 'createdAt'])
+                    && request.resource.data.kind in ['comment', 'correction', 'request', 'bug']
+                    && request.resource.data.message is string
+                    && request.resource.data.message.size() > 0
+                    && request.resource.data.message.size() <= 2000
+                    && request.resource.data.contact is string
+                    && request.resource.data.contact.size() <= 200
+                    && request.resource.data.createdAt is number
+                    && (!('postNum' in request.resource.data) || request.resource.data.postNum is number);
+      allow read, update, delete: if false;
+    }
+
+    // ── The archive: public to read, nobody may write ────────────────────────
+    //
+    // Listed one by one ON PURPOSE. A `match /{document=**} { allow read: if true }`
+    // catch-all here silently re-opened the feedback box: Firestore ORs every matching
+    // rule, so the wildcard's `allow read` beat the specific `allow read: if false` above
+    // and anyone could enumerate visitor submissions. Caught by testing the deployed rules
+    // rather than reading them.
+    //
+    // Anything not named below is denied by default, which is the right way round for a
+    // collection nobody has thought about yet.
+    match /posts/{id}             { allow read: if true; allow write: if false; }
+    match /questions/{id}         { allow read: if true; allow write: if false; }
+    match /topics/{id}            { allow read: if true; allow write: if false; }
+    match /resources/{id}         { allow read: if true; allow write: if false; }
+    match /analysisConfirmed/{id} { allow read: if true; allow write: if false; }
+    match /infographs/{id}        { allow read: if true; allow write: if false; }
+    match /postEdits/{id}         { allow read: if true; allow write: if false; }
+    match /questionEdits/{id}     { allow read: if true; allow write: if false; }
+    match /app/{id}               { allow read: if true; allow write: if false; }
+    match /meta/{id}              { allow read: if true; allow write: if false; }
+  }
+}
