@@ -2,6 +2,28 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import type { QPost, QuotedPost } from '../types'
 import { mediaUrl } from '../lib/mediaUrl'
+import { wordBoundaryPattern } from '../lib/highlightConstants'
+
+/**
+ * Highlight the search term inside quoted text. A search can match here and nowhere in the
+ * drop's own words — "Breitbart article" only appears in the post #2124 replies to — so
+ * without this the row looks like a false positive.
+ */
+function highlightQuoted(text: string, term: string) {
+  if (!term.trim()) return text
+  const escaped = term.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  let re: RegExp
+  try { re = new RegExp(`(${wordBoundaryPattern(escaped, term.trim())})`, 'gi') } catch { return text }
+  // split() with one capture group puts the matches at the odd indices — no re.test() here,
+  // a /g/ regex carries lastIndex between calls and would skip every other match.
+  const parts = text.split(re)
+  if (parts.length === 1) return text
+  return parts.map((part, i) =>
+    i % 2 === 1
+      ? <mark key={i} className="bg-amber-500/30 text-amber-200 rounded px-0.5">{part}</mark>
+      : <span key={i}>{part}</span>
+  )
+}
 
 /**
  * The reply chain behind a drop's ">>NNNNNNN" pointers.
@@ -14,10 +36,13 @@ import { mediaUrl } from '../lib/mediaUrl'
 export default function QuotedPosts({
   quoted,
   qDropFor,
+  searchKeyword = '',
 }: {
   quoted: QuotedPost[]
   /** Maps a board post id to a Q drop, when the quoted post is itself one of ours. */
   qDropFor?: (boardId: string) => QPost | null
+  /** Highlighted inside the quoted text, so a match here is visible in search results. */
+  searchKeyword?: string
 }) {
   const [showChain, setShowChain] = useState(false)
   if (!quoted?.length) return null
@@ -71,7 +96,7 @@ export default function QuotedPosts({
 
             {q.text && (
               <pre className="px-3 pb-2 text-xs leading-relaxed text-gray-400 whitespace-pre-wrap font-mono max-h-72 overflow-y-auto">
-                {q.text}
+                {highlightQuoted(q.text, searchKeyword)}
               </pre>
             )}
 

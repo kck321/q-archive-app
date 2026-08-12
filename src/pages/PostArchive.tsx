@@ -397,12 +397,22 @@ export default function PostArchive() {
   }, [timeline])
 
   // Search results ordered with the EXACT searched-term posts first (so they're read first).
-  const { searchedNums, orderedResults: allOrdered } = useMemo(() => {
+  const { searchedNums, quotedNums, orderedResults: allOrdered } = useMemo(() => {
     const termLower = searchTerm.toLowerCase().trim()
     const searched = new Set(searchResults.filter(p => (p.text ?? '').toLowerCase().includes(termLower)).map(p => p.postNum))
-    const ordered = [...searchResults].sort((a, b) =>
-      (searched.has(a.postNum) ? 0 : 1) - (searched.has(b.postNum) ? 0 : 1) || a.postNum - b.postNum)
-    return { searchedNums: searched, orderedResults: ordered }
+    // Matched in the post being replied to rather than in Q's own words. These used to fall
+    // in with the alias matches under a label saying they don't contain the term — but they
+    // do, in the quoted post, which is the whole reason the drop exists. #2124's body is only
+    // ">>2950820"; "Breitbart article" is in what it replies to.
+    const viaQuote = new Set(
+      searchResults
+        .filter(p => !searched.has(p.postNum) &&
+          (p.quotedPosts ?? []).some(q => (q.depth ?? 0) <= 1 && (q.text ?? '').toLowerCase().includes(termLower)))
+        .map(p => p.postNum)
+    )
+    const rank = (p: QPost) => searched.has(p.postNum) ? 0 : viaQuote.has(p.postNum) ? 1 : 2
+    const ordered = [...searchResults].sort((a, b) => rank(a) - rank(b) || a.postNum - b.postNum)
+    return { searchedNums: searched, quotedNums: viaQuote, orderedResults: ordered }
   }, [searchResults, searchTerm])
 
   // Alias color-coding: the searched term gets the red "searched" color, each other alias in the
@@ -986,6 +996,7 @@ export default function PostArchive() {
                   <p className="text-xs text-gray-500">
                     {searchResults.length} posts — click a number to jump
                     {searchedNums.size > 0 && breakdown.length > 0 && <span className="text-red-300"> · {searchedNums.size} contain "{searchTerm}" exactly (shown first, in red)</span>}
+                    {quotedNums.size > 0 && <span className="text-amber-300"> · {quotedNums.size} in the post being replied to</span>}
                   </p>
                   <div className="flex flex-wrap gap-1 max-h-44 overflow-y-auto pr-1">
                     {ordered.map(p => {
@@ -1020,13 +1031,19 @@ export default function PostArchive() {
               <div className="grid gap-3">
                 {orderedResults.map((p, i) => {
                   const exact = searchedNums.has(p.postNum)
-                  const prevExact = i > 0 && searchedNums.has(orderedResults[i - 1].postNum)
+                  const viaQuote = quotedNums.has(p.postNum)
+                  const bucket = exact ? 0 : viaQuote ? 1 : 2
+                  const prev = orderedResults[i - 1]
+                  const prevBucket = !prev ? -1
+                    : searchedNums.has(prev.postNum) ? 0 : quotedNums.has(prev.postNum) ? 1 : 2
                   return (
                     <div key={p.id}>
-                      {/* divider once the exact-match posts end */}
-                      {!exact && prevExact && (
+                      {/* divider each time the match kind changes */}
+                      {i > 0 && bucket !== prevBucket && (
                         <p className="text-xs text-gray-500 mb-3 mt-1 border-t border-q-border pt-3">
-                          ↓ Other posts via alias (don't contain "{searchTerm}" exactly)
+                          {bucket === 1
+                            ? <>↓ Posts where "{searchTerm}" is in the post being replied to</>
+                            : <>↓ Other posts via alias (don't contain "{searchTerm}" exactly)</>}
                         </p>
                       )}
                       <div className={exact ? 'ring-1 ring-red-700/50 rounded-xl' : ''}>

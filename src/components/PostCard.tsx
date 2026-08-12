@@ -5,6 +5,7 @@ import { useAdmin } from './AdminContext'
 import { getAliasesFor, getAliasGroup, addAlias, removeAlias, subscribeAliases } from '../lib/aliases'
 import { STATIC_ENTITIES, MIL_INTEL_TERMS, Q_SIGNATURES, HIGHLIGHT_CLS, wordBoundaryPattern } from '../lib/highlightConstants'
 import { sourceLink } from '../lib/sourceLink'
+import QuotedPosts from './QuotedPosts'
 import { CAN_EDIT } from '../lib/appMode'
 import type { QPost, QQuestion, PostAnalysis } from '../types'
 
@@ -418,6 +419,11 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
           </p>
         </div>
       )}
+
+      {/* What this drop is replying to. Shown here as well as on the post page: a drop whose
+          whole body is ">>2950820" is otherwise an empty row in the results list, and a
+          search can match the quoted text alone. */}
+      <QuotedPosts quoted={post.quotedPosts ?? []} searchKeyword={searchKeyword} />
 
       {/* Full post text */}
       <pre
