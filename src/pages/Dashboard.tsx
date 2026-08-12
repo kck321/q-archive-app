@@ -4,6 +4,7 @@ import { getStats, getTopRatedPosts, getRecentPosts, getQuestionsTimeline, getQu
 import { fetchAndIngestPosts, patchRefMedia, patchMediaFromQanonPub } from '../lib/ingest'
 import { bulkScanAllPosts, resetForRescan, bulkScanAllRequests, bulkScanAllAnalysis, bulkScanRefImages, bulkScanStaticEntities, bulkClassifyQuestions, bulkScanThreadAnswers, resetThreadScan, STATIC_ENTITIES, type ScanProgress, type RequestScanProgress, type AnalysisScanProgress, type StaticEntityScanProgress, type ClassifyProgress, type ThreadScanProgress } from '../lib/bulkScan'
 import PostCard from '../components/PostCard'
+import RenewalReminder from '../components/RenewalReminder'
 import { postPreview } from '../lib/references'
 import {
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis,
@@ -847,6 +848,9 @@ export default function Dashboard() {
         <h1 className="text-2xl font-bold text-white">Dashboard</h1>
         <p className="text-gray-400 text-sm mt-1">Q Post Archive — Intelligence Analysis</p>
       </div>
+
+      {/* Things that expire and would take the site down with them. Admin build only. */}
+      <RenewalReminder />
 
       {/* Uncategorized content scan */}
       <CoverageScan />

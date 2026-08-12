@@ -18,7 +18,7 @@ across the whole archive and its timeline.
   `public/data/*.json`. Firestore is used only by the desktop build.
 - **Firebase project:** `q-app-2ce0a` — SEPARATE from `pool-logbook` (Pool Tech Logbook and
   Blue Mist Hub). Nothing here can affect those.
-- **Domain chosen:** `qdrops.app` (not yet registered).
+- **Domain:** `qdrops.app` — registered 12 Aug 2026 (see the Domain section below).
 
 ## Two builds, one codebase
 
@@ -102,6 +102,20 @@ it is counting before assuming the maths is broken.**
 3. **Dashboard still ships publicly** — user's explicit choice, to be pulled last.
 4. API key HTTP-referrer restriction; Firebase App Check for feedback spam.
 
+## Domain
+
+**qdrops.app — bought 12 Aug 2026 at Cloudflare Registrar, renews 12 Aug 2027 (~$14/yr).**
+Auto-renews while a valid card is on file. A lapse is the one failure here that cannot be
+undone — an expired .app name can be registered by anyone. The Dashboard shows a countdown
+(`src/components/RenewalReminder.tsx`, admin build only).
+
+Deploying to it takes `SITE_DOMAIN=qdrops.app npm run deploy:web`, which does two things the
+plain deploy does not:
+- builds with base `/` instead of `/q-archive-app/` (the subpath build renders a BLANK PAGE
+  on an apex domain — every asset would be fetched from qdrops.app/q-archive-app/assets/…)
+- writes `dist/CNAME`, because the deploy force-pushes `gh-pages` and would otherwise delete
+  the CNAME file GitHub's "Custom domain" box puts there, silently unsetting the domain
+
 ## Safety net
 
 - **Git** — baseline commit exists. Commit before any bulk operation.
@@ -113,5 +127,6 @@ it is counting before assuming the maths is broken.**
 ## Known trap when testing
 
 :5173 and :5174 look nearly identical. Several reported "bugs" were the editorial build being
-mistaken for the public one, and one was the live GitHub Pages site (still the June build —
-**nothing has been deployed yet**). Always check the port before concluding something is broken.
+mistaken for the public one, and one was the live GitHub Pages site showing an older build.
+Always check the port, and hard-refresh the live site — GitHub's CDN serves the previous
+bundle for a few minutes after a deploy.
