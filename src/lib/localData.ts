@@ -46,6 +46,10 @@ function openDb(): Promise<IDBDatabase> {
   })
 }
 
+/** Exposed so derived indexes (e.g. the analysis frequency) can be cached across sessions. */
+export async function idbGetRaw<T>(key: string): Promise<T | undefined> { return idbGet<T>(key) }
+export async function idbSetRaw(key: string, value: unknown): Promise<void> { return idbSet(key, value) }
+
 async function idbGet<T>(key: string): Promise<T | undefined> {
   const db = await openDb()
   return new Promise((resolve, reject) => {

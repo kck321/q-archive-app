@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from 'react'
 import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom'
 import { isTauri, openExternal } from './lib/openExternal'
 import { initLocalMedia } from './lib/localMedia'
+import { getAnalysisFrequency } from './lib/posts'
+import HighlightToggle from './components/HighlightToggle'
 import { loadAliasesFromCloud } from './lib/aliases'
 import Sidebar from './components/Sidebar'
 import UpdateBanner from './components/UpdateBanner'
@@ -30,6 +32,19 @@ export default function App() {
 
   // Pull entity aliases from the cloud once at startup.
   useEffect(() => { loadAliasesFromCloud() }, [])
+
+  // Warm the analysis index in the background once the app is up.
+  //
+  // It costs ~700ms on a desktop and 2-3.5s on a phone, and every section needs it. Built
+  // lazily it was paid on the first section click, which is exactly when someone is waiting
+  // and watching. Started here it is usually finished before they navigate — and the result
+  // is cached in IndexedDB, so it is only ever paid once per data version.
+  useEffect(() => {
+    const warm = () => { getAnalysisFrequency().catch(() => { /* section will retry */ }) }
+    const w = window as unknown as { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number }
+    if (w.requestIdleCallback) w.requestIdleCallback(warm, { timeout: 3000 })
+    else setTimeout(warm, 1200)
+  }, [])
 
   // Desktop app: switch images to the copies bundled in the installer, so the archive
   // works offline and stops streaming attachments off qalerts on users' behalf.
@@ -64,7 +79,9 @@ export default function App() {
           <button onClick={() => setNavOpen(true)} aria-label="Open menu" className="text-gray-300 hover:text-white p-1 -ml-1">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
           </button>
-          <Link to="/" className="text-base font-semibold text-gray-200 hover:text-white transition-colors"><span className="font-black text-gray-400 mr-1">Q</span>Drops</Link>
+          <Link to="/" className="text-base font-semibold text-gray-200 hover:text-white transition-colors shrink-0"><span className="font-black text-gray-400 mr-1">Q</span>Drops</Link>
+          {/* Sits beside the brand so it is reachable from every page, not just the archive. */}
+          <div className="ml-auto overflow-x-auto"><HighlightToggle /></div>
         </header>
 
         {/* Backdrop behind the mobile drawer */}

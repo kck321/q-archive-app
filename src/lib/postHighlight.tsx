@@ -3,6 +3,7 @@ import { getAliasesFor, getAliasGroup } from './aliases'
 import { STATIC_ENTITIES, MIL_INTEL_TERMS, Q_SIGNATURES, HIGHLIGHT_CLS, wordBoundaryPattern } from './highlightConstants'
 import type { PostAnalysis } from '../types'
 import { expandToSentence } from './posts'
+import { highlightsEnabled } from './highlightPrefs'
 
 // The extractor stored claims/predictions/checkable-claims as fragments, so the highlight
 // stopped mid-sentence: #36's prediction ends at "...prepared to do the unthinkable" and
@@ -59,9 +60,14 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
   // Highlight the searched term AND its whole alias group, so a post that matched via an alias
   // (e.g. searching "4,10,20" surfaces POTUS / Q+ posts) shows WHY it matched instead of nothing.
   if (keyword) addSegs(segs, text, getAliasGroup(keyword), 'keyword')
-  addSegs(segs, text, questionTexts, 'question')
 
-  for (const rt of requestTexts) {
+  // Language highlighting off → the drop renders as plain text. The searched term and any
+  // URLs still stand out, since those are how you move around rather than what the app
+  // concluded about the writing.
+  const lang = highlightsEnabled()
+  if (lang) addSegs(segs, text, questionTexts, 'question')
+
+  for (const rt of lang ? requestTexts : []) {
     const escaped = escapeAndNormalize(rt)
     const rx = new RegExp(escaped, 'gi')
     let m: RegExpExecArray | null
@@ -70,7 +76,7 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
     }
   }
 
-  if (analysis) {
+  if (lang && analysis) {
     const withAliases = (arr: string[]) => arr.flatMap(t => [t, ...getAliasesFor(t)])
     const whole = (arr: string[] = []) => arr.map(t => expandToSentence(t, text))
     addSegs(segs, text, withAliases(analysis.namedEntities ?? []), 'namedEntity')
@@ -83,15 +89,17 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
   }
 
   // Static entities always highlighted as namedEntity
-  addSegs(segs, text, STATIC_ENTITIES, 'namedEntity')
+  if (lang) addSegs(segs, text, STATIC_ENTITIES, 'namedEntity')
 
   // Brackets, mil-intel, Q signatures
-  const bracketRx = /\[\[?[A-Za-z0-9][A-Za-z0-9 _\-]{0,30}\]?\]/g
-  let bm: RegExpExecArray | null
-  while ((bm = bracketRx.exec(text)) !== null) segs.push({ start: bm.index, end: bm.index + bm[0].length, kind: 'bracketCode' })
+  if (lang) {
+    const bracketRx = /\[\[?[A-Za-z0-9][A-Za-z0-9 _\-]{0,30}\]?\]/g
+    let bm: RegExpExecArray | null
+    while ((bm = bracketRx.exec(text)) !== null) segs.push({ start: bm.index, end: bm.index + bm[0].length, kind: 'bracketCode' })
 
-  addSegs(segs, text, MIL_INTEL_TERMS, 'milIntel')
-  addSegs(segs, text, Q_SIGNATURES, 'qSignature')
+    addSegs(segs, text, MIL_INTEL_TERMS, 'milIntel')
+    addSegs(segs, text, Q_SIGNATURES, 'qSignature')
+  }
 
   const urlRx = /https?:\/\/[^\s<>'")\]]+/g
   let um: RegExpExecArray | null

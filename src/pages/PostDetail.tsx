@@ -13,6 +13,7 @@ import BackButton from '../components/BackButton'
 import { useAdmin } from '../components/AdminContext'
 import { sourceLink } from '../lib/sourceLink'
 import { timeAgo } from '../lib/timeAgo'
+import { highlightsEnabled, useHighlightsEnabled } from '../lib/highlightPrefs'
 import { mediaUrl, dedupeMedia } from '../lib/mediaUrl'
 import { resolveReferences, getQuotedContext } from '../lib/references'
 import QuotedPosts from '../components/QuotedPosts'
@@ -118,8 +119,12 @@ function renderPostBody(
   // Normalize for highlight matching — strip trailing punctuation so "WHY?" matches "WHY????????????"
   const normHL = (t: string) => t.toLowerCase().trim().replace(/\s+/g, ' ').replace(/[?.!,;:]+$/, '')
 
+  // Language highlighting off → plain text, except the term you searched for (kind
+  // 'highlight'), which is navigation rather than analysis.
+  const langOn = highlightsEnabled()
+
   // Question segments
-  for (const q of questions) {
+  for (const q of langOn ? questions : questions.filter(q => !!highlight && normHL(q.text) === normHL(highlight))) {
     const escaped = escapeAndNormalize(q.text)
     const isHL = !!highlight && normHL(q.text) === normHL(highlight)
     const regex = new RegExp(wordBoundaryPattern(escaped, q.text), 'gi')
@@ -130,7 +135,7 @@ function renderPostBody(
   }
 
   // Action request segments — ends with '?' → requestQuestion (flashes green↔blue)
-  for (const req of requestTexts ?? []) {
+  for (const req of langOn ? (requestTexts ?? []) : []) {
     const escaped = escapeAndNormalize(req)
     const regex = new RegExp(wordBoundaryPattern(escaped, req), 'gi')
     let m: RegExpExecArray | null
@@ -141,7 +146,7 @@ function renderPostBody(
   }
 
   // Topic keyword segments (yellow)
-  for (const kw of topicKeywords) {
+  for (const kw of langOn ? topicKeywords : []) {
     const escaped = kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
     const regex = new RegExp(`\\b${escaped}\\b`, 'gi')
     let m: RegExpExecArray | null
@@ -151,7 +156,7 @@ function renderPostBody(
   }
 
   // Analysis segments (lower priority than questions/requests)
-  if (analysis) {
+  if (langOn && analysis) {
     // Claims/predictions/checkable-claims were stored as fragments, so the highlight stopped
     // mid-sentence — #36's prediction ended at "...prepared to do the unthinkable", leaving
     // the "(this was leaked internally…)" clause unmarked. The analysis lists already show
@@ -199,6 +204,7 @@ function renderPostBody(
   }
 
   // Bracket code segments — [[name]], [CLASSIFIED], [RR], [LL], [P], [D5], etc.
+  if (langOn) {
   const bracketRx = /\[\[?[A-Za-z0-9][A-Za-z0-9 _\-]{0,30}\]?\]/g
   let bm: RegExpExecArray | null
   while ((bm = bracketRx.exec(text)) !== null) {
@@ -223,6 +229,7 @@ function renderPostBody(
     while ((qm = qsRx.exec(text)) !== null) {
       segs.push({ start: qm.index, end: qm.index + qm[0].length, kind: 'qSignature', matchText: qm[0] })
     }
+  }
   }
 
   // URL segments (lowest priority — clickable links)
@@ -474,6 +481,7 @@ export default function PostDetail() {
   const [pinError, setPinError] = useState('')
   // App-wide admin gate (shared with Dashboard, bulk classify, etc.)
   const { unlocked: adminUnlocked, requireAdmin } = useAdmin()
+  useHighlightsEnabled()   // re-render the body when the language toggle flips
   const [bulkBusy, setBulkBusy] = useState(false)
   const [bulkMsg, setBulkMsg] = useState<string | null>(null)
   // Alias editing — re-render highlights when aliases change.

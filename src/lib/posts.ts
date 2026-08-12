@@ -1,5 +1,5 @@
 import type { QPost, QQuestion, QTopic, QResource, PostAnalysis, AnswerStatus } from '../types'
-import { loadLocalData, mutateStore, onStoreMutated } from './localData'
+import { loadLocalData, mutateStore, onStoreMutated, idbGetRaw, idbSetRaw } from './localData'
 import { pushPostEdit, pushQuestionAdd, pushQuestionDelete } from './sync'
 import { getAliasGroup } from './aliases'
 
@@ -1207,12 +1207,53 @@ export function getAnalysisFrequency(): Promise<AnalysisCategoryFreq[]> {
   // Memoized per data version. Called from AnalysisArchive and four times on PostDetail;
   // each computation is ~700ms (index + backfill + repeat counts) for identical output.
   if (!_freqPromise) {
-    _freqPromise = computeAnalysisFrequency().catch(err => {
+    _freqPromise = loadOrComputeAnalysisFrequency().catch(err => {
       _freqPromise = null            // don't cache a failure
       throw err
     })
   }
   return _freqPromise
+}
+
+// ── Cross-session cache for the analysis index ────────────────────────────────
+//
+// Building this costs ~700ms on a desktop and 2-3.5s on a phone: 16,511 sentence
+// expansions, 52,531 items grouped into ~32,900 rows, then a text backfill over every one.
+// Memoising it in module scope only helped within a single session, so every visit paid it
+// again — and on a phone that is the difference between the sections feeling instant and
+// feeling broken.
+//
+// The result is a pure function of the post data, so it is written to IndexedDB and reused.
+// The stamp is what makes that safe: if the post count, the item count or the seed version
+// differ from what was cached, the cache is ignored and rebuilt. A stale index would show
+// WRONG COUNTS, which is worse than a slow one.
+const FREQ_CACHE_KEY = '__analysis_freq__'
+
+interface FreqCache {
+  stamp: string
+  rows: AnalysisCategoryFreq[]
+}
+
+async function analysisStamp(): Promise<string> {
+  const { posts } = await loadLocalData()
+  let items = 0
+  for (const p of posts) {
+    for (const c of ANALYSIS_CATS) items += ((p.postAnalysis as PostAnalysis | undefined)?.[c] as string[] | undefined)?.length ?? 0
+    items += p.actionRequests?.length ?? 0
+  }
+  return `${posts.length}:${items}:${ANALYSIS_CATS.join()}`
+}
+
+async function loadOrComputeAnalysisFrequency(): Promise<AnalysisCategoryFreq[]> {
+  const stamp = await analysisStamp()
+  try {
+    const cached = await idbGetRaw<FreqCache>(FREQ_CACHE_KEY)
+    if (cached?.stamp === stamp && Array.isArray(cached.rows) && cached.rows.length) return cached.rows
+  } catch { /* private mode / quota — just compute */ }
+
+  const rows = await computeAnalysisFrequency()
+  try { await idbSetRaw(FREQ_CACHE_KEY, { stamp, rows } satisfies FreqCache) } catch { /* non-fatal */ }
+  return rows
 }
 
 async function computeAnalysisFrequency(): Promise<AnalysisCategoryFreq[]> {

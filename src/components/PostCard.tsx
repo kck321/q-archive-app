@@ -9,6 +9,7 @@ import { linkify } from '../lib/linkify'
 import { mediaUrl, dedupeMedia } from '../lib/mediaUrl'
 import { timeAgo } from '../lib/timeAgo'
 import { highlightText } from '../lib/postHighlight'
+import { useHighlightsEnabled } from '../lib/highlightPrefs'
 import { CAN_EDIT } from '../lib/appMode'
 import type { QPost, QQuestion, PostAnalysis } from '../types'
 
@@ -55,6 +56,7 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
   const [aliasInput, setAliasInput] = useState('')
   const [, setAliasTick] = useState(0)
   useEffect(() => subscribeAliases(() => setAliasTick(t => t + 1)), [])
+  useHighlightsEnabled()   // re-render this card when the language toggle flips
 
   const CATS: { key: keyof PostAnalysis; label: string; color: string; chip: string }[] = [
     { key: 'namedEntities',      label: 'Named Entities',      color: 'text-cyan-400',   chip: 'bg-cyan-500/20 text-cyan-200 border-cyan-700/50' },

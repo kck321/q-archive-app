@@ -1,6 +1,7 @@
 import { NavLink, Link, useLocation } from 'react-router-dom'
 import { useState, useCallback, Fragment } from 'react'
 import { CAN_EDIT } from '../lib/appMode'
+import HighlightToggle from './HighlightToggle'
 
 const links = [
   { to: '/posts',     label: 'Post Archive', icon: '📜' },
@@ -62,6 +63,7 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
           <span className="text-lg font-semibold text-gray-200 group-hover:text-white transition-colors">Drops</span>
         </Link>
         <p className="text-xs text-gray-500 mt-1">4,966 Intelligence Drops</p>
+        <div className="mt-2"><HighlightToggle /></div>
       </div>
 
       {/* Nav — clicking any link closes the mobile drawer */}
