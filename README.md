@@ -1,4 +1,4 @@
-# Q Archive
+# Q Drops
 
 An open archive for Q research — every drop, searchable and cross-referenced.
 

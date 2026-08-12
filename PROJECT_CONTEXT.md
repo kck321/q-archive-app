@@ -1,4 +1,4 @@
-# Q Archive — Project Context
+# Q Drops — Project Context
 
 **Read this file FIRST in any new session, before DEVLOG.md or the code.**
 

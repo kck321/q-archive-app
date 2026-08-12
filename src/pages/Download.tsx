@@ -32,7 +32,7 @@ const PLATFORMS = [
     os: 'Linux',
     icon: '🐧',
     detail: '.AppImage or .deb — Ubuntu, Debian, Fedora and friends',
-    note: 'For the AppImage, mark it executable first: chmod +x Q-Archive*.AppImage',
+    note: 'For the AppImage, mark it executable first: chmod +x Q.Drops*.AppImage',
   },
 ]
 
@@ -40,7 +40,7 @@ export default function Download() {
   return (
     <div className="p-6 space-y-6 w-full max-w-3xl">
       <div>
-        <h1 className="text-2xl font-bold text-white">Download the app</h1>
+        <h1 className="text-2xl font-bold text-white">Download Q Drops</h1>
         <p className="text-sm text-gray-400 mt-2 leading-relaxed">
           The whole archive, offline. Same read-only build as this site, packaged for your
           computer — every post, image and search works with no internet connection once

@@ -73,13 +73,15 @@ function MonthPostsPanel({ month, posts, loading, onClose }: {
   )
 }
 
-function ChartTooltip({ active, payload, label, keyword, matchCounts, matchMax }: {
+function ChartTooltip({ active, payload, label, keyword, matchCounts, matchMax, pinned }: {
   active?: boolean
   payload?: Array<{ name: string; value: number }>
   label?: string
   keyword?: string | null
   matchCounts?: Map<string, number> | null
   matchMax?: number
+  /** Pinned to a corner on narrow screens, so it is not beside the bar it describes. */
+  pinned?: boolean
 }) {
   if (!active || !payload || !label) return null
   const [y, mo] = label.split('-')
@@ -97,9 +99,12 @@ function ChartTooltip({ active, payload, label, keyword, matchCounts, matchMax }
       boxShadow: '0 12px 34px rgba(0,0,0,0.6), 0 2px 8px rgba(0,0,0,0.4)',
       backdropFilter: 'blur(3px)',
     }}>
-      {/* balloon tail pointing back toward the selected bar */}
-      <span style={{ position: 'absolute', left: -9, top: 22, width: 0, height: 0, borderTop: '9px solid transparent', borderBottom: '9px solid transparent', borderRight: '9px solid #3a3a46' }} />
-      <span style={{ position: 'absolute', left: -7, top: 22, width: 0, height: 0, borderTop: '9px solid transparent', borderBottom: '9px solid transparent', borderRight: '9px solid rgba(22,22,28,0.97)' }} />
+      {/* Balloon tail pointing back toward the selected bar — dropped when pinned, since
+          then it points at nothing. */}
+      {!pinned && <>
+        <span style={{ position: 'absolute', left: -9, top: 22, width: 0, height: 0, borderTop: '9px solid transparent', borderBottom: '9px solid transparent', borderRight: '9px solid #3a3a46' }} />
+        <span style={{ position: 'absolute', left: -7, top: 22, width: 0, height: 0, borderTop: '9px solid transparent', borderBottom: '9px solid transparent', borderRight: '9px solid rgba(22,22,28,0.97)' }} />
+      </>}
       <p style={{ color: '#f3f4f6', marginBottom: 8, fontWeight: 700, fontSize: 13 }}>{monthLabel}</p>
       {payload.map((item, i) => {
         // Tint each row to match the bar it describes, so the tooltip reads as the same
@@ -396,6 +401,16 @@ export default function PostArchive() {
     }), { requests: 0, claims: 0, predictions: 0, namedEntities: 0, themes: 0, impliedConclusions: 0, verificationHooks: 0 })
   }, [timeline])
 
+  // Phone-sized screens get a PINNED tooltip (see the Tooltip props below).
+  const [isNarrow, setIsNarrow] = useState(() =>
+    typeof window !== 'undefined' && window.matchMedia('(max-width: 639px)').matches)
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 639px)')
+    const on = () => setIsNarrow(mq.matches)
+    mq.addEventListener('change', on)
+    return () => mq.removeEventListener('change', on)
+  }, [])
+
   // Close any open chart tooltip when the page scrolls.
   //
   // Recharts hides a tooltip on mouseleave, which never fires on a touchscreen: tapping the
@@ -404,7 +419,12 @@ export default function PostArchive() {
   // hiding it with CSS only makes it reappear when scrolling stops.
   useEffect(() => {
     let timer: number | undefined
-    const dismiss = () => {
+    const dismiss = (e: Event) => {
+      // Ignore the chart's own horizontal scroll container. With capture:true this handler
+      // also saw that scroll, so swiping the chart sideways to read the tooltip dismissed
+      // it immediately — which is why it "sometimes just disappears".
+      const t = e.target as HTMLElement | null
+      if (t && typeof t.closest === 'function' && t.closest?.('.overflow-x-auto')) return
       window.clearTimeout(timer)
       timer = window.setTimeout(() => {
         for (const el of document.querySelectorAll('.recharts-wrapper')) {
@@ -570,20 +590,23 @@ export default function PostArchive() {
       <div className="sticky top-0 z-30 bg-[#0a0e1a] border-b border-q-border px-4 sm:px-6 pt-3 sm:pt-5 pb-3 sm:pb-4 space-y-3 shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
 
         {/* Title + search row */}
-        <div className="flex items-center gap-3 flex-wrap">
+        {/* One line, always. flex-wrap plus a 220px minimum on the input meant the button
+            wrapped onto its own row on a phone, costing a whole line of a screen that has
+            few to spare. The input shrinks instead (min-w-0), the buttons never do. */}
+        <div className="flex items-center gap-2 sm:gap-3">
           <div className="shrink-0">
-            <h1 className="text-xl font-bold text-white leading-tight">Post Archive</h1>
-            <p className="text-gray-500 text-xs">4,966 Q posts</p>
+            <h1 className="text-base sm:text-xl font-bold text-white leading-tight">Post Archive</h1>
+            <p className="hidden sm:block text-gray-500 text-xs">4,966 Q posts</p>
           </div>
           {/* Keyword search */}
-          <div className="flex-1 min-w-[220px] relative">
+          <div className="flex-1 min-w-0 relative">
             <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">🔍</span>
             <input
               type="text"
               value={searchInput}
               onChange={e => setSearchInput(e.target.value)}
               onKeyDown={e => e.key === 'Enter' && handleSearch()}
-              placeholder="Search all 4,966 posts…"
+              placeholder={isNarrow ? "Search 4,966 posts…" : "Search all 4,966 posts…"}
               className="w-full bg-q-panel border border-q-border rounded-lg pl-9 pr-4 py-2 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-q-accent transition-colors"
             />
             {searchInput && (
@@ -596,14 +619,14 @@ export default function PostArchive() {
           <button
             onClick={handleSearch}
             disabled={!searchInput.trim() || searching}
-            className="bg-blue-600 hover:bg-blue-500 disabled:opacity-40 text-white font-medium px-5 py-2 rounded-lg transition-colors text-sm shrink-0"
+            className="bg-blue-600 hover:bg-blue-500 disabled:opacity-40 text-white font-medium px-3 sm:px-5 py-2 rounded-lg transition-colors text-sm shrink-0 whitespace-nowrap"
           >
-            {searching ? 'Searching…' : 'Search All'}
+            {searching ? 'Searching…' : isNarrow ? 'Search' : 'Search All'}
           </button>
           {isSearchMode && (
             <button
               onClick={handleClearSearch}
-              className="bg-q-panel border border-q-border hover:border-gray-500 text-gray-400 hover:text-white px-4 py-2 rounded-lg transition-colors text-sm shrink-0"
+              className="bg-q-panel border border-q-border hover:border-gray-500 text-gray-400 hover:text-white px-3 sm:px-4 py-2 rounded-lg transition-colors text-sm shrink-0"
             >
               Clear
             </button>
@@ -800,7 +823,15 @@ export default function PostArchive() {
                       {chartMatchMonths && (
                         <YAxis yAxisId="matches" orientation="right" hide domain={[0, matchAxisMax(chartMatchMax)]} />
                       )}
-                      <Tooltip offset={28} cursor={{ fill: 'rgba(255,255,255,0.06)' }} wrapperStyle={{ zIndex: 10 }} content={(props: any) => <ChartTooltip {...props} keyword={chartMatchMonths ? chartSearch : null} matchCounts={chartMatchMonths} matchMax={chartMatchMax} />} />
+                      <Tooltip
+                        // The chart is 920px wide inside a horizontal scroller. A tooltip that
+                        // follows the tap, offset 28px to the right, lands off-screen for any
+                        // bar in the right half. On narrow screens it is pinned to the top-left
+                        // of the chart instead, where it is always readable.
+                        offset={isNarrow ? 0 : 28}
+                        position={isNarrow ? { x: 8, y: 8 } : undefined}
+                        allowEscapeViewBox={{ x: false, y: false }}
+                        cursor={{ fill: 'rgba(255,255,255,0.06)' }} wrapperStyle={{ zIndex: 10 }} content={(props: any) => <ChartTooltip {...props} pinned={isNarrow} keyword={chartMatchMonths ? chartSearch : null} matchCounts={chartMatchMonths} matchMax={chartMatchMax} />} />
 
                       {/* Posts bar — always shown */}
                       <Bar yAxisId="left" dataKey="posts" name="Q Posts" radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }}

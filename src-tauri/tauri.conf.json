@@ -1,6 +1,6 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
-  "productName": "Q Archive",
+  "productName": "Q Drops",
   "version": "0.7.0",
   "identifier": "com.qarchive.desktop",
   "build": {
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "Q Archive",
+        "title": "Q Drops",
         "width": 1440,
         "height": 900,
         "minWidth": 900,

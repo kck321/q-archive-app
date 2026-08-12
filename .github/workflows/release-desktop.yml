@@ -86,9 +86,9 @@ jobs:
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
         with:
           tagName: ${{ github.ref_type == 'tag' && github.ref_name || format('v{0}-manual', github.run_number) }}
-          releaseName: 'Q Archive __VERSION__'
+          releaseName: 'Q Drops __VERSION__'
           releaseBody: |
-            Read-only desktop build of the Q Archive.
+            Read-only desktop build of Q Drops — the Q post archive.
 
             - **Windows** — `.msi` or `.exe`
             - **macOS** — `.dmg` (universal: Apple Silicon and Intel)
