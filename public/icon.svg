@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- App icon: the Q ring with DROPS set inside it.
+       Drawn full-bleed with the artwork inside the centre 80%, which is the safe zone a
+       maskable icon needs — Android crops icons to whatever shape the launcher uses, and
+       anything outside that circle can be cut off. -->
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="32%" r="78%">
+      <stop offset="0%" stop-color="#1b2743"/>
+      <stop offset="100%" stop-color="#080b14"/>
+    </radialGradient>
+    <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3f4f6"/>
+      <stop offset="55%" stop-color="#9ca3af"/>
+      <stop offset="100%" stop-color="#4b5563"/>
+    </linearGradient>
+    <linearGradient id="drop" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#bg)"/>
+
+  <!-- Q bowl -->
+  <circle cx="256" cy="244" r="140" fill="none" stroke="url(#ring)" stroke-width="30"/>
+  <!-- Q tail -->
+  <path d="M 330 322 L 400 400" stroke="url(#ring)" stroke-width="34" stroke-linecap="round" fill="none"/>
+
+  <!-- A single drop above the wordmark, so the icon still reads as "drops" at 48px where
+       the lettering is too small to make out. -->
+  <path d="M 256 150 C 256 150 232 186 232 202 a 24 24 0 0 0 48 0 c 0 -16 -24 -52 -24 -52 z"
+        fill="url(#drop)"/>
+
+  <!-- DROPS across the middle of the Q -->
+  <text x="256" y="284" text-anchor="middle"
+        font-family="Segoe UI, Helvetica Neue, Arial, sans-serif"
+        font-size="54" font-weight="800" letter-spacing="1" fill="#f3f4f6">DROPS</text>
+</svg>
