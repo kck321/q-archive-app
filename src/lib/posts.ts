@@ -1001,6 +1001,18 @@ async function computeQuestionFrequency(minCount = 2): Promise<QuestionFrequency
   // No alias folding either — aliases are an entity concept, not a question one.
   const rawText = await getRawTextIndex()
   for (const g of Object.values(groups)) {
+    // Same rule as the analysis lists: a post listed under a question must actually ask it.
+    // 152 stored question rows point at posts whose text does not contain the question, and
+    // clicking those chips opened a post with nothing highlighted.
+    const rx = questionRegex(g.originalText)
+    if (rx) {
+      g.postNums = g.postNums.filter(n => {
+        const text = rawText.get(n)
+        if (text === undefined) return true
+        rx.lastIndex = 0
+        return rx.test(text)
+      })
+    }
     await backfillQuestionFromText(g.originalText, g.postNums)
   }
 
@@ -1234,6 +1246,10 @@ export async function getResources(): Promise<QResource[]> {
 }
 
 // ─── Post Analysis Frequency ──────────────────────────────────────────────────
+// Categories whose items are copied verbatim out of the post. Themes and implied
+// conclusions are the model's own wording, so they can never be found in the text.
+const VERBATIM_CATS = new Set(['claims', 'predictions', 'namedEntities', 'verificationHooks', 'emphasis'])
+
 const ANALYSIS_CATS = ['claims', 'predictions', 'namedEntities', 'themes', 'impliedConclusions', 'verificationHooks', 'emphasis'] as const
 type AnalysisCat = typeof ANALYSIS_CATS[number]
 
@@ -1360,6 +1376,31 @@ async function computeAnalysisFrequency(): Promise<AnalysisCategoryFreq[]> {
   sinceYield = 0
   for (const g of Object.values(groups)) {
     await breathe()
+
+    // Drop posts that do not actually contain the phrase.
+    //
+    // The extractor sometimes attributed an item to a post whose text does not contain it —
+    // #17 carries the claim "FAKE NEWS." and the words appear nowhere in it. Clicking that
+    // chip opened a post with nothing highlighted, which reads as a broken app rather than
+    // as bad source data. Measured across the archive: 798 claims, 1,209 named entities,
+    // 462 checkable claims, 24 predictions and 8 requests were attributed this way.
+    //
+    // Only for the categories that are supposed to be VERBATIM. Themes and implied
+    // conclusions are summaries the model writes — they are 96% and 100% "absent" by
+    // definition, and filtering them would empty both sections.
+    //
+    // Alias spellings count: an entity chip for "HRC" legitimately covers a post that only
+    // says "Hillary", so the test is whether ANY spelling appears.
+    if (VERBATIM_CATS.has(g.category)) {
+      const spellings = [g.originalText, ...getAliasGroup(g.originalText)]
+        .map(t => ` ${normalizeItemKey(t)} `)
+        .filter(t => t.trim())
+      g.postNums = g.postNums.filter(n => {
+        const body = textIndex.padded.get(n)
+        return !body || spellings.some(sp => body.includes(sp))
+      })
+    }
+
     backfillFromText(textIndex, g.originalText, g.postNums, { withAliases: true })
   }
 

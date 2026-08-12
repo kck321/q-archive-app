@@ -512,6 +512,13 @@ export default function AnalysisArchive() {
             )}
             {/* Title carries the category colour, so the heading matches the sidebar
                 entry, the chart bars and the badges on every row below. */}
+            {(activeTab === 'themes' || activeTab === 'impliedConclusions') && (
+              <p className="text-[11px] text-gray-500 mt-1 max-w-2xl">
+                These are summaries written from the posts, not phrases copied out of them —
+                so opening a post from here will not highlight anything. Every other section
+                lists text that appears verbatim.
+              </p>
+            )}
             <h1
               className="text-xl font-bold leading-tight"
               style={{
