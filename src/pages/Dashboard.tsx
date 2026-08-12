@@ -4,6 +4,7 @@ import { getStats, getTopRatedPosts, getRecentPosts, getQuestionsTimeline, getQu
 import { fetchAndIngestPosts, patchRefMedia, patchMediaFromQanonPub } from '../lib/ingest'
 import { bulkScanAllPosts, resetForRescan, bulkScanAllRequests, bulkScanAllAnalysis, bulkScanRefImages, bulkScanStaticEntities, bulkClassifyQuestions, bulkScanThreadAnswers, resetThreadScan, STATIC_ENTITIES, type ScanProgress, type RequestScanProgress, type AnalysisScanProgress, type StaticEntityScanProgress, type ClassifyProgress, type ThreadScanProgress } from '../lib/bulkScan'
 import PostCard from '../components/PostCard'
+import { postPreview } from '../lib/references'
 import {
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis,
   Tooltip, CartesianGrid, Legend, Cell,
@@ -104,7 +105,7 @@ function MonthPostsPanel({ month, posts, loading, onClose }: {
                   )}
                 </div>
                 <p className="text-gray-400 text-xs leading-relaxed line-clamp-2 font-mono">
-                  {post.text.slice(0, 160)}{post.text.length > 160 ? '…' : ''}
+                  {(() => { const t = postPreview(post); return t.slice(0, 160) + (t.length > 160 ? '…' : '') })()}
                 </p>
               </Link>
             )

@@ -31,6 +31,19 @@ export function buildReferenceIndex(posts: QPost[]): Map<string, QPost> {
   return index
 }
 
+/**
+ * Reading text for a drop, for previews and snippets.
+ *
+ * 211 drops are nothing but a ">>NNNNNNN" pointer, so a plain `post.text` preview renders as
+ * a bare number. Those fall back to what the drop is replying to.
+ */
+export function postPreview(post: Pick<QPost, 'text' | 'quotedPosts'>): string {
+  const text = (post.text ?? '').trim()
+  if (text && !/^(>>\d+\s*)+$/.test(text)) return text
+  const quoted = (post.quotedPosts ?? []).find(q => (q.depth ?? 0) === 0 && q.text?.trim())
+  return quoted ? `↳ ${quoted.text.trim()}` : text
+}
+
 /** Every ">>id" in a post's text, in order, with its target when known. */
 export function resolveReferences(text: string, index: Map<string, QPost>): ResolvedReference[] {
   const ids = [...new Set((text ?? '').match(/>>(\d+)/g) ?? [])].map(r => r.slice(2))

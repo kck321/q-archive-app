@@ -6,6 +6,7 @@ import { getAliasesFor, getAliasGroup, addAlias, removeAlias, subscribeAliases }
 import { STATIC_ENTITIES, MIL_INTEL_TERMS, Q_SIGNATURES, HIGHLIGHT_CLS, wordBoundaryPattern } from '../lib/highlightConstants'
 import { sourceLink } from '../lib/sourceLink'
 import QuotedPosts from './QuotedPosts'
+import { linkify } from '../lib/linkify'
 import { CAN_EDIT } from '../lib/appMode'
 import type { QPost, QQuestion, PostAnalysis } from '../types'
 
@@ -435,7 +436,7 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
             : 'bg-black/20'
         }`}
       >
-        {highlightText(post.text, questionTexts, searchKeyword, localRequests, localAnalysis)}
+        {linkify(highlightText(post.text, questionTexts, searchKeyword, localRequests, localAnalysis))}
       </pre>
 
       {/* Inline Analysis Editor */}

@@ -15,6 +15,7 @@ import { sourceLink } from '../lib/sourceLink'
 import { mediaUrl } from '../lib/mediaUrl'
 import { buildReferenceIndex, resolveReferences } from '../lib/references'
 import QuotedPosts from '../components/QuotedPosts'
+import { linkify } from '../lib/linkify'
 import FlagIssue from '../components/FlagIssue'
 import { CAN_EDIT } from '../lib/appMode'
 import { getAliasesFor, getAliasGroup, addAlias, removeAlias, subscribeAliases } from '../lib/aliases'
@@ -532,7 +533,7 @@ export default function PostDetail() {
       }))
   }, [post, refIndex])
 
-  const [relatedPosts, setRelatedPosts] = useState<{ postNum: number; id: string; text: string; timestamp: number }[] | null>(null)
+  const [relatedPosts, setRelatedPosts] = useState<{ postNum: number; id: string; text: string; timestamp: number; quotedPosts?: QuotedPost[] }[] | null>(null)
   const [relatedLoading, setRelatedLoading] = useState(false)
   const [relatedOpen, setRelatedOpen] = useState(true)
   const feedRef = useRef<HTMLDivElement | null>(null)
@@ -584,7 +585,7 @@ export default function PostDetail() {
     setRelatedLoading(true)
 
     // Resolve the sibling posts for whichever reader kind we're in.
-    let postsPromise: Promise<{ postNum: number; id: string; text: string; timestamp: number }[]>
+    let postsPromise: Promise<{ postNum: number; id: string; text: string; timestamp: number; quotedPosts?: QuotedPost[] }[]>
     if (readerKind === 'question') {
       // Same question asked across posts → question frequency index
       const normQ = (t: string) => t.toLowerCase().trim().replace(/\s+/g, ' ').replace(/[?.!,;:]+$/, '')
@@ -615,7 +616,7 @@ export default function PostDetail() {
       .then(posts => {
         if (cancelled) return
         const list = posts
-          .map(p => ({ postNum: p.postNum, id: p.id, text: p.text, timestamp: p.timestamp }))
+          .map(p => ({ postNum: p.postNum, id: p.id, text: p.text, timestamp: p.timestamp, quotedPosts: p.quotedPosts }))
           .sort((a, b) => a.postNum - b.postNum)
         setRelatedPosts(list)
       })
@@ -1276,8 +1277,9 @@ export default function PostDetail() {
                         {isCurrent ? '● current' : rp.postNum < post.postNum ? '↑ earlier' : '↓ later'}
                       </span>
                     </div>
+                    <QuotedPosts quoted={rp.quotedPosts ?? []} searchKeyword={highlight} />
                     <pre className="text-gray-200 text-sm leading-relaxed whitespace-pre-wrap font-mono">
-                      {highlightEntity(rp.text, highlight, aliasColors)}
+                      {linkify(highlightEntity(rp.text, highlight, aliasColors))}
                     </pre>
                   </div>
                 )
@@ -1442,7 +1444,7 @@ export default function PostDetail() {
             selectMode ? 'bg-blue-950/30 cursor-text select-text border border-blue-800' : 'bg-black/30'
           } ${bodyFlash ? 'animate-body-flash' : ''}`}
         >
-          {renderPostBody(post.text, questions, activeHL, flash, topicKeywords, undefined, newQuestionIds, actionRequests, postAnalysis ?? undefined, highlightCat || undefined)}
+          {linkify(renderPostBody(post.text, questions, activeHL, flash, topicKeywords, undefined, newQuestionIds, actionRequests, postAnalysis ?? undefined, highlightCat || undefined))}
         </pre>
 
         {/* Manual add — selected text preview + save/cancel */}

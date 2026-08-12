@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import type { QPost, QuotedPost } from '../types'
 import { mediaUrl } from '../lib/mediaUrl'
 import { wordBoundaryPattern } from '../lib/highlightConstants'
+import { linkify } from '../lib/linkify'
 
 /**
  * Highlight the search term inside quoted text. A search can match here and nowhere in the
@@ -96,7 +97,7 @@ export default function QuotedPosts({
 
             {q.text && (
               <pre className="px-3 pb-2 text-xs leading-relaxed text-gray-400 whitespace-pre-wrap font-mono max-h-72 overflow-y-auto">
-                {highlightQuoted(q.text, searchKeyword)}
+                {linkify(highlightQuoted(q.text, searchKeyword))}
               </pre>
             )}
 
