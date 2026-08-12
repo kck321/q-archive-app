@@ -61,14 +61,20 @@ jobs:
       - name: Verify the bundle is read-only
         shell: bash
         run: |
+          # Build into a CLEAN dist. Left-over assets from an earlier build sit alongside the
+          # new ones under the same hashed names and make this check pass or fail on files
+          # that are not being shipped — which is exactly how it first gave a wrong answer.
+          rm -rf dist
           npm run build:app:public
-          # These strings only exist in the editing build. If any survives, the installer
-          # would hand every user the admin controls, so fail before anything is packaged.
+
+          # Grep for the VALUES, not the identifier names. Minification renames ADMIN_PIN to
+          # a single letter, so searching for the identifier finds nothing whether or not the
+          # secret shipped — a check that always passes is worse than no check.
           fail=0
-          for s in "ADMIN_PIN" "VITE_ADMIN_PIN" "VITE_ANTHROPIC_API_KEY"; do
-            if grep -rqF "$s" dist/assets/*.js; then echo "LEAK: $s found in the built bundle"; fail=1; fi
+          for s in "1624" "sk-ant-" "AdminGate" "Admin PIN"; do
+            if grep -rqF "$s" dist/assets/*.js; then echo "LEAK: \"$s\" found in the shipped bundle"; fail=1; fi
           done
-          [ "$fail" = "0" ] && echo "OK — no admin strings in the shipped bundle"
+          if [ "$fail" = "0" ]; then echo "OK — admin PIN and API key are absent from the shipped bundle"; fi
           exit $fail
 
       - uses: tauri-apps/tauri-action@v0
