@@ -134,7 +134,9 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
       if (top.kind === 'question') {
         nodes.push(<mark key={iStart} className="bg-blue-500/30 text-blue-200 rounded not-italic">{matchText}</mark>)
       } else if (top.kind === 'keyword') {
-        nodes.push(<mark key={iStart} className="bg-red-500/50 text-red-100 rounded not-italic font-semibold">{matchText}</mark>)
+        // Same flashing white-to-red as the post page, so a term looks identical wherever
+        // you meet it — results list, post page, quoted post.
+        nodes.push(<mark key={iStart} className="rounded not-italic font-semibold animate-flash-red">{matchText}</mark>)
       } else {
         nodes.push(<a key={iStart} href={matchText} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 underline break-all" onClick={e => e.stopPropagation()}>{matchText}</a>)
       }

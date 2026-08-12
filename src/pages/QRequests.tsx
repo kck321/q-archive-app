@@ -233,8 +233,19 @@ export default function QRequests() {
 
   const listRef = useRef<HTMLDivElement | null>(null)
 
-  function handleBarClick(entry: TimelineEntry) {
-    const next = selectedMonth === entry.month ? null : entry.month
+  // Chart-level onClick reads dd.activePayload, which Recharts fills inconsistently — on a
+  // stacked/multi-series chart it frequently arrives empty, so clicking a month did nothing.
+  // Post Archive hit this and moved to per-Bar handlers; this chart never did. Both paths
+  // now fire, with a short guard so a single click is not counted twice.
+  const lastMonthClick = useRef<{ month: string; at: number }>({ month: '', at: 0 })
+
+  function handleBarClick(entry: { month?: string } | null | undefined) {
+    const month = entry?.month
+    if (!month) return
+    const now = performance.now()
+    if (lastMonthClick.current.month === month && now - lastMonthClick.current.at < 350) return
+    lastMonthClick.current = { month, at: now }
+    const next = selectedMonth === month ? null : month
     setSelectedMonth(next)
     // Land on the results the click just filtered to.
     if (next) setTimeout(() => listRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80)
@@ -351,13 +362,13 @@ export default function QRequests() {
 
                 </div>
               )} />
-              <Bar dataKey="posts" name="Q Posts" radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }}>
+              <Bar dataKey="posts" name="Q Posts" radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }} onClick={(d: { month?: string; payload?: { month?: string } }) => handleBarClick({ month: d?.month ?? d?.payload?.month })}>
                 {timeline.map(entry => (
                   <Cell key={entry.month} fill={!selectedMonth || selectedMonth === entry.month ? '#9ca3af' : '#374151'} />
                 ))}
               </Bar>
               {searchMatchMonths ? (
-                <Bar yAxisId="matches" dataKey="matches" name={`"${search}" matches`} radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }} minPointSize={3}>
+                <Bar yAxisId="matches" dataKey="matches" name={`"${search}" matches`} radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }} onClick={(d: { month?: string; payload?: { month?: string } }) => handleBarClick({ month: d?.month ?? d?.payload?.month })} minPointSize={3}>
                   <LabelList dataKey="matches" position="top" content={MatchCountLabel} />
                   {chartData.map(entry => (
                     <Cell
@@ -371,7 +382,7 @@ export default function QRequests() {
                   ))}
                 </Bar>
               ) : (
-                <Bar yAxisId="left" dataKey="requests" name="Requests" radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }}>
+                <Bar yAxisId="left" dataKey="requests" name="Requests" radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }} onClick={(d: { month?: string; payload?: { month?: string } }) => handleBarClick({ month: d?.month ?? d?.payload?.month })}>
                   {timeline.map(entry => (
                     <Cell key={entry.month} fill={!selectedMonth || selectedMonth === entry.month ? '#22c55e' : '#14532d'} />
                   ))}

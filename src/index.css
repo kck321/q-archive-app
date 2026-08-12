@@ -163,3 +163,13 @@ body {
   font-size: 13.5px;
   line-height: 1.55;
 }
+
+/* Anyone who has asked their system for less motion gets the colour without the pulsing.
+   These flashes run continuously, which is exactly what that setting exists to stop. */
+@media (prefers-reduced-motion: reduce) {
+  .animate-flash-red, .animate-flash, .animate-flash-claims, .animate-flash-predictions,
+  .animate-flash-entities, .animate-flash-themes, .animate-flash-conclusions,
+  .animate-flash-hooks, .animate-req-question, .animate-chip-pulse {
+    animation: none !important;
+  }
+}

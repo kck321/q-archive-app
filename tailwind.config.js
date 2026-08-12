@@ -25,7 +25,7 @@ export default {
       },
       animation: {
         flash: 'flash 0.6s ease-in-out 3 forwards',
-        'flash-red': 'flash-red 0.6s ease-in-out 4 forwards',
+        'flash-red': 'flash-red 1.5s ease-in-out infinite',
         'chip-pulse': 'chip-pulse 0.7s ease-in-out infinite',
       },
       colors: {

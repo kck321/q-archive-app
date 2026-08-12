@@ -86,7 +86,7 @@ function renderPostBody(
   text: string,
   questions: QQuestion[],
   highlight: string,
-  flash: boolean,
+  _flash: boolean,   // kept for call-site arity; the term now always animates
   topicKeywords: string[],
   onRemoveQuestion?: (id: string) => void,
   newIds?: Set<string>,
@@ -298,9 +298,12 @@ function renderPostBody(
         const isFirst = firstHL; firstHL = false
         const catClass = highlightCat ? CAT_HL_COLORS[highlightCat] : null
         const flashAnim = highlightCat ? (CAT_FLASH_ANIM[highlightCat] ?? 'animate-flash') : 'animate-flash'
+        // Always animate the term you came here to see. It used to depend on a ?flash=1
+        // arrival, so opening a post from a term chip showed a static red mark that was easy
+        // to lose inside a long drop — which is exactly the case the flash exists for.
         const hlClass = catClass
-          ? `rounded not-italic ${catClass}${flash ? ' ' + flashAnim : ''}`
-          : `rounded not-italic bg-red-500/50 text-red-50 font-semibold${flash ? ' animate-flash-red' : ''}`
+          ? `rounded not-italic ${catClass} ${flashAnim}`
+          : `rounded not-italic font-semibold animate-flash-red`
         nodes.push(<mark key={iStart} {...(isFirst ? { 'data-hl': '1' } : {})} className={hlClass}>{matchText}</mark>)
       } else if (top.kind === 'requestQuestion') {
         nodes.push(<mark key={iStart} className="animate-req-question rounded not-italic font-medium">{matchText}</mark>)
