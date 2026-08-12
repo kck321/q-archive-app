@@ -591,7 +591,10 @@ export default function PostArchive() {
           most of a phone screen before a single post was visible. z-30 keeps it above the
           chart tooltip, which paints at a higher z-index than the old z-20 and so hung over
           this bar while scrolling past. */}
-      <div className="sticky top-0 z-30 bg-[#0a0e1a] border-b border-q-border px-4 sm:px-6 pt-3 sm:pt-5 pb-3 sm:pb-4 space-y-3 shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
+      {/* Sticks BELOW the fixed "Q Drops" bar on phones (that bar is h-12), and at the
+          very top on desktop where there is no such bar. z-20 keeps it under the header and
+          over the chart tooltip, which sits at z-10. */}
+      <div className="sticky top-12 lg:top-0 z-20 bg-[#0a0e1a] border-b border-q-border px-4 sm:px-6 pt-3 sm:pt-5 pb-3 sm:pb-4 space-y-3 shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
 
         {/* Title + search row */}
         {/* One line, always. flex-wrap plus a 220px minimum on the input meant the button
