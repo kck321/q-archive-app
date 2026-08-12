@@ -224,7 +224,7 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
             #{post.postNum}
           </Link>
           <span className="text-xs text-gray-500 shrink-0">{formatDate(post.timestamp)}</span>
-          <span className="text-xs text-gray-600 shrink-0" title="How long ago this drop was posted">{timeAgo(post.timestamp)}</span>
+          <span className="text-xs text-gray-600 shrink-0 ml-2" title="How long ago this drop was posted">{timeAgo(post.timestamp)}</span>
           {post.source && (() => {
             const src = sourceLink(post)
             if (!src.url) {

@@ -387,6 +387,7 @@ export default function PostArchive() {
     if (lastMonthClick.current.month === month && now - lastMonthClick.current.at < 350) return
     lastMonthClick.current = { month, at: now }
     setSelectedMonth(prev => prev === month ? null : month)
+    setTappedMonth(prev => (prev === month ? null : month))
   }
 
 
@@ -525,6 +526,9 @@ export default function PostArchive() {
   // Same shape as every other section: a dedicated `matches` series beside the grey posts
   // bar, rather than tinting the posts bar itself. Tinting hid the actual match count —
   // a month with 1 hit and a month with 9 were the same height, only a different shade.
+  // Month tapped on a phone, for the readout under the chart.
+  const [tappedMonth, setTappedMonth] = useState<string | null>(null)
+
   const chartData = useMemo(
     () => timeline.map(e => ({ ...e, matches: chartMatchMonths?.get(e.month) ?? 0 })),
     [timeline, chartMatchMonths],
@@ -854,10 +858,11 @@ export default function PostArchive() {
                         // follows the tap, offset 28px to the right, lands off-screen for any
                         // bar in the right half. On narrow screens it is pinned to the top-left
                         // of the chart instead, where it is always readable.
-                        offset={isNarrow ? 0 : 28}
-                        position={isNarrow ? { x: 8, y: 8 } : undefined}
-                        allowEscapeViewBox={{ x: false, y: false }}
-                        cursor={{ fill: 'rgba(255,255,255,0.06)' }} wrapperStyle={{ zIndex: 10 }} content={(props: any) => <ChartTooltip {...props} pinned={isNarrow} keyword={chartMatchMonths ? chartSearch : null} matchCounts={chartMatchMonths} matchMax={chartMatchMax} />} />
+                        offset={28}
+                        // Suppressed on phones — the readout is rendered under the chart
+                        // instead, so it covers nothing and has a visible way to close.
+                        active={isNarrow ? false : undefined}
+                        cursor={{ fill: 'rgba(255,255,255,0.06)' }} wrapperStyle={{ zIndex: 10 }} content={(props: any) => <ChartTooltip {...props} keyword={chartMatchMonths ? chartSearch : null} matchCounts={chartMatchMonths} matchMax={chartMatchMax} />} />
 
                       {/* Posts bar — always shown */}
                       <Bar yAxisId="left" dataKey="posts" name="Q Posts" radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }}
@@ -913,6 +918,43 @@ export default function PostArchive() {
                       )}
                     </BarChart>
                   </ResponsiveContainer></ScrollableChart>
+
+                  {/* Phone readout. Sits UNDER the chart, so it hides none of it, and closes
+                      on demand — a touch tooltip never receives a "pointer left" event, which
+                      is why the floating one stayed on screen after you lifted your finger. */}
+                  {isNarrow && tappedMonth && (() => {
+                    const row = chartData.find(d => d.month === tappedMonth)
+                    if (!row) return null
+                    const series = (isAll
+                      ? CHART_TABS.map(t => ({ name: t.label, value: (row as unknown as Record<string, number>)[t.dataKey] ?? 0 }))
+                      : activeTab
+                        ? [{ name: activeTab.label, value: (row as unknown as Record<string, number>)[activeTab.dataKey] ?? 0 }]
+                        : []
+                    ).filter(x => x.value > 0)
+                    return (
+                      <div className="mt-2 bg-q-panel border border-q-border rounded-lg p-3 text-xs">
+                        <div className="flex items-center justify-between mb-1.5">
+                          <span className="text-white font-semibold">{formatMonth(tappedMonth)}</span>
+                          <button
+                            onClick={() => setTappedMonth(null)}
+                            className="text-gray-500 hover:text-white px-2 -mr-1"
+                            aria-label="Close month readout"
+                          >✕</button>
+                        </div>
+                        <div className="flex flex-wrap gap-x-4 gap-y-1">
+                          <span className="text-gray-400">Posts <span className="text-gray-100 font-semibold">{row.posts}</span></span>
+                          {series.map(x => (
+                            <span key={x.name} style={{ color: seriesColor(x.name) }}>
+                              {x.name} <span className="font-semibold">{x.value}</span>
+                            </span>
+                          ))}
+                          {chartMatchMonths && (
+                            <span className="text-amber-300">"{chartSearch}" <span className="font-semibold">{chartMatchMonths.get(tappedMonth) ?? 0}</span></span>
+                          )}
+                        </div>
+                      </div>
+                    )
+                  })()}
                 </>
               )
             })()}

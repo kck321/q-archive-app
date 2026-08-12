@@ -1326,7 +1326,7 @@ export default function PostDetail() {
               const src = sourceLink(post)
               return (
                 <p className="text-xs text-gray-500 mt-1">
-                  {date} · <span className="text-gray-600" title="How long ago this drop was posted">{timeAgo(post.timestamp)}</span> · {src.url ? (
+                  {date}<span className="mx-2 text-gray-700">·</span><span className="text-gray-600" title="How long ago this drop was posted">{timeAgo(post.timestamp)}</span><span className="mx-2 text-gray-700">·</span>{src.url ? (
                     <a
                       href={src.url}
                       target="_blank"
