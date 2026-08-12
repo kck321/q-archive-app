@@ -18,7 +18,7 @@ const CACHE_VERSION = 'qdrops-v1'
 const SHELL = `${CACHE_VERSION}-shell`
 const DATA = `${CACHE_VERSION}-data`
 
-const PRECACHE = ['/', '/index.html', '/manifest.webmanifest', '/icon-192.png', '/icon-512.png']
+const PRECACHE = ['/', '/index.html', '/manifest.webmanifest', '/icon-192-v2.png', '/icon-512-v2.png']
 
 self.addEventListener('install', event => {
   // Take over immediately rather than waiting for every tab to close — otherwise a user who

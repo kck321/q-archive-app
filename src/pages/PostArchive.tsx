@@ -2,7 +2,7 @@ import { useEffect, useState, useMemo, useRef } from 'react'
 import { useNavigate, Link, useSearchParams } from 'react-router-dom'
 import { getAliasGroup } from '../lib/aliases'
 import { SEARCHED_CHIP, assignAliasColors } from '../lib/aliasColors'
-import { countPhraseOccurrences, normalizeItemKey, countPostsOnMonthDay, getTermPresence, type TermPresence, getPosts, searchAllPosts, getQuestionsForPosts, addManualQuestion, getQuestionsTimeline, getPostNumsByMonth, getPostsByNums, getStats, countPostsWithBrackets, getBracketsByMonth } from '../lib/posts'
+import { countPhraseOccurrences, normalizeItemKey, countPostsOnMonthDay, parseDateQuery, getTermPresence, type TermPresence, getPosts, searchAllPosts, getQuestionsForPosts, addManualQuestion, getQuestionsTimeline, getPostNumsByMonth, getPostsByNums, getStats, countPostsWithBrackets, getBracketsByMonth } from '../lib/posts'
 import PostCard from '../components/PostCard'
 import type { QPost } from '../types'
 import {
@@ -419,7 +419,40 @@ export default function PostArchive() {
   }
 
 
+  // A search for a bare date ("Aug 12") is a DELTA — the same calendar day across every
+  // year of the archive. It needs its own presentation: the alias breakdown, mention totals
+  // and "contains the term exactly" furniture all describe a keyword search and mean nothing
+  // for a date.
+  const deltaQuery = useMemo(() => {
+    if (!searchTerm.trim()) return null
+    const q = parseDateQuery(searchTerm.toLowerCase().trim())
+    return q && q.month !== undefined && q.day !== undefined && q.year === undefined ? q : null
+  }, [searchTerm])
+
+  // Delta results grouped by year — the same day can carry drops from several years, and
+  // showing them as one flat list gives no sense of that.
+  const deltaByYear = useMemo(() => {
+    if (!deltaQuery) return []
+    const byYear = new Map<number, QPost[]>()
+    for (const p of searchResults) {
+      const y = new Date(p.timestamp * 1000).getFullYear()
+      const list = byYear.get(y)
+      if (list) list.push(p); else byYear.set(y, [p])
+    }
+    return [...byYear.entries()].sort((a, b) => b[0] - a[0])
+  }, [deltaQuery, searchResults])
+
   const chartMatchMax = chartMatchMonths ? Math.max(1, ...chartMatchMonths.values()) : 1
+
+  // Where to centre the chart: the month with the most matches for the current search.
+  const centerAt = useMemo(() => {
+    if (!chartMatchMonths || !timeline.length) return null
+    let best: string | null = null, bestN = 0
+    for (const [m, n] of chartMatchMonths) if (n > bestN) { bestN = n; best = m }
+    if (!best) return null
+    const idx = timeline.findIndex(e => e.month === best)
+    return idx < 0 ? null : (idx + 0.5) / timeline.length
+  }, [chartMatchMonths, timeline])
 
   const analysisTotals = useMemo(() => {
     if (timeline.length === 0) return null
@@ -910,7 +943,7 @@ export default function PostArchive() {
                     )}
                   </div>
 
-                  <ScrollableChart minWidth={920}><ResponsiveContainer width="100%" height={240}>
+                  <ScrollableChart minWidth={920} centerAt={centerAt}><ResponsiveContainer width="100%" height={240}>
                     <BarChart data={chartData} margin={{ top: chartMatchMonths ? 22 : 4, right: 8, left: -16, bottom: 0 }}
                       onMouseMove={(st: { activeLabel?: string | number }) => setHoverMonth(typeof st?.activeLabel === 'string' ? st.activeLabel : null)}
                       onMouseLeave={() => setHoverMonth(null)}
@@ -1147,18 +1180,33 @@ export default function PostArchive() {
         {/* Search results mode */}
         {isSearchMode ? (
           <>
-            <div className="bg-blue-900/20 border border-blue-800 rounded-xl p-4">
-              <p className="text-blue-300 text-sm">
-                Found <span className="font-bold text-white">{searchResults.length}</span> posts
-                matching <span className="font-bold text-white">"{searchTerm}"</span>
-                {totalMentions > searchResults.length && (
-                  <> · <span className="font-bold text-amber-300">{totalMentions.toLocaleString()}</span> total mentions</>
-                )}
-                {' '}— text, date, or alias · sorted oldest to newest
-              </p>
-            </div>
+            {deltaQuery ? (
+              <div className="bg-amber-900/20 border border-amber-800/70 rounded-xl p-4">
+                <p className="text-amber-200 text-sm">
+                  📅 <span className="font-bold text-white">{searchTerm}</span> —{' '}
+                  <span className="font-bold text-white">{searchResults.length}</span>{' '}
+                  drop{searchResults.length === 1 ? '' : 's'} posted on this day across{' '}
+                  <span className="font-bold text-white">{deltaByYear.length}</span>{' '}
+                  year{deltaByYear.length === 1 ? '' : 's'}
+                  {deltaByYear.length > 0 && (
+                    <span className="text-amber-300/80"> · {deltaByYear.map(([y]) => y).join(', ')}</span>
+                  )}
+                </p>
+              </div>
+            ) : (
+              <div className="bg-blue-900/20 border border-blue-800 rounded-xl p-4">
+                <p className="text-blue-300 text-sm">
+                  Found <span className="font-bold text-white">{searchResults.length}</span> posts
+                  matching <span className="font-bold text-white">"{searchTerm}"</span>
+                  {totalMentions > searchResults.length && (
+                    <> · <span className="font-bold text-amber-300">{totalMentions.toLocaleString()}</span> total mentions</>
+                  )}
+                  {' '}— text, date, or alias · sorted oldest to newest
+                </p>
+              </div>
+            )}
             {/* Alias breakdown + quick-jump chips (searched term first & highlighted) */}
-            {!searching && searchResults.length > 0 && (() => {
+            {!searching && !deltaQuery && searchResults.length > 0 && (() => {
               const group = getAliasGroup(searchTerm)
               const termLower = searchTerm.toLowerCase().trim()
               const textOf = (p: QPost) => (p.text ?? '').toLowerCase()
@@ -1223,6 +1271,30 @@ export default function PostArchive() {
                 No posts found containing "{searchTerm}".
               </div>
             ) : (
+              deltaQuery ? (
+              /* Delta: grouped by year, newest first, so it is obvious the same calendar day
+                 carries drops from several different years. */
+              <div className="space-y-5 w-full max-w-3xl">
+                {deltaByYear.map(([year, list]) => (
+                  <div key={year}>
+                    <div className="flex items-baseline gap-2 mb-2 border-b border-q-border pb-1">
+                      <span className="text-lg font-black text-amber-300">{year}</span>
+                      <span className="text-xs text-gray-500">
+                        {list.length} drop{list.length === 1 ? '' : 's'} on {searchTerm}
+                      </span>
+                    </div>
+                    <div className="grid gap-3">
+                      {list.map(p => (
+                        <PostCard key={p.id} post={p}
+                          questionTexts={postQuestions[p.id]}
+                          onAddQuestion={CAN_EDIT ? handleAddQuestion : undefined}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              ) : (
               <div className="grid gap-3 w-full max-w-3xl">
                 {orderedResults.map((p, i) => {
                   const exact = searchedNums.has(p.postNum)
@@ -1252,6 +1324,7 @@ export default function PostArchive() {
                   )
                 })}
               </div>
+              )
             )}
           </>
         ) : (
