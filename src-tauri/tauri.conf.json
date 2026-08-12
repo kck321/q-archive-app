@@ -39,7 +39,10 @@
     ],
     "android": {
       "debugApplicationIdSuffix": ".debug"
-    }
+    },
+    "resources": [
+      "../media-bundle/**/*"
+    ]
   },
   "plugins": {
     "updater": {

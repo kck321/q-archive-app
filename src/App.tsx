@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { isTauri, openExternal } from './lib/openExternal'
+import { initLocalMedia } from './lib/localMedia'
 import { loadAliasesFromCloud } from './lib/aliases'
 import Sidebar from './components/Sidebar'
 import UpdateBanner from './components/UpdateBanner'
@@ -29,6 +30,11 @@ export default function App() {
 
   // Pull entity aliases from the cloud once at startup.
   useEffect(() => { loadAliasesFromCloud() }, [])
+
+  // Desktop app: switch images to the copies bundled in the installer, so the archive
+  // works offline and stops streaming attachments off qalerts on users' behalf.
+  // No-op on the web, and fails soft back to the mirror.
+  useEffect(() => { initLocalMedia() }, [])
 
   // In the desktop app, route external links through the system browser (the webview
   // won't open http(s) links on its own). Catches every <a href="http…"> app-wide.

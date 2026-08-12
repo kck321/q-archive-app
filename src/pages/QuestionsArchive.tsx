@@ -697,12 +697,12 @@ export default function QuestionsArchive() {
           <div className="text-center py-12 text-gray-500">Loading questions…</div>
         ) : (
           <>
-            <div ref={listRef} className="flex items-center justify-between scroll-mt-24">
-              <div>
+            <div ref={listRef} className="scroll-mt-24">
+              {/* Count and month filter sit beside the heading rather than across the page —
+                  on a wide screen they were marooned at the far right, away from what they
+                  describe. */}
+              <div className="flex flex-wrap items-center gap-2">
                 <h2 className="text-white font-semibold">Repeated Questions</h2>
-                <p className="text-gray-500 text-xs mt-0.5">Asked more than once — sorted by frequency</p>
-              </div>
-              <div className="flex items-center gap-2">
                 {selectedMonth && (
                   <button
                     onClick={() => setSelectedMonth(null)}
@@ -715,6 +715,7 @@ export default function QuestionsArchive() {
                   {repeatedFiltered.length} questions
                 </span>
               </div>
+              <p className="text-gray-500 text-xs mt-0.5">Asked more than once — sorted by frequency</p>
             </div>
 
             {repeatedFiltered.length === 0 ? (
@@ -744,14 +745,14 @@ export default function QuestionsArchive() {
             )}
 
             {/* ── Single Questions (1x) — below the timeline ───────────── */}
-            <div className="flex items-center justify-between pt-2 border-t border-q-border">
-              <div>
+            <div className="pt-2 border-t border-q-border">
+              <div className="flex flex-wrap items-center gap-2">
                 <h2 className="text-white font-semibold">Asked Once</h2>
-                <p className="text-gray-500 text-xs mt-0.5">Questions that have appeared in only one post so far</p>
+                <span className="text-xs text-gray-400 font-medium bg-gray-800 border border-gray-700 px-2 py-0.5 rounded">
+                  {singlesFiltered.length} questions
+                </span>
               </div>
-              <span className="text-xs text-gray-400 font-medium bg-gray-800 border border-gray-700 px-2 py-0.5 rounded">
-                {singlesFiltered.length} questions
-              </span>
+              <p className="text-gray-500 text-xs mt-0.5">Questions that have appeared in only one post so far</p>
             </div>
 
             {singlesFiltered.length === 0 ? (

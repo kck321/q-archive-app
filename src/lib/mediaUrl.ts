@@ -26,9 +26,35 @@
 // onion and 8kun.top entries were recorded.
 const FILE_STORE = /^(?:https?:)?\/\/[^/]*(?:8ch\.net|8kun\.net|8kun\.top|\.onion)\/file_store\/(.+)$/i
 
+/**
+ * Offline image bundle (desktop app only).
+ *
+ * The desktop build ships every attachment, re-encoded, so the archive works with no
+ * internet — and so the app stops streaming ~1.24 GB of images off qalerts' server on other
+ * people's behalf. `initLocalMedia()` fills this in at startup; on the web it stays null and
+ * everything falls through to the mirror exactly as before.
+ */
+let localBase: string | null = null
+let localNames: Record<string, string> | null = null
+
+export function setLocalMedia(base: string, manifest: Record<string, string>): void {
+  localBase = base.endsWith('/') ? base : `${base}/`
+  localNames = manifest
+}
+
 /** A loadable URL for an attachment, rewriting hosts that no longer serve. */
 export function mediaUrl(url: string | undefined | null): string {
   if (!url) return ''
+
+  // Prefer the bundled copy. Keyed by the ORIGINAL url because that is what a post holds.
+  if (localBase && localNames) {
+    const local = localNames[url] ?? localNames[remoteUrl(url)]
+    if (local) return localBase + local
+  }
+  return remoteUrl(url)
+}
+
+function remoteUrl(url: string): string {
   const m = url.match(FILE_STORE)
   if (m) return `https://qalerts.app/media/${m[1]}`
   // A protocol-relative URL on a host we don't rewrite still needs a scheme to load.
