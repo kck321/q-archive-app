@@ -7,6 +7,7 @@ import { sourceLink } from '../lib/sourceLink'
 import QuotedPosts from './QuotedPosts'
 import { linkify } from '../lib/linkify'
 import { mediaUrl, dedupeMedia } from '../lib/mediaUrl'
+import { timeAgo } from '../lib/timeAgo'
 import { highlightText } from '../lib/postHighlight'
 import { CAN_EDIT } from '../lib/appMode'
 import type { QPost, QQuestion, PostAnalysis } from '../types'
@@ -223,6 +224,7 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
             #{post.postNum}
           </Link>
           <span className="text-xs text-gray-500 shrink-0">{formatDate(post.timestamp)}</span>
+          <span className="text-xs text-gray-600 shrink-0" title="How long ago this drop was posted">{timeAgo(post.timestamp)}</span>
           {post.source && (() => {
             const src = sourceLink(post)
             if (!src.url) {
@@ -307,7 +309,7 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
       <pre
         ref={preRef}
         onMouseUp={handleMouseUp}
-        className={`text-gray-300 text-sm leading-relaxed whitespace-pre-wrap font-mono rounded-lg p-3 overflow-x-auto transition-colors ${
+        className={`text-gray-300 text-base sm:text-sm leading-relaxed whitespace-pre-wrap font-mono rounded-lg p-3 overflow-x-auto transition-colors ${
           selectMode
             ? 'bg-blue-950/30 cursor-text select-text'
             : 'bg-black/20'

@@ -12,6 +12,7 @@ import QuestionBadge from '../components/QuestionBadge'
 import BackButton from '../components/BackButton'
 import { useAdmin } from '../components/AdminContext'
 import { sourceLink } from '../lib/sourceLink'
+import { timeAgo } from '../lib/timeAgo'
 import { mediaUrl, dedupeMedia } from '../lib/mediaUrl'
 import { resolveReferences, getQuotedContext } from '../lib/references'
 import QuotedPosts from '../components/QuotedPosts'
@@ -1325,7 +1326,7 @@ export default function PostDetail() {
               const src = sourceLink(post)
               return (
                 <p className="text-xs text-gray-500 mt-1">
-                  {date} · {src.url ? (
+                  {date} · <span className="text-gray-600" title="How long ago this drop was posted">{timeAgo(post.timestamp)}</span> · {src.url ? (
                     <a
                       href={src.url}
                       target="_blank"
@@ -1450,7 +1451,7 @@ export default function PostDetail() {
         {/* Post body */}
         <pre
           ref={bodyRef}
-          className={`text-gray-200 text-sm leading-relaxed whitespace-pre-wrap font-mono rounded-lg p-4 overflow-x-auto transition-colors ${
+          className={`text-gray-200 text-base sm:text-sm leading-relaxed whitespace-pre-wrap font-mono rounded-lg p-4 overflow-x-auto transition-colors ${
             selectMode ? 'bg-blue-950/30 cursor-text select-text border border-blue-800' : 'bg-black/30'
           } ${bodyFlash ? 'animate-body-flash' : ''}`}
         >
@@ -1546,11 +1547,12 @@ export default function PostDetail() {
           </div>
         )}
 
-        {/* External link */}
+        {/* External link. break-all + min-w-0: a board permalink is one long unbroken token,
+            so without them it refuses to wrap and pushes out past the card's right edge. */}
         {post.link && (
-          <div className="mt-3">
-            <a href={post.link} target="_blank" rel="noreferrer"
-              className="text-xs text-gray-500 hover:text-gray-300">
+          <div className="mt-3 min-w-0">
+            <a href={post.link} target="_blank" rel="noopener noreferrer"
+              className="text-xs text-gray-500 hover:text-gray-300 break-all inline-block max-w-full">
               View original → {post.link}
             </a>
           </div>

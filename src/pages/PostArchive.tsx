@@ -649,7 +649,7 @@ export default function PostArchive() {
         {/* Go to post # + filter tabs */}
         <div className="flex items-center gap-3 flex-wrap">
           {/* Post # jump + sort direction */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-wrap">
             <div className="relative">
               <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xs">#</span>
               <input
@@ -659,32 +659,32 @@ export default function PostArchive() {
                 value={postNumInput}
                 onChange={e => { setPostNumInput(e.target.value); setPostNumError('') }}
                 onKeyDown={e => e.key === 'Enter' && handleGoToPost()}
-                placeholder="Post number…"
-                className="w-36 bg-q-panel border border-q-border rounded-lg pl-7 pr-3 py-1.5 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-q-accent transition-colors [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                placeholder="Post #"
+                className="w-[4.5rem] bg-q-panel border border-q-border rounded-lg pl-6 pr-2 py-1.5 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-q-accent transition-colors [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
               />
             </div>
             <button
               onClick={handleGoToPost}
               disabled={!postNumInput.trim()}
-              className="bg-gray-700 hover:bg-gray-600 disabled:opacity-40 text-white font-medium px-3 py-1.5 rounded-lg transition-colors text-sm"
+              className="bg-gray-700 hover:bg-gray-600 disabled:opacity-40 text-white font-medium px-3 py-1.5 rounded-lg transition-colors text-sm shrink-0 whitespace-nowrap"
             >
-              Go to Post
+              Go<span className="hidden sm:inline"> to Post</span>
             </button>
             {/* Sort direction — inline next to Go to Post */}
-            <div className="flex gap-1 bg-q-panel border border-q-border rounded-lg p-1 ml-4">
+            <div className="flex gap-1 bg-q-panel border border-q-border rounded-lg p-1 shrink-0">
               <button
                 onClick={() => setSortDir('asc')}
                 title="Post #1 → #4966 (oldest first)"
-                className={`px-3 py-1 rounded text-xs font-medium transition-colors ${sortDir === 'asc' ? 'bg-gray-600 text-white' : 'text-gray-400 hover:text-white'}`}
+                className={`px-2 sm:px-3 py-1 rounded text-xs font-medium transition-colors whitespace-nowrap ${sortDir === 'asc' ? 'bg-gray-600 text-white' : 'text-gray-400 hover:text-white'}`}
               >
-                #1 → #4966
+                <span className="sm:hidden">↑ Oldest</span><span className="hidden sm:inline">#1 → #4966</span>
               </button>
               <button
                 onClick={() => setSortDir('desc')}
                 title="Post #4966 → #1 (newest first)"
-                className={`px-3 py-1 rounded text-xs font-medium transition-colors ${sortDir === 'desc' ? 'bg-gray-600 text-white' : 'text-gray-400 hover:text-white'}`}
+                className={`px-2 sm:px-3 py-1 rounded text-xs font-medium transition-colors whitespace-nowrap ${sortDir === 'desc' ? 'bg-gray-600 text-white' : 'text-gray-400 hover:text-white'}`}
               >
-                #4966 → #1
+                <span className="sm:hidden">↓ Newest</span><span className="hidden sm:inline">#4966 → #1</span>
               </button>
             </div>
             {postNumError && (

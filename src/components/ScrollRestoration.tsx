@@ -32,6 +32,23 @@ function savePositions(map: Record<string, number>) {
   try { sessionStorage.setItem(STORAGE_KEY, JSON.stringify(map)) } catch { /* private mode */ }
 }
 
+// Which element is actually scrolling right now.
+//
+// On desktop the app scrolls inside <main>. On phones the DOCUMENT scrolls instead, so the
+// browser can hide its address bar — which means the position has to be read from and
+// written to the document, and the scroll event listened for on window. Reading the wrong
+// one silently records 0 for every page, which is the same bug this file already fixed once.
+function scroller(containerRef: RefObject<HTMLElement | null>): {
+  el: HTMLElement
+  target: HTMLElement | Window
+} {
+  const el = containerRef.current
+  const inner = el && el.scrollHeight > el.clientHeight + 1
+  if (inner) return { el, target: el }
+  const doc = (document.scrollingElement ?? document.documentElement) as HTMLElement
+  return { el: doc, target: window }
+}
+
 export default function ScrollRestoration({ containerRef }: { containerRef: RefObject<HTMLElement | null> }) {
   const location = useLocation()
   const navType = useNavigationType()
@@ -41,7 +58,7 @@ export default function ScrollRestoration({ containerRef }: { containerRef: RefO
   // Keep the stored position current while the page is on screen, so a refresh or a
   // browser-level restore has something to work with too.
   useEffect(() => {
-    const el = containerRef.current
+    const { el, target } = scroller(containerRef)
     if (!el) return
     let frame = 0
     const onScroll = () => {
@@ -51,15 +68,15 @@ export default function ScrollRestoration({ containerRef }: { containerRef: RefO
         positions.current[key] = el.scrollTop
       })
     }
-    el.addEventListener('scroll', onScroll, { passive: true })
+    target.addEventListener('scroll', onScroll, { passive: true })
     return () => {
       if (frame) cancelAnimationFrame(frame)
-      el.removeEventListener('scroll', onScroll)
+      target.removeEventListener('scroll', onScroll)
     }
   }, [key, containerRef])
 
   useLayoutEffect(() => {
-    const el = containerRef.current
+    const { el } = scroller(containerRef)
     if (!el) return
 
     let raf = 0

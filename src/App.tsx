@@ -56,7 +56,7 @@ export default function App() {
   return (
     <AdminProvider>
     <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
-      <div className="flex h-screen overflow-hidden bg-q-dark">
+      <div className="flex min-h-screen lg:h-screen lg:overflow-hidden bg-q-dark overflow-x-hidden">
         <UpdateBanner />
 
         {/* Mobile top bar with hamburger (hidden on lg+) */}
@@ -64,7 +64,7 @@ export default function App() {
           <button onClick={() => setNavOpen(true)} aria-label="Open menu" className="text-gray-300 hover:text-white p-1 -ml-1">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
           </button>
-          <span className="text-base font-semibold text-gray-200"><span className="font-black text-gray-400 mr-1">Q</span>Archive</span>
+          <span className="text-base font-semibold text-gray-200"><span className="font-black text-gray-400 mr-1">Q</span>Drops</span>
         </header>
 
         {/* Backdrop behind the mobile drawer */}
@@ -73,7 +73,7 @@ export default function App() {
         )}
 
         <Sidebar open={navOpen} onClose={() => setNavOpen(false)} />
-        <main ref={mainRef} className="flex-1 overflow-y-auto pt-12 lg:pt-0">
+        <main ref={mainRef} className="flex-1 min-w-0 lg:overflow-y-auto pt-12 lg:pt-0">
           <ScrollRestoration containerRef={mainRef} />
           <Routes>
             <Route path="/"              element={<Navigate to="/posts" replace />} />

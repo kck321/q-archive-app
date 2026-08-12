@@ -93,7 +93,7 @@ export default function QuotedPosts({
                 scroll box hid the top of the quote — including, for a search, the very line
                 that matched. */}
             {q.text && (
-              <pre className="px-3 pb-2 text-xs leading-relaxed text-gray-400 whitespace-pre-wrap font-mono">
+              <pre className="px-3 pb-2 text-sm sm:text-xs leading-relaxed text-gray-400 whitespace-pre-wrap font-mono">
                 {linkify(
                   drop
                     ? highlightText(

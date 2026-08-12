@@ -1,35 +1,30 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { getAllPostsWithLinks } from '../lib/posts'
-import type { QPost } from '../types'
-
-function getDomain(url: string) {
-  try { return new URL(url).hostname.replace(/^www\./, '') } catch { return url }
-}
+import { getAllTextLinks, type QTextLink } from '../lib/posts'
 
 export default function QLinks() {
-  const [posts, setPosts] = useState<QPost[]>([])
+  const [posts, setPosts] = useState<QTextLink[]>([])
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState('')
 
   useEffect(() => {
-    getAllPostsWithLinks().then(p => { setPosts(p); setLoading(false) })
+    getAllTextLinks().then(l => { setPosts(l); setLoading(false) })
   }, [])
 
   const filtered = search
     ? posts.filter(p =>
-        p.link.toLowerCase().includes(search.toLowerCase()) ||
-        p.text.toLowerCase().includes(search.toLowerCase()) ||
+        p.url.toLowerCase().includes(search.toLowerCase()) ||
         String(p.postNum).includes(search)
       )
     : posts
 
   // Group by domain for the domain badge
   const domainCounts = posts.reduce<Record<string, number>>((acc, p) => {
-    const d = getDomain(p.link)
-    acc[d] = (acc[d] ?? 0) + 1
+    acc[p.domain] = (acc[p.domain] ?? 0) + 1
     return acc
   }, {})
+  const uniqueUrls = new Set(posts.map(p => p.url)).size
+  const postsWithLinks = new Set(posts.map(p => p.postNum)).size
   const topDomains = Object.entries(domainCounts)
     .sort((a, b) => b[1] - a[1])
     .slice(0, 8)
@@ -38,7 +33,9 @@ export default function QLinks() {
     <div className="p-6">
       <h1 className="text-xl font-bold text-white mb-1">All Q Links</h1>
       <p className="text-gray-500 text-sm mb-4">
-        {loading ? 'Loading…' : `${posts.length} posts contain external links — chronological order`}
+        {loading
+          ? 'Loading…'
+          : `${posts.length.toLocaleString()} links across ${postsWithLinks.toLocaleString()} posts · ${uniqueUrls.toLocaleString()} unique · ${Object.keys(domainCounts).length.toLocaleString()} domains`}
       </p>
 
       {/* Top domains quick-filter */}
@@ -78,7 +75,7 @@ export default function QLinks() {
             const date = new Date(post.timestamp * 1000).toLocaleDateString('en-US', {
               year: 'numeric', month: 'short', day: 'numeric',
             })
-            const domain = getDomain(post.link)
+            const domain = post.domain
             return (
               <div key={post.id} className="bg-q-panel border border-q-border rounded-xl p-4 hover:border-gray-600 transition-colors">
                 <div className="flex items-start gap-3">
@@ -98,19 +95,13 @@ export default function QLinks() {
                     </div>
                     {/* Link */}
                     <a
-                      href={post.link}
+                      href={post.url}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer nofollow"
                       className="text-sm text-blue-300 hover:text-blue-100 break-all leading-snug"
                     >
-                      {post.link}
+                      {post.url}
                     </a>
-                    {/* Post snippet */}
-                    {post.text && (
-                      <p className="text-xs text-gray-500 mt-2 leading-relaxed line-clamp-2">
-                        {post.text.slice(0, 240)}{post.text.length > 240 ? '…' : ''}
-                      </p>
-                    )}
                   </div>
                 </div>
               </div>

@@ -1099,6 +1099,40 @@ export async function getAllPostsWithLinks(): Promise<QPost[]> {
   return posts.filter(p => p.link && p.link.trim() !== '')
 }
 
+export interface QTextLink {
+  postNum: number
+  id: string
+  timestamp: number
+  url: string
+  domain: string
+}
+
+/**
+ * Every external URL Q actually posted, one row per link.
+ *
+ * NOT `post.link` — that is the drop's own permalink on 8chan, which every post has, so
+ * filtering on it returned all 4,966 posts and the Q Links page listed the board's own URLs
+ * while claiming they were external links Q shared.
+ *
+ * A post can carry several links, so this is flattened: 2,614 links across 1,715 posts.
+ */
+export async function getAllTextLinks(): Promise<QTextLink[]> {
+  const { posts } = await loadLocalData()
+  const rx = /https?:\/\/[^\s<>'")\]]+/g
+  const out: QTextLink[] = []
+  for (const p of posts) {
+    for (const m of (p.text ?? '').match(rx) ?? []) {
+      // Trailing sentence punctuation is not part of the URL.
+      const url = m.replace(/[.,;:!?)\]]+$/, '')
+      if (!url) continue
+      let domain = url
+      try { domain = new URL(url).hostname.replace(/^www\./, '') } catch { /* keep raw */ }
+      out.push({ postNum: p.postNum, id: p.id, timestamp: p.timestamp, url, domain })
+    }
+  }
+  return out
+}
+
 // ─── Topics ───────────────────────────────────────────────────────────────────
 export async function getTopics(): Promise<QTopic[]> {
   const { topics } = await loadLocalData()
