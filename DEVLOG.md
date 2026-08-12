@@ -1585,3 +1585,53 @@ crypto) and read the AUP before investing time in either.
   events but cookie-based + heavily ad-blocked) vs Cloudflare Web Analytics (free, no
   cookies, no consent banner, far less blocked, but traffic only — no custom events).
   Could run both. GitHub Pages provides no server logs.
+
+
+---
+
+## Reference recovery — quoted post content (Aug 11, 2026)
+
+**Request:** "i see post 2124 on qalerts holds all the data, our sight only holds the pic" /
+"i want to fix all the post that are like this that are missing the correct data. and lets
+fix whatever else we need to for 3."
+
+**Problem.** The `references` field was destroyed at ingest — every entry is the literal
+string `"[object Object]"`, in Firestore too, so re-exporting could not recover it. 1,586
+`>>NNNNNNN` pointers across 1,547 drops rendered as bare numbers, and 211 drops were nothing
+but a pointer, showing as blank rows. #2124's entire body is `>>2950820`.
+
+**Why the boards could not supply it.** 8ch.net is gone. 8kun.top 302s every one of those old
+thread ids to its index — tested, not assumed. qalerts' public `posts.json` has no reference
+field either. But qalerts *server-renders* the quoted post inside each drop's card, so one
+page fetch per referencing drop recovers author, tripcode, device ID, board link, text and
+images.
+
+**Built.**
+- `scripts/scrape-references.mjs` — 1,547 fetches, concurrency 4, resumable, `--only N` to
+  check selectors. Result: 1,468 references, 0 failures.
+- `scripts/apply-references.mjs` — merges into `posts.json` as `quotedPosts`, walking the
+  reply chain so #2124 -> #2123 -> the anon who says MOSSAD is recovered too.
+  **2,715 quoted posts, 514,903 characters, 828 carrying images.**
+- `src/components/QuotedPosts.tsx` — renders the chain; anything past one hop folds away.
+- `src/lib/references.ts` — resolves a pointer to a Q drop we already hold, used as the
+  fallback where the scrape came up empty and to link a quoted drop through to its post page.
+
+**Results.**
+- 205 of the 211 blank rows now have content.
+- #1, the very first drop, now shows the anon it was answering ("Hillary Clinton will be
+  arrested between 7:45 AM - 8:30 AM EST on Monday…").
+- MOSSAD search: was 2 posts, qalerts had 4. Full-chain indexing gave 6; depth <= 1 gives
+  exactly qalerts' four — #1489, #2104, #2123, #2124.
+
+**Two traps handled.**
+- The Firestore dump overwrites `posts.json` wholesale, so `export-firestore.mjs` now
+  re-applies the references and **aborts if `scripts/.cache/references.jsonl` is missing.**
+  That file is committed — it is the only copy of this data.
+- `SEED_VERSION` bumped to 2, or returning visitors keep their old IndexedDB copy forever.
+
+**Parser bug worth remembering:** walking back from a nested card header with
+`lastIndexOf('<div class="card')` matches `card-header` too, so it sliced the header instead
+of the card and every post parsed as zero references. The trailing space fixes it.
+
+**Deliberately NOT done:** quoted text is kept out of the analysis index. 52% of it is anon
+words and must not become Q's questions, claims or predictions.

@@ -51,6 +51,19 @@ made once and only caught by grepping the built file.
    Normalizing strips the "?", which made the question "Twitter?" claim 960 posts instead of 6.
 6. **`+` is a word character in `normalizeItemKey`.** `Q` and `Q+` are different designations.
 7. **Never merge `Saddam Hussein` into the Obama alias group.** Different person.
+8. **`scripts/.cache/references.jsonl` is source data, not a cache.** It is the only copy of
+   the quoted-post content behind every `>>NNNNNNN` pointer — scraped back from qalerts after
+   the original `references` field was destroyed at ingest (every entry is the string
+   `"[object Object]"`, in Firestore too). It is committed to git. The Firestore dump
+   overwrites `posts.json` wholesale, so `export-firestore.mjs` re-applies it and **aborts if
+   the file is missing**. Delete it and 205 drops go back to being blank rows.
+9. **Quoted text feeds SEARCH ONLY, never the analysis index.** 52% of it is anon words. If
+   it reached `getAnalysisFrequency` it would turn anons into Q's questions, claims and
+   predictions. Search indexes chain depth ≤ 1 — that reproduces qalerts exactly; indexing
+   the full 4-deep chain returned 6 posts for MOSSAD where qalerts returns 4.
+10. **Bump `SEED_VERSION` in `src/lib/localData.ts` whenever `posts.json` shape changes.**
+    Returning visitors read from IndexedDB and will never see new fields otherwise. Now at 2
+    (`quotedPosts`).
 
 ## Counting rules (these have gone wrong repeatedly)
 
