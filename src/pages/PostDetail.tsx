@@ -12,6 +12,7 @@ import QuestionBadge from '../components/QuestionBadge'
 import BackButton from '../components/BackButton'
 import { useAdmin } from '../components/AdminContext'
 import { sourceLink } from '../lib/sourceLink'
+import { mediaUrl } from '../lib/mediaUrl'
 import FlagIssue from '../components/FlagIssue'
 import { CAN_EDIT } from '../lib/appMode'
 import { getAliasesFor, getAliasGroup, addAlias, removeAlias, subscribeAliases } from '../lib/aliases'
@@ -98,7 +99,10 @@ function renderPostBody(
     for (const variant of getAliasGroup(highlight)) {
       if (!variant || !variant.trim()) continue
       const escaped = variant.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-      const regex = new RegExp(escaped, 'gi')
+      // Boundary-matched. Without this, arriving with ?highlight=Read. lit up the "read."
+      // inside "th[read.]" and "b[read.]" — this is the path a section chip links through,
+      // so it is the one a reader actually sees.
+      const regex = new RegExp(wordBoundaryPattern(escaped, variant), 'gi')
       let m: RegExpExecArray | null
       while ((m = regex.exec(text)) !== null) {
         if (m.index === regex.lastIndex) regex.lastIndex++
@@ -114,7 +118,7 @@ function renderPostBody(
   for (const q of questions) {
     const escaped = escapeAndNormalize(q.text)
     const isHL = !!highlight && normHL(q.text) === normHL(highlight)
-    const regex = new RegExp(escaped, 'gi')
+    const regex = new RegExp(wordBoundaryPattern(escaped, q.text), 'gi')
     let m: RegExpExecArray | null
     while ((m = regex.exec(text)) !== null) {
       segs.push({ start: m.index, end: m.index + m[0].length, kind: isHL ? 'highlight' : 'question', matchText: m[0], questionId: q.id })
@@ -124,7 +128,7 @@ function renderPostBody(
   // Action request segments — ends with '?' → requestQuestion (flashes green↔blue)
   for (const req of requestTexts ?? []) {
     const escaped = escapeAndNormalize(req)
-    const regex = new RegExp(escaped, 'gi')
+    const regex = new RegExp(wordBoundaryPattern(escaped, req), 'gi')
     let m: RegExpExecArray | null
     while ((m = regex.exec(text)) !== null) {
       const kind: Kind = req.trim().endsWith('?') ? 'requestQuestion' : 'request'
@@ -1443,14 +1447,14 @@ export default function PostDetail() {
               if (!m.url) return null
               const isNonImage = /\.(pdf|mp4|webm|mov|doc|docx|xls|xlsx)$/i.test(m.url)
               return isNonImage ? (
-                <a key={m.url} href={m.url} target="_blank" rel="noreferrer"
+                <a key={m.url} href={mediaUrl(m.url)} target="_blank" rel="noreferrer"
                   className="inline-flex items-center gap-1 text-xs text-blue-400 hover:underline bg-gray-800 px-2 py-1 rounded">
                   📎 {m.filename || m.url}
                 </a>
               ) : (
                 <div key={m.url} className="rounded-lg overflow-hidden border border-gray-700">
                   <img
-                    src={m.url}
+                    src={mediaUrl(m.url)}
                     alt={m.filename}
                     className="max-w-full h-auto block"
                     loading="lazy"
@@ -1458,7 +1462,7 @@ export default function PostDetail() {
                   />
                   <div className="bg-gray-800/70 px-3 py-1.5 flex items-center justify-between">
                     <span className="text-xs text-gray-400 truncate mr-2">{m.filename}</span>
-                    <a href={m.url} target="_blank" rel="noreferrer" className="text-xs text-blue-400 hover:underline shrink-0">Open ↗</a>
+                    <a href={mediaUrl(m.url)} target="_blank" rel="noreferrer" className="text-xs text-blue-400 hover:underline shrink-0">Open ↗</a>
                   </div>
                 </div>
               )
@@ -1475,7 +1479,7 @@ export default function PostDetail() {
                   Referenced post &gt;&gt;{img.num}
                 </div>
                 <img
-                  src={img.url}
+                  src={mediaUrl(img.url)}
                   alt={img.filename}
                   className="max-w-full h-auto block"
                   loading="lazy"
@@ -1483,7 +1487,7 @@ export default function PostDetail() {
                 />
                 <div className="bg-gray-800/70 px-3 py-1.5 flex items-center justify-between">
                   <span className="text-xs text-gray-400 truncate mr-2">{img.filename}</span>
-                  <a href={img.url} target="_blank" rel="noreferrer" className="text-xs text-blue-400 hover:underline shrink-0">Open ↗</a>
+                  <a href={mediaUrl(img.url)} target="_blank" rel="noreferrer" className="text-xs text-blue-400 hover:underline shrink-0">Open ↗</a>
                 </div>
               </div>
             ))}

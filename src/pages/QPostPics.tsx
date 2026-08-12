@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { getAllPostsWithMedia } from '../lib/posts'
 import type { QPost, QMedia } from '../types'
+import { mediaUrl } from '../lib/mediaUrl'
 
 const IMAGE_EXT_RX = /\.(jpg|jpeg|png|gif|webp|bmp|svg|tiff?|ico|avif|heic|heif)(\?[^\s]*)?$/i
 const IMAGE_PATH_RX = /\/(media|image|img|file_store|thumb|photos?|pictures?|uploads?)\//i
@@ -142,7 +143,7 @@ export default function QPostPics() {
               >
                 <div className="relative bg-black/40 flex items-center justify-center min-h-32">
                   <img
-                    src={media.url}
+                    src={mediaUrl(media.url)}
                     alt={media.filename}
                     className="w-full h-48 object-cover"
                     loading="lazy"
@@ -153,7 +154,7 @@ export default function QPostPics() {
                     }}
                   />
                   <a
-                    href={media.url}
+                    href={mediaUrl(media.url)}
                     target="_blank"
                     rel="noreferrer"
                     className="absolute top-1.5 right-1.5 bg-black/60 hover:bg-black/80 text-gray-300 hover:text-white text-xs px-1.5 py-0.5 rounded transition-colors"

@@ -130,6 +130,53 @@ export function countPhraseOccurrences(paddedNormText: string, normPhrase: strin
   }
 }
 
+// ─── Sentence expansion ───────────────────────────────────────────────────────
+// The extractor was told to "copy EXACT text", but it frequently lifts a clause instead of
+// the sentence: "the FBI, and MI, have an open investigation into the CF" from "Remember,
+// the FBI, and MI, have an open investigation into the CF." Measured across the archive,
+// 21% of Claims, 12% of Predictions and 37% of Checkable Claims are fragments like that.
+//
+// A chopped Checkable Claim is often no longer checkable, which is the whole point of the
+// category — so items are expanded back out to their sentence in the source post, at read
+// time. Deterministic, costs nothing, and changes no stored data.
+//
+// Only applied to the three categories the prompt asks to be copied verbatim. Named entities
+// are identifiers, themes are tags, and implied conclusions are paraphrases that never
+// appear in the text at all — expanding those would be wrong.
+const SENTENCE_CATS = new Set(['claims', 'predictions', 'verificationHooks'])
+const NEWLINE = String.fromCharCode(10)
+const MAX_SENTENCE = 400   // a terminator-free paragraph should not become one giant "sentence"
+
+export function expandToSentence(item: string, postText: string): string {
+  const needle = item.trim()
+  if (!needle || !postText) return needle
+  const at = postText.toLowerCase().indexOf(needle.toLowerCase())
+  if (at === -1) return needle            // paraphrased — there is nothing to expand to
+
+  const isSentenceEnd = (i: number) => {
+    if (!'.!?'.includes(postText[i])) return false
+    // "twitter.com" and "9.11" are not sentence ends.
+    return !/[A-Za-z0-9]/.test(postText[i + 1] ?? '')
+  }
+
+  let start = at
+  while (start > 0) {
+    const c = postText[start - 1]
+    if (c === NEWLINE) break
+    if (isSentenceEnd(start - 1)) break
+    start--
+  }
+  let end = at + needle.length
+  while (end < postText.length) {
+    if (postText[end] === NEWLINE) break
+    if (isSentenceEnd(end)) { end++; break }
+    end++
+  }
+
+  const out = postText.slice(start, end).trim().replace(/\s+/g, ' ')
+  return !out || out.length > MAX_SENTENCE ? needle : out
+}
+
 // ─── Question-form matching ───────────────────────────────────────────────────
 // A QUESTION must be matched as a question. `normalizeItemKey` strips punctuation, so the
 // generic backfill turned the question "Twitter?" into the bare token "twitter" and claimed
@@ -150,11 +197,20 @@ async function getRawTextIndex(): Promise<Map<number, string>> {
 }
 
 function questionRegex(questionText: string): RegExp | null {
-  // Drop trailing punctuation, then require a '?' after the phrase.
+  // Match the phrase where it ENDS A SENTENCE — followed by ? . or !
+  //
+  // Not "?" alone: Q's punctuation is inconsistent, so the same line appears as
+  // "Define stages?" and "Define stages." Requiring "?" dropped 1,116 real questions.
+  //
+  // Not a bare word either: matching the token anywhere is what made the question
+  // "Twitter?" claim 960 posts instead of 6.
+  //
+  // The terminator must NOT be followed by a word character, or "twitter.com" reads as
+  // the sentence "twitter." — that alone took Twitter? from 18 posts to 887.
   const core = questionText.toLowerCase().replace(/\s+/g, ' ').replace(/[?.!,;:\s]+$/, '').trim()
   if (!core) return null
   const escaped = core.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-  return new RegExp(`${escaped}\\s*\\?`, 'g')
+  return new RegExp(`(?<![a-z0-9])${escaped}\\s*[?.!](?![a-z0-9])`, 'g')
 }
 
 /** Times `questionText` is asked (as a question) inside one post. */
@@ -712,7 +768,13 @@ export async function searchAllPosts(term: string, exact = false): Promise<QPost
   return posts.filter(p => {
     // Date match (e.g. "Nov 4" → posts published on Nov 4 of any year)
     if (dateQuery && dateMatches(p.timestamp, dateQuery)) return true
-    const text = (p.text ?? '').replace(/>>\d+/g, '').toLowerCase()
+    // Attachment filenames are searchable content we already hold and were ignoring —
+    // names like "187_Site_E.jpg" or "Free_Speech_Systems.png" often carry the only
+    // reference to a subject in an image-only drop. qalerts indexes these; we didn't.
+    const names = [...(p.media ?? []), ...(p.refMedia ?? [])]
+      .map(m => (m?.filename ?? '').replace(/[_\-.]+/g, ' '))
+      .join(' ')
+    const text = `${(p.text ?? '').replace(/>>\d+/g, '')} ${names}`.toLowerCase()
     return matchers.some(mx => typeof mx === 'string' ? text.includes(mx) : mx.test(text))
   })
 }
@@ -1098,7 +1160,12 @@ async function computeAnalysisFrequency(): Promise<AnalysisCategoryFreq[]> {
     for (const cat of ANALYSIS_CATS) {
       const items = (analysis[cat] as string[] | undefined) ?? []
       for (const item of items) {
-        const trimmed = item.trim()
+        // Grow fragments back to their full sentence, for the categories the extractor was
+        // told to copy verbatim. Grouping on the expanded text is what merges the several
+        // partial versions of one sentence into a single row.
+        const trimmed = SENTENCE_CATS.has(cat)
+          ? expandToSentence(item, post.text ?? '')
+          : item.trim()
         // Skip "Q" alone and bare numbers (Q post numbers) in Named Entities
         if (cat === 'namedEntities') {
           if (/^Q$/i.test(trimmed)) continue
