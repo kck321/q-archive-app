@@ -55,7 +55,7 @@ body {
   50%       { background-color: rgba(59, 130, 246, 0.5); color: rgb(219, 234, 254); }
 }
 .animate-flash {
-  animation: text-flash 1.5s ease-in-out infinite;
+  animation: text-flash 3s ease-in-out infinite;
 }
 
 /* Per-category flash animations — white ↔ exact category color (infinite) */
@@ -63,37 +63,37 @@ body {
   0%, 100% { background-color: rgba(255,255,255,0.95); color: #111827; }
   50%       { background-color: rgba(245,158,11,0.65); color: rgb(255,251,235); }
 }
-.animate-flash-claims { animation: flash-claims 1.5s ease-in-out infinite; }
+.animate-flash-claims { animation: flash-claims 3s ease-in-out infinite; }
 
 @keyframes flash-predictions {
   0%, 100% { background-color: rgba(255,255,255,0.95); color: #111827; }
   50%       { background-color: rgba(139,92,246,0.65); color: rgb(245,243,255); }
 }
-.animate-flash-predictions { animation: flash-predictions 1.5s ease-in-out infinite; }
+.animate-flash-predictions { animation: flash-predictions 3s ease-in-out infinite; }
 
 @keyframes flash-entities {
   0%, 100% { background-color: rgba(255,255,255,0.95); color: #111827; }
   50%       { background-color: rgba(6,182,212,0.65); color: rgb(236,254,255); }
 }
-.animate-flash-entities { animation: flash-entities 1.5s ease-in-out infinite; }
+.animate-flash-entities { animation: flash-entities 3s ease-in-out infinite; }
 
 @keyframes flash-themes {
   0%, 100% { background-color: rgba(255,255,255,0.95); color: #111827; }
   50%       { background-color: rgba(99,102,241,0.65); color: rgb(238,242,255); }
 }
-.animate-flash-themes { animation: flash-themes 1.5s ease-in-out infinite; }
+.animate-flash-themes { animation: flash-themes 3s ease-in-out infinite; }
 
 @keyframes flash-conclusions {
   0%, 100% { background-color: rgba(255,255,255,0.95); color: #111827; }
   50%       { background-color: rgba(249,115,22,0.65); color: rgb(255,247,237); }
 }
-.animate-flash-conclusions { animation: flash-conclusions 1.5s ease-in-out infinite; }
+.animate-flash-conclusions { animation: flash-conclusions 3s ease-in-out infinite; }
 
 @keyframes flash-hooks {
   0%, 100% { background-color: rgba(255,255,255,0.95); color: #111827; }
   50%       { background-color: rgba(234,179,8,0.65); color: rgb(254,252,232); }
 }
-.animate-flash-hooks { animation: flash-hooks 1.5s ease-in-out infinite; }
+.animate-flash-hooks { animation: flash-hooks 3s ease-in-out infinite; }
 
 /* Sidebar link click flash — brief white overlay fading out */
 @keyframes nav-flash {

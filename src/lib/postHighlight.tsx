@@ -59,7 +59,25 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
 
   // Highlight the searched term AND its whole alias group, so a post that matched via an alias
   // (e.g. searching "4,10,20" surfaces POTUS / Q+ posts) shows WHY it matched instead of nothing.
-  if (keyword) addSegs(segs, text, getAliasGroup(keyword), 'keyword')
+  if (keyword) {
+    addSegs(segs, text, getAliasGroup(keyword), 'keyword')
+
+    // A question arrives here as its stored text ("Power?"), but the post that matched may
+    // write it "power." — the ?/./! grouping. Literal matching found nothing, so the term
+    // you clicked was the one thing NOT highlighted on the page. Match the same form the
+    // question index matched on.
+    if (/[?]\s*$/.test(keyword)) {
+      const rx = questionHighlightRegex(keyword)
+      if (rx) {
+        rx.lastIndex = 0
+        let km: RegExpExecArray | null
+        while ((km = rx.exec(text)) !== null) {
+          segs.push({ start: km.index, end: km.index + km[0].length, kind: 'keyword' })
+          if (km.index === rx.lastIndex) rx.lastIndex++
+        }
+      }
+    }
+  }
 
   // Language highlighting off → the drop renders as plain text. The searched term and any
   // URLs still stand out, since those are how you move around rather than what the app
