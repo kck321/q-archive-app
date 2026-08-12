@@ -18,6 +18,7 @@ import QBrackets from './pages/QBrackets'
 import QTripcodes from './pages/QTripcodes'
 import Feedback from './pages/Feedback'
 import Donate from './pages/Donate'
+import Download from './pages/Download'
 import { AdminProvider } from './components/AdminContext'
 import ScrollRestoration from './components/ScrollRestoration'
 
@@ -84,6 +85,7 @@ export default function App() {
             <Route path="/tripcodes"     element={<QTripcodes />} />
             <Route path="/feedback"      element={<Feedback />} />
             <Route path="/donate"        element={<Donate />} />
+            <Route path="/download"      element={<Download />} />
           </Routes>
         </main>
       </div>

@@ -25,6 +25,7 @@ const bottomLinks = [
   { to: '/links',     label: 'All Q Links',     icon: '🌐' },
   { to: '/resources', label: 'Resources',       icon: '🔗' },
   { to: '/feedback',  label: 'Comments & Ideas', icon: '💬' },
+  { to: '/download',  label: 'Get the App',     icon: '⬇️' },
   { to: '/donate',    label: 'Support',         icon: '❤️' },
   { to: '/dashboard', label: 'Dashboard',       icon: '⬡' },
 ]

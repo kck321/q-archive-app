@@ -1,0 +1,95 @@
+# Builds the downloadable desktop app for Windows, macOS and Linux.
+#
+# Mac and Linux installers cannot be cross-compiled from a Windows machine, which is why
+# this runs in CI: each OS builds its own installer on its own runner.
+#
+# What ships is the READ-ONLY build. `tauri.conf.json` runs `npm run build:app:public`,
+# which loads `.env.public` (VITE_PUBLIC_SITE=1, empty API key), so Vite folds CAN_EDIT to
+# a literal false and Rollup drops every edit control and the admin PIN at compile time.
+# The verify step below greps the built bundle and fails the release if anything leaked.
+#
+# Trigger: push a tag (`git tag v0.6.9 && git push origin v0.6.9`) or run it by hand from
+# the Actions tab. It creates a DRAFT release — nothing is public until you press publish.
+name: Release desktop app
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: windows-latest
+            args: ''
+          - platform: macos-latest          # Apple Silicon + Intel in one universal binary
+            args: '--target universal-apple-darwin'
+          - platform: ubuntu-22.04
+            args: ''
+
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Linux build dependencies
+        if: matrix.platform == 'ubuntu-22.04'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
+
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: './src-tauri -> target'
+
+      - run: npm ci
+
+      - name: Verify the bundle is read-only
+        shell: bash
+        run: |
+          npm run build:app:public
+          # These strings only exist in the editing build. If any survives, the installer
+          # would hand every user the admin controls, so fail before anything is packaged.
+          fail=0
+          for s in "ADMIN_PIN" "VITE_ADMIN_PIN" "VITE_ANTHROPIC_API_KEY"; do
+            if grep -rqF "$s" dist/assets/*.js; then echo "LEAK: $s found in the built bundle"; fail=1; fi
+          done
+          [ "$fail" = "0" ] && echo "OK — no admin strings in the shipped bundle"
+          exit $fail
+
+      - uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Signs the update artifacts so the in-app updater will accept them. The matching
+          # public key is already in tauri.conf.json.
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+        with:
+          tagName: ${{ github.ref_type == 'tag' && github.ref_name || format('v{0}-manual', github.run_number) }}
+          releaseName: 'Q Archive __VERSION__'
+          releaseBody: |
+            Read-only desktop build of the Q Archive.
+
+            - **Windows** — `.msi` or `.exe`
+            - **macOS** — `.dmg` (universal: Apple Silicon and Intel)
+            - **Linux** — `.AppImage` or `.deb`
+
+            Unsigned, so the OS will warn on first launch: on Windows choose
+            "More info → Run anyway", on macOS right-click the app and choose Open.
+          releaseDraft: true
+          prerelease: false
+          args: ${{ matrix.args }}
