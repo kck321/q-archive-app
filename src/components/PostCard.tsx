@@ -259,7 +259,7 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
       <pre
         ref={preRef}
         onMouseUp={handleMouseUp}
-        className={`text-gray-300 text-[15px] sm:text-sm leading-relaxed whitespace-pre-wrap break-words font-mono rounded-lg p-3 overflow-x-auto transition-colors ${
+        className={`text-gray-300 post-text whitespace-pre-wrap break-words rounded-lg p-3 overflow-x-auto transition-colors ${
           selectMode
             ? 'bg-blue-950/30 cursor-text select-text'
             : 'bg-black/20'

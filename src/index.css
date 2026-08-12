@@ -138,3 +138,28 @@ body {
   scrollbar-width: auto;
   scrollbar-color: #4b5563 #0b1220;
 }
+
+/* ── Post body type ──────────────────────────────────────────────────────────
+   One class for every drop the app renders — post cards, the post page, quoted
+   posts and the reader feed — so the archive reads the same everywhere.
+
+   The stack matches qalerts (Bootstrap's default system stack) rather than the
+   monospace this used to use: at the same nominal size monospace renders wider
+   and reads noticeably bigger, which is why the text looked oversized next to
+   theirs. 15px sits just under their 16px.
+
+   `pre` still supplies the wrapping; this only sets the type. */
+.post-text {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+               "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Quoted posts sit one level down, so they step down a size with it. */
+.post-text-sm {
+  font-family: inherit;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
