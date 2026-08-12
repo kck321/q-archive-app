@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "Q Archive",
-  "version": "0.6.8",
+  "version": "0.7.0",
   "identifier": "com.qarchive.desktop",
   "build": {
     "frontendDist": "../dist",
