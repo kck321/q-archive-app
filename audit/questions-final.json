@@ -18780,7 +18780,7 @@
    "countsTowardQQuestionTotal": false,
    "semanticFunction": "analytical_directive",
    "grammaticalForm": "imperative",
-   "reason": "review call: the preceding sentence already states what to investigate",
+   "reason": "the preceding sentence already states what to investigate, so this instructs an action rather than asking for information",
    "previousStatus": "MISSED",
    "semanticQuestionScore": 0.5,
    "questionMarkPresent": false

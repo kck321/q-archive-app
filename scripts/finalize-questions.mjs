@@ -23,6 +23,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { overrideFor } from './lib/overrides.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const OUT = path.join(ROOT, 'audit')
@@ -41,18 +42,17 @@ const ANALYTICAL_DIRECTIVE = /^(compare|reconcile|follow|think|read|watch|listen
 const LIST_AS_NOUN = /^list\s+of\b/i
 const NAME_AS_NOUN = /^name\s+(is|are|was|were|can|could|will|would|shall|should|may|might|must|has|have|had|we|you|they|i|he|she|it|worth|of|for|in|on|to)\b/i
 
-// Explicit calls from the review that a rule alone cannot reach, because they depend on the
-// preceding line rather than the sentence itself.
-const OVERRIDES = new Map([
-  ['identify and list', { klass: 'Q_DIRECTIVE', why: 'review call: the preceding sentence already states what to investigate' }],
-])
+// Review calls that no rule can reach live in lib/overrides.mjs, so every auditor honours
+// the same ones. Holding them privately here is what made the questions and directives
+// audits disagree on "Identify and list."
+
 
 function taxonomy(text, ctx = {}) {
   const t = (text ?? '').trim()
   const k = t.toLowerCase().replace(/[^a-z0-9 ]+/g, '').replace(/\s+/g, ' ').trim()
 
-  const ov = OVERRIDES.get(k)
-  if (ov) return { klass: ov.klass, counts: false, why: ov.why, semanticFunction: 'analytical_directive', grammaticalForm: 'imperative' }
+  const ov = overrideFor(t)
+  if (ov) return { klass: ov.klass, counts: ov.countsTowardQQuestionTotal, why: ov.why, semanticFunction: ov.semanticFunction, grammaticalForm: ov.grammaticalForm }
 
   // A heading: a noun phrase introducing material, usually ending in a colon.
   if (LIST_AS_NOUN.test(t) || NAME_AS_NOUN.test(t) || /:$/.test(t)) {

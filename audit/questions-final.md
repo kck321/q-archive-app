@@ -67,7 +67,7 @@ These were counted as questions before this pass. They instruct an analytical op
 | #1688 | `Compare/contrast ANTIFA.` | analytical or action instruction — the deliverable is work, not an ans |
 | #1688 | `Compare/contrast SOCIALISM push.` | analytical or action instruction — the deliverable is work, not an ans |
 | #1818 | `Reconcile.` | analytical or action instruction — the deliverable is work, not an ans |
-| #184 | `Identify and list.` | review call: the preceding sentence already states what to investigate |
+| #184 | `Identify and list.` | the preceding sentence already states what to investigate, so this ins |
 | #1841 | `Reconcile.` | analytical or action instruction — the deliverable is work, not an ans |
 | #1898 | `Compare pool of V w/ painting of kids in pool (red shoes).` | analytical or action instruction — the deliverable is work, not an ans |
 | #1902 | `Compare & contrast.` | analytical or action instruction — the deliverable is work, not an ans |
