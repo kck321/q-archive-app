@@ -261,6 +261,7 @@ export default function QBrackets() {
                 <span className="text-xs font-medium text-gray-500 ml-1.5">mentions</span>
               </span>
               <span className="text-2xl font-black text-white/90">
+                <span className="text-xs font-medium text-gray-500 mr-1.5">within</span>
                 {new Set(allBrackets.flatMap(b => b.postNums)).size.toLocaleString()}
                 <span className="text-xs font-medium text-gray-500 ml-1.5">posts</span>
               </span>
@@ -468,7 +469,7 @@ export default function QBrackets() {
                             : `${entry.postNums.length} posts`
                         }
                       >
-                        within {entry.postNums.length.toLocaleString()} posts
+                        ×{entry.postNums.length} posts
                       </span>
                     )}
                     {(() => {

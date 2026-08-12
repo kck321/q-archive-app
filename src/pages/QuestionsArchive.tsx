@@ -133,7 +133,7 @@ function QuestionCard({ r, selectedNums, hoverNums, flashNums, rank, monthOf }: 
           )}
           {r.count > 1 && (
             <span className="text-xs font-bold px-2 py-0.5 rounded-full border whitespace-nowrap text-white bg-gray-700 border-gray-600">
-              within {r.count.toLocaleString()} posts
+              ×{r.count} posts
             </span>
           )}
           {span && <span className="text-[10px] text-gray-600 leading-tight text-center whitespace-nowrap">{span}</span>}
@@ -407,6 +407,7 @@ export default function QuestionsArchive() {
                 <span className="text-xs font-medium text-gray-500 ml-1.5">mentions</span>
               </span>
               <span className="text-2xl font-black text-white/90">
+                <span className="text-xs font-medium text-gray-500 mr-1.5">within</span>
                 {new Set(allFetched.flatMap(q => q.postNums)).size.toLocaleString()}
                 <span className="text-xs font-medium text-gray-500 ml-1.5">posts</span>
               </span>

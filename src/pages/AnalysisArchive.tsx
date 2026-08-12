@@ -504,6 +504,7 @@ export default function AnalysisArchive() {
                   <span className="text-xs font-medium text-gray-500 ml-1.5">mentions</span>
                 </span>
                 <span className="text-2xl font-black text-white/90">
+                  <span className="text-xs font-medium text-gray-500 mr-1.5">within</span>
                   {tabStats.posts.toLocaleString()}
                   <span className="text-xs font-medium text-gray-500 ml-1.5">posts</span>
                 </span>
@@ -801,7 +802,7 @@ export default function AnalysisArchive() {
                           : `${chips.length} post${chips.length !== 1 ? 's' : ''}`
                       }
                     >
-                      within {chips.length.toLocaleString()} posts
+                      ×{chips.length} posts
                     </span>
                     )}
                     {/* Month span of this item's posts — month granularity only. */}
