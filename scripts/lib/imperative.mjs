@@ -68,24 +68,72 @@ export const NOUN_SUBJECT_VERB = /^[\w\d]+(?:\s+(?!the\b|a\b|an\b|this\b|that\b|
 const NOUN_USAGE = /^\w+\s+(is|are|was|were|will|would|can|could|should|may|might|must|has|have|had|of|\d)/i
 
 // Fixed instruction idioms with no leading verb.
-const IDIOMS = /^(eyes on|godspeed|god speed|wheels up|game over|full steam|all hands|heads up|hands on deck|attention on deck|nothing to see here)\b/i
+// "nothing to see here" was in this list and does not belong: it is Q characterising what the
+// other side says, a statement, not an instruction to the reader.
+const IDIOMS = /^(eyes on|godspeed|god speed|wheels up|game over|full steam|all hands|heads up|hands on deck|attention on deck)\b/i
 
 // Words that are equally common as noun and verb. Standing alone they are undecidable.
 const AMBIGUOUS_SOLO = new Set('panic focus trust fight watch stand hold name question answer drop link record report count source review check note post map search trace list study rest change turn help support love hope play win control power order command force press guard rush stop'.split(' '))
 
 const firstWord = t => (t.trim().toLowerCase().match(/^[a-z_]+/i)?.[0] ?? '').replace(/_/g, '')
 
+// An adverb in front of a command does not stop it being a command: "Now think fire(s).",
+// "Highly recommend someone take all my crumbs…". Stripped before the verb test, never before
+// the subject tests — "Never forget." is a prohibition and must keep its lead.
+const LEADING_ADVERB = /^(now|then|again|first|next|finally|quickly|immediately|carefully|closely|highly|strongly|simply|please|really|truly|literally|also|likewise|meanwhile|today|tomorrow|tonight|soon)\s+(?=[a-z])/i
+
+/**
+ * Verbs learned from the corpus itself, so the lexicon is not a closed hand-list.
+ *
+ * A fixed verb list is exactly what made the frozen directives auditor miss ~1,300 units, and
+ * hand-extending it only moves the boundary. Instead: a word is a verb if the corpus uses it
+ * as one somewhere — directly after a MODAL, which in English is followed by a bare infinitive.
+ *
+ * The infinitive marker "to" looks like the obvious extra signal and must NOT be used: "to" is
+ * also a preposition, so "to power", "to justice", "to war" and "to POTUS" all mint nouns as
+ * verbs. Including it produced 1,793 unfamilied "directives" led by POTUS, FISA, HRC, MSM and
+ * JUSTICE — a precision collapse that made the whole pass worthless.
+ *
+ * Requires two independent sightings so a one-off typo cannot mint a verb.
+ */
+export function learnVerbsFromCorpus(texts) {
+  const seen = new Map()
+  const RX = /\b(?:will|would|can|could|should|shall|must|may|might|let\s+us|let's|cannot)\s+([a-z][a-z-]{2,})\b/gi
+  // A modal only precedes a bare infinitive in a STATEMENT. In a question it is inverted and
+  // what follows is the SUBJECT: "Will POTUS declassify?", "Can Mueller prove it?". Learning
+  // from those minted POTUS, MUELLER, SESSIONS and DECLAS as verbs, which then read
+  // "POTUS DECLINE>" and "FBI burning midnight oil." as commands.
+  const NEGATOR = /^(not|never|no|also|still|only|just|always|then|now|well|really|ever|even|soon|already|almost|simply|surely|certainly|probably)$/i
+  for (const t of texts) {
+    for (const line of (t ?? '').split('\n')) {
+      if (/\?\s*$/.test(line.trim())) continue          // interrogative — modal is inverted
+      const s = line.toLowerCase()
+      let m
+      RX.lastIndex = 0
+      while ((m = RX.exec(s)) !== null) {
+        const w = m[1]
+        if (NEGATOR.test(w) || OPENERS_NOT_IMPERATIVE.test(w)) continue
+        seen.set(w, (seen.get(w) ?? 0) + 1)
+      }
+    }
+  }
+  const out = new Set()
+  for (const [w, n] of seen) if (n >= 2) out.add(w)
+  return out
+}
+
 /**
  * Decide whether a unit is in the imperative mood.
  * Returns { imperative: boolean, undecidable?: true, why: string }
  */
-export function imperativeMood(text) {
+export function imperativeMood(text, extraVerbs) {
   const t = (text ?? '').trim()
   if (!t) return { imperative: false, why: 'empty' }
 
   const bare = t.replace(/^[>\s]+/, '').replace(/[.!?…]+$/, '').trim()
   const w = firstWord(bare)
   const wordCount = bare.split(/\s+/).filter(Boolean).length
+  const knows = x => VERBS.has(x) || Boolean(extraVerbs?.has(x))
 
   if (IDIOMS.test(bare)) return { imperative: true, why: 'fixed instruction idiom' }
 
@@ -99,7 +147,7 @@ export function imperativeMood(text) {
   // never promote a noun phrase into a directive.
   if (OPENERS_NOT_IMPERATIVE.test(bare)) return { imperative: false, why: 'opens with a determiner, pronoun or conjunction — has a subject' }
   // …but only when the head is not itself a verb: "open", "clear", "close" and "light" are both.
-  if (ADJECTIVE_HEAD.test(bare) && !VERBS.has(w)) return { imperative: false, why: 'adjective heading a noun phrase, not a command' }
+  if (ADJECTIVE_HEAD.test(bare) && !knows(w)) return { imperative: false, why: 'adjective heading a noun phrase, not a command' }
   if (GERUND_HEAD.test(bare)) return { imperative: false, why: 'gerund head — a label, not a command' }
   if (NOUN_SUBJECT_VERB.test(bare)) return { imperative: false, why: 'first word is the subject of a reporting verb' }
   if (NOUN_USAGE.test(bare)) return { imperative: false, why: 'first word followed by a copula, "of" or a number — it is the subject' }
@@ -107,8 +155,19 @@ export function imperativeMood(text) {
   if (/^(do not|don'?t|never|stop|cease|avoid|ignore|dismiss)\b/i.test(bare)) return { imperative: true, why: 'negative imperative' }
   if (/^be\b/i.test(bare)) return { imperative: true, why: '"be" + complement — imperative' }
 
-  if (!VERBS.has(w)) return { imperative: false, why: `opens with "${w}", which is not a base-form verb` }
-  return { imperative: true, why: `opens with the base-form verb "${w}" and has no subject` }
+  if (VERBS.has(w)) return { imperative: true, why: `opens with the base-form verb "${w}" and has no subject` }
+  // Verb known only from corpus evidence, never from the curated list. Flagged so callers can
+  // band it lower: the modal signal is good but not clean — Q writes questions without question
+  // marks, so a few subjects still slip through as "verbs".
+  if (extraVerbs?.has(w)) return { imperative: true, learned: true, why: `opens with "${w}", used as a verb elsewhere in the corpus` }
+
+  // A leading adverb does not stop a command being a command.
+  if (LEADING_ADVERB.test(bare)) {
+    const after = bare.replace(LEADING_ADVERB, '')
+    const w2 = firstWord(after)
+    if (knows(w2)) return { imperative: true, learned: !VERBS.has(w2), why: `adverb "${w}" in front of the base-form verb "${w2}"` }
+  }
+  return { imperative: false, why: `opens with "${w}", which is not a base-form verb` }
 }
 
 // Family is assigned only AFTER mood is confirmed.
