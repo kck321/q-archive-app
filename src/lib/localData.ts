@@ -31,7 +31,7 @@ export interface LocalStore {
 const COLLECTIONS: CollectionName[] = ['posts', 'questions', 'topics', 'resources', 'analysisConfirmed', 'infographs']
 
 // Bump to force a re-seed from the JSON bundle (discards local IndexedDB edits).
-const SEED_VERSION = 2   // 2: quotedPosts — recovered >> reference content
+const SEED_VERSION = 3   // 3: certified question dataset (6,299 Q-authored, 134 normalisations)
 
 // ── Minimal IndexedDB key/value wrapper (one record per collection) ──────────
 const DB_NAME = 'q-archive'

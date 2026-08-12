@@ -113,6 +113,17 @@ export interface QQuestion {
   answeredInSamePost?: boolean   // true if Q answered his own question in the same drop
   infographId: string | null
   createdAt: number
+  /** Set by scripts/apply-questions.mjs from the certified audit. */
+  certified?: boolean
+  semanticFunction?: 'question' | 'information_request'
+  grammaticalForm?: 'interrogative' | 'imperative' | 'declarative'
+  /**
+   * A paraphrase an earlier extractor wrote — e.g. "Who is Seth Rich?" where Q wrote
+   * "Seth Rich?". Kept so search still finds it, never shown or counted as Q's words.
+   */
+  editorialNormalization?: boolean
+  neverDisplayAsQ?: boolean
+  qAuthoredSource?: string | null
 }
 
 // ─── Infograph ───────────────────────────────────────────────────────────────

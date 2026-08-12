@@ -125,7 +125,7 @@ for (const name of COLLECTIONS) {
   // Same reasoning for the derived analysis: the dump replaces posts.json wholesale, so the
   // recall backfill and the emphasis detection have to be reapplied or they vanish silently.
   // Both are deterministic and idempotent, so re-running is always safe.
-  for (const step of ['backfill-analysis.mjs', 'detect-emphasis.mjs']) {
+  for (const step of ['backfill-analysis.mjs', 'detect-emphasis.mjs', 'apply-questions.mjs']) {
     console.log(`
 Re-running ${step}…`)
     execFileSync(process.execPath, [join(root, 'scripts', step), '--apply'], { stdio: 'inherit' })

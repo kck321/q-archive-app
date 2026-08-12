@@ -230,7 +230,9 @@ function questionRegex(questionText: string): RegExp | null {
   // the sentence "twitter." — that alone took Twitter? from 18 posts to 887.
   const core = questionText.toLowerCase().replace(/\s+/g, ' ').replace(/[?.!,;:\s]+$/, '').trim()
   if (!core) return null
-  const escaped = core.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  // Whitespace is flexible. A question reconstructed across two lines is stored with a single
+  // space where the post has a newline, so a literal space could never match it.
+  const escaped = core.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+')
   return new RegExp(`(?<![a-z0-9])${escaped}\\s*[?.!](?![a-z0-9])`, 'g')
 }
 
@@ -915,7 +917,10 @@ export async function mergeSimilarQuestions(
 
 export async function getQuestionsForPost(postId: string): Promise<QQuestion[]> {
   const { questions } = await loadLocalData()
-  return questions.filter(q => q.postId === postId)
+  // Editorial normalisations are paraphrases an earlier extractor wrote, not Q's wording.
+  // They stay in the data so search still finds them, but they must never be highlighted in
+  // a post or counted as a question Q asked.
+  return questions.filter(q => q.postId === postId && !q.editorialNormalization)
 }
 
 // Returns a map of postId → question text[] for a batch of posts.
