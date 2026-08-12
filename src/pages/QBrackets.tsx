@@ -468,7 +468,7 @@ export default function QBrackets() {
                             : `${entry.postNums.length} posts`
                         }
                       >
-                        ×{entry.postNums.length} posts
+                        within {entry.postNums.length.toLocaleString()} posts
                       </span>
                     )}
                     {(() => {

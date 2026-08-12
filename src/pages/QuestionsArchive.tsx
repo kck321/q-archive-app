@@ -133,7 +133,7 @@ function QuestionCard({ r, selectedNums, hoverNums, flashNums, rank, monthOf }: 
           )}
           {r.count > 1 && (
             <span className="text-xs font-bold px-2 py-0.5 rounded-full border whitespace-nowrap text-white bg-gray-700 border-gray-600">
-              ×{r.count} posts
+              within {r.count.toLocaleString()} posts
             </span>
           )}
           {span && <span className="text-[10px] text-gray-600 leading-tight text-center whitespace-nowrap">{span}</span>}

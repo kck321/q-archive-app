@@ -1068,7 +1068,7 @@ export default function PostArchive() {
                       )}
                       {m.postNums.length > 1 && (
                         <span className="text-[11px] font-bold text-white bg-gray-700 border border-gray-600 px-2 py-0.5 rounded-full whitespace-nowrap">
-                          ×{m.postNums.length} posts
+                          within {m.postNums.length.toLocaleString()} posts
                         </span>
                       )}
                     </div>

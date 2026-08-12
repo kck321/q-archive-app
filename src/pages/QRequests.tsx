@@ -424,7 +424,7 @@ export default function QRequests() {
                     )}
                     {item.count > 1 && (
                       <span className="text-xs font-bold px-2 py-0.5 rounded-full border whitespace-nowrap text-white bg-gray-700 border-gray-600">
-                        ×{item.count} posts
+                        within {item.count.toLocaleString()} posts
                       </span>
                     )}
                     {(() => {

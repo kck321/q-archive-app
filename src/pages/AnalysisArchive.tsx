@@ -801,7 +801,7 @@ export default function AnalysisArchive() {
                           : `${chips.length} post${chips.length !== 1 ? 's' : ''}`
                       }
                     >
-                      ×{chips.length} posts
+                      within {chips.length.toLocaleString()} posts
                     </span>
                     )}
                     {/* Month span of this item's posts — month granularity only. */}
