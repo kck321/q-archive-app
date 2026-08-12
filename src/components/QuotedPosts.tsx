@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import type { QPost, QuotedPost } from '../types'
-import { mediaUrl } from '../lib/mediaUrl'
+import { mediaUrl, dedupeMedia } from '../lib/mediaUrl'
 import { wordBoundaryPattern } from '../lib/highlightConstants'
 import { linkify } from '../lib/linkify'
 
@@ -101,9 +101,9 @@ export default function QuotedPosts({
               </pre>
             )}
 
-            {q.media?.length > 0 && (
+            {dedupeMedia(q.media).length > 0 && (
               <div className="flex flex-wrap gap-2 px-3 pb-3">
-                {q.media.map((m, j) => (
+                {dedupeMedia(q.media).map((m, j) => (
                   <a key={j} href={mediaUrl(m.url)} target="_blank" rel="noopener noreferrer">
                     <img
                       src={mediaUrl(m.url)}

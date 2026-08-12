@@ -7,6 +7,7 @@ import { STATIC_ENTITIES, MIL_INTEL_TERMS, Q_SIGNATURES, HIGHLIGHT_CLS, wordBoun
 import { sourceLink } from '../lib/sourceLink'
 import QuotedPosts from './QuotedPosts'
 import { linkify } from '../lib/linkify'
+import { mediaUrl, dedupeMedia } from '../lib/mediaUrl'
 import { CAN_EDIT } from '../lib/appMode'
 import type { QPost, QQuestion, PostAnalysis } from '../types'
 
@@ -438,6 +439,34 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
       >
         {linkify(highlightText(post.text, questionTexts, searchKeyword, localRequests, localAnalysis))}
       </pre>
+
+      {/* Attachments. These were missing from the card entirely, so a search result never
+          showed the image even when the image WAS the post. */}
+      {dedupeMedia(post.media).length > 0 && (
+        <div className="mt-3 flex flex-wrap gap-2">
+          {dedupeMedia(post.media).map(m => {
+            if (!m.url) return null
+            const isNonImage = /\.(pdf|mp4|webm|mov|doc|docx|xls|xlsx)$/i.test(m.url)
+            return isNonImage ? (
+              <a key={m.url} href={mediaUrl(m.url)} target="_blank" rel="noreferrer"
+                className="inline-flex items-center gap-1 text-xs text-blue-400 hover:underline bg-gray-800 px-2 py-1 rounded">
+                📎 {m.filename || m.url}
+              </a>
+            ) : (
+              <a key={m.url} href={mediaUrl(m.url)} target="_blank" rel="noreferrer"
+                className="block rounded-lg overflow-hidden border border-gray-700 hover:border-gray-500">
+                <img
+                  src={mediaUrl(m.url)}
+                  alt={m.filename}
+                  loading="lazy"
+                  className="max-h-64 w-auto block"
+                  onError={e => { (e.currentTarget.closest('a') as HTMLElement).style.display = 'none' }}
+                />
+              </a>
+            )
+          })}
+        </div>
+      )}
 
       {/* Inline Analysis Editor */}
       <div className="mt-3">

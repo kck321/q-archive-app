@@ -1,32 +1,60 @@
 // Image URLs for post attachments.
 //
-// 742 of the 1,271 attachments point at `media.8ch.net`, which has been offline since 8chan
-// shut down in 2019 — every one of those images 404s. 8kun did not keep the old file store
-// either (`8kun.top/file_store/<hash>` → 404), so the images are gone from their origin.
+// Almost none of the recorded hosts still serve these files. 8chan shut down in 2019 and
+// `media.8ch.net` went with it; `media.8kun.net` no longer resolves; 8kun did not keep the
+// old file store, so `8kun.top/file_store/<hash>` times out; and 475 attachments were
+// recorded from a Tor `.onion` mirror, which no browser can load at all.
 //
-// qalerts mirrors them under the SAME content hash: verified HTTP 200 on 9 of 9 across a
-// spread sample of the archive. Rewriting the host restores roughly 750 images.
+// qalerts mirrors every one of them under the SAME content hash, so any `file_store/<hash>`
+// URL can be pointed there regardless of which host recorded it. Verified HTTP 200 across a
+// spread sample, including the onion-hosted files (1.5 MB and 507 KB responses).
 //
 // Done at RENDER time rather than by editing the bundle: reversible, applies to `refMedia`
-// as well, and leaves the recorded original URL intact as provenance.
+// and quoted-post media too, leaves the recorded original URL intact as provenance, and
+// survives the next Firestore export overwriting posts.json.
 //
-// Host census (Aug 2026):
-//   media.8ch.net    742  dead    → rewritten
-//   qalerts.app      100  live    → untouched
-//   img.4plebs.org    11  live    → untouched
-//   media.8kun.net    11  dead    → rewritten (domain does not resolve)
+// Host census (Aug 2026), 2,003 attachment entries:
+//   media.8ch.net                 1300  dead (8chan gone)      → rewritten
+//   media.jthnx5wyvjvzsxtu.onion   475  Tor-only, unloadable   → rewritten
+//   qalerts.app                    133  live                   → untouched
+//   media.8kun.top                  57  times out              → rewritten
+//   img.4plebs.org                  26  live                   → untouched
+//   media.8kun.net                  11  does not resolve       → rewritten
+//   archive.fo                       1  live                   → untouched
 
-const DEAD_FILE_STORE = /^https?:\/\/(?:media\.)?(?:8ch\.net|8kun\.net)\/file_store\/(.+)$/i
+// Any host's file_store, including protocol-relative ("//media.…") URLs, which are how the
+// onion and 8kun.top entries were recorded.
+const FILE_STORE = /^(?:https?:)?\/\/[^/]*(?:8ch\.net|8kun\.net|8kun\.top|\.onion)\/file_store\/(.+)$/i
 
 /** A loadable URL for an attachment, rewriting hosts that no longer serve. */
 export function mediaUrl(url: string | undefined | null): string {
   if (!url) return ''
-  const m = url.match(DEAD_FILE_STORE)
+  const m = url.match(FILE_STORE)
   if (m) return `https://qalerts.app/media/${m[1]}`
+  // A protocol-relative URL on a host we don't rewrite still needs a scheme to load.
+  if (url.startsWith('//')) return `https:${url}`
   return url
 }
 
 /** True when the URL had to be redirected to a mirror — for an attribution note. */
 export function isMirrored(url: string | undefined | null): boolean {
-  return !!url && DEAD_FILE_STORE.test(url)
+  return !!url && FILE_STORE.test(url)
+}
+
+/**
+ * Attachments with the dead-host duplicates collapsed.
+ *
+ * 82 posts record the same image twice — once on qalerts and once on the onion or 8kun.top
+ * mirror — which rendered as the image followed by a broken copy of itself. Both resolve to
+ * the same mirrored URL, so dedupe after rewriting.
+ */
+export function dedupeMedia<T extends { url?: string | null }>(media: T[] | undefined | null): T[] {
+  if (!media?.length) return []
+  const seen = new Set<string>()
+  return media.filter(m => {
+    const key = mediaUrl(m?.url) || JSON.stringify(m)
+    if (seen.has(key)) return false
+    seen.add(key)
+    return true
+  })
 }

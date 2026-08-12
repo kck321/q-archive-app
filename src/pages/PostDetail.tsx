@@ -12,7 +12,7 @@ import QuestionBadge from '../components/QuestionBadge'
 import BackButton from '../components/BackButton'
 import { useAdmin } from '../components/AdminContext'
 import { sourceLink } from '../lib/sourceLink'
-import { mediaUrl } from '../lib/mediaUrl'
+import { mediaUrl, dedupeMedia } from '../lib/mediaUrl'
 import { buildReferenceIndex, resolveReferences } from '../lib/references'
 import QuotedPosts from '../components/QuotedPosts'
 import { linkify } from '../lib/linkify'
@@ -1483,9 +1483,9 @@ export default function PostDetail() {
         )}
 
         {/* Media — Q's own attached images */}
-        {post.media.length > 0 && (
+        {dedupeMedia(post.media).length > 0 && (
           <div className="mt-4 space-y-3">
-            {post.media.map(m => {
+            {dedupeMedia(post.media).map(m => {
               if (!m.url) return null
               const isNonImage = /\.(pdf|mp4|webm|mov|doc|docx|xls|xlsx)$/i.test(m.url)
               return isNonImage ? (
