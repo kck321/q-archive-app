@@ -629,7 +629,13 @@ export default function PostArchive() {
             few to spare. The input shrinks instead (min-w-0), the buttons never do. */}
         <div className="flex items-center gap-2 sm:gap-3">
           <div className="shrink-0">
-            <h1 className="text-base sm:text-xl font-bold text-white leading-tight">Post Archive</h1>
+            <button
+              onClick={handleClearSearch}
+              className="text-base sm:text-xl font-bold text-white leading-tight hover:text-blue-300 transition-colors text-left"
+              title="Back to the full archive"
+            >
+              Post Archive
+            </button>
             <p className="hidden sm:block text-gray-500 text-xs">4,966 Q posts</p>
           </div>
           {/* Keyword search */}

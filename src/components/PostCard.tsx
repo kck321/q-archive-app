@@ -19,55 +19,6 @@ interface Props {
   onAddQuestion?: (postId: string, postNum: number, text: string) => Promise<void>
 }
 
-const URL_REGEX = /https?:\/\/[^\s<>'")\]]+/g
-
-function extractUrls(text: string): string[] {
-  return [...new Set(text.match(URL_REGEX) ?? [])]
-}
-
-function getYouTubeId(url: string): string | null {
-  const m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/)
-  return m ? m[1] : null
-}
-
-function getDomain(url: string): string {
-  try { return new URL(url).hostname } catch { return url }
-}
-
-function LinkPreview({ url }: { url: string }) {
-  const ytId = getYouTubeId(url)
-  if (ytId) {
-    return (
-      <div className="rounded-lg overflow-hidden border border-gray-700 bg-black">
-        <iframe
-          src={`https://www.youtube-nocookie.com/embed/${ytId}`}
-          className="w-full h-52"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          title="YouTube video"
-        />
-      </div>
-    )
-  }
-  const domain = getDomain(url)
-  return (
-    <div className="flex items-center gap-3 bg-gray-800/60 border border-gray-700 rounded-lg px-3 py-2.5">
-      <span className="text-gray-500 shrink-0 text-sm">🔗</span>
-      <div className="flex-1 min-w-0">
-        <p className="text-xs text-gray-400 font-medium truncate">{domain}</p>
-        <p className="text-xs text-blue-400/80 truncate">{url}</p>
-      </div>
-      <a
-        href={url}
-        target="_blank"
-        rel="noreferrer"
-        className="shrink-0 text-xs bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-white px-3 py-1.5 rounded-lg transition-colors"
-      >
-        Open →
-      </a>
-    </div>
-  )
-}
 
 function formatDate(ts: number) {
   return new Date(ts * 1000).toLocaleDateString('en-US', {
@@ -175,7 +126,6 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
     })
   }
 
-  const embeddedUrls = extractUrls(post.text)
 
   function cancel() {
     setSelectMode(false)
@@ -309,7 +259,7 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
       <pre
         ref={preRef}
         onMouseUp={handleMouseUp}
-        className={`text-gray-300 text-[15px] sm:text-sm leading-relaxed whitespace-pre-wrap font-mono rounded-lg p-3 overflow-x-auto transition-colors ${
+        className={`text-gray-300 text-[15px] sm:text-sm leading-relaxed whitespace-pre-wrap break-words font-mono rounded-lg p-3 overflow-x-auto transition-colors ${
           selectMode
             ? 'bg-blue-950/30 cursor-text select-text'
             : 'bg-black/20'
@@ -532,15 +482,6 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
         )}
       </div>
 
-      {/* Link Previews — shown below post text when URLs are present */}
-      {embeddedUrls.length > 0 && (
-        <div className="mt-3 space-y-2">
-          <p className="text-xs text-gray-600 font-medium px-0.5">
-            {embeddedUrls.length === 1 ? 'Link in this post:' : `${embeddedUrls.length} links in this post:`}
-          </p>
-          {embeddedUrls.map(url => <LinkPreview key={url} url={url} />)}
-        </div>
-      )}
 
       {/* Selected text preview + save */}
       {selectMode && (

@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink, Link, useLocation } from 'react-router-dom'
 import { useState, useCallback, Fragment } from 'react'
 
 const links = [
@@ -52,10 +52,10 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
     <aside className={`fixed inset-y-0 left-0 z-40 w-56 bg-q-panel border-r border-q-border flex flex-col overflow-y-auto transform transition-transform duration-200 lg:static lg:translate-x-0 ${open ? 'translate-x-0' : '-translate-x-full'}`}>
       {/* Logo */}
       <div className="px-5 py-5 border-b border-q-border">
-        <div className="flex items-center gap-2">
-          <span className="text-2xl font-black text-gray-400 tracking-wider">Q</span>
-          <span className="text-lg font-semibold text-gray-200">Drops</span>
-        </div>
+        <Link to="/" onClick={onClose} className="flex items-center gap-2 group">
+          <span className="text-2xl font-black text-gray-400 group-hover:text-gray-300 tracking-wider transition-colors">Q</span>
+          <span className="text-lg font-semibold text-gray-200 group-hover:text-white transition-colors">Drops</span>
+        </Link>
         <p className="text-xs text-gray-500 mt-1">4,966 Intelligence Drops</p>
       </div>
 
