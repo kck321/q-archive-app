@@ -206,7 +206,15 @@ async function getRawTextIndex(): Promise<Map<number, string>> {
  * nothing. So #120 was listed under Power? with nothing marked in it.
  */
 export function questionHighlightRegex(questionText: string): RegExp | null {
-  return questionRegex(questionText)
+  const rx = questionRegex(questionText)
+  // CASE-INSENSITIVE, unlike the matching version.
+  //
+  // questionRegex builds its pattern from lowercased text and runs against the lowercased
+  // raw-text index, so it needs no 'i' flag. The highlighters run against the post's ORIGINAL
+  // text, where "What is coded in your DNA?" never matches a lowercase pattern — which is why
+  // not one question was highlighted anywhere in the app while the analysis panel below the
+  // post listed them all correctly.
+  return rx ? new RegExp(rx.source, 'gi') : null
 }
 
 function questionRegex(questionText: string): RegExp | null {
