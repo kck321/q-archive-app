@@ -643,7 +643,7 @@ export default function PostArchive() {
       </div>
 
       {/* ── Scrollable content ──────────────────────────────────────────── */}
-      <div className="px-6 py-4 space-y-4 w-full max-w-5xl mx-auto">
+      <div className="px-6 py-4 space-y-4 w-full max-w-5xl">
 
         {/* Which analysis sections also carry this term. Renders nothing at all when the
             term appears in none of them, so an unmatched search adds no empty furniture. */}
@@ -1028,7 +1028,7 @@ export default function PostArchive() {
                 No posts found containing "{searchTerm}".
               </div>
             ) : (
-              <div className="grid gap-3 w-full max-w-3xl mx-auto">
+              <div className="grid gap-3 w-full max-w-3xl">
                 {orderedResults.map((p, i) => {
                   const exact = searchedNums.has(p.postNum)
                   const viaQuote = quotedNums.has(p.postNum)
@@ -1069,7 +1069,7 @@ export default function PostArchive() {
             ) : (
               <>
                 <p className="text-xs text-gray-500">{browsePosts.length} posts shown</p>
-                <div className="grid gap-3 w-full max-w-3xl mx-auto">
+                <div className="grid gap-3 w-full max-w-3xl">
                   {browsePosts.map(p => (
                     <PostCard key={p.id} post={p}
                       questionTexts={postQuestions[p.id]}
