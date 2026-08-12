@@ -526,7 +526,9 @@ export default function PostDetail() {
 
   const [relatedPosts, setRelatedPosts] = useState<QPost[] | null>(null)
   const [relatedLoading, setRelatedLoading] = useState(false)
-  const [relatedOpen, setRelatedOpen] = useState(true)
+  // Always open: the collapse control was removed — collapsing left an empty header, and
+  // Back is the same action with a clearer name.
+  const relatedOpen = true
   const feedRef = useRef<HTMLDivElement | null>(null)
   const currentCardRef = useRef<HTMLDivElement | null>(null)
 
@@ -1210,12 +1212,6 @@ export default function PostDetail() {
                 </span>
               )}
             </div>
-            {relatedPosts && relatedPosts.length > 0 && (
-              <button onClick={() => setRelatedOpen(v => !v)}
-                className="text-xs text-gray-500 hover:text-white bg-gray-800 border border-gray-700 px-2 py-1 rounded transition-colors">
-                {relatedOpen ? '▲ Collapse' : '▼ Expand'}
-              </button>
-            )}
           </div>
 
           {/* Alias color legend — only when the entity has 2+ aliases, so you can tell which
@@ -1955,7 +1951,9 @@ export default function PostDetail() {
         )
       })()}
 
-      {/* Questions section */}
+      {/* Detected questions — the classification workbench (statuses, add/remove). Readers
+          get the same questions in Post Analysis below, so this is editing-build only. */}
+      {CAN_EDIT && (
       <div className="bg-q-panel border border-q-border rounded-xl p-5">
         <div className="flex items-center justify-between mb-4">
           <h2 className="font-semibold text-white">Detected</h2>
@@ -2084,6 +2082,7 @@ export default function PostDetail() {
           </div>
         )}
       </div>
+      )}
 
       {/* Thread Replies panel (4chan / 8chan / 8kun) */}
       {post.threadScanned && (

@@ -139,6 +139,7 @@ const CHART_TABS: { key: string; label: string; dataKey: string; color: string; 
   { key: 'themes',             label: 'Q Themes',      dataKey: 'themes',             color: '#6366f1', dimColor: '#312e81', to: '/analysis?tab=themes' },
   { key: 'impliedConclusions', label: 'Q Conclusions', dataKey: 'impliedConclusions', color: '#f97316', dimColor: '#7c2d12', to: '/analysis?tab=impliedConclusions' },
   { key: 'verificationHooks',  label: 'Checkable Claims',       dataKey: 'verificationHooks',  color: '#d946ef', dimColor: '#701a75', to: '/analysis?tab=verificationHooks' },
+  { key: 'emphasis',           label: 'Q Emphasis',    dataKey: 'emphasis',           color: '#94a3b8', dimColor: '#334155', to: '/analysis?tab=emphasis' },
 ]
 
 function buildDeltaMonths(): Map<string, number> {

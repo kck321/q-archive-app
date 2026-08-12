@@ -21,6 +21,7 @@ const analysisLinks = [
   { tab: 'themes',            label: 'Q Themes',       dot: 'bg-gray-500', color: 'text-indigo-500 hover:text-indigo-400' },
   { tab: 'impliedConclusions',label: 'Q Conclusions',  dot: 'bg-gray-500', color: 'text-orange-500 hover:text-orange-400' },
   { tab: 'verificationHooks', label: 'Checkable Claims',        dot: 'bg-gray-500', color: 'text-fuchsia-500 hover:text-fuchsia-400' },
+  { tab: 'emphasis',          label: 'Q Emphasis',      dot: 'bg-gray-500', color: 'text-slate-400 hover:text-slate-300' },
   ...(CAN_EDIT ? [OVERLAPS_LINK] : []),
 ]
 
