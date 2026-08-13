@@ -14,14 +14,14 @@ v2's source-material detector and post-level conclusion logic are frozen inputs.
 | NEEDS_CONTEXT | 85 |
 | Q_STATEMENT_OR_HEADING | 4 |
 
-**stored claim not reproduced** — 5,708 units
+**stored claim not reproduced** — 5,704 units
 
 | Proposed | Count |
 |---|---|
-| NEEDS_CONTEXT | 2,811 |
+| NEEDS_CONTEXT | 2,815 |
 | EDITORIAL_PARAPHRASE | 1,277 |
 | LABEL_OR_FRAGMENT | 1,141 |
-| SOURCE_MATERIAL | 243 |
+| SOURCE_MATERIAL | 235 |
 | Q_PREDICTION | 231 |
 | Q_CONCLUSION | 5 |
 
@@ -31,11 +31,11 @@ v2's source-material detector and post-level conclusion logic are frozen inputs.
 |---|---|
 | Q_CLAIM | 75 |
 
-**conclusion edge case** — 1,217 units
+**conclusion edge case** — 1,218 units
 
 | Proposed | Count |
 |---|---|
-| Q_CLAIM | 1,217 |
+| Q_CLAIM | 1,218 |
 
 **source-material boundary** — 454 units
 
@@ -48,9 +48,9 @@ v2's source-material detector and post-level conclusion logic are frozen inputs.
 
 | Measure | v2 | After adjudication |
 |---|---|---|
-| Claims | 3,830 | **3,935** |
+| Claims | 3,836 | **3,941** |
 | Predictions | 705 | **630** |
-| Conclusions *(attribute)* | 1,217 | **944** |
+| Conclusions *(attribute)* | 1,218 | **945** |
 
 ## One outcome added beyond the eight, and why
 
@@ -189,7 +189,7 @@ v2's source-material detector and post-level conclusion logic are frozen inputs.
 
 _…and 152 more in the JSON._
 
-## stored claim not reproduced (5,708)
+## stored claim not reproduced (5,704)
 
 | Post | Exact Q source span | v2 | Proposed | Conf | Attributes | Reason | Before | After |
 |---|---|---|---|---|---|---|---|---|
@@ -314,7 +314,7 @@ _…and 152 more in the JSON._
 | #1097 | `Bigger than you know` | LABEL_OR_FRAGMENT | **LABEL_OR_FRAGMENT** | MEDIUM |  | v2 classified the same span as LABEL_OR_FRAGME | `Find ALL pics.` | `One example of man` |
 | #1098 | `HUSSEIN PROTECT ISIS` | not classified by v2 | **NEEDS_CONTEXT** | LOW |  | verbatim in the post but not segmented as its  | `>>958655` | `POTUS ISIS focus a` |
 
-_…and 5,588 more in the JSON._
+_…and 5,584 more in the JSON._
 
 ## claim/prediction disagreement (75)
 
@@ -396,7 +396,7 @@ _…and 5,588 more in the JSON._
 | #856 | `We will never forget.` | Q_PREDICTION | **Q_CLAIM** | MEDIUM |  | statement of intent or policy, not a forecast  | `God bless our brav` | `Q` |
 | #981 | `We will not fail.` | Q_PREDICTION | **Q_CLAIM** | MEDIUM |  | statement of intent or policy, not a forecast  | `You elected us to ` | `/GA/ will change.` |
 
-## conclusion edge case (1,217)
+## conclusion edge case (1,218)
 
 | Post | Exact Q source span | v2 | Proposed | Conf | Attributes | Reason | Before | After |
 |---|---|---|---|---|---|---|---|---|
@@ -521,7 +521,7 @@ _…and 5,588 more in the JSON._
 | #1326 | `Now comes the pain.` | Q_CLAIM | **Q_CLAIM** | HIGH | conclusion | conclusion upheld — answers the question immed | `Medical or escape?` | `Q` |
 | #1328 | `This is NOT about a single person.` | Q_CLAIM | **Q_CLAIM** | MEDIUM | checkable | single weak signal (refers back to earlier mat | `Stay on point.` | `This is NOT about ` |
 
-_…and 1,097 more in the JSON._
+_…and 1,098 more in the JSON._
 
 ## source-material boundary (454)
 

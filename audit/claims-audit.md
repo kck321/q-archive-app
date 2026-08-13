@@ -14,15 +14,15 @@ So a claim must positively qualify: an assertive proposition with a subject and 
 
 | Outcome | Units |
 |---|---|
-| LABEL_OR_FRAGMENT | 6,874 |
+| LABEL_OR_FRAGMENT | 6,878 |
 | CERTIFIED_QUESTION | 6,596 |
-| NOT_A_CLAIM | 6,439 |
-| Q_CLAIM | 3,803 |
+| NOT_A_CLAIM | 6,456 |
+| Q_CLAIM | 3,810 |
 | CERTIFIED_DIRECTIVE | 2,194 |
 | EVIDENCE_REFERENCE | 1,637 |
-| QUOTED_SOURCE | 956 |
+| QUOTED_SOURCE | 927 |
 | Q_PREDICTION | 705 |
-| SEGMENTATION_ERROR | 289 |
+| SEGMENTATION_ERROR | 290 |
 | QUOTED_OR_SOURCE | 50 |
 | Q_CONCLUSION | 26 |
 
@@ -30,14 +30,14 @@ So a claim must positively qualify: an assertive proposition with a subject and 
 
 | Measure | Value |
 |---|---|
-| Claim occurrences | **3,829** |
-| — distinct | 2,945 |
-| — posts | 1,896 |
-| — checkable (attribute) | 1,758 |
+| Claim occurrences | **3,836** |
+| — distinct | 2,951 |
+| — posts | 1,897 |
+| — checkable (attribute) | 1,765 |
 | — source provided | 399 |
 | Prediction occurrences | 705 |
-| — of which conclusions *(attribute)* | 1,217 |
-| Source-material units held out | 956 |
+| — of which conclusions *(attribute)* | 1,218 |
+| Source-material units held out | 927 |
 | Stored extractor claims (for comparison) | 7,509 |
 
 ## Sample claims
@@ -48,39 +48,39 @@ So a claim must positively qualify: an assertive proposition with a subject and 
 | #111 | `They never thought she would lose.` | no | no | HIGH |
 | #1255 | `His sole purpose [WH visit] is to convince POTUS, on behalf of the EU, to rema` | yes | no | HIGH |
 | #1318 | `If RR is dirty, Mueller must also be dirty.` | yes | no | HIGH |
-| #1386 | `Today was the precursor.` | no | no | HIGH |
-| #1492 | `APPOINTMENT OF A 2ND SC WOULD FAIL.` | yes | no | MEDIUM |
-| #1589 | `[RR] must either comply with all document demands or face impeachment.` | yes | no | MEDIUM |
-| #165 | `Problem: time to complete.` | no | no | MEDIUM |
-| #1767 | `Here we go.` | no | no | HIGH |
-| #1847 | `The SHARING of INFORMATION IS VERY IMPORTANT.` | yes | no | HIGH |
-| #1945 | `[Fiction][Sample] https://www.nbcnews.com/think/opinion/americans-have-forgott` | yes | yes | MEDIUM |
-| #2037 | `Who 'elects' CA officials?https://www.foxbusiness.com/politics/california-dmv-` | yes | yes | HIGH |
-| #2135 | `"Review of the new documents raises grave concerns regarding an apparent syste` | yes | yes | MEDIUM |
-| #229 | `_FREEDOM-_vSA_US_yes_DC08vC_EX_y_AW_Conf-go` | no | no | MEDIUM |
-| #2373 | `https://www.wsj.com/articles/google-exposed-user-data-feared-repercussions-of-` | yes | yes | MEDIUM |
-| #2436 | `We are, FATHERS.` | yes | no | HIGH |
-| #2524 | `Removed from SC oversight` | yes | no | MEDIUM |
-| #2626 | `"There are a lot of sealed indictments" - SC` | yes | no | MEDIUM |
-| #2694 | `FISA works both ways.` | yes | no | MEDIUM |
-| #2807 | `NO HONEST CONTROL IN PLACE.` | yes | no | HIGH |
-| #2916 | `We are far beyond statistical analysis at this stage.` | no | no | HIGH |
-| #3028 | `Impeachment requires 2/3 vote of the SENATE.` | yes | no | MEDIUM |
-| #3233 | `Reflections are important.` | no | no | HIGH |
-| #341 | `Presidential libraries are put in place to retain control over self-incriminat` | no | no | MEDIUM |
-| #3588 | `You are witnessing the largest ‘organized’ disinformation campaign to ever be ` | no | yes | HIGH |
-| #3724 | `It must be done according to the rule of law.` | no | no | HIGH |
-| #3882 | `The presidency of Barack Hussein Obama began at noon EST on January 20, 2009, ` | yes | no | HIGH |
-| #3969 | `We are far beyond the need for proofs.` | no | no | HIGH |
-| #4161 | `Insertion removed.` | no | no | MEDIUM |
-| #434 | `God is LOVE.` | yes | no | HIGH |
-| #4460 | `They can no longer hide in the dark.` | no | no | HIGH |
-| #4540 | `THE INSURGENCY IS REAL.` | yes | no | HIGH |
-| #4602 | `The choice [of information] has always been yours.` | no | no | HIGH |
-| #4697 | `Unknown [https://archive.is/wZqgM]` | no | yes | MEDIUM |
-| #4833 | `Nothing is random.` | no | no | HIGH |
-| #515 | `Suggest new board created.` | no | no | MEDIUM |
-| #60 | `Of those (less than 10 people) only three are non-military.` | yes | no | MEDIUM |
+| #1389 | `You have a choice.` | no | yes | HIGH |
+| #1493 | `THEY MUST WIN.` | yes | no | HIGH |
+| #1589 | `If he failes to comply, he gets impeached (removed).` | no | no | MEDIUM |
+| #165 | `Patriots, get the word out.` | no | no | MEDIUM |
+| #1769 | `You are taking back control.` | no | no | HIGH |
+| #1851 | `These people are SICK!` | yes | yes | HIGH |
+| #1945 | `https://www.nytimes.com/2018/07/15/opinion/trump-russia-investigation-putin.ht` | yes | yes | MEDIUM |
+| #204 | `We are winning bigly.` | no | no | HIGH |
+| #2136 | `http://time.com/5389848/donald-trump-impeachment-rally/ https://www.huffington` | yes | yes | MEDIUM |
+| #229 | `_FREEDOM-_vSA_US_yes_DC10vC_EX_y_AW_Conf-go` | no | no | MEDIUM |
+| #2378 | `ALL [INSIDE] ROADS TO CHINA ARE BEING CLOSED.` | yes | yes | HIGH |
+| #2436 | `We are, SONS.` | yes | no | HIGH |
+| #2525 | `These people are stupid.` | no | no | HIGH |
+| #2627 | `Logical thinking always wins.` | no | no | MEDIUM |
+| #2696 | `We are UNITED.` | yes | no | HIGH |
+| #2807 | `WE MUST RISE.` | yes | no | HIGH |
+| #293 | `Pictures unlock ‘deal' presented that was declined.` | no | no | MEDIUM |
+| #3038 | `When you are awake, you are able to clearly see.` | no | no | MEDIUM |
+| #3241 | `[Knowingly] disseminating FALSE information is illegal.` | yes | no | MEDIUM |
+| #3411 | `Without public support – they are powerless.` | no | no | MEDIUM |
+| #3590 | `When [GS] calls, D's always answer.` | yes | yes | MEDIUM |
+| #3724 | `There can be no mistakes.` | no | no | HIGH |
+| #3896 | `[rapid spread] https://www.theepochtimes.com/the-closing-of-21-million-cell-ph` | yes | yes | MEDIUM |
+| #3981 | `TOGETHER WE WIN.` | yes | no | MEDIUM |
+| #417 | `(Find Post)` | yes | no | MEDIUM |
+| #4348 | `You are the news now.` | no | no | HIGH |
+| #4461 | `YOU MUST SHOW THEM.` | yes | no | HIGH |
+| #4541 | `These two sides, which have a Biblical nature, follow the clear separation bet` | no | no | HIGH |
+| #4609 | `You have a rival.` | no | no | HIGH |
+| #4697 | `Unknown [https://archive.is/0pex9] [https://archive.is/8Jli1]` | no | yes | MEDIUM |
+| #4845 | `Nothing is ever truly deleted.` | no | no | HIGH |
+| #520 | `IT WAS NECESSARY.` | yes | no | HIGH |
+| #60 | `You can count the people who have the full picture on two hands.` | no | no | HIGH |
 | #732 | `https://www.washingtonpost.com/news/fact-checker/wp/2016/04/08/john-mccains-cl` | yes | yes | MEDIUM |
 | #816 | `[THEY must control local police / school / county officials  / etc to work].` | yes | yes | MEDIUM |
 | #91 | `The truth is mind blowing and cannot fully be exposed.` | no | no | HIGH |

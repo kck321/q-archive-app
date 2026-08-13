@@ -57,10 +57,17 @@ export function sourceLines(text) {
     if (/^>(?!>)/.test(l)) { mark(i, 'greentext excerpt'); continue }
 
     // ── an unbalanced quote opens a block and runs until it closes ──────────
+    // BOUNDED, because a stray quote mark that never closes would otherwise swallow the whole
+    // remainder of the drop. In #520 a pasted tweet leaves an unbalanced quote and the run
+    // reached Q's own closing lines, marking "Future proves past." as quoted material when it
+    // is Q's own. A quotation also cannot survive a blank line or one of Q's marker lines.
     if (openQuote >= 0) {
-      mark(i, 'inside a multi-line quotation')
-      if (quoteParity(l)) openQuote = -1        // this line closes it
-      continue
+      if (isBlank(l) || Q_MARKER.test(l) || i - openQuote > 15) { openQuote = -1 }
+      else {
+        mark(i, 'inside a multi-line quotation')
+        if (quoteParity(l)) openQuote = -1      // this line closes it
+        continue
+      }
     }
     if (quoteParity(l) && l.length > 0) {
       // Opens a quotation that does not close on this line.

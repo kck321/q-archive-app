@@ -3,22 +3,22 @@
  "productionChanged": false,
  "totals": {
   "v2": {
-   "claims": 3830,
+   "claims": 3836,
    "predictions": 705,
-   "conclusions": 1217
+   "conclusions": 1218
   },
-  "adjudicated": 7726,
+  "adjudicated": 7723,
   "movements": {
    "demotedFromClaims": 89,
    "predictionToClaim": 75,
    "sourceToClaim": 119,
-   "conclusionsUpheld": 944,
+   "conclusionsUpheld": 945,
    "conclusionsDropped": 273
   },
   "revised": {
-   "claims": 3935,
+   "claims": 3941,
    "predictions": 630,
-   "conclusions": 944
+   "conclusions": 945
   },
   "byQueue": {
    "telegraphic": {
@@ -29,8 +29,8 @@
    "stored claim not reproduced": {
     "EDITORIAL_PARAPHRASE": 1277,
     "Q_PREDICTION": 231,
-    "NEEDS_CONTEXT": 2811,
-    "SOURCE_MATERIAL": 243,
+    "NEEDS_CONTEXT": 2815,
+    "SOURCE_MATERIAL": 235,
     "LABEL_OR_FRAGMENT": 1141,
     "Q_CONCLUSION": 5
    },
@@ -38,7 +38,7 @@
     "Q_CLAIM": 75
    },
    "conclusion edge case": {
-    "Q_CLAIM": 1217
+    "Q_CLAIM": 1218
    },
    "source-material boundary": {
     "SOURCE_MATERIAL": 335,
@@ -98157,10 +98157,10 @@
    "postNum": 520,
    "postId": "520",
    "exactText": "TREASON AT HIGHEST LEVELS",
-   "v2Class": "SOURCE_MATERIAL",
-   "proposedClass": "SOURCE_MATERIAL",
-   "reason": "v2 classified the same span as SOURCE_MATERIAL",
-   "confidence": "MEDIUM",
+   "v2Class": "not classified by v2",
+   "proposedClass": "NEEDS_CONTEXT",
+   "reason": "verbatim in the post but not segmented as its own unit — a sub-span of a longer sentence",
+   "confidence": "LOW",
    "provenance": {
     "adjudicator": "adjudicate-claims v1",
     "v2": null
@@ -98175,10 +98175,10 @@
    "postNum": 520,
    "postId": "520",
    "exactText": "FOREIGN AGENTS WITHIN OUR GOV'T",
-   "v2Class": "SOURCE_MATERIAL",
-   "proposedClass": "SOURCE_MATERIAL",
-   "reason": "v2 classified the same span as SOURCE_MATERIAL",
-   "confidence": "MEDIUM",
+   "v2Class": "not classified by v2",
+   "proposedClass": "NEEDS_CONTEXT",
+   "reason": "verbatim in the post but not segmented as its own unit — a sub-span of a longer sentence",
+   "confidence": "LOW",
    "provenance": {
     "adjudicator": "adjudicate-claims v1",
     "v2": null
@@ -98192,47 +98192,11 @@
    "queue": "stored claim not reproduced",
    "postNum": 520,
    "postId": "520",
-   "exactText": "THE PUPPET MASTERS HAVE BEEN REMOVED",
-   "v2Class": "SOURCE_MATERIAL",
-   "proposedClass": "SOURCE_MATERIAL",
-   "reason": "v2 classified the same span as SOURCE_MATERIAL",
-   "confidence": "MEDIUM",
-   "provenance": {
-    "adjudicator": "adjudicate-claims v1",
-    "v2": null
-   },
-   "context": {
-    "before": "HIGHEST LEVELS.",
-    "after": "ALL VEHICLES OF DELIVERY REMOVED."
-   }
-  },
-  {
-   "queue": "stored claim not reproduced",
-   "postNum": 520,
-   "postId": "520",
-   "exactText": "ALL VEHICLES OF DELIVERY REMOVED",
-   "v2Class": "SOURCE_MATERIAL",
-   "proposedClass": "SOURCE_MATERIAL",
-   "reason": "v2 classified the same span as SOURCE_MATERIAL",
-   "confidence": "MEDIUM",
-   "provenance": {
-    "adjudicator": "adjudicate-claims v1",
-    "v2": null
-   },
-   "context": {
-    "before": "THE PUPPET MASTERS HAVE BEEN REMOVED.",
-    "after": "STRINGS CUT."
-   }
-  },
-  {
-   "queue": "stored claim not reproduced",
-   "postNum": 520,
-   "postId": "520",
    "exactText": "STRINGS CUT",
-   "v2Class": "SOURCE_MATERIAL",
-   "proposedClass": "SOURCE_MATERIAL",
-   "reason": "v2 classified the same span as SOURCE_MATERIAL",
-   "confidence": "MEDIUM",
+   "v2Class": "not classified by v2",
+   "proposedClass": "NEEDS_CONTEXT",
+   "reason": "verbatim in the post but not segmented as its own unit — a sub-span of a longer sentence",
+   "confidence": "LOW",
    "provenance": {
     "adjudicator": "adjudicate-claims v1",
     "v2": null
@@ -98246,47 +98210,11 @@
    "queue": "stored claim not reproduced",
    "postNum": 520,
    "postId": "520",
-   "exactText": "7TH FLOOR IS NO MORE>FBI/SD",
-   "v2Class": "SOURCE_MATERIAL",
-   "proposedClass": "SOURCE_MATERIAL",
-   "reason": "v2 classified the same span as SOURCE_MATERIAL",
-   "confidence": "MEDIUM",
-   "provenance": {
-    "adjudicator": "adjudicate-claims v1",
-    "v2": null
-   },
-   "context": {
-    "before": "STRINGS CUT.",
-    "after": "WE SEE ALL."
-   }
-  },
-  {
-   "queue": "stored claim not reproduced",
-   "postNum": 520,
-   "postId": "520",
-   "exactText": "WE SEE ALL",
-   "v2Class": "SOURCE_MATERIAL",
-   "proposedClass": "SOURCE_MATERIAL",
-   "reason": "v2 classified the same span as SOURCE_MATERIAL",
-   "confidence": "MEDIUM",
-   "provenance": {
-    "adjudicator": "adjudicate-claims v1",
-    "v2": null
-   },
-   "context": {
-    "before": "7TH FLOOR IS NO MORE>FBI/SD",
-    "after": "WE HEAR ALL."
-   }
-  },
-  {
-   "queue": "stored claim not reproduced",
-   "postNum": 520,
-   "postId": "520",
    "exactText": "WE HEAR ALL",
-   "v2Class": "SOURCE_MATERIAL",
-   "proposedClass": "SOURCE_MATERIAL",
-   "reason": "v2 classified the same span as SOURCE_MATERIAL",
-   "confidence": "MEDIUM",
+   "v2Class": "not classified by v2",
+   "proposedClass": "NEEDS_CONTEXT",
+   "reason": "verbatim in the post but not segmented as its own unit — a sub-span of a longer sentence",
+   "confidence": "LOW",
    "provenance": {
     "adjudicator": "adjudicate-claims v1",
     "v2": null
@@ -140306,6 +140234,33 @@
    "context": {
     "before": "Where did POTUS stop [post] ASIA?",
     "after": "FOR GOD & COUNTRY."
+   }
+  },
+  {
+   "queue": "conclusion edge case",
+   "postNum": 520,
+   "postId": "520",
+   "exactText": "WE SEE ALL.",
+   "v2Class": "Q_CLAIM",
+   "proposedClass": "Q_CLAIM",
+   "checkable": true,
+   "sourceProvided": false,
+   "isConclusion": true,
+   "telegraphic": false,
+   "isConditional": false,
+   "reason": "conclusion upheld — closes a rhetorical question sequence; the post explicitly asks for the takeaway",
+   "confidence": "HIGH",
+   "provenance": {
+    "adjudicator": "adjudicate-claims v1",
+    "v2": {
+     "source": "audit-claims v2",
+     "segConfidence": "HIGH",
+     "reason": "assertive proposition — subject with a finite verb"
+    }
+   },
+   "context": {
+    "before": "7TH FLOOR IS NO MORE>FBI/SD",
+    "after": "WE HEAR ALL."
    }
   },
   {

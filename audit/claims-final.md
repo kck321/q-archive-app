@@ -10,8 +10,8 @@ Claims, Predictions and Conclusions are a connected family. A unit is a claim, a
 
 | Measure | Value |
 |---|---|
-| **Claims** | **4,175** |
-| — distinct (canonical `key()`) | 3,221 |
+| **Claims** | **4,181** |
+| — distinct (canonical `key()`) | 3,226 |
 | — posts containing a claim | 1,951 |
 | — in-post repeats included | 13 |
 | **Predictions** | **630** |
@@ -21,9 +21,9 @@ Claims, Predictions and Conclusions are a connected family. A unit is a claim, a
 
 | Attribute | Count |
 |---|---|
-| checkable | 1,920 |
+| checkable | 1,926 |
 | sourceProvided | 438 |
-| isConclusion | 965 |
+| isConclusion | 966 |
 | telegraphic | 331 |
 
 ### Held out of the Q-authored count
@@ -31,14 +31,14 @@ Claims, Predictions and Conclusions are a connected family. A unit is a claim, a
 | Category | Count |
 |---|---|
 | Editorial paraphrases | 1,277 |
-| NEEDS_CONTEXT | 2,908 |
-| Source material | 956 |
+| NEEDS_CONTEXT | 2,912 |
+| Source material | 927 |
 
 ### Where the claims came from
 
 | Source | Count |
 |---|---|
-| v2 | 3,741 |
+| v2 | 3,747 |
 | uncovered720 | 240 |
 | phase3-source | 119 |
 | phase3-prediction | 75 |

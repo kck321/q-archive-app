@@ -3,15 +3,15 @@
  "productionChanged": false,
  "totals": {
   "claims": {
-   "occurrences": 4175,
-   "distinct": 3221,
+   "occurrences": 4181,
+   "distinct": 3226,
    "posts": 1951,
    "inPostRepeats": 13
   },
   "attributes": {
-   "checkable": 1920,
+   "checkable": 1926,
    "sourceProvided": 438,
-   "isConclusion": 965,
+   "isConclusion": 966,
    "telegraphic": 331
   },
   "predictions": {
@@ -19,9 +19,9 @@
    "posts": 520
   },
   "editorialParaphrases": 1277,
-  "needsContext": 2908,
+  "needsContext": 2912,
   "bySource": {
-   "v2": 3741,
+   "v2": 3747,
    "phase3-prediction": 75,
    "phase3-source": 119,
    "uncovered720": 240
@@ -79017,6 +79017,153 @@
    "postNum": 520,
    "postId": "520",
    "exactText": "IT WAS NECESSARY.",
+   "primaryClass": "claim",
+   "isPrediction": false,
+   "isConclusion": true,
+   "checkable": true,
+   "sourceProvided": false,
+   "telegraphic": false,
+   "entities": [],
+   "themes": [
+    "deep state corruption",
+    "military intelligence operations",
+    "government treason",
+    "secret surveillance"
+   ],
+   "confidence": "HIGH",
+   "provenance": {
+    "origin": "claims-audit v2",
+    "reason": "assertive proposition — subject with a finite verb"
+   },
+   "source": "v2"
+  },
+  {
+   "postNum": 520,
+   "postId": "520",
+   "exactText": "THERE IS NO ESCAPE.",
+   "primaryClass": "claim",
+   "isPrediction": false,
+   "isConclusion": false,
+   "checkable": true,
+   "sourceProvided": false,
+   "telegraphic": false,
+   "entities": [],
+   "themes": [
+    "deep state corruption",
+    "military intelligence operations",
+    "government treason",
+    "secret surveillance"
+   ],
+   "confidence": "HIGH",
+   "provenance": {
+    "origin": "claims-audit v2",
+    "reason": "assertive proposition — subject with a finite verb"
+   },
+   "source": "v2"
+  },
+  {
+   "postNum": 520,
+   "postId": "520",
+   "exactText": "THERE ARE NO DEALS.",
+   "primaryClass": "claim",
+   "isPrediction": false,
+   "isConclusion": false,
+   "checkable": true,
+   "sourceProvided": false,
+   "telegraphic": false,
+   "entities": [],
+   "themes": [
+    "deep state corruption",
+    "military intelligence operations",
+    "government treason",
+    "secret surveillance"
+   ],
+   "confidence": "HIGH",
+   "provenance": {
+    "origin": "claims-audit v2",
+    "reason": "assertive proposition — subject with a finite verb"
+   },
+   "source": "v2"
+  },
+  {
+   "postNum": 520,
+   "postId": "520",
+   "exactText": "THE PUPPET MASTERS HAVE BEEN REMOVED.",
+   "primaryClass": "claim",
+   "isPrediction": false,
+   "isConclusion": false,
+   "checkable": true,
+   "sourceProvided": false,
+   "telegraphic": false,
+   "entities": [],
+   "themes": [
+    "deep state corruption",
+    "military intelligence operations",
+    "government treason",
+    "secret surveillance"
+   ],
+   "confidence": "HIGH",
+   "provenance": {
+    "origin": "claims-audit v2",
+    "reason": "assertive proposition — subject with a finite verb"
+   },
+   "source": "v2"
+  },
+  {
+   "postNum": 520,
+   "postId": "520",
+   "exactText": "ALL VEHICLES OF DELIVERY REMOVED.",
+   "primaryClass": "claim",
+   "isPrediction": false,
+   "isConclusion": false,
+   "checkable": true,
+   "sourceProvided": false,
+   "telegraphic": false,
+   "entities": [],
+   "themes": [
+    "deep state corruption",
+    "military intelligence operations",
+    "government treason",
+    "secret surveillance"
+   ],
+   "confidence": "HIGH",
+   "provenance": {
+    "origin": "claims-audit v2",
+    "reason": "assertive proposition — subject with a finite verb"
+   },
+   "source": "v2"
+  },
+  {
+   "postNum": 520,
+   "postId": "520",
+   "exactText": "7TH FLOOR IS NO MORE>FBI/SD",
+   "primaryClass": "claim",
+   "isPrediction": false,
+   "isConclusion": false,
+   "checkable": true,
+   "sourceProvided": false,
+   "telegraphic": false,
+   "entities": [
+    "FBI",
+    "SD"
+   ],
+   "themes": [
+    "deep state corruption",
+    "military intelligence operations",
+    "government treason",
+    "secret surveillance"
+   ],
+   "confidence": "MEDIUM",
+   "provenance": {
+    "origin": "claims-audit v2",
+    "reason": "finite verb but no clear subject — assertion with an implied subject"
+   },
+   "source": "v2"
+  },
+  {
+   "postNum": 520,
+   "postId": "520",
+   "exactText": "WE SEE ALL.",
    "primaryClass": "claim",
    "isPrediction": false,
    "isConclusion": true,

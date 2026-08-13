@@ -3,10 +3,10 @@
  "productionChanged": false,
  "totals": {
   "claims": {
-   "occurrences": 3829,
-   "distinct": 2945,
-   "posts": 1896,
-   "checkable": 1758,
+   "occurrences": 3836,
+   "distinct": 2951,
+   "posts": 1897,
+   "checkable": 1765,
    "sourceProvided": 399
   },
   "predictions": {
@@ -14,12 +14,12 @@
    "posts": 566
   },
   "conclusions": {
-   "ofWhichClaims": 1217,
+   "ofWhichClaims": 1218,
    "posts": 753,
-   "highConfidence": 839
+   "highConfidence": 840
   },
   "sourceMaterial": {
-   "units": 956,
+   "units": 927,
    "posts": 270
   },
   "comparedWithStoredExtractor": {
@@ -28,14 +28,14 @@
    "predictions": 1474
   },
   "pipeline": {
-   "Q_CLAIM": 3803,
+   "Q_CLAIM": 3810,
    "Q_PREDICTION": 705,
-   "LABEL_OR_FRAGMENT": 6874,
+   "LABEL_OR_FRAGMENT": 6878,
    "CERTIFIED_DIRECTIVE": 2194,
    "CERTIFIED_QUESTION": 6596,
-   "QUOTED_SOURCE": 956,
-   "NOT_A_CLAIM": 6439,
-   "SEGMENTATION_ERROR": 289,
+   "QUOTED_SOURCE": 927,
+   "NOT_A_CLAIM": 6456,
+   "SEGMENTATION_ERROR": 290,
    "QUOTED_OR_SOURCE": 50,
    "EVIDENCE_REFERENCE": 1637,
    "Q_CONCLUSION": 26
@@ -164519,6 +164519,33 @@
   {
    "postNum": 3605,
    "postId": "3605",
+   "exactText": "PAY-FOR-PLAY only works when you hold a position of POWER.",
+   "primaryClass": "claim",
+   "klass": "Q_CLAIM",
+   "isConclusion": false,
+   "conclusionReason": null,
+   "checkable": true,
+   "sourceProvided": false,
+   "entities": [],
+   "themes": [
+    "corruption and pay-for-play",
+    "power and accountability",
+    "impending consequences"
+   ],
+   "confidence": "MEDIUM",
+   "provenance": {
+    "source": "audit-claims v2",
+    "segConfidence": "HIGH",
+    "reason": "finite verb but no clear subject — assertion with an implied subject"
+   },
+   "context": {
+    "before": "https://twitter.com/AndrewKerrNC/status/1196877496949657600",
+    "after": "It's only a matter of time."
+   }
+  },
+  {
+   "postNum": 3605,
+   "postId": "3605",
    "exactText": "It's only a matter of time.",
    "primaryClass": "unresolved",
    "klass": "LABEL_OR_FRAGMENT",
@@ -227473,6 +227500,261 @@
    }
   },
   {
+   "postNum": 520,
+   "postId": "520",
+   "exactText": "PATIENCE.",
+   "primaryClass": "unresolved",
+   "klass": "LABEL_OR_FRAGMENT",
+   "isConclusion": false,
+   "conclusionReason": null,
+   "checkable": false,
+   "sourceProvided": false,
+   "entities": [],
+   "themes": [
+    "deep state corruption",
+    "military intelligence operations",
+    "government treason",
+    "secret surveillance"
+   ],
+   "confidence": "LOW",
+   "provenance": {
+    "source": "audit-claims v2",
+    "segConfidence": "HIGH",
+    "reason": "no finite verb"
+   },
+   "context": {
+    "before": "EVERYWHERE.",
+    "after": "THERE IS NO ESCAPE."
+   }
+  },
+  {
+   "postNum": 520,
+   "postId": "520",
+   "exactText": "THERE IS NO ESCAPE.",
+   "primaryClass": "claim",
+   "klass": "Q_CLAIM",
+   "isConclusion": false,
+   "conclusionReason": null,
+   "checkable": true,
+   "sourceProvided": false,
+   "entities": [],
+   "themes": [
+    "deep state corruption",
+    "military intelligence operations",
+    "government treason",
+    "secret surveillance"
+   ],
+   "confidence": "HIGH",
+   "provenance": {
+    "source": "audit-claims v2",
+    "segConfidence": "HIGH",
+    "reason": "assertive proposition — subject with a finite verb"
+   },
+   "context": {
+    "before": "PATIENCE.",
+    "after": "THERE ARE NO DEALS."
+   }
+  },
+  {
+   "postNum": 520,
+   "postId": "520",
+   "exactText": "THERE ARE NO DEALS.",
+   "primaryClass": "claim",
+   "klass": "Q_CLAIM",
+   "isConclusion": false,
+   "conclusionReason": null,
+   "checkable": true,
+   "sourceProvided": false,
+   "entities": [],
+   "themes": [
+    "deep state corruption",
+    "military intelligence operations",
+    "government treason",
+    "secret surveillance"
+   ],
+   "confidence": "HIGH",
+   "provenance": {
+    "source": "audit-claims v2",
+    "segConfidence": "HIGH",
+    "reason": "assertive proposition — subject with a finite verb"
+   },
+   "context": {
+    "before": "THERE IS NO ESCAPE.",
+    "after": "TREASON AT HIGHEST LEVELS."
+   }
+  },
+  {
+   "postNum": 520,
+   "postId": "520",
+   "exactText": "THE PUPPET MASTERS HAVE BEEN REMOVED.",
+   "primaryClass": "claim",
+   "klass": "Q_CLAIM",
+   "isConclusion": false,
+   "conclusionReason": null,
+   "checkable": true,
+   "sourceProvided": false,
+   "entities": [],
+   "themes": [
+    "deep state corruption",
+    "military intelligence operations",
+    "government treason",
+    "secret surveillance"
+   ],
+   "confidence": "HIGH",
+   "provenance": {
+    "source": "audit-claims v2",
+    "segConfidence": "HIGH",
+    "reason": "assertive proposition — subject with a finite verb"
+   },
+   "context": {
+    "before": "HIGHEST LEVELS.",
+    "after": "ALL VEHICLES OF DELIVERY REMOVED."
+   }
+  },
+  {
+   "postNum": 520,
+   "postId": "520",
+   "exactText": "ALL VEHICLES OF DELIVERY REMOVED.",
+   "primaryClass": "claim",
+   "klass": "Q_CLAIM",
+   "isConclusion": false,
+   "conclusionReason": null,
+   "checkable": true,
+   "sourceProvided": false,
+   "entities": [],
+   "themes": [
+    "deep state corruption",
+    "military intelligence operations",
+    "government treason",
+    "secret surveillance"
+   ],
+   "confidence": "HIGH",
+   "provenance": {
+    "source": "audit-claims v2",
+    "segConfidence": "HIGH",
+    "reason": "assertive proposition — subject with a finite verb"
+   },
+   "context": {
+    "before": "THE PUPPET MASTERS HAVE BEEN REMOVED.",
+    "after": "STRINGS CUT."
+   }
+  },
+  {
+   "postNum": 520,
+   "postId": "520",
+   "exactText": "7TH FLOOR IS NO MORE>FBI/SD",
+   "primaryClass": "claim",
+   "klass": "Q_CLAIM",
+   "isConclusion": false,
+   "conclusionReason": null,
+   "checkable": true,
+   "sourceProvided": false,
+   "entities": [
+    "FBI",
+    "SD"
+   ],
+   "themes": [
+    "deep state corruption",
+    "military intelligence operations",
+    "government treason",
+    "secret surveillance"
+   ],
+   "confidence": "MEDIUM",
+   "provenance": {
+    "source": "audit-claims v2",
+    "segConfidence": "HIGH",
+    "reason": "finite verb but no clear subject — assertion with an implied subject"
+   },
+   "context": {
+    "before": "STRINGS CUT.",
+    "after": "WE SEE ALL."
+   }
+  },
+  {
+   "postNum": 520,
+   "postId": "520",
+   "exactText": "WE SEE ALL.",
+   "primaryClass": "claim",
+   "klass": "Q_CLAIM",
+   "isConclusion": true,
+   "conclusionReason": "closes a rhetorical question sequence; the post explicitly asks for the takeaway",
+   "checkable": true,
+   "sourceProvided": false,
+   "entities": [],
+   "themes": [
+    "deep state corruption",
+    "military intelligence operations",
+    "government treason",
+    "secret surveillance"
+   ],
+   "confidence": "HIGH",
+   "provenance": {
+    "source": "audit-claims v2",
+    "segConfidence": "HIGH",
+    "reason": "assertive proposition — subject with a finite verb"
+   },
+   "context": {
+    "before": "7TH FLOOR IS NO MORE>FBI/SD",
+    "after": "WE HEAR ALL."
+   }
+  },
+  {
+   "postNum": 520,
+   "postId": "520",
+   "exactText": "PRISON.",
+   "primaryClass": "unresolved",
+   "klass": "LABEL_OR_FRAGMENT",
+   "isConclusion": false,
+   "conclusionReason": null,
+   "checkable": false,
+   "sourceProvided": false,
+   "entities": [],
+   "themes": [
+    "deep state corruption",
+    "military intelligence operations",
+    "government treason",
+    "secret surveillance"
+   ],
+   "confidence": "LOW",
+   "provenance": {
+    "source": "audit-claims v2",
+    "segConfidence": "HIGH",
+    "reason": "no finite verb"
+   },
+   "context": {
+    "before": "THE HUNT CONTINUES.",
+    "after": "DEATH."
+   }
+  },
+  {
+   "postNum": 520,
+   "postId": "520",
+   "exactText": "DEATH.",
+   "primaryClass": "unresolved",
+   "klass": "LABEL_OR_FRAGMENT",
+   "isConclusion": false,
+   "conclusionReason": null,
+   "checkable": false,
+   "sourceProvided": false,
+   "entities": [],
+   "themes": [
+    "deep state corruption",
+    "military intelligence operations",
+    "government treason",
+    "secret surveillance"
+   ],
+   "confidence": "LOW",
+   "provenance": {
+    "source": "audit-claims v2",
+    "segConfidence": "HIGH",
+    "reason": "no finite verb"
+   },
+   "context": {
+    "before": "PRISON.",
+    "after": "[CLAS_GITMO_    J   z9-A][89]"
+   }
+  },
+  {
    "postNum": 521,
    "postId": "521",
    "exactText": "We are FIGHTING for LIFE.",
@@ -268589,17 +268871,6 @@
    }
   },
   {
-   "postNum": 1881,
-   "postId": "1881",
-   "exactText": "Q",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
    "postNum": 1889,
    "postId": "1889",
    "exactText": "\"Firewall\"",
@@ -268691,17 +268962,6 @@
    "postNum": 1939,
    "postId": "1939",
    "exactText": "Red-Handed comms revealed to 'encourage truthful testimony'.",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 1939,
-   "postId": "1939",
-   "exactText": "Q",
    "primaryClass": "source_material",
    "provenance": {
     "source": "audit-claims v2 block detector",
@@ -269172,17 +269432,6 @@
    }
   },
   {
-   "postNum": 2208,
-   "postId": "2208",
-   "exactText": "Q",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
    "postNum": 2211,
    "postId": "2211",
    "exactText": "“Prior to joining NSA, Mr.",
@@ -269439,17 +269688,6 @@
    "postNum": 2332,
    "postId": "2332",
    "exactText": "D5.",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 2332,
-   "postId": "2332",
-   "exactText": "Q",
    "primaryClass": "source_material",
    "provenance": {
     "source": "audit-claims v2 block detector",
@@ -270407,17 +270645,6 @@
    "postNum": 2587,
    "postId": "2587",
    "exactText": "The FIRE that brought down GOOGLE.",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 2587,
-   "postId": "2587",
-   "exactText": "Q",
    "primaryClass": "source_material",
    "provenance": {
     "source": "audit-claims v2 block detector",
@@ -271471,17 +271698,6 @@
    }
   },
   {
-   "postNum": 2912,
-   "postId": "2912",
-   "exactText": "Q",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
    "postNum": 2939,
    "postId": "2939",
    "exactText": "\"Huber says every one of the prosecutors is already handling about twenty cases.\"",
@@ -271966,17 +272182,6 @@
    }
   },
   {
-   "postNum": 3089,
-   "postId": "3089",
-   "exactText": "Q",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
    "postNum": 31,
    "postId": "31",
    "exactText": "That’s part of the reason why some things that tie back to foreign heads of state will remain classified (not all).",
@@ -272028,17 +272233,6 @@
    "provenance": {
     "source": "audit-claims v2 block detector",
     "reason": "opens a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 3102,
-   "postId": "3102",
-   "exactText": "Q",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
     "segConfidence": "HIGH"
    }
   },
@@ -276586,17 +276780,6 @@
    }
   },
   {
-   "postNum": 4699,
-   "postId": "4699",
-   "exactText": "Q",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
    "postNum": 4700,
    "postId": "4700",
    "exactText": "Insurgency can be defined as ‘the organized use of subversion and violence to seize, nullify, or challenge political control of a region.’",
@@ -277161,226 +277344,6 @@
    "postNum": 520,
    "postId": "520",
    "exactText": "CORRUPTION and EVIL DEEP WITHIN.",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 520,
-   "postId": "520",
-   "exactText": "EVERYWHERE.",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 520,
-   "postId": "520",
-   "exactText": "PATIENCE.",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 520,
-   "postId": "520",
-   "exactText": "THERE IS NO ESCAPE.",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 520,
-   "postId": "520",
-   "exactText": "THERE ARE NO DEALS.",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 520,
-   "postId": "520",
-   "exactText": "TREASON AT HIGHEST LEVELS.",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 520,
-   "postId": "520",
-   "exactText": "FOREIGN AGENTS WITHIN OUR GOV'T.",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 520,
-   "postId": "520",
-   "exactText": "HIGHEST LEVELS.",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 520,
-   "postId": "520",
-   "exactText": "THE PUPPET MASTERS HAVE BEEN REMOVED.",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 520,
-   "postId": "520",
-   "exactText": "ALL VEHICLES OF DELIVERY REMOVED.",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 520,
-   "postId": "520",
-   "exactText": "STRINGS CUT.",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 520,
-   "postId": "520",
-   "exactText": "7TH FLOOR IS NO MORE>FBI/SD",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 520,
-   "postId": "520",
-   "exactText": "WE SEE ALL.",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 520,
-   "postId": "520",
-   "exactText": "WE HEAR ALL.",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 520,
-   "postId": "520",
-   "exactText": "THE HUNT CONTINUES.",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 520,
-   "postId": "520",
-   "exactText": "PRISON.",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 520,
-   "postId": "520",
-   "exactText": "DEATH.",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 520,
-   "postId": "520",
-   "exactText": "[CLAS_GITMO_    J   z9-A][89]",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 520,
-   "postId": "520",
-   "exactText": "RED_RED_",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 520,
-   "postId": "520",
-   "exactText": "IRON EAGLE.",
-   "primaryClass": "source_material",
-   "provenance": {
-    "source": "audit-claims v2 block detector",
-    "reason": "inside a multi-line quotation",
-    "segConfidence": "HIGH"
-   }
-  },
-  {
-   "postNum": 520,
-   "postId": "520",
-   "exactText": "Q",
    "primaryClass": "source_material",
    "provenance": {
     "source": "audit-claims v2 block detector",
