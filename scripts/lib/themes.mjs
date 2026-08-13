@@ -179,6 +179,9 @@ export const CONTEXT_GUARDS = [
 
 /** Map the old free-text labels onto parents, so 5,094 strings become corroborating evidence. */
 export const LEGACY_HINTS = [
+  // q_movement FIRST: the generic /movement/ rule below would otherwise claim "Q movement"
+  // for Social Movements, which is how the coverage audit found it mapped.
+  [/q ?anon|q movement|anon|awakening|crumb|coded messag|cryptic/i, 'q_movement'],
   [/\belection|ballot|voter|campaign/i, 'elections_voting'],
   [/\bgovern|political|congress|senate|policy|legislat/i, 'government_politics'],
   [/\bintel|surveil|fisa|classif|covert|spy/i, 'intelligence_surveillance'],

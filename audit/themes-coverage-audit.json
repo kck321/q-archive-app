@@ -1,0 +1,3459 @@
+{
+ "scope": "stratified sample of the legacy-only theme gap",
+ "productionChanged": false,
+ "population": 8700,
+ "sampled": 300,
+ "totals": {
+  "byOutcome": {
+   "OLD_EXTRACTOR_NOISE": 172,
+   "VALID_THEME_ALREADY_COVERED_DIFFERENTLY": 51,
+   "ONTOLOGY_GAP": 56,
+   "NEEDS_CONTEXT": 17,
+   "VALID_THEME_SIGNAL_MISSING": 4
+  },
+  "byStratum": {
+   "high-frequency legacy labels": {
+    "OLD_EXTRACTOR_NOISE": 41,
+    "VALID_THEME_ALREADY_COVERED_DIFFERENTLY": 20,
+    "ONTOLOGY_GAP": 39
+   },
+   "rare / single-use labels": {
+    "OLD_EXTRACTOR_NOISE": 73,
+    "VALID_THEME_ALREADY_COVERED_DIFFERENTLY": 15,
+    "NEEDS_CONTEXT": 10,
+    "VALID_THEME_SIGNAL_MISSING": 2
+   },
+   "posts with no v1 theme": {
+    "NEEDS_CONTEXT": 7,
+    "OLD_EXTRACTOR_NOISE": 39,
+    "ONTOLOGY_GAP": 4
+   },
+   "v1 and legacy disagree": {
+    "OLD_EXTRACTOR_NOISE": 19,
+    "VALID_THEME_ALREADY_COVERED_DIFFERENTLY": 16,
+    "ONTOLOGY_GAP": 13,
+    "VALID_THEME_SIGNAL_MISSING": 2
+   }
+  },
+  "signalMissingByTheme": {
+   "Media & Information": 1,
+   "Foreign Affairs": 1,
+   "Law Enforcement & Investigations": 1,
+   "Government & Politics": 1
+  },
+  "missingTermsByTheme": {
+   "Media & Information": {
+    "news": 1,
+    "cycle": 1
+   },
+   "Foreign Affairs": {
+    "iranian": 1,
+    "resistance": 1
+   },
+   "Law Enforcement & Investigations": {
+    "criminal": 1,
+    "investigation": 1
+   },
+   "Government & Politics": {
+    "political": 1,
+    "revolution": 1
+   }
+  },
+  "ontologyGapLabels": {
+   "information control": 4,
+   "deep state conspiracy": 3,
+   "pattern recognition": 4,
+   "collective action": 2,
+   "insider knowledge": 3,
+   "deep state": 2,
+   "hidden truth": 2,
+   "hidden knowledge": 1,
+   "hidden truth revelation": 1,
+   "coordinated messaging": 2,
+   "deep state coordination": 2,
+   "coordinated attacks": 1,
+   "patriotism": 2,
+   "operational security": 2,
+   "deep state control": 1,
+   "call to action": 1,
+   "deep state operations": 1,
+   "executive authority": 1,
+   "information revelation": 1,
+   "deep state removal": 1,
+   "coded communications": 1,
+   "deep state infiltration": 1,
+   "hidden information": 1,
+   "conspiracy theory": 1,
+   "institutional accountability": 1,
+   "institutional collapse": 1,
+   "future revelation": 2,
+   "suspicious timing": 1,
+   "hidden patterns": 1,
+   "insider information": 1,
+   "false flag operations": 1,
+   "deep state resistance": 2,
+   "hidden communications": 1,
+   "coordinated action": 1,
+   "truth seeking": 1,
+   "coded communication": 1,
+   "populist messaging": 1
+  }
+ },
+ "results": [
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 55,
+   "legacyLabel": "cryptic messaging",
+   "legacyFreq": 401,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [
+    "Religion & Spirituality"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 327,
+   "legacyLabel": "cryptic messaging",
+   "legacyFreq": 401,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 577,
+   "legacyLabel": "cryptic messaging",
+   "legacyFreq": 401,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 831,
+   "legacyLabel": "cryptic messaging",
+   "legacyFreq": 401,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [
+    "Justice & Courts"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 955,
+   "legacyLabel": "cryptic messaging",
+   "legacyFreq": 401,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 1122,
+   "legacyLabel": "cryptic messaging",
+   "legacyFreq": 401,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 1394,
+   "legacyLabel": "cryptic messaging",
+   "legacyFreq": 401,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 1721,
+   "legacyLabel": "cryptic messaging",
+   "legacyFreq": 401,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 2015,
+   "legacyLabel": "cryptic messaging",
+   "legacyFreq": 401,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 2447,
+   "legacyLabel": "cryptic messaging",
+   "legacyFreq": 401,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 2972,
+   "legacyLabel": "cryptic messaging",
+   "legacyFreq": 401,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 3373,
+   "legacyLabel": "cryptic messaging",
+   "legacyFreq": 401,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 3878,
+   "legacyLabel": "cryptic messaging",
+   "legacyFreq": 401,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 4464,
+   "legacyLabel": "cryptic messaging",
+   "legacyFreq": 401,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 4965,
+   "legacyLabel": "cryptic messaging",
+   "legacyFreq": 401,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 4397,
+   "legacyLabel": "media manipulation",
+   "legacyFreq": 90,
+   "mappedTo": "Media & Information",
+   "v1Assigned": [
+    "Religion & Spirituality"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Religion & Spirituality; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 247,
+   "legacyLabel": "government corruption",
+   "legacyFreq": 69,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [
+    "Q Movement & Community"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Q Movement & Community; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 2395,
+   "legacyLabel": "government corruption",
+   "legacyFreq": 69,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"government corruption\" maps to Government & Politics, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 195,
+   "legacyLabel": "information control",
+   "legacyFreq": 68,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Foreign Affairs"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"information control\" recurs 68 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 1478,
+   "legacyLabel": "information control",
+   "legacyFreq": 68,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"information control\" recurs 68 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 4024,
+   "legacyLabel": "information control",
+   "legacyFreq": 68,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"information control\" recurs 68 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 2400,
+   "legacyLabel": "Q movement",
+   "legacyFreq": 64,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"Q movement\" maps to Q Movement & Community, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 4557,
+   "legacyLabel": "Q movement",
+   "legacyFreq": 64,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"Q movement\" maps to Q Movement & Community, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 3603,
+   "legacyLabel": "information warfare",
+   "legacyFreq": 63,
+   "mappedTo": "National Security & Military",
+   "v1Assigned": [
+    "Intelligence & Surveillance"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 4627,
+   "legacyLabel": "information warfare",
+   "legacyFreq": 63,
+   "mappedTo": "National Security & Military",
+   "v1Assigned": [
+    "Religion & Spirituality",
+    "Social Movements & Culture"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 953,
+   "legacyLabel": "deep state conspiracy",
+   "legacyFreq": 62,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Government & Politics",
+    "Law Enforcement & Investigations",
+    "Foreign Affairs"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"deep state conspiracy\" recurs 62 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 2789,
+   "legacyLabel": "deep state conspiracy",
+   "legacyFreq": 62,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Government & Politics",
+    "Q Movement & Community"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"deep state conspiracy\" recurs 62 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 81,
+   "legacyLabel": "pattern recognition",
+   "legacyFreq": 60,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"pattern recognition\" recurs 60 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 1108,
+   "legacyLabel": "pattern recognition",
+   "legacyFreq": 60,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"pattern recognition\" recurs 60 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 1872,
+   "legacyLabel": "pattern recognition",
+   "legacyFreq": 60,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"pattern recognition\" recurs 60 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 3379,
+   "legacyLabel": "pattern recognition",
+   "legacyFreq": 60,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"pattern recognition\" recurs 60 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 76,
+   "legacyLabel": "political corruption",
+   "legacyFreq": 54,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [
+    "Corruption & Influence",
+    "Religion & Spirituality",
+    "Q Movement & Community"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Corruption & Influence, Religion & Spirituality, Q Movement & Community; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 3604,
+   "legacyLabel": "political corruption",
+   "legacyFreq": 54,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"political corruption\" maps to Government & Politics, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 1577,
+   "legacyLabel": "collective action",
+   "legacyFreq": 52,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Q Movement & Community"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"collective action\" recurs 52 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 3981,
+   "legacyLabel": "collective action",
+   "legacyFreq": 52,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Q Movement & Community"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"collective action\" recurs 52 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 350,
+   "legacyLabel": "deep state corruption",
+   "legacyFreq": 48,
+   "mappedTo": "Corruption & Influence",
+   "v1Assigned": [
+    "Media & Information",
+    "Finance & Economic Power"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Media & Information, Finance & Economic Power; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 3330,
+   "legacyLabel": "deep state corruption",
+   "legacyFreq": 48,
+   "mappedTo": "Corruption & Influence",
+   "v1Assigned": [
+    "Intelligence & Surveillance",
+    "Law Enforcement & Investigations",
+    "National Security & Military"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Intelligence & Surveillance, Law Enforcement & Investigations, National Security & Military; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 1022,
+   "legacyLabel": "covert operations",
+   "legacyFreq": 45,
+   "mappedTo": "Intelligence & Surveillance",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"covert operations\" maps to Intelligence & Surveillance, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 87,
+   "legacyLabel": "coded messaging",
+   "legacyFreq": 43,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 2337,
+   "legacyLabel": "media control",
+   "legacyFreq": 43,
+   "mappedTo": "Media & Information",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"media control\" maps to Media & Information, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 626,
+   "legacyLabel": "narrative control",
+   "legacyFreq": 42,
+   "mappedTo": "Media & Information",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"narrative control\" maps to Media & Information, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 194,
+   "legacyLabel": "classified information",
+   "legacyFreq": 40,
+   "mappedTo": "Intelligence & Surveillance",
+   "v1Assigned": [
+    "Foreign Affairs"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Foreign Affairs; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 4258,
+   "legacyLabel": "classified information",
+   "legacyFreq": 40,
+   "mappedTo": "Intelligence & Surveillance",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"classified information\" maps to Intelligence & Surveillance, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 2778,
+   "legacyLabel": "Q anon messaging",
+   "legacyFreq": 36,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 4079,
+   "legacyLabel": "Q anon messaging",
+   "legacyFreq": 36,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [
+    "Elections & Voting"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 1753,
+   "legacyLabel": "institutional corruption",
+   "legacyFreq": 35,
+   "mappedTo": "Corruption & Influence",
+   "v1Assigned": [
+    "Intelligence & Surveillance",
+    "Media & Information"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Intelligence & Surveillance, Media & Information; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 1813,
+   "legacyLabel": "Q anon",
+   "legacyFreq": 32,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"Q anon\" maps to Q Movement & Community, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 3895,
+   "legacyLabel": "Q anon",
+   "legacyFreq": 32,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"Q anon\" maps to Q Movement & Community, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 958,
+   "legacyLabel": "insider knowledge",
+   "legacyFreq": 31,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Law Enforcement & Investigations"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"insider knowledge\" recurs 31 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 3644,
+   "legacyLabel": "mass awakening",
+   "legacyFreq": 31,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [
+    "Media & Information"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 1455,
+   "legacyLabel": "government conspiracy",
+   "legacyFreq": 30,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [
+    "Law Enforcement & Investigations"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Law Enforcement & Investigations; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 2070,
+   "legacyLabel": "deep state",
+   "legacyFreq": 29,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Law Enforcement & Investigations",
+    "Q Movement & Community"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"deep state\" recurs 29 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 3464,
+   "legacyLabel": "good versus evil",
+   "legacyFreq": 28,
+   "mappedTo": "Religion & Spirituality",
+   "v1Assigned": [
+    "Elections & Voting"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 2490,
+   "legacyLabel": "election fraud",
+   "legacyFreq": 27,
+   "mappedTo": "Elections & Voting",
+   "v1Assigned": [
+    "Media & Information"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Media & Information; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 923,
+   "legacyLabel": "hidden truth",
+   "legacyFreq": 26,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"hidden truth\" recurs 26 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 3589,
+   "legacyLabel": "hidden truth",
+   "legacyFreq": 26,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"hidden truth\" recurs 26 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 2473,
+   "legacyLabel": "QAnon messaging",
+   "legacyFreq": 25,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 2327,
+   "legacyLabel": "document declassification",
+   "legacyFreq": 24,
+   "mappedTo": "Intelligence & Surveillance",
+   "v1Assigned": [
+    "Disclosure & Declassification"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Disclosure & Declassification; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 849,
+   "legacyLabel": "hidden knowledge",
+   "legacyFreq": 23,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Intelligence & Surveillance"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"hidden knowledge\" recurs 23 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 4246,
+   "legacyLabel": "hidden truth revelation",
+   "legacyFreq": 23,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"hidden truth revelation\" recurs 23 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 429,
+   "legacyLabel": "coordinated messaging",
+   "legacyFreq": 22,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"coordinated messaging\" recurs 22 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 1164,
+   "legacyLabel": "deep state coordination",
+   "legacyFreq": 22,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Intelligence & Surveillance"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"deep state coordination\" recurs 22 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 2025,
+   "legacyLabel": "deep state coordination",
+   "legacyFreq": 22,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"deep state coordination\" recurs 22 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 2697,
+   "legacyLabel": "FBI corruption",
+   "legacyFreq": 22,
+   "mappedTo": "Law Enforcement & Investigations",
+   "v1Assigned": [
+    "Media & Information",
+    "Q Movement & Community"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Media & Information, Q Movement & Community; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 4425,
+   "legacyLabel": "coordinated attacks",
+   "legacyFreq": 22,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"coordinated attacks\" recurs 22 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 1453,
+   "legacyLabel": "government transparency",
+   "legacyFreq": 21,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [
+    "Law Enforcement & Investigations",
+    "Disclosure & Declassification"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Law Enforcement & Investigations, Disclosure & Declassification; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 3282,
+   "legacyLabel": "patriotism",
+   "legacyFreq": 21,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"patriotism\" recurs 21 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 4705,
+   "legacyLabel": "patriotism",
+   "legacyFreq": 21,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"patriotism\" recurs 21 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 1323,
+   "legacyLabel": "operational security",
+   "legacyFreq": 20,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Q Movement & Community"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"operational security\" recurs 20 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 4258,
+   "legacyLabel": "national security",
+   "legacyFreq": 20,
+   "mappedTo": "National Security & Military",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"national security\" maps to National Security & Military, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 667,
+   "legacyLabel": "deep state control",
+   "legacyFreq": 19,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"deep state control\" recurs 19 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 2049,
+   "legacyLabel": "cryptic communication",
+   "legacyFreq": 19,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [
+    "Religion & Spirituality"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 4006,
+   "legacyLabel": "call to action",
+   "legacyFreq": 19,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"call to action\" recurs 19 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 626,
+   "legacyLabel": "deep state operations",
+   "legacyFreq": 18,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"deep state operations\" recurs 18 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 3018,
+   "legacyLabel": "patriotic movement",
+   "legacyFreq": 18,
+   "mappedTo": "Social Movements & Culture",
+   "v1Assigned": [
+    "Q Movement & Community"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Q Movement & Community; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 2210,
+   "legacyLabel": "executive authority",
+   "legacyFreq": 17,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Disclosure & Declassification"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"executive authority\" recurs 17 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 320,
+   "legacyLabel": "information revelation",
+   "legacyFreq": 16,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"information revelation\" recurs 16 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 1605,
+   "legacyLabel": "deep state removal",
+   "legacyFreq": 16,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Government & Politics"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"deep state removal\" recurs 16 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 2876,
+   "legacyLabel": "social media censorship",
+   "legacyFreq": 16,
+   "mappedTo": "Media & Information",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"social media censorship\" maps to Media & Information, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 3879,
+   "legacyLabel": "collective movement",
+   "legacyFreq": 16,
+   "mappedTo": "Social Movements & Culture",
+   "v1Assigned": [
+    "Q Movement & Community"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Q Movement & Community; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 1029,
+   "legacyLabel": "coded communications",
+   "legacyFreq": 15,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"coded communications\" recurs 15 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 8,
+   "legacyLabel": "deep state infiltration",
+   "legacyFreq": 14,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Law Enforcement & Investigations",
+    "National Security & Military"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"deep state infiltration\" recurs 14 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 1455,
+   "legacyLabel": "intelligence agencies",
+   "legacyFreq": 14,
+   "mappedTo": "Intelligence & Surveillance",
+   "v1Assigned": [
+    "Law Enforcement & Investigations"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Law Enforcement & Investigations; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 2799,
+   "legacyLabel": "hidden information",
+   "legacyFreq": 14,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"hidden information\" recurs 14 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 4015,
+   "legacyLabel": "conspiracy theory",
+   "legacyFreq": 14,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"conspiracy theory\" recurs 14 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 4926,
+   "legacyLabel": "intelligence agencies",
+   "legacyFreq": 14,
+   "mappedTo": "Intelligence & Surveillance",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"intelligence agencies\" maps to Intelligence & Surveillance, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 2752,
+   "legacyLabel": "citizen journalism",
+   "legacyFreq": 13,
+   "mappedTo": "Media & Information",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"citizen journalism\" maps to Media & Information, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 4121,
+   "legacyLabel": "public awakening",
+   "legacyFreq": 13,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"public awakening\" maps to Q Movement & Community, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 724,
+   "legacyLabel": "information disclosure",
+   "legacyFreq": 12,
+   "mappedTo": "Disclosure & Declassification",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"information disclosure\" maps to Disclosure & Declassification, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 1443,
+   "legacyLabel": "institutional accountability",
+   "legacyFreq": 12,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Law Enforcement & Investigations",
+    "Religion & Spirituality",
+    "Disclosure & Declassification"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"institutional accountability\" recurs 12 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 2390,
+   "legacyLabel": "institutional collapse",
+   "legacyFreq": 12,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Media & Information"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"institutional collapse\" recurs 12 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 2973,
+   "legacyLabel": "information disclosure",
+   "legacyFreq": 12,
+   "mappedTo": "Disclosure & Declassification",
+   "v1Assigned": [
+    "Trafficking & Exploitation"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Trafficking & Exploitation; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 3825,
+   "legacyLabel": "political opposition",
+   "legacyFreq": 12,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [
+    "Media & Information"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Media & Information; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 4866,
+   "legacyLabel": "future revelation",
+   "legacyFreq": 12,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"future revelation\" recurs 12 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 2092,
+   "legacyLabel": "suspicious timing",
+   "legacyFreq": 11,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Intelligence & Surveillance"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"suspicious timing\" recurs 11 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 3353,
+   "legacyLabel": "political accountability",
+   "legacyFreq": 11,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [
+    "Corruption & Influence"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Corruption & Influence; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 4742,
+   "legacyLabel": "media attacks",
+   "legacyFreq": 11,
+   "mappedTo": "Media & Information",
+   "v1Assigned": [
+    "Trafficking & Exploitation"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Trafficking & Exploitation; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 1588,
+   "legacyLabel": "hidden patterns",
+   "legacyFreq": 10,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"hidden patterns\" recurs 10 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 2373,
+   "legacyLabel": "political targeting",
+   "legacyFreq": 10,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [
+    "Elections & Voting",
+    "Censorship & Technology"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Elections & Voting, Censorship & Technology; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "high-frequency legacy labels",
+   "postNum": 3531,
+   "legacyLabel": "political control",
+   "legacyFreq": 10,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"political control\" maps to Government & Politics, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 1,
+   "legacyLabel": "extradition operations",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Foreign Affairs",
+    "Social Movements & Culture"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 27,
+   "legacyLabel": "foreign relations",
+   "legacyFreq": 2,
+   "mappedTo": "Foreign Affairs",
+   "v1Assigned": [
+    "Disclosure & Declassification"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Disclosure & Declassification; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 56,
+   "legacyLabel": "Radical Islam connections",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Elections & Voting"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 76,
+   "legacyLabel": "martial law",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Corruption & Influence",
+    "Religion & Spirituality",
+    "Q Movement & Community"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 116,
+   "legacyLabel": "rapid communication",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 148,
+   "legacyLabel": "Q-group operations",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 199,
+   "legacyLabel": "classified dealings",
+   "legacyFreq": 1,
+   "mappedTo": "Intelligence & Surveillance",
+   "v1Assigned": [
+    "Media & Information"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Media & Information; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 259,
+   "legacyLabel": "fund mismanagement",
+   "legacyFreq": 1,
+   "mappedTo": "Finance & Economic Power",
+   "v1Assigned": [
+    "Historical Events"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Historical Events; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 335,
+   "legacyLabel": "Trump messaging alignment",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 391,
+   "legacyLabel": "social media behavior",
+   "legacyFreq": 1,
+   "mappedTo": "Media & Information",
+   "v1Assigned": [
+    "Censorship & Technology"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Censorship & Technology; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 438,
+   "legacyLabel": "space technology transfers",
+   "legacyFreq": 1,
+   "mappedTo": "Censorship & Technology",
+   "v1Assigned": [
+    "Government & Politics"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Government & Politics; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 500,
+   "legacyLabel": "command activation",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "National Security & Military"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 540,
+   "legacyLabel": "accountability and justice",
+   "legacyFreq": 1,
+   "mappedTo": "Justice & Courts",
+   "v1Assigned": [],
+   "outcome": "NEEDS_CONTEXT",
+   "why": "a one-off label with no corroborating text; not enough to act on"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 589,
+   "legacyLabel": "cyber attack",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 641,
+   "legacyLabel": "dehumanization rhetoric",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 689,
+   "legacyLabel": "news cycle timing",
+   "legacyFreq": 1,
+   "mappedTo": "Media & Information",
+   "v1Assigned": [],
+   "outcome": "VALID_THEME_SIGNAL_MISSING",
+   "why": "the label's own words (news, cycle) appear in Q's lines but no Media & Information signal covers them",
+   "fixable": true,
+   "missingTerms": [
+    "news",
+    "cycle"
+   ]
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 742,
+   "legacyLabel": "conspiracy exposure",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Media & Information"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 777,
+   "legacyLabel": "corporate manipulation",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Health & Medicine"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 827,
+   "legacyLabel": "Russian defector",
+   "legacyFreq": 1,
+   "mappedTo": "Foreign Affairs",
+   "v1Assigned": [],
+   "outcome": "NEEDS_CONTEXT",
+   "why": "a one-off label with no corroborating text; not enough to act on"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 878,
+   "legacyLabel": "trust questions",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 920,
+   "legacyLabel": "social media signals",
+   "legacyFreq": 1,
+   "mappedTo": "Media & Information",
+   "v1Assigned": [
+    "Censorship & Technology"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Censorship & Technology; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 968,
+   "legacyLabel": "hidden meetings",
+   "legacyFreq": 2,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 1012,
+   "legacyLabel": "marine casualties",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Religion & Spirituality"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 1054,
+   "legacyLabel": "implied threats",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 1107,
+   "legacyLabel": "evidence limitations",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 1167,
+   "legacyLabel": "corporate connections",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 1225,
+   "legacyLabel": "pattern confirmation",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 1261,
+   "legacyLabel": "DDoS attacks",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 1295,
+   "legacyLabel": "patriotic authenticity",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Religion & Spirituality"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 1360,
+   "legacyLabel": "muslim brotherhood ties",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 1424,
+   "legacyLabel": "escalating attacks",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Q Movement & Community"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 1491,
+   "legacyLabel": "Iranian resistance",
+   "legacyFreq": 1,
+   "mappedTo": "Foreign Affairs",
+   "v1Assigned": [
+    "Censorship & Technology"
+   ],
+   "outcome": "VALID_THEME_SIGNAL_MISSING",
+   "why": "the label's own words (iranian, resistance) appear in Q's lines but no Foreign Affairs signal covers them",
+   "fixable": true,
+   "missingTerms": [
+    "iranian",
+    "resistance"
+   ]
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 1549,
+   "legacyLabel": "executive communications security",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Intelligence & Surveillance"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 1603,
+   "legacyLabel": "deep state framing",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Religion & Spirituality"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 1646,
+   "legacyLabel": "violent extremism",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Government & Politics",
+    "Religion & Spirituality",
+    "Social Movements & Culture"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 1690,
+   "legacyLabel": "power transfer",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 1735,
+   "legacyLabel": "child protection",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Religion & Spirituality"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 1777,
+   "legacyLabel": "crowd coordination",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 1830,
+   "legacyLabel": "Clinton scrutiny",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 1869,
+   "legacyLabel": "missile intercept",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 1902,
+   "legacyLabel": "occult significance",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 1955,
+   "legacyLabel": "awakening/enlightenment",
+   "legacyFreq": 1,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [
+    "Media & Information"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Media & Information; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 2000,
+   "legacyLabel": "conspiratorial reasoning",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 2053,
+   "legacyLabel": "Clinton correspondence",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 2101,
+   "legacyLabel": "collective attacks",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 2152,
+   "legacyLabel": "Vatican scandal",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Disclosure & Declassification"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 2205,
+   "legacyLabel": "classified communications",
+   "legacyFreq": 2,
+   "mappedTo": "Intelligence & Surveillance",
+   "v1Assigned": [
+    "Justice & Courts"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Justice & Courts; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 2256,
+   "legacyLabel": "law enforcement coordination",
+   "legacyFreq": 1,
+   "mappedTo": "Law Enforcement & Investigations",
+   "v1Assigned": [],
+   "outcome": "NEEDS_CONTEXT",
+   "why": "a one-off label with no corroborating text; not enough to act on"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 2304,
+   "legacyLabel": "statistical analysis",
+   "legacyFreq": 2,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 2339,
+   "legacyLabel": "institutional opposition",
+   "legacyFreq": 2,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 2375,
+   "legacyLabel": "digital communications",
+   "legacyFreq": 2,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 2424,
+   "legacyLabel": "hidden signals",
+   "legacyFreq": 2,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 2467,
+   "legacyLabel": "sanctuary city politics",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 2509,
+   "legacyLabel": "legal testimony",
+   "legacyFreq": 2,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Law Enforcement & Investigations",
+    "Disclosure & Declassification"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 2553,
+   "legacyLabel": "people's defense",
+   "legacyFreq": 1,
+   "mappedTo": "National Security & Military",
+   "v1Assigned": [
+    "Religion & Spirituality"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Religion & Spirituality; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 2591,
+   "legacyLabel": "antagonistic rhetoric",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Media & Information"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 2649,
+   "legacyLabel": "media obstruction",
+   "legacyFreq": 2,
+   "mappedTo": "Media & Information",
+   "v1Assigned": [],
+   "outcome": "NEEDS_CONTEXT",
+   "why": "a one-off label with no corroborating text; not enough to act on"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 2683,
+   "legacyLabel": "globalism resistance",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Media & Information",
+    "Censorship & Technology",
+    "Social Movements & Culture"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 2728,
+   "legacyLabel": "temporal revelation",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 2786,
+   "legacyLabel": "justice prosecution",
+   "legacyFreq": 1,
+   "mappedTo": "Law Enforcement & Investigations",
+   "v1Assigned": [
+    "Disclosure & Declassification"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Disclosure & Declassification; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 2844,
+   "legacyLabel": "government surveillance logs",
+   "legacyFreq": 1,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [
+    "Q Movement & Community"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Q Movement & Community; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 2887,
+   "legacyLabel": "national security risk",
+   "legacyFreq": 2,
+   "mappedTo": "National Security & Military",
+   "v1Assigned": [],
+   "outcome": "NEEDS_CONTEXT",
+   "why": "a one-off label with no corroborating text; not enough to act on"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 2948,
+   "legacyLabel": "temporal proximity",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 2996,
+   "legacyLabel": "privacy surveillance",
+   "legacyFreq": 1,
+   "mappedTo": "Intelligence & Surveillance",
+   "v1Assigned": [
+    "Disclosure & Declassification"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Disclosure & Declassification; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 3035,
+   "legacyLabel": "clinton conflicts of interest",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Government & Politics",
+    "Justice & Courts"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 3071,
+   "legacyLabel": "voting manipulation",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Media & Information"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 3131,
+   "legacyLabel": "elite protection",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Disclosure & Declassification"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 3182,
+   "legacyLabel": "funding sources",
+   "legacyFreq": 1,
+   "mappedTo": "Finance & Economic Power",
+   "v1Assigned": [
+    "Q Movement & Community"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Q Movement & Community; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 3246,
+   "legacyLabel": "information withholding",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 3329,
+   "legacyLabel": "leaks and investigations",
+   "legacyFreq": 1,
+   "mappedTo": "Law Enforcement & Investigations",
+   "v1Assigned": [],
+   "outcome": "NEEDS_CONTEXT",
+   "why": "a one-off label with no corroborating text; not enough to act on"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 3381,
+   "legacyLabel": "family enrichment",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 3425,
+   "legacyLabel": "island investigation",
+   "legacyFreq": 1,
+   "mappedTo": "Law Enforcement & Investigations",
+   "v1Assigned": [
+    "Q Movement & Community"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Q Movement & Community; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 3483,
+   "legacyLabel": "opposition research",
+   "legacyFreq": 2,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Intelligence & Surveillance"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 3559,
+   "legacyLabel": "exculpatory evidence",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Disclosure & Declassification"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 3602,
+   "legacyLabel": "secret communications",
+   "legacyFreq": 2,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Intelligence & Surveillance"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 3656,
+   "legacyLabel": "government tyranny",
+   "legacyFreq": 1,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [],
+   "outcome": "NEEDS_CONTEXT",
+   "why": "a one-off label with no corroborating text; not enough to act on"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 3716,
+   "legacyLabel": "arrest confirmation",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Law Enforcement & Investigations"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 3779,
+   "legacyLabel": "impeachment politics",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 3837,
+   "legacyLabel": "espionage and treason",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Intelligence & Surveillance"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 3896,
+   "legacyLabel": "COVID-19 origin",
+   "legacyFreq": 2,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Government & Politics",
+    "Media & Information",
+    "Censorship & Technology"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 3964,
+   "legacyLabel": "self-trust",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 4041,
+   "legacyLabel": "disease mortality patterns",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Health & Medicine"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 4117,
+   "legacyLabel": "trolling behavior",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Censorship & Technology"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 4160,
+   "legacyLabel": "collaborative research",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 4225,
+   "legacyLabel": "hydroxychloroquine usage",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 4278,
+   "legacyLabel": "election campaign finance",
+   "legacyFreq": 1,
+   "mappedTo": "Elections & Voting",
+   "v1Assigned": [],
+   "outcome": "NEEDS_CONTEXT",
+   "why": "a one-off label with no corroborating text; not enough to act on"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 4320,
+   "legacyLabel": "sarcasm interpretation",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Health & Medicine"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 4361,
+   "legacyLabel": "preparedness",
+   "legacyFreq": 2,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 4405,
+   "legacyLabel": "municipal governance",
+   "legacyFreq": 1,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [],
+   "outcome": "NEEDS_CONTEXT",
+   "why": "a one-off label with no corroborating text; not enough to act on"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 4456,
+   "legacyLabel": "subpoena authority",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Intelligence & Surveillance",
+    "Law Enforcement & Investigations"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 4488,
+   "legacyLabel": "threat reporting",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Media & Information"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 4529,
+   "legacyLabel": "state official immunity",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Government & Politics"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 4561,
+   "legacyLabel": "election fundraising",
+   "legacyFreq": 1,
+   "mappedTo": "Elections & Voting",
+   "v1Assigned": [],
+   "outcome": "NEEDS_CONTEXT",
+   "why": "a one-off label with no corroborating text; not enough to act on"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 4624,
+   "legacyLabel": "Biden family connections",
+   "legacyFreq": 2,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 4649,
+   "legacyLabel": "executive placement",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 4700,
+   "legacyLabel": "insurgency tactics",
+   "legacyFreq": 2,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 4766,
+   "legacyLabel": "democrat protection",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 4821,
+   "legacyLabel": "China influence",
+   "legacyFreq": 1,
+   "mappedTo": "Foreign Affairs",
+   "v1Assigned": [
+    "Government & Politics",
+    "Corruption & Influence"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Government & Politics, Corruption & Influence; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 4858,
+   "legacyLabel": "institutional structure",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "rare / single-use labels",
+   "postNum": 4916,
+   "legacyLabel": "inappropriate behavior allegations",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 10,
+   "legacyLabel": "Clinton Foundation corruption",
+   "legacyFreq": 3,
+   "mappedTo": "Corruption & Influence",
+   "v1Assigned": [],
+   "outcome": "NEEDS_CONTEXT",
+   "why": "a one-off label with no corroborating text; not enough to act on"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 97,
+   "legacyLabel": "government conspiracy",
+   "legacyFreq": 30,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"government conspiracy\" maps to Government & Politics, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 190,
+   "legacyLabel": "foreign influence",
+   "legacyFreq": 9,
+   "mappedTo": "Foreign Affairs",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"foreign influence\" maps to Foreign Affairs, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 275,
+   "legacyLabel": "global elite manipulation",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 374,
+   "legacyLabel": "active threat",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 462,
+   "legacyLabel": "system access control",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 577,
+   "legacyLabel": "covert operations",
+   "legacyFreq": 45,
+   "mappedTo": "Intelligence & Surveillance",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"covert operations\" maps to Intelligence & Surveillance, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 658,
+   "legacyLabel": "freedom",
+   "legacyFreq": 2,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 735,
+   "legacyLabel": "insider knowledge",
+   "legacyFreq": 31,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"insider knowledge\" recurs 31 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 798,
+   "legacyLabel": "insider information",
+   "legacyFreq": 12,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"insider information\" recurs 12 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 866,
+   "legacyLabel": "Clinton Foundation",
+   "legacyFreq": 3,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 943,
+   "legacyLabel": "response gauging",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 1023,
+   "legacyLabel": "invasion resistance",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 1083,
+   "legacyLabel": "classified materials",
+   "legacyFreq": 1,
+   "mappedTo": "Intelligence & Surveillance",
+   "v1Assigned": [],
+   "outcome": "NEEDS_CONTEXT",
+   "why": "a one-off label with no corroborating text; not enough to act on"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 1172,
+   "legacyLabel": "initials/wordplay",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 1256,
+   "legacyLabel": "geopolitical developments",
+   "legacyFreq": 1,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [],
+   "outcome": "NEEDS_CONTEXT",
+   "why": "a one-off label with no corroborating text; not enough to act on"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 1371,
+   "legacyLabel": "threats and danger",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 1471,
+   "legacyLabel": "strategic patience",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 1579,
+   "legacyLabel": "political messaging",
+   "legacyFreq": 4,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 1678,
+   "legacyLabel": "visual pattern analysis",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 1777,
+   "legacyLabel": "presidential recognition",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 1869,
+   "legacyLabel": "billionaire networks",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 1946,
+   "legacyLabel": "narrative control",
+   "legacyFreq": 42,
+   "mappedTo": "Media & Information",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"narrative control\" maps to Media & Information, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 2025,
+   "legacyLabel": "Mueller probe interference",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 2156,
+   "legacyLabel": "legal coordination",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 2255,
+   "legacyLabel": "media manipulation",
+   "legacyFreq": 90,
+   "mappedTo": "Media & Information",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"media manipulation\" maps to Media & Information, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 2362,
+   "legacyLabel": "civilizational stakes",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 2442,
+   "legacyLabel": "inevitable destiny",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 2547,
+   "legacyLabel": "executive interference",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 2660,
+   "legacyLabel": "warning/escape",
+   "legacyFreq": 1,
+   "mappedTo": "National Security & Military",
+   "v1Assigned": [],
+   "outcome": "NEEDS_CONTEXT",
+   "why": "a one-off label with no corroborating text; not enough to act on"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 2792,
+   "legacyLabel": "QAnon messaging",
+   "legacyFreq": 25,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 2885,
+   "legacyLabel": "political mistakes",
+   "legacyFreq": 1,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [],
+   "outcome": "NEEDS_CONTEXT",
+   "why": "a one-off label with no corroborating text; not enough to act on"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 2999,
+   "legacyLabel": "information leaks",
+   "legacyFreq": 1,
+   "mappedTo": "Disclosure & Declassification",
+   "v1Assigned": [],
+   "outcome": "NEEDS_CONTEXT",
+   "why": "a one-off label with no corroborating text; not enough to act on"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 3089,
+   "legacyLabel": "coordinated messaging",
+   "legacyFreq": 22,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"coordinated messaging\" recurs 22 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 3203,
+   "legacyLabel": "Q anon",
+   "legacyFreq": 32,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"Q anon\" maps to Q Movement & Community, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 3299,
+   "legacyLabel": "regional improvement",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 3375,
+   "legacyLabel": "covert operations",
+   "legacyFreq": 45,
+   "mappedTo": "Intelligence & Surveillance",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"covert operations\" maps to Intelligence & Surveillance, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 3471,
+   "legacyLabel": "cryptic messaging",
+   "legacyFreq": 401,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 3585,
+   "legacyLabel": "project looking glass",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 3701,
+   "legacyLabel": "deep state corruption",
+   "legacyFreq": 48,
+   "mappedTo": "Corruption & Influence",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"deep state corruption\" maps to Corruption & Influence, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 3843,
+   "legacyLabel": "trust and belief",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 3982,
+   "legacyLabel": "cryptic coordination",
+   "legacyFreq": 2,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 4128,
+   "legacyLabel": "truth suppression",
+   "legacyFreq": 11,
+   "mappedTo": "Media & Information",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "\"truth suppression\" maps to Media & Information, which exists, but the post carries no evidence for it"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 4238,
+   "legacyLabel": "trustworthiness questions",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 4366,
+   "legacyLabel": "antifa surveillance",
+   "legacyFreq": 2,
+   "mappedTo": "Intelligence & Surveillance",
+   "v1Assigned": [],
+   "outcome": "NEEDS_CONTEXT",
+   "why": "a one-off label with no corroborating text; not enough to act on"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 4441,
+   "legacyLabel": "future revelation",
+   "legacyFreq": 12,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"future revelation\" recurs 12 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 4532,
+   "legacyLabel": "good versus evil",
+   "legacyFreq": 28,
+   "mappedTo": "Religion & Spirituality",
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 4638,
+   "legacyLabel": "opposition persecution",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 4759,
+   "legacyLabel": "background figures",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "posts with no v1 theme",
+   "postNum": 4858,
+   "legacyLabel": "institutional structure",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 1,
+   "legacyLabel": "extradition operations",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Foreign Affairs",
+    "Social Movements & Culture"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 27,
+   "legacyLabel": "government transparency",
+   "legacyFreq": 21,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [
+    "Disclosure & Declassification"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Disclosure & Declassification; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 67,
+   "legacyLabel": "security clearances",
+   "legacyFreq": 2,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Media & Information",
+    "Finance & Economic Power",
+    "Corruption & Influence"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 111,
+   "legacyLabel": "foreign influence",
+   "legacyFreq": 9,
+   "mappedTo": "Foreign Affairs",
+   "v1Assigned": [
+    "Elections & Voting",
+    "Religion & Spirituality"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Elections & Voting, Religion & Spirituality; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 174,
+   "legacyLabel": "information suppression",
+   "legacyFreq": 9,
+   "mappedTo": "Media & Information",
+   "v1Assigned": [
+    "Censorship & Technology"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Censorship & Technology; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 317,
+   "legacyLabel": "insider status",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Media & Information"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 470,
+   "legacyLabel": "operational security",
+   "legacyFreq": 20,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Censorship & Technology"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"operational security\" recurs 20 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 551,
+   "legacyLabel": "insider threats",
+   "legacyFreq": 4,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Government & Politics"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 693,
+   "legacyLabel": "deep state resignations",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "National Security & Military",
+    "Health & Medicine"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 831,
+   "legacyLabel": "cryptic messaging",
+   "legacyFreq": 401,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [
+    "Justice & Courts"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 953,
+   "legacyLabel": "traitors/betrayal",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Government & Politics",
+    "Law Enforcement & Investigations",
+    "Foreign Affairs"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 1080,
+   "legacyLabel": "false flag operations",
+   "legacyFreq": 19,
+   "mappedTo": null,
+   "v1Assigned": [
+    "National Security & Military"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"false flag operations\" recurs 19 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 1242,
+   "legacyLabel": "global awakening",
+   "legacyFreq": 3,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [
+    "Social Movements & Culture"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Social Movements & Culture; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 1320,
+   "legacyLabel": "hidden corruption",
+   "legacyFreq": 4,
+   "mappedTo": "Corruption & Influence",
+   "v1Assigned": [
+    "Government & Politics",
+    "Foreign Affairs"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Government & Politics, Foreign Affairs; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 1402,
+   "legacyLabel": "planned operation conclusion",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Law Enforcement & Investigations"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 1510,
+   "legacyLabel": "security breach",
+   "legacyFreq": 2,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Law Enforcement & Investigations"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 1609,
+   "legacyLabel": "deep state resistance",
+   "legacyFreq": 6,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Government & Politics",
+    "Media & Information",
+    "Finance & Economic Power",
+    "Q Movement & Community"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"deep state resistance\" recurs 6 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 1717,
+   "legacyLabel": "institutional conflict",
+   "legacyFreq": 3,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Government & Politics"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 1822,
+   "legacyLabel": "deep state conspiracy",
+   "legacyFreq": 62,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Law Enforcement & Investigations",
+    "Media & Information",
+    "Finance & Economic Power",
+    "Social Movements & Culture",
+    "Historical Events"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"deep state conspiracy\" recurs 62 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 1911,
+   "legacyLabel": "hidden communications",
+   "legacyFreq": 16,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Religion & Spirituality"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"hidden communications\" recurs 16 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 2003,
+   "legacyLabel": "information control",
+   "legacyFreq": 68,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Disclosure & Declassification"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"information control\" recurs 68 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 2110,
+   "legacyLabel": "government conspiracy",
+   "legacyFreq": 30,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [
+    "Intelligence & Surveillance"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Intelligence & Surveillance; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 2184,
+   "legacyLabel": "coordinated action",
+   "legacyFreq": 11,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Censorship & Technology"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"coordinated action\" recurs 11 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 2297,
+   "legacyLabel": "deep state resistance",
+   "legacyFreq": 6,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Government & Politics"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"deep state resistance\" recurs 6 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 2361,
+   "legacyLabel": "truth seeking",
+   "legacyFreq": 6,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Media & Information"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"truth seeking\" recurs 6 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 2453,
+   "legacyLabel": "cryptic communications",
+   "legacyFreq": 6,
+   "mappedTo": "Q Movement & Community",
+   "v1Assigned": [
+    "Government & Politics"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "the label describes how Q writes, not what the text is about — that belongs to Emphasis or Codes, not a subject taxonomy"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 2525,
+   "legacyLabel": "government cover-up",
+   "legacyFreq": 13,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [
+    "Intelligence & Surveillance"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Intelligence & Surveillance; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 2585,
+   "legacyLabel": "protest suppression",
+   "legacyFreq": 1,
+   "mappedTo": "Media & Information",
+   "v1Assigned": [
+    "Social Movements & Culture"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Social Movements & Culture; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 2656,
+   "legacyLabel": "insider knowledge",
+   "legacyFreq": 31,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Q Movement & Community"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"insider knowledge\" recurs 31 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 2712,
+   "legacyLabel": "coded communication",
+   "legacyFreq": 21,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Q Movement & Community"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"coded communication\" recurs 21 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 2807,
+   "legacyLabel": "currency smuggling schemes",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Finance & Economic Power",
+    "Religion & Spirituality",
+    "Historical Events"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 2930,
+   "legacyLabel": "declassification order",
+   "legacyFreq": 1,
+   "mappedTo": "Intelligence & Surveillance",
+   "v1Assigned": [
+    "Disclosure & Declassification"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Disclosure & Declassification; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 3033,
+   "legacyLabel": "whistleblower protection",
+   "legacyFreq": 3,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Disclosure & Declassification"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 3175,
+   "legacyLabel": "political conspiracy",
+   "legacyFreq": 12,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [
+    "Historical Events"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Historical Events; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 3328,
+   "legacyLabel": "document declassification",
+   "legacyFreq": 24,
+   "mappedTo": "Intelligence & Surveillance",
+   "v1Assigned": [
+    "Law Enforcement & Investigations",
+    "Disclosure & Declassification"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Law Enforcement & Investigations, Disclosure & Declassification; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 3473,
+   "legacyLabel": "presidential removal plot",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Law Enforcement & Investigations"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 3607,
+   "legacyLabel": "party corruption",
+   "legacyFreq": 6,
+   "mappedTo": "Corruption & Influence",
+   "v1Assigned": [
+    "Media & Information",
+    "Q Movement & Community"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Media & Information, Q Movement & Community; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 3682,
+   "legacyLabel": "populist messaging",
+   "legacyFreq": 5,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Q Movement & Community"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"populist messaging\" recurs 5 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 3784,
+   "legacyLabel": "criminal investigation",
+   "legacyFreq": 5,
+   "mappedTo": "Law Enforcement & Investigations",
+   "v1Assigned": [
+    "Intelligence & Surveillance",
+    "Disclosure & Declassification"
+   ],
+   "outcome": "VALID_THEME_SIGNAL_MISSING",
+   "why": "the label's own words (criminal, investigation) appear in Q's lines but no Law Enforcement & Investigations signal covers them",
+   "fixable": true,
+   "missingTerms": [
+    "criminal",
+    "investigation"
+   ]
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 3868,
+   "legacyLabel": "tarmac meeting",
+   "legacyFreq": 3,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Law Enforcement & Investigations"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 3960,
+   "legacyLabel": "legal threats",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Elections & Voting"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 4090,
+   "legacyLabel": "criminal justice bias",
+   "legacyFreq": 1,
+   "mappedTo": "Justice & Courts",
+   "v1Assigned": [
+    "Health & Medicine"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Health & Medicine; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 4224,
+   "legacyLabel": "deep state",
+   "legacyFreq": 29,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Law Enforcement & Investigations"
+   ],
+   "outcome": "ONTOLOGY_GAP",
+   "why": "\"deep state\" recurs 29 times and fits none of the 18 parents"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 4317,
+   "legacyLabel": "political deception",
+   "legacyFreq": 10,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [
+    "Media & Information",
+    "Historical Events"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Media & Information, Historical Events; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 4408,
+   "legacyLabel": "political revolution",
+   "legacyFreq": 1,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [
+    "Social Movements & Culture"
+   ],
+   "outcome": "VALID_THEME_SIGNAL_MISSING",
+   "why": "the label's own words (political, revolution) appear in Q's lines but no Government & Politics signal covers them",
+   "fixable": true,
+   "missingTerms": [
+    "political",
+    "revolution"
+   ]
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 4502,
+   "legacyLabel": "Ukraine scandal",
+   "legacyFreq": 2,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Foreign Affairs"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 4556,
+   "legacyLabel": "political bias",
+   "legacyFreq": 3,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [
+    "Media & Information"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Media & Information; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 4646,
+   "legacyLabel": "evidence destruction",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Intelligence & Surveillance"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 4794,
+   "legacyLabel": "government secrecy",
+   "legacyFreq": 10,
+   "mappedTo": "Government & Politics",
+   "v1Assigned": [
+    "Disclosure & Declassification"
+   ],
+   "outcome": "VALID_THEME_ALREADY_COVERED_DIFFERENTLY",
+   "why": "the post is already tagged Disclosure & Declassification; the legacy label names the same subject more narrowly"
+  },
+  {
+   "stratum": "v1 and legacy disagree",
+   "postNum": 4870,
+   "legacyLabel": "Hunter Biden scandal",
+   "legacyFreq": 1,
+   "mappedTo": null,
+   "v1Assigned": [
+    "Trafficking & Exploitation"
+   ],
+   "outcome": "OLD_EXTRACTOR_NOISE",
+   "why": "a one-off label that fits no parent — invented rather than observed"
+  }
+ ]
+}
