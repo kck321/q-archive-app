@@ -1,5 +1,5 @@
 import BackButton from '../components/BackButton'
-import { SECTIONS, DIRECTIVE_FAMILIES, METHOD_INTRO, METHOD_PRINCIPLE, CERTIFIED } from '../lib/sectionInfo'
+import { SECTIONS, DIRECTIVE_FAMILIES, CLAIM_ATTRIBUTES, ASSERTIONS, METHOD_INTRO, METHOD_PRINCIPLE, CERTIFIED } from '../lib/sectionInfo'
 
 // The full classification method. Every word of section language comes from lib/sectionInfo,
 // which the per-section ⓘ popovers also read — so the short and long forms cannot disagree.
@@ -56,6 +56,30 @@ export default function Method() {
               <p className="mt-3 pt-2 border-t border-q-border text-xs text-gray-400">
                 <span className="text-emerald-500 font-medium">Certified dataset:</span> {s.certified}
               </p>
+            )}
+
+            {s.id === 'claims' && (
+              <div className="mt-3 pt-3 border-t border-q-border">
+                <div className="text-[11px] uppercase tracking-wide text-gray-500 mb-2">Claim labels — and what they do not mean</div>
+                <dl className="space-y-2">
+                  {CLAIM_ATTRIBUTES.map(a => (
+                    <div key={a.key}>
+                      <dt className="text-sm font-medium text-gray-200">
+                        {a.label} <span className="text-gray-500 font-normal">· {a.count.toLocaleString()}</span>
+                      </dt>
+                      <dd className="text-xs text-gray-400 leading-relaxed">{a.blurb}</dd>
+                    </div>
+                  ))}
+                </dl>
+                <p className="mt-3 text-xs text-gray-500 leading-relaxed">
+                  Claims and Predictions are both assertions, shown as separate sections.
+                  Together they cover{' '}
+                  <span className="text-gray-300">{ASSERTIONS.combined.toLocaleString()}</span>{' '}
+                  assertions ({CERTIFIED.claims.occurrences.toLocaleString()} claims +{' '}
+                  {CERTIFIED.predictions.occurrences.toLocaleString()} predictions). The Claims
+                  section shows {CERTIFIED.claims.occurrences.toLocaleString()}.
+                </p>
+              </div>
             )}
 
             {s.id === 'requests' && (

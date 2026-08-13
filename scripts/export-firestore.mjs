@@ -133,7 +133,11 @@ for (const name of COLLECTIONS) {
   // certified set, and the earlier steps rewrite posts.json too. Dropping it silently reverts
   // Directives to the old extractor output on the next export, exactly as dropping
   // apply-questions-final.mjs would revert Questions to 6,299.
-  for (const step of ['backfill-analysis.mjs', 'detect-emphasis.mjs', 'apply-questions.mjs', 'apply-questions-final.mjs', 'apply-directives.mjs']) {
+  // apply-claims.mjs runs after apply-directives.mjs: both rewrite posts.json, and Claims
+  // reads the certified artifact rather than post text, so it must land on top. Dropping it
+  // reverts Claims to the old extractor's 7,509, exactly as dropping apply-questions-final.mjs
+  // would revert Questions to 6,299.
+  for (const step of ['backfill-analysis.mjs', 'detect-emphasis.mjs', 'apply-questions.mjs', 'apply-questions-final.mjs', 'apply-directives.mjs', 'apply-claims.mjs']) {
     console.log(`
 Re-running ${step}…`)
     execFileSync(process.execPath, [join(root, 'scripts', step), '--apply'], { stdio: 'inherit' })

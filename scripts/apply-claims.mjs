@@ -76,9 +76,14 @@ for (const p of posts) {
   p.postAnalysis.verificationHooks = cl.filter(r => r.checkable).map(r => r.exactText)
 
   if (cl.length || pr.length) {
+    // Claims and Predictions are both ASSERTIONS internally, and separate sections on screen.
+    // displayClass drives which section a unit appears in; semanticFamily records the truth
+    // that a prediction is a kind of assertion. The Claims section shows 4,181 — never the
+    // combined 4,811.
     p.claimMeta = {}
     for (const r of cl) {
       p.claimMeta[key(r.exactText)] = {
+        semanticFamily: 'assertion', displayClass: 'claim',
         checkable: Boolean(r.checkable), sourceProvided: Boolean(r.sourceProvided),
         isConclusion: Boolean(r.isConclusion), isPrediction: false,
         telegraphic: Boolean(r.telegraphic), confidence: r.confidence,
@@ -86,8 +91,11 @@ for (const p of posts) {
     }
     for (const r of pr) {
       p.claimMeta[key(r.exactText)] = {
+        semanticFamily: 'assertion', displayClass: 'prediction',
         checkable: Boolean(r.checkable), sourceProvided: Boolean(r.sourceProvided),
-        isConclusion: false, isPrediction: true,
+        // A future-oriented inference is still an inference, so this is carried rather than
+        // forced false. No prediction currently qualifies, so the certified 966 is unchanged.
+        isConclusion: Boolean(r.isConclusion), isPrediction: true,
         telegraphic: false, confidence: r.confidence,
       }
     }

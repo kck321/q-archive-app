@@ -12,10 +12,61 @@
 export const CERTIFIED = {
   questions: { occurrences: 6442, distinct: 5302, posts: 1696 },
   directives: { occurrences: 2422, distinct: 1472, posts: 1417 },
+  claims: { occurrences: 4181, distinct: 3226, posts: 1951 },
+  predictions: { occurrences: 630, posts: 520 },
+  /** Claim attributes. `conclusions` may apply to a claim or a prediction. */
+  claimAttributes: { checkable: 1926, sourceProvided: 438, conclusions: 966, telegraphic: 331 },
   /** Units that are BOTH a question and a directive. */
   overlap: 228,
   totalPosts: 4966,
 } as const
+
+/**
+ * Claims and Predictions are one semantic family and two sections.
+ *
+ * A prediction IS an assertion — but the Claims screen must never silently swell to include
+ * predictions, so `displayClass` decides where a unit appears and `semanticFamily` records what
+ * it is. The combined figure is shown only where it is labelled as combined.
+ */
+export const ASSERTIONS = {
+  combined: CERTIFIED.claims.occurrences + CERTIFIED.predictions.occurrences,
+  note: 'Claims and Predictions are both assertions. They are shown as separate sections; the combined figure is only ever presented as a combined figure.',
+} as const
+
+export interface AttributeInfo { key: string; label: string; blurb: string; count: number }
+
+/**
+ * Attribute wording, taken verbatim from the review.
+ *
+ * Both of these are easy to misread as verdicts, and neither is one. "Claims with evidence"
+ * would imply the linked material proves the assertion, which Q Drops does not assess.
+ */
+export const CLAIM_ATTRIBUTES: AttributeInfo[] = [
+  {
+    key: 'checkable',
+    label: 'Checkable',
+    blurb: 'The assertion contains enough concrete information that it could potentially be compared against records, dates, events, documents, or other evidence. This label does not mean the claim has been verified or proven true.',
+    count: CERTIFIED.claimAttributes.checkable,
+  },
+  {
+    key: 'sourceProvided',
+    label: 'Source Provided',
+    blurb: 'Q included or pointed to source/reference material in connection with the claim. This label does not mean Q Drops independently verified that the source proves the claim.',
+    count: CERTIFIED.claimAttributes.sourceProvided,
+  },
+  {
+    key: 'isConclusion',
+    label: 'Conclusion',
+    blurb: 'The assertion is drawn from material earlier in the same post rather than introducing new information. A conclusion may be a claim or a prediction.',
+    count: CERTIFIED.claimAttributes.conclusions,
+  },
+  {
+    key: 'telegraphic',
+    label: 'Telegraphic',
+    blurb: 'Q compressed the sentence, dropping the verb — "HRC extradition already in motion effective yesterday." It still asserts something, so it counts, but the compression is recorded.',
+    count: CERTIFIED.claimAttributes.telegraphic,
+  },
+]
 
 const n = (x: number) => x.toLocaleString()
 
@@ -78,16 +129,20 @@ export const SECTIONS: SectionInfo[] = [
     title: 'Q Claims',
     short: 'Where Q asserts that something is true, happened, or exists.',
     covers: 'Statements where Q asserts that something is true, happened, exists, has a particular relationship, or should be understood as fact — about people, organizations, events, motives, relationships, control, finances, investigations, or history.',
+    examples: ['HRC extradition already in motion effective yesterday.', 'They control the media.', 'AMERICA FOR SALE'],
     answers: 'What did Q assert?',
-    note: 'A claim does not need to be proven true to appear here. Whether it can later be independently verified is tracked separately, and does not determine whether it is a claim.',
+    certified: `${n(CERTIFIED.claims.occurrences)} claim occurrences · ${n(CERTIFIED.claims.distinct)} distinct · ${n(CERTIFIED.claims.posts)} posts`,
+    note: 'A claim does not need to be proven true to appear here. Nothing counts as a claim merely for being a statement: it has to assert something that could meaningfully be true or false. "ELECTION RIGGING" names a topic and stays a label; "Election rigging occurred." would be a claim.',
   },
   {
     id: 'predictions',
     title: 'Q Predictions',
     short: 'Where Q says or implies that something will happen.',
     covers: 'Explicit forecasts, expected future events, warnings about what is coming, anticipated consequences, and time-dependent claims.',
+    examples: ['Expect massive riots organized in defiance.', 'More will follow.'],
     answers: 'What did Q say would happen?',
-    note: 'Predictions can be evaluated against later events without altering Q’s original wording.',
+    certified: `${n(CERTIFIED.predictions.occurrences)} prediction occurrences · ${n(CERTIFIED.predictions.posts)} posts`,
+    note: 'Predictions and Claims are both assertions and are shown as separate sections. A conditional ("If Mueller is dirty, RR must also be dirty."), a statement of intent ("We will not comply.") and a future word used as a modifier ("the coming storm") are claims, not forecasts. Predictions can be evaluated against later events without altering Q’s original wording.',
   },
   {
     id: 'impliedConclusions',
