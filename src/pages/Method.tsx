@@ -76,6 +76,14 @@ export default function Method() {
                 </dl>
                 <p className="mt-3 text-xs text-gray-500 leading-relaxed">{EVIDENCE.counting}</p>
                 <p className="mt-2 text-xs text-gray-400 leading-relaxed">
+                  <span className="text-gray-300 font-medium">Links inside pasted text.</span>{' '}
+                  {EVIDENCE.embeddedInSource.blurb}
+                </p>
+                <p className="mt-2 text-xs text-gray-400 leading-relaxed">
+                  <span className="text-gray-300 font-medium">{EVIDENCE.unresolvedReferences.label}.</span>{' '}
+                  {EVIDENCE.unresolvedReferences.blurb}
+                </p>
+                <p className="mt-2 text-xs text-gray-400 leading-relaxed">
                   <span className="text-gray-300 font-medium">Archived media.</span>{' '}
                   {EVIDENCE.archivedMedia.blurb}{' '}
                   <span className="text-gray-500">

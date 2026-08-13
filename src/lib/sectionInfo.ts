@@ -43,16 +43,28 @@ export const ASSERTIONS = {
 export const EVIDENCE = {
   total: { occurrences: 6590, posts: 3883 },
   subtypes: [
-    { key: 'external_link', label: 'External Links', occurrences: 2744, distinct: 2587, distinctLabel: 'distinct URLs', blurb: 'Articles, government documents, court records, social-media posts and other web sources Q linked to. 396 domains.' },
+    { key: 'external_link', label: 'External Links', occurrences: 2724, distinct: 2569, distinctLabel: 'distinct URLs', blurb: 'Articles, government documents, court records, social-media posts and other web sources Q linked to, across 393 domains.' },
     { key: 'media', label: 'Media', occurrences: 1271, distinct: 1199, distinctLabel: 'distinct assets', blurb: 'Images and video attached to the drop itself.' },
     { key: 'quoted_source', label: 'Quoted / Pasted Source Text', occurrences: 927, distinct: 783, distinctLabel: 'distinct passages', blurb: 'Text Q reproduced from somewhere else — articles, official documents, dictionary definitions, founding documents, scripture and quoted Q&A.' },
     { key: 'internal_q_reference', label: 'Internal Q References', occurrences: 1648, distinct: 1619, distinctLabel: 'distinct drops referenced', blurb: 'Pointers to earlier Q posts, used to build continuity across drops. These are references, not independent external evidence.' },
   ],
+  /** Hyperlinks printed inside pasted source material — the article's own, not Q citing it. */
+  embeddedInSource: {
+    count: 20,
+    blurb: 'Twenty hyperlinks appear inside text Q pasted from elsewhere. They are preserved and shown with the source block that contains them, but they are an article’s own links rather than Q citing something, so they are not counted as Q citations.',
+  },
   /** Provenance users need in order to read a media URL correctly. */
   archivedMedia: {
     count: 1160,
     total: 1271,
     blurb: 'Some original 8chan/8kun/onion-hosted media no longer resolves at its original location. Where available, Q Drops displays preserved copies from archive mirrors and identifies them as archived/mirrored rather than original-host delivery.',
+  },
+  /** References whose target could not be recovered. Not an app defect. */
+  unresolvedReferences: {
+    count: 152,
+    resolved: 1496,
+    label: 'Unresolved archive reference',
+    blurb: 'Q pointed at 152 drops whose historical content could not be recovered from the board archive. They are still counted as references, because Q did point to them, but no quoted content is offered for them.',
   },
   counting: 'Counts are shown as occurrences with distinct alongside. The same article cited in six drops is six occurrences of one source — how often Q returned to a source is part of what the section shows.',
 } as const

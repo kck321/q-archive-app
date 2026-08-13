@@ -1244,21 +1244,30 @@ export async function countPostsOnMonthDay(month: number, day: number): Promise<
   return n
 }
 
+/**
+ * Every link Q cited — from the CERTIFIED evidence dataset, not re-derived here.
+ *
+ * This used to run its own URL pattern over post text and disagreed with the certified count
+ * by 78 citations: it had no bare-"www." branch, and the board's space-broken protocol
+ * ("https:// www.nytimes.com/…", in 66 drops) matched nothing at all rather than partially.
+ * It also counted an article's own hyperlinks, printed inside pasted source material, as Q
+ * citing something.
+ *
+ * Same lesson as "Coincidence?" showing 142 for a question asked 88 times: the certified rows
+ * are the count, and a second implementation of "what is a link" only reintroduces drift.
+ */
 export async function getAllTextLinks(): Promise<QTextLink[]> {
   const { posts } = await loadLocalData()
-  const rx = /https?:\/\/[^\s<>'")\]]+/g
-  const out: QTextLink[] = []
-  for (const p of posts) {
-    for (const m of (p.text ?? '').match(rx) ?? []) {
-      // Trailing sentence punctuation is not part of the URL.
-      const url = m.replace(/[.,;:!?)\]]+$/, '')
-      if (!url) continue
-      let domain = url
-      try { domain = new URL(url).hostname.replace(/^www\./, '') } catch { /* keep raw */ }
-      out.push({ postNum: p.postNum, id: p.id, timestamp: p.timestamp, url, domain })
-    }
-  }
-  return out
+  const byNum = new Map(posts.map(p => [p.postNum, p]))
+  const { getQCitationLinks } = await import('./evidence')
+  const links = await getQCitationLinks()
+  return links.map(l => ({
+    postNum: l.postNum,
+    id: l.postId,
+    timestamp: byNum.get(l.postNum)?.timestamp ?? 0,
+    url: l.value,
+    domain: l.domain ?? l.value,
+  }))
 }
 
 // ─── Topics ───────────────────────────────────────────────────────────────────
