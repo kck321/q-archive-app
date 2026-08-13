@@ -1,0 +1,2553 @@
+{
+ "scope": "recurring unresolved codes",
+ "productionChanged": false,
+ "totals": {
+  "reviewed": 180,
+  "byOutcome": {
+   "CERTIFIED_CODE_UNRESOLVED": 141,
+   "ENTITY_ALIAS": 32,
+   "CERTIFIED_CODE_INTERPRETED": 5,
+   "STATEMENT_OR_LABEL": 2
+  },
+  "finalOccurrences": 1661,
+  "finalDistinctCodes": 707,
+  "finalPosts": 777,
+  "finalByType": {
+   "coded_phrase": 195,
+   "obfuscated_shorthand": 286,
+   "bracketed_token": 1041,
+   "numeric_symbolic": 134,
+   "operational_marker": 5
+  },
+  "interpreted": 5,
+  "unresolved": 702,
+  "toResolutionCenter": 141,
+  "movedToEmphasis": 2,
+  "rejectedAsNonCode": 0,
+  "crossLinkedToEntities": 32
+ },
+ "decisions": [
+  {
+   "sourceText": "[D]",
+   "allSpellings": [
+    "[D]"
+   ],
+   "normalizedKey": "[D]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 195,
+   "posts": 121,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[RR]",
+   "allSpellings": [
+    "[RR]"
+   ],
+   "normalizedKey": "[RR]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 96,
+   "posts": 60,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"RR\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "C_A",
+   "allSpellings": [
+    "C_A"
+   ],
+   "normalizedKey": "C_A",
+   "codeType": "obfuscated_shorthand",
+   "recurrenceCount": 77,
+   "posts": 37,
+   "outcome": "CERTIFIED_CODE_INTERPRETED",
+   "why": "the corpus itself establishes the meaning through repeated equivalent usage",
+   "interpretedMeaning": "CIA, written with an underscore",
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "Snow White",
+   "allSpellings": [
+    "Snow White",
+    "SNOW WHITE"
+   ],
+   "normalizedKey": "SNOW WHITE",
+   "codeType": "coded_phrase",
+   "recurrenceCount": 56,
+   "posts": 28,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[MUELLER]",
+   "allSpellings": [
+    "[MUELLER]"
+   ],
+   "normalizedKey": "[MUELLER]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 50,
+   "posts": 16,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"MUELLER\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[2]",
+   "allSpellings": [
+    "[2]"
+   ],
+   "normalizedKey": "[2]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 48,
+   "posts": 45,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[1]",
+   "allSpellings": [
+    "[1]"
+   ],
+   "normalizedKey": "[1]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 37,
+   "posts": 27,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "RED OCTOBER",
+   "allSpellings": [
+    "RED OCTOBER",
+    "Red October"
+   ],
+   "normalizedKey": "RED OCTOBER",
+   "codeType": "coded_phrase",
+   "recurrenceCount": 32,
+   "posts": 16,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "5:5",
+   "allSpellings": [
+    "5:5"
+   ],
+   "normalizedKey": "5:5",
+   "codeType": "numeric_symbolic",
+   "recurrenceCount": 29,
+   "posts": 29,
+   "outcome": "CERTIFIED_CODE_INTERPRETED",
+   "why": "the corpus itself establishes the meaning through repeated equivalent usage",
+   "interpretedMeaning": "Radio idiom for \"loud and clear\" — a confirmation check",
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "Alice & Wonderland",
+   "allSpellings": [
+    "Alice & Wonderland"
+   ],
+   "normalizedKey": "ALICE & WONDERLAND",
+   "codeType": "coded_phrase",
+   "recurrenceCount": 28,
+   "posts": 27,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[F]",
+   "allSpellings": [
+    "[F]"
+   ],
+   "normalizedKey": "[F]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 23,
+   "posts": 18,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "Godfather III",
+   "allSpellings": [
+    "Godfather III"
+   ],
+   "normalizedKey": "GODFATHER III",
+   "codeType": "coded_phrase",
+   "recurrenceCount": 22,
+   "posts": 22,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[AS]",
+   "allSpellings": [
+    "[AS]"
+   ],
+   "normalizedKey": "[AS]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 22,
+   "posts": 14,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[3]",
+   "allSpellings": [
+    "[3]"
+   ],
+   "normalizedKey": "[3]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 21,
+   "posts": 19,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[CLAS 1-99]",
+   "allSpellings": [
+    "[CLAS 1-99]"
+   ],
+   "normalizedKey": "[CLAS 1-99]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 21,
+   "posts": 10,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[4]",
+   "allSpellings": [
+    "[4]"
+   ],
+   "normalizedKey": "[4]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 18,
+   "posts": 17,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[C]",
+   "allSpellings": [
+    "[C]"
+   ],
+   "normalizedKey": "[C]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 17,
+   "posts": 14,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[R]",
+   "allSpellings": [
+    "[R]"
+   ],
+   "normalizedKey": "[R]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 15,
+   "posts": 12,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[JC]",
+   "allSpellings": [
+    "[JC]"
+   ],
+   "normalizedKey": "[JC]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 14,
+   "posts": 9,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"JC\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[LL]",
+   "allSpellings": [
+    "[LL]"
+   ],
+   "normalizedKey": "[LL]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 14,
+   "posts": 8,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"LL\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "Clowns In America",
+   "allSpellings": [
+    "Clowns In America"
+   ],
+   "normalizedKey": "CLOWNS IN AMERICA",
+   "codeType": "coded_phrase",
+   "recurrenceCount": 13,
+   "posts": 12,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[ACCESS]",
+   "allSpellings": [
+    "[ACCESS]"
+   ],
+   "normalizedKey": "[ACCESS]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 12,
+   "posts": 1,
+   "outcome": "STATEMENT_OR_LABEL",
+   "why": "an ordinary word in brackets used as a label rather than as notation",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[DC]",
+   "allSpellings": [
+    "[DC]"
+   ],
+   "normalizedKey": "[DC]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 11,
+   "posts": 5,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"DC\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "Iron Eagle",
+   "allSpellings": [
+    "Iron Eagle"
+   ],
+   "normalizedKey": "IRON EAGLE",
+   "codeType": "coded_phrase",
+   "recurrenceCount": 10,
+   "posts": 10,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[A]",
+   "allSpellings": [
+    "[A]"
+   ],
+   "normalizedKey": "[A]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 10,
+   "posts": 7,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[FAKE NEWS]",
+   "allSpellings": [
+    "[FAKE NEWS]"
+   ],
+   "normalizedKey": "[FAKE NEWS]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 9,
+   "posts": 9,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "D_PARTY",
+   "allSpellings": [
+    "D_PARTY"
+   ],
+   "normalizedKey": "D_PARTY",
+   "codeType": "obfuscated_shorthand",
+   "recurrenceCount": 9,
+   "posts": 3,
+   "outcome": "CERTIFIED_CODE_INTERPRETED",
+   "why": "the corpus itself establishes the meaning through repeated equivalent usage",
+   "interpretedMeaning": "The Democratic Party",
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[PP]",
+   "allSpellings": [
+    "[PP]"
+   ],
+   "normalizedKey": "[PP]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 9,
+   "posts": 5,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[5]",
+   "allSpellings": [
+    "[5]"
+   ],
+   "normalizedKey": "[5]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 8,
+   "posts": 8,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[187]",
+   "allSpellings": [
+    "[187]"
+   ],
+   "normalizedKey": "[187]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 8,
+   "posts": 7,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[HRC]",
+   "allSpellings": [
+    "[HRC]"
+   ],
+   "normalizedKey": "[HRC]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 8,
+   "posts": 8,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"HRC\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "0:00",
+   "allSpellings": [
+    "0:00"
+   ],
+   "normalizedKey": "0:00",
+   "codeType": "numeric_symbolic",
+   "recurrenceCount": 8,
+   "posts": 7,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a symbolic numeric form — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "RED_OCTOBER",
+   "allSpellings": [
+    "RED_OCTOBER"
+   ],
+   "normalizedKey": "RED_OCTOBER",
+   "codeType": "obfuscated_shorthand",
+   "recurrenceCount": 8,
+   "posts": 4,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "underscore obfuscation — genuine, expansion not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[6]",
+   "allSpellings": [
+    "[6]"
+   ],
+   "normalizedKey": "[6]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 7,
+   "posts": 6,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "Wizards & Warlocks",
+   "allSpellings": [
+    "Wizards & Warlocks"
+   ],
+   "normalizedKey": "WIZARDS & WARLOCKS",
+   "codeType": "coded_phrase",
+   "recurrenceCount": 7,
+   "posts": 7,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[MSM]",
+   "allSpellings": [
+    "[MSM]"
+   ],
+   "normalizedKey": "[MSM]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 7,
+   "posts": 6,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[10]",
+   "allSpellings": [
+    "[10]"
+   ],
+   "normalizedKey": "[10]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 7,
+   "posts": 6,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[HUSSEIN]",
+   "allSpellings": [
+    "[HUSSEIN]"
+   ],
+   "normalizedKey": "[HUSSEIN]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 7,
+   "posts": 6,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"HUSSEIN\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "SEC_TEST",
+   "allSpellings": [
+    "SEC_TEST"
+   ],
+   "normalizedKey": "SEC_TEST",
+   "codeType": "obfuscated_shorthand",
+   "recurrenceCount": 7,
+   "posts": 7,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "underscore obfuscation — genuine, expansion not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[FBI]",
+   "allSpellings": [
+    "[FBI]"
+   ],
+   "normalizedKey": "[FBI]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 6,
+   "posts": 5,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"FBI\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[20]",
+   "allSpellings": [
+    "[20]"
+   ],
+   "normalizedKey": "[20]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 6,
+   "posts": 6,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[BC]",
+   "allSpellings": [
+    "[BC]"
+   ],
+   "normalizedKey": "[BC]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 6,
+   "posts": 4,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"BC\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[DARPA]",
+   "allSpellings": [
+    "[DARPA]"
+   ],
+   "normalizedKey": "[DARPA]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 6,
+   "posts": 6,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"DARPA\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[#2]",
+   "allSpellings": [
+    "[#2]"
+   ],
+   "normalizedKey": "[#2]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 6,
+   "posts": 6,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[BIDEN]",
+   "allSpellings": [
+    "[BIDEN]"
+   ],
+   "normalizedKey": "[BIDEN]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 6,
+   "posts": 2,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"BIDEN\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[CIA]",
+   "allSpellings": [
+    "[CIA]"
+   ],
+   "normalizedKey": "[CIA]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 6,
+   "posts": 1,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"CIA\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "MS_13",
+   "allSpellings": [
+    "MS_13"
+   ],
+   "normalizedKey": "MS_13",
+   "codeType": "obfuscated_shorthand",
+   "recurrenceCount": 5,
+   "posts": 5,
+   "outcome": "CERTIFIED_CODE_INTERPRETED",
+   "why": "the corpus itself establishes the meaning through repeated equivalent usage",
+   "interpretedMeaning": "The MS-13 gang",
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[30]",
+   "allSpellings": [
+    "[30]"
+   ],
+   "normalizedKey": "[30]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 5,
+   "posts": 4,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[DOJ]",
+   "allSpellings": [
+    "[DOJ]"
+   ],
+   "normalizedKey": "[DOJ]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 5,
+   "posts": 4,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"DOJ\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[19]",
+   "allSpellings": [
+    "[19]"
+   ],
+   "normalizedKey": "[19]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 5,
+   "posts": 5,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "00:00",
+   "allSpellings": [
+    "00:00"
+   ],
+   "normalizedKey": "00:00",
+   "codeType": "numeric_symbolic",
+   "recurrenceCount": 5,
+   "posts": 3,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a symbolic numeric form — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[WH]",
+   "allSpellings": [
+    "[WH]"
+   ],
+   "normalizedKey": "[WH]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 5,
+   "posts": 4,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"WH\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[SWAMP]",
+   "allSpellings": [
+    "[SWAMP]"
+   ],
+   "normalizedKey": "[SWAMP]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 5,
+   "posts": 5,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[8]",
+   "allSpellings": [
+    "[8]"
+   ],
+   "normalizedKey": "[8]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 5,
+   "posts": 4,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[-48]",
+   "allSpellings": [
+    "[-48]"
+   ],
+   "normalizedKey": "[-48]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 5,
+   "posts": 5,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[GS]",
+   "allSpellings": [
+    "[GS]"
+   ],
+   "normalizedKey": "[GS]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 5,
+   "posts": 4,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"GS\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[I]",
+   "allSpellings": [
+    "[I]"
+   ],
+   "normalizedKey": "[I]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 4,
+   "posts": 4,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[7]",
+   "allSpellings": [
+    "[7]"
+   ],
+   "normalizedKey": "[7]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 4,
+   "posts": 4,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "The Hunt For",
+   "allSpellings": [
+    "The Hunt For"
+   ],
+   "normalizedKey": "THE HUNT FOR",
+   "codeType": "coded_phrase",
+   "recurrenceCount": 4,
+   "posts": 4,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[PS]",
+   "allSpellings": [
+    "[PS]"
+   ],
+   "normalizedKey": "[PS]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 4,
+   "posts": 3,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "1:1",
+   "allSpellings": [
+    "1:1"
+   ],
+   "normalizedKey": "1:1",
+   "codeType": "numeric_symbolic",
+   "recurrenceCount": 4,
+   "posts": 3,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a symbolic numeric form — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "1=1",
+   "allSpellings": [
+    "1=1"
+   ],
+   "normalizedKey": "1=1",
+   "codeType": "numeric_symbolic",
+   "recurrenceCount": 4,
+   "posts": 4,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a symbolic numeric form — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[RBG]",
+   "allSpellings": [
+    "[RBG]"
+   ],
+   "normalizedKey": "[RBG]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 4,
+   "posts": 1,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[+FAKEWOOD]",
+   "allSpellings": [
+    "[+FAKEWOOD]"
+   ],
+   "normalizedKey": "[+FAKEWOOD]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 4,
+   "posts": 1,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[SDNY]",
+   "allSpellings": [
+    "[SDNY]"
+   ],
+   "normalizedKey": "[SDNY]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 4,
+   "posts": 3,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"SDNY\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[DECLAS]",
+   "allSpellings": [
+    "[DECLAS]"
+   ],
+   "normalizedKey": "[DECLAS]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 4,
+   "posts": 4,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "1+1=2",
+   "allSpellings": [
+    "1+1=2"
+   ],
+   "normalizedKey": "1+1=2",
+   "codeType": "numeric_symbolic",
+   "recurrenceCount": 4,
+   "posts": 4,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a symbolic numeric form — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[15]",
+   "allSpellings": [
+    "[15]"
+   ],
+   "normalizedKey": "[15]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 4,
+   "posts": 4,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[11:50]",
+   "allSpellings": [
+    "[11:50]"
+   ],
+   "normalizedKey": "[11:50]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 4,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "11:50",
+   "allSpellings": [
+    "11:50"
+   ],
+   "normalizedKey": "11:50",
+   "codeType": "numeric_symbolic",
+   "recurrenceCount": 4,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a symbolic numeric form — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[DNC]",
+   "allSpellings": [
+    "[DNC]"
+   ],
+   "normalizedKey": "[DNC]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 4,
+   "posts": 2,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"DNC\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "DOJ_LL",
+   "allSpellings": [
+    "DOJ_LL"
+   ],
+   "normalizedKey": "DOJ_LL",
+   "codeType": "obfuscated_shorthand",
+   "recurrenceCount": 4,
+   "posts": 1,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "underscore obfuscation — genuine, expansion not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[DOJ_RR]",
+   "allSpellings": [
+    "[DOJ_RR]"
+   ],
+   "normalizedKey": "[DOJ_RR]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 4,
+   "posts": 1,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "DOJ_RR",
+   "allSpellings": [
+    "DOJ_RR"
+   ],
+   "normalizedKey": "DOJ_RR",
+   "codeType": "obfuscated_shorthand",
+   "recurrenceCount": 4,
+   "posts": 1,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "underscore obfuscation — genuine, expansion not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "CASTLE_ROCK",
+   "allSpellings": [
+    "CASTLE_ROCK"
+   ],
+   "normalizedKey": "CASTLE_ROCK",
+   "codeType": "obfuscated_shorthand",
+   "recurrenceCount": 4,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "underscore obfuscation — genuine, expansion not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[S]",
+   "allSpellings": [
+    "[S]"
+   ],
+   "normalizedKey": "[S]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 3,
+   "posts": 3,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "Castle LOCK",
+   "allSpellings": [
+    "Castle LOCK"
+   ],
+   "normalizedKey": "CASTLE LOCK",
+   "codeType": "coded_phrase",
+   "recurrenceCount": 3,
+   "posts": 3,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[-30]",
+   "allSpellings": [
+    "[-30]"
+   ],
+   "normalizedKey": "[-30]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 3,
+   "posts": 3,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "6:10",
+   "allSpellings": [
+    "6:10"
+   ],
+   "normalizedKey": "6:10",
+   "codeType": "numeric_symbolic",
+   "recurrenceCount": 3,
+   "posts": 3,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a symbolic numeric form — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[J C]",
+   "allSpellings": [
+    "[J C]"
+   ],
+   "normalizedKey": "[J C]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 3,
+   "posts": 3,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[UK]",
+   "allSpellings": [
+    "[UK]"
+   ],
+   "normalizedKey": "[UK]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 3,
+   "posts": 3,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"UK\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "1=2",
+   "allSpellings": [
+    "1=2"
+   ],
+   "normalizedKey": "1=2",
+   "codeType": "numeric_symbolic",
+   "recurrenceCount": 3,
+   "posts": 3,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a symbolic numeric form — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[NO NAME]",
+   "allSpellings": [
+    "[NO NAME]"
+   ],
+   "normalizedKey": "[NO NAME]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 3,
+   "posts": 2,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"NO NAME\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[NEXT WEEK]",
+   "allSpellings": [
+    "[NEXT WEEK]"
+   ],
+   "normalizedKey": "[NEXT WEEK]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 3,
+   "posts": 3,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[SA US PUSH]",
+   "allSpellings": [
+    "[SA US PUSH]"
+   ],
+   "normalizedKey": "[SA US PUSH]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 3,
+   "posts": 1,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[ANTIFA]",
+   "allSpellings": [
+    "[ANTIFA]"
+   ],
+   "normalizedKey": "[ANTIFA]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 3,
+   "posts": 3,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"ANTIFA\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[BO]",
+   "allSpellings": [
+    "[BO]"
+   ],
+   "normalizedKey": "[BO]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 3,
+   "posts": 3,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"BO\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[24:50]",
+   "allSpellings": [
+    "[24:50]"
+   ],
+   "normalizedKey": "[24:50]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 3,
+   "posts": 1,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "24:50",
+   "allSpellings": [
+    "24:50"
+   ],
+   "normalizedKey": "24:50",
+   "codeType": "numeric_symbolic",
+   "recurrenceCount": 3,
+   "posts": 1,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a symbolic numeric form — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[0:00]",
+   "allSpellings": [
+    "[0:00]"
+   ],
+   "normalizedKey": "[0:00]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 3,
+   "posts": 3,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "D_PARTY_BASE",
+   "allSpellings": [
+    "D_PARTY_BASE"
+   ],
+   "normalizedKey": "D_PARTY_BASE",
+   "codeType": "obfuscated_shorthand",
+   "recurrenceCount": 3,
+   "posts": 3,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "underscore obfuscation — genuine, expansion not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[DIVISION]",
+   "allSpellings": [
+    "[DIVISION]"
+   ],
+   "normalizedKey": "[DIVISION]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 3,
+   "posts": 3,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[SC]",
+   "allSpellings": [
+    "[SC]"
+   ],
+   "normalizedKey": "[SC]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 3,
+   "posts": 3,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"SC\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "Red Castle",
+   "allSpellings": [
+    "Red Castle"
+   ],
+   "normalizedKey": "RED CASTLE",
+   "codeType": "coded_phrase",
+   "recurrenceCount": 3,
+   "posts": 3,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "Green Castle",
+   "allSpellings": [
+    "Green Castle"
+   ],
+   "normalizedKey": "GREEN CASTLE",
+   "codeType": "coded_phrase",
+   "recurrenceCount": 3,
+   "posts": 3,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[1-4]",
+   "allSpellings": [
+    "[1-4]"
+   ],
+   "normalizedKey": "[1-4]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 3,
+   "posts": 3,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[MW]",
+   "allSpellings": [
+    "[MW]"
+   ],
+   "normalizedKey": "[MW]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 3,
+   "posts": 3,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[KNOWINGLY]",
+   "allSpellings": [
+    "[KNOWINGLY]"
+   ],
+   "normalizedKey": "[KNOWINGLY]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 3,
+   "posts": 1,
+   "outcome": "STATEMENT_OR_LABEL",
+   "why": "an ordinary word in brackets used as a label rather than as notation",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[DOJ_LL]",
+   "allSpellings": [
+    "[DOJ_LL]"
+   ],
+   "normalizedKey": "[DOJ_LL]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 3,
+   "posts": 1,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[CCP]",
+   "allSpellings": [
+    "[CCP]"
+   ],
+   "normalizedKey": "[CCP]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 3,
+   "posts": 1,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "12:00",
+   "allSpellings": [
+    "12:00"
+   ],
+   "normalizedKey": "12:00",
+   "codeType": "numeric_symbolic",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a symbolic numeric form — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[FAKE]",
+   "allSpellings": [
+    "[FAKE]"
+   ],
+   "normalizedKey": "[FAKE]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "Sparrow Red",
+   "allSpellings": [
+    "Sparrow Red"
+   ],
+   "normalizedKey": "SPARROW RED",
+   "codeType": "coded_phrase",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[THEM]",
+   "allSpellings": [
+    "[THEM]"
+   ],
+   "normalizedKey": "[THEM]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[N]",
+   "allSpellings": [
+    "[N]"
+   ],
+   "normalizedKey": "[N]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[JUSTICE]",
+   "allSpellings": [
+    "[JUSTICE]"
+   ],
+   "normalizedKey": "[JUSTICE]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[W]",
+   "allSpellings": [
+    "[W]"
+   ],
+   "normalizedKey": "[W]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[GOOD]",
+   "allSpellings": [
+    "[GOOD]"
+   ],
+   "normalizedKey": "[GOOD]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "1:07",
+   "allSpellings": [
+    "1:07"
+   ],
+   "normalizedKey": "1:07",
+   "codeType": "numeric_symbolic",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a symbolic numeric form — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "Comms dark",
+   "allSpellings": [
+    "Comms dark"
+   ],
+   "normalizedKey": "COMMS DARK",
+   "codeType": "operational_marker",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a status or phase marker — genuine, referent not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "RE_READ",
+   "allSpellings": [
+    "RE_READ"
+   ],
+   "normalizedKey": "RE_READ",
+   "codeType": "obfuscated_shorthand",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_INTERPRETED",
+   "why": "the corpus itself establishes the meaning through repeated equivalent usage",
+   "interpretedMeaning": "An instruction to read an earlier drop again",
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[L]",
+   "allSpellings": [
+    "[L]"
+   ],
+   "normalizedKey": "[L]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[SPY OP]",
+   "allSpellings": [
+    "[SPY OP]"
+   ],
+   "normalizedKey": "[SPY OP]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[JB]",
+   "allSpellings": [
+    "[JB]"
+   ],
+   "normalizedKey": "[JB]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 1,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[DL]",
+   "allSpellings": [
+    "[DL]"
+   ],
+   "normalizedKey": "[DL]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 1,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[KC]",
+   "allSpellings": [
+    "[KC]"
+   ],
+   "normalizedKey": "[KC]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[DWS]",
+   "allSpellings": [
+    "[DWS]"
+   ],
+   "normalizedKey": "[DWS]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"DWS\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[14:40]",
+   "allSpellings": [
+    "[14:40]"
+   ],
+   "normalizedKey": "[14:40]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "14:40",
+   "allSpellings": [
+    "14:40"
+   ],
+   "normalizedKey": "14:40",
+   "codeType": "numeric_symbolic",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a symbolic numeric form — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[CHANGE WE CAN BELIEVE IN]",
+   "allSpellings": [
+    "[CHANGE WE CAN BELIEVE IN]"
+   ],
+   "normalizedKey": "[CHANGE WE CAN BELIEVE IN]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[CF]",
+   "allSpellings": [
+    "[CF]"
+   ],
+   "normalizedKey": "[CF]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 1,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"CF\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[NO]",
+   "allSpellings": [
+    "[NO]"
+   ],
+   "normalizedKey": "[NO]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[GUIDED]",
+   "allSpellings": [
+    "[GUIDED]"
+   ],
+   "normalizedKey": "[GUIDED]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[MOVIES 1-3 FULL LIST]",
+   "allSpellings": [
+    "[MOVIES 1-3 FULL LIST]"
+   ],
+   "normalizedKey": "[MOVIES 1-3 FULL LIST]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[FVEY]",
+   "allSpellings": [
+    "[FVEY]"
+   ],
+   "normalizedKey": "[FVEY]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"FVEY\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[30:45]",
+   "allSpellings": [
+    "[30:45]"
+   ],
+   "normalizedKey": "[30:45]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 1,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "30:45",
+   "allSpellings": [
+    "30:45"
+   ],
+   "normalizedKey": "30:45",
+   "codeType": "numeric_symbolic",
+   "recurrenceCount": 2,
+   "posts": 1,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a symbolic numeric form — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[WAPO]",
+   "allSpellings": [
+    "[WAPO]"
+   ],
+   "normalizedKey": "[WAPO]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"WAPO\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[ALL]",
+   "allSpellings": [
+    "[ALL]"
+   ],
+   "normalizedKey": "[ALL]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[24]",
+   "allSpellings": [
+    "[24]"
+   ],
+   "normalizedKey": "[24]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "PRO_MAGA",
+   "allSpellings": [
+    "PRO_MAGA"
+   ],
+   "normalizedKey": "PRO_MAGA",
+   "codeType": "obfuscated_shorthand",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "underscore obfuscation — genuine, expansion not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[F + D]",
+   "allSpellings": [
+    "[F + D]"
+   ],
+   "normalizedKey": "[F + D]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[9:41]",
+   "allSpellings": [
+    "[9:41]"
+   ],
+   "normalizedKey": "[9:41]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 1,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "9:41",
+   "allSpellings": [
+    "9:41"
+   ],
+   "normalizedKey": "9:41",
+   "codeType": "numeric_symbolic",
+   "recurrenceCount": 2,
+   "posts": 1,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a symbolic numeric form — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[PRIMARY]",
+   "allSpellings": [
+    "[PRIMARY]"
+   ],
+   "normalizedKey": "[PRIMARY]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "NON_NSA",
+   "allSpellings": [
+    "NON_NSA"
+   ],
+   "normalizedKey": "NON_NSA",
+   "codeType": "obfuscated_shorthand",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "underscore obfuscation — genuine, expansion not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "10:34",
+   "allSpellings": [
+    "10:34"
+   ],
+   "normalizedKey": "10:34",
+   "codeType": "numeric_symbolic",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a symbolic numeric form — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[PROVE]",
+   "allSpellings": [
+    "[PROVE]"
+   ],
+   "normalizedKey": "[PROVE]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "RED_RED_",
+   "allSpellings": [
+    "RED_RED_"
+   ],
+   "normalizedKey": "RED_RED_",
+   "codeType": "obfuscated_shorthand",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "underscore obfuscation — genuine, expansion not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[THEY]",
+   "allSpellings": [
+    "[THEY]"
+   ],
+   "normalizedKey": "[THEY]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "RED1_RED2_",
+   "allSpellings": [
+    "RED1_RED2_"
+   ],
+   "normalizedKey": "RED1_RED2_",
+   "codeType": "obfuscated_shorthand",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "underscore obfuscation — genuine, expansion not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "Mad Hatter",
+   "allSpellings": [
+    "Mad Hatter"
+   ],
+   "normalizedKey": "MAD HATTER",
+   "codeType": "coded_phrase",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[RUSSIA]",
+   "allSpellings": [
+    "[RUSSIA]"
+   ],
+   "normalizedKey": "[RUSSIA]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"RUSSIA\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[CHINA]",
+   "allSpellings": [
+    "[CHINA]"
+   ],
+   "normalizedKey": "[CHINA]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"CHINA\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "RED_RED",
+   "allSpellings": [
+    "RED_RED"
+   ],
+   "normalizedKey": "RED_RED",
+   "codeType": "obfuscated_shorthand",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "underscore obfuscation — genuine, expansion not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "2+2=4",
+   "allSpellings": [
+    "2+2=4"
+   ],
+   "normalizedKey": "2+2=4",
+   "codeType": "numeric_symbolic",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a symbolic numeric form — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[17]",
+   "allSpellings": [
+    "[17]"
+   ],
+   "normalizedKey": "[17]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 1,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[Y]",
+   "allSpellings": [
+    "[Y]"
+   ],
+   "normalizedKey": "[Y]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[COVER]",
+   "allSpellings": [
+    "[COVER]"
+   ],
+   "normalizedKey": "[COVER]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[0]",
+   "allSpellings": [
+    "[0]"
+   ],
+   "normalizedKey": "[0]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[-21]",
+   "allSpellings": [
+    "[-21]"
+   ],
+   "normalizedKey": "[-21]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[+2]",
+   "allSpellings": [
+    "[+2]"
+   ],
+   "normalizedKey": "[+2]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[BRENNAN]",
+   "allSpellings": [
+    "[BRENNAN]"
+   ],
+   "normalizedKey": "[BRENNAN]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"BRENNAN\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[FB]",
+   "allSpellings": [
+    "[FB]"
+   ],
+   "normalizedKey": "[FB]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"FB\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[2019]",
+   "allSpellings": [
+    "[2019]"
+   ],
+   "normalizedKey": "[2019]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[DISINFORMATION]",
+   "allSpellings": [
+    "[DISINFORMATION]"
+   ],
+   "normalizedKey": "[DISINFORMATION]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "Wheels Up",
+   "allSpellings": [
+    "Wheels Up"
+   ],
+   "normalizedKey": "WHEELS UP",
+   "codeType": "coded_phrase",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "FISA_T_SURV",
+   "allSpellings": [
+    "FISA_T_SURV"
+   ],
+   "normalizedKey": "FISA_T_SURV",
+   "codeType": "obfuscated_shorthand",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "underscore obfuscation — genuine, expansion not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[1-6]",
+   "allSpellings": [
+    "[1-6]"
+   ],
+   "normalizedKey": "[1-6]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[X]",
+   "allSpellings": [
+    "[X]"
+   ],
+   "normalizedKey": "[X]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[-1]",
+   "allSpellings": [
+    "[-1]"
+   ],
+   "normalizedKey": "[-1]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "1:29",
+   "allSpellings": [
+    "1:29"
+   ],
+   "normalizedKey": "1:29",
+   "codeType": "numeric_symbolic",
+   "recurrenceCount": 2,
+   "posts": 1,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a symbolic numeric form — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[P]",
+   "allSpellings": [
+    "[P]"
+   ],
+   "normalizedKey": "[P]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[9]",
+   "allSpellings": [
+    "[9]"
+   ],
+   "normalizedKey": "[9]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[CA]",
+   "allSpellings": [
+    "[CA]"
+   ],
+   "normalizedKey": "[CA]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"CA\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[NY]",
+   "allSpellings": [
+    "[NY]"
+   ],
+   "normalizedKey": "[NY]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "ENTITY_ALIAS",
+   "why": "the bracket contains \"NY\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "ATT_CAP_H",
+   "allSpellings": [
+    "ATT_CAP_H"
+   ],
+   "normalizedKey": "ATT_CAP_H",
+   "codeType": "obfuscated_shorthand",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "underscore obfuscation — genuine, expansion not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "P_ELECTION",
+   "allSpellings": [
+    "P_ELECTION"
+   ],
+   "normalizedKey": "P_ELECTION",
+   "codeType": "obfuscated_shorthand",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "underscore obfuscation — genuine, expansion not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[DNI]",
+   "allSpellings": [
+    "[DNI]"
+   ],
+   "normalizedKey": "[DNI]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 1,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[NSC]",
+   "allSpellings": [
+    "[NSC]"
+   ],
+   "normalizedKey": "[NSC]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 1,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[DEM]",
+   "allSpellings": [
+    "[DEM]"
+   ],
+   "normalizedKey": "[DEM]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "CONF_WHITE_WHITE_",
+   "allSpellings": [
+    "CONF_WHITE_WHITE_"
+   ],
+   "normalizedKey": "CONF_WHITE_WHITE_",
+   "codeType": "obfuscated_shorthand",
+   "recurrenceCount": 2,
+   "posts": 1,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "underscore obfuscation — genuine, expansion not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[LOOK THE OTHER WAY]",
+   "allSpellings": [
+    "[LOOK THE OTHER WAY]"
+   ],
+   "normalizedKey": "[LOOK THE OTHER WAY]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[AGAIN]",
+   "allSpellings": [
+    "[AGAIN]"
+   ],
+   "normalizedKey": "[AGAIN]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 1,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "KILL_CHAIN",
+   "allSpellings": [
+    "KILL_CHAIN"
+   ],
+   "normalizedKey": "KILL_CHAIN",
+   "codeType": "obfuscated_shorthand",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "underscore obfuscation — genuine, expansion not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "[E]",
+   "allSpellings": [
+    "[E]"
+   ],
+   "normalizedKey": "[E]",
+   "codeType": "bracketed_token",
+   "recurrenceCount": 2,
+   "posts": 1,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "structured bracketed notation — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "STRIKE_PACKAGE_B",
+   "allSpellings": [
+    "STRIKE_PACKAGE_B"
+   ],
+   "normalizedKey": "STRIKE_PACKAGE_B",
+   "codeType": "obfuscated_shorthand",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "underscore obfuscation — genuine, expansion not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "WARNING_UK_IMM_CHATTER_",
+   "allSpellings": [
+    "WARNING_UK_IMM_CHATTER_"
+   ],
+   "normalizedKey": "WARNING_UK_IMM_CHATTER_",
+   "codeType": "obfuscated_shorthand",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "underscore obfuscation — genuine, expansion not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "XRAY_7",
+   "allSpellings": [
+    "XRAY_7"
+   ],
+   "normalizedKey": "XRAY_7",
+   "codeType": "obfuscated_shorthand",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "underscore obfuscation — genuine, expansion not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  },
+  {
+   "sourceText": "Watch the water",
+   "allSpellings": [
+    "Watch the water"
+   ],
+   "normalizedKey": "WATCH THE WATER",
+   "codeType": "coded_phrase",
+   "recurrenceCount": 2,
+   "posts": 2,
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "interpretedMeaning": null,
+   "provenance": "Codes adjudication v1"
+  }
+ ]
+}
