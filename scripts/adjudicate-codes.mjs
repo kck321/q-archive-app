@@ -41,11 +41,19 @@ export function adjudicate(code, entityAliases) {
   if (LABEL_WORD.test(t)) return { outcome: 'STATEMENT_OR_LABEL', why: 'an ordinary word in brackets used as a label rather than as notation' }
   if (/^\d{1,2}\/\d{1,2}(\/\d{2,4})?$/.test(t)) return { outcome: 'DATE_OR_ORDINARY_NUMBER', why: 'a date, not a cipher' }
 
-  // A bracketed token whose contents name a certified entity is that entity in Q's bracket
-  // convention. The bracket is targeting notation — but the SUBJECT is already counted in
-  // Entities, and filing it here as well would count one thing twice across two sections.
+  // A bracketed token naming a certified entity STAYS A CODE, cross-linked to Entities.
+  //
+  // The two sections answer different questions: Entities asks who is referenced, Codes asks
+  // how Q marked the reference. "HRC" and "[HRC]" are not the same analytical object — dropping
+  // the second would lose the notation choice entirely. This is the same cross-section overlap
+  // already allowed between Questions and Directives: counted once in each, never twice within
+  // either.
   if (code.codeType === 'bracketed_token' && entityAliases.has(inner.toUpperCase())) {
-    return { outcome: 'ENTITY_ALIAS', why: `the bracket contains "${inner}", already certified in Entities; the bracket itself is Q's targeting convention` }
+    return {
+      outcome: 'CERTIFIED_CODE_UNRESOLVED',
+      linkedEntity: inner.toUpperCase(),
+      why: `bracketed notation around "${inner}", which is also certified in Entities — counted in both, cross-linked`,
+    }
   }
 
   // Everything that survives is genuine notation whose meaning the corpus does not establish.
@@ -76,8 +84,8 @@ if (process.argv.includes('--selftest')) {
     [{ sourceTexts: ['C_A'], key: 'C_A', codeType: 'obfuscated_shorthand' }, 'CERTIFIED_CODE_INTERPRETED'],
     [{ sourceTexts: ['[CLAS 1-99]'], key: '[CLAS 1-99]', codeType: 'bracketed_token' }, 'CERTIFIED_CODE_UNRESOLVED'],
     [{ sourceTexts: ['[D]'], key: '[D]', codeType: 'bracketed_token' }, 'CERTIFIED_CODE_UNRESOLVED'],
-    [{ sourceTexts: ['[MUELLER]'], key: '[MUELLER]', codeType: 'bracketed_token' }, 'ENTITY_ALIAS'],
-    [{ sourceTexts: ['[RR]'], key: '[RR]', codeType: 'bracketed_token' }, 'ENTITY_ALIAS'],
+    [{ sourceTexts: ['[MUELLER]'], key: '[MUELLER]', codeType: 'bracketed_token' }, 'CERTIFIED_CODE_UNRESOLVED'],
+    [{ sourceTexts: ['[RR]'], key: '[RR]', codeType: 'bracketed_token' }, 'CERTIFIED_CODE_UNRESOLVED'],
     [{ sourceTexts: ['RED OCTOBER'], key: 'RED OCTOBER', codeType: 'coded_phrase' }, 'CERTIFIED_CODE_UNRESOLVED'],
     [{ sourceTexts: ['[ACCESS]'], key: '[ACCESS]', codeType: 'bracketed_token' }, 'STATEMENT_OR_LABEL'],
     [{ sourceTexts: ['[  ]'], key: '[ ]', codeType: 'bracketed_token' }, 'NOT_A_CODE'],
@@ -113,6 +121,7 @@ const decisions = recurring.map(c => {
     sourceText: c.sourceTexts[0], allSpellings: c.sourceTexts, normalizedKey: c.key,
     codeType: c.codeType, recurrenceCount: c.recurrenceCount, posts: c.posts.length,
     outcome: r.outcome, why: r.why,
+    linkedEntityId: r.linkedEntity ?? null,
     interpretedMeaning: c.interpretedMeaning ?? null,
     provenance: 'Codes adjudication v1',
   }
@@ -142,7 +151,7 @@ const totals = {
   toResolutionCenter: toResolve.length,
   movedToEmphasis: (tally.EMPHASIS ?? 0) + (tally.STATEMENT_OR_LABEL ?? 0),
   rejectedAsNonCode: (tally.NOT_A_CODE ?? 0) + (tally.DATE_OR_ORDINARY_NUMBER ?? 0),
-  crossLinkedToEntities: tally.ENTITY_ALIAS ?? 0,
+  crossLinkedToEntities: decisions.filter(d => d.linkedEntityId).length,
 }
 fs.writeFileSync(path.join(OUT, 'codes-adjudicated.json'), JSON.stringify({ scope: 'recurring unresolved codes', productionChanged: false, totals, decisions }, null, 1))
 

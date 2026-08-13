@@ -112,6 +112,25 @@ export const THEMES_INFO = {
   note: 'Themes identify the recurring subjects Q discusses across the archive. They describe what a post is about, not how Q writes it. A post may have more than one theme. Style features such as cryptic phrasing, repetition, coded language, or pattern-based reasoning are classified elsewhere rather than treated as subjects.',
 } as const
 
+/**
+ * Codes & Brackets — detected as code is NOT the same as decoded.
+ *
+ * 734 of the 739 certified codes carry no interpretation at all, and that is the honest state.
+ * A meaning is attached only where the corpus itself establishes it through repeated
+ * equivalent usage.
+ */
+export const CODES_INFO = {
+  occurrences: 1949,
+  distinct: 739,
+  posts: 852,
+  interpreted: 5,
+  unresolved: 734,
+  crossLinkedToEntities: 32,
+  note: 'Codes & Brackets identifies recurring coded expressions, structured shorthand, bracketed markers, symbolic forms, and unusual notation used by Q. Inclusion in this section means the pattern appears code-like or structurally significant; it does not mean its meaning is known. Interpretations are shown only when supported by repeated context or a reviewed resolution.',
+  overlap: 'A bracketed reference such as [HRC] is counted here as notation AND in Entities as a reference. The sections answer different questions — how Q marked something, and who was referenced — so each counts it once and cross-links to the other.',
+  excluded: 'Ordinary words in brackets ([raid], [now]) are Emphasis, not codes. Dates and ALL CAPS on their own are not codes either: caps become notation only with structure, such as an underscore, a digit or a bracket.',
+} as const
+
 export interface AttributeInfo { key: string; label: string; blurb: string; count: number }
 
 /**
@@ -264,7 +283,8 @@ export const SECTIONS: SectionInfo[] = [
     short: 'Coded expressions, bracketed text, shorthand and unusual notation.',
     covers: 'Unusual coded expressions, abbreviations, bracketed text, shorthand, symbolic references, counters, markers and recurring phrases that appear throughout Q’s posts.',
     answers: 'What notation did Q use?',
-    note: 'The exact source notation is preserved rather than being given an automatic interpretation. Where an interpretation is offered, it is clearly distinguished from Q’s literal wording.',
+    certified: `${n(1949)} occurrences · ${n(739)} distinct codes · ${n(852)} posts`,
+    note: 'Inclusion means the pattern appears code-like or structurally significant — it does not mean its meaning is known. Only 5 of 739 codes carry an interpretation, each stating the evidence for it; the other 734 are preserved exactly as written with no meaning attached. Ordinary words in brackets are Emphasis, and dates and ALL CAPS alone are not codes.',
   },
   {
     id: 'emphasis',

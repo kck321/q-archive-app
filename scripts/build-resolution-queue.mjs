@@ -111,6 +111,32 @@ try {
   }
 } catch { /* themes audit is optional; the entity queue stands on its own */ }
 
+// ── Codes: recurring notation whose meaning the corpus does not establish ────
+// A code can be genuine and still unresolved — that is the normal state here, not a defect.
+// One-offs are not queued; only notation that recurs is worth community time.
+try {
+  const codes = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/codes-adjudicated.json'), 'utf8'))
+  const codeAudit = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/codes-audit.json'), 'utf8'))
+  for (const d of codes.decisions) {
+    if (d.outcome !== 'CERTIFIED_CODE_UNRESOLVED') continue
+    const first = codeAudit.occurrences.find(o => o.normalizedKey === d.normalizedKey)
+    rows.push({
+      id: `code-${d.normalizedKey.replace(/\W+/g, '_')}`,
+      kind: 'code',
+      token: d.sourceText,
+      postNum: first?.postNum ?? 0, postId: first?.postId ?? null,
+      sourceSpan: first?.context?.[1] ?? '',
+      context: first?.context ?? [],
+      lineIndex: -1, charIndex: -1,
+      candidates: [],
+      whyUnresolved: `${d.why}. Appears ${d.recurrenceCount} times across ${d.posts} posts.`,
+      status: 'OPEN',
+      provenance: 'Codes & Brackets audit v1 — detected as notation, meaning not established by the corpus',
+      deepLink: first?.postId ? `/post/${first.postId}` : '/brackets',
+    })
+  }
+} catch { /* codes audit is optional */ }
+
 // Cap the shipped queue so the page stays fast; the full set stays in the audit trail.
 const byToken = {}
 for (const r of rows) byToken[r.token] = (byToken[r.token] ?? 0) + 1

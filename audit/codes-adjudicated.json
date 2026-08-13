@@ -4,24 +4,23 @@
  "totals": {
   "reviewed": 180,
   "byOutcome": {
-   "CERTIFIED_CODE_UNRESOLVED": 141,
-   "ENTITY_ALIAS": 32,
+   "CERTIFIED_CODE_UNRESOLVED": 173,
    "CERTIFIED_CODE_INTERPRETED": 5,
    "STATEMENT_OR_LABEL": 2
   },
-  "finalOccurrences": 1661,
-  "finalDistinctCodes": 707,
-  "finalPosts": 777,
+  "finalOccurrences": 1949,
+  "finalDistinctCodes": 739,
+  "finalPosts": 852,
   "finalByType": {
    "coded_phrase": 195,
    "obfuscated_shorthand": 286,
-   "bracketed_token": 1041,
+   "bracketed_token": 1329,
    "numeric_symbolic": 134,
    "operational_marker": 5
   },
   "interpreted": 5,
-  "unresolved": 702,
-  "toResolutionCenter": 141,
+  "unresolved": 734,
+  "toResolutionCenter": 173,
   "movedToEmphasis": 2,
   "rejectedAsNonCode": 0,
   "crossLinkedToEntities": 32
@@ -38,6 +37,7 @@
    "posts": 121,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -50,8 +50,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 96,
    "posts": 60,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"RR\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"RR\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "RR",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -66,6 +67,7 @@
    "posts": 37,
    "outcome": "CERTIFIED_CODE_INTERPRETED",
    "why": "the corpus itself establishes the meaning through repeated equivalent usage",
+   "linkedEntityId": null,
    "interpretedMeaning": "CIA, written with an underscore",
    "provenance": "Codes adjudication v1"
   },
@@ -81,6 +83,7 @@
    "posts": 28,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -93,8 +96,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 50,
    "posts": 16,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"MUELLER\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"MUELLER\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "MUELLER",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -109,6 +113,7 @@
    "posts": 45,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -123,6 +128,7 @@
    "posts": 27,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -138,6 +144,7 @@
    "posts": 16,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -152,6 +159,7 @@
    "posts": 29,
    "outcome": "CERTIFIED_CODE_INTERPRETED",
    "why": "the corpus itself establishes the meaning through repeated equivalent usage",
+   "linkedEntityId": null,
    "interpretedMeaning": "Radio idiom for \"loud and clear\" — a confirmation check",
    "provenance": "Codes adjudication v1"
   },
@@ -166,6 +174,7 @@
    "posts": 27,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -180,6 +189,7 @@
    "posts": 18,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -194,6 +204,7 @@
    "posts": 22,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -208,6 +219,7 @@
    "posts": 14,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -222,6 +234,7 @@
    "posts": 19,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -236,6 +249,7 @@
    "posts": 10,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -250,6 +264,7 @@
    "posts": 17,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -264,6 +279,7 @@
    "posts": 14,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -278,6 +294,7 @@
    "posts": 12,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -290,8 +307,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 14,
    "posts": 9,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"JC\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"JC\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "JC",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -304,8 +322,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 14,
    "posts": 8,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"LL\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"LL\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "LL",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -320,6 +339,7 @@
    "posts": 12,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -334,6 +354,7 @@
    "posts": 1,
    "outcome": "STATEMENT_OR_LABEL",
    "why": "an ordinary word in brackets used as a label rather than as notation",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -346,8 +367,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 11,
    "posts": 5,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"DC\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"DC\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "DC",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -362,6 +384,7 @@
    "posts": 10,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -376,6 +399,7 @@
    "posts": 7,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -390,6 +414,7 @@
    "posts": 9,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -404,6 +429,7 @@
    "posts": 3,
    "outcome": "CERTIFIED_CODE_INTERPRETED",
    "why": "the corpus itself establishes the meaning through repeated equivalent usage",
+   "linkedEntityId": null,
    "interpretedMeaning": "The Democratic Party",
    "provenance": "Codes adjudication v1"
   },
@@ -418,6 +444,7 @@
    "posts": 5,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -432,6 +459,7 @@
    "posts": 8,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -446,6 +474,7 @@
    "posts": 7,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -458,8 +487,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 8,
    "posts": 8,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"HRC\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"HRC\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "HRC",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -474,6 +504,7 @@
    "posts": 7,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a symbolic numeric form — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -488,6 +519,7 @@
    "posts": 4,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "underscore obfuscation — genuine, expansion not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -502,6 +534,7 @@
    "posts": 6,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -516,6 +549,7 @@
    "posts": 7,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -530,6 +564,7 @@
    "posts": 6,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -544,6 +579,7 @@
    "posts": 6,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -556,8 +592,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 7,
    "posts": 6,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"HUSSEIN\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"HUSSEIN\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "HUSSEIN",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -572,6 +609,7 @@
    "posts": 7,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "underscore obfuscation — genuine, expansion not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -584,8 +622,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 6,
    "posts": 5,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"FBI\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"FBI\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "FBI",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -600,6 +639,7 @@
    "posts": 6,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -612,8 +652,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 6,
    "posts": 4,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"BC\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"BC\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "BC",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -626,8 +667,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 6,
    "posts": 6,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"DARPA\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"DARPA\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "DARPA",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -642,6 +684,7 @@
    "posts": 6,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -654,8 +697,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 6,
    "posts": 2,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"BIDEN\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"BIDEN\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "BIDEN",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -668,8 +712,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 6,
    "posts": 1,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"CIA\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"CIA\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "CIA",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -684,6 +729,7 @@
    "posts": 5,
    "outcome": "CERTIFIED_CODE_INTERPRETED",
    "why": "the corpus itself establishes the meaning through repeated equivalent usage",
+   "linkedEntityId": null,
    "interpretedMeaning": "The MS-13 gang",
    "provenance": "Codes adjudication v1"
   },
@@ -698,6 +744,7 @@
    "posts": 4,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -710,8 +757,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 5,
    "posts": 4,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"DOJ\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"DOJ\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "DOJ",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -726,6 +774,7 @@
    "posts": 5,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -740,6 +789,7 @@
    "posts": 3,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a symbolic numeric form — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -752,8 +802,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 5,
    "posts": 4,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"WH\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"WH\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "WH",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -768,6 +819,7 @@
    "posts": 5,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -782,6 +834,7 @@
    "posts": 4,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -796,6 +849,7 @@
    "posts": 5,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -808,8 +862,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 5,
    "posts": 4,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"GS\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"GS\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "GS",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -824,6 +879,7 @@
    "posts": 4,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -838,6 +894,7 @@
    "posts": 4,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -852,6 +909,7 @@
    "posts": 4,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -866,6 +924,7 @@
    "posts": 3,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -880,6 +939,7 @@
    "posts": 3,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a symbolic numeric form — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -894,6 +954,7 @@
    "posts": 4,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a symbolic numeric form — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -908,6 +969,7 @@
    "posts": 1,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -922,6 +984,7 @@
    "posts": 1,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -934,8 +997,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 4,
    "posts": 3,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"SDNY\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"SDNY\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "SDNY",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -950,6 +1014,7 @@
    "posts": 4,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -964,6 +1029,7 @@
    "posts": 4,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a symbolic numeric form — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -978,6 +1044,7 @@
    "posts": 4,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -992,6 +1059,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1006,6 +1074,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a symbolic numeric form — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1018,8 +1087,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 4,
    "posts": 2,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"DNC\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"DNC\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "DNC",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1034,6 +1104,7 @@
    "posts": 1,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "underscore obfuscation — genuine, expansion not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1048,6 +1119,7 @@
    "posts": 1,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1062,6 +1134,7 @@
    "posts": 1,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "underscore obfuscation — genuine, expansion not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1076,6 +1149,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "underscore obfuscation — genuine, expansion not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1090,6 +1164,7 @@
    "posts": 3,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1104,6 +1179,7 @@
    "posts": 3,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1118,6 +1194,7 @@
    "posts": 3,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1132,6 +1209,7 @@
    "posts": 3,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a symbolic numeric form — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1146,6 +1224,7 @@
    "posts": 3,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1158,8 +1237,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 3,
    "posts": 3,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"UK\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"UK\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "UK",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1174,6 +1254,7 @@
    "posts": 3,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a symbolic numeric form — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1186,8 +1267,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 3,
    "posts": 2,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"NO NAME\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"NO NAME\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "NO NAME",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1202,6 +1284,7 @@
    "posts": 3,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1216,6 +1299,7 @@
    "posts": 1,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1228,8 +1312,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 3,
    "posts": 3,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"ANTIFA\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"ANTIFA\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "ANTIFA",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1242,8 +1327,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 3,
    "posts": 3,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"BO\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"BO\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "BO",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1258,6 +1344,7 @@
    "posts": 1,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1272,6 +1359,7 @@
    "posts": 1,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a symbolic numeric form — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1286,6 +1374,7 @@
    "posts": 3,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1300,6 +1389,7 @@
    "posts": 3,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "underscore obfuscation — genuine, expansion not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1314,6 +1404,7 @@
    "posts": 3,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1326,8 +1417,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 3,
    "posts": 3,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"SC\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"SC\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "SC",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1342,6 +1434,7 @@
    "posts": 3,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1356,6 +1449,7 @@
    "posts": 3,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1370,6 +1464,7 @@
    "posts": 3,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1384,6 +1479,7 @@
    "posts": 3,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1398,6 +1494,7 @@
    "posts": 1,
    "outcome": "STATEMENT_OR_LABEL",
    "why": "an ordinary word in brackets used as a label rather than as notation",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1412,6 +1509,7 @@
    "posts": 1,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1426,6 +1524,7 @@
    "posts": 1,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1440,6 +1539,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a symbolic numeric form — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1454,6 +1554,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1468,6 +1569,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1482,6 +1584,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1496,6 +1599,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1510,6 +1614,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1524,6 +1629,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1538,6 +1644,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1552,6 +1659,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a symbolic numeric form — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1566,6 +1674,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a status or phase marker — genuine, referent not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1580,6 +1689,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_INTERPRETED",
    "why": "the corpus itself establishes the meaning through repeated equivalent usage",
+   "linkedEntityId": null,
    "interpretedMeaning": "An instruction to read an earlier drop again",
    "provenance": "Codes adjudication v1"
   },
@@ -1594,6 +1704,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1608,6 +1719,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1622,6 +1734,7 @@
    "posts": 1,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1636,6 +1749,7 @@
    "posts": 1,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1650,6 +1764,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1662,8 +1777,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 2,
    "posts": 2,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"DWS\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"DWS\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "DWS",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1678,6 +1794,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1692,6 +1809,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a symbolic numeric form — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1706,6 +1824,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1718,8 +1837,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 2,
    "posts": 1,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"CF\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"CF\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "CF",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1734,6 +1854,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1748,6 +1869,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1762,6 +1884,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1774,8 +1897,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 2,
    "posts": 2,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"FVEY\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"FVEY\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "FVEY",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1790,6 +1914,7 @@
    "posts": 1,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1804,6 +1929,7 @@
    "posts": 1,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a symbolic numeric form — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1816,8 +1942,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 2,
    "posts": 2,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"WAPO\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"WAPO\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "WAPO",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1832,6 +1959,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1846,6 +1974,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1860,6 +1989,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "underscore obfuscation — genuine, expansion not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1874,6 +2004,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1888,6 +2019,7 @@
    "posts": 1,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1902,6 +2034,7 @@
    "posts": 1,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a symbolic numeric form — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1916,6 +2049,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1930,6 +2064,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "underscore obfuscation — genuine, expansion not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1944,6 +2079,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a symbolic numeric form — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1958,6 +2094,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1972,6 +2109,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "underscore obfuscation — genuine, expansion not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -1986,6 +2124,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2000,6 +2139,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "underscore obfuscation — genuine, expansion not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2014,6 +2154,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2026,8 +2167,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 2,
    "posts": 2,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"RUSSIA\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"RUSSIA\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "RUSSIA",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2040,8 +2182,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 2,
    "posts": 2,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"CHINA\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"CHINA\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "CHINA",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2056,6 +2199,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "underscore obfuscation — genuine, expansion not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2070,6 +2214,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a symbolic numeric form — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2084,6 +2229,7 @@
    "posts": 1,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2098,6 +2244,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2112,6 +2259,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2126,6 +2274,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2140,6 +2289,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2154,6 +2304,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2166,8 +2317,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 2,
    "posts": 2,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"BRENNAN\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"BRENNAN\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "BRENNAN",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2180,8 +2332,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 2,
    "posts": 2,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"FB\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"FB\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "FB",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2196,6 +2349,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2210,6 +2364,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2224,6 +2379,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2238,6 +2394,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "underscore obfuscation — genuine, expansion not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2252,6 +2409,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2266,6 +2424,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2280,6 +2439,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2294,6 +2454,7 @@
    "posts": 1,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a symbolic numeric form — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2308,6 +2469,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2322,6 +2484,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2334,8 +2497,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 2,
    "posts": 2,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"CA\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"CA\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "CA",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2348,8 +2512,9 @@
    "codeType": "bracketed_token",
    "recurrenceCount": 2,
    "posts": 2,
-   "outcome": "ENTITY_ALIAS",
-   "why": "the bracket contains \"NY\", already certified in Entities; the bracket itself is Q's targeting convention",
+   "outcome": "CERTIFIED_CODE_UNRESOLVED",
+   "why": "bracketed notation around \"NY\", which is also certified in Entities — counted in both, cross-linked",
+   "linkedEntityId": "NY",
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2364,6 +2529,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "underscore obfuscation — genuine, expansion not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2378,6 +2544,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "underscore obfuscation — genuine, expansion not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2392,6 +2559,7 @@
    "posts": 1,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2406,6 +2574,7 @@
    "posts": 1,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2420,6 +2589,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2434,6 +2604,7 @@
    "posts": 1,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "underscore obfuscation — genuine, expansion not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2448,6 +2619,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2462,6 +2634,7 @@
    "posts": 1,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2476,6 +2649,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "underscore obfuscation — genuine, expansion not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2490,6 +2664,7 @@
    "posts": 1,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "structured bracketed notation — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2504,6 +2679,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "underscore obfuscation — genuine, expansion not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2518,6 +2694,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "underscore obfuscation — genuine, expansion not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2532,6 +2709,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "underscore obfuscation — genuine, expansion not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   },
@@ -2546,6 +2724,7 @@
    "posts": 2,
    "outcome": "CERTIFIED_CODE_UNRESOLVED",
    "why": "a named phrase used as a codeword — genuine, meaning not established",
+   "linkedEntityId": null,
    "interpretedMeaning": null,
    "provenance": "Codes adjudication v1"
   }

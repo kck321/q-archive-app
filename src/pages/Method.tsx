@@ -1,5 +1,5 @@
 import BackButton from '../components/BackButton'
-import { SECTIONS, DIRECTIVE_FAMILIES, CLAIM_ATTRIBUTES, ASSERTIONS, EVIDENCE, ENTITIES, METHOD_INTRO, METHOD_PRINCIPLE, CERTIFIED } from '../lib/sectionInfo'
+import { SECTIONS, DIRECTIVE_FAMILIES, CLAIM_ATTRIBUTES, ASSERTIONS, EVIDENCE, ENTITIES, CODES_INFO, METHOD_INTRO, METHOD_PRINCIPLE, CERTIFIED } from '../lib/sectionInfo'
 
 // The full classification method. Every word of section language comes from lib/sectionInfo,
 // which the per-section ⓘ popovers also read — so the short and long forms cannot disagree.
@@ -80,6 +80,20 @@ export default function Method() {
                   surrounding lines; {ENTITIES.routedToThemes} concept terms were routed to Themes rather than
                   counted as entities.
                 </p>
+              </div>
+            )}
+
+            {s.id === 'brackets' && (
+              <div className="mt-3 pt-3 border-t border-q-border space-y-2">
+                <p className="text-sm text-gray-300 leading-relaxed">
+                  <span className="font-semibold text-gray-200">Detected as code is not the same as decoded.</span>{' '}
+                  {CODES_INFO.interpreted} of {CODES_INFO.distinct.toLocaleString()} codes carry an
+                  interpretation, each stating the evidence for it. The other{' '}
+                  {CODES_INFO.unresolved.toLocaleString()} are preserved exactly as written with no
+                  meaning attached.
+                </p>
+                <p className="text-xs text-gray-400 leading-relaxed">{CODES_INFO.overlap}</p>
+                <p className="text-xs text-gray-500 leading-relaxed">{CODES_INFO.excluded}</p>
               </div>
             )}
 
