@@ -14,28 +14,30 @@ So a claim must positively qualify: an assertive proposition with a subject and 
 
 | Outcome | Units |
 |---|---|
-| LABEL_OR_FRAGMENT | 7,044 |
+| LABEL_OR_FRAGMENT | 6,874 |
 | CERTIFIED_QUESTION | 6,596 |
-| NOT_A_CLAIM | 6,479 |
-| Q_CLAIM | 4,300 |
+| NOT_A_CLAIM | 6,439 |
+| Q_CLAIM | 3,803 |
 | CERTIFIED_DIRECTIVE | 2,194 |
-| EVIDENCE_REFERENCE | 1,639 |
-| Q_PREDICTION | 767 |
-| SEGMENTATION_ERROR | 327 |
-| QUOTED_OR_SOURCE | 191 |
-| Q_CONCLUSION | 32 |
+| EVIDENCE_REFERENCE | 1,637 |
+| QUOTED_SOURCE | 956 |
+| Q_PREDICTION | 705 |
+| SEGMENTATION_ERROR | 289 |
+| QUOTED_OR_SOURCE | 50 |
+| Q_CONCLUSION | 26 |
 
 ## Candidate totals
 
 | Measure | Value |
 |---|---|
-| Claim occurrences | **4,300** |
-| — distinct | 3,325 |
-| — posts | 1,974 |
-| — checkable (attribute) | 2,040 |
-| — source provided | 438 |
-| Prediction occurrences | 767 |
-| Conclusion occurrences | 32 |
+| Claim occurrences | **3,829** |
+| — distinct | 2,945 |
+| — posts | 1,896 |
+| — checkable (attribute) | 1,758 |
+| — source provided | 399 |
+| Prediction occurrences | 705 |
+| — of which conclusions *(attribute)* | 1,217 |
+| Source-material units held out | 956 |
 | Stored extractor claims (for comparison) | 7,509 |
 
 ## Sample claims
@@ -43,42 +45,42 @@ So a claim must positively qualify: an assertive proposition with a subject and 
 | Post | Exact text | Checkable | Source | Conf |
 |---|---|---|---|---|
 | #1 | `HRC extradition already in motion effective yesterday with several countries i` | yes | no | MEDIUM |
-| #1123 | `Out they go!` | no | no | MEDIUM |
-| #1265 | `Future proves past.` | no | no | MEDIUM |
-| #1328 | `This is NOT about fame, followers, or profiteering.` | yes | no | HIGH |
-| #1432 | `With this in mind, be alert and always keep on praying for all the saints."` | no | no | MEDIUM |
-| #1518 | `Shows commitment.` | no | no | MEDIUM |
-| #1605 | `PS "Because of the ongoing investigation, such answers may violate the securit` | yes | no | MEDIUM |
-| #17 | `Since they misjudged the influence of the MSM they are aggressively looking to` | yes | no | MEDIUM |
-| #1822 | `They would rather see NK peace negotiations fail (WAR!) than see POTUS resolve` | yes | no | HIGH |
-| #189 | `The ‘cult’ runs the world.` | no | no | HIGH |
-| #1988 | `Hannity 8.28.18 https://www.youtube.com/watchv=d3p7aqtUSJc&feature=youtu.be` | yes | yes | MEDIUM |
-| #2100 | `THE WORLD IS CHANGING.` | yes | no | HIGH |
-| #224 | `The map is in front of you.` | no | no | HIGH |
-| #2345 | `A phone was present.` | no | no | HIGH |
-| #2424 | `It was the 'end' that sealed it.` | no | no | HIGH |
-| #2468 | `Attacks occur from all directions.` | no | yes | MEDIUM |
-| #2587 | `GOOG says NO PLAN TO LAUNCH…….` | yes | no | MEDIUM |
-| #2673 | `FAKE NEWS control over those who do not think for themselves limits exposure o` | yes | no | HIGH |
-| #2776 | `“What justification did you have to effectively expand the mandate, not report` | yes | no | MEDIUM |
-| #2881 | `This attempt to remove/silence (‘FASCISM’) those who oppose their view/narrati` | yes | no | HIGH |
-| #2989 | `THE LARGEST 'COLLECTIVE' SOCIAL MEDIA PLATFORM IN THE WORLD (BILLIONS LOGGED) ` | yes | no | HIGH |
-| #3128 | `This is NOT a game.` | yes | no | HIGH |
-| #337 | `You are safe.` | no | no | HIGH |
-| #3525 | `It is now.` | no | no | HIGH |
-| #3662 | `Knowledge is power.` | no | no | HIGH |
-| #3837 | `BIGGER THAN YOU CAN IMAGINE.` | yes | no | MEDIUM |
-| #3907 | `WE MUST UNITE AGAIN.` | yes | no | HIGH |
-| #4076 | `This is about regaining POWER.` | yes | no | HIGH |
-| #4278 | `Control of narrative.` | no | no | MEDIUM |
-| #4397 | `Re-obtain power by any means necessary.` | no | no | MEDIUM |
-| #4484 | `The stakes are high.` | no | no | HIGH |
-| #4545 | `Humanity is good, but, when we let our guard down we allow darkness to infiltr` | no | no | HIGH |
-| #4620 | `Your voice and your vote matters.` | no | no | HIGH |
-| #4652 | `Knowing what you know now….` | no | no | MEDIUM |
-| #476 | `POTUS Tweet - RR/out.` | yes | no | MEDIUM |
-| #4959 | `Your vote matters.` | no | no | HIGH |
-| #57 | `Abedin in letters sent to the Inspectors General of the Department of Defense,` | yes | no | MEDIUM |
-| #69 | `You are the bravest men and women on earth.` | no | no | HIGH |
-| #791 | `"For I know the plans I have for you,” declares the Lord, “plans to prosper yo` | no | no | MEDIUM |
-| #895 | `Coded message (accept) by LdR/HRC/others.` | yes | no | MEDIUM |
+| #111 | `They never thought she would lose.` | no | no | HIGH |
+| #1255 | `His sole purpose [WH visit] is to convince POTUS, on behalf of the EU, to rema` | yes | no | HIGH |
+| #1318 | `If RR is dirty, Mueller must also be dirty.` | yes | no | HIGH |
+| #1386 | `Today was the precursor.` | no | no | HIGH |
+| #1492 | `APPOINTMENT OF A 2ND SC WOULD FAIL.` | yes | no | MEDIUM |
+| #1589 | `[RR] must either comply with all document demands or face impeachment.` | yes | no | MEDIUM |
+| #165 | `Problem: time to complete.` | no | no | MEDIUM |
+| #1767 | `Here we go.` | no | no | HIGH |
+| #1847 | `The SHARING of INFORMATION IS VERY IMPORTANT.` | yes | no | HIGH |
+| #1945 | `[Fiction][Sample] https://www.nbcnews.com/think/opinion/americans-have-forgott` | yes | yes | MEDIUM |
+| #2037 | `Who 'elects' CA officials?https://www.foxbusiness.com/politics/california-dmv-` | yes | yes | HIGH |
+| #2135 | `"Review of the new documents raises grave concerns regarding an apparent syste` | yes | yes | MEDIUM |
+| #229 | `_FREEDOM-_vSA_US_yes_DC08vC_EX_y_AW_Conf-go` | no | no | MEDIUM |
+| #2373 | `https://www.wsj.com/articles/google-exposed-user-data-feared-repercussions-of-` | yes | yes | MEDIUM |
+| #2436 | `We are, FATHERS.` | yes | no | HIGH |
+| #2524 | `Removed from SC oversight` | yes | no | MEDIUM |
+| #2626 | `"There are a lot of sealed indictments" - SC` | yes | no | MEDIUM |
+| #2694 | `FISA works both ways.` | yes | no | MEDIUM |
+| #2807 | `NO HONEST CONTROL IN PLACE.` | yes | no | HIGH |
+| #2916 | `We are far beyond statistical analysis at this stage.` | no | no | HIGH |
+| #3028 | `Impeachment requires 2/3 vote of the SENATE.` | yes | no | MEDIUM |
+| #3233 | `Reflections are important.` | no | no | HIGH |
+| #341 | `Presidential libraries are put in place to retain control over self-incriminat` | no | no | MEDIUM |
+| #3588 | `You are witnessing the largest ‘organized’ disinformation campaign to ever be ` | no | yes | HIGH |
+| #3724 | `It must be done according to the rule of law.` | no | no | HIGH |
+| #3882 | `The presidency of Barack Hussein Obama began at noon EST on January 20, 2009, ` | yes | no | HIGH |
+| #3969 | `We are far beyond the need for proofs.` | no | no | HIGH |
+| #4161 | `Insertion removed.` | no | no | MEDIUM |
+| #434 | `God is LOVE.` | yes | no | HIGH |
+| #4460 | `They can no longer hide in the dark.` | no | no | HIGH |
+| #4540 | `THE INSURGENCY IS REAL.` | yes | no | HIGH |
+| #4602 | `The choice [of information] has always been yours.` | no | no | HIGH |
+| #4697 | `Unknown [https://archive.is/wZqgM]` | no | yes | MEDIUM |
+| #4833 | `Nothing is random.` | no | no | HIGH |
+| #515 | `Suggest new board created.` | no | no | MEDIUM |
+| #60 | `Of those (less than 10 people) only three are non-military.` | yes | no | MEDIUM |
+| #732 | `https://www.washingtonpost.com/news/fact-checker/wp/2016/04/08/john-mccains-cl` | yes | yes | MEDIUM |
+| #816 | `[THEY must control local police / school / county officials  / etc to work].` | yes | yes | MEDIUM |
+| #91 | `The truth is mind blowing and cannot fully be exposed.` | no | no | HIGH |

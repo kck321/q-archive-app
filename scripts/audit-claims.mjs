@@ -32,6 +32,8 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { clean, key, unitsFor, SEGMENTATION_RISK, STARTS_TRUNCATED } from './lib/segment.mjs'
 import { imperativeMood, learnVerbsFromCorpus } from './lib/imperative.mjs'
+import { sourceLines, unitIsSource } from './lib/quotedBlocks.mjs'
+import { conclusionSignal } from './lib/conclusions.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const OUT = path.join(ROOT, 'audit')
@@ -184,50 +186,98 @@ const tally = {}
 const bump = k => { tally[k] = (tally[k] ?? 0) + 1 }
 const rows = []
 
+const sourceRows = []
+
 for (const p of posts) {
-  const lines = clean(p.text ?? '').split('\n').map(l => l.trim())
+  const cleaned = clean(p.text ?? '')
+  const lines = cleaned.split('\n').map(l => l.trim())
   const nearSource = /https?:\/\//i.test(p.text ?? '')
-  for (const u of unitsFor(p.text ?? '')) {
-    const t = u.text.trim()
-    if (!t) continue
+
+  // PHASE 1 — block-level source detection, computed once per post.
+  const srcMap = sourceLines(cleaned)
+
+  // PHASE 2 needs the post read in order, so build the unit list first.
+  const units = unitsFor(p.text ?? '').map(u => ({ ...u, t: u.text.trim() })).filter(u => u.t)
+  const kindOf = u => certQ.has(`${p.postNum}|${key(u.t)}`) ? 'question'
+    : certD.has(`${p.postNum}|${key(u.t)}`) ? 'directive' : 'other'
+  const hasEvidence = nearSource || /\b(list|memo|document|filing|record|report)\b/i.test(cleaned)
+
+  // Index of the last unit that will be an assertion, for the "closing takeaway" signal.
+  let lastAssertive = -1
+  units.forEach((u, i) => { if (kindOf(u) === 'other' && !unitIsSource(srcMap, u.startLine, u.endLine)) lastAssertive = i })
+
+  units.forEach((u, i) => {
+    const t = u.t
     const k = `${p.postNum}|${key(t)}`
 
-    if (certQ.has(k)) { bump('CERTIFIED_QUESTION'); continue }
-    if (certD.has(k)) { bump('CERTIFIED_DIRECTIVE'); continue }
+    if (certQ.has(k)) { bump('CERTIFIED_QUESTION'); return }
+    if (certD.has(k)) { bump('CERTIFIED_DIRECTIVE'); return }
+
+    // Source material never enters a Q-authored semantic class. Preserved, never deleted.
+    const srcReason = unitIsSource(srcMap, u.startLine, u.endLine)
+    if (srcReason) {
+      bump('QUOTED_SOURCE')
+      sourceRows.push({
+        postNum: p.postNum, postId: p.id, exactText: t,
+        primaryClass: 'source_material',
+        provenance: { source: 'audit-claims v2 block detector', reason: srcReason, segConfidence: u.segConfidence },
+      })
+      return
+    }
 
     const r = classify(t, { verbs, nearSource })
     bump(r.klass)
+
     if (['Q_CLAIM', 'Q_PREDICTION', 'Q_CONCLUSION'].includes(r.klass) || r.confidence === 'LOW') {
+      // PHASE 2 — conclusion is an ATTRIBUTE of an assertion, decided from the post.
+      const prior = units.slice(0, i).filter(x => !unitIsSource(srcMap, x.startLine, x.endLine))
+      const concl = r.klass === 'Q_CLAIM' || r.klass === 'Q_CONCLUSION'
+        ? conclusionSignal(t, {
+          priorUnits: prior.map(x => x.t),
+          priorIsQuestion: i > 0 && kindOf(units[i - 1]) === 'question',
+          questionCount: prior.filter(x => kindOf(x) === 'question').length,
+          hasEvidence,
+          isLastAssertion: i === lastAssertive,
+        })
+        : { isConclusion: false, why: 'predictions are not conclusions', confidence: 'HIGH' }
+
       rows.push({
         postNum: p.postNum, postId: p.id,
         exactText: t,
-        primaryClass: r.klass === 'Q_CLAIM' ? 'claim' : r.klass === 'Q_PREDICTION' ? 'prediction' : r.klass === 'Q_CONCLUSION' ? 'conclusion' : 'unresolved',
+        // Conclusion is a cross-class attribute, so the primary class stays claim.
+        primaryClass: r.klass === 'Q_PREDICTION' ? 'prediction' : r.klass === 'Q_CLAIM' || r.klass === 'Q_CONCLUSION' ? 'claim' : 'unresolved',
         klass: r.klass,
+        isConclusion: concl.isConclusion,
+        conclusionReason: concl.isConclusion ? concl.why : null,
         checkable: Boolean(r.checkable),
         sourceProvided: Boolean(r.sourceProvided),
         entities: (p.postAnalysis?.namedEntities ?? []).filter(e => new RegExp(`\\b${e.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i').test(t)),
         themes: p.postAnalysis?.themes ?? [],
         confidence: r.confidence,
-        provenance: { source: 'audit-claims v1', segConfidence: u.segConfidence, reason: r.why },
+        provenance: { source: 'audit-claims v2', segConfidence: u.segConfidence, reason: r.why },
         context: { before: lines[u.startLine - 1] ?? null, after: lines[u.endLine + 1] ?? null },
       })
     }
-  }
+  })
 }
 
-const claims = rows.filter(r => r.klass === 'Q_CLAIM')
-const preds = rows.filter(r => r.klass === 'Q_PREDICTION')
-const concl = rows.filter(r => r.klass === 'Q_CONCLUSION')
+const claims = rows.filter(r => r.primaryClass === 'claim')
+const preds = rows.filter(r => r.primaryClass === 'prediction')
+const concl = rows.filter(r => r.isConclusion)
 const stored = posts.reduce((n, p) => n + (p.postAnalysis?.claims?.length ?? 0), 0)
+const storedConcl = posts.reduce((n, p) => n + (p.postAnalysis?.impliedConclusions?.length ?? 0), 0)
+const storedPred = posts.reduce((n, p) => n + (p.postAnalysis?.predictions?.length ?? 0), 0)
 
 const totals = {
   claims: { occurrences: claims.length, distinct: new Set(claims.map(c => key(c.exactText))).size, posts: new Set(claims.map(c => c.postNum)).size, checkable: claims.filter(c => c.checkable).length, sourceProvided: claims.filter(c => c.sourceProvided).length },
   predictions: { occurrences: preds.length, posts: new Set(preds.map(c => c.postNum)).size },
-  conclusions: { occurrences: concl.length, posts: new Set(concl.map(c => c.postNum)).size },
-  storedExtractorClaims: stored,
+  // An attribute of claims, not a separate class — hence "of which".
+  conclusions: { ofWhichClaims: concl.length, posts: new Set(concl.map(c => c.postNum)).size, highConfidence: concl.filter(c => c.confidence === 'HIGH').length },
+  sourceMaterial: { units: sourceRows.length, posts: new Set(sourceRows.map(s => s.postNum)).size },
+  comparedWithStoredExtractor: { claims: stored, conclusions: storedConcl, predictions: storedPred },
   pipeline: tally,
 }
-fs.writeFileSync(path.join(OUT, 'claims-audit.json'), JSON.stringify({ scope: 'full-corpus claims audit v1', productionChanged: false, totals, rows }, null, 1))
+fs.writeFileSync(path.join(OUT, 'claims-audit.json'), JSON.stringify({ scope: 'full-corpus claims audit v2', productionChanged: false, totals, rows, sourceRows }, null, 1))
 
 const esc = s => String(s ?? '').replace(/\|/g, '\\|').replace(/\n/g, ' ')
 const md = ['# Q Drops — Claims audit (v1, candidate)\n']
@@ -248,7 +298,8 @@ md.push(`| — posts | ${totals.claims.posts.toLocaleString()} |`)
 md.push(`| — checkable (attribute) | ${totals.claims.checkable.toLocaleString()} |`)
 md.push(`| — source provided | ${totals.claims.sourceProvided.toLocaleString()} |`)
 md.push(`| Prediction occurrences | ${totals.predictions.occurrences.toLocaleString()} |`)
-md.push(`| Conclusion occurrences | ${totals.conclusions.occurrences.toLocaleString()} |`)
+md.push(`| — of which conclusions *(attribute)* | ${totals.conclusions.ofWhichClaims.toLocaleString()} |`)
+md.push(`| Source-material units held out | ${totals.sourceMaterial.units.toLocaleString()} |`)
 md.push(`| Stored extractor claims (for comparison) | ${stored.toLocaleString()} |`)
 md.push('\n## Sample claims\n')
 md.push('| Post | Exact text | Checkable | Source | Conf |')
@@ -266,6 +317,8 @@ console.log(`    claims        : ${totals.claims.occurrences.toLocaleString()}  
 console.log(`      checkable   : ${totals.claims.checkable.toLocaleString()}`)
 console.log(`      w/ source   : ${totals.claims.sourceProvided.toLocaleString()}`)
 console.log(`    predictions   : ${totals.predictions.occurrences.toLocaleString()}`)
-console.log(`    conclusions   : ${totals.conclusions.occurrences.toLocaleString()}`)
-console.log(`    stored (old)  : ${stored.toLocaleString()}`)
+console.log(`    conclusions   : ${totals.conclusions.ofWhichClaims.toLocaleString()} (attribute of claims, ${totals.conclusions.highConfidence} HIGH)`)
+console.log(`    source held out: ${totals.sourceMaterial.units.toLocaleString()} units in ${totals.sourceMaterial.posts.toLocaleString()} posts`)
+console.log('\n  vs stored extractor:')
+console.log(`    claims ${stored.toLocaleString()} | conclusions ${storedConcl.toLocaleString()} | predictions ${storedPred.toLocaleString()}`)
 console.log('\n→ audit/claims-audit.md\n')
