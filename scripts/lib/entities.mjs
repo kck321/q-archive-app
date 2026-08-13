@@ -19,9 +19,48 @@
 // source wording is always preserved; canonicalisation is a layer on top, never a rewrite.
 
 export const ENTITY_TYPES = [
-  'person', 'organization', 'government_agency', 'country_region', 'location',
-  'political_group', 'media_organization', 'program_operation', 'legal_investigative', 'other',
+  'person', 'organization', 'government_agency', 'government_institution', 'country_region',
+  'location', 'political_group_movement', 'media_organization', 'program_operation_project',
+  'legal_investigative', 'title_role', 'coded_alias', 'religious_spiritual', 'other_named_entity',
 ]
+
+/**
+ * Conceptual collectives. These are NOT entities: they name an idea or a crowd, not a specific
+ * organisation, so promoting them here would turn every capitalised concept into a subject with
+ * a mention count. They belong to Themes.
+ *
+ * The exception is when context identifies an actual named organisation — "the Patriots" as a
+ * named group rather than a way of addressing readers — which is why these are routed rather
+ * than deleted.
+ */
+export const ROUTE_TO_THEMES = new Set([
+  'THE PEOPLE', 'The People', 'Patriots', 'PATRIOTS', 'Anons', 'ANONS', 'Anon',
+  'MSM', 'Deep State', 'DEEP STATE', 'Big Pharma', 'Big Tech', 'Fake News', 'FAKE NEWS',
+  'Black Americans', 'The Left', 'The Right', 'Silent Majority', 'Establishment',
+  'Cabal', 'CABAL', 'Elites', 'Globalists', 'Swamp', 'THE SWAMP',
+])
+
+/** Titles and roles. The referent depends on who held the office at the date of the drop. */
+export const TITLE_ROLES = {
+  POTUS: 'President of the United States — the referent depends on the drop’s date.',
+  VP: 'Vice President.',
+  FLOTUS: 'First Lady of the United States.',
+  AG: 'Attorney General — several different people held this office across the corpus.',
+  SOS: 'Secretary of State.',
+  DIRNSA: 'Director of the National Security Agency.',
+  CJCS: 'Chairman of the Joint Chiefs of Staff.',
+}
+
+/**
+ * Coded aliases Q used for individuals. Resolved ONLY where surrounding context supports it,
+ * never globally — "NO NAME" is widely read as John McCain, but hard-mapping it everywhere
+ * would put words in Q's mouth in drops where the context does not carry that.
+ */
+export const CODED_ALIASES = {
+  'NO NAME': { likely: 'John McCain', note: 'Widely read as John McCain. Resolved only where the surrounding drop supports it.' },
+  'Renegade': { likely: 'Barack Obama', note: 'A Secret Service codename; resolved where context supports it.' },
+  'Snow White': { likely: null, note: 'Used as an operation name rather than a person.' },
+}
 
 /** Q's own signing tokens. A signature is not a mention of an entity. */
 export const SIGNATURE_TOKENS = new Set(['Q', 'Q+', 'WWG1WGA', 'NCSWIC'])
@@ -41,6 +80,11 @@ export const CONTEXT_DEPENDENT = {
   LL: 'Shorthand used for a named individual in some drops and ambiguous in others.',
   SC: 'Used for both a court and a person’s initials across different drops.',
   CA: 'Used for a US state and, in some drops, a person’s initials.',
+  Clinton: 'A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.',
+  DC: 'Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.',
+  JFK: 'John F. Kennedy in some drops, JFK airport in others, and JFK Jr. in a third set. Not resolved by the token alone.',
+  Jack: 'A given name used for more than one individual across the corpus.',
+  Maxwell: 'A surname used for more than one individual across the corpus.',
 }
 
 /**
