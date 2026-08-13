@@ -21,7 +21,11 @@
 export const ENTITY_TYPES = [
   'person', 'organization', 'government_agency', 'government_institution', 'country_region',
   'location', 'political_group_movement', 'media_organization', 'program_operation_project',
-  'legal_investigative', 'title_role', 'coded_alias', 'religious_spiritual', 'other_named_entity',
+  'legal_investigative', 'title_role', 'coded_alias', 'religious_spiritual',
+  // Added in the final typing pass, only where they materially help a reader browse or filter.
+  'legislation_regulation', 'event_incident', 'military_asset_vessel', 'creative_work',
+  'financial_institution', 'technology_platform', 'facility_property',
+  'other_named_entity',
 ]
 
 /**

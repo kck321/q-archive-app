@@ -1,0 +1,5875 @@
+{
+ "scope": "the 583 other_named_entity records",
+ "productionChanged": false,
+ "totals": {
+  "reviewed": 583,
+  "retyped": 477,
+  "remainingOther": 106,
+  "byNewType": {
+   "media_organization": 9,
+   "technology_platform": 4,
+   "creative_work": 6,
+   "coded_alias": 5,
+   "person": 407,
+   "government_institution": 8,
+   "military_asset_vessel": 3,
+   "title_role": 6,
+   "organization": 5,
+   "facility_property": 7,
+   "event_incident": 8,
+   "legislation_regulation": 9
+  },
+  "finalRegistryTypes": {
+   "title_role": 9,
+   "religious_spiritual": 8,
+   "government_institution": 45,
+   "other_named_entity": 106,
+   "media_organization": 47,
+   "coded_alias": 6,
+   "organization": 88,
+   "person": 889,
+   "technology_platform": 4,
+   "creative_work": 6,
+   "country_region": 27,
+   "location": 44,
+   "military_asset_vessel": 3,
+   "facility_property": 7,
+   "event_incident": 8,
+   "legislation_regulation": 9
+  },
+  "unresolvedUntouched": 972,
+  "routedToThemes": 17
+ },
+ "decisions": [
+  {
+   "sourceText": "QAnon",
+   "storedOccurrences": 32,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "… resistance (Freedom Fighters) tagging #[QAnon] on Twitter? …"
+  },
+  {
+   "sourceText": "MSDNC",
+   "storedOccurrences": 24,
+   "previousType": "other_named_entity",
+   "finalType": "media_organization",
+   "retyped": true,
+   "why": "a news outlet",
+   "confidence": "HIGH",
+   "contextSample": "…THE [MSDNC] IS DEAD.…"
+  },
+  {
+   "sourceText": "GOOG",
+   "storedOccurrences": 15,
+   "previousType": "other_named_entity",
+   "finalType": "technology_platform",
+   "retyped": true,
+   "why": "a technology platform or service",
+   "confidence": "HIGH",
+   "contextSample": "…[GOOG].…"
+  },
+  {
+   "sourceText": "Alice & Wonderland",
+   "storedOccurrences": 15,
+   "previousType": "other_named_entity",
+   "finalType": "creative_work",
+   "retyped": true,
+   "why": "a known title",
+   "confidence": "MEDIUM",
+   "contextSample": "…[Alice & Wonderland] – understood.…"
+  },
+  {
+   "sourceText": "COVID-19",
+   "storedOccurrences": 14,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…fit to keep public in mass-hysteria re: [COVID-19]?…"
+  },
+  {
+   "sourceText": "Justice K",
+   "storedOccurrences": 12,
+   "previousType": "other_named_entity",
+   "finalType": "coded_alias",
+   "retyped": true,
+   "why": "one of Q’s coded names; resolved only where context supports it",
+   "confidence": "MEDIUM",
+   "contextSample": "…[Justice K] confirmation…"
+  },
+  {
+   "sourceText": "D's",
+   "storedOccurrences": 11,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[D's] involved.…"
+  },
+  {
+   "sourceText": "MS13",
+   "storedOccurrences": 11,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…Why are illegals important? ([MS13])(Votes)(187)…"
+  },
+  {
+   "sourceText": "Hunter Biden",
+   "storedOccurrences": 10,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "US Military",
+   "storedOccurrences": 9,
+   "previousType": "other_named_entity",
+   "finalType": "government_institution",
+   "retyped": true,
+   "why": "a government body",
+   "confidence": "MEDIUM",
+   "contextSample": "…[US Military] = savior of mankind.…"
+  },
+  {
+   "sourceText": "Kim",
+   "storedOccurrences": 9,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…Where was [Kim] tonight?…"
+  },
+  {
+   "sourceText": "AF1",
+   "storedOccurrences": 9,
+   "previousType": "other_named_entity",
+   "finalType": "military_asset_vessel",
+   "retyped": true,
+   "why": "military designation or vessel prefix",
+   "confidence": "HIGH",
+   "contextSample": "…[AF1] (inside) thereafter.…"
+  },
+  {
+   "sourceText": "Daily Beast",
+   "storedOccurrences": 9,
+   "previousType": "other_named_entity",
+   "finalType": "media_organization",
+   "retyped": true,
+   "why": "a news outlet",
+   "confidence": "HIGH",
+   "contextSample": "…[Daily Beast] – Jackie Kucinich…"
+  },
+  {
+   "sourceText": "President of the United States",
+   "storedOccurrences": 9,
+   "previousType": "other_named_entity",
+   "finalType": "title_role",
+   "retyped": true,
+   "why": "an office description rather than a named person",
+   "confidence": "HIGH",
+   "contextSample": "…Was the former [President of the United States] groomed to be Command in Chief? …"
+  },
+  {
+   "sourceText": "CBS_Herridge",
+   "storedOccurrences": 9,
+   "previousType": "other_named_entity",
+   "finalType": "media_organization",
+   "retyped": true,
+   "why": "a news outlet",
+   "confidence": "HIGH",
+   "contextSample": "…https://twitter.com/[CBS_Herridge]/status/1260635872271228928…"
+  },
+  {
+   "sourceText": "Carter Page",
+   "storedOccurrences": 8,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Carter Page] was a plant.…"
+  },
+  {
+   "sourceText": "MSNBC",
+   "storedOccurrences": 8,
+   "previousType": "other_named_entity",
+   "finalType": "media_organization",
+   "retyped": true,
+   "why": "a news outlet",
+   "confidence": "HIGH",
+   "contextSample": "…[MSNBC] next?…"
+  },
+  {
+   "sourceText": "No Name",
+   "storedOccurrences": 8,
+   "previousType": "other_named_entity",
+   "finalType": "coded_alias",
+   "retyped": true,
+   "why": "one of Q’s coded names; resolved only where context supports it",
+   "confidence": "MEDIUM",
+   "contextSample": "…What forces shadowed [No Name]?…"
+  },
+  {
+   "sourceText": "Bill Priestap",
+   "storedOccurrences": 8,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Bill Priestap], Head of Counterintelligence and Strzok…"
+  },
+  {
+   "sourceText": "bad actors",
+   "storedOccurrences": 8,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…Who are the [bad actors]?…"
+  },
+  {
+   "sourceText": "USA Today",
+   "storedOccurrences": 8,
+   "previousType": "other_named_entity",
+   "finalType": "media_organization",
+   "retyped": true,
+   "why": "a news outlet",
+   "confidence": "HIGH",
+   "contextSample": null
+  },
+  {
+   "sourceText": "McCain",
+   "storedOccurrences": 8,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…WSJ – Colleen [McCain] Nelson…"
+  },
+  {
+   "sourceText": "4chan",
+   "storedOccurrences": 7,
+   "previousType": "other_named_entity",
+   "finalType": "technology_platform",
+   "retyped": true,
+   "why": "a technology platform or service",
+   "confidence": "HIGH",
+   "contextSample": "…ttp://nymag.com/selectall/2017/12/qanon-[4chan]-the-storm-conspiracy-explained.html…"
+  },
+  {
+   "sourceText": "AWAN",
+   "storedOccurrences": 7,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[AWAN].…"
+  },
+  {
+   "sourceText": "LEFT",
+   "storedOccurrences": 7,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…Left is [LEFT].…"
+  },
+  {
+   "sourceText": "Bill Clinton",
+   "storedOccurrences": 7,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Think [Bill Clinton] impeachment.…"
+  },
+  {
+   "sourceText": "CNBC",
+   "storedOccurrences": 7,
+   "previousType": "other_named_entity",
+   "finalType": "media_organization",
+   "retyped": true,
+   "why": "a news outlet",
+   "confidence": "HIGH",
+   "contextSample": "…[CNBC] – John Harwood…"
+  },
+  {
+   "sourceText": "Judicial Watch",
+   "storedOccurrences": 7,
+   "previousType": "other_named_entity",
+   "finalType": "organization",
+   "retyped": true,
+   "why": "a named organisation",
+   "confidence": "HIGH",
+   "contextSample": null
+  },
+  {
+   "sourceText": "ASIA",
+   "storedOccurrences": 7,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…U1 – CA – EU – [ASIA] – IRAN/NK…"
+  },
+  {
+   "sourceText": "Daily Caller",
+   "storedOccurrences": 7,
+   "previousType": "other_named_entity",
+   "finalType": "media_organization",
+   "retyped": true,
+   "why": "a news outlet",
+   "confidence": "HIGH",
+   "contextSample": null
+  },
+  {
+   "sourceText": "AC-130",
+   "storedOccurrences": 7,
+   "previousType": "other_named_entity",
+   "finalType": "military_asset_vessel",
+   "retyped": true,
+   "why": "military designation or vessel prefix",
+   "confidence": "HIGH",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Adm R",
+   "storedOccurrences": 6,
+   "previousType": "other_named_entity",
+   "finalType": "coded_alias",
+   "retyped": true,
+   "why": "one of Q’s coded names; resolved only where context supports it",
+   "confidence": "MEDIUM",
+   "contextSample": "…Why is [Adm R] so important? …"
+  },
+  {
+   "sourceText": "Red Cross",
+   "storedOccurrences": 6,
+   "previousType": "other_named_entity",
+   "finalType": "organization",
+   "retyped": true,
+   "why": "a named organisation",
+   "confidence": "HIGH",
+   "contextSample": "…[Red Cross] Iran.…"
+  },
+  {
+   "sourceText": "8ch",
+   "storedOccurrences": 6,
+   "previousType": "other_named_entity",
+   "finalType": "technology_platform",
+   "retyped": true,
+   "why": "a technology platform or service",
+   "confidence": "HIGH",
+   "contextSample": "…[8ch] risk (DDOS_+_inject).…"
+  },
+  {
+   "sourceText": "SDNY",
+   "storedOccurrences": 6,
+   "previousType": "other_named_entity",
+   "finalType": "government_institution",
+   "retyped": true,
+   "why": "a government body",
+   "confidence": "MEDIUM",
+   "contextSample": "…[[SDNY]-AG]?…"
+  },
+  {
+   "sourceText": "Trisha Anderson",
+   "storedOccurrences": 6,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…[Trisha Anderson]?…"
+  },
+  {
+   "sourceText": "CrowdStrike",
+   "storedOccurrences": 6,
+   "previousType": "other_named_entity",
+   "finalType": "technology_platform",
+   "retyped": true,
+   "why": "a technology platform or service",
+   "confidence": "HIGH",
+   "contextSample": "…Pro TIP: Look @ [CrowdStrike] …"
+  },
+  {
+   "sourceText": "DoD",
+   "storedOccurrences": 6,
+   "previousType": "other_named_entity",
+   "finalType": "government_institution",
+   "retyped": true,
+   "why": "a government body",
+   "confidence": "MEDIUM",
+   "contextSample": "…TEST [Thursday] by [DoD] to confirm 'free-flow' of direct comms.…"
+  },
+  {
+   "sourceText": "AG Sessions",
+   "storedOccurrences": 5,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…t slush fund was recently terminated by [AG Sessions]?…"
+  },
+  {
+   "sourceText": "Josh Campbell",
+   "storedOccurrences": 5,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes (in 5 places)",
+   "confidence": "MEDIUM",
+   "contextSample": "…[Josh Campbell], Special Assistant to James Comey - FIR…"
+  },
+  {
+   "sourceText": "Clowns In America",
+   "storedOccurrences": 5,
+   "previousType": "other_named_entity",
+   "finalType": "coded_alias",
+   "retyped": true,
+   "why": "one of Q’s coded names; resolved only where context supports it",
+   "confidence": "MEDIUM",
+   "contextSample": "…No Such Agency vs [Clowns In America].…"
+  },
+  {
+   "sourceText": "Freedom Caucus",
+   "storedOccurrences": 5,
+   "previousType": "other_named_entity",
+   "finalType": "government_institution",
+   "retyped": true,
+   "why": "a government body",
+   "confidence": "MEDIUM",
+   "contextSample": "…[Freedom Caucus].…"
+  },
+  {
+   "sourceText": "John M",
+   "storedOccurrences": 5,
+   "previousType": "other_named_entity",
+   "finalType": "coded_alias",
+   "retyped": true,
+   "why": "one of Q’s coded names; resolved only where context supports it",
+   "confidence": "MEDIUM",
+   "contextSample": "…What if [John M]’s surgery was fake?…"
+  },
+  {
+   "sourceText": "US President",
+   "storedOccurrences": 5,
+   "previousType": "other_named_entity",
+   "finalType": "title_role",
+   "retyped": true,
+   "why": "an office description rather than a named person",
+   "confidence": "HIGH",
+   "contextSample": "…Which [US President] is affiliated w/ HUMA?…"
+  },
+  {
+   "sourceText": "Ohr",
+   "storedOccurrences": 5,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…Bruce [Ohr], Associate Deputy Attorney General – De…"
+  },
+  {
+   "sourceText": "SCIF",
+   "storedOccurrences": 5,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…out of TT the DAY AFTER the ADM ROGERS [[SCIF]] MEETING?…"
+  },
+  {
+   "sourceText": "WHITAKER",
+   "storedOccurrences": 5,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…>What were the responsibilities of [WHITAKER]?…"
+  },
+  {
+   "sourceText": "Jussie Smollett",
+   "storedOccurrences": 5,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…\"FBI & DOJ to review the outrageous [Jussie Smollett] case in Chicago. It is an embarrassment…"
+  },
+  {
+   "sourceText": "LifeLog",
+   "storedOccurrences": 5,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…tem capabilities\". The objective of the [LifeLog] concept was \"to be able to trace the 't…"
+  },
+  {
+   "sourceText": "Midnight Riders",
+   "storedOccurrences": 5,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Modern day '[Midnight Riders]'. …"
+  },
+  {
+   "sourceText": "USMC",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…pray for their families, and our great @[USMC]\"…"
+  },
+  {
+   "sourceText": "Ray Chandler",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Ray Chandler] = Allison Mack x 100…"
+  },
+  {
+   "sourceText": "Ezra Cohen-Watnick",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Ezra Cohen-Watnick]…"
+  },
+  {
+   "sourceText": "Iron Eagle",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Iron Eagle].…"
+  },
+  {
+   "sourceText": "Special Counsel",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes (in 2 places)",
+   "confidence": "MEDIUM",
+   "contextSample": "…er any matters merit the appointment of [Special Counsel].”…"
+  },
+  {
+   "sourceText": "Sec of State",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[Sec of State]…"
+  },
+  {
+   "sourceText": "Hong Kong",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Hong Kong: [Hong Kong] Monetary Authority…"
+  },
+  {
+   "sourceText": "NXIVM",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes (in 2 places)",
+   "confidence": "MEDIUM",
+   "contextSample": "…Allison Mack [[NXIVM]] arrested [date]?…"
+  },
+  {
+   "sourceText": "Shadow Brokers",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Shadow Brokers] release actual code (NSA_key(s)).…"
+  },
+  {
+   "sourceText": "Business Insider",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "DECLAS",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[DECLAS]_…"
+  },
+  {
+   "sourceText": "The Guardian",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Tashina Gauhar",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Tashina Gauhar]?…"
+  },
+  {
+   "sourceText": "Attorney General",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "title_role",
+   "retyped": true,
+   "why": "an office description rather than a named person",
+   "confidence": "HIGH",
+   "contextSample": "…John Carlin, Assistant [Attorney General] – Head of DOJ’s National Security Divis…"
+  },
+  {
+   "sourceText": "NAT SEC",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…HUSSEIN \"STATE SECRETS\" WH [NAT SEC] ARTICLES 1-9 - BURIED?…"
+  },
+  {
+   "sourceText": "MAGA",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…https://mobile.twitter.com/KB[MAGA]FL/status/1008386945905504256/video/1…"
+  },
+  {
+   "sourceText": "SpaceX",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…What is [SpaceX]? …"
+  },
+  {
+   "sourceText": "The Atlantic",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "VIP Patriot",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[VIP Patriot]s!…"
+  },
+  {
+   "sourceText": "Breaking911",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…https://twitter.com/[Breaking911]/status/1037035627198521344…"
+  },
+  {
+   "sourceText": "C-SPAN",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Valerie Jarrett",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Who is [Valerie Jarrett]? …"
+  },
+  {
+   "sourceText": "Maggie NYT",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…(above) v last drops [HouseOfCards] re: [Maggie NYT] re: WL 'Maggie' drops re: WL attack re:…"
+  },
+  {
+   "sourceText": "Washington Examiner",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "AT&T",
+   "storedOccurrences": 4,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[AT&T] Diverted Capital Home.…"
+  },
+  {
+   "sourceText": "MS_13",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[MS_13] 187 [2] -24 -Distance?…"
+  },
+  {
+   "sourceText": "MS-13",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…DEFEND [MS-13]?…"
+  },
+  {
+   "sourceText": "Cory Booker",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…$1.8mm [Cory Booker] - Singapore.…"
+  },
+  {
+   "sourceText": "R's",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[R's] targeted (censorship/anti R = more $).…"
+  },
+  {
+   "sourceText": "Trump Tower",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "facility_property",
+   "retyped": true,
+   "why": "a named facility or installation",
+   "confidence": "MEDIUM",
+   "contextSample": null
+  },
+  {
+   "sourceText": "/pol/",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "… have high probability of shutting down [/pol/]. …"
+  },
+  {
+   "sourceText": "Building 8",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "facility_property",
+   "retyped": true,
+   "why": "a named facility or installation",
+   "confidence": "MEDIUM",
+   "contextSample": "…[Building 8].…"
+  },
+  {
+   "sourceText": "DEFCON",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…BDT & [DEFCON].…"
+  },
+  {
+   "sourceText": "Bush family",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…Why did the [Bush family] recently break silence and attack POTUS…"
+  },
+  {
+   "sourceText": "Mr. President",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Welcome [Mr. President].…"
+  },
+  {
+   "sourceText": "WRAY",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…TRUST [WRAY].…"
+  },
+  {
+   "sourceText": "MIL INTEL",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[MIL INTEL] providing support during this time?…"
+  },
+  {
+   "sourceText": "Frank LoBiondo",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Frank LoBiondo] - Republican …"
+  },
+  {
+   "sourceText": "Lynn Jenkins",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Lynn Jenkins] - Republican …"
+  },
+  {
+   "sourceText": "Tim Murphy",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Tim Murphy] - Republican U.S. House…"
+  },
+  {
+   "sourceText": "NY AG",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…Why is the [NY AG] resignation important? …"
+  },
+  {
+   "sourceText": "Allison Mack",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…[Allison Mack] [NXIVM] arrested [date]?…"
+  },
+  {
+   "sourceText": "New Zealand",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…New Zealand: Reserve Bank of [New Zealand]…"
+  },
+  {
+   "sourceText": "NYPD",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…Find the [2] [NYPD] detectives [187] mid 2017.…"
+  },
+  {
+   "sourceText": "4ch",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…MediaMatters [4ch].…"
+  },
+  {
+   "sourceText": "2016 election",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "event_incident",
+   "retyped": true,
+   "why": "discussed as something that happened",
+   "confidence": "LOW",
+   "contextSample": "…Think pre vs post [2016 election].…"
+  },
+  {
+   "sourceText": "Daily Mail",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Daily Mail]…"
+  },
+  {
+   "sourceText": "Bill Maher",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "New York Magazine",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Catholic Church",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "… See is the universal government of the [Catholic Church] and operates from Vatican City State, a…"
+  },
+  {
+   "sourceText": "The Great Awakening",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[The Great Awakening].…"
+  },
+  {
+   "sourceText": "Gavin Newsom",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "The Verge",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Daily Dot",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "National Review",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "MarketWatch",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Gang of Eight",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…Ryan (R-Wis.) — a member of Congress’s “[Gang of Eight]” that was briefed more than anyone else…"
+  },
+  {
+   "sourceText": "RealClearPolitics",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Kamala Harris",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…letter sent to Johnson on Tuesday, Sen. [Kamala Harris] of California renewed her calls for ano…"
+  },
+  {
+   "sourceText": "Ian Cameron",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…ABC NEWS exec producer [Ian Cameron] married to Susan Rice (Nat Sec Advisor …"
+  },
+  {
+   "sourceText": "TIME",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…IT’S [TIME] TO UNITE AND FIGHT FOR OUR FREEDOM.…"
+  },
+  {
+   "sourceText": "The Federalist",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Doug Collins",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "AG Barr",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "creative_work",
+   "retyped": true,
+   "why": "discussed as a film, book or show",
+   "confidence": "LOW",
+   "contextSample": "…Will newly discovered evidence ([AG Barr] - SDNY) FREE FLYNN?…"
+  },
+  {
+   "sourceText": "OpenSecrets",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "SOTU",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…political spin][FAKE NEWS cannot censor [SOTU] address] the 'anti-American' actions of…"
+  },
+  {
+   "sourceText": "USNS Comfort",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "military_asset_vessel",
+   "retyped": true,
+   "why": "military designation or vessel prefix",
+   "confidence": "HIGH",
+   "contextSample": "…[USNS Comfort] capacity?…"
+  },
+  {
+   "sourceText": "Black Lives Matter",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "National Guard",
+   "storedOccurrences": 3,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…to active-duty military and federalized [National Guard] troops.\"…"
+  },
+  {
+   "sourceText": "Holy See",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…1832 Rothschild loan to the [Holy See].…"
+  },
+  {
+   "sourceText": "JFK Jr.",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Xi",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…Thank you [Xi].…"
+  },
+  {
+   "sourceText": "23andMe",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[23andMe].…"
+  },
+  {
+   "sourceText": "Anne Wojcicki",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Anne Wojcicki].…"
+  },
+  {
+   "sourceText": "9-11",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…What occurred post [9-11]?…"
+  },
+  {
+   "sourceText": "Standard Hotel",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "facility_property",
+   "retyped": true,
+   "why": "a named facility or installation",
+   "confidence": "MEDIUM",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Paris accord",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…Think [Paris accord].…"
+  },
+  {
+   "sourceText": "SEC of STATE",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[SEC of STATE].…"
+  },
+  {
+   "sourceText": "MOAB",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[MOAB].…"
+  },
+  {
+   "sourceText": "Orrin Hatch",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Orrin Hatch] - Republican …"
+  },
+  {
+   "sourceText": "Bill Shuster",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Bill Shuster] - Republican …"
+  },
+  {
+   "sourceText": "Carol Shea-Porter",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Carol Shea-Porter] - Democrat …"
+  },
+  {
+   "sourceText": "Darrell Issa",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Darrell Issa] - Republican …"
+  },
+  {
+   "sourceText": "Dave Reichert",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Dave Reichert] - Republican …"
+  },
+  {
+   "sourceText": "Gene Green",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Gene Green] - Democrat …"
+  },
+  {
+   "sourceText": "Gregg Harper",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Gregg Harper] - Republican …"
+  },
+  {
+   "sourceText": "Ileana Ros-Lehtinen",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Ileana Ros-Lehtinen] - Republican …"
+  },
+  {
+   "sourceText": "Jeb Hensarling",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Jeb Hensarling] - Republican …"
+  },
+  {
+   "sourceText": "John J. Duncan, Jr.",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[John J. Duncan, Jr.] - Republican …"
+  },
+  {
+   "sourceText": "Niki Tsongas",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Niki Tsongas] - Democrat…"
+  },
+  {
+   "sourceText": "Rodney Frelinghuysen",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Rodney Frelinghuysen] - Republican …"
+  },
+  {
+   "sourceText": "Sandy Levin",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Sandy Levin] - Democrat …"
+  },
+  {
+   "sourceText": "Blake Farenthold",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Blake Farenthold] - Republican U.S. House…"
+  },
+  {
+   "sourceText": "John Conyers, Jr.",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[John Conyers, Jr.] - Democrat U.S. House…"
+  },
+  {
+   "sourceText": "Thad Cochran",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Thad Cochran] - Republican U.S. Senate…"
+  },
+  {
+   "sourceText": "Trent Franks",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Trent Franks] - Republican U.S. House…"
+  },
+  {
+   "sourceText": "Xavier Becerra",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Xavier Becerra] - Democrat Attorney General of Californ…"
+  },
+  {
+   "sourceText": "qresearch",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…We made a mistake on /[qresearch]/ exposing the password.…"
+  },
+  {
+   "sourceText": "Castle LOCK",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Castle LOCK].…"
+  },
+  {
+   "sourceText": "Costa Rica",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Costa Rica: Central Bank of [Costa Rica]…"
+  },
+  {
+   "sourceText": "Erik Prince",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Adm R.",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Why is [Adm R.] so important?…"
+  },
+  {
+   "sourceText": "GoFundMe",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…Review [GoFundMe] plea.…"
+  },
+  {
+   "sourceText": "WWII",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…What happened during [WWII]?…"
+  },
+  {
+   "sourceText": "J C",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[J C]…"
+  },
+  {
+   "sourceText": "Matt Gaetz",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "8chan",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…nn.com/videos/politics/2018/08/01/qanon-[8chan]-conspiracy-theory-trump-supporters-ath-…"
+  },
+  {
+   "sourceText": "HuffingtonPost",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "FOIA",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…What [FOIA] docs are being publicly released (recen…"
+  },
+  {
+   "sourceText": "American people",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…The [American people] are NOT STUPID.…"
+  },
+  {
+   "sourceText": "US Intel",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[US Intel] apparatus [reports?]?…"
+  },
+  {
+   "sourceText": "Nazi Germany",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Use of propaganda by [Nazi Germany]…"
+  },
+  {
+   "sourceText": "Gina Haspel",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Tony Podesta",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Where is [Tony Podesta]?…"
+  },
+  {
+   "sourceText": "Vox",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[Vox] – Jon Allen…"
+  },
+  {
+   "sourceText": "INSCOM",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…FISA (ABCs) v [INSCOM]…"
+  },
+  {
+   "sourceText": "STATE",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "creative_work",
+   "retyped": true,
+   "why": "discussed as a film, book or show",
+   "confidence": "LOW",
+   "contextSample": "…HUSSEIN \"[STATE] SECRETS\" WH NAT SEC ARTICLES 1-9 - BURI…"
+  },
+  {
+   "sourceText": "Hassan Rouhani",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[[Hassan Rouhani]]…"
+  },
+  {
+   "sourceText": "2016 Presidential election",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…1.\tPOTUS colluded w/ Russia to win the [2016 Presidential election]…"
+  },
+  {
+   "sourceText": "TX Congressman",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Did you hear what the [TX Congressman] just stated?…"
+  },
+  {
+   "sourceText": "Steele Dossier",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…If the FAKE [Steele Dossier] constituted the 'bulk' of the 'facts su…"
+  },
+  {
+   "sourceText": "US Navy",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Rizvi Traverse Management",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Rizvi Traverse Management].…"
+  },
+  {
+   "sourceText": "Natalia Veselnitskaya",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[[Natalia Veselnitskaya]]>Manafort…"
+  },
+  {
+   "sourceText": "Sergey Brin",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Sergey Brin] - GOOG [Founder][BORN IN MOSCOW]…"
+  },
+  {
+   "sourceText": "Rahm Emanuel",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Who is Mayor (current) [Rahm Emanuel]?…"
+  },
+  {
+   "sourceText": "Jerome Corsi",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…\"[Jerome Corsi] who I outed as a Mossad asset/agent in …"
+  },
+  {
+   "sourceText": "Guccifer 2.0",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…This is not about [Guccifer 2.0].…"
+  },
+  {
+   "sourceText": "Tucker Carlson",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "STRZOK",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…>[STRZOK] cooperating witness…"
+  },
+  {
+   "sourceText": "PAGE",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…>[PAGE] cooperating witness…"
+  },
+  {
+   "sourceText": "REDDIT",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…Actions of [TWITTER, FB, GOOG, YT, [REDDIT], etc..]:…"
+  },
+  {
+   "sourceText": "Pol",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…“[Pol]itics.”…"
+  },
+  {
+   "sourceText": "Judge K",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…g to [KILL] sexual assault allegation v [Judge K] in exchange for immediate pullback of D…"
+  },
+  {
+   "sourceText": "michaelbeatty3",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…https://twitter.com/[michaelbeatty3]/status/1042959024235266048…"
+  },
+  {
+   "sourceText": "Sen. Graham",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Did you see [Sen. Graham]'s speech today?…"
+  },
+  {
+   "sourceText": "PEOPLE",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[PEOPLE] have POWER.…"
+  },
+  {
+   "sourceText": "Mad Hatter",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…By: Marty Torrey [[Mad Hatter]]…"
+  },
+  {
+   "sourceText": "RED OCTOBER",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[RED OCTOBER]?…"
+  },
+  {
+   "sourceText": "Perkins Coie",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "event_incident",
+   "retyped": true,
+   "why": "discussed as something that happened",
+   "confidence": "LOW",
+   "contextSample": "… season with at least one attorney from [Perkins Coie], the Democratic National Committee’s pr…"
+  },
+  {
+   "sourceText": "Declaration of Independence",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…– [Declaration of Independence]  …"
+  },
+  {
+   "sourceText": "GeorgePapa19",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…https://twitter.com/[GeorgePapa19]/status/1059631841458573312…"
+  },
+  {
+   "sourceText": "PlayStation",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Ivanka Trump",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "GHWB",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…Re: [GHWB] USSS code name re: Timber wolf…"
+  },
+  {
+   "sourceText": "BuzzFeed",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Posse Comitatus Act",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "legislation_regulation",
+   "retyped": true,
+   "why": "name ends with a legislative noun",
+   "confidence": "HIGH",
+   "contextSample": "…[Posse Comitatus Act].…"
+  },
+  {
+   "sourceText": "MKUltra",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Charlie Kirk",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Greg Bower",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes (in 2 places)",
+   "confidence": "MEDIUM",
+   "contextSample": "…[Greg Bower] – Top Congressional Liaison - FIRED…"
+  },
+  {
+   "sourceText": "Scavino45",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…https://twitter.com/[Scavino45]/status/1096628767701848064…"
+  },
+  {
+   "sourceText": "May",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…London [May]or. …"
+  },
+  {
+   "sourceText": "JeffDeRiso",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…https://twitter.com/[JeffDeRiso]/status/1098958812491460611…"
+  },
+  {
+   "sourceText": "ICANN",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "George H.W. Bush",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Rod",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[Rod]ney Frelinghuysen - Republican …"
+  },
+  {
+   "sourceText": "Bob",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[Bob] Corker - Republican …"
+  },
+  {
+   "sourceText": "M2Madness",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…https://twitter.com/[M2Madness]/status/1105296225396506626…"
+  },
+  {
+   "sourceText": "Middle East",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Who paid for his travel to the [Middle East]? …"
+  },
+  {
+   "sourceText": "American People",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Gang of 8",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "LdR",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…Think [LdR].…"
+  },
+  {
+   "sourceText": "Ilhan Omar",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "McKinsey & Company",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[McKinsey & Company]…"
+  },
+  {
+   "sourceText": "Dr. Emmett J. Rice",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[Dr. Emmett J. Rice].…"
+  },
+  {
+   "sourceText": "D_party",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…Possible China in sec_comms w/ former [D_party] senior officials re: re-institute US pi…"
+  },
+  {
+   "sourceText": "WattersWorld",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…http://twitter.com/[WattersWorld]/status/1203403806110699521…"
+  },
+  {
+   "sourceText": "B2",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[B2] (BB) 'public' statements past week?…"
+  },
+  {
+   "sourceText": "GANG OF 8",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes (in 2 places)",
+   "confidence": "MEDIUM",
+   "contextSample": "…[GANG OF 8] (INTEL)…"
+  },
+  {
+   "sourceText": "Imran Awan",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Daily Wire",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "New Jersey",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Democratic [New Jersey] State Assemblyman, Neil Cohen, was conv…"
+  },
+  {
+   "sourceText": "US GOV",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…TUALLY DEMONSTRATE WITHOUT ARGUMENT THE [US GOV]ERNMENT, UNDER HUSSEIN, KNOWINGLY, PRESE…"
+  },
+  {
+   "sourceText": "Colin Skow",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Election Day",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "event_incident",
+   "retyped": true,
+   "why": "name carries an event noun",
+   "confidence": "MEDIUM",
+   "contextSample": "…[-1] [Election Day]…"
+  },
+  {
+   "sourceText": "2020 election",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…nated inauthentic behavior ahead of the [2020 election] in the US.\"…"
+  },
+  {
+   "sourceText": "IngrahamAngle",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…https://twitter.com/[IngrahamAngle]/status/1257754348395864068…"
+  },
+  {
+   "sourceText": "McMaster",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…Why did [[McMaster]] target and remove loyal intel operativ…"
+  },
+  {
+   "sourceText": "military.com",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…https://www.[military.com]/daily-news/2018/03/28/when-it-comes-gua…"
+  },
+  {
+   "sourceText": "ODNI",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…https://twitter.com/[ODNI]gov/status/1261384825438482432…"
+  },
+  {
+   "sourceText": "2020 Presidential Election",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "event_incident",
+   "retyped": true,
+   "why": "name carries an event noun",
+   "confidence": "MEDIUM",
+   "contextSample": "…[2020 Presidential Election]…"
+  },
+  {
+   "sourceText": "Air Force",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…U.S. [Air Force] B-52 [Precision Bombs].…"
+  },
+  {
+   "sourceText": "Dan",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[Dan]gerous.…"
+  },
+  {
+   "sourceText": "ActBlue",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…Who is [ActBlue]?…"
+  },
+  {
+   "sourceText": "Midnight Rider",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Modern day '[Midnight Rider]s'. …"
+  },
+  {
+   "sourceText": "NewsBreak",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Andy Ngo",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "CodeMonkey",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…https://twitter.com/[CodeMonkey]Z/status/1197692575915757568…"
+  },
+  {
+   "sourceText": "CISA",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "H. Biden",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…Subpoena of all [H. Biden]'s financial records? …"
+  },
+  {
+   "sourceText": "Judge Ronnie Abrams",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…2. Overturn of conviction by [Judge Ronnie Abrams] of the Southern District of New York [a…"
+  },
+  {
+   "sourceText": "Greg Andres",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Married to [Greg Andres]? …"
+  },
+  {
+   "sourceText": "Canadian PM",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Why is the [Canadian PM] so important?…"
+  },
+  {
+   "sourceText": "Michele Bachmann",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes (in 2 places)",
+   "confidence": "MEDIUM",
+   "contextSample": "…Cain and others roundly criticized Rep. [Michele Bachmann] in 2012 when she and four members of th…"
+  },
+  {
+   "sourceText": "Office of the Director of National Intelligence",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…epartment of Homeland Security, and the [Office of the Director of National Intelligence], warning about Muslim Brotherhood infil…"
+  },
+  {
+   "sourceText": "SecureDrop",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[SecureDrop] [Whistleblowers]?…"
+  },
+  {
+   "sourceText": "APACHE",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[APACHE].…"
+  },
+  {
+   "sourceText": "Black Forest",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Black Forest].…"
+  },
+  {
+   "sourceText": "Wizards & Warlocks",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…What council do the [Wizards & Warlocks] control?…"
+  },
+  {
+   "sourceText": "Abdullah bin Abdulaziz",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…Who was [Abdullah bin Abdulaziz]?…"
+  },
+  {
+   "sourceText": "Mika Brzezinski",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…MSNBC – [Mika Brzezinski]…"
+  },
+  {
+   "sourceText": "DELTA",
+   "storedOccurrences": 2,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…(3) Q/POTUS [0] [DELTA] …"
+  },
+  {
+   "sourceText": "London Mayor",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "title_role",
+   "retyped": true,
+   "why": "an office description rather than a named person",
+   "confidence": "HIGH",
+   "contextSample": "…[London Mayor]. …"
+  },
+  {
+   "sourceText": "The Fed",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…licies for their homes and businesses.  [The Fed]eral Emergency Management Agency’s Ready…"
+  },
+  {
+   "sourceText": "Southern California",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…ing who lost their lives in yesterday’s [Southern California] helicopter crash. We pray for their fam…"
+  },
+  {
+   "sourceText": "Chris Christie",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…$400k [Chris Christie] - Mary Pat US.…"
+  },
+  {
+   "sourceText": "Gateway Bridge Project",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Gateway Bridge Project].…"
+  },
+  {
+   "sourceText": "Omnibus Bill",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Omnibus Bill].…"
+  },
+  {
+   "sourceText": "Fort Campbell",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "facility_property",
+   "retyped": true,
+   "why": "a named facility or installation",
+   "confidence": "MEDIUM",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Situation Room",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Situation Room].…"
+  },
+  {
+   "sourceText": "Sparrow Red",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Sparrow Red].…"
+  },
+  {
+   "sourceText": "Fareed Zakaria",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…What is ‘Post-American World by [Fareed Zakaria]’?…"
+  },
+  {
+   "sourceText": "Mariah Sunshine Coogan",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "West Hollywood",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Agnes Nixon",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Clinton Health Access Initiative",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Harvard Muslim Alumni",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Earth Day",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Today is [Earth Day].…"
+  },
+  {
+   "sourceText": "Serzh Sargsyan",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Stormy Daniels",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Public context: re: payment to [Stormy Daniels]?…"
+  },
+  {
+   "sourceText": "Korean Peninsula",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Peace on the [Korean Peninsula] isn’t big news?…"
+  },
+  {
+   "sourceText": "Alex Jones",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Burkina Faso",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Burkina Faso]: Central Bank of West African States (B…"
+  },
+  {
+   "sourceText": "National Security Action",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "East Caribbean",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[East Caribbean] area: Eastern Caribbean Central Bank…"
+  },
+  {
+   "sourceText": "El Salvador",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…El Salvador: Central Reserve Bank of [El Salvador]…"
+  },
+  {
+   "sourceText": "Equatorial Guinea",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Equatorial Guinea]: Bank of Central African States…"
+  },
+  {
+   "sourceText": "The Gambia",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…The Gambia: Central Bank of [The Gambia]…"
+  },
+  {
+   "sourceText": "Guinea Bissau",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Guinea Bissau]: Central Bank of West African States (B…"
+  },
+  {
+   "sourceText": "Netherlands Antilles",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Netherlands Antilles: Bank of the [Netherlands Antilles]…"
+  },
+  {
+   "sourceText": "Officer Familia",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Officer Familia] [1]…"
+  },
+  {
+   "sourceText": "Papua New Guinea",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Papua New Guinea: Bank of [Papua New Guinea]…"
+  },
+  {
+   "sourceText": "San Marino",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Marino: Central Bank of the Republic of [San Marino]…"
+  },
+  {
+   "sourceText": "Sierra Leone",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Sierra Leone: Bank of [Sierra Leone]…"
+  },
+  {
+   "sourceText": "South Africa",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…South Africa: [South Africa]n Reserve Bank…"
+  },
+  {
+   "sourceText": "Sri Lanka",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Sri Lanka: Central Bank of [Sri Lanka]…"
+  },
+  {
+   "sourceText": "United Arab Emirates",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…United Arab Emirates: Central Bank of [United Arab Emirates]…"
+  },
+  {
+   "sourceText": "Charlie Dent",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Charlie Dent]. …"
+  },
+  {
+   "sourceText": "Raul Labrador",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Raul Labrador].…"
+  },
+  {
+   "sourceText": "Hyde Park",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Think [Hyde Park].…"
+  },
+  {
+   "sourceText": "Kashyap Patel",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Kashyap Patel] - name to remember.…"
+  },
+  {
+   "sourceText": "Marine One",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Marine One] proofs forthcoming.…"
+  },
+  {
+   "sourceText": "Alex Rodriguez",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Saturday Night Live",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Santa Fe",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Bin Laden",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Why was the [Bin Laden] family here during 9-11?…"
+  },
+  {
+   "sourceText": "Hugh Hefner",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…What if [Hugh Hefner] was /a Clown In America?…"
+  },
+  {
+   "sourceText": "Curt Schilling",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Nat Guard",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…ow this based on earlier drops re: SA / [Nat Guard] / MIL Assets activate US soil.…"
+  },
+  {
+   "sourceText": "Shiva Ayyadurai",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Guardian Project",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Ronan Farrow",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Ali Velshi",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Liberal Democrats",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Liberal Democrats] …"
+  },
+  {
+   "sourceText": "Conservative Review",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Chris Cuomo",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Mayo Clinic",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…What is the [Mayo Clinic]?…"
+  },
+  {
+   "sourceText": "Phill Mudd",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Sherman Act",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "legislation_regulation",
+   "retyped": true,
+   "why": "name ends with a legislative noun",
+   "confidence": "HIGH",
+   "contextSample": "…The [Sherman Act] outlaws \"every contract, combination, o…"
+  },
+  {
+   "sourceText": "Telecommunications Act of 1996",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Bill Paxon",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Bill Paxon].…"
+  },
+  {
+   "sourceText": "West Virginia",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Hoover Dam",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Armed man [Hoover Dam] re: link to Q?…"
+  },
+  {
+   "sourceText": "Border Patrol",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Sharing of ICE/[Border Patrol] C-INTEL [schedules] to SAFEGUARD? EXIT/…"
+  },
+  {
+   "sourceText": "New Mexico",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Matt Doran",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Operation Underground Railroad",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Sunday Night",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "event_incident",
+   "retyped": true,
+   "why": "name carries an event noun",
+   "confidence": "MEDIUM",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Tim Ballard",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…ment of Homeland Security special agent [Tim Ballard], perhaps America’s foremost human traff…"
+  },
+  {
+   "sourceText": "Afghan Arabs",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…>>[Afghan Arabs]>>Haqqani + Hekmatyar…"
+  },
+  {
+   "sourceText": "Tony Blair",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Australian Ambassador",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "… now proven to be a spy, possibly with ([Australian Ambassador]) Alexander Downer” who her husband met …"
+  },
+  {
+   "sourceText": "Benedict Arnold",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Ars Technica",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Ancient Egyptians",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Ancient Egyptians] considered gold “the skin of the gods” …"
+  },
+  {
+   "sourceText": "Admiral Rogers",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Real Clear Politics",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Chief Justice John Roberts",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "title_role",
+   "retyped": true,
+   "why": "an office description rather than a named person",
+   "confidence": "HIGH",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Former President",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "title_role",
+   "retyped": true,
+   "why": "an office description rather than a named person",
+   "confidence": "HIGH",
+   "contextSample": "…[Former President]'s are still able to arrange SCIFs?…"
+  },
+  {
+   "sourceText": "National Security Adviser",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Operation Specialists",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Played by '[Operation Specialists]' [pre-event] last night.…"
+  },
+  {
+   "sourceText": "Doug Ducey",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Jon Kyl",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Cindy McCain",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Brad Ahmundson",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "… London. Corsi and Piper Jaffray broker [Brad Ahmundson] were integral to a fraud that took Minn…"
+  },
+  {
+   "sourceText": "Piper Jaffray",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…97 sting operation in London. Corsi and [Piper Jaffray] broker Brad Ahmundson were integral to …"
+  },
+  {
+   "sourceText": "The Independent",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Patriot Day",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Pope Francis",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "America Newsroom",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Fox Business",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Vice Motherboard",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "media_organization",
+   "retyped": true,
+   "why": "a news outlet",
+   "confidence": "HIGH",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Andre Carson",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…>>Rep [Andre Carson] (Indiana)…"
+  },
+  {
+   "sourceText": "Louis Farrakhan",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…>>[Louis Farrakhan]…"
+  },
+  {
+   "sourceText": "Rep Swalwell",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Gregg Jarrett",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Chris Evans",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Katrina Pierson",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Marty Torrey",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…By: [Marty Torrey] [Mad Hatter]…"
+  },
+  {
+   "sourceText": "Capitol Hill",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "People's Liberation Army",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "The Hunt For",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…\"[The Hunt For]\" dropped - why?…"
+  },
+  {
+   "sourceText": "Peggy Grande",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Sidley Austin",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "organization",
+   "retyped": true,
+   "why": "a named organisation",
+   "confidence": "HIGH",
+   "contextSample": "…[Sidley Austin].…"
+  },
+  {
+   "sourceText": "Executive Branch",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Think [Executive Branch] / NSA / etc.…"
+  },
+  {
+   "sourceText": "Hatch Act",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "legislation_regulation",
+   "retyped": true,
+   "why": "name ends with a legislative noun",
+   "confidence": "HIGH",
+   "contextSample": "…Are we subject to the [Hatch Act]?…"
+  },
+  {
+   "sourceText": "Don McGahn",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…ers of the D party [6] send a letter to [Don McGahn] in early Oct. outlining 'Hatch Act' vio…"
+  },
+  {
+   "sourceText": "Harriet Cash",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Red October",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…The Hunt for [Red October]. …"
+  },
+  {
+   "sourceText": "Reince Priebus",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…t the Trump White House. Chief of Staff [Reince Priebus] and spokesman Sean Spicer both left the…"
+  },
+  {
+   "sourceText": "Chelsey Smith",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Hyatt Regency",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Hyatt Regency].…"
+  },
+  {
+   "sourceText": "White Squall",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…>>[White Squall]…"
+  },
+  {
+   "sourceText": "United States Military",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "government_institution",
+   "retyped": true,
+   "why": "a government body",
+   "confidence": "MEDIUM",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Sundar Pichai",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Cardinal Pell",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[[Cardinal Pell]]…"
+  },
+  {
+   "sourceText": "The Age",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "media_organization",
+   "retyped": true,
+   "why": "a news outlet",
+   "confidence": "HIGH",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Perth Now",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Trump Hotels",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Maggie Haberman",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…NYT – [Maggie Haberman]…"
+  },
+  {
+   "sourceText": "Boy Scouts",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…>Called for the sex-integration of [Boy Scouts] and Girl Scouts because they “perpetuat…"
+  },
+  {
+   "sourceText": "Girl Scouts",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…r the sex-integration of Boy Scouts and [Girl Scouts] because they “perpetuate stereotyped se…"
+  },
+  {
+   "sourceText": "Mann Act",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "legislation_regulation",
+   "retyped": true,
+   "why": "name ends with a legislative noun",
+   "confidence": "HIGH",
+   "contextSample": "…>Ginsburg wrote that the [Mann Act] (which punishes those who engage in int…"
+  },
+  {
+   "sourceText": "Red Castle",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Think Green/[Red Castle].…"
+  },
+  {
+   "sourceText": "Green Castle",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Green Castle].…"
+  },
+  {
+   "sourceText": "Kirk Adams",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Cecile Richards",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Bianna Vitalievna",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…CBS NEWS/CNN Journ [Bianna Vitalievna] married to Peter R Orszag (Dir of Offic…"
+  },
+  {
+   "sourceText": "Jay Carney",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…correspondent Claire Shipman married to [Jay Carney] (WH Press Sec - HUSSEIN)?…"
+  },
+  {
+   "sourceText": "Emergency Alert System",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "organization",
+   "retyped": true,
+   "why": "a named organisation",
+   "confidence": "HIGH",
+   "contextSample": "…Think [Emergency Alert System]. …"
+  },
+  {
+   "sourceText": "Corinthia Hotel",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "facility_property",
+   "retyped": true,
+   "why": "a named facility or installation",
+   "confidence": "MEDIUM",
+   "contextSample": "…The [Corinthia Hotel].…"
+  },
+  {
+   "sourceText": "The New Yorker",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "The Sun",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Rolling Stone",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Saddam Hussein",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Senator Collins",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Mitt Romney",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Mitt Romney].…"
+  },
+  {
+   "sourceText": "North Carolina",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Bernie Sanders",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Super Bowl",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "creative_work",
+   "retyped": true,
+   "why": "discussed as a film, book or show",
+   "confidence": "LOW",
+   "contextSample": "…Will make the [Super Bowl] look like a puppy show. …"
+  },
+  {
+   "sourceText": "Urban Dictionary",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Cardinal George Pell",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Bloody Sunday",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "event_incident",
+   "retyped": true,
+   "why": "a named historical event",
+   "confidence": "HIGH",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Bill Slater",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Todd Penley",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Federal Government",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…e Attorney General to attorneys for the [Federal Government] with respect to the disposition of Fede…"
+  },
+  {
+   "sourceText": "Ivy League",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Trump Jr",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…When was it reported [Trump Jr] dropped his SS detail?…"
+  },
+  {
+   "sourceText": "Stacey Dash",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Sen Graham",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Remain in open comms w/ [Sen Graham] & Grassley re: Whistleblower Protection…"
+  },
+  {
+   "sourceText": "Federal Agencies",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Chris Cox",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Nick Lewin",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[[Nick Lewin]]…"
+  },
+  {
+   "sourceText": "Prince Andrew",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Prince Andrew] is deeply connected.…"
+  },
+  {
+   "sourceText": "Michal Chelbin",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Nicky Hilton",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Who did [Nicky Hilton] (sister of Paris) marry?…"
+  },
+  {
+   "sourceText": "Paris Hilton",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Sebastian Gorka",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "The Daily Beast",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Gateway Pundit",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Mil Intel",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Autists should consider joining ABCs/[Mil Intel] programs if interested. …"
+  },
+  {
+   "sourceText": "Dafna Linzer",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[[Dafna Linzer]]…"
+  },
+  {
+   "sourceText": "Mueller Report",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Presidential Advisory",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Victoria's Secret",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Founder of [Victoria's Secret].…"
+  },
+  {
+   "sourceText": "Emergency Broadcast System",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…en broadcast. We will be initiating the [Emergency Broadcast System] (EMS) during this time in an effort to …"
+  },
+  {
+   "sourceText": "Stealth Bomber",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Stealth Bomber]s fly undetected. …"
+  },
+  {
+   "sourceText": "Clare Bronfman",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Wheels Up",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[[Wheels Up]] flight logs [CLAS 1-99] under investig…"
+  },
+  {
+   "sourceText": "Ghislaine Maxwell",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Ghislaine Maxwell].…"
+  },
+  {
+   "sourceText": "Jake Tapper",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…CNN – [Jake Tapper]…"
+  },
+  {
+   "sourceText": "Hollywood Reporter",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Cornell Law School",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "American Red Cross",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Senator Grassley",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Woodrow Wilson",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…-[Woodrow Wilson]…"
+  },
+  {
+   "sourceText": "Star Wars",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "creative_work",
+   "retyped": true,
+   "why": "a known title",
+   "confidence": "MEDIUM",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Marsha Blackburn",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Paris Accord",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "legislation_regulation",
+   "retyped": true,
+   "why": "name ends with a legislative noun",
+   "confidence": "HIGH",
+   "contextSample": "…Think [Paris Accord] [attempt].…"
+  },
+  {
+   "sourceText": "Official Secrets",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…'[Official Secrets].'…"
+  },
+  {
+   "sourceText": "Paris Agreement",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "legislation_regulation",
+   "retyped": true,
+   "why": "name ends with a legislative noun",
+   "confidence": "HIGH",
+   "contextSample": null
+  },
+  {
+   "sourceText": "New Orleans",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Waukesha South High School",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Oshkosh Wisconsin",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Naval Air Station",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "facility_property",
+   "retyped": true,
+   "why": "a named facility or installation",
+   "confidence": "MEDIUM",
+   "contextSample": null
+  },
+  {
+   "sourceText": "National Presidential Alert System",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[National Presidential Alert System] [2].…"
+  },
+  {
+   "sourceText": "Pearson Publishing",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…FED Gov't [HUSSEIN] > [Pearson Publishing]…"
+  },
+  {
+   "sourceText": "Bill Binney",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Bill Binney].…"
+  },
+  {
+   "sourceText": "Iris Weinshall",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Iris Weinshall].…"
+  },
+  {
+   "sourceText": "Heidi Fleiss",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…CS/[Heidi Fleiss]. …"
+  },
+  {
+   "sourceText": "Great Awakening",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…The [Great Awakening].…"
+  },
+  {
+   "sourceText": "Thousand Talents Plan",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…as a contractual participant in China’s [Thousand Talents Plan] from in or about 2012 to 2017.”…"
+  },
+  {
+   "sourceText": "Andy Harris",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Harmeet Dhillon",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Luke Goldberg",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Rochelle Coombs",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Lou Dobbs",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Midterm Elections",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Star Wars Commander",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "creative_work",
+   "retyped": true,
+   "why": "a known title",
+   "confidence": "MEDIUM",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Activision Blizzard",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Chris Hayes",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Greg Kotseos",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Civil Rights Division",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "The Lancet",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Byron York",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Shannon Bream",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Fox Friends",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Ingraham Angle",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Anderson Cooper",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Valerie Plame",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Omarosa Manigault Newman",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Why did [[Omarosa Manigault Newman]] attempt to entrap POTUS through secret…"
+  },
+  {
+   "sourceText": "Rudolph Contreras",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes (in 2 places)",
+   "confidence": "MEDIUM",
+   "contextSample": "…Why did U.S. District Court Judge [Rudolph Contreras] recuse?…"
+  },
+  {
+   "sourceText": "Gov Murphy",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Tito Calloway",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Nathalie Himmelrich",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…― [Nathalie Himmelrich]…"
+  },
+  {
+   "sourceText": "Global Health Leaders",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Cambridge Dictionary",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Congressional Black Caucus",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "government_institution",
+   "retyped": true,
+   "why": "a government body",
+   "confidence": "MEDIUM",
+   "contextSample": "…1. Form [Congressional Black Caucus] [1971][compartmentalize-label]…"
+  },
+  {
+   "sourceText": "Homeland Security",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "government_institution",
+   "retyped": true,
+   "why": "a government body",
+   "confidence": "MEDIUM",
+   "contextSample": "…’; leading the team is ex-Department of [Homeland Security] special agent Tim Ballard, perhaps Amer…"
+  },
+  {
+   "sourceText": "Matt Finn",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Dana Boente",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Pg 271 - [Dana Boente]…"
+  },
+  {
+   "sourceText": "Insurrection Act of 1807",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…[Insurrection Act of 1807].…"
+  },
+  {
+   "sourceText": "Google Trends",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "French Revolution",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "… revolutions and ideals, especially the [French Revolution] of 1789. The energy created and express…"
+  },
+  {
+   "sourceText": "Jeremiah Ellison",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Confederate General",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Nature's God",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…tion to which the Laws of Nature and of [Nature's God] entitle them, a decent respect to the o…"
+  },
+  {
+   "sourceText": "Confederate Democrats",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "event_incident",
+   "retyped": true,
+   "why": "discussed as something that happened",
+   "confidence": "LOW",
+   "contextSample": "…il War in a fight to abolish slavery [v [Confederate Democrats]].…"
+  },
+  {
+   "sourceText": "Breakfast Club",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "facility_property",
+   "retyped": true,
+   "why": "a named facility or installation",
+   "confidence": "MEDIUM",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Yale Medicine",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Cornell Law",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "legislation_regulation",
+   "retyped": true,
+   "why": "name ends with a legislative noun",
+   "confidence": "HIGH",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Eleventh Amendment",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "legislation_regulation",
+   "retyped": true,
+   "why": "name ends with a legislative noun",
+   "confidence": "HIGH",
+   "contextSample": "… that plaintiffs were not barred by the [Eleventh Amendment] or other immunity doctrines from suing …"
+  },
+  {
+   "sourceText": "First Lady",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…my of all humanity, I bless you and the [First Lady], the beloved American nation, and all m…"
+  },
+  {
+   "sourceText": "World Health Organization",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "World Trade Organization",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "United Nations",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "El Centro",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Chad Pergram",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Lila Grace Rose",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Radnor Township",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…Democratic [Radnor Township] Board of Commissioners member, Philip A…"
+  },
+  {
+   "sourceText": "Gerry Studds",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…Democratic Massachusetts Congressman, [Gerry Studds], was censured by the House of Represent…"
+  },
+  {
+   "sourceText": "Dale Kenyon",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…atic Former Mayor of Clayton, New York, [Dale Kenyon], was indicted for sexual acts against a…"
+  },
+  {
+   "sourceText": "Rodney Mullin",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…hairman for Davidson County, Tennessee, [Rodney Mullin], resigned amid child pornography allega…"
+  },
+  {
+   "sourceText": "Terre Haute",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Democratic official from [Terre Haute], Indiana, David Roberts was sentenced t…"
+  },
+  {
+   "sourceText": "Neil Cohen",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…emocratic New Jersey State Assemblyman, [Neil Cohen], was convicted of possession and distri…"
+  },
+  {
+   "sourceText": "Tim Nolan",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Republican [Tim Nolan], chairman of Donald Trump’s presidentia…"
+  },
+  {
+   "sourceText": "Howard Scott Heldreth",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Republican anti-abortion activist [Howard Scott Heldreth] is a convicted child rapist in Florida.…"
+  },
+  {
+   "sourceText": "Edison Misla Aldarondo",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…Republican legislator [Edison Misla Aldarondo] was sentenced to 10 years in prison for…"
+  },
+  {
+   "sourceText": "Strom Thurmond",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Republican Senator [Strom Thurmond], a notable racist, had sex with a 15-ye…"
+  },
+  {
+   "sourceText": "Randal David Ankeney",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…Republican activist [Randal David Ankeney] pleaded guilty to attempted sexual assa…"
+  },
+  {
+   "sourceText": "Marty Glickman",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Republican activist [Marty Glickman] (a.k.a. “Republican Marty”), was taken …"
+  },
+  {
+   "sourceText": "Jon Matthews",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…Republican talk show host [Jon Matthews] pleaded guilty to exposing his genitals…"
+  },
+  {
+   "sourceText": "Earl Kimmerling",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Keola Childs",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…Republican County Councilman [Keola Childs] pleaded guilty to molesting a male chil…"
+  },
+  {
+   "sourceText": "Merrill Robert Barter",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…Republican County Commissioner [Merrill Robert Barter] pleaded guilty to unlawful sexual conta…"
+  },
+  {
+   "sourceText": "Robin Vanderwall",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…t and Citadel Military College graduate [Robin Vanderwall] was convicted in Virginia on five count…"
+  },
+  {
+   "sourceText": "Jon Grunseth",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…Republican businessman [Jon Grunseth] withdrew his candidacy for Minnesota go…"
+  },
+  {
+   "sourceText": "Young Republican Federation",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…Republican director of the “[Young Republican Federation]” Nicholas Elizondo molested his 6-year …"
+  },
+  {
+   "sourceText": "Harvey Weinstein",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…donor, activist, and Hollywood producer [Harvey Weinstein] is being criminally prosecuted and civi…"
+  },
+  {
+   "sourceText": "Asia Argento",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…mocratic activist and #metoo proponent, [Asia Argento], settled a lawsuit for sexual harassmen…"
+  },
+  {
+   "sourceText": "Neil Goldschmidt",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…Democratic Governor of Oregon, [Neil Goldschmidt], after being caught by a newspaper, pub…"
+  },
+  {
+   "sourceText": "Mel Reynolds",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…Democratic Illinois Congressman, [Mel Reynolds] resigned from Congress after he was con…"
+  },
+  {
+   "sourceText": "Fred Richmond",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…Democratic New York Congressman, [Fred Richmond], was arrested in Washington D.C. for so…"
+  },
+  {
+   "sourceText": "Roman Polanski",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…mocratic activist, donor, and director, [Roman Polanski], fled the country after pleading guilty…"
+  },
+  {
+   "sourceText": "Whoopi Goldberg",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…till defend him to this day, including, [Whoopi Goldberg], Martin Scorcese, Woody Allen, David Ly…"
+  },
+  {
+   "sourceText": "Martin Scorcese",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…o this day, including, Whoopi Goldberg, [Martin Scorcese], Woody Allen, David Lynch, Wim Wenders,…"
+  },
+  {
+   "sourceText": "Woody Allen",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…ding, Whoopi Goldberg, Martin Scorcese, [Woody Allen], David Lynch, Wim Wenders, Pedro Almodo…"
+  },
+  {
+   "sourceText": "Wim Wenders",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…tin Scorcese, Woody Allen, David Lynch, [Wim Wenders], Pedro Almodovar, Tilda Swinton and Mon…"
+  },
+  {
+   "sourceText": "Pedro Almodovar",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "… Woody Allen, David Lynch, Wim Wenders, [Pedro Almodovar], Tilda Swinton and Monica Bellucci.…"
+  },
+  {
+   "sourceText": "Tilda Swinton",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…id Lynch, Wim Wenders, Pedro Almodovar, [Tilda Swinton] and Monica Bellucci.…"
+  },
+  {
+   "sourceText": "Monica Bellucci",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…ers, Pedro Almodovar, Tilda Swinton and [Monica Bellucci].…"
+  },
+  {
+   "sourceText": "Gus Savage",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Democratic Illinois Congressman, [Gus Savage] was investigated by the Democrat-contro…"
+  },
+  {
+   "sourceText": "Bernie Ward",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Democratic radio host, [Bernie Ward], plead guilty to one count of sending c…"
+  },
+  {
+   "sourceText": "The Intercept",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Intelligence Community",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Just Security",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "The American Crisis",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "event_incident",
+   "retyped": true,
+   "why": "name carries an event noun",
+   "confidence": "MEDIUM",
+   "contextSample": "… glorious the triumph.” ― Thomas Paine, [The American Crisis]…"
+  },
+  {
+   "sourceText": "Eastern Washington",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Oregon State Park",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Jedidiah Fulton",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Jedidiah Fulton], 39 [https://archive.is/GWLYq]…"
+  },
+  {
+   "sourceText": "Alberto Vincent Acosta",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Alberto Vincent Acosta] [https://archive.is/cFPbd]…"
+  },
+  {
+   "sourceText": "Ivan Geronimo Gomez",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Ivan Geronimo Gomez], 30 [https://archive.is/mhKtG]…"
+  },
+  {
+   "sourceText": "Julian Draper",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Julian Draper] [https://archive.is/JyfJe]…"
+  },
+  {
+   "sourceText": "Wesley James Bergman",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Wesley James Bergman], 37 [https://archive.is/rl2cm]…"
+  },
+  {
+   "sourceText": "Elias Pendergrass",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Elias Pendergrass], 44 [https://archive.is/wJ1XR]…"
+  },
+  {
+   "sourceText": "Anita Esquivel",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Anita Esquivel], 37 [https://archive.is/nMZFo]…"
+  },
+  {
+   "sourceText": "Jeffrey Accord",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "legislation_regulation",
+   "retyped": true,
+   "why": "name ends with a legislative noun",
+   "confidence": "HIGH",
+   "contextSample": "…[Jeffrey Accord], 36 [https://archive.is/j3yuB] [https:/…"
+  },
+  {
+   "sourceText": "Milton Loice Moran",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Milton Loice Moran], 48 [https://archive.is/PiJpR]…"
+  },
+  {
+   "sourceText": "Daily Signal",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Julian Assange",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Julian Assange]…"
+  },
+  {
+   "sourceText": "Daily Sabah",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Kara Swisher",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Harvard Law School",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "East Africa",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Focus here [[East Africa] Operations]:…"
+  },
+  {
+   "sourceText": "Dla Piper",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "organization",
+   "retyped": true,
+   "why": "a named organisation",
+   "confidence": "HIGH",
+   "contextSample": "…[Dla Piper]…"
+  },
+  {
+   "sourceText": "Atomic Energy Act of 1954",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "… friendly partner under Section 123 the [Atomic Energy Act of 1954]\" after agreeing to a new nuclear weapon…"
+  },
+  {
+   "sourceText": "Ron Johnson",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Sen Johnson",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Think drop today re: [Sen Johnson] re: redaction(s) [GSA v FBI].…"
+  },
+  {
+   "sourceText": "New York Governor",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "United States Senator",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Meaning, a [United States Senator] could NOT review the deal but other for…"
+  },
+  {
+   "sourceText": "Sohrab Ahmari",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Chip Franklin",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Titus Nation",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Matt Binder",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Kurt Eichenwald",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Jeet Heer",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Erin Nanoki",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "America's Founders",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Alexandra Chalupa",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Who is [Alexandra Chalupa]?…"
+  },
+  {
+   "sourceText": "Sen Grassley",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Follow [Sen Grassley].…"
+  },
+  {
+   "sourceText": "Matt Murray",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Did Hussein contact [Matt Murray] in attempt to persuade not to publish?…"
+  },
+  {
+   "sourceText": "Kirsten Gillibrand",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "used with a personal title or a verb only a person takes",
+   "confidence": "LOW",
+   "contextSample": "…Sen. [Kirsten Gillibrand], D-N.Y.…"
+  },
+  {
+   "sourceText": "Bill de Blasio",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…Mayor [Bill de Blasio], D-N.Y.C…"
+  },
+  {
+   "sourceText": "Abraham Lincoln",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…ple, shall not perish from the earth. - [Abraham Lincoln] Nov 1863 …"
+  },
+  {
+   "sourceText": "Cassidy Hutchinson",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Who is [Cassidy Hutchinson]?…"
+  },
+  {
+   "sourceText": "Banco de Mexico",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Marc Mezvinsky",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Marjorie Margolies",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…f fraud in 2001.[3][4][5] His mother is [Marjorie Margolies] (b. 1942), who was a TV reporter and re…"
+  },
+  {
+   "sourceText": "Saleha Abedin",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…Her mother, [Saleha Abedin], sits on the Presidency Staff Council o…"
+  },
+  {
+   "sourceText": "Abdelkarim Belhaj",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…hn McCain who met Libyan militia leader [Abdelkarim Belhaj], a known al Qaeda associate, and salute…"
+  },
+  {
+   "sourceText": "State Secrets",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[State Secrets] upheld under SC …"
+  },
+  {
+   "sourceText": "Klaus Eberwein",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Klaus Eberwein]…"
+  },
+  {
+   "sourceText": "Black Caucus",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "government_institution",
+   "retyped": true,
+   "why": "a government body",
+   "confidence": "MEDIUM",
+   "contextSample": "…1. Form Congressional [Black Caucus] [1971][compartmentalize-label]…"
+  },
+  {
+   "sourceText": "Zero Hedge",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Operation Merlin",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Operation Merlin] (tech).…"
+  },
+  {
+   "sourceText": "Iran Deal",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Iran Deal].…"
+  },
+  {
+   "sourceText": "Sen Warren",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Sen Warren].…"
+  },
+  {
+   "sourceText": "Fed Judge",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…ncidence Senate Republicans pushing for [Fed Judge] confirmations last week?…"
+  },
+  {
+   "sourceText": "Stanislav Lunev",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": "…[Stanislav Lunev].…"
+  },
+  {
+   "sourceText": "Adolf Hitler",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Bill",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "other_named_entity",
+   "retyped": false,
+   "why": "named, but neither pattern nor context establishes what kind of thing it is",
+   "confidence": "LOW",
+   "contextSample": "…Omnibus [Bill].…"
+  },
+  {
+   "sourceText": "Comedy Central",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  },
+  {
+   "sourceText": "Of Montreal",
+   "storedOccurrences": 1,
+   "previousType": "other_named_entity",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a capitalised personal-name shape left after every other pattern was tested",
+   "confidence": "LOW",
+   "contextSample": null
+  }
+ ]
+}
