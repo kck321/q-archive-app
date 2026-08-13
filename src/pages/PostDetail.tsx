@@ -365,7 +365,7 @@ const ANALYSIS_CAT_LABEL: Record<string, string> = {
   impliedConclusions: 'Implied Conclusions',
   verificationHooks: 'Checkable Claims',
   question: 'Q Questions',
-  request: 'Q Requests',
+  request: 'Q Directives',
   bracket: 'Q [ Brackets ]',
   overlap: 'Overlap',
   term: 'Q Uncategorized',

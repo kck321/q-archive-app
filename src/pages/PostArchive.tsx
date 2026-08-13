@@ -132,7 +132,7 @@ function ChartTooltip({ active, payload, label, keyword, matchCounts, matchMax, 
 
 const CHART_TABS: { key: string; label: string; dataKey: string; color: string; dimColor: string; to: string }[] = [
   { key: 'questions',          label: 'Q Questions',   dataKey: 'questions',          color: '#3b82f6', dimColor: '#1e3a5f', to: '/questions' },
-  { key: 'requests',           label: 'Q Requests',    dataKey: 'requests',           color: '#22c55e', dimColor: '#14532d', to: '/requests' },
+  { key: 'requests',           label: 'Q Directives',    dataKey: 'requests',           color: '#22c55e', dimColor: '#14532d', to: '/requests' },
   { key: 'claims',             label: 'Q Claims',      dataKey: 'claims',             color: '#f59e0b', dimColor: '#78350f', to: '/analysis?tab=claims' },
   { key: 'predictions',        label: 'Q Predictions', dataKey: 'predictions',        color: '#8b5cf6', dimColor: '#3b0764', to: '/analysis?tab=predictions' },
   { key: 'namedEntities',      label: 'Q Entities',    dataKey: 'namedEntities',      color: '#06b6d4', dimColor: '#164e63', to: '/analysis?tab=namedEntities' },

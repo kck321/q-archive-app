@@ -129,7 +129,11 @@ for (const name of COLLECTIONS) {
   // apply-questions-final.mjs then layers on the 143 occurrences the uncovered-"?" audit
   // recovered, taking it to 6,442. They MUST run in that order and both must run — dropping
   // the second one silently reverts the live count to 6,299 on the next export.
-  for (const step of ['backfill-analysis.mjs', 'detect-emphasis.mjs', 'apply-questions.mjs', 'apply-questions-final.mjs']) {
+  // apply-directives.mjs must run LAST: it rewrites posts.json actionRequests from the
+  // certified set, and the earlier steps rewrite posts.json too. Dropping it silently reverts
+  // Directives to the old extractor output on the next export, exactly as dropping
+  // apply-questions-final.mjs would revert Questions to 6,299.
+  for (const step of ['backfill-analysis.mjs', 'detect-emphasis.mjs', 'apply-questions.mjs', 'apply-questions-final.mjs', 'apply-directives.mjs']) {
     console.log(`
 Re-running ${step}…`)
     execFileSync(process.execPath, [join(root, 'scripts', step), '--apply'], { stdio: 'inherit' })

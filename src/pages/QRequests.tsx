@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo, useRef } from 'react'
+import SectionInfo from '../components/SectionInfo'
 import { Link, useSearchParams } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import SearchBar from '../components/SearchBar'
@@ -258,7 +259,7 @@ export default function QRequests() {
                 <span className="text-xs font-medium text-gray-500 ml-1.5">posts</span>
               </span>
             </p>
-            <h1 className="text-xl font-bold leading-tight" style={{ color: catColor('requests') }}>Q Requests</h1>
+            <h1 className="text-xl font-bold leading-tight flex items-center gap-2" style={{ color: catColor('requests') }}>Q Directives<SectionInfo id="requests" /></h1>
             <p className="text-gray-500 text-xs mt-0.5">
               <span className="text-green-400 font-medium">{repeatedRequests.length}</span> repeated ·{' '}
               <span className="text-gray-400 font-medium">{onceRequests.length}</span> issued once
@@ -286,7 +287,7 @@ export default function QRequests() {
       {timeline.length > 0 && (
         <div className="bg-q-panel border border-q-border rounded-xl p-5">
           <h2 className="text-white font-semibold mb-0.5">
-            {searchMatchMonths ? `Q Requests Timeline — "${search}"` : 'Q Requests vs. Posts per Month'}
+            {searchMatchMonths ? `Q Directives Timeline — "${search}"` : 'Q Directives vs. Posts per Month'}
           </h2>
           <p className="text-gray-400 text-xs mb-4">
             {searchMatchMonths

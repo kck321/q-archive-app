@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import SectionInfo from '../components/SectionInfo'
 import { Link } from 'react-router-dom'
 import { getAllTextLinks, type QTextLink } from '../lib/posts'
 
@@ -31,7 +32,7 @@ export default function QLinks() {
 
   return (
     <div className="p-6">
-      <h1 className="text-xl font-bold text-white mb-1">All Q Links</h1>
+      <h1 className="text-xl font-bold text-white mb-1 flex items-center gap-2">All Q Links<SectionInfo id="links" /></h1>
       <p className="text-gray-500 text-sm mb-4">
         {loading
           ? 'Loading…'

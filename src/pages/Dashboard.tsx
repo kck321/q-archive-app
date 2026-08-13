@@ -185,7 +185,7 @@ export default function Dashboard() {
 
   const CHART_TABS: { key: string; label: string; dataKey: string; color: string; dimColor: string }[] = [
     { key: 'questions',          label: 'Q Questions',   dataKey: 'questions',          color: '#3b82f6', dimColor: '#1e3a5f' },
-    { key: 'requests',           label: 'Q Requests',    dataKey: 'requests',           color: '#22c55e', dimColor: '#14532d' },
+    { key: 'requests',           label: 'Q Directives',    dataKey: 'requests',           color: '#22c55e', dimColor: '#14532d' },
     { key: 'claims',             label: 'Q Claims',      dataKey: 'claims',             color: '#f59e0b', dimColor: '#78350f' },
     { key: 'predictions',        label: 'Q Predictions', dataKey: 'predictions',        color: '#8b5cf6', dimColor: '#3b0764' },
     { key: 'namedEntities',      label: 'Q Entities',    dataKey: 'namedEntities',      color: '#06b6d4', dimColor: '#164e63' },
@@ -940,7 +940,7 @@ export default function Dashboard() {
                 step: 2,
                 icon: '🟢',
                 label: 'Request Detection',
-                desc: 'Finds sentences where Q directs readers to take action — "Dig", "Follow the money", "Spread the word", etc. Requests appear highlighted in green on posts and collected in the Q Requests archive.',
+                desc: 'Finds sentences where Q directs readers to take action — "Dig", "Follow the money", "Spread the word", etc. Requests appear highlighted in green on posts and collected in the Q Directives archive.',
                 barColor: 'bg-green-500',
                 activeStyle: 'bg-green-950/30 border-green-800/50',
                 isActive: reqScanning || fullScanStep === 2,

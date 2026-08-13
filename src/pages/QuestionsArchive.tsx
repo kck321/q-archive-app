@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState, useRef } from 'react'
+import SectionInfo from '../components/SectionInfo'
 import { Link, useSearchParams } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import { makeTermMatcher, normalizeItemKey, getQuestionFrequency, getQuestionsTimeline, getPostNumsByMonth, mergeSimilarQuestions, type QuestionFrequency, type SimilarGroup } from '../lib/posts'
@@ -394,7 +395,7 @@ export default function QuestionsArchive() {
                 <span className="text-xs font-medium text-gray-500 ml-1.5">posts</span>
               </span>
             </p>
-            <h1 className="text-xl font-bold leading-tight" style={{ color: catColor('questions') }}>Q Questions</h1>
+            <h1 className="text-xl font-bold leading-tight flex items-center gap-2" style={{ color: catColor('questions') }}>Q Questions<SectionInfo id="questions" /></h1>
             <p className="text-gray-500 text-xs mt-0.5">
               <span className="text-blue-400 font-medium">{repeatedAll.length}</span> repeated ·{' '}
               <span className="text-gray-400 font-medium">{singlesAll.length}</span> asked once

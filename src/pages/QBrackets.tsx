@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo, useRef } from 'react'
+import SectionInfo from '../components/SectionInfo'
 import { Link, useSearchParams } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import { getAllPosts, makeTermMatcher } from '../lib/posts'
@@ -247,7 +248,7 @@ export default function QBrackets() {
               </span>
             </p>
           )}
-          <h1 className="text-2xl font-bold mt-0.5" style={{ color: catColor('brackets') }}>Q [ Brackets ]</h1>
+          <h1 className="text-2xl font-bold mt-0.5 flex items-center gap-2" style={{ color: catColor('brackets') }}>Q [ Brackets ]<SectionInfo id="brackets" /></h1>
           {/* Same shape as every other section: repeated · once, with total occurrences
               appended because a bracket can repeat inside a single post. "N unique codes"
               was dropped — it duplicated the total above it. */}

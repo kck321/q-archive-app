@@ -31,6 +31,7 @@ const bottomLinks = [
   { to: '/pics',      label: 'Q Post Pics',     icon: '🖼' },
   { to: '/links',     label: 'All Q Links',     icon: '🌐' },
   { to: '/resources', label: 'Resources',       icon: '🔗' },
+  { to: '/method',    label: 'How This Works',  icon: 'ⓘ' },
   { to: '/feedback',  label: 'Comments & Ideas', icon: '💬' },
   { to: '/download',  label: 'Get the App',     icon: '⬇️' },
   { to: '/donate',    label: 'Support',         icon: '❤️' },
@@ -102,7 +103,7 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
           Q Questions
         </NavLink>
 
-        {/* Q Requests — same level as Q Questions */}
+        {/* Q Directives — same level as Q Questions */}
         <NavLink
           to="/requests"
           onClick={() => flash('requests')}
@@ -111,7 +112,7 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
           }
         >
           <span className="w-2 h-2 rounded-full shrink-0 bg-green-500" />
-          Q Requests
+          Q Directives
         </NavLink>
 
         {/* Analysis category links */}

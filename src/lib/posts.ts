@@ -1756,7 +1756,7 @@ export interface TermPresence {
 
 const PRESENCE_LABELS: Record<string, string> = {
   questions: 'Q Questions',
-  requests: 'Q Requests',
+  requests: 'Q Directives',
   brackets: 'Q [ Brackets ]',
   claims: 'Q Claims',
   predictions: 'Q Predictions',

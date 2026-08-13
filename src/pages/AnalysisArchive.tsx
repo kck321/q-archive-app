@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
+import SectionInfo from '../components/SectionInfo'
 import { Link, useSearchParams } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import SearchBar from '../components/SearchBar'
@@ -501,7 +502,7 @@ export default function AnalysisArchive() {
               </p>
             )}
             <h1
-              className="text-xl font-bold leading-tight"
+              className="text-xl font-bold leading-tight flex items-center gap-2"
               style={{
                 color: activeTab === 'all' ? '#f3f4f6'
                   : activeTab === 'overlaps' ? '#eab308'
@@ -509,6 +510,8 @@ export default function AnalysisArchive() {
               }}
             >
               {activeTab === 'all' ? 'Post Analysis' : activeTab === 'overlaps' ? '⚠ Overlaps' : `Q ${CAT_LABELS[activeTab as AnalysisCategoryFreq['category']]}`}
+              {/* Each analysis tab is its own section, so the ⓘ follows the active tab. */}
+              <SectionInfo id={activeTab} />
             </h1>
             <p className="text-gray-500 text-xs mt-0.5">
               {activeTab === 'all' && !loading && (

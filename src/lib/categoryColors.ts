@@ -29,7 +29,7 @@ export const SERIES_COLOR: Record<string, string> = {
   'Questions':            CATEGORY_COLOR.questions,
   'Q Questions':          CATEGORY_COLOR.questions,
   'Requests':             CATEGORY_COLOR.requests,
-  'Q Requests':           CATEGORY_COLOR.requests,
+  'Q Directives':           CATEGORY_COLOR.requests,
   'Claims':               CATEGORY_COLOR.claims,
   'Predictions':          CATEGORY_COLOR.predictions,
   'Named Entities':       CATEGORY_COLOR.namedEntities,
@@ -42,7 +42,7 @@ export const SERIES_COLOR: Record<string, string> = {
   'brackets':             CATEGORY_COLOR.brackets,
 
   // The chart tab labels (CHART_TABS in PostArchive) — the names the single-category chart
-  // and the phone readout actually pass in. Only 'Q Questions', 'Q Requests' and
+  // and the phone readout actually pass in. Only 'Q Questions', 'Q Directives' and
   // 'Checkable Claims' happened to be listed above, so those three were the ONLY series
   // that came out coloured; everything else fell through to the grey default.
   'Q Claims':             CATEGORY_COLOR.claims,
