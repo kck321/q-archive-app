@@ -3,35 +3,39 @@
  "productionChanged": false,
  "totals": {
   "reviewed": 583,
-  "retyped": 477,
-  "remainingOther": 106,
+  "retyped": 485,
+  "remainingOther": 98,
   "byNewType": {
-   "media_organization": 9,
+   "media_organization": 19,
    "technology_platform": 4,
    "creative_work": 6,
    "coded_alias": 5,
-   "person": 407,
+   "ROUTE_TO_THEMES": 14,
+   "person": 375,
    "government_institution": 8,
    "military_asset_vessel": 3,
-   "title_role": 6,
+   "title_role": 7,
    "organization": 5,
+   "country_region": 14,
    "facility_property": 7,
    "event_incident": 8,
+   "religious_spiritual": 1,
    "legislation_regulation": 9
   },
   "finalRegistryTypes": {
-   "title_role": 9,
-   "religious_spiritual": 8,
+   "title_role": 10,
+   "religious_spiritual": 9,
    "government_institution": 45,
-   "other_named_entity": 106,
-   "media_organization": 47,
+   "other_named_entity": 98,
+   "media_organization": 57,
    "coded_alias": 6,
    "organization": 88,
-   "person": 889,
+   "person": 857,
    "technology_platform": 4,
    "creative_work": 6,
-   "country_region": 27,
+   "country_region": 41,
    "location": 44,
+   "ROUTE_TO_THEMES": 14,
    "military_asset_vessel": 3,
    "facility_property": 7,
    "event_incident": 8,
@@ -105,10 +109,10 @@
    "sourceText": "D's",
    "storedOccurrences": 11,
    "previousType": "other_named_entity",
-   "finalType": "other_named_entity",
-   "retyped": false,
-   "why": "named, but neither pattern nor context establishes what kind of thing it is",
-   "confidence": "LOW",
+   "finalType": "ROUTE_TO_THEMES",
+   "retyped": true,
+   "why": "a movement, slogan or concept phrase rather than a named referent",
+   "confidence": "HIGH",
    "contextSample": "…[D's] involved.…"
   },
   {
@@ -235,10 +239,10 @@
    "sourceText": "bad actors",
    "storedOccurrences": 8,
    "previousType": "other_named_entity",
-   "finalType": "other_named_entity",
-   "retyped": false,
-   "why": "named, but neither pattern nor context establishes what kind of thing it is",
-   "confidence": "LOW",
+   "finalType": "ROUTE_TO_THEMES",
+   "retyped": true,
+   "why": "a movement, slogan or concept phrase rather than a named referent",
+   "confidence": "HIGH",
    "contextSample": "…Who are the [bad actors]?…"
   },
   {
@@ -285,10 +289,10 @@
    "sourceText": "LEFT",
    "storedOccurrences": 7,
    "previousType": "other_named_entity",
-   "finalType": "other_named_entity",
-   "retyped": false,
-   "why": "named, but neither pattern nor context establishes what kind of thing it is",
-   "confidence": "LOW",
+   "finalType": "ROUTE_TO_THEMES",
+   "retyped": true,
+   "why": "a movement, slogan or concept phrase rather than a named referent",
+   "confidence": "HIGH",
    "contextSample": "…Left is [LEFT].…"
   },
   {
@@ -535,10 +539,10 @@
    "sourceText": "Midnight Riders",
    "storedOccurrences": 5,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "ROUTE_TO_THEMES",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a movement, slogan or concept phrase rather than a named referent",
+   "confidence": "HIGH",
    "contextSample": "…Modern day '[Midnight Riders]'. …"
   },
   {
@@ -575,10 +579,10 @@
    "sourceText": "Iron Eagle",
    "storedOccurrences": 4,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "ROUTE_TO_THEMES",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a movement, slogan or concept phrase rather than a named referent",
+   "confidence": "HIGH",
    "contextSample": "…[Iron Eagle].…"
   },
   {
@@ -605,10 +609,10 @@
    "sourceText": "Hong Kong",
    "storedOccurrences": 4,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "country_region",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a country, region or state",
+   "confidence": "HIGH",
    "contextSample": "…Hong Kong: [Hong Kong] Monetary Authority…"
   },
   {
@@ -635,10 +639,10 @@
    "sourceText": "Business Insider",
    "storedOccurrences": 4,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "media_organization",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a publication masthead",
+   "confidence": "MEDIUM",
    "contextSample": null
   },
   {
@@ -655,10 +659,10 @@
    "sourceText": "The Guardian",
    "storedOccurrences": 4,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "media_organization",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a publication masthead",
+   "confidence": "MEDIUM",
    "contextSample": null
   },
   {
@@ -685,10 +689,10 @@
    "sourceText": "NAT SEC",
    "storedOccurrences": 4,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "ROUTE_TO_THEMES",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a movement, slogan or concept phrase rather than a named referent",
+   "confidence": "HIGH",
    "contextSample": "…HUSSEIN \"STATE SECRETS\" WH [NAT SEC] ARTICLES 1-9 - BURIED?…"
   },
   {
@@ -715,20 +719,20 @@
    "sourceText": "The Atlantic",
    "storedOccurrences": 4,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "media_organization",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a publication masthead",
+   "confidence": "MEDIUM",
    "contextSample": null
   },
   {
    "sourceText": "VIP Patriot",
    "storedOccurrences": 4,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "ROUTE_TO_THEMES",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a movement, slogan or concept phrase rather than a named referent",
+   "confidence": "HIGH",
    "contextSample": "…[VIP Patriot]s!…"
   },
   {
@@ -775,10 +779,10 @@
    "sourceText": "Washington Examiner",
    "storedOccurrences": 4,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "media_organization",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a publication masthead",
+   "confidence": "MEDIUM",
    "contextSample": null
   },
   {
@@ -825,10 +829,10 @@
    "sourceText": "R's",
    "storedOccurrences": 3,
    "previousType": "other_named_entity",
-   "finalType": "other_named_entity",
-   "retyped": false,
-   "why": "named, but neither pattern nor context establishes what kind of thing it is",
-   "confidence": "LOW",
+   "finalType": "ROUTE_TO_THEMES",
+   "retyped": true,
+   "why": "a movement, slogan or concept phrase rather than a named referent",
+   "confidence": "HIGH",
    "contextSample": "…[R's] targeted (censorship/anti R = more $).…"
   },
   {
@@ -885,10 +889,10 @@
    "sourceText": "Mr. President",
    "storedOccurrences": 3,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "title_role",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "an office held rather than a person named",
+   "confidence": "HIGH",
    "contextSample": "…Welcome [Mr. President].…"
   },
   {
@@ -905,10 +909,10 @@
    "sourceText": "MIL INTEL",
    "storedOccurrences": 3,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "ROUTE_TO_THEMES",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a movement, slogan or concept phrase rather than a named referent",
+   "confidence": "HIGH",
    "contextSample": "…[MIL INTEL] providing support during this time?…"
   },
   {
@@ -965,10 +969,10 @@
    "sourceText": "New Zealand",
    "storedOccurrences": 3,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "country_region",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a country, region or state",
+   "confidence": "HIGH",
    "contextSample": "…New Zealand: Reserve Bank of [New Zealand]…"
   },
   {
@@ -1025,30 +1029,30 @@
    "sourceText": "New York Magazine",
    "storedOccurrences": 3,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "media_organization",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a publication masthead",
+   "confidence": "MEDIUM",
    "contextSample": null
   },
   {
    "sourceText": "Catholic Church",
    "storedOccurrences": 3,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "religious_spiritual",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a religious body",
+   "confidence": "MEDIUM",
    "contextSample": "… See is the universal government of the [Catholic Church] and operates from Vatican City State, a…"
   },
   {
    "sourceText": "The Great Awakening",
    "storedOccurrences": 3,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "ROUTE_TO_THEMES",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a movement, slogan or concept phrase rather than a named referent",
+   "confidence": "HIGH",
    "contextSample": "…[The Great Awakening].…"
   },
   {
@@ -1065,10 +1069,10 @@
    "sourceText": "The Verge",
    "storedOccurrences": 3,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "media_organization",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a publication masthead",
+   "confidence": "MEDIUM",
    "contextSample": null
   },
   {
@@ -1155,10 +1159,10 @@
    "sourceText": "The Federalist",
    "storedOccurrences": 3,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "media_organization",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a publication masthead",
+   "confidence": "MEDIUM",
    "contextSample": null
   },
   {
@@ -1535,10 +1539,10 @@
    "sourceText": "Costa Rica",
    "storedOccurrences": 2,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "country_region",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a country, region or state",
+   "confidence": "HIGH",
    "contextSample": "…Costa Rica: Central Bank of [Costa Rica]…"
   },
   {
@@ -1557,8 +1561,8 @@
    "previousType": "other_named_entity",
    "finalType": "person",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a title followed by a surname",
+   "confidence": "MEDIUM",
    "contextSample": "…Why is [Adm R.] so important?…"
   },
   {
@@ -1635,10 +1639,10 @@
    "sourceText": "American people",
    "storedOccurrences": 2,
    "previousType": "other_named_entity",
-   "finalType": "other_named_entity",
-   "retyped": false,
-   "why": "named, but neither pattern nor context establishes what kind of thing it is",
-   "confidence": "LOW",
+   "finalType": "ROUTE_TO_THEMES",
+   "retyped": true,
+   "why": "a movement, slogan or concept phrase rather than a named referent",
+   "confidence": "HIGH",
    "contextSample": "…The [American people] are NOT STUPID.…"
   },
   {
@@ -1897,18 +1901,18 @@
    "previousType": "other_named_entity",
    "finalType": "person",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a title followed by a surname",
+   "confidence": "MEDIUM",
    "contextSample": "…Did you see [Sen. Graham]'s speech today?…"
   },
   {
    "sourceText": "PEOPLE",
    "storedOccurrences": 2,
    "previousType": "other_named_entity",
-   "finalType": "other_named_entity",
-   "retyped": false,
-   "why": "named, but neither pattern nor context establishes what kind of thing it is",
-   "confidence": "LOW",
+   "finalType": "ROUTE_TO_THEMES",
+   "retyped": true,
+   "why": "a movement, slogan or concept phrase rather than a named referent",
+   "confidence": "HIGH",
    "contextSample": "…[PEOPLE] have POWER.…"
   },
   {
@@ -2185,20 +2189,20 @@
    "sourceText": "Dr. Emmett J. Rice",
    "storedOccurrences": 2,
    "previousType": "other_named_entity",
-   "finalType": "other_named_entity",
-   "retyped": false,
-   "why": "named, but neither pattern nor context establishes what kind of thing it is",
-   "confidence": "LOW",
+   "finalType": "person",
+   "retyped": true,
+   "why": "a title followed by a surname",
+   "confidence": "MEDIUM",
    "contextSample": "…[Dr. Emmett J. Rice].…"
   },
   {
    "sourceText": "D_party",
    "storedOccurrences": 2,
    "previousType": "other_named_entity",
-   "finalType": "other_named_entity",
-   "retyped": false,
-   "why": "named, but neither pattern nor context establishes what kind of thing it is",
-   "confidence": "LOW",
+   "finalType": "ROUTE_TO_THEMES",
+   "retyped": true,
+   "why": "a movement, slogan or concept phrase rather than a named referent",
+   "confidence": "HIGH",
    "contextSample": "…Possible China in sec_comms w/ former [D_party] senior officials re: re-institute US pi…"
   },
   {
@@ -2255,10 +2259,10 @@
    "sourceText": "New Jersey",
    "storedOccurrences": 2,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "country_region",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a country, region or state",
+   "confidence": "HIGH",
    "contextSample": "…Democratic [New Jersey] State Assemblyman, Neil Cohen, was conv…"
   },
   {
@@ -2447,8 +2451,8 @@
    "previousType": "other_named_entity",
    "finalType": "person",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a title followed by a surname",
+   "confidence": "MEDIUM",
    "contextSample": "…2. Overturn of conviction by [Judge Ronnie Abrams] of the Southern District of New York [a…"
   },
   {
@@ -2795,10 +2799,10 @@
    "sourceText": "El Salvador",
    "storedOccurrences": 1,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "country_region",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a country, region or state",
+   "confidence": "HIGH",
    "contextSample": "…El Salvador: Central Reserve Bank of [El Salvador]…"
   },
   {
@@ -2815,10 +2819,10 @@
    "sourceText": "The Gambia",
    "storedOccurrences": 1,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "country_region",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a country, region or state",
+   "confidence": "HIGH",
    "contextSample": "…The Gambia: Central Bank of [The Gambia]…"
   },
   {
@@ -2885,30 +2889,30 @@
    "sourceText": "South Africa",
    "storedOccurrences": 1,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "country_region",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a country, region or state",
+   "confidence": "HIGH",
    "contextSample": "…South Africa: [South Africa]n Reserve Bank…"
   },
   {
    "sourceText": "Sri Lanka",
    "storedOccurrences": 1,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "country_region",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a country, region or state",
+   "confidence": "HIGH",
    "contextSample": "…Sri Lanka: Central Bank of [Sri Lanka]…"
   },
   {
    "sourceText": "United Arab Emirates",
    "storedOccurrences": 1,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "country_region",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a country, region or state",
+   "confidence": "HIGH",
    "contextSample": "…United Arab Emirates: Central Bank of [United Arab Emirates]…"
   },
   {
@@ -3155,10 +3159,10 @@
    "sourceText": "West Virginia",
    "storedOccurrences": 1,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "country_region",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a country, region or state",
+   "confidence": "HIGH",
    "contextSample": null
   },
   {
@@ -3185,10 +3189,10 @@
    "sourceText": "New Mexico",
    "storedOccurrences": 1,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "country_region",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a country, region or state",
+   "confidence": "HIGH",
    "contextSample": null
   },
   {
@@ -3405,10 +3409,10 @@
    "sourceText": "The Independent",
    "storedOccurrences": 1,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "media_organization",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a publication masthead",
+   "confidence": "MEDIUM",
    "contextSample": null
   },
   {
@@ -3487,8 +3491,8 @@
    "previousType": "other_named_entity",
    "finalType": "person",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a title followed by a surname",
+   "confidence": "MEDIUM",
    "contextSample": null
   },
   {
@@ -3865,10 +3869,10 @@
    "sourceText": "The Sun",
    "storedOccurrences": 1,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "media_organization",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a publication masthead",
+   "confidence": "MEDIUM",
    "contextSample": null
   },
   {
@@ -3915,10 +3919,10 @@
    "sourceText": "North Carolina",
    "storedOccurrences": 1,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "country_region",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a country, region or state",
+   "confidence": "HIGH",
    "contextSample": null
   },
   {
@@ -4037,8 +4041,8 @@
    "previousType": "other_named_entity",
    "finalType": "person",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a title followed by a surname",
+   "confidence": "MEDIUM",
    "contextSample": "…Remain in open comms w/ [Sen Graham] & Grassley re: Whistleblower Protection…"
   },
   {
@@ -4355,10 +4359,10 @@
    "sourceText": "New Orleans",
    "storedOccurrences": 1,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "country_region",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a country, region or state",
+   "confidence": "HIGH",
    "contextSample": null
   },
   {
@@ -4445,10 +4449,10 @@
    "sourceText": "Great Awakening",
    "storedOccurrences": 1,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "ROUTE_TO_THEMES",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a movement, slogan or concept phrase rather than a named referent",
+   "confidence": "HIGH",
    "contextSample": "…The [Great Awakening].…"
   },
   {
@@ -4667,8 +4671,8 @@
    "previousType": "other_named_entity",
    "finalType": "person",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a title followed by a surname",
+   "confidence": "MEDIUM",
    "contextSample": null
   },
   {
@@ -4975,10 +4979,10 @@
    "sourceText": "Terre Haute",
    "storedOccurrences": 1,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "country_region",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a country, region or state",
+   "confidence": "HIGH",
    "contextSample": "…Democratic official from [Terre Haute], Indiana, David Roberts was sentenced t…"
   },
   {
@@ -5275,10 +5279,10 @@
    "sourceText": "The Intercept",
    "storedOccurrences": 1,
    "previousType": "other_named_entity",
-   "finalType": "person",
+   "finalType": "media_organization",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a publication masthead",
+   "confidence": "MEDIUM",
    "contextSample": null
   },
   {
@@ -5517,8 +5521,8 @@
    "previousType": "other_named_entity",
    "finalType": "person",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a title followed by a surname",
+   "confidence": "MEDIUM",
    "contextSample": "…Think drop today re: [Sen Johnson] re: redaction(s) [GSA v FBI].…"
   },
   {
@@ -5637,8 +5641,8 @@
    "previousType": "other_named_entity",
    "finalType": "person",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a title followed by a surname",
+   "confidence": "MEDIUM",
    "contextSample": "…Follow [Sen Grassley].…"
   },
   {
@@ -5807,8 +5811,8 @@
    "previousType": "other_named_entity",
    "finalType": "person",
    "retyped": true,
-   "why": "a capitalised personal-name shape left after every other pattern was tested",
-   "confidence": "LOW",
+   "why": "a title followed by a surname",
+   "confidence": "MEDIUM",
    "contextSample": "…[Sen Warren].…"
   },
   {
