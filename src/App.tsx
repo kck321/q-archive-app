@@ -23,6 +23,7 @@ import Feedback from './pages/Feedback'
 import Donate from './pages/Donate'
 import Download from './pages/Download'
 import Method from './pages/Method'
+import ResolutionCenter from './pages/ResolutionCenter'
 import { AdminProvider } from './components/AdminContext'
 import ScrollRestoration from './components/ScrollRestoration'
 
@@ -113,6 +114,7 @@ export default function App() {
             <Route path="/tripcodes"     element={<QTripcodes />} />
             <Route path="/feedback"      element={<Feedback />} />
             <Route path="/donate"        element={<Donate />} />
+            <Route path="/resolve"      element={<ResolutionCenter />} />
             <Route path="/method"       element={<Method />} />
             <Route path="/download"      element={<Download />} />
           </Routes>

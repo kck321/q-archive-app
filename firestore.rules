@@ -24,6 +24,23 @@ service cloud.firestore {
     // Create only. No read, so there is no public comment wall to deface or moderate and
     // no way to enumerate what others submitted. Size caps are enforced in the client too,
     // but that is a courtesy — this rule is what actually stops a crafted request.
+    // ── Community resolution suggestions: a WRITE-ONLY moderation queue ──────
+    // Create only, exactly like feedback. A suggestion can never reach entities.json or any
+    // other certified artifact — approved ones re-enter through the editorial
+    // audit -> materialise -> QA -> apply -> deploy chain, which is what keeps the published
+    // counts defensible. No read, so there is no public wall to deface.
+    match /resolutionSuggestions/{id} {
+      allow create: if request.resource.data.keys().hasOnly(['itemId','token','postNum','proposedResolution','reasoning','sourceUrl','alsoAppliesTo','contact','status','createdAt'])
+                    && request.resource.data.keys().hasAll(['itemId','token','proposedResolution','reasoning','createdAt'])
+                    && request.resource.data.proposedResolution is string
+                    && request.resource.data.proposedResolution.size() > 0
+                    && request.resource.data.proposedResolution.size() <= 300
+                    && request.resource.data.reasoning is string
+                    && request.resource.data.reasoning.size() <= 3000
+                    && request.resource.data.token.size() <= 80;
+      allow read, update, delete: if false;
+    }
+
     match /feedback/{id} {
       allow create: if request.resource.data.keys().hasOnly(['kind', 'message', 'contact', 'postNum', 'createdAt'])
                     && request.resource.data.keys().hasAll(['kind', 'message', 'createdAt'])

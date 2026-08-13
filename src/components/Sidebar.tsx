@@ -31,6 +31,7 @@ const bottomLinks = [
   { to: '/pics',      label: 'Q Post Pics',     icon: '🖼' },
   { to: '/links',     label: 'All Q Links',     icon: '🌐' },
   { to: '/resources', label: 'Resources',       icon: '🔗' },
+  { to: '/resolve',   label: 'Resolution Center', icon: '🔎' },
   { to: '/method',    label: 'How This Works',  icon: 'ⓘ' },
   { to: '/feedback',  label: 'Comments & Ideas', icon: '💬' },
   { to: '/download',  label: 'Get the App',     icon: '⬇️' },
