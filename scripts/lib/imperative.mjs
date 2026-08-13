@@ -138,6 +138,13 @@ export function imperativeMood(text, extraVerbs) {
 
   if (IDIOMS.test(bare)) return { imperative: true, why: 'fixed instruction idiom' }
 
+  // A hyphenated compound of three or more parts is a NOUN, whatever its first token is:
+  // "PAY-FOR-PLAY SPIDER WEB." opens with "pay", which is a verb, and was read as a command.
+  // Two-part compounds are left alone so "Re-read the crumbs." keeps working.
+  if (/^[a-z]+(-[a-z]+){2,}/i.test(bare)) {
+    return { imperative: false, why: 'multi-part hyphenated compound — a noun phrase, not a command' }
+  }
+
   // A lone verb/noun word is undecidable without the surrounding drop. Checked first: "Panic."
   // is not in the verb lexicon, so it would otherwise be silently ruled a statement.
   if (wordCount === 1 && AMBIGUOUS_SOLO.has(w)) {
