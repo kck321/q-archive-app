@@ -95,6 +95,23 @@ export const ENTITIES = {
   occurrenceSpecific: 'Resolution is occurrence-specific. "BO" resolves to Barack Obama in the drops whose context says so and to Board Owner in others, and stays unresolved in the rest — one resolved occurrence never redefines the token everywhere.',
 } as const
 
+/**
+ * Themes — recurring SUBJECTS, not writing style.
+ *
+ * The distinction is the whole reason the ontology is controlled. The old extractor's most
+ * common label was "cryptic messaging" at 401 occurrences, which describes how Q writes rather
+ * than what a post is about. A coverage audit found style labels of that kind made up the
+ * entire apparent gap in subject coverage. They belong to Codes & Brackets or Emphasis.
+ */
+export const THEMES_INFO = {
+  parents: 18,
+  assignments: 2393,
+  posts: 1766,
+  multiTheme: 378,
+  unresolved: 251,
+  note: 'Themes identify the recurring subjects Q discusses across the archive. They describe what a post is about, not how Q writes it. A post may have more than one theme. Style features such as cryptic phrasing, repetition, coded language, or pattern-based reasoning are classified elsewhere rather than treated as subjects.',
+} as const
+
 export interface AttributeInfo { key: string; label: string; blurb: string; count: number }
 
 /**
@@ -238,7 +255,8 @@ export const SECTIONS: SectionInfo[] = [
     short: 'Recurring subjects that connect posts across the archive.',
     covers: 'Recurring subjects and concepts connecting posts across the entire archive — elections, intelligence agencies, media, censorship, military matters, trafficking, financial systems, government investigations, foreign affairs, technology and other recurring topics.',
     answers: 'What larger subject was this post about?',
-    note: 'One post may carry several themes.',
+    certified: `${n(2393)} assignments · ${n(1766)} posts · 18 parent themes`,
+    note: 'Themes identify the recurring subjects Q discusses across the archive. They describe what a post is about, not how Q writes it. A post may have more than one theme — 378 do. Style features such as cryptic phrasing, repetition, coded language, or pattern-based reasoning are classified elsewhere rather than treated as subjects. A theme is assigned only on converging evidence, never on a single word appearing.',
   },
   {
     id: 'brackets',

@@ -88,6 +88,29 @@ for (const p of posts) {
   })
 }
 
+// ── Themes: the genuine context-guard ambiguities join the same hub ──────────
+// Only the 251 guard cases. The 4,242 legacy-only tags stay out: the coverage audit found
+// them 57% extractor noise and 19% style labels that are not subjects at all, and queuing
+// them would bury the real cases under more than twice the entity queue.
+try {
+  const themes = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/themes-audit.json'), 'utf8'))
+  for (const a of themes.ambiguous) {
+    rows.push({
+      id: `theme-${a.postNum}-${a.token.replace(/\W+/g, '_')}`,
+      kind: 'theme',
+      token: a.token,
+      postNum: a.postNum, postId: a.postId,
+      sourceSpan: '', context: [],
+      lineIndex: -1, charIndex: -1,
+      candidates: a.candidates ?? [],
+      whyUnresolved: a.why,
+      status: 'OPEN',
+      provenance: 'Themes audit v1 — a context guard fired, so the signals are present but the words are doing something else',
+      deepLink: `/post/${a.postId}`,
+    })
+  }
+} catch { /* themes audit is optional; the entity queue stands on its own */ }
+
 // Cap the shipped queue so the page stays fast; the full set stays in the audit trail.
 const byToken = {}
 for (const r of rows) byToken[r.token] = (byToken[r.token] ?? 0) + 1
