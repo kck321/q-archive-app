@@ -143,17 +143,32 @@ const totals = {
 }
 
 // ── QA gate ─────────────────────────────────────────────────────────────────
-// The certified figures were computed BEFORE the review verdicts were folded into the type
-// table, so asserting them here would fail on the review's own decisions. The gate is
-// structural instead, and the corrected distribution is printed for re-certification.
+// Asserted against the MATERIALISED artifact, not against the pre-verdict classifier counts.
+// The manual verdicts are authoritative: other_named_entity falling from 101 to 6 is the
+// review having done its job, not a regression.
 const T = tailTypes
 const checks = [
+  ['canonical entities = 1,332', entities.length === 1332, entities.length],
+  ['resolved mentions = 4,463', totals.mentions === 4463, totals.mentions],
+  ['context-resolved mentions = 161', ctx.resolutions.length === 161, ctx.resolutions.length],
+  // 53, not the 39 reported earlier: the ROUTE_TO_THEMES fix routes the 14 concepts that were
+  // previously leaking through as though 'ROUTE_TO_THEMES' were a type. 39 + 14 = 53.
+  ['routed to Themes = 53', themed.length === 53, themed.length],
+  ['unresolved alias tokens = 1,011', unresolvedAliases.length === 1011, unresolvedAliases.length],
+  ['unresolved occurrences = 2,237', totals.unresolvedAliasOccurrences === 2237, totals.unresolvedAliasOccurrences],
+  ['people = 722', T.person === 722, T.person],
+  ['organizations = 122', T.organization === 122, T.organization],
+  ['media organizations = 95', T.media_organization === 95, T.media_organization],
+  ['other named entities = 6', T.other_named_entity === 6, T.other_named_entity],
+  ['countries/regions = 65', T.country_region === 65, T.country_region],
+  ['government institutions = 62', T.government_institution === 62, T.government_institution],
+  ['locations = 44', T.location === 44, T.location],
+  ['title/roles = 22', T.title_role === 22, T.title_role],
+  // No routing marker may survive as though it were a type.
+  ['no ROUTE_TO_THEMES pseudo-type', !Object.keys(allTypes).includes('ROUTE_TO_THEMES'), 'ok'],
   ['every entity carries a type', entities.every(e => e.type), 'ok'],
   ['no entity is also routed to Themes', !entities.some(e => themed.some(t => t.sourceText === e.canonical)), 'ok'],
-  ['unresolved aliases preserved', unresolvedAliases.length > 900, `${unresolvedAliases.length} tokens`],
   ['review verdicts applied', Object.keys(BUCKET1).length > 90, `${Object.keys(BUCKET1).length} bucket-1 verdicts`],
-  ['context resolutions applied', ctx.resolutions.length === 161, ctx.resolutions.length],
-  ['no type outside the agreed ontology', Object.keys(allTypes).every(t => t && t !== 'undefined'), Object.keys(allTypes).length + ' types'],
 ]
 
 console.log('\n  ADJUDICATED-TAIL TYPES (after the review verdicts):')

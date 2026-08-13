@@ -1,5 +1,5 @@
 import BackButton from '../components/BackButton'
-import { SECTIONS, DIRECTIVE_FAMILIES, CLAIM_ATTRIBUTES, ASSERTIONS, EVIDENCE, METHOD_INTRO, METHOD_PRINCIPLE, CERTIFIED } from '../lib/sectionInfo'
+import { SECTIONS, DIRECTIVE_FAMILIES, CLAIM_ATTRIBUTES, ASSERTIONS, EVIDENCE, ENTITIES, METHOD_INTRO, METHOD_PRINCIPLE, CERTIFIED } from '../lib/sectionInfo'
 
 // The full classification method. Every word of section language comes from lib/sectionInfo,
 // which the per-section ⓘ popovers also read — so the short and long forms cannot disagree.
@@ -56,6 +56,31 @@ export default function Method() {
               <p className="mt-3 pt-2 border-t border-q-border text-xs text-gray-400">
                 <span className="text-emerald-500 font-medium">Certified dataset:</span> {s.certified}
               </p>
+            )}
+
+            {s.id === 'namedEntities' && (
+              <div className="mt-3 pt-3 border-t border-q-border space-y-2">
+                <div className="text-[11px] uppercase tracking-wide text-gray-500">When we do not know</div>
+                <div>
+                  <div className="text-sm font-medium text-gray-200">{ENTITIES.otherNamedEntity.label}</div>
+                  <p className="text-xs text-gray-400 leading-relaxed">{ENTITIES.otherNamedEntity.blurb}</p>
+                </div>
+                <div>
+                  <div className="text-sm font-medium text-gray-200">
+                    {ENTITIES.unresolvedAlias.label}{' '}
+                    <span className="text-gray-500 font-normal">
+                      · {ENTITIES.unresolvedTokens.toLocaleString()} references, {ENTITIES.unresolvedOccurrences.toLocaleString()} occurrences
+                    </span>
+                  </div>
+                  <p className="text-xs text-gray-400 leading-relaxed">{ENTITIES.unresolvedAlias.blurb}</p>
+                </div>
+                <p className="text-xs text-gray-500 leading-relaxed">{ENTITIES.occurrenceSpecific}</p>
+                <p className="text-xs text-gray-500">
+                  {ENTITIES.contextResolved.toLocaleString()} ambiguous references were resolved by reading the
+                  surrounding lines; {ENTITIES.routedToThemes} concept terms were routed to Themes rather than
+                  counted as entities.
+                </p>
+              </div>
             )}
 
             {s.id === 'links' && (

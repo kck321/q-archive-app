@@ -2,13 +2,13 @@
  "scope": "full-corpus entity audit v1",
  "productionChanged": false,
  "totals": {
-  "mentions": 5834,
-  "inQAuthoredText": 5419,
-  "insideQuotedSource": 415,
+  "mentions": 6024,
+  "inQAuthoredText": 5595,
+  "insideQuotedSource": 429,
   "resolvedToCanonical": 4302,
-  "contextDependent": 1117,
+  "contextDependent": 1293,
   "distinctEntities": 82,
-  "posts": 1444,
+  "posts": 1486,
   "byType": {
    "person": 1484,
    "program_operation": 99,
@@ -11280,6 +11280,18 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 1014,
+   "postId": "1014",
+   "sourceText": "Jack",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Jack",
+   "contextDependent": true,
+   "contextNote": "A given name used for more than one individual across the corpus.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 1015,
    "postId": "1015",
    "sourceText": "Israel",
@@ -11604,6 +11616,18 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 1063,
+   "postId": "1063",
+   "sourceText": "Jack",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Jack",
+   "contextDependent": true,
+   "contextNote": "A given name used for more than one individual across the corpus.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 1067,
    "postId": "1067",
    "sourceText": "China",
@@ -11784,6 +11808,18 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 1082,
+   "postId": "1082",
+   "sourceText": "JFK",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "JFK",
+   "contextDependent": true,
+   "contextNote": "John F. Kennedy in some drops, JFK airport in others, and JFK Jr. in a third set. Not resolved by the token alone.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 1083,
    "postId": "1083",
    "sourceText": "AS",
@@ -11912,6 +11948,18 @@
    "aliasUsed": "POTUS",
    "contextDependent": true,
    "contextNote": "A title, not a name. It refers to whoever held the office at the time of the drop — overwhelmingly Donald Trump in this corpus, but the resolution depends on the drop’s date rather than the token.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 1098,
+   "postId": "1098",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -12060,6 +12108,30 @@
    "confidence": "MEDIUM"
   },
   {
+   "postNum": 1100,
+   "postId": "1100",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 1100,
+   "postId": "1100",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 1102,
    "postId": "1102",
    "sourceText": "HUSSEIN",
@@ -12140,6 +12212,30 @@
    "aliasUsed": "LL",
    "contextDependent": true,
    "contextNote": "Shorthand used for a named individual in some drops and ambiguous in others.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 1102,
+   "postId": "1102",
+   "sourceText": "Jack",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Jack",
+   "contextDependent": true,
+   "contextNote": "A given name used for more than one individual across the corpus.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 1102,
+   "postId": "1102",
+   "sourceText": "Jack",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Jack",
+   "contextDependent": true,
+   "contextNote": "A given name used for more than one individual across the corpus.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -12550,6 +12646,30 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "HIGH"
+  },
+  {
+   "postNum": 112,
+   "postId": "112",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 112,
+   "postId": "112",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 1120,
@@ -13644,6 +13764,18 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 1183,
+   "postId": "1183",
+   "sourceText": "JFK",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "JFK",
+   "contextDependent": true,
+   "contextNote": "John F. Kennedy in some drops, JFK airport in others, and JFK Jr. in a third set. Not resolved by the token alone.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 1184,
    "postId": "1184",
    "sourceText": "North Korea",
@@ -14172,6 +14304,30 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 121,
+   "postId": "121",
+   "sourceText": "JFK",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "JFK",
+   "contextDependent": true,
+   "contextNote": "John F. Kennedy in some drops, JFK airport in others, and JFK Jr. in a third set. Not resolved by the token alone.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 121,
+   "postId": "121",
+   "sourceText": "JFK",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "JFK",
+   "contextDependent": true,
+   "contextNote": "John F. Kennedy in some drops, JFK airport in others, and JFK Jr. in a third set. Not resolved by the token alone.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 1210,
    "postId": "1210",
    "sourceText": "AS",
@@ -14338,6 +14494,18 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "MEDIUM"
+  },
+  {
+   "postNum": 1221,
+   "postId": "1221",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 1222,
@@ -16116,6 +16284,18 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 1286,
+   "postId": "1286",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 1287,
    "postId": "1287",
    "sourceText": "United States",
@@ -17216,6 +17396,30 @@
    "aliasUsed": "POTUS",
    "contextDependent": true,
    "contextNote": "A title, not a name. It refers to whoever held the office at the time of the drop — overwhelmingly Donald Trump in this corpus, but the resolution depends on the drop’s date rather than the token.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 1318,
+   "postId": "1318",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 1318,
+   "postId": "1318",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -19452,6 +19656,18 @@
    "confidence": "MEDIUM"
   },
   {
+   "postNum": 1433,
+   "postId": "1433",
+   "sourceText": "JFK",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "JFK",
+   "contextDependent": true,
+   "contextNote": "John F. Kennedy in some drops, JFK airport in others, and JFK Jr. in a third set. Not resolved by the token alone.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 1434,
    "postId": "1434",
    "sourceText": "CNN",
@@ -20076,6 +20292,18 @@
    "confidence": "MEDIUM"
   },
   {
+   "postNum": 1453,
+   "postId": "1453",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 1454,
    "postId": "1454",
    "sourceText": "Hussein",
@@ -20544,6 +20772,18 @@
    "confidence": "MEDIUM"
   },
   {
+   "postNum": 1483,
+   "postId": "1483",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 1489,
    "postId": "1489",
    "sourceText": "Twitter",
@@ -20756,6 +20996,18 @@
    "aliasUsed": "AS",
    "contextDependent": true,
    "contextNote": "Two letters that appear both as Q’s shorthand for a named individual and as the ordinary English word. Not resolved without corroborating context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 1494,
+   "postId": "1494",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -21084,6 +21336,18 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 15,
+   "postId": "15",
+   "sourceText": "JFK",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "JFK",
+   "contextDependent": true,
+   "contextNote": "John F. Kennedy in some drops, JFK airport in others, and JFK Jr. in a third set. Not resolved by the token alone.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 1500,
    "postId": "1500",
    "sourceText": "POTUS",
@@ -21344,6 +21608,54 @@
    "aliasUsed": "POTUS",
    "contextDependent": true,
    "contextNote": "A title, not a name. It refers to whoever held the office at the time of the drop — overwhelmingly Donald Trump in this corpus, but the resolution depends on the drop’s date rather than the token.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 151,
+   "postId": "151",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 151,
+   "postId": "151",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 151,
+   "postId": "151",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 151,
+   "postId": "151",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -22054,6 +22366,18 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "MEDIUM"
+  },
+  {
+   "postNum": 1517,
+   "postId": "1517",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 153,
@@ -23040,6 +23364,18 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 1556,
+   "postId": "1556",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 1558,
    "postId": "1558",
    "sourceText": "Iran",
@@ -23460,6 +23796,18 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 158,
+   "postId": "158",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 1585,
    "postId": "1585",
    "sourceText": "MSM",
@@ -23468,6 +23816,18 @@
    "aliasUsed": "MSM",
    "contextDependent": true,
    "contextNote": "\"Mainstream media\" is a category rather than a specific organisation, so it is recorded as a media grouping and not resolved to any one outlet.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 1588,
+   "postId": "1588",
+   "sourceText": "JFK",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "JFK",
+   "contextDependent": true,
+   "contextNote": "John F. Kennedy in some drops, JFK airport in others, and JFK Jr. in a third set. Not resolved by the token alone.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -23913,6 +24273,18 @@
    "contextDependent": true,
    "contextNote": "A title, not a name. It refers to whoever held the office at the time of the drop — overwhelmingly Donald Trump in this corpus, but the resolution depends on the drop’s date rather than the token.",
    "inQAuthoredText": false,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 1605,
+   "postId": "1605",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
    "confidence": "LOW"
   },
   {
@@ -24972,6 +25344,42 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 1660,
+   "postId": "1660",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 1660,
+   "postId": "1660",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 1660,
+   "postId": "1660",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 1661,
    "postId": "1661",
    "sourceText": "NSA",
@@ -25560,6 +25968,18 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 1702,
+   "postId": "1702",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": false,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 1703,
    "postId": "1703",
    "sourceText": "RR",
@@ -26028,6 +26448,18 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 1718,
+   "postId": "1718",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 1719,
    "postId": "1719",
    "sourceText": "Twitter",
@@ -26050,6 +26482,30 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "MEDIUM"
+  },
+  {
+   "postNum": 1719,
+   "postId": "1719",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 1719,
+   "postId": "1719",
+   "sourceText": "Jack",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Jack",
+   "contextDependent": true,
+   "contextNote": "A given name used for more than one individual across the corpus.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 1723,
@@ -30708,6 +31164,18 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 1939,
+   "postId": "1939",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": false,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 194,
    "postId": "194",
    "sourceText": "IRAN",
@@ -33132,6 +33600,30 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 2007,
+   "postId": "2007",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 2007,
+   "postId": "2007",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 2008,
    "postId": "2008",
    "sourceText": "FBI",
@@ -33164,6 +33656,18 @@
    "aliasUsed": "SC",
    "contextDependent": true,
    "contextNote": "Used for both a court and a person’s initials across different drops.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 2008,
+   "postId": "2008",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -34368,6 +34872,54 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 2072,
+   "postId": "2072",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 2072,
+   "postId": "2072",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 2072,
+   "postId": "2072",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 2072,
+   "postId": "2072",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 2075,
    "postId": "2075",
    "sourceText": "Twitter",
@@ -34402,6 +34954,18 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "MEDIUM"
+  },
+  {
+   "postNum": 2075,
+   "postId": "2075",
+   "sourceText": "Jack",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Jack",
+   "contextDependent": true,
+   "contextNote": "A given name used for more than one individual across the corpus.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 2077,
@@ -35484,6 +36048,30 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 2154,
+   "postId": "2154",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 2155,
+   "postId": "2155",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 2156,
    "postId": "2156",
    "sourceText": "McCabe",
@@ -35508,6 +36096,18 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 2156,
+   "postId": "2156",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 2157,
    "postId": "2157",
    "sourceText": "Comey",
@@ -35518,6 +36118,30 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "HIGH"
+  },
+  {
+   "postNum": 2157,
+   "postId": "2157",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 2158,
+   "postId": "2158",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 2159,
@@ -35544,6 +36168,18 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 2159,
+   "postId": "2159",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 2160,
    "postId": "2160",
    "sourceText": "UK",
@@ -35554,6 +36190,18 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "MEDIUM"
+  },
+  {
+   "postNum": 2160,
+   "postId": "2160",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 2165,
@@ -35796,6 +36444,30 @@
    "confidence": "MEDIUM"
   },
   {
+   "postNum": 2171,
+   "postId": "2171",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": false,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 2176,
+   "postId": "2176",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 2180,
    "postId": "2180",
    "sourceText": "United States",
@@ -35988,6 +36660,18 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 2200,
+   "postId": "2200",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 2201,
    "postId": "2201",
    "sourceText": "RR",
@@ -36008,6 +36692,18 @@
    "aliasUsed": "POTUS",
    "contextDependent": true,
    "contextNote": "A title, not a name. It refers to whoever held the office at the time of the drop — overwhelmingly Donald Trump in this corpus, but the resolution depends on the drop’s date rather than the token.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 2201,
+   "postId": "2201",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -36036,6 +36732,30 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 2202,
+   "postId": "2202",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 2203,
+   "postId": "2203",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 2204,
    "postId": "2204",
    "sourceText": "SESSIONS",
@@ -36060,6 +36780,18 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 2204,
+   "postId": "2204",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 2205,
    "postId": "2205",
    "sourceText": "SESSIONS",
@@ -36080,6 +36812,18 @@
    "aliasUsed": "SC",
    "contextDependent": true,
    "contextNote": "Used for both a court and a person’s initials across different drops.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 2205,
+   "postId": "2205",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -36816,6 +37560,54 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 2211,
+   "postId": "2211",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 2211,
+   "postId": "2211",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 2211,
+   "postId": "2211",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 2211,
+   "postId": "2211",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 2212,
    "postId": "2212",
    "sourceText": "RR",
@@ -36850,6 +37642,30 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "MEDIUM"
+  },
+  {
+   "postNum": 2215,
+   "postId": "2215",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 2215,
+   "postId": "2215",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 2217,
@@ -36922,6 +37738,18 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "MEDIUM"
+  },
+  {
+   "postNum": 2230,
+   "postId": "2230",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 2242,
@@ -37200,6 +38028,18 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 2259,
+   "postId": "2259",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 2260,
    "postId": "2260",
    "sourceText": "RR",
@@ -37232,6 +38072,18 @@
    "aliasUsed": "LL",
    "contextDependent": true,
    "contextNote": "Shorthand used for a named individual in some drops and ambiguous in others.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 2260,
+   "postId": "2260",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -37376,6 +38228,18 @@
    "aliasUsed": "LL",
    "contextDependent": true,
    "contextNote": "Shorthand used for a named individual in some drops and ambiguous in others.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 2261,
+   "postId": "2261",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -40548,6 +41412,18 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 2416,
+   "postId": "2416",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 2424,
    "postId": "2424",
    "sourceText": "POTUS",
@@ -41097,6 +41973,18 @@
    "contextDependent": true,
    "contextNote": "A title, not a name. It refers to whoever held the office at the time of the drop — overwhelmingly Donald Trump in this corpus, but the resolution depends on the drop’s date rather than the token.",
    "inQAuthoredText": false,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 2455,
+   "postId": "2455",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
    "confidence": "LOW"
   },
   {
@@ -41904,6 +42792,18 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 2494,
+   "postId": "2494",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 2495,
    "postId": "2495",
    "sourceText": "SENATE",
@@ -41940,6 +42840,18 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 2496,
+   "postId": "2496",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 2497,
    "postId": "2497",
    "sourceText": "FBI",
@@ -41964,6 +42876,18 @@
    "confidence": "MEDIUM"
   },
   {
+   "postNum": 2498,
+   "postId": "2498",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 2499,
    "postId": "2499",
    "sourceText": "NYT",
@@ -41974,6 +42898,18 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "MEDIUM"
+  },
+  {
+   "postNum": 2499,
+   "postId": "2499",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 25,
@@ -42070,6 +43006,18 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "MEDIUM"
+  },
+  {
+   "postNum": 2501,
+   "postId": "2501",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 2502,
@@ -42238,6 +43186,30 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "MEDIUM"
+  },
+  {
+   "postNum": 2513,
+   "postId": "2513",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 2513,
+   "postId": "2513",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 2516,
@@ -42780,6 +43752,18 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 2552,
+   "postId": "2552",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 2554,
    "postId": "2554",
    "sourceText": "JC",
@@ -43164,6 +44148,18 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 2573,
+   "postId": "2573",
+   "sourceText": "JFK",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "JFK",
+   "contextDependent": true,
+   "contextNote": "John F. Kennedy in some drops, JFK airport in others, and JFK Jr. in a third set. Not resolved by the token alone.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 2578,
    "postId": "2578",
    "sourceText": "OIG",
@@ -43452,6 +44448,18 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 2603,
+   "postId": "2603",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 2604,
    "postId": "2604",
    "sourceText": "SESSIONS",
@@ -43508,6 +44516,18 @@
    "aliasUsed": "SC",
    "contextDependent": true,
    "contextNote": "Used for both a court and a person’s initials across different drops.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 2604,
+   "postId": "2604",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -44242,6 +45262,18 @@
    "contextNote": null,
    "inQAuthoredText": false,
    "confidence": "HIGH"
+  },
+  {
+   "postNum": 2653,
+   "postId": "2653",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 2655,
@@ -45128,6 +46160,18 @@
    "aliasUsed": "SC",
    "contextDependent": true,
    "contextNote": "Used for both a court and a person’s initials across different drops.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 2658,
+   "postId": "2658",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -46440,6 +47484,18 @@
    "confidence": "MEDIUM"
   },
   {
+   "postNum": 2698,
+   "postId": "2698",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 270,
    "postId": "270",
    "sourceText": "No Such Agency",
@@ -46618,6 +47674,18 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "HIGH"
+  },
+  {
+   "postNum": 2724,
+   "postId": "2724",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 2725,
@@ -47806,6 +48874,18 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "MEDIUM"
+  },
+  {
+   "postNum": 2848,
+   "postId": "2848",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 2849,
@@ -49232,6 +50312,18 @@
    "aliasUsed": "POTUS",
    "contextDependent": true,
    "contextNote": "A title, not a name. It refers to whoever held the office at the time of the drop — overwhelmingly Donald Trump in this corpus, but the resolution depends on the drop’s date rather than the token.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 2937,
+   "postId": "2937",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -50868,6 +51960,18 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 300,
+   "postId": "300",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 3001,
    "postId": "3001",
    "sourceText": "Senate",
@@ -51816,6 +52920,54 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 3028,
+   "postId": "3028",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 3028,
+   "postId": "3028",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 3028,
+   "postId": "3028",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 3028,
+   "postId": "3028",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 3032,
    "postId": "3032",
    "sourceText": "FBI",
@@ -51874,6 +53026,30 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "MEDIUM"
+  },
+  {
+   "postNum": 3035,
+   "postId": "3035",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 3035,
+   "postId": "3035",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 3036,
@@ -51956,6 +53132,54 @@
    "aliasUsed": "POTUS",
    "contextDependent": true,
    "contextNote": "A title, not a name. It refers to whoever held the office at the time of the drop — overwhelmingly Donald Trump in this corpus, but the resolution depends on the drop’s date rather than the token.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 3036,
+   "postId": "3036",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 3036,
+   "postId": "3036",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 3036,
+   "postId": "3036",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 3036,
+   "postId": "3036",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -52112,6 +53336,18 @@
    "aliasUsed": "POTUS",
    "contextDependent": true,
    "contextNote": "A title, not a name. It refers to whoever held the office at the time of the drop — overwhelmingly Donald Trump in this corpus, but the resolution depends on the drop’s date rather than the token.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 3047,
+   "postId": "3047",
+   "sourceText": "Jack",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Jack",
+   "contextDependent": true,
+   "contextNote": "A given name used for more than one individual across the corpus.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -52452,6 +53688,30 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 3108,
+   "postId": "3108",
+   "sourceText": "Jack",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Jack",
+   "contextDependent": true,
+   "contextNote": "A given name used for more than one individual across the corpus.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 3109,
+   "postId": "3109",
+   "sourceText": "Jack",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Jack",
+   "contextDependent": true,
+   "contextNote": "A given name used for more than one individual across the corpus.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 311,
    "postId": "311",
    "sourceText": "Hussein",
@@ -52476,6 +53736,18 @@
    "confidence": "MEDIUM"
   },
   {
+   "postNum": 3111,
+   "postId": "3111",
+   "sourceText": "Jack",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Jack",
+   "contextDependent": true,
+   "contextNote": "A given name used for more than one individual across the corpus.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 3115,
    "postId": "3115",
    "sourceText": "MUELLER",
@@ -52486,6 +53758,18 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "HIGH"
+  },
+  {
+   "postNum": 3115,
+   "postId": "3115",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 312,
@@ -52976,6 +54260,18 @@
    "aliasUsed": "POTUS",
    "contextDependent": true,
    "contextNote": "A title, not a name. It refers to whoever held the office at the time of the drop — overwhelmingly Donald Trump in this corpus, but the resolution depends on the drop’s date rather than the token.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 3224,
+   "postId": "3224",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -53544,6 +54840,30 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 3334,
+   "postId": "3334",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 3336,
+   "postId": "3336",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 3339,
    "postId": "3339",
    "sourceText": "DOJ",
@@ -53662,6 +54982,18 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "HIGH"
+  },
+  {
+   "postNum": 3364,
+   "postId": "3364",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 337,
@@ -53796,6 +55128,18 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 3381,
+   "postId": "3381",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 3383,
    "postId": "3383",
    "sourceText": "Pelosi",
@@ -53830,6 +55174,18 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "HIGH"
+  },
+  {
+   "postNum": 3383,
+   "postId": "3383",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 3385,
@@ -54336,6 +55692,18 @@
    "confidence": "MEDIUM"
   },
   {
+   "postNum": 3428,
+   "postId": "3428",
+   "sourceText": "Maxwell",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Maxwell",
+   "contextDependent": true,
+   "contextNote": "A surname used for more than one individual across the corpus.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 3429,
    "postId": "3429",
    "sourceText": "EPSTEIN",
@@ -54358,6 +55726,18 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "HIGH"
+  },
+  {
+   "postNum": 3432,
+   "postId": "3432",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 3433,
@@ -54404,6 +55784,18 @@
    "aliasUsed": "BO",
    "contextDependent": true,
    "contextNote": "In this corpus \"BO\" is used both for the 8chan/8kun Board Owner and, in some drops, for Barack Obama. A context probe over all 77 mentions found 5 clearly board-owner, 7 clearly Obama-adjacent and 65 undecidable from surrounding text.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 3448,
+   "postId": "3448",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -54804,6 +56196,18 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 35,
+   "postId": "35",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 350,
    "postId": "350",
    "sourceText": "Hussein",
@@ -54837,6 +56241,18 @@
    "contextDependent": true,
    "contextNote": "\"Mainstream media\" is a category rather than a specific organisation, so it is recorded as a media grouping and not resolved to any one outlet.",
    "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 350,
+   "postId": "350",
+   "sourceText": "JFK",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "JFK",
+   "contextDependent": true,
+   "contextNote": "John F. Kennedy in some drops, JFK airport in others, and JFK Jr. in a third set. Not resolved by the token alone.",
+   "inQAuthoredText": false,
    "confidence": "LOW"
   },
   {
@@ -55332,6 +56748,18 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 354,
+   "postId": "354",
+   "sourceText": "JFK",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "JFK",
+   "contextDependent": true,
+   "contextNote": "John F. Kennedy in some drops, JFK airport in others, and JFK Jr. in a third set. Not resolved by the token alone.",
+   "inQAuthoredText": false,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 3540,
    "postId": "3540",
    "sourceText": "MSM",
@@ -55448,6 +56876,18 @@
    "aliasUsed": "POTUS",
    "contextDependent": true,
    "contextNote": "A title, not a name. It refers to whoever held the office at the time of the drop — overwhelmingly Donald Trump in this corpus, but the resolution depends on the drop’s date rather than the token.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 3581,
+   "postId": "3581",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -56244,6 +57684,18 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 36,
+   "postId": "36",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 3603,
    "postId": "3603",
    "sourceText": "FISA",
@@ -56542,6 +57994,18 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "MEDIUM"
+  },
+  {
+   "postNum": 3634,
+   "postId": "3634",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": false,
+   "confidence": "LOW"
   },
   {
    "postNum": 3638,
@@ -57372,6 +58836,18 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 372,
+   "postId": "372",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 3720,
    "postId": "3720",
    "sourceText": "Barr",
@@ -57478,6 +58954,18 @@
    "contextNote": null,
    "inQAuthoredText": false,
    "confidence": "MEDIUM"
+  },
+  {
+   "postNum": 3724,
+   "postId": "3724",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": false,
+   "confidence": "LOW"
   },
   {
    "postNum": 3725,
@@ -57596,6 +59084,18 @@
    "aliasUsed": "POTUS",
    "contextDependent": true,
    "contextNote": "A title, not a name. It refers to whoever held the office at the time of the drop — overwhelmingly Donald Trump in this corpus, but the resolution depends on the drop’s date rather than the token.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 3734,
+   "postId": "3734",
+   "sourceText": "JFK",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "JFK",
+   "contextDependent": true,
+   "contextNote": "John F. Kennedy in some drops, JFK airport in others, and JFK Jr. in a third set. Not resolved by the token alone.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -59580,6 +61080,18 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 3859,
+   "postId": "3859",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 3868,
    "postId": "3868",
    "sourceText": "Secret Service",
@@ -59614,6 +61126,30 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "MEDIUM"
+  },
+  {
+   "postNum": 3868,
+   "postId": "3868",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 3868,
+   "postId": "3868",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 3871,
@@ -60828,6 +62364,18 @@
    "confidence": "MEDIUM"
   },
   {
+   "postNum": 3984,
+   "postId": "3984",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 3990,
    "postId": "3990",
    "sourceText": "Andrew McCabe",
@@ -61560,6 +63108,18 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 4,
+   "postId": "4",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": false,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 4002,
    "postId": "4002",
    "sourceText": "Soros",
@@ -62110,6 +63670,18 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "HIGH"
+  },
+  {
+   "postNum": 4133,
+   "postId": "4133",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 4137,
@@ -63648,6 +65220,18 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 4206,
+   "postId": "4206",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 4219,
    "postId": "4219",
    "sourceText": "DOJ",
@@ -64884,6 +66468,30 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 4310,
+   "postId": "4310",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 4310,
+   "postId": "4310",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 4311,
    "postId": "4311",
    "sourceText": "Barack Hussein Obama",
@@ -65026,6 +66634,18 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "MEDIUM"
+  },
+  {
+   "postNum": 4346,
+   "postId": "4346",
+   "sourceText": "Jack",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Jack",
+   "contextDependent": true,
+   "contextNote": "A given name used for more than one individual across the corpus.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 4354,
@@ -66588,6 +68208,18 @@
    "confidence": "MEDIUM"
   },
   {
+   "postNum": 453,
+   "postId": "453",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 4535,
    "postId": "4535",
    "sourceText": "UNITED STATES OF AMERICA",
@@ -67260,6 +68892,42 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 4565,
+   "postId": "4565",
+   "sourceText": "Maxwell",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Maxwell",
+   "contextDependent": true,
+   "contextNote": "A surname used for more than one individual across the corpus.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 4565,
+   "postId": "4565",
+   "sourceText": "Maxwell",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Maxwell",
+   "contextDependent": true,
+   "contextNote": "A surname used for more than one individual across the corpus.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 4566,
+   "postId": "4566",
+   "sourceText": "Maxwell",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Maxwell",
+   "contextDependent": true,
+   "contextNote": "A surname used for more than one individual across the corpus.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 4583,
    "postId": "4583",
    "sourceText": "America",
@@ -67872,6 +69540,18 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 4623,
+   "postId": "4623",
+   "sourceText": "Maxwell",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Maxwell",
+   "contextDependent": true,
+   "contextNote": "A surname used for more than one individual across the corpus.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 4627,
    "postId": "4627",
    "sourceText": "AMERICA",
@@ -67990,6 +69670,30 @@
    "contextNote": null,
    "inQAuthoredText": false,
    "confidence": "HIGH"
+  },
+  {
+   "postNum": 4632,
+   "postId": "4632",
+   "sourceText": "Jack",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Jack",
+   "contextDependent": true,
+   "contextNote": "A given name used for more than one individual across the corpus.",
+   "inQAuthoredText": false,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 4632,
+   "postId": "4632",
+   "sourceText": "Jack",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Jack",
+   "contextDependent": true,
+   "contextNote": "A given name used for more than one individual across the corpus.",
+   "inQAuthoredText": false,
+   "confidence": "LOW"
   },
   {
    "postNum": 4633,
@@ -69204,6 +70908,18 @@
    "confidence": "MEDIUM"
   },
   {
+   "postNum": 4750,
+   "postId": "4750",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 4755,
    "postId": "4755",
    "sourceText": "FBI",
@@ -69360,6 +71076,18 @@
    "confidence": "MEDIUM"
   },
   {
+   "postNum": 4773,
+   "postId": "4773",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 4777,
    "postId": "4777",
    "sourceText": "Clinton Foundation",
@@ -69466,6 +71194,30 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "HIGH"
+  },
+  {
+   "postNum": 4784,
+   "postId": "4784",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 4784,
+   "postId": "4784",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 4785,
@@ -69658,6 +71410,18 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "HIGH"
+  },
+  {
+   "postNum": 4793,
+   "postId": "4793",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 4794,
@@ -70160,6 +71924,66 @@
    "aliasUsed": "POTUS",
    "contextDependent": true,
    "contextNote": "A title, not a name. It refers to whoever held the office at the time of the drop — overwhelmingly Donald Trump in this corpus, but the resolution depends on the drop’s date rather than the token.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 4818,
+   "postId": "4818",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 4819,
+   "postId": "4819",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 4819,
+   "postId": "4819",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 4819,
+   "postId": "4819",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 4819,
+   "postId": "4819",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -70704,6 +72528,18 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 4844,
+   "postId": "4844",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 4845,
    "postId": "4845",
    "sourceText": "Clinton Foundation",
@@ -71124,6 +72960,18 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 4882,
+   "postId": "4882",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 4885,
    "postId": "4885",
    "sourceText": "POTUS",
@@ -71436,6 +73284,18 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 4933,
+   "postId": "4933",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 4935,
    "postId": "4935",
    "sourceText": "Senate",
@@ -71578,6 +73438,18 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "HIGH"
+  },
+  {
+   "postNum": 5,
+   "postId": "5",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 50,
@@ -72058,6 +73930,18 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "MEDIUM"
+  },
+  {
+   "postNum": 525,
+   "postId": "525",
+   "sourceText": "Jack",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Jack",
+   "contextDependent": true,
+   "contextNote": "A given name used for more than one individual across the corpus.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 526,
@@ -72816,6 +74700,54 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 56,
+   "postId": "56",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": false,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 56,
+   "postId": "56",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": false,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 56,
+   "postId": "56",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 56,
+   "postId": "56",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 560,
    "postId": "560",
    "sourceText": "NK",
@@ -73284,6 +75216,18 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 571,
+   "postId": "571",
+   "sourceText": "Jack",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Jack",
+   "contextDependent": true,
+   "contextNote": "A given name used for more than one individual across the corpus.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 575,
    "postId": "575",
    "sourceText": "No Such Agency",
@@ -73668,6 +75612,42 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 598,
+   "postId": "598",
+   "sourceText": "Jack",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Jack",
+   "contextDependent": true,
+   "contextNote": "A given name used for more than one individual across the corpus.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 598,
+   "postId": "598",
+   "sourceText": "Jack",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Jack",
+   "contextDependent": true,
+   "contextNote": "A given name used for more than one individual across the corpus.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 598,
+   "postId": "598",
+   "sourceText": "Jack",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Jack",
+   "contextDependent": true,
+   "contextNote": "A given name used for more than one individual across the corpus.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 6,
    "postId": "6",
    "sourceText": "Military Intelligence",
@@ -73844,6 +75824,30 @@
    "aliasUsed": "SC",
    "contextDependent": true,
    "contextNote": "Used for both a court and a person’s initials across different drops.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 6,
+   "postId": "6",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": false,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 6,
+   "postId": "6",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -74352,6 +76356,18 @@
    "confidence": "MEDIUM"
   },
   {
+   "postNum": 643,
+   "postId": "643",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 645,
    "postId": "645",
    "sourceText": "Andrew McCabe",
@@ -74604,6 +76620,18 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 666,
+   "postId": "666",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 667,
    "postId": "667",
    "sourceText": "POTUS",
@@ -74708,6 +76736,18 @@
    "aliasUsed": "POTUS",
    "contextDependent": true,
    "contextNote": "A title, not a name. It refers to whoever held the office at the time of the drop — overwhelmingly Donald Trump in this corpus, but the resolution depends on the drop’s date rather than the token.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 67,
+   "postId": "67",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -75036,6 +77076,18 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 697,
+   "postId": "697",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 698,
    "postId": "698",
    "sourceText": "USSS",
@@ -75106,6 +77158,18 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "MEDIUM"
+  },
+  {
+   "postNum": 7,
+   "postId": "7",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 70,
@@ -75288,6 +77352,30 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 703,
+   "postId": "703",
+   "sourceText": "JFK",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "JFK",
+   "contextDependent": true,
+   "contextNote": "John F. Kennedy in some drops, JFK airport in others, and JFK Jr. in a third set. Not resolved by the token alone.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 703,
+   "postId": "703",
+   "sourceText": "JFK",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "JFK",
+   "contextDependent": true,
+   "contextNote": "John F. Kennedy in some drops, JFK airport in others, and JFK Jr. in a third set. Not resolved by the token alone.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 709,
    "postId": "709",
    "sourceText": "Snowden",
@@ -75298,6 +77386,18 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "HIGH"
+  },
+  {
+   "postNum": 709,
+   "postId": "709",
+   "sourceText": "JFK",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "JFK",
+   "contextDependent": true,
+   "contextNote": "John F. Kennedy in some drops, JFK airport in others, and JFK Jr. in a third set. Not resolved by the token alone.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 71,
@@ -75792,6 +77892,18 @@
    "confidence": "MEDIUM"
   },
   {
+   "postNum": 725,
+   "postId": "725",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 728,
    "postId": "728",
    "sourceText": "Snowden",
@@ -75994,6 +78106,30 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "HIGH"
+  },
+  {
+   "postNum": 742,
+   "postId": "742",
+   "sourceText": "JFK",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "JFK",
+   "contextDependent": true,
+   "contextNote": "John F. Kennedy in some drops, JFK airport in others, and JFK Jr. in a third set. Not resolved by the token alone.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 743,
+   "postId": "743",
+   "sourceText": "JFK",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "JFK",
+   "contextDependent": true,
+   "contextNote": "John F. Kennedy in some drops, JFK airport in others, and JFK Jr. in a third set. Not resolved by the token alone.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 75,
@@ -76812,6 +78948,18 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 771,
+   "postId": "771",
+   "sourceText": "Jack",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Jack",
+   "contextDependent": true,
+   "contextNote": "A given name used for more than one individual across the corpus.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 772,
    "postId": "772",
    "sourceText": "AS",
@@ -77268,6 +79416,18 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 783,
+   "postId": "783",
+   "sourceText": "JFK",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "JFK",
+   "contextDependent": true,
+   "contextNote": "John F. Kennedy in some drops, JFK airport in others, and JFK Jr. in a third set. Not resolved by the token alone.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 784,
    "postId": "784",
    "sourceText": "UK",
@@ -77376,6 +79536,18 @@
    "confidence": "HIGH"
   },
   {
+   "postNum": 797,
+   "postId": "797",
+   "sourceText": "Jack",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Jack",
+   "contextDependent": true,
+   "contextNote": "A given name used for more than one individual across the corpus.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 798,
    "postId": "798",
    "sourceText": "USSS",
@@ -77386,6 +79558,30 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "MEDIUM"
+  },
+  {
+   "postNum": 799,
+   "postId": "799",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 799,
+   "postId": "799",
+   "sourceText": "Jack",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Jack",
+   "contextDependent": true,
+   "contextNote": "A given name used for more than one individual across the corpus.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 8,
@@ -77564,6 +79760,18 @@
    "aliasUsed": "POTUS",
    "contextDependent": true,
    "contextNote": "A title, not a name. It refers to whoever held the office at the time of the drop — overwhelmingly Donald Trump in this corpus, but the resolution depends on the drop’s date rather than the token.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 8,
+   "postId": "8",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
    "inQAuthoredText": true,
    "confidence": "LOW"
   },
@@ -79080,6 +81288,18 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 895,
+   "postId": "895",
+   "sourceText": "Jack",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Jack",
+   "contextDependent": true,
+   "contextNote": "A given name used for more than one individual across the corpus.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 898,
    "postId": "898",
    "sourceText": "Snowden",
@@ -79296,6 +81516,18 @@
    "confidence": "MEDIUM"
   },
   {
+   "postNum": 91,
+   "postId": "91",
+   "sourceText": "Clinton",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "Clinton",
+   "contextDependent": true,
+   "contextNote": "A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context.",
+   "inQAuthoredText": false,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 910,
    "postId": "910",
    "sourceText": "WH",
@@ -79416,6 +81648,30 @@
    "confidence": "LOW"
   },
   {
+   "postNum": 92,
+   "postId": "92",
+   "sourceText": "JFK",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "JFK",
+   "contextDependent": true,
+   "contextNote": "John F. Kennedy in some drops, JFK airport in others, and JFK Jr. in a third set. Not resolved by the token alone.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
+   "postNum": 92,
+   "postId": "92",
+   "sourceText": "JFK",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "JFK",
+   "contextDependent": true,
+   "contextNote": "John F. Kennedy in some drops, JFK airport in others, and JFK Jr. in a third set. Not resolved by the token alone.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
+  },
+  {
    "postNum": 920,
    "postId": "920",
    "sourceText": "Snowden",
@@ -79462,6 +81718,18 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "HIGH"
+  },
+  {
+   "postNum": 921,
+   "postId": "921",
+   "sourceText": "DC",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "DC",
+   "contextDependent": true,
+   "contextNote": "Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 93,
@@ -79630,6 +81898,18 @@
    "contextNote": null,
    "inQAuthoredText": true,
    "confidence": "HIGH"
+  },
+  {
+   "postNum": 942,
+   "postId": "942",
+   "sourceText": "JFK",
+   "canonicalEntity": null,
+   "entityType": "other",
+   "aliasUsed": "JFK",
+   "contextDependent": true,
+   "contextNote": "John F. Kennedy in some drops, JFK airport in others, and JFK Jr. in a third set. Not resolved by the token alone.",
+   "inQAuthoredText": true,
+   "confidence": "LOW"
   },
   {
    "postNum": 943,

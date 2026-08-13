@@ -69,6 +69,32 @@ export const EVIDENCE = {
   counting: 'Counts are shown as occurrences with distinct alongside. The same article cited in six drops is six occurrences of one source — how often Q returned to a source is part of what the section shows.',
 } as const
 
+/**
+ * Entities — two different kinds of "we don't know", kept apart on purpose.
+ *
+ * `other_named_entity` says we know this names a specific thing but not what kind.
+ * An unresolved alias says we cannot safely say WHICH thing the shorthand refers to.
+ * Collapsing them into one label would hide the difference between an incomplete
+ * classification and a deliberate refusal to guess.
+ */
+export const ENTITIES = {
+  canonical: 1332,
+  mentions: 4463,
+  contextResolved: 161,
+  routedToThemes: 53,
+  unresolvedTokens: 1011,
+  unresolvedOccurrences: 2237,
+  otherNamedEntity: {
+    label: 'Other named entity',
+    blurb: 'A specific named referent was detected, but the available context does not support a more precise type with enough confidence.',
+  },
+  unresolvedAlias: {
+    label: 'Unresolved reference',
+    blurb: 'Some shorthand, initials, surnames, or coded references can point to more than one person, place, organization, or concept. Q Drops leaves these unresolved unless the surrounding post clearly identifies the referent.',
+  },
+  occurrenceSpecific: 'Resolution is occurrence-specific. "BO" resolves to Barack Obama in the drops whose context says so and to Board Owner in others, and stays unresolved in the rest — one resolved occurrence never redefines the token everywhere.',
+} as const
+
 export interface AttributeInfo { key: string; label: string; blurb: string; count: number }
 
 /**
@@ -203,7 +229,8 @@ export const SECTIONS: SectionInfo[] = [
     short: 'The people, organizations, agencies and places Q named.',
     covers: 'Important people, organizations, agencies, companies, governments, countries, locations, programs, operations, institutions and other named subjects appearing throughout the posts.',
     answers: 'Who or what was Q talking about?',
-    note: 'Entities are secondary tags rather than sentence types. A question, claim, prediction or directive may contain several.',
+    certified: `${n(1332)} canonical entities · ${n(4463)} mentions`,
+    note: 'Entities are secondary tags rather than sentence types — a question, claim, prediction or directive may contain several. Names are canonicalised, so "HRC", "Hillary" and "Hillary Clinton" are one person, while Q’s exact wording is preserved in every post. Where a reference is ambiguous it is left unresolved rather than guessed.',
   },
   {
     id: 'themes',

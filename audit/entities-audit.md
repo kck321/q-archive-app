@@ -8,18 +8,18 @@ Every mention keeps its exact source wording. Canonicalisation is a layer on top
 | Excluded | Count | Why |
 |---|---|---|
 | Q's signature | 4,421 | "Q" is the top stored entity, and every one is Q signing a drop, not naming someone |
-| Mentions inside quoted source | 415 | an article Q pasted naming Comey is not Q naming Comey |
-| Ambiguous shorthand | 1,117 | recorded as the literal token, never resolved to a person |
+| Mentions inside quoted source | 429 | an article Q pasted naming Comey is not Q naming Comey |
+| Ambiguous shorthand | 1,293 | recorded as the literal token, never resolved to a person |
 
 ## Totals
 
 | Measure | Value |
 |---|---|
-| Mentions in Q-authored text | **5,419** |
+| Mentions in Q-authored text | **5,595** |
 | — resolved to a canonical entity | 4,302 |
-| — context-dependent, unresolved | 1,117 |
+| — context-dependent, unresolved | 1,293 |
 | Distinct canonical entities | 82 |
-| Posts containing a mention | 1,444 |
+| Posts containing a mention | 1,486 |
 
 ### By type
 
@@ -30,9 +30,7 @@ Every mention keeps its exact source wording. Canonicalisation is a layer on top
 | government agency | 706 |
 | country region | 943 |
 | location | 122 |
-| political group | 260 |
 | media organization | 78 |
-| program operation | 99 |
 | legal investigative | 244 |
 
 ## Entities, with the aliases Q actually used
@@ -114,6 +112,11 @@ Every mention keeps its exact source wording. Canonicalisation is a layer on top
 | `LL` | Shorthand used for a named individual in some drops and ambiguous in others. |
 | `SC` | Used for both a court and a person’s initials across different drops. |
 | `CA` | Used for a US state and, in some drops, a person’s initials. |
+| `Clinton` | A surname shared by Hillary and Bill Clinton. Q uses it for both, so it is not resolved to a person without surrounding context. |
+| `DC` | Usually Washington, D.C., but also appears as initials. Resolved to the city only where context supports it. |
+| `JFK` | John F. Kennedy in some drops, JFK airport in others, and JFK Jr. in a third set. Not resolved by the token alone. |
+| `Jack` | A given name used for more than one individual across the corpus. |
+| `Maxwell` | A surname used for more than one individual across the corpus. |
 
 ## Review queue — 2,295 stored entity strings the registry does not cover
 
