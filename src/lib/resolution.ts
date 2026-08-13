@@ -10,9 +10,12 @@
 
 export type ResolutionStatus = 'OPEN' | 'UNDER_REVIEW' | 'RESOLVED' | 'INSUFFICIENT_EVIDENCE' | 'DISPUTED'
 
+/** Every kind the hub will hold. Declared before the sections that populate them. */
+export type QueueKind = 'entity' | 'theme' | 'code' | 'source_reference' | 'classification' | 'other'
+
 export interface QueueItem {
   id: string
-  kind: 'entity_alias' | 'theme' | 'code' | 'source_reference' | 'other'
+  kind: QueueKind
   token: string
   postNum: number
   postId: string
@@ -23,13 +26,26 @@ export interface QueueItem {
   candidates: string[]
   whyUnresolved: string
   status: ResolutionStatus
+  /** Which audit left this unresolved, and where it lives in the app. */
+  provenance: string
+  deepLink: string
 }
 
 export interface QueueData {
   statuses: ResolutionStatus[]
-  totals: { occurrences: number; tokens: number; byToken: Record<string, number> }
+  kinds: QueueKind[]
+  totals: {
+    occurrences: number
+    tokens: number
+    byToken: Record<string, number>
+    byKind: Record<string, number>
+    byStatus: Record<string, number>
+  }
   rows: QueueItem[]
 }
+
+/** Deep link to one exact occurrence, not the top of the queue. */
+export const resolveLinkFor = (itemId: string) => `/resolve?item=${encodeURIComponent(itemId)}`
 
 let _cache: QueueData | null = null
 let _inflight: Promise<QueueData> | null = null

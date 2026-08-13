@@ -17,6 +17,7 @@ import { highlightsEnabled, useHighlightsEnabled } from '../lib/highlightPrefs'
 import { mediaUrl, dedupeMedia } from '../lib/mediaUrl'
 import { resolveReferences, getQuotedContext, type QuotedContext } from '../lib/references'
 import QuotedPosts from '../components/QuotedPosts'
+import UnresolvedInPost from '../components/UnresolvedInPost'
 import { highlightText } from '../lib/postHighlight'
 import { linkify } from '../lib/linkify'
 import FlagIssue from '../components/FlagIssue'
@@ -1443,6 +1444,9 @@ export default function PostDetail() {
         >
           {linkify(renderPostBody(post.text, questions, activeHL, flash, topicKeywords, undefined, newQuestionIds, actionRequests, postAnalysis ?? undefined, highlightCat || undefined))}
         </pre>
+
+        {/* Unresolved references in this drop, each deep-linking to its exact occurrence. */}
+        <UnresolvedInPost postNum={post.postNum} />
 
         {/* Manual add — selected text preview + save/cancel */}
         {selectMode && (

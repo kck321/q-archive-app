@@ -120,10 +120,23 @@ export default function ResolutionCenter() {
   useEffect(() => { loadQueue().then(setData).catch(() => setData(null)) }, [])
   useEffect(() => { setPage(0) }, [token])
 
+  const kind = params.get('kind') ?? ''
+  const focusId = params.get('item')
+
   const rows = useMemo(() => {
     if (!data) return []
-    return token ? data.rows.filter(r => r.token === token) : data.rows
-  }, [data, token])
+    let r = data.rows
+    if (kind) r = r.filter(x => x.kind === kind)
+    if (token) r = r.filter(x => x.token === token)
+    // A deep link opens on the exact occurrence, not the top of the queue.
+    if (focusId) {
+      const hit = r.find(x => x.id === focusId)
+      if (hit) return [hit, ...r.filter(x => x.id !== focusId)]
+    }
+    return r
+  }, [data, token, kind, focusId])
+
+  useEffect(() => { if (focusId) setOpenId(focusId) }, [focusId])
 
   const PAGE = 25
   const shown = rows.slice(page * PAGE, page * PAGE + PAGE)
@@ -145,6 +158,10 @@ export default function ResolutionCenter() {
           and providing supporting context or sources. Suggestions do not alter the archive
           automatically; they are reviewed before being incorporated into certified data.
         </p>
+        <p className="mt-2 text-xs text-gray-500 leading-relaxed">
+          Community agreement is not certification. Suggestions stay separate until they are
+          editorially approved and re-enter through the normal audit, QA and deploy process.
+        </p>
         {data && (
           <p className="mt-2 text-xs text-gray-500">
             <span className="text-gray-300">{data.totals.occurrences.toLocaleString()}</span> unresolved
@@ -152,6 +169,38 @@ export default function ResolutionCenter() {
           </p>
         )}
       </div>
+
+      {data && (
+        <div className="mt-3 grid grid-cols-2 sm:grid-cols-5 gap-2">
+          {data.statuses.map(st => (
+            <div key={st} className={`rounded-lg border px-3 py-2 ${STATUS_STYLE[st] ?? 'border-q-border'}`}>
+              <div className="text-lg font-bold leading-none">{(data.totals.byStatus?.[st] ?? 0).toLocaleString()}</div>
+              <div className="text-[10px] uppercase tracking-wide mt-1 opacity-80">{st.replace(/_/g, ' ').toLowerCase()}</div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {data && data.kinds && (
+        <div className="mt-3 flex flex-wrap gap-1.5 items-center">
+          <span className="text-[11px] uppercase tracking-wide text-gray-500 mr-1">Kind</span>
+          <button onClick={() => { const n = new URLSearchParams(params); n.delete('kind'); setParams(n) }}
+            className={`text-xs px-2 py-1 rounded border ${!kind ? 'bg-blue-600 text-white border-blue-500' : 'border-q-border text-gray-400 hover:text-gray-200'}`}>
+            All
+          </button>
+          {data.kinds.map(k => {
+            const n = data.totals.byKind?.[k] ?? 0
+            return (
+              <button key={k} disabled={!n}
+                onClick={() => { const q = new URLSearchParams(params); q.set('kind', k); q.delete('item'); setParams(q) }}
+                title={n ? undefined : 'No items of this kind yet — future audits will populate it'}
+                className={`text-xs px-2 py-1 rounded border ${kind === k ? 'bg-blue-600 text-white border-blue-500' : n ? 'border-q-border text-gray-400 hover:text-gray-200' : 'border-q-border/40 text-gray-600 cursor-not-allowed'}`}>
+                {k.replace(/_/g, ' ')} <span className="opacity-60">{n}</span>
+              </button>
+            )
+          })}
+        </div>
+      )}
 
       {!data && <p className="mt-6 text-sm text-gray-500">Loading the queue…</p>}
 
@@ -188,6 +237,7 @@ export default function ResolutionCenter() {
                 </div>
 
                 <p className="mt-2 text-xs text-gray-500 leading-relaxed">{item.whyUnresolved}</p>
+                {item.provenance && <p className="mt-1 text-[11px] text-gray-600">Source: {item.provenance}</p>}
                 {item.candidates.length > 0 && (
                   <p className="mt-1 text-xs text-gray-400">
                     <span className="text-gray-500">Readings already considered, none proven here: </span>

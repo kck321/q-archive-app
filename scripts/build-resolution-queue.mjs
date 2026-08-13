@@ -66,7 +66,7 @@ for (const p of posts) {
         if (resolvedAt.has(`${token}|${p.postNum}|${i}`)) continue
         rows.push({
           id: `${token}-${p.postNum}-${i}-${hit.index}`,
-          kind: 'entity_alias',
+          kind: 'entity',
           token,
           postNum: p.postNum,
           postId: p.id,
@@ -78,6 +78,10 @@ for (const p of posts) {
           candidates: CANDIDATES[token] ?? [],
           whyUnresolved: NOTES[token] ?? 'The surrounding post does not identify the referent.',
           status: 'OPEN',
+          // Which audit decided to leave this unresolved, and where it lives in the app. Both
+          // travel with the row so a contributor can always get back to the source.
+          provenance: 'Entities audit — context pass found no evidence in the surrounding lines',
+          deepLink: `/post/${p.id}`,
         })
       }
     }
@@ -92,7 +96,17 @@ const out = {
   generated: 'scripts/build-resolution-queue.mjs',
   certifiedDataUnaffected: true,
   statuses: ['OPEN', 'UNDER_REVIEW', 'RESOLVED', 'INSUFFICIENT_EVIDENCE', 'DISPUTED'],
-  totals: { occurrences: rows.length, tokens: Object.keys(byToken).length, byToken },
+  // Every kind the hub will ever hold, declared now so the filters exist before the sections
+  // that populate them. Themes, Codes and later audits feed the same queue rather than
+  // stranding their unresolved items in an audit file.
+  kinds: ['entity', 'theme', 'code', 'source_reference', 'classification', 'other'],
+  totals: {
+    occurrences: rows.length,
+    tokens: Object.keys(byToken).length,
+    byToken,
+    byKind: rows.reduce((a, r) => { a[r.kind] = (a[r.kind] ?? 0) + 1; return a }, {}),
+    byStatus: rows.reduce((a, r) => { a[r.status] = (a[r.status] ?? 0) + 1; return a }, {}),
+  },
   rows,
 }
 fs.writeFileSync(path.join(DATA, 'resolution-queue.json'), JSON.stringify(out))
