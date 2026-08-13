@@ -10,45 +10,45 @@ Seeded from work already done rather than started fresh: the 927 source-material
 
 | Kind | Occurrences | Posts |
 |---|---|---|
-| External links | 2,666 | 1,759 |
+| External links | 2,744 | 1,782 |
 | Media (images / video) | 1,271 | 1,031 |
 | Internal drop references | 1,648 | 1,591 |
 | Quoted / pasted source text | 927 | 270 |
-| **Total** | **6,512** | **3,865** |
+| **Total** | **6,590** | **3,883** |
 
 ### External links
 
 | Measure | Value |
 |---|---|
-| Occurrences | 2,666 |
-| Distinct URLs | 2,521 |
-| Domains | 390 |
+| Occurrences | 2,744 |
+| Distinct URLs | 2,587 |
+| Domains | 396 |
 | Board links now served from the archive | 5 |
 
 Most-cited domains:
 
 | Domain | Links |
 |---|---|
-| twitter.com | 1,103 |
-| foxnews.com | 155 |
-| youtube.com | 154 |
-| nytimes.com | 45 |
-| breitbart.com | 43 |
-| thehill.com | 41 |
+| twitter.com | 1,106 |
+| foxnews.com | 163 |
+| youtube.com | 155 |
+| nytimes.com | 49 |
+| thehill.com | 44 |
+| breitbart.com | 44 |
+| washingtonpost.com | 38 |
 | archive.is | 38 |
-| washingtonpost.com | 36 |
-| mobile.twitter.com | 34 |
-| theguardian.com | 24 |
-| justice.gov | 22 |
-| cnn.com | 20 |
-| nbcnews.com | 20 |
-| nypost.com | 20 |
-| politico.com | 19 |
+| mobile.twitter.com | 37 |
+| theguardian.com | 25 |
+| cnn.com | 23 |
+| justice.gov | 23 |
+| nypost.com | 21 |
+| nbcnews.com | 21 |
+| politico.com | 20 |
 | reddit.com | 16 |
 | whitehouse.gov | 16 |
 | saraacarter.com | 15 |
+| reuters.com | 13 |
 | newsweek.com | 13 |
-| washingtonexaminer.com | 13 |
 
 ### Quoted / pasted source text, by subtype
 
@@ -75,5 +75,5 @@ They are recorded separately above so the call is yours: include, exclude, or sh
 
 ### 2. Counting occurrences vs distinct sources
 
-Links are counted as **occurrences** (2,666) with distinct URLs reported alongside (2,521), matching the rule used for Questions, Directives and Claims. The same article cited in six drops is six occurrences of one source — collapsing them would hide how often Q returned to it. Confirm that reading for this section too.
+Links are counted as **occurrences** (2,744) with distinct URLs reported alongside (2,587), matching the rule used for Questions, Directives and Claims. The same article cited in six drops is six occurrences of one source — collapsing them would hide how often Q returned to it. Confirm that reading for this section too.
 

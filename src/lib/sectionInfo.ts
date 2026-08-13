@@ -33,6 +33,30 @@ export const ASSERTIONS = {
   note: 'Claims and Predictions are both assertions. They are shown as separate sections; the combined figure is only ever presented as a combined figure.',
 } as const
 
+/**
+ * Evidence & References — four subtypes, counted as occurrences with distinct alongside.
+ *
+ * Internal Q references are kept as their own subtype rather than folded into external
+ * sources: they are genuinely how Q builds continuity across drops, but a reader must not
+ * mistake Q citing Q for independent corroboration.
+ */
+export const EVIDENCE = {
+  total: { occurrences: 6590, posts: 3883 },
+  subtypes: [
+    { key: 'external_link', label: 'External Links', occurrences: 2744, distinct: 2587, distinctLabel: 'distinct URLs', blurb: 'Articles, government documents, court records, social-media posts and other web sources Q linked to. 396 domains.' },
+    { key: 'media', label: 'Media', occurrences: 1271, distinct: 1199, distinctLabel: 'distinct assets', blurb: 'Images and video attached to the drop itself.' },
+    { key: 'quoted_source', label: 'Quoted / Pasted Source Text', occurrences: 927, distinct: 783, distinctLabel: 'distinct passages', blurb: 'Text Q reproduced from somewhere else — articles, official documents, dictionary definitions, founding documents, scripture and quoted Q&A.' },
+    { key: 'internal_q_reference', label: 'Internal Q References', occurrences: 1648, distinct: 1619, distinctLabel: 'distinct drops referenced', blurb: 'Pointers to earlier Q posts, used to build continuity across drops. These are references, not independent external evidence.' },
+  ],
+  /** Provenance users need in order to read a media URL correctly. */
+  archivedMedia: {
+    count: 1160,
+    total: 1271,
+    blurb: 'Some original 8chan/8kun/onion-hosted media no longer resolves at its original location. Where available, Q Drops displays preserved copies from archive mirrors and identifies them as archived/mirrored rather than original-host delivery.',
+  },
+  counting: 'Counts are shown as occurrences with distinct alongside. The same article cited in six drops is six occurrences of one source — how often Q returned to a source is part of what the section shows.',
+} as const
+
 export interface AttributeInfo { key: string; label: string; blurb: string; count: number }
 
 /**
@@ -155,10 +179,11 @@ export const SECTIONS: SectionInfo[] = [
   {
     id: 'links',
     title: 'Q Evidence & References',
-    short: 'Material Q pointed readers toward as supporting information.',
-    covers: 'Links, articles, government documents, court records, screenshots, images, videos, social-media posts, quoted records, source documents and other external references.',
+    short: 'Material Q cites, links to, quotes, attaches, or points readers toward.',
+    covers: 'Material Q cites, links to, quotes, attaches, or points readers toward for context or support. This includes external sources, media, quoted source text, and references to earlier Q posts.',
     answers: 'What evidence or source material did Q point to?',
-    note: 'A reference being included does not mean Q Drops independently verifies the source’s accuracy.',
+    certified: `${n(EVIDENCE.total.occurrences)} references across ${n(EVIDENCE.total.posts)} posts`,
+    note: 'Inclusion does not mean Q Drops verifies the source, or that the referenced material proves a nearby claim. References to earlier Q posts are shown as their own subtype so they are not mistaken for independent external evidence.',
   },
   {
     id: 'namedEntities',

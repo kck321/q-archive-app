@@ -1,5 +1,5 @@
 import BackButton from '../components/BackButton'
-import { SECTIONS, DIRECTIVE_FAMILIES, CLAIM_ATTRIBUTES, ASSERTIONS, METHOD_INTRO, METHOD_PRINCIPLE, CERTIFIED } from '../lib/sectionInfo'
+import { SECTIONS, DIRECTIVE_FAMILIES, CLAIM_ATTRIBUTES, ASSERTIONS, EVIDENCE, METHOD_INTRO, METHOD_PRINCIPLE, CERTIFIED } from '../lib/sectionInfo'
 
 // The full classification method. Every word of section language comes from lib/sectionInfo,
 // which the per-section ⓘ popovers also read — so the short and long forms cannot disagree.
@@ -56,6 +56,34 @@ export default function Method() {
               <p className="mt-3 pt-2 border-t border-q-border text-xs text-gray-400">
                 <span className="text-emerald-500 font-medium">Certified dataset:</span> {s.certified}
               </p>
+            )}
+
+            {s.id === 'links' && (
+              <div className="mt-3 pt-3 border-t border-q-border">
+                <div className="text-[11px] uppercase tracking-wide text-gray-500 mb-2">Reference subtypes</div>
+                <dl className="space-y-2">
+                  {EVIDENCE.subtypes.map(t => (
+                    <div key={t.key}>
+                      <dt className="text-sm font-medium text-gray-200">
+                        {t.label}{' '}
+                        <span className="text-gray-500 font-normal">
+                          · {t.occurrences.toLocaleString()} occurrences · {t.distinct.toLocaleString()} {t.distinctLabel}
+                        </span>
+                      </dt>
+                      <dd className="text-xs text-gray-400 leading-relaxed">{t.blurb}</dd>
+                    </div>
+                  ))}
+                </dl>
+                <p className="mt-3 text-xs text-gray-500 leading-relaxed">{EVIDENCE.counting}</p>
+                <p className="mt-2 text-xs text-gray-400 leading-relaxed">
+                  <span className="text-gray-300 font-medium">Archived media.</span>{' '}
+                  {EVIDENCE.archivedMedia.blurb}{' '}
+                  <span className="text-gray-500">
+                    ({EVIDENCE.archivedMedia.count.toLocaleString()} of{' '}
+                    {EVIDENCE.archivedMedia.total.toLocaleString()} media items.)
+                  </span>
+                </p>
+              </div>
             )}
 
             {s.id === 'claims' && (
