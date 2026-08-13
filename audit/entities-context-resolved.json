@@ -1,0 +1,1649 @@
+{
+ "scope": "review verdicts + context resolution of the named ambiguous tokens",
+ "productionChanged": false,
+ "bucket1": {
+  "typed": 80,
+  "routed": 3,
+  "unresolved": 15,
+  "merged": 3
+ },
+ "safeGlobal": 30,
+ "routedOut": 3,
+ "contextPass": {
+  "tokens": 23,
+  "occurrences": 711,
+  "resolved": 161,
+  "unresolved": 550,
+  "perToken": {
+   "DC": {
+    "total": 102,
+    "resolved": 14,
+    "unresolved": 88,
+    "byReferent": {
+     "Washington, D.C.": 14
+    }
+   },
+   "Clinton": {
+    "total": 65,
+    "resolved": 33,
+    "unresolved": 32,
+    "byReferent": {
+     "Hillary Clinton": 27,
+     "Bill Clinton": 6
+    }
+   },
+   "BO": {
+    "total": 77,
+    "resolved": 16,
+    "unresolved": 61,
+    "byReferent": {
+     "Barack Obama": 14,
+     "Board Owner": 2
+    }
+   },
+   "SC": {
+    "total": 96,
+    "resolved": 10,
+    "unresolved": 86,
+    "byReferent": {
+     "Supreme Court": 10
+    }
+   },
+   "LL": {
+    "total": 41,
+    "resolved": 20,
+    "unresolved": 21,
+    "byReferent": {
+     "Loretta Lynch": 20
+    }
+   },
+   "CA": {
+    "total": 62,
+    "resolved": 13,
+    "unresolved": 49,
+    "byReferent": {
+     "California": 13
+    }
+   },
+   "JC": {
+    "total": 38,
+    "resolved": 16,
+    "unresolved": 22,
+    "byReferent": {
+     "James Comey": 16
+    }
+   },
+   "JFK": {
+    "total": 20,
+    "resolved": 0,
+    "unresolved": 20,
+    "byReferent": {}
+   },
+   "AUS": {
+    "total": 29,
+    "resolved": 3,
+    "unresolved": 26,
+    "byReferent": {
+     "Australia": 3
+    }
+   },
+   "BC": {
+    "total": 23,
+    "resolved": 5,
+    "unresolved": 18,
+    "byReferent": {
+     "Bill Clinton": 5
+    }
+   },
+   "JA": {
+    "total": 13,
+    "resolved": 1,
+    "unresolved": 12,
+    "byReferent": {
+     "Julian Assange": 1
+    }
+   },
+   "WL": {
+    "total": 17,
+    "resolved": 5,
+    "unresolved": 12,
+    "byReferent": {
+     "WikiLeaks": 5
+    }
+   },
+   "MI": {
+    "total": 19,
+    "resolved": 7,
+    "unresolved": 12,
+    "byReferent": {
+     "Military Intelligence": 7
+    }
+   },
+   "VJ": {
+    "total": 10,
+    "resolved": 4,
+    "unresolved": 6,
+    "byReferent": {
+     "Valerie Jarrett": 4
+    }
+   },
+   "SR": {
+    "total": 17,
+    "resolved": 3,
+    "unresolved": 14,
+    "byReferent": {
+     "Seth Rich": 3
+    }
+   },
+   "GS": {
+    "total": 10,
+    "resolved": 2,
+    "unresolved": 8,
+    "byReferent": {
+     "George Soros": 2
+    }
+   },
+   "BLM": {
+    "total": 24,
+    "resolved": 0,
+    "unresolved": 24,
+    "byReferent": {}
+   },
+   "DWS": {
+    "total": 4,
+    "resolved": 3,
+    "unresolved": 1,
+    "byReferent": {
+     "Debbie Wasserman Schultz": 3
+    }
+   },
+   "GA": {
+    "total": 6,
+    "resolved": 0,
+    "unresolved": 6,
+    "byReferent": {}
+   },
+   "LV": {
+    "total": 7,
+    "resolved": 0,
+    "unresolved": 7,
+    "byReferent": {}
+   },
+   "NY": {
+    "total": 20,
+    "resolved": 1,
+    "unresolved": 19,
+    "byReferent": {
+     "New York": 1
+    }
+   },
+   "Maxwell": {
+    "total": 6,
+    "resolved": 3,
+    "unresolved": 3,
+    "byReferent": {
+     "Ghislaine Maxwell": 3
+    }
+   },
+   "HK": {
+    "total": 5,
+    "resolved": 2,
+    "unresolved": 3,
+    "byReferent": {
+     "Hong Kong": 2
+    }
+   }
+  }
+ },
+ "resolutions": [
+  {
+   "token": "DC",
+   "postNum": 1100,
+   "line": 14,
+   "canonical": "Washington, D.C.",
+   "type": "location",
+   "evidence": "swamp",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "DC",
+   "postNum": 1318,
+   "line": 13,
+   "canonical": "Washington, D.C.",
+   "type": "location",
+   "evidence": "SWAMP",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "DC",
+   "postNum": 2007,
+   "line": 20,
+   "canonical": "Washington, D.C.",
+   "type": "location",
+   "evidence": "SWAMP",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "DC",
+   "postNum": 2008,
+   "line": 4,
+   "canonical": "Washington, D.C.",
+   "type": "location",
+   "evidence": "SWAMP",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "DC",
+   "postNum": 2072,
+   "line": 2,
+   "canonical": "Washington, D.C.",
+   "type": "location",
+   "evidence": "SWAMP",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "DC",
+   "postNum": 2072,
+   "line": 3,
+   "canonical": "Washington, D.C.",
+   "type": "location",
+   "evidence": "SWAMP",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "DC",
+   "postNum": 2072,
+   "line": 4,
+   "canonical": "Washington, D.C.",
+   "type": "location",
+   "evidence": "SWAMP",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "DC",
+   "postNum": 2072,
+   "line": 7,
+   "canonical": "Washington, D.C.",
+   "type": "location",
+   "evidence": "SWAMP",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "DC",
+   "postNum": 2211,
+   "line": 27,
+   "canonical": "Washington, D.C.",
+   "type": "location",
+   "evidence": "SWAMP",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "DC",
+   "postNum": 2211,
+   "line": 28,
+   "canonical": "Washington, D.C.",
+   "type": "location",
+   "evidence": "SWAMP",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "DC",
+   "postNum": 2211,
+   "line": 29,
+   "canonical": "Washington, D.C.",
+   "type": "location",
+   "evidence": "SWAMP",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "DC",
+   "postNum": 2211,
+   "line": 32,
+   "canonical": "Washington, D.C.",
+   "type": "location",
+   "evidence": "SWAMP",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "DC",
+   "postNum": 3432,
+   "line": 2,
+   "canonical": "Washington, D.C.",
+   "type": "location",
+   "evidence": "SWAMP",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "DC",
+   "postNum": 4133,
+   "line": 0,
+   "canonical": "Washington, D.C.",
+   "type": "location",
+   "evidence": "Congress",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 1220,
+   "line": 5,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "HRC",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 1556,
+   "line": 6,
+   "canonical": "Bill Clinton",
+   "type": "person",
+   "evidence": "bill",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 1815,
+   "line": 0,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "Hillary",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 2365,
+   "line": 10,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "Hillary",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 2697,
+   "line": 26,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "Hillary",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 2872,
+   "line": 1,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "Hillary",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 2876,
+   "line": 1,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "Hillary",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 2937,
+   "line": 34,
+   "canonical": "Bill Clinton",
+   "type": "person",
+   "evidence": "Bill",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 3015,
+   "line": 1,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "hillary",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 3035,
+   "line": 1,
+   "canonical": "Bill Clinton",
+   "type": "person",
+   "evidence": "BILL",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 3035,
+   "line": 5,
+   "canonical": "Bill Clinton",
+   "type": "person",
+   "evidence": "BILL",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 36,
+   "line": 13,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "she",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 3634,
+   "line": 9,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "server",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 3868,
+   "line": 3,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "HRC",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 3868,
+   "line": 3,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "HRC",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 453,
+   "line": 7,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "Hillary",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 453,
+   "line": 7,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "Hillary",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 4633,
+   "line": 17,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "Hillary",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 4633,
+   "line": 19,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "Hillary",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 4784,
+   "line": 0,
+   "canonical": "Bill Clinton",
+   "type": "person",
+   "evidence": "Bill",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 4784,
+   "line": 1,
+   "canonical": "Bill Clinton",
+   "type": "person",
+   "evidence": "Bill",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 4845,
+   "line": 4,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "hillary",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 56,
+   "line": 1,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "her",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 56,
+   "line": 1,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "her",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 56,
+   "line": 4,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "her",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 56,
+   "line": 6,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "her",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 6,
+   "line": 8,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "her",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 7,
+   "line": 0,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "HRC",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 8,
+   "line": 3,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "HRC",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 80,
+   "line": 3,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "Hillary",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 82,
+   "line": 2,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "Hillary",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 83,
+   "line": 4,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "Hillary",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Clinton",
+   "postNum": 91,
+   "line": 4,
+   "canonical": "Hillary Clinton",
+   "type": "person",
+   "evidence": "HRC",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "BO",
+   "postNum": 117,
+   "line": 10,
+   "canonical": "Barack Obama",
+   "type": "person",
+   "evidence": "President",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "BO",
+   "postNum": 117,
+   "line": 11,
+   "canonical": "Barack Obama",
+   "type": "person",
+   "evidence": "President",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "BO",
+   "postNum": 192,
+   "line": 4,
+   "canonical": "Barack Obama",
+   "type": "person",
+   "evidence": "POTUS",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "BO",
+   "postNum": 1974,
+   "line": 3,
+   "canonical": "Barack Obama",
+   "type": "person",
+   "evidence": "POTUS",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "BO",
+   "postNum": 1974,
+   "line": 5,
+   "canonical": "Barack Obama",
+   "type": "person",
+   "evidence": "POTUS",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "BO",
+   "postNum": 1974,
+   "line": 6,
+   "canonical": "Barack Obama",
+   "type": "person",
+   "evidence": "POTUS",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "BO",
+   "postNum": 1990,
+   "line": 2,
+   "canonical": "Barack Obama",
+   "type": "person",
+   "evidence": "HUSSEIN",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "BO",
+   "postNum": 2267,
+   "line": 0,
+   "canonical": "Board Owner",
+   "type": "title_role",
+   "evidence": "board",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "BO",
+   "postNum": 36,
+   "line": 11,
+   "canonical": "Barack Obama",
+   "type": "person",
+   "evidence": "Obama",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "BO",
+   "postNum": 47,
+   "line": 5,
+   "canonical": "Barack Obama",
+   "type": "person",
+   "evidence": "POTUS",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "BO",
+   "postNum": 515,
+   "line": 4,
+   "canonical": "Board Owner",
+   "type": "title_role",
+   "evidence": "board",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "BO",
+   "postNum": 52,
+   "line": 0,
+   "canonical": "Barack Obama",
+   "type": "person",
+   "evidence": "President",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "BO",
+   "postNum": 52,
+   "line": 2,
+   "canonical": "Barack Obama",
+   "type": "person",
+   "evidence": "President",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "BO",
+   "postNum": 59,
+   "line": 2,
+   "canonical": "Barack Obama",
+   "type": "person",
+   "evidence": "POTUS",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "BO",
+   "postNum": 85,
+   "line": 1,
+   "canonical": "Barack Obama",
+   "type": "person",
+   "evidence": "POTUS",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "BO",
+   "postNum": 94,
+   "line": 3,
+   "canonical": "Barack Obama",
+   "type": "person",
+   "evidence": "President",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "SC",
+   "postNum": 1153,
+   "line": 2,
+   "canonical": "Supreme Court",
+   "type": "legal_investigative",
+   "evidence": "Court",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "SC",
+   "postNum": 1161,
+   "line": 0,
+   "canonical": "Supreme Court",
+   "type": "legal_investigative",
+   "evidence": "Court",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "SC",
+   "postNum": 1649,
+   "line": 1,
+   "canonical": "Supreme Court",
+   "type": "legal_investigative",
+   "evidence": "confirm",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "SC",
+   "postNum": 2205,
+   "line": 1,
+   "canonical": "Supreme Court",
+   "type": "legal_investigative",
+   "evidence": "COURT",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "SC",
+   "postNum": 2689,
+   "line": 14,
+   "canonical": "Supreme Court",
+   "type": "legal_investigative",
+   "evidence": "court",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "SC",
+   "postNum": 2689,
+   "line": 26,
+   "canonical": "Supreme Court",
+   "type": "legal_investigative",
+   "evidence": "Justice",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "SC",
+   "postNum": 2689,
+   "line": 26,
+   "canonical": "Supreme Court",
+   "type": "legal_investigative",
+   "evidence": "Justice",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "SC",
+   "postNum": 2689,
+   "line": 30,
+   "canonical": "Supreme Court",
+   "type": "legal_investigative",
+   "evidence": "Court",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "SC",
+   "postNum": 4545,
+   "line": 9,
+   "canonical": "Supreme Court",
+   "type": "legal_investigative",
+   "evidence": "Court",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "SC",
+   "postNum": 4813,
+   "line": 2,
+   "canonical": "Supreme Court",
+   "type": "legal_investigative",
+   "evidence": "Justice",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "LL",
+   "postNum": 1147,
+   "line": 1,
+   "canonical": "Loretta Lynch",
+   "type": "person",
+   "evidence": "Tarmac",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "LL",
+   "postNum": 1149,
+   "line": 2,
+   "canonical": "Loretta Lynch",
+   "type": "person",
+   "evidence": "AG",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "LL",
+   "postNum": 1149,
+   "line": 5,
+   "canonical": "Loretta Lynch",
+   "type": "person",
+   "evidence": "AG",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "LL",
+   "postNum": 1443,
+   "line": 5,
+   "canonical": "Loretta Lynch",
+   "type": "person",
+   "evidence": "tarmac",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "LL",
+   "postNum": 1443,
+   "line": 8,
+   "canonical": "Loretta Lynch",
+   "type": "person",
+   "evidence": "tarmac",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "LL",
+   "postNum": 1556,
+   "line": 1,
+   "canonical": "Loretta Lynch",
+   "type": "person",
+   "evidence": "Tarmac",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "LL",
+   "postNum": 1556,
+   "line": 2,
+   "canonical": "Loretta Lynch",
+   "type": "person",
+   "evidence": "Tarmac",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "LL",
+   "postNum": 1589,
+   "line": 11,
+   "canonical": "Loretta Lynch",
+   "type": "person",
+   "evidence": "DOJ",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "LL",
+   "postNum": 1589,
+   "line": 12,
+   "canonical": "Loretta Lynch",
+   "type": "person",
+   "evidence": "DOJ",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "LL",
+   "postNum": 1828,
+   "line": 5,
+   "canonical": "Loretta Lynch",
+   "type": "person",
+   "evidence": "DOJ",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "LL",
+   "postNum": 2261,
+   "line": 1,
+   "canonical": "Loretta Lynch",
+   "type": "person",
+   "evidence": "TARMAC",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "LL",
+   "postNum": 2261,
+   "line": 2,
+   "canonical": "Loretta Lynch",
+   "type": "person",
+   "evidence": "TARMAC",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "LL",
+   "postNum": 2261,
+   "line": 3,
+   "canonical": "Loretta Lynch",
+   "type": "person",
+   "evidence": "TARMAC",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "LL",
+   "postNum": 2261,
+   "line": 4,
+   "canonical": "Loretta Lynch",
+   "type": "person",
+   "evidence": "TARMAC",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "LL",
+   "postNum": 2689,
+   "line": 29,
+   "canonical": "Loretta Lynch",
+   "type": "person",
+   "evidence": "DOJ",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "LL",
+   "postNum": 2740,
+   "line": 2,
+   "canonical": "Loretta Lynch",
+   "type": "person",
+   "evidence": "ATTORNEY GENERAL",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "LL",
+   "postNum": 2860,
+   "line": 1,
+   "canonical": "Loretta Lynch",
+   "type": "person",
+   "evidence": "Tarmac",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "LL",
+   "postNum": 2860,
+   "line": 2,
+   "canonical": "Loretta Lynch",
+   "type": "person",
+   "evidence": "Tarmac",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "LL",
+   "postNum": 2860,
+   "line": 3,
+   "canonical": "Loretta Lynch",
+   "type": "person",
+   "evidence": "Tarmac",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "LL",
+   "postNum": 674,
+   "line": 3,
+   "canonical": "Loretta Lynch",
+   "type": "person",
+   "evidence": "Tarmac",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "CA",
+   "postNum": 1762,
+   "line": 0,
+   "canonical": "California",
+   "type": "location",
+   "evidence": "State of",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "CA",
+   "postNum": 1833,
+   "line": 2,
+   "canonical": "California",
+   "type": "location",
+   "evidence": "california",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "CA",
+   "postNum": 2037,
+   "line": 4,
+   "canonical": "California",
+   "type": "location",
+   "evidence": "newsom",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "CA",
+   "postNum": 2037,
+   "line": 5,
+   "canonical": "California",
+   "type": "location",
+   "evidence": "newsom",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "CA",
+   "postNum": 2467,
+   "line": 15,
+   "canonical": "California",
+   "type": "location",
+   "evidence": "State of",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "CA",
+   "postNum": 2854,
+   "line": 2,
+   "canonical": "California",
+   "type": "location",
+   "evidence": "california",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "CA",
+   "postNum": 2854,
+   "line": 3,
+   "canonical": "California",
+   "type": "location",
+   "evidence": "california",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "CA",
+   "postNum": 2854,
+   "line": 10,
+   "canonical": "California",
+   "type": "location",
+   "evidence": "California",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "CA",
+   "postNum": 3778,
+   "line": 5,
+   "canonical": "California",
+   "type": "location",
+   "evidence": "california",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "CA",
+   "postNum": 3778,
+   "line": 6,
+   "canonical": "California",
+   "type": "location",
+   "evidence": "california",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "CA",
+   "postNum": 4546,
+   "line": 2,
+   "canonical": "California",
+   "type": "location",
+   "evidence": "california",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "CA",
+   "postNum": 4546,
+   "line": 7,
+   "canonical": "California",
+   "type": "location",
+   "evidence": "california",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "CA",
+   "postNum": 4639,
+   "line": 17,
+   "canonical": "California",
+   "type": "location",
+   "evidence": "State of",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "JC",
+   "postNum": 1807,
+   "line": 3,
+   "canonical": "James Comey",
+   "type": "person",
+   "evidence": "FBI",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "JC",
+   "postNum": 1828,
+   "line": 5,
+   "canonical": "James Comey",
+   "type": "person",
+   "evidence": "FBI",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "JC",
+   "postNum": 1828,
+   "line": 7,
+   "canonical": "James Comey",
+   "type": "person",
+   "evidence": "FBI",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "JC",
+   "postNum": 1828,
+   "line": 7,
+   "canonical": "James Comey",
+   "type": "person",
+   "evidence": "FBI",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "JC",
+   "postNum": 1828,
+   "line": 9,
+   "canonical": "James Comey",
+   "type": "person",
+   "evidence": "FBI",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "JC",
+   "postNum": 1828,
+   "line": 14,
+   "canonical": "James Comey",
+   "type": "person",
+   "evidence": "FBI",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "JC",
+   "postNum": 1990,
+   "line": 7,
+   "canonical": "James Comey",
+   "type": "person",
+   "evidence": "FBI",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "JC",
+   "postNum": 1990,
+   "line": 8,
+   "canonical": "James Comey",
+   "type": "person",
+   "evidence": "FBI",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "JC",
+   "postNum": 1990,
+   "line": 9,
+   "canonical": "James Comey",
+   "type": "person",
+   "evidence": "FBI",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "JC",
+   "postNum": 2110,
+   "line": 0,
+   "canonical": "James Comey",
+   "type": "person",
+   "evidence": "Comey",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "JC",
+   "postNum": 2110,
+   "line": 2,
+   "canonical": "James Comey",
+   "type": "person",
+   "evidence": "Comey",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "JC",
+   "postNum": 2860,
+   "line": 4,
+   "canonical": "James Comey",
+   "type": "person",
+   "evidence": "FBI",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "JC",
+   "postNum": 2860,
+   "line": 5,
+   "canonical": "James Comey",
+   "type": "person",
+   "evidence": "FBI",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "JC",
+   "postNum": 3248,
+   "line": 2,
+   "canonical": "James Comey",
+   "type": "person",
+   "evidence": "FBI",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "JC",
+   "postNum": 3473,
+   "line": 3,
+   "canonical": "James Comey",
+   "type": "person",
+   "evidence": "FBI",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "JC",
+   "postNum": 645,
+   "line": 0,
+   "canonical": "James Comey",
+   "type": "person",
+   "evidence": "FBI",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "AUS",
+   "postNum": 1939,
+   "line": 1,
+   "canonical": "Australia",
+   "type": "country_region",
+   "evidence": "Downer",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "AUS",
+   "postNum": 1939,
+   "line": 2,
+   "canonical": "Australia",
+   "type": "country_region",
+   "evidence": "Downer",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "AUS",
+   "postNum": 906,
+   "line": 1,
+   "canonical": "Australia",
+   "type": "country_region",
+   "evidence": "Australia",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "BC",
+   "postNum": 1220,
+   "line": 8,
+   "canonical": "Bill Clinton",
+   "type": "person",
+   "evidence": "Clinton",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "BC",
+   "postNum": 1556,
+   "line": 2,
+   "canonical": "Bill Clinton",
+   "type": "person",
+   "evidence": "clinton",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "BC",
+   "postNum": 1556,
+   "line": 5,
+   "canonical": "Bill Clinton",
+   "type": "person",
+   "evidence": "clinton",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "BC",
+   "postNum": 3383,
+   "line": 8,
+   "canonical": "Bill Clinton",
+   "type": "person",
+   "evidence": "Clinton",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "BC",
+   "postNum": 36,
+   "line": 14,
+   "canonical": "Bill Clinton",
+   "type": "person",
+   "evidence": "Clinton",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "JA",
+   "postNum": 1199,
+   "line": 1,
+   "canonical": "Julian Assange",
+   "type": "person",
+   "evidence": "wikileaks",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "WL",
+   "postNum": 1008,
+   "line": 25,
+   "canonical": "WikiLeaks",
+   "type": "organization",
+   "evidence": "dump",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "WL",
+   "postNum": 1870,
+   "line": 1,
+   "canonical": "WikiLeaks",
+   "type": "organization",
+   "evidence": "dump",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "WL",
+   "postNum": 1870,
+   "line": 7,
+   "canonical": "WikiLeaks",
+   "type": "organization",
+   "evidence": "dump",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "WL",
+   "postNum": 3764,
+   "line": 8,
+   "canonical": "WikiLeaks",
+   "type": "organization",
+   "evidence": "release",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "WL",
+   "postNum": 4162,
+   "line": 6,
+   "canonical": "WikiLeaks",
+   "type": "organization",
+   "evidence": "leak",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "MI",
+   "postNum": 11,
+   "line": 5,
+   "canonical": "Military Intelligence",
+   "type": "government_agency",
+   "evidence": "military",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "MI",
+   "postNum": 14,
+   "line": 3,
+   "canonical": "Military Intelligence",
+   "type": "government_agency",
+   "evidence": "Military",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "MI",
+   "postNum": 2,
+   "line": 7,
+   "canonical": "Military Intelligence",
+   "type": "government_agency",
+   "evidence": "military",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "MI",
+   "postNum": 23,
+   "line": 0,
+   "canonical": "Military Intelligence",
+   "type": "government_agency",
+   "evidence": "military",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "MI",
+   "postNum": 36,
+   "line": 3,
+   "canonical": "Military Intelligence",
+   "type": "government_agency",
+   "evidence": "Military",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "MI",
+   "postNum": 755,
+   "line": 7,
+   "canonical": "Military Intelligence",
+   "type": "government_agency",
+   "evidence": "MILITARY",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "MI",
+   "postNum": 755,
+   "line": 8,
+   "canonical": "Military Intelligence",
+   "type": "government_agency",
+   "evidence": "MILITARY",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "VJ",
+   "postNum": 1828,
+   "line": 1,
+   "canonical": "Valerie Jarrett",
+   "type": "person",
+   "evidence": "Hussein",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "VJ",
+   "postNum": 1887,
+   "line": 11,
+   "canonical": "Valerie Jarrett",
+   "type": "person",
+   "evidence": "Hussein",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "VJ",
+   "postNum": 4750,
+   "line": 11,
+   "canonical": "Valerie Jarrett",
+   "type": "person",
+   "evidence": "Hussein",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "VJ",
+   "postNum": 559,
+   "line": 14,
+   "canonical": "Valerie Jarrett",
+   "type": "person",
+   "evidence": "Hussein",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "SR",
+   "postNum": 1195,
+   "line": 1,
+   "canonical": "Seth Rich",
+   "type": "person",
+   "evidence": "DNC",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "SR",
+   "postNum": 436,
+   "line": 3,
+   "canonical": "Seth Rich",
+   "type": "person",
+   "evidence": "DNC",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "SR",
+   "postNum": 436,
+   "line": 12,
+   "canonical": "Seth Rich",
+   "type": "person",
+   "evidence": "DNC",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "GS",
+   "postNum": 142,
+   "line": 8,
+   "canonical": "George Soros",
+   "type": "person",
+   "evidence": "Soros",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "GS",
+   "postNum": 489,
+   "line": 10,
+   "canonical": "George Soros",
+   "type": "person",
+   "evidence": "funding",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "DWS",
+   "postNum": 1828,
+   "line": 14,
+   "canonical": "Debbie Wasserman Schultz",
+   "type": "person",
+   "evidence": "DNC",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "DWS",
+   "postNum": 3532,
+   "line": 5,
+   "canonical": "Debbie Wasserman Schultz",
+   "type": "person",
+   "evidence": "AWAN",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "DWS",
+   "postNum": 674,
+   "line": 2,
+   "canonical": "Debbie Wasserman Schultz",
+   "type": "person",
+   "evidence": "AWAN",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "NY",
+   "postNum": 2211,
+   "line": 11,
+   "canonical": "New York",
+   "type": "location",
+   "evidence": "New York",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Maxwell",
+   "postNum": 3428,
+   "line": 1,
+   "canonical": "Ghislaine Maxwell",
+   "type": "person",
+   "evidence": "epstein",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Maxwell",
+   "postNum": 3428,
+   "line": 7,
+   "canonical": "Ghislaine Maxwell",
+   "type": "person",
+   "evidence": "Ghislaine",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "Maxwell",
+   "postNum": 4623,
+   "line": 2,
+   "canonical": "Ghislaine Maxwell",
+   "type": "person",
+   "evidence": "Epstein",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "HK",
+   "postNum": 2657,
+   "line": 32,
+   "canonical": "Hong Kong",
+   "type": "country_region",
+   "evidence": "Hong Kong",
+   "confidence": "MEDIUM"
+  },
+  {
+   "token": "HK",
+   "postNum": 875,
+   "line": 5,
+   "canonical": "Hong Kong",
+   "type": "country_region",
+   "evidence": "China",
+   "confidence": "MEDIUM"
+  }
+ ]
+}
