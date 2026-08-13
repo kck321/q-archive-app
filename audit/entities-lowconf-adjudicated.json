@@ -1,0 +1,3694 @@
+{
+ "scope": "the 364 low-confidence typed entities",
+ "productionChanged": false,
+ "totals": {
+  "reviewed": 364,
+  "byOutcome": {
+   "KEEP_TYPE": 215,
+   "CHANGE_TYPE": 129,
+   "ROUTE_TO_THEMES": 19,
+   "UNRESOLVED": 1
+  },
+  "changeMatrix": {
+   "person → organization": 26,
+   "person → media_organization": 28,
+   "person → title_role": 11,
+   "event_incident → event_incident": 1,
+   "person → government_institution": 15,
+   "person → country_region": 24,
+   "creative_work → government_institution": 1,
+   "person → other_named_entity": 3,
+   "event_incident → organization": 1,
+   "person → program_operation_project": 6,
+   "person → event_incident": 5,
+   "person → military_asset_vessel": 2,
+   "person → creative_work": 4,
+   "person → facility_property": 1,
+   "creative_work → event_incident": 1
+  },
+  "finalTypes": {
+   "title_role": 21,
+   "religious_spiritual": 9,
+   "government_institution": 61,
+   "other_named_entity": 101,
+   "media_organization": 85,
+   "coded_alias": 6,
+   "organization": 115,
+   "person": 714,
+   "technology_platform": 4,
+   "creative_work": 7,
+   "country_region": 65,
+   "location": 44,
+   "ROUTE_TO_THEMES": 14,
+   "military_asset_vessel": 5,
+   "ROUTED_TO_THEMES": 19,
+   "facility_property": 8,
+   "event_incident": 12,
+   "legislation_regulation": 9,
+   "UNRESOLVED": 1,
+   "program_operation_project": 6
+  }
+ },
+ "decisions": [
+  {
+   "sourceText": "Hunter Biden",
+   "occurrences": 10,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Carter Page",
+   "occurrences": 8,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…arrested?  Non US. Trace background. Open source. [Carter Page] was a plant. Trace background. Open source. Why i…"
+  },
+  {
+   "sourceText": "Bill Priestap",
+   "occurrences": 8,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "… director - FIRED. James Comey, director - FIRED. [Bill Priestap], Head of Counterintelligence and Strzok’s boss - …"
+  },
+  {
+   "sourceText": "Bill Clinton",
+   "occurrences": 7,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…at 'stage' experience did this person have? Think [Bill Clinton] impeachment. Has the 'stage' been cleaned & clear…"
+  },
+  {
+   "sourceText": "Trisha Anderson",
+   "occurrences": 6,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…Michael Steinbach? John Glacalone? Randy Coleman? [Trisha Anderson]? Kevin Clinesmith? Tashina Gauhar? Sally Moyer? N…"
+  },
+  {
+   "sourceText": "AG Sessions",
+   "occurrences": 5,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a title followed by a surname — a person",
+   "contextExample": "…r org? What slush fund was recently terminated by [AG Sessions]? What is Fast & Furious? What is the underlying t…"
+  },
+  {
+   "sourceText": "Jussie Smollett",
+   "occurrences": 5,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…4993293357056 \"FBI & DOJ to review the outrageous [Jussie Smollett] case in Chicago. It is an embarrassment to our Na…"
+  },
+  {
+   "sourceText": "Ray Chandler",
+   "occurrences": 4,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…eep digging, Anons.  RACHEL CHANDLER IS KEY. Q    [Ray Chandler] = Allison Mack x 100 Q    http://www.michalchelbi…"
+  },
+  {
+   "sourceText": "Ezra Cohen-Watnick",
+   "occurrences": 4,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…ad to be blocked out to eliminate that view. Q    [Ezra Cohen-Watnick] Q    >>2846457 BRIDGES - connecting people. https…"
+  },
+  {
+   "sourceText": "Shadow Brokers",
+   "occurrences": 4,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": "…e words (NSA_key(s)). @Snowden travels to RUSSIA. [Shadow Brokers] release actual code (NSA_key(s)). Shadow Brokers …"
+  },
+  {
+   "sourceText": "Tashina Gauhar",
+   "occurrences": 4,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…Randy Coleman? Trisha Anderson? Kevin Clinesmith? [Tashina Gauhar]? Sally Moyer? NOTHING TO SEE HERE? LOGICAL THINKI…"
+  },
+  {
+   "sourceText": "MAGA",
+   "occurrences": 4,
+   "oldType": "person",
+   "newType": null,
+   "outcome": "ROUTE_TO_THEMES",
+   "changed": false,
+   "why": "a collective or concept rather than a named referent",
+   "contextExample": "…. Truth. Light. Q    https://mobile.twitter.com/KB[MAGA]FL/status/1008386945905504256/video/1 Q    For the…"
+  },
+  {
+   "sourceText": "Valerie Jarrett",
+   "occurrences": 4,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "… or a person of influence at the time? No. Who is [Valerie Jarrett]?  Where was she born? When did Valerie Jarrett hi…"
+  },
+  {
+   "sourceText": "Maggie NYT",
+   "occurrences": 4,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": "… of Tweet (above) v last drops [HouseOfCards] re: [Maggie NYT] re: WL 'Maggie' drops re: WL attack re: 'Q'  Do y…"
+  },
+  {
+   "sourceText": "Cory Booker",
+   "occurrences": 3,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…uck. Q    Example. Gateway Bridge Project. $1.8mm [Cory Booker] - Singapore. $3.5mm Chuck Schumer - Israel. $400k…"
+  },
+  {
+   "sourceText": "Frank LoBiondo",
+   "occurrences": 3,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…ard Royce - Republican  Elizabeth Esty - Democrat [Frank LoBiondo] - Republican  Gene Green - Democrat  Gregg Harper…"
+  },
+  {
+   "sourceText": "Lynn Jenkins",
+   "occurrences": 3,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…Smith - Republican  Luis V. Gutierrez - Democrat  [Lynn Jenkins] - Republican  Niki Tsongas - Democrat Paul Ryan -…"
+  },
+  {
+   "sourceText": "Tim Murphy",
+   "occurrences": 3,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "… U.S. House Thad Cochran - Republican U.S. Senate [Tim Murphy] - Republican U.S. House Trent Franks - Republican…"
+  },
+  {
+   "sourceText": "NY AG",
+   "occurrences": 3,
+   "oldType": "person",
+   "newType": "title_role",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an office held rather than a person named",
+   "contextExample": "…sight and Government Reform Committee. Why is the [NY AG] resignation important?  What past/current 'high p…"
+  },
+  {
+   "sourceText": "Allison Mack",
+   "occurrences": 3,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "… Q    >>1413017    >>1413137    Pain coming. Q    [Allison Mack] [NXIVM] arrested [date]? When does a bird sing? S…"
+  },
+  {
+   "sourceText": "2016 election",
+   "occurrences": 3,
+   "oldType": "event_incident",
+   "newType": "event_incident",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a named event",
+   "contextExample": "…05264 Push to DIVIDE is strong. Think pre vs post [2016 election]. Why? Stay TOGETHER. Stay STRONG. We, the PEOPLE.…"
+  },
+  {
+   "sourceText": "Daily Mail",
+   "occurrences": 3,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": "…reholders try to fire Mark Zuckerberg as chairman [Daily Mail] [DC moves slow] Q    Twitter near 20% slide? FB n…"
+  },
+  {
+   "sourceText": "Bill Maher",
+   "occurrences": 3,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Gavin Newsom",
+   "occurrences": 3,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Daily Dot",
+   "occurrences": 3,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "National Review",
+   "occurrences": 3,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Kamala Harris",
+   "occurrences": 3,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…cs.\" In a letter sent to Johnson on Tuesday, Sen. [Kamala Harris] of California renewed her calls for another COVID…"
+  },
+  {
+   "sourceText": "Ian Cameron",
+   "occurrences": 3,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…trate the MSM? [Example 1] ABC NEWS exec producer [Ian Cameron] married to Susan Rice (Nat Sec Advisor - HUSSEIN)…"
+  },
+  {
+   "sourceText": "Doug Collins",
+   "occurrences": 3,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "AG Barr",
+   "occurrences": 3,
+   "oldType": "creative_work",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a title followed by a surname — a person",
+   "contextExample": "…ISA (spy) > Flynn Will newly discovered evidence ([AG Barr] - SDNY) FREE FLYNN? Q    https://www.youtube.com/…"
+  },
+  {
+   "sourceText": "Black Lives Matter",
+   "occurrences": 3,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "National Guard",
+   "occurrences": 3,
+   "oldType": "person",
+   "newType": "government_institution",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a government body or armed service",
+   "contextExample": "…s equally to active-duty military and federalized [National Guard] troops.\" What is Adam Schiff trying to prevent? E…"
+  },
+  {
+   "sourceText": "Holy See",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…ls. Clown connection. 1832 Rothschild loan to the [Holy See]. Q    We don’t say his name. Adios. The protected…"
+  },
+  {
+   "sourceText": "JFK Jr.",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Anne Wojcicki",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…t a coincidence. 25/100%. Q    >>1064287 23andMe. [Anne Wojcicki]. Spouse? Why is this relevant? Q    https:// www.…"
+  },
+  {
+   "sourceText": "Orrin Hatch",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…Bob Corker - Republican  Jeff Flake - Republican  [Orrin Hatch] - Republican  No Name - Republican [Departure Soo…"
+  },
+  {
+   "sourceText": "Bill Shuster",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…an  No Name - Republican [Departure Soon] [House] [Bill Shuster] - Republican  Bob Goodlatte - Republican  Carol S…"
+  },
+  {
+   "sourceText": "Carol Shea-Porter",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…Shuster - Republican  Bob Goodlatte - Republican  [Carol Shea-Porter] - Democrat  Charles W. Dent - Republican  Darrell…"
+  },
+  {
+   "sourceText": "Darrell Issa",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…-Porter - Democrat  Charles W. Dent - Republican  [Darrell Issa] - Republican  Dave Reichert - Republican  David T…"
+  },
+  {
+   "sourceText": "Dave Reichert",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "… W. Dent - Republican  Darrell Issa - Republican  [Dave Reichert] - Republican  David Trott - Republican  Dennis Ro…"
+  },
+  {
+   "sourceText": "Gene Green",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…beth Esty - Democrat Frank LoBiondo - Republican  [Gene Green] - Democrat  Gregg Harper - Republican  Ileana Ros…"
+  },
+  {
+   "sourceText": "Gregg Harper",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…ank LoBiondo - Republican  Gene Green - Democrat  [Gregg Harper] - Republican  Ileana Ros-Lehtinen - Republican  J…"
+  },
+  {
+   "sourceText": "Ileana Ros-Lehtinen",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…Gene Green - Democrat  Gregg Harper - Republican  [Ileana Ros-Lehtinen] - Republican  Jeb Hensarling - Republican  Jim Br…"
+  },
+  {
+   "sourceText": "Jeb Hensarling",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…r - Republican  Ileana Ros-Lehtinen - Republican  [Jeb Hensarling] - Republican  Jim Bridenstine - Republican Joe Ba…"
+  },
+  {
+   "sourceText": "Niki Tsongas",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "… Gutierrez - Democrat  Lynn Jenkins - Republican  [Niki Tsongas] - Democrat Paul Ryan - Republican  Rick Nolan - D…"
+  },
+  {
+   "sourceText": "Rodney Frelinghuysen",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…n  Rick Nolan - Democrat  Robert Brady - Democrat [Rodney Frelinghuysen] - Republican  Ruben J. Kihuen - Democrat  Ryan Co…"
+  },
+  {
+   "sourceText": "Sandy Levin",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "… Costello - Republican  Sam Johnson - Republican  [Sandy Levin] - Democrat  Ted Poe - Republican  Thomas Rooney -…"
+  },
+  {
+   "sourceText": "Blake Farenthold",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…n  [Resigned] Al Franken - Democratic U.S. Senate [Blake Farenthold] - Republican U.S. House Jason Chaffetz - Republic…"
+  },
+  {
+   "sourceText": "Thad Cochran",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…. House Patrick J. Tiberi - Republican U.S. House [Thad Cochran] - Republican U.S. Senate Tim Murphy - Republican …"
+  },
+  {
+   "sourceText": "Trent Franks",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…an U.S. Senate Tim Murphy - Republican U.S. House [Trent Franks] - Republican U.S. House Xavier Becerra - Democrat…"
+  },
+  {
+   "sourceText": "Xavier Becerra",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…n U.S. House Trent Franks - Republican U.S. House [Xavier Becerra] - Democrat Attorney General of California + DOJ +…"
+  },
+  {
+   "sourceText": "qresearch",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": null,
+   "outcome": "ROUTE_TO_THEMES",
+   "changed": false,
+   "why": "one of Q’s codewords — belongs to Codes & Brackets or Themes, not Entities",
+   "contextExample": "…te.    TRIP confirmed. Q    We made a mistake on /[qresearch]/ exposing the password. We did not input \"Q #\" in…"
+  },
+  {
+   "sourceText": "Castle LOCK",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": null,
+   "outcome": "ROUTE_TO_THEMES",
+   "changed": false,
+   "why": "one of Q’s codewords — belongs to Codes & Brackets or Themes, not Entities",
+   "contextExample": "…(WW). WWG1WGA. We FIGHT. Conspiracy no more. Q    [Castle LOCK]. Q    Rank & File. DOJ, FBI, C_A, State. [G-2][Co…"
+  },
+  {
+   "sourceText": "Erik Prince",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Matt Gaetz",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "US Intel",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "government_institution",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a government body or armed service",
+   "contextExample": "…hina and/or other foreign [or domestic] entities? [US Intel] apparatus [reports?]? Clear and Present Danger? Q…"
+  },
+  {
+   "sourceText": "Nazi Germany",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": "…t/en/article/nazi-propaganda Use of propaganda by [Nazi Germany] Use of propaganda by MSDNC / Social Media (contro…"
+  },
+  {
+   "sourceText": "Gina Haspel",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Tony Podesta",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…. Section 3. Q    Where is John Podesta? Where is [Tony Podesta]? Did one or both escape the country and was let o…"
+  },
+  {
+   "sourceText": "STATE",
+   "occurrences": 2,
+   "oldType": "creative_work",
+   "newType": "government_institution",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a government body or armed service",
+   "contextExample": "…breach?  HUSSEIN block? HUSSEIN control? HUSSEIN \"[STATE] SECRETS\" WH NAT SEC ARTICLES 1-9 - BURIED? Awan a…"
+  },
+  {
+   "sourceText": "Hassan Rouhani",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…h IRAN. Something incredible is about to happen. [[Hassan Rouhani]] The Good People of IRAN have the POWER. FIGHT FO…"
+  },
+  {
+   "sourceText": "TX Congressman",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "title_role",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an office held rather than a person named",
+   "contextExample": "…  Are you watching Hannity? Did you hear what the [TX Congressman] just stated? Huber. [Ohr] Q    If the FAKE Steele…"
+  },
+  {
+   "sourceText": "Steele Dossier",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "other_named_entity",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a named document",
+   "contextExample": "…essman just stated? Huber. [Ohr] Q    If the FAKE [Steele Dossier] constituted the 'bulk' of the 'facts submitted' t…"
+  },
+  {
+   "sourceText": "US Navy",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "government_institution",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a government body or armed service",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Rizvi Traverse Management",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": "…firm was contracted to conduct the renovations?   [Rizvi Traverse Management]. Happy hunting. Q   >>2797853 Think about this. D…"
+  },
+  {
+   "sourceText": "Natalia Veselnitskaya",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…or-russian-lawyer [LL]>paper trail>special entry [[Natalia Veselnitskaya]]>Manafort FISA warrant issued / approved>Manafort…"
+  },
+  {
+   "sourceText": "Sergey Brin",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…ear.\" Nothing to See Here. [DARPA] Q    >>2847730 [Sergey Brin] - GOOG [Founder][BORN IN MOSCOW] was married to… …"
+  },
+  {
+   "sourceText": "Rahm Emanuel",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…or (former) Richard Daley? Who is Mayor (current) [Rahm Emanuel]? HUSSEIN should be VERY nervous. BRENNAN should b…"
+  },
+  {
+   "sourceText": "Jerome Corsi",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…lled 'PANIC'. Q    >>2909503 Follow the picture. \"[Jerome Corsi] who I outed as a Mossad asset/agent in a 1997 sti…"
+  },
+  {
+   "sourceText": "Tucker Carlson",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Judge K",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "title_role",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an office held rather than a person named",
+   "contextExample": "…'s offering to [KILL] sexual assault allegation v [Judge K] in exchange for immediate pullback of DECLAS. POT…"
+  },
+  {
+   "sourceText": "Mad Hatter",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": null,
+   "outcome": "ROUTE_TO_THEMES",
+   "changed": false,
+   "why": "one of Q’s codewords — belongs to Codes & Brackets or Themes, not Entities",
+   "contextExample": "…895_47 [Pg 20 - Assange Arrest] By: Marty Torrey [[Mad Hatter]] Q    >>267 Did James Baker just testify behind c…"
+  },
+  {
+   "sourceText": "RED OCTOBER",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": null,
+   "outcome": "ROUTE_TO_THEMES",
+   "changed": false,
+   "why": "one of Q’s codewords — belongs to Codes & Brackets or Themes, not Entities",
+   "contextExample": "…Goodbye, Mr. Rosenstein  DECLAS  POTUS Alert-Test [RED OCTOBER]? Q    >>3224486 RED OCTOBER>>> MIDTERM ELECTIONS …"
+  },
+  {
+   "sourceText": "Perkins Coie",
+   "occurrences": 2,
+   "oldType": "event_incident",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": "…g the 2016 season with at least one attorney from [Perkins Coie], the Democratic National Committee’s private law …"
+  },
+  {
+   "sourceText": "Ivanka Trump",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Charlie Kirk",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "George H.W. Bush",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Middle East",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": "…have a therapist?  Who paid for his travel to the [Middle East]?  Q    https://twitter.com/BurnedSpy34/status/110…"
+  },
+  {
+   "sourceText": "American People",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": null,
+   "outcome": "ROUTE_TO_THEMES",
+   "changed": false,
+   "why": "a collective or concept rather than a named referent",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Ilhan Omar",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Imran Awan",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Daily Wire",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "US GOV",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "government_institution",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a government body or armed service",
+   "contextExample": "…A WILL FACTUALLY DEMONSTRATE WITHOUT ARGUMENT THE [US GOV]ERNMENT, UNDER HUSSEIN, KNOWINGLY, PRESENTED FALSE…"
+  },
+  {
+   "sourceText": "Colin Skow",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Air Force",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "government_institution",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a government body or armed service",
+   "contextExample": "…www.merriam-webster.com/dictionary/eradicate U.S. [Air Force] B-52 [Precision Bombs]. Q    >>2530206 Comfy? Pre…"
+  },
+  {
+   "sourceText": "Midnight Rider",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": null,
+   "outcome": "ROUTE_TO_THEMES",
+   "changed": false,
+   "why": "one of Q’s codewords — belongs to Codes & Brackets or Themes, not Entities",
+   "contextExample": "… Patriots. WWG1WGA!!! Q    >>10567687 Modern day '[Midnight Rider]s'.  There's a reason why they are fighting hard t…"
+  },
+  {
+   "sourceText": "Andy Ngo",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "H. Biden",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": null,
+   "outcome": "UNRESOLVED",
+   "changed": false,
+   "why": "a name reduced to an initial — the referent is not established",
+   "contextExample": "…-had-business-ties-in-kazakhstan/ Subpoena of all [H. Biden]'s financial records?  Death blow? Pandora's 'poli…"
+  },
+  {
+   "sourceText": "Greg Andres",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…er-team-member-steps-away-trump-suits/ Married to [Greg Andres]?  Who is Greg Andres?  https://fr.reuters.com/art…"
+  },
+  {
+   "sourceText": "Canadian PM",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "title_role",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an office held rather than a person named",
+   "contextExample": "…rance/pathway to complete the U1 deal? Why is the [Canadian PM] so important? They never thought they were going …"
+  },
+  {
+   "sourceText": "Black Forest",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": "…ight. Let that sink in. Q    Time to play, Dopey. [Black Forest].    [D] Twitter % owned? Other ownership stakes i…"
+  },
+  {
+   "sourceText": "Mika Brzezinski",
+   "occurrences": 2,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…SNBC – Ed Schultz MSNBC – Joe Scarborough MSNBC – [Mika Brzezinski] MSNBC – Phil Griffin MSNBC – Rachel Maddow MSNBC …"
+  },
+  {
+   "sourceText": "The Fed",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "government_institution",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a government body or armed service",
+   "contextExample": "…surance policies for their homes and businesses.  [The Fed]eral Emergency Management Agency’s Ready Campaign …"
+  },
+  {
+   "sourceText": "Southern California",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": "…Aircraft Wing who lost their lives in yesterday’s [Southern California] helicopter crash. We pray for their families, and…"
+  },
+  {
+   "sourceText": "Chris Christie",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…- Singapore. $3.5mm Chuck Schumer - Israel. $400k [Chris Christie] - Mary Pat US. …….. Omnibus Bill. The gift that k…"
+  },
+  {
+   "sourceText": "Gateway Bridge Project",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "program_operation_project",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a named operation or programme",
+   "contextExample": "…man. MZ out of US. @Jack Good luck. Q    Example. [Gateway Bridge Project]. $1.8mm Cory Booker - Singapore. $3.5mm Chuck Sch…"
+  },
+  {
+   "sourceText": "Omnibus Bill",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "other_named_entity",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a named document",
+   "contextExample": "… Israel. $400k Chris Christie - Mary Pat US. …….. [Omnibus Bill]. The gift that keeps on giving. Q    >>896069 Hus…"
+  },
+  {
+   "sourceText": "Situation Room",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "government_institution",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a government body or armed service",
+   "contextExample": "…pdf Old to New. AS THE WORLD TURNS. Q    >>953050 [Situation Room]. Q    https:// www.wsj.com/articles/north-korea-r…"
+  },
+  {
+   "sourceText": "Sparrow Red",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": null,
+   "outcome": "ROUTE_TO_THEMES",
+   "changed": false,
+   "why": "one of Q’s codewords — belongs to Codes & Brackets or Themes, not Entities",
+   "contextExample": "…. Q    Night [4] Increase in chatter. Auth B19-2. [Sparrow Red]. Prevent at all costs. Good. Castle_Online. Q    …"
+  },
+  {
+   "sourceText": "Fareed Zakaria",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…egarded as false? What is ‘Post-American World by [Fareed Zakaria]’? Why is this relevant?  Why would the President …"
+  },
+  {
+   "sourceText": "Mariah Sunshine Coogan",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "West Hollywood",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Agnes Nixon",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Harvard Muslim Alumni",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Earth Day",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "event_incident",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a named event",
+   "contextExample": "…74707105001/?#sp=show-clips Q    @algore Today is [Earth Day]. Did you forget? Do you feel safe? https:// www.w…"
+  },
+  {
+   "sourceText": "Serzh Sargsyan",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Stormy Daniels",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…Cohen raid by FBI? Public context: re: payment to [Stormy Daniels]? SC & FBI raided POTUS’ attorney to pull Stormy D…"
+  },
+  {
+   "sourceText": "Korean Peninsula",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": "…nly the above. Get the picture? Q    Peace on the [Korean Peninsula] isn’t big news? Should we drop a #MOAB on that? T…"
+  },
+  {
+   "sourceText": "Alex Jones",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Burkina Faso",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": "… Bank of Brazil Bulgaria: Bulgarian National Bank [Burkina Faso]: Central Bank of West African States (BCEAO) Buru…"
+  },
+  {
+   "sourceText": "National Security Action",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": null
+  },
+  {
+   "sourceText": "East Caribbean",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": "… Republic: Central Bank of the Dominican Republic [East Caribbean] area: Eastern Caribbean Central Bank Ecuador: Cen…"
+  },
+  {
+   "sourceText": "Equatorial Guinea",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": "… El Salvador: Central Reserve Bank of El Salvador [Equatorial Guinea]: Bank of Central African States Estonia: Bank of …"
+  },
+  {
+   "sourceText": "Guinea Bissau",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": "…eece: Bank of Greece Guatemala: Bank of Guatemala [Guinea Bissau]: Central Bank of West African States (BCEAO) Guya…"
+  },
+  {
+   "sourceText": "Netherlands Antilles",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": "…ntral Bank of Nepal Netherlands: Netherlands Bank [Netherlands Antilles]: Bank of the Netherlands Antilles New Zealand: Re…"
+  },
+  {
+   "sourceText": "Officer Familia",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…speech] What NYPD detectives were [187] mid 2017? [Officer Familia] [1] Godspeed, Patriot. We will never forget. Q   …"
+  },
+  {
+   "sourceText": "Papua New Guinea",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": "…rest in this…”] [NP 8:14 “——————— Pier 39…”] Q    [Papua New Guinea]: Bank of Papua New Guinea Paraguay: Central Bank …"
+  },
+  {
+   "sourceText": "San Marino",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": "…al Bank of Russia Rwanda: National Bank of Rwanda [San Marino]: Central Bank of the Republic of San Marino Samoa…"
+  },
+  {
+   "sourceText": "Sierra Leone",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": "… of Serbia Seychelles: Central Bank of Seychelles [Sierra Leone]: Bank of Sierra Leone Singapore: Monetary Authori…"
+  },
+  {
+   "sourceText": "Charlie Dent",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…nced they will not seek re-election: Bob Corker.  [Charlie Dent].  Jeff Flake.  Lynn Jenkins. Sam Johnson. Raul La…"
+  },
+  {
+   "sourceText": "Raul Labrador",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…ie Dent.  Jeff Flake.  Lynn Jenkins. Sam Johnson. [Raul Labrador]. Frank LoBiondo. Tim Murphy. Why is this relevant…"
+  },
+  {
+   "sourceText": "Hyde Park",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": "…e guide. What event occurs in Dec (London)? Think [Hyde Park]. Think prev pic [2] people. Provides Timeframe. Q…"
+  },
+  {
+   "sourceText": "Kashyap Patel",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…e-in-chilling-clash-over-records-emails-show.html [Kashyap Patel] - name to remember. Q    >>1722473 Good interview…"
+  },
+  {
+   "sourceText": "Marine One",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "military_asset_vessel",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a named military asset",
+   "contextExample": "…2 POTUS  5:5? Q    >>1763411 Will inspect/review. [Marine One] proofs forthcoming. AF1 (inside) thereafter. More…"
+  },
+  {
+   "sourceText": "Alex Rodriguez",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Saturday Night Live",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "creative_work",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a show, film or band",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Santa Fe",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Bin Laden",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…s carried on a private plane to Iran? Why was the [Bin Laden] family here during 9-11? Coincidence?  How does S…"
+  },
+  {
+   "sourceText": "Hugh Hefner",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "… must be set. Crumbs are easy to swallow. What if [Hugh Hefner] was /a Clown In America? What is a honeypot?  Def…"
+  },
+  {
+   "sourceText": "Curt Schilling",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Nat Guard",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "government_institution",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a government body or armed service",
+   "contextExample": "… should know this based on earlier drops re: SA / [Nat Guard] / MIL Assets activate US soil. The game is over w…"
+  },
+  {
+   "sourceText": "Shiva Ayyadurai",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Guardian Project",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Ronan Farrow",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Ali Velshi",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Liberal Democrats",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": "…limpse)(what to expect)  >POTUS’ twitter comments [Liberal Democrats]  Fake News WW Fake MAGA supporters  Bandwagon shi…"
+  },
+  {
+   "sourceText": "Conservative Review",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Chris Cuomo",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Mayo Clinic",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": "… What could this prevent potentially? What is the [Mayo Clinic]? Who sits on the BOD there?   >>150400127 What US…"
+  },
+  {
+   "sourceText": "Phill Mudd",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Bill Paxon",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…2012/02/molinari-to-head-googles-dc-office-073217 [Bill Paxon]. Akin Gump Strauss Hauer & Feld LLP https://en.wi…"
+  },
+  {
+   "sourceText": "Hoover Dam",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": "…e_read drops re: SET UP. Q    >>2601331 Armed man [Hoover Dam] re: link to Q? They will not stop. Nothing to see…"
+  },
+  {
+   "sourceText": "Border Patrol",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "government_institution",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a government body or armed service",
+   "contextExample": "…ple] Wet Work? Human Trafficking?  Sharing of ICE/[Border Patrol] C-INTEL [schedules] to SAFEGUARD? EXIT/ENTRANCE? …"
+  },
+  {
+   "sourceText": "Matt Doran",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Operation Underground Railroad",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "program_operation_project",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a named operation or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Tim Ballard",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "… ex-Department of Homeland Security special agent [Tim Ballard], perhaps America’s foremost human trafficking exp…"
+  },
+  {
+   "sourceText": "Afghan Arabs",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": null,
+   "outcome": "ROUTE_TO_THEMES",
+   "changed": false,
+   "why": "a collective or concept rather than a named referent",
+   "contextExample": "…00mm+? Control of weapons? Control of training? >>[Afghan Arabs]>>Haqqani + Hekmatyar >>UBL [CRITICAL] Allies? Haq…"
+  },
+  {
+   "sourceText": "Tony Blair",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Australian Ambassador",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "title_role",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an office held rather than a person named",
+   "contextExample": "…er, who is now proven to be a spy, possibly with ([Australian Ambassador]) Alexander Downer” who her husband met with in Lo…"
+  },
+  {
+   "sourceText": "Benedict Arnold",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Ars Technica",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Ancient Egyptians",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": null,
+   "outcome": "ROUTE_TO_THEMES",
+   "changed": false,
+   "why": "a collective or concept rather than a named referent",
+   "contextExample": "…IGGEST threat. LOGIC WINS EVERY SINGLE TIME. Q    [Ancient Egyptians] considered gold “the skin of the gods” -- specifi…"
+  },
+  {
+   "sourceText": "Admiral Rogers",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a title followed by a surname — a person",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Real Clear Politics",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "National Security Adviser",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "title_role",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an office held rather than a person named",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Operation Specialists",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "program_operation_project",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a named operation or programme",
+   "contextExample": "…://www.youtube.com/watch?v=G02wKufX3nw Played by '[Operation Specialists]' [pre-event] last night. Q    >>2848894    >>2848…"
+  },
+  {
+   "sourceText": "Doug Ducey",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Jon Kyl",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Cindy McCain",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Brad Ahmundson",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…eration in London. Corsi and Piper Jaffray broker [Brad Ahmundson] were integral to a fraud that took Minnesota inve…"
+  },
+  {
+   "sourceText": "Piper Jaffray",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": "…nt in a 1997 sting operation in London. Corsi and [Piper Jaffray] broker Brad Ahmundson were integral to a fraud th…"
+  },
+  {
+   "sourceText": "Patriot Day",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "event_incident",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a named event",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Pope Francis",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a title followed by a surname — a person",
+   "contextExample": null
+  },
+  {
+   "sourceText": "America Newsroom",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Fox Business",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Andre Carson",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…m] in 2013? >>Rep Keith Ellison (Minnesota) >>Rep [Andre Carson] (Indiana) >>Rep Gregory Meeks (New York)  >>Louis…"
+  },
+  {
+   "sourceText": "Louis Farrakhan",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…arson (Indiana) >>Rep Gregory Meeks (New York)  >>[Louis Farrakhan] http://history.house.gov/Institution/Origins-Deve…"
+  },
+  {
+   "sourceText": "Gregg Jarrett",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Chris Evans",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Katrina Pierson",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Marty Torrey",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…tion_F-2016-07895_47 [Pg 20 - Assange Arrest] By: [Marty Torrey] [Mad Hatter] Q    >>267 Did James Baker just test…"
+  },
+  {
+   "sourceText": "Capitol Hill",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": null
+  },
+  {
+   "sourceText": "People's Liberation Army",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": null
+  },
+  {
+   "sourceText": "The Hunt For",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "creative_work",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a show, film or band",
+   "contextExample": "…S  DEFLECT BLAME [FOCUS RUSSIA >>> GLOBAL ENEMY] \"[The Hunt For]\" dropped - why? When was the unauthorized missile…"
+  },
+  {
+   "sourceText": "Peggy Grande",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Executive Branch",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "government_institution",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a government body or armed service",
+   "contextExample": "… THE MOST] Are we subject to the Hatch Act? Think [Executive Branch] / NSA / etc. Acceptable 'turn on' comms? [Filter …"
+  },
+  {
+   "sourceText": "Don McGahn",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…enior members of the D party [6] send a letter to [Don McGahn] in early Oct. outlining 'Hatch Act' violations re…"
+  },
+  {
+   "sourceText": "Harriet Cash",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Red October",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": null,
+   "outcome": "ROUTE_TO_THEMES",
+   "changed": false,
+   "why": "one of Q’s codewords — belongs to Codes & Brackets or Themes, not Entities",
+   "contextExample": "…wakening. Iron Eagle. Godfather III. The Hunt for [Red October].  Q   >>1838246 R they serious? Q    We serve at …"
+  },
+  {
+   "sourceText": "Reince Priebus",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…shake-up at the Trump White House. Chief of Staff [Reince Priebus] and spokesman Sean Spicer both left their posts o…"
+  },
+  {
+   "sourceText": "Chelsey Smith",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Hyatt Regency",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "facility_property",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a named facility",
+   "contextExample": "…  Anons geo_located [last pic]: Chongqing, China. [Hyatt Regency]. Players: 8 Watch the news. Q    >>4094206    >>4…"
+  },
+  {
+   "sourceText": "White Squall",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "creative_work",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a show, film or band",
+   "contextExample": "…://en.wikipedia.org/wiki/Scott_Free_Productions >>[White Squall] >>WWG1WGA (from the movie) Thank you for playing.…"
+  },
+  {
+   "sourceText": "Sundar Pichai",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Cardinal Pell",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a title followed by a surname — a person",
+   "contextExample": "…sh-the-story-ng-4be7ee27075d4fb302aae9989c40ad34 [[Cardinal Pell]] Dark to LIGHT. Q    https://twitter.com/TrumpHot…"
+  },
+  {
+   "sourceText": "Perth Now",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Trump Hotels",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Maggie Haberman",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "… NYT – John Harwoodje NYT – Jonathan Martin NYT – [Maggie Haberman] NYT – Pat Healey PBS – Charlie Rose People – Sand…"
+  },
+  {
+   "sourceText": "Boy Scouts",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": "…d.” (Page 101) >Called for the sex-integration of [Boy Scouts] and Girl Scouts because they “perpetuate stereoty…"
+  },
+  {
+   "sourceText": "Girl Scouts",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": "…>Called for the sex-integration of Boy Scouts and [Girl Scouts] because they “perpetuate stereotyped sex roles.” …"
+  },
+  {
+   "sourceText": "Red Castle",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": null,
+   "outcome": "ROUTE_TO_THEMES",
+   "changed": false,
+   "why": "one of Q’s codewords — belongs to Codes & Brackets or Themes, not Entities",
+   "contextExample": "… reasons I'm sure you can understand. Think Green/[Red Castle]. Think MIL. Happy Holidays! Q    >>4272374 #3 in …"
+  },
+  {
+   "sourceText": "Green Castle",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": null,
+   "outcome": "ROUTE_TO_THEMES",
+   "changed": false,
+   "why": "one of Q’s codewords — belongs to Codes & Brackets or Themes, not Entities",
+   "contextExample": "…cally impossible?  The very next day. Red Castle. [Green Castle]. Public access to intel? Q    If a woman is selec…"
+  },
+  {
+   "sourceText": "Kirk Adams",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Cecile Richards",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Bianna Vitalievna",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…e (Nat Sec Advisor - HUSSEIN)? CBS NEWS/CNN Journ [Bianna Vitalievna] married to Peter R Orszag (Dir of Office of Mgmt/…"
+  },
+  {
+   "sourceText": "Jay Carney",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "… ABC NEWS correspondent Claire Shipman married to [Jay Carney] (WH Press Sec - HUSSEIN)? …………… MSM = arm/extensi…"
+  },
+  {
+   "sourceText": "The New Yorker",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Rolling Stone",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Saddam Hussein",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Senator Collins",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a title followed by a surname — a person",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Mitt Romney",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "… Follow the news. Merry Christmas. Q    >>5293564 [Mitt Romney]. Mitt Romney. Mitt Romney. Wire transfers are a c…"
+  },
+  {
+   "sourceText": "Bernie Sanders",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Super Bowl",
+   "occurrences": 1,
+   "oldType": "creative_work",
+   "newType": "event_incident",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a named event",
+   "contextExample": "…EAR. The fun begins directly after. Will make the [Super Bowl] look like a puppy show.  Q    https://twitter.com…"
+  },
+  {
+   "sourceText": "Urban Dictionary",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Cardinal George Pell",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a title followed by a surname — a person",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Bill Slater",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Todd Penley",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Federal Government",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "government_institution",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a government body or armed service",
+   "contextExample": "…ance of the Attorney General to attorneys for the [Federal Government] with respect to the disposition of Federal crimin…"
+  },
+  {
+   "sourceText": "Ivy League",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Trump Jr",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…ure future safety & control. When was it reported [Trump Jr] dropped his SS detail? Why would he take that hug…"
+  },
+  {
+   "sourceText": "Stacey Dash",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Federal Agencies",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "government_institution",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a government body or armed service",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Chris Cox",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Nick Lewin",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…711866b9be3d1977b2f/giuffrelewinamicus031919.pdf [[Nick Lewin]] >Mueller connection? >Comey connection? NAT SEC.…"
+  },
+  {
+   "sourceText": "Prince Andrew",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…d Turns. Q    >>5801566    >>5801615    >>5801617 [Prince Andrew] is deeply connected. Q    >>5801778    >>5801797 …"
+  },
+  {
+   "sourceText": "Michal Chelbin",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Nicky Hilton",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…RD HOTEL. RACHEL CHANDLER. Q    >>5803267 Who did [Nicky Hilton] (sister of Paris) marry? James Rothschild.  Q    …"
+  },
+  {
+   "sourceText": "Paris Hilton",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Sebastian Gorka",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "The Daily Beast",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Gateway Pundit",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Mil Intel",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "government_institution",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a government body or armed service",
+   "contextExample": "…ck, Patriot. Autists should consider joining ABCs/[Mil Intel] programs if interested.  Ability to decipher comp…"
+  },
+  {
+   "sourceText": "Dafna Linzer",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…>> https://wikileaks.org/dnc-emails/emailid/4203 [[Dafna Linzer]] FAKE NEWS = propaganda arm of [D] party. Q    Am…"
+  },
+  {
+   "sourceText": "Mueller Report",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Presidential Advisory",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "other_named_entity",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a named document",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Victoria's Secret",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": "…ings_END Q    >>6956274    Les Wexner. Founder of [Victoria's Secret]. Connect the dots. Q    How deep is the rabbit ho…"
+  },
+  {
+   "sourceText": "Emergency Broadcast System",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "program_operation_project",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a named operation or programme",
+   "contextExample": "…as long been broadcast. We will be initiating the [Emergency Broadcast System] (EMS) during this time in an effort to provide a …"
+  },
+  {
+   "sourceText": "Stealth Bomber",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "military_asset_vessel",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a named military asset",
+   "contextExample": "…se (including the [RR] secondary CLAS scope doc). [Stealth Bomber]s fly undetected.  The 'Red Line' months old 4am n…"
+  },
+  {
+   "sourceText": "Clare Bronfman",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Wheels Up",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": null,
+   "outcome": "ROUTE_TO_THEMES",
+   "changed": false,
+   "why": "one of Q’s codewords — belongs to Codes & Brackets or Themes, not Entities",
+   "contextExample": "… For The Prevention Of Cruelty To Children] Q    [[Wheels Up]] flight logs [CLAS 1-99] under investigation by F…"
+  },
+  {
+   "sourceText": "Ghislaine Maxwell",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…the-victorias-secret-pipeline-to-jeffrey-epstein/ [Ghislaine Maxwell]. Follow the Family. UK/US 1&2 Umbrella SURV (leap…"
+  },
+  {
+   "sourceText": "Jake Tapper",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…ilan CNN – Erin Burnett CNN – Gloria Borger CNN – [Jake Tapper] CNN – Jeff Zeleny CNN - Jeff Zucker CNN – John Be…"
+  },
+  {
+   "sourceText": "Hollywood Reporter",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Cornell Law School",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": null
+  },
+  {
+   "sourceText": "American Red Cross",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Senator Grassley",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a title followed by a surname — a person",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Woodrow Wilson",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "… sustained by the organized opinion of mankind.\" -[Woodrow Wilson] \"Educate and inform the whole mass of people. The…"
+  },
+  {
+   "sourceText": "Marsha Blackburn",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Official Secrets",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": null,
+   "outcome": "ROUTE_TO_THEMES",
+   "changed": false,
+   "why": "a collective or concept rather than a named referent",
+   "contextExample": "…e' can provide a lot of truth and/or background. '[Official Secrets].' Relevant today? Enjoy the show! Q    https://ww…"
+  },
+  {
+   "sourceText": "Oshkosh Wisconsin",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Pearson Publishing",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": "…840 US Taxpayer > FED Gov't FED Gov't [HUSSEIN] > [Pearson Publishing] Pearson Publishing > [HUSSEIN] BIDEN? Follow the …"
+  },
+  {
+   "sourceText": "Bill Binney",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…us/1225610404325478400 It's time to wake up. Q    [Bill Binney]. Q    https://twitter.com/StormIsUponUs/status/12…"
+  },
+  {
+   "sourceText": "Iris Weinshall",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…ECTED. UNITED. WWG1WGA!!! Q    Define CORRUPTION. [Iris Weinshall]. New York City Department of Transportation. Resp…"
+  },
+  {
+   "sourceText": "Heidi Fleiss",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…ourself. WWG1WGA!!! Q    CS/Soros. CS/Playboy. CS/[Heidi Fleiss].  HEIDI FLEISS (EVIL/CLOWN/BLACKMAIL). Q    >>825…"
+  },
+  {
+   "sourceText": "Thousand Talents Plan",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "program_operation_project",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a named operation or programme",
+   "contextExample": "…hina and was a contractual participant in China’s [Thousand Talents Plan] from in or about 2012 to 2017.” [rapid spread] ht…"
+  },
+  {
+   "sourceText": "Andy Harris",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Harmeet Dhillon",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Luke Goldberg",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Rochelle Coombs",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Lou Dobbs",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Midterm Elections",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "event_incident",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a named event",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Activision Blizzard",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Chris Hayes",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Greg Kotseos",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Civil Rights Division",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "government_institution",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a government body or armed service",
+   "contextExample": null
+  },
+  {
+   "sourceText": "The Lancet",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Byron York",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Shannon Bream",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Fox Friends",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Ingraham Angle",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Anderson Cooper",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Valerie Plame",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Omarosa Manigault Newman",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…ered resignation within a 2 week period? Why did [[Omarosa Manigault Newman]] attempt to entrap POTUS through secret and illeg…"
+  },
+  {
+   "sourceText": "Tito Calloway",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Nathalie Himmelrich",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…ave died. We grieve and we love. We remember.”  ― [Nathalie Himmelrich] God bless you and your family. Heaven awaits (and…"
+  },
+  {
+   "sourceText": "Global Health Leaders",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Cambridge Dictionary",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Matt Finn",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Dana Boente",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "… - Andrew McCabe Pg 391 - Rod Rosenstein Pg 271 - [Dana Boente] Pg 269 - James Comey Pg [    ] - Sally Yates 'KNO…"
+  },
+  {
+   "sourceText": "Google Trends",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "French Revolution",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "event_incident",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a named event",
+   "contextExample": "… political revolutions and ideals, especially the [French Revolution] of 1789. The energy created and expressed by the …"
+  },
+  {
+   "sourceText": "Jeremiah Ellison",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Confederate General",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "title_role",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an office held rather than a person named",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Nature's God",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": null,
+   "outcome": "ROUTE_TO_THEMES",
+   "changed": false,
+   "why": "a collective or concept rather than a named referent",
+   "contextExample": "… equal station to which the Laws of Nature and of [Nature's God] entitle them, a decent respect to the opinions of…"
+  },
+  {
+   "sourceText": "Confederate Democrats",
+   "occurrences": 1,
+   "oldType": "event_incident",
+   "newType": null,
+   "outcome": "ROUTE_TO_THEMES",
+   "changed": false,
+   "why": "a collective or concept rather than a named referent",
+   "contextExample": "…ng the Civil War in a fight to abolish slavery [v [Confederate Democrats]]. The Flag of Lincoln.  It was considered a great…"
+  },
+  {
+   "sourceText": "Yale Medicine",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": null
+  },
+  {
+   "sourceText": "First Lady",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "title_role",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an office held rather than a person named",
+   "contextExample": "…isible Enemy of all humanity, I bless you and the [First Lady], the beloved American nation, and all men and wom…"
+  },
+  {
+   "sourceText": "World Health Organization",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": null
+  },
+  {
+   "sourceText": "World Trade Organization",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": null
+  },
+  {
+   "sourceText": "United Nations",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": null
+  },
+  {
+   "sourceText": "El Centro",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Chad Pergram",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Lila Grace Rose",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Radnor Township",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": "…n and possession of child pornography. Democratic [Radnor Township] Board of Commissioners member, Philip Ahr, resign…"
+  },
+  {
+   "sourceText": "Gerry Studds",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…ornography. Democratic Massachusetts Congressman, [Gerry Studds], was censured by the House of Representatives aft…"
+  },
+  {
+   "sourceText": "Dale Kenyon",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…ge. Democratic Former Mayor of Clayton, New York, [Dale Kenyon], was indicted for sexual acts against a teenager.…"
+  },
+  {
+   "sourceText": "Rodney Mullin",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…ic Party Chairman for Davidson County, Tennessee, [Rodney Mullin], resigned amid child pornography allegations. Dem…"
+  },
+  {
+   "sourceText": "Neil Cohen",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "… was 28. Democratic New Jersey State Assemblyman, [Neil Cohen], was convicted of possession and distribution of …"
+  },
+  {
+   "sourceText": "Tim Nolan",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…and distribution of child pornography. Republican [Tim Nolan], chairman of Donald Trump’s presidential campaign…"
+  },
+  {
+   "sourceText": "Howard Scott Heldreth",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "… other charges. Republican anti-abortion activist [Howard Scott Heldreth] is a convicted child rapist in Florida. Republica…"
+  },
+  {
+   "sourceText": "Edison Misla Aldarondo",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…murders an abortion doctor. Republican legislator [Edison Misla Aldarondo] was sentenced to 10 years in prison for raping hi…"
+  },
+  {
+   "sourceText": "Strom Thurmond",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…ographs of a 15-year old girl. Republican Senator [Strom Thurmond], a notable racist, had sex with a 15-year old bla…"
+  },
+  {
+   "sourceText": "Randal David Ankeney",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…ex crimes involving children. Republican activist [Randal David Ankeney] pleaded guilty to attempted sexual assault on a c…"
+  },
+  {
+   "sourceText": "Marty Glickman",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…-old girl being raped. … Q    Republican activist [Marty Glickman] (a.k.a. “Republican Marty”), was taken into custo…"
+  },
+  {
+   "sourceText": "Jon Matthews",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…erform oral sex on him. Republican talk show host [Jon Matthews] pleaded guilty to exposing his genitals to an 11 …"
+  },
+  {
+   "sourceText": "Earl Kimmerling",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Keola Childs",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "… a 15-year old girl. Republican County Councilman [Keola Childs] pleaded guilty to molesting a male child. Republi…"
+  },
+  {
+   "sourceText": "Merrill Robert Barter",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "… 13-year old girl. Republican County Commissioner [Merrill Robert Barter] pleaded guilty to unlawful sexual contact and ass…"
+  },
+  {
+   "sourceText": "Robin Vanderwall",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "… strategist and Citadel Military College graduate [Robin Vanderwall] was convicted in Virginia on five counts of solic…"
+  },
+  {
+   "sourceText": "Jon Grunseth",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…ced to 12 years in prison. Republican businessman [Jon Grunseth] withdrew his candidacy for Minnesota governor aft…"
+  },
+  {
+   "sourceText": "Young Republican Federation",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": "…cluding his daughter. Republican director of the “[Young Republican Federation]” Nicholas Elizondo molested his 6-year old daught…"
+  },
+  {
+   "sourceText": "Harvey Weinstein",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…emocratic donor, activist, and Hollywood producer [Harvey Weinstein] is being criminally prosecuted and civilly sued f…"
+  },
+  {
+   "sourceText": "Asia Argento",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…resses. Democratic activist and #metoo proponent, [Asia Argento], settled a lawsuit for sexual harassment stemming…"
+  },
+  {
+   "sourceText": "Neil Goldschmidt",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…age model for sex. Democratic Governor of Oregon, [Neil Goldschmidt], after being caught by a newspaper, publicly admi…"
+  },
+  {
+   "sourceText": "Mel Reynolds",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…ges had expired. Democratic Illinois Congressman, [Mel Reynolds] resigned from Congress after he was convicted of …"
+  },
+  {
+   "sourceText": "Fred Richmond",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…paign volunteer. Democratic New York Congressman, [Fred Richmond], was arrested in Washington D.C. for soliciting s…"
+  },
+  {
+   "sourceText": "Roman Polanski",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…ld boy. Democratic activist, donor, and director, [Roman Polanski], fled the country after pleading guilty to statut…"
+  },
+  {
+   "sourceText": "Whoopi Goldberg",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…d actors still defend him to this day, including, [Whoopi Goldberg], Martin Scorcese, Woody Allen, David Lynch, Wim W…"
+  },
+  {
+   "sourceText": "Martin Scorcese",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…fend him to this day, including, Whoopi Goldberg, [Martin Scorcese], Woody Allen, David Lynch, Wim Wenders, Pedro Alm…"
+  },
+  {
+   "sourceText": "Woody Allen",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…day, including, Whoopi Goldberg, Martin Scorcese, [Woody Allen], David Lynch, Wim Wenders, Pedro Almodovar, Tilda…"
+  },
+  {
+   "sourceText": "Wim Wenders",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…dberg, Martin Scorcese, Woody Allen, David Lynch, [Wim Wenders], Pedro Almodovar, Tilda Swinton and Monica Belluc…"
+  },
+  {
+   "sourceText": "Pedro Almodovar",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "… Scorcese, Woody Allen, David Lynch, Wim Wenders, [Pedro Almodovar], Tilda Swinton and Monica Bellucci. Democratic St…"
+  },
+  {
+   "sourceText": "Tilda Swinton",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…Allen, David Lynch, Wim Wenders, Pedro Almodovar, [Tilda Swinton] and Monica Bellucci. Democratic State Senator fro…"
+  },
+  {
+   "sourceText": "Monica Bellucci",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…, Wim Wenders, Pedro Almodovar, Tilda Swinton and [Monica Bellucci]. Democratic State Senator from Alaska, George Jac…"
+  },
+  {
+   "sourceText": "Gus Savage",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…ticing children. Democratic Illinois Congressman, [Gus Savage] was investigated by the Democrat-controlled House…"
+  },
+  {
+   "sourceText": "Bernie Ward",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…tion of child pornography. Democratic radio host, [Bernie Ward], plead guilty to one count of sending child porno…"
+  },
+  {
+   "sourceText": "Intelligence Community",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "government_institution",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a government body or armed service",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Just Security",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Eastern Washington",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Oregon State Park",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Jedidiah Fulton",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "… warrior. We stand at the ready. Always. Q        [Jedidiah Fulton], 39 [https://archive.is/GWLYq] Alberto Vincent Ac…"
+  },
+  {
+   "sourceText": "Alberto Vincent Acosta",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…   Jedidiah Fulton, 39 [https://archive.is/GWLYq] [Alberto Vincent Acosta] [https://archive.is/cFPbd] Kevin Carle, 37 [https…"
+  },
+  {
+   "sourceText": "Ivan Geronimo Gomez",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…cFPbd] Kevin Carle, 37 [https://archive.is/xHiFO] [Ivan Geronimo Gomez], 30 [https://archive.is/mhKtG] Guadalupe Molina-P…"
+  },
+  {
+   "sourceText": "Julian Draper",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…adalupe Molina-Pacheco [https://archive.is/US23e] [Julian Draper] [https://archive.is/JyfJe] Demarco Covey, 24 [htt…"
+  },
+  {
+   "sourceText": "Wesley James Bergman",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…fJe] Demarco Covey, 24 [https://archive.is/owMeD] [Wesley James Bergman], 37 [https://archive.is/rl2cm] Elias Pendergrass,…"
+  },
+  {
+   "sourceText": "Elias Pendergrass",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…sley James Bergman, 37 [https://archive.is/rl2cm] [Elias Pendergrass], 44 [https://archive.is/wJ1XR] Unknown [https://a…"
+  },
+  {
+   "sourceText": "Anita Esquivel",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…hive.is/wJ1XR] Unknown [https://archive.is/mOAqq] [Anita Esquivel], 37 [https://archive.is/nMZFo] Vanya Hummel, 24 […"
+  },
+  {
+   "sourceText": "Milton Loice Moran",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…hive.is/knQbj] Unknown [https://archive.is/AEQgp] [Milton Loice Moran], 48 [https://archive.is/PiJpR] Anthony Travis Bod…"
+  },
+  {
+   "sourceText": "Daily Signal",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Julian Assange",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…54524419 Who is financing?  Follow the pen.  Q    [Julian Assange] Q    >>251685 False. Did they get to you? Board c…"
+  },
+  {
+   "sourceText": "Daily Sabah",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Kara Swisher",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Harvard Law School",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": null
+  },
+  {
+   "sourceText": "East Africa",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "country_region",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a country, region or place",
+   "contextExample": "…low the family. Think McCabe's wife.  Focus here [[East Africa] Operations]: https://www.clintonfoundation.org/cl…"
+  },
+  {
+   "sourceText": "Ron Johnson",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "New York Governor",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "title_role",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an office held rather than a person named",
+   "contextExample": null
+  },
+  {
+   "sourceText": "United States Senator",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "title_role",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an office held rather than a person named",
+   "contextExample": "…t the highest level of classification? Meaning, a [United States Senator] could NOT review the deal but other foreign power…"
+  },
+  {
+   "sourceText": "Sohrab Ahmari",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Chip Franklin",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Titus Nation",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an organisation, firm or institution",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Matt Binder",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Kurt Eichenwald",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Jeet Heer",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Erin Nanoki",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "America's Founders",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": null,
+   "outcome": "ROUTE_TO_THEMES",
+   "changed": false,
+   "why": "a collective or concept rather than a named referent",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Alexandra Chalupa",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…aChalup/status/1317664854476525571 Panic?  Who is [Alexandra Chalupa]? https://nypost.com/2019/11/13/who-is-alexandra-c…"
+  },
+  {
+   "sourceText": "Matt Murray",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…s-conference/625831.html Q    Did Hussein contact [Matt Murray] in attempt to persuade not to publish? Will Murra…"
+  },
+  {
+   "sourceText": "Kirsten Gillibrand",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…har, D-Minn. Sen. Dianne Feinstein, D-Calif. Sen. [Kirsten Gillibrand], D-N.Y. Gov. Andrew Cuomo, D-N.Y Mayor Bill de Bl…"
+  },
+  {
+   "sourceText": "Abraham Lincoln",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…or the people, shall not perish from the earth. - [Abraham Lincoln] Nov 1863  Together we win. Q    >>13655 Mark as g…"
+  },
+  {
+   "sourceText": "Cassidy Hutchinson",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…t? Can emotions be used to insert a plant? Who is [Cassidy Hutchinson]? Trust the plan. Q    What groups are financing U…"
+  },
+  {
+   "sourceText": "Marc Mezvinsky",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Marjorie Margolies",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…d guilty of fraud in 2001.[3][4][5] His mother is [Marjorie Margolies] (b. 1942), who was a TV reporter and represented …"
+  },
+  {
+   "sourceText": "Saleha Abedin",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…the ballooning Clinton email scandal. Her mother, [Saleha Abedin], sits on the Presidency Staff Council of the Inte…"
+  },
+  {
+   "sourceText": "Abdelkarim Belhaj",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…he same John McCain who met Libyan militia leader [Abdelkarim Belhaj], a known al Qaeda associate, and saluted him as “…"
+  },
+  {
+   "sourceText": "State Secrets",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": null,
+   "outcome": "ROUTE_TO_THEMES",
+   "changed": false,
+   "why": "a collective or concept rather than a named referent",
+   "contextExample": "… CIA NSA  No approval or congressional oversight  [State Secrets] upheld under SC  Who is the Commander and Chief o…"
+  },
+  {
+   "sourceText": "Klaus Eberwein",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…    >>231746 Drone. Re_read crumbs. Q    >>232480 [Klaus Eberwein] Q    >>274558 Would POTUS make a serious accusati…"
+  },
+  {
+   "sourceText": "Zero Hedge",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Operation Merlin",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "program_operation_project",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a named operation or programme",
+   "contextExample": "…day. Message received. Response forthcoming. Q    [Operation Merlin] (tech). >Iran >NK Iran Deal (funding). >Iran >NK …"
+  },
+  {
+   "sourceText": "Iran Deal",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "event_incident",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a named event",
+   "contextExample": "…push tomorrow? Q    U1 – CA – EU – ASIA – IRAN/NK [Iran Deal]. Why is this relevant? Re-read drops re: NK / Ira…"
+  },
+  {
+   "sourceText": "Fed Judge",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "title_role",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "an office held rather than a person named",
+   "contextExample": "…ning.  Coincidence Senate Republicans pushing for [Fed Judge] confirmations last week? Why are Senate Republica…"
+  },
+  {
+   "sourceText": "Stanislav Lunev",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": "…F 2 Q    SEC_TEST Q    COMMS GOOD. Nice try. Q    [Stanislav Lunev]. The BRIDGE. Payback for today. Q    Stay TOGETHE…"
+  },
+  {
+   "sourceText": "Adolf Hitler",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "person",
+   "outcome": "KEEP_TYPE",
+   "changed": false,
+   "why": "a personal name left after every competing class was tested",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Comedy Central",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "media_organization",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a publication or programme",
+   "contextExample": null
+  },
+  {
+   "sourceText": "Of Montreal",
+   "occurrences": 1,
+   "oldType": "person",
+   "newType": "creative_work",
+   "outcome": "CHANGE_TYPE",
+   "changed": true,
+   "why": "a show, film or band",
+   "contextExample": null
+  }
+ ]
+}
