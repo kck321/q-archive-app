@@ -1141,7 +1141,12 @@ export async function getQuestionsTimeline(): Promise<{
     if (a) {
       claimsByMonth[month] = (claimsByMonth[month] ?? 0) + (a.claims?.length ?? 0)
       predictionsByMonth[month] = (predictionsByMonth[month] ?? 0) + (a.predictions?.length ?? 0)
-      const filteredEntities = (a.namedEntities ?? []).filter(e => !/^Q$/i.test(e.trim()) && !/^\d+$/.test(e.trim()))
+      // Bare numbers only. The bare-"Q" skip that used to sit here is gone: signature exclusion
+      // is now decided at CERTIFICATION time — structurally, on the last non-empty body line —
+      // so the Q entries that reach postAnalysis are the 10 body references, never the ~4,000
+      // sign-offs. Re-filtering them here deleted the certified rows and left the month chart
+      // disagreeing with the entity registry. See the same fix in computeAnalysisFrequency.
+      const filteredEntities = (a.namedEntities ?? []).filter(e => !/^\d+$/.test(e.trim()))
       namedEntitiesByMonth[month] = (namedEntitiesByMonth[month] ?? 0) + filteredEntities.length
       themesByMonth[month] = (themesByMonth[month] ?? 0) + (a.themes?.length ?? 0)
       impliedConclusionsByMonth[month] = (impliedConclusionsByMonth[month] ?? 0) + (a.impliedConclusions?.length ?? 0)
@@ -1435,11 +1440,16 @@ async function computeAnalysisFrequency(): Promise<AnalysisCategoryFreq[]> {
         const trimmed = SENTENCE_CATS.has(cat)
           ? expandToSentence(item, post.text ?? '')
           : item.trim()
-        // Skip "Q" alone and bare numbers (Q post numbers) in Named Entities
-        if (cat === 'namedEntities') {
-          if (/^Q$/i.test(trimmed)) continue
-          if (/^\d+$/.test(trimmed)) continue
-        }
+        // Bare numbers (Q post numbers) are not entities and never were.
+        //
+        // A bare-"Q" skip used to sit beside this line, and it was right at the time: nothing
+        // decided which Q was the author tag, so every one of ~4,000 signatures would have piled
+        // into one meaningless mega-row. That decision now belongs to certification — the
+        // terminal standalone Q is excluded structurally, on the last non-empty body line — so
+        // what survives into postAnalysis is the 10 places Q refers to ITSELF inside the text.
+        // Dropping them here deleted a certified row from the section that owns it, which is the
+        // same mistake as the backfill below: the browser does not get a vote on membership.
+        if (cat === 'namedEntities' && /^\d+$/.test(trimmed)) continue
         const key = `${cat}::${normalizeItemKey(trimmed)}`
         if (!groups[key]) groups[key] = { category: cat, count: 0, postNums: [], seen: new Set(), originalText: trimmed, certifiedPerPost: new Map<number, number>() }
         groups[key].count++

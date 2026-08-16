@@ -105,3 +105,16 @@ export function wordBoundaryPattern(escapedTerm: string, rawTerm: string): strin
   const tail = endsWord ? '(?![A-Za-z0-9])' : ''
   return `${lead}${escapedTerm}${tail}`
 }
+
+// ─── Why nested same-kind spans are NOT collapsed here ───────────────────────
+// "Clinton Foundation conflicts of interest." rendered as two boxes — |Clinton| |Foundation| —
+// because #1220 certified both "Clinton Foundation" and "Clinton" over the same characters.
+// The obvious renderer fix, dropping a same-kind segment nested inside a longer one, was built,
+// measured and REVERTED: it removed the hover target for 27 acronyms (SS, WASH, BC, JA, WL,
+// DAG, RBG, AWAN, HCQ …), because the info box attaches to the span of the term it explains and
+// a collapsed span is no longer that term. Reader explanation is worth more than a tidy outline.
+//
+// The real defect was in the DATA, and it was fixed there: the surname is no longer a standalone
+// occurrence when "Foundation" follows it, so the inner span does not exist to split the box.
+// Where a genuine nesting remains ("US" inside "US Military", "Comey" inside "James Comey"),
+// each half is separately certified and each half keeps its own explanation.

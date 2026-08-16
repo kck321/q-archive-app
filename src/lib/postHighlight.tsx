@@ -59,7 +59,7 @@ function addSegs(segs: Seg[], text: string, terms: string[], kind: Kind) {
 }
 
 export function highlightText(text: string, questionTexts: string[], keyword: string, requestTexts: string[] = [], analysis?: PostAnalysis, postNum?: number, gloss?: Record<string, GlossEntry[]>) {
-  const segs: Seg[] = []
+  let segs: Seg[] = []
 
   // Highlight the searched term AND its whole alias group, so a post that matched via an alias
   // (e.g. searching "4,10,20" surfaces POTUS / Q+ posts) shows WHY it matched instead of nothing.

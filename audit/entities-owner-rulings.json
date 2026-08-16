@@ -1587,7 +1587,9 @@
         4785
       ],
       "reasoning": "Owner ruling: these 9 occurrences explicitly name the organization.",
-      "retrieval": "Scoped to 8 post(s)."
+      "retrieval": "Scoped to 8 post(s).",
+      "notFollowedBy": "\\s+[Ff]oundation",
+      "repairNote": "Owner ruling 2026-08-16: the surname is NOT a standalone occurrence when \"Foundation\" follows it. \"Clinton Foundation\" is one entity and is counted once, by the phrase alias. Before this, #1220 counted the same seven characters as both the Foundation and Hillary Clinton, and the renderer drew the organisation as two boxes."
     },
     {
       "alias": "Clinton",
@@ -1627,7 +1629,8 @@
       ],
       "reasoning": "Owner ruling: Hillary Clinton or her 2016 campaign — the election, email-investigation, DNC, FISA and \"Trump Swift Boat Project\" contexts. #4793's attached email is from a hillaryclinton.com address.",
       "retrieval": "Scoped to 28 post(s).",
-      "repairNote": "Includes #1220, #1815, #2365, #2697, #2872, #2876, #3015, #36, #3634, #3868, #453, #4633, #4845, #56, #6, #7, #8, #80, #82, #83, #91 — already certified by the context pass."
+      "repairNote": "Includes #1220, #1815, #2365, #2697, #2872, #2876, #3015, #36, #3634, #3868, #453, #4633, #4845, #56, #6, #7, #8, #80, #82, #83, #91 — already certified by the context pass. Owner ruling 2026-08-16: the surname is NOT a standalone occurrence when \"Foundation\" follows it. \"Clinton Foundation\" is one entity and is counted once, by the phrase alias. Before this, #1220 counted the same seven characters as both the Foundation and Hillary Clinton, and the renderer drew the organisation as two boxes.",
+      "notFollowedBy": "\\s+[Ff]oundation"
     },
     {
       "alias": "Clinton",
@@ -1644,7 +1647,8 @@
       "reasoning": "Owner ruling: #3035 names Bill Clinton in the linked court material.",
       "retrieval": "Scoped to 4 post(s).",
       "readerNote": "Explicit: the linked court material names the defendant William J. Clinton.",
-      "repairNote": "Includes #1556, #2937, #4784 — already certified by the context pass."
+      "repairNote": "Includes #1556, #2937, #4784 — already certified by the context pass. Owner ruling 2026-08-16: the surname is NOT a standalone occurrence when \"Foundation\" follows it. \"Clinton Foundation\" is one entity and is counted once, by the phrase alias. Before this, #1220 counted the same seven characters as both the Foundation and Hillary Clinton, and the renderer drew the organisation as two boxes.",
+      "notFollowedBy": "\\s+[Ff]oundation"
     },
     {
       "alias": "FED",
@@ -2553,7 +2557,9 @@
       "retrieval": "Reference audit: 5 exact queue row(s) across 4 post(s), scoped by line/char so other uses of \"Clinton\" are untouched.",
       "renderNote": "RENDERING_PROVENANCE_RULE: the renderer highlights the token, the form Q wrote.",
       "createIfMissing": true,
-      "type": "organization"
+      "type": "organization",
+      "notFollowedBy": "\\s+[Ff]oundation",
+      "repairNote": "Owner ruling 2026-08-16: the surname is NOT a standalone occurrence when \"Foundation\" follows it. \"Clinton Foundation\" is one entity and is counted once, by the phrase alias. Before this, #1220 counted the same seven characters as both the Foundation and Hillary Clinton, and the renderer drew the organisation as two boxes."
     },
     {
       "alias": "GS",
@@ -7736,6 +7742,75 @@
       "readerNote": "The Q poster/persona speaking to the public through the imageboards. Q/POTUS is a pairing, not a combined entity: Q is not Donald Trump.",
       "retrieval": "Occurrence-scoped to 10 body references across 5 posts. Terminal signatures excluded. 10-Q, AL-Q, Q&A, \"Q:\", ?q=, Q Clearance and Q+ are held for review, not swept in.",
       "renderNote": "RENDERING_PROVENANCE_RULE: the renderer highlights the token, the form Q wrote."
+    },
+    {
+      "alias": "Q+",
+      "canonical": "Donald Trump",
+      "recount": true,
+      "ruledOn": "2026-08-16",
+      "includePosts": [
+        791,
+        931,
+        1028,
+        1038,
+        1296,
+        1297,
+        1328,
+        1358,
+        1475,
+        1491,
+        1582,
+        1645,
+        1699,
+        1834,
+        2039,
+        2095,
+        2119,
+        2301,
+        2308,
+        2356,
+        2401,
+        2451,
+        2452,
+        2565,
+        2567,
+        2629,
+        2758,
+        2759,
+        2885,
+        3042,
+        3074,
+        3075,
+        3377,
+        3378,
+        3730,
+        4095
+      ],
+      "reasoning": "Owner ruling: Q+ is the coded designation for Donald J. Trump — Q \"plus one\", the President present with Q. Certified on the PERSON entity beside DJT, not on POTUS, which is the office. It had never been adjudicated at all: aliases.json listed Q+ as a search synonym of POTUS, so the app named it as an alias while having no occurrences to highlight.",
+      "readerNote": "Q+ is Q's designation for President Donald J. Trump. Q signed 36 drops with it instead of the usual bare \"Q\" — the \"+\" asserting that the President was present.",
+      "retrieval": "36 occurrences across 36 posts. Sign-offs INCLUDED, unlike the bare-Q signature: Q+ signs 36 drops, not thousands, so which drops carry it is itself the record. 3 are body references (#2401, #2565, #2567); 33 are terminal sign-offs.",
+      "renderNote": "RENDERING_PROVENANCE_RULE: the renderer highlights the token, the form Q wrote."
+    },
+    {
+      "alias": "H",
+      "canonical": "Hillary Clinton",
+      "recount": true,
+      "ruledOn": "2026-08-16",
+      "includePosts": [
+        1589
+      ],
+      "includeOccurrences": {
+        "1589": [
+          [
+            12,
+            6
+          ]
+        ]
+      },
+      "reasoning": "Owner ruling at ~90% confidence: in #1589 the chain \"RR to LL / LL to H / JC to LL\" is decoded by the following line, \"LL IS KEY TO CONNECTING TO WH / HRC/BC/JC/SP/EH\" — HRC is Hillary Rodham Clinton. Q writes HA or HUMA for Huma Abedin and HUSSEIN for Barack Obama, which is what rules those out.",
+      "readerNote": "Hillary Clinton. The identification is strongly contextual, not explicitly decoded by Q: it rests on the communication chain in this drop and on HRC appearing in the connected list on the next line.",
+      "retrieval": "ONE occurrence — #1589 line 12, \"LL to H\". Deliberately not generalised: a standalone H elsewhere in the archive is not ruled to be Hillary, and even inside this drop WH and /EH are untouched.",
+      "renderNote": "RENDERING_PROVENANCE_RULE: the renderer highlights the token, the form Q wrote."
     }
   ],
   "mergeRulings": [
@@ -7754,6 +7829,24 @@
       "into": "Patriots",
       "ruledOn": "2026-08-15",
       "reasoning": "Owner ruling: every Patriot / Patriots occurrence is the same entity. The tail adjudication had created a separate 'Patriot' (person, 2 mentions); two canonical rows claiming the same token would double-count it."
+    },
+    {
+      "from": "NO NAME",
+      "into": "John McCain",
+      "ruledOn": "2026-08-16",
+      "reasoning": "Owner ruling: NO NAME is Q's coded alias for Senator John McCain, used after Q stopped writing the name. It had never been ruled on in the entity registry — the rows sat as separate coded_alias entities, so the archive listed the codename and the man as different people."
+    },
+    {
+      "from": "No Name",
+      "into": "John McCain",
+      "ruledOn": "2026-08-16",
+      "reasoning": "Owner ruling: NO NAME is Q's coded alias for Senator John McCain, used after Q stopped writing the name. It had never been ruled on in the entity registry — the rows sat as separate coded_alias entities, so the archive listed the codename and the man as different people."
+    },
+    {
+      "from": "No Name Institute",
+      "into": "McCain Institute",
+      "ruledOn": "2026-08-16",
+      "reasoning": "Owner ruling: NO NAME is Q's coded alias for Senator John McCain, used after Q stopped writing the name. It had never been ruled on in the entity registry — the rows sat as separate coded_alias entities, so the archive listed the codename and the man as different people."
     }
   ],
   "aliasWithdrawals": [

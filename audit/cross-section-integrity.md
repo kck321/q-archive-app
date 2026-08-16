@@ -19,14 +19,14 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | Claims = 4,189 | 4242 |
 | ✅ | Predictions = 630 | 630 |
 | ✅ | Evidence = 6,590 | 6590 |
-| ✅ | Entities = 1,335 canonical | 1448 |
-| ✅ | Entities = 7,903 resolved mentions (headline) | 9760 |
-| ✅ | core registry submetric = 5,273 | 5273 |
+| ✅ | Entities = 1,335 canonical | 1445 |
+| ✅ | Entities = 7,903 resolved mentions (headline) | 9786 |
+| ✅ | core registry submetric = 5,273 | 5299 |
 | ✅ | adjudicated tail submetric = 3,476 | 3867 |
 | ✅ | no scoped ruling drops a context-resolved occurrence | none |
 | ✅ | every acronym-named entity has a definition or a stated reason | all defined |
-| ✅ | submetrics sum to the headline | 5273 + 3867 + 620 = 9760 |
-| ✅ | the artifact ships the headline figure | 9760 |
+| ✅ | submetrics sum to the headline | 5299 + 3867 + 620 = 9786 |
+| ✅ | the artifact ships the headline figure | 9786 |
 | ✅ | the headline states how it is composed | declared |
 | ✅ | Themes = 2,393 assignments | 2644 |
 | ✅ | Codes = 1,949 occurrences | 1949 |
@@ -47,7 +47,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | counted + editorial = every shipped row | 6443 + 134 |
 | ✅ | embedded-in-source URLs are labelled in the data | 20 labelled |
 | ✅ | embedded-in-source URLs are excluded from the Q-citation figure | 2724 citations + 20 embedded of 6590 |
-| ✅ | canonical and mentions are distinct metrics | 1448 vs 9760 |
+| ✅ | canonical and mentions are distinct metrics | 1445 vs 9786 |
 | ✅ | unresolved aliases counted in neither metric | 1011 carried separately |
 | ✅ | no code carries a meaning without stating its basis | 0 |
 | ✅ | every parallel occurrence states its structural basis | ok |
@@ -112,7 +112,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | SEED_VERSION is 73 (glossary repair + W&W) | 73 |
+| ✅ | SEED_VERSION is 74 (Q + Q+ + Clinton Foundation + NO NAME) | 74 |
 | ✅ | seeding is gated on SEED_VERSION | present |
 | ✅ | seeded data matches the SEED_VERSION that shipped it | unchanged |
 | ✅ | the gate value is persisted after seeding | present |
@@ -173,7 +173,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | postAnalysis entries equal certified mentions | 9760 vs 9760 |
+| ✅ | postAnalysis entries equal certified mentions | 9786 vs 9786 |
 | ✅ | aliases carrying several canonicals are preserved | 32 aliases (e.g. SC) |
 | ✅ | #1385 line 5 stays open though line 1 is ruled | open |
 | ✅ | held reference rows are open and carry a note (30 after #2774 resolved DELTA-2774-1-16) | 30/31 |
@@ -207,7 +207,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | indexed Claims = certified 4,181 | 4242 |
 | ✅ | indexed Predictions = certified 630 | 630 |
 | ✅ | indexed Evidence = certified 6,590 | 6590 |
-| ✅ | indexed Entities = certified 1,448 | 1448 |
+| ✅ | indexed Entities = certified 1,445 | 1445 |
 | ✅ | indexed Themes = certified 2,395 | 2644 |
 | ✅ | indexed Codes = certified 739 distinct | 739 |
 | ✅ | indexed Emphasis = certified 3,113 | 3112 |
@@ -231,7 +231,7 @@ There is no single rule that shipped rows must equal certified counts — assert
 | Q Claims | 4,242 | postAnalysis.claims entries whose displayClass is claim | Predictions share the assertion family and the same storage, separated by claimMeta.displayClass. editorialParaphrases are stored per post and are NOT claims. | An editorial paraphrase must never be presented as Q’s literal wording. |
 | Q Predictions | 630 | postAnalysis.predictions entries | A prediction IS an assertion; the combined 4,811 figure is only ever shown labelled as combined. | n/a |
 | Evidence & References | 6,590 | every item row | URLs embedded inside pasted source material exist in the data and are labelled as such. They are references a reader can follow, but they are not Q citing a source. | An embedded-in-source URL must never be presented as a Q citation. |
-| Q Entities | 9,760 | sum of per-entity mention counts | Canonical entities (1,332) and mentions (7,903) are DIFFERENT metrics, not a row-count mismatch — one entity is mentioned many times. The headline covers every resolved mention: 4,463 from the 93-entity core registry plus 3,440 from the 1,239 adjudicated-tail entities. Unresolved alias tokens are counted in neither. | An unresolved alias must never be shown as a resolved identification. |
+| Q Entities | 9,786 | sum of per-entity mention counts | Canonical entities (1,332) and mentions (7,903) are DIFFERENT metrics, not a row-count mismatch — one entity is mentioned many times. The headline covers every resolved mention: 4,463 from the 93-entity core registry plus 3,440 from the 1,239 adjudicated-tail entities. Unresolved alias tokens are counted in neither. | An unresolved alias must never be shown as a resolved identification. |
 | Q Themes | 2,644 | sum of per-post theme assignments | Multi-label by design: 378 posts carry more than one theme, so assignments exceed posts. Legacy extractor tags are not counted. | A legacy tag must never be shown as a certified theme. |
 | Codes & Brackets | 1,949 | sum of per-code recurrence counts | Detected as a code does not mean decoded: 734 of 739 ship with no interpretation, which is the honest state. | An undecoded code must never be shown with an invented meaning. |
 | Q Emphasis | 3,112 | every occurrence row | 245 arguable devices are held in the Resolution Center and counted in neither direction. | A queued borderline case must never appear as certified emphasis. |

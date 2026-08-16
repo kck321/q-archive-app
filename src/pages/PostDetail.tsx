@@ -116,7 +116,7 @@ function renderPostBody(
 
   type Kind = 'context' | 'highlight' | 'request' | 'requestQuestion' | 'topic' | 'question' | 'namedEntity' | 'claim' | 'prediction' | 'theme' | 'impliedConclusion' | 'verificationHook' | 'emphasis' | 'bracketCode' | 'milIntel' | 'qSignature' | 'url'
   type Seg = { start: number; end: number; kind: Kind; matchText: string; questionId?: string }
-  const segs: Seg[] = []
+  let segs: Seg[] = []
 
   // Direct highlight — search raw text for the highlight string (and its aliases) first so
   // sync/search group links work even when the text is not yet in questions[]

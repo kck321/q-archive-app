@@ -442,7 +442,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   // that stopped at 40 would keep showing the standalone COVID in #4489/#4541/#4548 as plain text.
   // 43 carries the Rachel Chandler ruling: posts.json changed again (namedEntities), so a
   // profile that stopped at 42 would keep showing RC and Ray Chandler as two strangers.
-  t('seed-current', 'SEED_VERSION is 73 (glossary repair + W&W)', seed === 73, seed)
+  t('seed-current', 'SEED_VERSION is 74 (Q + Q+ + Clinton Foundation + NO NAME)', seed === 74, seed)
   t('seed-gate', 'seeding is gated on SEED_VERSION', /seeded === SEED_VERSION/.test(localData), 'present')
 
   // THE GUARD THAT WOULD HAVE SAVED THREE ROUND TRIPS. Changing seeded data without bumping the
@@ -489,7 +489,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   t('ui-directives', 'sectionInfo states 2,552', has(2552), 'ok')
   t('ui-claims', 'sectionInfo states 4,242', has(4242), 'ok')
   t('ui-evidence', 'sectionInfo states 6,590', has(6590), 'ok')
-  t('ui-entities', 'sectionInfo headlines 1,334 entities and 8,239 mentions', has(1448) && has(9760), 'ok')
+  t('ui-entities', 'sectionInfo headlines 1,334 entities and 8,239 mentions', has(1445) && has(9786), 'ok')
   t('ui-entities-submetrics', 'sectionInfo keeps 4,463 and 3,440 as provenance', has(4463) && has(3440), 'ok')
   t('ui-themes', 'sectionInfo states 2,644', has(2644), 'ok')
   t('ui-codes', 'sectionInfo states 1,949', has(1949), 'ok')
@@ -788,7 +788,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     t('search-claims', 'indexed Claims = certified 4,181', bs.claims === CANONICAL.claims.occurrences, bs.claims)
     t('search-predictions', 'indexed Predictions = certified 630', bs.predictions === CANONICAL.predictions.occurrences, bs.predictions)
     t('search-evidence', 'indexed Evidence = certified 6,590', bs.evidence === CANONICAL.evidence.occurrences, bs.evidence)
-    t('search-entities', 'indexed Entities = certified 1,448', bs.entities === CANONICAL.entities.canonical, bs.entities)
+    t('search-entities', 'indexed Entities = certified 1,445', bs.entities === CANONICAL.entities.canonical, bs.entities)
     t('search-themes', 'indexed Themes = certified 2,395', bs.themes === CANONICAL.themes.assignments, bs.themes)
     t('search-codes', 'indexed Codes = certified 739 distinct', bs.codes === CANONICAL.codes.distinct, bs.codes)
     t('search-emphasis', 'indexed Emphasis = certified 3,113', bs.emphasis === CANONICAL.emphasis.occurrences, bs.emphasis)

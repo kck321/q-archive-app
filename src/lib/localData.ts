@@ -412,7 +412,51 @@ const COLLECTIONS: CollectionName[] = ['posts', 'questions', 'topics', 'resource
 // answer reaches the question through a reply to an anon post the corpus does not store, and the
 // gloss says so rather than implying one drop states both.
 // Queue 106 -> 105. Notation 29 -> 28.
-export const SEED_VERSION = 73   // 72: Q Directives on sourceSpansV2 — 2,552 occurrences, directiveMeta spans
+// 74: Q becomes visible as an entity, and Q+ becomes a real alias of Donald Trump.
+//
+// Two different ways a term can exist on paper and not on screen.
+//
+// Q was certified with 10 body references, but posts.ts skipped bare "Q" in Named Entities in
+// TWO places. That skip was right when it was written - nothing decided which Q was the author
+// tag, so all ~4,000 signatures would have piled into one useless row. Certification now makes
+// that call structurally, so the browser was deleting the 10 rows it had been built to protect.
+// Membership belongs to the artifact; the browser does not get a vote. Same lesson as the
+// backfill it sits next to.
+//
+// Q+ was never adjudicated at all. It lived only in aliases.json, the SEARCH registry, under
+// potus - so the app listed Q+ among POTUS aliases while holding no occurrences to highlight.
+// Now certified on DONALD TRUMP, the person, beside DJT. POTUS stays the office.
+//
+// All 36 Q+ occurrences count, sign-offs included - deliberately UNLIKE bare Q. Q+ signs 36
+// drops, not thousands, so which drops carry it is itself the record: the + is the claim that
+// the President was present at the signing. Scale is what made the bare-Q signature worthless
+// and what makes this one evidence.
+//
+// Donald Trump 28 -> 64.
+//
+// CLINTON FOUNDATION IS ONE NAME. #1220 certified both "Clinton Foundation" and "Clinton", so
+// the renderer drew the organisation as two boxes and the same seven characters counted twice —
+// once as the Foundation, once as Hillary. Owner ruling: the surname is not a standalone
+// occurrence when "Foundation" follows it. 11 duplicates withdrawn (9 Foundation, 2 Hillary).
+// Fixed in the DATA, not the renderer. Collapsing nested spans at render time was built and
+// reverted: it removed the hover explanation for 27 acronyms, because the info box attaches to
+// the span of the term it explains. 79 other nested pairs remain ("US" in "US Military") and are
+// listed for a later ruling; each half is separately certified and each keeps its own box.
+//
+// NO NAME is John McCain. Q's codename for the Senator and the Senator himself sat as separate
+// entities - the archive listed them as different people. NO NAME (16) and No Name (8) merge
+// into John McCain (10 -> 34); No Name Institute into McCain Institute. Two merge bugs surfaced
+// doing it: a null alias count silently dropped 24 mentions, and the "already covered by a
+// recount" test was asked AFTER the merge had inserted the alias, so it always said yes and the
+// occurrences were counted but never emitted.
+//
+// "H" in #1589 is Hillary Clinton - that ONE occurrence, at the owner's ~90% confidence and
+// recorded as contextual, not decoded. The drop's chain "LL to H" is read against its own next
+// line, "LL IS KEY TO CONNECTING TO WH / HRC/BC/JC/SP/EH". Scoped by line/char: a standalone H
+// elsewhere is not Hillary, and WH and /EH in this same drop are untouched.
+//
+// mentions 9,760 -> 9,786. entities 1,448 -> 1,445.
+export const SEED_VERSION = 74   // 72: Q Directives on sourceSpansV2 — 2,552 occurrences, directiveMeta spans
 // 71: 4: final certified questions — 6,442 occurrences, exact source spans
 
 // ── Minimal IndexedDB key/value wrapper (one record per collection) ──────────

@@ -55,8 +55,8 @@ export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number
   predictions: { occurrences: 630, posts: 520, unit: 'occurrences' },
   emphasis: { occurrences: 3112, posts: 1357, unit: 'occurrences' },
   // "mentions" is the right word here and the only section where it is: an entity is counted
-  // once per resolved mention across 1,448 canonical entities.
-  namedEntities: { occurrences: 9760, posts: 2240, unit: 'mentions' },
+  // once per resolved mention across 1,445 canonical entities.
+  namedEntities: { occurrences: 9786, posts: 2240, unit: 'mentions' },
   // Themes are assignments rather than spans — a theme is inferred from a drop, not copied out
   // of it — so the unit is named accordingly. 2,393 detected + 2 owner rulings.
   themes: { occurrences: 2644, posts: 1898, unit: 'assignments' },
@@ -150,7 +150,7 @@ export const EVIDENCE = {
 export const ENTITIES = {
   // 1,335 -> 1,341: Ray Chandler and Rachel Chandler were certified as two people. The owner
   // ruled them one, with RC as a third spelling, so the two rows ship as one entity.
-  canonical: 1448,
+  canonical: 1445,
   /**
    * THE HEADLINE COUNTS THE WHOLE SECTION.
    *
@@ -160,8 +160,8 @@ export const ENTITIES = {
    * 3,440 occurrences. The core figure is kept below as provenance, because it is how the section
    * was built, not a number that turned out to be wrong.
    */
-  mentions: 9760,
-  mentionScope: 'Every resolved mention across all 1,448 certified entities: 5,273 from the 93 core-registry entities, 3,867 from the entities identified in the adjudication pass, and 620 from owner rulings. Unresolved aliases are counted in neither — they are held in the Resolution Center instead.',
+  mentions: 9786,
+  mentionScope: 'Every resolved mention across all 1,445 certified entities: 5,299 from the 93 core-registry entities, 3,867 from the entities identified in the adjudication pass, and 620 from owner rulings. Unresolved aliases are counted in neither — they are held in the Resolution Center instead.',
   coreEntities: 93,
   coreRegistryMentions: 4463,
   tailEntities: 1239,

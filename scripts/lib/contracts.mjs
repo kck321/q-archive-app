@@ -38,15 +38,15 @@ export const CANONICAL = {
     // 1,335 -> 1,334 on 2026-08-14: the owner ruled Ray Chandler and Rachel Chandler one person
     // (aka RC), so two certified rows became one. detectedCanonical stays 1,332 — a merge changes
     // how many rows ship, not how many the passes found.
-    canonical: 1448, detectedCanonical: 1331, ownerRulings: 118, ownerMerges: 1,
+    canonical: 1445, detectedCanonical: 1331, ownerRulings: 118, ownerMerges: 1,
     /** Every resolved mention across all 1,334 certified entities. The headline figure. */
     // 8,227 -> 8,239: the RC alias ruling resolved 12 occurrences to Rachel Chandler. The merge
     // moved 4 mentions from the absorbed row onto hers and added none.
-    mentions: 9760,
+    mentions: 9786,
     /** How it is composed. The core figure is the section's history, not its headline. */
     // tailEntities is what the tail adjudication produced (1,239); one of them, Ray Chandler,
     // now ships merged into Rachel Chandler, so 1,238 tail rows appear in the artifact.
-    coreEntities: 93, coreRegistryMentions: 5273, tailEntities: 1239, tailMentions: 3867,
+    coreEntities: 93, coreRegistryMentions: 5299, tailEntities: 1239, tailMentions: 3867,
   },
   // 2,393 detected + 2 owner rulings ("Ascension." -> Religion & Spirituality, #4963 and #4966).
   // The rulings live in audit/themes-owner-rulings.json and are merged by apply-themes.mjs, so

@@ -186,7 +186,7 @@ const checks = [
   ['Predictions indexed = 630', bySection.predictions === 630, bySection.predictions],
   ['Evidence indexed = 6,590', bySection.evidence === 6590, bySection.evidence],
   // 1,334: Ray Chandler ships merged into Rachel Chandler under the owner ruling.
-  ['Entities indexed = 1,448', bySection.entities === 1448, bySection.entities],
+  ['Entities indexed = 1,445', bySection.entities === 1445, bySection.entities],
   ['Themes indexed = 2,644', bySection.themes === 2644, bySection.themes],
   ['Codes indexed = 739', bySection.codes === 739, bySection.codes],
   ['Emphasis indexed = 3,112', bySection.emphasis === 3112, bySection.emphasis],

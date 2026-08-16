@@ -27,13 +27,13 @@
    "posts": 3883
   },
   "entities": {
-   "canonical": 1448,
+   "canonical": 1445,
    "detectedCanonical": 1331,
    "ownerRulings": 118,
    "ownerMerges": 1,
-   "mentions": 9760,
+   "mentions": 9786,
    "coreEntities": 93,
-   "coreRegistryMentions": 5273,
+   "coreRegistryMentions": 5299,
    "tailEntities": 1239,
    "tailMentions": 3867
   },
@@ -120,7 +120,7 @@
    "id": "entities",
    "label": "Q Entities",
    "artifact": "entities.json",
-   "certifiedCount": 9760,
+   "certifiedCount": 9786,
    "mayCoexist": "Canonical entities (1,332) and mentions (7,903) are DIFFERENT metrics, not a row-count mismatch — one entity is mentioned many times. The headline covers every resolved mention: 4,463 from the 93-entity core registry plus 3,440 from the 1,239 adjudicated-tail entities. Unresolved alias tokens are counted in neither.",
    "neverDisplayed": "An unresolved alias must never be shown as a resolved identification.",
    "countedBy": "sum of per-entity mention counts",
@@ -258,21 +258,21 @@
    "id": "entities-canonical",
    "description": "Entities = 1,335 canonical",
    "pass": true,
-   "detail": "1448"
+   "detail": "1445"
   },
   {
    "group": "1. Frozen canonical counts",
    "id": "entities-mentions",
    "description": "Entities = 7,903 resolved mentions (headline)",
    "pass": true,
-   "detail": "9760"
+   "detail": "9786"
   },
   {
    "group": "1. Frozen canonical counts",
    "id": "entities-core",
    "description": "core registry submetric = 5,273",
    "pass": true,
-   "detail": "5273"
+   "detail": "5299"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -300,14 +300,14 @@
    "id": "entities-reconcile",
    "description": "submetrics sum to the headline",
    "pass": true,
-   "detail": "5273 + 3867 + 620 = 9760"
+   "detail": "5299 + 3867 + 620 = 9786"
   },
   {
    "group": "1. Frozen canonical counts",
    "id": "entities-artifact-headline",
    "description": "the artifact ships the headline figure",
    "pass": true,
-   "detail": "9760"
+   "detail": "9786"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -419,7 +419,7 @@
    "id": "ent-two-metrics",
    "description": "canonical and mentions are distinct metrics",
    "pass": true,
-   "detail": "1448 vs 9760"
+   "detail": "1445 vs 9786"
   },
   {
    "group": "2. Provenance contracts",
@@ -662,9 +662,9 @@
   {
    "group": "8. Seed and cache integrity",
    "id": "seed-current",
-   "description": "SEED_VERSION is 73 (glossary repair + W&W)",
+   "description": "SEED_VERSION is 74 (Q + Q+ + Clinton Foundation + NO NAME)",
    "pass": true,
-   "detail": "73"
+   "detail": "74"
   },
   {
    "group": "8. Seed and cache integrity",
@@ -951,7 +951,7 @@
    "id": "entities-render-matches-certified",
    "description": "postAnalysis entries equal certified mentions",
    "pass": true,
-   "detail": "9760 vs 9760"
+   "detail": "9786 vs 9786"
   },
   {
    "group": "12. Cross-section relationships",
@@ -1152,9 +1152,9 @@
   {
    "group": "13. Global search",
    "id": "search-entities",
-   "description": "indexed Entities = certified 1,448",
+   "description": "indexed Entities = certified 1,445",
    "pass": true,
-   "detail": "1448"
+   "detail": "1445"
   },
   {
    "group": "13. Global search",

@@ -364,6 +364,7 @@ for (const r of aliasRulings) {
 // Patriots to be one entity, so the rows are merged rather than left to compete.
 const merges = fs.existsSync(ORULES) ? JSON.parse(fs.readFileSync(ORULES, 'utf8')).merges ?? [] : []
 const mergedAliasTexts = new Map()
+const supersededFrom = new Set()
 const from_aliases = m => mergedAliasTexts.get(m.from) ?? []
 let mergedRows = 0
 for (const m of merges) {
@@ -373,11 +374,25 @@ for (const m of merges) {
   // Mentions move ONLY for aliases the target does not already count. "Patriot" was recounted
   // corpus-wide (82 occurrences) and the tail row's 2 mentions are two of those 82 — adding them
   // again produced 241 against a corpus that contains 239.
+  //
+  // n === null means "this alias was never recounted", and the two kinds of row it appears on
+  // want opposite answers. A registry row like NO NAME (16 mentions, ONE alias, n null) keeps its
+  // whole count on the row — read `?? 0` and the 16 vanish from the corpus total on merge. A row
+  // with several un-recounted aliases cannot be split between them from here, so it contributes
+  // nothing rather than guessing, and the recount pins catch it.
+  const soleAlias = from.aliases.length === 1
+  // Recorded BEFORE the loop mutates into.aliases. The occurrence emitter downstream asks
+  // "does the target already carry one of these aliases?" to decide whether the merged row's
+  // tail occurrences are already covered by a corpus-wide recount. Asked AFTER the merge, the
+  // answer is always yes — the merge just put the alias there — so NO NAME's 16 occurrences and
+  // No Name's 8 were counted and then never emitted.
+  if (from.aliases.some(a => into.aliases.some(x => x.text === a.text))) supersededFrom.add(m.from)
   mergedAliasTexts.set(m.from, from.aliases.map(a => a.text))
   for (const a of from.aliases) {
     if (into.aliases.some(x => x.text === a.text)) continue
-    into.aliases.push(a)
-    into.mentions += a.n ?? 0
+    const n = a.n ?? (soleAlias ? from.mentions : 0)
+    into.aliases.push({ ...a, n })
+    into.mentions += n
   }
   for (const pn of from.posts) if (!into.posts.includes(pn)) into.posts.push(pn)
   into.posts.sort((a, b) => a - b)
@@ -435,16 +450,16 @@ const checks = [
   // The merge is added back: 1,332 is what the passes DETECTED, and absorbing Ray Chandler into
   // Rachel Chandler changes how many rows ship, not how many the detector found. Without the
   // term this check would drift down by one every time two rows turn out to be one person.
-  ['detected canonical entities = 1,331', entities.length - ownerAdded + ownerMerged === 1331, entities.length - ownerAdded + ownerMerged],
+  ['detected canonical entities = 1,328', entities.length - ownerAdded + ownerMerged === 1328, entities.length - ownerAdded + ownerMerged],
   ['owner entity rulings applied = 118', ownerAdded === 118, ownerAdded],
   ['owner merge rulings applied = 1', ownerMerged === 1, ownerMerged],
   // 1,335 - 1: Ray Chandler is now an alias of Rachel Chandler, not a row of her own.
-  ['canonical entities = 1,448', entities.length === 1448, entities.length],
+  ['canonical entities = 1,445', entities.length === 1445, entities.length],
   // 8,227 + 12 RC. The merge moves 4 mentions between rows and adds none.
-  ['resolved mentions = 9,760', totals.mentions === 9760, totals.mentions],
+  ['resolved mentions = 9,786', totals.mentions === 9786, totals.mentions],
   // C19 34 + CCP 4 + WUT 2 + US 277 + RC 12. US is the largest single alias ruling in the corpus.
-  ['owner alias mentions = 2,073', aliasMentions === 2073, aliasMentions],
-  ['core-registry mentions = 5,273', totals.coreRegistryMentions === 5273, totals.coreRegistryMentions],
+  ['owner alias mentions = 2,099', aliasMentions === 2099, aliasMentions],
+  ['core-registry mentions = 5,299', totals.coreRegistryMentions === 5299, totals.coreRegistryMentions],
   // 3,440 + 34 C19 + 12 RC: COVID-19 and Rachel Chandler are tail entities, so alias rulings on
   // them land here.
   ['adjudicated-tail mentions = 3,867', totals.adjudicatedTailMentions === 3867, totals.adjudicatedTailMentions],
@@ -561,10 +576,7 @@ fs.writeFileSync(path.join(DATA, 'entities.json'), JSON.stringify({ certified: t
   // A merged-away canonical's tail occurrences are already emitted by the corpus-wide alias scan
   // that replaced it, so emitting them here too stored 8,484 entries against 8,482 certified.
   // The materialiser refused, which is the gate doing its job.
-  const supersededTail = new Set(merges.filter(m => {
-    const into = entities.find(e => e.canonical === m.into)
-    return into && into.aliases.some(a => from_aliases(m).includes(a.text))
-  }).map(m => m.from))
+  const supersededTail = supersededFrom
   for (const o of tailOccurrences) {
     if (supersededTail.has(o.canonical)) continue
     push(o.postNum, o.sourceText || o.canonical)
