@@ -51,14 +51,20 @@ for (const c of CASES) {
 
 // A withdrawn row must be gone from the panel entirely. #171 "Good will always defeat evil."
 // was a published Prediction and is now held in the review backlog.
+// Both posts are left with ZERO predictions, and the public build omits an empty category
+// entirely (the editing build keeps it, because the empty row is how the first item is added).
+// So an absent row is the correct outcome here — but absence only counts as evidence once the
+// PAGE is proved to have rendered, or this passes on a page that never loaded.
+const PAGE_READY = `document.querySelector('pre[class*="post-text"]') ? 'ready' : ''`
 for (const [post, gone] of [[171, 'Good will always defeat evil.'], [2189, 'Fire at will.']]) {
   const page = await browser.page(`${BASE}/post/${post}`)
-  const raw = await page.waitFor(READ_ROW, { timeout: 60000 })
+  const ready = await page.waitFor(PAGE_READY, { timeout: 60000 })
+  const raw = ready ? await page.waitFor(`${READ_ROW} || 'absent'`, { timeout: 15000 }) : ''
   await page.close()
-  // An empty read is NOT evidence of removal — assert the row rendered before believing it.
-  if (!raw) { check(false, `#${post} — Predictions row rendered`, 'row never rendered'); continue }
-  const text = JSON.parse(raw).text
-  check(!text.includes(gone), `#${post} no longer lists "${gone.slice(0, 28)}…"`, text.includes(gone) ? 'STILL LISTED' : `withdrawn (row has ${text.length} chars)`)
+  if (!ready) { check(false, `#${post} — drop rendered`, 'page never loaded'); continue }
+  const text = raw === 'absent' ? '' : JSON.parse(raw).text
+  check(!text.includes(gone), `#${post} no longer lists "${gone.slice(0, 28)}…"`,
+    text.includes(gone) ? 'STILL LISTED' : raw === 'absent' ? 'withdrawn — row omitted (0 predictions)' : `withdrawn (row has ${text.length} chars)`)
 }
 
 await browser.close()
