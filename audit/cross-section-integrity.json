@@ -14,13 +14,13 @@
    "posts": 1464
   },
   "claims": {
-   "occurrences": 4242,
-   "distinct": 3245,
-   "posts": 1982
+   "occurrences": 4221,
+   "distinct": 3256,
+   "posts": 1983
   },
   "predictions": {
-   "occurrences": 630,
-   "posts": 520
+   "occurrences": 595,
+   "posts": 490
   },
   "evidence": {
    "occurrences": 6590,
@@ -90,7 +90,7 @@
    "id": "claims",
    "label": "Q Claims",
    "artifact": "posts.json → postAnalysis.claims + claimMeta",
-   "certifiedCount": 4242,
+   "certifiedCount": 4221,
    "mayCoexist": "Predictions share the assertion family and the same storage, separated by claimMeta.displayClass. editorialParaphrases are stored per post and are NOT claims.",
    "neverDisplayed": "An editorial paraphrase must never be presented as Q’s literal wording.",
    "countedBy": "postAnalysis.claims entries whose displayClass is claim",
@@ -100,7 +100,7 @@
    "id": "predictions",
    "label": "Q Predictions",
    "artifact": "posts.json → postAnalysis.predictions",
-   "certifiedCount": 630,
+   "certifiedCount": 595,
    "mayCoexist": "A prediction IS an assertion; the combined 4,811 figure is only ever shown labelled as combined.",
    "neverDisplayed": "n/a",
    "countedBy": "postAnalysis.predictions entries",
@@ -237,14 +237,14 @@
    "id": "claims",
    "description": "Claims = 4,189",
    "pass": true,
-   "detail": "4242"
+   "detail": "4221"
   },
   {
    "group": "1. Frozen canonical counts",
    "id": "predictions",
    "description": "Predictions = 630",
    "pass": true,
-   "detail": "630"
+   "detail": "595"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -592,9 +592,9 @@
   {
    "group": "6. Source-material isolation",
    "id": "isolation-claims",
-   "description": "claims: quoted-block over-extension stays at its known 147 occurrences",
+   "description": "claims: quoted-block over-extension stays at its known 139 occurrences",
    "pass": true,
-   "detail": "147 of 4242 (expected 147)"
+   "detail": "139 of 4221 (expected 139)"
   },
   {
    "group": "6. Source-material isolation",
@@ -662,9 +662,9 @@
   {
    "group": "8. Seed and cache integrity",
    "id": "seed-current",
-   "description": "SEED_VERSION is 74 (Q + Q+ + Clinton Foundation + NO NAME)",
+   "description": "SEED_VERSION is 75 (sentence-level Predictions audit)",
    "pass": true,
-   "detail": "74"
+   "detail": "75"
   },
   {
    "group": "8. Seed and cache integrity",
@@ -739,7 +739,7 @@
   {
    "group": "9. UI count integrity",
    "id": "ui-claims",
-   "description": "sectionInfo states 4,242",
+   "description": "sectionInfo states 4,221",
    "pass": true,
    "detail": "ok"
   },
@@ -795,14 +795,14 @@
   {
    "group": "9. UI count integrity",
    "id": "headline-claims",
-   "description": "Claims headline = certified 4,242 / 1,982",
+   "description": "Claims headline = certified 4,221 / 1,983",
    "pass": true,
    "detail": "ok"
   },
   {
    "group": "9. UI count integrity",
    "id": "headline-predictions",
-   "description": "Predictions headline = certified 630 / 520",
+   "description": "Predictions headline = certified 595 / 490",
    "pass": true,
    "detail": "ok"
   },
@@ -1026,16 +1026,16 @@
   {
    "group": "12. Cross-section relationships",
    "id": "rel-source",
-   "description": "Claim → Source provided edges = the certified 438",
+   "description": "Claim → Source provided edges = the certified 439",
    "pass": true,
-   "detail": "438"
+   "detail": "439"
   },
   {
    "group": "12. Cross-section relationships",
    "id": "rel-predictions",
-   "description": "Prediction → assertion edges = the certified 630",
+   "description": "Prediction → assertion edges = the certified 595",
    "pass": true,
-   "detail": "630"
+   "detail": "595"
   },
   {
    "group": "12. Cross-section relationships",
@@ -1140,14 +1140,14 @@
    "id": "search-claims",
    "description": "indexed Claims = certified 4,181",
    "pass": true,
-   "detail": "4242"
+   "detail": "4221"
   },
   {
    "group": "13. Global search",
    "id": "search-predictions",
    "description": "indexed Predictions = certified 630",
    "pass": true,
-   "detail": "630"
+   "detail": "595"
   },
   {
    "group": "13. Global search",
@@ -1217,7 +1217,7 @@
    "id": "search-repeats-preserved",
    "description": "in-post repeats are indexed as separate occurrences",
    "pass": true,
-   "detail": "4242 rows, 4229 distinct (post, text)"
+   "detail": "4221 rows, 4208 distinct (post, text)"
   },
   {
    "group": "13. Global search",

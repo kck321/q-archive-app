@@ -182,8 +182,8 @@ const noText = rows.filter(r => !String(r.t ?? '').trim())
 const checks = [
   ['Questions indexed = 6,443', bySection.questions === 6443, bySection.questions],
   ['Directives indexed = 2,552', bySection.directives === 2552, bySection.directives],
-  ['Claims indexed = 4,242', bySection.claims === 4242, bySection.claims],
-  ['Predictions indexed = 630', bySection.predictions === 630, bySection.predictions],
+  ['Claims indexed = 4,221', bySection.claims === 4221, bySection.claims],
+  ['Predictions indexed = 595', bySection.predictions === 595, bySection.predictions],
   ['Evidence indexed = 6,590', bySection.evidence === 6590, bySection.evidence],
   // 1,334: Ray Chandler ships merged into Rachel Chandler under the owner ruling.
   ['Entities indexed = 1,445', bySection.entities === 1445, bySection.entities],

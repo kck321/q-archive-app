@@ -1,6 +1,6 @@
 {
  "note": "The exact source-boundary debt occurrences. Frozen as a SET so drift reports which row changed instead of only that a count moved.",
- "count": 286,
+ "count": 280,
  "occurrences": [
   "claims::1164|hussein hrc ll brennan clapper nat sec wh sit rm op uk aus assist/set up.",
   "claims::1164|not public: five eyes uk/aus potus targeting using pushed rus decoy meetings / c",
@@ -11,9 +11,7 @@
   "claims::1454|leaders of eu only care about protecting flow of money - not the safety and secu",
   "claims::1454|scam!!!",
   "claims::1602|you should know this based on earlier drops re: sa / nat guard / mil assets acti",
-  "claims::1603|attempts to frame russia / potus (optics) are failing and will soon be exposed.",
   "claims::1603|the age of taxing our citizens across the world while entry to our markets is fr",
-  "claims::1603|the world will unite in this cause (g v e/r v w).",
   "claims::1605|ps \"while emotional over the election, i conduct myself w/ upmost integrity w/o ",
   "claims::1609|potus save the world from nk - not good enough - impeach.",
   "claims::1609|potus tax reform (more take home money) - not good enough - impeach.",
@@ -31,7 +29,6 @@
   "claims::1990|ohr fd-302 02/15/17 (interview date 02/14/17) - potus / jc / ig",
   "claims::19|you can’t answer the above but will laugh once disclose details. the network whi",
   "claims::2070|3 official behind deputy ag rosenstein - fired/forced",
-  "claims::2070|bruce ohr, associate deputy attorney general – demoted 2x - cooperating witness ",
   "claims::2070|david laufman, chief of the justice department’s counterintelligence and export ",
   "claims::2070|john carlin, assistant attorney general – head of doj’s national security divisi",
   "claims::2070|mary mccord, acting assistant attorney general – acting head of doj’s national s",
@@ -47,7 +44,6 @@
   "claims::2211|storch served in several positions at the department of justice's oig, including",
   "claims::2211|“prior to joining nsa, mr.",
   "claims::2381|3 official behind deputy ag rosenstein - fired/forced",
-  "claims::2381|bruce ohr, associate deputy attorney general – demoted 2x - cooperating witness ",
   "claims::2381|david laufman, chief of the justice department’s counterintelligence and export ",
   "claims::2381|exclude emotion and personal desire, instead use logic and critical thinking bas",
   "claims::2381|john carlin, assistant attorney general – head of doj’s national security divisi",
@@ -135,12 +131,10 @@
   "claims::4633|republican benefactor of conservative christian groups, richard a. dasen sr., wa",
   "claims::4|don’t fool yourself into thinking obama, soros, roth’s, clinton’s etc have more ",
   "claims::4|potus is 100% insulated - any discussion suggesting he’s even a target is false.",
-  "claims::4|potus will not be addressing nation on any of these issues as people begin to be",
   "claims::524|slush fund",
   "claims::59|potus' twitter etc. and/or mass censoring).",
   "claims::69|\"the lord is my shepherd, i lack nothing.",
   "claims::69|surely your goodness and love will follow me all the days of my life, and i will",
-  "claims::6|potus will not be addressing nation on any of these issues as people begin to be",
   "claims::770|aaron swartz. dead suicide",
   "claims::770|james dolan. dead suicide",
   "claims::91|therefore indicting hrc would lead to indicting obama & his cabinet etc which co",
@@ -288,5 +282,20 @@
   "questions::4699|what happens when prosecutors, board of county commissioner members, volunteer f",
   "questions::520|>how about a nice game of chess?",
   "questions::520|>shall we play a game?"
+ ],
+ "changeLog": [
+  {
+   "date": "2026-08-16",
+   "change": "claims 147 -> 139 occurrences (6 keys removed, 0 added)",
+   "reason": "The sentence-level Predictions audit (P4) moved these 8 claim occurrences into Predictions. The quoted-block detector is unchanged; the rows left the Claims layer this guard measures.",
+   "keys": [
+    "claims::1603|attempts to frame russia / potus (optics) are failing and will soon be exposed.",
+    "claims::1603|the world will unite in this cause (g v e/r v w).",
+    "claims::2070|bruce ohr, associate deputy attorney general – demoted 2x - cooperating witness ",
+    "claims::2381|bruce ohr, associate deputy attorney general – demoted 2x - cooperating witness ",
+    "claims::4|potus will not be addressing nation on any of these issues as people begin to be",
+    "claims::6|potus will not be addressing nation on any of these issues as people begin to be"
+   ]
+  }
  ]
 }

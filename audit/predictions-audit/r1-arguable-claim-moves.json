@@ -1,0 +1,32 @@
+{
+  "phase": "R1",
+  "purpose": "Human-review backlog: arguable Claims-to-Predictions moves",
+  "batches": [12],
+  "expected": { "records": 22, "applied": 0 },
+  "matchAgainst": "claims",
+  "note": "REVIEW ONLY. Nothing is moved. These rows stay exactly where they are in Claims; they are recorded in the backlog so the policy question (forecast vs vow/slogan) is decided by the owner, not silently by this pass. Matching runs only to prove each row still exists where the audit found it.",
+  "records": [
+    { "n": 1, "batch": 12, "post": 1350, "match": "Through their strength, and the millions of united Patriots around the World, we will succeed in this fight.", "reviewSentence": "Through their strength, and the millions of united Patriots around the World, we will succeed in this fight.", "why": "It forecasts success, but the wording also functions as motivational rhetoric." },
+    { "n": 2, "batch": 12, "post": 1602, "match": "We will shine LIGHT.", "reviewSentence": "We will shine LIGHT.", "why": "It is a metaphorical future commitment whose predicted event is not specific." },
+    { "n": 3, "batch": 12, "post": 1605, "match": "We are also following the facts and once we uncover more (which we will) we will act accordingly.", "reviewSentence": "We are also following the facts and once we uncover more (which we will) we will act accordingly.", "why": "This is a quoted commitment to act if more facts are uncovered." },
+    { "n": 4, "batch": 12, "post": 1644, "match": "We will succeed.", "reviewSentence": "We will succeed.", "why": "It can be read as a forecast of success or as a motivational promise." },
+    { "n": 5, "batch": 12, "post": 1695, "match": "We will never again be under their control.", "reviewSentence": "We will never again be under their control.", "why": "It can be read as a forecast or as a pledge." },
+    { "n": 6, "batch": 12, "post": 2267, "match": "If you build it - they will come.", "reviewSentence": "If you build it - they will come.", "why": "It is a quoted conditional maxim that may function as a prediction." },
+    { "n": 7, "batch": 12, "post": 2270, "match": "In the coming weeks it will be important to have one central location (non 8ch).", "reviewSentence": "In the coming weeks it will be important to have one central location (non 8ch).", "why": "It forecasts a future need, but functions primarily as operational guidance." },
+    { "n": 8, "batch": 12, "post": 2314, "match": "We will win.", "reviewSentence": "We will win.", "why": "It can be read as a forecast or as a slogan." },
+    { "n": 9, "batch": 12, "post": 2405, "match": "WE WILL PROTECT THE VOTE.", "reviewSentence": "WE WILL PROTECT THE VOTE.", "why": "It is a concrete commitment, but may be better stored as a pledge than a prediction." },
+    { "n": 10, "batch": 12, "post": 2450, "match": "We are going to show you a new world.", "reviewSentence": "We are going to show you a new world.", "why": "It announces a future action but also functions as rhetorical promise." },
+    { "n": 11, "batch": 12, "post": 2629, "match": "We will have our Country back!", "reviewSentence": "We will have our Country back!", "why": "It can be read as a forecast or as a motivational promise." },
+    { "n": 12, "batch": 12, "post": 2816, "match": "(….AND WE WILL DELIVER).", "reviewSentence": "The post's authors will deliver the referenced result.", "why": "It is a future commitment with an unspecified object." },
+    { "n": 13, "batch": 12, "post": 381, "match": "We will however light a FIRE to flush them out.", "reviewSentence": "We will however light a FIRE to flush them out.", "why": "It announces a future tactic, but the metaphor makes the exact event unclear." },
+    { "n": 14, "batch": 12, "post": 3928, "match": "Together we will win.", "reviewSentence": "Together we will win.", "why": "It can be read as a forecast or as a slogan." },
+    { "n": 15, "batch": 12, "post": 4387, "match": "WE WILL PREVAIL.", "reviewSentence": "WE WILL PREVAIL.", "why": "It can be read as a forecast or as a motivational pledge." },
+    { "n": 16, "batch": 12, "post": 4530, "match": "We will not fail.", "reviewSentence": "We will not fail.", "why": "It can be read as a forecast or as a reassurance." },
+    { "n": 17, "batch": 12, "post": 4915, "match": "The truth won't be for everyone.", "reviewSentence": "The truth won't be for everyone.", "why": "It predicts unequal acceptance of the truth, but the outcome is vague." },
+    { "n": 18, "batch": 12, "post": 4966, "match": "We will be repressed no more.", "reviewSentence": "We will be repressed no more.", "why": "It is future-tense, but functions primarily as a vow or aspiration." },
+    { "n": 19, "batch": 12, "post": 515, "match": "Patriots point - we will follow.", "reviewSentence": "The post's authors will follow the patriots' direction.", "why": "It is an incomplete commitment whose future action is unclear." },
+    { "n": 20, "batch": 12, "post": 768, "match": "We will help.", "reviewSentence": "We will help.", "why": "It is a future commitment with an unspecified action." },
+    { "n": 21, "batch": 12, "post": 783, "match": "RIP JFK - we will succeed.", "reviewSentence": "The post's authors will succeed.", "why": "It can be read as a forecast or as a motivational pledge." },
+    { "n": 22, "batch": 12, "post": 981, "match": "We will not fail.", "reviewSentence": "We will not fail.", "why": "It can be read as a forecast or as a reassurance." }
+  ]
+}

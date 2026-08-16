@@ -4,12 +4,13 @@ Everything else under `audit/` that looks like a handoff is HISTORY. Do not act 
 
 ## Production
 
-    seed 72 — https://qdrops.app
+    seed 75 — https://qdrops.app
     queue 106   Reference 30 · Subject 16 · Notation 29 · Device 31
     entities 1,448   certified mentions 9,760   rendered 9,760 (difference 0)
     Q Directives 2,552 raw · 2,500 distinct (post,text) · 1,464 posts
     post text 1,128,312 chars
-    146/146 invariants · manifest verified · git tag seed-72
+    Predictions 595 · Claims 4,221   (sentence-level audit, 2026-08-16)
+    147/147 invariants · manifest verified
 
 ## Standing rules
 
@@ -25,6 +26,13 @@ Everything else under `audit/` that looks like a handoff is HISTORY. Do not act 
    reason recorded inline.
 
 ## Open work
+
+- **91 Predictions rows await an owner ruling** — `audit/predictions-audit/review-backlog.md`.
+  56 were published Predictions and are now withdrawn (maxims, commemorative pledges, prayers,
+  quoted statute, bare "Coming soon."), 22 are arguable Claims that stayed in Claims ("We will
+  win."), 13 are possible missing Predictions in quoted source material. Each carries its complete
+  sentence and why it is arguable. Ruling on one is a data change, not a UI change: the canonical
+  file is `audit/predictions-audit/*.json`, re-applied by `apply-claims.mjs`.
 
 - 31 → 30 held Reference rows carry their audit notes and stay open for exploration.
 - 236 nonterminal `Q` candidates across 180 posts await a REVIEW pass. Only 10 high-confidence

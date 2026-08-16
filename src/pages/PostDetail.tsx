@@ -2128,17 +2128,30 @@ export default function PostDetail() {
                             const corpusN = corpusCounts.get(item) ?? 0
                             const aliases = getAliasesFor(item)
                             const aliasId = `${key}::${item}`
+                            // A telegraphic prediction reads as its complete sentence, with Q's
+                            // own wording kept beside it. Everything else on this chip — search,
+                            // frequency, aliases, bulk-apply — still keys off Q's literal words.
+                            const sentence = key === 'predictions'
+                              ? (postAnalysis?.predictionSentences?.[i] ?? null) : null
                             return (
                               <React.Fragment key={i}>
                               <span className={`text-xs border px-2 py-0.5 rounded flex items-center gap-1 group ${chip}`}>
                                 {/* Click the phrase to open every post containing it. */}
                                 <Link
                                   to={`/posts?q=${encodeURIComponent(item)}`}
-                                  title={`Show all posts containing "${item}"`}
+                                  title={sentence
+                                    ? `Q wrote: "${item}" — show all posts containing it`
+                                    : `Show all posts containing "${item}"`}
                                   className="hover:underline decoration-dotted underline-offset-2"
                                 >
-                                  {item}
+                                  {sentence ?? item}
                                 </Link>
+                                {sentence && (
+                                  <span className="opacity-60 text-[10px] italic border-l border-current/30 pl-1 ml-0.5"
+                                    title="Q's literal wording, which is what the post highlights and what search matches">
+                                    Q: {item}
+                                  </span>
+                                )}
                                 {corpusN > 1 && (
                                   <Link
                                     to={`/posts?q=${encodeURIComponent(item)}`}

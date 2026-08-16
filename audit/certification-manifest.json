@@ -1,15 +1,15 @@
 {
- "certifiedAt": "2026-08-16T14:50:33.306Z",
+ "certifiedAt": "2026-08-16T17:35:15.929Z",
  "sections": 8,
- "seedVersion": 74,
+ "seedVersion": 75,
  "note": "Every count here is recomputed from the artifacts, never copied forward. Verify with: node scripts/certification-manifest.mjs --verify",
  "counts": {
   "posts": 4966,
   "questions": 6443,
   "questionRowsShipped": 6577,
   "directives": 2552,
-  "claims": 4242,
-  "predictions": 630,
+  "claims": 4221,
+  "predictions": 595,
   "evidence": 6590,
   "entitiesCanonical": 1445,
   "entitiesMentions": 9786,
@@ -22,9 +22,9 @@
  },
  "artifacts": {
   "posts.json": {
-   "sha256": "1625e627df60da9270cda55a2e88f65908692e69982575eee791aaeea37aa04f",
-   "semanticSha256": "c4e421ce677a7de8225ddfa72e5b9d948a12ce5ddd2c6eadafb67421392decf5",
-   "bytes": 9698197
+   "sha256": "b4e8a5263b41b7961864181c5d6d5e6faac3480ff23bef6597dd5c09d3c7ff45",
+   "semanticSha256": "4f16fe32233407720f8c3ffd77f0255e765eb6bbf34c232ccb88a7c349508898",
+   "bytes": 9693747
   },
   "questions.json": {
    "sha256": "892f6b7f6ceed37be7e01d77b197b57fa543193f976b0f3ac37a7e9342239b82",
@@ -62,14 +62,14 @@
    "bytes": 107418
   },
   "relationships.json": {
-   "sha256": "e364b1ceeac6ee078ff8368f8b134b439c940525d2ac93984bdcaeb3527d94df",
-   "semanticSha256": "b7c19c4a92af6e12f9240ee818ef3bae7eb8086a8cde1802564d7332c5dbdf2c",
-   "bytes": 2858052
+   "sha256": "76fc8fc4d36c81b872d9b0e7be2441170481f74ad96c0efc80e2772b09f03520",
+   "semanticSha256": "c9b237bfa8dec6c394785c321eb82e96bc15482f0bf0a57d854301dcae316525",
+   "bytes": 2832812
   },
   "search-index.json": {
-   "sha256": "03cf0246ab1cf036bd0cd5d21aebaa981e6d16cab285e2a835a29f480774726f",
-   "semanticSha256": "1b4f8b43315454f8beba92fcce75932234e4284d54a4e85aa455c055d24a2747",
-   "bytes": 7192491
+   "sha256": "606ee2c21265780aea8f69019e9d019c1d05937c520b94d9a49ed06fd1cb4703",
+   "semanticSha256": "a9aa84eb4dce2c810bfd51e29472b532c12b30f15b0df0f60570c31553adb74f",
+   "bytes": 7177930
   }
  },
  "canonical": {
@@ -85,13 +85,13 @@
    "posts": 1464
   },
   "claims": {
-   "occurrences": 4242,
-   "distinct": 3245,
-   "posts": 1982
+   "occurrences": 4221,
+   "distinct": 3256,
+   "posts": 1983
   },
   "predictions": {
-   "occurrences": 630,
-   "posts": 520
+   "occurrences": 595,
+   "posts": 490
   },
   "evidence": {
    "occurrences": 6590,

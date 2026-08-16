@@ -456,7 +456,10 @@ const COLLECTIONS: CollectionName[] = ['posts', 'questions', 'topics', 'resource
 // elsewhere is not Hillary, and WH and /EH in this same drop are untouched.
 //
 // mentions 9,760 -> 9,786. entities 1,448 -> 1,445.
-export const SEED_VERSION = 74   // 72: Q Directives on sourceSpansV2 — 2,552 occurrences, directiveMeta spans
+// 75: sentence-level Predictions audit — 630 -> 595 predictions, 4,242 -> 4,221 claims, and a
+// NEW postAnalysis.predictionSentences array carrying the complete-sentence reading of 224
+// telegraphic rows. Returning readers must re-seed or they keep the fragments and the old counts.
+export const SEED_VERSION = 75   // 72: Q Directives on sourceSpansV2 — 2,552 occurrences, directiveMeta spans
 // 71: 4: final certified questions — 6,442 occurrences, exact source spans
 
 // ── Minimal IndexedDB key/value wrapper (one record per collection) ──────────

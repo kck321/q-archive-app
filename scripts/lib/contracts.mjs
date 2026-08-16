@@ -28,8 +28,20 @@ export const CANONICAL = {
   // search that found them also showed the fuller variants ("These people are pure evil.",
   // "Nobody can possibly imagine the pure evil...") were ALREADY certified Claims — so this
   // resolved an inconsistency rather than introducing a reading.
-  claims: { occurrences: 4242, distinct: 3245, posts: 1982 },
-  predictions: { occurrences: 630, posts: 520 },
+  // 2026-08-16 sentence-level Predictions audit, owner-supplied, 403 records in 14 batches.
+  // Rulings live in audit/predictions-audit/ and are re-applied by apply-claims.mjs, so
+  // re-deriving claims-final.json cannot erase them. Ledger: audit/predictions-audit/ledger.jsonl.
+  //
+  // Claims 4,242 -> 4,221: 68 occurrences moved OUT to Predictions (future assertions filed as
+  // claims), 47 moved IN from Predictions (technical nonpredictions — past mental states,
+  // legal rules, blessings, contextual labels). distinct 3,245 -> 3,256 and posts 1,982 ->
+  // 1,983 follow from that exchange, not from a re-derivation.
+  claims: { occurrences: 4221, distinct: 3256, posts: 1983 },
+  // 630 -> 595: -73 technical nonpredictions, -56 arguable rows withdrawn to the review
+  // backlog, +66 unique moves from Claims, +28 high-confidence predictions the extractor
+  // missed. posts 520 -> 490. The 91 withdrawn/held rows are NOT deleted — they sit in
+  // audit/predictions-audit/review-backlog.md awaiting an owner ruling.
+  predictions: { occurrences: 595, posts: 490 },
   evidence: { occurrences: 6590, posts: 3883 },
   entities: {
     // 1,332 detected + 1 owner ruling (Dominion Voting Systems, #4963 "Dominion." — the only
@@ -275,7 +287,15 @@ export const KNOWN_DEBT = {
   // whose single '>' indent marker the quoted-block segmenter reads as source material. The exact
   // occurrence is named in audit/source-boundary-occurrences.json changeLog — the baseline moved
   // because a ruling moved it, which is the only reason it is ever allowed to move.
-  baseline: { questions: 89, directives: 55, claims: 147, emphasis: 0 },
+  //
+  // claims 147 -> 139 on 2026-08-16: the Predictions audit moved 8 of these occurrences out of
+  // Claims and into Predictions. The detector did not change and nothing was fixed — the rows
+  // left the layer being measured. Measured before accepting: 6 keys REMOVED, 0 ADDED, so no
+  // new over-extension is admitted. The 8 are enumerated, all of them P4 records:
+  //   #1603 "Attempts to frame Russia / POTUS…", #1603 "The WORLD will UNITE…",
+  //   #2070 and #2381 "Bruce Ohr… TERMINATION IMMINENT",
+  //   #4 ×2 and #6 ×2 "POTUS will not be addressing nation…" (two overlapping spans each).
+  baseline: { questions: 89, directives: 55, claims: 139, emphasis: 0 },
   // 102 -> 103 and 123 -> 124 on 2026-08-13, ruled BENIGN and documented rather than bumped
   // quietly. Cause: literal-span materialisation. The isolation test now measures the literal
   // form of a question rather than its certified normalised text, and a longer span is

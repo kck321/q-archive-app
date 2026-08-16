@@ -1,0 +1,204 @@
+# Predictions review backlog — 2026-08-16
+
+91 rows are held OUT of the active high-confidence Predictions list pending an owner ruling.
+None of them is decided here. Each is a policy question the audit deliberately refused to answer.
+
+- **P2 — 56** arguable rows that WERE published as Predictions and no longer are
+- **R1 — 22** arguable Claims that stay in Claims rather than moving
+- **R2 — 13** possible missing Predictions that were not added
+
+## P2 — withdrawn from the published set
+
+- **#35** — “For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.
+  - _Review - quoted theological promise._ The quotation makes a future theological promise, but it is not a discrete forecast by the post's author.
+- **#65** — More posts may follow because a departure is expected imminently.
+  - _Review - hedged intention._ It suggests that more posts may follow, but the wording is hedged and reads as a possible intention rather than a firm forecast.
+- **#81** — This is so critical and why information is provided in a certain order and why some topics are continually emphasized more than others as those will be the recent happenings.
+  - _Review - mixed meta-statement._ The sentence says emphasized topics will correspond to later happenings, but the forecast is embedded in an explanation and does not identify those happenings.
+- **#110** — The media and CIA counter-operations will all fall down.
+  - _Review - missing subject._ It uses future tense but omits the subject; context suggests the media and CIA counter-operations, yet the exact referent is not explicit.
+- **#154** — Perhaps someday people will understand “they” had a plan to conduct “another” mass extinction event.
+  - _Review - hedged future cognition._ It forecasts future public understanding but is explicitly hedged by “perhaps” and embeds a separate claim about an alleged plan.
+- **#154** — We, the people, are who they fear will one day awake.
+  - _Review - mixed present and future claim._ The main assertion concerns present fear, while the subordinate clause suggests a possible future awakening.
+- **#171** — Good will always defeat evil.
+  - _Review - general maxim._ This is a timeless moral maxim in future form rather than a discrete event forecast.
+- **#172** — Good will always defeat evil.
+  - _Review - general maxim._ This is a timeless moral maxim in future form rather than a discrete event forecast.
+- **#173** — Good will always defeat evil.
+  - _Review - general maxim._ This is a timeless moral maxim in future form rather than a discrete event forecast.
+- **#243** — Just wait until next week.
+  - _Review - implied prediction._ The directive pragmatically implies that something noteworthy will happen next week, but it does not state the event.
+- **#534** — The referenced information will guide the audience.
+  - _Review - missing subject._ It predicts future guidance but omits both what will guide and whom it will guide.
+- **#610** — The referenced information will become critically important in the coming weeks.
+  - _Review - missing subject._ It predicts future importance but omits the subject that will become important.
+- **#672** — The referenced material will go viral.
+  - _Review - missing subject._ It predicts virality but omits the material that will spread.
+- **#749** — That choice, to know, will be yours.
+  - _Review - future reassurance._ This promises that the audience will retain a choice; it functions as reassurance more than as an empirical event forecast.
+- **#854** — The choice, to KNOW, will be yours [end].
+  - _Review - future reassurance._ This promises that the audience will retain a choice; it functions as reassurance more than as an empirical event forecast.
+- **#866** — The choice, to KNOW, will be yours.
+  - _Review - future reassurance._ This promises that the audience will retain a choice; it functions as reassurance more than as an empirical event forecast.
+- **#1012** — Their sacrifice will never be forgotten.
+  - _Review - commemorative pledge._ This is a promise of remembrance rather than a conventional forecast of an external event.
+- **#1071** — The referenced information will become relevant soon.
+  - _Review - missing referent._ It predicts future relevance but does not identify the referenced information.
+- **#1209** — The choice, to know, will be yours.
+  - _Review - future reassurance._ This promises that the audience will retain a choice; it functions as reassurance more than as an empirical event forecast.
+- **#1218** — “These stories will only matter/hurt us if we keep pushing hard and get too much chatter out there.”.
+  - _Review - attributed conditional forecast._ The sentence is a quoted future assessment by another speaker; whether to count attributed forecasts as Q predictions is a policy choice.
+- **#1241** — The referenced information will become relevant.
+  - _Review - missing subject._ The wording forecasts future relevance but omits the information or event that will become relevant.
+- **#1253** — The referenced event is coming soon.
+  - _Review - missing referent._ It clearly signals a future arrival but does not identify what is coming.
+- **#1343** — The choice will always be yours.
+  - _Review - future reassurance._ This promises that the audience will retain a choice; it functions as reassurance more than as an empirical event forecast.
+- **#1358** — The choice will always be yours.
+  - _Review - future reassurance._ This promises that the audience will retain a choice; it functions as reassurance more than as an empirical event forecast.
+- **#1359** — The United States' decision to withdraw from the deal will harm German companies.
+  - _Review - attributed forecast._ The statement forecasts harm to German companies, but it is quoted from an outside trade group rather than made in Q's own voice.
+- **#1486** — The audience will soon need the referenced information.
+  - _Review - missing object._ It predicts a future need but omits what the audience will need.
+- **#1507** — The post's author will inspect and review the referenced material.
+  - _Review - missing subject and commitment._ It announces a future inspection or review, but the subject and object are supplied only by context.
+- **#1587** — The referenced item is forthcoming.
+  - _Review - missing referent._ It indicates that something is forthcoming but does not identify the item.
+- **#1666** — The referenced information will be extremely important going forward.
+  - _Review - missing subject._ It predicts future importance but omits the subject that will become important.
+- **#1712** — Because of the referenced sins, the wrath of God is coming.
+  - _Review - quoted theological forecast._ The sentence is a scriptural future statement rather than a discrete prediction made in Q's own voice.
+- **#1735** — The choice to know will ultimately be yours.
+  - _Review - future reassurance._ This promises that the audience will retain a choice; it functions as reassurance more than as an empirical event forecast.
+- **#1854** — The choice to know will be yours.
+  - _Review - future reassurance._ This promises that the audience will retain a choice; it functions as reassurance more than as an empirical event forecast.
+- **#1879** — The choice to know will be yours.
+  - _Review - future reassurance._ This promises that the audience will retain a choice; it functions as reassurance more than as an empirical event forecast.
+- **#1927** — In accordance with Article 33 of the UCMJ, as amended by section 5204 of the MJA, the Secretary of Defense, in consultation with the Secretary of Homeland Security, will issue nonbinding guidance regarding factors that commanders, convening authorities, staff judge advocates, and judge advocates should take into account when exercising their duties with respect to the disposition of charges and specifications in the interest of justice and discipline under Articles 30 and 34 of the UCMJ.
+  - _Review - quoted statutory future action._ The sentence describes a future action mandated by quoted legislation; it is not a discretionary forecast by the post's author.
+- **#1927** — That guidance will take into account, with appropriate consideration of military requirements, the principles contained in official guidance of the Attorney General to attorneys for the Federal Government with respect to the disposition of Federal criminal cases in accordance with the principle of fair and evenhanded administration of Federal criminal law.".
+  - _Review - quoted statutory future action._ The sentence describes the required contents of future legal guidance rather than a forecast made in Q's own voice.
+- **#2358** — The referenced event is expected to occur.
+  - _Review - missing referent._ The imperative implies an expectation but does not state what event is expected.
+- **#2391** — The TRUTH will set you FREE.
+  - _Review - quoted maxim._ This is a proverbial maxim in future form rather than a discrete forecast.
+- **#2451** — Your sacrifices will never be forgotten.
+  - _Review - commemorative pledge._ This is a promise of remembrance rather than a conventional forecast of an external event.
+- **#2452** — Your sacrifices will never be forgotten.
+  - _Review - commemorative pledge._ This is a promise of remembrance rather than a conventional forecast of an external event.
+- **#2480** — Your sacrifice(s) will never be forgotten.
+  - _Review - commemorative pledge._ This is a promise of remembrance rather than a conventional forecast of an external event.
+- **#2696** — You will never be alone.
+  - _Review - reassurance or promise._ This is a future-tense reassurance that may function as a promise rather than an empirical forecast.
+- **#2843** — The referenced event will make the Super Bowl look like a puppy show.
+  - _Review - missing subject._ It predicts a future comparison but omits the event that will produce it.
+- **#2865** — THE TRUTH WILL ALWAYS WIN.
+  - _Review - general maxim._ This is a timeless moral maxim rather than a discrete event forecast.
+- **#3028** — THE TRUTH WILL ALWAYS WIN.
+  - _Review - general maxim._ This is a timeless moral maxim rather than a discrete event forecast.
+- **#3199** — It shall be done.
+  - _Review - commitment with missing referent._ It commits to an unspecified action but does not identify what will be done.
+- **#3292** — YOUR SACRIFICE WILL NEVER BE FORGOTTEN.
+  - _Review - commemorative pledge._ This is a promise of remembrance rather than a conventional forecast of an external event.
+- **#3490** — The referenced information will become extremely important.
+  - _Review - missing subject._ It predicts future importance but omits the subject that will become important.
+- **#3817** — The referenced event is coming soon.
+  - _Review - missing referent._ It clearly signals a future arrival but does not identify what is coming.
+- **#3974** — It will be your choice whether to know.
+  - _Review - future reassurance._ This promises that the audience will retain a choice; it functions as reassurance more than as an empirical event forecast.
+- **#4105** — Support will always be provided [undisclosed methods].
+  - _Review - promise._ This is a promise of continuing support rather than a discrete external forecast.
+- **#4305** — But @teamcavuto said it will kill you….
+  - _Review - attributed warning._ It reports another speaker's future warning, so attribution and endorsement are ambiguous.
+- **#4386** — The post's authors will appear or act.
+  - _Review - implied arrival or action._ It implies that the post's authors will appear or act, but it does not identify the action.
+- **#4544** — The summer soldier and the sunshine patriot will, in this crisis, shrink from the service of their country; but he that stands by it now, deserves the love and thanks of man and woman.
+  - _Review - historical quotation._ The quoted maxim uses future tense, but it is a historical generalization rather than a discrete prediction by the post's author.
+- **#4739** — You will bring justice in due time for all the harm and needless violence aimed at Your children.
+  - _Review - prayer or theological expectation._ The sentence addresses God in prayer; it may express faith or petition rather than an empirical forecast.
+- **#4739** — You are the Mighty One, the One Who will ultimately bring all evil to light.
+  - _Review - prayer or theological expectation._ The sentence addresses God and contains a theological expectation, not a conventional event forecast.
+- **#4949** — The nation will have a new birth of freedom, and government of, by, and for the people will not perish from the earth.
+  - _Review - quoted civic aspiration._ The row contains a Lincoln quotation making a future civic assertion, but it is not a prediction authored in the post and must be separated from the link.
+
+## R1 — arguable Claims-to-Predictions moves (left in Claims)
+
+- **#1350** — Through their strength, and the millions of united Patriots around the World, we will succeed in this fight.
+  - It forecasts success, but the wording also functions as motivational rhetoric.
+- **#1602** — We will shine LIGHT.
+  - It is a metaphorical future commitment whose predicted event is not specific.
+- **#1605** — We are also following the facts and once we uncover more (which we will) we will act accordingly.
+  - This is a quoted commitment to act if more facts are uncovered.
+- **#1644** — We will succeed.
+  - It can be read as a forecast of success or as a motivational promise.
+- **#1695** — We will never again be under their control.
+  - It can be read as a forecast or as a pledge.
+- **#2267** — If you build it - they will come.
+  - It is a quoted conditional maxim that may function as a prediction.
+- **#2270** — In the coming weeks it will be important to have one central location (non 8ch).
+  - It forecasts a future need, but functions primarily as operational guidance.
+- **#2314** — We will win.
+  - It can be read as a forecast or as a slogan.
+- **#2405** — WE WILL PROTECT THE VOTE.
+  - It is a concrete commitment, but may be better stored as a pledge than a prediction.
+- **#2450** — We are going to show you a new world.
+  - It announces a future action but also functions as rhetorical promise.
+- **#2629** — We will have our Country back!
+  - It can be read as a forecast or as a motivational promise.
+- **#2816** — The post's authors will deliver the referenced result.
+  - It is a future commitment with an unspecified object.
+- **#381** — We will however light a FIRE to flush them out.
+  - It announces a future tactic, but the metaphor makes the exact event unclear.
+- **#3928** — Together we will win.
+  - It can be read as a forecast or as a slogan.
+- **#4387** — WE WILL PREVAIL.
+  - It can be read as a forecast or as a motivational pledge.
+- **#4530** — We will not fail.
+  - It can be read as a forecast or as a reassurance.
+- **#4915** — The truth won't be for everyone.
+  - It predicts unequal acceptance of the truth, but the outcome is vague.
+- **#4966** — We will be repressed no more.
+  - It is future-tense, but functions primarily as a vow or aspiration.
+- **#515** — The post's authors will follow the patriots' direction.
+  - It is an incomplete commitment whose future action is unclear.
+- **#768** — We will help.
+  - It is a future commitment with an unspecified action.
+- **#783** — The post's authors will succeed.
+  - It can be read as a forecast or as a motivational pledge.
+- **#981** — We will not fail.
+  - It can be read as a forecast or as a reassurance.
+
+## R2 — possible missing Predictions (not added)
+
+- **#381** — The post's authors will not reveal their moves to the enemy.
+  - It is a concrete future commitment, but it may be better treated as a statement of policy than as a prediction.
+- **#520** — The Democrats will threaten a government shutdown.
+  - The post quotes a future assertion by another speaker; it is a prediction within the post, but attribution may make it unsuitable for the app's Q Predictions category.
+- **#762** — New drugs will be released.
+  - The directive implies a future drug release, but the bracketed shorthand and question marker make the forecast ambiguous.
+- **#1553** — He will provide recommendations about whether new matters should be opened or existing investigations expanded.
+  - This is a future assertion inside a quoted official statement, not necessarily a prediction authored by Q.
+- **#2552** — After Mr. Priestap's departure, none of the high-ranking bureau officials involved in the two investigations will remain with the bureau.
+  - This is a future assertion in quoted source material; whether the app includes quoted forecasts is a policy choice.
+- **#2664** — The fake-news media will knowingly lie and demean the Trump administration to make it look as bad as possible.
+  - The quoted statement forecasts future media behavior, but it is attributed to President Trump rather than authored in Q's own voice.
+- **#2744** — The Lord will strengthen and protect the audience from the evil one.
+  - The quotation makes a future theological promise, but it may not fit an empirical predictions section.
+- **#2971** — People will be asked to provide proof of their identity.
+  - The quoted line makes a future assertion, but the speaker and scope are unclear.
+- **#3507** — Democrats will complain loudly and at length about the referenced action.
+  - This is a prediction in quoted source material rather than a direct forecast by the post's author.
+- **#3787** — The situation will not remain boring forever.
+  - It implies future events but is intentionally vague and primarily reassuring.
+- **#4212** — The audience will recognize the relevant moment when it arrives.
+  - It forecasts future recognition but omits the event or condition to be recognized.
+- **#4220** — The referenced bill will not become law, but it will serve as the liberals' wish list.
+  - This is a quoted political forecast, not a direct prediction by the post's author.
+- **#4598** — Declassification-related developments will occur in the days ahead.
+  - The directive and bracketed label imply a forecast, but they do not state it directly.
+
+## R3 — posts 4954-4966
+
+All thirteen were read; none yielded a high-confidence Prediction.
+#4966 "We will be repressed no more." is carried in R1 as an arguable vow.

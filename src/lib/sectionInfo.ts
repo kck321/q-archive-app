@@ -19,8 +19,8 @@ export const CERTIFIED = {
   // what the page actually renders — the old 1,472/1,417 counted directives-final.json alone and
   // never matched the UI.
   directives: { occurrences: 2552, distinct: 1642, posts: 1464 },
-  claims: { occurrences: 4242, distinct: 3245, posts: 1982 },
-  predictions: { occurrences: 630, posts: 520 },
+  claims: { occurrences: 4221, distinct: 3256, posts: 1983 },
+  predictions: { occurrences: 595, posts: 490 },
   /** Claim attributes. `conclusions` may apply to a claim or a prediction. */
   claimAttributes: { checkable: 1926, sourceProvided: 438, conclusions: 966, telegraphic: 331 },
   emphasis: { occurrences: 3112, posts: 1357, unresolved: 245 },
@@ -51,8 +51,8 @@ export const CERTIFIED = {
  * recount cannot quietly come back.
  */
 export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number; unit: string }> = {
-  claims: { occurrences: 4242, posts: 1982, unit: 'occurrences' },
-  predictions: { occurrences: 630, posts: 520, unit: 'occurrences' },
+  claims: { occurrences: 4221, posts: 1983, unit: 'occurrences' },
+  predictions: { occurrences: 595, posts: 490, unit: 'occurrences' },
   emphasis: { occurrences: 3112, posts: 1357, unit: 'occurrences' },
   // "mentions" is the right word here and the only section where it is: an entity is counted
   // once per resolved mention across 1,445 canonical entities.

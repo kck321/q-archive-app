@@ -1,0 +1,861 @@
+{
+  "generated": "2026-08-16",
+  "purpose": "Policy-dependent rows held OUT of the active high-confidence Predictions list. Nothing here is decided; each needs an owner ruling.",
+  "totals": {
+    "total": 91,
+    "P2": 56,
+    "R1": 22,
+    "R2": 13
+  },
+  "items": [
+    {
+      "phase": "P2",
+      "post": 35,
+      "sentence": "“For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.",
+      "wasInApp": "“For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.",
+      "category": "Review - quoted theological promise",
+      "why": "The quotation makes a future theological promise, but it is not a discrete forecast by the post's author."
+    },
+    {
+      "phase": "P2",
+      "post": 65,
+      "sentence": "More posts may follow because a departure is expected imminently.",
+      "wasInApp": "Perhaps more posts to follow as expected imminent departure.",
+      "category": "Review - hedged intention",
+      "why": "It suggests that more posts may follow, but the wording is hedged and reads as a possible intention rather than a firm forecast."
+    },
+    {
+      "phase": "P2",
+      "post": 81,
+      "sentence": "This is so critical and why information is provided in a certain order and why some topics are continually emphasized more than others as those will be the recent happenings.",
+      "wasInApp": "This is so critical and why information is provided in a certain order and why some topics are continually emphasized more than others as those will be the recent happenings.",
+      "category": "Review - mixed meta-statement",
+      "why": "The sentence says emphasized topics will correspond to later happenings, but the forecast is embedded in an explanation and does not identify those happenings."
+    },
+    {
+      "phase": "P2",
+      "post": 110,
+      "sentence": "The media and CIA counter-operations will all fall down.",
+      "wasInApp": "Will all fall down.",
+      "category": "Review - missing subject",
+      "why": "It uses future tense but omits the subject; context suggests the media and CIA counter-operations, yet the exact referent is not explicit."
+    },
+    {
+      "phase": "P2",
+      "post": 154,
+      "sentence": "Perhaps someday people will understand “they” had a plan to conduct “another” mass extinction event.",
+      "wasInApp": "Perhaps someday people will understand “they” had a plan to conduct “another” mass extinction event.",
+      "category": "Review - hedged future cognition",
+      "why": "It forecasts future public understanding but is explicitly hedged by “perhaps” and embeds a separate claim about an alleged plan."
+    },
+    {
+      "phase": "P2",
+      "post": 154,
+      "sentence": "We, the people, are who they fear will one day awake.",
+      "wasInApp": "We, the people, are who they fear will one day awake.",
+      "category": "Review - mixed present and future claim",
+      "why": "The main assertion concerns present fear, while the subordinate clause suggests a possible future awakening."
+    },
+    {
+      "phase": "P2",
+      "post": 171,
+      "sentence": "Good will always defeat evil.",
+      "wasInApp": "Good will always defeat evil.",
+      "category": "Review - general maxim",
+      "why": "This is a timeless moral maxim in future form rather than a discrete event forecast."
+    },
+    {
+      "phase": "P2",
+      "post": 172,
+      "sentence": "Good will always defeat evil.",
+      "wasInApp": "Good will always defeat evil.",
+      "category": "Review - general maxim",
+      "why": "This is a timeless moral maxim in future form rather than a discrete event forecast."
+    },
+    {
+      "phase": "P2",
+      "post": 173,
+      "sentence": "Good will always defeat evil.",
+      "wasInApp": "Good will always defeat evil.",
+      "category": "Review - general maxim",
+      "why": "This is a timeless moral maxim in future form rather than a discrete event forecast."
+    },
+    {
+      "phase": "P2",
+      "post": 243,
+      "sentence": "Just wait until next week.",
+      "wasInApp": "Just wait until next week.",
+      "category": "Review - implied prediction",
+      "why": "The directive pragmatically implies that something noteworthy will happen next week, but it does not state the event."
+    },
+    {
+      "phase": "P2",
+      "post": 534,
+      "sentence": "The referenced information will guide the audience.",
+      "wasInApp": "WILL GUIDE.",
+      "category": "Review - missing subject",
+      "why": "It predicts future guidance but omits both what will guide and whom it will guide."
+    },
+    {
+      "phase": "P2",
+      "post": 610,
+      "sentence": "The referenced information will become critically important in the coming weeks.",
+      "wasInApp": "Will become critically important in coming weeks.",
+      "category": "Review - missing subject",
+      "why": "It predicts future importance but omits the subject that will become important."
+    },
+    {
+      "phase": "P2",
+      "post": 672,
+      "sentence": "The referenced material will go viral.",
+      "wasInApp": "Will go viral.",
+      "category": "Review - missing subject",
+      "why": "It predicts virality but omits the material that will spread."
+    },
+    {
+      "phase": "P2",
+      "post": 749,
+      "sentence": "That choice, to know, will be yours.",
+      "wasInApp": "That choice, to know, will be yours.",
+      "category": "Review - future reassurance",
+      "why": "This promises that the audience will retain a choice; it functions as reassurance more than as an empirical event forecast."
+    },
+    {
+      "phase": "P2",
+      "post": 854,
+      "sentence": "The choice, to KNOW, will be yours [end].",
+      "wasInApp": "The choice, to KNOW, will be yours [end].",
+      "category": "Review - future reassurance",
+      "why": "This promises that the audience will retain a choice; it functions as reassurance more than as an empirical event forecast."
+    },
+    {
+      "phase": "P2",
+      "post": 866,
+      "sentence": "The choice, to KNOW, will be yours.",
+      "wasInApp": "The choice, to KNOW, will be yours.",
+      "category": "Review - future reassurance",
+      "why": "This promises that the audience will retain a choice; it functions as reassurance more than as an empirical event forecast."
+    },
+    {
+      "phase": "P2",
+      "post": 1012,
+      "sentence": "Their sacrifice will never be forgotten.",
+      "wasInApp": "Their sacrifice will never be forgotten.",
+      "category": "Review - commemorative pledge",
+      "why": "This is a promise of remembrance rather than a conventional forecast of an external event."
+    },
+    {
+      "phase": "P2",
+      "post": 1071,
+      "sentence": "The referenced information will become relevant soon.",
+      "wasInApp": "Relevant soon.",
+      "category": "Review - missing referent",
+      "why": "It predicts future relevance but does not identify the referenced information."
+    },
+    {
+      "phase": "P2",
+      "post": 1209,
+      "sentence": "The choice, to know, will be yours.",
+      "wasInApp": "The choice, to know, will be yours.",
+      "category": "Review - future reassurance",
+      "why": "This promises that the audience will retain a choice; it functions as reassurance more than as an empirical event forecast."
+    },
+    {
+      "phase": "P2",
+      "post": 1218,
+      "sentence": "“These stories will only matter/hurt us if we keep pushing hard and get too much chatter out there.”.",
+      "wasInApp": "“These stories will only matter/hurt us if we keep pushing hard and get too much chatter out there.”",
+      "category": "Review - attributed conditional forecast",
+      "why": "The sentence is a quoted future assessment by another speaker; whether to count attributed forecasts as Q predictions is a policy choice."
+    },
+    {
+      "phase": "P2",
+      "post": 1241,
+      "sentence": "The referenced information will become relevant.",
+      "wasInApp": "Will become relevant.",
+      "category": "Review - missing subject",
+      "why": "The wording forecasts future relevance but omits the information or event that will become relevant."
+    },
+    {
+      "phase": "P2",
+      "post": 1253,
+      "sentence": "The referenced event is coming soon.",
+      "wasInApp": "Coming soon.",
+      "category": "Review - missing referent",
+      "why": "It clearly signals a future arrival but does not identify what is coming."
+    },
+    {
+      "phase": "P2",
+      "post": 1343,
+      "sentence": "The choice will always be yours.",
+      "wasInApp": "The choice will always be yours.",
+      "category": "Review - future reassurance",
+      "why": "This promises that the audience will retain a choice; it functions as reassurance more than as an empirical event forecast."
+    },
+    {
+      "phase": "P2",
+      "post": 1358,
+      "sentence": "The choice will always be yours.",
+      "wasInApp": "The choice will always be yours.",
+      "category": "Review - future reassurance",
+      "why": "This promises that the audience will retain a choice; it functions as reassurance more than as an empirical event forecast."
+    },
+    {
+      "phase": "P2",
+      "post": 1359,
+      "sentence": "The United States' decision to withdraw from the deal will harm German companies.",
+      "wasInApp": "“A group representing German trade interests said the US decision to withdraw from the deal will hit German companies and urged the EU to protect their interests.",
+      "category": "Review - attributed forecast",
+      "why": "The statement forecasts harm to German companies, but it is quoted from an outside trade group rather than made in Q's own voice."
+    },
+    {
+      "phase": "P2",
+      "post": 1486,
+      "sentence": "The audience will soon need the referenced information.",
+      "wasInApp": "You will need soon.",
+      "category": "Review - missing object",
+      "why": "It predicts a future need but omits what the audience will need."
+    },
+    {
+      "phase": "P2",
+      "post": 1507,
+      "sentence": "The post's author will inspect and review the referenced material.",
+      "wasInApp": "Will inspect/review.",
+      "category": "Review - missing subject and commitment",
+      "why": "It announces a future inspection or review, but the subject and object are supplied only by context."
+    },
+    {
+      "phase": "P2",
+      "post": 1587,
+      "sentence": "The referenced item is forthcoming.",
+      "wasInApp": "Forthcoming.",
+      "category": "Review - missing referent",
+      "why": "It indicates that something is forthcoming but does not identify the item."
+    },
+    {
+      "phase": "P2",
+      "post": 1666,
+      "sentence": "The referenced information will be extremely important going forward.",
+      "wasInApp": "Will be extremely important going forward.",
+      "category": "Review - missing subject",
+      "why": "It predicts future importance but omits the subject that will become important."
+    },
+    {
+      "phase": "P2",
+      "post": 1712,
+      "sentence": "Because of the referenced sins, the wrath of God is coming.",
+      "wasInApp": "6 Because of these, the wrath of God is coming.",
+      "category": "Review - quoted theological forecast",
+      "why": "The sentence is a scriptural future statement rather than a discrete prediction made in Q's own voice."
+    },
+    {
+      "phase": "P2",
+      "post": 1735,
+      "sentence": "The choice to know will ultimately be yours.",
+      "wasInApp": "The choice to know will ultimately be yours.",
+      "category": "Review - future reassurance",
+      "why": "This promises that the audience will retain a choice; it functions as reassurance more than as an empirical event forecast."
+    },
+    {
+      "phase": "P2",
+      "post": 1854,
+      "sentence": "The choice to know will be yours.",
+      "wasInApp": "The choice to know will be yours.",
+      "category": "Review - future reassurance",
+      "why": "This promises that the audience will retain a choice; it functions as reassurance more than as an empirical event forecast."
+    },
+    {
+      "phase": "P2",
+      "post": 1879,
+      "sentence": "The choice to know will be yours.",
+      "wasInApp": "The choice to know will be yours.",
+      "category": "Review - future reassurance",
+      "why": "This promises that the audience will retain a choice; it functions as reassurance more than as an empirical event forecast."
+    },
+    {
+      "phase": "P2",
+      "post": 1927,
+      "sentence": "In accordance with Article 33 of the UCMJ, as amended by section 5204 of the MJA, the Secretary of Defense, in consultation with the Secretary of Homeland Security, will issue nonbinding guidance regarding factors that commanders, convening authorities, staff judge advocates, and judge advocates should take into account when exercising their duties with respect to the disposition of charges and specifications in the interest of justice and discipline under Articles 30 and 34 of the UCMJ.",
+      "wasInApp": "In accordance with Article 33 of the UCMJ, as amended by section 5204 of the MJA, the Secretary of Defense, in consultation with the Secretary of Homeland Security, will issue nonbinding guidance regarding factors that commanders, convening authorities, staff judge advocates, and judge advocates should take into account when exercising their duties with respect to the disposition of charges and specifications in the interest of justice and discipline under Articles 30 and 34 of the UCMJ.",
+      "category": "Review - quoted statutory future action",
+      "why": "The sentence describes a future action mandated by quoted legislation; it is not a discretionary forecast by the post's author."
+    },
+    {
+      "phase": "P2",
+      "post": 1927,
+      "sentence": "That guidance will take into account, with appropriate consideration of military requirements, the principles contained in official guidance of the Attorney General to attorneys for the Federal Government with respect to the disposition of Federal criminal cases in accordance with the principle of fair and evenhanded administration of Federal criminal law.\".",
+      "wasInApp": "That guidance will take into account, with appropriate consideration of military requirements, the principles contained in official guidance of the Attorney General to attorneys for the Federal Government with respect to the disposition of Federal criminal cases in accordance with the principle of fair and evenhanded administration of Federal criminal law.\"",
+      "category": "Review - quoted statutory future action",
+      "why": "The sentence describes the required contents of future legal guidance rather than a forecast made in Q's own voice."
+    },
+    {
+      "phase": "P2",
+      "post": 2358,
+      "sentence": "The referenced event is expected to occur.",
+      "wasInApp": "Expect this.",
+      "category": "Review - missing referent",
+      "why": "The imperative implies an expectation but does not state what event is expected."
+    },
+    {
+      "phase": "P2",
+      "post": 2391,
+      "sentence": "The TRUTH will set you FREE.",
+      "wasInApp": "The TRUTH will set you FREE.",
+      "category": "Review - quoted maxim",
+      "why": "This is a proverbial maxim in future form rather than a discrete forecast."
+    },
+    {
+      "phase": "P2",
+      "post": 2451,
+      "sentence": "Your sacrifices will never be forgotten.",
+      "wasInApp": "Your sacrifices will never be forgotten.",
+      "category": "Review - commemorative pledge",
+      "why": "This is a promise of remembrance rather than a conventional forecast of an external event."
+    },
+    {
+      "phase": "P2",
+      "post": 2452,
+      "sentence": "Your sacrifices will never be forgotten.",
+      "wasInApp": "Your sacrifices will never be forgotten.",
+      "category": "Review - commemorative pledge",
+      "why": "This is a promise of remembrance rather than a conventional forecast of an external event."
+    },
+    {
+      "phase": "P2",
+      "post": 2480,
+      "sentence": "Your sacrifice(s) will never be forgotten.",
+      "wasInApp": "Your sacrifice(s) will never be forgotten.",
+      "category": "Review - commemorative pledge",
+      "why": "This is a promise of remembrance rather than a conventional forecast of an external event."
+    },
+    {
+      "phase": "P2",
+      "post": 2696,
+      "sentence": "You will never be alone.",
+      "wasInApp": "You will never be alone.",
+      "category": "Review - reassurance or promise",
+      "why": "This is a future-tense reassurance that may function as a promise rather than an empirical forecast."
+    },
+    {
+      "phase": "P2",
+      "post": 2843,
+      "sentence": "The referenced event will make the Super Bowl look like a puppy show.",
+      "wasInApp": "Will make the Super Bowl look like a puppy show.",
+      "category": "Review - missing subject",
+      "why": "It predicts a future comparison but omits the event that will produce it."
+    },
+    {
+      "phase": "P2",
+      "post": 2865,
+      "sentence": "THE TRUTH WILL ALWAYS WIN.",
+      "wasInApp": "THE TRUTH WILL ALWAYS WIN.",
+      "category": "Review - general maxim",
+      "why": "This is a timeless moral maxim rather than a discrete event forecast."
+    },
+    {
+      "phase": "P2",
+      "post": 3028,
+      "sentence": "THE TRUTH WILL ALWAYS WIN.",
+      "wasInApp": "THE TRUTH WILL ALWAYS WIN.",
+      "category": "Review - general maxim",
+      "why": "This is a timeless moral maxim rather than a discrete event forecast."
+    },
+    {
+      "phase": "P2",
+      "post": 3199,
+      "sentence": "It shall be done.",
+      "wasInApp": "It shall be done.",
+      "category": "Review - commitment with missing referent",
+      "why": "It commits to an unspecified action but does not identify what will be done."
+    },
+    {
+      "phase": "P2",
+      "post": 3292,
+      "sentence": "YOUR SACRIFICE WILL NEVER BE FORGOTTEN.",
+      "wasInApp": "YOUR SACRIFICE WILL NEVER BE FORGOTTEN.",
+      "category": "Review - commemorative pledge",
+      "why": "This is a promise of remembrance rather than a conventional forecast of an external event."
+    },
+    {
+      "phase": "P2",
+      "post": 3490,
+      "sentence": "The referenced information will become extremely important.",
+      "wasInApp": "Will become extremely important.",
+      "category": "Review - missing subject",
+      "why": "It predicts future importance but omits the subject that will become important."
+    },
+    {
+      "phase": "P2",
+      "post": 3817,
+      "sentence": "The referenced event is coming soon.",
+      "wasInApp": "Coming soon.",
+      "category": "Review - missing referent",
+      "why": "It clearly signals a future arrival but does not identify what is coming."
+    },
+    {
+      "phase": "P2",
+      "post": 3974,
+      "sentence": "It will be your choice whether to know.",
+      "wasInApp": "It will be your choice whether to know.",
+      "category": "Review - future reassurance",
+      "why": "This promises that the audience will retain a choice; it functions as reassurance more than as an empirical event forecast."
+    },
+    {
+      "phase": "P2",
+      "post": 4105,
+      "sentence": "Support will always be provided [undisclosed methods].",
+      "wasInApp": "Support will always be provided [undisclosed methods].",
+      "category": "Review - promise",
+      "why": "This is a promise of continuing support rather than a discrete external forecast."
+    },
+    {
+      "phase": "P2",
+      "post": 4305,
+      "sentence": "But @teamcavuto said it will kill you….",
+      "wasInApp": "But @teamcavuto said it will kill you…",
+      "category": "Review - attributed warning",
+      "why": "It reports another speaker's future warning, so attribution and endorsement are ambiguous."
+    },
+    {
+      "phase": "P2",
+      "post": 4386,
+      "sentence": "The post's authors will appear or act.",
+      "wasInApp": "Expect us.",
+      "category": "Review - implied arrival or action",
+      "why": "It implies that the post's authors will appear or act, but it does not identify the action."
+    },
+    {
+      "phase": "P2",
+      "post": 4544,
+      "sentence": "The summer soldier and the sunshine patriot will, in this crisis, shrink from the service of their country; but he that stands by it now, deserves the love and thanks of man and woman.",
+      "wasInApp": "The summer soldier and the sunshine patriot will, in this crisis, shrink from the service of their country; but he that stands by it now, deserves the love and thanks of man and woman.",
+      "category": "Review - historical quotation",
+      "why": "The quoted maxim uses future tense, but it is a historical generalization rather than a discrete prediction by the post's author."
+    },
+    {
+      "phase": "P2",
+      "post": 4739,
+      "sentence": "You will bring justice in due time for all the harm and needless violence aimed at Your children.",
+      "wasInApp": "You will bring justice in due time for all the harm and needless violence aimed at Your children.",
+      "category": "Review - prayer or theological expectation",
+      "why": "The sentence addresses God in prayer; it may express faith or petition rather than an empirical forecast."
+    },
+    {
+      "phase": "P2",
+      "post": 4739,
+      "sentence": "You are the Mighty One, the One Who will ultimately bring all evil to light.",
+      "wasInApp": "You are the Mighty One, the One Who will ultimately bring all evil to light.",
+      "category": "Review - prayer or theological expectation",
+      "why": "The sentence addresses God and contains a theological expectation, not a conventional event forecast."
+    },
+    {
+      "phase": "P2",
+      "post": 4949,
+      "sentence": "The nation will have a new birth of freedom, and government of, by, and for the people will not perish from the earth.",
+      "wasInApp": "https://www.youtube.com/watch?v=9tjdswqGGVg&list=PLr4E97YzUfEMIr23hzOBmk9mg-z8TDOXj that this nation, under God, shall have a new birth of freedom and that government of the people, by the people, for the people, shall not perish from the earth. - Abraham Lincoln Nov 1863",
+      "category": "Review - quoted civic aspiration",
+      "why": "The row contains a Lincoln quotation making a future civic assertion, but it is not a prediction authored in the post and must be separated from the link."
+    },
+    {
+      "phase": "R1",
+      "post": 1350,
+      "sentence": "Through their strength, and the millions of united Patriots around the World, we will succeed in this fight.",
+      "staysInClaims": "Through their strength, and the millions of united Patriots around the World, we will succeed in this fight.",
+      "category": "Arguable Claims-to-Predictions move",
+      "why": "It forecasts success, but the wording also functions as motivational rhetoric."
+    },
+    {
+      "phase": "R1",
+      "post": 1602,
+      "sentence": "We will shine LIGHT.",
+      "staysInClaims": "We will shine LIGHT.",
+      "category": "Arguable Claims-to-Predictions move",
+      "why": "It is a metaphorical future commitment whose predicted event is not specific."
+    },
+    {
+      "phase": "R1",
+      "post": 1605,
+      "sentence": "We are also following the facts and once we uncover more (which we will) we will act accordingly.",
+      "staysInClaims": "We are also following the facts and once we uncover more (which we will) we will act accordingly.",
+      "category": "Arguable Claims-to-Predictions move",
+      "why": "This is a quoted commitment to act if more facts are uncovered."
+    },
+    {
+      "phase": "R1",
+      "post": 1644,
+      "sentence": "We will succeed.",
+      "staysInClaims": "We will succeed.",
+      "category": "Arguable Claims-to-Predictions move",
+      "why": "It can be read as a forecast of success or as a motivational promise."
+    },
+    {
+      "phase": "R1",
+      "post": 1695,
+      "sentence": "We will never again be under their control.",
+      "staysInClaims": "We will never again be under their control.",
+      "category": "Arguable Claims-to-Predictions move",
+      "why": "It can be read as a forecast or as a pledge."
+    },
+    {
+      "phase": "R1",
+      "post": 2267,
+      "sentence": "If you build it - they will come.",
+      "staysInClaims": "If you build it - they will come.",
+      "category": "Arguable Claims-to-Predictions move",
+      "why": "It is a quoted conditional maxim that may function as a prediction."
+    },
+    {
+      "phase": "R1",
+      "post": 2270,
+      "sentence": "In the coming weeks it will be important to have one central location (non 8ch).",
+      "staysInClaims": "In the coming weeks it will be important to have one central location (non 8ch).",
+      "category": "Arguable Claims-to-Predictions move",
+      "why": "It forecasts a future need, but functions primarily as operational guidance."
+    },
+    {
+      "phase": "R1",
+      "post": 2314,
+      "sentence": "We will win.",
+      "staysInClaims": "We will win.",
+      "category": "Arguable Claims-to-Predictions move",
+      "why": "It can be read as a forecast or as a slogan."
+    },
+    {
+      "phase": "R1",
+      "post": 2405,
+      "sentence": "WE WILL PROTECT THE VOTE.",
+      "staysInClaims": "WE WILL PROTECT THE VOTE.",
+      "category": "Arguable Claims-to-Predictions move",
+      "why": "It is a concrete commitment, but may be better stored as a pledge than a prediction."
+    },
+    {
+      "phase": "R1",
+      "post": 2450,
+      "sentence": "We are going to show you a new world.",
+      "staysInClaims": "We are going to show you a new world.",
+      "category": "Arguable Claims-to-Predictions move",
+      "why": "It announces a future action but also functions as rhetorical promise."
+    },
+    {
+      "phase": "R1",
+      "post": 2629,
+      "sentence": "We will have our Country back!",
+      "staysInClaims": "We will have our Country back!",
+      "category": "Arguable Claims-to-Predictions move",
+      "why": "It can be read as a forecast or as a motivational promise."
+    },
+    {
+      "phase": "R1",
+      "post": 2816,
+      "sentence": "The post's authors will deliver the referenced result.",
+      "staysInClaims": "(….AND WE WILL DELIVER).",
+      "category": "Arguable Claims-to-Predictions move",
+      "why": "It is a future commitment with an unspecified object."
+    },
+    {
+      "phase": "R1",
+      "post": 381,
+      "sentence": "We will however light a FIRE to flush them out.",
+      "staysInClaims": "We will however light a FIRE to flush them out.",
+      "category": "Arguable Claims-to-Predictions move",
+      "why": "It announces a future tactic, but the metaphor makes the exact event unclear."
+    },
+    {
+      "phase": "R1",
+      "post": 3928,
+      "sentence": "Together we will win.",
+      "staysInClaims": "Together we will win.",
+      "category": "Arguable Claims-to-Predictions move",
+      "why": "It can be read as a forecast or as a slogan."
+    },
+    {
+      "phase": "R1",
+      "post": 4387,
+      "sentence": "WE WILL PREVAIL.",
+      "staysInClaims": "WE WILL PREVAIL.",
+      "category": "Arguable Claims-to-Predictions move",
+      "why": "It can be read as a forecast or as a motivational pledge."
+    },
+    {
+      "phase": "R1",
+      "post": 4530,
+      "sentence": "We will not fail.",
+      "staysInClaims": "We will not fail.",
+      "category": "Arguable Claims-to-Predictions move",
+      "why": "It can be read as a forecast or as a reassurance."
+    },
+    {
+      "phase": "R1",
+      "post": 4915,
+      "sentence": "The truth won't be for everyone.",
+      "staysInClaims": "The truth won't be for everyone.",
+      "category": "Arguable Claims-to-Predictions move",
+      "why": "It predicts unequal acceptance of the truth, but the outcome is vague."
+    },
+    {
+      "phase": "R1",
+      "post": 4966,
+      "sentence": "We will be repressed no more.",
+      "staysInClaims": "We will be repressed no more.",
+      "category": "Arguable Claims-to-Predictions move",
+      "why": "It is future-tense, but functions primarily as a vow or aspiration."
+    },
+    {
+      "phase": "R1",
+      "post": 515,
+      "sentence": "The post's authors will follow the patriots' direction.",
+      "staysInClaims": "Patriots point - we will follow.",
+      "category": "Arguable Claims-to-Predictions move",
+      "why": "It is an incomplete commitment whose future action is unclear."
+    },
+    {
+      "phase": "R1",
+      "post": 768,
+      "sentence": "We will help.",
+      "staysInClaims": "We will help.",
+      "category": "Arguable Claims-to-Predictions move",
+      "why": "It is a future commitment with an unspecified action."
+    },
+    {
+      "phase": "R1",
+      "post": 783,
+      "sentence": "The post's authors will succeed.",
+      "staysInClaims": "RIP JFK - we will succeed.",
+      "category": "Arguable Claims-to-Predictions move",
+      "why": "It can be read as a forecast or as a motivational pledge."
+    },
+    {
+      "phase": "R1",
+      "post": 981,
+      "sentence": "We will not fail.",
+      "staysInClaims": "We will not fail.",
+      "category": "Arguable Claims-to-Predictions move",
+      "why": "It can be read as a forecast or as a reassurance."
+    },
+    {
+      "phase": "R2",
+      "post": 381,
+      "sentence": "The post's authors will not reveal their moves to the enemy.",
+      "postWording": "We won't telegraph our moves to the ENEMY.",
+      "category": "Possible missing Prediction",
+      "why": "It is a concrete future commitment, but it may be better treated as a statement of policy than as a prediction."
+    },
+    {
+      "phase": "R2",
+      "post": 520,
+      "sentence": "The Democrats will threaten a government shutdown.",
+      "postWording": "The Dems will threaten “shutdown.”",
+      "category": "Possible missing Prediction",
+      "why": "The post quotes a future assertion by another speaker; it is a prediction within the post, but attribution may make it unsuitable for the app's Q Predictions category."
+    },
+    {
+      "phase": "R2",
+      "post": 762,
+      "sentence": "New drugs will be released.",
+      "postWording": "Watch the news re: new drugs coming out [flu/dirt/next?].",
+      "category": "Possible missing Prediction",
+      "why": "The directive implies a future drug release, but the bracketed shorthand and question marker make the forecast ambiguous."
+    },
+    {
+      "phase": "R2",
+      "post": 1553,
+      "sentence": "He will provide recommendations about whether new matters should be opened or existing investigations expanded.",
+      "postWording": "He ... will provide recommendations as to whether any matter not currently under investigation should be opened.",
+      "category": "Possible missing Prediction",
+      "why": "This is a future assertion inside a quoted official statement, not necessarily a prediction authored by Q."
+    },
+    {
+      "phase": "R2",
+      "post": 2552,
+      "sentence": "After Mr. Priestap's departure, none of the high-ranking bureau officials involved in the two investigations will remain with the bureau.",
+      "postWording": "After Mr. Priestap’s departure, none of the high-ranking bureau officials involved in the two investigations will remain with the bureau.",
+      "category": "Possible missing Prediction",
+      "why": "This is a future assertion in quoted source material; whether the app includes quoted forecasts is a policy choice."
+    },
+    {
+      "phase": "R2",
+      "post": 2664,
+      "sentence": "The fake-news media will knowingly lie and demean the Trump administration to make it look as bad as possible.",
+      "postWording": "The Fake News will knowingly lie and demean in order make the tremendous success of the Trump Administration, and me, look as bad as possible.",
+      "category": "Possible missing Prediction",
+      "why": "The quoted statement forecasts future media behavior, but it is attributed to President Trump rather than authored in Q's own voice."
+    },
+    {
+      "phase": "R2",
+      "post": 2744,
+      "sentence": "The Lord will strengthen and protect the audience from the evil one.",
+      "postWording": "But the Lord is faithful, and he will strengthen you and protect you from the evil one.",
+      "category": "Possible missing Prediction",
+      "why": "The quotation makes a future theological promise, but it may not fit an empirical predictions section."
+    },
+    {
+      "phase": "R2",
+      "post": 2971,
+      "sentence": "People will be asked to provide proof of their identity.",
+      "postWording": "you will be asked to give proof of your identity",
+      "category": "Possible missing Prediction",
+      "why": "The quoted line makes a future assertion, but the speaker and scope are unclear."
+    },
+    {
+      "phase": "R2",
+      "post": 3507,
+      "sentence": "Democrats will complain loudly and at length about the referenced action.",
+      "postWording": "Democrats will complain long and loud about this.",
+      "category": "Possible missing Prediction",
+      "why": "This is a prediction in quoted source material rather than a direct forecast by the post's author."
+    },
+    {
+      "phase": "R2",
+      "post": 3787,
+      "sentence": "The situation will not remain boring forever.",
+      "postWording": "Don't worry, it won't be boring forever.",
+      "category": "Possible missing Prediction",
+      "why": "It implies future events but is intentionally vague and primarily reassuring."
+    },
+    {
+      "phase": "R2",
+      "post": 4212,
+      "sentence": "The audience will recognize the relevant moment when it arrives.",
+      "postWording": "You'll know when.",
+      "category": "Possible missing Prediction",
+      "why": "It forecasts future recognition but omits the event or condition to be recognized."
+    },
+    {
+      "phase": "R2",
+      "post": 4220,
+      "sentence": "The referenced bill will not become law, but it will serve as the liberals' wish list.",
+      "postWording": "This won't ever become law, but it'll be the wishlist of the liberals.",
+      "category": "Possible missing Prediction",
+      "why": "This is a quoted political forecast, not a direct prediction by the post's author."
+    },
+    {
+      "phase": "R2",
+      "post": 4598,
+      "sentence": "Declassification-related developments will occur in the days ahead.",
+      "postWording": "Follow for days ahead [DECLAS].",
+      "category": "Possible missing Prediction",
+      "why": "The directive and bracketed label imply a forecast, but they do not state it directly."
+    }
+  ],
+  "r3Evidence": {
+    "phase": "R3",
+    "purpose": "Reviewed additional posts 4954 through 4966",
+    "batches": [
+      14
+    ],
+    "expected": {
+      "records": 13,
+      "applied": 0,
+      "highConfidenceAdditions": 0
+    },
+    "matchAgainst": "none",
+    "note": "EVIDENCE ONLY. Every one of the last thirteen drops was read and contributed zero high-confidence Predictions. Kept so the zero is a recorded finding rather than an absence — #4966's 'We will be repressed no more.' is an arguable vow and is carried in R1, not added here.",
+    "records": [
+      {
+        "n": 1,
+        "batch": 14,
+        "post": 4954,
+        "finding": "No prediction: “Shall we play a game once more?” is a question or invitation.",
+        "why": "Questions do not assert that an event will occur.",
+        "recommendedAddCount": 0
+      },
+      {
+        "n": 2,
+        "batch": 14,
+        "post": 4955,
+        "finding": "No complete prediction found.",
+        "why": "The post contains no asserted future event or outcome.",
+        "recommendedAddCount": 0
+      },
+      {
+        "n": 3,
+        "batch": 14,
+        "post": 4956,
+        "finding": "No prediction: “Are you ready to serve your country again?” is a question, followed by a directive.",
+        "why": "Neither the question nor “Remember your oath” asserts a future event.",
+        "recommendedAddCount": 0
+      },
+      {
+        "n": 4,
+        "batch": 14,
+        "post": 4957,
+        "finding": "No complete prediction found.",
+        "why": "The post contains no asserted future event or outcome.",
+        "recommendedAddCount": 0
+      },
+      {
+        "n": 5,
+        "batch": 14,
+        "post": 4958,
+        "finding": "No prediction: “Who will be surprised?” is a question.",
+        "why": "The post asks about a future reaction but does not assert who will experience it.",
+        "recommendedAddCount": 0
+      },
+      {
+        "n": 6,
+        "batch": 14,
+        "post": 4959,
+        "finding": "No complete prediction found.",
+        "why": "The post contains no asserted future event or outcome.",
+        "recommendedAddCount": 0
+      },
+      {
+        "n": 7,
+        "batch": 14,
+        "post": 4960,
+        "finding": "No complete prediction found.",
+        "why": "The post contains no asserted future event or outcome.",
+        "recommendedAddCount": 0
+      },
+      {
+        "n": 8,
+        "batch": 14,
+        "post": 4961,
+        "finding": "No prediction: “Who will put an end to the endless?” is a question.",
+        "why": "The wording requests an answer and does not forecast an actor or event.",
+        "recommendedAddCount": 0
+      },
+      {
+        "n": 9,
+        "batch": 14,
+        "post": 4962,
+        "finding": "No complete prediction found.",
+        "why": "The post contains no asserted future event or outcome.",
+        "recommendedAddCount": 0
+      },
+      {
+        "n": 10,
+        "batch": 14,
+        "post": 4963,
+        "finding": "No complete prediction found.",
+        "why": "The post contains no asserted future event or outcome.",
+        "recommendedAddCount": 0
+      },
+      {
+        "n": 11,
+        "batch": 14,
+        "post": 4964,
+        "finding": "No complete prediction found.",
+        "why": "The post contains no asserted future event or outcome.",
+        "recommendedAddCount": 0
+      },
+      {
+        "n": 12,
+        "batch": 14,
+        "post": 4965,
+        "finding": "No prediction: “In time” is a temporal fragment.",
+        "why": "No event or outcome is identified.",
+        "recommendedAddCount": 0
+      },
+      {
+        "n": 13,
+        "batch": 14,
+        "post": 4966,
+        "finding": "Arguable but not recommended: “We will be repressed no more” functions as a vow or aspiration.",
+        "why": "It is future-tense, but its primary force is a declaration of resolve rather than an event forecast.",
+        "recommendedAddCount": 0,
+        "carriedIn": "R1 record 18"
+      }
+    ]
+  }
+}

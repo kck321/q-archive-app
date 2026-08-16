@@ -23,13 +23,25 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { clean, key } from './lib/segment.mjs'
+import { applyPredictionsAudit } from './lib/predictionsAudit.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
 const dry = process.argv.includes('--dry')
 
 const posts = JSON.parse(fs.readFileSync(path.join(DATA, 'posts.json'), 'utf8'))
-const final = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/claims-final.json'), 'utf8'))
+// The 2026-08-16 sentence-level Predictions audit is layered ON TOP of the frozen claims
+// artifact, exactly as the themes and entities owner rulings are: claims-final.json is left
+// untouched, and audit/predictions-audit/*.json is re-applied on every run. Re-deriving the
+// claims audit therefore cannot silently erase 403 rulings.
+//   630 -> 595 predictions, 4,242 -> 4,221 claims. See audit/predictions-audit/ledger.jsonl.
+const frozen = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/claims-final.json'), 'utf8'))
+const audited = applyPredictionsAudit(frozen)
+if (audited.report.errors.length) {
+  console.error('Predictions audit did not fully apply:\n' + audited.report.errors.join('\n'))
+  process.exit(1)
+}
+const final = { ...frozen, rows: audited.rows, predictions: audited.predictions }
 const ph3 = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/claims-adjudicated.json'), 'utf8'))
 const v2 = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/claims-audit.json'), 'utf8'))
 
@@ -69,9 +81,20 @@ for (const p of posts) {
   p.postAnalysis ??= {}
 
   p.postAnalysis.claims = cl.map(r => r.exactText)
+  // predictions stays Q's LITERAL wording — it is what the highlighter matches against the
+  // post body, and Q's words are never rewritten. The audit's complete sentence rides
+  // alongside in a parallel array and is what the reader sees; the fragment stays one click
+  // away. A null entry means the row needed no rewriting.
   p.postAnalysis.predictions = pr.map(r => r.exactText)
+  const sentences = pr.map(r => r.plainSentence ?? null)
+  if (sentences.some(Boolean)) p.postAnalysis.predictionSentences = sentences
+  else delete p.postAnalysis.predictionSentences
   // impliedConclusions is now DERIVED from the claim attribute, not a separate extraction.
-  p.postAnalysis.impliedConclusions = cl.filter(r => r.isConclusion).map(r => r.exactText)
+  // Predictions are included because the attribute belongs to the ROW, not to the section it
+  // is displayed in: the 2026-08-16 audit moved 15 conclusion-bearing assertions from Claims
+  // to Predictions, and a claims-only reading would have retired them from a certified count
+  // the audit never touched. "A future-oriented inference is still an inference."
+  p.postAnalysis.impliedConclusions = [...cl, ...pr].filter(r => r.isConclusion).map(r => r.exactText)
   // verificationHooks was a parallel section; checkable is an attribute of a claim now.
   p.postAnalysis.verificationHooks = cl.filter(r => r.checkable).map(r => r.exactText)
 
@@ -168,19 +191,30 @@ const srcLeak = [...srcCounts].filter(([k, nSrc]) => {
 const questions = JSON.parse(fs.readFileSync(path.join(DATA, 'questions.json'), 'utf8')).filter(q => !q.editorialNormalization)
 const directives = posts.reduce((n, p) => n + (p.actionRequests?.length ?? 0), 0)
 
+// ── 2026-08-16 predictions audit: every count below that moved, and the arithmetic for it.
+// Seven certified figures shifted because 115 rows changed section. None was re-derived and
+// none was forced; each is (removed) + (arrived) over the frozen artifact.
 const checks = [
-  // 4,188 after the 2026-08-13 owner adjudication (see lib/contracts.mjs).
-  ['claim occurrences = 4,242', allClaims.length === 4242, allClaims.length],
+  // 4,242 - 68 moved out to Predictions (P4) + 47 arriving from Predictions (P1) = 4,221.
+  ['claim occurrences = 4,221', allClaims.length === 4221, allClaims.length],
   ['all resolve to their Q source span', unresolved.length === 0, `${allClaims.length - unresolved.length}/${allClaims.length}`],
-  ['distinct = 3,245', distinct.size === 3245, distinct.size],
-  ['posts = 1,982', postsWith.size === 1982, postsWith.size],
-  ['predictions = 630', allPreds.length === 630, allPreds.length],
+  // +11: the 47 arrivals introduce 44 wordings Claims did not already hold, while the 68
+  // departures empty 33 keys entirely ("Future proves past." left every post that carried it).
+  ['distinct = 3,256', distinct.size === 3256, distinct.size],
+  // +1: 17 posts gain their first claim, 16 posts lose their last one.
+  ['posts = 1,983', postsWith.size === 1983, postsWith.size],
+  // 630 - 73 technical nonpredictions - 56 arguable + 66 from Claims + 28 found = 595.
+  ['predictions = 595', allPreds.length === 595, allPreds.length],
+  // UNCHANGED, and deliberately so: isConclusion travels with the row rather than with the
+  // section, and a collapsed duplicate merges its attributes into the survivor.
   ['conclusions = 966', conclusions === 966, conclusions],
-  ['checkable = 1,926', checkable === 1926, checkable],
-  ['sourceProvided = 438', sourceProvided === 438, sourceProvided],
-  // 338: the seven owner-adjudicated Claims are short by nature ("PURE EVIL."), so the
-  // telegraphic attribute grows with them. Legitimate, not drift.
-  ['telegraphic = 389', telegraphic === 389, telegraphic],
+  // +5: 18 checkable rows arrive from Predictions, 13 checkable rows leave for Predictions.
+  ['checkable = 1,931', checkable === 1931, checkable],
+  // +1: 5 arrive carrying sourceProvided, 4 leave with it.
+  ['sourceProvided = 439', sourceProvided === 439, sourceProvided],
+  // -2: two departing claims were telegraphic. Predictions never carried the attribute, so
+  // nothing arrives with it.
+  ['telegraphic = 387', telegraphic === 387, telegraphic],
   ['in-post repeats preserved = 13', repeats === 13, repeats],
   ['no editorial paraphrase shown as Q', paraLeak.length === 0, `${paraLeak.length} leaked`],
   ['no source material shown as Q', srcLeak.length === 0, `${srcLeak.length} leaked`],

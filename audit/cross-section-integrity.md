@@ -16,8 +16,8 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | posts = 4,966 | 4966 |
 | ✅ | Questions = 6,443 certified occurrences | 6443 |
 | ✅ | Directives = 2,552 | 2552 |
-| ✅ | Claims = 4,189 | 4242 |
-| ✅ | Predictions = 630 | 630 |
+| ✅ | Claims = 4,189 | 4221 |
+| ✅ | Predictions = 630 | 595 |
 | ✅ | Evidence = 6,590 | 6590 |
 | ✅ | Entities = 1,335 canonical | 1445 |
 | ✅ | Entities = 7,903 resolved mentions (headline) | 9786 |
@@ -92,7 +92,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 |---|---|---|
 | ✅ | questions: quoted-block over-extension stays at its known 89 occurrences | 89 of 6443 (expected 89) |
 | ✅ | directives: quoted-block over-extension stays at its known 55 occurrences | 55 of 2552 (expected 55) |
-| ✅ | claims: quoted-block over-extension stays at its known 147 occurrences | 147 of 4242 (expected 147) |
+| ✅ | claims: quoted-block over-extension stays at its known 139 occurrences | 139 of 4221 (expected 139) |
 | ✅ | emphasis: quoted-block over-extension stays at its known 0 occurrences | 0 of 4229 (expected 0) |
 | ✅ | the source-boundary occurrence SET is unchanged | identical |
 | ✅ | source-boundary debt stays at its known 111 posts | 111 posts |
@@ -112,7 +112,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | SEED_VERSION is 74 (Q + Q+ + Clinton Foundation + NO NAME) | 74 |
+| ✅ | SEED_VERSION is 75 (sentence-level Predictions audit) | 75 |
 | ✅ | seeding is gated on SEED_VERSION | present |
 | ✅ | seeded data matches the SEED_VERSION that shipped it | unchanged |
 | ✅ | the gate value is persisted after seeding | present |
@@ -128,7 +128,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 |---|---|---|
 | ✅ | sectionInfo states 6,443 | ok |
 | ✅ | sectionInfo states 2,552 | ok |
-| ✅ | sectionInfo states 4,242 | ok |
+| ✅ | sectionInfo states 4,221 | ok |
 | ✅ | sectionInfo states 6,590 | ok |
 | ✅ | sectionInfo headlines 1,334 entities and 8,239 mentions | ok |
 | ✅ | no alias is stored all-lowercase | ok |
@@ -136,8 +136,8 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | sectionInfo states 2,644 | ok |
 | ✅ | sectionInfo states 1,949 | ok |
 | ✅ | sectionInfo states 3,112 | ok |
-| ✅ | Claims headline = certified 4,242 / 1,982 | ok |
-| ✅ | Predictions headline = certified 630 / 520 | ok |
+| ✅ | Claims headline = certified 4,221 / 1,983 | ok |
+| ✅ | Predictions headline = certified 595 / 490 | ok |
 | ✅ | Emphasis headline = certified 3,112 / 1,357 | ok |
 | ✅ | Entities headline = certified mentions / 2,240 posts | ok |
 | ✅ | Themes headline = certified 2,644 assignments | ok |
@@ -184,8 +184,8 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | Question ↔ Directive edges = the certified 230 | 230 |
 | ✅ | Entity ↔ Code edges come from the 32 stored cross-links | 32 |
 | ✅ | Claim → Conclusion edges = the certified 966 | 966 |
-| ✅ | Claim → Source provided edges = the certified 438 | 438 |
-| ✅ | Prediction → assertion edges = the certified 630 | 630 |
+| ✅ | Claim → Source provided edges = the certified 439 | 439 |
+| ✅ | Prediction → assertion edges = the certified 595 | 595 |
 | ✅ | every queue row has an edge to its occurrence | 105 |
 | ✅ | every relationship belongs to a real post | 0 orphaned |
 | ✅ | analysis map totals reconcile with certified Questions | 6443 |
@@ -205,8 +205,8 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | the index declares it comes from certified artifacts | true |
 | ✅ | indexed Questions = certified 6,443 | 6443 |
 | ✅ | indexed Directives = certified 2,552 | 2552 |
-| ✅ | indexed Claims = certified 4,181 | 4242 |
-| ✅ | indexed Predictions = certified 630 | 630 |
+| ✅ | indexed Claims = certified 4,181 | 4221 |
+| ✅ | indexed Predictions = certified 630 | 595 |
 | ✅ | indexed Evidence = certified 6,590 | 6590 |
 | ✅ | indexed Entities = certified 1,445 | 1445 |
 | ✅ | indexed Themes = certified 2,395 | 2644 |
@@ -216,7 +216,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | every editorial row is flagged not-Q-authored | 0 |
 | ✅ | no Q-authored row is flagged editorial | 0 |
 | ✅ | the results page labels editorial rows before their text | labelled |
-| ✅ | in-post repeats are indexed as separate occurrences | 4242 rows, 4229 distinct (post, text) |
+| ✅ | in-post repeats are indexed as separate occurrences | 4221 rows, 4208 distinct (post, text) |
 | ✅ | every record states why it can match | ok |
 | ✅ | every post-bound record carries the id its link needs | 0 without |
 | ✅ | search performs no classification of its own | reads the index |
@@ -229,8 +229,8 @@ There is no single rule that shipped rows must equal certified counts — assert
 |---|---|---|---|---|
 | Q Questions | 6,443 | rows carrying an `occurrences` field | 134 editorial-normalisation rows are shipped so the search index can find a question a reader half-remembers in cleaned-up form. | Those 134 must never count toward any total, never highlight in a post, and never display as Q-authored. They are identified by editorialNormalization or neverDisplayAsQ. |
 | Q Directives | 2,552 | every actionRequests string across all posts | None. Every actionRequests entry is a certified directive. | n/a |
-| Q Claims | 4,242 | postAnalysis.claims entries whose displayClass is claim | Predictions share the assertion family and the same storage, separated by claimMeta.displayClass. editorialParaphrases are stored per post and are NOT claims. | An editorial paraphrase must never be presented as Q’s literal wording. |
-| Q Predictions | 630 | postAnalysis.predictions entries | A prediction IS an assertion; the combined 4,811 figure is only ever shown labelled as combined. | n/a |
+| Q Claims | 4,221 | postAnalysis.claims entries whose displayClass is claim | Predictions share the assertion family and the same storage, separated by claimMeta.displayClass. editorialParaphrases are stored per post and are NOT claims. | An editorial paraphrase must never be presented as Q’s literal wording. |
+| Q Predictions | 595 | postAnalysis.predictions entries | A prediction IS an assertion; the combined 4,811 figure is only ever shown labelled as combined. | n/a |
 | Evidence & References | 6,590 | every item row | URLs embedded inside pasted source material exist in the data and are labelled as such. They are references a reader can follow, but they are not Q citing a source. | An embedded-in-source URL must never be presented as a Q citation. |
 | Q Entities | 9,786 | sum of per-entity mention counts | Canonical entities (1,332) and mentions (7,903) are DIFFERENT metrics, not a row-count mismatch — one entity is mentioned many times. The headline covers every resolved mention: 4,463 from the 93-entity core registry plus 3,440 from the 1,239 adjudicated-tail entities. Unresolved alias tokens are counted in neither. | An unresolved alias must never be shown as a resolved identification. |
 | Q Themes | 2,644 | sum of per-post theme assignments | Multi-label by design: 378 posts carry more than one theme, so assignments exceed posts. Legacy extractor tags are not counted. | A legacy tag must never be shown as a certified theme. |

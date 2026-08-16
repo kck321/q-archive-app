@@ -442,7 +442,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   // that stopped at 40 would keep showing the standalone COVID in #4489/#4541/#4548 as plain text.
   // 43 carries the Rachel Chandler ruling: posts.json changed again (namedEntities), so a
   // profile that stopped at 42 would keep showing RC and Ray Chandler as two strangers.
-  t('seed-current', 'SEED_VERSION is 74 (Q + Q+ + Clinton Foundation + NO NAME)', seed === 74, seed)
+  t('seed-current', 'SEED_VERSION is 75 (sentence-level Predictions audit)', seed === 75, seed)
   t('seed-gate', 'seeding is gated on SEED_VERSION', /seeded === SEED_VERSION/.test(localData), 'present')
 
   // THE GUARD THAT WOULD HAVE SAVED THREE ROUND TRIPS. Changing seeded data without bumping the
@@ -487,7 +487,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   const has = n => info.includes(String(n))
   t('ui-questions', 'sectionInfo states 6,443', has(6443), 'ok')
   t('ui-directives', 'sectionInfo states 2,552', has(2552), 'ok')
-  t('ui-claims', 'sectionInfo states 4,242', has(4242), 'ok')
+  t('ui-claims', 'sectionInfo states 4,221', has(4221), 'ok')
   t('ui-evidence', 'sectionInfo states 6,590', has(6590), 'ok')
   t('ui-entities', 'sectionInfo headlines 1,334 entities and 8,239 mentions', has(1445) && has(9786), 'ok')
   // The editable alias registry is typed by hand and its spellings are SHOWN on the entity cards,
@@ -517,10 +517,10 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
       const row = totals.match(new RegExp(`${cat}:\\s*\\{[^}]*\\}`))
       return Boolean(row) && row[0].includes(String(occ)) && row[0].includes(String(posts))
     }
-    t('headline-claims', 'Claims headline = certified 4,242 / 1,982',
+    t('headline-claims', 'Claims headline = certified 4,221 / 1,983',
       stated('claims', CANONICAL.claims.occurrences, CANONICAL.claims.posts), 'ok')
-    t('headline-predictions', 'Predictions headline = certified 630 / 520',
-      stated('predictions', CANONICAL.predictions.occurrences, 520), 'ok')
+    t('headline-predictions', 'Predictions headline = certified 595 / 490',
+      stated('predictions', CANONICAL.predictions.occurrences, CANONICAL.predictions.posts), 'ok')
     t('headline-emphasis', 'Emphasis headline = certified 3,112 / 1,357',
       stated('emphasis', CANONICAL.emphasis.occurrences, CANONICAL.emphasis.posts), 'ok')
     // 2,245 -> 2,240 posts: merging Ray Chandler into Rachel Chandler and applying RC rewrote
@@ -701,8 +701,8 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
       new Set(edges.filter(e => e.type === 'entity_code').map(e => e.from.id)).size === 32,
       new Set(edges.filter(e => e.type === 'entity_code').map(e => e.from.id)).size)
     t('rel-conclusions', 'Claim → Conclusion edges = the certified 966', bt.claim_conclusion === 966, bt.claim_conclusion)
-    t('rel-source', 'Claim → Source provided edges = the certified 438', bt.claim_source_provided === 438, bt.claim_source_provided)
-    t('rel-predictions', 'Prediction → assertion edges = the certified 630', bt.prediction_assertion === 630, bt.prediction_assertion)
+    t('rel-source', 'Claim → Source provided edges = the certified 439', bt.claim_source_provided === 439, bt.claim_source_provided)
+    t('rel-predictions', 'Prediction → assertion edges = the certified 595', bt.prediction_assertion === 595, bt.prediction_assertion)
     t('rel-unresolved', 'every queue row has an edge to its occurrence', bt.unresolved_occurrence === CANONICAL.resolution.total, bt.unresolved_occurrence)
 
     // An edge may only point at a post that exists, and the map may only count posts that exist.

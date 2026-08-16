@@ -3857,3 +3857,60 @@ Applied to the stored file too (`trump`→`Trump`, `djt`→`DJT`, `jesus`→`Jes
 **Result — live on qdrops.app:** 147/147 invariants, manifest verifies, tsc clean, full pre-deploy
 proof green, CDN parity confirmed. No seed bump: `aliases.json` is fetched at runtime, not seeded,
 and no certified artifact changed.
+
+---
+
+## 2026-08-16 — Sentence-level Predictions audit (403 records, 14 batches)
+
+**Request.** An outside sentence-level audit of Q Predictions and Claims, delivered as 14 small
+batches with a fixed end state: **595** active high-confidence Predictions.
+
+**Where Predictions actually live.** Not a standalone artifact. `audit/claims-final.json` is the
+canonical source and `apply-claims.mjs` materialises `posts.json → postAnalysis.predictions`, with
+`claimMeta` separating claim from prediction by `displayClass`. Editing `posts.json` directly would
+have been reverted by the next chain run, so the audit is a **rulings layer** under
+`audit/predictions-audit/`, merged by `apply-claims.mjs` — the same pattern the themes and entities
+owner rulings use. Re-deriving the claims artifact cannot erase it.
+
+**Identity.** Predictions carry no record id (`APP_RECORD_ID` is just the post number), so identity
+is POST_NUMBER + normalised sentence, matched per post and **consumed** once. All 403 records were
+located as exact matches before anything was applied (`check-predictions-audit-match.mjs`).
+
+**Applied.** P1 73 technical nonpredictions out (47 to Claims, 26 removed) · P2 56 arguable rows
+withdrawn to the backlog · P3 130 fragments given complete sentences · P4 68 Claims occurrences to
+66 unique Predictions · P5 28 additions · R1/R2/R3 review only, nothing applied.
+**Predictions 630 → 595. Claims 4,242 → 4,221.**
+
+**Q's wording is not rewritten.** `postAnalysis.predictions` keeps Q's literal text — it is what the
+highlighter matches and what search queries — and a new parallel `predictionSentences` array carries
+the readable sentence for 224 rows. The chip shows the sentence with `Q: <fragment>` beside it. All
+28 P5 anchors were verified verbatim in the post body first, so every addition stays highlightable.
+
+**Two defects found in my own transform, both caught by a gate rather than by reading the code:**
+- Hardcoding `isConclusion: false` on moved rows silently retired **15 certified Implied
+  Conclusions**. The attribute belongs to the row, not to the section, so it now travels with it.
+- When two occurrences collapsed to one prediction (#4 and #6 each carry a span and a longer span
+  containing it), the survivor was whichever record ran first — and the *longer* row was the
+  conclusion-bearing one. Duplicates now **merge attributes** instead of dropping them. Conclusions
+  stayed at **966**, a certified count this audit never touched.
+
+**Certified counts that moved, each with its arithmetic** (`lib/contracts.mjs`): claims
+4,242→4,221, distinct 3,245→3,256, posts 1,982→1,983, predictions 630→595 / 520→490 posts,
+checkable 1,926→1,931, sourceProvided 438→439, telegraphic 389→387. Conclusions unchanged.
+Source-boundary debt baseline claims 147→139: **6 keys removed, 0 added**, all 8 occurrences
+enumerated and all of them P4 moves — the detector did not change, the rows left the layer.
+
+**Held for review, not decided:** 91 rows (56 P2 + 22 R1 + 13 R2) in
+`audit/predictions-audit/review-backlog.md`, each with its complete sentence and why it is
+arguable. Nothing policy-dependent was silently resolved.
+
+**Proof.** Chain run twice, byte-identical. 147/147 invariants. Manifest re-certified. SEED_VERSION
+75 (posts.json gained a field — returning readers would otherwise keep the fragments). tsc clean;
+eslint unchanged on touched files (7 problems before and after). `verify-predictions-audit.mjs`
+checks all ten points of the closing audit **against the built bundle**, plus ledger completeness
+per batch. `test-prediction-sentences.mjs` proves it in a browser — and its first version passed two
+checks against an empty read, which is the "never trust a zero" trap again: the probe now returns a
+falsy value until the row renders.
+
+**Ledger:** `audit/predictions-audit/ledger.jsonl`, 403 records, batch / post / requested / actual /
+result.

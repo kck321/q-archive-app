@@ -5,7 +5,7 @@
  "baseline": {
   "questions": 89,
   "directives": 55,
-  "claims": 147,
+  "claims": 139,
   "emphasis": 0
  },
  "occurrenceBaselineFile": "audit/source-boundary-occurrences.json",

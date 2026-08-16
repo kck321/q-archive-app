@@ -16,6 +16,18 @@ export interface PostAnalysis {
   emphasis?: string[]
   /** Reviewed Q-authored text in no semantic category — rendered with a neutral treatment. */
   contextUnits?: string[]
+  /**
+   * The complete-sentence reading of a telegraphic prediction, PARALLEL to `predictions`.
+   * `null` where Q's line already stood on its own.
+   *
+   * "Pain coming." / "BOOM week ahead." / "[RR] next week [probe-not update]" are real
+   * forecasts that say nothing to a reader who does not already know the referent. The
+   * sentence is what gets displayed; `predictions` keeps Q's literal wording, which is what
+   * the highlighter matches and what search queries — a paraphrase is not in the post text
+   * and would find nothing. Never a separate population: same length, same order.
+   * From the 2026-08-16 sentence-level audit; 224 of 595 rows carry one.
+   */
+  predictionSentences?: (string | null)[]
   /** Literal rendering spans, parallel to their certified arrays. Never a separate population. */
   claimSpans?: string[]
   predictionSpans?: string[]

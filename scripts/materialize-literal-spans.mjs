@@ -91,10 +91,10 @@ const checks = [
   ['question literal spans = 2', questionLiterals === 2, questionLiterals],
   ['certified questions unchanged = 6,442', questions.filter(r => r.occurrences !== undefined).length === 6443,
     questions.filter(r => r.occurrences !== undefined).length],
-  ['claims unchanged = 4,242', counts.claims === 4242, counts.claims],
-  ['predictions unchanged = 630', counts.predictions === 630, counts.predictions],
+  ['claims unchanged = 4,221', counts.claims === 4221, counts.claims],
+  ['predictions unchanged = 595', counts.predictions === 595, counts.predictions],
   ['conclusions unchanged = 966', counts.impliedConclusions === 966, counts.impliedConclusions],
-  ['checkable unchanged = 1,926', counts.verificationHooks === 1926, counts.verificationHooks],
+  ['checkable unchanged = 1,931', counts.verificationHooks === 1931, counts.verificationHooks],
   ['every span array matches its source array', FIELDS.every(([f]) => spanCounts[f] === counts[f]), 'ok'],
 ]
 

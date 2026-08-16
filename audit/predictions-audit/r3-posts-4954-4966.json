@@ -1,0 +1,23 @@
+{
+  "phase": "R3",
+  "purpose": "Reviewed additional posts 4954 through 4966",
+  "batches": [14],
+  "expected": { "records": 13, "applied": 0, "highConfidenceAdditions": 0 },
+  "matchAgainst": "none",
+  "note": "EVIDENCE ONLY. Every one of the last thirteen drops was read and contributed zero high-confidence Predictions. Kept so the zero is a recorded finding rather than an absence — #4966's 'We will be repressed no more.' is an arguable vow and is carried in R1, not added here.",
+  "records": [
+    { "n": 1, "batch": 14, "post": 4954, "finding": "No prediction: “Shall we play a game once more?” is a question or invitation.", "why": "Questions do not assert that an event will occur.", "recommendedAddCount": 0 },
+    { "n": 2, "batch": 14, "post": 4955, "finding": "No complete prediction found.", "why": "The post contains no asserted future event or outcome.", "recommendedAddCount": 0 },
+    { "n": 3, "batch": 14, "post": 4956, "finding": "No prediction: “Are you ready to serve your country again?” is a question, followed by a directive.", "why": "Neither the question nor “Remember your oath” asserts a future event.", "recommendedAddCount": 0 },
+    { "n": 4, "batch": 14, "post": 4957, "finding": "No complete prediction found.", "why": "The post contains no asserted future event or outcome.", "recommendedAddCount": 0 },
+    { "n": 5, "batch": 14, "post": 4958, "finding": "No prediction: “Who will be surprised?” is a question.", "why": "The post asks about a future reaction but does not assert who will experience it.", "recommendedAddCount": 0 },
+    { "n": 6, "batch": 14, "post": 4959, "finding": "No complete prediction found.", "why": "The post contains no asserted future event or outcome.", "recommendedAddCount": 0 },
+    { "n": 7, "batch": 14, "post": 4960, "finding": "No complete prediction found.", "why": "The post contains no asserted future event or outcome.", "recommendedAddCount": 0 },
+    { "n": 8, "batch": 14, "post": 4961, "finding": "No prediction: “Who will put an end to the endless?” is a question.", "why": "The wording requests an answer and does not forecast an actor or event.", "recommendedAddCount": 0 },
+    { "n": 9, "batch": 14, "post": 4962, "finding": "No complete prediction found.", "why": "The post contains no asserted future event or outcome.", "recommendedAddCount": 0 },
+    { "n": 10, "batch": 14, "post": 4963, "finding": "No complete prediction found.", "why": "The post contains no asserted future event or outcome.", "recommendedAddCount": 0 },
+    { "n": 11, "batch": 14, "post": 4964, "finding": "No complete prediction found.", "why": "The post contains no asserted future event or outcome.", "recommendedAddCount": 0 },
+    { "n": 12, "batch": 14, "post": 4965, "finding": "No prediction: “In time” is a temporal fragment.", "why": "No event or outcome is identified.", "recommendedAddCount": 0 },
+    { "n": 13, "batch": 14, "post": 4966, "finding": "Arguable but not recommended: “We will be repressed no more” functions as a vow or aspiration.", "why": "It is future-tense, but its primary force is a declaration of resolve rather than an event forecast.", "recommendedAddCount": 0, "carriedIn": "R1 record 18" }
+  ]
+}
