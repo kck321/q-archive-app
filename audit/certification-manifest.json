@@ -1,5 +1,5 @@
 {
- "certifiedAt": "2026-08-16T21:50:58.045Z",
+ "certifiedAt": "2026-08-16T22:02:50.581Z",
  "sections": 8,
  "seedVersion": 75,
  "note": "Every count here is recomputed from the artifacts, never copied forward. Verify with: node scripts/certification-manifest.mjs --verify",
@@ -57,9 +57,9 @@
    "bytes": 912915
   },
   "resolution-queue.json": {
-   "sha256": "8bbac8f45a0f22ba22f01ed1dd1211b0ab86b912805ff8b414c7dcd50e176887",
-   "semanticSha256": "793f32a2154406acddcd70415b15bcacb51d2bdb3fd319e8b3ebd2cab1a05274",
-   "bytes": 119939
+   "sha256": "1dd0ecafeaae72f3d87a14e0d09458edebaaf1cc6b4e3162d61c59a10ec179de",
+   "semanticSha256": "08ba141f821c060db5c439a840e84dcc97208104fd9723394db86d652f95da1f",
+   "bytes": 122814
   },
   "relationships.json": {
    "sha256": "e10f65bf91e78fb87997d859494d95ed24360bd05064a20b46be59182bf9b5c5",

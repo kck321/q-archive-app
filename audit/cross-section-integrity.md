@@ -6,7 +6,7 @@ One question: does every certified occurrence in every section still resolve to 
 This audit validates the certified system. It reclassifies nothing and moves no count. All eight analytical sections remain frozen.
 
 
-**150 of 150 invariants pass.**
+**152 of 152 invariants pass.**
 
 
 ## 1. Frozen canonical counts
@@ -156,6 +156,8 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | every row explains why it is unresolved | ok |
 | ✅ | every row is OPEN or has an explicit status | ok |
 | ✅ | the queue declares it does not affect certified data | true |
+| ✅ | every row carries the date it entered the queue | 2 distinct dates |
+| ✅ | no row is dated in the future or before the archive was built | ok |
 | ✅ | every borderline Emphasis case is queued or owner-resolved | 31 queued + 214 resolved / 245 |
 | ✅ | every quote-boundary line is queued or owner-resolved | 10 queued + 0 resolved / 10 |
 | ✅ | the held mentions still reconcile to the certified gap | 18 held / 18 gap |

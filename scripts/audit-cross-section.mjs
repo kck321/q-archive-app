@@ -568,6 +568,19 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   t('rc-status', 'every row is OPEN or has an explicit status', rows.every(r => r.status), 'ok')
   t('rc-certified-untouched', 'the queue declares it does not affect certified data', queue.certifiedDataUnaffected === true, String(queue.certifiedDataUnaffected))
 
+  // Every row says WHEN it became a question. The queue file is rebuilt from scratch each run, so
+  // an undated row means the ledger lost an id — and the failure is silent: the row still renders,
+  // just without the one field that says how long it has been waiting.
+  const undated = rows.filter(r => !/^\d{4}-\d{2}-\d{2}$/.test(r.firstSeen ?? ''))
+  t('rc-first-seen', 'every row carries the date it entered the queue', undated.length === 0,
+    undated.length ? `${undated.length} undated, e.g. ${undated[0].id}` : `${new Set(rows.map(r => r.firstSeen)).size} distinct dates`)
+  // A date in the future, or before the project existed, means the clock was consulted when the
+  // ledger should have been.
+  const today = new Date().toISOString().slice(0, 10)
+  const impossible = rows.filter(r => r.firstSeen && (r.firstSeen > today || r.firstSeen < '2026-08-01'))
+  t('rc-first-seen-sane', 'no row is dated in the future or before the archive was built',
+    impossible.length === 0, impossible.length ? `${impossible.length}, e.g. ${impossible[0].firstSeen}` : 'ok')
+
   // Emphasis is the newest source: every borderline case must be ACCOUNTED FOR — either still
   // queued, or answered by the owner. The check compared the queue against the borderline total
   // alone, so the first four the owner ruled on ("HCQ is the standard abbreviation, not a

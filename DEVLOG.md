@@ -4038,3 +4038,40 @@ reader needs to re-seed.
 they are. 22 of them are still counted in Claims, and the Resolution Center's contract is that
 every row in it is *excluded* from its section's totals — so those 22 cannot become queue rows
 without breaking the section's own rule.
+
+---
+
+## 16 Aug 2026 — Resolution Center rows show how long they have been open
+
+**Request.** "a date on the things needing resolved of when they go into the resolutions center."
+
+**The dates were RECOVERED, not stamped.** `resolution-queue.json` is derived and rebuilt from
+scratch every run, so a date cannot live on the row — it has to be remembered outside, in
+`audit/resolution-first-seen.json`. The 105 rows already queued predate the ledger, and stamping
+them all with today would have been a lie that is impossible to detect later. Instead
+`scripts/backfill-resolution-first-seen.mjs` walks the git history of the queue file and takes, for
+each id, the earliest commit that contained it — **2,346 ids dated across the queue's whole
+history**, including rows that have since been resolved. Of the live 115: **46 open since
+2026-08-12**, **69 since 2026-08-16**.
+
+**Ids are stamped once and never re-stamped.** A row that is owner-resolved and later re-opened
+keeps its original date. Re-stamping would quietly reset the clock on the longest-open cases, which
+are precisely the ones worth seeing.
+
+**Reproducibility preserved.** The builder consults the clock only for ids it has never seen, and
+persists them immediately — a second run stamps nothing and produces a byte-identical queue file.
+Verified by building twice and diffing.
+
+**UI.** Each row carries `open today` / `open 4 days` / `open 2 months` beside its kind chip, with
+the exact date in the tooltip — the elapsed reading is what you want at a glance, the absolute date
+is what you quote when discussing the row elsewhere. `openFor()` parses as UTC on purpose:
+`new Date('2026-08-16')` is midnight UTC while `new Date()` is local, so west of Greenwich a row
+queued this morning would read "-1 days" — the off-by-a-timezone that makes a date field look
+broken on the one day it matters most.
+
+**Two new invariants** (150 → **152**): every row carries a `YYYY-MM-DD` first-seen date, and no
+row is dated in the future or before the archive was built. An undated row still renders, just
+without the field that says how long it has waited — a silent failure, so it is asserted.
+
+**Proof.** 152/152 invariants · manifest re-certified · tsc clean · verified in a browser on both
+the Source and Reference queues. Queue stays **115**; no certified count moved.

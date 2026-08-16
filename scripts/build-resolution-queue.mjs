@@ -321,6 +321,40 @@ for (const r of rows) {
 }
 console.log(`  owner notes attached        : ${notesAttached} of ${ownerNotes.size}`)
 
+// ── When did this question enter the queue? ──────────────────────────────────
+// A reader cannot tell a question raised this morning from one open since the section was
+// certified, and the two deserve different attention. This file is DERIVED and rebuilt from
+// scratch every run, so the date cannot live on the row — it has to be remembered outside.
+//
+// Ids are stamped once and never re-stamped. A row that is owner-resolved and later re-opened
+// keeps its original date: the question is as old as it is, and re-stamping would quietly reset
+// the clock on the longest-open cases, which are exactly the ones worth seeing.
+//
+// The existing rows were dated by recovering the earliest commit that contained each id
+// (scripts/backfill-resolution-first-seen.mjs), rather than by stamping them all with the day the
+// feature was added — a date that looks precise and is wrong is worse than no date.
+const SEEN_FILE = path.join(ROOT, 'audit', 'resolution-first-seen.json')
+const seenDoc = fs.existsSync(SEEN_FILE)
+  ? JSON.parse(fs.readFileSync(SEEN_FILE, 'utf8'))
+  : { note: 'When each Resolution Center row first appeared in the queue.', firstSeen: {} }
+const firstSeen = seenDoc.firstSeen ?? {}
+// Date-only, from the clock once per run. The bundle stays reproducible because a second run finds
+// every id already in the ledger and stamps nothing — the only rows that take today's date are the
+// ones genuinely arriving today.
+const today = new Date().toISOString().slice(0, 10)
+let newlySeen = 0
+for (const r of rows) {
+  if (!(r.id in firstSeen)) { firstSeen[r.id] = today; newlySeen++ }
+  r.firstSeen = firstSeen[r.id]
+}
+const byDate = {}
+for (const d of Object.values(firstSeen)) byDate[d] = (byDate[d] ?? 0) + 1
+seenDoc.firstSeen = firstSeen
+seenDoc.totalIds = Object.keys(firstSeen).length
+seenDoc.byDate = byDate
+fs.writeFileSync(SEEN_FILE, JSON.stringify(seenDoc, null, 1))
+console.log(`  first-seen dates            : ${newlySeen} new, ${Object.keys(firstSeen).length} tracked`)
+
 // Cap the shipped queue so the page stays fast; the full set stays in the audit trail.
 const byToken = {}
 for (const r of rows) byToken[r.token] = (byToken[r.token] ?? 0) + 1

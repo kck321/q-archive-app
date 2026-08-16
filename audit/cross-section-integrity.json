@@ -207,8 +207,8 @@
   }
  ],
  "totals": {
-  "invariants": 150,
-  "passed": 150,
+  "invariants": 152,
+  "passed": 152,
   "failed": 0
  },
  "results": [
@@ -897,6 +897,20 @@
    "description": "the queue declares it does not affect certified data",
    "pass": true,
    "detail": "true"
+  },
+  {
+   "group": "10. Resolution Center completeness",
+   "id": "rc-first-seen",
+   "description": "every row carries the date it entered the queue",
+   "pass": true,
+   "detail": "2 distinct dates"
+  },
+  {
+   "group": "10. Resolution Center completeness",
+   "id": "rc-first-seen-sane",
+   "description": "no row is dated in the future or before the archive was built",
+   "pass": true,
+   "detail": "ok"
   },
   {
    "group": "10. Resolution Center completeness",

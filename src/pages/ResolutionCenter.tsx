@@ -19,6 +19,26 @@ const STATUS_STYLE: Record<string, string> = {
   DISPUTED: 'bg-rose-500/15 text-rose-300 border-rose-500/40',
 }
 
+/**
+ * How long a question has been open, in the coarsest unit that is still honest.
+ *
+ * Parsed as UTC. `new Date('2026-08-16')` is midnight UTC while `new Date()` is local, so west of
+ * Greenwich a row queued this morning reads as "-1 days" — the classic off-by-a-timezone that
+ * makes a date field look broken on the one day it matters most.
+ */
+function openFor(firstSeen: string): string {
+  const then = Date.parse(`${firstSeen}T00:00:00Z`)
+  if (Number.isNaN(then)) return firstSeen
+  const now = new Date()
+  const todayUTC = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate())
+  const days = Math.max(0, Math.round((todayUTC - then) / 86400000))
+  if (days === 0) return 'today'
+  if (days === 1) return '1 day'
+  if (days < 31) return `${days} days`
+  const months = Math.floor(days / 30)
+  return months === 1 ? '1 month' : `${months} months`
+}
+
 function SuggestForm({ item, onDone }: { item: QueueItem; onDone: () => void }) {
   const [proposed, setProposed] = useState('')
   const [reasoning, setReasoning] = useState('')
@@ -336,6 +356,16 @@ export default function ResolutionCenter() {
                   <span className="text-[10px] px-1.5 py-0.5 rounded border border-q-border text-gray-500 uppercase tracking-wide">
                     {guideFor(item.kind).label}
                   </span>
+                  {/* How long this has been an open question. A row raised this morning and one
+                      open since the section was certified deserve different attention, and the
+                      queue gave no way to tell them apart. Absolute date in the tooltip because
+                      "35 days" is the useful reading at a glance and the exact day is what you
+                      quote when discussing the row elsewhere. */}
+                  {item.firstSeen && (
+                    <span className="text-[10px] text-gray-500" title={`Entered the Resolution Center on ${item.firstSeen}`}>
+                      open {openFor(item.firstSeen)}
+                    </span>
+                  )}
                   {/* An occurrence-specific queue needs occurrence-specific links, or a
                       contributor discussing one item elsewhere can only say "somewhere in BO". */}
                   {sent[item.id] && (

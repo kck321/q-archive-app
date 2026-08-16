@@ -36,6 +36,14 @@ export interface QueueItem {
    */
   ownerNote?: string
   ownerNotedOn?: string
+  /**
+   * The date this question entered the Resolution Center, as YYYY-MM-DD.
+   *
+   * Stamped once and never re-stamped, so a row that is resolved and later re-opened keeps its
+   * original date — the question is as old as it is. The queue file is rebuilt from scratch on
+   * every run, so the dates live in audit/resolution-first-seen.json rather than on the row.
+   */
+  firstSeen?: string
 }
 
 export interface QueueData {
