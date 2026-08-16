@@ -1,0 +1,28 @@
+{
+ "ranAt": "2026-08-16T21:27:53.855Z",
+ "deriveSteps": [
+  "audit-evidence.mjs",
+  "audit-entities.mjs",
+  "adjudicate-entities-tail.mjs",
+  "adjudicate-entities-other.mjs",
+  "adjudicate-entities-lowconf.mjs",
+  "resolve-entity-context.mjs",
+  "audit-themes.mjs",
+  "audit-codes.mjs",
+  "adjudicate-codes.mjs",
+  "audit-emphasis.mjs"
+ ],
+ "changedArtifacts": [
+  "codes-adjudicated.json",
+  "codes-audit.json",
+  "emphasis-audit.json",
+  "emphasis-borderline.json",
+  "entities-audit.json",
+  "entities-lowconf-adjudicated.json",
+  "entities-other-adjudicated.json",
+  "entities-tail-adjudicated.json",
+  "themes-audit.json"
+ ],
+ "certifiedCountsReproduced": false,
+ "note": "A changed artifact is not a defect and not an improvement — it is a re-adjudication that has not been ruled on. Adopting it re-certifies the section."
+}

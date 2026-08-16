@@ -61,6 +61,46 @@
 //                              leaves contextUnits empty on all 4,966 posts, which is exactly how
 //                              the quota-killed export of 2026-08-14 corrupted the bundle
 //
+// A DERIVE STEP IS A RE-CERTIFICATION, AND A DEPLOY MAY NOT PERFORM ONE (seed 76, 2026-08-16)
+// ──────────────────────────────────────────────────────────────────────────────────────────
+// The note above already knew derive steps were dangerous on a BUILT bundle. It was still wrong
+// about the other half: they are not safe after a dump either, and the reason has nothing to do
+// with the input.
+//
+// A derive step re-runs TODAY's detector to produce a certified artifact. The artifacts under
+// audit/ were produced by the detector as it stood the day each section was certified. So every
+// export was quietly re-certifying every section against a codebase that had moved underneath it.
+// That is not "picking up new input" — it is an unreviewed re-adjudication inside a deploy.
+//
+// It surfaced on 2026-08-16. audit/entities-audit.json was certified 2026-08-12. The quoted-block
+// boundary fix landed in lib/quotedBlocks.mjs at seed 72, 2026-08-16. Re-deriving flipped 18
+// entity occurrences from "inside quoted source" to "Q-authored":
+//
+//     certified   9,786 mentions      re-derived   9,804      (+18, zero removed)
+//
+// Proven by substitution, not inferred: with the pre-seed-72 quotedBlocks.mjs restored,
+// audit-entities.mjs reproduces the certified artifact exactly — 0 occurrences added, 0 removed.
+// The full list is audit/entities-quote-boundary-pending.json, and it is a MIXED set that only the
+// owner can rule on. #1939 "[19] phone calls today - DC/UK/AUS panic?" and #2208 "DECLAS FISA >>
+// [RR] FORCE >> RED LINE" are unmistakably Q's own lines that the old detector swallowed — exactly
+// the over-extension KNOWN_DEBT names. But #1553, #1881 and #3089 are pasted news copy, where the
+// OLD boundary was right and the new one admits quoted source as Q-authored. A deploy cannot split
+// that, and contracts.mjs already rules it: the adjudicated dataset outranks the detector, and a
+// source-material re-audit is a prerequisite, not a side effect.
+//
+// apply-entities.mjs refused to write, which is the gate working. But the only way past it was
+// SKIP_EXPORT=1, so the protection had made the ordinary pipeline unrunnable.
+//
+// THE DEPLOY PATH NOW RUNS APPLY STEPS ONLY. Re-derivation is deliberate and opt-in:
+//
+//     node scripts/rederive-certified.mjs          report what would change, adopt nothing
+//     node scripts/rederive-certified.mjs --adopt  after an owner ruling, with re-certification
+//
+// The one protection the derive steps incidentally provided is kept and made explicit instead:
+// if the dump brings CHANGED POST TEXT, apply-only would rebuild every certified section against
+// text that no longer says what it said when the section was certified, and every count would
+// still reconcile. lib/postTextFingerprint.mjs stops the export in that case and names the drops.
+//
 // Every apply step is idempotent: running them twice produces the same bundle.
 export const CHAIN = [
   { step: 'backfill-analysis.mjs', kind: 'apply' },
@@ -96,5 +136,14 @@ export const CHAIN = [
   { step: 'build-glossary.mjs', kind: 'apply' },
 ]
 
+/**
+ * Every step, in order. This is the RE-CERTIFICATION chain, not the deploy chain — the only
+ * caller is rederive-certified.mjs, which runs it in an isolated copy and reports the deltas.
+ */
 export const CHAIN_STEPS = CHAIN.map(c => c.step)
+
+/** The deploy chain. export-firestore.mjs and rebuild-bundle.mjs both run exactly this. */
 export const APPLY_STEPS = CHAIN.filter(c => c.kind === 'apply').map(c => c.step)
+
+/** The re-certification steps, kept out of the deploy path. See the note above. */
+export const DERIVE_STEPS = CHAIN.filter(c => c.kind === 'derive').map(c => c.step)

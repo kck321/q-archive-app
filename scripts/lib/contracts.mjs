@@ -50,6 +50,19 @@ export const CANONICAL = {
     // 1,335 -> 1,334 on 2026-08-14: the owner ruled Ray Chandler and Rachel Chandler one person
     // (aka RC), so two certified rows became one. detectedCanonical stays 1,332 — a merge changes
     // how many rows ship, not how many the passes found.
+    // HELD AT 9,786 — not because the number is convenient, because the 18 that would move it
+    // have not been ruled on. audit/entities-audit.json was certified 2026-08-12; the
+    // quoted-block boundary fix landed at seed 72 on 2026-08-16. Re-deriving with the current
+    // detector flips 18 occurrences from "inside quoted source" to "Q-authored" and produces
+    // 9,804. Proven by substitution: with the pre-seed-72 quotedBlocks.mjs, audit-entities.mjs
+    // reproduces the certified artifact exactly, 0 added and 0 removed.
+    //
+    // The 18 are a MIXED set and cannot be ruled in bulk — 11 are pasted news copy the old
+    // boundary correctly excluded, 7 are Q's own lines it wrongly swallowed (#1939 and #2208
+    // are unmistakable). Enumerated with line and character offsets in
+    // audit/entities-quote-boundary-pending.json. KNOWN_DEBT below already governs this: the
+    // adjudicated dataset outranks the detector, and a source-material re-audit is a
+    // prerequisite, not a side effect of a deploy.
     canonical: 1445, detectedCanonical: 1331, ownerRulings: 118, ownerMerges: 1,
     /** Every resolved mention across all 1,334 certified entities. The headline figure. */
     // 8,227 -> 8,239: the RC alias ruling resolved 12 occurrences to Rachel Chandler. The merge

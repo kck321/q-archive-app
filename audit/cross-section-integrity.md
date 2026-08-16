@@ -163,7 +163,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | | Invariant | Observed |
 |---|---|---|
 | ✅ | no certified artifact CHANGED CONTENT since the manifest | ok |
-| ✅ | byte-level re-serialisation reported separately, not as drift | none |
+| ✅ | byte-level re-serialisation reported separately, not as drift | posts.json re-serialised by the export chain |
 | ✅ | every certified artifact is on disk | 10/10 |
 | ✅ | the editorial write guard is a shared module | lib/certifiedWrite.mjs |
 | ✅ | the guard has a negative test | test-certified-write-guard.mjs |

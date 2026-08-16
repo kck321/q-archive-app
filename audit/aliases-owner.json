@@ -1,0 +1,18 @@
+{
+ "note": "The owner-curated editable alias registry — canonical. public/data/aliases.json is a DERIVED CACHE that export-firestore.mjs builds by overlaying this file on the Firestore app/aliases document.",
+ "why": "Firestore used to be the source of truth for these groups, and scripts/add-alias.mjs wrote to Firestore and to public/data/aliases.json together. The deployed firestore.rules (12 Aug 2026) deny every write outside feedback/create, so the Firestore copy has been frozen since then while the repo copy went on being corrected. The two disagree, and the disagreement is not cosmetic: Firestore still holds 'jesus christ', 'jesus', 'trump', 'djt' and 'united states of america' all-lowercase, and has no 'rachel chandler' group at all. Cross-section invariant 9 forbids a stored all-lowercase alias, because the archive renders the alias as Q wrote it.",
+ "howItSurfaced": "Seed 75 shipped through SKIP_EXPORT=1, so the corrected file on disk was published and the stale dump never ran. The first ordinary export after that overwrote all three groups from Firestore and invariant 9 failed. Restoring Firestore as the writer is not available — the rules deny it and re-opening them for one client is a bigger change than this is worth. So the repo copy becomes canonical, which is what it has actually been since 12 August.",
+ "precedence": "Per canonical key, this file REPLACES the Firestore group outright rather than unioning spellings — it represents the corrected, complete group. Keys present only in Firestore are kept. Keys present only here are added.",
+ "recordedFrom": "the seed-75 production bundle, 2026-08-16",
+ "groups": {
+  "anthony weiner": ["Anthony Wiener", "Wiener", "Weiner"],
+  "hillary clinton": ["HRC", "Hillary"],
+  "potus": ["4,10,20", "Q+", "Donald J. Trump", "Donald", "Trump", "DJT"],
+  "usa": ["US", "United States", "United States of America"],
+  "lord": ["God", "Jesus Christ", "Jesus"],
+  "epstein": ["Jeffrey Epstein"],
+  "obama": ["Barack", "HUSSEIN", "Barack Hussein Obama", "Barry", "Barack Obama", "Barack H. Obama", "Renegade"],
+  "rothschild": ["Rothschilds", "Roth"],
+  "rachel chandler": ["Ray Chandler", "Ray.Chandler", "RC"]
+ }
+}

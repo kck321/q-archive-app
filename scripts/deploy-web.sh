@@ -29,6 +29,13 @@ SITE_DOMAIN="${SITE_DOMAIN:-qdrops.app}"
 # aliases. Skipping this ships a site that silently lacks your latest analysis work.
 # SKIP_EXPORT=1 publishes the bundle already on disk instead of re-dumping Firestore.
 #
+# SKIP_EXPORT IS A QUOTA ESCAPE HATCH, NOT A WORKFLOW. Seed 75 shipped through it because the
+# export re-derived audit/entities-audit.json with a detector that had moved since the section was
+# certified, produced 9,804 entity mentions against 9,786, and apply-entities.mjs refused to write.
+# That is fixed at the source — the deploy chain applies certified artifacts and no longer
+# re-derives them (scripts/lib/chainSteps.mjs). If the ordinary export cannot run again, treat it
+# as the bug rather than reaching for this flag.
+#
 # Only safe when the local bundle is known current — which the certification manifest can prove.
 # The export exists to catch a STALE bundle; when `certification-manifest.mjs --verify` passes,
 # the bundle matches the certified state by definition and re-dumping adds nothing. Firestore's
