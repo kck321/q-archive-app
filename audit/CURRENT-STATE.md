@@ -5,7 +5,7 @@ Everything else under `audit/` that looks like a handoff is HISTORY. Do not act 
 ## Production
 
     seed 75 — https://qdrops.app
-    queue 105   Reference 30 · Subject 16 · Notation 28 · Device 31
+    queue 115   Reference 30 · Subject 16 · Notation 28 · Device 31 · Source 10
     entities 1,445   certified mentions 9,786   rendered 9,786 (difference 0)
     Q Directives 2,552 raw · 2,500 distinct (post,text) · 1,464 posts
     post text 1,128,312 chars
@@ -33,12 +33,17 @@ Everything else under `audit/` that looks like a handoff is HISTORY. Do not act 
 
 ## Open work
 
-- **18 entity occurrences await an owner ruling** — `audit/entities-quote-boundary-pending.json`.
-  They are the whole difference between the certified 9,786 mentions and the 9,804 a re-derivation
-  produces. Nothing in the drops changed; `lib/quotedBlocks.mjs` did, at seed 72. 11 of the 18 are
-  pasted news copy the OLD boundary correctly excluded (#1553, #1881, #2587 line 2, #3089); 7 are
-  Q's own lines it wrongly swallowed (#1939 "[19] phone calls today - DC/UK/AUS panic?", #2208
-  "DECLAS FISA >> [RR] FORCE >> RED LINE", #2587 lines 6-9). Entities stays at 9,786 until ruled.
+- **10 Source rows are live in the Resolution Center** — `/resolve?kind=source_reference`,
+  canonical file `audit/entities-quote-boundary-pending.json`. They hold the 18 entity mentions
+  that are the whole difference between the certified 9,786 and the 9,804 a re-derivation produces.
+  Nothing in the drops changed; `lib/quotedBlocks.mjs` did, at seed 72. **The unit is the LINE, not
+  the mention** — all five mentions on #1553 line 0 stand or fall on one judgement. 4 lines (11
+  mentions) are pasted news copy the OLD boundary correctly excluded; 6 lines (7 mentions) are Q's
+  own words it wrongly swallowed (#1939 "[19] phone calls today - DC/UK/AUS panic?", #2208 "DECLAS
+  FISA >> [RR] FORCE >> RED LINE", #2587 lines 6-9). Each row carries the reading the text supports
+  in `reading` / `readingNote`; none is applied. Entities stays at 9,786 until ruled.
+  Ruling one is an owner resolution: add its id to `audit/resolution-owner-resolved.json`, then
+  materialise the accepted mentions through `apply-entities.mjs`.
 
 - **91 Predictions rows await an owner ruling** — `audit/predictions-audit/review-backlog.md`.
   56 were published Predictions and are now withdrawn (maxims, commemorative pledges, prayers,

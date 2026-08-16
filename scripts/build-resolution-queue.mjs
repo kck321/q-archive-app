@@ -194,6 +194,44 @@ try {
   })
 } catch { /* emphasis audit is optional */ }
 
+// ── Source attribution: lines whose authorship the two detectors disagree about ──
+// The one kind of unresolved item that came from the TOOLING rather than from the corpus.
+// audit/entities-audit.json was certified 2026-08-12; the quoted-block boundary fix landed in
+// lib/quotedBlocks.mjs at seed 72. Ten lines changed side — the old detector read them as pasted
+// source, the current one reads them as Q's own — and the 18 entity mentions riding on them are
+// the whole difference between the certified 9,786 and the 9,804 a re-derivation produces.
+//
+// THE UNIT IS THE LINE, NOT THE MENTION. All five mentions on #1553 line 0 stand or fall on one
+// judgement: is that line Q writing, or Q pasting? Queuing 18 occurrence rows would ask the same
+// question five times and invite five different answers to it.
+//
+// These are queued rather than ruled because the set is genuinely mixed, and a deploy may not
+// split it: #1939's "[19] phone calls today - DC/UK/AUS panic?" is unmistakably Q, while #1553's
+// line is a Fox News paragraph. Certified data is untouched either way — the mentions are excluded
+// from Entities today and stay excluded until the owner rules.
+try {
+  const qb = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/entities-quote-boundary-pending.json'), 'utf8'))
+  for (const r of qb.rows) {
+    rows.push({
+      id: r.id,
+      kind: 'source_reference',
+      // The entities riding on the line, so the reader sees what the answer decides.
+      token: r.mentions.map(m => m.sourceText).join(', ').slice(0, 80),
+      postNum: r.postNum,
+      postId: r.postId,
+      sourceSpan: r.lineText.slice(0, 300),
+      context: r.context,
+      lineIndex: r.line,
+      charIndex: r.mentions[0]?.char ?? -1,
+      candidates: ["Q's own words", 'Pasted source material'],
+      whyUnresolved: `The quoted-block detector changed at seed 72 and this line changed side — it was read as ${r.oldReason}, and is now read as Q-authored. ${r.mentionCount} entity mention${r.mentionCount === 1 ? '' : 's'} (${r.mentions.map(m => m.canonical).join(', ')}) depend${r.mentionCount === 1 ? 's' : ''} on the answer, and ${r.mentionCount === 1 ? 'is' : 'are'} excluded from the certified count until it is settled.`,
+      status: 'OPEN',
+      provenance: 'Seed-76 pipeline repair — the certified entity audit predates the seed-72 quoted-block boundary fix; audit/entities-quote-boundary-pending.json',
+      deepLink: `/post/${r.postId}`,
+    })
+  }
+} catch { /* the pending file is optional; the other four sources stand on their own */ }
+
 // ── Owner resolutions ────────────────────────────────────────────────────────
 // A case the owner has settled must LEAVE the queue. This file is derived, so the resolution has
 // to live outside it or the next rebuild puts the row straight back. Same overlay pattern as the

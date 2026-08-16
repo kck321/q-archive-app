@@ -15,6 +15,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { clean, key } from './lib/segment.mjs'
+import { CANONICAL } from './lib/contracts.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -264,7 +265,10 @@ const checks = [
   ['Prediction ↔ Source provided reported separately', (byType.prediction_source_provided ?? 0) > 0, byType.prediction_source_provided ?? 0],
   ['Prediction ↔ assertion family = 595', byType.prediction_assertion === 595, byType.prediction_assertion ?? 0],
   // 2,245 -> 2,233: the RC alias ruling answered 12 queued rows (#2 excluded, still open).
-  ['unresolved edges = the 105 queue rows', byType.unresolved_occurrence === 105, byType.unresolved_occurrence ?? 0],
+  // Read from the contract, never copied. This gate held a hardcoded 105 and blocked the queue
+  // going to 115 — a certified count in two places is a certified count that goes stale in one.
+  [`unresolved edges = the ${CANONICAL.resolution.total} queue rows`,
+    byType.unresolved_occurrence === CANONICAL.resolution.total, byType.unresolved_occurrence ?? 0],
 ]
 
 console.log('\nCROSS-SECTION RELATIONSHIPS\n')

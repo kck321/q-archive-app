@@ -57,11 +57,12 @@
    "posts": 1357
   },
   "resolution": {
-   "total": 105,
+   "total": 115,
    "entity": 30,
    "theme": 16,
    "code": 28,
-   "classification": 31
+   "classification": 31,
+   "source_reference": 10
   }
  },
  "contracts": [
@@ -160,7 +161,7 @@
    "id": "resolution",
    "label": "Resolution Center",
    "artifact": "resolution-queue.json",
-   "certifiedCount": 105,
+   "certifiedCount": 115,
    "mayCoexist": "Every row here is DELIBERATELY excluded from its section’s certified totals. That exclusion is the point of the section, not a gap in it.",
    "neverDisplayed": "A community suggestion must never alter certified data without re-entering audit → adjudication → materialise → QA → apply → deploy.",
    "countedBy": "every queue row",
@@ -206,8 +207,8 @@
   }
  ],
  "totals": {
-  "invariants": 147,
-  "passed": 147,
+  "invariants": 150,
+  "passed": 150,
   "failed": 0
  },
  "results": [
@@ -342,7 +343,7 @@
    "id": "resolution-total",
    "description": "Resolution Center = 2,527",
    "pass": true,
-   "detail": "105"
+   "detail": "115"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -905,6 +906,27 @@
    "detail": "31 queued + 214 resolved / 245"
   },
   {
+   "group": "10. Resolution Center completeness",
+   "id": "rc-source-complete",
+   "description": "every quote-boundary line is queued or owner-resolved",
+   "pass": true,
+   "detail": "10 queued + 0 resolved / 10"
+  },
+  {
+   "group": "10. Resolution Center completeness",
+   "id": "rc-source-mentions",
+   "description": "the held mentions still reconcile to the certified gap",
+   "pass": true,
+   "detail": "18 held / 18 gap"
+  },
+  {
+   "group": "10. Resolution Center completeness",
+   "id": "rc-source-excluded",
+   "description": "none of the held mentions is counted in Entities",
+   "pass": true,
+   "detail": "9786"
+  },
+  {
    "group": "11. Frozen-section mutation",
    "id": "hash-stable",
    "description": "no certified artifact CHANGED CONTENT since the manifest",
@@ -916,7 +938,7 @@
    "id": "hash-reserialised",
    "description": "byte-level re-serialisation reported separately, not as drift",
    "pass": true,
-   "detail": "posts.json re-serialised by the export chain"
+   "detail": "none"
   },
   {
    "group": "11. Frozen-section mutation",
@@ -1042,7 +1064,7 @@
    "id": "rel-unresolved",
    "description": "every queue row has an edge to its occurrence",
    "pass": true,
-   "detail": "105"
+   "detail": "115"
   },
   {
    "group": "12. Cross-section relationships",
@@ -1189,7 +1211,7 @@
    "id": "search-unresolved",
    "description": "indexed unresolved = the 2,527 queue rows",
    "pass": true,
-   "detail": "105"
+   "detail": "115"
   },
   {
    "group": "13. Global search",

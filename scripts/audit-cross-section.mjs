@@ -581,6 +581,29 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     : 0
   t('rc-emphasis-complete', 'every borderline Emphasis case is queued or owner-resolved',
     emphQueued + emphResolved === borderline.count, `${emphQueued} queued + ${emphResolved} resolved / ${borderline.count}`)
+
+  // Same completeness rule for Source attribution, and one more besides. These rows exist because
+  // 18 entity mentions are held OUT of the certified count pending a ruling, so the queue and the
+  // held population have to agree: if a line quietly left the queue without being ruled, its
+  // mentions would be excluded from Entities with nothing left saying why.
+  const srcQueued = rows.filter(r => r.kind === 'source_reference')
+  const pendingFile = path.join(OUT, 'entities-quote-boundary-pending.json')
+  if (fs.existsSync(pendingFile)) {
+    const pending = JSON.parse(fs.readFileSync(pendingFile, 'utf8'))
+    const srcResolved = fs.existsSync(resolvedFile)
+      ? JSON.parse(fs.readFileSync(resolvedFile, 'utf8')).resolved.filter(r => String(r.id).startsWith('srcref-')).length
+      : 0
+    t('rc-source-complete', 'every quote-boundary line is queued or owner-resolved',
+      srcQueued.length + srcResolved === pending.rows.length,
+      `${srcQueued.length} queued + ${srcResolved} resolved / ${pending.rows.length}`)
+    const heldMentions = pending.rows.reduce((n, r) => n + r.mentionCount, 0)
+    t('rc-source-mentions', 'the held mentions still reconcile to the certified gap',
+      heldMentions === pending.rederivedMentions - pending.certifiedMentions,
+      `${heldMentions} held / ${pending.rederivedMentions - pending.certifiedMentions} gap`)
+    // The point of the section: a queued row is excluded from its section's certified totals.
+    t('rc-source-excluded', 'none of the held mentions is counted in Entities',
+      entities.totals.mentions === CANONICAL.entities.mentions, `${entities.totals.mentions}`)
+  }
 }
 
 // ── 11. Frozen-section mutation check ────────────────────────────────────────

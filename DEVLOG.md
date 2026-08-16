@@ -3986,3 +3986,55 @@ queue against a live 1,445 / 9,786 / 105 (`code` had gone 29 → 28).
 
 **Port 5173:** nothing was listening and no vite/q-app node process exists — the stale server had
 already exited. Nothing to stop.
+
+---
+
+## 16 Aug 2026 — The quote-boundary rows go into the Resolution Center
+
+**Request.** "can we put the ones needing review in the resolution center" — the 18 entity
+occurrences held back by the pipeline repair above.
+
+**They went in as 10 rows, not 18.** The question these rows ask is *"is this LINE Q writing, or Q
+pasting something he is quoting?"* — and all five mentions on #1553 line 0 stand or fall on one
+judgement. Queuing 18 occurrence rows would have asked the same question five times and invited
+five different answers to it. The unit is the line; each row carries the mentions riding on it and
+says how many are held out of the count.
+
+**Kind: `source_reference`.** It had been declared in the `kinds` array since the hub was built —
+"every kind the hub will ever hold, declared now so the filters exist before the sections that
+populate them" — and never populated. Its guide text, written speculatively, asked "what source is
+being pointed at here?" The rows that actually arrived ask the prior question, so the guide now
+asks whose words the line is, with `Q's own words` / `Pasted source material` as the two choices.
+
+**A recount caught by the project's own rule.** The first generator re-matched every alias on every
+flipped line and produced **20** against a certified delta of **18** — "Huber" matches twice on
+#1553 line 0 and the audit records one. That is exactly `NEVER_RECOUNT_RULE`. The population is now
+read from the audit's own mention rows and attributed to lines in document order: **18/18 placed
+onto 10 lines**, `pasted_source` 11 · `q_authored` 7.
+
+**Two hardcoded copies of a certified count.** `build-relationships.mjs` and `build-search-index.mjs`
+each froze `105` inline, so both refused to write when the queue went to 115 — a certified count in
+two places is a certified count that goes stale in one. Both now read
+`CANONICAL.resolution.total`.
+
+**Three new invariants** (147 → **150**), all in group 10: every quote-boundary line is queued or
+owner-resolved; the held mentions still reconcile to the certified gap (18 = 9,804 − 9,786); and
+none of the held mentions is counted in Entities. The last one is the section's whole contract —
+a queued row is deliberately excluded from its section's totals — asserted rather than assumed.
+
+**Verified at the layer the reader sees.** `scripts/test-source-attribution-queue.mjs` drives a
+browser: the chip renders, is enabled, shows 10, asks the attribution question, filters to 10 rows,
+every row deep-links to a real drop, and the page states the mentions are held out of the count.
+The `source_reference` chip had never once been rendered with a non-zero count before this, so a
+number in the JSON proved nothing about the page.
+
+**Proof.** `resolution` 105 → **115** (`entity` 30 · `theme` 16 · `code` 28 · `classification` 31 ·
+`source_reference` 10). Entities unchanged at **1,445 / 9,786 / 9,786**; predictions **595**; claims
+**4,221**; post text **1,128,312** chars. **150/150** invariants · manifest re-certified · tsc
+clean. SEED_VERSION stays **75** — `resolution-queue.json` is fetched, not seeded, so no returning
+reader needs to re-seed.
+
+**Held, unchanged:** the 91 Prediction rows in `audit/predictions-audit/review-backlog.md` stay as
+they are. 22 of them are still counted in Claims, and the Resolution Center's contract is that
+every row in it is *excluded* from its section's totals — so those 22 cannot become queue rows
+without breaking the section's own rule.

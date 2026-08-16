@@ -6,7 +6,7 @@ One question: does every certified occurrence in every section still resolve to 
 This audit validates the certified system. It reclassifies nothing and moves no count. All eight analytical sections remain frozen.
 
 
-**147 of 147 invariants pass.**
+**150 of 150 invariants pass.**
 
 
 ## 1. Frozen canonical counts
@@ -31,7 +31,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | Themes = 2,393 assignments | 2644 |
 | ✅ | Codes = 1,949 occurrences | 1949 |
 | ✅ | Emphasis = 3,113 occurrences | 3112 |
-| ✅ | Resolution Center = 2,527 | 105 |
+| ✅ | Resolution Center = 2,527 | 115 |
 | ✅ | Resolution entity = 30 | 30 |
 | ✅ | Resolution theme = 16 | 16 |
 | ✅ | Resolution code = 28 | 28 |
@@ -157,13 +157,16 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | every row is OPEN or has an explicit status | ok |
 | ✅ | the queue declares it does not affect certified data | true |
 | ✅ | every borderline Emphasis case is queued or owner-resolved | 31 queued + 214 resolved / 245 |
+| ✅ | every quote-boundary line is queued or owner-resolved | 10 queued + 0 resolved / 10 |
+| ✅ | the held mentions still reconcile to the certified gap | 18 held / 18 gap |
+| ✅ | none of the held mentions is counted in Entities | 9786 |
 
 ## 11. Frozen-section mutation
 
 | | Invariant | Observed |
 |---|---|---|
 | ✅ | no certified artifact CHANGED CONTENT since the manifest | ok |
-| ✅ | byte-level re-serialisation reported separately, not as drift | posts.json re-serialised by the export chain |
+| ✅ | byte-level re-serialisation reported separately, not as drift | none |
 | ✅ | every certified artifact is on disk | 10/10 |
 | ✅ | the editorial write guard is a shared module | lib/certifiedWrite.mjs |
 | ✅ | the guard has a negative test | test-certified-write-guard.mjs |
@@ -186,7 +189,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | Claim → Conclusion edges = the certified 966 | 966 |
 | ✅ | Claim → Source provided edges = the certified 439 | 439 |
 | ✅ | Prediction → assertion edges = the certified 595 | 595 |
-| ✅ | every queue row has an edge to its occurrence | 105 |
+| ✅ | every queue row has an edge to its occurrence | 115 |
 | ✅ | every relationship belongs to a real post | 0 orphaned |
 | ✅ | analysis map totals reconcile with certified Questions | 6443 |
 | ✅ | analysis map totals reconcile with certified Directives | 2552 |
@@ -212,7 +215,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | indexed Themes = certified 2,395 | 2644 |
 | ✅ | indexed Codes = certified 739 distinct | 739 |
 | ✅ | indexed Emphasis = certified 3,113 | 3112 |
-| ✅ | indexed unresolved = the 2,527 queue rows | 105 |
+| ✅ | indexed unresolved = the 2,527 queue rows | 115 |
 | ✅ | every editorial row is flagged not-Q-authored | 0 |
 | ✅ | no Q-authored row is flagged editorial | 0 |
 | ✅ | the results page labels editorial rows before their text | labelled |
@@ -236,7 +239,7 @@ There is no single rule that shipped rows must equal certified counts — assert
 | Q Themes | 2,644 | sum of per-post theme assignments | Multi-label by design: 378 posts carry more than one theme, so assignments exceed posts. Legacy extractor tags are not counted. | A legacy tag must never be shown as a certified theme. |
 | Codes & Brackets | 1,949 | sum of per-code recurrence counts | Detected as a code does not mean decoded: 734 of 739 ship with no interpretation, which is the honest state. | An undecoded code must never be shown with an invented meaning. |
 | Q Emphasis | 3,112 | every occurrence row | 245 arguable devices are held in the Resolution Center and counted in neither direction. | A queued borderline case must never appear as certified emphasis. |
-| Resolution Center | 105 | every queue row | Every row here is DELIBERATELY excluded from its section’s certified totals. That exclusion is the point of the section, not a gap in it. | A community suggestion must never alter certified data without re-entering audit → adjudication → materialise → QA → apply → deploy. |
+| Resolution Center | 115 | every queue row | Every row here is DELIBERATELY excluded from its section’s certified totals. That exclusion is the point of the section, not a gap in it. | A community suggestion must never alter certified data without re-entering audit → adjudication → materialise → QA → apply → deploy. |
 
 ## Overlap matrix
 

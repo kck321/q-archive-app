@@ -18,6 +18,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { key } from './lib/segment.mjs'
+import { CANONICAL } from './lib/contracts.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -190,7 +191,9 @@ const checks = [
   ['Themes indexed = 2,644', bySection.themes === 2644, bySection.themes],
   ['Codes indexed = 739', bySection.codes === 739, bySection.codes],
   ['Emphasis indexed = 3,112', bySection.emphasis === 3112, bySection.emphasis],
-  ['Unresolved indexed = 105', bySection.unresolved === 105, bySection.unresolved],
+  // Read from the contract, never copied — see the same fix in build-relationships.mjs.
+  [`Unresolved indexed = ${CANONICAL.resolution.total.toLocaleString()}`,
+    bySection.unresolved === CANONICAL.resolution.total, bySection.unresolved],
   // 1,393: two lines that were editorial paraphrases became certified Claims in the 2026-08-13
   // owner adjudication, and a line cannot be both Q's own wording and a paraphrase of it.
   ['editorial rows = 134 normalisations + 1,259 paraphrases', bySection.editorial === 1393, bySection.editorial],

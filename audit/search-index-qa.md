@@ -3,7 +3,7 @@
 Search indexes the certified datasets and their existing metadata. It performs no classification of its own, and it duplicates no post text.
 
 
-**29,839 records.**
+**29,849 records.**
 
 
 | Section | Records |
@@ -18,7 +18,7 @@ Search indexes the certified datasets and their existing metadata. It performs n
 | editorial | 1,393 |
 | codes | 739 |
 | predictions | 595 |
-| unresolved | 105 |
+| unresolved | 115 |
 
 ## QA
 
@@ -33,7 +33,7 @@ Search indexes the certified datasets and their existing metadata. It performs n
 | ✅ | Themes indexed = 2,644 | 2644 |
 | ✅ | Codes indexed = 739 | 739 |
 | ✅ | Emphasis indexed = 3,112 | 3112 |
-| ✅ | Unresolved indexed = 105 | 105 |
+| ✅ | Unresolved indexed = 115 | 115 |
 | ✅ | editorial rows = 134 normalisations + 1,259 paraphrases | 1393 |
 | ✅ | every editorial row is flagged not-Q-authored | 0 |
 | ✅ | no Q-authored row is flagged editorial | 0 |

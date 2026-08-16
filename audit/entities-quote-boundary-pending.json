@@ -1,107 +1,323 @@
 {
- "note": "The 18 entity occurrences that separate the certified 9,786 from the 9,804 a re-derivation produces. NOT applied, NOT counted, and NOT a defect list — an unruled re-adjudication. Every row is an occurrence whose LINE the pre-seed-72 quoted-block detector read as pasted source material and the current one reads as Q-authored. Nothing about the drop text changed; lib/quotedBlocks.mjs did.",
+ "note": "The 18 entity occurrences that separate the certified 9,786 mentions from the 9,804 a re-derivation produces, grouped onto the 10 LINES they ride on. NOT applied, NOT counted. An unruled re-adjudication, not a defect list.",
  "raisedAt": "2026-08-16",
  "raisedBy": "seed-76 pipeline repair — reproduced in an isolated copy, 18 added, 0 removed",
  "certifiedMentions": 9786,
  "rederivedMentions": 9804,
+ "totalOccurrences": 18,
+ "totalLines": 10,
+ "theQuestion": "Is this LINE Q's own words, or material he pasted from somewhere else? The mentions on a line stand or fall together — that is why the unit is the line and not the occurrence.",
  "provenance": {
   "certifiedArtifact": "audit/entities-audit.json",
   "certifiedOn": "2026-08-12",
   "detectorChangedAt": "seed 72, 2026-08-16, scripts/lib/quotedBlocks.mjs",
-  "proof": "Restoring the pre-seed-72 quotedBlocks.mjs and re-running audit-entities.mjs reproduces the certified artifact exactly: 0 occurrences added, 0 removed."
+  "proof": "Restoring the pre-seed-72 quotedBlocks.mjs and re-running audit-entities.mjs reproduces the certified artifact exactly: 0 occurrences added, 0 removed.",
+  "counting": "Read from the audit mention rows, never re-scanned. A first attempt re-matched every alias on every flipped line and produced 20 against a certified delta of 18 — the recount NEVER_RECOUNT_RULE forbids."
  },
- "ruling": "OPEN. contracts.mjs KNOWN_DEBT already governs this ground: the adjudicated dataset outranks the detector, and a source-material re-audit is a prerequisite rather than a side effect. Entities stays certified at 9,786 until the owner rules occurrence by occurrence.",
- "whyItCannotBeRuledInBulk": "The set is mixed. On some lines the old boundary was right and the new detector now admits pasted news copy as Q-authored. On others the old boundary over-extended and swallowed Q's own words — the exact failure KNOWN_DEBT names, and it names #1939 among them. Accepting all 18 admits quoted source into Entities; rejecting all 18 keeps Q's own words out.",
- "groups": [
+ "ruling": "OPEN. contracts.mjs KNOWN_DEBT already governs this ground: the adjudicated dataset outranks the detector, and a source-material re-audit is a prerequisite rather than a side effect. Entities stays certified at 9,786 until the owner rules line by line.",
+ "whyItCannotBeRuledInBulk": "The set is mixed. On 4 lines (11 mentions) the old boundary was right and the current detector admits pasted news copy as Q-authored. On 6 lines (7 mentions) the old boundary over-extended and swallowed Q's own words — the exact failure KNOWN_DEBT names, and it names #1939 among them. Accepting all 18 admits quoted source into Entities; rejecting all 18 keeps Q's own words out.",
+ "readings": {
+  "pasted_source": "the line is PASTED SOURCE — the old boundary was right",
+  "q_authored": "the line is Q's OWN — the old boundary over-extended and swallowed it"
+ },
+ "rows": [
   {
-   "reading": "the line is PASTED SOURCE — the old boundary was right, the current detector admits quoted material as Q-authored",
-   "occurrences": 11,
-   "posts": [
+   "id": "srcref-1553-0",
+   "postNum": 1553,
+   "postId": "1553",
+   "line": 0,
+   "lineText": "“Attorney General Jeff Sessions has also said U.S. Attorney John Huber is investigating claims of FBI and DOJ misconduct related to these actions, noting that Huber would be “conducting his work from outside the Washington D.C. area and “in cooperation” with Horowitz.”",
+   "oldReason": "opens a multi-line quotation",
+   "context": [
+    "“Attorney General Jeff Sessions has also said U.S. Attorney John Huber is investigating claims of FBI and DOJ misconduct related to these actions, noting that Huber would be “conducting his work from outside the Washington D.C. area and “in cooperation” with Horowitz.”",
+    "http://www.foxnews.com/politics/2018/06/15/ig-2-0-could-be-even-worse-for-fbi-as-feds-brace-for-trump-spying-probe.html",
+    "“This is not the end of the process. United States Attorney John Huber continues his work in cooperation with the Inspector General to review certain prosecutorial and investigative determinations made by the Department in 2016 and 2017,” Sessions said. He has reviewed this report and, based on its findings and his own investigation, will provide recommendations as to whether any matter not currently under investigation should be opened, whether any matters currently under investigation require further resources, or whether any matters merit the appointment of Special Counsel.”",
+    "http://www.breitbart.com/big-government/2018/06/14/doj-ig-report-says-peter-strzok-had-biased-state-of-mind/"
+   ],
+   "mentions": [
     {
-     "postNum": 1553,
-     "line": 0,
-     "lineText": "“Attorney General Jeff Sessions has also said U.S. Attorney John Huber is investigating claims of FBI and DOJ misconduct related to these actions, not…",
-     "oldReason": "opens a multi-line quotation",
-     "mentions": [
-      { "sourceText": "Jeff Sessions", "canonical": "Jeff Sessions", "char": 18 },
-      { "sourceText": "John Huber", "canonical": "John Huber", "char": 60 },
-      { "sourceText": "Huber", "canonical": "John Huber", "char": 65 },
-      { "sourceText": "FBI", "canonical": "Federal Bureau of Investigation", "char": 98 },
-      { "sourceText": "DOJ", "canonical": "Department of Justice", "char": 106 }
-     ]
+     "sourceText": "Jeff Sessions",
+     "canonical": "Jeff Sessions",
+     "char": 18
     },
     {
-     "postNum": 1881,
-     "line": 1,
-     "lineText": "\"This is far from a ‘vigilante group’; leading the team is ex-Department of Homeland Security special agent Tim Ballard, perhaps America’s foremost hu…",
-     "oldReason": "opens a multi-line quotation",
-     "note": "The whole article sits on ONE line carrying five quote marks — odd parity. This is the post KNOWN_DEBT cites for the parity problem, from the other direction.",
-     "mentions": [
-      { "sourceText": "America", "canonical": "United States", "char": 129 },
-      { "sourceText": "Haiti", "canonical": "Haiti", "char": 190 }
-     ]
+     "sourceText": "John Huber",
+     "canonical": "John Huber",
+     "char": 60
     },
     {
-     "postNum": 2587,
-     "line": 2,
-     "lineText": "Google CEO Says No Plan to ‘Launch’ Censored Search Engine in China\"",
-     "oldReason": "opens a multi-line quotation",
-     "note": "A pasted headline. The same drop's LATER lines are Q's own — see the second group.",
-     "mentions": [
-      { "sourceText": "Google", "canonical": "Google", "char": 0 },
-      { "sourceText": "China", "canonical": "China", "char": 62 }
-     ]
+     "sourceText": "Huber",
+     "canonical": "John Huber",
+     "char": 65
     },
     {
-     "postNum": 3089,
-     "line": 1,
-     "lineText": "“I have the support of the police, the support of the military, the support of the Bikers for Trump—I have the tough people, but they don’t play it to…",
-     "oldReason": "opens a multi-line quotation",
-     "mentions": [
-      { "sourceText": "Trump", "canonical": "Donald Trump", "char": 94 },
-      { "sourceText": "Breitbart", "canonical": "Breitbart", "char": 238 }
-     ]
+     "sourceText": "FBI",
+     "canonical": "Federal Bureau of Investigation",
+     "char": 98
+    },
+    {
+     "sourceText": "DOJ",
+     "canonical": "Department of Justice",
+     "char": 106
     }
-   ]
+   ],
+   "mentionCount": 5,
+   "reading": "pasted_source",
+   "readingNote": "A pasted news paragraph. The old boundary was right; the current detector admits it as Q-authored."
   },
   {
-   "reading": "the line is Q's OWN — the old boundary over-extended and swallowed it; this is the KNOWN_DEBT over-extension, measured",
-   "occurrences": 7,
-   "posts": [
+   "id": "srcref-1881-1",
+   "postNum": 1881,
+   "postId": "1881",
+   "line": 1,
+   "lineText": "\"This is far from a ‘vigilante group’; leading the team is ex-Department of Homeland Security special agent Tim Ballard, perhaps America’s foremost human trafficking expert. \"The problem in Haiti is an international crisis,” Ballard explains. “With so many children displaced or orphaned during the recent earthquake and hurricane, recruiters moved quickly to sweep these children up. And the worst part of it all is that in many cases the clients are the foreigners who’ve come here to help, the NGO workers and the so-called humanitarians.”",
+   "oldReason": "opens a multi-line quotation",
+   "context": [
+    ">>152",
+    "\"This is far from a ‘vigilante group’; leading the team is ex-Department of Homeland Security special agent Tim Ballard, perhaps America’s foremost human trafficking expert. \"The problem in Haiti is an international crisis,” Ballard explains. “With so many children displaced or orphaned during the recent earthquake and hurricane, recruiters moved quickly to sweep these children up. And the worst part of it all is that in many cases the clients are the foreigners who’ve come here to help, the NGO workers and the so-called humanitarians.”",
+    "PURE EVIL.",
+    "[[[[HUNTERS]]]] BECOME THE HUNTED.",
+    "THE MORE YOU KNOW!!!!!"
+   ],
+   "mentions": [
     {
-     "postNum": 1939,
-     "line": 27,
-     "lineText": "[19] phone calls today - DC/UK/AUS panic?",
-     "oldReason": "inside a multi-line quotation",
-     "note": "KNOWN_DEBT names #1939 by name: a quoted sentence and its URL are followed by lines that are unmistakably Q's, and the block swallows them.",
-     "mentions": [
-      { "sourceText": "UK", "canonical": "United Kingdom", "char": 28 }
-     ]
+     "sourceText": "America",
+     "canonical": "United States",
+     "char": 129
     },
     {
-     "postNum": 2208,
-     "line": 2,
-     "lineText": "DECLAS FISA >> [RR] FORCE >> RED LINE",
-     "oldReason": "inside a multi-line quotation",
-     "note": "Q's brackets, Q's arrows. No quoted article is written this way.",
-     "mentions": [
-      { "sourceText": "FISA", "canonical": "FISA Court", "char": 7 },
-      { "sourceText": "RR", "canonical": "Rod Rosenstein", "char": 16 }
-     ]
-    },
-    {
-     "postNum": 2587,
-     "lines": [6, 7, 8, 9],
-     "oldReason": "inside a multi-line quotation",
-     "note": "Q's own questions and his closing line, following the pasted headline on line 2.",
-     "mentions": [
-      { "sourceText": "China", "canonical": "China", "line": 6, "char": 36, "lineText": "What if GOOG already gave access to China?" },
-      { "sourceText": "CHINA", "canonical": "China", "line": 7, "char": 0, "lineText": "CHINA launch?" },
-      { "sourceText": "CHINA", "canonical": "China", "line": 8, "char": 5, "lineText": "WILL CHINA BE ANNOUNCING A STATE-FUNDED & STATE-MADE NEW SEARCH ENGINE IN THE COMING MONTHS?" },
-      { "sourceText": "GOOGLE", "canonical": "Google", "line": 9, "char": 27, "lineText": "The FIRE that brought down GOOGLE." }
-     ]
+     "sourceText": "Haiti",
+     "canonical": "Haiti",
+     "char": 190
     }
-   ]
+   ],
+   "mentionCount": 2,
+   "reading": "pasted_source",
+   "readingNote": "The whole article sits on ONE line carrying five quote marks — odd parity. KNOWN_DEBT cites this post for the parity problem, from the other direction."
+  },
+  {
+   "id": "srcref-1939-27",
+   "postNum": 1939,
+   "postId": "1939",
+   "line": 27,
+   "lineText": "[19] phone calls today - DC/UK/AUS panic?",
+   "oldReason": "inside a multi-line quotation",
+   "context": [
+    "https://saraacarter.com/whistleblower-exposes-key-player-in-fbi-russia-probe-it-was-all-a-set-up/",
+    "BO closed door necessary.",
+    "Red-Handed comms revealed to 'encourage truthful testimony'.",
+    "[19] phone calls today - DC/UK/AUS panic?",
+    "[WHO] ARE THE FIREWALLS?",
+    "What will the FAKE NEWS push tomorrow?",
+    "Q"
+   ],
+   "mentions": [
+    {
+     "sourceText": "UK",
+     "canonical": "United Kingdom",
+     "char": 28
+    }
+   ],
+   "mentionCount": 1,
+   "reading": "q_authored",
+   "readingNote": "Q's brackets, Q's question. KNOWN_DEBT names #1939 by name: a quoted sentence and its URL are followed by lines that are unmistakably Q's, and the block swallows them."
+  },
+  {
+   "id": "srcref-2208-2",
+   "postNum": 2208,
+   "postId": "2208",
+   "line": 2,
+   "lineText": "DECLAS FISA >> [RR] FORCE >> RED LINE",
+   "oldReason": "inside a multi-line quotation",
+   "context": [
+    "https://twitter.com/RepAdamSchiff/status/1041841277074132993",
+    "\"The DOJ and FBI have previously informed me that release of some of this information would cross a “red line.”",
+    "DECLAS FISA >> [RR] FORCE >> RED LINE",
+    "NEW PLAYBOOK NEEDED?",
+    "WE SEE YOU.",
+    "Q"
+   ],
+   "mentions": [
+    {
+     "sourceText": "FISA",
+     "canonical": "FISA Court",
+     "char": 7
+    },
+    {
+     "sourceText": "RR",
+     "canonical": "Rod Rosenstein",
+     "char": 16
+    }
+   ],
+   "mentionCount": 2,
+   "reading": "q_authored",
+   "readingNote": "Q's brackets, Q's arrows. No quoted article is written this way."
+  },
+  {
+   "id": "srcref-2587-2",
+   "postNum": 2587,
+   "postId": "2587",
+   "line": 2,
+   "lineText": "Google CEO Says No Plan to ‘Launch’ Censored Search Engine in China\"",
+   "oldReason": "opens a multi-line quotation",
+   "context": [
+    ">>4266938",
+    "https://motherboard.vice.com/en_us/article/gy7mnx/google-ceo-says-no-plans-to-launch-dragonfly-chinese-search-engine-sundar-pichai",
+    "Google CEO Says No Plan to ‘Launch’ Censored Search Engine in China\"",
+    "How do you cover your tracks?",
+    "Start a FIRE.",
+    "GOOG says NO PLAN TO LAUNCH……."
+   ],
+   "mentions": [
+    {
+     "sourceText": "Google",
+     "canonical": "Google",
+     "char": 0
+    },
+    {
+     "sourceText": "China",
+     "canonical": "China",
+     "char": 62
+    }
+   ],
+   "mentionCount": 2,
+   "reading": "pasted_source",
+   "readingNote": "A pasted headline. The SAME drop's later lines are Q's own — see the four rows below it."
+  },
+  {
+   "id": "srcref-2587-6",
+   "postNum": 2587,
+   "postId": "2587",
+   "line": 6,
+   "lineText": "What if GOOG already gave access to China?",
+   "oldReason": "inside a multi-line quotation",
+   "context": [
+    "How do you cover your tracks?",
+    "Start a FIRE.",
+    "GOOG says NO PLAN TO LAUNCH…….",
+    "What if GOOG already gave access to China?",
+    "CHINA launch?",
+    "WILL CHINA BE ANNOUNCING A STATE-FUNDED & STATE-MADE NEW SEARCH ENGINE IN THE COMING MONTHS?",
+    "The FIRE that brought down GOOGLE."
+   ],
+   "mentions": [
+    {
+     "sourceText": "China",
+     "canonical": "China",
+     "char": 36
+    }
+   ],
+   "mentionCount": 1,
+   "reading": "q_authored",
+   "readingNote": "Q's own question, following the pasted headline on line 2."
+  },
+  {
+   "id": "srcref-2587-7",
+   "postNum": 2587,
+   "postId": "2587",
+   "line": 7,
+   "lineText": "CHINA launch?",
+   "oldReason": "inside a multi-line quotation",
+   "context": [
+    "Start a FIRE.",
+    "GOOG says NO PLAN TO LAUNCH…….",
+    "What if GOOG already gave access to China?",
+    "CHINA launch?",
+    "WILL CHINA BE ANNOUNCING A STATE-FUNDED & STATE-MADE NEW SEARCH ENGINE IN THE COMING MONTHS?",
+    "The FIRE that brought down GOOGLE.",
+    "Q"
+   ],
+   "mentions": [
+    {
+     "sourceText": "CHINA",
+     "canonical": "China",
+     "char": 0
+    }
+   ],
+   "mentionCount": 1,
+   "reading": "q_authored",
+   "readingNote": "Q's own question."
+  },
+  {
+   "id": "srcref-2587-8",
+   "postNum": 2587,
+   "postId": "2587",
+   "line": 8,
+   "lineText": "WILL CHINA BE ANNOUNCING A STATE-FUNDED & STATE-MADE NEW SEARCH ENGINE IN THE COMING MONTHS?",
+   "oldReason": "inside a multi-line quotation",
+   "context": [
+    "GOOG says NO PLAN TO LAUNCH…….",
+    "What if GOOG already gave access to China?",
+    "CHINA launch?",
+    "WILL CHINA BE ANNOUNCING A STATE-FUNDED & STATE-MADE NEW SEARCH ENGINE IN THE COMING MONTHS?",
+    "The FIRE that brought down GOOGLE.",
+    "Q"
+   ],
+   "mentions": [
+    {
+     "sourceText": "CHINA",
+     "canonical": "China",
+     "char": 5
+    }
+   ],
+   "mentionCount": 1,
+   "reading": "q_authored",
+   "readingNote": "Q's own question, in his all-caps register."
+  },
+  {
+   "id": "srcref-2587-9",
+   "postNum": 2587,
+   "postId": "2587",
+   "line": 9,
+   "lineText": "The FIRE that brought down GOOGLE.",
+   "oldReason": "inside a multi-line quotation",
+   "context": [
+    "What if GOOG already gave access to China?",
+    "CHINA launch?",
+    "WILL CHINA BE ANNOUNCING A STATE-FUNDED & STATE-MADE NEW SEARCH ENGINE IN THE COMING MONTHS?",
+    "The FIRE that brought down GOOGLE.",
+    "Q"
+   ],
+   "mentions": [
+    {
+     "sourceText": "GOOGLE",
+     "canonical": "Google",
+     "char": 27
+    }
+   ],
+   "mentionCount": 1,
+   "reading": "q_authored",
+   "readingNote": "Q's own closing line."
+  },
+  {
+   "id": "srcref-3089-1",
+   "postNum": 3089,
+   "postId": "3089",
+   "line": 1,
+   "lineText": "“I have the support of the police, the support of the military, the support of the Bikers for Trump—I have the tough people, but they don’t play it tough—until they go to a certain point, and then it would be very bad, very bad,\" he told Breitbart on Thursday, and then tweeted out the remark.\"",
+   "oldReason": "opens a multi-line quotation",
+   "context": [
+    ">>5704151 (/pb)",
+    "“I have the support of the police, the support of the military, the support of the Bikers for Trump—I have the tough people, but they don’t play it tough—until they go to a certain point, and then it would be very bad, very bad,\" he told Breitbart on Thursday, and then tweeted out the remark.\"",
+    "Coordinated?",
+    "Same day?",
+    "How much more obvious can we make it?"
+   ],
+   "mentions": [
+    {
+     "sourceText": "Breitbart",
+     "canonical": "Breitbart",
+     "char": 238
+    },
+    {
+     "sourceText": "Trump",
+     "canonical": "Donald Trump",
+     "char": 94
+    }
+   ],
+   "mentionCount": 2,
+   "reading": "pasted_source",
+   "readingNote": "A quoted statement, pasted."
   }
  ]
 }

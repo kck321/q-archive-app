@@ -1,5 +1,5 @@
 {
- "certifiedAt": "2026-08-16T17:35:15.929Z",
+ "certifiedAt": "2026-08-16T21:50:58.045Z",
  "sections": 8,
  "seedVersion": 75,
  "note": "Every count here is recomputed from the artifacts, never copied forward. Verify with: node scripts/certification-manifest.mjs --verify",
@@ -18,11 +18,11 @@
   "themes": 2644,
   "codes": 1949,
   "emphasis": 3112,
-  "resolutionQueue": 105
+  "resolutionQueue": 115
  },
  "artifacts": {
   "posts.json": {
-   "sha256": "b4e8a5263b41b7961864181c5d6d5e6faac3480ff23bef6597dd5c09d3c7ff45",
+   "sha256": "aa84f452705b85cfb0c73612fb4b1753a9ab7f8d00b2842c8a620420ce54ca2a",
    "semanticSha256": "4f16fe32233407720f8c3ffd77f0255e765eb6bbf34c232ccb88a7c349508898",
    "bytes": 9693747
   },
@@ -57,19 +57,19 @@
    "bytes": 912915
   },
   "resolution-queue.json": {
-   "sha256": "23b38661a931243dfb9a6e06de49ca8b9a45732c7c8fcc5afe7bf651b7b374a4",
-   "semanticSha256": "80cbbeac55316fbaea839a3d1ac0d4395ed96c612ad68ea4877dc9ea8c12716d",
-   "bytes": 107418
+   "sha256": "8bbac8f45a0f22ba22f01ed1dd1211b0ab86b912805ff8b414c7dcd50e176887",
+   "semanticSha256": "793f32a2154406acddcd70415b15bcacb51d2bdb3fd319e8b3ebd2cab1a05274",
+   "bytes": 119939
   },
   "relationships.json": {
-   "sha256": "76fc8fc4d36c81b872d9b0e7be2441170481f74ad96c0efc80e2772b09f03520",
-   "semanticSha256": "c9b237bfa8dec6c394785c321eb82e96bc15482f0bf0a57d854301dcae316525",
-   "bytes": 2832812
+   "sha256": "e10f65bf91e78fb87997d859494d95ed24360bd05064a20b46be59182bf9b5c5",
+   "semanticSha256": "5625f0f073273c58de38cdbeabc189511a516095d37b2dbb7e8fa94a1c9d8fea",
+   "bytes": 2837423
   },
   "search-index.json": {
-   "sha256": "606ee2c21265780aea8f69019e9d019c1d05937c520b94d9a49ed06fd1cb4703",
-   "semanticSha256": "a9aa84eb4dce2c810bfd51e29472b532c12b30f15b0df0f60570c31553adb74f",
-   "bytes": 7177930
+   "sha256": "3b85bd4f7db5ca52d3c32268c620986a214836a4fcc0d932cbaa677ee9082ff8",
+   "semanticSha256": "d088dd772921166654238b851d9727feb1651226545761e2fe6f1cf551ab581f",
+   "bytes": 7180954
   }
  },
  "canonical": {
@@ -128,11 +128,12 @@
    "posts": 1357
   },
   "resolution": {
-   "total": 105,
+   "total": 115,
    "entity": 30,
    "theme": 16,
    "code": 28,
-   "classification": 31
+   "classification": 31,
+   "source_reference": 10
   }
  }
 }

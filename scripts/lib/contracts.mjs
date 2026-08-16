@@ -93,7 +93,14 @@ export const CANONICAL = {
   // unresolved-alias pass the queue is built from, so they stayed queued after being answered.
   // 2,245 -> 2,233: the RC ruling answered 12 of the 13 queued "RC" rows. #2 ("all his funds in
   // a RC") is excluded by the ruling and stays queued — an unanswered question, not a resolved one.
-  resolution: { total: 105, entity: 30, theme: 16, code: 28, classification: 31 },
+  // 105 -> 115: the Source attribution rows arrive. Ten LINES whose authorship the quoted-block
+  // detector changed its mind about at seed 72 — the 18 entity mentions riding on them are the
+  // whole difference between the certified 9,786 and the 9,804 a re-derivation produces. The unit
+  // is the line, not the mention: all five mentions on #1553 line 0 stand or fall on one judgement.
+  // Certified data is untouched — those mentions are excluded from Entities today and stay
+  // excluded until ruled, which is exactly what a queue row is for.
+  // Canonical file: audit/entities-quote-boundary-pending.json.
+  resolution: { total: 115, entity: 30, theme: 16, code: 28, classification: 31, source_reference: 10 },
 }
 
 /**

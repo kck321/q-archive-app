@@ -55,12 +55,16 @@ export const KIND_GUIDES: Record<string, KindGuide> = {
     choices: it => it.candidates,
     placeholder: 'e.g. "Deliberate — both lines press the same point"',
   },
+  // Declared with the other kinds long before anything populated it, and originally written as
+  // "what source is being pointed at". The rows that actually arrived ask the prior question —
+  // whose words are these — so the guide asks that instead.
   source_reference: {
     label: 'Source',
-    asks: 'What source is being pointed at here?',
-    answerLooksLike: 'The publication, article or drop being referenced.',
-    goodEvidence: 'An archived copy or a dated URL. A live link that may rot is weaker than an archive.',
-    placeholder: 'e.g. "NYT, 4 Jan 2018 — archived at…"',
+    asks: 'Is this line Q writing, or Q pasting something he is quoting?',
+    answerLooksLike: 'One of the two readings, with what in the line settles it.',
+    goodEvidence: 'What the line itself does. Q’s brackets, his arrows and his all-caps questions are his own voice; a full-sentence news paragraph with a byline and a URL beneath it is not. Where a pasted article and Q’s reply sit in one block, say which lines belong to which.',
+    choices: it => it.candidates,
+    placeholder: 'e.g. "Q’s own — the brackets and the question mark are his register"',
   },
   other: {
     label: 'Other',
