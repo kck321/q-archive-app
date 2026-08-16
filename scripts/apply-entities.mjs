@@ -21,6 +21,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { BUCKET1, SAFE_GLOBAL, CONTEXT_RESOLVE } from './lib/entityVerdicts.mjs'
+import { randomBytes } from 'node:crypto'
 import { clean } from './lib/segment.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
@@ -400,7 +401,191 @@ for (const m of merges) {
   mergedRows++
 }
 
+// ── STAGE 1 of the Entities/Brackets hover audit ─────────────────────────────
+// Rulings live in audit/entities-stage1-rulings.json, extracted from the audit handoff by
+// scripts/extract-entities-stage1.mjs. Three actions, applied in this order because each depends
+// on the one before: merge duplicate rows, correct types on what survives, then withdraw the rows
+// the audit ruled are not entities at all.
+//
+// Rows are addressed by (canonical, source). That pair is unique across all 1,445 rows today —
+// canonical alone is NOT, which is the very defect the merges fix: "Bill Clinton" ships twice,
+// once from the core registry with 31 mentions and once from the adjudicated tail with 7.
+const STAGE1 = path.join(OUT, 'entities-stage1-rulings.json')
+const stage1 = fs.existsSync(STAGE1) ? JSON.parse(fs.readFileSync(STAGE1, 'utf8')) : null
+const movedOutOccurrences = []
+let s1Merged = 0, s1Typed = 0, s1MovedRows = 0
+if (stage1) {
+  const find = (canonical, source) => entities.find(e => e.canonical === canonical && e.source === source)
+
+  // 1. MERGES. A merge changes how many rows ship, never how many mentions were found — the same
+  //    rule as the Ray/Rachel Chandler merge. Mentions and posts move ACROSS; every absorbed
+  //    spelling survives as an alias, so no way of finding the entity is lost.
+  for (const m of stage1.merges) {
+    const target = find(m.canonical, m.keepFrom.source)
+    if (!target) { console.error(`stage1 merge: target "${m.canonical}" (${m.keepFrom.source}) not found`); process.exit(1) }
+    for (const a of m.absorb) {
+      const idx = entities.findIndex(e => e.canonical === a.canonical && e.source === a.source)
+      if (idx === -1) continue                                  // already merged on a previous run
+      const [row] = entities.splice(idx, 1)
+      target.mentions += row.mentions
+      target.posts = [...new Set([...target.posts, ...row.posts])].sort((x, y) => x - y)
+      // The absorbed CANONICAL becomes an alias too. "Wikileaks" is how some drops spell it, and
+      // dropping the spelling would make those drops unreachable by the name they use.
+      for (const al of [...row.aliases, { text: row.canonical, n: null }]) {
+        if (!target.aliases.some(x => x.text === al.text)) target.aliases.push(al)
+      }
+      target.provenance = `${target.provenance ? `${target.provenance} · ` : ''}hover audit 2026-08-16 — absorbed "${row.canonical}" (${row.source}, ${row.mentions} mentions): duplicate canonical`
+      s1Merged++
+    }
+    if (m.entityType && target.type !== m.entityType) target.type = m.entityType
+  }
+
+  // 2. TYPE CORRECTIONS. No count moves — this is what the row IS, not how often it appears.
+  for (const t of stage1.typeCorrections) {
+    const row = find(t.canonical, t.source)
+    if (!row) continue                                          // absorbed by a merge above
+    if (row.type === t.to) continue
+    row.type = t.to
+    s1Typed++
+  }
+
+  // 3. MOVE-OUTS. "Russian", "Military", "Republic", "Speed", "John" — wordings that name a broad
+  //    concept, an adjective or an incomplete name rather than a specific thing.
+  //
+  //    NOTHING IS DELETED. Q's text is untouched and these drops still carry every word they
+  //    carried; what changes is that this wording is no longer CLASSIFIED as a named entity, so it
+  //    stops being highlighted and stops being counted. Every withdrawn occurrence — post number,
+  //    the text Q wrote, the prior type and the audit's reason — is preserved in
+  //    audit/entities-moved-out-history.json, and removing an entry from the rulings file puts the
+  //    row back exactly as it was.
+  for (const mo of stage1.moveOuts) {
+    const idx = entities.findIndex(e => e.canonical === mo.canonical)
+    if (idx === -1) continue
+    entities.splice(idx, 1)
+    s1MovedRows++
+  }
+  // Collected for the render pass below: the count and the render entries must fall together, or
+  // the materialiser's own gate refuses to write — which is the check working.
+  const history = path.join(OUT, 'entities-moved-out-history.json')
+  if (fs.existsSync(history)) {
+    for (const mo of JSON.parse(fs.readFileSync(history, 'utf8')).moveOuts) {
+      for (const o of mo.occurrences) movedOutOccurrences.push({ postNum: o.postNum, alias: o.matchedAlias, canonical: mo.canonical })
+    }
+  }
+  console.log(`\n  STAGE 1 hover audit: ${s1Merged} rows merged away, ${s1Typed} types corrected, ${s1MovedRows} rows withdrawn (${movedOutOccurrences.length} occurrences)`)
+}
+
 entities.sort((a, b) => b.mentions - a.mentions)
+
+// ── Immutable entity identity ────────────────────────────────────────────────
+// The archive had no entity ID at all: rows were addressed by their display name, so correcting a
+// spelling silently created a different entity. The audit's own ENT-#### numbers cannot fill the
+// gap either — they are our list numbered by mention count, so ENT-0058 means "the 58th busiest
+// row on the day the audit ran" and every number after a recount shifts.
+//
+// So identity is MINTED ONCE and stored, never derived. An id does not encode the name, the type,
+// the mention count or the position, because every one of those is a thing that legitimately
+// changes about an entity that is still the same entity. The canonical name and the URL slug are
+// stored beside the id as attributes of it.
+//
+// Renames are the whole point: when a canonical changes, the ledger keeps the old spelling in
+// previousCanonicals and the id survives. Merges record the absorbed spellings the same way, so a
+// link to an entity that was merged away still resolves.
+const ID_LEDGER = path.join(OUT, 'entity-ids.json')
+const ledger = fs.existsSync(ID_LEDGER)
+  ? JSON.parse(fs.readFileSync(ID_LEDGER, 'utf8'))
+  : { note: '', entries: {} }
+const ledgerEntries = ledger.entries ?? {}
+// canonical (current or previous) -> id
+const idByName = new Map()
+for (const [id, e] of Object.entries(ledgerEntries)) {
+  idByName.set(e.canonical, id)
+  for (const p of e.previousCanonicals ?? []) idByName.set(p, id)
+}
+const slugify = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+const usedSlugs = new Map()
+let minted = 0
+for (const e of entities) {
+  let id = idByName.get(e.canonical)
+  if (!id) {
+    // Opaque and random, so nothing about the entity can be read out of it or drift with it.
+    // Minted once and persisted immediately, so a second run mints nothing and the bundle is
+    // reproducible — the same discipline as the Resolution Center's first-seen ledger.
+    do { id = `qe-${randomBytes(6).toString('hex')}` } while (id in ledgerEntries)
+    minted++
+  }
+  // A slug can collide where two entities differ only by punctuation; the id never can, so the
+  // slug is disambiguated and the id is left alone.
+  let slug = slugify(e.canonical) || 'entity'
+  if (usedSlugs.has(slug) && usedSlugs.get(slug) !== id) slug = `${slug}-${id.slice(3, 9)}`
+  usedSlugs.set(slug, id)
+
+  const prev = new Set(ledgerEntries[id]?.previousCanonicals ?? [])
+  if (ledgerEntries[id]?.canonical && ledgerEntries[id].canonical !== e.canonical) prev.add(ledgerEntries[id].canonical)
+  ledgerEntries[id] = {
+    canonical: e.canonical,
+    slug,
+    previousCanonicals: [...prev].sort(),
+    // The crosswalk back to every audit that referred to this row.
+    auditEntityIds: [...new Set(ledgerEntries[id]?.auditEntityIds ?? [])].sort(),
+  }
+  e.id = id
+  e.slug = slug
+}
+// ── ENT-#### crosswalk ───────────────────────────────────────────────────────
+// Every audit reference resolves to a permanent id, including the rows Stage 1 left alone — the
+// later stages of the audit quote ENT numbers for those too, and an ENT number is positional, so
+// it stops meaning anything the moment a count moves. Withdrawn rows resolve to no id on purpose;
+// they are traceable through audit/entities-moved-out-history.json instead.
+if (stage1?.auditCrosswalk) {
+  const survivorOf = new Map()
+  for (const m of stage1.merges) {
+    survivorOf.set(`${m.canonical} ${m.keepFrom.source}`, m.canonical)
+    for (const a of m.absorb) survivorOf.set(`${a.canonical} ${a.source}`, m.canonical)
+  }
+  const withdrawn = new Set(stage1.moveOuts.map(m => m.canonical))
+  const byCanonical = new Map(entities.map(e => [e.canonical, e]))
+  let mapped = 0, unmapped = []
+  for (const row of stage1.auditCrosswalk) {
+    if (withdrawn.has(row.canonical)) continue
+    const target = survivorOf.get(`${row.canonical} ${row.source}`) ?? row.canonical
+    const e = byCanonical.get(target)
+    if (!e) { unmapped.push(`${row.entityId} ${row.canonical}`); continue }
+    const entry = ledgerEntries[e.id]
+    const ids = new Set(entry.auditEntityIds)
+    ids.add(row.entityId)
+    entry.auditEntityIds = [...ids].sort()
+    mapped++
+  }
+  console.log(`  ENT-#### crosswalk    : ${mapped} audit references mapped, ${stage1.moveOuts.length} withdrawn rows held in history${unmapped.length ? `, ${unmapped.length} UNMAPPED` : ''}`)
+  if (unmapped.length) { console.error(`
+❌ unmapped audit references: ${unmapped.slice(0, 10).join(', ')}
+`); process.exit(1) }
+}
+
+// Absorbed spellings keep resolving to the surviving entity.
+if (stage1) {
+  for (const m of stage1.merges) {
+    const target = entities.find(e => e.canonical === m.canonical)
+    if (!target) continue
+    const entry = ledgerEntries[target.id]
+    const prev = new Set(entry.previousCanonicals)
+    for (const a of m.absorb) if (a.canonical !== m.canonical) prev.add(a.canonical)
+    entry.previousCanonicals = [...prev].sort()
+    const ids = new Set(entry.auditEntityIds)
+    ids.add(m.keepFrom.entityId)
+    for (const a of m.absorb) ids.add(a.entityId)
+    entry.auditEntityIds = [...ids].sort()
+  }
+}
+if (!dry) {
+  fs.writeFileSync(ID_LEDGER, JSON.stringify({
+    note: 'Immutable entity identity. An id is minted once and never derived from the canonical name, the type, the mention count or the row position — all of which legitimately change about an entity that is still the same entity. canonical and slug are attributes stored beside the id; previousCanonicals keeps every earlier or absorbed spelling resolving to it. auditEntityIds is the crosswalk to the ENT-#### numbers used by the 2026-08-16 hover audit, which were positional and must never be stored as identity.',
+    minted: Object.keys(ledgerEntries).length,
+    entries: ledgerEntries,
+  }, null, 1))
+}
+console.log(`  entity ids            : ${minted} minted, ${Object.keys(ledgerEntries).length} tracked`)
 
 const unresolvedAliases = [
   ...unresolvedTail,
@@ -450,19 +635,48 @@ const checks = [
   // The merge is added back: 1,332 is what the passes DETECTED, and absorbing Ray Chandler into
   // Rachel Chandler changes how many rows ship, not how many the detector found. Without the
   // term this check would drift down by one every time two rows turn out to be one person.
-  ['detected canonical entities = 1,328', entities.length - ownerAdded + ownerMerged === 1328, entities.length - ownerAdded + ownerMerged],
+  ['detected canonical entities = 1,292', entities.length - ownerAdded + ownerMerged === 1292, entities.length - ownerAdded + ownerMerged],
   ['owner entity rulings applied = 118', ownerAdded === 118, ownerAdded],
   ['owner merge rulings applied = 1', ownerMerged === 1, ownerMerged],
   // 1,335 - 1: Ray Chandler is now an alias of Rachel Chandler, not a row of her own.
-  ['canonical entities = 1,445', entities.length === 1445, entities.length],
+  // 1,445 -> 1,408: -19 rows merged away as duplicate canonicals, -18 rows withdrawn as
+  // conceptual/generic labels. Both from the 2026-08-16 hover audit, Stage 1.
+  ['canonical entities = 1,409', entities.length === 1409, entities.length],
   // 8,227 + 12 RC. The merge moves 4 mentions between rows and adds none.
-  ['resolved mentions = 9,786', totals.mentions === 9786, totals.mentions],
+  // 9,786 -> 9,747: -39, the occurrences of the 18 withdrawn rows. The 17 merges move mentions
+  // ACROSS rows and add none, so they are absent from this arithmetic by design — asserted
+  // separately below so a merge that silently double-counted could not hide inside the total.
+  ['resolved mentions = 9,749', totals.mentions === 9749, totals.mentions],
+  ['stage 1: 19 rows merged away', !stage1 || s1Merged === 19, s1Merged],
+  ['stage 1: 85 types corrected', !stage1 || s1Typed === 85, s1Typed],
+  // 18 in the audit, 17 applied: ENT-0709 "Non-profit organization" is HELD because it
+  // contradicts a standing owner ruling (2026-08-15). An owner ruling outranks an audit pass.
+  ['stage 1: 17 rows withdrawn', !stage1 || s1MovedRows === 17, s1MovedRows],
+  ['stage 1: 1 move-out held by owner ruling', !stage1 || (stage1.heldMoveOuts ?? []).length === 1, (stage1?.heldMoveOuts ?? []).length],
+  ['stage 1: 37 occurrences withdrawn', !stage1 || movedOutOccurrences.length === 37, movedOutOccurrences.length],
+  // The defect the merges exist to fix: one canonical, one row.
+  ['every canonical is unique', new Set(entities.map(e => e.canonical)).size === entities.length,
+    `${new Set(entities.map(e => e.canonical)).size} distinct / ${entities.length} rows`],
+  ['every entity carries an immutable id', entities.every(e => /^qe-[0-9a-f]{12}$/.test(e.id ?? '')), 'ok'],
+  ['every id is unique', new Set(entities.map(e => e.id)).size === entities.length, new Set(entities.map(e => e.id)).size],
+  ['every entity carries a slug', entities.every(e => e.slug), 'ok'],
   // C19 34 + CCP 4 + WUT 2 + US 277 + RC 12. US is the largest single alias ruling in the corpus.
   ['owner alias mentions = 2,099', aliasMentions === 2099, aliasMentions],
-  ['core-registry mentions = 5,299', totals.coreRegistryMentions === 5299, totals.coreRegistryMentions],
+  // Every mention of the 39 is accounted for, and the submetrics move for two separate reasons.
+  // MERGES move mentions ACROSS populations without changing the headline: 53 tail mentions are
+  // absorbed into core-registry rows (Bill Clinton +7, Australia +6, New York +13, WikiLeaks +17,
+  // Julian Assange +1, Valerie Jarrett +4, Hong Kong +4, Ghislaine Maxwell +1) and 24 more move
+  // between tail rows, which is invisible here. MOVE-OUTS remove mentions outright: 37 from the
+  // tail, 2 from an owner ruling ("Non-profit organization", alias NP).
+  //   core  5,299 + 53           = 5,352
+  //   tail  3,867 - 53 - 37      = 3,777
+  //   owner   620 (unchanged)    =   620      sum 9,749
+  // The owner submetric does NOT fall: the only owner-sourced move-out, "Non-profit organization"
+  // (alias NP, 2 mentions), is held because it contradicts a standing owner ruling.
+  ['core-registry mentions = 5,352', totals.coreRegistryMentions === 5352, totals.coreRegistryMentions],
   // 3,440 + 34 C19 + 12 RC: COVID-19 and Rachel Chandler are tail entities, so alias rulings on
   // them land here.
-  ['adjudicated-tail mentions = 3,867', totals.adjudicatedTailMentions === 3867, totals.adjudicatedTailMentions],
+  ['adjudicated-tail mentions = 3,777', totals.adjudicatedTailMentions === 3777, totals.adjudicatedTailMentions],
   ['tail occurrence rows = 3,440', tailOccurrences.length === 3440, tailOccurrences.length],
   ['every tail occurrence carries a post identity', tailOccurrences.every(o => o.postNum && o.id), 'ok'],
   ['every tail entity now has post provenance',
@@ -586,6 +800,41 @@ fs.writeFileSync(path.join(DATA, 'entities.json'), JSON.stringify({ certified: t
   // here would count the mention and highlight nothing.
   for (const r of ownerEntities) push(r.postNum, r.aliasUsed || r.sourceText)
   for (const [pn, al] of aliasByPost) push(pn, al)
+
+  // ── Stage 1 withdrawals leave the render layer too ─────────────────────────
+  // The count and the paint must fall together. Removing a row from entities.json while its
+  // occurrences stay in postAnalysis.namedEntities would leave the drop highlighting a word that
+  // no longer belongs to any entity — the exact shape of every silent failure in this project.
+  //
+  // Removal is OCCURRENCE-SCOPED: one entry per recorded occurrence, in that post, never "all
+  // entries matching this text". "Independent" is withdrawn from #1797, a post carrying 14 entity
+  // entries; a sweep by text would be a global ruling derived from one drop.
+  //
+  // The audit recorded the text as the POST writes it and the render layer stores the certified
+  // ALIAS spelling, so four of the 39 differ only in case — "russian" vs "Russian" in #1864 and
+  // #3861, "independent" in #1797, "the Party" in #4495. Exact match is tried first and the
+  // case-insensitive fallback is only ever used where it resolves to exactly one entry.
+  let withdrawn = 0
+  const unwithdrawable = []
+  for (const o of movedOutOccurrences) {
+    const list = byPost.get(o.postNum)
+    if (!list) { unwithdrawable.push(`#${o.postNum} "${o.alias}" — post has no entity entries`); continue }
+    let i = list.indexOf(o.alias)
+    if (i === -1) {
+      const ci = list.map((t, n) => [t, n]).filter(([t]) => t.toLowerCase() === o.alias.toLowerCase())
+      if (ci.length === 1) i = ci[0][1]
+      else { unwithdrawable.push(`#${o.postNum} "${o.alias}" — ${ci.length} case-insensitive matches`); continue }
+    }
+    list.splice(i, 1)
+    withdrawn++
+  }
+  if (unwithdrawable.length) {
+    console.error(`\n❌ ${unwithdrawable.length} withdrawn occurrence(s) could not be located in the render layer:`)
+    for (const u of unwithdrawable) console.error(`     ${u}`)
+    console.error('   The count would fall without the paint. Nothing written.\n')
+    process.exit(1)
+  }
+  if (movedOutOccurrences.length) console.log(`  withdrawn from render   : ${withdrawn} occurrence(s) across ${new Set(movedOutOccurrences.map(o => o.postNum)).size} posts`)
 
   const materialised = [...byPost.values()].reduce((n, l) => n + l.length, 0)
   if (materialised !== totals.mentions) {

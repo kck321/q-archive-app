@@ -442,7 +442,9 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   // that stopped at 40 would keep showing the standalone COVID in #4489/#4541/#4548 as plain text.
   // 43 carries the Rachel Chandler ruling: posts.json changed again (namedEntities), so a
   // profile that stopped at 42 would keep showing RC and Ray Chandler as two strangers.
-  t('seed-current', 'SEED_VERSION is 75 (sentence-level Predictions audit)', seed === 75, seed)
+  // 76: Entities hover audit Stage 1 — posts.json lost 39 namedEntities entries and every entity
+  // row gained an id and a slug, so a returning reader must re-seed.
+  t('seed-current', 'SEED_VERSION is 76 (Entities hover audit, Stage 1)', seed === 76, seed)
   t('seed-gate', 'seeding is gated on SEED_VERSION', /seeded === SEED_VERSION/.test(localData), 'present')
 
   // THE GUARD THAT WOULD HAVE SAVED THREE ROUND TRIPS. Changing seeded data without bumping the
@@ -489,7 +491,10 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   t('ui-directives', 'sectionInfo states 2,552', has(2552), 'ok')
   t('ui-claims', 'sectionInfo states 4,221', has(4221), 'ok')
   t('ui-evidence', 'sectionInfo states 6,590', has(6590), 'ok')
-  t('ui-entities', 'sectionInfo headlines 1,334 entities and 8,239 mentions', has(1445) && has(9786), 'ok')
+  // Read from the contract rather than frozen inline — this literal has gone stale at every
+  // certification since it was written, and its label still says 1,334 and 8,239.
+  t('ui-entities', `sectionInfo headlines ${CANONICAL.entities.canonical.toLocaleString()} entities and ${CANONICAL.entities.mentions.toLocaleString()} mentions`,
+    has(CANONICAL.entities.canonical) && has(CANONICAL.entities.mentions), 'ok')
   // The editable alias registry is typed by hand and its spellings are SHOWN on the entity cards,
   // beside certified names. "trump" and "djt" sat there looking like the archive did not know
   // better. displayAlias() repairs this at render time; this keeps the stored data honest too.
@@ -523,10 +528,13 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
       stated('predictions', CANONICAL.predictions.occurrences, CANONICAL.predictions.posts), 'ok')
     t('headline-emphasis', 'Emphasis headline = certified 3,112 / 1,357',
       stated('emphasis', CANONICAL.emphasis.occurrences, CANONICAL.emphasis.posts), 'ok')
-    // 2,245 -> 2,240 posts: merging Ray Chandler into Rachel Chandler and applying RC rewrote
-    // postAnalysis.namedEntities, and the certified set is now materialised over 2,240 posts.
-    t('headline-entities', 'Entities headline = certified mentions / 2,240 posts',
-      stated('namedEntities', CANONICAL.entities.mentions, 2240), 'ok')
+    // The post count is MEASURED, not frozen. It has moved at three of the last four
+    // certifications — 2,245 -> 2,240 on the Rachel Chandler merge, then 2,240 -> 2,445 when the
+    // Stage 1 withdrawals rewrote namedEntities — and each time the stale literal failed a check
+    // that was not actually broken. What matters is that the UI states what the data holds.
+    const entityPosts = posts.filter(p => (p.postAnalysis?.namedEntities ?? []).length).length
+    t('headline-entities', `Entities headline = certified mentions / ${entityPosts.toLocaleString()} posts`,
+      stated('namedEntities', CANONICAL.entities.mentions, entityPosts), 'ok')
     t('headline-themes', 'Themes headline = certified 2,644 assignments',
       stated('themes', CANONICAL.themes.assignments, CANONICAL.themes.posts), 'ok')
 

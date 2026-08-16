@@ -459,7 +459,18 @@ const COLLECTIONS: CollectionName[] = ['posts', 'questions', 'topics', 'resource
 // 75: sentence-level Predictions audit — 630 -> 595 predictions, 4,242 -> 4,221 claims, and a
 // NEW postAnalysis.predictionSentences array carrying the complete-sentence reading of 224
 // telegraphic rows. Returning readers must re-seed or they keep the fragments and the old counts.
-export const SEED_VERSION = 75   // 72: Q Directives on sourceSpansV2 — 2,552 occurrences, directiveMeta spans
+// 76: Entities/Brackets hover audit, Stage 1. The section was listing 8 entities TWICE — "Bill
+// Clinton" with 31 mentions and again with 7 — because the core-registry and adjudicated-tail
+// populations each carried a row for them, and 10 more groups differed only in spelling
+// (Wikileaks/WikiLeaks, LORD/Lord, FAKE NEWS MEDIA/Fake News Media). 36 rows merged into 17.
+// 85 types corrected, most of them a specific place or outlet mistyped as a person (Utah,
+// Hollywood, Hawaii, Guardian). 18 rows withdrawn as conceptual or generic wordings.
+//   entities 1,445 -> 1,408   mentions 9,786 -> 9,747
+// Every entity now also carries an immutable id and a slug. THIS is why the seed must move:
+// posts.json lost 39 namedEntities entries and entities.json gained two fields on every row, so
+// a returning reader holding the seed-75 copy would keep highlighting words that are no longer
+// entities and would have no id to key a tooltip by.
+export const SEED_VERSION = 76   // 72: Q Directives on sourceSpansV2 — 2,552 occurrences, directiveMeta spans
 // 71: 4: final certified questions — 6,442 occurrences, exact source spans
 
 // ── Minimal IndexedDB key/value wrapper (one record per collection) ──────────

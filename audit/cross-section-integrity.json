@@ -27,15 +27,15 @@
    "posts": 3883
   },
   "entities": {
-   "canonical": 1445,
-   "detectedCanonical": 1331,
+   "canonical": 1409,
+   "detectedCanonical": 1292,
    "ownerRulings": 118,
    "ownerMerges": 1,
-   "mentions": 9786,
+   "mentions": 9749,
    "coreEntities": 93,
-   "coreRegistryMentions": 5299,
+   "coreRegistryMentions": 5352,
    "tailEntities": 1239,
-   "tailMentions": 3867
+   "tailMentions": 3777
   },
   "themes": {
    "assignments": 2644,
@@ -121,7 +121,7 @@
    "id": "entities",
    "label": "Q Entities",
    "artifact": "entities.json",
-   "certifiedCount": 9786,
+   "certifiedCount": 9749,
    "mayCoexist": "Canonical entities (1,332) and mentions (7,903) are DIFFERENT metrics, not a row-count mismatch — one entity is mentioned many times. The headline covers every resolved mention: 4,463 from the 93-entity core registry plus 3,440 from the 1,239 adjudicated-tail entities. Unresolved alias tokens are counted in neither.",
    "neverDisplayed": "An unresolved alias must never be shown as a resolved identification.",
    "countedBy": "sum of per-entity mention counts",
@@ -259,28 +259,28 @@
    "id": "entities-canonical",
    "description": "Entities = 1,335 canonical",
    "pass": true,
-   "detail": "1445"
+   "detail": "1409"
   },
   {
    "group": "1. Frozen canonical counts",
    "id": "entities-mentions",
    "description": "Entities = 7,903 resolved mentions (headline)",
    "pass": true,
-   "detail": "9786"
+   "detail": "9749"
   },
   {
    "group": "1. Frozen canonical counts",
    "id": "entities-core",
    "description": "core registry submetric = 5,273",
    "pass": true,
-   "detail": "5299"
+   "detail": "5352"
   },
   {
    "group": "1. Frozen canonical counts",
    "id": "entities-tail",
    "description": "adjudicated tail submetric = 3,476",
    "pass": true,
-   "detail": "3867"
+   "detail": "3777"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -301,14 +301,14 @@
    "id": "entities-reconcile",
    "description": "submetrics sum to the headline",
    "pass": true,
-   "detail": "5299 + 3867 + 620 = 9786"
+   "detail": "5352 + 3777 + 620 = 9749"
   },
   {
    "group": "1. Frozen canonical counts",
    "id": "entities-artifact-headline",
    "description": "the artifact ships the headline figure",
    "pass": true,
-   "detail": "9786"
+   "detail": "9749"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -420,7 +420,7 @@
    "id": "ent-two-metrics",
    "description": "canonical and mentions are distinct metrics",
    "pass": true,
-   "detail": "1445 vs 9786"
+   "detail": "1409 vs 9749"
   },
   {
    "group": "2. Provenance contracts",
@@ -663,9 +663,9 @@
   {
    "group": "8. Seed and cache integrity",
    "id": "seed-current",
-   "description": "SEED_VERSION is 75 (sentence-level Predictions audit)",
+   "description": "SEED_VERSION is 76 (Entities hover audit, Stage 1)",
    "pass": true,
-   "detail": "75"
+   "detail": "76"
   },
   {
    "group": "8. Seed and cache integrity",
@@ -754,7 +754,7 @@
   {
    "group": "9. UI count integrity",
    "id": "ui-entities",
-   "description": "sectionInfo headlines 1,334 entities and 8,239 mentions",
+   "description": "sectionInfo headlines 1,409 entities and 9,749 mentions",
    "pass": true,
    "detail": "ok"
   },
@@ -817,7 +817,7 @@
   {
    "group": "9. UI count integrity",
    "id": "headline-entities",
-   "description": "Entities headline = certified mentions / 2,240 posts",
+   "description": "Entities headline = certified mentions / 2,445 posts",
    "pass": true,
    "detail": "ok"
   },
@@ -938,7 +938,7 @@
    "id": "rc-source-excluded",
    "description": "none of the held mentions is counted in Entities",
    "pass": true,
-   "detail": "9786"
+   "detail": "9749"
   },
   {
    "group": "11. Frozen-section mutation",
@@ -994,7 +994,7 @@
    "id": "entities-render-matches-certified",
    "description": "postAnalysis entries equal certified mentions",
    "pass": true,
-   "detail": "9786 vs 9786"
+   "detail": "9749 vs 9749"
   },
   {
    "group": "12. Cross-section relationships",
@@ -1197,7 +1197,7 @@
    "id": "search-entities",
    "description": "indexed Entities = certified 1,445",
    "pass": true,
-   "detail": "1445"
+   "detail": "1409"
   },
   {
    "group": "13. Global search",

@@ -50,11 +50,12 @@ export const CANONICAL = {
     // 1,335 -> 1,334 on 2026-08-14: the owner ruled Ray Chandler and Rachel Chandler one person
     // (aka RC), so two certified rows became one. detectedCanonical stays 1,332 — a merge changes
     // how many rows ship, not how many the passes found.
-    // HELD AT 9,786 — not because the number is convenient, because the 18 that would move it
-    // have not been ruled on. audit/entities-audit.json was certified 2026-08-12; the
+    // SEPARATELY, 18 occurrences are HELD OUT pending an owner ruling — not because the number
+    // is convenient, because they have not been ruled on. That hold is unrelated to Stage 1 and
+    // survives it: none of the 18 belongs to a merged or withdrawn row, so the gap is unchanged
+    // and a re-derivation would now produce 9,765 against the certified 9,747. audit/entities-audit.json was certified 2026-08-12; the
     // quoted-block boundary fix landed at seed 72 on 2026-08-16. Re-deriving with the current
-    // detector flips 18 occurrences from "inside quoted source" to "Q-authored" and produces
-    // 9,804. Proven by substitution: with the pre-seed-72 quotedBlocks.mjs, audit-entities.mjs
+    // detector flips 18 occurrences from "inside quoted source" to "Q-authored". Proven by substitution: with the pre-seed-72 quotedBlocks.mjs, audit-entities.mjs
     // reproduces the certified artifact exactly, 0 added and 0 removed.
     //
     // The 18 are a MIXED set and cannot be ruled in bulk — 11 are pasted news copy the old
@@ -63,15 +64,30 @@ export const CANONICAL = {
     // audit/entities-quote-boundary-pending.json. KNOWN_DEBT below already governs this: the
     // adjudicated dataset outranks the detector, and a source-material re-audit is a
     // prerequisite, not a side effect of a deploy.
-    canonical: 1445, detectedCanonical: 1331, ownerRulings: 118, ownerMerges: 1,
+    // STAGE 1 of the 2026-08-16 Entities/Brackets hover audit.
+    // 1,445 -> 1,409 rows: -19 merged away as duplicate canonical labels (36 rows -> 17 groups),
+    // -17 withdrawn as conceptual or generic wordings. The audit proposed 18; ENT-0709
+    // "Non-profit organization" is HELD because it contradicts an owner ruling of 2026-08-15. The archive was shipping 8 entities TWICE,
+    // split across the core-registry and adjudicated-tail populations — "Bill Clinton" as 31
+    // mentions and again as 7 — plus 10 groups of spelling variants (Wikileaks/WikiLeaks,
+    // LORD/Lord, FAKE NEWS MEDIA/Fake News Media). Rulings: audit/entities-stage1-rulings.json.
+    canonical: 1409, detectedCanonical: 1292, ownerRulings: 118, ownerMerges: 1,
     /** Every resolved mention across all 1,334 certified entities. The headline figure. */
     // 8,227 -> 8,239: the RC alias ruling resolved 12 occurrences to Rachel Chandler. The merge
     // moved 4 mentions from the absorbed row onto hers and added none.
-    mentions: 9786,
+    // 9,786 -> 9,749: -37, every one of them an occurrence of the 17 withdrawn rows. NOTHING was
+    // deleted from a post — Q's text is untouched and those drops carry every word they carried;
+    // the wording is simply no longer classified as a named entity, so it stops being highlighted
+    // and stops being counted. Each withdrawn occurrence keeps its post number, the text Q wrote,
+    // its prior type and the audit's reason in audit/entities-moved-out-history.json, and removing
+    // an entry from the rulings file restores the row exactly as it was.
+    // The 17 merges move mentions ACROSS rows and add none, so they are absent from this figure
+    // by design and asserted separately in apply-entities.mjs.
+    mentions: 9749,
     /** How it is composed. The core figure is the section's history, not its headline. */
     // tailEntities is what the tail adjudication produced (1,239); one of them, Ray Chandler,
     // now ships merged into Rachel Chandler, so 1,238 tail rows appear in the artifact.
-    coreEntities: 93, coreRegistryMentions: 5299, tailEntities: 1239, tailMentions: 3867,
+    coreEntities: 93, coreRegistryMentions: 5352, tailEntities: 1239, tailMentions: 3777,
   },
   // 2,393 detected + 2 owner rulings ("Ascension." -> Religion & Spirituality, #4963 and #4966).
   // The rulings live in audit/themes-owner-rulings.json and are merged by apply-themes.mjs, so

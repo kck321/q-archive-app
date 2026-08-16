@@ -2,8 +2,8 @@
  "note": "The 18 entity occurrences that separate the certified 9,786 mentions from the 9,804 a re-derivation produces, grouped onto the 10 LINES they ride on. NOT applied, NOT counted. An unruled re-adjudication, not a defect list.",
  "raisedAt": "2026-08-16",
  "raisedBy": "seed-76 pipeline repair — reproduced in an isolated copy, 18 added, 0 removed",
- "certifiedMentions": 9786,
- "rederivedMentions": 9804,
+ "certifiedMentions": 9747,
+ "rederivedMentions": 9765,
  "totalOccurrences": 18,
  "totalLines": 10,
  "theQuestion": "Is this LINE Q's own words, or material he pasted from somewhere else? The mentions on a line stand or fall together — that is why the unit is the line and not the occurrence.",
@@ -319,5 +319,6 @@
    "reading": "pasted_source",
    "readingNote": "A quoted statement, pasted."
   }
- ]
+ ],
+ "baselineNote": "Restated after Stage 1 of the hover audit moved the certified total 9,786 -> 9,747. The gap is still exactly these 18: none of them belongs to a merged or withdrawn row."
 }

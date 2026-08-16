@@ -56,7 +56,7 @@ export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number
   emphasis: { occurrences: 3112, posts: 1357, unit: 'occurrences' },
   // "mentions" is the right word here and the only section where it is: an entity is counted
   // once per resolved mention across 1,445 canonical entities.
-  namedEntities: { occurrences: 9786, posts: 2240, unit: 'mentions' },
+  namedEntities: { occurrences: 9749, posts: 2445, unit: 'mentions' },
   // Themes are assignments rather than spans — a theme is inferred from a drop, not copied out
   // of it — so the unit is named accordingly. 2,393 detected + 2 owner rulings.
   themes: { occurrences: 2644, posts: 1898, unit: 'assignments' },
@@ -150,7 +150,11 @@ export const EVIDENCE = {
 export const ENTITIES = {
   // 1,335 -> 1,341: Ray Chandler and Rachel Chandler were certified as two people. The owner
   // ruled them one, with RC as a third spelling, so the two rows ship as one entity.
-  canonical: 1445,
+  // 1,445 -> 1,409 (hover audit Stage 1, 2026-08-16): 19 rows merged away as duplicate canonical
+  // labels and 17 withdrawn as conceptual or generic wordings. The section was listing 8 entities
+  // twice — "Bill Clinton" with 31 mentions and again with 7 — because the core-registry and
+  // adjudicated-tail populations each carried a row for them.
+  canonical: 1409,
   /**
    * THE HEADLINE COUNTS THE WHOLE SECTION.
    *
@@ -160,8 +164,9 @@ export const ENTITIES = {
    * 3,440 occurrences. The core figure is kept below as provenance, because it is how the section
    * was built, not a number that turned out to be wrong.
    */
-  mentions: 9786,
-  mentionScope: 'Every resolved mention across all 1,445 certified entities: 5,299 from the 93 core-registry entities, 3,867 from the entities identified in the adjudication pass, and 620 from owner rulings. Unresolved aliases are counted in neither — they are held in the Resolution Center instead.',
+  // 9,786 -> 9,749: the 37 occurrences of the 17 withdrawn rows. Nothing left the posts.
+  mentions: 9749,
+  mentionScope: 'Every resolved mention across all 1,409 certified entities: 5,352 from the 93 core-registry entities, 3,777 from the entities identified in the adjudication pass, and 620 from owner rulings. Unresolved aliases are counted in neither — they are held in the Resolution Center instead.',
   coreEntities: 93,
   coreRegistryMentions: 4463,
   tailEntities: 1239,
