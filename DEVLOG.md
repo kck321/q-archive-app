@@ -3696,3 +3696,47 @@ reproducible:
 
 Per the standing instruction — if the exact seed-71 baseline cannot be reproduced, stop and report
 rather than construct an approximate one — the migration and deploy are halted here.
+
+---
+
+## 2026-08-16 — Seed 73: hover-box repair + Wizards & Warlocks resolved
+
+**Request 1 (owner):** "i used to be able to hover over a term or bracket and got a brief synopsis
+based on what the term was. what happend to that?"
+
+**Finding:** the feature was never broken. `verify-final.mjs --live` passed the reader-info-box
+check against production and `test-term-info.mjs` passed. What had happened was three *coverage
+holes* opened by the day's own work:
+
+- **CBS and TMZ** opened a box that said nothing. Both are SELF-NAMED — the alias equals the
+  canonical — and `build-glossary.mjs:86` skips an alias identical to its canonical, so those two
+  can only get a meaning from `audit/acronym-definitions.json`. I had written them there as plain
+  strings instead of `{expansion: "..."}` objects, which is the shape the builder reads.
+- **Q** had no box at all. `IS_ACRONYM = /^[A-Z][A-Z0-9]{1,6}$/` demanded two characters, so the
+  most self-referential term in the corpus never qualified. Changed to `{0,6}`; Q is the only
+  single-character canonical in the registry, so this admits exactly one token.
+
+Glossary 327 → 328 tokens, 0 empty meanings.
+
+**Request 2 (owner ruling):** "for wizards and warlocks entity the deffinition is Guardians' of
+Inteligence. Q post 2624 states this so lets go ahead and resolve this"
+
+#2624's Q-authored body is exactly `>>4281684 / 'Guardians' of intelligence. / Q`. Applied as a
+NOTATION gloss over the 8 capitalised occurrence posts (67, 80, 81, 144, 173, 435, 636, 714) with
+meaning `'Guardians' of intelligence` — notation and not an organization, because the drops give the
+function and never the membership. The gloss records its own provenance honestly: #2624 answers an
+anonymous post (`>>4281684`) the corpus does not store, so the answer reaches the question through
+the reply chain rather than sitting inside one drop. Supporting context noted: #15 "inside term",
+#67 "the council of Wizards & Warlocks cannot be defeated", #144 "Think Snowden".
+
+`code-30-WIZARDS_WARLOCKS` closed in `resolution-owner-resolved.json`.
+
+**Also:** untracked `.repo-lock.json` and added it to `.gitignore`. Tracking runtime lock state made
+the pre-flight fight itself — holding the lock tripped the competing-writer check, releasing it
+dirtied the tree.
+
+**Result — seed 73, live on qdrops.app:**
+- queue 106 → 105 (Reference 30 · Subject 16 · Notation 29→28 · Device 31)
+- glossary 328 tokens, 0 empty meanings
+- 146/146 cross-section invariants, certification manifest verifies, tsc clean
+- CDN parity confirmed, `verify-final.mjs --live` green, tagged `seed-73`
