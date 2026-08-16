@@ -83,11 +83,28 @@ export function HoverCard({
   // overflowed whenever the anchor itself was below the fold.
   useLayoutEffect(() => {
     if (!open) return
-    const a = triggerRef.current?.getBoundingClientRect()
-    const b = cardRef.current?.getBoundingClientRect()
-    if (!a || !b) return
-    if (window.innerWidth < NARROW) { setPos({ left: MARGIN, top: window.innerHeight - b.height - MARGIN, pinned: true }); return }
-    const left = Math.max(MARGIN, Math.min(a.left + a.width / 2 - b.width / 2, window.innerWidth - b.width - MARGIN))
+    // MEASURE TWICE. Focusing a trigger can scroll it into view, and that scroll lands AFTER this
+    // effect runs — so the anchor rect used for placement is one the reader never sees, and the
+    // card can settle on top of the word. It failed about one run in four, which is worse than
+    // failing every time: the check passes, ships, and then a keyboard user hits it.
+    //
+    // The second pass runs on the next frame, once any scrolling has finished, and is what the
+    // reader actually gets. Cheap, and it makes the placement independent of how the card was
+    // opened.
+    let raf = 0
+    const place = () => {
+      const el = cardRef.current
+      const a = triggerRef.current?.getBoundingClientRect()
+      const b = el?.getBoundingClientRect()
+      if (!a || !b || !el) return
+      // CONTENT height, not rendered height. Once a maxHeight is applied the rendered box is
+      // shorter than the text inside it, so a second pass measured the clamped box, concluded it
+      // now fitted above, placed it there without the clamp, and let it expand back over the
+      // anchor. scrollHeight is what the card wants to be and does not move when the clamp does,
+      // which is the only measurement that makes the placement stable.
+      const wanted = Math.max(el.scrollHeight + 2, b.height)
+      if (window.innerWidth < NARROW) { setPos({ left: MARGIN, top: window.innerHeight - b.height - MARGIN, pinned: true }); return }
+      const left = Math.max(MARGIN, Math.min(a.left + a.width / 2 - b.width / 2, window.innerWidth - b.width - MARGIN))
 
     // PICK THE SIDE BY THE ROOM IT HAS, THEN LIMIT THE HEIGHT TO FIT IT.
     //
@@ -100,16 +117,20 @@ export function HoverCard({
     // So the space is measured first. The card goes wherever it actually fits, and when neither
     // side can hold it whole it takes the roomier side and scrolls inside a bounded height —
     // which keeps the anchor visible in every case rather than in most of them.
-    const GAP = 6
-    const spaceAbove = a.top - MARGIN - GAP
-    const spaceBelow = window.innerHeight - a.bottom - MARGIN - GAP
-    let top: number
-    let maxHeight: number | undefined
-    if (b.height <= spaceAbove) top = a.top - b.height - GAP
-    else if (b.height <= spaceBelow) top = a.bottom + GAP
-    else if (spaceAbove >= spaceBelow) { maxHeight = spaceAbove; top = MARGIN }
-    else { maxHeight = spaceBelow; top = a.bottom + GAP }
-    setPos({ left, top, pinned: false, maxHeight })
+      const GAP = 6
+      const spaceAbove = a.top - MARGIN - GAP
+      const spaceBelow = window.innerHeight - a.bottom - MARGIN - GAP
+      let top: number
+      let maxHeight: number | undefined
+      if (wanted <= spaceAbove) top = a.top - wanted - GAP
+      else if (wanted <= spaceBelow) top = a.bottom + GAP
+      else if (spaceAbove >= spaceBelow) { maxHeight = spaceAbove; top = MARGIN }
+      else { maxHeight = spaceBelow; top = a.bottom + GAP }
+      setPos({ left, top, pinned: false, maxHeight })
+    }
+    place()
+    raf = requestAnimationFrame(place)
+    return () => cancelAnimationFrame(raf)
   }, [open, card])
 
   return (
