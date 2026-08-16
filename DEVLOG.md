@@ -3914,3 +3914,75 @@ falsy value until the row renders.
 
 **Ledger:** `audit/predictions-audit/ledger.jsonl`, 403 records, batch / post / requested / actual /
 result.
+
+---
+
+## 16 Aug 2026 — Pipeline repair: a deploy applies certified artifacts, it never re-derives them
+
+**Request.** Seed 75 was live and correct, but it had shipped through `SKIP_EXPORT=1`: a normal
+rebuild produced **9,804** entity mentions against the certified **9,786**, so the next ordinary
+deploy would fail again. Find the 18, fix the cause without raising the baseline, prove the
+ordinary pipeline runs twice byte-identical, and correct a stale `audit/CURRENT-STATE.md`.
+
+**Root cause — not either of the two suspected.** Firestore was not restoring obsolete entity rows,
+and `apply-entities.mjs` was not failing to retract superseded rulings. `export-firestore.mjs` ran
+the **derive** steps on every deploy, and a derive step re-certifies a section using *today's*
+detector. `audit/entities-audit.json` was certified **2026-08-12**; the quoted-block boundary fix
+landed in `lib/quotedBlocks.mjs` at **seed 72, 2026-08-16**. Every export since had been silently
+re-adjudicating Entities.
+
+**Proven by substitution, not inferred.** In an isolated copy, restoring the pre-seed-72
+`quotedBlocks.mjs` made `audit-entities.mjs` reproduce the certified artifact exactly — **0 added,
+0 removed**. With the current detector, 19 rows flip `inQAuthoredText` false→true (21 occurrences,
+3 of them unresolved) → **+18 core-registry mentions, 5,299 → 5,317**, total **9,804**. Exact
+reproduction of the reported failure.
+
+**The 18 cannot be ruled in bulk**, which is why they are held rather than adopted
+(`audit/entities-quote-boundary-pending.json`, with line and character offsets):
+- **11 are pasted source** the old boundary correctly excluded — #1553 news paragraph (5), #1881
+  article-on-one-line (2), #2587 line 2 headline (2), #3089 quoted statement (2). The current
+  detector admits these as Q-authored, which is *worse*.
+- **7 are Q's own** words the old boundary swallowed — #1939 `[19] phone calls today - DC/UK/AUS
+  panic?`, #2208 `DECLAS FISA >> [RR] FORCE >> RED LINE`, #2587 lines 6-9 (`CHINA launch?`,
+  `The FIRE that brought down GOOGLE.`). This is exactly the over-extension `KNOWN_DEBT` names.
+
+`contracts.mjs` already governs it: the adjudicated dataset outranks the detector, and a
+source-material re-audit is a prerequisite, not a side effect of a deploy. **Entities stays 9,786.**
+
+**Entities was not alone.** `scripts/rederive-certified.mjs` shows Themes, Codes and Emphasis would
+all have moved on any export too. Evidence reproduces cleanly.
+
+**The repair.**
+- `export-firestore.mjs` runs `APPLY_STEPS` only. Re-derivation is deliberate, isolated and
+  reporting-only: `node scripts/rederive-certified.mjs` (`--adopt` after a ruling).
+- `lib/postTextFingerprint.mjs` keeps the one protection the derive steps gave by accident: if a
+  dump brings changed post text, every certified span is anchored to text that moved and every
+  count still reconciles. The export now stops and names the drops.
+- `lib/stableJson.mjs`. Two exports of an unchanged database produced different bytes for
+  `posts.json`, `topics.json`, `analysisConfirmed.json` — same values, same array order, different
+  **Firestore key order**. The manifest never saw it (key-sorted semantic hash), but it made "run it
+  twice and diff" unavailable.
+- `audit/aliases-owner.json`. **A second defect `SKIP_EXPORT=1` was masking:** `firestore.rules`
+  have denied alias writes since 12 Aug, so the Firestore copy froze while the repo copy kept being
+  corrected. The first ordinary export reverted five aliases to lowercase (`jesus christ`, `trump`,
+  `djt`, `united states of america`) and dropped the `rachel chandler` group — **invariant 9 failed**.
+  The repo copy is canonical now, which is what it has been in practice since August.
+- `manifest.json` no longer carries `exportedAt`. It was the one file an export could never
+  reproduce, and it left the tree dirty so the *next* deploy failed preflight's clean check.
+
+**Proof.** Ordinary export, no `SKIP_EXPORT`, run repeatedly → **byte-identical, every file
+including the manifest**; a fresh export now leaves `git status` completely clean. Export output ==
+`rebuild-bundle.mjs` output, byte for byte. entities **1,445** · certified **9,786** · rendered
+**9,786** · predictions **595** · claims **4,221** · Resolution Center **105** · post text
+**1,128,312** chars, unchanged. **147/147** invariants · **12/12** Predictions-audit checks ·
+manifest verified · `verify-final.mjs --live` passed. Live artifact parity confirmed by fetching
+`qdrops.app/data/*.json`.
+
+**SEED_VERSION stays 75.** The bundle is byte-identical to what was already live, so a bump would
+make every returning reader re-seed 8 MB for data that did not move.
+
+**`audit/CURRENT-STATE.md` corrected** — it claimed 1,448 entities, 9,760 mentions and a 106-row
+queue against a live 1,445 / 9,786 / 105 (`code` had gone 29 → 28).
+
+**Port 5173:** nothing was listening and no vite/q-app node process exists — the stale server had
+already exited. Nothing to stop.
