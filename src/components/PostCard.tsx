@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
+import { useGlossary } from '../lib/glossary'
 import { Link } from 'react-router-dom'
 import { updatePost, getQuestionsForPost, addQuestions, removeQuestionById, addQuestionToMatchingPosts } from '../lib/posts'
 import { useAdmin } from './AdminContext'
@@ -29,6 +30,9 @@ function formatDate(ts: number) {
 }
 
 export default function PostCard({ post, questionTexts = [], searchKeyword = '', onAddQuestion }: Props) {
+  // The reader's acronym info box. Post-aware, so BO reads Barack Obama or Bruce Ohr
+  // depending on the drop it is standing in. See src/lib/glossary.tsx.
+  const gloss = useGlossary()
   const { unlocked: adminUnlocked, requireAdmin } = useAdmin()
   const [localQuestions, setLocalQuestions] = useState<QQuestion[]>([])
   const [qMsg, setQMsg] = useState<string | null>(null)
@@ -62,8 +66,8 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
     { key: 'namedEntities',      label: 'Named Entities',      color: 'text-cyan-400',   chip: 'bg-cyan-500/20 text-cyan-200 border-cyan-700/50' },
     { key: 'claims',             label: 'Claims',              color: 'text-amber-400',  chip: 'bg-amber-500/20 text-amber-200 border-amber-700/50' },
     { key: 'predictions',        label: 'Predictions',         color: 'text-violet-400', chip: 'bg-violet-500/20 text-violet-200 border-violet-700/50' },
-    { key: 'impliedConclusions', label: 'Impl. Conclusions',   color: 'text-orange-400', chip: 'bg-orange-500/20 text-orange-200 border-orange-700/50' },
-    { key: 'verificationHooks',  label: 'Checkable Claims',        color: 'text-fuchsia-400', chip: 'bg-fuchsia-500/20 text-fuchsia-200 border-fuchsia-700/50' },
+    // Impl. Conclusions retired as a section — every row is a certified Claim (owner ruling).
+    // Checkable Claims merged into Claims by owner ruling 2026-08-15. All 1,926 were ALREADY
     { key: 'themes',             label: 'Themes',              color: 'text-indigo-400', chip: 'bg-indigo-500/20 text-indigo-200 border-indigo-700/50' },
     { key: 'emphasis',           label: 'Emphasis',            color: 'text-slate-400',  chip: 'bg-slate-500/20 text-slate-200 border-slate-600/50' },
   ]
@@ -164,7 +168,9 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
   }
 
   return (
-    <div className={`bg-q-panel rounded-xl p-4 transition-all ${
+    // data-post-num is the scroll target for the archive's "Go to Post" jump, which stays on
+    // /posts and brings the card into view rather than navigating away from the list.
+    <div data-post-num={post.postNum} className={`bg-q-panel rounded-xl p-4 transition-all ${
       selectMode
         ? 'border-2 border-blue-500 shadow-[0_0_16px_rgba(59,130,246,0.2)]'
         : 'border border-q-border hover:border-gray-600'
@@ -206,7 +212,7 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
           )}
           {post.hasRequests && (
             <span className="text-xs bg-green-900/50 text-green-400 border border-green-800/60 px-2 py-0.5 rounded font-medium">
-              {post.actionRequests?.length ?? 0} request{(post.actionRequests?.length ?? 0) !== 1 ? 's' : ''}
+              {post.actionRequests?.length ?? 0} directive{(post.actionRequests?.length ?? 0) !== 1 ? 's' : ''}
             </span>
           )}
           {post.postAnalysis && (post.postAnalysis.claims?.length ?? 0) > 0 && (
@@ -224,16 +230,8 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
               {post.postAnalysis.namedEntities!.length} entities
             </span>
           )}
-          {post.postAnalysis && (post.postAnalysis.impliedConclusions?.length ?? 0) > 0 && (
-            <span className="text-xs bg-orange-900/50 text-orange-400 border border-orange-800/60 px-2 py-0.5 rounded font-medium">
-              {post.postAnalysis.impliedConclusions!.length} conclusion{post.postAnalysis.impliedConclusions!.length !== 1 ? 's' : ''}
-            </span>
-          )}
-          {post.postAnalysis && (post.postAnalysis.verificationHooks?.length ?? 0) > 0 && (
-            <span className="text-xs bg-fuchsia-900/50 text-fuchsia-400 border border-fuchsia-800/60 px-2 py-0.5 rounded font-medium">
-              {post.postAnalysis.verificationHooks!.length} checkable claim{post.postAnalysis.verificationHooks!.length !== 1 ? 's' : ''}
-            </span>
-          )}
+          {/* conclusions chip retired — every one is counted in the claims chip above */}
+          {/* checkable-claims chip retired — every one is counted in the claims chip */}
           {post.postAnalysis && (post.postAnalysis.emphasis?.length ?? 0) > 0 && (
             <span className="text-xs bg-slate-800/60 text-slate-300 border border-slate-600/60 px-2 py-0.5 rounded font-medium">
               {post.postAnalysis.emphasis!.length} emphasis
@@ -272,7 +270,7 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
             : 'bg-black/20'
         }`}
       >
-        {linkify(highlightText(post.text, questionTexts, searchKeyword, localRequests, localAnalysis))}
+        {linkify(highlightText(post.text, questionTexts, searchKeyword, localRequests, localAnalysis, post.postNum, gloss))}
       </pre>
 
       {/* Attachments. These were missing from the card entirely, so a search result never

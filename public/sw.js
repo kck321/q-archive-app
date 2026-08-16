@@ -32,6 +32,15 @@ self.addEventListener('activate', event => {
     const keys = await caches.keys()
     await Promise.all(keys.filter(k => !k.startsWith(CACHE_VERSION)).map(k => caches.delete(k)))
     await self.clients.claim()
+    // Tell open pages a new build is live so they can reload THEMSELVES.
+    //
+    // clients.claim() puts this worker in charge of pages that are already open, but those pages
+    // are still running the JavaScript they downloaded earlier — including the old SEED_VERSION,
+    // which is what decides whether to re-seed IndexedDB. So a deploy needed two refreshes: one
+    // to activate the worker, another to actually run the new code. In practice that read as
+    // "the fix isn't live" when the data was correct and already being served.
+    const clients = await self.clients.matchAll({ type: 'window' })
+    for (const c of clients) c.postMessage({ type: 'SW_ACTIVATED', version: CACHE_VERSION })
   })())
 })
 

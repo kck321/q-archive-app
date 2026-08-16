@@ -22,6 +22,37 @@ const dry = process.argv.includes('--dry')
 
 const audit = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/themes-audit.json'), 'utf8'))
 
+// ── Owner rulings ────────────────────────────────────────────────────────────
+// themes-audit.json is written by audit-themes.mjs, a DERIVE step, so a ruling written into it
+// survives exactly until the next audit run and then vanishes with no error. Rulings therefore
+// live in their own canonical file and are merged HERE, after the derived assignments:
+//
+//   owner ruling -> audit/themes-owner-rulings.json -> this merge -> themes.json + postAnalysis
+//
+// Same shape as Claims, where the seven owner rows live in claims-final.json rather than in the
+// postAnalysis cache that apply-claims rebuilds.
+const RULINGS = path.join(ROOT, 'audit/themes-owner-rulings.json')
+const ownerRulings = fs.existsSync(RULINGS) ? JSON.parse(fs.readFileSync(RULINGS, 'utf8')).rulings ?? [] : []
+let ownerAdded = 0
+for (const r of ownerRulings) {
+  // A post may legitimately carry more than one theme, so this adds rather than replaces — but
+  // the same theme must never be assigned twice to one post.
+  if (audit.assignments.some(a => a.postNum === r.postNum && a.theme === r.theme)) continue
+  audit.assignments.push({
+    postNum: r.postNum,
+    postId: r.postId ?? String(r.postNum),
+    theme: r.theme,
+    label: r.label,
+    confidence: 'OWNER_ADJUDICATED',
+    // The anchor is what the renderer highlights, so the ruled phrase must travel with it or the
+    // theme would count in the totals while showing nothing in the drop.
+    evidence: { anchors: [r.anchor], supportCount: 0, corroboratedByLegacyLabel: false },
+    provenance: `owner ruling ${r.ruledOn} — ${r.reasoning}`,
+  })
+  ownerAdded++
+}
+audit.assignments.sort((a, b) => a.postNum - b.postNum || a.theme.localeCompare(b.theme))
+
 // Style labels that must never become subjects, whatever the old data says.
 const STYLE_LABELS = /\b(cryptic|pattern recognition|insider knowledge|hidden (truth|knowledge)|coordinated messaging|future revelation|operational security|collective action|coded messag)\b/i
 
@@ -55,9 +86,14 @@ const out = {
 const styleLeak = audit.assignments.filter(a => STYLE_LABELS.test(a.label))
 const unknownTheme = audit.assignments.filter(a => !THEME_BY_KEY.has(a.theme))
 const checks = [
-  ['theme assignments = 2,393', out.totals.assignments === 2393, out.totals.assignments],
-  ['posts with a theme = 1,766', out.totals.postsWithAtLeastOne === 1766, out.totals.postsWithAtLeastOne],
-  ['multi-theme posts = 378', out.totals.postsWithMoreThanOne === 378, out.totals.postsWithMoreThanOne],
+  // 2,393 detected + 2 owner rulings ("Ascension." -> Religion & Spirituality on #4963 and #4966).
+  // Both counts are asserted separately so an owner ruling can never be mistaken for detector
+  // drift, and so a lost ruling fails here rather than quietly reverting the total to 2,393.
+  ['detected theme assignments = 2,393', out.totals.assignments - ownerAdded === 2393, out.totals.assignments - ownerAdded],
+  ['owner theme rulings applied = 251', ownerAdded === 251, ownerAdded],
+  ['theme assignments = 2,644', out.totals.assignments === 2644, out.totals.assignments],
+  ['posts with a theme = 1,898', out.totals.postsWithAtLeastOne === 1898, out.totals.postsWithAtLeastOne],
+  ['multi-theme posts = 444', out.totals.postsWithMoreThanOne === 444, out.totals.postsWithMoreThanOne],
   ['unresolved in Resolution Center = 251', out.totals.unresolvedInResolutionCenter === 251, out.totals.unresolvedInResolutionCenter],
   ['18 parent themes, unchanged', themeTable.length === 18, themeTable.length],
   ['no style label imported as a subject', styleLeak.length === 0, `${styleLeak.length} leaked`],
@@ -78,4 +114,27 @@ if (failed) { console.error(`\nAborting: ${failed} QA check(s) failed. Nothing w
 if (dry) { console.log('\n--dry: themes.json not written\n'); process.exit(0) }
 
 fs.writeFileSync(path.join(DATA, 'themes.json'), JSON.stringify(out))
+
+// Same defect as Entities: themes.json carried the certified 2,393 assignments while the UI kept
+// rendering 10,453 legacy extractor tags from postAnalysis.themes under the same section name.
+{
+  const postsFile = path.join(DATA, 'posts.json')
+  const allPosts = JSON.parse(fs.readFileSync(postsFile, 'utf8'))
+  for (const p of allPosts) {
+    const assigned = out.byPost?.[String(p.postNum)] ?? []
+    const list = assigned.map(t => t.label)
+    // The ANCHORS, so the post view can highlight the words that actually fired the signal.
+    //
+    // The renderer was searching the post text for the theme LABEL — "Disclosure &
+    // Declassification" — which is a taxonomy name and essentially never appears in a drop. The
+    // result was that no theme has ever highlighted anywhere. What is in the text is the anchor
+    // the Themes audit recorded, so that is what gets rendered; the label belongs on the badge.
+    const anchors = [...new Set(assigned.flatMap(t => t.evidence?.anchors ?? []))]
+    if (!p.postAnalysis) { if (!list.length) continue; p.postAnalysis = {} }
+    p.postAnalysis.themes = list
+    p.postAnalysis.themeAnchors = anchors
+  }
+  fs.writeFileSync(postsFile, JSON.stringify(allPosts))
+  console.log('  postAnalysis.themes rewritten from the certified set')
+}
 console.log(`\nwrote public/data/themes.json (${(fs.statSync(path.join(DATA, 'themes.json')).size / 1048576).toFixed(2)} MB)\n`)

@@ -1,0 +1,140 @@
+{
+ "note": "CONTEXT_OR_LABEL units whose canonical text is a multi-line reconstruction, so no single contiguous source span exists. Not dropped: listed here so the acceptance contract stays 4,889 contiguous + 13 reconstructed = 4,902 (4,906 before the owner ruled four of these units to be Claims).",
+ "count": 13,
+ "units": [
+  {
+   "postNum": 1192,
+   "unitId": "ctx-1192-Q_A_5_min_",
+   "reconstructedText": "Q&A 5 min.",
+   "constituentLines": [
+    "Q&A ",
+    "5 min.",
+    "Q"
+   ],
+   "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
+  },
+  {
+   "postNum": 1438,
+   "unitId": "ctx-1438-IDEN_reconf_v_",
+   "reconstructedText": "IDEN_reconf v.",
+   "constituentLines": [
+    "IDEN_reconf"
+   ],
+   "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
+  },
+  {
+   "postNum": 219,
+   "unitId": "ctx-219-_27_1_yes_USA58_A__27_1_",
+   "reconstructedText": "_27-1_yes_USA58-A _27-1_yes_USA04",
+   "constituentLines": [
+    "_27-1_yes_USA58-A",
+    "_27-1_yes_USA04"
+   ],
+   "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
+  },
+  {
+   "postNum": 2216,
+   "unitId": "ctx-2216-Q_A_Q",
+   "reconstructedText": "Q&A Q",
+   "constituentLines": [
+    "Q&A",
+    "Q"
+   ],
+   "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
+  },
+  {
+   "postNum": 2605,
+   "unitId": "ctx-2605-Q_A_Q",
+   "reconstructedText": "Q&A Q",
+   "constituentLines": [
+    "Q&A",
+    "Q"
+   ],
+   "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
+  },
+  {
+   "postNum": 3551,
+   "unitId": "ctx-3551-1_2H_insert_key",
+   "reconstructedText": "1-2H insert_key",
+   "constituentLines": [
+    "                                                1-2H",
+    "insert_key"
+   ],
+   "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
+  },
+  {
+   "postNum": 4603,
+   "unitId": "ctx-4603-702_non_702",
+   "reconstructedText": "702 non-702",
+   "constituentLines": [
+    "702",
+    "non-702"
+   ],
+   "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
+  },
+  {
+   "postNum": 4603,
+   "unitId": "ctx-4603-FVEY_non_FVEY_spy_insert",
+   "reconstructedText": "FVEY non-FVEY spy_insert_campaign[s] 1&2",
+   "constituentLines": [
+    "FVEY",
+    "non-FVEY",
+    "spy_insert_campaign[s] 1&2"
+   ],
+   "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
+  },
+  {
+   "postNum": 4603,
+   "unitId": "ctx-4603-traitor_defector_deserte",
+   "reconstructedText": "traitor defector deserter",
+   "constituentLines": [
+    "traitor",
+    "defector",
+    "deserter"
+   ],
+   "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
+  },
+  {
+   "postNum": 4603,
+   "unitId": "ctx-4603-turncoat_betrayer_rebel",
+   "reconstructedText": "turncoat betrayer rebel",
+   "constituentLines": [
+    "turncoat",
+    "betrayer",
+    "rebel"
+   ],
+   "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
+  },
+  {
+   "postNum": 4603,
+   "unitId": "ctx-4603-mutineer_quisling_fifth_",
+   "reconstructedText": "mutineer quisling fifth columnist",
+   "constituentLines": [
+    "mutineer",
+    "quisling",
+    "fifth columnist"
+   ],
+   "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
+  },
+  {
+   "postNum": 4603,
+   "unitId": "ctx-4603-renegado_tergiversator",
+   "reconstructedText": "renegado tergiversator",
+   "constituentLines": [
+    "renegado",
+    "tergiversator"
+   ],
+   "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
+  },
+  {
+   "postNum": 756,
+   "unitId": "ctx-756-dZ68J_729282D_B_02928xAB",
+   "reconstructedText": "dZ68J_729282D_B^02928xABVtZ b7al8920289-sLBTCZA99_jXK",
+   "constituentLines": [
+    "dZ68J_729282D_B^02928xABVtZ",
+    "b7al8920289-sLBTCZA99_jXK"
+   ],
+   "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
+  }
+ ]
+}

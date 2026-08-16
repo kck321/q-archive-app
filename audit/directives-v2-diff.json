@@ -1,0 +1,466 @@
+{
+ "changed": [
+  {
+   "id": "10#0",
+   "from": "NEEDS_CONTEXT",
+   "to": "REMOVE_QUOTED_OR_THIRD_PARTY",
+   "state": "QUOTED_OR_EMBEDDED",
+   "src": "QUOTED_ANONYMOUS_POST",
+   "s": "Remember, the FBI, and MI, have an open investigation into the CF."
+  },
+  {
+   "id": "10#1",
+   "from": "NEEDS_CONTEXT",
+   "to": "REMOVE_QUOTED_OR_THIRD_PARTY",
+   "state": "QUOTED_OR_EMBEDDED",
+   "src": "QUOTED_ANONYMOUS_POST",
+   "s": "Dig!!!!!"
+  },
+  {
+   "id": "1025#0",
+   "from": "REMOVE_BLESSING_OR_VALEDICTION",
+   "to": "NEEDS_CONTEXT",
+   "state": "NOT_LOCATED",
+   "src": "not_located",
+   "s": "God bless, Q"
+  },
+  {
+   "id": "154#1",
+   "from": "REMOVE_PRAYER_TEXT",
+   "to": "NEEDS_CONTEXT",
+   "state": "NOT_LOCATED",
+   "src": "not_located",
+   "s": "Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us,"
+  },
+  {
+   "id": "2351#1",
+   "from": "REMOVE_QUOTED_OR_THIRD_PARTY",
+   "to": "NEEDS_CONTEXT",
+   "state": "NOT_LOCATED",
+   "src": "not_located",
+   "s": "DO NOT LOOK HERE [CHINA] https://www.youtube.com/watch?v=aeVrMniBjSc"
+  },
+  {
+   "id": "2378#1",
+   "from": "REMOVE_QUOTED_OR_THIRD_PARTY",
+   "to": "NEEDS_CONTEXT",
+   "state": "NOT_LOCATED",
+   "src": "not_located",
+   "s": "DO NOT LOOK HERE [CHINA] https://www.youtube.com/watch?v=aeVrMniBjSc"
+  },
+  {
+   "id": "2382#1",
+   "from": "REMOVE_QUOTED_OR_THIRD_PARTY",
+   "to": "NEEDS_CONTEXT",
+   "state": "NOT_LOCATED",
+   "src": "not_located",
+   "s": "Re_read drops re: Polls https://www.oge.gov/web/oge.nsf/Resources/Political+Activities https://osc.gov/resources/ha%20pamphlet%20sept%202014.pdf"
+  },
+  {
+   "id": "2395#0",
+   "from": "REMOVE_QUOTED_OR_THIRD_PARTY",
+   "to": "NEEDS_CONTEXT",
+   "state": "NOT_LOCATED",
+   "src": "not_located",
+   "s": "Re_read drops re: MS13 https://twitter.com/RepMattGaetz/status/1052629557826736129"
+  },
+  {
+   "id": "2500#0",
+   "from": "REMOVE_QUOTED_OR_THIRD_PARTY",
+   "to": "NEEDS_CONTEXT",
+   "state": "NOT_LOCATED",
+   "src": "not_located",
+   "s": "Re_read drops re: WARNINGS https://www.washingtonpost.com/politics/new-book-by-trump-advisers-calls-out-the-presidents-embedded-enemies/2018/11/24/afcbd0fc-ede3-11e8-baac-2a674e91502b_story.html?utm_term=.80e6d1b24752"
+  },
+  {
+   "id": "2801#1",
+   "from": "REMOVE_QUOTED_OR_THIRD_PARTY",
+   "to": "NEEDS_CONTEXT",
+   "state": "NOT_LOCATED",
+   "src": "not_located",
+   "s": "Search 'Qanon' https://www.nbcnews.com/pages/search/?q=qanon https://abcnews.go.com/search?searchtext=qanon"
+  },
+  {
+   "id": "3428#2",
+   "from": "REMOVE_QUOTED_OR_THIRD_PARTY",
+   "to": "NEEDS_CONTEXT",
+   "state": "NOT_LOCATED",
+   "src": "not_located",
+   "s": "Find [4] http://www.zimbio.com/photos/Ghislaine+Maxwell/2014+ETM+Children+Benefit+Gala/Vl0uC7GgK_w"
+  },
+  {
+   "id": "349#0",
+   "from": "REMOVE_BLESSING_OR_VALEDICTION",
+   "to": "NEEDS_CONTEXT",
+   "state": "NOT_LOCATED",
+   "src": "not_located",
+   "s": "God bless, Q"
+  },
+  {
+   "id": "353#0",
+   "from": "REMOVE_BLESSING_OR_VALEDICTION",
+   "to": "NEEDS_CONTEXT",
+   "state": "NOT_LOCATED",
+   "src": "not_located",
+   "s": "Godspeed, Q"
+  },
+  {
+   "id": "3683#0",
+   "from": "REMOVE_BLESSING_OR_VALEDICTION",
+   "to": "REMOVE_QUOTED_OR_THIRD_PARTY",
+   "state": "QUOTED_OR_EMBEDDED",
+   "src": "QUOTED_ANONYMOUS_POST",
+   "s": "God bless you."
+  },
+  {
+   "id": "3819#0",
+   "from": "REMOVE_QUOTED_OR_THIRD_PARTY",
+   "to": "NEEDS_CONTEXT",
+   "state": "NOT_LOCATED",
+   "src": "not_located",
+   "s": "Read [1] https://www.miamiherald.com/news/politics-government/article237959369.html"
+  },
+  {
+   "id": "3819#1",
+   "from": "REMOVE_QUOTED_OR_THIRD_PARTY",
+   "to": "NEEDS_CONTEXT",
+   "state": "NOT_LOCATED",
+   "src": "not_located",
+   "s": "Read [2] https://www.miamiherald.com/news/politics-government/article214974800.html"
+  },
+  {
+   "id": "3896#0",
+   "from": "REMOVE_QUOTED_OR_THIRD_PARTY",
+   "to": "NEEDS_CONTEXT",
+   "state": "NOT_LOCATED",
+   "src": "not_located",
+   "s": ">Push new/revised P_2020 > vote by mail? [unsecure] https://twitter.com/TomFitton/status/1242071506445885441"
+  },
+  {
+   "id": "393#0",
+   "from": "REMOVE_BLESSING_OR_VALEDICTION",
+   "to": "NEEDS_CONTEXT",
+   "state": "NOT_LOCATED",
+   "src": "not_located",
+   "s": "Godspeed, Q"
+  },
+  {
+   "id": "394#0",
+   "from": "REMOVE_BLESSING_OR_VALEDICTION",
+   "to": "NEEDS_CONTEXT",
+   "state": "NOT_LOCATED",
+   "src": "not_located",
+   "s": "Godspeed, Q"
+  },
+  {
+   "id": "434#0",
+   "from": "REMOVE_BLESSING_OR_VALEDICTION",
+   "to": "NEEDS_CONTEXT",
+   "state": "NOT_LOCATED",
+   "src": "not_located",
+   "s": "God bless, Q"
+  },
+  {
+   "id": "4437#0",
+   "from": "REMOVE_QUOTED_OR_THIRD_PARTY",
+   "to": "NEEDS_CONTEXT",
+   "state": "NOT_LOCATED",
+   "src": "not_located",
+   "s": "find('input.js-password-field').set(ENV['TWITTER_PASSWORD']) click_on('Log in') end"
+  },
+  {
+   "id": "767#1",
+   "from": "REMOVE_BLESSING_OR_VALEDICTION",
+   "to": "NEEDS_CONTEXT",
+   "state": "NOT_LOCATED",
+   "src": "not_located",
+   "s": "GOD BLESS, Q"
+  }
+ ],
+ "lessCautious": [
+  {
+   "id": "10#0",
+   "from": "NEEDS_CONTEXT",
+   "to": "REMOVE_QUOTED_OR_THIRD_PARTY",
+   "state": "QUOTED_OR_EMBEDDED",
+   "src": "QUOTED_ANONYMOUS_POST",
+   "s": "Remember, the FBI, and MI, have an open investigation into the CF."
+  },
+  {
+   "id": "10#1",
+   "from": "NEEDS_CONTEXT",
+   "to": "REMOVE_QUOTED_OR_THIRD_PARTY",
+   "state": "QUOTED_OR_EMBEDDED",
+   "src": "QUOTED_ANONYMOUS_POST",
+   "s": "Dig!!!!!"
+  }
+ ],
+ "notLocated": [
+  {
+   "postNum": 1025,
+   "recordId": "1025#0",
+   "occurrenceIndex": 0,
+   "fullSentence": "God bless, Q",
+   "directivePhrase": "God bless, Q",
+   "religiousSegment": "",
+   "lineIndex": -1,
+   "authorshipState": "NOT_LOCATED",
+   "sourceType": "not_located",
+   "originalPostNum": "",
+   "ruling": "NEEDS_CONTEXT",
+   "religious": "true"
+  },
+  {
+   "postNum": 154,
+   "recordId": "154#1",
+   "occurrenceIndex": 1,
+   "fullSentence": "Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us,",
+   "directivePhrase": "Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us,",
+   "religiousSegment": "",
+   "lineIndex": -1,
+   "authorshipState": "NOT_LOCATED",
+   "sourceType": "not_located",
+   "originalPostNum": "",
+   "ruling": "NEEDS_CONTEXT",
+   "religious": "false"
+  },
+  {
+   "postNum": 2351,
+   "recordId": "2351#1",
+   "occurrenceIndex": 1,
+   "fullSentence": "DO NOT LOOK HERE [CHINA] https://www.youtube.com/watch?v=aeVrMniBjSc",
+   "directivePhrase": "DO NOT LOOK HERE [CHINA] https://www.youtube.com/watch?v=aeVrMniBjSc",
+   "religiousSegment": "",
+   "lineIndex": -1,
+   "authorshipState": "NOT_LOCATED",
+   "sourceType": "not_located",
+   "originalPostNum": "",
+   "ruling": "NEEDS_CONTEXT",
+   "religious": "false"
+  },
+  {
+   "postNum": 2378,
+   "recordId": "2378#1",
+   "occurrenceIndex": 1,
+   "fullSentence": "DO NOT LOOK HERE [CHINA] https://www.youtube.com/watch?v=aeVrMniBjSc",
+   "directivePhrase": "DO NOT LOOK HERE [CHINA] https://www.youtube.com/watch?v=aeVrMniBjSc",
+   "religiousSegment": "",
+   "lineIndex": -1,
+   "authorshipState": "NOT_LOCATED",
+   "sourceType": "not_located",
+   "originalPostNum": "",
+   "ruling": "NEEDS_CONTEXT",
+   "religious": "false"
+  },
+  {
+   "postNum": 2382,
+   "recordId": "2382#1",
+   "occurrenceIndex": 1,
+   "fullSentence": "Re_read drops re: Polls https://www.oge.gov/web/oge.nsf/Resources/Political+Activities https://osc.gov/resources/ha%20pamphlet%20sept%202014.pdf",
+   "directivePhrase": "Re_read drops re: Polls https://www.oge.gov/web/oge.nsf/Resources/Political+Activities https://osc.gov/resources/ha%20pamphlet%20sept%202014.pdf",
+   "religiousSegment": "",
+   "lineIndex": -1,
+   "authorshipState": "NOT_LOCATED",
+   "sourceType": "not_located",
+   "originalPostNum": "",
+   "ruling": "NEEDS_CONTEXT",
+   "religious": "false"
+  },
+  {
+   "postNum": 2395,
+   "recordId": "2395#0",
+   "occurrenceIndex": 0,
+   "fullSentence": "Re_read drops re: MS13 https://twitter.com/RepMattGaetz/status/1052629557826736129",
+   "directivePhrase": "Re_read drops re: MS13 https://twitter.com/RepMattGaetz/status/1052629557826736129",
+   "religiousSegment": "",
+   "lineIndex": -1,
+   "authorshipState": "NOT_LOCATED",
+   "sourceType": "not_located",
+   "originalPostNum": "",
+   "ruling": "NEEDS_CONTEXT",
+   "religious": "false"
+  },
+  {
+   "postNum": 2500,
+   "recordId": "2500#0",
+   "occurrenceIndex": 0,
+   "fullSentence": "Re_read drops re: WARNINGS https://www.washingtonpost.com/politics/new-book-by-trump-advisers-calls-out-the-presidents-embedded-enemies/2018/11/24/afcbd0fc-ede3-11e8-baac-2a674e91502b_story.html?utm_term=.80e6d1b24752",
+   "directivePhrase": "Re_read drops re: WARNINGS https://www.washingtonpost.com/politics/new-book-by-trump-advisers-calls-out-the-presidents-embedded-enemies/2018/11/24/afcbd0fc-ede3-11e8-baac-2a674e91502b_story.html?utm_term=.80e6d1b24752",
+   "religiousSegment": "",
+   "lineIndex": -1,
+   "authorshipState": "NOT_LOCATED",
+   "sourceType": "not_located",
+   "originalPostNum": "",
+   "ruling": "NEEDS_CONTEXT",
+   "religious": "false"
+  },
+  {
+   "postNum": 2801,
+   "recordId": "2801#1",
+   "occurrenceIndex": 1,
+   "fullSentence": "Search 'Qanon' https://www.nbcnews.com/pages/search/?q=qanon https://abcnews.go.com/search?searchtext=qanon",
+   "directivePhrase": "Search 'Qanon' https://www.nbcnews.com/pages/search/?q=qanon https://abcnews.go.com/search?searchtext=qanon",
+   "religiousSegment": "",
+   "lineIndex": -1,
+   "authorshipState": "NOT_LOCATED",
+   "sourceType": "not_located",
+   "originalPostNum": "",
+   "ruling": "NEEDS_CONTEXT",
+   "religious": "false"
+  },
+  {
+   "postNum": 3428,
+   "recordId": "3428#2",
+   "occurrenceIndex": 2,
+   "fullSentence": "Find [4] http://www.zimbio.com/photos/Ghislaine+Maxwell/2014+ETM+Children+Benefit+Gala/Vl0uC7GgK_w",
+   "directivePhrase": "Find [4] http://www.zimbio.com/photos/Ghislaine+Maxwell/2014+ETM+Children+Benefit+Gala/Vl0uC7GgK_w",
+   "religiousSegment": "",
+   "lineIndex": -1,
+   "authorshipState": "NOT_LOCATED",
+   "sourceType": "not_located",
+   "originalPostNum": "",
+   "ruling": "NEEDS_CONTEXT",
+   "religious": "false"
+  },
+  {
+   "postNum": 349,
+   "recordId": "349#0",
+   "occurrenceIndex": 0,
+   "fullSentence": "God bless, Q",
+   "directivePhrase": "God bless, Q",
+   "religiousSegment": "",
+   "lineIndex": -1,
+   "authorshipState": "NOT_LOCATED",
+   "sourceType": "not_located",
+   "originalPostNum": "",
+   "ruling": "NEEDS_CONTEXT",
+   "religious": "true"
+  },
+  {
+   "postNum": 353,
+   "recordId": "353#0",
+   "occurrenceIndex": 0,
+   "fullSentence": "Godspeed, Q",
+   "directivePhrase": "Godspeed, Q",
+   "religiousSegment": "",
+   "lineIndex": -1,
+   "authorshipState": "NOT_LOCATED",
+   "sourceType": "not_located",
+   "originalPostNum": "",
+   "ruling": "NEEDS_CONTEXT",
+   "religious": "false"
+  },
+  {
+   "postNum": 3819,
+   "recordId": "3819#0",
+   "occurrenceIndex": 0,
+   "fullSentence": "Read [1] https://www.miamiherald.com/news/politics-government/article237959369.html",
+   "directivePhrase": "Read [1] https://www.miamiherald.com/news/politics-government/article237959369.html",
+   "religiousSegment": "",
+   "lineIndex": -1,
+   "authorshipState": "NOT_LOCATED",
+   "sourceType": "not_located",
+   "originalPostNum": "",
+   "ruling": "NEEDS_CONTEXT",
+   "religious": "false"
+  },
+  {
+   "postNum": 3819,
+   "recordId": "3819#1",
+   "occurrenceIndex": 1,
+   "fullSentence": "Read [2] https://www.miamiherald.com/news/politics-government/article214974800.html",
+   "directivePhrase": "Read [2] https://www.miamiherald.com/news/politics-government/article214974800.html",
+   "religiousSegment": "",
+   "lineIndex": -1,
+   "authorshipState": "NOT_LOCATED",
+   "sourceType": "not_located",
+   "originalPostNum": "",
+   "ruling": "NEEDS_CONTEXT",
+   "religious": "false"
+  },
+  {
+   "postNum": 3896,
+   "recordId": "3896#0",
+   "occurrenceIndex": 0,
+   "fullSentence": ">Push new/revised P_2020 > vote by mail? [unsecure] https://twitter.com/TomFitton/status/1242071506445885441",
+   "directivePhrase": ">Push new/revised P_2020 > vote by mail? [unsecure] https://twitter.com/TomFitton/status/1242071506445885441",
+   "religiousSegment": "",
+   "lineIndex": -1,
+   "authorshipState": "NOT_LOCATED",
+   "sourceType": "not_located",
+   "originalPostNum": "",
+   "ruling": "NEEDS_CONTEXT",
+   "religious": "false"
+  },
+  {
+   "postNum": 393,
+   "recordId": "393#0",
+   "occurrenceIndex": 0,
+   "fullSentence": "Godspeed, Q",
+   "directivePhrase": "Godspeed, Q",
+   "religiousSegment": "",
+   "lineIndex": -1,
+   "authorshipState": "NOT_LOCATED",
+   "sourceType": "not_located",
+   "originalPostNum": "",
+   "ruling": "NEEDS_CONTEXT",
+   "religious": "false"
+  },
+  {
+   "postNum": 394,
+   "recordId": "394#0",
+   "occurrenceIndex": 0,
+   "fullSentence": "Godspeed, Q",
+   "directivePhrase": "Godspeed, Q",
+   "religiousSegment": "",
+   "lineIndex": -1,
+   "authorshipState": "NOT_LOCATED",
+   "sourceType": "not_located",
+   "originalPostNum": "",
+   "ruling": "NEEDS_CONTEXT",
+   "religious": "false"
+  },
+  {
+   "postNum": 434,
+   "recordId": "434#0",
+   "occurrenceIndex": 0,
+   "fullSentence": "God bless, Q",
+   "directivePhrase": "God bless, Q",
+   "religiousSegment": "",
+   "lineIndex": -1,
+   "authorshipState": "NOT_LOCATED",
+   "sourceType": "not_located",
+   "originalPostNum": "",
+   "ruling": "NEEDS_CONTEXT",
+   "religious": "true"
+  },
+  {
+   "postNum": 4437,
+   "recordId": "4437#0",
+   "occurrenceIndex": 0,
+   "fullSentence": "find('input.js-password-field').set(ENV['TWITTER_PASSWORD']) click_on('Log in') end",
+   "directivePhrase": "find('input.js-password-field').set(ENV['TWITTER_PASSWORD']) click_on('Log in') end",
+   "religiousSegment": "",
+   "lineIndex": -1,
+   "authorshipState": "NOT_LOCATED",
+   "sourceType": "not_located",
+   "originalPostNum": "",
+   "ruling": "NEEDS_CONTEXT",
+   "religious": "false"
+  },
+  {
+   "postNum": 767,
+   "recordId": "767#1",
+   "occurrenceIndex": 1,
+   "fullSentence": "GOD BLESS, Q",
+   "directivePhrase": "GOD BLESS, Q",
+   "religiousSegment": "",
+   "lineIndex": -1,
+   "authorshipState": "NOT_LOCATED",
+   "sourceType": "not_located",
+   "originalPostNum": "",
+   "ruling": "NEEDS_CONTEXT",
+   "religious": "true"
+  }
+ ]
+}

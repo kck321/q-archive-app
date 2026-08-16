@@ -5,6 +5,12 @@ import HighlightToggle from './HighlightToggle'
 
 const links = [
   { to: '/posts',     label: 'Post Archive', icon: '📜' },
+  // Search crosses every certified section, so it belongs beside the archive rather than inside
+  // any one layer's list.
+  // Search removed from the sidebar by owner ruling 2026-08-14. The ROUTE stays live —
+  // every 'also found in' chip and section cross-link points at /search — it just no longer
+  // occupies a permanent slot above Q Questions.
+
 ]
 
 
@@ -19,8 +25,14 @@ const analysisLinks = [
   { tab: 'predictions',       label: 'Q Predictions',  dot: 'bg-gray-500', color: 'text-violet-500 hover:text-violet-400' },
   { tab: 'namedEntities',     label: 'Q Entities',     dot: 'bg-gray-500',   color: 'text-cyan-500 hover:text-cyan-400' },
   { tab: 'themes',            label: 'Q Themes',       dot: 'bg-gray-500', color: 'text-indigo-500 hover:text-indigo-400' },
-  { tab: 'impliedConclusions',label: 'Q Conclusions',  dot: 'bg-gray-500', color: 'text-orange-500 hover:text-orange-400' },
-  { tab: 'verificationHooks', label: 'Checkable Claims',        dot: 'bg-gray-500', color: 'text-fuchsia-500 hover:text-fuchsia-400' },
+  // Q Conclusions retired as a section by owner ruling 2026-08-14: "implied conclusions ...
+  // is basically the same thing" as a Claim. All 966 were ALREADY certified Claims carrying
+  // isConclusion — the section was a second view of the same rows, so it is the view that goes,
+  // not the data. The attribute survives on claimMeta for provenance.
+
+  // Checkable Claims merged into Claims by owner ruling 2026-08-15. All 1,926 were ALREADY
+  // certified Claims — 0 needed adding, so nothing moved and nothing was double-counted. The
+  // `checkable` attribute survives on claimMeta for provenance; only the separate section goes.
   { tab: 'emphasis',          label: 'Q Emphasis',      dot: 'bg-gray-500', color: 'text-slate-400 hover:text-slate-300' },
   ...(CAN_EDIT ? [OVERLAPS_LINK] : []),
 ]
@@ -100,7 +112,7 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
             itemCls(isActive && !activeStatus, 'text-blue-500 hover:text-blue-400', flashKey, 'questions')
           }
         >
-          <span className="w-2 h-2 rounded-full shrink-0 bg-blue-500" />
+          <span className="w-2 h-2 rounded-full shrink-0 bg-gray-500" />
           Q Questions
         </NavLink>
 
@@ -112,7 +124,7 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
             itemCls(isActive, 'text-green-500 hover:text-green-400', flashKey, 'requests')
           }
         >
-          <span className="w-2 h-2 rounded-full shrink-0 bg-green-500" />
+          <span className="w-2 h-2 rounded-full shrink-0 bg-gray-500" />
           Q Directives
         </NavLink>
 
@@ -138,7 +150,7 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
                     itemCls(ba, 'text-red-500 hover:text-red-400', flashKey, '/brackets')
                   }
                 >
-                  <span className="w-2 h-2 rounded-full shrink-0 bg-red-500" />
+                  <span className="w-2 h-2 rounded-full shrink-0 bg-gray-500" />
                   Q [ Brackets ]
                 </NavLink>
               )}

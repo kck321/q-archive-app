@@ -1,0 +1,16 @@
+{
+ "certified": false,
+ "note": "Projection only. Recomputed with the same functions the live page runs. The page was not changed.",
+ "today": {
+  "mentions": 2651,
+  "groups": 1693,
+  "posts": 1538
+ },
+ "projectedIfV4Applied": {
+  "mentions": 2504,
+  "groups": 1646,
+  "posts": 1465
+ },
+ "removedByV4": 147,
+ "heldByV4": 3
+}

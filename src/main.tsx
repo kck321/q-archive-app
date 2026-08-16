@@ -15,6 +15,24 @@ if ('serviceWorker' in navigator && import.meta.env.PROD) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js').catch(() => { /* unsupported or blocked */ })
   })
+
+  // Reload once when a new build takes over.
+  //
+  // The worker claims open pages, but those pages keep running the JavaScript they already
+  // downloaded — including the old SEED_VERSION, which is what decides whether to re-seed
+  // IndexedDB from the new bundle. So a deploy took two refreshes: one to activate the worker,
+  // another to run the new code. Every "I still don't see it" this week has had correct data
+  // sitting on the server behind exactly that.
+  //
+  // Guarded by sessionStorage so a page can only self-reload once per tab session — a reload
+  // loop would be far worse than a stale tab.
+  navigator.serviceWorker.addEventListener('message', e => {
+    if (e.data?.type !== 'SW_ACTIVATED') return
+    const seen = sessionStorage.getItem('sw-reloaded')
+    if (seen === e.data.version) return
+    sessionStorage.setItem('sw-reloaded', e.data.version)
+    location.reload()
+  })
 }
 
 // Ask the browser not to evict our storage.

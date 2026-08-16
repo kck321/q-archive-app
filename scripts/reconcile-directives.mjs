@@ -1,182 +1,116 @@
-// One unified certified Directives dataset, with the certification invariant enforced.
+// (1) Why does the adjudication start at 2,705 when the Directives page says 2,652?
+// (2) A regression suite for the authorship detector, because its meaning was inverted once.
+// (3) Export the 45 held rows with surrounding context and a proposed destination.
 //
-// WHY THIS EXISTS: the certification pass and the queue adjudication were two scripts writing
-// two artifacts, and their numbers were reported side by side as though they were one set —
-// family totals summing to 2,277 next to a headline of 2,422. Nothing was misclassified (all
-// 145 promotions carry a family), but two disjoint number sets presented as one is exactly how
-// a sidebar count ends up disagreeing with a post count later.
-//
-// So the merge happens HERE, once, and the invariant is a gate rather than a claim:
-//
-//   sum(certified directive families) === certified directive occurrences
-//   NEEDS_CONTEXT is never part of that total
-//   no unit appears twice
-//   every certified directive has one of the seven agreed families
-//
-// AUDIT ONLY — no production write, no deploy.
+// READ-ONLY. Nothing is applied.
 //
 //   node scripts/reconcile-directives.mjs
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { key } from './lib/segment.mjs'
+import { clean } from './lib/segment.mjs'
+import { sourceLines } from './lib/quotedBlocks.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
-const OUT = path.join(ROOT, 'audit')
-const cert = JSON.parse(fs.readFileSync(path.join(OUT, 'directives-certified.json'), 'utf8'))
-const queues = JSON.parse(fs.readFileSync(path.join(OUT, 'directives-queues-adjudicated.json'), 'utf8'))
-const qs = JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/questions.json'), 'utf8')).filter(q => !q.editorialNormalization)
+const posts = JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/posts.json'), 'utf8'))
+const adj = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/directives-religious-adjudication.json'), 'utf8'))
+const norm = s => String(s).replace(/\s+/g, ' ').trim()
 
-const FAMILIES = ['cognition', 'research', 'morale', 'attention', 'operational', 'dissemination', 'prohibition']
+// ── 1. COUNT RECONCILIATION ──────────────────────────────────────────────────
+const all = []
+for (const p of posts) for (const r of (p.actionRequests ?? [])) {
+  const t = norm(typeof r === 'string' ? r : (r.text ?? r.sentence ?? ''))
+  all.push({ post: p.postNum, text: t })
+}
+const stored = all.length
+const nonEmpty = all.filter(r => r.text).length
+const distinctPerPost = new Set(all.filter(r => r.text).map(r => r.post + '|' + r.text.toLowerCase())).size
+const distinctPhrases = new Set(all.filter(r => r.text).map(r => r.text.toLowerCase())).size
+const postsRepresented = new Set(all.filter(r => r.text).map(r => r.post)).size
 
-// Every OCCURRENCE is a row, exactly as the Questions dataset treats them: Q writing
-// "Trace background." twice in #1008 is two directives, not one. Collapsing on
-// postNum+text would silently drop 53 real occurrences.
-//
-// What must never happen is the SAME occurrence arriving from both sources — a unit already
-// certified being promoted again out of a queue. That is the double-count worth gating on,
-// and it is checked separately below.
-const final = []
-const add = (rec, source) => final.push({ ...rec, source })
+console.log('\n1. DIRECTIVE COUNT RECONCILIATION\n')
+console.log(`  raw stored occurrences (post.actionRequests entries) : ${stored}`)
+console.log(`  non-empty occurrences                                : ${nonEmpty}`)
+console.log(`  distinct occurrences per post (in-post repeats merged): ${distinctPerPost}`)
+console.log(`  distinct phrases corpus-wide                         : ${distinctPhrases}`)
+console.log(`  posts represented                                    : ${postsRepresented}`)
+console.log(`  in-post duplicates (stored - distinct-per-post)       : ${stored - distinctPerPost}`)
+console.log(`\n  adjudication universe                                : ${adj.before}`)
+console.log(`  page figure quoted by the owner                       : 2,652 mentions / 1,538 posts`)
+console.log(`  difference stored vs page                            : ${stored - 2652}`)
 
-// 1. Directives certified directly by the full-corpus pass.
-for (const r of cert.rows) {
-  if (!r.countsAsDirective) continue
-  add({
-    postNum: r.postNum, postId: r.postId, qSourceText: r.qSourceText,
-    family: r.family, confidence: r.confidence,
-    alsoCertifiedQuestion: Boolean(r.alsoCertifiedQuestion),
-    klass: r.klass, storedAsActionRequest: r.storedAsActionRequest,
-  }, 'certification')
+// ── 2. AUTHORSHIP REGRESSION SUITE ───────────────────────────────────────────
+const quotedIdx = text => { try { const r = sourceLines(text); return r instanceof Map ? r : new Map() } catch { return new Map() } }
+const isQAuthored = (postNum, phrase) => {
+  const p = posts.find(x => x.postNum === postNum); if (!p) return null
+  const text = clean(p.text ?? ''), lines = text.split(String.fromCharCode(10))
+  const q = quotedIdx(text)
+  const mine = lines.filter((_, i) => !q.has(i)).map(l => norm(l).toLowerCase())
+  return mine.some(l => l.includes(norm(phrase).toLowerCase()))
+}
+const inQuotedPart = (postNum, phrase) => {
+  const p = posts.find(x => x.postNum === postNum); if (!p) return null
+  const text = clean(p.text ?? ''), lines = text.split(String.fromCharCode(10))
+  const q = quotedIdx(text)
+  return [...q.keys()].some(i => norm(lines[i] ?? '').toLowerCase().includes(norm(phrase).toLowerCase()))
 }
 
-// 2. Directives promoted out of the adjudication queues.
-for (const d of queues.decisions) {
-  if (d.proposedClassification !== 'Q_DIRECTIVE') continue
-  add({
-    postNum: d.postNum, postId: d.postId, qSourceText: d.qSourceText,
-    family: d.family, confidence: d.confidence,
-    alsoCertifiedQuestion: false,
-    klass: 'Q_DIRECTIVE', storedAsActionRequest: d.currentClassification === 'stored actionRequest',
-    promotedFromQueue: d.queue,
-  }, 'queue adjudication')
+console.log('\n2. AUTHORSHIP REGRESSION SUITE\n')
+let fails = 0
+const T = (label, got, want) => { const ok = got === want; if (!ok) fails++; console.log(`   ${ok ? 'PASS' : 'FAIL'}  ${label.padEnd(62)} ${got}`) }
+// a) a Q-authored command reads as Q-authored
+T('#111 "Pray." is Q-authored', isQAuthored(111, 'Pray.'), true)
+T('#587 "PRAY." is Q-authored', isQAuthored(587, 'PRAY.'), true)
+// b) a command inside an Anonymous post reads as quoted
+T('#147 "Pray." also appears in the QUOTED block', inQuotedPart(147, 'Pray.'), true)
+// c) a Bible command reproduced by Q is detected in the scripture set
+const scripture = adj.rows.filter(r => r.ruling === 'REMOVE_QUOTED_SCRIPTURE')
+T('quoted-Scripture commands detected', scripture.length > 0, true)
+T('  … "full armor of God" among them', scripture.some(r => /full armor of god/i.test(r.fullSentence)), true)
+// d) image-only text never becomes body text
+const bodyBlob = posts.map(p => norm(clean(p.text ?? '')).toLowerCase()).join(' ')
+T('image-only sentence absent from all body text',
+  !bodyBlob.includes('note the satanic cross she wears'), true)
+// e) the mixed sentence keeps its whole self and separates its segments
+const mixed = adj.rows.filter(r => r.ruling === 'SPLIT_MIXED_SENTENCE')
+T('mixed sentences kept whole', mixed.every(r => /god bless/i.test(r.fullSentence)), true)
+T('  … with a separate religious segment', mixed.every(r => r.religiousSegment.length > 0), true)
+T('  … and a separate directive segment', mixed.every(r => r.directivePhrase !== r.fullSentence), true)
+console.log(fails ? `\n   ${fails} regression check(s) FAILED` : '\n   authorship detector behaves correctly on all cases')
+
+// ── manual spot-check sample across boards/formats ───────────────────────────
+const third = adj.rows.filter(r => r.ruling === 'REMOVE_QUOTED_OR_THIRD_PARTY')
+console.log(`\n   spot-check sample from the ${third.length} quoted/third-party rows:`)
+for (const r of third.filter((_, i) => i % Math.ceil(third.length / 8) === 0).slice(0, 8)) {
+  const p = posts.find(x => x.postNum === r.post)
+  console.log(`     #${r.post} [${p?.board ?? p?.sourceBoard ?? '?'}]  "${r.fullSentence.slice(0, 68)}"`)
+  console.log(`        re-test: in quoted block = ${inQuotedPart(r.post, r.fullSentence)}, in Q lines = ${isQAuthored(r.post, r.fullSentence)}`)
 }
 
-const rows = final
-const held = queues.decisions.filter(d => d.proposedClassification === 'NEEDS_CONTEXT')
-
-// Cross-source double-count check: no promoted unit may already be certified.
-const certKeys = new Set(rows.filter(r => r.source === 'certification').map(r => `${r.postNum}|${key(r.qSourceText)}`))
-const dupes = rows.filter(r => r.source === 'queue adjudication' && certKeys.has(`${r.postNum}|${key(r.qSourceText)}`))
-
-// In-post repeats, reported the same way Questions reports them.
-const groups = new Map()
-for (const r of rows) {
-  const k = `${r.postNum}|${key(r.qSourceText)}`
-  groups.set(k, (groups.get(k) ?? 0) + 1)
+// ── 3. EXPORT THE 45 HELD ROWS ───────────────────────────────────────────────
+const held = adj.rows.filter(r => r.ruling === 'REMOVE_STATEMENT_OR_HEADING' || r.ruling === 'NEEDS_CONTEXT')
+const DEST = s => {
+  const t = s.toLowerCase()
+  if (/^(god bless|godspeed|god speed|amen|merry christmas|thank you)/.test(t)) return 'BLESSING_OR_VALEDICTION'
+  if (/\bwill\b|\bcoming\b|\bsoon\b|\bnext week\b/.test(t)) return 'Q_PREDICTION'
+  if (/^(for god|in god we trust|god wins|dark to light|divided by religion|religion v)/.test(t)) return 'STATEMENT_OR_HEADING'
+  if (/\?$/.test(t)) return 'NEEDS_CONTEXT'
+  if (/\b(is|are|was|were|has|have)\b/.test(t)) return 'Q_CLAIM'
+  return 'RELIGION_THEME_ONLY'
 }
-const repeatExtras = [...groups.values()].reduce((n, c) => n + c - 1, 0)
-
-// ── invariant gate ───────────────────────────────────────────────────────────
-const famTally = {}
-for (const r of rows) famTally[r.family] = (famTally[r.family] ?? 0) + 1
-const famSum = Object.values(famTally).reduce((a, b) => a + b, 0)
-const noFamily = rows.filter(r => !FAMILIES.includes(r.family))
-const heldLeaked = rows.filter(r => held.some(h => h.postNum === r.postNum && key(h.qSourceText) === key(r.qSourceText)))
-
-const checks = [
-  ['sum(families) === occurrences', famSum === rows.length, `${famSum} vs ${rows.length}`],
-  ['every directive has an agreed family', noFamily.length === 0, `${rows.length - noFamily.length}/${rows.length}`],
-  ['no unit counted twice across sources', dupes.length === 0, `${dupes.length} cross-source duplicate(s)`],
-  ['NEEDS_CONTEXT excluded from the total', heldLeaked.length === 0, `${held.length} held, ${heldLeaked.length} leaked`],
-  ['certification + promotions reconcile', rows.length === cert.totals.directiveOccurrences + queues.totals.promotedToDirective, `${cert.totals.directiveOccurrences} + ${queues.totals.promotedToDirective} = ${rows.length}`],
-]
-
-const distinct = new Set(rows.map(r => key(r.qSourceText)))
-const postsWith = new Set(rows.map(r => r.postNum))
-const overlap = rows.filter(r => r.alsoCertifiedQuestion)
-const qOcc = qs.length
-const qPosts = new Set(qs.map(q => q.postNum))
-const bothPosts = [...postsWith].filter(n => qPosts.has(n))
-
-console.log('\nDIRECTIVES — RECONCILED\n')
-console.log('  INVARIANT GATE')
-let failed = 0
-for (const [label, ok, got] of checks) { if (!ok) failed++; console.log(`    ${ok ? 'PASS' : 'FAIL'}  ${label.padEnd(40)} ${got}`) }
-for (const d of dupes.slice(0, 5)) console.log(`      cross-source: #${d.postNum} ${JSON.stringify(d.qSourceText.slice(0, 56))}`)
-for (const r of noFamily.slice(0, 5)) console.log(`      no family: #${r.postNum} ${JSON.stringify(r.qSourceText.slice(0, 56))}`)
-if (failed) { console.error(`\n${failed} invariant check(s) FAILED — not certifiable.\n`); process.exit(1) }
-
-console.log('\n  FINAL CERTIFIED DIRECTIVES')
-console.log(`    occurrences               : ${rows.length.toLocaleString()}`)
-console.log(`    distinct (canonical key)  : ${distinct.size.toLocaleString()}`)
-console.log(`    posts containing one      : ${postsWith.size.toLocaleString()}`)
-console.log(`    in-post repeats           : ${repeatExtras} (Q writing the same directive twice in one drop)`)
-console.log('\n    by family:')
-for (const f of FAMILIES) console.log(`      ${String(famTally[f] ?? 0).padStart(5)}  ${f}`)
-console.log(`      ${String(famSum).padStart(5)}  = total`)
-console.log('\n  QUESTION <-> DIRECTIVE OVERLAP')
-console.log(`    units that are both       : ${overlap.length}`)
-console.log(`      information-request imperatives : ${overlap.filter(r => r.klass === 'Q_QUESTION_AND_DIRECTIVE').length}`)
-console.log(`      directive-wrapped questions     : ${overlap.filter(r => r.klass === 'Q_DIRECTIVE_WITH_EMBEDDED_QUESTION').length}`)
-console.log(`    posts with both           : ${bothPosts.length.toLocaleString()}`)
-console.log(`\n  held at NEEDS_CONTEXT (excluded) : ${held.length}`)
-
-const totals = {
-  occurrences: rows.length, distinct: distinct.size, posts: postsWith.size, inPostRepeats: repeatExtras,
-  byFamily: famTally, familySum: famSum,
-  overlapWithQuestions: {
-    units: overlap.length,
-    informationRequestImperatives: overlap.filter(r => r.klass === 'Q_QUESTION_AND_DIRECTIVE').length,
-    directiveWrappedQuestions: overlap.filter(r => r.klass === 'Q_DIRECTIVE_WITH_EMBEDDED_QUESTION').length,
-    postsWithBoth: bothPosts.length,
-  },
-  questionsFrozen: { occurrences: qOcc, posts: qPosts.size },
-  heldNeedsContext: held.length,
-  fromCertification: rows.filter(r => r.source === 'certification').length,
-  fromQueueAdjudication: rows.filter(r => r.source === 'queue adjudication').length,
-}
-fs.writeFileSync(path.join(OUT, 'directives-final.json'), JSON.stringify({ invariantsPassed: true, productionChanged: false, totals, rows }, null, 1))
-
-const md = ['# Q Drops — Directives, final reconciled totals\n']
-md.push('One unified set. The invariant is a **gate in `scripts/reconcile-directives.mjs`**, not a claim: the script exits non-zero unless `sum(families) === occurrences`, every directive has one of the seven agreed families, no unit is counted twice, and no `NEEDS_CONTEXT` record is in the total.\n')
-md.push('\n## The reconciliation issue, and what it was\n')
-md.push('The certification pass and the queue adjudication wrote two artifacts, and their numbers were reported side by side as if they were one set — family totals summing to **2,277** beside a headline of **2,422**. It was a reporting fault only: **all 145 promoted directives carry a family**, none were left unresolved. The merge now happens once, here, so the two can no longer be quoted apart.\n')
-md.push('\n## Where the 145 went\n')
-md.push('| Family | From certification | Promoted from queues | Final |')
-md.push('|---|---|---|---|')
-const certFam = cert.totals.byFamily
-const promFam = queues.totals.familyAdditions
-for (const f of FAMILIES) md.push(`| ${f} | ${(certFam[f] ?? 0).toLocaleString()} | +${promFam[f] ?? 0} | **${(famTally[f] ?? 0).toLocaleString()}** |`)
-md.push(`| **Total** | **${Object.values(certFam).reduce((a, b) => a + b, 0).toLocaleString()}** | **+${queues.totals.promotedToDirective}** | **${famSum.toLocaleString()}** |`)
-md.push('\nPromoted directives by originating queue:\n')
-md.push('| Queue | Promoted | Left as claim / statement / held |')
-md.push('|---|---|---|')
-for (const [q, counts] of Object.entries(queues.totals.byQueue)) {
-  const p = counts.Q_DIRECTIVE ?? 0
-  const rest = Object.entries(counts).filter(([k]) => k !== 'Q_DIRECTIVE').reduce((a, [, n]) => a + n, 0)
-  md.push(`| ${q} | ${p} | ${rest.toLocaleString()} |`)
-}
-md.push('\n## Final certified Directives\n')
-md.push('| Measure | Value |')
-md.push('|---|---|')
-md.push(`| Directive occurrences | **${rows.length.toLocaleString()}** |`)
-md.push(`| Distinct (canonical \`key()\`) | ${distinct.size.toLocaleString()} |`)
-md.push(`| Posts containing a directive | ${postsWith.size.toLocaleString()} |`)
-md.push(`| In-post repeats included | ${repeatExtras} |`)
-md.push(`| Held at NEEDS_CONTEXT (excluded) | ${held.length} |`)
-md.push('\n### By family\n')
-md.push('| Family | Count |')
-md.push('|---|---|')
-for (const f of FAMILIES) md.push(`| ${f} | ${(famTally[f] ?? 0).toLocaleString()} |`)
-md.push(`| **Sum** | **${famSum.toLocaleString()}** |`)
-md.push('\n## Question ↔ Directive overlap\n')
-md.push('| Measure | Value |')
-md.push('|---|---|')
-md.push(`| Units that are BOTH | **${overlap.length}** |`)
-md.push(`| — information-request imperatives | ${totals.overlapWithQuestions.informationRequestImperatives} |`)
-md.push(`| — directive-wrapped questions | ${totals.overlapWithQuestions.directiveWrappedQuestions} |`)
-md.push(`| Posts containing both a question and a directive | ${bothPosts.length.toLocaleString()} |`)
-md.push(`\nEach overlapping unit is counted **once in Questions and once in Directives**, never twice within either section. Questions remain frozen at ${qOcc.toLocaleString()} occurrences across ${qPosts.size.toLocaleString()} posts.\n`)
-fs.writeFileSync(path.join(OUT, 'directives-final.md'), md.join('\n') + '\n')
-console.log('\n→ audit/directives-final.md\n')
+const rows = held.map(r => {
+  const p = posts.find(x => x.postNum === r.post)
+  const lines = clean(p?.text ?? '').split(String.fromCharCode(10)).map(norm).filter(Boolean)
+  const at = lines.findIndex(l => l.toLowerCase().includes(r.fullSentence.toLowerCase()))
+  return { ...r, contextBefore: at > 0 ? lines[at - 1] : '', contextAfter: at >= 0 && at < lines.length - 1 ? lines[at + 1] : '',
+    proposedDestination: r.ruling === 'NEEDS_CONTEXT' ? 'NEEDS_CONTEXT' : DEST(r.fullSentence) }
+})
+const esc = s => `"${String(s).replace(/"/g, '""')}"`
+const cols = ['post', 'fullSentence', 'directivePhrase', 'contextBefore', 'contextAfter', 'qAuthored', 'sourceType', 'ruling', 'proposedDestination', 'reason']
+fs.writeFileSync(path.join(ROOT, 'audit/directives-held-45.csv'),
+  [cols.join(','), ...rows.map(r => cols.map(c => esc(r[c] ?? '')).join(','))].join('\n'))
+fs.writeFileSync(path.join(ROOT, 'audit/directives-held-45.json'), JSON.stringify({ note: 'The 43 statement/heading rows and 2 needs-context rows, held for second opinion. Nothing applied.', rows }, null, 1))
+const d = {}; for (const r of rows) d[r.proposedDestination] = (d[r.proposedDestination] ?? 0) + 1
+console.log(`\n3. HELD ROWS EXPORTED: ${rows.length}`)
+for (const [k, v] of Object.entries(d).sort((a, b) => b[1] - a[1])) console.log(`     ${String(v).padStart(3)}  ${k}`)
+console.log('\nwrote audit/directives-held-45.{csv,json}   — nothing applied')

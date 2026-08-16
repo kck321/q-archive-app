@@ -1,0 +1,1665 @@
+QDROPS — DIRECTIVES AUDIT: RELIGIOUS, QUOTED AND NON-DIRECTIVE MATERIAL
+==============================================================================
+
+Religious content is NOT disqualified. A Q-authored religious command stays a Directive and
+also belongs to Religion & Spirituality. Removed instead: blessings and valedictions, prayer
+addressed to God, imperatives inside quoted Scripture, and commands belonging to a quoted
+source. Judged per OCCURRENCE — the same phrase can be Q-authored in one drop and quoted in
+another.
+
+BEFORE: 2705 certified Directives
+AFTER:  2455 remain  (250 proposed for removal)
+
+
+==============================================================================
+KEEP_Q_DIRECTIVE — 2424
+==============================================================================
+
+#1  Q-authored: true  [q_post_body]
+   full sentence : "Expect massive riots organized in defiance and others fleeing the US to occur."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1  Q-authored: true  [q_post_body]
+   full sentence : "Proof check: Locate a NG member and ask if activated for duty 10/30 across most major cities."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#100  Q-authored: true  [q_post_body]
+   full sentence : "Define assets?"
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1001  Q-authored: true  [q_post_body]
+   full sentence : "Collect."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1004  Q-authored: true  [q_post_body]
+   full sentence : "ACTIVATE D-PRIV"
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1006  Q-authored: true  [q_post_body]
+   full sentence : "COUNT YOUR BEATS."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1008  Q-authored: true  [q_post_body]
+   full sentence : "Trace background."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1008  Q-authored: true  [q_post_body]
+   full sentence : "Open source."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1008  Q-authored: true  [q_post_body]
+   full sentence : "Trace background."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1008  Q-authored: true  [q_post_body]
+   full sentence : "Open source."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1008  Q-authored: true  [q_post_body]
+   full sentence : "Trace background."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1008  Q-authored: true  [q_post_body]
+   full sentence : "Open source."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1008  Q-authored: true  [q_post_body]
+   full sentence : "Define 'witness'."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1008  Q-authored: true  [q_post_body]
+   full sentence : "Trust the plan."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1010  Q-authored: true  [q_post_body]
+   full sentence : "WATER"
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1016  Q-authored: true  [q_post_body]
+   full sentence : "Cross against POTUS' schedule."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1016  Q-authored: true  [q_post_body]
+   full sentence : "Cross against WH visitor log 11/22-1/18/17."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1018  Q-authored: true  [q_post_body]
+   full sentence : "Track edits."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1018  Q-authored: true  [q_post_body]
+   full sentence : "Watch for 'TheMagikBOT'."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1019  Q-authored: true  [q_post_body]
+   full sentence : "Follow the LOOP."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1020  Q-authored: true  [q_post_body]
+   full sentence : "Refer to old drops re: SA / NG."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1021  Q-authored: true  [q_post_body]
+   full sentence : "List the estimated wealth of religious organizations."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1027  Q-authored: true  [q_post_body]
+   full sentence : "Watch the news tomorrow."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#103  Q-authored: true  [q_post_body]
+   full sentence : "Come home safe."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1032  Q-authored: true  [q_post_body]
+   full sentence : "Think Navy Ship crashes."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1034  Q-authored: true  [q_post_body]
+   full sentence : "Track events."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1046  Q-authored: true  [q_post_body]
+   full sentence : "Enjoy the show."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1048  Q-authored: true  [q_post_body]
+   full sentence : "Connect via past religious leaders (re: Hussein)."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1049  Q-authored: true  [q_post_body]
+   full sentence : "Think NK."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1049  Q-authored: true  [q_post_body]
+   full sentence : "Think Nuke stranglehold."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1049  Q-authored: true  [q_post_body]
+   full sentence : "Think logically."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#105  Q-authored: true  [q_post_body]
+   full sentence : "Please pause and give thanks to those who would die to save our republic."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1050  Q-authored: true  [q_post_body]
+   full sentence : "Stand strong."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1052  Q-authored: true  [q_post_body]
+   full sentence : "Enjoy the show."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1054  Q-authored: true  [q_post_body]
+   full sentence : "Look up Ray.Chandler."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1055  Q-authored: true  [q_post_body]
+   full sentence : "Follow friends."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1055  Q-authored: true  [q_post_body]
+   full sentence : "Open source."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1056  Q-authored: true  [q_post_body]
+   full sentence : "Focus on friends (2)."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1057  Q-authored: true  [q_post_body]
+   full sentence : "Report to FBI / DOJ."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+#1057  Q-authored: true  [q_post_body]
+   full sentence : "Watch what happens."
+   Q Directive  ->  Q Directive
+   reason: Q instructs or urges the reader directly.
+
+   … 2384 further KEEP_Q_DIRECTIVE rows omitted from this TXT; all are in the CSV and JSON.
+
+
+==============================================================================
+KEEP_DIRECTIVE_AND_RELIGIOUS_THEME — 27
+==============================================================================
+
+#1027  Q-authored: true  [q_post_body]
+   full sentence : "Pray."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#1030  Q-authored: true  [q_post_body]
+   full sentence : "Pray."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#105  Q-authored: true  [q_post_body]
+   full sentence : "Please pray."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#1068  Q-authored: true  [q_post_body]
+   full sentence : "Pray."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#107  Q-authored: true  [q_post_body]
+   full sentence : "Pray."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#111  Q-authored: true  [q_post_body]
+   full sentence : "Pray."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#122  Q-authored: true  [q_post_body]
+   full sentence : "Pray."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#145  Q-authored: true  [q_post_body]
+   full sentence : "Pray."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#146  Q-authored: true  [q_post_body]
+   full sentence : "Pray."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#1603  Q-authored: true  [q_post_body]
+   full sentence : "Read the BIBLE."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#1831  Q-authored: true  [q_post_body]
+   full sentence : "NEVER STOP PRAYING."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#258  Q-authored: true  [q_post_body]
+   full sentence : "Pray."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#3050  Q-authored: true  [q_post_body]
+   full sentence : "Pray for the victims."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#324  Q-authored: true  [q_post_body]
+   full sentence : "Please pray tonight."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#35  Q-authored: true  [q_post_body]
+   full sentence : "Let us salute and pray for the brave men and women in uniform who will undertake this assignment to bring forth peace, unity, and return power to the people."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#3728  Q-authored: true  [q_post_body]
+   full sentence : "Pray."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#374  Q-authored: true  [q_post_body]
+   full sentence : "Pray."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#4397  Q-authored: true  [q_post_body]
+   full sentence : "Pray for Strength."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#4397  Q-authored: true  [q_post_body]
+   full sentence : "Pray for Guidance."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#4397  Q-authored: true  [q_post_body]
+   full sentence : "Pray for America."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#4550  Q-authored: true  [q_post_body]
+   full sentence : "Find peace through prayer."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#458  Q-authored: true  [q_post_body]
+   full sentence : "Please PRAY for those who would lay down their lives to protect our FREEDOM."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#4648  Q-authored: true  [q_post_body]
+   full sentence : "Find peace [solace] through prayer."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#4923  Q-authored: true  [q_post_body]
+   full sentence : "Find peace through prayer."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#586  Q-authored: true  [q_post_body]
+   full sentence : "If you are religious, PRAY."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#587  Q-authored: true  [q_post_body]
+   full sentence : "PRAY."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+#713  Q-authored: true  [q_post_body]
+   full sentence : "PRAY."
+   Q Directive  ->  Q Directive + Religion & Spirituality
+   reason: Q-authored religious command. Stays a Directive AND belongs to Religion & Spirituality.
+
+
+==============================================================================
+SPLIT_MIXED_SENTENCE — 2
+==============================================================================
+
+#1569  Q-authored: true  [q_post_body]
+   full sentence : "God bless and stay safe."
+   religious seg : "God bless"   directive seg : "stay safe"
+   Q Directive  ->  Q Directive + Religion & Spirituality (segmented)
+   reason: One sentence carries a blessing and a real instruction. Keep the complete sentence as the highlight; store the segments as metadata.
+
+#51  Q-authored: true  [q_post_body]
+   full sentence : "God bless and be safe."
+   religious seg : "God bless"   directive seg : "stay safe"
+   Q Directive  ->  Q Directive + Religion & Spirituality (segmented)
+   reason: One sentence carries a blessing and a real instruction. Keep the complete sentence as the highlight; store the segments as metadata.
+
+
+==============================================================================
+REMOVE_BLESSING_OR_VALEDICTION — 100
+==============================================================================
+
+#102  Q-authored: true  [q_post_body]
+   full sentence : "Godspeed."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#1025  Q-authored: false  [quoted_or_third_party]
+   full sentence : "God bless, Q"
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#103  Q-authored: true  [q_post_body]
+   full sentence : "Godspeed."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#104  Q-authored: true  [q_post_body]
+   full sentence : "God bless the United States of America."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#106  Q-authored: true  [q_post_body]
+   full sentence : "God bless."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#1093  Q-authored: true  [q_post_body]
+   full sentence : "God bless you all."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#1291  Q-authored: true  [q_post_body]
+   full sentence : "Godspeed, Patriot."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#1294  Q-authored: true  [q_post_body]
+   full sentence : "Godspeed, Patriot(s)."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#1295  Q-authored: true  [q_post_body]
+   full sentence : "God bless you all."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#13  Q-authored: true  [q_post_body]
+   full sentence : "God bless, Patriots."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#1349  Q-authored: true  [q_post_body]
+   full sentence : "Godspeed, Patriot."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#1350  Q-authored: true  [q_post_body]
+   full sentence : "God bless our brave fighting men & women."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#1358  Q-authored: true  [q_post_body]
+   full sentence : "God bless you all."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#1376  Q-authored: true  [q_post_body]
+   full sentence : "Godspeed, Patriot."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#1401  Q-authored: true  [q_post_body]
+   full sentence : "God Bless the United States of America."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#141  Q-authored: true  [q_post_body]
+   full sentence : "God bless you all."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#1475  Q-authored: true  [q_post_body]
+   full sentence : "GODSPEED ONE AND ALL."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#148  Q-authored: true  [q_post_body]
+   full sentence : "Godspeed."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#155  Q-authored: true  [q_post_body]
+   full sentence : "Godspeed."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#1583  Q-authored: true  [q_post_body]
+   full sentence : "God bless you all."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#1604  Q-authored: true  [q_post_body]
+   full sentence : "God bless."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#1646  Q-authored: true  [q_post_body]
+   full sentence : "GOD BLESS AMERICA."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#1646  Q-authored: true  [q_post_body]
+   full sentence : "GOD BLESS PATRIOTS AROUND THE WORLD."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#1691  Q-authored: true  [q_post_body]
+   full sentence : "God bless Patriots!"
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#1735  Q-authored: true  [q_post_body]
+   full sentence : "God bless."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#1783  Q-authored: true  [q_post_body]
+   full sentence : "God bless!"
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#181  Q-authored: true  [q_post_body]
+   full sentence : "Godspeed, Patriot."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#186  Q-authored: true  [q_post_body]
+   full sentence : "Godspeed."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#1911  Q-authored: true  [q_post_body]
+   full sentence : "God bless."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#1961  Q-authored: true  [q_post_body]
+   full sentence : "GOD BLESS YOU & YOUR FAMILY."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#2  Q-authored: true  [q_post_body]
+   full sentence : "God bless fellow Patriots."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#2039  Q-authored: true  [q_post_body]
+   full sentence : "GOD BLESS YOU ALL."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#219  Q-authored: true  [q_post_body]
+   full sentence : "Godspeed."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#2235  Q-authored: true  [q_post_body]
+   full sentence : "God bless, Patriot."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#226  Q-authored: true  [q_post_body]
+   full sentence : "Godspeed."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#231  Q-authored: true  [q_post_body]
+   full sentence : "Godspeed."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#2312  Q-authored: true  [q_post_body]
+   full sentence : "God bless you, Patriot."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#2314  Q-authored: true  [q_post_body]
+   full sentence : "God bless you and your family."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#2355  Q-authored: true  [q_post_body]
+   full sentence : "God bless, Patriot."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#2393  Q-authored: true  [q_post_body]
+   full sentence : "God bless you, Patriots!"
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#2436  Q-authored: true  [q_post_body]
+   full sentence : "GOD BLESS AMERICA."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#244  Q-authored: true  [q_post_body]
+   full sentence : "God bless."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#25  Q-authored: true  [q_post_body]
+   full sentence : "God bless."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#2529  Q-authored: true  [q_post_body]
+   full sentence : "God bless, Patriot."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#264  Q-authored: true  [q_post_body]
+   full sentence : "God bless, Patriots."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#2788  Q-authored: true  [q_post_body]
+   full sentence : "GOD BLESS YOU ALL."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#2807  Q-authored: true  [q_post_body]
+   full sentence : "GOD BLESS THE UNITED STATES OF AMERICA."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#2857  Q-authored: true  [q_post_body]
+   full sentence : "God bless each and every one of you."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#289  Q-authored: true  [q_post_body]
+   full sentence : "Godspeed."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#3  Q-authored: true  [q_post_body]
+   full sentence : "God bless, Patriots."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#3056  Q-authored: true  [q_post_body]
+   full sentence : "God bless."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#314  Q-authored: true  [q_post_body]
+   full sentence : "Godspeed, Patriots."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#323  Q-authored: true  [q_post_body]
+   full sentence : "God bless each and every one of you."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#33  Q-authored: true  [q_post_body]
+   full sentence : "God bless."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#346  Q-authored: true  [q_post_body]
+   full sentence : "Godspeed, Patriots."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#349  Q-authored: false  [quoted_or_third_party]
+   full sentence : "God bless, Q"
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#35  Q-authored: true  [q_post_body]
+   full sentence : "God bless my fellow Americans."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#3503  Q-authored: true  [q_post_body]
+   full sentence : "God bless and thank you."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#351  Q-authored: true  [q_post_body]
+   full sentence : "Godspeed, Patriots."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#353  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Godspeed, Q"
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#362  Q-authored: true  [q_post_body]
+   full sentence : "Godspeed, Patriots."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#3683  Q-authored: false  [quoted_or_third_party]
+   full sentence : "God bless you."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#3890  Q-authored: true  [q_post_body]
+   full sentence : "Godspeed."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#3907  Q-authored: true  [q_post_body]
+   full sentence : "GOD BLESS AMERICA."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#393  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Godspeed, Q"
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#394  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Godspeed, Q"
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#3950  Q-authored: true  [q_post_body]
+   full sentence : "God bless each and every one of you."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#414  Q-authored: true  [q_post_body]
+   full sentence : "God bless, Patriot."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#415  Q-authored: true  [q_post_body]
+   full sentence : "Godspeed, Patriots."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#4276  Q-authored: true  [q_post_body]
+   full sentence : "God bless you and your family."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#434  Q-authored: false  [quoted_or_third_party]
+   full sentence : "God bless, Q"
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#4387  Q-authored: true  [q_post_body]
+   full sentence : "GOD BLESS AMERICA."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#44  Q-authored: true  [q_post_body]
+   full sentence : "God bless."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#443  Q-authored: true  [q_post_body]
+   full sentence : "Godspeed, Patriot."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#4530  Q-authored: true  [q_post_body]
+   full sentence : "God bless each and every one of you."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#457  Q-authored: true  [q_post_body]
+   full sentence : "God bless you all."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#458  Q-authored: true  [q_post_body]
+   full sentence : "God bless."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#4608  Q-authored: true  [q_post_body]
+   full sentence : "God Bless America."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#4648  Q-authored: true  [q_post_body]
+   full sentence : "God bless."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#473  Q-authored: true  [q_post_body]
+   full sentence : "God bless each and every one of you."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#481  Q-authored: true  [q_post_body]
+   full sentence : "GOD BLESS."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#488  Q-authored: true  [q_post_body]
+   full sentence : "God bless Patriots."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#490  Q-authored: true  [q_post_body]
+   full sentence : "God bless each and every Patriot in the world."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#4923  Q-authored: true  [q_post_body]
+   full sentence : "God bless you."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#533  Q-authored: true  [q_post_body]
+   full sentence : "GOD BLESS YOU AND GOD BLESS THE UNITED STATES OF AMERICA."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#55  Q-authored: true  [q_post_body]
+   full sentence : "God bless."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#603  Q-authored: true  [q_post_body]
+   full sentence : "GOD BLESS YOU ALL."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#70  Q-authored: true  [q_post_body]
+   full sentence : "God bless."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#737  Q-authored: true  [q_post_body]
+   full sentence : "Godspeed."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#74  Q-authored: true  [q_post_body]
+   full sentence : "God bless."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#76  Q-authored: true  [q_post_body]
+   full sentence : "God bless."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#767  Q-authored: false  [quoted_or_third_party]
+   full sentence : "GOD BLESS, Q"
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#78  Q-authored: true  [q_post_body]
+   full sentence : "God bless."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#793  Q-authored: true  [q_post_body]
+   full sentence : "GO WITH GOD."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#837  Q-authored: true  [q_post_body]
+   full sentence : "GOD BLESS YOU ALL."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#856  Q-authored: true  [q_post_body]
+   full sentence : "God bless our brave men & women in uniform."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#902  Q-authored: true  [q_post_body]
+   full sentence : "Godspeed."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#937  Q-authored: true  [q_post_body]
+   full sentence : "God bless."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#95  Q-authored: true  [q_post_body]
+   full sentence : "God bless."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+#96  Q-authored: true  [q_post_body]
+   full sentence : "God bless, Patriots."
+   Q Directive  ->  Removed from Q Directives
+   reason: A blessing, greeting or closing — it instructs no one.
+
+
+==============================================================================
+REMOVE_PRAYER_TEXT — 3
+==============================================================================
+
+#154  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us,"
+   Q Directive  ->  Removed from Q Directives
+   reason: A petition addressed to God, not an instruction to the reader.
+
+#4739  Q-authored: true  [q_post_body]
+   full sentence : "Make me brave, so I can stand and fight the spiritual battles in my life and in our world."
+   Q Directive  ->  Removed from Q Directives
+   reason: A petition addressed to God, not an instruction to the reader.
+
+#4739  Q-authored: true  [q_post_body]
+   full sentence : "Give me your wisdom and discernment so I won't be caught off guard."
+   Q Directive  ->  Removed from Q Directives
+   reason: A petition addressed to God, not an instruction to the reader.
+
+
+==============================================================================
+REMOVE_QUOTED_SCRIPTURE — 33
+==============================================================================
+
+#1432  Q-authored: true  [q_post_body]
+   full sentence : "Put on the full armor of God so that you can take your stand against the devil's schemes."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#1432  Q-authored: true  [q_post_body]
+   full sentence : "Stand firm then, with the belt of truth buckled around your waist, with the breastplate of righteousness in place, and with your feet fitted with the readiness that comes from the gospel of peace."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#1432  Q-authored: true  [q_post_body]
+   full sentence : "Take the helmet of salvation and the sword of the Spirit, which is the word of God."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#1712  Q-authored: true  [q_post_body]
+   full sentence : "Put to death, therefore, whatever belongs to your earthly nature: sexual immorality, impurity, lust, evil desires and greed, which is idolatry."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#1886  Q-authored: true  [q_post_body]
+   full sentence : "Put on the full armor of God so that you can take your stand against the devil's schemes."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#1886  Q-authored: true  [q_post_body]
+   full sentence : "Stand firm then, with the belt of truth buckled around your waist, with the breastplate of righteousness in place, and with your feet fitted with the readiness that comes from the gospel of peace."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#1886  Q-authored: true  [q_post_body]
+   full sentence : "Take the helmet of salvation and the sword of the Spirit, which is the word of God."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#2403  Q-authored: true  [q_post_body]
+   full sentence : "Put on the full armor of God so that you can take your stand against the devil's schemes."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#2403  Q-authored: true  [q_post_body]
+   full sentence : "Stand firm then, with the belt of truth buckled around your waist, with the breastplate of righteousness in place, and with your feet fitted with the readiness that comes from the gospel of peace."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#2403  Q-authored: true  [q_post_body]
+   full sentence : "Take the helmet of salvation and the sword of the Spirit, which is the word of God."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#2904  Q-authored: true  [q_post_body]
+   full sentence : "Put on the full armor of God, so that you can take your stand against the devil's schemes."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#2904  Q-authored: true  [q_post_body]
+   full sentence : "Stand firm then, with the belt of truth buckled around your waist, with the breastplate of righteousness in place, and with your feet fitted with the readiness that comes from the gospel of peace."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#2904  Q-authored: true  [q_post_body]
+   full sentence : "Take the helmet of salvation and the sword of the Spirit, which is the word of God."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#3593  Q-authored: true  [q_post_body]
+   full sentence : "Put on the full armor of God, so that you can take your stand against the devil's schemes."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#3593  Q-authored: true  [q_post_body]
+   full sentence : "Stand firm then, with the belt of truth buckled around your waist, with the breastplate of righteousness in place, and with your feet fitted with the readiness that comes from the gospel of peace."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#3593  Q-authored: true  [q_post_body]
+   full sentence : "Take the helmet of salvation and the sword of the Spirit, which is the word of God."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#3594  Q-authored: true  [q_post_body]
+   full sentence : "Put on the full armor of God, so that you can take your stand against the devil's schemes."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#3594  Q-authored: true  [q_post_body]
+   full sentence : "Stand firm then, with the belt of truth buckled around your waist, with the breastplate of righteousness in place, and with your feet fitted with the readiness that comes from the gospel of peace."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#3594  Q-authored: true  [q_post_body]
+   full sentence : "Take the helmet of salvation and the sword of the Spirit, which is the word of God."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#3887  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Put on the full armor of God, so that you can take your stand against the devil's schemes."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#3887  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Stand firm then, with the belt of truth buckled around your waist, with the breastplate of righteousness in place, and with your feet fitted with the readiness that comes from the gospel of peace."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#3887  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Take the helmet of salvation and the sword of the Spirit, which is the word of God."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#4207  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Put on the full armor of God, so that you can take your stand against the devil's schemes."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#4207  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Stand firm then, with the belt of truth buckled around your waist, with the breastplate of righteousness in place, and with your feet fitted with the readiness that comes from the gospel of peace."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#4207  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Take the helmet of salvation and the sword of the Spirit, which is the word of God."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#4298  Q-authored: true  [q_post_body]
+   full sentence : "Ask and you shall receive."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#4374  Q-authored: true  [q_post_body]
+   full sentence : "Be strong in the Lord."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#4397  Q-authored: true  [q_post_body]
+   full sentence : "Be Strong in the Lord."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#4397  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Put on the full armor of God, so that you can take your stand against the devil's schemes."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#4429  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Put on the full armor of God, so that you can take your stand against the devil's schemes."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#4429  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Stand firm then, with the belt of truth buckled around your waist, with the breastplate of righteousness in place, and with your feet fitted with the readiness that comes from the gospel of peace."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#4429  Q-authored: true  [q_post_body]
+   full sentence : "Have faith in God."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+#4463  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Put on the full armor of God so that you can take your stand against the devil's schemes."
+   Q Directive  ->  Removed from Q Directives
+   reason: Grammatically imperative, but the imperative belongs to quoted Bible text, not to Q.
+
+
+==============================================================================
+REMOVE_QUOTED_OR_THIRD_PARTY — 71
+==============================================================================
+
+#107  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Note when we just sent the go orders and when this Tweet went live."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#1602  Q-authored: false  [quoted_or_third_party]
+   full sentence : "You should know this based on earlier drops re: SA / Nat Guard / MIL Assets activate US soil."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#1777  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Please post your pic/vid as POTUS specifically pointed at you moments ago."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#2332  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Think DECLAS."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#2351  Q-authored: false  [quoted_or_third_party]
+   full sentence : "DO NOT LOOK HERE [CHINA] https://www.youtube.com/watch?v=aeVrMniBjSc"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#2378  Q-authored: false  [quoted_or_third_party]
+   full sentence : "DO NOT LOOK HERE [CHINA] https://www.youtube.com/watch?v=aeVrMniBjSc"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#2382  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Re_read drops re: Polls https://www.oge.gov/web/oge.nsf/Resources/Political+Activities https://osc.gov/resources/ha%20pamphlet%20sept%202014.pdf"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#2395  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Re_read drops re: MS13 https://twitter.com/RepMattGaetz/status/1052629557826736129"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#2436  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Remember the battles of Lexington and Concord - "Give Me Liberty or Give Me Death!""
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#25  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Return to comments re: Pelosi and John M (some of us refuse to say his last name for a reason)."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#2500  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Re_read drops re: WARNINGS https://www.washingtonpost.com/politics/new-book-by-trump-advisers-calls-out-the-presidents-embedded-enemies/2018/11/24/afcbd0fc-ede3-11e8-baac-2a674e91502b_story.html?utm_term=.80e6d1b24752"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#2567  Q-authored: false  [quoted_or_third_party]
+   full sentence : ">Add multiple layers of 'coincidences' which mathematically proves legitimacy (standard deviation)<"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#2582  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Learn the Constitution re: vested powers of POTUS re: matters of NAT SEC."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#2801  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Search 'Qanon' https://www.nbcnews.com/pages/search/?q=qanon https://abcnews.go.com/search?searchtext=qanon"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#2971  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Listen to the clip again re: proof & evidence."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#2971  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Define 'brainwashing'."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#2971  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Think for yourself!"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#2987  Q-authored: false  [quoted_or_third_party]
+   full sentence : ">Return Power Back to the People"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Don't you think POTUS would be tweeting about removal given clear conflict."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#30  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Think xkeysc on steroids."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3004  Q-authored: false  [quoted_or_third_party]
+   full sentence : ">clear vision for the @DOJ"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3038  Q-authored: false  [quoted_or_third_party]
+   full sentence : ">Decide for yourself (be free from outside opinion)."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3038  Q-authored: false  [quoted_or_third_party]
+   full sentence : ">Decide for yourself (be objective in your conclusions)."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3038  Q-authored: false  [quoted_or_third_party]
+   full sentence : ">Decide for yourself (be true in your own beliefs)."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3038  Q-authored: false  [quoted_or_third_party]
+   full sentence : ">Decide for yourself (be open to following the facts)."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3038  Q-authored: false  [quoted_or_third_party]
+   full sentence : ">Decide for yourself (be strong in defending your beliefs)."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3038  Q-authored: false  [quoted_or_third_party]
+   full sentence : ">Decide for yourself (be resistant to blindly accepting fact-less statements)."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3038  Q-authored: false  [quoted_or_third_party]
+   full sentence : ">Decide for yourself (be free)"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3071  Q-authored: false  [quoted_or_third_party]
+   full sentence : ">VOTE TO ALLOW 'ILLEGAL' IMMIGRANTS RIGHT TO VOTE IN ELECTIONS"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#31  Q-authored: false  [quoted_or_third_party]
+   full sentence : "There is so much string pulling and blackmail that we need to cut these off to truly gain the power granted to us by the Patriots and hard working people of this great country."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3381  Q-authored: false  [quoted_or_third_party]
+   full sentence : ">Follow the Family"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3428  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Find [4] http://www.zimbio.com/photos/Ghislaine+Maxwell/2014+ETM+Children+Benefit+Gala/Vl0uC7GgK_w"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#36  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Please be safe and pray for those in harms way as they continually protect and serve our great country."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3647  Q-authored: false  [quoted_or_third_party]
+   full sentence : ">Create media blitz [scare] campaign ('talking points')('alarmist')"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3647  Q-authored: false  [quoted_or_third_party]
+   full sentence : ">Use 'pro-narrative minded' authorities on subject to provide foundation to support"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3647  Q-authored: false  [quoted_or_third_party]
+   full sentence : ">Deploy 'circular reporting' and 'group-think' tactics (echo chamber) to artificially raise 'public outcry'"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3647  Q-authored: false  [quoted_or_third_party]
+   full sentence : ">Use 'public outcry' to justify billion dollar taxpayer spend"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3819  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Read [1] https://www.miamiherald.com/news/politics-government/article237959369.html"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3819  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Read [2] https://www.miamiherald.com/news/politics-government/article214974800.html"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3836  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Think Hussein 'I'll have more flexibility after the election' hot mic statement to Russian depo re: Q to Hussein re: Putin."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3836  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Think Hussein WH refusal to send weapons to Ukraine [R Congress push to assist] but instead sent only blankets."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3862  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Watch what happens next!"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3896  Q-authored: false  [quoted_or_third_party]
+   full sentence : ">Push new/revised P_2020 > vote by mail? [unsecure] https://twitter.com/TomFitton/status/1242071506445885441"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3906  Q-authored: false  [quoted_or_third_party]
+   full sentence : ">Decide for yourself (be free from outside opinion)."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3906  Q-authored: false  [quoted_or_third_party]
+   full sentence : ">Decide for yourself (be objective in your conclusions)."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3906  Q-authored: false  [quoted_or_third_party]
+   full sentence : ">Decide for yourself (be true in your own beliefs)."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3906  Q-authored: false  [quoted_or_third_party]
+   full sentence : ">Decide for yourself (be open to following the facts)."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3906  Q-authored: false  [quoted_or_third_party]
+   full sentence : ">Decide for yourself (be strong in defending your beliefs)."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3906  Q-authored: false  [quoted_or_third_party]
+   full sentence : ">Decide for yourself (be resistant to blindly accepting fact-less statements)."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#3907  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Remember the battles of Lexington and Concord - "Give Me Liberty or Give Me Death!""
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#4  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Focus on Military Intellingence/ State Secrets and why might that be used vs any three letter agency"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#4  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Don't fool yourself into thinking Obama, Soros, Roth's, Clinton's etc have more power present day than POTUS."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#4  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Again, there are a lot more good people than bad so have faith."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#4437  Q-authored: false  [quoted_or_third_party]
+   full sentence : "find('input.js-password-field').set(ENV['TWITTER_PASSWORD']) click_on('Log in') end"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#4509  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Mission 3: Guide [awaken] others through use of facts [DECLAS 1-99 material and other relevant facts] and memes [decouple MSDNC control of info stream] _ask 'counter' questions to initiate 'thought' vs repeat [echo] of MSDNC propaganda"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#4509  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Mission 4: Learn use of camouflage [digitally] _primary account suspended-terminated _use of secondary"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#4511  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Use of general public to counter the narrative [propaganda] push by controlled media."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#4545  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Think HRC install: [2+] Supreme Court Justices, 200+ judges, rogue elements expanded inside DOJ, FBI, CIA, NSA, WH, STATE, …….removal 2nd amendment, border etc. ……… America for sale: China, Russia, Iran, Syria…….ISIS & AL Q expansion…….expansion surv of domestic citizens…….modify/change voter rules and regulations allow illegals+ballot harvesting w/ SC backed liberal-social opinion………sell off of military to highest bidder to fight internal long-standing wars…….."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#4553  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Select [public discovery] topics are deemed and ranked in priority order [ranking determines use of assets [big-to-small]]."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#4556  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Select [public discovery] topics are deemed and ranked in priority order [ranking determines use of assets [big-to-small]]."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#4734  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Deploy camouflage."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#4734  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Drop all references re: 'Q' 'Qanon' etc. to avoid ban/termination _censorship install."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#4734  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Keep charging, Midnight Riders!"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#520  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Get smart, MAKE AMERICA GREAT AGAIN!"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#59  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Remember, information is everything, the flow of information is no longer controlled by the MSM but by you/others."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#6  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Focus on Military Intelligence/ State Secrets and why might that be used vs any three letter agency"
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#6  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Don't fool yourself into thinking Obama, Soros, Roth's, Clinton's etc have more power present day than POTUS."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#6  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Again, there are a lot more good people than bad so have faith."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#738  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Understand one simple fact - the US is connected to the rest of the world."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#91  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Put simply, Obama ultimately OK'd by using the non govt email addy to communicate w/ Clinton."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+#91  Q-authored: false  [quoted_or_third_party]
+   full sentence : "Remember he lied about knowing but that ultimately came out in the dump."
+   Q Directive  ->  Removed from Q Directives
+   reason: The command belongs to an Anonymous post, article, letter, image or screenshot quoted by Q.
+
+
+==============================================================================
+REMOVE_STATEMENT_OR_HEADING — 43
+==============================================================================
+
+#1085  Q-authored: true  [q_post_body]
+   full sentence : "Have faith."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#1106  Q-authored: true  [q_post_body]
+   full sentence : "Have faith."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#1266  Q-authored: true  [q_post_body]
+   full sentence : "Have faith."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#151  Q-authored: true  [q_post_body]
+   full sentence : "Have faith, Patriots."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#1520  Q-authored: true  [q_post_body]
+   full sentence : "Have faith."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#190  Q-authored: true  [q_post_body]
+   full sentence : "Have faith."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#2049  Q-authored: true  [q_post_body]
+   full sentence : "Have faith."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#2292  Q-authored: true  [q_post_body]
+   full sentence : "Have faith, Patriots."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#236  Q-authored: true  [q_post_body]
+   full sentence : "Have faith."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#336  Q-authored: true  [q_post_body]
+   full sentence : "Have faith."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#337  Q-authored: true  [q_post_body]
+   full sentence : "Have faith."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#3889  Q-authored: true  [q_post_body]
+   full sentence : "Have faith and trust in yourself."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#409  Q-authored: true  [q_post_body]
+   full sentence : "Have faith."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#430  Q-authored: true  [q_post_body]
+   full sentence : "Have faith."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#4419  Q-authored: true  [q_post_body]
+   full sentence : "Have faith."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#4427  Q-authored: true  [q_post_body]
+   full sentence : "Have faith in Humanity."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#4429  Q-authored: true  [q_post_body]
+   full sentence : "Have faith in Humanity."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#4429  Q-authored: true  [q_post_body]
+   full sentence : "Have faith in Yourself."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#4460  Q-authored: true  [q_post_body]
+   full sentence : "Have faith in Humanity."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#4491  Q-authored: true  [q_post_body]
+   full sentence : "Have faith in Humanity."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#4491  Q-authored: true  [q_post_body]
+   full sentence : "Have faith in yourself."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#4550  Q-authored: true  [q_post_body]
+   full sentence : "Have faith in Humanity."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#4550  Q-authored: true  [q_post_body]
+   full sentence : "Have faith in yourself."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#4566  Q-authored: true  [q_post_body]
+   full sentence : "Have faith in Humanity."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#4580  Q-authored: true  [q_post_body]
+   full sentence : "Have faith in Humanity."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#4588  Q-authored: true  [q_post_body]
+   full sentence : "Have faith in Humanity."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#4593  Q-authored: true  [q_post_body]
+   full sentence : "Have faith and trust in yourself."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#4627  Q-authored: true  [q_post_body]
+   full sentence : "Have Faith in Humanity."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#4627  Q-authored: true  [q_post_body]
+   full sentence : "Have Faith in Yourself."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#4648  Q-authored: true  [q_post_body]
+   full sentence : "Have faith in Humanity."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#4648  Q-authored: true  [q_post_body]
+   full sentence : "Have faith in Yourself."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#4746  Q-authored: true  [q_post_body]
+   full sentence : "Have faith in Humanity."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#4760  Q-authored: true  [q_post_body]
+   full sentence : "Have faith in your research."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#4915  Q-authored: true  [q_post_body]
+   full sentence : "Have faith in Humanity."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#5  Q-authored: true  [q_post_body]
+   full sentence : "Have faith."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#521  Q-authored: true  [q_post_body]
+   full sentence : "Have FAITH - WE ARE IN CONTROL."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#521  Q-authored: true  [q_post_body]
+   full sentence : "HAVE FAITH."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#556  Q-authored: true  [q_post_body]
+   full sentence : "Have FAITH, Patriot."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#668  Q-authored: true  [q_post_body]
+   full sentence : "HAVE FAITH."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#67  Q-authored: true  [q_post_body]
+   full sentence : "Have faith."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#690  Q-authored: true  [q_post_body]
+   full sentence : "Have faith."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#70  Q-authored: true  [q_post_body]
+   full sentence : "Have faith."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+#76  Q-authored: true  [q_post_body]
+   full sentence : "Have faith."
+   Q Directive  ->  Removed from Q Directives
+   reason: Religious, but declarative — a statement, slogan or label rather than an instruction.
+
+
+==============================================================================
+NEEDS_CONTEXT — 2
+==============================================================================
+
+#10  Q-authored: unknown  [q_post_body]
+   full sentence : "Remember, the FBI, and MI, have an open investigation into the CF."
+   Q Directive  ->  Needs Context
+   reason: Source boundaries could not be established for this drop.
+
+#10  Q-authored: unknown  [q_post_body]
+   full sentence : "Dig!!!!!"
+   Q Directive  ->  Needs Context
+   reason: Source boundaries could not be established for this drop.

@@ -1,0 +1,1930 @@
+{
+ "count": 245,
+ "items": [
+  {
+   "postNum": 100,
+   "postId": "100",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why is this relevant? / Why now?",
+   "line": "Why is this relevant? / Why now?"
+  },
+  {
+   "postNum": 100,
+   "postId": "100",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What was reported? / What really happened?",
+   "line": "What was reported? / What really happened?"
+  },
+  {
+   "postNum": 100,
+   "postId": "100",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What political leaders worship Satan? / What does an upside down cross represent?",
+   "line": "What political leaders worship Satan? / What does an upside down cross represent?"
+  },
+  {
+   "postNum": 1008,
+   "postId": "1008",
+   "kind": "caps",
+   "sourceText": "FED",
+   "line": "FBI/SC/DOJ/FED G simply TRUST CS's report on data breach?"
+  },
+  {
+   "postNum": 1091,
+   "postId": "1091",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why are we confirming this publicly? / Why now?",
+   "line": "Why are we confirming this publicly? / Why now?"
+  },
+  {
+   "postNum": 111,
+   "postId": "111",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What year(s) did this occur? / What just happened in SA?",
+   "line": "What year(s) did this occur? / What just happened in SA?"
+  },
+  {
+   "postNum": 111,
+   "postId": "111",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why would this former President be funded pre-political days? / Why is the relevance?",
+   "line": "Why would this former President be funded pre-political days? / Why is the relevance?"
+  },
+  {
+   "postNum": 111,
+   "postId": "111",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Who are the bad actors? / Who funds majority of US 'senior' politicians?",
+   "line": "Who are the bad actors? / Who funds majority of US 'senior' politicians?"
+  },
+  {
+   "postNum": 111,
+   "postId": "111",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Is this possible? / Is the US political / election system corrupt?",
+   "line": "Is this possible? / Is the US political / election system corrupt?"
+  },
+  {
+   "postNum": 117,
+   "postId": "117",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "What is HUMA? Define. / What book was BO caught reading?",
+   "line": "What is HUMA? Define. / What book was BO caught reading?"
+  },
+  {
+   "postNum": 117,
+   "postId": "117",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why is this relevant? / Why would the President of the UNITED STATES OF AMERICA be reading this book?",
+   "line": "Why is this relevant? / Why would the President of the UNITED STATES OF AMERICA be reading this book?"
+  },
+  {
+   "postNum": 117,
+   "postId": "117",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What just occurred in SA? / What FOIA docs are being publicly released (recently)?",
+   "line": "What just occurred in SA? / What FOIA docs are being publicly released (recently)?"
+  },
+  {
+   "postNum": 117,
+   "postId": "117",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What does money laundering mean? / What is the single biggest event that can generate many nation states to payout billions?",
+   "line": "What does money laundering mean? / What is the single biggest event that can generate many nation states to payout billions?"
+  },
+  {
+   "postNum": 117,
+   "postId": "117",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What do they specialize in? / What is oil field service?",
+   "line": "What do they specialize in? / What is oil field service?"
+  },
+  {
+   "postNum": 118,
+   "postId": "118",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Was anyone else permitted to leave? / Was it a private plane?",
+   "line": "Was anyone else permitted to leave? / Was it a private plane?"
+  },
+  {
+   "postNum": 118,
+   "postId": "118",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why does the MSM portray the country as being divided? / Why is this relevant?",
+   "line": "Why does the MSM portray the country as being divided? / Why is this relevant?"
+  },
+  {
+   "postNum": 1181,
+   "postId": "1181",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "How can we use what we know? / How do you ‘legally’ inject/make public/use as evidence?",
+   "line": "How can we use what we know? / How do you ‘legally’ inject/make public/use as evidence?"
+  },
+  {
+   "postNum": 119,
+   "postId": "119",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why is this relevant? / Why did the Bush family recently break silence and attack POTUS?",
+   "line": "Why is this relevant? / Why did the Bush family recently break silence and attack POTUS?"
+  },
+  {
+   "postNum": 121,
+   "postId": "121",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What US assets are in place in/near SA? / What assurances were made to protect the Kingdom?",
+   "line": "What US assets are in place in/near SA? / What assurances were made to protect the Kingdom?"
+  },
+  {
+   "postNum": 121,
+   "postId": "121",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What provides power? / What if US elections can be rigged?",
+   "line": "What provides power? / What if US elections can be rigged?"
+  },
+  {
+   "postNum": 121,
+   "postId": "121",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "What do you need an ID for? List. Compare. Laugh. / What is the argument for not allowing voter ID laws to be enacted?",
+   "line": "What do you need an ID for? List. Compare. Laugh. / What is the argument for not allowing voter ID laws to be enacted?"
+  },
+  {
+   "postNum": 1241,
+   "postId": "1241",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "No inspection @ GZ NR sites. / No missile tech prevention.",
+   "line": "No inspection @ GZ NR sites. / No missile tech prevention."
+  },
+  {
+   "postNum": 1245,
+   "postId": "1245",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why are border states like AZ/CA important? / Why is MX vocal against POTUS?",
+   "line": "Why are border states like AZ/CA important? / Why is MX vocal against POTUS?"
+  },
+  {
+   "postNum": 1249,
+   "postId": "1249",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What is smuggled? / What funds are used to pay for the goods?",
+   "line": "What is smuggled? / What funds are used to pay for the goods?"
+  },
+  {
+   "postNum": 1286,
+   "postId": "1286",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "Mueller & U1? / Mueller &",
+   "line": "Mueller & U1? / Mueller &"
+  },
+  {
+   "postNum": 1286,
+   "postId": "1286",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why is Mueller’s team stacked w/ ex Clinton / D sr level authorities? / Why are POTUS supporters screaming for END?",
+   "line": "Why is Mueller’s team stacked w/ ex Clinton / D sr level authorities? / Why are POTUS supporters screaming for END?"
+  },
+  {
+   "postNum": 1286,
+   "postId": "1286",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Who has the POWER? / Who can know?",
+   "line": "Who has the POWER? / Who can know?"
+  },
+  {
+   "postNum": 1296,
+   "postId": "1296",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "The hard part is coming to an end. / The next phase will bring JUSTICE.",
+   "line": "The hard part is coming to an end. / The next phase will bring JUSTICE."
+  },
+  {
+   "postNum": 1306,
+   "postId": "1306",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What if U1 material ended up in Syria? / What would be the primary purpose?",
+   "line": "What if U1 material ended up in Syria? / What would be the primary purpose?"
+  },
+  {
+   "postNum": 1306,
+   "postId": "1306",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What country? / What would happen if Russia or another foreign state supplied Uranium to Iran/Syria?",
+   "line": "What country? / What would happen if Russia or another foreign state supplied Uranium to Iran/Syria?"
+  },
+  {
+   "postNum": 1318,
+   "postId": "1318",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Who is the AG? / Who MUST approve the firing/dismissal of DOJ officials?",
+   "line": "Who is the AG? / Who MUST approve the firing/dismissal of DOJ officials?"
+  },
+  {
+   "postNum": 1318,
+   "postId": "1318",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What if the same data is being used by other investigators? / What does it mean if a grand jury is impanelled?",
+   "line": "What if the same data is being used by other investigators? / What does it mean if a grand jury is impanelled?"
+  },
+  {
+   "postNum": 1320,
+   "postId": "1320",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "The deal kept Iran quiet. / The goal was to keep POTUS in until impeachment / term end.",
+   "line": "The deal kept Iran quiet. / The goal was to keep POTUS in until impeachment / term end."
+  },
+  {
+   "postNum": 1339,
+   "postId": "1339",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why are we here? / Why do we ask questions?",
+   "line": "Why are we here? / Why do we ask questions?"
+  },
+  {
+   "postNum": 1351,
+   "postId": "1351",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "WHAT DEPTS MUST BE CLEANED PRIOR TO REC FAIR AND EQUAL [JUSTICE] UNDER THE LAW? / What happens if FED [criminal] indictments are brought forth to a corrupt FBI / DOJ / FED Judge?",
+   "line": "WHAT DEPTS MUST BE CLEANED PRIOR TO REC FAIR AND EQUAL [JUSTICE] UNDER THE LAW? / What happens if FED [criminal] indictments are brought forth to a corrupt FBI / DOJ / FED Judge?"
+  },
+  {
+   "postNum": 1355,
+   "postId": "1355",
+   "kind": "caps",
+   "sourceText": "FED",
+   "line": "Why are D’s slow-walking POTUS’ FED J nominations?"
+  },
+  {
+   "postNum": 1370,
+   "postId": "1370",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "DOES IT FALL UNDER THE RUSSIA RECUSAL? / DOES FLYNN KNOW?",
+   "line": "DOES IT FALL UNDER THE RUSSIA RECUSAL? / DOES FLYNN KNOW?"
+  },
+  {
+   "postNum": 1373,
+   "postId": "1373",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "We Fight! / We, The PEOPLE.",
+   "line": "We Fight! / We, The PEOPLE."
+  },
+  {
+   "postNum": 138,
+   "postId": "138",
+   "kind": "caps",
+   "sourceText": "FED",
+   "line": "The FED and the IRS"
+  },
+  {
+   "postNum": 1380,
+   "postId": "1380",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What is being revealed? / What will it lead to?",
+   "line": "What is being revealed? / What will it lead to?"
+  },
+  {
+   "postNum": 14,
+   "postId": "14",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why is this relevant? / Why did Adm R (NSA) meet Trump privately w/o auth?",
+   "line": "Why is this relevant? / Why did Adm R (NSA) meet Trump privately w/o auth?"
+  },
+  {
+   "postNum": 14,
+   "postId": "14",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Was HRC next in line? / Was the election suppose to be rigged?",
+   "line": "Was HRC next in line? / Was the election suppose to be rigged?"
+  },
+  {
+   "postNum": 14,
+   "postId": "14",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why does the military play such a vital role? / Why is POTUS surrounded by highly respected generals?",
+   "line": "Why does the military play such a vital role? / Why is POTUS surrounded by highly respected generals?"
+  },
+  {
+   "postNum": 14,
+   "postId": "14",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why is ANTIFA allowed to operate? / Why hasn't the MB been classified as a terrorist org?",
+   "line": "Why is ANTIFA allowed to operate? / Why hasn't the MB been classified as a terrorist org?"
+  },
+  {
+   "postNum": 140,
+   "postId": "140",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What is the significance? / What if China, Russia, and others are coordinating w/ POTUS to eliminate the NWO?",
+   "line": "What is the significance? / What if China, Russia, and others are coordinating w/ POTUS to eliminate the NWO?"
+  },
+  {
+   "postNum": 1415,
+   "postId": "1415",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "They thought it was coming yesterday. / They were wrong.",
+   "line": "They thought it was coming yesterday. / They were wrong."
+  },
+  {
+   "postNum": 142,
+   "postId": "142",
+   "kind": "caps",
+   "sourceText": "FED",
+   "line": "What is the FED?"
+  },
+  {
+   "postNum": 142,
+   "postId": "142",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What ‘exactly’ happened to the Titanic? / What ‘class of people’ were guaranteed a lifeboat?",
+   "line": "What ‘exactly’ happened to the Titanic? / What ‘class of people’ were guaranteed a lifeboat?"
+  },
+  {
+   "postNum": 142,
+   "postId": "142",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why did select ‘individuals’ not make it into the lifeboats? / Why is this relevant?",
+   "line": "Why did select ‘individuals’ not make it into the lifeboats? / Why is this relevant?"
+  },
+  {
+   "postNum": 142,
+   "postId": "142",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "How do we know who was on the lifeboats (D or A)? / How were names and bodies recorded back then?",
+   "line": "How do we know who was on the lifeboats (D or A)? / How were names and bodies recorded back then?"
+  },
+  {
+   "postNum": 144,
+   "postId": "144",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Who does [i]t hurt? / Who control[s] the MSM?",
+   "line": "Who does [i]t hurt? / Who control[s] the MSM?"
+  },
+  {
+   "postNum": 144,
+   "postId": "144",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "How is information transmitted? / How are people inform[e]d?",
+   "line": "How is information transmitted? / How are people inform[e]d?"
+  },
+  {
+   "postNum": 144,
+   "postId": "144",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "For [GOD & COUNTRY]. / For HUMANITY.",
+   "line": "For [GOD & COUNTRY]. / For HUMANITY."
+  },
+  {
+   "postNum": 1484,
+   "postId": "1484",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Who brings the votes (House floor)? / Who decides?",
+   "line": "Who brings the votes (House floor)? / Who decides?"
+  },
+  {
+   "postNum": 1486,
+   "postId": "1486",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "No proofs collection here (pinned)? / No links within each post (top)?",
+   "line": "No proofs collection here (pinned)? / No links within each post (top)?"
+  },
+  {
+   "postNum": 1494,
+   "postId": "1494",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "(2) MISSILE FIRES W/ A STRATEGIC PURPOSE / (2) EXTINGUISHED.",
+   "line": "(2) MISSILE FIRES W/ A STRATEGIC PURPOSE / (2) EXTINGUISHED."
+  },
+  {
+   "postNum": 151,
+   "postId": "151",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why is Adm R. so important? / Why was the source code to former NSA collection p’s publicly released?",
+   "line": "Why is Adm R. so important? / Why was the source code to former NSA collection p’s publicly released?"
+  },
+  {
+   "postNum": 151,
+   "postId": "151",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why did Sessions recuse himself? / Why is this relevant?",
+   "line": "Why did Sessions recuse himself? / Why is this relevant?"
+  },
+  {
+   "postNum": 151,
+   "postId": "151",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why did POTUS depart Manila 30 min ahead of schedule? / Why is AF1 landing in Hawaii?",
+   "line": "Why did POTUS depart Manila 30 min ahead of schedule? / Why is AF1 landing in Hawaii?"
+  },
+  {
+   "postNum": 1515,
+   "postId": "1515",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why did the Podesta group close? / Why no leaks?",
+   "line": "Why did the Podesta group close? / Why no leaks?"
+  },
+  {
+   "postNum": 153,
+   "postId": "153",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why, hours after the election, did seven people travel to an undisclosed location to hold a very private & highly secured/guarded meeting? / Why didn’t HRC give a concession speech?",
+   "line": "Why, hours after the election, did seven people travel to an undisclosed location to hold a very private & highly secured/guarded meeting? / Why didn’t HRC give a concession speech?"
+  },
+  {
+   "postNum": 154,
+   "postId": "154",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Who financed 9-11? / Who was Bin Laden’s handler?",
+   "line": "Who financed 9-11? / Who was Bin Laden’s handler?"
+  },
+  {
+   "postNum": 154,
+   "postId": "154",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why was the Clowns In America tasked to hunt/kill/capture UBL? / Why not MI?",
+   "line": "Why was the Clowns In America tasked to hunt/kill/capture UBL? / Why not MI?"
+  },
+  {
+   "postNum": 157,
+   "postId": "157",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What is open source? / What has become blatantly obvious since the election of POTUS?",
+   "line": "What is open source? / What has become blatantly obvious since the election of POTUS?"
+  },
+  {
+   "postNum": 157,
+   "postId": "157",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What miscalculation occurred? / What opposite impact did this generate?",
+   "line": "What miscalculation occurred? / What opposite impact did this generate?"
+  },
+  {
+   "postNum": 158,
+   "postId": "158",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "When was this announced? / When did events in SA transpire?",
+   "line": "When was this announced? / When did events in SA transpire?"
+  },
+  {
+   "postNum": 158,
+   "postId": "158",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What is immunity? / What prevents a news organization from simply ‘making up sources & stories’?",
+   "line": "What is immunity? / What prevents a news organization from simply ‘making up sources & stories’?"
+  },
+  {
+   "postNum": 158,
+   "postId": "158",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What if Hugh Hefner was /a Clown In America? / What is a honeypot?",
+   "line": "What if Hugh Hefner was /a Clown In America? / What is a honeypot?"
+  },
+  {
+   "postNum": 1602,
+   "postId": "1602",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "The game is over when the public knows. / The fight to keep the LIGHTS OFF is all that matters to you.",
+   "line": "The game is over when the public knows. / The fight to keep the LIGHTS OFF is all that matters to you."
+  },
+  {
+   "postNum": 1604,
+   "postId": "1604",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "We stand with you. / We are monitoring the situation closely.",
+   "line": "We stand with you. / We are monitoring the situation closely."
+  },
+  {
+   "postNum": 1623,
+   "postId": "1623",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Who just joined the Board of Netflix? / Who pushed?",
+   "line": "Who just joined the Board of Netflix? / Who pushed?"
+  },
+  {
+   "postNum": 1644,
+   "postId": "1644",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "They self destruct. / They know this is real.",
+   "line": "They self destruct. / They know this is real."
+  },
+  {
+   "postNum": 165,
+   "postId": "165",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What are data sets? / What is a map?",
+   "line": "What are data sets? / What is a map?"
+  },
+  {
+   "postNum": 165,
+   "postId": "165",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "When was this announced? / When did events in SA transpire?",
+   "line": "When was this announced? / When did events in SA transpire?"
+  },
+  {
+   "postNum": 166,
+   "postId": "166",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What are data sets? / What is a map?",
+   "line": "What are data sets? / What is a map?"
+  },
+  {
+   "postNum": 166,
+   "postId": "166",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "When was this announced? / When did events in SA transpire?",
+   "line": "When was this announced? / When did events in SA transpire?"
+  },
+  {
+   "postNum": 1661,
+   "postId": "1661",
+   "kind": "caps",
+   "sourceText": "MIL",
+   "line": "What role can MIL INTEL play?"
+  },
+  {
+   "postNum": 1688,
+   "postId": "1688",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Who financed then? / Who is financing now?",
+   "line": "Who financed then? / Who is financing now?"
+  },
+  {
+   "postNum": 1698,
+   "postId": "1698",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "To yourself. / To your children.",
+   "line": "To yourself. / To your children."
+  },
+  {
+   "postNum": 17,
+   "postId": "17",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why does Obama travel in advance of POTUS to foreign locations? / Why is this relevant?",
+   "line": "Why does Obama travel in advance of POTUS to foreign locations? / Why is this relevant?"
+  },
+  {
+   "postNum": 170,
+   "postId": "170",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why am I here during the day? / Why is this relevant?",
+   "line": "Why am I here during the day? / Why is this relevant?"
+  },
+  {
+   "postNum": 1711,
+   "postId": "1711",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why is this important? / Why did Sessions recuse?",
+   "line": "Why is this important? / Why did Sessions recuse?"
+  },
+  {
+   "postNum": 1796,
+   "postId": "1796",
+   "kind": "caps",
+   "sourceText": "MAGA",
+   "line": "Fake MAGA supporters"
+  },
+  {
+   "postNum": 18,
+   "postId": "18",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why did Mueller meet POTUS 1-day prior to FBI announcement if Mueller COULD NOT be offered director due to prev term limits rule? / Why is Pelosi begging for a new special counsel?",
+   "line": "Why did Mueller meet POTUS 1-day prior to FBI announcement if Mueller COULD NOT be offered director due to prev term limits rule? / Why is Pelosi begging for a new special counsel?"
+  },
+  {
+   "postNum": 18,
+   "postId": "18",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What could this prevent potentially? / What is the Mayo Clinic?",
+   "line": "What could this prevent potentially? / What is the Mayo Clinic?"
+  },
+  {
+   "postNum": 1850,
+   "postId": "1850",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "[Not Updated] / Not seeking re-election.",
+   "line": "[Not Updated] / Not seeking re-election."
+  },
+  {
+   "postNum": 186,
+   "postId": "186",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "You are learning. / You needed a push.",
+   "line": "You are learning. / You needed a push."
+  },
+  {
+   "postNum": 1876,
+   "postId": "1876",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What ADVANTAGES exist to BIG TECH, other ABC off/on agencies, elected officials, CEOs, FOREIGN ADVERSARIES etc. if such information is learned? / What price are you (the PUBLIC) willing to pay?",
+   "line": "What ADVANTAGES exist to BIG TECH, other ABC off/on agencies, elected officials, CEOs, FOREIGN ADVERSARIES etc. if such information is learned? / What price are you (the PUBLIC) willing to pay?"
+  },
+  {
+   "postNum": 1926,
+   "postId": "1926",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "The attribution of one's own ideas, feelings, or attitudes to other people or to objects; especially : the externalization of blame, guilt, or responsibility as a defense against anxiety? / The forming of a plan : scheming?",
+   "line": "The attribution of one's own ideas, feelings, or attitudes to other people or to objects; especially : the externalization of blame, guilt, or responsibility as a defense against anxiety? / The forming of a plan : scheming?"
+  },
+  {
+   "postNum": 1927,
+   "postId": "1927",
+   "kind": "caps",
+   "sourceText": "MIL",
+   "line": "+ MIL presence around POTUS"
+  },
+  {
+   "postNum": 1929,
+   "postId": "1929",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Who is [1 of 4] FIREWALLS? / Who signed?",
+   "line": "Who is [1 of 4] FIREWALLS? / Who signed?"
+  },
+  {
+   "postNum": 194,
+   "postId": "194",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Who released the picture? / Who has all the information?",
+   "line": "Who released the picture? / Who has all the information?"
+  },
+  {
+   "postNum": 1941,
+   "postId": "1941",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Was 'Nazism' ever truly destroyed? / Was it merely a sub-division within a larger organization?",
+   "line": "Was 'Nazism' ever truly destroyed? / Was it merely a sub-division within a larger organization?"
+  },
+  {
+   "postNum": 1944,
+   "postId": "1944",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Who must sign off on FISA warrants? / Who directs the signers?",
+   "line": "Who must sign off on FISA warrants? / Who directs the signers?"
+  },
+  {
+   "postNum": 1945,
+   "postId": "1945",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": ": the offense of attempting by overt acts to overthrow the government of the state to which the offender owes allegiance or to kill or personally injure the sovereign or the sovereign's family / : the betrayal of a trust : treachery",
+   "line": ": the offense of attempting by overt acts to overthrow the government of the state to which the offender owes allegiance or to kill or personally injure the sovereign or the sovereign's family / : the betrayal of a trust : treachery"
+  },
+  {
+   "postNum": 1948,
+   "postId": "1948",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Who paid HUSSEIN to attend HARVARD LAW SCHOOL? / Who is Prince Alwaleed bin Talal?",
+   "line": "Who paid HUSSEIN to attend HARVARD LAW SCHOOL? / Who is Prince Alwaleed bin Talal?"
+  },
+  {
+   "postNum": 1948,
+   "postId": "1948",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "How were the pallets of cash divided? / How many planes were used to transport?",
+   "line": "How were the pallets of cash divided? / How many planes were used to transport?"
+  },
+  {
+   "postNum": 1948,
+   "postId": "1948",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "How do you prevent financial T logs? / How were the cash withdrawals in EU categorized/labeled?",
+   "line": "How do you prevent financial T logs? / How were the cash withdrawals in EU categorized/labeled?"
+  },
+  {
+   "postNum": 1948,
+   "postId": "1948",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why wasn't Congress notified? / Why was the U.S. Gov't kept in the DARK?",
+   "line": "Why wasn't Congress notified? / Why was the U.S. Gov't kept in the DARK?"
+  },
+  {
+   "postNum": 1948,
+   "postId": "1948",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why did [1] particular plane land outside of Iran? / Why was a helicopter involved?",
+   "line": "Why did [1] particular plane land outside of Iran? / Why was a helicopter involved?"
+  },
+  {
+   "postNum": 195,
+   "postId": "195",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Who released the picture? / Who has all the information?",
+   "line": "Who released the picture? / Who has all the information?"
+  },
+  {
+   "postNum": 1956,
+   "postId": "1956",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "You just have to LOOK. / You MUST stay TOGETHER.",
+   "line": "You just have to LOOK. / You MUST stay TOGETHER."
+  },
+  {
+   "postNum": 2171,
+   "postId": "2171",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "The attribution of one's own ideas, feelings, or attitudes to other people or to objects; especially : the externalization of blame, guilt, or responsibility as a defense against anxiety? / The forming of a plan : scheming?",
+   "line": "The attribution of one's own ideas, feelings, or attitudes to other people or to objects; especially : the externalization of blame, guilt, or responsibility as a defense against anxiety? / The forming of a plan : scheming?"
+  },
+  {
+   "postNum": 2401,
+   "postId": "2401",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "(((Q+))) / Q",
+   "line": "(((Q+))) / Q"
+  },
+  {
+   "postNum": 2403,
+   "postId": "2403",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "Your Country Needs You. / Your Vote Matters!",
+   "line": "Your Country Needs You. / Your Vote Matters!"
+  },
+  {
+   "postNum": 2431,
+   "postId": "2431",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "Your Country needs you. / Your VOTE matters!",
+   "line": "Your Country needs you. / Your VOTE matters!"
+  },
+  {
+   "postNum": 2437,
+   "postId": "2437",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "WE HONOR THOSE WHO FOUGHT (& CONTINUE TO FIGHT) TO SAVE & DEFEND THIS GREAT COUNTRY. / WE WILL DO OUR PART —- WILL YOU DO YOURS?",
+   "line": "WE HONOR THOSE WHO FOUGHT (& CONTINUE TO FIGHT) TO SAVE & DEFEND THIS GREAT COUNTRY. / WE WILL DO OUR PART —- WILL YOU DO YOURS?"
+  },
+  {
+   "postNum": 2472,
+   "postId": "2472",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "We knew then. / We know now.",
+   "line": "We knew then. / We know now."
+  },
+  {
+   "postNum": 2502,
+   "postId": "2502",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What if the House fails prior to majority change? / What vested auth does the Constitution grant a sitting President re: matters of NAT SEC?",
+   "line": "What if the House fails prior to majority change? / What vested auth does the Constitution grant a sitting President re: matters of NAT SEC?"
+  },
+  {
+   "postNum": 2524,
+   "postId": "2524",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "2. Removed from SC oversight / [2] completed",
+   "line": "2. Removed from SC oversight / [2] completed"
+  },
+  {
+   "postNum": 2546,
+   "postId": "2546",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "When was the statement made? / When did \"Q\" go active?",
+   "line": "When was the statement made? / When did \"Q\" go active?"
+  },
+  {
+   "postNum": 2561,
+   "postId": "2561",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "When did POTUS make the statement \"Calm Before the Storm?\" / When was HUBER activated by SESSIONS?",
+   "line": "When did POTUS make the statement \"Calm Before the Storm?\" / When was HUBER activated by SESSIONS?"
+  },
+  {
+   "postNum": 2562,
+   "postId": "2562",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What happens when you have enough evidence to PROCEED? / What is the benefit of educating the public PRIOR TO proceeding?",
+   "line": "What happens when you have enough evidence to PROCEED? / What is the benefit of educating the public PRIOR TO proceeding?"
+  },
+  {
+   "postNum": 2582,
+   "postId": "2582",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "\"You will not win?\" - Pelosi / You didn't think the largest MIL spending bill in history (FY 2019) wasn't going to [indirectly] include funding for the wall did you?",
+   "line": "\"You will not win?\" - Pelosi / You didn't think the largest MIL spending bill in history (FY 2019) wasn't going to [indirectly] include funding for the wall did you?"
+  },
+  {
+   "postNum": 2593,
+   "postId": "2593",
+   "kind": "caps",
+   "sourceText": "MIL",
+   "line": "Think MIL."
+  },
+  {
+   "postNum": 2655,
+   "postId": "2655",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "The future will not repeat the past. / The clock is ticking.",
+   "line": "The future will not repeat the past. / The clock is ticking."
+  },
+  {
+   "postNum": 2676,
+   "postId": "2676",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "ZERO leaks re: HUBER? / ZERO.",
+   "line": "ZERO leaks re: HUBER? / ZERO."
+  },
+  {
+   "postNum": 2691,
+   "postId": "2691",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "The message must be direct. / The WAR is very real.",
+   "line": "The message must be direct. / The WAR is very real."
+  },
+  {
+   "postNum": 2740,
+   "postId": "2740",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why did [LL]  [ATTORNEY GENERAL OF THE UNITED STATES] grant 'special entry' to Natalia Veselnitskaya (Don Jr. 'set up' meeting)? / Why was [NV] barred from entering prior to?",
+   "line": "Why did [LL]  [ATTORNEY GENERAL OF THE UNITED STATES] grant 'special entry' to Natalia Veselnitskaya (Don Jr. 'set up' meeting)? / Why was [NV] barred from entering prior to?"
+  },
+  {
+   "postNum": 2746,
+   "postId": "2746",
+   "kind": "caps",
+   "sourceText": "MAGA",
+   "line": "ALL remained pro MAGA and loyal to POTUS?"
+  },
+  {
+   "postNum": 2754,
+   "postId": "2754",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What states provide DL's to illegals? / What checks are in place within each of the 'DL granted states' to prevent 2x-3x-4x-5x voting?",
+   "line": "What states provide DL's to illegals? / What checks are in place within each of the 'DL granted states' to prevent 2x-3x-4x-5x voting?"
+  },
+  {
+   "postNum": 2807,
+   "postId": "2807",
+   "kind": "caps",
+   "sourceText": "FED",
+   "line": "How much money (CASH) was sent by the FED to Iraq (Iraq War)?"
+  },
+  {
+   "postNum": 2844,
+   "postId": "2844",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What is the process to enter a SCIF? / What security level must exist in order to gain entry?",
+   "line": "What is the process to enter a SCIF? / What security level must exist in order to gain entry?"
+  },
+  {
+   "postNum": 285,
+   "postId": "285",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "FREEDOM Caucus? / FREEDOM.",
+   "line": "FREEDOM Caucus? / FREEDOM."
+  },
+  {
+   "postNum": 2937,
+   "postId": "2937",
+   "kind": "caps",
+   "sourceText": "MIL",
+   "line": "When does MIL INTEL have jurisdiction?"
+  },
+  {
+   "postNum": 2937,
+   "postId": "2937",
+   "kind": "caps",
+   "sourceText": "MIL",
+   "line": "What vested powers does POTUS have re: MIL INTEL vs. ABC agencies re: matters of NAT SEC (HOMELAND)?"
+  },
+  {
+   "postNum": 2937,
+   "postId": "2937",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What agency does the FBI report to? / What is the role of the AG?",
+   "line": "What agency does the FBI report to? / What is the role of the AG?"
+  },
+  {
+   "postNum": 2938,
+   "postId": "2938",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Who signed apps 1-4? / Who traveled to UK/AUS post election of POTUS?",
+   "line": "Who signed apps 1-4? / Who traveled to UK/AUS post election of POTUS?"
+  },
+  {
+   "postNum": 2975,
+   "postId": "2975",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "The core is what counts. / The SWAMP is EVERYWHERE.",
+   "line": "The core is what counts. / The SWAMP is EVERYWHERE."
+  },
+  {
+   "postNum": 2984,
+   "postId": "2984",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "WHAT (DARPA) TEAM MEMBERS PAST/PRESENT WORK FOR FB? / WHAT DIVISIONS?",
+   "line": "WHAT (DARPA) TEAM MEMBERS PAST/PRESENT WORK FOR FB? / WHAT DIVISIONS?"
+  },
+  {
+   "postNum": 2988,
+   "postId": "2988",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "DARPA senior employees > FB? / DARPA TERMINATES PROGRAM FEB 4, 2004.",
+   "line": "DARPA senior employees > FB? / DARPA TERMINATES PROGRAM FEB 4, 2004."
+  },
+  {
+   "postNum": 2989,
+   "postId": "2989",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "THE LARGEST 'COLLECTIVE' SOCIAL MEDIA PLATFORM IN THE WORLD (BILLIONS LOGGED) IS OWNED AND OPERATED (COVERTLY) BY THE CENTRAL INTELLIGENCE AGENCY OF THE UNITED STATES OF AMERICA. / The More You Know.",
+   "line": "THE LARGEST 'COLLECTIVE' SOCIAL MEDIA PLATFORM IN THE WORLD (BILLIONS LOGGED) IS OWNED AND OPERATED (COVERTLY) BY THE CENTRAL INTELLIGENCE AGENCY OF THE UNITED STATES OF AMERICA. / The More You Know."
+  },
+  {
+   "postNum": 299,
+   "postId": "299",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "/_\\ - Rock (past)(auth over followers) / _\\ (present)",
+   "line": "/_\\ - Rock (past)(auth over followers) / _\\ (present)"
+  },
+  {
+   "postNum": 2993,
+   "postId": "2993",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "WHY DID CHINA GRANT ACCESS TO TRAVEL W/ THE BLOCK IN PLACE? / WHY RUSSIA?",
+   "line": "WHY DID CHINA GRANT ACCESS TO TRAVEL W/ THE BLOCK IN PLACE? / WHY RUSSIA?"
+  },
+  {
+   "postNum": 30,
+   "postId": "30",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "When Trump was elected you can’t possibly imagine the steps taken prior to losing power to ensure future safety & control. / When was it reported Trump Jr dropped his SS detail?",
+   "line": "When Trump was elected you can’t possibly imagine the steps taken prior to losing power to ensure future safety & control. / When was it reported Trump Jr dropped his SS detail?"
+  },
+  {
+   "postNum": 3016,
+   "postId": "3016",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "THEY ARE AFRAID OF LOSING POWER [FOREVER]. / THEY SHOULD BE.",
+   "line": "THEY ARE AFRAID OF LOSING POWER [FOREVER]. / THEY SHOULD BE."
+  },
+  {
+   "postNum": 306,
+   "postId": "306",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What just came out re: the Lord's prayer? / What can be connected?",
+   "line": "What just came out re: the Lord's prayer? / What can be connected?"
+  },
+  {
+   "postNum": 3083,
+   "postId": "3083",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "It is not a coincidence. / It never is.",
+   "line": "It is not a coincidence. / It never is."
+  },
+  {
+   "postNum": 3131,
+   "postId": "3131",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Who took the pic? / Who was located behind the camera?",
+   "line": "Who took the pic? / Who was located behind the camera?"
+  },
+  {
+   "postNum": 3354,
+   "postId": "3354",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "(H) report release necessary prior to [C]omey release? / (H) + [C] = D",
+   "line": "(H) report release necessary prior to [C]omey release? / (H) + [C] = D"
+  },
+  {
+   "postNum": 3397,
+   "postId": "3397",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "No joke and/or reference re: Epstein? / No attempt to connect back to POTUS?",
+   "line": "No joke and/or reference re: Epstein? / No attempt to connect back to POTUS?"
+  },
+  {
+   "postNum": 3409,
+   "postId": "3409",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why does the media rush to ‘shape’ events? / Why are the same ‘keywords’ always used?",
+   "line": "Why does the media rush to ‘shape’ events? / Why are the same ‘keywords’ always used?"
+  },
+  {
+   "postNum": 3432,
+   "postId": "3432",
+   "kind": "caps",
+   "sourceText": "DRAIN",
+   "line": "\"DRAIN THE SWAMP\" does not simply refer to removal of those corrupt in DC…."
+  },
+  {
+   "postNum": 3593,
+   "postId": "3593",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "For God & Country. / For Humanity.",
+   "line": "For God & Country. / For Humanity."
+  },
+  {
+   "postNum": 3594,
+   "postId": "3594",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "For God & Country. / For Humanity.",
+   "line": "For God & Country. / For Humanity."
+  },
+  {
+   "postNum": 3595,
+   "postId": "3595",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Who gave the order(s)? / Who signed?",
+   "line": "Who gave the order(s)? / Who signed?"
+  },
+  {
+   "postNum": 36,
+   "postId": "36",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why did Soros transfer the bulk of his ‘public’ funds to a NPO? / Why is this relevant?",
+   "line": "Why did Soros transfer the bulk of his ‘public’ funds to a NPO? / Why is this relevant?"
+  },
+  {
+   "postNum": 36,
+   "postId": "36",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What cash payments occurred by BO during the last 90 of his Presidency to foreign states and/ or organizations? / What slush fund did AG Sessions (through DOJ) put an end to?",
+   "line": "What cash payments occurred by BO during the last 90 of his Presidency to foreign states and/ or organizations? / What slush fund did AG Sessions (through DOJ) put an end to?"
+  },
+  {
+   "postNum": 3613,
+   "postId": "3613",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Do they count on the fact that people [human psyche] are more prone to believe something if heard over-and-over again by different ‘trusted’ sources? / Do ‘echo chamber’ tactics provide validation / credibility to the topic/point being discussed?",
+   "line": "Do they count on the fact that people [human psyche] are more prone to believe something if heard over-and-over again by different ‘trusted’ sources? / Do ‘echo chamber’ tactics provide validation / credibility to the topic/point being discussed?"
+  },
+  {
+   "postNum": 3651,
+   "postId": "3651",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "No equal justice under the law? / No accountability?",
+   "line": "No equal justice under the law? / No accountability?"
+  },
+  {
+   "postNum": 3667,
+   "postId": "3667",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "Durham 'public' statements past week? / Durham start.",
+   "line": "Durham 'public' statements past week? / Durham start."
+  },
+  {
+   "postNum": 3721,
+   "postId": "3721",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Do they count on the fact that people [human psyche] are more prone to believe something if heard over-and-over again by different ‘trusted’ sources? / Do ‘echo chamber’ tactics provide validation / credibility to the topic/point being discussed?",
+   "line": "Do they count on the fact that people [human psyche] are more prone to believe something if heard over-and-over again by different ‘trusted’ sources? / Do ‘echo chamber’ tactics provide validation / credibility to the topic/point being discussed?"
+  },
+  {
+   "postNum": 3754,
+   "postId": "3754",
+   "kind": "caps",
+   "sourceText": "FED",
+   "line": "US Taxpayer > FED Gov't"
+  },
+  {
+   "postNum": 3754,
+   "postId": "3754",
+   "kind": "caps",
+   "sourceText": "FED",
+   "line": "FED Gov't [HUSSEIN] > Pearson Publishing"
+  },
+  {
+   "postNum": 3831,
+   "postId": "3831",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "No equal justice under the law? / No accountability?",
+   "line": "No equal justice under the law? / No accountability?"
+  },
+  {
+   "postNum": 3848,
+   "postId": "3848",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "The bottom half was instructed (99% good). / The first will send a shock wave.",
+   "line": "The bottom half was instructed (99% good). / The first will send a shock wave."
+  },
+  {
+   "postNum": 3858,
+   "postId": "3858",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Do they count on the fact that people [human psyche] are more prone to believe something if heard over-and-over again by different ‘trusted’ sources? / Do ‘echo chamber’ tactics provide validation / credibility to the topic/point being discussed?",
+   "line": "Do they count on the fact that people [human psyche] are more prone to believe something if heard over-and-over again by different ‘trusted’ sources? / Do ‘echo chamber’ tactics provide validation / credibility to the topic/point being discussed?"
+  },
+  {
+   "postNum": 3880,
+   "postId": "3880",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "You have come far, Anons (Patriots). / You are ready.",
+   "line": "You have come far, Anons (Patriots). / You are ready."
+  },
+  {
+   "postNum": 3881,
+   "postId": "3881",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What if (almost) every critical position [sr] within the US GOV apparatus was infiltrated? / WHAT MUST BE DONE FIRST?",
+   "line": "What if (almost) every critical position [sr] within the US GOV apparatus was infiltrated? / WHAT MUST BE DONE FIRST?"
+  },
+  {
+   "postNum": 3898,
+   "postId": "3898",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "The key that opens all doors. / The 'Start'.",
+   "line": "The key that opens all doors. / The 'Start'."
+  },
+  {
+   "postNum": 3905,
+   "postId": "3905",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Do they count on the fact that people [human psyche] are more prone to believe something if heard over-and-over again by different ‘trusted’ sources? / Do ‘echo chamber’ tactics provide validation / credibility to the topic/point being discussed?",
+   "line": "Do they count on the fact that people [human psyche] are more prone to believe something if heard over-and-over again by different ‘trusted’ sources? / Do ‘echo chamber’ tactics provide validation / credibility to the topic/point being discussed?"
+  },
+  {
+   "postNum": 3915,
+   "postId": "3915",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why was it fast-tracked in H? / Why did [Pelosi] hold until Jan 15th?",
+   "line": "Why was it fast-tracked in H? / Why did [Pelosi] hold until Jan 15th?"
+  },
+  {
+   "postNum": 4045,
+   "postId": "4045",
+   "kind": "caps",
+   "sourceText": "COVID",
+   "line": "[Jan 15] First COVID-19 U.S. case?"
+  },
+  {
+   "postNum": 4120,
+   "postId": "4120",
+   "kind": "caps",
+   "sourceText": "COVID",
+   "line": "Staged [FAKE] CBS COVID-19 reporting?"
+  },
+  {
+   "postNum": 4137,
+   "postId": "4137",
+   "kind": "caps",
+   "sourceText": "HCQ",
+   "line": "Russia using HCQ to treat COVID-19?"
+  },
+  {
+   "postNum": 4137,
+   "postId": "4137",
+   "kind": "caps",
+   "sourceText": "COVID",
+   "line": "Russia using HCQ to treat COVID-19?"
+  },
+  {
+   "postNum": 4137,
+   "postId": "4137",
+   "kind": "caps",
+   "sourceText": "HCQ",
+   "line": "Source of HCQ: China"
+  },
+  {
+   "postNum": 4137,
+   "postId": "4137",
+   "kind": "caps",
+   "sourceText": "HCQ",
+   "line": "China using HCQ to treat COVID-19?"
+  },
+  {
+   "postNum": 4137,
+   "postId": "4137",
+   "kind": "caps",
+   "sourceText": "COVID",
+   "line": "China using HCQ to treat COVID-19?"
+  },
+  {
+   "postNum": 4171,
+   "postId": "4171",
+   "kind": "caps",
+   "sourceText": "COVID",
+   "line": "Origin Country of COVID-19: China"
+  },
+  {
+   "postNum": 4171,
+   "postId": "4171",
+   "kind": "caps",
+   "sourceText": "COVID",
+   "line": "Origin City of COVID-19: Wuhan"
+  },
+  {
+   "postNum": 4282,
+   "postId": "4282",
+   "kind": "caps",
+   "sourceText": "HCQ",
+   "line": "POTUS daily ingest HCQ prevent COVID-19?"
+  },
+  {
+   "postNum": 4282,
+   "postId": "4282",
+   "kind": "caps",
+   "sourceText": "COVID",
+   "line": "POTUS daily ingest HCQ prevent COVID-19?"
+  },
+  {
+   "postNum": 4325,
+   "postId": "4325",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "We Rise or We Die. / We, the People.",
+   "line": "We Rise or We Die. / We, the People."
+  },
+  {
+   "postNum": 4343,
+   "postId": "4343",
+   "kind": "caps",
+   "sourceText": "COVID",
+   "line": "COVID-19 deaths: 100,000 [lockdown]"
+  },
+  {
+   "postNum": 4387,
+   "postId": "4387",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "WE ARE UNITED. / WE WILL PREVAIL.",
+   "line": "WE ARE UNITED. / WE WILL PREVAIL."
+  },
+  {
+   "postNum": 4489,
+   "postId": "4489",
+   "kind": "caps",
+   "sourceText": "COVID",
+   "line": "COVID-2 [C]: Lockdown(s)"
+  },
+  {
+   "postNum": 4490,
+   "postId": "4490",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "You can't censor the world. / You are the majority.",
+   "line": "You can't censor the world. / You are the majority."
+  },
+  {
+   "postNum": 4511,
+   "postId": "4511",
+   "kind": "caps",
+   "sourceText": "MIL",
+   "line": "MIL-CIV Alliance."
+  },
+  {
+   "postNum": 4535,
+   "postId": "4535",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Do they count on the fact that people [human psyche] are more prone to believe something if heard over-and-over again by different ‘trusted’ sources? / Do ‘echo chamber’ tactics provide validation / credibility to the topic/point being discussed?",
+   "line": "Do they count on the fact that people [human psyche] are more prone to believe something if heard over-and-over again by different ‘trusted’ sources? / Do ‘echo chamber’ tactics provide validation / credibility to the topic/point being discussed?"
+  },
+  {
+   "postNum": 4537,
+   "postId": "4537",
+   "kind": "caps",
+   "sourceText": "COVID",
+   "line": "When does COVID-19[2] MSDNC [fear] push end?"
+  },
+  {
+   "postNum": 4553,
+   "postId": "4553",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "The attribution of one's own ideas, feelings, or attitudes to other people or to objects; especially : the externalization of blame, guilt, or responsibility as a defense against anxiety? / The forming of a plan : scheming?",
+   "line": "The attribution of one's own ideas, feelings, or attitudes to other people or to objects; especially : the externalization of blame, guilt, or responsibility as a defense against anxiety? / The forming of a plan : scheming?"
+  },
+  {
+   "postNum": 46,
+   "postId": "46",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Who made those statements? / Who did they report to?",
+   "line": "Who made those statements? / Who did they report to?"
+  },
+  {
+   "postNum": 465,
+   "postId": "465",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "No other platforms used. / No comms privately w/ anyone.",
+   "line": "No other platforms used. / No comms privately w/ anyone."
+  },
+  {
+   "postNum": 4699,
+   "postId": "4699",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What happens when people in positions of power are sympathizers to the cause or part of that same ‘organization’ themselves? / What is a ‘safe zone’?",
+   "line": "What happens when people in positions of power are sympathizers to the cause or part of that same ‘organization’ themselves? / What is a ‘safe zone’?"
+  },
+  {
+   "postNum": 4699,
+   "postId": "4699",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What organized group(s) are bailing out rioters within 24-hours of arrest? / What happens post bailout?",
+   "line": "What organized group(s) are bailing out rioters within 24-hours of arrest? / What happens post bailout?"
+  },
+  {
+   "postNum": 470,
+   "postId": "470",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "We anticipated life to be short on each platform given verification and message spreading rapidly. / We can limit outside exposure but cannot protect against internals.",
+   "line": "We anticipated life to be short on each platform given verification and message spreading rapidly. / We can limit outside exposure but cannot protect against internals."
+  },
+  {
+   "postNum": 4726,
+   "postId": "4726",
+   "kind": "caps",
+   "sourceText": "MIL",
+   "line": "MIL SAT application(s)."
+  },
+  {
+   "postNum": 4726,
+   "postId": "4726",
+   "kind": "caps",
+   "sourceText": "SAT",
+   "line": "MIL SAT application(s)."
+  },
+  {
+   "postNum": 4738,
+   "postId": "4738",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "What role will select military inserts play [the 'bribe']? [playbook known] / What did we learn from past attempt(s)?",
+   "line": "What role will select military inserts play [the 'bribe']? [playbook known] / What did we learn from past attempt(s)?"
+  },
+  {
+   "postNum": 474,
+   "postId": "474",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "CM – thank you for IDEN verification. / CM – how can a secure ‘read only’ board be set up whereby the message can be safely delivered?",
+   "line": "CM – thank you for IDEN verification. / CM – how can a secure ‘read only’ board be set up whereby the message can be safely delivered?"
+  },
+  {
+   "postNum": 48,
+   "postId": "48",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What is Q Clearance? / What hint does that explicitly refer to?",
+   "line": "What is Q Clearance? / What hint does that explicitly refer to?"
+  },
+  {
+   "postNum": 483,
+   "postId": "483",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "When specifically? / When did POTUS Tweet the above?",
+   "line": "When specifically? / When did POTUS Tweet the above?"
+  },
+  {
+   "postNum": 486,
+   "postId": "486",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Who received the stolen intel? / Who paid who?",
+   "line": "Who received the stolen intel? / Who paid who?"
+  },
+  {
+   "postNum": 49,
+   "postId": "49",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What is different effective this week? / What do you notice?",
+   "line": "What is different effective this week? / What do you notice?"
+  },
+  {
+   "postNum": 4960,
+   "postId": "4960",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "To protect the elections? / To claim the midterms are 'safe'?",
+   "line": "To protect the elections? / To claim the midterms are 'safe'?"
+  },
+  {
+   "postNum": 506,
+   "postId": "506",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "This was not meant to signify AUTH / established. / This is to train you how to understand the correlation between posts and Tweets.",
+   "line": "This was not meant to signify AUTH / established. / This is to train you how to understand the correlation between posts and Tweets."
+  },
+  {
+   "postNum": 507,
+   "postId": "507",
+   "kind": "caps",
+   "sourceText": "MAGA",
+   "line": "Do you think POTUS re-tweeted MAGA PILL for no reason?"
+  },
+  {
+   "postNum": 507,
+   "postId": "507",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "We chose this BOARD for a very specific reason. / We believe in you.",
+   "line": "We chose this BOARD for a very specific reason. / We believe in you."
+  },
+  {
+   "postNum": 52,
+   "postId": "52",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What is the annual salary of a sitting US President? / What home(s) were just purchased by BO?",
+   "line": "What is the annual salary of a sitting US President? / What home(s) were just purchased by BO?"
+  },
+  {
+   "postNum": 52,
+   "postId": "52",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "How much did it cost? / How does it reconcile?",
+   "line": "How much did it cost? / How does it reconcile?"
+  },
+  {
+   "postNum": 521,
+   "postId": "521",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "YOU WERE CHOSEN FOR A REASON. / YOU ARE BEING PROVIDED THE HIGHEST LEVEL OF INTEL TO EVER BE DROPPED PUBLICLY IN THE HISTORY OF THE WORLD.",
+   "line": "YOU WERE CHOSEN FOR A REASON. / YOU ARE BEING PROVIDED THE HIGHEST LEVEL OF INTEL TO EVER BE DROPPED PUBLICLY IN THE HISTORY OF THE WORLD."
+  },
+  {
+   "postNum": 560,
+   "postId": "560",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "The MEMO is ONLY THE BEGINNING> / THE SHOT HEARD AROUND THE WORLD.",
+   "line": "The MEMO is ONLY THE BEGINNING> / THE SHOT HEARD AROUND THE WORLD."
+  },
+  {
+   "postNum": 570,
+   "postId": "570",
+   "kind": "caps",
+   "sourceText": "MIL",
+   "line": "KILL NASA (prevent space domination/allow bad actors to take down MIL SATs/WW secure comms/install WMDs) - RISK OF EMP SPACE ORIG (HELPLESS)"
+  },
+  {
+   "postNum": 572,
+   "postId": "572",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "THE SHOT HEARD AROUND THE WORLD. / THE GREAT AWAKENING.",
+   "line": "THE SHOT HEARD AROUND THE WORLD. / THE GREAT AWAKENING."
+  },
+  {
+   "postNum": 59,
+   "postId": "59",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why has POTUS dedicated so much time into labeling the MSM as fake news? / Why is this relevant?",
+   "line": "Why has POTUS dedicated so much time into labeling the MSM as fake news? / Why is this relevant?"
+  },
+  {
+   "postNum": 63,
+   "postId": "63",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "You have a choice to make. / You can stand up and do what you know to be right.",
+   "line": "You have a choice to make. / You can stand up and do what you know to be right."
+  },
+  {
+   "postNum": 66,
+   "postId": "66",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What does this mean? / What actions are immediately occurring?",
+   "line": "What does this mean? / What actions are immediately occurring?"
+  },
+  {
+   "postNum": 67,
+   "postId": "67",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "Who was authorized to depart? ONLY 1 PLANE was authorized during this 'mandatory forced grounding'. / Who SPECIFICALLY authorized this?",
+   "line": "Who was authorized to depart? ONLY 1 PLANE was authorized during this 'mandatory forced grounding'. / Who SPECIFICALLY authorized this?"
+  },
+  {
+   "postNum": 67,
+   "postId": "67",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why was there a recent smear campaign against JK and POTUS? / Why is the timing important?",
+   "line": "Why was there a recent smear campaign against JK and POTUS? / Why is the timing important?"
+  },
+  {
+   "postNum": 68,
+   "postId": "68",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What organization? / What is HUMA's family history?",
+   "line": "What organization? / What is HUMA's family history?"
+  },
+  {
+   "postNum": 694,
+   "postId": "694",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What if cures already exist? / What about the billions (public/private/govt) provided to fund cure dev?",
+   "line": "What if cures already exist? / What about the billions (public/private/govt) provided to fund cure dev?"
+  },
+  {
+   "postNum": 695,
+   "postId": "695",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why is this topic relevant now? / Why does the US taxpayer subsidize meds for the rest of the world?",
+   "line": "Why is this topic relevant now? / Why does the US taxpayer subsidize meds for the rest of the world?"
+  },
+  {
+   "postNum": 70,
+   "postId": "70",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why was there a recent smear campaign against JK and POTUS? / Why is the timing important?",
+   "line": "Why was there a recent smear campaign against JK and POTUS? / Why is the timing important?"
+  },
+  {
+   "postNum": 71,
+   "postId": "71",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why is this relevant? / Why would SA provide tens of millions of dollars to US senior gov't officials?",
+   "line": "Why is this relevant? / Why would SA provide tens of millions of dollars to US senior gov't officials?"
+  },
+  {
+   "postNum": 71,
+   "postId": "71",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What is the meaning of this tradition? / What coincidentally was the last Tweet sent out by POTUS?",
+   "line": "What is the meaning of this tradition? / What coincidentally was the last Tweet sent out by POTUS?"
+  },
+  {
+   "postNum": 71,
+   "postId": "71",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "What attack took place in SA as operations were undertaken? Flying objects. / What US operators are currently in SA?",
+   "line": "What attack took place in SA as operations were undertaken? Flying objects. / What US operators are currently in SA?"
+  },
+  {
+   "postNum": 73,
+   "postId": "73",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why did POTUS have military guards (uniform) while in HI? / Why is this relevant?",
+   "line": "Why did POTUS have military guards (uniform) while in HI? / Why is this relevant?"
+  },
+  {
+   "postNum": 733,
+   "postId": "733",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What airline check-in counter @ PVG [T2] is located @ [E]? / What was the location of [E][pic posted other board]?",
+   "line": "What airline check-in counter @ PVG [T2] is located @ [E]? / What was the location of [E][pic posted other board]?"
+  },
+  {
+   "postNum": 737,
+   "postId": "737",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "We are with you, Patriot. / We honor your service to our great country.",
+   "line": "We are with you, Patriot. / We honor your service to our great country."
+  },
+  {
+   "postNum": 75,
+   "postId": "75",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why was there a recent smear campaign against JK and POTUS? / Why is the timing important?",
+   "line": "Why was there a recent smear campaign against JK and POTUS? / Why is the timing important?"
+  },
+  {
+   "postNum": 77,
+   "postId": "77",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why is this relevant? / Why would SA provide tens of millions of dollars to US senior gov't officials?",
+   "line": "Why is this relevant? / Why would SA provide tens of millions of dollars to US senior gov't officials?"
+  },
+  {
+   "postNum": 77,
+   "postId": "77",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What is the meaning of this tradition? / What coincidentally was the last Tweet sent out by POTUS?",
+   "line": "What is the meaning of this tradition? / What coincidentally was the last Tweet sent out by POTUS?"
+  },
+  {
+   "postNum": 77,
+   "postId": "77",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "What attack took place in SA as operations were undertaken? Flying objects. / What US operators are currently in SA?",
+   "line": "What attack took place in SA as operations were undertaken? Flying objects. / What US operators are currently in SA?"
+  },
+  {
+   "postNum": 778,
+   "postId": "778",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "IT CANNOT COME NOW. / IT WILL BE LOST.",
+   "line": "IT CANNOT COME NOW. / IT WILL BE LOST."
+  },
+  {
+   "postNum": 78,
+   "postId": "78",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why did POTUS have military guards (uniform) while in HI? / Why is this relevant?",
+   "line": "Why did POTUS have military guards (uniform) while in HI? / Why is this relevant?"
+  },
+  {
+   "postNum": 783,
+   "postId": "783",
+   "kind": "caps",
+   "sourceText": "RIP",
+   "line": "RIP JFK - we will succeed."
+  },
+  {
+   "postNum": 817,
+   "postId": "817",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "We know. / We are taking action behind the scenes.",
+   "line": "We know. / We are taking action behind the scenes."
+  },
+  {
+   "postNum": 828,
+   "postId": "828",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "You, the PEOPLE, have ALL the POWER. / You simply forgot how to PLAY.",
+   "line": "You, the PEOPLE, have ALL the POWER. / You simply forgot how to PLAY."
+  },
+  {
+   "postNum": 830,
+   "postId": "830",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why? / Why is the timing relevant?",
+   "line": "Why? / Why is the timing relevant?"
+  },
+  {
+   "postNum": 830,
+   "postId": "830",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why did ES leave G? / Why has NK out of the news cycle?",
+   "line": "Why did ES leave G? / Why has NK out of the news cycle?"
+  },
+  {
+   "postNum": 832,
+   "postId": "832",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "It showed they can control ‘innocents’. / It was a direct THREAT.",
+   "line": "It showed they can control ‘innocents’. / It was a direct THREAT."
+  },
+  {
+   "postNum": 836,
+   "postId": "836",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Who leaked Vault7 to WL? / Who returned fire?",
+   "line": "Who leaked Vault7 to WL? / Who returned fire?"
+  },
+  {
+   "postNum": 85,
+   "postId": "85",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Who do you hire for a hit? / Who can be eliminated after the job is complete?",
+   "line": "Who do you hire for a hit? / Who can be eliminated after the job is complete?"
+  },
+  {
+   "postNum": 854,
+   "postId": "854",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "WE must work TOGETHER. / WE are only as strong as your VOICE.",
+   "line": "WE must work TOGETHER. / WE are only as strong as your VOICE."
+  },
+  {
+   "postNum": 874,
+   "postId": "874",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Who provided support to escape? / Who was the US after during this time?",
+   "line": "Who provided support to escape? / Who was the US after during this time?"
+  },
+  {
+   "postNum": 917,
+   "postId": "917",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "We appreciate all of the prayers. / We really do.",
+   "line": "We appreciate all of the prayers. / We really do."
+  },
+  {
+   "postNum": 92,
+   "postId": "92",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What hotel did the 'reported' gunfire occur from? / What floors specifically?",
+   "line": "What hotel did the 'reported' gunfire occur from? / What floors specifically?"
+  },
+  {
+   "postNum": 92,
+   "postId": "92",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "What CIA report was released by WK? / What can control a car?",
+   "line": "What CIA report was released by WK? / What can control a car?"
+  },
+  {
+   "postNum": 958,
+   "postId": "958",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "They are scared [4am]. / They will fail.",
+   "line": "They are scared [4am]. / They will fail."
+  },
+  {
+   "postNum": 959,
+   "postId": "959",
+   "kind": "parallel",
+   "verdict": "NEEDS_CONTEXT",
+   "sourceText": "We hear you. / We have the algorithm.",
+   "line": "We hear you. / We have the algorithm."
+  },
+  {
+   "postNum": 964,
+   "postId": "964",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "WHY DID GOOG VISIT N KOREA? / WHY WOULD THE FORMER CHAIRMAN & CEO [HIMSELF] OF GOOG/ALPHABET PERSONALLY ATTEND?",
+   "line": "WHY DID GOOG VISIT N KOREA? / WHY WOULD THE FORMER CHAIRMAN & CEO [HIMSELF] OF GOOG/ALPHABET PERSONALLY ATTEND?"
+  },
+  {
+   "postNum": 964,
+   "postId": "964",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Who made it public? / Who sold shares -30 days from announcement?",
+   "line": "Who made it public? / Who sold shares -30 days from announcement?"
+  },
+  {
+   "postNum": 972,
+   "postId": "972",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Who can you trust? / Who organized?",
+   "line": "Who can you trust? / Who organized?"
+  },
+  {
+   "postNum": 988,
+   "postId": "988",
+   "kind": "parallel",
+   "verdict": "QUESTION_SERIES_WITHOUT_EXTRA_EMPHASIS",
+   "sourceText": "Why was Huber made public? / Why now?",
+   "line": "Why was Huber made public? / Why now?"
+  }
+ ]
+}

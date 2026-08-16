@@ -4,6 +4,9 @@
 # Run from repo root:  npm run deploy:web
 set -e
 
+# Never publish from a state git cannot reproduce, or while another agent is certifying.
+node scripts/preflight-deploy.mjs
+
 # ── Custom domain ────────────────────────────────────────────────────────────
 # Set SITE_DOMAIN once the domain's DNS is live, e.g.
 #   SITE_DOMAIN=qdrops.app npm run deploy:web
@@ -24,9 +27,44 @@ SITE_DOMAIN="${SITE_DOMAIN:-qdrops.app}"
 
 # The public build reads NO Firestore, so the bundle must carry the current edits and
 # aliases. Skipping this ships a site that silently lacks your latest analysis work.
-echo "Baking current Firestore edits + aliases into public/data/ ..."
-node scripts/export-firestore.mjs || {
-  echo "  !! export failed (quota/offline). The bundle may be stale — fix before publishing."
+# SKIP_EXPORT=1 publishes the bundle already on disk instead of re-dumping Firestore.
+#
+# Only safe when the local bundle is known current — which the certification manifest can prove.
+# The export exists to catch a STALE bundle; when `certification-manifest.mjs --verify` passes,
+# the bundle matches the certified state by definition and re-dumping adds nothing. Firestore's
+# free-tier read quota blocks the export for hours at a time, and that must not hold a verified
+# certified change off the site.
+#
+# The manifest gate below still runs either way, so a genuinely stale bundle is still refused.
+if [ "$SKIP_EXPORT" = "1" ]; then
+  echo "SKIP_EXPORT=1 — publishing the bundle on disk (manifest gate below still applies)"
+else
+  echo "Baking current Firestore edits + aliases into public/data/ ..."
+  node scripts/export-firestore.mjs || {
+    echo "  !! export failed (quota/offline). The bundle may be stale — fix before publishing."
+    echo "     If the bundle is already certified and current, re-run with SKIP_EXPORT=1."
+    exit 1
+  }
+fi
+
+# ── MANDATORY CERTIFICATION GATE ─────────────────────────────────────────────
+# Runs AFTER the export chain, so it checks what will actually ship rather than what was on
+# disk beforehand. The chain re-dumps posts.json and replays every apply step; the manifest
+# compares a key-sorted semantic hash, so that re-serialisation is reported and does not fail.
+#
+# Blocking the deploy is the point. Eight sections were certified one at a time, and the
+# failures that got through were never wrong counts — they were correct counts that stopped
+# reaching the reader (SEED_VERSION stuck at 4 through three applies) or shipped rows that
+# collided (five Resolution Center ids shared by six rows). A per-section gate cannot see either.
+#
+# If a change was intended, re-certify deliberately:
+#   node scripts/certification-manifest.mjs
+echo "Verifying the certification manifest (mandatory pre-deploy gate)..."
+node scripts/certification-manifest.mjs --verify || {
+  echo ""
+  echo "  !! DEPLOY BLOCKED — the bundle does not match the certified state."
+  echo "     Every certified count, artifact and the seed version must match audit/certification-manifest.json."
+  echo "     If the change was intended: node scripts/certification-manifest.mjs   (then re-run this deploy)"
   exit 1
 }
 

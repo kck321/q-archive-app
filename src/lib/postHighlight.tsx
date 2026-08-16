@@ -1,6 +1,10 @@
+import { overlapStyle, bracketSpansIn } from '../pages/PostDetail'
+import { applyGlossary, glossarySync, type GlossEntry } from './glossary'
 import React from 'react'
-import { getAliasesFor, getAliasGroup } from './aliases'
-import { STATIC_ENTITIES, MIL_INTEL_TERMS, Q_SIGNATURES, HIGHLIGHT_CLS, wordBoundaryPattern } from './highlightConstants'
+import { getAliasesFor, getFullAliasGroup } from './aliases'
+// STATIC_ENTITIES / MIL_INTEL_TERMS / Q_SIGNATURES are deliberately NOT imported: a word list
+// cannot decide membership in a certified section.
+import { HIGHLIGHT_CLS, wordBoundaryPattern } from './highlightConstants'
 import type { PostAnalysis } from '../types'
 import { expandToSentence, questionHighlightRegex } from './posts'
 import { highlightsEnabled } from './highlightPrefs'
@@ -22,7 +26,7 @@ import { highlightsEnabled } from './highlightPrefs'
 //
 // Extracted verbatim; PostCard re-exports it rather than keeping a second copy.
 
-type Kind = 'keyword' | 'question' | 'request' | 'requestQuestion' | 'url' | 'namedEntity' | 'claim' | 'prediction' | 'theme' | 'impliedConclusion' | 'verificationHook' | 'emphasis' | 'bracketCode' | 'milIntel' | 'qSignature' | 'topic'
+type Kind = 'context' | 'keyword' | 'question' | 'request' | 'requestQuestion' | 'url' | 'namedEntity' | 'claim' | 'prediction' | 'theme' | 'impliedConclusion' | 'verificationHook' | 'emphasis' | 'bracketCode' | 'milIntel' | 'qSignature' | 'topic'
 type Seg = { start: number; end: number; kind: Kind }
 
 // Dominant kinds take sole ownership — no overlap with stackable kinds
@@ -54,13 +58,13 @@ function addSegs(segs: Seg[], text: string, terms: string[], kind: Kind) {
   }
 }
 
-export function highlightText(text: string, questionTexts: string[], keyword: string, requestTexts: string[] = [], analysis?: PostAnalysis) {
+export function highlightText(text: string, questionTexts: string[], keyword: string, requestTexts: string[] = [], analysis?: PostAnalysis, postNum?: number, gloss?: Record<string, GlossEntry[]>) {
   const segs: Seg[] = []
 
   // Highlight the searched term AND its whole alias group, so a post that matched via an alias
   // (e.g. searching "4,10,20" surfaces POTUS / Q+ posts) shows WHY it matched instead of nothing.
   if (keyword) {
-    addSegs(segs, text, getAliasGroup(keyword), 'keyword')
+    addSegs(segs, text, getFullAliasGroup(keyword), 'keyword')
 
     // A question arrives here as its stored text ("Power?"), but the post that matched may
     // write it "power." — the ?/./! grouping. Literal matching found nothing, so the term
@@ -110,26 +114,43 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
     const withAliases = (arr: string[]) => arr.flatMap(t => [t, ...getAliasesFor(t)])
     const whole = (arr: string[] = []) => arr.map(t => expandToSentence(t, text))
     addSegs(segs, text, withAliases(analysis.namedEntities ?? []), 'namedEntity')
-    addSegs(segs, text, withAliases(whole(analysis.claims)), 'claim')
-    addSegs(segs, text, withAliases(whole(analysis.predictions)), 'prediction')
-    addSegs(segs, text, withAliases(analysis.themes ?? []), 'theme')
-    addSegs(segs, text, withAliases(analysis.impliedConclusions ?? []), 'impliedConclusion')
-    addSegs(segs, text, withAliases(whole(analysis.verificationHooks)), 'verificationHook')
+    // EXACT CERTIFIED SPANS ONLY — no alias expansion, no sentence expansion.
+    //
+    // withAliases() folds an entity's alias group into the search terms, which is right for a
+    // NAME and wrong for a sentence: a claim containing "POTUS" would also paint every "Trump"
+    // and "45" nearby. Together with expandToSentence() that produced 593 highlights per surface
+    // running past their certified boundary. The literal span is the boundary.
+    addSegs(segs, text, analysis.claimSpans ?? whole(analysis.claims), 'claim')
+    addSegs(segs, text, analysis.predictionSpans ?? whole(analysis.predictions), 'prediction')
+    // ANCHORS, not labels — the same fix PostDetail got, which this surface never received.
+    // An independent audit found theme anchors rendering on /post/:id and on none of /posts,
+    // because this function was still searching for the taxonomy name. A label is not in the drop.
+    addSegs(segs, text, analysis.themeAnchors ?? [], 'theme')
+    // Context is added FIRST among the analysis kinds and never wins a stack: where a unit also
+    // carries a certified semantic layer, the semantic colour is the truer statement about it.
+    addSegs(segs, text, analysis.contextUnits ?? [], 'context')
+    // Retired with the section (owner ruling): the span is a certified Claim and paints amber.
+    // addSegs(segs, text, analysis.conclusionSpans ?? analysis.impliedConclusions ?? [], 'impliedConclusion')
+    // Checkable Claims merged into Claims by owner ruling 2026-08-15. All 1,926 were ALREADY The span is a Claim and paints amber.
     addSegs(segs, text, analysis.emphasis ?? [], 'emphasis')
+    // Brackets — owner rule: anything in [..] is red, on every surface. This layer existed in the
+    // precedence branches below but was never fed here, so /posts painted no brackets at all.
+    addSegs(segs, text, bracketSpansIn(text), 'bracketCode')
   }
 
-  // Static entities always highlighted as namedEntity
-  if (lang) addSegs(segs, text, STATIC_ENTITIES, 'namedEntity')
-
-  // Brackets, mil-intel, Q signatures
-  if (lang) {
-    const bracketRx = /\[\[?[A-Za-z0-9][A-Za-z0-9 _\-]{0,30}\]?\]/g
-    let bm: RegExpExecArray | null
-    while ((bm = bracketRx.exec(text)) !== null) segs.push({ start: bm.index, end: bm.index + bm[0].length, kind: 'bracketCode' })
-
-    addSegs(segs, text, MIL_INTEL_TERMS, 'milIntel')
-    addSegs(segs, text, Q_SIGNATURES, 'qSignature')
-  }
+  // STATIC VOCABULARIES REMOVED — they painted semantic colours with no certified record.
+  //
+  // Four blanket rules used to run here: a static entity list, a regex that coloured EVERY
+  // bracketed token as a code, a military/intelligence word list, and Q-signature matching.
+  // Between them they produced ~6,002 semantic-looking spans on the post page and ~5,631 on the
+  // archive that no certified occurrence supported — a reader could not tell them from an
+  // adjudicated classification, which is the whole trust proposition of this archive.
+  //
+  // Entities, Codes and Emphasis are certified sections with occurrence-level data; the renderer
+  // consumes that data above. A word list cannot overrule an audit, and 1,332 certified entities
+  // do not need a hardcoded list of 40 to help them.
+  //
+  //   if no certified occurrence supports the exact span in that post, it gets no semantic colour
 
   const urlRx = /https?:\/\/[^\s<>'")\]]+/g
   let um: RegExpExecArray | null
@@ -154,7 +175,13 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
     if (iStart > pos) nodes.push(text.slice(pos, iStart))
     const matchText = text.slice(iStart, iEnd)
     const dominant = active.filter(s => DOMINANT_KINDS.has(s.kind))
-    const stackable = active.filter(s => !DOMINANT_KINDS.has(s.kind))
+    const allStackable = active.filter(s => !DOMINANT_KINDS.has(s.kind))
+    // Context never wins a shared span. Where a unit also carries a certified semantic layer,
+    // the semantic colour is the truer statement about it; the neutral treatment only ever marks
+    // text that belongs to no category at all.
+    const stackable = allStackable.some(s => s.kind !== 'context')
+      ? allStackable.filter(s => s.kind !== 'context')
+      : allStackable
 
     if (dominant.length > 0) {
       const top = dominant.sort((a, b) => {
@@ -162,28 +189,72 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
         return (p[a.kind] ?? 9) - (p[b.kind] ?? 9)
       })[0]
       if (top.kind === 'question') {
-        nodes.push(<mark key={iStart} className="bg-blue-500/30 text-blue-200 rounded not-italic">{matchText}</mark>)
+        // A QUESTION IS A CONTAINER, NOT A CLASSIFICATION OF EVERYTHING INSIDE IT.
+        //
+        // This painted the whole question blue whatever sat under it, so ">End POTUS rally(s)?"
+        // hid the certified Entity POTUS on /posts while the same drop showed it cyan on
+        // /post/:id. Same defect PostDetail carried until it was fixed there; this surface never
+        // got the fix, which is why the two views disagreed about identical certified data.
+        //
+        // Rules, identical to PostDetail so the surfaces cannot drift again:
+        //   brackets are always red, and never rotate
+        //   one inner layer  -> that layer's own colour
+        //   2+ distinct inner kinds -> rotate through their real colours
+        // The question keeps its blue on the sub-intervals either side.
+        // OWNER RULE: a question carries no Emphasis — identical to PostDetail, because these two
+        // surfaces have drifted apart before and shown different colours for the same certified
+        // data. The Emphasis layer itself is untouched; only the paint inside a question changes.
+        const innerKinds = [...new Set(stackable.map(x => x.kind))].filter(k => k !== 'emphasis')
+        if (innerKinds.includes('bracketCode')) {
+          nodes.push(<mark key={iStart} title="bracket"
+            className={`${cls.bracketCode ?? ''} rounded not-italic`}>{matchText}</mark>)
+        } else if (innerKinds.length === 1) {
+          nodes.push(<mark key={iStart} title={`${innerKinds[0]} (inside a question)`}
+            className={`${cls[innerKinds[0]] ?? ''} rounded not-italic`}>{matchText}</mark>)
+        } else if (innerKinds.length > 1) {
+          nodes.push(<mark key={iStart} title={`${innerKinds.length} certified layers: ${innerKinds.join(', ')}`}
+            style={overlapStyle(innerKinds)?.style}
+            className={`${overlapStyle(innerKinds)?.className ?? ''} rounded not-italic`}>{matchText}</mark>)
+        } else {
+          nodes.push(<mark key={iStart} className="bg-blue-500/30 text-blue-200 rounded not-italic">{matchText}</mark>)
+        }
       } else if (top.kind === 'keyword') {
-        // Same flashing white-to-red as the post page, so a term looks identical wherever
-        // you meet it — results list, post page, quoted post.
-        nodes.push(<mark key={iStart} className="rounded not-italic font-semibold animate-flash-red">{matchText}</mark>)
+        // SEARCH STATE, AND IT MUST NOT LOOK CERTIFIED.
+        //
+        // This hardcoded a flashing red fill and never read cls.keyword, so changing the style
+        // constant fixed nothing — the audit that checked the constant reported success while the
+        // live page kept painting a fill indistinguishable from a semantic category. Verifying the
+        // artifact instead of the consumption is the exact failure this project keeps repeating.
+        nodes.push(<mark key={iStart} className={`${cls.keyword ?? ''} not-italic`}>{matchText}</mark>)
       } else {
         nodes.push(<a key={iStart} href={matchText} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 underline break-all" onClick={e => e.stopPropagation()}>{matchText}</a>)
       }
     } else if (stackable.length === 1) {
       nodes.push(<mark key={iStart} className={`${cls[stackable[0].kind] ?? ''} rounded not-italic`}>{matchText}</mark>)
+    } else if (stackable.some(s => s.kind === 'bracketCode')) {
+      // Brackets outrank entities — owner rule, same order as PostDetail.
+      nodes.push(<mark key={iStart} className="bg-red-800/40 text-red-300 font-mono text-[0.9em] rounded not-italic">{matchText}</mark>)
     } else if (stackable.some(s => s.kind === 'namedEntity')) {
       nodes.push(<mark key={iStart} className="bg-cyan-500/30 text-cyan-200 rounded not-italic">{matchText}</mark>)
-    } else if (stackable.some(s => s.kind === 'bracketCode')) {
-      nodes.push(<mark key={iStart} className="bg-red-800/40 text-red-300 font-mono text-[0.9em] rounded not-italic">{matchText}</mark>)
     } else if (stackable.some(s => s.kind === 'request' || s.kind === 'requestQuestion')) {
       const hasReqQ = stackable.some(s => s.kind === 'requestQuestion')
       nodes.push(<mark key={iStart} className={`${hasReqQ ? 'animate-req-question' : 'bg-green-500/35 text-green-200'} rounded not-italic font-medium`}>{matchText}</mark>)
     } else {
-      nodes.push(<mark key={iStart} className="animate-overlap rounded not-italic">{matchText}</mark>)
+      // Rotate through every covering category's colour — see PostDetail for the reasoning.
+      // Distinct KINDS, not segments: the same kind matching twice is one classification.
+      const kinds = [...new Set(stackable.map(s => s.kind))]
+      nodes.push(kinds.length > 1
+        ? <mark key={iStart} title={`${kinds.length} certified layers: ${kinds.join(', ')}`}
+            style={overlapStyle(kinds)?.style}
+            className={`${overlapStyle(kinds)?.className ?? ''} rounded not-italic`}>{matchText}</mark>
+        : <mark key={iStart} title={kinds[0]}
+            className={`${cls[kinds[0]] ?? ''} rounded not-italic`}>{matchText}</mark>,
+      )
     }
     pos = iEnd
   }
   if (pos < text.length) nodes.push(text.slice(pos))
-  return nodes
+  // ONE insertion point for the reader's info box, shared with PostDetail's renderer so the two
+  // surfaces cannot disagree about what an acronym means.
+  return postNum === undefined ? nodes : applyGlossary(nodes, postNum, gloss ?? glossarySync())
 }

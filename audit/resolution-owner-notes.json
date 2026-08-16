@@ -1,0 +1,991 @@
+{
+  "note": "Owner notes on occurrences that stay UNRESOLVED. A note is not a ruling: it records what the owner believes the token means here, and why that belief is not strong enough to certify. The row keeps its place in the queue and the token keeps its counts.",
+  "why": "Some cases are decided-enough to write down but not decided-enough to count. Before this file the only two options were 'resolve it' (which moves certified mention counts) or 'say nothing' (which loses the reasoning and invites the same case being re-derived from scratch). Notes are the third state: visible work-in-progress, zero effect on certified data.",
+  "retrieval": "Attached by scripts/build-resolution-queue.mjs to the queue row with the matching id, as `ownerNote`. Ids that no longer exist in the queue are ignored — a note on a row that was later resolved is stale, not an error.",
+  "notes": [
+    {
+      "id": "SR-559-11-0",
+      "postNum": 559,
+      "token": "SR",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Most likely Susan Rice, not Seth Rich. The drop opens \"HUSSEIN CABINET / STAFF\" and then lists officials by initials, so SR sits in a roster of Obama administration people. Left unresolved: the reading is from the list around it, not from anything the drop says.",
+      "batch": "SR — Seth Rich resolved in 9 drops; 4 held back with notes"
+    },
+    {
+      "id": "SR-1573-6-11",
+      "postNum": 1573,
+      "token": "SR",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Not a person. \"Hussein WH SR Staffer ON RECORD\" means an Obama White House SENIOR staffer — SR is the rank, not initials.",
+      "batch": "SR — Seth Rich resolved in 9 drops; 4 held back with notes"
+    },
+    {
+      "id": "SR-2658-24-93",
+      "postNum": 2658,
+      "token": "SR",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Not a person. \"SR+MID+LOW positions\" is explicitly a seniority scale — senior, mid, low.",
+      "batch": "SR — Seth Rich resolved in 9 drops; 4 held back with notes"
+    },
+    {
+      "id": "SR-4640-5-10",
+      "postNum": 4640,
+      "token": "SR",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Not a person. \"Pentagon [SR 1-4]\" reads as senior ranks or leadership levels, numbered 1 through 4.  |  Reference audit — likely reading: senior ranks/officials 1–4 (likely). STILL OPEN: The Pentagon notation [SR 1-4] most likely denotes senior ranks or officials, but the post does not define the scale.",
+      "batch": "SR — Seth Rich resolved in 9 drops; 4 held back with notes"
+    },
+    {
+      "id": "SIS-1385-1-0",
+      "postNum": 1385,
+      "token": "SIS",
+      "notedOn": "2026-08-15",
+      "batch": "SIS — MI6 resolved in 8 drops; 4 held back with notes (FBI/Signal lineage and one deliberate double meaning)",
+      "ownerNote": "Reads as the FBI Special Intelligence Service — the historical FBI foreign-intelligence arm, disbanded after WWII with its responsibilities passed to what became the CIA. \"SIS [FBI] > C_A\" traces exactly that handover. Left unresolved: no entity exists for the historical FBI service, and the drop it sits in declares \"Double meanings exist.\""
+    },
+    {
+      "id": "SIS-1385-5-0",
+      "postNum": 1385,
+      "token": "SIS",
+      "notedOn": "2026-08-15",
+      "batch": "SIS — MI6 resolved in 8 drops; 4 held back with notes (FBI/Signal lineage and one deliberate double meaning)",
+      "ownerNote": "Deliberately ambiguous and left that way. The same drop says \"Double meanings exist,\" so \"SIS is good?\" is not a slip to be tidied — the ambiguity is authored. Separate from the \"SIS [FBI] > C_A\" occurrence earlier in the same post.  |  Reference audit — likely reading: FBI Special Intelligence Service and/or UK Secret Intelligence Service. STILL OPEN: The post deliberately juxtaposes U.S. and U.K. usage, so SIS has a dual reading that cannot be reduced to one entity."
+    },
+    {
+      "id": "SIS-144-9-0",
+      "postNum": 144,
+      "token": "SIS",
+      "notedOn": "2026-08-15",
+      "batch": "SIS — MI6 resolved in 8 drops; 4 held back with notes (FBI/Signal lineage and one deliberate double meaning)",
+      "ownerNote": "Probably the US Army Signal Intelligence Service — the early cryptologic organization in the NSA lineage. The surrounding lines are \"No Such Agency\", Admiral Rogers, Snowden and collection language, which points at the American lineage rather than the British one. Left unresolved: probably, not proven."
+    },
+    {
+      "id": "SIS-1334-3-1",
+      "postNum": 1334,
+      "token": "SIS",
+      "notedOn": "2026-08-15",
+      "batch": "SIS — MI6 resolved in 8 drops; 4 held back with notes (FBI/Signal lineage and one deliberate double meaning)",
+      "ownerNote": "\"[G-2][Collect] [SIS Good]\" could be the US Signal Intelligence Service, the FBI Special Intelligence Service, or \"good\" people inside British SIS. Not enough context to choose one confidently, so none is chosen."
+    },
+    {
+      "id": "JFK-742-10-18",
+      "postNum": 742,
+      "token": "JFK",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Probably President Kennedy — \"The media cleanse/JFK\" — but the sentence does not establish what relationship the slash is asserting, so the referent is likely and the claim about it is not.",
+      "batch": "JFK / JC / ES / PS — held back with reasons"
+    },
+    {
+      "id": "JFK-743-10-18",
+      "postNum": 743,
+      "token": "JFK",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Same wording as #742 and held for the same reason: the slash carries the meaning, and the slash is not explained.",
+      "batch": "JFK / JC / ES / PS — held back with reasons"
+    },
+    {
+      "id": "JC-1591-2-6",
+      "postNum": 1591,
+      "token": "JC",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Probably James Comey. \"Think JC\" follows material about Assange, a server and Seth Rich, but nothing in the sentence separates Comey from Clapper — and both are JC elsewhere in this corpus.  |  Reference audit — likely reading: unknown JC; possibly a wordplay/name clue. STILL OPEN: 'Think JC' follows 'JA in the news' and precedes server/Seth Rich language, but the post never supplies a safe expansion.",
+      "batch": "JFK / JC / ES / PS — held back with reasons"
+    },
+    {
+      "id": "ES-4533-1-1",
+      "postNum": 4533,
+      "token": "ES",
+      "notedOn": "2026-08-15",
+      "ownerNote": "\"[ES] Mistakes to you are roadmaps to others\" answers a comment about a grammatical mistake. Nothing there identifies Schmidt or Snowden; it may be a clue marker rather than a person at all.",
+      "batch": "JFK / JC / ES / PS — held back with reasons"
+    },
+    {
+      "id": "PS-1380-5-0",
+      "postNum": 1380,
+      "token": "PS",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Probably Peter Strzok — the NSA/CIA, DOJ, FBI, Nunes and Gowdy context fits, and PS is his established abbreviation here. But an isolated \"PS.\" can also be read as an ordinary postscript, so this one is not ironclad.",
+      "batch": "JFK / JC / ES / PS — held back with reasons"
+    },
+    {
+      "id": "JC-559-5-0",
+      "postNum": 559,
+      "token": "JC",
+      "notedOn": "2026-08-15",
+      "batch": "JFK / JC / ES / PS — held back with reasons",
+      "ownerNote": "Two different men. The repeated \"JC. JC.\" is almost certainly James Comey and James Clapper, one each — but the text does not reveal which name belongs to which line, so neither is resolved. Explicitly NOT both Comey.  |  Reference audit — likely reading: James Comey and James Clapper (exact duplicate-row assignment unknown). STILL OPEN: The Obama cabinet/staff list contains two consecutive JC entries, plausibly James Comey and James Clapper; the post does not tell which identical queue row is which person."
+    },
+    {
+      "id": "JC-559-6-0",
+      "postNum": 559,
+      "token": "JC",
+      "notedOn": "2026-08-15",
+      "batch": "JFK / JC / ES / PS — held back with reasons",
+      "ownerNote": "Two different men. The repeated \"JC. JC.\" is almost certainly James Comey and James Clapper, one each — but the text does not reveal which name belongs to which line, so neither is resolved. Explicitly NOT both Comey.  |  Reference audit — likely reading: James Comey and James Clapper (exact duplicate-row assignment unknown). STILL OPEN: The Obama cabinet/staff list contains two consecutive JC entries, plausibly James Comey and James Clapper; the post does not tell which identical queue row is which person."
+    },
+    {
+      "id": "ABC-1379-4-11",
+      "postNum": 1379,
+      "token": "ABC",
+      "notedOn": "2026-08-15",
+      "ownerNote": "\"[ABC] has an interest in this…\" supplies no identifying context. Deliberately NOT assigned to ABC News: the token alone is not evidence, and this drop offers nothing else.",
+      "batch": "ABC / RE / OP — held back"
+    },
+    {
+      "id": "Clinton-2848-2-8",
+      "postNum": 2848,
+      "token": "Clinton",
+      "notedOn": "2026-08-15",
+      "ownerNote": "\"Clinton donor\" — safer as the Clinton Foundation / political network than as Bill Clinton. Deliberately not forced onto one person.",
+      "batch": "Clinton — held rather than forced onto one person"
+    },
+    {
+      "id": "Clinton-300-0-46",
+      "postNum": 300,
+      "token": "Clinton",
+      "notedOn": "2026-08-15",
+      "ownerNote": "The full post does not reliably distinguish Bill, Hillary or the wider Clinton network.",
+      "batch": "Clinton — held rather than forced onto one person"
+    },
+    {
+      "id": "Clinton-4819-0-27",
+      "postNum": 4819,
+      "token": "Clinton",
+      "notedOn": "2026-08-15",
+      "ownerNote": "The full post does not reliably distinguish Bill, Hillary or the wider Clinton network. Both occurrences held.",
+      "batch": "Clinton — held rather than forced onto one person"
+    },
+    {
+      "id": "Clinton-4819-1-27",
+      "postNum": 4819,
+      "token": "Clinton",
+      "notedOn": "2026-08-15",
+      "ownerNote": "The full post does not reliably distinguish Bill, Hillary or the wider Clinton network. Both occurrences held.",
+      "batch": "Clinton — held rather than forced onto one person"
+    },
+    {
+      "id": "Clinton-666-9-6",
+      "postNum": 666,
+      "token": "Clinton",
+      "notedOn": "2026-08-15",
+      "ownerNote": "The full post does not reliably distinguish Bill, Hillary or the wider Clinton network.",
+      "batch": "Clinton — held rather than forced onto one person"
+    },
+    {
+      "id": "code-2-SNOW_WHITE",
+      "postNum": 100,
+      "token": "Snow White",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Seven numbered subjects or systems. Later drops say Snow White 1-7 went offline, but the corpus never names the seven things — specific computer/facility identifications come from outside-corpus decoding.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-4-_2_",
+      "postNum": 1008,
+      "token": "[2]",
+      "notedOn": "2026-08-15",
+      "ownerNote": "In \"MS_13 187 [2] -24 -Distance?\" the brackets could mark a count, a stage or a positional clue. The post never decodes it.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-12-_CLAS_1_99_",
+      "postNum": 3050,
+      "token": "[CLAS 1-99]",
+      "notedOn": "2026-08-15",
+      "ownerNote": "CLAS plainly signals classified material, but 1-99 is not an explained or standard classification scale in this corpus.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-16-_JC_",
+      "postNum": 1828,
+      "token": "[JC]",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Overloaded initials needing occurrence-specific resolution. The DNI, DOJ, FBI and DNC placements can point to James Clapper, James Comey or John Carlin.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-30-WIZARDS_WARLOCKS",
+      "postNum": 144,
+      "token": "Wizards & Warlocks",
+      "notedOn": "2026-08-15",
+      "ownerNote": "An insider group or council. The drops ask who they are and say to think of Snowden, but never name the organization or its membership.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-32-_10_",
+      "postNum": 2709,
+      "token": "[10]",
+      "notedOn": "2026-08-15",
+      "ownerNote": "\"Pull all views +/- [10]\" suggests a tolerance or scan range, but the unit and the exact instruction are not supplied.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-36-_20_",
+      "postNum": 1685,
+      "token": "[20]",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Follows \"Logical thinking\" with no enumeration, unit, callback or defining context.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-48-_8_",
+      "postNum": 233,
+      "token": "[8]",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Embedded in _Conf_y_[8]_8bCon. No count, identity, stage or callback explains the value.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-49-_48_",
+      "postNum": 2962,
+      "token": "[-48]",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Recurs through a compact operational sequence and is later paired with \"Dark\", but is never decoded as hours, location or condition.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-69-CASTLE_ROCK",
+      "postNum": 4413,
+      "token": "CASTLE_ROCK",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Post #4414 places it in loyalist, emergency-action-message, military-command and USSS context, but never identifies the exact protocol, place or condition.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-71-CASTLE_LOCK",
+      "postNum": 1333,
+      "token": "Castle LOCK",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Repeated in #2214, but neither occurrence identifies the castle or what LOCK signifies.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-72-_30_",
+      "postNum": 1355,
+      "token": "[-30]",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Suggests a negative thirty timing delta, but the unit, the starting event and the endpoint are all absent.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-90-_1_4_",
+      "postNum": 2681,
+      "token": "[1-4]",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Clearly means removals one through four, but the four people or positions are withheld.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-94-12_00",
+      "postNum": 101,
+      "token": "12:00",
+      "notedOn": "2026-08-15",
+      "ownerNote": "A schedule time among 08:00 and 02:00 Z. The event and the time zone it belongs to are not supplied.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-96-SPARROW_RED",
+      "postNum": 1077,
+      "token": "Sparrow Red",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Post #1145 pairs Sparrow Red with \"Missiles only\" and \"Intel good\", but never says whether it names a mission, an authorization, an alert or a status.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-106-_JB_",
+      "postNum": 1828,
+      "token": "[JB]",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Overloaded initials. The CIA/White House placements indicate John Brennan while the FBI placement indicates James Baker, so one global identity would be wrong.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-131-RED_RED_",
+      "postNum": 229,
+      "token": "RED_RED_",
+      "notedOn": "2026-08-15",
+      "ownerNote": "An operational-looking status or activation string inside a long FREEDOM string, reused later without any authoritative decoding.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-133-RED1_RED2_",
+      "postNum": 231,
+      "token": "RED1_RED2_",
+      "notedOn": "2026-08-15",
+      "ownerNote": "An operational phase or status token. The surrounding communications string never defines RED1 or RED2.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-137-RED_RED",
+      "postNum": 249,
+      "token": "RED_RED",
+      "notedOn": "2026-08-15",
+      "ownerNote": "A hidden-message or response marker. The post asks about a hidden message rather than supplying a decoding.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-139-_17_",
+      "postNum": 2527,
+      "token": "[17]",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Probably the Q/17 motif — Q is the seventeenth letter — but this post never says so, nor defines its role in the satellite lines.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-150-FISA_T_SURV",
+      "postNum": 3548,
+      "token": "FISA_T_SURV",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Probably FISA target surveillance, but it appears only inside a placeholder and is never expanded or tied to a specific target.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-156-_9_",
+      "postNum": 3716,
+      "token": "[9]",
+      "notedOn": "2026-08-15",
+      "ownerNote": "The post says \"Marker [9]\" but supplies no authoritative numbered marker list or definition.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-159-ATT_CAP_H",
+      "postNum": 397,
+      "token": "ATT_CAP_H",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Appears only in Divert-ATT_CAP_H, with no expansion and no identifiable target.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-164-CONF_WHITE_WHITE_",
+      "postNum": 459,
+      "token": "CONF_WHITE_WHITE_",
+      "notedOn": "2026-08-15",
+      "ownerNote": "A confirmation or status code following Twitter-firewall and kill-rogue language. The condition being confirmed is never stated.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-167-KILL_CHAIN",
+      "postNum": 626,
+      "token": "KILL_CHAIN",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Kill chain has an ordinary military meaning, but this post never identifies the particular process, target or action intended.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-169-STRIKE_PACKAGE_B",
+      "postNum": 757,
+      "token": "STRIKE_PACKAGE_B",
+      "notedOn": "2026-08-15",
+      "ownerNote": "A strike package designated B. The target, and the meaning of the attached 7V designation, are not disclosed.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-170-WARNING_UK_IMM_CHATTER_",
+      "postNum": 757,
+      "token": "WARNING_UK_IMM_CHATTER_",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Expandable as a warning about immediate/imminent UK chatter, but no specific threat or event is identified.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-171-XRAY_7",
+      "postNum": 757,
+      "token": "XRAY_7",
+      "notedOn": "2026-08-15",
+      "ownerNote": "No expansion, referent or later authoritative definition anywhere in the corpus.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "code-172-WATCH_THE_WATER",
+      "postNum": 765,
+      "token": "Watch the water",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Posts #847-849 connect the phrase to North Korea and a pictured event, but do not establish a fixed meaning for every use.",
+      "batch": "Notation audit — 143 resolved, 29 held because the corpus never establishes one safe meaning"
+    },
+    {
+      "id": "theme-120-Foreign_Affairs",
+      "postNum": 120,
+      "token": "Foreign Affairs",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative reading — Keep — Foreign Affairs. International terrorism and its alleged foreign funding are substantive parts of the full post, not incidental country mentions. STILL OPEN: The full post materially discusses terrorism and foreign funding, but it mixes that material with a domestic media-and-attack narrative.",
+      "batch": "Subject audit — 16 medium-confidence cards left open"
+    },
+    {
+      "id": "theme-718-Foreign_Affairs",
+      "postNum": 718,
+      "token": "Foreign Affairs",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative reading — Keep — Foreign Affairs. The alleged event, source, and jurisdiction are specifically placed inside Russia, making the foreign setting material. STILL OPEN: The foreign setting is explicit, but the one-line card depends on the cryptic '[187]' reference and the wider post for meaning.",
+      "batch": "Subject audit — 16 medium-confidence cards left open"
+    },
+    {
+      "id": "theme-1728-Foreign_Affairs",
+      "postNum": 1728,
+      "token": "Foreign Affairs",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative reading — Keep — Foreign Affairs. The missile launch, Hawaii warning, and Air Force One rerouting form an international-security scenario. STILL OPEN: The events fit international security, but the post does not identify the foreign actor or confirm that the missile scenario was international.",
+      "batch": "Subject audit — 16 medium-confidence cards left open"
+    },
+    {
+      "id": "theme-1822-Censorship_Technology",
+      "postNum": 1822,
+      "token": "Censorship & Technology",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative reading — Keep — Censorship & Technology. The full post argues that media systems are controlled propaganda rather than independent, fitting the censorship/information-control side of the subject. STILL OPEN: The full post alleges propaganda and information control, but it does not describe a particular platform, moderation action, or technical censorship mechanism.",
+      "batch": "Subject audit — 16 medium-confidence cards left open"
+    },
+    {
+      "id": "theme-1822-Foreign_Affairs",
+      "postNum": 1822,
+      "token": "Foreign Affairs",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative reading — Remove — Foreign Affairs. The central subject is a domestic U.S. investigation or political dispute; Russia/foreign language names the allegation or evidence, not foreign affairs. STILL OPEN: Foreign countries and conflicts appear in a list of media predictions; whether those examples are substantial enough for Foreign Affairs is a taxonomy-boundary judgment.",
+      "batch": "Subject audit — 16 medium-confidence cards left open"
+    },
+    {
+      "id": "theme-1862-Foreign_Affairs",
+      "postNum": 1862,
+      "token": "Foreign Affairs",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative reading — Move — Foreign Affairs → Censorship & Technology. Media echo-chamber control and the need to bypass it through direct communication are the central issues. STILL OPEN: The post describes an echo chamber and information control, but not literal platform moderation or a defined technology system.",
+      "batch": "Subject audit — 16 medium-confidence cards left open"
+    },
+    {
+      "id": "theme-2104-Foreign_Affairs",
+      "postNum": 2104,
+      "token": "Foreign Affairs",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative reading — Keep — Foreign Affairs. The full post alleges a Mossad-linked operation; foreign intelligence is part of the claimed mechanism. STILL OPEN: Foreign intelligence is central only through an allegation quoted in the post; the classification identifies the topic and does not verify that allegation.",
+      "batch": "Subject audit — 16 medium-confidence cards left open"
+    },
+    {
+      "id": "theme-2386-Foreign_Affairs",
+      "postNum": 2386,
+      "token": "Foreign Affairs",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative reading — Move — Foreign Affairs → Censorship & Technology. The post centers on media efforts to discredit and silence the Q movement, an information-control issue. STILL OPEN: The post alleges efforts to discredit and silence a movement, but does not identify a concrete censorship action or technology mechanism.",
+      "batch": "Subject audit — 16 medium-confidence cards left open"
+    },
+    {
+      "id": "theme-2658-Censorship_Technology",
+      "postNum": 2658,
+      "token": "Censorship & Technology",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative reading — Keep — Censorship & Technology. The post's central complaint is deliberate refusal to cover claimed successes, an information-suppression issue. STILL OPEN: The claimed refusal to provide coverage supports information suppression, although no technology platform or formal censorship process is named.",
+      "batch": "Subject audit — 16 medium-confidence cards left open"
+    },
+    {
+      "id": "theme-2849-Foreign_Affairs",
+      "postNum": 2849,
+      "token": "Foreign Affairs",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative reading — Move — Foreign Affairs → Censorship & Technology. The contrast between wall-to-wall and zero coverage is an alleged information-suppression issue. STILL OPEN: The coverage disparity can be read as deliberate suppression, but it could also be categorized more narrowly as ordinary media bias.",
+      "batch": "Subject audit — 16 medium-confidence cards left open"
+    },
+    {
+      "id": "theme-2902-Foreign_Affairs",
+      "postNum": 2902,
+      "token": "Foreign Affairs",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative reading — Move — Foreign Affairs → Censorship & Technology. The post explicitly says media prevented public awareness, fitting censorship/information control. STILL OPEN: 'Prevents public awareness' implies information suppression, but the post may be read as a general complaint about news coverage.",
+      "batch": "Subject audit — 16 medium-confidence cards left open"
+    },
+    {
+      "id": "theme-4293-Foreign_Affairs",
+      "postNum": 4293,
+      "token": "Foreign Affairs",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative reading — Keep — Foreign Affairs. The Senate subpoena concerns Hunter Biden and Burisma, a Ukrainian company, so the foreign-business link is substantive. STILL OPEN: Burisma supplies a real Ukrainian link, while Q's accompanying text focuses more heavily on the domestic Senate investigation and election politics.",
+      "batch": "Subject audit — 16 medium-confidence cards left open"
+    },
+    {
+      "id": "theme-4541-Foreign_Affairs",
+      "postNum": 4541,
+      "token": "Foreign Affairs",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative reading — Keep — Foreign Affairs. The reproduced international letter discusses synchronized events in Europe and political forces across governments and nations. STILL OPEN: The reproduced letter discusses Europe and governments across nations, but its dominant framing is broad ideological and religious conflict.",
+      "batch": "Subject audit — 16 medium-confidence cards left open"
+    },
+    {
+      "id": "theme-4588-Foreign_Affairs",
+      "postNum": 4588,
+      "token": "Foreign Affairs",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative reading — Move — Foreign Affairs → Censorship & Technology. The post urges bypassing controlled approved topics, making information gatekeeping the central subject. STILL OPEN: Controlled topics and gatekeeping support the move, but the post does not specify a technology platform or formal censorship mechanism.",
+      "batch": "Subject audit — 16 medium-confidence cards left open"
+    },
+    {
+      "id": "theme-4922-Foreign_Affairs",
+      "postNum": 4922,
+      "token": "Foreign Affairs",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative reading — Keep — Foreign Affairs. The linked report describes a transnational money-laundering matter connected with Hunter Biden's overseas dealings. STILL OPEN: The linked article provides the transnational and overseas context; Q's own post contains only the link, and the headline primarily concerns money laundering.",
+      "batch": "Subject audit — 16 medium-confidence cards left open"
+    },
+    {
+      "id": "theme-4963-Foreign_Affairs",
+      "postNum": 4963,
+      "token": "Foreign Affairs",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative reading — Move — Foreign Affairs → Censorship & Technology. Runbeck and Dominion are election-system technology vendors; the card does not present a foreign-affairs issue. STILL OPEN: Runbeck and Dominion are election-technology vendors, but the extremely short card does not explain whether technology itself is the intended subject.",
+      "batch": "Subject audit — 16 medium-confidence cards left open"
+    },
+    {
+      "id": "emph-92-237",
+      "postNum": 92,
+      "token": "What hotel did the 'reported' gunfire occur from? / What floors specifically?",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably ordinary question sequence — The second question narrows the first from hotel to floors. That may create cadence, but it is also normal investigative questioning.",
+      "batch": "Device audit — 31 cards where deliberate parallelism and ordinary question sequencing are equally plausible"
+    },
+    {
+      "id": "emph-111-8",
+      "postNum": 111,
+      "token": "Is this possible? / Is the US political / election system corrupt?",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably deliberate parallel construction — The first yes/no question tees up the second, but repeating 'Is' is also grammatically unavoidable and does not prove deliberate anaphora. Full Q-post context was reviewed, but it did not remove the ambiguity.",
+      "batch": "Device audit — 31 cards where deliberate parallelism and ordinary question sequencing are equally plausible"
+    },
+    {
+      "id": "emph-118-14",
+      "postNum": 118,
+      "token": "Was anyone else permitted to leave? / Was it a private plane?",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably ordinary question sequence — The questions concern the same event, but their subjects and predicates differ; only the required yes/no form repeats.",
+      "batch": "Device audit — 31 cards where deliberate parallelism and ordinary question sequencing are equally plausible"
+    },
+    {
+      "id": "emph-157-64",
+      "postNum": 157,
+      "token": "What miscalculation occurred? / What opposite impact did this generate?",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably deliberate parallel construction — The pair sets cause against opposite effect, but its grammar is not closely mirrored beyond 'What'.",
+      "batch": "Device audit — 31 cards where deliberate parallelism and ordinary question sequencing are equally plausible"
+    },
+    {
+      "id": "emph-194-91",
+      "postNum": 194,
+      "token": "Who released the picture? / Who has all the information?",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably ordinary question sequence — The two questions form an investigative chain, but do not repeat a shared predicate or balanced alternative.",
+      "batch": "Device audit — 31 cards where deliberate parallelism and ordinary question sequencing are equally plausible"
+    },
+    {
+      "id": "emph-195-100",
+      "postNum": 195,
+      "token": "Who released the picture? / Who has all the information?",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably ordinary question sequence — The two questions form an investigative chain, but do not repeat a shared predicate or balanced alternative.",
+      "batch": "Device audit — 31 cards where deliberate parallelism and ordinary question sequencing are equally plausible"
+    },
+    {
+      "id": "emph-483-192",
+      "postNum": 483,
+      "token": "When specifically? / When did POTUS Tweet the above?",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably ordinary clarification — The first fragment prompts the more specific second question; that is a natural clarification pattern rather than clearly deliberate parallelism.",
+      "batch": "Device audit — 31 cards where deliberate parallelism and ordinary question sequencing are equally plausible"
+    },
+    {
+      "id": "emph-560-202",
+      "postNum": 560,
+      "token": "The MEMO is ONLY THE BEGINNING> / THE SHOT HEARD AROUND THE WORLD.",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably ordinary slogan sequence — The two slogans are juxtaposed and both begin with 'The,' but they do not share a matching grammatical or semantic frame.",
+      "batch": "Device audit — 31 cards where deliberate parallelism and ordinary question sequencing are equally plausible"
+    },
+    {
+      "id": "emph-572-204",
+      "postNum": 572,
+      "token": "THE SHOT HEARD AROUND THE WORLD. / THE GREAT AWAKENING.",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably deliberate parallel slogan — The short, all-caps noun phrases create cadence, but the repeated article alone is weak structural evidence.",
+      "batch": "Device audit — 31 cards where deliberate parallelism and ordinary question sequencing are equally plausible"
+    },
+    {
+      "id": "emph-1286-24",
+      "postNum": 1286,
+      "token": "Mueller & U1? / Mueller &",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Unresolved — no safe reading — The second candidate is literally incomplete ('Mueller &'), so the intended parallel element cannot be recovered even from the full post. Full Q-post context was reviewed, but it did not remove the ambiguity.",
+      "batch": "Device audit — 31 cards where deliberate parallelism and ordinary question sequencing are equally plausible"
+    },
+    {
+      "id": "emph-1380-39",
+      "postNum": 1380,
+      "token": "What is being revealed? / What will it lead to?",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably ordinary question sequence — The second question is a consequence follow-up, but the grammatical structures are different.",
+      "batch": "Device audit — 31 cards where deliberate parallelism and ordinary question sequencing are equally plausible"
+    },
+    {
+      "id": "emph-1484-53",
+      "postNum": 1484,
+      "token": "Who brings the votes (House floor)? / Who decides?",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably ordinary question sequence — The questions concern adjacent steps in House procedure, but share only the interrogative 'Who'.",
+      "batch": "Device audit — 31 cards where deliberate parallelism and ordinary question sequencing are equally plausible"
+    },
+    {
+      "id": "emph-1944-93",
+      "postNum": 1944,
+      "token": "Who must sign off on FISA warrants? / Who directs the signers?",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably ordinary question sequence — The pair asks about signers and their supervisors; it is a logical chain, but not a strongly mirrored construction.",
+      "batch": "Device audit — 31 cards where deliberate parallelism and ordinary question sequencing are equally plausible"
+    },
+    {
+      "id": "emph-2655-115",
+      "postNum": 2655,
+      "token": "The future will not repeat the past. / The clock is ticking.",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably ordinary sentence sequence — The statements are thematically linked and both begin with 'The,' but their grammar and subjects do not form a close parallel.",
+      "batch": "Device audit — 31 cards where deliberate parallelism and ordinary question sequencing are equally plausible"
+    },
+    {
+      "id": "emph-2691-117",
+      "postNum": 2691,
+      "token": "The message must be direct. / The WAR is very real.",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably ordinary sentence sequence — The statements share an article and emphatic tone, but not a matching clause structure.",
+      "batch": "Device audit — 31 cards where deliberate parallelism and ordinary question sequencing are equally plausible"
+    },
+    {
+      "id": "emph-3667-150",
+      "postNum": 3667,
+      "token": "Durham 'public' statements past week? / Durham start.",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably ordinary note fragments — The repeated proper name could be anaphoric, but the fragments are too abbreviated to establish a rhetorical construction.",
+      "batch": "Device audit — 31 cards where deliberate parallelism and ordinary question sequencing are equally plausible"
+    },
+    {
+      "id": "emph-3898-159",
+      "postNum": 3898,
+      "token": "The key that opens all doors. / The 'Start'.",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably ordinary slogan sequence — The phrases are thematically linked, but repeated 'The' plus two different metaphors is weak evidence of parallel construction.",
+      "batch": "Device audit — 31 cards where deliberate parallelism and ordinary question sequencing are equally plausible"
+    },
+    {
+      "id": "emph-52-199",
+      "postNum": 52,
+      "token": "What is the annual salary of a sitting US President? / What home(s) were just pu",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably deliberate parallel comparison — The salary/home juxtaposition implies a financial comparison, but the clauses share only the ordinary interrogative 'What' and use different grammatical frames.",
+      "batch": "Device audit — 31 held: deliberate parallelism and ordinary question sequencing equally plausible"
+    },
+    {
+      "id": "emph-140-44",
+      "postNum": 140,
+      "token": "What is the significance? / What if China, Russia, and others are coordinating w",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably ordinary question sequence — The second question attempts to supply a possible significance, but the pair is not grammatically balanced beyond the word 'What'.",
+      "batch": "Device audit — 31 held: deliberate parallelism and ordinary question sequencing equally plausible"
+    },
+    {
+      "id": "emph-142-47",
+      "postNum": 142,
+      "token": "What ‘exactly’ happened to the Titanic? / What ‘class of people’ were guaranteed",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably ordinary question sequence — The questions are related Titanic inquiries, yet the predicates and requested information differ.",
+      "batch": "Device audit — 31 held: deliberate parallelism and ordinary question sequencing equally plausible"
+    },
+    {
+      "id": "emph-142-48",
+      "postNum": 142,
+      "token": "Why did select ‘individuals’ not make it into the lifeboats? / Why is this relev",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably ordinary question sequence — 'Why is this relevant?' is a common follow-up rather than a clearly matched parallel clause.",
+      "batch": "Device audit — 31 held: deliberate parallelism and ordinary question sequencing equally plausible"
+    },
+    {
+      "id": "emph-142-49",
+      "postNum": 142,
+      "token": "How do we know who was on the lifeboats (D or A)? / How were names and bodies re",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably ordinary question sequence — Both ask about evidence, but one concerns identification and the other recordkeeping; deliberate balance is plausible but not demonstrable.",
+      "batch": "Device audit — 31 held: deliberate parallelism and ordinary question sequencing equally plausible"
+    },
+    {
+      "id": "emph-474-190",
+      "postNum": 474,
+      "token": "CM – thank you for IDEN verification. / CM – how can a secure ‘read only’ board ",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably deliberate repeated address — Both lines begin with the vocative 'CM,' but one thanks and the other asks a technical question, so the repetition may be ordinary direct address.",
+      "batch": "Device audit — 31 held: deliberate parallelism and ordinary question sequencing equally plausible"
+    },
+    {
+      "id": "emph-2844-122",
+      "postNum": 2844,
+      "token": "What is the process to enter a SCIF? / What security level must exist in order t",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably ordinary question sequence — Both concern SCIF access, but they ask for different facts and repeat only 'What'.",
+      "batch": "Device audit — 31 held: deliberate parallelism and ordinary question sequencing equally plausible"
+    },
+    {
+      "id": "emph-3409-141",
+      "postNum": 3409,
+      "token": "Why does the media rush to ‘shape’ events? / Why are the same ‘keywords’ always ",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably deliberate parallel construction — Both questions criticize media behavior and create cadence, but their predicates differ and the repeated 'Why' may simply reflect a question list.",
+      "batch": "Device audit — 31 held: deliberate parallelism and ordinary question sequencing equally plausible"
+    },
+    {
+      "id": "emph-3613-148",
+      "postNum": 3613,
+      "token": "Do they count on the fact that people [human psyche] are more prone to believe s",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably deliberate parallel construction — The two 'Do' questions support one echo-chamber argument, but the stored candidate is truncated after the slash.",
+      "batch": "Device audit — 31 held: deliberate parallelism and ordinary question sequencing equally plausible"
+    },
+    {
+      "id": "emph-3721-151",
+      "postNum": 3721,
+      "token": "Do they count on the fact that people [human psyche] are more prone to believe s",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably deliberate parallel construction — The two 'Do' questions support one echo-chamber argument, but the stored candidate is truncated after the slash.",
+      "batch": "Device audit — 31 held: deliberate parallelism and ordinary question sequencing equally plausible"
+    },
+    {
+      "id": "emph-3858-156",
+      "postNum": 3858,
+      "token": "Do they count on the fact that people [human psyche] are more prone to believe s",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably deliberate parallel construction — The two 'Do' questions support one echo-chamber argument, but the stored candidate is truncated after the slash.",
+      "batch": "Device audit — 31 held: deliberate parallelism and ordinary question sequencing equally plausible"
+    },
+    {
+      "id": "emph-3905-160",
+      "postNum": 3905,
+      "token": "Do they count on the fact that people [human psyche] are more prone to believe s",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably deliberate parallel construction — The two 'Do' questions support one echo-chamber argument, but the stored candidate is truncated after the slash.",
+      "batch": "Device audit — 31 held: deliberate parallelism and ordinary question sequencing equally plausible"
+    },
+    {
+      "id": "emph-4535-179",
+      "postNum": 4535,
+      "token": "Do they count on the fact that people [human psyche] are more prone to believe s",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably deliberate parallel construction — The two 'Do' questions support one echo-chamber argument, but the stored candidate is truncated after the slash.",
+      "batch": "Device audit — 31 held: deliberate parallelism and ordinary question sequencing equally plausible"
+    },
+    {
+      "id": "emph-4699-185",
+      "postNum": 4699,
+      "token": "What organized group(s) are bailing out rioters within 24-hours of arrest? / Wha",
+      "notedOn": "2026-08-15",
+      "ownerNote": "Tentative: Probably deliberate two-stage sequence — The questions deliberately move from bailout actors to post-bailout effects, but their grammatical forms are not closely matched.",
+      "batch": "Device audit — 31 held: deliberate parallelism and ordinary question sequencing equally plausible"
+    },
+    {
+      "id": "ASF-17-5-106",
+      "postNum": 17,
+      "token": "ASF",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: unknown organization or command node called ASF. STILL OPEN: The post says shills send information to ASF for instructions, but neither this post nor the nearby corpus expands ASF. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: unknown organization or command node called ASF. STILL OPEN: The post says shills send information to ASF for instructions, but neither this post nor the nearby corpus expands ASF.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "DI-39-7-19",
+      "postNum": 39,
+      "token": "DI",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: unknown intelligence abbreviation DI. STILL OPEN: The agency list 'NSA CIA DI etc' suggests an intelligence body, but the post does not expand DI and several expansions are possible. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: unknown intelligence abbreviation DI. STILL OPEN: The agency list 'NSA CIA DI etc' suggests an intelligence body, but the post does not expand DI and several expansions are possible.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "RED_OCTOBER-395-5-0",
+      "postNum": 395,
+      "token": "RED_OCTOBER",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: RED_OCTOBER code/phrase. STILL OPEN: Q explicitly notes double meanings, so forcing all occurrences to one film, event, or operation would overstate the evidence. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: RED_OCTOBER code/phrase. STILL OPEN: Q explicitly notes double meanings, so forcing all occurrences to one film, event, or operation would overstate the evidence.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "RED_OCTOBER-432-6-0",
+      "postNum": 432,
+      "token": "RED_OCTOBER",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: RED_OCTOBER code/phrase. STILL OPEN: Q explicitly notes double meanings, so forcing all occurrences to one film, event, or operation would overstate the evidence. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: RED_OCTOBER code/phrase. STILL OPEN: Q explicitly notes double meanings, so forcing all occurrences to one film, event, or operation would overstate the evidence.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "ARM-668-14-123",
+      "postNum": 668,
+      "token": "ARM",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: Anti-Trump Resistance Movement (community-glossary reading). STILL OPEN: The capitalization and phrases 'extensions of the ARM' and 'ARM/MSM foothold' behave like a label. A community glossary expands ARM as Anti-Trump Resistance Movement, but Q never defines it in the corpus, so that secondary interpretation is not strong enough for a forced canonical assignment. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: Anti-Trump Resistance Movement (community-glossary reading). STILL OPEN: The capitalization and phrases 'extensions of the ARM' and 'ARM/MSM foothold' behave like a label. A community glossary expands ARM as Anti-Trump Resistance Movement, but Q never defines it in the corpus, so that secondary interpretation is not strong enough for a forced canonical assignment.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "RED_OCTOBER-722-10-0",
+      "postNum": 722,
+      "token": "RED_OCTOBER",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: RED_OCTOBER code/phrase. STILL OPEN: Q explicitly notes double meanings, so forcing all occurrences to one film, event, or operation would overstate the evidence. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: RED_OCTOBER code/phrase. STILL OPEN: Q explicitly notes double meanings, so forcing all occurrences to one film, event, or operation would overstate the evidence.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "DELTA-756-32-3",
+      "postNum": 756,
+      "token": "DELTA",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: DELTA sign-off or operational code. STILL OPEN: DELTA is used as a sign-off/code in these posts, but the corpus does not tie every occurrence to one verifiable organization or operation. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: DELTA sign-off or operational code. STILL OPEN: DELTA is used as a sign-off/code in these posts, but the corpus does not tie every occurrence to one verifiable organization or operation.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "DELTA-757-5-3",
+      "postNum": 757,
+      "token": "DELTA",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: DELTA sign-off or operational code. STILL OPEN: DELTA is used as a sign-off/code in these posts, but the corpus does not tie every occurrence to one verifiable organization or operation. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: DELTA sign-off or operational code. STILL OPEN: DELTA is used as a sign-off/code in these posts, but the corpus does not tie every occurrence to one verifiable organization or operation.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "DELTA-785-6-3",
+      "postNum": 785,
+      "token": "DELTA",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: DELTA sign-off or operational code. STILL OPEN: DELTA is used as a sign-off/code in these posts, but the corpus does not tie every occurrence to one verifiable organization or operation. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: DELTA sign-off or operational code. STILL OPEN: DELTA is used as a sign-off/code in these posts, but the corpus does not tie every occurrence to one verifiable organization or operation.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "DELTA-804-0-0",
+      "postNum": 804,
+      "token": "DELTA",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: DELTA sign-off or operational code. STILL OPEN: DELTA is used as a sign-off/code in these posts, but the corpus does not tie every occurrence to one verifiable organization or operation. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: DELTA sign-off or operational code. STILL OPEN: DELTA is used as a sign-off/code in these posts, but the corpus does not tie every occurrence to one verifiable organization or operation.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "RED_CASTLE-963-1-0",
+      "postNum": 963,
+      "token": "RED_CASTLE",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: RED_CASTLE operational code. STILL OPEN: The post uses RED_CASTLE as a code without a dependable public expansion. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: RED_CASTLE operational code. STILL OPEN: The post uses RED_CASTLE as a code without a dependable public expansion.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "GREEN_CASTLE-963-2-0",
+      "postNum": 963,
+      "token": "GREEN_CASTLE",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: GREEN_CASTLE operational code. STILL OPEN: The post uses GREEN_CASTLE as a code without a dependable public expansion. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: GREEN_CASTLE operational code. STILL OPEN: The post uses GREEN_CASTLE as a code without a dependable public expansion.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "CQ-1116-2-6",
+      "postNum": 1116,
+      "token": "CQ",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: unknown item paired with China. STILL OPEN: 'China/CQ cancel' is too compressed to distinguish a person, country, company, or operational code. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: unknown item paired with China. STILL OPEN: 'China/CQ cancel' is too compressed to distinguish a person, country, company, or operational code.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "EG-1279-16-1",
+      "postNum": 1279,
+      "token": "EG",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: [EG] / Evergreen code. STILL OPEN: The post connects [EG] to 'Evergreen' but does not identify Evergreen's underlying person, organization, or operation. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: [EG] / Evergreen code. STILL OPEN: The post connects [EG] to 'Evergreen' but does not identify Evergreen's underlying person, organization, or operation.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "BM-1474-5-10",
+      "postNum": 1474,
+      "token": "BM",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: BM segment in an opaque code string. STILL OPEN: BM occurs only inside EXE_70283-BM-…; the post gives no expansion or stable referent. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: BM segment in an opaque code string. STILL OPEN: BM occurs only inside EXE_70283-BM-…; the post gives no expansion or stable referent.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "WASH-1493-8-41",
+      "postNum": 1493,
+      "token": "WASH",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: WASH operational shorthand. STILL OPEN: The missile/submarine contexts suggest a wash, cleanup, or cover-story action more than Washington, but the corpus never defines it. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: WASH operational shorthand. STILL OPEN: The missile/submarine contexts suggest a wash, cleanup, or cover-story action more than Washington, but the corpus never defines it.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "ARM-1494-1-69",
+      "postNum": 1494,
+      "token": "ARM",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: Anti-Trump Resistance Movement (community-glossary reading). STILL OPEN: The capitalization and phrases 'extensions of the ARM' and 'ARM/MSM foothold' behave like a label. A community glossary expands ARM as Anti-Trump Resistance Movement, but Q never defines it in the corpus, so that secondary interpretation is not strong enough for a forced canonical assignment. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: Anti-Trump Resistance Movement (community-glossary reading). STILL OPEN: The capitalization and phrases 'extensions of the ARM' and 'ARM/MSM foothold' behave like a label. A community glossary expands ARM as Anti-Trump Resistance Movement, but Q never defines it in the corpus, so that secondary interpretation is not strong enough for a forced canonical assignment.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "WASH-1731-2-13",
+      "postNum": 1731,
+      "token": "WASH",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: WASH operational shorthand. STILL OPEN: The missile/submarine contexts suggest a wash, cleanup, or cover-story action more than Washington, but the corpus never defines it. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: WASH operational shorthand. STILL OPEN: The missile/submarine contexts suggest a wash, cleanup, or cover-story action more than Washington, but the corpus never defines it.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "KM-1828-1-42",
+      "postNum": 1828,
+      "token": "KM",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: unknown Obama White House person with initials KM. STILL OPEN: KM appears in an initials-only Obama White House cluster; the corpus does not supply enough evidence to identify the person safely. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: unknown Obama White House person with initials KM. STILL OPEN: KM appears in an initials-only Obama White House cluster; the corpus does not supply enough evidence to identify the person safely.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "RED_OCTOBER-2350-11-0",
+      "postNum": 2350,
+      "token": "RED_OCTOBER",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: RED_OCTOBER code/phrase. STILL OPEN: Q explicitly notes double meanings, so forcing all occurrences to one film, event, or operation would overstate the evidence. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: RED_OCTOBER code/phrase. STILL OPEN: Q explicitly notes double meanings, so forcing all occurrences to one film, event, or operation would overstate the evidence.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "CA_J-2527-8-80",
+      "postNum": 2527,
+      "token": "CA_J",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: anonymous board handle [CA_J]. STILL OPEN: Q addresses [CA_J] directly, making it a board handle; the public identity behind the handle is not established. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: anonymous board handle [CA_J]. STILL OPEN: Q addresses [CA_J] directly, making it a board handle; the public identity behind the handle is not established.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "ALICE-2636-0-0",
+      "postNum": 2636,
+      "token": "ALICE",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: Alice / Mad Hatter code. STILL OPEN: The post pairs ALICE with MAD HATTER but does not define whether these are people, operations, places, or symbolic labels. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: Alice / Mad Hatter code. STILL OPEN: The post pairs ALICE with MAD HATTER but does not define whether these are people, operations, places, or symbolic labels.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "DELTA-2774-1-16",
+      "postNum": 2774,
+      "token": "DELTA",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: DELTA sign-off or operational code. STILL OPEN: DELTA is used as a sign-off/code in these posts, but the corpus does not tie every occurrence to one verifiable organization or operation. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: DELTA sign-off or operational code. STILL OPEN: DELTA is used as a sign-off/code in these posts, but the corpus does not tie every occurrence to one verifiable organization or operation.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "CASTLE_ROCK-4413-6-0",
+      "postNum": 4413,
+      "token": "CASTLE_ROCK",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: CASTLE_ROCK operational/communications code. STILL OPEN: The corpus uses CASTLE_ROCK as a code but does not supply a dependable public expansion or uniquely named referent. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: CASTLE_ROCK operational/communications code. STILL OPEN: The corpus uses CASTLE_ROCK as a code but does not supply a dependable public expansion or uniquely named referent.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "CASTLE_ROCK-4414-8-0",
+      "postNum": 4414,
+      "token": "CASTLE_ROCK",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: CASTLE_ROCK operational/communications code. STILL OPEN: The corpus uses CASTLE_ROCK as a code but does not supply a dependable public expansion or uniquely named referent. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: CASTLE_ROCK operational/communications code. STILL OPEN: The corpus uses CASTLE_ROCK as a code but does not supply a dependable public expansion or uniquely named referent.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    },
+    {
+      "id": "CJ-4881-8-17",
+      "postNum": 4881,
+      "token": "CJ",
+      "notedOn": "2026-08-16",
+      "ownerNote": "Likely reading: anonymous board handle CJ. STILL OPEN: Q tells CJ 'You are correct,' which identifies a board participant/handle but not a verifiable public identity. Hold for further review; do not force a canonical entity.  |  Reference audit — likely reading: anonymous board handle CJ. STILL OPEN: Q tells CJ 'You are correct,' which identifies a board participant/handle but not a verifiable public identity.",
+      "batch": "Reference audit — 31 rows held so others can keep exploring them"
+    }
+  ]
+}

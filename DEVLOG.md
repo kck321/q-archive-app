@@ -1682,3 +1682,2017 @@ cards, the reader feed and quoted text. Links carry `rel="noopener noreferrer no
 
 **Audit script kept:** the join-key logic is the reusable part — re-run it after any ingest
 change to prove the archive still matches the source.
+
+## Q Emphasis — certified (section 8 of 8)
+
+**Request:** Certify the final classification section. Narrow definition; caps must not become
+everything; cryptic messaging must not become "Emphasis". Ambiguous cases route to /resolve.
+
+**Certified:** 5,251 occurrences across 1,737 posts, nine device types.
+Capitals 2,418 · Parallel phrasing 1,111 · Bracket emphasis 716 · Quoted word 624 ·
+Punctuation intensity 157 · Repeated word 118 · Repeated question 95 · Repeated directive 11 ·
+Deliberate spacing 1. 245 arguable cases held in the Resolution Center, not forced into the count.
+
+**The two rules that made it defensible, both measured from the corpus rather than declared:**
+
+1. *Capitals are emphatic only where they CONTRAST* — with the surrounding line (a caps word
+   inside an all-caps line is Q's register, 7,839 excluded) and with the word's own usual
+   spelling. DECLAS is capitalised in 90 of its 95 appearances, so its capitals are how the word
+   is spelled; FAKE is 207 of 284, so its capitals are a choice. That second test excluded 1,239
+   and needed no word list. Certified entity names and codes are excluded too — a name in
+   capitals is a name.
+2. *Parallel phrasing needs a repeated rhetorical pattern, not a shared first word.* v1 emitted
+   one hit per adjacent pair, so a five-line cascade became four hits: 2,187 emissions were
+   really 1,339 runs. Counting runs and requiring a structural pattern took it to 1,111.
+
+**Bugs found by reading output, not by tests:**
+- A Python heredoc wrote literal backspace bytes (0x08) where the regex meant `\b`, so the
+  always-caps word test matched nothing and silently excluded zero. Use the editor for regexes.
+- The first classifier scored `Missing 10 marker from past. / Missing 15 marker from past.` as
+  weak because it only looked at shared prefix. Slot-level mirroring was invisible to it.
+- `What happened to Diana? / What did she find out?` was landing in the reject bucket. The
+  discriminator is topical continuity (Diana -> "she"), not the opener.
+- SEED_VERSION was still 4 while Directives, Claims and Emphasis had all rewritten posts.json
+  since. Returning visitors would have kept the stale seed. Bumped to 5.
+
+**Chain:** audit-emphasis.mjs + apply-emphasis.mjs added to export-firestore.mjs after
+apply-codes.mjs (the caps detector reads certified codes and entities) and before
+build-resolution-queue.mjs (which reads the borderline file). 14 QA assertions, all executable.
+
+**Live QA:** emphasis 5,251/1,737 with subtypes reconciling exactly and 0 parallel occurrences
+missing their basis; codes 1,949/852, entities 1,332/4,463, themes 2,393/1,766, evidence
+6,590/3,883, claims 4,181, predictions 630, directives 2,422 all unchanged; queue 2,527
+(1,858 entity + 251 theme + 173 code + 245 classification).
+
+All eight analytical sections now certified.
+
+## Whole-app cross-section integrity audit
+
+**Request:** Before adding any ninth category, validate the deployed system as a whole: does every
+certified occurrence resolve to the correct Q-authored source, carry the right provenance, overlap
+only where intended, and reach both first-time and returning users?
+
+**Built:** `scripts/lib/contracts.mjs` (machine-readable provenance contract per section),
+`scripts/audit-cross-section.mjs` (80 executable invariants in 11 groups),
+`scripts/certification-manifest.mjs` (hashes + counts + seed version, with `--verify`).
+Deliverables: `audit/cross-section-integrity.md` / `.json`, `audit/certification-manifest.json`.
+
+**80/80 invariants pass.** All eight sections frozen; nothing reclassified.
+
+**Real defects found and fixed:**
+1. *Resolution Center id collision.* `[2]`, `[#2]` and `[+2]` are three different codes whose keys
+   all collapse to `code-_2_` when non-word characters become underscores. Six rows shared five
+   ids, so a community submission could attach to the wrong code. Ids now carry an index.
+2. *Entities metric boundary undeclared.* The certified 4,463 counts alias-resolved mentions of
+   the 93-entity core registry; the 1,239 adjudicated tail entities carry a further 3,440, so
+   summing every shipped row gives 7,903. Neither number is wrong — they measure different
+   populations — but nothing said so. Now declared in the contract, in sectionInfo and on /method.
+
+**Four failures that were the audit's own errors, not the data's** — each worth recording because
+each is a way an integrity check can lie:
+- Measured the Question/Directive overlap with whitespace-lowercase from the question side and got
+  167; the certified 228 is measured from the directive side with the canonical `key()` plus
+  `directiveSource`. Same fact, three different numbers depending on definition.
+- Counted conclusions per `claimMeta` key (960) rather than per occurrence (966). The meta map is
+  keyed by normalised text, so six in-post repeats shared an entry.
+- Tested parallel-phrasing occurrences against their joined `line` field, which is a display
+  reconstruction rather than a span, so all 1,111 looked unresolvable.
+- Compared a 16-char truncated hash against the manifest's full digest and reported all eight
+  artifacts as drifted on a tree that had not changed.
+
+**Finding kept as a risk, not fixed:** `sourceLines()` over-extends quoted blocks on 123 posts. In
+#1939 a quoted sentence and its URL are followed by five lines that are unmistakably Q's and the
+block swallows them. The certified sections are right; the detector is wrong. Direction matters:
+Emphasis excludes source lines, so it UNDER-counts there — nothing phantom is admitted. The
+invariant now freezes the disagreement at its known size (102 questions / 71 directives / 147
+claims) so any future change that makes the detector claim more Q-authored text fails the gate.
+
+**Byte drift vs semantic drift** are now reported separately. Every deploy re-runs the full export
+chain, so posts.json comes back re-serialised with identical content; the manifest carries both a
+byte hash and a key-sorted semantic hash, and only semantic drift fails.
+
+**One command to check everything:** `node scripts/certification-manifest.mjs --verify`
+
+## Entity metric ruling + source-boundary debt recorded
+
+**Ruling applied:** the Entities headline is now the whole finished section —
+**1,332 canonical entities · 7,903 resolved mentions** — with provenance kept underneath:
+93 core-registry entities / 4,463 mentions, 1,239 adjudicated-tail entities / 3,440 mentions.
+A metric-definition change, not a reclassification: no entity, mention or type moved. The old
+4,463 stays as `coreRegistryMentions`, because it is how the section was built.
+
+Changed in one pass so the definition cannot drift: `apply-entities.mjs` (headline recomputed from
+the rows + three new QA assertions incl. submetrics-reconcile-to-headline), `lib/contracts.mjs`,
+`certification-manifest.mjs` (records all three figures), `sectionInfo.ts`, `/method` (shows the
+two-population breakdown), and the integrity gate.
+
+**Source-boundary debt is now a gate, not a note.** `lib/contracts.mjs` exports `KNOWN_DEBT` with
+priority, the 123-post baseline, the direction of error, the ruling that adjudicated datasets
+outrank the detector, and the three things it blocks. `audit/source-boundary-debt.json` ships the
+affected post list so the re-adjudication set is already assembled. Two invariants freeze it:
+the post count and the presence of the prerequisite declaration.
+
+**Second stale-transport check added.** `/data` is served cache-first, which is correct for a
+9.4 MB bundle that only changes on deploy — and is exactly why the SW cache name must be rewritten
+every publish. If it ever stopped being, returning visitors would hold the old archive forever
+and every count would be right on disk and stale in the browser: the SEED_VERSION failure in a
+second transport. Now asserted (deploy rewrites CACHE_VERSION; activate deletes prior caches).
+
+**87/87 integrity invariants pass.** Live: entities 1,332 / 7,903 (4,463 + 3,440), emphasis
+5,251 / 1,737, codes 1,949, themes 2,393, evidence 6,590, queue 2,527 with unique ids,
+sw cache qdrops-20260813-021237.
+
+Note: GitHub Pages served the previous entities.json for ~20s after deploy. Live verification must
+poll rather than check once, or it reports the pre-deploy artifact as the deployed one.
+
+## Resolution Center usability — pass 1
+
+**Request:** start the product-quality workstream with /resolve — make it easy to understand what
+is unresolved, inspect context, submit a useful resolution, and see status.
+
+**Data defect found and fixed.** All 251 theme rows shipped with **zero context and an empty
+sourceSpan** — a contributor saw a label ("Foreign Affairs"), a post number, and nothing else, on
+the one kind that most needs the drop in front of it, because a theme is inferred from the whole
+post rather than from a span. `build-resolution-queue.mjs` now shows the lines whose vocabulary
+made the signal fire (falling back to the drop's opening lines), which is exactly the question
+being asked: are these words doing the work the label claims. One code row also had an
+unhighlightable span (`context[1]` on a window shorter than two lines). Live: 0 rows without
+context, 2,527/2,527 spans highlightable.
+
+**Four kinds, four different questions.** The chips said `entity`, `theme`, `code`,
+`classification` — the audit's words for its own populations, which tell a contributor nothing
+about what is being asked or what a good answer looks like. `src/lib/resolutionKinds.ts` now
+carries, per kind: what it asks, what an answer looks like, and what counts as evidence — stated
+BEFORE the contributor writes rather than discovered when their submission is rejected. Chips are
+relabelled (Reference / Notation / Subject / Device) and each row states its own question.
+
+**Search.** 2,527 items behind thirty token chips left most of the queue unreachable — an item
+whose token was not in the top thirty could only be found by paging. Search now covers token,
+drop number, the quoted lines and the reason it is unresolved, because a contributor arrives
+knowing one of those and rarely knows which. URL-backed (`?q=`), with an empty state.
+
+**Answer chips.** The readings the audit already weighed are one click instead of retyping
+"Barack Obama" — which was friction with no purpose and invited spellings that no longer match
+the certified canonical name.
+
+**Local submission history.** The moderation store is deliberately create-only (no read), which
+is worth keeping and had one cost: after submitting, a contributor could not tell what they had
+already covered and the queue looked identical whether they had worked for an hour or not at all.
+Submissions are now recorded in localStorage — "you suggested" badges, a count, and a
+"Review what I sent" filter. It says *you sent this*, never *this was accepted*.
+
+**Copy-link per occurrence**, since an occurrence-specific queue needs occurrence-specific links.
+
+**Process notes:**
+- The pre-deploy gate did its job on its first real run: it blocked on `resolution-queue.json:
+  CONTENT changed`, which was intended, and forced a deliberate re-certification.
+- `tsc -b` (which the deploy runs) caught a TDZ error that `tsc --noEmit` did not — `kind` and `q`
+  used in a useEffect declared above them. The deploy blocked before shipping. Use `tsc -b`.
+- Live verification polled through two stale responses before GitHub Pages served the new queue.
+
+88/88 integrity invariants pass; certified sections untouched.
+
+## Cross-section relationships + post-level Analysis Map
+
+**Request:** make the eight certified sections feel like one system — relationships derived from
+certified data only, plus a compact per-post Analysis Map. Product layer; nothing reclassified.
+
+**10,844 relationships across 4,953 posts**, every one carrying the certified field or overlap
+that produced it. An edge that cannot name its basis fails the gate rather than shipping.
+
+| Relationship | Count | Basis |
+|---|---|---|
+| unresolved ↔ occurrence | 2,527 | resolution-queue occurrence id |
+| emphasis ↔ question | 2,176 | certified span overlap |
+| theme → supporting line | 1,478 | themes.evidence.anchors |
+| emphasis ↔ claim | 1,357 | certified span overlap |
+| claim → conclusion | 966 | claimMeta.isConclusion |
+| prediction → assertion family | 630 | claimMeta.semanticFamily |
+| claim → source provided | 438 | claimMeta.sourceProvided |
+| evidence ↔ claim | 432 | certified span overlap |
+| emphasis ↔ directive | 386 | certified span overlap |
+| question ↔ directive | 228 | canonical key match / questions.directiveSource |
+| entity ↔ code | 180 (32 links) | codes.linkedEntityId |
+| prediction → source provided | 46 | claimMeta.sourceProvided, kept apart from the 438 |
+
+**Three QA failures on the first run, all mine, all the same root cause — occurrence identity:**
+1. Q↔D returned 218, not 228. Walking questions and finding a directive counts one edge per
+   question; the certified 228 is measured from the DIRECTIVE side, so a directive Q wrote twice
+   in one drop is two overlaps. Inverted the loop.
+2. 10 "duplicate" edges were in-post repeats — "Nothing is as it appears." twice in #151, each
+   occurrence genuinely carrying isConclusion. The occurrence index now travels with the edge, so
+   repeats stay distinct instead of collapsing and silently breaking the 966.
+3. claim→sourceProvided came out 484 against a certified 438. The extra 46 are PREDICTIONS
+   carrying the same attribute. Split into its own type: folding two populations together would
+   have shown 484 against a published 438 and read as drift.
+
+**Analysis Map** (`src/components/AnalysisMap.tsx`) sits at the top of each post's analysis panel:
+certified counts for all nine layers plus unresolved, each clickable to scroll to those
+occurrences, with unresolved deep-linking into /resolve filtered to that drop. Relationships are
+grouped by type, each stating what it means, why the overlap is allowed, and its basis. The
+component counts nothing itself — an invariant asserts it reads the artifact.
+
+**13 new invariants in their own group** (12. Cross-section relationships), leaving the frozen
+semantic contracts untouched: 88 → **101/101 passing**. Three of them reconcile the map's totals
+against certified Questions, Directives and Emphasis, so the reader can never be shown a number
+the section itself does not hold.
+
+`build-relationships.mjs` chained last in the export order — relationships join every section, so
+every section must exist first. relationships.json added to the manifest (9 artifacts hashed).
+
+## Global search + filtering
+
+**Request:** search across every certified section, built on certified artifacts only. Every
+result must state why it matched. Editorial normalisations searchable but never shown as Q's words.
+
+**33,902 records** indexed from the certified datasets — questions 6,442 · evidence 6,590 ·
+emphasis 5,251 · claims 4,181 · unresolved 2,527 · directives 2,422 · themes 2,393 · editorial
+1,395 · entities 1,332 · codes 739 · predictions 630. Every count matches its section exactly,
+asserted in the gate.
+
+**Search classifies nothing.** Each record is copied from a section that already certified it and
+carries that section's own metadata, so filtering by directive family, evidence subtype, code
+type, entity type, theme, conclusion, checkable or source-provided reads the audit's answer rather
+than re-deciding it. An invariant asserts `src/lib/search.ts` contains no extractor.
+
+**Raw post text is NOT duplicated.** The app already holds all 4,966 drops; shipping 8.5 MB of
+post text a second time to search it would have doubled the bundle for nothing. Post-text search
+runs over the copy already loaded, certified layers over the 7.85 MB index.
+
+**Why it matched is part of the answer**, not an implementation detail — a hit on an entity alias
+and a hit on Q's own wording are different claims about the text. Results show: exact match, text,
+entity alias, code variant, theme anchor word, domain, the emphasised line, the unresolved line,
+post text, editorial wording.
+
+**Editorial rows are labelled twice over.** All 1,395 (134 normalisations + 1,261 paraphrases)
+carry `q: false` in the data and render with the label ABOVE the text plus Q's source wording
+beneath — "What is Manafort's background?" shows "Q's source wording: Trace background." Two
+invariants: the flag on every row, and the label in the component that renders it.
+
+Filters are URL-backed and shareable. An empty query with filters is a legitimate browse
+("every unresolved code", "all conclusions in March 2018").
+
+**18 search invariants in their own group**, 101 → **119/119 passing**. `search-index.json` is the
+tenth manifest artifact; `build-search-index.mjs` chained last in the export.
+
+Note: entities and codes span the corpus rather than one drop, so a date filter cannot apply to
+them — they are excluded from date-filtered results deliberately, and the reason is recorded in
+the filter itself rather than left to look like a missing result.
+
+## Canonical source-unit coverage — the number that had never been calculated
+
+**Request:** prove that every meaningful Q-authored unit in all 4,966 drops is accounted for.
+Coverage audit only; the eight sections stay frozen; a genuine miss is reported as a certification
+conflict rather than silently inserted.
+
+**The method matters:** the answer cannot be derived from section totals, because the sections
+deliberately overlap. This starts from raw text, segments it with the SAME `unitsFor()` the
+certified audits used, and asks of each unit whether any certified artifact touches it. It runs no
+classifier of its own.
+
+### The answer: 29,569 canonical units, 85.46% accounted for, **4,299 TRUE_UNCATEGORIZED**
+
+| Status | Units |
+|---|---|
+| CERTIFIED_ANALYSIS | 18,349 |
+| NON_ANALYTICAL_SOURCE_STRUCTURE | 4,190 |
+| CONTEXT_OR_LABEL | 1,442 |
+| SOURCE_OR_REFERENCE | 782 |
+| UNRESOLVED_PENDING_REVIEW | 507 |
+| **TRUE_UNCATEGORIZED** | **4,299** |
+
+The remainder is not one population, and reporting it as one number would hide the work:
+3,089 terse fragments (1-3 words) · 807 short fragments (4-6) · 356 other prose · 22 fully
+bracketed · 21 URLs · 2 possible missed Questions · 2 very long.
+
+**Two ordering bugs found in my own audit before the number was trustworthy:**
+1. `SOURCE_OR_REFERENCE` came out 0 in a corpus with 932 quoted lines. Evidence was matched
+   bidirectionally, so one pasted-passage value (hundreds of characters) swallowed every unit near
+   it. Fixed to require the UNIT to contain the reference. Now 782.
+2. Secondary layers were tested before the quoted-block check, so a caps word inside a quoted
+   article made that unit "certified analysis". Primary classifications still win — the
+   adjudicated datasets outrank the block detector — but secondary devices no longer do.
+
+**The 21 URLs are the highest-confidence real finding**: space-broken links
+(`https:// twitter.com/...`) that the Evidence audit's known protocol-spacing problem left behind.
+Those are Evidence misses, not disposition questions.
+
+Deliverables: `audit/source-unit-coverage.md` / `.json`, with a per-post work-list.
+Highlight coverage (step 5) not yet run.
+
+## Coverage disposition pass — TRUE_UNCATEGORIZED driven to 0
+
+**Ruling applied:** a bare terse fragment defaults to CONTEXT_OR_LABEL; it becomes a telegraphic
+claim only where local context supplies a proposition. The test reads the line ABOVE the fragment,
+never the fragment's vocabulary — "Fake." alone is a label, "Picture authentic? / Fake." is a claim.
+
+### 29,569 / 29,569 units explicitly dispositioned — 100% coverage
+
+| Status | Units |
+|---|---|
+| CERTIFIED_ANALYSIS | 18,349 |
+| CONTEXT_OR_LABEL | 4,901 |
+| NON_ANALYTICAL_SOURCE_STRUCTURE | 4,190 |
+| UNRESOLVED_PENDING_REVIEW | 1,347 |
+| SOURCE_OR_REFERENCE | 782 |
+| **TRUE_UNCATEGORIZED** | **0** |
+
+### 840 certification conflicts — reported, never applied
+
+Claims 764 (350 prose + 414 context-promoted) · Directives 29 · Codes/Emphasis 22 · Evidence 21 ·
+Questions 2 · Segmentation 2. Frozen counts unchanged.
+
+**Two errors caught by reading output, both mine:**
+1. The first pass classified `Know your rights.` and `Try harder.` as Claims/context. They are
+   IMPERATIVES — missed Directives. Routed through the certified `imperativeMood()` from
+   lib/imperative.mjs rather than a new test, because a second imperative detector would drift
+   from the one that produced the certified 2,422.
+2. That detector alone then fired on `Old.` and `Relevant.` and produced 4,252 "directives" — a
+   single word out of context looks exactly like a verb. Constrained to fragments of 2+ words
+   that resolve to one of the seven certified families; `other` means the family rules did not
+   recognise it, which is a reason to leave it alone rather than file it. 4,252 → 29.
+
+Earlier in the same audit: `SOURCE_OR_REFERENCE` was 0 in a corpus with 932 quoted lines
+(bidirectional evidence matching let one pasted passage swallow its neighbours), and secondary
+layers were tested before the quoted-block check. Every one of these moved the headline number.
+
+Next: highlight coverage, then the neutral "Context / Other Q Text" treatment.
+
+## Handoff prepared for the conflict adjudication
+
+`claimBasis` normalised to machine-readable values so the next pass can filter rather than parse
+prose: answers_previous_question 393 · predicate_of_previous_subject 21 · standalone_proposition
+350. Every conflict row now carries postNum, text, prevLine (where the promotion depended on it)
+and a null `verdict` slot ready to fill.
+
+`audit/HANDOFF-conflict-adjudication.md` written: current state, the 840 in processing order, the
+seven Claim verdicts, the hard rules (report proposed count changes before applying; re-certify
+through the gate; keep TRUE_UNCATEGORIZED at 0; keep 119 invariants passing), deliverables, and
+the sourceLines() debt that constrains any future Emphasis/source work.
+
+Ledger re-verified after the change: 29,569 units, TRUE_UNCATEGORIZED 0. Certification manifest
+verifies clean. No production data touched by this session's coverage work — it is audit-only.
+
+## Sidebar migration — LIVE and reconciled
+
+Executed end-to-end. Every analytical page now renders certified data.
+
+| Section | Was live | Now live | Target |
+|---|---|---|---|
+| Directives | 4,529 | **2,422** / 1,417 posts | 2,422 |
+| Claims | 5,820 | **4,181** | 4,181 |
+| Predictions | 757 | **630** | 630 |
+| Entities | 22,363 legacy | **7,903** mentions / 1,332 canonical | 7,903 / 1,332 |
+| Themes | 10,453 legacy | **2,393** | 2,393 |
+| Conclusions | — | **966** | 966 |
+| Checkable | — | **1,926** | 1,926 |
+| Emphasis | — | **5,251** | 5,251 |
+
+**1. Entity tail provenance materialised.** The legacy `postAnalysis.namedEntities` entries
+matching the 1,254 surviving tail source strings reconcile to **exactly 3,440** — the certified
+tail mention count. A clean transcription, not a re-extraction: the adjudication had already
+decided which strings survived, how aliases merged and what type each carries. Persisted to
+`audit/entities-tail-occurrences.json` with stable occurrence ids, because the apply step
+overwrites the legacy field it was read from. Guard cleared; four new QA assertions.
+
+**2. One entry per certified MENTION, not per post.** A presence list sums to 6,432 against 7,903
+certified mentions — writing that would have under-reported by 1,471 and erased every in-post
+repeat. The apply now refuses to write unless the materialised entry count equals the certified
+figure.
+
+**3. Render-time rescanning removed — the main fix.** Two copies of the same defect:
+`getAnalysisFrequency()` in `lib/posts.ts` and the grouping in `pages/QRequests.tsx`. Both called
+`backfillFromText()` to add every post whose raw text contained the phrase, then
+`countPhraseOccurrences()` to recount. That is what produced 4,529 from 2,422 — the right posts,
+rescanned, with occurrences invented on top. Replaced with a per-post certified tally so in-post
+repeats survive display grouping.
+
+Two scan sites remain and are correct: `getTermMatchesInSection()` and search-result mention
+density both answer "where does this term appear in raw text", which is a search question. Marked
+in-place so the distinction is not lost.
+
+119/119 invariants, manifest re-certified, deployed, polled through two stale responses, then
+every total verified off the live site.
+
+Next: 840 certification conflicts, then highlight coverage.
+
+## Independent audit reconciliation — two of my "verified" claims were false
+
+An independent audit of the live site contradicted two things I reported as verified. Both
+contradictions were correct and both are now fixed.
+
+**1. Theme anchors reached only one surface.** I fixed `PostDetail.tsx` and reported themes as
+rendering. `highlightText()` in `postHighlight.tsx` — which drives the ARCHIVE (`/posts` via
+PostCard) — was still passing `analysis.themes`, the taxonomy labels. Detail: 1,478/1,478.
+Archive: 0/1,478. Fixed to consume `themeAnchors` on both surfaces.
+
+**2. The keyword style change was never consumed.** I changed `cls.keyword` to a ring/underline
+treatment and my audit reported "keyword style distinct: true". It checked the CONSTANT. The
+render path for keyword is a hardcoded branch — `animate-flash-red` — because `keyword` is in
+DOMINANT_KINDS, so the style map is bypassed entirely. The live site kept painting a solid
+flashing fill indistinguishable from a semantic category. Fixed to read `cls.keyword`.
+
+Both failures are the same mistake in a new place: **verifying the artifact instead of the
+consumption**. My highlight audit grepped the style file rather than the render branch, which is
+precisely the gap that let the sidebar ship legacy numbers for months while 119 invariants passed.
+
+Also confirmed from the independent audit and NOT yet addressed:
+- 6,002 detail / 5,631 archive unauthorized semantic-looking spans from static renderer
+  vocabularies (mil/intel 1,850 · blanket brackets 1,561 · static entities 1,032 · Q-signature
+  1,010). These paint category colours with no occurrence-level certified record.
+- 593 overextended spans per surface (claims/predictions/conclusions/checkable expanded past
+  their certified boundary).
+- 1,752 resolvable Resolution Center spans shown only as chips, not marked in the body.
+- Context / Other Q Text still has no neutral treatment.
+- My defect JSON truncates at 3,000 rows and must emit all failures for exhaustive repair.
+
+Acceptance baseline should be the independent audit's 40,994 highlightable occurrences per
+surface, not my 46,019 — mine counted badge-only populations (915 anchorless themes + 1,271
+non-text media evidence = 2,186) that must never be treated as missing highlights.
+
+## 2026-08-14 — Owner claim rulings shipped; export-chain repair path
+
+**Request.** "i want pure evil and the real racist to be listed as claims" (post #2917), plus the
+five earlier `PURE EVIL.` occurrences found corpus-wide.
+
+**Solution.** Seven occurrences written to `audit/claims-final.json` — the canonical artifact —
+with `confidence: OWNER_ADJUDICATED` and provenance: #570, #855, #1001, #1832, #1881, and both
+rulings on #2917. Claims: 4,188 occurrences / 3,228 distinct / 1,953 posts.
+
+**What blocked it.** The deploy failed on a Firestore read-quota outage. The export had already
+overwritten `posts.json` from the dump and died before the tail of the apply chain, leaving
+`contextUnits: 0` on all 4,966 posts while every certified count still verified. The manifest gate
+caught it on the semantic hash.
+
+**Fixes.**
+- `scripts/rebuild-bundle.mjs` — replays the deterministic chain with no Firestore.
+- `SKIP_EXPORT=1 npm run deploy:web` — publishes the bundle on disk; the manifest gate still runs.
+- `scripts/lib/chainSteps.mjs` — single copy of the chain order, imported by both entry points,
+  with every step tagged `derive` or `apply`. Rebuild runs apply steps only, because
+  `audit-entities.mjs` reads the `postAnalysis.namedEntities` field `apply-entities.mjs` writes —
+  re-deriving on a built bundle gave 1,333 canonical entities against the certified 1,332.
+- Cross-section invariant 7 rewired to the shared module, plus a new check that both entry points
+  import it. 126/127 invariants; the chain is a proved fixed point (two rebuilds byte-identical).
+
+See `audit/CHATGPT-CLAUDE-HANDOFF.md` for the full failure analysis.
+
+## 2026-08-14 — "still not presented as a claim": the seed gate, not the renderer
+
+**Report.** #2917 showed `'real'` with Emphasis but neither `Pure evil.` nor `The 'real' racist.`
+as a Claim, despite the data being live. Diagnosed as a PostDetail compositing defect.
+
+**Actual cause.** The renderer was correct. Driving live qdrops.app over CDP showed the drop body
+already rendering `<mark class="bg-amber-500/40 text-amber-100">Pure evil.</mark>` and
+`<mark title="2 certified layers: claim, emphasis" class="animate-overlap">'real'</mark>`.
+`SEED_VERSION` was still 6, so any returning profile kept its old IndexedDB seed and never
+received the new Claims. Fresh profiles saw them the whole time.
+
+**Fix.** `SEED_VERSION` 6 → 7 (third occurrence of this failure in one day), cross-section
+invariant 8 updated to pin 7, re-certified, deployed.
+
+**New test.** `scripts/test-returning-profile.mjs` — seeds a profile, downgrades it to the
+pre-ruling state, then requires the app to repair itself and paint both sentences. The control is
+read back inside the same evaluation, because a separate page load repairs the profile before any
+check can observe it.
+
+127/127 invariants · manifest clean · returning-profile test 7/7.
+
+## 2026-08-14 — Do the Claim rulings propagate to every statistic?
+
+**Request.** Confirm the seven owner Claims reflect in the app's other Claim statistics and graph.
+
+**Answer.** They do, and checking it found one real defect the rulings had introduced.
+
+**Defect: four spans were both Claim and Context.** #570 rendered "Pure EVIL." as an overlap
+titled "2 certified layers: claim, context" — one span presented as classified and unclassified at
+the same time, against the rule that a span promoted to a semantic category stops being Context.
+Cause: `audit/source-unit-coverage.json` is written by `audit-source-coverage.mjs`, which is not
+in the apply chain, so the coverage ledger never saw the rulings. Re-derived it (safe — it reads
+the certified sections and never its own materialised output, unlike the entity audit). Exactly
+the 4 owner units left Context, none were added; +28 also moved out of SOURCE_OR_REFERENCE from
+this morning's source-boundary fix, which the ledger also predated. Coverage stays 29,569 / 100%.
+Context units 4,906 -> 4,902 (4,889 contiguous + 13 reconstructed); the acceptance gate in
+`apply-context-units.mjs` was updated deliberately, with the reason recorded.
+
+**SEED_VERSION 7 -> 8**, because posts.json changed again.
+
+**Latent gap closed.** The `/analysis` frequency cache is keyed on a stamp of `posts.length` +
+total analysis items. A future ruling moving a span between two categories in that list is
+count-neutral, so the stamp would not change and a returning reader would keep a stale cache.
+Stamp now leads with SEED_VERSION.
+
+**Verified live**: store 4,188 / 1,953 posts, 7/7 rulings, 0 claim-also-context, Context 4,889,
+#2917 map shows 2 Claims with both chips, #570 shows 8 and paints clean amber. 127/127 invariants.
+`scripts/verify-claim-propagation.mjs` is the reusable check.
+
+Not asserted: the `/analysis` chart is not mounted on first paint (it lives behind a tab), so the
+series was not checked in the DOM. It is fed by the same frequency data verified above.
+
+## 2026-08-14 — Claims graph verified; Ascension theme; Context restyled
+
+**Graph (verified by driving the page, not by inference).** The chart mounts at
+`/analysis?tab=claims` — the sidebar link, not the bare `/analysis` URL, which is why an earlier
+check found no chart. Rendered: 1 recharts surface, 78 bars/lines, palette
+`["none","#9ca3af","#f59e0b","#4b5563","#6b7280"]` with 37 amber (#f59e0b) Claims shapes. Hovering
+a bar gave the tooltip **"October 2017 ● Q Posts: 17 ● Claims: 51"**. Frequency cache stamp
+`8:4966:26273:...` — Seed-8 data — with the owner rulings present as rows (`Pure EVIL.` ×6,
+`The 'real' racist.` ×1). `/dashboard` shows no Claim statistic: it is an editing surface,
+compiled out of the public build.
+
+**Finding: the archive header under-reports Claims by 13.** It shows *"4,175 mentions within
+1,953 posts"* against the certified 4,188. `computeAnalysisFrequency` counts POSTS per phrase, so
+in-post repeats collapse — 9 posts, 13 extra occurrences (#1888 says "You get to go to jail."
+four times, counted once). Exactly 4,188 − 13 = 4,175. Pre-existing, not from the rulings, and it
+contradicts the occurrence-identity rule the rest of the system holds. NOT changed: the fix moves
+the displayed "mentions" figure for all seven categories, which is an owner call.
+
+**Ascension.** Applied at last — it had been approved and never built. Retrieval confirmed exactly
+2 Q-authored occurrences, 0 quoted. Owner rulings now live in `audit/themes-owner-rulings.json`
+and are merged by `apply-themes.mjs`, because `themes-audit.json` is written by a DERIVE step and
+a ruling placed there would be erased by the next audit — the Claims lesson, applied ahead of the
+failure this time. Themes 2,393 -> 2,395 (detected and owner counts asserted separately). Both
+spans also left Context (4,902 -> 4,900). Live: `bg-indigo-500/40`, chip "Religion &
+Spirituality", #4963 carries both its themes.
+
+**Context restyled.** The dotted underline WAS Context — "reviewed, in no semantic category". It
+was deliberately fill-free so it could not be mistaken for a category; the owner ruled it too
+faint. The signal moves from absence-of-fill to hue: `bg-gray-500/35 text-gray-100`, grey being
+the one neutral in a palette where every certified layer owns a colour. Verified live:
+0 dotted-underline marks in the drop body on #4963/#4966.
+
+SEED_VERSION 8 -> 9. Search index and relationships rebuilt (the index still carried 2,393
+themes). `sectionInfo.ts` updated — it hard-coded 2,393 to the reader. 127/127 invariants.
+
+## 2026-08-14 — Section headlines read certified totals, never a recount
+
+**Owner call.** The Post Analysis headline summed the phrase-frequency index, which groups by
+phrase — so a phrase Q repeats inside one post collapsed to that post once, and Claims headlined
+"4,175 mentions" against the certified 4,188. Thirteen real occurrences missing from a
+user-facing number, in violation of occurrence identity.
+
+**Fix.** `SECTION_TOTALS` in `src/lib/sectionInfo.ts` is the single certified source for every
+section headline; `AnalysisArchive` reads it instead of summing `items`. Units are now honest per
+section — occurrences for Claims/Predictions/Emphasis, mentions for Entities (the one section
+where a mention is the unit), assignments for Themes, conclusions, checkable claims. Phrase rows
+still show "x N posts", which is what the frequency index is actually for. When a month filter or
+alias filter is active the header shows the filtered figure, labelled "shown here", because the
+certified total describes the whole section and would be a lie about a subset.
+
+**Verified live**, every category header on the deployed site:
+
+    claims              4,188 occurrences within 1,953 posts
+    predictions           630 occurrences within   520 posts
+    emphasis            5,251 occurrences within 1,737 posts
+    namedEntities       7,903 mentions    within 2,221 posts
+    themes              2,395 assignments within 1,767 posts
+    impliedConclusions    966 conclusions within   596 posts
+    verificationHooks   1,926 checkable claims within 1,028 posts
+
+**Seven new invariants** tie SECTION_TOTALS to scripts/lib/contracts.mjs, assert the header reads
+SECTION_TOTALS rather than the index, and assert the phrase rows KEEP their post counts so the
+recount is not "fixed" by deleting the thing the index is for. 134/134. SEED_VERSION 10.
+`scripts/verify-section-headlines.mjs` re-checks the rendered headers.
+
+Still open (performance, not correctness): ship a prebuilt frequency index in the bundle so the
+first visit after a deploy does not walk 26,273 items in the browser.
+
+## 2026-08-14 — ACROSTIC: a tenth Emphasis device (owner ruling)
+
+**Request.** #4951's `[N]othing [C]an [S]top [W]hat [I]s [C]oming` was unregistered; make it
+Emphasis.
+
+**Retrieval across all 4,966 posts.** Lines carrying 2+ single-letter brackets: 25 lines, 18
+distinct letter sequences. Four are acrostics, all unclassified in every section:
+#4951 NCSWIC · #129 "Operations --> [N]o [S]uch [A]gency" · #129 "[C]los[I]ng [A]ct:" ·
+#150 LDR spelled across a full sentence. Owner approved all four as one batch.
+
+**Deliberately excluded:** [D]/[F] brackets in #3911, #4317, #4325, #4489, #4688 — those
+abbreviate a word (Democrat, Foreign), they do not spell one. #4317 appeared to spell "DRRD" only
+because four unrelated abbreviations share a line. The scan finds both devices; the set was read
+rather than taken from the scan.
+
+**Applied** via `audit/emphasis-owner-rulings.json` merged in apply-emphasis.mjs — the same
+overlay pattern as Claims (claims-final.json) and Themes (themes-owner-rulings.json), because
+emphasis-audit.json is written by a DERIVE step. Emphasis 5,251 -> 5,255 across 1,737 -> 1,739
+posts; `acrostic` declared as a tenth subtype in CERTIFIED_BY_TYPE (the gate refused it until it
+was). Detected and owner counts asserted separately. Search index and relationships rebuilt.
+SEED_VERSION 11. 134/134 invariants.
+
+**Live:** header reads "5,255 occurrences within 1,739 posts". #4951 paints slate Emphasis;
+#150 paints as an overlap. NOT confirmed painting: #129 — both rows are present in
+postAnalysis.emphasis with text matching the raw drop, so this is display, not data. The probe
+selects the LAST pre.post-text on the page and #129 has quoted blocks, so it may have inspected
+the wrong element. Needs a targeted re-check before it is called a defect.
+
+## 2026-08-14 — Dominion entity + Brackets panel (owner rulings executed, not re-asked)
+
+**#4963 Dominion.** Owner ruled it an Entity = Dominion Voting Systems. Corpus search: /dominion/i
+matches exactly ONE post archive-wide (#4963, one line); no "Dominion Voting", "Dominion Voting
+Systems" or "Smartmatic" anywhere. Applied via audit/entities-owner-rulings.json, merged in
+apply-entities.mjs AFTER the certified set — the entity pipeline is the one that re-derives from
+its own output, so a ruling stored inside that loop would not survive. Entities 1,332 -> 1,333
+canonical, 7,903 -> 7,904 mentions, 2,221 -> 2,222 posts. The materialiser writes the ALIAS
+("Dominion.") not the canonical name, or the mention would count and highlight nothing. Three
+gates fired and were each fixed deliberately: submetric reconciliation (now core + tail + owner),
+the namedEntities count guard, and the search index.
+
+**#4742 Brackets panel — corpus-wide reader defect, not a per-post issue.** The panel built its
+own list in PostDetail with /\[\[?[A-Za-z0-9][A-Za-z0-9 _\-]{0,30}\]?\]/g, a character class
+admitting only letters, digits, space, underscore and hyphen. #4742 showed [barrage] and
+[faith in Humanity] while dropping [+family (follow)] (the "+" and parens) and
+[safeguarding women & children] (the "&", stored as &amp;). Archive-wide that regex dropped
+**618 spans across 353 posts** — [13=M], [-30], [DEATH + MONEY], [visibility / reach].
+
+Contract established before fixing: this panel is a LITERAL STRUCTURE view ("what is in brackets
+here"), which is a different question from Codes & Brackets, the certified SEMANTIC layer. The two
+may differ; what is not allowed is showing some of a drop's brackets and silently dropping others.
+So it now matches any bracketed run and decodes &amp;/&gt;/&lt; to the rendered form, so the chip
+agrees with the drop body above it. Ordinary bracket text was NOT forced into Codes.
+
+**Live:** #4742 shows all four spans, "&" rendered. #4963 paints "Dominion." cyan with Entities 1.
+SEED_VERSION 12. 134/134 invariants, manifest clean.
+
+## 2026-08-14 — Span precision: acrostic brackets, and brackets painted in the drop
+
+**#150 was my error.** The acrostic ruling stored the whole two-sentence line as the Emphasis
+span. Those sentences are already a Prediction and a Claim, so the line-level span put a second
+layer over every word of both and the drop flashed between three colours. Fixed: acrostic now
+RENDERS as the bracketed letters only — one certified occurrence, several literal spans, the same
+shape parallel_phrasing already used. Emphasis count unchanged at 5,255.
+
+**Brackets now paint.** The [ Brackets ] panel listed spans the drop did not highlight, so a
+reader could see [+family (follow)] named with no way to find it. bracketCode (red) was already a
+defined highlight kind and simply was not fed. Panel and highlight now share ONE definition,
+bracketSpansIn(), so they cannot disagree.
+
+**Live #150:** sentence 1 solid violet (Prediction), sentence 2 solid amber (Claim), [L] [d] [R]
+red, _D7g^-_%19FZBx_decline grey (Context). No whole-sentence flashing.
+**Live #4742:** all four bracket spans painted.
+
+SEED_VERSION 14. 134/134 invariants.
+
+**Not yet right:** where a bracket carries TWO layers the page shows the primary colour with an
+"also: bracketCode" tooltip instead of rotating between them — [L] renders red although it is
+also acrostic Emphasis, and #4742's brackets render blue (Question) with "also: bracketCode".
+animate-overlap only fires for pairs the renderer counts as "certified layers". The owner's rule
+is that any 2+ overlap rotates. Next task.
+
+## 2026-08-14 — #150 emphasis withdrawn; overlap rotation generalised
+
+**#150 Emphasis withdrawn** (owner ruling). Both sentences are already certified — sentence 1 a
+Prediction, sentence 2 a Claim — so the acrostic layer added no reading. Emphasis 5,255 -> 5,254,
+posts 1,739 -> 1,738, acrostic subtype 4 -> 3. Recorded under "withdrawn" in
+audit/emphasis-owner-rulings.json so the device is not re-detected later as a gap.
+
+**Overlap rotation generalised.** The question branch in PostDetail rotated only when the inner
+layer was Emphasis; every other second layer fell through to a flat blue question fill with an
+"also: …" tooltip. That is why #4742 listed [+family (follow)] under [ Brackets ] and painted it
+the same blue as the question around it — a tooltip is not a highlight. Any second layer inside a
+question now uses animate-overlap, matching the owner's rule that 2+ overlapping layers rotate.
+
+**Live:** #4742 [+family (follow)] / [safeguarding women & children] / [faith in Humanity] rotate
+as "2 certified layers: question, bracketCode"; [barrage] rotates 3 layers. #129 [C][I][A] and
+[N][S][A] paint red. #150 [L][d][R] red with no extra Emphasis layer.
+SEED_VERSION 15. 134/134 invariants.
+
+**Not done:** analysis-panel chips are not yet clickable through to a per-item Brackets page.
+
+## 2026-08-14 — Containment is not overlap; bracket chips clickable
+
+**My error, corrected.** I generalised the question branch so ANY second layer rotated. But a
+bracket sitting inside a question is not two classifications of the same span — the question is
+the CONTAINER. #4742's brackets are listed under [ Brackets ] and nothing else, so they must
+simply be red; instead they rotated through question-blue.
+
+The rule, now stated once in the code: a span shows the colour of the category it BELONGS to, and
+rotates only when that same span genuinely belongs to two or more. The enclosing question keeps
+its colour on the sub-intervals either side.
+
+Live #4742: [+family (follow)], [safeguarding women & children], [faith in Humanity] all solid
+red, titled "bracketCode (inside a question)". [barrage] rotates — it is genuinely both Emphasis
+and a bracket. #129 and #150 brackets solid red.
+
+**Bracket chips are clickable**, like every other analysis chip: /posts?q=<span>, so a reader can
+see every other drop the span appears in — or none. Brackets were the only section whose chips
+were dead text. Verified live on #4742.
+
+SEED_VERSION 17. 134/134 invariants.
+
+## 2026-08-14 — Highlight rule finalised: colour = what it IS classified as
+
+Three separate defects, all producing the same symptom (colour where the analysis did not
+support it). Fixed in order, each verified live:
+
+1. **Containment is not overlap.** A bracket inside a question is not two classifications of one
+   span — the question is the container. #4742's brackets rotated through question-blue.
+2. **Structure layer double-counted certified spans.** [barrage] is certified Emphasis of type
+   bracket_emphasis — the bracket IS the emphasis — so painting a bracket structure layer over
+   the same span made one device rotate as two. The structure layer now paints only where no
+   certified layer already covers that exact span.
+3. **Rotation counted segments, not kinds.** [A] in #129 belongs to both the CIA and NSA
+   acrostics, so it matched Emphasis twice and rotated titled "2 certified layers: emphasis" —
+   one kind, named once, presented as an overlap. Rotation now needs 2+ DISTINCT kinds.
+
+The rule, now written into the code in both branches: a span shows the colour of the category it
+BELONGS to, and rotates only when it genuinely belongs to two or more different categories.
+
+**Verified live, seed 20:**
+- #4966 — questions solid blue; "We will be repressed no more." solid amber (Claim only);
+  "Mankind is repressed." rotates claim+impliedConclusion (both listed); "There is a war for your
+  DNA." rotates 3 (claim, impliedConclusion, verificationHook — all three listed); "Protect your
+  DNA." solid green (Request); "Ascension." solid indigo (Theme).
+- #129 — [A] solid slate, no longer rotating.
+- #4742 — brackets red, themes indigo, [barrage] slate, only the genuine 2-category span rotates.
+
+Also: #150 [L] resolved out of the Resolution Center (2,527 -> 2,526, code 173 -> 172) via
+audit/resolution-owner-resolved.json. #1277's "[R] = Renegade" deliberately kept — different case.
+Bracket chips now link to /posts?q=<span>. 134/134 invariants.
+
+## 2026-08-14 — The overlap animation was a fixed rainbow
+
+The real cause of "wrong colours flashing". `animate-overlap` was a hardcoded six-colour cycle —
+red, amber, violet, cyan, orange, lime — applied to EVERY overlap regardless of its categories. A
+Claim + Implied Conclusion span flashed cyan and magenta, colours no category on the page owns, so
+the highlight could not be decoded against the legend. The owner photographed it mid-cycle three
+times to show it.
+
+Replaced with per-span cycling: overlapStyle() maps the span's own kinds to their real fills and
+sets them as --hl-1..--hl-3; CSS keyframes overlap-2 / overlap-3 read those vars. KIND_RGBA sits
+beside HIGHLIGHT_CLS with a note that changing a colour in one requires changing the other.
+
+Verified live on #4966, seed 21:
+  questions                     solid blue
+  "We will be repressed no more."  solid amber          (Claim only)
+  "Mankind is repressed."       amber <-> orange        (Claim + Implied Conclusion)
+  "Information is knowledge."   amber <-> orange
+  "Knowledge is power."         amber <-> orange
+  "Information is power."       amber <-> orange
+  "There is a war for your DNA." amber -> orange -> magenta (+ Checkable Claims)
+  "Protect your DNA."           solid green             (Request)
+  "Ascension."                  solid indigo            (Theme)
+
+Applies app-wide: the archive highlighter (postHighlight.tsx) uses the same function.
+
+## 2026-08-14 — [barrage] withdrawn, Runbeck entity, all chips clickable
+
+**#4742 [barrage] withdrawn from Emphasis** (owner ruling: a bracketed item, not a device).
+5,254 -> 5,253 occurrences, 1,738 -> 1,737 posts, bracket_emphasis 716 -> 715. Added a
+`withdrawn` mechanism to apply-emphasis.mjs keyed on postNum + exact text: the #4741 [barrage]
+occurrence STANDS, because the ruling named #4742 and occurrence identity means a device certified
+in one drop is not un-certified in another by association. Live: solid red bracketCode.
+
+**Runbeck Election Services** added as an Entity on #4963 (owner ruling). Corpus search: /runbeck/i
+matches exactly one post archive-wide. Entities 1,333 -> 1,334 canonical, 7,904 -> 7,905 mentions.
+Live: cyan, beside Dominion.
+
+**Every analysis chip is now clickable.** An audit of the live DOM found Questions and Requests
+were the last rows rendering their text as dead spans — a reader could not ask where else Q said
+the same thing. Both now link to /posts?q=<text> like the rest.
+
+SEED_VERSION 23. 134/134 invariants.
+
+## 2026-08-14 — the write guard proved, and COVID made an entity everywhere
+
+### The guard that had never refused anything
+
+`apply-editorial-batch.mjs` carried a write guard written after the first owner-approved Claims
+batch was put straight into `postAnalysis` — a derived cache the next chain run rebuilds. The
+guard had never actually run: that batch aborted at an earlier QA check, so the guarded write was
+never reached. A guard nobody has seen refuse is a comment with a function signature.
+
+Extracted to `scripts/lib/certifiedWrite.mjs` — one allowlist, one refusal path, used by
+`apply-editorial-batch.mjs` and `apply-owner-claims.mjs` and nowhere else. The reason it is a
+module and not a rule: Themes, Entities, Directives and Codes all still need batch apply, and a
+rule reimplemented four more times is a rule whose fifth copy omits it.
+
+`scripts/test-certified-write-guard.mjs` exercises the real module, not a copy:
+
+| target | expected | result |
+|---|---|---|
+| `public/data/posts.json` | REFUSE | refused, file untouched |
+| `public/data/questions.json` | REFUSE | refused, file untouched |
+| `audit/postAnalysis-claims.json` | REFUSE | refused, file untouched |
+| `audit/foo.json` (not allowlisted) | REFUSE | refused, file untouched |
+| `scripts/lib/certifiedWrite.mjs` | REFUSE | refused, file untouched |
+| `audit/editorial-batch-applied.json` | ALLOW | written, read back, removed |
+| `audit/claims-final.json` | ALLOW | round-trip byte-identical |
+| `audit/themes-audit.json` | ALLOW | round-trip byte-identical |
+
+Every refusal is asserted twice — the throw AND the target's bytes — because a guard that reports
+a refusal after writing is the failure the file exists to catch. Cross-section section 11 gained
+four checks pinning it: the module exists, the test exists, no script carries its own allowlist,
+and both editorial tools import it with no raw `writeFileSync` left. 134 -> 138 invariants.
+
+### The Firestore export the handoff asked for is not needed — and would lose data
+
+Quota recovered, so the standing caveat was checked rather than assumed: a read-only comparison of
+all 4,966 live docs against the bundle, on the four fields the chain does not own.
+
+**5 differences, all one-way.** #437, #438, #1254, #1319 and #1464 carry `customBrackets` locally
+that Firestore does not have. `correlatedNews` and `excludedBrackets` are empty in both;
+`analysisScanned` agrees on every post. Nothing live is newer than local — because the deployed
+Firestore rules deny the editing build's writes, so recent edits never reached `postEdits`.
+
+So a "real export to pick those up" would have picked up nothing and **deleted five posts' bracket
+customisations.** The caveat is closed as a warning, not as a to-do.
+
+### OWNER RULING — bare COVID is the COVID-19 entity
+
+"covid is also an entity and an alias for covid-19 and covid19… I don't want Covid or any of the
+alias's to be anything but an entity nothing more."
+
+Retrieved before applying, Q-authored only, case-sensitive, word-boundary:
+
+| form | occurrences | covered before? |
+|---|---|---|
+| COVID-19 | 60 | yes (certified alias) |
+| C19 | 34 | yes (earlier owner ruling) |
+| **COVID** (standalone) | **5**, in #4489 ×3, #4541, #4548 | **no — resolved to nothing** |
+| COVID19 | 0 | n/a — the only `covid19` strings are lowercase inside URLs (#4329, #4339), which is Evidence, not naming |
+
+Applied through `audit/entities-owner-rulings.json` → `aliasRulings`, the same path C19, CCP and
+WUT took. **Mentions 48 -> 53, posts 25 -> 28. Section headline 7,945 -> 7,950, adjudicated tail
+3,476 -> 3,481.** The pipeline's own QA refused the change until the pinned figures were updated
+deliberately, which is what produced those numbers.
+
+**The trap, worth stating: the alias matcher needed a lookahead.** The hyphen in `COVID-19` is a
+word boundary, so a plain `/\bCOVID\b/` also matches the COVID inside all 60 COVID-19
+occurrences — it would have added 60 phantom mentions to the very entity that already counts them.
+`notFollowedBy` is now supported on alias rulings for exactly this shape: the boundary is correct
+and the match is still wrong, because the token is part of a longer name.
+
+"Nothing but an entity" verified in the data: **0** of 4,669 Emphasis occurrences and **0** rows in
+any other certified layer carry the token as their span. The one Prediction that mentions COVID
+(#4541, "those who managed the COVID emergency") is a sentence containing the word, not the token
+classified as a prediction; it stands.
+
+SEED_VERSION 40 -> 41. 137/138 invariants — the one open item is `hash-stable`, which is the
+expected pre-certification state.
+
+### NOT DEPLOYED — a second session is editing the same repo
+
+Mid-run, `src/lib/localData.ts` gained a seed-40 `[D]`/`[F]` owner decode and
+`entities-owner-rulings.json` gained a `US` -> United States alias ruling (277 occurrences) from
+another session. The US ruling is in the canonical file but **not in the built bundle** (United
+States still reads 180 mentions, no US alias). Publishing now would ship a bundle that contradicts
+its own canonical source, and `deploy-web.sh` force-pushes `gh-pages`. Held for one certification
+pass covering both rulings.
+
+## 2026-08-14 — the second alias registry nobody read, and drops that open in place
+
+### "Why doesn't searching COVID-19 show covid19 and covid, when POTUS shows its aliases?"
+
+Because there were **two alias registries and only one was wired to search.**
+
+| Registry | Contents | Read by search? |
+|---|---|---|
+| `aliases.json` + `map` in `src/lib/aliases.ts` | 8 owner-typed groups (potus, hillary clinton, usa…) | yes |
+| `entities.json` | 1,335 certified entities and their adjudicated aliases | **no — nothing in the app read it** |
+
+POTUS folded Q+/Trump/DJT together and colour-coded its post chips purely because someone had
+typed that group in by hand. COVID-19's aliases were certified, materialised and highlighted in the
+drops — and invisible the moment you searched for them.
+
+`getFullAliasGroup()` now unions both, and every READ path goes through it — `makeTermMatcher`
+(so archive search and the "across the archive" bar expand a term to all its spellings) and
+`getAliasesFor` (so the row lists them). `getAliasGroup()` stays editable-only: addAlias and
+removeAlias may only mutate the map the owner owns, and a certified alias must never be pushed to
+Firestore as though it had been typed.
+
+Row folding is scoped deliberately. Editable groups fold in every category; certified entity
+aliases fold **entity rows only**, because that set holds bare tokens — US, CCP, COVID — that can
+equally be the text of a claim or a code, and folding those would delete a row from a section the
+entity ruling never touched.
+
+Verified in a browser rather than in the data (`scripts/test-alias-visibility.mjs`):
+
+    search "COVID-19"   incl. aliases: c19, covid          PASS
+    search "POTUS"      incl. aliases: 4 10 20, q+, …      PASS
+
+**OWNER RULE recorded in PROJECT_CONTEXT.md:** a searched term always shows the aliases tied to it,
+and tying a new alias into both registries is done without being asked.
+
+### Themes: open the drops under the post numbers
+
+The chips said WHICH posts; reading them meant leaving the page one drop at a time and losing your
+place. Each row now carries a **▼ read N drops** control that expands the drops themselves beneath
+the chips, in post order — the order Q wrote them, which is the only order a scan can be resumed
+in. 25 at a time, because a theme can carry 404 drops and rendering all of them at once turns a
+scan into a freeze. The row's own term is passed to PostCard as the search keyword, so the phrase
+that put each drop in the list is highlighted inside it.
+
+Verified in a browser (`scripts/test-inline-drop-reader.mjs`): the control appears, opens 25 drop
+bodies inline, flips to "− close drops", and renders them ascending — 4, 5, 6, 9, 35, 70, 72, 76…
+
+Two of my own errors on the way, both of which read as product failures:
+- The reader opened EMPTY at first. The row's identity in the markup is
+  `itemConfirmKey` (`global|cat|text`); I matched the rank map's different format (`cat::text`),
+  so the lookup found no item. The panel was working and had nothing to show.
+- Three test assertions failed against a page that was correct, because a `\d` inside a JS
+  template literal reaches the browser as a literal `d`. The page expressions use substring tests
+  and `parseInt` now. A test that fails on its own escaping looks exactly like a broken feature.
+
+---
+
+## 2026-08-14 — Aliases in the Post Archive, and the Rachel Chandler ruling
+
+**Asked:** why does searching `covid-19` show no aliases when `potus` shows half a dozen,
+colour-coded? Then: "RC is RACHEL CHANDLER aka Ray Chandler as well so lets make this an entity and
+have Rachel Chandler the main and the other 2 aliases."
+
+### The Post Archive was reading one registry
+
+The alias fix of earlier today reached the Analysis archive and stopped there. `/posts` — the
+screen the question was asked about — still resolved every term through `getAliasGroup()`, the
+OWNER-EDITABLE map. POTUS worked because someone had typed its group in by hand; COVID-19's
+certified aliases C19 and COVID existed only in `entities.json`, which that page never read.
+
+Nine read paths moved to `getFullAliasGroup()` (search matching in `searchAllPosts`, the archive's
+mention counts, alias colours and "Includes:" chips, the keyword highlighter, and PostDetail's
+entity highlight, alias colours and post list). `getAliasGroup()` is now referenced only inside
+`aliases.ts`, by the write paths that may only touch what the owner owns.
+
+**A race sat behind it.** The certified registry is FETCHED at startup, so landing directly on
+`/posts?q=covid-19` ran the search before COVID-19 knew it had aliases — the match set came back
+editable-only while the "Includes:" row, plain JSX re-evaluated on the next render, listed the
+certified aliases. The page advertised spellings it had not searched for. PostArchive now
+subscribes to alias changes and replays the last search when the registries load.
+
+### Alias expansion was substring-matched
+
+Landing the ruling meant matching a two-letter alias, and the expansion path was raw
+`text.includes()`. Searching "USA" expanded to its alias "US" and matched **2,259 posts** on the
+"us" inside *because/must/trust*; "RC" would have added 520 on *search/force/Church*. The typed
+term stays a substring match — that is what makes a half-typed word find anything — and every
+OTHER spelling in the group is now word-boundary matched, via `wordBoundaryPattern` rather than
+`\b` so "Q+" still matches. The same word-level test now backs the chip counts and the per-alias
+post colours. Visible effect: POTUS 860 → 772 posts (McDonald is not Donald), "Donald" 82 → 23.
+
+### One person, three spellings
+
+Rachel Chandler and Ray Chandler were certified as two separate entities, and Q's shorthand RC sat
+in the Resolution Center as 13 unanswered rows.
+
+- `mergeRulings` (new, `apply-entities.mjs`): the absorbed row's mentions, posts and alias
+  spellings move ACROSS rather than being rescanned — her 4 Ray Chandler mentions include
+  "Ray.Chandler" (#1054, #1138), which `/\bRay Chandler\b/` does not match. A rescan would have
+  silently dropped two posts.
+- `excludePosts` (new): #2 — "Why would he place all his funds in a RC?" — is an indefinite
+  article in front of a thing money goes into, asked seventeen months before Q first wrote her
+  name. It is excluded from the ruling and STAYS QUEUED in the Resolution Center rather than being
+  answered with a person. `build-resolution-queue.mjs` clears by token AND post, so an excluded
+  drop is not marked answered.
+- Flagged, not hidden: #1063 ("No 'PG' bot push post RC?") and #1066 ("RC end.") are applied under
+  the ruling and are the two the corpus does not itself confirm — both April 2018, eleven months
+  before the Chandler drops, neither naming her.
+
+Certified movement: canonical entities 1,335 → **1,334**, mentions 8,227 → **8,239**, adjudicated
+tail 3,481 → **3,493**, Resolution Center 2,245 → **2,233**, SEED_VERSION 42 → **43**.
+Both registries carry the group: `entities.json` (certified) and `public/data/aliases.json`
+(editable). The Firestore master copy was refused — `add-alias.mjs` gets PERMISSION_DENIED
+writing `app/aliases` from a script — so the desktop build needs the group added through the app.
+
+Verified in a browser (`scripts/test-archive-alias-visibility.mjs`, new — the existing alias test
+only drove `/analysis`):
+
+    search "covid-19"         Includes: covid-19 ×37  COVID ×41  C19 ×11        54 posts
+    search "potus"            Includes: potus ×369  trump ×151  Q+ ×36  …      772 posts
+    search "Rachel Chandler"  Includes: RC ×8  Ray Chandler ×5  Ray.Chandler ×5  27 posts
+
+`audit-cross-section.mjs` 138/138, `certification-manifest.mjs --verify` clean, deployed.
+
+## 2026-08-14 — warm browser, and a workflow that pays for protection once
+
+Ordinary corrections had started taking 10-20x longer. Measured before changing anything, because
+the obvious suspect was wrong: the safety gates cost almost nothing.
+
+    certification-manifest --verify   2.5s
+    138 cross-section invariants      4.2s
+    apply-entities                    0.7s
+
+The cost was the browser: every check launched Chrome on a BRAND-NEW profile, forcing the app to
+re-seed IndexedDB from a 9 MB bundle before a single row rendered — ~40-60s per run, paid again
+for every one-line change. Plus fixed sleeps that were simultaneously too slow AND able to race a
+slow load, which is how three assertions once failed against a page that was already correct.
+
+**`scripts/lib/browser.mjs`** — one harness, three modes. `warm` reuses a live Chrome and a seeded
+profile across runs and across sessions; `fresh` is a first-time visitor; `stale` is a returning
+one. Waiting is by CONDITION (`page.waitFor`), never by clock.
+
+    alias visibility check    60s+  ->  16s warm, 9.6s fresh
+    inline drop reader        ~70s  ->  5.9s
+
+**`scripts/verify-final.mjs`** — the expensive proof, once, before deploying: manifest →
+invariants → FRESH profile → RETURNING/stale profile, then `--live` against qdrops.app after the
+deploy. **61s for the whole thing**, and it stops at the first failure rather than running on.
+
+It immediately caught a rotted assertion: `test-returning-profile.mjs` pinned `seed === 7` from the
+day it was written and reported FAILURE on a profile that had repaired itself perfectly at seed 43.
+It now reads SEED_VERSION from source — the deliberate-bump gate belongs to cross-section
+invariant 8, and duplicating it in a browser test only created something that rots.
+
+### The pacing rules, now in PROJECT_CONTEXT.md (owner directive)
+
+1. Warm browser while iterating; the expensive proof once, before deploying.
+2. **Infer the mode** — UI/layout/rendering/search is lightweight (no chain, no manifest, no seed
+   bump); a Claim/Entity/Theme/Emphasis/Code/Directive ruling is certified-data work. Never ask
+   which one it is.
+3. **Batch rulings** — apply each canonically as it is made, then chain/QA/manifest/deploy/prove
+   ONCE for the batch. Fifty observations, one certification pass.
+4. Targeted materialiser + section test while developing; full chain and global invariants before
+   deploying.
+5. **The final browser proof is never skipped.** Optimise it; do not remove it.
+
+Also worth recording, found while measuring: the Themes tab took **65s to first render** under load
+(4s of that is the interaction). Under a quiet machine it is 3.5s. Dev-mode and contention explain
+most of it, but the gap is large enough to be worth a look on the production build.
+
+## 2026-08-14 — a theme chip now opens its drops, oldest first, and keeps opening as you scroll
+
+Owner: "when I click on a theme within a post analysis I would like it to show the post numbers
+that pertain to that theme… to take it one step further I would like you to display all the post
+open in order from the oldest post to latest post."
+
+The chip already linked to `/analysis?tab=themes&q=<theme>`, so the destination screen was right.
+Three changes:
+
+1. **Auto-open.** When a search resolves to exactly ONE row, its drops open with no second click —
+   the click on the theme WAS the request to read them. Only for a single row: opening every row of
+   an unfiltered list would mount thousands of drops. Closing the reader by hand sticks; an
+   auto-open that fights the reader is worse than none.
+2. **All of them, progressively.** `ReaderSentinel` mounts the next batch when it scrolls into
+   view, so scanning opens every drop without a click, while still batching — 404 post cards
+   mounted at once locks the tab. The manual "+ more" button stays as the fallback where
+   IntersectionObserver is missing.
+3. **Oldest → latest by timestamp**, not by post number. Checked first: post-number order and time
+   order agree on all 4,966 posts, zero disagreements — so it is the same sequence, now expressed
+   as what it means rather than as a property of the numbering that happens to hold.
+
+Applies to every category, not just Themes: searching one entity (COVID-19) or one claim opens its
+drops the same way.
+
+Verified on the warm browser in **2.3s** (`scripts/test-theme-auto-open.mjs`): auto-opened,
+9, 17, 19, 32, 34, 36…, and 25 → 50 on scroll with no click.
+
+## 2026-08-14 — the theme's name is the way into it
+
+Owner: "make the main topic of the theme clickable so when you click on it, it will open all the
+post in the next screen in order."
+
+The row title was a dead `<span>`. It is now a link to `/analysis?tab=<cat>&q=<item>` — the same
+destination a theme chip inside a drop uses — where the auto-open lands the row with its drops
+already open, oldest first. Applies to every category, so a claim or an entity name opens its own
+drops the same way.
+
+This matters most for Themes specifically: a theme label is a summary written ABOUT the drops and
+never appears inside one, so a text search for it returns nothing. Before this, the name on screen
+was the one thing in the row you could not follow.
+
+Verified (`scripts/test-theme-label-link.mjs`, warm browser): the name is a link → navigates to
+`?tab=themes&q=Q Movement & Community` → 25 drops open, 4, 5, 6, 9, 35, 70… and more on scroll.
+
+## 2026-08-14 — a question carries no Emphasis (rendering rule, certified data untouched)
+
+Owner: "if we have a question highlighted app wide i do not want it to be an emphasis. i just want
+the question highlighted and no emphasis tied to the question."
+
+**First measurement was wrong and I nearly reported it.** Two probes said "0 emphasis spans touch a
+question" — because they read `o.text`, a field that does not exist on an emphasis occurrence (it
+is `sourceText` / `line`). `String(undefined)` made every substring test vacuous. A zero from an
+unvalidated field name is not evidence of anything. Corrected:
+
+| Shape | Count | Status |
+|---|---|---|
+| the emphasis span IS the whole question | 0 | retired at seed 38 |
+| every line of a parallel run is a question | 0 | retired at seed 38 |
+| **emphasis INSIDE a certified question** | **1,429** | this ruling |
+| mixed run, only some lines questions | 34 | stands — the device is the structure |
+
+The 1,429 break down caps_emphasis 804 · quoted_word 322 · bracket_emphasis 297 ·
+punctuation_intensity 6 — "Where is BO **TODAY**?", "WHERE IS BO TODAY**?!?!?**", "Why did Mueller
+**COULD NOT**…".
+
+**Owner chose rendering-only, not withdrawal.** Certified Emphasis stays **4,669**; nothing frozen
+moved; no chain, no manifest, no seed bump. Inside a certified question the emphasis layer simply
+does not paint, and the hover title does not claim it either. Everything else inside a question
+still paints — an Entity is still cyan, a bracket still red. Reversible in one line if the owner
+dislikes it.
+
+Applied to BOTH surfaces in the same commit (`PostDetail.tsx` and `lib/postHighlight.tsx`) because
+these two have drifted before and shown different colours for identical certified data.
+
+**Brackets — owner rule pinned, not built:** "brackets… should always be in the forefront" and must
+not flash. Both surfaces already painted them solid red ahead of every other layer, inside
+questions and out. Now asserted rather than trusted to a comment.
+
+Verified in 4.5s on the warm browser (`scripts/test-question-emphasis.mjs`): #50 TODAY, #62 ?!?!?
+and #18 COULD all clean and still blue; #4742's four brackets all red, none rotating.
+
+## 2026-08-14 — a question carries no Emphasis, in the DATA this time
+
+The rendering rule was not enough, and the owner found the hole within minutes: post #5 listed two
+whole questions under "Emphasis" in the analysis panel. The panel lists an Emphasis row by its
+LINE, so suppressing the paint hid it in the drop and left it in every list — archive rows, chips,
+search. "I do not want the archives side or the post analysis side to have any emphasis connected
+to a question… app wide."
+
+So it became a certified withdrawal, applied as a RULE inside `apply-emphasis.mjs` rather than as
+individual withdrawals, so it keeps holding as Questions change.
+
+**Why #5 survived three earlier clauses.** Its line is *"Why did Soros transfer his bulk public
+funds to a NP? Note this doesn't include massive slush funds…"* — a certified question PLUS a
+second sentence. It equals no question, and its run is not all-questions. The new clause matches by
+CONTAINMENT: any line that contains one of THAT POST's certified questions.
+
+Per-post, not corpus-wide — a question asked in one drop must never retire an emphasis in another.
+That distinction is worth 14 rows: my standalone estimate said 1,569 by matching questions
+globally; the pipeline's own rule, correctly scoped, retired 1,555.
+
+| | before | after |
+|---|---|---|
+| Emphasis occurrences | 4,669 | **3,114** |
+| posts | 1,667 | **1,358** |
+| retired by the question rule | 583 | **2,138** (104 + 479 + 1,555) |
+| caps_emphasis | 2,418 | 1,556 |
+| bracket_emphasis | 715 | 409 |
+| quoted_word | 624 | 285 |
+| parallel_phrasing | 631 | 591 |
+| punctuation_intensity | 157 | 149 |
+
+Brackets lose nothing: [ Brackets ] is its own certified section, so a bracket inside a question
+still lists there and still paints red in front of everything — the owner's other rule this session.
+
+Pins updated deliberately in `contracts.mjs`, `sectionInfo.ts`, `apply-emphasis.mjs` and
+cross-section invariant 9. #5's Emphasis chips are now `[]`, and a full sweep confirms **0**
+remaining occurrences tied to a question anywhere in the corpus.
+
+Still pending for the deploy checkpoint: full chain (resolution queue, relationships and search
+index still hold the old emphasis rows), invariants, manifest, seed bump, deploy, browser proof.
+
+## 2026-08-14 — why one ruling took three round trips, and the guard that ends it
+
+The owner had to report the same defect three times. Each pass fixed a real layer and stopped one
+short of the layer they were actually looking at:
+
+1. **Measured wrong.** The probe read `o.text`; emphasis rows carry `sourceText` and `line`.
+   `String(undefined)` made every containment test vacuous, so it reported 0 spans touching a
+   question and I said the ruling was already satisfied. **A zero from an unvalidated field name is
+   not evidence.**
+2. **Fixed the paint only.** Emphasis stopped painting inside questions — but the analysis panel
+   lists a row by its LINE, so #5 still displayed two whole questions under "Emphasis". The owner
+   said "the archives side or the post analysis side"; I fixed neither list.
+3. **Fixed the data, forgot the seed.** 1,555 rows withdrawn, posts.json correct, every check
+   green — and the owner's browser still showed the old rows, because seeded data is only re-read
+   when SEED_VERSION changes. Fourth occurrence of this exact failure (4, 5, 6, and here).
+
+**`scripts/seed-fingerprint.mjs`** ends the third one mechanically. It hashes every artifact the app
+seeds and pins it to the SEED_VERSION that shipped it. Change seeded data without bumping the seed
+and cross-section invariant 8 fails, naming the files that moved. Proved by deliberately mutating
+`topics.json`: the guard refused, named it, exited 1; reverted, clean.
+
+Rules 1 and 2 are recorded in PROJECT_CONTEXT.md: validate the schema before trusting a zero, and
+finish at the surface the owner named — chips, rows and search, not just the highlight.
+
+Verified on a STALE profile (`scripts/test-post5-emphasis.mjs`): seed 44, #5's stored emphasis
+`[]`, nothing listed under Emphasis in the panel — on a browser that had the old data.
+
+## 2026-08-14 — three owner rulings on #5 and #4965, one of them corrected by the corpus
+
+**"Clinton's" in #5 = Hillary AND Bill.** Recorded as two owner entity rulings on the same token,
+because the possessive is plural and precedence-picking one of them would answer a question the
+owner did not ask. Hillary Clinton 179 -> 180 mentions, Bill Clinton 11 -> 12, entity headline
+8,239 -> 8,241. Queue row `Clinton-5-5-85` cleared.
+
+**"NP" in #5 — the owner ruled Nancy Pelosi, and the corpus disagreed.** Raised before applying,
+with the evidence:
+
+    #5   "Why did Soros transfer his bulk public funds to a NP?"
+    #36  "Why did Soros transfer the bulk of his ‘public’ funds to a NPO?"
+
+Same question, and NPO is a non-profit organisation. The indefinite article makes it a category,
+not a person — and #5 already writes "Pelosi" in full two lines earlier, so it had no need of an
+abbreviation for her. Owner agreed: non-profit in #5/#6, NPO in #36. NP genuinely IS Nancy Pelosi
+elsewhere (#436 "SUPPORT: CS, NP, AS", #524, #678 "CS & NP divided.", #1379 "[NP 8:11 'Speaker…']"),
+and those stay queued. **Same wording retrieves candidates; context decides membership** — this is
+the rule earning its keep, and the reason a ruling is checked against the corpus before it is
+applied everywhere the token appears.
+
+Resolved with `createsNoCategory`: "a non-profit" is a common noun, and naming it as an Entity
+would put a category into a layer that holds specific named things. Same shape as the #150 [L]
+resolution. Resolution Center 2,233 -> 2,231.
+
+**#4965 "In time." -> Claim.** It carried no Emphasis row at all — it was a Context unit. Claims
+4,188 -> 4,189 (distinct 3,229, posts 1,954), Context 4,900 -> 4,899.
+
+**Structural fix while in there:** `apply-context-units.mjs` now releases ANY owner-adjudicated
+claim from Context, reading `claims-final.json` directly. It previously only handled theme rulings,
+and the five "Pure EVIL." claim promotions had been edited into the ledger by hand — so this ruling
+would have left "In time." in Claims AND Context at once, the exact contradiction that file's own
+comment says must never exist. Now every future claim ruling releases its Context automatically.
+
+## 2026-08-14 — DEPLOYED: the whole session's batch, seed 45
+
+**#4963 "Focus." / "FOCUS." -> Directives** (owner ruling). They were Emphasis (repeated_word),
+which describes the repetition rather than the instruction. Two occurrences, not one counted twice
+— occurrence identity. Directives 2,422 -> 2,424, Emphasis 3,114 -> 3,113. New overlay artifact
+`audit/directives-owner-rulings.json`, merged by apply-directives.mjs after the certified set is
+assembled, so a re-derive cannot erase it — the same pattern Entities, Themes and Emphasis use.
+Directives was the last certified layer without one.
+
+**"1 request" -> "1 directive"** on the post card. The section was renamed Directives everywhere
+else; this chip kept the old word, so the two builds described the same certified layer with
+different names.
+
+### The deploy checkpoint, paid once for the whole session
+
+    chain replayed twice        byte-identical — a proven fixed point
+    invariants                  139/139
+    manifest                    re-certified, verify clean
+    seed                        45
+    local proof                 fresh + returning profiles
+    deploy                      SKIP_EXPORT=1
+    live bundle                 md5 identical to local
+    live proof                  fresh + returning profiles against qdrops.app
+
+`SKIP_EXPORT=1` deliberately: a real export would have deleted the `customBrackets` on #437, #438,
+#1254, #1319 and #1464, which exist locally and not in Firestore because the deployed rules deny
+the editing build's writes. The manifest gate still ran — the skip removes the network, not the
+check.
+
+**verify-final.mjs had a bug the proof itself caught:** `test-returning-profile.mjs` defaults to
+qdrops.app, so the LOCAL phase was checking production for a seed production had not been given
+yet, and reported the change broken when it was merely undeployed. It now passes `--url` explicitly
+in both phases, and the live phase checks the returning profile too — the case that matters most on
+production.
+
+### Certified state now live
+
+| section | count |
+|---|---|
+| Questions | 6,442 |
+| Directives | 2,424 |
+| Claims | 4,189 |
+| Predictions | 630 |
+| Evidence | 6,590 |
+| Entities | 1,334 canonical · 8,241 mentions |
+| Themes | 2,395 |
+| Codes | 1,949 |
+| Emphasis | 3,113 |
+| Resolution Center | 2,231 |
+
+## 2026-08-14 — #4963 reclassified, Implied Conclusions retired, Search out of the sidebar
+
+Deployed, seed 46. Owner rulings, numbered as the owner now asks for:
+
+1. **#4963 SOS out of Emphasis** — it is part of the entity "SOS Offices.", not a caps device.
+   Emphasis 3,113 -> 3,112.
+2. **#4963 SOS Offices. / Investigators. / Researchers. / Whistleblowers. / Patriots -> Entities.**
+   1,334 -> 1,339 canonical, 8,241 -> 8,246 mentions. All five were Context.
+3. **#4963 "Patriots in trusted positions." and "Time to show the world." -> Claims.**
+   4,189 -> 4,191.
+4. **Implied Conclusions retired as a section.** All 966 were ALREADY certified Claims — the field
+   is derived from the claim attribute `isConclusion`, so 966 of 966 were claims before this. The
+   duplicate VIEW is gone (sidebar, chips, count badge, highlight layer); the rows and the
+   attribute stay. Spans that used to rotate claim+impliedConclusion now paint solid amber.
+5. **Search removed from the sidebar.** The /search ROUTE stays live — every "also found in" chip
+   points at it — it just no longer holds a permanent slot above Q Questions.
+6. **Search summary hoisted above the Delta section** on Post Archive, so what you searched and how
+   many hits it returned is visible without scrolling past the timeline.
+
+**The pipeline caught a real conflict on #2:** `Patriots` was routed to Themes by the adjudication
+as "a conceptual collective", and the invariant refuses an entity that is also theme-routed. The
+owner ruling outranks an adjudication pass, so the check now exempts owner rulings — and ONLY owner
+rulings, because its actual job is stopping the DETECTOR leaking a routing marker into the entity
+set. Recorded rather than bypassed.
+
+**Structural:** `apply-context-units.mjs` now releases Context for owner ENTITY rulings too, not
+just themes and claims. A line the owner named as an entity has been placed in a category, so it
+cannot also be "reviewed and in none". 9 rulings now release their Context automatically.
+
+Chain replayed twice byte-identical · 139/139 invariants · manifest re-certified · fresh +
+returning profiles locally · live bundle md5-identical · fresh + returning profiles against
+qdrops.app.
+
+## 2026-08-15 — every Patriot/Patriots is one Entity; the drop's own number connects
+
+7. **Drop header post number is a link** (#4963 -> /posts?q=#4963). It was the one post number on
+   screen that connected to nothing — the card number and the analysis chips were already links.
+
+8. **Patriot / Patriots -> one Entity, corpus-wide.** 239 occurrences across 221 posts:
+   Patriots 119 · Patriot 82 · PATRIOTS 31 · PATRIOT 3 · patriot 3 · patriots 1. Compounds
+   (PatriotsFight, patriotism, PatrioticPop) excluded by the word boundary — verified, not assumed.
+   Entities 1,339 -> 1,338 canonical, 8,246 -> 8,482 mentions.
+
+**A measurement error worth recording, because it is the SECOND of its kind today.** The first
+count said 0 occurrences of every case form while a case-insensitive probe found 239. Cause:
+`new RegExp('\bPatriots\b')` written through a shell heredoc collapsed to a literal BACKSPACE
+character, so the pattern was "Patriots" with an unmatchable control char. Same shape as the
+`o.text` field error this morning: a probe that silently matches nothing reports a clean corpus.
+Probes now use regex LITERALS or String.raw, and a zero is checked against a second method before
+it is believed.
+
+**Two pipeline capabilities added, both because the data demanded them:**
+- `recount` on an alias ruling. "Patriots" existed as a one-post alias (n=1) from the #4963 ruling;
+  without recount the corpus-wide ruling was skipped as "already present" and 118 occurrences
+  stayed uncounted.
+- `merges`. The tail adjudication had its own "Patriot" (person, 2 mentions); two canonical rows
+  claiming one token double-count it. The merge moves mentions ONLY for aliases the target does not
+  already count, and drops the merged row's tail occurrences from emission — both discovered by the
+  materialiser refusing to write 8,484 stored against 8,482 certified, twice, for two different
+  reasons. The gate caught both.
+
+Chain twice byte-identical · 139/139 · manifest re-certified · seed 47 · local + live proofs.
+
+## 2026-08-15 — the drop header actually connects, and Checkable Claims folds into Claims
+
+9. **"Post #8" — the whole label links, and it now goes somewhere useful.** The first version
+   linked to `/posts?q=%238`, which is a TEXT SEARCH for the literal string "#8": it landed on a
+   one-post search page with a facet strip and a timeline — the opposite of seeing a drop in
+   context, and I had described it as the opposite of what it did. The archive already had the
+   right mechanism ("Go to Post" scrolls the list to that card and flashes it, loading more of the
+   list if needed); it was driven by a text box and had no URL. `/posts?goto=N` now drives the same
+   jump, and the entire "Post #8" label is the link rather than the digits alone.
+
+10. **Checkable Claims merged into Claims.** All 1,926 were ALREADY certified Claims — 0 needed
+    adding, so nothing moved and nothing double-counted. Same shape as Implied Conclusions: a
+    filtered VIEW of Claims (the `checkable` attribute), presented as a section. Removed from the
+    sidebar, the post chips, the count badge, the highlight layer, the term-presence facets and the
+    archive tab. The attribute survives on `claimMeta` for provenance, so the distinction is
+    recoverable as a filter if the owner ever wants it back.
+
+    `getTermPresence` and the analysis-frequency category lists dropped both retired sections in
+    the same edit — they were counting one row under three headings.
+
+**Three build failures worth recording, all mine, all caught by gates rather than by the owner:**
+- The cross-section invariant pinned `checkableSpans ??` in the highlighter. Retiring the layer
+  made a check of a layer that no longer renders fail forever, so the assertion moved to
+  "the retired layers are GONE" — tightened, not relaxed.
+- That new assertion then matched its own COMMENTED-OUT code. Dead lines deleted rather than
+  teaching the regex about comments.
+- `npm run deploy:web` type-checks and refused twice: `OverlapCat` still types both retired
+  categories (the editorial overlaps view can still surface a legacy row), and my blanket
+  re-insert duplicated two keys. The deploy aborting is the gate working — nothing shipped broken.
+
+Chain twice byte-identical · 139/139 · manifest clean · seed 47 · local + live proofs.
+
+## 2026-08-15 — #524, and a question the detector could not see
+
+11. **"(Why don't we say his name?)" is a Question.** It was CONTEXT, not Emphasis — grey is the
+    Context colour. The question detector anchors on a line ENDING in '?', and this one ends in
+    '?)': the closing parenthesis defeats the test. Questions gained the owner-ruling overlay every
+    other layer already had (`audit/questions-owner-rulings.json`). 6,442 -> 6,443.
+    **50 lines corpus-wide have that shape** (`?)`, `?]`, `?"`) and are not certified questions —
+    a candidate set for a future ruling, not applied.
+12. **Searching a bare post number now jumps to that drop.** "524" used to search the TEXT of every
+    drop for "524" and find nothing useful; the number lookup lived in a separate box beside the
+    search field, which is not where anyone looks first.
+13. **NP in #524 IS Nancy Pelosi** — and in #5 the same token is a non-profit. One token, two
+    referents, decided by context. Recorded per occurrence with each ruling naming the other.
+14. **CEOs and BODs are Entities** (CEO, BOD). 1,338 -> 1,340 canonical, 8,482 -> 8,485 mentions.
+15. **Five #524 lines are Claims** (4,191 -> 4,196). The matcher had to learn Q's indent markers:
+    ">&gt;Hussein [1] $29,000,000 SINGAPORE" is stored certified WITHOUT the '>>', so a ruling
+    written as the owner reads it was refused as "not found verbatim" until `stripMarkers` was added.
+
+**The debt invariant did its job.** Certifying ">Slush Fund" moved the source-boundary baseline
+146 -> 147 and 118 -> 119 posts, because Q's single '>' indent marker makes the segmenter read that
+line as source material. The gate named the exact row — `claims::524|slush fund` — and the baseline
+was moved deliberately, with the occurrence and the reason written into
+`audit/source-boundary-occurrences.json` changeLog. That is the rule from the very first handoff:
+never move a debt baseline on an explanation that does not hold.
+
+**Also closed a hole in the Context release:** an owner QUESTION ruling now releases its Context
+unit, like theme, claim and entity rulings already did. #524's question was certified and still sat
+in Context — one span presented as both classified and unclassified.
+
+Chain twice byte-identical · 139/139 · manifest re-certified · seed 48 · local + live proofs.
+
+## 2026-08-15 — the phrase opens its own drops, and the archive jump actually arrives
+
+16. **The analysis phrase IS the control.** Clicking "These people are stupid." opens every drop it
+    appears in, in place, oldest first — the same thing "▼ read 39 drops" does. It used to navigate
+    to this section filtered to that row, which left the page to do what the row can do itself.
+
+17. **The archive jump was broken, and not by the new link.** `handleGoToPost` has always set a
+    jumpTarget and let an effect page the list in until the card exists. That effect read
+    `if (hasMore && !loadingMore) load(false)` and fell through to
+    "#N is not in the current list" when EITHER was false — so the moment a page started loading,
+    the next render took the error branch and cleared the target. The jump loaded exactly ONE extra
+    page, then declared the post missing. Anything past the first ~100 rows of the current sort was
+    unreachable: "Go to Post 524" failed on a list that simply had not got there yet.
+    Now it waits while a page is in flight, and both the box and the header link approach from the
+    end the post is NEAR — #524 is eleven pages ascending, versus eighty-nine descending.
+    `scripts/test-goto-jump.mjs` drives #8 and #4900, the worst case at each end, and requires the
+    CARD rather than the absence of an error.
+18. **NP is an alias of Nancy Pelosi corpus-wide — except #5 and #6**, where the owner ruled the
+    same token a non-profit. 7 occurrences, mentions 8,485 -> 8,491. #5 still lists Pelosi because
+    that drop writes her name in full two lines above; #524 now carries NP. One token, two
+    referents, and the exclusion is what keeps one owner ruling from overwriting another.
+
+The `excludePosts` mechanism that made 18 possible already existed — the parallel session had added
+it for a different alias hours earlier. Worth noting as a case where two sessions converged on the
+same need independently.
+
+Chain twice byte-identical · 139/139 · manifest re-certified · seed 49 · local + live proofs, plus
+the jump test against production.
+
+## 2026-08-15 — the jump lands on the drop, and the two NPs become two entities
+
+19. **The jump arrived ~30 drops short.** The card mounted, the scroll fired, and rows above it
+    were still being committed — every one a different height — so the page settled well before the
+    target. It now re-anchors on a few frames after the first scroll. The test was the real problem:
+    it asserted the card was MOUNTED, which was true while the reader was looking at #491. It now
+    requires the card to be ON SCREEN and to be the drop at the CENTRE of the viewport, checked at
+    #8, #4900 and #524 — both ends and the middle.
+20. **Nancy Pelosi and the non-profit are now separate entities.** NP is her alias corpus-wide
+    except #5/#6; those two carry a distinct "Non-profit organization" entity (2 mentions), so a
+    search for her can never return the non-profit. 1,340 -> 1,341 canonical, 8,491 -> 8,493.
+    #5 still appears under Nancy Pelosi — because that drop writes "Pelosi" in full two lines above
+    the NP. That is the literal name, not the alias, and it is correct.
+
+"Mounted is not arrived" is the lesson worth keeping: three versions of this feature failed in
+three different ways, and each time the test asserted something weaker than what the owner could
+see. A check that passes while the screen is wrong is worse than no check.
+
+Chain twice byte-identical · 139/139 · manifest re-certified · seed 50 · local + live proofs.
+
+## 2026-08-15 — first owner claim review, and the jump stops walking the archive
+
+21. **12 of the 21 predicate rows certified as Claims** (4,196 -> 4,208); #1077 "Prevent at all
+    costs." certified as a **Directive** (2,424 -> 2,425). The owner declined 8 by pointing at the
+    line ABOVE each one: #1535, #1633, #2639 and #839 were already certified Directives, and
+    #1268's line is an entity. **PRINCIPLE, now recorded: a predicate inherits a subject only from
+    a PROPOSITION.** Where the preceding line is a Directive or an Entity there is nothing to
+    inherit, and the row stays unclassified. That narrows the remaining 393
+    answers_previous_question rows before the owner ever sees them.
+
+    Two held back rather than guessed:
+    - #1443's row says "EVIL." but Q wrote "GOOD vs. EVIL." — the ledger split the line, and the
+      fragment is not the same assertion as the sentence.
+    - #1268 "Army Lt. Gen. Paul Nakasone": "Paul Nakasone" and "Army" are ALREADY certified
+      separately inside it. One entity over the whole title needs a supersede-partials mechanism,
+      or one man is counted three times.
+
+22. **The jump opens the list AT the drop.** It used to page from the top: fifty at a time, ninety
+    eight round trips to reach #4900. Bigger pages took it from 30s+ to ~6s; opening at the drop's
+    own index takes it to **1.6-2.1s**, because the archive no longer mounts thousands of cards to
+    reach one. Landing is still asserted at the CENTRE of the viewport, at both ends and the middle.
+
+Chain twice byte-identical · 139/139 · manifest re-certified · seed 51 · local + live proofs.
+
+## 2026-08-15 — deploy-every-fix, and the lowercase "sessions" alias withdrawn
+
+**STANDING RULE from the owner: deploy after every fix.** No more staging a batch — each change
+goes live so it can be checked from the user's side. Recorded in PROJECT_CONTEXT.
+
+24. **Lowercase "sessions" withdrawn as an alias of Jeff Sessions.** It painted "friendly therapy
+    sessions" (#2319) as the man, and the corpus's other lowercase occurrences sit inside news URLs
+    (nypost.com/…/sessions-investigating…, breitbart.com/…/turley-sessions-using…). SESSIONS (56),
+    Sessions (52) and Jeff Sessions (2) are untouched — 108 of the 113 mentions were never in doubt.
+    Mentions 8,493 -> 8,490. New mechanism: `aliasWithdrawals`, filtered BEFORE the mentions are
+    counted so the count and the emitted occurrences drop together instead of disagreeing.
+
+Also now live (staged earlier, unverified until this deploy):
+- questions paint in the analysis drop reader — the third surface that builds its own card
+- the Resolution Center lists every row instead of 25 at a time, growing on scroll
+- the queued token is highlighted inside its context (130 DC marks on /resolve?token=DC)
+
+**A verification error worth recording.** I reported the Resolution Center work as "written but I
+could not verify it renders" — because I probed `/resolution`, which 404s. The route is `/resolve`.
+The code had been correct the whole time. Same shape as the `o.text` field error and the collapsed
+`\b` regex: a probe that examines nothing reports failure as confidently as success. Check the
+route exists before concluding the feature does not.
+
+Verified on PRODUCTION: #2319 lowercase sessions no longer painted as an entity; /resolve?token=DC
+shows 130 highlighted DC marks and no 25-row pager. 139/139 · manifest clean · seed 52.
+
+## 2026-08-15 — SR / NG rulings, and owner notes on rows that stay (seed 59)
+
+**Asked:** resolve SR as Seth Rich in 9 drops; do NOT resolve 4 others but leave notes on them;
+resolve all NG as National Guard; and "did we have 1 BO in the resolution center i dont see it?"
+
+**BO:** yes — #235, id `BO-235-0-9`, still the only BO row. It was there the whole time.
+
+**New capability — owner notes.** There was no way to record "I looked at this and it is NOT the
+obvious reading" without either resolving it (which moves certified counts) or saying nothing
+(which loses the reasoning). Added a third state:
+  - `audit/resolution-owner-notes.json` — keyed by occurrence id
+  - attached in `build-resolution-queue.mjs` AFTER clearing, so a note can never remove a row
+  - rendered in the Resolution Center as an amber "Owner note · left unresolved" block, and
+    searchable — typing "susan rice" now finds #559 even though the drop never writes the name.
+
+**SR — 9 resolved, 4 noted.** Seth Rich in #834, #1199, #1226, #1462, #1493, #1591, #1626, #1708,
+#4153 (10 occurrences). Scoped, not global: SR is Susan Rice in the #559 Hussein-cabinet roster and
+the SENIOR rank in #1573 ("WH SR Staffer"), #2658 ("SR+MID+LOW") and #4640 ("Pentagon [SR 1-4]").
+A corpus-wide SR alias would have filed a seniority scale under a murdered man.
+Seth Rich 8 -> 15 mentions (SR n=10).
+
+**NG — all 9 drops, 13 occurrences.** National Guard in #1, #3, #22, #38, #70, #76, #128, #1020,
+#1862. #128 stays NG though the drop calls the surrounding claim disinformation — the abbreviation
+still means the National Guard. National Guard 3 -> 16 mentions.
+The owner's "duplicate cards" are not duplicates: #1 has NG twice in one line, #22 on three lines,
+#1020 on two. Occurrence identity, working as designed.
+
+**Counts:** mentions 8,717 -> 8,737 (SR 10-3 already counted = 7, plus NG 13). Queue 1,978 -> 1,955.
+Entity queue 1,310 -> 1,287.
+
+**Defect found in passing:** `build-search-index.mjs:193` carried the label "Unresolved indexed =
+2,233" guarding an assertion of `=== 1978`. The label had drifted from its own check across an
+earlier batch. Both now read 1,955. A label that lies about what it enforces is how a pin stops
+being a pin.
+
+**Gates:** chain replayed twice (idempotent), 139/139 invariants, manifest verified, tsc clean,
+fresh + returning profiles locally and on production, and all four owner notes confirmed rendering
+on the live site.
+
+## 2026-08-15 — DNI / MI / SIS, and a silent-data-loss repair (seed 60)
+
+**DNI — all 13 cards, Director of National Intelligence.** New entity: nothing in the corpus
+spells the office out, so no pass ever created it. One entity covers both senses the owner
+described (the officeholder in #436/#3347/#4238/#4839, the office/ODNI in #1286/#3532/#4153/#4813,
+the role-with-holder in #1828 "[DNI [JC]]" and #3595). All 13 corpus occurrences are inside the
+11 ruled posts, so the scope is complete rather than partial.
+
+**MI — 18 Military Intelligence, 1 Michigan.** The owner ruled 11 cards MI and #4171 Michigan.
+Five further posts (#2, #11, #14, #23, #36 — "MI generals", "MI has the same SAPs as NSA, CIA")
+were ALREADY certified Military Intelligence and had to be added to the scope or the recount would
+have deleted them. Military Intelligence 17 -> 28, Michigan 2 -> 3.
+
+**SIS — MI6 in 8 drops.** Attached to the EXISTING MI6 entity rather than creating a second
+"Secret Intelligence Service" record: they are one organization, and splitting them would mean a
+search for MI6 never returns the SIS drops. MI6 6 -> 15. The other 4 cards stay queued with notes
+(#1385 FBI Special Intelligence Service + the authored "Double meanings exist" ambiguity, #144
+probably the Army Signal Intelligence Service, #1334 undecidable between three readings).
+
+### The real finding: scoped recounts were silently deleting certified occurrences
+
+`recount: true` REPLACES an alias count with a count over `includePosts`. An occurrence the
+certified CONTEXT PASS had already resolved, sitting outside the owner's scope, therefore vanished
+from the count and from the highlighting — while entities.json still listed the post. Nothing
+failed, because every total simply agreed with the smaller number.
+
+Found while checking whether the SR ruling had done it — it had. Audited every scoped ruling:
+
+  Seth Rich   3 occurrences  #1195, #436 x2   ("SR connect to DNC. MS_13. JA.", "(SR 187)")
+  BO         13 occurrences  11 Obama, 2 Board Owner
+  SC          6 occurrences  #1153 #1161 #1649 #2205 #4545 #4813
+
+22 restored. None of these were ever in the Resolution Center — the context pass answering them is
+exactly why they were never queued — so restoring them pre-empts no owner decision, and the 59 SC
+and 1 BO rows still queued are untouched. Barack Obama 225 -> 236, Board Owner 9 -> 11,
+Supreme Court 40 -> 46, Seth Rich 15 -> 18.
+
+New invariant `entities-scope-drop` (140 total) fails the build if any scoped ruling drops a
+context-resolved occurrence. This class of bug cannot recur silently.
+
+**Counts:** mentions 8,737 -> 8,793. Entities 1,341 -> 1,342. Queue 1,955 -> 1,921.
+Also corrected the user-visible `mentionScope` prose, which claimed "6 from owner rulings" when
+the real figure was 266 — stale by many batches.
+
+**Gates:** chain replayed twice, 140/140 invariants, manifest verified, tsc clean, fresh +
+returning profiles local and live.
+
+## 2026-08-15 — RT split three ways, and the reader info box (seed 61)
+
+**RT — 4 Rex Tillerson, 8 real time, 1 retweet.** Rex Tillerson is a new entity (#947 x2, #959,
+#2844). The other 9 cards were resolved and removed from the queue WITHOUT becoming entities:
+"this is not a person, place or organization" is a complete answer, and forcing it into the entity
+registry to close a queue row would corrupt the registry to tidy a list.
+Mentions 8,793 -> 8,797. Queue 1,921 -> 1,908.
+
+**NEW: the reader info box.** Hover or press any acronym / initialed name, on any post, app-wide.
+  audit/notation-glossary.json   owner glosses for shorthand that is NOT an entity
+  scripts/build-glossary.mjs     -> public/data/glossary.json (109 tokens, 4 contested)
+  src/lib/glossary.tsx           one shared layer for PostDetail, PostCard and the inline reader
+
+POST-AWARE, which is the entire point: BO reads Barack Obama in #36, Bruce Ohr in #1828, Board
+Owner in #1296; RT reads Rex Tillerson in #947 and "real time" in #220. Per-ALIAS post lists, not
+per-entity — Barack Obama appears in 147 posts but BO is only his in 24, and using the entity list
+would have put "BO = Barack Obama" on the Bruce Ohr drops. Zero posts resolve to two readings.
+Where a token IS contested in a drop, the box says nothing rather than guessing.
+Entities show canonical + type + archive-wide mentions; glosses are dotted-underlined and labelled
+"not an entity" so they can never be mistaken for one of the eight certified categories.
+This also settles the pending NP/#524 item — NP reads Nancy Pelosi there and Non-profit in #5/#6.
+
+Three defects found by the new test, each invisible to the one before it:
+  1. only matched when a node's WHOLE text was the token — worked on "DNI DIR>", did nothing on
+     the nine drops where the acronym sits inside a larger certified span
+  2. the token splitter swallowed trailing punctuation, so "RT." in "analyzed in RT." matched
+     nothing (the pattern has to allow periods because "U.S." is a real alias) — now peels
+     punctuation off and glosses the head
+  3. one-level descent missed questions, which carry nested structure in PostDetail — now recurses
+Also: the test itself was wrong first. It queried on body-ready, before glossary.json had loaded,
+so a different single case passed each run and the other nine looked broken. The feature was fine.
+Now waits on the target.
+
+scripts/test-term-info.mjs asserts MEANING per drop (10 cases, 20 checks) and runs in both halves
+of verify-final — "a box appeared" is not the property that matters when BO is three people.
+
+**Gates:** chain replayed twice, 140/140 invariants, manifest verified, tsc clean, fresh +
+returning + info-box proofs local and live.
+
+## 2026-08-15 — Seven tokens, 92 occurrences (seed 62)
+
+  JA   -> Julian Assange          12 cards
+  PP   -> Planned Parenthood      12 cards
+  WL   -> WikiLeaks               12 cards
+  BC   -> Bill Clinton            18 cards across 14 posts
+  CM   -> CodeMonkey 11 + Cheryl Mills 1 (#1828: grouped with HRC/BC/Huma, not board terms)
+  SS   -> Secret Service 11 + Supreme Court 1 (#1151)
+  WASH -> Washington Post 12 + Washington Free Beacon 1 (#1828) + Washington, D.C. 1 (#524)
+          #1493 and #1731 stay queued — owner marked them unresolved and gave no reading.
+
+New entities: Cheryl Mills, Washington Post, Washington Free Beacon.
+Mentions 8,797 -> 8,889. Entities 1,343 -> 1,346. Queue 1,908 -> 1,816. Glossary 109 -> 113 tokens,
+7 of them contested and disambiguated per post.
+
+**The SS typo, recorded as a typo.** #1151's "SS/LL deal" resolves to Supreme Court, but showing a
+reader "SS = Supreme Court" with no explanation looks like a mistake in the data. Added an optional
+`readerNote` on an alias ruling, surfaced as the info box's detail line: "Written SS, but read as
+SC — an apparent typo. #1147 has SC/LL deal and #1150 discusses Loretta Lynch being promised a
+Supreme Court seat." The audit `reasoning` field is invisible to readers; this is the visible half.
+
+**The scoped-recount guard earned its place.** JA, WL and BC each had context-resolved occurrences
+outside the owner's lists — #1199; #1870, #3764, #4162; #36, #1220, #1556, #3383. Folded into
+scope before applying, so 8 more certified occurrences were preserved rather than deleted. That is
+the class of loss that cost 22 occurrences before the invariant existed.
+
+#1828 is now the sharpest test of the info box: CM reads Cheryl Mills and WASH reads Washington
+Free Beacon in the same drop, while CM is CodeMonkey and WASH is the Washington Post elsewhere.
+test-term-info.mjs covers 21 cases / 42 checks and runs in both halves of verify-final.
+
+**Gates:** chain replayed twice, 140/140 invariants, manifest verified, tsc clean, fresh +
+returning + info-box proofs local and live.
+
+## 2026-08-15 — Info box: off-screen fix + acronym coverage (seed 63)
+
+**The box was unreadable where it was needed most.** Absolutely positioned and centred above the
+token, so an acronym near a line end opened half outside the window, and one near the top of a
+drop opened upward into nothing. Owner: "it is mostly off screen so i cant read what it is."
+Now `fixed` (the post body sits in a <pre> with its own overflow, which clipped an absolute box no
+matter the offset) and clamped to the viewport on BOTH axes. Closes on scroll, resize and Escape.
+
+Preferring "above" and trusting that branch still failed 6 of 21 cases — the branch was chosen
+from the anchor's position, and an anchor below the fold makes "above" overflow the bottom.
+Neither branch is allowed to leave the viewport now. The test asserts the RECTANGLE, not the text:
+21 cases x 3 checks = 63.
+
+**28 entities are NAMED with an acronym and had no box at all** — POTUS (370 mentions, the most-
+mentioned entity in the archive), CNN, DARPA, MI6, SDNY, GCHQ, SCIF, ISIS, NXIVM... The builder
+only glossed aliases DIFFERING from the canonical, which is right for DOJ -> Department of Justice
+and excluded every entity actually named with its acronym, where "POTUS means POTUS" explains
+nothing. audit/acronym-definitions.json now supplies expansions: 27 defined, LORD deliberately
+left out (certified as an entity, not actually an acronym, and its 2 occurrences do not establish
+whether Q means a title, a surname or a religious address — recorded rather than guessed).
+Glossary 113 -> 140 tokens. Brackets checked: 0 bracket codes are acronyms, so nothing missing.
+
+**Standing rule, made mechanical.** Owner: "any acronyms or names that come in moving forward will
+still continue to define them as they are known." Invariant `entities-acronyms-defined` (141 total)
+fails the build if an acronym-named entity ever ships without a definition or a stated reason.
+Aliases need nothing — they resolve to a full canonical name by construction. A promise to
+remember is not a mechanism; the gate is.
+
+**Gates:** chain replayed twice, 141/141 invariants, manifest verified, tsc clean, fresh +
+returning + info-box proofs local and live.
+
+## 2026-08-15 — DAG / JB / JK / HCQ / NYC / RBG / AWAN, 74 cards (seed 64)
+
+  DAG  -> Deputy Attorney General   10 cards, resolved as the OFFICE
+  JB   -> John Brennan 8 / James Baker 1 / Jeff Bezos 1
+  JK   -> Jared Kushner 7 / John Kerry 3
+  HCQ  -> Hydroxychloroquine 7 Reference; 4 Device cards ruled NOT emphasis
+  NYC  -> New York City 11    RBG -> Ruth Bader Ginsburg 11    AWAN -> Imran Awan 11
+
+New entities: Jeff Bezos, New York City. Mentions 8,889 -> 8,959. Queue 1,816 -> 1,742.
+
+**DAG stays the office.** Owner: "resolve the abbreviation as the office/title, not automatically
+as one person." Rosenstein is the officeholder in #1990/#2135/#2943/#3004/#3062; #3210 and #3211
+span TWO officeholders (a quoted 2016 message from Sally Yates's tenure plus commentary about
+Rosenstein) and must not be collapsed. Carried as PER-POST reader notes — new `readerNotesByPost`,
+because one note for the whole ruling would be wrong on most of its own posts.
+
+**Occurrence-level scoping, new.** #1828 writes JB five times: four John Brennan, and the one
+inside "[FBI [JC][AM]…[JB][MK]…]" is James Baker. includePosts is post-level, so two rulings would
+both claim the drop and count all five twice. `includeOccurrences` addresses an occurrence by
+[line, char] — the SAME coordinates the queue row id uses. A first attempt matched whole-text
+offsets and found 0 of 4: the queue has always numbered characters within the line.
+
+**The info box now names both readings** when a drop is genuinely split, instead of staying
+silent. Silence was right while rulings were post-level; after an occurrence-level ruling it hid a
+distinction the owner had deliberately drawn.
+
+Two of my own errors, both caught by counting rather than by reading:
+  - the emphasis-resolution pattern /^emph-(4137|4282)-/ swept in 3 COVID rows in the same posts.
+    Caught because the batch totalled 77 against the owner's 74. Removed, pinned to the 4 ids.
+  - invariant rc-emphasis-complete compared the queue against the borderline TOTAL, so the first
+    four cases the owner ever answered read as four that never arrived. Completeness is
+    queued + owner-resolved; a case that left the queue by being decided is the system working.
+
+The 4 HCQ Device cards sit in the emphasis AMBIGUITY list, not the certified Emphasis set, so no
+Emphasis count moved. The withdrawal is recorded anyway, so if a later pass ever promotes those
+lines the owner's ruling suppresses them.
+
+**Gates:** chain replayed twice, 141/141 invariants, manifest verified, tsc clean, fresh +
+returning + info-box (30 cases / 90 checks) proofs local and live.
+
+## 2026-08-15 — 11 tokens, 233 cards (seed 65)
+
+  MZ  Mark Zuckerberg 11        NY  New York 18 + New York Post (#1515)
+  LL  Loretta Lynch 21          BLM Black Lives Matter 24      AUS Australia 26
+  JFK five referents: President Kennedy 14, JFK Jr (#1082), the airport (#1588),
+      Gen. John Francis Kelly (#1433 — J.F.K. are his own initials), JFK Conference Room (#709)
+  CS  CrowdStrike 2 / Christopher Steele 8 / Chuck Schumer 11 (incl. #559 on the updated ruling)
+  JC  James Comey 18 / James Clapper (#1828 [DNI [JC]], occurrence-scoped)
+  ES  Eric Schmidt 15 / Edward Snowden 6 — Q writes "ES = @Snowden" outright in #1911
+  Jack Dorsey 20; #4632 x2 NOT shorthand — Jack W. Gardner (given name) and Larry Jack Schwarz
+      (middle name), two different people occurrence-scoped inside one drop
+  PS  Peter Strzok 20 / PlayStation 3 / postscript (#15 — not an entity at all)
+
+226 resolved, 7 HELD with the owner's reasons on the card: JFK #742/#743 (the slash is doing the
+work and the slash is not explained), JC #1591 (nothing separates Comey from Clapper), JC #559 x2
+(two men, order unknown — explicitly NOT both Comey), ES #4533, PS #1380.
+
+6 new entities. Mentions 8,959 -> 9,185. Queue 1,742 -> 1,516. Glossary 153 tokens, 15 contested.
+
+Owner listed AUS as 25; the queue holds 26 because #1164 has two AUS occurrences. The ruling is
+post-level and the owner ruled the post Australia, so both resolve. Flagged rather than silently
+absorbed.
+
+STILL OPEN from this message: the 17 Censorship & Technology THEME cards (keep 6 / clear 11).
+Themes have no withdrawal path — the 17 are `ambiguous` rows, so "keep" means ADDING a theme
+assignment via themes-owner-rulings.json and "clear" means resolving the row with no data change.
+Not attempted in this batch; the entity work shipped first.
+
+## 2026-08-15 — WASH POST joined, + ABC / RE / OP (seed 66)
+
+**WASH POST is one entity now.** The owner saw three separate WASH highlights on #2401 where the
+drop writes "WASH POST" three times — half a name presented as the whole reference. The alias is
+the full two-word form (all 12 occurrences: #2401 x3, #2468, #2519 x3, #2549, #2627, #2715 x2,
+#4310), and every other WASH ruling carries notFollowedBy so a bare WASH can never claim the first
+half of it. Same shape as COVID-19 vs COVID, solved the same way. Checked corpus-wide: exactly 12
+WASH+POST pairs, and the 5 bare WASH occurrences are unaffected (#524 D.C., #1828 Free Beacon,
+#1493/#1731 still queued, #4554).
+The glossary's isShorthand test was widened to accept two-word all-caps names, or the name the
+owner had just asked to join would have been the one name with no info box.
+
+**ABC — 27 cards.** ABC News 16. CIA 2, with per-post confidence recorded where the owner drew it:
+#1806 high (the linked CIA-Amazon cloud article), #2549 medium (carried on the #1806 parallel, not
+established in that drop alone). 8 generic "alphabet agencies" glossed as notation — in #2401 the
+CIA is the linked example but the phrase stays plural, so it is not a named entity. #1379 HELD:
+"[ABC] has an interest in this…" supplies no identifying context, and the token alone is not
+evidence.
+
+**RE — 29 cards.** Rahm Emanuel in #1828 only, inside a bracketed list of Obama White House
+figures. The other 28 are the ordinary "RE:" = regarding.
+
+**OP — 30 cards.** Operation Mockingbird (#626, joined as "OP Mockingbird" on the same principle
+as WASH POST). #836 names an operation called Fiddler — glossed as that rather than invented into
+a canonical "Operation Fiddler", a name Q never writes. 27 generic "operation". #1745 is a FALSE
+MATCH: the letters sit inside "CO-OP STRATEGY".
+
+65 of the 85 cards are notation and move no count: mentions 9,185 -> 9,205. Queue 1,516 -> 1,431.
+Glossary 168 tokens.
+
+**Gates:** chain replayed twice, 141/141 invariants, manifest verified, tsc clean, fresh +
+returning + info-box proofs local and live.
+
+---
+
+## sourceSpansV2 — shadow provenance parser (SHADOW MODE, nothing applied)
+
+**Request.** Continue the Q Directives audit from the frozen point at seed 70: build
+`sourceSpansV2()` as a completely parallel shadow parser, run it against all 4,966 posts and all
+2,705 stored Directive occurrences, reconcile the page counts, and produce a downstream impact
+matrix — without touching `sourceLines()`, its 15 consumers, the invariant gate, canonical data,
+count pins, or the seed-70 Subject-theme deployment.
+
+**Built (all new, nothing modified).**
+
+    scripts/lib/sourceSpansV2.mjs              the parallel provenance parser
+    scripts/audit-source-spans-v2.mjs          fixtures + 4,966-post shadow comparison
+    scripts/audit-directives-v3-shadow.mjs     2,705-record rerun + count reconciliation
+    scripts/audit-source-spans-v2-consumers.mjs downstream impact matrix
+    scripts/audit-source-spans-v2-summary.mjs   the summary document
+    audit/source-spans-v2/                     all 10 deliverables
+
+**Why a second parser rather than a patch.** Three structural failures in `sourceLines()`:
+
+1. Its lookup unit is a LINE; the stored unit is a SENTENCE. `God bless,` and `Q` are two lines
+   and the stored Directive is one phrase, so a per-line `includes()` finds it nowhere. That
+   alone produced 19 NOT_LOCATED records.
+2. `sustained prose` inverts on Q's own long sentences. #3 is 17 telegraphic lines with two long
+   ones in the middle, and both were marked quoted — including the gold-fixture sentence
+   "Don't you think POTUS would be tweeting about removal given clear conflict."
+3. `^>` is not always a quotation. By 2020 Q uses `>` as his own bullet arrow; 192 greentext
+   lines corpus-wide had no quoted source to be excerpting from.
+
+All three need character offsets and regions, not line membership.
+
+**Results.** 75/75 span fixtures and 20/20 ruling fixtures pass. Every mandatory gold fixture
+holds: #3 is Q_BODY and not a Directive; #10 stays held; #146 keeps Directive+Religion; #147's
+reproduced "Pray." is QUOTED_PRIOR_Q_POST referencing 146; the 7 signature and 10 URL artefacts
+split into separate spans; all five #4437 records are CODE_OR_TECHNICAL_TEXT.
+
+2,366 line verdicts move, but 1,626 of those are `>>NNNNNNN` pointers that carry no analysable
+prose — the honest figure is **740 semantic changes across 181 posts**, 642 returned to Q, 86
+taken from Q, 12 held. 86 of 2,705 Directive rulings change; **all 19 NOT_LOCATED records now
+locate and none was downgraded to quoted**; NOT_LOCATED 19 → 0, AMBIGUOUS 2 → 2.
+
+**Two corrections to the handoff, both found in the data.**
+
+- The 19 NOT_LOCATED are 7 signature + **8** URL + 2 CHINA + 1 JS + **1 unlisted** (#154, a
+  three-line fragment of the Lord's Prayer) — not "9 URL".
+- The page renders **2,651** mentions, not 2,652, and there is no unexplained record. Replaying
+  `dedupePostArrays()` then `normalizeItemKey()` gives 2,705 − 50 exact duplicates − **4**
+  normalization collisions = 2,651 exactly. The handoff assumed two collisions; the two never
+  listed are #730 and #731, both "Learn." vs "LEARN!!!!". Phrase groups reconcile with no
+  correction: 1,763 − 70 folded across 57 groups = 1,693. No count pin was changed.
+
+**Two judgement calls surfaced rather than decided.** (1) A phrase in the body AND in a
+reproduced payload resolves to the body, with `alsoQuotedInPayload` recorded — reading rule 6 the
+other way would hold 17 records whose ownership is not in doubt. (2) #51's three records sit
+inside a letter signed "-The WH" and are held, not removed.
+
+**New finding, outside the brief.** 107 stored Directive records are mid-sentence fragments — the
+phrase begins part-way through a body line. Flagged in the CSV as `midSentence`, not ruled on.
+
+**Not done, deliberately.** `sourceLines()`, `audit-cross-section.mjs`, `contracts.mjs`, canonical
+Directives, count pins and certification files are all unmodified. No consumer migrated. No
+removal or split applied. No seed bump, no build, no deploy. Seed-70 Subject-theme resolutions
+untouched (themes 2,644, queue 958). Items 2–6 remain parked.
+
+Scripts verified idempotent — a second full pass reproduces all 10 artifacts byte-for-byte.
+
+---
+
+## Directives v4 — the five owner rulings applied (still SHADOW, nothing migrated)
+
+**Request.** Continue the audit after the sourceSpansV2 shadow pass and encode five owner rulings:
+R1 body wins over a reproduced payload · R2 #51 is Q-authored letter voice · R3 the "Have faith…"
+records are Directives · R4 accept the derived page figure of 2,651 · R5 repair the mid-sentence
+fragments before migration. sourceSpansV2 approved as a standalone parser; Directives migration
+explicitly NOT approved.
+
+**Built.** `scripts/audit-directives-v4-shadow.mjs`, plus `Q_BODY_LETTER_VOICE`, `sentencesOf()`
+and `sentenceContext()` in `scripts/lib/sourceSpansV2.mjs`. 90/90 span fixtures, 21/21 ruling
+fixtures. New deliverables: `directives-adjudication-v4-shadow.{csv,json}`,
+`directives-v2-to-v4-diff.csv`, `directives-migration-diff-provisional.csv`,
+`directives-mid-sentence-107-editorial-review.{csv,json}`,
+`directives-declarative-lead-candidates.{csv,json}`.
+
+**Rulings.** R1: 17 records resolve to the body carrying `alsoQuotedInPayload: true`; AMBIGUOUS is
+now reserved for in-body collisions. R2: all three #51 records are Q_AUTHORED_CURRENT_POST /
+Q_BODY_LETTER_VOICE; letter FORM no longer implies an external source. R3: all 46 have-faith
+records are KEEP — 45 Directive-only, 1 dual-classified ("Have faith in God.", #4429); `have ` was
+added to the imperative verb list, and its absence is precisely why they matched RELIGIOUS and
+failed IMPERATIVE. 128 of 2,705 rulings now differ from the frozen v2 baseline.
+
+**Three corrections the data forced.**
+
+1. **The 107 is really 6.** `startOffset > 0` and "is a fragment" are different questions — Q writes
+   whole sentences on shared lines (`List. Compare. Laugh.`, `VOTE! VOTE! VOTE!`). Measured against
+   real sentence boundaries: 101 SENTENCE_ON_SHARED_LINE, 6 MID_SENTENCE_FRAGMENT, of which 5 are
+   #4437's code. One record needs an editor: #1252#1.
+2. **Three of the four cited examples are not fragments at all.** "Push to DIVIDE is strong." (#1183),
+   "Select news members…" (#617) and "Release coming." (#566) start at offset 0. Their defect is the
+   other half of the rule — a noun/adjective leading word — which is invisible to an offset test. It
+   got its own worksheet: 26 candidates, blank ruling column, all four examples included.
+3. **#51: one record had no ruling, one ruling had no record.** #51#0 "Rest assured POTUS is
+   backed…" was not ruled on and defaults to KEEP; "God is with us." is not a stored actionRequest,
+   so its ruling is recorded as a Religion & Spirituality assignment under `nonDirectiveRulings`.
+
+**A defect in my own reporting, found and fixed.** The v3→v4 diff was wrong. v3 is derived from the
+same library the owner rulings were encoded into, so regenerating it after those changes erased the
+very movements they caused — #51 stopped being an embedded letter and its NEEDS_CONTEXT → KEEP move
+vanished from the diff. A baseline that moves when the thing it measures moves is not a baseline.
+`priorRuling` is now v2, which predates this whole build; v3 is carried as `v3Ruling` and labelled a
+derived intermediate.
+
+**BASELINE DRIFT — the ground moved mid-session.** This work was commissioned against seed 70 with a
+resolution queue of 958. At 02:40 UTC a separate certification pass landed: the manifest now reads
+**seed 71, queue 755**, certified and verifying. It was not this session — nothing here writes
+outside `audit/source-spans-v2/` and the two worksheets. `public/data/posts.json` is byte-identical
+to its pinned sha256, so every figure above stands; the Directives pin (2,705) and Themes (2,644)
+are unchanged. Any projection built on 958 is stale.
+
+**Migration diff.** `directives-migration-diff-provisional.csv`: 2,554 KEEP · 146 REMOVE · 3 HOLD ·
+2 KEEP_AND_SPLIT. 29 rows BLOCKED_PENDING_EDITORIAL — 1 fragment, 26 declarative-lead, 2 for #10.
+Not ready to run, and it says so on every row.
+
+**Counts.** Today 2,651 mentions / 1,693 groups / 1,538 posts, recomputed through the real page
+functions. If v4 were applied with holds retained: 2,505 / 1,647 / 1,466. Projection only — the page
+was not changed.
+
+**Not done.** No consumer migrated. `sourceLines()`, `audit-cross-section.mjs`, `contracts.mjs`,
+canonical Directives, count pins and certification files untouched. No seed bump, no build, no
+deploy. All 20 artifacts verified idempotent across two full passes.
+
+---
+
+## Q Directives v5 — FINAL adjudication applied locally. DEPLOY HALTED on a lane conflict.
+
+**Request.** Owner authorization to finish Q Directives: adjudicate the 26 declarative-lead
+candidates, resolve #10/#51/#1252/#4437, build V5, migrate Directives only, certify, deploy.
+
+**Done.** V5 is complete and applied to canonical artifacts and posts.json. 90/90 span fixtures,
+14/14 V5 fixtures, tsc clean, apply-directives 9/9 gates, byte-identical across two full passes.
+
+    2,705 raw stored -> 2,552 certified   (153 removed from Q Directives only)
+    rendered mentions   2,651 -> 2,498
+    phrase groups       1,693 -> 1,642
+    posts represented   1,538 -> 1,464
+
+**The 26 declarative-lead candidates**, hand-read as complete sentences in context: 19 KEEP, 7
+REMOVE (5 claim, 1 prediction, 1 quoted). Recorded with a written reason each in
+`audit/directives-declarative-lead-owner-rulings.json`. #10 both KEEP with structural evidence,
+#51 all three Q_BODY_LETTER_VOICE, #1252 KEEP with the full sentence, #4437 five REMOVE as code.
+
+**A parser gap the manual pass found.** #1359 is a whole pasted news paragraph on ONE line,
+opening and closing on quotation marks. Pass 8 needs a RUN of two long lines and pass 6's parity
+test is satisfied by a quotation that closes on its own line, so the excerpt read as Q body and
+its closing sentence was a stored Directive. New pass 7b catches it; it fires on exactly this one
+record corpus-wide.
+
+**DEPLOY HALTED — and this is one of the owner's stated stop conditions.**
+
+`audit/resolution-owner-resolved.json`, `audit/entities-owner-rulings.json` and
+`audit/resolution-owner-notes.json` were written at 12:00-12:01 UTC today, hours after the 02:40
+seed-71 certification. No script in the repo writes those three files. Another lane is mid-flight
+in the Resolution Center and Entities.
+
+Their effect on a deploy is not small: re-running the chain rebuilds the Resolution Center queue
+from 755 to 106 and entities from 1,358/9,250 to 1,447/9,713. A deploy runs the whole chain, so
+shipping Directives would have shipped and certified another lane's uncertified work under this
+migration. That is outside "finish Q Directives only", so the deploy stopped.
+
+Local state is Directives-only: `certification-manifest --verify` reports exactly three
+differences — directives 2,552, posts.json content, SEED_VERSION 72. Nothing else.
+
+**Two mistakes I made, both found and repaired.**
+
+1. A partial `rebuild-bundle.mjs` run baked the other lane's in-flight entity rulings into
+   entities.json/questions.json/evidence.json. Restored all 17 files from the pre-migration
+   snapshot and re-applied Directives alone. Verified byte-identical to the snapshot except
+   posts.json, and inside posts.json only `actionRequests`, `hasRequests`, `directiveFamilies`
+   and `directiveMeta` differ.
+2. I re-ran `apply-directives-v5-canonical.mjs`, which is not idempotent, after the migration.
+   v5 had been rebuilt over the ALREADY-MIGRATED posts, so `postNum#index` no longer meant what
+   it meant when the rulings were written — `1183#0` had stopped being "Push to DIVIDE is strong."
+   and become "Think pre vs post 2016 election.". The second run deleted three innocent
+   directives (#1183, #566, #617). Recovered in full from the pre-migration backup plus
+   `audit/directives-certified.json`, and verified back at 2,276 rows.
+
+   Three guards now make it unrepeatable: a run-once stamp on `directives-final.json`, and v4/v5
+   plus the span fixture suite all read `audit/backups/posts.pre-directives-v5.2705-153.json`
+   rather than the live cache. **Stable occurrence IDs are only stable against the array they
+   were assigned from** — that is the durable lesson.
+
+**Pins updated to the new intended values** (not to make a check pass): contracts.mjs,
+sectionInfo.ts, apply-claims.mjs, build-search-index.mjs and the three cross-section expectations.
+`audit-cross-section.mjs` still imports `sourceLines()` — only its expected Directive counts moved,
+exactly as authorized. All 14 other consumers untouched.
+
+**Not deployed. Not certified.** Seed bumped locally to 72; the manifest still reads 71.
+
+---
+
+## Recovery inspection after an interrupted turn — UNEXPECTED_CANONICAL_CHANGE. Not deployed.
+
+**Request.** The previous turn was cut off immediately after "Step 1 — preserve the unknown lane".
+Inspect disk, classify the recovery state, change nothing.
+
+**Finding: the preservation step had not started, and the tree moved underneath it anyway.**
+
+A concurrent process — not this session — worked in the same working tree between 11:52 and
+12:31 UTC. It edited `scripts/parse-reference-audit.mjs`, `apply-reference-audit.mjs`,
+`apply-entities.mjs`, `build-resolution-queue.mjs` and `build-relationships.mjs`; ran a full
+rebuild chain at 12:21 (all of `public/data` rewritten); and ran a **certification at 12:27:33**
+that stamped **seed 72** over a MIXED state: this session's Directives 2,552 together with its own
+Resolution Center queue **107** and Entities **1,447 / 9,750**. `entities.json` was rewritten again
+at 12:31:47, seconds before preservation.
+
+That certification is wrong for both lanes and was not authorised by either.
+
+**Live is untouched.** qdrops.app still serves 2,705 raw Directive occurrences, zero posts carrying
+`directiveMeta`, #4437 still holding its five scraped-code records and #1252 still showing the
+truncated "Learn the TRUTH.". Nothing was deployed.
+
+**Preserved, byte-for-byte, under `audit/preserved-lanes/2026-08-16T12-30Z/`** — 21 files with
+sha256 and mtime in `HASHES.json`, via `scripts/preserve-unknown-lane.mjs`, which refuses to
+overwrite an existing preservation. Nothing of the other lane was deleted, reverted or shipped.
+
+**The Directives work is intact:** v5 2,705 rows / 2,552 KEEP / 153 REMOVE / 0 HOLD, the 26 hand
+rulings, `directives-final.json` 2,276, owner rulings 276, spans 2,498, and the pre-migration
+corpus backup at sha `fd6acaaf3406` — identical to the posts.json sha pinned by the seed-71
+manifest.
+
+**Why the isolated worktree cannot be built.** The certified seed-71 state is only partly
+reproducible:
+
+- `public/data/` — YES. `.snapshots/20260816-075629-pre-directives-v5/` holds it and its posts.json
+  sha matches the seed-71 manifest pin exactly.
+- `audit/` and `scripts/` — NO. The certified seed-71 versions live in UNTRACKED files (142 of
+  them), so no git worktree can restore them, and the other lane has since rewritten many of the
+  same files in the same minutes as this session's edits.
+
+Per the standing instruction — if the exact seed-71 baseline cannot be reproduced, stop and report
+rather than construct an approximate one — the migration and deploy are halted here.

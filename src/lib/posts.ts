@@ -1,7 +1,8 @@
 import type { QPost, QQuestion, QTopic, QResource, PostAnalysis, AnswerStatus } from '../types'
-import { loadLocalData, mutateStore, onStoreMutated, idbGetRaw, idbSetRaw } from './localData'
+import { loadLocalData, mutateStore, onStoreMutated, idbGetRaw, idbSetRaw, SEED_VERSION } from './localData'
 import { pushPostEdit, pushQuestionAdd, pushQuestionDelete } from './sync'
-import { getAliasGroup } from './aliases'
+import { getFullAliasGroup } from './aliases'
+import { wordBoundaryPattern } from './highlightConstants'
 
 // ─── Item text normalization ──────────────────────────────────────────────────
 // One key for "the same phrase" across the whole app. What matters when grouping or
@@ -326,7 +327,7 @@ export function backfillFromText(
 ): void {
   const seen = new Set(postNums)
   const spellings = withAliases
-    ? new Set([phrase, ...getAliasGroup(phrase)])
+    ? new Set([phrase, ...getFullAliasGroup(phrase)])
     : new Set([phrase])
   for (const spelling of spellings) {
     for (const num of postsContainingPhrase(index, spelling)) {
@@ -411,7 +412,10 @@ export interface UncategorizedReport {
 export async function getUncategorizedReport(): Promise<UncategorizedReport> {
   const { posts, questions } = await loadLocalData()
   const qPostIds = new Set(questions.map(q => q.postId))
-  const cats: (keyof PostAnalysis)[] = ['claims', 'predictions', 'namedEntities', 'themes', 'impliedConclusions', 'verificationHooks', 'emphasis']
+  // impliedConclusions and verificationHooks are retired as SECTIONS (owner rulings 2026-08-14
+  // and 2026-08-15): both were filtered views of Claims — 966 and 1,926 rows, every one of them
+  // already a certified Claim. Listing them here counted the same row under three headings.
+  const cats: (keyof PostAnalysis)[] = ['claims', 'predictions', 'namedEntities', 'themes', 'emphasis']
   let highlighted = 0
   for (const p of posts) {
     const a = p.postAnalysis
@@ -456,7 +460,10 @@ export async function getUncategorizedRepeats(minPosts = 1, limit = 800): Promis
 
   // Everything already covered: analysis categories + requests + question texts (lowercased).
   const covered = new Set<string>()
-  const cats: (keyof PostAnalysis)[] = ['claims', 'predictions', 'namedEntities', 'themes', 'impliedConclusions', 'verificationHooks', 'emphasis']
+  // impliedConclusions and verificationHooks are retired as SECTIONS (owner rulings 2026-08-14
+  // and 2026-08-15): both were filtered views of Claims — 966 and 1,926 rows, every one of them
+  // already a certified Claim. Listing them here counted the same row under three headings.
+  const cats: (keyof PostAnalysis)[] = ['claims', 'predictions', 'namedEntities', 'themes', 'emphasis']
   for (const p of posts) {
     const a = p.postAnalysis
     if (a) for (const c of cats) {
@@ -758,17 +765,22 @@ const PAGE_SIZE = 50
 export async function getPosts(
   cursor?: number,
   searchText?: string,
-  direction: 'asc' | 'desc' = 'asc'
+  direction: 'asc' | 'desc' = 'asc',
+  // A JUMP is not browsing. Paging fifty at a time is right for scrolling and absurd for "take me
+  // to #4900": that is 98 sequential round trips, each one a React render, and it felt like it.
+  // The data is already in memory — loadLocalData() holds all 4,966 — so a jump asks for a big
+  // slice in one call instead.
+  pageSize: number = PAGE_SIZE,
 ): Promise<{ posts: QPost[]; nextCursor: number | null }> {
   const { posts } = await loadLocalData()           // sorted by postNum asc
   const ordered = direction === 'desc' ? [...posts].reverse() : posts
   const start = cursor ?? 0
-  let page = ordered.slice(start, start + PAGE_SIZE)
+  let page = ordered.slice(start, start + pageSize)
   if (searchText) {
     const lower = searchText.toLowerCase()
     page = page.filter(p => p.text.toLowerCase().includes(lower))
   }
-  const nextStart = start + PAGE_SIZE
+  const nextStart = start + pageSize
   return { posts: page, nextCursor: nextStart < ordered.length ? nextStart : null }
 }
 
@@ -844,9 +856,17 @@ export async function searchAllPosts(term: string, exact = false): Promise<QPost
   const dateQuery = parseDateQuery(lower)
   // Expand to the term's alias group so searching one name (e.g. "Hillary") also finds
   // posts using its other names ("Hillary Clinton", "HRC").
-  const group = [...new Set([lower, ...getAliasGroup(term).map(t => t.toLowerCase().trim())])].filter(Boolean)
+  const group = [...new Set([lower, ...getFullAliasGroup(term).map(t => t.toLowerCase().trim())])].filter(Boolean)
+  // The TYPED term stays a substring match — that is what makes a half-typed word find
+  // anything. Every OTHER spelling is word-boundary matched, because the reader never asked
+  // for it: expanding "USA" to its alias "US" as a substring matched 2,259 posts on the "us"
+  // inside because/must/trust, and the same expansion for a two-letter alias like RC would
+  // hand back 520 posts on search/force/Church. Invariant 4, on the alias-expansion path.
+  // wordBoundaryPattern rather than \b: "Q+" ends in a non-word character, so \bq+\b never
+  // matches it — the alias group that motivated this feature was the one \b broke.
+  const escape = (t: string) => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
   const matchers = group.map(t =>
-    exact ? new RegExp(`\\b${t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`) : t
+    !exact && t === lower ? t : new RegExp(wordBoundaryPattern(escape(t), t))
   )
   const { posts } = await loadLocalData()   // already sorted by postNum asc
   return posts.filter(p => {
@@ -1365,7 +1385,11 @@ async function analysisStamp(): Promise<string> {
     for (const c of ANALYSIS_CATS) items += ((p.postAnalysis as PostAnalysis | undefined)?.[c] as string[] | undefined)?.length ?? 0
     items += p.actionRequests?.length ?? 0
   }
-  return `${posts.length}:${items}:${ANALYSIS_CATS.join()}`
+  // SEED_VERSION leads, because the rest of the stamp is a COUNT and counts collide. Moving one
+  // span from Emphasis to Claim changes no total in this list, so a returning reader would keep a
+  // frequency cache describing the old classification while every other surface showed the new
+  // one. Any deliberate data change bumps SEED_VERSION, so keying on it closes that hole.
+  return `${SEED_VERSION}:${posts.length}:${items}:${ANALYSIS_CATS.join()}`
 }
 
 async function loadOrComputeAnalysisFrequency(): Promise<AnalysisCategoryFreq[]> {
@@ -1383,7 +1407,7 @@ async function loadOrComputeAnalysisFrequency(): Promise<AnalysisCategoryFreq[]>
 async function computeAnalysisFrequency(): Promise<AnalysisCategoryFreq[]> {
   const { posts } = await loadLocalData()
 
-  const groups: Record<string, { category: AnalysisCat; count: number; postNums: number[]; seen: Set<number>; originalText: string }> = {}
+  const groups: Record<string, { category: AnalysisCat; count: number; postNums: number[]; seen: Set<number>; originalText: string; certifiedPerPost: Map<number, number> }> = {}
 
   // Yield to the browser every so often. This walks ~56,000 analysis items and, run as one
   // unbroken task, it froze the page for the length of the whole computation — which is what
@@ -1417,8 +1441,12 @@ async function computeAnalysisFrequency(): Promise<AnalysisCategoryFreq[]> {
           if (/^\d+$/.test(trimmed)) continue
         }
         const key = `${cat}::${normalizeItemKey(trimmed)}`
-        if (!groups[key]) groups[key] = { category: cat, count: 0, postNums: [], seen: new Set(), originalText: trimmed }
+        if (!groups[key]) groups[key] = { category: cat, count: 0, postNums: [], seen: new Set(), originalText: trimmed, certifiedPerPost: new Map<number, number>() }
         groups[key].count++
+        // The CERTIFIED occurrence tally, kept per post so in-post repeats survive. Everything
+        // in postAnalysis is now materialised from a certified artifact, so this array IS the
+        // occurrence record — counting its entries is the whole job.
+        groups[key].certifiedPerPost.set(post.postNum, (groups[key].certifiedPerPost.get(post.postNum) ?? 0) + 1)
         // Set membership, not postNums.includes(): a chip like "POTUS" collects thousands of
         // post numbers, and re-scanning that array for every one of its items made this
         // quadratic — the single biggest cost in opening a post.
@@ -1454,7 +1482,7 @@ async function computeAnalysisFrequency(): Promise<AnalysisCategoryFreq[]> {
     // Alias spellings count: an entity chip for "HRC" legitimately covers a post that only
     // says "Hillary", so the test is whether ANY spelling appears.
     if (VERBATIM_CATS.has(g.category)) {
-      const spellings = [g.originalText, ...getAliasGroup(g.originalText)]
+      const spellings = [g.originalText, ...getFullAliasGroup(g.originalText)]
         .map(t => ` ${normalizeItemKey(t)} `)
         .filter(t => t.trim())
       g.postNums = g.postNums.filter(n => {
@@ -1463,7 +1491,15 @@ async function computeAnalysisFrequency(): Promise<AnalysisCategoryFreq[]> {
       })
     }
 
-    backfillFromText(textIndex, g.originalText, g.postNums, { withAliases: true })
+    // NO BACKFILL FOR CERTIFIED CATEGORIES.
+    //
+    // This scanned raw post text for the phrase and added every post that contained it, which
+    // re-derived section MEMBERSHIP in the browser from a certified dataset that had already
+    // decided it. Live, that turned certified Directives 2,422 into 4,529 and Claims 4,181 into
+    // 5,820: the right posts, rescanned, with occurrences invented on top.
+    //
+    // A certified section's population comes from its artifact. Grouping for display is
+    // presentation; deciding membership is certification, and the browser does not get a vote.
   }
 
   // In-post repeat counts. A name said four times in one drop counts once by post but
@@ -1471,17 +1507,12 @@ async function computeAnalysisFrequency(): Promise<AnalysisCategoryFreq[]> {
   // "26,179 occurrences" on Named Entities.
   const repeatsByGroup = new Map<string, { repeats: Record<number, number>; occurrences: number }>()
   for (const [key, g] of Object.entries(groups)) {
-    const spellings = [...new Set([g.originalText, ...getAliasGroup(g.originalText)])]
-      .map(normalizeItemKey)
-      .filter(Boolean)
     const repeats: Record<number, number> = {}
     let occurrences = 0
     for (const num of g.postNums) {
-      const text = textIndex.padded.get(num)
-      if (!text) { occurrences += 1; continue }
-      let n = 0
-      for (const sp of spellings) n += countPhraseOccurrences(text, sp)
-      n = Math.max(1, n)          // it is in postNums, so it counts at least once
+      // The certified count for this (item, post). Q wrote "Coincidence?" twice in one drop and
+      // that is two certified occurrences — repeats are real and must survive display grouping.
+      const n = g.certifiedPerPost?.get(num) ?? 1
       occurrences += n
       if (n > 1) repeats[num] = n
     }
@@ -1733,7 +1764,9 @@ export interface TermMatcher {
 
 export function makeTermMatcher(term: string): TermMatcher {
   const typed = normalizeItemKey(term)
-  const group = getAliasGroup(term).map(normalizeItemKey)
+  // BOTH registries. Using the editable map alone is what made searching "COVID-19" miss its
+  // certified aliases C19 and COVID while POTUS — a hand-typed group — worked perfectly.
+  const group = getFullAliasGroup(term).map(normalizeItemKey)
   const spellings = [...new Set([typed, ...group])].filter(Boolean)
   // Padded on both sides so a match must land on WORD boundaries. A raw substring test
   // makes "US" match "rUSsia", "mUSt", "becaUSe" and "HUSSEIN" — short terms become
@@ -1882,6 +1915,11 @@ export async function getTermMatchesInSection(term: string, section: string): Pr
   }
 
   // Mention counts, so a dense post is visible here the same way it is elsewhere.
+  //
+  // Text scanning is CORRECT here and wrong in a certified section. This function answers "where
+  // does this term appear", which is a search question about raw text. A certified section
+  // answers "what did the audit decide", and re-deriving that in the browser is what made
+  // Directives read 4,529 against a certified 2,422.
   const padded = new Map<number, string>()
   for (const p of posts) padded.set(p.postNum, ` ${normalizeItemKey(p.text ?? '')} `)
 

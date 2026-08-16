@@ -1,0 +1,509 @@
+{
+  "note": "Plain-language glosses for Q's shorthand that is NOT an entity. These never enter entities.json, never move a mention count, and never appear in the Entities section. They exist so a reader hovering RT in #220 learns it means 'real time' instead of seeing an unexplained two-letter token.",
+  "why": "The owner resolved 8 RT cards as 'real time' and 1 as 'retweet'. Both are correct answers and neither is a person, place or organization, so the queue rows close with nothing to show for them. A gloss is the display half of that answer: the reading is recorded and visible to readers without being counted as an entity.",
+  "retrieval": "Post-scoped, exactly like the alias rulings. The same token is glossed differently in different drops — RT is 'real time' in #220 and Rex Tillerson (a certified ENTITY, not a gloss) in #947 — so a gloss never applies corpus-wide.",
+  "kinds": {
+    "notation": "Shorthand, abbreviation or operational notation that stands for a concept rather than a named thing."
+  },
+  "glosses": [
+    {
+      "token": "RT",
+      "kind": "notation",
+      "meaning": "real time",
+      "detail": "Temporal/operational shorthand — something happening or being monitored as it occurs. Not a person or organization.",
+      "posts": [
+        220,
+        377,
+        892,
+        1100,
+        2708,
+        2793,
+        2990,
+        3006
+      ],
+      "ruledOn": "2026-08-15",
+      "reasoning": "Owner ruling: \"Monitored and analyzed in RT\" (#220), \"All absorbed in RT\" (#377), a contemporaneous photograph (#892), \"RT - how DC/swamp works\" (#1100), \"RT / Night crawl active\" (#2708), a proposed real-time news site and video stream (#2793), \"RT tracking\" (#2990) and \"RT data [inputs + listening/cameras/GPS]\" (#3006)."
+    },
+    {
+      "token": "RT",
+      "kind": "notation",
+      "meaning": "retweet",
+      "detail": "The Twitter verb — to repost someone else's message.",
+      "posts": [
+        1109
+      ],
+      "ruledOn": "2026-08-15",
+      "reasoning": "Owner ruling: \"How often does POTUS RT weekly address?\" is asking about retweeting, not about a person."
+    },
+    {
+      "token": "PS",
+      "kind": "notation",
+      "meaning": "postscript",
+      "posts": [
+        15
+      ],
+      "ruledOn": "2026-08-15",
+      "detail": "An ordinary postscript, not a person. It follows the closing line \"Good speed, Patriots.\" and introduces an added note.",
+      "reasoning": "Owner ruling: \"PS, Soros is targeted\" in #15 is the everyday abbreviation, not Peter Strzok."
+    },
+    {
+      "token": "ABC",
+      "kind": "notation",
+      "meaning": "alphabet agencies",
+      "posts": [
+        1876,
+        1910,
+        2306,
+        2401,
+        2700,
+        2937,
+        3389
+      ],
+      "ruledOn": "2026-08-15",
+      "detail": "Generic shorthand for the \"three-letter\" or alphabet government agencies as a group — not one named organization. In #2401 the CIA is the linked example, but the phrase stays plural.",
+      "reasoning": "Owner ruling: \"ABC agency/agencies/depts\" here is a generic expression, not ABC News and not one specific agency."
+    },
+    {
+      "token": "RE",
+      "kind": "notation",
+      "meaning": "regarding",
+      "posts": [
+        1745,
+        2165,
+        2205,
+        2211,
+        2643,
+        2984,
+        3071,
+        3178,
+        3990,
+        4310,
+        4635,
+        4802,
+        510,
+        778,
+        8
+      ],
+      "ruledOn": "2026-08-15",
+      "detail": "The everyday \"RE:\" construction — regarding, concerning. Not a person.",
+      "reasoning": "Owner ruling: all 28 of these use the ordinary RE: form. Only #1828 names a person (Rahm Emanuel)."
+    },
+    {
+      "token": "OP",
+      "kind": "notation",
+      "meaning": "operation",
+      "posts": [
+        1164,
+        1433,
+        1522,
+        1637,
+        1828,
+        1887,
+        1912,
+        1948,
+        2332,
+        2381,
+        2681,
+        2926,
+        3024,
+        365,
+        3679,
+        3680,
+        374,
+        3762,
+        3969,
+        4048,
+        436,
+        466,
+        4793,
+        753,
+        772,
+        853
+      ],
+      "ruledOn": "2026-08-15",
+      "detail": "Ordinary military/intelligence shorthand for an operation or something operational. Not a person, place or organization.",
+      "reasoning": "Owner ruling: OP does not identify an entity in these 27 occurrences; it is descriptive."
+    },
+    {
+      "token": "OP",
+      "kind": "notation",
+      "meaning": "operation — named \"Fiddler\"",
+      "posts": [
+        836
+      ],
+      "ruledOn": "2026-08-15",
+      "detail": "A specific but unnamed-in-full operation: the drop reads \"OP Name: Fiddler\". Recorded as the operation it is rather than invented into a canonical \"Operation Fiddler\", a name Q never writes.",
+      "reasoning": "Owner ruling: #836 identifies an operation called Fiddler."
+    },
+    {
+      "token": "Clinton",
+      "kind": "notation",
+      "meaning": "the Clinton family / political network",
+      "posts": [
+        4,
+        6,
+        1286,
+        2513,
+        2698,
+        3364,
+        3383,
+        4750
+      ],
+      "ruledOn": "2026-08-15",
+      "detail": "Constructions like \"the Clintons\", \"Clinton family\" or \"Clinton party\" — a family, network or faction rather than one named individual.",
+      "reasoning": "Owner ruling: not forced onto Hillary or Bill individually."
+    },
+    {
+      "token": "FED",
+      "kind": "notation",
+      "meaning": "federal (adjective)",
+      "posts": [
+        1351,
+        1355
+      ],
+      "ruledOn": "2026-08-15",
+      "detail": "Describes something as federal — \"federal indictments\", \"a federal judge\", \"federal judicial nominations\". Not a name for a separate body.",
+      "reasoning": "Owner ruling: an adjective, not an entity."
+    },
+    {
+      "token": "FED",
+      "kind": "notation",
+      "meaning": "fed (the verb)",
+      "posts": [
+        2399
+      ],
+      "ruledOn": "2026-08-15",
+      "detail": "A FALSE POSITIVE, kept on the record: \"fed a false narrative\" is the past tense of feed.",
+      "reasoning": "Owner ruling: verb, not the Federal Reserve."
+    },
+    {
+      "token": "VIP",
+      "kind": "notation",
+      "meaning": "VIP access",
+      "posts": [
+        1798,
+        1804,
+        1805
+      ],
+      "ruledOn": "2026-08-15",
+      "detail": "Modifies \"access\" or admission status — not a person or organization.",
+      "reasoning": "Owner ruling: an access level."
+    },
+    {
+      "token": "VIP",
+      "kind": "notation",
+      "meaning": "very important person (honorific)",
+      "posts": [
+        2105,
+        2240,
+        2243,
+        2302,
+        2341,
+        2400,
+        2402,
+        2404,
+        2407,
+        2408,
+        2409,
+        2410,
+        2411,
+        2412,
+        2413,
+        2414,
+        3261,
+        3265,
+        3266,
+        3267,
+        3268,
+        3269,
+        3270,
+        3271,
+        3272,
+        3273,
+        3274,
+        3280,
+        3283
+      ],
+      "ruledOn": "2026-08-15",
+      "detail": "An honorific addressed to different supporters and rally attendees — \"VIP Patriot(s)\". It means very important person, but it is not one recurring entity.",
+      "reasoning": "Owner ruling: 29 occurrences, each a different person, so not a standalone entity."
+    },
+    {
+      "token": "RC",
+      "kind": "notation",
+      "meaning": "registered charity (the Open Society Foundations in context)",
+      "posts": [
+        2
+      ],
+      "ruledOn": "2026-08-16",
+      "detail": "The Soros transfer context and contemporaneous decoding support 'registered charity.' The linked organization is the Open Society Foundations; its official description more precisely identifies the U.S. Open Society Institute as a 501(c)(3) private foundation.",
+      "reasoning": "Reference audit: clear in meaning, but not a person, place or organization."
+    },
+    {
+      "token": "NP",
+      "kind": "notation",
+      "meaning": "non-profit",
+      "posts": [
+        6
+      ],
+      "ruledOn": "2026-08-16",
+      "detail": "NP is shorthand for 'non-profit,' a generic organization type rather than a named entity.",
+      "reasoning": "Reference audit: clear in meaning, but not a person, place or organization."
+    },
+    {
+      "token": "NWO",
+      "kind": "notation",
+      "meaning": "New World Order",
+      "posts": [
+        140
+      ],
+      "ruledOn": "2026-08-16",
+      "detail": "In #140 NWO is the 'New World Order' concept/network described as being opposed or controlled by families.",
+      "reasoning": "Reference audit: clear in meaning, but not a person, place or organization."
+    },
+    {
+      "token": "WWI",
+      "kind": "notation",
+      "meaning": "World War I",
+      "posts": [
+        154,
+        1957
+      ],
+      "ruledOn": "2026-08-16",
+      "detail": "WWI is World War I, a historical event rather than an organization or person.",
+      "reasoning": "Reference audit: clear in meaning, but not a person, place or organization."
+    },
+    {
+      "token": "QMAP",
+      "kind": "notation",
+      "meaning": "Q map / research map artifact",
+      "posts": [
+        162
+      ],
+      "ruledOn": "2026-08-16",
+      "detail": "QMAP refers to a map/research artifact ('QMAP 1/2'), not a person or organization; the post does not name a particular website.",
+      "reasoning": "Reference audit: clear in meaning, but not a person, place or organization."
+    },
+    {
+      "token": "AIDS",
+      "kind": "notation",
+      "meaning": "HIV/AIDS",
+      "posts": [
+        249,
+        251,
+        252,
+        693,
+        1220
+      ],
+      "ruledOn": "2026-08-16",
+      "detail": "AIDS is the disease/health subject in these sentences, not a person, place, or organization.",
+      "reasoning": "Reference audit: clear in meaning, but not a person, place or organization."
+    },
+    {
+      "token": "BDT",
+      "kind": "notation",
+      "meaning": "Blunt & Direct Time",
+      "posts": [
+        327,
+        520,
+        534,
+        722,
+        1173
+      ],
+      "ruledOn": "2026-08-16",
+      "detail": "Q explicitly defines BDT as 'Blunt & Direct Time'; it is a notation/phrase, not an entity.",
+      "reasoning": "Reference audit: clear in meaning, but not a person, place or organization."
+    },
+    {
+      "token": "SC",
+      "kind": "notation",
+      "meaning": "secure-communications / secure-channel message prefix",
+      "posts": [
+        537
+      ],
+      "ruledOn": "2026-08-16",
+      "detail": "The five 'SC:' lines immediately follow 'SAFE COMMS - VITAL' and a discussion of message control, delivery, and receipt. They function as a secure-communications prefix, not Supreme Court, Special Counsel, or Sara Carter.",
+      "reasoning": "Reference audit: clear in meaning, but not a person, place or organization."
+    },
+    {
+      "token": "MIL",
+      "kind": "notation",
+      "meaning": "military intelligence",
+      "posts": [
+        553,
+        1318,
+        1661,
+        2561,
+        2937
+      ],
+      "ruledOn": "2026-08-16",
+      "detail": "MIL is explicitly part of 'MIL INTEL,' meaning military intelligence rather than one uniquely named agency.",
+      "reasoning": "Reference audit: clear in meaning, but not a person, place or organization."
+    },
+    {
+      "token": "NWO",
+      "kind": "notation",
+      "meaning": "'Nazi World Order' / Nazi order (Q-defined usage)",
+      "posts": [
+        936
+      ],
+      "ruledOn": "2026-08-16",
+      "detail": "The post explicitly says N does not mean 'New' and supplies 'The Nazi order.'",
+      "reasoning": "Reference audit: clear in meaning, but not a person, place or organization."
+    },
+    {
+      "token": "SR",
+      "kind": "notation",
+      "meaning": "senior staffer",
+      "posts": [
+        1573
+      ],
+      "ruledOn": "2026-08-16",
+      "detail": "The source itself says 'SR Staffer,' where SR is shorthand for senior, not initials for a named person.",
+      "reasoning": "Reference audit: clear in meaning, but not a person, place or organization."
+    },
+    {
+      "token": "DS",
+      "kind": "notation",
+      "meaning": "Deep State",
+      "posts": [
+        1682,
+        2206,
+        2381,
+        2397,
+        2540,
+        2707,
+        2876,
+        3992
+      ],
+      "ruledOn": "2026-08-16",
+      "detail": "DS is shorthand for the 'Deep State' concept/network, not one uniquely bounded organization.",
+      "reasoning": "Reference audit: clear in meaning, but not a person, place or organization."
+    },
+    {
+      "token": "SP",
+      "kind": "notation",
+      "meaning": "share/stock price",
+      "posts": [
+        1796
+      ],
+      "ruledOn": "2026-08-16",
+      "detail": "In the fake-user-growth sentence, SP is a price/market metric rather than a person or organization.",
+      "reasoning": "Reference audit: clear in meaning, but not a person, place or organization."
+    },
+    {
+      "token": "CLOWN",
+      "kind": "notation",
+      "meaning": "CIA operation",
+      "posts": [
+        1948
+      ],
+      "ruledOn": "2026-08-16",
+      "detail": "'CLOWN OP' uses clown as CIA wordplay, but it names only a generic CIA operation, not one identified operation.",
+      "reasoning": "Reference audit: clear in meaning, but not a person, place or organization."
+    },
+    {
+      "token": "SCJ",
+      "kind": "notation",
+      "meaning": "Supreme Court justice",
+      "posts": [
+        2358
+      ],
+      "ruledOn": "2026-08-16",
+      "detail": "SCJ is the generic role 'Supreme Court justice'; no individual justice is identified by this token alone.",
+      "reasoning": "Reference audit: clear in meaning, but not a person, place or organization."
+    },
+    {
+      "token": "PEPE",
+      "kind": "notation",
+      "meaning": "Pepe the Frog meme",
+      "posts": [
+        2599
+      ],
+      "ruledOn": "2026-08-16",
+      "detail": "PEPE is the Pepe the Frog meme/character, not a real person or organization.",
+      "reasoning": "Reference audit: clear in meaning, but not a person, place or organization."
+    },
+    {
+      "token": "SR",
+      "kind": "notation",
+      "meaning": "senior",
+      "posts": [
+        2658
+      ],
+      "ruledOn": "2026-08-16",
+      "detail": "The explicit SR+MID+LOW hierarchy uses SR as 'senior.'",
+      "reasoning": "Reference audit: clear in meaning, but not a person, place or organization."
+    },
+    {
+      "token": "EM",
+      "kind": "notation",
+      "meaning": "national emergency",
+      "posts": [
+        2734
+      ],
+      "ruledOn": "2026-08-16",
+      "detail": "'NAT EM' is shorthand for national emergency, not initials for a person.",
+      "reasoning": "Reference audit: clear in meaning, but not a person, place or organization."
+    },
+    {
+      "token": "DL",
+      "kind": "notation",
+      "meaning": "driver's license",
+      "posts": [
+        2754
+      ],
+      "ruledOn": "2026-08-16",
+      "detail": "The sentence itself expands DL through repeated references to driver's licenses.",
+      "reasoning": "Reference audit: clear in meaning, but not a person, place or organization."
+    },
+    {
+      "token": "DL",
+      "kind": "notation",
+      "meaning": "download",
+      "posts": [
+        3764,
+        3841,
+        4016,
+        4153
+      ],
+      "ruledOn": "2026-08-16",
+      "detail": "The internal-transfer/speed context uses DL as 'download,' not as a person or organization.",
+      "reasoning": "Reference audit: clear in meaning, but not a person, place or organization."
+    },
+    {
+      "token": "DA",
+      "kind": "notation",
+      "meaning": "district attorney",
+      "posts": [
+        4699,
+        4766
+      ],
+      "ruledOn": "2026-08-16",
+      "detail": "DA is the generic office/title 'district attorney'; the row does not identify one specific DA.",
+      "reasoning": "Reference audit: clear in meaning, but not a person, place or organization."
+    },
+    {
+      "token": "MIL",
+      "kind": "notation",
+      "meaning": "military aid/funding",
+      "posts": [
+        4750
+      ],
+      "ruledOn": "2026-08-16",
+      "detail": "MIL is one item in an overseas-spending category list (AID, MIL, CLIMATE), not an entity name.",
+      "reasoning": "Reference audit: clear in meaning, but not a person, place or organization."
+    },
+    {
+      "token": "DELTA",
+      "kind": "notation",
+      "posts": [
+        2774
+      ],
+      "ruledOn": "2026-08-16",
+      "meaning": "zero-minute or same-displayed-time Q/POTUS posting interval",
+      "detail": "Timing notation, not a person, place, organization or operational codename. \"(3)\" counts the third such match reported that day. #2567 states the concept outright as \"Q/POTUS Twitter 0 Delta Exchanges\", and #2775 answers \"3 [0] Deltas today sir\". Q adds that the drops came JUST PRIOR to POTUS, so this is a same-displayed-timestamp claim, not proof of identical seconds. The posts present the matches as evidence of coordination — that is the CLAIM being recorded, not a verified fact.",
+      "reasoning": "Owner ruling: RESOLVED_NON_ENTITY. Scoped to #2774 only. The \"Q, DELTA\" sign-offs (#756, #757, #785), \"DELTA [6] CONF.\" (#804) and Delta Air Lines (#1176) are separate occurrences and are untouched."
+    }
+  ]
+}

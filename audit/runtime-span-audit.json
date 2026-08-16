@@ -1,0 +1,3164 @@
+{
+ "note": "Every span measured against the RUNTIME body (seed-time entity decoding + markup stripping), not the raw posts.json representation.",
+ "byLayer": {
+  "evidence": {
+   "CERTIFIED_VALUE_ALREADY_MATCHES_RUNTIME": 5208,
+   "HTML_ENTITY_RECOVERY_WRONG_FOR_RUNTIME": 0,
+   "WHITESPACE_RECOVERY_STILL_REQUIRED": 109,
+   "BOTH_NORMALIZATIONS_REQUIRED": 2,
+   "STILL_UNRESOLVED": 0
+  },
+  "questions": {
+   "CERTIFIED_VALUE_ALREADY_MATCHES_RUNTIME": 6440,
+   "HTML_ENTITY_RECOVERY_WRONG_FOR_RUNTIME": 0,
+   "WHITESPACE_RECOVERY_STILL_REQUIRED": 2,
+   "BOTH_NORMALIZATIONS_REQUIRED": 0,
+   "STILL_UNRESOLVED": 0
+  },
+  "claims": {
+   "CERTIFIED_VALUE_ALREADY_MATCHES_RUNTIME": 4041,
+   "HTML_ENTITY_RECOVERY_WRONG_FOR_RUNTIME": 0,
+   "WHITESPACE_RECOVERY_STILL_REQUIRED": 140,
+   "BOTH_NORMALIZATIONS_REQUIRED": 0,
+   "STILL_UNRESOLVED": 0
+  },
+  "predictions": {
+   "CERTIFIED_VALUE_ALREADY_MATCHES_RUNTIME": 625,
+   "HTML_ENTITY_RECOVERY_WRONG_FOR_RUNTIME": 0,
+   "WHITESPACE_RECOVERY_STILL_REQUIRED": 5,
+   "BOTH_NORMALIZATIONS_REQUIRED": 0,
+   "STILL_UNRESOLVED": 0
+  },
+  "checkable": {
+   "CERTIFIED_VALUE_ALREADY_MATCHES_RUNTIME": 1797,
+   "HTML_ENTITY_RECOVERY_WRONG_FOR_RUNTIME": 0,
+   "WHITESPACE_RECOVERY_STILL_REQUIRED": 129,
+   "BOTH_NORMALIZATIONS_REQUIRED": 0,
+   "STILL_UNRESOLVED": 0
+  },
+  "themeAnchors": {
+   "CERTIFIED_VALUE_ALREADY_MATCHES_RUNTIME": 1478,
+   "HTML_ENTITY_RECOVERY_WRONG_FOR_RUNTIME": 0,
+   "WHITESPACE_RECOVERY_STILL_REQUIRED": 0,
+   "BOTH_NORMALIZATIONS_REQUIRED": 0,
+   "STILL_UNRESOLVED": 0
+  },
+  "directives": {
+   "CERTIFIED_VALUE_ALREADY_MATCHES_RUNTIME": 2403,
+   "HTML_ENTITY_RECOVERY_WRONG_FOR_RUNTIME": 0,
+   "WHITESPACE_RECOVERY_STILL_REQUIRED": 0,
+   "BOTH_NORMALIZATIONS_REQUIRED": 19,
+   "STILL_UNRESOLVED": 0
+  },
+  "conclusions": {
+   "CERTIFIED_VALUE_ALREADY_MATCHES_RUNTIME": 932,
+   "HTML_ENTITY_RECOVERY_WRONG_FOR_RUNTIME": 0,
+   "WHITESPACE_RECOVERY_STILL_REQUIRED": 34,
+   "BOTH_NORMALIZATIONS_REQUIRED": 0,
+   "STILL_UNRESOLVED": 0
+  },
+  "context": {
+   "CERTIFIED_VALUE_ALREADY_MATCHES_RUNTIME": 4893,
+   "HTML_ENTITY_RECOVERY_WRONG_FOR_RUNTIME": 0,
+   "WHITESPACE_RECOVERY_STILL_REQUIRED": 0,
+   "BOTH_NORMALIZATIONS_REQUIRED": 0,
+   "STILL_UNRESOLVED": 0
+  },
+  "emphasis": {
+   "CERTIFIED_VALUE_ALREADY_MATCHES_RUNTIME": 7307,
+   "HTML_ENTITY_RECOVERY_WRONG_FOR_RUNTIME": 0,
+   "WHITESPACE_RECOVERY_STILL_REQUIRED": 0,
+   "BOTH_NORMALIZATIONS_REQUIRED": 1,
+   "STILL_UNRESOLVED": 0
+  }
+ },
+ "detail": [
+  {
+   "layer": "evidence",
+   "postNum": 1005,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.youtube.com/watch?v=xW2ijF2ya1c",
+   "recovered": "https:// www.youtube.com/watch?v=xW2ijF2ya1c"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1036,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://m.youtube.com/watch?feature=youtu.be&v=xW2ijF2ya1c",
+   "recovered": "https:// m.youtube.com/watch?feature=youtu.be&v=xW2ijF2ya1c"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1039,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.nytimes.com/2018/04/06/opinion/qanon-trump-conspiracy-theory.html",
+   "recovered": "https:// www.nytimes.com/2018/04/06/opinion/qanon-trump-conspiracy-theory.html"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1041,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.foxnews.com/us/2018/04/06/disturbing-string-aircraft-crashes-in-2018-continues-deadly-tre",
+   "recovered": "http:// www.foxnews.com/us/2018/04/06/disturbing-string-aircraft-crashes-in-2018-continues-deadly-tr"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1061,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.cnn.com/2018/03/31/politics/roseanne-barr-conspiracy-tweets/index.html",
+   "recovered": "https:// www.cnn.com/2018/03/31/politics/roseanne-barr-conspiracy-tweets/index.html"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1065,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.instagram.com/p/b7-nofzf6_/?hl=en&taken-by=ray.chandler",
+   "recovered": "https:// www.instagram.com/p/b7-nofzf6_/?hl=en&taken-by=ray.chandler"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1068,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.foxnews.com/us/2018/04/07/2-soldiers-killed-in-helicopter-crash-at-fort-campbell.html",
+   "recovered": "http:// www.foxnews.com/us/2018/04/07/2-soldiers-killed-in-helicopter-crash-at-fort-campbell.html"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1073,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://twitter.com/WhiteHouse/status/982619755537367040",
+   "recovered": "https:// twitter.com/WhiteHouse/status/982619755537367040"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1074,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.cnn.com/2018/04/06/politics/joseph-schmitz-trump-adviser-clinton-emails/index.html",
+   "recovered": "https:// www.cnn.com/2018/04/06/politics/joseph-schmitz-trump-adviser-clinton-emails/index.html"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1083,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.cia.gov/library/readingroom/docs/DOC_0006687262.pdf",
+   "recovered": "https:// www.cia.gov/library/readingroom/docs/DOC_0006687262.pdf"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1085,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.wsj.com/articles/north-korea-ready-to-discuss-denuclearization-u-s-officials-say-1523213",
+   "recovered": "https:// www.wsj.com/articles/north-korea-ready-to-discuss-denuclearization-u-s-officials-say-152321"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1091,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.politico.com/blogs/laurarozen/1209/Report_Blackwater_CEO_Eric_Prince_was_CIA_asset.html",
+   "recovered": "https:// www.politico.com/blogs/laurarozen/1209/Report_Blackwater_CEO_Eric_Prince_was_CIA_asset.html"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1093,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://m.youtube.com/watch?v=G2qIXXafxCQ",
+   "recovered": "https:// m.youtube.com/watch?v=G2qIXXafxCQ"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1095,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://mobile.twitter.com/SoccerMouaz?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor",
+   "recovered": "https:// mobile.twitter.com/SoccerMouaz?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1109,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://twitter.com/realDonaldTrump/status/983423715332558848",
+   "recovered": "https:// twitter.com/realDonaldTrump/status/983423715332558848"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1115,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.nytimes.com/2018/04/07/nyregion/trump-tower-fire.html",
+   "recovered": "https:// www.nytimes.com/2018/04/07/nyregion/trump-tower-fire.html"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1117,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.nytimes.com/2014/04/09/business/international/chinas-embrace-of-foreign-cars.html",
+   "recovered": "https:// www.nytimes.com/2014/04/09/business/international/chinas-embrace-of-foreign-cars.html"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1125,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://mobile.twitter.com/SaraCarterDC/status/984145872241020929",
+   "recovered": "https:// mobile.twitter.com/SaraCarterDC/status/984145872241020929"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1125,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.nytimes.com/2018/04/11/us/politics/ezra-cohen-watnick-justice-department-national-securi",
+   "recovered": "https:// www.nytimes.com/2018/04/11/us/politics/ezra-cohen-watnick-justice-department-national-secur"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1125,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://mobile.twitter.com/realDonaldTrump/status/984022625440747520",
+   "recovered": "https:// mobile.twitter.com/realDonaldTrump/status/984022625440747520"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1129,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://thehill.com/homenews/administration/382714-clinton-advised-pompeo-to-stop-the-purge-of-state-",
+   "recovered": "http:// thehill.com/homenews/administration/382714-clinton-advised-pompeo-to-stop-the-purge-of-state"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1129,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://thehill.com/homenews/administration/382765-pompeo-failed-to-disclose-ownership-in-business-co",
+   "recovered": "http:// thehill.com/homenews/administration/382765-pompeo-failed-to-disclose-ownership-in-business-c"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1134,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.washingtonpost.com/blogs/plum-line/wp/2018/04/09/the-crisis-in-journalism-thats-helping-",
+   "recovered": "https:// www.washingtonpost.com/blogs/plum-line/wp/2018/04/09/the-crisis-in-journalism-thats-helping"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1138,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.reuters.com/article/us-usa-congress-sextrafficking/trump-signs-law-to-punish-websites-fo",
+   "recovered": "https:// www.reuters.com/article/us-usa-congress-sextrafficking/trump-signs-law-to-punish-websites-f"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1142,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.cnn.com/2018/04/12/politics/rod-rosenstein-white-house-effort/index.html",
+   "recovered": "https:// www.cnn.com/2018/04/12/politics/rod-rosenstein-white-house-effort/index.html"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1163,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.gpo.gov/fdsys/pkg/GPO-CHRG-GINSBURG/pdf/GPO-CHRG-GINSBURG-2-4-3-12.pdf",
+   "recovered": "https:// www.gpo.gov/fdsys/pkg/GPO-CHRG-GINSBURG/pdf/GPO-CHRG-GINSBURG-2-4-3-12.pdf"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1168,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.iqt.org/portfolio/",
+   "recovered": "https:// www.iqt.org/portfolio/"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1179,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://nypost.com/2017/08/05/sessions-investigating-slush-fund-used-by-left-wing-groups/",
+   "recovered": "https:// nypost.com/2017/08/05/sessions-investigating-slush-fund-used-by-left-wing-groups/"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1184,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.c-span.org/video/?444272-1/democrats-back-farm-bill-leader-pelosi",
+   "recovered": "https:// www.c-span.org/video/?444272-1/democrats-back-farm-bill-leader-pelosi"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1199,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.foxnews.com/politics/2018/04/20/democratic-party-files-federal-lawsuit-alleging-conspirac",
+   "recovered": "http:// www.foxnews.com/politics/2018/04/20/democratic-party-files-federal-lawsuit-alleging-conspira"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1208,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.wehoville.com/2018/04/12/west-hollywoodss-mariah-sunshine-coogan-identified-victim-scott",
+   "recovered": "https:// www.wehoville.com/2018/04/12/west-hollywoodss-mariah-sunshine-coogan-identified-victim-scot"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1211,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://newyork.cbslocal.com/2016/09/28/agnes-nixon-soap-operas/",
+   "recovered": "http:// newyork.cbslocal.com/2016/09/28/agnes-nixon-soap-operas/"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1217,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://wikileaks.org/podesta-emails/emailid/7524",
+   "recovered": "https:// wikileaks.org/podesta-emails/emailid/7524"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1220,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://clintonhealthaccess.org",
+   "recovered": "https:// clintonhealthaccess.org"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1220,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://wikileaks.org/podesta-emails/emailid/24440",
+   "recovered": "https:// wikileaks.org/podesta-emails/emailid/24440"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1221,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://twitter.com/wikileaks/status/987724899614674944",
+   "recovered": "https:// twitter.com/wikileaks/status/987724899614674944"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1235,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://thehill.com/blogs/pundits-blog/presidential-campaign/292310-huma-abedins-ties-to-the-muslim-b",
+   "recovered": "http:// thehill.com/blogs/pundits-blog/presidential-campaign/292310-huma-abedins-ties-to-the-muslim-"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1235,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://harvardmuslimalumni.org/about",
+   "recovered": "http:// harvardmuslimalumni.org/about"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1237,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://clarionproject.org/muslim_brotherhood_explanatory_memorandum/",
+   "recovered": "https:// clarionproject.org/muslim_brotherhood_explanatory_memorandum/"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1238,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://video.foxnews.com/v/5774707105001/?#sp=show-clips",
+   "recovered": "http:// video.foxnews.com/v/5774707105001/?#sp=show-clips"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1239,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.washingtonpost.com/politics/decision2012/al-gore-has-thrived-as-green-tech-investor/2012",
+   "recovered": "https:// www.washingtonpost.com/politics/decision2012/al-gore-has-thrived-as-green-tech-investor/201"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1240,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://m.youtube.com/watch?v=JDVT-8tUfiE",
+   "recovered": "https:// m.youtube.com/watch?v=JDVT-8tUfiE"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1242,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.aljazeera.com/amp/news/2018/04/armenia-prime-minister-serzh-sargsyan-resigns-protests-18",
+   "recovered": "https:// www.aljazeera.com/amp/news/2018/04/armenia-prime-minister-serzh-sargsyan-resigns-protests-1"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1247,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.un.org/en/auditors/board/faq.shtml",
+   "recovered": "http:// www.un.org/en/auditors/board/faq.shtml"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1248,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.npr.org/2016/06/16/482020436/senators-report-finds-fundamental-concerns-about-red-cross-",
+   "recovered": "https:// www.npr.org/2016/06/16/482020436/senators-report-finds-fundamental-concerns-about-red-cross"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1250,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.congress.gov/bill/112th-congress/house-bill/5734/text",
+   "recovered": "https:// www.congress.gov/bill/112th-congress/house-bill/5734/text"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1250,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.congress.gov/bill/112th-congress/house-bill/1699",
+   "recovered": "https:// www.congress.gov/bill/112th-congress/house-bill/1699"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1250,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.govtrack.us/congress/bills/112/hr285",
+   "recovered": "https:// www.govtrack.us/congress/bills/112/hr285"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1250,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.theguardian.com/global-development/poverty-matters/2011/jul/11/us-aid-to-pakistan",
+   "recovered": "https:// www.theguardian.com/global-development/poverty-matters/2011/jul/11/us-aid-to-pakistan"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1251,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://m.youtube.com/watch?v=G2qIXXafxCQ",
+   "recovered": "https:// m.youtube.com/watch?v=G2qIXXafxCQ"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1253,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.grassley.senate.gov/news/news-releases/grassley-refers-planned-parenthood-fetal-tissue-p",
+   "recovered": "https:// www.grassley.senate.gov/news/news-releases/grassley-refers-planned-parenthood-fetal-tissue-"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1253,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.foxnews.com/politics/2017/12/07/planned-parenthood-under-investigation-by-justice-departm",
+   "recovered": "http:// www.foxnews.com/politics/2017/12/07/planned-parenthood-under-investigation-by-justice-depart"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1261,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.nbcnews.com/news/us-news/after-toronto-attack-online-misogynists-praise-suspect-new-sain",
+   "recovered": "https:// www.nbcnews.com/news/us-news/after-toronto-attack-online-misogynists-praise-suspect-new-sai"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1261,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.foxnews.com/politics/2018/04/25/reparations-income-handouts-guaranteed-jobs-dems-tilt-har",
+   "recovered": "http:// www.foxnews.com/politics/2018/04/25/reparations-income-handouts-guaranteed-jobs-dems-tilt-ha"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 179,
+   "verdict": "BOTH_NORMALIZATIONS_REQUIRED",
+   "certified": ">>150398185",
+   "recovered": null
+  },
+  {
+   "layer": "evidence",
+   "postNum": 58,
+   "verdict": "BOTH_NORMALIZATIONS_REQUIRED",
+   "certified": ">>147661217",
+   "recovered": null
+  },
+  {
+   "layer": "evidence",
+   "postNum": 676,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.fbi.gov/about/leadership-and-structure/fbi-executives/carl-ghattas",
+   "recovered": "https:// www.fbi.gov/about/leadership-and-structure/fbi-executives/carl-ghattas"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 709,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.cia.gov/kids-page/games/break-the-code/code-1.html",
+   "recovered": "https:// www.cia.gov/kids-page/games/break-the-code/code-1.html"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 715,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.globaleaks.org",
+   "recovered": "https:// www.globaleaks.org"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 716,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.google.com/amp/s/www.wired.com/2010/07/exclusive-google-cia/amp/",
+   "recovered": "https:// www.google.com/amp/s/www.wired.com/2010/07/exclusive-google-cia/amp/"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 746,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://en.wikipedia.org/wiki/Mike_Wallace",
+   "recovered": "https:// en.wikipedia.org/wiki/Mike_Wallace"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 747,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.encyclopedia.com/humanities/applied-and-social-sciences-magazines/slave-gardens",
+   "recovered": "http:// www.encyclopedia.com/humanities/applied-and-social-sciences-magazines/slave-gardens"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 805,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.archives.gov/files/research/jfk/releases/docid-32403785.pdf",
+   "recovered": "https:// www.archives.gov/files/research/jfk/releases/docid-32403785.pdf"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 805,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.intelligence.senate.gov/sites/default/files/hearings/ciasuseofjournal00unit.pdf",
+   "recovered": "https:// www.intelligence.senate.gov/sites/default/files/hearings/ciasuseofjournal00unit.pdf"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 816,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.courant.com/news/connecticut/hc-sandy-hook-shooting-two-years-later-20141214-story.html",
+   "recovered": "http:// www.courant.com/news/connecticut/hc-sandy-hook-shooting-two-years-later-20141214-story.html"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 841,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://about.att.com/story/consumers_need_an_internet_bill_of_rights.html",
+   "recovered": "http:// about.att.com/story/consumers_need_an_internet_bill_of_rights.html"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 850,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.cia.gov/library/readingroom/docs/CIA-RDP80-00810A004000690005-7.pdf",
+   "recovered": "https:// www.cia.gov/library/readingroom/docs/CIA-RDP80-00810A004000690005-7.pdf"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 851,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.cia.gov/library/readingroom/docs/CIA-RDP90-00845R000100170004-5.pdf",
+   "recovered": "https:// www.cia.gov/library/readingroom/docs/CIA-RDP90-00845R000100170004-5.pdf"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 857,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://mobile.reuters.com/article/amp/idUSKBN1GH2SM?__twitter_impression=true",
+   "recovered": "https:// mobile.reuters.com/article/amp/idUSKBN1GH2SM?__twitter_impression=true"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 866,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://wikileaks.org/clinton-emails/emailid/629",
+   "recovered": "https:// wikileaks.org/clinton-emails/emailid/629"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 867,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://wikileaks.org/clinton-emails/emailid/3672",
+   "recovered": "https:// wikileaks.org/clinton-emails/emailid/3672"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 881,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://ytcropper.com/cropped/We5aa1b3278dd0a",
+   "recovered": "http:// ytcropper.com/cropped/We5aa1b3278dd0a"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 927,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://m.youtube.com/watch?v=aBv8kqKck6E&sns=em",
+   "recovered": "https:// m.youtube.com/watch?v=aBv8kqKck6E&sns=em"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 960,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.cc.com/episodes/drc1ue/the-opposition-with-jordan-klepper-march-20–2018—of-montreal-seaso",
+   "recovered": "http:// www.cc.com/episodes/drc1ue/the-opposition-with-jordan-klepper-march-20–2018—of-montreal-seas"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 972,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.foxnews.com/politics/2018/03/28/doj-inspector-general-investigates-alleged-fisa-abuses-by",
+   "recovered": "http:// www.foxnews.com/politics/2018/03/28/doj-inspector-general-investigates-alleged-fisa-abuses-b"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 972,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.foxnews.com/us/2018/03/27/nxivm-cult-leader-coerced-women-into-sex-branded-initials-on-hi",
+   "recovered": "http:// www.foxnews.com/us/2018/03/27/nxivm-cult-leader-coerced-women-into-sex-branded-initials-on-h"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 976,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.foxnews.com/politics/2018/03/28/documents-suggest-possible-coordination-between-cia-fbi-o",
+   "recovered": "http:// www.foxnews.com/politics/2018/03/28/documents-suggest-possible-coordination-between-cia-fbi-"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 982,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.nationalreview.com/2018/03/russia-collusion-real-story-hillary-clinton-dnc-fbi-media/",
+   "recovered": "https:// www.nationalreview.com/2018/03/russia-collusion-real-story-hillary-clinton-dnc-fbi-media/"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 986,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.breitbart.com/big-government/2018/03/31/turley-sessions-using-utah-federal-prosecutor-muc",
+   "recovered": "http:// www.breitbart.com/big-government/2018/03/31/turley-sessions-using-utah-federal-prosecutor-mu"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 987,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.justice.gov/usam/usam-1-7000-media-relations",
+   "recovered": "https:// www.justice.gov/usam/usam-1-7000-media-relations"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1369,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a desig",
+   "recovered": "But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a desig"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 154,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Our Father who art in heaven, Hallowed be thy name.",
+   "recovered": "Our Father who art in heaven,\nHallowed be thy name."
+  },
+  {
+   "layer": "evidence",
+   "postNum": 154,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Thy will be done on earth as it is in heaven.",
+   "recovered": "Thy will be done\non earth as it is in heaven."
+  },
+  {
+   "layer": "evidence",
+   "postNum": 154,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "and lead us not into temptation, but deliver us from evil.",
+   "recovered": "and lead us not into temptation,\nbut deliver us from evil."
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1553,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Attorney John Huber is investigating claims of FBI and DOJ misconduct related to these actions, noti",
+   "recovered": "Attorney John Huber is investigating claims of FBI and DOJ misconduct related to these actions, noti"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1553,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "He has reviewed this report and, based on its findings and his own investigation, will provide recom",
+   "recovered": "He has reviewed this report and, based on its findings and his own investigation, will provide recom"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1764,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": ">Former Director of NCTC https://www.mccaininstitute.org/staff/nicholas-rasmussen/",
+   "recovered": ">Former Director of NCTC\nhttps://www.mccaininstitute.org/staff/nicholas-rasmussen/"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 1939,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "\"This is the case with Halper, who is now proven to be a spy, possibly with (Australian Ambassador) ",
+   "recovered": "\"This is the case with Halper, who is now proven to be a spy, possibly with (Australian Ambassador) "
+  },
+  {
+   "layer": "evidence",
+   "postNum": 2177,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "(1) conceal violations of law, inefficiency, or administrative error; (2) prevent embarrassment to a",
+   "recovered": "(1) conceal violations of law, inefficiency, or administrative error;\n(2) prevent embarrassment to a"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 2207,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "(1) conceal violations of law, inefficiency, or administrative error; (2) prevent embarrassment to a",
+   "recovered": "(1) conceal violations of law, inefficiency, or administrative error;\n(2) prevent embarrassment to a"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 2211,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "App.), those that are Presidentially-appointed/Senate Confirmed and those that are appointed by agen",
+   "recovered": "App.), those that are Presidentially-appointed/Senate Confirmed and those that are appointed by agen"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 2501,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "(1) conceal violations of law, inefficiency, or administrative error; (2) prevent embarrassment to a",
+   "recovered": "(1) conceal violations of law, inefficiency, or administrative error;\n(2) prevent embarrassment to a"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 2912,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Let’s follow discredited Michael Cohen…..\" https://twitter.com/realDonaldTrump/status/11014738993578",
+   "recovered": "Let’s follow discredited Michael Cohen…..\"\nhttps://twitter.com/realDonaldTrump/status/11014738993578"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 2943,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "(i) any links and/or coordination between the Russian government and individuals associated with the",
+   "recovered": "(i) any links and/or coordination between the Russian government and individuals associated with the"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 2971,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "\"the study finds little evidence of overt discrimination\" synonyms:\t[proof], confirmation, verificat",
+   "recovered": "\"the study finds little evidence of overt discrimination\"\nsynonyms:\t[proof], confirmation, verificat"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 2971,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "\"you will be asked to give proof of your identity\" synonyms:\tevidence, verification, corroboration, ",
+   "recovered": "\"you will be asked to give proof of your identity\"\nsynonyms:\tevidence, verification, corroboration, "
+  },
+  {
+   "layer": "evidence",
+   "postNum": 3325,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "synonyms:\ttraitor, defector, deserter, turncoat, betrayer; adjective: renegade",
+   "recovered": "synonyms:\ttraitor, defector, deserter, turncoat, betrayer;\nadjective: renegade"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 3583,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "He did not have his updated phone number.\" - Q https://www.dailymail.co.uk/news/article-7597821/Trum",
+   "recovered": "He did not have his updated phone number.\" - Q\nhttps://www.dailymail.co.uk/news/article-7597821/Trum"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 3634,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": ">DF Chinese spy_insert 20+ years https://www.usatoday.com/story/news/politics/onpolitics/2018/08/04/",
+   "recovered": ">DF Chinese spy_insert 20+ years\nhttps://www.usatoday.com/story/news/politics/onpolitics/2018/08/04/"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 3634,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": ">Awan IT scandal https://www.foxnews.com/opinion/democrats-it-scandal-set-to-explode-with-possible-p",
+   "recovered": ">Awan IT scandal\nhttps://www.foxnews.com/opinion/democrats-it-scandal-set-to-explode-with-possible-p"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 3634,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": ">Omar paid [F] agent https://www.thegatewaypundit.com/2019/11/ilhan-omar-accused-of-being-a-paid-age",
+   "recovered": ">Omar paid [F] agent\nhttps://www.thegatewaypundit.com/2019/11/ilhan-omar-accused-of-being-a-paid-age"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 3634,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": ">Clinton server > China relay https://gohmert.house.gov/news/documentsingle.aspx?DocumentID=398652",
+   "recovered": ">Clinton server > China relay\nhttps://gohmert.house.gov/news/documentsingle.aspx?DocumentID=398652"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 3638,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Whoever knowingly or willfully advocates, abets, advises, or teaches the duty, necessity, desirabili",
+   "recovered": "Whoever knowingly or willfully advocates, abets, advises, or teaches the duty, necessity, desirabili"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 4008,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": ">Insurgency, however, can and will flourish in the modern environment.",
+   "recovered": ">Insurgency, however, can and will flourish in the\nmodern environment."
+  },
+  {
+   "layer": "evidence",
+   "postNum": 4454,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "At the same time, they gave more power to their obedient followers, like Antifa, while keeping the r",
+   "recovered": "At the same time, they gave more power to their obedient followers, like Antifa, while keeping the r"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 4656,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "renegade noun a person who deserts a party or cause for another.",
+   "recovered": "renegade\nnoun\na person who deserts a party or cause for another."
+  },
+  {
+   "layer": "evidence",
+   "postNum": 4656,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "adjective of or like a renegade; traitorous.",
+   "recovered": "adjective\nof or like a renegade; traitorous."
+  },
+  {
+   "layer": "evidence",
+   "postNum": 4705,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.youtube.com/watch?v=GTMIFns_4g8 patriot noun",
+   "recovered": "https://www.youtube.com/watch?v=GTMIFns_4g8\npatriot\nnoun"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 4705,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "a person who loves, supports, and defends his or her country and its interests with devotion a perso",
+   "recovered": "a person who loves, supports, and defends his or her country and its interests with devotion\na perso"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 4705,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "a person who regards himself or herself as a defender, especially of individual rights against all e",
+   "recovered": "a person who regards himself or herself as a defender, especially of individual rights\nagainst all e"
+  },
+  {
+   "layer": "evidence",
+   "postNum": 4734,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "gatekeeper noun a person that controls access, as to information, often acting as an arbiter of qual",
+   "recovered": "gatekeeper\nnoun\na person that controls access, as to information, often acting as an arbiter of qual"
+  },
+  {
+   "layer": "questions",
+   "postNum": 2782,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Example CA] https://calmatters.org/articles/commentary/gavin-newsoms-keeping-it-all-in-the-family/a",
+   "recovered": "[Example CA]\nhttps://calmatters.org/articles/commentary/gavin-newsoms-keeping-it-all-in-the-family/a"
+  },
+  {
+   "layer": "questions",
+   "postNum": 466,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Covert OP by [CLAS-59#241-Q] to infiltrate at highest level to destroy from within?",
+   "recovered": "Covert OP by [CLAS-59#241-Q] to infiltrate at highest\nlevel to destroy from within?"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1015,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Omnibus Bill. The gift that keeps on giving.",
+   "recovered": "Omnibus Bill.\nThe gift that keeps on giving."
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1015,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Omnibus Bill. The gift that keeps on giving.",
+   "recovered": "Omnibus Bill.\nThe gift that keeps on giving."
+  },
+  {
+   "layer": "directives",
+   "postNum": 1025,
+   "verdict": "BOTH_NORMALIZATIONS_REQUIRED",
+   "certified": "God bless, Q",
+   "recovered": null
+  },
+  {
+   "layer": "claims",
+   "postNum": 1090,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "What was delivered? Smiles.",
+   "recovered": "What was delivered?\nSmiles."
+  },
+  {
+   "layer": "claims",
+   "postNum": 1098,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "DC access. Sold out.",
+   "recovered": "DC access.\nSold out."
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1098,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "DC access. Sold out.",
+   "recovered": "DC access.\nSold out."
+  },
+  {
+   "layer": "claims",
+   "postNum": 1237,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "The Ikhwan [Muslim Brotherhood] must understand that their work in America is a kind of grand jihad ",
+   "recovered": "The Ikhwan [Muslim Brotherhood] must understand that their work in America is a kind of grand jihad "
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1237,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "The Ikhwan [Muslim Brotherhood] must understand that their work in America is a kind of grand jihad ",
+   "recovered": "The Ikhwan [Muslim Brotherhood] must understand that their work in America is a kind of grand jihad "
+  },
+  {
+   "layer": "claims",
+   "postNum": 1253,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https:// www.grassley.senate.gov/news/news-releases/grassley-refers-planned-parenthood-fetal-tissue-",
+   "recovered": "https:// www.grassley.senate.gov/news/news-releases/grassley-refers-planned-parenthood-fetal-tissue-"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1253,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https:// www.grassley.senate.gov/news/news-releases/grassley-refers-planned-parenthood-fetal-tissue-",
+   "recovered": "https:// www.grassley.senate.gov/news/news-releases/grassley-refers-planned-parenthood-fetal-tissue-"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1280,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[30] http://www.foxnews.com/politics/2018/04/27/house-report-backs-claim-that-fbi-agents-did-not-thi",
+   "recovered": "[30]\nhttp://www.foxnews.com/politics/2018/04/27/house-report-backs-claim-that-fbi-agents-did-not-thi"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1280,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[30] http://www.foxnews.com/politics/2018/04/27/house-report-backs-claim-that-fbi-agents-did-not-thi",
+   "recovered": "[30]\nhttp://www.foxnews.com/politics/2018/04/27/house-report-backs-claim-that-fbi-agents-did-not-thi"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1284,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.foxnews.com/politics/2017/12/01/michael-flynn-charged-in-special-counsels-russia-investig",
+   "recovered": "http://www.foxnews.com/politics/2017/12/01/michael-flynn-charged-in-special-counsels-russia-investig"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1284,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.foxnews.com/politics/2017/12/01/michael-flynn-charged-in-special-counsels-russia-investig",
+   "recovered": "http://www.foxnews.com/politics/2017/12/01/michael-flynn-charged-in-special-counsels-russia-investig"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1285,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://thehill.com/homenews/administration/337182-trump-considered-mueller-for-fbi-director-before-h",
+   "recovered": "http://thehill.com/homenews/administration/337182-trump-considered-mueller-for-fbi-director-before-h"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1285,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://thehill.com/homenews/administration/337182-trump-considered-mueller-for-fbi-director-before-h",
+   "recovered": "http://thehill.com/homenews/administration/337182-trump-considered-mueller-for-fbi-director-before-h"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1286,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.foxnews.com/politics/2018/04/19/rosenstein-tells-trump-is-not-target-cohen-investigation.",
+   "recovered": "http://www.foxnews.com/politics/2018/04/19/rosenstein-tells-trump-is-not-target-cohen-investigation."
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 1286,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.foxnews.com/politics/2018/04/19/rosenstein-tells-trump-is-not-target-cohen-investigation.",
+   "recovered": "http://www.foxnews.com/politics/2018/04/19/rosenstein-tells-trump-is-not-target-cohen-investigation."
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1286,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.foxnews.com/politics/2018/04/19/rosenstein-tells-trump-is-not-target-cohen-investigation.",
+   "recovered": "http://www.foxnews.com/politics/2018/04/19/rosenstein-tells-trump-is-not-target-cohen-investigation."
+  },
+  {
+   "layer": "claims",
+   "postNum": 1287,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "“It shouldn’t take more than “a week or two” to come to a resolution on the probe.” http://www.foxne",
+   "recovered": "“It shouldn’t take more than “a week or two” to come to a resolution on the probe.”\nhttp://www.foxne"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 1287,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "“It shouldn’t take more than “a week or two” to come to a resolution on the probe.” http://www.foxne",
+   "recovered": "“It shouldn’t take more than “a week or two” to come to a resolution on the probe.”\nhttp://www.foxne"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1287,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "“It shouldn’t take more than “a week or two” to come to a resolution on the probe.” http://www.foxne",
+   "recovered": "“It shouldn’t take more than “a week or two” to come to a resolution on the probe.”\nhttp://www.foxne"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1318,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Department of Justice does not discuss ongoing investigations or confirm specific matters, What abou",
+   "recovered": "Department of Justice does not discuss ongoing investigations or confirm specific matters,\nWhat abou"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1318,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "If RR is dirty, Mueller must also be dirty. If Mueller is dirty, RR must also be dirty.",
+   "recovered": "If RR is dirty, Mueller must also be dirty.\nIf Mueller is dirty, RR must also be dirty."
+  },
+  {
+   "layer": "claims",
+   "postNum": 1318,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Few have the facts. Few know the plan.",
+   "recovered": "Few have the facts.\nFew know the plan."
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1318,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "If RR is dirty, Mueller must also be dirty. If Mueller is dirty, RR must also be dirty.",
+   "recovered": "If RR is dirty, Mueller must also be dirty.\nIf Mueller is dirty, RR must also be dirty."
+  },
+  {
+   "layer": "claims",
+   "postNum": 1361,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.seattletimes.com/opinion/the-conspiracy-theory-that-says-trump-is-a-genius/ https://www.",
+   "recovered": "https://www.seattletimes.com/opinion/the-conspiracy-theory-that-says-trump-is-a-genius/\nhttps://www."
+  },
+  {
+   "layer": "claims",
+   "postNum": 1361,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://medium.com/@willsommer/roseanne-barr-is-tweeting-about-qanon-a-new-pizzagate-style-conspirac",
+   "recovered": "https://medium.com/@willsommer/roseanne-barr-is-tweeting-about-qanon-a-new-pizzagate-style-conspirac"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1361,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.seattletimes.com/opinion/the-conspiracy-theory-that-says-trump-is-a-genius/ https://www.",
+   "recovered": "https://www.seattletimes.com/opinion/the-conspiracy-theory-that-says-trump-is-a-genius/\nhttps://www."
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1361,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://medium.com/@willsommer/roseanne-barr-is-tweeting-about-qanon-a-new-pizzagate-style-conspirac",
+   "recovered": "https://medium.com/@willsommer/roseanne-barr-is-tweeting-about-qanon-a-new-pizzagate-style-conspirac"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1439,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Who is missing from the scheduled meeting? [RR]",
+   "recovered": "Who is missing from the scheduled meeting?\n[RR]"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1439,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Who is missing from the scheduled meeting? [RR]",
+   "recovered": "Who is missing from the scheduled meeting?\n[RR]"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1458,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "\"Asked about the letter, however, a DOJ official said Rosenstein is currently “representing the Unit",
+   "recovered": "\"Asked about the letter, however, a DOJ official said Rosenstein is currently “representing the Unit"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1458,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "\"Asked about the letter, however, a DOJ official said Rosenstein is currently “representing the Unit",
+   "recovered": "\"Asked about the letter, however, a DOJ official said Rosenstein is currently “representing the Unit"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1481,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.foxnews.com/politics/2018/05/14/nunes-gowdy-accuse-doj-launching-anonymous-attacks-on-con",
+   "recovered": "http://www.foxnews.com/politics/2018/05/14/nunes-gowdy-accuse-doj-launching-anonymous-attacks-on-con"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1481,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.foxnews.com/politics/2018/05/14/nunes-gowdy-accuse-doj-launching-anonymous-attacks-on-con",
+   "recovered": "http://www.foxnews.com/politics/2018/05/14/nunes-gowdy-accuse-doj-launching-anonymous-attacks-on-con"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1532,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "@2:20 https://ftw.usatoday.com/2018/03/saturday-night-live-charles-barkley-alex-rodriguez-the-champi",
+   "recovered": "@2:20\nhttps://ftw.usatoday.com/2018/03/saturday-night-live-charles-barkley-alex-rodriguez-the-champi"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1532,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "@2:20 https://ftw.usatoday.com/2018/03/saturday-night-live-charles-barkley-alex-rodriguez-the-champi",
+   "recovered": "@2:20\nhttps://ftw.usatoday.com/2018/03/saturday-night-live-charles-barkley-alex-rodriguez-the-champi"
+  },
+  {
+   "layer": "directives",
+   "postNum": 154,
+   "verdict": "BOTH_NORMALIZATIONS_REQUIRED",
+   "certified": "Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass ag",
+   "recovered": null
+  },
+  {
+   "layer": "claims",
+   "postNum": 1544,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.tehrantimes.com/news/424351/EU-is-taking-steps-to-protect-companies-in-Iran http://iran-d",
+   "recovered": "http://www.tehrantimes.com/news/424351/EU-is-taking-steps-to-protect-companies-in-Iran\nhttp://iran-d"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1544,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.tehrantimes.com/news/424351/EU-is-taking-steps-to-protect-companies-in-Iran http://iran-d",
+   "recovered": "http://www.tehrantimes.com/news/424351/EU-is-taking-steps-to-protect-companies-in-Iran\nhttp://iran-d"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1560,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://amp.thedailybeast.com/qanon-the-crazy-pro-trump-conspiracy-melts-down-over-oig-report?__twit",
+   "recovered": "https://amp.thedailybeast.com/qanon-the-crazy-pro-trump-conspiracy-melts-down-over-oig-report?__twit"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 1560,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://amp.thedailybeast.com/qanon-the-crazy-pro-trump-conspiracy-melts-down-over-oig-report?__twit",
+   "recovered": "https://amp.thedailybeast.com/qanon-the-crazy-pro-trump-conspiracy-melts-down-over-oig-report?__twit"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1560,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://amp.thedailybeast.com/qanon-the-crazy-pro-trump-conspiracy-melts-down-over-oig-report?__twit",
+   "recovered": "https://amp.thedailybeast.com/qanon-the-crazy-pro-trump-conspiracy-melts-down-over-oig-report?__twit"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1589,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "THEY KNOW WE KNOW. BUT UNTIL THE PUBLIC KNOWS IT IS CONTAINED",
+   "recovered": "THEY KNOW WE KNOW.\nBUT UNTIL THE PUBLIC KNOWS IT IS CONTAINED"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1589,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "THEY KNOW WE KNOW. BUT UNTIL THE PUBLIC KNOWS IT IS CONTAINED",
+   "recovered": "THEY KNOW WE KNOW.\nBUT UNTIL THE PUBLIC KNOWS IT IS CONTAINED"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1644,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "What do they fear the most? Public awakening",
+   "recovered": "What do they fear the most?\nPublic awakening"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1644,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "If they ask. They self destruct",
+   "recovered": "If they ask.\nThey self destruct"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1695,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.cnbc.com/2018/07/20/trump-poised-to-take-control-of-the-federal-reserve.html https://www",
+   "recovered": "https://www.cnbc.com/2018/07/20/trump-poised-to-take-control-of-the-federal-reserve.html\nhttps://www"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1695,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.cnbc.com/2018/07/20/trump-poised-to-take-control-of-the-federal-reserve.html https://www",
+   "recovered": "https://www.cnbc.com/2018/07/20/trump-poised-to-take-control-of-the-federal-reserve.html\nhttps://www"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1762,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.washingtonpost.com/world/national-security/justice-dept-sues-california-over-sanctuary-l",
+   "recovered": "https://www.washingtonpost.com/world/national-security/justice-dept-sues-california-over-sanctuary-l"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 1762,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.washingtonpost.com/world/national-security/justice-dept-sues-california-over-sanctuary-l",
+   "recovered": "https://www.washingtonpost.com/world/national-security/justice-dept-sues-california-over-sanctuary-l"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1762,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.washingtonpost.com/world/national-security/justice-dept-sues-california-over-sanctuary-l",
+   "recovered": "https://www.washingtonpost.com/world/national-security/justice-dept-sues-california-over-sanctuary-l"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1764,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "\"Furthermore, Haspel is seen as a Russia expert and a close ally of Britain’s MI6, having being Lond",
+   "recovered": "\"Furthermore, Haspel is seen as a Russia expert and a close ally of Britain’s MI6, having being Lond"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1764,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "\"Furthermore, Haspel is seen as a Russia expert and a close ally of Britain’s MI6, having being Lond",
+   "recovered": "\"Furthermore, Haspel is seen as a Russia expert and a close ally of Britain’s MI6, having being Lond"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1785,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Sample 3] https://www.washingtonpost.com/news/morning-mix/wp/2018/08/01/we-are-q-a-deranged-conspir",
+   "recovered": "[Sample 3]\nhttps://www.washingtonpost.com/news/morning-mix/wp/2018/08/01/we-are-q-a-deranged-conspir"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1785,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.fastcompany.com/90212200/qanon-the-alternate-reality-that-was-front-and-center-at-trumps",
+   "recovered": "https://www.fastcompany.com/90212200/qanon-the-alternate-reality-that-was-front-and-center-at-trumps"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1785,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.dailymail.co.uk/news/article-6015627/Fans-bizarre-QAnon-cult-droves-Trump-rally-signs-t-",
+   "recovered": "https://www.dailymail.co.uk/news/article-6015627/Fans-bizarre-QAnon-cult-droves-Trump-rally-signs-t-"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1785,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://splinternews.com/trumps-tampa-rally-was-full-of-insane-conspiracy-theori-1828015269 https://",
+   "recovered": "https://splinternews.com/trumps-tampa-rally-was-full-of-insane-conspiracy-theori-1828015269\nhttps://"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1785,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Sample 3] https://www.washingtonpost.com/news/morning-mix/wp/2018/08/01/we-are-q-a-deranged-conspir",
+   "recovered": "[Sample 3]\nhttps://www.washingtonpost.com/news/morning-mix/wp/2018/08/01/we-are-q-a-deranged-conspir"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1785,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.fastcompany.com/90212200/qanon-the-alternate-reality-that-was-front-and-center-at-trumps",
+   "recovered": "https://www.fastcompany.com/90212200/qanon-the-alternate-reality-that-was-front-and-center-at-trumps"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1785,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.dailymail.co.uk/news/article-6015627/Fans-bizarre-QAnon-cult-droves-Trump-rally-signs-t-",
+   "recovered": "https://www.dailymail.co.uk/news/article-6015627/Fans-bizarre-QAnon-cult-droves-Trump-rally-signs-t-"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1785,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://splinternews.com/trumps-tampa-rally-was-full-of-insane-conspiracy-theori-1828015269 https://",
+   "recovered": "https://splinternews.com/trumps-tampa-rally-was-full-of-insane-conspiracy-theori-1828015269\nhttps://"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1790,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Sample 3+] https://www.nytimes.com/2018/08/01/us/politics/what-is-qanon.html https://www.usatoday.c",
+   "recovered": "[Sample 3+]\nhttps://www.nytimes.com/2018/08/01/us/politics/what-is-qanon.html\nhttps://www.usatoday.c"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1790,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Sample 3+] https://www.nytimes.com/2018/08/01/us/politics/what-is-qanon.html https://www.usatoday.c",
+   "recovered": "[Sample 3+]\nhttps://www.nytimes.com/2018/08/01/us/politics/what-is-qanon.html\nhttps://www.usatoday.c"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1797,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.bbc.com/news/blogs-trending-45040614 https://www.vox.com/policy-and-politics/2018/8/1/17",
+   "recovered": "https://www.bbc.com/news/blogs-trending-45040614\nhttps://www.vox.com/policy-and-politics/2018/8/1/17"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1797,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.cbsnews.com/news/what-is-the-qanon-conspiracy-theory/ https://www.nytimes.com/2018/08/02",
+   "recovered": "https://www.cbsnews.com/news/what-is-the-qanon-conspiracy-theory/\nhttps://www.nytimes.com/2018/08/02"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1797,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.pbs.org/newshour/show/how-the-false-fringe-qanon-conspiracy-theory-aims-to-protect-trump",
+   "recovered": "https://www.pbs.org/newshour/show/how-the-false-fringe-qanon-conspiracy-theory-aims-to-protect-trump"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1797,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.thedailybeast.com/qanon-the-pro-trump-conspiracy-theory-now-believes-jfk-jr-faked-his-de",
+   "recovered": "https://www.thedailybeast.com/qanon-the-pro-trump-conspiracy-theory-now-believes-jfk-jr-faked-his-de"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1797,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.bloomberg.com/news/articles/2018-08-01/who-is-q-behind-the-conspiracy-emerging-at-trump-",
+   "recovered": "https://www.bloomberg.com/news/articles/2018-08-01/who-is-q-behind-the-conspiracy-emerging-at-trump-"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 1797,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.bbc.com/news/blogs-trending-45040614 https://www.vox.com/policy-and-politics/2018/8/1/17",
+   "recovered": "https://www.bbc.com/news/blogs-trending-45040614\nhttps://www.vox.com/policy-and-politics/2018/8/1/17"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 1797,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.cbsnews.com/news/what-is-the-qanon-conspiracy-theory/ https://www.nytimes.com/2018/08/02",
+   "recovered": "https://www.cbsnews.com/news/what-is-the-qanon-conspiracy-theory/\nhttps://www.nytimes.com/2018/08/02"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 1797,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.pbs.org/newshour/show/how-the-false-fringe-qanon-conspiracy-theory-aims-to-protect-trump",
+   "recovered": "https://www.pbs.org/newshour/show/how-the-false-fringe-qanon-conspiracy-theory-aims-to-protect-trump"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 1797,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.thedailybeast.com/qanon-the-pro-trump-conspiracy-theory-now-believes-jfk-jr-faked-his-de",
+   "recovered": "https://www.thedailybeast.com/qanon-the-pro-trump-conspiracy-theory-now-believes-jfk-jr-faked-his-de"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 1797,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.bloomberg.com/news/articles/2018-08-01/who-is-q-behind-the-conspiracy-emerging-at-trump-",
+   "recovered": "https://www.bloomberg.com/news/articles/2018-08-01/who-is-q-behind-the-conspiracy-emerging-at-trump-"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1797,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.bbc.com/news/blogs-trending-45040614 https://www.vox.com/policy-and-politics/2018/8/1/17",
+   "recovered": "https://www.bbc.com/news/blogs-trending-45040614\nhttps://www.vox.com/policy-and-politics/2018/8/1/17"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1797,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.cbsnews.com/news/what-is-the-qanon-conspiracy-theory/ https://www.nytimes.com/2018/08/02",
+   "recovered": "https://www.cbsnews.com/news/what-is-the-qanon-conspiracy-theory/\nhttps://www.nytimes.com/2018/08/02"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1797,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.pbs.org/newshour/show/how-the-false-fringe-qanon-conspiracy-theory-aims-to-protect-trump",
+   "recovered": "https://www.pbs.org/newshour/show/how-the-false-fringe-qanon-conspiracy-theory-aims-to-protect-trump"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1797,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.thedailybeast.com/qanon-the-pro-trump-conspiracy-theory-now-believes-jfk-jr-faked-his-de",
+   "recovered": "https://www.thedailybeast.com/qanon-the-pro-trump-conspiracy-theory-now-believes-jfk-jr-faked-his-de"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1797,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.bloomberg.com/news/articles/2018-08-01/who-is-q-behind-the-conspiracy-emerging-at-trump-",
+   "recovered": "https://www.bloomberg.com/news/articles/2018-08-01/who-is-q-behind-the-conspiracy-emerging-at-trump-"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1806,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Sample Past 5hrs] https://www.washingtonpost.com/news/the-intersect/wp/2018/08/03/this-is-the-momen",
+   "recovered": "[Sample Past 5hrs]\nhttps://www.washingtonpost.com/news/the-intersect/wp/2018/08/03/this-is-the-momen"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1806,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Sample Past 5hrs] https://www.washingtonpost.com/news/the-intersect/wp/2018/08/03/this-is-the-momen",
+   "recovered": "[Sample Past 5hrs]\nhttps://www.washingtonpost.com/news/the-intersect/wp/2018/08/03/this-is-the-momen"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1814,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Across all major MSM networks] https://www.foxnews.com/politics/2018/08/03/what-is-qanon-conspiracy",
+   "recovered": "[Across all major MSM networks]\nhttps://www.foxnews.com/politics/2018/08/03/what-is-qanon-conspiracy"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1814,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Across all major MSM networks] https://www.foxnews.com/politics/2018/08/03/what-is-qanon-conspiracy",
+   "recovered": "[Across all major MSM networks]\nhttps://www.foxnews.com/politics/2018/08/03/what-is-qanon-conspiracy"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1824,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "the U.S. GDP is greater than the total of all others combined (G7)",
+   "recovered": "the U.S. GDP is greater than the total of all others  combined (G7)"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1824,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "the U.S. GDP is greater than the total of all others combined (G7)",
+   "recovered": "the U.S. GDP is greater than the total of all others  combined (G7)"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1826,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Sample] https://www.cnn.com/2018/08/09/politics/devin-nunes-trump-congress-republican-majority/inde",
+   "recovered": "[Sample]\nhttps://www.cnn.com/2018/08/09/politics/devin-nunes-trump-congress-republican-majority/inde"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1826,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.newsday.com/news/nation/white-house-trump-1600-1.20386551 https://www.rawstory.com/2018/",
+   "recovered": "https://www.newsday.com/news/nation/white-house-trump-1600-1.20386551\nhttps://www.rawstory.com/2018/"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1826,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.aol.com/article/news/2018/08/09/secret-recording-shows-nunes-saying-rosenstein-impeachme",
+   "recovered": "https://www.aol.com/article/news/2018/08/09/secret-recording-shows-nunes-saying-rosenstein-impeachme"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1826,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://twitter.com/TheDemCoalition/status/1027680529402028038 https://www.vanityfair.com/news/2018/",
+   "recovered": "https://twitter.com/TheDemCoalition/status/1027680529402028038\nhttps://www.vanityfair.com/news/2018/"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1826,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.vox.com/2018/8/9/17670930/devin-nunes-tape https://www.cnbc.com/2018/08/09/nunes-on-leak",
+   "recovered": "https://www.vox.com/2018/8/9/17670930/devin-nunes-tape\nhttps://www.cnbc.com/2018/08/09/nunes-on-leak"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1826,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.msnbc.com/rachel-maddow-show/trms-exclusive-devin-nunes-speaks-candidly-fundraiser https:",
+   "recovered": "http://www.msnbc.com/rachel-maddow-show/trms-exclusive-devin-nunes-speaks-candidly-fundraiser\nhttps:"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1826,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://dailycaller.com/2018/08/09/maddow-devin-nunes-trump/ https://nypost.com/2018/08/09/nunes-secr",
+   "recovered": "http://dailycaller.com/2018/08/09/maddow-devin-nunes-trump/\nhttps://nypost.com/2018/08/09/nunes-secr"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1826,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Sample] https://www.cnn.com/2018/08/09/politics/devin-nunes-trump-congress-republican-majority/inde",
+   "recovered": "[Sample]\nhttps://www.cnn.com/2018/08/09/politics/devin-nunes-trump-congress-republican-majority/inde"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1826,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.newsday.com/news/nation/white-house-trump-1600-1.20386551 https://www.rawstory.com/2018/",
+   "recovered": "https://www.newsday.com/news/nation/white-house-trump-1600-1.20386551\nhttps://www.rawstory.com/2018/"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1826,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.aol.com/article/news/2018/08/09/secret-recording-shows-nunes-saying-rosenstein-impeachme",
+   "recovered": "https://www.aol.com/article/news/2018/08/09/secret-recording-shows-nunes-saying-rosenstein-impeachme"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1826,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://twitter.com/TheDemCoalition/status/1027680529402028038 https://www.vanityfair.com/news/2018/",
+   "recovered": "https://twitter.com/TheDemCoalition/status/1027680529402028038\nhttps://www.vanityfair.com/news/2018/"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1826,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.vox.com/2018/8/9/17670930/devin-nunes-tape https://www.cnbc.com/2018/08/09/nunes-on-leak",
+   "recovered": "https://www.vox.com/2018/8/9/17670930/devin-nunes-tape\nhttps://www.cnbc.com/2018/08/09/nunes-on-leak"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1826,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.msnbc.com/rachel-maddow-show/trms-exclusive-devin-nunes-speaks-candidly-fundraiser https:",
+   "recovered": "http://www.msnbc.com/rachel-maddow-show/trms-exclusive-devin-nunes-speaks-candidly-fundraiser\nhttps:"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1826,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://dailycaller.com/2018/08/09/maddow-devin-nunes-trump/ https://nypost.com/2018/08/09/nunes-secr",
+   "recovered": "http://dailycaller.com/2018/08/09/maddow-devin-nunes-trump/\nhttps://nypost.com/2018/08/09/nunes-secr"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1856,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Sample] https://www.washingtonpost.com/opinions/trumps-nondisclosure-agreements-came-with-him-to-th",
+   "recovered": "[Sample]\nhttps://www.washingtonpost.com/opinions/trumps-nondisclosure-agreements-came-with-him-to-th"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1856,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.cnbc.com/2018/03/19/former-officials-slam-reported-white-house-non-disclosure-agreements",
+   "recovered": "https://www.cnbc.com/2018/03/19/former-officials-slam-reported-white-house-non-disclosure-agreements"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1856,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.quora.com/Can-the-President-require-NDAs-be-signed-by-White-House-staff-as-a-condition-o",
+   "recovered": "https://www.quora.com/Can-the-President-require-NDAs-be-signed-by-White-House-staff-as-a-condition-o"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 1856,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Sample] https://www.washingtonpost.com/opinions/trumps-nondisclosure-agreements-came-with-him-to-th",
+   "recovered": "[Sample]\nhttps://www.washingtonpost.com/opinions/trumps-nondisclosure-agreements-came-with-him-to-th"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 1856,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.cnbc.com/2018/03/19/former-officials-slam-reported-white-house-non-disclosure-agreements",
+   "recovered": "https://www.cnbc.com/2018/03/19/former-officials-slam-reported-white-house-non-disclosure-agreements"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 1856,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.quora.com/Can-the-President-require-NDAs-be-signed-by-White-House-staff-as-a-condition-o",
+   "recovered": "https://www.quora.com/Can-the-President-require-NDAs-be-signed-by-White-House-staff-as-a-condition-o"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1856,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Sample] https://www.washingtonpost.com/opinions/trumps-nondisclosure-agreements-came-with-him-to-th",
+   "recovered": "[Sample]\nhttps://www.washingtonpost.com/opinions/trumps-nondisclosure-agreements-came-with-him-to-th"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1856,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.cnbc.com/2018/03/19/former-officials-slam-reported-white-house-non-disclosure-agreements",
+   "recovered": "https://www.cnbc.com/2018/03/19/former-officials-slam-reported-white-house-non-disclosure-agreements"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1856,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.quora.com/Can-the-President-require-NDAs-be-signed-by-White-House-staff-as-a-condition-o",
+   "recovered": "https://www.quora.com/Can-the-President-require-NDAs-be-signed-by-White-House-staff-as-a-condition-o"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1862,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "['They' prey on emotionally unstable (helpless) individuals and use them as PAWNS] http://www.foxnew",
+   "recovered": "['They' prey on emotionally unstable (helpless) individuals and use them as PAWNS]\nhttp://www.foxnew"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 1862,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "['They' prey on emotionally unstable (helpless) individuals and use them as PAWNS] http://www.foxnew",
+   "recovered": "['They' prey on emotionally unstable (helpless) individuals and use them as PAWNS]\nhttp://www.foxnew"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1862,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "['They' prey on emotionally unstable (helpless) individuals and use them as PAWNS] http://www.foxnew",
+   "recovered": "['They' prey on emotionally unstable (helpless) individuals and use them as PAWNS]\nhttp://www.foxnew"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1880,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Read very carefully] https://www.news.com.au/entertainment/tv/current-affairs/sunday-nights-matt-do",
+   "recovered": "[Read very carefully]\nhttps://www.news.com.au/entertainment/tv/current-affairs/sunday-nights-matt-do"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1913,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Sample] https://www.nytimes.com/2016/12/12/us/politics/president-daily-brief.html https://www.npr.o",
+   "recovered": "[Sample]\nhttps://www.nytimes.com/2016/12/12/us/politics/president-daily-brief.html\nhttps://www.npr.o"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 1913,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Sample] https://www.nytimes.com/2016/12/12/us/politics/president-daily-brief.html https://www.npr.o",
+   "recovered": "[Sample]\nhttps://www.nytimes.com/2016/12/12/us/politics/president-daily-brief.html\nhttps://www.npr.o"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1913,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Sample] https://www.nytimes.com/2016/12/12/us/politics/president-daily-brief.html https://www.npr.o",
+   "recovered": "[Sample]\nhttps://www.nytimes.com/2016/12/12/us/politics/president-daily-brief.html\nhttps://www.npr.o"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1915,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.afr.com/news/world/north-america/the-4chan-conspiracy-that-believes-trump-is-a-genius-20",
+   "recovered": "https://www.afr.com/news/world/north-america/the-4chan-conspiracy-that-believes-trump-is-a-genius-20"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1915,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.afr.com/news/world/north-america/the-4chan-conspiracy-that-believes-trump-is-a-genius-20",
+   "recovered": "https://www.afr.com/news/world/north-america/the-4chan-conspiracy-that-believes-trump-is-a-genius-20"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1927,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "+ 45,000 sealed indictments https://www.military.com/daily-news/2018/03/28/when-it-comes-guantanamo-",
+   "recovered": "+ 45,000 sealed indictments \nhttps://www.military.com/daily-news/2018/03/28/when-it-comes-guantanamo"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 1927,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "+ 45,000 sealed indictments https://www.military.com/daily-news/2018/03/28/when-it-comes-guantanamo-",
+   "recovered": "+ 45,000 sealed indictments \nhttps://www.military.com/daily-news/2018/03/28/when-it-comes-guantanamo"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1927,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "+ 45,000 sealed indictments https://www.military.com/daily-news/2018/03/28/when-it-comes-guantanamo-",
+   "recovered": "+ 45,000 sealed indictments \nhttps://www.military.com/daily-news/2018/03/28/when-it-comes-guantanamo"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1935,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Halper, who assisted the FBI in the Russia investigation, appears to also have significant ties to t",
+   "recovered": "Halper, who assisted the FBI in the Russia investigation, appears to also have significant ties to t"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1935,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Halper, who assisted the FBI in the Russia investigation, appears to also have significant ties to t",
+   "recovered": "Halper, who assisted the FBI in the Russia investigation, appears to also have significant ties to t"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1939,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.independent.co.uk/news/world/americas/us-politics/trump-spies-uk-blair-warning-latest-mi",
+   "recovered": "https://www.independent.co.uk/news/world/americas/us-politics/trump-spies-uk-blair-warning-latest-mi"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1939,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.dailymail.co.uk/news/article-5233733/Blair-warned-Trump-aides-Brit-intelligence-spied-the",
+   "recovered": "http://www.dailymail.co.uk/news/article-5233733/Blair-warned-Trump-aides-Brit-intelligence-spied-the"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1939,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.bbc.com/news/blogs-the-papers-42561216 https://www.bbc.com/news/uk-42561680 https://www.",
+   "recovered": "https://www.bbc.com/news/blogs-the-papers-42561216\nhttps://www.bbc.com/news/uk-42561680\nhttps://www."
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1939,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.independent.co.uk/news/world/americas/us-politics/trump-spies-uk-blair-warning-latest-mi",
+   "recovered": "https://www.independent.co.uk/news/world/americas/us-politics/trump-spies-uk-blair-warning-latest-mi"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1939,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.dailymail.co.uk/news/article-5233733/Blair-warned-Trump-aides-Brit-intelligence-spied-the",
+   "recovered": "http://www.dailymail.co.uk/news/article-5233733/Blair-warned-Trump-aides-Brit-intelligence-spied-the"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1939,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.bbc.com/news/blogs-the-papers-42561216 https://www.bbc.com/news/uk-42561680 https://www.",
+   "recovered": "https://www.bbc.com/news/blogs-the-papers-42561216\nhttps://www.bbc.com/news/uk-42561680\nhttps://www."
+  },
+  {
+   "layer": "claims",
+   "postNum": 1945,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Fiction][Sample] https://www.nbcnews.com/think/opinion/americans-have-forgotten-what-treason-actual",
+   "recovered": "[Fiction][Sample]\nhttps://www.nbcnews.com/think/opinion/americans-have-forgotten-what-treason-actual"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1945,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.latimes.com/opinion/op-ed/la-oe-heffernan-treason-20180804-story.html https://www.haaretz",
+   "recovered": "http://www.latimes.com/opinion/op-ed/la-oe-heffernan-treason-20180804-story.html\nhttps://www.haaretz"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1945,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.nytimes.com/2018/07/15/opinion/trump-russia-investigation-putin.html https://www.marketw",
+   "recovered": "https://www.nytimes.com/2018/07/15/opinion/trump-russia-investigation-putin.html\nhttps://www.marketw"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1945,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.theguardian.com/us-news/2018/jul/18/readers-panel-us-voters-react-to-trumps-conference-w",
+   "recovered": "https://www.theguardian.com/us-news/2018/jul/18/readers-panel-us-voters-react-to-trumps-conference-w"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 1945,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.latimes.com/opinion/op-ed/la-oe-heffernan-treason-20180804-story.html https://www.haaretz",
+   "recovered": "http://www.latimes.com/opinion/op-ed/la-oe-heffernan-treason-20180804-story.html\nhttps://www.haaretz"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 1945,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.nytimes.com/2018/07/15/opinion/trump-russia-investigation-putin.html https://www.marketw",
+   "recovered": "https://www.nytimes.com/2018/07/15/opinion/trump-russia-investigation-putin.html\nhttps://www.marketw"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 1945,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.theguardian.com/us-news/2018/jul/18/readers-panel-us-voters-react-to-trumps-conference-w",
+   "recovered": "https://www.theguardian.com/us-news/2018/jul/18/readers-panel-us-voters-react-to-trumps-conference-w"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1945,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Fiction][Sample] https://www.nbcnews.com/think/opinion/americans-have-forgotten-what-treason-actual",
+   "recovered": "[Fiction][Sample]\nhttps://www.nbcnews.com/think/opinion/americans-have-forgotten-what-treason-actual"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1945,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.latimes.com/opinion/op-ed/la-oe-heffernan-treason-20180804-story.html https://www.haaretz",
+   "recovered": "http://www.latimes.com/opinion/op-ed/la-oe-heffernan-treason-20180804-story.html\nhttps://www.haaretz"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1945,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.nytimes.com/2018/07/15/opinion/trump-russia-investigation-putin.html https://www.marketw",
+   "recovered": "https://www.nytimes.com/2018/07/15/opinion/trump-russia-investigation-putin.html\nhttps://www.marketw"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1945,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.theguardian.com/us-news/2018/jul/18/readers-panel-us-voters-react-to-trumps-conference-w",
+   "recovered": "https://www.theguardian.com/us-news/2018/jul/18/readers-panel-us-voters-react-to-trumps-conference-w"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1947,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://arstechnica.com/tech-policy/2018/08/trump-claims-with-no-evidence-that-google-is-rigged-agai",
+   "recovered": "https://arstechnica.com/tech-policy/2018/08/trump-claims-with-no-evidence-that-google-is-rigged-agai"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1947,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://arstechnica.com/tech-policy/2018/08/trump-claims-with-no-evidence-that-google-is-rigged-agai",
+   "recovered": "https://arstechnica.com/tech-policy/2018/08/trump-claims-with-no-evidence-that-google-is-rigged-agai"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1950,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "The Holy See, as the supreme body of government of the Catholic Church, is a sovereign juridical ent",
+   "recovered": "The Holy See, as the supreme body of government of the Catholic Church, is a sovereign juridical ent"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1950,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "The Holy See, as the supreme body of government of the Catholic Church, is a sovereign juridical ent",
+   "recovered": "The Holy See, as the supreme body of government of the Catholic Church, is a sovereign juridical ent"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1982,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.foxnews.com/politics/2018/08/29/chinese-company-reportedly-hacked-clintons-server-got-cop",
+   "recovered": "http://www.foxnews.com/politics/2018/08/29/chinese-company-reportedly-hacked-clintons-server-got-cop"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1982,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.foxnews.com/politics/2018/08/29/chinese-company-reportedly-hacked-clintons-server-got-cop",
+   "recovered": "http://www.foxnews.com/politics/2018/08/29/chinese-company-reportedly-hacked-clintons-server-got-cop"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1988,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Hannity 8.28.18 https://www.youtube.com/watchv=d3p7aqtUSJc&feature=youtu.be",
+   "recovered": "Hannity 8.28.18\nhttps://www.youtube.com/watchv=d3p7aqtUSJc&feature=youtu.be"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 1988,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Hannity 8.28.18 https://www.youtube.com/watchv=d3p7aqtUSJc&feature=youtu.be",
+   "recovered": "Hannity 8.28.18\nhttps://www.youtube.com/watchv=d3p7aqtUSJc&feature=youtu.be"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1988,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Hannity 8.28.18 https://www.youtube.com/watchv=d3p7aqtUSJc&feature=youtu.be",
+   "recovered": "Hannity 8.28.18\nhttps://www.youtube.com/watchv=d3p7aqtUSJc&feature=youtu.be"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1992,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://dailycaller.com/2018/07/12/ig-clinton-foreign-emails/ http://www.foxnews.com/world/2018/06/10",
+   "recovered": "http://dailycaller.com/2018/07/12/ig-clinton-foreign-emails/\nhttp://www.foxnews.com/world/2018/06/10"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1992,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://dailycaller.com/2018/07/12/ig-clinton-foreign-emails/ http://www.foxnews.com/world/2018/06/10",
+   "recovered": "http://dailycaller.com/2018/07/12/ig-clinton-foreign-emails/\nhttp://www.foxnews.com/world/2018/06/10"
+  },
+  {
+   "layer": "claims",
+   "postNum": 1997,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.washingtonpost.com/news/monkey-cage/wp/2018/08/30/the-qanon-conspiracy-movement-is-very-",
+   "recovered": "https://www.washingtonpost.com/news/monkey-cage/wp/2018/08/30/the-qanon-conspiracy-movement-is-very-"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 1997,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.washingtonpost.com/news/monkey-cage/wp/2018/08/30/the-qanon-conspiracy-movement-is-very-",
+   "recovered": "https://www.washingtonpost.com/news/monkey-cage/wp/2018/08/30/the-qanon-conspiracy-movement-is-very-"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2029,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.washingtontimes.com/news/2018/aug/31/more-americans-support-jeff-sessions-trump-poll/ ht",
+   "recovered": "https://www.washingtontimes.com/news/2018/aug/31/more-americans-support-jeff-sessions-trump-poll/\nht"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2029,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://abcnews.go.com/Politics/trouble-trump-disapproval-high-63-back-mueller-half/story?id=5750708",
+   "recovered": "https://abcnews.go.com/Politics/trouble-trump-disapproval-high-63-back-mueller-half/story?id=5750708"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 2029,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.washingtontimes.com/news/2018/aug/31/more-americans-support-jeff-sessions-trump-poll/ ht",
+   "recovered": "https://www.washingtontimes.com/news/2018/aug/31/more-americans-support-jeff-sessions-trump-poll/\nht"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2029,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.washingtontimes.com/news/2018/aug/31/more-americans-support-jeff-sessions-trump-poll/ ht",
+   "recovered": "https://www.washingtontimes.com/news/2018/aug/31/more-americans-support-jeff-sessions-trump-poll/\nht"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2029,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://abcnews.go.com/Politics/trouble-trump-disapproval-high-63-back-mueller-half/story?id=5750708",
+   "recovered": "https://abcnews.go.com/Politics/trouble-trump-disapproval-high-63-back-mueller-half/story?id=5750708"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2032,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "If people believe the odds are hopeless their candidate will win… Do they still make the effort to v",
+   "recovered": "If people believe the odds are hopeless their candidate will win…\nDo they still make the effort to v"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2061,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Sergey Brin - GOOG [Founder][BORN IN MOSCOW] was married to…",
+   "recovered": "Sergey Brin - GOOG [Founder][BORN IN MOSCOW]\nwas married to…"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2061,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Anne Wojcicki - 23andme [Founder] was brother-in-law to…",
+   "recovered": "Anne Wojcicki - 23andme [Founder]\nwas brother-in-law to…"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2061,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Sergey Brin - GOOG [Founder][BORN IN MOSCOW] was married to…",
+   "recovered": "Sergey Brin - GOOG [Founder][BORN IN MOSCOW]\nwas married to…"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2061,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Anne Wojcicki - 23andme [Founder] was brother-in-law to…",
+   "recovered": "Anne Wojcicki - 23andme [Founder]\nwas brother-in-law to…"
+  },
+  {
+   "layer": "predictions",
+   "postNum": 2078,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://twitter.com/dougducey/status/1037020098010079233 http://www.foxnews.com/politics/2018/09/04/",
+   "recovered": "https://twitter.com/dougducey/status/1037020098010079233\nhttp://www.foxnews.com/politics/2018/09/04/"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2107,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Page is TRUE and CORRECT.\" https://vault.fbi.gov/d1-release/d1-release/view",
+   "recovered": "Page is TRUE and CORRECT.\"\nhttps://vault.fbi.gov/d1-release/d1-release/view"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2107,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Page is TRUE and CORRECT.\" https://vault.fbi.gov/d1-release/d1-release/view",
+   "recovered": "Page is TRUE and CORRECT.\"\nhttps://vault.fbi.gov/d1-release/d1-release/view"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2135,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "\"Review of the new documents raises grave concerns regarding an apparent systemic culture of media l",
+   "recovered": "\"Review of the new documents raises grave concerns regarding an apparent systemic culture of media l"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2135,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "\"Review of the new documents raises grave concerns regarding an apparent systemic culture of media l",
+   "recovered": "\"Review of the new documents raises grave concerns regarding an apparent systemic culture of media l"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2136,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Sample] http://www.foxnews.com/politics/2018/09/10/maxine-waters-goes-on-trump-impeachment-tear-vow",
+   "recovered": "[Sample]\nhttp://www.foxnews.com/politics/2018/09/10/maxine-waters-goes-on-trump-impeachment-tear-vow"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2136,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://time.com/5389848/donald-trump-impeachment-rally/ https://www.huffingtonpost.com/entry/opinion",
+   "recovered": "http://time.com/5389848/donald-trump-impeachment-rally/\nhttps://www.huffingtonpost.com/entry/opinion"
+  },
+  {
+   "layer": "predictions",
+   "postNum": 2136,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.theatlantic.com/politics/archive/2018/09/jerry-nadler-trump-democrats-impeachment/569626",
+   "recovered": "https://www.theatlantic.com/politics/archive/2018/09/jerry-nadler-trump-democrats-impeachment/569626"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2136,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Sample] http://www.foxnews.com/politics/2018/09/10/maxine-waters-goes-on-trump-impeachment-tear-vow",
+   "recovered": "[Sample]\nhttp://www.foxnews.com/politics/2018/09/10/maxine-waters-goes-on-trump-impeachment-tear-vow"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2136,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://time.com/5389848/donald-trump-impeachment-rally/ https://www.huffingtonpost.com/entry/opinion",
+   "recovered": "http://time.com/5389848/donald-trump-impeachment-rally/\nhttps://www.huffingtonpost.com/entry/opinion"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2165,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.foxnews.com/politics/2018/09/12/new-strzok-page-texts-reveal-others-were-leaking-like-mad",
+   "recovered": "http://www.foxnews.com/politics/2018/09/12/new-strzok-page-texts-reveal-others-were-leaking-like-mad"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2165,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.foxnews.com/politics/2018/09/12/new-strzok-page-texts-reveal-others-were-leaking-like-mad",
+   "recovered": "http://www.foxnews.com/politics/2018/09/12/new-strzok-page-texts-reveal-others-were-leaking-like-mad"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2171,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.bloomberg.com/news/articles/2018-09-11/sessions-is-said-to-be-open-to-probe-of-social-me",
+   "recovered": "https://www.bloomberg.com/news/articles/2018-09-11/sessions-is-said-to-be-open-to-probe-of-social-me"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 2171,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.bloomberg.com/news/articles/2018-09-11/sessions-is-said-to-be-open-to-probe-of-social-me",
+   "recovered": "https://www.bloomberg.com/news/articles/2018-09-11/sessions-is-said-to-be-open-to-probe-of-social-me"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2171,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.bloomberg.com/news/articles/2018-09-11/sessions-is-said-to-be-open-to-probe-of-social-me",
+   "recovered": "https://www.bloomberg.com/news/articles/2018-09-11/sessions-is-said-to-be-open-to-probe-of-social-me"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2177,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "In no case shall information be classified, continue to be maintained as classified, or fail to be d",
+   "recovered": "In no case shall information be classified, continue to be maintained as classified, or fail to be d"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2177,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "In no case shall information be classified, continue to be maintained as classified, or fail to be d",
+   "recovered": "In no case shall information be classified, continue to be maintained as classified, or fail to be d"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2180,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "What was the USSS codename for HUSSEIN? [RENEGADE]",
+   "recovered": "What was the USSS codename for HUSSEIN?\n[RENEGADE]"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2180,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "What was the USSS codename for HUSSEIN? [RENEGADE]",
+   "recovered": "What was the USSS codename for HUSSEIN?\n[RENEGADE]"
+  },
+  {
+   "layer": "predictions",
+   "postNum": 2184,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.wired.com/story/facebook-rosetta-ai-memes/ https://www.marketwatch.com/story/facebook-wi",
+   "recovered": "https://www.wired.com/story/facebook-rosetta-ai-memes/\nhttps://www.marketwatch.com/story/facebook-wi"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2319,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://twitter.com/Kevin_Shipp/status/1047333936102363136 https://www.foxnews.com/politics/christin",
+   "recovered": "https://twitter.com/Kevin_Shipp/status/1047333936102363136\nhttps://www.foxnews.com/politics/christin"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2319,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://twitter.com/Kevin_Shipp/status/1047333936102363136 https://www.foxnews.com/politics/christin",
+   "recovered": "https://twitter.com/Kevin_Shipp/status/1047333936102363136\nhttps://www.foxnews.com/politics/christin"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2331,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "\"Former FBI general counsel James Baker met during the 2016 season with at least one attorney from P",
+   "recovered": "\"Former FBI general counsel James Baker met during the 2016 season with at least one attorney from P"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2331,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "\"Former FBI general counsel James Baker met during the 2016 season with at least one attorney from P",
+   "recovered": "\"Former FBI general counsel James Baker met during the 2016 season with at least one attorney from P"
+  },
+  {
+   "layer": "directives",
+   "postNum": 2351,
+   "verdict": "BOTH_NORMALIZATIONS_REQUIRED",
+   "certified": "DO NOT LOOK HERE [CHINA] https://www.youtube.com/watch?v=aeVrMniBjSc",
+   "recovered": null
+  },
+  {
+   "layer": "claims",
+   "postNum": 2352,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "IT WAS OUR LAST CHANCE TO SAVE IT [Non-Force] https://www.youtube.com/watch?v=G2qIXXafxCQ",
+   "recovered": "IT WAS OUR LAST CHANCE TO SAVE IT [Non-Force]\nhttps://www.youtube.com/watch?v=G2qIXXafxCQ"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2352,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "IT WAS OUR LAST CHANCE TO SAVE IT [Non-Force] https://www.youtube.com/watch?v=G2qIXXafxCQ",
+   "recovered": "IT WAS OUR LAST CHANCE TO SAVE IT [Non-Force]\nhttps://www.youtube.com/watch?v=G2qIXXafxCQ"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2373,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.wsj.com/articles/google-exposed-user-data-feared-repercussions-of-disclosing-to-public-1",
+   "recovered": "https://www.wsj.com/articles/google-exposed-user-data-feared-repercussions-of-disclosing-to-public-1"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2373,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.wsj.com/articles/google-exposed-user-data-feared-repercussions-of-disclosing-to-public-1",
+   "recovered": "https://www.wsj.com/articles/google-exposed-user-data-feared-repercussions-of-disclosing-to-public-1"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2377,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://thehill.com/hilltv/what-americas-thinking/410447-former-fbi-lawyer-plot-to-record-remove-tru",
+   "recovered": "https://thehill.com/hilltv/what-americas-thinking/410447-former-fbi-lawyer-plot-to-record-remove-tru"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2377,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://thehill.com/hilltv/what-americas-thinking/410447-former-fbi-lawyer-plot-to-record-remove-tru",
+   "recovered": "https://thehill.com/hilltv/what-americas-thinking/410447-former-fbi-lawyer-plot-to-record-remove-tru"
+  },
+  {
+   "layer": "directives",
+   "postNum": 2378,
+   "verdict": "BOTH_NORMALIZATIONS_REQUIRED",
+   "certified": "DO NOT LOOK HERE [CHINA] https://www.youtube.com/watch?v=aeVrMniBjSc",
+   "recovered": null
+  },
+  {
+   "layer": "directives",
+   "postNum": 2382,
+   "verdict": "BOTH_NORMALIZATIONS_REQUIRED",
+   "certified": "Re_read drops re: Polls https://www.oge.gov/web/oge.nsf/Resources/Political+Activities https://osc.g",
+   "recovered": null
+  },
+  {
+   "layer": "claims",
+   "postNum": 2386,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.bbc.com/news/world-asia-46073979 https://www.mediamatters.org/blog/2018/10/30/nevada-gop",
+   "recovered": "https://www.bbc.com/news/world-asia-46073979\nhttps://www.mediamatters.org/blog/2018/10/30/nevada-gop"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2386,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.washingtonpost.com/blogs/post-partisan/wp/2018/10/26/were-all-part-of-the-right-wing-con",
+   "recovered": "https://www.washingtonpost.com/blogs/post-partisan/wp/2018/10/26/were-all-part-of-the-right-wing-con"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2386,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.theguardian.com/us-news/2018/nov/01/trump-rallies-america-midterms-white-house https://n",
+   "recovered": "https://www.theguardian.com/us-news/2018/nov/01/trump-rallies-america-midterms-white-house\nhttps://n"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2386,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.newsweek.com/gab-collusion-big-tech-app-trump-shooter-bowers-free-speech-anti-semitic-11",
+   "recovered": "https://www.newsweek.com/gab-collusion-big-tech-app-trump-shooter-bowers-free-speech-anti-semitic-11"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2386,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.msn.com/en-us/news/politics/hoaxes-hate-speech-find-home-on-instagram/ar-BBPfsXl https:/",
+   "recovered": "https://www.msn.com/en-us/news/politics/hoaxes-hate-speech-find-home-on-instagram/ar-BBPfsXl\nhttps:/"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2386,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://worldisraelnews.com/synagogue-shooter-spewed-online-hate-for-jews/ https://www.examiner.org/",
+   "recovered": "https://worldisraelnews.com/synagogue-shooter-spewed-online-hate-for-jews/\nhttps://www.examiner.org/"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2386,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.msn.com/en-us/news/us/the-pittsburgh-shooter-could-become-the-second-american-to-face-de",
+   "recovered": "https://www.msn.com/en-us/news/us/the-pittsburgh-shooter-could-become-the-second-american-to-face-de"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2386,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://hollywoodlife.com/2018/10/27/who-is-robert-bowers-pittsburgh-gunman-shooter/ https://www.the",
+   "recovered": "https://hollywoodlife.com/2018/10/27/who-is-robert-bowers-pittsburgh-gunman-shooter/\nhttps://www.the"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 2386,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.bbc.com/news/world-asia-46073979 https://www.mediamatters.org/blog/2018/10/30/nevada-gop",
+   "recovered": "https://www.bbc.com/news/world-asia-46073979\nhttps://www.mediamatters.org/blog/2018/10/30/nevada-gop"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 2386,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.washingtonpost.com/blogs/post-partisan/wp/2018/10/26/were-all-part-of-the-right-wing-con",
+   "recovered": "https://www.washingtonpost.com/blogs/post-partisan/wp/2018/10/26/were-all-part-of-the-right-wing-con"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 2386,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.theguardian.com/us-news/2018/nov/01/trump-rallies-america-midterms-white-house https://n",
+   "recovered": "https://www.theguardian.com/us-news/2018/nov/01/trump-rallies-america-midterms-white-house\nhttps://n"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 2386,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.newsweek.com/gab-collusion-big-tech-app-trump-shooter-bowers-free-speech-anti-semitic-11",
+   "recovered": "https://www.newsweek.com/gab-collusion-big-tech-app-trump-shooter-bowers-free-speech-anti-semitic-11"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 2386,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.msn.com/en-us/news/politics/hoaxes-hate-speech-find-home-on-instagram/ar-BBPfsXl https:/",
+   "recovered": "https://www.msn.com/en-us/news/politics/hoaxes-hate-speech-find-home-on-instagram/ar-BBPfsXl\nhttps:/"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 2386,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://worldisraelnews.com/synagogue-shooter-spewed-online-hate-for-jews/ https://www.examiner.org/",
+   "recovered": "https://worldisraelnews.com/synagogue-shooter-spewed-online-hate-for-jews/\nhttps://www.examiner.org/"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 2386,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.msn.com/en-us/news/us/the-pittsburgh-shooter-could-become-the-second-american-to-face-de",
+   "recovered": "https://www.msn.com/en-us/news/us/the-pittsburgh-shooter-could-become-the-second-american-to-face-de"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 2386,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://hollywoodlife.com/2018/10/27/who-is-robert-bowers-pittsburgh-gunman-shooter/ https://www.the",
+   "recovered": "https://hollywoodlife.com/2018/10/27/who-is-robert-bowers-pittsburgh-gunman-shooter/\nhttps://www.the"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2386,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.bbc.com/news/world-asia-46073979 https://www.mediamatters.org/blog/2018/10/30/nevada-gop",
+   "recovered": "https://www.bbc.com/news/world-asia-46073979\nhttps://www.mediamatters.org/blog/2018/10/30/nevada-gop"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2386,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.washingtonpost.com/blogs/post-partisan/wp/2018/10/26/were-all-part-of-the-right-wing-con",
+   "recovered": "https://www.washingtonpost.com/blogs/post-partisan/wp/2018/10/26/were-all-part-of-the-right-wing-con"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2386,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.theguardian.com/us-news/2018/nov/01/trump-rallies-america-midterms-white-house https://n",
+   "recovered": "https://www.theguardian.com/us-news/2018/nov/01/trump-rallies-america-midterms-white-house\nhttps://n"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2386,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.newsweek.com/gab-collusion-big-tech-app-trump-shooter-bowers-free-speech-anti-semitic-11",
+   "recovered": "https://www.newsweek.com/gab-collusion-big-tech-app-trump-shooter-bowers-free-speech-anti-semitic-11"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2386,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.msn.com/en-us/news/politics/hoaxes-hate-speech-find-home-on-instagram/ar-BBPfsXl https:/",
+   "recovered": "https://www.msn.com/en-us/news/politics/hoaxes-hate-speech-find-home-on-instagram/ar-BBPfsXl\nhttps:/"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2386,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://worldisraelnews.com/synagogue-shooter-spewed-online-hate-for-jews/ https://www.examiner.org/",
+   "recovered": "https://worldisraelnews.com/synagogue-shooter-spewed-online-hate-for-jews/\nhttps://www.examiner.org/"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2386,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://hollywoodlife.com/2018/10/27/who-is-robert-bowers-pittsburgh-gunman-shooter/ https://www.the",
+   "recovered": "https://hollywoodlife.com/2018/10/27/who-is-robert-bowers-pittsburgh-gunman-shooter/\nhttps://www.the"
+  },
+  {
+   "layer": "directives",
+   "postNum": 2395,
+   "verdict": "BOTH_NORMALIZATIONS_REQUIRED",
+   "certified": "Re_read drops re: MS13 https://twitter.com/RepMattGaetz/status/1052629557826736129",
+   "recovered": null
+  },
+  {
+   "layer": "claims",
+   "postNum": 2399,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[2016 Democrat Nominee for President of the United States] https://www.foxnews.com/politics/hillary-",
+   "recovered": "[2016 Democrat Nominee for President of the United States]\nhttps://www.foxnews.com/politics/hillary-"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2399,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[2016 Democrat Nominee for President of the United States] https://www.foxnews.com/politics/hillary-",
+   "recovered": "[2016 Democrat Nominee for President of the United States]\nhttps://www.foxnews.com/politics/hillary-"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2445,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "What role did he play re: House investigations? House Oversight and Government Reform Committee Chai",
+   "recovered": "What role did he play re: House investigations?\nHouse Oversight and Government Reform Committee Chai"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2445,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "What role did he play re: House investigations? House Judiciary Chairman",
+   "recovered": "What role did he play re: House investigations?\nHouse Judiciary Chairman"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2445,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "What role did he play re: House investigations? House Oversight and Government Reform Committee Chai",
+   "recovered": "What role did he play re: House investigations?\nHouse Oversight and Government Reform Committee Chai"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2445,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "What role did he play re: House investigations? House Judiciary Chairman",
+   "recovered": "What role did he play re: House investigations?\nHouse Judiciary Chairman"
+  },
+  {
+   "layer": "directives",
+   "postNum": 2500,
+   "verdict": "BOTH_NORMALIZATIONS_REQUIRED",
+   "certified": "Re_read drops re: WARNINGS https://www.washingtonpost.com/politics/new-book-by-trump-advisers-calls-",
+   "recovered": null
+  },
+  {
+   "layer": "claims",
+   "postNum": 2523,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.theintelligencer.net/news/top-headlines/2018/12/305th-military-police-company-deploys-to-",
+   "recovered": "http://www.theintelligencer.net/news/top-headlines/2018/12/305th-military-police-company-deploys-to-"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2523,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "http://www.theintelligencer.net/news/top-headlines/2018/12/305th-military-police-company-deploys-to-",
+   "recovered": "http://www.theintelligencer.net/news/top-headlines/2018/12/305th-military-police-company-deploys-to-"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2579,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://twitter.com/realDonaldTrump/status/1072471575956504576 https://www.foxnews.com/politics/trum",
+   "recovered": "https://twitter.com/realDonaldTrump/status/1072471575956504576\nhttps://www.foxnews.com/politics/trum"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2579,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://twitter.com/realDonaldTrump/status/1072471575956504576 https://www.foxnews.com/politics/trum",
+   "recovered": "https://twitter.com/realDonaldTrump/status/1072471575956504576\nhttps://www.foxnews.com/politics/trum"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2590,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.dailymail.co.uk/news/article-6487315/High-profile-figure-convicted-suppression-orders-pr",
+   "recovered": "https://www.dailymail.co.uk/news/article-6487315/High-profile-figure-convicted-suppression-orders-pr"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2590,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.dailymail.co.uk/news/article-6487315/High-profile-figure-convicted-suppression-orders-pr",
+   "recovered": "https://www.dailymail.co.uk/news/article-6487315/High-profile-figure-convicted-suppression-orders-pr"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2692,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Then-Director James Comey; since fired; Then-Associate Deputy Director David Bowdich, who later repl",
+   "recovered": "Then-Director James Comey; since fired;\nThen-Associate Deputy Director David Bowdich, who later repl"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2692,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Priestap, now retired; James Rybicki, former chief of staff to Comey; FBI intelligence analyst Jonat",
+   "recovered": "Priestap, now retired;\nJames Rybicki, former chief of staff to Comey;\nFBI intelligence analyst Jonat"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2692,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Herring; Michael Kortan, FBI assistant director for public affairs, now retired; Former principal de",
+   "recovered": "Herring;\nMichael Kortan, FBI assistant director for public affairs, now retired;\nFormer principal de"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2692,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Then-Director James Comey; since fired; Then-Associate Deputy Director David Bowdich, who later repl",
+   "recovered": "Then-Director James Comey; since fired;\nThen-Associate Deputy Director David Bowdich, who later repl"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2692,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Priestap, now retired; James Rybicki, former chief of staff to Comey; FBI intelligence analyst Jonat",
+   "recovered": "Priestap, now retired;\nJames Rybicki, former chief of staff to Comey;\nFBI intelligence analyst Jonat"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2692,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Herring; Michael Kortan, FBI assistant director for public affairs, now retired; Former principal de",
+   "recovered": "Herring;\nMichael Kortan, FBI assistant director for public affairs, now retired;\nFormer principal de"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2714,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "What do they ALL have in common? CLINTON CONNECTION",
+   "recovered": "What do they ALL have in common?\nCLINTON CONNECTION"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2714,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "What do they ALL have in common? CLINTON CONNECTION",
+   "recovered": "What do they ALL have in common?\nCLINTON CONNECTION"
+  },
+  {
+   "layer": "directives",
+   "postNum": 2801,
+   "verdict": "BOTH_NORMALIZATIONS_REQUIRED",
+   "certified": "Search ‘Qanon’ https://www.nbcnews.com/pages/search/?q=qanon https://abcnews.go.com/search?searchtex",
+   "recovered": null
+  },
+  {
+   "layer": "claims",
+   "postNum": 2807,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.theguardian.com/world/2007/feb/08/usa.iraq1 https://www.reuters.com/article/us-iraq-usa-",
+   "recovered": "https://www.theguardian.com/world/2007/feb/08/usa.iraq1\nhttps://www.reuters.com/article/us-iraq-usa-"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2807,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Example – not intended for PUBLIC awareness] https://www.nytimes.com/2014/10/12/world/investigation",
+   "recovered": "[Example – not intended for PUBLIC awareness]\nhttps://www.nytimes.com/2014/10/12/world/investigation"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 2807,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.theguardian.com/world/2007/feb/08/usa.iraq1 https://www.reuters.com/article/us-iraq-usa-",
+   "recovered": "https://www.theguardian.com/world/2007/feb/08/usa.iraq1\nhttps://www.reuters.com/article/us-iraq-usa-"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2807,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.theguardian.com/world/2007/feb/08/usa.iraq1 https://www.reuters.com/article/us-iraq-usa-",
+   "recovered": "https://www.theguardian.com/world/2007/feb/08/usa.iraq1\nhttps://www.reuters.com/article/us-iraq-usa-"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2807,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Example – not intended for PUBLIC awareness] https://www.nytimes.com/2014/10/12/world/investigation",
+   "recovered": "[Example – not intended for PUBLIC awareness]\nhttps://www.nytimes.com/2014/10/12/world/investigation"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2883,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "(2) Remove Control from Gov't and provide to CA (who controls CA?) https://www.forbes.com/sites/jody",
+   "recovered": "(2) Remove Control from Gov't and provide to CA (who controls CA?)\nhttps://www.forbes.com/sites/jody"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2883,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "(2) Remove Control from Gov't and provide to CA (who controls CA?) https://www.forbes.com/sites/jody",
+   "recovered": "(2) Remove Control from Gov't and provide to CA (who controls CA?)\nhttps://www.forbes.com/sites/jody"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2894,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://edition.cnn.com/2019/02/25/australia/cardinal-george-pell-vatican-conviction-intl/index.html",
+   "recovered": "https://edition.cnn.com/2019/02/25/australia/cardinal-george-pell-vatican-conviction-intl/index.html"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2894,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://edition.cnn.com/2019/02/25/australia/cardinal-george-pell-vatican-conviction-intl/index.html",
+   "recovered": "https://edition.cnn.com/2019/02/25/australia/cardinal-george-pell-vatican-conviction-intl/index.html"
+  },
+  {
+   "layer": "claims",
+   "postNum": 2968,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.foxbusiness.com/technology/google-continues-work-on-controversial-china-search-engine-re",
+   "recovered": "https://www.foxbusiness.com/technology/google-continues-work-on-controversial-china-search-engine-re"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 2968,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.foxbusiness.com/technology/google-continues-work-on-controversial-china-search-engine-re",
+   "recovered": "https://www.foxbusiness.com/technology/google-continues-work-on-controversial-china-search-engine-re"
+  },
+  {
+   "layer": "claims",
+   "postNum": 3182,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://twitter.com/drawandstrike/status/1042563939211595778 https://www.irs.gov/individuals/how-do-",
+   "recovered": "https://twitter.com/drawandstrike/status/1042563939211595778\nhttps://www.irs.gov/individuals/how-do-"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 3182,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://twitter.com/drawandstrike/status/1042563939211595778 https://www.irs.gov/individuals/how-do-",
+   "recovered": "https://twitter.com/drawandstrike/status/1042563939211595778\nhttps://www.irs.gov/individuals/how-do-"
+  },
+  {
+   "layer": "claims",
+   "postNum": 3316,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://radio.foxnews.com/2019/04/19/john-dowd-rod-rosenstein-has-to-answer-for-appointing-robert-mu",
+   "recovered": "https://radio.foxnews.com/2019/04/19/john-dowd-rod-rosenstein-has-to-answer-for-appointing-robert-mu"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 3316,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://radio.foxnews.com/2019/04/19/john-dowd-rod-rosenstein-has-to-answer-for-appointing-robert-mu",
+   "recovered": "https://radio.foxnews.com/2019/04/19/john-dowd-rod-rosenstein-has-to-answer-for-appointing-robert-mu"
+  },
+  {
+   "layer": "directives",
+   "postNum": 3428,
+   "verdict": "BOTH_NORMALIZATIONS_REQUIRED",
+   "certified": "Find [4] http://www.zimbio.com/photos/Ghislaine+Maxwell/2014+ETM+Children+Benefit+Gala/Vl0uC7GgK_w",
+   "recovered": null
+  },
+  {
+   "layer": "directives",
+   "postNum": 349,
+   "verdict": "BOTH_NORMALIZATIONS_REQUIRED",
+   "certified": "God bless, Q",
+   "recovered": null
+  },
+  {
+   "layer": "directives",
+   "postNum": 353,
+   "verdict": "BOTH_NORMALIZATIONS_REQUIRED",
+   "certified": "Godspeed, Q",
+   "recovered": null
+  },
+  {
+   "layer": "claims",
+   "postNum": 3584,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "“AI Manhattan Project.” https://www.breitbart.com/tech/2019/10/14/whistleblower-google-is-developing",
+   "recovered": "“AI Manhattan Project.”\nhttps://www.breitbart.com/tech/2019/10/14/whistleblower-google-is-developing"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 3584,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "“AI Manhattan Project.” https://www.breitbart.com/tech/2019/10/14/whistleblower-google-is-developing",
+   "recovered": "“AI Manhattan Project.”\nhttps://www.breitbart.com/tech/2019/10/14/whistleblower-google-is-developing"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 3584,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "“AI Manhattan Project.” https://www.breitbart.com/tech/2019/10/14/whistleblower-google-is-developing",
+   "recovered": "“AI Manhattan Project.”\nhttps://www.breitbart.com/tech/2019/10/14/whistleblower-google-is-developing"
+  },
+  {
+   "layer": "claims",
+   "postNum": 3623,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Re-read drops re: 'Foreign Aid' https://www.youtube.com/watch?v=G2qIXXafxCQ&feature=youtu.be",
+   "recovered": "Re-read drops re: 'Foreign Aid'\nhttps://www.youtube.com/watch?v=G2qIXXafxCQ&feature=youtu.be"
+  },
+  {
+   "layer": "claims",
+   "postNum": 3623,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Who audits where foreign aid actually goes? Nobody.",
+   "recovered": "Who audits where foreign aid actually goes? \nNobody."
+  },
+  {
+   "layer": "checkable",
+   "postNum": 3623,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Re-read drops re: 'Foreign Aid' https://www.youtube.com/watch?v=G2qIXXafxCQ&feature=youtu.be",
+   "recovered": "Re-read drops re: 'Foreign Aid'\nhttps://www.youtube.com/watch?v=G2qIXXafxCQ&feature=youtu.be"
+  },
+  {
+   "layer": "claims",
+   "postNum": 3748,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.breitbart.com/politics/2019/12/22/study-immigration-redistribute-26-congressional-seats-",
+   "recovered": "https://www.breitbart.com/politics/2019/12/22/study-immigration-redistribute-26-congressional-seats-"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 3748,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.breitbart.com/politics/2019/12/22/study-immigration-redistribute-26-congressional-seats-",
+   "recovered": "https://www.breitbart.com/politics/2019/12/22/study-immigration-redistribute-26-congressional-seats-"
+  },
+  {
+   "layer": "claims",
+   "postNum": 3778,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.judicialwatch.org/press-releases/california-begins-massive-voter-roll-clean-up-notifies-",
+   "recovered": "https://www.judicialwatch.org/press-releases/california-begins-massive-voter-roll-clean-up-notifies-"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 3778,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.judicialwatch.org/press-releases/california-begins-massive-voter-roll-clean-up-notifies-",
+   "recovered": "https://www.judicialwatch.org/press-releases/california-begins-massive-voter-roll-clean-up-notifies-"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 3778,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.judicialwatch.org/press-releases/california-begins-massive-voter-roll-clean-up-notifies-",
+   "recovered": "https://www.judicialwatch.org/press-releases/california-begins-massive-voter-roll-clean-up-notifies-"
+  },
+  {
+   "layer": "directives",
+   "postNum": 3819,
+   "verdict": "BOTH_NORMALIZATIONS_REQUIRED",
+   "certified": "Read [1] https://www.miamiherald.com/news/politics-government/article237959369.html",
+   "recovered": null
+  },
+  {
+   "layer": "directives",
+   "postNum": 3819,
+   "verdict": "BOTH_NORMALIZATIONS_REQUIRED",
+   "certified": "Read [2] https://www.miamiherald.com/news/politics-government/article214974800.html",
+   "recovered": null
+  },
+  {
+   "layer": "claims",
+   "postNum": 3896,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[rapid spread] https://www.theepochtimes.com/the-closing-of-21-million-cell-phone-accounts-in-china-",
+   "recovered": "[rapid spread]\nhttps://www.theepochtimes.com/the-closing-of-21-million-cell-phone-accounts-in-china-"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 3896,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[rapid spread] https://www.theepochtimes.com/the-closing-of-21-million-cell-phone-accounts-in-china-",
+   "recovered": "[rapid spread]\nhttps://www.theepochtimes.com/the-closing-of-21-million-cell-phone-accounts-in-china-"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 3896,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[rapid spread] https://www.theepochtimes.com/the-closing-of-21-million-cell-phone-accounts-in-china-",
+   "recovered": "[rapid spread]\nhttps://www.theepochtimes.com/the-closing-of-21-million-cell-phone-accounts-in-china-"
+  },
+  {
+   "layer": "directives",
+   "postNum": 3896,
+   "verdict": "BOTH_NORMALIZATIONS_REQUIRED",
+   "certified": ">Push new/revised P_2020 > vote by mail? [unsecure] https://twitter.com/TomFitton/status/12420715064",
+   "recovered": null
+  },
+  {
+   "layer": "claims",
+   "postNum": 3917,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[out of order_insert important] https://twitter.com/MonangeSauvi/status/1247988574642978816",
+   "recovered": "[out of order_insert important]\nhttps://twitter.com/MonangeSauvi/status/1247988574642978816"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 3917,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[out of order_insert important] https://twitter.com/MonangeSauvi/status/1247988574642978816",
+   "recovered": "[out of order_insert important]\nhttps://twitter.com/MonangeSauvi/status/1247988574642978816"
+  },
+  {
+   "layer": "directives",
+   "postNum": 393,
+   "verdict": "BOTH_NORMALIZATIONS_REQUIRED",
+   "certified": "Godspeed, Q",
+   "recovered": null
+  },
+  {
+   "layer": "directives",
+   "postNum": 394,
+   "verdict": "BOTH_NORMALIZATIONS_REQUIRED",
+   "certified": "Godspeed, Q",
+   "recovered": null
+  },
+  {
+   "layer": "claims",
+   "postNum": 4285,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.bloomberg.com/news/articles/2020-02-05/china-is-trying-to-patent-gilead-s-experimental-c",
+   "recovered": "https://www.bloomberg.com/news/articles/2020-02-05/china-is-trying-to-patent-gilead-s-experimental-c"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 4285,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.bloomberg.com/news/articles/2020-02-05/china-is-trying-to-patent-gilead-s-experimental-c",
+   "recovered": "https://www.bloomberg.com/news/articles/2020-02-05/china-is-trying-to-patent-gilead-s-experimental-c"
+  },
+  {
+   "layer": "claims",
+   "postNum": 4296,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "May 8, 2020 _masks on Reconcile.",
+   "recovered": "May 8, 2020 _masks on\nReconcile."
+  },
+  {
+   "layer": "checkable",
+   "postNum": 4296,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "May 8, 2020 _masks on Reconcile.",
+   "recovered": "May 8, 2020 _masks on\nReconcile."
+  },
+  {
+   "layer": "claims",
+   "postNum": 4320,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Last line should clarify: Is this about the virus OR THE ELECTION?",
+   "recovered": "Last line should clarify: \nIs this about the virus OR THE ELECTION?"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 4320,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Last line should clarify: Is this about the virus OR THE ELECTION?",
+   "recovered": "Last line should clarify: \nIs this about the virus OR THE ELECTION?"
+  },
+  {
+   "layer": "directives",
+   "postNum": 434,
+   "verdict": "BOTH_NORMALIZATIONS_REQUIRED",
+   "certified": "God bless, Q",
+   "recovered": null
+  },
+  {
+   "layer": "claims",
+   "postNum": 4415,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.theatlantic.com/politics/archive/2020/06/james-mattis-denounces-trump-protests-militariz",
+   "recovered": "https://www.theatlantic.com/politics/archive/2020/06/james-mattis-denounces-trump-protests-militariz"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 4415,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.theatlantic.com/politics/archive/2020/06/james-mattis-denounces-trump-protests-militariz",
+   "recovered": "https://www.theatlantic.com/politics/archive/2020/06/james-mattis-denounces-trump-protests-militariz"
+  },
+  {
+   "layer": "claims",
+   "postNum": 4437,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "def visit_twitter_and_log_in visit 'https://cards-dev.twitter.com/validator' find('input.js-username",
+   "recovered": "def visit_twitter_and_log_in\n    visit 'https://cards-dev.twitter.com/validator'\n    find('input.js-"
+  },
+  {
+   "layer": "claims",
+   "postNum": 4437,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "def enter_url_and_click_preview(url) find('input.FormControl').set(url) click_on('Preview card')",
+   "recovered": "def enter_url_and_click_preview(url)\n    find('input.FormControl').set(url)\n    click_on('Preview ca"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 4437,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "def visit_twitter_and_log_in visit 'https://cards-dev.twitter.com/validator' find('input.js-username",
+   "recovered": "def visit_twitter_and_log_in\n    visit 'https://cards-dev.twitter.com/validator'\n    find('input.js-"
+  },
+  {
+   "layer": "directives",
+   "postNum": 4437,
+   "verdict": "BOTH_NORMALIZATIONS_REQUIRED",
+   "certified": "find('input.js-password-field').set(ENV['TWITTER_PASSWORD']) click_on('Log in') end",
+   "recovered": null
+  },
+  {
+   "layer": "claims",
+   "postNum": 4548,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "\"De Blasio said Sunday that more than 650 inmates had been released over coronavirus concerns.\" http",
+   "recovered": "\"De Blasio said Sunday that more than 650 inmates had been released over coronavirus concerns.\"\nhttp"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 4548,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "\"De Blasio said Sunday that more than 650 inmates had been released over coronavirus concerns.\" http",
+   "recovered": "\"De Blasio said Sunday that more than 650 inmates had been released over coronavirus concerns.\"\nhttp"
+  },
+  {
+   "layer": "claims",
+   "postNum": 4595,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "v2_change we can believe in Q",
+   "recovered": "v2_change we can believe in\nQ"
+  },
+  {
+   "layer": "claims",
+   "postNum": 4635,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Then v Now https://www.britannica.com/topic/SA-Nazi-organization",
+   "recovered": "Then v Now\nhttps://www.britannica.com/topic/SA-Nazi-organization"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 4635,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Then v Now https://www.britannica.com/topic/SA-Nazi-organization",
+   "recovered": "Then v Now\nhttps://www.britannica.com/topic/SA-Nazi-organization"
+  },
+  {
+   "layer": "claims",
+   "postNum": 4645,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.theguardian.com/us-news/2017/may/24/trump-international-trip-barack-obama-europe-return ",
+   "recovered": "https://www.theguardian.com/us-news/2017/may/24/trump-international-trip-barack-obama-europe-return\n"
+  },
+  {
+   "layer": "conclusions",
+   "postNum": 4645,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.theguardian.com/us-news/2017/may/24/trump-international-trip-barack-obama-europe-return ",
+   "recovered": "https://www.theguardian.com/us-news/2017/may/24/trump-international-trip-barack-obama-europe-return\n"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 4645,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.theguardian.com/us-news/2017/may/24/trump-international-trip-barack-obama-europe-return ",
+   "recovered": "https://www.theguardian.com/us-news/2017/may/24/trump-international-trip-barack-obama-europe-return\n"
+  },
+  {
+   "layer": "claims",
+   "postNum": 4653,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Past 12 hours] https://www.justsecurity.org/72339/qanon-is-a-nazi-cult-rebranded/ https://www.alter",
+   "recovered": "[Past 12 hours]\nhttps://www.justsecurity.org/72339/qanon-is-a-nazi-cult-rebranded/\nhttps://www.alter"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 4653,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[Past 12 hours] https://www.justsecurity.org/72339/qanon-is-a-nazi-cult-rebranded/ https://www.alter",
+   "recovered": "[Past 12 hours]\nhttps://www.justsecurity.org/72339/qanon-is-a-nazi-cult-rebranded/\nhttps://www.alter"
+  },
+  {
+   "layer": "predictions",
+   "postNum": 4655,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://twitter.com/MrAndyNgo/status/1304150777900855296 https://www.foxnews.com/us/portland-facial-",
+   "recovered": "https://twitter.com/MrAndyNgo/status/1304150777900855296\nhttps://www.foxnews.com/us/portland-facial-"
+  },
+  {
+   "layer": "claims",
+   "postNum": 4668,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.yaktrinews.com/eastern-washington-woman-arrested-for-starting-fires-while-crews-worked-t",
+   "recovered": "https://www.yaktrinews.com/eastern-washington-woman-arrested-for-starting-fires-while-crews-worked-t"
+  },
+  {
+   "layer": "claims",
+   "postNum": 4668,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://nbc16.com/news/local/man-seen-starting-fires-at-oregon-state-park-local-fire-chief-says?fbcl",
+   "recovered": "https://nbc16.com/news/local/man-seen-starting-fires-at-oregon-state-park-local-fire-chief-says?fbcl"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 4668,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.yaktrinews.com/eastern-washington-woman-arrested-for-starting-fires-while-crews-worked-t",
+   "recovered": "https://www.yaktrinews.com/eastern-washington-woman-arrested-for-starting-fires-while-crews-worked-t"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 4668,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://nbc16.com/news/local/man-seen-starting-fires-at-oregon-state-park-local-fire-chief-says?fbcl",
+   "recovered": "https://nbc16.com/news/local/man-seen-starting-fires-at-oregon-state-park-local-fire-chief-says?fbcl"
+  },
+  {
+   "layer": "claims",
+   "postNum": 4669,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://twitter.com/wspd1pio/status/1304147032844632064 https://www.newsweek.com/court-rules-defenda",
+   "recovered": "https://twitter.com/wspd1pio/status/1304147032844632064\nhttps://www.newsweek.com/court-rules-defenda"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 4669,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://twitter.com/wspd1pio/status/1304147032844632064 https://www.newsweek.com/court-rules-defenda",
+   "recovered": "https://twitter.com/wspd1pio/status/1304147032844632064\nhttps://www.newsweek.com/court-rules-defenda"
+  },
+  {
+   "layer": "claims",
+   "postNum": 4842,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "2020 Total Deaths US (jan - week 9/26): 2,130,000 (236,000/month) https://data.cdc.gov/NCHS/Weekly-C",
+   "recovered": "2020 Total Deaths US (jan - week 9/26): 2,130,000 (236,000/month)\nhttps://data.cdc.gov/NCHS/Weekly-C"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 4842,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "2020 Total Deaths US (jan - week 9/26): 2,130,000 (236,000/month) https://data.cdc.gov/NCHS/Weekly-C",
+   "recovered": "2020 Total Deaths US (jan - week 9/26): 2,130,000 (236,000/month)\nhttps://data.cdc.gov/NCHS/Weekly-C"
+  },
+  {
+   "layer": "claims",
+   "postNum": 4887,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.newsbreak.com/news/1559047454356/dems-deploying-darpa-funded-ai-driven-information-warfa",
+   "recovered": "https://www.newsbreak.com/news/1559047454356/dems-deploying-darpa-funded-ai-driven-information-warfa"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 4887,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.newsbreak.com/news/1559047454356/dems-deploying-darpa-funded-ai-driven-information-warfa",
+   "recovered": "https://www.newsbreak.com/news/1559047454356/dems-deploying-darpa-funded-ai-driven-information-warfa"
+  },
+  {
+   "layer": "predictions",
+   "postNum": 4949,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.youtube.com/watch?v=9tjdswqGGVg&list=PLr4E97YzUfEMIr23hzOBmk9mg-z8TDOXj that this nation",
+   "recovered": "https://www.youtube.com/watch?v=9tjdswqGGVg&list=PLr4E97YzUfEMIr23hzOBmk9mg-z8TDOXj\nthat this nation"
+  },
+  {
+   "layer": "claims",
+   "postNum": 497,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[win]/when [15]",
+   "recovered": "[win]/when\n[15]"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 497,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "[win]/when [15]",
+   "recovered": "[win]/when\n[15]"
+  },
+  {
+   "layer": "claims",
+   "postNum": 64,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Fellow Patriots, I'm being advised actions have created accelerated counter-actions.",
+   "recovered": "Fellow Patriots,\nI'm being advised actions have created accelerated counter-actions."
+  },
+  {
+   "layer": "checkable",
+   "postNum": 64,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "Fellow Patriots, I'm being advised actions have created accelerated counter-actions.",
+   "recovered": "Fellow Patriots,\nI'm being advised actions have created accelerated counter-actions."
+  },
+  {
+   "layer": "claims",
+   "postNum": 732,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.washingtonpost.com/news/fact-checker/wp/2016/04/08/john-mccains-claim-he-has-nothing-to-",
+   "recovered": "https://www.washingtonpost.com/news/fact-checker/wp/2016/04/08/john-mccains-claim-he-has-nothing-to-"
+  },
+  {
+   "layer": "checkable",
+   "postNum": 732,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "https://www.washingtonpost.com/news/fact-checker/wp/2016/04/08/john-mccains-claim-he-has-nothing-to-",
+   "recovered": "https://www.washingtonpost.com/news/fact-checker/wp/2016/04/08/john-mccains-claim-he-has-nothing-to-"
+  },
+  {
+   "layer": "directives",
+   "postNum": 767,
+   "verdict": "BOTH_NORMALIZATIONS_REQUIRED",
+   "certified": "GOD BLESS, Q",
+   "recovered": null
+  },
+  {
+   "layer": "claims",
+   "postNum": 859,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "These peo>>567493 ple are stupid.",
+   "recovered": "These peo>>567493\nple are stupid."
+  },
+  {
+   "layer": "checkable",
+   "postNum": 859,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "These peo>>567493 ple are stupid.",
+   "recovered": "These peo>>567493\nple are stupid."
+  },
+  {
+   "layer": "claims",
+   "postNum": 909,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "We are working to END. EVIL.",
+   "recovered": "We are working to END.\nEVIL."
+  },
+  {
+   "layer": "checkable",
+   "postNum": 909,
+   "verdict": "WHITESPACE_RECOVERY_STILL_REQUIRED",
+   "certified": "We are working to END. EVIL.",
+   "recovered": "We are working to END.\nEVIL."
+  },
+  {
+   "layer": "emphasis",
+   "postNum": 983,
+   "verdict": "BOTH_NORMALIZATIONS_REQUIRED",
+   "certified": "/ SEC #",
+   "recovered": null
+  }
+ ]
+}

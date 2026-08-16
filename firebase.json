@@ -2,5 +2,20 @@
   "firestore": {
     "database": "default",
     "rules": "firestore.rules"
+  },
+  "hosting": {
+    "site": "q-app-2ce0a",
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
   }
 }

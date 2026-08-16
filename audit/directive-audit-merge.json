@@ -1,0 +1,1211 @@
+{
+ "note": "Merge plan from the owner-supplied Q_directive_audit_full.txt (2,198 entries). ADD = a directive the certified layer does not hold. EXPAND = the certified layer holds a PARTIAL span; the owner ruled the whole sentence is the directive. SKIPPED = the audit sentence does not appear verbatim in the drop, so it is not applied — the archive never certifies wording Q did not write.",
+ "counts": {
+  "parsed": 2198,
+  "already": 1899,
+  "add": 293,
+  "expand": 0,
+  "skipped": 6
+ },
+ "add": [
+  {
+   "postNum": 1,
+   "text": "Expect massive riots organized in defiance and others fleeing the US to occur."
+  },
+  {
+   "postNum": 1,
+   "text": "Proof check: Locate a NG member and ask if activated for duty 10/30 across most major cities."
+  },
+  {
+   "postNum": 4,
+   "text": "Again, there are a lot more good people than bad so have faith."
+  },
+  {
+   "postNum": 6,
+   "text": "Again, there are a lot more good people than bad so have faith."
+  },
+  {
+   "postNum": 31,
+   "text": "There is so much string pulling and blackmail that we need to cut these off to truly gain the power granted to us by the Patriots and hard working people of this great country."
+  },
+  {
+   "postNum": 35,
+   "text": "It is time to take back our country and make America great again."
+  },
+  {
+   "postNum": 35,
+   "text": "Let us salute and pray for the brave men and women in uniform who will undertake this assignment to bring forth peace, unity, and return power to the people."
+  },
+  {
+   "postNum": 37,
+   "text": "Let these coming days be remembered in our history as the time we fought to recapture the republic from those evil bad actors who for so long have sacrificed the good people of this land for their own personal gain."
+  },
+  {
+   "postNum": 37,
+   "text": "LET JUSTICE BE SERVED."
+  },
+  {
+   "postNum": 59,
+   "text": "Combine all posts and analyze."
+  },
+  {
+   "postNum": 61,
+   "text": "Expect outages periodically (infiltrated)."
+  },
+  {
+   "postNum": 66,
+   "text": "Let's be real clear."
+  },
+  {
+   "postNum": 80,
+   "text": "We need to get organized."
+  },
+  {
+   "postNum": 80,
+   "text": "Let's start w/ Alice & Wonderland."
+  },
+  {
+   "postNum": 82,
+   "text": "Let's start w/ Alice & Wonderland."
+  },
+  {
+   "postNum": 86,
+   "text": "Study."
+  },
+  {
+   "postNum": 92,
+   "text": "Speculate."
+  },
+  {
+   "postNum": 111,
+   "text": "Repeat."
+  },
+  {
+   "postNum": 112,
+   "text": "Repeat."
+  },
+  {
+   "postNum": 112,
+   "text": "Summarize and paint the picture."
+  },
+  {
+   "postNum": 116,
+   "text": "Upload to graphic."
+  },
+  {
+   "postNum": 118,
+   "text": "Repeat."
+  },
+  {
+   "postNum": 121,
+   "text": "List."
+  },
+  {
+   "postNum": 121,
+   "text": "Laugh."
+  },
+  {
+   "postNum": 127,
+   "text": "Let's pause and say hello to the rogue intelligence agencies currently monitoring these threads."
+  },
+  {
+   "postNum": 128,
+   "text": "Be [p]repared."
+  },
+  {
+   "postNum": 153,
+   "text": "Laugh."
+  },
+  {
+   "postNum": 157,
+   "text": "Rinse and repeat."
+  },
+  {
+   "postNum": 165,
+   "text": "Patriots, get the word out."
+  },
+  {
+   "postNum": 166,
+   "text": "Patriots, get the word out."
+  },
+  {
+   "postNum": 189,
+   "text": "Re-read graphic (ex: what family did Soros replace (Y))."
+  },
+  {
+   "postNum": 242,
+   "text": "Be here tomorrow."
+  },
+  {
+   "postNum": 243,
+   "text": "Just wait until next week."
+  },
+  {
+   "postNum": 247,
+   "text": "Think HRC emails, Weiner laptop, etc."
+  },
+  {
+   "postNum": 281,
+   "text": "Never forget that."
+  },
+  {
+   "postNum": 310,
+   "text": "Re-listen to yesterday's speech."
+  },
+  {
+   "postNum": 314,
+   "text": "Be the autists we know you are."
+  },
+  {
+   "postNum": 316,
+   "text": "Re-listen to yesterday's speech."
+  },
+  {
+   "postNum": 326,
+   "text": "Expect fireworks."
+  },
+  {
+   "postNum": 337,
+   "text": "Patriots, rest assured we are in control."
+  },
+  {
+   "postNum": 337,
+   "text": "Re-read crumbs re: slave grip the D's have on the black pop."
+  },
+  {
+   "postNum": 345,
+   "text": "Enhance."
+  },
+  {
+   "postNum": 425,
+   "text": "TRUST."
+  },
+  {
+   "postNum": 465,
+   "text": "No other platforms used."
+  },
+  {
+   "postNum": 465,
+   "text": "No comms privately w/ anyone."
+  },
+  {
+   "postNum": 475,
+   "text": "NO comms w/ anyone privately."
+  },
+  {
+   "postNum": 475,
+   "text": "NO comms outside of this platform."
+  },
+  {
+   "postNum": 477,
+   "text": "Wind the clock w/ all markers."
+  },
+  {
+   "postNum": 490,
+   "text": "Let FREEDOM RING."
+  },
+  {
+   "postNum": 506,
+   "text": "Wind the CLOCK."
+  },
+  {
+   "postNum": 513,
+   "text": "NO private comms past/present/future."
+  },
+  {
+   "postNum": 513,
+   "text": "NO comms made outside of this platform."
+  },
+  {
+   "postNum": 513,
+   "text": "Any claims that contradict the above should be considered FAKE NEWS and disregarded immediately."
+  },
+  {
+   "postNum": 515,
+   "text": "Suggest new board created."
+  },
+  {
+   "postNum": 538,
+   "text": "BEWARE of MAJOR FALSE FLAG attempts this week."
+  },
+  {
+   "postNum": 538,
+   "text": "KNOW your surroundings."
+  },
+  {
+   "postNum": 538,
+   "text": "TRUST."
+  },
+  {
+   "postNum": 568,
+   "text": "TRUST."
+  },
+  {
+   "postNum": 571,
+   "text": "FEAR the STORM."
+  },
+  {
+   "postNum": 585,
+   "text": "TRUST Adm R."
+  },
+  {
+   "postNum": 586,
+   "text": "Forget the Russia set up [1 of 22]."
+  },
+  {
+   "postNum": 586,
+   "text": "If you are religious, PRAY."
+  },
+  {
+   "postNum": 621,
+   "text": "Let that sink in."
+  },
+  {
+   "postNum": 622,
+   "text": "Time to play, Dopey."
+  },
+  {
+   "postNum": 651,
+   "text": "Expect more."
+  },
+  {
+   "postNum": 652,
+   "text": "Re_read EO’s."
+  },
+  {
+   "postNum": 672,
+   "text": "Enhance."
+  },
+  {
+   "postNum": 673,
+   "text": "No edits."
+  },
+  {
+   "postNum": 725,
+   "text": "Be the autists we know you are."
+  },
+  {
+   "postNum": 756,
+   "text": "ACTIVATE CODE: [0 0000 018739 7-ZjG]"
+  },
+  {
+   "postNum": 773,
+   "text": "Be the autists we know you are."
+  },
+  {
+   "postNum": 777,
+   "text": "Think Apple [vs."
+  },
+  {
+   "postNum": 777,
+   "text": "We can guide but you must organically uncover the TRUTH."
+  },
+  {
+   "postNum": 812,
+   "text": "Help them wake up."
+  },
+  {
+   "postNum": 837,
+   "text": "TRUST."
+  },
+  {
+   "postNum": 839,
+   "text": "CHALLENGE."
+  },
+  {
+   "postNum": 839,
+   "text": "FIGHT."
+  },
+  {
+   "postNum": 842,
+   "text": "Careful who you follow."
+  },
+  {
+   "postNum": 854,
+   "text": "WE must work TOGETHER."
+  },
+  {
+   "postNum": 854,
+   "text": "YOU must organize and BE HEARD."
+  },
+  {
+   "postNum": 884,
+   "text": "PLAY THE GAME WITH US."
+  },
+  {
+   "postNum": 960,
+   "text": "Expect a lot more."
+  },
+  {
+   "postNum": 973,
+   "text": "Time to complete 1-2."
+  },
+  {
+   "postNum": 981,
+   "text": "Sleep well, Patriot."
+  },
+  {
+   "postNum": 987,
+   "text": "Watch the EO’s."
+  },
+  {
+   "postNum": 1100,
+   "text": "Drain the swamp."
+  },
+  {
+   "postNum": 1124,
+   "text": "Testify then drop."
+  },
+  {
+   "postNum": 1155,
+   "text": "Focus should also be on Supreme Court promise."
+  },
+  {
+   "postNum": 1199,
+   "text": "Answer Q re: SR."
+  },
+  {
+   "postNum": 1248,
+   "text": "Question."
+  },
+  {
+   "postNum": 1248,
+   "text": "Fight!"
+  },
+  {
+   "postNum": 1261,
+   "text": "Expect more (outcry)."
+  },
+  {
+   "postNum": 1271,
+   "text": "Note 187."
+  },
+  {
+   "postNum": 1275,
+   "text": "No redactions."
+  },
+  {
+   "postNum": 1291,
+   "text": "Step back."
+  },
+  {
+   "postNum": 1295,
+   "text": "The only profit we should all be striving for is TRUE FREEDOM."
+  },
+  {
+   "postNum": 1297,
+   "text": "They fight unconditionally because they hold a core value, a value that we should all live in FREEDOM."
+  },
+  {
+   "postNum": 1297,
+   "text": "We must do better to protect them."
+  },
+  {
+   "postNum": 1318,
+   "text": "No outside comms."
+  },
+  {
+   "postNum": 1341,
+   "text": "Time to move on."
+  },
+  {
+   "postNum": 1358,
+   "text": "Trust must be earned."
+  },
+  {
+   "postNum": 1358,
+   "text": "Trust is not blind, nor is truth."
+  },
+  {
+   "postNum": 1380,
+   "text": "Focus."
+  },
+  {
+   "postNum": 1425,
+   "text": "Given we have now undeniably [on purpose] verified ourselves to be an inside source, expect the MSM [Clown Army] to attack in full cooperation w/ foreign and domestic assets."
+  },
+  {
+   "postNum": 1445,
+   "text": "Trace sale/spin off of Co."
+  },
+  {
+   "postNum": 1445,
+   "text": "Expect A LOT more."
+  },
+  {
+   "postNum": 1471,
+   "text": "Let them all DIG THEIR OWN GRAVES."
+  },
+  {
+   "postNum": 1489,
+   "text": "Expect bigger push."
+  },
+  {
+   "postNum": 1517,
+   "text": "Careful of clickbait."
+  },
+  {
+   "postNum": 1557,
+   "text": "Let’s start here."
+  },
+  {
+   "postNum": 1558,
+   "text": "Fight"
+  },
+  {
+   "postNum": 1558,
+   "text": "Fight"
+  },
+  {
+   "postNum": 1558,
+   "text": "Fight"
+  },
+  {
+   "postNum": 1575,
+   "text": "Abandon ship!"
+  },
+  {
+   "postNum": 1595,
+   "text": "Time to FEED."
+  },
+  {
+   "postNum": 1602,
+   "text": "You should know this based on earlier drops re: SA / Nat Guard / MIL Assets activate US soil."
+  },
+  {
+   "postNum": 1645,
+   "text": "Play LOUD."
+  },
+  {
+   "postNum": 1792,
+   "text": "Fear not."
+  },
+  {
+   "postNum": 1817,
+   "text": "Say something."
+  },
+  {
+   "postNum": 1824,
+   "text": "Ask yourself, if the U.S."
+  },
+  {
+   "postNum": 1863,
+   "text": "FIGHT!"
+  },
+  {
+   "postNum": 1879,
+   "text": "Expect MANY MANY MANY similar reports to surface from around the world."
+  },
+  {
+   "postNum": 1899,
+   "text": "Travel to Rome."
+  },
+  {
+   "postNum": 1902,
+   "text": "Travel to Rome."
+  },
+  {
+   "postNum": 1916,
+   "text": "Say something."
+  },
+  {
+   "postNum": 1916,
+   "text": "PEOPLE must unite to clean out these old institutions."
+  },
+  {
+   "postNum": 1953,
+   "text": "Know your enemy."
+  },
+  {
+   "postNum": 1956,
+   "text": "You MUST stay TOGETHER."
+  },
+  {
+   "postNum": 1960,
+   "text": "Pro TIP: Look @ CrowdStrike"
+  },
+  {
+   "postNum": 1980,
+   "text": "Swap \"of\" w/ \"in.\""
+  },
+  {
+   "postNum": 1998,
+   "text": "Expect another BIG coordinated wave [#3] of attacks by FAKE NEWS."
+  },
+  {
+   "postNum": 2037,
+   "text": "COMPARE VS OTHER STATES."
+  },
+  {
+   "postNum": 2038,
+   "text": "FIGHT!"
+  },
+  {
+   "postNum": 2038,
+   "text": "FIGHT!"
+  },
+  {
+   "postNum": 2038,
+   "text": "FIGHT!"
+  },
+  {
+   "postNum": 2039,
+   "text": "LET FREEDOM RING, PATRIOTS."
+  },
+  {
+   "postNum": 2056,
+   "text": "Every moment together is a moment you should not waste."
+  },
+  {
+   "postNum": 2101,
+   "text": "Think 'collective' attacks v."
+  },
+  {
+   "postNum": 2166,
+   "text": "EXPECT TWITTER/FB FORCE NEXT."
+  },
+  {
+   "postNum": 2206,
+   "text": "FIGHT!"
+  },
+  {
+   "postNum": 2206,
+   "text": "FIGHT!"
+  },
+  {
+   "postNum": 2206,
+   "text": "FIGHT!"
+  },
+  {
+   "postNum": 2234,
+   "text": "Let your VOICES BE HEARD."
+  },
+  {
+   "postNum": 2239,
+   "text": "Say something"
+  },
+  {
+   "postNum": 2269,
+   "text": "Time to UNITE."
+  },
+  {
+   "postNum": 2287,
+   "text": "FIGHT!"
+  },
+  {
+   "postNum": 2287,
+   "text": "FIGHT!"
+  },
+  {
+   "postNum": 2287,
+   "text": "FIGHT!"
+  },
+  {
+   "postNum": 2298,
+   "text": "EXPECT COMMS BLACKOUT ATTEMPT (POTUS TWITTER)"
+  },
+  {
+   "postNum": 2298,
+   "text": "THE TIME TO FIGHT!!!!!!!!"
+  },
+  {
+   "postNum": 2300,
+   "text": "Think line of questions re: Sen."
+  },
+  {
+   "postNum": 2314,
+   "text": "Allow us to carry this heavy burden."
+  },
+  {
+   "postNum": 2358,
+   "text": "Expect this."
+  },
+  {
+   "postNum": 2361,
+   "text": "UNPLUG FROM FAKE NEWS [FALSE REALITY]"
+  },
+  {
+   "postNum": 2375,
+   "text": "Think GOOG+ / Gmail / etc."
+  },
+  {
+   "postNum": 2382,
+   "text": "Re_read drops re: Polls"
+  },
+  {
+   "postNum": 2386,
+   "text": "Think Executive Branch / NSA / etc."
+  },
+  {
+   "postNum": 2395,
+   "text": "Re_read drops re: MS13"
+  },
+  {
+   "postNum": 2416,
+   "text": "Say Something"
+  },
+  {
+   "postNum": 2416,
+   "text": "Say Something"
+  },
+  {
+   "postNum": 2436,
+   "text": "WE MUST RISE AGAIN."
+  },
+  {
+   "postNum": 2436,
+   "text": "WE MUST UNITE AGAIN."
+  },
+  {
+   "postNum": 2436,
+   "text": "WE MUST FIGHT AGAIN."
+  },
+  {
+   "postNum": 2474,
+   "text": "FIGHT!"
+  },
+  {
+   "postNum": 2474,
+   "text": "FIGHT!"
+  },
+  {
+   "postNum": 2474,
+   "text": "FIGHT!"
+  },
+  {
+   "postNum": 2478,
+   "text": "Let the unsealing begin."
+  },
+  {
+   "postNum": 2478,
+   "text": "Let the DEC[L]AS begin."
+  },
+  {
+   "postNum": 2478,
+   "text": "Let the WORLD witness the TRUTH."
+  },
+  {
+   "postNum": 2499,
+   "text": "Be 'extremely' vigilant in Dec."
+  },
+  {
+   "postNum": 2499,
+   "text": "Say something."
+  },
+  {
+   "postNum": 2500,
+   "text": "Re_read drops re: WARNINGS"
+  },
+  {
+   "postNum": 2507,
+   "text": "NO FURTHER DETAILS SHOULD BE RELEASED [WARNING]"
+  },
+  {
+   "postNum": 2540,
+   "text": "Please allow us to counter."
+  },
+  {
+   "postNum": 2554,
+   "text": "Say something."
+  },
+  {
+   "postNum": 2604,
+   "text": "Be in control of yourself."
+  },
+  {
+   "postNum": 2661,
+   "text": "Regular service appointments should be made in order to maintain functionality."
+  },
+  {
+   "postNum": 2677,
+   "text": "It's time to return publicly."
+  },
+  {
+   "postNum": 2693,
+   "text": "Let's actually use 'FACTS':"
+  },
+  {
+   "postNum": 2707,
+   "text": "Track 7B-DS"
+  },
+  {
+   "postNum": 2709,
+   "text": "Pull all views +/- [10]"
+  },
+  {
+   "postNum": 2710,
+   "text": "Register all data pulls to location."
+  },
+  {
+   "postNum": 2726,
+   "text": "Be alert next 10 days."
+  },
+  {
+   "postNum": 2754,
+   "text": "Compare v."
+  },
+  {
+   "postNum": 2757,
+   "text": "Swap 'we' for 'you'."
+  },
+  {
+   "postNum": 2772,
+   "text": "Expect 'attacks' to dramatically intensify across all platforms."
+  },
+  {
+   "postNum": 2777,
+   "text": "Disregard any misspelling."
+  },
+  {
+   "postNum": 2801,
+   "text": "Search ‘Qanon’"
+  },
+  {
+   "postNum": 2807,
+   "text": "WE MUST RISE."
+  },
+  {
+   "postNum": 2807,
+   "text": "WE MUST FIGHT."
+  },
+  {
+   "postNum": 2816,
+   "text": "WE MUST STAND TOGETHER IN THIS FIGHT."
+  },
+  {
+   "postNum": 2877,
+   "text": "Disregard all spelling/other errors."
+  },
+  {
+   "postNum": 2945,
+   "text": "You should update your T-banner pic to properly reflect the crowd size when the event actually started."
+  },
+  {
+   "postNum": 2963,
+   "text": "Assist P_193"
+  },
+  {
+   "postNum": 2966,
+   "text": "Track confirm (2)"
+  },
+  {
+   "postNum": 2967,
+   "text": "Switch private_reg_C."
+  },
+  {
+   "postNum": 2998,
+   "text": "Something you should explore further."
+  },
+  {
+   "postNum": 3020,
+   "text": "Define 'Surveillance state'."
+  },
+  {
+   "postNum": 3040,
+   "text": "Let Freedom Ring!"
+  },
+  {
+   "postNum": 3053,
+   "text": "Whistle while you work……"
+  },
+  {
+   "postNum": 3072,
+   "text": "Disregard spelling error."
+  },
+  {
+   "postNum": 3077,
+   "text": "Say Something."
+  },
+  {
+   "postNum": 3111,
+   "text": "Let's Keep Playing…"
+  },
+  {
+   "postNum": 3113,
+   "text": "Never interfere with an enemy…….."
+  },
+  {
+   "postNum": 3127,
+   "text": "Ask yourself a very simple Q."
+  },
+  {
+   "postNum": 3211,
+   "text": "Bake your noodle."
+  },
+  {
+   "postNum": 3308,
+   "text": "Disregard any spelling errors."
+  },
+  {
+   "postNum": 3317,
+   "text": "Listen very carefully to statements made by Joe D."
+  },
+  {
+   "postNum": 3326,
+   "text": "DRAIN THE [SWAMP]."
+  },
+  {
+   "postNum": 3371,
+   "text": "Sometimes you need to 'take one for the team publicly' before you are vindicated as a hero."
+  },
+  {
+   "postNum": 3373,
+   "text": "Sleep well."
+  },
+  {
+   "postNum": 3381,
+   "text": "DRAIN THE SWAMP."
+  },
+  {
+   "postNum": 3383,
+   "text": "DRAIN THE SWAMP."
+  },
+  {
+   "postNum": 3385,
+   "text": "Expect a lot more to become public (unsealing)."
+  },
+  {
+   "postNum": 3428,
+   "text": "Find [4]"
+  },
+  {
+   "postNum": 3431,
+   "text": "Think Gloria V."
+  },
+  {
+   "postNum": 3528,
+   "text": "DRAIN THE SWAMP!"
+  },
+  {
+   "postNum": 3568,
+   "text": "Say something."
+  },
+  {
+   "postNum": 3568,
+   "text": "Know your surroundings at all times."
+  },
+  {
+   "postNum": 3588,
+   "text": "Be free in your thoughts."
+  },
+  {
+   "postNum": 3618,
+   "text": "Suggest update delay to prevent IDEN re-check re: trip update failure until platform stabilized."
+  },
+  {
+   "postNum": 3623,
+   "text": "Re-read drops re: 'Foreign Aid'"
+  },
+  {
+   "postNum": 3627,
+   "text": "Watch"
+  },
+  {
+   "postNum": 3663,
+   "text": "DRAIN THE SWAMP!"
+  },
+  {
+   "postNum": 3694,
+   "text": "Never forget who directed."
+  },
+  {
+   "postNum": 3728,
+   "text": "Sometimes you must sacrifice yourself for the greater good."
+  },
+  {
+   "postNum": 3729,
+   "text": "Know your history and you will know why."
+  },
+  {
+   "postNum": 3748,
+   "text": "Fight!"
+  },
+  {
+   "postNum": 3748,
+   "text": "Fight!"
+  },
+  {
+   "postNum": 3748,
+   "text": "Fight!"
+  },
+  {
+   "postNum": 3819,
+   "text": "Read [1]"
+  },
+  {
+   "postNum": 3819,
+   "text": "Read [2]"
+  },
+  {
+   "postNum": 3839,
+   "text": "It's time to wake up."
+  },
+  {
+   "postNum": 3857,
+   "text": "It's time to wake up."
+  },
+  {
+   "postNum": 3907,
+   "text": "WE MUST RISE AGAIN."
+  },
+  {
+   "postNum": 3907,
+   "text": "WE MUST UNITE AGAIN."
+  },
+  {
+   "postNum": 3907,
+   "text": "WE MUST FIGHT AGAIN."
+  },
+  {
+   "postNum": 3929,
+   "text": "Patriots: be cautious in your interpretations of info posted."
+  },
+  {
+   "postNum": 3964,
+   "text": "Be informed."
+  },
+  {
+   "postNum": 4024,
+   "text": "YOU MUST SHOW THEM."
+  },
+  {
+   "postNum": 4076,
+   "text": "YOU MUST SHOW THEM."
+  },
+  {
+   "postNum": 4089,
+   "text": "YOU MUST SHOW THEM."
+  },
+  {
+   "postNum": 4089,
+   "text": "It's time to wake up."
+  },
+  {
+   "postNum": 4090,
+   "text": "Know your rights."
+  },
+  {
+   "postNum": 4101,
+   "text": "Question what you read [from every source]."
+  },
+  {
+   "postNum": 4115,
+   "text": "YOU MUST SHOW THEM."
+  },
+  {
+   "postNum": 4121,
+   "text": "YOU MUST SHOW THEM."
+  },
+  {
+   "postNum": 4135,
+   "text": "It's time to wake up."
+  },
+  {
+   "postNum": 4140,
+   "text": "LET FREEDOM RING!"
+  },
+  {
+   "postNum": 4161,
+   "text": "Disregard."
+  },
+  {
+   "postNum": 4226,
+   "text": "But, you must go back before you can go forward."
+  },
+  {
+   "postNum": 4246,
+   "text": "YOU MUST SHOW THEM."
+  },
+  {
+   "postNum": 4250,
+   "text": "It's time to end the horror show."
+  },
+  {
+   "postNum": 4250,
+   "text": "It's time to stand [lead by example]."
+  },
+  {
+   "postNum": 4296,
+   "text": "Reconcile."
+  },
+  {
+   "postNum": 4298,
+   "text": "Ask and you shall receive."
+  },
+  {
+   "postNum": 4316,
+   "text": "Fear not, all will be well right after the election."
+  },
+  {
+   "postNum": 4317,
+   "text": "Use 1, 2, 3 and 4 to drive echo-chamber false [idiotic] narrative bad [pro slavery][D]s switched to [R] party and good [anti-slavery][R]s switched to [D] party."
+  },
+  {
+   "postNum": 4386,
+   "text": "Expect us."
+  },
+  {
+   "postNum": 4395,
+   "text": "Now, re_read again:"
+  },
+  {
+   "postNum": 4424,
+   "text": "Be All You Can Be."
+  },
+  {
+   "postNum": 4437,
+   "text": "find('input.js-username-field').set(ENV['TWITTER_USERNAME'])"
+  },
+  {
+   "postNum": 4437,
+   "text": "find('input.js-password-field').set(ENV['TWITTER_PASSWORD'])"
+  },
+  {
+   "postNum": 4437,
+   "text": "find('input.FormControl').set(url)"
+  },
+  {
+   "postNum": 4461,
+   "text": "YOU MUST SHOW THEM."
+  },
+  {
+   "postNum": 4496,
+   "text": "Surrender to None ['Digital Battleground']."
+  },
+  {
+   "postNum": 4498,
+   "text": "Know your weaknesses."
+  },
+  {
+   "postNum": 4498,
+   "text": "Adapt."
+  },
+  {
+   "postNum": 4498,
+   "text": "Overcome."
+  },
+  {
+   "postNum": 4509,
+   "text": "Mission 1: Dispute [reject] propaganda push through posting of research and facts"
+  },
+  {
+   "postNum": 4509,
+   "text": "Mission 2: Support role of other digital soldiers [one falls another stands (rises)]"
+  },
+  {
+   "postNum": 4509,
+   "text": "Mission 3: Guide [awaken] others through use of facts [DECLAS 1-99 material and other relevant facts] and memes [decouple MSDNC control of info stream] _ask 'counter' questions to initiate 'thought' vs repeat [echo] of MSDNC propaganda"
+  },
+  {
+   "postNum": 4509,
+   "text": "Mission 4: Learn use of camouflage [digitally] _primary account suspended-terminated _use of secondary"
+  },
+  {
+   "postNum": 4543,
+   "text": "Appropriate action should be taken."
+  },
+  {
+   "postNum": 4550,
+   "text": "Fear not."
+  },
+  {
+   "postNum": 4550,
+   "text": "Let light guide you."
+  },
+  {
+   "postNum": 4604,
+   "text": "Batten down the hatches."
+  },
+  {
+   "postNum": 4640,
+   "text": "Challenge legally battleground [4]."
+  },
+  {
+   "postNum": 4641,
+   "text": "You must show them."
+  },
+  {
+   "postNum": 4664,
+   "text": "Excellent Q - you should ask (as should every American)."
+  },
+  {
+   "postNum": 4666,
+   "text": "Say something."
+  },
+  {
+   "postNum": 4683,
+   "text": "Know."
+  },
+  {
+   "postNum": 4685,
+   "text": "You must show them."
+  },
+  {
+   "postNum": 4694,
+   "text": "Know your enemy."
+  },
+  {
+   "postNum": 4746,
+   "text": "Let the truth be told."
+  },
+  {
+   "postNum": 4772,
+   "text": "Never bring an arrow [in a quiver] to a LOSBR missile fight."
+  },
+  {
+   "postNum": 4851,
+   "text": "DRAIN THE SWAMP."
+  },
+  {
+   "postNum": 4852,
+   "text": "Let's keep the party going."
+  },
+  {
+   "postNum": 4893,
+   "text": "DRAIN THE SWAMP."
+  },
+  {
+   "postNum": 4908,
+   "text": "YOU MUST SHOW THEM."
+  },
+  {
+   "postNum": 4951,
+   "text": "Sometimes you must walk through the darkness before you see the light."
+  },
+  {
+   "postNum": 4962,
+   "text": "Repeat."
+  },
+  {
+   "postNum": 4963,
+   "text": "Time to show the world."
+  }
+ ],
+ "expand": [],
+ "skipped": [
+  {
+   "postNum": 1887,
+   "sentence": "Define CIA) Central Intelligence Agency\">C_A regional assets."
+  },
+  {
+   "postNum": 2352,
+   "sentence": "Think HRC win >> SC appointments >> SC 'Corrupt' TILT [ex: LL]"
+  },
+  {
+   "postNum": 4437,
+   "sentence": "visit 'https://cards-dev.twitter.com/validator'"
+  },
+  {
+   "postNum": 4437,
+   "sentence": "visit 'https://cards-dev.twitter.com/validator'"
+  },
+  {
+   "postNum": 4509,
+   "sentence": "Mission 5: Identify strengths / weaknesses [personal and designated ta"
+  },
+  {
+   "postNum": 4658,
+   "sentence": "Adapt & overcome."
+  }
+ ]
+}

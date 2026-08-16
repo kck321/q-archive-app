@@ -1,0 +1,15 @@
+{
+ "note": "Owner Question rulings. apply-questions-final.mjs merges these after the certified set is assembled, so a re-derive cannot erase them. Same overlay pattern as entities/themes/emphasis/directives.",
+ "why": "The question detector anchors on a line ENDING in '?'. A question wrapped in parentheses ends in '?)' and never matched — #524's \"(Why don't we say his name?)\" sat in Context instead. 50 lines corpus-wide have that shape; only the ones the owner rules are added.",
+ "rulings": [
+  {
+   "postNum": 524,
+   "postId": "524",
+   "text": "(Why don't we say his name?)",
+   "ruledOn": "2026-08-15",
+   "was": "Context",
+   "reasoning": "Owner ruling: it is a question, so it is classified as a question. The detector missed it because the line ends in '?)' rather than '?' — the closing parenthesis defeats the question-form test.",
+   "renderNote": "Highlighted blue as a Question like any other."
+  }
+ ]
+}

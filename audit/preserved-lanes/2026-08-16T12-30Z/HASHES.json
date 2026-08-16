@@ -1,0 +1,153 @@
+{
+ "preservedAt": "2026-08-16T12:31:56.050Z",
+ "why": "A concurrent lane wrote these between 11:52 and 12:27 UTC on 16 Aug 2026, outside the Q Directives session. It ran a full rebuild chain and a certification that absorbed the Directives migration together with its own Resolution Center and Entity work. Preserved byte-for-byte for independent review. NOT approved, NOT deployed.",
+ "records": [
+  {
+   "file": "audit/resolution-owner-resolved.json",
+   "sha256": "0eeb24ecbdfff5ead51231ff8896271c60ab3352fb05cb2bc12607a7522cd8f2",
+   "bytes": 713805,
+   "mtime": "2026-08-16T12:00:58.250Z",
+   "preservedAs": "audit__resolution-owner-resolved.json"
+  },
+  {
+   "file": "audit/entities-owner-rulings.json",
+   "sha256": "b7486b769dd685bc4f89efe5586946ae066ade305bc6e032a421cbd83eef7a37",
+   "bytes": 226057,
+   "mtime": "2026-08-16T12:17:17.531Z",
+   "preservedAs": "audit__entities-owner-rulings.json"
+  },
+  {
+   "file": "audit/resolution-owner-notes.json",
+   "sha256": "4c936503b77a4cff5b814df370d991051f4fb80155908020622f38535d6e9945",
+   "bytes": 64589,
+   "mtime": "2026-08-16T12:01:14.456Z",
+   "preservedAs": "audit__resolution-owner-notes.json"
+  },
+  {
+   "file": "audit/certification-manifest.json",
+   "sha256": "c3d0896d88eb4a6511a43bbcf9f94181ed4ac2c0a7b00d11062cbf834d98c750",
+   "bytes": 3896,
+   "mtime": "2026-08-16T12:27:33.886Z",
+   "preservedAs": "audit__certification-manifest.json"
+  },
+  {
+   "file": "audit/cross-section-integrity.json",
+   "sha256": "d13bf060e9695c576a4ee31fc3f34e9fedcb5d236a7a582ac2fb2dce1bf34028",
+   "bytes": 35274,
+   "mtime": "2026-08-16T12:27:50.844Z",
+   "preservedAs": "audit__cross-section-integrity.json"
+  },
+  {
+   "file": "audit/seed-fingerprint.json",
+   "sha256": "4c0c08e0a6ae05d7f425e747eccfc26bac7549220224349d0474c4b7ab999449",
+   "bytes": 1094,
+   "mtime": "2026-08-16T12:22:19.273Z",
+   "preservedAs": "audit__seed-fingerprint.json"
+  },
+  {
+   "file": "audit/relationships-qa.json",
+   "sha256": "db4b8548f6ea5ddab6b4a8c390fa011cfa65dfa9905cf0a2441b9e34b6e300b7",
+   "bytes": 1325,
+   "mtime": "2026-08-16T12:21:37.128Z",
+   "preservedAs": "audit__relationships-qa.json"
+  },
+  {
+   "file": "audit/search-index-qa.md",
+   "sha256": "5063a7f18ed95508cc697b03908bcda587f45d96fdf6ecd563cf1231fb69e06f",
+   "bytes": 1202,
+   "mtime": "2026-08-16T12:21:38.034Z",
+   "preservedAs": "audit__search-index-qa.md"
+  },
+  {
+   "file": "audit/notation-glossary.json",
+   "sha256": "fc5857606fc7c2ef75ef3b0c25b71046f5845d7dc65822a7d73b906319a6edfc",
+   "bytes": 16437,
+   "mtime": "2026-08-16T12:00:58.211Z",
+   "preservedAs": "audit__notation-glossary.json"
+  },
+  {
+   "file": "audit/acronym-definitions.json",
+   "sha256": "c7239ab1b96898783a04808f0e59d953d6ea341872339c2e2c7d5408e2eaf2fd",
+   "bytes": 4680,
+   "mtime": "2026-08-16T12:17:17.678Z",
+   "preservedAs": "audit__acronym-definitions.json"
+  },
+  {
+   "file": "audit/reference-audit-parsed.json",
+   "sha256": "c2164d40e774141ed6144bca9f1244a11f91d1067310e4ddcbf7f89df859b52e",
+   "bytes": 433545,
+   "mtime": "2026-08-16T11:52:33.345Z",
+   "preservedAs": "audit__reference-audit-parsed.json"
+  },
+  {
+   "file": "public/data/resolution-queue.json",
+   "sha256": "9d022c5d22e6914dcd5a74ccf98ecd41bdcd38ca043f683b7d61bcb35b06f862",
+   "bytes": 109198,
+   "mtime": "2026-08-16T12:21:32.388Z",
+   "preservedAs": "public__data__resolution-queue.json"
+  },
+  {
+   "file": "public/data/entities.json",
+   "sha256": "07b4ee6d4d1b7d08e375a429f35989a389794015a08084941a66d28c3df630ad",
+   "bytes": 389259,
+   "mtime": "2026-08-16T12:31:47.607Z",
+   "preservedAs": "public__data__entities.json"
+  },
+  {
+   "file": "public/data/relationships.json",
+   "sha256": "d72031a37a334cb7eda15e3a85c1cbebf12a2fd03b89715d0fae0329496fd32b",
+   "bytes": 2858712,
+   "mtime": "2026-08-16T12:21:37.188Z",
+   "preservedAs": "public__data__relationships.json"
+  },
+  {
+   "file": "public/data/search-index.json",
+   "sha256": "7f0637062344eb651a57bc5eb288fb9ceef8b58baa6ad0e4e1a955b558e86130",
+   "bytes": 7193060,
+   "mtime": "2026-08-16T12:21:38.149Z",
+   "preservedAs": "public__data__search-index.json"
+  },
+  {
+   "file": "public/data/glossary.json",
+   "sha256": "666beb18a58abcd6b9fa8ee059b351b3b06e55e338cf1c3f20a4c1ae6d6cb88e",
+   "bytes": 72985,
+   "mtime": "2026-08-16T12:21:40.232Z",
+   "preservedAs": "public__data__glossary.json"
+  },
+  {
+   "file": "scripts/parse-reference-audit.mjs",
+   "sha256": "e013564129b189e9cb5f719dba9c0731558323f8302312328e9216b1c89eee85",
+   "bytes": 4479,
+   "mtime": "2026-08-16T11:52:32.933Z",
+   "preservedAs": "scripts__parse-reference-audit.mjs"
+  },
+  {
+   "file": "scripts/apply-reference-audit.mjs",
+   "sha256": "e8bc24eedd3532dd0c163a1e69bf57e5e90a784e36706f01d9e02949ce9cd977",
+   "bytes": 9975,
+   "mtime": "2026-08-16T12:00:57.750Z",
+   "preservedAs": "scripts__apply-reference-audit.mjs"
+  },
+  {
+   "file": "scripts/apply-entities.mjs",
+   "sha256": "ec4fdc4176c4c6bd3b1532648fe6279dce3c9e6d48d5ef3d7619da2d233d52d4",
+   "bytes": 36602,
+   "mtime": "2026-08-16T12:19:16.339Z",
+   "preservedAs": "scripts__apply-entities.mjs"
+  },
+  {
+   "file": "scripts/build-resolution-queue.mjs",
+   "sha256": "246801abeda36fdab755818b1fa28e15d5426fa414a1080fe4b4effbdcba52e8",
+   "bytes": 18162,
+   "mtime": "2026-08-16T12:03:56.483Z",
+   "preservedAs": "scripts__build-resolution-queue.mjs"
+  },
+  {
+   "file": "scripts/build-relationships.mjs",
+   "sha256": "2da95028cc72f3eb048fafe34eeb2ff65e24d4e10a9352d223c743faaf75c3af",
+   "bytes": 17757,
+   "mtime": "2026-08-16T12:04:36.328Z",
+   "preservedAs": "scripts__build-relationships.mjs"
+  }
+ ]
+}

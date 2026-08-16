@@ -51,14 +51,43 @@ export const HIGHLIGHT_CLS: Record<string, string> = {
   theme:             'bg-indigo-500/40 text-indigo-100',
   impliedConclusion: 'bg-orange-500/40 text-orange-100',
   verificationHook:  'bg-fuchsia-500/40 text-fuchsia-100',
-  emphasis:          'bg-slate-400/30 text-slate-100',
+  // Emphasis was bg-slate-400/30 — a grey so faint on the dark background that a reader could
+  // not tell it from unmarked text, which made the Emphasis chips look like they referred to
+  // words that were never highlighted. It is a certified category and needs to read as one.
+  emphasis:          'bg-slate-300/60 text-slate-900 font-medium',
   bracketCode:       'bg-red-800/50 text-red-200 font-mono text-[0.9em]',
   milIntel:          'bg-sky-500/40 text-sky-100 font-semibold',
   qSignature:        'bg-purple-400/30 text-purple-200 italic',
   topic:             'bg-yellow-400/40 text-yellow-100 font-semibold',
+  // CONTEXT / OTHER Q TEXT — reviewed, and deliberately in no semantic category.
+  //
+  // 4,887 units that were read and dispositioned, then rendered as plain text indistinguishable
+  // from something nobody had looked at. That is why the archive still looked unaudited.
+  //
+  // This was a dotted underline with no fill, so that it could never be mistaken for a semantic
+  // category. The owner ruled against it on 2026-08-14: the underline is hard to see, and every
+  // category should read as a fill. So the "not a semantic category" signal moves from ABSENCE OF
+  // FILL to HUE — grey is the one neutral in a palette where every certified layer owns a colour
+  // (amber Claims, blue Questions, indigo Themes, cyan Entities, slate Emphasis, green
+  // Directives). Grey fill says reviewed-and-uncategorised as clearly as the underline did, and
+  // is legible at a glance.
+  //
+  // The explicit bg- class is NOT cosmetic and must never be dropped. A <mark> with no background
+  // class falls back to the browser's DEFAULT YELLOW, so a treatment defined purely as an
+  // underline renders as a solid yellow fill — indistinguishable from a semantic category and
+  // matching no legend entry. Third occurrence of that mistake: archive search, detail search,
+  // and Context.
+  context:           'bg-gray-500/35 text-gray-100',
   request:           'bg-green-500/40 text-green-100 font-medium',
   requestQuestion:   'animate-req-question font-medium',
-  keyword:           'bg-red-500/60 text-red-100 font-semibold',
+  // SEARCH STATE, NOT CLASSIFICATION.
+  //
+  // This was a solid red fill — structurally identical to every semantic category colour, so a
+  // term highlighted because the reader clicked it looked exactly like text the audit had
+  // certified. "Ascension." is certified in no layer and still lit up like a Claim. A search
+  // match now gets an outline and a dashed underline with no category fill, so the page can
+  // never present view state with the authority of certified analysis.
+  keyword:           'bg-transparent ring-1 ring-red-400/80 underline decoration-dashed decoration-red-400/80 underline-offset-2 text-red-200 font-semibold rounded-sm',
 }
 
 // ─── Word-boundary matching for highlighted terms ─────────────────────────────

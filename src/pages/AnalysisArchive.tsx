@@ -7,9 +7,14 @@ import TimeframeBreakdown from '../components/TimeframeBreakdown'
 import {
   getAnalysisFrequency, getOverlappingItems, loadAnalysisConfirmed, saveAnalysisConfirmed, removeAnalysisConfirmed,
   clearAnalysisCategoriesFromPosts, getQuestionsTimeline, getPostNumsByMonth, getPostNumsContaining,
-  OVERLAP_CAT_LABELS, normalizeItemKey, makeTermMatcher, type AnalysisCategoryFreq, type OverlapItem, type OverlapCat,
+  OVERLAP_CAT_LABELS, normalizeItemKey, makeTermMatcher, getQuestionsForPosts, type AnalysisCategoryFreq, type OverlapItem, type OverlapCat,
 } from '../lib/posts'
-import { getAliasesFor, getAliasSet, subscribeAliases } from '../lib/aliases'
+import { getAliasesFor, getAliasSet, getCertifiedEntityAliasSet, subscribeAliases } from '../lib/aliases'
+import PostCard from '../components/PostCard'
+import ReaderSentinel from '../components/ReaderSentinel'
+import { loadLocalData } from '../lib/localData'
+import type { QPost } from '../types'
+import { SECTION_TOTALS } from '../lib/sectionInfo'
 import { CANON_CHIP, ALIAS_CHIP_PALETTE } from '../lib/aliasColors'
 import {
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis,
@@ -39,9 +44,9 @@ const CAT_CHART: Record<AnalysisCategoryFreq['category'], { color: string; dimCo
   predictions:        { color: catColor('predictions'), dimColor: '#3b0764', dataKey: 'predictions' },
   namedEntities:      { color: catColor('namedEntities'), dimColor: '#164e63', dataKey: 'namedEntities' },
   themes:             { color: catColor('themes'), dimColor: '#312e81', dataKey: 'themes' },
+  emphasis:           { color: catColor('emphasis'), dimColor: '#334155', dataKey: 'emphasis' },
   impliedConclusions: { color: catColor('impliedConclusions'), dimColor: '#7c2d12', dataKey: 'impliedConclusions' },
   verificationHooks:  { color: catColor('verificationHooks'), dimColor: '#701a75', dataKey: 'verificationHooks' },
-  emphasis:           { color: catColor('emphasis'), dimColor: '#334155', dataKey: 'emphasis' },
 }
 
 
@@ -52,9 +57,9 @@ const CAT_LABELS: Record<AnalysisCategoryFreq['category'], string> = {
   predictions: 'Predictions',
   namedEntities: 'Named Entities',
   themes: 'Themes',
-  impliedConclusions: 'Implied Conclusions',
-  verificationHooks: 'Checkable Claims',
   emphasis: 'Emphasis',
+  impliedConclusions: 'Emphasis',
+  verificationHooks: 'Emphasis',
 }
 
 const CAT_COLORS: Record<AnalysisCategoryFreq['category'], string> = {
@@ -62,9 +67,9 @@ const CAT_COLORS: Record<AnalysisCategoryFreq['category'], string> = {
   predictions: 'bg-violet-500/25 text-violet-300 border border-violet-700/50',
   namedEntities: 'bg-cyan-500/25 text-cyan-300 border border-cyan-700/50',
   themes: 'bg-indigo-500/25 text-indigo-300 border border-indigo-700/50',
+  emphasis: 'bg-slate-500/25 text-slate-300 border border-slate-600/50',
   impliedConclusions: 'bg-orange-500/25 text-orange-300 border border-orange-700/50',
   verificationHooks: 'bg-fuchsia-500/25 text-fuchsia-300 border border-fuchsia-700/50',
-  emphasis: 'bg-slate-500/25 text-slate-300 border border-slate-600/50',
 }
 
 const CAT_BADGE: Record<AnalysisCategoryFreq['category'], string> = {
@@ -72,18 +77,20 @@ const CAT_BADGE: Record<AnalysisCategoryFreq['category'], string> = {
   predictions: 'bg-violet-900/60 text-violet-400 border border-violet-700/60',
   namedEntities: 'bg-cyan-900/60 text-cyan-400 border border-cyan-700/60',
   themes: 'bg-indigo-900/60 text-indigo-400 border border-indigo-700/60',
-  impliedConclusions: 'bg-orange-900/60 text-orange-400 border border-orange-700/60',
-  verificationHooks: 'bg-fuchsia-900/60 text-fuchsia-400 border border-fuchsia-700/60',
   emphasis: 'bg-slate-800/60 text-slate-400 border border-slate-600/60',
+  impliedConclusions: 'bg-orange-800/60 text-orange-400 border border-orange-700/60',
+  verificationHooks: 'bg-fuchsia-800/60 text-fuchsia-400 border border-fuchsia-700/60',
 }
 
 const OVERLAP_CAT_COLORS: Record<OverlapCat, string> = {
+  // Retired as sections, but OverlapCat still types them — the editorial overlaps view can
+  // still surface a legacy row, and it must render rather than crash.
+  impliedConclusions: 'bg-orange-900/60 text-orange-300 border-orange-700/60',
+  verificationHooks: 'bg-fuchsia-900/60 text-fuchsia-300 border-fuchsia-700/60',
   claims: 'bg-amber-900/60 text-amber-300 border-amber-700/60',
   predictions: 'bg-violet-900/60 text-violet-300 border-violet-700/60',
   namedEntities: 'bg-cyan-900/60 text-cyan-300 border-cyan-700/60',
   themes: 'bg-indigo-900/60 text-indigo-300 border-indigo-700/60',
-  impliedConclusions: 'bg-orange-900/60 text-orange-300 border-orange-700/60',
-  verificationHooks: 'bg-fuchsia-900/60 text-fuchsia-300 border-fuchsia-700/60',
   emphasis: 'bg-slate-800/60 text-slate-300 border-slate-600/60',
   request: 'bg-green-900/60 text-green-300 border-green-700/60',
   question: 'bg-blue-900/60 text-blue-300 border-blue-700/60',
@@ -91,12 +98,14 @@ const OVERLAP_CAT_COLORS: Record<OverlapCat, string> = {
 
 // Button style for assignable category in overlaps
 const OVERLAP_BTN_COLORS: Record<OverlapCat, string> = {
+  // Retired as sections, but OverlapCat still types them — the editorial overlaps view can
+  // still surface a legacy row, and it must render rather than crash.
+  impliedConclusions: 'bg-orange-800/60 hover:bg-orange-700/80 text-orange-200 border-orange-600',
+  verificationHooks: 'bg-fuchsia-800/60 hover:bg-fuchsia-700/80 text-fuchsia-200 border-fuchsia-600',
   claims: 'bg-amber-800/60 hover:bg-amber-700/80 text-amber-200 border-amber-600',
   predictions: 'bg-violet-800/60 hover:bg-violet-700/80 text-violet-200 border-violet-600',
   namedEntities: 'bg-cyan-800/60 hover:bg-cyan-700/80 text-cyan-200 border-cyan-600',
   themes: 'bg-indigo-800/60 hover:bg-indigo-700/80 text-indigo-200 border-indigo-600',
-  impliedConclusions: 'bg-orange-800/60 hover:bg-orange-700/80 text-orange-200 border-orange-600',
-  verificationHooks: 'bg-fuchsia-800/60 hover:bg-fuchsia-700/80 text-fuchsia-200 border-fuchsia-600',
   emphasis: 'bg-slate-700/60 hover:bg-slate-600/80 text-slate-200 border-slate-500',
   request: 'bg-green-800/60 hover:bg-green-700/80 text-green-200 border-green-600',
   question: 'bg-blue-800/60 hover:bg-blue-700/80 text-blue-200 border-blue-600',
@@ -134,7 +143,19 @@ export default function AnalysisArchive() {
   // Rows with hundreds of post chips (Twitter has 962) dominate the DOM. Show a slice and
   // let the row expand on demand — nothing is hidden, it just isn't all mounted at once.
   const CHIPS = 40
+  // Opened a page at a time: a theme can carry 300+ drops, and rendering every one of them
+  // at once turns a scan into a freeze.
+  const READ_PAGE = 25
   const [expandedChips, setExpandedChips] = useState<Set<string>>(new Set())
+  // ── Read the posts inline ────────────────────────────────────────────────
+  // The chips answer "which posts", and then made you leave the page to find out what they SAY —
+  // one post per round trip, losing the row you were reading. This opens the drops themselves
+  // underneath, in post order, so a theme can be scanned in one pass.
+  const [readingKey, setReadingKey] = useState<string | null>(null)
+  const [readPosts, setReadPosts] = useState<QPost[]>([])
+  const [readLoading, setReadLoading] = useState(false)
+  const [readLimit, setReadLimit] = useState(READ_PAGE)
+  const [readQuestions, setReadQuestions] = useState<Record<string, string[]>>({})
   useEffect(() => {
     if (!selectedMonth) { setFlashMonth(false); return }
     setFlashMonth(true)
@@ -351,6 +372,53 @@ export default function AnalysisArchive() {
   // Ranked by TOTAL MENTIONS — a term said 124 times in one drop outranks one mentioned
   // once across three. Posts break ties so equal-mention items still read sensibly, and
   // post number orders the single-mention tail chronologically.
+  // Load the drops for whichever row is open, in POST ORDER — the order Q wrote them, which is
+  // the only order a scan can be resumed in.
+  useEffect(() => {
+    if (!readingKey) { setReadPosts([]); return }
+    // itemConfirmKey is the row identity used in the markup — the rank map uses a DIFFERENT
+    // format ('cat::text'), and matching on that one found nothing, so the panel opened empty.
+    const item = items.find(i => itemConfirmKey(i.category, i.text) === readingKey)
+    if (!item) { setReadPosts([]); return }
+    let cancelled = false
+    setReadLoading(true)
+    const wanted = new Set(monthPostNums ? item.postNums.filter(n => monthPostNums.has(n)) : item.postNums)
+    // loadLocalData, not getPosts: getPosts pages at PAGE_SIZE, so a row whose drops sit past the
+    // first page would open with most of them silently missing.
+    loadLocalData()
+      .then(({ posts: all }) => {
+        if (cancelled) return
+        // Oldest -> latest, by the drop's own timestamp. Post-number order was checked against
+        // time order across all 4,966 posts and they agree in every case, so this is the same
+        // sequence — it just says what it means rather than relying on the numbering holding.
+        const list = all.filter(pp => wanted.has(pp.postNum))
+          .sort((x, y) => (x.timestamp ?? 0) - (y.timestamp ?? 0) || x.postNum - y.postNum)
+        setReadPosts(list)
+        // Questions are NOT on the post record — they live in their own collection — so a card
+        // rendered without them paints every layer except the blue ones. That is why drops opened
+        // HERE showed no questions while the same drop on /posts and /post/:id showed them all.
+        getQuestionsForPosts(list.map(pp => pp.id)).then(qMap => { if (!cancelled) setReadQuestions(qMap) })
+      })
+      .finally(() => { if (!cancelled) setReadLoading(false) })
+    return () => { cancelled = true }
+  }, [readingKey, items, monthPostNums])
+
+  // Alias rows are folded into their canonical row. Two registries feed this and they have
+  // different scopes: the owner-editable groups apply to every category (that is how "HRC" folds
+  // into "Hillary Clinton"), while the CERTIFIED entity aliases apply to entity rows ONLY. The
+  // certified set holds bare tokens like "US", "CCP" and "COVID" that can equally be the text of
+  // a claim or a code, and folding those would silently delete a row from a section the entity
+  // ruling never touched.
+  const isFoldedAlias = (
+    text: string,
+    category: string,
+    editable: Set<string>,
+    cert: Set<string>,
+  ) => {
+    const t = text.toLowerCase().trim()
+    return editable.has(t) || (category === 'namedEntities' && cert.has(t))
+  }
+
   const byRank = (a: AnalysisCategoryFreq, b: AnalysisCategoryFreq) =>
     b.occurrences - a.occurrences
     || b.postNums.length - a.postNums.length
@@ -361,10 +429,11 @@ export default function AnalysisArchive() {
   // Computing it off the filtered list made every click renumber the whole column.
   const rankByItem = useMemo(() => {
     const aliasSet = getAliasSet()
+    const certSet = getCertifiedEntityAliasSet()
     const base = items
       .filter(i =>
         (activeTab === 'all' || i.category === activeTab)
-        && !aliasSet.has(i.text.toLowerCase().trim()),
+        && !isFoldedAlias(i.text, i.category, aliasSet, certSet),
       )
       .sort(byRank)
     const map = new Map<string, number>()
@@ -375,12 +444,13 @@ export default function AnalysisArchive() {
 
   const filtered = useMemo(() => {
     const aliasSet = getAliasSet()
+    const certSet = getCertifiedEntityAliasSet()
     return items
       .filter(item => {
         if (activeTab === 'overlaps') return false
         if (activeTab !== 'all' && item.category !== activeTab) return false
         // Fold alias entities (e.g. HRC) into their canonical (Hillary Clinton) — hide the alias row.
-        if (aliasSet.has(item.text.toLowerCase().trim())) return false
+        if (isFoldedAlias(item.text, item.category, aliasSet, certSet)) return false
         if (monthPostNums && !item.postNums.some(n => monthPostNums.has(n))) return false
         if (search) {
           // Words-only match: punctuation in either the query or the stored item is
@@ -395,6 +465,22 @@ export default function AnalysisArchive() {
       .sort(byRank)
     // eslint-disable-next-line react-hooks/exhaustive-deps -- aliasTick forces re-read of getAliasSet()/getAliasesFor()
   }, [items, activeTab, search, monthPostNums, aliasTick])
+
+  // Arriving from a theme chip (/analysis?tab=themes&q=<theme>) lands on ONE row. Open its drops
+  // without a second click — the click on the theme WAS the request to read them.
+  //
+  // Only when the search resolves to a single row: opening every row of an unfiltered list would
+  // mount thousands of drops. And once the reader has been closed by hand for a given row, it
+  // stays closed — an auto-open that fights the reader is worse than no auto-open.
+  const autoOpened = useRef<string | null>(null)
+  useEffect(() => {
+    if (!search.trim() || filtered.length !== 1) return
+    const only = itemConfirmKey(filtered[0].category, filtered[0].text)
+    if (autoOpened.current === only) return
+    autoOpened.current = only
+    setReadLimit(READ_PAGE)
+    setReadingKey(only)
+  }, [search, filtered])
 
   function formatMonth(m: string) {
     const [y, mo] = m.split('-')
@@ -448,9 +534,10 @@ export default function AnalysisArchive() {
   const tabStats = useMemo(() => {
     if (activeTab === 'all' || activeTab === 'overlaps') return null
     const aliasSet = getAliasSet()
+    const certSet = getCertifiedEntityAliasSet()
     const catItems = items.filter(i =>
       i.category === activeTab
-      && !aliasSet.has(i.text.toLowerCase().trim())
+      && !isFoldedAlias(i.text, i.category, aliasSet, certSet)
       && (!monthPostNums || i.postNums.some(n => monthPostNums.has(n))),
     )
     const repeated = catItems.filter(i => i.postNums.length > 1).length
@@ -462,7 +549,26 @@ export default function AnalysisArchive() {
     for (const i of catItems) for (const n of i.postNums) postSet.add(n)
     const posts = postSet.size
     const occurrences = catItems.reduce((n, i) => n + i.occurrences, 0)
-    return { repeated, once, posts, occurrences }
+
+    // THE HEADLINE IS CERTIFIED, NOT RECOUNTED.
+    //
+    // Summing the frequency rows gave 4,175 for Claims against a certified 4,188: the index is
+    // grouped by phrase, so a phrase Q repeats inside one post collapses to that post once, and
+    // the 13 in-post repeats vanished from a user-facing total. The frequency index is for
+    // browsing and ranking phrases; it is not a counting system. See SECTION_TOTALS.
+    //
+    // The certified figure describes the whole section, so it applies only to the unfiltered
+    // view — with a month selected or an alias hidden, the honest number is the filtered one,
+    // and it is labelled as a filtered subset rather than as the section total.
+    const certified = SECTION_TOTALS[activeTab]
+    const filtered = Boolean(monthPostNums)
+    return {
+      repeated, once,
+      posts: certified && !filtered ? certified.posts : posts,
+      occurrences: certified && !filtered ? certified.occurrences : occurrences,
+      unit: certified && !filtered ? certified.unit : 'shown here',
+      isCertified: Boolean(certified) && !filtered,
+    }
     // aliasTick: recount when an alias is added/removed elsewhere.
   }, [items, activeTab, monthPostNums, aliasTick])
 
@@ -483,7 +589,7 @@ export default function AnalysisArchive() {
               <p className="flex items-baseline gap-3 leading-none tracking-tight">
                 <span className="text-2xl font-black text-amber-300/90">
                   {tabStats.occurrences.toLocaleString()}
-                  <span className="text-xs font-medium text-gray-500 ml-1.5">mentions</span>
+                  <span className="text-xs font-medium text-gray-500 ml-1.5">{tabStats.unit}</span>
                 </span>
                 <span className="text-2xl font-black text-white/90">
                   <span className="text-xs font-medium text-gray-500 mr-1.5">within</span>
@@ -834,10 +940,28 @@ export default function AnalysisArchive() {
                   <div className="flex-1 min-w-0">
                     {/* inline-block so the highlight hugs the phrase instead of painting a
                         full-width bar across the row — the colour marks the term, not the row. */}
+                    {/* The item's own name is the way IN to it: it links to this section filtered
+                        to just this item, where the row arrives with its drops already open, oldest
+                        first. A theme label never appears inside a drop, so a text search for it
+                        returns nothing — this is the only link that can answer "what is this theme
+                        actually about". */}
                     <p className="mb-1">
-                      <span className={`inline-block text-sm leading-relaxed px-2 py-1 rounded ${CAT_COLORS[item.category]}`}>
+                      {/* The phrase IS the control. Clicking it opens every drop it appears in,
+                          right here, oldest first — the same thing the "read N drops" button does.
+                          It used to navigate to this section filtered to this row, which took you
+                          to another screen to do what the row can do in place. */}
+                      <button
+                        onClick={() => {
+                          setReadLimit(READ_PAGE)
+                          setReadingKey(prev => (prev === key ? null : key))
+                        }}
+                        title={readingKey === key
+                          ? 'Close the drops'
+                          : `Read all ${monthChips.length} drop${monthChips.length !== 1 ? 's' : ''} containing "${item.text}", oldest first`}
+                        className={`inline-block text-left text-sm leading-relaxed px-2 py-1 rounded transition-all hover:brightness-125 hover:underline underline-offset-2 cursor-pointer ${CAT_COLORS[item.category]} ${readingKey === key ? 'ring-1 ring-white/40' : ''}`}
+                      >
                         {item.text}
-                      </span>
+                      </button>
                     </p>
                     {aliases.length > 0 && (
                       <p className="text-xs text-gray-400 mb-2 px-2 flex items-center gap-1.5 flex-wrap">
@@ -877,6 +1001,25 @@ export default function AnalysisArchive() {
                           </Link>
                         )
                       })}
+                      {/* Open the drops themselves, in post order, underneath the numbers.
+                          The chips say WHICH posts; this says what they contain, without
+                          leaving the row you are reading. */}
+                      {monthChips.length > 0 && (
+                        <button
+                          onClick={() => {
+                            setReadLimit(READ_PAGE)
+                            setReadingKey(prev => (prev === key ? null : key))
+                          }}
+                          className={`text-xs px-2 py-0.5 rounded border font-mono transition-colors ${
+                            readingKey === key
+                              ? 'border-cyan-500 bg-cyan-900/50 text-cyan-200'
+                              : 'border-gray-600 bg-gray-800 text-gray-300 hover:text-white hover:border-gray-400'
+                          }`}
+                          title={readingKey === key ? 'Close the drops' : `Read all ${monthChips.length} drops here, in post order`}
+                        >
+                          {readingKey === key ? '− close drops' : `▼ read ${monthChips.length.toLocaleString()} drop${monthChips.length !== 1 ? 's' : ''}`}
+                        </button>
+                      )}
                       {monthChips.length > CHIPS && (
                         <button
                           onClick={() => setExpandedChips(prev => {
@@ -892,6 +1035,37 @@ export default function AnalysisArchive() {
                         </button>
                       )}
                     </div>
+                    {readingKey === key && (
+                      <div className="mt-2 mb-3 border-t border-q-border pt-3 space-y-3">
+                        {readLoading && <p className="text-xs text-gray-500 animate-pulse">opening drops…</p>}
+                        {!readLoading && readPosts.length === 0 && (
+                          <p className="text-xs text-gray-500">No drops loaded for this row.</p>
+                        )}
+                        {readPosts.slice(0, readLimit).map(rp => (
+                          <div key={rp.id ?? rp.postNum}>
+                            {/* searchKeyword carries the row's own term, so the phrase that put
+                                the drop in this list is highlighted inside it. */}
+                            <PostCard post={rp} questionTexts={readQuestions[rp.id]} searchKeyword={item.text} />
+                          </div>
+                        ))}
+                        {/* Scrolling IS the request for more. The sentinel loads the next batch
+                            as it comes into view, so every drop opens as you scan without a
+                            click — while still mounting them in batches, because 404 PostCards
+                            rendered at once locks the tab. */}
+                        {readPosts.length > readLimit && (
+                          <ReaderSentinel onEnter={() => setReadLimit(n => n + READ_PAGE)} />
+                        )}
+                        {readPosts.length > readLimit && (
+                          <button
+                            onClick={() => setReadLimit(n => n + READ_PAGE)}
+                            className="text-xs px-3 py-1 rounded border border-gray-600 bg-gray-800 text-gray-300 hover:text-white hover:border-gray-400 transition-colors font-mono"
+                          >
+                            + {Math.min(READ_PAGE, readPosts.length - readLimit)} more
+                            <span className="text-gray-500"> ({readLimit.toLocaleString()} of {readPosts.length.toLocaleString()})</span>
+                          </button>
+                        )}
+                      </div>
+                    )}
                     {/* Hover confirm + delete actions — EDITING. Not compiled into the
                         public build; these write to Firestore. */}
                     {CAN_EDIT && (isHovered || confirmed || isDeleting) && (

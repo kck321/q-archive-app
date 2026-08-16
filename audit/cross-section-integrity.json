@@ -1,0 +1,1237 @@
+{
+ "scope": "whole-app cross-section integrity audit",
+ "productionChanged": false,
+ "canonical": {
+  "posts": 4966,
+  "questions": {
+   "occurrences": 6443,
+   "distinct": 5302,
+   "posts": 1696
+  },
+  "directives": {
+   "occurrences": 2552,
+   "distinct": 1642,
+   "posts": 1464
+  },
+  "claims": {
+   "occurrences": 4242,
+   "distinct": 3245,
+   "posts": 1982
+  },
+  "predictions": {
+   "occurrences": 630,
+   "posts": 520
+  },
+  "evidence": {
+   "occurrences": 6590,
+   "posts": 3883
+  },
+  "entities": {
+   "canonical": 1448,
+   "detectedCanonical": 1331,
+   "ownerRulings": 118,
+   "ownerMerges": 1,
+   "mentions": 9760,
+   "coreEntities": 93,
+   "coreRegistryMentions": 5273,
+   "tailEntities": 1239,
+   "tailMentions": 3867
+  },
+  "themes": {
+   "assignments": 2644,
+   "detected": 2393,
+   "ownerRulings": 251,
+   "posts": 1898
+  },
+  "codes": {
+   "occurrences": 1949,
+   "distinct": 739,
+   "posts": 852
+  },
+  "emphasis": {
+   "occurrences": 3112,
+   "detected": 3111,
+   "ownerRulings": 11,
+   "ownerWithdrawals": 2,
+   "questionRuleRetired": 2138,
+   "posts": 1357
+  },
+  "resolution": {
+   "total": 106,
+   "entity": 30,
+   "theme": 16,
+   "code": 29,
+   "classification": 31
+  }
+ },
+ "contracts": [
+  {
+   "id": "questions",
+   "label": "Q Questions",
+   "artifact": "questions.json",
+   "certifiedCount": 6443,
+   "shippedRows": 6577,
+   "mayCoexist": "134 editorial-normalisation rows are shipped so the search index can find a question a reader half-remembers in cleaned-up form.",
+   "neverDisplayed": "Those 134 must never count toward any total, never highlight in a post, and never display as Q-authored. They are identified by editorialNormalization or neverDisplayAsQ.",
+   "countedBy": "rows carrying an `occurrences` field",
+   "sourceResolution": "literal-or-whitespace-normalised span in posts.json"
+  },
+  {
+   "id": "directives",
+   "label": "Q Directives",
+   "artifact": "posts.json → actionRequests",
+   "certifiedCount": 2552,
+   "mayCoexist": "None. Every actionRequests entry is a certified directive.",
+   "neverDisplayed": "n/a",
+   "countedBy": "every actionRequests string across all posts",
+   "sourceResolution": "literal-or-whitespace-normalised span in posts.json"
+  },
+  {
+   "id": "claims",
+   "label": "Q Claims",
+   "artifact": "posts.json → postAnalysis.claims + claimMeta",
+   "certifiedCount": 4242,
+   "mayCoexist": "Predictions share the assertion family and the same storage, separated by claimMeta.displayClass. editorialParaphrases are stored per post and are NOT claims.",
+   "neverDisplayed": "An editorial paraphrase must never be presented as Q’s literal wording.",
+   "countedBy": "postAnalysis.claims entries whose displayClass is claim",
+   "sourceResolution": "literal-or-whitespace-normalised span in posts.json"
+  },
+  {
+   "id": "predictions",
+   "label": "Q Predictions",
+   "artifact": "posts.json → postAnalysis.predictions",
+   "certifiedCount": 630,
+   "mayCoexist": "A prediction IS an assertion; the combined 4,811 figure is only ever shown labelled as combined.",
+   "neverDisplayed": "n/a",
+   "countedBy": "postAnalysis.predictions entries",
+   "sourceResolution": "literal-or-whitespace-normalised span in posts.json"
+  },
+  {
+   "id": "evidence",
+   "label": "Evidence & References",
+   "artifact": "evidence.json",
+   "certifiedCount": 6590,
+   "mayCoexist": "URLs embedded inside pasted source material exist in the data and are labelled as such. They are references a reader can follow, but they are not Q citing a source.",
+   "neverDisplayed": "An embedded-in-source URL must never be presented as a Q citation.",
+   "countedBy": "every item row",
+   "sourceResolution": "value appears in the post text, or is a media asset attached to the post"
+  },
+  {
+   "id": "entities",
+   "label": "Q Entities",
+   "artifact": "entities.json",
+   "certifiedCount": 9760,
+   "mayCoexist": "Canonical entities (1,332) and mentions (7,903) are DIFFERENT metrics, not a row-count mismatch — one entity is mentioned many times. The headline covers every resolved mention: 4,463 from the 93-entity core registry plus 3,440 from the 1,239 adjudicated-tail entities. Unresolved alias tokens are counted in neither.",
+   "neverDisplayed": "An unresolved alias must never be shown as a resolved identification.",
+   "countedBy": "sum of per-entity mention counts",
+   "sourceResolution": "alias text appears in the post, outside URL spans"
+  },
+  {
+   "id": "themes",
+   "label": "Q Themes",
+   "artifact": "themes.json",
+   "certifiedCount": 2644,
+   "mayCoexist": "Multi-label by design: 378 posts carry more than one theme, so assignments exceed posts. Legacy extractor tags are not counted.",
+   "neverDisplayed": "A legacy tag must never be shown as a certified theme.",
+   "countedBy": "sum of per-post theme assignments",
+   "sourceResolution": "contextual — a theme is inferred from the drop, not a literal span"
+  },
+  {
+   "id": "codes",
+   "label": "Codes & Brackets",
+   "artifact": "codes.json",
+   "certifiedCount": 1949,
+   "mayCoexist": "Detected as a code does not mean decoded: 734 of 739 ship with no interpretation, which is the honest state.",
+   "neverDisplayed": "An undecoded code must never be shown with an invented meaning.",
+   "countedBy": "sum of per-code recurrence counts",
+   "sourceResolution": "exact characters preserved from the drop"
+  },
+  {
+   "id": "emphasis",
+   "label": "Q Emphasis",
+   "artifact": "emphasis.json",
+   "certifiedCount": 3112,
+   "mayCoexist": "245 arguable devices are held in the Resolution Center and counted in neither direction.",
+   "neverDisplayed": "A queued borderline case must never appear as certified emphasis.",
+   "countedBy": "every occurrence row",
+   "sourceResolution": "sourceText appears within its recorded line, and the line within the post"
+  },
+  {
+   "id": "resolution",
+   "label": "Resolution Center",
+   "artifact": "resolution-queue.json",
+   "certifiedCount": 106,
+   "mayCoexist": "Every row here is DELIBERATELY excluded from its section’s certified totals. That exclusion is the point of the section, not a gap in it.",
+   "neverDisplayed": "A community suggestion must never alter certified data without re-entering audit → adjudication → materialise → QA → apply → deploy.",
+   "countedBy": "every queue row",
+   "sourceResolution": "each row deep-links to the occurrence it came from"
+  }
+ ],
+ "overlaps": [
+  {
+   "pair": "questions ↔ directives",
+   "expected": 228,
+   "why": "An information request (\"Define X.\") is grammatically an instruction and functionally a question. Each section asks a different thing of the same unit.",
+   "crossLink": "directiveWrapped / semanticFunction on the question row"
+  },
+  {
+   "pair": "codes ↔ entities",
+   "expected": 32,
+   "why": "Entities asks who is referenced; Codes asks how Q marked the reference. \"HRC\" and \"[HRC]\" are different analytical objects.",
+   "crossLink": "linkedEntityId on the code"
+  },
+  {
+   "pair": "emphasis ↔ questions",
+   "expected": null,
+   "why": "A repeated question is a stylistic fact in Emphasis and a unit in Questions. Repetition being USED rhetorically is a different observation from the question existing.",
+   "crossLink": "emphasis type repeated_question, matched on post + text"
+  },
+  {
+   "pair": "emphasis ↔ directives",
+   "expected": null,
+   "why": "Same reasoning as repeated questions: the instruction is the unit, the repetition is the device.",
+   "crossLink": "emphasis type repeated_directive, matched on post + text"
+  },
+  {
+   "pair": "claims ↔ conclusions",
+   "expected": 966,
+   "why": "isConclusion is an ATTRIBUTE of a claim or a prediction, not a separate population. It must never be added to the claims total.",
+   "crossLink": "claimMeta.isConclusion"
+  },
+  {
+   "pair": "claims ↔ predictions",
+   "expected": null,
+   "why": "Both are assertions and share storage; displayClass decides which section shows a unit. The combined figure appears only where labelled combined.",
+   "crossLink": "claimMeta.semanticFamily = assertion, claimMeta.displayClass"
+  }
+ ],
+ "totals": {
+  "invariants": 146,
+  "passed": 146,
+  "failed": 0
+ },
+ "results": [
+  {
+   "group": "1. Frozen canonical counts",
+   "id": "posts",
+   "description": "posts = 4,966",
+   "pass": true,
+   "detail": "4966"
+  },
+  {
+   "group": "1. Frozen canonical counts",
+   "id": "questions",
+   "description": "Questions = 6,443 certified occurrences",
+   "pass": true,
+   "detail": "6443"
+  },
+  {
+   "group": "1. Frozen canonical counts",
+   "id": "directives",
+   "description": "Directives = 2,552",
+   "pass": true,
+   "detail": "2552"
+  },
+  {
+   "group": "1. Frozen canonical counts",
+   "id": "claims",
+   "description": "Claims = 4,189",
+   "pass": true,
+   "detail": "4242"
+  },
+  {
+   "group": "1. Frozen canonical counts",
+   "id": "predictions",
+   "description": "Predictions = 630",
+   "pass": true,
+   "detail": "630"
+  },
+  {
+   "group": "1. Frozen canonical counts",
+   "id": "evidence",
+   "description": "Evidence = 6,590",
+   "pass": true,
+   "detail": "6590"
+  },
+  {
+   "group": "1. Frozen canonical counts",
+   "id": "entities-canonical",
+   "description": "Entities = 1,335 canonical",
+   "pass": true,
+   "detail": "1448"
+  },
+  {
+   "group": "1. Frozen canonical counts",
+   "id": "entities-mentions",
+   "description": "Entities = 7,903 resolved mentions (headline)",
+   "pass": true,
+   "detail": "9760"
+  },
+  {
+   "group": "1. Frozen canonical counts",
+   "id": "entities-core",
+   "description": "core registry submetric = 5,273",
+   "pass": true,
+   "detail": "5273"
+  },
+  {
+   "group": "1. Frozen canonical counts",
+   "id": "entities-tail",
+   "description": "adjudicated tail submetric = 3,476",
+   "pass": true,
+   "detail": "3867"
+  },
+  {
+   "group": "1. Frozen canonical counts",
+   "id": "entities-scope-drop",
+   "description": "no scoped ruling drops a context-resolved occurrence",
+   "pass": true,
+   "detail": "none"
+  },
+  {
+   "group": "1. Frozen canonical counts",
+   "id": "entities-acronyms-defined",
+   "description": "every acronym-named entity has a definition or a stated reason",
+   "pass": true,
+   "detail": "all defined"
+  },
+  {
+   "group": "1. Frozen canonical counts",
+   "id": "entities-reconcile",
+   "description": "submetrics sum to the headline",
+   "pass": true,
+   "detail": "5273 + 3867 + 620 = 9760"
+  },
+  {
+   "group": "1. Frozen canonical counts",
+   "id": "entities-artifact-headline",
+   "description": "the artifact ships the headline figure",
+   "pass": true,
+   "detail": "9760"
+  },
+  {
+   "group": "1. Frozen canonical counts",
+   "id": "entities-headline-declared",
+   "description": "the headline states how it is composed",
+   "pass": true,
+   "detail": "declared"
+  },
+  {
+   "group": "1. Frozen canonical counts",
+   "id": "themes",
+   "description": "Themes = 2,393 assignments",
+   "pass": true,
+   "detail": "2644"
+  },
+  {
+   "group": "1. Frozen canonical counts",
+   "id": "codes",
+   "description": "Codes = 1,949 occurrences",
+   "pass": true,
+   "detail": "1949"
+  },
+  {
+   "group": "1. Frozen canonical counts",
+   "id": "emphasis",
+   "description": "Emphasis = 3,113 occurrences",
+   "pass": true,
+   "detail": "3112"
+  },
+  {
+   "group": "1. Frozen canonical counts",
+   "id": "resolution-total",
+   "description": "Resolution Center = 2,527",
+   "pass": true,
+   "detail": "106"
+  },
+  {
+   "group": "1. Frozen canonical counts",
+   "id": "resolution-entity",
+   "description": "Resolution entity = 30",
+   "pass": true,
+   "detail": "30"
+  },
+  {
+   "group": "1. Frozen canonical counts",
+   "id": "resolution-theme",
+   "description": "Resolution theme = 16",
+   "pass": true,
+   "detail": "16"
+  },
+  {
+   "group": "1. Frozen canonical counts",
+   "id": "resolution-code",
+   "description": "Resolution code = 29",
+   "pass": true,
+   "detail": "29"
+  },
+  {
+   "group": "1. Frozen canonical counts",
+   "id": "resolution-classification",
+   "description": "Resolution classification = 31",
+   "pass": true,
+   "detail": "31"
+  },
+  {
+   "group": "2. Provenance contracts",
+   "id": "q-rows",
+   "description": "Questions ships 6,577 rows for 6,443 certified",
+   "pass": true,
+   "detail": "6577"
+  },
+  {
+   "group": "2. Provenance contracts",
+   "id": "q-editorial-count",
+   "description": "exactly 134 editorial-normalisation rows",
+   "pass": true,
+   "detail": "134"
+  },
+  {
+   "group": "2. Provenance contracts",
+   "id": "q-editorial-uncounted",
+   "description": "no editorial row carries an occurrences field",
+   "pass": true,
+   "detail": "0 counted"
+  },
+  {
+   "group": "2. Provenance contracts",
+   "id": "q-partition",
+   "description": "counted + editorial = every shipped row",
+   "pass": true,
+   "detail": "6443 + 134"
+  },
+  {
+   "group": "2. Provenance contracts",
+   "id": "ev-embedded-labelled",
+   "description": "embedded-in-source URLs are labelled in the data",
+   "pass": true,
+   "detail": "20 labelled"
+  },
+  {
+   "group": "2. Provenance contracts",
+   "id": "ev-embedded-not-citations",
+   "description": "embedded-in-source URLs are excluded from the Q-citation figure",
+   "pass": true,
+   "detail": "2724 citations + 20 embedded of 6590"
+  },
+  {
+   "group": "2. Provenance contracts",
+   "id": "ent-two-metrics",
+   "description": "canonical and mentions are distinct metrics",
+   "pass": true,
+   "detail": "1448 vs 9760"
+  },
+  {
+   "group": "2. Provenance contracts",
+   "id": "ent-unresolved-separate",
+   "description": "unresolved aliases counted in neither metric",
+   "pass": true,
+   "detail": "1011 carried separately"
+  },
+  {
+   "group": "2. Provenance contracts",
+   "id": "codes-no-invented",
+   "description": "no code carries a meaning without stating its basis",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "group": "2. Provenance contracts",
+   "id": "emph-basis",
+   "description": "every parallel occurrence states its structural basis",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "2. Provenance contracts",
+   "id": "all-declared",
+   "description": "all ten sections declare a provenance contract",
+   "pass": true,
+   "detail": "10"
+  },
+  {
+   "group": "3. Exact source resolution",
+   "id": "resolve-questions",
+   "description": "every certified questions occurrence resolves to its drop",
+   "pass": true,
+   "detail": "0 unresolved"
+  },
+  {
+   "group": "3. Exact source resolution",
+   "id": "resolve-directives",
+   "description": "every certified directives occurrence resolves to its drop",
+   "pass": true,
+   "detail": "0 unresolved"
+  },
+  {
+   "group": "3. Exact source resolution",
+   "id": "resolve-claims",
+   "description": "every certified claims occurrence resolves to its drop",
+   "pass": true,
+   "detail": "0 unresolved"
+  },
+  {
+   "group": "3. Exact source resolution",
+   "id": "resolve-predictions",
+   "description": "every certified predictions occurrence resolves to its drop",
+   "pass": true,
+   "detail": "0 unresolved"
+  },
+  {
+   "group": "3. Exact source resolution",
+   "id": "resolve-emphasis",
+   "description": "every certified emphasis occurrence resolves to its drop",
+   "pass": true,
+   "detail": "0 unresolved"
+  },
+  {
+   "group": "3. Exact source resolution",
+   "id": "resolve-codes",
+   "description": "every certified codes occurrence resolves to its drop",
+   "pass": true,
+   "detail": "0 unresolved"
+  },
+  {
+   "group": "3. Exact source resolution",
+   "id": "no-paraphrase-as-q",
+   "description": "no editorial paraphrase is counted as a claim",
+   "pass": true,
+   "detail": "1259 paraphrases held aside, 0 leaked"
+  },
+  {
+   "group": "4. Cross-section overlap",
+   "id": "overlap-qd",
+   "description": "Question ↔ Directive overlap = 228, declared",
+   "pass": true,
+   "detail": "230"
+  },
+  {
+   "group": "4. Cross-section overlap",
+   "id": "overlap-ce",
+   "description": "Code ↔ Entity cross-links = 32, declared",
+   "pass": true,
+   "detail": "32"
+  },
+  {
+   "group": "4. Cross-section overlap",
+   "id": "overlap-eq",
+   "description": "every repeated question in Emphasis exists in Questions",
+   "pass": true,
+   "detail": "0 repeated, 0 orphaned"
+  },
+  {
+   "group": "4. Cross-section overlap",
+   "id": "overlap-ed",
+   "description": "every repeated directive in Emphasis exists in Directives",
+   "pass": true,
+   "detail": "11 repeated, 0 orphaned"
+  },
+  {
+   "group": "4. Cross-section overlap",
+   "id": "overlap-conclusions",
+   "description": "conclusions are an attribute of 966 assertions, not a separate count",
+   "pass": true,
+   "detail": "966"
+  },
+  {
+   "group": "4. Cross-section overlap",
+   "id": "overlap-declared",
+   "description": "every overlap pair has a written rule",
+   "pass": true,
+   "detail": "6"
+  },
+  {
+   "group": "5. Double-count and collisions",
+   "id": "emph-ids",
+   "description": "no duplicate Emphasis occurrence id",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "group": "5. Double-count and collisions",
+   "id": "q-ids",
+   "description": "no duplicate Question row id",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "group": "5. Double-count and collisions",
+   "id": "queue-ids",
+   "description": "no duplicate Resolution Center id",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "group": "5. Double-count and collisions",
+   "id": "in-post-repeats",
+   "description": "in-post repeats preserved (\"Coincidence?\" = 88 mentions across 86 posts)",
+   "pass": true,
+   "detail": "88"
+  },
+  {
+   "group": "5. Double-count and collisions",
+   "id": "no-contradictions",
+   "description": "no assertion carries a contradictory family/class pair",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "group": "6. Source-material isolation",
+   "id": "isolation-questions",
+   "description": "questions: quoted-block over-extension stays at its known 89 occurrences",
+   "pass": true,
+   "detail": "89 of 6443 (expected 89)"
+  },
+  {
+   "group": "6. Source-material isolation",
+   "id": "isolation-directives",
+   "description": "directives: quoted-block over-extension stays at its known 55 occurrences",
+   "pass": true,
+   "detail": "55 of 2552 (expected 55)"
+  },
+  {
+   "group": "6. Source-material isolation",
+   "id": "isolation-claims",
+   "description": "claims: quoted-block over-extension stays at its known 147 occurrences",
+   "pass": true,
+   "detail": "147 of 4242 (expected 147)"
+  },
+  {
+   "group": "6. Source-material isolation",
+   "id": "isolation-emphasis",
+   "description": "emphasis: quoted-block over-extension stays at its known 0 occurrences",
+   "pass": true,
+   "detail": "0 of 4229 (expected 0)"
+  },
+  {
+   "group": "6. Source-material isolation",
+   "id": "debt-occurrence-set",
+   "description": "the source-boundary occurrence SET is unchanged",
+   "pass": true,
+   "detail": "identical"
+  },
+  {
+   "group": "6. Source-material isolation",
+   "id": "debt-posts-baseline",
+   "description": "source-boundary debt stays at its known 111 posts",
+   "pass": true,
+   "detail": "111 posts"
+  },
+  {
+   "group": "6. Source-material isolation",
+   "id": "debt-declared",
+   "description": "the source-boundary risk is recorded as a prerequisite, not a footnote",
+   "pass": true,
+   "detail": "highest"
+  },
+  {
+   "group": "7. Export-chain integrity",
+   "id": "chain-complete",
+   "description": "every apply step is chained into export",
+   "pass": true,
+   "detail": "27/27"
+  },
+  {
+   "group": "7. Export-chain integrity",
+   "id": "chain-order",
+   "description": "apply order in export matches the declared order",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "7. Export-chain integrity",
+   "id": "chain-shared-export-firestore.mjs",
+   "description": "export-firestore.mjs runs the shared chain",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "7. Export-chain integrity",
+   "id": "chain-shared-rebuild-bundle.mjs",
+   "description": "rebuild-bundle.mjs runs the shared chain",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "7. Export-chain integrity",
+   "id": "chain-files-exist",
+   "description": "every chained script exists on disk",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "8. Seed and cache integrity",
+   "id": "seed-current",
+   "description": "SEED_VERSION is 72 (reference audit)",
+   "pass": true,
+   "detail": "72"
+  },
+  {
+   "group": "8. Seed and cache integrity",
+   "id": "seed-gate",
+   "description": "seeding is gated on SEED_VERSION",
+   "pass": true,
+   "detail": "present"
+  },
+  {
+   "group": "8. Seed and cache integrity",
+   "id": "seed-fingerprint",
+   "description": "seeded data matches the SEED_VERSION that shipped it",
+   "pass": true,
+   "detail": "unchanged"
+  },
+  {
+   "group": "8. Seed and cache integrity",
+   "id": "seed-writes",
+   "description": "the gate value is persisted after seeding",
+   "pass": true,
+   "detail": "present"
+  },
+  {
+   "group": "8. Seed and cache integrity",
+   "id": "sw-versioned-cache",
+   "description": "service worker cache name is versioned",
+   "pass": true,
+   "detail": "qdrops-v1"
+  },
+  {
+   "group": "8. Seed and cache integrity",
+   "id": "sw-data-strategy",
+   "description": "service worker does not pin /data to cache-only",
+   "pass": true,
+   "detail": "data handled explicitly"
+  },
+  {
+   "group": "8. Seed and cache integrity",
+   "id": "sw-version-bumped",
+   "description": "the deploy rewrites CACHE_VERSION on every publish",
+   "pass": true,
+   "detail": "rewritten at build time"
+  },
+  {
+   "group": "8. Seed and cache integrity",
+   "id": "deploy-gate-armed",
+   "description": "the deploy blocks on certification-manifest --verify",
+   "pass": true,
+   "detail": "armed"
+  },
+  {
+   "group": "8. Seed and cache integrity",
+   "id": "sw-drops-old-caches",
+   "description": "activation deletes every cache from a previous version",
+   "pass": true,
+   "detail": "present"
+  },
+  {
+   "group": "9. UI count integrity",
+   "id": "ui-questions",
+   "description": "sectionInfo states 6,443",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "9. UI count integrity",
+   "id": "ui-directives",
+   "description": "sectionInfo states 2,552",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "9. UI count integrity",
+   "id": "ui-claims",
+   "description": "sectionInfo states 4,242",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "9. UI count integrity",
+   "id": "ui-evidence",
+   "description": "sectionInfo states 6,590",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "9. UI count integrity",
+   "id": "ui-entities",
+   "description": "sectionInfo headlines 1,334 entities and 8,239 mentions",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "9. UI count integrity",
+   "id": "ui-entities-submetrics",
+   "description": "sectionInfo keeps 4,463 and 3,440 as provenance",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "9. UI count integrity",
+   "id": "ui-themes",
+   "description": "sectionInfo states 2,644",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "9. UI count integrity",
+   "id": "ui-codes",
+   "description": "sectionInfo states 1,949",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "9. UI count integrity",
+   "id": "ui-emphasis",
+   "description": "sectionInfo states 3,112",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "9. UI count integrity",
+   "id": "headline-claims",
+   "description": "Claims headline = certified 4,242 / 1,982",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "9. UI count integrity",
+   "id": "headline-predictions",
+   "description": "Predictions headline = certified 630 / 520",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "9. UI count integrity",
+   "id": "headline-emphasis",
+   "description": "Emphasis headline = certified 3,112 / 1,357",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "9. UI count integrity",
+   "id": "headline-entities",
+   "description": "Entities headline = certified mentions / 2,240 posts",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "9. UI count integrity",
+   "id": "headline-themes",
+   "description": "Themes headline = certified 2,644 assignments",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "9. UI count integrity",
+   "id": "headline-not-recounted",
+   "description": "the archive header reads SECTION_TOTALS rather than the frequency index",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "9. UI count integrity",
+   "id": "headline-rows-keep-post-counts",
+   "description": "phrase rows still show how many posts contain the phrase",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "9. UI count integrity",
+   "id": "ui-no-rederive",
+   "description": "no UI file re-derives a certified category with its own regex",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "10. Resolution Center completeness",
+   "id": "rc-ids-stable",
+   "description": "every row has a stable id",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "10. Resolution Center completeness",
+   "id": "rc-deeplinks",
+   "description": "every row deep-links somewhere",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "10. Resolution Center completeness",
+   "id": "rc-deeplink-targets",
+   "description": "every /post deep link resolves to a real post",
+   "pass": true,
+   "detail": "0 broken"
+  },
+  {
+   "group": "10. Resolution Center completeness",
+   "id": "rc-provenance",
+   "description": "every row states where it came from",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "10. Resolution Center completeness",
+   "id": "rc-why",
+   "description": "every row explains why it is unresolved",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "10. Resolution Center completeness",
+   "id": "rc-status",
+   "description": "every row is OPEN or has an explicit status",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "10. Resolution Center completeness",
+   "id": "rc-certified-untouched",
+   "description": "the queue declares it does not affect certified data",
+   "pass": true,
+   "detail": "true"
+  },
+  {
+   "group": "10. Resolution Center completeness",
+   "id": "rc-emphasis-complete",
+   "description": "every borderline Emphasis case is queued or owner-resolved",
+   "pass": true,
+   "detail": "31 queued + 214 resolved / 245"
+  },
+  {
+   "group": "11. Frozen-section mutation",
+   "id": "hash-stable",
+   "description": "no certified artifact CHANGED CONTENT since the manifest",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "11. Frozen-section mutation",
+   "id": "hash-reserialised",
+   "description": "byte-level re-serialisation reported separately, not as drift",
+   "pass": true,
+   "detail": "none"
+  },
+  {
+   "group": "11. Frozen-section mutation",
+   "id": "artifacts-present",
+   "description": "every certified artifact is on disk",
+   "pass": true,
+   "detail": "10/10"
+  },
+  {
+   "group": "11. Frozen-section mutation",
+   "id": "guard-exists",
+   "description": "the editorial write guard is a shared module",
+   "pass": true,
+   "detail": "lib/certifiedWrite.mjs"
+  },
+  {
+   "group": "11. Frozen-section mutation",
+   "id": "guard-tested",
+   "description": "the guard has a negative test",
+   "pass": true,
+   "detail": "test-certified-write-guard.mjs"
+  },
+  {
+   "group": "11. Frozen-section mutation",
+   "id": "guard-single-copy",
+   "description": "no editorial script carries its own allowlist",
+   "pass": true,
+   "detail": "one copy in lib/"
+  },
+  {
+   "group": "11. Frozen-section mutation",
+   "id": "guard-editorial-tools",
+   "description": "every editorial tool writes through the guard",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "12. Cross-section relationships",
+   "id": "entities-render-matches-certified",
+   "description": "postAnalysis entries equal certified mentions",
+   "pass": true,
+   "detail": "9760 vs 9760"
+  },
+  {
+   "group": "12. Cross-section relationships",
+   "id": "entities-multi-ruling-aliases",
+   "description": "aliases carrying several canonicals are preserved",
+   "pass": true,
+   "detail": "32 aliases (e.g. SC)"
+  },
+  {
+   "group": "12. Cross-section relationships",
+   "id": "entities-occurrence-scoped-clearing",
+   "description": "#1385 line 5 stays open though line 1 is ruled",
+   "pass": true,
+   "detail": "open"
+  },
+  {
+   "group": "12. Cross-section relationships",
+   "id": "entities-held-rows-noted",
+   "description": "held reference rows are open and carry a note (30 after #2774 resolved DELTA-2774-1-16)",
+   "pass": true,
+   "detail": "30/31"
+  },
+  {
+   "group": "12. Cross-section relationships",
+   "id": "entities-reference-audit-complete",
+   "description": "679 audit rows, unique, all adjudicated",
+   "pass": true,
+   "detail": "679 rows, 679 unique"
+  },
+  {
+   "group": "12. Cross-section relationships",
+   "id": "rel-basis",
+   "description": "every relationship names its certified basis",
+   "pass": true,
+   "detail": "0 without"
+  },
+  {
+   "group": "12. Cross-section relationships",
+   "id": "rel-derived",
+   "description": "the artifact declares it is derived, not inferred",
+   "pass": true,
+   "detail": "true"
+  },
+  {
+   "group": "12. Cross-section relationships",
+   "id": "rel-qd",
+   "description": "Question ↔ Directive edges = the certified 230",
+   "pass": true,
+   "detail": "230"
+  },
+  {
+   "group": "12. Cross-section relationships",
+   "id": "rel-ce",
+   "description": "Entity ↔ Code edges come from the 32 stored cross-links",
+   "pass": true,
+   "detail": "32"
+  },
+  {
+   "group": "12. Cross-section relationships",
+   "id": "rel-conclusions",
+   "description": "Claim → Conclusion edges = the certified 966",
+   "pass": true,
+   "detail": "966"
+  },
+  {
+   "group": "12. Cross-section relationships",
+   "id": "rel-source",
+   "description": "Claim → Source provided edges = the certified 438",
+   "pass": true,
+   "detail": "438"
+  },
+  {
+   "group": "12. Cross-section relationships",
+   "id": "rel-predictions",
+   "description": "Prediction → assertion edges = the certified 630",
+   "pass": true,
+   "detail": "630"
+  },
+  {
+   "group": "12. Cross-section relationships",
+   "id": "rel-unresolved",
+   "description": "every queue row has an edge to its occurrence",
+   "pass": true,
+   "detail": "106"
+  },
+  {
+   "group": "12. Cross-section relationships",
+   "id": "rel-posts-exist",
+   "description": "every relationship belongs to a real post",
+   "pass": true,
+   "detail": "0 orphaned"
+  },
+  {
+   "group": "12. Cross-section relationships",
+   "id": "rel-map-questions",
+   "description": "analysis map totals reconcile with certified Questions",
+   "pass": true,
+   "detail": "6443"
+  },
+  {
+   "group": "12. Cross-section relationships",
+   "id": "rel-map-directives",
+   "description": "analysis map totals reconcile with certified Directives",
+   "pass": true,
+   "detail": "2552"
+  },
+  {
+   "group": "12. Cross-section relationships",
+   "id": "rel-map-emphasis",
+   "description": "analysis map totals reconcile with certified Emphasis",
+   "pass": true,
+   "detail": "3112"
+  },
+  {
+   "group": "12. Cross-section relationships",
+   "id": "no-blanket-post-page",
+   "description": "post page: no blanket semantic rule paints without a certified occurrence",
+   "pass": true,
+   "detail": "clean"
+  },
+  {
+   "group": "12. Cross-section relationships",
+   "id": "no-blanket-archive",
+   "description": "archive: no blanket semantic rule paints without a certified occurrence",
+   "pass": true,
+   "detail": "clean"
+  },
+  {
+   "group": "12. Cross-section relationships",
+   "id": "exact-spans-post-page",
+   "description": "post page: semantic highlights stop at the certified span",
+   "pass": true,
+   "detail": "exact"
+  },
+  {
+   "group": "12. Cross-section relationships",
+   "id": "exact-spans-archive",
+   "description": "archive: semantic highlights stop at the certified span",
+   "pass": true,
+   "detail": "exact"
+  },
+  {
+   "group": "12. Cross-section relationships",
+   "id": "derived-views-reuse-spans",
+   "description": "Conclusions and Checkable reuse their certified occurrence spans",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "12. Cross-section relationships",
+   "id": "rel-ui-reads-artifact",
+   "description": "the Analysis Map reads the artifact and counts nothing itself",
+   "pass": true,
+   "detail": "reads relationships.json"
+  },
+  {
+   "group": "13. Global search",
+   "id": "search-derived",
+   "description": "the index declares it comes from certified artifacts",
+   "pass": true,
+   "detail": "true"
+  },
+  {
+   "group": "13. Global search",
+   "id": "search-questions",
+   "description": "indexed Questions = certified 6,443",
+   "pass": true,
+   "detail": "6443"
+  },
+  {
+   "group": "13. Global search",
+   "id": "search-directives",
+   "description": "indexed Directives = certified 2,552",
+   "pass": true,
+   "detail": "2552"
+  },
+  {
+   "group": "13. Global search",
+   "id": "search-claims",
+   "description": "indexed Claims = certified 4,181",
+   "pass": true,
+   "detail": "4242"
+  },
+  {
+   "group": "13. Global search",
+   "id": "search-predictions",
+   "description": "indexed Predictions = certified 630",
+   "pass": true,
+   "detail": "630"
+  },
+  {
+   "group": "13. Global search",
+   "id": "search-evidence",
+   "description": "indexed Evidence = certified 6,590",
+   "pass": true,
+   "detail": "6590"
+  },
+  {
+   "group": "13. Global search",
+   "id": "search-entities",
+   "description": "indexed Entities = certified 1,448",
+   "pass": true,
+   "detail": "1448"
+  },
+  {
+   "group": "13. Global search",
+   "id": "search-themes",
+   "description": "indexed Themes = certified 2,395",
+   "pass": true,
+   "detail": "2644"
+  },
+  {
+   "group": "13. Global search",
+   "id": "search-codes",
+   "description": "indexed Codes = certified 739 distinct",
+   "pass": true,
+   "detail": "739"
+  },
+  {
+   "group": "13. Global search",
+   "id": "search-emphasis",
+   "description": "indexed Emphasis = certified 3,113",
+   "pass": true,
+   "detail": "3112"
+  },
+  {
+   "group": "13. Global search",
+   "id": "search-unresolved",
+   "description": "indexed unresolved = the 2,527 queue rows",
+   "pass": true,
+   "detail": "106"
+  },
+  {
+   "group": "13. Global search",
+   "id": "search-editorial-flagged",
+   "description": "every editorial row is flagged not-Q-authored",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "group": "13. Global search",
+   "id": "search-no-false-editorial",
+   "description": "no Q-authored row is flagged editorial",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "group": "13. Global search",
+   "id": "search-editorial-labelled",
+   "description": "the results page labels editorial rows before their text",
+   "pass": true,
+   "detail": "labelled"
+  },
+  {
+   "group": "13. Global search",
+   "id": "search-repeats-preserved",
+   "description": "in-post repeats are indexed as separate occurrences",
+   "pass": true,
+   "detail": "4242 rows, 4229 distinct (post, text)"
+  },
+  {
+   "group": "13. Global search",
+   "id": "search-why",
+   "description": "every record states why it can match",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "13. Global search",
+   "id": "search-deeplinks",
+   "description": "every post-bound record carries the id its link needs",
+   "pass": true,
+   "detail": "0 without"
+  },
+  {
+   "group": "13. Global search",
+   "id": "search-no-parser",
+   "description": "search performs no classification of its own",
+   "pass": true,
+   "detail": "reads the index"
+  }
+ ]
+}

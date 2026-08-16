@@ -1,0 +1,524 @@
+{
+  "note": "Owner-approved rulings awaiting batch certification. NOT applied. The owner rules; find-occurrences.mjs retrieves the candidate set; this file records what was approved. Nothing here reaches the public site until it goes through materialise -> QA -> manifest -> deploy.",
+  "status": "PENDING_CERTIFICATION",
+  "authority": "owner only — public comments/ideas are suggestions with no write path into this file",
+  "rulings": [
+    {
+      "id": "r1-pure-evil",
+      "ruling": "The bare fragment 'Pure evil.' is a Claim",
+      "reasoning": "Characterises the subject established by the preceding lines. The fuller variants 'These people are pure evil.' (#3967) and 'Nobody can possibly imagine the pure evil...' (#586) are ALREADY certified Claims, so the bare form being Context was the inconsistency.",
+      "targetCategory": "claims",
+      "approved": [
+        {
+          "postNum": 570,
+          "text": "Pure EVIL.",
+          "was": "Context"
+        },
+        {
+          "postNum": 855,
+          "text": "Pure EVIL.",
+          "was": "Context"
+        },
+        {
+          "postNum": 1001,
+          "text": "Pure EVIL.",
+          "was": "Context"
+        },
+        {
+          "postNum": 1832,
+          "text": "PURE EVIL.",
+          "was": "Context"
+        },
+        {
+          "postNum": 1881,
+          "text": "PURE EVIL.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2917,
+          "text": "Pure evil.",
+          "was": "unclassified"
+        }
+      ],
+      "excluded": [
+        {
+          "reason": "quoted source material — not Q's words",
+          "count": 6
+        },
+        {
+          "reason": "variants already certified as Claims; no change needed",
+          "posts": [
+            586,
+            3967
+          ]
+        }
+      ],
+      "proposedCountChange": "Claims 4,181 -> 4,187"
+    },
+    {
+      "id": "r2-real-racist",
+      "ruling": "'The 'real' racist.' is a Claim",
+      "reasoning": "Asserts something about a specific person that could be true or false — passes the proposition test on its own.",
+      "targetCategory": "claims",
+      "approved": [
+        {
+          "postNum": 2917,
+          "text": "The 'real' racist.",
+          "was": "Emphasis ('real')"
+        }
+      ],
+      "note": "Emphasis on 'real' stays — a span can be both. Cross-section overlap is intentional.",
+      "proposedCountChange": "Claims +1"
+    },
+    {
+      "id": "r3-ascension-theme",
+      "ruling": "'Ascension.' is Religion & Spirituality",
+      "reasoning": "Owner ruling. Corpus search found exactly two Q-authored occurrences, both currently Context, no variants, no quoted matches.",
+      "targetCategory": "themes",
+      "targetTheme": "Religion & Spirituality",
+      "approved": [
+        {
+          "postNum": 4963,
+          "text": "Ascension.",
+          "was": "Context",
+          "existingThemes": [
+            "Disclosure & Declassification"
+          ]
+        },
+        {
+          "postNum": 4966,
+          "text": "Ascension.",
+          "was": "Context",
+          "existingThemes": []
+        }
+      ],
+      "note": "Themes are multi-label — #4963 keeps Disclosure & Declassification and gains this. 'Ascension' becomes the evidence anchor on both, so it highlights.",
+      "proposedCountChange": "Themes 2,393 -> 2,395"
+    },
+    {
+      "id": "r4-covid-entity",
+      "ruling": "COVID is an Entity, and COVID-19 / COVID19 are aliases of it — app wide. Not a prediction, not an emphasis.",
+      "reasoning": "Owner ruling, 2026-08-14. Retrieved with word-boundary matching over Q-authored lines only (quoted material excluded per invariant 9).",
+      "targetCategory": "entities",
+      "findings": {
+        "alreadyCertified": {
+          "canonical": "COVID-19",
+          "type": "other_named_entity",
+          "mentions": 48,
+          "posts": 25,
+          "aliases": [
+            "COVID-19 (14)",
+            "C19 (34)"
+          ],
+          "source": "adjudicated tail"
+        },
+        "notEmphasis": "ALREADY TRUE — 0 of 5,251 certified Emphasis occurrences carry the token in their span.",
+        "notPrediction": "ONE certified Prediction contains the word: #4541, a full sentence about \"those who managed the COVID emergency\". The token is not itself the prediction.",
+        "corpusQAuthored": {
+          "COVID-19": 60,
+          "COVID19": 2,
+          "C19": 34,
+          "COVID": 6,
+          "totalOccurrences": 102,
+          "totalPosts": 51
+        },
+        "uncoveredForms": "bare COVID (#4489 x2, #4548) and COVID19 — no alias covers them today"
+      },
+      "openDecision": {
+        "question": "the certified 48 is what the LEGACY extractor emitted; the corpus holds 102 Q-authored occurrences",
+        "optionA": "alias merge only — canonical becomes COVID, aliases COVID-19/COVID19/C19, mentions stay 48",
+        "optionB": "recount at occurrence level — mentions 48 -> 102, posts 25 -> 51, Entities headline moves",
+        "note": "the whole adjudicated tail rests on the legacy extractor; recounting one row alone makes that row methodologically different from its neighbours"
+      },
+      "status": "PENDING_OWNER_COUNT_DECISION"
+    },
+    {
+      "id": "r5-in-time-claim",
+      "ruling": "\"In time.\" in #4965 is a Claim, not Emphasis and not Context",
+      "reasoning": "Owner ruling 2026-08-14. Q's answer to the quoted post: an assertion that the thing asked about will happen, which passes the proposition test. It carried no Emphasis row at all — it was dispositioned CONTEXT_OR_LABEL, and Context means 'reviewed, and in no semantic category', so the promotion releases it.",
+      "targetCategory": "claims",
+      "approved": [
+        {
+          "postNum": 4965,
+          "text": "In time.",
+          "was": "Context"
+        }
+      ],
+      "proposedCountChange": "Claims 4,188 -> 4,189; Context 4,900 -> 4,899"
+    },
+    {
+      "id": "r6-4963-claims",
+      "ruling": "\"Patriots in trusted positions.\" and \"Time to show the world.\" in #4963 are Claims",
+      "reasoning": "Owner ruling 2026-08-14. Both assert something that could be true or false — that patriots hold trusted positions, and that the moment to reveal has arrived. Both were Context.",
+      "targetCategory": "claims",
+      "approved": [
+        {
+          "postNum": 4963,
+          "text": "Patriots in trusted positions.",
+          "was": "Context"
+        },
+        {
+          "postNum": 4963,
+          "text": "Time to show the world.",
+          "was": "Context"
+        }
+      ],
+      "proposedCountChange": "Claims 4,189 -> 4,191"
+    },
+    {
+      "id": "r7-524-claims",
+      "ruling": "Five lines in #524 are Claims",
+      "reasoning": "Owner ruling 2026-08-15. Each asserts a specific actor, amount and destination — the most checkable shape a claim takes. 'We don't say his name [2] $19,000,000 SINGAPORE' was already certified; these are its siblings in the same list.",
+      "targetCategory": "claims",
+      "approved": [
+        {
+          "postNum": 524,
+          "text": "CEOs/BODs PAYING TO PLAY.",
+          "was": "Context"
+        },
+        {
+          "postNum": 524,
+          "text": "Slush Fund",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 524,
+          "text": "Hussein [1] $29,000,000 SINGAPORE",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 524,
+          "text": "HRC/BC [3] $15,000,000 Banco de MEXICO",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 524,
+          "text": "NP [4] $8,000,000 Deutsche Bank USA",
+          "was": "unclassified"
+        }
+      ],
+      "proposedCountChange": "Claims 4,191 -> 4,196"
+    },
+    {
+      "id": "r8-predicate-review",
+      "ruling": "13 of the 21 predicate_of_previous_subject rows are Claims",
+      "reasoning": "Owner review 2026-08-15 of the first batch from the 764-row claim conflict set. Each is a bare predicate whose subject is the proposition on the line above — the same shape as the certified 'Pure evil.' rulings.",
+      "targetCategory": "claims",
+      "approved": [
+        {
+          "postNum": 1148,
+          "text": "Coordinated.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 1278,
+          "text": "Controlled.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 1343,
+          "text": "Exposed.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 1347,
+          "text": "Old.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 141,
+          "text": "Protected.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 1570,
+          "text": "WINNING.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 1636,
+          "text": "Controlled.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2678,
+          "text": "Controlled.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 378,
+          "text": "Fake.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 3879,
+          "text": "CONNECTED.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 4399,
+          "text": "Coordinated.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 969,
+          "text": "FAKE.",
+          "was": "unclassified"
+        }
+      ],
+      "declined": [
+        {
+          "postNum": 1077,
+          "text": "Good.",
+          "why": "the line above, 'Prevent at all costs.', is a DIRECTIVE — an imperative supplies no subject to inherit, so the promotion basis fails"
+        },
+        {
+          "postNum": 1268,
+          "text": "Good.",
+          "why": "the line above is an ENTITY (Army Lt. Gen. Paul Nakasone), not a proposition"
+        },
+        {
+          "postNum": 1535,
+          "text": "Controlled.",
+          "why": "line above 'Review initial investor(s).' is a certified Directive"
+        },
+        {
+          "postNum": 1633,
+          "text": "Controlled.",
+          "why": "line above 'Find paper articles re: Freemasons.' is a certified Directive"
+        },
+        {
+          "postNum": 2639,
+          "text": "FAKE!",
+          "why": "line above 'Compare & Contrast.' is a certified Directive — applies to all three occurrences"
+        },
+        {
+          "postNum": 839,
+          "text": "FAKE.",
+          "why": "line above 'Do not blindly believe.' is a certified Directive"
+        }
+      ],
+      "principleEstablished": "A predicate can only inherit a subject from a PROPOSITION. Where the preceding line is a Directive or an Entity, there is no subject to inherit and the row stays unclassified. This narrows the remaining 393 answers_previous_question rows too.",
+      "proposedCountChange": "Claims 4,196 -> 4,208",
+      "heldBack": [
+        {
+          "postNum": 1443,
+          "candidate": "EVIL.",
+          "actualLine": "GOOD vs. EVIL.",
+          "why": "The conflict row is a SUB-LINE fragment: Q wrote \"GOOD vs. EVIL.\" and the ledger split it. The owner ruled on \"EVIL.\" as presented, but certifying a claim requires Q's literal span, and the two are not the same assertion — \"GOOD vs. EVIL.\" is a framing, \"EVIL.\" alone is a predicate. Held back for the owner rather than guessed."
+        }
+      ]
+    },
+    {
+      "id": "r9-panic-in-dc",
+      "ruling": "\"Panic in DC.\" is a Claim wherever Q writes it as a statement",
+      "reasoning": "Owner ruling 2026-08-15. It asserts a state of affairs that could be true or false.",
+      "targetCategory": "claims",
+      "approved": [
+        {
+          "postNum": 2154,
+          "text": "Panic in DC.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2155,
+          "text": "Panic in DC.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2156,
+          "text": "Panic in DC.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2157,
+          "text": "Panic in DC.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2158,
+          "text": "Panic in DC.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2159,
+          "text": "Panic in DC.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2160,
+          "text": "Panic in DC.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2176,
+          "text": "PANIC IN DC.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2200,
+          "text": "PANIC IN DC",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2201,
+          "text": "PANIC IN DC.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2202,
+          "text": "PANIC IN DC.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2203,
+          "text": "PANIC IN DC",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2204,
+          "text": "PANIC IN DC",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2205,
+          "text": "PANIC IN DC",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2215,
+          "text": "PANIC IN DC",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2215,
+          "text": "PANIC IN DC",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2259,
+          "text": "PANIC IN DC",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2260,
+          "text": "PANIC IN DC",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2261,
+          "text": "PANIC IN DC",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2416,
+          "text": "[PANIC IN DC]",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2455,
+          "text": "PANIC IN DC.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2494,
+          "text": "Panic in DC.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2496,
+          "text": "Panic in DC",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2498,
+          "text": "Panic in DC.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2513,
+          "text": "PANIC IN DC.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2552,
+          "text": "PANIC IN DC.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2653,
+          "text": "PANIC IN DC.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 2724,
+          "text": "Panic in DC.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 3224,
+          "text": "PANIC IN DC.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 3336,
+          "text": "PANIC IN [DC].",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 3448,
+          "text": "PANIC IN DC.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 372,
+          "text": "Panic in DC.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 3859,
+          "text": "PANIC IN DC!",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 4882,
+          "text": "PANIC IN DC.",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 697,
+          "text": "Panic in DC.",
+          "was": "unclassified"
+        }
+      ],
+      "excluded": [
+        {
+          "reason": "inside quoted material — not Q's words",
+          "count": 0
+        },
+        {
+          "reason": "interrogative \"PANIC IN DC?\" — asks rather than asserts; already certified Questions",
+          "posts": [
+            2658,
+            3115
+          ]
+        },
+        {
+          "reason": "different assertions, rule separately if wanted",
+          "posts": [
+            2171,
+            2230,
+            2499
+          ]
+        }
+      ],
+      "overlapNote": "Where an occurrence is ALSO Emphasis (#2215) the span rotates between both colours automatically.",
+      "proposedCountChange": "Claims 4,208 -> 4243"
+    }
+  ],
+  "totalProposed": {
+    "claims": "+7",
+    "themes": "+2"
+  },
+  "remaining": "Batch-apply pipeline not yet built: approved -> certified artifacts -> materialise -> QA -> manifest -> deploy."
+}

@@ -64,6 +64,13 @@ export const KNOWN_MEANINGS = {
   D_PARTY: { meaning: 'The Democratic Party', confidence: 'HIGH', basis: 'Q alternates D_PARTY, D party and Democrats in equivalent sentences' },
   MS_13: { meaning: 'The MS-13 gang', confidence: 'HIGH', basis: 'Q writes MS_13, MS13 and MS-13 for the same subject' },
   RE_READ: { meaning: 'An instruction to read an earlier drop again', confidence: 'HIGH', basis: 'used interchangeably with "Re_read" and "Reread" as a directive' },
+  // Owner decode, 2026-08-14. These were the two largest undecoded bracketed tokens in the
+  // corpus — [D] at 195 occurrences across 121 posts, [F] at 23 across 18 — and they sat with no
+  // interpretation because the corpus never spells either one out. The owner supplied the
+  // reading; the confidence is OWNER rather than HIGH so the provenance stays visible, since
+  // this is an adjudication rather than a pattern the corpus established on its own.
+  '[D]': { meaning: 'Democrat', confidence: 'OWNER', basis: 'owner ruling 2026-08-14 — Q uses [D] as the party abbreviation, alongside D_PARTY and "D party" in equivalent sentences' },
+  '[F]': { meaning: 'Foreign', confidence: 'OWNER', basis: 'owner ruling 2026-08-14 — Q pairs [D] and [F] as actor abbreviations, e.g. "[D]s in coordination w/ [D]&[F] assets"' },
 }
 
 export const CODE_TYPE_INFO = {

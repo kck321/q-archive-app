@@ -14,6 +14,15 @@ export interface PostAnalysis {
    * category would corrupt that category's counts. Detected structurally, no API calls.
    */
   emphasis?: string[]
+  /** Reviewed Q-authored text in no semantic category — rendered with a neutral treatment. */
+  contextUnits?: string[]
+  /** Literal rendering spans, parallel to their certified arrays. Never a separate population. */
+  claimSpans?: string[]
+  predictionSpans?: string[]
+  conclusionSpans?: string[]
+  checkableSpans?: string[]
+  /** The certified words that fired each theme — what the post view highlights. */
+  themeAnchors?: string[]
 }
 
 // ─── Post ────────────────────────────────────────────────────────────────────

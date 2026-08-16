@@ -10,16 +10,59 @@
 // recount cannot leave a stale figure in prose.
 
 export const CERTIFIED = {
-  questions: { occurrences: 6442, distinct: 5302, posts: 1696 },
-  directives: { occurrences: 2422, distinct: 1472, posts: 1417 },
-  claims: { occurrences: 4181, distinct: 3226, posts: 1951 },
+  questions: { occurrences: 6443, distinct: 5302, posts: 1696 },
+  // v5, 16 Aug 2026 — Q Directives migrated to sourceSpansV2 provenance under owner ruling.
+  // 2,705 -> 2,552: 153 occurrences removed from Q Directives ONLY (quoted news, scraped code,
+  // blessings, declarative-lead misreads, questions, a prediction). Nothing was deleted from the
+  // post text, Religion & Spirituality, Questions, Claims or the evidence sets. `distinct` and
+  // `posts` are now measured over ALL certified occurrences including owner rulings, which is
+  // what the page actually renders — the old 1,472/1,417 counted directives-final.json alone and
+  // never matched the UI.
+  directives: { occurrences: 2552, distinct: 1642, posts: 1464 },
+  claims: { occurrences: 4242, distinct: 3245, posts: 1982 },
   predictions: { occurrences: 630, posts: 520 },
   /** Claim attributes. `conclusions` may apply to a claim or a prediction. */
   claimAttributes: { checkable: 1926, sourceProvided: 438, conclusions: 966, telegraphic: 331 },
+  emphasis: { occurrences: 3112, posts: 1357, unresolved: 245 },
   /** Units that are BOTH a question and a directive. */
   overlap: 228,
   totalPosts: 4966,
 } as const
+
+/**
+ * THE HEADLINE FIGURE FOR EACH ANALYSIS SECTION — certified, never recounted.
+ *
+ * The Post Analysis archive used to headline a number it computed from the phrase-frequency
+ * index: for each distinct phrase, how many posts contain it, summed. For Claims that read
+ * "4,175 mentions within 1,954 posts" against a certified 4,242, because the frequency index
+ * groups by phrase and a phrase repeated inside one post collapses to that post once. Nine posts
+ * carry an in-post repeat and #1888 says "You get to go to jail." four times; 4,242 - 13 = 4,175
+ * exactly. Every repeat is a real occurrence, and occurrence identity is the rule the entire
+ * certified system is built on.
+ *
+ * So the two numbers are now kept apart by construction:
+ *
+ *   section headline   certified occurrence truth, read from here
+ *   phrase rows        "x N posts" — how many posts contain that phrase, which is what the
+ *                      frequency index is genuinely for
+ *
+ * NEVER_RECOUNT_RULE: read the certified figure, do not re-derive it from a browsing index.
+ * A cross-section invariant asserts each of these against scripts/lib/contracts.mjs, so a
+ * recount cannot quietly come back.
+ */
+export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number; unit: string }> = {
+  claims: { occurrences: 4242, posts: 1982, unit: 'occurrences' },
+  predictions: { occurrences: 630, posts: 520, unit: 'occurrences' },
+  emphasis: { occurrences: 3112, posts: 1357, unit: 'occurrences' },
+  // "mentions" is the right word here and the only section where it is: an entity is counted
+  // once per resolved mention across 1,448 canonical entities.
+  namedEntities: { occurrences: 9760, posts: 2240, unit: 'mentions' },
+  // Themes are assignments rather than spans — a theme is inferred from a drop, not copied out
+  // of it — so the unit is named accordingly. 2,393 detected + 2 owner rulings.
+  themes: { occurrences: 2644, posts: 1898, unit: 'assignments' },
+  impliedConclusions: { occurrences: 966, posts: 596, unit: 'conclusions' },
+  verificationHooks: { occurrences: 1926, posts: 1028, unit: 'checkable claims' },
+}
 
 /**
  * Claims and Predictions are one semantic family and two sections.
@@ -28,6 +71,33 @@ export const CERTIFIED = {
  * predictions, so `displayClass` decides where a unit appears and `semanticFamily` records what
  * it is. The combined figure is shown only where it is labelled as combined.
  */
+/**
+ * Emphasis — a presentation layer, and the section most at risk of becoming a catch-all.
+ *
+ * Two rules keep it honest, both measured against the corpus rather than declared. Capitals
+ * count only where they CONTRAST: with the surrounding line, and with the word's own usual
+ * spelling — DECLAS is capitalised in 90 of its 95 appearances, so its capitals are how the word
+ * is spelled, while FAKE is 207 of 284, so its capitals are a choice. Parallel phrasing counts
+ * only where a rhetorical pattern actually repeats; a shared first word is not enough, and a run
+ * of lines is one device rather than one device per adjacent pair.
+ */
+export const EMPHASIS_INFO = {
+  types: [
+    { label: 'Capitals', count: 2418, blurb: 'Capitalised words that contrast with the surrounding lowercase text — and with how Q normally spells that word.' },
+    { label: 'Parallel phrasing', count: 631, blurb: 'A rhetorical frame repeated across consecutive lines: a cascade of three or more, a mirrored construction, or a multi-word frame repeated. Each occurrence records which pattern carried it.' },
+    { label: 'Bracket emphasis', count: 715, blurb: 'An ordinary word set in brackets to mark it out — [raid], [now], [children].' },
+    { label: 'Quoted word', count: 624, blurb: 'A single word in quotation marks, marking it as loaded or ironic.' },
+    { label: 'Punctuation intensity', count: 157, blurb: 'Runs of punctuation beyond ordinary sentence marking.' },
+    { label: 'Repeated word or phrase', count: 109, blurb: 'The same wording repeated within one drop for force.' },
+    { label: 'Repeated directive', count: 11, blurb: 'The same instruction given more than once in a drop.' },
+    { label: 'Deliberate spacing', count: 1, blurb: 'Spacing used to slow a reader down. The corpus contains one.' },
+    { label: 'Acrostic', count: 3, blurb: 'Bracketed letters spelling a word across the line — "[N]othing [C]an [S]top [W]hat [I]s [C]oming" spells NCSWIC. Added by owner ruling: the letters are not capitalised for contrast and the brackets read as notation, so no detector saw them. Bracketed abbreviations such as [D] and [F] are a different device and are not counted here.' },
+  ],
+  contrast: 'Q writes in capitals constantly, so capitals alone would tag most of the corpus. A caps word inside a line that is itself mostly capitals is Q’s baseline register, not a highlight — 7,839 such candidates are excluded on that basis, along with 1,239 words Q capitalises every time they appear.',
+  overlap: 'A repeated question is counted once here, as a stylistic fact, and once in Questions, as a unit. The two are cross-linked and never double-counted within a section — the same arrangement as the 228 Question/Directive and 32 Codes/Entities overlaps.',
+  unresolved: 'Where no structural test settles whether a device is rhetorical, the case is not forced either way. 245 are held in the Resolution Center: 141 question series where the sequence is real but extra emphasis is not established, 69 parallel constructions needing context, and 35 borderline capitalisations.',
+} as const
+
 export const ASSERTIONS = {
   combined: CERTIFIED.claims.occurrences + CERTIFIED.predictions.occurrences,
   note: 'Claims and Predictions are both assertions. They are shown as separate sections; the combined figure is only ever presented as a combined figure.',
@@ -78,8 +148,24 @@ export const EVIDENCE = {
  * classification and a deliberate refusal to guess.
  */
 export const ENTITIES = {
-  canonical: 1332,
-  mentions: 4463,
+  // 1,335 -> 1,341: Ray Chandler and Rachel Chandler were certified as two people. The owner
+  // ruled them one, with RC as a third spelling, so the two rows ship as one entity.
+  canonical: 1448,
+  /**
+   * THE HEADLINE COUNTS THE WHOLE SECTION.
+   *
+   * This was 4,463 — alias-resolved mentions of the 93-entity core registry — which was the right
+   * figure while the 1,239-entity tail was still under review. The tail is now reviewed and
+   * certified, so headlining 4,463 next to 1,335 entities understated the finished section by
+   * 3,440 occurrences. The core figure is kept below as provenance, because it is how the section
+   * was built, not a number that turned out to be wrong.
+   */
+  mentions: 9760,
+  mentionScope: 'Every resolved mention across all 1,448 certified entities: 5,273 from the 93 core-registry entities, 3,867 from the entities identified in the adjudication pass, and 620 from owner rulings. Unresolved aliases are counted in neither — they are held in the Resolution Center instead.',
+  coreEntities: 93,
+  coreRegistryMentions: 4463,
+  tailEntities: 1239,
+  tailMentions: 3440,
   contextResolved: 161,
   routedToThemes: 53,
   unresolvedTokens: 1011,
@@ -105,7 +191,7 @@ export const ENTITIES = {
  */
 export const THEMES_INFO = {
   parents: 18,
-  assignments: 2393,
+  assignments: 2644,
   posts: 1766,
   multiTheme: 378,
   unresolved: 251,
@@ -115,7 +201,7 @@ export const THEMES_INFO = {
 /**
  * Codes & Brackets — detected as code is NOT the same as decoded.
  *
- * 734 of the 739 certified codes carry no interpretation at all, and that is the honest state.
+ * 732 of the 739 certified codes carry no interpretation at all, and that is the honest state.
  * A meaning is attached only where the corpus itself establishes it through repeated
  * equivalent usage.
  */
@@ -123,8 +209,8 @@ export const CODES_INFO = {
   occurrences: 1949,
   distinct: 739,
   posts: 852,
-  interpreted: 5,
-  unresolved: 734,
+  interpreted: 7,
+  unresolved: 732,
   crossLinkedToEntities: 32,
   note: 'Codes & Brackets identifies recurring coded expressions, structured shorthand, bracketed markers, symbolic forms, and unusual notation used by Q. Inclusion in this section means the pattern appears code-like or structurally significant; it does not mean its meaning is known. Interpretations are shown only when supported by repeated context or a reviewed resolution.',
   overlap: 'A bracketed reference such as [HRC] is counted here as notation AND in Entities as a reference. The sections answer different questions — how Q marked something, and who was referenced — so each counts it once and cross-links to the other.',
@@ -265,7 +351,7 @@ export const SECTIONS: SectionInfo[] = [
     short: 'The people, organizations, agencies and places Q named.',
     covers: 'Important people, organizations, agencies, companies, governments, countries, locations, programs, operations, institutions and other named subjects appearing throughout the posts.',
     answers: 'Who or what was Q talking about?',
-    certified: `${n(1332)} canonical entities · ${n(4463)} mentions`,
+    certified: `${n(1332)} canonical entities · ${n(7903)} resolved mentions`,
     note: 'Entities are secondary tags rather than sentence types — a question, claim, prediction or directive may contain several. Names are canonicalised, so "HRC", "Hillary" and "Hillary Clinton" are one person, while Q’s exact wording is preserved in every post. Where a reference is ambiguous it is left unresolved rather than guessed.',
   },
   {
@@ -274,7 +360,7 @@ export const SECTIONS: SectionInfo[] = [
     short: 'Recurring subjects that connect posts across the archive.',
     covers: 'Recurring subjects and concepts connecting posts across the entire archive — elections, intelligence agencies, media, censorship, military matters, trafficking, financial systems, government investigations, foreign affairs, technology and other recurring topics.',
     answers: 'What larger subject was this post about?',
-    certified: `${n(2393)} assignments · ${n(1766)} posts · 18 parent themes`,
+    certified: `${n(2644)} assignments · ${n(1898)} posts · 18 parent themes`,
     note: 'Themes identify the recurring subjects Q discusses across the archive. They describe what a post is about, not how Q writes it. A post may have more than one theme — 378 do. Style features such as cryptic phrasing, repetition, coded language, or pattern-based reasoning are classified elsewhere rather than treated as subjects. A theme is assigned only on converging evidence, never on a single word appearing.',
   },
   {
@@ -284,15 +370,16 @@ export const SECTIONS: SectionInfo[] = [
     covers: 'Unusual coded expressions, abbreviations, bracketed text, shorthand, symbolic references, counters, markers and recurring phrases that appear throughout Q’s posts.',
     answers: 'What notation did Q use?',
     certified: `${n(1949)} occurrences · ${n(739)} distinct codes · ${n(852)} posts`,
-    note: 'Inclusion means the pattern appears code-like or structurally significant — it does not mean its meaning is known. Only 5 of 739 codes carry an interpretation, each stating the evidence for it; the other 734 are preserved exactly as written with no meaning attached. Ordinary words in brackets are Emphasis, and dates and ALL CAPS alone are not codes.',
+    note: 'Inclusion means the pattern appears code-like or structurally significant — it does not mean its meaning is known. Only 7 of 739 codes carry an interpretation, each stating the evidence for it; the other 732 are preserved exactly as written with no meaning attached. Two of the seven — [D] for Democrat and [F] for Foreign — are owner adjudications rather than readings the corpus establishes on its own, and are labelled as such. Ordinary words in brackets are Emphasis, and dates and ALL CAPS alone are not codes.',
   },
   {
     id: 'emphasis',
     title: 'Q Emphasis',
-    short: 'Language or formatting Q appears to have emphasized deliberately.',
-    covers: 'ALL CAPS, repeated words or phrases, repeated questions, unusual punctuation, deliberate spacing, strong emphasis markers, repeated instructions and conspicuous formatting.',
+    short: 'The formatting, repetition and structure Q used to draw attention to language.',
+    covers: 'Capitals that contrast with the text around them, bracketed words, quoted words, punctuation runs, deliberate spacing, repeated words, questions and instructions, and parallel rhetorical structure.',
     answers: 'What did Q appear to place special emphasis on?',
-    note: 'Emphasis is an attribute, and can coexist with any other classification.',
+    note: 'Emphasis records concrete formatting, repetition, punctuation, or rhetorical structure Q used to draw attention to language. It does not infer importance merely because a phrase is cryptic, political, or written in Q’s usual style. It is an attribute, and can coexist with any other classification.',
+    certified: '3,112 occurrences across 1,357 posts, in nine device types. 245 arguable cases are held in the Resolution Center rather than counted.',
   },
   {
     id: 'verificationHooks',

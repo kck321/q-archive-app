@@ -65,6 +65,148 @@ made once and only caught by grepping the built file.
     Returning visitors read from IndexedDB and will never see new fields otherwise. Now at 2
     (`quotedPosts`).
 
+## How we work (owner directive, 14 Aug 2026) — READ THIS BEFORE ASKING ANYTHING
+
+The measured facts first, because the obvious suspect was wrong: manifest verify 2.5s, all 138
+invariants 4.2s, apply-entities 0.7s. **The protections were never the cost.** Running them after
+every single correction was, along with a brand-new Chrome profile per check (~40-60s) and
+approval checkpoints between steps the owner had already decided.
+
+### The operating rule
+
+**A clear owner instruction IS an executable ruling. Execute it.**
+
+"this is a Claim" · "remove this from Emphasis" · "Dominion is an Entity" · "US means United
+States here" · "move Themes above this section" · "POTUS should be cyan in the archive"
+
+- Do **not** ask the owner to choose implementation architecture. Claude built the artifacts, the
+  materialisers, the renderers, the invariants, the chain and the browser harness — it knows where
+  an Entity ruling belongs and how to drop Emphasis while preserving a Claim/Theme overlap.
+- Do **not** re-ask a ruling already given.
+- Do **not** stop on a QA warning unless it exposes a genuinely NEW semantic decision only the
+  owner can make (a count that moves for an unexplained reason, a ruling that would change a
+  frozen figure in a way the ruling did not state).
+- Do **not** write a long explanation before doing the work.
+
+### Infer the mode; never ask which it is
+
+| Request | Path |
+|---|---|
+| UI, layout, ordering, colour, rendering, search behaviour | lightweight — edit, targeted check, continue. No chain, no manifest, no seed bump. |
+| Claim / Entity / Theme / Emphasis / Code / Directive ruling | certified-data — canonical artifact → materialiser → targeted QA, then continue |
+
+### While the owner is actively reviewing posts
+
+Smallest relevant path only: make the canonical change, run the affected materialiser or section
+test, use the WARM browser if it needs to be seen, move to the next correction.
+
+**Do NOT run per correction:** the 27-step chain · global invariants · manifest certification ·
+fresh-profile proof · stale-profile proof · deployment.
+
+Corrections accumulate across the session.
+
+### DEPLOY AFTER EVERY FIX (owner directive, 15 Aug 2026)
+
+Supersedes the batching rule below for shipping: **every change goes live as soon as it is fixed**,
+so the owner can check it from the user's side. Batch the RULINGS if several arrive together, but do
+not leave a verified fix sitting undeployed — an undeployed fix reads to the owner as a broken one,
+and three separate reports this session were "it still does X" about work that was never shipped.
+
+The gates do not change: chain, invariants, manifest, seed decision, `verify-final.mjs`, deploy,
+`--live`. They cost about a minute; the deploy itself is the fast part.
+
+### At a deployment checkpoint — pay for it all, once
+
+    full canonical/materialisation chain, run TWICE to prove idempotence
+    global invariants -> manifest -> seed-version decision -> build/deploy
+    node scripts/verify-final.mjs        fresh + returning profiles
+    node scripts/verify-final.mjs --live the deployed site
+
+### Verify at the layer the owner sees — and never trust a zero
+
+Three round trips on ONE ruling ("no Emphasis on a question"), 14 Aug 2026. Each pass fixed a real
+layer and stopped short of the one the owner was looking at:
+
+| pass | what I did | why it did not land |
+|---|---|---|
+| 1 | measured, got 0, said "already handled" | the probe read `o.text` — a field emphasis rows do not have. `String(undefined)` made every test vacuous |
+| 2 | suppressed the PAINT inside questions | the analysis panel lists a row by its LINE, so the lists still showed questions |
+| 3 | withdrew 1,555 rows from the certified layer | correct — but no SEED_VERSION bump, so the owner's browser kept the old copy |
+
+Three rules, now enforced rather than remembered:
+
+1. **A zero is not evidence until the field is proved to exist.** Assert the schema first; a probe
+   that reads a missing key reports "clean" for everything.
+2. **Finish at the surface the owner named.** They said "the archives side or the post analysis
+   side" — chips, rows and search, not just the highlight. Fixing the paint and declaring victory
+   is answering a different question than the one asked.
+3. **`node scripts/seed-fingerprint.mjs` pins seeded data to the SEED_VERSION that shipped it.**
+   Change `posts.json` (or any seeded artifact) without bumping the seed and cross-section
+   invariant 8 now FAILS, naming the files. After a deliberate bump: `--update`.
+
+### Architecture protections that always hold (these are not speed bumps)
+
+- canonical artifacts are the source of truth; owner rulings NEVER live only in `postAnalysis`
+- a semantic ruling is applied by OCCURRENCE IDENTITY, never propagated globally from normalised
+  wording — same wording retrieves candidates, context decides membership
+- Q's literal wording is never rewritten; quoted/source material stays separate from Q-authored
+- debt baselines are never moved just to make a check pass
+- seed bump whenever seeded data actually changes
+- the final browser proof is never skipped
+
+### No public editing, ever
+
+Public Qdrops is **read-only for certified classifications**. There is no clickable
+sentence-reclassification UI for visitors and none is to be built: the overlaps tab and every
+confirm/delete control are `CAN_EDIT`-gated out of the public bundle. Visitors observe, search,
+comment and suggest. The owner rules; Claude implements in the repo.
+
+## Aliases: two registries, one read path
+
+An alias ruling is not finished when the certified layer has it.
+
+| Registry | Where | Who owns it |
+|---|---|---|
+| Editable groups | `public/data/aliases.json`, `map` in `src/lib/aliases.ts` | the owner, via the UI + Firestore |
+| Certified entity aliases | `public/data/entities.json` (from `audit/entities-owner-rulings.json`) | the adjudication and owner rulings |
+
+**Every READ path must resolve a term through `getFullAliasGroup()`**, which unions both.
+`getAliasGroup()` stays editable-only, because addAlias/removeAlias may only mutate what the owner
+owns. COVID-19 carried certified aliases C19 and COVID and searching it showed neither, while
+POTUS worked — only because POTUS's group had been typed in by hand.
+
+**OWNER RULE: a searched term always shows the aliases tied to it, and connecting them is done
+without being asked.** Verify in a browser, not in the data, on BOTH surfaces:
+`node scripts/test-alias-visibility.mjs` (Analysis) and
+`node scripts/test-archive-alias-visibility.mjs` (Post Archive). Fixing one and calling the ruling
+done is exactly how `/posts` — the screen the question was asked about — stayed broken for a day
+after `/analysis` was fixed.
+
+Two traps on that path, both fixed and both easy to reintroduce:
+
+- **The certified registry is FETCHED at startup.** A search run from a URL at mount
+  (`/posts?q=covid-19`) resolves its group before `entities.json` lands, so the match set comes
+  back editable-only while the "Includes:" chips — plain JSX, re-evaluated on the next render —
+  list the certified aliases. The page then advertises spellings it never searched for.
+  PostArchive subscribes to alias changes and replays the last search.
+- **Alias expansion is word-boundary matched, the typed term is not.** A half-typed word must
+  still find things, but a DERIVED spelling is not what the reader asked for: expanding "USA" to
+  its alias "US" as a substring matched 2,259 posts on the "us" inside *because/must/trust*, and
+  "RC" would add 520 on *search/force/Church*. Use `wordBoundaryPattern`, not `\b` — "Q+" ends in
+  a non-word character, so `\bq\+\b` never matches it.
+
+Folding an alias row into its canonical row is scoped: editable groups fold in every category,
+certified entity aliases fold **entity rows only** — that set holds bare tokens like US, CCP and
+COVID that can equally be the text of a claim or a code.
+
+**Two rulings the owner-ruling layer now supports** (`audit/entities-owner-rulings.json`):
+`mergeRulings` folds one certified entity into another (Ray Chandler → Rachel Chandler) by moving
+its mentions/posts/aliases ACROSS — never by rescanning, because her "Ray.Chandler" spelling does
+not match `/\bRay Chandler\b/`. `excludePosts` on an alias ruling is `notFollowedBy` at the level
+of MEANING: RC is Rachel Chandler everywhere except #2's "all his funds in a RC", which stays
+QUEUED in the Resolution Center. `build-resolution-queue.mjs` clears by token AND post, so an
+excluded drop is never marked answered.
+
 ## Counting rules (these have gone wrong repeatedly)
 
 Every section shows **mentions** and **posts**. They are different questions:

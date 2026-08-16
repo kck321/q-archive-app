@@ -1,5 +1,5 @@
 import BackButton from '../components/BackButton'
-import { SECTIONS, DIRECTIVE_FAMILIES, CLAIM_ATTRIBUTES, ASSERTIONS, EVIDENCE, ENTITIES, CODES_INFO, METHOD_INTRO, METHOD_PRINCIPLE, CERTIFIED } from '../lib/sectionInfo'
+import { SECTIONS, DIRECTIVE_FAMILIES, CLAIM_ATTRIBUTES, ASSERTIONS, EVIDENCE, ENTITIES, CODES_INFO, EMPHASIS_INFO, METHOD_INTRO, METHOD_PRINCIPLE, CERTIFIED } from '../lib/sectionInfo'
 
 // The full classification method. Every word of section language comes from lib/sectionInfo,
 // which the per-section ⓘ popovers also read — so the short and long forms cannot disagree.
@@ -74,6 +74,24 @@ export default function Method() {
                   </div>
                   <p className="text-xs text-gray-400 leading-relaxed">{ENTITIES.unresolvedAlias.blurb}</p>
                 </div>
+                <div className="text-xs text-gray-400 leading-relaxed">
+                  <span className="text-gray-300 font-medium">Which mentions the figure counts.</span>{' '}
+                  {ENTITIES.mentionScope}
+                  <div className="mt-2 grid grid-cols-2 gap-2">
+                    <div className="rounded border border-q-border/60 px-2 py-1.5">
+                      <div className="text-gray-500 text-[11px] uppercase tracking-wide">Core registry</div>
+                      <div className="text-gray-200">
+                        {ENTITIES.coreEntities} entities · {ENTITIES.coreRegistryMentions.toLocaleString()} mentions
+                      </div>
+                    </div>
+                    <div className="rounded border border-q-border/60 px-2 py-1.5">
+                      <div className="text-gray-500 text-[11px] uppercase tracking-wide">Adjudicated tail</div>
+                      <div className="text-gray-200">
+                        {ENTITIES.tailEntities.toLocaleString()} entities · {ENTITIES.tailMentions.toLocaleString()} mentions
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <p className="text-xs text-gray-500 leading-relaxed">{ENTITIES.occurrenceSpecific}</p>
                 <p className="text-xs text-gray-500">
                   {ENTITIES.contextResolved.toLocaleString()} ambiguous references were resolved by reading the
@@ -130,6 +148,28 @@ export default function Method() {
                     {EVIDENCE.archivedMedia.total.toLocaleString()} media items.)
                   </span>
                 </p>
+              </div>
+            )}
+
+            {s.id === 'emphasis' && (
+              <div className="mt-3 pt-3 border-t border-q-border">
+                <div className="text-[11px] uppercase tracking-wide text-gray-500 mb-2">Device types</div>
+                <dl className="space-y-2">
+                  {EMPHASIS_INFO.types.map(t => (
+                    <div key={t.label}>
+                      <dt className="text-sm font-medium text-gray-200">
+                        {t.label} <span className="text-gray-500 font-normal">· {t.count.toLocaleString()}</span>
+                      </dt>
+                      <dd className="text-xs text-gray-400 leading-relaxed">{t.blurb}</dd>
+                    </div>
+                  ))}
+                </dl>
+                <p className="mt-3 text-xs text-gray-500 leading-relaxed">
+                  <span className="text-gray-300 font-medium">Emphasis is contrast.</span>{' '}
+                  {EMPHASIS_INFO.contrast}
+                </p>
+                <p className="mt-2 text-xs text-gray-400 leading-relaxed">{EMPHASIS_INFO.overlap}</p>
+                <p className="mt-2 text-xs text-gray-400 leading-relaxed">{EMPHASIS_INFO.unresolved}</p>
               </div>
             )}
 

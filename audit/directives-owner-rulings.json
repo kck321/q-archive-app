@@ -1,0 +1,2762 @@
+{
+ "note": "Owner Directive rulings. apply-directives.mjs merges these into the certified set AFTER it is assembled, so a derive step cannot erase them. Same overlay pattern as entities-owner-rulings.json, themes-owner-rulings.json and emphasis-owner-rulings.json.",
+ "rulings": [
+  {
+   "postNum": 4963,
+   "postId": "4963",
+   "sourceText": "Focus.",
+   "family": "attention",
+   "ruledOn": "2026-08-14",
+   "reasoning": "Owner ruling: both 'Focus.' and 'FOCUS.' in #4963 are Directives — a bare imperative telling the reader what to do. They were carried as Emphasis (repeated_word), which describes the repetition rather than the instruction.",
+   "was": "Emphasis (repeated_word)"
+  },
+  {
+   "postNum": 4963,
+   "postId": "4963",
+   "sourceText": "FOCUS.",
+   "family": "attention",
+   "ruledOn": "2026-08-14",
+   "reasoning": "The capitalised repetition of the same imperative. Occurrence identity: two separate lines, so two Directive occurrences, not one counted twice.",
+   "was": "Emphasis (repeated_word)"
+  },
+  {
+   "postNum": 1077,
+   "postId": "1077",
+   "sourceText": "Prevent at all costs.",
+   "family": "prohibition",
+   "ruledOn": "2026-08-15",
+   "was": "Context",
+   "reasoning": "Owner ruling: an imperative telling the reader what must not be allowed. It was Context, which is why the fragment under it looked like a claim inheriting a subject — there was no subject, only an instruction."
+  },
+  {
+   "postNum": 1,
+   "postId": "1",
+   "sourceText": "Expect massive riots organized in defiance and others fleeing the US to occur.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1,
+   "postId": "1",
+   "sourceText": "Proof check: Locate a NG member and ask if activated for duty 10/30 across most major cities.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4,
+   "postId": "4",
+   "sourceText": "Again, there are a lot more good people than bad so have faith.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 6,
+   "postId": "6",
+   "sourceText": "Again, there are a lot more good people than bad so have faith.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 31,
+   "postId": "31",
+   "sourceText": "There is so much string pulling and blackmail that we need to cut these off to truly gain the power granted to us by the Patriots and hard working people of this great country.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 35,
+   "postId": "35",
+   "sourceText": "It is time to take back our country and make America great again.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 35,
+   "postId": "35",
+   "sourceText": "Let us salute and pray for the brave men and women in uniform who will undertake this assignment to bring forth peace, unity, and return power to the people.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 37,
+   "postId": "37",
+   "sourceText": "Let these coming days be remembered in our history as the time we fought to recapture the republic from those evil bad actors who for so long have sacrificed the good people of this land for their own personal gain.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 37,
+   "postId": "37",
+   "sourceText": "LET JUSTICE BE SERVED.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 59,
+   "postId": "59",
+   "sourceText": "Combine all posts and analyze.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 61,
+   "postId": "61",
+   "sourceText": "Expect outages periodically (infiltrated).",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 66,
+   "postId": "66",
+   "sourceText": "Let's be real clear.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 80,
+   "postId": "80",
+   "sourceText": "We need to get organized.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 80,
+   "postId": "80",
+   "sourceText": "Let's start w/ Alice & Wonderland.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 82,
+   "postId": "82",
+   "sourceText": "Let's start w/ Alice & Wonderland.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 86,
+   "postId": "86",
+   "sourceText": "Study.",
+   "family": "research",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 92,
+   "postId": "92",
+   "sourceText": "Speculate.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 111,
+   "postId": "111",
+   "sourceText": "Repeat.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 112,
+   "postId": "112",
+   "sourceText": "Repeat.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 112,
+   "postId": "112",
+   "sourceText": "Summarize and paint the picture.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 116,
+   "postId": "116",
+   "sourceText": "Upload to graphic.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 118,
+   "postId": "118",
+   "sourceText": "Repeat.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 121,
+   "postId": "121",
+   "sourceText": "List.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 121,
+   "postId": "121",
+   "sourceText": "Laugh.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 127,
+   "postId": "127",
+   "sourceText": "Let's pause and say hello to the rogue intelligence agencies currently monitoring these threads.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 128,
+   "postId": "128",
+   "sourceText": "Be [p]repared.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 153,
+   "postId": "153",
+   "sourceText": "Laugh.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 157,
+   "postId": "157",
+   "sourceText": "Rinse and repeat.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 165,
+   "postId": "165",
+   "sourceText": "Patriots, get the word out.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 166,
+   "postId": "166",
+   "sourceText": "Patriots, get the word out.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 189,
+   "postId": "189",
+   "sourceText": "Re-read graphic (ex: what family did Soros replace (Y)).",
+   "family": "research",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 242,
+   "postId": "242",
+   "sourceText": "Be here tomorrow.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 243,
+   "postId": "243",
+   "sourceText": "Just wait until next week.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 247,
+   "postId": "247",
+   "sourceText": "Think HRC emails, Weiner laptop, etc.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 281,
+   "postId": "281",
+   "sourceText": "Never forget that.",
+   "family": "prohibition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 310,
+   "postId": "310",
+   "sourceText": "Re-listen to yesterday's speech.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 314,
+   "postId": "314",
+   "sourceText": "Be the autists we know you are.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 316,
+   "postId": "316",
+   "sourceText": "Re-listen to yesterday's speech.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 326,
+   "postId": "326",
+   "sourceText": "Expect fireworks.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 337,
+   "postId": "337",
+   "sourceText": "Patriots, rest assured we are in control.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 337,
+   "postId": "337",
+   "sourceText": "Re-read crumbs re: slave grip the D's have on the black pop.",
+   "family": "research",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 345,
+   "postId": "345",
+   "sourceText": "Enhance.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 425,
+   "postId": "425",
+   "sourceText": "TRUST.",
+   "family": "morale",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 465,
+   "postId": "465",
+   "sourceText": "No other platforms used.",
+   "family": "prohibition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 465,
+   "postId": "465",
+   "sourceText": "No comms privately w/ anyone.",
+   "family": "prohibition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 475,
+   "postId": "475",
+   "sourceText": "NO comms w/ anyone privately.",
+   "family": "prohibition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 475,
+   "postId": "475",
+   "sourceText": "NO comms outside of this platform.",
+   "family": "prohibition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 477,
+   "postId": "477",
+   "sourceText": "Wind the clock w/ all markers.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 490,
+   "postId": "490",
+   "sourceText": "Let FREEDOM RING.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 506,
+   "postId": "506",
+   "sourceText": "Wind the CLOCK.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 513,
+   "postId": "513",
+   "sourceText": "NO private comms past/present/future.",
+   "family": "prohibition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 513,
+   "postId": "513",
+   "sourceText": "NO comms made outside of this platform.",
+   "family": "prohibition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 513,
+   "postId": "513",
+   "sourceText": "Any claims that contradict the above should be considered FAKE NEWS and disregarded immediately.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 515,
+   "postId": "515",
+   "sourceText": "Suggest new board created.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 538,
+   "postId": "538",
+   "sourceText": "BEWARE of MAJOR FALSE FLAG attempts this week.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 538,
+   "postId": "538",
+   "sourceText": "KNOW your surroundings.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 538,
+   "postId": "538",
+   "sourceText": "TRUST.",
+   "family": "morale",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 568,
+   "postId": "568",
+   "sourceText": "TRUST.",
+   "family": "morale",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 571,
+   "postId": "571",
+   "sourceText": "FEAR the STORM.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 585,
+   "postId": "585",
+   "sourceText": "TRUST Adm R.",
+   "family": "morale",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 586,
+   "postId": "586",
+   "sourceText": "Forget the Russia set up [1 of 22].",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 586,
+   "postId": "586",
+   "sourceText": "If you are religious, PRAY.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 621,
+   "postId": "621",
+   "sourceText": "Let that sink in.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 622,
+   "postId": "622",
+   "sourceText": "Time to play, Dopey.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 651,
+   "postId": "651",
+   "sourceText": "Expect more.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 652,
+   "postId": "652",
+   "sourceText": "Re_read EO’s.",
+   "family": "research",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 672,
+   "postId": "672",
+   "sourceText": "Enhance.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 673,
+   "postId": "673",
+   "sourceText": "No edits.",
+   "family": "prohibition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 725,
+   "postId": "725",
+   "sourceText": "Be the autists we know you are.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 756,
+   "postId": "756",
+   "sourceText": "ACTIVATE CODE: [0 0000 018739 7-ZjG]",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 773,
+   "postId": "773",
+   "sourceText": "Be the autists we know you are.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 777,
+   "postId": "777",
+   "sourceText": "Think Apple [vs. Samsung].",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 777,
+   "postId": "777",
+   "sourceText": "We can guide but you must organically uncover the TRUTH.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 812,
+   "postId": "812",
+   "sourceText": "Help them wake up.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 837,
+   "postId": "837",
+   "sourceText": "TRUST.",
+   "family": "morale",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 839,
+   "postId": "839",
+   "sourceText": "CHALLENGE.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 839,
+   "postId": "839",
+   "sourceText": "FIGHT.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 842,
+   "postId": "842",
+   "sourceText": "Careful who you follow.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 854,
+   "postId": "854",
+   "sourceText": "WE must work TOGETHER.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 854,
+   "postId": "854",
+   "sourceText": "YOU must organize and BE HEARD.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 884,
+   "postId": "884",
+   "sourceText": "PLAY THE GAME WITH US.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 960,
+   "postId": "960",
+   "sourceText": "Expect a lot more.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 973,
+   "postId": "973",
+   "sourceText": "Time to complete 1-2.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 981,
+   "postId": "981",
+   "sourceText": "Sleep well, Patriot.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 987,
+   "postId": "987",
+   "sourceText": "Watch the EO’s.",
+   "family": "attention",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1100,
+   "postId": "1100",
+   "sourceText": "Drain the swamp.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1124,
+   "postId": "1124",
+   "sourceText": "Testify then drop.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1155,
+   "postId": "1155",
+   "sourceText": "Focus should also be on Supreme Court promise.",
+   "family": "attention",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1199,
+   "postId": "1199",
+   "sourceText": "Answer Q re: SR.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1248,
+   "postId": "1248",
+   "sourceText": "Question.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1248,
+   "postId": "1248",
+   "sourceText": "Fight!",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1261,
+   "postId": "1261",
+   "sourceText": "Expect more (outcry).",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1271,
+   "postId": "1271",
+   "sourceText": "Note 187.",
+   "family": "attention",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1275,
+   "postId": "1275",
+   "sourceText": "No redactions.",
+   "family": "prohibition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1291,
+   "postId": "1291",
+   "sourceText": "Step back.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1295,
+   "postId": "1295",
+   "sourceText": "The only profit we should all be striving for is TRUE FREEDOM.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1297,
+   "postId": "1297",
+   "sourceText": "They fight unconditionally because they hold a core value, a value that we should all live in FREEDOM.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1297,
+   "postId": "1297",
+   "sourceText": "We must do better to protect them.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1318,
+   "postId": "1318",
+   "sourceText": "No outside comms.",
+   "family": "prohibition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1341,
+   "postId": "1341",
+   "sourceText": "Time to move on.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1358,
+   "postId": "1358",
+   "sourceText": "Trust must be earned.",
+   "family": "morale",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1380,
+   "postId": "1380",
+   "sourceText": "Focus.",
+   "family": "attention",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1425,
+   "postId": "1425",
+   "sourceText": "Given we have now undeniably [on purpose] verified ourselves to be an inside source, expect the MSM [Clown Army] to attack in full cooperation w/ foreign and domestic assets.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1445,
+   "postId": "1445",
+   "sourceText": "Trace sale/spin off of Co.",
+   "family": "research",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1445,
+   "postId": "1445",
+   "sourceText": "Expect A LOT more.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1471,
+   "postId": "1471",
+   "sourceText": "Let them all DIG THEIR OWN GRAVES.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1489,
+   "postId": "1489",
+   "sourceText": "Expect bigger push.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1517,
+   "postId": "1517",
+   "sourceText": "Careful of clickbait.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1557,
+   "postId": "1557",
+   "sourceText": "Let’s start here.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1558,
+   "postId": "1558",
+   "sourceText": "Fight",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1575,
+   "postId": "1575",
+   "sourceText": "Abandon ship!",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1595,
+   "postId": "1595",
+   "sourceText": "Time to FEED.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1645,
+   "postId": "1645",
+   "sourceText": "Play LOUD.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1792,
+   "postId": "1792",
+   "sourceText": "Fear not.",
+   "family": "morale",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1817,
+   "postId": "1817",
+   "sourceText": "Say something.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1824,
+   "postId": "1824",
+   "sourceText": "Ask yourself, if the U.S. GDP is greater than the total of all others  combined (G7), which allows us to negotiate from a position of strength, why would previous President's 'knowingly' [unequally] distribute America's wealth away by making unbalanced trade deals?",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1863,
+   "postId": "1863",
+   "sourceText": "FIGHT!",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1879,
+   "postId": "1879",
+   "sourceText": "Expect MANY MANY MANY similar reports to surface from around the world.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1899,
+   "postId": "1899",
+   "sourceText": "Travel to Rome.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1902,
+   "postId": "1902",
+   "sourceText": "Travel to Rome.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1916,
+   "postId": "1916",
+   "sourceText": "Say something.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1916,
+   "postId": "1916",
+   "sourceText": "PEOPLE must unite to clean out these old institutions.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1953,
+   "postId": "1953",
+   "sourceText": "Know your enemy.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1956,
+   "postId": "1956",
+   "sourceText": "You MUST stay TOGETHER.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1960,
+   "postId": "1960",
+   "sourceText": "Pro TIP: Look @ CrowdStrike",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1980,
+   "postId": "1980",
+   "sourceText": "Swap \"of\" w/ \"in.\"",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 1998,
+   "postId": "1998",
+   "sourceText": "Expect another BIG coordinated wave [#3] of attacks by FAKE NEWS.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2037,
+   "postId": "2037",
+   "sourceText": "COMPARE VS OTHER STATES.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2038,
+   "postId": "2038",
+   "sourceText": "FIGHT!",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2039,
+   "postId": "2039",
+   "sourceText": "LET FREEDOM RING, PATRIOTS.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2056,
+   "postId": "2056",
+   "sourceText": "Every moment together is a moment you should not waste.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2101,
+   "postId": "2101",
+   "sourceText": "Think 'collective' attacks v. 'Q'",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2166,
+   "postId": "2166",
+   "sourceText": "EXPECT TWITTER/FB FORCE NEXT.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2206,
+   "postId": "2206",
+   "sourceText": "FIGHT!",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2234,
+   "postId": "2234",
+   "sourceText": "Let your VOICES BE HEARD.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2239,
+   "postId": "2239",
+   "sourceText": "Say something",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2269,
+   "postId": "2269",
+   "sourceText": "Time to UNITE.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2287,
+   "postId": "2287",
+   "sourceText": "FIGHT!",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2298,
+   "postId": "2298",
+   "sourceText": "EXPECT COMMS BLACKOUT ATTEMPT (POTUS TWITTER)",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2298,
+   "postId": "2298",
+   "sourceText": "THE TIME TO FIGHT!!!!!!!!",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2300,
+   "postId": "2300",
+   "sourceText": "Think line of questions re: Sen. Graham > Justice K re: 'Enemy Combatants'.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2314,
+   "postId": "2314",
+   "sourceText": "Allow us to carry this heavy burden.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2358,
+   "postId": "2358",
+   "sourceText": "Expect this.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2361,
+   "postId": "2361",
+   "sourceText": "UNPLUG FROM FAKE NEWS [FALSE REALITY]",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2375,
+   "postId": "2375",
+   "sourceText": "Think GOOG+ / Gmail / etc.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2382,
+   "postId": "2382",
+   "sourceText": "Re_read drops re: Polls",
+   "family": "research",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2386,
+   "postId": "2386",
+   "sourceText": "Think Executive Branch / NSA / etc.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2395,
+   "postId": "2395",
+   "sourceText": "Re_read drops re: MS13",
+   "family": "research",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2416,
+   "postId": "2416",
+   "sourceText": "Say Something",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2436,
+   "postId": "2436",
+   "sourceText": "WE MUST RISE AGAIN.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2436,
+   "postId": "2436",
+   "sourceText": "WE MUST UNITE AGAIN.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2436,
+   "postId": "2436",
+   "sourceText": "WE MUST FIGHT AGAIN.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2474,
+   "postId": "2474",
+   "sourceText": "FIGHT!",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2478,
+   "postId": "2478",
+   "sourceText": "Let the unsealing begin.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2478,
+   "postId": "2478",
+   "sourceText": "Let the DEC[L]AS begin.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2478,
+   "postId": "2478",
+   "sourceText": "Let the WORLD witness the TRUTH.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2499,
+   "postId": "2499",
+   "sourceText": "Be 'extremely' vigilant in Dec.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2499,
+   "postId": "2499",
+   "sourceText": "Say something.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2500,
+   "postId": "2500",
+   "sourceText": "Re_read drops re: WARNINGS",
+   "family": "research",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2507,
+   "postId": "2507",
+   "sourceText": "NO FURTHER DETAILS SHOULD BE RELEASED [WARNING]",
+   "family": "prohibition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2540,
+   "postId": "2540",
+   "sourceText": "Please allow us to counter.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2554,
+   "postId": "2554",
+   "sourceText": "Say something.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2604,
+   "postId": "2604",
+   "sourceText": "Be in control of yourself.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2661,
+   "postId": "2661",
+   "sourceText": "Regular service appointments should be made in order to maintain functionality.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2677,
+   "postId": "2677",
+   "sourceText": "It's time to return publicly.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2693,
+   "postId": "2693",
+   "sourceText": "Let's actually use 'FACTS':",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2707,
+   "postId": "2707",
+   "sourceText": "Track 7B-DS",
+   "family": "research",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2709,
+   "postId": "2709",
+   "sourceText": "Pull all views +/- [10]",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2710,
+   "postId": "2710",
+   "sourceText": "Register all data pulls to location.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2726,
+   "postId": "2726",
+   "sourceText": "Be alert next 10 days.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2754,
+   "postId": "2754",
+   "sourceText": "Compare v. 2016 Presidential election results.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2757,
+   "postId": "2757",
+   "sourceText": "Swap 'we' for 'you'.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2772,
+   "postId": "2772",
+   "sourceText": "Expect 'attacks' to dramatically intensify across all platforms.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2777,
+   "postId": "2777",
+   "sourceText": "Disregard any misspelling.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2801,
+   "postId": "2801",
+   "sourceText": "Search ‘Qanon’",
+   "family": "research",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2807,
+   "postId": "2807",
+   "sourceText": "WE MUST RISE.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2807,
+   "postId": "2807",
+   "sourceText": "WE MUST FIGHT.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2816,
+   "postId": "2816",
+   "sourceText": "WE MUST STAND TOGETHER IN THIS FIGHT.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2877,
+   "postId": "2877",
+   "sourceText": "Disregard all spelling/other errors.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2963,
+   "postId": "2963",
+   "sourceText": "Assist P_193",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2966,
+   "postId": "2966",
+   "sourceText": "Track confirm (2)",
+   "family": "research",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2967,
+   "postId": "2967",
+   "sourceText": "Switch private_reg_C.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 2998,
+   "postId": "2998",
+   "sourceText": "Something you should explore further.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3020,
+   "postId": "3020",
+   "sourceText": "Define 'Surveillance state'.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3040,
+   "postId": "3040",
+   "sourceText": "Let Freedom Ring!",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3053,
+   "postId": "3053",
+   "sourceText": "Whistle while you work……",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3072,
+   "postId": "3072",
+   "sourceText": "Disregard spelling error.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3077,
+   "postId": "3077",
+   "sourceText": "Say Something.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3111,
+   "postId": "3111",
+   "sourceText": "Let's Keep Playing…",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3113,
+   "postId": "3113",
+   "sourceText": "Never interfere with an enemy……..",
+   "family": "prohibition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3127,
+   "postId": "3127",
+   "sourceText": "Ask yourself a very simple Q.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3211,
+   "postId": "3211",
+   "sourceText": "Bake your noodle.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3308,
+   "postId": "3308",
+   "sourceText": "Disregard any spelling errors.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3317,
+   "postId": "3317",
+   "sourceText": "Listen very carefully to statements made by Joe D.",
+   "family": "attention",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3326,
+   "postId": "3326",
+   "sourceText": "DRAIN THE [SWAMP].",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3371,
+   "postId": "3371",
+   "sourceText": "Sometimes you need to 'take one for the team publicly' before you are vindicated as a hero.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3373,
+   "postId": "3373",
+   "sourceText": "Sleep well.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3381,
+   "postId": "3381",
+   "sourceText": "DRAIN THE SWAMP.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3383,
+   "postId": "3383",
+   "sourceText": "DRAIN THE SWAMP.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3385,
+   "postId": "3385",
+   "sourceText": "Expect a lot more to become public (unsealing).",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3428,
+   "postId": "3428",
+   "sourceText": "Find [4]",
+   "family": "research",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3431,
+   "postId": "3431",
+   "sourceText": "Think Gloria V.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3528,
+   "postId": "3528",
+   "sourceText": "DRAIN THE SWAMP!",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3568,
+   "postId": "3568",
+   "sourceText": "Say something.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3568,
+   "postId": "3568",
+   "sourceText": "Know your surroundings at all times.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3588,
+   "postId": "3588",
+   "sourceText": "Be free in your thoughts.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3618,
+   "postId": "3618",
+   "sourceText": "Suggest update delay to prevent IDEN re-check re: trip update failure until platform stabilized.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3623,
+   "postId": "3623",
+   "sourceText": "Re-read drops re: 'Foreign Aid'",
+   "family": "research",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3627,
+   "postId": "3627",
+   "sourceText": "Watch",
+   "family": "attention",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3663,
+   "postId": "3663",
+   "sourceText": "DRAIN THE SWAMP!",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3694,
+   "postId": "3694",
+   "sourceText": "Never forget who directed.",
+   "family": "prohibition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3728,
+   "postId": "3728",
+   "sourceText": "Sometimes you must sacrifice yourself for the greater good.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3729,
+   "postId": "3729",
+   "sourceText": "Know your history and you will know why.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3748,
+   "postId": "3748",
+   "sourceText": "Fight!",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3819,
+   "postId": "3819",
+   "sourceText": "Read [1]",
+   "family": "research",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3819,
+   "postId": "3819",
+   "sourceText": "Read [2]",
+   "family": "research",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3839,
+   "postId": "3839",
+   "sourceText": "It's time to wake up.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3857,
+   "postId": "3857",
+   "sourceText": "It's time to wake up.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3907,
+   "postId": "3907",
+   "sourceText": "WE MUST RISE AGAIN.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3907,
+   "postId": "3907",
+   "sourceText": "WE MUST UNITE AGAIN.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3907,
+   "postId": "3907",
+   "sourceText": "WE MUST FIGHT AGAIN.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3929,
+   "postId": "3929",
+   "sourceText": "Patriots: be cautious in your interpretations of info posted.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 3964,
+   "postId": "3964",
+   "sourceText": "Be informed.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4024,
+   "postId": "4024",
+   "sourceText": "YOU MUST SHOW THEM.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4076,
+   "postId": "4076",
+   "sourceText": "YOU MUST SHOW THEM.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4089,
+   "postId": "4089",
+   "sourceText": "YOU MUST SHOW THEM.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4089,
+   "postId": "4089",
+   "sourceText": "It's time to wake up.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4090,
+   "postId": "4090",
+   "sourceText": "Know your rights.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4101,
+   "postId": "4101",
+   "sourceText": "Question what you read [from every source].",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4115,
+   "postId": "4115",
+   "sourceText": "YOU MUST SHOW THEM.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4121,
+   "postId": "4121",
+   "sourceText": "YOU MUST SHOW THEM.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4135,
+   "postId": "4135",
+   "sourceText": "It's time to wake up.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4140,
+   "postId": "4140",
+   "sourceText": "LET FREEDOM RING!",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4161,
+   "postId": "4161",
+   "sourceText": "Disregard.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4226,
+   "postId": "4226",
+   "sourceText": "But, you must go back before you can go forward.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4246,
+   "postId": "4246",
+   "sourceText": "YOU MUST SHOW THEM.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4250,
+   "postId": "4250",
+   "sourceText": "It's time to end the horror show.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4250,
+   "postId": "4250",
+   "sourceText": "It's time to stand [lead by example].",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4296,
+   "postId": "4296",
+   "sourceText": "Reconcile.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4316,
+   "postId": "4316",
+   "sourceText": "Fear not, all will be well right after the election.",
+   "family": "morale",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4317,
+   "postId": "4317",
+   "sourceText": "Use 1, 2, 3 and 4 to drive echo-chamber false [idiotic] narrative bad [pro slavery][D]s switched to [R] party and good [anti-slavery][R]s switched to [D] party.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4386,
+   "postId": "4386",
+   "sourceText": "Expect us.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4395,
+   "postId": "4395",
+   "sourceText": "Now, re_read again:",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4424,
+   "postId": "4424",
+   "sourceText": "Be All You Can Be.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4461,
+   "postId": "4461",
+   "sourceText": "YOU MUST SHOW THEM.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4496,
+   "postId": "4496",
+   "sourceText": "Surrender to None ['Digital Battleground'].",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4498,
+   "postId": "4498",
+   "sourceText": "Know your weaknesses.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4498,
+   "postId": "4498",
+   "sourceText": "Adapt.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4498,
+   "postId": "4498",
+   "sourceText": "Overcome.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4509,
+   "postId": "4509",
+   "sourceText": "Mission 1: Dispute [reject] propaganda push through posting of research and facts",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4509,
+   "postId": "4509",
+   "sourceText": "Mission 2: Support role of other digital soldiers [one falls another stands (rises)]",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4509,
+   "postId": "4509",
+   "sourceText": "Mission 3: Guide [awaken] others through use of facts [DECLAS 1-99 material and other relevant facts] and memes [decouple MSDNC control of info stream] _ask 'counter' questions to initiate 'thought' vs repeat [echo] of MSDNC propaganda",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4509,
+   "postId": "4509",
+   "sourceText": "Mission 4: Learn use of camouflage [digitally] _primary account suspended-terminated _use of secondary",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4543,
+   "postId": "4543",
+   "sourceText": "Appropriate action should be taken.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4550,
+   "postId": "4550",
+   "sourceText": "Fear not.",
+   "family": "morale",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4550,
+   "postId": "4550",
+   "sourceText": "Let light guide you.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4604,
+   "postId": "4604",
+   "sourceText": "Batten down the hatches.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4640,
+   "postId": "4640",
+   "sourceText": "Challenge legally battleground [4].",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4641,
+   "postId": "4641",
+   "sourceText": "You must show them.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4664,
+   "postId": "4664",
+   "sourceText": "Excellent Q - you should ask (as should every American).",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4666,
+   "postId": "4666",
+   "sourceText": "Say something.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4683,
+   "postId": "4683",
+   "sourceText": "Know.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4685,
+   "postId": "4685",
+   "sourceText": "You must show them.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4694,
+   "postId": "4694",
+   "sourceText": "Know your enemy.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4746,
+   "postId": "4746",
+   "sourceText": "Let the truth be told.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4772,
+   "postId": "4772",
+   "sourceText": "Never bring an arrow [in a quiver] to a LOSBR missile fight.",
+   "family": "prohibition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4851,
+   "postId": "4851",
+   "sourceText": "DRAIN THE SWAMP.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4852,
+   "postId": "4852",
+   "sourceText": "Let's keep the party going.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4893,
+   "postId": "4893",
+   "sourceText": "DRAIN THE SWAMP.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4908,
+   "postId": "4908",
+   "sourceText": "YOU MUST SHOW THEM.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4951,
+   "postId": "4951",
+   "sourceText": "Sometimes you must walk through the darkness before you see the light.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4962,
+   "postId": "4962",
+   "sourceText": "Repeat.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 4963,
+   "postId": "4963",
+   "sourceText": "Time to show the world.",
+   "family": "cognition",
+   "ruledOn": "2026-08-15",
+   "was": "unclassified",
+   "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
+   "source": "Q_directive_audit_full.txt"
+  }
+ ]
+}

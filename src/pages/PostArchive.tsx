@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo, useRef } from 'react'
-import { useNavigate, Link, useSearchParams } from 'react-router-dom'
-import { getAliasGroup } from '../lib/aliases'
+import {  Link, useSearchParams } from 'react-router-dom'
+import { getFullAliasGroup, subscribeAliases } from '../lib/aliases'
 import { SEARCHED_CHIP, assignAliasColors } from '../lib/aliasColors'
 import { countPhraseOccurrences, normalizeItemKey, countPostsOnMonthDay, parseDateQuery, getTermPresence, type TermPresence, getPosts, searchAllPosts, getQuestionsForPosts, addManualQuestion, getQuestionsTimeline, getPostNumsByMonth, getPostsByNums, getStats, countPostsWithBrackets, getBracketsByMonth } from '../lib/posts'
 import PostCard from '../components/PostCard'
@@ -153,7 +153,6 @@ const CHART_TABS: { key: string; label: string; dataKey: string; color: string; 
  * place any bar without crowding ~62 months of labels into 920px.
  */
 export default function PostArchive() {
-  const navigate = useNavigate()
   const [urlParams, setUrlParams] = useSearchParams()
 
   // Paginated browse mode
@@ -163,14 +162,41 @@ export default function PostArchive() {
   const [loadingMore, setLoadingMore] = useState(false)
   const [cursor, setCursor] = useState<number | null>(null)
   const [hasMore, setHasMore] = useState(true)
+  const [jumpTarget, setJumpTarget] = useState<number | null>(null)
+  // Which target the list was already re-opened for, so the reset happens once per jump.
+  const openedAt = useRef<number | null>(null)
   const [error, setError] = useState('')
 
   // Keyword search-all mode
+  // ?goto=N — arrive from a drop's own header and land on that card IN THE LIST, neighbours
+  // visible, exactly as typing N into "Go to Post" does. The first version of that link used
+  // ?q=#N, which is a SEARCH for the literal text "#N": it returned a one-post filtered view
+  // with a facet strip and a timeline, which is the opposite of seeing a drop in context.
+  const gotoParam = Number(urlParams.get('goto') ?? '')
+  useEffect(() => {
+    if (!Number.isFinite(gotoParam) || gotoParam < 1 || gotoParam > 4966) return
+    // Approach from the END THE POST IS NEAR. The archive pages in, and the jump loads pages until
+    // the card exists — so asking for #8 while sorted #4966 -> #1 means walking the ENTIRE archive
+    // to reach the last row, and the reader gets "#8 is not in the current list" long before it
+    // arrives. Sorted #1 -> #4966, #8 is on the first page.
+    const nearStart = gotoParam <= 2483
+    if ((nearStart && sortDir !== 'asc') || (!nearStart && sortDir !== 'desc')) {
+      setSortDir(nearStart ? 'asc' : 'desc')   // triggers the reload effect below
+    }
+    // A jump is a request to SEE that drop; an active search would hide it and produce the same
+    // misleading "not in the current list".
+    if (searchTerm) { setSearchTerm(''); setSearchInput(''); load(true, nearStart ? 'asc' : 'desc') }
+    setPostNumError('')
+    setJumpTarget(gotoParam)
+  }, [gotoParam])
+
   const initialQ = urlParams.get('q') ?? ''
   const initialExact = urlParams.get('exact') === '1'
   const [searchInput, setSearchInput] = useState(initialQ ? (initialExact ? `"${initialQ}"` : initialQ) : '')
   const [searchTerm, setSearchTerm] = useState('')
   const [searchResults, setSearchResults] = useState<QPost[]>([])
+  // What the visible results were searched for — replayed when the alias registries load.
+  const lastSearchRef = useRef<{ term: string; isExact: boolean } | null>(null)
   const [searching, setSearching] = useState(false)
   const isSearchMode = searchTerm.length > 0
 
@@ -206,14 +232,19 @@ export default function PostArchive() {
   const [monthPosts, setMonthPosts] = useState<QPost[]>([])
   const [monthPostsLoading, setMonthPostsLoading] = useState(false)
 
-  async function load(reset = false, dir: 'asc' | 'desc' = sortDir) {
+  // startAt: begin the list AT a position instead of walking to it. A jump to #4900 used to mount
+  // every card from the top — thousands of them — which is why it took half a minute and still
+  // felt slow at six seconds. Opening the archive at the drop is O(1), the way opening a book at a
+  // page is: you arrive there, and scrolling continues from there.
+  async function load(reset = false, dir: 'asc' | 'desc' = sortDir, pageSize?: number, startAt?: number) {
     if (reset) { setLoading(true); setError('') }
     else setLoadingMore(true)
     try {
       const { posts: newPosts, nextCursor } = await getPosts(
-        reset ? undefined : (cursor ?? undefined),
+        startAt ?? (reset ? undefined : (cursor ?? undefined)),
         undefined,
-        dir
+        dir,
+        pageSize,
       )
       setPosts(reset ? newPosts : prev => [...prev, ...newPosts])
       setCursor(nextCursor)
@@ -248,18 +279,45 @@ export default function PostArchive() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // Save scroll position when leaving; restore after search results render
+  // Re-run the search when the alias registries change.
+  //
+  // The certified groups are FETCHED at startup (entities.json), so landing on
+  // /posts?q=covid-19 ran the search before COVID-19 knew it carried C19 and COVID: the match
+  // set came back editable-only while the "Includes:" row — plain JSX, re-evaluated on the next
+  // render — listed the certified aliases. The page then advertised spellings it had not
+  // searched for, which is worse than showing none. Also covers a live alias edit.
+  useEffect(() => subscribeAliases(() => {
+    const last = lastSearchRef.current
+    if (last) runSearch(last.term, last.isExact)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }), [])
+
+  // Scroll position is owned by <ScrollRestoration> in App.tsx. It already handles both
+  // scroll containers (<main> on desktop, the document on phones), saves in the layout-effect
+  // cleanup so the value is not clobbered by the next page, and retries until the position
+  // sticks. A second implementation here fought it and hardcoded <main>, which is the wrong
+  // element below the lg breakpoint.
+  //
+  // What this page DOES own is list DEPTH. The archive pages in via "Load More", so returning
+  // from a drop you scrolled 600 posts to reach re-rendered only the first page — and no scroll
+  // restorer can reach a position in content that has not been loaded. Refilling to the previous
+  // depth is what makes the restoration achievable.
   useEffect(() => {
-    const main = document.querySelector('main')
-    if (!main) return
-    const saved = sessionStorage.getItem('postArchiveScroll')
-    if (saved) requestAnimationFrame(() => { main.scrollTop = Number(saved) })
-    return () => {
-      sessionStorage.setItem('postArchiveScroll', String(main.scrollTop))
-    }
-  }, [searchResults])
+    return () => { sessionStorage.setItem('postArchiveCount', String(posts.length)) }
+  }, [posts.length])
+
+  const refillRef = useRef(false)
+  useEffect(() => {
+    if (refillRef.current || loading || searchResults || posts.length === 0) return
+    const want = Number(sessionStorage.getItem('postArchiveCount') ?? 0)
+    if (posts.length >= want) { refillRef.current = true; return }
+    if (hasMore && !loadingMore) load(false)
+  }, [posts.length, loading, loadingMore, hasMore, searchResults])
 
   async function runSearch(term: string, isExact: boolean) {
+    // A bare in-range number means "show me that drop", not "find this text".
+    if (tryPostNumberJump(term)) { setSearchInput(term.trim()); return }
+    lastSearchRef.current = { term, isExact }
     setSearching(true)
     setSearchTerm(term)
     setError('')
@@ -336,6 +394,22 @@ export default function PostArchive() {
     setError('')
   }
 
+  // A BARE NUMBER IS A POST NUMBER.
+  //
+  // Typing "524" into the search box searched the TEXT of every drop for "524" and returned
+  // nothing useful — the post-number lookup lived in a separate box beside it, which is not where
+  // anyone looks first. A query that is only digits, inside the archive's range, now jumps to that
+  // drop instead. Anything else still searches text, so "1776" as a phrase is unaffected: it is
+  // out of range, and in-range digits are what a reader means by a post number.
+  function tryPostNumberJump(raw: string): boolean {
+    const t = raw.trim().replace(/^#/, '')
+    if (!/^\d{1,4}$/.test(t)) return false
+    const n = Number(t)
+    if (n < 1 || n > 4966) return false
+    setJumpTarget(n)
+    return true
+  }
+
   function handleGoToPost() {
     const num = parseInt(postNumInput.trim(), 10)
     if (isNaN(num) || num < 1 || num > 4966) {
@@ -343,8 +417,62 @@ export default function PostArchive() {
       return
     }
     setPostNumError('')
-    navigate(`/post/${num}`)
+    // Approach from the end the post is NEAR — sorted #4966 -> #1, reaching #524 means paging
+    // through 4,442 drops fifty at a time. Ascending, it is eleven pages.
+    const nearStart = num <= 2483
+    if ((nearStart && sortDir !== 'asc') || (!nearStart && sortDir !== 'desc')) setSortDir(nearStart ? 'asc' : 'desc')
+    // STAY IN THE ARCHIVE.
+    //
+    // This used to navigate(`/post/${num}`), which left /posts entirely — losing the scroll
+    // position, the surrounding drops and any active filter, so getting back meant rebuilding
+    // the whole list. Jumping to a post number is a request to LOOK at it in context, not to
+    // leave. The card is brought into view and flashed; opening the detail page stays a click.
+    setJumpTarget(num)
   }
+
+  // Bring the requested post's card into view, loading more of the list if it has not been
+  // fetched yet — the archive pages in as you scroll, so an arbitrary post number is usually
+  // not mounted when the jump is requested.
+  useEffect(() => {
+    if (jumpTarget == null) return
+    const el = document.querySelector(`[data-post-num="${jumpTarget}"]`)
+    if (el) {
+      // SCROLL AGAIN AFTER THE LIST SETTLES.
+      //
+      // The card exists, but rows above it are still being committed and every one of them has a
+      // different height, so a single scrollIntoView lands tens of drops short — #524 arrived at
+      // #491. Re-anchoring on a few frames afterwards costs nothing and puts the card where the
+      // reader was promised. 'auto' first so the position is correct before the smooth pass.
+      const anchor = (behavior: ScrollBehavior) =>
+        document.querySelector(`[data-post-num="${jumpTarget}"]`)?.scrollIntoView({ behavior, block: 'center' })
+      anchor('auto')
+      const again = [120, 400, 900, 1600].map(ms => setTimeout(() => anchor(ms > 400 ? 'smooth' : 'auto'), ms))
+      el.classList.add('ring-2', 'ring-blue-400', 'animate-jump-flash')
+      const t = setTimeout(() => {
+        el.classList.remove('ring-2', 'ring-blue-400', 'animate-jump-flash')
+      }, 3200)
+      setJumpTarget(null)
+      return () => { clearTimeout(t); again.forEach(clearTimeout) }
+    }
+    // WAIT while a page is in flight. This used to read `hasMore && !loadingMore`, and fall
+    // through to the error when either was false — so the moment load(false) set loadingMore, the
+    // very next render took the "not in the current list" branch and cleared jumpTarget. The jump
+    // loaded exactly ONE extra page and then declared the post missing, which is why "Go to Post
+    // 524" failed on a list that simply had not reached #524 yet.
+    if (loading || loadingMore) return
+    // Open the list AT the drop rather than paging to it: its index is known from its number.
+    if (!openedAt.current || openedAt.current !== jumpTarget) {
+      openedAt.current = jumpTarget
+      const idx = sortDir === 'asc' ? jumpTarget - 1 : 4966 - jumpTarget
+      load(true, sortDir, 60, Math.max(0, idx - 4))
+      return
+    }
+    if (hasMore) { load(false, sortDir, 800); return }
+    // Every page is loaded and the post is still not here — it is filtered out rather than
+    // missing, and saying so beats scrolling to nothing.
+    setPostNumError(`#${jumpTarget} is not in the current list — clear the search or filter first`)
+    setJumpTarget(null)
+  }, [jumpTarget, posts, hasMore, loadingMore, loading])
 
   async function handleAddQuestion(postId: string, postNum: number, text: string) {
     await addManualQuestion(postId, postNum, text)
@@ -497,7 +625,7 @@ export default function PostArchive() {
   // "32 posts" undercounts when a drop says "proof" four times — and knowing which post is
   // dense is how you decide what to open first.
   const mentionCounts = useMemo(() => {
-    const group = getAliasGroup(searchTerm).map(normalizeItemKey).filter(Boolean)
+    const group = getFullAliasGroup(searchTerm).map(normalizeItemKey).filter(Boolean)
     const map = new Map<number, number>()
     if (group.length === 0) return map
     for (const p of searchResults) {
@@ -609,12 +737,16 @@ export default function PostArchive() {
   )
 
   const { aliasColor, postColor } = useMemo(() => {
-    const group = getAliasGroup(searchTerm)
+    const group = getFullAliasGroup(searchTerm)
     const { colorOf, priority } = assignAliasColors(group, searchTerm, SEARCHED_CHIP)
     const byPost = new Map<number, string>()
     for (const p of searchResults) {
-      const t = (p.text ?? '').toLowerCase()
-      const hit = priority.find(m => t.includes(m))
+      // Word-level, not substring: colouring a post by `text.includes('us')` paints it as a
+      // "USA" hit for the "us" inside because/trust, and a two-letter alias like RC would
+      // colour every post containing search/force/Church. Same padded-normalized test the
+      // mention counts use, so the chip colour and the count agree about what a hit is.
+      const padded = ` ${normalizeItemKey(p.text ?? '')} `
+      const hit = priority.find(m => countPhraseOccurrences(padded, normalizeItemKey(m)) > 0)
       if (hit) byPost.set(p.postNum, colorOf.get(hit)!)
     }
     return { aliasColor: colorOf, postColor: byPost }
@@ -754,6 +886,23 @@ export default function PostArchive() {
 
       {/* ── Scrollable content ──────────────────────────────────────────── */}
       <div className="px-4 sm:px-6 py-4 space-y-4 w-full max-w-5xl">
+
+        {/* SEARCH SUMMARY — hoisted above the Delta button by owner ruling 2026-08-14: the count
+            used to sit below the timeline, so on a long page you scrolled past the chart to find
+            out what you had searched and how many hits it returned. It reads the same state as
+            the banner further down, so the two can never disagree. */}
+        {isSearchMode && !searching && !deltaQuery && searchResults.length > 0 && (
+          <div className="bg-blue-900/20 border border-blue-800 rounded-xl px-4 py-2">
+            <p className="text-blue-300 text-sm">
+              Found <span className="font-bold text-white">{searchResults.length}</span> posts
+              matching <span className="font-bold text-white">"{searchTerm}"</span>
+              {totalMentions > searchResults.length && (
+                <> · <span className="font-bold text-amber-300">{totalMentions.toLocaleString()}</span> total mentions</>
+              )}
+              {' '}— text, date, or alias · sorted oldest to newest
+            </p>
+          </div>
+        )}
 
         {/* "Deltas" — every drop posted on today's month and day, in any year. The search
             already understands a bare date ("Aug 12" → month + day, year unspecified), so
@@ -1167,17 +1316,20 @@ export default function PostArchive() {
             )}
             {/* Alias breakdown + quick-jump chips (searched term first & highlighted) */}
             {!searching && !deltaQuery && searchResults.length > 0 && (() => {
-              const group = getAliasGroup(searchTerm)
+              const group = getFullAliasGroup(searchTerm)
               const termLower = searchTerm.toLowerCase().trim()
-              const textOf = (p: QPost) => (p.text ?? '').toLowerCase()
+              // Word-level containment, the same test the mention counts and chip colours use
+              // — an alias chip reading "US ×2,259" would be counting the "us" inside because.
+              const paddedOf = (p: QPost) => ` ${normalizeItemKey(p.text ?? '')} `
+              const holds = (p: QPost, t: string) => countPhraseOccurrences(paddedOf(p), normalizeItemKey(t)) > 0
               // post #s that contain the EXACT searched term
-              const searchedNums = new Set(searchResults.filter(p => textOf(p).includes(termLower)).map(p => p.postNum))
+              const searchedNums = new Set(searchResults.filter(p => holds(p, termLower)).map(p => p.postNum))
               // per-alias counts (only meaningful when there's a group)
               const breakdown = group.length > 1
                 ? group.map(g => ({
                     term: g,
                     isSearched: g.toLowerCase().trim() === termLower,
-                    count: searchResults.filter(p => textOf(p).includes(g.toLowerCase().trim())).length,
+                    count: searchResults.filter(p => holds(p, g)).length,
                   })).sort((a, b) => (b.isSearched ? 1 : 0) - (a.isSearched ? 1 : 0) || b.count - a.count)
                 : []
               // searched-term posts first, then the rest

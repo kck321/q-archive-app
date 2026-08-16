@@ -1,0 +1,2774 @@
+{
+  "note": "Owner Emphasis rulings. This file is the CANONICAL layer for Emphasis decided by the owner rather than by the detector, and apply-emphasis.mjs merges it on top of audit/emphasis-audit.json.",
+  "why": "emphasis-audit.json is written by audit-emphasis.mjs, a DERIVE step. A ruling written into it would be erased the next time the audit ran, with no error anywhere. Same shape as audit/themes-owner-rulings.json and audit/claims-final.json.",
+  "device": "ACROSTIC — Q brackets individual letters so that they spell an acronym across the line. The brackets are the emphasis: they exist purely to make the reader see a word hidden inside a sentence, which is a presentation device rather than a claim, a question or a code to be decoded.",
+  "notEquivalent": "Bracketed ABBREVIATIONS are a different device and are deliberately excluded: [D] and [F] in #3911, #4317, #4325, #4489 and #4688 stand for Democrat and Foreign. Those brackets abbreviate a word, they do not spell one. A pattern scan for '3+ single-letter brackets on one line' catches both, which is why the set was read rather than taken from the scan — #4317 in particular appears to spell 'DRRD' only because four unrelated abbreviations sit on one line.",
+  "retrieval": "Archive-wide scan of all 4,966 posts for lines carrying 2 or more single-letter brackets: 25 lines, 18 distinct letter sequences, of which these 4 are acrostics. All 4 were unclassified in every section. The standalone acronym NCSWIC on the following line of #4951 was already certified Emphasis; only the bracketed line was unregistered.",
+  "rulings": [
+    {
+      "postNum": 4951,
+      "postId": "4951",
+      "sourceText": "[N]othing [C]an [S]top [W]hat [I]s [C]oming",
+      "spells": "NCSWIC",
+      "was": "unclassified",
+      "ruledOn": "2026-08-14",
+      "reasoning": "Owner ruling. The brackets mark the letters spelling NCSWIC, the acronym Q writes plainly on the next line of the same drop."
+    },
+    {
+      "postNum": 129,
+      "postId": "129",
+      "sourceText": "Operations --> [N]o [S]uch [A]gency",
+      "spells": "NSA",
+      "was": "unclassified",
+      "ruledOn": "2026-08-14",
+      "reasoning": "Owner ruling. Same device: bracketed initials spelling NSA."
+    },
+    {
+      "postNum": 129,
+      "postId": "129",
+      "sourceText": "[C]los[I]ng [A]ct:",
+      "spells": "CIA",
+      "was": "unclassified",
+      "ruledOn": "2026-08-14",
+      "reasoning": "Owner ruling. Same device, and note the [I] falls mid-word — the acrostic is not restricted to word-initial letters."
+    }
+  ],
+  "withdrawn": [
+    {
+      "postNum": 150,
+      "sourceText": "Distress cal[L]s to others will [d]o you/family no good at this stage. We know whe[R]e you/the family are at all times and can hear you breathing.",
+      "spells": "LDR",
+      "withdrawnOn": "2026-08-14",
+      "reason": "Owner ruling withdrawn. Both sentences are already certified — sentence 1 a Prediction, sentence 2 a Claim — so an Emphasis layer over the same text adds no reading and only produced a second colour over already-classified content. The LDR letters remain visible as bracketed spans in the [ Brackets ] structure view; they are simply not additionally certified as Emphasis. Kept on the record so the device is not silently re-detected later as a gap."
+    },
+    {
+      "postNum": 4742,
+      "sourceText": "[barrage]",
+      "detectedType": "bracket_emphasis",
+      "withdrawnOn": "2026-08-14",
+      "reason": "Owner ruling: on #4742 [barrage] is a bracketed item, not an emphasis device. Withdrawn from Emphasis so the span carries one classification and shows one colour. The #4741 occurrence is NOT withdrawn — the ruling named #4742, and occurrence identity means a device certified in one drop is not un-certified in another by association."
+    },
+    {
+      "postNum": 4738,
+      "sourceText": "why …",
+      "detectedType": "parallel_phrasing",
+      "renders": [
+        "Why did it take an 'outsider' to finally deliver the 'start' of peace in the Middle East?",
+        "Why did it take an 'outsider' to finally deliver the 'start' of finally holding China accountable?"
+      ],
+      "withdrawnOn": "2026-08-14",
+      "reason": "Owner ruling: both lines are Questions on this post and should not also be Emphasis. The row is a parallel_phrasing run whose sourceText is the LABEL 'why …' — which is why the standing 'a question is not also an Emphasis' rule did not catch it: that rule matches sourceText against certified questions, and a label never matches. Scoped to #4738 by the owner's own wording ('in this post'); 480 of 1,111 parallel runs archive-wide are likewise made entirely of certified questions and are NOT touched here."
+    },
+    {
+      "postNum": 4963,
+      "sourceText": "Focus.",
+      "ruledOn": "2026-08-14",
+      "reasoning": "Owner ruling: 'Focus.' / 'FOCUS.' in #4963 are Directives, not Emphasis. The repetition is how Q gives the instruction twice; the instruction is the classification."
+    },
+    {
+      "postNum": 4963,
+      "sourceText": "SOS",
+      "ruledOn": "2026-08-14",
+      "reasoning": "Owner ruling: SOS in #4963 is part of the entity 'SOS Offices.', not a capitalisation device. The caps detector saw contrast; the line is naming an institution."
+    },
+    {
+      "postNum": 4137,
+      "sourceText": "Russia using HCQ to treat COVID-19?",
+      "withdrawnOn": "2026-08-15",
+      "reasoning": "Owner ruling: NOT emphasis. HCQ is the standard abbreviation for hydroxychloroquine, so writing it in capitals is ordinary usage rather than a rhetorical device. The Entity reading stands; only the Emphasis layer is withdrawn."
+    },
+    {
+      "postNum": 4137,
+      "sourceText": "Source of HCQ: China",
+      "withdrawnOn": "2026-08-15",
+      "reasoning": "Owner ruling: NOT emphasis. HCQ is the standard abbreviation for hydroxychloroquine, so writing it in capitals is ordinary usage rather than a rhetorical device. The Entity reading stands; only the Emphasis layer is withdrawn."
+    },
+    {
+      "postNum": 4137,
+      "sourceText": "China using HCQ to treat COVID-19?",
+      "withdrawnOn": "2026-08-15",
+      "reasoning": "Owner ruling: NOT emphasis. HCQ is the standard abbreviation for hydroxychloroquine, so writing it in capitals is ordinary usage rather than a rhetorical device. The Entity reading stands; only the Emphasis layer is withdrawn."
+    },
+    {
+      "postNum": 4282,
+      "sourceText": "POTUS daily ingest HCQ prevent COVID-19?",
+      "withdrawnOn": "2026-08-15",
+      "reasoning": "Owner ruling: NOT emphasis. HCQ is the standard abbreviation for hydroxychloroquine, so writing it in capitals is ordinary usage rather than a rhetorical device. The Entity reading stands; only the Emphasis layer is withdrawn."
+    }
+  ],
+  "approvedParallelPending": [
+    {
+      "postNum": 63,
+      "sourceCardIndex": 195,
+      "candidate": "You have a choice to make. / You can stand up and do what you know to be right.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "You have a choice to make.",
+          "start": 42,
+          "end": 68,
+          "lineIndex": 1,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "You can stand up and do what you know to be right.",
+          "start": 70,
+          "end": 120,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'you' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 67,
+      "sourceCardIndex": 197,
+      "candidate": "Who was authorized to depart? ONLY 1 PLANE was authorized during this 'mandatory forced grounding'. / Who SPECIFICALLY authorized this?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "Who was authorized to depart? ONLY 1 PLANE was authorized during this 'mandatory forced grounding'.",
+          "start": 581,
+          "end": 680,
+          "lineIndex": 13,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "Who SPECIFICALLY authorized this?",
+          "start": 681,
+          "end": 714,
+          "lineIndex": 14,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 100,
+      "sourceCardIndex": 0,
+      "candidate": "Why is this relevant? / Why now?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "Why is this relevant?",
+          "start": 204,
+          "end": 225,
+          "lineIndex": 8,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "Why now?",
+          "start": 227,
+          "end": 235,
+          "lineIndex": 9,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 100,
+      "sourceCardIndex": 1,
+      "candidate": "What was reported? / What really happened?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "What was reported?",
+          "start": 367,
+          "end": 385,
+          "lineIndex": 21,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "What really happened?",
+          "start": 386,
+          "end": 407,
+          "lineIndex": 22,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 144,
+      "sourceCardIndex": 47,
+      "candidate": "How is information transmitted? / How are people inform[e]d?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "How is information transmitted?",
+          "start": 780,
+          "end": 811,
+          "lineIndex": 26,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "How are people inform[e]d?",
+          "start": 812,
+          "end": 838,
+          "lineIndex": 27,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 144,
+      "sourceCardIndex": 48,
+      "candidate": "For [GOD & COUNTRY]. / For HUMANITY.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "For [GOD & COUNTRY].",
+          "start": 1313,
+          "end": 1333,
+          "lineIndex": 43,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "For HUMANITY.",
+          "start": 1334,
+          "end": 1347,
+          "lineIndex": 44,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'for' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 154,
+      "sourceCardIndex": 58,
+      "candidate": "Why was the Clowns In America tasked to hunt/kill/capture UBL? / Why not MI?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "Why was the Clowns In America tasked to hunt/kill/capture UBL?",
+          "start": 49,
+          "end": 111,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "Why not MI?",
+          "start": 112,
+          "end": 123,
+          "lineIndex": 3,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 158,
+      "sourceCardIndex": 61,
+      "candidate": "When was this announced? / When did events in SA transpire?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "When was this announced?",
+          "start": 9,
+          "end": 33,
+          "lineIndex": 1,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "When did events in SA transpire?",
+          "start": 34,
+          "end": 66,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 165,
+      "sourceCardIndex": 69,
+      "candidate": "When was this announced? / When did events in SA transpire?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "When was this announced?",
+          "start": 286,
+          "end": 310,
+          "lineIndex": 9,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "When did events in SA transpire?",
+          "start": 311,
+          "end": 343,
+          "lineIndex": 10,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 166,
+      "sourceCardIndex": 71,
+      "candidate": "When was this announced? / When did events in SA transpire?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "When was this announced?",
+          "start": 314,
+          "end": 338,
+          "lineIndex": 10,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "When did events in SA transpire?",
+          "start": 339,
+          "end": 371,
+          "lineIndex": 11,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 186,
+      "sourceCardIndex": 82,
+      "candidate": "You are learning. / You needed a push.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "You are learning.",
+          "start": 0,
+          "end": 17,
+          "lineIndex": 0,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "You needed a push.",
+          "start": 18,
+          "end": 36,
+          "lineIndex": 1,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'you' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 285,
+      "sourceCardIndex": 118,
+      "candidate": "FREEDOM Caucus? / FREEDOM.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "FREEDOM Caucus?",
+          "start": 107,
+          "end": 122,
+          "lineIndex": 3,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "FREEDOM.",
+          "start": 123,
+          "end": 131,
+          "lineIndex": 4,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 465,
+      "sourceCardIndex": 172,
+      "candidate": "No other platforms used. / No comms privately w/ anyone.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "No other platforms used.",
+          "start": 16,
+          "end": 40,
+          "lineIndex": 1,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "No comms privately w/ anyone.",
+          "start": 41,
+          "end": 70,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'no' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 470,
+      "sourceCardIndex": 175,
+      "candidate": "We anticipated life to be short on each platform given verification and message spreading rapidly. / We can limit outside exposure but cannot protect against internals.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "We anticipated life to be short on each platform given verification and message spreading rapidly.",
+          "start": 33,
+          "end": 131,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "We can limit outside exposure but cannot protect against internals.",
+          "start": 132,
+          "end": 199,
+          "lineIndex": 3,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'we' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 506,
+      "sourceCardIndex": 185,
+      "candidate": "This was not meant to signify AUTH / established. / This is to train you how to understand the correlation between posts and Tweets.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "This was not meant to signify AUTH / established.",
+          "start": 203,
+          "end": 252,
+          "lineIndex": 7,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "This is to train you how to understand the correlation between posts and Tweets.",
+          "start": 253,
+          "end": 333,
+          "lineIndex": 8,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'this' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 507,
+      "sourceCardIndex": 187,
+      "candidate": "We chose this BOARD for a very specific reason. / We believe in you.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "We chose this BOARD for a very specific reason.",
+          "start": 208,
+          "end": 255,
+          "lineIndex": 4,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "We believe in you.",
+          "start": 256,
+          "end": 274,
+          "lineIndex": 5,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'we' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 521,
+      "sourceCardIndex": 190,
+      "candidate": "YOU WERE CHOSEN FOR A REASON. / YOU ARE BEING PROVIDED THE HIGHEST LEVEL OF INTEL TO EVER BE DROPPED PUBLICLY IN THE HISTORY OF THE WORLD.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "YOU WERE CHOSEN FOR A REASON.",
+          "start": 260,
+          "end": 289,
+          "lineIndex": 11,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "YOU ARE BEING PROVIDED THE HIGHEST LEVEL OF INTEL TO EVER BE DROPPED PUBLICLY IN THE HISTORY OF THE WORLD.",
+          "start": 290,
+          "end": 396,
+          "lineIndex": 12,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'you' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 737,
+      "sourceCardIndex": 208,
+      "candidate": "We are with you, Patriot. / We honor your service to our great country.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "We are with you, Patriot.",
+          "start": 9,
+          "end": 34,
+          "lineIndex": 1,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "We honor your service to our great country.",
+          "start": 35,
+          "end": 78,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'we' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 778,
+      "sourceCardIndex": 213,
+      "candidate": "IT CANNOT COME NOW. / IT WILL BE LOST.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "IT CANNOT COME NOW.",
+          "start": 768,
+          "end": 787,
+          "lineIndex": 30,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "IT WILL BE LOST.",
+          "start": 788,
+          "end": 804,
+          "lineIndex": 31,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'it' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 817,
+      "sourceCardIndex": 216,
+      "candidate": "We know. / We are taking action behind the scenes.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "We know.",
+          "start": 110,
+          "end": 118,
+          "lineIndex": 5,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "We are taking action behind the scenes.",
+          "start": 119,
+          "end": 158,
+          "lineIndex": 6,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'we' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 828,
+      "sourceCardIndex": 217,
+      "candidate": "You, the PEOPLE, have ALL the POWER. / You simply forgot how to PLAY.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "You, the PEOPLE, have ALL the POWER.",
+          "start": 73,
+          "end": 109,
+          "lineIndex": 5,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "You simply forgot how to PLAY.",
+          "start": 110,
+          "end": 140,
+          "lineIndex": 6,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'you' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 830,
+      "sourceCardIndex": 218,
+      "candidate": "Why? / Why is the timing relevant?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "Why?",
+          "start": 241,
+          "end": 245,
+          "lineIndex": 7,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "Why is the timing relevant?",
+          "start": 246,
+          "end": 273,
+          "lineIndex": 8,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 832,
+      "sourceCardIndex": 220,
+      "candidate": "It showed they can control ‘innocents’. / It was a direct THREAT.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "It showed they can control ‘innocents’.",
+          "start": 51,
+          "end": 90,
+          "lineIndex": 1,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "It was a direct THREAT.",
+          "start": 91,
+          "end": 114,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'it' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 854,
+      "sourceCardIndex": 223,
+      "candidate": "WE must work TOGETHER. / WE are only as strong as your VOICE.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "WE must work TOGETHER.",
+          "start": 202,
+          "end": 224,
+          "lineIndex": 6,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "WE are only as strong as your VOICE.",
+          "start": 225,
+          "end": 261,
+          "lineIndex": 7,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'we' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 917,
+      "sourceCardIndex": 225,
+      "candidate": "We appreciate all of the prayers. / We really do.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "We appreciate all of the prayers.",
+          "start": 9,
+          "end": 42,
+          "lineIndex": 1,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "We really do.",
+          "start": 43,
+          "end": 56,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'we' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 958,
+      "sourceCardIndex": 228,
+      "candidate": "They are scared [4am]. / They will fail.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "They are scared [4am].",
+          "start": 126,
+          "end": 148,
+          "lineIndex": 3,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "They will fail.",
+          "start": 149,
+          "end": 164,
+          "lineIndex": 4,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'they' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 959,
+      "sourceCardIndex": 229,
+      "candidate": "We hear you. / We have the algorithm.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "We hear you.",
+          "start": 170,
+          "end": 182,
+          "lineIndex": 12,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "We have the algorithm.",
+          "start": 183,
+          "end": 205,
+          "lineIndex": 13,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'we' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 964,
+      "sourceCardIndex": 230,
+      "candidate": "WHY DID GOOG VISIT N KOREA? / WHY WOULD THE FORMER CHAIRMAN & CEO [HIMSELF] OF GOOG/ALPHABET PERSONALLY ATTEND?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "WHY DID GOOG VISIT N KOREA?",
+          "start": 238,
+          "end": 265,
+          "lineIndex": 6,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "WHY WOULD THE FORMER CHAIRMAN & CEO [HIMSELF] OF GOOG/ALPHABET PERSONALLY ATTEND?",
+          "start": 266,
+          "end": 347,
+          "lineIndex": 7,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 988,
+      "sourceCardIndex": 233,
+      "candidate": "Why was Huber made public? / Why now?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "Why was Huber made public?",
+          "start": 84,
+          "end": 110,
+          "lineIndex": 6,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "Why now?",
+          "start": 111,
+          "end": 119,
+          "lineIndex": 7,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 1091,
+      "sourceCardIndex": 3,
+      "candidate": "Why are we confirming this publicly? / Why now?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "Why are we confirming this publicly?",
+          "start": 124,
+          "end": 160,
+          "lineIndex": 3,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "Why now?",
+          "start": 161,
+          "end": 169,
+          "lineIndex": 4,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 1181,
+      "sourceCardIndex": 15,
+      "candidate": "How can we use what we know? / How do you ‘legally’ inject/make public/use as evidence?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "How can we use what we know?",
+          "start": 30,
+          "end": 58,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "How do you ‘legally’ inject/make public/use as evidence?",
+          "start": 59,
+          "end": 115,
+          "lineIndex": 3,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 1241,
+      "sourceCardIndex": 20,
+      "candidate": "No inspection @ GZ NR sites. / No missile tech prevention.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "No inspection @ GZ NR sites.",
+          "start": 91,
+          "end": 119,
+          "lineIndex": 8,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "No missile tech prevention.",
+          "start": 120,
+          "end": 147,
+          "lineIndex": 9,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'no' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 1296,
+      "sourceCardIndex": 26,
+      "candidate": "The hard part is coming to an end. / The next phase will bring JUSTICE.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "The hard part is coming to an end.",
+          "start": 159,
+          "end": 193,
+          "lineIndex": 3,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "The next phase will bring JUSTICE.",
+          "start": 194,
+          "end": 228,
+          "lineIndex": 4,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The two adjacent 'The + noun + predicate' clauses form a balanced contrast or progression, so the repeated frame is structurally meaningful."
+    },
+    {
+      "postNum": 1320,
+      "sourceCardIndex": 31,
+      "candidate": "The deal kept Iran quiet. / The goal was to keep POTUS in until impeachment / term end.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "The deal kept Iran quiet.",
+          "start": 201,
+          "end": 226,
+          "lineIndex": 4,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "The goal was to keep POTUS in until impeachment / term end.",
+          "start": 227,
+          "end": 286,
+          "lineIndex": 5,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The two adjacent 'The + noun + predicate' clauses form a balanced contrast or progression, so the repeated frame is structurally meaningful."
+    },
+    {
+      "postNum": 1339,
+      "sourceCardIndex": 32,
+      "candidate": "Why are we here? / Why do we ask questions?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "Why are we here?",
+          "start": 223,
+          "end": 239,
+          "lineIndex": 8,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "Why do we ask questions?",
+          "start": 240,
+          "end": 264,
+          "lineIndex": 9,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 1373,
+      "sourceCardIndex": 35,
+      "candidate": "We Fight! / We, The PEOPLE.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "We Fight!",
+          "start": 81,
+          "end": 90,
+          "lineIndex": 4,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "We, The PEOPLE.",
+          "start": 91,
+          "end": 106,
+          "lineIndex": 5,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'we' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 1415,
+      "sourceCardIndex": 42,
+      "candidate": "They thought it was coming yesterday. / They were wrong.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "They thought it was coming yesterday.",
+          "start": 10,
+          "end": 47,
+          "lineIndex": 1,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "They were wrong.",
+          "start": 48,
+          "end": 64,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'they' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 1486,
+      "sourceCardIndex": 50,
+      "candidate": "No proofs collection here (pinned)? / No links within each post (top)?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "No proofs collection here (pinned)?",
+          "start": 10,
+          "end": 45,
+          "lineIndex": 1,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "No links within each post (top)?",
+          "start": 46,
+          "end": 78,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'no' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 1494,
+      "sourceCardIndex": 51,
+      "candidate": "(2) MISSILE FIRES W/ A STRATEGIC PURPOSE / (2) EXTINGUISHED.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "(2) MISSILE FIRES W/ A STRATEGIC PURPOSE",
+          "start": 385,
+          "end": 425,
+          "lineIndex": 8,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "(2) EXTINGUISHED.",
+          "start": 426,
+          "end": 443,
+          "lineIndex": 9,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 1602,
+      "sourceCardIndex": 64,
+      "candidate": "The game is over when the public knows. / The fight to keep the LIGHTS OFF is all that matters to you.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "The game is over when the public knows.",
+          "start": 188,
+          "end": 227,
+          "lineIndex": 3,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "The fight to keep the LIGHTS OFF is all that matters to you.",
+          "start": 228,
+          "end": 288,
+          "lineIndex": 4,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The two adjacent 'The + noun + predicate' clauses form a balanced contrast or progression, so the repeated frame is structurally meaningful."
+    },
+    {
+      "postNum": 1604,
+      "sourceCardIndex": 65,
+      "candidate": "We stand with you. / We are monitoring the situation closely.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "We stand with you.",
+          "start": 315,
+          "end": 333,
+          "lineIndex": 4,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "We are monitoring the situation closely.",
+          "start": 334,
+          "end": 374,
+          "lineIndex": 5,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'we' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 1644,
+      "sourceCardIndex": 67,
+      "candidate": "They self destruct. / They know this is real.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "They self destruct.",
+          "start": 209,
+          "end": 228,
+          "lineIndex": 8,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "They know this is real.",
+          "start": 230,
+          "end": 253,
+          "lineIndex": 9,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'they' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 1688,
+      "sourceCardIndex": 73,
+      "candidate": "Who financed then? / Who is financing now?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "Who financed then?",
+          "start": 202,
+          "end": 220,
+          "lineIndex": 7,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "Who is financing now?",
+          "start": 221,
+          "end": 242,
+          "lineIndex": 8,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 1698,
+      "sourceCardIndex": 74,
+      "candidate": "To yourself. / To your children.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "To yourself.",
+          "start": 518,
+          "end": 530,
+          "lineIndex": 4,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "To your children.",
+          "start": 531,
+          "end": 548,
+          "lineIndex": 5,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'to' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 1876,
+      "sourceCardIndex": 83,
+      "candidate": "What ADVANTAGES exist to BIG TECH, other ABC off/on agencies, elected officials, CEOs, FOREIGN ADVERSARIES etc. if such information is learned? / What price are you (the PUBLIC) willing to pay?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "What ADVANTAGES exist to BIG TECH, other ABC off/on agencies, elected officials, CEOs, FOREIGN ADVERSARIES etc. if such information is learned?",
+          "start": 887,
+          "end": 1030,
+          "lineIndex": 25,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "What price are you (the PUBLIC) willing to pay?",
+          "start": 1031,
+          "end": 1078,
+          "lineIndex": 26,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 1941,
+      "sourceCardIndex": 88,
+      "candidate": "Was 'Nazism' ever truly destroyed? / Was it merely a sub-division within a larger organization?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "Was 'Nazism' ever truly destroyed?",
+          "start": 88,
+          "end": 122,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "Was it merely a sub-division within a larger organization?",
+          "start": 123,
+          "end": 181,
+          "lineIndex": 3,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 1948,
+      "sourceCardIndex": 94,
+      "candidate": "Why wasn't Congress notified? / Why was the U.S. Gov't kept in the DARK?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "Why wasn't Congress notified?",
+          "start": 1289,
+          "end": 1318,
+          "lineIndex": 31,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "Why was the U.S. Gov't kept in the DARK?",
+          "start": 1319,
+          "end": 1359,
+          "lineIndex": 32,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 1956,
+      "sourceCardIndex": 97,
+      "candidate": "You just have to LOOK. / You MUST stay TOGETHER.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "You just have to LOOK.",
+          "start": 44,
+          "end": 66,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "You MUST stay TOGETHER.",
+          "start": 67,
+          "end": 90,
+          "lineIndex": 3,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'you' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 2403,
+      "sourceCardIndex": 100,
+      "candidate": "Your Country Needs You. / Your Vote Matters!",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "Your Country Needs You.",
+          "start": 0,
+          "end": 23,
+          "lineIndex": 0,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "Your Vote Matters!",
+          "start": 24,
+          "end": 42,
+          "lineIndex": 1,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'your' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 2431,
+      "sourceCardIndex": 101,
+      "candidate": "Your Country needs you. / Your VOTE matters!",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "Your Country needs you.",
+          "start": 1800,
+          "end": 1823,
+          "lineIndex": 18,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "Your VOTE matters!",
+          "start": 1824,
+          "end": 1842,
+          "lineIndex": 19,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'your' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 2437,
+      "sourceCardIndex": 102,
+      "candidate": "WE HONOR THOSE WHO FOUGHT (& CONTINUE TO FIGHT) TO SAVE & DEFEND THIS GREAT COUNTRY. / WE WILL DO OUR PART —- WILL YOU DO YOURS?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "WE HONOR THOSE WHO FOUGHT (& CONTINUE TO FIGHT) TO SAVE & DEFEND THIS GREAT COUNTRY.",
+          "start": 291,
+          "end": 375,
+          "lineIndex": 8,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "WE WILL DO OUR PART —- WILL YOU DO YOURS?",
+          "start": 376,
+          "end": 417,
+          "lineIndex": 9,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'we' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 2472,
+      "sourceCardIndex": 103,
+      "candidate": "We knew then. / We know now.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "We knew then.",
+          "start": 81,
+          "end": 94,
+          "lineIndex": 1,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "We know now.",
+          "start": 95,
+          "end": 107,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'we' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 2546,
+      "sourceCardIndex": 106,
+      "candidate": "When was the statement made? / When did \"Q\" go active?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "When was the statement made?",
+          "start": 123,
+          "end": 151,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "When did \"Q\" go active?",
+          "start": 152,
+          "end": 175,
+          "lineIndex": 3,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 2561,
+      "sourceCardIndex": 107,
+      "candidate": "When did POTUS make the statement \"Calm Before the Storm?\" / When was HUBER activated by SESSIONS?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "When did POTUS make the statement \"Calm Before the Storm?\"",
+          "start": 10,
+          "end": 68,
+          "lineIndex": 1,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "When was HUBER activated by SESSIONS?",
+          "start": 69,
+          "end": 106,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 2676,
+      "sourceCardIndex": 112,
+      "candidate": "ZERO leaks re: HUBER? / ZERO.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "ZERO leaks re: HUBER?",
+          "start": 727,
+          "end": 748,
+          "lineIndex": 22,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "ZERO.",
+          "start": 749,
+          "end": 754,
+          "lineIndex": 23,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 2740,
+      "sourceCardIndex": 114,
+      "candidate": "Why did [LL] [ATTORNEY GENERAL OF THE UNITED STATES] grant 'special entry' to Natalia Veselnitskaya (Don Jr. 'set up' meeting)? / Why was [NV] barred from entering prior to?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "Why did [LL]  [ATTORNEY GENERAL OF THE UNITED STATES] grant 'special entry' to Natalia Veselnitskaya (Don Jr. 'set up' meeting)?",
+          "start": 39,
+          "end": 167,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "Why was [NV] barred from entering prior to?",
+          "start": 168,
+          "end": 211,
+          "lineIndex": 3,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 2975,
+      "sourceCardIndex": 123,
+      "candidate": "The core is what counts. / The SWAMP is EVERYWHERE.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "The core is what counts.",
+          "start": 84,
+          "end": 108,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "The SWAMP is EVERYWHERE.",
+          "start": 109,
+          "end": 133,
+          "lineIndex": 3,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The two adjacent 'The + noun + predicate' clauses form a balanced contrast or progression, so the repeated frame is structurally meaningful."
+    },
+    {
+      "postNum": 2984,
+      "sourceCardIndex": 124,
+      "candidate": "WHAT (DARPA) TEAM MEMBERS PAST/PRESENT WORK FOR FB? / WHAT DIVISIONS?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "WHAT (DARPA) TEAM MEMBERS PAST/PRESENT WORK FOR FB?",
+          "start": 94,
+          "end": 145,
+          "lineIndex": 3,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "WHAT DIVISIONS?",
+          "start": 146,
+          "end": 161,
+          "lineIndex": 4,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 2988,
+      "sourceCardIndex": 125,
+      "candidate": "DARPA senior employees > FB? / DARPA TERMINATES PROGRAM FEB 4, 2004.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "DARPA senior employees > FB?",
+          "start": 1141,
+          "end": 1169,
+          "lineIndex": 6,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "DARPA TERMINATES PROGRAM FEB 4, 2004.",
+          "start": 1170,
+          "end": 1207,
+          "lineIndex": 7,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating 'DARPA' at the start of two related timeline statements creates a deliberate comparison."
+    },
+    {
+      "postNum": 2993,
+      "sourceCardIndex": 128,
+      "candidate": "WHY DID CHINA GRANT ACCESS TO TRAVEL W/ THE BLOCK IN PLACE? / WHY RUSSIA?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "WHY DID CHINA GRANT ACCESS TO TRAVEL W/ THE BLOCK IN PLACE?",
+          "start": 771,
+          "end": 830,
+          "lineIndex": 12,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "WHY RUSSIA?",
+          "start": 831,
+          "end": 842,
+          "lineIndex": 13,
+          "occurrenceInPost": 2,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 3016,
+      "sourceCardIndex": 130,
+      "candidate": "THEY ARE AFRAID OF LOSING POWER [FOREVER]. / THEY SHOULD BE.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "THEY ARE AFRAID OF LOSING POWER [FOREVER].",
+          "start": 159,
+          "end": 201,
+          "lineIndex": 5,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "THEY SHOULD BE.",
+          "start": 202,
+          "end": 217,
+          "lineIndex": 6,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'they' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 3083,
+      "sourceCardIndex": 132,
+      "candidate": "It is not a coincidence. / It never is.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "It is not a coincidence.",
+          "start": 31,
+          "end": 55,
+          "lineIndex": 1,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "It never is.",
+          "start": 56,
+          "end": 68,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'it' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 3131,
+      "sourceCardIndex": 133,
+      "candidate": "Who took the pic? / Who was located behind the camera?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "Who took the pic?",
+          "start": 188,
+          "end": 205,
+          "lineIndex": 4,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "Who was located behind the camera?",
+          "start": 206,
+          "end": 240,
+          "lineIndex": 5,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 3397,
+      "sourceCardIndex": 135,
+      "candidate": "No joke and/or reference re: Epstein? / No attempt to connect back to POTUS?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "No joke and/or reference re: Epstein?",
+          "start": 30,
+          "end": 67,
+          "lineIndex": 1,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "No attempt to connect back to POTUS?",
+          "start": 68,
+          "end": 104,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'no' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 3593,
+      "sourceCardIndex": 138,
+      "candidate": "For God & Country. / For Humanity.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "For God & Country.",
+          "start": 979,
+          "end": 997,
+          "lineIndex": 3,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "For Humanity.",
+          "start": 998,
+          "end": 1011,
+          "lineIndex": 4,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'for' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 3594,
+      "sourceCardIndex": 139,
+      "candidate": "For God & Country. / For Humanity.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "For God & Country.",
+          "start": 966,
+          "end": 984,
+          "lineIndex": 3,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "For Humanity.",
+          "start": 985,
+          "end": 998,
+          "lineIndex": 4,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'for' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 3595,
+      "sourceCardIndex": 140,
+      "candidate": "Who gave the order(s)? / Who signed?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "Who gave the order(s)?",
+          "start": 206,
+          "end": 228,
+          "lineIndex": 3,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "Who signed?",
+          "start": 229,
+          "end": 240,
+          "lineIndex": 4,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 3651,
+      "sourceCardIndex": 144,
+      "candidate": "No equal justice under the law? / No accountability?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "No equal justice under the law?",
+          "start": 177,
+          "end": 208,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "No accountability?",
+          "start": 209,
+          "end": 227,
+          "lineIndex": 3,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'no' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 3831,
+      "sourceCardIndex": 147,
+      "candidate": "No equal justice under the law? / No accountability?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "No equal justice under the law?",
+          "start": 177,
+          "end": 208,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "No accountability?",
+          "start": 209,
+          "end": 227,
+          "lineIndex": 3,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'no' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 3848,
+      "sourceCardIndex": 148,
+      "candidate": "The bottom half was instructed (99% good). / The first will send a shock wave.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "The bottom half was instructed (99% good).",
+          "start": 63,
+          "end": 105,
+          "lineIndex": 1,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "The first will send a shock wave.",
+          "start": 106,
+          "end": 139,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The two adjacent 'The + noun + predicate' clauses form a balanced contrast or progression, so the repeated frame is structurally meaningful."
+    },
+    {
+      "postNum": 3880,
+      "sourceCardIndex": 150,
+      "candidate": "You have come far, Anons (Patriots). / You are ready.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "You have come far, Anons (Patriots).",
+          "start": 10,
+          "end": 46,
+          "lineIndex": 1,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "You are ready.",
+          "start": 47,
+          "end": 61,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'you' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 3915,
+      "sourceCardIndex": 154,
+      "candidate": "Why was it fast-tracked in H? / Why did [Pelosi] hold until Jan 15th?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "Why was it fast-tracked in H?",
+          "start": 57,
+          "end": 86,
+          "lineIndex": 1,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "Why did [Pelosi] hold until Jan 15th?",
+          "start": 87,
+          "end": 124,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The clauses create an observable matched contrast, reformulation, or repeated cadence that goes beyond sharing a necessary question word."
+    },
+    {
+      "postNum": 4045,
+      "sourceCardIndex": 155,
+      "candidate": "[Jan 15] First COVID-19 U.S. case?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "[Jan 15] [D] Impeachment Articles transfer to Senate?",
+          "start": 544,
+          "end": 597,
+          "lineIndex": 13,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        },
+        {
+          "text": "[Jan 15] First COVID-19 U.S. case?",
+          "start": 691,
+          "end": 725,
+          "lineIndex": 15,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": false,
+      "matchStatus": "full_post_series",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The full post deliberately repeats the date '[Jan 15]' for the impeachment transfer and the first U.S. COVID case, creating a matched timing comparison."
+    },
+    {
+      "postNum": 4137,
+      "sourceCardIndex": 157,
+      "candidate": "Russia using HCQ to treat COVID-19?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "Russia using HCQ to treat COVID-19?",
+          "start": 108,
+          "end": 143,
+          "lineIndex": 1,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        },
+        {
+          "text": "China using HCQ to treat COVID-19?",
+          "start": 165,
+          "end": 199,
+          "lineIndex": 3,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": false,
+      "matchStatus": "full_post_series",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The full post balances 'Russia using HCQ' against 'China using HCQ' in consecutive, identically framed lines."
+    },
+    {
+      "postNum": 4137,
+      "sourceCardIndex": 158,
+      "candidate": "China using HCQ to treat COVID-19?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "Russia using HCQ to treat COVID-19?",
+          "start": 108,
+          "end": 143,
+          "lineIndex": 1,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        },
+        {
+          "text": "China using HCQ to treat COVID-19?",
+          "start": 165,
+          "end": 199,
+          "lineIndex": 3,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": false,
+      "matchStatus": "full_post_series",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The full post balances 'Russia using HCQ' against 'China using HCQ' in consecutive, identically framed lines."
+    },
+    {
+      "postNum": 4171,
+      "sourceCardIndex": 159,
+      "candidate": "Origin Country of COVID-19: China",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "Origin Country of COVID-19: China",
+          "start": 0,
+          "end": 33,
+          "lineIndex": 0,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        },
+        {
+          "text": "Origin City of COVID-19: Wuhan",
+          "start": 34,
+          "end": 64,
+          "lineIndex": 1,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": false,
+      "matchStatus": "full_post_series",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The full post uses matching 'Origin Country' and 'Origin City' fields as a deliberate parallel data sequence."
+    },
+    {
+      "postNum": 4171,
+      "sourceCardIndex": 160,
+      "candidate": "Origin City of COVID-19: Wuhan",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "Origin Country of COVID-19: China",
+          "start": 0,
+          "end": 33,
+          "lineIndex": 0,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        },
+        {
+          "text": "Origin City of COVID-19: Wuhan",
+          "start": 34,
+          "end": 64,
+          "lineIndex": 1,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": false,
+      "matchStatus": "full_post_series",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The full post uses matching 'Origin Country' and 'Origin City' fields as a deliberate parallel data sequence."
+    },
+    {
+      "postNum": 4325,
+      "sourceCardIndex": 162,
+      "candidate": "We Rise or We Die. / We, the People.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "We Rise or We Die.",
+          "start": 359,
+          "end": 377,
+          "lineIndex": 6,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "We, the People.",
+          "start": 378,
+          "end": 393,
+          "lineIndex": 7,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'we' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 4343,
+      "sourceCardIndex": 163,
+      "candidate": "COVID-19 deaths: 100,000 [lockdown]",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "USA total pop: 328 million",
+          "start": 0,
+          "end": 26,
+          "lineIndex": 0,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        },
+        {
+          "text": "COVID-19 deaths: 100,000 [lockdown]",
+          "start": 28,
+          "end": 63,
+          "lineIndex": 1,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        },
+        {
+          "text": "Japan total pop: 126 million [condensed (island)]",
+          "start": 64,
+          "end": 113,
+          "lineIndex": 2,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        },
+        {
+          "text": "COVID-19 deaths: 850 [no lockdown]",
+          "start": 114,
+          "end": 148,
+          "lineIndex": 3,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        }
+      ],
+      "spanModel": "multi_span",
+      "syntheticSeparator": false,
+      "matchStatus": "full_post_series",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The full post repeats population and COVID-death fields for the United States and Japan, forming a deliberate comparative structure."
+    },
+    {
+      "postNum": 4387,
+      "sourceCardIndex": 164,
+      "candidate": "WE ARE UNITED. / WE WILL PREVAIL.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "WE ARE UNITED.",
+          "start": 0,
+          "end": 14,
+          "lineIndex": 0,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "WE WILL PREVAIL.",
+          "start": 15,
+          "end": 31,
+          "lineIndex": 1,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'we' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 4489,
+      "sourceCardIndex": 165,
+      "candidate": "COVID-2 [C]: Lockdown(s)",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "Lockdown(s) +C: POTUS economic gains wiped",
+          "start": 180,
+          "end": 222,
+          "lineIndex": 5,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        },
+        {
+          "text": "Lockdown(s) +C: POTUS unemployment gains wiped",
+          "start": 223,
+          "end": 269,
+          "lineIndex": 6,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        },
+        {
+          "text": "Lockdown(s) +C: POTUS rally hold [prevent gathering_dim energy]",
+          "start": 270,
+          "end": 333,
+          "lineIndex": 7,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        },
+        {
+          "text": "Lockdown(s) +C: Close churche(s) _other person-to-person [keep in isolation _dim energy _fear no hope]",
+          "start": 334,
+          "end": 436,
+          "lineIndex": 8,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        },
+        {
+          "text": "Lockdown(s) +C: Inc death toll _[D] mayor(s)/gov(s) push COVID positive seniors to hot zone(s) [senior (home) care facilities] _retain FEAR & lockdown (isolate _control) _combine pneumonia influenza death count w/ COVID [inc death toll]",
+          "start": 437,
+          "end": 673,
+          "lineIndex": 9,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        },
+        {
+          "text": "Lockdown(s) +C: BIDEN hideaway prevent 'self-embarrassment'",
+          "start": 674,
+          "end": 733,
+          "lineIndex": 10,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        },
+        {
+          "text": "Lockdown(s) +C: [D] state mail-in-ballot doorstep flood",
+          "start": 735,
+          "end": 790,
+          "lineIndex": 11,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        },
+        {
+          "text": "Lockdown(s) +C: Build public unrest _[future BLM (4)-year push]",
+          "start": 791,
+          "end": 854,
+          "lineIndex": 12,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        },
+        {
+          "text": "Lockdown(s) +C: Release unrest [BLM (4)-year push] within closed [D] controlled cities & dedicated safe zone(s) [mayor-gov coordinated (guarantee) release of those arrested]",
+          "start": 855,
+          "end": 1028,
+          "lineIndex": 13,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        },
+        {
+          "text": "Lockdown(s) +C: Halt use of grand jury[ies] due to 'close proximity' _COVID mandated restrictions throughout all cities",
+          "start": 1907,
+          "end": 2026,
+          "lineIndex": 19,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        },
+        {
+          "text": "Lockdown(s) +C: Halt travel of called witnesses re: pending investigation [Durham (known)] _legal out deployed by witness \"I do not feel comfortable and/or safe traveling due to COVID-19 health concerns.\"",
+          "start": 2027,
+          "end": 2231,
+          "lineIndex": 20,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "full_post_series"
+        }
+      ],
+      "spanModel": "multi_span",
+      "syntheticSeparator": false,
+      "matchStatus": "full_post_series",
+      "approvedOn": "2026-08-15",
+      "reasoning": "The full post builds an extended list by repeatedly opening lines with 'Lockdown(s) +C:', a clear anaphoric device."
+    },
+    {
+      "postNum": 4490,
+      "sourceCardIndex": 166,
+      "candidate": "You can't censor the world. / You are the majority.",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "You can't censor the world.",
+          "start": 296,
+          "end": 323,
+          "lineIndex": 6,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "You are the majority.",
+          "start": 325,
+          "end": 346,
+          "lineIndex": 7,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'you' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    },
+    {
+      "postNum": 4960,
+      "sourceCardIndex": 184,
+      "candidate": "To protect the elections? / To claim the midterms are 'safe'?",
+      "device": "parallel_phrasing",
+      "spans": [
+        {
+          "text": "To protect the elections?",
+          "start": 401,
+          "end": 426,
+          "lineIndex": 11,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        },
+        {
+          "text": "To claim the midterms are 'safe'?",
+          "start": 427,
+          "end": 460,
+          "lineIndex": 12,
+          "occurrenceInPost": 1,
+          "sourceSection": "q_authored_current_post",
+          "matchBasis": "exact"
+        }
+      ],
+      "spanModel": "two_span",
+      "syntheticSeparator": true,
+      "matchStatus": "exact",
+      "approvedOn": "2026-08-15",
+      "reasoning": "Repeating the non-obligatory opening 'to' across adjacent clauses creates clear anaphora and a deliberate parallel cadence."
+    }
+  ],
+  "approvedParallelPendingNote": "Device audit: 83 candidates approved as deliberate parallel construction, each carrying its clauses as SEPARATE spans with character offsets. The \" / \" in a candidate label is a display join that appears nowhere in the drop, so it is never materialised. These await a multi-span parallel-phrasing representation before they can be certified as Emphasis occurrences."
+}

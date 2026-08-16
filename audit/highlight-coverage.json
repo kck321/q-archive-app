@@ -1,0 +1,76 @@
+{
+ "scope": "posts #1–#4966, certified→render and render→certified",
+ "productionChanged": false,
+ "totals": {
+  "certifiedIntendedToHighlight": 40994,
+  "correctlyResolves": 39785,
+  "failsToResolve": 1209,
+  "badgeOnlyNoSpan": 2186,
+  "postsWithFailures": 749,
+  "byLayer": {
+   "questions": {
+    "intended": 6442,
+    "rendered": 6440,
+    "failed": 2
+   },
+   "claims": {
+    "intended": 4181,
+    "rendered": 4082,
+    "failed": 99
+   },
+   "predictions": {
+    "intended": 630,
+    "rendered": 626,
+    "failed": 4
+   },
+   "entities": {
+    "intended": 7903,
+    "rendered": 7176,
+    "failed": 727
+   },
+   "checkable": {
+    "intended": 1926,
+    "rendered": 1840,
+    "failed": 86
+   },
+   "themeAnchors": {
+    "intended": 1478,
+    "rendered": 1478,
+    "failed": 0
+   },
+   "directives": {
+    "intended": 2422,
+    "rendered": 2346,
+    "failed": 76
+   },
+   "conclusions": {
+    "intended": 966,
+    "rendered": 951,
+    "failed": 15
+   },
+   "codes": {
+    "intended": 1949,
+    "rendered": 1932,
+    "failed": 17
+   },
+   "evidence": {
+    "intended": 5319,
+    "rendered": 5232,
+    "failed": 87
+   },
+   "unresolved": {
+    "intended": 2527,
+    "rendered": 2453,
+    "failed": 74
+   },
+   "emphasis": {
+    "intended": 5251,
+    "rendered": 5229,
+    "failed": 22
+   }
+  },
+  "keywordStyleIsDistinct": true,
+  "themeHighlightUsesAnchors": true,
+  "crossPostInconsistencies": 1687
+ }
+}

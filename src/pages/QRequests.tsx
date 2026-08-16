@@ -3,7 +3,9 @@ import SectionInfo from '../components/SectionInfo'
 import { Link, useSearchParams } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import SearchBar from '../components/SearchBar'
-import { getAllPosts, normalizeItemKey, makeTermMatcher, buildTextIndex, backfillFromText, countPhraseOccurrences } from '../lib/posts'
+// The text-scanning helpers are deliberately NOT imported: this page renders certified
+// occurrences and must not re-derive membership or counts from raw post text.
+import { getAllPosts, normalizeItemKey, makeTermMatcher } from '../lib/posts'
 import type { QPost } from '../types'
 import {
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis,
@@ -97,7 +99,7 @@ export default function QRequests() {
   }, [])
 
   const allRequests: RequestFreq[] = useMemo(() => {
-    const groups: Record<string, { count: number; postNums: number[]; original: string }> = {}
+    const groups: Record<string, { count: number; postNums: number[]; original: string; perPost: Map<number, number> }> = {}
     for (const post of posts) {
       // Filter by selected month if active
       if (selectedMonth) {
@@ -107,31 +109,26 @@ export default function QRequests() {
       }
       for (const req of post.actionRequests ?? []) {
         const key = normalize(req)
-        if (!groups[key]) groups[key] = { count: 0, postNums: [], original: req }
+        if (!groups[key]) groups[key] = { count: 0, postNums: [], original: req, perPost: new Map<number, number>() }
         groups[key].count++
+        // The certified occurrence tally, per post, so in-post repeats survive display grouping.
+        groups[key].perPost.set(post.postNum, (groups[key].perPost.get(post.postNum) ?? 0) + 1)
         if (!groups[key].postNums.includes(post.postNum))
           groups[key].postNums.push(post.postNum)
       }
     }
-    // Top up with posts that contain the request phrase but were never tagged with it —
-    // "Enjoy the show" was tagged on 66 posts while the phrase appears in 69. Skipped when
-    // a month is selected, since the backfill spans the whole archive.
-    if (!selectedMonth && posts.length > 0) {
-      const textIndex = buildTextIndex(posts)
-      for (const g of Object.values(groups)) {
-        backfillFromText(textIndex, g.original, g.postNums)
-      }
-    }
-
-    // Mentions per item — a request phrased twice in one drop counts twice.
-    const padded = new Map<number, string>()
-    for (const p of posts) padded.set(p.postNum, ` ${normalizeItemKey(p.text ?? '')} `)
+    // NO BACKFILL, NO RESCAN.
+    //
+    // This used to top up each group with every post whose raw text contained the phrase, then
+    // recount occurrences by scanning that text. Live, it turned the certified 2,422 Directives
+    // into 4,529 — the correct 1,417 posts, rescanned, with occurrences invented on top. The
+    // certified dataset already decided which imperatives are directives and how many times Q
+    // wrote each one; a browser-side scan cannot overrule an adjudicated corpus.
     return Object.values(groups).map(g => {
-      const key = normalizeItemKey(g.original)
       let occurrences = 0
       const repeats: Record<number, number> = {}
       for (const n of g.postNums) {
-        const c = Math.max(1, countPhraseOccurrences(padded.get(n) ?? '', key))
+        const c = g.perPost.get(n) ?? 1
         occurrences += c
         if (c > 1) repeats[n] = c
       }

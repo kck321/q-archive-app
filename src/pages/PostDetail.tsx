@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef, useMemo } from 'react'
+import { applyGlossary, glossarySync, useGlossary, type GlossEntry } from '../lib/glossary'
 import { useParams, Link, useNavigate, useSearchParams } from 'react-router-dom'
 import {
   getPost, getQuestionFrequency, getAnalysisFrequency, getPostsByNums, getPostNumsContaining, searchAllPosts,
@@ -10,6 +11,7 @@ import {
 import { detectQuestionsWithVerification, classifyQuestions, detectActionRequests, analyzePost, correlateNews } from '../lib/claude'
 import QuestionBadge from '../components/QuestionBadge'
 import BackButton from '../components/BackButton'
+import AnalysisMap from '../components/AnalysisMap'
 import { useAdmin } from '../components/AdminContext'
 import { sourceLink } from '../lib/sourceLink'
 import { timeAgo } from '../lib/timeAgo'
@@ -22,8 +24,10 @@ import { highlightText } from '../lib/postHighlight'
 import { linkify } from '../lib/linkify'
 import FlagIssue from '../components/FlagIssue'
 import { CAN_EDIT } from '../lib/appMode'
-import { getAliasesFor, getAliasGroup, addAlias, removeAlias, subscribeAliases } from '../lib/aliases'
-import { STATIC_ENTITIES, MIL_INTEL_TERMS, Q_SIGNATURES, HIGHLIGHT_CLS, wordBoundaryPattern } from '../lib/highlightConstants'
+import { getAliasesFor, getFullAliasGroup, addAlias, removeAlias, subscribeAliases } from '../lib/aliases'
+// STATIC_ENTITIES / MIL_INTEL_TERMS / Q_SIGNATURES are deliberately NOT imported: a word list
+// cannot decide membership in a certified section.
+import { HIGHLIGHT_CLS, wordBoundaryPattern } from '../lib/highlightConstants'
 import type { QPost, QQuestion, PostAnalysis, CorrelatedArticle, QuotedPost } from '../types'
 
 const STOP_WORDS = new Set(['the','and','for','with','from','this','that','are','was','were','have','been','will','into','about','its','their','which','posts'])
@@ -94,16 +98,37 @@ function renderPostBody(
   newIds?: Set<string>,
   requestTexts?: string[],
   analysis?: PostAnalysis,
-  highlightCat?: string
+  highlightCat?: string,
+  postNum?: number,
+  gloss?: Record<string, GlossEntry[]>
 ) {
-  type Kind = 'highlight' | 'request' | 'requestQuestion' | 'topic' | 'question' | 'namedEntity' | 'claim' | 'prediction' | 'theme' | 'impliedConclusion' | 'verificationHook' | 'emphasis' | 'bracketCode' | 'milIntel' | 'qSignature' | 'url'
+  // OWNER RULE: a question carries no Emphasis.
+  //
+  // "if we have a question highlighted app wide i do not want it to be an emphasis. i just want
+  // the question highlighted and no emphasis tied to the question."
+  //
+  // 1,429 emphasis spans sit INSIDE a certified question — CAPS words, quoted words, punctuation
+  // runs. The certified Emphasis layer is UNCHANGED at 4,669; this is a rendering rule, so the
+  // Emphasis section still lists them and the ruling is reversible. Everything else inside a
+  // question still paints: an Entity stays cyan, a bracket stays red.
+  const insideQuestionKinds = (segs: { kind: string }[]) =>
+    [...new Set(segs.map(x => x.kind))].filter(k => k !== 'emphasis')
+
+  type Kind = 'context' | 'highlight' | 'request' | 'requestQuestion' | 'topic' | 'question' | 'namedEntity' | 'claim' | 'prediction' | 'theme' | 'impliedConclusion' | 'verificationHook' | 'emphasis' | 'bracketCode' | 'milIntel' | 'qSignature' | 'url'
   type Seg = { start: number; end: number; kind: Kind; matchText: string; questionId?: string }
   const segs: Seg[] = []
 
   // Direct highlight — search raw text for the highlight string (and its aliases) first so
   // sync/search group links work even when the text is not yet in questions[]
   if (highlight) {
-    for (const variant of getAliasGroup(highlight)) {
+    // NO ALIAS EXPANSION on the direct-highlight path.
+    //
+    // getFullAliasGroup() returns an entity's whole alias family, so arriving with a CLAIM or
+    // DIRECTIVE in ?highlight= also painted every alias of any entity inside it — the detail-only
+    // behaviour the live audit measured as 3,150 unsupported marks against the archive's 160.
+    // Alias resolution belongs to Entities; a sentence is matched literally.
+    const isEntityHighlight = highlightCat === 'namedEntities'
+    for (const variant of (isEntityHighlight ? getFullAliasGroup(highlight) : [highlight])) {
       if (!variant || !variant.trim()) continue
       const escaped = variant.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
       // Boundary-matched. Without this, arriving with ?highlight=Read. lit up the "read."
@@ -166,16 +191,45 @@ function renderPostBody(
     // these expanded; now the highlight agrees. Paraphrases that are not in the text come
     // back unchanged, so nothing over-extends.
     const wholeSentences = (arr?: string[]) => (arr ?? []).map(t => expandToSentence(t, text))
-    const analysisPairs: [Kind, string[]][] = [
+    // Certified layers first; the bracket structure layer is derived from them below.
+    const analysisPairsBase: [Kind, string[]][] = [
       ['namedEntity', analysis.namedEntities ?? []],
-      ['claim', wholeSentences(analysis.claims)],
-      ['prediction', wholeSentences(analysis.predictions)],
-      ['theme', analysis.themes ?? []],
+      ['claim', analysis.claimSpans ?? wholeSentences(analysis.claims)],
+      ['prediction', analysis.predictionSpans ?? wholeSentences(analysis.predictions)],
+      // Anchors, not labels. A theme label is a taxonomy name and is almost never literal text
+      // in the drop, so highlighting on it meant themes never rendered at all.
+      ['theme', analysis.themeAnchors ?? []],
       // Implied conclusions / verification hooks are often paraphrases that aren't
       // verbatim in the post — they only highlight when the exact text is present.
-      ['impliedConclusion', analysis.impliedConclusions ?? []],
-      ['verificationHook', wholeSentences(analysis.verificationHooks)],
+      // Q Conclusions retired as a SECTION by owner ruling 2026-08-14 — "basically the same thing"
+      // as a Claim. All 966 were already certified Claims carrying isConclusion, so the rows are
+      // unchanged; only the duplicate view is gone. The attribute survives on claimMeta.
+      // Checkable Claims merged into Claims by owner ruling 2026-08-15. All 1,926 were ALREADY
       ['emphasis', analysis.emphasis ?? []],
+    ]
+    const analysisPairs: [Kind, string[]][] = [
+      ...analysisPairsBase,
+      // Bracketed spans, in the same red the [ Brackets ] panel uses — but ONLY where no
+      // certified layer already covers exactly that span.
+      //
+      // [barrage] in #4742 is certified Emphasis of type bracket_emphasis — "an ordinary word set
+      // in brackets to mark it out". The bracket IS the emphasis. Painting a structure layer over
+      // the identical span made one device look like two overlapping categories, so it rotated
+      // between slate and red for no reason a reader could act on.
+      //
+      // The structure view exists to surface brackets NOTHING else accounts for. Where a certified
+      // layer already owns the span, that layer speaks for it.
+      // OWNER RULE, 2026-08-14: anything in brackets is red. Full stop.
+      //
+      // This layer briefly deferred to certified spans, so [barrage] and [counter] on #4741 —
+      // both certified Emphasis — showed slate while [past 7 days] beside them showed red. Three
+      // bracketed items, two colours, one visual rule broken. Brackets are now always red and
+      // never rotate; a bracket that is ALSO Emphasis still says so in the analysis panel, which
+      // is where a second membership belongs.
+      ['bracketCode', bracketSpansIn(text)],
+      // Reviewed, in no semantic category. Listed last so any certified semantic span covering
+      // the same text takes precedence.
+      ['context', analysis.contextUnits ?? []],
     ]
     for (const [kind, items] of analysisPairs) {
       for (const item of items) {
@@ -195,45 +249,18 @@ function renderPostBody(
       }
     }
   }
-
-  // Static named-entity terms — always highlighted cyan regardless of Claude analysis
-  for (const term of STATIC_ENTITIES) {
-    const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-    const seRx = new RegExp(`\\b${escaped}\\b`, 'gi')
-    let sem: RegExpExecArray | null
-    while ((sem = seRx.exec(text)) !== null) {
-      segs.push({ start: sem.index, end: sem.index + sem[0].length, kind: 'namedEntity', matchText: sem[0] })
-    }
-  }
-
-  // Bracket code segments — [[name]], [CLASSIFIED], [RR], [LL], [P], [D5], etc.
-  if (langOn) {
-  const bracketRx = /\[\[?[A-Za-z0-9][A-Za-z0-9 _\-]{0,30}\]?\]/g
-  let bm: RegExpExecArray | null
-  while ((bm = bracketRx.exec(text)) !== null) {
-    segs.push({ start: bm.index, end: bm.index + bm[0].length, kind: 'bracketCode', matchText: bm[0] })
-  }
-
-  // Military / Intel glossary — static keyword list, no API call needed
-  for (const term of MIL_INTEL_TERMS) {
-    const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-    const miRx = new RegExp(`\\b${escaped}\\b`, 'gi')
-    let mm: RegExpExecArray | null
-    while ((mm = miRx.exec(text)) !== null) {
-      segs.push({ start: mm.index, end: mm.index + mm[0].length, kind: 'milIntel', matchText: mm[0] })
-    }
-  }
-
-  // Q Signature phrases — recurring rhetorical patterns, no API call needed
-  for (const phrase of Q_SIGNATURES) {
-    const escaped = phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-    const qsRx = new RegExp(escaped, 'gi')
-    let qm: RegExpExecArray | null
-    while ((qm = qsRx.exec(text)) !== null) {
-      segs.push({ start: qm.index, end: qm.index + qm[0].length, kind: 'qSignature', matchText: qm[0] })
-    }
-  }
-  }
+  // STATIC VOCABULARIES REMOVED — they painted semantic colours with no certified record.
+  //
+  // Four blanket rules ran here: a static entity list, a regex colouring EVERY bracketed token
+  // as a code, a military/intelligence word list, and Q-signature phrase matching. Together they
+  // produced ~6,002 semantic-looking spans on this surface that no certified occurrence
+  // supported. A reader could not distinguish them from an adjudicated classification, which is
+  // the trust proposition of the whole archive.
+  //
+  // Entities, Codes and Emphasis are certified sections with occurrence-level data, consumed
+  // above. A hardcoded list of 40 terms cannot overrule an audit of 1,332 certified entities.
+  //
+  //   if no certified occurrence supports the exact span in that post, it gets no semantic colour
 
   // URL segments (lowest priority — clickable links)
   const urlRx = /https?:\/\/[^\s<>'")\]]+/g
@@ -261,6 +288,9 @@ function renderPostBody(
   const priority: Record<Kind, number> = {
     highlight: 0, request: 1, requestQuestion: 1, topic: 2, question: 3,
     namedEntity: 4, claim: 5, prediction: 6, theme: 7, impliedConclusion: 8, verificationHook: 9,
+    // context LAST of all: it means "reviewed, and in no semantic category", so any certified
+    // category covering the same span is the truer statement and must win.
+    context: 99,
     // emphasis last: it is Q's punctuation, so anything else on the same span wins.
     bracketCode: 10, milIntel: 11, qSignature: 12, url: 13, emphasis: 14,
   }
@@ -306,7 +336,10 @@ function renderPostBody(
         // to lose inside a long drop — which is exactly the case the flash exists for.
         const hlClass = catClass
           ? `rounded not-italic ${catClass} ${flashAnim}`
-          : `rounded not-italic font-semibold animate-flash-red`
+          // SEARCH STATE, NOT CLASSIFICATION. This was a filled red flashing mark, visually
+          // indistinguishable from a semantic category — the live audit failed it on exactly that.
+          // The archive uses the same outline treatment; both surfaces must agree.
+          : `not-italic font-semibold bg-transparent ring-1 ring-red-400/80 underline decoration-dashed decoration-red-400/80 underline-offset-2 text-red-200 rounded-sm`
         nodes.push(<mark key={iStart} {...(isFirst ? { 'data-hl': '1' } : {})} className={hlClass}>{matchText}</mark>)
       } else if (top.kind === 'requestQuestion') {
         nodes.push(<mark key={iStart} className="animate-req-question rounded not-italic font-medium">{matchText}</mark>)
@@ -314,12 +347,47 @@ function renderPostBody(
         nodes.push(<mark key={iStart} className="bg-green-500/35 text-green-200 rounded not-italic font-medium">{matchText}</mark>)
       } else if (top.kind === 'url') {
         nodes.push(<a key={iStart} href={matchText} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 underline break-all" onClick={e => e.stopPropagation()}>{matchText}</a>)
+      } else if (insideQuestionKinds(stackable).length > 0) {
+        // CONTAINMENT IS NOT OVERLAP.
+        //
+        // A bracket sitting inside a question is not two classifications of the same span — the
+        // question is the CONTAINER. Counting it as a co-membership made #4742's brackets rotate
+        // through question-blue, and [+family (follow)] is listed under [ Brackets ] and nothing
+        // else, so it must simply be red.
+        //
+        // The rule, stated once: a span shows the colour of the category it BELONGS to, and it
+        // rotates only when that same span genuinely belongs to two or more. The enclosing
+        // question keeps its colour on the sub-intervals either side, so the line still reads as
+        // a question.
+        const innerKinds = insideQuestionKinds(stackable)
+        // Same rule as the general branch: distinct KINDS, not segments.
+        // Brackets are red even inside a question, and never rotate — owner rule.
+        nodes.push(innerKinds.includes('bracketCode')
+          ? <mark key={iStart} title="bracket"
+              className={`${HIGHLIGHT_CLS.bracketCode ?? ''} rounded not-italic`}>{matchText}</mark>
+          : innerKinds.length === 1
+          ? <mark key={iStart} title={`${innerKinds[0]} (inside a question)`}
+              className={`${HIGHLIGHT_CLS[innerKinds[0]] ?? ''} rounded not-italic`}>{matchText}</mark>
+          : <mark key={iStart} title={`${innerKinds.length} certified layers: ${innerKinds.join(', ')}`}
+              style={overlapStyle(innerKinds)?.style}
+              className={`${overlapStyle(innerKinds)?.className ?? ''} rounded not-italic`}>{matchText}</mark>,
+        )
       } else {
         // question
         const qSeg = dominant.find(s => s.kind === 'question') ?? top
         nodes.push(
           <span key={iStart} className="group/q relative inline">
-            <mark className={`rounded not-italic ${newIds?.has(qSeg.questionId ?? '') ? 'bg-purple-500/30 text-purple-200' : 'bg-blue-500/30 text-blue-200'}`}>{matchText}</mark>
+            {/* A dominant kind takes sole ownership of its span, which meant certified layers
+                UNDERNEATH it were invisible: #2917 lists FAKE and NEWS as Emphasis, both sitting
+                inside the certified question "FAKE NEWS coverage?", so the chips appeared with no
+                highlight anywhere in the drop. Same remedy as the overlap fix — the question keeps
+                its colour, and the second membership shows on the underline channel. */}
+            <mark
+              // Emphasis is filtered here too: under the owner ruling a question does not carry
+              // it, so the drop must not claim it on hover either. The span is still listed in
+              // the Emphasis section — the certified layer is untouched, only this drop's paint.
+              title={insideQuestionKinds(stackable).length ? `also: ${insideQuestionKinds(stackable).join(', ')}` : undefined}
+              className={`rounded not-italic ${newIds?.has(qSeg.questionId ?? '') ? 'bg-purple-500/30 text-purple-200' : 'bg-blue-500/30 text-blue-200'}`}>{matchText}</mark>
             {onRemoveQuestion && qSeg.questionId && (
               <button onClick={e => { e.stopPropagation(); onRemoveQuestion(qSeg.questionId!) }}
                 className="hidden group-hover/q:inline-flex items-center gap-0.5 ml-0.5 align-middle text-[10px] text-red-400 hover:text-red-200 bg-red-900/50 hover:bg-red-800/70 border border-red-700/60 px-1 py-px rounded transition-colors leading-none">
@@ -334,19 +402,42 @@ function renderPostBody(
       if (stackable.length === 1) {
         // Single stackable kind — use its color
         nodes.push(<mark key={iStart} className={`${cls[stackable[0].kind] ?? ''} rounded not-italic`}>{matchText}</mark>)
-      } else if (stackable.some(s => s.kind === 'namedEntity')) {
-        // Named entity wins solid cyan over everything
-        nodes.push(<mark key={iStart} className="bg-cyan-500/30 text-cyan-200 rounded not-italic">{matchText}</mark>)
       } else if (stackable.some(s => s.kind === 'bracketCode')) {
-        // Bracket code wins solid red over non-entity kinds
+        // OWNER RULE: anything in brackets is red — including a bracket that contains an entity.
+        //
+        // namedEntity used to be tested first, which split the span: "[Mueller failed]" rendered
+        // as a red "[", a cyan "Mueller" and a red " failed]". One bracket, two colours, and the
+        // bracket rule visibly broken inside the very thing it governs. The entity is still
+        // certified and still listed under Entities; the bracket owns the paint.
         nodes.push(<mark key={iStart} className="bg-red-800/40 text-red-300 font-mono text-[0.9em] rounded not-italic">{matchText}</mark>)
+      } else if (stackable.some(s => s.kind === 'namedEntity')) {
+        // Named entity wins solid cyan over everything except a bracket.
+        nodes.push(<mark key={iStart} className="bg-cyan-500/30 text-cyan-200 rounded not-italic">{matchText}</mark>)
       } else if (stackable.some(s => s.kind === 'request' || s.kind === 'requestQuestion')) {
         // Request wins over lower-priority analysis kinds
         const hasReqQ = stackable.some(s => s.kind === 'requestQuestion')
         nodes.push(<mark key={iStart} className={`${hasReqQ ? 'animate-req-question' : 'bg-green-500/35 text-green-200'} rounded not-italic font-medium`}>{matchText}</mark>)
       } else {
-        // Multiple analysis kinds — flash through their colors
-        nodes.push(<mark key={iStart} className="animate-overlap rounded not-italic">{matchText}</mark>)
+        // ROTATE THROUGH EVERY CATEGORY'S COLOUR.
+        //
+        // This is the point of the app: showing how one piece of Q's language is classified by
+        // several layers at once. A single blended or precedence-picked colour hides that. The
+        // animation cycles the actual category colours covering this span, so a reader can see
+        // it is (say) both a Claim and Emphasis.
+        //
+        // Counted by DISTINCT KIND, not by segment. Two segments of the same kind are one
+        // classification: [A] in #129 belongs to both the CIA and the NSA acrostic, so it matched
+        // Emphasis twice and rotated with the title "2 certified layers: emphasis" — one kind,
+        // named once, presented as an overlap. A span rotates only when it genuinely belongs to
+        // two different categories.
+        const kinds = [...new Set(stackable.map(s => s.kind))]
+        nodes.push(kinds.length > 1
+          ? <mark key={iStart} title={`${kinds.length} certified layers: ${kinds.join(', ')}`}
+              style={overlapStyle(kinds)?.style}
+              className={`${overlapStyle(kinds)?.className ?? ''} rounded not-italic`}>{matchText}</mark>
+          : <mark key={iStart} title={kinds[0]}
+              className={`${HIGHLIGHT_CLS[kinds[0]] ?? ''} rounded not-italic`}>{matchText}</mark>,
+        )
       }
     }
 
@@ -354,7 +445,8 @@ function renderPostBody(
   }
 
   if (pos < text.length) nodes.push(text.slice(pos))
-  return nodes
+  // Same glossary layer as postHighlight — see src/lib/glossary.tsx.
+  return postNum === undefined ? nodes : applyGlossary(nodes, postNum, gloss ?? glossarySync())
 }
 
 // Labels + badge styles for the analysis category the user arrived from (entity/claim/etc.)
@@ -403,7 +495,73 @@ const ALIAS_HL_PALETTE = [
 
 type AliasColor = { variant: string; cls: string }
 
+/**
+ * Every bracketed span in a drop, in the form the browser renders.
+ *
+ * ONE definition, used by both the [ Brackets ] panel and the red highlight layer. They were
+ * separate before and the panel's regex admitted only letters, digits, space, underscore and
+ * hyphen — so #4742 listed [barrage] and [faith in Humanity] while dropping [+family (follow)]
+ * and [safeguarding women & children], and archive-wide it lost 618 spans across 353 posts.
+ *
+ * SERIALIZATION PROVENANCE: the raw archive stores &amp;/&gt;/&lt;; the browser renders & > <.
+ * Both callers need the rendered form or the chip disagrees with the drop body above it.
+ */
+export function bracketSpansIn(text: string): string[] {
+  if (!text) return []
+  const decode = (s: string) => s
+    .replace(/&amp;/gi, '&').replace(/&gt;/gi, '>').replace(/&lt;/gi, '<')
+    .replace(/&quot;/gi, '"').replace(/&#0?39;|&apos;/gi, "'").replace(/&nbsp;/gi, ' ')
+  const out: string[] = []
+  const seen = new Set<string>()
+  const rx = /\[[^[\]\n]{1,60}\]/g
+  let m: RegExpExecArray | null
+  while ((m = rx.exec(text)) !== null) {
+    const shown = decode(m[0])
+    if (!seen.has(shown)) { seen.add(shown); out.push(shown) }
+  }
+  return out
+}
+
+
+/**
+ * The actual fill + text colour of each highlight kind, so an overlap can cycle the colours the
+ * span really belongs to instead of a fixed rainbow. Kept beside HIGHLIGHT_CLS deliberately —
+ * if a category's colour changes there it must change here, or the overlap lies about it.
+ */
+const KIND_RGBA: Record<string, [string, string]> = {
+  question:          ['rgba(59,130,246,0.30)', '#bfdbfe'],
+  request:           ['rgba(34,197,94,0.40)',  '#dcfce7'],
+  requestQuestion:   ['rgba(34,197,94,0.40)',  '#dcfce7'],
+  claim:             ['rgba(245,158,11,0.40)', '#fef3c7'],
+  prediction:        ['rgba(139,92,246,0.40)', '#ede9fe'],
+  namedEntity:       ['rgba(6,182,212,0.30)',  '#cffafe'],
+  theme:             ['rgba(99,102,241,0.40)', '#e0e7ff'],
+  impliedConclusion: ['rgba(249,115,22,0.40)', '#ffedd5'],
+  verificationHook:  ['rgba(217,70,239,0.40)', '#fae8ff'],
+  emphasis:          ['rgba(203,213,225,0.60)', '#0f172a'],
+  bracketCode:       ['rgba(153,27,27,0.50)',  '#fecaca'],
+  context:           ['rgba(107,114,128,0.35)', '#f3f4f6'],
+  topic:             ['rgba(250,204,21,0.40)', '#fef9c3'],
+  milIntel:          ['rgba(20,184,166,0.35)', '#ccfbf1'],
+  qSignature:        ['rgba(192,132,252,0.30)', '#f3e8ff'],
+}
+
+/** Class + inline vars that cycle exactly this span's category colours. */
+export function overlapStyle(kinds: string[]) {
+  const picked = kinds.filter(k => KIND_RGBA[k]).slice(0, 3)
+  if (picked.length < 2) return null
+  const vars: Record<string, string> = {}
+  picked.forEach((k, i) => {
+    vars[`--hl-${i + 1}`] = KIND_RGBA[k][0]
+    vars[`--hl-${i + 1}-fg`] = KIND_RGBA[k][1]
+  })
+  return { className: picked.length >= 3 ? 'animate-overlap-3' : 'animate-overlap-2', style: vars as React.CSSProperties }
+}
+
 export default function PostDetail() {
+  // The reader's acronym info box. Post-aware, so BO reads Barack Obama or Bruce Ohr
+  // depending on the drop it is standing in. See src/lib/glossary.tsx.
+  const gloss = useGlossary()
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
@@ -460,7 +618,7 @@ export default function PostDetail() {
   // reference a post actually uses. Single-alias entities stay solid red.
   const aliasColors = useMemo<AliasColor[]>(() => {
     void aliasTick // recompute when aliases load/change
-    const variants = [...new Set([highlight, ...getAliasGroup(highlight)])].filter(v => v && v.trim())
+    const variants = [...new Set([highlight, ...getFullAliasGroup(highlight)])].filter(v => v && v.trim())
     if (variants.length <= 1) return variants.map(v => ({ variant: v, cls: 'bg-red-500/50 text-red-50' }))
     return variants.map((v, i) => ({ variant: v, cls: ALIAS_HL_PALETTE[i % ALIAS_HL_PALETTE.length] }))
   }, [highlight, aliasTick])
@@ -469,6 +627,39 @@ export default function PostDetail() {
   const aliasForRef = useRef<string | null>(null)
   aliasForRef.current = aliasFor
   const [analysisFreqMap, setAnalysisFreqMap] = useState<Map<string, { count: number; postNums: number[] }>>(new Map())
+  // How many posts in the WHOLE archive contain each chip's wording.
+  //
+  // analysisFreqMap answers a different question — how many posts classify it in THIS category —
+  // which is why "Knowledge is power." read x19 under Claims and x6 under Implied Conclusions,
+  // and why a phrase classified in one post showed no number at all. Both are true; the archive
+  // count is the one a reader wants when asking "did Q ever say this again?".
+  const [corpusCounts, setCorpusCounts] = useState<Map<string, number>>(new Map())
+
+  // Counted once per drop, for the handful of phrases this drop actually shows. Cancelled on
+  // navigation so a fast click-through does not leave a stale count on the next post.
+  useEffect(() => {
+    if (!post) return
+    let cancelled = false
+    const a = (post.postAnalysis ?? {}) as Record<string, unknown>
+    const texts = [...new Set([
+      ...(questions ?? []).map(q => q.text),
+      ...(post.actionRequests ?? []),
+      ...['claims', 'predictions', 'namedEntities', 'themes', 'impliedConclusions', 'verificationHooks', 'emphasis']
+        .flatMap(k => (a[k] as string[] | undefined) ?? []),
+      // Brackets too — every category that renders a chip gets a count, or the absence of a
+      // number reads as "appears once" when it only means "nobody counted this row".
+      ...bracketSpansIn(post.text ?? ''),
+    ])].filter(t => t && t.trim().length > 2)
+    ;(async () => {
+      const next = new Map<string, number>()
+      for (const t of texts) {
+        if (cancelled) return
+        try { next.set(t, (await getPostNumsContaining(t)).length) } catch { /* skip */ }
+      }
+      if (!cancelled) setCorpusCounts(next)
+    })()
+    return () => { cancelled = true }
+  }, [post, questions])
   const [knownEntities, setKnownEntities] = useState<string[]>([])  // for alias-connect autocomplete
   const [analysisOpen, setAnalysisOpen] = useState(true)
   const [addingToKey, setAddingToKey] = useState<string | null>(null)
@@ -594,7 +785,7 @@ export default function PostDetail() {
     } else {
       // Analysis category (entities, claims, …) → curated analysis frequency index, expanded
       // to the whole alias group (so "HRC" pulls in "Hillary Clinton" / "Hillary" posts too).
-      const group = new Set(getAliasGroup(highlight).map(t => t.toLowerCase().trim()))
+      const group = new Set(getFullAliasGroup(highlight).map(t => t.toLowerCase().trim()))
       const groupArr = [...group]
       postsPromise = Promise.all([getAnalysisFrequency(), ...groupArr.map(g => getPostNumsContaining(g))])
         .then(([freqs, ...aliasNums]) => {
@@ -1277,6 +1468,8 @@ export default function PostDetail() {
                         highlight,
                         rp.actionRequests ?? [],
                         rp.postAnalysis,
+                        rp.postNum,
+                        gloss,
                       ))}
                     </pre>
                   </div>
@@ -1307,7 +1500,15 @@ export default function PostDetail() {
         <div className="flex items-start justify-between mb-4">
           <div>
             <span className="text-gray-400 font-bold text-xl">
-              {CAN_EDIT ? `Qpost #${post.postNum} Editing` : `Post #${post.postNum}`}
+              {/* The WHOLE label is the link, not just the digits — and it goes to ?goto=, which
+                  scrolls the archive list to this drop with its neighbours around it. ?q=#N was a
+                  text search for "#N" and landed on a one-post search page instead. */}
+              <Link
+                to={`/posts?goto=${post.postNum}`}
+                title={`See #${post.postNum} in the Post Archive, with the drops around it`}
+                className="hover:underline underline-offset-4 decoration-2 hover:text-blue-300 transition-colors"
+              >{CAN_EDIT ? `Qpost #${post.postNum}` : `Post #${post.postNum}`}</Link>
+              {CAN_EDIT ? ' Editing' : ''}
             </span>
             {(() => {
               const src = sourceLink(post)
@@ -1442,7 +1643,7 @@ export default function PostDetail() {
             selectMode ? 'bg-blue-950/30 cursor-text select-text border border-blue-800' : 'bg-black/30'
           } ${bodyFlash ? 'animate-body-flash' : ''}`}
         >
-          {linkify(renderPostBody(post.text, questions, activeHL, flash, topicKeywords, undefined, newQuestionIds, actionRequests, postAnalysis ?? undefined, highlightCat || undefined))}
+          {linkify(renderPostBody(post.text, questions, activeHL, flash, topicKeywords, undefined, newQuestionIds, actionRequests, postAnalysis ?? undefined, highlightCat || undefined, post.postNum, gloss))}
         </pre>
 
         {/* Unresolved references in this drop, each deep-linking to its exact occurrence. */}
@@ -1682,25 +1883,34 @@ export default function PostDetail() {
 
       {/* Post Analysis panel — always shown so user can add items even on unanalyzed posts */}
       {(() => {
+        // Themes first, by owner request: the subject of a drop is the orienting fact, so it
+        // belongs at the top of the analysis rather than six rows down.
         const CATS: { key: keyof PostAnalysis; label: string; color: string; chip: string }[] = [
           { key: 'namedEntities',      label: 'Named Entities',      color: 'text-cyan-400',   chip: 'bg-cyan-500/20 text-cyan-200 border-cyan-700/50' },
           { key: 'claims',             label: 'Claims',              color: 'text-amber-400',  chip: 'bg-amber-500/20 text-amber-200 border-amber-700/50' },
           { key: 'predictions',        label: 'Predictions',         color: 'text-violet-400', chip: 'bg-violet-500/20 text-violet-200 border-violet-700/50' },
-          { key: 'impliedConclusions', label: 'Implied Conclusions', color: 'text-orange-400', chip: 'bg-orange-500/20 text-orange-200 border-orange-700/50' },
-          { key: 'verificationHooks',  label: 'Checkable Claims',  color: 'text-fuchsia-400', chip: 'bg-fuchsia-500/20 text-fuchsia-200 border-fuchsia-700/50' },
-          { key: 'themes',             label: 'Themes',              color: 'text-indigo-400', chip: 'bg-indigo-500/20 text-indigo-200 border-indigo-700/50' },
+          // Implied Conclusions row retired — see the note on the highlight layer above.
+      // Checkable Claims merged into Claims by owner ruling 2026-08-15. All 1,926 were ALREADY
           { key: 'emphasis',           label: 'Emphasis',            color: 'text-slate-400',  chip: 'bg-slate-500/20 text-slate-200 border-slate-600/50' },
         ]
-        // Auto-detected brackets from post text
-        const autoBrackets: string[] = []
-        if (post?.text) {
-          const rx = /\[\[?[A-Za-z0-9][A-Za-z0-9 _\-]{0,30}\]?\]/g
-          const seen = new Set<string>()
-          let bm: RegExpExecArray | null
-          while ((bm = rx.exec(post.text)) !== null) {
-            if (!seen.has(bm[0])) { seen.add(bm[0]); autoBrackets.push(bm[0]) }
-          }
-        }
+        // Every bracketed span Q wrote in this drop.
+        //
+        // This panel is a LITERAL STRUCTURE view — "what is in brackets here" — and it is a
+        // different question from Codes & Brackets, which is the certified SEMANTIC layer. The
+        // two are allowed to differ; what is not allowed is this panel quietly showing some of
+        // the drop's brackets and not others.
+        //
+        // It used to build its list with /\[\[?[A-Za-z0-9][A-Za-z0-9 _\-]{0,30}\]?\]/g, whose
+        // character class admits only letters, digits, space, underscore and hyphen. So #4742
+        // showed [barrage] and [faith in Humanity] while silently dropping [+family (follow)]
+        // (the "+" and the parentheses) and [safeguarding women & children] (the "&", which the
+        // board stores as &amp;). Archive-wide that regex dropped 618 spans across 353 posts —
+        // [13=M], [-30], [DEATH + MONEY], [visibility / reach], [foreign &amp; domestic].
+        //
+        // A reader cannot tell a deliberate exclusion from a regex that never matched, so the
+        // rule is: match ANY bracketed run, and let the reader see what Q actually wrote.
+        // ONE definition, shared with the red bracketCode highlight layer — see bracketSpansIn.
+        const autoBrackets: string[] = bracketSpansIn(post?.text ?? '')
         const allBrackets = [...new Set([...autoBrackets.filter(b => !excludedBrackets.includes(b)), ...customBrackets])]
 
         function AddRow({ rowKey }: { rowKey: string }) {
@@ -1770,8 +1980,61 @@ export default function PostDetail() {
 
             {analysisOpen && (
               <div className="space-y-3">
-                {/* Questions row — manage the post's questions like any other category */}
-                <div>
+                {/* What this drop contains across all eight certified sections, and where those
+                    layers touch. Counts come from relationships.json, never recomputed here. */}
+                {/* THEMES FIRST — above the Analysis map, Questions and Requests.
+                    Owner request: the subject of a drop is the orienting fact, so it sits
+                    directly under the Tone line rather than several rows down. Rendered here
+                    explicitly and excluded from the CATS loop below, because that loop runs
+                    after the map and after Questions/Requests. */}
+                {(postAnalysis?.themes?.length ?? 0) > 0 && (
+                  <div data-analysis-section="themes" className="mb-1">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-xs font-medium w-32 shrink-0 text-indigo-400">Themes</span>
+                    </div>
+                    <div className="flex flex-wrap gap-1.5 pl-0">
+                      {(postAnalysis?.themes ?? []).map((item, i) => (
+                        <span key={i} className="text-xs border px-2 py-0.5 rounded flex items-center gap-1 group bg-indigo-500/20 text-indigo-200 border-indigo-700/50">
+                          {/* A THEME IS NOT A TEXT SEARCH.
+                              "Media & Information" is a taxonomy label inferred from a drop, not
+                              wording Q ever wrote, so /posts?q=<label> searched the corpus for a
+                              string that does not exist and returned "No posts found" — while the
+                              facet above it correctly reported 301. Themes route to the analysis
+                              page, which lists the posts the theme was actually assigned to.
+                              Same reason the count comes from the frequency map rather than from
+                              corpusCounts: counting text occurrences of a label gives zero. */}
+                          <Link to={`/analysis?tab=themes&q=${encodeURIComponent(item)}`}
+                            title={`Show every post carrying the theme "${item}"`}
+                            className="hover:underline decoration-dotted underline-offset-2">{item}</Link>
+                          {(analysisFreqMap.get(`themes::${normalizeItemKey(item)}`)?.count ?? 0) > 1 && (
+                            <Link to={`/analysis?tab=themes&q=${encodeURIComponent(item)}`}
+                              title={`${analysisFreqMap.get(`themes::${normalizeItemKey(item)}`)?.count} posts carry this theme`}
+                              className="font-bold opacity-60 hover:opacity-100">×{analysisFreqMap.get(`themes::${normalizeItemKey(item)}`)?.count}</Link>
+                          )}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                <AnalysisMap
+                  postNum={post.postNum}
+                  /* OWNER RULE: anything in brackets is a bracket item and must be counted, so the
+                     map's total agrees with the [ Brackets ] list below it. Passed in rather than
+                     re-derived inside AnalysisMap — that component deliberately counts nothing
+                     itself, and a component that re-derived a category is the mistake this whole
+                     pipeline exists to prevent. */
+                  extraCounts={{ brackets: bracketSpansIn(post.text ?? '').length }}
+                  onJump={section => {
+                    const el = document.querySelector(`[data-analysis-section="${section}"]`)
+                    el?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                  }}
+                />
+
+                {/* Questions row — manage the post's questions like any other category.
+                    Same empty-row rule as the categories below: hidden when there are none and
+                    nothing can be added. */}
+                {(questions.length > 0 || CAN_EDIT) && (
+                <div data-analysis-section="questions">
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-xs font-medium w-32 shrink-0 text-blue-400">Questions</span>
                     <AddRow rowKey="questions" />
@@ -1780,7 +2043,17 @@ export default function PostDetail() {
                     <div className="flex flex-wrap gap-1.5">
                       {questions.map(q => (
                         <span key={q.id} className="text-xs border px-2 py-0.5 rounded flex items-center gap-1 group bg-blue-500/20 text-blue-200 border-blue-700/50">
-                          {q.text}
+                          {/* Clickable, like every other analysis chip — the Questions row was the
+                              last one left as dead text, so a reader could not ask where else Q
+                              asked the same thing. */}
+                          <Link to={`/posts?q=${encodeURIComponent(q.text)}`}
+                            title={`Show all posts asking "${q.text}"`}
+                            className="hover:underline decoration-dotted underline-offset-2">{q.text}</Link>
+                          {(corpusCounts.get(q.text) ?? 0) > 1 && (
+                            <Link to={`/posts?q=${encodeURIComponent(q.text)}`}
+                              title={`${corpusCounts.get(q.text)} posts in the archive ask this`}
+                              className="font-bold opacity-60 hover:opacity-100">×{corpusCounts.get(q.text)}</Link>
+                          )}
                           {CAN_EDIT && <button
                             onClick={() => requestBulkAddQuestion(q.text)}
                             disabled={bulkBusy}
@@ -1797,8 +2070,10 @@ export default function PostDetail() {
                     </div>
                   )}
                 </div>
+                )}
 
-                {/* Requests row */}
+                {/* Requests row — same empty-row rule. */}
+                {((post.actionRequests?.length ?? 0) > 0 || CAN_EDIT) && (
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-xs font-medium w-32 shrink-0 text-green-400">Requests</span>
@@ -1808,7 +2083,14 @@ export default function PostDetail() {
                     <div className="flex flex-wrap gap-1.5">
                       {actionRequests.map((req, i) => (
                         <span key={i} className="text-xs border px-2 py-0.5 rounded flex items-center gap-1 group bg-green-900/30 text-green-200 border-green-700/50">
-                          {req}
+                          <Link to={`/posts?q=${encodeURIComponent(req)}`}
+                            title={`Show all posts containing "${req}"`}
+                            className="hover:underline decoration-dotted underline-offset-2">{req}</Link>
+                          {(corpusCounts.get(req) ?? 0) > 1 && (
+                            <Link to={`/posts?q=${encodeURIComponent(req)}`}
+                              title={`${corpusCounts.get(req)} posts in the archive contain this`}
+                              className="font-bold opacity-60 hover:opacity-100">×{corpusCounts.get(req)}</Link>
+                          )}
                           {CAN_EDIT && <button onClick={() => requestBulkAddRequest(req)} disabled={bulkBusy}
                             title={`Admin: add this request to every post containing "${req}"`}
                             className="opacity-0 group-hover:opacity-100 ml-0.5 text-[10px] hover:text-white transition-all leading-none disabled:opacity-40">
@@ -1823,12 +2105,18 @@ export default function PostDetail() {
                     </div>
                   )}
                 </div>
+                )}
 
                 {/* Analysis categories */}
                 {CATS.map(({ key, label, color, chip }) => {
                   const items = (postAnalysis?.[key] as string[] | undefined) ?? []
+                  // An empty category is a row of dead space on the reading view — most drops
+                  // carry three or four of the nine. Hidden where nothing can be added anyway;
+                  // kept in the editing build, because the empty row IS how the first item gets
+                  // added to a category and hiding it would make that unreachable.
+                  if (!items.length && !CAN_EDIT) return null
                   return (
-                    <div key={key}>
+                    <div key={key} data-analysis-section={key}>
                       <div className="flex items-center gap-2 mb-1">
                         <span className={`text-xs font-medium w-32 shrink-0 ${color}`}>{label}</span>
                         <AddRow rowKey={key} />
@@ -1837,6 +2125,7 @@ export default function PostDetail() {
                         <div className="flex flex-wrap gap-1.5 pl-0">
                           {items.map((item, i) => {
                             const freqData = analysisFreqMap.get(`${key}::${normalizeItemKey(item)}`)
+                            const corpusN = corpusCounts.get(item) ?? 0
                             const aliases = getAliasesFor(item)
                             const aliasId = `${key}::${item}`
                             return (
@@ -1850,12 +2139,12 @@ export default function PostDetail() {
                                 >
                                   {item}
                                 </Link>
-                                {freqData && freqData.count > 1 && (
+                                {corpusN > 1 && (
                                   <Link
                                     to={`/posts?q=${encodeURIComponent(item)}`}
-                                    title={`${freqData.count} posts contain "${item}" — click to see them`}
+                                    title={`${corpusN} posts in the archive contain "${item}"${freqData && freqData.count > 1 ? ` — ${freqData.count} of them classify it here` : ''} — click to see them`}
                                     className="font-bold opacity-60 hover:opacity-100"
-                                  >×{freqData.count}</Link>
+                                  >×{corpusN}</Link>
                                 )}
                                 {aliases.length > 0 && (
                                   <span className="opacity-75 text-[10px] italic">
@@ -1910,8 +2199,10 @@ export default function PostDetail() {
                   )
                 })}
 
-                {/* Brackets section — always available so a missed bracket can be added */}
-                {(
+                {/* Brackets — same rule as every other category: an empty row is dead space on
+                    the reading view. Kept in the editing build, where the empty row is how a
+                    missed bracket gets added. */}
+                {(allBrackets.length > 0 || CAN_EDIT) && (
                   <div>
                     <div className="flex items-center gap-2 mb-1">
                       <span className="text-xs font-medium w-32 shrink-0 text-red-500">[ Brackets ]</span>
@@ -1920,7 +2211,19 @@ export default function PostDetail() {
                     <div className="flex flex-wrap gap-1.5">
                       {allBrackets.map((code, i) => (
                         <span key={i} className="text-xs border border-red-700/50 bg-red-900/20 text-red-300 px-2 py-0.5 rounded flex items-center gap-1 group font-mono">
-                          {code}
+                          {/* Clickable, like every other analysis chip: searching the archive for
+                              the span shows every other drop it appears in — or none, which is an
+                              answer too. Brackets were the only section whose chips were dead
+                              text, so a reader could see [+family (follow)] and had no way to ask
+                              whether Q ever wrote it again. */}
+                          <Link to={`/posts?q=${encodeURIComponent(code)}`}
+                            title={`Show all posts containing "${code}"`}
+                            className="hover:underline decoration-dotted underline-offset-2">{code}</Link>
+                          {(corpusCounts.get(code) ?? 0) > 1 && (
+                            <Link to={`/posts?q=${encodeURIComponent(code)}`}
+                              title={`${corpusCounts.get(code)} posts in the archive contain "${code}"`}
+                              className="font-bold opacity-60 hover:opacity-100">×{corpusCounts.get(code)}</Link>
+                          )}
                           {CAN_EDIT && <button onClick={() => requestBulkAddBracket(code)} disabled={bulkBusy}
                             title={`Admin: add this bracket to every post containing "${code}"`}
                             className="opacity-0 group-hover:opacity-100 ml-0.5 text-[10px] hover:text-white transition-all leading-none disabled:opacity-40">

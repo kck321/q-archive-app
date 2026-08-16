@@ -1,0 +1,2596 @@
+QDROPS — RELIGIOUS/SPIRITUAL AUDIT: RECORDS NOT ADDED TO THE THEME
+==============================================================================
+
+Two reasons a record is not used:
+
+  NOT RELIGIOUS  the sentence borrows religious-sounding vocabulary but is not about religion
+                 (evil, light/darkness, sheep, awakening, sacrifice, secular "faith").
+  NOT VERBATIM   the sentence does not reproduce exactly from the canonical post text — it is
+                 image text, OCR, or wording from a post QUOTED by Q rather than Q's own body.
+                 These are not rejected on meaning; they simply cannot be highlighted safely.
+
+
+==============================================================================
+NOT RELIGIOUS — 523 records
+==============================================================================
+
+--- YELLOW (174) ---
+#4  [Faith / belief]
+   "Again, there are a lot more good people than bad so have faith."
+   reason: no religious referent in the sentence
+
+#5  [Faith / belief]
+   "Have faith."
+   reason: borrowed vocabulary, not about religion
+
+#6  [Faith / belief]
+   "Again, there are a lot more good people than bad so have faith."
+   reason: no religious referent in the sentence
+
+#9  [Great Awakening / ascension; Awake / awakening language]
+   "At some point the great awakening will occur whereby these false local / national black leaders are corrupt and paid off to help keep the black pop poor and in need."
+   reason: no religious referent in the sentence
+
+#67  [Faith / belief]
+   "Have faith."
+   reason: borrowed vocabulary, not about religion
+
+#70  [Faith / belief]
+   "Have faith."
+   reason: borrowed vocabulary, not about religion
+
+#70  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening."
+   reason: borrowed vocabulary, not about religion
+
+#76  [Faith / belief]
+   "Have faith."
+   reason: borrowed vocabulary, not about religion
+
+#76  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening."
+   reason: borrowed vocabulary, not about religion
+
+#88  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening"
+   reason: borrowed vocabulary, not about religion
+
+#111  [Savior / saint / angel / miracle]
+   "POTUS is our savior."
+   reason: no religious referent in the sentence
+
+#114  [Savior / saint / angel / miracle]
+   "US Military = savior of mankind."
+   reason: no religious referent in the sentence
+
+#140  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening."
+   reason: borrowed vocabulary, not about religion
+
+#151  [Faith / belief]
+   "Have faith, Patriots."
+   reason: no religious referent in the sentence
+
+#158  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening."
+   reason: borrowed vocabulary, not about religion
+
+#182  [Cult / dogma / revelation]
+   "What does the "Owl" represent to certain cults?"
+   reason: no religious referent in the sentence
+
+#190  [Faith / belief]
+   "Have faith."
+   reason: borrowed vocabulary, not about religion
+
+#236  [Faith / belief]
+   "Have faith."
+   reason: borrowed vocabulary, not about religion
+
+#310  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening."
+   reason: borrowed vocabulary, not about religion
+
+#315  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening."
+   reason: borrowed vocabulary, not about religion
+
+#316  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening."
+   reason: borrowed vocabulary, not about religion
+
+#336  [Faith / belief]
+   "Have faith."
+   reason: borrowed vocabulary, not about religion
+
+#337  [Faith / belief]
+   "Have faith."
+   reason: borrowed vocabulary, not about religion
+
+#365  [Great Awakening / ascension; Awake / awakening language]
+   "“The Great Awakening”"
+   reason: no religious referent in the sentence
+
+#409  [Faith / belief]
+   "Have faith."
+   reason: borrowed vocabulary, not about religion
+
+#430  [Faith / belief]
+   "Have faith."
+   reason: borrowed vocabulary, not about religion
+
+#458  [Faith / belief]
+   "Thank you all for your trust, faith, and patriotism."
+   reason: no religious referent in the sentence
+
+#474  [Great Awakening / ascension; Awake / awakening language]
+   "THE GREAT AWAKENING."
+   reason: borrowed vocabulary, not about religion
+
+#521  [Faith / belief]
+   "Have FAITH - WE ARE IN CONTROL."
+   reason: no religious referent in the sentence
+
+#521  [Faith / belief]
+   "HAVE FAITH."
+   reason: borrowed vocabulary, not about religion
+
+#543  [Great Awakening / ascension; Awake / awakening language]
+   "THE GREAT AWAKENING."
+   reason: borrowed vocabulary, not about religion
+
+#556  [Faith / belief]
+   "Have FAITH, Patriot."
+   reason: no religious referent in the sentence
+
+#570  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening."
+   reason: borrowed vocabulary, not about religion
+
+#572  [Great Awakening / ascension; Awake / awakening language]
+   "THE GREAT AWAKENING."
+   reason: borrowed vocabulary, not about religion
+
+#666  [Biblical or spiritual idiom]
+   "FOLLOW THE LIGHT."
+   reason: no religious referent in the sentence
+
+#667  [Biblical or spiritual idiom]
+   "FOLLOW THE LIGHT."
+   reason: no religious referent in the sentence
+
+#668  [Faith / belief]
+   "HAVE FAITH."
+   reason: borrowed vocabulary, not about religion
+
+#677  [Faith / belief]
+   "a world where anyone, anywhere may express his or her beliefs, no matter how singular, without fear of being coerced into silence or conformity."
+   reason: borrowed vocabulary, not about religion
+
+#690  [Faith / belief]
+   "Have faith."
+   reason: borrowed vocabulary, not about religion
+
+#786  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening."
+   reason: borrowed vocabulary, not about religion
+
+#855  [Soul / spirit / heaven / hell]
+   "HELL on earth - HRC victory."
+   reason: borrowed vocabulary, not about religion
+
+#1052  [Faith / belief]
+   "Your trust & faith in us is enough."
+   reason: borrowed vocabulary, not about religion
+
+#1085  [Faith / belief]
+   "Have faith."
+   reason: borrowed vocabulary, not about religion
+
+#1086  [Faith / belief]
+   "Have faith."
+   reason: borrowed vocabulary, not about religion
+
+#1106  [Faith / belief]
+   "Have faith."
+   reason: borrowed vocabulary, not about religion
+
+#1114  [Great Awakening / ascension; Awake / awakening language]
+   "This provides the validation necessary for the public to believe The Great Awakening is legit."
+   reason: no religious referent in the sentence
+
+#1245  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening."
+   reason: borrowed vocabulary, not about religion
+
+#1266  [Faith / belief]
+   "Have faith."
+   reason: borrowed vocabulary, not about religion
+
+#1267  [Faith / belief]
+   "Have faith."
+   reason: borrowed vocabulary, not about religion
+
+#1269  [Great Awakening / ascension; Awake / awakening language]
+   "THE GREAT AWAKENING."
+   reason: borrowed vocabulary, not about religion
+
+#1296  [Great Awakening / ascension; Awake / awakening language]
+   "Personal thank you to the BO, Bakers, and Autists/Anons who continually dedicate their time and energy to the GREAT AWAKENING."
+   reason: no religious referent in the sentence
+
+#1297  [Great Awakening / ascension; Awake / awakening language]
+   "Personal thank you to the BO, Bakers, and Autists/Anons who continually dedicate their time and energy to the GREAT AWAKENING."
+   reason: no religious referent in the sentence
+
+#1390  [Great Awakening / ascension; Awake / awakening language]
+   "thank you for your service to the great awakening baker!"
+   reason: no religious referent in the sentence
+
+#1483  [Soul / spirit / heaven / hell]
+   "What the hell is Trump waiting for?!"
+   reason: borrowed vocabulary, not about religion
+
+#1488  [Great Awakening / ascension; Awake / awakening language]
+   "Q, if you confirm proofs, then those on twatter, lurkers, and even those with little to no knowledge of the GREAT AWAKENING will pay attention moar and add validity to the proofs."
+   reason: no religious referent in the sentence
+
+#1488  [Great Awakening / ascension; Awake / awakening language]
+   "THANK YOU FOR YOUR SERVICE TO THE GREAT AWAKENING"
+   reason: no religious referent in the sentence
+
+#1489  [Great Awakening / ascension; Awake / awakening language]
+   "GREAT AWAKENING."
+   reason: borrowed vocabulary, not about religion
+
+#1500  [Soul / spirit / heaven / hell; Spirit language used idiomatically]
+   "POTUS in good spirits today."
+   reason: borrowed vocabulary, not about religion
+
+#1501  [Soul / spirit / heaven / hell; Spirit language used idiomatically]
+   "POTUS in good spirits today."
+   reason: borrowed vocabulary, not about religion
+
+#1520  [Faith / belief]
+   "Have faith."
+   reason: borrowed vocabulary, not about religion
+
+#1521  [Soul / spirit / heaven / hell]
+   "Monday docs should start flowing w/ plan by Wed morning or hell to pay ('not going to be pretty') ~ we can hold in contempt ~ we can impeach ~thinks we r getting close 2 there!"
+   reason: borrowed vocabulary, not about religion
+
+#1521  [Biblical or spiritual idiom]
+   "DO NOT FEAR ~ STAND UNITED and STRONG!"
+   reason: no religious referent in the sentence
+
+#1626  [Faith / belief]
+   "These people are corrupt beyond belief."
+   reason: borrowed vocabulary, not about religion
+
+#1627  [Soul / spirit / heaven / hell]
+   "Fucking hell…"
+   reason: borrowed vocabulary, not about religion
+
+#1644  [Biblical or spiritual idiom]
+   "Do not be afraid."
+   reason: no religious referent in the sentence
+
+#1698  [Faith / belief; Faith language used in a civic oath]
+   "I [name] do solemnly swear (or affirm) that I will support and defend the Constitution of the United States against all enemies, foreign and domestic; that I will bear true faith and allegiance to the same; that I take this obligation freely, without any mental reservation or purpose of evasion; and that I will well and faithfully discharge the duties of the office on which I am about to enter."
+   reason: no religious referent in the sentence
+
+#1699  [Faith / belief; Faith language used in a civic oath]
+   "I [name] do solemnly swear (or affirm) that I will support and defend the Constitution of the United States against all enemies, foreign and domestic; that I will bear true faith and allegiance to the same; that I take this obligation freely, without any mental reservation or purpose of evasion; and that I will well and faithfully discharge the duties of the office on which I am about to enter."
+   reason: no religious referent in the sentence
+
+#1786  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening."
+   reason: borrowed vocabulary, not about religion
+
+#1792  [Biblical or spiritual idiom]
+   "Fear not."
+   reason: no religious referent in the sentence
+
+#1887  [Faith / belief]
+   "Why was the Hussein admin breaking down admin by faith?"
+   reason: no religious referent in the sentence
+
+#1932  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening."
+   reason: borrowed vocabulary, not about religion
+
+#1950  [Holy / sacred metaphor]
+   "Sanctuary against criminal prosecution?"
+   reason: no religious referent in the sentence
+
+#2032  [Faith / belief]
+   ": a metaphorical description of a situation in which beliefs are amplified or reinforced by communication and repetition inside a closed system?"
+   reason: borrowed vocabulary, not about religion
+
+#2049  [Faith / belief]
+   "Have faith."
+   reason: borrowed vocabulary, not about religion
+
+#2050  [Faith / belief]
+   "Have faith."
+   reason: borrowed vocabulary, not about religion
+
+#2148  [Grace / mercy / sin / righteousness]
+   "WE WILL NEVER FORGIVE!"
+   reason: no religious referent in the sentence
+
+#2150  [Grace / mercy / sin / righteousness]
+   "We Will Never FORGIVE!"
+   reason: no religious referent in the sentence
+
+#2292  [Faith / belief]
+   "Have faith, Patriots."
+   reason: no religious referent in the sentence
+
+#2305  [Faith / belief]
+   "Perhaps more than any other, it’s his philosophy — which melded countercultural utopianism, a rancher’s skepticism toward government and a futurist’s faith in the virtual world — that shaped the industry."
+   reason: borrowed vocabulary, not about religion
+
+#2328  [Holy / sacred metaphor]
+   "HOLY FUCK IT KEEPS COMING"
+   reason: no religious referent in the sentence
+
+#2541  [Great Awakening / ascension; Awake / awakening language]
+   "THE GREAT AWAKENING."
+   reason: borrowed vocabulary, not about religion
+
+#2556  [Great Awakening / ascension; Awake / awakening language]
+   "THE GREAT AWAKENING."
+   reason: borrowed vocabulary, not about religion
+
+#2559  [Great Awakening / ascension; Awake / awakening language]
+   "THE GREAT AWAKENING."
+   reason: borrowed vocabulary, not about religion
+
+#2578  [Faith / belief]
+   "Keep the faith, Patriot."
+   reason: borrowed vocabulary, not about religion
+
+#2581  [Faith / belief]
+   "Keep the faith, Patriot."
+   reason: borrowed vocabulary, not about religion
+
+#2651  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening."
+   reason: borrowed vocabulary, not about religion
+
+#2682  [Faith / belief]
+   "How do you 'restore' the image (public faith) of our most prestigious ‘law enforcement’ institutions?"
+   reason: borrowed vocabulary, not about religion
+
+#2722  [Grace / mercy / sin / righteousness]
+   "No mercy."
+   reason: no religious referent in the sentence
+
+#2784  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening."
+   reason: borrowed vocabulary, not about religion
+
+#2856  [Savior / saint / angel / miracle]
+   "New talking points being pushed backing away from Mueller as the savior re: excuse A, excuse B, excuse C?"
+   reason: no religious referent in the sentence
+
+#2856  [Great Awakening / ascension; Awake / awakening language]
+   "THE GREAT AWAKENING."
+   reason: borrowed vocabulary, not about religion
+
+#2954  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening."
+   reason: borrowed vocabulary, not about religion
+
+#2971  [Faith / belief]
+   "the available body of facts or information indicating whether a belief or proposition is true or valid."
+   reason: borrowed vocabulary, not about religion
+
+#2982  [Great Awakening / ascension; Awake / awakening language]
+   "THE GREAT AWAKENING."
+   reason: borrowed vocabulary, not about religion
+
+#3012  [Great Awakening / ascension; Awake / awakening language]
+   "THE GREAT AWAKENING!"
+   reason: borrowed vocabulary, not about religion
+
+#3017  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening."
+   reason: borrowed vocabulary, not about religion
+
+#3018  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening."
+   reason: borrowed vocabulary, not about religion
+
+#3038  [Faith / belief]
+   ">Decide for yourself (be true in your own beliefs)."
+   reason: borrowed vocabulary, not about religion
+
+#3038  [Faith / belief]
+   ">Decide for yourself (be strong in defending your beliefs)."
+   reason: borrowed vocabulary, not about religion
+
+#3038  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening ('Freedom of Thought’), was designed and created not only as a backchannel to the public (away from the longstanding ‘mind’ control of the corrupt & heavily biased media) to endure future events through transparency and regeneration of individual thought (breaking the chains of ‘group-think’), but, more importantly, aid in the construction of a vehicle (a ‘ship’) that provides the scattered (‘free thinkers’) with a ‘starter’ new social-networking platform which allows for freedom of thought, expression, and patriotism or national pride (the feeling of love, devotion and sense of attachment to a homeland and alliance with other citizens who share the same sentiment)."
+   reason: no religious referent in the sentence
+
+#3038  [Faith / belief]
+   "Trust and put faith in yourself."
+   reason: borrowed vocabulary, not about religion
+
+#3178  [Great Awakening / ascension; Awake / awakening language]
+   "THE GREAT AWAKENING."
+   reason: borrowed vocabulary, not about religion
+
+#3416  [Soul / spirit / heaven / hell]
+   "( like when your trying to post something important fast and you get stuck in captcha hell for a minute or 2) As BO you should discuss these decisions with anons , bakers and BV'S before you ( one person) decides to change the way the bread has been since November 2017."
+   reason: borrowed vocabulary, not about religion
+
+#3430  [Great Awakening / ascension; Awake / awakening language]
+   "THE GREAT AWAKENING."
+   reason: borrowed vocabulary, not about religion
+
+#3447  [Great Awakening / ascension; Awake / awakening language]
+   "THE GREAT AWAKENING."
+   reason: borrowed vocabulary, not about religion
+
+#3476  [Belief / spiritual connotation]
+   "Decide for yourself (be true in your own beliefs)."
+   reason: borrowed vocabulary, not about religion
+
+#3476  [Belief / spiritual connotation]
+   "Decide for yourself (be strong in defending your beliefs)."
+   reason: borrowed vocabulary, not about religion
+
+#3476  [Great Awakening / historically religious phrase]
+   "The Great Awakening (“Freedom of Thought”), was designed and created not only as a backchannel to the public (away from the longstanding “mind” control of the corrupt & heavily biased media) to endure future events through transparency and regeneration of individual thought (breaking the chains of “group-think”), but, more importantly, aid in the construction of a vehicle (a “ship”) that provides the scattered (“free-thinkers”) with a “starter” new social-networking platform which allows for freedom of thought, expression, and patriotism or national pride."
+   reason: no religious referent in the sentence
+
+#3476  [Faith / spiritual connotation]
+   "Trust and put faith in yourself."
+   reason: borrowed vocabulary, not about religion
+
+#3535  [Great Awakening / ascension; Awake / awakening language]
+   "THE GREAT AWAKENING."
+   reason: borrowed vocabulary, not about religion
+
+#3588  [Great Awakening / ascension; Awake / awakening language]
+   "THE GREAT AWAKENING"
+   reason: borrowed vocabulary, not about religion
+
+#3607  [Great Awakening / ascension; Awake / awakening language]
+   "THE GREAT AWAKENING"
+   reason: borrowed vocabulary, not about religion
+
+#3616  [Great Awakening / ascension; Awake / awakening language]
+   "THE GREAT AWAKENING."
+   reason: borrowed vocabulary, not about religion
+
+#3622  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening."
+   reason: borrowed vocabulary, not about religion
+
+#3624  [Great Awakening / ascension; Awake / awakening language]
+   "THE GREAT AWAKENING."
+   reason: borrowed vocabulary, not about religion
+
+#3662  [Great Awakening / ascension; Awake / awakening language]
+   "THE GREAT AWAKENING."
+   reason: borrowed vocabulary, not about religion
+
+#3681  [Great Awakening / ascension; Awake / awakening language]
+   "THE GREAT AWAKENING."
+   reason: borrowed vocabulary, not about religion
+
+#3762  [Faith / belief]
+   "The only way to restore faith is through transparency and accountability."
+   reason: borrowed vocabulary, not about religion
+
+#3763  [Faith / belief]
+   "The only way to restore faith is through transparency and accountability."
+   reason: borrowed vocabulary, not about religion
+
+#3775  [Great Awakening / ascension; Awake / awakening language]
+   "THE GREAT AWAKENING."
+   reason: borrowed vocabulary, not about religion
+
+#3792  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening!"
+   reason: borrowed vocabulary, not about religion
+
+#3815  [Great Awakening / ascension; Awake / awakening language]
+   "THE GREAT AWAKENING."
+   reason: borrowed vocabulary, not about religion
+
+#3889  [Faith / belief]
+   "Have faith and trust in yourself."
+   reason: borrowed vocabulary, not about religion
+
+#3893  [Great Awakening / ascension; Awake / awakening language]
+   "Per MSM [Fake News]: (person in the basement - LARP) who simply asks(ed) questions on a forum [imageboard] that generates(ed) continued [massive (thousands)] MSM attacks & WW movement [Great Awakening]?"
+   reason: no religious referent in the sentence
+
+#3895  [Biblical or spiritual idiom]
+   "Do not fear."
+   reason: no religious referent in the sentence
+
+#3906  [Faith / belief]
+   ">Decide for yourself (be true in your own beliefs)."
+   reason: borrowed vocabulary, not about religion
+
+#3906  [Faith / belief]
+   ">Decide for yourself (be strong in defending your beliefs)."
+   reason: borrowed vocabulary, not about religion
+
+#3906  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening ('Freedom of Thought’), was designed and created not only as a backchannel to the public (away from the longstanding ‘mind’ control of the corrupt & heavily biased media) to endure future events through transparency and regeneration of individual thought (breaking the chains of ‘group-think’), but, more importantly, aid in the construction of a vehicle (a ‘ship’) that provides the scattered (‘free thinkers’) with a ‘starter’ new social-networking platform which allows for freedom of thought, expression, and patriotism or national pride (the feeling of love, devotion and sense of attachment to a homeland and alliance with other citizens who share the same sentiment)."
+   reason: no religious referent in the sentence
+
+#3906  [Faith / belief]
+   "Trust and put faith in yourself."
+   reason: borrowed vocabulary, not about religion
+
+#3931  [Faith / belief]
+   "The credibility of our institutions [Constitutional Law that governs our Great Land [Our Republic]], and our ability to regain the trust and faith of the American people, all depends on our ability to restore [EQUAL JUSTICE UNDER THE LAW] by prosecuting those responsible [Blind-Justice]."
+   reason: borrowed vocabulary, not about religion
+
+#4177  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening."
+   reason: borrowed vocabulary, not about religion
+
+#4211  [Soul / spirit / heaven / hell]
+   "We are ready to unleash hell."
+   reason: borrowed vocabulary, not about religion
+
+#4316  [Biblical or spiritual idiom]
+   "Fear not, all will be well right after the election."
+   reason: no religious referent in the sentence
+
+#4320  [Biblical or spiritual idiom]
+   ""Fear not, all will be well right after the election.""
+   reason: no religious referent in the sentence
+
+#4326  [Soul / spirit / heaven / hell]
+   "we're in for one hell of a show"
+   reason: borrowed vocabulary, not about religion
+
+#4419  [Faith / belief]
+   "Have faith."
+   reason: borrowed vocabulary, not about religion
+
+#4427  [Faith / belief]
+   "Have faith in Humanity."
+   reason: borrowed vocabulary, not about religion
+
+#4429  [Faith / belief]
+   "Have faith in Humanity."
+   reason: borrowed vocabulary, not about religion
+
+#4429  [Faith / belief]
+   "Have faith in Yourself."
+   reason: borrowed vocabulary, not about religion
+
+#4429  [Great Awakening / ascension; Awake / awakening language]
+   "The Great Awakening."
+   reason: borrowed vocabulary, not about religion
+
+#4460  [Faith / belief]
+   "Have faith in Humanity."
+   reason: borrowed vocabulary, not about religion
+
+#4468  [Serpent / beast]
+   "The Daily "Beast.""
+   reason: no religious referent in the sentence
+
+#4476  [Faith / belief]
+   "“Germans began to lose faith in democracy and looked to extreme parties on the both the Left (the communists) and the Right (the Nazis) for quick and simple solutions.”"
+   reason: borrowed vocabulary, not about religion
+
+#4491  [Faith / belief]
+   "Have faith in Humanity."
+   reason: borrowed vocabulary, not about religion
+
+#4491  [Faith / belief]
+   "Have faith in yourself."
+   reason: borrowed vocabulary, not about religion
+
+#4502  [Faith / belief]
+   "The doubters will soon be believers."
+   reason: borrowed vocabulary, not about religion
+
+#4541  [Grace / mercy / sin / righteousness]
+   "In an apparently inexplicable way, the good are held hostage by the wicked and by those who help them either out of self-interest or fearfulness."
+   reason: no religious referent in the sentence
+
+#4544  [Soul / spirit / heaven / hell]
+   "THESE are the times that try men's souls."
+   reason: no religious referent in the sentence
+
+#4544  [Soul / spirit / heaven / hell]
+   "Tyranny, like hell, is not easily conquered; yet we have this consolation with us, that the harder the conflict, the more glorious the triumph."
+   reason: borrowed vocabulary, not about religion
+
+#4550  [Biblical or spiritual idiom]
+   "Fear not."
+   reason: no religious referent in the sentence
+
+#4550  [Faith / belief]
+   "Have faith in Humanity."
+   reason: borrowed vocabulary, not about religion
+
+#4550  [Faith / belief]
+   "Have faith in yourself."
+   reason: borrowed vocabulary, not about religion
+
+#4550  [Biblical or spiritual idiom]
+   "Let light guide you."
+   reason: no religious referent in the sentence
+
+#4566  [Faith / belief]
+   "Have faith in Humanity."
+   reason: borrowed vocabulary, not about religion
+
+#4580  [Faith / belief]
+   "Have faith in Humanity."
+   reason: borrowed vocabulary, not about religion
+
+#4588  [Faith / belief]
+   "Have faith in Humanity."
+   reason: borrowed vocabulary, not about religion
+
+#4593  [Faith / belief]
+   "Have faith and trust in yourself."
+   reason: borrowed vocabulary, not about religion
+
+#4620  [Faith / belief]
+   "Only those who could[can] be controlled [via blackmail or like-beliefs] were installed in critical leadership positions across all political and non-political Control and Command Positions [CCP]."
+   reason: borrowed vocabulary, not about religion
+
+#4627  [Faith / belief]
+   "Have Faith in Humanity."
+   reason: borrowed vocabulary, not about religion
+
+#4627  [Faith / belief]
+   "Have Faith in Yourself."
+   reason: borrowed vocabulary, not about religion
+
+#4635  [Faith / belief]
+   "Did the belief carry-on [re-deployed]?"
+   reason: borrowed vocabulary, not about religion
+
+#4636  [Faith / belief]
+   "Keep faith in Humanity."
+   reason: borrowed vocabulary, not about religion
+
+#4636  [Faith / belief]
+   "Keep faith in Yourself."
+   reason: borrowed vocabulary, not about religion
+
+#4648  [Faith / belief]
+   "Have faith in Humanity."
+   reason: borrowed vocabulary, not about religion
+
+#4648  [Faith / belief]
+   "Have faith in Yourself."
+   reason: borrowed vocabulary, not about religion
+
+#4665  [Soul / spirit / heaven / hell]
+   "“Tyranny, like hell, is not easily conquered; yet we have this consolation with us, that the harder the conflict, the more glorious the triumph.” ?"
+   reason: borrowed vocabulary, not about religion
+
+#4685  [Faith / belief]
+   "to often repeat an idea or belief to someone in order to persuade them to accept it Next: grab 'rage & emotion' [organized platform(s)] by indoctrinated and project as 'majority' [zoom and enhance _narrow focus as mainstream]."
+   reason: borrowed vocabulary, not about religion
+
+#4742  [Faith / belief]
+   "'Sex trafficking' [safeguarding women & children] topic(s) that unite all political factions against a common enemy [faith in Humanity]?"
+   reason: borrowed vocabulary, not about religion
+
+#4746  [Faith / belief]
+   "Have faith in Humanity."
+   reason: borrowed vocabulary, not about religion
+
+#4760  [Faith / belief]
+   "Have faith in your research."
+   reason: borrowed vocabulary, not about religion
+
+#4794  [Soul / spirit / heaven / hell]
+   "Tyranny, like hell, is not easily conquered; yet we have this consolation with us, that the harder the conflict, the more glorious the triumph."
+   reason: borrowed vocabulary, not about religion
+
+#4818  [Faith / belief]
+   "Threats, bribes & blackmail or sharing of 'like-beliefs'?"
+   reason: borrowed vocabulary, not about religion
+
+#4915  [Faith / belief]
+   "Have faith in Humanity."
+   reason: borrowed vocabulary, not about religion
+
+#4941  [Quoted/embedded religious letter]
+   "Around you are gathered with faith and courage those who consider you the final garrison against the world dictatorship."
+   reason: no religious referent in the sentence
+
+--- RED (349) ---
+#4  [Evil / moral language]
+   "This was a hostile takeover from an evil corrupt network of players (not just Democrats)."
+   reason: no religious referent in the sentence
+
+#5  [Evil / moral language]
+   "Also many are thinking from one point of view, US only, this evil is embedded globally."
+   reason: no religious referent in the sentence
+
+#6  [Evil / moral language]
+   "This was a hostile takeover from an evil corrupt network of players (not just Democrats)."
+   reason: no religious referent in the sentence
+
+#6  [Evil / moral language]
+   "These people are evil."
+   reason: no religious referent in the sentence
+
+#10  [Evil / moral language]
+   "Again, good people were forced into bed with this evil under personal and family threats."
+   reason: no religious referent in the sentence
+
+#10  [Evil / moral language]
+   "Could you live with yourself helping to cover up such evil despicable acts if given a safe way out?"
+   reason: no religious referent in the sentence
+
+#15  [Evil / moral language; Moral purity / corruption metaphor]
+   "A deep cleaning is occurring and the prevention and defense of pure evil is occurring on a daily basis."
+   reason: no religious referent in the sentence
+
+#34  [Evil / moral language; Light / darkness metaphor]
+   "My fellow Americans, over the course of the next several days you will undoubtedly realize that we are taking back our great country (the land of the free) from the evil tyrants that wish to do us harm and destroy the last remaining refuge of shining light."
+   reason: no religious referent in the sentence
+
+#34  [Evil / moral language]
+   "However, the atmosphere within the country will unfortunately be divided as so many have fallen for the corrupt and evil narrative that has long been broadcast."
+   reason: no religious referent in the sentence
+
+#37  [Evil / moral language; Sacrifice language]
+   "Let these coming days be remembered in our history as the time we fought to recapture the republic from those evil bad actors who for so long have sacrificed the good people of this land for their own personal gain."
+   reason: no religious referent in the sentence
+
+#51  [Evil / moral language]
+   "Rest assured POTUS is backed by the absolute finest people alive who are all dedicated to the eradication evil and corruption from the US/World."
+   reason: no religious referent in the sentence
+
+#91  [Evil / moral language]
+   "These people are evil."
+   reason: no religious referent in the sentence
+
+#97  [Good versus evil; Evil / moral language]
+   "Good v. Evil."
+   reason: no religious referent in the sentence
+
+#100  [Evil / moral language]
+   "Evil."
+   reason: no religious referent in the sentence
+
+#134  [Light / darkness metaphor]
+   "Dark to LIGHT."
+   reason: no religious referent in the sentence
+
+#142  [Shepherd / flock / sheep / wolves]
+   "What are sheep?"
+   reason: no religious referent in the sentence
+
+#153  [Evil / moral language]
+   "Would the chances of defeating evil grow less and less with each passing year?"
+   reason: no religious referent in the sentence
+
+#154  [Awake / awakening language]
+   "We, the people, are who they fear will one day awake."
+   reason: no religious referent in the sentence
+
+#171  [Evil / moral language]
+   "Good will always defeat evil."
+   reason: no religious referent in the sentence
+
+#172  [Evil / moral language]
+   "Good will always defeat evil."
+   reason: no religious referent in the sentence
+
+#173  [Evil / moral language]
+   "Good will always defeat evil."
+   reason: no religious referent in the sentence
+
+#184  [Shepherd / flock / sheep / wolves]
+   "You are sheep to them."
+   reason: no religious referent in the sentence
+
+#192  [Evil / moral language]
+   "Was this to prevent evil from entering?"
+   reason: no religious referent in the sentence
+
+#245  [Evil / moral language]
+   "Hussein is evil and a real loser."
+   reason: no religious referent in the sentence
+
+#307  [Awake / awakening language]
+   "We, the people, are who they fear will one day awake."
+   reason: no religious referent in the sentence
+
+#316  [Sacrifice language]
+   "On behalf of an entire Nation, THANK YOU for your sacrifice and service!"
+   reason: no religious referent in the sentence
+
+#325  [Evil / moral language]
+   "EVIL."
+   reason: no religious referent in the sentence
+
+#350  [Evil / moral language; Moral purity / corruption metaphor]
+   "This works given most of what they engage in is pure evil and simply unbelievable (hard to swallow)."
+   reason: no religious referent in the sentence
+
+#354  [Evil / moral language; Moral purity / corruption metaphor]
+   "This works given most of what they engage in is pure evil and simply unbelievable (hard to swallow)."
+   reason: no religious referent in the sentence
+
+#374  [Awake / awakening language]
+   "POTUS awake."
+   reason: no religious referent in the sentence
+
+#389  [Evil / moral language]
+   "HEIDI FLEISS (EVIL/CLOWN/BLACKMAIL)."
+   reason: no religious referent in the sentence
+
+#416  [Evil / moral language]
+   "You have no idea how sick and evil these people are."
+   reason: no religious referent in the sentence
+
+#437  [Evil / moral language]
+   "EVIL."
+   reason: no religious referent in the sentence
+
+#438  [Evil / moral language]
+   "EVIL."
+   reason: no religious referent in the sentence
+
+#451  [Evil / moral language]
+   "YOU EVIL SICK BASTARDS ARE STUPID!!!"
+   reason: no religious referent in the sentence
+
+#520  [Evil / moral language]
+   "CORRUPTION and EVIL DEEP WITHIN."
+   reason: no religious referent in the sentence
+
+#525  [Awake / awakening language]
+   "Public awakening."
+   reason: no religious referent in the sentence
+
+#533  [Evil / moral language]
+   "WE, THE PEOPLE, ARE TAKING BACK OUR COUNTRY (& WORLD) FROM THE EVIL LOSERS WHO WOULD DO US HARM (ALL FOR A BUCK)."
+   reason: no religious referent in the sentence
+
+#537  [Evil / moral language]
+   "EVIL everywhere."
+   reason: no religious referent in the sentence
+
+#537  [Evil / moral language]
+   "SC: AXIS OF EVIL can & will return FIRE [is]."
+   reason: no religious referent in the sentence
+
+#586  [Sacrifice language]
+   "We haven’t started the drops re: human trafficking / sacrifices [yet][worst]."
+   reason: no religious referent in the sentence
+
+#586  [Evil / moral language; Moral purity / corruption metaphor]
+   "Nobody can possibly imagine the pure evil and corruption out there."
+   reason: no religious referent in the sentence
+
+#626  [Awake / awakening language]
+   "Public to awaken [mass-start]."
+   reason: no religious referent in the sentence
+
+#632  [Awake / awakening language]
+   "Conspiracy PUSH/LABEL [awake]?"
+   reason: no religious referent in the sentence
+
+#632  [Shepherd / flock / sheep / wolves]
+   "SHEEP."
+   reason: no religious referent in the sentence
+
+#645  [Shepherd / flock / sheep / wolves]
+   "JC Tweet Translation: Special Agent Andrew McCabe stood tall over the last 8 months [DO NOT TALK], when small people [SHEEP] were trying to tear down an institution we all depend on [COVER]."
+   reason: no religious referent in the sentence
+
+#666  [Evil / moral language]
+   "These people are EVIL."
+   reason: no religious referent in the sentence
+
+#666  [Shepherd / flock / sheep / wolves]
+   "Still don't believe you are SHEEP to them?"
+   reason: no religious referent in the sentence
+
+#667  [Evil / moral language]
+   "These people are EVIL."
+   reason: no religious referent in the sentence
+
+#667  [Shepherd / flock / sheep / wolves]
+   "Still don't believe you are SHEEP to them?"
+   reason: no religious referent in the sentence
+
+#677  [Evil / moral language]
+   "Barlow knew that new technology could create and empower evil as much as it could create and empower good."
+   reason: no religious referent in the sentence
+
+#694  [Shepherd / flock / sheep / wolves]
+   "Sheep."
+   reason: no religious referent in the sentence
+
+#703  [Sacrifice language]
+   "We will forever remember your sacrifice."
+   reason: no religious referent in the sentence
+
+#703  [Sacrifice language]
+   "May you look down from above and continue to guide us as we ring the bell of FREEDOM and destroy those who wish to sacrifice our children, our way of life, and our world."
+   reason: no religious referent in the sentence
+
+#748  [Shepherd / flock / sheep / wolves]
+   "Think sheep."
+   reason: no religious referent in the sentence
+
+#749  [Shepherd / flock / sheep / wolves]
+   "controlling the crops, controls the people (sheep)"
+   reason: no religious referent in the sentence
+
+#759  [Evil / moral language]
+   "Do you believe in EVIL?"
+   reason: no religious referent in the sentence
+
+#813  [Shepherd / flock / sheep / wolves]
+   "SHEEP."
+   reason: no religious referent in the sentence
+
+#833  [Shepherd / flock / sheep / wolves]
+   "You are SHEEP to them."
+   reason: no religious referent in the sentence
+
+#833  [Sacrifice language]
+   "Pawns to be sacrificed."
+   reason: no religious referent in the sentence
+
+#854  [Light / darkness metaphor]
+   "Dark to LIGHT."
+   reason: no religious referent in the sentence
+
+#854  [Evil / moral language]
+   "EVIL surrounds us."
+   reason: no religious referent in the sentence
+
+#855  [Evil / moral language; Moral purity / corruption metaphor]
+   "Pure EVIL."
+   reason: no religious referent in the sentence
+
+#909  [Evil / moral language]
+   "EVIL."
+   reason: no religious referent in the sentence
+
+#923  [Shepherd / flock / sheep / wolves]
+   "They thought the SHEEP would follow the STARS."
+   reason: no religious referent in the sentence
+
+#924  [Awake / awakening language]
+   "Their weapon against the awakening."
+   reason: no religious referent in the sentence
+
+#924  [Shepherd / flock / sheep / wolves]
+   "They thought the SHEEP would follow the STARS."
+   reason: no religious referent in the sentence
+
+#925  [Evil / moral language]
+   "EVIL is everywhere."
+   reason: no religious referent in the sentence
+
+#925  [Good versus evil; Evil / moral language]
+   "Good vs Evil."
+   reason: no religious referent in the sentence
+
+#953  [Shepherd / flock / sheep / wolves]
+   "They openly call you SHEEP/CATTLE."
+   reason: no religious referent in the sentence
+
+#953  [Awake / awakening language]
+   "PUBLIC AWAKENING."
+   reason: no religious referent in the sentence
+
+#992  [Awake / awakening language]
+   "AWAKENING."
+   reason: no religious referent in the sentence
+
+#993  [Awake / awakening language]
+   "AWAKENING."
+   reason: no religious referent in the sentence
+
+#997  [Light / darkness metaphor]
+   "Those who backed him will be pushed into the LIGHT>"
+   reason: no religious referent in the sentence
+
+#997  [Light / darkness metaphor]
+   "Dark to LIGHT."
+   reason: no religious referent in the sentence
+
+#1001  [Sacrifice language]
+   "Sacrifice."
+   reason: no religious referent in the sentence
+
+#1001  [Evil / moral language; Moral purity / corruption metaphor]
+   "Pure EVIL."
+   reason: no religious referent in the sentence
+
+#1010  [Shepherd / flock / sheep / wolves]
+   "SHEEP."
+   reason: no religious referent in the sentence
+
+#1011  [Awake / awakening language]
+   "ARE YOU AWAKE?"
+   reason: no religious referent in the sentence
+
+#1011  [Shepherd / flock / sheep / wolves]
+   "SHEEP."
+   reason: no religious referent in the sentence
+
+#1012  [Sacrifice language]
+   "Their sacrifice will never be forgotten."
+   reason: no religious referent in the sentence
+
+#1012  [Awake / awakening language]
+   "ARE YOU AWAKE?"
+   reason: no religious referent in the sentence
+
+#1013  [Sacrifice language]
+   "Their sacrifice will never be forgotten."
+   reason: no religious referent in the sentence
+
+#1049  [Awake / awakening language]
+   "Are you awake?"
+   reason: no religious referent in the sentence
+
+#1069  [Awake / awakening language]
+   "Those awake can see."
+   reason: no religious referent in the sentence
+
+#1085  [Awake / awakening language]
+   "Those awake can finally SEE for themselves."
+   reason: no religious referent in the sentence
+
+#1086  [Awake / awakening language]
+   "Those awake can finally SEE for themselves."
+   reason: no religious referent in the sentence
+
+#1174  [Awake / awakening language]
+   "Attempt to prevent drops / awakening."
+   reason: no religious referent in the sentence
+
+#1175  [Awake / awakening language]
+   "Attempt to prevent drops / awakening."
+   reason: no religious referent in the sentence
+
+#1176  [Good versus evil; Evil / moral language]
+   "Good vs Evil is real."
+   reason: no religious referent in the sentence
+
+#1179  [Awake / awakening language]
+   "Are you awake?"
+   reason: no religious referent in the sentence
+
+#1224  [Awake / awakening language]
+   "Coordinated - the "Awakening.""
+   reason: no religious referent in the sentence
+
+#1233  [Awake / awakening language]
+   "Lost now (awakening)."
+   reason: no religious referent in the sentence
+
+#1238  [Evil / moral language]
+   "EVIL & CORRUPTION."
+   reason: no religious referent in the sentence
+
+#1242  [Awake / awakening language]
+   "The world is awakening."
+   reason: no religious referent in the sentence
+
+#1243  [Awake / awakening language]
+   "The world is awakening."
+   reason: no religious referent in the sentence
+
+#1259  [Evil / moral language]
+   "This is about taking back our FREEDOM and saving our children/people from the EVIL that has plagued our country/world for so long."
+   reason: no religious referent in the sentence
+
+#1261  [Awake / awakening language]
+   "Stay awake."
+   reason: no religious referent in the sentence
+
+#1266  [Evil / moral language]
+   "Acts so sick & evil conspiracy push / fake reality almost always wins."
+   reason: no religious referent in the sentence
+
+#1267  [Evil / moral language]
+   "Acts so sick & evil conspiracy push / fake reality almost always wins."
+   reason: no religious referent in the sentence
+
+#1269  [Awake / awakening language]
+   "Are you awake?"
+   reason: no religious referent in the sentence
+
+#1269  [Evil / moral language]
+   "Do you SEE the EVIL?"
+   reason: no religious referent in the sentence
+
+#1269  [Shepherd / flock / sheep / wolves]
+   "Are you a SHEEP?"
+   reason: no religious referent in the sentence
+
+#1272  [Sacrifice language]
+   "We haven’t started the drops re: human trafficking / sacrifices [yet][worst]."
+   reason: no religious referent in the sentence
+
+#1272  [Evil / moral language]
+   "Nobody can possibly imagine the pure evil and corruption out there."
+   reason: no religious referent in the sentence
+
+#1295  [Sacrifice language]
+   "Patriots make sacrifices."
+   reason: no religious referent in the sentence
+
+#1295  [Sacrifice language]
+   "Some, the ultimate sacrifice."
+   reason: no religious referent in the sentence
+
+#1296  [Sacrifice language]
+   "Patriots make sacrifices."
+   reason: no religious referent in the sentence
+
+#1296  [Sacrifice language]
+   "Some, the ultimate sacrifice."
+   reason: no religious referent in the sentence
+
+#1320  [Evil / moral language]
+   "Today, EVIL lost control / leverage of Iran."
+   reason: no religious referent in the sentence
+
+#1343  [Light / darkness metaphor]
+   "Dark to LIGHT."
+   reason: no religious referent in the sentence
+
+#1369  [Evil / moral language]
+   "Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn that mankind are more disposed to suffer, while evils are sufferable than to right themselves by abolishing the forms to which they are accustomed."
+   reason: no religious referent in the sentence
+
+#1373  [Evil / moral language]
+   "EVIL everywhere."
+   reason: no religious referent in the sentence
+
+#1374  [Evil / moral language; Moral purity / corruption metaphor]
+   "I dont know how these people keep thrusting themselves into the spotlight when they are pure evil"
+   reason: no religious referent in the sentence
+
+#1399  [Awake / awakening language]
+   "There is no bigger threat to 'them' than the public being awake and thinking for themselves."
+   reason: no religious referent in the sentence
+
+#1400  [Awake / awakening language]
+   "There is no bigger threat to 'them' than the public being awake and thinking for themselves."
+   reason: no religious referent in the sentence
+
+#1440  [Light / darkness metaphor]
+   "DARK TO LIGHT."
+   reason: no religious referent in the sentence
+
+#1443  [Light / darkness metaphor]
+   "Dark to LIGHT."
+   reason: no religious referent in the sentence
+
+#1443  [Good versus evil; Evil / moral language]
+   "GOOD vs. EVIL."
+   reason: no religious referent in the sentence
+
+#1464  [Light / darkness metaphor]
+   "Dark to Light."
+   reason: no religious referent in the sentence
+
+#1468  [Light / darkness metaphor]
+   "Dark to Light 1:07"
+   reason: no religious referent in the sentence
+
+#1489  [Good versus evil; Evil / moral language]
+   "GOOD V EVIL."
+   reason: no religious referent in the sentence
+
+#1494  [Evil / moral language]
+   "THIS IS LITERALLY EVIL KNOCKING."
+   reason: no religious referent in the sentence
+
+#1495  [Evil / moral language]
+   "Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed."
+   reason: no religious referent in the sentence
+
+#1510  [Evil / moral language]
+   "There is so much evil and corruption it’s horrifying."
+   reason: no religious referent in the sentence
+
+#1512  [Awake / awakening language]
+   "Not all are awake."
+   reason: no religious referent in the sentence
+
+#1512  [Evil / moral language]
+   "There is so much evil and corruption it’s horrifying."
+   reason: no religious referent in the sentence
+
+#1538  [Awake / awakening language]
+   "CF Foundation [Nightmare Awake] [slush fund / children]."
+   reason: no religious referent in the sentence
+
+#1570  [Awake / awakening language]
+   "People awake."
+   reason: no religious referent in the sentence
+
+#1571  [Awake / awakening language]
+   "People awake."
+   reason: no religious referent in the sentence
+
+#1574  [Evil / moral language]
+   "They are evil."
+   reason: no religious referent in the sentence
+
+#1585  [Awake / awakening language]
+   "Public awakening."
+   reason: no religious referent in the sentence
+
+#1586  [Awake / awakening language]
+   "Public awakening."
+   reason: no religious referent in the sentence
+
+#1602  [Awake / awakening language]
+   "The AMERICAN PEOPLE are AWAKE."
+   reason: no religious referent in the sentence
+
+#1602  [Shepherd / flock / sheep / wolves]
+   "SHEEP NO MORE."
+   reason: no religious referent in the sentence
+
+#1603  [Evil / moral language]
+   "EVIL has no place here."
+   reason: no religious referent in the sentence
+
+#1603  [Awake / awakening language]
+   "The AMERICAN PEOPLE are AWAKE."
+   reason: no religious referent in the sentence
+
+#1603  [Shepherd / flock / sheep / wolves]
+   "SHEEP NO MORE."
+   reason: no religious referent in the sentence
+
+#1609  [Awake / awakening language]
+   "ARE YOU AWAKE?"
+   reason: no religious referent in the sentence
+
+#1610  [Awake / awakening language]
+   "ARE YOU AWAKE?"
+   reason: no religious referent in the sentence
+
+#1621  [Awake / awakening language]
+   "When did we arrive to start the awakening?"
+   reason: no religious referent in the sentence
+
+#1644  [Awake / awakening language]
+   "Public awakening."
+   reason: no religious referent in the sentence
+
+#1644  [Evil / moral language]
+   "How do you remove evil in power unless you reveal the ultimate truth?"
+   reason: no religious referent in the sentence
+
+#1644  [Shepherd / flock / sheep / wolves]
+   "Sheep no more."
+   reason: no religious referent in the sentence
+
+#1646  [Shepherd / flock / sheep / wolves]
+   "SHEEP FOLLOW BLINDLY."
+   reason: no religious referent in the sentence
+
+#1646  [Light / darkness metaphor]
+   "DARK TO LIGHT."
+   reason: no religious referent in the sentence
+
+#1646  [Evil / moral language]
+   "Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed."
+   reason: no religious referent in the sentence
+
+#1657  [Awake / awakening language]
+   "Nothing is more powerful than the public being awake and collectively free-thinking / talking / etc."
+   reason: no religious referent in the sentence
+
+#1682  [Awake / awakening language]
+   "Those awake see."
+   reason: no religious referent in the sentence
+
+#1688  [Light / darkness metaphor]
+   "Dark to LIGHT."
+   reason: no religious referent in the sentence
+
+#1700  [Evil / moral language]
+   "Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn that mankind are more disposed to suffer, while evils are sufferable than to right themselves by abolishing the forms to which they are accustomed."
+   reason: no religious referent in the sentence
+
+#1701  [Evil / moral language]
+   "Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn that mankind are more disposed to suffer, while evils are sufferable than to right themselves by abolishing the forms to which they are accustomed."
+   reason: no religious referent in the sentence
+
+#1712  [Evil / moral language]
+   "Your evil has no place in this world."
+   reason: no religious referent in the sentence
+
+#1735  [Evil / moral language]
+   "Evil has no boundaries."
+   reason: no religious referent in the sentence
+
+#1741  [Light / darkness metaphor]
+   "Dark to LIGHT."
+   reason: no religious referent in the sentence
+
+#1746  [Evil / moral language]
+   "HAVE YOU EVER WITNESSED A FORMER US PRESIDENT TRAVEL THE WORLD AHEAD/BEHIND OF THE CURRENT ATTEMPTING TO UNDO/THREATEN/HIDE/COVER UP PREV/CURRENT ILLEGAL/CORRUPT/EVIL EVENTS?"
+   reason: no religious referent in the sentence
+
+#1746  [Evil / moral language]
+   "THOSE WHO YOU TRUST THE MOST ARE THE MOST EVIL."
+   reason: no religious referent in the sentence
+
+#1749  [Good versus evil; Evil / moral language]
+   ">GOOD v EVIL"
+   reason: no religious referent in the sentence
+
+#1763  [Light / darkness metaphor]
+   "Dark to LIGHT."
+   reason: no religious referent in the sentence
+
+#1797  [Shepherd / flock / sheep / wolves]
+   "SHEEP NO MORE."
+   reason: no religious referent in the sentence
+
+#1831  [Evil / moral language]
+   "Surrounded by EVIL."
+   reason: no religious referent in the sentence
+
+#1832  [Evil / moral language; Moral purity / corruption metaphor]
+   "PURE EVIL."
+   reason: no religious referent in the sentence
+
+#1870  [Awake / awakening language]
+   "WELCOME TO THE AWAKENING."
+   reason: no religious referent in the sentence
+
+#1881  [Evil / moral language; Moral purity / corruption metaphor]
+   "PURE EVIL."
+   reason: no religious referent in the sentence
+
+#1887  [Light / darkness metaphor]
+   "Dark to LIGHT."
+   reason: no religious referent in the sentence
+
+#1895  [Evil / moral language]
+   "No that is no where near normal.. The Picture above her is Evil.."
+   reason: no religious referent in the sentence
+
+#1926  [Shepherd / flock / sheep / wolves]
+   "SHEEP NO MORE."
+   reason: no religious referent in the sentence
+
+#1936  [Shepherd / flock / sheep / wolves]
+   "SHEEP NO MORE."
+   reason: no religious referent in the sentence
+
+#1955  [Light / darkness metaphor]
+   "Dark to Light."
+   reason: no religious referent in the sentence
+
+#1964  [Evil / moral language; Sacrifice language; Moral purity / corruption metaphor]
+   "Children are being kidnapped, tortured, raped, and sacrificed in the name of PURE EVIL."
+   reason: no religious referent in the sentence
+
+#2030  [Awake / awakening language]
+   "Are you awake?"
+   reason: no religious referent in the sentence
+
+#2032  [Awake / awakening language]
+   "When you are awake you can see CLEARLY."
+   reason: no religious referent in the sentence
+
+#2128  [Shepherd / flock / sheep / wolves]
+   "SHEEP NO MORE."
+   reason: no religious referent in the sentence
+
+#2173  [Light / darkness metaphor]
+   "DARK TO LIGHT."
+   reason: no religious referent in the sentence
+
+#2181  [Awake / awakening language]
+   "AWAKE?"
+   reason: no religious referent in the sentence
+
+#2198  [Light / darkness metaphor]
+   "DARK TO LIGHT."
+   reason: no religious referent in the sentence
+
+#2207  [Awake / awakening language]
+   "THE AMERICAN PEOPLE (& OTHERS AROUND THE WORLD) ARE AWAKENING."
+   reason: no religious referent in the sentence
+
+#2281  [Evil / moral language]
+   "EVIL BE GONE."
+   reason: no religious referent in the sentence
+
+#2282  [Evil / moral language]
+   "EVIL BE GONE."
+   reason: no religious referent in the sentence
+
+#2285  [Awake / awakening language]
+   "Are you AWAKE?"
+   reason: no religious referent in the sentence
+
+#2296  [Evil / moral language]
+   "These people are EVIL, SICK, & STUPID."
+   reason: no religious referent in the sentence
+
+#2297  [Evil / moral language]
+   "EVIL KNOWS NO BOUNDS."
+   reason: no religious referent in the sentence
+
+#2298  [Good versus evil; Evil / moral language]
+   "GOOD V EVIL"
+   reason: no religious referent in the sentence
+
+#2303  [Shepherd / flock / sheep / wolves]
+   "SHEEP NO MORE."
+   reason: no religious referent in the sentence
+
+#2313  [Evil / moral language]
+   "This evil must be destroyed."
+   reason: no religious referent in the sentence
+
+#2314  [Evil / moral language]
+   "My injuries will be with it when we overthrow evil."
+   reason: no religious referent in the sentence
+
+#2345  [Evil / moral language]
+   "See EVIL in the face of FEINSTEIN?"
+   reason: no religious referent in the sentence
+
+#2358  [Shepherd / flock / sheep / wolves]
+   "[HERD THE SHEEP]"
+   reason: no religious referent in the sentence
+
+#2358  [Evil / moral language]
+   "These people are EVIL, SICK, & STUPID."
+   reason: no religious referent in the sentence
+
+#2368  [Shepherd / flock / sheep / wolves]
+   "Think [HERD SHEEP]."
+   reason: no religious referent in the sentence
+
+#2368  [Evil / moral language]
+   "These people are EVIL, SICK, & STUPID."
+   reason: no religious referent in the sentence
+
+#2381  [Evil / moral language]
+   "Exclude emotion and personal desire, instead use logic and critical thinking based on situational awareness [undo a lifetime of evil & corruption [infestation] in the span of less than 2 years w/ a corrupt DOJ & FBI in place?]."
+   reason: no religious referent in the sentence
+
+#2381  [Evil / moral language]
+   "[MUELLER] designed to ‘safeguard’ D_PARTY_BASE false narrative re: RUSSIA COLLUSION [POTUS CHEATED – EVIL – SKY FALLING] in effort to DIVIDE and MOBILIZE for future protests, riots, threats, violence, FF’s, etc."
+   reason: no religious referent in the sentence
+
+#2397  [Evil / moral language]
+   "[MUELLER] designed to ‘safeguard’ D_PARTY_BASE false narrative re: RUSSIA COLLUSION [POTUS CHEATED – EVIL – SKY FALLING] in effort to DIVIDE and MOBILIZE for future protests, riots, threats, violence, FF’s, etc."
+   reason: no religious referent in the sentence
+
+#2436  [Evil / moral language]
+   "We allowed EVIL to prey on us."
+   reason: no religious referent in the sentence
+
+#2436  [Evil / moral language]
+   "The evil and corruption only grew."
+   reason: no religious referent in the sentence
+
+#2450  [Light / darkness metaphor]
+   "Those who are blind will soon see the light."
+   reason: no religious referent in the sentence
+
+#2451  [Sacrifice language]
+   "Your sacrifices will never be forgotten."
+   reason: no religious referent in the sentence
+
+#2452  [Sacrifice language]
+   "Your sacrifices will never be forgotten."
+   reason: no religious referent in the sentence
+
+#2453  [Sacrifice language]
+   "Your sacrifices will never be forgotten."
+   reason: no religious referent in the sentence
+
+#2474  [Shepherd / flock / sheep / wolves]
+   "SHEEP NO MORE!"
+   reason: no religious referent in the sentence
+
+#2480  [Sacrifice language]
+   "Your sacrifice(s) will never be forgotten."
+   reason: no religious referent in the sentence
+
+#2534  [Awake / awakening language]
+   "When you are awake you can SEE CLEARLY."
+   reason: no religious referent in the sentence
+
+#2538  [Light / darkness metaphor]
+   "Dark to Light."
+   reason: no religious referent in the sentence
+
+#2549  [Awake / awakening language]
+   "When you are awake you can SEE CLEARLY."
+   reason: no religious referent in the sentence
+
+#2553  [Evil / moral language]
+   "EVIL has no place here."
+   reason: no religious referent in the sentence
+
+#2553  [Evil / moral language]
+   "POTUS FLOTUS not participating in this evil."
+   reason: no religious referent in the sentence
+
+#2556  [Awake / awakening language]
+   "People awake are what they FEAR THE MOST."
+   reason: no religious referent in the sentence
+
+#2559  [Shepherd / flock / sheep / wolves]
+   "SHEEP NO MORE."
+   reason: no religious referent in the sentence
+
+#2568  [Evil / moral language]
+   "EVIL HAS NO PLACE HERE."
+   reason: no religious referent in the sentence
+
+#2571  [Awake / awakening language]
+   "PUBLIC AWAKENING = GAME OVER"
+   reason: no religious referent in the sentence
+
+#2590  [Light / darkness metaphor]
+   "Dark to LIGHT."
+   reason: no religious referent in the sentence
+
+#2635  [Light / darkness metaphor]
+   "DARK TO LIGHT."
+   reason: no religious referent in the sentence
+
+#2640  [Shepherd / flock / sheep / wolves]
+   "BLIND SHEEP FOLLOW."
+   reason: no religious referent in the sentence
+
+#2646  [Shepherd / flock / sheep / wolves]
+   "CONTROLLED SUBMISSIVE SHEEP."
+   reason: no religious referent in the sentence
+
+#2648  [Awake / awakening language]
+   "Public awakening."
+   reason: no religious referent in the sentence
+
+#2660  [Awake / awakening language]
+   "Public awakening."
+   reason: no religious referent in the sentence
+
+#2681  [Light / darkness metaphor; Awake / awakening language]
+   "spill +30] -Meeting w/ NK > DENUC plan/process > sanctions lift meets subj A, B food for people (aid) UK/AUS narrative shift re: in_country spy campaign v. POTUS (hops 1 to 2; 2 to 3; 3 to 4; 4 to target) -D sky is falling push to public (scare to control)(projection) -Public Awakening -Narrative damage control -Placeholders active -Wall discussion end (public awareness of D's) -Red/Green Castle per orig plan Dark to Light."
+   reason: no religious referent in the sentence
+
+#2683  [Shepherd / flock / sheep / wolves]
+   "Sheep no more."
+   reason: no religious referent in the sentence
+
+#2684  [Light / darkness metaphor]
+   "Dark to Light."
+   reason: no religious referent in the sentence
+
+#2730  [Sacrifice language]
+   "We are forever grateful for his service & sacrifice to this Country."
+   reason: no religious referent in the sentence
+
+#2732  [Light / darkness metaphor]
+   "Dark to Light."
+   reason: no religious referent in the sentence
+
+#2751  [Good versus evil; Evil / moral language]
+   "Good v Evil"
+   reason: no religious referent in the sentence
+
+#2756  [Awake / awakening language]
+   "Prior to the black pop awakening?"
+   reason: no religious referent in the sentence
+
+#2756  [Awake / awakening language]
+   "When you are awake we can see clearly."
+   reason: no religious referent in the sentence
+
+#2757  [Awake / awakening language]
+   "Prior to the black pop awakening?"
+   reason: no religious referent in the sentence
+
+#2757  [Awake / awakening language]
+   "When you are awake we can see clearly."
+   reason: no religious referent in the sentence
+
+#2788  [Awake / awakening language]
+   "WHEN YOU ARE STRONG YOU ARE AWAKE."
+   reason: no religious referent in the sentence
+
+#2816  [Evil / moral language]
+   "There is EVIL in this world."
+   reason: no religious referent in the sentence
+
+#2830  [Light / darkness metaphor]
+   "“When you can't make them see the light, make them feel the heat.” –"
+   reason: no religious referent in the sentence
+
+#2879  [Evil / moral language]
+   "Evil trying to prevent #TRUTH from spreading?"
+   reason: no religious referent in the sentence
+
+#2888  [Light / darkness metaphor]
+   "Dark to LIGHT."
+   reason: no religious referent in the sentence
+
+#2894  [Light / darkness metaphor]
+   "Dark to LIGHT."
+   reason: no religious referent in the sentence
+
+#2896  [Evil / moral language]
+   "These people are SICK & EVIL."
+   reason: no religious referent in the sentence
+
+#2897  [Evil / moral language]
+   "How can anyone support such EVIL?"
+   reason: no religious referent in the sentence
+
+#2901  [Shepherd / flock / sheep / wolves]
+   "Propaganda arm [FAKE NEWS MEDIA] of the D party prevent-limit 'sheep (you)' from learning the TRUTH."
+   reason: no religious referent in the sentence
+
+#2917  [Evil / moral language; Moral purity / corruption metaphor]
+   "Pure evil."
+   reason: no religious referent in the sentence
+
+#2945  [Light / darkness metaphor]
+   "Those who would normally hide in the shadows are forced into the LIGHT."
+   reason: no religious referent in the sentence
+
+#2968  [Awake / awakening language]
+   "Those awake can see clearly."
+   reason: no religious referent in the sentence
+
+#2987  [Evil / moral language]
+   "Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn that mankind are more disposed to suffer, while evils are sufferable than to right themselves by abolishing the forms to which they are accustomed."
+   reason: no religious referent in the sentence
+
+#2994  [Awake / awakening language]
+   "YOU, AWAKE, IS THEIR GREATEST FEAR."
+   reason: no religious referent in the sentence
+
+#3014  [Light / darkness metaphor]
+   "DARK TO LIGHT."
+   reason: no religious referent in the sentence
+
+#3028  [Shepherd / flock / sheep / wolves]
+   "TALKING POINTS TO SATISFY LOONY LEFT [SHEEP DO NOT THINK FOR THEMSELVES] BASE?"
+   reason: no religious referent in the sentence
+
+#3038  [Awake / awakening language]
+   "When you are awake, you stand on the outside of the stable (‘group-think’ collective), and have ‘free thought’."
+   reason: no religious referent in the sentence
+
+#3038  [Awake / awakening language]
+   "When you are awake, you are able to clearly see."
+   reason: no religious referent in the sentence
+
+#3038  [Light / darkness metaphor]
+   "Difficult truths will soon see the light of day."
+   reason: no religious referent in the sentence
+
+#3081  [Light / darkness metaphor]
+   "Dark to LIGHT."
+   reason: no religious referent in the sentence
+
+#3082  [Light / darkness metaphor]
+   "Dark to LIGHT."
+   reason: no religious referent in the sentence
+
+#3083  [Evil / moral language]
+   "These people are sick & evil."
+   reason: no religious referent in the sentence
+
+#3157  [Awake / awakening language]
+   "Are you awake?"
+   reason: no religious referent in the sentence
+
+#3176  [Shepherd / flock / sheep / wolves]
+   "THINK FOR YOURSELF AND STOP BEING A SHEEP TO THEIR NARRATIVE."
+   reason: no religious referent in the sentence
+
+#3286  [Shepherd / flock / sheep / wolves]
+   "SHEEP NO MORE."
+   reason: no religious referent in the sentence
+
+#3292  [Sacrifice language]
+   "YOUR SACRIFICE WILL NEVER BE FORGOTTEN."
+   reason: no religious referent in the sentence
+
+#3354  [Awake / awakening language]
+   "D = the start of the mass awakening (WH, ABCs, State, Foreign, ……)"
+   reason: no religious referent in the sentence
+
+#3369  [Shepherd / flock / sheep / wolves]
+   "The job of the media (90% owned by 6 corporations) is not to inform the public of TRUTH (using facts), but to con the public using falsehoods and opinion to paint a narrative that is designed to 'keep the sheep in-line' in order to maintain control and regain power."
+   reason: no religious referent in the sentence
+
+#3369  [Awake / awakening language]
+   "PEOPLE AWAKE AND UNITED ENDS THEIR CONTROL (BRAINWASHING)."
+   reason: no religious referent in the sentence
+
+#3370  [Light / darkness metaphor]
+   "When that is revealed those who doubted may see the light."
+   reason: no religious referent in the sentence
+
+#3396  [Light / darkness metaphor]
+   "Dark to LIGHT."
+   reason: no religious referent in the sentence
+
+#3399  [Evil / moral language]
+   "These people are EVIL."
+   reason: no religious referent in the sentence
+
+#3405  [Shepherd / flock / sheep / wolves]
+   "FAKE NEWS keeps you asleep (sheep) and fixed in a pre_designed false reality (narrative)."
+   reason: no religious referent in the sentence
+
+#3409  [Awake / awakening language]
+   "People UNITED & AWAKE is their BIGGEST FEAR."
+   reason: no religious referent in the sentence
+
+#3411  [Evil / moral language]
+   "Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn that mankind are more disposed to suffer, while evils are sufferable than to right themselves by abolishing the forms to which they are accustomed."
+   reason: no religious referent in the sentence
+
+#3431  [Light / darkness metaphor]
+   "Coincidence those mentioned in the past are now coming into the LIGHT?"
+   reason: no religious referent in the sentence
+
+#3437  [Shepherd / flock / sheep / wolves]
+   "Do the 'SHEEP' follow?"
+   reason: no religious referent in the sentence
+
+#3441  [Shepherd / flock / sheep / wolves]
+   "Sheep no more."
+   reason: no religious referent in the sentence
+
+#3464  [Light / darkness metaphor]
+   "Dark to LIGHT."
+   reason: no religious referent in the sentence
+
+#3474  [Awake / awakening language]
+   "Projection does not work when WE, THE PEOPLE, are awake."
+   reason: no religious referent in the sentence
+
+#3476  [Light metaphor]
+   "Difficult truths will soon see the light of day."
+   reason: no religious referent in the sentence
+
+#3507  [Shepherd / flock / sheep / wolves]
+   "How do you attempt to keep the 'narrative' in play [control the 'sheep']?"
+   reason: no religious referent in the sentence
+
+#3514  [Awake / awakening language]
+   "Stay awake."
+   reason: no religious referent in the sentence
+
+#3558  [Shepherd / flock / sheep / wolves]
+   "Sheep follow the most absurd arguments."
+   reason: no religious referent in the sentence
+
+#3607  [Shepherd / flock / sheep / wolves]
+   "SHEEP NO MORE"
+   reason: no religious referent in the sentence
+
+#3613  [Shepherd / flock / sheep / wolves]
+   "When ‘non-dogmatic’ information becomes FREE & TRANSPARENT it becomes a threat to those who attempt to control the narrative and/or stable [livestock kept – sheep]."
+   reason: no religious referent in the sentence
+
+#3613  [Awake / awakening language]
+   "When you are awake, you stand on the outside of the stable (‘group-think’ collective), and have ‘free thought’."
+   reason: no religious referent in the sentence
+
+#3644  [Awake / awakening language]
+   "People awake = greatest fear."
+   reason: no religious referent in the sentence
+
+#3645  [Awake / awakening language]
+   "Public awakening coming."
+   reason: no religious referent in the sentence
+
+#3662  [Awake / awakening language]
+   "You awake, and thinking for yourself, is their greatest fear."
+   reason: no religious referent in the sentence
+
+#3662  [Shepherd / flock / sheep / wolves]
+   "Sheep no more."
+   reason: no religious referent in the sentence
+
+#3684  [Shepherd / flock / sheep / wolves]
+   "Sheep no more."
+   reason: no religious referent in the sentence
+
+#3716  [Awake / awakening language]
+   "First indictment [unseal] will trigger mass pop awakening."
+   reason: no religious referent in the sentence
+
+#3717  [Awake / awakening language]
+   "First indictment [unseal] will trigger mass pop awakening."
+   reason: no religious referent in the sentence
+
+#3721  [Shepherd / flock / sheep / wolves]
+   "When ‘non-dogmatic’ information becomes FREE & TRANSPARENT it becomes a threat to those who attempt to control the narrative and/or stable [livestock kept – sheep]."
+   reason: no religious referent in the sentence
+
+#3721  [Awake / awakening language]
+   "When you are awake, you stand on the outside of the stable (‘group-think’ collective), and have ‘free thought’."
+   reason: no religious referent in the sentence
+
+#3728  [Sacrifice language]
+   "Sometimes you must sacrifice yourself for the greater good."
+   reason: no religious referent in the sentence
+
+#3761  [Awake / awakening language]
+   "People awake is their greatest fear."
+   reason: no religious referent in the sentence
+
+#3792  [Shepherd / flock / sheep / wolves]
+   "Sheep no more!"
+   reason: no religious referent in the sentence
+
+#3850  [Awake / awakening language]
+   "How do you 'awaken' the 'induced coma' public [FAKE NEWS control] from their long sleep?"
+   reason: no religious referent in the sentence
+
+#3858  [Shepherd / flock / sheep / wolves]
+   "When ‘non-dogmatic’ information becomes FREE & TRANSPARENT it becomes a threat to those who attempt to control the narrative and/or stable [livestock kept – sheep]."
+   reason: no religious referent in the sentence
+
+#3858  [Awake / awakening language]
+   "When you are awake, you stand on the outside of the stable (‘group-think’ collective), and have ‘free thought’."
+   reason: no religious referent in the sentence
+
+#3877  [Awake / awakening language]
+   ">A public awake is their greatest fear<"
+   reason: no religious referent in the sentence
+
+#3880  [Awake / awakening language]
+   "They fear an awake public."
+   reason: no religious referent in the sentence
+
+#3905  [Shepherd / flock / sheep / wolves]
+   "When ‘non-dogmatic’ information becomes FREE & TRANSPARENT it becomes a threat to those who attempt to control the narrative and/or stable [livestock kept – sheep]."
+   reason: no religious referent in the sentence
+
+#3905  [Awake / awakening language]
+   "When you are awake, you stand on the outside of the stable (‘group-think’ collective), and have ‘free thought’."
+   reason: no religious referent in the sentence
+
+#3906  [Awake / awakening language]
+   "When you are awake, you stand on the outside of the stable (‘group-think’ collective), and have ‘free thought’."
+   reason: no religious referent in the sentence
+
+#3906  [Awake / awakening language]
+   "When you are awake, you are able to clearly see."
+   reason: no religious referent in the sentence
+
+#3906  [Light / darkness metaphor]
+   "Difficult truths will soon see the light of day."
+   reason: no religious referent in the sentence
+
+#3907  [Evil / moral language]
+   "We allowed EVIL to prey on us."
+   reason: no religious referent in the sentence
+
+#3907  [Evil / moral language]
+   "The evil and corruption only grew."
+   reason: no religious referent in the sentence
+
+#3913  [Awake / awakening language]
+   "Are you awake yet?"
+   reason: no religious referent in the sentence
+
+#3918  [Sacrifice language]
+   "Difficult to imagine media [D party] willing to sacrifice lives in order to regain power?"
+   reason: no religious referent in the sentence
+
+#3918  [Light / darkness metaphor]
+   "Difficult truths will soon see the light of day."
+   reason: no religious referent in the sentence
+
+#3931  [Evil / moral language]
+   "Something far more sinister [evil] has been allowed to flourish through all parts of our society."
+   reason: no religious referent in the sentence
+
+#3963  [Awake / awakening language]
+   "An informed [awake] public holds all the keys."
+   reason: no religious referent in the sentence
+
+#3967  [Evil / moral language; Moral purity / corruption metaphor]
+   "These people are pure evil."
+   reason: no religious referent in the sentence
+
+#3970  [Awake / awakening language]
+   "Think of the World Awakening."
+   reason: no religious referent in the sentence
+
+#3992  [Evil / moral language]
+   "[MUELLER] designed to ‘safeguard’ D_PARTY_BASE false narrative re: RUSSIA COLLUSION [POTUS CHEATED – EVIL – SKY FALLING] in effort to DIVIDE and MOBILIZE for future protests, riots, threats, violence, FF’s, etc."
+   reason: no religious referent in the sentence
+
+#4013  [Awake / awakening language]
+   "When you are awake you are able to see clearly."
+   reason: no religious referent in the sentence
+
+#4015  [Shepherd / flock / sheep / wolves]
+   "Control of the population [sheep]?"
+   reason: no religious referent in the sentence
+
+#4093  [Awake / awakening language]
+   "People [an informed free-thinking pubic] awake is their greatest fear."
+   reason: no religious referent in the sentence
+
+#4176  [Awake / awakening language]
+   "Awake yet?"
+   reason: no religious referent in the sentence
+
+#4294  [Evil / moral language]
+   "Reconcile: Release of convicts from prison [evil releases evil]."
+   reason: no religious referent in the sentence
+
+#4318  [Awake / awakening language]
+   "Only when information [truth] becomes free [uncontrolled] will people awaken to the levers of control placed upon them."
+   reason: no religious referent in the sentence
+
+#4332  [Evil / moral language]
+   "Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn that mankind are more disposed to suffer, while evils are sufferable than to right themselves by abolishing the forms to which they are accustomed."
+   reason: no religious referent in the sentence
+
+#4339  [Evil / moral language]
+   "Evil surrounds us."
+   reason: no religious referent in the sentence
+
+#4340  [Evil / moral language]
+   "Evil surrounds us."
+   reason: no religious referent in the sentence
+
+#4341  [Evil / moral language]
+   "Evil surrounds us."
+   reason: no religious referent in the sentence
+
+#4342  [Evil / moral language]
+   "Evil surrounds us."
+   reason: no religious referent in the sentence
+
+#4389  [Light / darkness metaphor]
+   "Dark to Light."
+   reason: no religious referent in the sentence
+
+#4397  [Shepherd / flock / sheep / wolves]
+   "Your life means nothing to them [sheep]."
+   reason: no religious referent in the sentence
+
+#4409  [Shepherd / flock / sheep / wolves]
+   "Your life means nothing to them [sheep]."
+   reason: no religious referent in the sentence
+
+#4426  [Awake / awakening language]
+   "People are awake and see what is happening."
+   reason: no religious referent in the sentence
+
+#4461  [Evil / moral language; Light / darkness metaphor]
+   "Only when evil is forced into the light can we defeat it."
+   reason: no religious referent in the sentence
+
+#4463  [Evil / moral language]
+   "A rigged system of control and corruption [evil]."
+   reason: no religious referent in the sentence
+
+#4466  [Evil / moral language]
+   "Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn that mankind are more disposed to suffer, while evils are sufferable than to right themselves by abolishing the forms to which they are accustomed."
+   reason: no religious referent in the sentence
+
+#4467  [Awake / awakening language]
+   "You awake is their greatest fear."
+   reason: no religious referent in the sentence
+
+#4469  [Sacrifice language]
+   "The Soldier was unarmed and knew they would most certainly die (as did most who fought), but understood that the fight, that their lives, was worth the cost (self-sacrifice)."
+   reason: no religious referent in the sentence
+
+#4481  [Evil / moral language; Light / darkness metaphor]
+   "Only when evil is forced into the light can we defeat it."
+   reason: no religious referent in the sentence
+
+#4490  [Awake / awakening language]
+   "People are awake to the truth."
+   reason: no religious referent in the sentence
+
+#4509  [Awake / awakening language]
+   "Mission 2: Support role of other digital soldiers [one falls another stands (rises)] Mission 3: Guide [awaken] others through use of facts [DECLAS 1-99 material and other relevant facts] and memes [decouple MSDNC control of info stream] _ask 'counter' questions to initiate 'thought' vs repeat [echo] of MSDNC propaganda Mission 4: Learn use of camouflage [digitally] _primary account suspended-terminated _use of secondary Mission 5: Identify strengths / weaknesses [personal and designated target(s)] re: Twitter & FB [+other] example re: meme(s) failure to read through use of ALGO [think Tron (MCP_master control program)] _dependence on person-to-person capture [slow response time unidentified user(s)] Game theory."
+   reason: no religious referent in the sentence
+
+#4522  [Evil / moral language]
+   "Evil surrounds us."
+   reason: no religious referent in the sentence
+
+#4535  [Shepherd / flock / sheep / wolves]
+   "When ‘non-dogmatic’ information becomes FREE & TRANSPARENT it becomes a threat to those who attempt to control the narrative and/or stable [livestock kept – sheep]."
+   reason: no religious referent in the sentence
+
+#4535  [Awake / awakening language]
+   "When you are awake, you stand on the outside of the stable (‘group-think’ collective), and have ‘free thought’."
+   reason: no religious referent in the sentence
+
+#4541  [Evil / moral language; Moral purity / corruption metaphor]
+   "And yet the former are the object of a sort of discrimination which places them in a situation of moral inferiority with respect to their adversaries, who often hold strategic positions in government, in politics, in the economy and in the media."
+   reason: no religious referent in the sentence
+
+#4545  [Evil / moral language]
+   "Evil [darkness] has never been so exposed to light."
+   reason: no religious referent in the sentence
+
+#4545  [Light / darkness metaphor]
+   "If America falls darkness will soon follow."
+   reason: no religious referent in the sentence
+
+#4553  [Shepherd / flock / sheep / wolves]
+   "[How to herd the sheep (you) 101]"
+   reason: no religious referent in the sentence
+
+#4556  [Shepherd / flock / sheep / wolves]
+   "[How to herd the sheep (you) 101]"
+   reason: no religious referent in the sentence
+
+#4559  [Sacrifice language]
+   "A MARK OF RESPECT TO THEIR MEMORY TO THOSE WHO WILLFULLY SACRIFICED THEIR LIVES TO DEFEND."
+   reason: no religious referent in the sentence
+
+#4566  [Awake / awakening language]
+   "Argument: "Maxwell is not a big enough name to trigger a mass awakening." ["
+   reason: no religious referent in the sentence
+
+#4566  [Awake / awakening language]
+   "Crimes against Children = common denominator [no matter political affiliation][mass pop awakening]."
+   reason: no religious referent in the sentence
+
+#4588  [Shepherd / flock / sheep / wolves]
+   "[General public steered by MSDNC like a dog steering sheep]"
+   reason: no religious referent in the sentence
+
+#4636  [Light / darkness metaphor]
+   "They are being forced into the light for all to see."
+   reason: no religious referent in the sentence
+
+#4724  [Evil / moral language]
+   "Evil and corruption @ highest levels."
+   reason: no religious referent in the sentence
+
+#4748  [Evil / moral language]
+   "The same people who control the media are the same people who are part of the evil and corrupt system?"
+   reason: no religious referent in the sentence
+
+#4794  [Evil / moral language]
+   "Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed."
+   reason: no religious referent in the sentence
+
+#4817  [Evil / moral language]
+   "Evil surrounds us."
+   reason: no religious referent in the sentence
+
+#4880  [Awake / awakening language]
+   "You awake, thinking for yourself, is their greatest fear."
+   reason: no religious referent in the sentence
+
+#4910  [Evil / moral language]
+   "So many people refuse still to admit the evils in the world."
+   reason: no religious referent in the sentence
+
+#4951  [Light / darkness metaphor]
+   "Sometimes you must walk through the darkness before you see the light."
+   reason: no religious referent in the sentence
+
+
+==============================================================================
+NOT VERBATIM — 160 records
+==============================================================================
+
+--- GREEN (131) ---
+#28  [Church / clergy / worship] (Quoted/referenced post shown inside Q drop)
+   "In churches, on campuses, in classrooms, in public meetings, they took notes, tape-recorded, and photographed people who dissented in thought, word, or deed."
+
+#51  [Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "I will be praying for OPanon and all who risk their lives, for safety and that the Lord will guide them, and praying that what he says is true, and will be praying for the spiritual edification of God for Trump and for his complete safety in all of this."
+
+#54  [Quoted Bible/Scripture passage] (Quoted Bible/Scripture passage reproduced in Q post)
+   "For I know the plans I have for you, declares the LORD, plans to prosper you and not to harm you, plans to give you hope and a future."
+
+#58  [Islam / Judaism / named religion] (Quoted/referenced post shown inside Q drop)
+   "The Clinton campaign is attempting once again to sweep important questions under the rug about top aide Huma Abedin, her family ties to the Muslim Brotherhood and to Saudi Arabia, and her role in the ballooning Clinton email scandal."
+
+#58  [Islam / Judaism / named religion] (Quoted/referenced post shown inside Q drop)
+   "Her mother, Saleha Abedin, sits on the Presidency Staff Council of the International Islamic Council for Da’wa and Relief, a group that is chaired by the leader of the Muslim Brotherhood, Sheikh Yusuf al-Qaradawi."
+
+#58  [Islam / Judaism / named religion] (Quoted/referenced post shown inside Q drop)
+   "Perhaps recognizing how offensive such ties will be to voters concerned over future terrorist attacks on this country by radical Muslims professing allegiance to Sharia law, the Clinton campaign on Monday tried to downplay Ms. Abedin’s involvement in the Journal and the Muslim Brotherhood."
+
+#58  [Islam / Judaism / named religion] (Quoted/referenced post shown inside Q drop)
+   "The Clinton surrogate group Media Matters claimed predictably there was “no evidence” that Ms. Abedin or her family had ties to the Muslim Brotherhood, and that Trump campaign staffers who spoke of these ties were conspiracy theorists."
+
+#103  [God / Lord / Jesus / Christ] (Quoted/referenced post shown inside Q drop)
+   "For a God and Country."
+
+#109  [Prayer] (Quoted/referenced prayer shown inside Q drop)
+   "St. Michael the Archangel, defend us in battle."
+
+#109  [Prayer] (Quoted/referenced prayer shown inside Q drop)
+   "Be our protection against the wickedness and snares of the devil."
+
+#109  [Prayer] (Quoted/referenced prayer shown inside Q drop)
+   "May God rebuke him, we humbly pray."
+
+#109  [Prayer] (Quoted/referenced prayer shown inside Q drop)
+   "And do thou, Prince of the Heavenly Hosts, by the power of God, cast down to Hell Satan and all his evil spirits, who prowl about the world seeking the ruin of souls."
+
+#109  [Prayer] (Quoted/referenced prayer shown inside Q drop)
+   "Amen."
+
+#147  [Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "Pray."
+
+#181  [God / Lord / Jesus / Christ; Sacred doctrine / eschatology] (Quoted/referenced post shown inside Q drop)
+   "Dear Q: Jesus Christ was fucking pissed at his apostles most of the time because they were stupid fucks (at the time) that couldn't piece together even the most basic of clues."
+
+#217  [God / Lord / Jesus / Christ] (Quoted/referenced post shown inside Q drop)
+   "GOD DAMMIT ONE MORE CLUE - HOW THE FUCK WILL WE EVER CONNECT "KEYHOLE" TO THIS?"
+
+#290  [Religious headline / holy site] (Text visible in attached image)
+   "POPE VISITS HOLY SITE OF SERMON ON THE MOUNT."
+
+#307  [Sacred doctrine / eschatology; Grace / mercy / sin / righteousness; Evil / moral language] (Quoted/referenced post shown inside Q drop)
+   "Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us, and lead us not into temptation, but deliver us from evil."
+
+#316  [God / Lord / Jesus / Christ; Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "The proposed change to the Lord's Prayer is not the point."
+
+#323  [God / Lord / Jesus / Christ] (Quoted/referenced post shown inside Q drop)
+   "Service to God and patriots"
+
+#611  [Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "If you guys could send some prayers my way it would be greatly appreciated"
+
+#620  [God / Lord / Jesus / Christ; Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "God speed everyone."
+
+#620  [God / Lord / Jesus / Christ; Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "God speed."
+
+#621  [God / Lord / Jesus / Christ; Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "God bless you for this amazing work that you are doing."
+
+#736  [Bible / Scripture / Gospel] (Quoted/referenced post shown inside Q drop)
+   "In the Q Bible, this is the second shortest sentence."
+
+#779  [God / Lord / Jesus / Christ; Explicit religious civic phrase] (Quoted/referenced post shown inside Q drop)
+   "FOR GOD & COUNTRY."
+
+#884  [Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "I pray so hard every night!"
+
+#917  [Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "Praying every day."
+
+#997  [Church / clergy / worship] (Quoted/referenced post shown inside Q drop)
+   "P = pope?"
+
+#998  [Church / clergy / worship] (Quoted/referenced post shown inside Q drop)
+   ">[Pope] will be having a terrible May.[Pope] will be having a terrible May."
+
+#1013  [Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "Our thoughts and prayers are with the four U.S. Marines from the 3rd Marine Aircraft Wing who lost their lives in yesterday’s Southern California helicopter crash."
+
+#1013  [Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "We pray for their families, and our great @USMC"
+
+#1043  [Christianity / named Christian doctrine] (Quoted/referenced post shown inside Q drop)
+   "Christian ?"
+
+#1043  [Christianity / named Christian doctrine] (Quoted/referenced post shown inside Q drop)
+   "Christian Ring ?"
+
+#1047  [Islam / Judaism / named religion] (Quoted/referenced post shown inside Q drop)
+   "Normies don't give a crap if he is MUSLIM."
+
+#1050  [Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "Sending my love and prayers <3"
+
+#1050  [God / Lord / Jesus / Christ; Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "God speed."
+
+#1119  [God / Lord / Jesus / Christ; Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "God bless."
+
+#1272  [Sin / religious doctrine] (Text visible in attached screenshot of an earlier Q post)
+   "Those you trust are the most guilty of sin."
+
+#1272  [Religion / prayer] (Text visible in attached screenshot of an earlier Q post)
+   "If you are religious, PRAY."
+
+#1296  [God / Lord / Jesus / Christ; Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "God bless you all."
+
+#1402  [God / Lord / Jesus / Christ; Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "God Bless the United States of America."
+
+#1488  [God / Lord / Jesus / Christ; Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "GOD BLESS YOU, POTUS, AND THE UNITED STATES OF AMERICA!!"
+
+#1519  [God / Lord / Jesus / Christ] (Quoted/referenced post shown inside Q drop)
+   "God is with you and all of us."
+
+#1526  [Sacred doctrine / eschatology] (Quoted/referenced post shown inside Q drop)
+   "You are furthering the Divine Stride of our Founding Fathers."
+
+#1526  [Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "May you feel their blessing and may they shower keen intelligence, power and safety upon you."
+
+#1584  [God / Lord / Jesus / Christ; Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "God bless you all."
+
+#1603  [God / Lord / Jesus / Christ; Explicit religious civic phrase] (Quoted/referenced post shown inside Q drop)
+   "IN GOD WE TRUST."
+
+#1699  [God / Lord / Jesus / Christ] (Quoted/referenced post shown inside Q drop)
+   "So help me God."
+
+#1904  [Christianity / named Christian doctrine] (Quoted/referenced post shown inside Q drop)
+   ">>MILAGROS are small metal religious charms found in many areas of Latin America, especially Guatemala & Mexico."
+
+#1904  [God / Lord / Jesus / Christ; Prayer / blessing / invocation; Sacred doctrine / eschatology; Savior / saint / angel / miracle] (Quoted/referenced post shown inside Q drop)
+   "These small charms, often depicting arms, legs, praying people, farm animals and a wide range of other subjects are typically nailed or pinned to crosses or wooden statues of various saints like the Virgin Mary or Christ, sacred objects, pinned on the clothing of saint statues, or hung with little red ribbons or threads from altars and shrines."
+
+#1951  [Church / clergy / worship; Holy / sacred metaphor] (Quoted/referenced post shown inside Q drop)
+   "HOLY SHIT IT JUST HIT ME IN EARLY DROPS Q MENTIONED GODFATHER 3 - MICHAEL CORLEONE IS FIGHTING THE CORRUPT ELEMENTS OF THE VATICAN IN GODFATHER 3"
+
+#1961  [God / Lord / Jesus / Christ] (Quoted/referenced post shown inside Q drop)
+   "I am isolated with my husband and thank God our dogs… to our family we can’t even mention the Presidents name, so we don’t but it hurts so much."
+
+#1961  [God / Lord / Jesus / Christ; Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "God bless you from the Netherlands !"
+
+#1965  [Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "AMEN Q!!!!!!!!!!!!"
+
+#2050  [God / Lord / Jesus / Christ; Explicit religious civic phrase] (Quoted/referenced post shown inside Q drop)
+   "For God & Country."
+
+#2081  [Satanic / cross symbolism] (Text visible in attached image)
+   "NOTE THE SATANIC CROSS SHE WEARS."
+
+#2126  [Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "Thanks & Godspeed."
+
+#2181  [God / Lord / Jesus / Christ; Faith / belief; Faith language used in a civic oath] (Quoted/referenced post shown inside Q drop)
+   ""I do solemnly swear (or affirm) that I will support and defend the Constitution of the United States against all enemies, foreign and domestic; that I will bear true faith and allegiance to the same; that I take this obligation freely, without any mental reservation or purpose of evasion; and that I will well and faithfully discharge the duties of the office on which I am about to enter: So help me God.""
+
+#2432  [God / Lord / Jesus / Christ; Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "Q, may God bless us all today."
+
+#2463  [God / Lord / Jesus / Christ; Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "God bless you, Patriots!"
+
+#2594  [Church / clergy / worship] (Quoted/referenced post shown inside Q drop)
+   "He was the vatican treasurer I'm sure that carries some weight"
+
+#2624  [Occult / ritual / pagan] (Quoted/referenced post shown inside Q drop)
+   "Q, please tell us who or what the Wizards and Warlocks are."
+
+#2730  [God / Lord / Jesus / Christ; Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "God speed Q+++"
+
+#2751  [God / Lord / Jesus / Christ] (Quoted/referenced post shown inside Q drop)
+   "I trust Potus And I trust the LORD."
+
+#2751  [God / Lord / Jesus / Christ] (Quoted/referenced post shown inside Q drop)
+   "The Lord is leading Potus, of that I'm certain."
+
+#2821  [God / Lord / Jesus / Christ] (Quoted/referenced post shown inside Q drop)
+   "I thank God for you guys, and I'll stay strong for my suffering pal tonight, because WWG1WGA."
+
+#2877  [Sacred doctrine / eschatology] (Quoted/referenced post shown inside Q drop)
+   "JUDGEMENT DAY COMING."
+
+#2878  [Sacred doctrine / eschatology] (Quoted/referenced post shown inside Q drop)
+   "JUDGEMENT DAY COMING."
+
+#2904  [Quoted Bible/Scripture passage] (Quoted Bible/Scripture passage reproduced in Q post)
+   "Put on the full armor of God so that you can take your stand against the devil’s schemes."
+
+#3547  [Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "Praying for POTUS, Q team and all patriots."
+
+#3547  [God / Lord / Jesus / Christ; Explicit religious civic phrase] (Quoted/referenced post shown inside Q drop)
+   "God wins!"
+
+#3564  [Quoted Bible/Scripture passage] (Text visible in attached image)
+   "He sent among them swarms of flies, which devoured them, and frogs, which destroyed them."
+
+#3683  [God / Lord / Jesus / Christ; Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "God Bless you POTUS and Q!"
+
+#3709  [Church / clergy / worship] (Quoted/referenced post shown inside Q drop)
+   "#Vatican ambassador to #France resigns after molestation allegations"
+
+#3709  [Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "Godspeed Q"
+
+#3757  [God / Lord / Jesus / Christ; Explicit religious civic phrase] (Quoted/referenced post shown inside Q drop)
+   "GOD WINS"
+
+#3826  [Explicit religious civic phrase] (Text visible in attached image)
+   "IN GOD WE TRUST."
+
+#3827  [God / Lord / Jesus / Christ; Explicit religious civic phrase] (Quoted/referenced post shown inside Q drop)
+   "IN GOD WE TRUST."
+
+#3887  [Quoted Bible/Scripture passage] (Quoted Bible/Scripture passage reproduced in Q post)
+   "Put on the full armor of God so that you can take your stand against the devil’s schemes."
+
+#3894  [God / Lord / Jesus / Christ; Explicit religious civic phrase] (Quoted/referenced post shown inside Q drop)
+   "GOD WINS"
+
+#3914  [Quoted Bible/Scripture passage] (Text visible in attached image)
+   "Finally, be strong in the Lord and in the strength of His might."
+
+#3914  [Quoted Bible/Scripture passage] (Text visible in attached image)
+   "Put on the full armor of God, so that you will be able to stand firm against the schemes of the devil."
+
+#3967  [God / Lord / Jesus / Christ] (Quoted/referenced post shown inside Q drop)
+   "Just like Q & Q+ put on that Armor of God Patriots!"
+
+#3967  [Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "Keep Praying!"
+
+#3967  [God / Lord / Jesus / Christ; Explicit religious civic phrase] (Quoted/referenced post shown inside Q drop)
+   "In the end, God Wins!"
+
+#4207  [Quoted Bible/Scripture passage] (Quoted Bible/Scripture passage reproduced in Q post)
+   "Put on the full armor of God so that you can take your stand against the devil’s schemes."
+
+#4249  [Quoted Bible/Scripture passage] (Text visible in attached image)
+   "Have faith in God."
+
+#4332  [Creator in explicitly religious formulation] (Quoted/referenced post shown inside Q drop)
+   "We hold these truths to be self-evident, that all men (& women) are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness."
+
+#4353  [Christianity / named Christian doctrine] (Quoted/referenced post shown inside Q drop)
+   "This is best achieved when the political cause of the insurgency has strong appeal, manipulating religious, tribal or local identity to exploit common societal grievances or needs."
+
+#4355  [Religion / religious conflict] (Text visible in attached image)
+   "THEY WANT RELIGIOUS WARS."
+
+#4355  [God / religious civic phrase] (Text visible in attached image)
+   "FOR GOD AND COUNTRY - LEARN."
+
+#4429  [Quoted Bible/Scripture passage] (Quoted Bible/Scripture passage reproduced in Q post)
+   "Put on the full armor of God so that you can take your stand against the devil’s schemes."
+
+#4510  [God / Lord / Jesus / Christ; Faith / belief; Faith language used in a civic oath] (Quoted/referenced post shown inside Q drop)
+   "I do solemnly swear (or affirm) that I will support and defend the Constitution of the United States against all enemies, foreign and domestic; that I will bear true faith and allegiance to the same; that I take this obligation freely, without any mental reservation or purpose of evasion; and that I will well and faithfully discharge the duties of the office on which I am about to enter: So help me God."
+
+#4648  [God / Lord / Jesus / Christ; Prayer / blessing / invocation] (Quoted/referenced post shown inside Q drop)
+   "Thank you, and God Bless."
+
+#4790  [God / spiritual awakening] (Text visible in attached image)
+   "God woke you up for a reason."
+
+#4799  [Church / clergy / worship] (Quoted/referenced post shown inside Q drop)
+   "Rebuffed by Vatican, Pompeo Assails China and Aligns With Pope’s Critics"
+
+#4799  [Church / clergy / worship] (Quoted/referenced post shown inside Q drop)
+   "Pope Francis declined to see Secretary of State Mike Pompeo, who is demanding a harder Vatican line on China."
+
+#4799  [Church / clergy / worship; Holy / sacred metaphor] (Quoted/referenced post shown inside Q drop)
+   "The Holy See said meeting just before a U.S. election would be inappropriate."
+
+#4799  [Church / clergy / worship] (Quoted/referenced post shown inside Q drop)
+   "ROME — Secretary of State Mike Pompeo recently published a sharp letter excoriating the Vatican’s plans to renew an agreement with the Chinese government on Church operations in China."
+
+#4799  [Church / clergy / worship; Evil / moral language] (Quoted/referenced post shown inside Q drop)
+   "He promoted the article in a tweet, concluding, “The Vatican endangers its moral authority, should it renew the deal.”"
+
+#4799  [Church / clergy / worship] (Quoted/referenced post shown inside Q drop)
+   "An indignant Vatican took the article more as a calculated affront than a diplomatic gesture."
+
+#4799  [Church / clergy / worship] (Quoted/referenced post shown inside Q drop)
+   "The friction broke into the open on Wednesday as Mr. Pompeo arrived in Rome and met with prelates and others who are hostile to Pope Francis, while the Vatican denied him a meeting with the pontiff and rebuffed his efforts to derail the deal with China."
+
+#4799  [Church / clergy / worship] (Quoted/referenced post shown inside Q drop)
+   "“Pompeo asked to meet” the pope, who turned him down because Francis had “clearly said that he does not receive political figures ahead of the elections,” Cardinal Pietro Parolin, who, as secretary of state, is the Vatican’s second-ranking official, told reporters."
+
+#4799  [Church / clergy / worship; Christianity / named Christian doctrine] (Quoted/referenced post shown inside Q drop)
+   "But to some observers on both sides of the tensions between the Roman Catholic Church and the Trump administration, Mr. Pompeo’s visit is as much about the coming presidential election as about China policy."
+
+#4799  [Church / clergy / worship; Christianity / named Christian doctrine] (Quoted/referenced post shown inside Q drop)
+   "Mr. Pompeo dismissed that suggestion as absurd, but intended or not, his trip signals that President Trump is on the side of those conservative American Catholics who worry about the church’s direction under Francis and think he is soft on China."
+
+#4799  [Church / clergy / worship; Christianity / named Christian doctrine; Religious conflict / freedom] (Quoted/referenced post shown inside Q drop)
+   "In appealing to the Vatican’s support for religious freedom as a reason to drop its China agreement, Mr. Pompeo seemed to seek common ground, but in a way that upset the pope’s chief allies and delighted his chief critics."
+
+#4799  [Church / clergy / worship; Holy / sacred metaphor] (Quoted/referenced post shown inside Q drop)
+   "Cardinal Parolin said Mr. Pompeo’s article had caused “surprise” at the Vatican, because this visit to Rome by the secretary and the meetings with high officials at the Holy See had already been in the works and would have been a “more opportune” forum for airing grievances."
+
+#4799  [Church / clergy / worship; Christianity / named Christian doctrine] (Quoted/referenced post shown inside Q drop)
+   "He added that Mr. Pompeo’s choice to publish in First Things, a conservative Christian magazine that has called Francis a failure as Pope, also mattered."
+
+#4841  [Quoted Bible/Scripture passage] (Text visible in attached image)
+   "In addition to all this, take up the shield of faith, with which you can extinguish all the flaming arrows of the evil one."
+
+#4868  [Prayer / blessing] (Text visible in attached image)
+   "GOD BLESS AMERICA."
+
+#4941  [Quoted/embedded religious letter] (OCR-normalized text from open-letter images attached to Q post)
+   "But this world, Mr. President, includes people, affections, institutions, faith, culture, traditions, and ideals: people and values that do not act like automatons, who do not obey like machines, because they are endowed with a soul and a heart, because they are tied together by a spiritual bond that draws its strength from above, from that God that our adversaries want to challenge, just as Lucifer did at the beginning of time with his “non serviam.”"
+
+#4941  [Quoted/embedded religious letter] (OCR-normalized text from open-letter images attached to Q post)
+   "Many people — as we well know — are annoyed by this reference to the clash between Good and Evil and the use of “apocalyptic” overtones, which according to them exasperates spirits and sharpens divisions."
+
+#4941  [Quoted/embedded religious letter] (OCR-normalized text from open-letter images attached to Q post)
+   "No one, up until last February, would ever have thought that, in all of our cities, citizens would be arrested simply for wanting to walk down the street, to breathe, to want to keep their business open, to want to go to church on Sunday."
+
+#4941  [Quoted/embedded religious letter] (OCR-normalized text from open-letter images attached to Q post)
+   "Yet now it is happening all over the world, even in picture-postcard Italy that many Americans consider to be a small enchanted country, with its ancient monuments, its churches, its charming cities, its characteristic villages."
+
+#4941  [Quoted/embedded religious letter] (OCR-normalized text from open-letter images attached to Q post)
+   "And while the politicians are barricaded inside their palaces promulgating decrees like Persian satraps, businesses are failing, shops are closing, and people are prevented from living, traveling, working, and praying."
+
+#4941  [Quoted/embedded religious letter] (OCR-normalized text from open-letter images attached to Q post)
+   "In Sacred Scripture, Saint Paul speaks to us of “the one who opposes” the manifestation of the mystery of iniquity, the kathékon (2 Thess 2:6–7)."
+
+#4941  [Quoted/embedded religious letter] (OCR-normalized text from open-letter images attached to Q post)
+   "In the religious sphere, this obstacle to evil is the Church, and in particular the papacy; in the political sphere, it is those who impede the establishment of the New World Order."
+
+#4941  [Quoted/embedded religious letter] (OCR-normalized text from open-letter images attached to Q post)
+   "As is now clear, the one who occupies the Chair of Peter has betrayed his role from the very beginning in order to defend and promote the globalist ideology, supporting the agenda of the deep church, who chose him from its ranks."
+
+#4941  [Quoted/embedded religious letter] (OCR-normalized text from open-letter images attached to Q post)
+   "Mr. President, you have clearly stated that you want to defend the nation — One Nation under God, fundamental liberties, and non-negotiable values that are denied and fought against today."
+
+#4941  [Quoted/embedded religious letter] (OCR-normalized text from open-letter images attached to Q post)
+   "Your adversary is also our adversary: it is the Enemy of the human race, He who is “a murderer from the beginning” (Jn 8:44)."
+
+#4941  [Quoted/embedded religious letter] (OCR-normalized text from open-letter images attached to Q post)
+   "The alternative is to vote for a person who is manipulated by the deep state, gravely compromised by scandals and corruption, who will do to the United States what Jorge Mario Bergoglio is doing to the Church, Prime Minister Conte to Italy, President Macron to France, Prime Minister Sanchez to Spain, and so on."
+
+#4941  [Quoted/embedded religious letter] (OCR-normalized text from open-letter images attached to Q post)
+   "The blackmailable nature of Joe Biden — just like that of the prelates of the Vatican’s “magic circle” — will expose him to be used unscrupulously, allowing illegitimate powers to interfere in both domestic politics as well as international balances."
+
+#4941  [Quoted/embedded religious letter] (OCR-normalized text from open-letter images attached to Q post)
+   "This people, which for too long has endured the abuses of a hateful and tyrannical power, is rediscovering that it has a soul; it is understanding that it is not willing to exchange its freedom for the homogenization and cancellation of its identity; it is beginning to understand the value of familial and social ties, of the bonds of faith and culture that unite honest people."
+
+#4941  [Quoted/embedded religious letter] (OCR-normalized text from open-letter images attached to Q post)
+   "The enemy has Satan on its side, He who only knows how to hate."
+
+#4941  [Quoted/embedded religious letter] (OCR-normalized text from open-letter images attached to Q post)
+   "But on our side, we have the Lord Almighty, the God of armies arrayed for battle, and the Most Holy Virgin, who will crush the head of the ancient Serpent."
+
+#4941  [Quoted/embedded religious letter] (OCR-normalized text from open-letter images attached to Q post)
+   "“If God is for us, who can be against us?” (Rom 8:31)."
+
+#4941  [Quoted/embedded religious letter] (OCR-normalized text from open-letter images attached to Q post)
+   "Place your trust in the Lord, strengthened by the words of the Apostle Paul: “I can do all things in Him who strengthens me” (Phil 4:13)."
+
+#4941  [Quoted/embedded religious letter] (OCR-normalized text from open-letter images attached to Q post)
+   "To be an instrument of Divine Providence is a great responsibility, for which you will certainly receive all the graces of state that you need, since they are being fervently implored for you by the many people who support you with their prayers."
+
+#4941  [Quoted/embedded religious letter] (OCR-normalized text from open-letter images attached to Q post)
+   "With this heavenly hope and the assurance of my prayer for you, for the First Lady, and for your collaborators, with all my heart I send you my blessing."
+
+#4941  [Quoted/embedded religious letter] (OCR-normalized text from open-letter images attached to Q post)
+   "God bless the United States of America."
+
+--- YELLOW (29) ---
+#115  [Religious name used as an exclamation/profanity] (Quoted/referenced post shown inside Q drop)
+   "JESUS FUCKING CHrisT!!"
+
+#179  [Ambiguous “Lord” title/name] (Quoted/referenced post shown inside Q drop)
+   ">Lord d R."
+
+#290  [Mythology / deity reference] (Text visible in attached image)
+   "Thor’s Fight With the Giants, Mårten Eskil Winge, 1872."
+
+#307  [Soul / spirit / heaven / hell] (Quoted/referenced post shown inside Q drop)
+   "Our Father who art in heaven, Hallowed be thy name."
+
+#307  [Soul / spirit / heaven / hell] (Quoted/referenced post shown inside Q drop)
+   "Thy will be done on earth as it is in heaven."
+
+#317  [Religious holiday / observance] (Quoted/referenced post shown inside Q drop)
+   "The ones who showed the WH Christmas photos?"
+
+#331  [Cult / dogma / revelation] (Quoted/referenced post shown inside Q drop)
+   "Maybe all (((these))) wives are there own high priestess cult…that where we’ll see the symbolism…the "slip ups""
+
+#345  [Cult / dogma / revelation] (Quoted/referenced post shown inside Q drop)
+   "They all belong to the same sick cult/club."
+
+#437  [Soul / spirit / heaven / hell] (Quoted/referenced post shown inside Q drop)
+   "Just imagine North Korea like a James Bond film, their own little bit of hell, can you imagine with the cash they have stole what they could have built on NK paychecks (they work or die, sort of free)"
+
+#457  [Religious holiday / observance] (Quoted/referenced post shown inside Q drop)
+   "Merry Christmas Q!"
+
+#984  [Religious holiday / observance] (Quoted/referenced post shown inside Q drop)
+   "How was your easter Q?"
+
+#1000  [Masonic / temple / shrine-like place] (Quoted/referenced post shown inside Q drop)
+   "Why is Epstein spending $29mm to bury the tunnels underneath is temple on Epstein Island?"
+
+#1101  [Religious holiday used as shorthand/date] (Quoted/referenced post shown inside Q drop)
+   ">>XMAS IN DC Who is arranging the PRIVATE meetings?"
+
+#1102  [Religious holiday used as shorthand/date] (Quoted/referenced post shown inside Q drop)
+   ">>XMAS IN DC Who is arranging the PRIVATE meetings?"
+
+#1547  [Cult / dogma / revelation] (Quoted/referenced post shown inside Q drop)
+   "proper revelation of nature of the moon and other bodies in our solar system Undiscovered stars learned."
+
+#1744  [Religious holiday / observance] (Quoted/referenced post shown inside Q drop)
+   "Merry Christmas."
+
+#1771  [Cult / dogma / revelation] (Quoted/referenced post shown inside Q drop)
+   "Presenting OUR work in a way to imply WE are some sort of cult, shows the WORLD how corrupt the MAINSTREAM MEDIA has become."
+
+#1904  [Mythology / deities] (Quoted/referenced post shown inside Q drop)
+   "Description: Guatemalan Silver Charm Necklace, 1980s Long Wedding Necklace with MILAGROS, Metal Beads, Cowgirl Southwest, First Peoples 30" plus large coin w charms pendant ( 76.2cm ) The pendant is 5" long x 2 1/2"wide ( 12.7cm x 6.35cm ) There are beads and many animal dangles hanging off the double chain strands, the charms are called MILAGROS Lion, duck, quetzal bird, Swallow bird, Deer, Fish and goddess( center bottom ) The necklace and dangles are all silver color metal and most are in excellent condition and actually, still shiny, Purchased in 1990s in Gallup New Mexico at a pawn shop where I was attending the Inter-Tribal Indian festival I was told that this was a Guatemalan Wedding necklace. ????"
+
+#1904  [Savior / saint / angel / miracle] (Quoted/referenced post shown inside Q drop)
+   "The word “Milagro” means “miracle”or Offering( Exvotos)."
+
+#1904  [Savior / saint / angel / miracle] (Quoted/referenced post shown inside Q drop)
+   "They are also carried for protection and good luck and thanks to Saints and Their animals."
+
+#2081  [Cross symbolism] (Text visible in attached image)
+   "An upside down cross…."
+
+#2598  [Religious holiday / observance] (Quoted/referenced post shown inside Q drop)
+   "This Christmas we want JUSTICE!"
+
+#2821  [Soul / spirit / heaven / hell] (Quoted/referenced post shown inside Q drop)
+   "But they're all in Heaven now, too."
+
+#2821  [Soul / spirit / heaven / hell] (Quoted/referenced post shown inside Q drop)
+   "I will introduce you all to my loved ones when we meet in Heaven some day."
+
+#3356  [Temple / possible religious architecture] (Text visible in attached image)
+   "The Island features a temple atop a small mountain and has been the location of several underage sex parties arranged by Epstein and attended by several of the world’s elite including ex-president Bill Clinton, his wife Hillary Clinton, Hollywood actors and even members of the world’s royal families."
+
+#3476  [Revelation / dogma] (Text visible in attached screenshot of post #3038)
+   "“Free thought” is a philosophical viewpoint which holds that positions regarding truth should be formed on the basis of logic, reason, and empiricism, rather than authority, tradition, revelation, or dogma."
+
+#3619  [Mythology / deities] (Quoted/referenced post shown inside Q drop)
+   "Launch project odin (checkmate against deplatforming)"
+
+#4941  [Quoted/embedded religious letter] (OCR-normalized text from open-letter images attached to Q post)
+   "It is you, dear President, who are “the one who opposes” the deep state, the final assault of the children of darkness."
+
+#4941  [Quoted/embedded religious letter] (OCR-normalized text from open-letter images attached to Q post)
+   "The leveling inhumanity of the globalist project will shatter miserably in the face of the firm and courageous opposition of the children of Light."

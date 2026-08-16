@@ -1,0 +1,109 @@
+{
+  "note": "Plain expansions for entities whose CANONICAL NAME is itself an acronym. Without these the info box could only say 'POTUS means POTUS', so they were skipped entirely — 28 entities, including the most-mentioned entity in the archive.",
+  "why": "The glossary is built from aliases that differ from the canonical name. That covers DOJ -> Department of Justice, but not an entity actually named POTUS or CNN, which is where a reader most often wants the expansion.",
+  "scope": "Expansions only, per the owner: 'at some point I will go through each entity and do a detailed definition for everyone but lets just work on acronyms for now.' These are standard public expansions, not interpretations of Q's usage. The entity's certified type and mention count still come from entities.json; nothing here moves a count.",
+  "definitions": {
+    "POTUS": {
+      "expansion": "President of the United States"
+    },
+    "VP": {
+      "expansion": "Vice President"
+    },
+    "AG": {
+      "expansion": "Attorney General"
+    },
+    "CEO": {
+      "expansion": "Chief Executive Officer"
+    },
+    "BOD": {
+      "expansion": "Board of Directors"
+    },
+    "AF1": {
+      "expansion": "Air Force One",
+      "detail": "The US Air Force aircraft carrying the President."
+    },
+    "SCIF": {
+      "expansion": "Sensitive Compartmented Information Facility",
+      "detail": "A secured room for handling classified material; phones and recording devices are left outside."
+    },
+    "MOAB": {
+      "expansion": "Massive Ordnance Air Blast",
+      "detail": "A large US conventional bomb, nicknamed the \"Mother of All Bombs\"."
+    },
+    "CNN": {
+      "expansion": "Cable News Network"
+    },
+    "MSNBC": {
+      "expansion": "MSNBC",
+      "detail": "US cable news network, originally a Microsoft and NBC joint venture."
+    },
+    "CNBC": {
+      "expansion": "Consumer News and Business Channel"
+    },
+    "TIME": {
+      "expansion": "Time",
+      "detail": "The American news magazine."
+    },
+    "MSDNC": {
+      "expansion": "Q's shorthand — \"mainstream media as the DNC\"",
+      "detail": "Not a real organization: Q's blend of MSM and DNC, used to assert the press acts as the Democratic National Committee's arm."
+    },
+    "DARPA": {
+      "expansion": "Defense Advanced Research Projects Agency",
+      "detail": "The US Defense Department's research arm."
+    },
+    "NASA": {
+      "expansion": "National Aeronautics and Space Administration"
+    },
+    "FEMA": {
+      "expansion": "Federal Emergency Management Agency"
+    },
+    "CISA": {
+      "expansion": "Cybersecurity and Infrastructure Security Agency",
+      "detail": "The US civilian cyber-defense agency, part of Homeland Security."
+    },
+    "INSCOM": {
+      "expansion": "US Army Intelligence and Security Command"
+    },
+    "SDNY": {
+      "expansion": "Southern District of New York",
+      "detail": "The federal court district, and the US Attorney's office, covering Manhattan."
+    },
+    "STATE": {
+      "expansion": "US Department of State",
+      "detail": "The federal department responsible for foreign affairs."
+    },
+    "GCHQ": {
+      "expansion": "Government Communications Headquarters",
+      "detail": "The UK's signals-intelligence agency, counterpart to the NSA."
+    },
+    "MI6": {
+      "expansion": "Secret Intelligence Service (MI6)",
+      "detail": "The UK's foreign intelligence service. Q also writes it SIS, its official name."
+    },
+    "NATO": {
+      "expansion": "North Atlantic Treaty Organization"
+    },
+    "ICANN": {
+      "expansion": "Internet Corporation for Assigned Names and Numbers",
+      "detail": "The body that coordinates internet domain names and addresses."
+    },
+    "ISIS": {
+      "expansion": "Islamic State of Iraq and Syria",
+      "detail": "The militant group, also written ISIL or Daesh."
+    },
+    "NXIVM": {
+      "expansion": "NXIVM",
+      "detail": "A US organization prosecuted as a criminal enterprise; its leader was convicted in 2019. Pronounced \"nexium\" — not an acronym."
+    },
+    "GOOG": {
+      "expansion": "Google",
+      "detail": "The company's stock ticker symbol."
+    },
+    "CBS": "CBS - the American broadcast television network, originally the Columbia Broadcasting System.",
+    "TMZ": "TMZ - the American celebrity and entertainment news outlet. The name comes from \"thirty-mile zone\", the studio production zone centred on Hollywood."
+  },
+  "deliberatelyUndefined": {
+    "LORD": "Certified as an entity but not an acronym, and its two occurrences do not establish whether Q means a title, a surname or a religious address. Left without a definition rather than guessed."
+  }
+}

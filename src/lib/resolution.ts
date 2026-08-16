@@ -29,6 +29,13 @@ export interface QueueItem {
   /** Which audit left this unresolved, and where it lives in the app. */
   provenance: string
   deepLink: string
+  /**
+   * The owner's reasoning on a case deliberately left OPEN — "SR here is the senior rank, not
+   * Seth Rich". Not a ruling and not a resolution: the row stays queued and no count moves.
+   * Set from audit/resolution-owner-notes.json when the build attaches one.
+   */
+  ownerNote?: string
+  ownerNotedOn?: string
 }
 
 export interface QueueData {
@@ -97,4 +104,33 @@ export async function submitSuggestion(s: Suggestion): Promise<void> {
     status: 'OPEN',
     createdAt: Date.now(),
   })
+  rememberSubmission(s.itemId, s.proposedResolution)
+}
+
+/**
+ * A contributor's own submission history, kept in this browser.
+ *
+ * The moderation store is deliberately create-only — no read — so there is no public wall to
+ * deface and no way to enumerate what other people sent. That security property is worth keeping,
+ * and it has one cost: after submitting, a contributor had no way to tell what they had already
+ * covered, and the queue looked identical whether they had worked on it for an hour or not at
+ * all. Recording it locally answers that without opening the store to reads.
+ *
+ * This is a personal record, not a status: it says "you sent this", never "this was accepted".
+ * Only an editorial pass through audit → adjudication → QA → apply → deploy can do that.
+ */
+const SENT_KEY = 'qdrops.resolve.sent'
+
+export type SentRecord = { itemId: string; proposed: string; at: number }
+
+export function sentSubmissions(): Record<string, SentRecord> {
+  try { return JSON.parse(localStorage.getItem(SENT_KEY) ?? '{}') } catch { return {} }
+}
+
+function rememberSubmission(itemId: string, proposed: string) {
+  try {
+    const all = sentSubmissions()
+    all[itemId] = { itemId, proposed: proposed.slice(0, 300), at: Date.now() }
+    localStorage.setItem(SENT_KEY, JSON.stringify(all))
+  } catch { /* private browsing, a full quota — never block a submission over its receipt */ }
 }

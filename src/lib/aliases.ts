@@ -22,6 +22,74 @@ async function persistCloud() {
   try { await setDoc(doc(db, 'app', 'aliases'), { json: JSON.stringify(map), _updatedAt: Date.now() }) } catch { /* offline */ }
 }
 
+// ── Certified entity aliases ────────────────────────────────────────────────
+//
+// There were TWO alias registries and only one of them was wired to search.
+//
+// `map` above is the OWNER-EDITABLE one: eight hand-made groups (potus, hillary clinton, usa…),
+// synced to Firestore, and the only reason searching "POTUS" folds Q+/Trump/45 together.
+// entities.json is the CERTIFIED one: 1,335 entities, each with the aliases the adjudication and
+// the owner rulings established — COVID-19 ← C19 ← COVID, Chinese Communist Party ← CCP, and so
+// on. Nothing in the app read it, so a certified alias was invisible to the archive: searching
+// "COVID-19" could not find the rows stored as "COVID" or "C19", while POTUS worked purely
+// because someone had typed its group in by hand.
+//
+// Kept as a SEPARATE map rather than merged into `map`, because the two have different
+// authorities. The editable map can be edited and deleted from the UI; a certified alias must not
+// be, and must not be pushed to Firestore as though the owner had typed it. Where both describe
+// the same term the editable map wins — an owner correction outranks a derived group.
+let certified: Record<string, string[]> = {}
+let certifiedIndex = new Map<string, string>()      // alias/canonical (lower) -> canonical (lower)
+
+/** Load the certified entity alias groups from the shipped Entities artifact. */
+export async function loadCertifiedEntityAliases(): Promise<void> {
+  try {
+    const res = await fetch(`${import.meta.env.BASE_URL}data/entities.json`)
+    if (!res.ok) return
+    const data = await res.json() as { entities?: { canonical?: string; aliases?: { text?: string }[] }[] }
+    const next: Record<string, string[]> = {}
+    const idx = new Map<string, string>()
+    for (const e of data.entities ?? []) {
+      const canon = (e.canonical ?? '').trim()
+      if (!canon) continue
+      const key = canon.toLowerCase()
+      // The alias Q actually wrote is what the archive stores, so the canonical belongs in the
+      // group too: "Dominion Voting Systems" never appears in a drop, only "Dominion.".
+      const members = (e.aliases ?? []).map(a => (a.text ?? '').trim()).filter(Boolean)
+      if (!members.length) continue
+      next[key] = [...new Set(members.filter(m => m.toLowerCase() !== key))]
+      idx.set(key, key)
+      for (const m of next[key]) idx.set(m.toLowerCase(), key)
+    }
+    certified = next
+    certifiedIndex = idx
+    listeners.forEach(l => l())
+  } catch { /* artifact missing or malformed — the editable map still works */ }
+}
+
+/** The certified group `term` belongs to (canonical + every alias), or null. */
+function certifiedGroup(term: string): string[] | null {
+  const canonKey = certifiedIndex.get(term.toLowerCase().trim())
+  if (!canonKey) return null
+  const members = certified[canonKey] ?? []
+  const canonical = members.find(m => m.toLowerCase() === canonKey) ?? canonKey
+  return [...new Set([canonical, ...members])]
+}
+
+/**
+ * Every certified entity alias (lowercased). Used to fold an alias row into its canonical row —
+ * and ONLY for entity rows: this set holds single tokens like "US" and "CCP" that could equally
+ * be the text of a claim or a code, and hiding those would delete a row from a section the
+ * ruling never touched.
+ */
+export function getCertifiedEntityAliasSet(): Set<string> {
+  const s = new Set<string>()
+  for (const [key, arr] of Object.entries(certified)) {
+    for (const a of arr) if (a.toLowerCase() !== key) s.add(a.toLowerCase().trim())
+  }
+  return s
+}
+
 /** Subscribe to alias changes (so views re-highlight). Returns an unsubscribe fn. */
 export function subscribeAliases(fn: () => void): () => void {
   listeners.add(fn)
@@ -40,7 +108,18 @@ export function subscribeAliases(fn: () => void): () => void {
 export function getAliasesFor(term: string): string[] {
   const t = term.toLowerCase().trim()
   if (!t) return []
-  return getAliasGroup(term).filter(g => g.toLowerCase().trim() !== t)
+  const editable = getAliasGroup(term)
+  // Union with the certified entity group, so a name carries BOTH the owner's hand-made
+  // connections and the ones the adjudication certified. Neither registry is complete on its own.
+  const cert = certifiedGroup(term) ?? []
+  const seen = new Set<string>([t])
+  const out: string[] = []
+  for (const g of [...editable, ...cert]) {
+    const k = g.toLowerCase().trim()
+    if (!k || seen.has(k)) continue
+    seen.add(k); out.push(g)
+  }
+  return out
 }
 
 /** Set of every alias string (lowercased) — used to fold alias entities into their canonical. */
@@ -66,6 +145,28 @@ export function getAliasGroup(term: string): string[] {
   const canon = map[t] ? t : canonicalOf(t)
   if (!canon) return [term]
   return [canon, ...(map[canon] ?? [])]
+}
+
+/**
+ * Every spelling of `term` from BOTH registries — the owner-editable groups and the certified
+ * entity aliases. This is what every READ path should use: search matching, the "across the
+ * archive" presence bar, highlighting. `getAliasGroup` stays editable-only because the write
+ * paths (addAlias/removeAlias) may only ever mutate the map the owner owns.
+ *
+ * OWNER RULE: a searched term always shows the aliases tied to it. Anything that resolves a term
+ * to its other spellings goes through here, or the next alias ruling is invisible again.
+ */
+export function getFullAliasGroup(term: string): string[] {
+  const t = term.toLowerCase().trim()
+  if (!t) return [term]
+  const seen = new Set<string>()
+  const out: string[] = []
+  for (const g of [...getAliasGroup(term), ...(certifiedGroup(term) ?? [])]) {
+    const k = g.toLowerCase().trim()
+    if (!k || seen.has(k)) continue
+    seen.add(k); out.push(g)
+  }
+  return out.length ? out : [term]
 }
 
 /**

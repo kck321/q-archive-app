@@ -36,6 +36,16 @@ const quoteParity = l => {
 }
 
 /**
+ * A line ENDING in a closing quotation mark closes the quotation, whatever the parity says.
+ *
+ * #1881 pastes a whole article on one line carrying five quote marks — an odd count, so parity
+ * reported an unbalanced quote still open, and the block ran on to swallow Q's own commentary:
+ * PURE EVIL. / [[[[HUNTERS]]]] BECOME THE HUNTED. Nested quotations inside a passage make parity
+ * unreliable; where the passage visibly ends, it ends.
+ */
+const CLOSES_QUOTE = /[”"]\s*$/
+
+/**
  * Identify source-material lines in one post.
  *
  * @param {string} text  cleaned post text
@@ -65,11 +75,11 @@ export function sourceLines(text) {
       if (isBlank(l) || Q_MARKER.test(l) || i - openQuote > 15) { openQuote = -1 }
       else {
         mark(i, 'inside a multi-line quotation')
-        if (quoteParity(l)) openQuote = -1      // this line closes it
+        if (quoteParity(l) || CLOSES_QUOTE.test(l)) openQuote = -1      // this line closes it
         continue
       }
     }
-    if (quoteParity(l) && l.length > 0) {
+    if (quoteParity(l) && !CLOSES_QUOTE.test(l) && l.length > 0) {
       // Opens a quotation that does not close on this line.
       openQuote = i
       mark(i, 'opens a multi-line quotation')

@@ -1,0 +1,189 @@
+{
+  "note": "Hand adjudication of the 26 declarative-lead candidates. Each row was read as a complete sentence in its surrounding context and ruled individually. No regex, verb list or prefilled destination produced any ruling here. Keyed by stable occurrence ID.",
+  "adjudicatedBy": "editorial pass, 16 Aug 2026",
+  "standard": "Does the leading word function as a VERB commanding the reader, or as a noun/adjective inside a declarative? The complete sentence decides, never the first token.",
+  "rulings": [
+    {
+      "stableOccurrenceId": "1183#0",
+      "fullSentence": "Push to DIVIDE is strong.",
+      "ruling": "REMOVE_CLAIM_NOT_DIRECTIVE",
+      "directiveSegments": "",
+      "reason": "\"Push\" is the subject noun — the push to divide — and \"is strong\" is its predicate. Q is describing the intensity of an adversary campaign, not telling anyone to push. The following line \"Think pre vs post 2016 election.\" is the actual directive in this drop."
+    },
+    {
+      "stableOccurrenceId": "128#2",
+      "fullSentence": "Look there, or [here], or there, truth is behind you.",
+      "ruling": "KEEP_Q_DIRECTIVE",
+      "directiveSegments": "Look",
+      "reason": "\"Look\" is a true imperative with a locative object. The trailing clause \"truth is behind you\" is the proposition the reader is being pointed at, not evidence the sentence is declarative. Sits between \"Think mirror.\" and \"What is a map?\" — Q instructing the reader where to direct attention."
+    },
+    {
+      "stableOccurrenceId": "1335#0",
+      "fullSentence": "Note the pictures we post are ALL originals.",
+      "ruling": "KEEP_Q_DIRECTIVE",
+      "directiveSegments": "Note",
+      "reason": "\"Note\" is an imperative taking a that-clause complement with \"that\" elided. Q is instructing the reader to register a fact. Followed by \"Think about what that means.\", a second directive on the same fact."
+    },
+    {
+      "stableOccurrenceId": "1358#7",
+      "fullSentence": "Trust is not blind, nor is truth.",
+      "ruling": "REMOVE_CLAIM_NOT_DIRECTIVE",
+      "directiveSegments": "",
+      "reason": "\"Trust\" is the subject noun of \"is not blind\". The preceding line \"Trust must be earned.\" uses the same noun in the same way — Q is defining what trust is, not issuing a command. Contrast #937 \"Trust there are more good than bad.\", where Trust is the verb."
+    },
+    {
+      "stableOccurrenceId": "1359#0",
+      "fullSentence": "Trade between Germany and Iran reached 3.4 billion euros ($4 billion) last year, according to BGA, another foreign trade association.”",
+      "ruling": "REMOVE_QUOTED_OR_THIRD_PARTY",
+      "directiveSegments": "",
+      "reason": "Not Q's sentence at all. The whole of line 0 is one pasted news paragraph, opening on a left quotation mark and closing on a right one, and this is its final sentence — the closing quote mark is still attached to the stored phrase. Removed on provenance, which is the stronger fact; \"Trade\" being a noun in a factual assertion is a second, independent reason. This record is what exposed the single-line self-contained quotation gap in sourceSpansV2."
+    },
+    {
+      "stableOccurrenceId": "1613#0",
+      "fullSentence": "Rest assured JUSTICE will be served.",
+      "ruling": "KEEP_Q_DIRECTIVE",
+      "directiveSegments": "Rest assured",
+      "reason": "\"Rest assured\" is a fixed imperative construction telling the reader to be confident of what follows. Same form the owner ruled a Directive at #51."
+    },
+    {
+      "stableOccurrenceId": "1645#1",
+      "fullSentence": "FIGHT for what is RIGHT!",
+      "ruling": "KEEP_Q_DIRECTIVE",
+      "directiveSegments": "FIGHT",
+      "reason": "Unambiguous imperative. \"what is RIGHT\" is the object of the preposition, not a declarative main clause. Immediately followed by \"FIGHT for FREEDOM!\", the same construction."
+    },
+    {
+      "stableOccurrenceId": "23#0",
+      "fullSentence": "Note MI has the same SAPs as NSA, CIA etc as designated post 9-11.",
+      "ruling": "KEEP_Q_DIRECTIVE",
+      "directiveSegments": "Note",
+      "reason": "\"Note\" is imperative with an elided \"that\". Opens the drop and is followed by \"Why is this relevant?\" — Q directing attention to a fact, then asking the reader to work on it."
+    },
+    {
+      "stableOccurrenceId": "2788#3",
+      "fullSentence": "TRUST THAT YOU ARE NOT ALONE.",
+      "ruling": "KEEP_Q_DIRECTIVE",
+      "directiveSegments": "TRUST",
+      "reason": "Explicit imperative with an explicit \"THAT\" complement. Part of a run of commands: \"TRUST YOURSELF.\" precedes it."
+    },
+    {
+      "stableOccurrenceId": "2788#4",
+      "fullSentence": "TRUST THAT THERE ARE GOOD PEOPLE RIGHT BESIDE YOU FIGHTING FOR WHAT WE KNOW TO BE RIGHT.",
+      "ruling": "KEEP_Q_DIRECTIVE",
+      "directiveSegments": "TRUST",
+      "reason": "Same imperative construction as the line above it. The long complement clause does not make the sentence declarative."
+    },
+    {
+      "stableOccurrenceId": "2940#0",
+      "fullSentence": "Note: Not all are USA v. [       ]",
+      "ruling": "KEEP_Q_DIRECTIVE",
+      "directiveSegments": "Note",
+      "reason": "The colon is the only thing separating this from #1335, which the owner ruled a Directive. Ruling it a heading on punctuation alone would split a hair the standard does not draw: the illocutionary force is still \"take note that…\". Kept for consistency with #1335, #23, #5, #6 and #724."
+    },
+    {
+      "stableOccurrenceId": "34#0",
+      "fullSentence": "Rest assured, the safety and well-being of every man, woman, and child of this country is being exhausted in full.",
+      "ruling": "KEEP_Q_DIRECTIVE",
+      "directiveSegments": "Rest assured",
+      "reason": "\"Rest assured,\" with the comma is the same imperative construction as #1613 and #51, here fronting a long reassurance clause."
+    },
+    {
+      "stableOccurrenceId": "4316#0",
+      "fullSentence": "Fear not, all will be well right after the election.",
+      "ruling": "KEEP_Q_DIRECTIVE",
+      "directiveSegments": "Fear not",
+      "reason": "\"Fear not\" is a negative imperative. Noted for the record: a Twitter URL sits on the line above, so this may be Q reproducing the tweet's message — but there is no quotation mark, no indentation and no matching payload, and rule 3 forbids inferring a quotation from adjacency alone. Kept as Q body."
+    },
+    {
+      "stableOccurrenceId": "4553#10",
+      "fullSentence": "Select [public discovery] topics are deemed and ranked in priority order [ranking determines use of assets [big-to-small]].",
+      "ruling": "REMOVE_CLAIM_NOT_DIRECTIVE",
+      "directiveSegments": "",
+      "reason": "\"Select\" is an adjective meaning certain or chosen, modifying \"topics\", which is the subject of \"are deemed and ranked\". Q is describing an adversary's process. Nobody is being told to select anything."
+    },
+    {
+      "stableOccurrenceId": "4556#0",
+      "fullSentence": "Select [public discovery] topics are deemed and ranked in priority order [ranking determines use of assets [big-to-small]].",
+      "ruling": "REMOVE_CLAIM_NOT_DIRECTIVE",
+      "directiveSegments": "",
+      "reason": "Same sentence as #4553, reposted. Same reading: \"Select\" is an adjective, the sentence is declarative."
+    },
+    {
+      "stableOccurrenceId": "4963#3",
+      "fullSentence": "Time to show the world.",
+      "ruling": "KEEP_Q_DIRECTIVE",
+      "directiveSegments": "show the world",
+      "reason": "\"Time to X\" with the copula elided — the same exhortative construction the owner ruled a Directive at #1252 (\"It's time to learn the TRUTH.\"). Preceded by \"You have seen the truth.\" and followed by \"Focus.\": Q moving the reader from knowing to acting."
+    },
+    {
+      "stableOccurrenceId": "5#1",
+      "fullSentence": "Note this doesn’t include massive slush funds that are pulled by several high ups.",
+      "ruling": "KEEP_Q_DIRECTIVE",
+      "directiveSegments": "Note",
+      "reason": "Imperative \"Note\" with an elided \"that\". Sits inside a run of research questions Q is directing the reader through."
+    },
+    {
+      "stableOccurrenceId": "6#4",
+      "fullSentence": "Note this doesn’t include massive slush funds that are pulled by several high ups.",
+      "ruling": "KEEP_Q_DIRECTIVE",
+      "directiveSegments": "Note",
+      "reason": "Same sentence as #5, reposted to the corrected thread. Same ruling."
+    },
+    {
+      "stableOccurrenceId": "51#0",
+      "fullSentence": "Rest assured POTUS is backed by the absolute finest people alive who are all dedicated to the eradication evil and corruption from the US/World.",
+      "ruling": "KEEP_Q_DIRECTIVE",
+      "directiveSegments": "Rest assured",
+      "reason": "OWNER RULING: \"Rest assured\" is an imperative/exhortation; keep the full sentence as the displayed highlight."
+    },
+    {
+      "stableOccurrenceId": "53#0",
+      "fullSentence": "List out all who have foundations.",
+      "ruling": "KEEP_Q_DIRECTIVE",
+      "directiveSegments": "List out",
+      "reason": "\"List out\" is a phrasal imperative verb with a direct object. A research task, and the drop's opening line."
+    },
+    {
+      "stableOccurrenceId": "533#1",
+      "fullSentence": "STAND UP AND DEFEND WHAT YOU KNOW IS RIGHT.",
+      "ruling": "KEEP_Q_DIRECTIVE",
+      "directiveSegments": "STAND UP · DEFEND",
+      "reason": "Two coordinated imperatives in one sentence. Both segments are stored; the displayed highlight is the whole sentence, not two overlapping partials. Preceded by \"STAND UP PATRIOTS.\""
+    },
+    {
+      "stableOccurrenceId": "566#1",
+      "fullSentence": "Release coming.",
+      "ruling": "REMOVE_PREDICTION_NOT_DIRECTIVE",
+      "directiveSegments": "",
+      "reason": "\"Release\" is the subject noun and \"coming\" the predicate — a status announcement about a forthcoming document, not an instruction to release anything. Confirmed by the line after it, \"Final clearance underway.\", which is the same declarative register. The actual directive in this drop is \"Read the #Memo.\" on the line above."
+    },
+    {
+      "stableOccurrenceId": "617#0",
+      "fullSentence": "Select news members / journalists are vital to delivering the message (as are YOU).",
+      "ruling": "REMOVE_CLAIM_NOT_DIRECTIVE",
+      "directiveSegments": "",
+      "reason": "\"Select\" is an adjective modifying \"news members / journalists\", which is the subject of \"are vital\". Q is asserting their importance, not commanding anyone to select them."
+    },
+    {
+      "stableOccurrenceId": "724#0",
+      "fullSentence": "Note \"The Hunt For\" was dropped.",
+      "ruling": "KEEP_Q_DIRECTIVE",
+      "directiveSegments": "Note",
+      "reason": "Imperative \"Note\" with an elided \"that\". The quoted words are a title being pointed at, not a pasted source. Followed by \"Details matter.\""
+    },
+    {
+      "stableOccurrenceId": "762#0",
+      "fullSentence": "Watch the news re: new drugs coming out [flu/dirt/next?].",
+      "ruling": "KEEP_Q_DIRECTIVE",
+      "directiveSegments": "Watch",
+      "reason": "\"Watch\" is imperative with \"the news\" as direct object. \"coming out\" modifies the drugs, not the sentence's mood. The preceding line \"They are ALWAYS watching.\" uses watch as a declarative — this one does not."
+    },
+    {
+      "stableOccurrenceId": "937#1",
+      "fullSentence": "Trust there are more good than bad.",
+      "ruling": "KEEP_Q_DIRECTIVE",
+      "directiveSegments": "Trust",
+      "reason": "\"Trust\" is the imperative verb with an elided \"that\". Directly follows \"Trust the plan.\", the same verb in the same mood. Contrast #1358, where Trust is a noun."
+    }
+  ]
+}

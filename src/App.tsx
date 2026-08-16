@@ -4,11 +4,12 @@ import { isTauri, openExternal } from './lib/openExternal'
 import { initLocalMedia } from './lib/localMedia'
 import { getAnalysisFrequency, getQuestionFrequency } from './lib/posts'
 import HighlightToggle from './components/HighlightToggle'
-import { loadAliasesFromCloud } from './lib/aliases'
+import { loadAliasesFromCloud, loadCertifiedEntityAliases } from './lib/aliases'
 import Sidebar from './components/Sidebar'
 import UpdateBanner from './components/UpdateBanner'
 import Dashboard from './pages/Dashboard'
 import PostArchive from './pages/PostArchive'
+import Search from './pages/Search'
 import PostDetail from './pages/PostDetail'
 import QuestionsArchive from './pages/QuestionsArchive'
 import Topics from './pages/Topics'
@@ -33,7 +34,10 @@ export default function App() {
   const mainRef = useRef<HTMLElement | null>(null)
 
   // Pull entity aliases from the cloud once at startup.
-  useEffect(() => { loadAliasesFromCloud() }, [])
+  // BOTH alias registries: the owner-editable groups AND the certified entity aliases from
+  // entities.json. Loading only the first is what made searching "COVID-19" miss the rows
+  // stored as "COVID" and "C19" while POTUS worked.
+  useEffect(() => { loadAliasesFromCloud(); loadCertifiedEntityAliases() }, [])
 
   // Warm the analysis index in the background once the app is up.
   //
@@ -102,6 +106,7 @@ export default function App() {
             <Route path="/"              element={<Navigate to="/posts" replace />} />
             <Route path="/dashboard"     element={<Dashboard />} />
             <Route path="/posts"         element={<PostArchive />} />
+            <Route path="/search"        element={<Search />} />
             <Route path="/post/:id"      element={<PostDetail />} />
             <Route path="/questions"     element={<QuestionsArchive />} />
             <Route path="/topics"        element={<Topics />} />

@@ -31,7 +31,378 @@ export interface LocalStore {
 const COLLECTIONS: CollectionName[] = ['posts', 'questions', 'topics', 'resources', 'analysisConfirmed', 'infographs']
 
 // Bump to force a re-seed from the JSON bundle (discards local IndexedDB edits).
-const SEED_VERSION = 4   // 4: final certified questions — 6,442 occurrences, exact source spans
+// 5: certified Emphasis — 5,251 occurrences. Every apply step since v4 rewrote postAnalysis
+// inside posts.json (Directives, Claims, Emphasis), and a returning visitor keeps the seeded
+// copy until this number changes, so certified counts would show only to first-time visitors.
+// 6: literal rendering spans + Context units. contextUnits, themeAnchors, claimSpans,
+// predictionSpans, conclusionSpans and checkableSpans were all materialised into posts.json and
+// deployed while this number stayed at 5, so every returning profile kept its cached bodies and
+// analysis and saw NONE of it — Context rendered 0/4,893 live, theme anchors 655/1,478. The
+// certified data was correct on the server and invisible in the browser.
+//
+// This is the SECOND time in one day: it sat at 4 through the Directives, Claims and Emphasis
+// applies for the same reason. Any change to posts.json content must bump this number, and the
+// invariant below now asserts it against the materialised fields rather than trusting memory.
+//
+// 7: the seven owner-adjudicated Claims (#570/#855/#1001/#1832/#1881 "Pure EVIL.", and #2917
+// "Pure evil." + "The 'real' racist."). THIRD time. The bundle was correct on the server, the
+// live Claim total read 4,188, and a fresh browser profile painted both #2917 sentences amber
+// with the overlap rotation on 'real' — while the owner's own browser, which had seeded at 6,
+// showed neither. "Deployed and verified in JSON" is not the same as "reaches a returning
+// reader", and only this number decides the difference.
+//
+// 8: Context corrected for those same rulings. Four of the five "Pure EVIL." occurrences had been
+// dispositioned CONTEXT_OR_LABEL, and Context means "reviewed, and in no semantic category" — so
+// #570 rendered the sentence as an overlap titled "2 certified layers: claim, context", one span
+// presented as classified and unclassified at once. Context units 4,906 -> 4,902.
+//
+// 9: "Ascension." ruled into Religion & Spirituality on #4963 and #4966 (themes 2,393 -> 2,395),
+// those two spans removed from Context (4,902 -> 4,900), and Context's own treatment changed from
+// a dotted underline to a grey fill because the underline was too faint to see.
+//
+// 10: section headlines read certified totals instead of summing the phrase-frequency index,
+// which had been reporting Claims as 4,175 against the certified 4,188 — the index groups by
+// phrase, so 13 in-post repeats collapsed. No posts.json change, but the frequency cache is
+// stamped with this number and the header wording changed, so returning readers re-seed.
+//
+// 11: four ACROSTIC Emphasis rulings — [N]othing [C]an [S]top [W]hat [I]s [C]oming (#4951),
+// [N]o [S]uch [A]gency and [C]los[I]ng [A]ct: (#129), and LDR spelled across #150. A tenth
+// device type; Emphasis 5,251 -> 5,255 across 1,737 -> 1,739 posts.
+//
+// 12: owner Entity ruling — "Dominion." (#4963) -> Dominion Voting Systems, the only occurrence
+// in the archive. Entities 1,332 -> 1,333 canonical, 7,903 -> 7,904 mentions. Also widens the
+// per-post Brackets panel, which had been dropping 618 bracketed spans across 353 posts.
+//
+// 13: acrostic Emphasis renders as the BRACKETS, not the containing line. #150 spreads [L] [d]
+// [R] across two sentences that are already a Prediction and a Claim, so the line-level span put
+// a second layer over every word of both and the whole drop flashed between three colours. One
+// certified occurrence, several literal spans — same shape as parallel_phrasing. Count unchanged.
+//
+// 14: bracketed spans now PAINT in the drop, in the red the [ Brackets ] panel uses. The panel
+// listed them while the drop showed nothing, so a reader could see [+family (follow)] named and
+// have no idea where it was. Panel and highlight share one definition (bracketSpansIn).
+//
+// 15: #150 acrostic Emphasis WITHDRAWN by owner ruling (both sentences are already a Prediction
+// and a Claim, so the extra layer added nothing) -> 5,254 across 1,738 posts. Plus: any second
+// layer inside a question now rotates instead of showing a flat blue fill with an "also:" tooltip.
+//
+// 16: containment is not overlap. A bracket inside a question is not two classifications of the
+// same span — the question is the container — so it shows its own colour and rotates only when
+// the SAME span belongs to two or more categories.
+//
+// 17: [ Brackets ] chips are clickable, like every other analysis chip — they search the archive
+// for the span so a reader can see every other drop it appears in.
+//
+// 18: #150's [L] resolved out of the Resolution Center — it is one letter of the [L][d][R]
+// acrostic, not a notation token. Queue 2,527 -> 2,526, code kind 173 -> 172. No new category.
+//
+// 19: the bracket structure layer no longer paints where a certified layer already covers the
+// same span. [barrage] is certified Emphasis of type bracket_emphasis — the bracket IS the
+// emphasis — so painting a structure layer over it made one device rotate as if it were two.
+//
+// 20: rotation counts DISTINCT KINDS, not segments. [A] in #129 belongs to both the CIA and NSA
+// acrostics, so it matched Emphasis twice and rotated as "2 certified layers: emphasis".
+//
+// 21: the overlap animation cycles the span's OWN category colours. It was a fixed six-colour
+// rainbow (red, amber, violet, cyan, orange, lime) applied to every overlap regardless of its
+// categories, so a Claim + Implied Conclusion span flashed cyan and magenta — colours no category
+// on the page owns — and the highlight could not be decoded against the legend.
+//
+// 22: [barrage] withdrawn from Emphasis on #4742 by owner ruling (bracketed item, not a device) —
+// 5,254 -> 5,253, 1,738 -> 1,737 posts; the #4741 occurrence stands. Runbeck Election Services
+// added as an Entity on #4963 — 1,333 -> 1,334 canonical, 7,904 -> 7,905 mentions.
+//
+// 23: Questions and Requests chips are clickable — they were the last analysis rows left as dead
+// text, so a reader could not ask where else Q said the same thing.
+//
+// 24: analysis chips carry an ARCHIVE-WIDE count. The x19 shown before was a per-category figure
+// ("Knowledge is power." is x19 as a Claim, x6 as an Implied Conclusion), so a phrase classified
+// in one post showed no number at all and the same wording showed two different ones.
+//
+// 25: OWNER RULE — anything in brackets is red, always, and never rotates. The layer had been
+// deferring to certified spans, so #4741 showed [past 7 days] red while [barrage] and [counter],
+// both certified Emphasis, showed slate: three bracketed items, two colours.
+//
+// 26: bracketed spans are COUNTED as bracket items in the analysis map, so the map total agrees
+// with the [ Brackets ] list under it. Owner rule: anything in [..] is red and is counted.
+//
+// 27: OWNER RULE — a span certified as a Question is not also Emphasis. Applied as a rule, not a
+// list, so it keeps holding: 104 rows retired (the whole repeated_question device, 95, plus 9
+// repeated_word rows that were questions). Emphasis 5,253 -> 5,149 across 1,737 -> 1,731 posts.
+//
+// 28: every category's chips carry the archive-wide count, brackets included. A missing number
+// used to mean "this row was never counted" and read as "appears once".
+//
+// 29: C19 ruled an alias of COVID-19. The entity shipped with COVID-19 as its ONLY alias, so 34
+// occurrences across 11 posts resolved to nothing. Mentions 7,905 -> 7,939, posts 2,222 -> 2,233.
+//
+// 30: CCP ruled to be the Chinese Communist Party — no entity existed for it at all, because
+// nothing in the corpus spells the name out. 1,334 -> 1,335 canonical, 7,939 -> 7,943 mentions.
+//
+// 31: brackets outrank entities. "[Mueller failed]" rendered as a red "[", a cyan "Mueller" and a
+// red " failed]" — one bracket, two colours, the bracket rule broken inside the thing it governs.
+//
+// 32: Themes render first in Post Analysis — the subject of a drop is the orienting fact.
+//
+// 33: Themes renders directly under the Tone line, above the Analysis map, Questions and
+// Requests. Seed 32 only moved it to the top of the CATS loop, which runs after all three.
+//
+// 34: the archive list and the post page now paint identically. /posts had its own copy of the
+// question branch that painted a whole question blue whatever sat under it, so ">End POTUS
+// rally(s)?" hid the certified Entity POTUS there while /post/:id showed it cyan — two surfaces
+// disagreeing about the same certified data. It also never fed the bracket layer, so /posts
+// painted no brackets at all. Both fixed, with the same rules in both files.
+//
+// 35: "University of Technology" and "WUT" ruled aliases of Wuhan University of Technology. The
+// entity already existed with only its full name as an alias, and that string never appears —
+// Q wrote "[Wuhan] University of Technology (WUT)", so the bracket breaks the contiguous name.
+//
+// 36: the parallel_phrasing run on #4738 withdrawn from Emphasis by owner ruling — both lines are
+// Questions. The standing question rule missed it because that row's sourceText is the LABEL
+// "why …", and the rule matches sourceText against certified questions.
+//
+// 37: open tabs reload themselves once when a new build activates. The worker already claimed
+// them, but they kept running the JS they had downloaded — including the old SEED_VERSION, the
+// value that decides whether to re-seed. That is why correct, already-deployed data kept being
+// reported as missing: the browser was running yesterday's code against today's bundle.
+//
+// 38: OWNER RULING — "if it's a question I would rather it be a question not an emphasis." The
+// rule now also retires parallel runs whose every line is a certified question: 479 runs, on top
+// of the 104 whose span WAS the question. Emphasis 5,148 -> 4,669 across 1,731 -> 1,667 posts.
+// Runs that MIX questions with other lines stand: there the device is the structure, not the
+// questions.
+//
+// 39: theme chips link to /analysis?tab=themes instead of a text search. A theme label is
+// inferred from a drop and never appears in one, so /posts?q="Media & Information" returned
+// "No posts found" while the facet beside it reported 301.
+//
+// 40: OWNER DECODE — [D] = Democrat, [F] = Foreign. Not a new category: both were already
+// certified codes (195 and 23 occurrences) carrying no interpretation, because the corpus never
+// spells either out. Interpreted codes 5 -> 7, unresolved 734 -> 732. Confidence OWNER, not HIGH,
+// so the provenance stays visible: this is an adjudication, not a corpus-established reading.
+// 41: OWNER RULING — bare COVID is the COVID-19 entity. It was certified with COVID-19 and C19
+// as its only aliases, so the standalone form Q writes in #4489, #4541 and #4548 resolved to
+// nothing. Mentions 7,945 -> 7,950, adjudicated tail 3,476 -> 3,481. The alias matcher needed a
+// lookahead: the hyphen in COVID-19 is a word boundary, so a plain /\bCOVID\b/ also matches all
+// 60 COVID-19 occurrences and would have added 60 phantom mentions to the same entity.
+//
+// 42: "Go to Post" stays in the archive. It used to navigate(`/post/N`), leaving /posts entirely
+// and losing the scroll position, the surrounding drops and any active filter. Jumping to a post
+// number is a request to look at it IN CONTEXT; opening the detail page stays a click.
+// 43: OWNER RULING — Rachel Chandler, Ray Chandler and RC are one person. Two certified rows
+// held her under two names, and Q's shorthand RC sat in the Resolution Center as 13 unanswered
+// rows. Ray Chandler is absorbed as an alias (canonical 1,335 -> 1,334) and 12 RC occurrences
+// resolve to her (mentions 8,227 -> 8,239, queue 2,245 -> 2,233). #2's "all his funds in a RC"
+// is excluded and stays queued. posts.json is rewritten, so returning visitors need this bump.
+// 44: OWNER RULING — no Emphasis is tied to a question, app wide. The rule now also retires any
+// occurrence whose LINE contains one of that post's certified questions: 1,555 rows on top of the
+// 104 whose span WAS a question and the 479 all-question parallel runs. Emphasis 4,669 -> 3,114
+// across 1,667 -> 1,358 posts. #5 listed two whole questions under Emphasis because the panel
+// lists a row by its line — suppressing the paint hid it in the drop and left it in every list.
+// 45: OWNER RULINGS — "Clinton's" in #5 is Hillary AND Bill (two mentions, entities 8,239 ->
+// 8,241); NP in #5/#6 is a non-profit, NOT Nancy Pelosi (#36 asks the same question with NPO),
+// resolved without creating an entity; "In time." in #4965 is a Claim, not Context
+// (Claims 4,188 -> 4,189, Context 4,900 -> 4,899). Resolution Center 2,233 -> 2,231.
+// 46: OWNER RULINGS on #4963 — SOS Offices./Investigators./Researchers./Whistleblowers./
+// Patriots are Entities (1,334 -> 1,339 canonical, 8,241 -> 8,246 mentions); "Patriots in
+// trusted positions." and "Time to show the world." are Claims (4,189 -> 4,191); SOS out of
+// Emphasis (3,113 -> 3,112). Implied Conclusions retired as a SECTION — all 966 were already
+// certified Claims, so the view goes and the rows stay.
+// 47: OWNER RULING — every Patriot/Patriots form is one Entity, registered in the Entities
+// stats: Patriots 119, Patriot 82, PATRIOTS 31, PATRIOT 3, patriot 3, patriots 1 = 239
+// mentions across 221 posts. The tail's separate 'Patriot' row (person, 2) was MERGED in —
+// two canonical rows claiming one token would double-count it. Entities 1,339 -> 1,338
+// canonical, 8,246 -> 8,484 mentions.
+// 48: OWNER RULINGS on #524 — "(Why don't we say his name?)" is a QUESTION (the detector
+// anchors on a line ending in '?', and this one ends in '?)'; 6,442 -> 6,443); five lines are
+// Claims (4,191 -> 4,196); NP here IS Nancy Pelosi, unlike #5 where the same token is a
+// non-profit; CEOs and BODs are Entities (1,338 -> 1,340, 8,482 -> 8,485). Searching a bare
+// post number now jumps to that drop instead of searching text for the digits.
+// 49: OWNER RULING — NP is an alias of Nancy Pelosi corpus-wide, EXCLUDING #5/#6 where the
+// same token was ruled a non-profit. 7 occurrences added, mentions 8,485 -> 8,491. Also: the
+// analysis phrase itself now opens its drops in place, and the archive jump waits for pages
+// in flight instead of declaring the post missing after one page.
+// 50: the two NPs are now separate ENTITIES — Nancy Pelosi everywhere except #5/#6, and
+// "Non-profit organization" on those two, so a search for her can never return the
+// non-profit. 1,340 -> 1,341 canonical, 8,491 -> 8,493 mentions. Also: the archive jump
+// re-anchors after the list settles — the card mounted but the page sat ~30 drops short.
+// 51: owner review of the 21 predicate_of_previous_subject rows — 12 certified as Claims
+// (4,196 -> 4,208), #1077 "Prevent at all costs." certified as a Directive (2,424 -> 2,425).
+// PRINCIPLE: a predicate inherits a subject only from a PROPOSITION; where the line above is
+// a Directive or an Entity there is nothing to inherit. Also: the archive jump now OPENS the
+// list at the drop instead of paging to it — 30s+ down to under 2s.
+// 52: OWNER RULING — lowercase "sessions" withdrawn as an alias of Jeff Sessions. It matched
+// "friendly therapy sessions" (#2319) and news URLs; the man is always Sessions/SESSIONS.
+// Mentions 8,493 -> 8,490. Also live now: questions paint in the analysis drop reader, the
+// Resolution Center lists every row instead of 25 at a time, and the queued token is
+// highlighted inside its context.
+// 53: OWNER RULING — "Panic in DC." is a Claim wherever Q states it. 34 occurrences added
+// (4,208 -> 4,242 across 1,957 -> 1,982 posts). 12 quoted occurrences stay out, and the two
+// interrogative "PANIC IN DC?" lines stay Questions — they ask rather than assert.
+// 54: owner-supplied Q-authored directive audit merged — 2,198 entries reviewed, 1,899 already
+// certified, 280 added as COMPLETE sentences, 6 skipped because the audit wording does not appear
+// verbatim in the drop. Directives 2,425 -> 2,705 across 1,418 -> 1,538 posts.
+// 55: OWNER RULING — every DC in the archive is Washington, D.C. The context pass had resolved
+// 14 and left 88 queued as "city or initials"; the owner reviewed the set and ruled the city
+// throughout. Mentions 14 -> 102 across 80 posts, Resolution Center 2,224 -> 2,136.
+// 56: OWNER RULING — SC is the Supreme Court in 24 named drops (#4 … #4153). Scoped with a new
+// includePosts whitelist rather than applied corpus-wide, because SC is also a person's initials
+// elsewhere. 31 occurrences in those posts; mentions 8,578 -> 8,599, queue -27 rows.
+// 57: OWNER RULING — U.S. = United States, all 71 queued appearances (none meant anything else).
+// Mentions 8,599 -> 8,670. Two matcher defects fixed to get there: a trailing \b can never match
+// after a period (U.S. found 2 of 72), and a recounted alias was double-emitting the occurrences
+// the context pass had already resolved (14 DC + 10 SC). SC rows outside the 24 ruled posts are
+// back in the Resolution Center — a scoped ruling now clears only the posts it names.
+// 58: OWNER RULING — BO resolved PER OCCURRENCE into three referents: Barack Obama (16 drops),
+// Bruce Ohr (10: Steele/Nellie Ohr/DOJ/Huber/testimony), Board Owner (9: /BO/, Bakers, Vols,
+// IP-hash). No global BO alias, which would have corrupted the later two. #235 left queued as too
+// short to decide. Mentions 8,670 -> 8,717.
+// 59: OWNER RULINGS — SR and NG, both scoped per occurrence.
+// SR = Seth Rich in 9 drops (SR/JA/WL lawsuit, "Q: SR" + DNC suit, SR 187, server unlocks SR).
+// NOT global: SR is Susan Rice in the #559 Hussein-cabinet roster and the SENIOR rank in #1573,
+// #2658 (SR+MID+LOW) and #4640 (Pentagon [SR 1-4]) — all four stay queued, now carrying owner
+// NOTES, a new third state between resolved and silent that records reasoning without moving a
+// count. NG = National Guard in all 9 queued drops (#128 stays NG even though the drop calls the
+// surrounding claim disinformation — the abbreviation still means the National Guard).
+// Mentions 8,717 -> 8,737, queue 1,978 -> 1,955.
+// 60: OWNER RULINGS — DNI, MI and SIS, plus a REPAIR of two earlier batches.
+// DNI = Director of National Intelligence, all 13 cards (new entity; nothing in the corpus
+// spells the office out). MI = Military Intelligence in 14 drops and Michigan in #4171 alone
+// ("lockdown CA, NY, OR, MI"). SIS = MI6 in 8 UK-prefixed drops, attached to the EXISTING MI6
+// entity so one organization stays one record; the 4 US-lineage/ambiguous cards stay queued
+// with owner notes.
+// REPAIR: a scoped recount REPLACES an alias count, so occurrences the certified context pass
+// had already resolved but which sat outside the owner scope were dropped from the count AND
+// the highlighting, while entities.json still listed the post. 22 lost occurrences restored:
+// 3 Seth Rich (#1195, #436 x2), 13 BO, 6 SC. New invariant entities-scope-drop makes it
+// impossible to repeat silently. Mentions 8,737 -> 8,793, queue 1,955 -> 1,921.
+// 61: OWNER RULING — RT split three ways, and the READER INFO BOX.
+// RT = Rex Tillerson in #947 (x2), #959, #2844 (new entity). RT = "real time" in 8 drops and
+// "retweet" in #1109 — both resolved and removed from the queue WITHOUT becoming entities,
+// because "this is not a person, place or organization" is a complete answer.
+// NEW: hover/press info box on every acronym and initialed name, app-wide. Post-aware, so BO
+// reads Barack Obama in #36 and Bruce Ohr in #1828; built by scripts/build-glossary.mjs from the
+// certified entities plus audit/notation-glossary.json for non-entity shorthand. One shared
+// layer (src/lib/glossary.tsx) drives PostDetail, PostCard and the inline reader, so the three
+// surfaces cannot drift. Mentions 8,793 -> 8,797, queue 1,921 -> 1,908.
+// 62: OWNER RULINGS — seven tokens, 92 occurrences, all post-scoped.
+//   JA   -> Julian Assange (12 cards)        PP -> Planned Parenthood (12)
+//   WL   -> WikiLeaks (12)                   BC -> Bill Clinton (18 across 14 posts)
+//   CM   -> CodeMonkey (11) + Cheryl Mills (#1828, grouped with HRC/BC/Huma, not board terms)
+//   SS   -> Secret Service (11) + Supreme Court (#1151, written SS but read SC — a typo,
+//           carried as a readerNote so the info box explains itself instead of looking wrong)
+//   WASH -> Washington Post (12) + Washington Free Beacon (#1828) + Washington, D.C. (#524);
+//           #1493 and #1731 stay queued, the owner marked them unresolved.
+// New entities: Cheryl Mills, Washington Post, Washington Free Beacon.
+// JA/WL/BC each carried context-resolved occurrences OUTSIDE the owner list (#1199; #1870,
+// #3764, #4162; #36, #1220, #1556, #3383) — folded into scope so the recount preserves them.
+// Mentions 8,797 -> 8,889, queue 1,908 -> 1,816, glossary 109 -> 113 tokens.
+// 63: INFO BOX — off-screen fix, and acronym coverage.
+// Positioning: the box was absolutely positioned and centred above the token, so it opened
+// half outside the window near a line end and upward into nothing at the top of a drop. Now
+// fixed-positioned and clamped to the viewport on BOTH axes (preferring above, but never
+// trusting that branch — 6 of 21 test cases still overflowed when the anchor sat below the
+// fold). Closes on scroll, resize and Escape.
+// Coverage: 28 entities are NAMED with an acronym (POTUS at 370 mentions, CNN, DARPA, MI6,
+// SDNY...), and the builder only glossed aliases that DIFFER from the canonical, so all 28 had
+// no info box at all. audit/acronym-definitions.json supplies expansions; 27 defined, LORD
+// deliberately left out with a stated reason. Glossary 113 -> 140 tokens.
+// Standing rule, now enforced: invariant entities-acronyms-defined fails the build if an
+// acronym-named entity ever ships without a definition or a recorded reason.
+// 64: OWNER RULINGS — DAG, JB, JK, HCQ, NYC, RBG, AWAN (74 cards).
+// DAG resolves to the OFFICE, Deputy Attorney General, never automatically to one person:
+// Rosenstein is the officeholder in 5 drops, and #3210/#3211 span TWO officeholders (a quoted
+// 2016 message from Sally Yates + commentary on Rosenstein). Carried as per-post reader notes.
+// JB is three people, and #1828 needed OCCURRENCE-level scoping: four JB there are John Brennan
+// and the one inside the FBI personnel list is James Baker. New includeOccurrences addresses an
+// occurrence by [line, char] — the same coordinates the queue row id uses.
+// JK = Jared Kushner (7) / John Kerry (3). HCQ = hydroxychloroquine (7 Reference cards); the 4
+// Device cards ruled NOT emphasis. NYC (11), RBG (11), AWAN = Imran Awan (11).
+// New entities: Jeff Bezos, New York City. Mentions 8,889 -> 8,959, queue 1,816 -> 1,742.
+// Info box: a drop with two readings now names both instead of staying silent.
+// 65: OWNER RULINGS — 11 tokens, 233 cards (226 resolved, 7 deliberately held).
+//   MZ Mark Zuckerberg 11 | NY New York 18 + New York Post (#1515) | LL Loretta Lynch 21
+//   BLM Black Lives Matter 24 | AUS Australia 26 | MZ/NY/LL/BLM/AUS all single-referent
+//   JFK five referents: the president 14, JFK Jr (#1082), the airport (#1588), Gen. John
+//     Francis Kelly (#1433 — his own initials), the JFK Conference Room (#709)
+//   CS CrowdStrike 2 / Christopher Steele 8 / Chuck Schumer 11 (incl #559 on the updated ruling)
+//   JC James Comey 18 / James Clapper (#1828 [DNI [JC]], occurrence-scoped)
+//   ES Eric Schmidt 15 / Edward Snowden 6 — Q writes "ES = @Snowden" outright in #1911
+//   Jack Dorsey 20; #4632 x2 are NOT shorthand (Jack W. Gardner given name, Larry Jack Schwarz
+//     middle name) — occurrence-scoped to two different people in one drop
+//   PS Peter Strzok 20 / PlayStation 3 / postscript (#15, not an entity at all)
+// HELD with reasons: JFK #742 #743, JC #1591, JC #559 x2 (two men, order unknown — explicitly
+// not both Comey), ES #4533, PS #1380. New entities: 6. Mentions 8,959 -> 9,185.
+// Queue 1,742 -> 1,516.
+// 66: WASH POST joined into ONE entity, + ABC / RE / OP (85 cards).
+// The owner saw three separate WASH highlights on #2401 where the drop says "WASH POST" three
+// times — half a name presented as the whole reference. The alias is now the full two-word form
+// (12 occurrences), and every other WASH ruling carries notFollowedBy so a bare WASH can never
+// claim the first half of it. Same shape as COVID-19 vs COVID.
+// ABC: ABC News 16, CIA 2 (#1806 high / #2549 medium confidence, noted per post), 8 generic
+// "alphabet agencies" glossed as notation, #1379 held — the token alone is not evidence.
+// RE: Rahm Emanuel in #1828 only; the other 28 are the ordinary "RE:" = regarding.
+// OP: Operation Mockingbird (#626, joined as OP Mockingbird), an operation named Fiddler (#836),
+// 27 generic "operation", and #1745 a FALSE MATCH inside "CO-OP STRATEGY".
+// Mentions 9,185 -> 9,205 (65 of the 85 cards are notation, and move no count).
+// Queue 1,516 -> 1,431.
+// 67: RELIGIOUS / SPIRITUAL AUDIT — 581 sentences into Religion & Spirituality.
+// Owner supplied a 1,264-record GPT audit graded GREEN/YELLOW/RED. GREEN taken as concrete;
+// YELLOW and RED reviewed sentence by sentence, not by category label — "Have faith in Humanity"
+// and "What faith does HUMA represent?" share a category and only one is about religion.
+// Kept: 514 GREEN, 59 YELLOW, 8 RED = 581 across 328 posts (204 newly themed).
+// Every anchor is the COMPLETE sentence, so no religious highlight stops mid-sentence.
+// 232 records could not be used: they are image text, OCR, or wording from posts QUOTED by Q,
+// and do not reproduce verbatim from the canonical body. Listed for re-checking, not discarded.
+// Theme assignments 2,395 -> 2,599; posts with a theme 1,767 -> 1,887.
+// 68: ABC / Clinton / FED / VIP — 99 cards on the full-context resolution map.
+// Clinton is not one person: Clinton Foundation 9, Hillary/campaign 8, Bill 1 (#3035, named in the
+// linked court material), and 8 that mean the family/network — glossed as such rather than forced
+// onto an individual. 5 held (#2848, #300, #666, #4819 x2) where the post cannot distinguish them.
+// FED splits Federal Reserve 14 from the federal GOVERNMENT 13 (FED G / FED GOV), plus 4 uses of
+// the adjective and #2399 where FED is the verb fed — a false positive kept on the record.
+// VIP: VIPAnon (@Q_ANONBaby) 3, Adm. John Richardson #2669 on the Navy date match, 3 VIP-access,
+// and 29 VIP Patriot honorifics addressed to different supporters — not one entity.
+// ABC #1379 closed as Alphabet Inc. with a confidence note; the drop never decodes it.
+// Mentions 9,205 -> 9,250, queue 1,431 -> 1,336.
+// 69: NOTATION AUDIT — 172 code cards: 143 approved, 29 held.
+// The Codes queue mapped one-to-one onto the audit, so every card was adjudicated.
+// Approved means the notation FUNCTION or textual referent is identifiable — SCI[F] completing
+// SCIF, [R] = Renegade stated outright, timestamps, day/night sequence markers, [187] as
+// homicide shorthand. It does not endorse any factual claim the drop makes.
+// The 29 held are held for one reason: the corpus never establishes a single safe meaning, and
+// outside-community lore was not used to force one. Snow White, Wizards & Warlocks, RED_RED,
+// CASTLE_ROCK, [CLAS 1-99] and the bare markers stay in the Resolution Center with the reason
+// on the card. #757 keeps three of them and #1828 two, so the holds are keyed per occurrence
+// rather than per post — a post-level hold would have stranded resolvable cards in those drops.
+// Codes queue 172 -> 29. Queue 1,336 -> 1,193.
+// 70: SUBJECT AUDIT — 251 theme cards: 235 resolved, 16 left open.
+// These rows were CANDIDATES, not assignments — the context guard fired, so the theme was never
+// applied. That is why 187 removals move no certified data: declining a candidate simply closes
+// the question. Keep 41 and Move 7 ADD the theme (a Move declines Foreign Affairs and applies
+// Censorship & Technology instead).
+// The standard held throughout: a country name attached to a domestic DOJ/FBI/Mueller/FISA
+// dispute is not Foreign Affairs. Russia naming the ALLEGATION is not the same as Russia being
+// the subject — which is why 234 Foreign Affairs candidates produced only ~30 keeps.
+// The 16 medium-confidence cards stay in the Resolution Center carrying both the tentative
+// reading and the reason it is still open.
+// Theme assignments 2,599 -> 2,644; posts with a theme 1,887 -> 1,898. Queue 1,193 -> 958.
+// 71: DEVICE AUDIT — 234 rhetorical-device cards: 203 resolved (83 keep / 120 remove), 31 held.
+// Device here means a possible RHETORICAL device, not hardware. A repeated question word is not
+// enough: "Why X? / Why Y?" is ordinary question grammar. A keep needs a non-obligatory repeated
+// opening or a matched frame — anaphora, contrast, cadence.
+// Matching took three passes and two of my own bugs. The export is UTF-8 round-tripped through
+// Latin-1, so it holds "canât" where the queue holds "can't" — read as plain utf8, every
+// affected row misses. And 19 rows are all-caps-emphasis candidates whose stored token is the
+// trigger WORD (MIL, COVID, DRAIN) while sourceSpan carries the sentence the audit actually
+// judged — keying on token alone leaves them unmatchable forever. Indexing both stored fields
+// removed the need for the authorised prefix fallback entirely: 0 fuzzy matches.
+// The 83 keeps are recorded but NOT materialised. Their label is a synthetic "A / B" join whose
+// separator exists nowhere in the drop; each now carries its clauses as separate spans with
+// offsets, awaiting a multi-span parallel-phrasing representation before it can be highlighted.
+// Classification queue 234 -> 31. Queue 958 -> 755.
+export const SEED_VERSION = 72   // 72: Q Directives on sourceSpansV2 — 2,552 occurrences, directiveMeta spans
+// 71: 4: final certified questions — 6,442 occurrences, exact source spans
 
 // ── Minimal IndexedDB key/value wrapper (one record per collection) ──────────
 const DB_NAME = 'q-archive'

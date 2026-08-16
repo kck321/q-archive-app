@@ -18,18 +18,32 @@ body {
   background-color: #0f172a;
 }
 
-/* Overlap/conflict mark — cycles through category colors (no rose — rose is reserved for nothing) */
-@keyframes overlap-flash {
-  0%, 100% { background-color: rgba(239, 68, 68, 0.8);  color: #fff1f2; }
-  17%       { background-color: rgba(245, 158, 11, 0.6); color: #fef3c7; }
-  33%       { background-color: rgba(139, 92, 246, 0.6); color: #ede9fe; }
-  50%       { background-color: rgba(6, 182, 212, 0.6);  color: #cffafe; }
-  67%       { background-color: rgba(249, 115, 22, 0.6); color: #ffedd5; }
-  83%       { background-color: rgba(132, 204, 22, 0.6); color: #ecfccb; }
+/* Overlap mark — cycles ONLY the colours of the categories this span actually belongs to.
+ *
+ * This used to be a fixed six-colour cycle (red, amber, violet, cyan, orange, lime) applied to
+ * every overlap regardless of its categories. So a span that was Claim + Implied Conclusion
+ * flashed cyan, magenta and lime — colours no category on the page owned — and a reader trying to
+ * decode the highlight against the legend could not. The colours are now passed in per span as
+ * --hl-1..--hl-3, set from the span's own kinds.
+ */
+@keyframes overlap-2 {
+  0%,   42%  { background-color: var(--hl-1); color: var(--hl-1-fg); }
+  58%,  100% { background-color: var(--hl-2); color: var(--hl-2-fg); }
 }
-.animate-overlap {
-  animation: overlap-flash 12s ease-in-out infinite;
+@keyframes overlap-3 {
+  0%,   26%  { background-color: var(--hl-1); color: var(--hl-1-fg); }
+  34%,  59%  { background-color: var(--hl-2); color: var(--hl-2-fg); }
+  67%,  100% { background-color: var(--hl-3); color: var(--hl-3-fg); }
 }
+.animate-overlap-2 { animation: overlap-2 4.5s ease-in-out infinite; }
+.animate-overlap-3 { animation: overlap-3 6.5s ease-in-out infinite; }
+
+/* Archive jump flash — marks the card "Go to Post" landed on, then fades out. */
+@keyframes jump-flash {
+  0%, 30% { background-color: rgba(59, 130, 246, 0.22); }
+  100%    { background-color: transparent; }
+}
+.animate-jump-flash { animation: jump-flash 2.6s ease-out 1; }
 
 /* Post body flash on navigation — fades from white to transparent once */
 @keyframes body-flash {

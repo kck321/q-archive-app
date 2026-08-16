@@ -10,6 +10,7 @@ import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 import { initializeApp } from 'firebase/app'
 import { getFirestore, collection, getDocs, doc, getDoc } from 'firebase/firestore'
+import { CHAIN_STEPS } from './lib/chainSteps.mjs'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
@@ -122,22 +123,11 @@ for (const name of COLLECTIONS) {
   process.stdout.write('Re-applying quoted post content… ')
   execFileSync(process.execPath, [applyScript], { stdio: 'inherit' })
 
-  // Same reasoning for the derived analysis: the dump replaces posts.json wholesale, so the
-  // recall backfill and the emphasis detection have to be reapplied or they vanish silently.
-  // Both are deterministic and idempotent, so re-running is always safe.
-  // apply-questions.mjs rebuilds the 6,299 certified base from audit/questions-final.json;
-  // apply-questions-final.mjs then layers on the 143 occurrences the uncovered-"?" audit
-  // recovered, taking it to 6,442. They MUST run in that order and both must run — dropping
-  // the second one silently reverts the live count to 6,299 on the next export.
-  // apply-directives.mjs must run LAST: it rewrites posts.json actionRequests from the
-  // certified set, and the earlier steps rewrite posts.json too. Dropping it silently reverts
-  // Directives to the old extractor output on the next export, exactly as dropping
-  // apply-questions-final.mjs would revert Questions to 6,299.
-  // apply-claims.mjs runs after apply-directives.mjs: both rewrite posts.json, and Claims
-  // reads the certified artifact rather than post text, so it must land on top. Dropping it
-  // reverts Claims to the old extractor's 7,509, exactly as dropping apply-questions-final.mjs
-  // would revert Questions to 6,299.
-  for (const step of ['backfill-analysis.mjs', 'detect-emphasis.mjs', 'apply-questions.mjs', 'apply-questions-final.mjs', 'apply-directives.mjs', 'apply-claims.mjs', 'audit-evidence.mjs', 'apply-evidence.mjs', 'audit-entities.mjs', 'adjudicate-entities-tail.mjs', 'adjudicate-entities-other.mjs', 'adjudicate-entities-lowconf.mjs', 'resolve-entity-context.mjs', 'apply-entities.mjs', 'audit-themes.mjs', 'apply-themes.mjs', 'audit-codes.mjs', 'adjudicate-codes.mjs', 'apply-codes.mjs', 'build-resolution-queue.mjs']) {
+  // Same reasoning for the derived analysis: the dump replaces posts.json wholesale, so every
+  // certified section has to be reapplied or it vanishes silently. The ordering and the reason
+  // each step is required live in scripts/lib/chainSteps.mjs, shared with rebuild-bundle.mjs so
+  // the two entry points can never drift apart.
+  for (const step of CHAIN_STEPS) {
     console.log(`
 Re-running ${step}…`)
     execFileSync(process.execPath, [join(root, 'scripts', step), '--apply'], { stdio: 'inherit' })

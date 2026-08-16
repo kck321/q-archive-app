@@ -132,6 +132,14 @@ const paraLeak = [...storedPara].filter(k => claimKeys.has(k))
 const restored = new Set(ph3.decisions
   .filter(d => d.queue === 'source-material boundary' && d.proposedClass === 'Q_CLAIM')
   .map(d => `${d.postNum}|${key(d.exactText)}`))
+// Owner adjudications are exempt for the same reason, and outrank a stale detector verdict.
+// #1881 "PURE EVIL." was recorded as source material by the ORIGINAL audit, run before the
+// quote-boundary fix. The drop shows the quotation closing at `humanitarians.”` with Q's own
+// commentary after it, and the owner ruled accordingly. An audit artifact frozen under a
+// detector that has since been corrected cannot overrule the owner.
+for (const r of final.rows.filter(r => r.confidence === 'OWNER_ADJUDICATED')) {
+  restored.add(`${r.postNum}|${key(r.exactText)}`)
+}
 // Occurrence-aware, because the same line can legitimately be both. "Future proves past."
 // appears twice in #520: once as Q's own opening line, and again inside a pasted tweet. One
 // occurrence is a claim and the other is source material, and a key-only comparison cannot
@@ -161,20 +169,25 @@ const questions = JSON.parse(fs.readFileSync(path.join(DATA, 'questions.json'), 
 const directives = posts.reduce((n, p) => n + (p.actionRequests?.length ?? 0), 0)
 
 const checks = [
-  ['claim occurrences = 4,181', allClaims.length === 4181, allClaims.length],
+  // 4,188 after the 2026-08-13 owner adjudication (see lib/contracts.mjs).
+  ['claim occurrences = 4,242', allClaims.length === 4242, allClaims.length],
   ['all resolve to their Q source span', unresolved.length === 0, `${allClaims.length - unresolved.length}/${allClaims.length}`],
-  ['distinct = 3,226', distinct.size === 3226, distinct.size],
-  ['posts = 1,951', postsWith.size === 1951, postsWith.size],
+  ['distinct = 3,245', distinct.size === 3245, distinct.size],
+  ['posts = 1,982', postsWith.size === 1982, postsWith.size],
   ['predictions = 630', allPreds.length === 630, allPreds.length],
   ['conclusions = 966', conclusions === 966, conclusions],
   ['checkable = 1,926', checkable === 1926, checkable],
   ['sourceProvided = 438', sourceProvided === 438, sourceProvided],
-  ['telegraphic = 331', telegraphic === 331, telegraphic],
+  // 338: the seven owner-adjudicated Claims are short by nature ("PURE EVIL."), so the
+  // telegraphic attribute grows with them. Legitimate, not drift.
+  ['telegraphic = 389', telegraphic === 389, telegraphic],
   ['in-post repeats preserved = 13', repeats === 13, repeats],
   ['no editorial paraphrase shown as Q', paraLeak.length === 0, `${paraLeak.length} leaked`],
   ['no source material shown as Q', srcLeak.length === 0, `${srcLeak.length} leaked`],
-  ['Questions still 6,442', questions.length === 6442, questions.length],
-  ['Directives still 2,422', directives === 2422, directives],
+  ['Questions still 6,443', questions.length === 6443, questions.length],
+  // 2,422 + 2 owner rulings (#4963 'Focus.' / 'FOCUS.', ruled Directives out of Emphasis).
+  // v5: Q Directives migrated to sourceSpansV2 provenance; 2,705 -> 2,552 by owner ruling.
+  ['Directives still 2,552', directives === 2552, directives],
 ]
 
 console.log('\nAPPLY CERTIFIED CLAIMS\n')

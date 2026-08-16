@@ -132,6 +132,26 @@ for (const f of ctxFinal.finals) {
 }
 
 // ── QA gate ─────────────────────────────────────────────────────────────────
+// ── Owner rulings ───────────────────────────────────────────────────────────
+// Merged before the gate so an owner question passes the same QA as every other row.
+const QRULES = path.join(ROOT, 'audit/questions-owner-rulings.json')
+let ownerQuestions = 0
+if (fs.existsSync(QRULES)) {
+  for (const r of JSON.parse(fs.readFileSync(QRULES, 'utf8')).rulings ?? []) {
+    if (rows.some(x => x.postNum === r.postNum && flat(x.text) === flat(r.text))) continue
+    const post = postByNum.get(r.postNum)
+    rows.push({
+      id: `q-owner-${r.postNum}-${ownerQuestions}`,
+      postId: r.postId ?? String(r.postNum), postNum: r.postNum,
+      text: r.text, occurrences: 1,
+      status: 'unprocessed',
+      source: 'owner ruling',
+      provenance: `owner ruling ${r.ruledOn} — ${r.reasoning}`,
+    })
+    ownerQuestions++
+  }
+}
+
 const counted = rows.filter(r => !r.editorialNormalization)
 const bodyOf = new Map(posts.map(p => [p.postNum, flat(p.text ?? '')]))
 const linesByPost = new Map(posts.map(p => [p.postNum, clean(p.text ?? '').split('\n').map(l => l.trim()).filter(Boolean)]))
@@ -160,10 +180,11 @@ const coin = counted.filter(r => key(r.text) === key('Coincidence?'))
 const coinMentions = coin.reduce((s, r) => s + r.occurrences, 0)
 
 const checks = [
-  ['certified occurrences = 6,442', counted.length === 6442, counted.length],
+  ['certified occurrences = 6,443', counted.length === 6443, counted.length],
+  ['owner question rulings applied = 1', ownerQuestions === 1, ownerQuestions],
   ['all resolve to a source span', qa.missing.length === 0, `${qa.resolved}/${counted.length}`],
   ['every span is a unit or literal line', qa.notAUnit.length === 0, `${counted.length - qa.notAUnit.length}/${counted.length}`],
-  ['distinct (canonical key) = 5,302', distinct.size === 5302, distinct.size],
+  ['distinct (canonical key) = 5,303', distinct.size === 5303, distinct.size],
   ['posts with questions = 1,696', postsWith.size === 1696, postsWith.size],
   ['directive-wrapped = 51, all counted', wrapped.length === 51, wrapped.length],
   ['no editorial normalisation counted', editorialLeaks.length === 0, editorialLeaks.length],
