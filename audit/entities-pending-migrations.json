@@ -1,0 +1,35 @@
+{
+ "note": "Rulings that are DECIDED but cannot be executed yet, because the mechanism they depend on does not exist. Each names its blocker, its exit condition, and the certified figure it will move. A ruling parked here is not an open question — it is settled work waiting on a prerequisite.",
+ "whyThisFileExists": "The alternative is worse in both directions. Applying a ruling before its mechanism exists loses meaning: withdrawing \"Non-profit organization\" today would leave [NP] in #5 and #6 with nothing separating them from Nancy Pelosi, which is the exact outcome the original ruling was written to prevent. Leaving it undocumented instead turns a temporary hold into a permanent contradiction, where the entity registry disagrees with the audit and nothing on record says why.",
+ "migrations": [
+  {
+   "id": "np-to-bracket-interpretation",
+   "status": "PENDING",
+   "ruledOn": "2026-08-16",
+   "ruledBy": "owner",
+   "subject": "Non-profit organization",
+   "auditReference": "ENT-0709",
+   "currentState": "Held as a certified entity (2 mentions, alias NP, posts #5 and #6). audit/entities-stage1-rulings.json holds it out of the Stage 1 withdrawals; apply-entities.mjs asserts the hold.",
+   "theRuling": "The audit is semantically right that \"non-profit organization\" is a generic class rather than a named entity. The original owner ruling of 2026-08-15 was right about something different and still binding: [NP] in #5 and #6 must never resolve to Nancy Pelosi. Both hold, so the entity stays until the disambiguation lives somewhere better.",
+   "blockedBy": "Stage 3 — occurrence-level bracket classification",
+   "plan": [
+    "Migrate [NP] in #5 and #6 to the bracket interpretation 'non-profit organization', scoped to those two occurrences only.",
+    "Confirm search, highlighting and navigation keep them completely separate from Nancy Pelosi — verified in a browser on both surfaces, not in the data.",
+    "Only then remove the generic entity classification."
+   ],
+   "expectedEffect": {
+    "entitiesBefore": 1409,
+    "entitiesAfter": 1408,
+    "mentionsBefore": 9749,
+    "mentionsAfter": 9747,
+    "note": "9,747 is the figure the audit projected. It is reached by migrating the meaning, not by deleting it."
+   },
+   "doNotDo": "Do not withdraw the entity before the bracket interpretation is live and proven. The two occurrences would fall back to being unclassified, and the only thing keeping them out of the Nancy Pelosi alias group is an excludePosts entry that a later alias recount could quietly stop honouring.",
+   "originalRuling": {
+    "ruledOn": "2026-08-15",
+    "reasoning": "Owner ruling: the NP in this drop is a NON-PROFIT, and must be a separate thing from Nancy Pelosi so a search for her never returns it. The line is 'Why did Soros transfer his bulk public funds to a NP?' — #36 asks the identical question as 'a NPO?'.",
+    "posts": [5, 6]
+   }
+  }
+ ]
+}

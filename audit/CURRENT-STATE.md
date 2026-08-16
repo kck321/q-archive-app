@@ -4,9 +4,9 @@ Everything else under `audit/` that looks like a handoff is HISTORY. Do not act 
 
 ## Production
 
-    seed 75 — https://qdrops.app
+    seed 76 — https://qdrops.app
     queue 115   Reference 30 · Subject 16 · Notation 28 · Device 31 · Source 10
-    entities 1,445   certified mentions 9,786   rendered 9,786 (difference 0)
+    entities 1,409   certified mentions 9,749   rendered 9,749 (difference 0)
     Q Directives 2,552 raw · 2,500 distinct (post,text) · 1,464 posts
     post text 1,128,312 chars
     Predictions 595 · Claims 4,221   (sentence-level audit, 2026-08-16)
@@ -32,6 +32,14 @@ Everything else under `audit/` that looks like a handoff is HISTORY. Do not act 
    is the bug to fix.
 
 ## Open work
+
+- **[NP] migration is ruled and parked** — `audit/entities-pending-migrations.json`. "Non-profit
+  organization" stays a certified entity until occurrence-level bracket classification exists
+  (Stage 3). Then [NP] in #5 and #6 becomes the bracket interpretation "non-profit organization",
+  is proven separate from Nancy Pelosi in a browser, and only then does the generic entity go.
+  That moves entities 1,409 → 1,408 and mentions 9,749 → 9,747. **Do not withdraw it early**: the
+  two occurrences would fall back to unclassified, and the only thing keeping them out of the
+  Pelosi alias group is an `excludePosts` entry a later recount could stop honouring.
 
 - **10 Source rows are live in the Resolution Center** — `/resolve?kind=source_reference`,
   canonical file `audit/entities-quote-boundary-pending.json`. They hold the 18 entity mentions
