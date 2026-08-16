@@ -3740,3 +3740,77 @@ dirtied the tree.
 - glossary 328 tokens, 0 empty meanings
 - 146/146 cross-section invariants, certification manifest verifies, tsc clean
 - CDN parity confirmed, `verify-final.mjs --live` green, tagged `seed-73`
+
+---
+
+## 2026-08-16 — Seed 74: four certified facts that never reached the screen
+
+**Request 1:** "I do not see Q within the entity list like we spoke of. sometimes q is within the post
+and not the signer I want to make sure we capture Q as an entity and not the signer (it would be
+overkill showing all the signed post because it is literally almost all of them)."
+
+Q *was* certified — 10 body references across #365, #2567, #2774, #2775, #2876 — but
+`src/lib/posts.ts` skipped bare "Q" in Named Entities in **two** places (the month rollup and
+`computeAnalysisFrequency`). That skip was correct when it was written: nothing decided which Q was
+the author tag, so all ~4,000 signatures would have collapsed into one useless row. Signature
+exclusion now happens at certification time, structurally, on the last non-empty body line — so the
+browser was deleting exactly the rows the skip existed to protect. Removed both; kept the
+bare-number skip. Same lesson as the "NO BACKFILL FOR CERTIFIED CATEGORIES" note beside it: the
+artifact decides membership, the browser does not get a vote.
+
+**Request 2:** "there are like 36 Q+ post (which is an alias for DJT) but ... i do not see 1 of the
+post highlighted with Q+."
+
+Q+ had **never been adjudicated as an entity at all**. It existed only in `aliases.json` — the
+owner's search-synonym registry — under `potus`. So the app listed Q+ among POTUS's other names
+while holding zero occurrences to highlight. A term can be *displayed* as an alias without ever
+being *materialised* as one.
+
+Certified on **Donald Trump** (the person, beside DJT) per owner ruling; POTUS stays the office.
+Owner ruled **all 36 occurrences count, sign-offs included** — deliberately unlike bare Q. Q+ signs
+36 drops, not thousands, so *which* drops carry it is itself the record: the "+" asserts the
+President was present at the signing. Only 4 are body references (#1297, #2401, #2565, #2567).
+
+**Request 3:** "if the words Clinton Foundation is right next to each other lets tie that together
+as 1 entity instead of break it up."
+
+#1220 certified **both** "Clinton Foundation" and "Clinton" over the same seven characters — the
+surname attributed to Hillary Clinton. Two boxes on screen, and a genuine double count underneath.
+Owner ruling applied as `notFollowedBy: "\s+[Ff]oundation"` on all four Clinton alias rulings:
+**11 occurrences withdrawn** (9 that double-counted the Foundation against itself, 2 misattributed
+to Hillary).
+
+The renderer-side generalisation — drop any same-kind span nested inside a longer one — was built,
+measured, and **reverted**: it removed the hover explanation for **27 acronyms** (SS, WASH, BC, JA,
+WL, DAG, RBG, AWAN, HCQ…), because the info box attaches to the span of the term it explains and a
+collapsed span is no longer that term. Reader explanation beats a tidy outline. The finding is
+recorded in `highlightConstants.ts` so it isn't rebuilt. 79 other nested pairs remain listed for a
+later ruling ("US" in "US Military", "Comey" in "James Comey"); each half is separately certified
+and each keeps its own box.
+
+**Request 4:** "the name No Name in entities is John McCain i thought we already fixed this issue?"
+
+No prior ruling existed anywhere in the entity registry — the codename and the man had always been
+separate rows, so the archive listed them as different people. Merged: **NO NAME (16) + No Name (8)
+→ John McCain (10 → 34)**, and **No Name Institute → McCain Institute**. Two latent bugs in the
+merge path surfaced doing it:
+
+- `into.mentions += a.n ?? 0` — a registry row whose single alias carries `n: null` holds its whole
+  count on the row, so merging silently deleted 24 mentions from the corpus total.
+- `supersededTail` asked "does the target already carry one of these aliases?" **after** the merge
+  had inserted the alias, so the answer was always yes: the occurrences were counted and then never
+  emitted. Now recorded before the mutation.
+
+**Request 5:** "I'm about 90% confident that H in post #1589 means Hillary Clinton."
+
+Applied occurrence-scoped to **#1589 line 12 char 6** only. The drop's chain "RR to LL / LL to H /
+JC to LL" is decoded by its own next line, "LL IS KEY TO CONNECTING TO WH / HRC/BC/JC/SP/EH". Q
+writes HA/HUMA for Huma Abedin and HUSSEIN for Barack Obama, which rules those out. Recorded as
+**contextual, not decoded**, per the owner's framing — and explicitly not generalised: a standalone
+H elsewhere is not Hillary, and WH and /EH in this same drop are untouched.
+
+**Result — seed 74, live on qdrops.app:**
+- entities 1,448 → **1,445**; mentions 9,760 → **9,786** (+36 Q+, +1 H, −11 Clinton, merges neutral)
+- Donald Trump 28 → 64 · John McCain 10 → 34 · Clinton Foundation 65 → 56 · Q visible at 10
+- 146/146 invariants, manifest verifies, tsc clean, full pre-deploy proof green (90/90 info-box
+  checks), CDN parity confirmed, tagged `seed-74`
