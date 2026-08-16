@@ -41,7 +41,15 @@ const COLLECTIONS = ['posts', 'questions', 'topics', 'resources', 'analysisConfi
 const outDir = join(root, 'public', 'data')
 mkdirSync(outDir, { recursive: true })
 
-const manifest = { exportedAt: new Date().toISOString(), collections: {} }
+// NO WALL CLOCK IN THE BUNDLE.
+//
+// This carried `exportedAt: new Date().toISOString()`, which made public/data/manifest.json the
+// one file an export could never reproduce. Two costs, and the second is the expensive one:
+// "run the pipeline twice and diff" reported a difference that was only the clock, and every
+// export left the working tree dirty — so the NEXT deploy failed preflight's "working tree is
+// clean" check until someone committed a changed timestamp. git already records when the bundle
+// last moved, and far more reliably than a field inside the bundle.
+const manifest = { collections: {} }
 let grandBytes = 0
 
 for (const name of COLLECTIONS) {
