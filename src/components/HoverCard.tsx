@@ -139,14 +139,17 @@ export function HoverCard({
           // whatever the reader is already being told.
           aria-live="polite"
           style={pos?.pinned
-            ? { left: MARGIN, right: MARGIN, top: pos.top, width: 'auto', maxHeight: '45vh', overflowY: 'auto' }
-            : { left: pos?.left ?? 0, top: pos?.top ?? 0,
+            ? { visibility: 'visible', left: MARGIN, right: MARGIN, top: pos.top, width: 'auto', maxHeight: '45vh', overflowY: 'auto' }
+            : { visibility: pos ? 'visible' : 'hidden', left: pos?.left ?? 0, top: pos?.top ?? 0,
                 ...(pos?.maxHeight ? { maxHeight: pos.maxHeight, overflowY: 'auto' } : {}) }}
           className={`pointer-events-none fixed z-50 rounded border border-q-border bg-[#11151c]
                       px-2.5 py-2 text-left shadow-xl
                       ${pos?.pinned ? '' : 'w-max max-w-[min(24rem,calc(100vw-1rem))]'}`}
-          // Hidden until measured, so it never flashes at 0,0 on the way to its real position.
-          hidden={!pos}
+          // VISIBILITY, NOT `hidden`. `hidden` removes the element from layout, so the very first
+          // measurement returned a zero-height rect — which satisfied "it fits above", placed the
+          // card flush against the top of the word, and let it grow downward over the anchor once
+          // it rendered for real. It has to occupy layout to be measured and be invisible while it
+          // is measured, and only visibility does both.
         >
           {card}
         </span>
