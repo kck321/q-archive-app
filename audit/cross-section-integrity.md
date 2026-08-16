@@ -31,10 +31,10 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | Themes = 2,393 assignments | 2644 |
 | ✅ | Codes = 1,949 occurrences | 1949 |
 | ✅ | Emphasis = 3,113 occurrences | 3112 |
-| ✅ | Resolution Center = 2,527 | 106 |
+| ✅ | Resolution Center = 2,527 | 105 |
 | ✅ | Resolution entity = 30 | 30 |
 | ✅ | Resolution theme = 16 | 16 |
-| ✅ | Resolution code = 29 | 29 |
+| ✅ | Resolution code = 28 | 28 |
 | ✅ | Resolution classification = 31 | 31 |
 
 ## 2. Provenance contracts
@@ -112,7 +112,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | SEED_VERSION is 72 (reference audit) | 72 |
+| ✅ | SEED_VERSION is 73 (glossary repair + W&W) | 73 |
 | ✅ | seeding is gated on SEED_VERSION | present |
 | ✅ | seeded data matches the SEED_VERSION that shipped it | unchanged |
 | ✅ | the gate value is persisted after seeding | present |
@@ -185,7 +185,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | Claim → Conclusion edges = the certified 966 | 966 |
 | ✅ | Claim → Source provided edges = the certified 438 | 438 |
 | ✅ | Prediction → assertion edges = the certified 630 | 630 |
-| ✅ | every queue row has an edge to its occurrence | 106 |
+| ✅ | every queue row has an edge to its occurrence | 105 |
 | ✅ | every relationship belongs to a real post | 0 orphaned |
 | ✅ | analysis map totals reconcile with certified Questions | 6443 |
 | ✅ | analysis map totals reconcile with certified Directives | 2552 |
@@ -211,7 +211,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | indexed Themes = certified 2,395 | 2644 |
 | ✅ | indexed Codes = certified 739 distinct | 739 |
 | ✅ | indexed Emphasis = certified 3,113 | 3112 |
-| ✅ | indexed unresolved = the 2,527 queue rows | 106 |
+| ✅ | indexed unresolved = the 2,527 queue rows | 105 |
 | ✅ | every editorial row is flagged not-Q-authored | 0 |
 | ✅ | no Q-authored row is flagged editorial | 0 |
 | ✅ | the results page labels editorial rows before their text | labelled |
@@ -235,7 +235,7 @@ There is no single rule that shipped rows must equal certified counts — assert
 | Q Themes | 2,644 | sum of per-post theme assignments | Multi-label by design: 378 posts carry more than one theme, so assignments exceed posts. Legacy extractor tags are not counted. | A legacy tag must never be shown as a certified theme. |
 | Codes & Brackets | 1,949 | sum of per-code recurrence counts | Detected as a code does not mean decoded: 734 of 739 ship with no interpretation, which is the honest state. | An undecoded code must never be shown with an invented meaning. |
 | Q Emphasis | 3,112 | every occurrence row | 245 arguable devices are held in the Resolution Center and counted in neither direction. | A queued borderline case must never appear as certified emphasis. |
-| Resolution Center | 106 | every queue row | Every row here is DELIBERATELY excluded from its section’s certified totals. That exclusion is the point of the section, not a gap in it. | A community suggestion must never alter certified data without re-entering audit → adjudication → materialise → QA → apply → deploy. |
+| Resolution Center | 105 | every queue row | Every row here is DELIBERATELY excluded from its section’s certified totals. That exclusion is the point of the section, not a gap in it. | A community suggestion must never alter certified data without re-entering audit → adjudication → materialise → QA → apply → deploy. |
 
 ## Overlap matrix
 

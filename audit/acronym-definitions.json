@@ -100,8 +100,15 @@
       "expansion": "Google",
       "detail": "The company's stock ticker symbol."
     },
-    "CBS": "CBS - the American broadcast television network, originally the Columbia Broadcasting System.",
-    "TMZ": "TMZ - the American celebrity and entertainment news outlet. The name comes from \"thirty-mile zone\", the studio production zone centred on Hollywood."
+    "CBS": {
+      "expansion": "CBS — the American broadcast television network, originally the Columbia Broadcasting System."
+    },
+    "TMZ": {
+      "expansion": "TMZ — the American celebrity and entertainment news outlet. The name is the \"thirty-mile zone\", the studio production zone centred on Hollywood."
+    },
+    "Q": {
+      "expansion": "Q — the poster/persona speaking to the public through the imageboards. Q/POTUS pairs Q with the President; it does not mean they are the same person."
+    }
   },
   "deliberatelyUndefined": {
     "LORD": "Certified as an entity but not an acronym, and its two occurrences do not establish whether Q means a title, a surname or a religious address. Left without a definition rather than guessed."

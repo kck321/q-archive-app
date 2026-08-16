@@ -504,6 +504,24 @@
       "meaning": "zero-minute or same-displayed-time Q/POTUS posting interval",
       "detail": "Timing notation, not a person, place, organization or operational codename. \"(3)\" counts the third such match reported that day. #2567 states the concept outright as \"Q/POTUS Twitter 0 Delta Exchanges\", and #2775 answers \"3 [0] Deltas today sir\". Q adds that the drops came JUST PRIOR to POTUS, so this is a same-displayed-timestamp claim, not proof of identical seconds. The posts present the matches as evidence of coordination — that is the CLAIM being recorded, not a verified fact.",
       "reasoning": "Owner ruling: RESOLVED_NON_ENTITY. Scoped to #2774 only. The \"Q, DELTA\" sign-offs (#756, #757, #785), \"DELTA [6] CONF.\" (#804) and Delta Air Lines (#1176) are separate occurrences and are untouched."
+    },
+    {
+      "token": "Wizards & Warlocks",
+      "kind": "notation",
+      "posts": [
+        67,
+        80,
+        81,
+        144,
+        173,
+        435,
+        636,
+        714
+      ],
+      "ruledOn": "2026-08-16",
+      "meaning": "'Guardians' of intelligence",
+      "detail": "Q's own definition, given verbatim in #2624: \"'Guardians' of intelligence.\" It fits the surrounding drops - #15 calls it an inside term, #67 speaks of 'the council of Wizards & Warlocks', and #144 asks who they are and says to think of Snowden. PROVENANCE NOTE: #2624 is a reply to an anonymous post (>>4281684) that the corpus does not store, so the link between the question and this answer runs through the reply chain rather than being stated inside one drop. The phrase names a role, not a named organization - the corpus still never identifies its membership.",
+      "reasoning": "Owner ruling from #2624. Recorded as notation rather than an organization: the drops give the function, never the entity."
     }
   ]
 }

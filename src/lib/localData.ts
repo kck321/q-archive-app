@@ -401,7 +401,18 @@ const COLLECTIONS: CollectionName[] = ['posts', 'questions', 'topics', 'resource
 // separator exists nowhere in the drop; each now carries its clauses as separate spans with
 // offsets, awaiting a multi-span parallel-phrasing representation before it can be highlighted.
 // Classification queue 234 -> 31. Queue 958 -> 755.
-export const SEED_VERSION = 72   // 72: Q Directives on sourceSpansV2 — 2,552 occurrences, directiveMeta spans
+// 73: hover-glossary repair + Wizards & Warlocks resolved.
+// Three terms opened a hover box that said nothing, or none at all. CBS and TMZ are SELF-NAMED -
+// the alias equals the canonical - so build-glossary skips them in the entity pass and they can
+// only come from acronym-definitions.json, where they had been written as bare strings instead of
+// {expansion}. And IS_ACRONYM required two characters, which left Q - the most self-referential
+// term in the corpus - with no hover box at all. Q is the only single-character canonical.
+// Wizards & Warlocks: Q defines it outright in #2624 as "'Guardians' of intelligence". Recorded
+// as notation, not an organization - the drops give the function and never the membership. The
+// answer reaches the question through a reply to an anon post the corpus does not store, and the
+// gloss says so rather than implying one drop states both.
+// Queue 106 -> 105. Notation 29 -> 28.
+export const SEED_VERSION = 73   // 72: Q Directives on sourceSpansV2 — 2,552 occurrences, directiveMeta spans
 // 71: 4: final certified questions — 6,442 occurrences, exact source spans
 
 // ── Minimal IndexedDB key/value wrapper (one record per collection) ──────────

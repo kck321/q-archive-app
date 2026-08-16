@@ -1,6 +1,6 @@
 {
  "totals": {
-  "relationships": 6491,
+  "relationships": 6490,
   "byType": {
    "prediction_assertion": 630,
    "theme_support": 1719,
@@ -13,7 +13,7 @@
    "prediction_source_provided": 46,
    "entity_code": 180,
    "emphasis_question": 36,
-   "unresolved_occurrence": 106
+   "unresolved_occurrence": 105
   },
   "postsWithAnalysis": 4863
  },
@@ -69,9 +69,9 @@
    630
   ],
   [
-   "unresolved edges = the 106 queue rows",
+   "unresolved edges = the 105 queue rows",
    true,
-   106
+   105
   ]
  ],
  "problems": {

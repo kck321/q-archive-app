@@ -68,7 +68,7 @@ export const CANONICAL = {
   // unresolved-alias pass the queue is built from, so they stayed queued after being answered.
   // 2,245 -> 2,233: the RC ruling answered 12 of the 13 queued "RC" rows. #2 ("all his funds in
   // a RC") is excluded by the ruling and stays queued — an unanswered question, not a resolved one.
-  resolution: { total: 106, entity: 30, theme: 16, code: 29, classification: 31 },
+  resolution: { total: 105, entity: 30, theme: 16, code: 28, classification: 31 },
 }
 
 /**

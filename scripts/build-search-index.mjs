@@ -190,7 +190,7 @@ const checks = [
   ['Themes indexed = 2,644', bySection.themes === 2644, bySection.themes],
   ['Codes indexed = 739', bySection.codes === 739, bySection.codes],
   ['Emphasis indexed = 3,112', bySection.emphasis === 3112, bySection.emphasis],
-  ['Unresolved indexed = 106', bySection.unresolved === 106, bySection.unresolved],
+  ['Unresolved indexed = 105', bySection.unresolved === 105, bySection.unresolved],
   // 1,393: two lines that were editorial paraphrases became certified Claims in the 2026-08-13
   // owner adjudication, and a line cannot be both Q's own wording and a paraphrase of it.
   ['editorial rows = 134 normalisations + 1,259 paraphrases', bySection.editorial === 1393, bySection.editorial],

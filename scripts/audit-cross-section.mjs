@@ -442,7 +442,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   // that stopped at 40 would keep showing the standalone COVID in #4489/#4541/#4548 as plain text.
   // 43 carries the Rachel Chandler ruling: posts.json changed again (namedEntities), so a
   // profile that stopped at 42 would keep showing RC and Ray Chandler as two strangers.
-  t('seed-current', 'SEED_VERSION is 72 (reference audit)', seed === 72, seed)
+  t('seed-current', 'SEED_VERSION is 73 (glossary repair + W&W)', seed === 73, seed)
   t('seed-gate', 'seeding is gated on SEED_VERSION', /seeded === SEED_VERSION/.test(localData), 'present')
 
   // THE GUARD THAT WOULD HAVE SAVED THREE ROUND TRIPS. Changing seeded data without bumping the

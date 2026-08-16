@@ -57,10 +57,10 @@
    "posts": 1357
   },
   "resolution": {
-   "total": 106,
+   "total": 105,
    "entity": 30,
    "theme": 16,
-   "code": 29,
+   "code": 28,
    "classification": 31
   }
  },
@@ -160,7 +160,7 @@
    "id": "resolution",
    "label": "Resolution Center",
    "artifact": "resolution-queue.json",
-   "certifiedCount": 106,
+   "certifiedCount": 105,
    "mayCoexist": "Every row here is DELIBERATELY excluded from its section’s certified totals. That exclusion is the point of the section, not a gap in it.",
    "neverDisplayed": "A community suggestion must never alter certified data without re-entering audit → adjudication → materialise → QA → apply → deploy.",
    "countedBy": "every queue row",
@@ -342,7 +342,7 @@
    "id": "resolution-total",
    "description": "Resolution Center = 2,527",
    "pass": true,
-   "detail": "106"
+   "detail": "105"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -361,9 +361,9 @@
   {
    "group": "1. Frozen canonical counts",
    "id": "resolution-code",
-   "description": "Resolution code = 29",
+   "description": "Resolution code = 28",
    "pass": true,
-   "detail": "29"
+   "detail": "28"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -662,9 +662,9 @@
   {
    "group": "8. Seed and cache integrity",
    "id": "seed-current",
-   "description": "SEED_VERSION is 72 (reference audit)",
+   "description": "SEED_VERSION is 73 (glossary repair + W&W)",
    "pass": true,
-   "detail": "72"
+   "detail": "73"
   },
   {
    "group": "8. Seed and cache integrity",
@@ -1035,7 +1035,7 @@
    "id": "rel-unresolved",
    "description": "every queue row has an edge to its occurrence",
    "pass": true,
-   "detail": "106"
+   "detail": "105"
   },
   {
    "group": "12. Cross-section relationships",
@@ -1182,7 +1182,7 @@
    "id": "search-unresolved",
    "description": "indexed unresolved = the 2,527 queue rows",
    "pass": true,
-   "detail": "106"
+   "detail": "105"
   },
   {
    "group": "13. Global search",

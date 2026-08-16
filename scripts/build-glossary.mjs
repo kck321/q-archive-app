@@ -114,7 +114,10 @@ for (const e of entities) {
 // than shown with its own name echoed back.
 const defsPath = path.join(ROOT, 'audit', 'acronym-definitions.json')
 const DEFS = fs.existsSync(defsPath) ? JSON.parse(fs.readFileSync(defsPath, 'utf8')).definitions ?? {} : {}
-const IS_ACRONYM = /^[A-Z][A-Z0-9]{1,6}$/
+// {0,6} not {1,6}: Q is a one-character entity name and the two-character floor left the most
+// self-referential term in the corpus with no hover box at all. Q is the only single-character
+// canonical, so this admits exactly one token.
+const IS_ACRONYM = /^[A-Z][A-Z0-9]{0,6}$/
 let acronymEntities = 0, undefinedAcronyms = []
 for (const e of entities) {
   if (!IS_ACRONYM.test(e.canonical)) continue
