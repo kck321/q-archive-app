@@ -4134,3 +4134,51 @@ Same class as Stage 1's `Presidential Advisory`. Pre-existing; reported, not sil
 **Proof.** 160/160 invariants (8 new hover gates), 18/18 accessibility checks in a browser,
 manifest re-certified with `entity-hovers.json` now covered, tsc clean. Entity totals unchanged by
 the import: 1,409 / 9,749.
+
+---
+
+## 16 Aug 2026 — Stage 2 cleanup: reprocessing, URL quarantine, private review
+
+**Reprocessed the 523 registry-blocked records** by validating each against the seed-76 state
+rather than the status the audit stamped on it. **247 promoted to publish, 211 to review, 65 to
+URL quarantine.**
+
+- **307 type-blocked → 247 published.** All 85 corrected-type entities now have tooltips. The
+  artificial gap is closed for them.
+- **216 merge-blocked → 0 published**, and that is now a *stated* outcome rather than an artificial
+  one: 186 are graded Insufficient and 20 use a shared alias ("Clinton" belongs to four entities).
+  Their synopses also carried the placeholder *"the canonical label is duplicated in the current
+  entity registry"* — wording about a registry state Stage 1 has fixed. Re-grading that evidence is
+  an editorial act, not a mechanical one, so they went to an editor instead of being reworded.
+- **71 synopses had wording refreshed** — mechanical substitutions only, an absorbed spelling or a
+  stale type label. Nothing re-read a drop.
+
+**A validation bug caught by its own numbers.** The first reprocessing run applied the mechanical
+checks to every record and took publish from 4,285 to **6,472** — promoting 2,187 synopses a human
+had been asked to read first. "Human review before publish" is an editorial judgement, not a
+mechanical one, and only the registry-blocked records were ever in scope.
+
+**441 URL-derived occurrences quarantined** as `url_derived_entity_occurrence` — more than the 309
+first reported, because the detector now decodes `%20` and folds punctuation on both sides:
+`url_path_fragment` **330** · `hostname_source_reference` **103** · `ambiguous_url_reference` **7** ·
+`url_query_fragment` **1** · `human_readable_link_label` **0** (empty by construction — a URL-only
+record has no prose mention). No certified count changed.
+
+**The 562 reconciled.** 523 registry-blocked + 39 move-out. The 39 are **not** exactly the
+withdrawn records: 37 are, and 2 are `ENT-0709-P5/P6` — "Non-profit organization", which is HELD,
+not withdrawn. Both went to review because "NP" is a shared alias, which is the same disambiguation
+the pending migration exists to solve. **37 marked `withdrawn_entity_occurrence`, audit history
+only.**
+
+**Private Resolution Center** at `/editorial/hover-review`. The enforcement is the absence of the
+bytes, not a permission check: the queues live in `audit/`, served by a dev-only Vite middleware, so
+`deploy-web.sh` has nothing to copy into `dist/`. Verified against the built public bundle — the
+route, the page and the data are all absent, while `entity-hovers.json` is present as a control.
+Five actions, a localStorage audit trail (editor, time, previous, next, reason) exported for the
+apply chain, and six filters.
+
+**Final: publish 4,156 · review 3,144 · URL quarantine 441 · withdrawn 37 = 7,778.**
+163/163 invariants, manifest re-certified, tsc clean, entity totals unchanged at 1,409 / 9,749.
+
+**Found, not fixed:** `Black Lives Matter` is typed `person`. The audit's 85 type corrections did
+not catch it.

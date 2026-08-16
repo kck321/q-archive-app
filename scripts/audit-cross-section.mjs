@@ -641,22 +641,60 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     for (const [id, byPost] of Object.entries(hov.byPost ?? {})) {
       for (const [pn, v] of Object.entries(byPost)) published.push({ id, postNum: Number(pn), ...v })
     }
-    t('hover-count', 'published post synopses = 4,285', published.length === 4285, published.length)
+    t('hover-count', 'published post synopses = 4,156', published.length === 4156, published.length)
     t('hover-globals', 'one global synopsis per live entity',
       Object.keys(hov.global ?? {}).length === CANONICAL.entities.canonical, Object.keys(hov.global ?? {}).length)
 
-    // Every published record must be absent from the review queue, matched on the same key the
-    // bundle uses. Comparing on anything looser would let a near-duplicate through.
+    // The four buckets must account for every audit record — 7,778, no more and no fewer. A
+    // record that falls out of all of them has silently disappeared, which is worse than being
+    // held, because nothing is left saying it existed.
+    const q = path.join(OUT, 'entity-hover-url-quarantine.json')
+    const w = path.join(OUT, 'entity-hover-withdrawn.json')
     const rq = path.join(OUT, 'entity-hover-review-queue.json')
-    if (fs.existsSync(rq)) {
+    if ([q, w, rq].every(f => fs.existsSync(f))) {
       const review = JSON.parse(fs.readFileSync(rq, 'utf8'))
-      const reviewKeys = new Set(review.records.map(r => `${r.entityId} ${r.postNum}`))
-      const leaked = published.filter(p => reviewKeys.has(`${p.id} ${p.postNum}`))
-      t('hover-no-review-leak', 'no review-queue record is in the public bundle', leaked.length === 0,
-        leaked.length ? `${leaked.length} leaked, e.g. #${leaked[0].postNum}` : `${review.total} held back`)
-      t('hover-review-not-public', 'the review queue is not under public/data',
-        !fs.existsSync(path.join(DATA, 'entity-hover-review-queue.json')), 'admin only')
+      const quar = JSON.parse(fs.readFileSync(q, 'utf8'))
+      const wd = JSON.parse(fs.readFileSync(w, 'utf8'))
+      const sum = published.length + review.total + quar.total + wd.total
+      t('hover-reconciles', 'publish + review + quarantine + withdrawn = 7,778', sum === 7778,
+        `${published.length} + ${review.total} + ${quar.total} + ${wd.total} = ${sum}`)
+
+      // No held record may be in the bundle, matched on the key the bundle uses.
+      const held = [...review.records, ...quar.records, ...wd.records]
+      const pubKeys = new Set(published.map(p => `${p.id} ${p.postNum}`))
+      const pubOcc = new Set(published.map(p => p.occ).filter(Boolean))
+      const leaked = held.filter(r => pubKeys.has(`${r.entityId} ${r.postNum}`) && !pubOcc.has(r.auditOccurrenceId))
+      t('hover-no-review-leak', 'no held record is in the public bundle', leaked.length === 0,
+        leaked.length ? `${leaked.length} leaked` : `${held.length} held back`)
+
+      // THE PRIVACY GUARANTEE IS THE ABSENCE OF THE BYTES, not a permission check. These files
+      // must not be under public/data, because that directory IS the published bundle.
+      const inPublic = ['entity-hover-review-queue.json', 'entity-hover-url-quarantine.json', 'entity-hover-withdrawn.json']
+        .filter(f => fs.existsSync(path.join(DATA, f)))
+      t('hover-queues-private', 'the editorial queues are not under public/data', inPublic.length === 0,
+        inPublic.length ? inPublic.join(', ') : 'admin only')
+
+      // Every shared-alias occurrence stays in review. A global alias mapping must never decide
+      // that BO means one entity in every drop.
+      const shared = new Set()
+      for (const e of entities.entities) for (const a of e.aliases) {
+        if (!shared.has(a.text)) shared.set?.(a.text) ?? shared.add(a.text)
+      }
+      const owners = new Map()
+      for (const e of entities.entities) for (const a of e.aliases) {
+        if (!owners.has(a.text)) owners.set(a.text, [])
+        owners.get(a.text).push(e.canonical)
+      }
+      const sharedSet = new Set([...owners].filter(([, v]) => v.length > 1).map(([k]) => k))
+      const publishedShared = published.filter(p => sharedSet.has(p.a))
+      t('hover-shared-alias-held', 'no shared-alias occurrence is published', publishedShared.length === 0,
+        publishedShared.length ? `${publishedShared.length} published` : `${review.records.filter(r => r.sharedAlias).length} held in review`)
+
+      // Withdrawn records are audit history only.
+      t('hover-withdrawn-history', 'withdrawn records are history, not review',
+        wd.category === 'withdrawn_entity_occurrence' && wd.total === 37, `${wd.total}`)
     }
+
     // Every hover must resolve to a live entity BY ID — the whole point of minting them.
     const entityIds = new Set(entities.entities.map(e => e.id))
     const orphan = published.filter(p => !entityIds.has(p.id))

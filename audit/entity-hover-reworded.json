@@ -1,0 +1,574 @@
+{
+ "note": "Synopses whose wording named something the archive no longer calls by that name. Mechanical substitutions only — an absorbed spelling or a stale type label. Nothing here re-read a drop.",
+ "total": 71,
+ "records": [
+  {
+   "auditOccurrenceId": "ENT-0001-P4016",
+   "postNum": 4016,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #4016, “USA” appears in a question: “Seth Rich internal DL hand-to-hand pass USA? CrowdStrike code insert? If FBI [CHAIN OF COMMAND] was corrupt what other investigations were corrupted? WHO DID THEY PROVIDE COVER FOR? HOW FAR BACK” The post directly uses a registry alias, but the abbreviated form needs the surrounding passage to confirm the referent. This gives partial contextual support for identifying it as United States. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0002-P1708",
+   "postNum": 1708,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #1708, “POTUS” appears in a question: “Co-sponsor insurance policy re: POTUS election. PS. LP. No Name. Clapper. Brennan. Rice. LL. HRC. BC. Hussein. +22 What if intel masked penetration(s) to frame Russia? CrowdStrike? Servers. SR. JA.” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as POTUS. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0002-P2100",
+   "postNum": 2100,
+   "changes": [
+    "\"FAKE NEWS media\" -> \"FAKE NEWS MEDIA\""
+   ],
+   "synopsis": "In post #2100, “POTUS” appears in a question: “Why is FAKE NEWS MEDIA attacking this movement in strategic/coordinated waves [similar anti-POTUS tactics?]?” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as POTUS. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0002-P2658",
+   "postNum": 2658,
+   "changes": [
+    "\"FAKE NEWS media\" -> \"FAKE NEWS MEDIA\""
+   ],
+   "synopsis": "In post #2658, “POTUS” appears in a question: “Remember when D's and the FAKE NEWS MEDIA [+FAKEWOOD] pushed mass fear that POTUS would start WWIII re: North Korea?” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as POTUS. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0002-P3310",
+   "postNum": 3310,
+   "changes": [
+    "\"FAKE NEWS media\" -> \"FAKE NEWS MEDIA\""
+   ],
+   "synopsis": "In post #3310, “POTUS” appears in a factual claim made by the post: “Other than POTUS, can you name a group more attacked than ‘Q’ by the FAKE NEWS MEDIA.” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as POTUS. The post is the source of the assertion; this context does not independently verify it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0004-P3764",
+   "postNum": 3764,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #3764, “FBI” appears in a question: “Why did FBI accept 'indirect' evidence re: DNC server(s) 'hack''break-in' by CrowdStrike [Ukraine]?” The post directly uses a registry alias, but the abbreviated form needs the surrounding passage to confirm the referent. This gives partial contextual support for identifying it as Federal Bureau of Investigation. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0005-P2770",
+   "postNum": 2770,
+   "changes": [
+    "\"CBS NEWS\" -> \"CBS News\""
+   ],
+   "synopsis": "In post #2770, “HUSSEIN” appears in a question: “ABC NEWS exec producer Ian Cameron married to Susan Rice (Nat Sec Advisor - HUSSEIN)? CBS News/CNN Journ Bianna Vitalievna married to Peter R Orszag (Dir of Office of Mgmt/Budget - HUSSEIN)? CBS News…” The post directly uses a registry alias, but the abbreviated form needs the surrounding passage to confirm the referent. This gives partial contextual support for identifying it as Barack Obama. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0006-P69",
+   "postNum": 69,
+   "changes": [
+    "\"LORD\" -> \"Lord\""
+   ],
+   "synopsis": "In post #69, “God” appears in a statement or list: “God speed to those who will be put in harms way. You are the bravest men and women on earth. We will never forget. All share one title in common and that is the title of \"Hero.\" \"The Lord is my she” The post directly uses a registry alias, but the abbreviated form needs the surrounding passage to confirm the referent. This gives partial contextual support for identifying it as God. The synopsis explains the label's role in the passage without treating nearby implications as verified facts."
+  },
+  {
+   "auditOccurrenceId": "ENT-0007-P1708",
+   "postNum": 1708,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #1708, “HRC” appears in a question: “HRC. BC. Hussein. +22 What if intel masked penetration(s) to frame Russia? CrowdStrike? Servers. SR. JA. Why does the UK gov desperately want JA? Think so” The post directly uses a registry alias, but the abbreviated form needs the surrounding passage to confirm the referent. This gives partial contextual support for identifying it as Hillary Clinton. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0010-P1708",
+   "postNum": 1708,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #1708, “Russia” appears in a question: “What if intel masked penetration(s) to frame Russia? CrowdStrike? Servers. SR. JA. Why does the UK gov desperately want JA? Think source files. The more you know. Q” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Russia. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0010-P3764",
+   "postNum": 3764,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #3764, “Russia” appears in a question: “Did Russia 'break-in' to DNC server(s)? Why did FBI accept 'indirect' evidence re: DNC server(s) 'hack''break-in' by CrowdStrike [Ukraine]? Why didn't FBI 'directly' investigate DNC server” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Russia. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0010-P4016",
+   "postNum": 4016,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #4016, “Russia” appears in a question: “Was the DNC was hacked by Russia? CIA [BRENNAN] FORCE? Seth Rich internal DL hand-to-hand pass USA? CrowdStrike code insert? If FBI [CHAIN OF COMMAND] was corrupt what other investiga” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Russia. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0010-P4153",
+   "postNum": 4153,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #4153, “Russia” appears in a question: “CrowdStrike testimony re: DNC & Russia [hack]? >no direct evidence? >manipulation of source? >comp-to-comp [transfer] speed [hack]? >internal DL [terminal 1] speed? >hand-to-hand transfer? >WL pub” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Russia. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0014-P2658",
+   "postNum": 2658,
+   "changes": [
+    "\"FAKE NEWS media\" -> \"FAKE NEWS MEDIA\""
+   ],
+   "synopsis": "In post #2658, “SENATE” appears in a question: “Why do D's and the FAKE NEWS MEDIA [+FAKEWOOD] continually push the 'IMPEACH' narrative if impeachment requires 2/3rd SENATE VOTE TO ENACT (odds of that?)?” The post directly uses a registry alias, but the abbreviated form needs the surrounding passage to confirm the referent. This gives partial contextual support for identifying it as United States Senate. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0015-P4016",
+   "postNum": 4016,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #4016, “CIA” appears in a question: “CIA [BRENNAN] FORCE? Seth Rich internal DL hand-to-hand pass USA? CrowdStrike code insert? If FBI [CHAIN OF COMMAND] was corrupt what other investigations were corrupted?” The post directly uses a registry alias, but the abbreviated form needs the surrounding passage to confirm the referent. This gives partial contextual support for identifying it as Central Intelligence Agency. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0018-P2787",
+   "postNum": 2787,
+   "changes": [
+    "\"STATE DEPT\" -> \"State Dept\""
+   ],
+   "synopsis": "In post #2787, “WH” appears in a statement or list: “vidence in order to generate circular news articles (think Yahoo!) and obtain a FISC sign-off, is it reasonable to think that members of the INTEL APPARATUS, State Dept, WH, FOREIGN ALLIES, ETC.” The post directly uses the token, but a one- or two-character label can carry more than one meaning. This gives partial contextual support for identifying it as The White House. The synopsis explains the label's role in the passage without treating nearby implications as verified facts."
+  },
+  {
+   "auditOccurrenceId": "ENT-0023-P3764",
+   "postNum": 3764,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #3764, “NSA” appears in a statement or list: “NSA data_bridge DNC-CrowdStrike [bulk data collection] Matters of National Security [Highest Levels]. FISA is only the beginning. The hole is DEEP. Q” The post directly uses a registry alias, but the abbreviated form needs the surrounding passage to confirm the referent. This gives partial contextual support for identifying it as National Security Agency. The synopsis explains the label's role in the passage without treating nearby implications as verified facts."
+  },
+  {
+   "auditOccurrenceId": "ENT-0024-P2658",
+   "postNum": 2658,
+   "changes": [
+    "\"FAKE NEWS media\" -> \"FAKE NEWS MEDIA\""
+   ],
+   "synopsis": "In post #2658, “North Korea” appears in a question: “Remember when D's and the FAKE NEWS MEDIA [+FAKEWOOD] pushed mass fear that POTUS would start WWIII re: North Korea?” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as North Korea. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0045-P4016",
+   "postNum": 4016,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #4016, “DNC” appears in a question: “Was the DNC was hacked by Russia? CIA [BRENNAN] FORCE? Seth Rich internal DL hand-to-hand pass USA? CrowdStrike code insert? If FBI [CHAIN OF COMMAND] was corrupt what other investiga” The post directly uses a registry alias, but the abbreviated form needs the surrounding passage to confirm the referent. This gives partial contextual support for identifying it as Democratic National Committee. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0046-P1708",
+   "postNum": 1708,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #1708, “LL” appears in a question: “LL. HRC. BC. Hussein. +22 What if intel masked penetration(s) to frame Russia? CrowdStrike? Servers. SR. JA. Why does the UK gov desperately want JA? Thi” The post directly uses the token, but a one- or two-character label can carry more than one meaning. This gives partial contextual support for identifying it as Loretta Lynch. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0052-P4861",
+   "postNum": 4861,
+   "changes": [
+    "\"House intel committee\" -> \"House Intel Committee\""
+   ],
+   "synopsis": "In post #4861, “House” appears in a prediction: “House Intel Committee meeting tomorrow re: 'Qanon'” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as House. The post is the source of the assertion; this context does not independently verify it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0053-P1708",
+   "postNum": 1708,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #1708, “Brennan” appears in a question: “Brennan. Rice. LL. HRC. BC. Hussein. +22 What if intel masked penetration(s) to frame Russia? CrowdStrike? Servers. SR. JA. Why does the UK gov desperately wa” The wording is a direct, unique name or registry alias in the post. This gives strong contextual support for identifying it as John Brennan. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0053-P4016",
+   "postNum": 4016,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #4016, “BRENNAN” appears in a question: “CIA [BRENNAN] FORCE? Seth Rich internal DL hand-to-hand pass USA? CrowdStrike code insert? If FBI [CHAIN OF COMMAND] was corrupt what other investigations were corrupted?” The post directly uses a registry alias, but the abbreviated form needs the surrounding passage to confirm the referent. This gives partial contextual support for identifying it as John Brennan. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0054-P3764",
+   "postNum": 3764,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #3764, “Ukraine” appears in a question: “Why did FBI accept 'indirect' evidence re: DNC server(s) 'hack''break-in' by CrowdStrike [Ukraine]?” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Ukraine. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0056-P1708",
+   "postNum": 1708,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #1708, “No Name” appears in a question: “No Name. Clapper. Brennan. Rice. LL. HRC. BC. Hussein. +22 What if intel masked penetration(s) to frame Russia? CrowdStrike? Servers. SR. JA. Why does the UK” The wording is a direct, unique name or registry alias in the post. This gives strong contextual support for identifying it as John McCain. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0058-P1708",
+   "postNum": 1708,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #1708, “BC” appears in a question: “BC. Hussein. +22 What if intel masked penetration(s) to frame Russia? CrowdStrike? Servers. SR. JA. Why does the UK gov desperately want JA? Think source” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as Bill Clinton. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0069-P2770",
+   "postNum": 2770,
+   "changes": [
+    "\"CBS NEWS\" -> \"CBS News\""
+   ],
+   "synopsis": "In post #2770, “CNN” appears in a question: “CBS News/CNN Journ Bianna Vitalievna married to Peter R Orszag (Dir of Office of Mgmt/Budget - HUSSEIN)?” The post directly uses a registry alias, but the abbreviated form needs the surrounding passage to confirm the referent. This gives partial contextual support for identifying it as CNN. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0075-P2770",
+   "postNum": 2770,
+   "changes": [
+    "\"CBS NEWS\" -> \"CBS News\""
+   ],
+   "synopsis": "In post #2770, “ABC NEWS” appears in a question: “ABC NEWS exec producer Ian Cameron married to Susan Rice (Nat Sec Advisor - HUSSEIN)? CBS News/CNN Journ Bianna Vitalievna married to Peter R Orszag (Dir of Office of Mgmt/Budget - HUSSEIN)? CBS News…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as ABC News. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0081-P1708",
+   "postNum": 1708,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #1708, “LP” appears in a question: “LP. No Name. Clapper. Brennan. Rice. LL. HRC. BC. Hussein. +22 What if intel masked penetration(s) to frame Russia? CrowdStrike? Servers. SR. JA. Why doe” The post directly uses the token, but a one- or two-character label can carry more than one meaning. This gives partial contextual support for identifying it as Lisa Page. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0082-P4016",
+   "postNum": 4016,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #4016, “Seth Rich” appears in a question: “Seth Rich internal DL hand-to-hand pass USA? CrowdStrike code insert? If FBI [CHAIN OF COMMAND] was corrupt what other investigations were corrupted? WHO DID THEY PROVIDE COVER FOR? HOW FAR BACK” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Seth Rich. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0086-P4153",
+   "postNum": 4153,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #4153, “WikiLeaks” appears in a question: “CrowdStrike testimony re: DNC & Russia [hack]? >no direct evidence? >manipulation of source? >comp-to-comp [transfer] speed [hack]? >internal DL [terminal 1] speed? >hand-to-hand transfer? >WL publish v SR…” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as WikiLeaks. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0088-P2658",
+   "postNum": 2658,
+   "changes": [
+    "\"FAKE NEWS media\" -> \"FAKE NEWS MEDIA\""
+   ],
+   "synopsis": "In post #2658, “FED” appears in a question: “[Use FED to inc rates to counter growth and project POTUS blame] Remember when D's and the FAKE NEWS MEDIA [+FAKEWOOD] pushed complete economic collapse if POTUS was elected? POTUS E + policies > lowest…” The matched wording is shared by more than one current entity row (Federal Reserve, United States federal government). This gives insufficient contextual support for identifying it as Federal Reserve. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0091-P3033",
+   "postNum": 3033,
+   "changes": [
+    "\"Sen Graham\" -> \"Sen. Graham\""
+   ],
+   "synopsis": "In post #3033, “Grassley” appears in an instruction or action request: “Remain in open comms w/ Sen. Graham & Grassley re: Whistleblower Protection Act.” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Grassley. The synopsis explains the label's role in the passage without treating nearby implications as verified facts."
+  },
+  {
+   "auditOccurrenceId": "ENT-0094-P1708",
+   "postNum": 1708,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #1708, “PS” appears in a question: “PS. LP. No Name. Clapper. Brennan. Rice. LL. HRC. BC. Hussein. +22 What if intel masked penetration(s) to frame Russia? CrowdStrike? Servers. SR. JA. Why” The matched wording is shared by more than one current entity row (Peter Strzok, PlayStation). This gives insufficient contextual support for identifying it as Peter Strzok. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0134-P1708",
+   "postNum": 1708,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #1708, “Clapper” appears in a question: “Clapper. Brennan. Rice. LL. HRC. BC. Hussein. +22 What if intel masked penetration(s) to frame Russia? CrowdStrike? Servers. SR. JA. Why does the UK gov despe” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Clapper. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0138-P2386",
+   "postNum": 2386,
+   "changes": [
+    "\"FAKE NEWS media\" -> \"FAKE NEWS MEDIA\""
+   ],
+   "synopsis": "In post #2386, “4chan” appears in a question: “Why is the FAKE NEWS MEDIA continually expending resources to defame, debunk, and cast as a conspiracy, for, as they say, a nobody who started on 4chan?” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as 4chan. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0157-P2770",
+   "postNum": 2770,
+   "changes": [
+    "\"CBS NEWS\" -> \"CBS News\""
+   ],
+   "synopsis": "In post #2770, “CBS” appears in a question: “CBS News/CNN Journ Bianna Vitalievna married to Peter R Orszag (Dir of Office of Mgmt/Budget - HUSSEIN)?” The post directly uses a registry alias, but the abbreviated form needs the surrounding passage to confirm the referent. This gives partial contextual support for identifying it as CBS. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0169-P4861",
+   "postNum": 4861,
+   "changes": [
+    "\"House intel committee\" -> \"House Intel Committee\""
+   ],
+   "synopsis": "In post #4861, “qanon” appears in a prediction: “House Intel Committee meeting tomorrow re: 'Qanon'” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Qanon. The post is the source of the assertion; this context does not independently verify it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0253-P1708",
+   "postNum": 1708,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #1708, “CrowdStrike” appears in a question: “CrowdStrike? Servers. SR. JA. Why does the UK gov desperately want JA? Think source files. The more you know. Q” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as CrowdStrike. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0253-P3764",
+   "postNum": 3764,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #3764, “CrowdStrike” appears in a question: “CrowdStrike. Did Russia 'break-in' to DNC server(s)? Why did FBI accept 'indirect' evidence re: DNC server(s) 'hack''break-in' by CrowdStrike [Ukraine]? Why didn” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as CrowdStrike. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0253-P3990",
+   "postNum": 3990,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #3990, “CROWDSTRIKE” appears in a question: “[CIA BRIDGE > UKRAINE CROWDSTRIKE_BRENNAN]? RECONCILE. IF CHAIN OF COMMAND + [DOJ-CIA[F + D] FOUND GUILTY [INDICTMENT CHAP 115 + [CLAS 1-99]] RE: USA V. [1-2-3-6] RE: FISA CAN THE SAME ARGUMENT” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as CrowdStrike. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0253-P4016",
+   "postNum": 4016,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #4016, “CrowdStrike” appears in a question: “CrowdStrike code insert? If FBI [CHAIN OF COMMAND] was corrupt what other investigations were corrupted? WHO DID THEY PROVIDE COVER FOR? HOW FAR BACK DID IT GO? Q” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as CrowdStrike. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0253-P4153",
+   "postNum": 4153,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #4153, “CrowdStrike” appears in a question: “CrowdStrike testimony re: DNC & Russia [hack]? >no direct evidence? >manipulation of source? >comp-to-comp [transfer] speed [hack]? >internal DL [terminal 1] speed? >hand-to-hand transfer? >WL pub” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as CrowdStrike. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0263-P1969",
+   "postNum": 1969,
+   "changes": [
+    "\"FAKE NEWS media\" -> \"FAKE NEWS MEDIA\""
+   ],
+   "synopsis": "In post #1969, “FAKE NEWS MEDIA” appears in a question: “Why does the FAKE NEWS MEDIA put so much time / energy / effort into attacking a so-called 'conspiracy'?” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as FAKE NEWS MEDIA. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0263-P2100",
+   "postNum": 2100,
+   "changes": [
+    "\"FAKE NEWS media\" -> \"FAKE NEWS MEDIA\""
+   ],
+   "synopsis": "In post #2100, “FAKE NEWS MEDIA” appears in a question: “Why is FAKE NEWS MEDIA attacking this movement in strategic/coordinated waves [similar anti-POTUS tactics?]?” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as FAKE NEWS MEDIA. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0263-P2563",
+   "postNum": 2563,
+   "changes": [
+    "\"FAKE NEWS media\" -> \"FAKE NEWS MEDIA\""
+   ],
+   "synopsis": "In post #2563, “FAKE NEWS MEDIA” appears in a factual claim made by the post: “Trolling the FAKE NEWS MEDIA is FUN!” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as FAKE NEWS MEDIA. The post is the source of the assertion; this context does not independently verify it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0263-P3127",
+   "postNum": 3127,
+   "changes": [
+    "\"FAKE NEWS media\" -> \"FAKE NEWS MEDIA\""
+   ],
+   "synopsis": "In post #3127, “FAKE NEWS MEDIA” appears in a question: “Would the FAKE NEWS MEDIA (& other controlled assets) expend this amount of time and resource attacking [attempt to discredit - cast as conspiracy - LARP] this movement IF IT DID NOT POSE A SIGNIFICANT THREAT…” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as FAKE NEWS MEDIA. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0263-P3310",
+   "postNum": 3310,
+   "changes": [
+    "\"FAKE NEWS media\" -> \"FAKE NEWS MEDIA\""
+   ],
+   "synopsis": "In post #3310, “FAKE NEWS MEDIA” appears in a factual claim made by the post: “Other than POTUS, can you name a group more attacked than ‘Q’ by the FAKE NEWS MEDIA.” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as FAKE NEWS MEDIA. The post is the source of the assertion; this context does not independently verify it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0304-P1822",
+   "postNum": 1822,
+   "changes": [
+    "\"Fake News Media\" -> \"FAKE NEWS MEDIA\""
+   ],
+   "synopsis": "In post #1822, “FAKE NEWS MEDIA” appears in a factual claim made by the post: “FAKE NEWS MEDIA IS NOT FREE AND INDEPENDENT.” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as FAKE NEWS MEDIA. The post is the source of the assertion; this context does not independently verify it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0304-P2202",
+   "postNum": 2202,
+   "changes": [
+    "\"Fake News Media\" -> \"FAKE NEWS MEDIA\""
+   ],
+   "synopsis": "In post #2202, “FAKE NEWS MEDIA” appears in a factual claim made by the post: “BLACKMAIL v Senate & House [BRIDGE: FAKE NEWS MEDIA] being used to apply leverage against POTUS and/or force immediate 'impeachment' hearings based on 'mental state - potential release of state secrets -…” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as FAKE NEWS MEDIA. The post is the source of the assertion; this context does not independently verify it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0304-P2901",
+   "postNum": 2901,
+   "changes": [
+    "\"Fake News Media\" -> \"FAKE NEWS MEDIA\""
+   ],
+   "synopsis": "In post #2901, “FAKE NEWS MEDIA” appears in a factual claim made by the post: “Propaganda arm [FAKE NEWS MEDIA] of the D party in full attack mode (no facts, only statements).” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as FAKE NEWS MEDIA. The post is the source of the assertion; this context does not independently verify it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0304-P3194",
+   "postNum": 3194,
+   "changes": [
+    "\"Fake News Media\" -> \"FAKE NEWS MEDIA\""
+   ],
+   "synopsis": "In post #3194, “FAKE NEWS MEDIA” appears in a statement or list: “\"FAKE NEWS MEDIA.\" Q” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as FAKE NEWS MEDIA. The synopsis explains the label's role in the passage without treating nearby implications as verified facts."
+  },
+  {
+   "auditOccurrenceId": "ENT-0412-P2770",
+   "postNum": 2770,
+   "changes": [
+    "\"CBS NEWS\" -> \"CBS News\""
+   ],
+   "synopsis": "In post #2770, “Ian Cameron” appears in a question: “ABC NEWS exec producer Ian Cameron married to Susan Rice (Nat Sec Advisor - HUSSEIN)? CBS News/CNN Journ Bianna Vitalievna married to Peter R Orszag (Dir of Office of Mgmt/Budget - HUSSEIN)? CBS News…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Ian Cameron. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0439-P2770",
+   "postNum": 2770,
+   "changes": [
+    "\"CBS NEWS\" -> \"CBS News\""
+   ],
+   "synopsis": "In post #2770, “Susan Rice” appears in a question: “ABC NEWS exec producer Ian Cameron married to Susan Rice (Nat Sec Advisor - HUSSEIN)? CBS News/CNN Journ Bianna Vitalievna married to Peter R Orszag (Dir of Office of Mgmt/Budget - HUSSEIN)? CBS News…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Susan Rice. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0558-P1708",
+   "postNum": 1708,
+   "changes": [
+    "\"Crowdstrike\" -> \"CrowdStrike\""
+   ],
+   "synopsis": "In post #1708, “Rice” appears in a question: “Rice. LL. HRC. BC. Hussein. +22 What if intel masked penetration(s) to frame Russia? CrowdStrike? Servers. SR. JA. Why does the UK gov desperately want JA?” The wording is a direct, unique name or registry alias in the post. This gives strong contextual support for identifying it as Rice. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0633-P2984",
+   "postNum": 2984,
+   "changes": [
+    "\"George H.W. Bush\" -> \"George H. W. Bush\""
+   ],
+   "synopsis": "In post #2984, “George H. W. Bush” appears in a question: “FB RETURNING TO THE NEWS. LIFELOG (DARPA) ENDS > FB BEGINS LIFELOG (DARPA) TEAM TRANSFER > FB WHAT (DARPA) TEAM MEMBERS PAST/PRESENT WORK FOR FB? WHAT DIVISIONS? LOCATE (3) PUBLIC. (9) TOTAL (6_NON PUB).…” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as George H. W. Bush. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0633-P4164",
+   "postNum": 4164,
+   "changes": [
+    "\"George H.W. Bush\" -> \"George H. W. Bush\""
+   ],
+   "synopsis": "In post #4164, “George H. W. Bush” appears in a question: “What Farm born assets elected to Congress? What Farm born assets are attempting to get elected to Congress? What is the primary party to which they serve? [D] How do you control your own budget? How do you…” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as George H. W. Bush. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0684-P54",
+   "postNum": 54,
+   "changes": [
+    "\"LORD\" -> \"Lord\""
+   ],
+   "synopsis": "In post #54, “Lord” appears in a factual claim made by the post: “\"For I know the plans I have for you,” declares the Lord, “plans to prosper you and not to harm you, plans to give you hope and a future.\"” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as Lord. The post is the source of the assertion; this context does not independently verify it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0684-P69",
+   "postNum": 69,
+   "changes": [
+    "\"LORD\" -> \"Lord\""
+   ],
+   "synopsis": "In post #69, “Lord” appears in a factual claim made by the post: “\"The Lord is my shepherd, I lack nothing.” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as Lord. The post is the source of the assertion; this context does not independently verify it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0835-P1842",
+   "postNum": 1842,
+   "changes": [
+    "\"Wikileaks\" -> \"WikiLeaks\""
+   ],
+   "synopsis": "In post #1842, “wikileaks” appears in a source or link reference: “http://thehill.com/policy/cybersecurity/400882-wikileaks-says-senate-panel-requested-assange-testimony-in-russia-probe” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as WikiLeaks. The synopsis explains the label's role in the passage without treating nearby implications as verified facts."
+  },
+  {
+   "auditOccurrenceId": "ENT-0923-P2386",
+   "postNum": 2386,
+   "changes": [
+    "\"FAKE NEWS media\" -> \"FAKE NEWS MEDIA\""
+   ],
+   "synopsis": "In post #2386, “Robert Bowers” appears in a question: “Ask yourself a very simple question. Why is the FAKE NEWS MEDIA continually expending resources to defame, debunk, and cast as a conspiracy, for, as they say, a nobody who started on 4chan? Why did the FAKE…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Robert Bowers. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0939-P2543",
+   "postNum": 2543,
+   "changes": [
+    "\"Fake News Media\" -> \"FAKE NEWS MEDIA\""
+   ],
+   "synopsis": "In post #2543, “Scott Free Productions” appears in a question: “The Art of Trolling the FAKE NEWS MEDIA Step 1: https://twitter.com/realDonaldTrump/status/1069614615510859776 Step 2: https://people.com/politics/donald-trump-typo-scott-free/ Who is Scott Free? Step 3:…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Scott Free Productions. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0946-P2591",
+   "postNum": 2591,
+   "changes": [
+    "\"FAKE NEWS media\" -> \"FAKE NEWS MEDIA\""
+   ],
+   "synopsis": "In post #2591, “Trump Hotels” appears in a source or link reference: “https://twitter.com/TrumpHotels/status/1072253507867152384 Trolling the FAKE NEWS MEDIA is FUN! >>>ENEMY OF THE PEOPLE<<< Q” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Trump Hotels. The synopsis explains the label's role in the passage without treating nearby implications as verified facts."
+  },
+  {
+   "auditOccurrenceId": "ENT-0967-P2770",
+   "postNum": 2770,
+   "changes": [
+    "\"CBS NEWS\" -> \"CBS News\""
+   ],
+   "synopsis": "In post #2770, “Bianna Vitalievna” appears in a question: “CBS News/CNN Journ Bianna Vitalievna married to Peter R Orszag (Dir of Office of Mgmt/Budget - HUSSEIN)?” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Bianna Vitalievna. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0968-P2770",
+   "postNum": 2770,
+   "changes": [
+    "\"CBS NEWS\" -> \"CBS News\""
+   ],
+   "synopsis": "In post #2770, “Peter Orszag” appears in a question: “How do you infiltrate the MSM? [Example 1] ABC NEWS exec producer Ian Cameron married to Susan Rice (Nat Sec Advisor - HUSSEIN)? CBS News/CNN Journ Bianna Vitalievna married to Peter R Orszag (Dir of Office…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Peter Orszag. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0969-P2770",
+   "postNum": 2770,
+   "changes": [
+    "\"CBS NEWS\" -> \"CBS News\""
+   ],
+   "synopsis": "In post #2770, “David Rhodes” appears in a question: “CBS News president David Rhodes brother of Ben Rhodes (Del Nat Sec Advisor - HUSSEIN)? ABC NEWS correspondent Claire Shipman married to Jay Carney (WH Press Sec - HUSSEIN)? …………… MSM = arm/extension of the…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as David Rhodes. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0970-P2770",
+   "postNum": 2770,
+   "changes": [
+    "\"CBS NEWS\" -> \"CBS News\""
+   ],
+   "synopsis": "In post #2770, “Ben Rhodes” appears in a question: “CBS News president David Rhodes brother of Ben Rhodes (Del Nat Sec Advisor - HUSSEIN)? ABC NEWS correspondent Claire Shipman married to Jay Carney (WH Press Sec - HUSSEIN)? …………… MSM = arm/extension of the…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Ben Rhodes. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0973-P2770",
+   "postNum": 2770,
+   "changes": [
+    "\"CBS NEWS\" -> \"CBS News\""
+   ],
+   "synopsis": "In post #2770, “CBS News” appears in a question: “CBS News/CNN Journ Bianna Vitalievna married to Peter R Orszag (Dir of Office of Mgmt/Budget - HUSSEIN)?” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as CBS News. The passage asks about the connection rather than establishing it."
+  },
+  {
+   "auditOccurrenceId": "ENT-0975-P2787",
+   "postNum": 2787,
+   "changes": [
+    "\"STATE DEPT\" -> \"State Dept\""
+   ],
+   "synopsis": "In post #2787, “State Dept” appears in a statement or list: “so-called evidence in order to generate circular news articles (think Yahoo!) and obtain a FISC sign-off, is it reasonable to think that members of the INTEL APPARATUS, State Dept, WH, FOREIGN ALLIES, ETC.” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as State Dept. The synopsis explains the label's role in the passage without treating nearby implications as verified facts."
+  },
+  {
+   "auditOccurrenceId": "ENT-1009-P3033",
+   "postNum": 3033,
+   "changes": [
+    "\"Sen Graham\" -> \"Sen. Graham\""
+   ],
+   "synopsis": "In post #3033, “Sen. Graham” appears in an instruction or action request: “Remain in open comms w/ Sen. Graham & Grassley re: Whistleblower Protection Act.” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as Sen. Graham. The synopsis explains the label's role in the passage without treating nearby implications as verified facts."
+  },
+  {
+   "auditOccurrenceId": "ENT-1324-P4861",
+   "postNum": 4861,
+   "changes": [
+    "\"House intel committee\" -> \"House Intel Committee\""
+   ],
+   "synopsis": "In post #4861, “House Intel Committee” appears in a prediction: “House Intel Committee meeting tomorrow re: 'Qanon'” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as House Intel Committee. The post is the source of the assertion; this context does not independently verify it."
+  }
+ ]
+}

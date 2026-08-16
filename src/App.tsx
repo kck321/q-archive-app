@@ -24,7 +24,9 @@ import Feedback from './pages/Feedback'
 import Donate from './pages/Donate'
 import Download from './pages/Download'
 import Method from './pages/Method'
+import { CAN_EDIT } from './lib/appMode'
 import ResolutionCenter from './pages/ResolutionCenter'
+import HoverReview from './pages/HoverReview'
 import { AdminProvider } from './components/AdminContext'
 import ScrollRestoration from './components/ScrollRestoration'
 
@@ -120,6 +122,10 @@ export default function App() {
             <Route path="/feedback"      element={<Feedback />} />
             <Route path="/donate"        element={<Donate />} />
             <Route path="/resolve"      element={<ResolutionCenter />} />
+            {/* PRIVATE. CAN_EDIT folds to a literal false in the public build, so this route and
+                the page behind it are dropped from that bundle rather than hidden in it. The data
+                it reads is not in public/ either — see the editorialQueues plugin in vite.config. */}
+            {CAN_EDIT && <Route path="/editorial/hover-review" element={<HoverReview />} />}
             <Route path="/method"       element={<Method />} />
             <Route path="/download"      element={<Download />} />
           </Routes>

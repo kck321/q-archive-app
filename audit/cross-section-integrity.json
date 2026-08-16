@@ -207,8 +207,8 @@
   }
  ],
  "totals": {
-  "invariants": 160,
-  "passed": 160,
+  "invariants": 163,
+  "passed": 163,
   "failed": 0
  },
  "results": [
@@ -943,9 +943,9 @@
   {
    "group": "10b. Entity hover publication",
    "id": "hover-count",
-   "description": "published post synopses = 4,285",
+   "description": "published post synopses = 4,156",
    "pass": true,
-   "detail": "4285"
+   "detail": "4156"
   },
   {
    "group": "10b. Entity hover publication",
@@ -956,24 +956,45 @@
   },
   {
    "group": "10b. Entity hover publication",
-   "id": "hover-no-review-leak",
-   "description": "no review-queue record is in the public bundle",
+   "id": "hover-reconciles",
+   "description": "publish + review + quarantine + withdrawn = 7,778",
    "pass": true,
-   "detail": "2931 held back"
+   "detail": "4156 + 3144 + 441 + 37 = 7778"
   },
   {
    "group": "10b. Entity hover publication",
-   "id": "hover-review-not-public",
-   "description": "the review queue is not under public/data",
+   "id": "hover-no-review-leak",
+   "description": "no held record is in the public bundle",
+   "pass": true,
+   "detail": "3622 held back"
+  },
+  {
+   "group": "10b. Entity hover publication",
+   "id": "hover-queues-private",
+   "description": "the editorial queues are not under public/data",
    "pass": true,
    "detail": "admin only"
+  },
+  {
+   "group": "10b. Entity hover publication",
+   "id": "hover-shared-alias-held",
+   "description": "no shared-alias occurrence is published",
+   "pass": true,
+   "detail": "426 held in review"
+  },
+  {
+   "group": "10b. Entity hover publication",
+   "id": "hover-withdrawn-history",
+   "description": "withdrawn records are history, not review",
+   "pass": true,
+   "detail": "37"
   },
   {
    "group": "10b. Entity hover publication",
    "id": "hover-ids-resolve",
    "description": "every hover resolves to a live entity id",
    "pass": true,
-   "detail": "1123 entities"
+   "detail": "1066 entities"
   },
   {
    "group": "10b. Entity hover publication",
