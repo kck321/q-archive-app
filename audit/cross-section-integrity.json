@@ -206,8 +206,8 @@
   }
  ],
  "totals": {
-  "invariants": 146,
-  "passed": 146,
+  "invariants": 147,
+  "passed": 147,
   "failed": 0
  },
  "results": [
@@ -754,6 +754,13 @@
    "group": "9. UI count integrity",
    "id": "ui-entities",
    "description": "sectionInfo headlines 1,334 entities and 8,239 mentions",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "9. UI count integrity",
+   "id": "ui-alias-spelling",
+   "description": "no alias is stored all-lowercase",
    "pass": true,
    "detail": "ok"
   },

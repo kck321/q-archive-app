@@ -6,7 +6,7 @@ One question: does every certified occurrence in every section still resolve to 
 This audit validates the certified system. It reclassifies nothing and moves no count. All eight analytical sections remain frozen.
 
 
-**146 of 146 invariants pass.**
+**147 of 147 invariants pass.**
 
 
 ## 1. Frozen canonical counts
@@ -131,6 +131,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | sectionInfo states 4,242 | ok |
 | ✅ | sectionInfo states 6,590 | ok |
 | ✅ | sectionInfo headlines 1,334 entities and 8,239 mentions | ok |
+| ✅ | no alias is stored all-lowercase | ok |
 | ✅ | sectionInfo keeps 4,463 and 3,440 as provenance | ok |
 | ✅ | sectionInfo states 2,644 | ok |
 | ✅ | sectionInfo states 1,949 | ok |

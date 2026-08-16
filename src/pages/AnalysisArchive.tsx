@@ -9,7 +9,7 @@ import {
   clearAnalysisCategoriesFromPosts, getQuestionsTimeline, getPostNumsByMonth, getPostNumsContaining,
   OVERLAP_CAT_LABELS, normalizeItemKey, makeTermMatcher, getQuestionsForPosts, type AnalysisCategoryFreq, type OverlapItem, type OverlapCat,
 } from '../lib/posts'
-import { getAliasesFor, getAliasSet, getCertifiedEntityAliasSet, subscribeAliases } from '../lib/aliases'
+import { getAliasesFor, getAliasSet, getCertifiedEntityAliasSet, subscribeAliases, displayAlias } from '../lib/aliases'
 import PostCard from '../components/PostCard'
 import ReaderSentinel from '../components/ReaderSentinel'
 import { loadLocalData } from '../lib/localData'
@@ -234,9 +234,30 @@ export default function AnalysisArchive() {
     const all = new Set<string>()
     for (const it of items) for (const al of getAliasesFor(it.text)) all.add(al)
     if (all.size === 0) { setAliasPostMap({}); return }
+    // THE CERTIFIED OCCURRENCES FIRST, a text scan only where there are none.
+    //
+    // This was a pure text search, and it silently lost whole aliases. Q+ is 36 drops of
+    // certified Donald Trump, and postsContainingPhrase refuses any single token of two
+    // characters or fewer — a guard that exists to stop US matching becaUSe — so the POTUS
+    // card listed Q+ among its other names and not one of its 36 drops. Punctuation is
+    // normalised away in that index too, which is the same hazard for every name Q writes with
+    // a symbol.
+    //
+    // A certified row already knows exactly which drops carry the spelling, and using it means
+    // every chip on the card is a drop that will actually highlight when you open it. The scan
+    // stays as the fallback for hand-typed spellings the adjudication never certified.
+    const certifiedPosts = new Map<string, number[]>()
+    for (const it of items) {
+      if (it.category !== 'namedEntities') continue
+      const k = it.text.toLowerCase().trim()
+      const prev = certifiedPosts.get(k)
+      certifiedPosts.set(k, prev ? [...new Set([...prev, ...it.postNums])] : it.postNums)
+    }
     let cancelled = false
-    Promise.all([...all].map(async a => [a.toLowerCase(), await getPostNumsContaining(a)] as const))
-      .then(entries => { if (!cancelled) setAliasPostMap(Object.fromEntries(entries)) })
+    Promise.all([...all].map(async a => {
+      const k = a.toLowerCase().trim()
+      return [k, certifiedPosts.get(k) ?? await getPostNumsContaining(a)] as const
+    })).then(entries => { if (!cancelled) setAliasPostMap(Object.fromEntries(entries)) })
     return () => { cancelled = true }
   }, [items, aliasTick])
 
@@ -966,9 +987,9 @@ export default function AnalysisArchive() {
                     {aliases.length > 0 && (
                       <p className="text-xs text-gray-400 mb-2 px-2 flex items-center gap-1.5 flex-wrap">
                         <span className="italic">also known as:</span>
-                        <span className={`px-1.5 py-0.5 rounded border font-mono ${CANON_CHIP}`}>{item.text}</span>
+                        <span className={`px-1.5 py-0.5 rounded border font-mono ${CANON_CHIP}`}>{displayAlias(item.text)}</span>
                         {aliases.map((al, j) => (
-                          <span key={al} className={`px-1.5 py-0.5 rounded border font-mono ${ALIAS_CHIP_PALETTE[j % ALIAS_CHIP_PALETTE.length]}`}>{al}</span>
+                          <span key={al} className={`px-1.5 py-0.5 rounded border font-mono ${ALIAS_CHIP_PALETTE[j % ALIAS_CHIP_PALETTE.length]}`}>{displayAlias(al)}</span>
                         ))}
                       </p>
                     )}

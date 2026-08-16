@@ -40,21 +40,33 @@ async function persistCloud() {
 // the same term the editable map wins — an owner correction outranks a derived group.
 let certified: Record<string, string[]> = {}
 let certifiedIndex = new Map<string, string>()      // alias/canonical (lower) -> canonical (lower)
+let certifiedSpelling = new Map<string, { text: string; n: number }>()   // lower -> as Q wrote it
 
 /** Load the certified entity alias groups from the shipped Entities artifact. */
 export async function loadCertifiedEntityAliases(): Promise<void> {
   try {
     const res = await fetch(`${import.meta.env.BASE_URL}data/entities.json`)
     if (!res.ok) return
-    const data = await res.json() as { entities?: { canonical?: string; aliases?: { text?: string }[] }[] }
+    const data = await res.json() as { entities?: { canonical?: string; aliases?: { text?: string; n?: number }[] }[] }
     const next: Record<string, string[]> = {}
     const idx = new Map<string, string>()
+    const spell = new Map<string, { text: string; n: number }>()
     for (const e of data.entities ?? []) {
       const canon = (e.canonical ?? '').trim()
       if (!canon) continue
       const key = canon.toLowerCase()
       // The alias Q actually wrote is what the archive stores, so the canonical belongs in the
       // group too: "Dominion Voting Systems" never appears in a drop, only "Dominion.".
+      // The BEST-ATTESTED spelling of every certified name, so the alias chips can be shown the
+      // way Q wrote them. The editable registry is typed by hand and holds "trump" and "djt";
+      // the registry knows those drops say Trump and DJT.
+      const keep = (t: string, n: number) => {
+        const k = t.toLowerCase()
+        const cur = spell.get(k)
+        if (!cur || n > cur.n) spell.set(k, { text: t, n })
+      }
+      keep(canon, Infinity)
+      for (const a of e.aliases ?? []) { const t = (a.text ?? '').trim(); if (t) keep(t, a.n ?? 0) }
       const members = (e.aliases ?? []).map(a => (a.text ?? '').trim()).filter(Boolean)
       if (!members.length) continue
       next[key] = [...new Set(members.filter(m => m.toLowerCase() !== key))]
@@ -63,6 +75,7 @@ export async function loadCertifiedEntityAliases(): Promise<void> {
     }
     certified = next
     certifiedIndex = idx
+    certifiedSpelling = spell
     listeners.forEach(l => l())
   } catch { /* artifact missing or malformed — the editable map still works */ }
 }
@@ -289,3 +302,37 @@ export async function loadAliasesFromCloud(): Promise<void> {
 // Heal any pre-existing split groups (e.g. an entity connected to just one member of a larger group)
 // as soon as the module loads, so views render the fully-merged groups immediately.
 if (normalizeAliases()) persistLocal()
+
+/**
+ * How an alias should be SPELLED on screen.
+ *
+ * The editable registry is typed by hand, so it carries "trump", "djt" and
+ * "united states of america" — and the entity cards showed them exactly that way, beside
+ * properly-cased names, as though the archive did not know better. It does: the certified
+ * registry records the form Q actually wrote, and how often, so the best-attested spelling wins.
+ *
+ * When a name is not in the certified registry, only ALL-LOWERCASE text is touched. HUSSEIN, DJT,
+ * Q+ and "4,10,20" are already the form Q wrote and must survive untouched — a blanket title-case
+ * would quietly rewrite them.
+ *
+ * Display only. Every lookup, fold and match in this file is lowercased, so changing the shown
+ * spelling cannot change what counts as the same subject.
+ */
+export function displayAlias(text: string): string {
+  const t = (text ?? '').trim()
+  if (!t) return text
+  // ANYTHING ALREADY CARRYING A CAPITAL IS LEFT ALONE. HUSSEIN and DONALD J. TRUMP are how Q
+  // writes them, and "best attested" alone would have swapped a shouted spelling for a quiet one
+  // in both directions. Only all-lowercase text — the hand-typed kind — is repaired.
+  if (/[A-Z]/.test(t) || !/[a-z]/.test(t)) return t
+  const cert = certifiedSpelling.get(t.toLowerCase())
+  // An ALL-CAPS certified spelling is only adopted for a short single token, where it is an
+  // acronym (DJT, HRC). For a phrase it is Q shouting — "UNITED STATES OF AMERICA" is not the
+  // capitalisation this label wants — so the phrase is title-cased instead.
+  if (cert && (/[a-z]/.test(cert.text) || (!cert.text.includes(" ") && cert.text.length <= 5))) return cert.text
+  // "United States of America", not "United States Of America". Joining words stay lowercase
+  // unless they open the name.
+  const SMALL = new Set(['of', 'the', 'and', 'in', 'for', 'to', 'a', 'an', 'at', 'by', 'on', 'or'])
+  return t.replace(/(^|[\s.\-/])([a-z]+)/g, (_, lead: string, w: string) =>
+    lead + (lead !== '' && SMALL.has(w) ? w : w[0].toUpperCase() + w.slice(1)))
+}

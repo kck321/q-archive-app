@@ -490,6 +490,12 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   t('ui-claims', 'sectionInfo states 4,242', has(4242), 'ok')
   t('ui-evidence', 'sectionInfo states 6,590', has(6590), 'ok')
   t('ui-entities', 'sectionInfo headlines 1,334 entities and 8,239 mentions', has(1445) && has(9786), 'ok')
+  // The editable alias registry is typed by hand and its spellings are SHOWN on the entity cards,
+  // beside certified names. "trump" and "djt" sat there looking like the archive did not know
+  // better. displayAlias() repairs this at render time; this keeps the stored data honest too.
+  const editableAliases = JSON.parse(fs.readFileSync(path.join(ROOT, 'public', 'data', 'aliases.json'), 'utf8'))
+  const lowerOnly = Object.values(editableAliases).flat().filter(a => /^[a-z][a-z ]*$/.test(a))
+  t('ui-alias-spelling', 'no alias is stored all-lowercase', lowerOnly.length === 0, lowerOnly.join(' ') || 'ok')
   t('ui-entities-submetrics', 'sectionInfo keeps 4,463 and 3,440 as provenance', has(4463) && has(3440), 'ok')
   t('ui-themes', 'sectionInfo states 2,644', has(2644), 'ok')
   t('ui-codes', 'sectionInfo states 1,949', has(1949), 'ok')
