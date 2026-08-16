@@ -2,11 +2,11 @@
   "collections": {
     "posts": {
       "count": 4966,
-      "bytes": 9693747
+      "bytes": 6545584
     },
     "questions": {
-      "count": 6577,
-      "bytes": 2195071
+      "count": 10158,
+      "bytes": 1865402
     },
     "topics": {
       "count": 100,
@@ -25,5 +25,5 @@
       "bytes": 2
     }
   },
-  "totalBytes": 11963600
+  "totalBytes": 11633931
 }
