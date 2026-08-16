@@ -14,10 +14,15 @@
 //              dotted underline and never as a certified category colour
 //
 // READ-ONLY. Nothing here mutates certified data; the box has no controls.
-import { cloneElement, useEffect, useLayoutEffect, useRef, useState, type ReactElement, type ReactNode } from 'react'
+import { cloneElement, useEffect, useState, type ReactElement, type ReactNode } from 'react'
+import { HoverCard } from '../components/HoverCard'
+import { entityHoversSync, loadEntityHovers, postHoverFor, GRADE_LABEL, GRADE_STYLE, type SupportGrade } from './entityHovers'
 
 export interface GlossEntry {
   meaning: string
+  /** The permanent qe- id. Present on entity readings; this is what the post-specific synopsis
+   *  is keyed by, so the box never looks anything up by display name. */
+  entityId?: string
   kind: 'entity' | 'notation'
   type?: string
   detail?: string
@@ -33,6 +38,11 @@ let _inflight: Promise<Record<string, GlossEntry[]>> | null = null
 
 export async function loadGlossary(): Promise<Record<string, GlossEntry[]>> {
   if (_cache) return _cache
+  // The post-specific synopses ride along with the glossary. ONE insertion point: every surface
+  // that shows an info box already loads the glossary, so pairing them here is what keeps the two
+  // halves of the box from arriving separately — and a card that renders its general half while
+  // the specific half is still in flight reads as though the drop had nothing to say.
+  void loadEntityHovers()
   _inflight ??= (async () => {
     try {
       const res = await fetch(`${import.meta.env.BASE_URL}data/glossary.json`)
@@ -90,39 +100,20 @@ export function glossFor(token: string, postNum: number, gloss = glossarySync())
   return null
 }
 
-function InfoBox({ entry, token, anchor }: { entry: GlossEntry; token: string; anchor: HTMLElement | null }) {
-  const boxRef = useRef<HTMLSpanElement>(null)
-  const [pos, setPos] = useState<{ left: number; top: number } | null>(null)
-
-  // POSITION AGAINST THE VIEWPORT, NOT THE PARAGRAPH.
-  //
-  // Centred-above-the-token is correct only in the middle of the screen. An acronym near the right
-  // edge — and Q's drops are full of them — pushed half the box past the window, and one at the
-  // top of the viewport opened upward into nothing. The owner's report: "it is mostly off screen
-  // so i cant read what it is."
-  //
-  // `fixed` rather than absolute, because the post body is inside a <pre> with its own overflow;
-  // an absolutely-positioned box is clipped by that ancestor no matter how it is offset.
-  useLayoutEffect(() => {
-    const a = anchor?.getBoundingClientRect()
-    const b = boxRef.current?.getBoundingClientRect()
-    if (!a || !b) return
-    const M = 8
-    const left = Math.max(M, Math.min(a.left + a.width / 2 - b.width / 2, window.innerWidth - b.width - M))
-    // Above by preference; below when there is no room, which is the whole top of the page.
-    const wanted = a.top - b.height - 6 >= M ? a.top - b.height - 6 : a.bottom + 6
-    // CLAMP UNCONDITIONALLY. Preferring "above" still overflowed when the anchor itself sits
-    // below the fold — the branch was chosen from the anchor's position and then trusted. Six of
-    // twenty-one cases failed this way. Neither branch is allowed to leave the viewport.
-    const top = Math.max(M, Math.min(wanted, window.innerHeight - b.height - M))
-    setPos({ left, top })
-  }, [anchor, entry])
-
+/**
+ * The card body. TWO LAYERS, VISIBLY SEPARATE.
+ *
+ * The top half is what this entity is, anywhere in the archive. The bottom half is what THIS drop
+ * does with the label and how much the drop actually establishes. Merging them would quietly drop
+ * the second half — and the second half is the honest one: "NYC is New York City" is true
+ * everywhere, while "this drop uses the abbreviated form, which needs the surrounding passage to
+ * confirm it" is true only here, and is the part a researcher needs.
+ */
+function InfoCard({ entry, token, postNum }: { entry: GlossEntry; token: string; postNum: number }) {
+  const post = postHoverFor(entityHoversSync(), entry.entityId, postNum)
+  const grade = post?.g as SupportGrade | undefined
   return (
-    <span ref={boxRef}
-      style={{ left: pos?.left ?? 0, top: pos?.top ?? 0, visibility: pos ? 'visible' : 'hidden' }}
-      className="pointer-events-none fixed z-50 w-max max-w-[min(20rem,calc(100vw-1rem))]
-                 rounded border border-q-border bg-[#11151c] px-2.5 py-2 text-left shadow-xl">
+    <>
       <span className="block text-[11px] uppercase tracking-wide text-gray-500">
         {token} {entry.kind === 'entity' ? '·  entity' : '·  not an entity'}
       </span>
@@ -133,43 +124,45 @@ function InfoBox({ entry, token, anchor }: { entry: GlossEntry; token: string; a
         </span>
       )}
       {/* Owner note for readers — e.g. SS in #1151 is written SS but read as SC. Shown for
-          entities as well as glosses: a typo reading needs explaining precisely because the
-          canonical name alone would look like a mistake. */}
+          entities too: a typo reading needs explaining precisely because the canonical name
+          alone would look like a mistake. */}
       {entry.detail && <span className="mt-1 block text-[11px] leading-snug text-amber-200/70">{entry.detail}</span>}
-    </span>
+
+      {post && (
+        <>
+          <span className="mt-2 block border-t border-q-border/60 pt-1.5 text-[10px] uppercase tracking-wide text-gray-500">
+            in this drop
+          </span>
+          <span className="mt-1 block text-[11px] leading-relaxed text-gray-300">{post.s}</span>
+          {grade && (
+            <span className={`mt-1 block text-[10px] ${GRADE_STYLE[grade] ?? 'text-gray-400'}`}>
+              {GRADE_LABEL[grade] ?? grade}
+            </span>
+          )}
+        </>
+      )}
+    </>
   )
 }
 
 /**
- * Hover on a pointer, tap on touch. `title` is deliberately NOT used: it never appears on touch,
- * and the owner asked for press as well as hover.
+ * The reader's handle on a glossed token.
+ *
+ * Every interaction mode lives in HoverCard — hover, keyboard focus, tap, Escape, outside click,
+ * and the ARIA wiring — so this file describes only WHAT to show. Brackets will reuse the same
+ * primitive rather than growing a second implementation with a different set of gaps.
  */
-export function TermInfo({ token, entry, children }: { token: string; entry: GlossEntry; children: ReactNode }) {
-  const [open, setOpen] = useState(false)
-  const ref = useRef<HTMLSpanElement>(null)
-
-  // A tapped box has to be dismissible without a second precise tap on the same two letters, and
-  // a fixed box has to close when the page moves under it.
-  useEffect(() => {
-    if (!open) return
-    const close = () => setOpen(false)
-    window.addEventListener('scroll', close, true)
-    window.addEventListener('resize', close)
-    document.addEventListener('keydown', e => { if ((e as KeyboardEvent).key === 'Escape') close() })
-    return () => {
-      window.removeEventListener('scroll', close, true)
-      window.removeEventListener('resize', close)
-    }
-  }, [open])
-
+export function TermInfo({ token, entry, postNum, children }: {
+  token: string; entry: GlossEntry; postNum: number; children: ReactNode
+}) {
+  const post = postHoverFor(entityHoversSync(), entry.entityId, postNum)
   return (
-    <span ref={ref} className="relative inline-block"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-      onClick={e => { e.stopPropagation(); setOpen(o => !o) }}>
+    <HoverCard
+      label={`${token} — ${entry.meaning}${post ? `, and how post #${postNum} uses it` : ''}`}
+      card={<InfoCard entry={entry} token={token} postNum={postNum} />}
+    >
       {children}
-      {open && <InfoBox entry={entry} token={token} anchor={ref.current} />}
-    </span>
+    </HoverCard>
   )
 }
 
@@ -216,7 +209,7 @@ export function applyGlossary(nodes: ReactNode[], postNum: number, gloss: Record
       touched = true
       const tail = part.slice(head.length)
       return [
-        <TermInfo key={`${keyPrefix}-${j}`} token={head} entry={entry}>
+        <TermInfo key={`${keyPrefix}-${j}`} token={head} entry={entry} postNum={postNum}>
           {underline
             ? <span className="cursor-help underline decoration-dotted decoration-gray-500 underline-offset-2">{head}</span>
             : <span className="cursor-help">{head}</span>}
@@ -244,7 +237,7 @@ export function applyGlossary(nodes: ReactNode[], postNum: number, gloss: Record
     // highlight rather than to a nested copy of its text.
     if (typeof kids === 'string') {
       const whole = glossFor(kids.trim(), postNum, gloss)
-      if (whole) return <TermInfo key={keyPrefix} token={kids.trim()} entry={whole}>{node}</TermInfo>
+      if (whole) return <TermInfo key={keyPrefix} token={kids.trim()} entry={whole} postNum={postNum}>{node}</TermInfo>
     }
     if (kids === undefined || kids === null) return node
     const inner = walk(kids, `${keyPrefix}k`, true, depth - 1)

@@ -4075,3 +4075,62 @@ without the field that says how long it has waited — a silent failure, so it i
 
 **Proof.** 152/152 invariants · manifest re-certified · tsc clean · verified in a browser on both
 the Source and Reference queues. Queue stays **115**; no certified count moved.
+
+---
+
+## 16 Aug 2026 — Stage 1 deployed; Stage 2 entity hovers implemented
+
+**Stage 1 shipped** at seed 76 — 1,409 entities, 9,749 mentions — and was verified in production:
+1,409 rows with 0 duplicates, every row carrying a permanent `qe-` id, 9,749 rendered mentions
+(difference 0), all 37 withdrawn occurrences still present in their drops and none still
+highlighted, absorbed spellings still resolving, and returning seed-75 readers migrating. `qe-`
+ids are byte-identical after a full rebuild.
+
+**The [NP] ruling is parked with an exit condition** — `audit/entities-pending-migrations.json`.
+Both halves of the owner's ruling are true at once: "non-profit organization" is a generic class,
+AND [NP] in #5/#6 must never resolve to Nancy Pelosi. It stays until occurrence-level brackets can
+carry the disambiguation, then 9,749 → 9,747.
+
+### Stage 2
+
+**4,285 published · 2,931 to review · 562 held · 0 unmappable.**
+
+**Keyed by permanent id + post number**, never by display name, alias, slug or the audit's
+ENT-####. Those numbers are our own list ordered by mention count — positional, and meaningless
+after any recount. Everything resolves through the Stage 1 crosswalk before anything is written.
+`build-glossary.mjs` now emits `entityId` so the reader's info box never looks anything up by name.
+
+**Two layers, stored and shown apart.** `global` is what the entity is anywhere; `byPost` is what
+THIS drop does with the label and how much it establishes. Collapsing them would lose the second
+half — the honest half. #534 shows it: "NYC is New York City" is true everywhere; "this drop uses
+the abbreviated form, which needs the surrounding passage to confirm it" is true only here.
+
+**The review queue is NOT under `public/data`.** The instruction was to route Review records into
+the review workflow and not expose them; `public/data` is the published bundle, so anything placed
+there is exposed by definition. They live in `audit/entity-hover-review-queue.json`, and the
+publication gate refuses to write if even one non-Ready record reaches the bundle.
+
+**`HoverCard.tsx` — one accessible primitive, reusable for Brackets.** The existing info box worked
+on a mouse and nothing else: no keyboard focus, no outside-click dismissal, no ARIA relationship,
+and its Escape handler was attached to `document` on every open and never removed. Fixing that in
+place would have fixed Entities alone and let Brackets grow a second copy with the same gaps.
+
+**A placement bug the test caught:** prefer-above / fall-back-below / clamp-into-viewport puts the
+card on top of the word it explains at the bottom of a page — the clamp is what causes it. Space is
+now measured first, the card goes where it fits, and when neither side holds it whole it takes the
+roomier side and scrolls inside a bounded height. The anchor stays visible in every case.
+
+**Wording audit over all 4,285.** Every synopsis attributes to the post and cites its drop; all
+1,138 Partial readings hedge; all 1,640 question-role synopses keep the question a question; none
+claims verification in its own voice. Two checks were wrong before they were right: the
+verification regex fired five times on Q's own quoted words ("hasn't been proven to be correct"),
+and an "is the alias in the drop" check failed 309 times on entities matched inside URLs.
+
+**309 published hovers explain a term that appears only inside a URL** — "Black Lives Matter" from
+`trends.google.com/...q=black%20lives%20matter`, "Daily Beast" from `amp.thedailybeast.com`. Our
+certified data counts those mentions too, so the tooltips agree with what the archive highlights.
+Same class as Stage 1's `Presidential Advisory`. Pre-existing; reported, not silently fixed.
+
+**Proof.** 160/160 invariants (8 new hover gates), 18/18 accessibility checks in a browser,
+manifest re-certified with `entity-hovers.json` now covered, tsc clean. Entity totals unchanged by
+the import: 1,409 / 9,749.

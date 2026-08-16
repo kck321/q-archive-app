@@ -207,8 +207,8 @@
   }
  ],
  "totals": {
-  "invariants": 152,
-  "passed": 152,
+  "invariants": 160,
+  "passed": 160,
   "failed": 0
  },
  "results": [
@@ -941,6 +941,62 @@
    "detail": "9749"
   },
   {
+   "group": "10b. Entity hover publication",
+   "id": "hover-count",
+   "description": "published post synopses = 4,285",
+   "pass": true,
+   "detail": "4285"
+  },
+  {
+   "group": "10b. Entity hover publication",
+   "id": "hover-globals",
+   "description": "one global synopsis per live entity",
+   "pass": true,
+   "detail": "1409"
+  },
+  {
+   "group": "10b. Entity hover publication",
+   "id": "hover-no-review-leak",
+   "description": "no review-queue record is in the public bundle",
+   "pass": true,
+   "detail": "2931 held back"
+  },
+  {
+   "group": "10b. Entity hover publication",
+   "id": "hover-review-not-public",
+   "description": "the review queue is not under public/data",
+   "pass": true,
+   "detail": "admin only"
+  },
+  {
+   "group": "10b. Entity hover publication",
+   "id": "hover-ids-resolve",
+   "description": "every hover resolves to a live entity id",
+   "pass": true,
+   "detail": "1123 entities"
+  },
+  {
+   "group": "10b. Entity hover publication",
+   "id": "hover-keyed-by-id",
+   "description": "hovers are keyed by qe- id, not by name",
+   "pass": true,
+   "detail": "ok"
+  },
+  {
+   "group": "10b. Entity hover publication",
+   "id": "hover-counts-untouched",
+   "description": "entity totals are unchanged by the import",
+   "pass": true,
+   "detail": "1409 entities / 9749 mentions"
+  },
+  {
+   "group": "10b. Entity hover publication",
+   "id": "hover-grades-present",
+   "description": "every published synopsis carries its support grade",
+   "pass": true,
+   "detail": "0 ungraded"
+  },
+  {
    "group": "11. Frozen-section mutation",
    "id": "hash-stable",
    "description": "no certified artifact CHANGED CONTENT since the manifest",
@@ -959,7 +1015,7 @@
    "id": "artifacts-present",
    "description": "every certified artifact is on disk",
    "pass": true,
-   "detail": "10/10"
+   "detail": "11/11"
   },
   {
    "group": "11. Frozen-section mutation",

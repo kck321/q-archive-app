@@ -6,7 +6,7 @@ One question: does every certified occurrence in every section still resolve to 
 This audit validates the certified system. It reclassifies nothing and moves no count. All eight analytical sections remain frozen.
 
 
-**152 of 152 invariants pass.**
+**160 of 160 invariants pass.**
 
 
 ## 1. Frozen canonical counts
@@ -163,13 +163,26 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | the held mentions still reconcile to the certified gap | 18 held / 18 gap |
 | ✅ | none of the held mentions is counted in Entities | 9749 |
 
+## 10b. Entity hover publication
+
+| | Invariant | Observed |
+|---|---|---|
+| ✅ | published post synopses = 4,285 | 4285 |
+| ✅ | one global synopsis per live entity | 1409 |
+| ✅ | no review-queue record is in the public bundle | 2931 held back |
+| ✅ | the review queue is not under public/data | admin only |
+| ✅ | every hover resolves to a live entity id | 1123 entities |
+| ✅ | hovers are keyed by qe- id, not by name | ok |
+| ✅ | entity totals are unchanged by the import | 1409 entities / 9749 mentions |
+| ✅ | every published synopsis carries its support grade | 0 ungraded |
+
 ## 11. Frozen-section mutation
 
 | | Invariant | Observed |
 |---|---|---|
 | ✅ | no certified artifact CHANGED CONTENT since the manifest | ok |
 | ✅ | byte-level re-serialisation reported separately, not as drift | none |
-| ✅ | every certified artifact is on disk | 10/10 |
+| ✅ | every certified artifact is on disk | 11/11 |
 | ✅ | the editorial write guard is a shared module | lib/certifiedWrite.mjs |
 | ✅ | the guard has a negative test | test-certified-write-guard.mjs |
 | ✅ | no editorial script carries its own allowlist | one copy in lib/ |

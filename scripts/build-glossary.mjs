@@ -91,6 +91,10 @@ for (const e of entities) {
       : literalCache.get(text).filter(n => (e.posts ?? []).includes(n))
     add(text, {
       meaning: e.canonical,
+      // The PERMANENT id, so the reader's info box can look up this entity's post-specific
+      // synopsis without going through the display name — the one field that changes when an
+      // entity is renamed or merged.
+      entityId: e.id,
       kind: 'entity',
       type: TYPE_LABEL[e.type] ?? 'Named entity',
       mentions: e.mentions ?? 0,
@@ -127,6 +131,7 @@ for (const e of entities) {
   if (!literalCache.has(e.canonical)) literalCache.set(e.canonical, literalPosts(e.canonical))
   add(e.canonical, {
     meaning: def.expansion,
+    entityId: e.id,
     kind: 'entity',
     type: TYPE_LABEL[e.type] ?? 'Named entity',
     mentions: e.mentions ?? 0,

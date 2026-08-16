@@ -426,6 +426,10 @@ export const APPLY_ORDER = [
 export const ARTIFACTS = [
   'posts.json', 'questions.json', 'evidence.json', 'entities.json', 'themes.json',
   'codes.json', 'emphasis.json', 'resolution-queue.json', 'relationships.json', 'search-index.json',
+  // Reader-facing editorial text, and the only artifact here that is prose rather than counts.
+  // It is covered for exactly that reason: a silent change to what the archive SAYS about a named
+  // person is harder to notice than a count that moves, and impossible to notice from a total.
+  'entity-hovers.json',
 ]
 
 /** Whitespace-normalised comparison — the one approved reconstruction. */

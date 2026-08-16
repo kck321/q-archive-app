@@ -627,6 +627,53 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   }
 }
 
+// ── 10b. Entity hovers: nothing unreviewed reaches the reader ────────────────
+// A Review synopsis is unreviewed editorial text about a named person, written by a first-pass
+// classifier. Publishing one is not a formatting slip, so the barrier is asserted rather than
+// assumed — and asserted from BOTH sides: the public file contains only Ready records, and the
+// review queue is not inside public/data at all.
+{
+  const t = group('10b. Entity hover publication')
+  const hoverFile = path.join(DATA, 'entity-hovers.json')
+  if (fs.existsSync(hoverFile)) {
+    const hov = JSON.parse(fs.readFileSync(hoverFile, 'utf8'))
+    const published = []
+    for (const [id, byPost] of Object.entries(hov.byPost ?? {})) {
+      for (const [pn, v] of Object.entries(byPost)) published.push({ id, postNum: Number(pn), ...v })
+    }
+    t('hover-count', 'published post synopses = 4,285', published.length === 4285, published.length)
+    t('hover-globals', 'one global synopsis per live entity',
+      Object.keys(hov.global ?? {}).length === CANONICAL.entities.canonical, Object.keys(hov.global ?? {}).length)
+
+    // Every published record must be absent from the review queue, matched on the same key the
+    // bundle uses. Comparing on anything looser would let a near-duplicate through.
+    const rq = path.join(OUT, 'entity-hover-review-queue.json')
+    if (fs.existsSync(rq)) {
+      const review = JSON.parse(fs.readFileSync(rq, 'utf8'))
+      const reviewKeys = new Set(review.records.map(r => `${r.entityId} ${r.postNum}`))
+      const leaked = published.filter(p => reviewKeys.has(`${p.id} ${p.postNum}`))
+      t('hover-no-review-leak', 'no review-queue record is in the public bundle', leaked.length === 0,
+        leaked.length ? `${leaked.length} leaked, e.g. #${leaked[0].postNum}` : `${review.total} held back`)
+      t('hover-review-not-public', 'the review queue is not under public/data',
+        !fs.existsSync(path.join(DATA, 'entity-hover-review-queue.json')), 'admin only')
+    }
+    // Every hover must resolve to a live entity BY ID — the whole point of minting them.
+    const entityIds = new Set(entities.entities.map(e => e.id))
+    const orphan = published.filter(p => !entityIds.has(p.id))
+    t('hover-ids-resolve', 'every hover resolves to a live entity id', orphan.length === 0, `${new Set(published.map(p => p.id)).size} entities`)
+    t('hover-keyed-by-id', 'hovers are keyed by qe- id, not by name',
+      Object.keys(hov.byPost ?? {}).every(k => /^qe-[0-9a-f]{12}$/.test(k)), 'ok')
+    // Importing hover TEXT must not have moved a single count.
+    t('hover-counts-untouched', 'entity totals are unchanged by the import',
+      entities.totals.mentions === CANONICAL.entities.mentions && entities.entities.length === CANONICAL.entities.canonical,
+      `${entities.entities.length} entities / ${entities.totals.mentions} mentions`)
+    // A grade must reach the reader, or a Partial reading looks like a settled one.
+    const graded = published.filter(p => ['Strong', 'Partial', 'Insufficient'].includes(p.g))
+    t('hover-grades-present', 'every published synopsis carries its support grade',
+      graded.length === published.length, `${published.length - graded.length} ungraded`)
+  }
+}
+
 // ── 11. Frozen-section mutation check ────────────────────────────────────────
 {
   const t = group('11. Frozen-section mutation')
