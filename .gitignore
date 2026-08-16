@@ -40,3 +40,6 @@ scripts/.cache/qalerts-posts.json
 # Built by scripts/build-media-bundle.mjs — ~155 MB of re-encoded attachments.
 # Derived data, rebuildable, and far too large for git. Shipped to CI as a release asset.
 media-bundle/
+
+# Runtime single-writer lock — never a tracked artifact.
+.repo-lock.json
