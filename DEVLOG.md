@@ -3814,3 +3814,46 @@ H elsewhere is not Hillary, and WH and /EH in this same drop are untouched.
 - Donald Trump 28 → 64 · John McCain 10 → 34 · Clinton Foundation 65 → 56 · Q visible at 10
 - 146/146 invariants, manifest verifies, tsc clean, full pre-deploy proof green (90/90 info-box
   checks), CDN parity confirmed, tagged `seed-74`
+
+---
+
+## 2026-08-16 — Entity cards: certified alias posts + alias chip spelling
+
+**Request:** "i see q+ as an alias but when i open up all the post related to potus and all aliases
+i see Q+ but i do not see any post highlighted in orange... can we make sure all alias post are
+within the entities they are connected too. in the alias section can we make sure the words are
+capitalized if they should be respectively."
+
+**Why the Q+ drops were missing.** The alias post-list on an entity card was built by *text search*
+(`getPostNumsContaining` → `postsContainingPhrase`), not from certified occurrences. That function
+refuses any single token of two characters or fewer — a guard that exists so the alias "US" stops
+matching "becaUSe", "mUSt", "rUSsia" — and **"Q+" is two characters**, so it returned nothing at
+all. The card listed Q+ as one of POTUS's names and none of its 36 drops. The same index normalises
+punctuation away, so this was a hazard for every name Q writes with a symbol.
+
+**Fix:** the card now reads the certified rows first — they already record exactly which drops carry
+each spelling — and falls back to the text scan only for hand-typed spellings the adjudication never
+certified ("4,10,20", "Donald"). Verified by simulation: the POTUS card goes from 506 chips to
+**419 certified ones, 419/419 of which open a drop that actually carries that term** and therefore
+highlights. The drop is the point: the 87 that left were text matches with no certified occurrence
+behind them, which is exactly the "listed but nothing highlighted" complaint.
+
+**Alias chip spelling.** The editable registry (`public/data/aliases.json`, master in Firestore) is
+typed by hand and held `trump`, `djt`, `jesus`, `united states of america` — displayed verbatim
+beside properly-cased certified names. New `displayAlias()` repairs the display from the certified
+registry, which records the form Q wrote and how often:
+
+- **Anything already carrying a capital is left alone.** HUSSEIN and DONALD J. TRUMP are how Q
+  writes them; a blanket "best attested" rule swapped spellings in *both* directions and was wrong.
+- An all-caps certified spelling is adopted only for a short single token, where it is an acronym
+  (DJT, HRC). For a phrase it is Q shouting, so the phrase is title-cased instead —
+  "United States of America", not "UNITED STATES OF AMERICA".
+- Title-casing keeps joining words lowercase unless they open the name ("of", "the", "and"…).
+
+Applied to the stored file too (`trump`→`Trump`, `djt`→`DJT`, `jesus`→`Jesus`,
+`united states of america`→`United States of America`), and a new invariant
+(`ui-alias-spelling`) fails the gate if an all-lowercase alias is ever stored again.
+
+**Result — live on qdrops.app:** 147/147 invariants, manifest verifies, tsc clean, full pre-deploy
+proof green, CDN parity confirmed. No seed bump: `aliases.json` is fetched at runtime, not seeded,
+and no certified artifact changed.
