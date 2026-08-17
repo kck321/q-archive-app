@@ -4686,3 +4686,57 @@ in the re-seeded record. Asserting the old paint there would have made the owner
 **Gates.** tsc clean · 206/206 invariants · manifest verified · 14/14 context+emphasis checks ·
 122/122 multi-word checks · term-info 90/90 · 54 + 34 + 23 pure cases · verify-final fresh and
 returning green · slate Emphasis marks measured at 0 on both surfaces for #4961.
+
+---
+
+## 2026-08-17 — the badge number is now the sort key
+
+**Request.** "the exact number displayed in the row's ×N posts badge must be the number used to sort
+that row." Rod Rosenstein printed **×96 posts** and sat between a 5-post row and a 4-post row;
+Australia's 20 sat below rows with 6.
+
+**Four numbers, one row, nothing reconciling them.** The badge unioned the alias spellings; the sort
+key used `occurrences`; `postNums` was a third quantity; and the reader opened a fourth. Every one of
+them was individually defensible, which is why the column looked broken while no single count was
+wrong. The union is now computed **once**, in `rows`, and the badge, the chips, the reader and the
+comparator all read it.
+
+**Named Entities come from the certified registry, not from a string union.** `entities.json` already
+resolved every occurrence to exactly one entity, and that is the only thing that can answer the
+shared-alias question: **"CS" is Chuck Schumer, CrowdStrike AND Christopher Steele**, so a union keyed
+by the string hands the same drop to all three. It also ends the text-scan over-count — MI6 read
+**14** posts against a certified **11**, Military Intelligence **16** against **15**. One row per
+`qe-` identity, its own certified drops, every spelling shown inside the row.
+
+**Ordering.** Distinct posts descending, then the oldest drop ascending, then the label so a rebuild
+reproduces the list exactly. The three 6-post rows come out Constitution (#23), Merkel (#100),
+Japan (#137). With a month selected the badge switches to that month's count, so the comparator
+switches with it — otherwise the same defect returns one filter along. Rank stays a property of the
+unfiltered list.
+
+**Before → after, the reported rows:**
+
+    Australia             20 posts   was below rows with 6      now rank-position 64
+    Military Intelligence 15 posts   badge read 16 (text scan)  now 78
+    MI6                   11 posts   badge read 14 (text scan)  now 98
+    Scaramucci             7 posts                              now 154
+
+**`scripts/test-category-order.mjs`** — seven checks over six categories, read from the RENDERED
+page because the artifacts were never wrong; the disagreement was between two things the component
+computed. No row shows more chips than it claims; an uncapped row shows exactly as many; no post is
+listed twice; the reader opens exactly the badge count; counts never increase down the list; equal
+counts go oldest-first; printed ranks ascend with the rendered order; and a second load produces an
+identical order. Wired into `verify-final.mjs`, local and live.
+
+**Two defects the gate found in itself, worth recording.** A page expression is a template literal,
+so `\d` arrived as `d` and every chip lookup silently matched nothing — the same class of bug as the
+backticks that stopped `test-multiword-gloss.mjs` parsing. And a chip that repeats inside its drop
+renders an inline `×2` badge, so its text is `#780×2`; parsing the whole string gave NaN and dropped
+two chips per row, which read as the badge over-claiming. Both were the test, not the app — but the
+second exposed a real one: building entity rows from the registry had dropped the per-post repeat
+counts, and the amber `×2` on a chip is the only place a reader learns Q said a name twice in one
+breath. Merged back in across every spelling.
+
+**Gates.** tsc · 206/206 invariants · manifest · 14/14 context+emphasis · 122/122 multi-word ·
+term-info 90/90 · 43/43 category-ordering · 54 + 34 + 23 pure cases · verify-final fresh and
+returning green.

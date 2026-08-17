@@ -9,7 +9,7 @@ import {
   clearAnalysisCategoriesFromPosts, getQuestionsTimeline, getPostNumsByMonth, getPostNumsContaining,
   OVERLAP_CAT_LABELS, normalizeItemKey, makeTermMatcher, getQuestionsForPosts, type AnalysisCategoryFreq, type OverlapItem, type OverlapCat,
 } from '../lib/posts'
-import { getAliasesFor, getAliasSet, getCertifiedEntityAliasSet, subscribeAliases, displayAlias } from '../lib/aliases'
+import { getAliasesFor, getAliasSet, getCertifiedEntityAliasSet, getCertifiedEntities, subscribeAliases, displayAlias } from '../lib/aliases'
 import PostCard from '../components/PostCard'
 import ReaderSentinel from '../components/ReaderSentinel'
 import { loadLocalData } from '../lib/localData'
@@ -389,6 +389,86 @@ export default function AnalysisArchive() {
     [hoverMonth, postNumsByMonth],
   )
 
+  /**
+   * ONE FINAL POST SET PER ROW — the number in the badge, the chips, the reader and the SORT KEY.
+   *
+   * These were four different numbers. The badge unioned the alias spellings; the sort key used the
+   * row's own `postNums`; and nothing reconciled them. So Rod Rosenstein read "x96 posts" and sat
+   * between a 5-post row and a 4-post row, and Australia's 20 sat below rows with 6. The list was
+   * ordered by a quantity the reader could not see.
+   *
+   * Owner ruling, 2026-08-17: "the exact number displayed in the row's xN posts badge must be the
+   * number used to sort that row." So the set is computed once, here, and everything downstream
+   * reads it.
+   *
+   * NAMED ENTITIES COME FROM THE CERTIFIED REGISTRY, NOT FROM A STRING UNION. `entities.json`
+   * already resolved every occurrence to exactly one entity, which is the only thing that can
+   * answer the shared-alias question: "CS" is Chuck Schumer, CrowdStrike AND Christopher Steele,
+   * and a union keyed by the string hands the same drop to all three. It also stops the text-scan
+   * fallback over-counting — MI6 read 14 posts against a certified 11, Military Intelligence 16
+   * against 15. One row per qe- identity, its own certified drops, aliases shown inside the row.
+   *
+   * Other categories keep the union they already displayed; only the sort key changes to match it.
+   */
+  type Chip = { num: number; term: string }
+  type Row = AnalysisCategoryFreq & { chips: Chip[]; oldest: number; aliasNames: string[] }
+
+  const rows: Row[] = useMemo(() => {
+    const out: Row[] = []
+
+    // ── Named Entities: one row per certified identity ────────────────────────
+    const registry = getCertifiedEntities()
+    if (registry.length) {
+      // In-post repeat counts still come from the frequency index — the registry records how many
+      // mentions an entity has in total, not how many are in each drop, and the amber "x2" on a
+      // chip is the only place a reader learns Q said the name twice in one breath. Merged across
+      // every spelling, because the repeat belongs to the subject and not to the string.
+      const repeatsFor = new Map<number, number>()
+      const repeatsByEntity = new Map<string, Record<number, number>>()
+      for (const it of items) {
+        if (it.category !== 'namedEntities') continue
+        for (const [n, r] of Object.entries(it.repeats)) repeatsFor.set(Number(n), r)
+      }
+      for (const e of registry) {
+        const rep: Record<number, number> = {}
+        for (const n of e.posts) { const r = repeatsFor.get(n); if (r && r > 1) rep[n] = r }
+        repeatsByEntity.set(e.id, rep)
+      }
+      for (const e of registry) {
+        // A row with no drops has nothing to show and nothing to rank; the registry's
+        // source-only and dormant identities are reported elsewhere, not listed here as zeroes.
+        if (!e.posts.length) continue
+        const chips: Chip[] = e.posts.map(n => ({ num: n, term: e.canonical }))
+        out.push({
+          category: 'namedEntities', text: e.canonical,
+          count: chips.length, postNums: e.posts, repeats: repeatsByEntity.get(e.id) ?? {}, occurrences: e.mentions,
+          chips, oldest: e.posts[0], aliasNames: e.aliases,
+        })
+      }
+    }
+
+    // ── Everything else: the union already on screen, now also the sort key ────
+    for (const it of items) {
+      if (it.category === 'namedEntities' && registry.length) continue
+      const aliases = getAliasesFor(it.text)
+      const seen = new Set<number>()
+      const chips: Chip[] = []
+      // Aliases claim their drops first so a distinctive spelling keeps its own colour, exactly as
+      // the chip rendering did before this was hoisted out of render.
+      for (const al of aliases) {
+        for (const n of (aliasPostMap[al.toLowerCase()] ?? [])) {
+          if (!seen.has(n)) { seen.add(n); chips.push({ num: n, term: al }) }
+        }
+      }
+      for (const n of it.postNums) if (!seen.has(n)) { seen.add(n); chips.push({ num: n, term: it.text }) }
+      chips.sort((a, b) => a.num - b.num)
+      out.push({ ...it, chips, count: chips.length, postNums: chips.map(c => c.num),
+        oldest: chips.length ? chips[0].num : Number.MAX_SAFE_INTEGER, aliasNames: aliases })
+    }
+    return out
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- aliasTick forces a re-read of the registries
+  }, [items, aliasPostMap, aliasTick])
+
   // Shared ordering so the ranked base list and the filtered view agree.
   // Ranked by TOTAL MENTIONS — a term said 124 times in one drop outranks one mentioned
   // once across three. Posts break ties so equal-mention items still read sensibly, and
@@ -399,7 +479,8 @@ export default function AnalysisArchive() {
     if (!readingKey) { setReadPosts([]); return }
     // itemConfirmKey is the row identity used in the markup — the rank map uses a DIFFERENT
     // format ('cat::text'), and matching on that one found nothing, so the panel opened empty.
-    const item = items.find(i => itemConfirmKey(i.category, i.text) === readingKey)
+    // The row's FINAL post set, so "read N drops" opens exactly the N the badge promised.
+    const item = rows.find(i => itemConfirmKey(i.category, i.text) === readingKey)
     if (!item) { setReadPosts([]); return }
     let cancelled = false
     setReadLoading(true)
@@ -422,7 +503,7 @@ export default function AnalysisArchive() {
       })
       .finally(() => { if (!cancelled) setReadLoading(false) })
     return () => { cancelled = true }
-  }, [readingKey, items, monthPostNums])
+  }, [readingKey, rows, monthPostNums])
 
   // Alias rows are folded into their canonical row. Two registries feed this and they have
   // different scopes: the owner-editable groups apply to every category (that is how "HRC" folds
@@ -440,38 +521,55 @@ export default function AnalysisArchive() {
     return editable.has(t) || (category === 'namedEntities' && cert.has(t))
   }
 
-  const byRank = (a: AnalysisCategoryFreq, b: AnalysisCategoryFreq) =>
-    b.occurrences - a.occurrences
-    || b.postNums.length - a.postNums.length
-    || (a.postNums[0] ?? 0) - (b.postNums[0] ?? 0)
+  /**
+   * MOST DISTINCT POSTS FIRST; THEN THE OLDEST DROP; THEN THE LABEL.
+   *
+   * Owner ruling, 2026-08-17. The primary key was `occurrences`, which is not what the badge shows
+   * and not what a reader is scanning for. `count` here is the size of the row's final post set —
+   * the same number the badge prints — so the column reads top-down exactly as it is labelled.
+   *
+   * Ties go to the earliest drop, ascending, so an equal-sized group reads oldest to newest: the
+   * three 6-post rows come out Constitution (#23), Merkel (#100), Japan (#137). The label is the
+   * last resort purely so the order is deterministic and a rebuild reproduces it byte for byte.
+   */
+  const byRank = (a: Row, b: Row) =>
+    b.count - a.count
+    || a.oldest - b.oldest
+    || a.text.localeCompare(b.text)
 
   // Rank is a PROPERTY OF THE ITEM, not a row position: "the 47th most-referenced entity"
   // stays #47 whether you searched, picked a month, or arrived from another section.
   // Computing it off the filtered list made every click renumber the whole column.
+  // RANK IS A PROPERTY OF THE UNFILTERED LIST. "the 47th most-referenced entity" stays #47 whether
+  // you searched or picked a month; computing it off the filtered list renumbered the column on
+  // every click and made a rare term look important because it was the only one left.
   const rankByItem = useMemo(() => {
     const aliasSet = getAliasSet()
     const certSet = getCertifiedEntityAliasSet()
-    const base = items
+    const base = rows
       .filter(i =>
         (activeTab === 'all' || i.category === activeTab)
-        && !isFoldedAlias(i.text, i.category, aliasSet, certSet),
+        // Named-Entity rows now come from the registry and are canonical by construction; the
+        // alias fold still applies to the categories that are built from postAnalysis.
+        && (i.category === 'namedEntities' || !isFoldedAlias(i.text, i.category, aliasSet, certSet)),
       )
       .sort(byRank)
     const map = new Map<string, number>()
     base.forEach((i, n) => map.set(`${i.category}::${normalizeItemKey(i.text)}`, n + 1))
     return map
     // eslint-disable-next-line react-hooks/exhaustive-deps -- aliasTick forces re-read of getAliasSet()
-  }, [items, activeTab, aliasTick])
+  }, [rows, activeTab, aliasTick])
 
   const filtered = useMemo(() => {
     const aliasSet = getAliasSet()
     const certSet = getCertifiedEntityAliasSet()
-    return items
+    return rows
       .filter(item => {
         if (activeTab === 'overlaps') return false
         if (activeTab !== 'all' && item.category !== activeTab) return false
-        // Fold alias entities (e.g. HRC) into their canonical (Hillary Clinton) — hide the alias row.
-        if (isFoldedAlias(item.text, item.category, aliasSet, certSet)) return false
+        // Fold alias entities (e.g. HRC) into their canonical (Hillary Clinton) — hide the alias
+        // row. Named-Entity rows are already one-per-identity and never need it.
+        if (item.category !== 'namedEntities' && isFoldedAlias(item.text, item.category, aliasSet, certSet)) return false
         if (monthPostNums && !item.postNums.some(n => monthPostNums.has(n))) return false
         if (search) {
           // Words-only match: punctuation in either the query or the stored item is
@@ -483,9 +581,20 @@ export default function AnalysisArchive() {
         }
         return true
       })
-      .sort(byRank)
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- aliasTick forces re-read of getAliasSet()/getAliasesFor()
-  }, [items, activeTab, search, monthPostNums, aliasTick])
+      // WITH A MONTH SELECTED, RANK BY THAT MONTH. The badge switches to the month's post count, so
+      // the order has to switch with it or the two disagree again — which is the whole defect this
+      // ruling is about, reintroduced one filter along.
+      .sort(monthPostNums
+        ? (a, b) => {
+          const an = a.postNums.filter(n => monthPostNums.has(n))
+          const bn = b.postNums.filter(n => monthPostNums.has(n))
+          return bn.length - an.length
+            || (an[0] ?? Number.MAX_SAFE_INTEGER) - (bn[0] ?? Number.MAX_SAFE_INTEGER)
+            || a.text.localeCompare(b.text)
+        }
+        : byRank)
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- aliasTick forces re-read of getAliasesFor()
+  }, [rows, activeTab, search, monthPostNums, aliasTick])
 
   // Arriving from a theme chip (/analysis?tab=themes&q=<theme>) lands on ONE row. Open its drops
   // without a second click — the click on the theme WAS the request to read them.
@@ -861,21 +970,16 @@ export default function AnalysisArchive() {
             const isSaving = savingKey === key
             const isDeleting = deletingKey === key
             // Fold in alias spellings + the posts where they appear.
-            const aliases = getAliasesFor(item.text)
+            // THE ROW'S OWN POST SET, built once in `rows` and shared with the sort key.
+            //
+            // This block used to rebuild the union here in render, which is how the badge and the
+            // ordering came to disagree: two constructions of "which drops is this about", only one
+            // of them visible. Now there is one, and the badge below prints its size.
+            const aliases = item.aliasNames.filter(a => a.toLowerCase().trim() !== item.text.toLowerCase().trim())
             // Each distinct name → its own chip color (canonical grey, aliases from the palette).
             const termColor = new Map<string, string>([[item.text.toLowerCase(), CANON_CHIP]])
             aliases.forEach((al, j) => termColor.set(al.toLowerCase(), ALIAS_CHIP_PALETTE[j % ALIAS_CHIP_PALETTE.length]))
-            const seenNums = new Set<number>()
-            const chips: { num: number; term: string }[] = []
-            // Aliases claim their posts FIRST so a distinctive alias (e.g. "4,10,20", 2 posts) keeps
-            // its own color even when that post ALSO carries the canonical name — otherwise the
-            // common canonical (POTUS, grey) would swallow it and the alias would look emptier than
-            // it is. Canonical then fills the remaining (canonical-only) posts in grey.
-            for (const al of aliases) for (const n of (aliasPostMap[al.toLowerCase()] ?? [])) { if (!seenNums.has(n)) { seenNums.add(n); chips.push({ num: n, term: al }) } }
-            for (const n of item.postNums) { if (!seenNums.has(n)) { seenNums.add(n); chips.push({ num: n, term: item.text }) } }
-            // Chronological. Density is already visible on each chip as "×N", so ordering
-            // by it as well made the post numbers impossible to scan or cross-reference.
-            chips.sort((a, b) => a.num - b.num)
+            const chips = item.chips
             // With a month selected, show only THAT month's posts under each term.
             //
             // Selecting a month already filtered which terms appear, but every term still
@@ -933,9 +1037,9 @@ export default function AnalysisArchive() {
                     <span
                       className="text-xs font-bold px-2 py-0.5 rounded-full border whitespace-nowrap text-white bg-gray-700 border-gray-600"
                       title={
-                        aliases.length > 0
-                          ? `${item.postNums.length} for "${item.text}" + alias mentions = ${chips.length} posts`
-                          : `${monthChips.length} post${monthChips.length !== 1 ? 's' : ''}`
+                        monthPostNums
+                          ? `${monthChips.length} post${monthChips.length !== 1 ? 's' : ''} in the selected month (${chips.length} in total)`
+                          : `${chips.length} distinct post${chips.length !== 1 ? 's' : ''}${aliases.length ? `, including every spelling: ${[item.text, ...aliases].join(', ')}` : ''}`
                       }
                     >
                       ×{monthChips.length} posts

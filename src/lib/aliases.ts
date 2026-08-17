@@ -42,12 +42,43 @@ let certified: Record<string, string[]> = {}
 let certifiedIndex = new Map<string, string>()      // alias/canonical (lower) -> canonical (lower)
 let certifiedSpelling = new Map<string, { text: string; n: number }>()   // lower -> as Q wrote it
 
+/**
+ * The certified entity records themselves, kept rather than discarded after the alias groups are
+ * derived from them.
+ *
+ * THE ARCHIVE NEEDED THE POST LISTS, NOT JUST THE SPELLINGS. Ranking an entity by "every post whose
+ * text contains one of its aliases" over-counts and mis-attributes: MI6 reads 14 posts against a
+ * certified 11, and "CS" is claimed by Chuck Schumer, CrowdStrike AND Christopher Steele, so a
+ * string-keyed union hands the same drop to all three. The adjudication already resolved every
+ * occurrence to one entity, and `posts` is that answer. Reading it is the only way one row per
+ * subject can also be one HONEST row per subject.
+ */
+export interface CertifiedEntity {
+  id: string
+  canonical: string
+  type: string
+  mentions: number
+  /** The drops the adjudication attributed to THIS entity, alias spellings already resolved. */
+  posts: number[]
+  /** Every spelling, canonical first. */
+  aliases: string[]
+}
+let certifiedEntities: CertifiedEntity[] = []
+
+/** Every certified entity, in registry order. Empty until loadCertifiedEntityAliases resolves. */
+export function getCertifiedEntities(): CertifiedEntity[] { return certifiedEntities }
+
 /** Load the certified entity alias groups from the shipped Entities artifact. */
 export async function loadCertifiedEntityAliases(): Promise<void> {
   try {
     const res = await fetch(`${import.meta.env.BASE_URL}data/entities.json`)
     if (!res.ok) return
-    const data = await res.json() as { entities?: { canonical?: string; aliases?: { text?: string; n?: number }[] }[] }
+    const data = await res.json() as {
+      entities?: {
+        id?: string; canonical?: string; type?: string; mentions?: number
+        posts?: number[]; aliases?: { text?: string; n?: number }[]
+      }[]
+    }
     const next: Record<string, string[]> = {}
     const idx = new Map<string, string>()
     const spell = new Map<string, { text: string; n: number }>()
@@ -76,6 +107,15 @@ export async function loadCertifiedEntityAliases(): Promise<void> {
     certified = next
     certifiedIndex = idx
     certifiedSpelling = spell
+    certifiedEntities = (data.entities ?? []).map(e => ({
+      id: e.id ?? '',
+      canonical: (e.canonical ?? '').trim(),
+      type: e.type ?? '',
+      mentions: e.mentions ?? 0,
+      posts: [...new Set(e.posts ?? [])].sort((a, b) => a - b),
+      aliases: [...new Set([(e.canonical ?? '').trim(), ...(e.aliases ?? []).map(a => (a.text ?? '').trim())])]
+        .filter(Boolean),
+    })).filter(e => e.id && e.canonical)
     listeners.forEach(l => l())
   } catch { /* artifact missing or malformed — the editable map still works */ }
 }

@@ -72,6 +72,10 @@ if (!liveOnly) {
   // while every other gate was green, because no gate asked. This one asks about all 19, and about
   // nesting and tab stops on every drop that carries one.
   step('fresh profile — multi-word glossary terms', 'node', ['scripts/test-multiword-gloss.mjs', BASE, '--fresh'])
+  // CATEGORY ORDERING. The badge number must be the sort key, on every category. The list was
+  // ordered by `occurrences` while the badge showed an alias-inclusive post count, so Australia's
+  // 20 posts sat below rows with 6 and nothing was measuring it.
+  step('fresh profile — category ordering', 'node', ['scripts/test-category-order.mjs', BASE, '--fresh'])
 
   // A RETURNING visitor, deliberately downgraded to the pre-change state. The one that has failed
   // in production while every other check was green.
@@ -89,6 +93,7 @@ if (!liveOnly) {
   step('live site — reader info box', 'node', ['scripts/test-term-info.mjs', LIVE, '--fresh'])
   step('live site — tooltip accessibility', 'node', ['scripts/test-hover-accessibility.mjs', LIVE, '--fresh'])
   step('live site — multi-word glossary terms', 'node', ['scripts/test-multiword-gloss.mjs', LIVE, '--fresh'])
+  step('live site — category ordering', 'node', ['scripts/test-category-order.mjs', LIVE, '--fresh'])
   // The one that matters most on production: a reader who already had the app must receive it.
   step('live site — returning/stale profile', 'node', ['scripts/test-returning-profile.mjs', '--url', LIVE])
   console.log(`\n${'─'.repeat(60)}\n✅ live proof complete — ${LIVE}\n`)
