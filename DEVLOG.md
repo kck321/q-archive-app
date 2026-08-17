@@ -5142,3 +5142,62 @@ that takes ~10s to become usable, which remains Part 2's problem and is untouche
 the certified manifest hash; a clean commit; the tree above; the hashed assets `index.html` names,
 both fetchable; the service worker byte-identical carrying `qdrops-20260817-174241`; all 20 data
 artifacts matching the bundle; a fresh visitor; and a returning one.
+
+---
+
+## Local-first batching, and the "Users Link" that was the editing build — 17 Aug 2026
+
+**Request:** deploy in batches rather than after every fix, and end every summary with a Chrome
+localhost link so each change can be reviewed as it lands.
+
+**The directive replaced.** `DEPLOY AFTER EVERY FIX` (15 Aug) existed for one reason: three separate
+reports that session were "it still does X" about verified work that had never shipped, so an
+undeployed fix read to the owner as a broken one. **The localhost link answers that reason without
+buying a deploy per correction** — the dev server serves the same code the batch will ship, one fix
+later or twenty. What is now deferred is the DEPLOY alone; per-fix proof is not deferred, because a
+failure found five fixes later costs more than the deploy ever did.
+
+Per fix: implement → smallest honest gate → **its own commit** → report with the links → next.
+Deploy once, at the end, on the owner's word.
+
+**Finished work is committed work.** "Not deployed" is not "saved" — and `preflight-deploy.mjs`
+refuses a dirty tree with no override, so the commit is owed either way. One fix per commit is what
+makes a batch reversible per-fix.
+
+**`scripts/batch-status.mjs` — derived, not written down.** ChatGPT's version of this advice kept a
+hand-maintained `CURRENT-STATE.md`. That file would be maintained by the same session that forgets
+it, and nothing refuses when it goes stale. Everything the batch report prints comes from somewhere
+that cannot drift instead:
+
+| line | source |
+|---|---|
+| what is live | `dist/build-info.json` — the stamp the last deploy wrote |
+| the commits in the batch | `git log baseline..HEAD` |
+| uncommitted paths | `git status --porcelain -uall`, named as NOT in the batch |
+| cumulative floor + what forced it | `requiredProfile()`, the same RULES table `validate.mjs` and `preflight-deploy.mjs` read |
+| whether anything proved these bytes | `.validate-receipt.json` vs the live worktree tree |
+
+It is read-only: no gate, no receipt, and it cannot make a deploy legal. **The floor it prints is the
+cumulative one** — one certified path anywhere in the batch makes the whole batch certified. That is
+the cost side of batching, printed before the owner is asked rather than discovered when
+`validate.mjs` refuses. Its own first run said so: adding one script to `scripts/` moved this batch
+from `fast` to `certified`.
+
+### The port is not the mode
+
+Checking which server to link found **six** `vite` processes listening on 5173–5178, one per
+abandoned session since 16 Aug — and every one was `npm run dev`, the **editorial** build. So the
+":5174 Users Link" handed over in reply after reply was the editing build wearing the public build's
+port number. Vite takes the next free port silently; the second server started is 5174 whatever mode
+it is in, and the two builds look nearly identical on screen.
+
+All six killed, one of each started deliberately: editorial 5173, public 5174 (its banner prints a
+green `public` badge). `PROJECT_CONTEXT.md` now carries the two commands that prove a port's mode
+from its command line, because the number never did.
+
+### Also
+
+`master` tracked `origin/main` while every push went to `origin/master`, so `git status` reported the
+branch 83 commits ahead of a branch nobody uses and an ordinary `git pull` would have read the wrong
+one. Retargeted to `origin/master`; `diffBaseline()` was already naming `origin/master` explicitly,
+so no measurement in the pipeline was affected.
