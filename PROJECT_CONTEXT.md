@@ -207,6 +207,66 @@ of MEANING: RC is Rachel Chandler everywhere except #2's "all his funds in a RC"
 QUEUED in the Resolution Center. `build-resolution-queue.mjs` clears by token AND post, so an
 excluded drop is never marked answered.
 
+## Entity rows: one row per CONNECTED SET, and every row carries evidence
+
+Settled 17 Aug 2026. `public/data/entity-public-view.json` is the authority and the page renders it
+rather than recounting anything.
+
+    1,201 canonical identities  =  1,066 named in Q's prose  +  135 linked as a source only
+    published as 1,183 rows — 33 alias-connected identities share 15 of them
+    8,798 certified prose mentions, reported SEPARATELY from the identity count
+    208 dormant identities, reserved forever, never public
+
+**Never headline the Named Entities section from the frequency index.** That index groups by
+NORMALISED STRING, so it counts spellings: 879 of them, or 856 once the verbatim filter empties the
+ones whose text no longer appears in visible prose. The list below it is one row per IDENTITY. Those
+are different populations and printing one above the other is the defect that took a full pass to
+undo. `tabStats.entities` exists so the entity header reads the artifact and nothing else.
+
+**The row rule (owner ruling).** Identities the alias registry CONNECTS are one row, labelled by the
+identity with the most posts, with the other spellings ordered most-to-least posts. Two kinds of
+connection, unioned so chains resolve:
+
+- the owner's editable groups in `aliases.json` (POTUS + Donald Trump; God + Lord + Jesus Christ)
+- an identity whose whole canonical is another identity's registered alias (`Strzok` inside
+  `Peter Strzok`; `The Washington Post` → `Washington Post` → `WASH POST`, one row of three)
+
+**A shared spelling is NOT a connection.** Merging on shared alias strings collapses 1,066
+identities into 1,006 rows and produces Barack Obama + Bruce Ohr + Board Owner (all "BO"), CIA +
+ABC News + Alphabet ("ABC"), Chuck Schumer + CrowdStrike + Christopher Steele ("CS"). 46 spellings
+are shared that way and none of them merges anything. This is what "do not restore global
+string-based alias folding" protects.
+
+**No public row without evidence a reader can open.** A prose row shows its certified drops; a
+source-only row shows the drops that LINKED the material, chips labelled *Publisher link* or
+*Social account*, badge reading `×N source posts`, `occurrences` of 0. A source reference is never
+presented as a mention. Invariant group 10d asserts all of it; `test-entity-reconciliation.mjs`
+proves it in the browser.
+
+**Per-post repeat counts are per identity**, from the certified occurrence ledger, clipped to the
+registry's own post set. They were once read from a Map keyed by post number alone and shared across
+the whole frequency index, so in 443 drops one entity's `×2` was painted on another's chip.
+
+## Month charts: hover reads out, click selects
+
+Settled 17 Aug 2026, one implementation for Analysis and the Post Archive:
+`src/lib/monthFilter.ts` (state + the recharts double-click guard) and
+`src/components/MonthFilter.tsx` (tooltip, keyboard picker, banner).
+
+- **Hover** shows the month and its counts and changes NOTHING else. No chip pulse, no row recolour,
+  no dimming, no selection, no filter. There is no hover state left in either page — `hoverMonth`
+  and `flashMonth` are gone rather than unused, so there is nowhere to hang a new one.
+- **Click** selects: filters to that month, shows ONLY that month's chips, states the active month,
+  clearable and changeable.
+- **Enter and Space** are not handled in code. `MonthPicker` renders real `<button>`s, so the
+  native behaviour IS the click path — a recharts `<Cell>` is an SVG rect that cannot take focus,
+  and the axis only draws a tick at year starts, so there was previously no keyboard path at all.
+- The selection is announced through one `aria-live="polite"` region.
+
+`scripts/test-month-chart-behaviour.mjs` sweeps all 7 Analysis categories and the Archive on desktop
+and phone with real pointer and key events. Point it at a build that still has the old behaviour and
+it fails — that is how you know a green run means something.
+
 ## Counting rules (these have gone wrong repeatedly)
 
 Every section shows **mentions** and **posts**. They are different questions:
