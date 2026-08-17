@@ -107,6 +107,15 @@ if [ -n "$SITE_DOMAIN" ]; then
   echo "Wrote dist/CNAME -> $SITE_DOMAIN"
 fi
 
+# Stamp the bundle with WHAT it is: commit, seed, manifest hash, service-worker version, assets.
+# AFTER the sw stamp, so it records the cache version this deploy actually shipped.
+#
+# This is what makes "is it live yet?" a fact rather than a guess. The CDN serves the previous
+# bundle for minutes after a push, so a page that loads and looks right is not evidence the change
+# shipped — and a 45-minute stuck Pages build looked exactly like a slow one. verify-live.mjs and
+# await-pages-build.mjs both compare production's copy of this file to the one on disk.
+node scripts/write-build-info.mjs
+
 echo "Publishing to gh-pages branch..."
 cd dist
 rm -rf .git
@@ -117,8 +126,26 @@ git -c user.email=Kck321@comcast.net -c user.name=kck321 commit -qm "Deploy web 
 git remote add origin https://github.com/kck321/q-archive-app.git
 git push -f -q origin gh-pages
 
-if [ -n "$SITE_DOMAIN" ]; then
-  echo "Deployed. Live in ~1 min at https://$SITE_DOMAIN/"
+cd ..
+
+# ── WAIT FOR IT TO BE SERVED, AND NAME A STALL WHEN IT IS ONE ────────────────
+# A normal Pages build is 33-75s. On 17 Aug 2026 one sat queued ~45 min and an earlier one the same
+# day errored after 66 — both GitHub-side, and both cost far more than they had to because the
+# response was to keep waiting. This polls the deployed build stamp and, at five minutes, stops:
+# it reports the build EXTERNALLY STALLED, prints what the Pages API says, and tells you to re-push.
+# SKIP_WAIT=1 returns the old fire-and-forget behaviour.
+if [ "$SKIP_WAIT" = "1" ]; then
+  echo "SKIP_WAIT=1 — not waiting for the Pages build."
 else
-  echo "Deployed. Live in ~1 min at https://kck321.github.io/q-archive-app/"
+  node scripts/await-pages-build.mjs --url "https://${SITE_DOMAIN:-qdrops.app}" || {
+    echo ""
+    echo "  The push succeeded; GitHub has not served it. Nothing in the repo needs fixing."
+    exit 2
+  }
+fi
+
+if [ -n "$SITE_DOMAIN" ]; then
+  echo "Deployed: https://$SITE_DOMAIN/"
+else
+  echo "Deployed: https://kck321.github.io/q-archive-app/"
 fi
