@@ -47,7 +47,18 @@ for (const rec of quarantine.records) {
   if (!e || !post) { rows.push({ ...rec, error: 'entity or post missing' }); continue }
   const text = String(post.text ?? '')
   const named = post.postAnalysis?.namedEntities ?? []
-  const aliasTexts = [...new Set([...e.aliases.map(a => a.text), e.canonical])]
+  // CASE-INSENSITIVE DEDUPLICATION. A Stage 1 merge folds absorbed spellings in as aliases, so an
+  // entity can carry both "WikiLeaks" and "Wikileaks". They match the SAME certified entries, and
+  // counting each of them separately inflated the occurrence total — the applier caught it by
+  // trying to remove an entry that a previous alias had already taken.
+  const aliasTexts = []
+  const seenLower = new Set()
+  for (const t of [...e.aliases.map(a => a.text), e.canonical]) {
+    const k = t.toLowerCase()
+    if (seenLower.has(k)) continue
+    seenLower.add(k)
+    aliasTexts.push(t)
+  }
 
   // Every certified entry in this post that belongs to this entity.
   const entriesForEntity = named.filter(t => aliasTexts.some(a => a.toLowerCase() === t.toLowerCase()))

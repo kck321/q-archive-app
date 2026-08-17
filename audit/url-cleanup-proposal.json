@@ -17,30 +17,17 @@
    "review": 8
   },
   "everyRecordLandsSomewhere": true,
-  "certifiedOccurrencesWithdrawn": 422,
+  "certifiedOccurrencesWithdrawn": 411,
   "occurrencesByAction": {
-   "remove-annotation": 320,
-   "migrate-to-linked-source": 102
+   "remove-annotation": 314,
+   "migrate-to-linked-source": 97
   },
   "mentionsBefore": 9749,
-  "mentionsAfter": 9327,
+  "mentionsAfter": 9338,
   "entityRowsBefore": 1409,
-  "entitiesLosingAllMentions": 132
+  "entitiesLosingAllMentions": 133
  },
  "lifecycle": [
-  {
-   "entityId": "qe-4070f82717b6",
-   "canonical": "Reddit",
-   "type": "organization",
-   "mentionsBefore": 16,
-   "mentionsAfter": 4,
-   "postsBefore": 16,
-   "postsLosingTheEntity": 0,
-   "losesAllMentions": false,
-   "retainsLinkedSourceOnly": false,
-   "hasPublicHover": true,
-   "hoversLost": 0
-  },
   {
    "entityId": "qe-cb78932b1fab",
    "canonical": "Reuters",
@@ -133,6 +120,19 @@
    "hoversLost": 0
   },
   {
+   "entityId": "qe-4070f82717b6",
+   "canonical": "Reddit",
+   "type": "organization",
+   "mentionsBefore": 16,
+   "mentionsAfter": 10,
+   "postsBefore": 16,
+   "postsLosingTheEntity": 6,
+   "losesAllMentions": false,
+   "retainsLinkedSourceOnly": false,
+   "hasPublicHover": true,
+   "hoversLost": 0
+  },
+  {
    "entityId": "qe-06775a91bdde",
    "canonical": "Turley",
    "type": "person",
@@ -211,19 +211,6 @@
    "hoversLost": 0
   },
   {
-   "entityId": "qe-c9f95ff52ca5",
-   "canonical": "WikiLeaks",
-   "type": "organization",
-   "mentionsBefore": 35,
-   "mentionsAfter": 31,
-   "postsBefore": 30,
-   "postsLosingTheEntity": 0,
-   "losesAllMentions": false,
-   "retainsLinkedSourceOnly": false,
-   "hasPublicHover": false,
-   "hoversLost": 0
-  },
-  {
    "entityId": "qe-a939139b5dc3",
    "canonical": "Pentagon",
    "type": "facility_property",
@@ -272,19 +259,6 @@
    "postsLosingTheEntity": 4,
    "losesAllMentions": true,
    "retainsLinkedSourceOnly": true,
-   "hasPublicHover": false,
-   "hoversLost": 0
-  },
-  {
-   "entityId": "qe-d305710ada08",
-   "canonical": "Military.com",
-   "type": "media_organization",
-   "mentionsBefore": 2,
-   "mentionsAfter": -2,
-   "postsBefore": 2,
-   "postsLosingTheEntity": 0,
-   "losesAllMentions": false,
-   "retainsLinkedSourceOnly": false,
    "hasPublicHover": false,
    "hoversLost": 0
   },
@@ -393,6 +367,19 @@
    "hoversLost": 0
   },
   {
+   "entityId": "qe-c9f95ff52ca5",
+   "canonical": "WikiLeaks",
+   "type": "organization",
+   "mentionsBefore": 35,
+   "mentionsAfter": 33,
+   "postsBefore": 30,
+   "postsLosingTheEntity": 2,
+   "losesAllMentions": false,
+   "retainsLinkedSourceOnly": false,
+   "hasPublicHover": false,
+   "hoversLost": 0
+  },
+  {
    "entityId": "qe-ce9b4b609ab5",
    "canonical": "New York",
    "type": "location",
@@ -494,19 +481,6 @@
    "losesAllMentions": false,
    "retainsLinkedSourceOnly": false,
    "hasPublicHover": true,
-   "hoversLost": 0
-  },
-  {
-   "entityId": "qe-b7a2d1390d69",
-   "canonical": "CBS News",
-   "type": "media_organization",
-   "mentionsBefore": 7,
-   "mentionsAfter": 5,
-   "postsBefore": 7,
-   "postsLosingTheEntity": 0,
-   "losesAllMentions": false,
-   "retainsLinkedSourceOnly": false,
-   "hasPublicHover": false,
    "hoversLost": 0
   },
   {
@@ -952,6 +926,19 @@
    "hoversLost": 0
   },
   {
+   "entityId": "qe-d305710ada08",
+   "canonical": "Military.com",
+   "type": "media_organization",
+   "mentionsBefore": 2,
+   "mentionsAfter": 0,
+   "postsBefore": 2,
+   "postsLosingTheEntity": 2,
+   "losesAllMentions": true,
+   "retainsLinkedSourceOnly": true,
+   "hasPublicHover": false,
+   "hoversLost": 0
+  },
+  {
    "entityId": "qe-415492f50772",
    "canonical": "Minneapolis",
    "type": "location",
@@ -1092,6 +1079,19 @@
    "losesAllMentions": false,
    "retainsLinkedSourceOnly": false,
    "hasPublicHover": true,
+   "hoversLost": 0
+  },
+  {
+   "entityId": "qe-b7a2d1390d69",
+   "canonical": "CBS News",
+   "type": "media_organization",
+   "mentionsBefore": 7,
+   "mentionsAfter": 6,
+   "postsBefore": 7,
+   "postsLosingTheEntity": 1,
+   "losesAllMentions": false,
+   "retainsLinkedSourceOnly": false,
+   "hasPublicHover": false,
    "hoversLost": 0
   },
   {
@@ -5267,8 +5267,8 @@
    ],
    "matchPart": "path",
    "certifiedOccurrencesInPost": 1,
-   "occurrencesToRemove": 2,
-   "occurrencesKept": -1,
+   "occurrencesToRemove": 1,
+   "occurrencesKept": 0,
    "alsoInProse": false,
    "proseAliases": [],
    "relationshipEffect": "removed — this drop's only mentions of the entity were inside URLs",
@@ -5278,15 +5278,6 @@
    "perAlias": [
     {
      "alias": "WikiLeaks",
-     "certifiedEntries": 1,
-     "inProse": false,
-     "inUrl": true,
-     "urlParts": [
-      "path"
-     ]
-    },
-    {
-     "alias": "Wikileaks",
      "certifiedEntries": 1,
      "inProse": false,
      "inUrl": true,
@@ -5307,8 +5298,8 @@
    ],
    "matchPart": "hostname",
    "certifiedOccurrencesInPost": 1,
-   "occurrencesToRemove": 2,
-   "occurrencesKept": -1,
+   "occurrencesToRemove": 1,
+   "occurrencesKept": 0,
    "alsoInProse": false,
    "proseAliases": [],
    "relationshipEffect": "removed — this drop's only mentions of the entity were inside URLs",
@@ -5318,15 +5309,6 @@
    "perAlias": [
     {
      "alias": "Reddit",
-     "certifiedEntries": 1,
-     "inProse": false,
-     "inUrl": true,
-     "urlParts": [
-      "hostname"
-     ]
-    },
-    {
-     "alias": "REDDIT",
      "certifiedEntries": 1,
      "inProse": false,
      "inUrl": true,
@@ -5347,8 +5329,8 @@
    ],
    "matchPart": "hostname",
    "certifiedOccurrencesInPost": 1,
-   "occurrencesToRemove": 2,
-   "occurrencesKept": -1,
+   "occurrencesToRemove": 1,
+   "occurrencesKept": 0,
    "alsoInProse": false,
    "proseAliases": [],
    "relationshipEffect": "removed — this drop's only mentions of the entity were inside URLs",
@@ -5358,15 +5340,6 @@
    "perAlias": [
     {
      "alias": "Reddit",
-     "certifiedEntries": 1,
-     "inProse": false,
-     "inUrl": true,
-     "urlParts": [
-      "hostname"
-     ]
-    },
-    {
-     "alias": "REDDIT",
      "certifiedEntries": 1,
      "inProse": false,
      "inUrl": true,
@@ -5387,8 +5360,8 @@
    ],
    "matchPart": "path",
    "certifiedOccurrencesInPost": 1,
-   "occurrencesToRemove": 2,
-   "occurrencesKept": -1,
+   "occurrencesToRemove": 1,
+   "occurrencesKept": 0,
    "alsoInProse": false,
    "proseAliases": [],
    "relationshipEffect": "removed — this drop's only mentions of the entity were inside URLs",
@@ -5398,15 +5371,6 @@
    "perAlias": [
     {
      "alias": "Reddit",
-     "certifiedEntries": 1,
-     "inProse": false,
-     "inUrl": true,
-     "urlParts": [
-      "path"
-     ]
-    },
-    {
-     "alias": "REDDIT",
      "certifiedEntries": 1,
      "inProse": false,
      "inUrl": true,
@@ -5427,8 +5391,8 @@
    ],
    "matchPart": "path",
    "certifiedOccurrencesInPost": 1,
-   "occurrencesToRemove": 2,
-   "occurrencesKept": -1,
+   "occurrencesToRemove": 1,
+   "occurrencesKept": 0,
    "alsoInProse": false,
    "proseAliases": [],
    "relationshipEffect": "removed — this drop's only mentions of the entity were inside URLs",
@@ -5438,15 +5402,6 @@
    "perAlias": [
     {
      "alias": "Reddit",
-     "certifiedEntries": 1,
-     "inProse": false,
-     "inUrl": true,
-     "urlParts": [
-      "path"
-     ]
-    },
-    {
-     "alias": "REDDIT",
      "certifiedEntries": 1,
      "inProse": false,
      "inUrl": true,
@@ -5467,8 +5422,8 @@
    ],
    "matchPart": "hostname",
    "certifiedOccurrencesInPost": 1,
-   "occurrencesToRemove": 2,
-   "occurrencesKept": -1,
+   "occurrencesToRemove": 1,
+   "occurrencesKept": 0,
    "alsoInProse": false,
    "proseAliases": [],
    "relationshipEffect": "removed — this drop's only mentions of the entity were inside URLs",
@@ -5478,15 +5433,6 @@
    "perAlias": [
     {
      "alias": "Reddit",
-     "certifiedEntries": 1,
-     "inProse": false,
-     "inUrl": true,
-     "urlParts": [
-      "hostname"
-     ]
-    },
-    {
-     "alias": "REDDIT",
      "certifiedEntries": 1,
      "inProse": false,
      "inUrl": true,
@@ -5508,8 +5454,8 @@
    ],
    "matchPart": "path",
    "certifiedOccurrencesInPost": 1,
-   "occurrencesToRemove": 2,
-   "occurrencesKept": -1,
+   "occurrencesToRemove": 1,
+   "occurrencesKept": 0,
    "alsoInProse": false,
    "proseAliases": [],
    "relationshipEffect": "removed — this drop's only mentions of the entity were inside URLs",
@@ -5519,15 +5465,6 @@
    "perAlias": [
     {
      "alias": "Reddit",
-     "certifiedEntries": 1,
-     "inProse": false,
-     "inUrl": true,
-     "urlParts": [
-      "path"
-     ]
-    },
-    {
-     "alias": "REDDIT",
      "certifiedEntries": 1,
      "inProse": false,
      "inUrl": true,
@@ -7784,8 +7721,8 @@
    ],
    "matchPart": "hostname+path",
    "certifiedOccurrencesInPost": 1,
-   "occurrencesToRemove": 2,
-   "occurrencesKept": -1,
+   "occurrencesToRemove": 1,
+   "occurrencesKept": 0,
    "alsoInProse": false,
    "proseAliases": [],
    "relationshipEffect": "removed — this drop's only mentions of the entity were inside URLs",
@@ -7795,16 +7732,6 @@
    "perAlias": [
     {
      "alias": "CrowdStrike",
-     "certifiedEntries": 1,
-     "inProse": false,
-     "inUrl": true,
-     "urlParts": [
-      "hostname",
-      "path"
-     ]
-    },
-    {
-     "alias": "Crowdstrike",
      "certifiedEntries": 1,
      "inProse": false,
      "inUrl": true,
@@ -8821,8 +8748,8 @@
    ],
    "matchPart": "path",
    "certifiedOccurrencesInPost": 1,
-   "occurrencesToRemove": 2,
-   "occurrencesKept": -1,
+   "occurrencesToRemove": 1,
+   "occurrencesKept": 0,
    "alsoInProse": false,
    "proseAliases": [],
    "relationshipEffect": "removed — this drop's only mentions of the entity were inside URLs",
@@ -8832,15 +8759,6 @@
    "perAlias": [
     {
      "alias": "CBS News",
-     "certifiedEntries": 1,
-     "inProse": false,
-     "inUrl": true,
-     "urlParts": [
-      "path"
-     ]
-    },
-    {
-     "alias": "CBS NEWS",
      "certifiedEntries": 1,
      "inProse": false,
      "inUrl": true,
@@ -14325,8 +14243,8 @@
    ],
    "matchPart": "hostname",
    "certifiedOccurrencesInPost": 1,
-   "occurrencesToRemove": 2,
-   "occurrencesKept": -1,
+   "occurrencesToRemove": 1,
+   "occurrencesKept": 0,
    "alsoInProse": false,
    "proseAliases": [],
    "relationshipEffect": "removed — this drop's only mentions of the entity were inside URLs",
@@ -14336,15 +14254,6 @@
    "perAlias": [
     {
      "alias": "military.com",
-     "certifiedEntries": 1,
-     "inProse": false,
-     "inUrl": true,
-     "urlParts": [
-      "hostname"
-     ]
-    },
-    {
-     "alias": "Military.com",
      "certifiedEntries": 1,
      "inProse": false,
      "inUrl": true,
@@ -14365,8 +14274,8 @@
    ],
    "matchPart": "hostname",
    "certifiedOccurrencesInPost": 1,
-   "occurrencesToRemove": 2,
-   "occurrencesKept": -1,
+   "occurrencesToRemove": 1,
+   "occurrencesKept": 0,
    "alsoInProse": false,
    "proseAliases": [],
    "relationshipEffect": "removed — this drop's only mentions of the entity were inside URLs",
@@ -14376,15 +14285,6 @@
    "perAlias": [
     {
      "alias": "military.com",
-     "certifiedEntries": 1,
-     "inProse": false,
-     "inUrl": true,
-     "urlParts": [
-      "hostname"
-     ]
-    },
-    {
-     "alias": "Military.com",
      "certifiedEntries": 1,
      "inProse": false,
      "inUrl": true,
@@ -15307,8 +15207,8 @@
    ],
    "matchPart": "path",
    "certifiedOccurrencesInPost": 1,
-   "occurrencesToRemove": 2,
-   "occurrencesKept": -1,
+   "occurrencesToRemove": 1,
+   "occurrencesKept": 0,
    "alsoInProse": false,
    "proseAliases": [],
    "relationshipEffect": "removed — this drop's only mentions of the entity were inside URLs",
@@ -15318,15 +15218,6 @@
    "perAlias": [
     {
      "alias": "WikiLeaks",
-     "certifiedEntries": 1,
-     "inProse": false,
-     "inUrl": true,
-     "urlParts": [
-      "path"
-     ]
-    },
-    {
-     "alias": "Wikileaks",
      "certifiedEntries": 1,
      "inProse": false,
      "inUrl": true,
