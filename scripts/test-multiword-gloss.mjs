@@ -141,7 +141,7 @@ check(missing.length === 0, 'every multi-word token has a drop to prove it on', 
 
 let insideAnnotation = 0
 let outsideAnnotation = 0
-let split = 0
+const splitTokens = []
 for (const [token, postNum] of target) {
   const page = await browser.page(`${BASE}/post/${postNum}`)
   await page.waitFor(`document.querySelectorAll('button[aria-expanded]').length > 0`, { timeout: 60000 })
@@ -171,7 +171,7 @@ for (const [token, postNum] of target) {
       : groups.length > 0 && groups.length === r.splitIds.length && groups.every(sound)
   )
   if (!ok) failed++
-  if (contiguous) { if (r.insideAnnotation) insideAnnotation++; else outsideAnnotation++ } else split++
+  if (contiguous) { if (r.insideAnnotation) insideAnnotation++; else outsideAnnotation++ } else splitTokens.push(token)
   console.log(`    ${ok ? 'PASS' : 'FAIL'}  ${`${token} in #${postNum}`.padEnd(60)} ${
     !r ? 'NO PROBE'
       : contiguous ? `${r.count} target(s)${r.insideAnnotation ? ', inside an annotation' : ''}${r.nestedButtons ? ` · ${r.nestedButtons} NESTED` : ''}${r.duplicateTargets ? ` · ${r.duplicateTargets} DUPLICATE` : ''}`
@@ -181,7 +181,23 @@ for (const [token, postNum] of target) {
 
 console.log('')
 check(insideAnnotation > 0, 'at least one term proves the inside-an-annotation case', `${insideAnnotation} inside, ${outsideAnnotation} outside`)
-check(split === 6, 'the six split terms are the ones that take the split path', `${split} split`)
+
+// HOW MANY TERMS SPLIT IS A PROPERTY OF THE BUILD, NOT OF THE READER'S EXPERIENCE.
+//
+// The workbench renders the live Firestore analysis; the published site renders only the certified
+// artifacts. So a question span that carries an uncertified Claim underneath it paints amber on
+// localhost and blue on qdrops.app, the intervals fall differently, and nine terms split in
+// production where six split in the workbench. Asserting "exactly six" pinned a gate to one build
+// and failed on the other while every term behaved correctly on both.
+//
+// What has to hold everywhere is the part the ruling is about: the six named terms are split — they
+// are the reason this work exists — and EVERY term that splits, however many, satisfies the
+// contract. That is already asserted per token above, so a tenth split term is proved, not
+// tolerated.
+const NAMED_SPLIT = ['FOX NEWS', 'ABC NEWS', 'ADAM SCHIFF', 'CLINTON FOUNDATION', 'ROD ROSENSTEIN', 'SUPREME COURT']
+const missedSplit = NAMED_SPLIT.filter(t => !splitTokens.includes(t))
+check(missedSplit.length === 0, 'all six named terms take the split path',
+  missedSplit.length ? `not split: ${missedSplit.join(', ')}` : `${splitTokens.length} split in this build: ${splitTokens.join(', ')}`)
 
 // ── the six split terms, in full ────────────────────────────────────────────
 //
@@ -273,8 +289,13 @@ console.log('')
   await page.waitFor(`document.querySelectorAll('button[aria-expanded]').length > 0`, { timeout: 60000 })
   const r = JSON.parse(await page.evaluate(PROBE('WASH POST')))
   check(r.count === 3, '#2401 — all three WASH POST occurrences have a target', `${r.count} of 3`)
-  check(r.insideAnnotation === true && r.annotationIntact === true,
-    '#2401 — the box sits inside the Question and the Question survives', r.annotationIntact ? 'outer mark intact' : 'OUTER LOST')
+  // WHETHER this occurrence is inside an annotation depends on the build — the workbench paints an
+  // uncertified Claim over it that the published bundle does not carry. What must hold on both is
+  // that a box never destroys the annotation it sits in. Asserted where there is one, and the
+  // inside-an-annotation case itself is proved by the aggregate check above, which holds on both.
+  check(r.insideAnnotation ? r.annotationIntact === true : true,
+    '#2401 — where the box sits inside an annotation, the annotation survives',
+    r.insideAnnotation ? (r.annotationIntact ? 'outer mark intact' : 'OUTER LOST') : 'not annotated in this build')
   check(r.textPreserved === 'WASH POST', '#2401 — the drop text is unchanged', r.textPreserved)
   check(r.nestedButtons === 0, '#2401 — no nested interactive controls', `${r.nestedButtons}`)
   await page.close()

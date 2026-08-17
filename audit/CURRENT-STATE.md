@@ -130,3 +130,14 @@ Everything else under `audit/` that looks like a handoff is HISTORY. Do not act 
   strings that are never on screen.
 - A zero is only evidence once you have proved something could have made it non-zero. Assert the
   field exists before reporting that nothing was found in it.
+- **THE WORKBENCH AND THE PUBLISHED SITE DO NOT RENDER THE SAME DOM, AND BOTH ARE CORRECT.**
+  `npm run dev` shows the live Firestore analysis; `qdrops.app` shows only the certified artifacts.
+  So a question span with an uncertified Claim under it paints amber on localhost and blue on
+  production, the highlight intervals fall differently, and nine glossary terms are split across
+  segments in production where six are split locally. Two gates that had been written against
+  localhost failed on production while every term behaved correctly on both. **A browser check must
+  assert the reader's property, never one build's element tree** — "the annotation survives if there
+  is one", not "the box is inside an annotation".
+- A test file that does not parse reports nothing, and nothing reads as success. `test-multiword-gloss.mjs`
+  was corrected, committed and reported as passing while a backtick inside a template literal meant
+  it died with a SyntaxError before the first check. If a gate is claimed, show its output.
