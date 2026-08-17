@@ -66,11 +66,17 @@ for (const [postNum, token, meaning, kind] of CASES) {
 
   // Find the token's hover target and PRESS it — press, not hover, because the owner asked for
   // both and a touch device never fires mouseenter.
+  //
+  // PRESS THE AFFORDANCE, NOT THE WRAPPER. The trigger became a real <button> inside the wrapper
+  // span when the tooltip moved to the shared HoverCard primitive, and a click dispatched on the
+  // wrapper never reaches it — events bubble up, not down. This test went red on all 88 checks
+  // while the feature worked, because it was pressing a millimetre of nothing around the word.
   const opened = await page.evaluate(`(() => {
     const wraps = [...document.querySelectorAll('span.relative.inline-block')]
     const hit = wraps.find(w => (w.innerText || '').trim() === ${JSON.stringify(token)})
     if (!hit) return 'NO TARGET'
-    hit.dispatchEvent(new MouseEvent('click', { bubbles: true }))
+    const target = hit.querySelector('button') ?? hit
+    target.dispatchEvent(new MouseEvent('click', { bubbles: true }))
     return 'clicked'
   })()`)
   if (opened !== 'clicked') {

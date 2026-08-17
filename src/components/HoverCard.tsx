@@ -24,6 +24,8 @@ import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState, type 
 const MARGIN = 8
 /** Below this width the card is pinned rather than floated. Matches Tailwind's `sm`. */
 const NARROW = 640
+/** A card shorter than this is not worth showing; below it, scroll inside instead. */
+const MIN_CARD = 64
 
 export function HoverCard({
   children, card, label, className = '',
@@ -120,12 +122,25 @@ export function HoverCard({
       const GAP = 6
       const spaceAbove = a.top - MARGIN - GAP
       const spaceBelow = window.innerHeight - a.bottom - MARGIN - GAP
-      let top: number
-      let maxHeight: number | undefined
-      if (wanted <= spaceAbove) top = a.top - wanted - GAP
-      else if (wanted <= spaceBelow) top = a.bottom + GAP
-      else if (spaceAbove >= spaceBelow) { maxHeight = spaceAbove; top = MARGIN }
-      else { maxHeight = spaceBelow; top = a.bottom + GAP }
+
+      // BOUND THE HEIGHT ON WHICHEVER SIDE IS CHOSEN, ALWAYS.
+      //
+      // The earlier version only bounded the height when NEITHER side could hold the card whole,
+      // and placed it unbounded otherwise. On a short viewport that put cards below the fold —
+      // #1148 ran to 646px in a 484px window — because "fits below" was decided from a height the
+      // card no longer had once it rendered. Deriving both the height limit and the offset from
+      // the same measured space makes overflow arithmetically impossible rather than unlikely.
+      const preferAbove = wanted <= spaceAbove || spaceAbove >= spaceBelow
+      let maxHeight = Math.max(MIN_CARD, Math.min(wanted, preferAbove ? spaceAbove : spaceBelow))
+      let top = preferAbove ? a.top - GAP - maxHeight : a.bottom + GAP
+
+      // Degenerate case: the anchor sits in a window too short to hold the card on either side.
+      // Pin to the roomier edge rather than covering the word — the reader can still see which
+      // term the card belongs to, which is the property worth protecting.
+      if (top < MARGIN || top + maxHeight > window.innerHeight - MARGIN) {
+        if (spaceBelow >= spaceAbove) { top = a.bottom + GAP; maxHeight = Math.max(MIN_CARD, spaceBelow) }
+        else { maxHeight = Math.max(MIN_CARD, spaceAbove); top = Math.max(MARGIN, a.top - GAP - maxHeight) }
+      }
       setPos({ left, top, pinned: false, maxHeight })
     }
     place()
