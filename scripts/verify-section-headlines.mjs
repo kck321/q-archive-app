@@ -12,6 +12,9 @@ import { spawn } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
 import os from 'node:os'
+import { fileURLToPath } from 'node:url'
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 
 const argUrl = process.argv.indexOf('--url')
 const URL_BASE = argUrl > -1 ? process.argv[argUrl + 1] : 'https://qdrops.app'
@@ -49,15 +52,33 @@ async function run(url, expression, settle = 15000) {
   try { return JSON.parse(r.result?.result?.value) } catch { return { error: String(r.result?.result?.value).slice(0, 200) } }
 }
 
-// The contract, stated here so the test cannot be satisfied by whatever the page happens to say.
-const EXPECT = [
-  ['claims', 4188, 1953, 'occurrences'],
-  ['predictions', 630, 520, 'occurrences'],
-  ['emphasis', 5251, 1737, 'occurrences'],
-  ['namedEntities', 7903, 2221, 'mentions'],
-  ['themes', 2395, 1767, 'assignments'],
-  ['impliedConclusions', 966, 596, 'conclusions'],
-  ['verificationHooks', 1926, 1028, 'checkable claims'],
+// The contract, read from the one place that declares it rather than transcribed here.
+//
+// These seven rows were hardcoded, and five of them had gone stale: it expected 4,188 Claims against
+// a certified 4,221, 5,251 Emphasis against 3,112 after the question rule retired 2,138 rows, and
+// 7,903 entity mentions against 8,798 after the integrated cleanup. So the gate reported five
+// failures on every run, which is the same as reporting nothing — a check that is always red cannot
+// tell you the day a headline actually breaks.
+//
+// SECTION_TOTALS in src/lib/sectionInfo.ts is what the page renders from, so parsing it is what
+// makes this a test of TRANSPORT — did the certified figure reach the reader — rather than a second,
+// drifting copy of the figures.
+const totalsSrc = fs.readFileSync(path.join(ROOT, 'src', 'lib', 'sectionInfo.ts'), 'utf8')
+const totalsBlock = totalsSrc.match(/SECTION_TOTALS[^=]*=\s*\{([\s\S]*?)\n\}/)
+if (!totalsBlock) { console.error('FAIL  could not read SECTION_TOTALS from src/lib/sectionInfo.ts'); process.exit(1) }
+const EXPECT = [...totalsBlock[1].matchAll(/(\w+):\s*\{\s*occurrences:\s*(\d+),\s*posts:\s*(\d+),\s*unit:\s*'([^']+)'/g)]
+  .map(m => [m[1], Number(m[2]), Number(m[3]), m[4]])
+if (EXPECT.length !== 7) { console.error(`FAIL  parsed ${EXPECT.length} sections from SECTION_TOTALS, expected 7`); process.exit(1) }
+
+// Named Entities leads with the IDENTITY count and carries the mention count beside it, so its
+// header is checked against the reconciled model as well as against the section total. The figures
+// come from the shipped artifact, which is the same file the page reads.
+const entityView = JSON.parse(fs.readFileSync(path.join(ROOT, 'public', 'data', 'entity-public-view.json'), 'utf8'))
+const ENTITY_EXTRA = [
+  entityView.totals.canonicalEntities,
+  entityView.totals.proseMentioned,
+  entityView.totals.sourceOnly,
+  entityView.totals.dormantReserved,
 ]
 
 const probe = `(() => {
@@ -76,11 +97,16 @@ for (const [tab, occ, posts, unit] of EXPECT) {
   const okOcc = line.includes(occ.toLocaleString())
   const okPosts = line.includes(posts.toLocaleString())
   const okUnit = line.toLowerCase().includes(unit.toLowerCase())
-  const ok = okOcc && okPosts && okUnit
+  // The reconciled entity header must carry the total, both disjoint components and the dormant
+  // count. A page that prints the mention figure alone is the defect this pass exists to fix.
+  const missingEntity = tab === 'namedEntities'
+    ? ENTITY_EXTRA.filter(n => !line.includes(n.toLocaleString()))
+    : []
+  const ok = okOcc && okPosts && okUnit && !missingEntity.length
   if (!ok) failed++
   console.log(`  ${ok ? 'PASS' : 'FAIL'}  ${tab.padEnd(19)} expect ${occ.toLocaleString()} ${unit} / ${posts.toLocaleString()} posts`)
   console.log(`        page: ${line.slice(0, 150)}`)
-  if (!ok) console.log(`        occ=${okOcc} posts=${okPosts} unit=${okUnit}`)
+  if (!ok) console.log(`        occ=${okOcc} posts=${okPosts} unit=${okUnit}${missingEntity.length ? ` missingEntityFigures=${missingEntity.join(',')}` : ''}`)
 }
 
 try { process.kill(-proc.pid) } catch { try { proc.kill() } catch { /* gone */ } }

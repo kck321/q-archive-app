@@ -48,7 +48,14 @@ const READ_ROWS = `(() => {
       return t.charAt(0) === TIMES && t.slice(-5) === 'posts'
     })
     // The badge is suppressed at one post, so its absence means exactly one.
-    const badge = badgeEl ? digits(badgeEl.textContent.replace(TIMES, '').replace('posts', '').trim()) : 1
+    //
+    // A SOURCE-ONLY ROW COUNTS LINKS: its badge reads "x9 source posts", because those drops linked
+    // the material rather than naming it. Stripping only the word "posts" left "9 source" and
+    // Number() returned NaN, so the nine source-only rows with more than one chip read as a badge of
+    // null and every ordering assertion downstream failed on them.
+    const badge = badgeEl
+      ? digits(badgeEl.textContent.replace(TIMES, '').replace('source', '').replace('posts', '').trim())
+      : 1
     const chips = []
     for (const a of c.querySelectorAll('a[href*="/post/"]')) {
       // A chip that repeats inside its drop renders an inline badge, so the text is #780x2 rather

@@ -1044,6 +1044,182 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   }
 }
 
+// ── 10d. Public entity list reconciliation ───────────────────────────────────
+//
+// The Named Entities page was printing 856, 879 and 1,201 as though they described one population.
+// They describe three: 879 is the count of DISTINCT NORMALISED STRINGS in the browser's frequency
+// index, 856 is those less the 23 the verbatim filter emptied to zero posts, and 1,201 is the
+// certified registry. The list underneath rendered 1,062 rows, a fourth number nothing explained.
+//
+// These invariants pin the reconciled model so it cannot come apart again: the total, the two
+// disjoint components that add to it, the row count and what accounts for the difference, and — the
+// point of the whole exercise — that no row reaches a reader without evidence they can open.
+{
+  const t = group('10d. Public entity list reconciliation')
+  const viewPath = path.join(DATA, 'entity-public-view.json')
+  const view = fs.existsSync(viewPath) ? JSON.parse(fs.readFileSync(viewPath, 'utf8')) : null
+  const dormantPath = path.join(OUT, 'entity-dormant-registry.json')
+  const dormantReg = fs.existsSync(dormantPath) ? JSON.parse(fs.readFileSync(dormantPath, 'utf8')) : null
+  const sourceOnlyPath = path.join(OUT, 'entity-source-only-registry.json')
+  const sourceOnlyReg = fs.existsSync(sourceOnlyPath) ? JSON.parse(fs.readFileSync(sourceOnlyPath, 'utf8')) : null
+  const linkedPath2 = path.join(DATA, 'linked-sources.json')
+  const linked2 = fs.existsSync(linkedPath2) ? JSON.parse(fs.readFileSync(linkedPath2, 'utf8')) : null
+
+  t('entity-view-published', 'entity-public-view.json ships', Boolean(view), view ? 'present' : 'MISSING')
+
+  if (view) {
+    const reg = entities.entities
+    const rows = view.rows ?? {}
+    const totals = view.totals ?? {}
+
+    // ① The headline total IS the registry. Not a recount of it.
+    t('entity-total-1201', 'public canonical identities = 1,201',
+      totals.canonicalEntities === CANONICAL.entities.canonical && reg.length === CANONICAL.entities.canonical,
+      `view ${totals.canonicalEntities} / registry ${reg.length}`)
+
+    // ② Mentions are reported separately and are unchanged by any of this.
+    const mentionSum = reg.reduce((s, e) => s + (e.mentions ?? 0), 0)
+    t('entity-mentions-8798', 'certified prose mentions = 8,798',
+      totals.mentions === CANONICAL.entities.mentions && mentionSum === CANONICAL.entities.mentions,
+      `view ${totals.mentions} / registry sum ${mentionSum}`)
+
+    // ③ The displayed breakdown adds EXACTLY to the total, and its components are disjoint.
+    const sum = (view.breakdown ?? []).reduce((s, b) => s + b.count, 0)
+    t('entity-breakdown-adds', 'displayed breakdown adds exactly to the canonical total',
+      (view.breakdown ?? []).length >= 2 && sum === totals.canonicalEntities,
+      `${(view.breakdown ?? []).map(b => `${b.count} ${b.label}`).join(' + ')} = ${sum}`)
+
+    const proseIds = new Set(Object.entries(rows).filter(([, r]) => r.kind === 'prose').map(([id]) => id))
+    const srcIds = new Set(Object.entries(rows).filter(([, r]) => r.kind === 'source_only').map(([id]) => id))
+    const overlap = [...proseIds].filter(id => srcIds.has(id))
+    t('entity-components-disjoint', 'prose and source-only components share no identity',
+      overlap.length === 0 && proseIds.size + srcIds.size === reg.length,
+      `${proseIds.size} + ${srcIds.size}, overlap ${overlap.length}`)
+
+    t('entity-source-only-135', 'the 135 source-only identities are a labelled component',
+      totals.sourceOnly === 135 && srcIds.size === 135 && srcIds.size === (sourceOnlyReg?.total ?? -1)
+      && (view.breakdown ?? []).some(b => b.key === 'sourceOnly' && b.count === 135),
+      `${srcIds.size} rows / registry ${sourceOnlyReg?.total}`)
+
+    // ④ Every public row has traceability a reader can open.
+    const noEvidence = reg.filter(e => {
+      const r = rows[e.id]
+      if (!r) return true
+      return r.kind === 'source_only'
+        ? !(r.sourcePosts ?? []).length
+        : !(e.posts ?? []).length
+    })
+    t('entity-row-traceability', 'every public row has a certified prose post or a linked-source post',
+      noEvidence.length === 0,
+      noEvidence.length ? `${noEvidence.length} without evidence: ${noEvidence.slice(0, 3).map(e => e.canonical).join(', ')}` : 'all 1,201')
+
+    const srcWithoutRecord = [...srcIds].filter(id => !(rows[id].sourcePosts ?? []).length)
+    t('entity-source-row-has-record', 'every source-only row has at least one source record',
+      srcWithoutRecord.length === 0, `${srcIds.size - srcWithoutRecord.length}/${srcIds.size}`)
+
+    // A source post chip must correspond to a real linked-source record — the row cannot invent one.
+    const boundPairs = new Set()
+    for (const [pn, recs] of Object.entries(linked2?.byPost ?? {})) {
+      for (const rec of recs) if (rec.entityId) boundPairs.add(`${rec.entityId}:${pn}`)
+    }
+    const unbackedChips = []
+    for (const [id, r] of Object.entries(rows)) {
+      for (const s of r.sourcePosts ?? []) if (!boundPairs.has(`${id}:${s.post}`)) unbackedChips.push(`${id}#${s.post}`)
+    }
+    t('entity-source-chip-backed', 'every source post chip is backed by a linked-source record',
+      unbackedChips.length === 0, unbackedChips.length ? unbackedChips.slice(0, 3).join(', ') : `${boundPairs.size} bound pairs`)
+
+    // A source reference is NEVER a mention. Zero is the whole assertion.
+    const srcWithMentions = [...srcIds].filter(id => (reg.find(e => e.id === id)?.mentions ?? 0) > 0)
+    t('entity-source-not-a-mention', 'no source-only identity carries a prose mention',
+      srcWithMentions.length === 0, `${srcWithMentions.length} violations`)
+
+    // ⑤ Dormant identities cannot enter the public list.
+    const dormantIds = new Set((dormantReg?.entities ?? []).map(d => d.id ?? d).filter(Boolean))
+    const dormantLeak = reg.filter(e => dormantIds.has(e.id))
+    t('entity-dormant-excluded', 'the 208 dormant identities are reserved and never public',
+      dormantIds.size === 208 && dormantLeak.length === 0 && totals.dormantReserved === 208,
+      `${dormantIds.size} reserved, ${dormantLeak.length} leaked`)
+
+    // ⑥ No alias becomes its own duplicate row.
+    //
+    // A row is keyed by identity, so the failure mode is an identity whose CANONICAL is nothing but
+    // another identity's alias — that is the row that would read as a duplicate of its own parent.
+    // Sharing a spelling is not that: 46 spellings are claimed by more than one identity, every one
+    // of them legitimately (BO is Barack Obama, Bruce Ohr AND Board Owner).
+    const canonByLower = new Map(reg.map(e => [e.canonical.toLowerCase().trim(), e]))
+    const aliasDupes = []
+    for (const e of reg) {
+      for (const a of e.aliases ?? []) {
+        const other = canonByLower.get((a.text ?? '').toLowerCase().trim())
+        if (!other || other.id === e.id) continue
+        // Two identities may be connected by the alias registry — that is one row, not two, and the
+        // merged-row model records it. Anything else is a duplicate.
+        const merged = (view.mergedRows ?? []).some(m => m.identityIds.includes(e.id) && m.identityIds.includes(other.id))
+        if (!merged) aliasDupes.push(`${a.text}: ${e.canonical} / ${other.canonical}`)
+      }
+    }
+    t('entity-no-alias-duplicate-row', 'no alias is published as its own row beside its canonical',
+      aliasDupes.length === 0, aliasDupes.length ? aliasDupes.slice(0, 3).join(' | ') : 'none')
+
+    // ⑦ Shared aliases do not leak posts between entities.
+    //
+    // The registry attributes each occurrence to exactly one identity, so the test is that the
+    // occurrence ledger never hands one occurrenceId to two of them — a string-keyed union would.
+    const occPath = path.join(OUT, 'occurrence-provenance-audit.json')
+    const occ = fs.existsSync(occPath) ? JSON.parse(fs.readFileSync(occPath, 'utf8')) : null
+    if (occ) {
+      const owner = new Map()
+      let doubleClaimed = 0
+      for (const r of occ.rows ?? []) {
+        if (!r.entityId) continue
+        const prev = owner.get(r.occurrenceId)
+        if (prev && prev !== r.entityId) doubleClaimed++
+        else owner.set(r.occurrenceId, r.entityId)
+      }
+      t('entity-no-shared-alias-leak', 'no occurrence is claimed by two identities',
+        doubleClaimed === 0, `${owner.size} occurrences, ${doubleClaimed} double-claimed`)
+    }
+
+    // Repeat badges are per identity, clipped to that identity's own certified drops. The defect this
+    // replaced painted one entity's in-post repeat onto every other entity in the same drop.
+    const strayRepeat = []
+    for (const e of reg) {
+      const perPost = rows[e.id]?.perPostMentions ?? {}
+      const own = new Set(e.posts ?? [])
+      const total = Object.values(perPost).reduce((a, b) => a + b, 0)
+      for (const pn of Object.keys(perPost)) if (!own.has(Number(pn))) strayRepeat.push(`${e.canonical}#${pn}`)
+      if (total > (e.mentions ?? 0)) strayRepeat.push(`${e.canonical} total ${total}>${e.mentions}`)
+    }
+    t('entity-repeats-own-posts-only', 'per-post mention counts stay inside the identity that earned them',
+      strayRepeat.length === 0, strayRepeat.length ? strayRepeat.slice(0, 3).join(', ') : 'clean')
+
+    // ⑧ Rows and identities reconcile. Fewer rows than identities is allowed ONLY where the alias
+    // registry connects them, and the difference must be exactly what the merge model accounts for.
+    const mergedIds = new Set((view.mergedRows ?? []).flatMap(m => m.identityIds))
+    const accounted = totals.canonicalEntities - totals.publicRows === mergedIds.size - (view.mergedRows ?? []).length
+    t('entity-rows-reconcile', 'row count and identity count reconcile through the merge model',
+      accounted && totals.mergedIdentities === mergedIds.size,
+      `${totals.publicRows} rows / ${totals.canonicalEntities} identities / ${mergedIds.size} in ${(view.mergedRows ?? []).length} merged rows`)
+
+    // A merged row must be labelled by its highest-post identity, which is what the owner ruled.
+    const badLabel = (view.mergedRows ?? []).filter(m => {
+      const top = [...m.identities].sort((a, b) => b.posts - a.posts || b.mentions - a.mentions || a.canonical.localeCompare(b.canonical))[0]
+      return top.canonical !== m.label
+    })
+    t('entity-merged-label-most-posts', 'a merged row is named by the identity with the most posts',
+      badLabel.length === 0, badLabel.length ? badLabel.map(m => m.label).join(', ') : `${(view.mergedRows ?? []).length} merged rows`)
+
+    // A merged row may not mix the components, or the breakdown stops describing the rows.
+    const mixedMerge = (view.mergedRows ?? []).filter(m => {
+      const kinds = new Set(m.identityIds.map(id => rows[id]?.kind))
+      return kinds.size > 1
+    })
+    t('entity-merged-single-component', 'no merged row mixes prose and source-only identities',
+      mixedMerge.length === 0, `${(view.mergedRows ?? []).length} merged rows checked`)
+  }
+}
+
 // ── 11. Frozen-section mutation check ────────────────────────────────────────
 {
   const t = group('11. Frozen-section mutation')

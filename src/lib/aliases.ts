@@ -62,11 +62,111 @@ export interface CertifiedEntity {
   posts: number[]
   /** Every spelling, canonical first. */
   aliases: string[]
+  /**
+   * Which of the two disjoint public components this identity belongs to.
+   *
+   * `prose`       Q named it. `mentions` >= 1 and `posts` is the certified evidence.
+   * `source_only` Q linked material this identity published, or an account belonging to it, and
+   *               never wrote the name in visible prose. `mentions` is 0 and stays 0 — a source
+   *               reference is NOT a mention — and `sourcePosts` is the evidence instead.
+   */
+  rowKind: 'prose' | 'source_only'
+  /** The drops that LINKED this source, each labelled with what the link was. */
+  sourcePosts: { post: number; kind: SourceKind }[]
+  /**
+   * postNum -> how many times Q named this entity in that drop, where it is more than once.
+   *
+   * Certified, per entity. The browser used to derive this from a Map keyed by post number alone
+   * and shared across every entity in the frequency index, so in 443 drops one entity's repeat
+   * count was painted onto every other entity in the same drop.
+   */
+  perPostMentions: Record<number, number>
+  /**
+   * spelling -> how many DISTINCT drops used it.
+   *
+   * Owner ruling 2026-08-17: the row's aliases read most-to-least posts. A mention total would rank
+   * a name Q shouted twice in one drop above one he wrote once in each of two, which is not the
+   * order that was asked for.
+   */
+  aliasPosts: Record<string, number>
+  /**
+   * The row this identity is published in — its own id unless the alias registry connects it to
+   * another identity, in which case every member of the connected set carries the same rowId.
+   *
+   * Assigned by the artifact, not re-derived here. The rule has to resolve CHAINS ("The Washington
+   * Post" -> "Washington Post" -> "WASH POST" is one subject, three identities) and a keyed grouping
+   * in the component handled one hop and published the third as its own duplicate row.
+   */
+  rowId: string
 }
 let certifiedEntities: CertifiedEntity[] = []
 
 /** Every certified entity, in registry order. Empty until loadCertifiedEntityAliases resolves. */
 export function getCertifiedEntities(): CertifiedEntity[] { return certifiedEntities }
+
+// ── The public view: the reconciled row model and its traceability ───────────
+//
+// The Named Entities header was recounting the browser's frequency index — which groups by
+// normalised STRING — and printing the result above a list built from the registry, which is one
+// row per IDENTITY. Those are different populations (879 strings against 1,201 identities), so the
+// header and the list could never agree. The header now reads this artifact and nothing else.
+export type SourceKind = 'publisher' | 'social_account' | 'linked_source'
+
+export interface EntityPublicView {
+  totals: {
+    canonicalEntities: number
+    /** Rows on screen. Fewer than `canonicalEntities` when the alias registry connects identities. */
+    publicRows: number
+    mergedRows: number
+    mergedIdentities: number
+    proseMentioned: number
+    sourceOnly: number
+    mentions: number
+    dormantReserved: number
+  }
+  /** The disjoint components of the headline total, in display order. */
+  breakdown: { key: string; label: string; count: number }[]
+  kindLabels: Record<SourceKind, string>
+  sourceNote: string
+  dormantNote: string
+}
+
+let publicView: EntityPublicView | null = null
+
+/**
+ * The reconciled entity totals, or null until the artifact lands.
+ *
+ * Null is a REAL state and callers must handle it: this is a fetch, and a header that renders a
+ * silent 0 while it is in flight is the same defect as a header that recounts the wrong thing.
+ */
+export function getEntityPublicView(): EntityPublicView | null { return publicView }
+
+interface PublicViewFile extends EntityPublicView {
+  rows?: Record<string, {
+    kind?: 'prose' | 'source_only'
+    sourcePosts?: { post: number; kind: SourceKind }[]
+    perPostMentions?: Record<string, number>
+    aliasPosts?: Record<string, number>
+    rowId?: string
+  }>
+}
+
+async function loadPublicView(): Promise<PublicViewFile | null> {
+  try {
+    const res = await fetch(`${import.meta.env.BASE_URL}data/entity-public-view.json`)
+    if (!res.ok) return null
+    const data = await res.json() as PublicViewFile
+    if (!data.totals || !Array.isArray(data.breakdown)) return null
+    publicView = {
+      totals: data.totals,
+      breakdown: data.breakdown,
+      kindLabels: data.kindLabels,
+      sourceNote: data.sourceNote,
+      dormantNote: data.dormantNote,
+    }
+    return data
+  } catch { return null }
+}
 
 /** Load the certified entity alias groups from the shipped Entities artifact. */
 export async function loadCertifiedEntityAliases(): Promise<void> {
@@ -107,15 +207,33 @@ export async function loadCertifiedEntityAliases(): Promise<void> {
     certified = next
     certifiedIndex = idx
     certifiedSpelling = spell
-    certifiedEntities = (data.entities ?? []).map(e => ({
-      id: e.id ?? '',
-      canonical: (e.canonical ?? '').trim(),
-      type: e.type ?? '',
-      mentions: e.mentions ?? 0,
-      posts: [...new Set(e.posts ?? [])].sort((a, b) => a - b),
-      aliases: [...new Set([(e.canonical ?? '').trim(), ...(e.aliases ?? []).map(a => (a.text ?? '').trim())])]
-        .filter(Boolean),
-    })).filter(e => e.id && e.canonical)
+    // The public view is fetched alongside the registry rather than after it, so a row and its
+    // traceability arrive together. A row that appeared before its source posts did would render
+    // for one paint as an identity with no evidence — which is the one thing the reconciliation
+    // exists to make impossible.
+    const view = await loadPublicView()
+    certifiedEntities = (data.entities ?? []).map(e => {
+      const row = view?.rows?.[e.id ?? ''] ?? null
+      const mentions = e.mentions ?? 0
+      return {
+        id: e.id ?? '',
+        canonical: (e.canonical ?? '').trim(),
+        type: e.type ?? '',
+        mentions,
+        posts: [...new Set(e.posts ?? [])].sort((a, b) => a - b),
+        aliases: [...new Set([(e.canonical ?? '').trim(), ...(e.aliases ?? []).map(a => (a.text ?? '').trim())])]
+          .filter(Boolean),
+        // The artifact's kind leads; `mentions > 0` is the same test it applied and is the fallback
+        // if the view is missing, so the row model degrades to prose-only rather than to nothing.
+        rowKind: row?.kind ?? (mentions > 0 ? 'prose' : 'source_only'),
+        sourcePosts: row?.sourcePosts ?? [],
+        perPostMentions: row?.perPostMentions
+          ? Object.fromEntries(Object.entries(row.perPostMentions).map(([n, v]) => [Number(n), v]))
+          : {},
+        aliasPosts: row?.aliasPosts ?? {},
+        rowId: row?.rowId ?? e.id ?? '',
+      }
+    }).filter(e => e.id && e.canonical)
     listeners.forEach(l => l())
   } catch { /* artifact missing or malformed — the editable map still works */ }
 }

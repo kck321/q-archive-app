@@ -55,7 +55,9 @@ export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number
   predictions: { occurrences: 595, posts: 490, unit: 'occurrences' },
   emphasis: { occurrences: 3112, posts: 1357, unit: 'occurrences' },
   // "mentions" is the right word here and the only section where it is: an entity is counted
-  // once per resolved mention across 1,445 canonical entities.
+  // once per resolved mention across the 1,066 canonical entities Q named in prose. The other 135
+  // certified identities contribute none — they are linked sources, not words Q wrote — which is
+  // why this figure sits BESIDE the 1,201 total on the page rather than under it.
   namedEntities: { occurrences: 8798, posts: 2090, unit: 'mentions' },
   // Themes are assignments rather than spans — a theme is inferred from a drop, not copied out
   // of it — so the unit is named accordingly. 2,393 detected + 2 owner rulings.
@@ -364,7 +366,11 @@ export const SECTIONS: SectionInfo[] = [
     short: 'The people, organizations, agencies and places Q named.',
     covers: 'Important people, organizations, agencies, companies, governments, countries, locations, programs, operations, institutions and other named subjects appearing throughout the posts.',
     answers: 'Who or what was Q talking about?',
-    certified: `${n(1332)} canonical entities · ${n(7903)} resolved mentions`,
+    // Was 1,332 canonical / 7,903 mentions — both left behind by the 2026-08-17 integrated cleanup,
+    // so the ⓘ panel contradicted the header directly above it. The two components are named here
+    // for the same reason they are named in the header: 1,201 with no split reads as 1,201 entities
+    // Q wrote about, and 135 of them he never wrote at all.
+    certified: `${n(1201)} canonical entities (${n(1066)} named in the prose · ${n(135)} linked as a source only) · ${n(8798)} certified prose mentions`,
     note: 'Entities are secondary tags rather than sentence types — a question, claim, prediction or directive may contain several. Names are canonicalised, so "HRC", "Hillary" and "Hillary Clinton" are one person, while Q’s exact wording is preserved in every post. Where a reference is ambiguous it is left unresolved rather than guessed.',
   },
   {

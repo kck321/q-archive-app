@@ -6,7 +6,7 @@ One question: does every certified occurrence in every section still resolve to 
 This audit validates the certified system. It reclassifies nothing and moves no count. All eight analytical sections remain frozen.
 
 
-**206 of 206 invariants pass.**
+**223 of 223 invariants pass.**
 
 
 ## 1. Frozen canonical counts
@@ -226,6 +226,28 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | the script definition still matches what the app strips at seed time | markup + entities |
 | ✅ | the scripts use the renderer's word-boundary rule | lookaround, not \b |
 | ✅ | the same inputs still produce the same audit, byte for byte | identical |
+
+## 10d. Public entity list reconciliation
+
+| | Invariant | Observed |
+|---|---|---|
+| ✅ | entity-public-view.json ships | present |
+| ✅ | public canonical identities = 1,201 | view 1201 / registry 1201 |
+| ✅ | certified prose mentions = 8,798 | view 8798 / registry sum 8798 |
+| ✅ | displayed breakdown adds exactly to the canonical total | 1066 named in Q’s prose + 135 linked as a source only = 1201 |
+| ✅ | prose and source-only components share no identity | 1066 + 135, overlap 0 |
+| ✅ | the 135 source-only identities are a labelled component | 135 rows / registry 135 |
+| ✅ | every public row has a certified prose post or a linked-source post | all 1,201 |
+| ✅ | every source-only row has at least one source record | 135/135 |
+| ✅ | every source post chip is backed by a linked-source record | 347 bound pairs |
+| ✅ | no source-only identity carries a prose mention | 0 violations |
+| ✅ | the 208 dormant identities are reserved and never public | 208 reserved, 0 leaked |
+| ✅ | no alias is published as its own row beside its canonical | none |
+| ✅ | no occurrence is claimed by two identities | 9688 occurrences, 0 double-claimed |
+| ✅ | per-post mention counts stay inside the identity that earned them | clean |
+| ✅ | row count and identity count reconcile through the merge model | 1183 rows / 1201 identities / 33 in 15 merged rows |
+| ✅ | a merged row is named by the identity with the most posts | 15 merged rows |
+| ✅ | no merged row mixes prose and source-only identities | 15 merged rows checked |
 
 ## 11. Frozen-section mutation
 

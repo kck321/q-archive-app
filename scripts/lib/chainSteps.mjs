@@ -138,6 +138,14 @@ export const CHAIN = [
   // that read entity counts, and it re-applies the plan the owner already approved rather than
   // deciding anything: see the --rematerialise block in the applier.
   { step: 'apply-entity-cleanup.mjs', kind: 'apply', args: ['--rematerialise'] },
+  // THE PUBLIC ROW MODEL, derived from the finished entity state. It must land after
+  // apply-entity-cleanup.mjs, because it reads entities.json to decide which identities are prose
+  // rows and which are source-only, and the cleanup is what makes 135 of them source-only.
+  //
+  // Read-only with respect to every certified count: it writes one new artifact and asserts, rather
+  // than assumes, that its own components add to 1,201 and its per-entity occurrence counts never
+  // exceed the 8,798. It exits non-zero instead of publishing a list that does not reconcile.
+  { step: 'build-entity-public-view.mjs', kind: 'apply', args: [] },
   { step: 'build-relationships.mjs', kind: 'apply' },
   { step: 'build-search-index.mjs', kind: 'apply' },
   // Last, and read-only: the reader's acronym info box is derived from the finished entity set

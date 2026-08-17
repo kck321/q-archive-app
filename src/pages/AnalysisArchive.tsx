@@ -9,7 +9,7 @@ import {
   clearAnalysisCategoriesFromPosts, getQuestionsTimeline, getPostNumsByMonth, getPostNumsContaining,
   OVERLAP_CAT_LABELS, normalizeItemKey, makeTermMatcher, getQuestionsForPosts, type AnalysisCategoryFreq, type OverlapItem, type OverlapCat,
 } from '../lib/posts'
-import { getAliasesFor, getAliasSet, getCertifiedEntityAliasSet, getCertifiedEntities, subscribeAliases, displayAlias } from '../lib/aliases'
+import { getAliasesFor, getAliasGroup, getAliasSet, getCertifiedEntityAliasSet, getCertifiedEntities, getEntityPublicView, subscribeAliases, displayAlias, type SourceKind } from '../lib/aliases'
 import PostCard from '../components/PostCard'
 import ReaderSentinel from '../components/ReaderSentinel'
 import { loadLocalData } from '../lib/localData'
@@ -410,8 +410,17 @@ export default function AnalysisArchive() {
    *
    * Other categories keep the union they already displayed; only the sort key changes to match it.
    */
-  type Chip = { num: number; term: string }
-  type Row = AnalysisCategoryFreq & { chips: Chip[]; oldest: number; aliasNames: string[] }
+  type Chip = { num: number; term: string; sourceKind?: SourceKind }
+  type Row = AnalysisCategoryFreq & {
+    chips: Chip[]; oldest: number; aliasNames: string[]
+    /**
+     * Entity rows only: which of the two disjoint public components this row belongs to.
+     *
+     * `source_only` rows have NO prose mention. Their chips are the drops that LINKED the material,
+     * which is a different fact with a different label, and the row never prints a mention count.
+     */
+    rowKind?: 'prose' | 'source_only'
+  }
 
   const rows: Row[] = useMemo(() => {
     const out: Row[] = []
@@ -419,31 +428,198 @@ export default function AnalysisArchive() {
     // ── Named Entities: one row per certified identity ────────────────────────
     const registry = getCertifiedEntities()
     if (registry.length) {
-      // In-post repeat counts still come from the frequency index — the registry records how many
-      // mentions an entity has in total, not how many are in each drop, and the amber "x2" on a
-      // chip is the only place a reader learns Q said the name twice in one breath. Merged across
-      // every spelling, because the repeat belongs to the subject and not to the string.
-      const repeatsFor = new Map<number, number>()
-      const repeatsByEntity = new Map<string, Record<number, number>>()
+      // IN-POST REPEAT COUNTS ARE CERTIFIED PER ENTITY, not looked up by post number.
+      //
+      // This was a Map keyed by post number ALONE, filled from every entity row in the frequency
+      // index in turn, so the last one written won and every other entity in that drop inherited its
+      // repeat count. #1009 carries "AZ" twice and "Russia" once, and Russia's chip claimed x2.
+      // Measured: 443 drops hold entities with differing in-post counts, so 443 drops were capable
+      // of printing one entity's repeat on another's chip.
+      //
+      // entity-public-view.json resolves each occurrence to one entity from the certified ledger and
+      // clips the result to the registry's own post set, so a repeat badge now belongs to the row it
+      // is drawn on. The 61 occurrences whose attribution is still unsettled — shared spellings like
+      // "CS" — earn no badge on anybody's row rather than a guessed one on somebody's.
+      // WHICH SPELLING DOES EACH DROP ACTUALLY USE?
+      //
+      // The chips are coloured by the spelling that claimed them — that is how a reader sees at a
+      // glance which of the seven ways Q writes "United States" a given drop uses. Building rows
+      // from the registry gave every chip the canonical term, so a row with seven coloured alias
+      // chips showed 323 identically grey post chips underneath and the colours meant nothing.
+      //
+      // postAnalysis records the spellings per drop, which is exactly the missing fact, and reading
+      // it back per (entity, post) keeps the shared-alias rule intact: the drop is already known to
+      // belong to THIS entity, so the "CS" in it is this entity's CS.
+      const spellingsByPost = new Map<number, string[]>()
       for (const it of items) {
         if (it.category !== 'namedEntities') continue
-        for (const [n, r] of Object.entries(it.repeats)) repeatsFor.set(Number(n), r)
+        for (const n of it.postNums) {
+          const list = spellingsByPost.get(n)
+          if (list) { if (!list.includes(it.text)) list.push(it.text) } else spellingsByPost.set(n, [it.text])
+        }
       }
+      // THE OWNER'S OWN GROUPS OUTRANK THE CERTIFIED ONES, and this is where that has to happen.
+      //
+      // The adjudication keeps POTUS (368 drops) and Donald Trump (58) as SEPARATE certified
+      // identities. The owner's editable map says they are one man, and adds spellings the
+      // adjudication never certified as entities at all — 4,10,20 and 45. Building rows straight
+      // from the registry therefore split him in two and dropped Donald J. Trump, DJT and Q+ off
+      // the POTUS row entirely. aliases.ts has said from the beginning that "an owner correction
+      // outranks a derived group"; this applies it.
+      //
+      // The fold is by GROUP, not by string: an entity joins a group when its canonical OR any of
+      // its certified spellings is a member, which is how "Donald Trump" reaches the potus group
+      // through its alias "Trump" even though its own name is not in the map.
+      const ownerCanonOf = (name: string): string | null => {
+        const g = getAliasGroup(name)
+        return g.length > 1 ? g[0].toLowerCase().trim() : null
+      }
+      //
+      // ROW ASSIGNMENT COMES FROM THE ARTIFACT, then the owner's live groups are unioned on top.
+      //
+      // `rowId` already resolves the certified connections, including chains a keyed grouping cannot
+      // see: "The Washington Post" carries the alias "Washington Post", which is itself an identity
+      // carrying "WASH POST". Grouping by a single key merged the first pair and published the third
+      // as its own row — an alias appearing as a duplicate of its own canonical, which is exactly
+      // what the reconciliation forbids.
+      //
+      // The union is still needed because the owner can add an alias at runtime in the editorial
+      // build, and that must merge rows immediately rather than after the next artifact rebuild.
+      const parent = new Map<string, string>()
+      const find = (k: string): string => {
+        if (!parent.has(k)) { parent.set(k, k); return k }
+        let r = k
+        while (parent.get(r) !== r) r = parent.get(r)!
+        parent.set(k, r)
+        return r
+      }
+      const union = (a: string, b: string) => { const ra = find(a), rb = find(b); if (ra !== rb) parent.set(ra, rb) }
+      const ownerAnchor = new Map<string, string>()
       for (const e of registry) {
+        find(e.rowId)
+        let group: string | null = ownerCanonOf(e.canonical)
+        if (!group) for (const a of e.aliases) { group = ownerCanonOf(a); if (group) break }
+        if (!group) continue
+        const anchor = ownerAnchor.get(group)
+        if (anchor) union(e.rowId, anchor)
+        else ownerAnchor.set(group, e.rowId)
+      }
+      const ownerGroupOfRow = new Map<string, string>()
+      for (const [group, anchor] of ownerAnchor) ownerGroupOfRow.set(find(anchor), group)
+      //
+      // EVERY IDENTITY GETS A ROW — INCLUDING THE 135 WITH NO PROSE MENTION.
+      //
+      // A row was skipped when its post list was empty, which silently dropped the identities that
+      // are still referenced as the publisher of material Q linked or as an account he pointed at.
+      // The list rendered 1,062 rows under a registry of 1,201 and nothing on the page reconciled
+      // the gap. They ship as rows now, carrying the drops that LINKED them rather than the drops
+      // that named them — a different field, a different label, never counted as a mention.
+      //
+      // OWNER RULING 2026-08-17 on which identity names a merged row: "let's make the main entity
+      // the one that has the most posts, and then the alias with the most to least posts follow
+      // behind." Previously the label was whichever identity happened to match the owner group's
+      // canonical KEY, so the "lord" group was named Lord (8 drops) over God (162).
+      type Bucket = {
+        label: string; labelPosts: number; labelMentions: number
+        posts: Set<number>; mentions: number
+        aliases: Set<string>; aliasPosts: Map<string, number>
+        owner: boolean; sourcePosts: Map<number, SourceKind>
+        /** postNum -> occurrences, summed over the identities sharing this row. */
+        perPost: Map<number, number>
+      }
+      const buckets = new Map<string, Bucket>()
+      for (const e of registry) {
+        const key = find(e.rowId)
+        const group = ownerGroupOfRow.get(key) ?? null
+        let b = buckets.get(key)
+        if (!b) {
+          b = {
+            label: e.canonical, labelPosts: -1, labelMentions: -1,
+            posts: new Set(), mentions: 0, aliases: new Set(), aliasPosts: new Map(),
+            owner: Boolean(group), sourcePosts: new Map(), perPost: new Map(),
+          }
+          // Every spelling the owner tied together is shown, including the ones the adjudication
+          // never certified — losing 4,10,20 off the POTUS row is losing an owner ruling.
+          if (group) for (const m of getAliasGroup(group)) b.aliases.add(displayAlias(m))
+          buckets.set(key, b)
+        }
+        // MOST POSTS WINS THE NAME. Mentions then the label break ties, so the choice is
+        // deterministic and a rebuild reproduces the same row heading.
+        const claim = e.posts.length > b.labelPosts
+          || (e.posts.length === b.labelPosts && e.mentions > b.labelMentions)
+          || (e.posts.length === b.labelPosts && e.mentions === b.labelMentions && e.canonical.localeCompare(b.label) < 0)
+        if (claim) { b.label = e.canonical; b.labelPosts = e.posts.length; b.labelMentions = e.mentions }
+        for (const n of e.posts) b.posts.add(n)
+        b.mentions += e.mentions
+        for (const a of e.aliases) b.aliases.add(a)
+        // Distinct drops per spelling, merged across the identities sharing the row, for the
+        // most-to-least order the ruling asked for.
+        for (const [a, n] of Object.entries(e.aliasPosts)) {
+          b.aliasPosts.set(a.toLowerCase().trim(), (b.aliasPosts.get(a.toLowerCase().trim()) ?? 0) + n)
+        }
+        for (const s of e.sourcePosts) b.sourcePosts.set(s.post, s.kind)
+        // Only the identities that share THIS row contribute. Accumulated here rather than looked up
+        // later by post number, which is exactly the mistake that let one entity's repeat count be
+        // painted onto every other entity in the same drop.
+        for (const [n, r] of Object.entries(e.perPostMentions)) {
+          b.perPost.set(Number(n), (b.perPost.get(Number(n)) ?? 0) + r)
+        }
+      }
+      for (const [key, b] of buckets) {
+        const posts = [...b.posts].sort((x, y) => x - y)
+        const label = b.owner ? displayAlias(b.label) : b.label
+        const labelKey = label.toLowerCase().trim()
+        const byLower = new Map<string, string>()
+        for (const a of b.aliases) byLower.set(a.toLowerCase().trim(), a)
+        // A DISTINCTIVE SPELLING KEEPS ITS OWN COLOUR. Where a drop carries both the canonical and
+        // an alias, the alias wins the chip — otherwise the common name swallows it and the alias
+        // looks emptier than it is. Same rule the chip rendering used before this moved.
+        const termFor = (n: number): string => {
+          let fallback: string | null = null
+          for (const sp of spellingsByPost.get(n) ?? []) {
+            const k = sp.toLowerCase().trim()
+            const known = byLower.get(k)
+            if (!known) continue
+            if (k !== labelKey) return known
+            fallback = known
+          }
+          return fallback ?? label
+        }
+        // Aliases most-to-least drops, the name itself last resort so the order is stable. The row's
+        // own heading is not repeated in its alias list.
+        const aliasNames = [...b.aliases]
+          .filter(a => a.toLowerCase().trim() !== labelKey)
+          .sort((x, y) =>
+            (b.aliasPosts.get(y.toLowerCase().trim()) ?? 0) - (b.aliasPosts.get(x.toLowerCase().trim()) ?? 0)
+            || x.localeCompare(y))
+
+        // ── Source-only: no prose mention exists, so the evidence is the link ──
+        if (!posts.length) {
+          const sourcePosts = [...b.sourcePosts.entries()].sort((x, y) => x[0] - y[0])
+          // A row with neither a prose drop nor a linked-source drop has nothing a reader could open
+          // and must not appear. The artifact's gate makes this unreachable; this is the second lock.
+          if (!sourcePosts.length) continue
+          out.push({
+            category: 'namedEntities', text: label,
+            count: sourcePosts.length, postNums: sourcePosts.map(([n]) => n),
+            repeats: {}, occurrences: 0,
+            chips: sourcePosts.map(([num, kind]) => ({ num, term: label, sourceKind: kind })),
+            oldest: sourcePosts[0][0], aliasNames, rowKind: 'source_only',
+          })
+          void key
+          continue
+        }
+
+        // Certified per (identity, drop), summed over the identities in THIS row and nothing else.
         const rep: Record<number, number> = {}
-        for (const n of e.posts) { const r = repeatsFor.get(n); if (r && r > 1) rep[n] = r }
-        repeatsByEntity.set(e.id, rep)
-      }
-      for (const e of registry) {
-        // A row with no drops has nothing to show and nothing to rank; the registry's
-        // source-only and dormant identities are reported elsewhere, not listed here as zeroes.
-        if (!e.posts.length) continue
-        const chips: Chip[] = e.posts.map(n => ({ num: n, term: e.canonical }))
+        for (const [n, r] of b.perPost) if (r > 1 && b.posts.has(n)) rep[n] = r
         out.push({
-          category: 'namedEntities', text: e.canonical,
-          count: chips.length, postNums: e.posts, repeats: repeatsByEntity.get(e.id) ?? {}, occurrences: e.mentions,
-          chips, oldest: e.posts[0], aliasNames: e.aliases,
+          category: 'namedEntities', text: label,
+          count: posts.length, postNums: posts, repeats: rep, occurrences: b.mentions,
+          chips: posts.map(n => ({ num: n, term: termFor(n) })),
+          oldest: posts[0], aliasNames, rowKind: 'prose',
         })
+        void key
       }
     }
 
@@ -692,14 +868,41 @@ export default function AnalysisArchive() {
     // and it is labelled as a filtered subset rather than as the section total.
     const certified = SECTION_TOTALS[activeTab]
     const filtered = Boolean(monthPostNums)
+
+    /**
+     * NAMED ENTITIES DOES NOT USE `repeated`/`once`/`items` AT ALL.
+     *
+     * Those three are properties of `catItems` — the browser's frequency index, grouped by
+     * NORMALISED STRING. For every other section a row IS a string, so they describe the list
+     * underneath them. For entities a row is an IDENTITY, and the two populations are different
+     * sizes: 879 strings against 1,201 identities. The page was printing
+     *
+     *     8,798 mentions within 2,090 posts
+     *     385 repeated · 468 found once · 853 items
+     *
+     * above a list of 1,062 rows, and none of 853, 879, 1,062 or 1,201 explained any other. 853 is
+     * the 879 strings less the 26 the verbatim filter emptied to zero posts; a spelling that no
+     * longer appears in visible prose silently left the tally while its identity kept its row.
+     *
+     * So the entity header reads the reconciled model from entity-public-view.json and nothing else:
+     * the total, the two disjoint components that add to it, the mention figure kept separate from
+     * the row figure, and the dormant identities named as excluded rather than left unexplained.
+     */
+    const view = activeTab === 'namedEntities' ? getEntityPublicView() : null
+
     return {
       repeated, once,
       posts: certified && !filtered ? certified.posts : posts,
       occurrences: certified && !filtered ? certified.occurrences : occurrences,
       unit: certified && !filtered ? certified.unit : 'shown here',
       isCertified: Boolean(certified) && !filtered,
+      // Null while the artifact is in flight, and null forever for the other seven sections. The
+      // header renders the string tallies only when this is absent, so the two can never both show.
+      entities: view && !filtered ? view : null,
+      entitiesFiltered: Boolean(view && filtered),
     }
-    // aliasTick: recount when an alias is added/removed elsewhere.
+    // aliasTick: recount when an alias is added/removed elsewhere; it also fires when the certified
+    // registry and the public view land, which is what brings the entity totals in.
   }, [items, activeTab, monthPostNums, aliasTick])
 
   // Year labels on the month axis — same tick as every other chart.
@@ -715,7 +918,27 @@ export default function AnalysisArchive() {
           <div>
             {/* Total items in this section, above the title — the headline number for
                 "how big is this category", with repeated/once as the breakdown below. */}
-            {tabStats && (
+            {/* ENTITIES LEAD WITH THE IDENTITY COUNT, and keep the mention count beside it rather
+                than in place of it. They answer different questions — how many subjects the archive
+                names, and how many times Q named them — and the page was previously printing only
+                the second one above a list whose length was the first. */}
+            {tabStats?.entities ? (
+              <p className="flex items-baseline gap-3 leading-none tracking-tight flex-wrap">
+                <span className="text-2xl font-black text-cyan-300/90">
+                  {tabStats.entities.totals.canonicalEntities.toLocaleString()}
+                  <span className="text-xs font-medium text-gray-500 ml-1.5">total canonical entities</span>
+                </span>
+                <span className="text-2xl font-black text-amber-300/90">
+                  {tabStats.entities.totals.mentions.toLocaleString()}
+                  <span className="text-xs font-medium text-gray-500 ml-1.5">certified prose mentions</span>
+                </span>
+                <span className="text-2xl font-black text-white/90">
+                  <span className="text-xs font-medium text-gray-500 mr-1.5">within</span>
+                  {tabStats.posts.toLocaleString()}
+                  <span className="text-xs font-medium text-gray-500 ml-1.5">posts</span>
+                </span>
+              </p>
+            ) : tabStats && (
               <p className="flex items-baseline gap-3 leading-none tracking-tight">
                 <span className="text-2xl font-black text-amber-300/90">
                   {tabStats.occurrences.toLocaleString()}
@@ -756,11 +979,45 @@ export default function AnalysisArchive() {
               {activeTab === 'overlaps' && (
                 <span className="text-yellow-400 font-medium">{overlaps.length} conflicting phrases</span>
               )}
-              {tabStats && (
+              {/* THE COMPONENTS ARE RENDERED FROM THE ARTIFACT'S OWN LIST, so the page cannot show a
+                  breakdown that does not add up to the total above it. They are disjoint by
+                  construction — an identity has a prose mention or it does not. */}
+              {tabStats?.entities ? (
+                <>
+                  {tabStats.entities.breakdown.map((b, i) => (
+                    <span key={b.key}>
+                      {i > 0 && ' · '}
+                      <span className={b.key === 'sourceOnly' ? 'text-sky-300 font-medium' : 'text-cyan-300 font-medium'}>
+                        {b.count.toLocaleString()}
+                      </span>{' '}{b.label}
+                    </span>
+                  ))}
+                  {' = '}
+                  <span className="text-white font-medium">{tabStats.entities.totals.canonicalEntities.toLocaleString()}</span>
+                  {/* Rows are fewer than identities wherever the alias registry connects two of
+                      them, so the difference is stated instead of left as an unexplained gap
+                      between a header and a list length. */}
+                  {tabStats.entities.totals.mergedRows > 0 && (
+                    <>
+                      {' · shown as '}
+                      <span className="text-gray-300 font-medium">{tabStats.entities.totals.publicRows.toLocaleString()}</span> rows
+                      {' ('}{tabStats.entities.totals.mergedIdentities} alias-connected identities share{' '}
+                      {tabStats.entities.totals.mergedRows} of them{')'}
+                    </>
+                  )}
+                  {' · '}
+                  <span className="text-gray-500">
+                    {tabStats.entities.totals.dormantReserved.toLocaleString()} dormant identities are reserved and not listed
+                  </span>
+                </>
+              ) : tabStats && (
                 <>
                   <span className={`font-medium ${CAT_BADGE[activeTab as AnalysisCategoryFreq['category']]?.split(' ').find(c => c.startsWith('text-')) ?? 'text-gray-400'}`}>{tabStats.repeated}</span> repeated ·{' '}
                   <span className="text-gray-400 font-medium">{tabStats.once}</span> found once
                   {' '}· <span className="text-gray-400 font-medium">{(tabStats.repeated + tabStats.once).toLocaleString()}</span> items
+                  {/* With a month selected the entity header falls back to this line, which would
+                      then describe strings again. Say what it is counting. */}
+                  {tabStats.entitiesFiltered && ' in the selected month'}
                 </>
               )}
               {loading && 'Loading analysis data…'}
@@ -1033,17 +1290,33 @@ export default function AnalysisArchive() {
                         badge-less rows reading as ambiguous, but the rank number now sits
                         above every row, so a row with no count badge unambiguously means
                         one post.) */}
+                    {/* A SOURCE-ONLY ROW COUNTS LINKS, NOT MENTIONS. Same badge shape, different
+                        noun, so the number can never be read as "Q said this N times". */}
                     {monthChips.length > 1 && (
                     <span
-                      className="text-xs font-bold px-2 py-0.5 rounded-full border whitespace-nowrap text-white bg-gray-700 border-gray-600"
+                      className={`text-xs font-bold px-2 py-0.5 rounded-full border whitespace-nowrap ${
+                        item.rowKind === 'source_only'
+                          ? 'text-sky-200 bg-sky-900/50 border-sky-700/60'
+                          : 'text-white bg-gray-700 border-gray-600'
+                      }`}
                       title={
                         monthPostNums
                           ? `${monthChips.length} post${monthChips.length !== 1 ? 's' : ''} in the selected month (${chips.length} in total)`
-                          : `${chips.length} distinct post${chips.length !== 1 ? 's' : ''}${aliases.length ? `, including every spelling: ${[item.text, ...aliases].join(', ')}` : ''}`
+                          : item.rowKind === 'source_only'
+                            ? `${chips.length} post${chips.length !== 1 ? 's' : ''} linked this source. Q did not write the name in these drops.`
+                            : `${chips.length} distinct post${chips.length !== 1 ? 's' : ''}${aliases.length ? `, including every spelling: ${[item.text, ...aliases].join(', ')}` : ''}`
                       }
                     >
-                      ×{monthChips.length} posts
+                      ×{monthChips.length} {item.rowKind === 'source_only' ? 'source posts' : 'posts'}
                     </span>
+                    )}
+                    {item.rowKind === 'source_only' && (
+                      <span
+                        className="text-[10px] font-bold px-1.5 py-0.5 rounded border whitespace-nowrap text-sky-300 bg-sky-950/60 border-sky-800/70"
+                        title={getEntityPublicView()?.sourceNote ?? undefined}
+                      >
+                        source only
+                      </span>
                     )}
                     {/* Month span of this item's posts — month granularity only. */}
                     {(() => {
@@ -1090,36 +1363,61 @@ export default function AnalysisArchive() {
                     </p>
                     {aliases.length > 0 && (
                       <p className="text-xs text-gray-400 mb-2 px-2 flex items-center gap-1.5 flex-wrap">
-                        <span className="italic">also known as:</span>
-                        <span className={`px-1.5 py-0.5 rounded border font-mono ${CANON_CHIP}`}>{displayAlias(item.text)}</span>
+                        {/* THE NAME IS ALREADY THE HEADING. Repeating it as the first chip made
+                            every row say "Mike Kortan — also known as: Mike Kortan, MK", which reads
+                            as a mistake. Only the OTHER spellings belong here. */}
+                        <span className="italic">alias:</span>
                         {aliases.map((al, j) => (
                           <span key={al} className={`px-1.5 py-0.5 rounded border font-mono ${ALIAS_CHIP_PALETTE[j % ALIAS_CHIP_PALETTE.length]}`}>{displayAlias(al)}</span>
                         ))}
                       </p>
                     )}
+                    {/* WHY THIS ROW IS HERE WITH NO MENTIONS. Stated on the row itself, not only in
+                        the header — a reader scanning the tail finds this row first, and without it
+                        the chips look like drops that named the entity. */}
+                    {item.rowKind === 'source_only' && (
+                      <p className="text-[11px] text-sky-300/80 mb-2 px-2 leading-snug max-w-2xl">
+                        {getEntityPublicView()?.sourceNote
+                          ?? 'The post linked this source. It is not necessarily named in Q’s prose, and it is never counted as a mention.'}
+                        {' '}
+                        <Link to={`/sources?q=${encodeURIComponent(item.text)}`} className="underline hover:text-sky-200">
+                          find it under Sources
+                        </Link>
+                      </p>
+                    )}
                     <div className="flex flex-wrap gap-1 mb-2">
-                      {(expandedChips.has(key) ? monthChips : monthChips.slice(0, CHIPS)).map(({ num, term }) => {
+                      {(expandedChips.has(key) ? monthChips : monthChips.slice(0, CHIPS)).map(({ num, term, sourceKind }) => {
                         // Clicking a month bar should point AT the posts from that month,
                         // not just shorten the list — ring the ones that belong to it and
                         // fade the rest so the answer is visible inside each row.
                         const inMonth = monthPostNums?.has(num) ?? null
                         const pulsing = hoverPostNums?.has(num) ?? false
+                        // A SOURCE CHIP SAYS WHAT THE LINK WAS. "Publisher link", "Social account" or
+                        // the generic "Linked source" where one drop carries both — never a mention.
+                        const srcLabel = sourceKind ? getEntityPublicView()?.kindLabels?.[sourceKind] ?? 'Linked source' : null
                         return (
                           <Link
                             key={num}
-                            to={`/post/${num}?flash=1&highlight=${encodeURIComponent(term)}&cat=${item.category}`}
+                            to={`/post/${num}?flash=1${sourceKind ? '' : `&highlight=${encodeURIComponent(term)}&cat=${item.category}`}`}
                             title={
-                              inMonth
-                                ? `in ${formatMonth(selectedMonth!)}`
-                                : term !== item.text ? `mentions "${term}"` : undefined
+                              srcLabel
+                                ? `${srcLabel} — #${num} linked this source. It is not necessarily named in Q’s prose.`
+                                : inMonth
+                                  ? `in ${formatMonth(selectedMonth!)}`
+                                  : term !== item.text ? `mentions "${term}"` : undefined
                             }
-                            className={`text-xs px-2 py-0.5 border rounded font-mono transition-all ${termColor.get(term.toLowerCase()) ?? CANON_CHIP} ${
+                            className={`text-xs px-2 py-0.5 border rounded font-mono transition-all ${
+                              sourceKind
+                                ? 'bg-sky-950/70 text-sky-200 border-sky-800/70 hover:border-sky-500'
+                                : termColor.get(term.toLowerCase()) ?? CANON_CHIP
+                            } ${
                               inMonth ? 'ring-2 ring-white/70 font-bold' : ''
                             } ${item.repeats[num] > 1 ? 'border-amber-500/70' : ''} ${
                               pulsing || (inMonth && flashMonth) ? 'animate-chip-pulse font-bold z-10 relative' : ''
                             }`}
                           >
                             #{num}
+                            {srcLabel && <span className="ml-1 text-sky-400/90 text-[10px]">{srcLabel}</span>}
                             {item.repeats[num] > 1 && (
                               <span className="ml-1 text-amber-300 font-bold">×{item.repeats[num]}</span>
                             )}

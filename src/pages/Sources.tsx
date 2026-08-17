@@ -9,13 +9,17 @@
 // turned out to be a URL fragment has nothing to show in Entities — a page reading "0 mentions"
 // is not a smaller version of an entity page, it is a broken one. It has plenty to show here.
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import SectionInfo from '../components/SectionInfo'
 import { useLinkedSources, allSources, allAccounts, accountLabel, sourceOnlyDescription } from '../lib/linkedSources'
 
 export default function Sources() {
   const all = useLinkedSources()
-  const [search, setSearch] = useState('')
+  // ?q= lets a source-only Entity row hand its name straight to this page. Every one of those rows
+  // links here, and landing on an unfiltered list of 99 publishers and 84 accounts is not an answer
+  // to "where did this one come from?".
+  const [searchParams] = useSearchParams()
+  const [search, setSearch] = useState(() => searchParams.get('q') ?? '')
   const publishers = allSources(all)
   const accounts = allAccounts(all)
   const rows = [
@@ -23,9 +27,16 @@ export default function Sources() {
     ...accounts.map(a => ({ key: `${a.platform}/${a.handle}`, kind: 'social_account' as const, label: accountLabel(a), ...a })),
   ]
 
+  // Punctuation-insensitive, because the names arriving from Entities carry the registry's spelling
+  // and the records carry the publisher's: "CBS_Herridge" has to find "CBS Herridge", and
+  // "USA Today" has to find "usatoday.com".
+  const loose = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '')
   const q = search.trim().toLowerCase()
+  const qLoose = loose(q)
   const filtered = q
-    ? rows.filter(r => r.key.toLowerCase().includes(q) || r.label.toLowerCase().includes(q) || r.displayName.toLowerCase().includes(q))
+    ? rows.filter(r =>
+      r.key.toLowerCase().includes(q) || r.label.toLowerCase().includes(q) || r.displayName.toLowerCase().includes(q)
+      || (qLoose.length > 2 && (loose(r.key).includes(qLoose) || loose(r.displayName).includes(qLoose))))
     : rows
 
   const bound = rows.filter(r => r.entityId).length

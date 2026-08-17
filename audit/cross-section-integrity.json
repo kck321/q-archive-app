@@ -207,8 +207,8 @@
   }
  ],
  "totals": {
-  "invariants": 206,
-  "passed": 206,
+  "invariants": 223,
+  "passed": 223,
   "failed": 0
  },
  "results": [
@@ -1317,6 +1317,125 @@
    "description": "the same inputs still produce the same audit, byte for byte",
    "pass": true,
    "detail": "identical"
+  },
+  {
+   "group": "10d. Public entity list reconciliation",
+   "id": "entity-view-published",
+   "description": "entity-public-view.json ships",
+   "pass": true,
+   "detail": "present"
+  },
+  {
+   "group": "10d. Public entity list reconciliation",
+   "id": "entity-total-1201",
+   "description": "public canonical identities = 1,201",
+   "pass": true,
+   "detail": "view 1201 / registry 1201"
+  },
+  {
+   "group": "10d. Public entity list reconciliation",
+   "id": "entity-mentions-8798",
+   "description": "certified prose mentions = 8,798",
+   "pass": true,
+   "detail": "view 8798 / registry sum 8798"
+  },
+  {
+   "group": "10d. Public entity list reconciliation",
+   "id": "entity-breakdown-adds",
+   "description": "displayed breakdown adds exactly to the canonical total",
+   "pass": true,
+   "detail": "1066 named in Q’s prose + 135 linked as a source only = 1201"
+  },
+  {
+   "group": "10d. Public entity list reconciliation",
+   "id": "entity-components-disjoint",
+   "description": "prose and source-only components share no identity",
+   "pass": true,
+   "detail": "1066 + 135, overlap 0"
+  },
+  {
+   "group": "10d. Public entity list reconciliation",
+   "id": "entity-source-only-135",
+   "description": "the 135 source-only identities are a labelled component",
+   "pass": true,
+   "detail": "135 rows / registry 135"
+  },
+  {
+   "group": "10d. Public entity list reconciliation",
+   "id": "entity-row-traceability",
+   "description": "every public row has a certified prose post or a linked-source post",
+   "pass": true,
+   "detail": "all 1,201"
+  },
+  {
+   "group": "10d. Public entity list reconciliation",
+   "id": "entity-source-row-has-record",
+   "description": "every source-only row has at least one source record",
+   "pass": true,
+   "detail": "135/135"
+  },
+  {
+   "group": "10d. Public entity list reconciliation",
+   "id": "entity-source-chip-backed",
+   "description": "every source post chip is backed by a linked-source record",
+   "pass": true,
+   "detail": "347 bound pairs"
+  },
+  {
+   "group": "10d. Public entity list reconciliation",
+   "id": "entity-source-not-a-mention",
+   "description": "no source-only identity carries a prose mention",
+   "pass": true,
+   "detail": "0 violations"
+  },
+  {
+   "group": "10d. Public entity list reconciliation",
+   "id": "entity-dormant-excluded",
+   "description": "the 208 dormant identities are reserved and never public",
+   "pass": true,
+   "detail": "208 reserved, 0 leaked"
+  },
+  {
+   "group": "10d. Public entity list reconciliation",
+   "id": "entity-no-alias-duplicate-row",
+   "description": "no alias is published as its own row beside its canonical",
+   "pass": true,
+   "detail": "none"
+  },
+  {
+   "group": "10d. Public entity list reconciliation",
+   "id": "entity-no-shared-alias-leak",
+   "description": "no occurrence is claimed by two identities",
+   "pass": true,
+   "detail": "9688 occurrences, 0 double-claimed"
+  },
+  {
+   "group": "10d. Public entity list reconciliation",
+   "id": "entity-repeats-own-posts-only",
+   "description": "per-post mention counts stay inside the identity that earned them",
+   "pass": true,
+   "detail": "clean"
+  },
+  {
+   "group": "10d. Public entity list reconciliation",
+   "id": "entity-rows-reconcile",
+   "description": "row count and identity count reconcile through the merge model",
+   "pass": true,
+   "detail": "1183 rows / 1201 identities / 33 in 15 merged rows"
+  },
+  {
+   "group": "10d. Public entity list reconciliation",
+   "id": "entity-merged-label-most-posts",
+   "description": "a merged row is named by the identity with the most posts",
+   "pass": true,
+   "detail": "15 merged rows"
+  },
+  {
+   "group": "10d. Public entity list reconciliation",
+   "id": "entity-merged-single-component",
+   "description": "no merged row mixes prose and source-only identities",
+   "pass": true,
+   "detail": "15 merged rows checked"
   },
   {
    "group": "11. Frozen-section mutation",
