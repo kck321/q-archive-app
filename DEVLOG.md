@@ -5076,3 +5076,27 @@ higher, so the old command keeps working instead of being refused by the new rul
 **Files:** `scripts/lib/pipeline.mjs` (new) · `scripts/validate.mjs`, `scripts/verify-live.mjs`,
 `scripts/verify-final.mjs`, `scripts/preflight-deploy.mjs`, `scripts/write-build-info.mjs`,
 `scripts/deploy-web.sh`, `.gitignore`, `PROJECT_CONTEXT.md`
+
+### The first deploy through this pipeline found a bug in it — `"tree": null`
+
+Cycle 1 shipped commit `91ba2fe` and the stamp read `"tree": null`. `write-build-info.mjs` still used
+`execSync` with a command STRING, which on Windows goes through cmd.exe — where `^` is the escape
+character. `git rev-parse HEAD^{tree}` reached git as `HEAD^{tree}` minus the caret:
+
+    fatal: ambiguous argument 'HEAD{tree}': unknown revision or path not in the working tree
+
+The `catch` turned that into `null` and the deploy carried on. It is the same failure the shell
+removal was about, still sitting in the one file whose git commands had never contained a
+metacharacter before — and `verify-live.mjs` caught it from production on the first run:
+
+    FAIL  deployed-tree   production names the tree of the bytes that were built
+          ↳ expected null, live null
+
+Every other live check passed: commit, seed, manifest hash, clean commit, both hashed assets, the
+service worker byte-identical with this deploy's `CACHE_VERSION`, all 20 data artifacts, a fresh
+visitor and a returning one.
+
+Fixed with `execFileSync` and an argument array, so no shell parses them — and a tree that cannot be
+read is now **fatal** rather than a null field: a stamp without it cannot say which bytes are live,
+which is the file's only job. That change is itself a pipeline script, so the floor rule put it back
+at `full`, which is the rule working rather than an inconvenience.

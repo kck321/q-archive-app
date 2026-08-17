@@ -28,7 +28,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import crypto from 'node:crypto'
-import { execSync } from 'node:child_process'
+import { execFileSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 import { builtSeedVersion } from './lib/browser.mjs'
 
@@ -36,12 +36,22 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DIST = path.join(ROOT, 'dist')
 if (!fs.existsSync(DIST)) { console.error('dist/ does not exist — build first.'); process.exit(1) }
 
-const sh = c => { try { return execSync(c, { cwd: ROOT, encoding: 'utf8' }).trim() } catch { return null } }
+// execFileSync, not execSync — no shell parses these arguments.
+//
+// The first deploy through this file stamped `"tree": null`. `execSync` runs the string through
+// cmd.exe on Windows, where `^` is the ESCAPE character, so `git rev-parse HEAD^{tree}` reached git
+// as `HEAD{tree}` and failed. The catch turned that into null and the deploy carried on — the exact
+// shape of failure the no-shell work elsewhere in this pipeline was for, still living in this file
+// because these commands had never contained a metacharacter before.
+const git = (...args) => {
+  try { return execFileSync('git', args, { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trimEnd() }
+  catch { return null }
+}
 
 // ── THE WORKING TREE MUST BE CLEAN ────────────────────────────────────────────────────────────
 // No ALLOW_DIRTY here, deliberately. An override would let the one file whose purpose is to be
 // trustworthy be written by the one path where it cannot be.
-const dirty = (sh('git status --porcelain') ?? '').split('\n').filter(Boolean)
+const dirty = (git('status', '--porcelain') ?? '').split('\n').filter(Boolean)
 if (dirty.length) {
   console.error(`\n  REFUSED — cannot stamp a build from a working tree with ${dirty.length} uncommitted change(s).`)
   for (const d of dirty.slice(0, 10)) console.error(`      ${d}`)
@@ -68,15 +78,25 @@ const swVersion = fs.existsSync(swPath)
 const indexHtml = fs.readFileSync(path.join(DIST, 'index.html'), 'utf8')
 const assets = [...indexHtml.matchAll(/(?:src|href)="([^"]*\/assets\/[^"]+)"/g)].map(m => m[1]).sort()
 
+// The id of the exact bytes, and the one value that ties "validated" to "committed" to "served".
+// A stamp without it is a stamp that cannot do its job, so a failure to read it is fatal rather
+// than a null field nobody notices until production disagrees.
+const tree = git('rev-parse', 'HEAD^{tree}')
+if (!tree || !/^[0-9a-f]{40}$/.test(tree)) {
+  console.error(`\n  REFUSED — could not read the tree of HEAD (got ${JSON.stringify(tree)}).`)
+  console.error(`  build-info.json without it cannot say which bytes are live.\n`)
+  process.exit(1)
+}
+
 const info = {
   builtAt: new Date().toISOString(),
-  commit: sh('git rev-parse HEAD'),
-  commitShort: sh('git rev-parse --short HEAD'),
-  branch: sh('git rev-parse --abbrev-ref HEAD'),
-  // The id of the exact bytes this bundle was built from. The commit says WHICH commit; the tree
-  // says WHAT WAS IN IT, and it is the value scripts/lib/pipeline.mjs computes for the working copy
-  // at validation time — so "validated", "committed" and "deployed" are one comparable value.
-  tree: sh('git rev-parse HEAD^{tree}'),
+  commit: git('rev-parse', 'HEAD'),
+  commitShort: git('rev-parse', '--short', 'HEAD'),
+  branch: git('rev-parse', '--abbrev-ref', 'HEAD'),
+  // The commit says WHICH commit; the tree says WHAT WAS IN IT, and it is the value
+  // scripts/lib/pipeline.mjs computes for the working copy at validation time — so "validated",
+  // "committed" and "deployed" are one comparable value.
+  tree,
   // Always false now: the check above is the only way to reach this line. Kept because
   // verify-live.mjs asserts on it, and an assertion that can never fire is still the assertion
   // that would fire if this guard were ever removed.
