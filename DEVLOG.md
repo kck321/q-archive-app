@@ -4740,3 +4740,100 @@ breath. Merged back in across every spelling.
 **Gates.** tsc · 206/206 invariants · manifest · 14/14 context+emphasis · 122/122 multi-word ·
 term-info 90/90 · 43/43 category-ordering · 54 + 34 + 23 pure cases · verify-final fresh and
 returning green.
+
+---
+
+## 2026-08-17 — The Entity list reconciles, and the month charts stop reaching into it
+
+Two bounded objectives from the current deployed baseline (seed 78, commit `4fbf640`, 1,201 entity
+records, 8,798 mentions). Committed separately.
+
+### Objective 1 — reconcile the Entity list and totals (`b7bed6b`)
+
+**Four numbers, one page, nothing reconciling them.** The header printed 856 and 879; the list
+rendered 1,062 rows; the registry held 1,201. Measured, they are three different populations:
+
+    879    distinct normalised STRINGS in the browser's frequency index, after the alias fold
+    856    those, less the 23 the verbatim filter emptied to zero posts (387 repeated + 469 once)
+  1,062    rows the list rendered — the registry, minus the 135 with no prose mention
+  1,201    the certified registry
+
+879 and 856 are properties of `postAnalysis.namedEntities` grouped by TEXT, where "Bill Clinton" and
+"BC" are two rows and one identity. The header was describing spellings above a list of identities.
+
+**The reconciled model**, in `public/data/entity-public-view.json` and rendered from it:
+
+    1,201 total canonical entities   ·   8,798 certified prose mentions within 2,090 posts
+    1,066 named in Q's prose · 135 linked as a source only = 1,201
+    shown as 1,183 rows (33 alias-connected identities share 15 of them)
+    208 dormant identities are reserved and not listed
+
+**The 135 get rows.** `if (!e.posts.length) continue` had skipped every identity with no prose
+mention. They ship carrying the drops that LINKED them — chips labelled **Publisher link** or
+**Social account**, a `source only` badge, `×N source posts` rather than `×N posts`, `occurrences`
+of 0, a line saying the source is linked by the post and not necessarily named in Q's prose, and a
+link into Sources (`/sources?q=` now filters, punctuation-insensitively, so `CBS_Herridge` finds
+`CBS Herridge`).
+
+**The row rule (owner ruling).** Identities connected by an alias stay together, named by the one
+with the most posts, aliases behind it most-to-least posts. Applied to all entities it also caught
+14 pairs where one identity's whole canonical is another's registered alias — `Strzok` published
+beside `Peter Strzok`, `Page` beside `Lisa Page`, `Wray` beside `Christopher Wray`. Union-find, so
+chains resolve: `The Washington Post → Washington Post → WASH POST` is one row.
+
+**Connected is not "shares a spelling."** Merging on shared alias strings was measured and collapses
+1,066 identities into 1,006 rows: Barack Obama + Bruce Ohr + Board Owner (all "BO"), CIA + ABC News +
+Alphabet ("ABC"), Chuck Schumer + CrowdStrike + Christopher Steele ("CS"). 46 spellings are shared
+that way; none merges anything.
+
+**A repeat-badge leak, found and fixed.** The amber `×2` came from a Map keyed by POST NUMBER ALONE,
+filled from every entity in the frequency index in turn — last writer won. 443 drops hold entities
+with differing in-post counts; #1009 carries "AZ" twice and "Russia" once and Russia's chip claimed
+×2. Now per identity, from the certified occurrence ledger, clipped to the registry's own post set,
+with the 61 unsettled shared-alias attributions earning no badge at all rather than a guessed one.
+
+**The verbatim filter was investigated and left alone.** It empties frequency-index rows whose
+spelling is absent from visible prose — right for Claims and Emphasis, where a chip that highlights
+nothing reads as a broken app. It never touched entity membership; it only fed the header that was
+describing the wrong population. No source-only relationship was ever discarded by it.
+
+**Two stale gates fixed rather than worked around.** `verify-section-headlines.mjs` carried hardcoded
+expectations gone stale for five of seven sections and reported five failures on every run; it now
+parses `SECTION_TOTALS`. `test-category-order.mjs` read `×9 source posts` as `null`.
+
+**13 new invariants** (group 10d, 223/223 total) and `scripts/test-entity-reconciliation.mjs`, which
+reads the real DOM: the header carries every figure and no longer prints the string tally, the list
+publishes exactly 1,183 rows, and all 1,183 carry a post chip.
+
+### Objective 2 — month-chart behaviour (`ec1db2f`)
+
+**Hover was reaching into the results.** `hoverMonth` pulsed every chip of the month under the
+cursor — hundreds of animated nodes, restarted on every mousemove. Clicking flashed the same chips
+white for five seconds, and the Archive dimmed out-of-month chips to 30% opacity and left them on
+screen: "filtered to March" showed February's drops greyed out rather than March's alone. On touch,
+the hover fired on the tap meant to select.
+
+**The filter was mouse-only.** A recharts bar is an SVG rect — no focus, no Enter. `MonthYearTick`
+draws a tick only at year starts and Delta months, so ~50 of the 60 months had nothing to aim at.
+
+Now: hover reads out (month + counts), click selects, and `MonthPicker` is a radiogroup of real
+buttons grouped by year — Tab reaches the group, arrows walk months in time order, Home/End jump.
+Enter and Space are deliberately unhandled so the button's native behaviour IS the click path. An
+`aria-live` region announces the month and result count.
+
+Shared: `src/lib/monthFilter.ts` (state, the recharts double-click guard) and
+`src/components/MonthFilter.tsx` (tooltip, picker, banner). PostArchive's own `ChartTooltip` deleted.
+
+`scripts/test-month-chart-behaviour.mjs` — 7 Analysis categories + the Archive, desktop and phone,
+real pointer and key events: **192/192**. Pointed at the deployed site it fails exactly where it
+should ("0 month buttons", "hover animated 4 elements"), which is the only evidence a passing run
+means anything.
+
+### Gates
+
+tsc · eslint (3 pre-existing errors, one fewer than before) · full apply chain run TWICE,
+`public/data` byte-identical both times · 223/223 invariants · manifest verified · seed stays **78**
+(no seeded artifact changed) · 7/7 headlines · category ordering · alias visibility on both surfaces ·
+entity reconciliation 14/14 · month behaviour 192/192 · `verify-final.mjs` fresh + returning green.
+
+Both new gates are now steps of `verify-final.mjs`, local and live (`3385927`).
