@@ -21,6 +21,8 @@ import {
   Tooltip, CartesianGrid, Legend, Cell, LabelList,
 } from 'recharts'
 import { MonthYearTick, yearStartsOf } from '../lib/chartAxis'
+import { MonthTooltip, MonthPicker, MonthFilterBar } from '../components/MonthFilter'
+import { useMonthFilter, formatMonth } from '../lib/monthFilter'
 import ScrollableChart from '../components/ScrollableChart'
 import TermPresenceBar from '../components/TermPresenceBar'
 import { catColor } from '../lib/categoryColors'
@@ -128,13 +130,6 @@ export default function AnalysisArchive() {
   const [aliasTick, setAliasTick] = useState(0)
   const [timeline, setTimeline] = useState<TimelineEntry[]>([])
   const [postNumsByMonth, setPostNumsByMonth] = useState<Record<string, number[]>>({})
-  const [selectedMonth, setSelectedMonth] = useState<string | null>(null)
-  // Month currently under the cursor on the timeline — drives the chip pulse below.
-  const [hoverMonth, setHoverMonth] = useState<string | null>(null)
-  // Clicking a month flashes that month's chips white for a few seconds, then settles to a
-  // static ring. A ring alone is easy to miss inside a wall of several hundred chips; an
-  // endless pulse is noise. The flash draws the eye, the ring keeps the answer.
-  const [flashMonth, setFlashMonth] = useState(false)
   // How many rows are rendered. Implied Conclusions alone is 9,010 rows / ~9,000 chips in a
   // single pass — every one a DOM node with handlers, which is what makes the heavy tabs
   // slow. Rendering a page at a time cuts that by ~98% without hiding anything.
@@ -156,31 +151,24 @@ export default function AnalysisArchive() {
   const [readLoading, setReadLoading] = useState(false)
   const [readLimit, setReadLimit] = useState(READ_PAGE)
   const [readQuestions, setReadQuestions] = useState<Record<string, string[]>>({})
-  useEffect(() => {
-    if (!selectedMonth) { setFlashMonth(false); return }
-    setFlashMonth(true)
-    const t = setTimeout(() => setFlashMonth(false), 5000)
-    return () => clearTimeout(t)
-  }, [selectedMonth])
   const breakdownRef = useRef<HTMLDivElement | null>(null)
   const listRef = useRef<HTMLDivElement | null>(null)
-  // Month selection lives here so the chart AND the individual bars can both trigger it.
-  // Chart-level `activePayload` is not reliable across recharts versions; a click handler
-  // on the Bar itself receives the data entry directly, which is why both are wired.
-  // Recharts delivers a single click to BOTH the chart-level handler and the bar it landed
-  // on. With toggle semantics that meant on-then-off in the same click, so nothing appeared
-  // to happen until an odd number of extra clicks lined up. Ignore a repeat of the same
-  // month inside one interaction.
-  const lastMonthClick = useRef<{ month: string; at: number }>({ month: '', at: 0 })
-  const selectMonth = (m?: string | null) => {
-    if (!m) return
-    const now = performance.now()
-    if (lastMonthClick.current.month === m && now - lastMonthClick.current.at < 350) return
-    lastMonthClick.current = { month: m, at: now }
-    const next = selectedMonth === m ? null : m
-    setSelectedMonth(next)
-    if (next) setTimeout(() => listRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80)
-  }
+
+  // ── The month filter, shared with the Post Archive ────────────────────────
+  //
+  // Selection, the double-delivery guard and the post set all come from useMonthFilter, and there is
+  // no hover state left on this page. The old `hoverMonth` and `flashMonth` existed only to pulse
+  // chips in the list below — an animation fired from a mousemove over the chart, on every chip
+  // belonging to the month under the cursor. Hovering now reads out and does nothing else.
+  const [search, setSearch] = useState(() => searchParams.get('q') ?? '')
+  const { selectedMonth, selectMonth, clearMonth, monthPostNums } = useMonthFilter(postNumsByMonth, {
+    // A new search starts unfiltered: leaving the previous term's month selected opened the next
+    // search already filtered to a month picked for something else.
+    resetKey: search,
+    onSelect: next => {
+      if (next) setTimeout(() => listRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80)
+    },
+  })
 
   // NOTE: no auto-scroll here. The bar-click handler scrolls to the results list, and a
   // second smooth scroll to the breakdown panel fought it — whichever landed last won,
@@ -200,11 +188,6 @@ export default function AnalysisArchive() {
     const q = searchParams.get('q')
     if (q !== null) setSearch(q)
   }, [searchParams])
-  const [search, setSearch] = useState(() => searchParams.get('q') ?? '')
-  // A new search starts clean. Leaving the previous term's month selected meant the next
-  // search opened already filtered to a month you picked for something else — results
-  // silently missing with no visible cause.
-  useEffect(() => { setSelectedMonth(null); setHoverMonth(null) }, [search])
   useEffect(() => { setVisibleCount(PAGE) }, [search, activeTab, selectedMonth])
   const [overlaps, setOverlaps] = useState<OverlapItem[]>([])
   const [overlapsLoading, setOverlapsLoading] = useState(false)
@@ -376,18 +359,6 @@ export default function AnalysisArchive() {
       setDeletingKey(null)
     }
   }
-
-  const monthPostNums: Set<number> | null = useMemo(
-    () => (selectedMonth ? new Set(postNumsByMonth[selectedMonth] ?? []) : null),
-    [selectedMonth, postNumsByMonth],
-  )
-
-  // Posts in the hovered month — chips in this set pulse so you can spot them inside a
-  // list of hundreds of post numbers without clicking anything.
-  const hoverPostNums: Set<number> | null = useMemo(
-    () => (hoverMonth ? new Set(postNumsByMonth[hoverMonth] ?? []) : null),
-    [hoverMonth, postNumsByMonth],
-  )
 
   /**
    * ONE FINAL POST SET PER ROW — the number in the badge, the chips, the reader and the SORT KEY.
@@ -788,11 +759,6 @@ export default function AnalysisArchive() {
     setReadingKey(only)
   }, [search, filtered])
 
-  function formatMonth(m: string) {
-    const [y, mo] = m.split('-')
-    return new Date(Number(y), Number(mo) - 1).toLocaleString('default', { month: 'long', year: 'numeric' })
-  }
-
   const filteredOverlaps = useMemo(() => overlaps.filter(o => {
     if (confirmedMap.has(overlapConfirmKey(o.postNum, o.text))) return false
     if (search && !normalizeItemKey(o.text).includes(normalizeItemKey(search))) return false
@@ -1052,11 +1018,10 @@ export default function AnalysisArchive() {
               <BarChart
                 data={chartData}
                 margin={{ top: searchMatchMonths ? 22 : 4, right: 8, left: -16, bottom: 0 }}
-                onMouseMove={(st: { activeLabel?: string | number }) => {
-                  const m = st?.activeLabel
-                  setHoverMonth(typeof m === 'string' ? m : null)
-                }}
-                onMouseLeave={() => setHoverMonth(null)}
+                // NO onMouseMove / onMouseLeave. They tracked the hovered month purely so the chips
+                // in the list below could pulse — hundreds of animated DOM nodes restarted on every
+                // mousemove across the chart, while the reader was trying to read that list. Hover
+                // is the tooltip, and the tooltip is a readout.
                 onClick={d => selectMonth(
                   (d as { activeLabel?: string; activePayload?: { payload?: { month?: string } }[] } | undefined)
                     ?.activePayload?.[0]?.payload?.month
@@ -1071,23 +1036,15 @@ export default function AnalysisArchive() {
                 {searchMatchMonths && (
                   <YAxis yAxisId="matches" orientation="right" hide domain={[0, matchAxisMax(searchMatchMax)]} />
                 )}
-                <Tooltip position={{ y: 0 }} content={({ active, payload, label: lbl }) => {
-                  if (!active || !payload || !lbl) return null
-                  return (
-                    <div style={{ background: '#1a1a1a', border: '1px solid #333', borderRadius: 8, padding: '8px 12px', fontSize: 12 }}>
-                      <p style={{ color: '#e5e7eb', marginBottom: 6, fontWeight: 600 }}>{formatMonth(String(lbl))}</p>
-                      {payload.map((item, i) => {
-                        const col = item.name === 'Q Posts' ? '#9ca3af' : cfg.color
-                        return (
-                          <p key={i} style={{ margin: '2px 0' }}>
-                            <span style={{ color: col }}>● {item.name}: </span>
-                            <span style={{ color: '#e5e7eb', fontWeight: 600 }}>{item.value}</span>
-                          </p>
-                        )
-                      })}
-                    </div>
-                  )
-                }} />
+                {/* One tooltip component, shared with the Post Archive: the month and its counts. */}
+                <Tooltip position={{ y: 0 }} content={props => (
+                  <MonthTooltip
+                    active={props.active}
+                    payload={(props.payload ?? []) as { name: string; value: number }[]}
+                    label={props.label as string | undefined}
+                    colorOf={name => (name === 'Q Posts' ? '#9ca3af' : cfg.color)}
+                  />
+                )} />
                 <Legend content={() => (
                   <div style={{ display: 'flex', gap: 16, justifyContent: 'center', fontSize: 11, paddingTop: 4 }}>
                     {[{ name: 'Q Posts', color: '#9ca3af' }, searchMatchMonths ? { name: `"${search}" matches`, color: gradientColor(searchMatchMax, searchMatchMax) } : { name: label, color: cfg.color }].map(item => (
@@ -1132,9 +1089,20 @@ export default function AnalysisArchive() {
                 )}
               </BarChart>
             </ResponsiveContainer></ScrollableChart>
+            {/* THE KEYBOARD AND TOUCH PATH. A recharts bar is an SVG rect: it cannot take focus and
+                Enter does nothing to it, so the filter was mouse-only. These are real buttons, so
+                Enter and Space are the same action as a click by construction. */}
+            <MonthPicker
+              months={chartData.map(e => e.month)}
+              counts={Object.fromEntries(chartData.map(e => [e.month, (e as Record<string, unknown>)[cfg.dataKey] as number ?? 0]))}
+              selectedMonth={selectedMonth}
+              onSelect={selectMonth}
+              label={label.toLowerCase()}
+              accent={cfg.color}
+            />
             {selectedMonth && (
-              <button onClick={() => setSelectedMonth(null)}
-                className="mt-2 text-xs text-gray-400 hover:text-white bg-gray-800 border border-gray-700 px-3 py-1 rounded-lg transition-colors">
+              <button onClick={clearMonth}
+                className="mt-2 text-xs text-gray-400 hover:text-white bg-gray-800 border border-gray-700 px-3 py-1 rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
                 ✕ Clear month filter
               </button>
             )}
@@ -1142,25 +1110,17 @@ export default function AnalysisArchive() {
         )
       })()}
 
-      {/* Month breakdown — items recorded that month, ranked by repeat count */}
-      {/* Selected-month banner — unambiguous feedback that the bar click landed, and how
-          many chips below are lit. Without it, "did my click do anything?" is unanswerable. */}
-      {selectedMonth && (
-        <div ref={listRef} className="scroll-mt-24 flex items-center gap-3 flex-wrap bg-white/5 border border-white/20 rounded-xl px-4 py-2.5">
-          <span className="text-sm text-white font-semibold">{formatMonth(selectedMonth)}</span>
-          <span className="text-xs text-gray-400">
-            {filtered.length.toLocaleString()} item{filtered.length !== 1 ? 's' : ''} ·{' '}
-            {(monthPostNums?.size ?? 0).toLocaleString()} posts that month — their chips are
-            flashing white below
-          </span>
-          <button
-            onClick={() => setSelectedMonth(null)}
-            className="ml-auto text-xs text-gray-300 hover:text-white bg-gray-800 border border-gray-600 px-3 py-1 rounded-lg transition-colors"
-          >
-            ✕ Clear month
-          </button>
-        </div>
-      )}
+      {/* The active month, and the announcement that goes with it. Shared with the Post Archive so
+          the two cannot describe the same interaction differently. */}
+      <MonthFilterBar
+        month={selectedMonth}
+        resultCount={filtered.length}
+        resultNoun={activeTab === 'all' || activeTab === 'overlaps'
+          ? 'items'
+          : CAT_LABELS[activeTab as AnalysisCategoryFreq['category']].toLowerCase()}
+        onClear={clearMonth}
+        panelRef={listRef}
+      />
 
       {selectedMonth && monthPostNums && !search.trim() && activeTab !== 'all' && activeTab !== 'overlaps' && (() => {
         const cat = activeTab as AnalysisCategoryFreq['category']
@@ -1175,7 +1135,7 @@ export default function AnalysisArchive() {
               accent={ACCENT_BY_CAT[cat]}
               monthPostNums={monthPostNums}
               items={items.filter(i => i.category === cat)}
-              onClose={() => setSelectedMonth(null)}
+              onClose={clearMonth}
               postLinkParams={item => `highlight=${encodeURIComponent(item.text)}&cat=${cat}`}
             />
           </div>
@@ -1213,7 +1173,7 @@ export default function AnalysisArchive() {
         selectedMonth && !search.trim() ? (
         <p className="text-xs text-gray-500">
           Showing <span className="text-gray-300 font-medium">{formatMonth(selectedMonth)}</span> only.{' '}
-          <button onClick={() => setSelectedMonth(null)} className="text-blue-400 hover:text-blue-300 hover:underline">
+          <button onClick={clearMonth} className="text-blue-400 hover:text-blue-300 hover:underline">
             Clear the month
           </button>{' '}
           to browse the whole archive.
@@ -1387,11 +1347,13 @@ export default function AnalysisArchive() {
                     )}
                     <div className="flex flex-wrap gap-1 mb-2">
                       {(expandedChips.has(key) ? monthChips : monthChips.slice(0, CHIPS)).map(({ num, term, sourceKind }) => {
-                        // Clicking a month bar should point AT the posts from that month,
-                        // not just shorten the list — ring the ones that belong to it and
-                        // fade the rest so the answer is visible inside each row.
-                        const inMonth = monthPostNums?.has(num) ?? null
-                        const pulsing = hoverPostNums?.has(num) ?? false
+                        // NO MONTH DECORATION ON THE CHIP.
+                        //
+                        // `monthChips` is already filtered to the selected month, so every chip here
+                        // IS in that month — the ring marked all of them and distinguished nothing,
+                        // and the flash animated the whole row for five seconds to say so. The
+                        // selected month is stated once, above the list, where it can be read.
+                        //
                         // A SOURCE CHIP SAYS WHAT THE LINK WAS. "Publisher link", "Social account" or
                         // the generic "Linked source" where one drop carries both — never a mention.
                         const srcLabel = sourceKind ? getEntityPublicView()?.kindLabels?.[sourceKind] ?? 'Linked source' : null
@@ -1402,19 +1364,13 @@ export default function AnalysisArchive() {
                             title={
                               srcLabel
                                 ? `${srcLabel} — #${num} linked this source. It is not necessarily named in Q’s prose.`
-                                : inMonth
-                                  ? `in ${formatMonth(selectedMonth!)}`
-                                  : term !== item.text ? `mentions "${term}"` : undefined
+                                : term !== item.text ? `mentions "${term}"` : undefined
                             }
-                            className={`text-xs px-2 py-0.5 border rounded font-mono transition-all ${
+                            className={`text-xs px-2 py-0.5 border rounded font-mono transition-colors ${
                               sourceKind
                                 ? 'bg-sky-950/70 text-sky-200 border-sky-800/70 hover:border-sky-500'
                                 : termColor.get(term.toLowerCase()) ?? CANON_CHIP
-                            } ${
-                              inMonth ? 'ring-2 ring-white/70 font-bold' : ''
-                            } ${item.repeats[num] > 1 ? 'border-amber-500/70' : ''} ${
-                              pulsing || (inMonth && flashMonth) ? 'animate-chip-pulse font-bold z-10 relative' : ''
-                            }`}
+                            } ${item.repeats[num] > 1 ? 'border-amber-500/70' : ''}`}
                           >
                             #{num}
                             {srcLabel && <span className="ml-1 text-sky-400/90 text-[10px]">{srcLabel}</span>}

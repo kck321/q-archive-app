@@ -10,6 +10,8 @@ import {
   Tooltip, CartesianGrid, Cell, LabelList,
 } from 'recharts'
 import { MonthYearTick, yearStartsOf } from '../lib/chartAxis'
+import { MonthTooltip, MonthPicker, MonthFilterBar } from '../components/MonthFilter'
+import { useMonthFilter, formatMonth } from '../lib/monthFilter'
 import ScrollableChart from '../components/ScrollableChart'
 import TermPresenceBar from '../components/TermPresenceBar'
 import { matchAxisMax, MatchCountLabel, NO_MATCH_GREY } from '../lib/chartSearch'
@@ -74,61 +76,9 @@ function MonthPostsPanel({ month, posts, loading, onClose }: {
   )
 }
 
-function ChartTooltip({ active, payload, label, keyword, matchCounts, matchMax, pinned }: {
-  active?: boolean
-  payload?: Array<{ name: string; value: number }>
-  label?: string
-  keyword?: string | null
-  matchCounts?: Map<string, number> | null
-  matchMax?: number
-  /** Pinned to a corner on narrow screens, so it is not beside the bar it describes. */
-  pinned?: boolean
-}) {
-  if (!active || !payload || !label) return null
-  const [y, mo] = label.split('-')
-  const monthLabel = new Date(Number(y), Number(mo) - 1).toLocaleString('default', { month: 'long', year: 'numeric' })
-  const keyCount = matchCounts?.get(label) ?? 0
-  return (
-    <div style={{
-      position: 'relative',
-      background: 'rgba(22,22,28,0.97)',
-      border: '1px solid #3a3a46',
-      borderRadius: 16,
-      padding: '13px 17px',
-      fontSize: 12,
-      minWidth: 172,
-      boxShadow: '0 12px 34px rgba(0,0,0,0.6), 0 2px 8px rgba(0,0,0,0.4)',
-      backdropFilter: 'blur(3px)',
-    }}>
-      {/* Balloon tail pointing back toward the selected bar — dropped when pinned, since
-          then it points at nothing. */}
-      {!pinned && <>
-        <span style={{ position: 'absolute', left: -9, top: 22, width: 0, height: 0, borderTop: '9px solid transparent', borderBottom: '9px solid transparent', borderRight: '9px solid #3a3a46' }} />
-        <span style={{ position: 'absolute', left: -7, top: 22, width: 0, height: 0, borderTop: '9px solid transparent', borderBottom: '9px solid transparent', borderRight: '9px solid rgba(22,22,28,0.97)' }} />
-      </>}
-      <p style={{ color: '#f3f4f6', marginBottom: 8, fontWeight: 700, fontSize: 13 }}>{monthLabel}</p>
-      {payload.map((item, i) => {
-        // Tint each row to match the bar it describes, so the tooltip reads as the same
-        // legend rather than nine identical grey lines.
-        const c = seriesColor(item.name)
-        return (
-          <p key={i} style={{ margin: '3px 0', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 14 }}>
-            <span style={{ display: 'flex', alignItems: 'center', gap: 6, color: c }}>
-              <span style={{ display: 'inline-block', width: 8, height: 8, borderRadius: 2, background: c, flexShrink: 0 }} />
-              {item.name}
-            </span>
-            <span style={{ color: '#f3f4f6', fontWeight: 600 }}>{item.value}</span>
-          </p>
-        )
-      })}
-      {keyword && (
-        <p style={{ color: '#9ca3af', margin: '8px 0 0', borderTop: '1px solid #2f2f38', paddingTop: 7, display: 'flex', justifyContent: 'space-between', gap: 14 }}>
-          <span>"{keyword}"</span><span style={{ color: keyCount > 0 ? gradientColor(keyCount, matchMax ?? 1) : '#6b7280', fontWeight: 600 }}>{keyCount} match{keyCount !== 1 ? 'es' : ''}</span>
-        </p>
-      )}
-    </div>
-  )
-}
+// ChartTooltip lived here. It was the Post Archive's own copy of a month tooltip — same job as
+// the one on Analysis, different markup, different wording, and free to drift from it. Both pages
+// now render MonthTooltip from components/MonthFilter, which is the point of that module.
 
 const CHART_TABS: { key: string; label: string; dataKey: string; color: string; dimColor: string; to: string }[] = [
   { key: 'questions',          label: 'Q Questions',   dataKey: 'questions',          color: '#3b82f6', dimColor: '#1e3a5f', to: '/questions' },
@@ -215,16 +165,13 @@ export default function PostArchive() {
   // Timeline chart
   const [timeline, setTimeline] = useState<{ month: string; questions: number; posts: number; requests: number; claims: number; predictions: number; namedEntities: number; themes: number; impliedConclusions: number; verificationHooks: number; emphasis: number; brackets: number }[]>([])
   const [postNumsByMonth, setPostNumsByMonth] = useState<Record<string, number[]>>({})
-  const [selectedMonth, setSelectedMonth] = useState<string | null>(null)
-  const [hoverMonth, setHoverMonth] = useState<string | null>(null)
-  // Selecting a month flashes that month's jump-chips white for a few seconds.
-  const [flashMonth, setFlashMonth] = useState(false)
-  useEffect(() => {
-    if (!selectedMonth) { setFlashMonth(false); return }
-    setFlashMonth(true)
-    const t = setTimeout(() => setFlashMonth(false), 5000)
-    return () => clearTimeout(t)
-  }, [selectedMonth])
+  // ── The month filter, shared with Analysis ────────────────────────────────
+  //
+  // Selection, the double-delivery guard and the post set all come from useMonthFilter. There is no
+  // hover state left: `hoverMonth` and `flashMonth` existed only to pulse the jump-chips in the
+  // results below, which fired from a mousemove over the chart and, on a touch screen, from the very
+  // tap that was meant to select. Hover reads out; click selects.
+  const { selectedMonth, selectMonth, clearMonth, monthPostNums } = useMonthFilter(postNumsByMonth)
   const [chartTab, setChartTab] = useState<string>('all')
   const [hoverTab, setHoverTab] = useState<string | null>(null) // hovering a tab previews that category's chart
   const [chartSearch, setChartSearch] = useState('')
@@ -334,8 +281,7 @@ export default function PostArchive() {
       }
       // A new search starts clean — otherwise it opens already narrowed to whatever month
       // was selected for the PREVIOUS term, hiding results with no visible cause.
-      setSelectedMonth(null)
-      setHoverMonth(null)
+      clearMonth()
       // Auto-populate chart with search term density — reuse results already fetched
       setChartSearch(term)
       const map = new Map<string, number>()
@@ -384,8 +330,7 @@ export default function PostArchive() {
     setUrlParams({}, { replace: true })
     setChartMatchMonths(null)
     setChartSearch('')
-    setSelectedMonth(null)
-    setHoverMonth(null)
+    clearMonth()
     setActiveSection(null)
     setSectionMatches(null)
     setChartTab('all')
@@ -501,14 +446,12 @@ export default function PostArchive() {
   // Recharts delivers one click to BOTH the chart-level handler and the bar under the
   // cursor. With toggle semantics that is on-then-off in a single click — which looked
   // like "it takes three clicks". Ignore a repeat of the same month within one interaction.
-  const lastMonthClick = useRef<{ month: string; at: number }>({ month: '', at: 0 })
+  // The guard against recharts delivering one click twice now lives in useMonthFilter, so both pages
+  // get it from the same place. This only adds the phone readout, which is a Post Archive affordance.
   function handleBarClick(data: { month: string } | null | undefined) {
     const month = data?.month
     if (!month) return
-    const now = performance.now()
-    if (lastMonthClick.current.month === month && now - lastMonthClick.current.at < 350) return
-    lastMonthClick.current = { month, at: now }
-    setSelectedMonth(prev => prev === month ? null : month)
+    selectMonth(month)
     setTappedMonth(prev => (prev === month ? null : month))
   }
 
@@ -769,11 +712,6 @@ export default function PostArchive() {
 
   const browsePosts = posts
 
-  function formatMonth(m: string) {
-    const [y, mo] = m.split('-')
-    return new Date(Number(y), Number(mo) - 1).toLocaleString('default', { month: 'long', year: 'numeric' })
-  }
-
   return (
     <div className="flex flex-col">
 
@@ -943,7 +881,7 @@ export default function PostArchive() {
             {/* Tab strip */}
             <div className="flex flex-wrap gap-1.5 mb-4">
               <button
-                onClick={() => { setChartTab('all'); setChartMatchMonths(null); setChartSearch(''); setSelectedMonth(null) }}
+                onClick={() => { setChartTab('all'); setChartMatchMonths(null); setChartSearch(''); clearMonth() }}
                 onMouseEnter={() => setHoverTab('all')}
                 onMouseLeave={() => setHoverTab(null)}
                 className="px-3 py-1 rounded-md text-xs font-medium transition-colors border flex flex-col items-center leading-tight"
@@ -990,7 +928,7 @@ export default function PostArchive() {
                 )
               ))}
               <button
-                onClick={() => { setChartTab('postsOnly'); setChartMatchMonths(null); setChartSearch(''); setSelectedMonth(null) }}
+                onClick={() => { setChartTab('postsOnly'); setChartMatchMonths(null); setChartSearch(''); clearMonth() }}
                 onMouseEnter={() => setHoverTab('postsOnly')}
                 onMouseLeave={() => setHoverTab(null)}
                 className="px-3 py-1 rounded-md text-xs font-medium transition-colors border flex flex-col items-center leading-tight"
@@ -1044,7 +982,7 @@ export default function PostArchive() {
                     )}
                     {!chartMatchMonths && selectedMonth && (
                       <button
-                        onClick={() => setSelectedMonth(null)}
+                        onClick={clearMonth}
                         className="text-xs text-gray-400 hover:text-white bg-gray-800 border border-gray-700 px-2 py-1.5 rounded-lg transition-colors"
                       >
                         ✕ Close month
@@ -1053,9 +991,9 @@ export default function PostArchive() {
                   </div>
 
                   <ScrollableChart minWidth={920} centerAt={centerAt}><ResponsiveContainer width="100%" height={240}>
+                    {/* NO onMouseMove / onMouseLeave: they tracked the hovered month only so the
+                        jump-chips below could pulse. Hover is the tooltip and nothing else. */}
                     <BarChart data={chartData} margin={{ top: chartMatchMonths ? 22 : 4, right: 8, left: -16, bottom: 0 }}
-                      onMouseMove={(st: { activeLabel?: string | number }) => setHoverMonth(typeof st?.activeLabel === 'string' ? st.activeLabel : null)}
-                      onMouseLeave={() => setHoverMonth(null)}
                       onClick={d => { const p = (d as { activePayload?: { payload: { month: string } }[] }); if (p) handleBarClick(p.activePayload?.[0]?.payload) }}>
                       <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
                       <XAxis dataKey="month" tick={(props: any) => <MonthYearTick {...props} yearStarts={yearStarts} />} interval={0} height={52} />
@@ -1075,7 +1013,23 @@ export default function PostArchive() {
                         // Suppressed on phones — the readout is rendered under the chart
                         // instead, so it covers nothing and has a visible way to close.
                         active={isNarrow ? false : undefined}
-                        cursor={{ fill: 'rgba(255,255,255,0.06)' }} wrapperStyle={{ zIndex: 10 }} content={(props: any) => <ChartTooltip {...props} keyword={chartMatchMonths ? chartSearch : null} matchCounts={chartMatchMonths} matchMax={chartMatchMax} />} />
+                        cursor={{ fill: 'rgba(255,255,255,0.06)' }} wrapperStyle={{ zIndex: 10 }}
+                        // One tooltip component, shared with Analysis: the month and its counts.
+                        content={props => (
+                          <MonthTooltip
+                            active={props.active}
+                            payload={(props.payload ?? []) as { name: string; value: number }[]}
+                            label={props.label as string | undefined}
+                            colorOf={seriesColor}
+                            extra={chartMatchMonths
+                              ? {
+                                label: `"${chartSearch}"`,
+                                value: chartMatchMonths.get(String(props.label)) ?? 0,
+                                color: (chartMatchMonths.get(String(props.label)) ?? 0) > 0 ? gradientColor(chartMatchMonths.get(String(props.label)) ?? 0, chartMatchMax) : '#6b7280',
+                              }
+                              : null}
+                          />
+                        )} />
 
                       {/* Posts bar — always shown */}
                       <Bar yAxisId="left" dataKey="posts" name="Q Posts" radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }}
@@ -1131,6 +1085,23 @@ export default function PostArchive() {
                       )}
                     </BarChart>
                   </ResponsiveContainer></ScrollableChart>
+
+                  {/* THE KEYBOARD AND TOUCH PATH, the same component Analysis uses. A recharts bar is
+                      an SVG rect that cannot take focus, and the axis only draws a tick at year
+                      starts — so ~50 of the 60 months had nothing a keyboard could reach at all. */}
+                  <MonthPicker
+                    months={chartData.map(e => e.month)}
+                    counts={Object.fromEntries(chartData.map(e => [
+                      e.month,
+                      chartMatchMonths
+                        ? (chartMatchMonths.get(e.month) ?? 0)
+                        : ((e as unknown as Record<string, number>)[activeTab?.dataKey ?? 'posts'] ?? 0),
+                    ]))}
+                    selectedMonth={selectedMonth}
+                    onSelect={m => handleBarClick({ month: m })}
+                    label={chartMatchMonths ? `matches for "${chartSearch}"` : (activeTab?.label ?? 'posts').toLowerCase()}
+                    accent={activeTab?.color ?? '#9ca3af'}
+                  />
 
                   {/* Phone readout. Sits UNDER the chart, so it hides none of it, and closes
                       on demand — a touch tooltip never receives a "pointer left" event, which
@@ -1221,17 +1192,16 @@ export default function PostArchive() {
                       )}
                     </div>
                     <div className="flex flex-wrap gap-1 mt-2">
-                      {m.postNums.map(num => {
-                        const month = monthOfPost.get(num)
-                        const inMonth = selectedMonth ? month === selectedMonth : null
-                        const pulsing = (hoverMonth && month === hoverMonth) || (inMonth && flashMonth)
+                      {/* ONLY THE SELECTED MONTH'S CHIPS. They used to all stay on screen with the
+                          out-of-month ones at 30% opacity — still there, still clickable, still
+                          counted by eye — so "filtered to March" showed you February's drops greyed
+                          out rather than March's drops alone. */}
+                      {(monthPostNums ? m.postNums.filter(n => monthPostNums.has(n)) : m.postNums).map(num => {
                         return (
                           <Link
                             key={num}
                             to={`/post/${num}?flash=1&highlight=${encodeURIComponent(m.text)}`}
-                            className={`text-xs px-1.5 py-0.5 rounded font-mono border bg-gray-800 hover:bg-gray-700 border-gray-700 text-gray-400 hover:text-white transition-all ${
-                              inMonth === null ? '' : inMonth ? 'ring-2 ring-white/70 font-bold' : 'opacity-30'
-                            } ${pulsing ? 'animate-chip-pulse font-bold z-10 relative' : ''}`}
+                            className="text-xs px-1.5 py-0.5 rounded font-mono border bg-gray-800 hover:bg-gray-700 border-gray-700 text-gray-400 hover:text-white transition-colors"
                           >
                             #{num}
                             {(m.repeats?.[num] ?? 0) > 1 && (
@@ -1252,32 +1222,24 @@ export default function PostArchive() {
             every post in the month, burying the handful that actually matched; the chips
             below are already highlighted, which is the answer you wanted. */}
         {selectedMonth && !isSearchMode && (
-          <MonthPostsPanel month={selectedMonth} posts={monthPosts} loading={monthPostsLoading} onClose={() => setSelectedMonth(null)} />
+          <MonthPostsPanel month={selectedMonth} posts={monthPosts} loading={monthPostsLoading} onClose={() => clearMonth()} />
         )}
 
-        {/* While searching, a compact confirmation instead: how many of the MATCHING posts
-            fall in the month you clicked. */}
-        {selectedMonth && isSearchMode && (() => {
-          const inMonth = searchResults.filter(p => monthOfPost.get(p.postNum) === selectedMonth)
-          const mentions = inMonth.reduce((n, p) => n + (mentionCounts.get(p.postNum) ?? 0), 0)
-          return (
-            <div className="flex items-center gap-3 flex-wrap bg-white/5 border border-white/20 rounded-xl px-4 py-2.5">
-              <span className="text-sm text-white font-semibold">{formatMonth(selectedMonth)}</span>
-              <span className="text-xs text-gray-400">
-                {inMonth.length.toLocaleString()} of your {searchResults.length.toLocaleString()} matching
-                post{searchResults.length !== 1 ? 's' : ''}
-                {mentions > inMonth.length && <> · {mentions.toLocaleString()} mentions</>}
-                {' '}— flashing white below
-              </span>
-              <button
-                onClick={() => setSelectedMonth(null)}
-                className="ml-auto text-xs text-gray-300 hover:text-white bg-gray-800 border border-gray-600 px-3 py-1 rounded-lg transition-colors"
-              >
-                ✕ Clear month
-              </button>
-            </div>
-          )
-        })()}
+        {/* The active month and the screen-reader announcement, from the same component Analysis
+            uses — so the two pages cannot describe one interaction two ways. Selecting a month
+            rewrote the list underneath with nothing spoken at all. */}
+        <MonthFilterBar
+          month={selectedMonth}
+          resultCount={selectedMonth
+            ? (isSearchMode
+              ? searchResults.filter(p => monthOfPost.get(p.postNum) === selectedMonth).length
+              : (monthPostNums?.size ?? 0))
+            : 0}
+          resultNoun={isSearchMode ? `of your ${searchResults.length.toLocaleString()} matching posts` : 'posts'}
+          onClear={clearMonth}
+          // While browsing, MonthPostsPanel below is the visible confirmation; this still speaks.
+          showBar={isSearchMode}
+        />
 
         {/* Error banner — shown in both search and browse modes */}
         {error && (
@@ -1348,29 +1310,34 @@ export default function PostArchive() {
                       ))}
                     </div>
                   )}
-                  <p className="text-xs text-gray-500">
-                    {searchResults.length} posts — click a number to jump
-                    {searchedNums.size > 0 && breakdown.length > 0 && <span className="text-red-300"> · {searchedNums.size} contain "{searchTerm}" exactly (shown first, in red)</span>}
-                    {quotedNums.size > 0 && <span className="text-amber-300"> · {quotedNums.size} in the post being replied to</span>}
-                  </p>
-                  <div className="flex flex-wrap gap-1 max-h-44 overflow-y-auto pr-1">
-                    {ordered.map(p => {
-                      const mentions = mentionCounts.get(p.postNum) ?? 0
-                      const month = monthOfPost.get(p.postNum)
-                      const inMonth = selectedMonth ? month === selectedMonth : null
-                      const pulsing = (hoverMonth && month === hoverMonth) || (inMonth && flashMonth)
-                      return (
-                        <Link key={p.id} to={`/post/${p.postNum}?flash=1&highlight=${encodeURIComponent(searchTerm)}`}
-                          title={mentions > 1 ? `mentioned ${mentions} times in #${p.postNum}` : undefined}
-                          className={`text-xs px-2 py-0.5 rounded font-mono border transition-all ${postColor.get(p.postNum) ?? 'bg-gray-800 hover:bg-blue-900/50 text-gray-400 hover:text-blue-300 border-gray-700 hover:border-blue-600'} ${mentions > 1 ? 'border-amber-500/70' : ''} ${
-                            inMonth === null ? '' : inMonth ? 'ring-2 ring-white/70 font-bold scale-105' : 'opacity-30'
-                          } ${pulsing ? 'animate-chip-pulse font-bold z-10 relative' : ''}`}>
-                          #{p.postNum}
-                          {mentions > 1 && <span className="ml-1 text-amber-300 font-bold">×{mentions}</span>}
-                        </Link>
-                      )
-                    })}
-                  </div>
+                  {(() => {
+                    // Only the selected month's jump-chips. The rest were kept on screen at 30%
+                    // opacity, which is not a filter — it is the same list, harder to read.
+                    const shown = monthPostNums ? ordered.filter(p => monthPostNums.has(p.postNum)) : ordered
+                    return (
+                      <>
+                        <p className="text-xs text-gray-500">
+                          {shown.length} posts — click a number to jump
+                          {monthPostNums && <span className="text-gray-400"> in {formatMonth(selectedMonth!)} (of {searchResults.length.toLocaleString()} matching)</span>}
+                          {searchedNums.size > 0 && breakdown.length > 0 && <span className="text-red-300"> · {searchedNums.size} contain "{searchTerm}" exactly (shown first, in red)</span>}
+                          {quotedNums.size > 0 && <span className="text-amber-300"> · {quotedNums.size} in the post being replied to</span>}
+                        </p>
+                        <div className="flex flex-wrap gap-1 max-h-44 overflow-y-auto pr-1">
+                          {shown.map(p => {
+                            const mentions = mentionCounts.get(p.postNum) ?? 0
+                            return (
+                              <Link key={p.id} to={`/post/${p.postNum}?flash=1&highlight=${encodeURIComponent(searchTerm)}`}
+                                title={mentions > 1 ? `mentioned ${mentions} times in #${p.postNum}` : undefined}
+                                className={`text-xs px-2 py-0.5 rounded font-mono border transition-colors ${postColor.get(p.postNum) ?? 'bg-gray-800 hover:bg-blue-900/50 text-gray-400 hover:text-blue-300 border-gray-700 hover:border-blue-600'} ${mentions > 1 ? 'border-amber-500/70' : ''}`}>
+                                #{p.postNum}
+                                {mentions > 1 && <span className="ml-1 text-amber-300 font-bold">×{mentions}</span>}
+                              </Link>
+                            )
+                          })}
+                        </div>
+                      </>
+                    )
+                  })()}
                 </div>
               )
             })()}
