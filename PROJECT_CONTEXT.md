@@ -105,15 +105,51 @@ fresh-profile proof · stale-profile proof · deployment.
 
 Corrections accumulate across the session.
 
-### DEPLOY AFTER EVERY FIX (owner directive, 15 Aug 2026)
+### LOCAL-FIRST, ONE DEPLOY PER BATCH (owner directive, 17 Aug 2026)
 
-Supersedes the batching rule below for shipping: **every change goes live as soon as it is fixed**,
-so the owner can check it from the user's side. Batch the RULINGS if several arrive together, but do
-not leave a verified fix sitting undeployed — an undeployed fix reads to the owner as a broken one,
-and three separate reports this session were "it still does X" about work that was never shipped.
+**Supersedes "DEPLOY AFTER EVERY FIX" (15 Aug 2026).** The reason that rule existed — an undeployed
+fix reads to the owner as a broken one — is answered by the LOCALHOST LINK instead of by a deploy:
+every reply ends with the local URLs, so each fix is reviewable on the running dev server the same
+minute it lands. Production then moves ONCE, at the end, carrying the whole batch.
 
-The gates do not change: chain, invariants, manifest, seed decision, `verify-final.mjs`, deploy,
-`--live`. They cost about a minute; the deploy itself is the fast part.
+Per fix, in this order, and nothing else:
+
+1. implement it locally
+2. run the smallest validation that honestly proves it — the affected materialiser, the one section
+   gate, the WARM browser if it has to be seen. **Never defer testing to the end of the batch**; a
+   failure found five fixes later costs more than the deploy ever did.
+3. commit it on its own, message saying what changed
+4. report it, ending with the localhost links so the owner can look
+5. next fix. **Do not deploy.**
+
+Rules that make the batch safe rather than merely fast:
+
+- **Finished work is COMMITTED work.** "Not deployed" is not "saved". Uncommitted edits are what a
+  rollback, a stash or a fresh session quietly loses — and `preflight-deploy.mjs` refuses a dirty
+  tree, so the commit is owed either way.
+- **One fix per commit.** The batch is reversible per-fix only if its commits are.
+- **A certified-data migration never rides inside an unrelated UI batch.** Its own commit and its own
+  chain evidence, so it can be reverted without taking the UI work with it.
+- **Never undo completed local work just because it has not shipped yet.**
+- `node scripts/batch-status.mjs` IS the batch state — the commits standing between production and
+  HEAD, the floor their CUMULATIVE diff has already earned, what forced it, and whether the tree is
+  clean. Derived from git and `dist/build-info.json`, so it cannot drift the way a hand-kept status
+  file does. Print it before asking to deploy.
+
+At the end of the batch, and only then: `batch-status.mjs` → the profile it names → `npm run
+deploy:web` → `node scripts/verify-live.mjs`. **The floor comes from the CUMULATIVE diff, not from
+the last fix** — one certified path anywhere in the batch makes the whole batch certified, which is
+the tradeoff being bought: fewer deploys, each proved at the strongest floor in the set.
+
+**Deploying is the owner's word, asked once, at the end, with the batch report.** Do not ship
+mid-batch because a fix looks urgent; do not ship a gate that refused. Keep the commits and name the
+blocker.
+
+### Every reply ends with the links, and the dev server is kept warm
+
+The link block at the end of a reply is the review path now, not a convenience. Keep `npm run dev`
+running through a batch and give its real port (Vite moves to 5174/5175 when one is taken), because
+a link to a server that is not listening is worse than no link — it reads as a broken fix.
 
 ### At a deployment checkpoint — buy the proof the change needs (17 Aug 2026)
 
@@ -423,3 +459,17 @@ site, so the old URL is no longer a separate address.
 mistaken for the public one, and one was the live GitHub Pages site showing an older build.
 Always check the port, and hard-refresh the live site — GitHub's CDN serves the previous
 bundle for a few minutes after a deploy.
+
+**THE PORT IS NOT THE MODE (17 Aug 2026).** Six `vite` dev servers were found listening on
+5173–5178, one per abandoned session, and **every one was `npm run dev` — the EDITORIAL build.**
+:5174 was being handed to the owner as the "Users Link" while serving the editing build, which is
+this trap firing through the very habit meant to avoid it. Vite takes the next free port silently,
+so the second server started is 5174 whatever mode it is in.
+
+Before giving a localhost link, prove the mode rather than trusting the number:
+
+    netstat -ano | grep LISTENING | grep -E ":517[0-9]"        what is up
+    powershell -NoProfile -Command "Get-CimInstance Win32_Process -Filter 'ProcessId=<pid>' | Select CommandLine"
+
+`--mode public` in the command line is the only proof, and `dev:public` prints a green `public`
+badge in its startup banner. One of each is enough; kill the strays.
