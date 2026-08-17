@@ -54,6 +54,10 @@ if (!liveOnly) {
   step('rendered-text matcher', 'node', ['scripts/test-rendered-match.mjs'])
   step('multi-word glossary segmentation', 'node', ['scripts/test-gloss-segments.mjs'])
   step('split glossary occurrences', 'node', ['scripts/test-gloss-occurrence.mjs'])
+  // Context is certified in the data and absent from the drop. This gate had been asserting the
+  // opposite of the live style since 2026-08-14 and nobody saw it, because it was not a step of
+  // anything. It is one now.
+  step('context: certified, not painted', 'node', ['scripts/verify-context-render.mjs'])
 
   // A FIRST-TIME visitor. Fresh profile, nothing cached, the app builds everything from the bundle.
   step('fresh profile — alias visibility', 'node', ['scripts/test-alias-visibility.mjs', BASE, '--fresh'])

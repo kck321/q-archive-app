@@ -4574,3 +4574,63 @@ rollback nobody has run.
 `test-rendered-match.mjs`, `test-gloss-segments.mjs`, `test-gloss-occurrence.mjs`,
 `test-hover-accessibility.mjs` and `test-multiword-gloss.mjs` are now steps of `verify-final.mjs`,
 local and live. Six terms had no box while every other gate was green, because no gate asked.
+
+---
+
+## 2026-08-17 — the grey Context fill comes out of the drop, and the 435 drops that went silent
+
+**Request.** "i want to take the grey Emphasis highlights out of the q post on the archives and the
+analysis page... app wide", with post #4962 as the example.
+
+**It was Context, not Emphasis, and the difference mattered.** #4962 carries
+`contextUnits: ["Bubble.","Crash.","Steal.","Lie.","Repeat.","Taxation without representation.","1913."]`
+— exactly the grey boxes in the screenshot — and its `emphasis` array is EMPTY. The two layers are
+different fills on different post sets:
+
+    context    bg-gray-500/35 text-gray-100      4,816 units across 2,311 posts
+    emphasis   bg-slate-300/60 text-slate-900    4,238 units across 1,357 posts
+
+Removing Emphasis would have changed nothing in the drop the owner sent. Asked, and the owner ruled
+**Context only** — Emphasis keeps its slate fill.
+
+**A FILL WAS REMOVED, NOT A DISPOSITION.** All 4,816 units stay certified, stay in posts.json, stay
+counted and stay in their section. Both surfaces stopped feeding the layer, in the same commit,
+because PostDetail and postHighlight have shown the same drop differently three times and each time
+it was a change that landed on one of them.
+
+This reverses the 2026-08-14 ruling that every category should read as a fill. That ruling is quoted
+in the code it governed; the reversal is recorded beside it rather than replacing it.
+
+### THE 435 DROPS THAT WENT SILENT
+
+Caught by `test-term-info.mjs`: **#220 RT has an info-box target — NO TARGET**.
+
+Both renderers carried `if (segs.length === 0) return text` — an early return that hands back the
+bare string and never reaches `applyGlossary`, which is applied at the BOTTOM of the function. It was
+almost unreachable while Context painted, because a grey fill on any reviewed sentence meant nearly
+every drop had at least one segment. Removing that fill exposed it: **435 drops whose only highlight
+layer was Context would have lost every acronym info box.** #220 is one — "Monitored and analyzed in
+RT.", the drop where RT means *real time* rather than Rex Tillerson.
+
+The lesson is not about Context. It is that a feature applied at the end of a function is a feature
+an early return can delete, and the only reason this was survivable is that a gate asked about a
+named drop rather than about a count.
+
+**Found, not fixed, and reported:** the archive cards (`/posts`) render **no acronym info boxes at
+all** — 0 for WASH POST, 0 for NO NAME, on 63 and 16 cards. Verified against **production**, which
+shows 0 as well, so it is pre-existing and unrelated to this change. `PostCard` passes both `postNum`
+and `gloss` to `highlightText`, so the wiring looks right and the cause is not yet established. It is
+count-neutral and outside what was asked. Reported for a ruling.
+
+**`verify-context-render.mjs` was rewritten and wired into `verify-final.mjs`.** It had been
+asserting *"detail surface consumes contextUnits"* and *"neutral style has no background fill"* —
+the second false since 2026-08-14 — and had been red for two rulings without anyone noticing,
+because it was not a step of anything. It now asserts both halves of today's ruling: the units are
+intact in the data (4,816 across 2,311 posts) and neither surface fills them. The data half is
+checked first, because the dangerous failure here is not the grey still showing — that is obvious on
+sight — it is someone removing the paint by deleting the units.
+
+**Gates.** tsc clean · 206/206 invariants · manifest verified · 8/8 context checks · term-info 90/90
+(was 89 with #220 failing) · 132/132 multi-word checks · 54 + 34 + 23 pure cases · verify-final fresh
+and returning green · grey Context marks measured at 0 on both surfaces for #4962 and #220, with the
+coloured certified layers still painting.

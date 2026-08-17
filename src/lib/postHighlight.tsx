@@ -126,9 +126,13 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
     // An independent audit found theme anchors rendering on /post/:id and on none of /posts,
     // because this function was still searching for the taxonomy name. A label is not in the drop.
     addSegs(segs, text, analysis.themeAnchors ?? [], 'theme')
-    // Context is added FIRST among the analysis kinds and never wins a stack: where a unit also
-    // carries a certified semantic layer, the semantic colour is the truer statement about it.
-    addSegs(segs, text, analysis.contextUnits ?? [], 'context')
+    // CONTEXT NO LONGER PAINTS IN THE DROP — owner ruling, 2026-08-17. Same removal as
+    // PostDetail's analysis pairs, and it has to be the same on both or the two surfaces show the
+    // same drop differently, which is the drift these shared constants exist to prevent.
+    //
+    // The data is untouched: 4,816 certified contextUnits across 2,311 posts stay in posts.json
+    // and stay in their section. What goes is the grey fill in the drop body.
+    //   addSegs(segs, text, analysis.contextUnits ?? [], 'context')
     // Retired with the section (owner ruling): the span is a certified Claim and paints amber.
     // addSegs(segs, text, analysis.conclusionSpans ?? analysis.impliedConclusions ?? [], 'impliedConclusion')
     // Checkable Claims merged into Claims by owner ruling 2026-08-15. All 1,926 were ALREADY The span is a Claim and paints amber.
@@ -156,7 +160,17 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
   let um: RegExpExecArray | null
   while ((um = urlRx.exec(text)) !== null) segs.push({ start: um.index, end: um.index + um[0].length, kind: 'url' })
 
-  if (segs.length === 0) return text
+  // NO HIGHLIGHTS IS NOT NO GLOSSARY.
+  //
+  // This returned the bare string, which skipped the acronym info boxes entirely — they are applied
+  // at the bottom of this function, and an early return never reaches them. It was almost invisible
+  // while Context painted, because a grey fill on any reviewed sentence meant nearly every drop had
+  // at least one segment. Removing that fill on 2026-08-17 exposed it: 435 drops whose only layer
+  // was Context would have lost every info box, and #220 — "Monitored and analyzed in RT." — is one
+  // of them. Caught by test-term-info.mjs, which is exactly the failure that test exists for.
+  if (segs.length === 0) {
+    return postNum === undefined ? text : applyGlossary([text], postNum, gloss ?? glossarySync())
+  }
 
   // Interval decomposition — same logic as PostDetail renderPostBody
   const boundaries = new Set<number>([0, text.length])

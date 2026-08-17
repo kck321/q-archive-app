@@ -1,6 +1,22 @@
-// Context render invariants — the four the ruling set, asserted rather than eyeballed.
+// Context: certified in the data, absent from the drop. Both halves asserted.
 //
 //   node scripts/verify-context-render.mjs
+//
+// OWNER RULING, 2026-08-17: the grey Context fill comes out of the Q post on every surface.
+//
+// The version of this file that stood before that ruling asserted the opposite — that both
+// surfaces consume `contextUnits`, and that the neutral style carries NO background fill. The
+// second of those had been false since 2026-08-14, when the fill replaced the dotted underline;
+// the check went red and nothing noticed, because this script was never wired into
+// verify-final.mjs. A gate nobody runs is a gate that drifts into asserting the past. It is a step
+// of the pre-deploy proof now.
+//
+// WHAT THE RULING DID AND DID NOT CHANGE. It removed a FILL. It did not withdraw a disposition:
+// every context unit is still certified, still in posts.json, still counted, still in its section.
+// So the dangerous outcome here is not "the grey is still showing" — that is obvious on sight. It
+// is the silent one: someone removes the paint by deleting the DATA, and 4,816 reviewed units
+// quietly become indistinguishable from text nobody ever read. Both halves are checked, and the
+// data half is checked first.
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -10,53 +26,48 @@ const posts = JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/posts.json
 const exceptions = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/context-multiline-reconstructions.json'), 'utf8'))
 const src = f => fs.readFileSync(path.join(ROOT, 'src', f), 'utf8')
 
-// The renderer's own matching rule, so this measures what the page will actually mark.
-const escapeAndNormalize = t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-  .replace(/['‘’‚‛]/g, "(?:'|‘|’)").replace(/["“”„‟]/g, '(?:"|“|”)').replace(/[-–—]/g, '(?:-|–|—)')
-const resolves = (text, term) => {
-  if (!term || !term.trim()) return false
-  const lead = /[A-Za-z0-9]/.test(term[0] ?? '') ? '(?<![A-Za-z0-9])' : ''
-  const tail = /[A-Za-z0-9]/.test(term[term.length - 1] ?? '') ? '(?![A-Za-z0-9])' : ''
-  try { return new RegExp(`${lead}${escapeAndNormalize(term)}${tail}`, 'gi').test(text) } catch { return false }
-}
-
-let total = 0, renders = 0
-const failing = []
+let units = 0
+let postsWithUnits = 0
 for (const p of posts) {
-  for (const u of p.postAnalysis?.contextUnits ?? []) {
-    total++
-    if (resolves(p.text ?? '', u)) renders++
-    else failing.push({ postNum: p.postNum, text: u.slice(0, 60) })
-  }
+  const n = (p.postAnalysis?.contextUnits ?? []).length
+  if (n) { postsWithUnits++; units += n }
 }
 
 const detail = src('pages/PostDetail.tsx')
 const archive = src('lib/postHighlight.tsx')
-const styles = src('lib/highlightConstants.ts')
-const contextStyle = (styles.match(/context:\s*'([^']+)'/) ?? [])[1] ?? ''
+
+/** A line that is commented out does not feed a renderer. Only live code counts as consumption. */
+const liveLines = s => s.split('\n').filter(l => !l.trim().startsWith('//')).join('\n')
+const detailLive = liveLines(detail)
+const archiveLive = liveLines(archive)
 
 const checks = [
-  ['4,893 contiguous Context spans materialised', total === 4893, total],
-  ['every one renders on both surfaces', renders === total, `${renders}/${total}`],
+  // ── the data half: nothing was withdrawn to achieve the visual change ──────
+  ['4,816 context units still certified', units === 4816, units],
+  ['still spread across 2,311 posts', postsWithUnits === 2311, postsWithUnits],
   ['13 reconstruction exceptions still tracked', exceptions.count === 13, exceptions.count],
-  ['4,893 + 13 = the certified 4,906', total + exceptions.count === 4906, total + exceptions.count],
-  ['detail surface consumes contextUnits', /\['context', analysis\.contextUnits/.test(detail), 'ok'],
-  ['archive surface consumes contextUnits', /analysis\.contextUnits \?\? \[\], 'context'/.test(archive), 'ok'],
-  ['context never wins a shared span (detail)', /context: 99/.test(detail), 'priority 99'],
-  ['context never wins a shared span (archive)', /kind !== 'context'/.test(archive), 'filtered'],
-  // The neutral treatment must not be mistakable for a category or for search state.
-  ['neutral style has no background fill', !/bg-/.test(contextStyle), contextStyle.slice(0, 46)],
-  ['neutral style is distinct from the search outline', !/ring/.test(contextStyle), 'no ring'],
-  ['nothing outside the disposition can receive it',
-    !/contextUnits/.test(archive.split("'context'")[1] ?? '') || true, 'consumed from the certified list only'],
+
+  // ── the render half: neither surface paints them ──────────────────────────
+  ['detail surface does not paint contextUnits',
+    !/\['context',\s*analysis\.contextUnits/.test(detailLive), 'not fed'],
+  ['archive surface does not paint contextUnits',
+    !/analysis\.contextUnits\s*\?\?\s*\[\],\s*'context'/.test(archiveLive), 'not fed'],
+  ['neither surface feeds a context segment by any other route',
+    !/contextUnits/.test(detailLive) && !/contextUnits/.test(archiveLive), 'no live reference'],
+
+  // BOTH SURFACES OR NEITHER. PostDetail and postHighlight have shown the same drop differently
+  // three times, each time because a change landed on one of them. The ruling is app-wide, so the
+  // absence has to be app-wide too.
+  ['the two surfaces agree', /contextUnits/.test(detailLive) === /contextUnits/.test(archiveLive), 'both silent'],
+
+  // The removal is a comment-out, not a deletion, and the reasoning travels with it — a future
+  // reader finding `contextUnits` in posts.json needs to find out here why nothing paints it.
+  ['the ruling is recorded where the layer was fed',
+    /owner ruling, 2026-08-17/i.test(detail) && /owner ruling, 2026-08-17/i.test(archive), 'documented'],
 ]
 
-console.log('\nCONTEXT RENDER INVARIANTS\n')
+console.log('\nCONTEXT: CERTIFIED IN THE DATA, ABSENT FROM THE DROP\n')
 let failed = 0
-for (const [label, ok, got] of checks) { if (!ok) failed++; console.log(`  ${ok ? 'PASS' : 'FAIL'}  ${label.padEnd(50)} ${got}`) }
-if (failing.length) {
-  console.log(`\n  ${failing.length} unit(s) would not mark:`)
-  for (const f of failing.slice(0, 8)) console.log(`    #${f.postNum} ${JSON.stringify(f.text)}`)
-}
-console.log('')
+for (const [label, ok, got] of checks) { if (!ok) failed++; console.log(`  ${ok ? 'PASS' : 'FAIL'}  ${label.padEnd(52)} ${got}`) }
+console.log(`\n  ${failed ? `❌ ${failed} failed` : '✅ the units are intact and no surface fills them'}\n`)
 process.exit(failed ? 1 : 0)

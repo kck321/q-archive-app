@@ -228,9 +228,18 @@ function renderPostBody(
       // never rotate; a bracket that is ALSO Emphasis still says so in the analysis panel, which
       // is where a second membership belongs.
       ['bracketCode', bracketSpansIn(text)],
-      // Reviewed, in no semantic category. Listed last so any certified semantic span covering
-      // the same text takes precedence.
-      ['context', analysis.contextUnits ?? []],
+      // CONTEXT NO LONGER PAINTS IN THE DROP — owner ruling, 2026-08-17.
+      //
+      // 4,816 units across 2,311 posts were filled grey to say "reviewed, and in no semantic
+      // category". The owner has ruled the grey out of the drop on every surface: a drop that
+      // marks the uncategorised as heavily as the categorised gives the reader nothing to scan
+      // for, and #4962 is the case — Bubble. / Crash. / Steal. / Lie. / 1913. all boxed grey
+      // around three blue Questions and two green Directives.
+      //
+      // THE DATA IS UNTOUCHED. contextUnits stay certified, stay in posts.json, stay counted and
+      // stay listed in their section. This removes a FILL, not a disposition — the units are
+      // still reviewed, and the archive still says so where saying so belongs.
+      //   ['context', analysis.contextUnits ?? []],
     ]
     for (const [kind, items] of analysisPairs) {
       for (const item of items) {
@@ -270,7 +279,12 @@ function renderPostBody(
     segs.push({ start: um.index, end: um.index + um[0].length, kind: 'url', matchText: um[0] })
   }
 
-  if (segs.length === 0) return text
+  // NO HIGHLIGHTS IS NOT NO GLOSSARY. Same defect and same fix as postHighlight.tsx — the acronym
+  // info boxes are applied at the bottom of this function, and an early return never reaches them.
+  // Context painting used to hide it; removing that fill left 435 drops with no boxes at all.
+  if (segs.length === 0) {
+    return postNum === undefined ? text : applyGlossary([text], postNum, gloss ?? glossarySync())
+  }
 
   // Build protected ranges from >>number post references so they are never highlighted
   const protectedRanges: Array<{ start: number; end: number }> = []
