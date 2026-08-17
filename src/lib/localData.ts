@@ -470,7 +470,12 @@ const COLLECTIONS: CollectionName[] = ['posts', 'questions', 'topics', 'resource
 // posts.json lost 39 namedEntities entries and entities.json gained two fields on every row, so
 // a returning reader holding the seed-75 copy would keep highlighting words that are no longer
 // entities and would have no id to key a tooltip by.
-export const SEED_VERSION = 76   // 72: Q Directives on sourceSpansV2 — 2,552 occurrences, directiveMeta spans
+// 77: Stage 2 — entity hover synopses, and the Black Lives Matter type correction.
+// entities.json is SEEDED, so a returning reader holding the seed-76 copy would keep BLM typed
+// as a person however many times the tooltip said otherwise, and would see the corrected wording
+// beside the stale category. entity-hovers.json is fetched rather than seeded and needs no bump
+// of its own; this one is required by the entity row that changed underneath it.
+export const SEED_VERSION = 77   // 72: Q Directives on sourceSpansV2 — 2,552 occurrences, directiveMeta spans
 // 71: 4: final certified questions — 6,442 occurrences, exact source spans
 
 // ── Minimal IndexedDB key/value wrapper (one record per collection) ──────────

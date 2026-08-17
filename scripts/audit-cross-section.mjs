@@ -442,9 +442,9 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   // that stopped at 40 would keep showing the standalone COVID in #4489/#4541/#4548 as plain text.
   // 43 carries the Rachel Chandler ruling: posts.json changed again (namedEntities), so a
   // profile that stopped at 42 would keep showing RC and Ray Chandler as two strangers.
-  // 76: Entities hover audit Stage 1 — posts.json lost 39 namedEntities entries and every entity
-  // row gained an id and a slug, so a returning reader must re-seed.
-  t('seed-current', 'SEED_VERSION is 76 (Entities hover audit, Stage 1)', seed === 76, seed)
+  // 77: Stage 2 hovers + the Black Lives Matter type correction. entities.json is seeded, so a
+  // returning reader on 76 would keep the stale category beside the corrected wording.
+  t('seed-current', 'SEED_VERSION is 77 (Entities hover audit, Stage 2)', seed === 77, seed)
   t('seed-gate', 'seeding is gated on SEED_VERSION', /seeded === SEED_VERSION/.test(localData), 'present')
 
   // THE GUARD THAT WOULD HAVE SAVED THREE ROUND TRIPS. Changing seeded data without bumping the

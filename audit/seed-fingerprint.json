@@ -1,13 +1,13 @@
 {
  "note": "Fingerprint of everything the app seeds into IndexedDB, pinned to the SEED_VERSION that shipped it. Updated ONLY as part of a deliberate seed bump — see scripts/seed-fingerprint.mjs.",
- "seedVersion": 76,
- "sha256": "b66c370736a48884c549226e0b748c091ef332b4580b9dced85d6b1a98f76d81",
+ "seedVersion": 77,
+ "sha256": "6557c0f432660da04d0a1eb80380925446a3df6ea1290e800ebd1928eecbac62",
  "per": {
   "posts.json": "ed1840db9e82f85f6d3a532ff78df84f9c972a3a88e85349844c5d440ef66b4b",
   "questions.json": "7f0ddbbfa9cb6a30bdcef8ffaaa0f9b617ca4371b24121f548caafe67359be4a",
   "topics.json": "41012c01611e9417950b3994a18761b2dc8fe061b05a79351245a8eba46aa031",
   "analysisConfirmed.json": "3531cbbbf4a533c8969235fe7efe43e50c6fa722502fc89aa1913e472b643d8d",
-  "entities.json": "5deabeca5183444bd03b310362beff10616a44950d802ae895fab6f1a2f58f67",
+  "entities.json": "7fffdd3bd4aea31dafcd29ea9767e2daafe2477878fe4dbc4b31b90eca238a1e",
   "themes.json": "7cf282bc51d08560eafcee38770ba741226604027954f43e9f7fd198347dab91",
   "codes.json": "3f0efdff216a1480ad070bfb2d9f435cfda9af0e6b8d929d9b0848559dd6ce3f",
   "emphasis.json": "58dd9ad7f500923a234b12d412d8d21fa92350e0c5004c2a98d8ce15d81f8286",

@@ -1,7 +1,7 @@
 {
- "certifiedAt": "2026-08-16T23:27:32.388Z",
+ "certifiedAt": "2026-08-17T00:38:22.329Z",
  "sections": 8,
- "seedVersion": 76,
+ "seedVersion": 77,
  "note": "Every count here is recomputed from the artifacts, never copied forward. Verify with: node scripts/certification-manifest.mjs --verify",
  "counts": {
   "posts": 4966,
@@ -37,9 +37,9 @@
    "bytes": 2047538
   },
   "entities.json": {
-   "sha256": "ef7ee61693cd6d2ee060e7302371198db1a42d3379d5e6896cc385b19f8a83b0",
-   "semanticSha256": "5deabeca5183444bd03b310362beff10616a44950d802ae895fab6f1a2f58f67",
-   "bytes": 453297
+   "sha256": "96e25a70a375aabd8e7423337beafbe32d55da5420c75cad61c6a9ba76a12cc0",
+   "semanticSha256": "7fffdd3bd4aea31dafcd29ea9767e2daafe2477878fe4dbc4b31b90eca238a1e",
+   "bytes": 453684
   },
   "themes.json": {
    "sha256": "0b6395e99cd5082cf55eb676b061a3fd5342b96e35bcde17614f3c58935f33d8",
@@ -67,14 +67,14 @@
    "bytes": 2837423
   },
   "search-index.json": {
-   "sha256": "23b09bd1522639aa554494d4a5a75322ef1a4f754fcdd9e9c746b67c19e9f653",
-   "semanticSha256": "f2903cf5611a9cdb0ee5bb8c14801b2129a6501984b5e6450c27e7dbb17fb844",
-   "bytes": 7174586
+   "sha256": "aa7899bb5139594841faf4f4534218964d75fb15b8e92f4a11ecf3d9f6352d1c",
+   "semanticSha256": "04ad63bf6a0a1a19de785dcf8146a524bc7ecfcbec8e646eef83a80434d7e515",
+   "bytes": 7174595
   },
   "entity-hovers.json": {
-   "sha256": "f46695caca3d1897e5510c0934473180cab932524153158b47cde9667d41876d",
-   "semanticSha256": "599211ec8cd5da4f3ffa65bd12c4ad231b783a833ae5a370c5190abd5c5e8575",
-   "bytes": 2415218
+   "sha256": "c468e54dbd5f44fd76580f0e6f15f9427701bfb719a36cbeaf710ea1f3d13818",
+   "semanticSha256": "58b37e2ee83c1e84b2be7319b7e2e0c8512b49a44f7a062a389a45922df2bc7f",
+   "bytes": 2415209
   }
  },
  "canonical": {

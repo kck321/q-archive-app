@@ -4,13 +4,13 @@ Everything else under `audit/` that looks like a handoff is HISTORY. Do not act 
 
 ## Production
 
-    seed 76 — https://qdrops.app
+    seed 77 — https://qdrops.app
     queue 115   Reference 30 · Subject 16 · Notation 28 · Device 31 · Source 10
     entities 1,409   certified mentions 9,749   rendered 9,749 (difference 0)
     Q Directives 2,552 raw · 2,500 distinct (post,text) · 1,464 posts
     post text 1,128,312 chars
     Predictions 595 · Claims 4,221   (sentence-level audit, 2026-08-16)
-    152/152 invariants · manifest verified
+    163/163 invariants · manifest verified
 
 ## Standing rules
 
@@ -32,6 +32,17 @@ Everything else under `audit/` that looks like a handoff is HISTORY. Do not act 
    is the bug to fix.
 
 ## Open work
+
+- **URL cleanup is RULED but not applied** — `audit/url-derived-entity-policy.json`. Path and query
+  fragments are not entity mentions; hostnames migrate to linked-source metadata; the 7 ambiguous
+  cases stay in private review. 441 hover records are quarantined in
+  `audit/entity-hover-url-quarantine.json`. **The certified count has not moved** — the cleanup is
+  count-changing and needs its own approval.
+
+- **3,144 hover synopses await editorial review** — `/editorial/hover-review`, served from `audit/`
+  by a dev-only Vite middleware so the published bundle has no copy. 206 of them are merge
+  survivors held because their evidence is graded Insufficient or their alias is shared; regrading
+  those is what gives the 17 merged entities their tooltips.
 
 - **[NP] migration is ruled and parked** — `audit/entities-pending-migrations.json`. "Non-profit
   organization" stays a certified entity until occurrence-level bracket classification exists

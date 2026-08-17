@@ -69,6 +69,47 @@ await readJsonl('01_ENTITY_REGISTRY_AUDIT.jsonl.txt', o => {
 })
 console.log(`  global synopses     : ${Object.keys(globals).length} of ${globalRows} audit rows (${globalUnmapped} belong to withdrawn/absorbed rows)`)
 
+// ── a global synopsis must not name a type the row no longer has ────────────
+// The template opens "X is categorized in this archive as a TYPE.", so an owner type ruling
+// leaves the sentence contradicting the row it describes: Black Lives Matter was corrected to a
+// political group and its synopsis went on calling it a person.
+//
+// The label vocabulary is READ FROM THE CORPUS rather than invented here — for each type, the
+// phrasing the audit itself used most often. Writing my own labels would put a second, slightly
+// different vocabulary in front of readers who are already being shown the audit's.
+const TYPE_PHRASE = /(categorized in this archive as an? )([^.]+)\./
+const labelVotes = new Map()
+for (const [id, g] of Object.entries(globals)) {
+  const t = liveById.get(id)?.type
+  const m = TYPE_PHRASE.exec(g.synopsis)
+  if (!t || !m) continue
+  if (!labelVotes.has(t)) labelVotes.set(t, new Map())
+  const v = labelVotes.get(t)
+  v.set(m[2], (v.get(m[2]) ?? 0) + 1)
+}
+const labelFor = t => {
+  const v = labelVotes.get(t)
+  if (!v) return String(t).replace(/_/g, ' ')
+  return [...v].sort((a, b) => b[1] - a[1])[0][0]
+}
+let globalsRetyped = 0
+const retypedGlobals = []
+for (const [id, g] of Object.entries(globals)) {
+  const t = liveById.get(id)?.type
+  const m = TYPE_PHRASE.exec(g.synopsis)
+  if (!t || !m) continue
+  const want = labelFor(t)
+  if (m[2] === want) continue
+  const article = /^[aeiou]/i.test(want) ? 'an ' : 'a '
+  g.synopsis = g.synopsis.replace(TYPE_PHRASE, `categorized in this archive as ${article}${want}.`)
+  globalsRetyped++
+  retypedGlobals.push({ entityId: id, canonical: liveById.get(id).canonical, was: m[2], now: want })
+}
+if (globalsRetyped) {
+  console.log(`  global type wording : ${globalsRetyped} corrected`)
+  for (const r of retypedGlobals) console.log(`     ${r.canonical}: "${r.was}" -> "${r.now}"`)
+}
+
 // ── post-specific synopses ──────────────────────────────────────────────────
 // Every record is VALIDATED against the current certified state rather than filed by the status
 // the audit stamped on it. A status records what was true when the audit ran; Stage 1 has moved

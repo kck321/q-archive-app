@@ -210,6 +210,25 @@ for (const r of ownerEntities) {
   })
   ownerAdded++; ownerMentions++
 }
+// ── Owner TYPE rulings ───────────────────────────────────────────────────────
+// A type the owner corrects directly, kept here rather than in the Stage 1 rulings because that
+// file is regenerated from the audit package — a correction written there would be erased the next
+// time the extractor ran. This is the same reasoning that put every other owner ruling in this
+// file: it is the one place no derive step writes.
+//
+// A type says what the row IS, never how often it appears, so this moves no mention and no row.
+const typeRulings = fs.existsSync(ORULES) ? JSON.parse(fs.readFileSync(ORULES, 'utf8')).typeRulings ?? [] : []
+let ownerTyped = 0
+for (const r of typeRulings) {
+  const row = entities.find(e => e.canonical === r.canonical)
+  if (!row) { console.error(`type ruling: "${r.canonical}" not found`); process.exit(1) }
+  if (row.type === r.to) continue
+  row.type = r.to
+  row.provenance = `${row.provenance ? `${row.provenance} · ` : ''}owner type ruling ${r.ruledOn} — ${r.from} -> ${r.to}: ${r.reasoning}`
+  ownerTyped++
+}
+if (typeRulings.length) console.log(`  owner type rulings    : ${ownerTyped} applied of ${typeRulings.length}`)
+
 // ── Owner MERGE rulings ──────────────────────────────────────────────────────
 // Two certified rows, one person. The detector saw "Rachel Chandler" and "Ray Chandler" spelled
 // differently in different drops and certified each as its own entity, so the archive held her

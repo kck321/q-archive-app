@@ -663,9 +663,9 @@
   {
    "group": "8. Seed and cache integrity",
    "id": "seed-current",
-   "description": "SEED_VERSION is 76 (Entities hover audit, Stage 1)",
+   "description": "SEED_VERSION is 77 (Entities hover audit, Stage 2)",
    "pass": true,
-   "detail": "76"
+   "detail": "77"
   },
   {
    "group": "8. Seed and cache integrity",

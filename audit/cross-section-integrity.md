@@ -112,7 +112,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | SEED_VERSION is 76 (Entities hover audit, Stage 1) | 76 |
+| ✅ | SEED_VERSION is 77 (Entities hover audit, Stage 2) | 77 |
 | ✅ | seeding is gated on SEED_VERSION | present |
 | ✅ | seeded data matches the SEED_VERSION that shipped it | unchanged |
 | ✅ | the gate value is persisted after seeding | present |
