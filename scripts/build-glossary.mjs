@@ -32,10 +32,21 @@ const glosses = fs.existsSync(glossPath) ? JSON.parse(fs.readFileSync(glossPath,
 // the name the owner just asked to join with no info box at all.
 const isShorthand = t => /^[A-Z0-9][A-Z0-9._+/-]{0,6}$/.test(t) || /^[A-Z]\.[A-Z]\.?$/.test(t) || /^[A-Z][a-z]+ [A-Z]$/.test(t) || /^[A-Z]{2,8} [A-Z][A-Za-z]{1,10}$/.test(t)
 
+// Reader-facing category names. A type missing from here falls back to "Named entity", which is
+// not wrong but says nothing — the Black Lives Matter correction landed on political_group and the
+// info box immediately downgraded from "Person" to "Named entity". Every type the registry
+// actually uses is listed, so a correct type never reads as a vaguer one.
 const TYPE_LABEL = {
   person: 'Person', people: 'Person', organization: 'Organization', media_organization: 'Media organization',
   government_agency: 'Government body', government_institution: 'Government body', country: 'Country/region',
-  location: 'Location', title_role: 'Title or role', other: 'Named entity',
+  country_region: 'Country/region', location: 'Location', title_role: 'Title or role', other: 'Named entity',
+  political_group: 'Political group', event_incident: 'Event or incident',
+  legislation_regulation: 'Law or regulation', technology_platform: 'Technology platform',
+  creative_work: 'Creative work', facility_property: 'Facility or property',
+  religious_spiritual: 'Religious or spiritual', legal_investigative: 'Legal or investigative body',
+  military_asset_vessel: 'Military asset', financial_institution: 'Financial institution',
+  program_operation: 'Program or operation', program_operation_project: 'Program or operation',
+  coded_alias: 'Coded alias', other_named_entity: 'Named entity',
 }
 
 /** alias -> [{ meaning, kind, type, detail, posts }] — several readings per token is normal. */
