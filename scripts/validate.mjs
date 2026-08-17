@@ -6,9 +6,15 @@
 //   node scripts/validate.mjs --profile full        every category, viewport and interaction
 //
 //   --base <url>       what the browser gates point at        (default http://localhost:5173)
-//   --only <a,b>       extra targeted gates, appended to any profile
+//   --only <a,b>       extra targeted gates, appended to any profile (allowlisted — --only ? lists them)
 //   --list             print what a profile would run, and stop
-//   --no-chain         skip the twice-run apply chain in certified/full
+//   --no-chain         skip the twice-run apply chain — fast/standard only, never certified/full
+//
+// THE PROFILE IS NOT A FREE CHOICE. With no --profile, the git diff picks one: every changed path
+// maps to the weakest profile that can honestly prove it, and the strongest of those is the floor.
+// An explicit --profile may go UP from the floor and is REFUSED below it, naming the files that set
+// it. "Pick by what changed" was already the rule; it was just unenforceable, and `--profile fast`
+// is one word whether or not the diff touched audit/.
 //
 // WHY PROFILES, AND WHAT IS NOT NEGOTIABLE.
 //
@@ -28,25 +34,66 @@
 //   standard   behaviour shared across pages: filtering, search, readers, the month chart
 //   certified  anything under audit/ or public/data, any count, alias, ruling or SEED_VERSION
 //   full       before a release, when a shared module itself changed, or on a schedule
-import { spawnSync } from 'node:child_process'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { builtSeedVersion } from './lib/browser.mjs'
+import {
+  PROFILES, rankOf, run, GATES, gateArgv, gateList,
+  requiredProfile, worktreeTree, writeReceipt, headCommit, RECEIPT,
+} from './lib/pipeline.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const argv = process.argv.slice(2)
 const at = flag => { const i = argv.indexOf(flag); return i > -1 ? argv[i + 1] : null }
 
-const PROFILES = ['fast', 'standard', 'certified', 'full']
-const profile = at('--profile') ?? 'standard'
+// ── THE FLOOR, FROM THE DIFF ──────────────────────────────────────────────────────────────────
+const need = requiredProfile(ROOT)
+const asked = at('--profile')
+const profile = asked ?? need.required
+
 if (!PROFILES.includes(profile)) {
   console.error(`\nUnknown profile "${profile}". One of: ${PROFILES.join(', ')}\n`)
   process.exit(2)
 }
+if (rankOf(profile) < rankOf(need.required)) {
+  console.error(`\n  REFUSED — "${profile}" is weaker than this diff can be proved by.`)
+  console.error(`  ${need.files.length} path(s) changed since ${need.baseline?.slice(0, 7) ?? '(no baseline)'} (${need.baselineWhy}).`)
+  console.error(`  The floor is ${need.required.toUpperCase()}, set by:`)
+  for (const r of need.forcing.slice(0, 8)) console.error(`      ${r.file}\n          ${r.why}`)
+  if (need.forcing.length > 8) console.error(`      … and ${need.forcing.length - 8} more`)
+  console.error(`\n  Run at ${need.required} or stronger. A profile chooses how much BROWSER to buy;`)
+  console.error(`  it does not get to choose that a certified change is a UI change.\n`)
+  process.exit(2)
+}
+
 const BASE = at('--base') ?? 'http://localhost:5173'
+const rank = rankOf(profile)
+const inc = name => rank >= rankOf(name)
+
+// ── --only IS AN ALLOWLIST ────────────────────────────────────────────────────────────────────
+// It used to be a path: `--only foo` became `scripts/foo.mjs` and ran it, whatever it was. Half of
+// scripts/ WRITES certified artifacts, and `../` left the directory entirely. A targeted gate is a
+// small closed set of read-only browser checks, so that set is now spelled out in lib/pipeline.mjs.
 const extra = (at('--only') ?? '').split(',').map(s => s.trim()).filter(Boolean)
-const rank = PROFILES.indexOf(profile)
-const inc = name => rank >= PROFILES.indexOf(name)
+const unknown = extra.filter(n => !GATES[n])
+if (unknown.length || extra.includes('?')) {
+  if (unknown.length) console.error(`\n  Not a gate: ${unknown.join(', ')}`)
+  console.error(`\n  --only accepts these, and nothing else:\n\n${gateList()}\n`)
+  process.exit(2)
+}
+
+// ── --no-chain MAY NOT BUY A CERTIFIED PASS ───────────────────────────────────────────────────
+// The chain run twice IS the certified proof: it is what shows an apply step is idempotent, and
+// idempotence is the property that broke when SEED_VERSION sat at 4 through three applies. A
+// certified run without it is a certified run in name only, and the name is what preflight reads.
+const noChain = argv.includes('--no-chain')
+if (noChain && rank >= rankOf('certified')) {
+  console.error(`\n  REFUSED — --no-chain is not available at ${profile}.`)
+  console.error(`  The twice-run apply chain IS the certified proof; skipping it leaves a run that`)
+  console.error(`  claims "certified" and never checked idempotence. Drop --no-chain, or drop to a`)
+  console.error(`  profile the diff allows (this diff's floor is ${need.required}).\n`)
+  process.exit(2)
+}
 
 /**
  * A step is [label, argv, minimum profile].
@@ -74,7 +121,7 @@ step('split glossary occurrences', ['node', 'scripts/test-gloss-occurrence.mjs']
 step('context + emphasis: certified, not painted', ['node', 'scripts/verify-context-render.mjs'])
 
 // ── THE APPLY CHAIN, TWICE — proves idempotence. 15s a run; certified changes only. ────────────
-if (!argv.includes('--no-chain')) {
+if (!noChain) {
   step('apply chain (run 1 of 2)', ['node', 'scripts/rebuild-bundle.mjs'], 'certified')
   step('apply chain (run 2 of 2 — idempotence)', ['node', 'scripts/rebuild-bundle.mjs'], 'certified')
   step('manifest still verifies after the chain', ['node', 'scripts/certification-manifest.mjs', '--verify'], 'certified')
@@ -110,16 +157,15 @@ step('fresh — archive alias visibility', ['node', 'scripts/test-archive-alias-
 // has not been given yet and report the change broken when it was merely undeployed.
 step('returning/stale profile — repairs itself', ['node', 'scripts/test-returning-profile.mjs', '--url', BASE], 'standard')
 
-// ── Anything named with --only, whatever the profile. ──────────────────────────────────────────
-for (const name of extra) {
-  const file = name.endsWith('.mjs') ? name : `${name}.mjs`
-  const rel = file.startsWith('scripts/') ? file : `scripts/${file}`
-  // Both arg conventions at once: the older gates take a positional URL and `--fresh`, the newer
-  // ones take `--url`. Passing all three suits either, and an unknown flag is ignored by both.
-  steps.push({ label: `targeted — ${name}`, argv: ['node', rel, BASE, '--url', BASE, '--fresh'] })
-}
+// ── Anything named with --only, whatever the profile. Allowlisted above; the table knows which
+// argument convention each gate takes, so a name is all a caller supplies. ─────────────────────
+for (const name of extra) steps.push({ label: `targeted — ${name}`, argv: gateArgv(name, BASE) })
 
 console.log(`\nVALIDATE — profile ${profile.toUpperCase()} — seed ${builtSeedVersion(ROOT)}`)
+console.log(`  floor: ${need.required} (${need.files.length} path(s) changed since `
+  + `${need.baseline?.slice(0, 7) ?? 'nothing'} — ${need.baselineWhy})`)
+if (asked && rankOf(asked) > rankOf(need.required)) console.log(`  asked: ${asked} — stronger than the floor, running it`)
+if (need.unclassified.length) console.log(`  note:  ${need.unclassified.length} path(s) match no rule and were floored at standard`)
 console.log(`  base: ${BASE}   steps: ${steps.length}\n${'─'.repeat(64)}`)
 
 if (argv.includes('--list')) {
@@ -133,7 +179,9 @@ const overall = Date.now()
 for (const s of steps) {
   const started = Date.now()
   process.stdout.write(`\n▶ ${s.label}\n`)
-  const r = spawnSync(s.argv[0], s.argv.slice(1), { cwd: ROOT, stdio: 'inherit', shell: process.platform === 'win32' })
+  // No shell. See the header of lib/pipeline.mjs — the shell was only ever there so `npx` would
+  // spawn on Windows, and it made every gate argument a place cmd.exe could be handed an operator.
+  const r = run(s.argv, { cwd: ROOT })
   const secs = (Date.now() - started) / 1000
   timings.push({ label: s.label, secs, ok: r.status === 0 })
   console.log(`  ${r.status === 0 ? '✅' : '❌'} ${s.label} — ${secs.toFixed(1)}s`)
@@ -157,5 +205,28 @@ function report(rows, startedAt) {
 }
 
 report(timings, overall)
+
+// ── THE RECEIPT ───────────────────────────────────────────────────────────────────────────────
+// What passed, and — the part that was previously carried in someone's head — WHICH BYTES passed.
+// The tree id is of the working copy, because validation runs before the commit; committing those
+// same bytes produces that same tree, so preflight-deploy.mjs can check that the thing about to be
+// published is the thing that was proved, rather than trusting that it must be.
+const tree = worktreeTree(ROOT)
+writeReceipt(ROOT, {
+  at: new Date().toISOString(),
+  profile,
+  requiredProfile: need.required,
+  chain: !noChain,
+  tree,
+  // Informational only. The tree is the identity that matters; the commit is just where HEAD
+  // happened to be, and the whole point is that the bytes may not be committed yet.
+  headAtValidation: headCommit(ROOT),
+  base: BASE,
+  seed: builtSeedVersion(ROOT),
+  only: extra,
+  steps: steps.length,
+})
+
 console.log(`✅ ${profile} validation complete.`)
+console.log(`   receipt: ${RECEIPT} — tree ${String(tree).slice(0, 12)}, chain ${!noChain}`)
 console.log('   Deploy, then:  node scripts/verify-live.mjs\n')

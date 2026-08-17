@@ -4968,3 +4968,111 @@ them the day one of them is put back on the path.
 `scripts/test-entity-reconciliation.mjs`, `scripts/test-category-order.mjs`,
 `scripts/test-returning-profile.mjs`, `scripts/test-archive-alias-visibility.mjs`,
 `scripts/verify-section-headlines.mjs`, `package.json`, `PROJECT_CONTEXT.md`
+
+---
+
+## Session — Proving the new pipeline: the floor comes from the diff, the receipt names the bytes (17 Aug 2026)
+
+**Request.** Finish and prove the validation/deployment pipeline built in the previous three commits
+before starting application-performance work. Nine specific corrections, then push, then a real
+deployment through the new process, then measure it against the 27-minute cycle. No application
+behaviour and no certified data to change.
+
+### 1. `scripts/.devlog-index.tsv` — gitignored
+
+A navigation index over this file: start line, heading, length, one row per `## ` section. Purely
+derived, and already stale when found — 148 rows against 150 headings, because it is rebuilt on
+demand and this file is appended to every session. Tracking it would put a conflicting diff on every
+commit for a file nothing but a session's own navigation reads. Ignored, alongside
+`.validate-receipt.json` (below).
+
+### 2. No shell, and the Node 24 warning is gone — `scripts/lib/pipeline.mjs` (new)
+
+Every gate spawn carried `shell: process.platform === 'win32'`, which Node 24 flags:
+
+    [DEP0190] Passing args to a child process with shell option true can lead to security
+    vulnerabilities, as the arguments are not escaped, only concatenated.
+
+Not theoretical: `--only` took a name off the command line and turned it into a path, so with a
+shell every gate argument was a place cmd.exe would act on `&&` or `;` rather than pass it along.
+The shell was only ever there because `npx` is `npx.cmd` on Windows. `resolveArgv()` now resolves
+the executable directly — `node` is `process.execPath`, and `npx tsc` is the TypeScript entry point
+handed straight to node. Removed from `validate.mjs`, `verify-live.mjs` and `verify-final.mjs`; no
+`shell:` remains in the pipeline and the warning is silent.
+
+### 3. `--only` is an allowlist, not a path
+
+`--only foo` became `scripts/foo.mjs` and ran it, unchecked — and half of `scripts/` WRITES certified
+artifacts, while `../` walked out of the directory entirely. `GATES` in `lib/pipeline.mjs` names the
+eleven read-only browser gates and the argument convention each one takes, so a caller supplies a
+name and nothing else. An unknown name prints the list and exits 2. `verify-live.mjs --smoke` reads
+the same table — the identical injection surface, aimed at production. It also fixes a latent bug:
+the documented `--smoke month-chart` used to build `test-month-chart.mjs`, which does not exist.
+
+### 4. The profile floor comes from the git diff
+
+"Pick by what changed" was the rule and was unenforceable: `--profile fast` is one word whether or
+not the diff touched `audit/`. Every changed path now maps to the weakest profile that can honestly
+prove it, and the strongest of those is the floor:
+
+| profile | what sets it |
+|---|---|
+| `full` | the pipeline scripts, a browser gate, `lib/browser.mjs`/`chainSteps.mjs`, the build config, `public/sw.js`, `src/index.css` |
+| `certified` | `audit/`, `public/data/`, the seed/alias/glossary read paths, any other script, `src-tauri/` |
+| `standard` | `src/lib/`, `src/pages/`, the app shell — and anything no rule matches |
+| `fast` | `src/components/`, assets, stylesheets, prose, repo config outside the bundle |
+
+The baseline is **the last thing proved live**, not the last commit: the commit in
+`dist/build-info.json`, else `origin/master`, else `HEAD~1`. Three unpushed commits are exactly as
+unproven as an uncommitted edit. With no `--profile` the floor IS the profile; an explicit one may go
+up and is refused below, naming the files that set it. A path matching no rule floors at `standard`
+and is printed, so the table can be taught rather than silently trusted.
+
+### 5. `--no-chain` cannot buy a certified pass
+
+The chain run twice IS the certified proof — it is what shows an apply step is idempotent, which is
+the property that broke when `SEED_VERSION` sat at 4 through three applies. `--no-chain` at
+`certified` or `full` is now refused outright, and the receipt records whether the chain ran so
+`preflight-deploy.mjs` can refuse a `--no-chain` receipt for a certified change independently.
+
+### 6 + 7. The build stamp describes the exact committed bytes
+
+The stamp on disk read `"dirty": true` against commit `b72e920` — a record of a bundle that commit
+does not contain, and `verify-live.mjs` could only report it after the fact, from production. A
+`dirty` FLAG describes the problem; refusing to write is the fix. `write-build-info.mjs` now exits 1
+on any uncommitted change, with no override, and records `tree` — `git rev-parse HEAD^{tree}`, the id
+of the exact bytes — beside the commit. `ALLOW_DIRTY` has been removed from `preflight-deploy.mjs`:
+it only moved the failure four minutes later, after the build.
+
+`deploy-web.sh` re-checks cleanliness immediately after the Firestore export, because the export
+writes `public/data/` after pre-flight has already approved the tree. Catching it there costs a
+second instead of a whole vite build.
+
+### 8. The receipt ties validation to deployment
+
+"It validated" and "this is what is being published" were two claims joined by memory.
+`validate.mjs` writes `.validate-receipt.json` (gitignored) on success: profile, the diff's floor,
+whether the chain ran, and the git **tree** of the working copy it proved — computed through a
+throwaway index, because validation runs before the commit and committing those same bytes produces
+that same tree. `preflight-deploy.mjs` recomputes it and refuses to publish unless it matches, the
+receipt's profile meets the floor, and the chain ran when the floor is `certified` or above.
+`verify-live.mjs` then asserts production's stamp carries that same tree: **proved → committed →
+built → served**, one comparable value the whole way.
+
+`verify-final.mjs` still means "at least certified", and now takes the floor when the floor is
+higher, so the old command keeps working instead of being refused by the new rule.
+
+### Guard behaviour, checked
+
+| command | result |
+|---|---|
+| `validate.mjs --list` | floor `full` from 19 changed paths since `b72e920` |
+| `validate.mjs --profile fast` | exit 2, names the files forcing `full` |
+| `validate.mjs --only ../export-firestore` | exit 2, prints the eleven gates |
+| `validate.mjs --profile full --no-chain` | exit 2 |
+| `preflight-deploy.mjs` (dirty, no receipt) | 2 checks fail, NOT publishing |
+| any spawn | no `DEP0190` |
+
+**Files:** `scripts/lib/pipeline.mjs` (new) · `scripts/validate.mjs`, `scripts/verify-live.mjs`,
+`scripts/verify-final.mjs`, `scripts/preflight-deploy.mjs`, `scripts/write-build-info.mjs`,
+`scripts/deploy-web.sh`, `.gitignore`, `PROJECT_CONTEXT.md`

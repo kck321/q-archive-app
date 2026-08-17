@@ -43,3 +43,14 @@ media-bundle/
 
 # Runtime single-writer lock — never a tracked artifact.
 .repo-lock.json
+
+# A navigation index over DEVLOG.md — start line, heading, length, one row per `## ` section.
+# Purely derived: it can be rebuilt from DEVLOG.md at any moment, and it goes stale the moment
+# DEVLOG.md is appended to, which happens every session. Tracking it would mean a conflicting
+# diff on every commit for a file nothing reads but a session's own navigation.
+scripts/.devlog-index.tsv
+
+# The validation receipt written by scripts/validate.mjs and read by scripts/preflight-deploy.mjs.
+# It records WHICH bytes passed WHICH profile on this machine; it is local evidence about a local
+# run, never a fact about the repo.
+.validate-receipt.json

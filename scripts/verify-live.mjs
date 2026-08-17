@@ -31,8 +31,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import crypto from 'node:crypto'
-import { spawnSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
+import { run, GATES, gateArgv, gateList } from './lib/pipeline.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DIST = path.join(ROOT, 'dist')
@@ -40,7 +40,16 @@ const argv = process.argv.slice(2)
 const at = flag => { const i = argv.indexOf(flag); return i > -1 ? argv[i + 1] : null }
 const LIVE = at('--url') ?? 'https://qdrops.app'
 const FULL = argv.includes('--full')
+// --smoke names gates from the same allowlist --only uses (lib/pipeline.mjs). It built a path from
+// the argument before, which pointed a command-line string at anything in scripts/ — and here that
+// string is aimed at PRODUCTION.
 const smoke = (at('--smoke') ?? '').split(',').map(s => s.trim()).filter(Boolean)
+const unknownSmoke = smoke.filter(n => !GATES[n])
+if (unknownSmoke.length || smoke.includes('?')) {
+  if (unknownSmoke.length) console.error(`\n  Not a gate: ${unknownSmoke.join(', ')}`)
+  console.error(`\n  --smoke accepts these, and nothing else:\n\n${gateList()}\n`)
+  process.exit(2)
+}
 // The CDN serves the previous bundle for a short while after a push. This is how long the identity
 // check is willing to keep asking before calling it stale.
 const SETTLE = Number(at('--settle') ?? 120) * 1000
@@ -96,6 +105,11 @@ check('deployed-manifest', 'production carries the certified manifest that was v
   `expected ${String(expected.manifestSha).slice(0, 12)}, live ${String(served?.manifestSha).slice(0, 12)}`)
 check('clean-commit', 'the deployed commit is one git can reproduce',
   expected.dirty === false, expected.dirty ? 'built from a dirty working tree' : `${expected.commitShort} on ${expected.branch}`)
+// The tree is the id of the exact bytes, and it is the same value validate.mjs recorded for the
+// working copy it proved. Matching it here closes the loop: proved → committed → built → served.
+check('deployed-tree', 'production names the tree of the bytes that were built',
+  Boolean(expected.tree) && served?.tree === expected.tree,
+  `expected ${String(expected.tree).slice(0, 12)}, live ${String(served?.tree).slice(0, 12)}`)
 
 // ── 2. THE ASSETS index.html POINTS AT ───────────────────────────────────────
 // index.html names the current hashed bundles. If the live copy names different ones, readers are
@@ -169,7 +183,7 @@ check('clean-commit', 'the deployed commit is one git can reproduce',
 const gate = (label, argvv) => {
   const t0 = Date.now()
   process.stdout.write(`\n▶ ${label}\n`)
-  const r = spawnSync(argvv[0], argvv.slice(1), { cwd: ROOT, stdio: 'inherit', shell: process.platform === 'win32' })
+  const r = run(argvv, { cwd: ROOT })
   const secs = ((Date.now() - t0) / 1000).toFixed(1)
   check(label.replace(/\s+/g, '-'), `${label} (${secs}s)`, r.status === 0, `exit ${r.status}`)
   return r.status === 0
@@ -190,12 +204,7 @@ if (FULL) {
   // A FRESH VISITOR: nothing cached, the app builds everything from the bundle it just downloaded.
   // The cheapest gate that proves the seeded data reached the rendered page.
   gate('live — fresh visitor', ['node', 'scripts/test-alias-visibility.mjs', LIVE, '--fresh'])
-  for (const name of smoke) {
-    const file = name.endsWith('.mjs') ? name : `test-${name.replace(/^test-/, '')}.mjs`
-    const rel = file.startsWith('scripts/') ? file : `scripts/${file}`
-    if (!fs.existsSync(path.join(ROOT, rel))) { check(`smoke-${name}`, 'the named smoke gate exists', false, rel); continue }
-    gate(`live — smoke: ${name}`, ['node', rel, '--url', LIVE])
-  }
+  for (const name of smoke) gate(`live — smoke: ${name}`, gateArgv(name, LIVE))
 }
 
 // A RETURNING VISITOR, deliberately downgraded to the pre-change state. The one that has failed in

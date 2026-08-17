@@ -23,9 +23,9 @@
 // a fresh reader and a returning one — because that is the only thing that can differ between the
 // dist/ that passed locally and the same dist/ served by GitHub. Application logic is proved once,
 // on the bytes that ship. See the header of verify-live.mjs.
-import { spawnSync } from 'node:child_process'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { run, rankOf, requiredProfile } from './lib/pipeline.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const args = process.argv.slice(2)
@@ -35,9 +35,15 @@ const BASE = (args.find(a => a.startsWith('--base='))?.split('=')[1])
 
 const passthrough = args.filter(a => a !== '--live' && a !== '--base' && !a.startsWith('--base=') && a !== BASE)
 
+// This front door means "at least certified" — but the diff now sets a floor of its own, and a
+// diff that touches a gate or the deploy script cannot be proved by `certified`. Take whichever is
+// stronger, so the old command keeps working instead of being refused by the new rule.
+const floor = requiredProfile(ROOT).required
+const profile = rankOf(floor) > rankOf('certified') ? floor : 'certified'
+
 const argv = liveOnly
   ? ['scripts/verify-live.mjs', ...passthrough]
-  : ['scripts/validate.mjs', '--profile', 'certified', '--base', BASE ?? 'http://localhost:5173', ...passthrough]
+  : ['scripts/validate.mjs', '--profile', profile, '--base', BASE ?? 'http://localhost:5173', ...passthrough]
 
-const r = spawnSync('node', argv, { cwd: ROOT, stdio: 'inherit', shell: process.platform === 'win32' })
+const r = run(['node', ...argv], { cwd: ROOT })
 process.exit(r.status ?? 1)

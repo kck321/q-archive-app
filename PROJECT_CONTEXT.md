@@ -117,19 +117,54 @@ The gates do not change: chain, invariants, manifest, seed decision, `verify-fin
 
 ### At a deployment checkpoint — buy the proof the change needs (17 Aug 2026)
 
-One profile, then deploy, then one delivery proof. Pick by WHAT CHANGED, never by how big the diff
-looks:
+One profile, then deploy, then one delivery proof:
 
-    node scripts/validate.mjs --profile fast        UI only: colour, layout, copy, ordering
-    node scripts/validate.mjs --profile standard    shared behaviour: filtering, search, readers
-    node scripts/validate.mjs --profile certified   artifacts, counts, aliases, rulings, seed, manifest
-    node scripts/validate.mjs --profile full        every category, viewport and interaction
-
+    node scripts/validate.mjs                       the profile the DIFF requires — this is the normal command
     npm run deploy:web                              stamps the build, waits, names a Pages stall
     node scripts/verify-live.mjs                    DELIVERY on the deployed site
 
-`node scripts/verify-final.mjs` still works and means `--profile certified`; `--live` still works and
-means `verify-live.mjs`. `--only <gate>` appends a targeted gate to any profile.
+**YOU NO LONGER PICK THE PROFILE — THE DIFF DOES (17 Aug 2026).** Every changed path maps to the
+weakest profile that can honestly prove it, and the strongest of those is the floor. `--profile` may
+go UP from the floor and is REFUSED below it, naming the files that set it. "Pick by what changed"
+was already the rule; `--profile fast` was one word whether or not the diff touched `audit/`.
+
+| floor | set by |
+|---|---|
+| `full` | the pipeline scripts, any `test-*.mjs` gate, `lib/browser.mjs`, `lib/chainSteps.mjs`, build config, `public/sw.js`, `src/index.css` |
+| `certified` | `audit/`, `public/data/`, the seed/alias/glossary read paths, any other script, `src-tauri/` |
+| `standard` | `src/lib/`, `src/pages/`, the app shell — and any path no rule matches |
+| `fast` | `src/components/`, assets, stylesheets, prose, repo config outside the bundle |
+
+The baseline is **the last thing proved live** — the commit in `dist/build-info.json`, else
+`origin/master`, else `HEAD~1`. Unpushed commits are as unproven as uncommitted edits. The table
+lives in `scripts/lib/pipeline.mjs`; teach it rather than working around it.
+
+`--only <gate>` and `verify-live.mjs --smoke <gate>` take names from an **allowlist** of eleven
+read-only browser gates (`GATES`, same file); anything else exits 2 and prints the list. They used to
+build a path from the argument and run whatever it named. `node scripts/verify-final.mjs` still
+works and means "at least certified" (it takes the floor when the floor is higher); `--live` still
+means `verify-live.mjs`.
+
+**`--no-chain` cannot buy a certified pass.** It is refused at `certified` and `full`: the chain run
+twice IS that proof.
+
+### Nothing ships that nothing proved (17 Aug 2026)
+
+`validate.mjs` writes `.validate-receipt.json` (gitignored) on success — profile, the floor, whether
+the chain ran, and the git **tree** of the working copy it proved. The tree, not the commit, because
+validation runs before the commit and committing the same bytes yields the same tree.
+
+- `preflight-deploy.mjs` recomputes that tree and refuses to publish unless it matches, the
+  receipt's profile meets the floor, and the chain ran when the floor is `certified` or above.
+- `write-build-info.mjs` **refuses a dirty working tree**, with no override, and records `tree`
+  beside `commit`. `ALLOW_DIRTY` is gone: it only moved the failure to after the build. The stamp
+  that shipped before this said `"dirty": true` — a record of a bundle its own commit did not hold.
+- `deploy-web.sh` re-checks cleanliness right after the Firestore export, which writes
+  `public/data/` after pre-flight has already approved the tree.
+- `verify-live.mjs` asserts production's stamp carries that same tree.
+
+**proved → committed → built → served, one comparable value the whole way.** If a step refuses, the
+answer is to commit and re-validate, never to reach for a flag.
 
 **The cheap certified-data invariants are in EVERY profile.** Manifest, cross-section invariants,
 seed fingerprint and the four pure matchers cost ~6s together. A profile chooses how much BROWSER to

@@ -54,6 +54,29 @@ else
   }
 fi
 
+# ── THE EXPORT MAY HAVE CHANGED THE BYTES PRE-FLIGHT APPROVED ────────────────
+# preflight-deploy.mjs runs FIRST and checks a clean tree against the validation receipt. The
+# export then writes public/data/*.json. If it changed anything, the bundle about to be built is no
+# longer the bundle that was validated — and write-build-info.mjs would refuse to stamp it anyway,
+# four minutes later, after the whole vite build. Catching it here costs a second and says why.
+POST_EXPORT_DIRTY="$(git status --porcelain | wc -l | tr -d ' ')"
+if [ "$POST_EXPORT_DIRTY" != "0" ]; then
+  echo ""
+  echo "  !! DEPLOY BLOCKED — the Firestore export changed $POST_EXPORT_DIRTY tracked file(s)."
+  git status --porcelain | head -10
+  echo ""
+  echo "     These bytes were not the bytes that were validated, and a build stamp cannot"
+  echo "     describe them. Commit them and re-validate at the profile the diff now requires:"
+  echo ""
+  echo "         git add -A && git commit"
+  echo "         node scripts/validate.mjs        (the floor comes from the diff)"
+  echo "         npm run deploy:web"
+  echo ""
+  echo "     If the bundle on disk is already the certified one, SKIP_EXPORT=1 publishes it"
+  echo "     without re-dumping — the manifest gate below still refuses a genuinely stale bundle."
+  exit 1
+fi
+
 # ── MANDATORY CERTIFICATION GATE ─────────────────────────────────────────────
 # Runs AFTER the export chain, so it checks what will actually ship rather than what was on
 # disk beforehand. The chain re-dumps posts.json and replays every apply step; the manifest
