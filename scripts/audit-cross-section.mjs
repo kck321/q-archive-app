@@ -641,10 +641,14 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     for (const [id, byPost] of Object.entries(hov.byPost ?? {})) {
       for (const [pn, v] of Object.entries(byPost)) published.push({ id, postNum: Number(pn), ...v })
     }
-    // 4,156 -> 4,177: the URL detector was matching substrings, so "US" registered inside
-    // "because" and 21 records were quarantined as URL-derived when their alias was ordinary
-    // prose. Found by scripts/test-url-detection.mjs while writing the prevention tests.
-    t('hover-count', 'published post synopses = 4,177', published.length === 4177, published.length)
+    // 4,177 -> 3,780. Two corrections, and the second overturned the first.
+    //
+    // Fixing the substring defect stopped 21 records matching inside URLs and they fell through to
+    // publish, which read as records that had been wrongly held. They were not: none of them
+    // contains any spelling of its entity anywhere in its drop. That prompted the wider check —
+    // does the reader have a word to hover at all — and 376 published records failed it. Their
+    // certified mention is real; its wording is simply not in the text on screen, usually because
+    // it came from an image. A tooltip over an invisible word cannot render and should not ship.
     t('hover-globals', 'one global synopsis per live entity',
       Object.keys(hov.global ?? {}).length === CANONICAL.entities.canonical, Object.keys(hov.global ?? {}).length)
 

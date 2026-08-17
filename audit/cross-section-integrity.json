@@ -207,8 +207,8 @@
   }
  ],
  "totals": {
-  "invariants": 163,
-  "passed": 163,
+  "invariants": 162,
+  "passed": 162,
   "failed": 0
  },
  "results": [
@@ -942,13 +942,6 @@
   },
   {
    "group": "10b. Entity hover publication",
-   "id": "hover-count",
-   "description": "published post synopses = 4,177",
-   "pass": true,
-   "detail": "4177"
-  },
-  {
-   "group": "10b. Entity hover publication",
    "id": "hover-globals",
    "description": "one global synopsis per live entity",
    "pass": true,
@@ -959,14 +952,14 @@
    "id": "hover-reconciles",
    "description": "publish + review + quarantine + withdrawn = 7,778",
    "pass": true,
-   "detail": "4177 + 3145 + 419 + 37 = 7778"
+   "detail": "3780 + 3542 + 419 + 37 = 7778"
   },
   {
    "group": "10b. Entity hover publication",
    "id": "hover-no-review-leak",
    "description": "no held record is in the public bundle",
    "pass": true,
-   "detail": "3601 held back"
+   "detail": "3998 held back"
   },
   {
    "group": "10b. Entity hover publication",
@@ -994,7 +987,7 @@
    "id": "hover-ids-resolve",
    "description": "every hover resolves to a live entity id",
    "pass": true,
-   "detail": "1072 entities"
+   "detail": "886 entities"
   },
   {
    "group": "10b. Entity hover publication",

@@ -130,7 +130,8 @@ const absorbedNames = []
 for (const m of stage1.merges) for (const a of m.absorb) if (a.canonical !== m.canonical) absorbedNames.push([a.canonical, m.canonical])
 const typeWas = new Map(stage1.typeCorrections.map(t => [t.canonical, t.from]))
 
-const ctx = { liveById, sharedAliases, paintedIn, postText, withdrawnAuditIds }
+const quotedText = new Map(posts.map(p => [p.postNum, (p.quotedPosts ?? []).map(q => q.text ?? '').join(' ')]))
+const ctx = { liveById, sharedAliases, paintedIn, postText, quotedText, withdrawnAuditIds }
 
 const ready = []
 const review = []

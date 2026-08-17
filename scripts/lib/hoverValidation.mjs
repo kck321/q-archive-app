@@ -132,6 +132,31 @@ export function validateHover(rec, ctx) {
     return { verdict: 'quarantine', reason: 'the term appears only inside a URL, never in the drop\'s prose', urlClass: classifyUrlDerived(loc) }
   }
 
+  // THE READER MUST BE ABLE TO SEE THE WORD.
+  //
+  // A hover explains a term in a drop. If the term is nowhere in that drop — not in Q's prose, not
+  // in a URL, not in quoted content — then the tooltip explains something invisible, and no amount
+  // of good wording rescues it.
+  //
+  // This was found the hard way. Fixing the substring defect stopped 21 records matching inside
+  // URLs, and they fell straight through to publish; the obvious reading was that they had been
+  // wrongly quarantined and were genuine prose. They were not. None of the 21 contains its alias
+  // as a complete token anywhere: 16 have no textual basis at all and 5 have only an image. The
+  // certified mention behind them is real, but its wording is not visible in the text the reader
+  // is looking at, so the explanation belongs to an editor rather than to the page.
+  // Tested across EVERY alias of the entity, not just the one the audit happened to record. The
+  // tooltip attaches to whichever spelling the renderer finds, so an entity written "HRC" in the
+  // drop is visible even when the audit matched "Hillary Clinton". Testing matchedAlias alone
+  // condemned 376 records whose entity is plainly on the page under another name.
+  const quoted = ctx.quotedText?.get(rec.postNum) ?? ''
+  const visible = [...aliases].some(a => {
+    const t = entity.aliases.find(x => x.text.toLowerCase() === a)?.text ?? a
+    return aliasLocation(postText.get(rec.postNum) ?? '', t).inProse || aliasLocation(quoted, t).inProse
+  })
+  if (!visible && !loc.inUrl) {
+    return { verdict: 'review', reason: 'no spelling of this entity appears in the drop — not in the prose, a URL, or quoted content' }
+  }
+
   // A shared alias cannot be resolved by a global mapping. BO is Barack Obama, Bruce Ohr and the
   // Board Owner in different drops; only occurrence-level context settles which.
   if (sharedAliases.has(rec.matchedAlias)) {
