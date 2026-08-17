@@ -5100,3 +5100,45 @@ Fixed with `execFileSync` and an argument array, so no shell parses them — and
 read is now **fatal** rather than a null field: a stamp without it cannot say which bytes are live,
 which is the file's only job. That change is itself a pipeline script, so the floor rule put it back
 at `full`, which is the rule working rather than an inconvenience.
+
+### End to end, measured — 17 Aug 2026
+
+Two complete cycles, wall clock, everything green. Cycle 1 shipped `91ba2fe` and its live proof found
+the `tree: null` bug; cycle 2 shipped the fix as `9251a47` and passed 14/14.
+
+| stage | cycle 1 | cycle 2 |
+|---|---:|---:|
+| `validate.mjs` — profile **full** | 616.5s | 601.6s |
+| `npm run deploy:web` (export → chain → manifest → tsc → build → stamp → push → wait) | 160s | **100s** |
+| — of which GitHub Pages took to serve it | 78s | 42s |
+| `verify-live.mjs` | — | **13.8s** |
+| **total** | | **715.4s — 11m 55s** |
+
+**Against the 27-minute cycle measured the day before: 11m 55s, and that is the most expensive
+profile in the system.** The comparison is deliberately unflattering to the new pipeline — the 27
+minutes was paid for a ONE-LINE change, and a one-line change no longer buys `full`.
+
+What the same one-line change costs now, with today's measured numbers:
+
+| | old | new |
+|---|---:|---:|
+| local proof | 726s (the one path) | **10.4s** (`fast`, 8 steps, the floor an empty/UI diff gets) |
+| deploy | ~1.5 min | 100s |
+| live proof | 744s (the whole suite, again, against production) | 13.8s (delivery only) |
+| **total** | **~27 min** | **~2 min 04s** |
+
+The `full` numbers are also the answer to "what does the most careful possible check cost": ten
+minutes, of which 444s is three gates — the 7-category month chart (214.3s), multi-word glossary
+(129.7s) and category ordering (99.6s). None contains a sleep. They are 16, 19 and 9 loads of an app
+that takes ~10s to become usable, which remains Part 2's problem and is untouched by this pass.
+
+### The tree chain, end to end
+
+    validated (receipt)  795e75cf0210b30fc5fc2afd9a612c800297dc44
+    committed (HEAD)     795e75cf0210b30fc5fc2afd9a612c800297dc44
+    served  (production) 795e75cf0210b30fc5fc2afd9a612c800297dc44
+
+`verify-live.mjs` — 14/14, 13.8s, https://qdrops.app: production serves the validated build; seed 78;
+the certified manifest hash; a clean commit; the tree above; the hashed assets `index.html` names,
+both fetchable; the service worker byte-identical carrying `qdrops-20260817-174241`; all 20 data
+artifacts matching the bundle; a fresh visitor; and a returning one.
