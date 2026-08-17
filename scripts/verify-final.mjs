@@ -76,6 +76,15 @@ if (!liveOnly) {
   // ordered by `occurrences` while the badge showed an alias-inclusive post count, so Australia's
   // 20 posts sat below rows with 6 and nothing was measuring it.
   step('fresh profile — category ordering', 'node', ['scripts/test-category-order.mjs', BASE, '--fresh'])
+  // THE ENTITY LIST RECONCILES AT THE LAYER THE READER SEES. entities.json said 1,201 for weeks
+  // while the header printed 856 and the list rendered 1,062 — every server-side gate green. This
+  // reads the real DOM: the header's figures, the published row count, and a post chip on every
+  // one of those rows.
+  step('fresh profile — entity list reconciliation', 'node', ['scripts/test-entity-reconciliation.mjs', '--url', BASE])
+  // MONTH CHART BEHAVIOUR, on every Analysis category and the Archive, desktop and phone, with real
+  // pointer and key events: hover reads out and changes nothing, click selects and filters, Enter
+  // and Space match the mouse, and the selection is announced.
+  step('fresh profile — month chart behaviour', 'node', ['scripts/test-month-chart-behaviour.mjs', '--url', BASE])
 
   // A RETURNING visitor, deliberately downgraded to the pre-change state. The one that has failed
   // in production while every other check was green.
@@ -94,6 +103,8 @@ if (!liveOnly) {
   step('live site — tooltip accessibility', 'node', ['scripts/test-hover-accessibility.mjs', LIVE, '--fresh'])
   step('live site — multi-word glossary terms', 'node', ['scripts/test-multiword-gloss.mjs', LIVE, '--fresh'])
   step('live site — category ordering', 'node', ['scripts/test-category-order.mjs', LIVE, '--fresh'])
+  step('live site — entity list reconciliation', 'node', ['scripts/test-entity-reconciliation.mjs', '--url', LIVE])
+  step('live site — month chart behaviour', 'node', ['scripts/test-month-chart-behaviour.mjs', '--url', LIVE])
   // The one that matters most on production: a reader who already had the app must receive it.
   step('live site — returning/stale profile', 'node', ['scripts/test-returning-profile.mjs', '--url', LIVE])
   console.log(`\n${'─'.repeat(60)}\n✅ live proof complete — ${LIVE}\n`)
