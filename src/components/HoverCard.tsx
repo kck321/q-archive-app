@@ -141,6 +141,17 @@ export function HoverCard({
         if (spaceBelow >= spaceAbove) { top = a.bottom + GAP; maxHeight = Math.max(MIN_CARD, spaceBelow) }
         else { maxHeight = Math.max(MIN_CARD, spaceAbove); top = Math.max(MARGIN, a.top - GAP - maxHeight) }
       }
+      // WHEN THE ANCHOR ITSELF IS OFF SCREEN, SHOWING THE CARD WINS.
+      //
+      // Everything above protects the anchor from being covered. That is the right priority only
+      // while the reader can see the anchor. A trigger below the fold — which happens whenever a
+      // box is opened programmatically, by a keyboard user tabbing ahead, or by a deep link —
+      // dragged the card off screen with it, and a card nobody can read protects nothing.
+      const anchorVisible = a.bottom > 0 && a.top < window.innerHeight
+      if (!anchorVisible) {
+        maxHeight = Math.min(wanted, window.innerHeight - 2 * MARGIN)
+        top = Math.max(MARGIN, Math.min(a.top, window.innerHeight - maxHeight - MARGIN))
+      }
       setPos({ left, top, pinned: false, maxHeight })
     }
     place()
