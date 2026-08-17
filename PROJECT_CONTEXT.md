@@ -115,12 +115,52 @@ and three separate reports this session were "it still does X" about work that w
 The gates do not change: chain, invariants, manifest, seed decision, `verify-final.mjs`, deploy,
 `--live`. They cost about a minute; the deploy itself is the fast part.
 
-### At a deployment checkpoint — pay for it all, once
+### At a deployment checkpoint — buy the proof the change needs (17 Aug 2026)
 
-    full canonical/materialisation chain, run TWICE to prove idempotence
-    global invariants -> manifest -> seed-version decision -> build/deploy
-    node scripts/verify-final.mjs        fresh + returning profiles
-    node scripts/verify-final.mjs --live the deployed site
+One profile, then deploy, then one delivery proof. Pick by WHAT CHANGED, never by how big the diff
+looks:
+
+    node scripts/validate.mjs --profile fast        UI only: colour, layout, copy, ordering
+    node scripts/validate.mjs --profile standard    shared behaviour: filtering, search, readers
+    node scripts/validate.mjs --profile certified   artifacts, counts, aliases, rulings, seed, manifest
+    node scripts/validate.mjs --profile full        every category, viewport and interaction
+
+    npm run deploy:web                              stamps the build, waits, names a Pages stall
+    node scripts/verify-live.mjs                    DELIVERY on the deployed site
+
+`node scripts/verify-final.mjs` still works and means `--profile certified`; `--live` still works and
+means `verify-live.mjs`. `--only <gate>` appends a targeted gate to any profile.
+
+**The cheap certified-data invariants are in EVERY profile.** Manifest, cross-section invariants,
+seed fingerprint and the four pure matchers cost ~6s together. A profile chooses how much BROWSER to
+buy; it never chooses whether the data is allowed to be wrong. `certified` and `full` also run the
+apply chain twice, so idempotence is still proved at every certified checkpoint.
+
+**The live pass proves delivery, not logic.** It re-ran the whole local suite against production —
+12.4 min of a 27-min deploy — proving application logic a second time against the same `dist/`. What
+can actually differ is delivery, so that is what it asks: the deployed commit, seed and manifest hash
+(`/build-info.json`), the hashed assets `index.html` names, the service-worker `CACHE_VERSION`, every
+published data file against the bytes on disk, a fresh reader, and a RETURNING one. `--smoke <gate>`
+gives a changed feature its one look on production; `--full` restores the old everything-pass.
+
+**Measured 17 Aug 2026, local, same assertions, before and after on this machine:** month chart
+370.1→21.1s · entity reconciliation 65.6→12.4s · archive alias 49.9→16.6s · returning profile
+37.2→8.7s · section headlines 107.0→77.6s · category ordering 125.3→96.6s. **755.1s → 233.0s.**
+The last two improve least because they were never mostly sleep — they are seven and nine loads of an
+app that takes ~10s to become usable, which is Part 2's problem. Every fixed sleep
+in the deploy-path gates is now a condition — rows rendered, the count the artifact predicts, the
+selection changed, the tooltip visible, the seed re-seeded. **Do not reintroduce a `sleep(n)` into a
+gate.** `scripts/lib/browser.mjs` has `waitFor`, `waitForStable`, `press` and the named conditions.
+
+**What a deploy costs now,** measured end to end, everything green: `fast` 22.1s · `standard` 115.4s ·
+`certified` ~390s (was one 726s path) — so an ordinary UI deploy is ~4.5 min against 27, a certified
+one ~9. **The expensive things left are the app, not the process:** `test-multiword-gloss` 128.9s and
+`test-category-order` 101.3s never contained a sleep — they are 19 and 9 loads of a page that takes
+~10s to become usable. Nothing more can come out without removing a gate.
+
+**A Pages build that has not been served in 5 minutes is EXTERNALLY STALLED.** Normal is 33–75s.
+`await-pages-build.mjs` runs inside the deploy, polls the build stamp, and at five minutes prints the
+Pages API status and says to re-push. Do not wait 45 minutes; one build on 17 Aug 2026 errored at 66.
 
 ### Verify at the layer the owner sees — and never trust a zero
 

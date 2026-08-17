@@ -4837,3 +4837,134 @@ tsc · eslint (3 pre-existing errors, one fewer than before) · full apply chain
 entity reconciliation 14/14 · month behaviour 192/192 · `verify-final.mjs` fresh + returning green.
 
 Both new gates are now steps of `verify-final.mjs`, local and live (`3385927`).
+
+---
+
+## 2026-08-17 — the deploy stopped costing 27 minutes
+
+**Request (owner, after an external process review of `HANDOFF-PROCESS-REVIEW.md`):** optimise the
+q-app validation and deployment process only. No application behaviour, certified data, counts or UI
+may change. Replace fixed browser-test sleeps with condition waits; stop proving one shared module on
+seven categories; add risk-based profiles; keep every cheap certified-data invariant in all of them;
+make the live pass delivery-focused; detect a GitHub Pages build that exceeds five minutes; measure
+before and after; delete nothing.
+
+### What was actually expensive
+
+The handoff had it measured: of ~27 minutes per deploy, **six seconds** were the certified-data
+protections. The rest was browser time, and most of that was the process waiting on a clock. Two
+gates added the previous day declared 49.5s and 22.4s×16 of fixed sleeps between them, and the live
+pass re-ran all nine local gates against production — proving application logic a second time against
+the identical `dist/`.
+
+### 1. Every deploy-path gate now waits on a condition
+
+`scripts/lib/browser.mjs` gained `waitForStable` (poll until the value repeats), `press`/`key` (real
+CDP key events, so Enter and Space actually activate a button), and named conditions — `CHIPS_READY`,
+`MONTHS_READY`, `DROP_READY`, `LIST_SIZE`, `seededTo(n)`. Six gates were rewritten onto it. The waits
+are the states the next assertion depends on: the picker exists, the chip count stopped moving, the
+row count the artifact predicts, the selection changed, the tooltip appeared, the month was released,
+the profile re-seeded.
+
+**Measured on this machine, same day, same assertions, `http://localhost:5173`:**
+
+| gate | before | after | |
+|---|---:|---:|---|
+| `test-month-chart-behaviour` | 370.1s | **21.1s** | 17.5× |
+| `test-entity-reconciliation` | 65.6s | **12.4s** | 5.3× |
+| `test-archive-alias-visibility` | 49.9s | **16.6s** | 3.0× |
+| `test-returning-profile` | 37.2s | **8.7s** | 4.3× |
+| `verify-section-headlines` | 107.0s | **77.6s** | 1.4× |
+| `test-category-order` | 125.3s | **96.6s** | 1.3× |
+| **the six together** | **755.1s** | **233.0s** | **3.2×** |
+
+The local "before" figures land within 0.5% of the live figures in the handoff (371.9 / 65.3 / 38.1),
+which is the evidence that local and live are comparable here at all.
+
+`verify-section-headlines` and `test-category-order` improve least because they were never mostly
+sleep — they are seven and nine page loads of an app that takes ~10s to become usable. That is the
+app's own cost, and it is Part 2's problem, not this pass's.
+
+**A condition can be wrong in a way a sleep cannot, and one was.** The Post Archive paints
+"Found 0 posts matching" before the posts collection arrives, so waiting for that banner returned in
+~200ms against an empty page and every alias assertion failed on a site that was fine. The condition
+is a non-zero result set. Same trap handled in the headline gate: it waits for rows carrying post
+chips — the frequency index having landed — not merely for rows.
+
+### 2. The month gate proves one shared module twice, not sixteen times
+
+`monthFilter.ts` + `MonthFilter.tsx` is one implementation. The ordinary run takes the representative
+category and the Archive — the two different HOSTS — on desktop and phone: 4 surfaces, 48 checks,
+21.1s. `--full` still sweeps all 7 categories × 2 viewports (16 surfaces, 192 checks) and is required
+when the shared module itself changes, before a release, and in the `full` profile. `--only <cat>`
+and `--rep <cat>` unchanged/added.
+
+### 3. Risk-based profiles — `scripts/validate.mjs`
+
+    --profile fast        UI only: typecheck + cheap invariants (+ --only <gate>)
+    --profile standard    + representative browser gates and the returning reader
+    --profile certified   + the apply chain TWICE, and the gates that read certified data off the page
+    --profile full        + all 7 categories, both alias surfaces
+
+**The cheap certified-data invariants are in every profile without exception** — manifest,
+cross-section invariants, seed fingerprint, four pure matchers. A profile chooses how much browser to
+buy; it never chooses whether the data is allowed to be wrong. `verify-final.mjs` still works and now
+means `--profile certified`, so every command in the docs and this log is unchanged.
+
+### 4. The live pass proves DELIVERY, not logic — `scripts/verify-live.mjs`
+
+A tooltip cannot behave differently because GitHub is serving the bytes. What can differ is delivery,
+and delivery is what has actually failed here. So the live pass asks only delivery questions:
+
+- **the deployed build is the validated build** — `scripts/write-build-info.mjs` stamps `dist/` with
+  the commit, seed, certification-manifest hash, service-worker version and asset list; production's
+  copy is fetched and compared. This is what makes "is it live yet?" a fact instead of a hard refresh.
+- the hashed assets `index.html` names are this build's, and they are fetchable
+- the service worker is **byte-identical** to the one built, and its `CACHE_VERSION` is a deploy stamp
+- every published data file matches the bytes on disk — full hash under 2 MB, byte length above it
+- a **fresh** reader, and a **returning** one (the gate that has actually failed in production)
+- `--smoke <gate>` gives a changed feature its one look on production; `--full` restores the old pass
+
+### 5. A Pages build that has not been served in 5 minutes is named
+
+`scripts/await-pages-build.mjs` runs inside the deploy. It polls the deployed stamp, and at five
+minutes stops and distinguishes the two cases: **externally stalled** (Pages says queued/building/
+errored → re-push, it supersedes) versus **not serving this build** (Pages says built → check the
+branch). It prints the Pages API status either way. Verified live: it read `status=built
+duration=37166ms`, confirming the 33–75s normal window. `SKIP_WAIT=1` restores fire-and-forget.
+
+### The cycle, measured end to end
+
+`node scripts/validate.mjs --profile certified --no-chain --base http://localhost:5173`, everything
+green, its own timing table:
+
+| profile | local proof | what a deploy costs |
+|---|---:|---|
+| `fast` | **22.1s** | + build/deploy ~1.5 min + live ~1 min ≈ **3 min** |
+| `standard` | **115.4s** | ≈ **4.5 min** |
+| `certified` | **390s** (358.6 measured + ~32s chain) | ≈ **9 min** |
+| *was: the one path* | *726s (12.1 min)* | *≈ 27 min* |
+
+An ordinary UI deploy lands inside the 5–7 minute target. A certified one is 9 minutes against 27,
+with the chain still run twice and every invariant still in the run.
+
+**What is expensive now is the app, not the process.** The two largest items in `certified` are
+`test-multiword-gloss` (128.9s) and `test-category-order` (101.3s), and neither has ever contained a
+fixed sleep — they are 19 and 9 page loads of an app that takes ~10s to become usable. `test-term-info`
+at 43.2s is the same story. Nothing further can be taken out of the pipeline without removing a gate;
+the next real gain is Part 2.
+
+### Nothing was deleted
+
+No script, audit artifact or source data removed. `scripts/.cache/references.jsonl` untouched. Fixed
+sleeps remain in four scripts that no profile runs — `verify-claim-graph.mjs`,
+`verify-claim-propagation.mjs`, `diagnose-claim-render.mjs` (one-off diagnostics from the 14 Aug
+claim investigation) and `test-seed-migration-browser.mjs`. They cost nothing per deploy; convert
+them the day one of them is put back on the path.
+
+**Files:** `scripts/validate.mjs`, `scripts/verify-live.mjs`, `scripts/write-build-info.mjs`,
+`scripts/await-pages-build.mjs` (new) · `scripts/lib/browser.mjs`, `scripts/verify-final.mjs`,
+`scripts/deploy-web.sh`, `scripts/test-month-chart-behaviour.mjs`,
+`scripts/test-entity-reconciliation.mjs`, `scripts/test-category-order.mjs`,
+`scripts/test-returning-profile.mjs`, `scripts/test-archive-alias-visibility.mjs`,
+`scripts/verify-section-headlines.mjs`, `package.json`, `PROJECT_CONTEXT.md`
