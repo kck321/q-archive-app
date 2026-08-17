@@ -21,7 +21,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import readline from 'node:readline'
 import { fileURLToPath } from 'node:url'
-import { validateHover, refreshWording, aliasLocation, classifyUrlDerived, URL_CLASS_MEANING } from './lib/hoverValidation.mjs'
+import { validateHover, refreshWording, aliasLocation, classifyUrlDerived, URL_CLASS_MEANING, runtimeText } from './lib/hoverValidation.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -114,8 +114,10 @@ if (globalsRetyped) {
 // Every record is VALIDATED against the current certified state rather than filed by the status
 // the audit stamped on it. A status records what was true when the audit ran; Stage 1 has moved
 // the world since, and 523 records were held for a blocker that no longer exists.
+// THE RENDERING COORDINATE SYSTEM, not the storage one. A hover is a statement about what the
+// reader can see, so every question below is asked of the text the browser paints.
 const posts = JSON.parse(fs.readFileSync(path.join(DATA, 'posts.json'), 'utf8'))
-const postText = new Map(posts.map(p => [p.postNum, p.text ?? '']))
+const postText = new Map(posts.map(p => [p.postNum, runtimeText(p.text ?? '')]))
 const paintedIn = new Map(posts.map(p => [p.postNum, new Set((p.postAnalysis?.namedEntities ?? []).map(t => t.toLowerCase()))]))
 const aliasOwners = new Map()
 for (const e of entities.entities) for (const a of e.aliases) {
@@ -130,11 +132,12 @@ const absorbedNames = []
 for (const m of stage1.merges) for (const a of m.absorb) if (a.canonical !== m.canonical) absorbedNames.push([a.canonical, m.canonical])
 const typeWas = new Map(stage1.typeCorrections.map(t => [t.canonical, t.from]))
 
-const quotedText = new Map(posts.map(p => [p.postNum, (p.quotedPosts ?? []).map(q => q.text ?? '').join(' ')]))
+const quotedText = new Map(posts.map(p => [p.postNum, runtimeText((p.quotedPosts ?? []).map(q => q.text ?? '').join(' '))]))
 const ctx = { liveById, sharedAliases, paintedIn, postText, quotedText, withdrawnAuditIds }
 
 const ready = []
 const review = []
+const noAnchor = []
 const quarantine = []
 const withdrawn = []
 const reworded = []
@@ -183,17 +186,20 @@ for (let i = 1; i <= 8; i++) {
       const loc = aliasLocation(postText.get(rec.postNum) ?? '', rec.matchedAlias)
       if (!loc.inProse && loc.inUrl) { rec.urlDerived = true; rec.urlClass = classifyUrlDerived(loc) }
     }
-    if (REGISTRY_BLOCKED.has(rec.status)) fromRegistryBlocked[v.verdict]++
+    if (v.verdict === 'no_visible_text_anchor') rec.hoverClassification = 'no_visible_text_anchor'
+    if (REGISTRY_BLOCKED.has(rec.status)) fromRegistryBlocked[v.verdict] = (fromRegistryBlocked[v.verdict] ?? 0) + 1
 
     if (v.verdict === 'publish') ready.push(rec)
     else if (v.verdict === 'quarantine') quarantine.push(rec)
     else if (v.verdict === 'withdrawn') withdrawn.push(rec)
+    else if (v.verdict === 'no_visible_text_anchor') noAnchor.push(rec)
     else review.push(rec)
   })
 }
 console.log(`  hover records read  : ${seen}`)
 console.log(`    publish           : ${ready.length}`)
 console.log(`    review            : ${review.length}`)
+console.log(`    no visible anchor : ${noAnchor.length}`)
 console.log(`    url quarantine    : ${quarantine.length}`)
 console.log(`    withdrawn         : ${withdrawn.length}`)
 console.log(`    wording refreshed : ${reworded.length}`)
@@ -218,7 +224,7 @@ for (const r of ready) {
 // Asserted from both sides: only records that passed validation are in the bundle, and nothing
 // held is. A Review synopsis is unreviewed editorial text about a named person.
 const publishedKeys = new Set(ready.map(r => `${r.entityId} ${r.postNum}`))
-const leaked = [...review, ...quarantine, ...withdrawn]
+const leaked = [...review, ...noAnchor, ...quarantine, ...withdrawn]
   .filter(r => publishedKeys.has(`${r.entityId} ${r.postNum}`))
   .filter(r => !ready.some(p => p.auditOccurrenceId === r.auditOccurrenceId))
 if (leaked.length) {
@@ -241,6 +247,7 @@ fs.writeFileSync(path.join(DATA, 'entity-hovers.json'), JSON.stringify({
     postSynopses: ready.length,
     entitiesWithPostSynopses: Object.keys(byEntity).length,
     heldInReview: review.length,
+    heldNoVisibleTextAnchor: noAnchor.length,
     heldInUrlQuarantine: quarantine.length,
     withdrawn: withdrawn.length,
   },
@@ -271,6 +278,28 @@ fs.writeFileSync(path.join(OUT, 'entity-hover-review-queue.json'), JSON.stringif
   byReason: review.reduce((a, r) => (a[r.verdictReason] = (a[r.verdictReason] ?? 0) + 1, a), {}),
   bySupport: review.reduce((a, r) => (a[r.contextSupport] = (a[r.contextSupport] ?? 0) + 1, a), {}),
   records: review.map(enrich),
+}, null, 1))
+
+// ── no visible text anchor ──────────────────────────────────────────────────
+// OWNER RULING, 2026-08-16. A post-specific text hover may be public only when a visible textual
+// anchor exists in the rendered post. These have none — so the TOOLTIP is excluded and classified.
+//
+// They are kept out of the ordinary review queue on purpose. Ordinary review means "an editor
+// should read this synopsis"; this means "there is no word on screen to attach it to", which is a
+// statement about the drop, not about the writing. Merging the two would put 400-odd records in
+// front of an editor whose reading is not the thing in question, and would quietly invite the
+// inference the ruling forbids — that a mention is invalid because its tooltip cannot render.
+fs.writeFileSync(path.join(OUT, 'entity-hover-no-visible-anchor.json'), JSON.stringify({
+  note: 'Hover records with no visible textual anchor in the RENDERED drop — no spelling of the entity appears in the prose, a URL, or quoted content. Excluded from the public bundle under the owner ruling of 2026-08-16 and classified no_visible_text_anchor. ADMIN ONLY. NO certified entity count changes here: this is a ruling about the tooltip, not about the occurrence.',
+  category: 'no_visible_text_anchor',
+  ruling: 'A post-specific text hover may be public only when a visible textual anchor exists in the rendered post. An occurrence is not invalid merely because a tooltip cannot render over it.',
+  certifiedCountChange: 'none',
+  coordinateSystem: 'runtimeText() — the text the browser paints, after board markup is stripped and HTML entities decoded. Asking this question of posts.json raw text condemns entities the reader can plainly see (AT&T stored as AT&amp;T).',
+  provenance: 'audit/entity-provenance-review.json classifies every record here by what supports the occurrence.',
+  total: noAnchor.length,
+  byRole: noAnchor.reduce((a, r) => (a[r.localRole] = (a[r.localRole] ?? 0) + 1, a), {}),
+  bySupport: noAnchor.reduce((a, r) => (a[r.contextSupport] = (a[r.contextSupport] ?? 0) + 1, a), {}),
+  records: noAnchor.map(enrich),
 }, null, 1))
 
 // ── URL quarantine, classified ──────────────────────────────────────────────

@@ -4182,3 +4182,395 @@ apply chain, and six filters.
 
 **Found, not fixed:** `Black Lives Matter` is typed `person`. The audit's 85 type corrections did
 not catch it.
+
+---
+
+## 2026-08-16 — the rendering coordinate system, and what it had been hiding
+
+**Request.** Continue the Entities cleanup from the repository and the existing audit artifacts.
+Classify the 376 anchorless hovers as `no_visible_text_anchor`, audit them into four provenance
+categories, complete the URL-cleanup package, write the missing invariants, add guarded apply and
+rollback, and report everything before applying anything.
+
+**What the audit found first.** Both the hover validator and the URL classifier were asking their
+questions of `posts.json` raw text — the board's own encoding — while the app strips that encoding
+at seed time (`stripBoardMarkup`). The project already had one definition of the rendered text,
+`scripts/lib/runtimeText.mjs`, written after the same mistake produced 2,475 wrong spans. The hover
+and URL work did not use it. Two consequences, both silent:
+
+- `AT&amp;T` folds to "at amp t" and the alias "AT&T" folds to "at t", so **6 records were condemned
+  for having no visible anchor while the company is plainly printed in the drop** (AT&T ×3,
+  McKinsey & Company ×2, Akin Gump ×1).
+- 8chan italicised `//`, so links are stored as `https:<em>//</em>example.com`. The URL regex needs
+  `://` and never saw one: **1,236 of the corpus's 2,666 links — 46%, across 946 posts — were
+  invisible to the URL classifier.** The 441-record quarantine and the whole cleanup proposal were
+  computed on the other 54%.
+
+The fix went into `hoverValidation.mjs` itself rather than into each caller, so raw and rendered
+text now give the same answer and the mistake cannot be reintroduced by forgetting a conversion.
+
+**Corrected hover classification** — five buckets, because `no_visible_text_anchor` is a ruling
+about the tooltip and does not belong inside ordinary editorial review:
+
+    publish 3,698 · review 3,126 · no visible anchor 402 · URL quarantine 515 · withdrawn 37 = 7,778
+
+The **2,931 substantive editorial-review records are byte-identical** — same membership, same
+synopsis text. Review moved 3,144 → 3,126 only because 18 `Insufficient` records routed earlier: 8
+to the quarantine, 10 to the no-anchor bucket, 0 unaccounted.
+
+**Provenance of the 402** (`audit/entity-provenance-review.json`, 370 of them public in production):
+
+    image_provenance_confirmed        0
+    image_provenance_unconfirmed     55
+    nonvisual_metadata_provenance     0
+    no_supported_provenance         231
+    url_source_provenance_unclassified 116   ← outside the four the ruling named
+
+`image_provenance_confirmed` is 0 because nothing in the corpus could confirm it — no OCR, no
+captions, no annotations, no bounding boxes; a media record holds `filename` and `url` and nothing
+else. The script **asserts** the absence of those fields and exits non-zero if one appears, so the
+zero cannot decay into a vacuous pass.
+
+**The extraction defect below the hover.** 302 of the 402 have their alias sitting inside a longer
+word in the drop. `God` is a certified entity in 47 drops, and every one of them says
+`Godfather III`. Invariant 4, in the certified data rather than in a renderer. Reported, not acted
+on — it is count-changing.
+
+**Corrected URL cleanup**, proven by simulation, nothing applied:
+
+    mentions 9,749 → 9,245 (−504)   entity rows 1,409 → 1,254
+    zero-mention 172 = 17 source-only + 155 dormant
+    linked sources 124 (119 bound, 5 unbound) across 43 hostnames · 11 ambiguous held for review
+
+**Rollback is proven, not promised.** `--prove-rollback` copies all 18 certified artifacts to a
+scratch directory, applies, rolls back, and compares SHA-256: 0 mismatches, 0 files touched outside
+scope, and the reversal contract independently replays to 9,749.
+
+**Built:** `linked-sources.json` data model, `LinkedSources.tsx` (a labelled region, not a tooltip —
+there is no word to hover), a `/sources` surface separate from Entities, a `sources` search section,
+`sourceOnlyDescription()` so a source-only identity is never rendered as a zero, and a dormant
+registry that retires rows from the bundle while reserving their ids permanently.
+
+**22 new invariants** (group 10c) covering totals, URL exclusion, bound and unbound sources, dormant
+ids, mixed prose/URL, ambiguous records, the vacuous-test guard and byte-identical rebuilding. The
+vacuous-test guard asserts both halves: that the shared definition is used, **and** that the two
+coordinate systems still disagree — if they ever agree, the guard is passing for free.
+
+`scripts/test-linked-sources.mjs` drives the real app against the artifact the cleanup *would*
+write, then removes the fixture: 14/14. **184/184 invariants, manifest re-certified, tsc clean.**
+
+**Nothing applied, nothing deployed.** Production remains seed 77 / f406402 / 1,409 / 9,749.
+
+---
+
+## 2026-08-17 — the integrated audit: one matcher, one plan, 9,749 occurrences
+
+**Rulings executed.** `url_source_provenance` as a fifth category with the 116 publisher records
+migrating to linked-source metadata; a substring is not an entity mention; audit the boundary defect
+across the whole corpus, not the 402; keep the 55 image-unconfirmed certified and private; one
+integrated deterministic simulation; one shared matcher for every stage; the named regression tests.
+
+**One shared implementation.** `scripts/lib/renderedMatch.mjs` now holds rendered-text normalisation
+and complete-token matching. Four approximations existed and each was wrong differently: hover
+validation folded punctuation and read the STORED text; the glossary used a `\b` regex over raw
+text; search had no boundary concept; the original extraction is how "God" became certified in 47
+drops that all say "Godfather III". `hoverValidation.mjs` re-exports rather than reimplements, and
+invariant `coords-no-private-copies` fails if any consumer forks a primitive.
+`scripts/test-rendered-match.mjs` — **54 cases, all pass**, covering every shape the ruling named.
+
+Two of those cases were written wrong and the suite corrected me, which is the point of writing them
+down: POTUS inside `twitter.com/iHeartPOTUS` is a token of *nothing* (found by the glued reporting
+test, not by promoting a substring), and a boundary rule **cannot** separate "Q" from "Q+" — "+" is
+not alphanumeric, so `Q` legitimately ends a token there. That separation is an identity question,
+settled by `normalizeItemKey`. The shared regex is now character-for-character the renderer's
+`wordBoundaryPattern`.
+
+**Corpus-wide occurrence audit** — `audit/occurrence-provenance-audit.json`, all 9,749, keyed
+`#<post>:<index>` so the unit is the actual certified occurrence:
+
+    8647 visible_complete_token · 34 visible_alias_variant · 775 url_source_provenance
+       0 image_provenance_confirmed · 24 image_provenance_unconfirmed · 0 nonvisual_metadata
+     115 invalid_substring_extraction · 85 no_supported_provenance · 69 ambiguous_provenance
+
+Attribution is not assumed either: 743 entries carry an alias more than one entity claims, and an
+entry is attributed only when exactly one entity claims that alias AND lists that drop. **61 remain
+undecidable**, which is why 25 entities tally short of their certified figure — reported, not
+smoothed.
+
+**A social handle is not a CMS slug.** The simulation was retiring Catherine Herridge, Maria
+Bartiromo, Jim Jordan and Rudy Giuliani outright, because `twitter.com/CBS_Herridge` was being read
+as a publisher slug by one rule and as a stray substring by another. The URL policy was written
+about publisher CMS paths and does not reach a person Q chose to link to. **129 occurrences across
+85 entities are now held under `social_handle` for a ruling of their own** — the policy is scoped to
+what it was written about rather than stretched.
+
+**Two rulings collide on 17 occurrences.** A substring extraction in a drop that carries an image:
+the boundary ruling says withdraw, the image ruling says those stay certified for now. Held, no
+count effect, flagged.
+
+**The integrated plan** — `audit/integrated-migration-plan.json`. Double subtraction is not
+prevented by a check; it is unrepresentable, because each occurrence has exactly one category and
+one action. The ledger accounts for every starting mention:
+
+    kept 8,774 · held 231 · withdrawn 510 · migrated 234  =  9,749 ✓
+    mentions 9,749 -> 9,005 (-744)   entity rows 1,409 -> 1,238
+    171 dormant · 63 source-only · 244 linked-source records (237 bound, 7 unbound) over 99 hostnames
+
+**Rollback proven twice over**: 18 artifacts byte-identical after apply-then-rollback, 0 touched
+outside scope, and the reversal contract independently rebuilds all 9,749 annotations *in their
+original array positions*.
+
+**Glossary and search migrated to the shared matcher.** The glossary gained 6 tokens' worth of
+genuine posts — `\b` never matched `_AF1_5A_2` or `_WH_POTUS_PRESS`, because `_` is a word character
+to a regex and a boundary to a reader. One search row was displaying `&gt;` and could not be found
+by typing what is on screen.
+
+**190/190 invariants** (28 new in group 10c), 54 matcher cases, 14 linked-source browser checks
+against the artifact the cleanup would write, tsc clean. The **2,931 substantive editorial records
+remain byte-for-byte identical** — same membership, same text.
+
+**Nothing applied, nothing deployed.** Production remains seed 77 / f406402 / 1,409 / 9,749.
+
+---
+
+## 2026-08-17 — the three rulings, and the final integrated simulation
+
+**Rulings applied.** Social handles migrate as `social_account_reference`; the 17
+substring-with-image collisions are reclassified `image_provenance_unconfirmed`, kept certified and
+private; the 78 unsupported occurrences are withdrawn with full reversible history.
+
+**Final classification of all 9,749** — every one lands in exactly one action:
+
+    kept      8,791   visible 8,647 · alias variant 34 · image-unconfirmed 41 · ambiguous 69
+    held          7   unsupported beyond the population the ruling named
+    withdrawn   588   substring 98 · URL path/query 412 · unsupported 78
+    migrated    363   publisher 234 · social account 129
+
+    mentions 9,749 -> 8,798 (-951)      entity rows 1,409 -> 1,201
+    dormant 208 · source-only 135 · 373 source records (357 bound, 16 unbound)
+    99 hostnames · 84 accounts · all 129 handles on twitter.com
+
+**Scoped, not stretched — twice.** The corpus-wide pass finds **85** unsupported occurrences; the
+ruling was written against the **78** that were reported. The other 7 have identical evidence — none
+at all — but an approval is of a SET, not of a predicate, so they are held and named. The same
+reasoning kept the URL slug rule off social handles a pass earlier.
+
+**The 17 keep their evidence.** Reclassifying them as image-unconfirmed does not erase the substring
+finding: `evidence.alsoSubstringOf` and `reclassifiedFrom` stay on the row, so the editor who
+eventually opens the image is not told the drop was clean. Invariant `image-substring-evidence-kept`.
+
+**A social account is not a publisher.** Publishers are keyed by hostname, accounts by
+platform + handle — collapsing 84 people onto "twitter.com" would lose every one of them. They share
+the Sources surface and the search section, and are labelled apart, because "Q cited Reuters" and
+"Q linked to someone's Twitter profile" are different claims. Accounts are searchable by handle AND
+by name, and no account row is phrased as Q naming the person.
+
+**Gates.** 199/199 invariants (37 in group 10c) · 54 matcher cases · 16 browser checks against the
+artifact the cleanup will write · tsc clean · both derivations byte-identical on a second run ·
+rollback proven: 18 artifacts byte-identical, 0 outside scope, and the reversal contract rebuilds
+all 9,749 annotations in their original positions.
+
+**Nothing applied, nothing deployed.** Production remains seed 77 / f406402 / 1,409 / 9,749.
+
+---
+
+## 2026-08-17 — seed 78 APPLIED locally, deploy HELD at the browser gate
+
+**Applied exactly as approved.** `apply-entity-cleanup.mjs --apply --approved-by-owner`, snapshot
+`entity-cleanup-2026-08-17T12-08-30-288Z` taken first.
+
+    entity rows  1,409 -> 1,201        mentions  9,749 -> 8,798  (-951)
+    dormant 208 · source-only 135 · 373 linked sources (244 publisher / 129 social) · 3,698 hovers
+
+Every approved figure matched the simulation exactly, checked field by field. Held populations
+verified untouched: the 7 unsupported beyond the ruled set, the 41 image-unconfirmed, the 69
+ambiguous, the [NP] migration, and the 2,931 editorial records byte-for-byte.
+
+**Chain run:** hovers, relationships, search index, glossary. CANONICAL updated with the reason
+recorded inline; sectionInfo headlines updated; SEED_VERSION 77 -> 78 with the `seed-current`
+invariant moved with it; seed fingerprint and manifest re-certified. **206/206 invariants.**
+
+**DEPLOY HELD.** `verify-final.mjs` fails one check — `#2401 WASH POST has an info-box target`.
+
+**It is pre-existing and unrelated to this migration**, proven rather than assumed: #2401's post text
+is byte-identical before and after the apply, its glossary entry is byte-identical, and the
+rendering code was untouched at the time it first failed. The cause is a limitation in
+`applyGlossary`: `wrapInside` splits text on `([A-Za-z0-9][A-Za-z0-9._+/-]*)`, single words only, so
+a two-word token can never be rebuilt from two separate parts. All three "WASH POST"s in #2401 sit
+inside larger Question marks, so the whole-node branch never fires either. 19 glossary tokens
+contain a space and every one of them has the same gap.
+
+**The second failure was real and is fixed.** `#1990 DAG` — the only "DAG" in that drop was inside
+the path of a scribd link, `Grassley-Letter-to-AG-DAG-Requesting-Special-Counsel`. The URL ruling
+withdrew it and the box correctly went with it. The fixture moved to #3004, where DAG is in Q's own
+prose, so the office-vs-officeholder case still has teeth instead of asserting behaviour the ruling
+removed.
+
+**An attempted fix, reverted.** Multi-word support in `wrapInside` fixed #2401 and broke #1828 BO
+and CM — a drop containing "NO NAME". Reverted rather than debugged under a deploy. Term-info after
+the revert: 87 pass, 1 fail, and that one is the pre-existing gap.
+
+**Nothing deployed. Nothing committed.** Production is still seed 77 / f406402 / 1,409 / 9,749. The
+local apply is one command from reversal: `node scripts/apply-entity-cleanup.mjs --rollback`.
+
+---
+
+## 2026-08-17 — mobile blocker resolved by measurement; combined-card work handed off
+
+**Blocker 2 (mobile) is CLOSED, and it was never a product defect.** Probed at a real 390x844
+viewport with touch emulation, against the four candidate causes the ruling named:
+
+    trigger        visible, 81px wide, aria-expanded false -> true on tap
+    card           renders — exactly one role="tooltip", id="_r_0_", aria-live="polite"
+    position       left 8px, top 758.8px, right 8px, max-height 45vh — FULLY on screen in 390x844
+    relationship   aria-describedby="_r_0_" on the trigger
+
+The cause is the fourth one: **the test queried the wrong attribute.** HoverCard names its card with
+`aria-describedby`; the test asked for `aria-controls`, got null, and reported a working card as a
+broken one. `scripts/test-multiword-gloss.mjs` now follows the component — `aria-describedby` first,
+`aria-controls` as a fallback, `[role="tooltip"]` as the backstop — rather than asserting an
+assumption about it. The test was corrected; the gate was not weakened.
+
+**A correction to the record.** An earlier note in this log claimed the six split terms were
+acceptable because the inner entity control already carries a box for the reader. That was inferred
+from seeing an "ABC" button somewhere on #2770, not from that occurrence carrying one. The browser
+probe returns `inner control []` — empty. The claim was wrong and is withdrawn.
+
+**Blocker 1 (six split terms) is NOT done.** The owner has ruled the design: anchor on the leftmost
+existing interactive control, extend its card with a separately labelled "Glossary reading in this
+post" section, mark the remaining words with NON-interactive occurrence markers, and open the same
+card by event delegation — no nested buttons, no extra keyboard stops, both readings preserved and
+visibly distinguished. Not implemented.
+
+**Nothing deployed.** Production remains seed 77 / f406402 / 1,409 / 9,749.
+
+---
+
+## 2026-08-17 — the six split terms, and the rebuild that could not reproduce the bundle
+
+**Request.** Implement the combined cards for the six multi-word glossary terms the annotation layer
+splits, run every gate, and deploy seed 78 if nothing is skipped or excused.
+
+### The mobile blocker was not closed — the file did not parse
+
+The corrected mobile check had **never executed**. Its page expression is a template literal, and the
+correction quoted the two attribute names in backticks *inside* that literal, which terminated it:
+`node scripts/test-multiword-gloss.mjs` died with a SyntaxError before the first check ran. A gate
+reported as passing had not been run at all.
+
+With the file parsing, the mobile check failed for a second, independent reason: it clicked and read
+the DOM **in the same expression**, which reports the render before the state change. The file
+already carried that lesson forty lines above, for the touch case. It now taps, polls, and only then
+measures — and asserts more than it did: the card is on screen, does not cover its own word, and
+exactly one card is open. Both a contiguous term (#2401) and a split one (#2462) are measured at
+390x844.
+
+### The six terms, and what the DOM actually does
+
+Read out of the live DOM rather than assumed. All six shapes are now fixtures in
+`scripts/test-gloss-occurrence.mjs`, so a change in how the intervals cut a line fails a test instead
+of silently removing a box:
+
+    FOX NEWS            #1791   button(FOX) + mark( NEWS)                control on segment 0
+    ABC NEWS            #2770   button(ABC) + mark( NEWS)                control on segment 0
+    ADAM SCHIFF         #3063   mark(ADAM ) + button(SCHIFF)             control on segment 1
+    CLINTON FOUNDATION  #1830   mark(CLINTON) + mark( FOUNDATION)        no control
+    ROD ROSENSTEIN      #2129   mark(ROD ) + mark(ROSENSTEIN)            no control
+    SUPREME COURT       #2462   mark(SUPREME) + mark( ) + mark(COURT)    no control, three segments
+
+The middle segment of SUPREME COURT is the single space between the words, and it is a certified
+interval like any other. That is the whole reason a phrase-in-one-text-node matcher finds none of
+these.
+
+### What was built
+
+**`src/lib/glossOccurrence.ts` — pure, and proved without a browser.** The phrase is matched against
+the CONCATENATION of the siblings and mapped back onto them. The occurrence identifier is *derived* —
+post number, token, ordinal — never counted at render time, because a counter renumbers the same
+occurrence on re-render and the delegation that opens one card from three segments is only correct
+while the three agree on their own name. Ordinals count every occurrence, split or contiguous, so a
+term does not change identity the day an annotation boundary appears beside it.
+
+**`src/lib/glossDelegation.ts` — three listeners, not three per segment.** Every segment carries
+`data-gloss-occ`; the anchor also carries `data-gloss-anchor` so the delegated handlers leave alone
+the events the button already handles. Capture phase, for the same reason the trigger stops
+propagation on its own click. Registered while at least one split occurrence is mounted and removed
+when the last unmounts. HoverCard's outside-click dismissal now treats a sibling segment as inside —
+without that, a tap on "COURT" closes the card a moment before the delegation reopens it, which on a
+phone reads as a term that ignores every second tap.
+
+**The renderer decides before it renders.** `controlTokenIn` asks what reading a segment *would* have
+carried, because the box on "ABC" is something `applyGlossary` is itself about to create — deciding
+afterwards would mean building a button and unbuilding it, and the two paths would disagree the first
+time one of them changed. The leftmost segment that would carry a control becomes the sole anchor; if
+none would, the leftmost segment is promoted. Every other segment of the occurrence is marked and
+non-interactive, and `replaceRange` rebuilds only the elements on the path to the matched characters,
+so each `<mark>` keeps its own tag, class and title and no character moves.
+
+**Both readings, visibly apart.** #2770 writes "ABC NEWS". The entity layer certifies "ABC" — scoped
+to three different entities across the archive, and reading as the CIA in two drops — and the glossary
+certifies the phrase. The card keeps the existing reading as its own section and adds a separately
+headed **"Glossary reading in this post"**, and the accessible name carries both: *"ABC — ABC News.
+Glossary reading in this post: ABC NEWS — ABC News"*. An ABC entity reading standing in for the
+ABC NEWS glossary reading is exactly the substitution the ruling forbids, and it would have been
+invisible without a check that reads the card text.
+
+**The fallback is total.** No plan, or no reading for the term in this drop, and every node goes down
+the untouched path — so this can only add a box where there was none. #2401's three WASH POSTs and
+#1828's BO and CM are unchanged, and asserted by name.
+
+### THE REBUILD DID NOT REPRODUCE THE BUNDLE
+
+Found by running the gate rather than reasoning about it. `apply-entities.mjs` rebuilds Entities from
+`audit/entities-audit.json` — the adjudication as it stood BEFORE the integrated cleanup — so
+replaying the deploy chain put **1,409 rows and 9,749 mentions back**, and `build-search-index.mjs`
+refused at its QA gate: *Entities indexed = 1,201, got 1,409*. Proved in an isolated copy of the
+repo, never in the working tree.
+
+`export-firestore.mjs` replays that same chain **before the manifest is ever consulted**, so the
+deploy could not have run at all. The gate was working; but "the pipeline aborts" is not a state to
+ship from, and `SKIP_EXPORT=1` is a quota escape hatch rather than an answer (CURRENT-STATE rule 8).
+**The certified bundle was reproducible only by hand, which is to say it was not reproducible.**
+
+The cleanup is now a step OF the chain. `apply-entity-cleanup.mjs --rematerialise` re-applies the plan
+the owner already approved, checks the result against the counts recorded in the rollback contract at
+apply time, and refuses on any difference. It is **not** a second approval: it takes no snapshot and
+rewrites no contract — the original snapshot stays the authority on what "before" was, and a deploy
+must never move the thing a rollback restores to. It is idempotent **by measurement**: on a tree that
+already carries the cleanup it writes nothing, so running the chain twice reproduces the bundle byte
+for byte. It is declared in `APPLY_ORDER`, so `chain-complete` fails if it is ever dropped again, and
+the chain's arguments moved into `chainSteps.mjs` (`APPLY_INVOCATIONS`) rather than being hardcoded at
+two call sites — a load-bearing detail in two places is how a step went missing from one path before.
+
+**Result: the full chain reproduces all 19 artifacts byte-identically, landing on 1,201 / 8,798.**
+
+### Rollback, proved from the applied state
+
+`--prove-rollback` proves the restore BEFORE the cleanup is applied, and cannot run afterwards: it
+derives its plan from an audit of 9,749 occurrences and the tree holds 8,798, so the applier refuses —
+correctly. `scripts/prove-cleanup-rollback.mjs` answers the question that matters on the day of a
+deploy instead: with the migration applied and about to ship, can it still be taken back? It performs
+the restore in a scratch directory against copies and compares SHA-256, and replays the reversal
+contract on its own. 0 mismatches, 0 files outside scope, 951 restores placed, 8,798 + 951 = 9,749,
+and every annotation back in its original array position. A rollback that is only asserted is a
+rollback nobody has run.
+
+### Gates — every one run, none skipped
+
+    19/19 multi-word tokens . 6 split, 13 contiguous . 3 inside an annotation
+    six split terms: segments share one id . one anchor . one tab stop . 0 nested . marks intact
+    delegation: hover, tap and Escape from a NON-anchor segment drive the same card, all six
+    #2401 WASH POST 3/3 . #1828 BO and CM . #3004 DAG
+    keyboard, focus restoration, Escape, outside click, screen-reader labelling, role=tooltip
+    mobile 390x844, contiguous AND split: on screen, not covering the word, exactly one card
+    nested controls 0 . duplicate tab stops 0 . one anchor per occurrence group,
+      swept over all 20 affected drops
+    54 matcher cases . 34 segmentation cases . 23 occurrence cases (846 plans over 4,960 drops)
+    206/206 invariants . manifest verified . seed fingerprint 78 . tsc clean
+    complete rebuild: 19/19 artifacts byte-identical
+    rollback proven from the applied state
+    verify-final.mjs: fresh + returning profiles, 11 steps, all green
+
+`test-rendered-match.mjs`, `test-gloss-segments.mjs`, `test-gloss-occurrence.mjs`,
+`test-hover-accessibility.mjs` and `test-multiword-gloss.mjs` are now steps of `verify-final.mjs`,
+local and live. Six terms had no box while every other gate was green, because no gate asked.

@@ -20,6 +20,7 @@ import { mediaUrl, dedupeMedia } from '../lib/mediaUrl'
 import { resolveReferences, getQuotedContext, type QuotedContext } from '../lib/references'
 import QuotedPosts from '../components/QuotedPosts'
 import UnresolvedInPost from '../components/UnresolvedInPost'
+import LinkedSources from '../components/LinkedSources'
 import { highlightText } from '../lib/postHighlight'
 import { linkify } from '../lib/linkify'
 import FlagIssue from '../components/FlagIssue'
@@ -1683,6 +1684,11 @@ export default function PostDetail() {
             </div>
           </div>
         )}
+
+        {/* Where the linked material came from. A separate layer from the entity mentions painted
+            in the drop above — see src/lib/linkedSources.ts. Renders nothing until the URL
+            cleanup is applied and the artifact exists. */}
+        <LinkedSources postNum={post.postNum} />
 
         {/* Media — Q's own attached images */}
         {dedupeMedia(post.media).length > 0 && (

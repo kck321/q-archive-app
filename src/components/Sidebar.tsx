@@ -42,6 +42,7 @@ const bottomLinks = [
   { to: '/topics',    label: 'Q Clusters',      icon: '📖' },
   { to: '/pics',      label: 'Q Post Pics',     icon: '🖼' },
   { to: '/links',     label: 'All Q Links',     icon: '🌐' },
+  { to: '/sources',   label: 'Sources',         icon: '📰' },
   { to: '/resources', label: 'Resources',       icon: '🔗' },
   { to: '/resolve',   label: 'Resolution Center', icon: '🔎' },
   { to: '/method',    label: 'How This Works',  icon: 'ⓘ' },

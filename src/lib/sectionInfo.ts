@@ -56,7 +56,7 @@ export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number
   emphasis: { occurrences: 3112, posts: 1357, unit: 'occurrences' },
   // "mentions" is the right word here and the only section where it is: an entity is counted
   // once per resolved mention across 1,445 canonical entities.
-  namedEntities: { occurrences: 9749, posts: 2445, unit: 'mentions' },
+  namedEntities: { occurrences: 8798, posts: 2090, unit: 'mentions' },
   // Themes are assignments rather than spans — a theme is inferred from a drop, not copied out
   // of it — so the unit is named accordingly. 2,393 detected + 2 owner rulings.
   themes: { occurrences: 2644, posts: 1898, unit: 'assignments' },
@@ -154,7 +154,11 @@ export const ENTITIES = {
   // labels and 17 withdrawn as conceptual or generic wordings. The section was listing 8 entities
   // twice — "Bill Clinton" with 31 mentions and again with 7 — because the core-registry and
   // adjudicated-tail populations each carried a row for them.
-  canonical: 1409,
+  // 1,409 -> 1,201 (integrated cleanup, 2026-08-17): 208 rows went dormant because every mention
+  // each of them had was a URL fragment, a slug or an alias buried inside a longer word. Their ids
+  // are reserved permanently. 135 more rows have no prose mention left but STAY — they are still
+  // referenced as publishers or as accounts Q linked to, and they are shown under Sources.
+  canonical: 1201,
   /**
    * THE HEADLINE COUNTS THE WHOLE SECTION.
    *
@@ -165,8 +169,12 @@ export const ENTITIES = {
    * was built, not a number that turned out to be wrong.
    */
   // 9,786 -> 9,749: the 37 occurrences of the 17 withdrawn rows. Nothing left the posts.
-  mentions: 9749,
-  mentionScope: 'Every resolved mention across all 1,409 certified entities: 5,352 from the 93 core-registry entities, 3,777 from the entities identified in the adjudication pass, and 620 from owner rulings. Unresolved aliases are counted in neither — they are held in the Resolution Center instead.',
+  // 9,749 -> 8,798 (2026-08-17): 951 occurrences that were never Q naming something — URL slugs,
+  // publisher domains, accounts he linked to, and aliases found only inside longer words. Again
+  // nothing left the posts: every word and image is exactly as it was, and 363 of the 951 are
+  // still shown to readers, under Sources rather than as words Q wrote.
+  mentions: 8798,
+  mentionScope: 'Every resolved mention across all 1,201 certified entities: 5,328 from the 93 core-registry entities, 2,859 from the entities identified in the adjudication pass, and 611 from owner rulings. Domains, URL slugs and linked accounts are NOT counted here — they are shown under Sources. Unresolved aliases are counted in neither: they are held in the Resolution Center.',
   coreEntities: 93,
   coreRegistryMentions: 4463,
   tailEntities: 1239,

@@ -65,7 +65,7 @@ function makeHandle(port, profile, proc, reused) {
   return {
     port, profile, reused,
     /** Open a tab and return a page driver. */
-    async page(url) {
+    async page(url, viewport = null) {
       const t = await (await fetch(`http://127.0.0.1:${port}/json/new?${encodeURIComponent(url)}`, { method: 'PUT' })).json()
       const ws = new WebSocket(t.webSocketDebuggerUrl)
       await new Promise(r => { ws.onopen = r })
@@ -74,6 +74,17 @@ function makeHandle(port, profile, proc, reused) {
       ws.onmessage = e => { const m = JSON.parse(e.data); if (m.id && pending.has(m.id)) { pending.get(m.id)(m); pending.delete(m.id) } }
       const send = (method, params = {}) => new Promise(res => { const n = ++id; pending.set(n, res); ws.send(JSON.stringify({ id: n, method, params })) })
       await send('Page.enable')
+      // A REAL narrow viewport, not a resized window. A card that is "on screen" at 1280px can sit
+      // half off the edge at 390px, and that is the width most readers are on. Emulation is used
+      // rather than a window resize because a headless window's inner size is not reliable.
+      if (viewport) {
+        await send('Emulation.setDeviceMetricsOverride', {
+          width: viewport.width, height: viewport.height,
+          deviceScaleFactor: viewport.deviceScaleFactor ?? 2,
+          mobile: viewport.mobile ?? true,
+        })
+        if (viewport.touch !== false) await send('Emulation.setTouchEmulationEnabled', { enabled: true, maxTouchPoints: 5 })
+      }
       const evaluate = async expression => {
         const r = await send('Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true })
         if (r.result?.exceptionDetails) return { __error: JSON.stringify(r.result.exceptionDetails).slice(0, 300) }

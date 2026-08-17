@@ -1,0 +1,2184 @@
+{
+ "note": "The occurrences the owner approved for withdrawal on 2026-08-17: no complete-token prose match, no URL-source relationship, no confirmed image evidence, no certified metadata basis. Post text and media are untouched — only the entity annotation is removed. Every row carries its reversal instruction.",
+ "ruling": "2026-08-17 — withdraw the genuinely unsupported occurrences, preserving full reversible history.",
+ "scope": "Scoped to the population the ruling named. The corpus-wide pass finds more occurrences with identical (absent) evidence; those are held and listed under beyondRuledPopulation rather than swept in.",
+ "total": 78,
+ "beyondRuledPopulation": [
+  {
+   "occurrenceId": "#1359:9",
+   "postNum": 1359,
+   "entityId": "qe-f133491e890a",
+   "canonical": "France",
+   "alias": "France",
+   "note": "Same evidence as the approved set, outside the population the ruling named. Held."
+  },
+  {
+   "occurrenceId": "#19:3",
+   "postNum": 19,
+   "entityId": "qe-9df7ca720cf1",
+   "canonical": "Maxine Waters",
+   "alias": "Maxine Waters",
+   "note": "Same evidence as the approved set, outside the population the ruling named. Held."
+  },
+  {
+   "occurrenceId": "#2576:0",
+   "postNum": 2576,
+   "entityId": "qe-75d5eb424ac5",
+   "canonical": "Samantha Power",
+   "alias": "Samantha Power",
+   "note": "Same evidence as the approved set, outside the population the ruling named. Held."
+  },
+  {
+   "occurrenceId": "#2600:0",
+   "postNum": 2600,
+   "entityId": "qe-8948243efcca",
+   "canonical": "Sara Carter",
+   "alias": "Sara Carter",
+   "note": "Same evidence as the approved set, outside the population the ruling named. Held."
+  },
+  {
+   "occurrenceId": "#4340:1",
+   "postNum": 4340,
+   "entityId": "qe-d2eebf8694bd",
+   "canonical": "New York Post",
+   "alias": "New York Post",
+   "note": "Same evidence as the approved set, outside the population the ruling named. Held."
+  },
+  {
+   "occurrenceId": "#48:6",
+   "postNum": 48,
+   "entityId": "qe-9fee50ff1529",
+   "canonical": "Canada",
+   "alias": "Canada",
+   "note": "Same evidence as the approved set, outside the population the ruling named. Held."
+  },
+  {
+   "occurrenceId": "#988:10",
+   "postNum": 988,
+   "entityId": "qe-67185825b25f",
+   "canonical": "Awan",
+   "alias": "Awan",
+   "note": "Same evidence as the approved set, outside the population the ruling named. Held."
+  }
+ ],
+ "postTextUnchanged": true,
+ "mediaUnchanged": true,
+ "reversal": "audit/entity-cleanup-reversal.json restores every entry at its original index; the rollback contract restores the bytes.",
+ "records": [
+  {
+   "occurrenceId": "#1104:3",
+   "postNum": 1104,
+   "index": 3,
+   "entityId": "qe-28b3b6e77b6f",
+   "canonical": "Instagram",
+   "entityType": "organization",
+   "alias": "Instagram",
+   "aliases": [
+    "Instagram"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "searched, no match",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": ">>967224 Think 'Bridge'. GOOG. FB. TWITTER. IG. 'Central' algorithm. The stage had to be set. Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Instagram\" at index 3 of postAnalysis.namedEntities in #1104 (lowest index first) and add 1 to Instagram. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#1138:4",
+   "postNum": 1138,
+   "index": 4,
+   "entityId": "qe-28b3b6e77b6f",
+   "canonical": "Instagram",
+   "entityType": "organization",
+   "alias": "Instagram",
+   "aliases": [
+    "Instagram"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https:// www.reuters.com/article/us-usa-congress-sextrafficking/trump-signs-law-to-punish-websites-for-sex-trafficking-idUSKBN1HI2KP Study carefully. Facebook. IG (think Ray.Chandler). Twitter. Etc….. HONEYPOTS. Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Instagram\" at index 4 of postAnalysis.namedEntities in #1138 (lowest index first) and add 1 to Instagram. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#121:6",
+   "postNum": 121,
+   "index": 6,
+   "entityId": "qe-ae7dd14411da",
+   "canonical": "Japan",
+   "entityType": "country_region",
+   "alias": "Japan",
+   "aliases": [
+    "Japan"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Why were the acts that recently occurred in SA so critically important? What US assets are in place in/near SA? What assurances were made to protect the Kingdom? Who shot down the missile from Yemen? POTUS declassify_speech_Jap_11_5 Was it really from Yemen? How do we know? Why is this relevant? Who are the puppets? Who are the puppet masters? Who pulls the strings? What provides power? What if US",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Japan\" at index 6 of postAnalysis.namedEntities in #121 (lowest index first) and add 1 to Japan. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#1301:0",
+   "postNum": 1301,
+   "index": 0,
+   "entityId": "qe-b8a8adb39900",
+   "canonical": "Department of Defense",
+   "entityType": "organization",
+   "alias": "Department of Defense",
+   "aliases": [
+    "Department of Defense"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "searched, no match",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": ">>1243510 Connect. No coincidences. https://mobile.twitter.com/DeptofDefense/status/990772726884392965 Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Department of Defense\" at index 0 of postAnalysis.namedEntities in #1301 (lowest index first) and add 1 to Department of Defense. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#1328:0",
+   "postNum": 1328,
+   "index": 0,
+   "entityId": "qe-5d44c220df65",
+   "canonical": "John McCain",
+   "entityType": "person",
+   "alias": "NO NAME",
+   "aliases": [
+    "McCain",
+    "John McCain",
+    "NO NAME",
+    "No Name"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Patriot. 1. a person who loves, supports, and defends his or her country and its interests with devotion. 2. a person who regards himself or herself as a defender, especially of individual rights, against presumed interference by the federal government. Traitor. 1. a person who betrays another, a cause, or any trust [FOCUS]. 2. a person who commits treason by betraying his or her country. They wan",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"NO NAME\" at index 0 of postAnalysis.namedEntities in #1328 (lowest index first) and add 1 to John McCain. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#1496:15",
+   "postNum": 1496,
+   "index": 15,
+   "entityId": "qe-27b1e1e4dbdf",
+   "canonical": "Freedom Caucus",
+   "entityType": "political_group",
+   "alias": "Freedom Caucus",
+   "aliases": [
+    "Freedom Caucus"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "POTUS in possession of (and reviewing): 1. Original IG unredacted report 2. Modified IG unredacted report [RR version] 3. Modified IG redacted report [RR version] 4. IG summary notes re: obstruction(s) to obtain select info (classified) [#3 released tomorrow] [SEC: FBI/DOJ handling of HRC email investigation] [[RR]] Who has the sole ability to DECLAS it all? Did you witness the stage being set to",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Freedom Caucus\" at index 15 of postAnalysis.namedEntities in #1496 (lowest index first) and add 1 to Freedom Caucus. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#154:2",
+   "postNum": 154,
+   "index": 2,
+   "entityId": "qe-d9d481fc2012",
+   "canonical": "World War II",
+   "entityType": "event_incident",
+   "alias": "WWII",
+   "aliases": [
+    "WWII",
+    "World War II"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Who financed 9-11? Who was Bin Laden’s handler? Why was the Clowns In America tasked to hunt/kill/capture UBL? Why not MI? If we found UBL, eliminated his security, why would we immediately kill him and not take him alive? Why wouldn’t we want to capture UBL alive and extract other possible T-level events? Perhaps someday people will understand ‘they’ had a plan to conduct ‘another’ mass extincti",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"WWII\" at index 2 of postAnalysis.namedEntities in #154 (lowest index first) and add 1 to World War II. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#1641:1",
+   "postNum": 1641,
+   "index": 1,
+   "entityId": "qe-a67f315bc9ac",
+   "canonical": "8chan",
+   "entityType": "technology_platform",
+   "alias": "8chan",
+   "aliases": [
+    "8chan"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Coordinated effort to ramp pro violent attacks (4ch 8ch /pol/) (threads). Mods controlled (4ch). Staged to frame pro POTUS supporters. Push violence (trap). Shareblue. Coordinated RL attacks (link). Cause & Effect. MSM outcry to force action. It’s already begun (small > large). https://www.huffingtonpost.com/entry/dark-parts-of-internet-celebrate-capital-gazette-shooting_us_5b3547bae4b007aa2f7e722",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"8chan\" at index 1 of postAnalysis.namedEntities in #1641 (lowest index first) and add 1 to 8chan. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#1666:10",
+   "postNum": 1666,
+   "index": 10,
+   "entityId": "qe-49ef9ed98d6f",
+   "canonical": "House Oversight",
+   "entityType": "government_institution",
+   "alias": "House Oversight",
+   "aliases": [
+    "House Oversight"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://www.breitbart.com/big-government/2018/07/02/nunes-refers-ten-obama-officials-to-house-judiciary-and-oversight-joint-task-force/amp/?__twitter_impression=true Re_ read drops re: Five Eyes / FVEY. Will be extremely important going forward. [UK] - primary Turn taken. FBI/DOJ to State / Hussein WH (inc C_A / other appointment Start) to Foreign Bad Actors. [RR] deadline? We have the server. Q",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"House Oversight\" at index 10 of postAnalysis.namedEntities in #1666 (lowest index first) and add 1 to House Oversight. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#1821:0",
+   "postNum": 1821,
+   "index": 0,
+   "entityId": "qe-efc069a23832",
+   "canonical": "House Intelligence Committee",
+   "entityType": "government_institution",
+   "alias": "House Intelligence Committee",
+   "aliases": [
+    "House Intelligence Committee"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "2 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Important to understand prior to next. https://intelligence.house.gov/uploadedfiles/hpsci_memo_key_points.pdf https://intelligence.house.gov/uploadedfiles/fisa_title_i_summary.pdf Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"House Intelligence Committee\" at index 0 of postAnalysis.namedEntities in #1821 (lowest index first) and add 1 to House Intelligence Committee. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#1856:7",
+   "postNum": 1856,
+   "index": 7,
+   "entityId": "qe-33b95dc95027",
+   "canonical": "New York Magazine",
+   "entityType": "media_organization",
+   "alias": "New York Magazine",
+   "aliases": [
+    "New York Magazine"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "9 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "How STUPID are these PEOPLE? https://www.cnn.com/videos/politics/2018/08/12/john-kelly-omarosa-tape-meet-the-press-rs-vpx.cnn/video/playlists/omarosa-manigault/ \"Integrity violations.\" Integrity violations = LEAKS Recording a 'privileged & confidential' meeting w/ the WH CoS? What document(s) are signed prior to entering the WH? What documents(s) were added by POTUS specifically prior to allowing ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"New York Magazine\" at index 7 of postAnalysis.namedEntities in #1856 (lowest index first) and add 1 to New York Magazine. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#1879:1",
+   "postNum": 1879,
+   "index": 1,
+   "entityId": "qe-fdf0e237f0c5",
+   "canonical": "Pennsylvania",
+   "entityType": "location",
+   "alias": "Pennsylvania",
+   "aliases": [
+    "Pennsylvania"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://www.foxnews.com/us/2018/08/14/stunning-findings-on-report-catholic-church-abuse-pa-priests-molested-more-than-1000-children.html House of GOD? Only the beginning. Those who you are taught to trust the most…. Expect MANY MANY MANY similar reports to surface from around the world. IT GOES A LOT DEEPER. Connected. The choice to know will be yours. Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Pennsylvania\" at index 1 of postAnalysis.namedEntities in #1879 (lowest index first) and add 1 to Pennsylvania. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#1976:0",
+   "postNum": 1976,
+   "index": 0,
+   "entityId": "qe-ddeb9c6c71b8",
+   "canonical": "Senate Judiciary Committee",
+   "entityType": "government_institution",
+   "alias": "Senate Judiciary Committee",
+   "aliases": [
+    "Senate Judiciary Committee"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "3 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://www.judiciary.senate.gov/imo/media/doc/2018-03-15%20CEG%20LG%20JC%20TT%20to%20AG%20DAG%20(Special%20Counsel).pdf #21 - #25 [Today - BO Testimony] https://assets.documentcloud.org/documents/4426661/AG-Letter-Re-IG-and-Huber-Reviews.pdf https://www.breitbart.com/big-government/2018/03/31/turley-sessions-using-utah-federal-prosecutor-much-better-trump-2nd-special-counsel/ Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Senate Judiciary Committee\" at index 0 of postAnalysis.namedEntities in #1976 (lowest index first) and add 1 to Senate Judiciary Committee. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#1976:1",
+   "postNum": 1976,
+   "index": 1,
+   "entityId": "qe-7b48ab004482",
+   "canonical": "Attorney General",
+   "entityType": "title_role",
+   "alias": "Attorney General",
+   "aliases": [
+    "Attorney General"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "3 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://www.judiciary.senate.gov/imo/media/doc/2018-03-15%20CEG%20LG%20JC%20TT%20to%20AG%20DAG%20(Special%20Counsel).pdf #21 - #25 [Today - BO Testimony] https://assets.documentcloud.org/documents/4426661/AG-Letter-Re-IG-and-Huber-Reviews.pdf https://www.breitbart.com/big-government/2018/03/31/turley-sessions-using-utah-federal-prosecutor-much-better-trump-2nd-special-counsel/ Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Attorney General\" at index 1 of postAnalysis.namedEntities in #1976 (lowest index first) and add 1 to Attorney General. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#1981:10",
+   "postNum": 1981,
+   "index": 10,
+   "entityId": "qe-c44175435b4c",
+   "canonical": "Admiral Rogers",
+   "entityType": "person",
+   "alias": "Admiral Rogers",
+   "aliases": [
+    "Admiral Rogers"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "searched, no match",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": ">>2779165 What if a paper-trail exists… PDB via No Such Agency? HUSSEIN made aware w/ no action? Why did POTUS refuse 'select' PDBs during transition? Who knew? Threat assessment. Adm Rogers? FLYNN? Why did HUSSEIN + HRC + ADMIN + Staff + … use private emails to communicate? Was HRC the only one to use unsecured server(s)? If access was granted re: HRC private server(s) can you assume access was ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Admiral Rogers\" at index 10 of postAnalysis.namedEntities in #1981 (lowest index first) and add 1 to Admiral Rogers. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2036:1",
+   "postNum": 2036,
+   "index": 1,
+   "entityId": "qe-ad97b6ceea12",
+   "canonical": "Paul Pelosi",
+   "entityType": "person",
+   "alias": "Paul Pelosi",
+   "aliases": [
+    "Paul Pelosi"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "http://www.foxnews.com/us/2018/08/31/california-bullet-train-project-on-track-to-blow-through-billions-more-dollars.html Does this mean more fires? Paul & Nancy Pelosi Charitable Foundation. Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Paul Pelosi\" at index 1 of postAnalysis.namedEntities in #2036 (lowest index first) and add 1 to Paul Pelosi. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2171:8",
+   "postNum": 2171,
+   "index": 8,
+   "entityId": "qe-364240bb810a",
+   "canonical": "Quartz",
+   "entityType": "media_organization",
+   "alias": "Quartz",
+   "aliases": [
+    "Quartz"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "16 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "How do you demonstrate 'reasonable cause' to regulate and/or break up BIG TECH? What is the common theme/tactic of the LEFT? Define 'Fascism'. Forcible suppression of opposition? Define 'Censorship'. The institution, system, or practice of censoring? Define 'Narrative'. A way of presenting or understanding a situation or series of events that reflects and promotes a particular point of view or se",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Quartz\" at index 8 of postAnalysis.namedEntities in #2171 (lowest index first) and add 1 to Quartz. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2171:11",
+   "postNum": 2171,
+   "index": 11,
+   "entityId": "qe-bde83934c916",
+   "canonical": "Vice Motherboard",
+   "entityType": "media_organization",
+   "alias": "Vice Motherboard",
+   "aliases": [
+    "Vice Motherboard"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "16 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "How do you demonstrate 'reasonable cause' to regulate and/or break up BIG TECH? What is the common theme/tactic of the LEFT? Define 'Fascism'. Forcible suppression of opposition? Define 'Censorship'. The institution, system, or practice of censoring? Define 'Narrative'. A way of presenting or understanding a situation or series of events that reflects and promotes a particular point of view or se",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Vice Motherboard\" at index 11 of postAnalysis.namedEntities in #2171 (lowest index first) and add 1 to Vice Motherboard. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2171:12",
+   "postNum": 2171,
+   "index": 12,
+   "entityId": "qe-33b95dc95027",
+   "canonical": "New York Magazine",
+   "entityType": "media_organization",
+   "alias": "New York Magazine",
+   "aliases": [
+    "New York Magazine"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "16 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "How do you demonstrate 'reasonable cause' to regulate and/or break up BIG TECH? What is the common theme/tactic of the LEFT? Define 'Fascism'. Forcible suppression of opposition? Define 'Censorship'. The institution, system, or practice of censoring? Define 'Narrative'. A way of presenting or understanding a situation or series of events that reflects and promotes a particular point of view or se",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"New York Magazine\" at index 12 of postAnalysis.namedEntities in #2171 (lowest index first) and add 1 to New York Magazine. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2321:6",
+   "postNum": 2321,
+   "index": 6,
+   "entityId": "qe-ddfce63e5312",
+   "canonical": "House Judiciary Committee",
+   "entityType": "government_institution",
+   "alias": "House Judiciary Committee",
+   "aliases": [
+    "House Judiciary Committee"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Sessions meeting Huber THE SAME DAY as POTUS_ALERT. Sessions meeting Huber THE DAY PRIOR to >>> https://judiciary.house.gov/wp-content/uploads/2018/09/092718_Subpoena.pdf What must be understood prior to? Think GJ information. What are the odds of that? Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"House Judiciary Committee\" at index 6 of postAnalysis.namedEntities in #2321 (lowest index first) and add 1 to House Judiciary Committee. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2324:14",
+   "postNum": 2324,
+   "index": 14,
+   "entityId": "qe-ddfce63e5312",
+   "canonical": "House Judiciary Committee",
+   "entityType": "government_institution",
+   "alias": "House Judiciary Committee",
+   "aliases": [
+    "House Judiciary Committee"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "searched, no match",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": ">>324 James Baker closed door testimony today + previous to IG / GJ statements > sealed > timed re: Sessions subpoena tomorrow? If Sessions is recused from Russia probe [prevented rec of related docs / info / etc] how can Sessions learn [RR] conflicts re: Russia probe? Per subpoena to Sessions - Schedule 1 - 'McCabe Memos'. https://judiciary.house.gov/wp-content/uploads/2018/09/092718_Subpoena.pd",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"House Judiciary Committee\" at index 14 of postAnalysis.namedEntities in #2324 (lowest index first) and add 1 to House Judiciary Committee. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2394:0",
+   "postNum": 2394,
+   "index": 0,
+   "entityId": "qe-ddeb9c6c71b8",
+   "canonical": "Senate Judiciary Committee",
+   "entityType": "government_institution",
+   "alias": "Senate Judiciary Committee",
+   "aliases": [
+    "Senate Judiciary Committee"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://twitter.com/senjudiciary/status/1058472888406290434 Nothing to See Here. Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Senate Judiciary Committee\" at index 0 of postAnalysis.namedEntities in #2394 (lowest index first) and add 1 to Senate Judiciary Committee. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2445:9",
+   "postNum": 2445,
+   "index": 9,
+   "entityId": "qe-ddfce63e5312",
+   "canonical": "House Judiciary Committee",
+   "entityType": "government_institution",
+   "alias": "House Judiciary Committee",
+   "aliases": [
+    "House Judiciary Committee"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Do you believe in coincidences? Which (2) House members ran the investigations re: DOJ/FBI etc.? https://judiciary.house.gov/press-release/goodlatte-gowdy-reach-agreement-with-the-department-of-justice/ Gowdy resignation. What role did he play re: House investigations? House Oversight and Government Reform Committee Chairman Goodlatte resignation. What role did he play re: House investigations? Ho",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"House Judiciary Committee\" at index 9 of postAnalysis.namedEntities in #2445 (lowest index first) and add 1 to House Judiciary Committee. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2445:11",
+   "postNum": 2445,
+   "index": 11,
+   "entityId": "qe-ddeb9c6c71b8",
+   "canonical": "Senate Judiciary Committee",
+   "entityType": "government_institution",
+   "alias": "Senate Judiciary Committee",
+   "aliases": [
+    "Senate Judiciary Committee"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Do you believe in coincidences? Which (2) House members ran the investigations re: DOJ/FBI etc.? https://judiciary.house.gov/press-release/goodlatte-gowdy-reach-agreement-with-the-department-of-justice/ Gowdy resignation. What role did he play re: House investigations? House Oversight and Government Reform Committee Chairman Goodlatte resignation. What role did he play re: House investigations? Ho",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Senate Judiciary Committee\" at index 11 of postAnalysis.namedEntities in #2445 (lowest index first) and add 1 to Senate Judiciary Committee. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2513:0",
+   "postNum": 2513,
+   "index": 0,
+   "entityId": "qe-a0807cd1d9bf",
+   "canonical": "Clintons",
+   "entityType": "person",
+   "alias": "Clintons",
+   "aliases": [
+    "Clintons"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "searched, no match",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": ">>4093335 Why do the CLINTON'S remain in CONTROL of many still in POWER? >>>BLACKMAIL The Clinton family is working overtime. PANIC IN DC. Nothing can stop what is coming. Nothing. Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Clintons\" at index 0 of postAnalysis.namedEntities in #2513 (lowest index first) and add 1 to Clintons. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2554:0",
+   "postNum": 2554,
+   "index": 0,
+   "entityId": "qe-9c86660b4ddb",
+   "canonical": "House Oversight Committee",
+   "entityType": "government_institution",
+   "alias": "House Oversight Committee",
+   "aliases": [
+    "House Oversight Committee"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://oversight.house.gov/hearing/oversight-of-nonprofit-organizations-a-case-study-on-the-clinton-foundation/ Will another attempt to 'delay' be made? Delay > > > D's control House? JC + LL Move and countermoves. See something. Say something. Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"House Oversight Committee\" at index 0 of postAnalysis.namedEntities in #2554 (lowest index first) and add 1 to House Oversight Committee. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2601:3",
+   "postNum": 2601,
+   "index": 3,
+   "entityId": "qe-9c86660b4ddb",
+   "canonical": "House Oversight Committee",
+   "entityType": "government_institution",
+   "alias": "House Oversight Committee",
+   "aliases": [
+    "House Oversight Committee"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "2 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://twitter.com/paul_serran/status/1072953304165113857 Goodbye, Mr. Rosenstein. [RR] still overseeing SC? https://oversight.house.gov/hearing/oversight-of-nonprofit-organizations-a-case-study-on-the-clinton-foundation/ Schedule for tomorrow. Where is HUBER? NOBODY IS ABOVE THE LAW. THE WORLD IS WATCHING. Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"House Oversight Committee\" at index 3 of postAnalysis.namedEntities in #2601 (lowest index first) and add 1 to House Oversight Committee. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2657:52",
+   "postNum": 2657,
+   "index": 52,
+   "entityId": "qe-e72f4b6ffdeb",
+   "canonical": "Senate Intelligence Committee",
+   "entityType": "government_institution",
+   "alias": "Senate Intelligence Committee",
+   "aliases": [
+    "Senate Intelligence Committee"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "3 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "When will the public discover that Ted Cruz was also illegally SURV (pre_POTUS_R nomination)? C_A 'illegal' SURV > members of Congress? C_A 'illegal' SURV > members of the Press? C_A 'illegal' SURV > SENATE INTEL COMM? https://www.theguardian.com/us-news/2016/sep/10/cia-senate-investigation-constitutional-crisis-daniel-jones https://www.nytimes.com/2014/08/01/world/senate-intelligence-commitee-ci",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Senate Intelligence Committee\" at index 52 of postAnalysis.namedEntities in #2657 (lowest index first) and add 1 to Senate Intelligence Committee. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2657:54",
+   "postNum": 2657,
+   "index": 54,
+   "entityId": "qe-a75f41e9cff1",
+   "canonical": "Hussein Administration",
+   "entityType": "government_institution",
+   "alias": "Hussein Administration",
+   "aliases": [
+    "Hussein Administration"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "3 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "When will the public discover that Ted Cruz was also illegally SURV (pre_POTUS_R nomination)? C_A 'illegal' SURV > members of Congress? C_A 'illegal' SURV > members of the Press? C_A 'illegal' SURV > SENATE INTEL COMM? https://www.theguardian.com/us-news/2016/sep/10/cia-senate-investigation-constitutional-crisis-daniel-jones https://www.nytimes.com/2014/08/01/world/senate-intelligence-commitee-ci",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Hussein Administration\" at index 54 of postAnalysis.namedEntities in #2657 (lowest index first) and add 1 to Hussein Administration. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2693:8",
+   "postNum": 2693,
+   "index": 8,
+   "entityId": "qe-ccb7e1c4c4f0",
+   "canonical": "House Intel Committee",
+   "entityType": "government_institution",
+   "alias": "House Intel Committee",
+   "aliases": [
+    "House Intel Committee",
+    "House intel committee"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://twitter.com/RepAdamSchiff/status/1095051195658522625 Let's actually use 'FACTS': Step One: Hype an invented threat of POTUS working w/ the RUSSIANS (disinformation campaign). Step Two: Send FBI/DOJ/CONGRESS/SENATE/C_A/NSA/INTEL/FVEY/etc… to address and investigate the IMAGINARY THREAT. Step Three: Justify the 'SPECIAL COUNSEL' and MILLIONS OF TAXPAYER DOLLARS SPENT as necessary to protect ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"House Intel Committee\" at index 8 of postAnalysis.namedEntities in #2693 (lowest index first) and add 1 to House Intel Committee. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2699:0",
+   "postNum": 2699,
+   "index": 0,
+   "entityId": "qe-ff55f3f3d147",
+   "canonical": "House Clerk",
+   "entityType": "government_institution",
+   "alias": "House Clerk",
+   "aliases": [
+    "House Clerk"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "http://clerk.house.gov/public_disc/financial-pdfs/2016/10016846.pdf What does a dog do when he/she has a bone? You are the news now. Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"House Clerk\" at index 0 of postAnalysis.namedEntities in #2699 (lowest index first) and add 1 to House Clerk. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2725:1",
+   "postNum": 2725,
+   "index": 1,
+   "entityId": "qe-f927052c1e12",
+   "canonical": "Bill Clinton",
+   "entityType": "person",
+   "alias": "Bill Clinton",
+   "aliases": [
+    "Clinton",
+    "BC",
+    "Bill Clinton"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Chatter - Bill & Hillary’s ‘public’ health will begin to rapidly deteriorate. Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Bill Clinton\" at index 1 of postAnalysis.namedEntities in #2725 (lowest index first) and add 1 to Bill Clinton. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2770:11",
+   "postNum": 2770,
+   "index": 11,
+   "entityId": "qe-d17ccc5eb1cb",
+   "canonical": "Peter Orszag",
+   "entityType": "person",
+   "alias": "Peter Orszag",
+   "aliases": [
+    "Peter Orszag"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "How do you infiltrate the MSM? [Example 1] ABC NEWS exec producer Ian Cameron married to Susan Rice (Nat Sec Advisor - HUSSEIN)? CBS NEWS/CNN Journ Bianna Vitalievna married to Peter R Orszag (Dir of Office of Mgmt/Budget - HUSSEIN)? CBS NEWS president David Rhodes brother of Ben Rhodes (Del Nat Sec Advisor - HUSSEIN)? ABC NEWS correspondent Claire Shipman married to Jay Carney (WH Press Sec - HUS",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Peter Orszag\" at index 11 of postAnalysis.namedEntities in #2770 (lowest index first) and add 1 to Peter Orszag. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2801:8",
+   "postNum": 2801,
+   "index": 8,
+   "entityId": "qe-9e2ae0c4ed2c",
+   "canonical": "The New Yorker",
+   "entityType": "media_organization",
+   "alias": "The New Yorker",
+   "aliases": [
+    "The New Yorker"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "43 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Pick a Network – Any Network. Search ‘Qanon’ https://www.nbcnews.com/pages/search/?q=qanon https://abcnews.go.com/search?searchtext=qanon https://www.washingtonpost.com/newssearch/?datefilter=All%20Since%202005&query=qanon&sort=Relevance&utm_term=.d3e179a0682e https://www.nytimes.com/search?query=qanon https://www.cnn.com/search/?q=qanon http://www.msnbc.com/search/qanon https://www.newsweek.com/s",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"The New Yorker\" at index 8 of postAnalysis.namedEntities in #2801 (lowest index first) and add 1 to The New Yorker. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2801:12",
+   "postNum": 2801,
+   "index": 12,
+   "entityId": "qe-e67c56563d17",
+   "canonical": "Jerusalem Post",
+   "entityType": "media_organization",
+   "alias": "Jerusalem Post",
+   "aliases": [
+    "Jerusalem Post"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "43 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Pick a Network – Any Network. Search ‘Qanon’ https://www.nbcnews.com/pages/search/?q=qanon https://abcnews.go.com/search?searchtext=qanon https://www.washingtonpost.com/newssearch/?datefilter=All%20Since%202005&query=qanon&sort=Relevance&utm_term=.d3e179a0682e https://www.nytimes.com/search?query=qanon https://www.cnn.com/search/?q=qanon http://www.msnbc.com/search/qanon https://www.newsweek.com/s",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Jerusalem Post\" at index 12 of postAnalysis.namedEntities in #2801 (lowest index first) and add 1 to Jerusalem Post. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2801:13",
+   "postNum": 2801,
+   "index": 13,
+   "entityId": "qe-364240bb810a",
+   "canonical": "Quartz",
+   "entityType": "media_organization",
+   "alias": "Quartz",
+   "aliases": [
+    "Quartz"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "43 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Pick a Network – Any Network. Search ‘Qanon’ https://www.nbcnews.com/pages/search/?q=qanon https://abcnews.go.com/search?searchtext=qanon https://www.washingtonpost.com/newssearch/?datefilter=All%20Since%202005&query=qanon&sort=Relevance&utm_term=.d3e179a0682e https://www.nytimes.com/search?query=qanon https://www.cnn.com/search/?q=qanon http://www.msnbc.com/search/qanon https://www.newsweek.com/s",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Quartz\" at index 13 of postAnalysis.namedEntities in #2801 (lowest index first) and add 1 to Quartz. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2801:14",
+   "postNum": 2801,
+   "index": 14,
+   "entityId": "qe-33b95dc95027",
+   "canonical": "New York Magazine",
+   "entityType": "media_organization",
+   "alias": "New York Magazine",
+   "aliases": [
+    "New York Magazine"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "43 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Pick a Network – Any Network. Search ‘Qanon’ https://www.nbcnews.com/pages/search/?q=qanon https://abcnews.go.com/search?searchtext=qanon https://www.washingtonpost.com/newssearch/?datefilter=All%20Since%202005&query=qanon&sort=Relevance&utm_term=.d3e179a0682e https://www.nytimes.com/search?query=qanon https://www.cnn.com/search/?q=qanon http://www.msnbc.com/search/qanon https://www.newsweek.com/s",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"New York Magazine\" at index 14 of postAnalysis.namedEntities in #2801 (lowest index first) and add 1 to New York Magazine. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2901:3",
+   "postNum": 2901,
+   "index": 3,
+   "entityId": "qe-64c82d1b7335",
+   "canonical": "House Democrats",
+   "entityType": "government_institution",
+   "alias": "House Democrats",
+   "aliases": [
+    "House Democrats"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "[INTERNAL CIVIL WAR] All-out assault against the duly elected President of the United States. We have never experienced anything like this in our history. Treason & sedition at the highest levels of office throughout many departments [F + D]. Propaganda arm [FAKE NEWS MEDIA] of the D party in full attack mode (no facts, only statements). Propaganda arm [FAKE NEWS MEDIA] of the D party prevent-limi",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"House Democrats\" at index 3 of postAnalysis.namedEntities in #2901 (lowest index first) and add 1 to House Democrats. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2901:4",
+   "postNum": 2901,
+   "index": 4,
+   "entityId": "qe-be4e2eceac6c",
+   "canonical": "Senate Democrats",
+   "entityType": "government_institution",
+   "alias": "Senate Democrats",
+   "aliases": [
+    "Senate Democrats"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "[INTERNAL CIVIL WAR] All-out assault against the duly elected President of the United States. We have never experienced anything like this in our history. Treason & sedition at the highest levels of office throughout many departments [F + D]. Propaganda arm [FAKE NEWS MEDIA] of the D party in full attack mode (no facts, only statements). Propaganda arm [FAKE NEWS MEDIA] of the D party prevent-limi",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Senate Democrats\" at index 4 of postAnalysis.namedEntities in #2901 (lowest index first) and add 1 to Senate Democrats. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2989:9",
+   "postNum": 2989,
+   "index": 9,
+   "entityId": "qe-61044273b1e2",
+   "canonical": "Federal Government",
+   "entityType": "government_institution",
+   "alias": "Federal Government",
+   "aliases": [
+    "Federal Government"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Logical thinking. Did DARPA complete build/code (tax-payer funded) 'LifeLog' program? After completion, was there fear the public wouldn't accept the adoption if known it was DoD/C_A backed? Do you believe people would join a platform knowing it was under the control of the C_A and FED GOV? No. How do you lure the masses into entering all their personal info and private messages (i.e. their LIFE ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Federal Government\" at index 9 of postAnalysis.namedEntities in #2989 (lowest index first) and add 1 to Federal Government. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#2993:20",
+   "postNum": 2993,
+   "index": 20,
+   "entityId": "qe-02d154832a55",
+   "canonical": "Hong Kong",
+   "entityType": "country_region",
+   "alias": "Hong Kong",
+   "aliases": [
+    "HK",
+    "Hong Kong"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://www.iqt.org/our-history/ Why did @Snowden only engage and attack the NSA? If @Snowden really cared about privacy/citizenship awareness, why didn't he expose the C_A's main programs? @Snowden was priv to DARPA, IQT, and NSA SURV / COV programs. Why did @Snowden only focus on NSA? Where did @Snowden work prior to NSA? ASK YOURSELF A VERY SIMPLE QUESTION, WOULD YOU RELEASE (GO LIVE) TO THE PU",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Hong Kong\" at index 20 of postAnalysis.namedEntities in #2993 (lowest index first) and add 1 to Hong Kong. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#3031:0",
+   "postNum": 3031,
+   "index": 0,
+   "entityId": "qe-478bff189dfe",
+   "canonical": "George Papadopoulos",
+   "entityType": "person",
+   "alias": "George Papadopoulos",
+   "aliases": [
+    "George Papadopoulos"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "2 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "(1) https://twitter.com/GeorgePapa19/status/1105230104026902529 (2) https://www.theepochtimes.com/interview-with-fbis-gaeta-core-to-russiagate-among-53-transcripts-slated-for-release_2674522.html 1 = 2 Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"George Papadopoulos\" at index 0 of postAnalysis.namedEntities in #3031 (lowest index first) and add 1 to George Papadopoulos. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#3084:0",
+   "postNum": 3084,
+   "index": 0,
+   "entityId": "qe-ddeb9c6c71b8",
+   "canonical": "Senate Judiciary Committee",
+   "entityType": "government_institution",
+   "alias": "Senate Judiciary Committee",
+   "aliases": [
+    "Senate Judiciary Committee"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://twitter.com/senjudiciary/status/1106613897237356544 Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Senate Judiciary Committee\" at index 0 of postAnalysis.namedEntities in #3084 (lowest index first) and add 1 to Senate Judiciary Committee. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#349:0",
+   "postNum": 349,
+   "index": 0,
+   "entityId": "qe-36ba0b6c5ee9",
+   "canonical": "4chan",
+   "entityType": "technology_platform",
+   "alias": "4chan",
+   "aliases": [
+    "4chan",
+    "4ch"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "This board is compromised. Cannot enter trip code to verify auth. Trip code on 4 has also been modified. God bless, Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"4chan\" at index 0 of postAnalysis.namedEntities in #349 (lowest index first) and add 1 to 4chan. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#3542:0",
+   "postNum": 3542,
+   "index": 0,
+   "entityId": "qe-f435238cd3de",
+   "canonical": "Cornell Law School",
+   "entityType": "organization",
+   "alias": "Cornell Law School",
+   "aliases": [
+    "Cornell Law School"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://www.law.cornell.edu/wex/exculpatory Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Cornell Law School\" at index 0 of postAnalysis.namedEntities in #3542 (lowest index first) and add 1 to Cornell Law School. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#3588:10",
+   "postNum": 3588,
+   "index": 10,
+   "entityId": "qe-28b3b6e77b6f",
+   "canonical": "Instagram",
+   "entityType": "organization",
+   "alias": "Instagram",
+   "aliases": [
+    "Instagram"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "2 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://twitter.com/saracarterdc/status/1182260148334661632?lang=en [Jul 8 2019] \"SURV of SC/JS terminated.\" - Q Relevant to upcoming 'DECLAS' events? SIGINT FVEY/Domestic. Do you believe in coincidences? Mathematically impossible? 1/100? But, the ‘narrative’ suggests nothing is accurately ‘forecasted’ and this is simply a big ‘conspiracy’ theory [looney]. Ask yourself a very basic question – woul",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Instagram\" at index 10 of postAnalysis.namedEntities in #3588 (lowest index first) and add 1 to Instagram. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#3595:17",
+   "postNum": 3595,
+   "index": 17,
+   "entityId": "qe-d0f800159d05",
+   "canonical": "Italy",
+   "entityType": "country_region",
+   "alias": "Italy",
+   "aliases": [
+    "Italy"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "AUS, IT, UK co-op DOJ (Barr, Durham, CLAS 1-4) HUMINT, SIGINT, etc. Non_FVEY official chan [US senior person(s) req given sensitive nature of 'target' re: presidential nominee(s) - POTUS + Cruz [CLAS 1-4]] Who gave the order(s)? Who signed? Papered per normal NATSEC? Comms to/from F + Domestic? F2F 1-4 US person(s) initiate scope memo. US AMB 1 & 2 NSA unmask req. NSA > US AMB 1 & 2 > AUS, IT, UK",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Italy\" at index 17 of postAnalysis.namedEntities in #3595 (lowest index first) and add 1 to Italy. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#3656:1",
+   "postNum": 3656,
+   "index": 1,
+   "entityId": "qe-4d1bd7a13a2c",
+   "canonical": "Declaration of Independence",
+   "entityType": "legislation_regulation",
+   "alias": "Declaration of Independence",
+   "aliases": [
+    "Declaration of Independence"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "2 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "http://twitter.com/KingstonChurch3/status/1203332761542520832 What happens when people don't conform to their rule? What happens when people cannot defend themselves? Why do [D]'s want to abolish the 2nd amendment? \"A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.\" What did the Framers of the Constitu",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Declaration of Independence\" at index 1 of postAnalysis.namedEntities in #3656 (lowest index first) and add 1 to Declaration of Independence. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#3669:0",
+   "postNum": 3669,
+   "index": 0,
+   "entityId": "qe-9ee6f4494619",
+   "canonical": "Justice Department OIG",
+   "entityType": "organization",
+   "alias": "Justice Department OIG",
+   "aliases": [
+    "Justice Department OIG"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "searched, no match",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": ">>7506083 https://oig.justice.gov/press/2019/2019-12-09.pdf Dates [start] will become important. Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Justice Department OIG\" at index 0 of postAnalysis.namedEntities in #3669 (lowest index first) and add 1 to Justice Department OIG. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#388:1",
+   "postNum": 388,
+   "index": 1,
+   "entityId": "qe-5be819e1275d",
+   "canonical": "NYC Department of Transportation",
+   "entityType": "organization",
+   "alias": "NYC Department of Transportation",
+   "aliases": [
+    "NYC Department of Transportation"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Define CORRUPTION. Iris Weinshall. New York City Department of Transportation. Responsibility of DoT? Budget for past (5) years? Former commissioner? Empire State Dev Corp? Urban Dev Corp? Dept of Economic Dev? Integrated Resources, Inc.? US Senator of NY? Follow me down the hole. https://www.nytimes.com/2016/04/17/fashion/weddings/jessica-schumer-michael-shapiro-married.html These people are STUP",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"NYC Department of Transportation\" at index 1 of postAnalysis.namedEntities in #388 (lowest index first) and add 1 to NYC Department of Transportation. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#4:2",
+   "postNum": 4,
+   "index": 2,
+   "entityId": "qe-a0807cd1d9bf",
+   "canonical": "Clintons",
+   "entityType": "person",
+   "alias": "Clintons",
+   "aliases": [
+    "Clintons"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Some of us come here to drop crumbs, just crumbs. POTUS is 100% insulated - any discussion suggesting he’s even a target is false. POTUS will not be addressing nation on any of these issues as people begin to be indicted and must remain neutral for pure optical reasons. To suggest this is the plan is false and should be common sense. Focus on Military Intellingence/ State Secrets and why might tha",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Clintons\" at index 2 of postAnalysis.namedEntities in #4 (lowest index first) and add 1 to Clintons. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#4008:0",
+   "postNum": 4008,
+   "index": 0,
+   "entityId": "qe-ca3a2efc7a40",
+   "canonical": "U.S. State Department",
+   "entityType": "organization",
+   "alias": "U.S. State Department",
+   "aliases": [
+    "U.S. State Department"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Read slowly and carefully. Knowledge is power. https://2009-2017.state.gov/documents/organization/119629.pdf >Irregular warfare is far more varied than conventional conflict: hence the importance of an intellectual framework that is coherent enough to provide guidance, and flexible enough to adapt to circumstances. >American counterinsurgency practice rests on a number of assumptions: that the de",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"U.S. State Department\" at index 0 of postAnalysis.namedEntities in #4008 (lowest index first) and add 1 to U.S. State Department. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#4084:0",
+   "postNum": 4084,
+   "index": 0,
+   "entityId": "qe-85cd3021571b",
+   "canonical": "Civil Rights Division",
+   "entityType": "government_institution",
+   "alias": "Civil Rights Division",
+   "aliases": [
+    "Civil Rights Division"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://www.justice.gov/crt/deprivation-rights-under-color-law Digest - know your rights. Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Civil Rights Division\" at index 0 of postAnalysis.namedEntities in #4084 (lowest index first) and add 1 to Civil Rights Division. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#4142:0",
+   "postNum": 4142,
+   "index": 0,
+   "entityId": "qe-efc069a23832",
+   "canonical": "House Intelligence Committee",
+   "entityType": "government_institution",
+   "alias": "House Intelligence Committee",
+   "aliases": [
+    "House Intelligence Committee"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://intelligence.house.gov/russiainvestigation/ Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"House Intelligence Committee\" at index 0 of postAnalysis.namedEntities in #4142 (lowest index first) and add 1 to House Intelligence Committee. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#4163:0",
+   "postNum": 4163,
+   "index": 0,
+   "entityId": "qe-1a3c2ae159d5",
+   "canonical": "Anderson Cooper",
+   "entityType": "person",
+   "alias": "Anderson Cooper",
+   "aliases": [
+    "Anderson Cooper"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "What media assets are Farm born? >A.Cooper [CNN] > > > > > > > > > > > Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Anderson Cooper\" at index 0 of postAnalysis.namedEntities in #4163 (lowest index first) and add 1 to Anderson Cooper. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#4301:0",
+   "postNum": 4301,
+   "index": 0,
+   "entityId": "qe-e72f4b6ffdeb",
+   "canonical": "Senate Intelligence Committee",
+   "entityType": "government_institution",
+   "alias": "Senate Intelligence Committee",
+   "aliases": [
+    "Senate Intelligence Committee"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://www.nytimes.com/2014/08/01/world/senate-intelligence-commitee-cia-interrogation-report.html Worth remembering. Who was the quarterback? Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Senate Intelligence Committee\" at index 0 of postAnalysis.namedEntities in #4301 (lowest index first) and add 1 to Senate Intelligence Committee. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#4303:1",
+   "postNum": 4303,
+   "index": 1,
+   "entityId": "qe-e72f4b6ffdeb",
+   "canonical": "Senate Intelligence Committee",
+   "entityType": "government_institution",
+   "alias": "Senate Intelligence Committee",
+   "aliases": [
+    "Senate Intelligence Committee"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://www.intelligence.senate.gov/sites/default/files/hearings/ciasuseofjournal00unit.pdf Logical thinking. CIA coming back into the news [soon]? Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Senate Intelligence Committee\" at index 1 of postAnalysis.namedEntities in #4303 (lowest index first) and add 1 to Senate Intelligence Committee. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#4456:7",
+   "postNum": 4456,
+   "index": 7,
+   "entityId": "qe-ddeb9c6c71b8",
+   "canonical": "Senate Judiciary Committee",
+   "entityType": "government_institution",
+   "alias": "Senate Judiciary Committee",
+   "aliases": [
+    "Senate Judiciary Committee"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "2 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://www.judiciary.senate.gov/press/rep/releases/chairman-graham-announces-committee-to-consider-subpoena-authorization-related-to-oversight-of-fisa-process-crossfire-hurricane-investigation Committee approved [12-10] [today]. https://www.axios.com/senate-judiciary-subpoena-russia-investigation-65085cd6-8787-4b35-92f1-c5b6e7272c76.html? Why it matters: Graham now has sweeping authority to subpo",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Senate Judiciary Committee\" at index 7 of postAnalysis.namedEntities in #4456 (lowest index first) and add 1 to Senate Judiciary Committee. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#4529:1",
+   "postNum": 4529,
+   "index": 1,
+   "entityId": "qe-f0dcfa6db00e",
+   "canonical": "Cornell Law",
+   "entityType": "legislation_regulation",
+   "alias": "Cornell Law",
+   "aliases": [
+    "Cornell Law"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "2 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://twitter.com/HouseGOP/status/1276589294010982401 Did order(s) violate government mandated policies? Would a jury of peers agree their actions were reckless? Would a jury of peers agree their actions were negligent? https://www.law.cornell.edu/constitution-conan/amendment-11/suits-against-state-officials \"The immunity of a state from suit has long been held not to extend to actions against",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Cornell Law\" at index 1 of postAnalysis.namedEntities in #4529 (lowest index first) and add 1 to Cornell Law. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#4545:4",
+   "postNum": 4545,
+   "index": 4,
+   "entityId": "qe-82f9daa0f19c",
+   "canonical": "Al Qaeda",
+   "entityType": "person",
+   "alias": "Al Qaeda",
+   "aliases": [
+    "Al Qaeda"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Humanity is good, but, when we let our guard down we allow darkness to infiltrate and destroy. Like past battles fought, we now face our greatest battle at present, a battle to save our Republic, our way of life, and what we decide (each of us) now will decide our future. Will we be a free nation under God? Or will we cede our freedom, rights and liberty to the enemy? We all have a choice to make.",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Al Qaeda\" at index 4 of postAnalysis.namedEntities in #4545 (lowest index first) and add 1 to Al Qaeda. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#4545:5",
+   "postNum": 4545,
+   "index": 5,
+   "entityId": "qe-f88414af0b11",
+   "canonical": "World Health Organization",
+   "entityType": "organization",
+   "alias": "World Health Organization",
+   "aliases": [
+    "World Health Organization"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Humanity is good, but, when we let our guard down we allow darkness to infiltrate and destroy. Like past battles fought, we now face our greatest battle at present, a battle to save our Republic, our way of life, and what we decide (each of us) now will decide our future. Will we be a free nation under God? Or will we cede our freedom, rights and liberty to the enemy? We all have a choice to make.",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"World Health Organization\" at index 5 of postAnalysis.namedEntities in #4545 (lowest index first) and add 1 to World Health Organization. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#4545:6",
+   "postNum": 4545,
+   "index": 6,
+   "entityId": "qe-a9313c16edad",
+   "canonical": "World Trade Organization",
+   "entityType": "organization",
+   "alias": "World Trade Organization",
+   "aliases": [
+    "World Trade Organization"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Humanity is good, but, when we let our guard down we allow darkness to infiltrate and destroy. Like past battles fought, we now face our greatest battle at present, a battle to save our Republic, our way of life, and what we decide (each of us) now will decide our future. Will we be a free nation under God? Or will we cede our freedom, rights and liberty to the enemy? We all have a choice to make.",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"World Trade Organization\" at index 6 of postAnalysis.namedEntities in #4545 (lowest index first) and add 1 to World Trade Organization. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#4581:0",
+   "postNum": 4581,
+   "index": 0,
+   "entityId": "qe-ddeb9c6c71b8",
+   "canonical": "Senate Judiciary Committee",
+   "entityType": "government_institution",
+   "alias": "Senate Judiciary Committee",
+   "aliases": [
+    "Senate Judiciary Committee"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://www.judiciary.senate.gov/press/rep/releases/judiciary-committee-releases-declassified-documents-that-substantially-undercut-steele-dossier-page-fisa-warrants Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Senate Judiciary Committee\" at index 0 of postAnalysis.namedEntities in #4581 (lowest index first) and add 1 to Senate Judiciary Committee. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#4630:18",
+   "postNum": 4630,
+   "index": 18,
+   "entityId": "qe-37df287cafa6",
+   "canonical": "Oregon",
+   "entityType": "location",
+   "alias": "Oregon",
+   "aliases": [
+    "Oregon"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "How is blackmail used? Democratic Illinois State Representative, Keith Farnham, has resigned and was charged with possession of child pornography and has been accused of bragging at an online site about sexually molesting a 6-year-old girl. Democratic spokesperson for the Arkansas Democratic Party, Harold Moody, Jr, was charged with distribution and possession of child pornography. Democratic Radn",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Oregon\" at index 18 of postAnalysis.namedEntities in #4630 (lowest index first) and add 1 to Oregon. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#4631:18",
+   "postNum": 4631,
+   "index": 18,
+   "entityId": "qe-a3f4e1c9a5c1",
+   "canonical": "Donald Lukens",
+   "entityType": "person",
+   "alias": "Donald Lukens",
+   "aliases": [
+    "Donald Lukens"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Democratic California Congressman, Tony Cárdenas, is being sued in LA County for allegedly sexually abused a 16-year-old girl. Democratic aide to Senator Barbara Boxer, Jeff Rosato, plead guilty to charges of trading in child pornography. Democratic Alaskan State Representative, Dean Westlake, resigned from his seat after the media published a report alleging he fathered a child with a 16-year-old",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Donald Lukens\" at index 18 of postAnalysis.namedEntities in #4631 (lowest index first) and add 1 to Donald Lukens. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#4632:5",
+   "postNum": 4632,
+   "index": 5,
+   "entityId": "qe-f2ba73f57644",
+   "canonical": "Earl Kimmerling",
+   "entityType": "person",
+   "alias": "Earl Kimmerling",
+   "aliases": [
+    "Earl Kimmerling"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Republican activist Marty Glickman (a.k.a. “Republican Marty”), was taken into custody by Florida police on four counts of unlawful sexual activity with an underage girl and one count of delivering the drug LSD. Republican legislative aide Howard L. Brooks was charged with molesting a 12-year old boy and possession of child pornography. Republican Senate candidate John Hathaway was accused of havi",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Earl Kimmerling\" at index 5 of postAnalysis.namedEntities in #4632 (lowest index first) and add 1 to Earl Kimmerling. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#4645:6",
+   "postNum": 4645,
+   "index": 6,
+   "entityId": "qe-157fca10431e",
+   "canonical": "Department of Homeland Security",
+   "entityType": "organization",
+   "alias": "Department of Homeland Security",
+   "aliases": [
+    "Department of Homeland Security"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "3 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "What happens if 44 is actively running a shadow command and control [shadow presidency] operation against the current duly elected POTUS? What former mid-senior admin officials would need to be involved? What current mid-senior admin officials would need to be involved? What key positions of power would be critical to the operation? How do you finance the operation? https://www.theguardian.com/us-",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Department of Homeland Security\" at index 6 of postAnalysis.namedEntities in #4645 (lowest index first) and add 1 to Department of Homeland Security. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#4645:7",
+   "postNum": 4645,
+   "index": 7,
+   "entityId": "qe-7049e3ac2389",
+   "canonical": "Department of Treasury",
+   "entityType": "organization",
+   "alias": "Department of Treasury",
+   "aliases": [
+    "Department of Treasury"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "3 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "What happens if 44 is actively running a shadow command and control [shadow presidency] operation against the current duly elected POTUS? What former mid-senior admin officials would need to be involved? What current mid-senior admin officials would need to be involved? What key positions of power would be critical to the operation? How do you finance the operation? https://www.theguardian.com/us-",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Department of Treasury\" at index 7 of postAnalysis.namedEntities in #4645 (lowest index first) and add 1 to Department of Treasury. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#4649:0",
+   "postNum": 4649,
+   "index": 0,
+   "entityId": "qe-e72f4b6ffdeb",
+   "canonical": "Senate Intelligence Committee",
+   "entityType": "government_institution",
+   "alias": "Senate Intelligence Committee",
+   "aliases": [
+    "Senate Intelligence Committee"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://www.nytimes.com/2014/08/01/world/senate-intelligence-commitee-cia-interrogation-report.html Worth remembering. Infiltration and placement under 44. Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Senate Intelligence Committee\" at index 0 of postAnalysis.namedEntities in #4649 (lowest index first) and add 1 to Senate Intelligence Committee. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#4726:0",
+   "postNum": 4726,
+   "index": 0,
+   "entityId": "qe-b8a8adb39900",
+   "canonical": "Department of Defense",
+   "entityType": "organization",
+   "alias": "Department of Defense",
+   "aliases": [
+    "Department of Defense"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "2 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://twitter.com/DeptofDefense/status/1306232167769411584 [1:35] https://www.military.com/video/air-force-harnessing-power-directed-energy MIL SAT application(s). Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Department of Defense\" at index 0 of postAnalysis.namedEntities in #4726 (lowest index first) and add 1 to Department of Defense. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#4750:5",
+   "postNum": 4750,
+   "index": 5,
+   "entityId": "qe-32cf6df8aa07",
+   "canonical": "Harvard Law School",
+   "entityType": "organization",
+   "alias": "Harvard Law School",
+   "aliases": [
+    "Harvard Law School"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "3 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Who controls [wields significant influence] re: the 'Clinton' [D] party? https://wikileaks.org/clinton-emails/emailid/22919 https://wikileaks.org/clinton-emails/emailid/24651 Who controls [wields significant influence] re: the 'Hussein' [D] party? https://wikileaks.org/clinton-emails/emailid/30480 Different factions of foreign [primary] control? Who paid _Hussein's Harvard Law Degree? Who financ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Harvard Law School\" at index 5 of postAnalysis.namedEntities in #4750 (lowest index first) and add 1 to Harvard Law School. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#4825:0",
+   "postNum": 4825,
+   "index": 0,
+   "entityId": "qe-ab59ea53d843",
+   "canonical": "New York Governor",
+   "entityType": "title_role",
+   "alias": "New York Governor",
+   "aliases": [
+    "New York Governor"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://www.governor.ny.gov/news/no-20267-continuing-temporary-suspension-and-modification-laws-relating-disaster-emergency \"This Executive order shall remain in effect until November 3, 2020.\" Was this ever about the virus? Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"New York Governor\" at index 0 of postAnalysis.namedEntities in #4825 (lowest index first) and add 1 to New York Governor. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#4939:0",
+   "postNum": 4939,
+   "index": 0,
+   "entityId": "qe-2cf9f642e53c",
+   "canonical": "MSNBC",
+   "entityType": "media_organization",
+   "alias": "MSNBC",
+   "aliases": [
+    "MSNBC"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "1 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://twitter.com/johnrobertsFox/status/1319391106036006914 This is not going away. Corruption at highest levels of gov. DOJ_FBI_MSDNC 'political elite' protection struggles during BRIGHT SUNNY days. Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"MSNBC\" at index 0 of postAnalysis.namedEntities in #4939 (lowest index first) and add 1 to MSNBC. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#524:7",
+   "postNum": 524,
+   "index": 7,
+   "entityId": "qe-8b4ebe9457e5",
+   "canonical": "Washington",
+   "entityType": "location",
+   "alias": "Washington",
+   "aliases": [
+    "Washington"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "LOOP CAPITAL. CEOs/BODs PAYING TO PLAY. >Slush Fund >>Hussein [1] $29,000,000 SINGAPORE >>We don't say his name [2] $19,000,000 SINGAPORE (Why don't we say his name?) >>HRC/BC [3] $15,000,000 Banco de MEXICO >>NP [4] $8,000,000 Deutsche Bank USA ……….ON……AND…….>ON……. FOLLOW THE MONEY. FOCUS on loudest voices in WASH. Net Worth? Reconcile? Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Washington\" at index 7 of postAnalysis.namedEntities in #524 (lowest index first) and add 1 to Washington. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#631:3",
+   "postNum": 631,
+   "index": 3,
+   "entityId": "qe-b8a8adb39900",
+   "canonical": "Department of Defense",
+   "entityType": "organization",
+   "alias": "Department of Defense",
+   "aliases": [
+    "Department of Defense"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "searched, no match",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": ">>180316 HK allowed his passport to clear customs WITH THE CLOWNS IN AMERICA AND DEPT OF DEFENSE PUTTING A NAT SEC HOLD WW? How does he clear customs? How does he end up in Russia? Coincidence? Who was the 1st agency he worked for? Who taught him the game? Who assigned him w/ foreign ops? Why is this relevant? Future unlocks past. Watch the news. Spider web. Stop taking the sleeping pill. Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Department of Defense\" at index 3 of postAnalysis.namedEntities in #631 (lowest index first) and add 1 to Department of Defense. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#772:0",
+   "postNum": 772,
+   "index": 0,
+   "entityId": "qe-e72f4b6ffdeb",
+   "canonical": "Senate Intelligence Committee",
+   "entityType": "government_institution",
+   "alias": "Senate Intelligence Committee",
+   "aliases": [
+    "Senate Intelligence Committee"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "2 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https://www.intelligence.senate.gov/sites/default/files/hearings/95mkultra.pdf Read very carefully. Unreleased [CLAS-HIGHEST]: Ability to use frequencies [incoming sig]/modify/code/program over 'x' period [designate] mobile phone to 'control' target subject. OP conducted/ORIG outside of US. CAR control? https://www.youtube.com/watch?v=1Yqa5PUViPo Statement by the driver? Fairytale? AS THE WORLD T",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Senate Intelligence Committee\" at index 0 of postAnalysis.namedEntities in #772 (lowest index first) and add 1 to Senate Intelligence Committee. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#805:0",
+   "postNum": 805,
+   "index": 0,
+   "entityId": "qe-e72f4b6ffdeb",
+   "canonical": "Senate Intelligence Committee",
+   "entityType": "government_institution",
+   "alias": "Senate Intelligence Committee",
+   "aliases": [
+    "Senate Intelligence Committee"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "2 link(s) searched by token and by glued brand — no match",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "https:// www.archives.gov/files/research/jfk/releases/docid-32403785.pdf https:// www.intelligence.senate.gov/sites/default/files/hearings/ciasuseofjournal00unit.pdf Why are the above [public declassified docs] highly protected? Q ",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Senate Intelligence Committee\" at index 0 of postAnalysis.namedEntities in #805 (lowest index first) and add 1 to Senate Intelligence Committee. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  },
+  {
+   "occurrenceId": "#928:1",
+   "postNum": 928,
+   "index": 1,
+   "entityId": "qe-92f4051753fc",
+   "canonical": "Adolf Hitler",
+   "entityType": "person",
+   "alias": "Adolf Hitler",
+   "aliases": [
+    "Adolf Hitler"
+   ],
+   "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
+   "evidenceSearch": {
+    "renderedProse": "every registered alias tested as a complete token — no match",
+    "quotedContent": "the drop quotes nothing",
+    "urls": "the drop carries no link",
+    "images": "the drop carries no image",
+    "metadata": "name, link, trip searched — no match",
+    "substring": "the alias does not even occur inside a longer word"
+   },
+   "renderedDrop": "Angela Dorothea Kasner. Daughter of a Pastor? Name of FATHER? History of FATHER? Hitler youth (member). Haircut today vs THEN (A). Symbolic. US Intelligence post war controlled who? The ‘Mission’ Who is Angela Hitler? Relationship to Adolf? How were children named in Germany during this period? First or middle. Family tree. Anna. Maria. Alois. Examples. Risk of ‘conspiracy’ label the deeper we go.",
+   "withdrawalReason": "No complete-token prose match, no URL-source relationship, no confirmed image evidence and no certified metadata basis. Approved for withdrawal by the owner on 2026-08-17.",
+   "reversal": "Insert \"Adolf Hitler\" at index 1 of postAnalysis.namedEntities in #928 (lowest index first) and add 1 to Adolf Hitler. Recorded in audit/entity-cleanup-reversal.json.",
+   "certifiedCountEffect": -1,
+   "postTextUnchanged": true,
+   "mediaUnchanged": true
+  }
+ ]
+}

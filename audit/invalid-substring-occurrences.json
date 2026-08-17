@@ -1,0 +1,1924 @@
+{
+ "note": "Every occurrence whose only basis is an alias buried inside a longer word. OWNER RULING 2026-08-17: a substring alone is not a valid entity mention. Each row carries the drop, the entity, the alias, the containing word, the rendered AND raw context, and whether any other provenance supports the entity — so a removal can be checked rather than trusted.",
+ "ruling": "An alias appearing only inside a longer normalized word is not sufficient evidence for an entity occurrence. Removal is automatic in the proposal ONLY when no complete-token alias, approved linked-source, confirmed image or certified metadata provenance exists in the same drop.",
+ "total": 98,
+ "byEntity": {
+  "God": 41,
+  "Sara Carter": 3,
+  "Doug Collins": 3,
+  "Matt Gaetz": 2,
+  "Mark Levin": 2,
+  "Andy Ngo": 2,
+  "Wray": 1,
+  "West Hollywood": 1,
+  "New York": 1,
+  "Harvard Muslim Alumni": 1,
+  "Special Counsel": 1,
+  "Lindsey Graham": 1,
+  "Mark Meadows": 1,
+  "MSNBC": 1,
+  "Sunday Night": 1,
+  "Thomas Drake": 1,
+  "Maria Wall": 1,
+  "Lisa Mei": 1,
+  "Harriet Cash": 1,
+  "Grassley": 1,
+  "Johnny": 1,
+  "Saddam Hussein": 1,
+  "Coats": 1,
+  "Jussie Smollett": 1,
+  "Blumenthal": 1,
+  "Zuckerberg": 1,
+  "Daily Beast": 1,
+  "Ted Cruz": 1,
+  "Charlie Kirk": 1,
+  "George Papa": 1,
+  "Andrew Kerr": 1,
+  "Cuba": 1,
+  "Andy Harris": 1,
+  "Luke Goldberg": 1,
+  "Chris Hayes": 1,
+  "Jared De": 1,
+  "Byron York": 1,
+  "George H. W. Bush": 1,
+  "Amanda Hle": 1,
+  "Nevada": 1,
+  "Brazil": 1,
+  "Thomas Basile": 1,
+  "Office of the Director of National Intelligence": 1,
+  "Matt Finn": 1,
+  "Keith Ellison": 1,
+  "Mike Lee": 1,
+  "Pentagon": 1,
+  "Hitler": 1,
+  "Ron Johnson": 1,
+  "MKUltra": 1,
+  "AT&T": 1
+ },
+ "records": [
+  {
+   "occurrenceId": "#100:7",
+   "postNum": 100,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godfather"
+   ],
+   "renderedContext": "a cult? Who is worshipped? Why is this relevant? Snow White Godfather III Speed. Q",
+   "rawContext": "a cult? Who is worshipped? Why is this relevant? Snow White Godfather III Speed. Q",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#102:0",
+   "postNum": 102,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godspeed."
+   ],
+   "renderedContext": "14.5995° N, 120.9842° E _Conf_UDT_green_ ^_Sj69ETC- Godspeed.",
+   "rawContext": "14.5995° N, 120.9842° E _Conf_UDT_green_ ^_Sj69ETC- Godspeed.",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#111:20",
+   "postNum": 111,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godfather"
+   ],
+   "renderedContext": "rators are active. We are at war. Goodnight BO. Snow White. Godfather III. Q",
+   "rawContext": "rators are active. We are at war. Goodnight BO. Snow White. Godfather III. Q",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#112:3",
+   "postNum": 112,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godfather"
+   ],
+   "renderedContext": "lections (tues) no longer matter at this stage. Snow White. Godfather III. Above will have context as news unfolds. Summarize and",
+   "rawContext": "lections (tues) no longer matter at this stage. Snow White. Godfather III. Above will have context as news unfolds. Summarize and paint the ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#113:11",
+   "postNum": 113,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godfather"
+   ],
+   "renderedContext": "is A Cooper's background? Why is this relevant? Snow White. Godfather III. Speed. Q",
+   "rawContext": "is A Cooper's background? Why is this relevant? Snow White. Godfather III. Speed. Q",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#1172:0",
+   "postNum": 1172,
+   "entityId": "qe-1932f9fd0b7c",
+   "canonical": "Wray",
+   "aliasThatMatched": "Wray",
+   "containingWords": [
+    "WRAYs"
+   ],
+   "renderedContext": ">>1074952 WRAYs of LIGHT. Q ",
+   "rawContext": ">>1074952 WRAYs of LIGHT. Q ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#119:7",
+   "postNum": 119,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godfather"
+   ],
+   "renderedContext": "aking office? Reconcile. Why is this relevant? Snow White. Godfather III. Q",
+   "rawContext": "aking office? Reconcile. Why is this relevant? Snow White. Godfather III. Q",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#1208:4",
+   "postNum": 1208,
+   "entityId": "qe-2edf557260a3",
+   "canonical": "West Hollywood",
+   "aliasThatMatched": "West Hollywood",
+   "containingWords": [
+    "www.wehoville.com/2018/04/12/west-hollywoodss-mariah-sunshine-coogan-identified-"
+   ],
+   "renderedContext": " target. Expand further. Wendy. HUSSEIN. Mack. AS. https:// www.wehoville.com/2018/04/12/west-hollywoodss-mariah-sunshine-coogan-identified-victim-scottsdale-plane-crash/ Open source. Q ",
+   "rawContext": " target. Expand further. Wendy. HUSSEIN. Mack. AS. https:// www.wehoville.com/2018/04/12/west-hollywoodss-mariah-sunshine-coogan-identified-",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#1211:1",
+   "postNum": 1211,
+   "entityId": "qe-ce9b4b609ab5",
+   "canonical": "New York",
+   "aliasThatMatched": "New York",
+   "containingWords": [
+    "newyork.cbslocal.com/2016/09/28/agnes-nixon-soap-operas/"
+   ],
+   "renderedContext": ">>1123269 http:// newyork.cbslocal.com/2016/09/28/agnes-nixon-soap-operas/ Q ",
+   "rawContext": ">>1123269 http:// newyork.cbslocal.com/2016/09/28/agnes-nixon-soap-operas/ Q ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#122:4",
+   "postNum": 122,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godfather"
+   ],
+   "renderedContext": "d. Operations underway. Operators active. Pray. Snow White. Godfather III. Q",
+   "rawContext": "d. Operations underway. Operators active. Pray. Snow White. Godfather III. Q",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#1235:10",
+   "postNum": 1235,
+   "entityId": "qe-25f5f64483e9",
+   "canonical": "Harvard Muslim Alumni",
+   "aliasThatMatched": "Harvard Muslim Alumni",
+   "containingWords": [
+    "harvardmuslimalumni.org/about"
+   ],
+   "renderedContext": "Inside out destruction. SA. SA. SA. HUMA & Hussein. http:// harvardmuslimalumni.org/about Who paid? SA [vital]. Q ",
+   "rawContext": "de out destruction. SA. SA. SA. HUMA &amp; Hussein. http:// harvardmuslimalumni.org/about Who paid? SA [vital]. Q ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#1284:0",
+   "postNum": 1284,
+   "entityId": "qe-ac1d57f21cc2",
+   "canonical": "Special Counsel",
+   "aliasThatMatched": "Special Counsel",
+   "containingWords": [
+    "http://www.foxnews.com/politics/2017/12/01/michael-flynn-charged-in-special-coun"
+   ],
+   "renderedContext": ">>1211682 These do not match. http://www.foxnews.com/politics/2017/12/01/michael-flynn-charged-in-special-counsels-russia-investigation.html http://www.foxnews.com/politi",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#1291:4",
+   "postNum": 1291,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godspeed,"
+   ],
+   "renderedContext": "tep back. Remove arrests. What do you see? Stage being set? Godspeed, Patriot. Q ",
+   "rawContext": "tep back. Remove arrests. What do you see? Stage being set? Godspeed, Patriot. Q ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#1305:0",
+   "postNum": 1305,
+   "entityId": "qe-4662ccd00b39",
+   "canonical": "Lindsey Graham",
+   "aliasThatMatched": "Lindsey Graham",
+   "containingWords": [
+    "https://mobile.twitter.com/LindseyGrahamSC/status/990953165267681281"
+   ],
+   "renderedContext": "No name out. Now. https://mobile.twitter.com/LindseyGrahamSC/status/990953165267681281 We love good singers. Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#1349:0",
+   "postNum": 1349,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godspeed,"
+   ],
+   "renderedContext": ">>1391481 Godspeed, Patriot. Q ",
+   "rawContext": ">>1391481 Godspeed, Patriot. Q ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#1376:2",
+   "postNum": 1376,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godspeed,"
+   ],
+   "renderedContext": "at NYPD detectives were [187] mid 2017? Officer Familia [1] Godspeed, Patriot. We will never forget. Q ",
+   "rawContext": "at NYPD detectives were [187] mid 2017? Officer Familia [1] Godspeed, Patriot. We will never forget. Q ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#1475:0",
+   "postNum": 1475,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "GODSPEED"
+   ],
+   "renderedContext": "GODSPEED ONE AND ALL. Q+ ",
+   "rawContext": "GODSPEED ONE AND ALL. Q+ ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#148:4",
+   "postNum": 148,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godspeed."
+   ],
+   "renderedContext": "CA-7^DFWTAb_yes _green1_green2_green3_green4_conf-ZDjTwT9Ry Godspeed. Q",
+   "rawContext": "CA-7^DFWTAb_yes _green1_green2_green3_green4_conf-ZDjTwT9Ry Godspeed. Q",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#155:1",
+   "postNum": 155,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godspeed."
+   ],
+   "renderedContext": "_0600_yes _green1_0600 Bunker Apple Yellow Sky [… + 1] Yes Godspeed. Q",
+   "rawContext": "_0600_yes _green1_0600 Bunker Apple Yellow Sky [… + 1] Yes Godspeed. Q",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#1579:0",
+   "postNum": 1579,
+   "entityId": "qe-2f4bc1c87a74",
+   "canonical": "Matt Gaetz",
+   "aliasThatMatched": "Matt Gaetz",
+   "containingWords": [
+    "https://mobile.twitter.com/RepMattGaetz/status/1009431577682763776"
+   ],
+   "renderedContext": "Boom! https://mobile.twitter.com/RepMattGaetz/status/1009431577682763776 [[[ ]]] [[ ]] [ ] Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#158:7",
+   "postNum": 158,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godfather"
+   ],
+   "renderedContext": "ilent war (some gets out). The Great Awakening. Iron Eagle. Godfather III. The Hunt for Red October. Q",
+   "rawContext": "ilent war (some gets out). The Great Awakening. Iron Eagle. Godfather III. The Hunt for Red October. Q",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#1703:1",
+   "postNum": 1703,
+   "entityId": "qe-3108d68923a0",
+   "canonical": "Mark Meadows",
+   "aliasThatMatched": "Mark Meadows",
+   "containingWords": [
+    "https://mobile.twitter.com/RepMarkMeadows/status/1022255468461391872"
+   ],
+   "renderedContext": "https://mobile.twitter.com/RepMarkMeadows/status/1022255468461391872 [RR] Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#1750:0",
+   "postNum": 1750,
+   "entityId": "qe-2cf9f642e53c",
+   "canonical": "MSNBC",
+   "aliasThatMatched": "MSNBC",
+   "containingWords": [
+    "https://www.realclearpolitics.com/video/2018/07/20/msnbcs_ali_velshi_apple_and_g"
+   ],
+   "renderedContext": "https://www.realclearpolitics.com/video/2018/07/20/msnbcs_ali_velshi_apple_and_google_profiting_from_apps_promoting_qanon_pizzagate_conspira",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#181:0",
+   "postNum": 181,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godspeed,"
+   ],
+   "renderedContext": "g has to be carefully crafted and tooled prior to release. Godspeed, Patriot. Q",
+   "rawContext": "g has to be carefully crafted and tooled prior to release. Godspeed, Patriot. Q",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#184:1",
+   "postNum": 184,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godfather"
+   ],
+   "renderedContext": "hey don’t fear you. You are sheep to them. You are feeders. Godfather III. Q",
+   "rawContext": "hey don’t fear you. You are sheep to them. You are feeders. Godfather III. Q",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#186:0",
+   "postNum": 186,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godspeed."
+   ],
+   "renderedContext": "You are learning. You needed a push. Godspeed. Q",
+   "rawContext": "You are learning. You needed a push. Godspeed. Q",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#1880:3",
+   "postNum": 1880,
+   "entityId": "qe-b0925e132c0f",
+   "canonical": "Sunday Night",
+   "aliasThatMatched": "Sunday Night",
+   "containingWords": [
+    "https://www.news.com.au/entertainment/tv/current-affairs/sunday-nights-matt-dora"
+   ],
+   "renderedContext": "//www.youtube.com/watch?v=mvTqqYCb-e8 [Read very carefully] https://www.news.com.au/entertainment/tv/current-affairs/sunday-nights-matt-doran-goes-undercover-with-operation-underground-railroad-to-bri",
+   "rawContext": "Haiti https://www.youtube.com/watch?v=mvTqqYCb-e8 [Read very carefully] https://www.ne",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#2122:0",
+   "postNum": 2122,
+   "entityId": "qe-e3f62badcf31",
+   "canonical": "Thomas Drake",
+   "aliasThatMatched": "Thomas Drake",
+   "containingWords": [
+    "https://twitter.com/Thomas_Drake1/status/1038587419019419648",
+    "https://twitter.com/Thomas_Drake1/status/1038663989251776512"
+   ],
+   "renderedContext": ">>2947825 https://twitter.com/Thomas_Drake1/status/1038587419019419648 https://twitter.com/Thomas_Drake1/status/103866398925177651",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#219:0",
+   "postNum": 219,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godspeed."
+   ],
+   "renderedContext": "7-1_yes_USA04 _Conf_BECZ_y056-(3)_y The_Castle_Runs_RED_yes Godspeed. Q",
+   "rawContext": "7-1_yes_USA04 _Conf_BECZ_y056-(3)_y The_Castle_Runs_RED_yes Godspeed. Q",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#226:0",
+   "postNum": 226,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godspeed."
+   ],
+   "renderedContext": "_yes1_yes2_yes3_^_cDVT-089bT_AD_Conf Godspeed. Q",
+   "rawContext": "_yes1_yes2_yes3_^_cDVT-089bT_AD_Conf Godspeed. Q",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#2302:0",
+   "postNum": 2302,
+   "entityId": "qe-f85eb38045e9",
+   "canonical": "Maria Wall",
+   "aliasThatMatched": "Maria Wall",
+   "containingWords": [
+    "https://twitter.com/MariaWall93/status/1046822478054658049"
+   ],
+   "renderedContext": "https://twitter.com/MariaWall93/status/1046822478054658049 VIP PATRIOTS! [THEY] call in threats prior to each rally in",
+   "rawContext": "https://twitter.com/MariaWall93/status/1046822478054658049 VIP PATRIOTS! [THEY] ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#231:0",
+   "postNum": 231,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godspeed."
+   ],
+   "renderedContext": "X COMM_Castle_Active_7ZbV-WT9 RED1_RED2_ SAT_40k_se_c_[30m] Godspeed. P_pers: WRWY Q",
+   "rawContext": "X COMM_Castle_Active_7ZbV-WT9 RED1_RED2_ SAT_40k_se_c_[30m] Godspeed. P_pers: WRWY Q",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#2395:2",
+   "postNum": 2395,
+   "entityId": "qe-309e76c61057",
+   "canonical": "Lisa Mei",
+   "aliasThatMatched": "Lisa Mei",
+   "containingWords": [
+    "https://twitter.com/LisaMei62/status/1058513212814123008"
+   ],
+   "renderedContext": "https://twitter.com/LisaMei62/status/1058513212814123008 +MS13/ISIS reinforcements for 'wet work'. Re_read drops re:",
+   "rawContext": "https://twitter.com/LisaMei62/status/1058513212814123008 +MS13/ISIS reinforcemen",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#2395:3",
+   "postNum": 2395,
+   "entityId": "qe-2f4bc1c87a74",
+   "canonical": "Matt Gaetz",
+   "aliasThatMatched": "Matt Gaetz",
+   "containingWords": [
+    "https://twitter.com/RepMattGaetz/status/1052629557826736129"
+   ],
+   "renderedContext": "/ISIS reinforcements for 'wet work'. Re_read drops re: MS13 https://twitter.com/RepMattGaetz/status/1052629557826736129 See the 'gun' tucked in the pants of the 'money man'? Q ",
+   "rawContext": "https://twitter.com/LisaMei62/status/1058513212814123008 +MS13/ISIS reinforcemen",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#2407:0",
+   "postNum": 2407,
+   "entityId": "qe-ecb45b1e166d",
+   "canonical": "Harriet Cash",
+   "aliasThatMatched": "Harriet Cash",
+   "containingWords": [
+    "https://twitter.com/HarrietCash8/status/1059158546422661121"
+   ],
+   "renderedContext": "https://twitter.com/HarrietCash8/status/1059158546422661121 5:5 - Eyes On, VIP Patriots! Q ",
+   "rawContext": "https://twitter.com/HarrietCash8/status/1059158546422661121 5:5 - Eyes On, VIP P",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#2495:2",
+   "postNum": 2495,
+   "entityId": "qe-b0a544a47108",
+   "canonical": "Grassley",
+   "aliasThatMatched": "Grassley",
+   "containingWords": [
+    "https://www.reuters.com/article/us-usa-senate-committees/senate-judiciary-chair-"
+   ],
+   "renderedContext": " WHITAKER will only intensify. SENATE WAS THE TARGET. 53-47 https://www.reuters.com/article/us-usa-senate-committees/senate-judiciary-chair-grassleys-move-to-leave-key-opening-idUSKCN1NL231 Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#266:0",
+   "postNum": 266,
+   "entityId": "qe-c8228e903637",
+   "canonical": "Johnny",
+   "aliasThatMatched": "Johnny",
+   "containingWords": [
+    "#FLYJOHNNYFLY"
+   ],
+   "renderedContext": "#FLYJOHNNYFLY ",
+   "rawContext": "#FLYJOHNNYFLY ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#274:1",
+   "postNum": 274,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godfather"
+   ],
+   "renderedContext": "Godfather III Be prepared for what you find. Q ",
+   "rawContext": "Godfather III Be prepared for what you find. Q ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#2807:8",
+   "postNum": 2807,
+   "entityId": "qe-448c7b8f437f",
+   "canonical": "Saddam Hussein",
+   "aliasThatMatched": "Saddam Hussein",
+   "containingWords": [
+    "https://www.ozy.com/flashback/saddam-husseins-billion-dollar-bank-heist/66076"
+   ],
+   "renderedContext": "h money (CASH) was confiscated from the Iraq Central Bank? https://www.ozy.com/flashback/saddam-husseins-billion-dollar-bank-heist/66076 [Example – not intended for PUBLIC awareness] https://www.n",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#2837:0",
+   "postNum": 2837,
+   "entityId": "qe-b6f239d26215",
+   "canonical": "Coats",
+   "aliasThatMatched": "Coats",
+   "containingWords": [
+    "#FlyCoatsFly#"
+   ],
+   "renderedContext": "something, didn’t we? Well, now we know he’s a bad apple. #FlyCoatsFly# Q ",
+   "rawContext": "something, didn’t we? Well, now we know he’s a bad apple. #FlyCoatsFly# Q ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#2850:0",
+   "postNum": 2850,
+   "entityId": "qe-d58d44ebad1f",
+   "canonical": "Jussie Smollett",
+   "aliasThatMatched": "Jussie Smollett",
+   "containingWords": [
+    "https://www.foxnews.com/us/jussie-smolletts-alleged-hate-crime-hoax-sheds-light-"
+   ],
+   "renderedContext": ">>5308748 https://www.foxnews.com/us/jussie-smolletts-alleged-hate-crime-hoax-sheds-light-on-similar-phony-accusations Notice a TREND by LIBERALS + D'",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#289:0",
+   "postNum": 289,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godspeed."
+   ],
+   "renderedContext": "iots. You are reaching more than you know. 1=2, 2=4, 4=8, … Godspeed. Q ",
+   "rawContext": "iots. You are reaching more than you know. 1=2, 2=4, 4=8, … Godspeed. Q ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#2953:0",
+   "postNum": 2953,
+   "entityId": "qe-dbab506adc18",
+   "canonical": "Mark Levin",
+   "aliasThatMatched": "Mark Levin",
+   "containingWords": [
+    "https://twitter.com/marklevinshow/status/1102341867537133568"
+   ],
+   "renderedContext": "https://twitter.com/marklevinshow/status/1102341867537133568 On the schedule. Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#2969:0",
+   "postNum": 2969,
+   "entityId": "qe-8948243efcca",
+   "canonical": "Sara Carter",
+   "aliasThatMatched": "Sara Carter",
+   "containingWords": [
+    "https://twitter.com/SaraCarterDC/status/1102705823829102592"
+   ],
+   "renderedContext": "https://twitter.com/SaraCarterDC/status/1102705823829102592 Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#2981:0",
+   "postNum": 2981,
+   "entityId": "qe-8948243efcca",
+   "canonical": "Sara Carter",
+   "aliasThatMatched": "Sara Carter",
+   "containingWords": [
+    "https://twitter.com/SaraCarterDC/status/1103334659537203200"
+   ],
+   "renderedContext": "https://twitter.com/SaraCarterDC/status/1103334659537203200 But, they [D's] already know, they just LIE [DISHONEST]. ht",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#2999:0",
+   "postNum": 2999,
+   "entityId": "qe-18bd65579fff",
+   "canonical": "Blumenthal",
+   "aliasThatMatched": "Blumenthal",
+   "containingWords": [
+    "https://twitter.com/SenBlumenthal/status/1103710332994887682"
+   ],
+   "renderedContext": "https://twitter.com/SenBlumenthal/status/1103710332994887682 Glimpse of something much bigger to come? Actions have cons",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#3006:25",
+   "postNum": 3006,
+   "entityId": "qe-055d7c4a74b0",
+   "canonical": "Zuckerberg",
+   "aliasThatMatched": "Zuckerberg",
+   "containingWords": [
+    "https://www.foxnews.com/tech/mark-zuckerbergs-conference-room-has-a-secret-panic"
+   ],
+   "renderedContext": "+ tech insertion] of GOOG, FB [LifeLog], Twitter, etc etc? https://www.foxnews.com/tech/mark-zuckerbergs-conference-room-has-a-secret-panic-chute-report-says What happens when people wake up to the f",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#3013:0",
+   "postNum": 3013,
+   "entityId": "qe-6cbd2d0bea8d",
+   "canonical": "Daily Beast",
+   "aliasThatMatched": "Daily Beast",
+   "containingWords": [
+    "https://twitter.com/thedailybeast/status/1104471937869365255"
+   ],
+   "renderedContext": "https://twitter.com/thedailybeast/status/1104471937869365255 Exclusive? 1.5 years behind Anons. Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#3054:0",
+   "postNum": 3054,
+   "entityId": "qe-fe6a80bff729",
+   "canonical": "Doug Collins",
+   "aliasThatMatched": "Doug Collins",
+   "containingWords": [
+    "https://twitter.com/RepDougCollins/status/1106181620711739394"
+   ],
+   "renderedContext": "https://twitter.com/RepDougCollins/status/1106181620711739394 Happy Hunting! Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#3055:0",
+   "postNum": 3055,
+   "entityId": "qe-8948243efcca",
+   "canonical": "Sara Carter",
+   "aliasThatMatched": "Sara Carter",
+   "containingWords": [
+    "https://twitter.com/SaraCarterDC/status/1106212857727930368"
+   ],
+   "renderedContext": "https://twitter.com/SaraCarterDC/status/1106212857727930368 The End Is Near. Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#306:1",
+   "postNum": 306,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godfather"
+   ],
+   "renderedContext": " coincidences? Re-review the map post relevant news drops. Godfather III. Q ",
+   "rawContext": " coincidences? Re-review the map post relevant news drops. Godfather III. Q ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#314:0",
+   "postNum": 314,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godspeed,"
+   ],
+   "renderedContext": "Be the autists we know you are. It's about the BREAK. Godspeed, Patriots. Q ",
+   "rawContext": "Be the autists we know you are. It's about the BREAK. Godspeed, Patriots. Q ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#3242:0",
+   "postNum": 3242,
+   "entityId": "qe-fe6a80bff729",
+   "canonical": "Doug Collins",
+   "aliasThatMatched": "Doug Collins",
+   "containingWords": [
+    "https://twitter.com/RepDougCollins/status/1111256323008708608"
+   ],
+   "renderedContext": "https://twitter.com/RepDougCollins/status/1111256323008708608 [Page 17] Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#3333:0",
+   "postNum": 3333,
+   "entityId": "qe-fe6a80bff729",
+   "canonical": "Doug Collins",
+   "aliasThatMatched": "Doug Collins",
+   "containingWords": [
+    "https://twitter.com/RepDougCollins"
+   ],
+   "renderedContext": "https://twitter.com/RepDougCollins Eyes on. Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#3433:1",
+   "postNum": 3433,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "GODFATHER"
+   ],
+   "renderedContext": "hreatened). Think size & scope of continual MSM attack(s). GODFATHER III Q ",
+   "rawContext": "tened). Think size &amp; scope of continual MSM attack(s). GODFATHER III Q ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#346:1",
+   "postNum": 346,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godspeed,"
+   ],
+   "renderedContext": "Godspeed, Patriots. POTUS: WRWY Q ",
+   "rawContext": "Godspeed, Patriots. POTUS: WRWY Q ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#3470:0",
+   "postNum": 3470,
+   "entityId": "qe-b9ee2a4bc6bf",
+   "canonical": "Ted Cruz",
+   "aliasThatMatched": "Ted Cruz",
+   "containingWords": [
+    "https://twitter.com/SenTedCruz/status/1153793598627799040"
+   ],
+   "renderedContext": "https://twitter.com/SenTedCruz/status/1153793598627799040 Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#353:0",
+   "postNum": 353,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godspeed,"
+   ],
+   "renderedContext": "8937.html#11043803 24hrs to restore trip code or departure. Godspeed, Q",
+   "rawContext": "8937.html#11043803 24hrs to restore trip code or departure. Godspeed, Q",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#3534:3",
+   "postNum": 3534,
+   "entityId": "qe-d4e89265e936",
+   "canonical": "Charlie Kirk",
+   "aliasThatMatched": "Charlie Kirk",
+   "containingWords": [
+    "https://twitter.com/charliekirk11/status/1155812918467784704"
+   ],
+   "renderedContext": "ficking cases? Who represents Maryland in the House/Senate? https://twitter.com/charliekirk11/status/1155812918467784704 The More You Know… Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#3565:1",
+   "postNum": 3565,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godfather"
+   ],
+   "renderedContext": "https://twitter.com/Pontifex/status/1156165039545606144 Godfather III It's going to be BIBLICAL. Q ",
+   "rawContext": ":<em>//</em>twitter.com/Pontifex/status/1156165039545606144 Godfather III It's going to be BIBLICAL. Q ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#3567:0",
+   "postNum": 3567,
+   "entityId": "qe-58247463cbd4",
+   "canonical": "George Papa",
+   "aliasThatMatched": "George Papa",
+   "containingWords": [
+    "https://twitter.com/GeorgePapa19/status/1156412024399679488"
+   ],
+   "renderedContext": "https://twitter.com/GeorgePapa19/status/1156412024399679488 See Guardian article. How do you get ahead of a story? Coin",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#3605:0",
+   "postNum": 3605,
+   "entityId": "qe-f0c917472c64",
+   "canonical": "Andrew Kerr",
+   "aliasThatMatched": "Andrew Kerr",
+   "containingWords": [
+    "https://twitter.com/AndrewKerrNC/status/1196877496949657600"
+   ],
+   "renderedContext": "https://twitter.com/AndrewKerrNC/status/1196877496949657600 PAY-FOR-PLAY only works when you hold a position of POWER. ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#362:1",
+   "postNum": 362,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godspeed,"
+   ],
+   "renderedContext": "-comms. Snow White. Rig for silent running. Unknown return. Godspeed, Patriots. Q ",
+   "rawContext": "-comms. Snow White. Rig for silent running. Unknown return. Godspeed, Patriots. Q ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#3734:0",
+   "postNum": 3734,
+   "entityId": "qe-c8edf4a0658a",
+   "canonical": "Cuba",
+   "aliasThatMatched": "Cuba",
+   "containingWords": [
+    "Cuban"
+   ],
+   "renderedContext": ">>7561023 Also, think 'White Squal' re: Cuban M Crisis/JFK. Do comms only go to Anons? Bigger than you ca",
+   "rawContext": ">>7561023 Also, think 'White Squal' re: Cuban M Crisis/JFK. Do comms only go to Anons? Bigger than you can imagine. Expa",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#3897:0",
+   "postNum": 3897,
+   "entityId": "qe-a9b01b82abb3",
+   "canonical": "Andy Harris",
+   "aliasThatMatched": "Andy Harris",
+   "containingWords": [
+    "https://twitter.com/RepAndyHarrisMD/status/1242178705050480640"
+   ],
+   "renderedContext": "https://twitter.com/RepAndyHarrisMD/status/1242178705050480640 PREVENT [[D] party destruction] BY ANY MEANS NECESSARY. The",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#3922:0",
+   "postNum": 3922,
+   "entityId": "qe-daece4fc5c9d",
+   "canonical": "Luke Goldberg",
+   "aliasThatMatched": "Luke Goldberg",
+   "containingWords": [
+    "https://twitter.com/LukeGoldberg4/status/1248091038310432768"
+   ],
+   "renderedContext": "https://twitter.com/LukeGoldberg4/status/1248091038310432768 Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#393:0",
+   "postNum": 393,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godspeed,"
+   ],
+   "renderedContext": "ognizing your contributions. We thank you for your service. Godspeed, Q ",
+   "rawContext": "ognizing your contributions. We thank you for your service. Godspeed, Q ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#394:2",
+   "postNum": 394,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godspeed,"
+   ],
+   "renderedContext": "om IP needed (though we can implement at a moments notice). Godspeed, Q ",
+   "rawContext": "om IP needed (though we can implement at a moments notice). Godspeed, Q ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#4020:0",
+   "postNum": 4020,
+   "entityId": "qe-7a2650adef9a",
+   "canonical": "Chris Hayes",
+   "aliasThatMatched": "Chris Hayes",
+   "containingWords": [
+    "https://thehill.com/homenews/media/495448-firechrishayes-trends-after-msnbc-host"
+   ],
+   "renderedContext": "https://thehill.com/homenews/media/495448-firechrishayes-trends-after-msnbc-host-covers-biden-sexual-assault-allegations When they can no lo",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#4069:0",
+   "postNum": 4069,
+   "entityId": "qe-dc51b7570403",
+   "canonical": "Jared De",
+   "aliasThatMatched": "Jared De",
+   "containingWords": [
+    "https://twitter.com/JaredDe08755962/status/1256662411580526596"
+   ],
+   "renderedContext": "https://twitter.com/JaredDe08755962/status/1256662411580526596 WWG1WGA!!! Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#4118:1",
+   "postNum": 4118,
+   "entityId": "qe-ceae80730a2f",
+   "canonical": "Byron York",
+   "aliasThatMatched": "Byron York",
+   "containingWords": [
+    "https://www.washingtonexaminer.com/opinion/byron-yorks-daily-memo-exclusive-dni-"
+   ],
+   "renderedContext": "https://www.washingtonexaminer.com/opinion/byron-yorks-daily-memo-exclusive-dni-to-schiff-the-transcripts-are-ready-to-release Sorry, Adam, ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#415:0",
+   "postNum": 415,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godspeed,"
+   ],
+   "renderedContext": "person is above another. We stand together. Watch the news. Godspeed, Patriots. Q",
+   "rawContext": "person is above another. We stand together. Watch the news. Godspeed, Patriots. Q",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#4164:2",
+   "postNum": 4164,
+   "entityId": "qe-ed7af8c981ab",
+   "canonical": "George H. W. Bush",
+   "aliasThatMatched": "George H.W. Bush",
+   "containingWords": [
+    "https://www.cia.gov/news-information/featured-story-archive/2018-featured-story-"
+   ],
+   "renderedContext": "u control agency regs? How do you control your own destiny? https://www.cia.gov/news-information/featured-story-archive/2018-featured-story-archive/george-h-w-bush2014the-11th-director-of-central-inte",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#4191:0",
+   "postNum": 4191,
+   "entityId": "qe-5afa5eb1bffc",
+   "canonical": "Amanda Hle",
+   "aliasThatMatched": "Amanda Hle",
+   "containingWords": [
+    "https://twitter.com/AmandaHle333/status/1256736844718338048"
+   ],
+   "renderedContext": "https://twitter.com/AmandaHle333/status/1256736844718338048 WWG1WGA!!! Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#4251:0",
+   "postNum": 4251,
+   "entityId": "qe-ec290e41f3f7",
+   "canonical": "Nevada",
+   "aliasThatMatched": "Nevada",
+   "containingWords": [
+    "https://www.foxnews.com/politics/nevadas-vote-by-mail-primary-fraud-concerns"
+   ],
+   "renderedContext": "https://www.foxnews.com/politics/nevadas-vote-by-mail-primary-fraud-concerns It's right in front of you. It always has been. Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#4264:0",
+   "postNum": 4264,
+   "entityId": "qe-93129c25f29e",
+   "canonical": "Brazil",
+   "aliasThatMatched": "Brazil",
+   "containingWords": [
+    "https://twitter.com/BrazilQArmy/status/1259536236378718209"
+   ],
+   "renderedContext": "https://twitter.com/BrazilQArmy/status/1259536236378718209 WWG1WGA!!! Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#4313:1",
+   "postNum": 4313,
+   "entityId": "qe-4700f035311f",
+   "canonical": "Thomas Basile",
+   "aliasThatMatched": "Thomas Basile",
+   "containingWords": [
+    "https://www.forbes.com/sites/thomasbasile/2014/01/31/obamas-weaponization-of-gov"
+   ],
+   "renderedContext": "https://www.forbes.com/sites/thomasbasile/2014/01/31/obamas-weaponization-of-government/#143cf17a1b92 Worth remembering. Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#4350:0",
+   "postNum": 4350,
+   "entityId": "qe-285e5ba8cc6f",
+   "canonical": "Office of the Director of National Intelligence",
+   "aliasThatMatched": "ODNI",
+   "containingWords": [
+    "https://twitter.com/ODNIgov/status/1266461778126540800"
+   ],
+   "renderedContext": "https://twitter.com/ODNIgov/status/1266461778126540800 Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#4356:0",
+   "postNum": 4356,
+   "entityId": "qe-8623046de048",
+   "canonical": "Matt Finn",
+   "aliasThatMatched": "Matt Finn",
+   "containingWords": [
+    "https://twitter.com/MattFinnFNC/status/1266780532681199622"
+   ],
+   "renderedContext": "https://twitter.com/MattFinnFNC/status/1266780532681199622 Humanity at its finest. Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#4372:0",
+   "postNum": 4372,
+   "entityId": "qe-dbab506adc18",
+   "canonical": "Mark Levin",
+   "aliasThatMatched": "Mark Levin",
+   "containingWords": [
+    "https://twitter.com/marklevinshow/status/1267192115488083969"
+   ],
+   "renderedContext": "https://twitter.com/marklevinshow/status/1267192115488083969 All assets being deployed. People used as pawns [controlled",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#4416:1",
+   "postNum": 4416,
+   "entityId": "qe-05176fbb6223",
+   "canonical": "Keith Ellison",
+   "aliasThatMatched": "Keith Ellison",
+   "containingWords": [
+    "https://www.foxnews.com/politics/jeremiah-ellison-minnesota-ag-keith-ellisons-so"
+   ],
+   "renderedContext": "https://www.foxnews.com/politics/jeremiah-ellison-minnesota-ag-keith-ellisons-son-dismantle-minneapolis-police-department Infiltration inste",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#4420:0",
+   "postNum": 4420,
+   "entityId": "qe-1902640e3819",
+   "canonical": "Mike Lee",
+   "aliasThatMatched": "Mike Lee",
+   "containingWords": [
+    "https://twitter.com/SenMikeLee/status/1268756501516050432"
+   ],
+   "renderedContext": "https://twitter.com/SenMikeLee/status/1268756501516050432 Do you see what is happening? Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#443:1",
+   "postNum": 443,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godspeed,"
+   ],
+   "renderedContext": "tical to our NAT SEC. Was terminated for a specific reason. Godspeed, Patriot. Q ",
+   "rawContext": "tical to our NAT SEC. Was terminated for a specific reason. Godspeed, Patriot. Q ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#4505:0",
+   "postNum": 4505,
+   "entityId": "qe-a939139b5dc3",
+   "canonical": "Pentagon",
+   "aliasThatMatched": "Pentagon",
+   "containingWords": [
+    "https://thehill.com/policy/defense/504161-pentagons-top-technology-officials-res"
+   ],
+   "renderedContext": "https://thehill.com/policy/defense/504161-pentagons-top-technology-officials-resign More coming? [senior] Remember your oath. Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#4653:1",
+   "postNum": 4653,
+   "entityId": "qe-f11567fff98a",
+   "canonical": "Hitler",
+   "aliasThatMatched": "Hitler",
+   "containingWords": [
+    "https://www.alternet.org/2020/09/expert-on-genocide-and-anti-semitism-lays-out-t",
+    "https://www.thenewcivilrightsmovement.com/2020/09/the-frightening-parallels-betw"
+   ],
+   "renderedContext": "/www.justsecurity.org/72339/qanon-is-a-nazi-cult-rebranded/ https://www.alternet.org/2020/09/expert-on-genocide-and-anti-semitism-lays-out-the-frightening-parallels-between-qanon-and-hitlers-nazis/ ht",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#4655:2",
+   "postNum": 4655,
+   "entityId": "qe-07d627e5a17e",
+   "canonical": "Andy Ngo",
+   "aliasThatMatched": "Andy Ngo",
+   "containingWords": [
+    "https://twitter.com/MrAndyNgo/status/1304150777900855296"
+   ],
+   "renderedContext": "https://twitter.com/MrAndyNgo/status/1304150777900855296 https://www.foxnews.com/us/portland-facial-recognition-tech",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#4699:3",
+   "postNum": 4699,
+   "entityId": "qe-07d627e5a17e",
+   "canonical": "Andy Ngo",
+   "aliasThatMatched": "Andy Ngo",
+   "containingWords": [
+    "https://twitter.com/MrAndyNgo/status/1294487845810233345"
+   ],
+   "renderedContext": "fusal to bring charges been related to “low-level” arrests? https://twitter.com/MrAndyNgo/status/1294487845810233345 Sympathizer? Other? What happens when prosecutors, board o",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#4807:0",
+   "postNum": 4807,
+   "entityId": "qe-ec22243e149b",
+   "canonical": "Ron Johnson",
+   "aliasThatMatched": "Ron Johnson",
+   "containingWords": [
+    "https://twitter.com/SenRonJohnson/status/1310698642437804032"
+   ],
+   "renderedContext": "https://twitter.com/SenRonJohnson/status/1310698642437804032 Time for a change? \"Let's see what happens.\" Q ",
+   "rawContext": null,
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#737:0",
+   "postNum": 737,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godspeed."
+   ],
+   "renderedContext": " country. Without people like you, the world would be lost. Godspeed. Q ",
+   "rawContext": " country. Without people like you, the world would be lost. Godspeed. Q ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#772:1",
+   "postNum": 772,
+   "entityId": "qe-8897be130f69",
+   "canonical": "MKUltra",
+   "aliasThatMatched": "MKUltra",
+   "containingWords": [
+    "https://www.intelligence.senate.gov/sites/default/files/hearings/95mkultra.pdf"
+   ],
+   "renderedContext": "https://www.intelligence.senate.gov/sites/default/files/hearings/95mkultra.pdf Read very carefully. Unreleased [CLAS-HIGHEST]: Ability to ",
+   "rawContext": "https://www.intelligence.senate.gov/sites/default/files/hearings/95mkultra.pdf R",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#84:3",
+   "postNum": 84,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godfather"
+   ],
+   "renderedContext": "and)(see above). This is staged and deliberate. Snow White Godfather lll Q",
+   "rawContext": "and)(see above). This is staged and deliberate. Snow White Godfather lll Q",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#841:0",
+   "postNum": 841,
+   "entityId": "qe-6976feaaf2a8",
+   "canonical": "AT&T",
+   "aliasThatMatched": "AT&T",
+   "containingWords": [
+    "about.att.com/story/consumers_need_an_internet_bill_of_rights.html"
+   ],
+   "renderedContext": ">>548157 Re read drops. http:// about.att.com/story/consumers_need_an_internet_bill_of_rights.html Q ",
+   "rawContext": ">>548157 Re read drops. http:// about.att.com/story/consumers_need_an_internet_bill_of_rights.html Q ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#87:2",
+   "postNum": 87,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godfather"
+   ],
+   "renderedContext": "nts about to drop if this hasn't been caught on. Snow White Godfather III Q",
+   "rawContext": "nts about to drop if this hasn't been caught on. Snow White Godfather III Q",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#88:11",
+   "postNum": 88,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godfather"
+   ],
+   "renderedContext": "operations. Operators in US. Snow White The Great Awakening Godfather III Q",
+   "rawContext": "operations. Operators in US. Snow White The Great Awakening Godfather III Q",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#902:0",
+   "postNum": 902,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godspeed."
+   ],
+   "renderedContext": " was once darkness, there is now LIGHT. Sea to shining sea. Godspeed. Q ",
+   "rawContext": " was once darkness, there is now LIGHT. Sea to shining sea. Godspeed. Q ",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#91:4",
+   "postNum": 91,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godfather"
+   ],
+   "renderedContext": " but that ultimately came out in the dump. Poof! Snow White Godfather III Q",
+   "rawContext": " but that ultimately came out in the dump. Poof! Snow White Godfather III Q",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#94:4",
+   "postNum": 94,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godfather"
+   ],
+   "renderedContext": " Watch the cookie quickly crumble. Where does Soros fit in? Godfather III",
+   "rawContext": " Watch the cookie quickly crumble. Where does Soros fit in? Godfather III",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  },
+  {
+   "occurrenceId": "#97:5",
+   "postNum": 97,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "aliasThatMatched": "God",
+   "containingWords": [
+    "Godfather"
+   ],
+   "renderedContext": "monitoring (friends and enemies). Instructions. Snow White. Godfather III. Q",
+   "rawContext": "monitoring (friends and enemies). Instructions. Snow White. Godfather III. Q",
+   "anotherValidAliasInProse": null,
+   "urlProvenance": null,
+   "imageProvenance": null,
+   "metadataProvenance": null,
+   "proposedAction": "remove-annotation",
+   "certifiedCountEffect": -1,
+   "basis": "The only place this alias occurs in the rendered drop is inside a longer word, and no complete-token alias, URL-source, image or metadata provenance supports the entity here. A drop carrying an image is NOT in this set — those are image_provenance_unconfirmed and stay certified."
+  }
+ ]
+}

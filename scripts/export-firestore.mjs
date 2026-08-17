@@ -10,7 +10,7 @@ import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 import { initializeApp } from 'firebase/app'
 import { getFirestore, collection, getDocs, doc, getDoc } from 'firebase/firestore'
-import { APPLY_STEPS } from './lib/chainSteps.mjs'
+import { APPLY_INVOCATIONS } from './lib/chainSteps.mjs'
 import { fingerprintPostText, perPostDigests } from './lib/postTextFingerprint.mjs'
 import { stableStringify } from './lib/stableJson.mjs'
 
@@ -200,10 +200,10 @@ for (const name of COLLECTIONS) {
   // APPLY steps only. A derive step re-certifies a section against today's detector, which is not
   // something a deploy may decide — see the note in lib/chainSteps.mjs and, for the run that made
   // this concrete, audit/entities-quote-boundary-pending.json.
-  for (const step of APPLY_STEPS) {
+  for (const { step, args } of APPLY_INVOCATIONS) {
     console.log(`
 Re-running ${step}…`)
-    execFileSync(process.execPath, [join(root, 'scripts', step), '--apply'], { stdio: 'inherit' })
+    execFileSync(process.execPath, [join(root, 'scripts', step), ...args], { stdio: 'inherit' })
   }
 }
 

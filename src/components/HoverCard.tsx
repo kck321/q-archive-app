@@ -19,7 +19,13 @@
 // forces the reader to choose between the words and the explanation. It opens above by default,
 // flips below when there is no room above, and on a narrow screen it is pinned to the bottom of
 // the viewport where it can never sit on top of the line being read.
+//
+// ONE TRIGGER MAY SPEAK FOR SEVERAL SEGMENTS. A glossary term the annotation layer has cut in two
+// gets exactly one control, and `occurrenceId` is how the other pieces reach it — see
+// lib/glossDelegation.ts. Everything below is unchanged by that: the same button, the same card,
+// the same dismissal. The id only adds an address.
 import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState, type ReactNode } from 'react'
+import { ANCHOR_ATTR, OCC_ATTR, inOccurrence, registerOccurrence } from '../lib/glossDelegation'
 
 const MARGIN = 8
 /** Below this width the card is pinned rather than floated. Matches Tailwind's `sm`. */
@@ -28,7 +34,7 @@ const NARROW = 640
 const MIN_CARD = 64
 
 export function HoverCard({
-  children, card, label, className = '',
+  children, card, label, className = '', occurrenceId,
 }: {
   /** The trigger content — the word in the drop. */
   children: ReactNode
@@ -37,6 +43,8 @@ export function HoverCard({
   /** What a screen reader announces for the trigger, e.g. 'POTUS — more information'. */
   label: string
   className?: string
+  /** Set when this trigger speaks for a term split across several rendered segments. */
+  occurrenceId?: string
 }) {
   const [open, setOpen] = useState(false)
   const [pos, setPos] = useState<{ left: number; top: number; pinned: boolean; maxHeight?: number } | null>(null)
@@ -60,6 +68,11 @@ export function HoverCard({
     const onOutside = (e: MouseEvent | TouchEvent) => {
       const t = e.target as Node
       if (triggerRef.current?.contains(t) || cardRef.current?.contains(t)) return
+      // A SIBLING SEGMENT OF THE SAME TERM IS NOT OUTSIDE. "SUPREME" is the control and "COURT" is
+      // not, but they are one word to the reader. Without this the tap on "COURT" closes the card
+      // here and the delegated handler reopens it a moment later — a flicker on a mouse, and on a
+      // phone a term that appears to ignore every second tap.
+      if (occurrenceId && inOccurrence(t, occurrenceId)) return
       close()
     }
     // A fixed card has to close when the page moves under it, or it detaches from its word.
@@ -76,7 +89,20 @@ export function HoverCard({
       window.removeEventListener('scroll', onMove, true)
       window.removeEventListener('resize', onMove)
     }
-  }, [open, close])
+  }, [open, close, occurrenceId])
+
+  // The other segments of a split term drive this trigger through the shared delegation registry.
+  // Registered while mounted rather than while open — a segment has to be able to OPEN the card,
+  // which is precisely the state in which the card is not there to register itself.
+  useEffect(() => {
+    if (!occurrenceId) return
+    return registerOccurrence(occurrenceId, {
+      element: () => triggerRef.current,
+      open: () => setOpen(true),
+      close: () => setOpen(false),
+      toggle: () => setOpen(o => !o),
+    })
+  }, [occurrenceId])
 
   // ── placement ──────────────────────────────────────────────────────────────
   // Positioned against the VIEWPORT, not the paragraph: the post body sits inside a <pre> with its
@@ -170,6 +196,10 @@ export function HoverCard({
         aria-expanded={open}
         aria-describedby={open ? id : undefined}
         aria-label={label}
+        // The anchor is a marked segment too, so leaving it for a sibling segment is not leaving
+        // the term. ANCHOR_ATTR is what stops the delegated listeners from handling the events
+        // this button already handles itself.
+        {...(occurrenceId ? { [OCC_ATTR]: occurrenceId, [ANCHOR_ATTR]: '' } : {})}
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
         onFocus={() => setOpen(true)}

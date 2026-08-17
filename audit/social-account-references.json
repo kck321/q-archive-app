@@ -1,0 +1,2465 @@
+{
+ "note": "Social-media accounts Q linked to. OWNER RULING 2026-08-17: a handle inside a URL is a genuine reference but not a prose entity mention. Migrated to linked-source metadata as social_account_reference — never highlighted in the drop, never counted as a mention, discoverable through Sources and source search.",
+ "ruledOn": "2026-08-17",
+ "boundMeaning": "entityId is set only where the handle itself spells the entity's canonical name. Anything weaker stays unbound and is left for review rather than asserting an identity the URL does not establish.",
+ "total": 129,
+ "bound": 122,
+ "unbound": 7,
+ "platforms": {
+  "twitter.com": 129
+ },
+ "distinctHandles": 84,
+ "records": [
+  {
+   "occurrenceId": "#1381:0",
+   "postNum": 1381,
+   "platform": "twitter.com",
+   "handle": "Jim_Jordan",
+   "url": "https://mobile.twitter.com/Jim_Jordan/status/996821093146120192",
+   "entityId": "qe-5209a6bbbd49",
+   "displayName": "Jim Jordan",
+   "matchedAlias": "Jim Jordan",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#1381:0",
+    "entityId": "qe-5209a6bbbd49",
+    "canonical": "Jim Jordan",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#1490:0",
+   "postNum": 1490,
+   "platform": "twitter.com",
+   "handle": "POTUS_Schedule",
+   "url": "https://twitter.com/POTUS_Schedule/status/1006850222373462016",
+   "entityId": "qe-f918f4a7fbe4",
+   "displayName": "POTUS",
+   "matchedAlias": "POTUS",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#1490:0",
+    "entityId": "qe-f918f4a7fbe4",
+    "canonical": "POTUS",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#1575:1",
+   "postNum": 1575,
+   "platform": "twitter.com",
+   "handle": "YahooNews",
+   "url": "https://mobile.twitter.com/YahooNews/status/1009540003674943488",
+   "entityId": "qe-fe7dd046978a",
+   "displayName": "Yahoo News",
+   "matchedAlias": "Yahoo News",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#1575:1",
+    "entityId": "qe-fe7dd046978a",
+    "canonical": "Yahoo News",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#1595:0",
+   "postNum": 1595,
+   "platform": "twitter.com",
+   "handle": "wikileaks",
+   "url": "https://mobile.twitter.com/wikileaks/status/1011441579565953025",
+   "entityId": "qe-c9f95ff52ca5",
+   "displayName": "WikiLeaks",
+   "matchedAlias": "WikiLeaks",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#1595:0",
+    "entityId": "qe-c9f95ff52ca5",
+    "canonical": "WikiLeaks",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#1692:0",
+   "postNum": 1692,
+   "platform": "twitter.com",
+   "handle": "LarsPrintzen",
+   "url": "https://twitter.com/LarsPrintzen/status/1021822850427248641",
+   "entityId": "qe-130c0567b723",
+   "displayName": "Lars Printzen",
+   "matchedAlias": "Lars Printzen",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#1692:0",
+    "entityId": "qe-130c0567b723",
+    "canonical": "Lars Printzen",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#1757:0",
+   "postNum": 1757,
+   "platform": "twitter.com",
+   "handle": "MichaelAvenatti",
+   "url": "https://twitter.com/MichaelAvenatti/status/1006008288318668800",
+   "entityId": "qe-2c0fe4688b78",
+   "displayName": "Michael Avenatti",
+   "matchedAlias": "Michael Avenatti",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#1757:0",
+    "entityId": "qe-2c0fe4688b78",
+    "canonical": "Michael Avenatti",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#1815:1",
+   "postNum": 1815,
+   "platform": "twitter.com",
+   "handle": "JordanSchachtel",
+   "url": "https://twitter.com/JordanSchachtel/status/1025442755600891904/photo/1",
+   "entityId": "qe-ba63c8e12c31",
+   "displayName": "Jordan Schachtel",
+   "matchedAlias": "Jordan Schachtel",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#1815:1",
+    "entityId": "qe-ba63c8e12c31",
+    "canonical": "Jordan Schachtel",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#1843:0",
+   "postNum": 1843,
+   "platform": "twitter.com",
+   "handle": "billmaher",
+   "url": "https://twitter.com/billmaher/status/1028147514719924225",
+   "entityId": "qe-7b41aeefc50d",
+   "displayName": "Bill Maher",
+   "matchedAlias": "Bill Maher",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#1843:0",
+    "entityId": "qe-7b41aeefc50d",
+    "canonical": "Bill Maher",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#1855:2",
+   "postNum": 1855,
+   "platform": "twitter.com",
+   "handle": "MariaBartiromo",
+   "url": "https://twitter.com/MariaBartiromo/status/1028669284535422976",
+   "entityId": "qe-d9c40c6e93a0",
+   "displayName": "Maria Bartiromo",
+   "matchedAlias": "Maria Bartiromo",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#1855:2",
+    "entityId": "qe-d9c40c6e93a0",
+    "canonical": "Maria Bartiromo",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2078:0",
+   "postNum": 2078,
+   "platform": "twitter.com",
+   "handle": "dougducey",
+   "url": "https://twitter.com/dougducey/status/1037020098010079233",
+   "entityId": "qe-821988d89f78",
+   "displayName": "Doug Ducey",
+   "matchedAlias": "Doug Ducey",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2078:0",
+    "entityId": "qe-821988d89f78",
+    "canonical": "Doug Ducey",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2108:1",
+   "postNum": 2108,
+   "platform": "twitter.com",
+   "handle": "Jim_Jordan",
+   "url": "https://twitter.com/Jim_Jordan/status/1038146899046477825",
+   "entityId": "qe-5209a6bbbd49",
+   "displayName": "Jim Jordan",
+   "matchedAlias": "Jim Jordan",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2108:1",
+    "entityId": "qe-5209a6bbbd49",
+    "canonical": "Jim Jordan",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2114:0",
+   "postNum": 2114,
+   "platform": "twitter.com",
+   "handle": "johnpodesta",
+   "url": "https://twitter.com/johnpodesta/status/1037506265398894592",
+   "entityId": "qe-241b091bbd1a",
+   "displayName": "John Podesta",
+   "matchedAlias": "John Podesta",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2114:0",
+    "entityId": "qe-241b091bbd1a",
+    "canonical": "John Podesta",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2123:1",
+   "postNum": 2123,
+   "platform": "twitter.com",
+   "handle": "JackPosobiec",
+   "url": "https://twitter.com/JackPosobiec/status/1038778638613839872",
+   "entityId": "qe-f093e728b541",
+   "displayName": "Jack Posobiec",
+   "matchedAlias": "Jack Posobiec",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2123:1",
+    "entityId": "qe-f093e728b541",
+    "canonical": "Jack Posobiec",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2123:3",
+   "postNum": 2123,
+   "platform": "twitter.com",
+   "handle": "TuckerCarlson",
+   "url": "https://twitter.com/TuckerCarlson/status/1038898688725270533",
+   "entityId": "qe-c0a2bf39c430",
+   "displayName": "Tucker Carlson",
+   "matchedAlias": "Tucker Carlson",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2123:3",
+    "entityId": "qe-c0a2bf39c430",
+    "canonical": "Tucker Carlson",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2145:0",
+   "postNum": 2145,
+   "platform": "twitter.com",
+   "handle": "nypost",
+   "url": "https://twitter.com/nypost/status/1039172411973885952",
+   "entityId": "qe-a2c73c324528",
+   "displayName": "NY Post",
+   "matchedAlias": "NY Post",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2145:0",
+    "entityId": "qe-a2c73c324528",
+    "canonical": "NY Post",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2145:1",
+   "postNum": 2145,
+   "platform": "twitter.com",
+   "handle": "SkyNews",
+   "url": "https://twitter.com/SkyNews/status/1038465404572758017",
+   "entityId": "qe-1740805b9153",
+   "displayName": "Sky News",
+   "matchedAlias": "Sky News",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2145:1",
+    "entityId": "qe-1740805b9153",
+    "canonical": "Sky News",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2165:15",
+   "postNum": 2165,
+   "platform": "twitter.com",
+   "handle": "AmericaNewsroom",
+   "url": "https://twitter.com/AmericaNewsroom/status/1039872139694878722",
+   "entityId": "qe-4206af605a7f",
+   "displayName": "America Newsroom",
+   "matchedAlias": "America Newsroom",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2165:15",
+    "entityId": "qe-4206af605a7f",
+    "canonical": "America Newsroom",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2165:16",
+   "postNum": 2165,
+   "platform": "twitter.com",
+   "handle": "FoxBusiness",
+   "url": "https://twitter.com/FoxBusiness/status/1039907275274678273",
+   "entityId": "qe-0122a2093514",
+   "displayName": "Fox Business",
+   "matchedAlias": "Fox Business",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2165:16",
+    "entityId": "qe-0122a2093514",
+    "canonical": "Fox Business",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2207:1",
+   "postNum": 2207,
+   "platform": "twitter.com",
+   "handle": "EricHolder",
+   "url": "https://twitter.com/EricHolder/status/1042020158489944064",
+   "entityId": "qe-b8758c335d26",
+   "displayName": "Eric Holder",
+   "matchedAlias": "Eric Holder",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2207:1",
+    "entityId": "qe-b8758c335d26",
+    "canonical": "Eric Holder",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2207:2",
+   "postNum": 2207,
+   "platform": "twitter.com",
+   "handle": "RepSwalwell",
+   "url": "https://twitter.com/RepSwalwell/status/1041823800034131968",
+   "entityId": "qe-a523740cc104",
+   "displayName": "Rep Swalwell",
+   "matchedAlias": "Rep Swalwell",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2207:2",
+    "entityId": "qe-a523740cc104",
+    "canonical": "Rep Swalwell",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2241:0",
+   "postNum": 2241,
+   "platform": "twitter.com",
+   "handle": "michaelbeatty3",
+   "url": "https://twitter.com/michaelbeatty3/status/1042959024235266048",
+   "entityId": "qe-22fbd3a9bb97",
+   "displayName": "@michaelbeatty3",
+   "matchedAlias": "michaelbeatty3",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2241:0",
+    "entityId": "qe-22fbd3a9bb97",
+    "canonical": "@michaelbeatty3",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2252:1",
+   "postNum": 2252,
+   "platform": "twitter.com",
+   "handle": "Breaking911",
+   "url": "https://twitter.com/Breaking911/status/1043206110105231361",
+   "entityId": "qe-37306dd886d7",
+   "displayName": "Breaking911",
+   "matchedAlias": "Breaking911",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2252:1",
+    "entityId": "qe-37306dd886d7",
+    "canonical": "Breaking911",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2303:3",
+   "postNum": 2303,
+   "platform": "twitter.com",
+   "handle": "ChrisEvans",
+   "url": "https://twitter.com/ChrisEvans/status/1046483677184700420",
+   "entityId": "qe-ce43425f7c9f",
+   "displayName": "Chris Evans",
+   "matchedAlias": "Chris Evans",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2303:3",
+    "entityId": "qe-ce43425f7c9f",
+    "canonical": "Chris Evans",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2303:4",
+   "postNum": 2303,
+   "platform": "twitter.com",
+   "handle": "KatrinaPierson",
+   "url": "https://twitter.com/KatrinaPierson/status/1046751452629270528",
+   "entityId": "qe-a8f7dd5adcfc",
+   "displayName": "Katrina Pierson",
+   "matchedAlias": "Katrina Pierson",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2303:4",
+    "entityId": "qe-a8f7dd5adcfc",
+    "canonical": "Katrina Pierson",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2319:5",
+   "postNum": 2319,
+   "platform": "twitter.com",
+   "handle": "Kevin_Shipp",
+   "url": "https://twitter.com/Kevin_Shipp/status/1047333936102363136",
+   "entityId": "qe-59bb69e52d4e",
+   "displayName": "Kevin Shipp",
+   "matchedAlias": "Kevin Shipp",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2319:5",
+    "entityId": "qe-59bb69e52d4e",
+    "canonical": "Kevin Shipp",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2325:2",
+   "postNum": 2325,
+   "platform": "twitter.com",
+   "handle": "Breaking911",
+   "url": "https://twitter.com/Breaking911/status/1047604279538868225",
+   "entityId": "qe-37306dd886d7",
+   "displayName": "Breaking911",
+   "matchedAlias": "Breaking911",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2325:2",
+    "entityId": "qe-37306dd886d7",
+    "canonical": "Breaking911",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2340:1",
+   "postNum": 2340,
+   "platform": "twitter.com",
+   "handle": "BBCNews",
+   "url": "https://twitter.com/BBCNews/status/1047795368493178880",
+   "entityId": "qe-f9522f0b1803",
+   "displayName": "BBC News",
+   "matchedAlias": "BBC News",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2340:1",
+    "entityId": "qe-f9522f0b1803",
+    "canonical": "BBC News",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2370:0",
+   "postNum": 2370,
+   "platform": "twitter.com",
+   "handle": "TomFitton",
+   "url": "https://twitter.com/TomFitton/status/1049333485742313472",
+   "entityId": "qe-a23fe69398c7",
+   "displayName": "Tom Fitton",
+   "matchedAlias": "Tom Fitton",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2370:0",
+    "entityId": "qe-a23fe69398c7",
+    "canonical": "Tom Fitton",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2429:0",
+   "postNum": 2429,
+   "platform": "twitter.com",
+   "handle": "GeorgePapa19",
+   "url": "https://twitter.com/GeorgePapa19/status/1059631841458573312",
+   "entityId": "qe-d10faaf868e7",
+   "displayName": "@GeorgePapa19",
+   "matchedAlias": "GeorgePapa19",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2429:0",
+    "entityId": "qe-d10faaf868e7",
+    "canonical": "@GeorgePapa19",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2459:1",
+   "postNum": 2459,
+   "platform": "twitter.com",
+   "handle": "EricHolder",
+   "url": "https://twitter.com/EricHolder/status/1060263157262893056",
+   "entityId": "qe-b8758c335d26",
+   "displayName": "Eric Holder",
+   "matchedAlias": "Eric Holder",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2459:1",
+    "entityId": "qe-b8758c335d26",
+    "canonical": "Eric Holder",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2473:0",
+   "postNum": 2473,
+   "platform": "twitter.com",
+   "handle": "USMC_Truther",
+   "url": "https://twitter.com/USMC_Truther/status/1061347365565526016",
+   "entityId": null,
+   "displayName": "United States Marine Corps",
+   "matchedAlias": "USMC",
+   "confidence": "medium — the handle matches the registered alias \"USMC\" but not the canonical name; identity left for review",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2473:0",
+    "entityId": "qe-b0aa2fac028c",
+    "canonical": "United States Marine Corps",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2548:11",
+   "postNum": 2548,
+   "platform": "twitter.com",
+   "handle": "Tom_Winter",
+   "url": "https://twitter.com/Tom_Winter/status/1070140182907756544",
+   "entityId": "qe-9cb007557de9",
+   "displayName": "Tom Winter",
+   "matchedAlias": "Tom Winter",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2548:11",
+    "entityId": "qe-9cb007557de9",
+    "canonical": "Tom Winter",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2568:1",
+   "postNum": 2568,
+   "platform": "twitter.com",
+   "handle": "johnpodesta",
+   "url": "https://twitter.com/johnpodesta/status/1072137513899356160",
+   "entityId": "qe-241b091bbd1a",
+   "displayName": "John Podesta",
+   "matchedAlias": "John Podesta",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2568:1",
+    "entityId": "qe-241b091bbd1a",
+    "canonical": "John Podesta",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2591:0",
+   "postNum": 2591,
+   "platform": "twitter.com",
+   "handle": "TrumpHotels",
+   "url": "https://twitter.com/TrumpHotels/status/1072253507867152384",
+   "entityId": "qe-7702d84ed2d2",
+   "displayName": "Trump Hotels",
+   "matchedAlias": "Trump Hotels",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2591:0",
+    "entityId": "qe-7702d84ed2d2",
+    "canonical": "Trump Hotels",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2656:0",
+   "postNum": 2656,
+   "platform": "twitter.com",
+   "handle": "Breaking911",
+   "url": "https://twitter.com/Breaking911/status/1081981310699229184",
+   "entityId": "qe-37306dd886d7",
+   "displayName": "Breaking911",
+   "matchedAlias": "Breaking911",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2656:0",
+    "entityId": "qe-37306dd886d7",
+    "canonical": "Breaking911",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2660:0",
+   "postNum": 2660,
+   "platform": "twitter.com",
+   "handle": "maggieNYT",
+   "url": "https://twitter.com/maggieNYT/status/1081974511598211072",
+   "entityId": "qe-ba645c928cee",
+   "displayName": "Maggie NYT",
+   "matchedAlias": "Maggie NYT",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2660:0",
+    "entityId": "qe-ba645c928cee",
+    "canonical": "Maggie NYT",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2661:0",
+   "postNum": 2661,
+   "platform": "twitter.com",
+   "handle": "maggienyt",
+   "url": "https://twitter.com/maggienyt/status/1009982937952079873?lang=en",
+   "entityId": "qe-ba645c928cee",
+   "displayName": "Maggie NYT",
+   "matchedAlias": "Maggie NYT",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2661:0",
+    "entityId": "qe-ba645c928cee",
+    "canonical": "Maggie NYT",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2738:0",
+   "postNum": 2738,
+   "platform": "twitter.com",
+   "handle": "Scavino45",
+   "url": "https://twitter.com/Scavino45/status/1096628767701848064",
+   "entityId": "qe-9a7736c95e9e",
+   "displayName": "@Scavino45",
+   "matchedAlias": "Scavino45",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2738:0",
+    "entityId": "qe-9a7736c95e9e",
+    "canonical": "@Scavino45",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2827:0",
+   "postNum": 2827,
+   "platform": "twitter.com",
+   "handle": "maggieNYT",
+   "url": "https://twitter.com/maggieNYT/status/1097985914154950656",
+   "entityId": "qe-ba645c928cee",
+   "displayName": "Maggie NYT",
+   "matchedAlias": "Maggie NYT",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2827:0",
+    "entityId": "qe-ba645c928cee",
+    "canonical": "Maggie NYT",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2827:1",
+   "postNum": 2827,
+   "platform": "twitter.com",
+   "handle": "SenatorCollins",
+   "url": "https://twitter.com/SenatorCollins/status/1098223853006934016",
+   "entityId": "qe-5111a2899d11",
+   "displayName": "Senator Collins",
+   "matchedAlias": "Senator Collins",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2827:1",
+    "entityId": "qe-5111a2899d11",
+    "canonical": "Senator Collins",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2842:0",
+   "postNum": 2842,
+   "platform": "twitter.com",
+   "handle": "anncoulter",
+   "url": "https://mobile.twitter.com/anncoulter/status/266087794110259200?lang=en",
+   "entityId": "qe-a18fc2cdd6a8",
+   "displayName": "Ann Coulter",
+   "matchedAlias": "Ann Coulter",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2842:0",
+    "entityId": "qe-a18fc2cdd6a8",
+    "canonical": "Ann Coulter",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2862:0",
+   "postNum": 2862,
+   "platform": "twitter.com",
+   "handle": "JeffDeRiso",
+   "url": "https://twitter.com/JeffDeRiso/status/1098958812491460611",
+   "entityId": "qe-a7223cacb844",
+   "displayName": "@JeffDeRiso",
+   "matchedAlias": "JeffDeRiso",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2862:0",
+    "entityId": "qe-a7223cacb844",
+    "canonical": "@JeffDeRiso",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2888:0",
+   "postNum": 2888,
+   "platform": "twitter.com",
+   "handle": "pattonoswalt",
+   "url": "https://twitter.com/pattonoswalt/status/354640013004259328?lang=en",
+   "entityId": "qe-e00c7b9cc917",
+   "displayName": "Patton Oswalt",
+   "matchedAlias": "Patton Oswalt",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2888:0",
+    "entityId": "qe-e00c7b9cc917",
+    "canonical": "Patton Oswalt",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2919:0",
+   "postNum": 2919,
+   "platform": "twitter.com",
+   "handle": "GeorgePapa19",
+   "url": "https://twitter.com/GeorgePapa19/status/1101927377691500544",
+   "entityId": "qe-d10faaf868e7",
+   "displayName": "@GeorgePapa19",
+   "matchedAlias": "GeorgePapa19",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2919:0",
+    "entityId": "qe-d10faaf868e7",
+    "canonical": "@GeorgePapa19",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2941:0",
+   "postNum": 2941,
+   "platform": "twitter.com",
+   "handle": "tedlieu",
+   "url": "https://twitter.com/tedlieu/status/1102227809341181953",
+   "entityId": "qe-48ba2b742dd5",
+   "displayName": "Ted Lieu",
+   "matchedAlias": "Ted Lieu",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2941:0",
+    "entityId": "qe-48ba2b742dd5",
+    "canonical": "Ted Lieu",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2943:4",
+   "postNum": 2943,
+   "platform": "twitter.com",
+   "handle": "tedlieu",
+   "url": "https://twitter.com/tedlieu/status/1102265163107971077",
+   "entityId": "qe-48ba2b742dd5",
+   "displayName": "Ted Lieu",
+   "matchedAlias": "Ted Lieu",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2943:4",
+    "entityId": "qe-48ba2b742dd5",
+    "canonical": "Ted Lieu",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2945:1",
+   "postNum": 2945,
+   "platform": "twitter.com",
+   "handle": "tedlieu",
+   "url": "https://twitter.com/tedlieu",
+   "entityId": "qe-48ba2b742dd5",
+   "displayName": "Ted Lieu",
+   "matchedAlias": "Ted Lieu",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2945:1",
+    "entityId": "qe-48ba2b742dd5",
+    "canonical": "Ted Lieu",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2946:0",
+   "postNum": 2946,
+   "platform": "twitter.com",
+   "handle": "MeetThePress",
+   "url": "https://twitter.com/MeetThePress/status/1102345043501858816",
+   "entityId": "qe-eaf697f0676f",
+   "displayName": "Meet the Press",
+   "matchedAlias": "Meet the Press",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2946:0",
+    "entityId": "qe-eaf697f0676f",
+    "canonical": "Meet the Press",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2951:0",
+   "postNum": 2951,
+   "platform": "twitter.com",
+   "handle": "billslater",
+   "url": "https://twitter.com/billslater/status/1102368049716436995",
+   "entityId": "qe-41b3c8bc7c64",
+   "displayName": "Bill Slater",
+   "matchedAlias": "Bill Slater",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2951:0",
+    "entityId": "qe-41b3c8bc7c64",
+    "canonical": "Bill Slater",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2970:1",
+   "postNum": 2970,
+   "platform": "twitter.com",
+   "handle": "toddpenley",
+   "url": "https://twitter.com/toddpenley/status/1103035619863719936",
+   "entityId": "qe-0c247eb5c8b8",
+   "displayName": "Todd Penley",
+   "matchedAlias": "Todd Penley",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2970:1",
+    "entityId": "qe-0c247eb5c8b8",
+    "canonical": "Todd Penley",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#2986:0",
+   "postNum": 2986,
+   "platform": "twitter.com",
+   "handle": "michaelbeatty3",
+   "url": "https://twitter.com/michaelbeatty3/status/1103434110310146048",
+   "entityId": "qe-22fbd3a9bb97",
+   "displayName": "@michaelbeatty3",
+   "matchedAlias": "michaelbeatty3",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#2986:0",
+    "entityId": "qe-22fbd3a9bb97",
+    "canonical": "@michaelbeatty3",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3017:0",
+   "postNum": 3017,
+   "platform": "twitter.com",
+   "handle": "staceydash",
+   "url": "https://twitter.com/staceydash/status/1103407322640969728",
+   "entityId": "qe-6e26689d7751",
+   "displayName": "Stacey Dash",
+   "matchedAlias": "Stacey Dash",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3017:0",
+    "entityId": "qe-6e26689d7751",
+    "canonical": "Stacey Dash",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3034:0",
+   "postNum": 3034,
+   "platform": "twitter.com",
+   "handle": "M2Madness",
+   "url": "https://twitter.com/M2Madness/status/1105296225396506626",
+   "entityId": "qe-359da756e27d",
+   "displayName": "@M2Madness",
+   "matchedAlias": "M2Madness",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3034:0",
+    "entityId": "qe-359da756e27d",
+    "canonical": "@M2Madness",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3199:0",
+   "postNum": 3199,
+   "platform": "twitter.com",
+   "handle": "gatewaypundit",
+   "url": "https://twitter.com/gatewaypundit/status/1110581594505560065",
+   "entityId": "qe-dd3be5e92e7e",
+   "displayName": "Gateway Pundit",
+   "matchedAlias": "Gateway Pundit",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3199:0",
+    "entityId": "qe-dd3be5e92e7e",
+    "canonical": "Gateway Pundit",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3201:0",
+   "postNum": 3201,
+   "platform": "twitter.com",
+   "handle": "brianstelter",
+   "url": "https://twitter.com/brianstelter/status/1110382144390656000",
+   "entityId": "qe-f68129dce3cf",
+   "displayName": "Brian Stelter",
+   "matchedAlias": "Brian Stelter",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3201:0",
+    "entityId": "qe-f68129dce3cf",
+    "canonical": "Brian Stelter",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3262:0",
+   "postNum": 3262,
+   "platform": "twitter.com",
+   "handle": "JeffDeRiso",
+   "url": "https://twitter.com/JeffDeRiso/status/1111354206835875840",
+   "entityId": "qe-a7223cacb844",
+   "displayName": "@JeffDeRiso",
+   "matchedAlias": "JeffDeRiso",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3262:0",
+    "entityId": "qe-a7223cacb844",
+    "canonical": "@JeffDeRiso",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3282:0",
+   "postNum": 3282,
+   "platform": "twitter.com",
+   "handle": "daniel_pressley",
+   "url": "https://twitter.com/daniel_pressley/status/1111367658040164352",
+   "entityId": "qe-26bdfea69494",
+   "displayName": "Daniel Pressley",
+   "matchedAlias": "Daniel Pressley",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3282:0",
+    "entityId": "qe-26bdfea69494",
+    "canonical": "Daniel Pressley",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3397:1",
+   "postNum": 3397,
+   "platform": "twitter.com",
+   "handle": "billmaher",
+   "url": "https://twitter.com/billmaher",
+   "entityId": "qe-7b41aeefc50d",
+   "displayName": "Bill Maher",
+   "matchedAlias": "Bill Maher",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3397:1",
+    "entityId": "qe-7b41aeefc50d",
+    "canonical": "Bill Maher",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3425:1",
+   "postNum": 3425,
+   "platform": "twitter.com",
+   "handle": "CBSNews",
+   "url": "https://twitter.com/CBSNews/status/1149688349009092611",
+   "entityId": "qe-b7a2d1390d69",
+   "displayName": "CBS News",
+   "matchedAlias": "CBS News",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3425:1",
+    "entityId": "qe-b7a2d1390d69",
+    "canonical": "CBS News",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3451:0",
+   "postNum": 3451,
+   "platform": "twitter.com",
+   "handle": "jaketapper",
+   "url": "https://twitter.com/jaketapper/status/1151824768955559936",
+   "entityId": "qe-ec7eb3da0f00",
+   "displayName": "Jake Tapper",
+   "matchedAlias": "Jake Tapper",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3451:0",
+    "entityId": "qe-ec7eb3da0f00",
+    "canonical": "Jake Tapper",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3459:0",
+   "postNum": 3459,
+   "platform": "twitter.com",
+   "handle": "maggieNYT",
+   "url": "https://twitter.com/maggieNYT/status/1153021405476401153",
+   "entityId": "qe-ba645c928cee",
+   "displayName": "Maggie NYT",
+   "matchedAlias": "Maggie NYT",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3459:0",
+    "entityId": "qe-ba645c928cee",
+    "canonical": "Maggie NYT",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3464:0",
+   "postNum": 3464,
+   "platform": "twitter.com",
+   "handle": "Kevin_Shipp",
+   "url": "https://twitter.com/Kevin_Shipp/status/1153350433013948416",
+   "entityId": "qe-59bb69e52d4e",
+   "displayName": "Kevin Shipp",
+   "matchedAlias": "Kevin Shipp",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3464:0",
+    "entityId": "qe-59bb69e52d4e",
+    "canonical": "Kevin Shipp",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3523:0",
+   "postNum": 3523,
+   "platform": "twitter.com",
+   "handle": "BreitbartNews",
+   "url": "https://twitter.com/BreitbartNews/status/1155200277802291205",
+   "entityId": "qe-c612bd190f51",
+   "displayName": "Breitbart News",
+   "matchedAlias": "Breitbart News",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3523:0",
+    "entityId": "qe-c612bd190f51",
+    "canonical": "Breitbart News",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3621:1",
+   "postNum": 3621,
+   "platform": "twitter.com",
+   "handle": "MarshaBlackburn",
+   "url": "https://twitter.com/MarshaBlackburn/status/1197875810256007170",
+   "entityId": "qe-062a4ee8b699",
+   "displayName": "Marsha Blackburn",
+   "matchedAlias": "Marsha Blackburn",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3621:1",
+    "entityId": "qe-062a4ee8b699",
+    "canonical": "Marsha Blackburn",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3624:0",
+   "postNum": 3624,
+   "platform": "twitter.com",
+   "handle": "RudyGiuliani",
+   "url": "https://twitter.com/RudyGiuliani/status/1198309490069790720",
+   "entityId": "qe-1d920608f91a",
+   "displayName": "Rudy Giuliani",
+   "matchedAlias": "Rudy Giuliani",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3624:0",
+    "entityId": "qe-1d920608f91a",
+    "canonical": "Rudy Giuliani",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3663:1",
+   "postNum": 3663,
+   "platform": "twitter.com",
+   "handle": "DailyCaller",
+   "url": "http://twitter.com/DailyCaller/status/1203343309311266816",
+   "entityId": "qe-6aa08f51ac3c",
+   "displayName": "Daily Caller",
+   "matchedAlias": "Daily Caller",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3663:1",
+    "entityId": "qe-6aa08f51ac3c",
+    "canonical": "Daily Caller",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3665:0",
+   "postNum": 3665,
+   "platform": "twitter.com",
+   "handle": "WattersWorld",
+   "url": "http://twitter.com/WattersWorld/status/1203403806110699521",
+   "entityId": "qe-cbccad5c5dd1",
+   "displayName": "Watters' World",
+   "matchedAlias": "WattersWorld",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3665:0",
+    "entityId": "qe-cbccad5c5dd1",
+    "canonical": "Watters' World",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3678:1",
+   "postNum": 3678,
+   "platform": "twitter.com",
+   "handle": "RudyGiuliani",
+   "url": "https://twitter.com/RudyGiuliani/status/1206249638732423174",
+   "entityId": "qe-1d920608f91a",
+   "displayName": "Rudy Giuliani",
+   "matchedAlias": "Rudy Giuliani",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3678:1",
+    "entityId": "qe-1d920608f91a",
+    "canonical": "Rudy Giuliani",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3751:0",
+   "postNum": 3751,
+   "platform": "twitter.com",
+   "handle": "M2Madness",
+   "url": "https://twitter.com/M2Madness/status/1209162450706280449",
+   "entityId": "qe-359da756e27d",
+   "displayName": "@M2Madness",
+   "matchedAlias": "M2Madness",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3751:0",
+    "entityId": "qe-359da756e27d",
+    "canonical": "@M2Madness",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3793:0",
+   "postNum": 3793,
+   "platform": "twitter.com",
+   "handle": "RudyGiuliani",
+   "url": "https://twitter.com/RudyGiuliani/status/1220494487375491073",
+   "entityId": "qe-1d920608f91a",
+   "displayName": "Rudy Giuliani",
+   "matchedAlias": "Rudy Giuliani",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3793:0",
+    "entityId": "qe-1d920608f91a",
+    "canonical": "Rudy Giuliani",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3816:1",
+   "postNum": 3816,
+   "platform": "twitter.com",
+   "handle": "markknoller",
+   "url": "https://twitter.com/markknoller/status/1223274402327998464",
+   "entityId": "qe-35841b0b7a3d",
+   "displayName": "Mark Knoller",
+   "matchedAlias": "Mark Knoller",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3816:1",
+    "entityId": "qe-35841b0b7a3d",
+    "canonical": "Mark Knoller",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3826:0",
+   "postNum": 3826,
+   "platform": "twitter.com",
+   "handle": "Scavino45",
+   "url": "https://twitter.com/Scavino45/status/1224922494412427265",
+   "entityId": "qe-9a7736c95e9e",
+   "displayName": "@Scavino45",
+   "matchedAlias": "Scavino45",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3826:0",
+    "entityId": "qe-9a7736c95e9e",
+    "canonical": "@Scavino45",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3859:2",
+   "postNum": 3859,
+   "platform": "twitter.com",
+   "handle": "ABC",
+   "url": "https://twitter.com/ABC/status/1227640976363212800",
+   "entityId": null,
+   "displayName": "ABC News",
+   "matchedAlias": "ABC",
+   "confidence": "medium — the handle matches the registered alias \"ABC\" but not the canonical name; identity left for review",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3859:2",
+    "entityId": "qe-85eeac4dbdc4",
+    "canonical": "ABC News",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3935:0",
+   "postNum": 3935,
+   "platform": "twitter.com",
+   "handle": "ColinSkow",
+   "url": "https://twitter.com/ColinSkow/status/1249018424111464451",
+   "entityId": "qe-bf081f9168e7",
+   "displayName": "Colin Skow",
+   "matchedAlias": "Colin Skow",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3935:0",
+    "entityId": "qe-bf081f9168e7",
+    "canonical": "Colin Skow",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3939:0",
+   "postNum": 3939,
+   "platform": "twitter.com",
+   "handle": "rochelle_coombs",
+   "url": "https://twitter.com/rochelle_coombs/status/1249156622850707456",
+   "entityId": "qe-d2b6f6e7ddde",
+   "displayName": "Rochelle Coombs",
+   "matchedAlias": "Rochelle Coombs",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3939:0",
+    "entityId": "qe-d2b6f6e7ddde",
+    "canonical": "Rochelle Coombs",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3959:0",
+   "postNum": 3959,
+   "platform": "twitter.com",
+   "handle": "TomFitton",
+   "url": "https://twitter.com/TomFitton/status/1250133778623803393",
+   "entityId": "qe-a23fe69398c7",
+   "displayName": "Tom Fitton",
+   "matchedAlias": "Tom Fitton",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3959:0",
+    "entityId": "qe-a23fe69398c7",
+    "canonical": "Tom Fitton",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#3982:0",
+   "postNum": 3982,
+   "platform": "twitter.com",
+   "handle": "LouDobbs",
+   "url": "https://twitter.com/LouDobbs/status/1251279983605092352",
+   "entityId": "qe-79e83e848576",
+   "displayName": "Lou Dobbs",
+   "matchedAlias": "Lou Dobbs",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#3982:0",
+    "entityId": "qe-79e83e848576",
+    "canonical": "Lou Dobbs",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4027:0",
+   "postNum": 4027,
+   "platform": "twitter.com",
+   "handle": "GregKotseos",
+   "url": "https://twitter.com/GregKotseos/status/1256035453721030657",
+   "entityId": "qe-54a16c15b7eb",
+   "displayName": "Greg Kotseos",
+   "matchedAlias": "Greg Kotseos",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4027:0",
+    "entityId": "qe-54a16c15b7eb",
+    "canonical": "Greg Kotseos",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4049:0",
+   "postNum": 4049,
+   "platform": "twitter.com",
+   "handle": "GongFu_God",
+   "url": "https://twitter.com/GongFu_God/status/1256652507021029378",
+   "entityId": "qe-2df6a50f6a0e",
+   "displayName": "God",
+   "matchedAlias": "God",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4049:0",
+    "entityId": "qe-2df6a50f6a0e",
+    "canonical": "God",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4078:0",
+   "postNum": 4078,
+   "platform": "twitter.com",
+   "handle": "TomFitton",
+   "url": "https://twitter.com/TomFitton/status/1256946618223345665",
+   "entityId": "qe-a23fe69398c7",
+   "displayName": "Tom Fitton",
+   "matchedAlias": "Tom Fitton",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4078:0",
+    "entityId": "qe-a23fe69398c7",
+    "canonical": "Tom Fitton",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4090:0",
+   "postNum": 4090,
+   "platform": "twitter.com",
+   "handle": "DailyCaller",
+   "url": "https://twitter.com/DailyCaller/status/1257018522070388753",
+   "entityId": "qe-6aa08f51ac3c",
+   "displayName": "Daily Caller",
+   "matchedAlias": "Daily Caller",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4090:0",
+    "entityId": "qe-6aa08f51ac3c",
+    "canonical": "Daily Caller",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4116:0",
+   "postNum": 4116,
+   "platform": "twitter.com",
+   "handle": "IngrahamAngle",
+   "url": "https://twitter.com/IngrahamAngle/status/1257754348395864068",
+   "entityId": null,
+   "displayName": "The Ingraham Angle",
+   "matchedAlias": "IngrahamAngle",
+   "confidence": "medium — the handle matches the registered alias \"IngrahamAngle\" but not the canonical name; identity left for review",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4116:0",
+    "entityId": "qe-5d58e0f6a89b",
+    "canonical": "The Ingraham Angle",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4140:0",
+   "postNum": 4140,
+   "platform": "twitter.com",
+   "handle": "AP",
+   "url": "https://twitter.com/AP/status/1258463906047164421",
+   "entityId": null,
+   "displayName": "Associated Press",
+   "matchedAlias": "AP",
+   "confidence": "medium — the handle matches the registered alias \"AP\" but not the canonical name; identity left for review",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4140:0",
+    "entityId": "qe-2f3d0f74a507",
+    "canonical": "Associated Press",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4143:0",
+   "postNum": 4143,
+   "platform": "twitter.com",
+   "handle": "kevincorke",
+   "url": "https://twitter.com/kevincorke/status/1258541890909044736",
+   "entityId": "qe-d9c653f12000",
+   "displayName": "Kevin Corke",
+   "matchedAlias": "Kevin Corke",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4143:0",
+    "entityId": "qe-d9c653f12000",
+    "canonical": "Kevin Corke",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4145:0",
+   "postNum": 4145,
+   "platform": "twitter.com",
+   "handle": "ShannonBream",
+   "url": "https://twitter.com/ShannonBream/status/1258549552900014080",
+   "entityId": "qe-005e29423829",
+   "displayName": "Shannon Bream",
+   "matchedAlias": "Shannon Bream",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4145:0",
+    "entityId": "qe-005e29423829",
+    "canonical": "Shannon Bream",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4157:0",
+   "postNum": 4157,
+   "platform": "twitter.com",
+   "handle": "IngrahamAngle",
+   "url": "https://twitter.com/IngrahamAngle/status/1258765736207671297",
+   "entityId": "qe-25fc4dc6168d",
+   "displayName": "Ingraham Angle",
+   "matchedAlias": "Ingraham Angle",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4157:0",
+    "entityId": "qe-25fc4dc6168d",
+    "canonical": "Ingraham Angle",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4181:0",
+   "postNum": 4181,
+   "platform": "twitter.com",
+   "handle": "JonathanTurley",
+   "url": "https://twitter.com/JonathanTurley/status/1259098515122335750",
+   "entityId": "qe-17dad31eed91",
+   "displayName": "Jonathan Turley",
+   "matchedAlias": "Jonathan Turley",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4181:0",
+    "entityId": "qe-17dad31eed91",
+    "canonical": "Jonathan Turley",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4193:0",
+   "postNum": 4193,
+   "platform": "twitter.com",
+   "handle": "ColinSkow",
+   "url": "https://twitter.com/ColinSkow/status/1256739443001585664",
+   "entityId": "qe-bf081f9168e7",
+   "displayName": "Colin Skow",
+   "matchedAlias": "Colin Skow",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4193:0",
+    "entityId": "qe-bf081f9168e7",
+    "canonical": "Colin Skow",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4195:0",
+   "postNum": 4195,
+   "platform": "twitter.com",
+   "handle": "WattersWorld",
+   "url": "https://twitter.com/WattersWorld/status/1259288293381816320",
+   "entityId": "qe-cbccad5c5dd1",
+   "displayName": "Watters' World",
+   "matchedAlias": "WattersWorld",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4195:0",
+    "entityId": "qe-cbccad5c5dd1",
+    "canonical": "Watters' World",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4206:1",
+   "postNum": 4206,
+   "platform": "twitter.com",
+   "handle": "ABC",
+   "url": "https://twitter.com/ABC/status/1259870367818092547",
+   "entityId": null,
+   "displayName": "ABC News",
+   "matchedAlias": "ABC",
+   "confidence": "medium — the handle matches the registered alias \"ABC\" but not the canonical name; identity left for review",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4206:1",
+    "entityId": "qe-85eeac4dbdc4",
+    "canonical": "ABC News",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4219:1",
+   "postNum": 4219,
+   "platform": "twitter.com",
+   "handle": "Breaking911",
+   "url": "https://twitter.com/Breaking911/status/1260287137716539394",
+   "entityId": "qe-37306dd886d7",
+   "displayName": "Breaking911",
+   "matchedAlias": "Breaking911",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4219:1",
+    "entityId": "qe-37306dd886d7",
+    "canonical": "Breaking911",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4228:0",
+   "postNum": 4228,
+   "platform": "twitter.com",
+   "handle": "CBS_Herridge",
+   "url": "https://twitter.com/CBS_Herridge/status/1260635872271228928",
+   "entityId": "qe-49b9cb60a8ac",
+   "displayName": "CBS_Herridge",
+   "matchedAlias": "CBS_Herridge",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4228:0",
+    "entityId": "qe-49b9cb60a8ac",
+    "canonical": "CBS_Herridge",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4254:0",
+   "postNum": 4254,
+   "platform": "twitter.com",
+   "handle": "GovMurphy",
+   "url": "https://twitter.com/GovMurphy/status/1261343107976699906",
+   "entityId": "qe-8eaa5c76d9a5",
+   "displayName": "Gov Murphy",
+   "matchedAlias": "Gov Murphy",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4254:0",
+    "entityId": "qe-8eaa5c76d9a5",
+    "canonical": "Gov Murphy",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4256:2",
+   "postNum": 4256,
+   "platform": "twitter.com",
+   "handle": "MariaBartiromo",
+   "url": "https://twitter.com/MariaBartiromo/status/1262052902304129032",
+   "entityId": "qe-d9c40c6e93a0",
+   "displayName": "Maria Bartiromo",
+   "matchedAlias": "Maria Bartiromo",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4256:2",
+    "entityId": "qe-d9c40c6e93a0",
+    "canonical": "Maria Bartiromo",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4258:1",
+   "postNum": 4258,
+   "platform": "twitter.com",
+   "handle": "MariaBartiromo",
+   "url": "https://twitter.com/MariaBartiromo/status/1262065546775932930",
+   "entityId": "qe-d9c40c6e93a0",
+   "displayName": "Maria Bartiromo",
+   "matchedAlias": "Maria Bartiromo",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4258:1",
+    "entityId": "qe-d9c40c6e93a0",
+    "canonical": "Maria Bartiromo",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4271:0",
+   "postNum": 4271,
+   "platform": "twitter.com",
+   "handle": "TitoCalloway",
+   "url": "https://twitter.com/TitoCalloway/status/1259262533938143234",
+   "entityId": "qe-9361ddbb6b70",
+   "displayName": "Tito Calloway",
+   "matchedAlias": "Tito Calloway",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4271:0",
+    "entityId": "qe-9361ddbb6b70",
+    "canonical": "Tito Calloway",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4280:1",
+   "postNum": 4280,
+   "platform": "twitter.com",
+   "handle": "CBS_Herridge",
+   "url": "https://twitter.com/CBS_Herridge/status/1262441478019842048",
+   "entityId": "qe-49b9cb60a8ac",
+   "displayName": "CBS_Herridge",
+   "matchedAlias": "CBS_Herridge",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4280:1",
+    "entityId": "qe-49b9cb60a8ac",
+    "canonical": "CBS_Herridge",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4351:0",
+   "postNum": 4351,
+   "platform": "twitter.com",
+   "handle": "CBS_Herridge",
+   "url": "https://twitter.com/CBS_Herridge",
+   "entityId": "qe-49b9cb60a8ac",
+   "displayName": "CBS_Herridge",
+   "matchedAlias": "CBS_Herridge",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4351:0",
+    "entityId": "qe-49b9cb60a8ac",
+    "canonical": "CBS_Herridge",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4358:0",
+   "postNum": 4358,
+   "platform": "twitter.com",
+   "handle": "DailyCaller",
+   "url": "https://twitter.com/DailyCaller/status/1266798202185043970",
+   "entityId": "qe-6aa08f51ac3c",
+   "displayName": "Daily Caller",
+   "matchedAlias": "Daily Caller",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4358:0",
+    "entityId": "qe-6aa08f51ac3c",
+    "canonical": "Daily Caller",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4399:0",
+   "postNum": 4399,
+   "platform": "twitter.com",
+   "handle": "Eric_Schmitt",
+   "url": "https://twitter.com/Eric_Schmitt/status/1268195075953176576",
+   "entityId": "qe-536fedb07705",
+   "displayName": "Eric Schmitt",
+   "matchedAlias": "Eric Schmitt",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4399:0",
+    "entityId": "qe-536fedb07705",
+    "canonical": "Eric Schmitt",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4418:0",
+   "postNum": 4418,
+   "platform": "twitter.com",
+   "handle": "DanScavino",
+   "url": "https://twitter.com/DanScavino/status/1268738637333700608",
+   "entityId": "qe-ff6e240e37f8",
+   "displayName": "Dan Scavino",
+   "matchedAlias": "Dan Scavino",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4418:0",
+    "entityId": "qe-ff6e240e37f8",
+    "canonical": "Dan Scavino",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4422:0",
+   "postNum": 4422,
+   "platform": "twitter.com",
+   "handle": "CBS_Herridge",
+   "url": "https://twitter.com/CBS_Herridge/status/1268957599539527680",
+   "entityId": "qe-49b9cb60a8ac",
+   "displayName": "CBS_Herridge",
+   "matchedAlias": "CBS_Herridge",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4422:0",
+    "entityId": "qe-49b9cb60a8ac",
+    "canonical": "CBS_Herridge",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4430:0",
+   "postNum": 4430,
+   "platform": "twitter.com",
+   "handle": "CBS_Herridge",
+   "url": "https://twitter.com/CBS_Herridge/status/1269345227703234560",
+   "entityId": "qe-49b9cb60a8ac",
+   "displayName": "CBS_Herridge",
+   "matchedAlias": "CBS_Herridge",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4430:0",
+    "entityId": "qe-49b9cb60a8ac",
+    "canonical": "CBS_Herridge",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4436:0",
+   "postNum": 4436,
+   "platform": "twitter.com",
+   "handle": "ObamaFoundation",
+   "url": "https://twitter.com/ObamaFoundation/status/1262054709772324866",
+   "entityId": "qe-7b002006e0e5",
+   "displayName": "Obama Foundation",
+   "matchedAlias": "Obama Foundation",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4436:0",
+    "entityId": "qe-7b002006e0e5",
+    "canonical": "Obama Foundation",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4449:1",
+   "postNum": 4449,
+   "platform": "twitter.com",
+   "handle": "Jordan_Sather_",
+   "url": "https://twitter.com/Jordan_Sather_/status/1270829461710057474",
+   "entityId": "qe-2177707b6f9e",
+   "displayName": "Jordan Sather",
+   "matchedAlias": "Jordan Sather",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4449:1",
+    "entityId": "qe-2177707b6f9e",
+    "canonical": "Jordan Sather",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4477:0",
+   "postNum": 4477,
+   "platform": "twitter.com",
+   "handle": "SteveScalise",
+   "url": "https://twitter.com/SteveScalise/status/1272661471382700032",
+   "entityId": "qe-c92435175e92",
+   "displayName": "Steve Scalise",
+   "matchedAlias": "Steve Scalise",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4477:0",
+    "entityId": "qe-c92435175e92",
+    "canonical": "Steve Scalise",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4481:0",
+   "postNum": 4481,
+   "platform": "twitter.com",
+   "handle": "BreitbartNews",
+   "url": "https://twitter.com/BreitbartNews/status/1273676937089749000",
+   "entityId": "qe-c612bd190f51",
+   "displayName": "Breitbart News",
+   "matchedAlias": "Breitbart News",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4481:0",
+    "entityId": "qe-c612bd190f51",
+    "canonical": "Breitbart News",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4487:0",
+   "postNum": 4487,
+   "platform": "twitter.com",
+   "handle": "ABC",
+   "url": "https://twitter.com/ABC/status/1274426525706866691",
+   "entityId": null,
+   "displayName": "ABC News",
+   "matchedAlias": "ABC",
+   "confidence": "medium — the handle matches the registered alias \"ABC\" but not the canonical name; identity left for review",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4487:0",
+    "entityId": "qe-85eeac4dbdc4",
+    "canonical": "ABC News",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4492:0",
+   "postNum": 4492,
+   "platform": "twitter.com",
+   "handle": "SteveScalise",
+   "url": "https://twitter.com/SteveScalise/status/1274829394981388296",
+   "entityId": "qe-c92435175e92",
+   "displayName": "Steve Scalise",
+   "matchedAlias": "Steve Scalise",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4492:0",
+    "entityId": "qe-c92435175e92",
+    "canonical": "Steve Scalise",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4520:0",
+   "postNum": 4520,
+   "platform": "twitter.com",
+   "handle": "SteveScalise",
+   "url": "https://twitter.com/SteveScalise/status/1276190869171900417",
+   "entityId": "qe-c92435175e92",
+   "displayName": "Steve Scalise",
+   "matchedAlias": "Steve Scalise",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4520:0",
+    "entityId": "qe-c92435175e92",
+    "canonical": "Steve Scalise",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4529:0",
+   "postNum": 4529,
+   "platform": "twitter.com",
+   "handle": "HouseGOP",
+   "url": "https://twitter.com/HouseGOP/status/1276589294010982401",
+   "entityId": "qe-5cf46b7e8c27",
+   "displayName": "House GOP",
+   "matchedAlias": "House GOP",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4529:0",
+    "entityId": "qe-5cf46b7e8c27",
+    "canonical": "House GOP",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4539:2",
+   "postNum": 4539,
+   "platform": "twitter.com",
+   "handle": "Jim_Jordan",
+   "url": "https://twitter.com/Jim_Jordan/status/1277661802395054080",
+   "entityId": "qe-5209a6bbbd49",
+   "displayName": "Jim Jordan",
+   "matchedAlias": "Jim Jordan",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4539:2",
+    "entityId": "qe-5209a6bbbd49",
+    "canonical": "Jim Jordan",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4549:0",
+   "postNum": 4549,
+   "platform": "twitter.com",
+   "handle": "ChadPergram",
+   "url": "https://twitter.com/ChadPergram/status/1277982595654041600",
+   "entityId": "qe-f4cf882a56db",
+   "displayName": "Chad Pergram",
+   "matchedAlias": "Chad Pergram",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4549:0",
+    "entityId": "qe-f4cf882a56db",
+    "canonical": "Chad Pergram",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4552:1",
+   "postNum": 4552,
+   "platform": "twitter.com",
+   "handle": "LilaGraceRose",
+   "url": "https://twitter.com/LilaGraceRose/status/1278072413499068416",
+   "entityId": "qe-288380ab0c3e",
+   "displayName": "Lila Grace Rose",
+   "matchedAlias": "Lila Grace Rose",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4552:1",
+    "entityId": "qe-288380ab0c3e",
+    "canonical": "Lila Grace Rose",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4557:0",
+   "postNum": 4557,
+   "platform": "twitter.com",
+   "handle": "HeatherChilders",
+   "url": "https://twitter.com/HeatherChilders/status/1278380284149465089",
+   "entityId": "qe-1ab954259f79",
+   "displayName": "Heather Childers",
+   "matchedAlias": "Heather Childers",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4557:0",
+    "entityId": "qe-1ab954259f79",
+    "canonical": "Heather Childers",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4600:0",
+   "postNum": 4600,
+   "platform": "twitter.com",
+   "handle": "CBS_Herridge",
+   "url": "https://twitter.com/CBS_Herridge/status/1284904259188908034",
+   "entityId": "qe-49b9cb60a8ac",
+   "displayName": "CBS_Herridge",
+   "matchedAlias": "CBS_Herridge",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4600:0",
+    "entityId": "qe-49b9cb60a8ac",
+    "canonical": "CBS_Herridge",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4707:0",
+   "postNum": 4707,
+   "platform": "twitter.com",
+   "handle": "DailySignal",
+   "url": "https://twitter.com/DailySignal/status/1305463687629737984",
+   "entityId": "qe-088251b1e746",
+   "displayName": "Daily Signal",
+   "matchedAlias": "Daily Signal",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4707:0",
+    "entityId": "qe-088251b1e746",
+    "canonical": "Daily Signal",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4708:0",
+   "postNum": 4708,
+   "platform": "twitter.com",
+   "handle": "CBS_Herridge",
+   "url": "https://twitter.com/CBS_Herridge/status/1305642555854524419",
+   "entityId": "qe-49b9cb60a8ac",
+   "displayName": "CBS_Herridge",
+   "matchedAlias": "CBS_Herridge",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4708:0",
+    "entityId": "qe-49b9cb60a8ac",
+    "canonical": "CBS_Herridge",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4754:0",
+   "postNum": 4754,
+   "platform": "twitter.com",
+   "handle": "IngrahamAngle",
+   "url": "https://twitter.com/IngrahamAngle/status/1308788330201583618",
+   "entityId": null,
+   "displayName": "The Ingraham Angle",
+   "matchedAlias": "IngrahamAngle",
+   "confidence": "medium — the handle matches the registered alias \"IngrahamAngle\" but not the canonical name; identity left for review",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4754:0",
+    "entityId": "qe-5d58e0f6a89b",
+    "canonical": "The Ingraham Angle",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4851:4",
+   "postNum": 4851,
+   "platform": "twitter.com",
+   "handle": "RudyGiuliani",
+   "url": "https://twitter.com/RudyGiuliani/status/1316368409236516872",
+   "entityId": "qe-1d920608f91a",
+   "displayName": "Rudy Giuliani",
+   "matchedAlias": "Rudy Giuliani",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4851:4",
+    "entityId": "qe-1d920608f91a",
+    "canonical": "Rudy Giuliani",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4852:0",
+   "postNum": 4852,
+   "platform": "twitter.com",
+   "handle": "CBS_Herridge",
+   "url": "https://twitter.com/CBS_Herridge/status/1316406126829764608",
+   "entityId": "qe-49b9cb60a8ac",
+   "displayName": "CBS_Herridge",
+   "matchedAlias": "CBS_Herridge",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4852:0",
+    "entityId": "qe-49b9cb60a8ac",
+    "canonical": "CBS_Herridge",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4858:0",
+   "postNum": 4858,
+   "platform": "twitter.com",
+   "handle": "CBS_Herridge",
+   "url": "https://twitter.com/CBS_Herridge/status/1316438073778016256",
+   "entityId": "qe-49b9cb60a8ac",
+   "displayName": "CBS_Herridge",
+   "matchedAlias": "CBS_Herridge",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4858:0",
+    "entityId": "qe-49b9cb60a8ac",
+    "canonical": "CBS_Herridge",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4859:0",
+   "postNum": 4859,
+   "platform": "twitter.com",
+   "handle": "SohrabAhmari",
+   "url": "https://twitter.com/SohrabAhmari/status/1316446749729398790",
+   "entityId": "qe-8e1a2326ce5d",
+   "displayName": "Sohrab Ahmari",
+   "matchedAlias": "Sohrab Ahmari",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4859:0",
+    "entityId": "qe-8e1a2326ce5d",
+    "canonical": "Sohrab Ahmari",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4885:0",
+   "postNum": 4885,
+   "platform": "twitter.com",
+   "handle": "chipfranklin",
+   "url": "https://twitter.com/chipfranklin/status/1317535818563670024",
+   "entityId": "qe-fb1d35d0a036",
+   "displayName": "Chip Franklin",
+   "matchedAlias": "Chip Franklin",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4885:0",
+    "entityId": "qe-fb1d35d0a036",
+    "canonical": "Chip Franklin",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4885:1",
+   "postNum": 4885,
+   "platform": "twitter.com",
+   "handle": "TitusNation",
+   "url": "https://twitter.com/TitusNation/status/1317531144955461632",
+   "entityId": "qe-dccc24134c8c",
+   "displayName": "Titus Nation",
+   "matchedAlias": "Titus Nation",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4885:1",
+    "entityId": "qe-dccc24134c8c",
+    "canonical": "Titus Nation",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4885:2",
+   "postNum": 4885,
+   "platform": "twitter.com",
+   "handle": "MattBinder",
+   "url": "https://twitter.com/MattBinder/status/1317507412614590466",
+   "entityId": "qe-83f99db9f924",
+   "displayName": "Matt Binder",
+   "matchedAlias": "Matt Binder",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4885:2",
+    "entityId": "qe-83f99db9f924",
+    "canonical": "Matt Binder",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4885:3",
+   "postNum": 4885,
+   "platform": "twitter.com",
+   "handle": "MichaelEMann",
+   "url": "https://twitter.com/MichaelEMann/status/1317512707646672896",
+   "entityId": "qe-491a7667227c",
+   "displayName": "Michael E. Mann",
+   "matchedAlias": "Michael E. Mann",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4885:3",
+    "entityId": "qe-491a7667227c",
+    "canonical": "Michael E. Mann",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4885:4",
+   "postNum": 4885,
+   "platform": "twitter.com",
+   "handle": "kurteichenwald",
+   "url": "https://twitter.com/kurteichenwald/status/1317513338692210692",
+   "entityId": "qe-bb42a532fed2",
+   "displayName": "Kurt Eichenwald",
+   "matchedAlias": "Kurt Eichenwald",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4885:4",
+    "entityId": "qe-bb42a532fed2",
+    "canonical": "Kurt Eichenwald",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  },
+  {
+   "occurrenceId": "#4885:8",
+   "postNum": 4885,
+   "platform": "twitter.com",
+   "handle": "TMZ",
+   "url": "https://twitter.com/TMZ/status/1317525798903951360",
+   "entityId": "qe-11ef7eeeb8e3",
+   "displayName": "TMZ",
+   "matchedAlias": "TMZ",
+   "confidence": "high — the handle spells the entity's canonical name",
+   "migratedFrom": {
+    "layer": "postAnalysis.namedEntities",
+    "occurrenceId": "#4885:8",
+    "entityId": "qe-11ef7eeeb8e3",
+    "canonical": "TMZ",
+    "on": "2026-08-17",
+    "ruling": "social handles are references, not prose mentions"
+   }
+  }
+ ]
+}

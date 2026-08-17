@@ -47,12 +47,27 @@ if (!liveOnly) {
   step('certification manifest', 'node', ['scripts/certification-manifest.mjs', '--verify'])
   step('cross-section invariants', 'node', ['scripts/audit-cross-section.mjs'])
 
+  // The pure matchers, before anything pays for a browser. Each one is milliseconds, and each one
+  // has already caught a defect that would otherwise have cost a 90-second round trip to find:
+  // the shared boundary rule, the multi-word text matcher, and the plan that maps a phrase onto the
+  // segments an annotation layer cut it into.
+  step('rendered-text matcher', 'node', ['scripts/test-rendered-match.mjs'])
+  step('multi-word glossary segmentation', 'node', ['scripts/test-gloss-segments.mjs'])
+  step('split glossary occurrences', 'node', ['scripts/test-gloss-occurrence.mjs'])
+
   // A FIRST-TIME visitor. Fresh profile, nothing cached, the app builds everything from the bundle.
   step('fresh profile — alias visibility', 'node', ['scripts/test-alias-visibility.mjs', BASE, '--fresh'])
   step('fresh profile — inline drop reader', 'node', ['scripts/test-inline-drop-reader.mjs', BASE, '--fresh'])
   // The acronym info box asserts MEANING per drop, not merely that a box opened. BO is three
   // different people depending on the drop, so "it popped up" is not the property that matters.
   step('fresh profile — reader info box', 'node', ['scripts/test-term-info.mjs', BASE, '--fresh'])
+  // Every route into the card — hover, keyboard, tap, Escape, outside click, screen-reader
+  // labelling, and the two placement rules — on a drop that carries a Partial reading.
+  step('fresh profile — tooltip accessibility', 'node', ['scripts/test-hover-accessibility.mjs', BASE, '--fresh'])
+  // MULTI-WORD TERMS, INCLUDING THE SIX THE ANNOTATION LAYER SPLITS. Six terms had no box at all
+  // while every other gate was green, because no gate asked. This one asks about all 19, and about
+  // nesting and tab stops on every drop that carries one.
+  step('fresh profile — multi-word glossary terms', 'node', ['scripts/test-multiword-gloss.mjs', BASE, '--fresh'])
 
   // A RETURNING visitor, deliberately downgraded to the pre-change state. The one that has failed
   // in production while every other check was green.
@@ -68,6 +83,8 @@ if (!liveOnly) {
   step('live site — alias visibility', 'node', ['scripts/test-alias-visibility.mjs', LIVE, '--fresh'])
   step('live site — inline drop reader', 'node', ['scripts/test-inline-drop-reader.mjs', LIVE, '--fresh'])
   step('live site — reader info box', 'node', ['scripts/test-term-info.mjs', LIVE, '--fresh'])
+  step('live site — tooltip accessibility', 'node', ['scripts/test-hover-accessibility.mjs', LIVE, '--fresh'])
+  step('live site — multi-word glossary terms', 'node', ['scripts/test-multiword-gloss.mjs', LIVE, '--fresh'])
   // The one that matters most on production: a reader who already had the app must receive it.
   step('live site — returning/stale profile', 'node', ['scripts/test-returning-profile.mjs', '--url', LIVE])
   console.log(`\n${'─'.repeat(60)}\n✅ live proof complete — ${LIVE}\n`)

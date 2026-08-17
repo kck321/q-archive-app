@@ -17,6 +17,8 @@
 import { cloneElement, useEffect, useState, type ReactElement, type ReactNode } from 'react'
 import { HoverCard } from '../components/HoverCard'
 import { entityHoversSync, loadEntityHovers, postHoverFor, GRADE_LABEL, GRADE_STYLE, type SupportGrade } from './entityHovers'
+import { segmentGloss, multiWordTokens } from './glossSegments'
+import { occurrenceId, planSplitOccurrences } from './glossOccurrence'
 
 export interface GlossEntry {
   meaning: string
@@ -167,6 +169,82 @@ export function TermInfo({ token, entry, postNum, children }: {
 }
 
 /**
+ * The control for a term the annotation layer has cut into pieces.
+ *
+ * TWO READINGS CAN MEET ON ONE OCCURRENCE, AND ONE MUST NOT EAT THE OTHER. #2770 writes
+ * "ABC NEWS". The entity layer certifies "ABC" and gives it a box; the glossary certifies the whole
+ * phrase and gives it another. Those are different claims — "ABC" alone is scoped to three
+ * different entities across the archive and reads as the CIA in two drops — so showing only the
+ * inner one would silently answer a question the reader did not ask. Showing only the outer one
+ * would delete a certified entity reading. The card carries both, in separately headed sections,
+ * and the trigger names both.
+ *
+ * ONE control, whichever way the pieces fall: when a piece already carries a box (ABC, FOX, SCHIFF)
+ * that box is extended rather than joined by a second, and when none does (SUPREME COURT,
+ * CLINTON FOUNDATION, ROD ROSENSTEIN) exactly one is promoted. Never a button inside a button, and
+ * never two tab stops for one phrase.
+ */
+function GlossOccurrenceAnchor({ occId, token, entry, inner, postNum, children }: {
+  occId: string
+  /** The multi-word glossary key — what this control stands for, whatever word it sits on. */
+  token: string
+  entry: GlossEntry
+  /** The reading the segment already carried, when it carried one. */
+  inner: { token: string; entry: GlossEntry } | null
+  postNum: number
+  children: ReactNode
+}) {
+  const post = postHoverFor(entityHoversSync(), entry.entityId, postNum)
+  const tail = post ? `, and how post #${postNum} uses it` : ''
+  // The accessible name is the whole point of the ruling made audible: a screen-reader user on the
+  // word "ABC" must hear that the archive also reads the pair as ABC News, and on the word "SUPREME"
+  // must hear the term is "SUPREME COURT" and not the single word under the cursor.
+  const label = inner
+    ? `${inner.token} — ${inner.entry.meaning}. Glossary reading in this post: ${token} — ${entry.meaning}${tail}`
+    : `${token} — ${entry.meaning}${tail}`
+  return (
+    <HoverCard
+      occurrenceId={occId}
+      label={label}
+      card={
+        inner ? (
+          <>
+            <InfoCard entry={inner.entry} token={inner.token} postNum={postNum} />
+            <span className="mt-2.5 block border-t-2 border-amber-400/40 pt-2 text-[10px] uppercase tracking-wide text-amber-300">
+              Glossary reading in this post
+            </span>
+            <span className="mt-1.5 block">
+              <InfoCard entry={entry} token={token} postNum={postNum} />
+            </span>
+          </>
+        ) : (
+          <InfoCard entry={entry} token={token} postNum={postNum} />
+        )
+      }
+    >
+      {children}
+    </HoverCard>
+  )
+}
+
+/**
+ * The rendered text of a node, exactly as the reader will see it.
+ *
+ * The whole occurrence plan is character arithmetic over this, so it has to agree with the DOM
+ * character for character — the project's standing lesson about asking questions of the text the
+ * reader sees rather than the text we stored, one layer further in.
+ */
+function nodeText(node: ReactNode): string {
+  if (typeof node === 'string') return node
+  if (typeof node === 'number') return String(node)
+  if (Array.isArray(node)) return node.map(nodeText).join('')
+  if (node && typeof node === 'object' && 'props' in node) {
+    return nodeText((node as ReactElement<{ children?: ReactNode }>).props?.children)
+  }
+  return ''
+}
+
+/**
  * Wrap already-rendered highlight nodes with info boxes.
  *
  * ONE insertion point per renderer instead of ten. Both PostDetail and postHighlight build the
@@ -190,7 +268,7 @@ export function applyGlossary(nodes: ReactNode[], postNum: number, gloss: Record
    * adding a second treatment would suggest a second classification. On plain text the dotted
    * underline is the only thing telling a reader there is anything to press.
    */
-  const wrapInside = (text: string, keyPrefix: string, underline: boolean): ReactNode => {
+  const wrapSingles = (text: string, keyPrefix: string, underline: boolean): ReactNode => {
     const parts = text.split(/([A-Za-z0-9][A-Za-z0-9._+/-]*)/g)
     let touched = false
     const rebuilt = parts.flatMap((part, j) => {
@@ -221,6 +299,215 @@ export function applyGlossary(nodes: ReactNode[], postNum: number, gloss: Record
   }
 
   /**
+   * MULTI-WORD TERMS FIRST, then the single-word splitter on what is left.
+   *
+   * 19 glossed tokens contain a space, and the splitter above walks one word at a time — so a
+   * two-word name could only ever be glossed where it happened to be its own certified highlight
+   * span and the whole-node branch below caught it. In #2401 all three "WASH POST"s sit inside
+   * larger Question marks, so neither path fired and the reader got no box on the one drop the box
+   * was written for.
+   *
+   * The matching itself is NOT done here. It is a pure function over strings in glossSegments.ts,
+   * proved by scripts/test-gloss-segments.mjs across all 19 tokens and all 4,966 drops — including
+   * the property that concatenating the segments reproduces the input exactly, so no character can
+   * be lost or moved by a matching bug. The first attempt at this fix lived in the JSX, fixed
+   * #2401 and broke BO and CM in #1828, and each guess cost a 90-second browser run.
+   *
+   * The gaps between matches go through `wrapSingles` UNCHANGED. That is the whole safety argument:
+   * a term that was glossed before is glossed by exactly the same code now, and the new path can
+   * only ever add a box where there was none.
+   */
+  const multiTokens = multiWordTokens(gloss)
+  const wrapInside = (text: string, keyPrefix: string, underline: boolean): ReactNode => {
+    const segs = segmentGloss(text, multiTokens)
+    if (segs.length === 1 && !segs[0].token) return wrapSingles(text, keyPrefix, underline)
+    let touched = false
+    const rebuilt = segs.map((seg, j) => {
+      const entry = seg.token ? glossFor(seg.token, postNum, gloss) : null
+      // No entry means this drop has no reading for the term — it is ordinary text, and the
+      // single-word pass still gets its chance at whatever is inside it.
+      if (!entry) return wrapSingles(seg.text, `${keyPrefix}-s${j}`, underline)
+      touched = true
+      return (
+        <TermInfo key={`${keyPrefix}-s${j}`} token={seg.token!} entry={entry} postNum={postNum}>
+          {underline
+            ? <span className="cursor-help underline decoration-dotted decoration-gray-500 underline-offset-2">{seg.text}</span>
+            : <span className="cursor-help">{seg.text}</span>}
+        </TermInfo>
+      )
+    })
+    return touched ? <span key={keyPrefix}>{rebuilt}</span> : wrapSingles(text, keyPrefix, underline)
+  }
+
+  /**
+   * The reading a segment would have carried on its own — the "existing interactive control".
+   *
+   * Asked BEFORE anything is rendered, because the control does not exist yet: the box on "ABC" is
+   * something this same function is about to create. Deciding afterwards would mean building a
+   * button and then unbuilding it, and the two code paths would disagree the first time one of them
+   * changed. The rules mirror the two that actually produce a control below — a whole node that is
+   * itself a token, and a token found inside a run of text — so the answer here and the behaviour
+   * there cannot drift apart.
+   *
+   * Single-word keys only. A multi-word key inside a multi-word occurrence cannot arise (the
+   * matcher never overlaps two terms), and treating one as an "existing control" would nest the
+   * very thing the ruling forbids.
+   */
+  const controlTokenIn = (text: string): { token: string; entry: GlossEntry } | null => {
+    const whole = text.trim()
+    if (whole && !/\s/.test(whole)) {
+      const e = glossFor(whole, postNum, gloss)
+      if (e) return { token: whole, entry: e }
+    }
+    for (const part of text.split(/([A-Za-z0-9][A-Za-z0-9._+/-]*)/g)) {
+      if (!/^[A-Za-z0-9]/.test(part)) continue
+      let head = part
+      let entry = glossFor(head, postNum, gloss)
+      while (!entry && head.length > 1 && !/[A-Za-z0-9]$/.test(head)) {
+        head = head.slice(0, -1)
+        entry = glossFor(head, postNum, gloss)
+      }
+      if (entry) return { token: head, entry }
+    }
+    return null
+  }
+
+  /** A segment of a split term that is NOT the control: marked, addressable, and not focusable. */
+  const marker = (occId: string, content: ReactNode, key: string, underline: boolean): ReactNode => (
+    <span key={key} data-gloss-occ={occId}
+      className={underline
+        ? 'cursor-help underline decoration-dotted decoration-gray-500 underline-offset-2'
+        : 'cursor-help'}>
+      {content}
+    </span>
+  )
+
+  /**
+   * Replace one character range inside a node, leaving everything else exactly as it was.
+   *
+   * The range is a half-open span of the node's RENDERED text, so this descends through whatever
+   * structure is in the way and rebuilds only the elements on the path — every annotation keeps its
+   * own tag, class and title, and no character moves. A fully covered node is handed to `primary`
+   * whole, which is what keeps the box anchored to the certified `<mark>` instead of to a bare copy
+   * of its text.
+   *
+   * `primary` is used at most once per node. When a range happens to straddle two children of the
+   * same element, the remainder is marked but not made interactive — one occurrence, one control,
+   * however deep the split goes.
+   */
+  const replaceRange = (
+    node: ReactNode, from: number, to: number, occId: string,
+    primary: (content: ReactNode, underline: boolean) => ReactNode,
+    keyPrefix: string, inHighlight: boolean, depth: number,
+  ): ReactNode => {
+    let used = false
+    const place = (content: ReactNode, key: string, underline: boolean): ReactNode => {
+      if (used) return marker(occId, content, key, underline)
+      used = true
+      return primary(content, underline)
+    }
+    const cut = (n: ReactNode, f: number, t: number, key: string, inHl: boolean, d: number): ReactNode => {
+      const len = nodeText(n).length
+      if (f <= 0 && t >= len) return place(n, key, !inHl && typeof n === 'string')
+      if (typeof n === 'string') {
+        const head = n.slice(0, f)
+        const tail = n.slice(t)
+        return (
+          <span key={key}>
+            {head ? wrapInside(head, `${key}a`, !inHl) : null}
+            {place(n.slice(f, t), `${key}m`, !inHl)}
+            {tail ? wrapInside(tail, `${key}b`, !inHl) : null}
+          </span>
+        )
+      }
+      if (!n || typeof n !== 'object' || !('props' in n) || d <= 0) return n
+      const el = n as ReactElement<{ children?: ReactNode }>
+      const kids = el.props?.children
+      if (kids === undefined || kids === null) return n
+      const arr = Array.isArray(kids) ? kids : [kids]
+      let acc = 0
+      const next = arr.map((c, i) => {
+        const l = nodeText(c).length
+        const s = acc
+        acc += l
+        // Outside the range: ordinary glossing, unchanged. Inside it: no glossing, because the one
+        // control for this occurrence has already been decided.
+        if (t - s <= 0 || f - s >= l) return walk(c, `${key}c${i}`, true, d - 1)
+        return cut(c, Math.max(0, f - s), Math.min(l, t - s), `${key}c${i}`, true, d - 1)
+      })
+      return cloneElement(el, {}, next)
+    }
+    return cut(node, from, to, keyPrefix, inHighlight, depth)
+  }
+
+  /**
+   * A LIST OF SIBLINGS IS THE ONLY PLACE A SPLIT TERM IS VISIBLE.
+   *
+   * Every other layer here works on one node at a time, which is exactly why six terms had no box:
+   * "SUPREME COURT" is three sibling `<mark>`s and no single node contains the phrase. The plan is
+   * computed across the concatenation of the siblings and mapped back onto them — see
+   * glossOccurrence.ts, which is pure and proved separately.
+   *
+   * The fallback is total. No plan, or no reading for the term in this drop, and every node goes
+   * through the untouched path — so this can only ever add a box where there was none, which is the
+   * same safety argument the multi-word text matcher was built on.
+   */
+  const walkList = (list: ReactNode[], keyPrefix: string, inHighlight: boolean, depth: number): ReactNode[] => {
+    const plain = () => list.map((c, j) => walk(c, `${keyPrefix}-${j}`, inHighlight, depth))
+    if (list.length < 2 || !multiTokens.length) return plain()
+
+    const texts = list.map(nodeText)
+    type Assigned = {
+      occId: string; token: string; entry: GlossEntry
+      start: number; end: number
+      anchor: boolean; inner: { token: string; entry: GlossEntry } | null
+    }
+    const assign = new Map<number, Assigned>()
+
+    for (const plan of planSplitOccurrences(texts, multiTokens)) {
+      const entry = glossFor(plan.token, postNum, gloss)
+      if (!entry) continue
+      // Two occurrences sharing a node would need two identifiers on one segment. It cannot happen
+      // with a non-overlapping matcher, and if it ever did, the honest outcome is the old
+      // behaviour for that term rather than a segment that belongs to both.
+      if (plan.parts.some(p => assign.has(p.index))) continue
+
+      const occId = occurrenceId(postNum, plan.token, plan.ordinal)
+      let anchorAt = 0
+      let inner: { token: string; entry: GlossEntry } | null = null
+      for (let k = 0; k < plan.parts.length; k++) {
+        const p = plan.parts[k]
+        const found = controlTokenIn(texts[p.index].slice(p.start, p.end))
+        if (found) { anchorAt = k; inner = found; break }
+      }
+      plan.parts.forEach((p, k) => assign.set(p.index, {
+        occId, token: plan.token, entry, start: p.start, end: p.end,
+        anchor: k === anchorAt, inner: k === anchorAt ? inner : null,
+      }))
+    }
+    if (!assign.size) return plain()
+
+    return list.map((node, j) => {
+      const a = assign.get(j)
+      if (!a) return walk(node, `${keyPrefix}-${j}`, inHighlight, depth)
+      const key = `${keyPrefix}-${j}`
+      const primary = (content: ReactNode, underline: boolean): ReactNode => a.anchor
+        ? (
+          <GlossOccurrenceAnchor key={`${key}o`} occId={a.occId} token={a.token} entry={a.entry}
+            inner={a.inner} postNum={postNum}>
+            {typeof content === 'string'
+              ? <span className={underline
+                  ? 'cursor-help underline decoration-dotted decoration-gray-500 underline-offset-2'
+                  : 'cursor-help'}>{content}</span>
+              : content}
+          </GlossOccurrenceAnchor>
+        )
+        : marker(a.occId, content, `${key}o`, underline)
+      return replaceRange(node, a.start, a.end, a.occId, primary, key, inHighlight, depth)
+    })
+  }
+
+  /**
    * RECURSE. A question in PostDetail is not a mark wrapping a string — it carries nested
    * structure (its own controls), so a one-level check saw a non-string child and gave up, and
    * "How often does POTUS RT weekly address?" got no box while the Claim one line above did.
@@ -228,7 +515,7 @@ export function applyGlossary(nodes: ReactNode[], postNum: number, gloss: Record
    */
   const walk = (node: ReactNode, keyPrefix: string, inHighlight: boolean, depth: number): ReactNode => {
     if (typeof node === 'string') return wrapInside(node, keyPrefix, !inHighlight)
-    if (Array.isArray(node)) return node.map((c, j) => walk(c, `${keyPrefix}-${j}`, inHighlight, depth))
+    if (Array.isArray(node)) return walkList(node, keyPrefix, inHighlight, depth)
     if (!node || typeof node !== 'object' || !('props' in node) || depth <= 0) return node
 
     const el = node as ReactElement<{ children?: ReactNode }>
@@ -244,5 +531,5 @@ export function applyGlossary(nodes: ReactNode[], postNum: number, gloss: Record
     return inner === kids ? node : cloneElement(el, {}, inner)
   }
 
-  return nodes.map((node, i) => walk(node, `g${i}`, false, 6))
+  return walkList(nodes, 'g', false, 6)
 }

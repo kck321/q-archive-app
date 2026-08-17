@@ -27,15 +27,15 @@
    "posts": 3883
   },
   "entities": {
-   "canonical": 1409,
+   "canonical": 1201,
    "detectedCanonical": 1292,
    "ownerRulings": 118,
    "ownerMerges": 1,
-   "mentions": 9749,
+   "mentions": 8798,
    "coreEntities": 93,
-   "coreRegistryMentions": 5352,
-   "tailEntities": 1239,
-   "tailMentions": 3777
+   "coreRegistryMentions": 5328,
+   "tailEntities": 993,
+   "tailMentions": 2859
   },
   "themes": {
    "assignments": 2644,
@@ -121,7 +121,7 @@
    "id": "entities",
    "label": "Q Entities",
    "artifact": "entities.json",
-   "certifiedCount": 9749,
+   "certifiedCount": 8798,
    "mayCoexist": "Canonical entities (1,332) and mentions (7,903) are DIFFERENT metrics, not a row-count mismatch — one entity is mentioned many times. The headline covers every resolved mention: 4,463 from the 93-entity core registry plus 3,440 from the 1,239 adjudicated-tail entities. Unresolved alias tokens are counted in neither.",
    "neverDisplayed": "An unresolved alias must never be shown as a resolved identification.",
    "countedBy": "sum of per-entity mention counts",
@@ -207,8 +207,8 @@
   }
  ],
  "totals": {
-  "invariants": 162,
-  "passed": 162,
+  "invariants": 206,
+  "passed": 206,
   "failed": 0
  },
  "results": [
@@ -259,28 +259,28 @@
    "id": "entities-canonical",
    "description": "Entities = 1,335 canonical",
    "pass": true,
-   "detail": "1409"
+   "detail": "1201"
   },
   {
    "group": "1. Frozen canonical counts",
    "id": "entities-mentions",
    "description": "Entities = 7,903 resolved mentions (headline)",
    "pass": true,
-   "detail": "9749"
+   "detail": "8798"
   },
   {
    "group": "1. Frozen canonical counts",
    "id": "entities-core",
    "description": "core registry submetric = 5,273",
    "pass": true,
-   "detail": "5352"
+   "detail": "5328"
   },
   {
    "group": "1. Frozen canonical counts",
    "id": "entities-tail",
    "description": "adjudicated tail submetric = 3,476",
    "pass": true,
-   "detail": "3777"
+   "detail": "2859"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -301,14 +301,14 @@
    "id": "entities-reconcile",
    "description": "submetrics sum to the headline",
    "pass": true,
-   "detail": "5352 + 3777 + 620 = 9749"
+   "detail": "5328 + 2859 + 611 = 8798"
   },
   {
    "group": "1. Frozen canonical counts",
    "id": "entities-artifact-headline",
    "description": "the artifact ships the headline figure",
    "pass": true,
-   "detail": "9749"
+   "detail": "8798"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -420,7 +420,7 @@
    "id": "ent-two-metrics",
    "description": "canonical and mentions are distinct metrics",
    "pass": true,
-   "detail": "1409 vs 9749"
+   "detail": "1201 vs 8798"
   },
   {
    "group": "2. Provenance contracts",
@@ -630,7 +630,7 @@
    "id": "chain-complete",
    "description": "every apply step is chained into export",
    "pass": true,
-   "detail": "27/27"
+   "detail": "28/28"
   },
   {
    "group": "7. Export-chain integrity",
@@ -663,9 +663,9 @@
   {
    "group": "8. Seed and cache integrity",
    "id": "seed-current",
-   "description": "SEED_VERSION is 77 (Entities hover audit, Stage 2)",
+   "description": "SEED_VERSION is 78 (integrated entity cleanup)",
    "pass": true,
-   "detail": "77"
+   "detail": "78"
   },
   {
    "group": "8. Seed and cache integrity",
@@ -754,7 +754,7 @@
   {
    "group": "9. UI count integrity",
    "id": "ui-entities",
-   "description": "sectionInfo headlines 1,409 entities and 9,749 mentions",
+   "description": "sectionInfo headlines 1,201 entities and 8,798 mentions",
    "pass": true,
    "detail": "ok"
   },
@@ -817,7 +817,7 @@
   {
    "group": "9. UI count integrity",
    "id": "headline-entities",
-   "description": "Entities headline = certified mentions / 2,445 posts",
+   "description": "Entities headline = certified mentions / 2,090 posts",
    "pass": true,
    "detail": "ok"
   },
@@ -938,28 +938,28 @@
    "id": "rc-source-excluded",
    "description": "none of the held mentions is counted in Entities",
    "pass": true,
-   "detail": "9749"
+   "detail": "8798"
   },
   {
    "group": "10b. Entity hover publication",
    "id": "hover-globals",
    "description": "one global synopsis per live entity",
    "pass": true,
-   "detail": "1409"
+   "detail": "1201"
   },
   {
    "group": "10b. Entity hover publication",
    "id": "hover-reconciles",
-   "description": "publish + review + quarantine + withdrawn = 7,778",
+   "description": "publish + review + no-anchor + quarantine + withdrawn = 7,778",
    "pass": true,
-   "detail": "3780 + 3542 + 419 + 37 = 7778"
+   "detail": "3698 + 3992 + 36 + 15 + 37 = 7778"
   },
   {
    "group": "10b. Entity hover publication",
    "id": "hover-no-review-leak",
    "description": "no held record is in the public bundle",
    "pass": true,
-   "detail": "3998 held back"
+   "detail": "4080 held back"
   },
   {
    "group": "10b. Entity hover publication",
@@ -973,7 +973,7 @@
    "id": "hover-shared-alias-held",
    "description": "no shared-alias occurrence is published",
    "pass": true,
-   "detail": "426 held in review"
+   "detail": "422 held in review"
   },
   {
    "group": "10b. Entity hover publication",
@@ -987,7 +987,7 @@
    "id": "hover-ids-resolve",
    "description": "every hover resolves to a live entity id",
    "pass": true,
-   "detail": "886 entities"
+   "detail": "846 entities"
   },
   {
    "group": "10b. Entity hover publication",
@@ -1001,7 +1001,7 @@
    "id": "hover-counts-untouched",
    "description": "entity totals are unchanged by the import",
    "pass": true,
-   "detail": "1409 entities / 9749 mentions"
+   "detail": "1201 entities / 8798 mentions"
   },
   {
    "group": "10b. Entity hover publication",
@@ -1009,6 +1009,314 @@
    "description": "every published synopsis carries its support grade",
    "pass": true,
    "detail": "0 ungraded"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "cleanup-ledger-reconciles",
+   "description": "every starting mention lands in exactly one bucket",
+   "pass": true,
+   "detail": "9749 of 9749"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "cleanup-audit-covers-corpus",
+   "description": "the provenance audit covers every certified occurrence",
+   "pass": true,
+   "detail": "9749 of 9749"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "cleanup-applied-as-planned",
+   "description": "the applied totals are exactly the ones that were proven",
+   "pass": true,
+   "detail": "1201 rows / 8798 mentions"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "cleanup-totals-agree",
+   "description": "plan actions, reversal restores and the withdrawn total are one number",
+   "pass": true,
+   "detail": "951 actions / 951 restores / 951 withdrawn"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "cleanup-no-double-subtraction",
+   "description": "no certified occurrence is acted on twice",
+   "pass": true,
+   "detail": "951 distinct of 951"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "cleanup-no-refusals",
+   "description": "the plan carries no refusals",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "cleanup-visible-never-withdrawn",
+   "description": "no occurrence the reader can see is withdrawn",
+   "pass": true,
+   "detail": "0 acted on"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "url-excluded-from-hovers",
+   "description": "no URL-derived record has a public hover",
+   "pass": true,
+   "detail": "15 quarantined"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "url-fragments-withdrawn",
+   "description": "no withdrawn occurrence is still a certified annotation",
+   "pass": true,
+   "detail": "0 remaining"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "sources-bound-resolve",
+   "description": "every bound source resolves to a live entity",
+   "pass": true,
+   "detail": "0 dangling"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "sources-unbound-explained",
+   "description": "every unbound source still names who it is",
+   "pass": true,
+   "detail": "8 unbound"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "sources-post-index-agrees",
+   "description": "the per-post, per-hostname and per-account indexes hold the same records",
+   "pass": true,
+   "detail": "373 records / 99 hostnames / 84 accounts"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "sources-kinds-distinct",
+   "description": "publishers and accounts are separately keyed and separately labelled",
+   "pass": true,
+   "detail": "244 publisher / 129 social"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "dormant-ids-reserved",
+   "description": "every dormant id is still held in the permanent ledger",
+   "pass": true,
+   "detail": "208 dormant, 0 unreserved"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "dormant-not-public",
+   "description": "no dormant identity is in the public entity bundle",
+   "pass": true,
+   "detail": "0 still public"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "dormant-not-searchable",
+   "description": "no dormant identity is indexed as an entity",
+   "pass": true,
+   "detail": "0 indexed"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "dormant-no-hovers",
+   "description": "no dormant identity carries a global synopsis or a hover",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "source-only-have-posts",
+   "description": "every source-only identity keeps at least one linked drop",
+   "pass": true,
+   "detail": "135 rows"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "source-only-described",
+   "description": "a source-only identity has a sentence of its own, not a zero",
+   "pass": true,
+   "detail": "described"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "source-navigation-separate",
+   "description": "Sources is its own surface, not a filter on Entities",
+   "pass": true,
+   "detail": "separate page"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "cleanup-mixed-keeps-prose",
+   "description": "a drop where the entity is visible never loses every occurrence",
+   "pass": true,
+   "detail": "0 over-reaching"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "cleanup-ambiguous-untouched",
+   "description": "every ambiguous occurrence is retained unchanged",
+   "pass": true,
+   "detail": "69 ambiguous, 0 acted on"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "substring-removal-is-last-resort",
+   "description": "no substring is auto-removed where other provenance exists",
+   "pass": true,
+   "detail": "98 removable of 98, 0 with other support"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "substring-evidence-complete",
+   "description": "every substring record carries the word that produced it",
+   "pass": true,
+   "detail": "98 documented"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "social-migrated-not-withdrawn",
+   "description": "every social-account reference migrates rather than being deleted",
+   "pass": true,
+   "detail": "129 references"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "social-not-prose",
+   "description": "no social-account reference is counted as a prose mention",
+   "pass": true,
+   "detail": "migrated out of the prose layer"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "image-unconfirmed-certified",
+   "description": "image-unconfirmed occurrences keep their certified mention",
+   "pass": true,
+   "detail": "41 held"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "image-unconfirmed-private",
+   "description": "every one of them is in the private provenance queue",
+   "pass": true,
+   "detail": "41 queued"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "image-substring-evidence-kept",
+   "description": "a reclassified substring suspect still carries its evidence",
+   "pass": true,
+   "detail": "17 reclassified"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "withdrawals-scoped-to-ruling",
+   "description": "only the approved population is withdrawn",
+   "pass": true,
+   "detail": "78 approved, 7 held beyond it"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "withdrawals-fully-documented",
+   "description": "every withdrawal records its evidence search and reversal",
+   "pass": true,
+   "detail": "78 documented"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "withdrawals-preserve-the-drop",
+   "description": "post text and media are untouched by a withdrawal",
+   "pass": true,
+   "detail": "annotation only"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "withdrawals-reversible",
+   "description": "every withdrawal is in the reversal contract",
+   "pass": true,
+   "detail": "78 reversible"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "anchor-classified",
+   "description": "every no-anchor record carries the classification, not a bare reason",
+   "pass": true,
+   "detail": "36 classified"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "anchor-not-withdrawn",
+   "description": "no no-anchor record is filed as a withdrawn entity occurrence",
+   "pass": true,
+   "detail": "ruling honoured"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "anchor-counts-unmoved",
+   "description": "the provenance audit describes the state it was run against",
+   "pass": true,
+   "detail": "1409 rows / 9749 mentions"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "anchor-image-claim-honest",
+   "description": "image_provenance_confirmed is only claimed where something could confirm it",
+   "pass": true,
+   "detail": "no OCR/annotation data in the corpus → 0 confirmed"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "image-unconfirmed-stay-certified",
+   "description": "image-unconfirmed occurrences keep their certified mention",
+   "pass": true,
+   "detail": "41 held"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "coords-shared-definition",
+   "description": "one shared implementation of rendered text and complete-token matching",
+   "pass": true,
+   "detail": "renderedMatch.mjs"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "coords-no-private-copies",
+   "description": "no consumer keeps its own copy of the matching primitives",
+   "pass": true,
+   "detail": "7 consumers share it"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "coords-guard-is-not-vacuous",
+   "description": "the two coordinate systems genuinely disagree, so this check can fail",
+   "pass": true,
+   "detail": "raw 1430 links vs rendered 2666 — the gap this guard exists for"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "coords-matches-the-app",
+   "description": "the script definition still matches what the app strips at seed time",
+   "pass": true,
+   "detail": "markup + entities"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "coords-boundary-matches-renderer",
+   "description": "the scripts use the renderer's word-boundary rule",
+   "pass": true,
+   "detail": "lookaround, not \\b"
+  },
+  {
+   "group": "10c. Integrated entity cleanup",
+   "id": "cleanup-rebuild-byte-identical",
+   "description": "the same inputs still produce the same audit, byte for byte",
+   "pass": true,
+   "detail": "identical"
   },
   {
    "group": "11. Frozen-section mutation",
@@ -1064,7 +1372,7 @@
    "id": "entities-render-matches-certified",
    "description": "postAnalysis entries equal certified mentions",
    "pass": true,
-   "detail": "9749 vs 9749"
+   "detail": "8798 vs 8798"
   },
   {
    "group": "12. Cross-section relationships",
@@ -1267,7 +1575,7 @@
    "id": "search-entities",
    "description": "indexed Entities = certified 1,445",
    "pass": true,
-   "detail": "1409"
+   "detail": "1201"
   },
   {
    "group": "13. Global search",

@@ -2,7 +2,20 @@
  "note": "Reversal contract for the URL cleanup. Restoring these entries and their counts returns the archive to the pre-cleanup state exactly. Written before the change, not after it.",
  "restores": [
   {
-   "actionId": "url-0001-1781-f918f4",
+   "actionId": "url-0001-1490-f918f4",
+   "postNum": 1490,
+   "entityId": "qe-f918f4a7fbe4",
+   "canonical": "POTUS",
+   "entries": [
+    {
+     "alias": "POTUS",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0002-1781-f918f4",
    "postNum": 1781,
    "entityId": "qe-f918f4a7fbe4",
    "canonical": "POTUS",
@@ -15,7 +28,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0002-1284-dd22a6",
+   "actionId": "url-0003-4049-2df6a5",
+   "postNum": 4049,
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "entries": [
+    {
+     "alias": "God",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0005-1284-dd22a6",
    "postNum": 1284,
    "entityId": "qe-dd22a6644c88",
    "canonical": "House",
@@ -28,7 +54,72 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0003-732-5d44c2",
+   "actionId": "url-0006-2540-dd22a6",
+   "postNum": 2540,
+   "entityId": "qe-dd22a6644c88",
+   "canonical": "House",
+   "entries": [
+    {
+     "alias": "House",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0007-3250-dd22a6",
+   "postNum": 3250,
+   "entityId": "qe-dd22a6644c88",
+   "canonical": "House",
+   "entries": [
+    {
+     "alias": "House",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0008-4045-dd22a6",
+   "postNum": 4045,
+   "entityId": "qe-dd22a6644c88",
+   "canonical": "House",
+   "entries": [
+    {
+     "alias": "House",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0009-4159-dd22a6",
+   "postNum": 4159,
+   "entityId": "qe-dd22a6644c88",
+   "canonical": "House",
+   "entries": [
+    {
+     "alias": "House",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0010-4932-dd22a6",
+   "postNum": 4932,
+   "entityId": "qe-dd22a6644c88",
+   "canonical": "House",
+   "entries": [
+    {
+     "alias": "House",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0011-732-5d44c2",
    "postNum": 732,
    "entityId": "qe-5d44c220df65",
    "canonical": "John McCain",
@@ -41,7 +132,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0005-2630-5d44c2",
+   "actionId": "url-0013-2630-5d44c2",
    "postNum": 2630,
    "entityId": "qe-5d44c220df65",
    "canonical": "John McCain",
@@ -54,7 +145,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0006-3095-5d44c2",
+   "actionId": "url-0014-3095-5d44c2",
    "postNum": 3095,
    "entityId": "qe-5d44c220df65",
    "canonical": "John McCain",
@@ -67,7 +158,33 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0007-1199-c9f95f",
+   "actionId": "url-0015-4401-72c96d",
+   "postNum": 4401,
+   "entityId": "qe-72c96d957a8a",
+   "canonical": "Black Lives Matter",
+   "entries": [
+    {
+     "alias": "Black Lives Matter",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0016-4503-72c96d",
+   "postNum": 4503,
+   "entityId": "qe-72c96d957a8a",
+   "canonical": "Black Lives Matter",
+   "entries": [
+    {
+     "alias": "Black Lives Matter",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0017-1199-c9f95f",
    "postNum": 1199,
    "entityId": "qe-c9f95ff52ca5",
    "canonical": "WikiLeaks",
@@ -80,7 +197,98 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0008-1340-4070f8",
+   "actionId": "url-0018-1595-c9f95f",
+   "postNum": 1595,
+   "entityId": "qe-c9f95ff52ca5",
+   "canonical": "WikiLeaks",
+   "entries": [
+    {
+     "alias": "WikiLeaks",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0019-1887-c9f95f",
+   "postNum": 1887,
+   "entityId": "qe-c9f95ff52ca5",
+   "canonical": "WikiLeaks",
+   "entries": [
+    {
+     "alias": "WikiLeaks",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0020-1918-c9f95f",
+   "postNum": 1918,
+   "entityId": "qe-c9f95ff52ca5",
+   "canonical": "WikiLeaks",
+   "entries": [
+    {
+     "alias": "WikiLeaks",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0021-2648-c9f95f",
+   "postNum": 2648,
+   "entityId": "qe-c9f95ff52ca5",
+   "canonical": "WikiLeaks",
+   "entries": [
+    {
+     "alias": "WikiLeaks",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0022-3304-c9f95f",
+   "postNum": 3304,
+   "entityId": "qe-c9f95ff52ca5",
+   "canonical": "WikiLeaks",
+   "entries": [
+    {
+     "alias": "WikiLeaks",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0023-3611-c9f95f",
+   "postNum": 3611,
+   "entityId": "qe-c9f95ff52ca5",
+   "canonical": "WikiLeaks",
+   "entries": [
+    {
+     "alias": "WikiLeaks",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0024-4750-c9f95f",
+   "postNum": 4750,
+   "entityId": "qe-c9f95ff52ca5",
+   "canonical": "WikiLeaks",
+   "entries": [
+    {
+     "alias": "WikiLeaks",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0025-1340-4070f8",
    "postNum": 1340,
    "entityId": "qe-4070f82717b6",
    "canonical": "Reddit",
@@ -93,7 +301,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0009-1691-4070f8",
+   "actionId": "url-0026-1691-4070f8",
    "postNum": 1691,
    "entityId": "qe-4070f82717b6",
    "canonical": "Reddit",
@@ -106,7 +314,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0010-1797-4070f8",
+   "actionId": "url-0027-1797-4070f8",
    "postNum": 1797,
    "entityId": "qe-4070f82717b6",
    "canonical": "Reddit",
@@ -119,7 +327,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0011-1888-4070f8",
+   "actionId": "url-0028-1888-4070f8",
    "postNum": 1888,
    "entityId": "qe-4070f82717b6",
    "canonical": "Reddit",
@@ -132,7 +340,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0012-2106-4070f8",
+   "actionId": "url-0029-2106-4070f8",
    "postNum": 2106,
    "entityId": "qe-4070f82717b6",
    "canonical": "Reddit",
@@ -145,7 +353,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0013-2166-4070f8",
+   "actionId": "url-0030-2166-4070f8",
    "postNum": 2166,
    "entityId": "qe-4070f82717b6",
    "canonical": "Reddit",
@@ -158,7 +366,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0015-1458-b0a544",
+   "actionId": "url-0032-1458-b0a544",
    "postNum": 1458,
    "entityId": "qe-b0a544a47108",
    "canonical": "Grassley",
@@ -171,7 +379,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0016-1990-b0a544",
+   "actionId": "url-0033-1990-b0a544",
    "postNum": 1990,
    "entityId": "qe-b0a544a47108",
    "canonical": "Grassley",
@@ -184,7 +392,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0017-2319-b0a544",
+   "actionId": "url-0034-2319-b0a544",
    "postNum": 2319,
    "entityId": "qe-b0a544a47108",
    "canonical": "Grassley",
@@ -197,7 +405,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0019-3590-b0a544",
+   "actionId": "url-0036-3590-b0a544",
    "postNum": 3590,
    "entityId": "qe-b0a544a47108",
    "canonical": "Grassley",
@@ -210,7 +418,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0020-3834-b0a544",
+   "actionId": "url-0037-3834-b0a544",
    "postNum": 3834,
    "entityId": "qe-b0a544a47108",
    "canonical": "Grassley",
@@ -223,7 +431,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0021-4241-b0a544",
+   "actionId": "url-0038-4241-b0a544",
    "postNum": 4241,
    "entityId": "qe-b0a544a47108",
    "canonical": "Grassley",
@@ -236,7 +444,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0022-4298-b0a544",
+   "actionId": "url-0039-4298-b0a544",
    "postNum": 4298,
    "entityId": "qe-b0a544a47108",
    "canonical": "Grassley",
@@ -249,7 +457,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0023-3492-ce9b4b",
+   "actionId": "url-0040-3492-ce9b4b",
    "postNum": 3492,
    "entityId": "qe-ce9b4b609ab5",
    "canonical": "New York",
@@ -262,7 +470,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0024-4329-ce9b4b",
+   "actionId": "url-0041-4329-ce9b4b",
    "postNum": 4329,
    "entityId": "qe-ce9b4b609ab5",
    "canonical": "New York",
@@ -275,7 +483,46 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0025-986-48218e",
+   "actionId": "url-0042-1887-c9d651",
+   "postNum": 1887,
+   "entityId": "qe-c9d65140fa37",
+   "canonical": "Podesta",
+   "entries": [
+    {
+     "alias": "Podesta",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0043-1918-c9d651",
+   "postNum": 1918,
+   "entityId": "qe-c9d65140fa37",
+   "canonical": "Podesta",
+   "entries": [
+    {
+     "alias": "Podesta",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0044-2648-c9d651",
+   "postNum": 2648,
+   "entityId": "qe-c9d65140fa37",
+   "canonical": "Podesta",
+   "entries": [
+    {
+     "alias": "Podesta",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0045-986-48218e",
    "postNum": 986,
    "entityId": "qe-48218e7ab8e3",
    "canonical": "Utah",
@@ -288,7 +535,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0026-1434-48218e",
+   "actionId": "url-0046-1434-48218e",
    "postNum": 1434,
    "entityId": "qe-48218e7ab8e3",
    "canonical": "Utah",
@@ -301,7 +548,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0027-1453-48218e",
+   "actionId": "url-0047-1453-48218e",
    "postNum": 1453,
    "entityId": "qe-48218e7ab8e3",
    "canonical": "Utah",
@@ -314,7 +561,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0028-1492-48218e",
+   "actionId": "url-0048-1492-48218e",
    "postNum": 1492,
    "entityId": "qe-48218e7ab8e3",
    "canonical": "Utah",
@@ -327,7 +574,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0029-1659-48218e",
+   "actionId": "url-0049-1659-48218e",
    "postNum": 1659,
    "entityId": "qe-48218e7ab8e3",
    "canonical": "Utah",
@@ -340,7 +587,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0030-1927-48218e",
+   "actionId": "url-0050-1927-48218e",
    "postNum": 1927,
    "entityId": "qe-48218e7ab8e3",
    "canonical": "Utah",
@@ -353,7 +600,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0031-1976-48218e",
+   "actionId": "url-0051-1976-48218e",
    "postNum": 1976,
    "entityId": "qe-48218e7ab8e3",
    "canonical": "Utah",
@@ -366,7 +613,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0032-2939-48218e",
+   "actionId": "url-0052-2939-48218e",
    "postNum": 2939,
    "entityId": "qe-48218e7ab8e3",
    "canonical": "Utah",
@@ -379,7 +626,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0033-1138-cb7893",
+   "actionId": "url-0053-1138-cb7893",
    "postNum": 1138,
    "entityId": "qe-cb78932b1fab",
    "canonical": "Reuters",
@@ -392,7 +639,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0034-1947-cb7893",
+   "actionId": "url-0054-1947-cb7893",
    "postNum": 1947,
    "entityId": "qe-cb78932b1fab",
    "canonical": "Reuters",
@@ -405,7 +652,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0035-1982-cb7893",
+   "actionId": "url-0055-1982-cb7893",
    "postNum": 1982,
    "entityId": "qe-cb78932b1fab",
    "canonical": "Reuters",
@@ -418,7 +665,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0036-2495-cb7893",
+   "actionId": "url-0056-2495-cb7893",
    "postNum": 2495,
    "entityId": "qe-cb78932b1fab",
    "canonical": "Reuters",
@@ -431,7 +678,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0037-2855-cb7893",
+   "actionId": "url-0057-2855-cb7893",
    "postNum": 2855,
    "entityId": "qe-cb78932b1fab",
    "canonical": "Reuters",
@@ -444,7 +691,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0038-2894-cb7893",
+   "actionId": "url-0058-2894-cb7893",
    "postNum": 2894,
    "entityId": "qe-cb78932b1fab",
    "canonical": "Reuters",
@@ -457,7 +704,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0039-3647-cb7893",
+   "actionId": "url-0059-3625-cb7893",
+   "postNum": 3625,
+   "entityId": "qe-cb78932b1fab",
+   "canonical": "Reuters",
+   "entries": [
+    {
+     "alias": "Reuters",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0060-3647-cb7893",
    "postNum": 3647,
    "entityId": "qe-cb78932b1fab",
    "canonical": "Reuters",
@@ -470,7 +730,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0040-4115-cb7893",
+   "actionId": "url-0061-4115-cb7893",
    "postNum": 4115,
    "entityId": "qe-cb78932b1fab",
    "canonical": "Reuters",
@@ -483,7 +743,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0041-4226-cb7893",
+   "actionId": "url-0062-4226-cb7893",
    "postNum": 4226,
    "entityId": "qe-cb78932b1fab",
    "canonical": "Reuters",
@@ -496,7 +756,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0042-4847-cb7893",
+   "actionId": "url-0063-4847-cb7893",
    "postNum": 4847,
    "entityId": "qe-cb78932b1fab",
    "canonical": "Reuters",
@@ -509,7 +769,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0043-1990-1df932",
+   "actionId": "url-0064-1990-1df932",
    "postNum": 1990,
    "entityId": "qe-1df932e91ff0",
    "canonical": "Deputy Attorney General",
@@ -522,7 +782,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0044-2135-1df932",
+   "actionId": "url-0065-2135-1df932",
    "postNum": 2135,
    "entityId": "qe-1df932e91ff0",
    "canonical": "Deputy Attorney General",
@@ -535,7 +795,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0045-2316-a93913",
+   "actionId": "url-0066-2316-a93913",
    "postNum": 2316,
    "entityId": "qe-a939139b5dc3",
    "canonical": "Pentagon",
@@ -548,7 +808,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0046-3821-a93913",
+   "actionId": "url-0067-3821-a93913",
    "postNum": 3821,
    "entityId": "qe-a939139b5dc3",
    "canonical": "Pentagon",
@@ -561,7 +821,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0047-4202-a93913",
+   "actionId": "url-0068-4202-a93913",
    "postNum": 4202,
    "entityId": "qe-a939139b5dc3",
    "canonical": "Pentagon",
@@ -574,7 +834,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0048-4415-a93913",
+   "actionId": "url-0069-4415-a93913",
    "postNum": 4415,
    "entityId": "qe-a939139b5dc3",
    "canonical": "Pentagon",
@@ -587,7 +847,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0049-1687-04b7fd",
+   "actionId": "url-0070-1687-04b7fd",
    "postNum": 1687,
    "entityId": "qe-04b7fdb16791",
    "canonical": "Amazon",
@@ -600,7 +860,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0050-2520-04b7fd",
+   "actionId": "url-0071-2520-04b7fd",
    "postNum": 2520,
    "entityId": "qe-04b7fdb16791",
    "canonical": "Amazon",
@@ -613,7 +873,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0051-1947-7f7a9c",
+   "actionId": "url-0072-1947-7f7a9c",
    "postNum": 1947,
    "entityId": "qe-7f7a9c8af686",
    "canonical": "Politico",
@@ -626,7 +886,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0052-2029-7f7a9c",
+   "actionId": "url-0073-2029-7f7a9c",
    "postNum": 2029,
    "entityId": "qe-7f7a9c8af686",
    "canonical": "Politico",
@@ -639,7 +899,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0053-2092-7f7a9c",
+   "actionId": "url-0074-2092-7f7a9c",
    "postNum": 2092,
    "entityId": "qe-7f7a9c8af686",
    "canonical": "Politico",
@@ -652,7 +912,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0054-2801-7f7a9c",
+   "actionId": "url-0075-2801-7f7a9c",
    "postNum": 2801,
    "entityId": "qe-7f7a9c8af686",
    "canonical": "Politico",
@@ -665,7 +925,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0055-2880-7f7a9c",
+   "actionId": "url-0076-2880-7f7a9c",
    "postNum": 2880,
    "entityId": "qe-7f7a9c8af686",
    "canonical": "Politico",
@@ -678,7 +938,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0056-2955-7f7a9c",
+   "actionId": "url-0077-2955-7f7a9c",
    "postNum": 2955,
    "entityId": "qe-7f7a9c8af686",
    "canonical": "Politico",
@@ -691,7 +951,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0057-3131-7f7a9c",
+   "actionId": "url-0078-3131-7f7a9c",
    "postNum": 3131,
    "entityId": "qe-7f7a9c8af686",
    "canonical": "Politico",
@@ -704,7 +964,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0058-3183-7f7a9c",
+   "actionId": "url-0079-3183-7f7a9c",
    "postNum": 3183,
    "entityId": "qe-7f7a9c8af686",
    "canonical": "Politico",
@@ -717,7 +977,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0059-4241-7f7a9c",
+   "actionId": "url-0080-4241-7f7a9c",
    "postNum": 4241,
    "entityId": "qe-7f7a9c8af686",
    "canonical": "Politico",
@@ -730,7 +990,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0060-4624-7f7a9c",
+   "actionId": "url-0081-4624-7f7a9c",
    "postNum": 4624,
    "entityId": "qe-7f7a9c8af686",
    "canonical": "Politico",
@@ -743,7 +1003,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0061-4038-f1113e",
+   "actionId": "url-0082-1546-f1113e",
+   "postNum": 1546,
+   "entityId": "qe-f1113eea7218",
+   "canonical": "Clapper",
+   "entries": [
+    {
+     "alias": "Clapper",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0083-4038-f1113e",
    "postNum": 4038,
    "entityId": "qe-f1113eea7218",
    "canonical": "Clapper",
@@ -756,7 +1029,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0062-3835-eaac93",
+   "actionId": "url-0084-3835-eaac93",
    "postNum": 3835,
    "entityId": "qe-eaac939b4aaa",
    "canonical": "Hunter Biden",
@@ -769,7 +1042,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0063-4293-eaac93",
+   "actionId": "url-0085-4293-eaac93",
    "postNum": 4293,
    "entityId": "qe-eaac939b4aaa",
    "canonical": "Hunter Biden",
@@ -782,7 +1055,33 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0064-4870-eaac93",
+   "actionId": "url-0086-4748-eaac93",
+   "postNum": 4748,
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
+   "entries": [
+    {
+     "alias": "Hunter Biden",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0087-4869-eaac93",
+   "postNum": 4869,
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
+   "entries": [
+    {
+     "alias": "Hunter Biden",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0088-4870-eaac93",
    "postNum": 4870,
    "entityId": "qe-eaac939b4aaa",
    "canonical": "Hunter Biden",
@@ -795,7 +1094,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0065-4893-eaac93",
+   "actionId": "url-0089-4888-eaac93",
+   "postNum": 4888,
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
+   "entries": [
+    {
+     "alias": "Hunter Biden",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0090-4893-eaac93",
    "postNum": 4893,
    "entityId": "qe-eaac939b4aaa",
    "canonical": "Hunter Biden",
@@ -808,7 +1120,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0066-4901-eaac93",
+   "actionId": "url-0091-4901-eaac93",
    "postNum": 4901,
    "entityId": "qe-eaac939b4aaa",
    "canonical": "Hunter Biden",
@@ -821,7 +1133,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0067-4922-eaac93",
+   "actionId": "url-0092-4922-eaac93",
    "postNum": 4922,
    "entityId": "qe-eaac939b4aaa",
    "canonical": "Hunter Biden",
@@ -834,7 +1146,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0068-4935-eaac93",
+   "actionId": "url-0093-4935-eaac93",
    "postNum": 4935,
    "entityId": "qe-eaac939b4aaa",
    "canonical": "Hunter Biden",
@@ -847,7 +1159,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0069-1657-36ba0b",
+   "actionId": "url-0094-1657-36ba0b",
    "postNum": 1657,
    "entityId": "qe-36ba0b6c5ee9",
    "canonical": "4chan",
@@ -860,7 +1172,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0070-1767-36ba0b",
+   "actionId": "url-0095-1767-36ba0b",
    "postNum": 1767,
    "entityId": "qe-36ba0b6c5ee9",
    "canonical": "4chan",
@@ -873,7 +1185,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0071-1041-b6b413",
+   "actionId": "url-0096-1041-b6b413",
    "postNum": 1041,
    "entityId": "qe-b6b4134166a1",
    "canonical": "US Military",
@@ -886,7 +1198,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0072-2765-2fbd83",
+   "actionId": "url-0097-2765-2fbd83",
    "postNum": 2765,
    "entityId": "qe-2fbd83ad1bd6",
    "canonical": "Graham",
@@ -899,7 +1211,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0073-4241-2fbd83",
+   "actionId": "url-0098-4241-2fbd83",
    "postNum": 4241,
    "entityId": "qe-2fbd83ad1bd6",
    "canonical": "Graham",
@@ -912,7 +1224,124 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0074-2464-ee9f96",
+   "actionId": "url-0099-4228-49b9cb",
+   "postNum": 4228,
+   "entityId": "qe-49b9cb60a8ac",
+   "canonical": "CBS_Herridge",
+   "entries": [
+    {
+     "alias": "CBS_Herridge",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0100-4280-49b9cb",
+   "postNum": 4280,
+   "entityId": "qe-49b9cb60a8ac",
+   "canonical": "CBS_Herridge",
+   "entries": [
+    {
+     "alias": "CBS_Herridge",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0101-4351-49b9cb",
+   "postNum": 4351,
+   "entityId": "qe-49b9cb60a8ac",
+   "canonical": "CBS_Herridge",
+   "entries": [
+    {
+     "alias": "CBS_Herridge",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0102-4422-49b9cb",
+   "postNum": 4422,
+   "entityId": "qe-49b9cb60a8ac",
+   "canonical": "CBS_Herridge",
+   "entries": [
+    {
+     "alias": "CBS_Herridge",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0103-4430-49b9cb",
+   "postNum": 4430,
+   "entityId": "qe-49b9cb60a8ac",
+   "canonical": "CBS_Herridge",
+   "entries": [
+    {
+     "alias": "CBS_Herridge",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0104-4600-49b9cb",
+   "postNum": 4600,
+   "entityId": "qe-49b9cb60a8ac",
+   "canonical": "CBS_Herridge",
+   "entries": [
+    {
+     "alias": "CBS_Herridge",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0105-4708-49b9cb",
+   "postNum": 4708,
+   "entityId": "qe-49b9cb60a8ac",
+   "canonical": "CBS_Herridge",
+   "entries": [
+    {
+     "alias": "CBS_Herridge",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0106-4852-49b9cb",
+   "postNum": 4852,
+   "entityId": "qe-49b9cb60a8ac",
+   "canonical": "CBS_Herridge",
+   "entries": [
+    {
+     "alias": "CBS_Herridge",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0107-4858-49b9cb",
+   "postNum": 4858,
+   "entityId": "qe-49b9cb60a8ac",
+   "canonical": "CBS_Herridge",
+   "entries": [
+    {
+     "alias": "CBS_Herridge",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0108-2464-ee9f96",
    "postNum": 2464,
    "entityId": "qe-ee9f963d9a91",
    "canonical": "Bing",
@@ -925,7 +1354,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0075-2521-ee9f96",
+   "actionId": "url-0109-2521-ee9f96",
    "postNum": 2521,
    "entityId": "qe-ee9f963d9a91",
    "canonical": "Bing",
@@ -938,7 +1367,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0076-2666-ee9f96",
+   "actionId": "url-0110-2666-ee9f96",
    "postNum": 2666,
    "entityId": "qe-ee9f963d9a91",
    "canonical": "Bing",
@@ -951,7 +1380,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0077-3003-ee9f96",
+   "actionId": "url-0111-3003-ee9f96",
    "postNum": 3003,
    "entityId": "qe-ee9f963d9a91",
    "canonical": "Bing",
@@ -964,7 +1393,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0078-3206-ee9f96",
+   "actionId": "url-0112-3206-ee9f96",
    "postNum": 3206,
    "entityId": "qe-ee9f963d9a91",
    "canonical": "Bing",
@@ -977,7 +1406,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0079-4103-ee9f96",
+   "actionId": "url-0113-4103-ee9f96",
    "postNum": 4103,
    "entityId": "qe-ee9f963d9a91",
    "canonical": "Bing",
@@ -990,7 +1419,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0080-4741-ee9f96",
+   "actionId": "url-0114-4741-ee9f96",
    "postNum": 4741,
    "entityId": "qe-ee9f963d9a91",
    "canonical": "Bing",
@@ -1003,7 +1432,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0081-2136-2cf9f6",
+   "actionId": "url-0115-2136-2cf9f6",
    "postNum": 2136,
    "entityId": "qe-2cf9f642e53c",
    "canonical": "MSNBC",
@@ -1016,7 +1445,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0082-2801-2cf9f6",
+   "actionId": "url-0116-2801-2cf9f6",
    "postNum": 2801,
    "entityId": "qe-2cf9f642e53c",
    "canonical": "MSNBC",
@@ -1029,7 +1458,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0083-3304-2cf9f6",
+   "actionId": "url-0117-3304-2cf9f6",
    "postNum": 3304,
    "entityId": "qe-2cf9f642e53c",
    "canonical": "MSNBC",
@@ -1042,7 +1471,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0084-2136-efc49f",
+   "actionId": "url-0118-4020-2cf9f6",
+   "postNum": 4020,
+   "entityId": "qe-2cf9f642e53c",
+   "canonical": "MSNBC",
+   "entries": [
+    {
+     "alias": "MSNBC",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0119-2136-efc49f",
    "postNum": 2136,
    "entityId": "qe-efc49f61600b",
    "canonical": "Hunter",
@@ -1055,7 +1497,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0085-4931-efc49f",
+   "actionId": "url-0120-4931-efc49f",
    "postNum": 4931,
    "entityId": "qe-efc49f61600b",
    "canonical": "Hunter",
@@ -1068,7 +1510,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0087-986-06775a",
+   "actionId": "url-0122-986-06775a",
    "postNum": 986,
    "entityId": "qe-06775a91bdde",
    "canonical": "Turley",
@@ -1081,7 +1523,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0088-1434-06775a",
+   "actionId": "url-0123-1434-06775a",
    "postNum": 1434,
    "entityId": "qe-06775a91bdde",
    "canonical": "Turley",
@@ -1094,7 +1536,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0089-1492-06775a",
+   "actionId": "url-0124-1492-06775a",
    "postNum": 1492,
    "entityId": "qe-06775a91bdde",
    "canonical": "Turley",
@@ -1107,7 +1549,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0090-1659-06775a",
+   "actionId": "url-0125-1659-06775a",
    "postNum": 1659,
    "entityId": "qe-06775a91bdde",
    "canonical": "Turley",
@@ -1120,7 +1562,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0091-1927-06775a",
+   "actionId": "url-0126-1927-06775a",
    "postNum": 1927,
    "entityId": "qe-06775a91bdde",
    "canonical": "Turley",
@@ -1133,7 +1575,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0092-1976-06775a",
+   "actionId": "url-0127-1976-06775a",
    "postNum": 1976,
    "entityId": "qe-06775a91bdde",
    "canonical": "Turley",
@@ -1146,7 +1588,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0093-2136-f92705",
+   "actionId": "url-0129-2136-f92705",
    "postNum": 2136,
    "entityId": "qe-f927052c1e12",
    "canonical": "Bill Clinton",
@@ -1159,7 +1601,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0094-1694-9432fc",
+   "actionId": "url-0130-1694-9432fc",
    "postNum": 1694,
    "entityId": "qe-9432fc4f7685",
    "canonical": "CNBC",
@@ -1172,7 +1614,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0095-1695-9432fc",
+   "actionId": "url-0131-1695-9432fc",
    "postNum": 1695,
    "entityId": "qe-9432fc4f7685",
    "canonical": "CNBC",
@@ -1185,7 +1627,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0096-1779-9432fc",
+   "actionId": "url-0132-1779-9432fc",
    "postNum": 1779,
    "entityId": "qe-9432fc4f7685",
    "canonical": "CNBC",
@@ -1198,7 +1640,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0097-1856-9432fc",
+   "actionId": "url-0133-1856-9432fc",
    "postNum": 1856,
    "entityId": "qe-9432fc4f7685",
    "canonical": "CNBC",
@@ -1211,7 +1653,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0098-2029-9432fc",
+   "actionId": "url-0134-2029-9432fc",
    "postNum": 2029,
    "entityId": "qe-9432fc4f7685",
    "canonical": "CNBC",
@@ -1224,7 +1666,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0099-3394-9432fc",
+   "actionId": "url-0135-3394-9432fc",
    "postNum": 3394,
    "entityId": "qe-9432fc4f7685",
    "canonical": "CNBC",
@@ -1237,7 +1679,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0100-2040-f0a4db",
+   "actionId": "url-0136-2040-f0a4db",
    "postNum": 2040,
    "entityId": "qe-f0a4db3b3a2d",
    "canonical": "Judicial Watch",
@@ -1250,7 +1692,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0101-2041-f0a4db",
+   "actionId": "url-0137-2041-f0a4db",
    "postNum": 2041,
    "entityId": "qe-f0a4db3b3a2d",
    "canonical": "Judicial Watch",
@@ -1263,7 +1705,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0102-2692-f0a4db",
+   "actionId": "url-0138-2692-f0a4db",
    "postNum": 2692,
    "entityId": "qe-f0a4db3b3a2d",
    "canonical": "Judicial Watch",
@@ -1276,7 +1718,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0103-3778-f0a4db",
+   "actionId": "url-0139-3778-f0a4db",
    "postNum": 3778,
    "entityId": "qe-f0a4db3b3a2d",
    "canonical": "Judicial Watch",
@@ -1289,7 +1731,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0104-1889-64d8dd",
+   "actionId": "url-0140-1889-64d8dd",
    "postNum": 1889,
    "entityId": "qe-64d8ddac64e7",
    "canonical": "Steele",
@@ -1302,7 +1744,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0105-2630-64d8dd",
+   "actionId": "url-0141-2630-64d8dd",
    "postNum": 2630,
    "entityId": "qe-64d8ddac64e7",
    "canonical": "Steele",
@@ -1315,7 +1757,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0106-1963-ac9129",
+   "actionId": "url-0142-1963-ac9129",
    "postNum": 1963,
    "entityId": "qe-ac912941a68f",
    "canonical": "Feinstein",
@@ -1328,7 +1770,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0107-4134-4ed12a",
+   "actionId": "url-0143-4134-4ed12a",
    "postNum": 4134,
    "entityId": "qe-4ed12a591de9",
    "canonical": "AC-130",
@@ -1341,7 +1783,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0108-4144-4ed12a",
+   "actionId": "url-0144-4144-4ed12a",
    "postNum": 4144,
    "entityId": "qe-4ed12a591de9",
    "canonical": "AC-130",
@@ -1354,7 +1796,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0109-4198-4ed12a",
+   "actionId": "url-0145-4198-4ed12a",
    "postNum": 4198,
    "entityId": "qe-4ed12a591de9",
    "canonical": "AC-130",
@@ -1367,7 +1809,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0110-4234-4ed12a",
+   "actionId": "url-0146-4234-4ed12a",
    "postNum": 4234,
    "entityId": "qe-4ed12a591de9",
    "canonical": "AC-130",
@@ -1380,7 +1822,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0111-4604-4ed12a",
+   "actionId": "url-0147-4604-4ed12a",
    "postNum": 4604,
    "entityId": "qe-4ed12a591de9",
    "canonical": "AC-130",
@@ -1393,7 +1835,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0112-4776-4ed12a",
+   "actionId": "url-0148-4776-4ed12a",
    "postNum": 4776,
    "entityId": "qe-4ed12a591de9",
    "canonical": "AC-130",
@@ -1406,7 +1848,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0113-4902-4ed12a",
+   "actionId": "url-0149-4902-4ed12a",
    "postNum": 4902,
    "entityId": "qe-4ed12a591de9",
    "canonical": "AC-130",
@@ -1419,7 +1861,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0114-1849-c5bbe8",
+   "actionId": "url-0150-1849-c5bbe8",
    "postNum": 1849,
    "entityId": "qe-c5bbe8dcde6b",
    "canonical": "Manafort",
@@ -1432,7 +1874,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0115-3048-28b3b6",
+   "actionId": "url-0151-3048-28b3b6",
    "postNum": 3048,
    "entityId": "qe-28b3b6e77b6f",
    "canonical": "Instagram",
@@ -1445,7 +1887,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0116-1248-5de212",
+   "actionId": "url-0152-1248-5de212",
    "postNum": 1248,
    "entityId": "qe-5de21273e3cd",
    "canonical": "Red Cross",
@@ -1458,7 +1900,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0117-3563-5de212",
+   "actionId": "url-0153-3563-5de212",
    "postNum": 3563,
    "entityId": "qe-5de21273e3cd",
    "canonical": "Red Cross",
@@ -1471,7 +1913,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0118-1772-9cfb9a",
+   "actionId": "url-0154-1772-9cfb9a",
    "postNum": 1772,
    "entityId": "qe-9cfb9a554b04",
    "canonical": "SDNY",
@@ -1484,7 +1926,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0119-3926-b7a2d1",
+   "actionId": "url-0155-3926-b7a2d1",
    "postNum": 3926,
    "entityId": "qe-b7a2d1390d69",
    "canonical": "CBS News",
@@ -1497,7 +1939,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0120-1826-76da18",
+   "actionId": "url-0156-1826-76da18",
    "postNum": 1826,
    "entityId": "qe-76da188497d6",
    "canonical": "Kavanaugh",
@@ -1510,7 +1952,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0121-2300-76da18",
+   "actionId": "url-0157-2300-76da18",
    "postNum": 2300,
    "entityId": "qe-76da188497d6",
    "canonical": "Kavanaugh",
@@ -1523,7 +1965,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0122-2325-76da18",
+   "actionId": "url-0158-2325-76da18",
    "postNum": 2325,
    "entityId": "qe-76da188497d6",
    "canonical": "Kavanaugh",
@@ -1536,7 +1978,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0123-2368-76da18",
+   "actionId": "url-0159-2368-76da18",
    "postNum": 2368,
    "entityId": "qe-76da188497d6",
    "canonical": "Kavanaugh",
@@ -1549,7 +1991,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0124-2372-76da18",
+   "actionId": "url-0160-2372-76da18",
    "postNum": 2372,
    "entityId": "qe-76da188497d6",
    "canonical": "Kavanaugh",
@@ -1562,7 +2004,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0125-1856-0e242c",
+   "actionId": "url-0161-1856-0e242c",
    "postNum": 1856,
    "entityId": "qe-0e242c606972",
    "canonical": "Newsweek",
@@ -1575,7 +2017,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0126-2029-0e242c",
+   "actionId": "url-0162-2029-0e242c",
    "postNum": 2029,
    "entityId": "qe-0e242c606972",
    "canonical": "Newsweek",
@@ -1588,7 +2030,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0127-2171-0e242c",
+   "actionId": "url-0163-2171-0e242c",
    "postNum": 2171,
    "entityId": "qe-0e242c606972",
    "canonical": "Newsweek",
@@ -1601,7 +2043,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0128-2801-0e242c",
+   "actionId": "url-0164-2801-0e242c",
    "postNum": 2801,
    "entityId": "qe-0e242c606972",
    "canonical": "Newsweek",
@@ -1614,7 +2056,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0129-4669-0e242c",
+   "actionId": "url-0165-4669-0e242c",
    "postNum": 4669,
    "entityId": "qe-0e242c606972",
    "canonical": "Newsweek",
@@ -1627,7 +2069,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0130-2585-ea78df",
+   "actionId": "url-0166-2585-ea78df",
    "postNum": 2585,
    "entityId": "qe-ea78df3ba4e8",
    "canonical": "Hannity",
@@ -1640,7 +2082,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0131-3764-ea78df",
+   "actionId": "url-0167-3764-ea78df",
    "postNum": 3764,
    "entityId": "qe-ea78df3ba4e8",
    "canonical": "Hannity",
@@ -1653,7 +2095,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0132-2152-a4942c",
+   "actionId": "url-0168-2152-a4942c",
    "postNum": 2152,
    "entityId": "qe-a4942c7227ca",
    "canonical": "Satan",
@@ -1666,7 +2108,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0133-1242-b77544",
+   "actionId": "url-0169-1242-b77544",
    "postNum": 1242,
    "entityId": "qe-b77544943b7f",
    "canonical": "Armenia",
@@ -1679,7 +2121,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0134-4334-d0f800",
+   "actionId": "url-0170-4334-d0f800",
    "postNum": 4334,
    "entityId": "qe-d0f800159d05",
    "canonical": "Italy",
@@ -1692,7 +2134,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0135-1750-033029",
+   "actionId": "url-0171-1750-033029",
    "postNum": 1750,
    "entityId": "qe-033029820028",
    "canonical": "Apple",
@@ -1705,7 +2147,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0136-1663-3c094d",
+   "actionId": "url-0172-1663-3c094d",
    "postNum": 1663,
    "entityId": "qe-3c094d9fe7eb",
    "canonical": "Lynch",
@@ -1718,7 +2160,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0137-1762-acebf6",
+   "actionId": "url-0173-1762-acebf6",
    "postNum": 1762,
    "entityId": "qe-acebf6618637",
    "canonical": "Forbes",
@@ -1731,7 +2173,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0138-2854-acebf6",
+   "actionId": "url-0174-2854-acebf6",
    "postNum": 2854,
    "entityId": "qe-acebf6618637",
    "canonical": "Forbes",
@@ -1744,7 +2186,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0139-4225-acebf6",
+   "actionId": "url-0175-4225-acebf6",
    "postNum": 4225,
    "entityId": "qe-acebf6618637",
    "canonical": "Forbes",
@@ -1757,7 +2199,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0140-4313-acebf6",
+   "actionId": "url-0176-4313-acebf6",
    "postNum": 4313,
    "entityId": "qe-acebf6618637",
    "canonical": "Forbes",
@@ -1770,7 +2212,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0141-4337-acebf6",
+   "actionId": "url-0177-4337-acebf6",
    "postNum": 4337,
    "entityId": "qe-acebf6618637",
    "canonical": "Forbes",
@@ -1783,7 +2225,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0142-1797-a91226",
+   "actionId": "url-0178-1797-a91226",
    "postNum": 1797,
    "entityId": "qe-a91226e14421",
    "canonical": "Bloomberg",
@@ -1796,7 +2238,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0143-2136-a91226",
+   "actionId": "url-0179-2136-a91226",
    "postNum": 2136,
    "entityId": "qe-a91226e14421",
    "canonical": "Bloomberg",
@@ -1809,7 +2251,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0144-2171-a91226",
+   "actionId": "url-0180-2171-a91226",
    "postNum": 2171,
    "entityId": "qe-a91226e14421",
    "canonical": "Bloomberg",
@@ -1822,7 +2264,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0145-4202-a91226",
+   "actionId": "url-0181-4202-a91226",
    "postNum": 4202,
    "entityId": "qe-a91226e14421",
    "canonical": "Bloomberg",
@@ -1835,7 +2277,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0146-4285-a91226",
+   "actionId": "url-0182-4285-a91226",
    "postNum": 4285,
    "entityId": "qe-a91226e14421",
    "canonical": "Bloomberg",
@@ -1848,7 +2290,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0147-1939-5363ea",
+   "actionId": "url-0183-1939-5363ea",
    "postNum": 1939,
    "entityId": "qe-5363ead58ce5",
    "canonical": "GCHQ",
@@ -1861,7 +2303,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0148-3327-5363ea",
+   "actionId": "url-0184-3327-5363ea",
    "postNum": 3327,
    "entityId": "qe-5363ead58ce5",
    "canonical": "GCHQ",
@@ -1874,7 +2316,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0149-3339-5363ea",
+   "actionId": "url-0185-3339-5363ea",
    "postNum": 3339,
    "entityId": "qe-5363ead58ce5",
    "canonical": "GCHQ",
@@ -1887,7 +2329,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0150-3699-5363ea",
+   "actionId": "url-0186-3699-5363ea",
    "postNum": 3699,
    "entityId": "qe-5363ead58ce5",
    "canonical": "GCHQ",
@@ -1900,7 +2342,33 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0151-2372-ecc417",
+   "actionId": "url-0187-4668-37df28",
+   "postNum": 4668,
+   "entityId": "qe-37df287cafa6",
+   "canonical": "Oregon",
+   "entries": [
+    {
+     "alias": "Oregon",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0188-4699-37df28",
+   "postNum": 4699,
+   "entityId": "qe-37df287cafa6",
+   "canonical": "Oregon",
+   "entries": [
+    {
+     "alias": "Oregon",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0189-2372-ecc417",
    "postNum": 2372,
    "entityId": "qe-ecc41732dcbc",
    "canonical": "Dianne Feinstein",
@@ -1913,7 +2381,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0152-3634-ecc417",
+   "actionId": "url-0190-3634-ecc417",
    "postNum": 3634,
    "entityId": "qe-ecc41732dcbc",
    "canonical": "Dianne Feinstein",
@@ -1926,7 +2394,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0153-4123-ecc417",
+   "actionId": "url-0191-4123-ecc417",
    "postNum": 4123,
    "entityId": "qe-ecc41732dcbc",
    "canonical": "Dianne Feinstein",
@@ -1939,7 +2407,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0154-3738-c8330f",
+   "actionId": "url-0192-3738-c8330f",
    "postNum": 3738,
    "entityId": "qe-c8330fb2eecc",
    "canonical": "Rogers",
@@ -1952,7 +2420,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0155-3739-c8330f",
+   "actionId": "url-0193-3739-c8330f",
    "postNum": 3739,
    "entityId": "qe-c8330fb2eecc",
    "canonical": "Rogers",
@@ -1965,7 +2433,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0156-3202-d58d44",
+   "actionId": "url-0194-3202-d58d44",
    "postNum": 3202,
    "entityId": "qe-d58d44ebad1f",
    "canonical": "Jussie Smollett",
@@ -1978,7 +2446,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0157-3204-d58d44",
+   "actionId": "url-0195-3204-d58d44",
    "postNum": 3204,
    "entityId": "qe-d58d44ebad1f",
    "canonical": "Jussie Smollett",
@@ -1991,7 +2459,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0158-2473-b0aa2f",
+   "actionId": "url-0196-2473-b0aa2f",
    "postNum": 2473,
    "entityId": "qe-b0aa2fac028c",
    "canonical": "United States Marine Corps",
@@ -2004,7 +2472,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0159-1125-1cc8ed",
+   "actionId": "url-0197-1125-1cc8ed",
    "postNum": 1125,
    "entityId": "qe-1cc8ed8d66ea",
    "canonical": "Ezra Cohen-Watnick",
@@ -2017,7 +2485,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0160-2058-1cc8ed",
+   "actionId": "url-0198-2058-1cc8ed",
    "postNum": 2058,
    "entityId": "qe-1cc8ed8d66ea",
    "canonical": "Ezra Cohen-Watnick",
@@ -2030,7 +2498,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0161-3634-d988b6",
+   "actionId": "url-0199-3634-d988b6",
    "postNum": 3634,
    "entityId": "qe-d988b60f113c",
    "canonical": "Qatar",
@@ -2043,7 +2511,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0162-1779-ac1d57",
+   "actionId": "url-0200-1779-ac1d57",
    "postNum": 1779,
    "entityId": "qe-ac1d57f21cc2",
    "canonical": "Special Counsel",
@@ -2056,7 +2524,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0163-1976-ac1d57",
+   "actionId": "url-0201-1976-ac1d57",
    "postNum": 1976,
    "entityId": "qe-ac1d57f21cc2",
    "canonical": "Special Counsel",
@@ -2069,7 +2537,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0164-972-115c7d",
+   "actionId": "url-0202-972-115c7d",
    "postNum": 972,
    "entityId": "qe-115c7d9b5b38",
    "canonical": "NXIVM",
@@ -2082,7 +2550,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0165-2108-5209a6",
+   "actionId": "url-0203-1381-5209a6",
+   "postNum": 1381,
+   "entityId": "qe-5209a6bbbd49",
+   "canonical": "Jim Jordan",
+   "entries": [
+    {
+     "alias": "Jim Jordan",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0204-2108-5209a6",
    "postNum": 2108,
    "entityId": "qe-5209a6bbbd49",
    "canonical": "Jim Jordan",
@@ -2095,7 +2576,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0166-145-039763",
+   "actionId": "url-0205-4539-5209a6",
+   "postNum": 4539,
+   "entityId": "qe-5209a6bbbd49",
+   "canonical": "Jim Jordan",
+   "entries": [
+    {
+     "alias": "Jim Jordan",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0206-145-039763",
    "postNum": 145,
    "entityId": "qe-039763983a74",
    "canonical": "Shadow Brokers",
@@ -2108,7 +2602,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0167-146-039763",
+   "actionId": "url-0207-146-039763",
    "postNum": 146,
    "entityId": "qe-039763983a74",
    "canonical": "Shadow Brokers",
@@ -2121,7 +2615,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0168-3021-039763",
+   "actionId": "url-0208-3021-039763",
    "postNum": 3021,
    "entityId": "qe-039763983a74",
    "canonical": "Shadow Brokers",
@@ -2134,7 +2628,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0169-2097-fc9c7f",
+   "actionId": "url-0209-2097-fc9c7f",
    "postNum": 2097,
    "entityId": "qe-fc9c7f1b849a",
    "canonical": "Goodlatte",
@@ -2147,7 +2641,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0170-4307-fdf0e2",
+   "actionId": "url-0210-3898-c0facb",
+   "postNum": 3898,
+   "entityId": "qe-c0facb229e6f",
+   "canonical": "Watergate",
+   "entries": [
+    {
+     "alias": "Watergate",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0211-4307-fdf0e2",
    "postNum": 4307,
    "entityId": "qe-fdf0e237f0c5",
    "canonical": "Pennsylvania",
@@ -2160,7 +2667,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0171-2079-b018ee",
+   "actionId": "url-0212-2079-b018ee",
    "postNum": 2079,
    "entityId": "qe-b018ee884c25",
    "canonical": "Chicago",
@@ -2173,7 +2680,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0172-4344-5827dd",
+   "actionId": "url-0213-4344-5827dd",
    "postNum": 4344,
    "entityId": "qe-5827dd8740d9",
    "canonical": "Minnesota",
@@ -2186,7 +2693,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0173-4416-5827dd",
+   "actionId": "url-0214-4416-5827dd",
    "postNum": 4416,
    "entityId": "qe-5827dd8740d9",
    "canonical": "Minnesota",
@@ -2199,7 +2706,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0174-2326-6bd82f",
+   "actionId": "url-0215-2326-6bd82f",
    "postNum": 2326,
    "entityId": "qe-6bd82f257cfb",
    "canonical": "Baker",
@@ -2212,7 +2719,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0175-2252-37306d",
+   "actionId": "url-0216-2252-37306d",
    "postNum": 2252,
    "entityId": "qe-37306dd886d7",
    "canonical": "Breaking911",
@@ -2225,7 +2732,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0176-2325-37306d",
+   "actionId": "url-0217-2325-37306d",
    "postNum": 2325,
    "entityId": "qe-37306dd886d7",
    "canonical": "Breaking911",
@@ -2238,7 +2745,33 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0177-2579-38fecf",
+   "actionId": "url-0218-2656-37306d",
+   "postNum": 2656,
+   "entityId": "qe-37306dd886d7",
+   "canonical": "Breaking911",
+   "entries": [
+    {
+     "alias": "Breaking911",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0219-4219-37306d",
+   "postNum": 4219,
+   "entityId": "qe-37306dd886d7",
+   "canonical": "Breaking911",
+   "entries": [
+    {
+     "alias": "Breaking911",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0220-2579-38fecf",
    "postNum": 2579,
    "entityId": "qe-38fecff2478b",
    "canonical": "Schumer",
@@ -2251,7 +2784,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0178-4169-38fecf",
+   "actionId": "url-0221-4169-38fecf",
    "postNum": 4169,
    "entityId": "qe-38fecff2478b",
    "canonical": "Schumer",
@@ -2264,7 +2797,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0179-2297-edce41",
+   "actionId": "url-0222-2297-edce41",
    "postNum": 2297,
    "entityId": "qe-edce41b4a3b0",
    "canonical": "C-SPAN",
@@ -2277,7 +2810,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0180-2359-edce41",
+   "actionId": "url-0223-2359-edce41",
    "postNum": 2359,
    "entityId": "qe-edce41b4a3b0",
    "canonical": "C-SPAN",
@@ -2290,7 +2823,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0181-2360-edce41",
+   "actionId": "url-0224-2360-edce41",
    "postNum": 2360,
    "entityId": "qe-edce41b4a3b0",
    "canonical": "C-SPAN",
@@ -2303,7 +2836,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0182-3195-edce41",
+   "actionId": "url-0225-3195-edce41",
    "postNum": 3195,
    "entityId": "qe-edce41b4a3b0",
    "canonical": "C-SPAN",
@@ -2316,7 +2849,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0183-4030-8cf10d",
+   "actionId": "url-0226-4030-8cf10d",
    "postNum": 4030,
    "entityId": "qe-8cf10da6c277",
    "canonical": "Valerie Jarrett",
@@ -2329,7 +2862,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0184-2584-dbab50",
+   "actionId": "url-0227-2584-dbab50",
    "postNum": 2584,
    "entityId": "qe-dbab506adc18",
    "canonical": "Mark Levin",
@@ -2342,7 +2875,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0185-4035-dbab50",
+   "actionId": "url-0228-4035-dbab50",
    "postNum": 4035,
    "entityId": "qe-dbab506adc18",
    "canonical": "Mark Levin",
@@ -2355,7 +2888,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0186-4653-75f412",
+   "actionId": "url-0229-3962-74037c",
+   "postNum": 3962,
+   "entityId": "qe-74037c4ff506",
+   "canonical": "Virginia",
+   "entries": [
+    {
+     "alias": "Virginia",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0230-4653-75f412",
    "postNum": 4653,
    "entityId": "qe-75f4124451c6",
    "canonical": "Nazi",
@@ -2368,7 +2914,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0187-1641-583384",
+   "actionId": "url-0231-1641-583384",
    "postNum": 1641,
    "entityId": "qe-583384b861a0",
    "canonical": "HuffPost",
@@ -2381,7 +2927,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0188-1684-583384",
+   "actionId": "url-0232-1684-583384",
    "postNum": 1684,
    "entityId": "qe-583384b861a0",
    "canonical": "HuffPost",
@@ -2394,7 +2940,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0190-2630-9bee87",
+   "actionId": "url-0234-2801-583384",
+   "postNum": 2801,
+   "entityId": "qe-583384b861a0",
+   "canonical": "HuffPost",
+   "entries": [
+    {
+     "alias": "HuffPost",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0235-2630-9bee87",
    "postNum": 2630,
    "entityId": "qe-9bee875e94c2",
    "canonical": "BuzzFeed",
@@ -2407,7 +2966,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0191-2801-9bee87",
+   "actionId": "url-0236-2801-9bee87",
    "postNum": 2801,
    "entityId": "qe-9bee875e94c2",
    "canonical": "BuzzFeed",
@@ -2420,7 +2979,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0192-4298-285e5b",
+   "actionId": "url-0237-4298-285e5b",
    "postNum": 4298,
    "entityId": "qe-285e5ba8cc6f",
    "canonical": "Office of the Director of National Intelligence",
@@ -2433,7 +2992,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0193-2399-b9446a",
+   "actionId": "url-0238-2399-b9446a",
    "postNum": 2399,
    "entityId": "qe-b9446aa2ab6f",
    "canonical": "Cory Booker",
@@ -2446,7 +3005,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0194-2768-b9446a",
+   "actionId": "url-0239-2768-b9446a",
    "postNum": 2768,
    "entityId": "qe-b9446aa2ab6f",
    "canonical": "Cory Booker",
@@ -2459,7 +3018,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0195-2152-994003",
+   "actionId": "url-0240-2152-994003",
    "postNum": 2152,
    "entityId": "qe-99400387b11e",
    "canonical": "Vatican",
@@ -2472,7 +3031,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0196-1061-bb9150",
+   "actionId": "url-0241-2894-994003",
+   "postNum": 2894,
+   "entityId": "qe-99400387b11e",
+   "canonical": "Vatican",
+   "entries": [
+    {
+     "alias": "Vatican",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0242-1061-bb9150",
    "postNum": 1061,
    "entityId": "qe-bb91501abc09",
    "canonical": "Roseanne Barr",
@@ -2485,7 +3057,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0197-1361-bb9150",
+   "actionId": "url-0243-1361-bb9150",
    "postNum": 1361,
    "entityId": "qe-bb91501abc09",
    "canonical": "Roseanne Barr",
@@ -2498,7 +3070,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0198-1910-3c60a6",
+   "actionId": "url-0244-1910-3c60a6",
    "postNum": 1910,
    "entityId": "qe-3c60a6420b68",
    "canonical": "Army",
@@ -2511,7 +3083,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0199-4315-253a1d",
+   "actionId": "url-0245-4315-253a1d",
    "postNum": 4315,
    "entityId": "qe-253a1db2cbdb",
    "canonical": "India",
@@ -2524,7 +3096,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0200-4645-253a1d",
+   "actionId": "url-0246-4645-253a1d",
    "postNum": 4645,
    "entityId": "qe-253a1db2cbdb",
    "canonical": "India",
@@ -2537,7 +3109,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0201-1860-0524b6",
+   "actionId": "url-0247-1860-0524b6",
    "postNum": 1860,
    "entityId": "qe-0524b6d6ca03",
    "canonical": "Jordan",
@@ -2550,7 +3122,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0202-3049-0524b6",
+   "actionId": "url-0248-3049-0524b6",
    "postNum": 3049,
    "entityId": "qe-0524b6d6ca03",
    "canonical": "Jordan",
@@ -2563,7 +3135,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0203-4900-a54ddc",
+   "actionId": "url-0249-4900-a54ddc",
    "postNum": 4900,
    "entityId": "qe-a54ddc12fea9",
    "canonical": "New York Police Department",
@@ -2576,7 +3148,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0204-1657-922bad",
+   "actionId": "url-0250-1657-922bad",
    "postNum": 1657,
    "entityId": "qe-922bad71432c",
    "canonical": "Snopes",
@@ -2589,7 +3161,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0205-2801-922bad",
+   "actionId": "url-0251-2801-922bad",
    "postNum": 2801,
    "entityId": "qe-922bad71432c",
    "canonical": "Snopes",
@@ -2602,7 +3174,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0206-3049-e428d1",
+   "actionId": "url-0252-1717-e428d1",
+   "postNum": 1717,
+   "entityId": "qe-e428d152c1f7",
+   "canonical": "Meadows",
+   "entries": [
+    {
+     "alias": "Meadows",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0253-3049-e428d1",
    "postNum": 3049,
    "entityId": "qe-e428d152c1f7",
    "canonical": "Meadows",
@@ -2615,7 +3200,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0207-4594-e428d1",
+   "actionId": "url-0254-4594-e428d1",
    "postNum": 4594,
    "entityId": "qe-e428d152c1f7",
    "canonical": "Meadows",
@@ -2628,7 +3213,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0208-1797-56c234",
+   "actionId": "url-0255-1797-56c234",
    "postNum": 1797,
    "entityId": "qe-56c2341792be",
    "canonical": "Fortune",
@@ -2641,7 +3226,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0209-1790-be8003",
+   "actionId": "url-0256-2801-56c234",
+   "postNum": 2801,
+   "entityId": "qe-56c2341792be",
+   "canonical": "Fortune",
+   "entries": [
+    {
+     "alias": "Fortune",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0257-1790-be8003",
    "postNum": 1790,
    "entityId": "qe-be80032d230b",
    "canonical": "Axios",
@@ -2654,7 +3252,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0210-2029-be8003",
+   "actionId": "url-0258-2029-be8003",
    "postNum": 2029,
    "entityId": "qe-be80032d230b",
    "canonical": "Axios",
@@ -2667,7 +3265,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0211-2654-be8003",
+   "actionId": "url-0259-2654-be8003",
    "postNum": 2654,
    "entityId": "qe-be80032d230b",
    "canonical": "Axios",
@@ -2680,7 +3278,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0212-1842-2d7f16",
+   "actionId": "url-0260-1842-2d7f16",
    "postNum": 1842,
    "entityId": "qe-2d7f16a051df",
    "canonical": "Assange",
@@ -2693,7 +3291,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0213-3764-2d7f16",
+   "actionId": "url-0261-3764-2d7f16",
    "postNum": 3764,
    "entityId": "qe-2d7f16a051df",
    "canonical": "Assange",
@@ -2706,7 +3304,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0214-1945-7b41ae",
+   "actionId": "url-0262-1945-7b41ae",
    "postNum": 1945,
    "entityId": "qe-7b41aeefc50d",
    "canonical": "Bill Maher",
@@ -2719,7 +3317,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0215-1846-2597f1",
+   "actionId": "url-0263-1846-2597f1",
    "postNum": 1846,
    "entityId": "qe-2597f1840652",
    "canonical": "Seattle",
@@ -2732,7 +3330,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0216-1879-4f40a8",
+   "actionId": "url-0264-1879-4f40a8",
    "postNum": 1879,
    "entityId": "qe-4f40a88dc932",
    "canonical": "Catholic Church",
@@ -2745,7 +3343,46 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0217-2184-856c6e",
+   "actionId": "url-0265-3842-127c98",
+   "postNum": 3842,
+   "entityId": "qe-127c98ea4da1",
+   "canonical": "Harvard",
+   "entries": [
+    {
+     "alias": "Harvard",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0266-2037-c00874",
+   "postNum": 2037,
+   "entityId": "qe-c00874e212d3",
+   "canonical": "Gavin Newsom",
+   "entries": [
+    {
+     "alias": "Gavin Newsom",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0267-4546-c00874",
+   "postNum": 4546,
+   "entityId": "qe-c00874e212d3",
+   "canonical": "Gavin Newsom",
+   "entries": [
+    {
+     "alias": "Gavin Newsom",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0268-2184-856c6e",
    "postNum": 2184,
    "entityId": "qe-856c6e0d3d9c",
    "canonical": "Wired",
@@ -2758,7 +3395,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0218-2801-856c6e",
+   "actionId": "url-0269-2801-856c6e",
    "postNum": 2801,
    "entityId": "qe-856c6e0d3d9c",
    "canonical": "Wired",
@@ -2771,7 +3408,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0219-2184-7974d5",
+   "actionId": "url-0270-2184-7974d5",
    "postNum": 2184,
    "entityId": "qe-7974d528273b",
    "canonical": "MarketWatch",
@@ -2784,7 +3421,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0220-2379-7974d5",
+   "actionId": "url-0271-2379-7974d5",
    "postNum": 2379,
    "entityId": "qe-7974d528273b",
    "canonical": "MarketWatch",
@@ -2797,7 +3434,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0221-3066-7974d5",
+   "actionId": "url-0272-3066-7974d5",
    "postNum": 3066,
    "entityId": "qe-7974d528273b",
    "canonical": "MarketWatch",
@@ -2810,7 +3447,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0222-2488-63891e",
+   "actionId": "url-0273-2899-ef228a",
+   "postNum": 2899,
+   "entityId": "qe-ef228ad64e1c",
+   "canonical": "Murkowski",
+   "entries": [
+    {
+     "alias": "Murkowski",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0274-2488-63891e",
    "postNum": 2488,
    "entityId": "qe-63891e8fa021",
    "canonical": "Ratcliffe",
@@ -2823,7 +3473,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0223-4304-63891e",
+   "actionId": "url-0275-4304-63891e",
    "postNum": 4304,
    "entityId": "qe-63891e8fa021",
    "canonical": "Ratcliffe",
@@ -2836,7 +3486,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0224-2659-108cb1",
+   "actionId": "url-0276-2659-108cb1",
    "postNum": 2659,
    "entityId": "qe-108cb1178105",
    "canonical": "RealClearPolitics",
@@ -2849,7 +3499,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0225-4035-108cb1",
+   "actionId": "url-0277-4035-108cb1",
    "postNum": 4035,
    "entityId": "qe-108cb1178105",
    "canonical": "RealClearPolitics",
@@ -2862,7 +3512,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0226-4215-108cb1",
+   "actionId": "url-0278-4215-108cb1",
    "postNum": 4215,
    "entityId": "qe-108cb1178105",
    "canonical": "RealClearPolitics",
@@ -2875,7 +3525,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0227-4781-297b73",
+   "actionId": "url-0279-4781-297b73",
    "postNum": 4781,
    "entityId": "qe-297b738014e9",
    "canonical": "Kamala Harris",
@@ -2888,7 +3538,46 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0228-3237-d218fa",
+   "actionId": "url-0280-2771-7a2e37",
+   "postNum": 2771,
+   "entityId": "qe-7a2e37ed6dca",
+   "canonical": "TIME",
+   "entries": [
+    {
+     "alias": "TIME",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0281-2801-7a2e37",
+   "postNum": 2801,
+   "entityId": "qe-7a2e37ed6dca",
+   "canonical": "TIME",
+   "entries": [
+    {
+     "alias": "TIME",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0282-4942-7a2e37",
+   "postNum": 4942,
+   "entityId": "qe-7a2e37ed6dca",
+   "canonical": "TIME",
+   "entries": [
+    {
+     "alias": "TIME",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0283-3237-d218fa",
    "postNum": 3237,
    "entityId": "qe-d218fa01e930",
    "canonical": "Smollett",
@@ -2901,7 +3590,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0229-2935-a60008",
+   "actionId": "url-0284-2935-a60008",
    "postNum": 2935,
    "entityId": "qe-a60008522e27",
    "canonical": "Nadler",
@@ -2914,7 +3603,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0230-3182-1f0205",
+   "actionId": "url-0285-3182-1f0205",
    "postNum": 3182,
    "entityId": "qe-1f02057026db",
    "canonical": "OpenSecrets",
@@ -2927,7 +3616,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0231-3222-1f0205",
+   "actionId": "url-0286-3222-1f0205",
    "postNum": 3222,
    "entityId": "qe-1f02057026db",
    "canonical": "OpenSecrets",
@@ -2940,7 +3629,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0232-4555-1f0205",
+   "actionId": "url-0287-4555-1f0205",
    "postNum": 4555,
    "entityId": "qe-1f02057026db",
    "canonical": "OpenSecrets",
@@ -2953,7 +3642,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0233-3202-704691",
+   "actionId": "url-0288-3202-704691",
    "postNum": 3202,
    "entityId": "qe-7046916579e8",
    "canonical": "Kim Foxx",
@@ -2966,7 +3655,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0234-3204-704691",
+   "actionId": "url-0289-3204-704691",
    "postNum": 3204,
    "entityId": "qe-7046916579e8",
    "canonical": "Kim Foxx",
@@ -2979,7 +3668,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0235-3851-9712d2",
+   "actionId": "url-0290-3851-9712d2",
    "postNum": 3851,
    "entityId": "qe-9712d2fe7d80",
    "canonical": "Vindman",
@@ -2992,7 +3681,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0236-4088-a5a0db",
+   "actionId": "url-0291-4088-a5a0db",
    "postNum": 4088,
    "entityId": "qe-a5a0dbd8a4ac",
    "canonical": "Illinois",
@@ -3005,7 +3694,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0237-4314-3fbdea",
+   "actionId": "url-0292-4314-3fbdea",
    "postNum": 4314,
    "entityId": "qe-3fbdea4219ae",
    "canonical": "Europe",
@@ -3018,7 +3707,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0238-4863-3fbdea",
+   "actionId": "url-0293-4863-3fbdea",
    "postNum": 4863,
    "entityId": "qe-3fbdea4219ae",
    "canonical": "Europe",
@@ -3031,7 +3720,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0239-4415-8aecb8",
+   "actionId": "url-0294-4415-8aecb8",
    "postNum": 4415,
    "entityId": "qe-8aecb81bf390",
    "canonical": "George Floyd",
@@ -3044,7 +3733,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0240-732-f24eb2",
+   "actionId": "url-0295-732-f24eb2",
    "postNum": 732,
    "entityId": "qe-f24eb2f20fbc",
    "canonical": "McCain Institute",
@@ -3057,7 +3746,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0241-1797-e872cf",
+   "actionId": "url-0296-1797-e872cf",
    "postNum": 1797,
    "entityId": "qe-e872cf85bc4b",
    "canonical": "JFK Jr.",
@@ -3070,7 +3759,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0242-1091-fe6f52",
+   "actionId": "url-0297-1091-fe6f52",
    "postNum": 1091,
    "entityId": "qe-fe6f527d014e",
    "canonical": "Blackwater",
@@ -3083,7 +3772,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0243-3647-20c73a",
+   "actionId": "url-0298-3647-20c73a",
    "postNum": 3647,
    "entityId": "qe-20c73a0c96b1",
    "canonical": "US House",
@@ -3096,7 +3785,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0244-1163-7cc41b",
+   "actionId": "url-0299-1163-7cc41b",
    "postNum": 1163,
    "entityId": "qe-7cc41b234cd9",
    "canonical": "Ginsburg",
@@ -3109,7 +3798,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0245-2666-7cc41b",
+   "actionId": "url-0300-2666-7cc41b",
    "postNum": 2666,
    "entityId": "qe-7cc41b234cd9",
    "canonical": "Ginsburg",
@@ -3122,7 +3811,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0246-1261-8b2040",
+   "actionId": "url-0301-1261-8b2040",
    "postNum": 1261,
    "entityId": "qe-8b204011d055",
    "canonical": "Toronto",
@@ -3135,7 +3824,33 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0247-1360-5c574e",
+   "actionId": "url-0302-4503-8b2040",
+   "postNum": 4503,
+   "entityId": "qe-8b204011d055",
+   "canonical": "Toronto",
+   "entries": [
+    {
+     "alias": "Toronto",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0303-4290-2b7be3",
+   "postNum": 4290,
+   "entityId": "qe-2b7be3ed1577",
+   "canonical": "Costa Rica",
+   "entries": [
+    {
+     "alias": "Costa Rica",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0304-1360-5c574e",
    "postNum": 1360,
    "entityId": "qe-5c574e817b4d",
    "canonical": "Scribd",
@@ -3148,7 +3863,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0248-3316-5c574e",
+   "actionId": "url-0305-3316-5c574e",
    "postNum": 3316,
    "entityId": "qe-5c574e817b4d",
    "canonical": "Scribd",
@@ -3161,7 +3876,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0249-4900-5965f1",
+   "actionId": "url-0306-1369-5965f1",
+   "postNum": 1369,
+   "entityId": "qe-5965f1c7f28a",
+   "canonical": "Erik Prince",
+   "entries": [
+    {
+     "alias": "Erik Prince",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0307-4900-5965f1",
    "postNum": 4900,
    "entityId": "qe-5965f1c7f28a",
    "canonical": "Erik Prince",
@@ -3174,7 +3902,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0250-2807-539cd1",
+   "actionId": "url-0308-4888-a5e947",
+   "postNum": 4888,
+   "entityId": "qe-a5e94709bbd0",
+   "canonical": "Kazakhstan",
+   "entries": [
+    {
+     "alias": "Kazakhstan",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0309-2807-539cd1",
    "postNum": 2807,
    "entityId": "qe-539cd18daf2c",
    "canonical": "Lebanon",
@@ -3187,7 +3928,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0251-4115-f10a03",
+   "actionId": "url-0310-4115-f10a03",
    "postNum": 4115,
    "entityId": "qe-f10a038188ad",
    "canonical": "Tanzania",
@@ -3200,7 +3941,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0252-3390-970c7d",
+   "actionId": "url-0311-3390-970c7d",
    "postNum": 3390,
    "entityId": "qe-970c7ddbc350",
    "canonical": "Turkey",
@@ -3213,7 +3954,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0253-3499-d4e6c4",
+   "actionId": "url-0312-3499-d4e6c4",
    "postNum": 3499,
    "entityId": "qe-d4e6c41f1913",
    "canonical": "Disney",
@@ -3226,7 +3967,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0254-3421-ce8418",
+   "actionId": "url-0313-3421-ce8418",
    "postNum": 3421,
    "entityId": "qe-ce841834cb66",
    "canonical": "Acosta",
@@ -3239,7 +3980,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0255-1560-6b91c2",
+   "actionId": "url-0314-1560-6b91c2",
    "postNum": 1560,
    "entityId": "qe-6b91c2e9c140",
    "canonical": "Vice",
@@ -3252,7 +3993,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0256-1797-a67f31",
+   "actionId": "url-0315-2801-6b91c2",
+   "postNum": 2801,
+   "entityId": "qe-6b91c2e9c140",
+   "canonical": "Vice",
+   "entries": [
+    {
+     "alias": "Vice",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0316-1797-a67f31",
    "postNum": 1797,
    "entityId": "qe-a67f315bc9ac",
    "canonical": "8chan",
@@ -3265,7 +4019,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0257-1750-6eba7f",
+   "actionId": "url-0317-2322-135843",
+   "postNum": 2322,
+   "entityId": "qe-1358436d9fe2",
+   "canonical": "Freedom of Information Act",
+   "entries": [
+    {
+     "alias": "FOIA",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0318-1750-6eba7f",
    "postNum": 1750,
    "entityId": "qe-6eba7f9e78be",
    "canonical": "Pizzagate",
@@ -3278,7 +4045,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0258-3182-6eba7f",
+   "actionId": "url-0319-3182-6eba7f",
    "postNum": 3182,
    "entityId": "qe-6eba7f9e78be",
    "canonical": "Pizzagate",
@@ -3291,7 +4058,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0259-1766-80eaf7",
+   "actionId": "url-0320-1752-80eaf7",
+   "postNum": 1752,
+   "entityId": "qe-80eaf709c7f7",
+   "canonical": "Avenatti",
+   "entries": [
+    {
+     "alias": "Avenatti",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0321-1766-80eaf7",
    "postNum": 1766,
    "entityId": "qe-80eaf709c7f7",
    "canonical": "Avenatti",
@@ -3304,7 +4084,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0260-1764-84e616",
+   "actionId": "url-0322-1764-84e616",
    "postNum": 1764,
    "entityId": "qe-84e6163609f3",
    "canonical": "Gina Haspel",
@@ -3317,7 +4097,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0261-1779-90ed46",
+   "actionId": "url-0323-4794-84e616",
+   "postNum": 4794,
+   "entityId": "qe-84e6163609f3",
+   "canonical": "Gina Haspel",
+   "entries": [
+    {
+     "alias": "Gina Haspel",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0324-1779-90ed46",
    "postNum": 1779,
    "entityId": "qe-90ed465e4946",
    "canonical": "Tony Podesta",
@@ -3330,7 +4123,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0262-1797-b3334e",
+   "actionId": "url-0325-1797-b3334e",
    "postNum": 1797,
    "entityId": "qe-b3334eb51117",
    "canonical": "Vox",
@@ -3343,7 +4136,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0263-2801-b3334e",
+   "actionId": "url-0326-2801-b3334e",
    "postNum": 2801,
    "entityId": "qe-b3334eb51117",
    "canonical": "Vox",
@@ -3356,7 +4149,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0264-1856-78b861",
+   "actionId": "url-0327-3316-23dd41",
+   "postNum": 3316,
+   "entityId": "qe-23dd41e959d8",
+   "canonical": "John Dowd",
+   "entries": [
+    {
+     "alias": "John Dowd",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0328-1856-78b861",
    "postNum": 1856,
    "entityId": "qe-78b861a601cb",
    "canonical": "Omarosa",
@@ -3369,7 +4175,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0265-2257-78b861",
+   "actionId": "url-0329-2257-78b861",
    "postNum": 2257,
    "entityId": "qe-78b861a601cb",
    "canonical": "Omarosa",
@@ -3382,7 +4188,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0267-4581-629ab4",
+   "actionId": "url-0331-4581-629ab4",
    "postNum": 4581,
    "entityId": "qe-629ab46ccbf8",
    "canonical": "Steele Dossier",
@@ -3395,7 +4201,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0268-1992-9f1d8f",
+   "actionId": "url-0332-1992-9f1d8f",
    "postNum": 1992,
    "entityId": "qe-9f1d8fd8f37d",
    "canonical": "US Navy",
@@ -3408,7 +4214,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0269-2091-773af3",
+   "actionId": "url-0333-2091-773af3",
    "postNum": 2091,
    "entityId": "qe-773af3906078",
    "canonical": "Jerome Corsi",
@@ -3421,7 +4227,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0270-4454-c0a2bf",
+   "actionId": "url-0334-4454-c0a2bf",
    "postNum": 4454,
    "entityId": "qe-c0a2bf39c430",
    "canonical": "Tucker Carlson",
@@ -3434,7 +4240,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0271-2136-5b21bd",
+   "actionId": "url-0335-2136-5b21bd",
    "postNum": 2136,
    "entityId": "qe-5b21bdeb116e",
    "canonical": "Jerry Nadler",
@@ -3447,7 +4253,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0272-2180-ad0326",
+   "actionId": "url-0336-2180-ad0326",
    "postNum": 2180,
    "entityId": "qe-ad0326f3114d",
    "canonical": "House Intelligence",
@@ -3460,7 +4266,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0273-2181-ad0326",
+   "actionId": "url-0337-2181-ad0326",
    "postNum": 2181,
    "entityId": "qe-ad0326f3114d",
    "canonical": "House Intelligence",
@@ -3473,7 +4279,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0274-2319-59bb69",
+   "actionId": "url-0338-2319-59bb69",
    "postNum": 2319,
    "entityId": "qe-59bb69e52d4e",
    "canonical": "Kevin Shipp",
@@ -3486,7 +4292,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0275-3697-d38940",
+   "actionId": "url-0339-3464-59bb69",
+   "postNum": 3464,
+   "entityId": "qe-59bb69e52d4e",
+   "canonical": "Kevin Shipp",
+   "entries": [
+    {
+     "alias": "Kevin Shipp",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0340-3697-d38940",
    "postNum": 3697,
    "entityId": "qe-d38940e564bf",
    "canonical": "Democrat",
@@ -3499,7 +4318,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0276-2498-ad3937",
+   "actionId": "url-0341-2494-5cf46b",
+   "postNum": 2494,
+   "entityId": "qe-5cf46b7e8c27",
+   "canonical": "House GOP",
+   "entries": [
+    {
+     "alias": "House GOP",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0342-2498-ad3937",
    "postNum": 2498,
    "entityId": "qe-ad393745af3e",
    "canonical": "Ivanka Trump",
@@ -3512,7 +4344,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0277-4232-ad3937",
+   "actionId": "url-0343-4232-ad3937",
    "postNum": 4232,
    "entityId": "qe-ad393745af3e",
    "canonical": "Ivanka Trump",
@@ -3525,7 +4357,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0278-2635-a52887",
+   "actionId": "url-0344-2635-a52887",
    "postNum": 2635,
    "entityId": "qe-a528870b86f7",
    "canonical": "Alabama",
@@ -3538,7 +4370,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0279-2663-8897be",
+   "actionId": "url-0345-2663-8897be",
    "postNum": 2663,
    "entityId": "qe-8897be130f69",
    "canonical": "MKUltra",
@@ -3551,7 +4383,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0280-2801-347e18",
+   "actionId": "url-0346-2801-347e18",
    "postNum": 2801,
    "entityId": "qe-347e18cc8486",
    "canonical": "Salon",
@@ -3564,7 +4396,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0281-4653-347e18",
+   "actionId": "url-0347-4653-347e18",
    "postNum": 4653,
    "entityId": "qe-347e18cc8486",
    "canonical": "Salon",
@@ -3577,7 +4409,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0282-2879-c5b7ec",
+   "actionId": "url-0348-2879-c5b7ec",
    "postNum": 2879,
    "entityId": "qe-c5b7ec680037",
    "canonical": "ICANN",
@@ -3590,7 +4422,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0283-2883-c5b7ec",
+   "actionId": "url-0349-2883-c5b7ec",
    "postNum": 2883,
    "entityId": "qe-c5b7ec680037",
    "canonical": "ICANN",
@@ -3603,7 +4435,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0284-2984-ed7af8",
+   "actionId": "url-0350-2984-ed7af8",
    "postNum": 2984,
    "entityId": "qe-ed7af8c981ab",
    "canonical": "George H. W. Bush",
@@ -3616,7 +4448,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0285-3186-10b46b",
+   "actionId": "url-0351-3186-10b46b",
    "postNum": 3186,
    "entityId": "qe-10b46bb969e5",
    "canonical": "Anthony Comello",
@@ -3629,7 +4461,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0286-3581-10b46b",
+   "actionId": "url-0352-3581-10b46b",
    "postNum": 3581,
    "entityId": "qe-10b46bb969e5",
    "canonical": "Anthony Comello",
@@ -3642,7 +4474,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0287-3186-f17d14",
+   "actionId": "url-0353-3186-f17d14",
    "postNum": 3186,
    "entityId": "qe-f17d14898b24",
    "canonical": "Gambino",
@@ -3655,7 +4487,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0288-3327-3536cd",
+   "actionId": "url-0354-3327-3536cd",
    "postNum": 3327,
    "entityId": "qe-3536cd634019",
    "canonical": "Robert Hannigan",
@@ -3668,7 +4500,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0289-3339-3536cd",
+   "actionId": "url-0355-3339-3536cd",
    "postNum": 3339,
    "entityId": "qe-3536cd634019",
    "canonical": "Robert Hannigan",
@@ -3681,7 +4513,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0290-3477-1c46e4",
+   "actionId": "url-0356-3477-1c46e4",
    "postNum": 3477,
    "entityId": "qe-1c46e4567b2d",
    "canonical": "Ilhan Omar",
@@ -3694,7 +4526,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0291-3634-1c46e4",
+   "actionId": "url-0357-3634-1c46e4",
    "postNum": 3634,
    "entityId": "qe-1c46e4567b2d",
    "canonical": "Ilhan Omar",
@@ -3707,7 +4539,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0292-4293-4a208b",
+   "actionId": "url-0358-3625-4a208b",
+   "postNum": 3625,
+   "entityId": "qe-4a208b7ab05a",
+   "canonical": "Burisma",
+   "entries": [
+    {
+     "alias": "Burisma",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0359-4293-4a208b",
    "postNum": 4293,
    "entityId": "qe-4a208b7ab05a",
    "canonical": "Burisma",
@@ -3720,7 +4565,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0293-3665-cbccad",
+   "actionId": "url-0360-3665-cbccad",
    "postNum": 3665,
    "entityId": "qe-cbccad5c5dd1",
    "canonical": "Watters' World",
@@ -3733,7 +4578,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0294-390-e877a7",
+   "actionId": "url-0361-4195-cbccad",
+   "postNum": 4195,
+   "entityId": "qe-cbccad5c5dd1",
+   "canonical": "Watters' World",
+   "entries": [
+    {
+     "alias": "WattersWorld",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0362-390-e877a7",
    "postNum": 390,
    "entityId": "qe-e877a7739dda",
    "canonical": "Playboy",
@@ -3746,7 +4604,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0295-3960-ec290e",
+   "actionId": "url-0363-3960-ec290e",
    "postNum": 3960,
    "entityId": "qe-ec290e41f3f7",
    "canonical": "Nevada",
@@ -3759,7 +4617,33 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0296-4234-d30571",
+   "actionId": "url-0364-4116-5d58e0",
+   "postNum": 4116,
+   "entityId": "qe-5d58e0f6a89b",
+   "canonical": "The Ingraham Angle",
+   "entries": [
+    {
+     "alias": "IngrahamAngle",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0365-4754-5d58e0",
+   "postNum": 4754,
+   "entityId": "qe-5d58e0f6a89b",
+   "canonical": "The Ingraham Angle",
+   "entries": [
+    {
+     "alias": "IngrahamAngle",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0366-4234-d30571",
    "postNum": 4234,
    "entityId": "qe-d305710ada08",
    "canonical": "Military.com",
@@ -3772,7 +4656,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0297-4604-d30571",
+   "actionId": "url-0367-4604-d30571",
    "postNum": 4604,
    "entityId": "qe-d305710ada08",
    "canonical": "Military.com",
@@ -3785,7 +4669,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0298-4329-0bb4fa",
+   "actionId": "url-0368-4329-0bb4fa",
    "postNum": 4329,
    "entityId": "qe-0bb4fa1b1fd7",
    "canonical": "Cuomo",
@@ -3798,7 +4682,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0299-4407-415492",
+   "actionId": "url-0369-4340-0bb4fa",
+   "postNum": 4340,
+   "entityId": "qe-0bb4fa1b1fd7",
+   "canonical": "Cuomo",
+   "entries": [
+    {
+     "alias": "Cuomo",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0370-4407-415492",
    "postNum": 4407,
    "entityId": "qe-415492f50772",
    "canonical": "Minneapolis",
@@ -3811,7 +4708,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0300-4416-415492",
+   "actionId": "url-0371-4416-415492",
    "postNum": 4416,
    "entityId": "qe-415492f50772",
    "canonical": "Minneapolis",
@@ -3824,7 +4721,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0301-4726-924ef6",
+   "actionId": "url-0372-4726-924ef6",
    "postNum": 4726,
    "entityId": "qe-924ef649c9c3",
    "canonical": "Air Force",
@@ -3837,7 +4734,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0302-4680-2b58b9",
+   "actionId": "url-0373-4680-2b58b9",
    "postNum": 4680,
    "entityId": "qe-2b58b9238924",
    "canonical": "ActBlue",
@@ -3850,7 +4747,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0303-4653-4db879",
+   "actionId": "url-0374-4653-4db879",
    "postNum": 4653,
    "entityId": "qe-4db8798e7eec",
    "canonical": "NewsBreak",
@@ -3863,7 +4760,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0304-4887-4db879",
+   "actionId": "url-0375-4887-4db879",
    "postNum": 4887,
    "entityId": "qe-4db8798e7eec",
    "canonical": "NewsBreak",
@@ -3876,7 +4773,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0305-4655-ff8fcc",
+   "actionId": "url-0376-4655-ff8fcc",
    "postNum": 4655,
    "entityId": "qe-ff8fcc84e333",
    "canonical": "Portland",
@@ -3889,7 +4786,33 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0306-4951-3fde8f",
+   "actionId": "url-0377-4699-ff8fcc",
+   "postNum": 4699,
+   "entityId": "qe-ff8fcc84e333",
+   "canonical": "Portland",
+   "entries": [
+    {
+     "alias": "Portland",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0378-4857-3fde8f",
+   "postNum": 4857,
+   "entityId": "qe-3fde8f34252a",
+   "canonical": "CISA",
+   "entries": [
+    {
+     "alias": "CISA",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0379-4951-3fde8f",
    "postNum": 4951,
    "entityId": "qe-3fde8f34252a",
    "canonical": "CISA",
@@ -3902,7 +4825,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0308-1068-53acfc",
+   "actionId": "url-0381-1068-53acfc",
    "postNum": 1068,
    "entityId": "qe-53acfcd829f3",
    "canonical": "Fort Campbell",
@@ -3915,7 +4838,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0309-1074-85888a",
+   "actionId": "url-0382-1074-85888a",
    "postNum": 1074,
    "entityId": "qe-85888a5a8fd4",
    "canonical": "Joseph Schmitz",
@@ -3928,7 +4851,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0310-1091-22df1d",
+   "actionId": "url-0383-1091-22df1d",
    "postNum": 1091,
    "entityId": "qe-22df1db501be",
    "canonical": "Eric Prince",
@@ -3941,7 +4864,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0311-1208-dee8e9",
+   "actionId": "url-0384-1208-dee8e9",
    "postNum": 1208,
    "entityId": "qe-dee8e9c8635f",
    "canonical": "Mariah Sunshine Coogan",
@@ -3954,7 +4877,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0312-1239-877128",
+   "actionId": "url-0385-1239-877128",
    "postNum": 1239,
    "entityId": "qe-877128f6a818",
    "canonical": "Al Gore",
@@ -3967,7 +4890,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0313-1242-a66caf",
+   "actionId": "url-0386-1242-a66caf",
    "postNum": 1242,
    "entityId": "qe-a66cafb88137",
    "canonical": "Serzh Sargsyan",
@@ -3980,7 +4903,46 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0314-1533-beca24",
+   "actionId": "url-0387-1532-e2d4bc",
+   "postNum": 1532,
+   "entityId": "qe-e2d4bc57e2a1",
+   "canonical": "Charles Barkley",
+   "entries": [
+    {
+     "alias": "Charles Barkley",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0388-1532-138a4d",
+   "postNum": 1532,
+   "entityId": "qe-138a4dad3666",
+   "canonical": "Alex Rodriguez",
+   "entries": [
+    {
+     "alias": "Alex Rodriguez",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0389-1532-a6c9d8",
+   "postNum": 1532,
+   "entityId": "qe-a6c9d8148ab3",
+   "canonical": "Saturday Night Live",
+   "entries": [
+    {
+     "alias": "Saturday Night Live",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0390-1533-beca24",
    "postNum": 1533,
    "entityId": "qe-beca24d6a2dc",
    "canonical": "Santa Fe",
@@ -3993,7 +4955,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0315-1594-2d1422",
+   "actionId": "url-0391-1594-2d1422",
    "postNum": 1594,
    "entityId": "qe-2d1422b846bf",
    "canonical": "Curt Schilling",
@@ -4006,7 +4968,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0316-1641-4c75d2",
+   "actionId": "url-0392-1641-4c75d2",
    "postNum": 1641,
    "entityId": "qe-4c75d2db2eac",
    "canonical": "Capital Gazette",
@@ -4019,7 +4981,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0317-1666-c378a7",
+   "actionId": "url-0393-1666-c378a7",
    "postNum": 1666,
    "entityId": "qe-c378a7feae5f",
    "canonical": "House Judiciary",
@@ -4032,7 +4994,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0318-1687-e86b64",
+   "actionId": "url-0394-1687-e86b64",
    "postNum": 1687,
    "entityId": "qe-e86b643b6395",
    "canonical": "Shiva Ayyadurai",
@@ -4045,7 +5007,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0319-1695-7ee533",
+   "actionId": "url-0395-1695-7ee533",
    "postNum": 1695,
    "entityId": "qe-7ee53376888c",
    "canonical": "Mark Grant",
@@ -4058,7 +5020,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0320-1735-f18910",
+   "actionId": "url-0396-1735-f18910",
    "postNum": 1735,
    "entityId": "qe-f189100b3bce",
    "canonical": "Les Moonves",
@@ -4071,7 +5033,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0321-1735-7d76c2",
+   "actionId": "url-0397-1735-7d76c2",
    "postNum": 1735,
    "entityId": "qe-7d76c2dddce5",
    "canonical": "Ronan Farrow",
@@ -4084,7 +5046,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0322-1750-cf230e",
+   "actionId": "url-0398-1750-cf230e",
    "postNum": 1750,
    "entityId": "qe-cf230e6f349c",
    "canonical": "Ali Velshi",
@@ -4097,7 +5059,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0323-1772-8dd4cf",
+   "actionId": "url-0399-1772-8dd4cf",
    "postNum": 1772,
    "entityId": "qe-8dd4cfa59fce",
    "canonical": "Joshua Adam Schulte",
@@ -4110,7 +5072,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0324-1797-b23655",
+   "actionId": "url-0400-1790-150dab",
+   "postNum": 1790,
+   "entityId": "qe-150dab1de650",
+   "canonical": "Sarah Sanders",
+   "entries": [
+    {
+     "alias": "Sarah Sanders",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0401-1797-b23655",
    "postNum": 1797,
    "entityId": "qe-b23655c71613",
    "canonical": "Chris Cuomo",
@@ -4123,7 +5098,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0325-1826-f4a4f7",
+   "actionId": "url-0402-1826-f4a4f7",
    "postNum": 1826,
    "entityId": "qe-f4a4f7f7e6f6",
    "canonical": "Phill Mudd",
@@ -4136,7 +5111,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0326-1826-81c70f",
+   "actionId": "url-0403-1826-81c70f",
    "postNum": 1826,
    "entityId": "qe-81c70fd3e376",
    "canonical": "Rachel Maddow",
@@ -4149,7 +5124,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0327-1842-c9f95f",
+   "actionId": "url-0404-1842-c9f95f",
    "postNum": 1842,
    "entityId": "qe-c9f95ff52ca5",
    "canonical": "WikiLeaks",
@@ -4162,7 +5137,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0328-1844-538253",
+   "actionId": "url-0405-1844-538253",
    "postNum": 1844,
    "entityId": "qe-5382537e6076",
    "canonical": "Telecommunications Act of 1996",
@@ -4175,7 +5150,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0329-1850-d4b491",
+   "actionId": "url-0406-1850-d4b491",
    "postNum": 1850,
    "entityId": "qe-d4b491dabbb6",
    "canonical": "West Virginia",
@@ -4188,7 +5163,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0330-1851-7098d8",
+   "actionId": "url-0407-1851-7098d8",
    "postNum": 1851,
    "entityId": "qe-7098d8ae0346",
    "canonical": "James Gunn",
@@ -4201,7 +5176,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0331-1878-31664e",
+   "actionId": "url-0408-1878-31664e",
    "postNum": 1878,
    "entityId": "qe-31664e7174cd",
    "canonical": "New Mexico",
@@ -4214,7 +5189,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0332-1880-a68304",
+   "actionId": "url-0409-1880-a68304",
    "postNum": 1880,
    "entityId": "qe-a68304393601",
    "canonical": "Matt Doran",
@@ -4227,7 +5202,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0333-1880-35852e",
+   "actionId": "url-0410-1880-35852e",
    "postNum": 1880,
    "entityId": "qe-35852e5aa506",
    "canonical": "Operation Underground Railroad",
@@ -4240,7 +5215,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0334-1888-64d278",
+   "actionId": "url-0411-1888-64d278",
    "postNum": 1888,
    "entityId": "qe-64d278bf9624",
    "canonical": "Paul Combetta",
@@ -4253,7 +5228,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0335-1939-e7cafa",
+   "actionId": "url-0412-1939-787c73",
+   "postNum": 1939,
+   "entityId": "qe-787c735baabb",
+   "canonical": "Tony Blair",
+   "entries": [
+    {
+     "alias": "Tony Blair",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0413-1939-e7cafa",
    "postNum": 1939,
    "entityId": "qe-e7cafadb1d39",
    "canonical": "Michael Wolff",
@@ -4266,7 +5254,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0336-1945-c24360",
+   "actionId": "url-0414-1945-c24360",
    "postNum": 1945,
    "entityId": "qe-c24360253d0d",
    "canonical": "Theresa May",
@@ -4279,7 +5267,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0337-1945-5f90d4",
+   "actionId": "url-0415-1945-5f90d4",
    "postNum": 1945,
    "entityId": "qe-5f90d4b1138a",
    "canonical": "Benedict Arnold",
@@ -4292,7 +5280,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0338-2042-c62318",
+   "actionId": "url-0416-2042-c62318",
    "postNum": 2042,
    "entityId": "qe-c62318860f90",
    "canonical": "Chief Justice John Roberts",
@@ -4305,7 +5293,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0339-2044-7fb3a5",
+   "actionId": "url-0417-2044-7fb3a5",
    "postNum": 2044,
    "entityId": "qe-7fb3a5ba91e1",
    "canonical": "Abigail Spanberger",
@@ -4318,7 +5306,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0340-2058-e05911",
+   "actionId": "url-0418-2058-e05911",
    "postNum": 2058,
    "entityId": "qe-e05911bf0d38",
    "canonical": "National Security Adviser",
@@ -4331,7 +5319,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0341-2078-14333c",
+   "actionId": "url-0419-2078-14333c",
    "postNum": 2078,
    "entityId": "qe-14333c452434",
    "canonical": "Jon Kyl",
@@ -4344,7 +5332,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0342-2078-723f89",
+   "actionId": "url-0420-2078-723f89",
    "postNum": 2078,
    "entityId": "qe-723f8970807f",
    "canonical": "Cindy McCain",
@@ -4357,7 +5345,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0343-2136-dd7daa",
+   "actionId": "url-0421-2136-dd7daa",
    "postNum": 2136,
    "entityId": "qe-dd7daa56e017",
    "canonical": "Bob Woodward",
@@ -4370,7 +5358,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0344-2136-fb4266",
+   "actionId": "url-0422-2136-fb4266",
    "postNum": 2136,
    "entityId": "qe-fb426643f1c0",
    "canonical": "Richard Nixon",
@@ -4383,7 +5371,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0345-2136-a658da",
+   "actionId": "url-0423-2136-a658da",
    "postNum": 2136,
    "entityId": "qe-a658dae7f330",
    "canonical": "John Ehrlichman",
@@ -4396,7 +5384,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0346-2152-d4ba18",
+   "actionId": "url-0424-2152-d4ba18",
    "postNum": 2152,
    "entityId": "qe-d4ba181fe676",
    "canonical": "Pope Francis",
@@ -4409,7 +5397,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0347-2173-2ec618",
+   "actionId": "url-0425-2173-2ec618",
    "postNum": 2173,
    "entityId": "qe-2ec618df3b1b",
    "canonical": "FEMA",
@@ -4422,7 +5410,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0348-2210-967ea8",
+   "actionId": "url-0426-2210-967ea8",
    "postNum": 2210,
    "entityId": "qe-967ea8ed2fa0",
    "canonical": "Gregg Jarrett",
@@ -4435,7 +5423,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0349-2319-7ae7f3",
+   "actionId": "url-0427-2319-7ae7f3",
    "postNum": 2319,
    "entityId": "qe-7ae7f3117eb2",
    "canonical": "Christine Blasey Ford",
@@ -4448,7 +5436,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0350-2325-49539a",
+   "actionId": "url-0428-2325-49539a",
    "postNum": 2325,
    "entityId": "qe-49539a6e685c",
    "canonical": "Capitol Hill",
@@ -4461,7 +5449,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0351-2331-a686b2",
+   "actionId": "url-0429-2331-a686b2",
    "postNum": 2331,
    "entityId": "qe-a686b214e02f",
    "canonical": "Michael Sussmann",
@@ -4474,7 +5462,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0352-2372-fe23d9",
+   "actionId": "url-0430-2372-fe23d9",
    "postNum": 2372,
    "entityId": "qe-fe23d9726244",
    "canonical": "Peggy Grande",
@@ -4487,7 +5475,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0353-2386-fd92e1",
+   "actionId": "url-0431-2386-fd92e1",
    "postNum": 2386,
    "entityId": "qe-fd92e1bb64db",
    "canonical": "Robert Bowers",
@@ -4500,7 +5488,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0354-2472-b23e29",
+   "actionId": "url-0432-2472-b23e29",
    "postNum": 2472,
    "entityId": "qe-b23e29dfdb3e",
    "canonical": "Chelsey Smith",
@@ -4513,7 +5501,46 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0355-2635-4df1e4",
+   "actionId": "url-0433-2543-6c94d6",
+   "postNum": 2543,
+   "entityId": "qe-6c94d6eb1a03",
+   "canonical": "Scott Free Productions",
+   "entries": [
+    {
+     "alias": "Scott Free Productions",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0434-2548-9cb007",
+   "postNum": 2548,
+   "entityId": "qe-9cb007557de9",
+   "canonical": "Tom Winter",
+   "entries": [
+    {
+     "alias": "Tom Winter",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0435-2587-aadf4f",
+   "postNum": 2587,
+   "entityId": "qe-aadf4f7a7a94",
+   "canonical": "Sundar Pichai",
+   "entries": [
+    {
+     "alias": "Sundar Pichai",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0436-2635-4df1e4",
    "postNum": 2635,
    "entityId": "qe-4df1e42eb9eb",
    "canonical": "Roy Moore",
@@ -4526,7 +5553,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0356-2686-e20723",
+   "actionId": "url-0437-2686-e20723",
    "postNum": 2686,
    "entityId": "qe-e20723049600",
    "canonical": "Kirk Adams",
@@ -4539,7 +5566,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0357-2686-fadb7c",
+   "actionId": "url-0438-2686-fadb7c",
    "postNum": 2686,
    "entityId": "qe-fadb7c27473e",
    "canonical": "Cecile Richards",
@@ -4552,7 +5579,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0358-2732-98c272",
+   "actionId": "url-0439-2732-98c272",
    "postNum": 2732,
    "entityId": "qe-98c27295dab4",
    "canonical": "Michael Goodwin",
@@ -4565,7 +5592,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0359-2783-790597",
+   "actionId": "url-0440-2783-790597",
    "postNum": 2783,
    "entityId": "qe-79059767397e",
    "canonical": "Lara Logan",
@@ -4578,7 +5605,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0360-2807-d3d86a",
+   "actionId": "url-0441-2807-d3d86a",
    "postNum": 2807,
    "entityId": "qe-d3d86a00dcff",
    "canonical": "Baghdad",
@@ -4591,7 +5618,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0361-2855-97ecb3",
+   "actionId": "url-0442-2855-97ecb3",
    "postNum": 2855,
    "entityId": "qe-97ecb3eb1b65",
    "canonical": "North Carolina",
@@ -4604,7 +5631,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0362-2868-118042",
+   "actionId": "url-0443-2868-118042",
    "postNum": 2868,
    "entityId": "qe-1180428658d7",
    "canonical": "Bernie Sanders",
@@ -4617,7 +5644,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0363-2942-fd9a94",
+   "actionId": "url-0444-2894-bf1460",
+   "postNum": 2894,
+   "entityId": "qe-bf1460b00ebe",
+   "canonical": "Cardinal George Pell",
+   "entries": [
+    {
+     "alias": "Cardinal George Pell",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0445-2942-fd9a94",
    "postNum": 2942,
    "entityId": "qe-fd9a9466fe14",
    "canonical": "Bloody Sunday",
@@ -4630,7 +5670,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0364-3066-426031",
+   "actionId": "url-0446-3066-426031",
    "postNum": 3066,
    "entityId": "qe-426031b06175",
    "canonical": "Chris Cox",
@@ -4643,7 +5683,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0365-3130-9bd3e0",
+   "actionId": "url-0447-3130-9bd3e0",
    "postNum": 3130,
    "entityId": "qe-9bd3e06680ab",
    "canonical": "Alan Krueger",
@@ -4656,7 +5696,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0366-3182-794a37",
+   "actionId": "url-0448-3182-794a37",
    "postNum": 3182,
    "entityId": "qe-794a3735fa02",
    "canonical": "Sebastian Gorka",
@@ -4669,7 +5709,33 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0367-3392-6f5fab",
+   "actionId": "url-0449-3282-26bdfe",
+   "postNum": 3282,
+   "entityId": "qe-26bdfea69494",
+   "canonical": "Daniel Pressley",
+   "entries": [
+    {
+     "alias": "Daniel Pressley",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0450-3329-d0be1b",
+   "postNum": 3329,
+   "entityId": "qe-d0be1b502513",
+   "canonical": "Glenn Simpson",
+   "entries": [
+    {
+     "alias": "Glenn Simpson",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0451-3392-6f5fab",
    "postNum": 3392,
    "entityId": "qe-6f5fab61b00b",
    "canonical": "Ed Buck",
@@ -4682,7 +5748,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0368-3393-91feaf",
+   "actionId": "url-0452-3393-91feaf",
    "postNum": 3393,
    "entityId": "qe-91feaf4a3236",
    "canonical": "Judy Shelton",
@@ -4695,7 +5761,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0369-3417-8edddb",
+   "actionId": "url-0453-3417-8edddb",
    "postNum": 3417,
    "entityId": "qe-8edddb4d46bd",
    "canonical": "Clare Bronfman",
@@ -4708,7 +5774,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0370-3499-33b686",
+   "actionId": "url-0454-3499-33b686",
    "postNum": 3499,
    "entityId": "qe-33b6866304a9",
    "canonical": "Michael Laney",
@@ -4721,7 +5787,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0371-3529-87bd76",
+   "actionId": "url-0455-3529-87bd76",
    "postNum": 3529,
    "entityId": "qe-87bd761f0f71",
    "canonical": "John Ratcliffe",
@@ -4734,7 +5800,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0372-3563-d4dd66",
+   "actionId": "url-0456-3563-d4dd66",
    "postNum": 3563,
    "entityId": "qe-d4dd6672aea9",
    "canonical": "American Red Cross",
@@ -4747,7 +5813,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0373-3563-5d35b0",
+   "actionId": "url-0457-3563-5d35b0",
    "postNum": 3563,
    "entityId": "qe-5d35b09eef47",
    "canonical": "Senator Grassley",
@@ -4760,7 +5826,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0374-3581-d2b5dc",
+   "actionId": "url-0458-3581-d2b5dc",
    "postNum": 3581,
    "entityId": "qe-d2b5dc7f5774",
    "canonical": "Frank Cali",
@@ -4773,7 +5839,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0375-3583-a94990",
+   "actionId": "url-0459-3583-a94990",
    "postNum": 3583,
    "entityId": "qe-a9499020d997",
    "canonical": "Kim Jong",
@@ -4786,7 +5852,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0376-3602-ef41b0",
+   "actionId": "url-0460-3602-ef41b0",
    "postNum": 3602,
    "entityId": "qe-ef41b0dc4536",
    "canonical": "Star Wars",
@@ -4799,7 +5865,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0377-3654-a5961a",
+   "actionId": "url-0461-3654-a5961a",
    "postNum": 3654,
    "entityId": "qe-a5961af56db9",
    "canonical": "New Orleans",
@@ -4812,7 +5878,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0378-3654-a40fa1",
+   "actionId": "url-0462-3654-a40fa1",
    "postNum": 3654,
    "entityId": "qe-a40fa10990e2",
    "canonical": "Waukesha South High School",
@@ -4825,7 +5891,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0379-3654-ad0636",
+   "actionId": "url-0463-3654-ad0636",
    "postNum": 3654,
    "entityId": "qe-ad06365060ab",
    "canonical": "Oshkosh Wisconsin",
@@ -4838,7 +5904,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0380-3654-cf72ca",
+   "actionId": "url-0464-3654-cf72ca",
    "postNum": 3654,
    "entityId": "qe-cf72caa56682",
    "canonical": "Jackson State University",
@@ -4851,7 +5917,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0381-3654-6b5664",
+   "actionId": "url-0465-3654-6b5664",
    "postNum": 3654,
    "entityId": "qe-6b5664b30f39",
    "canonical": "Pearl Harbor",
@@ -4864,7 +5930,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0382-3659-8f2c4c",
+   "actionId": "url-0466-3659-8f2c4c",
    "postNum": 3659,
    "entityId": "qe-8f2c4c83d140",
    "canonical": "Naval Air Station",
@@ -4877,7 +5943,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0383-3699-d536fa",
+   "actionId": "url-0467-3699-d536fa",
    "postNum": 3699,
    "entityId": "qe-d536fab6c2ba",
    "canonical": "Jeremy Fleming",
@@ -4890,7 +5956,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0384-388-5d57b7",
+   "actionId": "url-0468-388-5d57b7",
    "postNum": 388,
    "entityId": "qe-5d57b70f7da5",
    "canonical": "Jessica Schumer",
@@ -4903,7 +5969,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0385-388-0074e0",
+   "actionId": "url-0469-388-0074e0",
    "postNum": 388,
    "entityId": "qe-0074e0c7d38d",
    "canonical": "Michael Shapiro",
@@ -4916,7 +5982,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0386-3909-42ab68",
+   "actionId": "url-0470-3909-42ab68",
    "postNum": 3909,
    "entityId": "qe-42ab68084767",
    "canonical": "Harmeet Dhillon",
@@ -4929,7 +5995,33 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0387-4014-9ba608",
+   "actionId": "url-0471-3939-d2b6f6",
+   "postNum": 3939,
+   "entityId": "qe-d2b6f6e7ddde",
+   "canonical": "Rochelle Coombs",
+   "entries": [
+    {
+     "alias": "Rochelle Coombs",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0472-4002-6cacf7",
+   "postNum": 4002,
+   "entityId": "qe-6cacf7082c69",
+   "canonical": "Activision Blizzard",
+   "entries": [
+    {
+     "alias": "Activision Blizzard",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0473-4014-9ba608",
    "postNum": 4014,
    "entityId": "qe-9ba608d159c0",
    "canonical": "Democratic National Convention",
@@ -4942,7 +6034,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0388-4150-de1cd4",
+   "actionId": "url-0474-4150-de1cd4",
    "postNum": 4150,
    "entityId": "qe-de1cd4c53026",
    "canonical": "Fox Friends",
@@ -4955,7 +6047,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0389-4248-40171a",
+   "actionId": "url-0475-4165-4c6444",
+   "postNum": 4165,
+   "entityId": "qe-4c64444515b8",
+   "canonical": "Valerie Plame",
+   "entries": [
+    {
+     "alias": "Valerie Plame",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0476-4248-40171a",
    "postNum": 4248,
    "entityId": "qe-40171a5df985",
    "canonical": "San Diego County",
@@ -4968,7 +6073,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0390-4285-177205",
+   "actionId": "url-0477-4285-177205",
    "postNum": 4285,
    "entityId": "qe-177205440a32",
    "canonical": "Global Health Leaders",
@@ -4981,7 +6086,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0391-4293-ae0f7e",
+   "actionId": "url-0478-4293-ae0f7e",
    "postNum": 4293,
    "entityId": "qe-ae0f7ed45ac5",
    "canonical": "Senate Committee",
@@ -4994,7 +6099,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0392-4348-05c3b3",
+   "actionId": "url-0479-4348-05c3b3",
    "postNum": 4348,
    "entityId": "qe-05c3b39efe82",
    "canonical": "Omega Kingdom Ministries",
@@ -5007,7 +6112,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0393-4359-5ffea7",
+   "actionId": "url-0480-4359-5ffea7",
    "postNum": 4359,
    "entityId": "qe-5ffea7a1d496",
    "canonical": "Dana Boente",
@@ -5020,7 +6125,46 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0394-4407-2dfa3e",
+   "actionId": "url-0481-4399-536fed",
+   "postNum": 4399,
+   "entityId": "qe-536fedb07705",
+   "canonical": "Eric Schmitt",
+   "entries": [
+    {
+     "alias": "Eric Schmitt",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0482-4405-09c79d",
+   "postNum": 4405,
+   "entityId": "qe-09c79d4d4b30",
+   "canonical": "Eric Garcetti",
+   "entries": [
+    {
+     "alias": "Eric Garcetti",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0483-4405-7c11c9",
+   "postNum": 4405,
+   "entityId": "qe-7c11c90272b8",
+   "canonical": "Los Angeles",
+   "entries": [
+    {
+     "alias": "Los Angeles",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0484-4407-2dfa3e",
    "postNum": 4407,
    "entityId": "qe-2dfa3e05d6dc",
    "canonical": "Minneapolis City Council",
@@ -5033,7 +6177,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0395-4415-b5bd71",
+   "actionId": "url-0485-4415-b5bd71",
    "postNum": 4415,
    "entityId": "qe-b5bd715d185a",
    "canonical": "James Mattis",
@@ -5046,7 +6190,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0396-4416-c52bf0",
+   "actionId": "url-0486-4416-c52bf0",
    "postNum": 4416,
    "entityId": "qe-c52bf0c20672",
    "canonical": "Jeremiah Ellison",
@@ -5059,7 +6203,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0397-4432-edf1d9",
+   "actionId": "url-0487-4432-edf1d9",
    "postNum": 4432,
    "entityId": "qe-edf1d9b08fdc",
    "canonical": "Mark Esper",
@@ -5072,7 +6216,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0398-445-24657d",
+   "actionId": "url-0488-4449-217770",
+   "postNum": 4449,
+   "entityId": "qe-2177707b6f9e",
+   "canonical": "Jordan Sather",
+   "entries": [
+    {
+     "alias": "Jordan Sather",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0489-445-24657d",
    "postNum": 445,
    "entityId": "qe-24657d3b5b93",
    "canonical": "Google Capital",
@@ -5085,7 +6242,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0399-4458-3f8136",
+   "actionId": "url-0490-4458-3f8136",
    "postNum": 4458,
    "entityId": "qe-3f8136a79c3b",
    "canonical": "Confederate General",
@@ -5098,7 +6255,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0400-4469-c41325",
+   "actionId": "url-0491-4469-c41325",
    "postNum": 4469,
    "entityId": "qe-c41325e2d485",
    "canonical": "William H. Carney",
@@ -5111,7 +6268,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0401-4473-12e9d3",
+   "actionId": "url-0492-4473-12e9d3",
    "postNum": 4473,
    "entityId": "qe-12e9d3e5fe25",
    "canonical": "Breakfast Club",
@@ -5124,7 +6281,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0402-4546-a6b40d",
+   "actionId": "url-0493-4546-a6b40d",
    "postNum": 4546,
    "entityId": "qe-a6b40d70bfbf",
    "canonical": "El Centro",
@@ -5137,7 +6294,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0403-4563-c82ada",
+   "actionId": "url-0494-4546-b5f05a",
+   "postNum": 4546,
+   "entityId": "qe-b5f05a539bc1",
+   "canonical": "L.A. County",
+   "entries": [
+    {
+     "alias": "L.A. County",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0495-4563-c82ada",
    "postNum": 4563,
    "entityId": "qe-c82ada60104d",
    "canonical": "Andrew Jackson",
@@ -5150,7 +6320,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0404-4590-3a19fe",
+   "actionId": "url-0496-4590-3a19fe",
    "postNum": 4590,
    "entityId": "qe-3a19fe52b2fe",
    "canonical": "Kevin Spacey",
@@ -5163,7 +6333,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0405-4624-64c77b",
+   "actionId": "url-0497-4624-64c77b",
    "postNum": 4624,
    "entityId": "qe-64c77bcce503",
    "canonical": "James Biden",
@@ -5176,7 +6346,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0406-4624-78b350",
+   "actionId": "url-0498-4624-78b350",
    "postNum": 4624,
    "entityId": "qe-78b350851367",
    "canonical": "Virgin Islands",
@@ -5189,7 +6359,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0407-4645-941a5a",
+   "actionId": "url-0499-4645-941a5a",
    "postNum": 4645,
    "entityId": "qe-941a5a89c489",
    "canonical": "Paris",
@@ -5202,7 +6372,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0408-4668-3a54a5",
+   "actionId": "url-0500-4652-b0da3b",
+   "postNum": 4652,
+   "entityId": "qe-b0da3b77f881",
+   "canonical": "Intelligence Community",
+   "entries": [
+    {
+     "alias": "Intelligence Community",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0501-4668-3a54a5",
    "postNum": 4668,
    "entityId": "qe-3a54a5469bcf",
    "canonical": "Eastern Washington",
@@ -5215,7 +6398,20 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0409-4701-ccd279",
+   "actionId": "url-0502-4668-6b7c59",
+   "postNum": 4668,
+   "entityId": "qe-6b7c591f5ac2",
+   "canonical": "Oregon State Park",
+   "entries": [
+    {
+     "alias": "Oregon State Park",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0503-4701-ccd279",
    "postNum": 4701,
    "entityId": "qe-ccd279d5087e",
    "canonical": "Snohomish County",
@@ -5228,7 +6424,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0410-4741-2245f1",
+   "actionId": "url-0504-4741-2245f1",
    "postNum": 4741,
    "entityId": "qe-2245f17b77c6",
    "canonical": "Kara Swisher",
@@ -5241,7 +6437,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0411-4744-8cd60b",
+   "actionId": "url-0505-4744-8cd60b",
    "postNum": 4744,
    "entityId": "qe-8cd60bf7677e",
    "canonical": "Administration",
@@ -5254,7 +6450,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0412-4951-dc7184",
+   "actionId": "url-0506-4951-dc7184",
    "postNum": 4951,
    "entityId": "qe-dc71841cc36f",
    "canonical": "Bryan S. Ware",
@@ -5267,7 +6463,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0413-526-051753",
+   "actionId": "url-0507-526-051753",
    "postNum": 526,
    "entityId": "qe-051753a626b3",
    "canonical": "Marc Mezvinsky",
@@ -5280,7 +6476,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0414-676-f6ab5e",
+   "actionId": "url-0508-676-f6ab5e",
    "postNum": 676,
    "entityId": "qe-f6ab5ef8147d",
    "canonical": "Carl Ghattas",
@@ -5293,7 +6489,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0415-960-31c5a8",
+   "actionId": "url-0509-960-31c5a8",
    "postNum": 960,
    "entityId": "qe-31c5a848c624",
    "canonical": "Jordan Klepper",
@@ -5306,7 +6502,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0416-960-90704a",
+   "actionId": "url-0510-960-90704a",
    "postNum": 960,
    "entityId": "qe-90704aec1d9e",
    "canonical": "Of Montreal",
@@ -5319,7 +6515,7 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0418-2581-6ae8cc",
+   "actionId": "url-0512-2581-6ae8cc",
    "postNum": 2581,
    "entityId": "qe-6ae8ccb666ea",
    "canonical": "Daily Caller News Foundation",
@@ -5332,13 +6528,26 @@
    "mentionsToRestore": 1
   },
   {
-   "actionId": "url-0419-4243-132c59",
+   "actionId": "url-0514-4243-132c59",
    "postNum": 4243,
    "entityId": "qe-132c597e73ef",
    "canonical": "National Archives and Records Administration",
    "entries": [
     {
      "alias": "NARA",
+     "certifiedEntries": 1
+    }
+   ],
+   "mentionsToRestore": 1
+  },
+  {
+   "actionId": "url-0515-4885-11ef7e",
+   "postNum": 4885,
+   "entityId": "qe-11ef7eeeb8e3",
+   "canonical": "TMZ",
+   "entries": [
+    {
+     "alias": "TMZ",
      "certifiedEntries": 1
     }
    ],

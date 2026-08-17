@@ -1,0 +1,1328 @@
+{
+ "note": "Entities with no prose mention left, but which remain referenced as the publisher of material Q linked. They stay in the public bundle and must NEVER render as a zero-mention entity page.",
+ "total": 135,
+ "entities": [
+  {
+   "id": "qe-49b9cb60a8ac",
+   "canonical": "CBS_Herridge",
+   "type": "media_organization",
+   "slug": "cbs-herridge",
+   "linkedSourcePosts": [
+    4228,
+    4280,
+    4351,
+    4422,
+    4430,
+    4600,
+    4708,
+    4852,
+    4858
+   ]
+  },
+  {
+   "id": "qe-3ec7dbd12865",
+   "canonical": "USA Today",
+   "type": "media_organization",
+   "slug": "usa-today",
+   "linkedSourcePosts": [
+    1532,
+    1790,
+    1856,
+    1913,
+    1947,
+    2136,
+    3048,
+    3496
+   ]
+  },
+  {
+   "id": "qe-6aa08f51ac3c",
+   "canonical": "Daily Caller",
+   "type": "media_organization",
+   "slug": "daily-caller",
+   "linkedSourcePosts": [
+    1992,
+    2180,
+    2181,
+    3663,
+    3898,
+    4090,
+    4358
+   ]
+  },
+  {
+   "id": "qe-acebf6618637",
+   "canonical": "Forbes",
+   "type": "media_organization",
+   "slug": "forbes",
+   "linkedSourcePosts": [
+    1762,
+    2854,
+    4225,
+    4313,
+    4337
+   ]
+  },
+  {
+   "id": "qe-a91226e14421",
+   "canonical": "Bloomberg",
+   "type": "organization",
+   "slug": "bloomberg",
+   "linkedSourcePosts": [
+    1797,
+    2136,
+    2171,
+    4202,
+    4285
+   ]
+  },
+  {
+   "id": "qe-559e34f8c247",
+   "canonical": "Business Insider",
+   "type": "media_organization",
+   "slug": "business-insider",
+   "linkedSourcePosts": [
+    1657,
+    1797,
+    4741,
+    4863
+   ]
+  },
+  {
+   "id": "qe-171b9af42469",
+   "canonical": "The Atlantic",
+   "type": "media_organization",
+   "slug": "the-atlantic",
+   "linkedSourcePosts": [
+    2136,
+    2401,
+    2520,
+    2631
+   ]
+  },
+  {
+   "id": "qe-a2c73c324528",
+   "canonical": "NY Post",
+   "type": "media_organization",
+   "slug": "ny-post",
+   "linkedSourcePosts": [
+    2145,
+    2171,
+    4589,
+    4869
+   ]
+  },
+  {
+   "id": "qe-37306dd886d7",
+   "canonical": "Breaking911",
+   "type": "media_organization",
+   "slug": "breaking911",
+   "linkedSourcePosts": [
+    2252,
+    2325,
+    2656,
+    4219
+   ]
+  },
+  {
+   "id": "qe-edce41b4a3b0",
+   "canonical": "C-SPAN",
+   "type": "media_organization",
+   "slug": "c-span",
+   "linkedSourcePosts": [
+    2297,
+    2359,
+    2360,
+    3195
+   ]
+  },
+  {
+   "id": "qe-ba645c928cee",
+   "canonical": "Maggie NYT",
+   "type": "person",
+   "slug": "maggie-nyt",
+   "linkedSourcePosts": [
+    2660,
+    2661,
+    2827,
+    3459
+   ]
+  },
+  {
+   "id": "qe-1d920608f91a",
+   "canonical": "Rudy Giuliani",
+   "type": "person",
+   "slug": "rudy-giuliani",
+   "linkedSourcePosts": [
+    3624,
+    3678,
+    3793,
+    4851
+   ]
+  },
+  {
+   "id": "qe-53e144ef7030",
+   "canonical": "Washington Examiner",
+   "type": "media_organization",
+   "slug": "washington-examiner",
+   "linkedSourcePosts": [
+    3851,
+    4118,
+    4233,
+    4248
+   ]
+  },
+  {
+   "id": "qe-222644bb62c5",
+   "canonical": "LA Times",
+   "type": "media_organization",
+   "slug": "la-times",
+   "linkedSourcePosts": [
+    1762,
+    1947,
+    2801
+   ]
+  },
+  {
+   "id": "qe-bcfa88d462a9",
+   "canonical": "AP News",
+   "type": "media_organization",
+   "slug": "ap-news",
+   "linkedSourcePosts": [
+    1763,
+    1877,
+    4552
+   ]
+  },
+  {
+   "id": "qe-be80032d230b",
+   "canonical": "Axios",
+   "type": "person",
+   "slug": "axios",
+   "linkedSourcePosts": [
+    1790,
+    2029,
+    2654
+   ]
+  },
+  {
+   "id": "qe-7b41aeefc50d",
+   "canonical": "Bill Maher",
+   "type": "person",
+   "slug": "bill-maher",
+   "linkedSourcePosts": [
+    1843,
+    3397
+   ]
+  },
+  {
+   "id": "qe-d9c40c6e93a0",
+   "canonical": "Maria Bartiromo",
+   "type": "person",
+   "slug": "maria-bartiromo",
+   "linkedSourcePosts": [
+    1855,
+    4256,
+    4258
+   ]
+  },
+  {
+   "id": "qe-f599193e8554",
+   "canonical": "The Verge",
+   "type": "media_organization",
+   "slug": "the-verge",
+   "linkedSourcePosts": [
+    2166,
+    2171,
+    2801
+   ]
+  },
+  {
+   "id": "qe-1c01a1ed75ed",
+   "canonical": "Daily Dot",
+   "type": "media_organization",
+   "slug": "daily-dot",
+   "linkedSourcePosts": [
+    2171,
+    2801,
+    4348
+   ]
+  },
+  {
+   "id": "qe-bdcb1cd538d6",
+   "canonical": "National Review",
+   "type": "media_organization",
+   "slug": "national-review",
+   "linkedSourcePosts": [
+    982,
+    2176,
+    3885
+   ]
+  },
+  {
+   "id": "qe-7974d528273b",
+   "canonical": "MarketWatch",
+   "type": "media_organization",
+   "slug": "marketwatch",
+   "linkedSourcePosts": [
+    2184,
+    2379,
+    3066
+   ]
+  },
+  {
+   "id": "qe-a23fe69398c7",
+   "canonical": "Tom Fitton",
+   "type": "person",
+   "slug": "tom-fitton",
+   "linkedSourcePosts": [
+    2370,
+    3959,
+    4078
+   ]
+  },
+  {
+   "id": "qe-108cb1178105",
+   "canonical": "RealClearPolitics",
+   "type": "media_organization",
+   "slug": "realclearpolitics",
+   "linkedSourcePosts": [
+    2659,
+    4035,
+    4215
+   ]
+  },
+  {
+   "id": "qe-7a2e37ed6dca",
+   "canonical": "TIME",
+   "type": "media_organization",
+   "slug": "time",
+   "linkedSourcePosts": [
+    2771,
+    2801,
+    4942
+   ]
+  },
+  {
+   "id": "qe-80dcc988dd59",
+   "canonical": "The Federalist",
+   "type": "media_organization",
+   "slug": "the-federalist",
+   "linkedSourcePosts": [
+    2801,
+    4155,
+    4300
+   ]
+  },
+  {
+   "id": "qe-9ffefa8df9a9",
+   "canonical": "Miami Herald",
+   "type": "media_organization",
+   "slug": "miami-herald",
+   "linkedSourcePosts": [
+    2848,
+    3498,
+    3819
+   ]
+  },
+  {
+   "id": "qe-48ba2b742dd5",
+   "canonical": "Ted Lieu",
+   "type": "person",
+   "slug": "ted-lieu",
+   "linkedSourcePosts": [
+    2941,
+    2943,
+    2945
+   ]
+  },
+  {
+   "id": "qe-1f02057026db",
+   "canonical": "OpenSecrets",
+   "type": "organization",
+   "slug": "opensecrets",
+   "linkedSourcePosts": [
+    3182,
+    3222,
+    4555
+   ]
+  },
+  {
+   "id": "qe-c92435175e92",
+   "canonical": "Steve Scalise",
+   "type": "person",
+   "slug": "steve-scalise",
+   "linkedSourcePosts": [
+    4477,
+    4492,
+    4520
+   ]
+  },
+  {
+   "id": "qe-beabb03fabeb",
+   "canonical": "Al Jazeera",
+   "type": "person",
+   "slug": "al-jazeera",
+   "linkedSourcePosts": [
+    1242,
+    2801
+   ]
+  },
+  {
+   "id": "qe-8b204011d055",
+   "canonical": "Toronto",
+   "type": "location",
+   "slug": "toronto",
+   "linkedSourcePosts": [
+    4503
+   ]
+  },
+  {
+   "id": "qe-6b91c2e9c140",
+   "canonical": "Vice",
+   "type": "media_organization",
+   "slug": "vice",
+   "linkedSourcePosts": [
+    1560,
+    2801
+   ]
+  },
+  {
+   "id": "qe-80eaf709c7f7",
+   "canonical": "Avenatti",
+   "type": "person",
+   "slug": "avenatti",
+   "linkedSourcePosts": [
+    1752
+   ]
+  },
+  {
+   "id": "qe-7f493f5efe72",
+   "canonical": "Boston Herald",
+   "type": "media_organization",
+   "slug": "boston-herald",
+   "linkedSourcePosts": [
+    1782,
+    4278
+   ]
+  },
+  {
+   "id": "qe-b3334eb51117",
+   "canonical": "Vox",
+   "type": "media_organization",
+   "slug": "vox",
+   "linkedSourcePosts": [
+    1797,
+    2801
+   ]
+  },
+  {
+   "id": "qe-685527ffce0e",
+   "canonical": "Washington Times",
+   "type": "media_organization",
+   "slug": "washington-times",
+   "linkedSourcePosts": [
+    2029,
+    4582
+   ]
+  },
+  {
+   "id": "qe-c0a2bf39c430",
+   "canonical": "Tucker Carlson",
+   "type": "person",
+   "slug": "tucker-carlson",
+   "linkedSourcePosts": [
+    2123
+   ]
+  },
+  {
+   "id": "qe-22fbd3a9bb97",
+   "canonical": "@michaelbeatty3",
+   "type": "coded_alias",
+   "slug": "michaelbeatty3",
+   "linkedSourcePosts": [
+    2241,
+    2986
+   ]
+  },
+  {
+   "id": "qe-59bb69e52d4e",
+   "canonical": "Kevin Shipp",
+   "type": "person",
+   "slug": "kevin-shipp",
+   "linkedSourcePosts": [
+    2319,
+    3464
+   ]
+  },
+  {
+   "id": "qe-d10faaf868e7",
+   "canonical": "@GeorgePapa19",
+   "type": "coded_alias",
+   "slug": "georgepapa19",
+   "linkedSourcePosts": [
+    2429,
+    2919
+   ]
+  },
+  {
+   "id": "qe-5cf46b7e8c27",
+   "canonical": "House GOP",
+   "type": "government_institution",
+   "slug": "house-gop",
+   "linkedSourcePosts": [
+    4529
+   ]
+  },
+  {
+   "id": "qe-9a7736c95e9e",
+   "canonical": "@Scavino45",
+   "type": "coded_alias",
+   "slug": "scavino45",
+   "linkedSourcePosts": [
+    2738,
+    3826
+   ]
+  },
+  {
+   "id": "qe-347e18cc8486",
+   "canonical": "Salon",
+   "type": "media_organization",
+   "slug": "salon",
+   "linkedSourcePosts": [
+    2801,
+    4653
+   ]
+  },
+  {
+   "id": "qe-a7223cacb844",
+   "canonical": "@JeffDeRiso",
+   "type": "coded_alias",
+   "slug": "jeffderiso",
+   "linkedSourcePosts": [
+    2862,
+    3262
+   ]
+  },
+  {
+   "id": "qe-c5b7ec680037",
+   "canonical": "ICANN",
+   "type": "organization",
+   "slug": "icann",
+   "linkedSourcePosts": [
+    2879,
+    2883
+   ]
+  },
+  {
+   "id": "qe-359da756e27d",
+   "canonical": "@M2Madness",
+   "type": "coded_alias",
+   "slug": "m2madness",
+   "linkedSourcePosts": [
+    3034,
+    3751
+   ]
+  },
+  {
+   "id": "qe-0ad9a53b7820",
+   "canonical": "Chicago Tribune",
+   "type": "media_organization",
+   "slug": "chicago-tribune",
+   "linkedSourcePosts": [
+    3202,
+    3204
+   ]
+  },
+  {
+   "id": "qe-c612bd190f51",
+   "canonical": "Breitbart News",
+   "type": "media_organization",
+   "slug": "breitbart-news",
+   "linkedSourcePosts": [
+    3523,
+    4481
+   ]
+  },
+  {
+   "id": "qe-cbccad5c5dd1",
+   "canonical": "Watters' World",
+   "type": "creative_work",
+   "slug": "watters-world",
+   "linkedSourcePosts": [
+    3665,
+    4195
+   ]
+  },
+  {
+   "id": "qe-775eed4582a5",
+   "canonical": "Daily Wire",
+   "type": "media_organization",
+   "slug": "daily-wire",
+   "linkedSourcePosts": [
+    3697,
+    4213
+   ]
+  },
+  {
+   "id": "qe-bf081f9168e7",
+   "canonical": "Colin Skow",
+   "type": "person",
+   "slug": "colin-skow",
+   "linkedSourcePosts": [
+    3935,
+    4193
+   ]
+  },
+  {
+   "id": "qe-d305710ada08",
+   "canonical": "Military.com",
+   "type": "media_organization",
+   "slug": "military-com",
+   "linkedSourcePosts": [
+    4234,
+    4604
+   ]
+  },
+  {
+   "id": "qe-4db8798e7eec",
+   "canonical": "NewsBreak",
+   "type": "media_organization",
+   "slug": "newsbreak",
+   "linkedSourcePosts": [
+    4653,
+    4887
+   ]
+  },
+  {
+   "id": "qe-3fde8f34252a",
+   "canonical": "CISA",
+   "type": "government_agency",
+   "slug": "cisa",
+   "linkedSourcePosts": [
+    4857,
+    4951
+   ]
+  },
+  {
+   "id": "qe-5856e5177be9",
+   "canonical": "National Security Action",
+   "type": "organization",
+   "slug": "national-security-action",
+   "linkedSourcePosts": [
+    1352
+   ]
+  },
+  {
+   "id": "qe-fe7dd046978a",
+   "canonical": "Yahoo News",
+   "type": "media_organization",
+   "slug": "yahoo-news",
+   "linkedSourcePosts": [
+    1575
+   ]
+  },
+  {
+   "id": "qe-130c0567b723",
+   "canonical": "Lars Printzen",
+   "type": "person",
+   "slug": "lars-printzen",
+   "linkedSourcePosts": [
+    1692
+   ]
+  },
+  {
+   "id": "qe-257f8576e5ae",
+   "canonical": "Guardian Project",
+   "type": "organization",
+   "slug": "guardian-project",
+   "linkedSourcePosts": [
+    1715
+   ]
+  },
+  {
+   "id": "qe-ae3122571e6e",
+   "canonical": "Global News",
+   "type": "media_organization",
+   "slug": "global-news",
+   "linkedSourcePosts": [
+    1797
+   ]
+  },
+  {
+   "id": "qe-0fc107ba2127",
+   "canonical": "Conservative Review",
+   "type": "media_organization",
+   "slug": "conservative-review",
+   "linkedSourcePosts": [
+    1797
+   ]
+  },
+  {
+   "id": "qe-816cf0cfaa57",
+   "canonical": "Star Tribune",
+   "type": "media_organization",
+   "slug": "star-tribune",
+   "linkedSourcePosts": [
+    1797
+   ]
+  },
+  {
+   "id": "qe-ba63c8e12c31",
+   "canonical": "Jordan Schachtel",
+   "type": "person",
+   "slug": "jordan-schachtel",
+   "linkedSourcePosts": [
+    1815
+   ]
+  },
+  {
+   "id": "qe-75de9a6f3b17",
+   "canonical": "Ars Technica",
+   "type": "media_organization",
+   "slug": "ars-technica",
+   "linkedSourcePosts": [
+    1947
+   ]
+  },
+  {
+   "id": "qe-ff6f82bc4dcd",
+   "canonical": "Real Clear Politics",
+   "type": "media_organization",
+   "slug": "real-clear-politics",
+   "linkedSourcePosts": [
+    2029
+   ]
+  },
+  {
+   "id": "qe-821988d89f78",
+   "canonical": "Doug Ducey",
+   "type": "person",
+   "slug": "doug-ducey",
+   "linkedSourcePosts": [
+    2078
+   ]
+  },
+  {
+   "id": "qe-f093e728b541",
+   "canonical": "Jack Posobiec",
+   "type": "person",
+   "slug": "jack-posobiec",
+   "linkedSourcePosts": [
+    2123
+   ]
+  },
+  {
+   "id": "qe-16a3331ce3b0",
+   "canonical": "Huffington Post",
+   "type": "media_organization",
+   "slug": "huffington-post",
+   "linkedSourcePosts": [
+    2136
+   ]
+  },
+  {
+   "id": "qe-1740805b9153",
+   "canonical": "Sky News",
+   "type": "media_organization",
+   "slug": "sky-news",
+   "linkedSourcePosts": [
+    2145
+   ]
+  },
+  {
+   "id": "qe-4206af605a7f",
+   "canonical": "America Newsroom",
+   "type": "media_organization",
+   "slug": "america-newsroom",
+   "linkedSourcePosts": [
+    2165
+   ]
+  },
+  {
+   "id": "qe-0122a2093514",
+   "canonical": "Fox Business",
+   "type": "media_organization",
+   "slug": "fox-business",
+   "linkedSourcePosts": [
+    2165
+   ]
+  },
+  {
+   "id": "qe-a523740cc104",
+   "canonical": "Rep Swalwell",
+   "type": "person",
+   "slug": "rep-swalwell",
+   "linkedSourcePosts": [
+    2207
+   ]
+  },
+  {
+   "id": "qe-ce43425f7c9f",
+   "canonical": "Chris Evans",
+   "type": "person",
+   "slug": "chris-evans",
+   "linkedSourcePosts": [
+    2303
+   ]
+  },
+  {
+   "id": "qe-a8f7dd5adcfc",
+   "canonical": "Katrina Pierson",
+   "type": "person",
+   "slug": "katrina-pierson",
+   "linkedSourcePosts": [
+    2303
+   ]
+  },
+  {
+   "id": "qe-f9522f0b1803",
+   "canonical": "BBC News",
+   "type": "media_organization",
+   "slug": "bbc-news",
+   "linkedSourcePosts": [
+    2340
+   ]
+  },
+  {
+   "id": "qe-7adc322c91ab",
+   "canonical": "Tampa Bay",
+   "type": "location",
+   "slug": "tampa-bay",
+   "linkedSourcePosts": [
+    2471
+   ]
+  },
+  {
+   "id": "qe-9cb007557de9",
+   "canonical": "Tom Winter",
+   "type": "person",
+   "slug": "tom-winter",
+   "linkedSourcePosts": [
+    2548
+   ]
+  },
+  {
+   "id": "qe-90528e0b368d",
+   "canonical": "The Age",
+   "type": "media_organization",
+   "slug": "the-age",
+   "linkedSourcePosts": [
+    2590
+   ]
+  },
+  {
+   "id": "qe-66ae055d563b",
+   "canonical": "Perth Now",
+   "type": "media_organization",
+   "slug": "perth-now",
+   "linkedSourcePosts": [
+    2590
+   ]
+  },
+  {
+   "id": "qe-7702d84ed2d2",
+   "canonical": "Trump Hotels",
+   "type": "organization",
+   "slug": "trump-hotels",
+   "linkedSourcePosts": [
+    2591
+   ]
+  },
+  {
+   "id": "qe-51447fdc37f4",
+   "canonical": "Seattle Times",
+   "type": "media_organization",
+   "slug": "seattle-times",
+   "linkedSourcePosts": [
+    2801
+   ]
+  },
+  {
+   "id": "qe-99db8474e17a",
+   "canonical": "The Sun",
+   "type": "media_organization",
+   "slug": "the-sun",
+   "linkedSourcePosts": [
+    2801
+   ]
+  },
+  {
+   "id": "qe-63d1e9a9fe63",
+   "canonical": "Miami New Times",
+   "type": "media_organization",
+   "slug": "miami-new-times",
+   "linkedSourcePosts": [
+    2801
+   ]
+  },
+  {
+   "id": "qe-55c64b933911",
+   "canonical": "Rolling Stone",
+   "type": "media_organization",
+   "slug": "rolling-stone",
+   "linkedSourcePosts": [
+    2801
+   ]
+  },
+  {
+   "id": "qe-5111a2899d11",
+   "canonical": "Senator Collins",
+   "type": "person",
+   "slug": "senator-collins",
+   "linkedSourcePosts": [
+    2827
+   ]
+  },
+  {
+   "id": "qe-052b89426c97",
+   "canonical": "Science News",
+   "type": "media_organization",
+   "slug": "science-news",
+   "linkedSourcePosts": [
+    2847
+   ]
+  },
+  {
+   "id": "qe-9a899a4c227d",
+   "canonical": "Urban Dictionary",
+   "type": "media_organization",
+   "slug": "urban-dictionary",
+   "linkedSourcePosts": [
+    2870
+   ]
+  },
+  {
+   "id": "qe-e00c7b9cc917",
+   "canonical": "Patton Oswalt",
+   "type": "person",
+   "slug": "patton-oswalt",
+   "linkedSourcePosts": [
+    2888
+   ]
+  },
+  {
+   "id": "qe-eaf697f0676f",
+   "canonical": "Meet the Press",
+   "type": "media_organization",
+   "slug": "meet-the-press",
+   "linkedSourcePosts": [
+    2946
+   ]
+  },
+  {
+   "id": "qe-41b3c8bc7c64",
+   "canonical": "Bill Slater",
+   "type": "person",
+   "slug": "bill-slater",
+   "linkedSourcePosts": [
+    2951
+   ]
+  },
+  {
+   "id": "qe-0c247eb5c8b8",
+   "canonical": "Todd Penley",
+   "type": "person",
+   "slug": "todd-penley",
+   "linkedSourcePosts": [
+    2970
+   ]
+  },
+  {
+   "id": "qe-6e26689d7751",
+   "canonical": "Stacey Dash",
+   "type": "person",
+   "slug": "stacey-dash",
+   "linkedSourcePosts": [
+    3017
+   ]
+  },
+  {
+   "id": "qe-1551e01e7caa",
+   "canonical": "The Epoch Times",
+   "type": "media_organization",
+   "slug": "the-epoch-times",
+   "linkedSourcePosts": [
+    3065
+   ]
+  },
+  {
+   "id": "qe-6c42e293d158",
+   "canonical": "Michal Chelbin",
+   "type": "person",
+   "slug": "michal-chelbin",
+   "linkedSourcePosts": [
+    3157
+   ]
+  },
+  {
+   "id": "qe-31de6dd602c2",
+   "canonical": "The Daily Beast",
+   "type": "media_organization",
+   "slug": "the-daily-beast",
+   "linkedSourcePosts": [
+    3182
+   ]
+  },
+  {
+   "id": "qe-dd3be5e92e7e",
+   "canonical": "Gateway Pundit",
+   "type": "media_organization",
+   "slug": "gateway-pundit",
+   "linkedSourcePosts": [
+    3199
+   ]
+  },
+  {
+   "id": "qe-f68129dce3cf",
+   "canonical": "Brian Stelter",
+   "type": "person",
+   "slug": "brian-stelter",
+   "linkedSourcePosts": [
+    3201
+   ]
+  },
+  {
+   "id": "qe-26bdfea69494",
+   "canonical": "Daniel Pressley",
+   "type": "person",
+   "slug": "daniel-pressley",
+   "linkedSourcePosts": [
+    3282
+   ]
+  },
+  {
+   "id": "qe-e7d0e19927db",
+   "canonical": "Vanity Fair",
+   "type": "person",
+   "slug": "vanity-fair",
+   "linkedSourcePosts": [
+    3448
+   ]
+  },
+  {
+   "id": "qe-ec7eb3da0f00",
+   "canonical": "Jake Tapper",
+   "type": "person",
+   "slug": "jake-tapper",
+   "linkedSourcePosts": [
+    3451
+   ]
+  },
+  {
+   "id": "qe-0ec72823454c",
+   "canonical": "Hollywood Reporter",
+   "type": "media_organization",
+   "slug": "hollywood-reporter",
+   "linkedSourcePosts": [
+    3509
+   ]
+  },
+  {
+   "id": "qe-062a4ee8b699",
+   "canonical": "Marsha Blackburn",
+   "type": "person",
+   "slug": "marsha-blackburn",
+   "linkedSourcePosts": [
+    3621
+   ]
+  },
+  {
+   "id": "qe-95ba4bd9b0b8",
+   "canonical": "Epoch Times",
+   "type": "media_organization",
+   "slug": "epoch-times",
+   "linkedSourcePosts": [
+    3738
+   ]
+  },
+  {
+   "id": "qe-35841b0b7a3d",
+   "canonical": "Mark Knoller",
+   "type": "person",
+   "slug": "mark-knoller",
+   "linkedSourcePosts": [
+    3816
+   ]
+  },
+  {
+   "id": "qe-d2b6f6e7ddde",
+   "canonical": "Rochelle Coombs",
+   "type": "person",
+   "slug": "rochelle-coombs",
+   "linkedSourcePosts": [
+    3939
+   ]
+  },
+  {
+   "id": "qe-79e83e848576",
+   "canonical": "Lou Dobbs",
+   "type": "person",
+   "slug": "lou-dobbs",
+   "linkedSourcePosts": [
+    3982
+   ]
+  },
+  {
+   "id": "qe-54a16c15b7eb",
+   "canonical": "Greg Kotseos",
+   "type": "person",
+   "slug": "greg-kotseos",
+   "linkedSourcePosts": [
+    4027
+   ]
+  },
+  {
+   "id": "qe-71c1d9414712",
+   "canonical": "The Lancet",
+   "type": "media_organization",
+   "slug": "the-lancet",
+   "linkedSourcePosts": [
+    4114
+   ]
+  },
+  {
+   "id": "qe-3047e87304c1",
+   "canonical": "Moscow Times",
+   "type": "media_organization",
+   "slug": "moscow-times",
+   "linkedSourcePosts": [
+    4137
+   ]
+  },
+  {
+   "id": "qe-d9c653f12000",
+   "canonical": "Kevin Corke",
+   "type": "person",
+   "slug": "kevin-corke",
+   "linkedSourcePosts": [
+    4143
+   ]
+  },
+  {
+   "id": "qe-005e29423829",
+   "canonical": "Shannon Bream",
+   "type": "person",
+   "slug": "shannon-bream",
+   "linkedSourcePosts": [
+    4145
+   ]
+  },
+  {
+   "id": "qe-25fc4dc6168d",
+   "canonical": "Ingraham Angle",
+   "type": "media_organization",
+   "slug": "ingraham-angle",
+   "linkedSourcePosts": [
+    4157
+   ]
+  },
+  {
+   "id": "qe-17dad31eed91",
+   "canonical": "Jonathan Turley",
+   "type": "person",
+   "slug": "jonathan-turley",
+   "linkedSourcePosts": [
+    4181
+   ]
+  },
+  {
+   "id": "qe-8eaa5c76d9a5",
+   "canonical": "Gov Murphy",
+   "type": "person",
+   "slug": "gov-murphy",
+   "linkedSourcePosts": [
+    4254
+   ]
+  },
+  {
+   "id": "qe-9361ddbb6b70",
+   "canonical": "Tito Calloway",
+   "type": "person",
+   "slug": "tito-calloway",
+   "linkedSourcePosts": [
+    4271
+   ]
+  },
+  {
+   "id": "qe-f96fdca16913",
+   "canonical": "Gates Foundation",
+   "type": "organization",
+   "slug": "gates-foundation",
+   "linkedSourcePosts": [
+    4285
+   ]
+  },
+  {
+   "id": "qe-536fedb07705",
+   "canonical": "Eric Schmitt",
+   "type": "person",
+   "slug": "eric-schmitt",
+   "linkedSourcePosts": [
+    4399
+   ]
+  },
+  {
+   "id": "qe-ff6e240e37f8",
+   "canonical": "Dan Scavino",
+   "type": "person",
+   "slug": "dan-scavino",
+   "linkedSourcePosts": [
+    4418
+   ]
+  },
+  {
+   "id": "qe-7b002006e0e5",
+   "canonical": "Obama Foundation",
+   "type": "organization",
+   "slug": "obama-foundation",
+   "linkedSourcePosts": [
+    4436
+   ]
+  },
+  {
+   "id": "qe-2177707b6f9e",
+   "canonical": "Jordan Sather",
+   "type": "person",
+   "slug": "jordan-sather",
+   "linkedSourcePosts": [
+    4449
+   ]
+  },
+  {
+   "id": "qe-f4cf882a56db",
+   "canonical": "Chad Pergram",
+   "type": "person",
+   "slug": "chad-pergram",
+   "linkedSourcePosts": [
+    4549
+   ]
+  },
+  {
+   "id": "qe-288380ab0c3e",
+   "canonical": "Lila Grace Rose",
+   "type": "person",
+   "slug": "lila-grace-rose",
+   "linkedSourcePosts": [
+    4552
+   ]
+  },
+  {
+   "id": "qe-1ab954259f79",
+   "canonical": "Heather Childers",
+   "type": "person",
+   "slug": "heather-childers",
+   "linkedSourcePosts": [
+    4557
+   ]
+  },
+  {
+   "id": "qe-c659ef34236f",
+   "canonical": "The Intercept",
+   "type": "media_organization",
+   "slug": "the-intercept",
+   "linkedSourcePosts": [
+    4652
+   ]
+  },
+  {
+   "id": "qe-b99c97767c77",
+   "canonical": "Just Security",
+   "type": "media_organization",
+   "slug": "just-security",
+   "linkedSourcePosts": [
+    4653
+   ]
+  },
+  {
+   "id": "qe-088251b1e746",
+   "canonical": "Daily Signal",
+   "type": "media_organization",
+   "slug": "daily-signal",
+   "linkedSourcePosts": [
+    4707
+   ]
+  },
+  {
+   "id": "qe-b74b53a6c7d4",
+   "canonical": "Daily Sabah",
+   "type": "media_organization",
+   "slug": "daily-sabah",
+   "linkedSourcePosts": [
+    4731
+   ]
+  },
+  {
+   "id": "qe-8e1a2326ce5d",
+   "canonical": "Sohrab Ahmari",
+   "type": "person",
+   "slug": "sohrab-ahmari",
+   "linkedSourcePosts": [
+    4859
+   ]
+  },
+  {
+   "id": "qe-fb1d35d0a036",
+   "canonical": "Chip Franklin",
+   "type": "person",
+   "slug": "chip-franklin",
+   "linkedSourcePosts": [
+    4885
+   ]
+  },
+  {
+   "id": "qe-dccc24134c8c",
+   "canonical": "Titus Nation",
+   "type": "organization",
+   "slug": "titus-nation",
+   "linkedSourcePosts": [
+    4885
+   ]
+  },
+  {
+   "id": "qe-83f99db9f924",
+   "canonical": "Matt Binder",
+   "type": "person",
+   "slug": "matt-binder",
+   "linkedSourcePosts": [
+    4885
+   ]
+  },
+  {
+   "id": "qe-491a7667227c",
+   "canonical": "Michael E. Mann",
+   "type": "person",
+   "slug": "michael-e-mann",
+   "linkedSourcePosts": [
+    4885
+   ]
+  },
+  {
+   "id": "qe-bb42a532fed2",
+   "canonical": "Kurt Eichenwald",
+   "type": "person",
+   "slug": "kurt-eichenwald",
+   "linkedSourcePosts": [
+    4885
+   ]
+  },
+  {
+   "id": "qe-a17e53dac167",
+   "canonical": "Zero Hedge",
+   "type": "media_organization",
+   "slug": "zero-hedge",
+   "linkedSourcePosts": [
+    732
+   ]
+  },
+  {
+   "id": "qe-11ef7eeeb8e3",
+   "canonical": "TMZ",
+   "type": "media_organization",
+   "slug": "tmz",
+   "linkedSourcePosts": [
+    4885
+   ]
+  }
+ ]
+}

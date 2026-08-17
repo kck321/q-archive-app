@@ -128,6 +128,16 @@ export const CHAIN = [
   { step: 'materialize-evidence-literals.mjs', kind: 'apply' },
   { step: 'materialize-literal-spans.mjs', kind: 'apply' },
   { step: 'apply-context-units.mjs', kind: 'apply' },
+  // THE CERTIFIED ENTITY STATE, RE-MATERIALISED. apply-entities.mjs rebuilds Entities from
+  // audit/entities-audit.json, which is the adjudication as it stood BEFORE the 2026-08-17
+  // integrated cleanup — so without this step a rebuild puts 1,409 rows and 9,749 mentions back and
+  // build-search-index.mjs refuses at its QA gate. The bundle was reproducible only by hand, which
+  // means it was not reproducible.
+  //
+  // It runs LAST among the steps that write entities.json or posts.json and FIRST among the ones
+  // that read entity counts, and it re-applies the plan the owner already approved rather than
+  // deciding anything: see the --rematerialise block in the applier.
+  { step: 'apply-entity-cleanup.mjs', kind: 'apply', args: ['--rematerialise'] },
   { step: 'build-relationships.mjs', kind: 'apply' },
   { step: 'build-search-index.mjs', kind: 'apply' },
   // Last, and read-only: the reader's acronym info box is derived from the finished entity set
@@ -144,6 +154,17 @@ export const CHAIN_STEPS = CHAIN.map(c => c.step)
 
 /** The deploy chain. export-firestore.mjs and rebuild-bundle.mjs both run exactly this. */
 export const APPLY_STEPS = CHAIN.filter(c => c.kind === 'apply').map(c => c.step)
+
+/**
+ * The same chain WITH each step's arguments.
+ *
+ * Every step used to take a bare `--apply`, and both callers hardcoded it. One step now needs a
+ * different word — the entity cleanup re-materialises rather than re-deciding — and a chain where
+ * the arguments live at the call site is a chain with two copies of a load-bearing detail, which is
+ * exactly the shape that let a step go missing from one path before.
+ */
+export const APPLY_INVOCATIONS = CHAIN.filter(c => c.kind === 'apply')
+  .map(c => ({ step: c.step, args: c.args ?? ['--apply'] }))
 
 /** The re-certification steps, kept out of the deploy path. See the note above. */
 export const DERIVE_STEPS = CHAIN.filter(c => c.kind === 'derive').map(c => c.step)

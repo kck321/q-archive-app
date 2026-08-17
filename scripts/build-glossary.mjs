@@ -19,6 +19,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { runtimeText, completeTokenRegex } from './lib/renderedMatch.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -82,12 +83,13 @@ for (const r of aliasRules) {
   // message — a single note for the whole ruling would be wrong on most of its own posts.
   if (r.readerNotesByPost) notesByPost.set(`${r.canonical}|${r.alias}`, r.readerNotesByPost)
 }
-const BS = String.fromCharCode(92)
-const escRx = s => s.split('').map(c => '.*+?^${}()|[]\\'.includes(c) ? BS + c : c).join('')
+// THE SHARED MATCHER, not a fifth approximation (owner ruling, 2026-08-17). This used to build a
+// \b-anchored regex over RAW post text — a coordinate system the reader never sees, and a boundary
+// rule that cannot express "Q+" because "+" is not a word character. Both now come from
+// scripts/lib/renderedMatch.mjs, which is the same rule the renderer and every audit use.
 const literalPosts = token => {
-  const endsWord = /[A-Za-z0-9]$/.test(token)
-  const rx = new RegExp(BS + 'b' + escRx(token) + (endsWord ? BS + 'b' : '(?![A-Za-z0-9])'))
-  return posts.filter(p => rx.test(p.text ?? '')).map(p => p.postNum)
+  const rx = completeTokenRegex(token)
+  return posts.filter(p => rx.test(runtimeText(p.text ?? ''))).map(p => p.postNum)
 }
 const literalCache = new Map()
 

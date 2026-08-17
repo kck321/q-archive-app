@@ -21,6 +21,7 @@ const SECTIONS = [
   { key: 'predictions', label: 'Predictions' },
   { key: 'evidence', label: 'Evidence' },
   { key: 'entities', label: 'Entities' },
+  { key: 'sources', label: 'Sources' },
   { key: 'themes', label: 'Themes' },
   { key: 'codes', label: 'Codes' },
   { key: 'emphasis', label: 'Emphasis' },
@@ -36,6 +37,9 @@ const SECTION_STYLE: Record<string, string> = {
   predictions: 'text-orange-300 border-orange-700',
   evidence: 'text-cyan-300 border-cyan-700',
   entities: 'text-emerald-300 border-emerald-700',
+  // Sources are deliberately NOT emerald. A reader must be able to tell at a glance that a result
+  // is where material came from, not a word Q wrote.
+  sources: 'text-sky-300 border-sky-700',
   themes: 'text-teal-300 border-teal-700',
   codes: 'text-rose-300 border-rose-700',
   emphasis: 'text-pink-300 border-pink-700',
@@ -204,7 +208,7 @@ export default function Search() {
       {!busy && !result && (
         <p className="mt-6 text-sm text-gray-500">
           Search the drops and every certified layer at once — Q’s wording, questions, directives,
-          claims, references, entities and their aliases, themes, codes, emphasis, and the items
+          claims, references, entities and their aliases, linked sources, themes, codes, emphasis, and the items
           deliberately left unresolved.
         </p>
       )}

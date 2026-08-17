@@ -6,7 +6,7 @@ One question: does every certified occurrence in every section still resolve to 
 This audit validates the certified system. It reclassifies nothing and moves no count. All eight analytical sections remain frozen.
 
 
-**162 of 162 invariants pass.**
+**206 of 206 invariants pass.**
 
 
 ## 1. Frozen canonical counts
@@ -19,14 +19,14 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | Claims = 4,189 | 4221 |
 | ✅ | Predictions = 630 | 595 |
 | ✅ | Evidence = 6,590 | 6590 |
-| ✅ | Entities = 1,335 canonical | 1409 |
-| ✅ | Entities = 7,903 resolved mentions (headline) | 9749 |
-| ✅ | core registry submetric = 5,273 | 5352 |
-| ✅ | adjudicated tail submetric = 3,476 | 3777 |
+| ✅ | Entities = 1,335 canonical | 1201 |
+| ✅ | Entities = 7,903 resolved mentions (headline) | 8798 |
+| ✅ | core registry submetric = 5,273 | 5328 |
+| ✅ | adjudicated tail submetric = 3,476 | 2859 |
 | ✅ | no scoped ruling drops a context-resolved occurrence | none |
 | ✅ | every acronym-named entity has a definition or a stated reason | all defined |
-| ✅ | submetrics sum to the headline | 5352 + 3777 + 620 = 9749 |
-| ✅ | the artifact ships the headline figure | 9749 |
+| ✅ | submetrics sum to the headline | 5328 + 2859 + 611 = 8798 |
+| ✅ | the artifact ships the headline figure | 8798 |
 | ✅ | the headline states how it is composed | declared |
 | ✅ | Themes = 2,393 assignments | 2644 |
 | ✅ | Codes = 1,949 occurrences | 1949 |
@@ -47,7 +47,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | counted + editorial = every shipped row | 6443 + 134 |
 | ✅ | embedded-in-source URLs are labelled in the data | 20 labelled |
 | ✅ | embedded-in-source URLs are excluded from the Q-citation figure | 2724 citations + 20 embedded of 6590 |
-| ✅ | canonical and mentions are distinct metrics | 1409 vs 9749 |
+| ✅ | canonical and mentions are distinct metrics | 1201 vs 8798 |
 | ✅ | unresolved aliases counted in neither metric | 1011 carried separately |
 | ✅ | no code carries a meaning without stating its basis | 0 |
 | ✅ | every parallel occurrence states its structural basis | ok |
@@ -102,7 +102,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | every apply step is chained into export | 27/27 |
+| ✅ | every apply step is chained into export | 28/28 |
 | ✅ | apply order in export matches the declared order | ok |
 | ✅ | export-firestore.mjs runs the shared chain | ok |
 | ✅ | rebuild-bundle.mjs runs the shared chain | ok |
@@ -112,7 +112,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | SEED_VERSION is 77 (Entities hover audit, Stage 2) | 77 |
+| ✅ | SEED_VERSION is 78 (integrated entity cleanup) | 78 |
 | ✅ | seeding is gated on SEED_VERSION | present |
 | ✅ | seeded data matches the SEED_VERSION that shipped it | unchanged |
 | ✅ | the gate value is persisted after seeding | present |
@@ -130,7 +130,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | sectionInfo states 2,552 | ok |
 | ✅ | sectionInfo states 4,221 | ok |
 | ✅ | sectionInfo states 6,590 | ok |
-| ✅ | sectionInfo headlines 1,409 entities and 9,749 mentions | ok |
+| ✅ | sectionInfo headlines 1,201 entities and 8,798 mentions | ok |
 | ✅ | no alias is stored all-lowercase | ok |
 | ✅ | sectionInfo keeps 4,463 and 3,440 as provenance | ok |
 | ✅ | sectionInfo states 2,644 | ok |
@@ -139,7 +139,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | Claims headline = certified 4,221 / 1,983 | ok |
 | ✅ | Predictions headline = certified 595 / 490 | ok |
 | ✅ | Emphasis headline = certified 3,112 / 1,357 | ok |
-| ✅ | Entities headline = certified mentions / 2,445 posts | ok |
+| ✅ | Entities headline = certified mentions / 2,090 posts | ok |
 | ✅ | Themes headline = certified 2,644 assignments | ok |
 | ✅ | the archive header reads SECTION_TOTALS rather than the frequency index | ok |
 | ✅ | phrase rows still show how many posts contain the phrase | ok |
@@ -161,22 +161,71 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | every borderline Emphasis case is queued or owner-resolved | 31 queued + 214 resolved / 245 |
 | ✅ | every quote-boundary line is queued or owner-resolved | 10 queued + 0 resolved / 10 |
 | ✅ | the held mentions still reconcile to the certified gap | 18 held / 18 gap |
-| ✅ | none of the held mentions is counted in Entities | 9749 |
+| ✅ | none of the held mentions is counted in Entities | 8798 |
 
 ## 10b. Entity hover publication
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | one global synopsis per live entity | 1409 |
-| ✅ | publish + review + quarantine + withdrawn = 7,778 | 3780 + 3542 + 419 + 37 = 7778 |
-| ✅ | no held record is in the public bundle | 3998 held back |
+| ✅ | one global synopsis per live entity | 1201 |
+| ✅ | publish + review + no-anchor + quarantine + withdrawn = 7,778 | 3698 + 3992 + 36 + 15 + 37 = 7778 |
+| ✅ | no held record is in the public bundle | 4080 held back |
 | ✅ | the editorial queues are not under public/data | admin only |
-| ✅ | no shared-alias occurrence is published | 426 held in review |
+| ✅ | no shared-alias occurrence is published | 422 held in review |
 | ✅ | withdrawn records are history, not review | 37 |
-| ✅ | every hover resolves to a live entity id | 886 entities |
+| ✅ | every hover resolves to a live entity id | 846 entities |
 | ✅ | hovers are keyed by qe- id, not by name | ok |
-| ✅ | entity totals are unchanged by the import | 1409 entities / 9749 mentions |
+| ✅ | entity totals are unchanged by the import | 1201 entities / 8798 mentions |
 | ✅ | every published synopsis carries its support grade | 0 ungraded |
+
+## 10c. Integrated entity cleanup
+
+| | Invariant | Observed |
+|---|---|---|
+| ✅ | every starting mention lands in exactly one bucket | 9749 of 9749 |
+| ✅ | the provenance audit covers every certified occurrence | 9749 of 9749 |
+| ✅ | the applied totals are exactly the ones that were proven | 1201 rows / 8798 mentions |
+| ✅ | plan actions, reversal restores and the withdrawn total are one number | 951 actions / 951 restores / 951 withdrawn |
+| ✅ | no certified occurrence is acted on twice | 951 distinct of 951 |
+| ✅ | the plan carries no refusals | 0 |
+| ✅ | no occurrence the reader can see is withdrawn | 0 acted on |
+| ✅ | no URL-derived record has a public hover | 15 quarantined |
+| ✅ | no withdrawn occurrence is still a certified annotation | 0 remaining |
+| ✅ | every bound source resolves to a live entity | 0 dangling |
+| ✅ | every unbound source still names who it is | 8 unbound |
+| ✅ | the per-post, per-hostname and per-account indexes hold the same records | 373 records / 99 hostnames / 84 accounts |
+| ✅ | publishers and accounts are separately keyed and separately labelled | 244 publisher / 129 social |
+| ✅ | every dormant id is still held in the permanent ledger | 208 dormant, 0 unreserved |
+| ✅ | no dormant identity is in the public entity bundle | 0 still public |
+| ✅ | no dormant identity is indexed as an entity | 0 indexed |
+| ✅ | no dormant identity carries a global synopsis or a hover | 0 |
+| ✅ | every source-only identity keeps at least one linked drop | 135 rows |
+| ✅ | a source-only identity has a sentence of its own, not a zero | described |
+| ✅ | Sources is its own surface, not a filter on Entities | separate page |
+| ✅ | a drop where the entity is visible never loses every occurrence | 0 over-reaching |
+| ✅ | every ambiguous occurrence is retained unchanged | 69 ambiguous, 0 acted on |
+| ✅ | no substring is auto-removed where other provenance exists | 98 removable of 98, 0 with other support |
+| ✅ | every substring record carries the word that produced it | 98 documented |
+| ✅ | every social-account reference migrates rather than being deleted | 129 references |
+| ✅ | no social-account reference is counted as a prose mention | migrated out of the prose layer |
+| ✅ | image-unconfirmed occurrences keep their certified mention | 41 held |
+| ✅ | every one of them is in the private provenance queue | 41 queued |
+| ✅ | a reclassified substring suspect still carries its evidence | 17 reclassified |
+| ✅ | only the approved population is withdrawn | 78 approved, 7 held beyond it |
+| ✅ | every withdrawal records its evidence search and reversal | 78 documented |
+| ✅ | post text and media are untouched by a withdrawal | annotation only |
+| ✅ | every withdrawal is in the reversal contract | 78 reversible |
+| ✅ | every no-anchor record carries the classification, not a bare reason | 36 classified |
+| ✅ | no no-anchor record is filed as a withdrawn entity occurrence | ruling honoured |
+| ✅ | the provenance audit describes the state it was run against | 1409 rows / 9749 mentions |
+| ✅ | image_provenance_confirmed is only claimed where something could confirm it | no OCR/annotation data in the corpus → 0 confirmed |
+| ✅ | image-unconfirmed occurrences keep their certified mention | 41 held |
+| ✅ | one shared implementation of rendered text and complete-token matching | renderedMatch.mjs |
+| ✅ | no consumer keeps its own copy of the matching primitives | 7 consumers share it |
+| ✅ | the two coordinate systems genuinely disagree, so this check can fail | raw 1430 links vs rendered 2666 — the gap this guard exists for |
+| ✅ | the script definition still matches what the app strips at seed time | markup + entities |
+| ✅ | the scripts use the renderer's word-boundary rule | lookaround, not \b |
+| ✅ | the same inputs still produce the same audit, byte for byte | identical |
 
 ## 11. Frozen-section mutation
 
@@ -194,7 +243,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | postAnalysis entries equal certified mentions | 9749 vs 9749 |
+| ✅ | postAnalysis entries equal certified mentions | 8798 vs 8798 |
 | ✅ | aliases carrying several canonicals are preserved | 32 aliases (e.g. SC) |
 | ✅ | #1385 line 5 stays open though line 1 is ruled | open |
 | ✅ | held reference rows are open and carry a note (30 after #2774 resolved DELTA-2774-1-16) | 30/31 |
@@ -228,7 +277,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | indexed Claims = certified 4,181 | 4221 |
 | ✅ | indexed Predictions = certified 630 | 595 |
 | ✅ | indexed Evidence = certified 6,590 | 6590 |
-| ✅ | indexed Entities = certified 1,445 | 1409 |
+| ✅ | indexed Entities = certified 1,445 | 1201 |
 | ✅ | indexed Themes = certified 2,395 | 2644 |
 | ✅ | indexed Codes = certified 739 distinct | 739 |
 | ✅ | indexed Emphasis = certified 3,113 | 3112 |
@@ -252,7 +301,7 @@ There is no single rule that shipped rows must equal certified counts — assert
 | Q Claims | 4,221 | postAnalysis.claims entries whose displayClass is claim | Predictions share the assertion family and the same storage, separated by claimMeta.displayClass. editorialParaphrases are stored per post and are NOT claims. | An editorial paraphrase must never be presented as Q’s literal wording. |
 | Q Predictions | 595 | postAnalysis.predictions entries | A prediction IS an assertion; the combined 4,811 figure is only ever shown labelled as combined. | n/a |
 | Evidence & References | 6,590 | every item row | URLs embedded inside pasted source material exist in the data and are labelled as such. They are references a reader can follow, but they are not Q citing a source. | An embedded-in-source URL must never be presented as a Q citation. |
-| Q Entities | 9,749 | sum of per-entity mention counts | Canonical entities (1,332) and mentions (7,903) are DIFFERENT metrics, not a row-count mismatch — one entity is mentioned many times. The headline covers every resolved mention: 4,463 from the 93-entity core registry plus 3,440 from the 1,239 adjudicated-tail entities. Unresolved alias tokens are counted in neither. | An unresolved alias must never be shown as a resolved identification. |
+| Q Entities | 8,798 | sum of per-entity mention counts | Canonical entities (1,332) and mentions (7,903) are DIFFERENT metrics, not a row-count mismatch — one entity is mentioned many times. The headline covers every resolved mention: 4,463 from the 93-entity core registry plus 3,440 from the 1,239 adjudicated-tail entities. Unresolved alias tokens are counted in neither. | An unresolved alias must never be shown as a resolved identification. |
 | Q Themes | 2,644 | sum of per-post theme assignments | Multi-label by design: 378 posts carry more than one theme, so assignments exceed posts. Legacy extractor tags are not counted. | A legacy tag must never be shown as a certified theme. |
 | Codes & Brackets | 1,949 | sum of per-code recurrence counts | Detected as a code does not mean decoded: 734 of 739 ship with no interpretation, which is the honest state. | An undecoded code must never be shown with an invented meaning. |
 | Q Emphasis | 3,112 | every occurrence row | 245 arguable devices are held in the Resolution Center and counted in neither direction. | A queued borderline case must never appear as certified emphasis. |

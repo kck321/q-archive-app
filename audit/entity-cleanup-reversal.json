@@ -1,0 +1,8564 @@
+{
+ "note": "Reversal contract for the integrated cleanup. Restoring these entries at these indices, lowest index first, returns the archive to the pre-cleanup state exactly. Written before the change, not after it.",
+ "restores": [
+  {
+   "occurrenceId": "#100:7",
+   "postNum": 100,
+   "index": 7,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#102:0",
+   "postNum": 102,
+   "index": 0,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1041:0",
+   "postNum": 1041,
+   "index": 0,
+   "alias": "US Military",
+   "entityId": "qe-b6b4134166a1",
+   "canonical": "US Military",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1061:0",
+   "postNum": 1061,
+   "index": 0,
+   "alias": "Roseanne Barr",
+   "entityId": "qe-bb91501abc09",
+   "canonical": "Roseanne Barr",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1068:0",
+   "postNum": 1068,
+   "index": 0,
+   "alias": "Fort Campbell",
+   "entityId": "qe-53acfcd829f3",
+   "canonical": "Fort Campbell",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1074:0",
+   "postNum": 1074,
+   "index": 0,
+   "alias": "Joseph Schmitz",
+   "entityId": "qe-85888a5a8fd4",
+   "canonical": "Joseph Schmitz",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1091:0",
+   "postNum": 1091,
+   "index": 0,
+   "alias": "Blackwater",
+   "entityId": "qe-fe6f527d014e",
+   "canonical": "Blackwater",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1091:1",
+   "postNum": 1091,
+   "index": 1,
+   "alias": "Eric Prince",
+   "entityId": "qe-22df1db501be",
+   "canonical": "Eric Prince",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1104:3",
+   "postNum": 1104,
+   "index": 3,
+   "alias": "Instagram",
+   "entityId": "qe-28b3b6e77b6f",
+   "canonical": "Instagram",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#111:20",
+   "postNum": 111,
+   "index": 20,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1115:1",
+   "postNum": 1115,
+   "index": 1,
+   "alias": "Trump Tower",
+   "entityId": "qe-9780fb4a0f29",
+   "canonical": "Trump Tower",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#112:3",
+   "postNum": 112,
+   "index": 3,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1125:2",
+   "postNum": 1125,
+   "index": 2,
+   "alias": "Ezra Cohen-Watnick",
+   "entityId": "qe-1cc8ed8d66ea",
+   "canonical": "Ezra Cohen-Watnick",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#113:11",
+   "postNum": 113,
+   "index": 11,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1138:3",
+   "postNum": 1138,
+   "index": 3,
+   "alias": "Reuters",
+   "entityId": "qe-cb78932b1fab",
+   "canonical": "Reuters",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1138:4",
+   "postNum": 1138,
+   "index": 4,
+   "alias": "Instagram",
+   "entityId": "qe-28b3b6e77b6f",
+   "canonical": "Instagram",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1163:0",
+   "postNum": 1163,
+   "index": 0,
+   "alias": "Ginsburg",
+   "entityId": "qe-7cc41b234cd9",
+   "canonical": "Ginsburg",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1172:0",
+   "postNum": 1172,
+   "index": 0,
+   "alias": "Wray",
+   "entityId": "qe-1932f9fd0b7c",
+   "canonical": "Wray",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#119:7",
+   "postNum": 119,
+   "index": 7,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1199:0",
+   "postNum": 1199,
+   "index": 0,
+   "alias": "WikiLeaks",
+   "entityId": "qe-c9f95ff52ca5",
+   "canonical": "WikiLeaks",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1208:3",
+   "postNum": 1208,
+   "index": 3,
+   "alias": "Mariah Sunshine Coogan",
+   "entityId": "qe-dee8e9c8635f",
+   "canonical": "Mariah Sunshine Coogan",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1208:4",
+   "postNum": 1208,
+   "index": 4,
+   "alias": "West Hollywood",
+   "entityId": "qe-2edf557260a3",
+   "canonical": "West Hollywood",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#121:6",
+   "postNum": 121,
+   "index": 6,
+   "alias": "Japan",
+   "entityId": "qe-ae7dd14411da",
+   "canonical": "Japan",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1211:1",
+   "postNum": 1211,
+   "index": 1,
+   "alias": "New York",
+   "entityId": "qe-ce9b4b609ab5",
+   "canonical": "New York",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#122:4",
+   "postNum": 122,
+   "index": 4,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1235:10",
+   "postNum": 1235,
+   "index": 10,
+   "alias": "Harvard Muslim Alumni",
+   "entityId": "qe-25f5f64483e9",
+   "canonical": "Harvard Muslim Alumni",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1239:0",
+   "postNum": 1239,
+   "index": 0,
+   "alias": "Al Gore",
+   "entityId": "qe-877128f6a818",
+   "canonical": "Al Gore",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1242:0",
+   "postNum": 1242,
+   "index": 0,
+   "alias": "Armenia",
+   "entityId": "qe-b77544943b7f",
+   "canonical": "Armenia",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1242:1",
+   "postNum": 1242,
+   "index": 1,
+   "alias": "Serzh Sargsyan",
+   "entityId": "qe-a66cafb88137",
+   "canonical": "Serzh Sargsyan",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1242:2",
+   "postNum": 1242,
+   "index": 2,
+   "alias": "Al Jazeera",
+   "entityId": "qe-beabb03fabeb",
+   "canonical": "Al Jazeera",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1248:0",
+   "postNum": 1248,
+   "index": 0,
+   "alias": "Red Cross",
+   "entityId": "qe-5de21273e3cd",
+   "canonical": "Red Cross",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1253:1",
+   "postNum": 1253,
+   "index": 1,
+   "alias": "Planned Parenthood",
+   "entityId": "qe-99f51396595b",
+   "canonical": "Planned Parenthood",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1261:0",
+   "postNum": 1261,
+   "index": 0,
+   "alias": "Toronto",
+   "entityId": "qe-8b204011d055",
+   "canonical": "Toronto",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1284:0",
+   "postNum": 1284,
+   "index": 0,
+   "alias": "Special Counsel",
+   "entityId": "qe-ac1d57f21cc2",
+   "canonical": "Special Counsel",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1284:1",
+   "postNum": 1284,
+   "index": 1,
+   "alias": "House",
+   "entityId": "qe-dd22a6644c88",
+   "canonical": "House",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1291:4",
+   "postNum": 1291,
+   "index": 4,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1301:0",
+   "postNum": 1301,
+   "index": 0,
+   "alias": "Department of Defense",
+   "entityId": "qe-b8a8adb39900",
+   "canonical": "Department of Defense",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1305:0",
+   "postNum": 1305,
+   "index": 0,
+   "alias": "Lindsey Graham",
+   "entityId": "qe-4662ccd00b39",
+   "canonical": "Lindsey Graham",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1328:0",
+   "postNum": 1328,
+   "index": 0,
+   "alias": "NO NAME",
+   "entityId": "qe-5d44c220df65",
+   "canonical": "John McCain",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1340:0",
+   "postNum": 1340,
+   "index": 0,
+   "alias": "Reddit",
+   "entityId": "qe-4070f82717b6",
+   "canonical": "Reddit",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1341:1",
+   "postNum": 1341,
+   "index": 1,
+   "alias": "Texas",
+   "entityId": "qe-14962f5a2b9c",
+   "canonical": "Texas",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1349:0",
+   "postNum": 1349,
+   "index": 0,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1352:0",
+   "postNum": 1352,
+   "index": 0,
+   "alias": "National Security Action",
+   "entityId": "qe-5856e5177be9",
+   "canonical": "National Security Action",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1360:1",
+   "postNum": 1360,
+   "index": 1,
+   "alias": "Scribd",
+   "entityId": "qe-5c574e817b4d",
+   "canonical": "Scribd",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1361:0",
+   "postNum": 1361,
+   "index": 0,
+   "alias": "Roseanne Barr",
+   "entityId": "qe-bb91501abc09",
+   "canonical": "Roseanne Barr",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1369:0",
+   "postNum": 1369,
+   "index": 0,
+   "alias": "Erik Prince",
+   "entityId": "qe-5965f1c7f28a",
+   "canonical": "Erik Prince",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1376:2",
+   "postNum": 1376,
+   "index": 2,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1381:0",
+   "postNum": 1381,
+   "index": 0,
+   "alias": "Jim Jordan",
+   "entityId": "qe-5209a6bbbd49",
+   "canonical": "Jim Jordan",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1434:2",
+   "postNum": 1434,
+   "index": 2,
+   "alias": "Utah",
+   "entityId": "qe-48218e7ab8e3",
+   "canonical": "Utah",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1434:3",
+   "postNum": 1434,
+   "index": 3,
+   "alias": "Turley",
+   "entityId": "qe-06775a91bdde",
+   "canonical": "Turley",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#145:2",
+   "postNum": 145,
+   "index": 2,
+   "alias": "Shadow Brokers",
+   "entityId": "qe-039763983a74",
+   "canonical": "Shadow Brokers",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1453:5",
+   "postNum": 1453,
+   "index": 5,
+   "alias": "Utah",
+   "entityId": "qe-48218e7ab8e3",
+   "canonical": "Utah",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1458:5",
+   "postNum": 1458,
+   "index": 5,
+   "alias": "Grassley",
+   "entityId": "qe-b0a544a47108",
+   "canonical": "Grassley",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#146:2",
+   "postNum": 146,
+   "index": 2,
+   "alias": "Shadow Brokers",
+   "entityId": "qe-039763983a74",
+   "canonical": "Shadow Brokers",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1475:0",
+   "postNum": 1475,
+   "index": 0,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#148:4",
+   "postNum": 148,
+   "index": 4,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1481:0",
+   "postNum": 1481,
+   "index": 0,
+   "alias": "Gowdy",
+   "entityId": "qe-bf67882b431d",
+   "canonical": "Gowdy",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1490:0",
+   "postNum": 1490,
+   "index": 0,
+   "alias": "POTUS",
+   "entityId": "qe-f918f4a7fbe4",
+   "canonical": "POTUS",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1492:0",
+   "postNum": 1492,
+   "index": 0,
+   "alias": "Utah",
+   "entityId": "qe-48218e7ab8e3",
+   "canonical": "Utah",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1492:1",
+   "postNum": 1492,
+   "index": 1,
+   "alias": "Turley",
+   "entityId": "qe-06775a91bdde",
+   "canonical": "Turley",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1496:15",
+   "postNum": 1496,
+   "index": 15,
+   "alias": "Freedom Caucus",
+   "entityId": "qe-27b1e1e4dbdf",
+   "canonical": "Freedom Caucus",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1520:0",
+   "postNum": 1520,
+   "index": 0,
+   "alias": "Gowdy",
+   "entityId": "qe-bf67882b431d",
+   "canonical": "Gowdy",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1532:0",
+   "postNum": 1532,
+   "index": 0,
+   "alias": "Charles Barkley",
+   "entityId": "qe-e2d4bc57e2a1",
+   "canonical": "Charles Barkley",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1532:1",
+   "postNum": 1532,
+   "index": 1,
+   "alias": "Alex Rodriguez",
+   "entityId": "qe-138a4dad3666",
+   "canonical": "Alex Rodriguez",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1532:2",
+   "postNum": 1532,
+   "index": 2,
+   "alias": "Saturday Night Live",
+   "entityId": "qe-a6c9d8148ab3",
+   "canonical": "Saturday Night Live",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1532:3",
+   "postNum": 1532,
+   "index": 3,
+   "alias": "USA Today",
+   "entityId": "qe-3ec7dbd12865",
+   "canonical": "USA Today",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1533:1",
+   "postNum": 1533,
+   "index": 1,
+   "alias": "Texas",
+   "entityId": "qe-14962f5a2b9c",
+   "canonical": "Texas",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1533:2",
+   "postNum": 1533,
+   "index": 2,
+   "alias": "Santa Fe",
+   "entityId": "qe-beca24d6a2dc",
+   "canonical": "Santa Fe",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1538:10",
+   "postNum": 1538,
+   "index": 10,
+   "alias": "Guardian",
+   "entityId": "qe-0192c0f01e9e",
+   "canonical": "Guardian",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#154:2",
+   "postNum": 154,
+   "index": 2,
+   "alias": "WWII",
+   "entityId": "qe-d9d481fc2012",
+   "canonical": "World War II",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1546:1",
+   "postNum": 1546,
+   "index": 1,
+   "alias": "Clapper",
+   "entityId": "qe-f1113eea7218",
+   "canonical": "Clapper",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#155:1",
+   "postNum": 155,
+   "index": 1,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1553:24",
+   "postNum": 1553,
+   "index": 24,
+   "alias": "Peter Strzok",
+   "entityId": "qe-cda28c2cb320",
+   "canonical": "Peter Strzok",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1560:0",
+   "postNum": 1560,
+   "index": 0,
+   "alias": "Daily Beast",
+   "entityId": "qe-6cbd2d0bea8d",
+   "canonical": "Daily Beast",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1560:1",
+   "postNum": 1560,
+   "index": 1,
+   "alias": "Vice",
+   "entityId": "qe-6b91c2e9c140",
+   "canonical": "Vice",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1575:1",
+   "postNum": 1575,
+   "index": 1,
+   "alias": "Yahoo News",
+   "entityId": "qe-fe7dd046978a",
+   "canonical": "Yahoo News",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1579:0",
+   "postNum": 1579,
+   "index": 0,
+   "alias": "Matt Gaetz",
+   "entityId": "qe-2f4bc1c87a74",
+   "canonical": "Matt Gaetz",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#158:7",
+   "postNum": 158,
+   "index": 7,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1594:0",
+   "postNum": 1594,
+   "index": 0,
+   "alias": "Curt Schilling",
+   "entityId": "qe-2d1422b846bf",
+   "canonical": "Curt Schilling",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1594:1",
+   "postNum": 1594,
+   "index": 1,
+   "alias": "Daily Beast",
+   "entityId": "qe-6cbd2d0bea8d",
+   "canonical": "Daily Beast",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1595:0",
+   "postNum": 1595,
+   "index": 0,
+   "alias": "WikiLeaks",
+   "entityId": "qe-c9f95ff52ca5",
+   "canonical": "WikiLeaks",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1611:0",
+   "postNum": 1611,
+   "index": 0,
+   "alias": "Strzok",
+   "entityId": "qe-b6852016b7a2",
+   "canonical": "Strzok",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1625:0",
+   "postNum": 1625,
+   "index": 0,
+   "alias": "Mark Zuckerberg",
+   "entityId": "qe-4156dad3e3a4",
+   "canonical": "Mark Zuckerberg",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1641:1",
+   "postNum": 1641,
+   "index": 1,
+   "alias": "8chan",
+   "entityId": "qe-a67f315bc9ac",
+   "canonical": "8chan",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1641:2",
+   "postNum": 1641,
+   "index": 2,
+   "alias": "HuffingtonPost",
+   "entityId": "qe-583384b861a0",
+   "canonical": "HuffPost",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1641:4",
+   "postNum": 1641,
+   "index": 4,
+   "alias": "Capital Gazette",
+   "entityId": "qe-4c75d2db2eac",
+   "canonical": "Capital Gazette",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1657:0",
+   "postNum": 1657,
+   "index": 0,
+   "alias": "4chan",
+   "entityId": "qe-36ba0b6c5ee9",
+   "canonical": "4chan",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1657:1",
+   "postNum": 1657,
+   "index": 1,
+   "alias": "Business Insider",
+   "entityId": "qe-559e34f8c247",
+   "canonical": "Business Insider",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1657:2",
+   "postNum": 1657,
+   "index": 2,
+   "alias": "Snopes",
+   "entityId": "qe-922bad71432c",
+   "canonical": "Snopes",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1659:0",
+   "postNum": 1659,
+   "index": 0,
+   "alias": "Utah",
+   "entityId": "qe-48218e7ab8e3",
+   "canonical": "Utah",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1659:1",
+   "postNum": 1659,
+   "index": 1,
+   "alias": "Turley",
+   "entityId": "qe-06775a91bdde",
+   "canonical": "Turley",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1663:1",
+   "postNum": 1663,
+   "index": 1,
+   "alias": "Lynch",
+   "entityId": "qe-3c094d9fe7eb",
+   "canonical": "Lynch",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1666:9",
+   "postNum": 1666,
+   "index": 9,
+   "alias": "House Judiciary",
+   "entityId": "qe-c378a7feae5f",
+   "canonical": "House Judiciary",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1666:10",
+   "postNum": 1666,
+   "index": 10,
+   "alias": "House Oversight",
+   "entityId": "qe-49ef9ed98d6f",
+   "canonical": "House Oversight",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1684:0",
+   "postNum": 1684,
+   "index": 0,
+   "alias": "HuffingtonPost",
+   "entityId": "qe-583384b861a0",
+   "canonical": "HuffPost",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1687:0",
+   "postNum": 1687,
+   "index": 0,
+   "alias": "HuffPost",
+   "entityId": "qe-583384b861a0",
+   "canonical": "HuffPost",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1687:1",
+   "postNum": 1687,
+   "index": 1,
+   "alias": "Shiva Ayyadurai",
+   "entityId": "qe-e86b643b6395",
+   "canonical": "Shiva Ayyadurai",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1687:2",
+   "postNum": 1687,
+   "index": 2,
+   "alias": "Amazon",
+   "entityId": "qe-04b7fdb16791",
+   "canonical": "Amazon",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1687:3",
+   "postNum": 1687,
+   "index": 3,
+   "alias": "Daily Beast",
+   "entityId": "qe-6cbd2d0bea8d",
+   "canonical": "Daily Beast",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1691:0",
+   "postNum": 1691,
+   "index": 0,
+   "alias": "Reddit",
+   "entityId": "qe-4070f82717b6",
+   "canonical": "Reddit",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1692:0",
+   "postNum": 1692,
+   "index": 0,
+   "alias": "Lars Printzen",
+   "entityId": "qe-130c0567b723",
+   "canonical": "Lars Printzen",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1694:0",
+   "postNum": 1694,
+   "index": 0,
+   "alias": "Federal Reserve",
+   "entityId": "qe-ed944f555649",
+   "canonical": "Federal Reserve",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1694:1",
+   "postNum": 1694,
+   "index": 1,
+   "alias": "CNBC",
+   "entityId": "qe-9432fc4f7685",
+   "canonical": "CNBC",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1695:0",
+   "postNum": 1695,
+   "index": 0,
+   "alias": "Federal Reserve",
+   "entityId": "qe-ed944f555649",
+   "canonical": "Federal Reserve",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1695:1",
+   "postNum": 1695,
+   "index": 1,
+   "alias": "CNBC",
+   "entityId": "qe-9432fc4f7685",
+   "canonical": "CNBC",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1695:2",
+   "postNum": 1695,
+   "index": 2,
+   "alias": "Mark Grant",
+   "entityId": "qe-7ee53376888c",
+   "canonical": "Mark Grant",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1703:1",
+   "postNum": 1703,
+   "index": 1,
+   "alias": "Mark Meadows",
+   "entityId": "qe-3108d68923a0",
+   "canonical": "Mark Meadows",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1715:1",
+   "postNum": 1715,
+   "index": 1,
+   "alias": "Guardian Project",
+   "entityId": "qe-257f8576e5ae",
+   "canonical": "Guardian Project",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1717:0",
+   "postNum": 1717,
+   "index": 0,
+   "alias": "Meadows",
+   "entityId": "qe-e428d152c1f7",
+   "canonical": "Meadows",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1735:0",
+   "postNum": 1735,
+   "index": 0,
+   "alias": "Les Moonves",
+   "entityId": "qe-f189100b3bce",
+   "canonical": "Les Moonves",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1735:1",
+   "postNum": 1735,
+   "index": 1,
+   "alias": "Ronan Farrow",
+   "entityId": "qe-7d76c2dddce5",
+   "canonical": "Ronan Farrow",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1750:0",
+   "postNum": 1750,
+   "index": 0,
+   "alias": "MSNBC",
+   "entityId": "qe-2cf9f642e53c",
+   "canonical": "MSNBC",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1750:1",
+   "postNum": 1750,
+   "index": 1,
+   "alias": "Ali Velshi",
+   "entityId": "qe-cf230e6f349c",
+   "canonical": "Ali Velshi",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1750:2",
+   "postNum": 1750,
+   "index": 2,
+   "alias": "Apple",
+   "entityId": "qe-033029820028",
+   "canonical": "Apple",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1750:3",
+   "postNum": 1750,
+   "index": 3,
+   "alias": "Pizzagate",
+   "entityId": "qe-6eba7f9e78be",
+   "canonical": "Pizzagate",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1752:0",
+   "postNum": 1752,
+   "index": 0,
+   "alias": "Avenatti",
+   "entityId": "qe-80eaf709c7f7",
+   "canonical": "Avenatti",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1757:0",
+   "postNum": 1757,
+   "index": 0,
+   "alias": "Michael Avenatti",
+   "entityId": "qe-2c0fe4688b78",
+   "canonical": "Michael Avenatti",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1762:1",
+   "postNum": 1762,
+   "index": 1,
+   "alias": "Forbes",
+   "entityId": "qe-acebf6618637",
+   "canonical": "Forbes",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1762:2",
+   "postNum": 1762,
+   "index": 2,
+   "alias": "LA Times",
+   "entityId": "qe-222644bb62c5",
+   "canonical": "LA Times",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1763:0",
+   "postNum": 1763,
+   "index": 0,
+   "alias": "AP News",
+   "entityId": "qe-bcfa88d462a9",
+   "canonical": "AP News",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1764:18",
+   "postNum": 1764,
+   "index": 18,
+   "alias": "McCain Institute",
+   "entityId": "qe-f24eb2f20fbc",
+   "canonical": "McCain Institute",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1764:21",
+   "postNum": 1764,
+   "index": 21,
+   "alias": "Gina Haspel",
+   "entityId": "qe-84e6163609f3",
+   "canonical": "Gina Haspel",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1766:0",
+   "postNum": 1766,
+   "index": 0,
+   "alias": "Avenatti",
+   "entityId": "qe-80eaf709c7f7",
+   "canonical": "Avenatti",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1766:1",
+   "postNum": 1766,
+   "index": 1,
+   "alias": "Daily Beast",
+   "entityId": "qe-6cbd2d0bea8d",
+   "canonical": "Daily Beast",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1767:0",
+   "postNum": 1767,
+   "index": 0,
+   "alias": "4chan",
+   "entityId": "qe-36ba0b6c5ee9",
+   "canonical": "4chan",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1767:1",
+   "postNum": 1767,
+   "index": 1,
+   "alias": "The Guardian",
+   "entityId": "qe-081c55fb2235",
+   "canonical": "The Guardian",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1772:0",
+   "postNum": 1772,
+   "index": 0,
+   "alias": "Joshua Adam Schulte",
+   "entityId": "qe-8dd4cfa59fce",
+   "canonical": "Joshua Adam Schulte",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1772:1",
+   "postNum": 1772,
+   "index": 1,
+   "alias": "SDNY",
+   "entityId": "qe-9cfb9a554b04",
+   "canonical": "SDNY",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1779:0",
+   "postNum": 1779,
+   "index": 0,
+   "alias": "Tony Podesta",
+   "entityId": "qe-90ed465e4946",
+   "canonical": "Tony Podesta",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1779:1",
+   "postNum": 1779,
+   "index": 1,
+   "alias": "CNBC",
+   "entityId": "qe-9432fc4f7685",
+   "canonical": "CNBC",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1779:2",
+   "postNum": 1779,
+   "index": 2,
+   "alias": "Special Counsel",
+   "entityId": "qe-ac1d57f21cc2",
+   "canonical": "Special Counsel",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1781:0",
+   "postNum": 1781,
+   "index": 0,
+   "alias": "POTUS",
+   "entityId": "qe-f918f4a7fbe4",
+   "canonical": "POTUS",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1782:0",
+   "postNum": 1782,
+   "index": 0,
+   "alias": "Boston Herald",
+   "entityId": "qe-7f493f5efe72",
+   "canonical": "Boston Herald",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1790:0",
+   "postNum": 1790,
+   "index": 0,
+   "alias": "Sarah Sanders",
+   "entityId": "qe-150dab1de650",
+   "canonical": "Sarah Sanders",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1790:1",
+   "postNum": 1790,
+   "index": 1,
+   "alias": "USA Today",
+   "entityId": "qe-3ec7dbd12865",
+   "canonical": "USA Today",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1790:2",
+   "postNum": 1790,
+   "index": 2,
+   "alias": "Axios",
+   "entityId": "qe-be80032d230b",
+   "canonical": "Axios",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1797:0",
+   "postNum": 1797,
+   "index": 0,
+   "alias": "8chan",
+   "entityId": "qe-a67f315bc9ac",
+   "canonical": "8chan",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1797:1",
+   "postNum": 1797,
+   "index": 1,
+   "alias": "Reddit",
+   "entityId": "qe-4070f82717b6",
+   "canonical": "Reddit",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1797:2",
+   "postNum": 1797,
+   "index": 2,
+   "alias": "Vox",
+   "entityId": "qe-b3334eb51117",
+   "canonical": "Vox",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1797:3",
+   "postNum": 1797,
+   "index": 3,
+   "alias": "CBS News",
+   "entityId": "qe-b7a2d1390d69",
+   "canonical": "CBS News",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1797:4",
+   "postNum": 1797,
+   "index": 4,
+   "alias": "Global News",
+   "entityId": "qe-ae3122571e6e",
+   "canonical": "Global News",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1797:5",
+   "postNum": 1797,
+   "index": 5,
+   "alias": "Business Insider",
+   "entityId": "qe-559e34f8c247",
+   "canonical": "Business Insider",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1797:6",
+   "postNum": 1797,
+   "index": 6,
+   "alias": "Conservative Review",
+   "entityId": "qe-0fc107ba2127",
+   "canonical": "Conservative Review",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1797:7",
+   "postNum": 1797,
+   "index": 7,
+   "alias": "Chris Cuomo",
+   "entityId": "qe-b23655c71613",
+   "canonical": "Chris Cuomo",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1797:8",
+   "postNum": 1797,
+   "index": 8,
+   "alias": "Daily Beast",
+   "entityId": "qe-6cbd2d0bea8d",
+   "canonical": "Daily Beast",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1797:9",
+   "postNum": 1797,
+   "index": 9,
+   "alias": "JFK Jr.",
+   "entityId": "qe-e872cf85bc4b",
+   "canonical": "JFK Jr.",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1797:10",
+   "postNum": 1797,
+   "index": 10,
+   "alias": "Star Tribune",
+   "entityId": "qe-816cf0cfaa57",
+   "canonical": "Star Tribune",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1797:11",
+   "postNum": 1797,
+   "index": 11,
+   "alias": "Fortune",
+   "entityId": "qe-56c2341792be",
+   "canonical": "Fortune",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1797:12",
+   "postNum": 1797,
+   "index": 12,
+   "alias": "Bloomberg",
+   "entityId": "qe-a91226e14421",
+   "canonical": "Bloomberg",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#181:0",
+   "postNum": 181,
+   "index": 0,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1815:0",
+   "postNum": 1815,
+   "index": 0,
+   "alias": "Judicial Watch",
+   "entityId": "qe-f0a4db3b3a2d",
+   "canonical": "Judicial Watch",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1815:1",
+   "postNum": 1815,
+   "index": 1,
+   "alias": "Jordan Schachtel",
+   "entityId": "qe-ba63c8e12c31",
+   "canonical": "Jordan Schachtel",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1815:2",
+   "postNum": 1815,
+   "index": 2,
+   "alias": "Clinton",
+   "entityId": "qe-cb07cff77084",
+   "canonical": "Hillary Clinton",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1821:0",
+   "postNum": 1821,
+   "index": 0,
+   "alias": "House Intelligence Committee",
+   "entityId": "qe-efc069a23832",
+   "canonical": "House Intelligence Committee",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1826:1",
+   "postNum": 1826,
+   "index": 1,
+   "alias": "Kavanaugh",
+   "entityId": "qe-76da188497d6",
+   "canonical": "Kavanaugh",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1826:2",
+   "postNum": 1826,
+   "index": 2,
+   "alias": "Phill Mudd",
+   "entityId": "qe-f4a4f7f7e6f6",
+   "canonical": "Phill Mudd",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1826:3",
+   "postNum": 1826,
+   "index": 3,
+   "alias": "Rachel Maddow",
+   "entityId": "qe-81c70fd3e376",
+   "canonical": "Rachel Maddow",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#184:1",
+   "postNum": 184,
+   "index": 1,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1842:0",
+   "postNum": 1842,
+   "index": 0,
+   "alias": "Wikileaks",
+   "entityId": "qe-c9f95ff52ca5",
+   "canonical": "WikiLeaks",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1842:1",
+   "postNum": 1842,
+   "index": 1,
+   "alias": "Assange",
+   "entityId": "qe-2d7f16a051df",
+   "canonical": "Assange",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1843:0",
+   "postNum": 1843,
+   "index": 0,
+   "alias": "Bill Maher",
+   "entityId": "qe-7b41aeefc50d",
+   "canonical": "Bill Maher",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1844:0",
+   "postNum": 1844,
+   "index": 0,
+   "alias": "Telecommunications Act of 1996",
+   "entityId": "qe-5382537e6076",
+   "canonical": "Telecommunications Act of 1996",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1846:0",
+   "postNum": 1846,
+   "index": 0,
+   "alias": "Seattle",
+   "entityId": "qe-2597f1840652",
+   "canonical": "Seattle",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1849:9",
+   "postNum": 1849,
+   "index": 9,
+   "alias": "Manafort",
+   "entityId": "qe-c5bbe8dcde6b",
+   "canonical": "Manafort",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1850:4",
+   "postNum": 1850,
+   "index": 4,
+   "alias": "West Virginia",
+   "entityId": "qe-d4b491dabbb6",
+   "canonical": "West Virginia",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1851:0",
+   "postNum": 1851,
+   "index": 0,
+   "alias": "James Gunn",
+   "entityId": "qe-7098d8ae0346",
+   "canonical": "James Gunn",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1855:2",
+   "postNum": 1855,
+   "index": 2,
+   "alias": "Maria Bartiromo",
+   "entityId": "qe-d9c40c6e93a0",
+   "canonical": "Maria Bartiromo",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1856:2",
+   "postNum": 1856,
+   "index": 2,
+   "alias": "John Kelly",
+   "entityId": "qe-28abe1b3ff83",
+   "canonical": "John Kelly",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1856:3",
+   "postNum": 1856,
+   "index": 3,
+   "alias": "Omarosa",
+   "entityId": "qe-78b861a601cb",
+   "canonical": "Omarosa",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1856:5",
+   "postNum": 1856,
+   "index": 5,
+   "alias": "Daily Beast",
+   "entityId": "qe-6cbd2d0bea8d",
+   "canonical": "Daily Beast",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1856:6",
+   "postNum": 1856,
+   "index": 6,
+   "alias": "CNBC",
+   "entityId": "qe-9432fc4f7685",
+   "canonical": "CNBC",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1856:7",
+   "postNum": 1856,
+   "index": 7,
+   "alias": "New York Magazine",
+   "entityId": "qe-33b95dc95027",
+   "canonical": "New York Magazine",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1856:8",
+   "postNum": 1856,
+   "index": 8,
+   "alias": "Newsweek",
+   "entityId": "qe-0e242c606972",
+   "canonical": "Newsweek",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1856:9",
+   "postNum": 1856,
+   "index": 9,
+   "alias": "USA Today",
+   "entityId": "qe-3ec7dbd12865",
+   "canonical": "USA Today",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#186:0",
+   "postNum": 186,
+   "index": 0,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1860:0",
+   "postNum": 1860,
+   "index": 0,
+   "alias": "Jordan",
+   "entityId": "qe-0524b6d6ca03",
+   "canonical": "Jordan",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1864:0",
+   "postNum": 1864,
+   "index": 0,
+   "alias": "Trump Tower",
+   "entityId": "qe-9780fb4a0f29",
+   "canonical": "Trump Tower",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1877:3",
+   "postNum": 1877,
+   "index": 3,
+   "alias": "AP News",
+   "entityId": "qe-bcfa88d462a9",
+   "canonical": "AP News",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1877:4",
+   "postNum": 1877,
+   "index": 4,
+   "alias": "AP",
+   "entityId": "qe-2f3d0f74a507",
+   "canonical": "Associated Press",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1878:1",
+   "postNum": 1878,
+   "index": 1,
+   "alias": "New Mexico",
+   "entityId": "qe-31664e7174cd",
+   "canonical": "New Mexico",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1879:0",
+   "postNum": 1879,
+   "index": 0,
+   "alias": "Catholic Church",
+   "entityId": "qe-4f40a88dc932",
+   "canonical": "Catholic Church",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1879:1",
+   "postNum": 1879,
+   "index": 1,
+   "alias": "Pennsylvania",
+   "entityId": "qe-fdf0e237f0c5",
+   "canonical": "Pennsylvania",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1880:1",
+   "postNum": 1880,
+   "index": 1,
+   "alias": "Matt Doran",
+   "entityId": "qe-a68304393601",
+   "canonical": "Matt Doran",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1880:2",
+   "postNum": 1880,
+   "index": 2,
+   "alias": "Operation Underground Railroad",
+   "entityId": "qe-35852e5aa506",
+   "canonical": "Operation Underground Railroad",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1880:3",
+   "postNum": 1880,
+   "index": 3,
+   "alias": "Sunday Night",
+   "entityId": "qe-b0925e132c0f",
+   "canonical": "Sunday Night",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1887:11",
+   "postNum": 1887,
+   "index": 11,
+   "alias": "WikiLeaks",
+   "entityId": "qe-c9f95ff52ca5",
+   "canonical": "WikiLeaks",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1887:12",
+   "postNum": 1887,
+   "index": 12,
+   "alias": "Podesta",
+   "entityId": "qe-c9d65140fa37",
+   "canonical": "Podesta",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1888:0",
+   "postNum": 1888,
+   "index": 0,
+   "alias": "Paul Combetta",
+   "entityId": "qe-64d278bf9624",
+   "canonical": "Paul Combetta",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1888:1",
+   "postNum": 1888,
+   "index": 1,
+   "alias": "Reddit",
+   "entityId": "qe-4070f82717b6",
+   "canonical": "Reddit",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1889:0",
+   "postNum": 1889,
+   "index": 0,
+   "alias": "Steele",
+   "entityId": "qe-64d8ddac64e7",
+   "canonical": "Steele",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1910:2",
+   "postNum": 1910,
+   "index": 2,
+   "alias": "Army",
+   "entityId": "qe-3c60a6420b68",
+   "canonical": "Army",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1913:0",
+   "postNum": 1913,
+   "index": 0,
+   "alias": "USA Today",
+   "entityId": "qe-3ec7dbd12865",
+   "canonical": "USA Today",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1918:0",
+   "postNum": 1918,
+   "index": 0,
+   "alias": "WikiLeaks",
+   "entityId": "qe-c9f95ff52ca5",
+   "canonical": "WikiLeaks",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1918:1",
+   "postNum": 1918,
+   "index": 1,
+   "alias": "Podesta",
+   "entityId": "qe-c9d65140fa37",
+   "canonical": "Podesta",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1927:9",
+   "postNum": 1927,
+   "index": 9,
+   "alias": "Utah",
+   "entityId": "qe-48218e7ab8e3",
+   "canonical": "Utah",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1927:10",
+   "postNum": 1927,
+   "index": 10,
+   "alias": "Turley",
+   "entityId": "qe-06775a91bdde",
+   "canonical": "Turley",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1939:7",
+   "postNum": 1939,
+   "index": 7,
+   "alias": "Tony Blair",
+   "entityId": "qe-787c735baabb",
+   "canonical": "Tony Blair",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1939:8",
+   "postNum": 1939,
+   "index": 8,
+   "alias": "Michael Wolff",
+   "entityId": "qe-e7cafadb1d39",
+   "canonical": "Michael Wolff",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1939:9",
+   "postNum": 1939,
+   "index": 9,
+   "alias": "GCHQ",
+   "entityId": "qe-5363ead58ce5",
+   "canonical": "GCHQ",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1939:11",
+   "postNum": 1939,
+   "index": 11,
+   "alias": "Jared Kushner",
+   "entityId": "qe-3baafa6d1077",
+   "canonical": "Jared Kushner",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1945:0",
+   "postNum": 1945,
+   "index": 0,
+   "alias": "Bill Maher",
+   "entityId": "qe-7b41aeefc50d",
+   "canonical": "Bill Maher",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1945:1",
+   "postNum": 1945,
+   "index": 1,
+   "alias": "Theresa May",
+   "entityId": "qe-c24360253d0d",
+   "canonical": "Theresa May",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1945:2",
+   "postNum": 1945,
+   "index": 2,
+   "alias": "Benedict Arnold",
+   "entityId": "qe-5f90d4b1138a",
+   "canonical": "Benedict Arnold",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1947:2",
+   "postNum": 1947,
+   "index": 2,
+   "alias": "USA Today",
+   "entityId": "qe-3ec7dbd12865",
+   "canonical": "USA Today",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1947:3",
+   "postNum": 1947,
+   "index": 3,
+   "alias": "LA Times",
+   "entityId": "qe-222644bb62c5",
+   "canonical": "LA Times",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1947:4",
+   "postNum": 1947,
+   "index": 4,
+   "alias": "Politico",
+   "entityId": "qe-7f7a9c8af686",
+   "canonical": "Politico",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1947:5",
+   "postNum": 1947,
+   "index": 5,
+   "alias": "Reuters",
+   "entityId": "qe-cb78932b1fab",
+   "canonical": "Reuters",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1947:6",
+   "postNum": 1947,
+   "index": 6,
+   "alias": "Ars Technica",
+   "entityId": "qe-75de9a6f3b17",
+   "canonical": "Ars Technica",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1963:0",
+   "postNum": 1963,
+   "index": 0,
+   "alias": "Feinstein",
+   "entityId": "qe-ac912941a68f",
+   "canonical": "Feinstein",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1972:0",
+   "postNum": 1972,
+   "index": 0,
+   "alias": "Bruce Ohr",
+   "entityId": "qe-a273cc0d54f7",
+   "canonical": "Bruce Ohr",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1972:1",
+   "postNum": 1972,
+   "index": 1,
+   "alias": "Carter Page",
+   "entityId": "qe-2eb344dfc5da",
+   "canonical": "Carter Page",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1976:0",
+   "postNum": 1976,
+   "index": 0,
+   "alias": "Senate Judiciary Committee",
+   "entityId": "qe-ddeb9c6c71b8",
+   "canonical": "Senate Judiciary Committee",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1976:1",
+   "postNum": 1976,
+   "index": 1,
+   "alias": "Attorney General",
+   "entityId": "qe-7b48ab004482",
+   "canonical": "Attorney General",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1976:2",
+   "postNum": 1976,
+   "index": 2,
+   "alias": "Deputy Attorney General",
+   "entityId": "qe-1df932e91ff0",
+   "canonical": "Deputy Attorney General",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1976:3",
+   "postNum": 1976,
+   "index": 3,
+   "alias": "Special Counsel",
+   "entityId": "qe-ac1d57f21cc2",
+   "canonical": "Special Counsel",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1976:4",
+   "postNum": 1976,
+   "index": 4,
+   "alias": "AG",
+   "entityId": "qe-5141965c8358",
+   "canonical": "AG",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1976:5",
+   "postNum": 1976,
+   "index": 5,
+   "alias": "Turley",
+   "entityId": "qe-06775a91bdde",
+   "canonical": "Turley",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1976:6",
+   "postNum": 1976,
+   "index": 6,
+   "alias": "Utah",
+   "entityId": "qe-48218e7ab8e3",
+   "canonical": "Utah",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1981:10",
+   "postNum": 1981,
+   "index": 10,
+   "alias": "Admiral Rogers",
+   "entityId": "qe-c44175435b4c",
+   "canonical": "Admiral Rogers",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1982:0",
+   "postNum": 1982,
+   "index": 0,
+   "alias": "Reuters",
+   "entityId": "qe-cb78932b1fab",
+   "canonical": "Reuters",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1990:13",
+   "postNum": 1990,
+   "index": 13,
+   "alias": "Grassley",
+   "entityId": "qe-b0a544a47108",
+   "canonical": "Grassley",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1990:14",
+   "postNum": 1990,
+   "index": 14,
+   "alias": "AG",
+   "entityId": "qe-5141965c8358",
+   "canonical": "AG",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1990:17",
+   "postNum": 1990,
+   "index": 17,
+   "alias": "DAG",
+   "entityId": "qe-1df932e91ff0",
+   "canonical": "Deputy Attorney General",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1992:0",
+   "postNum": 1992,
+   "index": 0,
+   "alias": "Daily Caller",
+   "entityId": "qe-6aa08f51ac3c",
+   "canonical": "Daily Caller",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#1992:1",
+   "postNum": 1992,
+   "index": 1,
+   "alias": "US Navy",
+   "entityId": "qe-9f1d8fd8f37d",
+   "canonical": "US Navy",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2025:0",
+   "postNum": 2025,
+   "index": 0,
+   "alias": "Bruce Ohr",
+   "entityId": "qe-a273cc0d54f7",
+   "canonical": "Bruce Ohr",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2029:1",
+   "postNum": 2029,
+   "index": 1,
+   "alias": "Politico",
+   "entityId": "qe-7f7a9c8af686",
+   "canonical": "Politico",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2029:2",
+   "postNum": 2029,
+   "index": 2,
+   "alias": "CNBC",
+   "entityId": "qe-9432fc4f7685",
+   "canonical": "CNBC",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2029:3",
+   "postNum": 2029,
+   "index": 3,
+   "alias": "Axios",
+   "entityId": "qe-be80032d230b",
+   "canonical": "Axios",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2029:4",
+   "postNum": 2029,
+   "index": 4,
+   "alias": "Washington Times",
+   "entityId": "qe-685527ffce0e",
+   "canonical": "Washington Times",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2029:6",
+   "postNum": 2029,
+   "index": 6,
+   "alias": "Newsweek",
+   "entityId": "qe-0e242c606972",
+   "canonical": "Newsweek",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2029:8",
+   "postNum": 2029,
+   "index": 8,
+   "alias": "Real Clear Politics",
+   "entityId": "qe-ff6f82bc4dcd",
+   "canonical": "Real Clear Politics",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2036:1",
+   "postNum": 2036,
+   "index": 1,
+   "alias": "Paul Pelosi",
+   "entityId": "qe-ad97b6ceea12",
+   "canonical": "Paul Pelosi",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2037:0",
+   "postNum": 2037,
+   "index": 0,
+   "alias": "Gavin Newsom",
+   "entityId": "qe-c00874e212d3",
+   "canonical": "Gavin Newsom",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2041:0",
+   "postNum": 2041,
+   "index": 0,
+   "alias": "Judicial Watch",
+   "entityId": "qe-f0a4db3b3a2d",
+   "canonical": "Judicial Watch",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2041:1",
+   "postNum": 2041,
+   "index": 1,
+   "alias": "Carter Page",
+   "entityId": "qe-2eb344dfc5da",
+   "canonical": "Carter Page",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2042:0",
+   "postNum": 2042,
+   "index": 0,
+   "alias": "Chief Justice John Roberts",
+   "entityId": "qe-c62318860f90",
+   "canonical": "Chief Justice John Roberts",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2044:0",
+   "postNum": 2044,
+   "index": 0,
+   "alias": "Abigail Spanberger",
+   "entityId": "qe-7fb3a5ba91e1",
+   "canonical": "Abigail Spanberger",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2053:1",
+   "postNum": 2053,
+   "index": 1,
+   "alias": "Judicial Watch",
+   "entityId": "qe-f0a4db3b3a2d",
+   "canonical": "Judicial Watch",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2058:1",
+   "postNum": 2058,
+   "index": 1,
+   "alias": "National Security Adviser",
+   "entityId": "qe-e05911bf0d38",
+   "canonical": "National Security Adviser",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2078:0",
+   "postNum": 2078,
+   "index": 0,
+   "alias": "Doug Ducey",
+   "entityId": "qe-821988d89f78",
+   "canonical": "Doug Ducey",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2078:1",
+   "postNum": 2078,
+   "index": 1,
+   "alias": "Jon Kyl",
+   "entityId": "qe-14333c452434",
+   "canonical": "Jon Kyl",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2078:2",
+   "postNum": 2078,
+   "index": 2,
+   "alias": "John McCain",
+   "entityId": "qe-5d44c220df65",
+   "canonical": "John McCain",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2078:3",
+   "postNum": 2078,
+   "index": 3,
+   "alias": "Cindy McCain",
+   "entityId": "qe-723f8970807f",
+   "canonical": "Cindy McCain",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2079:0",
+   "postNum": 2079,
+   "index": 0,
+   "alias": "Rahm Emanuel",
+   "entityId": "qe-6f9e6b15a59a",
+   "canonical": "Rahm Emanuel",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2079:1",
+   "postNum": 2079,
+   "index": 1,
+   "alias": "Chicago",
+   "entityId": "qe-b018ee884c25",
+   "canonical": "Chicago",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2091:0",
+   "postNum": 2091,
+   "index": 0,
+   "alias": "Jerome Corsi",
+   "entityId": "qe-773af3906078",
+   "canonical": "Jerome Corsi",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2092:0",
+   "postNum": 2092,
+   "index": 0,
+   "alias": "Politico",
+   "entityId": "qe-7f7a9c8af686",
+   "canonical": "Politico",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2097:1",
+   "postNum": 2097,
+   "index": 1,
+   "alias": "Goodlatte",
+   "entityId": "qe-fc9c7f1b849a",
+   "canonical": "Goodlatte",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2106:0",
+   "postNum": 2106,
+   "index": 0,
+   "alias": "Reddit",
+   "entityId": "qe-4070f82717b6",
+   "canonical": "Reddit",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2107:10",
+   "postNum": 2107,
+   "index": 10,
+   "alias": "Carter Page",
+   "entityId": "qe-2eb344dfc5da",
+   "canonical": "Carter Page",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2108:1",
+   "postNum": 2108,
+   "index": 1,
+   "alias": "Jim Jordan",
+   "entityId": "qe-5209a6bbbd49",
+   "canonical": "Jim Jordan",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2114:0",
+   "postNum": 2114,
+   "index": 0,
+   "alias": "John Podesta",
+   "entityId": "qe-241b091bbd1a",
+   "canonical": "John Podesta",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2122:0",
+   "postNum": 2122,
+   "index": 0,
+   "alias": "Thomas Drake",
+   "entityId": "qe-e3f62badcf31",
+   "canonical": "Thomas Drake",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2123:1",
+   "postNum": 2123,
+   "index": 1,
+   "alias": "Jack Posobiec",
+   "entityId": "qe-f093e728b541",
+   "canonical": "Jack Posobiec",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2123:3",
+   "postNum": 2123,
+   "index": 3,
+   "alias": "Tucker Carlson",
+   "entityId": "qe-c0a2bf39c430",
+   "canonical": "Tucker Carlson",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2135:5",
+   "postNum": 2135,
+   "index": 5,
+   "alias": "DAG",
+   "entityId": "qe-1df932e91ff0",
+   "canonical": "Deputy Attorney General",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2136:0",
+   "postNum": 2136,
+   "index": 0,
+   "alias": "Maxine Waters",
+   "entityId": "qe-9df7ca720cf1",
+   "canonical": "Maxine Waters",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2136:1",
+   "postNum": 2136,
+   "index": 1,
+   "alias": "Jerry Nadler",
+   "entityId": "qe-5b21bdeb116e",
+   "canonical": "Jerry Nadler",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2136:2",
+   "postNum": 2136,
+   "index": 2,
+   "alias": "Bill Clinton",
+   "entityId": "qe-f927052c1e12",
+   "canonical": "Bill Clinton",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2136:3",
+   "postNum": 2136,
+   "index": 3,
+   "alias": "Bob Woodward",
+   "entityId": "qe-dd7daa56e017",
+   "canonical": "Bob Woodward",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2136:4",
+   "postNum": 2136,
+   "index": 4,
+   "alias": "Richard Nixon",
+   "entityId": "qe-fb426643f1c0",
+   "canonical": "Richard Nixon",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2136:5",
+   "postNum": 2136,
+   "index": 5,
+   "alias": "John Ehrlichman",
+   "entityId": "qe-a658dae7f330",
+   "canonical": "John Ehrlichman",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2136:6",
+   "postNum": 2136,
+   "index": 6,
+   "alias": "Hunter",
+   "entityId": "qe-efc49f61600b",
+   "canonical": "Hunter",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2136:7",
+   "postNum": 2136,
+   "index": 7,
+   "alias": "MSNBC",
+   "entityId": "qe-2cf9f642e53c",
+   "canonical": "MSNBC",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2136:8",
+   "postNum": 2136,
+   "index": 8,
+   "alias": "The Atlantic",
+   "entityId": "qe-171b9af42469",
+   "canonical": "The Atlantic",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2136:11",
+   "postNum": 2136,
+   "index": 11,
+   "alias": "Huffington Post",
+   "entityId": "qe-16a3331ce3b0",
+   "canonical": "Huffington Post",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2136:12",
+   "postNum": 2136,
+   "index": 12,
+   "alias": "Bloomberg",
+   "entityId": "qe-a91226e14421",
+   "canonical": "Bloomberg",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2136:13",
+   "postNum": 2136,
+   "index": 13,
+   "alias": "USA Today",
+   "entityId": "qe-3ec7dbd12865",
+   "canonical": "USA Today",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2145:0",
+   "postNum": 2145,
+   "index": 0,
+   "alias": "NY Post",
+   "entityId": "qe-a2c73c324528",
+   "canonical": "NY Post",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2145:1",
+   "postNum": 2145,
+   "index": 1,
+   "alias": "Sky News",
+   "entityId": "qe-1740805b9153",
+   "canonical": "Sky News",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2152:0",
+   "postNum": 2152,
+   "index": 0,
+   "alias": "Pope Francis",
+   "entityId": "qe-d4ba181fe676",
+   "canonical": "Pope Francis",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2152:1",
+   "postNum": 2152,
+   "index": 1,
+   "alias": "Vatican",
+   "entityId": "qe-99400387b11e",
+   "canonical": "Vatican",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2152:2",
+   "postNum": 2152,
+   "index": 2,
+   "alias": "Satan",
+   "entityId": "qe-a4942c7227ca",
+   "canonical": "Satan",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2165:13",
+   "postNum": 2165,
+   "index": 13,
+   "alias": "STRZOK",
+   "entityId": "qe-cda28c2cb320",
+   "canonical": "Peter Strzok",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2165:15",
+   "postNum": 2165,
+   "index": 15,
+   "alias": "America Newsroom",
+   "entityId": "qe-4206af605a7f",
+   "canonical": "America Newsroom",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2165:16",
+   "postNum": 2165,
+   "index": 16,
+   "alias": "Fox Business",
+   "entityId": "qe-0122a2093514",
+   "canonical": "Fox Business",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2166:2",
+   "postNum": 2166,
+   "index": 2,
+   "alias": "Reddit",
+   "entityId": "qe-4070f82717b6",
+   "canonical": "Reddit",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2166:3",
+   "postNum": 2166,
+   "index": 3,
+   "alias": "The Verge",
+   "entityId": "qe-f599193e8554",
+   "canonical": "The Verge",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2171:5",
+   "postNum": 2171,
+   "index": 5,
+   "alias": "Bloomberg",
+   "entityId": "qe-a91226e14421",
+   "canonical": "Bloomberg",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2171:6",
+   "postNum": 2171,
+   "index": 6,
+   "alias": "The Verge",
+   "entityId": "qe-f599193e8554",
+   "canonical": "The Verge",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2171:7",
+   "postNum": 2171,
+   "index": 7,
+   "alias": "NY Post",
+   "entityId": "qe-a2c73c324528",
+   "canonical": "NY Post",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2171:8",
+   "postNum": 2171,
+   "index": 8,
+   "alias": "Quartz",
+   "entityId": "qe-364240bb810a",
+   "canonical": "Quartz",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2171:9",
+   "postNum": 2171,
+   "index": 9,
+   "alias": "Newsweek",
+   "entityId": "qe-0e242c606972",
+   "canonical": "Newsweek",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2171:10",
+   "postNum": 2171,
+   "index": 10,
+   "alias": "Daily Dot",
+   "entityId": "qe-1c01a1ed75ed",
+   "canonical": "Daily Dot",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2171:11",
+   "postNum": 2171,
+   "index": 11,
+   "alias": "Vice Motherboard",
+   "entityId": "qe-bde83934c916",
+   "canonical": "Vice Motherboard",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2171:12",
+   "postNum": 2171,
+   "index": 12,
+   "alias": "New York Magazine",
+   "entityId": "qe-33b95dc95027",
+   "canonical": "New York Magazine",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2173:0",
+   "postNum": 2173,
+   "index": 0,
+   "alias": "FEMA",
+   "entityId": "qe-2ec618df3b1b",
+   "canonical": "FEMA",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2176:0",
+   "postNum": 2176,
+   "index": 0,
+   "alias": "National Review",
+   "entityId": "qe-bdcb1cd538d6",
+   "canonical": "National Review",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2177:0",
+   "postNum": 2177,
+   "index": 0,
+   "alias": "CFR",
+   "entityId": "qe-c9e43754b98d",
+   "canonical": "Code of Federal Regulations",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2177:1",
+   "postNum": 2177,
+   "index": 1,
+   "alias": "CFR",
+   "entityId": "qe-c9e43754b98d",
+   "canonical": "Code of Federal Regulations",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2180:2",
+   "postNum": 2180,
+   "index": 2,
+   "alias": "Lisa Page",
+   "entityId": "qe-1ac4620e5a5f",
+   "canonical": "Lisa Page",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2180:3",
+   "postNum": 2180,
+   "index": 3,
+   "alias": "House Intelligence",
+   "entityId": "qe-ad0326f3114d",
+   "canonical": "House Intelligence",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2180:4",
+   "postNum": 2180,
+   "index": 4,
+   "alias": "Daily Caller",
+   "entityId": "qe-6aa08f51ac3c",
+   "canonical": "Daily Caller",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2181:2",
+   "postNum": 2181,
+   "index": 2,
+   "alias": "Daily Caller",
+   "entityId": "qe-6aa08f51ac3c",
+   "canonical": "Daily Caller",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2184:0",
+   "postNum": 2184,
+   "index": 0,
+   "alias": "Wired",
+   "entityId": "qe-856c6e0d3d9c",
+   "canonical": "Wired",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2184:1",
+   "postNum": 2184,
+   "index": 1,
+   "alias": "MarketWatch",
+   "entityId": "qe-7974d528273b",
+   "canonical": "MarketWatch",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#219:0",
+   "postNum": 219,
+   "index": 0,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2207:1",
+   "postNum": 2207,
+   "index": 1,
+   "alias": "Eric Holder",
+   "entityId": "qe-b8758c335d26",
+   "canonical": "Eric Holder",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2207:2",
+   "postNum": 2207,
+   "index": 2,
+   "alias": "Rep Swalwell",
+   "entityId": "qe-a523740cc104",
+   "canonical": "Rep Swalwell",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2207:3",
+   "postNum": 2207,
+   "index": 3,
+   "alias": "CFR",
+   "entityId": "qe-c9e43754b98d",
+   "canonical": "Code of Federal Regulations",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2207:4",
+   "postNum": 2207,
+   "index": 4,
+   "alias": "CFR",
+   "entityId": "qe-c9e43754b98d",
+   "canonical": "Code of Federal Regulations",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2210:1",
+   "postNum": 2210,
+   "index": 1,
+   "alias": "Gregg Jarrett",
+   "entityId": "qe-967ea8ed2fa0",
+   "canonical": "Gregg Jarrett",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2241:0",
+   "postNum": 2241,
+   "index": 0,
+   "alias": "michaelbeatty3",
+   "entityId": "qe-22fbd3a9bb97",
+   "canonical": "@michaelbeatty3",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2252:1",
+   "postNum": 2252,
+   "index": 1,
+   "alias": "Breaking911",
+   "entityId": "qe-37306dd886d7",
+   "canonical": "Breaking911",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2257:0",
+   "postNum": 2257,
+   "index": 0,
+   "alias": "Omarosa",
+   "entityId": "qe-78b861a601cb",
+   "canonical": "Omarosa",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#226:0",
+   "postNum": 226,
+   "index": 0,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2297:0",
+   "postNum": 2297,
+   "index": 0,
+   "alias": "C-SPAN",
+   "entityId": "qe-edce41b4a3b0",
+   "canonical": "C-SPAN",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2300:2",
+   "postNum": 2300,
+   "index": 2,
+   "alias": "Kavanaugh",
+   "entityId": "qe-76da188497d6",
+   "canonical": "Kavanaugh",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2302:0",
+   "postNum": 2302,
+   "index": 0,
+   "alias": "Maria Wall",
+   "entityId": "qe-f85eb38045e9",
+   "canonical": "Maria Wall",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2303:3",
+   "postNum": 2303,
+   "index": 3,
+   "alias": "Chris Evans",
+   "entityId": "qe-ce43425f7c9f",
+   "canonical": "Chris Evans",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2303:4",
+   "postNum": 2303,
+   "index": 4,
+   "alias": "Katrina Pierson",
+   "entityId": "qe-a8f7dd5adcfc",
+   "canonical": "Katrina Pierson",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#231:0",
+   "postNum": 231,
+   "index": 0,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2316:0",
+   "postNum": 2316,
+   "index": 0,
+   "alias": "Pentagon",
+   "entityId": "qe-a939139b5dc3",
+   "canonical": "Pentagon",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2319:4",
+   "postNum": 2319,
+   "index": 4,
+   "alias": "Christine Blasey Ford",
+   "entityId": "qe-7ae7f3117eb2",
+   "canonical": "Christine Blasey Ford",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2319:5",
+   "postNum": 2319,
+   "index": 5,
+   "alias": "Kevin Shipp",
+   "entityId": "qe-59bb69e52d4e",
+   "canonical": "Kevin Shipp",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2319:6",
+   "postNum": 2319,
+   "index": 6,
+   "alias": "Grassley",
+   "entityId": "qe-b0a544a47108",
+   "canonical": "Grassley",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2321:6",
+   "postNum": 2321,
+   "index": 6,
+   "alias": "House Judiciary Committee",
+   "entityId": "qe-ddfce63e5312",
+   "canonical": "House Judiciary Committee",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2322:2",
+   "postNum": 2322,
+   "index": 2,
+   "alias": "FOIA",
+   "entityId": "qe-1358436d9fe2",
+   "canonical": "Freedom of Information Act",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2324:14",
+   "postNum": 2324,
+   "index": 14,
+   "alias": "House Judiciary Committee",
+   "entityId": "qe-ddfce63e5312",
+   "canonical": "House Judiciary Committee",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2325:0",
+   "postNum": 2325,
+   "index": 0,
+   "alias": "Kavanaugh",
+   "entityId": "qe-76da188497d6",
+   "canonical": "Kavanaugh",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2325:1",
+   "postNum": 2325,
+   "index": 1,
+   "alias": "Capitol Hill",
+   "entityId": "qe-49539a6e685c",
+   "canonical": "Capitol Hill",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2325:2",
+   "postNum": 2325,
+   "index": 2,
+   "alias": "Breaking911",
+   "entityId": "qe-37306dd886d7",
+   "canonical": "Breaking911",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2331:3",
+   "postNum": 2331,
+   "index": 3,
+   "alias": "Michael Sussmann",
+   "entityId": "qe-a686b214e02f",
+   "canonical": "Michael Sussmann",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2333:0",
+   "postNum": 2333,
+   "index": 0,
+   "alias": "Trump Tower",
+   "entityId": "qe-9780fb4a0f29",
+   "canonical": "Trump Tower",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2340:1",
+   "postNum": 2340,
+   "index": 1,
+   "alias": "BBC News",
+   "entityId": "qe-f9522f0b1803",
+   "canonical": "BBC News",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2359:1",
+   "postNum": 2359,
+   "index": 1,
+   "alias": "C-SPAN",
+   "entityId": "qe-edce41b4a3b0",
+   "canonical": "C-SPAN",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2360:2",
+   "postNum": 2360,
+   "index": 2,
+   "alias": "C-SPAN",
+   "entityId": "qe-edce41b4a3b0",
+   "canonical": "C-SPAN",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2364:1",
+   "postNum": 2364,
+   "index": 1,
+   "alias": "Judicial Watch",
+   "entityId": "qe-f0a4db3b3a2d",
+   "canonical": "Judicial Watch",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2368:1",
+   "postNum": 2368,
+   "index": 1,
+   "alias": "Kavanaugh",
+   "entityId": "qe-76da188497d6",
+   "canonical": "Kavanaugh",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2370:0",
+   "postNum": 2370,
+   "index": 0,
+   "alias": "Tom Fitton",
+   "entityId": "qe-a23fe69398c7",
+   "canonical": "Tom Fitton",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2372:0",
+   "postNum": 2372,
+   "index": 0,
+   "alias": "Peggy Grande",
+   "entityId": "qe-fe23d9726244",
+   "canonical": "Peggy Grande",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2372:1",
+   "postNum": 2372,
+   "index": 1,
+   "alias": "Dianne Feinstein",
+   "entityId": "qe-ecc41732dcbc",
+   "canonical": "Dianne Feinstein",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2372:2",
+   "postNum": 2372,
+   "index": 2,
+   "alias": "Kavanaugh",
+   "entityId": "qe-76da188497d6",
+   "canonical": "Kavanaugh",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2379:1",
+   "postNum": 2379,
+   "index": 1,
+   "alias": "MarketWatch",
+   "entityId": "qe-7974d528273b",
+   "canonical": "MarketWatch",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2386:4",
+   "postNum": 2386,
+   "index": 4,
+   "alias": "Robert Bowers",
+   "entityId": "qe-fd92e1bb64db",
+   "canonical": "Robert Bowers",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2394:0",
+   "postNum": 2394,
+   "index": 0,
+   "alias": "Senate Judiciary Committee",
+   "entityId": "qe-ddeb9c6c71b8",
+   "canonical": "Senate Judiciary Committee",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2395:2",
+   "postNum": 2395,
+   "index": 2,
+   "alias": "Lisa Mei",
+   "entityId": "qe-309e76c61057",
+   "canonical": "Lisa Mei",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2395:3",
+   "postNum": 2395,
+   "index": 3,
+   "alias": "Matt Gaetz",
+   "entityId": "qe-2f4bc1c87a74",
+   "canonical": "Matt Gaetz",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2399:1",
+   "postNum": 2399,
+   "index": 1,
+   "alias": "Cory Booker",
+   "entityId": "qe-b9446aa2ab6f",
+   "canonical": "Cory Booker",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2399:2",
+   "postNum": 2399,
+   "index": 2,
+   "alias": "Eric Holder",
+   "entityId": "qe-b8758c335d26",
+   "canonical": "Eric Holder",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2401:1",
+   "postNum": 2401,
+   "index": 1,
+   "alias": "The Atlantic",
+   "entityId": "qe-171b9af42469",
+   "canonical": "The Atlantic",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2407:0",
+   "postNum": 2407,
+   "index": 0,
+   "alias": "Harriet Cash",
+   "entityId": "qe-ecb45b1e166d",
+   "canonical": "Harriet Cash",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2429:0",
+   "postNum": 2429,
+   "index": 0,
+   "alias": "GeorgePapa19",
+   "entityId": "qe-d10faaf868e7",
+   "canonical": "@GeorgePapa19",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2445:9",
+   "postNum": 2445,
+   "index": 9,
+   "alias": "House Judiciary Committee",
+   "entityId": "qe-ddfce63e5312",
+   "canonical": "House Judiciary Committee",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2445:11",
+   "postNum": 2445,
+   "index": 11,
+   "alias": "Senate Judiciary Committee",
+   "entityId": "qe-ddeb9c6c71b8",
+   "canonical": "Senate Judiciary Committee",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2459:1",
+   "postNum": 2459,
+   "index": 1,
+   "alias": "Eric Holder",
+   "entityId": "qe-b8758c335d26",
+   "canonical": "Eric Holder",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2464:0",
+   "postNum": 2464,
+   "index": 0,
+   "alias": "Bing",
+   "entityId": "qe-ee9f963d9a91",
+   "canonical": "Bing",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2471:0",
+   "postNum": 2471,
+   "index": 0,
+   "alias": "Tampa Bay",
+   "entityId": "qe-7adc322c91ab",
+   "canonical": "Tampa Bay",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2471:1",
+   "postNum": 2471,
+   "index": 1,
+   "alias": "Florida",
+   "entityId": "qe-ff61ffd06288",
+   "canonical": "Florida",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2472:0",
+   "postNum": 2472,
+   "index": 0,
+   "alias": "Chelsey Smith",
+   "entityId": "qe-b23e29dfdb3e",
+   "canonical": "Chelsey Smith",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2473:0",
+   "postNum": 2473,
+   "index": 0,
+   "alias": "USMC",
+   "entityId": "qe-b0aa2fac028c",
+   "canonical": "United States Marine Corps",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2488:0",
+   "postNum": 2488,
+   "index": 0,
+   "alias": "Ratcliffe",
+   "entityId": "qe-63891e8fa021",
+   "canonical": "Ratcliffe",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2488:1",
+   "postNum": 2488,
+   "index": 1,
+   "alias": "Gowdy",
+   "entityId": "qe-bf67882b431d",
+   "canonical": "Gowdy",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2494:0",
+   "postNum": 2494,
+   "index": 0,
+   "alias": "House GOP",
+   "entityId": "qe-5cf46b7e8c27",
+   "canonical": "House GOP",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2495:2",
+   "postNum": 2495,
+   "index": 2,
+   "alias": "Grassley",
+   "entityId": "qe-b0a544a47108",
+   "canonical": "Grassley",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2495:3",
+   "postNum": 2495,
+   "index": 3,
+   "alias": "Reuters",
+   "entityId": "qe-cb78932b1fab",
+   "canonical": "Reuters",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2498:0",
+   "postNum": 2498,
+   "index": 0,
+   "alias": "Ivanka Trump",
+   "entityId": "qe-ad393745af3e",
+   "canonical": "Ivanka Trump",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2501:12",
+   "postNum": 2501,
+   "index": 12,
+   "alias": "CFR",
+   "entityId": "qe-c9e43754b98d",
+   "canonical": "Code of Federal Regulations",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2501:13",
+   "postNum": 2501,
+   "index": 13,
+   "alias": "CFR",
+   "entityId": "qe-c9e43754b98d",
+   "canonical": "Code of Federal Regulations",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2513:0",
+   "postNum": 2513,
+   "index": 0,
+   "alias": "Clintons",
+   "entityId": "qe-a0807cd1d9bf",
+   "canonical": "Clintons",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2520:0",
+   "postNum": 2520,
+   "index": 0,
+   "alias": "Amazon",
+   "entityId": "qe-04b7fdb16791",
+   "canonical": "Amazon",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2520:1",
+   "postNum": 2520,
+   "index": 1,
+   "alias": "The Atlantic",
+   "entityId": "qe-171b9af42469",
+   "canonical": "The Atlantic",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2521:0",
+   "postNum": 2521,
+   "index": 0,
+   "alias": "Bing",
+   "entityId": "qe-ee9f963d9a91",
+   "canonical": "Bing",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2540:0",
+   "postNum": 2540,
+   "index": 0,
+   "alias": "House",
+   "entityId": "qe-dd22a6644c88",
+   "canonical": "House",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2543:1",
+   "postNum": 2543,
+   "index": 1,
+   "alias": "Scott Free Productions",
+   "entityId": "qe-6c94d6eb1a03",
+   "canonical": "Scott Free Productions",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2548:11",
+   "postNum": 2548,
+   "index": 11,
+   "alias": "Tom Winter",
+   "entityId": "qe-9cb007557de9",
+   "canonical": "Tom Winter",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2554:0",
+   "postNum": 2554,
+   "index": 0,
+   "alias": "House Oversight Committee",
+   "entityId": "qe-9c86660b4ddb",
+   "canonical": "House Oversight Committee",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2568:1",
+   "postNum": 2568,
+   "index": 1,
+   "alias": "John Podesta",
+   "entityId": "qe-241b091bbd1a",
+   "canonical": "John Podesta",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2579:0",
+   "postNum": 2579,
+   "index": 0,
+   "alias": "Schumer",
+   "entityId": "qe-38fecff2478b",
+   "canonical": "Schumer",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2581:2",
+   "postNum": 2581,
+   "index": 2,
+   "alias": "DCNF",
+   "entityId": "qe-6ae8ccb666ea",
+   "canonical": "Daily Caller News Foundation",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2583:1",
+   "postNum": 2583,
+   "index": 1,
+   "alias": "US",
+   "entityId": "qe-e4b9b2985b7c",
+   "canonical": "United States",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2584:2",
+   "postNum": 2584,
+   "index": 2,
+   "alias": "Mark Levin",
+   "entityId": "qe-dbab506adc18",
+   "canonical": "Mark Levin",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2585:0",
+   "postNum": 2585,
+   "index": 0,
+   "alias": "Hannity",
+   "entityId": "qe-ea78df3ba4e8",
+   "canonical": "Hannity",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2587:0",
+   "postNum": 2587,
+   "index": 0,
+   "alias": "Sundar Pichai",
+   "entityId": "qe-aadf4f7a7a94",
+   "canonical": "Sundar Pichai",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2590:1",
+   "postNum": 2590,
+   "index": 1,
+   "alias": "Daily Mail",
+   "entityId": "qe-405520cf12d1",
+   "canonical": "Daily Mail",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2590:2",
+   "postNum": 2590,
+   "index": 2,
+   "alias": "The Age",
+   "entityId": "qe-90528e0b368d",
+   "canonical": "The Age",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2590:3",
+   "postNum": 2590,
+   "index": 3,
+   "alias": "Perth Now",
+   "entityId": "qe-66ae055d563b",
+   "canonical": "Perth Now",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2591:0",
+   "postNum": 2591,
+   "index": 0,
+   "alias": "Trump Hotels",
+   "entityId": "qe-7702d84ed2d2",
+   "canonical": "Trump Hotels",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2601:3",
+   "postNum": 2601,
+   "index": 3,
+   "alias": "House Oversight Committee",
+   "entityId": "qe-9c86660b4ddb",
+   "canonical": "House Oversight Committee",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2630:2",
+   "postNum": 2630,
+   "index": 2,
+   "alias": "McCain",
+   "entityId": "qe-5d44c220df65",
+   "canonical": "John McCain",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2630:3",
+   "postNum": 2630,
+   "index": 3,
+   "alias": "Steele",
+   "entityId": "qe-64d8ddac64e7",
+   "canonical": "Steele",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2630:4",
+   "postNum": 2630,
+   "index": 4,
+   "alias": "BuzzFeed",
+   "entityId": "qe-9bee875e94c2",
+   "canonical": "BuzzFeed",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2631:0",
+   "postNum": 2631,
+   "index": 0,
+   "alias": "The Atlantic",
+   "entityId": "qe-171b9af42469",
+   "canonical": "The Atlantic",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2635:0",
+   "postNum": 2635,
+   "index": 0,
+   "alias": "Alabama",
+   "entityId": "qe-a528870b86f7",
+   "canonical": "Alabama",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2635:1",
+   "postNum": 2635,
+   "index": 1,
+   "alias": "Roy Moore",
+   "entityId": "qe-4df1e42eb9eb",
+   "canonical": "Roy Moore",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2648:4",
+   "postNum": 2648,
+   "index": 4,
+   "alias": "WikiLeaks",
+   "entityId": "qe-c9f95ff52ca5",
+   "canonical": "WikiLeaks",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2648:5",
+   "postNum": 2648,
+   "index": 5,
+   "alias": "Podesta",
+   "entityId": "qe-c9d65140fa37",
+   "canonical": "Podesta",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2654:1",
+   "postNum": 2654,
+   "index": 1,
+   "alias": "Axios",
+   "entityId": "qe-be80032d230b",
+   "canonical": "Axios",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2656:0",
+   "postNum": 2656,
+   "index": 0,
+   "alias": "Breaking911",
+   "entityId": "qe-37306dd886d7",
+   "canonical": "Breaking911",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2657:52",
+   "postNum": 2657,
+   "index": 52,
+   "alias": "Senate Intelligence Committee",
+   "entityId": "qe-e72f4b6ffdeb",
+   "canonical": "Senate Intelligence Committee",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2657:53",
+   "postNum": 2657,
+   "index": 53,
+   "alias": "Guardian",
+   "entityId": "qe-0192c0f01e9e",
+   "canonical": "Guardian",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2657:54",
+   "postNum": 2657,
+   "index": 54,
+   "alias": "Hussein Administration",
+   "entityId": "qe-a75f41e9cff1",
+   "canonical": "Hussein Administration",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2659:0",
+   "postNum": 2659,
+   "index": 0,
+   "alias": "RealClearPolitics",
+   "entityId": "qe-108cb1178105",
+   "canonical": "RealClearPolitics",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#266:0",
+   "postNum": 266,
+   "index": 0,
+   "alias": "Johnny",
+   "entityId": "qe-c8228e903637",
+   "canonical": "Johnny",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2660:0",
+   "postNum": 2660,
+   "index": 0,
+   "alias": "Maggie NYT",
+   "entityId": "qe-ba645c928cee",
+   "canonical": "Maggie NYT",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2661:0",
+   "postNum": 2661,
+   "index": 0,
+   "alias": "Maggie NYT",
+   "entityId": "qe-ba645c928cee",
+   "canonical": "Maggie NYT",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2663:0",
+   "postNum": 2663,
+   "index": 0,
+   "alias": "MKUltra",
+   "entityId": "qe-8897be130f69",
+   "canonical": "MKUltra",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2666:0",
+   "postNum": 2666,
+   "index": 0,
+   "alias": "Ginsburg",
+   "entityId": "qe-7cc41b234cd9",
+   "canonical": "Ginsburg",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2666:1",
+   "postNum": 2666,
+   "index": 1,
+   "alias": "Bing",
+   "entityId": "qe-ee9f963d9a91",
+   "canonical": "Bing",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2680:0",
+   "postNum": 2680,
+   "index": 0,
+   "alias": "Whitaker",
+   "entityId": "qe-db762af6b20d",
+   "canonical": "Whitaker",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2686:6",
+   "postNum": 2686,
+   "index": 6,
+   "alias": "Kirk Adams",
+   "entityId": "qe-e20723049600",
+   "canonical": "Kirk Adams",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2686:7",
+   "postNum": 2686,
+   "index": 7,
+   "alias": "Cecile Richards",
+   "entityId": "qe-fadb7c27473e",
+   "canonical": "Cecile Richards",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2692:16",
+   "postNum": 2692,
+   "index": 16,
+   "alias": "Judicial Watch",
+   "entityId": "qe-f0a4db3b3a2d",
+   "canonical": "Judicial Watch",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2693:8",
+   "postNum": 2693,
+   "index": 8,
+   "alias": "House Intel Committee",
+   "entityId": "qe-ccb7e1c4c4f0",
+   "canonical": "House Intel Committee",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2699:0",
+   "postNum": 2699,
+   "index": 0,
+   "alias": "House Clerk",
+   "entityId": "qe-ff55f3f3d147",
+   "canonical": "House Clerk",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2725:1",
+   "postNum": 2725,
+   "index": 1,
+   "alias": "Bill Clinton",
+   "entityId": "qe-f927052c1e12",
+   "canonical": "Bill Clinton",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2732:0",
+   "postNum": 2732,
+   "index": 0,
+   "alias": "Michael Goodwin",
+   "entityId": "qe-98c27295dab4",
+   "canonical": "Michael Goodwin",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2738:0",
+   "postNum": 2738,
+   "index": 0,
+   "alias": "Scavino45",
+   "entityId": "qe-9a7736c95e9e",
+   "canonical": "@Scavino45",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#274:1",
+   "postNum": 274,
+   "index": 1,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2765:0",
+   "postNum": 2765,
+   "index": 0,
+   "alias": "Graham",
+   "entityId": "qe-2fbd83ad1bd6",
+   "canonical": "Graham",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2768:1",
+   "postNum": 2768,
+   "index": 1,
+   "alias": "Cory Booker",
+   "entityId": "qe-b9446aa2ab6f",
+   "canonical": "Cory Booker",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2770:11",
+   "postNum": 2770,
+   "index": 11,
+   "alias": "Peter Orszag",
+   "entityId": "qe-d17ccc5eb1cb",
+   "canonical": "Peter Orszag",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2771:0",
+   "postNum": 2771,
+   "index": 0,
+   "alias": "TIME",
+   "entityId": "qe-7a2e37ed6dca",
+   "canonical": "TIME",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2783:0",
+   "postNum": 2783,
+   "index": 0,
+   "alias": "Lara Logan",
+   "entityId": "qe-79059767397e",
+   "canonical": "Lara Logan",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:0",
+   "postNum": 2801,
+   "index": 0,
+   "alias": "MSNBC",
+   "entityId": "qe-2cf9f642e53c",
+   "canonical": "MSNBC",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:1",
+   "postNum": 2801,
+   "index": 1,
+   "alias": "Newsweek",
+   "entityId": "qe-0e242c606972",
+   "canonical": "Newsweek",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:2",
+   "postNum": 2801,
+   "index": 2,
+   "alias": "Fortune",
+   "entityId": "qe-56c2341792be",
+   "canonical": "Fortune",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:3",
+   "postNum": 2801,
+   "index": 3,
+   "alias": "Wired",
+   "entityId": "qe-856c6e0d3d9c",
+   "canonical": "Wired",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:4",
+   "postNum": 2801,
+   "index": 4,
+   "alias": "The Guardian",
+   "entityId": "qe-081c55fb2235",
+   "canonical": "The Guardian",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:5",
+   "postNum": 2801,
+   "index": 5,
+   "alias": "Vox",
+   "entityId": "qe-b3334eb51117",
+   "canonical": "Vox",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:6",
+   "postNum": 2801,
+   "index": 6,
+   "alias": "The Verge",
+   "entityId": "qe-f599193e8554",
+   "canonical": "The Verge",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:7",
+   "postNum": 2801,
+   "index": 7,
+   "alias": "Al Jazeera",
+   "entityId": "qe-beabb03fabeb",
+   "canonical": "Al Jazeera",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:8",
+   "postNum": 2801,
+   "index": 8,
+   "alias": "The New Yorker",
+   "entityId": "qe-9e2ae0c4ed2c",
+   "canonical": "The New Yorker",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:9",
+   "postNum": 2801,
+   "index": 9,
+   "alias": "LA Times",
+   "entityId": "qe-222644bb62c5",
+   "canonical": "LA Times",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:10",
+   "postNum": 2801,
+   "index": 10,
+   "alias": "Seattle Times",
+   "entityId": "qe-51447fdc37f4",
+   "canonical": "Seattle Times",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:11",
+   "postNum": 2801,
+   "index": 11,
+   "alias": "The Sun",
+   "entityId": "qe-99db8474e17a",
+   "canonical": "The Sun",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:12",
+   "postNum": 2801,
+   "index": 12,
+   "alias": "Jerusalem Post",
+   "entityId": "qe-e67c56563d17",
+   "canonical": "Jerusalem Post",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:13",
+   "postNum": 2801,
+   "index": 13,
+   "alias": "Quartz",
+   "entityId": "qe-364240bb810a",
+   "canonical": "Quartz",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:14",
+   "postNum": 2801,
+   "index": 14,
+   "alias": "New York Magazine",
+   "entityId": "qe-33b95dc95027",
+   "canonical": "New York Magazine",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:15",
+   "postNum": 2801,
+   "index": 15,
+   "alias": "Politico",
+   "entityId": "qe-7f7a9c8af686",
+   "canonical": "Politico",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:16",
+   "postNum": 2801,
+   "index": 16,
+   "alias": "HuffPost",
+   "entityId": "qe-583384b861a0",
+   "canonical": "HuffPost",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:17",
+   "postNum": 2801,
+   "index": 17,
+   "alias": "TIME",
+   "entityId": "qe-7a2e37ed6dca",
+   "canonical": "TIME",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:18",
+   "postNum": 2801,
+   "index": 18,
+   "alias": "Vice",
+   "entityId": "qe-6b91c2e9c140",
+   "canonical": "Vice",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:19",
+   "postNum": 2801,
+   "index": 19,
+   "alias": "Salon",
+   "entityId": "qe-347e18cc8486",
+   "canonical": "Salon",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:20",
+   "postNum": 2801,
+   "index": 20,
+   "alias": "Daily Dot",
+   "entityId": "qe-1c01a1ed75ed",
+   "canonical": "Daily Dot",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:21",
+   "postNum": 2801,
+   "index": 21,
+   "alias": "Miami New Times",
+   "entityId": "qe-63d1e9a9fe63",
+   "canonical": "Miami New Times",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:22",
+   "postNum": 2801,
+   "index": 22,
+   "alias": "Rolling Stone",
+   "entityId": "qe-55c64b933911",
+   "canonical": "Rolling Stone",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:23",
+   "postNum": 2801,
+   "index": 23,
+   "alias": "Snopes",
+   "entityId": "qe-922bad71432c",
+   "canonical": "Snopes",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:24",
+   "postNum": 2801,
+   "index": 24,
+   "alias": "BuzzFeed",
+   "entityId": "qe-9bee875e94c2",
+   "canonical": "BuzzFeed",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:25",
+   "postNum": 2801,
+   "index": 25,
+   "alias": "Media Matters",
+   "entityId": "qe-7feeff7362e0",
+   "canonical": "Media Matters",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2801:26",
+   "postNum": 2801,
+   "index": 26,
+   "alias": "The Federalist",
+   "entityId": "qe-80dcc988dd59",
+   "canonical": "The Federalist",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2807:7",
+   "postNum": 2807,
+   "index": 7,
+   "alias": "Baghdad",
+   "entityId": "qe-d3d86a00dcff",
+   "canonical": "Baghdad",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2807:8",
+   "postNum": 2807,
+   "index": 8,
+   "alias": "Saddam Hussein",
+   "entityId": "qe-448c7b8f437f",
+   "canonical": "Saddam Hussein",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2807:9",
+   "postNum": 2807,
+   "index": 9,
+   "alias": "Lebanon",
+   "entityId": "qe-539cd18daf2c",
+   "canonical": "Lebanon",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2827:0",
+   "postNum": 2827,
+   "index": 0,
+   "alias": "Maggie NYT",
+   "entityId": "qe-ba645c928cee",
+   "canonical": "Maggie NYT",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2827:1",
+   "postNum": 2827,
+   "index": 1,
+   "alias": "Senator Collins",
+   "entityId": "qe-5111a2899d11",
+   "canonical": "Senator Collins",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2837:0",
+   "postNum": 2837,
+   "index": 0,
+   "alias": "Coats",
+   "entityId": "qe-b6f239d26215",
+   "canonical": "Coats",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2842:0",
+   "postNum": 2842,
+   "index": 0,
+   "alias": "Ann Coulter",
+   "entityId": "qe-a18fc2cdd6a8",
+   "canonical": "Ann Coulter",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2847:0",
+   "postNum": 2847,
+   "index": 0,
+   "alias": "Science News",
+   "entityId": "qe-052b89426c97",
+   "canonical": "Science News",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2848:0",
+   "postNum": 2848,
+   "index": 0,
+   "alias": "Miami Herald",
+   "entityId": "qe-9ffefa8df9a9",
+   "canonical": "Miami Herald",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2850:0",
+   "postNum": 2850,
+   "index": 0,
+   "alias": "Jussie Smollett",
+   "entityId": "qe-d58d44ebad1f",
+   "canonical": "Jussie Smollett",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2854:10",
+   "postNum": 2854,
+   "index": 10,
+   "alias": "Forbes",
+   "entityId": "qe-acebf6618637",
+   "canonical": "Forbes",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2855:1",
+   "postNum": 2855,
+   "index": 1,
+   "alias": "North Carolina",
+   "entityId": "qe-97ecb3eb1b65",
+   "canonical": "North Carolina",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2855:2",
+   "postNum": 2855,
+   "index": 2,
+   "alias": "Reuters",
+   "entityId": "qe-cb78932b1fab",
+   "canonical": "Reuters",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2862:0",
+   "postNum": 2862,
+   "index": 0,
+   "alias": "JeffDeRiso",
+   "entityId": "qe-a7223cacb844",
+   "canonical": "@JeffDeRiso",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2868:0",
+   "postNum": 2868,
+   "index": 0,
+   "alias": "Bernie Sanders",
+   "entityId": "qe-1180428658d7",
+   "canonical": "Bernie Sanders",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2870:0",
+   "postNum": 2870,
+   "index": 0,
+   "alias": "Urban Dictionary",
+   "entityId": "qe-9a899a4c227d",
+   "canonical": "Urban Dictionary",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2879:0",
+   "postNum": 2879,
+   "index": 0,
+   "alias": "ICANN",
+   "entityId": "qe-c5b7ec680037",
+   "canonical": "ICANN",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2880:0",
+   "postNum": 2880,
+   "index": 0,
+   "alias": "Politico",
+   "entityId": "qe-7f7a9c8af686",
+   "canonical": "Politico",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2883:1",
+   "postNum": 2883,
+   "index": 1,
+   "alias": "ICANN",
+   "entityId": "qe-c5b7ec680037",
+   "canonical": "ICANN",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2888:0",
+   "postNum": 2888,
+   "index": 0,
+   "alias": "Patton Oswalt",
+   "entityId": "qe-e00c7b9cc917",
+   "canonical": "Patton Oswalt",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#289:0",
+   "postNum": 289,
+   "index": 0,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2894:0",
+   "postNum": 2894,
+   "index": 0,
+   "alias": "Reuters",
+   "entityId": "qe-cb78932b1fab",
+   "canonical": "Reuters",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2894:1",
+   "postNum": 2894,
+   "index": 1,
+   "alias": "Cardinal George Pell",
+   "entityId": "qe-bf1460b00ebe",
+   "canonical": "Cardinal George Pell",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2894:2",
+   "postNum": 2894,
+   "index": 2,
+   "alias": "Vatican",
+   "entityId": "qe-99400387b11e",
+   "canonical": "Vatican",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2899:0",
+   "postNum": 2899,
+   "index": 0,
+   "alias": "Murkowski",
+   "entityId": "qe-ef228ad64e1c",
+   "canonical": "Murkowski",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2901:3",
+   "postNum": 2901,
+   "index": 3,
+   "alias": "House Democrats",
+   "entityId": "qe-64c82d1b7335",
+   "canonical": "House Democrats",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2901:4",
+   "postNum": 2901,
+   "index": 4,
+   "alias": "Senate Democrats",
+   "entityId": "qe-be4e2eceac6c",
+   "canonical": "Senate Democrats",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2919:0",
+   "postNum": 2919,
+   "index": 0,
+   "alias": "GeorgePapa19",
+   "entityId": "qe-d10faaf868e7",
+   "canonical": "@GeorgePapa19",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2935:1",
+   "postNum": 2935,
+   "index": 1,
+   "alias": "Nadler",
+   "entityId": "qe-a60008522e27",
+   "canonical": "Nadler",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2939:0",
+   "postNum": 2939,
+   "index": 0,
+   "alias": "Utah",
+   "entityId": "qe-48218e7ab8e3",
+   "canonical": "Utah",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2941:0",
+   "postNum": 2941,
+   "index": 0,
+   "alias": "Ted Lieu",
+   "entityId": "qe-48ba2b742dd5",
+   "canonical": "Ted Lieu",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2942:0",
+   "postNum": 2942,
+   "index": 0,
+   "alias": "Bloody Sunday",
+   "entityId": "qe-fd9a9466fe14",
+   "canonical": "Bloody Sunday",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2943:4",
+   "postNum": 2943,
+   "index": 4,
+   "alias": "Ted Lieu",
+   "entityId": "qe-48ba2b742dd5",
+   "canonical": "Ted Lieu",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2945:1",
+   "postNum": 2945,
+   "index": 1,
+   "alias": "Ted Lieu",
+   "entityId": "qe-48ba2b742dd5",
+   "canonical": "Ted Lieu",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2946:0",
+   "postNum": 2946,
+   "index": 0,
+   "alias": "Meet the Press",
+   "entityId": "qe-eaf697f0676f",
+   "canonical": "Meet the Press",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2951:0",
+   "postNum": 2951,
+   "index": 0,
+   "alias": "Bill Slater",
+   "entityId": "qe-41b3c8bc7c64",
+   "canonical": "Bill Slater",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2953:0",
+   "postNum": 2953,
+   "index": 0,
+   "alias": "Mark Levin",
+   "entityId": "qe-dbab506adc18",
+   "canonical": "Mark Levin",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2955:2",
+   "postNum": 2955,
+   "index": 2,
+   "alias": "Politico",
+   "entityId": "qe-7f7a9c8af686",
+   "canonical": "Politico",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2969:0",
+   "postNum": 2969,
+   "index": 0,
+   "alias": "Sara Carter",
+   "entityId": "qe-8948243efcca",
+   "canonical": "Sara Carter",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2970:1",
+   "postNum": 2970,
+   "index": 1,
+   "alias": "Todd Penley",
+   "entityId": "qe-0c247eb5c8b8",
+   "canonical": "Todd Penley",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2981:0",
+   "postNum": 2981,
+   "index": 0,
+   "alias": "Sara Carter",
+   "entityId": "qe-8948243efcca",
+   "canonical": "Sara Carter",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2984:38",
+   "postNum": 2984,
+   "index": 38,
+   "alias": "George H.W. Bush",
+   "entityId": "qe-ed7af8c981ab",
+   "canonical": "George H. W. Bush",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2986:0",
+   "postNum": 2986,
+   "index": 0,
+   "alias": "michaelbeatty3",
+   "entityId": "qe-22fbd3a9bb97",
+   "canonical": "@michaelbeatty3",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2989:9",
+   "postNum": 2989,
+   "index": 9,
+   "alias": "Federal Government",
+   "entityId": "qe-61044273b1e2",
+   "canonical": "Federal Government",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2993:20",
+   "postNum": 2993,
+   "index": 20,
+   "alias": "Hong Kong",
+   "entityId": "qe-02d154832a55",
+   "canonical": "Hong Kong",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#2999:0",
+   "postNum": 2999,
+   "index": 0,
+   "alias": "Blumenthal",
+   "entityId": "qe-18bd65579fff",
+   "canonical": "Blumenthal",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3003:0",
+   "postNum": 3003,
+   "index": 0,
+   "alias": "Bing",
+   "entityId": "qe-ee9f963d9a91",
+   "canonical": "Bing",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3006:25",
+   "postNum": 3006,
+   "index": 25,
+   "alias": "Zuckerberg",
+   "entityId": "qe-055d7c4a74b0",
+   "canonical": "Zuckerberg",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3013:0",
+   "postNum": 3013,
+   "index": 0,
+   "alias": "Daily Beast",
+   "entityId": "qe-6cbd2d0bea8d",
+   "canonical": "Daily Beast",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3017:0",
+   "postNum": 3017,
+   "index": 0,
+   "alias": "Stacey Dash",
+   "entityId": "qe-6e26689d7751",
+   "canonical": "Stacey Dash",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3021:1",
+   "postNum": 3021,
+   "index": 1,
+   "alias": "Shadow Brokers",
+   "entityId": "qe-039763983a74",
+   "canonical": "Shadow Brokers",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3031:0",
+   "postNum": 3031,
+   "index": 0,
+   "alias": "George Papadopoulos",
+   "entityId": "qe-478bff189dfe",
+   "canonical": "George Papadopoulos",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3034:0",
+   "postNum": 3034,
+   "index": 0,
+   "alias": "M2Madness",
+   "entityId": "qe-359da756e27d",
+   "canonical": "@M2Madness",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3036:6",
+   "postNum": 3036,
+   "index": 6,
+   "alias": "Jared Kushner",
+   "entityId": "qe-3baafa6d1077",
+   "canonical": "Jared Kushner",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3048:0",
+   "postNum": 3048,
+   "index": 0,
+   "alias": "Instagram",
+   "entityId": "qe-28b3b6e77b6f",
+   "canonical": "Instagram",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3048:1",
+   "postNum": 3048,
+   "index": 1,
+   "alias": "USA Today",
+   "entityId": "qe-3ec7dbd12865",
+   "canonical": "USA Today",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3049:0",
+   "postNum": 3049,
+   "index": 0,
+   "alias": "Jordan",
+   "entityId": "qe-0524b6d6ca03",
+   "canonical": "Jordan",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3049:1",
+   "postNum": 3049,
+   "index": 1,
+   "alias": "Meadows",
+   "entityId": "qe-e428d152c1f7",
+   "canonical": "Meadows",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3054:0",
+   "postNum": 3054,
+   "index": 0,
+   "alias": "Doug Collins",
+   "entityId": "qe-fe6a80bff729",
+   "canonical": "Doug Collins",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3055:0",
+   "postNum": 3055,
+   "index": 0,
+   "alias": "Sara Carter",
+   "entityId": "qe-8948243efcca",
+   "canonical": "Sara Carter",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#306:1",
+   "postNum": 306,
+   "index": 1,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3062:5",
+   "postNum": 3062,
+   "index": 5,
+   "alias": "Lisa Page",
+   "entityId": "qe-1ac4620e5a5f",
+   "canonical": "Lisa Page",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3065:2",
+   "postNum": 3065,
+   "index": 2,
+   "alias": "The Epoch Times",
+   "entityId": "qe-1551e01e7caa",
+   "canonical": "The Epoch Times",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3066:0",
+   "postNum": 3066,
+   "index": 0,
+   "alias": "Chris Cox",
+   "entityId": "qe-426031b06175",
+   "canonical": "Chris Cox",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3066:1",
+   "postNum": 3066,
+   "index": 1,
+   "alias": "MarketWatch",
+   "entityId": "qe-7974d528273b",
+   "canonical": "MarketWatch",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3079:0",
+   "postNum": 3079,
+   "index": 0,
+   "alias": "Strzok",
+   "entityId": "qe-b6852016b7a2",
+   "canonical": "Strzok",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3081:0",
+   "postNum": 3081,
+   "index": 0,
+   "alias": "Daily Mail",
+   "entityId": "qe-405520cf12d1",
+   "canonical": "Daily Mail",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3084:0",
+   "postNum": 3084,
+   "index": 0,
+   "alias": "Senate Judiciary Committee",
+   "entityId": "qe-ddeb9c6c71b8",
+   "canonical": "Senate Judiciary Committee",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3095:0",
+   "postNum": 3095,
+   "index": 0,
+   "alias": "McCain",
+   "entityId": "qe-5d44c220df65",
+   "canonical": "John McCain",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3130:0",
+   "postNum": 3130,
+   "index": 0,
+   "alias": "Alan Krueger",
+   "entityId": "qe-9bd3e06680ab",
+   "canonical": "Alan Krueger",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3131:0",
+   "postNum": 3131,
+   "index": 0,
+   "alias": "Politico",
+   "entityId": "qe-7f7a9c8af686",
+   "canonical": "Politico",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#314:0",
+   "postNum": 314,
+   "index": 0,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3157:0",
+   "postNum": 3157,
+   "index": 0,
+   "alias": "Michal Chelbin",
+   "entityId": "qe-6c42e293d158",
+   "canonical": "Michal Chelbin",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3182:0",
+   "postNum": 3182,
+   "index": 0,
+   "alias": "Sebastian Gorka",
+   "entityId": "qe-794a3735fa02",
+   "canonical": "Sebastian Gorka",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3182:1",
+   "postNum": 3182,
+   "index": 1,
+   "alias": "Pizzagate",
+   "entityId": "qe-6eba7f9e78be",
+   "canonical": "Pizzagate",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3182:2",
+   "postNum": 3182,
+   "index": 2,
+   "alias": "OpenSecrets",
+   "entityId": "qe-1f02057026db",
+   "canonical": "OpenSecrets",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3182:3",
+   "postNum": 3182,
+   "index": 3,
+   "alias": "The Daily Beast",
+   "entityId": "qe-31de6dd602c2",
+   "canonical": "The Daily Beast",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3183:0",
+   "postNum": 3183,
+   "index": 0,
+   "alias": "Politico",
+   "entityId": "qe-7f7a9c8af686",
+   "canonical": "Politico",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3186:0",
+   "postNum": 3186,
+   "index": 0,
+   "alias": "Anthony Comello",
+   "entityId": "qe-10b46bb969e5",
+   "canonical": "Anthony Comello",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3186:1",
+   "postNum": 3186,
+   "index": 1,
+   "alias": "Gambino",
+   "entityId": "qe-f17d14898b24",
+   "canonical": "Gambino",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3186:2",
+   "postNum": 3186,
+   "index": 2,
+   "alias": "Daily Beast",
+   "entityId": "qe-6cbd2d0bea8d",
+   "canonical": "Daily Beast",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3195:0",
+   "postNum": 3195,
+   "index": 0,
+   "alias": "C-SPAN",
+   "entityId": "qe-edce41b4a3b0",
+   "canonical": "C-SPAN",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3199:0",
+   "postNum": 3199,
+   "index": 0,
+   "alias": "Gateway Pundit",
+   "entityId": "qe-dd3be5e92e7e",
+   "canonical": "Gateway Pundit",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3201:0",
+   "postNum": 3201,
+   "index": 0,
+   "alias": "Brian Stelter",
+   "entityId": "qe-f68129dce3cf",
+   "canonical": "Brian Stelter",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3202:0",
+   "postNum": 3202,
+   "index": 0,
+   "alias": "Kim Foxx",
+   "entityId": "qe-7046916579e8",
+   "canonical": "Kim Foxx",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3202:1",
+   "postNum": 3202,
+   "index": 1,
+   "alias": "Jussie Smollett",
+   "entityId": "qe-d58d44ebad1f",
+   "canonical": "Jussie Smollett",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3202:2",
+   "postNum": 3202,
+   "index": 2,
+   "alias": "Chicago Tribune",
+   "entityId": "qe-0ad9a53b7820",
+   "canonical": "Chicago Tribune",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3204:0",
+   "postNum": 3204,
+   "index": 0,
+   "alias": "Kim Foxx",
+   "entityId": "qe-7046916579e8",
+   "canonical": "Kim Foxx",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3204:1",
+   "postNum": 3204,
+   "index": 1,
+   "alias": "Jussie Smollett",
+   "entityId": "qe-d58d44ebad1f",
+   "canonical": "Jussie Smollett",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3204:2",
+   "postNum": 3204,
+   "index": 2,
+   "alias": "Chicago Tribune",
+   "entityId": "qe-0ad9a53b7820",
+   "canonical": "Chicago Tribune",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3206:0",
+   "postNum": 3206,
+   "index": 0,
+   "alias": "Bing",
+   "entityId": "qe-ee9f963d9a91",
+   "canonical": "Bing",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3222:0",
+   "postNum": 3222,
+   "index": 0,
+   "alias": "OpenSecrets",
+   "entityId": "qe-1f02057026db",
+   "canonical": "OpenSecrets",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3237:1",
+   "postNum": 3237,
+   "index": 1,
+   "alias": "Smollett",
+   "entityId": "qe-d218fa01e930",
+   "canonical": "Smollett",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3242:0",
+   "postNum": 3242,
+   "index": 0,
+   "alias": "Doug Collins",
+   "entityId": "qe-fe6a80bff729",
+   "canonical": "Doug Collins",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3243:1",
+   "postNum": 3243,
+   "index": 1,
+   "alias": "Eric Holder",
+   "entityId": "qe-b8758c335d26",
+   "canonical": "Eric Holder",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3250:0",
+   "postNum": 3250,
+   "index": 0,
+   "alias": "House",
+   "entityId": "qe-dd22a6644c88",
+   "canonical": "House",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3262:0",
+   "postNum": 3262,
+   "index": 0,
+   "alias": "JeffDeRiso",
+   "entityId": "qe-a7223cacb844",
+   "canonical": "@JeffDeRiso",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3282:0",
+   "postNum": 3282,
+   "index": 0,
+   "alias": "Daniel Pressley",
+   "entityId": "qe-26bdfea69494",
+   "canonical": "Daniel Pressley",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3304:1",
+   "postNum": 3304,
+   "index": 1,
+   "alias": "MSNBC",
+   "entityId": "qe-2cf9f642e53c",
+   "canonical": "MSNBC",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3304:2",
+   "postNum": 3304,
+   "index": 2,
+   "alias": "WikiLeaks",
+   "entityId": "qe-c9f95ff52ca5",
+   "canonical": "WikiLeaks",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3316:7",
+   "postNum": 3316,
+   "index": 7,
+   "alias": "John Dowd",
+   "entityId": "qe-23dd41e959d8",
+   "canonical": "John Dowd",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3316:9",
+   "postNum": 3316,
+   "index": 9,
+   "alias": "Scribd",
+   "entityId": "qe-5c574e817b4d",
+   "canonical": "Scribd",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3327:0",
+   "postNum": 3327,
+   "index": 0,
+   "alias": "GCHQ",
+   "entityId": "qe-5363ead58ce5",
+   "canonical": "GCHQ",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3327:1",
+   "postNum": 3327,
+   "index": 1,
+   "alias": "Robert Hannigan",
+   "entityId": "qe-3536cd634019",
+   "canonical": "Robert Hannigan",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3327:2",
+   "postNum": 3327,
+   "index": 2,
+   "alias": "The Guardian",
+   "entityId": "qe-081c55fb2235",
+   "canonical": "The Guardian",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3329:0",
+   "postNum": 3329,
+   "index": 0,
+   "alias": "Glenn Simpson",
+   "entityId": "qe-d0be1b502513",
+   "canonical": "Glenn Simpson",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3333:0",
+   "postNum": 3333,
+   "index": 0,
+   "alias": "Doug Collins",
+   "entityId": "qe-fe6a80bff729",
+   "canonical": "Doug Collins",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3339:1",
+   "postNum": 3339,
+   "index": 1,
+   "alias": "GCHQ",
+   "entityId": "qe-5363ead58ce5",
+   "canonical": "GCHQ",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3339:2",
+   "postNum": 3339,
+   "index": 2,
+   "alias": "Robert Hannigan",
+   "entityId": "qe-3536cd634019",
+   "canonical": "Robert Hannigan",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3390:1",
+   "postNum": 3390,
+   "index": 1,
+   "alias": "Turkey",
+   "entityId": "qe-970c7ddbc350",
+   "canonical": "Turkey",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3392:0",
+   "postNum": 3392,
+   "index": 0,
+   "alias": "Ed Buck",
+   "entityId": "qe-6f5fab61b00b",
+   "canonical": "Ed Buck",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3392:1",
+   "postNum": 3392,
+   "index": 1,
+   "alias": "CBS News",
+   "entityId": "qe-b7a2d1390d69",
+   "canonical": "CBS News",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3393:0",
+   "postNum": 3393,
+   "index": 0,
+   "alias": "Judy Shelton",
+   "entityId": "qe-91feaf4a3236",
+   "canonical": "Judy Shelton",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3393:1",
+   "postNum": 3393,
+   "index": 1,
+   "alias": "CBS News",
+   "entityId": "qe-b7a2d1390d69",
+   "canonical": "CBS News",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3394:0",
+   "postNum": 3394,
+   "index": 0,
+   "alias": "CNBC",
+   "entityId": "qe-9432fc4f7685",
+   "canonical": "CNBC",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3397:1",
+   "postNum": 3397,
+   "index": 1,
+   "alias": "Bill Maher",
+   "entityId": "qe-7b41aeefc50d",
+   "canonical": "Bill Maher",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3417:2",
+   "postNum": 3417,
+   "index": 2,
+   "alias": "Clare Bronfman",
+   "entityId": "qe-8edddb4d46bd",
+   "canonical": "Clare Bronfman",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3421:0",
+   "postNum": 3421,
+   "index": 0,
+   "alias": "Acosta",
+   "entityId": "qe-ce841834cb66",
+   "canonical": "Acosta",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3425:1",
+   "postNum": 3425,
+   "index": 1,
+   "alias": "CBS News",
+   "entityId": "qe-b7a2d1390d69",
+   "canonical": "CBS News",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3433:1",
+   "postNum": 3433,
+   "index": 1,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3448:0",
+   "postNum": 3448,
+   "index": 0,
+   "alias": "Vanity Fair",
+   "entityId": "qe-e7d0e19927db",
+   "canonical": "Vanity Fair",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3451:0",
+   "postNum": 3451,
+   "index": 0,
+   "alias": "Jake Tapper",
+   "entityId": "qe-ec7eb3da0f00",
+   "canonical": "Jake Tapper",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3454:2",
+   "postNum": 3454,
+   "index": 2,
+   "alias": "US",
+   "entityId": "qe-e4b9b2985b7c",
+   "canonical": "United States",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3459:0",
+   "postNum": 3459,
+   "index": 0,
+   "alias": "Maggie NYT",
+   "entityId": "qe-ba645c928cee",
+   "canonical": "Maggie NYT",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#346:1",
+   "postNum": 346,
+   "index": 1,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3464:0",
+   "postNum": 3464,
+   "index": 0,
+   "alias": "Kevin Shipp",
+   "entityId": "qe-59bb69e52d4e",
+   "canonical": "Kevin Shipp",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3470:0",
+   "postNum": 3470,
+   "index": 0,
+   "alias": "Ted Cruz",
+   "entityId": "qe-b9ee2a4bc6bf",
+   "canonical": "Ted Cruz",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3477:0",
+   "postNum": 3477,
+   "index": 0,
+   "alias": "Ilhan Omar",
+   "entityId": "qe-1c46e4567b2d",
+   "canonical": "Ilhan Omar",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#349:0",
+   "postNum": 349,
+   "index": 0,
+   "alias": "4chan",
+   "entityId": "qe-36ba0b6c5ee9",
+   "canonical": "4chan",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3492:0",
+   "postNum": 3492,
+   "index": 0,
+   "alias": "New York",
+   "entityId": "qe-ce9b4b609ab5",
+   "canonical": "New York",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3496:0",
+   "postNum": 3496,
+   "index": 0,
+   "alias": "USA Today",
+   "entityId": "qe-3ec7dbd12865",
+   "canonical": "USA Today",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3498:0",
+   "postNum": 3498,
+   "index": 0,
+   "alias": "Miami Herald",
+   "entityId": "qe-9ffefa8df9a9",
+   "canonical": "Miami Herald",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3498:1",
+   "postNum": 3498,
+   "index": 1,
+   "alias": "Florida",
+   "entityId": "qe-ff61ffd06288",
+   "canonical": "Florida",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3499:0",
+   "postNum": 3499,
+   "index": 0,
+   "alias": "Disney",
+   "entityId": "qe-d4e6c41f1913",
+   "canonical": "Disney",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3499:1",
+   "postNum": 3499,
+   "index": 1,
+   "alias": "Michael Laney",
+   "entityId": "qe-33b6866304a9",
+   "canonical": "Michael Laney",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3509:0",
+   "postNum": 3509,
+   "index": 0,
+   "alias": "Hollywood Reporter",
+   "entityId": "qe-0ec72823454c",
+   "canonical": "Hollywood Reporter",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3523:0",
+   "postNum": 3523,
+   "index": 0,
+   "alias": "Breitbart News",
+   "entityId": "qe-c612bd190f51",
+   "canonical": "Breitbart News",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3529:1",
+   "postNum": 3529,
+   "index": 1,
+   "alias": "John Ratcliffe",
+   "entityId": "qe-87bd761f0f71",
+   "canonical": "John Ratcliffe",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#353:0",
+   "postNum": 353,
+   "index": 0,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3534:3",
+   "postNum": 3534,
+   "index": 3,
+   "alias": "Charlie Kirk",
+   "entityId": "qe-d4e89265e936",
+   "canonical": "Charlie Kirk",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3542:0",
+   "postNum": 3542,
+   "index": 0,
+   "alias": "Cornell Law School",
+   "entityId": "qe-f435238cd3de",
+   "canonical": "Cornell Law School",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3563:1",
+   "postNum": 3563,
+   "index": 1,
+   "alias": "American Red Cross",
+   "entityId": "qe-d4dd6672aea9",
+   "canonical": "American Red Cross",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3563:2",
+   "postNum": 3563,
+   "index": 2,
+   "alias": "Senator Grassley",
+   "entityId": "qe-5d35b09eef47",
+   "canonical": "Senator Grassley",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3563:3",
+   "postNum": 3563,
+   "index": 3,
+   "alias": "Red Cross",
+   "entityId": "qe-5de21273e3cd",
+   "canonical": "Red Cross",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3565:1",
+   "postNum": 3565,
+   "index": 1,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3566:0",
+   "postNum": 3566,
+   "index": 0,
+   "alias": "Guardian",
+   "entityId": "qe-0192c0f01e9e",
+   "canonical": "Guardian",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3567:0",
+   "postNum": 3567,
+   "index": 0,
+   "alias": "George Papa",
+   "entityId": "qe-58247463cbd4",
+   "canonical": "George Papa",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3581:6",
+   "postNum": 3581,
+   "index": 6,
+   "alias": "Frank Cali",
+   "entityId": "qe-d2b5dc7f5774",
+   "canonical": "Frank Cali",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3581:7",
+   "postNum": 3581,
+   "index": 7,
+   "alias": "Anthony Comello",
+   "entityId": "qe-10b46bb969e5",
+   "canonical": "Anthony Comello",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3583:0",
+   "postNum": 3583,
+   "index": 0,
+   "alias": "Kim Jong",
+   "entityId": "qe-a9499020d997",
+   "canonical": "Kim Jong",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3588:10",
+   "postNum": 3588,
+   "index": 10,
+   "alias": "Instagram",
+   "entityId": "qe-28b3b6e77b6f",
+   "canonical": "Instagram",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3590:3",
+   "postNum": 3590,
+   "index": 3,
+   "alias": "Grassley",
+   "entityId": "qe-b0a544a47108",
+   "canonical": "Grassley",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3595:17",
+   "postNum": 3595,
+   "index": 17,
+   "alias": "Italy",
+   "entityId": "qe-d0f800159d05",
+   "canonical": "Italy",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3602:0",
+   "postNum": 3602,
+   "index": 0,
+   "alias": "Star Wars",
+   "entityId": "qe-ef41b0dc4536",
+   "canonical": "Star Wars",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3605:0",
+   "postNum": 3605,
+   "index": 0,
+   "alias": "Andrew Kerr",
+   "entityId": "qe-f0c917472c64",
+   "canonical": "Andrew Kerr",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3611:4",
+   "postNum": 3611,
+   "index": 4,
+   "alias": "WikiLeaks",
+   "entityId": "qe-c9f95ff52ca5",
+   "canonical": "WikiLeaks",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#362:1",
+   "postNum": 362,
+   "index": 1,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3621:1",
+   "postNum": 3621,
+   "index": 1,
+   "alias": "Marsha Blackburn",
+   "entityId": "qe-062a4ee8b699",
+   "canonical": "Marsha Blackburn",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3624:0",
+   "postNum": 3624,
+   "index": 0,
+   "alias": "Rudy Giuliani",
+   "entityId": "qe-1d920608f91a",
+   "canonical": "Rudy Giuliani",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3625:2",
+   "postNum": 3625,
+   "index": 2,
+   "alias": "Reuters",
+   "entityId": "qe-cb78932b1fab",
+   "canonical": "Reuters",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3625:3",
+   "postNum": 3625,
+   "index": 3,
+   "alias": "Burisma",
+   "entityId": "qe-4a208b7ab05a",
+   "canonical": "Burisma",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3634:1",
+   "postNum": 3634,
+   "index": 1,
+   "alias": "Dianne Feinstein",
+   "entityId": "qe-ecc41732dcbc",
+   "canonical": "Dianne Feinstein",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3634:3",
+   "postNum": 3634,
+   "index": 3,
+   "alias": "Ilhan Omar",
+   "entityId": "qe-1c46e4567b2d",
+   "canonical": "Ilhan Omar",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3634:4",
+   "postNum": 3634,
+   "index": 4,
+   "alias": "Qatar",
+   "entityId": "qe-d988b60f113c",
+   "canonical": "Qatar",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3647:0",
+   "postNum": 3647,
+   "index": 0,
+   "alias": "Reuters",
+   "entityId": "qe-cb78932b1fab",
+   "canonical": "Reuters",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3647:1",
+   "postNum": 3647,
+   "index": 1,
+   "alias": "Paris Agreement",
+   "entityId": "qe-101cfb6d8051",
+   "canonical": "Paris Agreement",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3647:2",
+   "postNum": 3647,
+   "index": 2,
+   "alias": "US House",
+   "entityId": "qe-20c73a0c96b1",
+   "canonical": "US House",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3654:0",
+   "postNum": 3654,
+   "index": 0,
+   "alias": "New Orleans",
+   "entityId": "qe-a5961af56db9",
+   "canonical": "New Orleans",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3654:1",
+   "postNum": 3654,
+   "index": 1,
+   "alias": "Waukesha South High School",
+   "entityId": "qe-a40fa10990e2",
+   "canonical": "Waukesha South High School",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3654:2",
+   "postNum": 3654,
+   "index": 2,
+   "alias": "Oshkosh Wisconsin",
+   "entityId": "qe-ad06365060ab",
+   "canonical": "Oshkosh Wisconsin",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3654:3",
+   "postNum": 3654,
+   "index": 3,
+   "alias": "Jackson State University",
+   "entityId": "qe-cf72caa56682",
+   "canonical": "Jackson State University",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3654:4",
+   "postNum": 3654,
+   "index": 4,
+   "alias": "Pearl Harbor",
+   "entityId": "qe-6b5664b30f39",
+   "canonical": "Pearl Harbor",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3656:1",
+   "postNum": 3656,
+   "index": 1,
+   "alias": "Declaration of Independence",
+   "entityId": "qe-4d1bd7a13a2c",
+   "canonical": "Declaration of Independence",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3659:2",
+   "postNum": 3659,
+   "index": 2,
+   "alias": "Naval Air Station",
+   "entityId": "qe-8f2c4c83d140",
+   "canonical": "Naval Air Station",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3663:1",
+   "postNum": 3663,
+   "index": 1,
+   "alias": "Daily Caller",
+   "entityId": "qe-6aa08f51ac3c",
+   "canonical": "Daily Caller",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3665:0",
+   "postNum": 3665,
+   "index": 0,
+   "alias": "WattersWorld",
+   "entityId": "qe-cbccad5c5dd1",
+   "canonical": "Watters' World",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3669:0",
+   "postNum": 3669,
+   "index": 0,
+   "alias": "Justice Department OIG",
+   "entityId": "qe-9ee6f4494619",
+   "canonical": "Justice Department OIG",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3678:1",
+   "postNum": 3678,
+   "index": 1,
+   "alias": "Rudy Giuliani",
+   "entityId": "qe-1d920608f91a",
+   "canonical": "Rudy Giuliani",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3697:0",
+   "postNum": 3697,
+   "index": 0,
+   "alias": "Imran Awan",
+   "entityId": "qe-8d4eb01972fd",
+   "canonical": "Imran Awan",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3697:1",
+   "postNum": 3697,
+   "index": 1,
+   "alias": "Democrat",
+   "entityId": "qe-d38940e564bf",
+   "canonical": "Democrat",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3697:2",
+   "postNum": 3697,
+   "index": 2,
+   "alias": "Daily Wire",
+   "entityId": "qe-775eed4582a5",
+   "canonical": "Daily Wire",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3699:0",
+   "postNum": 3699,
+   "index": 0,
+   "alias": "GCHQ",
+   "entityId": "qe-5363ead58ce5",
+   "canonical": "GCHQ",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3699:1",
+   "postNum": 3699,
+   "index": 1,
+   "alias": "Jeremy Fleming",
+   "entityId": "qe-d536fab6c2ba",
+   "canonical": "Jeremy Fleming",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3734:0",
+   "postNum": 3734,
+   "index": 0,
+   "alias": "Cuba",
+   "entityId": "qe-c8edf4a0658a",
+   "canonical": "Cuba",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3738:0",
+   "postNum": 3738,
+   "index": 0,
+   "alias": "Rogers",
+   "entityId": "qe-c8330fb2eecc",
+   "canonical": "Rogers",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3738:1",
+   "postNum": 3738,
+   "index": 1,
+   "alias": "Carter Page",
+   "entityId": "qe-2eb344dfc5da",
+   "canonical": "Carter Page",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3738:2",
+   "postNum": 3738,
+   "index": 2,
+   "alias": "Epoch Times",
+   "entityId": "qe-95ba4bd9b0b8",
+   "canonical": "Epoch Times",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3739:0",
+   "postNum": 3739,
+   "index": 0,
+   "alias": "Rogers",
+   "entityId": "qe-c8330fb2eecc",
+   "canonical": "Rogers",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3739:1",
+   "postNum": 3739,
+   "index": 1,
+   "alias": "Carter Page",
+   "entityId": "qe-2eb344dfc5da",
+   "canonical": "Carter Page",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3751:0",
+   "postNum": 3751,
+   "index": 0,
+   "alias": "M2Madness",
+   "entityId": "qe-359da756e27d",
+   "canonical": "@M2Madness",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3764:13",
+   "postNum": 3764,
+   "index": 13,
+   "alias": "Assange",
+   "entityId": "qe-2d7f16a051df",
+   "canonical": "Assange",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3764:14",
+   "postNum": 3764,
+   "index": 14,
+   "alias": "Hannity",
+   "entityId": "qe-ea78df3ba4e8",
+   "canonical": "Hannity",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3778:7",
+   "postNum": 3778,
+   "index": 7,
+   "alias": "Judicial Watch",
+   "entityId": "qe-f0a4db3b3a2d",
+   "canonical": "Judicial Watch",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3793:0",
+   "postNum": 3793,
+   "index": 0,
+   "alias": "Rudy Giuliani",
+   "entityId": "qe-1d920608f91a",
+   "canonical": "Rudy Giuliani",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3816:1",
+   "postNum": 3816,
+   "index": 1,
+   "alias": "Mark Knoller",
+   "entityId": "qe-35841b0b7a3d",
+   "canonical": "Mark Knoller",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3819:0",
+   "postNum": 3819,
+   "index": 0,
+   "alias": "Miami Herald",
+   "entityId": "qe-9ffefa8df9a9",
+   "canonical": "Miami Herald",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3821:1",
+   "postNum": 3821,
+   "index": 1,
+   "alias": "Pentagon",
+   "entityId": "qe-a939139b5dc3",
+   "canonical": "Pentagon",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3826:0",
+   "postNum": 3826,
+   "index": 0,
+   "alias": "Scavino45",
+   "entityId": "qe-9a7736c95e9e",
+   "canonical": "@Scavino45",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3834:0",
+   "postNum": 3834,
+   "index": 0,
+   "alias": "Grassley",
+   "entityId": "qe-b0a544a47108",
+   "canonical": "Grassley",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3835:1",
+   "postNum": 3835,
+   "index": 1,
+   "alias": "Hunter Biden",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3842:2",
+   "postNum": 3842,
+   "index": 2,
+   "alias": "Harvard",
+   "entityId": "qe-127c98ea4da1",
+   "canonical": "Harvard",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3845:0",
+   "postNum": 3845,
+   "index": 0,
+   "alias": "New Jersey",
+   "entityId": "qe-914c66c7e5ec",
+   "canonical": "New Jersey",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3851:0",
+   "postNum": 3851,
+   "index": 0,
+   "alias": "Vindman",
+   "entityId": "qe-9712d2fe7d80",
+   "canonical": "Vindman",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3851:1",
+   "postNum": 3851,
+   "index": 1,
+   "alias": "Washington Examiner",
+   "entityId": "qe-53e144ef7030",
+   "canonical": "Washington Examiner",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3859:2",
+   "postNum": 3859,
+   "index": 2,
+   "alias": "ABC",
+   "entityId": "qe-85eeac4dbdc4",
+   "canonical": "ABC News",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#388:1",
+   "postNum": 388,
+   "index": 1,
+   "alias": "NYC Department of Transportation",
+   "entityId": "qe-5be819e1275d",
+   "canonical": "NYC Department of Transportation",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#388:6",
+   "postNum": 388,
+   "index": 6,
+   "alias": "Jessica Schumer",
+   "entityId": "qe-5d57b70f7da5",
+   "canonical": "Jessica Schumer",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#388:7",
+   "postNum": 388,
+   "index": 7,
+   "alias": "Michael Shapiro",
+   "entityId": "qe-0074e0c7d38d",
+   "canonical": "Michael Shapiro",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3885:0",
+   "postNum": 3885,
+   "index": 0,
+   "alias": "National Review",
+   "entityId": "qe-bdcb1cd538d6",
+   "canonical": "National Review",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3897:0",
+   "postNum": 3897,
+   "index": 0,
+   "alias": "Andy Harris",
+   "entityId": "qe-a9b01b82abb3",
+   "canonical": "Andy Harris",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3898:0",
+   "postNum": 3898,
+   "index": 0,
+   "alias": "Daily Caller",
+   "entityId": "qe-6aa08f51ac3c",
+   "canonical": "Daily Caller",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3898:1",
+   "postNum": 3898,
+   "index": 1,
+   "alias": "Watergate",
+   "entityId": "qe-c0facb229e6f",
+   "canonical": "Watergate",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#390:0",
+   "postNum": 390,
+   "index": 0,
+   "alias": "Playboy",
+   "entityId": "qe-e877a7739dda",
+   "canonical": "Playboy",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3909:1",
+   "postNum": 3909,
+   "index": 1,
+   "alias": "Harmeet Dhillon",
+   "entityId": "qe-42ab68084767",
+   "canonical": "Harmeet Dhillon",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3922:0",
+   "postNum": 3922,
+   "index": 0,
+   "alias": "Luke Goldberg",
+   "entityId": "qe-daece4fc5c9d",
+   "canonical": "Luke Goldberg",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3923:0",
+   "postNum": 3923,
+   "index": 0,
+   "alias": "Guardian",
+   "entityId": "qe-0192c0f01e9e",
+   "canonical": "Guardian",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3926:0",
+   "postNum": 3926,
+   "index": 0,
+   "alias": "CBS News",
+   "entityId": "qe-b7a2d1390d69",
+   "canonical": "CBS News",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#393:0",
+   "postNum": 393,
+   "index": 0,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3935:0",
+   "postNum": 3935,
+   "index": 0,
+   "alias": "Colin Skow",
+   "entityId": "qe-bf081f9168e7",
+   "canonical": "Colin Skow",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3939:0",
+   "postNum": 3939,
+   "index": 0,
+   "alias": "Rochelle Coombs",
+   "entityId": "qe-d2b6f6e7ddde",
+   "canonical": "Rochelle Coombs",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#394:2",
+   "postNum": 394,
+   "index": 2,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3959:0",
+   "postNum": 3959,
+   "index": 0,
+   "alias": "Tom Fitton",
+   "entityId": "qe-a23fe69398c7",
+   "canonical": "Tom Fitton",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3960:0",
+   "postNum": 3960,
+   "index": 0,
+   "alias": "Nevada",
+   "entityId": "qe-ec290e41f3f7",
+   "canonical": "Nevada",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3962:0",
+   "postNum": 3962,
+   "index": 0,
+   "alias": "Virginia",
+   "entityId": "qe-74037c4ff506",
+   "canonical": "Virginia",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#3982:0",
+   "postNum": 3982,
+   "index": 0,
+   "alias": "Lou Dobbs",
+   "entityId": "qe-79e83e848576",
+   "canonical": "Lou Dobbs",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4:2",
+   "postNum": 4,
+   "index": 2,
+   "alias": "Clintons",
+   "entityId": "qe-a0807cd1d9bf",
+   "canonical": "Clintons",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4000:0",
+   "postNum": 4000,
+   "index": 0,
+   "alias": "Star Wars Commander",
+   "entityId": "qe-cea36cd7b185",
+   "canonical": "Star Wars Commander",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4002:1",
+   "postNum": 4002,
+   "index": 1,
+   "alias": "Activision Blizzard",
+   "entityId": "qe-6cacf7082c69",
+   "canonical": "Activision Blizzard",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4008:0",
+   "postNum": 4008,
+   "index": 0,
+   "alias": "U.S. State Department",
+   "entityId": "qe-ca3a2efc7a40",
+   "canonical": "U.S. State Department",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4014:4",
+   "postNum": 4014,
+   "index": 4,
+   "alias": "Democratic National Convention",
+   "entityId": "qe-9ba608d159c0",
+   "canonical": "Democratic National Convention",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4020:0",
+   "postNum": 4020,
+   "index": 0,
+   "alias": "Chris Hayes",
+   "entityId": "qe-7a2650adef9a",
+   "canonical": "Chris Hayes",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4020:1",
+   "postNum": 4020,
+   "index": 1,
+   "alias": "MSNBC",
+   "entityId": "qe-2cf9f642e53c",
+   "canonical": "MSNBC",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4027:0",
+   "postNum": 4027,
+   "index": 0,
+   "alias": "Greg Kotseos",
+   "entityId": "qe-54a16c15b7eb",
+   "canonical": "Greg Kotseos",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4030:0",
+   "postNum": 4030,
+   "index": 0,
+   "alias": "Valerie Jarrett",
+   "entityId": "qe-8cf10da6c277",
+   "canonical": "Valerie Jarrett",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4031:0",
+   "postNum": 4031,
+   "index": 0,
+   "alias": "Imran Awan",
+   "entityId": "qe-8d4eb01972fd",
+   "canonical": "Imran Awan",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4035:0",
+   "postNum": 4035,
+   "index": 0,
+   "alias": "Mark Levin",
+   "entityId": "qe-dbab506adc18",
+   "canonical": "Mark Levin",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4035:1",
+   "postNum": 4035,
+   "index": 1,
+   "alias": "RealClearPolitics",
+   "entityId": "qe-108cb1178105",
+   "canonical": "RealClearPolitics",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4038:0",
+   "postNum": 4038,
+   "index": 0,
+   "alias": "Clapper",
+   "entityId": "qe-f1113eea7218",
+   "canonical": "Clapper",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4045:3",
+   "postNum": 4045,
+   "index": 3,
+   "alias": "House",
+   "entityId": "qe-dd22a6644c88",
+   "canonical": "House",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4049:0",
+   "postNum": 4049,
+   "index": 0,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4069:0",
+   "postNum": 4069,
+   "index": 0,
+   "alias": "Jared De",
+   "entityId": "qe-dc51b7570403",
+   "canonical": "Jared De",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4078:0",
+   "postNum": 4078,
+   "index": 0,
+   "alias": "Tom Fitton",
+   "entityId": "qe-a23fe69398c7",
+   "canonical": "Tom Fitton",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4084:0",
+   "postNum": 4084,
+   "index": 0,
+   "alias": "Civil Rights Division",
+   "entityId": "qe-85cd3021571b",
+   "canonical": "Civil Rights Division",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4088:0",
+   "postNum": 4088,
+   "index": 0,
+   "alias": "Illinois",
+   "entityId": "qe-a5a0dbd8a4ac",
+   "canonical": "Illinois",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4090:0",
+   "postNum": 4090,
+   "index": 0,
+   "alias": "Daily Caller",
+   "entityId": "qe-6aa08f51ac3c",
+   "canonical": "Daily Caller",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4103:0",
+   "postNum": 4103,
+   "index": 0,
+   "alias": "Bing",
+   "entityId": "qe-ee9f963d9a91",
+   "canonical": "Bing",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4114:0",
+   "postNum": 4114,
+   "index": 0,
+   "alias": "The Lancet",
+   "entityId": "qe-71c1d9414712",
+   "canonical": "The Lancet",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4115:0",
+   "postNum": 4115,
+   "index": 0,
+   "alias": "Tanzania",
+   "entityId": "qe-f10a038188ad",
+   "canonical": "Tanzania",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4115:1",
+   "postNum": 4115,
+   "index": 1,
+   "alias": "Reuters",
+   "entityId": "qe-cb78932b1fab",
+   "canonical": "Reuters",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4116:0",
+   "postNum": 4116,
+   "index": 0,
+   "alias": "IngrahamAngle",
+   "entityId": "qe-5d58e0f6a89b",
+   "canonical": "The Ingraham Angle",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4118:0",
+   "postNum": 4118,
+   "index": 0,
+   "alias": "Washington Examiner",
+   "entityId": "qe-53e144ef7030",
+   "canonical": "Washington Examiner",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4118:1",
+   "postNum": 4118,
+   "index": 1,
+   "alias": "Byron York",
+   "entityId": "qe-ceae80730a2f",
+   "canonical": "Byron York",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4123:0",
+   "postNum": 4123,
+   "index": 0,
+   "alias": "Dianne Feinstein",
+   "entityId": "qe-ecc41732dcbc",
+   "canonical": "Dianne Feinstein",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4134:0",
+   "postNum": 4134,
+   "index": 0,
+   "alias": "AC-130",
+   "entityId": "qe-4ed12a591de9",
+   "canonical": "AC-130",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4137:3",
+   "postNum": 4137,
+   "index": 3,
+   "alias": "Moscow Times",
+   "entityId": "qe-3047e87304c1",
+   "canonical": "Moscow Times",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4140:0",
+   "postNum": 4140,
+   "index": 0,
+   "alias": "AP",
+   "entityId": "qe-2f3d0f74a507",
+   "canonical": "Associated Press",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4142:0",
+   "postNum": 4142,
+   "index": 0,
+   "alias": "House Intelligence Committee",
+   "entityId": "qe-efc069a23832",
+   "canonical": "House Intelligence Committee",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4143:0",
+   "postNum": 4143,
+   "index": 0,
+   "alias": "Kevin Corke",
+   "entityId": "qe-d9c653f12000",
+   "canonical": "Kevin Corke",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4144:0",
+   "postNum": 4144,
+   "index": 0,
+   "alias": "AC-130",
+   "entityId": "qe-4ed12a591de9",
+   "canonical": "AC-130",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4145:0",
+   "postNum": 4145,
+   "index": 0,
+   "alias": "Shannon Bream",
+   "entityId": "qe-005e29423829",
+   "canonical": "Shannon Bream",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#415:0",
+   "postNum": 415,
+   "index": 0,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4150:0",
+   "postNum": 4150,
+   "index": 0,
+   "alias": "Fox Friends",
+   "entityId": "qe-de1cd4c53026",
+   "canonical": "Fox Friends",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4155:0",
+   "postNum": 4155,
+   "index": 0,
+   "alias": "The Federalist",
+   "entityId": "qe-80dcc988dd59",
+   "canonical": "The Federalist",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4157:0",
+   "postNum": 4157,
+   "index": 0,
+   "alias": "Ingraham Angle",
+   "entityId": "qe-25fc4dc6168d",
+   "canonical": "Ingraham Angle",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4159:0",
+   "postNum": 4159,
+   "index": 0,
+   "alias": "House",
+   "entityId": "qe-dd22a6644c88",
+   "canonical": "House",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4163:0",
+   "postNum": 4163,
+   "index": 0,
+   "alias": "Anderson Cooper",
+   "entityId": "qe-1a3c2ae159d5",
+   "canonical": "Anderson Cooper",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4164:2",
+   "postNum": 4164,
+   "index": 2,
+   "alias": "George H.W. Bush",
+   "entityId": "qe-ed7af8c981ab",
+   "canonical": "George H. W. Bush",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4165:0",
+   "postNum": 4165,
+   "index": 0,
+   "alias": "Valerie Plame",
+   "entityId": "qe-4c64444515b8",
+   "canonical": "Valerie Plame",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4169:0",
+   "postNum": 4169,
+   "index": 0,
+   "alias": "Schumer",
+   "entityId": "qe-38fecff2478b",
+   "canonical": "Schumer",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4181:0",
+   "postNum": 4181,
+   "index": 0,
+   "alias": "Jonathan Turley",
+   "entityId": "qe-17dad31eed91",
+   "canonical": "Jonathan Turley",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4191:0",
+   "postNum": 4191,
+   "index": 0,
+   "alias": "Amanda Hle",
+   "entityId": "qe-5afa5eb1bffc",
+   "canonical": "Amanda Hle",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4193:0",
+   "postNum": 4193,
+   "index": 0,
+   "alias": "Colin Skow",
+   "entityId": "qe-bf081f9168e7",
+   "canonical": "Colin Skow",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4195:0",
+   "postNum": 4195,
+   "index": 0,
+   "alias": "WattersWorld",
+   "entityId": "qe-cbccad5c5dd1",
+   "canonical": "Watters' World",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4198:0",
+   "postNum": 4198,
+   "index": 0,
+   "alias": "AC-130",
+   "entityId": "qe-4ed12a591de9",
+   "canonical": "AC-130",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4202:0",
+   "postNum": 4202,
+   "index": 0,
+   "alias": "Pentagon",
+   "entityId": "qe-a939139b5dc3",
+   "canonical": "Pentagon",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4202:1",
+   "postNum": 4202,
+   "index": 1,
+   "alias": "Bloomberg",
+   "entityId": "qe-a91226e14421",
+   "canonical": "Bloomberg",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4206:1",
+   "postNum": 4206,
+   "index": 1,
+   "alias": "ABC",
+   "entityId": "qe-85eeac4dbdc4",
+   "canonical": "ABC News",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4213:0",
+   "postNum": 4213,
+   "index": 0,
+   "alias": "Daily Wire",
+   "entityId": "qe-775eed4582a5",
+   "canonical": "Daily Wire",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4215:0",
+   "postNum": 4215,
+   "index": 0,
+   "alias": "Trey Gowdy",
+   "entityId": "qe-7ddc97a374c1",
+   "canonical": "Trey Gowdy",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4215:1",
+   "postNum": 4215,
+   "index": 1,
+   "alias": "RealClearPolitics",
+   "entityId": "qe-108cb1178105",
+   "canonical": "RealClearPolitics",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4219:1",
+   "postNum": 4219,
+   "index": 1,
+   "alias": "Breaking911",
+   "entityId": "qe-37306dd886d7",
+   "canonical": "Breaking911",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4225:0",
+   "postNum": 4225,
+   "index": 0,
+   "alias": "France",
+   "entityId": "qe-f133491e890a",
+   "canonical": "France",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4225:1",
+   "postNum": 4225,
+   "index": 1,
+   "alias": "Forbes",
+   "entityId": "qe-acebf6618637",
+   "canonical": "Forbes",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4226:4",
+   "postNum": 4226,
+   "index": 4,
+   "alias": "Reuters",
+   "entityId": "qe-cb78932b1fab",
+   "canonical": "Reuters",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4228:0",
+   "postNum": 4228,
+   "index": 0,
+   "alias": "CBS_Herridge",
+   "entityId": "qe-49b9cb60a8ac",
+   "canonical": "CBS_Herridge",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4232:0",
+   "postNum": 4232,
+   "index": 0,
+   "alias": "Jared Kushner",
+   "entityId": "qe-3baafa6d1077",
+   "canonical": "Jared Kushner",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4232:1",
+   "postNum": 4232,
+   "index": 1,
+   "alias": "Ivanka Trump",
+   "entityId": "qe-ad393745af3e",
+   "canonical": "Ivanka Trump",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4233:0",
+   "postNum": 4233,
+   "index": 0,
+   "alias": "Washington Examiner",
+   "entityId": "qe-53e144ef7030",
+   "canonical": "Washington Examiner",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4234:0",
+   "postNum": 4234,
+   "index": 0,
+   "alias": "AC-130",
+   "entityId": "qe-4ed12a591de9",
+   "canonical": "AC-130",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4234:1",
+   "postNum": 4234,
+   "index": 1,
+   "alias": "military.com",
+   "entityId": "qe-d305710ada08",
+   "canonical": "Military.com",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4241:1",
+   "postNum": 4241,
+   "index": 1,
+   "alias": "Grassley",
+   "entityId": "qe-b0a544a47108",
+   "canonical": "Grassley",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4243:0",
+   "postNum": 4243,
+   "index": 0,
+   "alias": "NARA",
+   "entityId": "qe-132c597e73ef",
+   "canonical": "National Archives and Records Administration",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4248:0",
+   "postNum": 4248,
+   "index": 0,
+   "alias": "San Diego County",
+   "entityId": "qe-40171a5df985",
+   "canonical": "San Diego County",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4248:1",
+   "postNum": 4248,
+   "index": 1,
+   "alias": "Washington Examiner",
+   "entityId": "qe-53e144ef7030",
+   "canonical": "Washington Examiner",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4251:0",
+   "postNum": 4251,
+   "index": 0,
+   "alias": "Nevada",
+   "entityId": "qe-ec290e41f3f7",
+   "canonical": "Nevada",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4254:0",
+   "postNum": 4254,
+   "index": 0,
+   "alias": "Gov Murphy",
+   "entityId": "qe-8eaa5c76d9a5",
+   "canonical": "Gov Murphy",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4256:2",
+   "postNum": 4256,
+   "index": 2,
+   "alias": "Maria Bartiromo",
+   "entityId": "qe-d9c40c6e93a0",
+   "canonical": "Maria Bartiromo",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4258:1",
+   "postNum": 4258,
+   "index": 1,
+   "alias": "Maria Bartiromo",
+   "entityId": "qe-d9c40c6e93a0",
+   "canonical": "Maria Bartiromo",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4264:0",
+   "postNum": 4264,
+   "index": 0,
+   "alias": "Brazil",
+   "entityId": "qe-93129c25f29e",
+   "canonical": "Brazil",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4271:0",
+   "postNum": 4271,
+   "index": 0,
+   "alias": "Tito Calloway",
+   "entityId": "qe-9361ddbb6b70",
+   "canonical": "Tito Calloway",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4278:3",
+   "postNum": 4278,
+   "index": 3,
+   "alias": "Boston Herald",
+   "entityId": "qe-7f493f5efe72",
+   "canonical": "Boston Herald",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4280:1",
+   "postNum": 4280,
+   "index": 1,
+   "alias": "CBS_Herridge",
+   "entityId": "qe-49b9cb60a8ac",
+   "canonical": "CBS_Herridge",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4285:0",
+   "postNum": 4285,
+   "index": 0,
+   "alias": "Bloomberg",
+   "entityId": "qe-a91226e14421",
+   "canonical": "Bloomberg",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4285:1",
+   "postNum": 4285,
+   "index": 1,
+   "alias": "Gates Foundation",
+   "entityId": "qe-f96fdca16913",
+   "canonical": "Gates Foundation",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4285:2",
+   "postNum": 4285,
+   "index": 2,
+   "alias": "Global Health Leaders",
+   "entityId": "qe-177205440a32",
+   "canonical": "Global Health Leaders",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4290:3",
+   "postNum": 4290,
+   "index": 3,
+   "alias": "Costa Rica",
+   "entityId": "qe-2b7be3ed1577",
+   "canonical": "Costa Rica",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4293:5",
+   "postNum": 4293,
+   "index": 5,
+   "alias": "Hunter Biden",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4293:6",
+   "postNum": 4293,
+   "index": 6,
+   "alias": "Burisma",
+   "entityId": "qe-4a208b7ab05a",
+   "canonical": "Burisma",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4293:7",
+   "postNum": 4293,
+   "index": 7,
+   "alias": "Senate Committee",
+   "entityId": "qe-ae0f7ed45ac5",
+   "canonical": "Senate Committee",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4298:0",
+   "postNum": 4298,
+   "index": 0,
+   "alias": "Grassley",
+   "entityId": "qe-b0a544a47108",
+   "canonical": "Grassley",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4298:1",
+   "postNum": 4298,
+   "index": 1,
+   "alias": "ODNI",
+   "entityId": "qe-285e5ba8cc6f",
+   "canonical": "Office of the Director of National Intelligence",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4300:0",
+   "postNum": 4300,
+   "index": 0,
+   "alias": "The Federalist",
+   "entityId": "qe-80dcc988dd59",
+   "canonical": "The Federalist",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4301:0",
+   "postNum": 4301,
+   "index": 0,
+   "alias": "Senate Intelligence Committee",
+   "entityId": "qe-e72f4b6ffdeb",
+   "canonical": "Senate Intelligence Committee",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4303:1",
+   "postNum": 4303,
+   "index": 1,
+   "alias": "Senate Intelligence Committee",
+   "entityId": "qe-e72f4b6ffdeb",
+   "canonical": "Senate Intelligence Committee",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4304:0",
+   "postNum": 4304,
+   "index": 0,
+   "alias": "Ratcliffe",
+   "entityId": "qe-63891e8fa021",
+   "canonical": "Ratcliffe",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4307:0",
+   "postNum": 4307,
+   "index": 0,
+   "alias": "Pennsylvania",
+   "entityId": "qe-fdf0e237f0c5",
+   "canonical": "Pennsylvania",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4313:0",
+   "postNum": 4313,
+   "index": 0,
+   "alias": "Forbes",
+   "entityId": "qe-acebf6618637",
+   "canonical": "Forbes",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4313:1",
+   "postNum": 4313,
+   "index": 1,
+   "alias": "Thomas Basile",
+   "entityId": "qe-4700f035311f",
+   "canonical": "Thomas Basile",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4314:0",
+   "postNum": 4314,
+   "index": 0,
+   "alias": "Europe",
+   "entityId": "qe-3fbdea4219ae",
+   "canonical": "Europe",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4315:0",
+   "postNum": 4315,
+   "index": 0,
+   "alias": "India",
+   "entityId": "qe-253a1db2cbdb",
+   "canonical": "India",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4329:0",
+   "postNum": 4329,
+   "index": 0,
+   "alias": "Cuomo",
+   "entityId": "qe-0bb4fa1b1fd7",
+   "canonical": "Cuomo",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4329:1",
+   "postNum": 4329,
+   "index": 1,
+   "alias": "New York",
+   "entityId": "qe-ce9b4b609ab5",
+   "canonical": "New York",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4333:2",
+   "postNum": 4333,
+   "index": 2,
+   "alias": "CBS News",
+   "entityId": "qe-b7a2d1390d69",
+   "canonical": "CBS News",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4334:0",
+   "postNum": 4334,
+   "index": 0,
+   "alias": "Italy",
+   "entityId": "qe-d0f800159d05",
+   "canonical": "Italy",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4337:2",
+   "postNum": 4337,
+   "index": 2,
+   "alias": "Forbes",
+   "entityId": "qe-acebf6618637",
+   "canonical": "Forbes",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4340:0",
+   "postNum": 4340,
+   "index": 0,
+   "alias": "Cuomo",
+   "entityId": "qe-0bb4fa1b1fd7",
+   "canonical": "Cuomo",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4341:0",
+   "postNum": 4341,
+   "index": 0,
+   "alias": "New Jersey",
+   "entityId": "qe-914c66c7e5ec",
+   "canonical": "New Jersey",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4344:0",
+   "postNum": 4344,
+   "index": 0,
+   "alias": "Minnesota",
+   "entityId": "qe-5827dd8740d9",
+   "canonical": "Minnesota",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4348:0",
+   "postNum": 4348,
+   "index": 0,
+   "alias": "Daily Dot",
+   "entityId": "qe-1c01a1ed75ed",
+   "canonical": "Daily Dot",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4348:1",
+   "postNum": 4348,
+   "index": 1,
+   "alias": "Omega Kingdom Ministries",
+   "entityId": "qe-05c3b39efe82",
+   "canonical": "Omega Kingdom Ministries",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4350:0",
+   "postNum": 4350,
+   "index": 0,
+   "alias": "ODNI",
+   "entityId": "qe-285e5ba8cc6f",
+   "canonical": "Office of the Director of National Intelligence",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4351:0",
+   "postNum": 4351,
+   "index": 0,
+   "alias": "CBS_Herridge",
+   "entityId": "qe-49b9cb60a8ac",
+   "canonical": "CBS_Herridge",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4356:0",
+   "postNum": 4356,
+   "index": 0,
+   "alias": "Matt Finn",
+   "entityId": "qe-8623046de048",
+   "canonical": "Matt Finn",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4358:0",
+   "postNum": 4358,
+   "index": 0,
+   "alias": "Daily Caller",
+   "entityId": "qe-6aa08f51ac3c",
+   "canonical": "Daily Caller",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4359:0",
+   "postNum": 4359,
+   "index": 0,
+   "alias": "Dana Boente",
+   "entityId": "qe-5ffea7a1d496",
+   "canonical": "Dana Boente",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4372:0",
+   "postNum": 4372,
+   "index": 0,
+   "alias": "Mark Levin",
+   "entityId": "qe-dbab506adc18",
+   "canonical": "Mark Levin",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4399:0",
+   "postNum": 4399,
+   "index": 0,
+   "alias": "Eric Schmitt",
+   "entityId": "qe-536fedb07705",
+   "canonical": "Eric Schmitt",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4401:1",
+   "postNum": 4401,
+   "index": 1,
+   "alias": "Black Lives Matter",
+   "entityId": "qe-72c96d957a8a",
+   "canonical": "Black Lives Matter",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4401:2",
+   "postNum": 4401,
+   "index": 2,
+   "alias": "US",
+   "entityId": "qe-e4b9b2985b7c",
+   "canonical": "United States",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4405:0",
+   "postNum": 4405,
+   "index": 0,
+   "alias": "Eric Garcetti",
+   "entityId": "qe-09c79d4d4b30",
+   "canonical": "Eric Garcetti",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4405:1",
+   "postNum": 4405,
+   "index": 1,
+   "alias": "Los Angeles",
+   "entityId": "qe-7c11c90272b8",
+   "canonical": "Los Angeles",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4407:0",
+   "postNum": 4407,
+   "index": 0,
+   "alias": "Minneapolis",
+   "entityId": "qe-415492f50772",
+   "canonical": "Minneapolis",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4407:1",
+   "postNum": 4407,
+   "index": 1,
+   "alias": "Minneapolis City Council",
+   "entityId": "qe-2dfa3e05d6dc",
+   "canonical": "Minneapolis City Council",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4415:0",
+   "postNum": 4415,
+   "index": 0,
+   "alias": "James Mattis",
+   "entityId": "qe-b5bd715d185a",
+   "canonical": "James Mattis",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4415:1",
+   "postNum": 4415,
+   "index": 1,
+   "alias": "Pentagon",
+   "entityId": "qe-a939139b5dc3",
+   "canonical": "Pentagon",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4415:2",
+   "postNum": 4415,
+   "index": 2,
+   "alias": "George Floyd",
+   "entityId": "qe-8aecb81bf390",
+   "canonical": "George Floyd",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4416:0",
+   "postNum": 4416,
+   "index": 0,
+   "alias": "Jeremiah Ellison",
+   "entityId": "qe-c52bf0c20672",
+   "canonical": "Jeremiah Ellison",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4416:1",
+   "postNum": 4416,
+   "index": 1,
+   "alias": "Keith Ellison",
+   "entityId": "qe-05176fbb6223",
+   "canonical": "Keith Ellison",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4416:2",
+   "postNum": 4416,
+   "index": 2,
+   "alias": "Minneapolis",
+   "entityId": "qe-415492f50772",
+   "canonical": "Minneapolis",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4416:3",
+   "postNum": 4416,
+   "index": 3,
+   "alias": "Minnesota",
+   "entityId": "qe-5827dd8740d9",
+   "canonical": "Minnesota",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4418:0",
+   "postNum": 4418,
+   "index": 0,
+   "alias": "Dan Scavino",
+   "entityId": "qe-ff6e240e37f8",
+   "canonical": "Dan Scavino",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4420:0",
+   "postNum": 4420,
+   "index": 0,
+   "alias": "Mike Lee",
+   "entityId": "qe-1902640e3819",
+   "canonical": "Mike Lee",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4422:0",
+   "postNum": 4422,
+   "index": 0,
+   "alias": "CBS_Herridge",
+   "entityId": "qe-49b9cb60a8ac",
+   "canonical": "CBS_Herridge",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#443:1",
+   "postNum": 443,
+   "index": 1,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4430:0",
+   "postNum": 4430,
+   "index": 0,
+   "alias": "CBS_Herridge",
+   "entityId": "qe-49b9cb60a8ac",
+   "canonical": "CBS_Herridge",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4432:0",
+   "postNum": 4432,
+   "index": 0,
+   "alias": "Mark Esper",
+   "entityId": "qe-edf1d9b08fdc",
+   "canonical": "Mark Esper",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4432:1",
+   "postNum": 4432,
+   "index": 1,
+   "alias": "National Guard",
+   "entityId": "qe-2d1cba1ee70f",
+   "canonical": "National Guard",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4436:0",
+   "postNum": 4436,
+   "index": 0,
+   "alias": "Obama Foundation",
+   "entityId": "qe-7b002006e0e5",
+   "canonical": "Obama Foundation",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4449:1",
+   "postNum": 4449,
+   "index": 1,
+   "alias": "Jordan Sather",
+   "entityId": "qe-2177707b6f9e",
+   "canonical": "Jordan Sather",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#445:1",
+   "postNum": 445,
+   "index": 1,
+   "alias": "Google Capital",
+   "entityId": "qe-24657d3b5b93",
+   "canonical": "Google Capital",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4454:0",
+   "postNum": 4454,
+   "index": 0,
+   "alias": "Tucker Carlson",
+   "entityId": "qe-c0a2bf39c430",
+   "canonical": "Tucker Carlson",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4456:7",
+   "postNum": 4456,
+   "index": 7,
+   "alias": "Senate Judiciary Committee",
+   "entityId": "qe-ddeb9c6c71b8",
+   "canonical": "Senate Judiciary Committee",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4458:0",
+   "postNum": 4458,
+   "index": 0,
+   "alias": "Confederate General",
+   "entityId": "qe-3f8136a79c3b",
+   "canonical": "Confederate General",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4469:2",
+   "postNum": 4469,
+   "index": 2,
+   "alias": "William H. Carney",
+   "entityId": "qe-c41325e2d485",
+   "canonical": "William H. Carney",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4473:0",
+   "postNum": 4473,
+   "index": 0,
+   "alias": "Breakfast Club",
+   "entityId": "qe-12e9d3e5fe25",
+   "canonical": "Breakfast Club",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4477:0",
+   "postNum": 4477,
+   "index": 0,
+   "alias": "Steve Scalise",
+   "entityId": "qe-c92435175e92",
+   "canonical": "Steve Scalise",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4481:0",
+   "postNum": 4481,
+   "index": 0,
+   "alias": "Breitbart News",
+   "entityId": "qe-c612bd190f51",
+   "canonical": "Breitbart News",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4487:0",
+   "postNum": 4487,
+   "index": 0,
+   "alias": "ABC",
+   "entityId": "qe-85eeac4dbdc4",
+   "canonical": "ABC News",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4492:0",
+   "postNum": 4492,
+   "index": 0,
+   "alias": "Steve Scalise",
+   "entityId": "qe-c92435175e92",
+   "canonical": "Steve Scalise",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4503:0",
+   "postNum": 4503,
+   "index": 0,
+   "alias": "Black Lives Matter",
+   "entityId": "qe-72c96d957a8a",
+   "canonical": "Black Lives Matter",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4503:1",
+   "postNum": 4503,
+   "index": 1,
+   "alias": "Toronto",
+   "entityId": "qe-8b204011d055",
+   "canonical": "Toronto",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4505:0",
+   "postNum": 4505,
+   "index": 0,
+   "alias": "Pentagon",
+   "entityId": "qe-a939139b5dc3",
+   "canonical": "Pentagon",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4514:2",
+   "postNum": 4514,
+   "index": 2,
+   "alias": "Guardian",
+   "entityId": "qe-0192c0f01e9e",
+   "canonical": "Guardian",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4520:0",
+   "postNum": 4520,
+   "index": 0,
+   "alias": "Steve Scalise",
+   "entityId": "qe-c92435175e92",
+   "canonical": "Steve Scalise",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4529:0",
+   "postNum": 4529,
+   "index": 0,
+   "alias": "House GOP",
+   "entityId": "qe-5cf46b7e8c27",
+   "canonical": "House GOP",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4529:1",
+   "postNum": 4529,
+   "index": 1,
+   "alias": "Cornell Law",
+   "entityId": "qe-f0dcfa6db00e",
+   "canonical": "Cornell Law",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4539:2",
+   "postNum": 4539,
+   "index": 2,
+   "alias": "Jim Jordan",
+   "entityId": "qe-5209a6bbbd49",
+   "canonical": "Jim Jordan",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4545:4",
+   "postNum": 4545,
+   "index": 4,
+   "alias": "Al Qaeda",
+   "entityId": "qe-82f9daa0f19c",
+   "canonical": "Al Qaeda",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4545:5",
+   "postNum": 4545,
+   "index": 5,
+   "alias": "World Health Organization",
+   "entityId": "qe-f88414af0b11",
+   "canonical": "World Health Organization",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4545:6",
+   "postNum": 4545,
+   "index": 6,
+   "alias": "World Trade Organization",
+   "entityId": "qe-a9313c16edad",
+   "canonical": "World Trade Organization",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4546:3",
+   "postNum": 4546,
+   "index": 3,
+   "alias": "El Centro",
+   "entityId": "qe-a6b40d70bfbf",
+   "canonical": "El Centro",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4546:4",
+   "postNum": 4546,
+   "index": 4,
+   "alias": "Gavin Newsom",
+   "entityId": "qe-c00874e212d3",
+   "canonical": "Gavin Newsom",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4546:5",
+   "postNum": 4546,
+   "index": 5,
+   "alias": "L.A. County",
+   "entityId": "qe-b5f05a539bc1",
+   "canonical": "L.A. County",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4548:1",
+   "postNum": 4548,
+   "index": 1,
+   "alias": "New York",
+   "entityId": "qe-ce9b4b609ab5",
+   "canonical": "New York",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4549:0",
+   "postNum": 4549,
+   "index": 0,
+   "alias": "Chad Pergram",
+   "entityId": "qe-f4cf882a56db",
+   "canonical": "Chad Pergram",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4552:0",
+   "postNum": 4552,
+   "index": 0,
+   "alias": "AP News",
+   "entityId": "qe-bcfa88d462a9",
+   "canonical": "AP News",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4552:1",
+   "postNum": 4552,
+   "index": 1,
+   "alias": "Lila Grace Rose",
+   "entityId": "qe-288380ab0c3e",
+   "canonical": "Lila Grace Rose",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4555:3",
+   "postNum": 4555,
+   "index": 3,
+   "alias": "OpenSecrets",
+   "entityId": "qe-1f02057026db",
+   "canonical": "OpenSecrets",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4557:0",
+   "postNum": 4557,
+   "index": 0,
+   "alias": "Heather Childers",
+   "entityId": "qe-1ab954259f79",
+   "canonical": "Heather Childers",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4563:0",
+   "postNum": 4563,
+   "index": 0,
+   "alias": "Andrew Jackson",
+   "entityId": "qe-c82ada60104d",
+   "canonical": "Andrew Jackson",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4581:0",
+   "postNum": 4581,
+   "index": 0,
+   "alias": "Senate Judiciary Committee",
+   "entityId": "qe-ddeb9c6c71b8",
+   "canonical": "Senate Judiciary Committee",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4581:1",
+   "postNum": 4581,
+   "index": 1,
+   "alias": "Steele Dossier",
+   "entityId": "qe-629ab46ccbf8",
+   "canonical": "Steele Dossier",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4581:2",
+   "postNum": 4581,
+   "index": 2,
+   "alias": "Page",
+   "entityId": "qe-f39790088805",
+   "canonical": "Page",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4582:0",
+   "postNum": 4582,
+   "index": 0,
+   "alias": "Peter Strzok",
+   "entityId": "qe-cda28c2cb320",
+   "canonical": "Peter Strzok",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4582:1",
+   "postNum": 4582,
+   "index": 1,
+   "alias": "Washington Times",
+   "entityId": "qe-685527ffce0e",
+   "canonical": "Washington Times",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4589:0",
+   "postNum": 4589,
+   "index": 0,
+   "alias": "NY Post",
+   "entityId": "qe-a2c73c324528",
+   "canonical": "NY Post",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4590:0",
+   "postNum": 4590,
+   "index": 0,
+   "alias": "Kevin Spacey",
+   "entityId": "qe-3a19fe52b2fe",
+   "canonical": "Kevin Spacey",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4594:0",
+   "postNum": 4594,
+   "index": 0,
+   "alias": "Meadows",
+   "entityId": "qe-e428d152c1f7",
+   "canonical": "Meadows",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4600:0",
+   "postNum": 4600,
+   "index": 0,
+   "alias": "CBS_Herridge",
+   "entityId": "qe-49b9cb60a8ac",
+   "canonical": "CBS_Herridge",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4604:0",
+   "postNum": 4604,
+   "index": 0,
+   "alias": "AC-130",
+   "entityId": "qe-4ed12a591de9",
+   "canonical": "AC-130",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4604:1",
+   "postNum": 4604,
+   "index": 1,
+   "alias": "military.com",
+   "entityId": "qe-d305710ada08",
+   "canonical": "Military.com",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4624:0",
+   "postNum": 4624,
+   "index": 0,
+   "alias": "James Biden",
+   "entityId": "qe-64c77bcce503",
+   "canonical": "James Biden",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4624:1",
+   "postNum": 4624,
+   "index": 1,
+   "alias": "Virgin Islands",
+   "entityId": "qe-78b350851367",
+   "canonical": "Virgin Islands",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4624:2",
+   "postNum": 4624,
+   "index": 2,
+   "alias": "Politico",
+   "entityId": "qe-7f7a9c8af686",
+   "canonical": "Politico",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4630:18",
+   "postNum": 4630,
+   "index": 18,
+   "alias": "Oregon",
+   "entityId": "qe-37df287cafa6",
+   "canonical": "Oregon",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4631:18",
+   "postNum": 4631,
+   "index": 18,
+   "alias": "Donald Lukens",
+   "entityId": "qe-a3f4e1c9a5c1",
+   "canonical": "Donald Lukens",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4632:5",
+   "postNum": 4632,
+   "index": 5,
+   "alias": "Earl Kimmerling",
+   "entityId": "qe-f2ba73f57644",
+   "canonical": "Earl Kimmerling",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4645:6",
+   "postNum": 4645,
+   "index": 6,
+   "alias": "Department of Homeland Security",
+   "entityId": "qe-157fca10431e",
+   "canonical": "Department of Homeland Security",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4645:7",
+   "postNum": 4645,
+   "index": 7,
+   "alias": "Department of Treasury",
+   "entityId": "qe-7049e3ac2389",
+   "canonical": "Department of Treasury",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4645:8",
+   "postNum": 4645,
+   "index": 8,
+   "alias": "India",
+   "entityId": "qe-253a1db2cbdb",
+   "canonical": "India",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4645:9",
+   "postNum": 4645,
+   "index": 9,
+   "alias": "Paris",
+   "entityId": "qe-941a5a89c489",
+   "canonical": "Paris",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4649:0",
+   "postNum": 4649,
+   "index": 0,
+   "alias": "Senate Intelligence Committee",
+   "entityId": "qe-e72f4b6ffdeb",
+   "canonical": "Senate Intelligence Committee",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4652:0",
+   "postNum": 4652,
+   "index": 0,
+   "alias": "The Intercept",
+   "entityId": "qe-c659ef34236f",
+   "canonical": "The Intercept",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4652:1",
+   "postNum": 4652,
+   "index": 1,
+   "alias": "Intelligence Community",
+   "entityId": "qe-b0da3b77f881",
+   "canonical": "Intelligence Community",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4653:0",
+   "postNum": 4653,
+   "index": 0,
+   "alias": "Nazi",
+   "entityId": "qe-75f4124451c6",
+   "canonical": "Nazi",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4653:1",
+   "postNum": 4653,
+   "index": 1,
+   "alias": "Hitler",
+   "entityId": "qe-f11567fff98a",
+   "canonical": "Hitler",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4653:2",
+   "postNum": 4653,
+   "index": 2,
+   "alias": "Just Security",
+   "entityId": "qe-b99c97767c77",
+   "canonical": "Just Security",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4653:3",
+   "postNum": 4653,
+   "index": 3,
+   "alias": "NewsBreak",
+   "entityId": "qe-4db8798e7eec",
+   "canonical": "NewsBreak",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4653:4",
+   "postNum": 4653,
+   "index": 4,
+   "alias": "Salon",
+   "entityId": "qe-347e18cc8486",
+   "canonical": "Salon",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4655:1",
+   "postNum": 4655,
+   "index": 1,
+   "alias": "Portland",
+   "entityId": "qe-ff8fcc84e333",
+   "canonical": "Portland",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4655:2",
+   "postNum": 4655,
+   "index": 2,
+   "alias": "Andy Ngo",
+   "entityId": "qe-07d627e5a17e",
+   "canonical": "Andy Ngo",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4668:0",
+   "postNum": 4668,
+   "index": 0,
+   "alias": "Eastern Washington",
+   "entityId": "qe-3a54a5469bcf",
+   "canonical": "Eastern Washington",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4668:1",
+   "postNum": 4668,
+   "index": 1,
+   "alias": "Oregon",
+   "entityId": "qe-37df287cafa6",
+   "canonical": "Oregon",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4668:2",
+   "postNum": 4668,
+   "index": 2,
+   "alias": "Oregon State Park",
+   "entityId": "qe-6b7c591f5ac2",
+   "canonical": "Oregon State Park",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4669:0",
+   "postNum": 4669,
+   "index": 0,
+   "alias": "Newsweek",
+   "entityId": "qe-0e242c606972",
+   "canonical": "Newsweek",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4680:0",
+   "postNum": 4680,
+   "index": 0,
+   "alias": "ActBlue",
+   "entityId": "qe-2b58b9238924",
+   "canonical": "ActBlue",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4699:1",
+   "postNum": 4699,
+   "index": 1,
+   "alias": "Portland",
+   "entityId": "qe-ff8fcc84e333",
+   "canonical": "Portland",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4699:2",
+   "postNum": 4699,
+   "index": 2,
+   "alias": "Oregon",
+   "entityId": "qe-37df287cafa6",
+   "canonical": "Oregon",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4699:3",
+   "postNum": 4699,
+   "index": 3,
+   "alias": "Andy Ngo",
+   "entityId": "qe-07d627e5a17e",
+   "canonical": "Andy Ngo",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4701:0",
+   "postNum": 4701,
+   "index": 0,
+   "alias": "Snohomish County",
+   "entityId": "qe-ccd279d5087e",
+   "canonical": "Snohomish County",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4707:0",
+   "postNum": 4707,
+   "index": 0,
+   "alias": "Daily Signal",
+   "entityId": "qe-088251b1e746",
+   "canonical": "Daily Signal",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4708:0",
+   "postNum": 4708,
+   "index": 0,
+   "alias": "CBS_Herridge",
+   "entityId": "qe-49b9cb60a8ac",
+   "canonical": "CBS_Herridge",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4726:0",
+   "postNum": 4726,
+   "index": 0,
+   "alias": "Department of Defense",
+   "entityId": "qe-b8a8adb39900",
+   "canonical": "Department of Defense",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4726:1",
+   "postNum": 4726,
+   "index": 1,
+   "alias": "Air Force",
+   "entityId": "qe-924ef649c9c3",
+   "canonical": "Air Force",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4731:0",
+   "postNum": 4731,
+   "index": 0,
+   "alias": "Daily Sabah",
+   "entityId": "qe-b74b53a6c7d4",
+   "canonical": "Daily Sabah",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4741:0",
+   "postNum": 4741,
+   "index": 0,
+   "alias": "Kara Swisher",
+   "entityId": "qe-2245f17b77c6",
+   "canonical": "Kara Swisher",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4741:1",
+   "postNum": 4741,
+   "index": 1,
+   "alias": "Business Insider",
+   "entityId": "qe-559e34f8c247",
+   "canonical": "Business Insider",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4741:2",
+   "postNum": 4741,
+   "index": 2,
+   "alias": "Bing",
+   "entityId": "qe-ee9f963d9a91",
+   "canonical": "Bing",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4744:0",
+   "postNum": 4744,
+   "index": 0,
+   "alias": "Administration",
+   "entityId": "qe-8cd60bf7677e",
+   "canonical": "Administration",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4748:0",
+   "postNum": 4748,
+   "index": 0,
+   "alias": "Hunter Biden",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4750:4",
+   "postNum": 4750,
+   "index": 4,
+   "alias": "WikiLeaks",
+   "entityId": "qe-c9f95ff52ca5",
+   "canonical": "WikiLeaks",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4750:5",
+   "postNum": 4750,
+   "index": 5,
+   "alias": "Harvard Law School",
+   "entityId": "qe-32cf6df8aa07",
+   "canonical": "Harvard Law School",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4754:0",
+   "postNum": 4754,
+   "index": 0,
+   "alias": "IngrahamAngle",
+   "entityId": "qe-5d58e0f6a89b",
+   "canonical": "The Ingraham Angle",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4776:0",
+   "postNum": 4776,
+   "index": 0,
+   "alias": "AC-130",
+   "entityId": "qe-4ed12a591de9",
+   "canonical": "AC-130",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4781:0",
+   "postNum": 4781,
+   "index": 0,
+   "alias": "Kamala Harris",
+   "entityId": "qe-297b738014e9",
+   "canonical": "Kamala Harris",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4794:1",
+   "postNum": 4794,
+   "index": 1,
+   "alias": "Gina Haspel",
+   "entityId": "qe-84e6163609f3",
+   "canonical": "Gina Haspel",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4807:0",
+   "postNum": 4807,
+   "index": 0,
+   "alias": "Ron Johnson",
+   "entityId": "qe-ec22243e149b",
+   "canonical": "Ron Johnson",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4825:0",
+   "postNum": 4825,
+   "index": 0,
+   "alias": "New York Governor",
+   "entityId": "qe-ab59ea53d843",
+   "canonical": "New York Governor",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4843:0",
+   "postNum": 4843,
+   "index": 0,
+   "alias": "Mike Pompeo",
+   "entityId": "qe-a1ecacc10446",
+   "canonical": "Mike Pompeo",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4847:0",
+   "postNum": 4847,
+   "index": 0,
+   "alias": "Reuters",
+   "entityId": "qe-cb78932b1fab",
+   "canonical": "Reuters",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4851:4",
+   "postNum": 4851,
+   "index": 4,
+   "alias": "Rudy Giuliani",
+   "entityId": "qe-1d920608f91a",
+   "canonical": "Rudy Giuliani",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4852:0",
+   "postNum": 4852,
+   "index": 0,
+   "alias": "CBS_Herridge",
+   "entityId": "qe-49b9cb60a8ac",
+   "canonical": "CBS_Herridge",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4857:0",
+   "postNum": 4857,
+   "index": 0,
+   "alias": "CISA",
+   "entityId": "qe-3fde8f34252a",
+   "canonical": "CISA",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4858:0",
+   "postNum": 4858,
+   "index": 0,
+   "alias": "CBS_Herridge",
+   "entityId": "qe-49b9cb60a8ac",
+   "canonical": "CBS_Herridge",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4859:0",
+   "postNum": 4859,
+   "index": 0,
+   "alias": "Sohrab Ahmari",
+   "entityId": "qe-8e1a2326ce5d",
+   "canonical": "Sohrab Ahmari",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4863:0",
+   "postNum": 4863,
+   "index": 0,
+   "alias": "Europe",
+   "entityId": "qe-3fbdea4219ae",
+   "canonical": "Europe",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4863:1",
+   "postNum": 4863,
+   "index": 1,
+   "alias": "Business Insider",
+   "entityId": "qe-559e34f8c247",
+   "canonical": "Business Insider",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4869:0",
+   "postNum": 4869,
+   "index": 0,
+   "alias": "Hunter Biden",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4869:1",
+   "postNum": 4869,
+   "index": 1,
+   "alias": "NY Post",
+   "entityId": "qe-a2c73c324528",
+   "canonical": "NY Post",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4870:0",
+   "postNum": 4870,
+   "index": 0,
+   "alias": "Hunter Biden",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4885:0",
+   "postNum": 4885,
+   "index": 0,
+   "alias": "Chip Franklin",
+   "entityId": "qe-fb1d35d0a036",
+   "canonical": "Chip Franklin",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4885:1",
+   "postNum": 4885,
+   "index": 1,
+   "alias": "Titus Nation",
+   "entityId": "qe-dccc24134c8c",
+   "canonical": "Titus Nation",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4885:2",
+   "postNum": 4885,
+   "index": 2,
+   "alias": "Matt Binder",
+   "entityId": "qe-83f99db9f924",
+   "canonical": "Matt Binder",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4885:3",
+   "postNum": 4885,
+   "index": 3,
+   "alias": "Michael E. Mann",
+   "entityId": "qe-491a7667227c",
+   "canonical": "Michael E. Mann",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4885:4",
+   "postNum": 4885,
+   "index": 4,
+   "alias": "Kurt Eichenwald",
+   "entityId": "qe-bb42a532fed2",
+   "canonical": "Kurt Eichenwald",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4885:8",
+   "postNum": 4885,
+   "index": 8,
+   "alias": "TMZ",
+   "entityId": "qe-11ef7eeeb8e3",
+   "canonical": "TMZ",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4887:0",
+   "postNum": 4887,
+   "index": 0,
+   "alias": "NewsBreak",
+   "entityId": "qe-4db8798e7eec",
+   "canonical": "NewsBreak",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4888:1",
+   "postNum": 4888,
+   "index": 1,
+   "alias": "Hunter Biden",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4888:2",
+   "postNum": 4888,
+   "index": 2,
+   "alias": "Kazakhstan",
+   "entityId": "qe-a5e94709bbd0",
+   "canonical": "Kazakhstan",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4893:1",
+   "postNum": 4893,
+   "index": 1,
+   "alias": "Hunter Biden",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4900:0",
+   "postNum": 4900,
+   "index": 0,
+   "alias": "Erik Prince",
+   "entityId": "qe-5965f1c7f28a",
+   "canonical": "Erik Prince",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4900:1",
+   "postNum": 4900,
+   "index": 1,
+   "alias": "NYPD",
+   "entityId": "qe-a54ddc12fea9",
+   "canonical": "New York Police Department",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4901:0",
+   "postNum": 4901,
+   "index": 0,
+   "alias": "Hunter Biden",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4902:0",
+   "postNum": 4902,
+   "index": 0,
+   "alias": "AC-130",
+   "entityId": "qe-4ed12a591de9",
+   "canonical": "AC-130",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4922:0",
+   "postNum": 4922,
+   "index": 0,
+   "alias": "Hunter Biden",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4931:0",
+   "postNum": 4931,
+   "index": 0,
+   "alias": "Hunter",
+   "entityId": "qe-efc49f61600b",
+   "canonical": "Hunter",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4932:0",
+   "postNum": 4932,
+   "index": 0,
+   "alias": "House",
+   "entityId": "qe-dd22a6644c88",
+   "canonical": "House",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4935:9",
+   "postNum": 4935,
+   "index": 9,
+   "alias": "Hunter Biden",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4939:0",
+   "postNum": 4939,
+   "index": 0,
+   "alias": "MSNBC",
+   "entityId": "qe-2cf9f642e53c",
+   "canonical": "MSNBC",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4942:1",
+   "postNum": 4942,
+   "index": 1,
+   "alias": "TIME",
+   "entityId": "qe-7a2e37ed6dca",
+   "canonical": "TIME",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4951:0",
+   "postNum": 4951,
+   "index": 0,
+   "alias": "CISA",
+   "entityId": "qe-3fde8f34252a",
+   "canonical": "CISA",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#4951:1",
+   "postNum": 4951,
+   "index": 1,
+   "alias": "Bryan S. Ware",
+   "entityId": "qe-dc71841cc36f",
+   "canonical": "Bryan S. Ware",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#524:7",
+   "postNum": 524,
+   "index": 7,
+   "alias": "Washington",
+   "entityId": "qe-8b4ebe9457e5",
+   "canonical": "Washington",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#526:1",
+   "postNum": 526,
+   "index": 1,
+   "alias": "Marc Mezvinsky",
+   "entityId": "qe-051753a626b3",
+   "canonical": "Marc Mezvinsky",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#609:2",
+   "postNum": 609,
+   "index": 2,
+   "alias": "John Kerry",
+   "entityId": "qe-3b10ce2cc228",
+   "canonical": "John Kerry",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#631:3",
+   "postNum": 631,
+   "index": 3,
+   "alias": "Department of Defense",
+   "entityId": "qe-b8a8adb39900",
+   "canonical": "Department of Defense",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#676:0",
+   "postNum": 676,
+   "index": 0,
+   "alias": "Carl Ghattas",
+   "entityId": "qe-f6ab5ef8147d",
+   "canonical": "Carl Ghattas",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#732:2",
+   "postNum": 732,
+   "index": 2,
+   "alias": "McCain",
+   "entityId": "qe-5d44c220df65",
+   "canonical": "John McCain",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#732:3",
+   "postNum": 732,
+   "index": 3,
+   "alias": "McCain Institute",
+   "entityId": "qe-f24eb2f20fbc",
+   "canonical": "McCain Institute",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#732:5",
+   "postNum": 732,
+   "index": 5,
+   "alias": "Zero Hedge",
+   "entityId": "qe-a17e53dac167",
+   "canonical": "Zero Hedge",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#737:0",
+   "postNum": 737,
+   "index": 0,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#772:0",
+   "postNum": 772,
+   "index": 0,
+   "alias": "Senate Intelligence Committee",
+   "entityId": "qe-e72f4b6ffdeb",
+   "canonical": "Senate Intelligence Committee",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#772:1",
+   "postNum": 772,
+   "index": 1,
+   "alias": "MKUltra",
+   "entityId": "qe-8897be130f69",
+   "canonical": "MKUltra",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#805:0",
+   "postNum": 805,
+   "index": 0,
+   "alias": "Senate Intelligence Committee",
+   "entityId": "qe-e72f4b6ffdeb",
+   "canonical": "Senate Intelligence Committee",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#84:3",
+   "postNum": 84,
+   "index": 3,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#841:0",
+   "postNum": 841,
+   "index": 0,
+   "alias": "AT&T",
+   "entityId": "qe-6976feaaf2a8",
+   "canonical": "AT&T",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#87:2",
+   "postNum": 87,
+   "index": 2,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#88:11",
+   "postNum": 88,
+   "index": 11,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#902:0",
+   "postNum": 902,
+   "index": 0,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#91:4",
+   "postNum": 91,
+   "index": 4,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#928:1",
+   "postNum": 928,
+   "index": 1,
+   "alias": "Adolf Hitler",
+   "entityId": "qe-92f4051753fc",
+   "canonical": "Adolf Hitler",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#94:4",
+   "postNum": 94,
+   "index": 4,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#960:0",
+   "postNum": 960,
+   "index": 0,
+   "alias": "Jordan Klepper",
+   "entityId": "qe-31c5a848c624",
+   "canonical": "Jordan Klepper",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#960:2",
+   "postNum": 960,
+   "index": 2,
+   "alias": "Of Montreal",
+   "entityId": "qe-90704aec1d9e",
+   "canonical": "Of Montreal",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#97:5",
+   "postNum": 97,
+   "index": 5,
+   "alias": "God",
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#972:6",
+   "postNum": 972,
+   "index": 6,
+   "alias": "NXIVM",
+   "entityId": "qe-115c7d9b5b38",
+   "canonical": "NXIVM",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#982:0",
+   "postNum": 982,
+   "index": 0,
+   "alias": "National Review",
+   "entityId": "qe-bdcb1cd538d6",
+   "canonical": "National Review",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#986:1",
+   "postNum": 986,
+   "index": 1,
+   "alias": "Utah",
+   "entityId": "qe-48218e7ab8e3",
+   "canonical": "Utah",
+   "mentionsToRestore": 1
+  },
+  {
+   "occurrenceId": "#986:2",
+   "postNum": 986,
+   "index": 2,
+   "alias": "Turley",
+   "entityId": "qe-06775a91bdde",
+   "canonical": "Turley",
+   "mentionsToRestore": 1
+  }
+ ]
+}

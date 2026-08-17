@@ -4,13 +4,20 @@ Everything else under `audit/` that looks like a handoff is HISTORY. Do not act 
 
 ## Production
 
-    seed 77 — https://qdrops.app
+    seed 78 — https://qdrops.app
     queue 115   Reference 30 · Subject 16 · Notation 28 · Device 31 · Source 10
-    entities 1,409   certified mentions 9,749   rendered 9,749 (difference 0)
+    entities 1,201   certified mentions 8,798   rendered 8,798 (difference 0)
+    208 dormant · 135 source-only · 373 linked-source records · 3,698 public hovers
+    588 withdrawn occurrences · 363 migrated source references
     Q Directives 2,552 raw · 2,500 distinct (post,text) · 1,464 posts
     post text 1,128,312 chars
     Predictions 595 · Claims 4,221   (sentence-level audit, 2026-08-16)
-    163/163 invariants · manifest verified
+    206/206 invariants · manifest verified · seed fingerprint 78
+
+    The 2026-08-17 integrated entity cleanup is APPLIED and DEPLOYED, and the deploy chain
+    reproduces it: `apply-entity-cleanup.mjs --rematerialise` is a step of the chain, so a full
+    rebuild lands on 1,201 / 8,798 with all 19 artifacts byte-identical. Rollback stays one
+    command away — `--rollback`, re-proved any time by `scripts/prove-cleanup-rollback.mjs`.
 
 ## Standing rules
 
@@ -33,16 +40,41 @@ Everything else under `audit/` that looks like a handoff is HISTORY. Do not act 
 
 ## Open work
 
-- **URL cleanup is RULED but not applied** — `audit/url-derived-entity-policy.json`. Path and query
-  fragments are not entity mentions; hostnames migrate to linked-source metadata; the 7 ambiguous
-  cases stay in private review. 441 hover records are quarantined in
-  `audit/entity-hover-url-quarantine.json`. **The certified count has not moved** — the cleanup is
-  count-changing and needs its own approval.
+- **The URL cleanup is DONE — superseded by the integrated cleanup and shipped at seed 78.** It was
+  never applied in its own right: the −504/1,254 simulation was computed before the corpus-wide
+  boundary audit and before the publisher and social-handle rulings, and
+  `apply-entity-cleanup.mjs` replaced it with one plan over all 9,749 certified occurrences.
+  Final: kept 8,791 · held 7 · withdrawn 588 · migrated 363. `apply-url-cleanup.mjs` is gone; the
+  applier is `apply-entity-cleanup.mjs`, and `--rematerialise` is the form the deploy chain runs.
 
-- **3,144 hover synopses await editorial review** — `/editorial/hover-review`, served from `audit/`
-  by a dev-only Vite middleware so the published bundle has no copy. 206 of them are merge
-  survivors held because their evidence is graded Insufficient or their alias is shared; regrading
-  those is what gives the 17 merged entities their tooltips.
+- **A REBUILD MUST LAND ON THE CERTIFIED STATE, AND FOR ONE DEPLOY IT DID NOT.** `apply-entities.mjs`
+  rebuilds Entities from `audit/entities-audit.json`, which is the adjudication as it stood BEFORE
+  the cleanup — so replaying the chain put 1,409 / 9,749 back and `build-search-index.mjs` refused at
+  its QA gate. Since `export-firestore.mjs` replays that chain before the manifest is consulted, the
+  deploy could not run at all. Fixed by making the cleanup a chain step; declared in `APPLY_ORDER`
+  so `chain-complete` fails if it is dropped. **The lesson generalises: any count-changing applier
+  that is not in the chain makes the bundle unreproducible, and the only way you find out is by
+  running the rebuild.**
+
+- **THE COORDINATE SYSTEM IS THE TRAP HERE.** The hover and URL logic asked its questions of
+  `posts.json` raw text; the app strips board markup at seed time. `https:<em>//</em>` hid **46% of
+  the corpus's links** from the URL detector and `AT&amp;T` made a visible company read as absent.
+  `scripts/lib/runtimeText.mjs` is the one definition, now used inside `hoverValidation.mjs` so no
+  caller can forget it. Invariant `coords-guard-is-not-vacuous` fails if the two ever agree.
+
+- **3,126 hover synopses await editorial review** — `/editorial/hover-review`, served from `audit/`
+  by a dev-only Vite middleware so the published bundle has no copy. The **2,931 substantive
+  audit-graded records are untouched and byte-identical**; the 3,144 → 3,126 move is 18
+  `Insufficient` records routing earlier (8 to the quarantine, 10 to no-anchor).
+
+- **402 hovers classified `no_visible_text_anchor`** — `audit/entity-hover-no-visible-anchor.json`,
+  provenance in `audit/entity-provenance-review.json`. A ruling about the TOOLTIP, not the
+  occurrence: **no certified count moved**. 0 image-confirmed (the corpus holds no OCR, caption,
+  annotation or bounding-box data — the audit asserts their absence), 55 image-unconfirmed, 231
+  unsupported, 116 outside the ruled four (the entity is the publisher behind a link but its name
+  is not a token of the URL — needs its own ruling). 302 of the 402 have their alias inside a
+  longer word: `God` is certified in 47 drops that all say `Godfather III`. Count-changing,
+  reported, not acted on. Design for the image case: `audit/image-entity-presentation.md`.
 
 - **[NP] migration is ruled and parked** — `audit/entities-pending-migrations.json`. "Non-profit
   organization" stays a certified entity until occurrence-level bracket classification exists
@@ -93,3 +125,8 @@ Everything else under `audit/` that looks like a handoff is HISTORY. Do not act 
 - A difference from production is not a loss. Check whether it was intended before calling it a
   regression.
 - Never restore certified state from git HEAD. Git lags production.
+- **Ask the question of the text the READER sees.** A check that reads the stored representation
+  does not fail — it passes, quietly, for everything. Two separate audits were computed against
+  strings that are never on screen.
+- A zero is only evidence once you have proved something could have made it non-zero. Assert the
+  field exists before reporting that nothing was found in it.

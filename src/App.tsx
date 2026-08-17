@@ -16,6 +16,7 @@ import Topics from './pages/Topics'
 import Resources from './pages/Resources'
 import QPostPics from './pages/QPostPics'
 import QLinks from './pages/QLinks'
+import Sources from './pages/Sources'
 import QRequests from './pages/QRequests'
 import AnalysisArchive from './pages/AnalysisArchive'
 import QBrackets from './pages/QBrackets'
@@ -115,6 +116,7 @@ export default function App() {
             <Route path="/resources"     element={<Resources />} />
             <Route path="/pics"          element={<QPostPics />} />
             <Route path="/links"         element={<QLinks />} />
+            <Route path="/sources"       element={<Sources />} />
             <Route path="/requests"      element={<QRequests />} />
             <Route path="/analysis"      element={<AnalysisArchive />} />
             <Route path="/brackets"      element={<QBrackets />} />

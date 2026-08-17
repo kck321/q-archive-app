@@ -71,7 +71,15 @@ export const CANONICAL = {
     // split across the core-registry and adjudicated-tail populations — "Bill Clinton" as 31
     // mentions and again as 7 — plus 10 groups of spelling variants (Wikileaks/WikiLeaks,
     // LORD/Lord, FAKE NEWS MEDIA/Fake News Media). Rulings: audit/entities-stage1-rulings.json.
-    canonical: 1409, detectedCanonical: 1292, ownerRulings: 118, ownerMerges: 1,
+    // SEED 78 — the 2026-08-17 integrated entity cleanup. 1,409 -> 1,201 rows.
+    // 208 rows go DORMANT: every certified mention each of them had was a URL fragment, a slug or
+    // an alias buried inside a longer word, so there is nothing left to show and a page for one
+    // would be a page about nothing. THE IDS ARE RESERVED FOREVER in audit/entity-ids.json and
+    // audit/entity-dormant-registry.json — a later occurrence resolves back to the same qe- id
+    // rather than minting a second identity for something the archive already named.
+    // A further 135 rows have zero prose mentions and STAY, because they are still referenced as
+    // the publisher of linked material or as an account Q pointed at: audit/entity-source-only-registry.json.
+    canonical: 1201, detectedCanonical: 1292, ownerRulings: 118, ownerMerges: 1,
     /** Every resolved mention across all 1,334 certified entities. The headline figure. */
     // 8,227 -> 8,239: the RC alias ruling resolved 12 occurrences to Rachel Chandler. The merge
     // moved 4 mentions from the absorbed row onto hers and added none.
@@ -83,11 +91,25 @@ export const CANONICAL = {
     // an entry from the rulings file restores the row exactly as it was.
     // The 17 merges move mentions ACROSS rows and add none, so they are absent from this figure
     // by design and asserted separately in apply-entities.mjs.
-    mentions: 9749,
+    // 9,749 -> 8,798 on 2026-08-17: -951, and NOT ONE WORD OF ANY DROP CHANGED. Q's text and every
+    // image are untouched; what moved is whether a piece of that text is CLASSIFIED as a named
+    // entity. Composed of, per audit/integrated-migration-plan.json:
+    //     412  URL path or query fragments — a CMS slug is not Q naming a thing
+    //     234  publisher hostnames, migrated to linked-source metadata (still shown, as sources)
+    //     129  social accounts Q linked to, migrated the same way (still shown, as accounts)
+    //      98  aliases found only inside a longer word — "God" inside "Godfather III", 41 times
+    //      78  occurrences with no text, URL, image or metadata support, owner-approved 2026-08-17
+    // Every one is reversible from audit/entity-cleanup-reversal.json, which restores each entry
+    // at its original array index. Deliberately NOT included and still certified: 41
+    // image-unconfirmed, 69 ambiguous, and 7 unsupported occurrences outside the approved set.
+    mentions: 8798,
     /** How it is composed. The core figure is the section's history, not its headline. */
     // tailEntities is what the tail adjudication produced (1,239); one of them, Ray Chandler,
     // now ships merged into Rachel Chandler, so 1,238 tail rows appear in the artifact.
-    coreEntities: 93, coreRegistryMentions: 5352, tailEntities: 1239, tailMentions: 3777,
+    // SEED 78: the cleanup fell almost entirely on the adjudicated tail, which is where the
+    // URL-derived and substring-extracted rows lived. Core registry keeps all 93 rows and loses 24
+    // mentions; the tail loses 246 rows and 918 mentions.
+    coreEntities: 93, coreRegistryMentions: 5328, tailEntities: 993, tailMentions: 2859,
   },
   // 2,393 detected + 2 owner rulings ("Ascension." -> Religion & Spirituality, #4963 and #4966).
   // The rulings live in audit/themes-owner-rulings.json and are merged by apply-themes.mjs, so
@@ -419,6 +441,12 @@ export const APPLY_ORDER = [
   // next export silently reverts them — the same failure that reverted Questions to 6,299 and
   // left postAnalysis.namedEntities on the legacy extractor for months.
   'materialize-evidence-literals.mjs', 'materialize-literal-spans.mjs', 'apply-context-units.mjs',
+  // AND THE CERTIFIED ENTITY STATE, RE-MATERIALISED. apply-entities.mjs rebuilds Entities from the
+  // adjudication as it stood BEFORE the 2026-08-17 integrated cleanup, so a chain without this step
+  // lands on 1,409 rows / 9,749 mentions and build-search-index.mjs refuses at its QA gate. The
+  // bundle was reproducible only by hand for one deploy, which is to say it was not reproducible.
+  // Declared here so the chain-complete invariant fails if it is ever dropped again.
+  'apply-entity-cleanup.mjs',
   'build-relationships.mjs', 'build-search-index.mjs',
 ]
 

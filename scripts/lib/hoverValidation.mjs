@@ -12,86 +12,19 @@
 // Every rejection carries a reason, because "held" with no reason is how 523 records sat
 // unexplained for a stage.
 
-/** Spans of `text` that are inside a URL. Entities matched only in here are not prose mentions. */
-export function urlSpans(text) {
-  const spans = []
-  const rx = /\bhttps?:\/\/\S+|\bwww\.\S+/gi
-  let m
-  while ((m = rx.exec(text)) !== null) spans.push([m.index, m.index + m[0].length, m[0]])
-  return spans
-}
+// THE MATCHING PRIMITIVES NOW LIVE IN ONE PLACE (owner ruling, 2026-08-17).
+// This file used to carry its own copy of urlSpans/aliasLocation/classifyUrlDerived, and that copy
+// was the one that read the STORED text. Re-exporting rather than reimplementing is the point:
+// there is now exactly one answer to "can the reader see this name", and every caller gets it.
+import { runtimeText, urlSpans, aliasLocation, classifyUrlDerived, completeTokenMatch, containingWords, URL_CLASS_MEANING } from './renderedMatch.mjs'
 
-/**
- * Where in the corpus does this alias actually appear?
- *
- * Returns { inProse, inUrl, urlParts } — an alias found only inside URLs is a very different
- * thing from one Q wrote in a sentence, and the difference decides whether it should be painted
- * as prose at all.
- *
- * Matching is punctuation-insensitive on BOTH sides, because a URL spells a name as
- * `black%20lives%20matter` or `presidential-advisory` and neither is a substring of the name.
- */
-export function aliasLocation(text, alias) {
-  const src = String(text ?? '')
-  const spans = urlSpans(src)
-  // WORD BOUNDARIES, NOT SUBSTRINGS. Folding punctuation to spaces turns the text into tokens, and
-  // a plain `includes` then matches "US" inside "becaUSe", "mUSt" and "trUSted" — invariant 4, one
-  // layer down. Padding both sides makes the space itself the boundary, which works for multi-word
-  // aliases too without a regex per alias.
-  const fold = s => ` ${String(s).toLowerCase().replace(/%[0-9a-f]{2}/gi, ' ').replace(/[^a-z0-9]+/g, ' ').trim()} `
-  const needle = fold(alias)
-  if (needle.trim() === '') return { inProse: false, inUrl: false, urlParts: [] }
-
-  // Prose = everything outside the URL spans.
-  let prose = ''
-  let cursor = 0
-  for (const [s, e] of spans) { prose += src.slice(cursor, s) + ' '; cursor = e }
-  prose += src.slice(cursor)
-
-  const inProse = fold(prose).includes(needle)
-
-  const urlParts = []
-  for (const [, , url] of spans) {
-    if (!fold(url).includes(needle)) continue
-    // Split the URL so the match can be attributed to the part that carries it. A publisher's
-    // domain is a source reference; a search term in a query string is not a mention of anything.
-    const withoutScheme = url.replace(/^https?:\/\//i, '')
-    const qIdx = withoutScheme.indexOf('?')
-    const hostAndPath = qIdx === -1 ? withoutScheme : withoutScheme.slice(0, qIdx)
-    const query = qIdx === -1 ? '' : withoutScheme.slice(qIdx + 1)
-    const slashIdx = hostAndPath.indexOf('/')
-    const host = slashIdx === -1 ? hostAndPath : hostAndPath.slice(0, slashIdx)
-    const pathPart = slashIdx === -1 ? '' : hostAndPath.slice(slashIdx)
-    if (fold(host).includes(needle)) urlParts.push('hostname')
-    if (pathPart && fold(pathPart).includes(needle)) urlParts.push('path')
-    if (query && fold(query).includes(needle)) urlParts.push('query')
-  }
-  return { inProse, inUrl: urlParts.length > 0, urlParts: [...new Set(urlParts)] }
-}
-
-/** The five classes the owner asked for, decided from where the match sits. */
-export function classifyUrlDerived(loc) {
-  const p = loc.urlParts
-  if (!p.length) return 'ambiguous_url_reference'
-  if (p.length > 1) return 'ambiguous_url_reference'
-  if (p[0] === 'hostname') return 'hostname_source_reference'
-  if (p[0] === 'path') return 'url_path_fragment'
-  if (p[0] === 'query') return 'url_query_fragment'
-  return 'ambiguous_url_reference'
-}
-
-export const URL_CLASS_MEANING = {
-  hostname_source_reference: 'the domain identifies the linked publisher or organisation',
-  human_readable_link_label: 'visible link text explicitly names the entity',
-  url_path_fragment: 'inferred only from a URL path or slug',
-  url_query_fragment: 'inferred only from query parameters, search terms or encoded content',
-  ambiguous_url_reference: 'the evidence does not support an automatic decision',
-}
+export { runtimeText, urlSpans, aliasLocation, classifyUrlDerived, completeTokenMatch, containingWords, URL_CLASS_MEANING }
 
 /**
  * Validate one hover record against the CURRENT certified state.
  *
- * @returns { verdict: 'publish' | 'review' | 'quarantine' | 'withdrawn', reason, urlClass? }
+ * @returns { verdict: 'publish' | 'review' | 'no_visible_text_anchor' | 'quarantine' | 'withdrawn',
+ *            reason, urlClass? }
  */
 export function validateHover(rec, ctx) {
   const { liveById, sharedAliases, paintedIn, postText, withdrawnAuditIds } = ctx
@@ -148,13 +81,20 @@ export function validateHover(rec, ctx) {
   // tooltip attaches to whichever spelling the renderer finds, so an entity written "HRC" in the
   // drop is visible even when the audit matched "Hillary Clinton". Testing matchedAlias alone
   // condemned 376 records whose entity is plainly on the page under another name.
+  //
+  // IT IS A RULING ABOUT THE TOOLTIP, NOT ABOUT THE OCCURRENCE (owner, 2026-08-16). These records
+  // get their own verdict rather than being folded into ordinary review, because "an editor should
+  // re-read this synopsis" and "there is no word on screen to hover" are different problems with
+  // different remedies, and the second one says nothing at all about whether the mention is real.
+  // Withdrawing the occurrence because a tooltip cannot render would be the inference the ruling
+  // forbids.
   const quoted = ctx.quotedText?.get(rec.postNum) ?? ''
   const visible = [...aliases].some(a => {
     const t = entity.aliases.find(x => x.text.toLowerCase() === a)?.text ?? a
     return aliasLocation(postText.get(rec.postNum) ?? '', t).inProse || aliasLocation(quoted, t).inProse
   })
   if (!visible && !loc.inUrl) {
-    return { verdict: 'review', reason: 'no spelling of this entity appears in the drop — not in the prose, a URL, or quoted content' }
+    return { verdict: 'no_visible_text_anchor', reason: 'no spelling of this entity appears in the drop — not in the prose, a URL, or quoted content' }
   }
 
   // A shared alias cannot be resolved by a global mapping. BO is Barack Obama, Bruce Ohr and the

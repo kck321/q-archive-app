@@ -19,6 +19,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { key } from './lib/segment.mjs'
 import { CANONICAL } from './lib/contracts.mjs'
+import { runtimeText } from './lib/renderedMatch.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -50,7 +51,10 @@ const postById = new Map(posts.map(p => [p.postNum, p]))
  *   src sourceWording   for editorial rows: what Q actually wrote
  */
 const rows = []
-const add = r => rows.push({ q: true, ...r })
+// THE SHARED RENDERED-TEXT DEFINITION (owner ruling, 2026-08-17). Search is a view, and a view must
+// show what the reader sees: a row whose text still carries `&gt;` or `<em>` displays the board's
+// storage encoding and cannot be found by typing what is on screen. One row was doing exactly that.
+const add = r => rows.push({ q: true, ...r, t: runtimeText(r.t ?? '') })
 
 // ── Questions ────────────────────────────────────────────────────────────────
 for (const qq of questions) {
@@ -130,6 +134,39 @@ for (const e of entities.entities) {
     f: { type: e.type, mentions: e.mentions, source: e.source,
       aliases: (e.aliases ?? []).map(a => a.text), posts: (e.posts ?? []).slice(0, 400) },
   })
+}
+
+// ── Sources: the publisher behind a link, indexed APART from entity mentions ─────────────
+//
+// A reader looking for "Daily Beast" wants both answers — the drops where Q wrote it, and the
+// drops where he linked to it — and must be able to tell which is which. One `entities` record
+// carrying both would be the conflation the URL policy exists to end, so a source is its own
+// section with its own `why`, and the artifact does not exist until the cleanup is applied.
+const linkedPath = path.join(DATA, 'linked-sources.json')
+if (fs.existsSync(linkedPath)) {
+  const linked = JSON.parse(fs.readFileSync(linkedPath, 'utf8'))
+  for (const h of Object.values(linked.byHostname ?? {})) {
+    add({
+      s: 'sources', p: null, i: null, t: h.displayName,
+      w: h.entityId
+        ? 'linked source — the publisher of material Q linked, not a word he wrote'
+        : 'linked source — named but not identified as a certified entity',
+      f: { kind: 'publisher', hostname: h.hostname, entityId: h.entityId ?? null, posts: (h.posts ?? []).slice(0, 400), bound: Boolean(h.entityId) },
+    })
+  }
+  // A social account is searchable by BOTH the handle and the name, because a reader may remember
+  // either — and the `why` says which one they found, so a handle match never reads as Q writing
+  // the person's name.
+  for (const a of Object.values(linked.byAccount ?? {})) {
+    add({
+      s: 'sources', p: null, i: null, t: `@${a.handle}`,
+      w: a.entityId
+        ? `account Q linked to on ${a.platform} — ${a.displayName}, not a word he wrote`
+        : `account Q linked to on ${a.platform} — identity not established`,
+      f: { kind: 'social_account', platform: a.platform, handle: a.handle, displayName: a.displayName,
+        entityId: a.entityId ?? null, aliases: [a.displayName], posts: (a.posts ?? []).slice(0, 400), bound: Boolean(a.entityId) },
+    })
+  }
 }
 
 // ── Themes ───────────────────────────────────────────────────────────────────

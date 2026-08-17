@@ -1,6 +1,6 @@
 {
  "note": "Synopses whose wording named something the archive no longer calls by that name. Mechanical substitutions only — an absorbed spelling or a stale type label. Nothing here re-read a drop.",
- "total": 71,
+ "total": 68,
  "records": [
   {
    "auditOccurrenceId": "ENT-0001-P4016",
@@ -483,22 +483,6 @@
    "synopsis": "In post #1842, “wikileaks” appears in a source or link reference: “http://thehill.com/policy/cybersecurity/400882-wikileaks-says-senate-panel-requested-assange-testimony-in-russia-probe” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as WikiLeaks. The synopsis explains the label's role in the passage without treating nearby implications as verified facts."
   },
   {
-   "auditOccurrenceId": "ENT-0923-P2386",
-   "postNum": 2386,
-   "changes": [
-    "\"FAKE NEWS media\" -> \"FAKE NEWS MEDIA\""
-   ],
-   "synopsis": "In post #2386, “Robert Bowers” appears in a question: “Ask yourself a very simple question. Why is the FAKE NEWS MEDIA continually expending resources to defame, debunk, and cast as a conspiracy, for, as they say, a nobody who started on 4chan? Why did the FAKE…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Robert Bowers. The passage asks about the connection rather than establishing it."
-  },
-  {
-   "auditOccurrenceId": "ENT-0939-P2543",
-   "postNum": 2543,
-   "changes": [
-    "\"Fake News Media\" -> \"FAKE NEWS MEDIA\""
-   ],
-   "synopsis": "In post #2543, “Scott Free Productions” appears in a question: “The Art of Trolling the FAKE NEWS MEDIA Step 1: https://twitter.com/realDonaldTrump/status/1069614615510859776 Step 2: https://people.com/politics/donald-trump-typo-scott-free/ Who is Scott Free? Step 3:…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Scott Free Productions. The passage asks about the connection rather than establishing it."
-  },
-  {
    "auditOccurrenceId": "ENT-0946-P2591",
    "postNum": 2591,
    "changes": [
@@ -513,14 +497,6 @@
     "\"CBS NEWS\" -> \"CBS News\""
    ],
    "synopsis": "In post #2770, “Bianna Vitalievna” appears in a question: “CBS News/CNN Journ Bianna Vitalievna married to Peter R Orszag (Dir of Office of Mgmt/Budget - HUSSEIN)?” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Bianna Vitalievna. The passage asks about the connection rather than establishing it."
-  },
-  {
-   "auditOccurrenceId": "ENT-0968-P2770",
-   "postNum": 2770,
-   "changes": [
-    "\"CBS NEWS\" -> \"CBS News\""
-   ],
-   "synopsis": "In post #2770, “Peter Orszag” appears in a question: “How do you infiltrate the MSM? [Example 1] ABC NEWS exec producer Ian Cameron married to Susan Rice (Nat Sec Advisor - HUSSEIN)? CBS News/CNN Journ Bianna Vitalievna married to Peter R Orszag (Dir of Office…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Peter Orszag. The passage asks about the connection rather than establishing it."
   },
   {
    "auditOccurrenceId": "ENT-0969-P2770",

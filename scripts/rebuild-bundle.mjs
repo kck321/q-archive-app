@@ -29,7 +29,7 @@ import { execFileSync } from 'node:child_process'
 import { existsSync, readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
-import { APPLY_STEPS } from './lib/chainSteps.mjs'
+import { APPLY_INVOCATIONS } from './lib/chainSteps.mjs'
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)))
 const DATA = join(root, 'public', 'data')
@@ -71,9 +71,9 @@ console.log(`  before: ${before.posts} posts · quoted ${before.quoted} · conte
 console.log('\nRe-applying quoted post content…')
 execFileSync(process.execPath, [join(root, 'scripts', 'apply-references.mjs')], { stdio: 'inherit' })
 
-for (const step of APPLY_STEPS) {
+for (const { step, args } of APPLY_INVOCATIONS) {
   console.log(`\nRe-running ${step}…`)
-  execFileSync(process.execPath, [join(root, 'scripts', step), '--apply'], { stdio: 'inherit' })
+  execFileSync(process.execPath, [join(root, 'scripts', step), ...args], { stdio: 'inherit' })
 }
 
 const after = probe()

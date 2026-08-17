@@ -39,7 +39,13 @@ const CASES = [
   [493, 'PP', 'Planned Parenthood', 'entity'],
   [120, 'WL', 'WikiLeaks', 'entity'],
   // Office vs officeholder, and two people sharing a token inside one drop.
-  [1990, 'DAG', 'Deputy Attorney General', 'entity'],
+  // MOVED FROM #1990 by the 2026-08-17 URL ruling. The only "DAG" in #1990 was inside the path of
+  // a scribd link — `Grassley-Letter-to-AG-DAG-Requesting-Special-Counsel` — and a path slug is
+  // not Q naming a thing, so that occurrence was withdrawn and the box correctly disappeared with
+  // it. #3004 carries DAG in Q's own prose, which is what this case was always meant to test;
+  // leaving the fixture on a URL fragment would have kept asserting the behaviour the ruling
+  // removed.
+  [3004, 'DAG', 'Deputy Attorney General', 'entity'],
   [67, 'JK', 'Jared Kushner', 'entity'],
   [1317, 'JK', 'John Kerry', 'entity'],
   [571, 'JB', 'Jeff Bezos', 'entity'],

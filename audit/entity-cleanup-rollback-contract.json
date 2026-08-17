@@ -1,0 +1,28 @@
+{
+ "note": "Written at apply time. `node scripts/apply-entity-cleanup.mjs --rollback` restores these exact bytes and verifies every hash.",
+ "appliedAt": "2026-08-17T12:08:30.417Z",
+ "approvedByOwner": "2026-08-17 owner approval: apply the integrated migration exactly as simulated — 951 occurrences, 588 withdrawn, 363 migrated; deploy seed 78",
+ "snapshot": "entity-cleanup-2026-08-17T12-08-30-288Z",
+ "before": {
+  "entities.json": "96e25a70a375aabd8e7423337beafbe32d55da5420c75cad61c6a9ba76a12cc0",
+  "posts.json": "03e5c2a85040298b900097197df39b18a2ee959c3e43aedf45eda44e915b1001"
+ },
+ "created": [
+  "linked-sources.json"
+ ],
+ "after": {
+  "entities.json": "7e0f6cfe276f470e8fecfa6205b6620439ca12206a1bcb8da92c99ba72ddc287",
+  "posts.json": "de60265189e14af555c552a689d7375237654982cd1601219bcc25675ae00fda",
+  "linked-sources.json": "82493f0e1e5f0dc498a4c45bdd4e6ba99f99d4bbea4dcaa22503adc675393b7e"
+ },
+ "countsBefore": {
+  "mentions": 9749,
+  "entityRows": 1409,
+  "rendered": 9749
+ },
+ "countsAfter": {
+  "mentions": 8798,
+  "rendered": 8798,
+  "entityRows": 1201
+ }
+}

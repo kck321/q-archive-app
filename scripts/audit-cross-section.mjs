@@ -21,6 +21,7 @@ import { sourceLines } from './lib/quotedBlocks.mjs'
 import { CHAIN_STEPS } from './lib/chainSteps.mjs'
 import { CANONICAL, SECTION_CONTRACTS, OVERLAPS, APPLY_ORDER, ARTIFACTS, KNOWN_DEBT, nspace, nlower } from './lib/contracts.mjs'
 import { checkSeedFingerprint } from './seed-fingerprint.mjs'
+import { runtimeText } from './lib/renderedMatch.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -444,7 +445,11 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   // profile that stopped at 42 would keep showing RC and Ray Chandler as two strangers.
   // 77: Stage 2 hovers + the Black Lives Matter type correction. entities.json is seeded, so a
   // returning reader on 76 would keep the stale category beside the corrected wording.
-  t('seed-current', 'SEED_VERSION is 77 (Entities hover audit, Stage 2)', seed === 77, seed)
+  // 78 carries the integrated entity cleanup. BOTH seeded artifacts changed — entities.json lost
+  // 208 rows and posts.json lost 951 namedEntities entries — so a returning reader stuck on 77
+  // would go on seeing URL slugs and "God" inside "Godfather III" painted as certified entities,
+  // while every server-side check passed.
+  t('seed-current', 'SEED_VERSION is 78 (integrated entity cleanup)', seed === 78, seed)
   t('seed-gate', 'seeding is gated on SEED_VERSION', /seeded === SEED_VERSION/.test(localData), 'present')
 
   // THE GUARD THAT WOULD HAVE SAVED THREE ROUND TRIPS. Changing seeded data without bumping the
@@ -662,12 +667,17 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
       const review = JSON.parse(fs.readFileSync(rq, 'utf8'))
       const quar = JSON.parse(fs.readFileSync(q, 'utf8'))
       const wd = JSON.parse(fs.readFileSync(w, 'utf8'))
-      const sum = published.length + review.total + quar.total + wd.total
-      t('hover-reconciles', 'publish + review + quarantine + withdrawn = 7,778', sum === 7778,
-        `${published.length} + ${review.total} + ${quar.total} + ${wd.total} = ${sum}`)
+      // FIVE buckets since the 2026-08-16 no-visible-anchor ruling. The fifth is not a subset of
+      // review: "an editor should re-read this" and "there is no word on screen to hover" are
+      // different findings, and only the first is about the writing.
+      const naPath = path.join(OUT, 'entity-hover-no-visible-anchor.json')
+      const na = fs.existsSync(naPath) ? JSON.parse(fs.readFileSync(naPath, 'utf8')) : { total: 0, records: [] }
+      const sum = published.length + review.total + na.total + quar.total + wd.total
+      t('hover-reconciles', 'publish + review + no-anchor + quarantine + withdrawn = 7,778', sum === 7778,
+        `${published.length} + ${review.total} + ${na.total} + ${quar.total} + ${wd.total} = ${sum}`)
 
       // No held record may be in the bundle, matched on the key the bundle uses.
-      const held = [...review.records, ...quar.records, ...wd.records]
+      const held = [...review.records, ...na.records, ...quar.records, ...wd.records]
       const pubKeys = new Set(published.map(p => `${p.id} ${p.postNum}`))
       const pubOcc = new Set(published.map(p => p.occ).filter(Boolean))
       const leaked = held.filter(r => pubKeys.has(`${r.entityId} ${r.postNum}`) && !pubOcc.has(r.auditOccurrenceId))
@@ -716,6 +726,321 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     const graded = published.filter(p => ['Strong', 'Partial', 'Insufficient'].includes(p.g))
     t('hover-grades-present', 'every published synopsis carries its support grade',
       graded.length === published.length, `${published.length - graded.length} ungraded`)
+  }
+}
+
+// ── 10c. The integrated entity cleanup ───────────────────────────────────────
+//
+// Everything here is about a change that has NOT been applied. That is deliberate: the invariants
+// are written first, they pass before the change by asserting the world as it stands, and they go
+// on passing after it by asserting the world as it will stand. Written afterwards, they would
+// describe whatever happened rather than check it.
+//
+// The one that matters most is the vacuous-test guard, and it exists because of what these checks
+// nearly missed. The URL classifier ran against posts.json raw text — the board's own encoding,
+// complete with `https:<em>//</em>` splitting every link in half. It found 1,430 of the corpus's
+// 2,666 links. Every count downstream was arithmetically perfect and answered the wrong question.
+// A test that reads the wrong string does not fail; it passes, quietly, forever.
+{
+  const t = group('10c. Integrated entity cleanup')
+  const readIf = f => { const p = path.join(OUT, f); return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : null }
+  const occAudit = readIf('occurrence-provenance-audit.json')
+  const integrated = readIf('integrated-migration-plan.json')
+  const reversal = readIf('entity-cleanup-reversal.json')
+  const substrings = readIf('invalid-substring-occurrences.json')
+  const dormantReg = readIf('entity-dormant-registry.json')
+  const sourceOnlyReg = readIf('entity-source-only-registry.json')
+  const quarantine = readIf('entity-hover-url-quarantine.json')
+  const noAnchor = readIf('entity-hover-no-visible-anchor.json')
+  const linkedPath = path.join(DATA, 'linked-sources.json')
+  const linked = fs.existsSync(linkedPath) ? JSON.parse(fs.readFileSync(linkedPath, 'utf8')) : null
+  const applied = Boolean(linked)
+
+  // ── 1. TOTALS. The audit, the plan and the reversal are three views of ONE list.
+  if (occAudit && integrated && reversal) {
+    const led = integrated.occurrenceLedger
+    // BEFORE the apply, the audit describes the live corpus. AFTER it, the audit describes the
+    // state the cleanup started from — so the comparison moves to the recorded before-figure. An
+    // invariant that silently switched to comparing the audit against itself would pass forever.
+    const expected = applied ? integrated.proven.mentionsBefore : CANONICAL.entities.mentions
+    t('cleanup-ledger-reconciles', 'every starting mention lands in exactly one bucket',
+      led.reconciles && led.TOTAL === expected, `${led.TOTAL} of ${led.certifiedBefore}`)
+    t('cleanup-audit-covers-corpus', 'the provenance audit covers every certified occurrence',
+      occAudit.totals.reconciles && occAudit.totals.occurrences === expected,
+      `${occAudit.totals.occurrences} of ${expected}`)
+    if (applied) {
+      t('cleanup-applied-as-planned', 'the applied totals are exactly the ones that were proven',
+        entities.entities.length === integrated.proven.entityRowsAfter
+        && entities.totals.mentions === integrated.proven.mentionsAfter,
+        `${entities.entities.length} rows / ${entities.totals.mentions} mentions`)
+    }
+    const acted = integrated.actions.length
+    t('cleanup-totals-agree', 'plan actions, reversal restores and the withdrawn total are one number',
+      acted === reversal.restores.length && acted === integrated.proven.mentionsBefore - integrated.proven.mentionsAfter,
+      `${acted} actions / ${reversal.restores.length} restores / ${integrated.proven.mentionsBefore - integrated.proven.mentionsAfter} withdrawn`)
+    const ids = new Set(integrated.actions.map(a => a.occurrenceId))
+    t('cleanup-no-double-subtraction', 'no certified occurrence is acted on twice',
+      ids.size === integrated.actions.length, `${ids.size} distinct of ${integrated.actions.length}`)
+    t('cleanup-no-refusals', 'the plan carries no refusals', integrated.refusals.length === 0, `${integrated.refusals.length}`)
+    // THE RULE THAT PROTECTS Q'S OWN WORDS, asserted against the audit rather than the plan derived
+    // from it, so a bug in the derivation cannot hide behind its own output.
+    const visibleActed = occAudit.rows.filter(r =>
+      (r.category === 'visible_complete_token' || r.category === 'visible_alias_variant') && r.certifiedCountEffect !== 0)
+    t('cleanup-visible-never-withdrawn', 'no occurrence the reader can see is withdrawn',
+      visibleActed.length === 0, `${visibleActed.length} acted on`)
+  }
+
+  // ── 2. URL EXCLUSION.
+  if (quarantine) {
+    const hoverFile = path.join(DATA, 'entity-hovers.json')
+    const hov = fs.existsSync(hoverFile) ? JSON.parse(fs.readFileSync(hoverFile, 'utf8')) : { byPost: {} }
+    const pub = new Set()
+    for (const [id, byPost] of Object.entries(hov.byPost ?? {})) for (const pn of Object.keys(byPost)) pub.add(`${id} ${pn}`)
+    const leaked = quarantine.records.filter(r => pub.has(`${r.entityId} ${r.postNum}`))
+    t('url-excluded-from-hovers', 'no URL-derived record has a public hover', leaked.length === 0,
+      leaked.length ? `${leaked.length} leaked` : `${quarantine.total} quarantined`)
+  }
+  if (applied && integrated) {
+    const stillPainted = integrated.actions.filter(a =>
+      (byNum.get(a.postNum)?.postAnalysis?.namedEntities ?? [])[a.index] === a.alias)
+    t('url-fragments-withdrawn', 'no withdrawn occurrence is still a certified annotation',
+      stillPainted.length === 0, `${stillPainted.length} remaining`)
+  }
+
+  // ── 3. BOUND AND UNBOUND SOURCES. A null entityId is a decision, not a gap.
+  if (linked) {
+    const rows = [...Object.values(linked.byHostname ?? {}), ...Object.values(linked.byAccount ?? {})]
+    const bad = rows.filter(h => h.entityId && !entities.entities.some(e => e.id === h.entityId))
+    t('sources-bound-resolve', 'every bound source resolves to a live entity', bad.length === 0, `${bad.length} dangling`)
+    const unbound = rows.filter(h => !h.entityId)
+    t('sources-unbound-explained', 'every unbound source still names who it is',
+      unbound.every(h => String(h.displayName ?? '').trim().length > 0), `${unbound.length} unbound`)
+    const flat = Object.values(linked.byPost ?? {}).flat()
+    t('sources-post-index-agrees', 'the per-post, per-hostname and per-account indexes hold the same records',
+      flat.length === linked.totals.records
+      && new Set(flat.filter(r => r.kind === 'publisher').map(r => r.hostname)).size === Object.keys(linked.byHostname ?? {}).length
+      && new Set(flat.filter(r => r.kind === 'social_account').map(r => `${r.platform}/${String(r.handle).toLowerCase()}`)).size === Object.keys(linked.byAccount ?? {}).length,
+      `${flat.length} records / ${Object.keys(linked.byHostname ?? {}).length} hostnames / ${Object.keys(linked.byAccount ?? {}).length} accounts`)
+    // A SOCIAL ACCOUNT IS NOT A PUBLISHER. Collapsing 84 people onto "twitter.com" would lose every
+    // one of them, and labelling an account as a publisher would claim Q cited it as a source.
+    t('sources-kinds-distinct', 'publishers and accounts are separately keyed and separately labelled',
+      Object.values(linked.byAccount ?? {}).every(a => a.platform && a.handle)
+      && flat.every(r => r.kind === 'publisher' || r.kind === 'social_account'),
+      `${linked.totals.publisherRecords} publisher / ${linked.totals.socialAccountRecords} social`)
+  } else {
+    t('sources-absent-before-apply', 'linked-sources.json does not exist until the cleanup is applied', true, 'not applied')
+  }
+
+  // ── 4. DORMANT IDS. Retired from the bundle, reserved forever.
+  if (dormantReg) {
+    const ledger = readIf('entity-ids.json')
+    const live = new Set(entities.entities.map(e => e.id))
+    const unreserved = dormantReg.entities.filter(e => !ledger?.entries?.[e.id])
+    t('dormant-ids-reserved', 'every dormant id is still held in the permanent ledger',
+      unreserved.length === 0, `${dormantReg.total} dormant, ${unreserved.length} unreserved`)
+    if (applied) {
+      t('dormant-not-public', 'no dormant identity is in the public entity bundle',
+        dormantReg.entities.every(e => !live.has(e.id)), `${dormantReg.entities.filter(e => live.has(e.id)).length} still public`)
+      const idx = path.join(DATA, 'search-index.json')
+      if (fs.existsSync(idx)) {
+        const names = new Set(dormantReg.entities.map(e => e.canonical))
+        const indexed = JSON.parse(fs.readFileSync(idx, 'utf8')).rows.filter(r => r.s === 'entities' && names.has(r.t))
+        t('dormant-not-searchable', 'no dormant identity is indexed as an entity', indexed.length === 0, `${indexed.length} indexed`)
+      }
+      const hoverFile = path.join(DATA, 'entity-hovers.json')
+      if (fs.existsSync(hoverFile)) {
+        const hov = JSON.parse(fs.readFileSync(hoverFile, 'utf8'))
+        const withHover = dormantReg.entities.filter(e => hov.global?.[e.id] || hov.byPost?.[e.id])
+        t('dormant-no-hovers', 'no dormant identity carries a global synopsis or a hover', withHover.length === 0, `${withHover.length}`)
+      }
+    } else {
+      t('dormant-pending', 'the dormant set is prepared but not retired',
+        dormantReg.entities.every(e => live.has(e.id)), `${dormantReg.total} still live, as expected before apply`)
+    }
+  }
+
+  // ── 5. SOURCE-ONLY. Zero mentions is a CATEGORY here, never a rendered figure.
+  if (sourceOnlyReg) {
+    t('source-only-have-posts', 'every source-only identity keeps at least one linked drop',
+      sourceOnlyReg.entities.every(e => (e.linkedSourcePosts ?? []).length > 0), `${sourceOnlyReg.total} rows`)
+    const libSrc = fs.existsSync(path.join(SRC, 'lib', 'linkedSources.ts'))
+      ? fs.readFileSync(path.join(SRC, 'lib', 'linkedSources.ts'), 'utf8') : ''
+    t('source-only-described', 'a source-only identity has a sentence of its own, not a zero',
+      /sourceOnlyDescription/.test(libSrc) && /never named in Q's own words/.test(libSrc), 'described')
+    const srcPage = path.join(SRC, 'pages', 'Sources.tsx')
+    t('source-navigation-separate', 'Sources is its own surface, not a filter on Entities',
+      fs.existsSync(srcPage) && /linkedSources/.test(fs.readFileSync(srcPage, 'utf8')), 'separate page')
+  }
+
+  // ── 6. MIXED PROSE AND URL, per drop rather than per row.
+  if (occAudit) {
+    const byKey = new Map()
+    for (const r of occAudit.rows) {
+      if (!r.entityId) continue
+      const k = `${r.entityId} ${r.postNum}`
+      if (!byKey.has(k)) byKey.set(k, [])
+      byKey.get(k).push(r)
+    }
+    const overreach = [...byKey.values()].filter(rs =>
+      rs.some(r => r.category === 'visible_complete_token') && rs.every(r => r.certifiedCountEffect !== 0))
+    t('cleanup-mixed-keeps-prose', 'a drop where the entity is visible never loses every occurrence',
+      overreach.length === 0, `${overreach.length} over-reaching`)
+  }
+
+  // ── 7. AMBIGUOUS RECORDS ARE UNTOUCHED.
+  if (occAudit) {
+    const amb = occAudit.rows.filter(r => r.category === 'ambiguous_provenance')
+    t('cleanup-ambiguous-untouched', 'every ambiguous occurrence is retained unchanged',
+      amb.every(r => r.certifiedCountEffect === 0), `${amb.length} ambiguous, ${amb.filter(r => r.certifiedCountEffect !== 0).length} acted on`)
+  }
+
+  // ── 8. THE BOUNDARY RULING. A substring is only removable with nothing else behind it.
+  if (substrings && occAudit) {
+    const auto = substrings.records.filter(r => r.certifiedCountEffect === -1)
+    const wrong = auto.filter(r => r.anotherValidAliasInProse || r.urlProvenance || r.metadataProvenance || r.imageProvenance)
+    t('substring-removal-is-last-resort', 'no substring is auto-removed where other provenance exists',
+      wrong.length === 0, `${auto.length} removable of ${substrings.total}, ${wrong.length} with other support`)
+    t('substring-evidence-complete', 'every substring record carries the word that produced it',
+      substrings.records.every(r => (r.containingWords ?? []).length > 0 && r.renderedContext !== undefined),
+      `${substrings.total} documented`)
+  }
+
+  // ── 8b. THE THREE RULINGS OF 2026-08-17, each asserted where it can actually fail.
+  if (occAudit) {
+    const social = occAudit.rows.filter(r => r.category === 'social_account_reference')
+    t('social-migrated-not-withdrawn', 'every social-account reference migrates rather than being deleted',
+      social.length > 0 && social.every(r => r.proposedAction === 'migrate-to-social-account'),
+      `${social.length} references`)
+    t('social-not-prose', 'no social-account reference is counted as a prose mention',
+      social.every(r => r.certifiedCountEffect === -1), 'migrated out of the prose layer')
+
+    // The image ruling: certified, private, no public hover.
+    const imgUnconfirmed = occAudit.rows.filter(r => r.category === 'image_provenance_unconfirmed')
+    t('image-unconfirmed-certified', 'image-unconfirmed occurrences keep their certified mention',
+      imgUnconfirmed.every(r => r.certifiedCountEffect === 0), `${imgUnconfirmed.length} held`)
+    t('image-unconfirmed-private', 'every one of them is in the private provenance queue',
+      imgUnconfirmed.every(r => r.privateProvenanceReview === true), `${imgUnconfirmed.length} queued`)
+    // The 17 that were substring suspects are RECLASSIFIED, not erased: the finding survives on the
+    // row, so a later editor is not told the drop was clean.
+    const reclassified = imgUnconfirmed.filter(r => r.evidence?.reclassifiedFrom === 'invalid_substring_extraction')
+    t('image-substring-evidence-kept', 'a reclassified substring suspect still carries its evidence',
+      reclassified.every(r => (r.evidence.alsoSubstringOf ?? []).length > 0), `${reclassified.length} reclassified`)
+
+    // The withdrawal ruling, scoped to the population it named.
+    const withdrawn = readIf('entity-withdrawals-approved.json')
+    if (withdrawn) {
+      const acted = occAudit.rows.filter(r => r.category === 'no_supported_provenance' && r.certifiedCountEffect === -1)
+      t('withdrawals-scoped-to-ruling', 'only the approved population is withdrawn',
+        acted.length === withdrawn.total && acted.every(r => r.withdrawalApproved),
+        `${withdrawn.total} approved, ${withdrawn.beyondRuledPopulation.length} held beyond it`)
+      t('withdrawals-fully-documented', 'every withdrawal records its evidence search and reversal',
+        withdrawn.records.every(r => r.evidenceSearch && r.reversal && r.withdrawalReason), `${withdrawn.total} documented`)
+      t('withdrawals-preserve-the-drop', 'post text and media are untouched by a withdrawal',
+        withdrawn.postTextUnchanged === true && withdrawn.mediaUnchanged === true, 'annotation only')
+      if (integrated) {
+        const ids = new Set(integrated.actions.map(a => a.occurrenceId))
+        t('withdrawals-reversible', 'every withdrawal is in the reversal contract',
+          withdrawn.records.every(r => ids.has(r.occurrenceId)), `${withdrawn.total} reversible`)
+      }
+    }
+  }
+
+  // ── 9. NO VISIBLE TEXT ANCHOR is a ruling about the tooltip, and only the tooltip.
+  if (noAnchor) {
+    t('anchor-classified', 'every no-anchor record carries the classification, not a bare reason',
+      noAnchor.records.every(r => r.hoverClassification === 'no_visible_text_anchor'), `${noAnchor.total} classified`)
+    t('anchor-not-withdrawn', 'no no-anchor record is filed as a withdrawn entity occurrence',
+      noAnchor.category === 'no_visible_text_anchor' && noAnchor.certifiedCountChange === 'none', 'ruling honoured')
+  }
+  if (occAudit) {
+    // The AUDIT moves nothing; the APPLY does. Before the apply those are the same statement, and
+    // after it they are not — so the check is that the audit still describes the state it was run
+    // against, which is what makes it a usable rollback reference.
+    const auditBase = applied ? integrated.proven : { mentionsBefore: entities.totals.mentions, entityRowsBefore: entities.entities.length }
+    t('anchor-counts-unmoved', 'the provenance audit describes the state it was run against',
+      occAudit.certifiedUnchanged.mentions === auditBase.mentionsBefore
+      && occAudit.certifiedUnchanged.entityRows === auditBase.entityRowsBefore,
+      `${occAudit.certifiedUnchanged.entityRows} rows / ${occAudit.certifiedUnchanged.mentions} mentions`)
+    // An "image confirmed" verdict is only meaningful if something could have confirmed it.
+    const mediaFields = new Set()
+    for (const p of posts) for (const m of [...(p.media ?? []), ...(p.refMedia ?? [])]) for (const k of Object.keys(m ?? {})) mediaFields.add(k)
+    const canConfirm = ['ocr', 'ocrText', 'imageText', 'annotations', 'boundingBoxes', 'caption', 'alt'].some(f => mediaFields.has(f))
+    t('anchor-image-claim-honest', 'image_provenance_confirmed is only claimed where something could confirm it',
+      canConfirm || (occAudit.totals.byCategory.image_provenance_confirmed ?? 0) === 0,
+      canConfirm ? 'image data exists' : `no OCR/annotation data in the corpus → ${occAudit.totals.byCategory.image_provenance_confirmed ?? 0} confirmed`)
+    t('image-unconfirmed-stay-certified', 'image-unconfirmed occurrences keep their certified mention',
+      occAudit.rows.filter(r => r.category === 'image_provenance_unconfirmed').every(r => r.certifiedCountEffect === 0),
+      `${occAudit.totals.byCategory.image_provenance_unconfirmed ?? 0} held`)
+  }
+
+  // ── 10. ONE SHARED IMPLEMENTATION, ASSERTED AS ONE (owner ruling, 2026-08-17).
+  //
+  // It is not enough that the shared module exists — what matters is that nobody kept a private
+  // copy, so this checks that every consumer imports the primitives and that none redefines one.
+  {
+    const shared = fs.readFileSync(path.join(ROOT, 'scripts', 'lib', 'renderedMatch.mjs'), 'utf8')
+    t('coords-shared-definition', 'one shared implementation of rendered text and complete-token matching',
+      /from '\.\/runtimeText\.mjs'/.test(shared) && /export function completeTokenMatch/.test(shared)
+      && /export function foldTokens/.test(shared) && /runtimeText\(text\)/.test(shared), 'renderedMatch.mjs')
+
+    const CONSUMERS = ['lib/hoverValidation.mjs', 'extract-entity-hovers.mjs', 'audit-occurrence-provenance.mjs',
+      'apply-entity-cleanup.mjs', 'build-glossary.mjs', 'build-search-index.mjs', 'analyse-url-derived-cleanup.mjs']
+    const forked = []
+    const notImporting = []
+    for (const f of CONSUMERS) {
+      const p = path.join(ROOT, 'scripts', f)
+      if (!fs.existsSync(p)) { notImporting.push(`${f} (missing)`); continue }
+      const src = fs.readFileSync(p, 'utf8')
+      if (!/renderedMatch\.mjs|hoverValidation\.mjs/.test(src)) notImporting.push(f)
+      if (/^\s*(?:const|function|export function)\s+(foldTokens|completeTokenMatch|urlSpans|aliasLocation)\b/m.test(src)) forked.push(f)
+    }
+    t('coords-no-private-copies', 'no consumer keeps its own copy of the matching primitives',
+      forked.length === 0 && notImporting.length === 0,
+      [...forked.map(f => `FORK ${f}`), ...notImporting.map(f => `NOT IMPORTING ${f}`)].join(', ') || `${CONSUMERS.length} consumers share it`)
+
+    // ── THE VACUOUS-TEST GUARD ──────────────────────────────────────────────
+    // Both halves. That the shared definition is used, AND that it MATTERS: the raw and rendered
+    // forms must disagree about how many links exist, because if they ever agree, this guard has
+    // stopped guarding anything and is passing for free.
+    const rawLinks = posts.reduce((n, p) => n + (String(p.text ?? '').match(/\bhttps?:\/\/\S+|\bwww\.\S+/gi) ?? []).length, 0)
+    const renderedLinks = posts.reduce((n, p) => n + (runtimeText(String(p.text ?? '')).match(/\bhttps?:\/\/\S+|\bwww\.\S+/gi) ?? []).length, 0)
+    t('coords-guard-is-not-vacuous', 'the two coordinate systems genuinely disagree, so this check can fail',
+      renderedLinks > rawLinks, `raw ${rawLinks} links vs rendered ${renderedLinks} — the gap this guard exists for`)
+
+    const seedSrc = fs.readFileSync(path.join(SRC, 'lib', 'localData.ts'), 'utf8')
+    t('coords-matches-the-app', 'the script definition still matches what the app strips at seed time',
+      /em\|u\|span\|p\|b\|i\|strong\|s/.test(seedSrc) && /&amp;/.test(seedSrc) && /&gt;/.test(seedSrc), 'markup + entities')
+
+    // And the boundary rule is the RENDERER's boundary rule, not a second opinion about it.
+    const hc = fs.readFileSync(path.join(SRC, 'lib', 'highlightConstants.ts'), 'utf8')
+    t('coords-boundary-matches-renderer', 'the scripts use the renderer\'s word-boundary rule',
+      /\(\?<!\[A-Za-z0-9\]\)/.test(hc) && /\(\?<!\[A-Za-z0-9\]\)/.test(shared), 'lookaround, not \\b')
+  }
+
+  // ── 11. BYTE-IDENTICAL REBUILD.
+  {
+    const auditPath = path.join(OUT, 'occurrence-provenance-audit.json')
+    if (fs.existsSync(auditPath)) {
+      const digest = crypto.createHash('sha256').update(fs.readFileSync(auditPath)).digest('hex')
+      // Recorded, not re-run: re-running a derivation inside a validation pass is the derive step
+      // standing rule 7 forbids. The check is that the declared inputs still hash the same and that
+      // the artifact they produced still does too.
+      const inputs = ['entities.json', 'posts.json'].map(f => crypto.createHash('sha256')
+        .update(fs.readFileSync(path.join(DATA, f))).digest('hex')).join('|')
+      const stampPath = path.join(OUT, 'cleanup-determinism.json')
+      const stamp = fs.existsSync(stampPath) ? JSON.parse(fs.readFileSync(stampPath, 'utf8')) : null
+      if (stamp) {
+        t('cleanup-rebuild-byte-identical', 'the same inputs still produce the same audit, byte for byte',
+          stamp.inputs === inputs && stamp.auditSha256 === digest,
+          stamp.inputs === inputs ? (stamp.auditSha256 === digest ? 'identical' : 'AUDIT BYTES MOVED') : 'inputs moved')
+      } else {
+        fs.writeFileSync(stampPath, JSON.stringify({
+          note: 'Determinism stamp. With the inputs unchanged, re-running audit-occurrence-provenance.mjs must reproduce occurrence-provenance-audit.json byte for byte. Delete to re-baseline after a DELIBERATE change to the derivation.',
+          inputs, auditSha256: digest,
+        }, null, 1))
+        t('cleanup-rebuild-baseline', 'determinism baseline recorded', true, 'baseline')
+      }
+    }
   }
 }
 
