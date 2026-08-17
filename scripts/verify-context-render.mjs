@@ -1,8 +1,11 @@
-// Context: certified in the data, absent from the drop. Both halves asserted.
+// Context and Emphasis: certified in the data, absent from the drop. Both halves asserted.
 //
 //   node scripts/verify-context-render.mjs
 //
-// OWNER RULING, 2026-08-17: the grey Context fill comes out of the Q post on every surface.
+// OWNER RULING, 2026-08-17: the grey Context fill comes out of the Q post on every surface, and
+// later the same day the slate Emphasis fill goes with it. #4961 is why — nine lines, seven of them
+// boxed as Emphasis, so the two lines the archive actually classifies (a Question and a Claim) were
+// the hardest things on the drop to find.
 //
 // The version of this file that stood before that ruling asserted the opposite — that both
 // surfaces consume `contextUnits`, and that the neutral style carries NO background fill. The
@@ -26,12 +29,17 @@ const posts = JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/posts.json
 const exceptions = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/context-multiline-reconstructions.json'), 'utf8'))
 const src = f => fs.readFileSync(path.join(ROOT, 'src', f), 'utf8')
 
-let units = 0
-let postsWithUnits = 0
-for (const p of posts) {
-  const n = (p.postAnalysis?.contextUnits ?? []).length
-  if (n) { postsWithUnits++; units += n }
+const tally = field => {
+  let units = 0
+  let withUnits = 0
+  for (const p of posts) {
+    const n = (p.postAnalysis?.[field] ?? []).length
+    if (n) { withUnits++; units += n }
+  }
+  return { units, withUnits }
 }
+const ctx = tally('contextUnits')
+const emp = tally('emphasis')
 
 const detail = src('pages/PostDetail.tsx')
 const archive = src('lib/postHighlight.tsx')
@@ -43,8 +51,10 @@ const archiveLive = liveLines(archive)
 
 const checks = [
   // ── the data half: nothing was withdrawn to achieve the visual change ──────
-  ['4,816 context units still certified', units === 4816, units],
-  ['still spread across 2,311 posts', postsWithUnits === 2311, postsWithUnits],
+  ['4,816 context units still certified', ctx.units === 4816, ctx.units],
+  ['context still spread across 2,311 posts', ctx.withUnits === 2311, ctx.withUnits],
+  ['4,238 emphasis units still certified', emp.units === 4238, emp.units],
+  ['emphasis still spread across 1,357 posts', emp.withUnits === 1357, emp.withUnits],
   ['13 reconstruction exceptions still tracked', exceptions.count === 13, exceptions.count],
 
   // ── the render half: neither surface paints them ──────────────────────────
@@ -54,11 +64,18 @@ const checks = [
     !/analysis\.contextUnits\s*\?\?\s*\[\],\s*'context'/.test(archiveLive), 'not fed'],
   ['neither surface feeds a context segment by any other route',
     !/contextUnits/.test(detailLive) && !/contextUnits/.test(archiveLive), 'no live reference'],
+  ['detail surface does not paint emphasis',
+    !/\['emphasis',\s*analysis\.emphasis/.test(detailLive), 'not fed'],
+  ['archive surface does not paint emphasis',
+    !/analysis\.emphasis\s*\?\?\s*\[\],\s*'emphasis'/.test(archiveLive), 'not fed'],
+  ['neither surface feeds an emphasis segment by any other route',
+    !/analysis\.emphasis/.test(detailLive) && !/analysis\.emphasis/.test(archiveLive), 'no live reference'],
 
   // BOTH SURFACES OR NEITHER. PostDetail and postHighlight have shown the same drop differently
   // three times, each time because a change landed on one of them. The ruling is app-wide, so the
   // absence has to be app-wide too.
-  ['the two surfaces agree', /contextUnits/.test(detailLive) === /contextUnits/.test(archiveLive), 'both silent'],
+  ['the two surfaces agree on context', /contextUnits/.test(detailLive) === /contextUnits/.test(archiveLive), 'both silent'],
+  ['the two surfaces agree on emphasis', /analysis\.emphasis/.test(detailLive) === /analysis\.emphasis/.test(archiveLive), 'both silent'],
 
   // The removal is a comment-out, not a deletion, and the reasoning travels with it — a future
   // reader finding `contextUnits` in posts.json needs to find out here why nothing paints it.
@@ -66,8 +83,8 @@ const checks = [
     /owner ruling, 2026-08-17/i.test(detail) && /owner ruling, 2026-08-17/i.test(archive), 'documented'],
 ]
 
-console.log('\nCONTEXT: CERTIFIED IN THE DATA, ABSENT FROM THE DROP\n')
+console.log('\nCONTEXT + EMPHASIS: CERTIFIED IN THE DATA, ABSENT FROM THE DROP\n')
 let failed = 0
 for (const [label, ok, got] of checks) { if (!ok) failed++; console.log(`  ${ok ? 'PASS' : 'FAIL'}  ${label.padEnd(52)} ${got}`) }
-console.log(`\n  ${failed ? `❌ ${failed} failed` : '✅ the units are intact and no surface fills them'}\n`)
+console.log(`\n  ${failed ? `❌ ${failed} failed` : '✅ both layers are intact in the data and no surface fills them'}\n`)
 process.exit(failed ? 1 : 0)

@@ -136,7 +136,15 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
     // Retired with the section (owner ruling): the span is a certified Claim and paints amber.
     // addSegs(segs, text, analysis.conclusionSpans ?? analysis.impliedConclusions ?? [], 'impliedConclusion')
     // Checkable Claims merged into Claims by owner ruling 2026-08-15. All 1,926 were ALREADY The span is a Claim and paints amber.
-    addSegs(segs, text, analysis.emphasis ?? [], 'emphasis')
+    // EMPHASIS NO LONGER PAINTS IN THE DROP — owner ruling, 2026-08-17, the same ruling that took
+    // the Context fill out and for the same reason: #4961 is nine lines and seven of them were
+    // boxed, so the two lines the archive actually classifies — the Question and the Claim —
+    // were the hardest things on the drop to see.
+    //
+    // The data is untouched: 4,238 certified Emphasis units across 1,357 posts stay in posts.json
+    // and stay listed in the Post Analysis panel, where the reader can still see exactly which
+    // words the audit marked. What goes is the slate fill in the drop body.
+    //   addSegs(segs, text, analysis.emphasis ?? [], 'emphasis')
     // Brackets — owner rule: anything in [..] is red, on every surface. This layer existed in the
     // precedence branches below but was never fed here, so /posts painted no brackets at all.
     addSegs(segs, text, bracketSpansIn(text), 'bracketCode')

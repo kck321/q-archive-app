@@ -4634,3 +4634,55 @@ sight — it is someone removing the paint by deleting the units.
 (was 89 with #220 failing) · 132/132 multi-word checks · 54 + 34 + 23 pure cases · verify-final fresh
 and returning green · grey Context marks measured at 0 on both surfaces for #4962 and #220, with the
 coloured certified layers still painting.
+
+---
+
+## 2026-08-17 — Emphasis comes out of the drop too, and three defects the gates caught behind it
+
+**Request.** "i want the emphasis highlights off the all the archives post and on the analysis pages
+across the app because i don't like how it is structured", with #4961 as the case.
+
+**Executed as ruled.** #4961 is nine lines and **seven of them were boxed** as Emphasis, so the two
+lines the archive actually classifies — the Question and the Claim — were the hardest things on the
+drop to find. Same removal as Context earlier today, in both renderers, in one commit. After:
+#4961 paints three marks, the Question, the Claim and one Entity.
+
+**The data is untouched.** 4,238 certified Emphasis units across 1,357 posts stay in posts.json and
+stay listed under Emphasis in the Post Analysis panel. This removes a FILL, not a disposition — and
+the reader can still see exactly which words the audit marked, on the panel below the drop.
+
+### Three defects the removal exposed
+
+**1. SUPREME COURT stopped being a split term — and that is an improvement.** The Emphasis marks were
+part of what cut "SUPREME COURT" into three sibling `<mark>`s on #2462. With the fill gone the phrase
+survives whole and takes the ordinary contiguous path: one button, one card, no delegation needed.
+`test-multiword-gloss.mjs` failed because it hardcoded which of the six named terms take the split
+path. **That was the same brittleness fixed for the live gates this morning, one layer along**: which
+path a term takes is a property of today's interval layout, not of the ruling. Each of the six is now
+proved on whichever path it takes — contiguous terms must have their own single control with a label
+naming the whole phrase; split terms keep every segment assertion.
+
+**2. Escape closed the card and reopened it in the same breath.** `close(true)` returns focus to the
+trigger for accessibility, and the trigger opens on focus — so Escape closed, refocused, and
+reopened. The next tap then toggled it SHUT. It read as a control that ignores every second press,
+and it is why "tapping a non-anchor segment opens the card" failed on FOX NEWS while the identical
+tap passed in isolation. The refocus is required and stays; the focus-open is suppressed for that one
+programmatic focus.
+
+**3. A card on a narrow screen could cover the word it explains.** `HoverCard` pinned to the BOTTOM
+on anything under 640px, on the reasoning that a card down there "can never sit on top of the line
+being read". That holds only while the word is in the upper half. A term in the bottom 45% of a
+390x844 screen was covered by its own explanation. Found because the mobile fixture moved to #1791
+when #2462 stopped being split — the check that the card does not cover its anchor had never been
+applied to a term low on the page. The pinned case now chooses its edge the same way the floating
+case does: whichever leaves the anchor visible, and when neither does, the roomier one.
+
+**A gate that would have blocked the ruling.** `test-returning-profile.mjs` asserted that `'real'` on
+#2917 renders as a **Claim+Emphasis overlap**. With Emphasis unpainted there is no overlap, and the
+span reads as the Claim it also is. That test's question is whether a RETURNING reader receives the
+current certified data — not which colour it wears — so the membership is now checked where it lives,
+in the re-seeded record. Asserting the old paint there would have made the owner's ruling unshippable.
+
+**Gates.** tsc clean · 206/206 invariants · manifest verified · 14/14 context+emphasis checks ·
+122/122 multi-word checks · term-info 90/90 · 54 + 34 + 23 pure cases · verify-final fresh and
+returning green · slate Emphasis marks measured at 0 on both surfaces for #4961.

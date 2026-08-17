@@ -206,7 +206,13 @@ function renderPostBody(
       // as a Claim. All 966 were already certified Claims carrying isConclusion, so the rows are
       // unchanged; only the duplicate view is gone. The attribute survives on claimMeta.
       // Checkable Claims merged into Claims by owner ruling 2026-08-15. All 1,926 were ALREADY
-      ['emphasis', analysis.emphasis ?? []],
+      // EMPHASIS NO LONGER PAINTS IN THE DROP — owner ruling, 2026-08-17. Same removal as
+      // postHighlight.tsx, in the same commit, because these two surfaces have shown the same drop
+      // differently three times and every one of them was a change that landed on only one.
+      //
+      // The certified layer is untouched — 4,238 units across 1,357 posts, still listed under
+      // Emphasis in the Post Analysis panel below the drop. Only the fill is gone.
+      //   ['emphasis', analysis.emphasis ?? []],
     ]
     const analysisPairs: [Kind, string[]][] = [
       ...analysisPairsBase,

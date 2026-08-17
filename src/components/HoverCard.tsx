@@ -52,10 +52,21 @@ export function HoverCard({
   const cardRef = useRef<HTMLSpanElement>(null)
   const id = useId()
 
+  // ESCAPE MUST CLOSE, NOT BLINK.
+  //
+  // Escape returns focus to the trigger, and the trigger opens on focus — so the card closed and
+  // reopened in the same breath, and the next tap toggled it shut instead of open. It reads as a
+  // control that ignores every second press. The refocus is required for accessibility (a keyboard
+  // user must not be dumped at the top of the document), so the focus-open is suppressed for that
+  // one programmatic focus instead.
+  const skipFocusOpen = useRef(false)
   const close = useCallback((refocus = false) => {
     setOpen(false)
     setPos(null)
-    if (refocus) triggerRef.current?.focus()
+    if (refocus) {
+      skipFocusOpen.current = true
+      triggerRef.current?.focus()
+    }
   }, [])
 
   // ── dismissal ──────────────────────────────────────────────────────────────
@@ -131,7 +142,28 @@ export function HoverCard({
       // anchor. scrollHeight is what the card wants to be and does not move when the clamp does,
       // which is the only measurement that makes the placement stable.
       const wanted = Math.max(el.scrollHeight + 2, b.height)
-      if (window.innerWidth < NARROW) { setPos({ left: MARGIN, top: window.innerHeight - b.height - MARGIN, pinned: true }); return }
+      // NARROW SCREEN: PINNED, AND PINNED TO THE EDGE THE WORD IS NOT ON.
+      //
+      // This always pinned to the BOTTOM, on the reasoning that a card down there "can never sit on
+      // top of the line being read". That holds only while the word is in the upper half. A term in
+      // the bottom 45% of a 390x844 screen was covered by its own explanation — found on #1791,
+      // where the check that the card does not cover its anchor was finally applied to a term low
+      // on the page.
+      //
+      // So the side is chosen the same way the floating case chooses it: whichever edge leaves the
+      // anchor visible, and when neither does, the one with more room.
+      if (window.innerWidth < NARROW) {
+        const h = Math.min(wanted, window.innerHeight * 0.45)
+        const atBottom = window.innerHeight - h - MARGIN
+        const atTop = MARGIN
+        const coversAtBottom = a.bottom > atBottom
+        const coversAtTop = a.top < atTop + h
+        const top = !coversAtBottom ? atBottom
+          : !coversAtTop ? atTop
+            : (a.top > window.innerHeight - a.bottom ? atTop : atBottom)
+        setPos({ left: MARGIN, top, pinned: true })
+        return
+      }
       const left = Math.max(MARGIN, Math.min(a.left + a.width / 2 - b.width / 2, window.innerWidth - b.width - MARGIN))
 
     // PICK THE SIDE BY THE ROOM IT HAS, THEN LIMIT THE HEIGHT TO FIT IT.
@@ -202,7 +234,11 @@ export function HoverCard({
         {...(occurrenceId ? { [OCC_ATTR]: occurrenceId, [ANCHOR_ATTR]: '' } : {})}
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
-        onFocus={() => setOpen(true)}
+        onFocus={() => {
+          // The one focus that must not open it: the refocus Escape just performed.
+          if (skipFocusOpen.current) { skipFocusOpen.current = false; return }
+          setOpen(true)
+        }}
         onClick={e => { e.stopPropagation(); e.preventDefault(); setOpen(o => !o) }}
       >
         {children}
