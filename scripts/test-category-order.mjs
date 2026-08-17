@@ -13,7 +13,14 @@
 //
 // Read from the RENDERED page, never from the artifacts. The artifacts were never wrong; the
 // disagreement was between two things the component computed, and only the DOM shows both at once.
-import { launch } from './lib/browser.mjs'
+import { launch, LIST_SIZE } from './lib/browser.mjs'
+
+// The list virtualises its first page in and the frequency index lands after the shell, so "rows
+// exist" is not "rows are final". These wait for the list to STOP MOVING rather than for a clock —
+// the 3.5s and 6s settles this replaced were each a guess at the same thing, and each one was both
+// slower than a warm load and able to race a cold one.
+const settle = page => page.waitForStable(LIST_SIZE, { stableFor: 2, every: 250, timeout: 45000 })
+const settleAfterShowAll = page => page.waitForStable(LIST_SIZE, { stableFor: 3, every: 400, timeout: 90000 })
 
 const args = process.argv.slice(2)
 const mode = args.includes('--fresh') ? 'fresh' : 'warm'
@@ -83,8 +90,7 @@ for (const tab of TABS) {
   const page = await browser.page(`${BASE}/analysis?tab=${tab}`)
   const ready = await page.waitFor(`document.querySelectorAll('div.bg-q-panel').length > 3`, { timeout: 120000 })
   if (!ready) { check(false, `${tab} — the list renders`, 'no rows'); await page.close(); continue }
-  // The list virtualises its first page in; give the frequency index time to land.
-  await new Promise(r => setTimeout(r, 3500))
+  await settle(page)
   const rows = JSON.parse(await page.evaluate(READ_ROWS)).filter(r => r.chips.length || r.badge > 1)
   await page.close()
 
@@ -146,12 +152,12 @@ console.log('')
 {
   const page = await browser.page(`${BASE}/analysis?tab=namedEntities`)
   await page.waitFor(`document.querySelectorAll('div.bg-q-panel').length > 3`, { timeout: 120000 })
-  await new Promise(r => setTimeout(r, 3500))
+  await settle(page)
   // The list pages at 150; Scaramucci's 7 posts sit past the first page. Show everything, or the
   // check would report a paging boundary as an ordering failure.
   await page.evaluate(`(() => { const a = [...document.querySelectorAll('button,a')]
     .find(e => e.textContent.trim().toLowerCase() === 'show all'); if (a) a.click(); return 'clicked' })()`)
-  await new Promise(r => setTimeout(r, 6000))
+  await settleAfterShowAll(page)
   const rows = JSON.parse(await page.evaluate(READ_ROWS))
   await page.close()
   const at = name => rows.findIndex(r => r.label.toLowerCase() === name.toLowerCase())
@@ -179,7 +185,7 @@ console.log('')
   const readOnce = async () => {
     const page = await browser.page(`${BASE}/analysis?tab=namedEntities`)
     await page.waitFor(`document.querySelectorAll('div.bg-q-panel').length > 3`, { timeout: 120000 })
-    await new Promise(r => setTimeout(r, 3500))
+    await settle(page)
     const rows = JSON.parse(await page.evaluate(READ_ROWS))
     await page.close()
     return rows.map(r => `${r.label}:${r.badge}`).join('|')

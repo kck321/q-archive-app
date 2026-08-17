@@ -6,45 +6,38 @@
 // listed no aliases while /posts?q=potus listed six. Same OWNER RULE, different surface — so it
 // gets its own proof, driven through the real page.
 //
-//   node scripts/test-archive-alias-visibility.mjs [baseUrl]     default http://localhost:5174
-import fs from 'node:fs'
-import os from 'node:os'
-import path from 'node:path'
-import { spawn } from 'node:child_process'
+//   node scripts/test-archive-alias-visibility.mjs [baseUrl] [--fresh]
+//     default        warm browser — for iterating          (baseUrl default http://localhost:5174)
+//     --fresh        brand-new profile — part of the proof
+import { launch } from './lib/browser.mjs'
 
-const BASE = process.argv[2] ?? 'http://localhost:5174'
-const CHROME = ['C:/Program Files/Google/Chrome/Application/chrome.exe',
-  'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
-  'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'].find(p => fs.existsSync(p))
-if (!CHROME) { console.error('No Chrome or Edge found.'); process.exit(1) }
+const BASE = process.argv.find(a => a.startsWith('http')) ?? 'http://localhost:5174'
+const mode = process.argv.includes('--fresh') ? 'fresh' : 'warm'
 
-const sleep = ms => new Promise(r => setTimeout(r, ms))
-const PORT = 9384
-const PROFILE = path.join(os.tmpdir(), `qdrops-archive-alias-${process.pid}`)
-fs.mkdirSync(PROFILE, { recursive: true })
-const proc = spawn(CHROME, ['--headless=new', '--disable-gpu', '--no-first-run',
-  `--remote-debugging-port=${PORT}`, `--user-data-dir=${PROFILE}`, 'about:blank'],
-  { stdio: 'ignore', detached: true })
-for (let i = 0; i < 40; i++) {
-  try { if ((await fetch(`http://127.0.0.1:${PORT}/json/version`)).ok) break } catch { /* not up */ }
-  await sleep(500)
-}
+const browser = await launch({ mode })
 
-async function run(url, expression, settleMs = 16000) {
-  const t = await (await fetch(`http://127.0.0.1:${PORT}/json/new?${encodeURIComponent(url)}`, { method: 'PUT' })).json()
-  const ws = new WebSocket(t.webSocketDebuggerUrl)
-  await new Promise(r => { ws.onopen = r })
-  let id = 0
-  const pending = new Map()
-  ws.onmessage = e => { const m = JSON.parse(e.data); if (m.id && pending.has(m.id)) { pending.get(m.id)(m); pending.delete(m.id) } }
-  const send = (method, params = {}) => new Promise(res => { const n = ++id; pending.set(n, res); ws.send(JSON.stringify({ id: n, method, params })) })
-  await send('Page.enable')
-  await sleep(settleMs)
-  const r = await send('Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true })
-  ws.close()
-  await fetch(`http://127.0.0.1:${PORT}/json/close/${t.id}`)
-  if (r.result?.exceptionDetails) return { error: JSON.stringify(r.result.exceptionDetails).slice(0, 300) }
-  return r.result?.result?.value
+// The Includes row IS the assertion, so it is also the wait. A 16s settle was both slower than a
+// warm load and short enough to race a cold one — and a race here reads an empty row and reports a
+// working ruling broken, which is the failure this gate exists to prevent.
+//
+// "THE BANNER EXISTS" IS NOT THE CONDITION. The archive paints "Found 0 posts matching" before the
+// posts collection arrives, so waiting for the banner returns in ~200ms against an empty page and
+// every alias assertion fails on a site that is fine. The condition is a non-zero result set — which
+// is what each of these searches is asserted to have. A genuinely empty one falls through to the
+// stability wait and is reported as the zero it is, rather than hanging.
+const RESULT_COUNT = `(() => {
+  const m = (document.body.innerText || '').match(/Found\\s+([\\d,]+)\\s+posts matching/)
+  return m ? Number(m[1].replace(/,/g, '')) : -1
+})()`
+
+async function run(url, expression) {
+  const page = await browser.page(url)
+  const got = await page.waitFor(`(${RESULT_COUNT}) > 0`, { timeout: 90000 })
+  // The Includes chips mount a beat after the count; wait for the row to stop changing.
+  await page.waitForStable(`(document.body.innerText || '').length`, { timeout: 20000 })
+  const v = await page.evaluate(expression)
+  await page.close()
+  return got ? v : { error: 'the archive never returned a result — nothing to show aliases for' }
 }
 
 // The "Found N posts matching …" banner and the "Includes: …" chip row, as rendered.
@@ -73,7 +66,7 @@ for (const [term, expectAliases] of [
   ['Rachel Chandler', ['Ray Chandler', 'RC']],
 ]) {
   const raw = await run(`${BASE}/posts?q=${encodeURIComponent(term)}`, readArchive)
-  if (!raw || raw.error) { check(false, `${term} — page rendered`, raw?.error ?? 'no response'); continue }
+  if (!raw || raw.error || raw.__error) { check(false, `${term} — page rendered`, raw?.error ?? raw?.__error ?? 'no response'); continue }
   const data = JSON.parse(raw)
   console.log(`\n  search "${term}" — found ${data.found ?? '?'} posts`)
   console.log(`    includes: ${data.includes || 'NO INCLUDES ROW'}`)
@@ -85,8 +78,6 @@ for (const [term, expectAliases] of [
   }
 }
 
-try { process.kill(-proc.pid) } catch { try { proc.kill() } catch { /* already gone */ } }
-await sleep(500)
-try { fs.rmSync(PROFILE, { recursive: true, force: true }) } catch { /* Chrome still holds it */ }
+await browser.close()
 console.log(failed ? `\n  ${failed} check(s) FAILED\n` : '\n  the post archive shows the aliases tied to the searched term\n')
 process.exit(failed ? 1 : 0)

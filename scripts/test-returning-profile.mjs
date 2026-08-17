@@ -17,51 +17,41 @@
 // what SEED_VERSION says — which is exactly how this defect survived a "verified live" report.
 //
 //   node scripts/test-returning-profile.mjs [--url https://qdrops.app]
-import { spawn } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
-import { builtSeedVersion } from './lib/browser.mjs'
-import fs from 'node:fs'
+import { builtSeedVersion, launch, DROP_READY, IDB } from './lib/browser.mjs'
 import path from 'node:path'
 import os from 'node:os'
 
 const argUrl = process.argv.indexOf('--url')
 const URL_BASE = argUrl > -1 ? process.argv[argUrl + 1] : 'https://qdrops.app'
 
-const CHROME = ['C:/Program Files/Google/Chrome/Application/chrome.exe',
-  'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
-  'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'].find(p => fs.existsSync(p))
-if (!CHROME) { console.error('No Chrome or Edge found.'); process.exit(1) }
-
 const SEED = builtSeedVersion(path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..'))
-const sleep = ms => new Promise(r => setTimeout(r, ms))
-const PORT = 9381
 const PROFILE = path.join(os.tmpdir(), 'qdrops-returning-profile')
 
-fs.rmSync(PROFILE, { recursive: true, force: true })
-fs.mkdirSync(PROFILE, { recursive: true })
-const proc = spawn(CHROME, ['--headless=new', '--disable-gpu', '--no-first-run',
-  `--remote-debugging-port=${PORT}`, `--user-data-dir=${PROFILE}`, 'about:blank'],
-  { stdio: 'ignore', detached: true })
-for (let i = 0; i < 40; i++) {
-  try { if ((await fetch(`http://127.0.0.1:${PORT}/json/version`)).ok) break } catch { /* not up */ }
-  await sleep(500)
-}
+// One browser, one profile, four loads — because the profile IS the subject of this test. `fresh`
+// wipes it first, which is what makes step 1 a genuine first visit.
+const browser = await launch({ mode: 'fresh', profile: PROFILE })
 
-async function run(url, expression, settleMs = 12000) {
-  const t = await (await fetch(`http://127.0.0.1:${PORT}/json/new?${encodeURIComponent(url)}`, { method: 'PUT' })).json()
-  const ws = new WebSocket(t.webSocketDebuggerUrl)
-  await new Promise(r => { ws.onopen = r })
-  let id = 0
-  const pending = new Map()
-  ws.onmessage = e => { const m = JSON.parse(e.data); if (m.id && pending.has(m.id)) { pending.get(m.id)(m); pending.delete(m.id) } }
-  const send = (method, params = {}) => new Promise(res => { const n = ++id; pending.set(n, res); ws.send(JSON.stringify({ id: n, method, params })) })
-  await send('Page.enable')
-  await sleep(settleMs)
-  const r = await send('Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true })
-  ws.close()
-  await fetch(`http://127.0.0.1:${PORT}/json/close/${t.id}`)
-  if (r.result?.exceptionDetails) return { error: JSON.stringify(r.result.exceptionDetails).slice(0, 400) }
-  return r.result?.result?.value
+// WHAT EACH LOAD IS WAITING FOR, instead of the 12s/9s/3s settles this used to hand back.
+//
+// A fixed settle here is worse than slow: on a cold live load 12s could still be short, and the
+// probe would read an unseeded profile and report a shipped build broken. These name the state the
+// next step actually depends on.
+const RENDERED_AND_CACHED = `(async () => { ${IDB}
+  if (!(${DROP_READY})) return false
+  try { const p = await idbGet('posts'); return Array.isArray(p) && p.length > 0 } catch { return false }
+})()`
+const RENDERED_AND_CURRENT = `(async () => { ${IDB}
+  if (!(${DROP_READY})) return false
+  try { return (await idbGet('__seed_version__')) === ${SEED} } catch { return false }
+})()`
+
+async function run(url, expression, condition = RENDERED_AND_CACHED, timeout = 90000) {
+  const page = await browser.page(url)
+  if (condition) await page.waitFor(condition, { timeout, every: 250 })
+  const v = await page.evaluate(expression)
+  await page.close()
+  return v
 }
 
 const idb = `
@@ -127,17 +117,20 @@ console.log(`   seed=${first.seed}  stored claims=${JSON.stringify(first.storedC
 console.log(`   amber Claim marks in the drop: ${JSON.stringify(first.claimMarks)}`)
 
 console.log('\n2. downgrade the profile to look like the pre-ruling state')
-const staled = parse(await run(`${URL_BASE}/post/2917`, makeStale, 9000))
+const staled = parse(await run(`${URL_BASE}/post/2917`, makeStale))
 console.log(`   ${JSON.stringify(staled)}`)
 
 // The control lives in step 2, at write time. This load is where the repair happens — the app
 // sees seed 6, re-seeds from the bundle, and the downgrade is gone before anything can read it.
 console.log('\n3. returning visit — the app sees seed 6 and re-seeds')
-const stale = parse(await run(`${URL_BASE}/post/2917`, readPainted(2917), 3000))
+const stale = parse(await run(`${URL_BASE}/post/2917`, readPainted(2917), DROP_READY))
 console.log(`   seed=${stale.seed}  stored claims=${JSON.stringify(stale.storedClaims)}`)
 
+// The finish line: the seed the BUILD declares, arrived at by a profile that had an older one. If
+// the repair never happens this waits out the timeout and the assertions below report it — which is
+// the correct outcome, and the reason the condition is the seed rather than a clock.
 console.log('\n4. and it stays repaired on the next load')
-const after = parse(await run(`${URL_BASE}/post/2917`, readPainted(2917)))
+const after = parse(await run(`${URL_BASE}/post/2917`, readPainted(2917), RENDERED_AND_CURRENT))
 console.log(`   seed=${after.seed}  stored claims=${JSON.stringify(after.storedClaims)}`)
 console.log(`   amber Claim marks in the drop: ${JSON.stringify(after.claimMarks)}`)
 console.log(`   'real' still certified as Emphasis in the store: ${(after.storedEmphasis ?? []).some(e => String(e).includes("'real'"))}`)
@@ -173,6 +166,6 @@ console.log('\n  RESULT')
 let failed = 0
 for (const [label, ok] of checks) { if (!ok) failed++; console.log(`    ${ok ? 'PASS' : 'FAIL'}  ${label}`) }
 
-try { process.kill(-proc.pid) } catch { try { proc.kill() } catch { /* gone */ } }
+await browser.close({ keepWarm: false })
 console.log(failed ? `\n  ${failed} check(s) FAILED\n` : '\n  a returning reader receives and sees the owner rulings\n')
 process.exit(failed ? 1 : 0)

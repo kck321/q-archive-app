@@ -26,6 +26,13 @@ const CHROME = ['C:/Program Files/Google/Chrome/Application/chrome.exe',
   'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'].find(p => fs.existsSync(p))
 
 const sleep = ms => new Promise(r => setTimeout(r, ms))
+
+// Enough of a keyboard to drive the app. `text` is what makes Enter and Space activate a button —
+// without it Chrome delivers the keydown but no default action, and a keyboard gate silently
+// asserts nothing.
+const KEY_CODES = { Enter: 13, ' ': 32, Escape: 27, Tab: 9, ArrowLeft: 37, ArrowUp: 38, ArrowRight: 39, ArrowDown: 40 }
+const KEY_TEXT = { Enter: '\r', ' ': ' ' }
+
 export const WARM_PORT = 9333
 export const WARM_PROFILE = path.join(os.tmpdir(), 'qdrops-warm-profile')
 
@@ -90,18 +97,49 @@ function makeHandle(port, profile, proc, reused) {
         if (r.result?.exceptionDetails) return { __error: JSON.stringify(r.result.exceptionDetails).slice(0, 300) }
         return r.result?.result?.value
       }
+      const waitFor = async (expression, { timeout = 45000, every = 400 } = {}) => {
+        const deadline = Date.now() + timeout
+        for (;;) {
+          const v = await evaluate(expression)
+          if (v && !v.__error) return v
+          if (Date.now() > deadline) return null
+          await sleep(every)
+        }
+      }
+      const key = (type, k) => send('Input.dispatchKeyEvent', {
+        type, key: k,
+        text: type === 'keyUp' ? undefined : KEY_TEXT[k],
+        windowsVirtualKeyCode: KEY_CODES[k] ?? 0,
+        nativeVirtualKeyCode: KEY_CODES[k] ?? 0,
+      })
       return {
         evaluate,
         /** Poll `expression` until it returns truthy. Returns the value, or null on timeout. */
-        async waitFor(expression, { timeout = 45000, every = 400 } = {}) {
+        waitFor,
+        /**
+         * Poll until `expression` returns the SAME value `stableFor` times running.
+         *
+         * For the things that have no single "done" flag — a virtualised list paging rows in, a
+         * frequency index landing after the first paint. A fixed sleep guesses how long that takes;
+         * this waits for it to stop moving, which is the property the assertion actually needs.
+         * Returns the settled value, or the last one seen if the timeout is reached.
+         */
+        async waitForStable(expression, { stableFor = 2, every = 250, timeout = 45000 } = {}) {
           const deadline = Date.now() + timeout
+          let last, hits = 0, v
           for (;;) {
-            const v = await evaluate(expression)
-            if (v && !v.__error) return v
-            if (Date.now() > deadline) return null
+            v = await evaluate(expression)
+            if (!v?.__error) {
+              const s = JSON.stringify(v)
+              if (s === last) { if (++hits >= stableFor) return v } else { hits = 1; last = s }
+            }
+            if (Date.now() > deadline) return v
             await sleep(every)
           }
         },
+        /** A real key event, as the browser delivers it — not a synthetic DOM event. */
+        key,
+        async press(k) { await key('keyDown', k); await key('keyUp', k) },
         async close() { ws.close(); try { await fetch(`http://127.0.0.1:${port}/json/close/${t.id}`) } catch { /* gone */ } },
       }
     },
@@ -124,6 +162,27 @@ export const IDB = `
 
 /** The archive is ready when its rows exist — not when the clock says so. */
 export const ROWS_READY = `document.querySelectorAll('div.bg-q-panel').length > 2`
+
+// The rest of the vocabulary the gates wait on. Each one names a state the page reaches, so a
+// change that makes the app slower makes a test slower rather than making it flaky.
+
+/** Rows exist AND carry their post chips — i.e. the frequency index has landed, not just the shell. */
+export const CHIPS_READY = `document.querySelectorAll('div.bg-q-panel').length > 2
+  && document.querySelectorAll('a[href*="/post/"]').length > 0`
+
+/** The shared month picker has rendered its per-month controls. */
+export const MONTHS_READY = `document.querySelectorAll('[role="radiogroup"] [role="radio"]').length > 0`
+
+/** A drop reader is showing the post body. */
+export const DROP_READY = `document.querySelectorAll('pre[class*="post-text"]').length > 0`
+
+/** How many rows and chips are on screen — the value to hand `waitForStable` while a list pages in. */
+export const LIST_SIZE = `document.querySelectorAll('div.bg-q-panel').length + ':'
+  + document.querySelectorAll('a[href*="/post/"]').length`
+
+/** IndexedDB has been seeded to `seed`. Async — `evaluate` awaits it. */
+export const seededTo = seed => `(async () => { ${IDB}
+  try { return (await idbGet('__seed_version__')) === ${seed} } catch { return false } })()`
 
 /** SEED_VERSION as the built app declares it, read from source so a test cannot pin a stale value. */
 export function builtSeedVersion(root) {

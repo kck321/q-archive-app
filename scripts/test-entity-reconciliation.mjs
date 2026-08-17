@@ -13,69 +13,49 @@
 //   4. a source-only row shows its chips labelled, says "source only", and never says "mentions"
 //   5. a social-account row is labelled "Social account", a publisher row "Publisher link"
 //
+// WAITING IS BY CONDITION, NOT BY CLOCK. This gate declared 49.5s of fixed sleeps — 14s to settle,
+// 20s for "show all" to render 1,183 rows, 15s for a search — and cost 65.3s of a 744s live proof
+// to make five assertions. The conditions were always available and are named below: the row count
+// the artifact predicts, the row the search is looking for. A sleep long enough to be slow is still
+// short enough to race a slow load, so this is not only faster, it is the version that cannot lie.
+//
 //   node scripts/test-entity-reconciliation.mjs [--url http://localhost:5199]
-import { spawn } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
-import os from 'node:os'
 import { fileURLToPath } from 'node:url'
+import { launch } from './lib/browser.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const argUrl = process.argv.indexOf('--url')
 const URL_BASE = argUrl > -1 ? process.argv[argUrl + 1] : 'https://qdrops.app'
-const sleep = ms => new Promise(r => setTimeout(r, ms))
 
 const view = JSON.parse(fs.readFileSync(path.join(ROOT, 'public', 'data', 'entity-public-view.json'), 'utf8'))
 const T = view.totals
 
-const PORT = 9413
-const PROFILE = fs.mkdtempSync(path.join(os.tmpdir(), 'qdrops-recon-'))
-const CHROME = process.platform === 'win32'
-  ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
-  : 'google-chrome'
-const proc = spawn(CHROME, ['--headless=new', '--disable-gpu', '--no-first-run',
-  `--remote-debugging-port=${PORT}`, `--user-data-dir=${PROFILE}`, 'about:blank'],
-{ stdio: 'ignore', detached: true })
-for (let i = 0; i < 40; i++) {
-  try { if ((await fetch(`http://127.0.0.1:${PORT}/json/version`)).ok) break } catch { /* not up */ }
-  await sleep(500)
-}
+// A ROW IS NOT "A PANEL MENTIONING THE SECTION NAME".
+//
+// The chart panel is also a .bg-q-panel. Its heading reads "Named Entities vs. Posts per Month" —
+// and while searching, "Named Entities Timeline — <term>" — so matching on text counted it as a
+// row (1,184 for 1,183) and returned it as the row for whichever entity was being searched. Its
+// LEGEND then defeated the next attempt, because that is a span whose whole text is the label.
+//
+// What only a result row has is the rank, which carries a title attribute naming what it is.
+//
+// Installed on demand, never once at session start: the tab is opened AT the url, so the document
+// that receives an early definition is the one being replaced by the load, and the helper was gone
+// by the time the probe ran. That surfaced as "window.__entityRows is not a function" on one tab
+// and, worse, as a stale definition quietly answering on another.
+const INSTALL = `(() => {
+  window.__entityRows = () => [...document.querySelectorAll('div.bg-q-panel')].filter(d =>
+    d.querySelector('[title^="Rank across the whole category"]')
+    && [...d.querySelectorAll('span')].some(s => s.textContent.trim() === 'Named Entities'))
+  return typeof window.__entityRows === 'function'
+})()`
 
-async function session(url) {
-  const t = await (await fetch(`http://127.0.0.1:${PORT}/json/new?${encodeURIComponent(url)}`, { method: 'PUT' })).json()
-  const ws = new WebSocket(t.webSocketDebuggerUrl)
-  await new Promise(r => { ws.onopen = r })
-  let id = 0
-  const pending = new Map()
-  ws.onmessage = e => { const m = JSON.parse(e.data); if (m.id && pending.has(m.id)) { pending.get(m.id)(m); pending.delete(m.id) } }
-  const send = (method, params = {}) => new Promise(res => { const n = ++id; pending.set(n, res); ws.send(JSON.stringify({ id: n, method, params })) })
-  await send('Page.enable')
-  const evaluate = async expression => {
-    const r = await send('Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true })
-    try { return JSON.parse(r.result?.result?.value) } catch { return { error: String(r.result?.result?.value).slice(0, 300) } }
-  }
-  // A ROW IS NOT "A PANEL MENTIONING THE SECTION NAME".
-  //
-  // The chart panel is also a .bg-q-panel. Its heading reads "Named Entities vs. Posts per Month" —
-  // and while searching, "Named Entities Timeline — <term>" — so matching on text counted it as a
-  // row (1,184 for 1,183) and returned it as the row for whichever entity was being searched. Its
-  // LEGEND then defeated the next attempt, because that is a span whose whole text is the label.
-  //
-  // What only a result row has is the rank, which carries a title attribute naming what it is.
-  //
-  // Installed on demand, never once at session start: the tab is opened AT the url, so the document
-  // that receives an early definition is the one being replaced by the load, and the helper was gone
-  // by the time the probe ran. That surfaced as "window.__entityRows is not a function" on one tab
-  // and, worse, as a stale definition quietly answering on another.
-  const install = () => evaluate(`(() => {
-    window.__entityRows = () => [...document.querySelectorAll('div.bg-q-panel')].filter(d =>
-      d.querySelector('[title^="Rank across the whole category"]')
-      && [...d.querySelectorAll('span')].some(s => s.textContent.trim() === 'Named Entities'))
-    return JSON.stringify({ ok: typeof window.__entityRows === 'function' })
-  })()`)
-  const close = async () => { ws.close(); await fetch(`http://127.0.0.1:${PORT}/json/close/${t.id}`) }
-  return { evaluate, close, install }
-}
+// The list is up when it has rows AND has printed the "showing N of M" line the row-count assertion
+// reads. Both, because the panels appear before the tally does.
+const LIST_UP = `document.querySelectorAll('div.bg-q-panel').length > 3
+  && /showing\\s+[\\d,]+\\s+of\\s+[\\d,]+/.test(document.body.innerText || '')`
 
 const results = []
 const check = (id, description, ok, detail) => {
@@ -85,18 +65,21 @@ const check = (id, description, ok, detail) => {
 }
 
 console.log(`\nENTITY LIST RECONCILIATION — ${URL_BASE}\n`)
+const started = Date.now()
+const browser = await launch({ mode: 'fresh' })
 
 // ── 1 + 2 + 3: header, row count, and a chip on every row ────────────────────
 {
-  const s = await session(`${URL_BASE}/analysis?tab=namedEntities`)
-  await sleep(14000)
-  await s.install()
+  const page = await browser.page(`${URL_BASE}/analysis?tab=namedEntities`)
+  const up = await page.waitFor(LIST_UP, { timeout: 120000 })
+  if (!up) check('list-renders', 'the Named Entities list renders at all', false, 'never became ready')
+  await page.evaluate(INSTALL)
 
-  const header = await s.evaluate(`(() => {
+  const header = await page.evaluate(`(() => {
     const main = document.querySelector('main') || document.body
-    return JSON.stringify({ head: (main.innerText || '').split(String.fromCharCode(10)).filter(Boolean).slice(0, 8).join(' | ') })
+    return (main.innerText || '').split(String.fromCharCode(10)).filter(Boolean).slice(0, 8).join(' | ')
   })()`)
-  const line = header.head ?? ''
+  const line = typeof header === 'string' ? header : ''
 
   const need = [
     ['total', T.canonicalEntities],
@@ -115,38 +98,45 @@ console.log(`\nENTITY LIST RECONCILIATION — ${URL_BASE}\n`)
     !/\d+\s+repeated/.test(line) && !/found once/.test(line), line.slice(0, 200))
 
   // "showing N of M" names the full unfiltered row count.
-  const shown = await s.evaluate(`(() => {
+  const shown = await page.evaluate(`(() => {
     const m = (document.body.innerText || '').match(/showing\\s+([\\d,]+)\\s+of\\s+([\\d,]+)/)
-    return JSON.stringify({ of: m ? Number(m[2].replace(/,/g, '')) : null })
+    return m ? Number(m[2].replace(/,/g, '')) : null
   })()`)
   check('list-row-count', `the list publishes ${T.publicRows.toLocaleString()} rows`,
-    shown.of === T.publicRows, `page says ${shown.of}`)
+    shown === T.publicRows, `page says ${shown}`)
 
   // Render every row, then look for one without a post chip.
-  await s.evaluate(`(() => {
+  await page.evaluate(`(() => {
     const b = [...document.querySelectorAll('button')].find(x => x.textContent.trim() === 'show all')
     if (b) b.click()
-    return JSON.stringify({ clicked: Boolean(b) })
+    return Boolean(b)
   })()`)
-  await sleep(20000)
+  // THE CONDITION IS THE COUNT THE ARTIFACT PREDICTS. 20s was a guess at how long 1,183 rows take
+  // to mount; this waits for exactly the number the next assertion is about to compare against, and
+  // falls through to that assertion (which then reports the shortfall) if they never arrive.
+  await page.waitFor(`typeof window.__entityRows === 'function'
+    && window.__entityRows().length === ${T.publicRows}`, { timeout: 120000, every: 400 })
 
-  await s.install()
-  const chips = await s.evaluate(`(() => {
+  await page.evaluate(INSTALL)
+  const chips = await page.evaluate(`(() => {
     try {
+      const HASH = String.fromCharCode(35)
+      const isChip = a => { const t = a.textContent.trim()
+        return t.charAt(0) === HASH && t.charAt(1) >= '0' && t.charAt(1) <= '9' }
       const rows = window.__entityRows()
-      const without = rows.filter(d => ![...d.querySelectorAll('a')].some(a => /^#\\d+/.test(a.textContent.trim())))
-      return JSON.stringify({
+      const without = rows.filter(d => ![...d.querySelectorAll('a')].some(isChip))
+      return {
         rows: rows.length,
         without: without.length,
         sample: without.slice(0, 3).map(d => (d.innerText || '').split(String.fromCharCode(10)).slice(0, 3).join(' / ')),
-      })
-    } catch (err) { return JSON.stringify({ thrown: String(err && err.message || err) }) }
+      }
+    } catch (err) { return { thrown: String(err && err.message || err) } }
   })()`)
   check('every-row-has-a-post-chip', 'every rendered row carries at least one post chip',
     chips.rows === T.publicRows && chips.without === 0,
     `${chips.rows} rows rendered, ${chips.without} without a chip ${(chips.sample ?? []).join(' | ')}`)
 
-  await s.close()
+  await page.close()
 }
 
 // ── 4 + 5: a source-only row, labelled ───────────────────────────────────────
@@ -164,25 +154,36 @@ const social = pick('social_account')
 for (const [kind, target] of [['publisher', publisher], ['social_account', social]]) {
   if (!target?.name) { check(`source-row-${kind}`, 'a source-only example exists in the artifact', false, 'none found'); continue }
   const label = view.kindLabels[kind]
-  const s = await session(`${URL_BASE}/analysis?tab=namedEntities&q=${encodeURIComponent(target.name)}`)
-  await sleep(15000)
-  await s.install()
+  const page = await browser.page(`${URL_BASE}/analysis?tab=namedEntities&q=${encodeURIComponent(target.name)}`)
+  await page.waitFor(`document.querySelectorAll('div.bg-q-panel').length > 1`, { timeout: 90000 })
+  await page.evaluate(INSTALL)
   // Identified by its HEADING, not by "a panel whose text contains the name". The name also appears
   // in the chart title when searching, in another row's alias chips, and in the drop text of any
   // opened reader — all of which made the lookup land somewhere that was not the row.
-  const probe = await s.evaluate(`(() => {
+  //
+  // THE ROW ITSELF IS THE CONDITION: a single-result search auto-opens the row's drop reader, so
+  // waiting for the row to exist waits for exactly the state the probe below reads.
+  const ROW = `[...window.__entityRows()].find(d =>
+    [...d.querySelectorAll('button')].some(b => b.textContent.trim() === ${JSON.stringify(target.name)}))`
+  await page.waitFor(`Boolean(${ROW})`, { timeout: 60000, every: 300 })
+  // …and then its chips settling, because the reader mounts a drop card inside the same row.
+  await page.waitForStable(`(${ROW} || document.body).querySelectorAll('a').length`, { timeout: 20000 })
+
+  const probe = await page.evaluate(`(() => {
     try {
+      const HASH = String.fromCharCode(35)
       const rows = window.__entityRows()
-      const row = rows.find(d => [...d.querySelectorAll('button')].some(b => b.textContent.trim() === ${JSON.stringify(target.name)}))
-      if (!row) return JSON.stringify({ found: false, rows: rows.length, headings: rows.slice(0, 5).map(d => (d.innerText || '').split(String.fromCharCode(10)).slice(0, 4).join('/')) })
+      const row = ${ROW}
+      if (!row) return { found: false, rows: rows.length, headings: rows.slice(0, 5).map(d => (d.innerText || '').split(String.fromCharCode(10)).slice(0, 4).join('/')) }
       const text = row.innerText || ''
-      const chips = [...row.querySelectorAll('a')].map(a => a.textContent.trim()).filter(t => /^#\\d+/.test(t))
+      const chips = [...row.querySelectorAll('a')].map(a => a.textContent.trim())
+        .filter(t => t.charAt(0) === HASH && t.charAt(1) >= '0' && t.charAt(1) <= '9')
       // DISTINCT DROPS, not chip elements. A single-result search auto-opens the row's drop reader,
       // and the drop card it mounts carries its own "#2847" link inside the same row — so counting
       // elements reported two chips for a one-source entity. That the reader opens at all is the
       // point: the source post is a real drop a reader can read.
       const posts = [...new Set(chips.map(t => (t.match(/^#(\\d+)/) || [])[1]).filter(Boolean))]
-      return JSON.stringify({
+      return {
         found: true,
         chips,
         posts: posts.length,
@@ -191,15 +192,15 @@ for (const [kind, target] of [['publisher', publisher], ['social_account', socia
         saysMentions: /\\d+\\s+mentions/.test(text),
         explains: /linked this source|not necessarily named/i.test(text),
         sourcesLink: Boolean([...row.querySelectorAll('a')].find(a => (a.getAttribute('href') || '').includes('/sources'))),
-      })
-    } catch (err) { return JSON.stringify({ thrown: String(err && err.message || err) }) }
+      }
+    } catch (err) { return { thrown: String(err && err.message || err) } }
   })()`)
-  await s.close()
+  await page.close()
 
   const expected = (target.row.sourcePosts ?? []).length
   check(`source-row-${kind}-renders`, `${target.name} renders as a row with its ${expected} source chip${expected !== 1 ? 's' : ''}`,
     probe.found && probe.posts === expected,
-    `found=${probe.found} posts=${probe.posts}/${expected} [${(probe.chips ?? []).join(' | ')}] ${probe.thrown ?? ''} ${probe.error ?? ''} ${(probe.headings ?? []).join(' ; ')}`)
+    `found=${probe.found} posts=${probe.posts}/${expected} [${(probe.chips ?? []).join(' | ')}] ${probe.thrown ?? ''} ${probe.__error ?? ''} ${(probe.headings ?? []).join(' ; ')}`)
   check(`source-row-${kind}-labelled`, `every chip is labelled "${label}"`,
     probe.labelled === expected, `${probe.labelled}/${expected} labelled — ${(probe.chips ?? []).slice(0, 3).join(' , ')}`)
   // The "×N source posts" badge only renders from 2 upward, exactly as the post badge does, so a
@@ -213,9 +214,10 @@ for (const [kind, target] of [['publisher', publisher], ['social_account', socia
     probe.sourcesLink === true, `link=${probe.sourcesLink}`)
 }
 
-try { process.kill(-proc.pid) } catch { try { proc.kill() } catch { /* gone */ } }
+await browser.close({ keepWarm: false })
 const failed = results.filter(r => !r.ok)
+console.log(`\n  ${((Date.now() - started) / 1000).toFixed(1)}s`)
 console.log(failed.length
-  ? `\n  ${failed.length} of ${results.length} checks FAILED\n`
-  : `\n  all ${results.length} checks pass\n`)
+  ? `  ${failed.length} of ${results.length} checks FAILED\n`
+  : `  all ${results.length} checks pass\n`)
 process.exit(failed.length ? 1 : 0)

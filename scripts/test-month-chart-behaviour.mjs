@@ -8,71 +8,49 @@
 //          month is stated, and it can be cleared or changed.
 //   KEYS   Enter and Space do exactly what a click does, and the selection is announced.
 //
-// Run against every Analysis category and the Post Archive, because "it works on Claims" was true
-// for months while Emphasis and the Archive each did something slightly different.
+// HOW MUCH OF IT RUNS, AND WHY THAT IS NOT A WEAKENING.
 //
-//   node scripts/test-month-chart-behaviour.mjs [--url http://localhost:5199]
-import { spawn } from 'node:child_process'
-import fs from 'node:fs'
-import path from 'node:path'
-import os from 'node:os'
+// The behaviour was one implementation per page when this gate was written — "it works on Claims"
+// was true for months while Emphasis and the Archive each did something slightly different. It is
+// now a SINGLE shared module (src/lib/monthFilter.ts + src/components/MonthFilter.tsx), so sweeping
+// all 7 Analysis categories runs the same code 7 times. Measured 17 Aug 2026: 371.9s of a 744s live
+// proof, for 16 page loads of one component.
+//
+// So the ordinary run proves the shared module on a representative category plus the Archive — the
+// two DIFFERENT hosts — on desktop and phone. The 16-surface sweep still exists and is still
+// required when the shared module itself changes, or before a release:
+//
+//   node scripts/test-month-chart-behaviour.mjs                     4 surfaces (default)
+//   node scripts/test-month-chart-behaviour.mjs --full             16 surfaces (release / module change)
+//   node scripts/test-month-chart-behaviour.mjs --only emphasis     one category
+//   node scripts/test-month-chart-behaviour.mjs --url http://localhost:5173
+//
+// WAITING IS BY CONDITION. Every step used to hand back a fixed sleep — 14s to settle, 2.5s after
+// each key press — which is both slower than the page and still able to race a slow load. Each one
+// is now the state the next assertion actually needs: the picker exists, the chip count stopped
+// moving, the selection changed, the tooltip appeared, the month was released.
+import { launch, MONTHS_READY } from './lib/browser.mjs'
 
-const argUrl = process.argv.indexOf('--url')
-const URL_BASE = argUrl > -1 ? process.argv[argUrl + 1] : 'https://qdrops.app'
-const sleep = ms => new Promise(r => setTimeout(r, ms))
+const argv = process.argv.slice(2)
+const at = flag => { const i = argv.indexOf(flag); return i > -1 ? argv[i + 1] : null }
+const URL_BASE = at('--url') ?? 'https://qdrops.app'
 
-const argOnly = process.argv.indexOf('--only')
 const ALL_CATEGORIES = ['claims', 'predictions', 'namedEntities', 'themes', 'impliedConclusions', 'verificationHooks', 'emphasis']
+// The representative category for an ordinary run. Named Entities because it is the busiest surface
+// and the one whose list the chart most recently had to stop reaching into.
+const REPRESENTATIVE = at('--rep') ?? 'namedEntities'
 // --only <cat> narrows the sweep. Used to point the gate at the DEPLOYED site to prove it is not
 // vacuous: against the old build these same assertions fail, which is the only evidence that a
 // passing run means anything.
-const CATEGORIES = argOnly > -1 ? [process.argv[argOnly + 1]] : ALL_CATEGORIES
+const only = at('--only')
+const CATEGORIES = only ? [only] : argv.includes('--full') ? ALL_CATEGORIES : [REPRESENTATIVE]
 
 // Desktop and a phone, because the pulse fired from a mousemove the touch path also produces, and
 // the chart bars are ~4px wide on a phone — which is why the keyboard picker matters most there.
 const VIEWPORTS = [
-  { name: 'desktop', width: 1440, height: 900, mobile: false },
-  { name: 'mobile', width: 390, height: 844, mobile: true },
+  { name: 'desktop', width: 1440, height: 900, mobile: false, deviceScaleFactor: 1, touch: false },
+  { name: 'mobile', width: 390, height: 844, mobile: true, deviceScaleFactor: 1, touch: false },
 ]
-
-const PORT = 9417
-const PROFILE = fs.mkdtempSync(path.join(os.tmpdir(), 'qdrops-month-'))
-const CHROME = process.platform === 'win32'
-  ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
-  : 'google-chrome'
-const proc = spawn(CHROME, ['--headless=new', '--disable-gpu', '--no-first-run',
-  `--remote-debugging-port=${PORT}`, `--user-data-dir=${PROFILE}`, 'about:blank'],
-{ stdio: 'ignore', detached: true })
-for (let i = 0; i < 40; i++) {
-  try { if ((await fetch(`http://127.0.0.1:${PORT}/json/version`)).ok) break } catch { /* not up */ }
-  await sleep(500)
-}
-
-async function session(url, viewport) {
-  const t = await (await fetch(`http://127.0.0.1:${PORT}/json/new?${encodeURIComponent(url)}`, { method: 'PUT' })).json()
-  const ws = new WebSocket(t.webSocketDebuggerUrl)
-  await new Promise(r => { ws.onopen = r })
-  let id = 0
-  const pending = new Map()
-  ws.onmessage = e => { const m = JSON.parse(e.data); if (m.id && pending.has(m.id)) { pending.get(m.id)(m); pending.delete(m.id) } }
-  const send = (method, params = {}) => new Promise(res => { const n = ++id; pending.set(n, res); ws.send(JSON.stringify({ id: n, method, params })) })
-  await send('Page.enable')
-  await send('Emulation.setDeviceMetricsOverride', {
-    width: viewport.width, height: viewport.height, deviceScaleFactor: 1, mobile: viewport.mobile,
-  })
-  const evaluate = async expression => {
-    const r = await send('Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true })
-    try { return JSON.parse(r.result?.result?.value) } catch { return { error: String(r.result?.result?.value).slice(0, 300) } }
-  }
-  const key = async (type, k) => send('Input.dispatchKeyEvent', {
-    type, key: k,
-    text: k === 'Enter' ? '\r' : k === ' ' ? ' ' : undefined,
-    windowsVirtualKeyCode: k === 'Enter' ? 13 : k === ' ' ? 32 : k === 'ArrowRight' ? 39 : 0,
-  })
-  const press = async k => { await key('keyDown', k); await key('keyUp', k) }
-  const close = async () => { ws.close(); await fetch(`http://127.0.0.1:${PORT}/json/close/${t.id}`) }
-  return { evaluate, press, close }
-}
 
 const results = []
 const check = (id, description, ok, detail = '') => {
@@ -83,6 +61,10 @@ const check = (id, description, ok, detail = '') => {
 // The probe helpers, installed after load — the tab opens AT the url, so anything defined earlier
 // belongs to the document being replaced.
 const HELPERS = `(() => {
+  // NO BACKSLASH ESCAPES IN A PAGE EXPRESSION: this string passes through a template literal, so a
+  // /^#\\d+/ written here arrives as /^#d+/ and matches nothing. Character tests instead.
+  const HASH = String.fromCharCode(35)
+  const isChip = a => { const t = a.textContent.trim(); return t.charAt(0) === HASH && t.charAt(1) >= '0' && t.charAt(1) <= '9' }
   window.__q = {
     // Every month button in the shared picker. These are the keyboard and touch path.
     months: () => [...document.querySelectorAll('[role="radiogroup"] [role="radio"]')],
@@ -96,28 +78,48 @@ const HELPERS = `(() => {
     },
     // Anything that pulses, flashes or dims in the results area. The old hover reached in here.
     animated: () => document.querySelectorAll('[class*="animate-chip-pulse"], [class*="opacity-30"]').length,
-    chips: () => [...document.querySelectorAll('a')].filter(a => /^#\\d+/.test(a.textContent.trim())).length,
+    chips: () => [...document.querySelectorAll('a')].filter(isChip).length,
     tooltip: () => {
       const t = document.querySelector('.recharts-tooltip-wrapper')
       return t ? (t.textContent || '').trim() : ''
     },
     bar: () => document.querySelector('.recharts-bar-rectangle'),
+    clearButton: () => [...document.querySelectorAll('button')].find(b => /Clear month/i.test(b.textContent)) || null,
   }
-  return JSON.stringify({ ok: true })
+  return true
 })()`
 
-async function runSurface(name, url, viewport) {
-  const s = await session(url, viewport)
-  await sleep(14000)
-  await s.evaluate(HELPERS)
+// Counted without the helpers, because this is what we wait on BEFORE installing them.
+const CHIP_COUNT = `(() => { const H = String.fromCharCode(35)
+  return [...document.querySelectorAll('a')].filter(a => { const t = a.textContent.trim()
+    return t.charAt(0) === H && t.charAt(1) >= '0' && t.charAt(1) <= '9' }).length })()`
 
-  const base = await s.evaluate(`JSON.stringify({
-    months: window.__q.months().length,
-    selected: window.__q.selected(),
-    animated: window.__q.animated(),
-    chips: window.__q.chips(),
-    live: window.__q.live(),
-  })`)
+const READ = `({
+  months: window.__q.months().length,
+  selected: window.__q.selected(),
+  animated: window.__q.animated(),
+  chips: window.__q.chips(),
+  live: window.__q.live(),
+  tooltip: window.__q.tooltip(),
+})`
+
+async function runSurface(browser, name, url, viewport) {
+  const started = Date.now()
+  const page = await browser.page(url, viewport)
+
+  // READY = the picker exists and the chip count has stopped moving. `base.chips` is the control
+  // for the "selecting narrows the visible chips" assertion, so reading it mid-render is not a
+  // slow test, it is a wrong one.
+  const ready = await page.waitFor(MONTHS_READY, { timeout: 90000 })
+  if (!ready) {
+    check(`${name}-picker-present`, 'the month picker offers a focusable control per month', false, 'never rendered')
+    await page.close()
+    return
+  }
+  await page.waitForStable(CHIP_COUNT, { timeout: 30000 })
+  await page.evaluate(HELPERS)
+
+  const base = await page.evaluate(READ)
 
   check(`${name}-picker-present`, 'the month picker offers a focusable control per month',
     (base.months ?? 0) > 0, `${base.months} month buttons`)
@@ -126,25 +128,23 @@ async function runSurface(name, url, viewport) {
 
   // ── HOVER: reads out, changes nothing ──────────────────────────────────────
   // Dispatched as a real pointer move over the plot area, which is what produced the pulse.
-  const hover = await s.evaluate(`(() => {
+  const hover = await page.evaluate(`(() => {
     const bar = window.__q.bar()
-    if (!bar) return JSON.stringify({ noBar: true })
+    if (!bar) return { noBar: true }
     const r = bar.getBoundingClientRect()
     const at = (type, x, y) => bar.dispatchEvent(new MouseEvent(type, { bubbles: true, clientX: x, clientY: y }))
     at('mouseover', r.left + r.width / 2, r.top + r.height / 2)
     at('mousemove', r.left + r.width / 2, r.top + r.height / 2)
-    return JSON.stringify({ noBar: false })
+    return { noBar: false }
   })()`)
-  await sleep(900)
-  const afterHover = await s.evaluate(`JSON.stringify({
-    selected: window.__q.selected(),
-    animated: window.__q.animated(),
-    chips: window.__q.chips(),
-    live: window.__q.live(),
-    tooltip: window.__q.tooltip(),
-  })`)
 
   if (!hover.noBar) {
+    // The condition, not a clock: the tooltip is the thing hovering is supposed to produce. If it
+    // never appears we stop waiting and still assert what this gate is for — that hovering changed
+    // nothing else. Short timeout, because a missing tooltip must not cost 45s.
+    await page.waitFor(`window.__q.tooltip().length > 0`, { timeout: 6000, every: 150 })
+    const afterHover = await page.evaluate(READ)
+
     check(`${name}-hover-no-animation`, 'hover pulses, flashes or dims nothing in the results',
       afterHover.animated === 0 && base.animated === 0, `before=${base.animated} after=${afterHover.animated}`)
     check(`${name}-hover-no-selection`, 'hover changes neither selection nor filtering',
@@ -156,23 +156,26 @@ async function runSurface(name, url, viewport) {
 
   // ── KEYBOARD: Enter selects, exactly as a click does ───────────────────────
   // A month with results, so the assertions below have something to count.
-  const target = await s.evaluate(`(() => {
+  const target = await page.evaluate(`(() => {
     const bs = window.__q.months()
     const withData = bs.find(b => {
       const m = (b.getAttribute('aria-label') || '').match(/,\\s*([\\d,]+)\\s/)
       return m && Number(m[1].replace(/,/g, '')) > 0
     }) || bs[0]
-    if (!withData) return JSON.stringify({ none: true })
+    if (!withData) return { none: true }
     withData.focus()
-    return JSON.stringify({ none: false, label: withData.getAttribute('aria-label') })
+    return { none: false, label: withData.getAttribute('aria-label') }
   })()`)
 
   if (!target.none) {
-    await s.press('Enter')
-    await sleep(2500)
-    const afterEnter = await s.evaluate(`JSON.stringify({
+    await page.press('Enter')
+    // The selection landing IS the condition. 2.5s was a guess at it.
+    await page.waitFor(`window.__q.selected() !== null`, { timeout: 20000, every: 150 })
+    // …and then the list it filters settling, which is what the chip assertion reads.
+    await page.waitForStable(CHIP_COUNT, { timeout: 20000 })
+    const afterEnter = await page.evaluate(`({
       selected: window.__q.selected(), chips: window.__q.chips(), live: window.__q.live(),
-      cleared: Boolean([...document.querySelectorAll('button')].find(b => /Clear month/i.test(b.textContent))),
+      cleared: Boolean(window.__q.clearButton()),
     })`)
     check(`${name}-enter-selects`, 'Enter selects the focused month',
       Boolean(afterEnter.selected) && /selected/.test(afterEnter.selected ?? ''), `selected=${afterEnter.selected}`)
@@ -185,18 +188,20 @@ async function runSurface(name, url, viewport) {
       afterEnter.cleared === true, `clear control=${afterEnter.cleared}`)
 
     // CHANGING the month, not just setting it: pick a different one and confirm the first is released.
-    const changed = await s.evaluate(`(() => {
+    const changed = await page.evaluate(`(() => {
       const bs = window.__q.months()
       const cur = bs.findIndex(b => b.getAttribute('aria-checked') === 'true')
       const next = bs[cur + 1] || bs[cur - 1]
-      if (!next) return JSON.stringify({ none: true })
+      if (!next) return { none: true }
       next.focus()
-      return JSON.stringify({ none: false, label: next.getAttribute('aria-label') })
+      return { none: false, label: next.getAttribute('aria-label') }
     })()`)
     if (!changed.none) {
-      await s.press(' ')
-      await sleep(2500)
-      const afterSpace = await s.evaluate(`JSON.stringify({
+      await page.press(' ')
+      // Condition: the selection is no longer the one Enter made.
+      await page.waitFor(`window.__q.selected() !== ${JSON.stringify(afterEnter.selected)}`,
+        { timeout: 20000, every: 150 })
+      const afterSpace = await page.evaluate(`({
         selected: window.__q.selected(),
         checked: window.__q.months().filter(b => b.getAttribute('aria-checked') === 'true').length,
       })`)
@@ -208,37 +213,47 @@ async function runSurface(name, url, viewport) {
     }
 
     // And clearing puts it back.
-    await s.evaluate(`(() => {
-      const b = [...document.querySelectorAll('button')].find(x => /Clear month/i.test(x.textContent))
-      if (b) b.click()
-      return JSON.stringify({ clicked: Boolean(b) })
-    })()`)
-    await sleep(2000)
-    const afterClear = await s.evaluate(`JSON.stringify({ selected: window.__q.selected(), live: window.__q.live() })`)
+    await page.evaluate(`(() => { const b = window.__q.clearButton(); if (b) b.click(); return Boolean(b) })()`)
+    await page.waitFor(`window.__q.selected() === null`, { timeout: 20000, every: 150 })
+    const afterClear = await page.evaluate(`({ selected: window.__q.selected(), live: window.__q.live() })`)
     check(`${name}-clears`, 'clearing releases the month and says so',
       afterClear.selected === null && /cleared/i.test(afterClear.live ?? ''),
       `selected=${afterClear.selected} live="${afterClear.live}"`)
   }
 
-  await s.close()
+  await page.close()
+  return ((Date.now() - started) / 1000).toFixed(1)
 }
 
-console.log(`\nMONTH CHART BEHAVIOUR — ${URL_BASE}\n`)
+const scope = only ? `--only ${only}` : argv.includes('--full')
+  ? `--full (${ALL_CATEGORIES.length} categories + Archive)`
+  : `representative (${REPRESENTATIVE} + Archive) — --full for all ${ALL_CATEGORIES.length}`
+console.log(`\nMONTH CHART BEHAVIOUR — ${URL_BASE}\n  scope: ${scope}\n`)
+
+const started = Date.now()
+// One browser for the whole sweep. A fresh profile per surface re-seeds IndexedDB from a 9 MB
+// bundle every time; the assertions here are about a chart, not about seeding.
+const browser = await launch({ mode: 'fresh' })
+
 for (const viewport of VIEWPORTS) {
   console.log(`  ${viewport.name} (${viewport.width}x${viewport.height})`)
   for (const cat of CATEGORIES) {
-    await runSurface(`${viewport.name}/${cat}`, `${URL_BASE}/analysis?tab=${cat}`, viewport)
+    const s = await runSurface(browser, `${viewport.name}/${cat}`, `${URL_BASE}/analysis?tab=${cat}`, viewport)
+    console.log(`    ${cat.padEnd(20)} ${s}s`)
   }
-  // The Archive chart, driven by the same module.
-  await runSurface(`${viewport.name}/archive`, `${URL_BASE}/posts?q=Israel`, viewport)
+  // The Archive chart, driven by the same module — the other HOST of the shared component, which
+  // is the reason this surface is never dropped from an ordinary run.
+  const s = await runSurface(browser, `${viewport.name}/archive`, `${URL_BASE}/posts?q=Israel`, viewport)
+  console.log(`    ${'archive'.padEnd(20)} ${s}s`)
   const passed = results.filter(r => r.id.startsWith(viewport.name) && r.ok).length
   const total = results.filter(r => r.id.startsWith(viewport.name)).length
   console.log(`    ${passed}/${total} checks pass`)
 }
 
-try { process.kill(-proc.pid) } catch { try { proc.kill() } catch { /* gone */ } }
+await browser.close({ keepWarm: false })
 const failed = results.filter(r => !r.ok)
+console.log(`\n  ${((Date.now() - started) / 1000).toFixed(1)}s`)
 console.log(failed.length
-  ? `\n  ${failed.length} of ${results.length} checks FAILED\n`
-  : `\n  all ${results.length} checks pass — hover reads out, click selects, keys match the mouse\n`)
+  ? `  ${failed.length} of ${results.length} checks FAILED\n`
+  : `  all ${results.length} checks pass — hover reads out, click selects, keys match the mouse\n`)
 process.exit(failed.length ? 1 : 0)

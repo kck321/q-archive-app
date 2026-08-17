@@ -8,48 +8,36 @@
 // reader actually sees, which is not the same claim.
 //
 //   node scripts/verify-section-headlines.mjs [--url https://qdrops.app]
-import { spawn } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
-import os from 'node:os'
 import { fileURLToPath } from 'node:url'
+import { launch, CHIPS_READY } from './lib/browser.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 
 const argUrl = process.argv.indexOf('--url')
 const URL_BASE = argUrl > -1 ? process.argv[argUrl + 1] : 'https://qdrops.app'
-const CHROME = ['C:/Program Files/Google/Chrome/Application/chrome.exe',
-  'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
-  'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'].find(p => fs.existsSync(p))
-if (!CHROME) { console.error('No Chrome or Edge found.'); process.exit(1) }
 
-const sleep = ms => new Promise(r => setTimeout(r, ms))
-const PORT = 9411
-const PROFILE = path.join(os.tmpdir(), 'qdrops-headlines')
-fs.rmSync(PROFILE, { recursive: true, force: true })
-fs.mkdirSync(PROFILE, { recursive: true })
-const proc = spawn(CHROME, ['--headless=new', '--disable-gpu', '--no-first-run',
-  `--remote-debugging-port=${PORT}`, `--user-data-dir=${PROFILE}`, 'about:blank'],
-  { stdio: 'ignore', detached: true })
-for (let i = 0; i < 40; i++) {
-  try { if ((await fetch(`http://127.0.0.1:${PORT}/json/version`)).ok) break } catch { /* not up */ }
-  await sleep(500)
-}
+const browser = await launch({ mode: 'fresh' })
 
-async function run(url, expression, settle = 15000) {
-  const t = await (await fetch(`http://127.0.0.1:${PORT}/json/new?${encodeURIComponent(url)}`, { method: 'PUT' })).json()
-  const ws = new WebSocket(t.webSocketDebuggerUrl)
-  await new Promise(r => { ws.onopen = r })
-  let id = 0
-  const pending = new Map()
-  ws.onmessage = e => { const m = JSON.parse(e.data); if (m.id && pending.has(m.id)) { pending.get(m.id)(m); pending.delete(m.id) } }
-  const send = (method, params = {}) => new Promise(res => { const n = ++id; pending.set(n, res); ws.send(JSON.stringify({ id: n, method, params })) })
-  await send('Page.enable')
-  await sleep(settle)
-  const r = await send('Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true })
-  ws.close()
-  await fetch(`http://127.0.0.1:${PORT}/json/close/${t.id}`)
-  try { return JSON.parse(r.result?.result?.value) } catch { return { error: String(r.result?.result?.value).slice(0, 200) } }
+// THE HEADLINE IS BOTH THE ASSERTION AND THE WAIT. This paid a flat 15s per section — 105s for
+// seven pages — to reach a state the page announces.
+//
+// CHIPS_READY, not "rows exist": the section header paints before the frequency index lands, so a
+// gate that reads it too early compares a placeholder to a certified figure and reports a working
+// headline broken. Rows carrying post chips means the index arrived; the header then only has to
+// stop moving.
+const HEADER = `((document.querySelector('main') || document.body).innerText || '')
+  .split(String.fromCharCode(10)).filter(Boolean).slice(0, 10).join(' | ')`
+
+async function run(url, expression) {
+  const page = await browser.page(url)
+  const ready = await page.waitFor(CHIPS_READY, { timeout: 90000 })
+  if (ready) await page.waitForStable(HEADER, { stableFor: 3, every: 400, timeout: 30000 })
+  const v = await page.evaluate(expression)
+  await page.close()
+  if (!ready) return { error: 'the section never rendered rows carrying post chips' }
+  try { return typeof v === 'string' ? JSON.parse(v) : v } catch { return { error: String(v).slice(0, 200) } }
 }
 
 // The contract, read from the one place that declares it rather than transcribed here.
@@ -109,6 +97,6 @@ for (const [tab, occ, posts, unit] of EXPECT) {
   if (!ok) console.log(`        occ=${okOcc} posts=${okPosts} unit=${okUnit}${missingEntity.length ? ` missingEntityFigures=${missingEntity.join(',')}` : ''}`)
 }
 
-try { process.kill(-proc.pid) } catch { try { proc.kill() } catch { /* gone */ } }
+await browser.close({ keepWarm: false })
 console.log(failed ? `\n  ${failed} of ${EXPECT.length} headlines wrong\n` : `\n  all ${EXPECT.length} headlines match the certified contract\n`)
 process.exit(failed ? 1 : 0)
