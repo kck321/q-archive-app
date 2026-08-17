@@ -34,9 +34,13 @@ export function urlSpans(text) {
 export function aliasLocation(text, alias) {
   const src = String(text ?? '')
   const spans = urlSpans(src)
-  const fold = s => String(s).toLowerCase().replace(/%[0-9a-f]{2}/gi, ' ').replace(/[^a-z0-9]+/g, ' ').trim()
+  // WORD BOUNDARIES, NOT SUBSTRINGS. Folding punctuation to spaces turns the text into tokens, and
+  // a plain `includes` then matches "US" inside "becaUSe", "mUSt" and "trUSted" — invariant 4, one
+  // layer down. Padding both sides makes the space itself the boundary, which works for multi-word
+  // aliases too without a regex per alias.
+  const fold = s => ` ${String(s).toLowerCase().replace(/%[0-9a-f]{2}/gi, ' ').replace(/[^a-z0-9]+/g, ' ').trim()} `
   const needle = fold(alias)
-  if (!needle) return { inProse: false, inUrl: false, urlParts: [] }
+  if (needle.trim() === '') return { inProse: false, inUrl: false, urlParts: [] }
 
   // Prose = everything outside the URL spans.
   let prose = ''

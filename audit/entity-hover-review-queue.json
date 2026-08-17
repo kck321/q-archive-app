@@ -1,15 +1,15 @@
 {
  "note": "Entity hover synopses awaiting an editorial decision. ADMIN ONLY — deliberately not under public/data. Each carries both proposed synopses, the drop text the reading came from, the support grade, and why it is here.",
- "total": 3144,
+ "total": 3145,
  "byReason": {
   "the audit graded this reading as needing human review": 2931,
   "the alias belongs to more than one entity; occurrence-level context must decide which": 24,
-  "evidence is graded Insufficient": 189
+  "evidence is graded Insufficient": 190
  },
  "bySupport": {
   "Partial": 1274,
   "Strong": 1088,
-  "Insufficient": 782
+  "Insufficient": 783
  },
  "records": [
   {
@@ -5572,6 +5572,8 @@
    "status": "Human review before publish",
    "verdict": "review",
    "verdictReason": "the audit graded this reading as needing human review",
+   "urlDerived": true,
+   "urlClass": "url_path_fragment",
    "canonical": "United States",
    "entityType": "country_region",
    "aliases": [
@@ -89201,6 +89203,35 @@
    "globalSynopsis": "“@JeffDeRiso” is categorized in this archive as a coded alias. It appears 2 times across 2 posts.",
    "sharedAlias": false,
    "registryCorrected": false
+  },
+  {
+   "entityId": "qe-ed7af8c981ab",
+   "postNum": 4164,
+   "auditOccurrenceId": "ENT-0633-P4164",
+   "auditEntityId": "ENT-0633",
+   "matchedAlias": "George H.W. Bush",
+   "localRole": "question",
+   "synopsis": "In post #4164, “George H. W. Bush” appears in a question: “What Farm born assets elected to Congress? What Farm born assets are attempting to get elected to Congress? What is the primary party to which they serve? [D] How do you control your own budget? How do you…” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as George H. W. Bush. The passage asks about the connection rather than establishing it.",
+   "contextSupport": "Insufficient",
+   "evidenceConfidence": "Review",
+   "evidenceBasis": "The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned.",
+   "sourceContext": "What Farm born assets elected to Congress? What Farm born assets are attempting to get elected to Congress? What is the primary party to which they serve? [D] How do you control your own budget? How do you control agency regs? How do you control your own destiny?…",
+   "glossaryMeaning": "George H. W. Bush",
+   "status": "Merge entity rows before publish",
+   "rewordedFrom": [
+    "\"George H.W. Bush\" -> \"George H. W. Bush\""
+   ],
+   "verdict": "review",
+   "verdictReason": "evidence is graded Insufficient",
+   "canonical": "George H. W. Bush",
+   "entityType": "person",
+   "aliases": [
+    "GHWB",
+    "George H.W. Bush"
+   ],
+   "globalSynopsis": "“George H. W. Bush” is categorized in this archive as a person. It appears 2 times across 2 posts.",
+   "sharedAlias": false,
+   "registryCorrected": true
   },
   {
    "entityId": "qe-359da756e27d",

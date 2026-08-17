@@ -641,7 +641,10 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     for (const [id, byPost] of Object.entries(hov.byPost ?? {})) {
       for (const [pn, v] of Object.entries(byPost)) published.push({ id, postNum: Number(pn), ...v })
     }
-    t('hover-count', 'published post synopses = 4,156', published.length === 4156, published.length)
+    // 4,156 -> 4,177: the URL detector was matching substrings, so "US" registered inside
+    // "because" and 21 records were quarantined as URL-derived when their alias was ordinary
+    // prose. Found by scripts/test-url-detection.mjs while writing the prevention tests.
+    t('hover-count', 'published post synopses = 4,177', published.length === 4177, published.length)
     t('hover-globals', 'one global synopsis per live entity',
       Object.keys(hov.global ?? {}).length === CANONICAL.entities.canonical, Object.keys(hov.global ?? {}).length)
 

@@ -1,7 +1,7 @@
 {
  "note": "Hover records whose entity was matched ONLY inside a URL, never in the prose of the drop. Quarantined out of the public bundle pending an owner policy ruling. No certified entity count has been changed.",
  "category": "url_derived_entity_occurrence",
- "total": 441,
+ "total": 419,
  "classMeanings": {
   "hostname_source_reference": "the domain identifies the linked publisher or organisation",
   "human_readable_link_label": "visible link text explicitly names the entity",
@@ -10,9 +10,9 @@
   "ambiguous_url_reference": "the evidence does not support an automatic decision"
  },
  "byClass": {
-  "url_path_fragment": 330,
-  "ambiguous_url_reference": 7,
-  "hostname_source_reference": 103,
+  "url_path_fragment": 314,
+  "hostname_source_reference": 98,
+  "ambiguous_url_reference": 6,
   "url_query_fragment": 1
  },
  "recommendation": {
@@ -46,32 +46,6 @@
     "POTUS"
    ],
    "globalSynopsis": "Within this archive, “POTUS” is used for President of the United States and is categorized as a title or public role. It appears 370 times across 370 posts.",
-   "sharedAlias": false,
-   "registryCorrected": false
-  },
-  {
-   "entityId": "qe-2df6a50f6a0e",
-   "postNum": 3650,
-   "auditOccurrenceId": "ENT-0006-P3650",
-   "auditEntityId": "ENT-0006",
-   "matchedAlias": "God",
-   "localRole": "source or link reference",
-   "synopsis": "In post #3650, “God” appears in a source or link reference: “[Sample] http://twitter.com/nytimes/status/1203031379413520384 http://twitter.com/JuliaHarte1/status/1202994568125440000 http://twitter.com/pbump/status/1202989929153871872…” The post directly uses a registry alias, but the abbreviated form needs the surrounding passage to confirm the referent. This gives partial contextual support for identifying it as God. The synopsis explains the label's role in the passage without treating nearby implications as verified facts.",
-   "contextSupport": "Partial",
-   "evidenceConfidence": "Medium",
-   "evidenceBasis": "The post directly uses a registry alias, but the abbreviated form needs the surrounding passage to confirm the referent.",
-   "sourceContext": "[Sample] http://twitter.com/nytimes/status/1203031379413520384 http://twitter.com/JuliaHarte1/status/1202994568125440000 http://twitter.com/pbump/status/1202989929153871872 http://twitter.com/stanveuger/status/1202976120976621569 http://twitter.com/samueloakford/status/1202975001634385922 http://twitter.com/JoeMyGod/status/1202969579221241857…",
-   "glossaryMeaning": null,
-   "status": "Ready for first-pass publish",
-   "verdict": "quarantine",
-   "verdictReason": "the term appears only inside a URL, never in the drop's prose",
-   "urlClass": "url_path_fragment",
-   "canonical": "God",
-   "entityType": "religious_spiritual",
-   "aliases": [
-    "God"
-   ],
-   "globalSynopsis": "“God” is categorized in this archive as a religious or spiritual reference. It appears 204 times across 204 posts.",
    "sharedAlias": false,
    "registryCorrected": false
   },
@@ -117,7 +91,7 @@
    "status": "Ready for first-pass publish",
    "verdict": "quarantine",
    "verdictReason": "the term appears only inside a URL, never in the drop's prose",
-   "urlClass": "ambiguous_url_reference",
+   "urlClass": "url_path_fragment",
    "canonical": "John McCain",
    "entityType": "person",
    "aliases": [
@@ -514,32 +488,6 @@
   },
   {
    "entityId": "qe-b0a544a47108",
-   "postNum": 2495,
-   "auditOccurrenceId": "ENT-0091-P2495",
-   "auditEntityId": "ENT-0091",
-   "matchedAlias": "Grassley",
-   "localRole": "source or link reference",
-   "synopsis": "In post #2495, “Grassley” appears in a source or link reference: “https://twitter.com/LisaMei62/status/1065067172429529088 TOGETHER WE WIN. Attacks on WHITAKER will only intensify. SENATE WAS THE TARGET. 53-47…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Grassley. The synopsis explains the label's role in the passage without treating nearby implications as verified facts.",
-   "contextSupport": "Strong",
-   "evidenceConfidence": "High",
-   "evidenceBasis": "The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading.",
-   "sourceContext": "https://twitter.com/LisaMei62/status/1065067172429529088 TOGETHER WE WIN. Attacks on WHITAKER will only intensify. SENATE WAS THE TARGET. 53-47 https://www.reuters.com/article/us-usa-senate-committees/senate-judiciary-chair-grassleys-move-to-leave-key-opening-idUSKCN1NL231 Q",
-   "glossaryMeaning": null,
-   "status": "Ready for first-pass publish",
-   "verdict": "quarantine",
-   "verdictReason": "the term appears only inside a URL, never in the drop's prose",
-   "urlClass": "url_path_fragment",
-   "canonical": "Grassley",
-   "entityType": "person",
-   "aliases": [
-    "Grassley"
-   ],
-   "globalSynopsis": "“Grassley” is categorized in this archive as a person. It appears 15 times across 15 posts.",
-   "sharedAlias": false,
-   "registryCorrected": false
-  },
-  {
-   "entityId": "qe-b0a544a47108",
    "postNum": 3563,
    "auditOccurrenceId": "ENT-0091-P3563",
    "auditEntityId": "ENT-0091",
@@ -667,32 +615,6 @@
    "globalSynopsis": "“Grassley” is categorized in this archive as a person. It appears 15 times across 15 posts.",
    "sharedAlias": false,
    "registryCorrected": false
-  },
-  {
-   "entityId": "qe-104df6bf0208",
-   "postNum": 3900,
-   "auditOccurrenceId": "ENT-0101-P3900",
-   "auditEntityId": "ENT-0101",
-   "matchedAlias": "President",
-   "localRole": "source or link reference",
-   "synopsis": "In post #3900, “President” appears in a source or link reference: “https://www.nytimes.com/1863/09/16/archives/presidents-proclamation-the-habeas-corpus-suspended-throughout-the.html 2381.Treason. 2382.Misprision of treason. 2383.Rebellion or insurrection. 2384.Seditious…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as President. The synopsis explains the label's role in the passage without treating nearby implications as verified facts.",
-   "contextSupport": "Strong",
-   "evidenceConfidence": "High",
-   "evidenceBasis": "The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading.",
-   "sourceContext": "https://www.nytimes.com/1863/09/16/archives/presidents-proclamation-the-habeas-corpus-suspended-throughout-the.html 2381.Treason. 2382.Misprision of treason. 2383.Rebellion or insurrection. 2384.Seditious conspiracy. 2385.Advocating overthrow of Government. 2386.Registration of certain organizations. 2387.Activities affecting armed forces generally.…",
-   "glossaryMeaning": null,
-   "status": "Correct entity type before publish",
-   "verdict": "quarantine",
-   "verdictReason": "the term appears only inside a URL, never in the drop's prose",
-   "urlClass": "url_path_fragment",
-   "canonical": "President",
-   "entityType": "title_role",
-   "aliases": [
-    "President"
-   ],
-   "globalSynopsis": "“President” is categorized in this archive as a title or public role. It appears 13 times across 13 posts.",
-   "sharedAlias": false,
-   "registryCorrected": true
   },
   {
    "entityId": "qe-ce9b4b609ab5",
@@ -2218,32 +2140,6 @@
   },
   {
    "entityId": "qe-2cf9f642e53c",
-   "postNum": 1750,
-   "auditOccurrenceId": "ENT-0163-P1750",
-   "auditEntityId": "ENT-0163",
-   "matchedAlias": "MSNBC",
-   "localRole": "source or link reference",
-   "synopsis": "In post #1750, “MSNBC” appears in a source or link reference: “https://www.realclearpolitics.com/video/2018/07/20/msnbcs_ali_velshi_apple_and_google_profiting_from_apps_promoting_qanon_pizzagate_conspiracy_theories.html They do not want you asking questions. They do not…” US cable news network, originally a Microsoft and NBC joint venture. This gives strong contextual support for identifying it as MSNBC. The synopsis explains the label's role in the passage without treating nearby implications as verified facts.",
-   "contextSupport": "Strong",
-   "evidenceConfidence": "High",
-   "evidenceBasis": "The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading.",
-   "sourceContext": "https://www.realclearpolitics.com/video/2018/07/20/msnbcs_ali_velshi_apple_and_google_profiting_from_apps_promoting_qanon_pizzagate_conspiracy_theories.html They do not want you asking questions. They do not want you thinking for yourself. They do not want you UNITED. They want you to live in FEAR/DIVIDED. They want you asleep. They want you blind. The…",
-   "glossaryMeaning": "MSNBC",
-   "status": "Ready for first-pass publish",
-   "verdict": "quarantine",
-   "verdictReason": "the term appears only inside a URL, never in the drop's prose",
-   "urlClass": "url_path_fragment",
-   "canonical": "MSNBC",
-   "entityType": "media_organization",
-   "aliases": [
-    "MSNBC"
-   ],
-   "globalSynopsis": "“MSNBC” is categorized in this archive as a media organization. US cable news network, originally a Microsoft and NBC joint venture. It appears 8 times across 8 posts.",
-   "sharedAlias": false,
-   "registryCorrected": false
-  },
-  {
-   "entityId": "qe-2cf9f642e53c",
    "postNum": 2136,
    "auditOccurrenceId": "ENT-0163-P2136",
    "auditEntityId": "ENT-0163",
@@ -3209,136 +3105,6 @@
    "registryCorrected": false
   },
   {
-   "entityId": "qe-0192c0f01e9e",
-   "postNum": 1538,
-   "auditOccurrenceId": "ENT-0217-P1538",
-   "auditEntityId": "ENT-0217",
-   "matchedAlias": "Guardian",
-   "localRole": "question",
-   "synopsis": "In post #1538, “Guardian” appears in a question: “Public learned today. Why? What must be finished? Why still employed? Purpose? LP released after….. PS will be released after….. Just because something isn’t public doesn’t mean…. [DOJ texts / emails]…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Guardian. The passage asks about the connection rather than establishing it.",
-   "contextSupport": "Strong",
-   "evidenceConfidence": "High",
-   "evidenceBasis": "The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading.",
-   "sourceContext": "Public learned today. Why? What must be finished? Why still employed? Purpose? LP released after….. PS will be released after….. Just because something isn’t public doesn’t mean…. [DOJ texts / emails] https://www.theguardian.com/us-news/2017/apr/20/trump-cia-firing-intelligence-community-white-house C_A down [19] this year alone. When will records be…",
-   "glossaryMeaning": null,
-   "status": "Correct entity type before publish",
-   "verdict": "quarantine",
-   "verdictReason": "the term appears only inside a URL, never in the drop's prose",
-   "urlClass": "hostname_source_reference",
-   "canonical": "Guardian",
-   "entityType": "media_organization",
-   "aliases": [
-    "Guardian"
-   ],
-   "globalSynopsis": "“Guardian” is categorized in this archive as a media organization. It appears 6 times across 6 posts.",
-   "sharedAlias": false,
-   "registryCorrected": true
-  },
-  {
-   "entityId": "qe-0192c0f01e9e",
-   "postNum": 2657,
-   "auditOccurrenceId": "ENT-0217-P2657",
-   "auditEntityId": "ENT-0217",
-   "matchedAlias": "Guardian",
-   "localRole": "question",
-   "synopsis": "In post #2657, “Guardian” appears in a question: “When will the public discover that Ted Cruz was also illegally SURV (pre_POTUS_R nomination)? C_A 'illegal' SURV > members of Congress? C_A 'illegal' SURV > members of the Press? C_A 'illegal' SURV > SENATE…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Guardian. The passage asks about the connection rather than establishing it.",
-   "contextSupport": "Strong",
-   "evidenceConfidence": "High",
-   "evidenceBasis": "The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading.",
-   "sourceContext": "When will the public discover that Ted Cruz was also illegally SURV (pre_POTUS_R nomination)? C_A 'illegal' SURV > members of Congress? C_A 'illegal' SURV > members of the Press? C_A 'illegal' SURV > SENATE INTEL COMM? https://www.theguardian.com/us-news/2016/sep/10/cia-senate-investigation-constitutional-crisis-daniel-jones…",
-   "glossaryMeaning": null,
-   "status": "Correct entity type before publish",
-   "verdict": "quarantine",
-   "verdictReason": "the term appears only inside a URL, never in the drop's prose",
-   "urlClass": "hostname_source_reference",
-   "canonical": "Guardian",
-   "entityType": "media_organization",
-   "aliases": [
-    "Guardian"
-   ],
-   "globalSynopsis": "“Guardian” is categorized in this archive as a media organization. It appears 6 times across 6 posts.",
-   "sharedAlias": false,
-   "registryCorrected": true
-  },
-  {
-   "entityId": "qe-0192c0f01e9e",
-   "postNum": 3566,
-   "auditOccurrenceId": "ENT-0217-P3566",
-   "auditEntityId": "ENT-0217",
-   "matchedAlias": "Guardian",
-   "localRole": "source or link reference",
-   "synopsis": "In post #3566, “Guardian” appears in a source or link reference: “https://www.theguardian.com/us-news/2019/jul/30/secret-texts-cast-light-uk-early-role-trump-russia-inquiry Q” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Guardian. The synopsis explains the label's role in the passage without treating nearby implications as verified facts.",
-   "contextSupport": "Strong",
-   "evidenceConfidence": "High",
-   "evidenceBasis": "The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading.",
-   "sourceContext": "https://www.theguardian.com/us-news/2019/jul/30/secret-texts-cast-light-uk-early-role-trump-russia-inquiry Q",
-   "glossaryMeaning": null,
-   "status": "Correct entity type before publish",
-   "verdict": "quarantine",
-   "verdictReason": "the term appears only inside a URL, never in the drop's prose",
-   "urlClass": "hostname_source_reference",
-   "canonical": "Guardian",
-   "entityType": "media_organization",
-   "aliases": [
-    "Guardian"
-   ],
-   "globalSynopsis": "“Guardian” is categorized in this archive as a media organization. It appears 6 times across 6 posts.",
-   "sharedAlias": false,
-   "registryCorrected": true
-  },
-  {
-   "entityId": "qe-0192c0f01e9e",
-   "postNum": 3923,
-   "auditOccurrenceId": "ENT-0217-P3923",
-   "auditEntityId": "ENT-0217",
-   "matchedAlias": "Guardian",
-   "localRole": "source or link reference",
-   "synopsis": "In post #3923, “Guardian” appears in a source or link reference: “https://www.theguardian.com/world/video/2020/mar/23/invisible-enemy-trump-says-he-is-wartime-president-in-coronavirus-battle-video Compare and contrast. Dates are important. Q” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Guardian. The synopsis explains the label's role in the passage without treating nearby implications as verified facts.",
-   "contextSupport": "Strong",
-   "evidenceConfidence": "High",
-   "evidenceBasis": "The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading.",
-   "sourceContext": "https://www.theguardian.com/world/video/2020/mar/23/invisible-enemy-trump-says-he-is-wartime-president-in-coronavirus-battle-video Compare and contrast. Dates are important. Q",
-   "glossaryMeaning": null,
-   "status": "Correct entity type before publish",
-   "verdict": "quarantine",
-   "verdictReason": "the term appears only inside a URL, never in the drop's prose",
-   "urlClass": "hostname_source_reference",
-   "canonical": "Guardian",
-   "entityType": "media_organization",
-   "aliases": [
-    "Guardian"
-   ],
-   "globalSynopsis": "“Guardian” is categorized in this archive as a media organization. It appears 6 times across 6 posts.",
-   "sharedAlias": false,
-   "registryCorrected": true
-  },
-  {
-   "entityId": "qe-0192c0f01e9e",
-   "postNum": 4514,
-   "auditOccurrenceId": "ENT-0217-P4514",
-   "auditEntityId": "ENT-0217",
-   "matchedAlias": "Guardian",
-   "localRole": "source or link reference",
-   "synopsis": "In post #4514, “Guardian” appears in a source or link reference: “Worth remember - Feb 2019 https://www.theguardian.com/commentisfree/2019/feb/18/online-conspiracy-theorists-democracy \"The scale this generates is disproportional enough to distort public perception: In 2018,…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Guardian. The synopsis explains the label's role in the passage without treating nearby implications as verified facts.",
-   "contextSupport": "Strong",
-   "evidenceConfidence": "High",
-   "evidenceBasis": "The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading.",
-   "sourceContext": "Worth remember - Feb 2019 https://www.theguardian.com/commentisfree/2019/feb/18/online-conspiracy-theorists-democracy \"The scale this generates is disproportional enough to distort public perception: In 2018, ISD identified close to 30m uses of the word “QAnon” across Twitter, YouTube and forums such as Reddit and 4chan.\" Numbers today dwarf past…",
-   "glossaryMeaning": null,
-   "status": "Correct entity type before publish",
-   "verdict": "quarantine",
-   "verdictReason": "the term appears only inside a URL, never in the drop's prose",
-   "urlClass": "hostname_source_reference",
-   "canonical": "Guardian",
-   "entityType": "media_organization",
-   "aliases": [
-    "Guardian"
-   ],
-   "globalSynopsis": "“Guardian” is categorized in this archive as a media organization. It appears 6 times across 6 posts.",
-   "sharedAlias": false,
-   "registryCorrected": true
-  },
-  {
    "entityId": "qe-9cfb9a554b04",
    "postNum": 1772,
    "auditOccurrenceId": "ENT-0221-P1772",
@@ -3778,32 +3544,6 @@
     "Italy"
    ],
    "globalSynopsis": "“Italy” is categorized in this archive as a country or region. It appears 5 times across 5 posts.",
-   "sharedAlias": false,
-   "registryCorrected": false
-  },
-  {
-   "entityId": "qe-f11567fff98a",
-   "postNum": 4653,
-   "auditOccurrenceId": "ENT-0248-P4653",
-   "auditEntityId": "ENT-0248",
-   "matchedAlias": "Hitler",
-   "localRole": "source or link reference",
-   "synopsis": "In post #4653, “Hitler” appears in a source or link reference: “[Past 12 hours] https://www.justsecurity.org/72339/qanon-is-a-nazi-cult-rebranded/ https://www.alternet.org/2020/09/expert-on-genocide-and-anti-semitism-lays-out-the-frightening-parallels-between-qanon-and-hit…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Hitler. The synopsis explains the label's role in the passage without treating nearby implications as verified facts.",
-   "contextSupport": "Strong",
-   "evidenceConfidence": "High",
-   "evidenceBasis": "The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading.",
-   "sourceContext": "[Past 12 hours] https://www.justsecurity.org/72339/qanon-is-a-nazi-cult-rebranded/ https://www.alternet.org/2020/09/expert-on-genocide-and-anti-semitism-lays-out-the-frightening-parallels-between-qanon-and-hitlers-nazis/ https://www.newsbreak.com/news/2058065696143/in-qanon-nazism-wants-a-comeback-anti-semitism-expert-reveals-parallels-between-qanon-and-naz…",
-   "glossaryMeaning": null,
-   "status": "Ready for first-pass publish",
-   "verdict": "quarantine",
-   "verdictReason": "the term appears only inside a URL, never in the drop's prose",
-   "urlClass": "url_path_fragment",
-   "canonical": "Hitler",
-   "entityType": "person",
-   "aliases": [
-    "Hitler"
-   ],
-   "globalSynopsis": "“Hitler” is categorized in this archive as a person. It appears 5 times across 5 posts.",
    "sharedAlias": false,
    "registryCorrected": false
   },
@@ -4355,32 +4095,6 @@
   },
   {
    "entityId": "qe-d58d44ebad1f",
-   "postNum": 2850,
-   "auditOccurrenceId": "ENT-0269-P2850",
-   "auditEntityId": "ENT-0269",
-   "matchedAlias": "Jussie Smollett",
-   "localRole": "question",
-   "synopsis": "In post #2850, “Jussie Smollett” appears in a question: “>>5308748 https://www.foxnews.com/us/jussie-smolletts-alleged-hate-crime-hoax-sheds-light-on-similar-phony-accusations Notice a TREND by LIBERALS + D's? FAKE! FAKE! FAKE! THEY WILL STOP AT NOTHING TO REGAIN…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Jussie Smollett. The passage asks about the connection rather than establishing it.",
-   "contextSupport": "Strong",
-   "evidenceConfidence": "High",
-   "evidenceBasis": "The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading.",
-   "sourceContext": ">>5308748 https://www.foxnews.com/us/jussie-smolletts-alleged-hate-crime-hoax-sheds-light-on-similar-phony-accusations Notice a TREND by LIBERALS + D's? FAKE! FAKE! FAKE! THEY WILL STOP AT NOTHING TO REGAIN POWER. #WakeUpAmerica Q",
-   "glossaryMeaning": null,
-   "status": "Ready for first-pass publish",
-   "verdict": "quarantine",
-   "verdictReason": "the term appears only inside a URL, never in the drop's prose",
-   "urlClass": "url_path_fragment",
-   "canonical": "Jussie Smollett",
-   "entityType": "person",
-   "aliases": [
-    "Jussie Smollett"
-   ],
-   "globalSynopsis": "“Jussie Smollett” is categorized in this archive as a person. It appears 5 times across 5 posts.",
-   "sharedAlias": false,
-   "registryCorrected": false
-  },
-  {
-   "entityId": "qe-d58d44ebad1f",
    "postNum": 3202,
    "auditOccurrenceId": "ENT-0269-P3202",
    "auditEntityId": "ENT-0269",
@@ -4534,32 +4248,6 @@
    "globalSynopsis": "“Qatar” is categorized in this archive as a country or region. It appears 4 times across 4 posts.",
    "sharedAlias": false,
    "registryCorrected": true
-  },
-  {
-   "entityId": "qe-ac1d57f21cc2",
-   "postNum": 1284,
-   "auditOccurrenceId": "ENT-0291-P1284",
-   "auditEntityId": "ENT-0291",
-   "matchedAlias": "Special Counsel",
-   "localRole": "source or link reference",
-   "synopsis": "In post #1284, “Special Counsel” appears in a source or link reference: “>>1211682 These do not match. http://www.foxnews.com/politics/2017/12/01/michael-flynn-charged-in-special-counsels-russia-investigation.html http://www.foxnews.com/politics/2018/04/27/house-report-backs-claim-…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Special Counsel. The synopsis explains the label's role in the passage without treating nearby implications as verified facts.",
-   "contextSupport": "Strong",
-   "evidenceConfidence": "High",
-   "evidenceBasis": "The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading.",
-   "sourceContext": ">>1211682 These do not match. http://www.foxnews.com/politics/2017/12/01/michael-flynn-charged-in-special-counsels-russia-investigation.html http://www.foxnews.com/politics/2018/04/27/house-report-backs-claim-that-fbi-agents-did-not-think-flynn-lied-despite-guilty-plea.html Re_read drops. Future proves past. You have more than you know. Q",
-   "glossaryMeaning": null,
-   "status": "Ready for first-pass publish",
-   "verdict": "quarantine",
-   "verdictReason": "the term appears only inside a URL, never in the drop's prose",
-   "urlClass": "url_path_fragment",
-   "canonical": "Special Counsel",
-   "entityType": "person",
-   "aliases": [
-    "Special Counsel"
-   ],
-   "globalSynopsis": "“Special Counsel” is categorized in this archive as a person. It appears 4 times across 4 posts.",
-   "sharedAlias": false,
-   "registryCorrected": false
   },
   {
    "entityId": "qe-ac1d57f21cc2",
@@ -7040,32 +6728,6 @@
    "registryCorrected": false
   },
   {
-   "entityId": "qe-055d7c4a74b0",
-   "postNum": 3006,
-   "auditOccurrenceId": "ENT-0559-P3006",
-   "auditEntityId": "ENT-0559",
-   "matchedAlias": "Zuckerberg",
-   "localRole": "question",
-   "synopsis": "In post #3006, “Zuckerberg” appears in a question: “Nellie Ohr > C_A? There are others within the FBI/DOJ linked to the C_A. https://www.washingtonpost.com/local/when-ex-spies-go-rogue-by-becoming-lawmakers/2019/01/01/9890c4da-095c-11e9-a3f0-71c95106d96a_story.…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Zuckerberg. The passage asks about the connection rather than establishing it.",
-   "contextSupport": "Strong",
-   "evidenceConfidence": "High",
-   "evidenceBasis": "The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading.",
-   "sourceContext": "Nellie Ohr > C_A? There are others within the FBI/DOJ linked to the C_A. https://www.washingtonpost.com/local/when-ex-spies-go-rogue-by-becoming-lawmakers/2019/01/01/9890c4da-095c-11e9-a3f0-71c95106d96a_story.html?noredirect=on&utm_term=.df98c57998eb What access does a House member have? What access does a House Committee member have? Think [Brennan] spy…",
-   "glossaryMeaning": null,
-   "status": "Ready for first-pass publish",
-   "verdict": "quarantine",
-   "verdictReason": "the term appears only inside a URL, never in the drop's prose",
-   "urlClass": "url_path_fragment",
-   "canonical": "Zuckerberg",
-   "entityType": "person",
-   "aliases": [
-    "Zuckerberg"
-   ],
-   "globalSynopsis": "“Zuckerberg” is categorized in this archive as a person. It appears 2 times across 2 posts.",
-   "sharedAlias": false,
-   "registryCorrected": false
-  },
-  {
    "entityId": "qe-6eba7f9e78be",
    "postNum": 1750,
    "auditOccurrenceId": "ENT-0562-P1750",
@@ -7508,58 +7170,6 @@
    "registryCorrected": false
   },
   {
-   "entityId": "qe-05176fbb6223",
-   "postNum": 4416,
-   "auditOccurrenceId": "ENT-0595-P4416",
-   "auditEntityId": "ENT-0595",
-   "matchedAlias": "Keith Ellison",
-   "localRole": "source or link reference",
-   "synopsis": "In post #4416, “Keith Ellison” appears in a source or link reference: “https://www.foxnews.com/politics/jeremiah-ellison-minnesota-ag-keith-ellisons-son-dismantle-minneapolis-police-department Infiltration instead of invasion. Q” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Keith Ellison. The synopsis explains the label's role in the passage without treating nearby implications as verified facts.",
-   "contextSupport": "Strong",
-   "evidenceConfidence": "High",
-   "evidenceBasis": "The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading.",
-   "sourceContext": "https://www.foxnews.com/politics/jeremiah-ellison-minnesota-ag-keith-ellisons-son-dismantle-minneapolis-police-department Infiltration instead of invasion. Q",
-   "glossaryMeaning": null,
-   "status": "Ready for first-pass publish",
-   "verdict": "quarantine",
-   "verdictReason": "the term appears only inside a URL, never in the drop's prose",
-   "urlClass": "url_path_fragment",
-   "canonical": "Keith Ellison",
-   "entityType": "person",
-   "aliases": [
-    "Keith Ellison"
-   ],
-   "globalSynopsis": "“Keith Ellison” is categorized in this archive as a person. It appears 2 times across 2 posts.",
-   "sharedAlias": false,
-   "registryCorrected": false
-  },
-  {
-   "entityId": "qe-18bd65579fff",
-   "postNum": 2284,
-   "auditOccurrenceId": "ENT-0598-P2284",
-   "auditEntityId": "ENT-0598",
-   "matchedAlias": "Blumenthal",
-   "localRole": "source or link reference",
-   "synopsis": "In post #2284, “Blumenthal” appears in a source or link reference: “https://twitter.com/SenBlumenthal/status/1045430208810168322 FALSE IN ONE THING. FALSE IN EVERYTHING. LEFT HYPOCRISY. #WALKAWAY Q” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Blumenthal. The synopsis explains the label's role in the passage without treating nearby implications as verified facts.",
-   "contextSupport": "Strong",
-   "evidenceConfidence": "High",
-   "evidenceBasis": "The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading.",
-   "sourceContext": "https://twitter.com/SenBlumenthal/status/1045430208810168322 FALSE IN ONE THING. FALSE IN EVERYTHING. LEFT HYPOCRISY. #WALKAWAY Q",
-   "glossaryMeaning": null,
-   "status": "Ready for first-pass publish",
-   "verdict": "quarantine",
-   "verdictReason": "the term appears only inside a URL, never in the drop's prose",
-   "urlClass": "url_path_fragment",
-   "canonical": "Blumenthal",
-   "entityType": "person",
-   "aliases": [
-    "Blumenthal"
-   ],
-   "globalSynopsis": "“Blumenthal” is categorized in this archive as a person. It appears 2 times across 2 posts.",
-   "sharedAlias": false,
-   "registryCorrected": false
-  },
-  {
    "entityId": "qe-59bb69e52d4e",
    "postNum": 2319,
    "auditOccurrenceId": "ENT-0601-P2319",
@@ -7688,32 +7298,6 @@
    "globalSynopsis": "“Alabama” is categorized in this archive as a location. It appears 2 times across 2 posts.",
    "sharedAlias": false,
    "registryCorrected": true
-  },
-  {
-   "entityId": "qe-8897be130f69",
-   "postNum": 772,
-   "auditOccurrenceId": "ENT-0619-P772",
-   "auditEntityId": "ENT-0619",
-   "matchedAlias": "MKUltra",
-   "localRole": "question",
-   "synopsis": "In post #772, “MKUltra” appears in a question: “https://www.intelligence.senate.gov/sites/default/files/hearings/95mkultra.pdf Read very carefully. Unreleased [CLAS-HIGHEST]: Ability to use frequencies [incoming sig]/modify/code/program over 'x' period…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as MKUltra. The passage asks about the connection rather than establishing it.",
-   "contextSupport": "Strong",
-   "evidenceConfidence": "High",
-   "evidenceBasis": "The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading.",
-   "sourceContext": "https://www.intelligence.senate.gov/sites/default/files/hearings/95mkultra.pdf Read very carefully. Unreleased [CLAS-HIGHEST]: Ability to use frequencies [incoming sig]/modify/code/program over 'x' period [designate] mobile phone to 'control' target subject. OP conducted/ORIG outside of US. CAR control? https://www.youtube.com/watch?v=1Yqa5PUViPo Statement…",
-   "glossaryMeaning": null,
-   "status": "Ready for first-pass publish",
-   "verdict": "quarantine",
-   "verdictReason": "the term appears only inside a URL, never in the drop's prose",
-   "urlClass": "url_path_fragment",
-   "canonical": "MKUltra",
-   "entityType": "program_operation_project",
-   "aliases": [
-    "MKUltra"
-   ],
-   "globalSynopsis": "“MKUltra” is categorized in this archive as a program, operation, or project. It appears 2 times across 2 posts.",
-   "sharedAlias": false,
-   "registryCorrected": false
   },
   {
    "entityId": "qe-8897be130f69",
@@ -7857,36 +7441,6 @@
    "evidenceConfidence": "Review",
    "evidenceBasis": "The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned.",
    "sourceContext": "FB RETURNING TO THE NEWS. LIFELOG (DARPA) ENDS > FB BEGINS LIFELOG (DARPA) TEAM TRANSFER > FB WHAT (DARPA) TEAM MEMBERS PAST/PRESENT WORK FOR FB? WHAT DIVISIONS? LOCATE (3) PUBLIC. (9) TOTAL (6_NON PUB). BUILDING 8 EXPOSED (HERE) WHEN? [4-11-18] *THINK SCRAMBLE [OFFLINE SCRUB] POST XBOX/PS CHAT LOGS DROP* [MS SHUTDOWN IMMEDIATELY POST DROP] BUILDING 8 NEWS…",
-   "glossaryMeaning": "George H. W. Bush",
-   "status": "Merge entity rows before publish",
-   "rewordedFrom": [
-    "\"George H.W. Bush\" -> \"George H. W. Bush\""
-   ],
-   "verdict": "quarantine",
-   "verdictReason": "the term appears only inside a URL, never in the drop's prose",
-   "urlClass": "url_path_fragment",
-   "canonical": "George H. W. Bush",
-   "entityType": "person",
-   "aliases": [
-    "GHWB",
-    "George H.W. Bush"
-   ],
-   "globalSynopsis": "“George H. W. Bush” is categorized in this archive as a person. It appears 2 times across 2 posts.",
-   "sharedAlias": false,
-   "registryCorrected": true
-  },
-  {
-   "entityId": "qe-ed7af8c981ab",
-   "postNum": 4164,
-   "auditOccurrenceId": "ENT-0633-P4164",
-   "auditEntityId": "ENT-0633",
-   "matchedAlias": "George H.W. Bush",
-   "localRole": "question",
-   "synopsis": "In post #4164, “George H. W. Bush” appears in a question: “What Farm born assets elected to Congress? What Farm born assets are attempting to get elected to Congress? What is the primary party to which they serve? [D] How do you control your own budget? How do you…” The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned. This gives insufficient contextual support for identifying it as George H. W. Bush. The passage asks about the connection rather than establishing it.",
-   "contextSupport": "Insufficient",
-   "evidenceConfidence": "Review",
-   "evidenceBasis": "The canonical label is duplicated in the current entity registry and should be merged before a unique tooltip is assigned.",
-   "sourceContext": "What Farm born assets elected to Congress? What Farm born assets are attempting to get elected to Congress? What is the primary party to which they serve? [D] How do you control your own budget? How do you control agency regs? How do you control your own destiny?…",
    "glossaryMeaning": "George H. W. Bush",
    "status": "Merge entity rows before publish",
    "rewordedFrom": [
@@ -8177,32 +7731,6 @@
    "evidenceConfidence": "High",
    "evidenceBasis": "The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading.",
    "sourceContext": "https://www.foxnews.com/politics/lawyer-threaten-to-sue-nevada-unless-ballot-harvesting-is-permitted",
-   "glossaryMeaning": null,
-   "status": "Ready for first-pass publish",
-   "verdict": "quarantine",
-   "verdictReason": "the term appears only inside a URL, never in the drop's prose",
-   "urlClass": "url_path_fragment",
-   "canonical": "Nevada",
-   "entityType": "location",
-   "aliases": [
-    "Nevada"
-   ],
-   "globalSynopsis": "“Nevada” is categorized in this archive as a location. It appears 2 times across 2 posts.",
-   "sharedAlias": false,
-   "registryCorrected": false
-  },
-  {
-   "entityId": "qe-ec290e41f3f7",
-   "postNum": 4251,
-   "auditOccurrenceId": "ENT-0661-P4251",
-   "auditEntityId": "ENT-0661",
-   "matchedAlias": "Nevada",
-   "localRole": "source or link reference",
-   "synopsis": "In post #4251, “Nevada” appears in a source or link reference: “https://www.foxnews.com/politics/nevadas-vote-by-mail-primary-fraud-concerns It's right in front of you. It always has been. Q” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Nevada. The synopsis explains the label's role in the passage without treating nearby implications as verified facts.",
-   "contextSupport": "Strong",
-   "evidenceConfidence": "High",
-   "evidenceBasis": "The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading.",
-   "sourceContext": "https://www.foxnews.com/politics/nevadas-vote-by-mail-primary-fraud-concerns It's right in front of you. It always has been. Q",
    "glossaryMeaning": null,
    "status": "Ready for first-pass publish",
    "verdict": "quarantine",
@@ -8630,32 +8158,6 @@
     "Mariah Sunshine Coogan"
    ],
    "globalSynopsis": "“Mariah Sunshine Coogan” is categorized in this archive as a person. It appears 1 times across 1 posts.",
-   "sharedAlias": false,
-   "registryCorrected": false
-  },
-  {
-   "entityId": "qe-2edf557260a3",
-   "postNum": 1208,
-   "auditOccurrenceId": "ENT-0746-P1208",
-   "auditEntityId": "ENT-0746",
-   "matchedAlias": "West Hollywood",
-   "localRole": "source or link reference",
-   "synopsis": "In post #1208, “West Hollywood” appears in a source or link reference: “>>1122741 Over the target. Expand further. Wendy. HUSSEIN. Mack. AS. https:// www.wehoville.com/2018/04/12/west-hollywoodss-mariah-sunshine-coogan-identified-victim-scottsdale-plane-crash/ Open source. Q” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as West Hollywood. The synopsis explains the label's role in the passage without treating nearby implications as verified facts.",
-   "contextSupport": "Strong",
-   "evidenceConfidence": "High",
-   "evidenceBasis": "The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading.",
-   "sourceContext": ">>1122741 Over the target. Expand further. Wendy. HUSSEIN. Mack. AS. https:// www.wehoville.com/2018/04/12/west-hollywoodss-mariah-sunshine-coogan-identified-victim-scottsdale-plane-crash/ Open source. Q",
-   "glossaryMeaning": null,
-   "status": "Ready for first-pass publish",
-   "verdict": "quarantine",
-   "verdictReason": "the term appears only inside a URL, never in the drop's prose",
-   "urlClass": "url_path_fragment",
-   "canonical": "West Hollywood",
-   "entityType": "country_region",
-   "aliases": [
-    "West Hollywood"
-   ],
-   "globalSynopsis": "“West Hollywood” is categorized in this archive as a country or region. It appears 1 times across 1 posts.",
    "sharedAlias": false,
    "registryCorrected": false
   },
@@ -9234,32 +8736,6 @@
     "Operation Underground Railroad"
    ],
    "globalSynopsis": "“Operation Underground Railroad” is categorized in this archive as a program, operation, or project. It appears 1 times across 1 posts.",
-   "sharedAlias": false,
-   "registryCorrected": false
-  },
-  {
-   "entityId": "qe-b0925e132c0f",
-   "postNum": 1880,
-   "auditOccurrenceId": "ENT-0850-P1880",
-   "auditEntityId": "ENT-0850",
-   "matchedAlias": "Sunday Night",
-   "localRole": "question",
-   "synopsis": "In post #1880, “Sunday Night” appears in a question: “Haiti https://www.youtube.com/watch?v=mvTqqYCb-e8 [Read very carefully] https://www.news.com.au/entertainment/tv/current-affairs/sunday-nights-matt-doran-goes-undercover-with-operation-underground-railroad-to-…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Sunday Night. The passage asks about the connection rather than establishing it.",
-   "contextSupport": "Strong",
-   "evidenceConfidence": "High",
-   "evidenceBasis": "The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading.",
-   "sourceContext": "Haiti https://www.youtube.com/watch?v=mvTqqYCb-e8 [Read very carefully] https://www.news.com.au/entertainment/tv/current-affairs/sunday-nights-matt-doran-goes-undercover-with-operation-underground-railroad-to-bring-down-haiti-child-sex-ring/news-story/dcecf5950ca5b6d501c48ed927127bc3 \"Child trafficking victims who’ve spent their formative years servicing…",
-   "glossaryMeaning": null,
-   "status": "Ready for first-pass publish",
-   "verdict": "quarantine",
-   "verdictReason": "the term appears only inside a URL, never in the drop's prose",
-   "urlClass": "url_path_fragment",
-   "canonical": "Sunday Night",
-   "entityType": "event_incident",
-   "aliases": [
-    "Sunday Night"
-   ],
-   "globalSynopsis": "“Sunday Night” is categorized in this archive as a event or incident. It appears 1 times across 1 posts.",
    "sharedAlias": false,
    "registryCorrected": false
   },
@@ -9969,32 +9445,6 @@
    "registryCorrected": false
   },
   {
-   "entityId": "qe-448c7b8f437f",
-   "postNum": 2807,
-   "auditOccurrenceId": "ENT-0985-P2807",
-   "auditEntityId": "ENT-0985",
-   "matchedAlias": "Saddam Hussein",
-   "localRole": "question",
-   "synopsis": "In post #2807, “Saddam Hussein” appears in a question: “[TOPIC: TAXPAYER THEFT] INSIDER vs OUTSIDER RETAIN CONTROL vs. LOSE CONTROL Kennedy was an outsider [assassinated] Reagan was an outsider [assassination attempt] POTUS is an outsider [CLAS HIGH] How much…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Saddam Hussein. The passage asks about the connection rather than establishing it.",
-   "contextSupport": "Strong",
-   "evidenceConfidence": "High",
-   "evidenceBasis": "The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading.",
-   "sourceContext": "[TOPIC: TAXPAYER THEFT] INSIDER vs OUTSIDER RETAIN CONTROL vs. LOSE CONTROL Kennedy was an outsider [assassinated] Reagan was an outsider [assassination attempt] POTUS is an outsider [CLAS HIGH] How much money (CASH) was sent by the FED to Iraq (Iraq War)? https://www.theguardian.com/world/2007/feb/08/usa.iraq1…",
-   "glossaryMeaning": null,
-   "status": "Ready for first-pass publish",
-   "verdict": "quarantine",
-   "verdictReason": "the term appears only inside a URL, never in the drop's prose",
-   "urlClass": "url_path_fragment",
-   "canonical": "Saddam Hussein",
-   "entityType": "person",
-   "aliases": [
-    "Saddam Hussein"
-   ],
-   "globalSynopsis": "“Saddam Hussein” is categorized in this archive as a person. It appears 1 times across 1 posts.",
-   "sharedAlias": false,
-   "registryCorrected": false
-  },
-  {
    "entityId": "qe-97ecb3eb1b65",
    "postNum": 2855,
    "auditOccurrenceId": "ENT-0989-P2855",
@@ -10693,32 +10143,6 @@
     "Democratic National Convention"
    ],
    "globalSynopsis": "“Democratic National Convention” is categorized in this archive as a person. It appears 1 times across 1 posts.",
-   "sharedAlias": false,
-   "registryCorrected": false
-  },
-  {
-   "entityId": "qe-ceae80730a2f",
-   "postNum": 4118,
-   "auditOccurrenceId": "ENT-1102-P4118",
-   "auditEntityId": "ENT-1102",
-   "matchedAlias": "Byron York",
-   "localRole": "source or link reference",
-   "synopsis": "In post #4118, “Byron York” appears in a source or link reference: “https://www.washingtonexaminer.com/opinion/byron-yorks-daily-memo-exclusive-dni-to-schiff-the-transcripts-are-ready-to-release Sorry, Adam, but the game is now over [it doesn't end here]. Locked on target.…” The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading. This gives strong contextual support for identifying it as Byron York. The synopsis explains the label's role in the passage without treating nearby implications as verified facts.",
-   "contextSupport": "Strong",
-   "evidenceConfidence": "High",
-   "evidenceBasis": "The post directly uses the canonical name, or a post-scoped glossary note expressly supports this reading.",
-   "sourceContext": "https://www.washingtonexaminer.com/opinion/byron-yorks-daily-memo-exclusive-dni-to-schiff-the-transcripts-are-ready-to-release Sorry, Adam, but the game is now over [it doesn't end here]. Locked on target. [it takes time to remove/install the right people [sleepers]] We are ready. Q",
-   "glossaryMeaning": null,
-   "status": "Ready for first-pass publish",
-   "verdict": "quarantine",
-   "verdictReason": "the term appears only inside a URL, never in the drop's prose",
-   "urlClass": "url_path_fragment",
-   "canonical": "Byron York",
-   "entityType": "person",
-   "aliases": [
-    "Byron York"
-   ],
-   "globalSynopsis": "“Byron York” is categorized in this archive as a person. It appears 1 times across 1 posts.",
    "sharedAlias": false,
    "registryCorrected": false
   },

@@ -167,14 +167,14 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | published post synopses = 4,156 | 4156 |
+| ✅ | published post synopses = 4,177 | 4177 |
 | ✅ | one global synopsis per live entity | 1409 |
-| ✅ | publish + review + quarantine + withdrawn = 7,778 | 4156 + 3144 + 441 + 37 = 7778 |
-| ✅ | no held record is in the public bundle | 3622 held back |
+| ✅ | publish + review + quarantine + withdrawn = 7,778 | 4177 + 3145 + 419 + 37 = 7778 |
+| ✅ | no held record is in the public bundle | 3601 held back |
 | ✅ | the editorial queues are not under public/data | admin only |
 | ✅ | no shared-alias occurrence is published | 426 held in review |
 | ✅ | withdrawn records are history, not review | 37 |
-| ✅ | every hover resolves to a live entity id | 1066 entities |
+| ✅ | every hover resolves to a live entity id | 1072 entities |
 | ✅ | hovers are keyed by qe- id, not by name | ok |
 | ✅ | entity totals are unchanged by the import | 1409 entities / 9749 mentions |
 | ✅ | every published synopsis carries its support grade | 0 ungraded |
