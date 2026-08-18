@@ -48,18 +48,30 @@ export interface TextIndex {
 // PostDetail alone — so an uncached page paid it repeatedly for identical output.
 //
 // Both are dropped whenever the store is written, so an edit can never be served stale data.
-let _textIndex: TextIndex | null = null
+let _textIndexPromise: Promise<TextIndex> | null = null
 let _freqPromise: Promise<AnalysisCategoryFreq[]> | null = null
 let _qFreqPromise: Promise<QuestionFrequency[]> | null = null
-onStoreMutated(() => { _textIndex = null; _freqPromise = null; _qFreqPromise = null })
+onStoreMutated(() => { _textIndexPromise = null; _freqPromise = null; _qFreqPromise = null })
 
-/** Shared text index, built once per data version. */
-export async function getTextIndex(): Promise<TextIndex> {
-  if (!_textIndex) {
-    const { posts } = await loadLocalData()
-    _textIndex = buildTextIndex(posts)
+/**
+ * Shared text index, built once per data version.
+ *
+ * THE PROMISE IS THE CACHE, not the value — the same shape the two caches above it already use,
+ * and for the same reason. Caching the VALUE left an `await` between the "is it built?" check and
+ * the assignment, so every caller that asked while the store was still loading passed the guard,
+ * and each one built its own copy of the whole index. It is asked for from four places on a
+ * category page and they all ask at once.
+ *
+ * Measured on the built bundle, /analysis?tab=claims: 6.37s of self time inside buildTextIndex
+ * across one unbroken 10.8s task. One build costs ~1.2s, so the page was paying for five.
+ */
+export function getTextIndex(): Promise<TextIndex> {
+  if (!_textIndexPromise) {
+    _textIndexPromise = loadLocalData()
+      .then(({ posts }) => buildTextIndex(posts))
+      .catch(err => { _textIndexPromise = null; throw err })   // never cache a failure
   }
-  return _textIndex
+  return _textIndexPromise
 }
 
 export function buildTextIndex(posts: QPost[]): TextIndex {
