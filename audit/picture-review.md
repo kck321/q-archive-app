@@ -53,6 +53,16 @@ transcribe them freely; the notes below say exactly where to look.
    set `"needsReview": false` (or delete the key), and the two red dots revert to one dot
    automatically. The new text becomes searchable immediately — no other step.
 
+## Withheld analyses (private review records)
+
+Entries whose automated analysis was withheld. The picture-analysis record carries
+`confidence: red` + `needsReview: true` (two red dots) and `ocrStatus: "withheld"`.
+No content details are recorded here; the owner reviews the image directly.
+
+| Seq (n) | Post | Image ID (hash) | Filename | Source | Status | ocrStatus |
+|---------|------|-----------------|----------|--------|--------|-----------|
+| 308 | #1779 | `488babf81f742bb2262cb0976324aa1216a5f3b46b80c607c57fbdbdc4b9c685` | #1.png | referenced | review_required | withheld |
+
 ## Rule going forward
 
 Any future image whose full extraction can't be completed (compilation too large, text

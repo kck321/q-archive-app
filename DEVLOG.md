@@ -5334,3 +5334,8 @@ approved.
 
 - Preserved the temp-scratchpad 500-image picture-audit checkpoint into audit/picture-audit-500/checkpoint-2026-08-18/ (agent JSONLs, batch500 manifest, merge500.py, SPEC, manifests, tiles/vframes/fetched, plus picture-analysis.snapshot-100.json). merge500.py check verified identical on original and copy: 308/500, 192 gaps, 0 dupes, 0 problems, green 251 / yellow 40 / red 17, needsReview [423, 433, 566]. Temp originals untouched. Commit 50950be.
 - Processed the next 25 missing sequence numbers (208-271) with 5 parallel agents -> agent-out/agent10-14.jsonl. Check now: 333/500, 167 gaps, 0 dupes, 0 problems, green 270 / yellow 44 / red 19, needsReview adds 257 (incomplete table transcription; no blocked/withheld images). Next gap: 277. Not compiled into public/data; no deploy. Commit b52a359.
+
+## 2026-08-18 — Picture-audit resume group 2 (25 images, seq 277-321)
+
+- Processed sequences 277-321 with 5 parallel agents -> audit/picture-audit-500/checkpoint-2026-08-18/agent-out/agent15-19.jsonl. One image (seq 308, post #1779) triggered output filtering mid-analysis: its record is the minimal review_required entry (confidence red + needsReview = two red dots, ocrStatus withheld, no retry) and a private row was added to audit/picture-review.md 'Withheld analyses'. Seqs 309-311 were completed by a continuation agent (one attempt each). Seq 290 marked needsReview (partial OCR preserved).
+- merge500.py check on the durable copy: 358/500, 142 gaps, 0 dupes, 0 problems, green 289 / yellow 48 / red 21, needsReview [257, 290, 308, 423, 433, 566]. Next gap: 327. Not compiled into public/data; no push/deploy.
