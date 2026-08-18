@@ -70,6 +70,7 @@ No content details are recorded here; the owner reviews the image directly.
 | Seq (n) | Post | Image ID (hash) | Filename | Source | Status | ocrStatus |
 |---------|------|-----------------|----------|--------|--------|-----------|
 | 308 | #1779 | `488babf81f742bb2262cb0976324aa1216a5f3b46b80c607c57fbdbdc4b9c685` | #1.png | referenced | review_required | withheld |
+| 554 | #2362 | `ecaa72306e61f77fc86a22f16483c111a2677bad2ffa8853bf3502dcc441a8ce` | patriotic-flag-american-freedom-708237-4487849.jpg | attached | review_required | withheld |
 
 ## Rule going forward
 

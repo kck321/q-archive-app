@@ -5360,3 +5360,8 @@ approved.
 
 - Processed sequences 478-522 with 5 parallel agents -> audit/picture-audit-500/checkpoint-2026-08-18/agent-out/agent40-44.jsonl (one analysis attempt per image). agent42's stream watchdog reported a stall, but all 5 of its records (498-502) were already durably appended and validate clean — no re-analysis needed. No blocked/withheld images; no new needsReview.
 - merge500.py check: 458/500, 42 gaps, 0 dupes, 0 problems, green 376 / yellow 61 / red 21, needsReview unchanged [257, 290, 308, 328, 423, 431, 433, 566]. Next gap: 528. Not compiled into public/data; no push/deploy.
+
+## 2026-08-18 — Picture-audit resume group 7 (25 images, seq 528-570)
+
+- Processed sequences 528-570 with 5 parallel agents -> audit/picture-audit-500/checkpoint-2026-08-18/agent-out/agent45-50.jsonl. One image (seq 554, post #2362) triggered output filtering on its single analysis attempt: its record is the minimal review_required entry (confidence red + needsReview = two red dots, ocrStatus withheld, no retry, no content recorded) and a private row was added to audit/picture-review.md 'Withheld analyses'. The four never-attempted images behind it (558-561) were completed by continuation agent50 (one attempt each).
+- merge500.py check: 483/500, 17 gaps, 0 dupes, 0 problems, green 396 / yellow 65 / red 22, needsReview [257, 290, 308, 328, 423, 431, 433, 554, 566]. Next gap: 571. Not compiled into public/data; no push/deploy.
