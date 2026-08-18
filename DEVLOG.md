@@ -5418,3 +5418,8 @@ approved.
 
 - Processed sequences 776-800 with 5 parallel agents -> agent-out-850/agent90-94.jsonl (one attempt per image; range included 19 of the 22 fetched thumbnails, all analyzed fine). Seq 795 (post #2940) marked needsReview: per-district count table, full grid not transcribed cell-by-cell; row added to audit/picture-review.md. No blocked/withheld.
 - merge850.py check: 200/250, 50 gaps, 0 dupes, 0 problems, needsReview [607, 685, 712, 795]. Next gap: 801. Not compiled; no push/deploy.
+
+## 2026-08-18 — Picture-audit phase 2 group 16 (25 images, seq 801-825)
+
+- Processed sequences 801-825 with 5 parallel agents -> agent-out-850/agent95-99.jsonl (one attempt per image). No blocked/withheld; no new needsReview.
+- merge850.py check: 225/250, 25 gaps, 0 dupes, 0 problems. Next gap: 826. Not compiled; no push/deploy.
