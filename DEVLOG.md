@@ -5378,3 +5378,8 @@ approved.
 - Owner asked for the next 250 images. build_next250.py reproduces the enumeration (posts sorted by string id, attached then referenced media, dedup by URL-hash stem, occurrence lists numeric) and REFUSES to emit unless it reproduces first100+batch500 exactly — verification passed 600/600, total distinct images in archive: 1690. Emitted batch850.json (n=601-850).
 - 22 rows had no media-bundle file (all 8ch file_store/thumb URLs): fetch_missing.py fetched them via the qalerts rewrite (full-size preferred over thumb), PIL-verified, into fetched/ — 22/22 ok. One video (seq 739, 45s mp4): 3 frames extracted to vframes/n739_f0-2.jpg.
 - New tooling: merge850.py (check/compile over agent-out-850/ against batch850.json, mirrors merge500.py) and make_manifests850.py (resolves FETCHED: and video framePaths). Baseline check: 0/250, 250 gaps, 0 dupes, 0 problems.
+
+## 2026-08-18 — Picture-audit phase 2 group 8 (25 images, seq 601-625)
+
+- Processed sequences 601-625 with 5 parallel agents -> audit/picture-audit-500/checkpoint-2026-08-18/agent-out-850/agent55-59.jsonl (one attempt per image). Seq 607 (post #2524) marked needsReview: ~25-item stitched compilation, headlines/key lines indexed, full transcription remains; row added to audit/picture-review.md queue. No blocked/withheld.
+- merge850.py check: 25/250, 225 gaps, 0 dupes, 0 problems, green 24 / yellow 1. Next gap: 626. Not compiled; no push/deploy.

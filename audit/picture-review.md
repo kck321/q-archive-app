@@ -19,6 +19,7 @@ transcribe them freely; the notes below say exactly where to look.
 | 431 | #2073 | DmNqIstU8AARHua.jpg-large.jpg | `7835a61d2a5d1d839bde6cb9a25b6fc034a179c3390efc091079e3e4778084da.jpg` | 763×684 |
 | 433 | #2074 | DmNeB-lVAAEGAm-.jpg | `588459f8f81db918946a48de5c0f842f29e592b83de27d14e8a7bf650ed394d0.jpg` | 1600×800 |
 | 566 | #2388 | DrBH7aTXcAEMZH7.jpg-large.jpg | `8284738cd31083c77115e345f86d722b87a4c3c63f9f0d8bb08a6a6bc3badd74.jpg` | 1600×1245 |
+| 607 | #2524 | goodbyeRRsidebyside.png | `8e319888e697b44b7277f2cd2938fb60f3050011868f18cdc444cdd37ca143d2.jpg` | 1600×1401 |
 
 ## What each contains (from the completed visual pass)
 
@@ -52,6 +53,8 @@ transcribe them freely; the notes below say exactly where to look.
 - **#2388 (n566):** Q post embedding ~45 article URLs plus two dense brochure pages;
   headline text and key highlighted passages transcribed — full verbatim transcription of
   every URL and brochure paragraph remains.
+- **#2524 (n607):** Stitched side-by-side compilation of ~25 items; headlines and key
+  Q-post lines indexed — full word-for-word transcription of every long post remains.
 - **#132 (n98):** "Q Graphic" — the community's cleaned November 2017 compilation.
   Contains the `Q !ITPb.qbhqo` tripcode era posts and the Spy.png / AF1 photo inserts.
   Substantial overlap with the archive's own ingested drops #1–#112.
