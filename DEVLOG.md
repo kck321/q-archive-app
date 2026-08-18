@@ -5398,3 +5398,8 @@ approved.
 
 - Processed sequences 676-700 with 5 parallel agents -> agent-out-850/agent70-74.jsonl (one attempt per image). Seq 685 (post #2735) marked needsReview: only a 93x399 thumbnail survives, body text illegible; row added to audit/picture-review.md. No blocked/withheld.
 - merge850.py check: 100/250, 150 gaps, 0 dupes, 0 problems, needsReview [607, 685]. Next gap: 701. Not compiled; no push/deploy.
+
+## 2026-08-18 — Picture-audit phase 2 group 12 (25 images, seq 701-725)
+
+- Processed sequences 701-725 with 5 parallel agents -> agent-out-850/agent75-79.jsonl (one attempt per image). Seq 712 (post #2775) marked needsReview: right-column fine print below legible resolution, partial transcription preserved; row added to audit/picture-review.md. No blocked/withheld.
+- merge850.py check: 125/250, 125 gaps, 0 dupes, 0 problems, needsReview [607, 685, 712]. Next gap: 726. Not compiled; no push/deploy.

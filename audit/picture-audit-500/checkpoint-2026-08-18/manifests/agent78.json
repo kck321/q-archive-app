@@ -1,0 +1,72 @@
+[
+ {
+  "n": 716,
+  "hash": "68e13f2472f5842b827646d162f05bf351b8d2cdcb615353aec0666b24301da7",
+  "filename": "7D41C3B5-45E7-41C7-B5B4-DE94E77998DB.jpeg",
+  "firstPost": "2782",
+  "source": "attached",
+  "posts": [
+   {
+    "num": 2782,
+    "source": "attached"
+   }
+  ],
+  "path": "C:\\Users\\heath\\q-app\\media-bundle\\68e13f2472f5842b827646d162f05bf351b8d2cdcb615353aec0666b24301da7.jpg"
+ },
+ {
+  "n": 717,
+  "hash": "1a5df9e861c6d3e619a7562e12e82bf486074fa646f25ffa261b95f9a4ff9c4f",
+  "filename": "1 BB re Logan Media Bias 2-18-19.PNG",
+  "firstPost": "2785",
+  "source": "referenced",
+  "posts": [
+   {
+    "num": 2785,
+    "source": "referenced"
+   }
+  ],
+  "path": "C:\\Users\\heath\\q-app\\media-bundle\\1a5df9e861c6d3e619a7562e12e82bf486074fa646f25ffa261b95f9a4ff9c4f.jpg"
+ },
+ {
+  "n": 718,
+  "hash": "49a2e2f125e2d3dd6ed4c8d2349fd667053d7a20f320f97bb567b4e3ca0327d2",
+  "filename": "2 BB re Logan Media Bias 2-18-19.PNG",
+  "firstPost": "2785",
+  "source": "referenced",
+  "posts": [
+   {
+    "num": 2785,
+    "source": "referenced"
+   }
+  ],
+  "path": "C:\\Users\\heath\\q-app\\media-bundle\\49a2e2f125e2d3dd6ed4c8d2349fd667053d7a20f320f97bb567b4e3ca0327d2.jpg"
+ },
+ {
+  "n": 719,
+  "hash": "ed9f36a9a65d1ea22b851c44a0c13a3eb954bb393fe4355601a85a4d304282a2",
+  "filename": "3 BB re Logan Media Bias 2-18-19.PNG",
+  "firstPost": "2785",
+  "source": "referenced",
+  "posts": [
+   {
+    "num": 2785,
+    "source": "referenced"
+   }
+  ],
+  "path": "C:\\Users\\heath\\q-app\\media-bundle\\ed9f36a9a65d1ea22b851c44a0c13a3eb954bb393fe4355601a85a4d304282a2.png"
+ },
+ {
+  "n": 720,
+  "hash": "e27523a2cbf83ab60fa12a690505c8c593e77b2652f472319802736d701e460e",
+  "filename": "4 BB re Logan Media Bias 2-18-19.PNG",
+  "firstPost": "2785",
+  "source": "referenced",
+  "posts": [
+   {
+    "num": 2785,
+    "source": "referenced"
+   }
+  ],
+  "path": "C:\\Users\\heath\\q-app\\media-bundle\\e27523a2cbf83ab60fa12a690505c8c593e77b2652f472319802736d701e460e.png"
+ }
+]
