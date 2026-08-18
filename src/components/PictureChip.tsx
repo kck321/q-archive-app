@@ -61,7 +61,7 @@ export default function PictureChip({ url }: { url: string | undefined | null })
     <div className="mt-1.5">
       <button
         onClick={e => { e.preventDefault(); e.stopPropagation(); setOpen(v => !v) }}
-        title={DOT_TITLE[info.confidence]}
+        title={info.needsReview ? 'Flagged for manual review — analysis incomplete' : DOT_TITLE[info.confidence]}
         className={`text-xs border px-2 py-0.5 rounded flex items-center gap-1.5 font-medium transition-colors ${
           open
             ? 'bg-teal-800/60 text-teal-100 border-teal-500/70'
@@ -69,7 +69,16 @@ export default function PictureChip({ url }: { url: string | undefined | null })
         }`}
       >
         📷 Picture
-        <span className={`inline-block w-2 h-2 rounded-full ${DOT[info.confidence]}`} />
+        {info.needsReview ? (
+          // TWO red dots = flagged for the owner's manual review queue (incomplete analysis),
+          // distinct from one red dot = analysed but subject unidentified.
+          <span className="flex items-center gap-0.5">
+            <span className="inline-block w-2 h-2 rounded-full bg-red-500" />
+            <span className="inline-block w-2 h-2 rounded-full bg-red-500" />
+          </span>
+        ) : (
+          <span className={`inline-block w-2 h-2 rounded-full ${DOT[info.confidence]}`} />
+        )}
         <span className="text-teal-500/80">{open ? '▾' : '▸'}</span>
       </button>
 
@@ -82,6 +91,9 @@ export default function PictureChip({ url }: { url: string | undefined | null })
             <span className={info.confidence === 'green' ? 'text-green-400' : info.confidence === 'yellow' ? 'text-yellow-300' : 'text-red-400'}>
               {info.confidence}
             </span>
+            {info.needsReview && (
+              <span className="ml-2 text-red-400 font-semibold">🔴🔴 needs manual review</span>
+            )}
           </p>
           <p className="text-xs text-gray-300 leading-relaxed">{info.description}</p>
 

@@ -23,6 +23,9 @@ export interface PictureInfo {
   terms: string[]
   flags: string[]
   confidence: 'green' | 'yellow' | 'red'
+  /** Owner review queue: analysis exists but is incomplete (e.g. a giant compilation whose
+      full transcript needs a human pass). Rendered as TWO red dots on the chip. */
+  needsReview?: boolean
 }
 
 let _cache: Map<string, PictureInfo> | null = null

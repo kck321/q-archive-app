@@ -5320,3 +5320,12 @@ approved.
 - Proof: `scripts/test-picture-chips.mjs` (browser, warm profile) — chip renders on /post/1001, expands, term-links work; /posts?q=Wojcicki (picture-only term) yields Pic chips ascending; /pics search "Ghislaine" surfaces GM.JPG. GREEN. `tsc` + `npm run build` clean.
 - **Timer: 100 images start-to-finish (scan + data + UI + proof) = 39m50s; the vision scan + data file alone = 20.8 min.**
 - NOT deployed (owner's local-first batch rule). Deploy floor will be `certified` (public/data changed).
+
+## 2026-08-17 — Picture review queue (two red dots) + pic-matched card tag (LOCAL, not deployed)
+**Request:** The three giant compilation images (#101, #128, #132) hit the AI provider's content-policy block when full verbatim transcription was attempted (the "API Error: 400 Output blocked by content filtering policy" the owner saw). Owner ruling: do what's possible, flag problem pictures with TWO red dots instead of one, and store the info for later manual work. Also finish the earlier ask: the pic-matched post's open card in search results should carry its Pic label in its ordered place.
+**Solution:**
+- `picture-analysis.json`: `needsReview: true` on n3/#101, n83/#128, n98/#132 with a flag explaining the block; their key-phrase indexes remain searchable.
+- `PictureChip`: `needsReview` renders TWO red dots (vs one red = analysed-but-unidentified) and a "🔴🔴 needs manual review" line in the panel.
+- `audit/picture-review.md`: the owner's review queue — what each flagged image contains, the re-tiling recipe, and the one-field edit (`needsReview: false`) that reverts the dots once text is added by hand. Standing rule recorded: any future incomplete extraction gets the same treatment.
+- PostArchive: pic-matched result cards now carry a teal "📷 Pic #N — matched inside this post's picture" tag + teal ring, in their ordered position among the open results.
+- Proof: `scripts/test-picture-review.mjs` GREEN (two dots on #101, review note in panel, card tag on /posts?q=vatican). `tsc` clean.

@@ -1427,7 +1427,15 @@ export default function PostArchive() {
                             : <>↓ Other posts via alias (don't contain "{searchTerm}" exactly)</>}
                         </p>
                       )}
-                      <div className={exact ? 'ring-1 ring-red-700/50 rounded-xl' : ''}>
+                      {/* The pic-matched drop opens like every other result, in its ordered
+                          place — this tag on the card says WHY it is here. */}
+                      {picNums.has(p.postNum) && (
+                        <p className="text-xs text-teal-300 mb-1 flex items-center gap-1.5">
+                          <span className="px-1.5 py-0.5 rounded font-mono bg-teal-900/40 border border-teal-700/50">📷 Pic #{p.postNum}</span>
+                          "{searchTerm}" matched inside this post's picture
+                        </p>
+                      )}
+                      <div className={exact ? 'ring-1 ring-red-700/50 rounded-xl' : picNums.has(p.postNum) ? 'ring-1 ring-teal-700/50 rounded-xl' : ''}>
                         <PostCard post={p}
                           questionTexts={postQuestions[p.id]}
                           searchKeyword={searchTerm}

@@ -101,9 +101,10 @@
     "Military Intelligence"
    ],
    "flags": [
-    "Contains more text than can be fully transcribed in one pass — key phrases indexed, full OCR pending"
+    "FLAGGED FOR MANUAL REVIEW: full-text extraction of this compilation is blocked by automated content policy — the key phrases and post numbers above are indexed; the complete transcript needs a human pass. See audit/picture-review.md."
    ],
-   "confidence": "green"
+   "confidence": "green",
+   "needsReview": true
   },
   {
    "hash": "1ba00bfd034c0bc938da23c2a400cd4a2bc148fbe8e150deea9507fbd86bae31",
@@ -2885,9 +2886,10 @@
     "November 2017"
    ],
    "flags": [
-    "Contains more text than can be fully transcribed in one pass — flagged for multi-pass OCR"
+    "FLAGGED FOR MANUAL REVIEW: full-text extraction of this compilation is blocked by automated content policy — the key phrases and post numbers above are indexed; the complete transcript needs a human pass. See audit/picture-review.md."
    ],
-   "confidence": "green"
+   "confidence": "green",
+   "needsReview": true
   },
   {
    "hash": "210d0b5cfa6008954bb0279b609a6fe60927e783d0c6952b98fb5e5e58084b83",
@@ -3387,9 +3389,10 @@
     "November 2017"
    ],
    "flags": [
-    "Contains more text than can be fully transcribed in one pass — flagged for multi-pass OCR"
+    "FLAGGED FOR MANUAL REVIEW: full-text extraction of this compilation is blocked by automated content policy — the key phrases and post numbers above are indexed; the complete transcript needs a human pass. See audit/picture-review.md."
    ],
-   "confidence": "green"
+   "confidence": "green",
+   "needsReview": true
   },
   {
    "hash": "bdf33ed9dd09187c028033011da9db40f785e3ba83ebf5e8ceedd729e1782736",
