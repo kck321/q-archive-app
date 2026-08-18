@@ -12,8 +12,13 @@ transcribe them freely; the notes below say exactly where to look.
 | 3 | #101 | LATEST Q VERIFIED NOV6.png | `1509926281137.jpg` | 1600×2378 |
 | 83 | #128 | 1510280445405.jpg | `1510107905656.jpg` | 4096×3518 |
 | 98 | #132 | Q Graphic.png | `1510320845603.jpg` | 1600×1714 |
+| 257 | #1658 | F20D6545-C0D7-4A91-ACF7-35688A7D0546.jpeg | `950ffc514becbcf660641ded72f1e8b44af9cb059a9b3b36f4946a88c0a5109d.jpg` | 927×1200 |
+| 290 | #1734 | _lLcJ2cm_C98HCwHFSBJlEfViGx6CMrSIp3HofnJ82Q.png | `7a26fc427e4b4e6d81b997d9b950d0d4df42101a92684990280b9e38cb995741.jpg` | 960×317 |
 | 328 | #1809 | DjoEFyjXcAARKbu.jpg | `ad59f3ebae0cbc57d1f5629dee6faa15c3f43e8b01d1b73cd523bd264bd2a7aa.jpg` | 927×1200 |
+| 423 | #2051 | A&Wsidebyside.png | `a8e3c936ee08af3b52b663c800311a72f4d226d0dfafbdd611bda2531c97a9df.jpg` | 1600×1323 |
 | 431 | #2073 | DmNqIstU8AARHua.jpg-large.jpg | `7835a61d2a5d1d839bde6cb9a25b6fc034a179c3390efc091079e3e4778084da.jpg` | 763×684 |
+| 433 | #2074 | DmNeB-lVAAEGAm-.jpg | `588459f8f81db918946a48de5c0f842f29e592b83de27d14e8a7bf650ed394d0.jpg` | 1600×800 |
+| 566 | #2388 | DrBH7aTXcAEMZH7.jpg-large.jpg | `8284738cd31083c77115e345f86d722b87a4c3c63f9f0d8bb08a6a6bc3badd74.jpg` | 1600×1245 |
 
 ## What each contains (from the completed visual pass)
 
@@ -29,12 +34,24 @@ transcribe them freely; the notes below say exactly where to look.
   late-Oct/early-Nov 2017 threads at higher capture width, with the AF1 cloud photos and
   the same posters embedded. Overlaps #101 heavily — transcribing #101 first will cover
   most of it; then diff.
+- **#1658 (n257):** Per-district "sealed indictments" data table; ~750 numeric body cells.
+  Headers, totals row and footnotes transcribed verbatim — the cell grid remains for a human.
+- **#1734 (n290):** Partial OCR preserved; sidebar headlines in the embedded article
+  thumbnail are too small to transcribe fully.
 - **#1809 (n328):** Per-district data table of monthly "sealed indictments" counts (≈94 rows ×
   6 monthly columns). Headers, totals and footnotes captured; the full cell-by-cell grid was
   not transcribed. Description/summary complete — only the number grid remains for a human.
+- **#2051 (n423):** Side-by-side graphic embedding nine drops in dense small text.
+  Annotations and key passages transcribed; the full verbatim text of every embedded post
+  remains for a human.
 - **#2073 (n431):** Embedded grid of ~30 tweet screenshots, each too small to transcribe
   fully; account names and recurring headline phrases are indexed. Description complete —
   the per-tweet verbatim text remains for a human.
+- **#2074 (n433):** Compilation of ~25 small tweet screenshots; repeated headline variants
+  and account names indexed — per-tweet full text, timestamps and engagement counts remain.
+- **#2388 (n566):** Q post embedding ~45 article URLs plus two dense brochure pages;
+  headline text and key highlighted passages transcribed — full verbatim transcription of
+  every URL and brochure paragraph remains.
 - **#132 (n98):** "Q Graphic" — the community's cleaned November 2017 compilation.
   Contains the `Q !ITPb.qbhqo` tripcode era posts and the Spy.png / AF1 photo inserts.
   Substantial overlap with the archive's own ingested drops #1–#112.

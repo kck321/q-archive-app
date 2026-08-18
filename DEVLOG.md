@@ -5365,3 +5365,10 @@ approved.
 
 - Processed sequences 528-570 with 5 parallel agents -> audit/picture-audit-500/checkpoint-2026-08-18/agent-out/agent45-50.jsonl. One image (seq 554, post #2362) triggered output filtering on its single analysis attempt: its record is the minimal review_required entry (confidence red + needsReview = two red dots, ocrStatus withheld, no retry, no content recorded) and a private row was added to audit/picture-review.md 'Withheld analyses'. The four never-attempted images behind it (558-561) were completed by continuation agent50 (one attempt each).
 - merge500.py check: 483/500, 17 gaps, 0 dupes, 0 problems, green 396 / yellow 65 / red 22, needsReview [257, 290, 308, 328, 423, 431, 433, 554, 566]. Next gap: 571. Not compiled into public/data; no push/deploy.
+
+## 2026-08-18 — Picture-audit FINAL group (17 images, seq 571-600) — 500/500 COMPLETE
+
+- Processed the final 17 missing sequences (571-600) with 4 parallel agents -> audit/picture-audit-500/checkpoint-2026-08-18/agent-out/agent51-54.jsonl (one attempt per image). No blocked/withheld images; no new needsReview.
+- FINAL merge500.py check: 500/500, 0 gaps, 0 dupes, 0 problems. Confidence: green 412 / yellow 66 / red 22. needsReview (9): 257, 290, 308, 328, 423, 431, 433, 554, 566. Independent recount over all agent JSONLs confirms every one of the 500 batch sequence numbers occurs exactly once.
+- audit/picture-review.md now reconciles fully with the records: withheld table rows 308 + 554 match the two ocrStatus:"withheld" records; queue rows added for every incomplete-transcription needsReview (257, 290, 328, 423, 431, 433, 566 from this batch).
+- NOT compiled into public/data (merge500.py compile not run), no push, no deploy. src/pages/ResolutionCenter.tsx (dirty) and scripts/test-picture-resolution.mjs (untracked) left untouched and uncommitted throughout.
