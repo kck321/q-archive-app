@@ -5372,3 +5372,9 @@ approved.
 - FINAL merge500.py check: 500/500, 0 gaps, 0 dupes, 0 problems. Confidence: green 412 / yellow 66 / red 22. needsReview (9): 257, 290, 308, 328, 423, 431, 433, 554, 566. Independent recount over all agent JSONLs confirms every one of the 500 batch sequence numbers occurs exactly once.
 - audit/picture-review.md now reconciles fully with the records: withheld table rows 308 + 554 match the two ocrStatus:"withheld" records; queue rows added for every incomplete-transcription needsReview (257, 290, 328, 423, 431, 433, 566 from this batch).
 - NOT compiled into public/data (merge500.py compile not run), no push, no deploy. src/pages/ResolutionCenter.tsx (dirty) and scripts/test-picture-resolution.mjs (untracked) left untouched and uncommitted throughout.
+
+## 2026-08-18 — Picture-audit phase 2 setup (next 250, seq 601-850)
+
+- Owner asked for the next 250 images. build_next250.py reproduces the enumeration (posts sorted by string id, attached then referenced media, dedup by URL-hash stem, occurrence lists numeric) and REFUSES to emit unless it reproduces first100+batch500 exactly — verification passed 600/600, total distinct images in archive: 1690. Emitted batch850.json (n=601-850).
+- 22 rows had no media-bundle file (all 8ch file_store/thumb URLs): fetch_missing.py fetched them via the qalerts rewrite (full-size preferred over thumb), PIL-verified, into fetched/ — 22/22 ok. One video (seq 739, 45s mp4): 3 frames extracted to vframes/n739_f0-2.jpg.
+- New tooling: merge850.py (check/compile over agent-out-850/ against batch850.json, mirrors merge500.py) and make_manifests850.py (resolves FETCHED: and video framePaths). Baseline check: 0/250, 250 gaps, 0 dupes, 0 problems.
