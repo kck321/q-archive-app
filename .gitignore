@@ -54,3 +54,8 @@ scripts/.devlog-index.tsv
 # It records WHICH bytes passed WHICH profile on this machine; it is local evidence about a local
 # run, never a fact about the repo.
 .validate-receipt.json
+
+# The throwaway production build and the measurement dumps used by scripts/perf-baseline.mjs.
+# NEVER build into dist/: dist/build-info.json is the only local record of what production is
+# serving, and vite build empties the directory it writes to.
+.perf-*
