@@ -25,6 +25,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { launch } from './lib/browser.mjs'
+import { SAMPLER, settle } from './lib/perf.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const args = process.argv.slice(2)
@@ -50,97 +51,12 @@ const routes = arg('--routes', null)
   ? arg('--routes').split(',').map(r => [r, r])
   : DEFAULT_ROUTES
 
-// ── The sampler ───────────────────────────────────────────────────────────────────────────────
+// ── The instrument ────────────────────────────────────────────────────────────────────────────
 //
-// Installed immediately after the tab opens, which is early enough: the milestones it stamps are
-// seconds away, and everything BEFORE it — navigation, the data fetches — is recovered afterwards
-// from the Performance API, which was recording the whole time.
-//
-// NO BACKTICKS AND NO BACKSLASHES in this expression. It is a template literal on the way to the
-// page, so an escape written here arrives as a different string than the one intended — the same
-// trap the multi-word and category-order gates carry a warning about.
-const SAMPLER = `(() => {
-  if (window.__perf) return 'already'
-  const p = { marks: {}, samples: [], long: [], installedAt: Math.round(performance.now()) }
-  window.__perf = p
-  try {
-    new PerformanceObserver(list => {
-      for (const e of list.getEntries()) p.long.push([Math.round(e.startTime), Math.round(e.duration)])
-    }).observe({ type: 'longtask', buffered: true })
-  } catch (e) { p.longtaskUnavailable = true }
-  const mark = k => { if (p.marks[k] === undefined) p.marks[k] = Math.round(performance.now()) }
-  const tick = () => {
-    const rows = document.querySelectorAll('div.bg-q-panel').length
-    const chips = document.querySelectorAll('a[href*="/post/"]').length
-    if (document.querySelector('main')) mark('shell')
-    if (rows > 0) mark('firstRow')
-    if (rows > 2) mark('rows')
-    if (rows > 2 && chips > 0) mark('chips')
-    const last = p.samples[p.samples.length - 1]
-    if (!last || last[1] !== rows || last[2] !== chips) p.samples.push([Math.round(performance.now()), rows, chips])
-    if (p.samples.length > 3000) clearInterval(p.timer)
-  }
-  p.timer = setInterval(tick, 25)
-  tick()
-  return 'installed'
-})()`
-
-// Everything the browser recorded on its own. Read once, at the end, so reading it cannot slow the
-// thing being measured.
-const REPORT = `(() => {
-  const p = window.__perf || { marks: {}, samples: [], long: [] }
-  const nav = performance.getEntriesByType('navigation')[0] || {}
-  const data = []
-  let dataBytes = 0
-  for (const r of performance.getEntriesByType('resource')) {
-    if (r.name.indexOf('/data/') === -1) continue
-    dataBytes += r.encodedBodySize || 0
-    data.push({
-      name: r.name.split('/data/')[1],
-      start: Math.round(r.startTime),
-      dur: Math.round(r.duration),
-      kb: Math.round((r.encodedBodySize || 0) / 1024),
-    })
-  }
-  const samples = p.samples || []
-  const lastChange = samples.length ? samples[samples.length - 1][0] : null
-  const final = samples.length ? samples[samples.length - 1] : [0, 0, 0]
-  const long = p.long || []
-  let blocking = 0
-  for (const l of long) blocking += Math.max(0, l[1] - 50)
-  return {
-    marks: p.marks || {},
-    nav: {
-      responseEnd: Math.round(nav.responseEnd || 0),
-      domContentLoaded: Math.round(nav.domContentLoadedEventEnd || 0),
-      load: Math.round(nav.loadEventEnd || 0),
-    },
-    requests: performance.getEntriesByType('resource').length,
-    data: data.sort((a, b) => b.kb - a.kb).slice(0, 8),
-    dataFiles: data.length,
-    dataKb: Math.round(dataBytes / 1024),
-    lastChange,
-    rows: final[1],
-    chips: final[2],
-    longTasks: long.length,
-    longest: long.reduce((m, l) => Math.max(m, l[1]), 0),
-    blocking: Math.round(blocking),
-    longtaskUnavailable: !!p.longtaskUnavailable,
-    long: long.slice(0, 40),
-    seed: null,
-  }
-})()`
-
-const SEED_READ = `(async () => {
-  try {
-    const db = await new Promise((res, rej) => { const r = indexedDB.open('q-archive', 1); r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error) })
-    return await new Promise((res, rej) => { const r = db.transaction('collections').objectStore('collections').get('__seed_version__'); r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error) })
-  } catch (e) { return null }
-})()`
-
-const LAST_SAMPLE = `(() => { const p = window.__perf; if (!p) return '0:0'; const n = p.samples.length; const f = n ? p.samples[n - 1] : [0,0,0]; return f[1] + ':' + f[2] })()`
-
-const sleep = ms => new Promise(r => setTimeout(r, ms))
+// The sampler, the report and the settle loop live in scripts/lib/perf.mjs, because
+// scripts/perf-postfix.mjs measures the same app against the numbers this file produced. Two
+// copies of a sampler are two baselines, and a number taken with one cannot honestly be
+// subtracted from a number taken with the other.
 
 /**
  * One load, start to settled.
@@ -150,33 +66,11 @@ const sleep = ms => new Promise(r => setTimeout(r, ms))
  * app's own, not the harness's patience.
  */
 async function measure(browser, url) {
+  const startedAt = Date.now()
   const page = await browser.page(url)
   const installed = await page.evaluate(SAMPLER)
-  const QUIET = 2500
-  const deadline = Date.now() + 90000
-  let last = null, lastAt = Date.now(), reloads = 0
-  for (;;) {
-    // THE PAGE RELOADS ITSELF IN PRODUCTION, and the first version of this loop reported zeros
-    // for every route because of it. main.tsx reloads once when a new service worker activates,
-    // which throws away the JS context and every measurement in it. Re-arming rather than
-    // trusting the first install is what makes the built bundle measurable at all — and the
-    // count is reported, because a reload is not free: it is a whole startup, paid twice.
-    if (await page.evaluate('!window.__perf')) {
-      await page.evaluate(SAMPLER)
-      reloads++
-      last = null
-      lastAt = Date.now()
-    }
-    const s = await page.evaluate(LAST_SAMPLE)
-    if (s !== last) { last = s; lastAt = Date.now() }
-    if (Date.now() - lastAt > QUIET && last !== '0:0') break
-    if (Date.now() > deadline) break
-    await sleep(150)
-  }
-  const report = await page.evaluate(REPORT)
-  report.seed = await page.evaluate(SEED_READ)
+  const report = await settle(page, { startedAt })
   report.installedSampler = installed
-  report.reloads = reloads
   await page.close()
   return report
 }

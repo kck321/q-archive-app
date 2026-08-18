@@ -114,6 +114,14 @@ function makeHandle(port, profile, proc, reused) {
       })
       return {
         evaluate,
+        /**
+         * Raw CDP, for measurement only.
+         *
+         * The gates never need it — they assert on the DOM. The perf harness does: Profiler for a
+         * CPU profile and precise call counts, Network for blocking a URL (an unregistered service
+         * worker is how the reload it causes gets isolated and costed).
+         */
+        cdp: send,
         /** Poll `expression` until it returns truthy. Returns the value, or null on timeout. */
         waitFor,
         /**
