@@ -19,6 +19,7 @@ import { highlightsEnabled, useHighlightsEnabled } from '../lib/highlightPrefs'
 import { mediaUrl, dedupeMedia } from '../lib/mediaUrl'
 import { resolveReferences, getQuotedContext, type QuotedContext } from '../lib/references'
 import QuotedPosts from '../components/QuotedPosts'
+import PictureChip from '../components/PictureChip'
 import UnresolvedInPost from '../components/UnresolvedInPost'
 import LinkedSources from '../components/LinkedSources'
 import { highlightText } from '../lib/postHighlight'
@@ -1722,18 +1723,22 @@ export default function PostDetail() {
                   📎 {m.filename || m.url}
                 </a>
               ) : (
-                <div key={m.url} className="rounded-lg overflow-hidden border border-gray-700">
-                  <img
-                    src={mediaUrl(m.url)}
-                    alt={m.filename}
-                    className="max-w-full h-auto block"
-                    loading="lazy"
-                    onError={e => { (e.currentTarget.closest('.rounded-lg') as HTMLElement).style.display = 'none' }}
-                  />
-                  <div className="bg-gray-800/70 px-3 py-1.5 flex items-center justify-between">
-                    <span className="text-xs text-gray-400 truncate mr-2">{m.filename}</span>
-                    <a href={mediaUrl(m.url)} target="_blank" rel="noreferrer" className="text-xs text-blue-400 hover:underline shrink-0">Open ↗</a>
+                <div key={m.url}>
+                  <div className="rounded-lg overflow-hidden border border-gray-700">
+                    <img
+                      src={mediaUrl(m.url)}
+                      alt={m.filename}
+                      className="max-w-full h-auto block"
+                      loading="lazy"
+                      onError={e => { (e.currentTarget.closest('.rounded-lg') as HTMLElement).style.display = 'none' }}
+                    />
+                    <div className="bg-gray-800/70 px-3 py-1.5 flex items-center justify-between">
+                      <span className="text-xs text-gray-400 truncate mr-2">{m.filename}</span>
+                      <a href={mediaUrl(m.url)} target="_blank" rel="noreferrer" className="text-xs text-blue-400 hover:underline shrink-0">Open ↗</a>
+                    </div>
                   </div>
+                  {/* What the picture shows — sits before the drop's analysis chips below. */}
+                  <PictureChip url={m.url} />
                 </div>
               )
             })}
@@ -1744,21 +1749,24 @@ export default function PostDetail() {
         {refImages.length > 0 && (
           <div className="mt-4 space-y-3">
             {refImages.map(img => (
-              <div key={img.num} className="rounded-lg overflow-hidden border border-indigo-700/50">
-                <div className="bg-indigo-900/30 px-3 py-1.5 text-xs text-indigo-300 font-mono">
-                  Referenced post &gt;&gt;{img.num}
+              <div key={img.num}>
+                <div className="rounded-lg overflow-hidden border border-indigo-700/50">
+                  <div className="bg-indigo-900/30 px-3 py-1.5 text-xs text-indigo-300 font-mono">
+                    Referenced post &gt;&gt;{img.num}
+                  </div>
+                  <img
+                    src={mediaUrl(img.url)}
+                    alt={img.filename}
+                    className="max-w-full h-auto block"
+                    loading="lazy"
+                    onError={e => { (e.currentTarget.closest('.rounded-lg') as HTMLElement).style.display = 'none' }}
+                  />
+                  <div className="bg-gray-800/70 px-3 py-1.5 flex items-center justify-between">
+                    <span className="text-xs text-gray-400 truncate mr-2">{img.filename}</span>
+                    <a href={mediaUrl(img.url)} target="_blank" rel="noreferrer" className="text-xs text-blue-400 hover:underline shrink-0">Open ↗</a>
+                  </div>
                 </div>
-                <img
-                  src={mediaUrl(img.url)}
-                  alt={img.filename}
-                  className="max-w-full h-auto block"
-                  loading="lazy"
-                  onError={e => { (e.currentTarget.closest('.rounded-lg') as HTMLElement).style.display = 'none' }}
-                />
-                <div className="bg-gray-800/70 px-3 py-1.5 flex items-center justify-between">
-                  <span className="text-xs text-gray-400 truncate mr-2">{img.filename}</span>
-                  <a href={mediaUrl(img.url)} target="_blank" rel="noreferrer" className="text-xs text-blue-400 hover:underline shrink-0">Open ↗</a>
-                </div>
+                <PictureChip url={img.url} />
               </div>
             ))}
           </div>

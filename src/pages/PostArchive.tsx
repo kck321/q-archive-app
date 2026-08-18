@@ -16,6 +16,7 @@ import ScrollableChart from '../components/ScrollableChart'
 import TermPresenceBar from '../components/TermPresenceBar'
 import { matchAxisMax, MatchCountLabel, NO_MATCH_GREY } from '../lib/chartSearch'
 import { getTermMatchesInSection, type TermSectionMatch } from '../lib/posts'
+import { getPictureTextByPost } from '../lib/pictureAnalysis'
 import { catColor, seriesColor } from '../lib/categoryColors'
 import { CAN_EDIT, IS_PUBLIC_SITE } from '../lib/appMode'
 
@@ -542,8 +543,15 @@ export default function PostArchive() {
     return () => { window.clearTimeout(timer); window.removeEventListener('scroll', dismiss, true) }
   }, [])
 
+  // Per-post searchable text from the picture-analysis audit (what the attached images
+  // SHOW). Loaded once; search-only, never the analysis index.
+  const [picTextByPost, setPicTextByPost] = useState<Map<number, string> | null>(null)
+  useEffect(() => {
+    getPictureTextByPost().then(setPicTextByPost)
+  }, [])
+
   // Search results ordered with the EXACT searched-term posts first (so they're read first).
-  const { searchedNums, quotedNums, orderedResults: allOrdered } = useMemo(() => {
+  const { searchedNums, quotedNums, picNums, orderedResults: allOrdered } = useMemo(() => {
     const termLower = searchTerm.toLowerCase().trim()
     const searched = new Set(searchResults.filter(p => (p.text ?? '').toLowerCase().includes(termLower)).map(p => p.postNum))
     // Matched in the post being replied to rather than in Q's own words. These used to fall
@@ -556,10 +564,20 @@ export default function PostArchive() {
           (p.quotedPosts ?? []).some(q => (q.depth ?? 0) <= 1 && (q.text ?? '').toLowerCase().includes(termLower)))
         .map(p => p.postNum)
     )
-    const rank = (p: QPost) => searched.has(p.postNum) ? 0 : viaQuote.has(p.postNum) ? 1 : 2
+    // Matched inside an attached/referenced PICTURE — the vision audit's description,
+    // extracted text, people or logos. Shown as its own bucket with "Pic #N" chips.
+    const viaPic = new Set(
+      termLower && picTextByPost
+        ? searchResults
+            .filter(p => !searched.has(p.postNum) && !viaQuote.has(p.postNum) &&
+              (picTextByPost.get(p.postNum) ?? '').includes(termLower))
+            .map(p => p.postNum)
+        : []
+    )
+    const rank = (p: QPost) => searched.has(p.postNum) ? 0 : viaQuote.has(p.postNum) ? 1 : viaPic.has(p.postNum) ? 2 : 3
     const ordered = [...searchResults].sort((a, b) => rank(a) - rank(b) || a.postNum - b.postNum)
-    return { searchedNums: searched, quotedNums: viaQuote, orderedResults: ordered }
-  }, [searchResults, searchTerm])
+    return { searchedNums: searched, quotedNums: viaQuote, picNums: viaPic, orderedResults: ordered }
+  }, [searchResults, searchTerm, picTextByPost])
 
   // Alias color-coding: the searched term gets the red "searched" color, each other alias in the
   // group its own distinct color. `postColor` picks a single color per post by which member it
@@ -1321,7 +1339,22 @@ export default function PostArchive() {
                           {monthPostNums && <span className="text-gray-400"> in {formatMonth(selectedMonth!)} (of {searchResults.length.toLocaleString()} matching)</span>}
                           {searchedNums.size > 0 && breakdown.length > 0 && <span className="text-red-300"> · {searchedNums.size} contain "{searchTerm}" exactly (shown first, in red)</span>}
                           {quotedNums.size > 0 && <span className="text-amber-300"> · {quotedNums.size} in the post being replied to</span>}
+                          {picNums.size > 0 && <span className="text-teal-300"> · {picNums.size} matched inside a picture</span>}
                         </p>
+                        {/* Posts where the term is INSIDE an attached picture (its text, people,
+                            logos or description) — oldest first, per owner. */}
+                        {picNums.size > 0 && (
+                          <div className="flex flex-wrap items-center gap-1 pb-1">
+                            <span className="text-xs text-teal-400/80 mr-0.5">📷 In pictures:</span>
+                            {[...picNums].sort((a, b) => a - b).map(num => (
+                              <Link key={num} to={`/post/${num}?flash=1&highlight=${encodeURIComponent(searchTerm)}`}
+                                title={`"${searchTerm}" matched inside a picture in #${num}`}
+                                className="text-xs px-2 py-0.5 rounded font-mono border bg-teal-900/40 text-teal-300 border-teal-700/50 hover:bg-teal-800/50 hover:text-teal-100 transition-colors">
+                                Pic #{num}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
                         <div className="flex flex-wrap gap-1 max-h-44 overflow-y-auto pr-1">
                           {shown.map(p => {
                             const mentions = mentionCounts.get(p.postNum) ?? 0
@@ -1377,11 +1410,11 @@ export default function PostArchive() {
               <div className="grid gap-3 w-full max-w-3xl">
                 {orderedResults.map((p, i) => {
                   const exact = searchedNums.has(p.postNum)
-                  const viaQuote = quotedNums.has(p.postNum)
-                  const bucket = exact ? 0 : viaQuote ? 1 : 2
+                  const bucketOf = (x: QPost) =>
+                    searchedNums.has(x.postNum) ? 0 : quotedNums.has(x.postNum) ? 1 : picNums.has(x.postNum) ? 2 : 3
+                  const bucket = bucketOf(p)
                   const prev = orderedResults[i - 1]
-                  const prevBucket = !prev ? -1
-                    : searchedNums.has(prev.postNum) ? 0 : quotedNums.has(prev.postNum) ? 1 : 2
+                  const prevBucket = !prev ? -1 : bucketOf(prev)
                   return (
                     <div key={p.id}>
                       {/* divider each time the match kind changes */}
@@ -1389,6 +1422,8 @@ export default function PostArchive() {
                         <p className="text-xs text-gray-500 mb-3 mt-1 border-t border-q-border pt-3">
                           {bucket === 1
                             ? <>↓ Posts where "{searchTerm}" is in the post being replied to</>
+                            : bucket === 2
+                            ? <>📷 Posts where "{searchTerm}" matched inside an attached picture</>
                             : <>↓ Other posts via alias (don't contain "{searchTerm}" exactly)</>}
                         </p>
                       )}

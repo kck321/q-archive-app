@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import type { QPost, QuotedPost } from '../types'
 import { mediaUrl, dedupeMedia } from '../lib/mediaUrl'
+import PictureChip from './PictureChip'
 import { linkify } from '../lib/linkify'
 import { highlightText } from '../lib/postHighlight'
 import { getQuotedContext, type QuotedContext } from '../lib/references'
@@ -113,14 +114,17 @@ export default function QuotedPosts({
             {dedupeMedia(q.media).length > 0 && (
               <div className="space-y-2 px-3 pb-3">
                 {dedupeMedia(q.media).map((m, j) => (
-                  <a key={j} href={mediaUrl(m.url)} target="_blank" rel="noopener noreferrer">
-                    <img
-                      src={mediaUrl(m.url)}
-                      alt={m.filename ?? 'quoted attachment'}
-                      loading="lazy"
-                      className="max-w-full h-auto block rounded border border-gray-700 hover:border-gray-500"
-                    />
-                  </a>
+                  <div key={j}>
+                    <a href={mediaUrl(m.url)} target="_blank" rel="noopener noreferrer">
+                      <img
+                        src={mediaUrl(m.url)}
+                        alt={m.filename ?? 'quoted attachment'}
+                        loading="lazy"
+                        className="max-w-full h-auto block rounded border border-gray-700 hover:border-gray-500"
+                      />
+                    </a>
+                    <PictureChip url={m.url} />
+                  </div>
                 ))}
               </div>
             )}

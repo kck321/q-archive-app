@@ -3,6 +3,7 @@ import { loadLocalData, mutateStore, onStoreMutated, idbGetRaw, idbSetRaw, SEED_
 import { pushPostEdit, pushQuestionAdd, pushQuestionDelete } from './sync'
 import { getFullAliasGroup } from './aliases'
 import { wordBoundaryPattern } from './highlightConstants'
+import { getPictureTextByPost } from './pictureAnalysis'
 
 // ─── Item text normalization ──────────────────────────────────────────────────
 // One key for "the same phrase" across the whole app. What matters when grouping or
@@ -865,6 +866,10 @@ function dateMatches(ts: number, q: DateQuery): boolean {
 
 export async function searchAllPosts(term: string, exact = false): Promise<QPost[]> {
   const lower = term.toLowerCase()
+  // What the attached/referenced pictures SHOW — description, OCR text, people, logos —
+  // from the vision audit (picture-analysis.json). SEARCH ONLY, like quoted text: none of
+  // it is Q-authored and none of it may reach the analysis index. See lib/pictureAnalysis.
+  const picText = await getPictureTextByPost()
   const dateQuery = parseDateQuery(lower)
   // Expand to the term's alias group so searching one name (e.g. "Hillary") also finds
   // posts using its other names ("Hillary Clinton", "HRC").
@@ -907,7 +912,7 @@ export async function searchAllPosts(term: string, exact = false): Promise<QPost
       .filter(q => (q.depth ?? 0) <= 1)
       .map(q => (q.text ?? '').replace(/>>\d+/g, ''))
       .join(' ')
-    const text = `${(p.text ?? '').replace(/>>\d+/g, '')} ${names} ${quoted}`.toLowerCase()
+    const text = `${(p.text ?? '').replace(/>>\d+/g, '')} ${names} ${quoted} ${picText.get(p.postNum) ?? ''}`.toLowerCase()
     return matchers.some(mx => typeof mx === 'string' ? text.includes(mx) : mx.test(text))
   })
 }

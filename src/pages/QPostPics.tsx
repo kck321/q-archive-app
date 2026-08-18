@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { getAllPostsWithMedia } from '../lib/posts'
 import type { QPost, QMedia } from '../types'
 import { mediaUrl } from '../lib/mediaUrl'
+import PictureChip from '../components/PictureChip'
+import { loadPictureAnalysis, getPictureInfoSync, pictureHaystack } from '../lib/pictureAnalysis'
 
 const IMAGE_EXT_RX = /\.(jpg|jpeg|png|gif|webp|bmp|svg|tiff?|ico|avif|heic|heif)(\?[^\s]*)?$/i
 const IMAGE_PATH_RX = /\/(media|image|img|file_store|thumb|photos?|pictures?|uploads?)\//i
@@ -47,6 +49,13 @@ export default function QPostPics() {
     getAllPostsWithMedia().then(p => { setPosts(p); setLoading(false) })
   }, [])
 
+  // Picture-analysis entries load in the background; bump a tick so the search filter
+  // and the Picture chips see them once they land.
+  const [, setPicsTick] = useState(0)
+  useEffect(() => {
+    loadPictureAnalysis().then(() => setPicsTick(t => t + 1))
+  }, [])
+
   const allItems: ImageItem[] = posts.flatMap(p => {
     const seen = new Set<string>()
     const items: ImageItem[] = []
@@ -64,10 +73,15 @@ export default function QPostPics() {
   })
 
   const searched = search
-    ? allItems.filter(({ post, media }) =>
-        media.filename?.toLowerCase().includes(search.toLowerCase()) ||
-        String(post.postNum).includes(search)
-      )
+    ? allItems.filter(({ post, media }) => {
+        const q = search.toLowerCase()
+        if (media.filename?.toLowerCase().includes(q)) return true
+        if (String(post.postNum).includes(search)) return true
+        // Match on what the picture SHOWS — description, extracted text, people, logos —
+        // when the vision audit has an entry for it.
+        const info = getPictureInfoSync(media.url)
+        return !!info && pictureHaystack(info).includes(q)
+      })
     : allItems
 
   const displayed = showMode === 'loaded'
@@ -103,7 +117,7 @@ export default function QPostPics() {
       <div className="flex flex-wrap gap-3 mb-5">
         <input
           type="text"
-          placeholder="Search by filename or post number…"
+          placeholder="Search by filename, post number, or what's in the picture…"
           value={search}
           onChange={e => setSearch(e.target.value)}
           className="flex-1 min-w-48 bg-q-panel border border-q-border rounded-lg px-4 py-2 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-600"
@@ -180,6 +194,7 @@ export default function QPostPics() {
                   {media.filename && (
                     <p className="text-xs text-gray-600 truncate">{media.filename}</p>
                   )}
+                  <PictureChip url={media.url} />
                 </div>
               </div>
             )

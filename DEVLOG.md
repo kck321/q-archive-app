@@ -5304,3 +5304,19 @@ approved.
 - `scripts/lib/browser.mjs` — an additive `cdp` escape hatch on the page driver, for the Profiler
   and for blocking a URL. **This raises the batch's validation floor from `certified` to `full`**,
   since it is a module every gate runs through.
+
+## 2026-08-17 — Media audit trial run (25 images, Fable 5 vision pass — NO app changes)
+**Request:** Owner is comparing Claude vs GPT on image analysis for the planned "Image details chip" feature. Task: visually analyze the first 25 Q-post images (posts #101–#1095 sample list), extract text, identify people/logos/objects, and report — explicitly NO implementation yet.
+**Solution:** Located all 25 files in `media-bundle/` by mapping post `media`/`refMedia` URLs (hash filename in URL = local filename; note: many stored as .jpg even when the original URL says .png/.jpeg — extension in posts.json URL is not authoritative). All 25 present locally, including the two 4chan-era timestamp-named files (1509926281137.jpg, 1509929714012.jpg). Full vision report delivered in chat: OCR of screenshots (Google/Wikipedia TAC-Brennan pair, Backpage seizure, Breaking911 Farenthold, NBC/Lynch tweet, Verge/YouTube-Wikipedia article, 4chan Q post No.148570254), scene IDs (Little St. James aerial, Paul VI Audience Hall meme, Prince Andrew/Giuffre/Maxwell photo, Clinton-on-jet photo, ray.chandler Instagram screenshots, McCain-Syria 2013 photo set incl. the debunked al-Baghdadi caption, March for Transparency DC rally, USAID-tent militants, Jeff Haynie flaming-sword art). No files changed in the app; no chip built.
+
+## 2026-08-17 — Picture chips: first 100 images analysed + chip UI + search integration (LOCAL, not deployed)
+**Request:** Scan the first 100 Q-post pictures with vision, put a clickable "Picture" chip under each photo (before the post's analysis chips) carrying description/extracted text/people/logos/etc. with a green-yellow-red confidence dot, make picture content searchable so archive searches surface "Pic #N" chips (oldest→newest), and time the run.
+**Solution:**
+- `public/data/picture-analysis.json` — 100 distinct images (post-order enumeration, deduped by content hash), each with kind, description, full OCR text, people/orgs/objects/places, extra search terms, claim flags, confidence (82 green / 15 yellow / 3 red). Four early images missing from media-bundle were recovered from the qalerts mirror for analysis. OCR text is SEARCH-ONLY (invariant-9 pattern) — never the analysis index.
+- `src/lib/pictureAnalysis.ts` — loader keyed by URL basename (extension dropped: posts.json extensions are not authoritative), haystack builder, per-post search text map.
+- `src/components/PictureChip.tsx` — 📷 Picture chip + confidence dot; expands to full analysis; every listed person/org/place/term links to `/posts?q=…`.
+- Wired under every image surface: PostCard, PostDetail (attached + referenced), QuotedPosts, QPostPics; QPostPics search now matches picture content.
+- `searchAllPosts` appends per-post picture text; PostArchive gets a "matched inside a picture" bucket, teal "Pic #N" chips sorted ascending, and a results divider.
+- Proof: `scripts/test-picture-chips.mjs` (browser, warm profile) — chip renders on /post/1001, expands, term-links work; /posts?q=Wojcicki (picture-only term) yields Pic chips ascending; /pics search "Ghislaine" surfaces GM.JPG. GREEN. `tsc` + `npm run build` clean.
+- **Timer: 100 images start-to-finish (scan + data + UI + proof) = 39m50s; the vision scan + data file alone = 20.8 min.**
+- NOT deployed (owner's local-first batch rule). Deploy floor will be `certified` (public/data changed).

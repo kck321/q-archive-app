@@ -6,6 +6,7 @@ import { useAdmin } from './AdminContext'
 import { getAliasesFor, addAlias, removeAlias, subscribeAliases } from '../lib/aliases'
 import { sourceLink } from '../lib/sourceLink'
 import QuotedPosts from './QuotedPosts'
+import PictureChip from './PictureChip'
 import { linkify } from '../lib/linkify'
 import { mediaUrl, dedupeMedia } from '../lib/mediaUrl'
 import { timeAgo } from '../lib/timeAgo'
@@ -286,16 +287,20 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
                 📎 {m.filename || m.url}
               </a>
             ) : (
-              <a key={m.url} href={mediaUrl(m.url)} target="_blank" rel="noreferrer"
-                className="block rounded-lg overflow-hidden border border-gray-700 hover:border-gray-500">
-                <img
-                  src={mediaUrl(m.url)}
-                  alt={m.filename}
-                  loading="lazy"
-                  className="max-w-full h-auto block"
-                  onError={e => { (e.currentTarget.closest('a') as HTMLElement).style.display = 'none' }}
-                />
-              </a>
+              <div key={m.url}>
+                <a href={mediaUrl(m.url)} target="_blank" rel="noreferrer"
+                  className="block rounded-lg overflow-hidden border border-gray-700 hover:border-gray-500">
+                  <img
+                    src={mediaUrl(m.url)}
+                    alt={m.filename}
+                    loading="lazy"
+                    className="max-w-full h-auto block"
+                    onError={e => { (e.currentTarget.closest('a') as HTMLElement).style.display = 'none' }}
+                  />
+                </a>
+                {/* What the picture shows — before the drop's own analysis chips, per owner. */}
+                <PictureChip url={m.url} />
+              </div>
             )
           })}
         </div>
