@@ -5383,3 +5383,8 @@ approved.
 
 - Processed sequences 601-625 with 5 parallel agents -> audit/picture-audit-500/checkpoint-2026-08-18/agent-out-850/agent55-59.jsonl (one attempt per image). Seq 607 (post #2524) marked needsReview: ~25-item stitched compilation, headlines/key lines indexed, full transcription remains; row added to audit/picture-review.md queue. No blocked/withheld.
 - merge850.py check: 25/250, 225 gaps, 0 dupes, 0 problems, green 24 / yellow 1. Next gap: 626. Not compiled; no push/deploy.
+
+## 2026-08-18 — Picture-audit phase 2 group 9 (25 images, seq 626-650)
+
+- Processed sequences 626-650 with 5 parallel agents -> agent-out-850/agent60-64.jsonl (one attempt per image). No blocked/withheld; no new needsReview.
+- merge850.py check: 50/250, 200 gaps, 0 dupes, 0 problems. Next gap: 651. Not compiled; no push/deploy.
