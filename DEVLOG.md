@@ -5201,3 +5201,106 @@ from its command line, because the number never did.
 branch 83 commits ahead of a branch nobody uses and an ordinary `git pull` would have read the wrong
 one. Retargeted to `origin/master`; `diffBaseline()` was already naming `origin/master` explicitly,
 so no measurement in the pipeline was affected.
+
+---
+
+## The post-fix profile, and the 2.9s that no longer exists — 17 Aug 2026
+
+**Request:** before touching `normalizeItemKey` or the service-worker reload, throw away every
+conclusion drawn from the pre-fix profile and measure the current build again — a genuinely new
+visitor, a returning one, in-app navigation, first category versus later ones, how many times
+`buildTextIndex` actually runs, and what invalidation costs after an editorial write. Measure the
+service-worker reload and say what it costs, but do not change it. Production stays untouched.
+
+**The ruling was right, and the old profile was worse than stale.** It was taken of a page that
+built the text index five times; every per-function number in it measures work that no longer
+happens. `normalizeItemKey` is the clearest case — the pre-fix profile attributed 2.9s to it, and on
+the fixed build it costs **20.3ms of self time**. Nothing was carried forward.
+
+### What the built bundle costs now (`.perf-dist` on :4173, public build, three runs)
+
+| | | |
+|---|---|---|
+| first visit, service worker as production runs it | **2.18s** | one reload, 12.4 MB seeded |
+| first visit, `/sw.js` blocked so no worker installs | **1.47s** | no reload |
+| returning visitor, category URL opened directly | **0.99–1.50s** | six categories, no reload, nothing refetched |
+| in-app navigation, category to category | **0.20–0.32s** | |
+| landing on /posts, then opening a category | 0.52s, then **0.37s** | |
+
+**The service-worker activation reload costs 0.71s of a first visit and nothing afterwards.**
+Measured, not changed: the difference between the two first-visit rows, which is a whole startup
+paid twice. It fires once per profile — every returning load in this run reported zero reloads.
+
+### buildTextIndex, counted rather than reasoned about
+
+**Once per page session. Zero on every in-app navigation.** Counted with V8 precise coverage against
+the minified bundle, which names nothing — the functions are found by shape (`buildTextIndex` is the
+only one returning `{padded, byWord}`) and matched by offset.
+
+    one page session          buildTextIndex 1     getTextIndex 167     normalizeItemKey 1,024
+    each in-app navigation    buildTextIndex 0     getTextIndex   0     normalizeItemKey     0
+
+A counted 0 is a measured zero: V8 reports every function that ran, so absent means never called.
+The index is in memory, so "once per data version" is really **once per page session** — a new tab
+builds it again. The frequency table is the one with a cross-session cache in IndexedDB, and it is
+why the ~700ms build does not reappear on a returning visit.
+
+**The first category in a session pays for the index; later ones pay nothing.** Landing on /posts
+does not pay it either — the startup warm-up finds the frequency cache and never asks for the text
+index, so the first category click still builds it (0.37s all-in).
+
+### Invalidation after an editorial write: it holds, and it costs one rebuild
+
+Measured on the **editorial build** (editing is not compiled into the public one) in a throwaway
+profile with Firestore blocked at the network layer, so the confirm could not reach the certified
+store.
+
+A tab click is not a test of this — an in-app category change asks for the index zero times, so it
+rebuilds nothing either way. The page is taken away to /posts and back, which unmounts the section
+and makes it ask again:
+
+    away and back, no edit      asked 162 times, built 0    the cache holds
+    the confirm                 1 mutateStore call, built 0  invalidation only drops
+    away and back, after edit   asked 161 times, built 1    dropped and rebuilt, once
+
+### Two instruments disagreed, and the one that counted itself won
+
+V8 precise coverage reported that post-edit trip as **2** builds. A counter pushed into
+`buildTextIndex`'s own body on an instrumented copy of the same bundle recorded **1**, with one cold
+`getTextIndex` and no rejection. The entry came back with `isBlockCoverage: false`, so the count is
+coarse. The two agree on zero and on a fresh page session; where they disagree the in-function
+counter is the one that saw the call, and `takeCounts` now says so.
+
+### The fresh CPU profile: no remaining bottleneck to name
+
+Returning visitor, `/analysis?tab=claims`, self time:
+
+    (idle) 2,095ms   (program) 304ms   (garbage collector) 155ms
+    57.6ms  IndexedDB request callbacks     46.0ms  buildTextIndex
+    25.1ms  question-text normalize         24.6ms  recharts shape render
+    20.3ms  normalizeItemKey                20.0ms  React element creation
+
+The thirteen hottest app frames total **392ms between them**, and the largest is 57.6ms. There is no
+single function left to remove — what remains is React rendering 151 rows with their chips, the
+IndexedDB read, and the GC behind both. **No next optimization is proposed**, because nothing in
+this profile identifies a user-visible bottleneck.
+
+### The warm profile is not a measuring instrument
+
+`perf-baseline.mjs` run warm reported 4.33s for claims. The warm Chrome the gates share had **30
+pages open**, every one a live app instance against :5173, left behind by earlier runs. The same
+harness on a fresh profile: 2.01s first visit, 1.51s returning. The gates assert on the DOM so this
+never made them wrong, but a timing taken through the warm browser is a measurement of the browser.
+
+### What changed in the repo
+
+Measurement only — no app code was touched, and `src/` is byte-identical to the fix that was
+approved.
+
+- `scripts/lib/perf.mjs` — the sampler, the report, the settle loop, the bundle symbol finder and
+  the coverage counters. `perf-baseline.mjs` now imports it instead of carrying its own copy, so
+  both harnesses measure with the same instrument.
+- `scripts/perf-postfix.mjs` — the seven-step post-fix profile above.
+- `scripts/lib/browser.mjs` — an additive `cdp` escape hatch on the page driver, for the Profiler
+  and for blocking a URL. **This raises the batch's validation floor from `certified` to `full`**,
+  since it is a module every gate runs through.
