@@ -5349,3 +5349,9 @@ approved.
 
 - Processed sequences 378-422 with 5 parallel agents -> audit/picture-audit-500/checkpoint-2026-08-18/agent-out/agent25-29.jsonl (one analysis attempt per image). No blocked/withheld images; no new needsReview.
 - merge500.py check: 408/500, 92 gaps, 0 dupes, 0 problems, green 331 / yellow 56 / red 21, needsReview unchanged [257, 290, 308, 328, 423, 433, 566]. Next gap: 428. Not compiled into public/data; no push/deploy.
+
+## 2026-08-18 — Picture-audit resume group 5 (25 images, seq 428-472)
+
+- First launch (agents 30-34) was cut off by the session usage limit mid-run; 4 records (428, 429, 438, 448) were durably appended before the cutoff and kept. The 21 never-attempted images were relaunched as agents 35-39 (one analysis attempt per image throughout). Outputs: agent-out/agent30-32.jsonl (partial, valid) + agent35-39.jsonl.
+- No blocked/withheld images. Seq 431 (post #2073) marked needsReview: embedded grid of ~30 tweet screenshots too small to transcribe fully; account names and headline phrases indexed; row added to audit/picture-review.md queue.
+- merge500.py check: 433/500, 67 gaps, 0 dupes, 0 problems, green 353 / yellow 59 / red 21, needsReview [257, 290, 308, 328, 423, 431, 433, 566]. Next gap: 478. Not compiled into public/data; no push/deploy.

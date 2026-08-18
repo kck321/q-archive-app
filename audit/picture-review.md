@@ -13,6 +13,7 @@ transcribe them freely; the notes below say exactly where to look.
 | 83 | #128 | 1510280445405.jpg | `1510107905656.jpg` | 4096×3518 |
 | 98 | #132 | Q Graphic.png | `1510320845603.jpg` | 1600×1714 |
 | 328 | #1809 | DjoEFyjXcAARKbu.jpg | `ad59f3ebae0cbc57d1f5629dee6faa15c3f43e8b01d1b73cd523bd264bd2a7aa.jpg` | 927×1200 |
+| 431 | #2073 | DmNqIstU8AARHua.jpg-large.jpg | `7835a61d2a5d1d839bde6cb9a25b6fc034a179c3390efc091079e3e4778084da.jpg` | 763×684 |
 
 ## What each contains (from the completed visual pass)
 
@@ -31,6 +32,9 @@ transcribe them freely; the notes below say exactly where to look.
 - **#1809 (n328):** Per-district data table of monthly "sealed indictments" counts (≈94 rows ×
   6 monthly columns). Headers, totals and footnotes captured; the full cell-by-cell grid was
   not transcribed. Description/summary complete — only the number grid remains for a human.
+- **#2073 (n431):** Embedded grid of ~30 tweet screenshots, each too small to transcribe
+  fully; account names and recurring headline phrases are indexed. Description complete —
+  the per-tweet verbatim text remains for a human.
 - **#132 (n98):** "Q Graphic" — the community's cleaned November 2017 compilation.
   Contains the `Q !ITPb.qbhqo` tripcode era posts and the Spy.png / AF1 photo inserts.
   Substantial overlap with the archive's own ingested drops #1–#112.
