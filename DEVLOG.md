@@ -5408,3 +5408,8 @@ approved.
 
 - Processed sequences 726-750 with 5 parallel agents -> agent-out-850/agent80-84.jsonl (one attempt per image; seq 739 analyzed as a video from its 3 extracted frames). No blocked/withheld; no new needsReview.
 - merge850.py check: 150/250, 100 gaps, 0 dupes, 0 problems. Next gap: 751. Not compiled; no push/deploy.
+
+## 2026-08-18 — Picture-audit phase 2 group 14 (25 images, seq 751-775)
+
+- Processed sequences 751-775 with 5 parallel agents -> agent-out-850/agent85-89.jsonl (one attempt per image). No blocked/withheld; no new needsReview.
+- merge850.py check: 175/250, 75 gaps, 0 dupes, 0 problems. Next gap: 776. Not compiled; no push/deploy.
