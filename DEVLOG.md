@@ -5329,3 +5329,8 @@ approved.
 - `audit/picture-review.md`: the owner's review queue — what each flagged image contains, the re-tiling recipe, and the one-field edit (`needsReview: false`) that reverts the dots once text is added by hand. Standing rule recorded: any future incomplete extraction gets the same treatment.
 - PostArchive: pic-matched result cards now carry a teal "📷 Pic #N — matched inside this post's picture" tag + teal ring, in their ordered position among the open results.
 - Proof: `scripts/test-picture-review.mjs` GREEN (two dots on #101, review note in panel, card tag on /posts?q=vatican). `tsc` clean.
+
+## 2026-08-18 — Picture-audit checkpoint preserved + resume group 1 (25 images)
+
+- Preserved the temp-scratchpad 500-image picture-audit checkpoint into audit/picture-audit-500/checkpoint-2026-08-18/ (agent JSONLs, batch500 manifest, merge500.py, SPEC, manifests, tiles/vframes/fetched, plus picture-analysis.snapshot-100.json). merge500.py check verified identical on original and copy: 308/500, 192 gaps, 0 dupes, 0 problems, green 251 / yellow 40 / red 17, needsReview [423, 433, 566]. Temp originals untouched. Commit 50950be.
+- Processed the next 25 missing sequence numbers (208-271) with 5 parallel agents -> agent-out/agent10-14.jsonl. Check now: 333/500, 167 gaps, 0 dupes, 0 problems, green 270 / yellow 44 / red 19, needsReview adds 257 (incomplete table transcription; no blocked/withheld images). Next gap: 277. Not compiled into public/data; no deploy. Commit b52a359.
