@@ -22,6 +22,7 @@ transcribe them freely; the notes below say exactly where to look.
 | 607 | #2524 | goodbyeRRsidebyside.png | `8e319888e697b44b7277f2cd2938fb60f3050011868f18cdc444cdd37ca143d2.jpg` | 1600×1401 |
 | 685 | #2735 | E4242FFD-58A5-4FCD-A339-C17643530834.jpeg | fetched/`25f8432e7342338fe8749350632082d53113e83396e66fe6213fbbe615544993.jpeg` | 93×399 |
 | 712 | #2775 | Screenshot 2019-02-17_19-00-19-862.jpg | `634a07c79c3a9801b48f6ec1393de6d429032a16e1584c38e7a216098b0ab950.jpg` | 1600×894 |
+| 795 | #2940 | Feb Count.JPG | `eb226a9748f6fafca7a81506ff23e60b0e12f4f0e0cca8f886dd74f0b4d250c0.jpg` | 1135×818 |
 
 ## What each contains (from the completed visual pass)
 
@@ -63,6 +64,9 @@ transcribe them freely; the notes below say exactly where to look.
 - **#2775 (n712):** Multi-post compilation; the right column's fine print (article excerpts
   and a news-anchor family-ties chart) is below legible resolution. Left/main content
   transcribed — the right-column fine print remains for a human with a zoomed source.
+- **#2940 (n795):** Another sealed-proceedings count table (~90 districts × 6 columns);
+  headers, totals, footnotes and sample rows transcribed — the full per-cell grid remains,
+  same shape as n257/n328.
 - **#132 (n98):** "Q Graphic" — the community's cleaned November 2017 compilation.
   Contains the `Q !ITPb.qbhqo` tripcode era posts and the Spy.png / AF1 photo inserts.
   Substantial overlap with the archive's own ingested drops #1–#112.
