@@ -116,6 +116,19 @@ async function runSurface(browser, name, url, viewport) {
     await page.close()
     return
   }
+  // A COUNT OF ZERO IS NOT A SETTLED COUNT, and taking it as one is how this gate reported a
+  // working page broken. The section paints its month picker before its chip lists, and on the dev
+  // server that gap is wider than the two samples 250ms apart that waitForStable is satisfied by —
+  // so `base.chips` was 0, and every assertion built on it ("hover changes nothing", "selecting
+  // narrows the chips") was comparing against a page that had not rendered yet.
+  //
+  // Measured 17 Aug 2026 on impliedConclusions: dev server, chips 0 -> 290 after a hover that is
+  // supposed to change nothing; the same surface on the built bundle passes in 3.1s, and so does
+  // the deployed site. Waiting for the chips to exist first is the condition that was missing.
+  //
+  // Bounded, and it does not fail on its own: a surface that genuinely has no chips falls through
+  // to the stability wait and the assertions describe an empty surface, which is the truth.
+  await page.waitFor(`(${CHIP_COUNT}) > 0`, { timeout: 30000 })
   await page.waitForStable(CHIP_COUNT, { timeout: 30000 })
   await page.evaluate(HELPERS)
 
