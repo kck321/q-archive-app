@@ -5744,3 +5744,36 @@ view. A URL chip never links out to the external site — its job is to say whic
     ok: Emphasis carries no evidence chips, as ruled
 
 NOT DEPLOYED — held for owner review of the POTUS row locally, as instructed.
+
+## 2026-08-19 — A URL in a drop is one link again (LOCAL, held with the row-evidence review)
+
+**Owner report:** some links in posts are broken up — clicking one highlights only a part and does
+not go to the full address.
+
+**Reproduced, exactly as described.** #2166 held one Verge URL and rendered THREE anchors:
+
+    in text : https://www.theverge.com/2018/9/12/17847186/reddit-qanon-milliondollarextreme-ban-sam-hyde
+    anchors : https://www.theverge.com/2018/9/12/17847186/   reddit   -
+
+**Cause.** `renderAnnotated` decomposes post text at EVERY span boundary and picks one dominant
+kind per sub-interval. `url` sits near the bottom of the priority table, so a term classified
+inside a link (`reddit`) took that sub-interval — and because `url` is dominant, each surviving
+piece became its own anchor with its own PARTIAL href. The visible link went to a truncated
+address, which is worse than not linking at all: it looks like it worked.
+
+**Fix.** A URL is now collected into ONE anchor carrying the FULL address, with the sub-intervals
+inside it rendered as its children. And because the wrapping anchor keeps the link whole, `url` no
+longer has to own the span to stay clickable — so a classification inside an address can finally
+SHOW, as a mark nested in the link. #2166 now renders 2 anchors for its 2 URLs, full hrefs, with
+`reddit`, `qanon` and `cnet` marked inside them. The link works and the context is visible.
+
+**Proof — `scripts/test-url-integrity.mjs`, GREEN**, registered in `validate.mjs` and `GATES`:
+
+    ok: every anchor carries a complete URL across 14 drops
+    ok: classifications inside links still render (10 mark(s) nested in anchors)
+
+One false alarm worth recording: the gate first failed on #2094, whose text stores `&amp;` while
+the rendered href is decoded to `&`. That was the GATE comparing raw text against decoded output,
+not a broken link — it now decodes entities before comparing.
+
+NOT DEPLOYED — held with the row-evidence work for owner review.

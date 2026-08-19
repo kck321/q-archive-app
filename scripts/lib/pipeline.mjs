@@ -96,6 +96,7 @@ export const GATES = {
   'month-chart': { file: 'scripts/test-month-chart-behaviour.mjs', url: 'flag', what: 'the month chart on both hosts' },
   'multiword-gloss': { file: 'scripts/test-multiword-gloss.mjs', url: 'positional', what: 'multi-word glossary terms, including the six the annotation layer splits' },
   'returning-profile': { file: 'scripts/test-returning-profile.mjs', url: 'flag', what: 'a returning/stale reader repairs itself' },
+  'url-integrity': { file: 'scripts/test-url-integrity.mjs', url: 'none', what: 'a URL in a drop is one link carrying the whole address' },
   'row-evidence': { file: 'scripts/test-row-evidence.mjs', url: 'none', what: 'Pic/URL evidence chips sit beside a row without joining its certified counts' },
   'scroll-restoration': { file: 'scripts/test-scroll-restoration.mjs', url: 'none', what: 'Back returns you to where you were, at both breakpoints' },
   'section-headlines': { file: 'scripts/verify-section-headlines.mjs', url: 'flag', what: 'the certified headline figures, on the page' },

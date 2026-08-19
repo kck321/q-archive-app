@@ -324,6 +324,21 @@ function renderPostBody(
   for (const s of segs) { boundaries.add(s.start); boundaries.add(s.end) }
   const bList = Array.from(boundaries).sort((a, b) => a - b)
 
+  // A URL is ONE link, no matter how many classifications land inside it.
+  //
+  // The interval decomposition below splits text at EVERY span boundary, and `url` sits near the
+  // bottom of the priority table — so a term classified inside a link (the word `reddit` inside
+  // theverge.com/2018/9/12/17847186/reddit-qanon-...) won that sub-interval, and the address came
+  // out as three separate nodes: an anchor holding the part before the term, the term as a plain
+  // mark, and a stray fragment after it. Clicking the visible link then went to a truncated URL,
+  // which is worse than not linking at all — it looks like it worked.
+  //
+  // So the whole URL is collected into ONE anchor carrying the FULL address, and the marks that
+  // fall inside it are rendered as its children. The link works, and the context is still shown.
+  const urlSegs = segs.filter(s => s.kind === 'url')
+  let urlBuf: (string | React.JSX.Element)[] | null = null
+  let urlEnd = -1
+  let urlHref = ''
   const nodes: (string | React.JSX.Element)[] = []
   let pos = 0
   let firstHL = true
@@ -340,6 +355,10 @@ function renderPostBody(
 
     // Skip if this interval is inside a >>number reference
     if (overlapsRef(iStart, iEnd)) { pos = iEnd; continue }
+
+    const uHere = urlSegs.find(u => iStart >= u.start && iStart < u.end)
+    if (uHere && !urlBuf) { urlBuf = []; urlEnd = uHere.end; urlHref = text.slice(uHere.start, uHere.end) }
+    const sink = urlBuf ?? nodes
 
     const matchText = text.slice(iStart, iEnd)
     const dominant = active.filter(s => DOMINANT_KINDS.has(s.kind))
@@ -362,13 +381,22 @@ function renderPostBody(
           // indistinguishable from a semantic category — the live audit failed it on exactly that.
           // The archive uses the same outline treatment; both surfaces must agree.
           : `not-italic font-semibold bg-transparent ring-1 ring-red-400/80 underline decoration-dashed decoration-red-400/80 underline-offset-2 text-red-200 rounded-sm`
-        nodes.push(<mark key={iStart} {...(isFirst ? { 'data-hl': '1' } : {})} className={hlClass}>{matchText}</mark>)
+        sink.push(<mark key={iStart} {...(isFirst ? { 'data-hl': '1' } : {})} className={hlClass}>{matchText}</mark>)
       } else if (top.kind === 'requestQuestion') {
-        nodes.push(<mark key={iStart} className="animate-req-question rounded not-italic font-medium">{matchText}</mark>)
+        sink.push(<mark key={iStart} className="animate-req-question rounded not-italic font-medium">{matchText}</mark>)
       } else if (top.kind === 'request') {
-        nodes.push(<mark key={iStart} className="bg-green-500/35 text-green-200 rounded not-italic font-medium">{matchText}</mark>)
+        sink.push(<mark key={iStart} className="bg-green-500/35 text-green-200 rounded not-italic font-medium">{matchText}</mark>)
       } else if (top.kind === 'url') {
-        nodes.push(<a key={iStart} href={matchText} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 underline break-all" onClick={e => e.stopPropagation()}>{matchText}</a>)
+        // Inside the wrapping anchor the link is already whole, so `url` no longer has to own the
+        // span to stay clickable — which means a classification falling inside the address can
+        // finally SHOW. It renders as a mark nested in the link: the context is visible and the
+        // href is still the complete URL.
+        sink.push(
+          urlBuf
+            ? (stackable.length > 0
+                ? <mark key={iStart} className={`${HIGHLIGHT_CLS[stackable[0].kind] ?? ''} rounded not-italic`}>{matchText}</mark>
+                : matchText)
+            : <a key={iStart} href={matchText} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 underline break-all" onClick={e => e.stopPropagation()}>{matchText}</a>)
       } else if (insideQuestionKinds(stackable).length > 0) {
         // CONTAINMENT IS NOT OVERLAP.
         //
@@ -384,7 +412,7 @@ function renderPostBody(
         const innerKinds = insideQuestionKinds(stackable)
         // Same rule as the general branch: distinct KINDS, not segments.
         // Brackets are red even inside a question, and never rotate — owner rule.
-        nodes.push(innerKinds.includes('bracketCode')
+        sink.push(innerKinds.includes('bracketCode')
           ? <mark key={iStart} title="bracket"
               className={`${HIGHLIGHT_CLS.bracketCode ?? ''} rounded not-italic`}>{matchText}</mark>
           : innerKinds.length === 1
@@ -397,7 +425,7 @@ function renderPostBody(
       } else {
         // question
         const qSeg = dominant.find(s => s.kind === 'question') ?? top
-        nodes.push(
+        sink.push(
           <span key={iStart} className="group/q relative inline">
             {/* A dominant kind takes sole ownership of its span, which meant certified layers
                 UNDERNEATH it were invisible: #2917 lists FAKE and NEWS as Emphasis, both sitting
@@ -423,7 +451,7 @@ function renderPostBody(
       const cls = HIGHLIGHT_CLS
       if (stackable.length === 1) {
         // Single stackable kind — use its color
-        nodes.push(<mark key={iStart} className={`${cls[stackable[0].kind] ?? ''} rounded not-italic`}>{matchText}</mark>)
+        sink.push(<mark key={iStart} className={`${cls[stackable[0].kind] ?? ''} rounded not-italic`}>{matchText}</mark>)
       } else if (stackable.some(s => s.kind === 'bracketCode')) {
         // OWNER RULE: anything in brackets is red — including a bracket that contains an entity.
         //
@@ -431,14 +459,14 @@ function renderPostBody(
         // as a red "[", a cyan "Mueller" and a red " failed]". One bracket, two colours, and the
         // bracket rule visibly broken inside the very thing it governs. The entity is still
         // certified and still listed under Entities; the bracket owns the paint.
-        nodes.push(<mark key={iStart} className="bg-red-800/40 text-red-300 font-mono text-[0.9em] rounded not-italic">{matchText}</mark>)
+        sink.push(<mark key={iStart} className="bg-red-800/40 text-red-300 font-mono text-[0.9em] rounded not-italic">{matchText}</mark>)
       } else if (stackable.some(s => s.kind === 'namedEntity')) {
         // Named entity wins solid cyan over everything except a bracket.
-        nodes.push(<mark key={iStart} className="bg-cyan-500/30 text-cyan-200 rounded not-italic">{matchText}</mark>)
+        sink.push(<mark key={iStart} className="bg-cyan-500/30 text-cyan-200 rounded not-italic">{matchText}</mark>)
       } else if (stackable.some(s => s.kind === 'request' || s.kind === 'requestQuestion')) {
         // Request wins over lower-priority analysis kinds
         const hasReqQ = stackable.some(s => s.kind === 'requestQuestion')
-        nodes.push(<mark key={iStart} className={`${hasReqQ ? 'animate-req-question' : 'bg-green-500/35 text-green-200'} rounded not-italic font-medium`}>{matchText}</mark>)
+        sink.push(<mark key={iStart} className={`${hasReqQ ? 'animate-req-question' : 'bg-green-500/35 text-green-200'} rounded not-italic font-medium`}>{matchText}</mark>)
       } else {
         // ROTATE THROUGH EVERY CATEGORY'S COLOUR.
         //
@@ -453,7 +481,7 @@ function renderPostBody(
         // named once, presented as an overlap. A span rotates only when it genuinely belongs to
         // two different categories.
         const kinds = [...new Set(stackable.map(s => s.kind))]
-        nodes.push(kinds.length > 1
+        sink.push(kinds.length > 1
           ? <mark key={iStart} title={`${kinds.length} certified layers: ${kinds.join(', ')}`}
               style={overlapStyle(kinds)?.style}
               className={`${overlapStyle(kinds)?.className ?? ''} rounded not-italic`}>{matchText}</mark>
@@ -464,6 +492,10 @@ function renderPostBody(
     }
 
     pos = iEnd
+    if (urlBuf && iEnd >= urlEnd) {
+      nodes.push(<a key={`url-${urlEnd}`} href={urlHref} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 underline break-all" onClick={e => e.stopPropagation()}>{urlBuf}</a>)
+      urlBuf = null
+    }
   }
 
   if (pos < text.length) nodes.push(text.slice(pos))

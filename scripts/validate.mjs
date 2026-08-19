@@ -141,6 +141,9 @@ step('fresh — tooltip accessibility', ['node', 'scripts/test-hover-accessibili
 // and the bug this caught only ever showed on desktop.
 // Pictures and links tied to an analysis row, in their own labelled groups — and, more
 // importantly, NOT folded into the certified chips or counts that row is adjudicated with.
+// A URL in a drop must be ONE link carrying the WHOLE address: a term classified inside a link
+// used to take the span for itself and leave a truncated href, which looks like it worked.
+step('fresh — url integrity', ['node', 'scripts/test-url-integrity.mjs'], 'standard')
 step('fresh — row evidence chips', ['node', 'scripts/test-row-evidence.mjs'], 'standard')
 step('fresh — scroll restoration', ['node', 'scripts/test-scroll-restoration.mjs'], 'standard')
 // The month chart on its two DIFFERENT hosts (Analysis + Archive), desktop and phone. `full` sweeps
