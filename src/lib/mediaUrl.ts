@@ -22,6 +22,8 @@
 //   media.8kun.net                  11  does not resolve       → rewritten
 //   archive.fo                       1  live                   → untouched
 
+import { RESCUED_MEDIA } from './rescuedMedia'
+
 // Any host's file_store, including protocol-relative ("//media.…") URLs, which are how the
 // onion and 8kun.top entries were recorded.
 const FILE_STORE = /^(?:https?:)?\/\/[^/]*(?:8ch\.net|8kun\.net|8kun\.top|\.onion)\/file_store\/(.+)$/i
@@ -51,12 +53,23 @@ export function mediaUrl(url: string | undefined | null): string {
     const local = localNames[url] ?? localNames[remoteUrl(url)]
     if (local) return localBase + local
   }
+
+  // Then anything we rescued and publish ourselves — the 4plebs images no surviving host
+  // serves. Checked before the mirror because the mirror is exactly what does not have them.
+  const rescued = RESCUED_MEDIA[url]
+  if (rescued) return `${import.meta.env.BASE_URL}media/${rescued}`
+
   return remoteUrl(url)
 }
 
 function remoteUrl(url: string): string {
   const m = url.match(FILE_STORE)
-  if (m) return `https://qalerts.app/media/${m[1]}`
+  // 38 attachments were recorded as the board's THUMBNAIL path. qalerts mirrors by content
+  // hash and keeps only the full file, so forwarding `thumb/<hash>` asks for something the
+  // mirror never had, while `<hash>` — the same image at full size — is sitting right there.
+  // Every one of those 38 rendered as a broken chip and was counted as a dead CDN link; none
+  // of them has ever loaded, so dropping the segment cannot regress an image that works.
+  if (m) return `https://qalerts.app/media/${m[1].replace(/^thumb\//, '')}`
   // A protocol-relative URL on a host we don't rewrite still needs a scheme to load.
   if (url.startsWith('//')) return `https:${url}`
   return url

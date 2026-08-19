@@ -135,6 +135,11 @@ step('fresh — inline drop reader', ['node', 'scripts/test-inline-drop-reader.m
 step('fresh — reader info box', ['node', 'scripts/test-term-info.mjs', BASE, '--fresh'], 'standard')
 // Every route into the card — hover, keyboard, tap, Escape, outside click, screen-reader labelling.
 step('fresh — tooltip accessibility', ['node', 'scripts/test-hover-accessibility.mjs', BASE, '--fresh'], 'standard')
+// Back returns a reader to where they were. The archive is thousands of rows long, so landing
+// at the top means re-scrolling past hundreds of posts to find your place again. Runs at both
+// breakpoints because the scroll container differs (<main> on desktop, the document on phones)
+// and the bug this caught only ever showed on desktop.
+step('fresh — scroll restoration', ['node', 'scripts/test-scroll-restoration.mjs'], 'standard')
 // The month chart on its two DIFFERENT hosts (Analysis + Archive), desktop and phone. `full` sweeps
 // all seven categories; ordinary runs do not, because it is one shared module.
 if (profile !== 'full') step('fresh — month chart behaviour', ['node', 'scripts/test-month-chart-behaviour.mjs', '--url', BASE], 'standard')

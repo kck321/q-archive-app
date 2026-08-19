@@ -42,9 +42,23 @@ function scroller(containerRef: RefObject<HTMLElement | null>): {
   el: HTMLElement
   target: HTMLElement | Window
 } {
+  // Ask the CSS whether this element scrolls — NOT whether its content currently overflows.
+  //
+  // A height test (scrollHeight > clientHeight) is a question about DATA, and it gets asked at
+  // the worst possible moment: the layout effect fires once the new route has mounted but before
+  // its thousands of rows arrive, so <main> is still short and the test answers "this does not
+  // scroll". Both the save and the restore were then aimed at the document — while on desktop
+  // <main> is the element actually scrolling. Writing scrollTop to a document that does not
+  // scroll does nothing, and reading it back gives 0, so every position was stored as 0 and Back
+  // always landed at the top. The same failure this file was written to fix, through another door.
+  //
+  // overflowY comes from the STYLESHEET (`lg:overflow-y-auto`), so it is already right on the
+  // first frame and stays right while the list is still loading.
   const el = containerRef.current
-  const inner = el && el.scrollHeight > el.clientHeight + 1
-  if (inner) return { el, target: el }
+  if (el) {
+    const oy = getComputedStyle(el).overflowY
+    if (oy === 'auto' || oy === 'scroll') return { el, target: el }
+  }
   const doc = (document.scrollingElement ?? document.documentElement) as HTMLElement
   return { el: doc, target: window }
 }

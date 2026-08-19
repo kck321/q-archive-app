@@ -5464,3 +5464,51 @@ LF against CRLF and correctly refused to call them identical.
 
 **Nothing about the live content was wrong** — this deploy republishes identical JSON so that the
 bundle on disk matches the bytes production serves and the delivery check can prove it.
+
+## 2026-08-19 — 56 of 63 broken images recovered, and Back finally returns you to your place
+
+**Request (owner):** fix whatever pictures we can, and stop Back from throwing me to the top of
+the page — with thousands of rows, finding my place again means scrolling past hundreds of posts.
+
+### Broken pictures: 63 → 7
+
+Measured across the whole archive, not sampled. 1,835 distinct attachments, 63 failing across 49
+posts, in three groups:
+
+- **38 were our own bug, not a dead CDN.** Those attachments were recorded as the board's
+  *thumbnail* path, and `mediaUrl.ts` forwarded `file_store/thumb/<hash>` to qalerts — which
+  mirrors by content hash and keeps only the FULL file. We were asking for something that never
+  existed while the same image sat at `/media/<hash>`. Verified safe before touching it: the
+  archive holds exactly 38 thumb URLs and **zero of them load today**, so stripping the segment
+  cannot regress a working image. All 38 now serve, at full resolution rather than as thumbnails.
+- **18 4plebs images survive only on the Wayback Machine.** Downloaded once into `public/media/`
+  and served by us (`src/lib/rescuedMedia.ts` maps original URL → local file). Publishing beats
+  rewriting to archive.org at render time: no third-party dependency in the image path, no rate
+  limit in front of a reader, and they cannot rot again. Kept at ORIGINAL resolution — several are
+  the giant stitched compilations in the manual-review queue, whose text is the entire point;
+  downscaling would destroy what we are preserving. 16.3 MB, lazy-loaded per tile.
+- **7 are gone** from 4plebs, qalerts and Wayback alike. Hiding them is the honest behaviour.
+
+### Back now returns you to your scroll position
+
+`ScrollRestoration` already existed and was carefully written — but it decided *which element
+scrolls* by measuring content height (`scrollHeight > clientHeight`). That is a question about
+DATA, asked at the worst moment: the layout effect fires after the new route mounts but before its
+thousands of rows arrive, so `<main>` is still short, the test answers "does not scroll", and both
+the save and the restore were aimed at the document. On desktop `<main>` owns the scrollbar
+(`lg:overflow-y-auto`), so writing to the document did nothing and reading it back gave 0 — every
+position stored as 0, Back always at the top. The same failure the file was written to fix,
+returning through another door.
+
+Now it asks the STYLESHEET (`getComputedStyle(el).overflowY`), which is correct on the first frame
+and stays correct while the list loads.
+
+**Proved, not assumed** — `scripts/test-scroll-restoration.mjs` scrolls 1500px, opens a drop,
+presses Back and asserts the position returns, at both breakpoints:
+
+    ok: desktop /posts: Back restored 1500px (was 1500px)
+    ok: phone /posts:   Back restored 1500px (was 1500px)
+    ok: desktop /pics:  Back restored 1500px (was 1500px)
+
+Registered in `validate.mjs` and the `GATES` allowlist, so it runs on every future deploy — this
+behaviour had no browser proof at all before, which is why it could break unnoticed.
