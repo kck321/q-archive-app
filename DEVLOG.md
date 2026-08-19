@@ -5777,3 +5777,24 @@ the rendered href is decoded to `&`. That was the GATE comparing raw text agains
 not a broken link — it now decodes entities before comparing.
 
 NOT DEPLOYED — held with the row-evidence work for owner review.
+
+## 2026-08-19 — Row buttons swapped: finish the post numbers, then read them (LOCAL)
+
+**Owner ruling:** the button that shows the rest of the posts comes FIRST; "read N drops" moves to
+the right, across every category.
+
+One renderer in `AnalysisArchive` serves all categories, so the swap is a single reorder — the
+expander now sits directly beside the chips it expands, and "read N drops" lands at the end of the
+row where it reads as the next step rather than an interruption.
+
+Verified in the browser with a STRICT matcher (an earlier loose one matched the word "more" inside
+a claim's own text and reported a passing order for a row that had no expander at all):
+
+    namedEntities/POTUS    MORE-then-READ | +377 more , ▼ read 417 drops
+    themes                 MORE-then-READ | +280 more , ▼ read 320 drops
+    directives             MORE-then-READ | +377 more , ▼ read 417 drops
+
+Claims and Predictions show "no row with both" — their top rows sit under the 40-chip cap, so no
+expander exists to order. Not a failure.
+
+NOT DEPLOYED — held with the row-evidence and URL work for owner review.
