@@ -5632,3 +5632,69 @@ Two supporting fixes found along the way:
 
 **Five consecutive green runs** of the gate after the fix, against the flake that reproduced within
 three before it.
+
+---
+
+## Session — 19 Aug 2026
+
+### Request: compile every sentence in the archive that is not 100% highlighted, in a form GPT can review
+
+Owner rule, locked: **if any part of a sentence is unhighlighted at any percentage, the whole
+sentence goes in the list.** A highlighted name, place, bracket, entity, theme anchor or link
+inside a sentence never hides the rest of it. Emphasis never counts as coverage. Only 100%
+coverage excludes. Q post number on every row. Excel output.
+
+**Solution:** `scripts/audit-unhighlighted-sentences.mjs` — the INVERSE of
+`audit-highlight-coverage.mjs`. That one asks "does every certified occurrence resolve to a span?";
+this asks "is every character of every sentence owned by a category?"
+
+A ChatGPT-authored package (`QDROPS_AUDIT_V2_DOWNLOAD`) was supplied for this and was **not run**.
+It discovers posts and highlights by guessing at JSON key names and directory words, so against
+this repo it would have mapped nothing correctly: it cannot know that Questions match on question
+FORM through `certifiedQuestionRegex`, that Emphasis and Context stopped painting on 2026-08-17,
+that themes highlight on anchors rather than labels, or that the browser paints `runtimeText()`
+rather than the raw `posts.json` bytes. Measuring against raw bytes is the exact mistake that
+produced 2,475 wrong spans once already. The owner's rule was implemented; the implementation was
+rewritten against the app's real renderer.
+
+Fidelity: coverage is transcribed from `renderPostBody()` (`src/pages/PostDetail.tsx`) and
+`highlightText()` (`src/lib/postHighlight.tsx`) — same layers, escaping, alias union across BOTH
+registries, word boundaries, `>>NNNNNN` protection. Segmentation reuses `scripts/lib/segment.mjs`
+`unitsFor()`, extended to carry offsets; quoted-source detection reuses
+`scripts/lib/quotedBlocks.mjs`; the directive routing hint reuses `scripts/lib/imperative.mjs`.
+
+**Result:** 29,569 Q-authored units, 13,545 fully painted, **16,024 queued across 4,484 posts** —
+but only **8,495 distinct wordings**, and only **1,323 rows / 1,054 wordings** that nothing in the
+archive has ever dispositioned. Certified spans failing to resolve: **0**, so nothing in the queue
+is a rendering bug.
+
+Ten triage buckets, each a population one ruling settles: `A_SIGNATURE` 4,524 rows / **3** wordings
+(Q, Q+, WWG1WGA) · `B_LINK_OR_REFERENCE` 1,636 · `C_PUNCTUATION_ONLY` 892 · `D_INLINE_ONLY` 948 ·
+`E_CERTIFIED_QUOTED_SOURCE` 728 · `F_CERTIFIED_EMPHASIS_NOT_PAINTED` 1,423 ·
+`G_CERTIFIED_CONTEXT_NOT_PAINTED` 4,023 · `H_CERTIFIED_CODE` 434 · `I_CERTIFIED_EVIDENCE` 93 ·
+`J_UNCLASSIFIED_PROSE` **1,323**.
+
+That split is the finding. 14,701 of the 16,024 are a POLICY question the owner has largely already
+answered — does "every sentence in a category" require a visible FILL, given that Emphasis and
+Context were deliberately unpainted on 2026-08-17? Only bucket J is adjudication.
+
+`scripts/build-unhighlighted-sentence-workbook.mjs` writes the .xlsx by hand (zip + OOXML, no npm
+dependency): Summary / Distinct Wordings / Unclassified Prose / Review Queue, Q post number first,
+frozen panes, filters, dropdown validation on every review column. Verified: zip integrity passes,
+all sheet XML well-formed, opens in a real reader.
+
+Validated on real data, not a fixture — all five required cases plus five invariants:
+inline-name-only sentences are PARTIAL_ONLY (1,116); punctuation-only leftovers kept (1,053);
+no fully category-painted sentence is queued (0); emphasis-only sentences included with Emphasis
+recorded as certified-but-unpainted (804); multi-layer sentences appear once with every overlap
+(136, zero duplicate audit IDs). Cross-checked against PROJECT_CONTEXT's own descriptions of #4961
+and #4962 and they match exactly. `fullyPainted + queued == units` exactly, so nothing was silently
+dropped.
+
+**Files:** `scripts/audit-unhighlighted-sentences.mjs`,
+`scripts/build-unhighlighted-sentence-workbook.mjs`, `audit/unhighlighted-sentences/`
+(README.md, manifest.json, distinct-wordings.csv, by-bucket/*.csv,
+unhighlighted-sentence-review.xlsx; the 34MB JSONL and 11MB CSV are gitignored as regenerable),
+`.gitignore`.
+
+**Untouched:** `public/data`, classifications, the rebuild chain, deployment, Emphasis.

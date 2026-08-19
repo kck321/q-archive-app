@@ -59,3 +59,10 @@ scripts/.devlog-index.tsv
 # NEVER build into dist/: dist/build-info.json is the only local record of what production is
 # serving, and vite build empties the directory it writes to.
 .perf-*
+
+# Bulk regenerable audit output. `node scripts/audit-unhighlighted-sentences.mjs` rebuilds these
+# two in ~3s and the JSONL embeds every post body, so it lands at 34MB — four times the largest
+# artifact the repo tracks. The manifest, README, per-bucket CSVs, distinct-wordings CSV and the
+# workbook ARE committed, because those are the deliverable.
+audit/unhighlighted-sentences/unhighlighted-sentences.jsonl
+audit/unhighlighted-sentences/unhighlighted-sentences.csv
