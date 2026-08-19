@@ -4,6 +4,7 @@ import BackButton from '../components/BackButton'
 import { loadQueue, submitSuggestion, sentSubmissions, type QueueData, type QueueItem } from '../lib/resolution'
 import { guideFor } from '../lib/resolutionKinds'
 import ReaderSentinel from '../components/ReaderSentinel'
+import { loadPictureAnalysis, type PictureInfo } from '../lib/pictureAnalysis'
 
 // The Resolution Center.
 //
@@ -26,6 +27,60 @@ const STATUS_STYLE: Record<string, string> = {
  * Greenwich a row queued this morning reads as "-1 days" — the classic off-by-a-timezone that
  * makes a date field look broken on the one day it matters most.
  */
+/**
+ * Pictures flagged for manual review (the two-red-dot chips).
+ *
+ * A separate layer from the certified queue on purpose: the queue file is rebuilt from
+ * scratch by the editorial pipeline and its totals are certified, so picture items live in
+ * picture-analysis.json (`needsReview: true`) and render here without touching those
+ * counts. Any future image flagged during the audit appears automatically; clearing the
+ * flag in the data removes it here and reverts the chip to one dot.
+ */
+function PictureReviewSection() {
+  const [items, setItems] = useState<PictureInfo[]>([])
+  useEffect(() => {
+    loadPictureAnalysis().then(map => {
+      const flagged = [...map.values()].filter(i => i.needsReview)
+      flagged.sort((a, b) => (a.posts[0]?.num ?? 0) - (b.posts[0]?.num ?? 0))
+      setItems(flagged)
+    })
+  }, [])
+  if (items.length === 0) return null
+  return (
+    <div className="mt-3 rounded-lg border border-teal-800/50 bg-q-panel p-4">
+      <h2 className="text-sm font-bold text-teal-300 flex items-center gap-2">
+        📷 Pictures needing review
+        <span className="text-xs font-mono bg-teal-900/40 border border-teal-700/50 rounded px-1.5 py-0.5">{items.length}</span>
+        <span className="flex items-center gap-0.5 ml-1" title="Shown as two red dots on the Picture chip">
+          <span className="inline-block w-2 h-2 rounded-full bg-red-500" />
+          <span className="inline-block w-2 h-2 rounded-full bg-red-500" />
+        </span>
+      </h2>
+      <p className="mt-1 text-xs text-gray-500">
+        Images whose analysis is incomplete — the chip carries a summary, but the full
+        extraction still needs a human pass. Working notes: <span className="font-mono">audit/picture-review.md</span>.
+      </p>
+      <div className="mt-2 space-y-2">
+        {items.map(i => (
+          <div key={i.hash} className="rounded border border-q-border bg-black/20 px-3 py-2">
+            <div className="flex flex-wrap items-center gap-2 text-xs">
+              <span className="text-gray-200 font-mono truncate max-w-60">{i.filename}</span>
+              <span className="text-teal-400">{i.kind}</span>
+              <span className="text-gray-500">in</span>
+              {i.posts.map(p => (
+                <Link key={`${p.num}-${p.source}`} to={`/post/${p.num}?flash=1`} className="text-blue-400 hover:underline font-mono">#{p.num}</Link>
+              ))}
+            </div>
+            {i.flags.filter(f => f.startsWith('FLAGGED')).map(f => (
+              <p key={f} className="mt-1 text-[11px] text-amber-300/90">⚠ {f}</p>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 function openFor(firstSeen: string): string {
   const then = Date.parse(`${firstSeen}T00:00:00Z`)
   if (Number.isNaN(then)) return firstSeen
@@ -262,6 +317,8 @@ export default function ResolutionCenter() {
           ))}
         </div>
       )}
+
+      <PictureReviewSection />
 
       {Object.keys(sent).length > 0 && (
         <div className="mt-3 rounded-lg border border-blue-600/40 bg-blue-500/5 px-3 py-2 flex items-center gap-3 flex-wrap">

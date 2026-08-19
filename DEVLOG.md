@@ -5429,3 +5429,12 @@ approved.
 - Final group processed with agents 100-104; two agents lost their connection mid-run (all their durably-appended records kept; nothing lost) and the 3 never-attempted images (835, 839, 840) were completed by recovery agent105 after a session-limit reset. One attempt per image throughout.
 - FINAL merge850.py check: 250/250, 0 gaps, 0 dupes, 0 problems. Confidence: green 205 / yellow 37 / red 8. needsReview (4): 607, 685, 712, 795 — all four have rows and notes in audit/picture-review.md; no withheld/blocked images in the entire phase (the Withheld table gained no phase-2 rows). Independent recount over agent-out-850/ confirms every sequence 601-850 occurs exactly once.
 - Cumulative archive coverage now analyzed: 850 of 1690 distinct images (first100 + batch500 + batch850). NOT compiled into public/data; no push, no deploy; src/pages/ResolutionCenter.tsx and scripts/test-picture-resolution.mjs untouched throughout.
+
+## 2026-08-19 — Picture analysis COMPILED into the app + Resolution Center review section (deploy batch)
+
+**Request:** Owner asked to commit everything and deploy to qdrops.app for a test run.
+**Solution:**
+- Compiled both audited phases into `public/data/picture-analysis.json`: +500 (seq 101-600) then +250 (seq 601-850). Now **850 images**, 0 duplicate hashes, schema complete on every row, covering 767 distinct posts. Confidence: green 699 / yellow 118 / red 33. needsReview: 16 (the original 3 compilations + 9 from phase 1 + 4 from phase 2).
+- No SEED_VERSION bump: `picture-analysis.json` is NOT in `SEEDED_FILES` (fetched at runtime by `src/lib/pictureAnalysis.ts`, never seeded to IndexedDB), so seed invariant 8 does not apply. The service worker caches `/data/*.json` cache-first but the deploy bumps `CACHE_VERSION`, which drops the old caches for returning readers.
+- `src/pages/ResolutionCenter.tsx`: the `PictureReviewSection` (two-red-dot queue) now ships — it reads `needsReview` from picture-analysis.json and deep-links each flagged image to its posts, deliberately separate from the certified queue totals.
+- `scripts/test-picture-resolution.mjs`: browser proof for that section.
