@@ -5698,3 +5698,49 @@ unhighlighted-sentence-review.xlsx; the 34MB JSONL and 11MB CSV are gitignored a
 `.gitignore`.
 
 **Untouched:** `public/data`, classifications, the rebuild chain, deployment, Emphasis.
+
+## 2026-08-19 — Row evidence: Pic and URL chips beside an analysis row (PHASE 1, LOCAL ONLY)
+
+**Owner request:** searching POTUS should also surface the PICTURES and URLs tied to POTUS or any
+POTUS alias, each chip carrying the Q post number that holds the asset, placed in the row itself.
+
+**First, what actually existed.** Pic chips were real but lived only in Post Archive search results
+— the original build scoped them to "archive searches". URL chips did not exist anywhere. Neither
+was a regression; those surfaces were never wired.
+
+**The line this feature must not cross.** `pictureAnalysis.ts` says image text feeds SEARCH ONLY
+and must never reach the certified analysis index (invariant 9's rule for quoted text), and entity
+rows render from `entity-public-view.json` rather than recounting anything. So a picture-only or
+URL-only match cannot join a row's postNums, its mentions figure, its ×N posts badge, or the set
+"read N drops" opens. `#1254` = Q named the subject there. `Pic #1254` = a picture there shows them.
+Collapsing those would convert a photograph into a statement Q never made.
+
+**Built:** `src/lib/rowEvidence.ts` — one shared helper. Resolves the full alias family through
+`getFullAliasGroup`, then admits an asset by either of two grounded routes, keeping which one:
+- DIRECT — the asset itself matches: the picture's description/OCR/people/orgs/places, or the URL's
+  own domain and path. URLs are tokenised on non-alphanumerics AND camelCase humps, so "trump"
+  matches `realDonaldTrump` while word boundaries still stop "us" matching `russia`.
+- ASSOCIATED — the asset sits in a drop already certified for the row.
+Nothing here asserts anything about what an external page CONTAINS; only the URL text held locally.
+
+`RowEvidenceChips` renders two labelled groups beneath the certified chips, sorted strictly oldest→
+newest (owner ruling — evidence class is carried by tooltip and dimming, not by position), one chip
+per post per kind with ×N for multiples, capped at 24 with a "+N more" expander. Chips link to
+`/post/N?highlight=…&focus=pic|url`; PostDetail gained a `focus` param that scrolls the asset into
+view. A URL chip never links out to the external site — its job is to say which drop holds it.
+
+**Phase 1 surfaces:** Named Entities and Q [ Brackets ] only. **Emphasis deliberately excluded.**
+
+**Proof — `scripts/test-row-evidence.mjs`, GREEN**, registered in `validate.mjs` and `GATES`:
+
+    POTUS: 265 Pic and 266 URL chips (24 shown, rest behind "+N more")
+    routes: 239/265 Pic and 190/266 URL matched the ALIAS directly; the rest sit in certified drops
+    ok: chips sit inside the row card, with the certified chips
+    ok: Pic/URL chips sorted oldest → newest
+    ok: one chip per post per evidence type — aliases rolled up
+    ok: certified chip sequence contains no evidence chips
+    ok: alias search (DJT) resolves to the same family without duplicates
+    ok: Q [ Brackets ] rows carry the same evidence chips
+    ok: Emphasis carries no evidence chips, as ruled
+
+NOT DEPLOYED — held for owner review of the POTUS row locally, as instructed.

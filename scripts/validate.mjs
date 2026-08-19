@@ -139,6 +139,9 @@ step('fresh — tooltip accessibility', ['node', 'scripts/test-hover-accessibili
 // at the top means re-scrolling past hundreds of posts to find your place again. Runs at both
 // breakpoints because the scroll container differs (<main> on desktop, the document on phones)
 // and the bug this caught only ever showed on desktop.
+// Pictures and links tied to an analysis row, in their own labelled groups — and, more
+// importantly, NOT folded into the certified chips or counts that row is adjudicated with.
+step('fresh — row evidence chips', ['node', 'scripts/test-row-evidence.mjs'], 'standard')
 step('fresh — scroll restoration', ['node', 'scripts/test-scroll-restoration.mjs'], 'standard')
 // The month chart on its two DIFFERENT hosts (Analysis + Archive), desktop and phone. `full` sweeps
 // all seven categories; ordinary runs do not, because it is one shared module.

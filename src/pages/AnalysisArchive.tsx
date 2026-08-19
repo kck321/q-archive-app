@@ -11,6 +11,7 @@ import {
 } from '../lib/posts'
 import { getAliasesFor, getAliasGroup, getAliasSet, getCertifiedEntityAliasSet, getCertifiedEntities, getEntityPublicView, subscribeAliases, displayAlias, type SourceKind } from '../lib/aliases'
 import PostCard from '../components/PostCard'
+import RowEvidenceChips from '../components/RowEvidenceChips'
 import ReaderSentinel from '../components/ReaderSentinel'
 import { loadLocalData } from '../lib/localData'
 import type { QPost } from '../types'
@@ -1414,6 +1415,12 @@ export default function AnalysisArchive() {
                         </button>
                       )}
                     </div>
+                    {/* Supporting evidence, in its own labelled groups BELOW the certified chips.
+                        Phase 1 is Named Entities only — the counts above are adjudicated and
+                        nothing here may touch them. */}
+                    {activeTab === 'namedEntities' && (
+                      <RowEvidenceChips term={item.text} certifiedPosts={monthChips.map(c => c.num)} />
+                    )}
                     {readingKey === key && (
                       <div className="mt-2 mb-3 border-t border-q-border pt-3 space-y-3">
                         {readLoading && <p className="text-xs text-gray-500 animate-pulse">opening drops…</p>}

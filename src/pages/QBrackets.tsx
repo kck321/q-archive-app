@@ -1,5 +1,6 @@
 import { useEffect, useState, useMemo, useRef } from 'react'
 import SectionInfo from '../components/SectionInfo'
+import RowEvidenceChips from '../components/RowEvidenceChips'
 import { Link, useSearchParams } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import { getAllPosts, makeTermMatcher } from '../lib/posts'
@@ -519,6 +520,9 @@ export default function QBrackets() {
                         <span className="text-xs text-gray-600 self-center">+{entry.postNums.length - 30} more</span>
                       )}
                     </div>
+                    {/* Pictures and links tied to this bracketed term — separate from the
+                        certified chips above, which stay exactly as adjudicated. */}
+                    <RowEvidenceChips term={entry.code} certifiedPosts={entry.postNums} />
                   </div>
                 </div>
               </div>

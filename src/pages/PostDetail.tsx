@@ -601,6 +601,10 @@ export default function PostDetail() {
   const readerVerb = readerKind === 'question' ? 'asking' : readerKind === 'bracket' ? 'containing' : 'mentioning'
   const topicParam = searchParams.get('topic') ?? ''
   const cardFlash = searchParams.get('flash') === '1'
+  // A Pic or URL chip in an analysis row opens the drop that CARRIES the asset, then brings that
+  // asset into view. The chip deliberately never links straight out to the external site: its job
+  // is to say which Q post holds the link, and the drop is the context that makes it evidence.
+  const focusAsset = searchParams.get('focus') ?? ''
   const topicKeywords = topicParam ? topicKeywordsFrom(topicParam) : []
   const highlightRef = useRef<HTMLDivElement | null>(null)
   const bodyRef = useRef<HTMLPreElement | null>(null)
@@ -635,6 +639,35 @@ export default function PostDetail() {
   // Alias editing — re-render highlights when aliases change.
   const [aliasTick, setAliasTick] = useState(0)
   useEffect(() => subscribeAliases(() => setAliasTick(t => t + 1)), [])
+
+  // Bring the asset a Pic/URL chip pointed at into view once the drop has rendered.
+  //
+  // Polls briefly rather than firing once: the images and the post body arrive from IndexedDB
+  // after mount, so a single scrollIntoView on the first frame would aim at an element that does
+  // not exist yet and silently do nothing.
+  useEffect(() => {
+    if (focusAsset !== 'pic' && focusAsset !== 'url') return
+    let tries = 0
+    const find = () => focusAsset === 'pic'
+      ? document.querySelector('[data-focus="pictures"]')
+      : document.querySelector('.post-text a[href^="http"]') ?? document.querySelector('.post-text')
+    const tick = () => {
+      const el = find()
+      if (el) {
+        el.scrollIntoView({ block: 'center', behavior: 'smooth' })
+        if (focusAsset === 'url') {
+          const a = el as HTMLElement
+          a.style.outline = '2px solid rgb(96 165 250)'
+          a.style.outlineOffset = '2px'
+          setTimeout(() => { a.style.outline = ''; a.style.outlineOffset = '' }, 2600)
+        }
+        return
+      }
+      if (tries++ < 40) setTimeout(tick, 150)
+    }
+    const t = setTimeout(tick, 150)
+    return () => clearTimeout(t)
+  }, [focusAsset])
   // Per-alias colors for the reader feed: when the researched entity has 2+ aliases
   // (e.g. POTUS · 45 · 4 · 10 · 20 · Q+), each gets its own shade so you can see which
   // reference a post actually uses. Single-alias entities stay solid red.
@@ -1713,7 +1746,7 @@ export default function PostDetail() {
 
         {/* Media — Q's own attached images */}
         {dedupeMedia(post.media).length > 0 && (
-          <div className="mt-4 space-y-3">
+          <div data-focus="pictures" className="mt-4 space-y-3">
             {dedupeMedia(post.media).map(m => {
               if (!m.url) return null
               const isNonImage = /\.(pdf|mp4|webm|mov|doc|docx|xls|xlsx)$/i.test(m.url)
