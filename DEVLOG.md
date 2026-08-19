@@ -5423,3 +5423,9 @@ approved.
 
 - Processed sequences 801-825 with 5 parallel agents -> agent-out-850/agent95-99.jsonl (one attempt per image). No blocked/withheld; no new needsReview.
 - merge850.py check: 225/250, 25 gaps, 0 dupes, 0 problems. Next gap: 826. Not compiled; no push/deploy.
+
+## 2026-08-19 — Picture-audit phase 2 FINAL group (25 images, seq 826-850) — 250/250 COMPLETE
+
+- Final group processed with agents 100-104; two agents lost their connection mid-run (all their durably-appended records kept; nothing lost) and the 3 never-attempted images (835, 839, 840) were completed by recovery agent105 after a session-limit reset. One attempt per image throughout.
+- FINAL merge850.py check: 250/250, 0 gaps, 0 dupes, 0 problems. Confidence: green 205 / yellow 37 / red 8. needsReview (4): 607, 685, 712, 795 — all four have rows and notes in audit/picture-review.md; no withheld/blocked images in the entire phase (the Withheld table gained no phase-2 rows). Independent recount over agent-out-850/ confirms every sequence 601-850 occurs exactly once.
+- Cumulative archive coverage now analyzed: 850 of 1690 distinct images (first100 + batch500 + batch850). NOT compiled into public/data; no push, no deploy; src/pages/ResolutionCenter.tsx and scripts/test-picture-resolution.mjs untouched throughout.
