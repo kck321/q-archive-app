@@ -573,7 +573,10 @@ const CSV = [
   ['reviewStatus', () => 'UNREVIEWED'],
 ]
 const NL = String.fromCharCode(10)
-const cell = v => `"${String(v ?? '').replace(/"/g, '""')}"`
+// Newlines are folded to a visible marker rather than quoted. RFC 4180 allows a newline inside
+// a quoted field and Excel reads it correctly, but these files also get handed to reviewers and
+// tools that split on lines, where an embedded newline silently turns one row into three.
+const cell = v => `"${String(v ?? '').replace(/\r?\n/g, ' \u23CE ').replace(/"/g, '""')}"`
 const csv = [CSV.map(c => cell(c[0])).join(',')]
 for (const r of rows) csv.push(CSV.map(c => cell(c[1](r))).join(','))
 

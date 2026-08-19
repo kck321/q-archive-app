@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-19T19:25:05.634Z",
+ "generatedAt": "2026-08-19T19:28:48.093Z",
  "status": "AUDIT_ONLY — nothing classified, nothing rebuilt, nothing deployed",
  "rule": "A unit stays in the queue unless every non-whitespace character it owns is painted by an active category. Inline highlights (entity, bracket, theme anchor, link) never speak for the sentence around them.",
  "sources": {
