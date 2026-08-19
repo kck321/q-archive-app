@@ -5512,3 +5512,39 @@ presses Back and asserts the position returns, at both breakpoints:
 
 Registered in `validate.mjs` and the `GATES` allowlist, so it runs on every future deploy — this
 behaviour had no browser proof at all before, which is why it could break unnoticed.
+
+## 2026-08-19 — /pics: 133 duplicate tiles removed, 24 broken links → 8
+
+**Owner report:** still 24 broken CDN links, and "a lot of duplicate pictures with the same post
+number side by side".
+
+**Duplicates — deduping on the wrong string.** `QPostPics` built its tile list with a `seen` set
+keyed on the RECORDED url. But 82 posts record the same picture twice (qalerts plus the onion or
+8kun mirror), and others record a thumbnail beside the full file: different strings, one image.
+`mediaUrl()` collapses them to a single address, so the fix is to key `seen` on the RESOLVED url —
+which is exactly what `dedupeMedia()` in mediaUrl.ts already existed to do, and this page never
+used. **133 duplicate tiles**, now 0.
+
+**Broken count — 4 of them were never images.** `isImageUrl()` accepted any URL whose PATH
+contained /media/, /uploads/, /photos/ etc., regardless of extension. Every one of the six URLs
+extracted from drop text was a false positive: a Hill article under `/homenews/media/`, three
+government and news **PDFs** under `/uploads/`, a judicialwatch PDF, and a Twitter photo PAGE at
+`/photo/1`. They can never render in an `<img>`, so each was counted against the archive as a
+broken CDN link. Now a non-image extension is rejected outright, and a path-only match must have a
+filename-looking last segment.
+
+**Where the numbers land:**
+
+    tiles      2009 → 1870      (133 duplicates + 6 non-images)
+    duplicates  133 → 0
+    broken       24 → 8
+
+The remaining 8 are the 7 genuinely-dead 4plebs images (one appears in two posts) — gone from
+4plebs, qalerts and the Wayback Machine alike.
+
+**Regression guard:** `test-picture-chips.mjs` now walks every rendered tile and fails if any post
+shows the same image twice — `ok: /pics has no duplicate tiles (1870 checked)`.
+
+**Known, not fixed here:** the tile map calls `allItems.findIndex(...)` per tile to derive a key,
+which is O(n²) — ~1.7M string comparisons per render, repeated on every search keystroke. Worth
+replacing with an index computed during construction; left alone to keep this change focused.

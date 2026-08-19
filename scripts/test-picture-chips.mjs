@@ -52,6 +52,32 @@ console.log(`browser on :${b.port} (${b.reused ? 'warm' : 'cold'}) against ${BAS
   await p.close()
 }
 
+// ── 2b. No tile is rendered twice for the same post ─────────────────────────────
+//
+// 82 posts record the same picture under two different URLs (qalerts plus the onion or 8kun
+// mirror), and others record a thumbnail beside the full file. The page used to dedupe on the
+// RECORDED url, so those distinct strings survived as separate tiles and the reader saw the same
+// image twice, side by side, under one post number. Deduping on the RESOLVED url is what makes
+// the tile list match what a reader would call a picture.
+{
+  const p = await b.page(`${BASE}/pics`)
+  await p.waitFor(`document.querySelectorAll('img[loading=lazy]').length > 50`, { timeout: 60000 })
+  const dupes = await p.evaluate(`(() => {
+    const seen = new Set(), dup = []
+    for (const tile of document.querySelectorAll('.bg-q-panel')) {
+      const img = tile.querySelector('img'); const link = tile.querySelector('a[href^="/post/"]')
+      if (!img || !link) continue
+      const key = link.getAttribute('href').split('?')[0] + '|' + (img.getAttribute('src') || '')
+      if (seen.has(key)) dup.push(key); else seen.add(key)
+    }
+    return JSON.stringify({ tiles: seen.size, dupes: dup.length, sample: dup.slice(0, 3) })
+  })()`)
+  const d = JSON.parse(dupes)
+  if (d.dupes > 0) fail(`/pics renders ${d.dupes} duplicate tiles (same post, same image) e.g. ${d.sample.join(' · ')}`)
+  else ok(`/pics has no duplicate tiles (${d.tiles} checked)`)
+  await p.close()
+}
+
 // ── 3. Q Post Pics search matches picture content ───────────────────────────────
 {
   const p = await b.page(`${BASE}/pics`)

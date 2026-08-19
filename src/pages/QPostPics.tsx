@@ -10,9 +10,23 @@ const IMAGE_EXT_RX = /\.(jpg|jpeg|png|gif|webp|bmp|svg|tiff?|ico|avif|heic|heif)
 const IMAGE_PATH_RX = /\/(media|image|img|file_store|thumb|photos?|pictures?|uploads?)\//i
 const TEXT_URL_RX = /https?:\/\/[^\s<>"')\]]+/g
 
+// Anything whose extension says it is NOT a picture. The path heuristic below matches on
+// /media/ and /uploads/, which is exactly where a news site keeps its PDFs.
+const NON_IMAGE_EXT_RX = /\.(pdf|html?|php|aspx?|docx?|xlsx?|txt|json|xml)(\?[^\s]*)?$/i
+
 function isImageUrl(url: string): boolean {
   if (!url) return false
-  return IMAGE_EXT_RX.test(url) || IMAGE_PATH_RX.test(url)
+  if (NON_IMAGE_EXT_RX.test(url)) return false
+  if (IMAGE_EXT_RX.test(url)) return true
+  // Path-only match: require the LAST segment to look like a filename.
+  //
+  // Without this, every one of the six URLs pulled out of drop text was a false positive —
+  // a Hill article under /homenews/media/, three government and news PDFs under /uploads/,
+  // and a Twitter photo PAGE at /photo/1. None is an image, so each rendered as a dead tile
+  // and was counted against the archive as a broken CDN link.
+  if (!IMAGE_PATH_RX.test(url)) return false
+  const last = url.split('?')[0].split('/').filter(Boolean).pop() ?? ''
+  return last.includes('.')
 }
 
 function extractTextImages(text: string): QMedia[] {
@@ -60,8 +74,14 @@ export default function QPostPics() {
     const seen = new Set<string>()
     const items: ImageItem[] = []
     function add(m: QMedia, source: string) {
-      if (m.url && !seen.has(m.url)) {
-        seen.add(m.url)
+      // Key on the RESOLVED url. 82 posts record the same picture twice — once on qalerts and
+      // once on the onion or 8kun mirror — and more record a thumbnail beside the full file.
+      // Those are different strings but the same image, so deduping on the recorded url let
+      // them through and the page showed the same picture twice, side by side, under one post
+      // number. mediaUrl() collapses them to a single address, which is what the reader sees.
+      const key = m.url ? mediaUrl(m.url) : ''
+      if (key && !seen.has(key)) {
+        seen.add(key)
         items.push({ post: p, media: m, source })
       }
     }
