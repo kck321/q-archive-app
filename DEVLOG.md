@@ -5890,3 +5890,47 @@ Verified the way it should have been the first time: harness browsers killed to 
 launch, then each gate run alone and confirmed GREEN with a real exit code — not a `$?` read
 through a pipe, which reports tail's status and had been quietly telling me 0 all along.
 
+
+### Request: deploy everything outstanding to qdrops.app so GPT can audit the live site
+
+**Solution:** Shipped a 12-commit batch — two sessions' work in one deploy. Live at `9dbab86`,
+seed 78, Pages served it in 42s. `verify-live.mjs` 14/14, fresh and returning reader both green.
+Master pushed: 56 commits that existed only on this disk, including the whole picture-analysis
+phase 2 audit, are now on GitHub.
+
+**Four validation attempts; the first three each died differently and none was a code defect:**
+
+1. GREEN (792 assertions / 36 gates / 501s) — receipt then voided when a CONCURRENT Claude session
+   committed to DEVLOG.md. `validate.mjs` pins the receipt to an exact working TREE, so even a
+   prose-only commit invalidates it.
+2. exit 127 — the other session edited `scripts/test-url-integrity.mjs` while that gate was
+   executing.
+3. exit 1 at `month chart` — diagnosed rather than retried. NOT a regression: `impliedConclusions`
+   passed in isolation, and re-running the full sweep died at a DIFFERENT point (96/96 desktop,
+   then mobile/themes). Root cause below.
+4. GREEN, deployed.
+
+**Root cause of the flake, and it compounds.** A crashed gate leaves its headless Chrome behind —
+`--headless=new`, `--user-data-dir=…\Temp\qdrops-*`. 24 were found alive at one point, ~1 GB of a
+machine with 2.8 GB free. The next run then dies of memory pressure and leaks more. Clearing leaked
+browsers BEFORE a run breaks the cycle: the month-chart gate went straight to 192/192 in 106.3s, and
+a gate that exits normally cleans up after itself (0 leaked). Kill only processes matching BOTH
+`--headless=new` AND `qdrops-` — the owner's real Chrome runs on the same box.
+
+**Two harness defects worth fixing separately:** `test-month-chart-behaviour.mjs` drives 16 surfaces
+on ONE browser and, when the connection drops, exits **0** with `Detected unsettled top-level await`
+— it reports success having silently skipped half its checks. And no gate cleans up its browser on
+the crash path. The concurrent session independently hit the same class and fixed its own two gates
+(`2e0893b`, `90dad63`, `9dbab86` — wait on the app's readiness vocabulary, exit explicitly).
+
+**Concurrency is the real lesson.** PROJECT_CONTEXT says never publish "while another agent is
+certifying"; the missing half is that the same check belongs BEFORE validation, not only before the
+deploy. Waiting for a 15-minute quiet window (HEAD static, tree clean, no `q-app…scripts` node
+process) was what finally made a receipt survive to pre-flight. A 5-minute window false-positived.
+
+**The audit is unaffected and still exact.** `public/data` was byte-identical before and after the
+deploy — `posts.json` sha `de60265…` matches the audit manifest, and the export plus two chain runs
+left it unchanged. The 16,024-row queue describes exactly what qdrops.app now serves.
+
+**Files:** no source changes of my own in this step. `.gitignore` (Excel `~$*` lock files, scratch
+`scripts/_*.mjs` probes), `DEVLOG.md`.
