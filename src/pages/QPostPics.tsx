@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { getAllPostsWithMedia } from '../lib/posts'
 import type { QPost, QMedia } from '../types'
@@ -47,6 +47,9 @@ interface ImageItem {
   post: QPost
   media: QMedia
   source: string
+  /** Stable position in allItems. Carried on the item because deriving it per tile with
+      findIndex is O(n squared) — see the note where allItems is built. */
+  idx: number
 }
 
 type ShowMode = 'all' | 'loaded'
@@ -65,12 +68,20 @@ export default function QPostPics() {
 
   // Picture-analysis entries load in the background; bump a tick so the search filter
   // and the Picture chips see them once they land.
-  const [, setPicsTick] = useState(0)
+  const [picsTick, setPicsTick] = useState(0)
   useEffect(() => {
     loadPictureAnalysis().then(() => setPicsTick(t => t + 1))
   }, [])
 
-  const allItems: ImageItem[] = posts.flatMap(p => {
+  // Memoised, and each item carries its own index.
+  //
+  // This ran on EVERY render — 1,870 items, each calling mediaUrl() — and then each tile derived
+  // its key with allItems.findIndex(), which is O(n squared): ~1.7M string comparisons per render,
+  // repeated on every keystroke in the search box. That stall is not just slow to type against; it
+  // delayed the first paint after Back for long enough that the scroll restorer's retry window
+  // expired and the page landed at the top, which the scroll gate caught as an intermittent
+  // failure on /pics.
+  const allItems: ImageItem[] = useMemo(() => posts.flatMap(p => {
     const seen = new Set<string>()
     const items: ImageItem[] = []
     function add(m: QMedia, source: string) {
@@ -82,7 +93,7 @@ export default function QPostPics() {
       const key = m.url ? mediaUrl(m.url) : ''
       if (key && !seen.has(key)) {
         seen.add(key)
-        items.push({ post: p, media: m, source })
+        items.push({ post: p, media: m, source, idx: -1 })
       }
     }
     for (const m of p.media) if (m.url) add(m, 'attached')
@@ -90,10 +101,10 @@ export default function QPostPics() {
     for (const m of extractTextImages(p.text ?? '')) add(m, 'text')
     if (p.link && isImageUrl(p.link)) add({ url: p.link, filename: p.link.split('/').pop()?.split('?')[0] ?? '' }, 'link')
     return items
-  })
+  }).map((it, i) => { it.idx = i; return it }), [posts])
 
-  const searched = search
-    ? allItems.filter(({ post, media }) => {
+  const searched = useMemo(() => !search ? allItems
+    : allItems.filter(({ post, media }) => {
         const q = search.toLowerCase()
         if (media.filename?.toLowerCase().includes(q)) return true
         if (String(post.postNum).includes(search)) return true
@@ -101,11 +112,13 @@ export default function QPostPics() {
         // when the vision audit has an entry for it.
         const info = getPictureInfoSync(media.url)
         return !!info && pictureHaystack(info).includes(q)
-      })
-    : allItems
+      }), [allItems, search, picsTick])
 
+  // Filter on the item's OWN index. `failedKeys` holds indices into allItems, but this filtered on
+  // the position within `searched` — so with a search active it hid whichever tiles happened to sit
+  // at those positions rather than the ones that actually failed to load.
   const displayed = showMode === 'loaded'
-    ? searched.filter((_, i) => !failedKeys.has(i))
+    ? searched.filter(it => !failedKeys.has(it.idx))
     : searched
 
   const handleLoad = useCallback(() => {
@@ -164,9 +177,7 @@ export default function QPostPics() {
         <div className="text-gray-500">No images found. Make sure posts are ingested.</div>
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-          {displayed.map(({ post, media, source }) => {
-            // Use original index for stable failure tracking
-            const origIdx = allItems.findIndex(x => x.media.url === media.url && x.post.postNum === post.postNum)
+          {displayed.map(({ post, media, source, idx: origIdx }) => {
             const date = new Date(post.timestamp * 1000).toLocaleDateString('en-US', {
               year: 'numeric', month: 'short', day: 'numeric',
             })

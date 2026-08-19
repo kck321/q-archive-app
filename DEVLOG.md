@@ -5596,3 +5596,39 @@ passes the viewport positionally with `mobile: false`, and its desktop cases rep
     ok: desktop /posts: Back restored 1500px (was 1500px)
     ok: /posts: one scrollbar (document overflow 0px, main scrolls true)
     ok: /analysis?tab=claims: one scrollbar (document overflow 0px, main scrolls true)
+
+## 2026-08-19 — Back on /pics: the save was recording a clamped zero
+
+The new scroll gate immediately earned its place: it failed on `desktop /pics` about one run in
+three while passing every other route. Instrumenting the navigation showed the position was never
+restored badly — it was never SAVED:
+
+    before nav, scrollTop = 1500
+    saved positions = {"/pics":0}
+
+**Cause.** The layout-effect cleanup was written to run "BEFORE the next page's layout body", which
+is true — but not before React has COMMITTED the next route's DOM. By then the container is as tall
+as the incoming page, and leaving a 100,134px picture grid for a single drop makes the browser clamp
+`scrollTop` to 0. Reading it there records a 0 the reader never chose. The analysis pages usually
+got away with it because a drop page is often tall enough not to clamp; /pics never was.
+
+**Fix.** The scroll listener already tracks the live position, so a 0 read at unmount no longer
+overwrites it — `atUnmount > 0 ? atUnmount : tracked`. A reader genuinely sitting at the top has 0
+tracked as well, so nothing is lost.
+
+Two supporting fixes found along the way:
+
+- **The retry budget was the wrong instrument.** It asked "has enough time passed?" when the
+  question is "has the content arrived?". It now resets on any frame where `scrollHeight` changes,
+  with a 20s hard cap — a slow page gets the patience it needs, an unreachable position still gives
+  up promptly.
+- **QPostPics rebuilt everything on every render.** `allItems` (1,870 items, each calling
+  `mediaUrl`) was recomputed per render and each tile then derived its key with
+  `allItems.findIndex(...)` — O(n squared), ~1.7M string comparisons per render, repeated on every
+  keystroke in the search box. Now memoised with the index carried on the item. Also fixes a real
+  bug in "Loaded Only": `failedKeys` holds indices into `allItems` but the filter applied them to
+  positions within the SEARCH RESULTS, so with a search active it hid whichever tiles happened to
+  sit at those positions rather than the ones that failed.
+
+**Five consecutive green runs** of the gate after the fix, against the flake that reproduced within
+three before it.

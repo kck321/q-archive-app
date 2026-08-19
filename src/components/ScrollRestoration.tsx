@@ -20,7 +20,16 @@ import { useLocation, useNavigationType } from 'react-router-dom'
 // is usually still short and scrollTop silently clamps. We re-apply across animation
 // frames until it sticks, then confirm it holds for a few frames before stopping.
 
-const RETRY_MS = 4000            // generous: the analysis list is ~500ms of work plus render
+// Budget measured from the last time the page STOPPED GROWING, not from the restore starting.
+//
+// A fixed deadline is the wrong instrument: it asks "has enough time passed?" when the question
+// is "has the content arrived yet?". /pics reloads ~1,870 tiles from IndexedDB on Back, and until
+// they render the container is too short for the target, so scrollTop silently clamps to 0. A flat
+// 4s expired mid-load often enough to fail roughly one run in three. Every frame in which
+// scrollHeight changes resets this budget, so a slow page gets all the patience it needs while a
+// genuinely unreachable position still gives up promptly.
+const RETRY_MS = 4000            // quiet time to keep trying AFTER the page stops growing
+const MAX_MS = 20000             // absolute cap, so a page that never settles cannot spin forever
 const SETTLE_FRAMES = 5          // frames the position must hold before we stop re-applying
 const STORAGE_KEY = 'q-scroll-positions'
 
@@ -97,16 +106,24 @@ export default function ScrollRestoration({ containerRef }: { containerRef: RefO
     if (navType === 'POP') {
       const target = positions.current[key] ?? 0
       if (target > 0) {
-        const deadline = performance.now() + RETRY_MS
+        let deadline = performance.now() + RETRY_MS
+        const hardStop = performance.now() + MAX_MS
+        let lastHeight = el.scrollHeight
         let settled = 0
         const restore = () => {
+          // Still filling in? Then we have not had our chance yet — reset the budget.
+          if (el.scrollHeight !== lastHeight) {
+            lastHeight = el.scrollHeight
+            deadline = performance.now() + RETRY_MS
+          }
           if (Math.abs(el.scrollTop - target) > 2) {
             el.scrollTop = target
             settled = 0
           } else {
             settled++
           }
-          if (settled < SETTLE_FRAMES && performance.now() < deadline) {
+          const now = performance.now()
+          if (settled < SETTLE_FRAMES && now < deadline && now < hardStop) {
             raf = requestAnimationFrame(restore)
           }
         }
@@ -120,9 +137,23 @@ export default function ScrollRestoration({ containerRef }: { containerRef: RefO
     }
 
     return () => {
-      // Runs BEFORE the next page's layout body — scrollTop is still ours here.
+      // Runs BEFORE the next page's layout body — but NOT before React has swapped the DOM.
+      //
+      // By the time this fires, the incoming route's markup is already committed, so this
+      // container is as tall as the NEW page. When the new page is shorter than the old scroll
+      // offset (leaving a 100,000px picture grid for a single drop, say) the browser clamps
+      // scrollTop to 0, and reading it here records a 0 that the reader never chose. That is an
+      // artifact of the swap, not a position — and it is what made Back land at the top of /pics
+      // roughly one time in three while the analysis pages, being shorter, usually got away
+      // with it.
+      //
+      // The scroll listener above already tracked the real position while the page was live, so
+      // trust that when the element now reads 0. A reader who genuinely sat at the top has 0
+      // recorded there too, so nothing is lost by preferring it.
       if (raf) cancelAnimationFrame(raf)
-      positions.current[key] = el.scrollTop
+      const atUnmount = el.scrollTop
+      const tracked = positions.current[key]
+      positions.current[key] = atUnmount > 0 ? atUnmount : (tracked ?? 0)
       savePositions(positions.current)
     }
   }, [key, navType, containerRef])
