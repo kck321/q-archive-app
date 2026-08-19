@@ -39,7 +39,6 @@ for (const id of pick) {
   const hrefs = String(await p.evaluate(`[...document.querySelectorAll('.post-text a')].map(a => a.getAttribute('href')).join('|||')`))
     .split('|||').filter(h => h && /^https?:/.test(h))
   marksInside += Number(await p.evaluate(`[...document.querySelectorAll('.post-text a mark')].length`))
-  const p2 = p
   checked++
   const truncated = hrefs.map(decode).filter(h => !full.includes(h))
   if (truncated.length) { broken++; fail(`#${id}: anchor href is not a complete URL — ${truncated[0].slice(0, 80)}`) }
@@ -48,7 +47,7 @@ for (const id of pick) {
   // built from the certified URL cleanup, which was never a complete list — #2166 carried two
   // links and listed one, because only theverge.com had been adjudicated. The uncovered ones are
   // now listed beside the certified rows, marked as links the archive has not identified.
-  const listed = String(await p2.evaluate(`(() => {
+  const listed = String(await p.evaluate(`(() => {
     const h = [...document.querySelectorAll('h3')].find(x => /Sources linked/i.test(x.textContent || ''))
     if (!h) return ''
     return [...h.closest('section').querySelectorAll('a')].map(a => a.getAttribute('href') || '').join('|||')
@@ -58,6 +57,11 @@ for (const id of pick) {
     sourcesBad++
     fail(`#${id}: ${missingFromSources.length} link(s) in the drop are absent from Sources — ${missingFromSources[0].slice(0, 70)}`)
   } else sourcesOk++
+
+  // Close EVERY page. Leaving one open keeps the harness socket alive, the gate never exits, and
+  // validate.mjs waits on it forever — which is exactly how this file hung a full run for 18
+  // minutes after printing its own GREEN verdict.
+  await p.close()
 }
 
 if (checked === 0) fail('no posts with URLs were checked')

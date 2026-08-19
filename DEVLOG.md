@@ -5854,3 +5854,17 @@ an address never appears twice under two headings.
     ok: every anchor carries a complete URL across 14 drops
     ok: every link in the drop is listed in "Sources linked in this drop" (14 drops)
     ok: classifications inside links still render (10 mark(s) nested in anchors)
+
+## 2026-08-19 — The gate that hung the pipeline after passing
+
+Adding the "every link is listed in Sources" assertion to `test-url-integrity.mjs` silently dropped
+the `await p.close()` at the end of its loop — a replacement that matched nothing. Every page
+stayed open, the harness socket kept the process alive, and the gate never EXITED even though it
+had already printed its own GREEN verdict. `validate.mjs` waited on it for 1,155s and then stopped
+the whole run:
+
+    ❌ fresh — url integrity — 1155.4s
+    STOPPED at "fresh — url integrity". Nothing further ran; fix this before deploying.
+
+A gate that passes and does not exit is worse than one that fails: the verdict says green while the
+pipeline is dead. Every page is closed again, and the gate now finishes in ~39s.
