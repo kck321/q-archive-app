@@ -6,7 +6,7 @@
 // three nodes: an anchor holding the part before `reddit`, the word as a plain mark, then a
 // fragment. The visible link went to a truncated URL, which is worse than no link — it looks like
 // it worked. This asserts the whole address is one anchor, and that the marks inside it survive.
-import { launch } from './lib/browser.mjs'
+import { launch, DROP_READY } from './lib/browser.mjs'
 import fs from 'node:fs'
 
 const BASE = process.env.QDROPS_BASE ?? 'http://localhost:5173'
@@ -33,9 +33,14 @@ for (const id of pick) {
   const decode = u => u.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'")
   const full = ((post?.text || '').match(URL_RX) || []).map(decode)
   if (!full.length) continue
+  // On a COLD browser the first drop must seed IndexedDB from the 9 MB bundle before any post
+  // body exists, so this waits on the app's own readiness expression with a generous budget. The
+  // hand-rolled wait it replaces passed on a warm browser and died on a cold one — which is the
+  // state every pipeline run starts in.
   const p = await b.page(`${BASE}/post/${id}`, D)
-  await p.waitFor(`document.querySelector('.post-text') !== null`, { timeout: 60000 })
-  await new Promise(s => setTimeout(s, 1200))
+  const ready = await p.waitFor(DROP_READY, { timeout: 120000 }).catch(() => false)
+  if (!ready) { fail(`#${id}: drop body never rendered`); broken++; await p.close().catch(() => {}); continue }
+  await new Promise(s => setTimeout(s, 800))
   const hrefs = String(await p.evaluate(`[...document.querySelectorAll('.post-text a')].map(a => a.getAttribute('href')).join('|||')`))
     .split('|||').filter(h => h && /^https?:/.test(h))
   marksInside += Number(await p.evaluate(`[...document.querySelectorAll('.post-text a mark')].length`))

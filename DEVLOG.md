@@ -5878,3 +5878,15 @@ was proved to TERMINATE (`exit=0`) on its own before another full run was spent 
 The lesson worth keeping: for a gate, "prints GREEN" and "exits" are two different properties, and
 the pipeline needs both. A passing gate that never returns reads as a failure 19 minutes later.
 
+**Third failure, and the real one: the gates only worked WARM.** Both new gates rolled their own
+readiness wait (`document.querySelector('.post-text')`, `.bg-q-panel`). On a warm browser the app
+is already seeded and that resolves instantly; on a COLD one — which is the state every pipeline
+run starts in — the first page must seed IndexedDB from the 9 MB bundle first, and the hand-rolled
+wait died instead of waiting, taking the run with it. `browser.mjs` already exports the vocabulary
+for this (`DROP_READY`, `ROWS_READY`), with the stated reason: "The archive is ready when its rows
+exist — not when the clock says so." Both gates now use it with a cold-boot budget.
+
+Verified the way it should have been the first time: harness browsers killed to FORCE a cold
+launch, then each gate run alone and confirmed GREEN with a real exit code — not a `$?` read
+through a pipe, which reports tail's status and had been quietly telling me 0 all along.
+

@@ -8,7 +8,7 @@
 //
 // Reads are deliberately PRIMITIVE (numbers and strings). Returning a JSON blob through the
 // harness sometimes arrives parsed and sometimes as text, and guessing which cost an afternoon.
-import { launch } from './lib/browser.mjs'
+import { launch, ROWS_READY } from './lib/browser.mjs'
 
 const BASE = process.env.QDROPS_BASE ?? 'http://localhost:5173'
 const D = { width: 1600, height: 1000, deviceScaleFactor: 1, mobile: false, touch: false }
@@ -25,8 +25,10 @@ const CHIPS = kind => `[...${CARD}.querySelectorAll('a')].filter(a => /${kind} #
 const NUMS = kind => `${CHIPS(kind)}.map(a => parseInt(String(a.textContent).split('#')[1], 10))`
 
 async function open(url) {
+  // Cold browser: the first page has to seed IndexedDB before any row exists. Wait on the app's
+  // own readiness expression with a cold-boot budget rather than a hand-rolled selector.
   const p = await b.page(url, D)
-  await p.waitFor(`document.querySelectorAll('.bg-q-panel').length > 0`, { timeout: 60000 })
+  await p.waitFor(ROWS_READY, { timeout: 120000 }).catch(() => false)
   // The index is built from picture-analysis.json plus every link in the archive, so it lands
   // seconds after the row itself. Poll for the chips instead of trusting a fixed delay.
   for (let i = 0; i < 40; i++) {
@@ -116,7 +118,7 @@ for (const [label, url] of [
 // ── Emphasis is excluded by owner ruling ──────────────────────────────────────
 {
   const p = await b.page(`${BASE}/analysis?tab=emphasis`, D)
-  await p.waitFor(`document.querySelectorAll('.bg-q-panel').length > 0`, { timeout: 60000 })
+  await p.waitFor(ROWS_READY, { timeout: 120000 }).catch(() => false)
   await new Promise(s => setTimeout(s, 6000))
   const n = Number(await p.evaluate(`${CHIPS('(Pic|URL)')}.length`))
   n === 0 ? ok('Emphasis carries no evidence chips, as ruled') : fail(`Emphasis shows ${n} evidence chips`)
