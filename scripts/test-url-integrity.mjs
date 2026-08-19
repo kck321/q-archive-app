@@ -72,3 +72,8 @@ if (marksInside > 0) ok(`classifications inside links still render (${marksInsid
 else console.log('   note: no sampled drop had a classified term inside a URL')
 
 console.log(process.exitCode ? '\nURL INTEGRITY PROOF: FAILED' : '\nURL INTEGRITY PROOF: GREEN')
+
+// Exit explicitly. The harness keeps a socket open per browser, so a gate that only
+// sets process.exitCode can print its verdict and then sit there — which hung validate.mjs
+// for 1,155s on a run whose own output said GREEN.
+process.exit(process.exitCode ? 1 : 0)

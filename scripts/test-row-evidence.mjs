@@ -124,3 +124,8 @@ for (const [label, url] of [
 }
 
 console.log(process.exitCode ? '\nROW EVIDENCE PROOF: FAILED' : '\nROW EVIDENCE PROOF: GREEN')
+
+// Exit explicitly. The harness keeps a socket open per browser, so a gate that only
+// sets process.exitCode can print its verdict and then sit there — which hung validate.mjs
+// for 1,155s on a run whose own output said GREEN.
+process.exit(process.exitCode ? 1 : 0)

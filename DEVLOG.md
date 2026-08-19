@@ -5868,3 +5868,13 @@ the whole run:
 
 A gate that passes and does not exit is worse than one that fails: the verdict says green while the
 pipeline is dead. Every page is closed again, and the gate now finishes in ~39s.
+
+**Follow-up — closing the pages was not enough.** The run hung a second time at 434.9s, again after
+printing GREEN. The harness holds a socket per browser, so a gate that only sets `process.exitCode`
+finishes its work and then sits there with a live handle. `test-alias-visibility.mjs` already
+solved this the right way: end with `process.exit(...)`. Both new gates now do the same, and each
+was proved to TERMINATE (`exit=0`) on its own before another full run was spent on them.
+
+The lesson worth keeping: for a gate, "prints GREEN" and "exits" are two different properties, and
+the pipeline needs both. A passing gate that never returns reads as a failure 19 minutes later.
+
