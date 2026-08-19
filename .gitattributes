@@ -1,0 +1,9 @@
+# Everything under public/data is published byte-for-byte to GitHub Pages, and git
+# stores it with LF. Keep the working copy LF too, so verify-live.mjs can compare the
+# bytes it fetches from production against the file on disk.
+#
+# Without this, core.autocrlf=true rewrites these files to CRLF on checkout while
+# production serves LF, so the delivery check reports "content differs" on a file whose
+# parsed content is identical. picture-analysis.json hit exactly that: 1,433,125 bytes on
+# disk vs 1,400,468 served — 32,657 CR bytes, zero real differences.
+public/data/*.json text eol=lf

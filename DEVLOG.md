@@ -5438,3 +5438,29 @@ approved.
 - No SEED_VERSION bump: `picture-analysis.json` is NOT in `SEEDED_FILES` (fetched at runtime by `src/lib/pictureAnalysis.ts`, never seeded to IndexedDB), so seed invariant 8 does not apply. The service worker caches `/data/*.json` cache-first but the deploy bumps `CACHE_VERSION`, which drops the old caches for returning readers.
 - `src/pages/ResolutionCenter.tsx`: the `PictureReviewSection` (two-red-dot queue) now ships — it reads `needsReview` from picture-analysis.json and deep-links each flagged image to its posts, deliberately separate from the certified queue totals.
 - `scripts/test-picture-resolution.mjs`: browser proof for that section.
+
+## 2026-08-19 — CRLF in the one data file Node never rewrites (delivery gate fix)
+
+**Symptom:** first live deploy of the 850-image bundle passed 13/14; `verify-live.mjs` reported
+`picture-analysis.json content differs (1400468 vs 1433125 bytes)`.
+
+**Cause — line endings, not content.** The file had 32,657 CRLF and zero bare LF; strip the CRs and
+it is 1,400,468 bytes, the served size to the byte. `git hash-object` proves the working copy and the
+committed blob are the SAME blob (`159486f7`), and the fetched JSON parses equal to disk (850 images,
+16 needsReview). Every other file in `public/data` is LF because `export-firestore.mjs` rewrites them
+with Node on every deploy — picture-analysis.json is the one published artifact Node never touches. It
+was written by `merge*.py` via `open(...,'w')`, and Python text mode on Windows translates \n → \r\n.
+Git then normalises CRLF → LF when committing the gh-pages branch, so production serves LF while the
+built bundle on disk kept CRLF. `verify-live.mjs` compares production against `dist/`, so it compared
+LF against CRLF and correctly refused to call them identical.
+
+**Fix (all three layers, so it cannot recur):**
+- `merge500.py` / `merge850.py` compile step now opens with `newline='\n'`.
+- `public/data/picture-analysis.json` normalised to LF (identical blob — no content change).
+- `.gitattributes`: `public/data/*.json text eol=lf`. Without it, `core.autocrlf=true` rewrites these
+  to CRLF on the next checkout and the gate breaks again; keeping the file LF with no rule instead
+  leaves the tree permanently dirty, which `write-build-info.mjs` refuses. The rule settles both.
+  Needed `git add --renormalize` so the index recorded the working copy under the new attribute.
+
+**Nothing about the live content was wrong** — this deploy republishes identical JSON so that the
+bundle on disk matches the bytes production serves and the delivery check can prove it.

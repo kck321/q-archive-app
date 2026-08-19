@@ -72,5 +72,5 @@ if len(sys.argv) > 1 and sys.argv[1] == 'compile':
         data['images'].append(img)
         added += 1
     data['coverage'] = f'first {len(data["images"])} distinct images in post order (plus videos via frames)'
-    json.dump(data, open(APP_JSON, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    json.dump(data, open(APP_JSON, 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, indent=1)
     print(f'compiled: +{added} entries -> {len(data["images"])} total in picture-analysis.json')
