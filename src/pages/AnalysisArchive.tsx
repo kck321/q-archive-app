@@ -1381,6 +1381,25 @@ export default function AnalysisArchive() {
                           </Link>
                         )
                       })}
+                      {/* Owner ruling: the rest of the post numbers come FIRST. You decide which
+                          drops you are looking at before you are offered to read them, so the
+                          expander sits next to the chips it expands and "read N drops" lands on
+                          the right, at the end of the row. Applies to every category — this one
+                          renderer serves them all. */}
+                      {monthChips.length > CHIPS && (
+                        <button
+                          onClick={() => setExpandedChips(prev => {
+                            const next = new Set(prev)
+                            if (next.has(key)) next.delete(key); else next.add(key)
+                            return next
+                          })}
+                          className="text-xs px-2 py-0.5 rounded border border-gray-600 bg-gray-800 text-gray-300 hover:text-white hover:border-gray-400 transition-colors font-mono"
+                        >
+                          {expandedChips.has(key)
+                            ? '− show fewer'
+                            : `+${(monthChips.length - CHIPS).toLocaleString()} more`}
+                        </button>
+                      )}
                       {/* Open the drops themselves, in post order, underneath the numbers.
                           The chips say WHICH posts; this says what they contain, without
                           leaving the row you are reading. */}
@@ -1398,20 +1417,6 @@ export default function AnalysisArchive() {
                           title={readingKey === key ? 'Close the drops' : `Read all ${monthChips.length} drops here, in post order`}
                         >
                           {readingKey === key ? '− close drops' : `▼ read ${monthChips.length.toLocaleString()} drop${monthChips.length !== 1 ? 's' : ''}`}
-                        </button>
-                      )}
-                      {monthChips.length > CHIPS && (
-                        <button
-                          onClick={() => setExpandedChips(prev => {
-                            const next = new Set(prev)
-                            if (next.has(key)) next.delete(key); else next.add(key)
-                            return next
-                          })}
-                          className="text-xs px-2 py-0.5 rounded border border-gray-600 bg-gray-800 text-gray-300 hover:text-white hover:border-gray-400 transition-colors font-mono"
-                        >
-                          {expandedChips.has(key)
-                            ? '− show fewer'
-                            : `+${(monthChips.length - CHIPS).toLocaleString()} more`}
                         </button>
                       )}
                     </div>
