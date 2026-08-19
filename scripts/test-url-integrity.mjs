@@ -22,7 +22,8 @@ const URL_RX = /https?:\/\/[^\s<>"')\]]+/g
 const withUrls = posts.filter(p => (p.text || '').match(URL_RX))
 const pick = ['2166', ...withUrls.filter((_, i) => i % Math.max(1, Math.floor(withUrls.length / 14)) === 0).map(p => p.id).slice(0, 14)]
 const seen = new Set()
-let checked = 0, broken = 0, marksInside = 0
+let checked = 0, broken = 0, marksInside = 0, sourcesOk = 0, sourcesBad = 0
+const canonUrl = u => String(u).replace(/[.,;:!?)]+$/, '').replace(/\/+$/, '').toLowerCase()
 
 for (const id of pick) {
   if (seen.has(id)) continue
@@ -38,15 +39,31 @@ for (const id of pick) {
   const hrefs = String(await p.evaluate(`[...document.querySelectorAll('.post-text a')].map(a => a.getAttribute('href')).join('|||')`))
     .split('|||').filter(h => h && /^https?:/.test(h))
   marksInside += Number(await p.evaluate(`[...document.querySelectorAll('.post-text a mark')].length`))
-  await p.close()
+  const p2 = p
   checked++
   const truncated = hrefs.map(decode).filter(h => !full.includes(h))
   if (truncated.length) { broken++; fail(`#${id}: anchor href is not a complete URL — ${truncated[0].slice(0, 80)}`) }
+
+  // EVERY link in the drop is accounted for in "Sources linked in this drop". That section is
+  // built from the certified URL cleanup, which was never a complete list — #2166 carried two
+  // links and listed one, because only theverge.com had been adjudicated. The uncovered ones are
+  // now listed beside the certified rows, marked as links the archive has not identified.
+  const listed = String(await p2.evaluate(`(() => {
+    const h = [...document.querySelectorAll('h3')].find(x => /Sources linked/i.test(x.textContent || ''))
+    if (!h) return ''
+    return [...h.closest('section').querySelectorAll('a')].map(a => a.getAttribute('href') || '').join('|||')
+  })()`)).split('|||').filter(Boolean).map(decode)
+  const missingFromSources = [...new Set(full)].filter(u => !listed.some(l => canonUrl(l) === canonUrl(u)))
+  if (missingFromSources.length) {
+    sourcesBad++
+    fail(`#${id}: ${missingFromSources.length} link(s) in the drop are absent from Sources — ${missingFromSources[0].slice(0, 70)}`)
+  } else sourcesOk++
 }
 
 if (checked === 0) fail('no posts with URLs were checked')
 else if (broken === 0) ok(`every anchor carries a complete URL across ${checked} drops`)
 // The whole point of wrapping rather than suppressing: classifications inside a link still show.
+if (sourcesBad === 0 && sourcesOk > 0) ok(`every link in the drop is listed in "Sources linked in this drop" (${sourcesOk} drops)`)
 if (marksInside > 0) ok(`classifications inside links still render (${marksInside} mark(s) nested in anchors)`)
 else console.log('   note: no sampled drop had a classified term inside a URL')
 

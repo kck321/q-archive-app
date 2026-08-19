@@ -1774,7 +1774,7 @@ export default function PostDetail() {
         {/* Where the linked material came from. A separate layer from the entity mentions painted
             in the drop above — see src/lib/linkedSources.ts. Renders nothing until the URL
             cleanup is applied and the artifact exists. */}
-        <LinkedSources postNum={post.postNum} />
+        <LinkedSources postNum={post.postNum} text={post.text} />
 
         {/* Media — Q's own attached images */}
         {dedupeMedia(post.media).length > 0 && (

@@ -5826,3 +5826,31 @@ It records: where every artifact lives, the coverage table (n=851 is next), how 
 and incomplete, and why two red dots differ from one), the compile step, why no SEED_VERSION bump
 is needed, why the file must be LF, the measured cost (~7,700 tokens/image, ~1.7% needsReview), and
 how the session-limit and connection-drop interruptions were recovered without duplicating work.
+
+## 2026-08-19 — "Sources linked in this drop" now lists EVERY link in the drop
+
+**Owner report:** #2166 carries two links but the Sources section lists one.
+
+**Cause — the section was never a complete list.** It renders `linked-sources.json`, the artifact
+produced by the certified URL cleanup: addresses ADJUDICATED as named sources, 99 hostnames across
+288 drops. theverge.com had been adjudicated; cnet.com had not, so it was in the drop and absent
+from the section. Not a bug in the data — a mismatch between what the section holds and what its
+heading promises.
+
+**Fix, additive.** The certified rows are untouched and keep their identification wording
+("identified source" / "named, not identified"). Every other URL in the drop text is now listed
+BESIDE them as `hostname · linked, not a named source`. Widening the certified artifact by guessing
+which unadjudicated domains "are" sources is exactly what the URL cleanup refused to do, so the
+distinction is stated in the row rather than dissolved.
+
+Matching is canonicalised (entity-decoded, trailing slash and punctuation stripped, lower-cased) so
+an address never appears twice under two headings.
+
+    #2166: theverge.com , cnet.com
+    #2377: thehill.com , saraacarter.com
+
+`scripts/test-url-integrity.mjs` now asserts it for every sampled drop:
+
+    ok: every anchor carries a complete URL across 14 drops
+    ok: every link in the drop is listed in "Sources linked in this drop" (14 drops)
+    ok: classifications inside links still render (10 mark(s) nested in anchors)

@@ -13,10 +13,30 @@
 import { Link } from 'react-router-dom'
 import { useLinkedSources, sourcesForPost } from '../lib/linkedSources'
 
-export default function LinkedSources({ postNum }: { postNum: number }) {
+// EVERY link in the drop appears here, but they do not all say the same thing.
+//
+// The certified rows come from the URL cleanup: addresses adjudicated as named sources, 99
+// hostnames across 288 drops. That artifact was never a complete list of links and must not be
+// widened by guessing — so the rest of a drop's URLs are listed BESIDE it, plainly marked as
+// links the archive has not identified. #2166 carried two links and showed one, because only
+// theverge.com had been adjudicated; cnet.com was in the drop the whole time.
+const URL_RX = /https?:\/\/[^\s<>"')\]]+/g
+const decodeEntities = (u: string): string => u
+  .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+  .replace(/&quot;/g, '"').replace(/&#39;/g, "'")
+// Compare loosely: the artifact and the drop text can differ by a trailing slash or by case in
+// the host, and listing the same address twice under two headings would read as two sources.
+const canon = (u: string): string => decodeEntities(String(u)).replace(/[.,;:!?)]+$/, '').replace(/\/+$/, '').toLowerCase()
+const hostOf = (u: string): string => { try { return new URL(u).hostname.replace(/^www\./, '') } catch { return u } }
+
+export default function LinkedSources({ postNum, text }: { postNum: number; text?: string | null }) {
   const all = useLinkedSources()
   const rows = sourcesForPost(all, postNum)
-  if (!rows.length) return null
+  const covered = new Set(rows.map(r => canon(r.url)))
+  const extras = [...new Set(((text ?? '').match(URL_RX) ?? []).map(decodeEntities))]
+    .filter(u => !covered.has(canon(u)))
+    .filter((u, i, a) => a.findIndex(x => canon(x) === canon(u)) === i)
+  if (!rows.length && !extras.length) return null
 
   const headingId = `linked-sources-${postNum}`
   return (
@@ -66,6 +86,22 @@ export default function LinkedSources({ postNum }: { postNum: number }) {
             {!r.entityId && (
               <p className="text-[11px] text-gray-500 mt-0.5">{r.confidence}</p>
             )}
+          </li>
+        ))}
+        {extras.map(u => (
+          <li key={u} className="text-sm">
+            <div className="flex items-baseline gap-2 flex-wrap">
+              <span className="font-mono text-xs text-gray-400">{hostOf(u)}</span>
+              <span className="text-[11px] text-gray-500">linked, not a named source</span>
+            </div>
+            <a
+              href={u}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className="text-xs text-blue-300 hover:text-blue-100 break-all leading-snug"
+            >
+              {u}
+            </a>
           </li>
         ))}
       </ul>
