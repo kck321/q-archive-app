@@ -25,7 +25,7 @@ const SCROLLER = `(() => {
 })()`
 
 async function check(label, viewport, path, linkPattern) {
-  const p = await b.page(`${BASE}${path}`, { viewport })
+  const p = await b.page(`${BASE}${path}`, viewport)
   // Wait for a list long enough to scroll.
   await p.waitFor(`${SCROLLER}.scrollHeight > ${SCROLLER}.clientHeight + 800`, { timeout: 60000 })
   await p.evaluate(`${SCROLLER}.scrollTop = 1500`)
@@ -53,8 +53,34 @@ async function check(label, viewport, path, linkPattern) {
   await p.close()
 }
 
-await check('desktop /posts', { width: 1440, height: 900 }, '/posts', String.raw`/^\/post\//`)
-await check('phone /posts',   { width: 390, height: 844 },  '/posts', String.raw`/^\/post\//`)
-await check('desktop /pics',  { width: 1440, height: 900 }, '/pics',  String.raw`/^\/post\//`)
+const DESKTOP = { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false, touch: false }
+const PHONE = { width: 390, height: 844, deviceScaleFactor: 2, mobile: true }
+await check('desktop /posts', DESKTOP, '/posts', String.raw`/^\/post\//`)
+await check('phone /posts',   PHONE, '/posts', String.raw`/^\/post\//`)
+await check('desktop /pics',  DESKTOP, '/pics',  String.raw`/^\/post\//`)
+
+// ── One scrollbar, not two ───────────────────────────────────────────────────
+//
+// On desktop <main> owns the scrollbar and the document must not scroll at all. A second bar
+// appeared on exactly the pages carrying a month chart, because MonthFilter's aria-live region
+// is `sr-only` — position:absolute — and <main> was not a positioning context, so its containing
+// block was <body>. That put a 1x1 invisible element at the page's full content depth, escaping
+// main's overflow and giving the document ~21px of scrollable height: a full-length second
+// scrollbar for one pixel of content. <main> is now `relative`, which contains it.
+async function noDoubleScrollbar(path) {
+  const p = await b.page(`${BASE}${path}`, DESKTOP)
+  await p.waitFor(`document.querySelector('main') !== null`, { timeout: 60000 })
+  await p.waitFor(`${SCROLLER}.scrollHeight > ${SCROLLER}.clientHeight + 200`, { timeout: 60000 }).catch(() => {})
+  const out = await p.evaluate(`(() => {
+    const de = document.documentElement, m = document.querySelector('main')
+    return JSON.stringify({ over: de.scrollHeight - de.clientHeight, mainScrolls: m.scrollHeight > m.clientHeight + 1 })
+  })()`)
+  const o = JSON.parse(out)
+  if (o.over > 1) fail(`${path}: document scrolls ${o.over}px as well as <main> — two scrollbars`)
+  else ok(`${path}: one scrollbar (document overflow ${o.over}px, main scrolls ${o.mainScrolls})`)
+  await p.close()
+}
+for (const r of ['/posts', '/analysis?tab=claims', '/analysis?tab=namedEntities', '/analysis?tab=themes', '/pics'])
+  await noDoubleScrollbar(r)
 
 console.log(process.exitCode ? '\nSCROLL RESTORATION PROOF: FAILED' : '\nSCROLL RESTORATION PROOF: GREEN')

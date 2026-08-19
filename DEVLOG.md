@@ -5561,3 +5561,38 @@ picture feature's existing colour language (the Pic chips and the pic-matched ca
 Verified in the browser rather than by reading the array: nav order around it is
 `Q Themes · Q Emphasis · Q Post Pics · ⚠ Overlaps`, and "Q Post Pics" appears exactly once — the
 failure mode of this edit is leaving the old entry in place and shipping it twice.
+
+## 2026-08-19 — The second scrollbar: one invisible pixel, anchored to the wrong element
+
+**Owner report:** Post Archive, Claims, Predictions, Entities and Themes show TWO scrollbars on the
+right; other pages show one.
+
+That list is the clue — it is exactly the set of pages that render a month chart.
+
+**Cause.** `MonthFilter` announces its selection through `<div aria-live="polite" className="sr-only">`.
+Tailwind's `sr-only` is `position: absolute`. `<main>` was not a positioning context, so that
+element's containing block was `<body>` — which means it escaped `main`'s `overflow-y-auto`
+entirely and was laid out at its static position deep inside main's content. On /posts that put a
+**1×1 invisible div at document y≈820 in an 800px viewport**: 21px of scrollable document height,
+rendered as a full-height second scrollbar for one pixel of content nobody can see.
+
+Measured rather than guessed: hiding `<main>` dropped `documentElement.scrollHeight` from 821 to
+800, and a sweep of ten routes found exactly ONE body-anchored absolutely-positioned element in the
+whole app — that 1×1 `sr-only` div, present only on month-chart pages. Nothing else could shift.
+
+**Fix:** `<main>` is now `relative`. Its own absolutely-positioned descendants are contained and
+clipped by its scroll box, so the document stops growing. One scrollbar everywhere.
+
+### Correction to the previous entry's proof
+
+`scripts/test-scroll-restoration.mjs` called `b.page(url, { viewport })`, but the harness signature
+is `page(url, viewport)` — positional — and defaults to `mobile: true`. The object was read as
+`{width: undefined, height: undefined}`, so BOTH the "desktop" and "phone" cases ran at phone
+metrics and the desktop path — `<main>` as the scroll container, the very thing the Back-button bug
+lived in — was never exercised. The fix was right; the proof was weaker than reported. The gate now
+passes the viewport positionally with `mobile: false`, and its desktop cases report
+`main scrolls true`. It also now asserts, on five routes, that the document does not scroll at all:
+
+    ok: desktop /posts: Back restored 1500px (was 1500px)
+    ok: /posts: one scrollbar (document overflow 0px, main scrolls true)
+    ok: /analysis?tab=claims: one scrollbar (document overflow 0px, main scrolls true)

@@ -103,7 +103,7 @@ export default function App() {
         )}
 
         <Sidebar open={navOpen} onClose={() => setNavOpen(false)} />
-        <main ref={mainRef} className="flex-1 min-w-0 lg:overflow-y-auto pt-[calc(3rem+env(safe-area-inset-top))] lg:pt-0 pb-[env(safe-area-inset-bottom)]">
+        <main ref={mainRef} className="flex-1 min-w-0 relative lg:overflow-y-auto pt-[calc(3rem+env(safe-area-inset-top))] lg:pt-0 pb-[env(safe-area-inset-bottom)]">
           <ScrollRestoration containerRef={mainRef} />
           <Routes>
             <Route path="/"              element={<Navigate to="/posts" replace />} />
