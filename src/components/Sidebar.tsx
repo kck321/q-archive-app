@@ -40,7 +40,6 @@ const analysisLinks = [
 const bottomLinks = [
   { to: '/tripcodes', label: 'Q Tripcodes',     icon: '🔐' },
   { to: '/topics',    label: 'Q Clusters',      icon: '📖' },
-  { to: '/pics',      label: 'Q Post Pics',     icon: '🖼' },
   { to: '/links',     label: 'All Q Links',     icon: '🌐' },
   { to: '/sources',   label: 'Sources',         icon: '📰' },
   { to: '/resources', label: 'Resources',       icon: '🔗' },
@@ -143,6 +142,18 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
                 <span className={`w-2 h-2 rounded-full shrink-0 ${a.dot}`} />
                 {a.label}
               </NavLink>
+              {a.tab === 'emphasis' && (
+                <NavLink
+                  to="/pics"
+                  onClick={() => flash('/pics')}
+                  className={({ isActive: pa }) =>
+                    itemCls(pa, 'text-teal-400 hover:text-teal-300', flashKey, '/pics')
+                  }
+                >
+                  <span className="w-2 h-2 rounded-full shrink-0 bg-gray-500" />
+                  Q Post Pics
+                </NavLink>
+              )}
               {a.tab === 'namedEntities' && (
                 <NavLink
                   to="/brackets"

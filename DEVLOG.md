@@ -5548,3 +5548,16 @@ shows the same image twice — `ok: /pics has no duplicate tiles (1870 checked)`
 **Known, not fixed here:** the tile map calls `allItems.findIndex(...)` per tile to derive a key,
 which is O(n²) — ~1.7M string comparisons per render, repeated on every search keystroke. Worth
 replacing with an index computed during construction; left alone to keep this change focused.
+
+## 2026-08-19 — Q Post Pics moved under Q Emphasis (nav)
+
+Owner ruling: Q Post Pics belongs with the analysis sections, not down in the utility list.
+
+Moved out of `bottomLinks` and rendered inside the analysis group directly after Q Emphasis,
+using the shape `Q [ Brackets ]` already established for a ROUTE link living inside that
+tab-driven list — a dot rather than an icon, so it reads as part of the group. Teal to match the
+picture feature's existing colour language (the Pic chips and the pic-matched card tag).
+
+Verified in the browser rather than by reading the array: nav order around it is
+`Q Themes · Q Emphasis · Q Post Pics · ⚠ Overlaps`, and "Q Post Pics" appears exactly once — the
+failure mode of this edit is leaving the old entry in place and shipping it twice.
