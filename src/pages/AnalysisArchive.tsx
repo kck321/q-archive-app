@@ -65,6 +65,14 @@ const CAT_LABELS: Record<AnalysisCategoryFreq['category'], string> = {
   verificationHooks: 'Emphasis',
 }
 
+// Categories that carry supporting Pic/URL evidence.
+//
+// Owner ruling: every ACTIVE analysis category except Emphasis, which was deliberately
+// unhighlighted and is being reconsidered. `impliedConclusions` and `verificationHooks` are
+// labelled 'Emphasis' as well, so they sit out with it rather than reintroducing the category
+// through a back door.
+const EVIDENCE_CATS = new Set<string>(['namedEntities', 'claims', 'predictions', 'themes'])
+
 const CAT_COLORS: Record<AnalysisCategoryFreq['category'], string> = {
   claims: 'bg-amber-500/25 text-amber-300 border border-amber-700/50',
   predictions: 'bg-violet-500/25 text-violet-300 border border-violet-700/50',
@@ -1421,9 +1429,9 @@ export default function AnalysisArchive() {
                       )}
                     </div>
                     {/* Supporting evidence, in its own labelled groups BELOW the certified chips.
-                        Phase 1 is Named Entities only — the counts above are adjudicated and
-                        nothing here may touch them. */}
-                    {activeTab === 'namedEntities' && (
+                        Every active category except Emphasis — the counts above are adjudicated
+                        and nothing here may touch them. */}
+                    {EVIDENCE_CATS.has(activeTab) && (
                       <RowEvidenceChips term={item.text} certifiedPosts={monthChips.map(c => c.num)} />
                     )}
                     {readingKey === key && (

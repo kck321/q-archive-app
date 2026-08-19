@@ -1,5 +1,6 @@
 import { useEffect, useState, useMemo, useRef } from 'react'
 import SectionInfo from '../components/SectionInfo'
+import RowEvidenceChips from '../components/RowEvidenceChips'
 import { Link, useSearchParams } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import SearchBar from '../components/SearchBar'
@@ -466,6 +467,9 @@ export default function QRequests() {
                         </button>
                       )}
                     </div>
+                    {/* Pictures and links tied to this directive — separate from the certified
+                        chips above, which stay exactly as adjudicated. */}
+                    <RowEvidenceChips term={item.text} certifiedPosts={item.postNums} />
                   </div>
                 </div>
               </div>

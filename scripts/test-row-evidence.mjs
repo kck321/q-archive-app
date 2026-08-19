@@ -98,11 +98,18 @@ const asc = a => a.every((v, i, arr) => i === 0 || arr[i - 1] <= v)
   await p.close()
 }
 
-// ── Brackets uses the same helper ─────────────────────────────────────────────
-{
-  const p = await open(`${BASE}/brackets`)
+// ── Every surface the owner ruled IN uses the same helper ─────────────────────
+for (const [label, url] of [
+  ['Q [ Brackets ]', `${BASE}/brackets`],
+  ['Claims',         `${BASE}/analysis?tab=claims&q=Trump`],
+  ['Predictions',    `${BASE}/analysis?tab=predictions&q=will`],
+  ['Themes',         `${BASE}/analysis?tab=themes&q=control`],
+  ['Directives',     `${BASE}/requests`],
+  ['Questions',      `${BASE}/questions`],
+]) {
+  const p = await open(url)
   const n = Number(await p.evaluate(`${CHIPS('(Pic|URL)')}.length`))
-  n > 0 ? ok(`Q [ Brackets ] rows carry the same evidence chips (${n})`) : fail('no evidence chips on /brackets')
+  n > 0 ? ok(`${label} rows carry the same evidence chips (${n})`) : fail(`no evidence chips on ${label}`)
   await p.close()
 }
 

@@ -5798,3 +5798,31 @@ Claims and Predictions show "no row with both" — their top rows sit under the 
 expander exists to order. Not a failure.
 
 NOT DEPLOYED — held with the row-evidence and URL work for owner review.
+
+## 2026-08-19 — Row evidence Phase 2 (all active categories) + the picture-audit runbook
+
+**Phase 2, per owner ruling:** the same shared helper now serves Named Entities, Q [ Brackets ],
+Claims, Predictions, Themes, Directives (`/requests`) and Questions (`/questions`).
+
+**Emphasis is excluded, and so are the two categories labelled 'Emphasis'** — `impliedConclusions`
+and `verificationHooks` carry that label, so letting them through would reintroduce the category by
+a back door. `EVIDENCE_CATS` states the set once.
+
+Gate extended to every surface, GREEN:
+
+    ok: Q [ Brackets ] rows carry the same evidence chips (30)
+    ok: Claims rows carry the same evidence chips (1)
+    ok: Predictions rows carry the same evidence chips (5)
+    ok: Themes rows carry the same evidence chips (18)
+    ok: Directives rows carry the same evidence chips (36)
+    ok: Questions rows carry the same evidence chips (48)
+    ok: Emphasis carries no evidence chips, as ruled
+
+**`audit/PICTURE-AUDIT-RUNBOOK.md`** — written because the picture audit is being paused for token
+budget and the remaining ~840 images must come out looking identical to the 850 already published.
+It records: where every artifact lives, the coverage table (n=851 is next), how to start a batch
+(the enumeration guard that refuses to emit unless it reproduces existing rows hash-for-hash), the
+25-per-group / 5×5 agent loop, ONE attempt per image, the two non-ordinary record shapes (withheld
+and incomplete, and why two red dots differ from one), the compile step, why no SEED_VERSION bump
+is needed, why the file must be LF, the measured cost (~7,700 tokens/image, ~1.7% needsReview), and
+how the session-limit and connection-drop interruptions were recovered without duplicating work.

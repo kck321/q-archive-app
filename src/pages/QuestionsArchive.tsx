@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState, useRef } from 'react'
 import SectionInfo from '../components/SectionInfo'
+import RowEvidenceChips from '../components/RowEvidenceChips'
 import { Link, useSearchParams } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import { makeTermMatcher, normalizeItemKey, getQuestionFrequency, getQuestionsTimeline, getPostNumsByMonth, mergeSimilarQuestions, type QuestionFrequency, type SimilarGroup } from '../lib/posts'
@@ -151,6 +152,9 @@ function QuestionCard({ r, selectedNums, hoverNums, flashNums, rank, monthOf }: 
               {expanded ? '− show fewer' : `+${(nums.length - CHIPS).toLocaleString()} more`}
             </button>
           )}
+          {/* Pictures and links tied to this question — separate from the certified chips
+              above, which stay exactly as adjudicated. */}
+          <RowEvidenceChips term={r.text} certifiedPosts={nums} />
         </div>
       </div>
       </div>
