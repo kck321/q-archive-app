@@ -12,7 +12,7 @@ import { loadRowEvidence, evidenceForRow, type EvidenceChip } from '../lib/rowEv
 const CHIPS = 24
 
 function Group({
-  label, icon, chips, term, focus, tone,
+  label, icon, chips, term, focus, tone, linkParams,
 }: {
   label: string
   icon: string
@@ -20,6 +20,7 @@ function Group({
   term: string
   focus: 'pic' | 'url'
   tone: string
+  linkParams: string
 }) {
   const [open, setOpen] = useState(false)
   if (chips.length === 0) return null
@@ -30,7 +31,7 @@ function Group({
       {shown.map(c => (
         <Link
           key={c.postNum}
-          to={`/post/${c.postNum}?highlight=${encodeURIComponent(term)}&flash=1&focus=${focus}`}
+          to={`/post/${c.postNum}?flash=1&highlight=${encodeURIComponent(term)}${linkParams}&focus=${focus}`}
           title={c.reason}
           className={`text-xs px-1.5 py-0.5 rounded border font-mono transition-colors ${tone} ${
             c.direct ? '' : 'opacity-60'
@@ -52,10 +53,14 @@ function Group({
 }
 
 export default function RowEvidenceChips({
-  term, certifiedPosts,
+  term, certifiedPosts, linkParams = '',
 }: {
   term: string
   certifiedPosts: number[] | Set<number>
+  /** The reader-view params this surface's CERTIFIED chips use (`&cat=…` or `&rk=…`). A Pic chip
+      must land where a post chip lands — the reader feed for this row — or the two chips on one
+      row open two different screens. */
+  linkParams?: string
 }) {
   const [ready, setReady] = useState(false)
   useEffect(() => { let live = true; loadRowEvidence().then(() => { if (live) setReady(true) }); return () => { live = false } }, [])
@@ -64,9 +69,9 @@ export default function RowEvidenceChips({
   if (pics.length === 0 && urls.length === 0) return null
   return (
     <>
-      <Group label="in pictures" icon="📷" chips={pics} term={term} focus="pic"
+      <Group label="in pictures" icon="📷" chips={pics} term={term} focus="pic" linkParams={linkParams}
              tone="bg-teal-900/40 border-teal-700/50 text-teal-200 hover:border-teal-400" />
-      <Group label="in links" icon="🔗" chips={urls} term={term} focus="url"
+      <Group label="in links" icon="🔗" chips={urls} term={term} focus="url" linkParams={linkParams}
              tone="bg-blue-900/40 border-blue-700/50 text-blue-200 hover:border-blue-400" />
     </>
   )

@@ -154,7 +154,7 @@ function QuestionCard({ r, selectedNums, hoverNums, flashNums, rank, monthOf }: 
           )}
           {/* Pictures and links tied to this question — separate from the certified chips
               above, which stay exactly as adjudicated. */}
-          <RowEvidenceChips term={r.text} certifiedPosts={nums} />
+          <RowEvidenceChips term={r.text} certifiedPosts={nums} linkParams="&rk=question" />
         </div>
       </div>
       </div>

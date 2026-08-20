@@ -1559,6 +1559,29 @@ export default function PostDetail() {
                         gloss,
                       ))}
                     </pre>
+                    {/* The drop's own pictures, in the feed.
+                        Reading every post mentioning a term and NOT seeing the pictures those
+                        drops carry made the reader a text-only view of an archive whose images
+                        are half the evidence — and it is the view every chip lands in, so the
+                        pictures were unreachable from the place people actually read. `data-focus`
+                        goes on the CURRENT drop only, so a Pic chip arriving with ?focus=pic
+                        scrolls to the post it named rather than to whichever image is first. */}
+                    {dedupeMedia(rp.media).length > 0 && (
+                      <div data-focus={isCurrent ? 'pictures' : undefined} className="mt-3 space-y-2">
+                        {dedupeMedia(rp.media).map(m => (
+                          <div key={m.url}>
+                            <img
+                              src={mediaUrl(m.url)}
+                              alt={m.filename}
+                              loading="lazy"
+                              className="max-w-full h-auto block rounded-lg border border-gray-700"
+                              onError={e => { const w = e.currentTarget.closest('div'); if (w) (w as HTMLElement).style.display = 'none' }}
+                            />
+                            <PictureChip url={m.url} />
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )
               })}

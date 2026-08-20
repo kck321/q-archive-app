@@ -1432,7 +1432,7 @@ export default function AnalysisArchive() {
                         Every active category except Emphasis — the counts above are adjudicated
                         and nothing here may touch them. */}
                     {EVIDENCE_CATS.has(activeTab) && (
-                      <RowEvidenceChips term={item.text} certifiedPosts={monthChips.map(c => c.num)} />
+                      <RowEvidenceChips term={item.text} certifiedPosts={monthChips.map(c => c.num)} linkParams={`&cat=${item.category}`} />
                     )}
                     {readingKey === key && (
                       <div className="mt-2 mb-3 border-t border-q-border pt-3 space-y-3">

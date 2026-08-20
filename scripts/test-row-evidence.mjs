@@ -8,7 +8,7 @@
 //
 // Reads are deliberately PRIMITIVE (numbers and strings). Returning a JSON blob through the
 // harness sometimes arrives parsed and sometimes as text, and guessing which cost an afternoon.
-import { launch, ROWS_READY } from './lib/browser.mjs'
+import { launch, ROWS_READY, DROP_READY } from './lib/browser.mjs'
 
 const BASE = process.env.QDROPS_BASE ?? 'http://localhost:5173'
 const D = { width: 1600, height: 1000, deviceScaleFactor: 1, mobile: false, touch: false }
@@ -68,6 +68,10 @@ const asc = a => a.every((v, i, arr) => i === 0 || arr[i - 1] <= v)
   ;/picture analysis|certified/i.test(picTip) ? ok(`Pic tooltip names the route: "${picTip}"`) : fail(`Pic tooltip missing: "${picTip}"`)
   ;/URL text|certified/i.test(urlTip) ? ok(`URL tooltip names the route: "${urlTip}"`) : fail(`URL tooltip missing: "${urlTip}"`)
   ;/^\/post\/\d+\?.*focus=pic/.test(picHref) ? ok('Pic chip opens the Q post and focuses the picture') : fail(`Pic href wrong: ${picHref}`)
+  // A Pic chip must land where a POST chip lands — the reader feed for this row. Two chips on one
+  // row opening two different screens is how the picture became unreachable from the place people
+  // actually read.
+  ;/(cat|rk)=/.test(picHref) ? ok('Pic chip opens the same reader view as the certified chips') : fail(`Pic href misses the reader param: ${picHref}`)
   ;/^\/post\/\d+\?.*focus=url/.test(urlHref) ? ok('URL chip opens the Q post, never the external site') : fail(`URL href wrong: ${urlHref}`)
   // Certified totals are rendered from the adjudicated artifact; evidence chips must not appear in them.
   const certifiedHasPic = Number(await p.evaluate(
@@ -87,6 +91,21 @@ const asc = a => a.every((v, i, arr) => i === 0 || arr[i - 1] <= v)
   directUrl > 0 ? ok('at least one URL matched a POTUS alias through its own text') : fail('no direct URL match — only associated ones')
 
   certifiedHasPic === 0 ? ok('certified chip sequence contains no evidence chips') : fail('evidence chips leaked into the certified sequence')
+  await p.close()
+}
+
+// ── The reader feed carries the drops' pictures ───────────────────────────────
+//
+// "Reading every post mentioning POTUS" rendered text only, so the images those drops carry —
+// half the evidence in this archive — were invisible in the one view every chip opens.
+{
+  const p = await b.page(`${BASE}/post/117?flash=1&highlight=POTUS&cat=namedEntities`, D)
+  await p.waitFor(DROP_READY, { timeout: 120000 }).catch(() => false)
+  await new Promise(s => setTimeout(s, 3500))
+  const isReader = String(await p.evaluate(`document.body.innerText.includes('Reading every post') ? 'y' : 'n'`))
+  const imgs = Number(await p.evaluate(`document.querySelectorAll('img[loading=lazy]').length`))
+  isReader === 'y' ? ok('the reader feed renders') : fail('reader feed did not open')
+  imgs > 0 ? ok(`the reader feed shows the drops' pictures (${imgs})`) : fail('reader feed shows no pictures')
   await p.close()
 }
 

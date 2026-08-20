@@ -469,7 +469,7 @@ export default function QRequests() {
                     </div>
                     {/* Pictures and links tied to this directive — separate from the certified
                         chips above, which stay exactly as adjudicated. */}
-                    <RowEvidenceChips term={item.text} certifiedPosts={item.postNums} />
+                    <RowEvidenceChips term={item.text} certifiedPosts={item.postNums} linkParams="&rk=request" />
                   </div>
                 </div>
               </div>

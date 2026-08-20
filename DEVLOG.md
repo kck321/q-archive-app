@@ -5934,3 +5934,28 @@ left it unchanged. The 16,024-row queue describes exactly what qdrops.app now se
 
 **Files:** no source changes of my own in this step. `.gitignore` (Excel `~$*` lock files, scratch
 `scripts/_*.mjs` probes), `DEVLOG.md`.
+
+## 2026-08-19 — The reader feed shows the drops' pictures, and every chip lands in it
+
+**Owner report:** the grey POTUS chip on #117 opens the reader but shows no picture; the Pic chip
+goes somewhere else. Make them land in the same place, and give that place the pictures.
+
+**Two defects, one symptom.**
+
+1. `PostDetail`'s reader feed ("Reading every post mentioning POTUS") rendered quoted posts and the
+   highlighted text — and nothing else. In an archive where 850 images are analysed and half the
+   evidence is visual, the one view every chip opens was text-only. Each drop in the feed now
+   renders its own pictures with their Picture chips. `data-focus="pictures"` is set on the CURRENT
+   drop only, so a chip arriving with `?focus=pic` scrolls to the post it named rather than to
+   whichever image happens to be first in a 541-post feed.
+2. The Pic/URL chips linked to a bare post view while the certified post chips opened the reader
+   feed — two chips on one row opening two different screens. `RowEvidenceChips` now takes
+   `linkParams` and each surface passes what its own certified chips use: `&cat=<category>` in
+   Analysis, `&rk=bracket`, `&rk=request`, `&rk=question`.
+
+    pic chip href: /post/14?flash=1&highlight=POTUS&cat=namedEntities&focus=pic
+    reader feed  : 129 images, 81 Picture chips
+
+Both are asserted in `test-row-evidence.mjs` — that a Pic chip carries a reader param (`cat=`/`rk=`)
+and that the feed renders pictures — and the gate was run on a forced-cold browser with a real exit
+code, not a status read through a pipe.

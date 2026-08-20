@@ -522,7 +522,7 @@ export default function QBrackets() {
                     </div>
                     {/* Pictures and links tied to this bracketed term — separate from the
                         certified chips above, which stay exactly as adjudicated. */}
-                    <RowEvidenceChips term={entry.code} certifiedPosts={entry.postNums} />
+                    <RowEvidenceChips term={entry.code} certifiedPosts={entry.postNums} linkParams="&rk=bracket" />
                   </div>
                 </div>
               </div>
