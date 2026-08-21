@@ -70,27 +70,74 @@ console.log('\nOCCURRENCE MODEL (Step 3B-0)\n')
     'quoted_source is a valid source disposition')
   check(validateOccurrence(makeOccurrence({ ...base, sourceDisposition: 'invented' }))
     .some(e => /sourceDisposition/.test(e)), 'an unknown source disposition is rejected')
-  check(validateOccurrence(makeOccurrence({ ...base, reviewDisposition: 'context_only' })).length === 0,
-    'context_only is a valid review disposition')
-  check(validateOccurrence(makeOccurrence({ ...base, reviewDisposition: 'ignored' }))
+  check(validateOccurrence(makeOccurrence({ ...base, reviewDispositions: ['ignored'] }))
     .some(e => /reviewDisposition/.test(e)), 'an unknown review disposition is rejected')
+  // More than one review fact must survive - a single field would overwrite one with the other.
+  const multi = makeOccurrence({ ...base, primaryCategory: 'claim', reviewDispositions: ['contextual', 'emphasis'] })
+  check(validateOccurrence(multi).length === 0, 'a span can be BOTH contextual and emphasis')
+  check(multi.reviewDispositions.length === 2, 'and both facts are retained', JSON.stringify(multi.reviewDispositions))
+  check(validateOccurrence(makeOccurrence({ ...base, reviewDispositions: ['emphasis', 'emphasis'] }))
+    .some(e => /listed twice/.test(e)), 'a duplicate review disposition is rejected')
+}
+
+// ---- cardinality: primaryCategory is ZERO-or-one ----
+//
+// A sentence deliberately reviewed and found to be context-only must be storable WITHOUT a
+// category. Requiring one would eventually force a false Claim onto it.
+{
+  check(validateOccurrence(makeOccurrence({ ...base, primaryCategory: null, reviewDispositions: ['context_only'] })).length === 0,
+    'null primary + context_only is valid')
+  for (const d of ['signature', 'structural', 'source_boundary_exception']) {
+    check(validateOccurrence(makeOccurrence({ ...base, primaryCategory: null, reviewDispositions: [d] })).length === 0,
+      `null primary + ${d} is valid`)
+  }
+  check(validateOccurrence(makeOccurrence({ ...base, primaryCategory: 'claim', reviewDispositions: ['contextual'] })).length === 0,
+    'a Claim marked contextual is valid')
+  check(validateOccurrence(makeOccurrence({ ...base, primaryCategory: 'claim', reviewDispositions: ['context_only'] }))
+    .some(e => /context_only cannot carry a primaryCategory/.test(e)),
+    'context_only with a category is rejected - that is what contextual is for')
+  check(validateOccurrence(makeOccurrence({ ...base, primaryCategory: null, reviewDispositions: ['contextual', 'context_only'] }))
+    .some(e => /cannot both apply/.test(e)), 'contextual and context_only are mutually exclusive')
 }
 
 // ── entity associations ─────────────────────────────────────────────────────
 {
-  const literal = makeOccurrence({ ...base, kind: 'namedEntities',
-    entityAssociations: [{ identity: 'Hussein', kind: 'literal', aliasUsed: 'BO' }] })
-  check(validateOccurrence(literal).length === 0, 'a literal association naming its alias is valid')
+  const body = 'Goodnight BO.\nMore text here.'
+  const mk = assoc => makeOccurrence({ postNum: 111, kind: 'namedEntities', start: 10, end: 12, text: 'BO',
+    entityAssociations: [assoc] })
 
-  const painted = makeOccurrence({ ...base, kind: 'namedEntities',
-    entityAssociations: [{ identity: 'Hussein', kind: 'literal' }] })
-  check(validateOccurrence(painted).some(e => /names no alias/.test(e)),
-    'a literal association must say WHICH spelling it covers')
+  const good = mk({ identity: 'Hussein', kind: 'literal', aliasUsed: 'BO', literalText: 'BO', start: 10, end: 12 })
+  check(validateOccurrence(good, body).length === 0, 'a literal association that matches the body is valid')
+
+  check(validateOccurrence(mk({ identity: 'Hussein', kind: 'literal', aliasUsed: 'BO' }), body)
+    .some(e => /carries no offsets/.test(e)), 'a literal association without offsets is rejected')
+
+  check(validateOccurrence(mk({ identity: 'Hussein', kind: 'literal', aliasUsed: 'BO', start: 10, end: 12 }), body)
+    .some(e => /carries no literalText/.test(e)), 'a literal association without literalText is rejected')
+
+  // THE ASSERTION THAT MATTERS: the characters at those offsets must BE the alias.
+  const wrongPlace = mk({ identity: 'Hussein', kind: 'literal', aliasUsed: 'BO', literalText: 'BO', start: 0, end: 2 })
+  check(validateOccurrence(wrongPlace, body).some(e => /not "BO"/.test(e)),
+    'an alias attached to the WRONG characters is rejected', 'body[0..2] is "Go"')
+
+  const canonicalPainted = mk({ identity: 'Hussein', kind: 'literal', aliasUsed: 'BO', literalText: 'Hussein', start: 10, end: 12 })
+  check(validateOccurrence(canonicalPainted, body).some(e => /is not the alias/.test(e)),
+    'the canonical name may not be substituted for the spelling Q used')
 
   const indirect = makeOccurrence({ ...base, kind: 'namedEntities',
     entityAssociations: [{ identity: 'Hussein', kind: 'indirect' }] })
   check(validateOccurrence(indirect).length === 0,
-    'an indirect association needs no alias — it never paints')
+    'an indirect association needs no alias or offsets - it never paints')
+}
+
+// ---- the record's own text must match its own range ----
+{
+  const body2 = 'Goodnight BO.\nMore text here.'
+  const ok = makeOccurrence({ postNum: 111, kind: 'claims', start: 0, end: 13, text: 'Goodnight BO.', primaryCategory: 'claim' })
+  check(validateOccurrence(ok, body2).length === 0, 'a record whose text matches its offsets is valid')
+  const stale = makeOccurrence({ postNum: 111, kind: 'claims', start: 0, end: 13, text: 'Goodnight XX.', primaryCategory: 'claim' })
+  check(validateOccurrence(stale, body2).some(e => /not the stored text/.test(e)),
+    'a record whose stored text disagrees with its characters is rejected')
 }
 
 // ── the two figures stay apart ──────────────────────────────────────────────
@@ -104,6 +151,21 @@ console.log('\nOCCURRENCE MODEL (Step 3B-0)\n')
     JSON.stringify(primary))
   check(secondary.directive === 1, 'secondary counts separately', JSON.stringify(secondary))
   check(primary.directive !== 2, 'a secondary is NOT added to its section\'s primary total')
+}
+
+// ---- counts are separated by SOURCE as well as by layer ----
+//
+// Separating primary from secondary was not enough on its own: a quoted or paraphrased sentence
+// can be a primary Claim and still not be Q's claim.
+{
+  const qClaim = makeOccurrence({ ...base, start: 0, end: 5, text: 'aaaaa', primaryCategory: 'claim' })
+  const quoted = makeOccurrence({ ...base, start: 10, end: 15, text: 'bbbbb', primaryCategory: 'claim', sourceDisposition: 'quoted_source' })
+  const para = makeOccurrence({ ...base, start: 20, end: 25, text: 'ccccc', primaryCategory: 'claim', sourceDisposition: 'editorial_paraphrase' })
+  const c = countByLayer([qClaim, quoted, para])
+  check(c.primary.claim === 3, 'the global primary total sees all three', String(c.primary.claim))
+  check(c.qAuthoredPrimary.claim === 1, 'but only ONE is a Q-authored Claim', String(c.qAuthoredPrimary.claim))
+  check(c.bySource.quoted_source.primary.claim === 1, 'quoted-source Claims are counted apart')
+  check(c.bySource.editorial_paraphrase.primary.claim === 1, 'editorial paraphrases are counted apart')
 }
 
 // ── overlap detection, by range and by shape ────────────────────────────────

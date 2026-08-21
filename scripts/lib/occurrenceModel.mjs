@@ -39,6 +39,10 @@ export const SOURCE_DISPOSITIONS = Object.freeze([
  * `contextual` and `context_only` are the two halves of the owner's Context ruling: a span that
  * also carries a primary category keeps the category and is merely marked contextual, while a span
  * with no category at all stays deliberately unpainted rather than becoming an open question.
+ *
+ * A LIST, not a single value. One span can carry more than one review fact — a line can be
+ * contextual AND have been certified Emphasis — and a single field would silently overwrite one
+ * with the other, losing the audit history that made the second fact worth recording.
  */
 export const REVIEW_DISPOSITIONS = Object.freeze([
   'contextual',                // reviewed, and a primary category also applies
@@ -67,14 +71,14 @@ export const occurrenceKey = (postNum, kind, start, end) => `${postNum}|${kind}|
 export function makeOccurrence({
   postNum, kind, start, end, text, sentenceId = null,
   primaryCategory = null, secondarySemantics = [], themeTags = [],
-  reviewDisposition = null, sourceDisposition = 'q_authored',
+  reviewDispositions = [], sourceDisposition = 'q_authored',
   entityAssociations = [], provenance = null,
 }) {
   return {
     occurrenceKey: occurrenceKey(postNum, kind, start, end),
     postNum, kind, start, end, text, sentenceId,
     primaryCategory, secondarySemantics, themeTags,
-    reviewDisposition, sourceDisposition, entityAssociations, provenance,
+    reviewDispositions, sourceDisposition, entityAssociations, provenance,
   }
 }
 
@@ -84,7 +88,7 @@ export function makeOccurrence({
  * Returns ALL failures rather than the first, so a migration reports what is wrong with a batch in
  * one pass instead of one defect per run.
  */
-export function validateOccurrence(o) {
+export function validateOccurrence(o, runtimeBody = null) {
   const errs = []
   const n = v => typeof v === 'number' && Number.isInteger(v) && v >= 0
   if (!n(o?.postNum)) errs.push('postNum must be a non-negative integer')
@@ -112,8 +116,18 @@ export function validateOccurrence(o) {
       seen.add(s?.category)
     }
   }
-  if (o?.reviewDisposition !== null && !REVIEW_DISPOSITIONS.includes(o?.reviewDisposition)) {
-    errs.push(`reviewDisposition ${JSON.stringify(o?.reviewDisposition)} is not recognised`)
+  if (!Array.isArray(o?.reviewDispositions)) errs.push('reviewDispositions must be an array')
+  else {
+    const seenRd = new Set()
+    for (const d of o.reviewDispositions) {
+      if (!REVIEW_DISPOSITIONS.includes(d)) errs.push(`reviewDisposition ${JSON.stringify(d)} is not recognised`)
+      if (seenRd.has(d)) errs.push(`reviewDisposition ${d} listed twice`)
+      seenRd.add(d)
+    }
+    // The two halves of the Context ruling are mutually exclusive by definition: context_only means
+    // no primary category applies, contextual means one does.
+    if (seenRd.has('contextual') && seenRd.has('context_only')) errs.push('contextual and context_only cannot both apply')
+    if (seenRd.has('context_only') && o.primaryCategory) errs.push('context_only cannot carry a primaryCategory — that is what contextual is for')
   }
   if (!SOURCE_DISPOSITIONS.includes(o?.sourceDisposition)) {
     errs.push(`sourceDisposition ${JSON.stringify(o?.sourceDisposition)} is not recognised`)
@@ -124,10 +138,38 @@ export function validateOccurrence(o) {
       if (!ENTITY_ASSOCIATION_KINDS.includes(e?.kind)) errs.push(`entity association kind ${JSON.stringify(e?.kind)} is not recognised`)
       if (!e?.identity) errs.push('entity association carries no identity')
       // The rule that stops a canonical name being painted over characters that do not contain it.
-      if (e?.kind === 'literal' && !e?.aliasUsed) errs.push(`literal association to ${e?.identity} names no alias — a painted span must say which spelling it covers`)
+      if (e?.kind === 'literal') {
+        // A LITERAL ASSOCIATION IS A CLAIM ABOUT CHARACTERS, so it has to name them and be checkable
+        // against them. Without this an alias can be attached to the wrong occurrence of "BO", or to
+        // a "BO" sitting in quoted material, and the canonical identity would be painted over
+        // characters that do not contain it.
+        if (!e?.aliasUsed) errs.push(`literal association to ${e?.identity} names no alias — a painted span must say which spelling it covers`)
+        if (!n(e?.start) || !n(e?.end)) errs.push(`literal association to ${e?.identity} carries no offsets`)
+        else if (e.end <= e.start) errs.push(`literal association to ${e?.identity} has an empty range`)
+        if (!e?.literalText) errs.push(`literal association to ${e?.identity} carries no literalText`)
+        if (e?.literalText && e?.aliasUsed && e.literalText !== e.aliasUsed) {
+          errs.push(`literal association to ${e?.identity}: literalText ${JSON.stringify(e.literalText)} is not the alias ${JSON.stringify(e.aliasUsed)}`)
+        }
+        // The canonical name is METADATA. Painting it would put words on screen that Q did not write.
+        if (e?.literalText && e?.identity && e.literalText === e.identity && e.aliasUsed !== e.identity) {
+          errs.push(`literal association to ${e?.identity} paints the canonical name rather than the spelling used`)
+        }
+        if (runtimeBody !== null && n(e?.start) && n(e?.end)) {
+          const actual = runtimeBody.slice(e.start, e.end)
+          if (actual !== e.literalText) {
+            errs.push(`literal association to ${e?.identity}: body[${e.start}..${e.end}] is ${JSON.stringify(actual)}, not ${JSON.stringify(e.literalText)}`)
+          }
+        }
+      }
     }
   }
   if (!Array.isArray(o?.themeTags)) errs.push('themeTags must be an array')
+  // The same assertion for the occurrence itself: a record whose stored text disagrees with the
+  // characters it claims is the offset defect that "identify by text" used to hide.
+  if (runtimeBody !== null && n(o?.start) && n(o?.end) && typeof o?.text === 'string') {
+    const actual = runtimeBody.slice(o.start, o.end)
+    if (actual !== o.text) errs.push(`body[${o.start}..${o.end}] is ${JSON.stringify(actual.slice(0, 60))}, not the stored text ${JSON.stringify(String(o.text).slice(0, 60))}`)
+  }
   return errs
 }
 
@@ -140,11 +182,30 @@ export function validateOccurrence(o) {
  */
 export function countByLayer(occurrences) {
   const primary = {}, secondary = {}
+  const bySource = {}
   for (const o of occurrences) {
-    if (o.primaryCategory) primary[o.primaryCategory] = (primary[o.primaryCategory] ?? 0) + 1
-    for (const s of o.secondarySemantics ?? []) secondary[s.category] = (secondary[s.category] ?? 0) + 1
+    const src = o.sourceDisposition ?? 'q_authored'
+    bySource[src] ??= { primary: {}, secondary: {} }
+    if (o.primaryCategory) {
+      primary[o.primaryCategory] = (primary[o.primaryCategory] ?? 0) + 1
+      bySource[src].primary[o.primaryCategory] = (bySource[src].primary[o.primaryCategory] ?? 0) + 1
+    }
+    for (const s of o.secondarySemantics ?? []) {
+      secondary[s.category] = (secondary[s.category] ?? 0) + 1
+      bySource[src].secondary[s.category] = (bySource[src].secondary[s.category] ?? 0) + 1
+    }
   }
-  return { primary, secondary }
+  return {
+    primary, secondary, bySource,
+    // THE ONLY FIGURE THE PUBLIC SECTION HEADLINE MAY USE.
+    //
+    // "Q Claims" means claims Q made. A quoted-source Claim is a real classification of real text
+    // and belongs in search and in the section listing, and it is not something Q asserted — so it
+    // cannot be inside the number on the header. Separating primary from secondary was not enough
+    // on its own: a paraphrase can be a primary Claim and still not be Q's.
+    qAuthoredPrimary: bySource.q_authored?.primary ?? {},
+    qAuthoredSecondary: bySource.q_authored?.secondary ?? {},
+  }
 }
 
 /**
