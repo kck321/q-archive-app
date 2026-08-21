@@ -135,7 +135,19 @@ async function fetchPost(postNum) {
 
 // ── run ────────────────────────────────────────────────────────────────────────
 const posts = JSON.parse(fs.readFileSync(POSTS, 'utf8'))
-const targets = posts.filter(p => /(^|\s|>)>>\d+/.test(p.text ?? '')).map(p => p.postNum)
+// THE POINTER IS NOT ALWAYS A LITERAL '>>'.
+//
+// This matched /(^|\s|>)>>\d+/ only, and 41 drops store the pointer HTML-ENCODED as "&gt;&gt;".
+// They were never targeted, so they were never fetched, so apply-references.mjs had nothing to
+// restore and their quoted post stayed missing. Eleven of them are NOTHING BUT a pointer, which is
+// why #4862 rendered as a bare ">>11070453" while qalerts served the full drop — the "dead post".
+// The other thirty show a naked reference number in the middle of otherwise normal prose.
+//
+// Decode first and match once, so a future encoding variant fails loudly as a missing drop rather
+// than silently narrowing the target set.
+const pointerRx = /(?:^|\s|>)>>\d+/
+const hasPointer = t => pointerRx.test(String(t ?? '').replace(/&gt;/gi, '>'))
+const targets = posts.filter(p => hasPointer(p.text)).map(p => p.postNum)
 
 fs.mkdirSync(path.dirname(OUT), { recursive: true })
 const done = new Set()

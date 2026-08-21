@@ -222,7 +222,8 @@ const checks = [
   // nothing else. This step indexes what the materialisers certified; it never decides a count.
   ['Questions indexed = 6,519', bySection.questions === 6519, bySection.questions],
   ['Directives indexed = 3,037', bySection.directives === 3037, bySection.directives],
-  ['Claims indexed = 8,928', bySection.claims === 8928, bySection.claims],
+  // 8,929 since the 2026-08-21 ruling on #4923 ("Dearest Virginia -", Context -> Claim).
+  ['Claims indexed = 8,929', bySection.claims === 8929, bySection.claims],
   ['Predictions indexed = 842', bySection.predictions === 842, bySection.predictions],
   ['Evidence indexed = 6,590', bySection.evidence === 6590, bySection.evidence],
   // 1,334: Ray Chandler ships merged into Rachel Chandler under the owner ruling.

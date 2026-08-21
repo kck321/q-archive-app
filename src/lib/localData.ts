@@ -506,7 +506,12 @@ export const OVERRIDES_BAKED_THROUGH = 1786458148021   // 2026-08-11T14:22:28.02
 // overlay defect bumps it again without touching the seed.
 export const OVERLAY_REPAIR = 1
 
-export const SEED_VERSION = 81   // 81: owner ruling 2026-08-21 — #4923 "Dearest Virginia -" moves
+export const SEED_VERSION = 82   // 82: dead-drop recovery, 2026-08-21 — 41 drops whose >> pointer was
+// stored HTML-encoded were never scraped, so their quoted post was missing. 12 of the 15 drops that
+// rendered as nothing but a bare pointer now carry their quoted content (#4862 and 11 others); the
+// remaining 3 are dead at the source. quotedPosts changed on 1,505 drops and feeds SEARCH, so a
+// reader on 81 keeps the blank rows and the narrower index.
+// 81: owner ruling 2026-08-21 — #4923 "Dearest Virginia -" moves
 // Context -> Claim (Claims 8,928->8,929, Context 1,736->1,735). Context does not paint, so on 80 a
 // reader sees an unhighlighted opening line above five classified ones on that drop.
 // 80: the unhighlighted-sentence queue, ruled 2026-08-20 — 6,108 of the

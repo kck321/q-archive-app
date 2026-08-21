@@ -30,6 +30,12 @@ for (const line of fs.readFileSync(CACHE, 'utf8').split('\n')) {
 
 const posts = JSON.parse(fs.readFileSync(POSTS, 'utf8'))
 
+// 41 drops store the pointer HTML-ENCODED as "&gt;&gt;11070453". Matching the literal '>>' alone
+// found none of them, so their scraped references had nowhere to attach and 11 drops whose whole
+// body IS a pointer stayed blank — #4862 rendered as a bare number while qalerts served the full
+// drop. Decode before matching, in every place that reads a pointer out of the text.
+const decodeGt = text => String(text ?? '').replace(/&gt;/gi, '>')
+
 // ── the quote chain ────────────────────────────────────────────────────────────
 // A quoted post usually quotes something itself, and that content is part of what the drop
 // is about. #2124 quotes #2123, which quotes the anon who says MOSSAD — which is why qalerts
@@ -39,6 +45,27 @@ const pool = new Map()
 for (const refs of scraped.values()) {
   for (const r of refs) if (r.boardId && !pool.has(r.boardId)) pool.set(r.boardId, r)
 }
+// SIX REFS CAME BACK WITHOUT A BOARD ID, AND WERE THEREFORE UNREACHABLE.
+//
+// qalerts renders a handful of quoted cards with no permalink — boardId and link both empty. The
+// pool is keyed by board id, so those refs sat in the cache and could never be looked up: #355,
+// #1055, #1292 and #1635 showed a bare pointer with the recovered post right there in the file.
+//
+// Keyed by the drop's own pointer, and ONLY when that is unambiguous — the drop cites exactly one
+// post and the scrape returned exactly one unkeyed ref, so there is one possible pairing and no
+// guess is involved. A drop citing two posts with an unkeyed ref is left alone rather than matched
+// by position, because position is exactly the kind of assumption that puts one anon's words under
+// another anon's name.
+let adopted = 0
+for (const [postNum, refs] of scraped) {
+  const unkeyed = refs.filter(r => !r.boardId)
+  if (unkeyed.length !== 1) continue
+  const post = posts.find(p => p.postNum === postNum)
+  const ptrs = [...new Set(decodeGt(post?.text).match(/>>(\d+)/g) ?? [])].map(s => s.slice(2))
+  if (ptrs.length !== 1 || pool.has(ptrs[0])) continue
+  pool.set(ptrs[0], { ...unkeyed[0], boardId: ptrs[0] })
+  adopted++
+}
 // Drops we hold are quotable too, in case the chain reaches one nobody happened to quote.
 const asQDrop = new Map()
 for (const p of posts) {
@@ -47,7 +74,7 @@ for (const p of posts) {
 }
 
 const MAX_DEPTH = 4     // deepest observed chain is 3; the cap is a cycle backstop
-const pointersIn = text => [...new Set((text ?? '').match(/>>(\d+)/g) ?? [])].map(r => r.slice(2))
+const pointersIn = text => [...new Set(decodeGt(text).match(/>>(\d+)/g) ?? [])].map(r => r.slice(2))
 
 function recordFor(boardId) {
   const r = pool.get(boardId)
@@ -93,7 +120,7 @@ let chained = 0
 for (const p of posts) {
   const refs = walkChain(p.text ?? '')
   if (!refs.length) { delete p.quotedPosts; continue }
-  const pointerOnly = /^(>>\d+\s*)+$/.test((p.text ?? '').trim())
+  const pointerOnly = /^(>>\d+\s*)+$/.test(decodeGt(p.text).trim())
   p.quotedPosts = refs.map(r => ({
     boardId: r.boardId ?? '',
     link: r.link ?? '',
