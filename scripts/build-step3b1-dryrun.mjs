@@ -76,7 +76,18 @@ for (const r of ledgerDoc.records) assertIdentity(r)
 // Surface speech act decides the PAINTED category. A genuinely correct second function stays as a
 // non-painting secondary. No blanket precedence rule: each branch below is a grammatical test that
 // can be checked afterwards against the sentence it fired on.
-const FRAME_PREDICTION = /^\s*(?:expect\b|rest assured\b|make no mistake\b|fear not\b)/i
+// THE FRAME VERB CAN SIT BEHIND A SUBORDINATE CLAUSE.
+//
+// Anchoring this at the start of the string was wrong, and #1425 is the proof:
+//
+//   "Given we have now undeniably [on purpose] verified ourselves to be an inside source, expect
+//    the MSM [Clown Army] to attack in full cooperation w/ foreign and domestic assets."
+//
+// That is the same forecast-in-an-imperative-frame as "Expect massive riots", and it was missed
+// only because a "Given ..." clause runs ahead of the frame verb. No rule fired, so the sentence
+// was held as a guess while 27 sentences of identical shape were classified. One optional leading
+// clause, bounded so it cannot swallow a paragraph hunting for the word.
+const FRAME_PREDICTION = /^\s*(?:(?:given|if|when|since|because|now that|as)\b[^,]{0,160},\s*)?(?:expect\b|rest assured\b|make no mistake\b|fear not\b)/i
 const IMPERATIVE = /^\s*(?:[A-Z][a-z]+|[A-Z]{2,})\b/
 const DIRECT_ORDER = /^\s*(?:ask|be|read|re-?read|watch|listen|find|follow|learn|look|think|trust|remember|study|review|prepare|expect|define|name|list|count|compare|apply|refocus|focus|stay|keep|do not|don'?t|never|always|use|pray|enjoy|share|spread|dig|archive|save|note|consider|imagine|understand|know|see|open|close|return|go|stand|fight|unite|rise|wake|shine|protect|defend|demand|hold|push|track|monitor|verify|confirm|question|challenge|reject|ignore|forget|drop|move|act|vote|register|call|contact|email|post|tweet|screenshot|bookmark|download|upload|repeat|continue|proceed|begin|start|stop|wait|pause|slow|speed)\b/i
 
@@ -500,7 +511,18 @@ const dqActions = actions.filter(a => a.kind === 'DIRECTIVE_QUESTION_UNIFIED')
 const dqKeys = new Set(dqActions.flatMap(a => a.oldOccurrenceKeys))
 const dqPartial = dqActions.filter(a => a.questionSideWasPartial).length
 
+// The secondary-directive reconciliation, asserted at the line that checks it rather than argued
+// in prose. 84 was the baseline (27 multi-primary + 57 unified); the corrections add 8 and remove
+// 3, and #1425 is the 32nd multi-primary once its frame verb is recognised behind the "Given ..."
+// clause. 32 + 57 = 89.
+const secDirective = a => !a.humanReviewRequired && a.proposedSecondarySemantics.some(x => x.category === 'directive')
+const mpSecDirective = actions.filter(a => a.kind === 'MULTI_PRIMARY_RESOLUTION' && secDirective(a)).length
+const dqSecDirective = actions.filter(a => a.kind === 'DIRECTIVE_QUESTION_UNIFIED' && secDirective(a)).length
+
 const FATAL = []
+if (mpSecDirective !== 32) FATAL.push(`multi-primary secondary directives = ${mpSecDirective}, expected 32`)
+if (dqSecDirective !== 57) FATAL.push(`unified directive+question secondary directives = ${dqSecDirective}, expected 57`)
+if (mpSecDirective + dqSecDirective !== 89) FATAL.push(`q_authored secondary directives = ${mpSecDirective + dqSecDirective}, expected 89`)
 if (runtimeSubstringMismatchCount) FATAL.push(`${runtimeSubstringMismatchCount} rows failed the runtime substring assertion`)
 if (oldOccurrenceKeyAssignedToMultipleActionsCount) FATAL.push(`${oldOccurrenceKeyAssignedToMultipleActionsCount} old keys consumed by more than one action`)
 if (automaticActionConsumesConflictHeldKeyCount) FATAL.push(`${automaticActionConsumesConflictHeldKeyCount} automatic actions consume a conflict-held key`)
@@ -818,6 +840,9 @@ const manifest = {
   },
   assertions: {
     identityReconstructionCount,
+    multiPrimarySecondaryDirectiveActions: mpSecDirective,
+    unifiedDirectiveQuestionSecondaryDirectiveActions: dqSecDirective,
+    qAuthoredSecondaryDirectiveCount: mpSecDirective + dqSecDirective,
     automaticActionMissingSentenceGeometryCount,
     automaticActionEmptySentenceTextCount,
     unmatchedCorrectionCount: correctionsUnmatched.length,

@@ -13,7 +13,7 @@
   {
    "file": "01-MULTI-PRIMARY-117.csv",
    "rows": 117,
-   "sha256": "afc7f4d30a80d90617da767f533870917dad06e71f88d2e120272df2ed661580"
+   "sha256": "7178dc41970fa1ffeb141fbb07d3d927471d7987c62d10615e6e50ba7d992a6b"
   },
   {
    "file": "02-PARTIAL-28.csv",
@@ -58,7 +58,7 @@
   {
    "file": "09-COUNT-PROJECTION.csv",
    "rows": 9,
-   "sha256": "b9979b2609ddb6c1ed1983f92260fb9095c4a96c7c6ca63ef9dbdc9b59a77e0c"
+   "sha256": "f2b942e2663ab817b4d1d48ec7dc0cd3355a4c8d306cd697643488340237dd4c"
   },
   {
    "file": "10-CONFLICTS-HELD.csv",
@@ -68,7 +68,7 @@
   {
    "file": "STEP3B1-APPLY-PLAN.jsonl",
    "rows": 540,
-   "sha256": "8124f7a4683700851f1b05152db6d6c49a77313725cdd8481852647148f69e9f"
+   "sha256": "373ca06b1416b6707a111f2c3da8e751472c551f739500f76cdcc764d3128058"
   },
   {
    "file": "00-STEP3B1-INDEX.md",
@@ -154,8 +154,8 @@
     "layer": "primary",
     "category": "directive",
     "before": 3037,
-    "delta": -96,
-    "after": 2941,
+    "delta": -97,
+    "after": 2940,
     "headlineEligible": true
    },
    {
@@ -190,8 +190,8 @@
     "layer": "secondary",
     "category": "directive",
     "before": 0,
-    "delta": 88,
-    "after": 88,
+    "delta": 89,
+    "after": 89,
     "headlineEligible": false
    },
    {
@@ -225,9 +225,8 @@
  },
  "hashes": {
   "note": "Two distinct values, named unambiguously because the previous handoff quoted both and defined neither. contentSetHash is over the GENERATED FILES; zipSha256 is over the DELIVERED BYTES and is stamped after packaging, since a ZIP records its own container metadata.",
-  "contentSetHash": "6c4163fb54012409e234837bdc95677078aba83805119564595def0c7371541e",
-  "zipSha256": "recorded in the handoff message; the delivered ZIP must match it",
-  "contentSetCoverage": "13 generated files, excluding the manifest itself"
+  "contentSetHash": "sha256 over the ordered \"filename:sha256\" lines of every generated file, computed below",
+  "zipSha256": "recorded in the handoff message; the delivered ZIP must match it"
  },
  "determinism": {
   "note": "Generated twice into separate directories and compared byte for byte. No wall clock, no randomness, and every collection is emitted in a stable order.",
@@ -305,6 +304,9 @@
  },
  "assertions": {
   "identityReconstructionCount": 0,
+  "multiPrimarySecondaryDirectiveActions": 32,
+  "unifiedDirectiveQuestionSecondaryDirectiveActions": 57,
+  "qAuthoredSecondaryDirectiveCount": 89,
   "automaticActionMissingSentenceGeometryCount": 0,
   "automaticActionEmptySentenceTextCount": 0,
   "unmatchedCorrectionCount": 0,

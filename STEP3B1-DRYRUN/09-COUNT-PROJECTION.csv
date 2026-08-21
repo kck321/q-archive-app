@@ -1,10 +1,10 @@
 source,layer,category,before,delta,after,headlineEligible
 q_authored,primary,claim,8912,-92,8820,true
-q_authored,primary,directive,3037,-96,2941,true
+q_authored,primary,directive,3037,-97,2940,true
 q_authored,primary,prediction,847,-4,843,true
 q_authored,primary,question,6503,-179,6324,true
 q_authored,secondary,claim,0,18,18,false
-q_authored,secondary,directive,0,88,88,false
+q_authored,secondary,directive,0,89,89,false
 q_authored,secondary,prediction,0,4,4,false
 q_authored,secondary,question,0,163,163,false
 quoted_source,primary,claim,0,6,6,false
