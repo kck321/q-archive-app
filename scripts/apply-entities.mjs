@@ -23,6 +23,8 @@ import { fileURLToPath } from 'node:url'
 import { BUCKET1, SAFE_GLOBAL, CONTEXT_RESOLVE } from './lib/entityVerdicts.mjs'
 import { randomBytes } from 'node:crypto'
 import { clean } from './lib/segment.mjs'
+// Identity resolution for the owner's queue entity rulings - see the module for the ladder.
+import { makeEntityResolver } from './lib/queueEntityResolve.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -510,6 +512,50 @@ entities.sort((a, b) => b.mentions - a.mentions)
 // Renames are the whole point: when a canonical changes, the ledger keeps the old spelling in
 // previousCanonicals and the id survives. Merges record the absorbed spellings the same way, so a
 // link to an entity that was merged away still resolves.
+// ── THE UNHIGHLIGHTED-SENTENCE QUEUE, RULED BY THE OWNER (2026-08-20), PHASE A ──
+//
+// 508 spans the owner ruled to BE entities. An entity ruling names a SPAN; a certified row needs an
+// IDENTITY, and the review carries neither a canonical name nor a type. lib/queueEntityResolve.mjs
+// closes that gap by RESOLUTION first and creation last - verbatim, then with titles and role tails
+// removed, then initial+surname, then a connector split where every part resolves, and only then
+// audit/unhighlighted-entity-identities.json, which declares the identities this batch introduces
+// with a type from the vocabulary entities.json already uses. Three spans are HELD rather than
+// guessed and are listed there with the reason.
+//
+// SPLIT IN TWO PHASES, and the split is load-bearing. Identities have to exist before ids are
+// minted below, but the MENTION for each ruling cannot be decided until the render map is built:
+// 313 of the 508 name an entity already certified in that very drop, and counting those again
+// would show the reader an x2 that Q never wrote. Phase B is immediately after the render map.
+const QUEUE_RULINGS = path.join(OUT, 'unhighlighted-owner-rulings.json')
+const QUEUE_IDENTS = path.join(OUT, 'unhighlighted-entity-identities.json')
+const queueEntityRulings = (fs.existsSync(QUEUE_RULINGS)
+  ? JSON.parse(fs.readFileSync(QUEUE_RULINGS, 'utf8')).rulings ?? [] : []).filter(r => r.section === 'entities')
+const queueHits = []
+const queueHeld = []
+let queueEntitiesCreated = 0
+if (queueEntityRulings.length && fs.existsSync(QUEUE_IDENTS)) {
+  const { resolve } = makeEntityResolver(entities, JSON.parse(fs.readFileSync(QUEUE_IDENTS, 'utf8')))
+  const byCanonical = new Map(entities.map(e => [e.canonical, e]))
+  for (const r of queueEntityRulings) {
+    const res = resolve(r)
+    if (res.heldWhy) { queueHeld.push({ postNum: r.postNum, text: r.sourceText, why: res.heldWhy }); continue }
+    for (const h of res.hits) {
+      if (!byCanonical.has(h.canonical)) {
+        const row = {
+          canonical: h.canonical, type: h.type, mentions: 0, posts: [], aliases: [],
+          source: 'owner ruling',
+          provenance: `owner ruling ${r.ruledOn} - unhighlighted-sentence queue`,
+        }
+        entities.push(row)
+        byCanonical.set(h.canonical, row)
+        queueEntitiesCreated++
+      }
+      queueHits.push({ postNum: r.postNum, canonical: h.canonical, aliasUsed: h.aliasUsed })
+    }
+  }
+}
+
+
 const ID_LEDGER = path.join(OUT, 'entity-ids.json')
 const ledger = fs.existsSync(ID_LEDGER)
   ? JSON.parse(fs.readFileSync(ID_LEDGER, 'utf8'))
@@ -612,6 +658,141 @@ const unresolvedAliases = [
     .map(([token, s]) => ({ sourceText: token, occurrences: s.unresolved, why: 'the surrounding post does not identify the referent' })),
 ]
 
+// ── THE RENDER LAYER, BUILT BEFORE THE TOTALS ────────────────────────
+//
+// This map used to be assembled at the very end, next to the write. It moved here for one
+// reason: the queue entity rulings below have to know what the certified layers ALREADY paint at
+// a post before deciding how many occurrences to add. 313 of the 508 ruled spans name an entity
+// that is already certified in that very drop, and adding a mention for each of those would show
+// the reader a x2 that Q never wrote.
+//
+// Nothing about the map changed. It is still one entry per certified mention, still the ALIAS Q
+// wrote rather than the canonical name, and the totals computed after it still have to equal it
+// exactly — that equality is asserted at the write, unchanged.
+  const byPost = new Map()
+  const push = (n, canonical) => {
+    if (!byPost.has(n)) byPost.set(n, [])
+    byPost.get(n).push(canonical)
+  }
+  // THE ALIAS Q ACTUALLY WROTE, not the canonical name.
+  //
+  // Writing canonical names broke entity highlighting for 4,207 of 7,903 mentions: the post says
+  // "HRC", "SEC", "UK", and the renderer looks for the literal string it is given. "Hillary
+  // Clinton" is not in drop #1 and never will be. The canonical identity lives in entities.json
+  // where the alias resolves to it; what belongs on the post is the text a reader can see.
+  for (const m of coreMentions) push(m.postNum, m.aliasUsed || m.sourceText || m.canonicalEntity)
+  // A RECOUNTED alias already covers its context-resolved occurrences.
+  //
+  // `recount` replaces the alias count with a fresh corpus-wide (or scoped) count, which INCLUDES
+  // the occurrences the context pass had resolved individually. Emitting those rows here as well
+  // stored them twice: 8,623 entries against 8,599 certified mentions — 14 DC + 10 SC, exactly the
+  // two aliases that were recounted. The materialiser refused to write, which is how it surfaced.
+  const recounted = new Set((fs.existsSync(ORULES)
+    ? JSON.parse(fs.readFileSync(ORULES, 'utf8')).aliasRulings ?? [] : [])
+    .filter(r => r.recount).map(r => r.alias))
+  for (const r of ctx.resolutions) {
+    if (recounted.has(r.token)) continue
+    push(r.postNum, r.token || r.canonical)
+  }
+  // A merged-away canonical's tail occurrences are already emitted by the corpus-wide alias scan
+  // that replaced it, so emitting them here too stored 8,484 entries against 8,482 certified.
+  // The materialiser refused, which is the gate doing its job.
+  const supersededTail = supersededFrom
+  for (const o of tailOccurrences) {
+    if (supersededTail.has(o.canonical)) continue
+    push(o.postNum, o.sourceText || o.canonical)
+  }
+  // Owner rulings materialise the same way: the ALIAS Q wrote, never the canonical name. The
+  // drop says "Dominion." and will never say "Dominion Voting Systems", so writing the canonical
+  // here would count the mention and highlight nothing.
+  for (const r of ownerEntities) push(r.postNum, r.aliasUsed || r.sourceText)
+  for (const [pn, al] of aliasByPost) push(pn, al)
+
+  // ── Stage 1 withdrawals leave the render layer too ─────────────────────────
+  // The count and the paint must fall together. Removing a row from entities.json while its
+  // occurrences stay in postAnalysis.namedEntities would leave the drop highlighting a word that
+  // no longer belongs to any entity — the exact shape of every silent failure in this project.
+  //
+  // Removal is OCCURRENCE-SCOPED: one entry per recorded occurrence, in that post, never "all
+  // entries matching this text". "Independent" is withdrawn from #1797, a post carrying 14 entity
+  // entries; a sweep by text would be a global ruling derived from one drop.
+  //
+  // The audit recorded the text as the POST writes it and the render layer stores the certified
+  // ALIAS spelling, so four of the 39 differ only in case — "russian" vs "Russian" in #1864 and
+  // #3861, "independent" in #1797, "the Party" in #4495. Exact match is tried first and the
+  // case-insensitive fallback is only ever used where it resolves to exactly one entry.
+  let withdrawn = 0
+  const unwithdrawable = []
+  for (const o of movedOutOccurrences) {
+    const list = byPost.get(o.postNum)
+    if (!list) { unwithdrawable.push(`#${o.postNum} "${o.alias}" — post has no entity entries`); continue }
+    let i = list.indexOf(o.alias)
+    if (i === -1) {
+      const ci = list.map((t, n) => [t, n]).filter(([t]) => t.toLowerCase() === o.alias.toLowerCase())
+      if (ci.length === 1) i = ci[0][1]
+      else { unwithdrawable.push(`#${o.postNum} "${o.alias}" — ${ci.length} case-insensitive matches`); continue }
+    }
+    list.splice(i, 1)
+    withdrawn++
+  }
+  if (unwithdrawable.length) {
+    console.error(`\n❌ ${unwithdrawable.length} withdrawn occurrence(s) could not be located in the render layer:`)
+    for (const u of unwithdrawable) console.error(`     ${u}`)
+    console.error('   The count would fall without the paint. Nothing written.\n')
+    process.exit(1)
+  }
+  if (movedOutOccurrences.length) console.log(`  withdrawn from render   : ${withdrawn} occurrence(s) across ${new Set(movedOutOccurrences.map(o => o.postNum)).size} posts`)
+
+// ── QUEUE ENTITY RULINGS, PHASE B: MENTIONS AND PAINT, TOGETHER ─────────────
+//
+// Phase A created any identity this batch introduces. This decides how many OCCURRENCES each
+// ruling adds, and it adds them to the count and to the render layer in the same step - the count
+// and the paint must never move apart.
+//
+// THE SHORTFALL, NOT THE RULING COUNT. 313 of the 508 ruled spans name an entity the certified
+// layers already paint in that drop, so what is owed is (times the owner ruled it) minus (times
+// the render layer already carries it) at that (post, alias). Case-insensitive, because the
+// renderer matches case-insensitively and "MOCKINGBIRD" and "Mockingbird" are one occurrence of
+// one identity, not two.
+//
+// Conservative by construction: where the drop writes a name more often than the queue ruled it,
+// nothing is added. That cannot cost the reader a highlight - the renderer paints every occurrence
+// of a listed term, so presence in the list is what lights the drop up, and the count stays the
+// one the certified layers established.
+let queueEntityMentions = 0
+{
+  const already = new Map()
+  for (const [pn, list] of byPost) for (const a of list) {
+    const k = `${pn}|${String(a).toLowerCase()}`
+    already.set(k, (already.get(k) ?? 0) + 1)
+  }
+  const ruled = new Map()
+  for (const h of queueHits) {
+    const k = `${h.postNum}|${h.aliasUsed.toLowerCase()}`
+    ruled.set(k, (ruled.get(k) ?? 0) + 1)
+  }
+  const byCanonical = new Map(entities.map(e => [e.canonical, e]))
+  const emitted = new Map()
+  for (const h of queueHits) {
+    const k = `${h.postNum}|${h.aliasUsed.toLowerCase()}`
+    const done = emitted.get(k) ?? 0
+    emitted.set(k, done + 1)
+    if (done < (already.get(k) ?? 0)) continue
+    const e = byCanonical.get(h.canonical)
+    if (!e) { console.error(`queue entity ruling: canonical "${h.canonical}" vanished`); process.exit(1) }
+    e.mentions += 1
+    if (!e.posts.includes(h.postNum)) { e.posts.push(h.postNum); e.posts.sort((a, b) => a - b) }
+    const al = e.aliases.find(x => x.text === h.aliasUsed)
+    if (al) al.n = (al.n ?? 0) + 1
+    else e.aliases.push({ text: h.aliasUsed, n: 1 })
+    push(h.postNum, h.aliasUsed)
+    queueEntityMentions++
+  }
+}
+console.log(`  queue entity rulings  : ${queueEntityRulings.length} ruled -> ${queueHits.length} occurrence(s), ${queueEntitiesCreated} new identities, +${queueEntityMentions} mentions, ${queueHeld.length} held`)
+for (const h of queueHeld) console.log(`      held #${h.postNum} ${JSON.stringify(String(h.text).slice(0, 60))} - ${h.why}`)
+
+
 // ── totals ──────────────────────────────────────────────────────────────────
 const tailTypes = {}
 for (const e of merged.values()) tailTypes[e.type] = (tailTypes[e.type] ?? 0) + 1
@@ -654,18 +835,30 @@ const checks = [
   // The merge is added back: 1,332 is what the passes DETECTED, and absorbing Ray Chandler into
   // Rachel Chandler changes how many rows ship, not how many the detector found. Without the
   // term this check would drift down by one every time two rows turn out to be one person.
-  ['detected canonical entities = 1,292', entities.length - ownerAdded + ownerMerged === 1292, entities.length - ownerAdded + ownerMerged],
+  // queueEntitiesCreated is subtracted with ownerAdded, for the same reason: an identity the owner
+  // ruled into existence is not something a detector found. Keeping this at 1,292 is what makes a
+  // LOST DETECTION still fail here after 39 rulings raised the row count.
+  ['detected canonical entities = 1,292',
+    entities.length - ownerAdded - queueEntitiesCreated + ownerMerged === 1292,
+    entities.length - ownerAdded - queueEntitiesCreated + ownerMerged],
+  ['queue entity rulings accounted for = 508',
+    queueEntityRulings.length === 508 && queueHits.length + queueHeld.length >= 508,
+    `${queueEntityRulings.length} ruled, ${queueHits.length} occurrences, ${queueHeld.length} held`],
+  ['queue entity holds = 3, all listed', queueHeld.length === 3, queueHeld.length],
   ['owner entity rulings applied = 118', ownerAdded === 118, ownerAdded],
   ['owner merge rulings applied = 1', ownerMerged === 1, ownerMerged],
   // 1,335 - 1: Ray Chandler is now an alias of Rachel Chandler, not a row of her own.
   // 1,445 -> 1,408: -19 rows merged away as duplicate canonicals, -18 rows withdrawn as
   // conceptual/generic labels. Both from the 2026-08-16 hover audit, Stage 1.
-  ['canonical entities = 1,409', entities.length === 1409, entities.length],
+  // 1,409 + 39 identities the owner's queue rulings introduce = 1,448.
+  ['canonical entities = 1,448', entities.length === 1448, entities.length],
   // 8,227 + 12 RC. The merge moves 4 mentions between rows and adds none.
   // 9,786 -> 9,747: -39, the occurrences of the 18 withdrawn rows. The 17 merges move mentions
   // ACROSS rows and add none, so they are absent from this arithmetic by design — asserted
   // separately below so a merge that silently double-counted could not hide inside the total.
-  ['resolved mentions = 9,749', totals.mentions === 9749, totals.mentions],
+  // 9,749 + 171 from the queue rulings = 9,920. 547 occurrences were ruled and 376 of them were
+  // already carried by a certified layer at that (post, alias), so only the shortfall is added.
+  ['resolved mentions = 9,920', totals.mentions === 9920, totals.mentions],
   ['stage 1: 19 rows merged away', !stage1 || s1Merged === 19, s1Merged],
   ['stage 1: 85 types corrected', !stage1 || s1Typed === 85, s1Typed],
   // 18 in the audit, 17 applied: ENT-0709 "Non-profit organization" is HELD because it
@@ -692,10 +885,12 @@ const checks = [
   //   owner   620 (unchanged)    =   620      sum 9,749
   // The owner submetric does NOT fall: the only owner-sourced move-out, "Non-profit organization"
   // (alias NP, 2 mentions), is held because it contradicts a standing owner ruling.
-  ['core-registry mentions = 5,352', totals.coreRegistryMentions === 5352, totals.coreRegistryMentions],
+  // +8: queue rulings that landed on a core-registry identity.
+  ['core-registry mentions = 5,360', totals.coreRegistryMentions === 5360, totals.coreRegistryMentions],
   // 3,440 + 34 C19 + 12 RC: COVID-19 and Rachel Chandler are tail entities, so alias rulings on
   // them land here.
-  ['adjudicated-tail mentions = 3,777', totals.adjudicatedTailMentions === 3777, totals.adjudicatedTailMentions],
+  // +58: queue rulings that landed on an adjudicated-tail identity.
+  ['adjudicated-tail mentions = 3,835', totals.adjudicatedTailMentions === 3835, totals.adjudicatedTailMentions],
   ['tail occurrence rows = 3,440', tailOccurrences.length === 3440, tailOccurrences.length],
   ['every tail occurrence carries a post identity', tailOccurrences.every(o => o.postNum && o.id), 'ok'],
   ['every tail entity now has post provenance',
@@ -781,79 +976,6 @@ fs.writeFileSync(path.join(DATA, 'entities.json'), JSON.stringify({ certified: t
   // difference is entities Q names more than once in a drop. Writing presence would make the
   // Entities page under-report by 1,471 and the in-post repeats would vanish, which is the same
   // occurrence-identity mistake that produced every wrong count in this project.
-  const byPost = new Map()
-  const push = (n, canonical) => {
-    if (!byPost.has(n)) byPost.set(n, [])
-    byPost.get(n).push(canonical)
-  }
-  // THE ALIAS Q ACTUALLY WROTE, not the canonical name.
-  //
-  // Writing canonical names broke entity highlighting for 4,207 of 7,903 mentions: the post says
-  // "HRC", "SEC", "UK", and the renderer looks for the literal string it is given. "Hillary
-  // Clinton" is not in drop #1 and never will be. The canonical identity lives in entities.json
-  // where the alias resolves to it; what belongs on the post is the text a reader can see.
-  for (const m of coreMentions) push(m.postNum, m.aliasUsed || m.sourceText || m.canonicalEntity)
-  // A RECOUNTED alias already covers its context-resolved occurrences.
-  //
-  // `recount` replaces the alias count with a fresh corpus-wide (or scoped) count, which INCLUDES
-  // the occurrences the context pass had resolved individually. Emitting those rows here as well
-  // stored them twice: 8,623 entries against 8,599 certified mentions — 14 DC + 10 SC, exactly the
-  // two aliases that were recounted. The materialiser refused to write, which is how it surfaced.
-  const recounted = new Set((fs.existsSync(ORULES)
-    ? JSON.parse(fs.readFileSync(ORULES, 'utf8')).aliasRulings ?? [] : [])
-    .filter(r => r.recount).map(r => r.alias))
-  for (const r of ctx.resolutions) {
-    if (recounted.has(r.token)) continue
-    push(r.postNum, r.token || r.canonical)
-  }
-  // A merged-away canonical's tail occurrences are already emitted by the corpus-wide alias scan
-  // that replaced it, so emitting them here too stored 8,484 entries against 8,482 certified.
-  // The materialiser refused, which is the gate doing its job.
-  const supersededTail = supersededFrom
-  for (const o of tailOccurrences) {
-    if (supersededTail.has(o.canonical)) continue
-    push(o.postNum, o.sourceText || o.canonical)
-  }
-  // Owner rulings materialise the same way: the ALIAS Q wrote, never the canonical name. The
-  // drop says "Dominion." and will never say "Dominion Voting Systems", so writing the canonical
-  // here would count the mention and highlight nothing.
-  for (const r of ownerEntities) push(r.postNum, r.aliasUsed || r.sourceText)
-  for (const [pn, al] of aliasByPost) push(pn, al)
-
-  // ── Stage 1 withdrawals leave the render layer too ─────────────────────────
-  // The count and the paint must fall together. Removing a row from entities.json while its
-  // occurrences stay in postAnalysis.namedEntities would leave the drop highlighting a word that
-  // no longer belongs to any entity — the exact shape of every silent failure in this project.
-  //
-  // Removal is OCCURRENCE-SCOPED: one entry per recorded occurrence, in that post, never "all
-  // entries matching this text". "Independent" is withdrawn from #1797, a post carrying 14 entity
-  // entries; a sweep by text would be a global ruling derived from one drop.
-  //
-  // The audit recorded the text as the POST writes it and the render layer stores the certified
-  // ALIAS spelling, so four of the 39 differ only in case — "russian" vs "Russian" in #1864 and
-  // #3861, "independent" in #1797, "the Party" in #4495. Exact match is tried first and the
-  // case-insensitive fallback is only ever used where it resolves to exactly one entry.
-  let withdrawn = 0
-  const unwithdrawable = []
-  for (const o of movedOutOccurrences) {
-    const list = byPost.get(o.postNum)
-    if (!list) { unwithdrawable.push(`#${o.postNum} "${o.alias}" — post has no entity entries`); continue }
-    let i = list.indexOf(o.alias)
-    if (i === -1) {
-      const ci = list.map((t, n) => [t, n]).filter(([t]) => t.toLowerCase() === o.alias.toLowerCase())
-      if (ci.length === 1) i = ci[0][1]
-      else { unwithdrawable.push(`#${o.postNum} "${o.alias}" — ${ci.length} case-insensitive matches`); continue }
-    }
-    list.splice(i, 1)
-    withdrawn++
-  }
-  if (unwithdrawable.length) {
-    console.error(`\n❌ ${unwithdrawable.length} withdrawn occurrence(s) could not be located in the render layer:`)
-    for (const u of unwithdrawable) console.error(`     ${u}`)
-    console.error('   The count would fall without the paint. Nothing written.\n')
-    process.exit(1)
-  }
-  if (movedOutOccurrences.length) console.log(`  withdrawn from render   : ${withdrawn} occurrence(s) across ${new Set(movedOutOccurrences.map(o => o.postNum)).size} posts`)
 
   const materialised = [...byPost.values()].reduce((n, l) => n + l.length, 0)
   if (materialised !== totals.mentions) {

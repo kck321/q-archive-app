@@ -1,0 +1,572 @@
+{
+ "note": "Canonical identity and type for the entity rulings in audit/unhighlighted-owner-rulings.json that do not resolve to an already-certified entity. The owner ruled that these spans ARE entities; this file supplies the two things a certified entity row needs and the review does not carry - a canonical name and a type from the registry's existing vocabulary. It decides nothing about membership.",
+ "resolutionOrder": "1. the span verbatim against canonical+alias  2. the span with titles, party suffixes, role tails and a leading 'The' removed  3. an initial+surname where exactly one certified person carries that surname  4. a connector split where EVERY part resolves  5. this file  6. refused, and listed in `held`.",
+ "typeVocabulary": "Only types already present in public/data/entities.json are used. No new type is introduced by this batch.",
+ "ruledOn": "2026-08-20",
+ "identities": [
+  {
+   "canonical": "We the People",
+   "type": "political_group",
+   "spellings": [
+    "We, the PEOPLE",
+    "WE, THE PEOPLE",
+    "We, the People",
+    "We, The PEOPLE",
+    "WE, the PEOPLE",
+    "We, The People"
+   ],
+   "why": "The constitutional opening, which Q uses throughout as a collective actor rather than as a quotation. Six casings of one identity; folding them is what stops the entity list showing the same body six times."
+  },
+  {
+   "canonical": "Iron Eagle",
+   "type": "coded_alias",
+   "spellings": [
+    "Iron Eagle",
+    "IRON EAGLE"
+   ],
+   "why": "A recurring Q codename (9 drops). Certified as the notation it is; no meaning is asserted."
+  },
+  {
+   "canonical": "The Sum of All Fears",
+   "type": "creative_work",
+   "spellings": [
+    "THE SUM OF ALL FEARS",
+    "The Sum of all Fears",
+    "The Sum of All Fears",
+    "SUM OF ALL FEARS"
+   ],
+   "why": "The Tom Clancy novel and film, named by title in six drops."
+  },
+  {
+   "canonical": "Shadow Presidency",
+   "type": "political_group",
+   "spellings": [
+    "SHADOW PRESIDENCY",
+    "THE SHADOW PRESIDENCY",
+    "SHADOW PRESIDENT"
+   ],
+   "why": "Q's name for the body he alleges operated alongside the elected administration - a named actor in the 2020 drops, distinct from Shadow Government below, which he uses for the wider apparatus."
+  },
+  {
+   "canonical": "Shadow Government",
+   "type": "political_group",
+   "spellings": [
+    "SHADOW GOVERNMENT",
+    "THE SHADOW GOVERNMENT"
+   ],
+   "why": "Named alongside Shadow Presidency and not interchangeable with it in the drops that carry both (#4158, #4196, #4235)."
+  },
+  {
+   "canonical": "Mainstream Media",
+   "type": "media_organization",
+   "spellings": [
+    "MSM"
+   ],
+   "why": "Q's standing collective for the press. Typed as a media organisation because that is what every row it stands in for is."
+  },
+  {
+   "canonical": "Wizards & Warlocks",
+   "type": "coded_alias",
+   "spellings": [
+    "Wizards & Warlocks",
+    "Wizards & [WAR]locks"
+   ],
+   "why": "A Q codename. The bracketed spelling is the same name with Q's own emphasis marker inside it."
+  },
+  {
+   "canonical": "Red Castle",
+   "type": "coded_alias",
+   "spellings": [
+    "RED_CASTLE",
+    "Red Castle"
+   ],
+   "why": "Half of the Red Castle / Green Castle pair the anons decoded; certified as notation, with no meaning asserted."
+  },
+  {
+   "canonical": "Castle Rock",
+   "type": "coded_alias",
+   "spellings": [
+    "CASTLE_ROCK"
+   ],
+   "why": "Same family of Q castle notation."
+  },
+  {
+   "canonical": "Fox Three",
+   "type": "coded_alias",
+   "spellings": [
+    "FOX THREE"
+   ],
+   "why": "Aviation brevity code for an active-radar missile launch, used by Q as notation."
+  },
+  {
+   "canonical": "Splash",
+   "type": "coded_alias",
+   "spellings": [
+    "SPLASH"
+   ],
+   "why": "Aviation brevity code for a destroyed target, paired with FOX THREE in both drops that carry it."
+  },
+  {
+   "canonical": "Maverick",
+   "type": "coded_alias",
+   "spellings": [
+    "MAVERICK"
+   ],
+   "why": "Q codename."
+  },
+  {
+   "canonical": "Apache",
+   "type": "coded_alias",
+   "spellings": [
+    "APACHE"
+   ],
+   "why": "Q codename."
+  },
+  {
+   "canonical": "Nightwatch",
+   "type": "coded_alias",
+   "spellings": [
+    "Nightwatch"
+   ],
+   "why": "Q codename."
+  },
+  {
+   "canonical": "Dopey",
+   "type": "coded_alias",
+   "spellings": [
+    "Dopey"
+   ],
+   "why": "Q's standing alias for Alwaleed bin Talal. Kept as its own identity rather than merged, because the merge is a separate owner ruling to make, not one to infer here."
+  },
+  {
+   "canonical": "NAT G",
+   "type": "coded_alias",
+   "spellings": [
+    "NAT G"
+   ],
+   "why": "#380 is the two characters and nothing else. Certified as the notation Q wrote; expanding it would assert a referent the drop does not carry."
+  },
+  {
+   "canonical": "EH CA",
+   "type": "coded_alias",
+   "spellings": [
+    "EH CA"
+   ],
+   "why": "#1071 is the token plus 'Relevant soon.' Same treatment: the notation is certified, its meaning is not."
+  },
+  {
+   "canonical": "Eye of Ra",
+   "type": "religious_spiritual",
+   "spellings": [
+    "EYE OF RA"
+   ],
+   "why": "Named religious symbol."
+  },
+  {
+   "canonical": "Eye of Providence",
+   "type": "religious_spiritual",
+   "spellings": [
+    "Eye of Providence"
+   ],
+   "why": "Named religious symbol."
+  },
+  {
+   "canonical": "Mad Hatter",
+   "type": "coded_alias",
+   "spellings": [
+    "Mad Hatter",
+    "MAD HATTER"
+   ],
+   "why": "The other half of #2636's 'ALICE & MAD HATTER'; Alice is already certified."
+  },
+  {
+   "canonical": "MAGA",
+   "type": "political_group",
+   "spellings": [
+    "MAGA"
+   ],
+   "why": "The named movement, not a slogan in the drop that carries it."
+  },
+  {
+   "canonical": "The Cult",
+   "type": "political_group",
+   "spellings": [
+    "Cult"
+   ],
+   "why": "Q's collective name for the group he alleges holds power, used as a proper noun."
+  },
+  {
+   "canonical": "State of the Union",
+   "type": "event_incident",
+   "spellings": [
+    "STATE_OF_THE_UNION"
+   ],
+   "why": "The named annual address."
+  },
+  {
+   "canonical": "WarGames",
+   "type": "creative_work",
+   "spellings": [
+    "WarGames"
+   ],
+   "why": "The 1983 film, named by title."
+  },
+  {
+   "canonical": "The Art of the Deal",
+   "type": "creative_work",
+   "spellings": [
+    "Art of the Deal"
+   ],
+   "why": "The book, named by title."
+  },
+  {
+   "canonical": "Terminal 5",
+   "type": "facility_property",
+   "spellings": [
+    "Terminal 5"
+   ],
+   "why": "A named airport terminal."
+  },
+  {
+   "canonical": "JFK Con Room",
+   "type": "facility_property",
+   "spellings": [
+    "JFK Con Room"
+   ],
+   "why": "A named room at JFK, in a drop about a specific location."
+  },
+  {
+   "canonical": "McLean, Virginia",
+   "type": "location",
+   "spellings": [
+    "McLean, Virginia"
+   ],
+   "why": "A named place."
+  },
+  {
+   "canonical": "Barcelona",
+   "type": "location",
+   "spellings": [
+    "Barcelona"
+   ],
+   "why": "A named place."
+  },
+  {
+   "canonical": "Fusion GPS",
+   "type": "organization",
+   "spellings": [
+    "Fusion GPS"
+   ],
+   "why": "The named research firm."
+  },
+  {
+   "canonical": "Shareblue",
+   "type": "media_organization",
+   "spellings": [
+    "Shareblue"
+   ],
+   "why": "The named outlet."
+  },
+  {
+   "canonical": "RT Kenya",
+   "type": "media_organization",
+   "spellings": [
+    "RT Kenya"
+   ],
+   "why": "A named broadcaster."
+  },
+  {
+   "canonical": "M-Institute",
+   "type": "organization",
+   "spellings": [
+    "M-Institute"
+   ],
+   "why": "Named as an institution in #732; the abbreviation is Q's, and is not expanded."
+  },
+  {
+   "canonical": "Board of Superintendence",
+   "type": "organization",
+   "spellings": [
+    "Board of Superintendence"
+   ],
+   "why": "The named governing body of the Vatican Bank, in the same drop."
+  },
+  {
+   "canonical": "Vatican Bank",
+   "type": "financial_institution",
+   "spellings": [
+    "Vatican bank"
+   ],
+   "why": "The named institution. financial_institution already exists in the vocabulary."
+  },
+  {
+   "canonical": "Ford",
+   "type": "organization",
+   "spellings": [
+    "Ford"
+   ],
+   "why": "#1120 is a China-tariff drop - 'Cars.' 'Major import.' 'Ford.' 'US.' - so this is the carmaker, not a person."
+  },
+  {
+   "canonical": "Lee S",
+   "type": "person",
+   "spellings": [
+    "Lee S"
+   ],
+   "why": "#1493 addresses a named individual; the surname is truncated in the drop and is not completed here."
+  },
+  {
+   "canonical": "F-15",
+   "type": "military_asset_vessel",
+   "spellings": [
+    "F15"
+   ],
+   "why": "The named aircraft type."
+  },
+  {
+   "canonical": "Secret Agents",
+   "type": "other_named_entity",
+   "spellings": [
+    "Secret agents"
+   ],
+   "why": "#99 lists it among MSM and Mockingbird as a named category of asset. other_named_entity is the honest type: it is not a person, an organisation or a place."
+  },
+  {
+   "canonical": "Hilton family",
+   "type": "person",
+   "spellings": [
+    "Hilton"
+   ],
+   "why": "#666 pairs it with Roth on one line, in a drop about dynastic marriage and the Rothschild estate sale. Typed person to match the certified 'Rothschild family' row it sits beside."
+  },
+  {
+   "canonical": "John F. Kennedy Jr.",
+   "type": "person",
+   "spellings": [
+    "JFK JR",
+    "JFK Jr"
+   ],
+   "why": "#1082's line is 'POTUS & JFK JR.' The registry already holds JFK Conference Room but no row for the son."
+  }
+ ],
+ "splits": [
+  {
+   "spelling": "U1 - CA - EU - ASIA\\NK",
+   "postNum": 237,
+   "into": [
+    "U1",
+    "CA",
+    "EU",
+    "ASIA",
+    "NK"
+   ],
+   "why": "Q's chain notation; each element is separately certified."
+  },
+  {
+   "spelling": "Hilton/Roth",
+   "postNum": 666,
+   "into": [
+    "Hilton",
+    "Rothschild"
+   ],
+   "why": "Two families on one line."
+  },
+  {
+   "spelling": "POTUS & JFK JR",
+   "postNum": 1082,
+   "into": [
+    "POTUS",
+    "JFK JR"
+   ],
+   "why": "Two people on one line."
+  },
+  {
+   "spelling": "POTUS AF1",
+   "postNum": 1728,
+   "into": [
+    "POTUS",
+    "AF1"
+   ],
+   "why": "A person and an aircraft."
+  },
+  {
+   "spelling": "ALICE & MAD HATTER",
+   "postNum": 2636,
+   "into": [
+    "ALICE",
+    "MAD HATTER"
+   ],
+   "why": "Two codenames on one line."
+  },
+  {
+   "spelling": "[MUELLER] U1",
+   "postNum": 3473,
+   "into": [
+    "MUELLER",
+    "U1"
+   ],
+   "why": "A person and a case designation; the brackets are Q's own marker and paint red over the cyan."
+  },
+  {
+   "spelling": "RED CROSS RED RED",
+   "postNum": 258,
+   "into": [
+    "RED CROSS"
+   ],
+   "why": "'RED RED' is the stringer Q repeats around it, not a second entity."
+  },
+  {
+   "spelling": "Red Cross Iran",
+   "postNum": 1249,
+   "into": [
+    "Red Cross",
+    "Iran"
+   ]
+  },
+  {
+   "spelling": "Red Cross NK",
+   "postNum": 1249,
+   "into": [
+    "Red Cross",
+    "NK"
+   ]
+  },
+  {
+   "spelling": "Red Cross Pakistan",
+   "postNum": 1249,
+   "into": [
+    "Red Cross",
+    "Pakistan"
+   ]
+  },
+  {
+   "spelling": "Red Cross ……",
+   "postNum": 1249,
+   "into": [
+    "Red Cross"
+   ],
+   "why": "The ellipsis is Q's continuation marker."
+  },
+  {
+   "spelling": "Blackwater USA",
+   "postNum": 1229,
+   "into": [
+    "Blackwater",
+    "USA"
+   ]
+  },
+  {
+   "spelling": "Blackwater on GUARD",
+   "postNum": 1441,
+   "into": [
+    "Blackwater"
+   ],
+   "why": "'on GUARD' is Q's phrasing around the name."
+  },
+  {
+   "spelling": "SC = Supreme Court",
+   "postNum": 1153,
+   "into": [
+    "SC",
+    "Supreme Court"
+   ],
+   "why": "Q defining his own abbreviation; both sides are the same identity and each is certified where it is written."
+  },
+  {
+   "spelling": "RUSSIA RUSSIA RUSSIA",
+   "postNum": 636,
+   "into": [
+    "RUSSIA"
+   ],
+   "why": "One country, written three times for emphasis. Certified once - the repetition is emphasis, not three referents."
+  },
+  {
+   "spelling": "The Analysis Corporation (TAC)",
+   "postNum": 1017,
+   "into": [
+    "The Analysis Corporation"
+   ],
+   "why": "Already certified; '(TAC)' is Q supplying the abbreviation."
+  },
+  {
+   "spelling": "The ‘Standard’ Hotel",
+   "postNum": 1203,
+   "into": [
+    "Standard Hotel"
+   ],
+   "why": "Already certified; the quotes are Q's."
+  },
+  {
+   "spelling": "UK SIS",
+   "postNum": 1493,
+   "into": [
+    "UK",
+    "SIS"
+   ],
+   "why": "A country and its service."
+  },
+  {
+   "spelling": "C_A to SEC of STATE NK IRAN RUSSIA CHINA MX …",
+   "postNum": 1265,
+   "into": [
+    "C_A",
+    "NK",
+    "IRAN",
+    "RUSSIA",
+    "CHINA",
+    "MX"
+   ],
+   "why": "Q's chain notation. 'SEC of STATE' is a role, not a named identity, and is left uncertified rather than invented."
+  },
+  {
+   "spelling": "J. Biden",
+   "postNum": 3383,
+   "into": [
+    "Joe Biden"
+   ],
+   "why": "#3383's line is 'J. Biden son/brother net worth tens of millions?', which is the former Vice President. Listed rather than inferred, because more than one certified Biden carries a J."
+  },
+  {
+   "spelling": "Jason Bourne (Deep Dream)",
+   "postNum": 165,
+   "into": [
+    "Jason Bourne",
+    "Deep Dream"
+   ],
+   "why": "Q names the film and the programme together; both are already certified, so the line certifies two occurrences rather than inventing a compound name."
+  },
+  {
+   "spelling": "Jason Bourne (Deep Dream)",
+   "postNum": 166,
+   "into": [
+    "Jason Bourne",
+    "Deep Dream"
+   ]
+  },
+  {
+   "spelling": "Operation Merlin (tech)",
+   "postNum": 751,
+   "into": [
+    "Operation Merlin"
+   ],
+   "why": "'(tech)' is Q's own gloss on the operation, not a second identity."
+  }
+ ],
+ "held": [
+  {
+   "spelling": "L",
+   "postNum": 300,
+   "why": "#300 is 'Can you find a pic of Alwaleed and Hussein or Clinton or other US politicians? / L. / Heard you can't sleep anymore.' A single initial addressed to someone. Naming who would be a guess, and a one-letter canonical would match text across the whole archive. Held rather than forced."
+  },
+  {
+   "spelling": "IN",
+   "postNum": 4206,
+   "why": "#4206 is 'PANIC. IN. DC.' - one phrase the segmenter split into three units. 'IN' is a preposition, not an entity; certifying it would paint the word 'in' as a name. This is a unit-boundary defect to fix at the boundary, exactly as the three #2776 questions were left in the 2026-08-19 ruling."
+  },
+  {
+   "spelling": "Mr. President, my prayer is constantly turned to the beloved American nation…",
+   "postNum": 4542,
+   "why": "The review row is an entire paragraph of the Vigano letter, not a name. #4542's ruling for 'Mr. President' is applied separately from the same drop; this row names no identity to certify."
+  }
+ ]
+}
