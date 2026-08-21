@@ -6043,3 +6043,80 @@ container, not a classification of everything inside it.
 `build-relationships.mjs`, `build-search-index.mjs`, `certification-manifest.mjs`,
 `audit-cross-section.mjs`, `lib/contracts.mjs`, `src/lib/sectionInfo.ts`,
 `src/lib/localData.ts` (SEED_VERSION 78 -> 79), `public/data/*`.
+
+---
+
+## 2026-08-21 — The 16 paint failures were never in the renderer: the editorial build overlays stale Firestore `postEdits`
+
+**The finding.** `scripts/test-queue-ruling-paint.mjs` failed 16 of 47 checks against
+`localhost:5173`. The working hypothesis carried into this session was `addSegs` word-boundary
+behaviour on spans that start with a bracket or end in a comma. That was wrong. **The renderer was
+never touched, and never needed to be.** The same gate, same commit, same browser, run against the
+PUBLIC build on `localhost:5174`, passes every one of those checks.
+
+**The mechanism.** `loadLocalData()` seeds IndexedDB from `public/data/*.json` — correct, ruled,
+seed 80 — and then, for the editorial build only, calls `applyCloudOverrides()`:
+
+    if (!IS_PUBLIC_SITE) await applyCloudOverrides(cache)
+    ...
+    for (const [postId, fields] of Object.entries(ov.posts)) {
+      const p = store.postsById.get(postId)
+      if (p) { Object.assign(p, fields); postsTouched = true }   // <- replaces postAnalysis WHOLESALE
+    }
+
+`Object.assign` replaces the entire `postAnalysis` object. Firestore's copy of it is months old, so
+every certified span the queue ruling wrote is erased in the browser the owner reviews on — and then
+`idbSet('posts', store.posts)` persists the damage, which is why a browser stamped seed 80 kept
+serving pre-ruling analysis.
+
+**Measured, read-only, against the live Firestore (2026-08-21):**
+
+    postEdits docs                      1,355   (all 1,355 match a bundle post)
+      carrying postAnalysis             1,348
+      whose postAnalysis DIFFERS        1,348   — every single one
+      with NO claimSpans at all         1,348   — the field postdates the whole collection
+    _updatedAt range          2026-06-27 .. 2026-08-11
+
+    erased from the bundle by the overlay:
+      1,208 claims · 62 predictions · 930 named-entity mentions, across 244 posts
+
+The newest edit in the collection is **2026-08-11**, ten days before the queue ruling. **Not one
+postEdits doc is newer than the bundle it is laid over**, so the overlay currently contributes
+nothing but subtraction.
+
+**Why the gate's verdicts split exactly the way they did.** A check fails if and only if the
+sentence was added or changed by the queue ruling AND the post carries a stale edit doc. All four
+posts with no `postEdits` doc (#392, #666, #972, #1334) pass. #2, #88 and #158 have docs and still
+pass, because those sentences were already classified before the ruling — the ruling only added
+around them.
+
+The three symptoms the previous session recorded now each have a mechanical cause, none in `addSegs`:
+
+| symptom | actual cause |
+|---|---|
+| #111 `Fantasy land.`, #1546 `PAIN.` — no mark at all | the ruling added them; the overlay restored a `postAnalysis` that predates it |
+| #533 `WE, THE PEOPLE` splits — `WE,` amber, `THE PEOPLE` cyan | the stale doc's entity is `THE PEOPLE`; the certified one is `WE, THE PEOPLE`. Public paints it as one cyan span |
+| #3 `comments on` paints violet (Prediction) over a Claim | Firestore #3 carries a *prediction* the certified data does not. Old classification, faithfully rendered |
+
+**Production was never at risk, and the reason is the asymmetry worth remembering.**
+`export-firestore.mjs` performs the identical destructive bake — `for (const k of EDITABLE) if (k in
+data) target[k] = data[k]` — after overwriting `posts.json` wholesale from the Firestore dump. It
+then re-runs `APPLY_INVOCATIONS`, and the queue ruling's six materialisers (`apply-claims`,
+`apply-directives`, `apply-questions-final`, `apply-entities`, `apply-codes`,
+`apply-context-units`) are all `kind: 'apply'`, so the certified layer is rebuilt on top. The export
+path bakes stale data and then repairs it. **The runtime overlay bakes the same stale data and has
+no repair step.** One protection, two parallel paths, present on only one — the shape this project
+keeps rediscovering.
+
+**Not fixed in this entry.** The diagnosis is complete and proved on both surfaces; the remedy is
+the owner's call, because the honest options differ in what they do to their data. Recorded so the
+next session does not re-derive it.
+
+**Gate correction applied.** `#533`'s case text read `'WE, THE PEOPLE.'`; the drop writes
+`WE, THE PEOPLE!`. `fillsOver()` requires the body to contain `want` verbatim before it reads any
+mark, so the period spelling reported "no mark" on a drop that paints correctly. That was a bug in
+the case, not in the app.
+
+**Files:** `scripts/test-queue-ruling-paint.mjs` (new gate, #533 case corrected), `DEVLOG.md`.
+Diagnosed in `src/lib/localData.ts` (`applyCloudOverrides`), `src/lib/sync.ts` (`fetchOverrides`
+deletes `_updatedAt`, discarding the only freshness signal), `scripts/export-firestore.mjs`.
