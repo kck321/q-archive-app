@@ -35,6 +35,16 @@
    "rendered": 171,
    "evidence": "audit-occurrence-provenance.mjs re-run on the new tree reproduces every prior verdict and classifies all 171 new occurrences as supported: visible_complete_token 8,647 -> 8,814, visible_alias_variant 34 -> 35, ambiguous_provenance 69 -> 72, and 167+1+3 = 171. invalid_substring_extraction (98), url_source_provenance (646), image_provenance_unconfirmed (41), no_supported_provenance (85) and social_account_reference (129) are all UNCHANGED, and proposedWithdrawals stays at 951 - the plan withdraws exactly the set the owner approved and touches nothing this ruling added.",
    "why": "The approval record above is left exactly as written. A delta is recorded beside it instead, so the guard still refuses an unrecognised tree while a later owner ruling does not read as drift."
+  },
+  {
+   "ruling": "audit/entities-owner-rulings.json (aliasRulings: NO -> Nellie Ohr)",
+   "ruledOn": "2026-08-21",
+   "what": "Owner ruling: NO is Nellie Ohr in #1928 and #1929, three occurrences each - twice in the '>>BO>>CS>>BO>>NO>>CS>>NO>>BO>>' chain and once in '[BO][NO]'. Six occurrences BEFORE this step runs.",
+   "entityRows": 0,
+   "mentions": 6,
+   "rendered": 6,
+   "evidence": "entityRows is 0 because Nellie Ohr was ALREADY a certified identity (qe-2768b0fef8da, 8 mentions across 7 posts). The ruling adds the missing alias, not a row: she goes to 14 mentions across 9 posts, and #1928/#1929 join her post set where her husband BO was already certified on both. audit-occurrence-provenance.mjs re-run on the new tree moved exactly 4 figures and left 17 unchanged: occurrences and certifiedMentions 9,920 -> 9,926, attribution.unique 9,856 -> 9,862, and visible_complete_token 8,814 -> 8,820. All six new occurrences classify as SUPPORTED. invalid_substring_extraction (98), visible_alias_variant (35), url_source_provenance (646), image_provenance_unconfirmed (41), no_supported_provenance (85), ambiguous_provenance (72) and social_account_reference (129) are UNCHANGED, and proposedWithdrawals stays at 951 - the plan withdraws exactly the set the owner approved and touches nothing this ruling added. The alias is scoped with includePosts because /(?<![A-Za-z0-9])NO(?![A-Za-z0-9])/ matches 102 occurrences across 75 posts and almost every one is the English word.",
+   "why": "The approval record above is left exactly as written. A delta is recorded beside it, so the guard still refuses an unrecognised tree while this later owner ruling does not read as drift."
   }
  ]
 }

@@ -73,7 +73,9 @@ export const CANONICAL = {
   // +247 occurrences (250 ruled, 3 already certified), +183 posts.
   // +1 on 2026-08-21 by owner ruling: #4910 "Freedom of information [truth] = END", which gains
   // that drop its first certified prediction.
-  predictions: { occurrences: 843, posts: 674 },
+  // +4 on 2026-08-21 (r15): "MOVIE 1 [Full]: The 'START'" and "MOVIE 3 - TBA" on #1928 and #1929.
+  // posts unchanged - both drops already carried certified predictions.
+  predictions: { occurrences: 847, posts: 674 },
   evidence: { occurrences: 6590, posts: 3883 },
   entities: {
     // 1,332 detected + 1 owner ruling (Dominion Voting Systems, #4963 "Dominion." — the only
@@ -141,7 +143,12 @@ export const CANONICAL = {
     // by a certified layer at that (post, alias), so only the shortfall is added - counting the rest
     // again would show a x2 Q never wrote. The cleanup itself is unchanged: proposedWithdrawals is
     // still 951, and re-running audit-occurrence-provenance.mjs reproduced every prior verdict.
-    mentions: 8969,
+    // 8,969 -> 8,975: +6 on 2026-08-21. NO is Nellie Ohr on #1928 and #1929, three occurrences each.
+    // She was already a certified identity, so no row is added - the alias was the gap. Scoped with
+    // includePosts because the token matches 102 times across 75 posts and nearly all are the
+    // English word. audit-occurrence-provenance.mjs re-run moved exactly four figures, classified
+    // all six as visible_complete_token, and left proposedWithdrawals at 951.
+    mentions: 8975,
     /** How it is composed. The core figure is the section's history, not its headline. */
     // tailEntities is what the tail adjudication produced (1,239); one of them, Ray Chandler,
     // now ships merged into Rachel Chandler, so 1,238 tail rows appear in the artifact.
@@ -149,7 +156,8 @@ export const CANONICAL = {
     // URL-derived and substring-extracted rows lived. Core registry keeps all 93 rows and loses 24
     // mentions; the tail loses 246 rows and 918 mentions.
     // +8 core, +58 tail from the queue rulings; the remaining 105 land on owner-ruling rows.
-    coreEntities: 93, coreRegistryMentions: 5336, tailEntities: 993, tailMentions: 2917,
+    // +6 tail: Nellie Ohr is an adjudicated-tail row.
+    coreEntities: 93, coreRegistryMentions: 5336, tailEntities: 993, tailMentions: 2923,
   },
   // 2,393 detected + 2 owner rulings ("Ascension." -> Religion & Spirituality, #4963 and #4966).
   // The rulings live in audit/themes-owner-rulings.json and are merged by apply-themes.mjs, so

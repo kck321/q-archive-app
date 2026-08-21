@@ -604,6 +604,37 @@
       ],
       "excluded": [],
       "proposedCountChange": "Claims +2 on #4853; Context -2"
+    },
+    {
+      "id": "r15-movie-1-and-3",
+      "ruling": "#1928 and #1929: \"MOVIE 1 [Full]: The 'START'\" and \"MOVIE 3 - TBA\" are Predictions",
+      "reasoning": "Owner ruling, 2026-08-21. The drop announces a three-part sequence and the archive already certifies the middle one - 'MOVIE 2 - Coming this FALL.' - as a Prediction, along with 'Coming SOON to a theater near you.' and 'Showtime.'. MOVIE 1 and MOVIE 3 are the same construction: each announces a forthcoming instalment, one as starting and one as still to be announced. Certifying the second of three and not the first and third made the sequence read as one prediction inside two unclassified lines. Applied to BOTH drops because #1928 and #1929 are the same drop reposted, with identical MOVIE lines and the identical gap.",
+      "targetCategory": "predictions",
+      "ruledOn": "2026-08-21",
+      "approved": [
+        {
+          "postNum": 1928,
+          "text": "MOVIE 1 [Full]: The 'START'",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 1928,
+          "text": "MOVIE 3 – TBA",
+          "was": "Emphasis"
+        },
+        {
+          "postNum": 1929,
+          "text": "MOVIE 1 [Full]: The 'START'",
+          "was": "unclassified"
+        },
+        {
+          "postNum": 1929,
+          "text": "MOVIE 3 – TBA",
+          "was": "Emphasis"
+        }
+      ],
+      "excluded": [],
+      "proposedCountChange": "Predictions +4 across #1928 and #1929"
     }
   ],
   "totalProposed": {

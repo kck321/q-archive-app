@@ -22,7 +22,7 @@ export const CERTIFIED = {
   // never matched the UI.
   directives: { occurrences: 3037, distinct: 1827, posts: 1689 },
   claims: { occurrences: 8912, distinct: 6814, posts: 3086 },
-  predictions: { occurrences: 843, posts: 674 },
+  predictions: { occurrences: 847, posts: 674 },
   /** Claim attributes. `conclusions` may apply to a claim or a prediction. */
   // checkable, sourceProvided and conclusions do NOT move with the queue ruling: they are
   // attributes the claims audit established from evidence inside the drop, and the owner ruled a
@@ -58,13 +58,13 @@ export const CERTIFIED = {
  */
 export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number; unit: string }> = {
   claims: { occurrences: 8912, posts: 3086, unit: 'occurrences' },
-  predictions: { occurrences: 843, posts: 674, unit: 'occurrences' },
+  predictions: { occurrences: 847, posts: 674, unit: 'occurrences' },
   emphasis: { occurrences: 3105, posts: 1356, unit: 'occurrences' },
   // "mentions" is the right word here and the only section where it is: an entity is counted
   // once per resolved mention across the 1,066 canonical entities Q named in prose. The other 135
   // certified identities contribute none — they are linked sources, not words Q wrote — which is
   // why this figure sits BESIDE the 1,201 total on the page rather than under it.
-  namedEntities: { occurrences: 8969, posts: 2124, unit: 'mentions' },
+  namedEntities: { occurrences: 8975, posts: 2124, unit: 'mentions' },
   // Themes are assignments rather than spans — a theme is inferred from a drop, not copied out
   // of it — so the unit is named accordingly. 2,393 detected + 2 owner rulings.
   themes: { occurrences: 2644, posts: 1898, unit: 'assignments' },
@@ -185,8 +185,9 @@ export const ENTITIES = {
   // still shown to readers, under Sources rather than as words Q wrote.
   // 8,798 -> 8,969 (2026-08-20): +171. 547 entity occurrences were ruled and 376 were already
   // carried by a certified layer at that (post, alias), so only the shortfall is added.
-  mentions: 8969,
-  mentionScope: 'Every resolved mention across all 1,240 certified entities: 5,336 from the 93 core-registry entities, 2,917 from the entities identified in the adjudication pass, and 716 from owner rulings. Domains, URL slugs and linked accounts are NOT counted here — they are shown under Sources. Unresolved aliases are counted in neither: they are held in the Resolution Center.',
+  // 8,969 -> 8,975 (2026-08-21): NO is Nellie Ohr on #1928 and #1929, three occurrences each.
+  mentions: 8975,
+  mentionScope: 'Every resolved mention across all 1,240 certified entities: 5,336 from the 93 core-registry entities, 2,923 from the entities identified in the adjudication pass, and 716 from owner rulings. Domains, URL slugs and linked accounts are NOT counted here — they are shown under Sources. Unresolved aliases are counted in neither: they are held in the Resolution Center.',
   coreEntities: 93,
   coreRegistryMentions: 4463,
   tailEntities: 1239,
@@ -382,7 +383,7 @@ export const SECTIONS: SectionInfo[] = [
     // so the ⓘ panel contradicted the header directly above it. The two components are named here
     // for the same reason they are named in the header: 1,201 with no split reads as 1,201 entities
     // Q wrote about, and 135 of them he never wrote at all.
-    certified: `${n(1240)} canonical entities (${n(1105)} named in the prose · ${n(135)} linked as a source only) · ${n(8969)} certified prose mentions`,
+    certified: `${n(1240)} canonical entities (${n(1105)} named in the prose · ${n(135)} linked as a source only) · ${n(8975)} certified prose mentions`,
     note: 'Entities are secondary tags rather than sentence types — a question, claim, prediction or directive may contain several. Names are canonicalised, so "HRC", "Hillary" and "Hillary Clinton" are one person, while Q’s exact wording is preserved in every post. Where a reference is ambiguous it is left unresolved rather than guessed.',
   },
   {

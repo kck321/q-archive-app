@@ -361,7 +361,11 @@ const checks = [
   // 595 + 247 from the queue (250 ruled, 3 occurrences already certified) = 842.
   // +1: #4910 "Freedom of information [truth] = END" (r11), the first ad-hoc Prediction ruling to
   // go through apply-owner-claims.mjs rather than a queue batch.
-  ['predictions = 843', allPreds.length === 843, allPreds.length],
+  // +4 on 2026-08-21 (r15): "MOVIE 1 [Full]: The 'START'" and "MOVIE 3 - TBA" on #1928 AND #1929.
+  // The archive already certified the middle instalment, "MOVIE 2 - Coming this FALL.", so the
+  // sequence read as one prediction between two unclassified lines. Both drops, because they are
+  // the same drop reposted and carried the identical gap.
+  ['predictions = 847', allPreds.length === 847, allPreds.length],
   // isConclusion travels with the ROW rather than with the section, so a row leaving Claims
   // takes the attribute with it. -1: #3203's quoted question was the only withdrawn row
   // carrying it. 966 - 1 = 965.

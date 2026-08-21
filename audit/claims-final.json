@@ -117462,6 +117462,58 @@
    "sourceProvided": false,
    "confidence": "OWNER_ADJUDICATED",
    "provenance": "owner adjudication 2026-08-13 (r11-freedom-of-information-end) — Owner ruling, 2026-08-21. The line was unclassified — only its [truth] bracket and END carried Emphasis, so the drop's one substantive line painted nothing. It is an assertion about an outcome, in Q's equation form: freedom of information, and specifically the truth, ENDS the thing under discussion. Future-facing, so Prediction rather than Claim. [truth] keeps its red bracket layer on top."
+  },
+  {
+   "postNum": 1928,
+   "postId": "1928",
+   "exactText": "MOVIE 1 [Full]: The 'START'",
+   "primaryClass": "prediction",
+   "klass": "Q_PREDICTION",
+   "isConclusion": false,
+   "conclusionReason": null,
+   "checkable": false,
+   "sourceProvided": false,
+   "confidence": "OWNER_ADJUDICATED",
+   "provenance": "owner adjudication 2026-08-13 (r15-movie-1-and-3) — Owner ruling, 2026-08-21. The drop announces a three-part sequence and the archive already certifies the middle one - 'MOVIE 2 - Coming this FALL.' - as a Prediction, along with 'Coming SOON to a theater near you.' and 'Showtime.'. MOVIE 1 and MOVIE 3 are the same construction: each announces a forthcoming instalment, one as starting and one as still to be announced. Certifying the second of three and not the first and third made the sequence read as one prediction inside two unclassified lines. Applied to BOTH drops because #1928 and #1929 are the same drop reposted, with identical MOVIE lines and the identical gap."
+  },
+  {
+   "postNum": 1928,
+   "postId": "1928",
+   "exactText": "MOVIE 3 – TBA",
+   "primaryClass": "prediction",
+   "klass": "Q_PREDICTION",
+   "isConclusion": false,
+   "conclusionReason": null,
+   "checkable": false,
+   "sourceProvided": false,
+   "confidence": "OWNER_ADJUDICATED",
+   "provenance": "owner adjudication 2026-08-13 (r15-movie-1-and-3) — Owner ruling, 2026-08-21. The drop announces a three-part sequence and the archive already certifies the middle one - 'MOVIE 2 - Coming this FALL.' - as a Prediction, along with 'Coming SOON to a theater near you.' and 'Showtime.'. MOVIE 1 and MOVIE 3 are the same construction: each announces a forthcoming instalment, one as starting and one as still to be announced. Certifying the second of three and not the first and third made the sequence read as one prediction inside two unclassified lines. Applied to BOTH drops because #1928 and #1929 are the same drop reposted, with identical MOVIE lines and the identical gap."
+  },
+  {
+   "postNum": 1929,
+   "postId": "1929",
+   "exactText": "MOVIE 1 [Full]: The 'START'",
+   "primaryClass": "prediction",
+   "klass": "Q_PREDICTION",
+   "isConclusion": false,
+   "conclusionReason": null,
+   "checkable": false,
+   "sourceProvided": false,
+   "confidence": "OWNER_ADJUDICATED",
+   "provenance": "owner adjudication 2026-08-13 (r15-movie-1-and-3) — Owner ruling, 2026-08-21. The drop announces a three-part sequence and the archive already certifies the middle one - 'MOVIE 2 - Coming this FALL.' - as a Prediction, along with 'Coming SOON to a theater near you.' and 'Showtime.'. MOVIE 1 and MOVIE 3 are the same construction: each announces a forthcoming instalment, one as starting and one as still to be announced. Certifying the second of three and not the first and third made the sequence read as one prediction inside two unclassified lines. Applied to BOTH drops because #1928 and #1929 are the same drop reposted, with identical MOVIE lines and the identical gap."
+  },
+  {
+   "postNum": 1929,
+   "postId": "1929",
+   "exactText": "MOVIE 3 – TBA",
+   "primaryClass": "prediction",
+   "klass": "Q_PREDICTION",
+   "isConclusion": false,
+   "conclusionReason": null,
+   "checkable": false,
+   "sourceProvided": false,
+   "confidence": "OWNER_ADJUDICATED",
+   "provenance": "owner adjudication 2026-08-13 (r15-movie-1-and-3) — Owner ruling, 2026-08-21. The drop announces a three-part sequence and the archive already certifies the middle one - 'MOVIE 2 - Coming this FALL.' - as a Prediction, along with 'Coming SOON to a theater near you.' and 'Showtime.'. MOVIE 1 and MOVIE 3 are the same construction: each announces a forthcoming instalment, one as starting and one as still to be announced. Certifying the second of three and not the first and third made the sequence read as one prediction inside two unclassified lines. Applied to BOTH drops because #1928 and #1929 are the same drop reposted, with identical MOVIE lines and the identical gap."
   }
  ]
 }

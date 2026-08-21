@@ -226,7 +226,8 @@ const checks = [
   // 8,934: #4923 "Dearest Virginia -", then the 2026-08-21 batch — #4861, #4893 x2, #4853 x2.
   ['Claims indexed = 8,912', bySection.claims === 8912, bySection.claims],
   // 843: #4910 "Freedom of information [truth] = END".
-  ['Predictions indexed = 843', bySection.predictions === 843, bySection.predictions],
+  // 847: MOVIE 1 and MOVIE 3 on #1928 and #1929 (r15, 2026-08-21).
+  ['Predictions indexed = 847', bySection.predictions === 847, bySection.predictions],
   ['Evidence indexed = 6,590', bySection.evidence === 6590, bySection.evidence],
   // 1,334: Ray Chandler ships merged into Rachel Chandler under the owner ruling.
   [`Entities indexed = ${CANONICAL.entities.canonical.toLocaleString()}`,

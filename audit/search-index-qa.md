@@ -3,7 +3,7 @@
 Search indexes the certified datasets and their existing metadata. It performs no classification of its own, and it duplicates no post text.
 
 
-**35,209 records.**
+**35,213 records.**
 
 
 | Section | Records |
@@ -16,7 +16,7 @@ Search indexes the certified datasets and their existing metadata. It performs n
 | themes | 2,644 |
 | editorial | 1,290 |
 | entities | 1,240 |
-| predictions | 843 |
+| predictions | 847 |
 | codes | 747 |
 | sources | 183 |
 | unresolved | 115 |
@@ -28,7 +28,7 @@ Search indexes the certified datasets and their existing metadata. It performs n
 | ✅ | Questions indexed = 6,503 | 6503 |
 | ✅ | Directives indexed = 3,037 | 3037 |
 | ✅ | Claims indexed = 8,912 | 8912 |
-| ✅ | Predictions indexed = 843 | 843 |
+| ✅ | Predictions indexed = 847 | 847 |
 | ✅ | Evidence indexed = 6,590 | 6590 |
 | ✅ | Entities indexed = 1,240 | 1240 |
 | ✅ | Themes indexed = 2,644 | 2644 |

@@ -15,15 +15,15 @@
   "ambiguous_provenance": "Attribution or URL evidence is genuinely undecidable. Retained unchanged."
  },
  "totals": {
-  "occurrences": 9920,
-  "certifiedMentions": 9920,
+  "occurrences": 9926,
+  "certifiedMentions": 9926,
   "reconciles": true,
   "attribution": {
-   "unique": 9856,
+   "unique": 9862,
    "ambiguous": 64
   },
   "byCategory": {
-   "visible_complete_token": 8814,
+   "visible_complete_token": 8820,
    "invalid_substring_extraction": 98,
    "visible_alias_variant": 35,
    "url_source_provenance": 646,
@@ -45,7 +45,7 @@
  },
  "certifiedUnchanged": {
   "entityRows": 1448,
-  "mentions": 9920
+  "mentions": 9926
  },
  "rows": [
   {
@@ -44126,6 +44126,54 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#1928:20",
+   "postNum": 1928,
+   "index": 20,
+   "alias": "NO",
+   "entityId": "qe-2768b0fef8da",
+   "canonical": "Nellie Ohr",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1928:21",
+   "postNum": 1928,
+   "index": 21,
+   "alias": "NO",
+   "entityId": "qe-2768b0fef8da",
+   "canonical": "Nellie Ohr",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1928:22",
+   "postNum": 1928,
+   "index": 22,
+   "alias": "NO",
+   "entityId": "qe-2768b0fef8da",
+   "canonical": "Nellie Ohr",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1929:0",
    "postNum": 1929,
    "index": 0,
@@ -44456,6 +44504,54 @@
    "alias": "CP",
    "entityId": "qe-2eb344dfc5da",
    "canonical": "Carter Page",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1929:22",
+   "postNum": 1929,
+   "index": 22,
+   "alias": "NO",
+   "entityId": "qe-2768b0fef8da",
+   "canonical": "Nellie Ohr",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1929:23",
+   "postNum": 1929,
+   "index": 23,
+   "alias": "NO",
+   "entityId": "qe-2768b0fef8da",
+   "canonical": "Nellie Ohr",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1929:24",
+   "postNum": 1929,
+   "index": 24,
+   "alias": "NO",
+   "entityId": "qe-2768b0fef8da",
+   "canonical": "Nellie Ohr",
    "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {

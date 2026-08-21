@@ -1,8 +1,8 @@
 {
  "totals": {
-  "relationships": 7834,
+  "relationships": 7838,
   "byType": {
-   "prediction_assertion": 843,
+   "prediction_assertion": 847,
    "theme_support": 1719,
    "evidence_claim": 908,
    "question_directive": 230,
@@ -64,9 +64,9 @@
    35
   ],
   [
-   "Prediction ↔ assertion family = the certified 843",
+   "Prediction ↔ assertion family = the certified 847",
    true,
-   843
+   847
   ],
   [
    "unresolved edges = the 115 queue rows",

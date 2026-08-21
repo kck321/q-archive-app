@@ -3182,12 +3182,15 @@
   },
   "qe-2768b0fef8da": {
    "aliasPosts": {
+    "NO": 2,
     "Nellie Ohr": 7,
     "OHR": 1
    },
    "kind": "prose",
    "perPostMentions": {
     "1829": 1,
+    "1928": 3,
+    "1929": 3,
     "2004": 1,
     "2159": 1,
     "3006": 1,
@@ -3195,7 +3198,7 @@
     "3126": 1,
     "3483": 1
    },
-   "posts": 7,
+   "posts": 9,
    "rowId": "qe-2768b0fef8da"
   },
   "qe-278f6345a239": {
@@ -20880,12 +20883,12 @@
  "totals": {
   "canonicalEntities": 1240,
   "dormantReserved": 208,
-  "mentions": 8969,
+  "mentions": 8975,
   "mergedIdentities": 33,
   "mergedRows": 15,
   "proseMentioned": 1105,
   "publicRows": 1222,
-  "repeatBadges": 1087,
+  "repeatBadges": 1089,
   "sourceOnly": 135,
   "sourcePostChips": 347,
   "unsettledAttributionsExcluded": 64

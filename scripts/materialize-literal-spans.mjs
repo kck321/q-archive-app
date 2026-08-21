@@ -110,7 +110,7 @@ const checks = [
   // so it tracks whatever apply-claims.mjs certified rather than pinning one batch's figure.
   ['claims unchanged = 8,912', counts.claims === 8912, counts.claims],
   // 843 since the 2026-08-21 ruling on #4910 ("Freedom of information [truth] = END").
-  ['predictions unchanged = 843', counts.predictions === 843, counts.predictions],
+  ['predictions unchanged = 847', counts.predictions === 847, counts.predictions],
   ['conclusions unchanged = 964', counts.impliedConclusions === 964, counts.impliedConclusions],
   // 1,925 -> 1,920: five absorbed claim tails carried the checkable attribute. It travels with
   // the ROW, so it leaves with the fragment rather than being re-attached to the repaired span,

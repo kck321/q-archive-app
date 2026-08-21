@@ -7811,6 +7811,21 @@
    "readerNote": "Hillary Clinton. The identification is strongly contextual, not explicitly decoded by Q: it rests on the communication chain in this drop and on HRC appearing in the connected list on the next line.",
    "retrieval": "ONE occurrence — #1589 line 12, \"LL to H\". Deliberately not generalised: a standalone H elsewhere in the archive is not ruled to be Hillary, and even inside this drop WH and /EH are untouched.",
    "renderNote": "RENDERING_PROVENANCE_RULE: the renderer highlights the token, the form Q wrote."
+  },
+  {
+   "canonical": "Nellie Ohr",
+   "alias": "NO",
+   "type": "person_initials",
+   "ruledOn": "2026-08-21",
+   "includePosts": [
+    1928,
+    1929
+   ],
+   "reasoning": "Owner ruling: NO is Nellie Ohr in #1928 and #1929. Both drops pair her initials with her husband's in the same chain - '>>BO>>CS>>BO>>NO>>CS>>NO>>BO>>' - and again in 'When did [RR] learn of involvement [BO][NO]?'. BO is already certified Bruce Ohr on both posts, so the drop names the couple and the archive was certifying only one of them.",
+   "retrieval": "Corpus search 2026-08-21: /(?<![A-Za-z0-9])NO(?![A-Za-z0-9])/ matches 102 occurrences across 75 posts, and almost all of them are the English word - 'NO DEALS.', 'SHEEP NO MORE.', 'PATRIOTS HAVE NO SKIN COLOR.'. The token only names Nellie Ohr where it sits in the initials chain or the [BO][NO] pair, which is #1928 and #1929 and nowhere else: /\\[NO\\]/ matches those two posts, and />NO>/ matches the same two. Hence includePosts rather than a corpus-wide alias.",
+   "scopeNote": "INCLUDE, NOT EXCLUDE. An excludePosts ruling would need 73 entries and would silently capture the 74th the day a new drop said 'NO MORE'. A two-letter alias that is also a common word gets a whitelist.",
+   "renderNote": "RENDERING_PROVENANCE_RULE: the renderer highlights the alias Q wrote - NO - not the canonical name. Nellie Ohr is the identity behind it and belongs in the hover, never in the drop body.",
+   "readerNote": "Nellie Ohr: a Russia researcher who worked as a contractor for Fusion GPS in 2016, the year that firm commissioned the Steele dossier. She is married to Bruce Ohr, then a senior US Department of Justice official — Q's BO in these same lines. That overlap, a DOJ official whose wife worked for the firm behind the dossier, is why both became a focus of congressional inquiries into the origins of the FBI's Russia investigation."
   }
  ],
  "mergeRulings": [

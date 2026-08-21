@@ -507,7 +507,11 @@ export const OVERRIDES_BAKED_THROUGH = 1786458148021   // 2026-08-11T14:22:28.02
 // overlay defect bumps it again without touching the seed.
 export const OVERLAY_REPAIR = 1
 
-export const SEED_VERSION = 84   // 84: the abbreviation/sentence-boundary repair, 2026-08-21 —
+export const SEED_VERSION = 85   // 85: owner rulings on #1928/#1929, 2026-08-21 — NO is Nellie Ohr
+// (6 mentions, and she gains both drops), her hover gains a real synopsis instead of the generated
+// "appears 8 times across 7 posts" line, and MOVIE 1 / MOVIE 3 join MOVIE 2 as Predictions. A
+// reader on 84 sees NO unhighlighted and two of the three MOVIE lines unclassified.
+// 84: the abbreviation/sentence-boundary repair, 2026-08-21 —
 // 114 certified spans across Claims, Context, Directives and Questions were cut short at "Mr.",
 // "Lt. Gen.", "U.S. Senate", "Harris v."; each is extended to the full sentence and the 45 tails
 // the same splitter certified separately are absorbed. A reader on 83 keeps "Goodbye, Mr." and
