@@ -6,7 +6,7 @@ One question: does every certified occurrence in every section still resolve to 
 This audit validates the certified system. It reclassifies nothing and moves no count. All eight analytical sections remain frozen.
 
 
-**224 of 224 invariants pass.**
+**220 of 224 invariants pass.**
 
 
 ## 1. Frozen canonical counts
@@ -16,7 +16,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | posts = 4,966 | 4966 |
 | ✅ | Questions = 6,454 certified occurrences | 6519 |
 | ✅ | Directives = 2,552 | 3037 |
-| ✅ | Claims = 4,189 | 8928 |
+| ❌ | Claims = 4,189 | 8929 |
 | ✅ | Predictions = 630 | 842 |
 | ✅ | Evidence = 6,590 | 6590 |
 | ✅ | Entities = 1,335 canonical | 1240 |
@@ -92,7 +92,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 |---|---|---|
 | ✅ | questions: quoted-block over-extension stays at its known 100 occurrences | 100 of 6519 (expected 100) |
 | ✅ | directives: quoted-block over-extension stays at its known 129 occurrences | 129 of 3037 (expected 129) |
-| ✅ | claims: quoted-block over-extension stays at its known 597 occurrences | 597 of 8928 (expected 597) |
+| ✅ | claims: quoted-block over-extension stays at its known 597 occurrences | 597 of 8929 (expected 597) |
 | ✅ | emphasis: quoted-block over-extension stays at its known 0 occurrences | 0 of 4218 (expected 0) |
 | ✅ | the source-boundary occurrence SET is unchanged | identical |
 | ✅ | source-boundary debt stays at its known 234 posts | 234 posts |
@@ -112,7 +112,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | SEED_VERSION is 80 (unhighlighted-sentence queue ruling) | 80 |
+| ❌ | SEED_VERSION is 80 (unhighlighted-sentence queue ruling) | 81 |
 | ✅ | seeding is gated on SEED_VERSION | present |
 | ✅ | seeded data matches the SEED_VERSION that shipped it | unchanged |
 | ✅ | the gate value is persisted after seeding | present |
@@ -226,7 +226,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | the two coordinate systems genuinely disagree, so this check can fail | raw 1430 links vs rendered 2666 — the gap this guard exists for |
 | ✅ | the script definition still matches what the app strips at seed time | markup + entities |
 | ✅ | the scripts use the renderer's word-boundary rule | lookaround, not \b |
-| ✅ | the same inputs still produce the same audit, byte for byte | identical |
+| ❌ | the same inputs still produce the same audit, byte for byte | inputs moved |
 
 ## 10d. Public entity list reconciliation
 
@@ -254,8 +254,8 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | no certified artifact CHANGED CONTENT since the manifest | ok |
-| ✅ | byte-level re-serialisation reported separately, not as drift | none |
+| ❌ | no certified artifact CHANGED CONTENT since the manifest | posts.json |
+| ✅ | byte-level re-serialisation reported separately, not as drift | posts.json re-serialised by the export chain |
 | ✅ | every certified artifact is on disk | 11/11 |
 | ✅ | the editorial write guard is a shared module | lib/certifiedWrite.mjs |
 | ✅ | the guard has a negative test | test-certified-write-guard.mjs |
@@ -342,3 +342,10 @@ Overlap is allowed only where two sections answer different analytical questions
 | emphasis ↔ directives | 11 repeated, 0 orphaned | Same reasoning as repeated questions: the instruction is the unit, the repetition is the device. | emphasis type repeated_directive, matched on post + text |
 | claims ↔ conclusions | 965 | isConclusion is an ATTRIBUTE of a claim or a prediction, not a separate population. It must never be added to the claims total. | claimMeta.isConclusion |
 | claims ↔ predictions | measured | Both are assertions and share storage; displayClass decides which section shows a unit. The combined figure appears only where labelled combined. | claimMeta.semanticFamily = assertion, claimMeta.displayClass |
+
+## Failures
+
+- **1. Frozen canonical counts — Claims = 4,189**: 8929
+- **8. Seed and cache integrity — SEED_VERSION is 80 (unhighlighted-sentence queue ruling)**: 81
+- **10c. Integrated entity cleanup — the same inputs still produce the same audit, byte for byte**: inputs moved
+- **11. Frozen-section mutation — no certified artifact CHANGED CONTENT since the manifest**: posts.json

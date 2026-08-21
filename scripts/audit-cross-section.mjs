@@ -458,7 +458,10 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   // 80 carries the unhighlighted-sentence queue ruling. posts.json, questions.json, entities.json,
   // codes.json and emphasis.json all changed, and a reader stuck on 79 would go on seeing four
   // thousand ruled sentences rendered as plain unclassified text on both surfaces.
-  t('seed-current', 'SEED_VERSION is 80 (unhighlighted-sentence queue ruling)', seed === 80, seed)
+  // 81 carries the 2026-08-21 owner ruling on #4923: "Dearest Virginia -" moves Context -> Claim.
+  // Context does not paint, so a reader stuck on 80 sees that drop open with an unhighlighted line
+  // above five classified ones — the exact complaint that produced the ruling.
+  t('seed-current', 'SEED_VERSION is 81 (#4923 Dearest Virginia ruling)', seed === 81, seed)
   t('seed-gate', 'seeding is gated on SEED_VERSION', /seeded === SEED_VERSION/.test(localData), 'present')
 
   // THE GUARD THAT WOULD HAVE SAVED THREE ROUND TRIPS. Changing seeded data without bumping the

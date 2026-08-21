@@ -68,7 +68,11 @@ for (const occ of approved) {
     sourceProvided: false,
     telegraphic: line.split(/\s+/).filter(Boolean).length <= 4,
     confidence: 'OWNER_ADJUDICATED',
-    provenance: `owner adjudication 2026-08-13 (${occ.rulingId}) — ${occ.reasoning}`,
+    // The ruling carries its own date. It was the literal '2026-08-13' — correct for that batch
+    // and wrong for every ruling made after it, which would have been stamped with the date of a
+    // batch they were not part of. Rulings already in the artifact are skipped as `already`, so
+    // their provenance string is never rewritten.
+    provenance: `owner adjudication ${occ.ruledOn ?? '2026-08-13'} (${occ.rulingId}) — ${occ.reasoning}`,
   })
   addedRows++
   diff.push({ postNum: occ.postNum, text: line, was: occ.was })
@@ -86,9 +90,20 @@ console.log(`    occurrences : ${totalRows.toLocaleString()}`)
 console.log(`    distinct    : ${distinct.toLocaleString()}   (was certified 3,226)`)
 console.log(`    posts       : ${postsWith.toLocaleString()}   (was certified 1,951)`)
 
+// THESE TWO WERE LITERALS OF THE 2026-08-13 BATCH, AND THAT MADE THE SCRIPT SINGLE-USE.
+//
+// `occurrences = 4,242` and `all 62 approved` described one run. The moment the owner ruled a
+// tenth time, both reported a defect that did not exist — the artifact was supposed to grow — and
+// the script refused to write, so the only way to record a new Claim ruling was to edit the gate
+// that was protecting it. Same correction the queue ruling made to four other stale literals: a
+// figure that is a copy of a relationship should BE the relationship.
+//
+// What they assert now is the property that actually has to hold on every run: every approved
+// occurrence is accounted for, and no existing row was lost on the way.
 const checks = [
-  ['occurrences = 4,242', totalRows === 4242, totalRows],
-  ['all 62 approved occurrences present', addedRows + already === 62, `${addedRows + already}/62`],
+  ['no existing row lost', totalRows === beforeRows + addedRows, `${beforeRows} + ${addedRows} = ${totalRows}`],
+  ['every approved occurrence present', addedRows + already === approved.length,
+    `${addedRows + already}/${approved.length}`],
   ['every new row carries owner provenance',
     final.rows.filter(r => r.confidence === 'OWNER_ADJUDICATED').every(r => r.provenance?.includes('owner adjudication')), 'ok'],
 ]

@@ -294,7 +294,10 @@ const checks = [
   // 4,221 - 9 withdrawn to Questions by owner ruling (2026-08-19) = 4,212.
   // 4,212 + 4,716 arriving from the unhighlighted-sentence queue = 8,928. The owner ruled 4,782
   // sentences to be Claims; 66 of those occurrences were already certified, so 4,716 are new.
-  ['claim occurrences = 8,928', allClaims.length === 8928, allClaims.length],
+  // 8,928 + 1 = 8,929. Owner ruling 2026-08-21 (r10-dearest-virginia): #4923 "Dearest Virginia -"
+  // moves Context -> Claim. One occurrence, recorded in audit/editorial-batch-pending.json and
+  // carried into claims-final.json by apply-owner-claims.mjs.
+  ['claim occurrences = 8,929', allClaims.length === 8929, allClaims.length],
   ['queue rulings applied = 4,782 claims / 250 predictions',
     stats2020.claimsAdded + stats2020.claimsAlready === 4782 && stats2020.predsAdded + stats2020.predsAlready === 250,
     `${stats2020.claimsAdded}+${stats2020.claimsAlready} claims, ${stats2020.predsAdded}+${stats2020.predsAlready} predictions`],
@@ -304,7 +307,8 @@ const checks = [
   // -9: every withdrawn wording occurs in exactly one post, so each empties its own key.
   // +3,581: the 4,716 new occurrences carry 3,581 wordings Claims did not already hold. The gap
   // is in-post and cross-post repetition — "Fantasy land." alone arrives four times in #111.
-  ['distinct = 6,828', distinct.size === 6828, distinct.size],
+  // +1: "Dearest Virginia -" occurs once in the whole archive, so it opens its own key.
+  ['distinct = 6,829', distinct.size === 6829, distinct.size],
   // +1: 17 posts gain their first claim, 16 posts lose their last one.
   // -3: #483, #2695 and #3203 each held ONE claim and it was the quoted question, so those
   // drops leave the Claims post set entirely. #2420 and #2776 keep other claims and stay.
@@ -331,7 +335,9 @@ const checks = [
   // +3,159. telegraphic is not a judgement — it is "four words or fewer", computed the same way
   // apply-owner-claims.mjs computes it, and the queue is overwhelmingly short label-like lines
   // ("Poof!", "Classified.", "Ten days."). 387 + 3,159 = 3,546.
-  ['telegraphic = 3,546', telegraphic === 3546, telegraphic],
+  // +1: "Dearest Virginia -" is three tokens, so the same "four words or fewer" rule marks it
+  // telegraphic. Not a judgement about the ruling — the attribute is computed, not assigned.
+  ['telegraphic = 3,547', telegraphic === 3547, telegraphic],
   // 13 + 37: the queue emitted one row per UNIT, so a line Q wrote twice arrives twice and is
   // certified twice. Collapsing them would have dropped 37 real occurrences.
   ['in-post repeats preserved = 50', repeats === 50, repeats],

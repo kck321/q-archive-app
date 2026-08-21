@@ -162,16 +162,20 @@ const checks = [
   // spans into a section, and Context means "reviewed, and in no semantic category" - so they
   // leave. Nothing was re-detected: the ledger is unchanged and every departure is named by a row
   // in audit/unhighlighted-owner-rulings.json.
-  ['contiguous context spans = 1,736', materialised === 1736, materialised],
+  // 1,736 -> 1,735. Owner ruling 2026-08-21: #4923 "Dearest Virginia -" is a Claim, so it leaves
+  // Context by the same rule the queue rulings did. The ledger is untouched; the unit moved sides.
+  ['contiguous context spans = 1,735', materialised === 1735, materialised],
   // 13 -> 12: one of the multi-line reconstructions was ruled into a section too.
   ['multi-line reconstructions held as exceptions = 12', multiline.length === 12, multiline.length],
-  ['1,736 + 12 = 1,748, and 1,748 + 3,154 promoted = the certified 4,902',
-    materialised + multiline.length === 1748 && materialised + multiline.length + promoted.length === 4902,
+  // The TOTAL is the invariant and it does not move: a ruling changes which side of the ledger a
+  // unit sits on, never how many units were reviewed. 1,747 + 3,155 = 4,902, as 1,748 + 3,154 did.
+  ['1,735 + 12 = 1,747, and 1,747 + 3,155 promoted = the certified 4,902',
+    materialised + multiline.length === 1747 && materialised + multiline.length + promoted.length === 4902,
     `${materialised + multiline.length} + ${promoted.length}`],
   // 2 themes + 3 claims (#4965 'In time.', #4963 x2) + 4 entity rulings whose span was a
   // Context line (#4963 Investigators./Researchers./Whistleblowers. and #5 is unaffected).
-  // 73 + 3,081 from the unhighlighted-sentence queue = 3,154.
-  ['owner rulings removed from Context = 3,154', promoted.length === 3154, promoted.length],
+  // 73 + 3,081 from the unhighlighted-sentence queue = 3,154, + 1 (#4923, 2026-08-21) = 3,155.
+  ['owner rulings removed from Context = 3,155', promoted.length === 3155, promoted.length],
   // Against the CLEANED text, because that is what the ledger segmented. Comparing to raw text
   // fails on the whitespace normalisation clean() applies and would report a defect that is
   // purely an artefact of checking the wrong string.

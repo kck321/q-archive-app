@@ -209,8 +209,8 @@
  ],
  "totals": {
   "invariants": 224,
-  "passed": 224,
-  "failed": 0
+  "passed": 220,
+  "failed": 4
  },
  "results": [
   {
@@ -238,8 +238,8 @@
    "group": "1. Frozen canonical counts",
    "id": "claims",
    "description": "Claims = 4,189",
-   "pass": true,
-   "detail": "8928"
+   "pass": false,
+   "detail": "8929"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -596,7 +596,7 @@
    "id": "isolation-claims",
    "description": "claims: quoted-block over-extension stays at its known 597 occurrences",
    "pass": true,
-   "detail": "597 of 8928 (expected 597)"
+   "detail": "597 of 8929 (expected 597)"
   },
   {
    "group": "6. Source-material isolation",
@@ -665,8 +665,8 @@
    "group": "8. Seed and cache integrity",
    "id": "seed-current",
    "description": "SEED_VERSION is 80 (unhighlighted-sentence queue ruling)",
-   "pass": true,
-   "detail": "80"
+   "pass": false,
+   "detail": "81"
   },
   {
    "group": "8. Seed and cache integrity",
@@ -1323,8 +1323,8 @@
    "group": "10c. Integrated entity cleanup",
    "id": "cleanup-rebuild-byte-identical",
    "description": "the same inputs still produce the same audit, byte for byte",
-   "pass": true,
-   "detail": "identical"
+   "pass": false,
+   "detail": "inputs moved"
   },
   {
    "group": "10d. Public entity list reconciliation",
@@ -1449,15 +1449,15 @@
    "group": "11. Frozen-section mutation",
    "id": "hash-stable",
    "description": "no certified artifact CHANGED CONTENT since the manifest",
-   "pass": true,
-   "detail": "ok"
+   "pass": false,
+   "detail": "posts.json"
   },
   {
    "group": "11. Frozen-section mutation",
    "id": "hash-reserialised",
    "description": "byte-level re-serialisation reported separately, not as drift",
    "pass": true,
-   "detail": "none"
+   "detail": "posts.json re-serialised by the export chain"
   },
   {
    "group": "11. Frozen-section mutation",

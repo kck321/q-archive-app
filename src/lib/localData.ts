@@ -506,7 +506,10 @@ export const OVERRIDES_BAKED_THROUGH = 1786458148021   // 2026-08-11T14:22:28.02
 // overlay defect bumps it again without touching the seed.
 export const OVERLAY_REPAIR = 1
 
-export const SEED_VERSION = 80   // 80: the unhighlighted-sentence queue, ruled 2026-08-20 — 6,108 of the
+export const SEED_VERSION = 81   // 81: owner ruling 2026-08-21 — #4923 "Dearest Virginia -" moves
+// Context -> Claim (Claims 8,928->8,929, Context 1,736->1,735). Context does not paint, so on 80 a
+// reader sees an unhighlighted opening line above five classified ones on that drop.
+// 80: the unhighlighted-sentence queue, ruled 2026-08-20 — 6,108 of the
 // 6,111 queued sentences accepted into a section. Claims 4,212->8,928, Directives 2,552->3,037,
 // Predictions 595->842, Questions 6,454->6,519, Entities 1,201->1,240 rows / 8,798->8,969 mentions,
 // Codes 1,949->1,957, Emphasis 3,111->3,105, Context 4,829->1,748. A reader on 79 would keep seeing

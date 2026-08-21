@@ -99774,6 +99774,19 @@
    "telegraphic": true,
    "confidence": "OWNER_ADJUDICATED",
    "provenance": "owner adjudication 2026-08-13 (r9-panic-in-dc) — Owner ruling 2026-08-15. It asserts a state of affairs that could be true or false."
+  },
+  {
+   "postNum": 4923,
+   "postId": "4923",
+   "exactText": "Dearest Virginia -",
+   "primaryClass": "claim",
+   "isPrediction": false,
+   "isConclusion": false,
+   "checkable": false,
+   "sourceProvided": false,
+   "telegraphic": true,
+   "confidence": "OWNER_ADJUDICATED",
+   "provenance": "owner adjudication 2026-08-13 (r10-dearest-virginia) — Owner ruling, 2026-08-21, made while reviewing #4923. The line was certified CONTEXT, which does not paint, so the drop showed an unhighlighted opening above five classified lines. It is Q addressing Virginia directly and asserting the relationship the rest of the drop rests on; the two lines under it ('We stand with you.' / 'Now and always.') are already certified Claims and read as its continuation. The named entity Virginia keeps its own cyan layer on top of the claim fill."
   }
  ],
  "predictions": [

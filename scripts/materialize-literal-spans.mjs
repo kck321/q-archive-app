@@ -98,7 +98,10 @@ const checks = [
   // rulings arriving from apply-questions-final.mjs and apply-claims.mjs, and nothing else.
   ['certified questions unchanged = 6,519', questions.filter(r => r.occurrences !== undefined).length === 6519,
     questions.filter(r => r.occurrences !== undefined).length],
-  ['claims unchanged = 8,928', counts.claims === 8928, counts.claims],
+  // 8,929 since the 2026-08-21 owner ruling on #4923. "Unchanged" means this step must not invent
+  // or drop a claim while turning stored text into runtime spans — it is a passthrough assertion,
+  // so it tracks whatever apply-claims.mjs certified rather than pinning one batch's figure.
+  ['claims unchanged = 8,929', counts.claims === 8929, counts.claims],
   ['predictions unchanged = 842', counts.predictions === 842, counts.predictions],
   ['conclusions unchanged = 965', counts.impliedConclusions === 965, counts.impliedConclusions],
   ['checkable unchanged = 1,925', counts.verificationHooks === 1925, counts.verificationHooks],

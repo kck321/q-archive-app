@@ -514,6 +514,22 @@
       ],
       "overlapNote": "Where an occurrence is ALSO Emphasis (#2215) the span rotates between both colours automatically.",
       "proposedCountChange": "Claims 4,208 -> 4243"
+    },
+    {
+      "id": "r10-dearest-virginia",
+      "ruling": "The salutation line 'Dearest Virginia -' is a Claim",
+      "reasoning": "Owner ruling, 2026-08-21, made while reviewing #4923. The line was certified CONTEXT, which does not paint, so the drop showed an unhighlighted opening above five classified lines. It is Q addressing Virginia directly and asserting the relationship the rest of the drop rests on; the two lines under it ('We stand with you.' / 'Now and always.') are already certified Claims and read as its continuation. The named entity Virginia keeps its own cyan layer on top of the claim fill.",
+      "targetCategory": "claims",
+      "ruledOn": "2026-08-21",
+      "approved": [
+        {
+          "postNum": 4923,
+          "text": "Dearest Virginia -",
+          "was": "Context"
+        }
+      ],
+      "excluded": [],
+      "proposedCountChange": "Claims +1 on #4923; Context -1"
     }
   ],
   "totalProposed": {
