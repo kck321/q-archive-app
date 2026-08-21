@@ -93,6 +93,19 @@ for (const r of JSON.parse(fs.readFileSync(path.join(OUT, 'claims-final.json'), 
       ruledOut.add(`${r.postNum}|${String(r.sourceText ?? r.aliasUsed).toLowerCase().trim()}`)
     }
   }
+  // ...and the whole unhighlighted-sentence queue, 2026-08-20. READ DIRECTLY, not inferred from
+  // claims-final.json: that batch is LAYERED by its materialisers rather than written into the
+  // frozen artifacts, so the OWNER_ADJUDICATED sweep above cannot see it. Every section it names
+  // is a category, so every ruled line leaves Context — Claims, Predictions, Directives,
+  // Questions, Entities and Brackets alike. Leaving any of them would paint one span as both
+  // classified and unclassified, which is the contradiction this block exists to prevent.
+  const QUEUE = path.join(OUT, 'unhighlighted-owner-rulings.json')
+  if (fs.existsSync(QUEUE)) {
+    for (const r of JSON.parse(fs.readFileSync(QUEUE, 'utf8')).rulings ?? []) {
+      ruledOut.add(`${r.postNum}|${String(r.sourceText).toLowerCase().trim()}`)
+      if (r.paintText) ruledOut.add(`${r.postNum}|${String(r.paintText).toLowerCase().trim()}`)
+    }
+  }
 }
 const promoted = allUnits.filter(u => ruledOut.has(`${u.postNum}|${String(u.text).toLowerCase().trim()}`))
 const remaining = allUnits.filter(u => !ruledOut.has(`${u.postNum}|${String(u.text).toLowerCase().trim()}`))
@@ -101,7 +114,7 @@ const units = remaining.filter(u => (cleanedByNum.get(u.postNum) ?? '').includes
 const multiline = remaining.filter(u => !(cleanedByNum.get(u.postNum) ?? '').includes(u.text))
 
 fs.writeFileSync(path.join(OUT, 'context-multiline-reconstructions.json'), JSON.stringify({
-  note: 'CONTEXT_OR_LABEL units whose canonical text is a multi-line reconstruction, so no single contiguous source span exists. Not dropped: listed here so the acceptance contract stays 4,889 contiguous + 13 reconstructed = 4,902 (4,906 before the owner ruled four of these units to be Claims).',
+  note: 'CONTEXT_OR_LABEL units whose canonical text is a multi-line reconstruction, so no single contiguous source span exists. Not dropped: listed here so the acceptance contract still reconciles. The ledger holds 4,902 units; 3,154 have since been ruled into a section by the owner, leaving 1,736 contiguous + 12 reconstructed = 1,748.',
   count: multiline.length,
   units: multiline.map(u => ({
     postNum: u.postNum,
@@ -145,12 +158,20 @@ const postsWith = posts.filter(p => (p.postAnalysis?.contextUnits?.length ?? 0) 
 // The count moved because a ruling moved it, not because the detector drifted. The gate stays
 // exact so the next unexplained movement still fails.
 const checks = [
-  ['contiguous context spans = 4,816', materialised === 4816, materialised],
-  ['multi-line reconstructions held as exceptions = 13', multiline.length === 13, multiline.length],
-  ['4,816 + 13 = the certified 4,829', materialised + multiline.length === 4829, materialised + multiline.length],
+  // 4,816 -> 1,736. The owner's review of the unhighlighted-sentence queue placed 3,081 of these
+  // spans into a section, and Context means "reviewed, and in no semantic category" - so they
+  // leave. Nothing was re-detected: the ledger is unchanged and every departure is named by a row
+  // in audit/unhighlighted-owner-rulings.json.
+  ['contiguous context spans = 1,736', materialised === 1736, materialised],
+  // 13 -> 12: one of the multi-line reconstructions was ruled into a section too.
+  ['multi-line reconstructions held as exceptions = 12', multiline.length === 12, multiline.length],
+  ['1,736 + 12 = 1,748, and 1,748 + 3,154 promoted = the certified 4,902',
+    materialised + multiline.length === 1748 && materialised + multiline.length + promoted.length === 4902,
+    `${materialised + multiline.length} + ${promoted.length}`],
   // 2 themes + 3 claims (#4965 'In time.', #4963 x2) + 4 entity rulings whose span was a
   // Context line (#4963 Investigators./Researchers./Whistleblowers. and #5 is unaffected).
-  ['owner rulings removed from Context = 73', promoted.length === 73, promoted.length],
+  // 73 + 3,081 from the unhighlighted-sentence queue = 3,154.
+  ['owner rulings removed from Context = 3,154', promoted.length === 3154, promoted.length],
   // Against the CLEANED text, because that is what the ledger segmented. Comparing to raw text
   // fails on the whitespace normalisation clean() applies and would report a defect that is
   // purely an artefact of checking the wrong string.
