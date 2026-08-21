@@ -5959,3 +5959,87 @@ goes somewhere else. Make them land in the same place, and give that place the p
 Both are asserted in `test-row-evidence.mjs` — that a Pic chip carries a reader param (`cat=`/`rk=`)
 and that the feed renders pictures — and the gate was run on a forced-cold browser with a real exit
 code, not a status read through a pipe.
+
+---
+
+## 2026-08-20 — Claude review of the GPT-classified unhighlighted-sentence list
+
+**Request.** Owner ran the unhighlighted-sentence queue through GPT and exported
+`Desktop\Q Unhighlighted.csv` (6,111 rows: post #, sentence, GPT category, 12 GPT buckets).
+Asked Claude to place every row into the app's 7 analysis categories (Q Questions / Directives /
+Claims / Predictions / Entities / [ Brackets ] / Themes), flag disagreements with GPT, and catch
+question-form sentences whose punctuation is a period.
+
+**Solution.** `audit/unhighlighted-sentences/gpt-review/classify.mjs` — wording-level rulings
+(distinct-wording TSVs per GPT bucket generated first), plus post-scoped rulings for split-word
+drops (#4255 WWG1WGA, #3220 THINK FOR YOURSELF, #4206 PANIC IN DC, #4683 You-Have-More-Than-You-
+Know), question-form detection, certified `entities.json`/`codes.json` lookups, quoted-source
+rules (Scripture, Declaration, Reagan, Paine, Pledge, statutes/EOs, articles → not Q-authored
+predictions/claims), and abbreviation-split flagging ("Goodbye, Mr." + "Rosenstein." etc.).
+
+**Outputs** (also copied to Desktop):
+- `gpt-review/Q Unhighlighted - Claude Review.csv` — all 6,111 rows: Post, Sentence, GPT
+  Category, Claude Category, Matches GPT, Confidence, Note.
+- `gpt-review/Q Unhighlighted - Disagreements.csv` — the ~1,190 rows where Claude differs.
+
+**Totals:** Claims 4,101 · Themes 1,082 · Entities 428 · Directives 158 · Brackets 142 ·
+Predictions 94 · Questions 55 · NEEDS CONTEXT 51. Biggest systematic moves: slogans that are
+really status assertions → Claims; quoted Scripture/founding documents → Themes; "Logical
+thinking."/"Worth remembering." → Directives (elliptical imperatives); "Goodbye, Mr. [RR]"
+family → Predictions; certified code phrases (D5, Iron Eagle, Red October, Castle codes,
+stringers) → Brackets; 19 period-terminated questions rescued out of Claims.
+
+Review artifacts only — nothing applied to certified data, no materialiser run, no deploy.
+
+### Request: #2420's three quoted lines are Questions, not Claims — and find every other one
+
+Owner ruling, 19 Aug 2026. Also asked: scan the archive for obvious questions filed elsewhere,
+and keep entities/brackets painted inside the question highlight.
+
+**Scan (read-only) first.** Units ending in `?` certified in another section: 54 raw, 17 of them
+links whose URL merely ends in `?`, so **37 real**, in three shapes — QUOTED-SPEECH 14,
+PARENTHETICAL 15 (the same shape as the #524 precedent, where `?)` defeats a detector that anchors
+on a line ENDING in `?`), PLAIN 8. Separately, 297 certified Questions also hold a whole-unit
+certification elsewhere — almost all intentional (220 Directives like `Define hostage.`, because
+the question matcher deliberately accepts `.` as well as `?`), so left alone.
+
+**Ruled: the QUOTED-SPEECH family, less four.** #2971 is a pasted dictionary block, and three
+#2776 lines each carry SEVERAL quoted questions in one unit — a segmentation problem to fix at the
+boundary, not a misfiling to reclassify. Eleven occurrences moved: #483, #1975, #2420 x3, #2695 x2,
+#2776 x3, #3203.
+
+    Questions   6,443 -> 6,454    rows 6,577 -> 6,588    posts 1,696 -> 1,700
+    Claims      4,221 -> 4,212    distinct 3,256 -> 3,247    posts 1,983 -> 1,980
+    Emphasis    3,112 -> 3,111    posts 1,357 -> 1,356
+
+**ONE RECORD MOVES THE LINE.** `audit/questions-owner-rulings.json` gained a `was` field, and
+`apply-claims.mjs` reads that same file to withdraw the occurrence from Claims. Two materialisers
+reading one record is what stops a line being certified blue and amber at once; it refuses rather
+than under-applies if a ruling stops matching.
+
+**Two cascades, both from rules that already existed.** #2420's Emphasis is a parallel run — "I
+pointed directly at it 3x." / "I turned and double pointed just to be clear." — and the standing
+rule that a question carries no Emphasis retires it once the second line is a Question. And the
+source-boundary debt moved 111 -> 113 posts / 89 -> 91 questions, because two ruled questions sit
+inside quoted blocks, which is exactly the shape that tripwire tracks. Not a detector change;
+`quotedBlocks.mjs` is untouched, and the occurrence SET was re-frozen with the reason recorded.
+
+**Latent defect found and fixed on the way.** `apply-questions-final.mjs` could not COMPLETE on the
+committed data: its gate counted rulings PUSHED, and #524's ruling was already baked into
+questions.json, so it scored 0 of 1 and aborted. The gate now asserts PRESENCE. That is why three
+stale `unitText` values (#1318, #2971, #4454) had survived — nobody could rewrite the file.
+
+**A mistake worth recording.** Chasing the last invariant I re-ran `audit-occurrence-provenance.mjs`,
+which is a DERIVATION — standing rule 7 forbids re-running one to satisfy a check. It rewrote four
+certified artifacts and dropped the entity mention count from 9,749 to 8,798. Restored from git;
+only the determinism STAMP needed re-baselining, which is what "delete to re-baseline" meant.
+
+223/223 cross-section invariants. Browser-verified: all three #2420 lines paint blue, and POTUS
+still paints cyan inside #2695's question (`namedEntity (inside a question)`) — a question is a
+container, not a classification of everything inside it.
+
+**Files:** `audit/questions-owner-rulings.json`, `scripts/apply-claims.mjs`,
+`apply-questions-final.mjs`, `apply-emphasis.mjs`, `materialize-literal-spans.mjs`,
+`build-relationships.mjs`, `build-search-index.mjs`, `certification-manifest.mjs`,
+`audit-cross-section.mjs`, `lib/contracts.mjs`, `src/lib/sectionInfo.ts`,
+`src/lib/localData.ts` (SEED_VERSION 78 -> 79), `public/data/*`.
