@@ -77,6 +77,43 @@ for (const name of COLLECTIONS) {
   const postEdits = (await getDocs(collection(db, 'postEdits'))).docs
   const questionEdits = (await getDocs(collection(db, 'questionEdits'))).docs
 
+  // ── The overlay contract, checked here because here is where it is created ──────────────
+  //
+  // Everything baked below is, from this moment on, PART OF THE BUNDLE — and then repaired by the
+  // apply chain further down, which no browser can re-run. So the runtime overlay in
+  // src/lib/localData.ts must decline every edit at or before this instant, or it lays a stale
+  // snapshot back over certified data. It decides that by comparing against one constant,
+  // OVERRIDES_BAKED_THROUGH.
+  //
+  // A constant that has to be remembered is a constant that drifts, so the export recomputes the
+  // real value and refuses to publish if the constant no longer covers it. Derived from the
+  // documents themselves, never from the clock: the same Firestore state always yields the same
+  // number, so the bundle stays reproducible.
+  const editTimes = [...postEdits, ...questionEdits].flatMap(d => {
+    const data = d.data()
+    const per = data._fieldUpdatedAt && typeof data._fieldUpdatedAt === 'object'
+      ? Object.values(data._fieldUpdatedAt) : []
+    return [data._updatedAt, ...per].map(Number).filter(n => Number.isFinite(n) && n > 0)
+  })
+  const bakedThrough = editTimes.length ? Math.max(...editTimes) : 0
+  const localDataSrc = readFileSync(join(root, 'src', 'lib', 'localData.ts'), 'utf8')
+  const declared = Number((localDataSrc.match(/OVERRIDES_BAKED_THROUGH = (\d+)/) ?? [])[1] ?? NaN)
+  if (!Number.isFinite(declared) || declared < bakedThrough) {
+    console.error('')
+    console.error('❌ OVERRIDES_BAKED_THROUGH IS BEHIND THE EDITS THIS EXPORT IS BAKING — export stopped.')
+    console.error(`   declared in src/lib/localData.ts : ${Number.isFinite(declared) ? declared : 'not found'}`)
+    console.error(`   newest edit being baked          : ${bakedThrough}  (${new Date(bakedThrough).toISOString()})`)
+    console.error('')
+    console.error('   Every edit at or before the baked instant is already in the bundle, and the apply')
+    console.error('   chain repairs it below. A browser cannot re-run that chain, so if the constant is')
+    console.error('   short the runtime overlay will lay these stale snapshots back over certified data.')
+    console.error('')
+    console.error(`   Set it and re-run:  export const OVERRIDES_BAKED_THROUGH = ${bakedThrough}`)
+    console.error('')
+    process.exit(1)
+  }
+  console.log(`Overlay contract OK — edits baked through ${bakedThrough}, constant declares ${declared}.`)
+
   const postsFile = join(outDir, 'posts.json')
   const posts = JSON.parse(readFileSync(postsFile, 'utf8'))
   const byId = new Map(posts.map(p => [String(p.id), p]))

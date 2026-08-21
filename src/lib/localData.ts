@@ -11,6 +11,7 @@
 import type { QPost, QQuestion, QTopic, QResource } from '../types'
 import { fetchOverrides } from './sync'
 import { IS_PUBLIC_SITE } from './appMode'
+import { selectOverrideFields } from './overrideProvenance'
 
 export interface AnalysisConfirmedDoc { id: string; key: string; category: string }
 export interface InfographDoc { id: string; questionId?: string; [k: string]: unknown }
@@ -475,6 +476,36 @@ const COLLECTIONS: CollectionName[] = ['posts', 'questions', 'topics', 'resource
 // as a person however many times the tooltip said otherwise, and would see the corrected wording
 // beside the stale category. entity-hovers.json is fetched rather than seeded and needs no bump
 // of its own; this one is required by the entity row that changed underneath it.
+// ── Cloud-overlay provenance ─────────────────────────────────────────────────
+//
+// The newest Firestore edit the last export already consumed and baked into public/data. An edit
+// at or before this instant is ALREADY IN THE BUNDLE — and then repaired by the apply chain, which
+// the browser cannot re-run — so laying it back over the seeded data can only subtract. Only an
+// edit written AFTER this carries anything the bundle lacks.
+//
+// Measured 2026-08-21 across postEdits (1,355 docs) and questionEdits (153 docs). Not a wall clock
+// and not a guess: it is the maximum `_updatedAt` / `_fieldUpdatedAt` in those collections, so the
+// same Firestore state always yields the same number.
+//
+// scripts/export-firestore.mjs RECOMPUTES this on every export and ABORTS if the constant no longer
+// covers what it consumed, naming the value to set. That is why it cannot silently drift: the check
+// sits in the deploy path, not in anyone's memory.
+export const OVERRIDES_BAKED_THROUGH = 1786458148021   // 2026-08-11T14:22:28.021Z
+
+// One-time recovery for browsers that already cached the damage.
+//
+// The broken overlay did not merely display stale analysis, it PERSISTED it — applyCloudOverrides
+// ended with idbSet('posts', ...). A returning profile therefore holds a poisoned `posts`
+// collection stamped with a seed version that matches, so the seed check short-circuits and the
+// bundle is never re-read. Filtering Firestore fixes new loads and does nothing for those caches.
+//
+// Bumping SEED_VERSION would also clear it, but it would say something untrue — the seeded data did
+// not change, the client's copy of it was corrupted — and it would drag the seed fingerprint and
+// every returning-reader gate along with a repair that is not about the bundle at all. This marker
+// is the narrow version: it invalidates the cache exactly once, on the exact defect, and any future
+// overlay defect bumps it again without touching the seed.
+export const OVERLAY_REPAIR = 1
+
 export const SEED_VERSION = 80   // 80: the unhighlighted-sentence queue, ruled 2026-08-20 — 6,108 of the
 // 6,111 queued sentences accepted into a section. Claims 4,212->8,928, Directives 2,552->3,037,
 // Predictions 595->842, Questions 6,454->6,519, Entities 1,201->1,240 rows / 8,798->8,969 mentions,
@@ -635,9 +666,12 @@ export function loadLocalData(): Promise<LocalStore> {
   if (!storePromise) {
     storePromise = (async () => {
       const seeded = await idbGet<number>('__seed_version__').catch(() => undefined)
+      const repaired = await idbGet<number>('__overlay_repair__').catch(() => undefined)
 
       let raw: Omit<LocalStore, 'postsById' | 'postsByNum'>
-      if (seeded === SEED_VERSION) {
+      // A cache is only usable if it is BOTH the current seed and past the overlay repair. See
+      // OVERLAY_REPAIR: the cached `posts` collection may hold analysis the old overlay destroyed.
+      if (seeded === SEED_VERSION && repaired === OVERLAY_REPAIR) {
         const [posts, questions, topics, resources, analysisConfirmed, infographs] = await Promise.all(
           COLLECTIONS.map(c => idbGet<unknown[]>(c).then(v => v ?? []))
         )
@@ -656,6 +690,7 @@ export function loadLocalData(): Promise<LocalStore> {
         try {
           await Promise.all(COLLECTIONS.map(c => idbSet(c, (raw as Record<string, unknown>)[c])))
           await idbSet('__seed_version__', SEED_VERSION)
+          await idbSet('__overlay_repair__', OVERLAY_REPAIR)
         } catch { /* private-mode / quota — fall back to in-memory only */ }
       }
 
@@ -675,7 +710,17 @@ export function loadLocalData(): Promise<LocalStore> {
       // use alone. The public bundle ships those edits baked in by
       // scripts/export-firestore.mjs instead, so it needs no reads at all and scales
       // without limit.
-      if (!IS_PUBLIC_SITE) await applyCloudOverrides(cache)
+      if (!IS_PUBLIC_SITE) {
+        await applyCloudOverrides(cache)
+        // Editorial only, and deliberately on `window`: the browser gate has to be able to ASK what
+        // the overlay did. A gate that can only see the rendered page cannot tell "the overlay
+        // correctly applied nothing" from "the overlay never ran".
+        const r = getOverlayReport()
+        if (r) {
+          ;(globalThis as unknown as Record<string, unknown>).__qOverlayReport = r
+          console.info(`[overlay] ${r.docsApplied}/${r.docs} docs applied · ${r.fieldsApplied} fields applied · ${r.fieldsSkipped} skipped as not newer than the bundle`)
+        }
+      }
       return cache
     })()
   }
@@ -684,16 +729,47 @@ export function loadLocalData(): Promise<LocalStore> {
 
 // Pull edits from Firestore and apply them on top of the local store, then persist so the
 // overlaid data survives the next offline launch. Failures are silent (stays local-only).
+/** What the last overlay actually did. Read by the browser gate and logged in dev — see the note
+ *  at `overlayReport =` below on why this is counted rather than assumed. */
+export interface OverlayReport { docs: number; docsApplied: number; fieldsApplied: number; fieldsSkipped: number }
+let overlayReport: OverlayReport | null = null
+export function getOverlayReport(): OverlayReport | null { return overlayReport }
+
 async function applyCloudOverrides(store: LocalStore): Promise<void> {
   const ov = await fetchOverrides().catch(() => null)
   if (!ov) return
   let postsTouched = false
   let questionsTouched = false
 
+  // PROVENANCE, NOT Object.assign.
+  //
+  // This was `Object.assign(p, fields)`, which replaces `postAnalysis` WHOLESALE with Firestore's
+  // copy. That copy is months old: measured 2026-08-21, all 1,348 docs carrying a postAnalysis
+  // differed from the bundle, none had claimSpans at all, and the newest edit in the collection
+  // predates the queue ruling by ten days. It erased 1,208 claims, 62 predictions and 930 entity
+  // mentions across 244 posts — on the editorial surface, the one the owner reviews on.
+  //
+  // The export path performs the same bake and then re-runs the apply chain, which rebuilds every
+  // certified section on top. There is no apply chain in a browser, so the overlay has to decline
+  // the stale field instead of repairing it afterwards. See src/lib/overrideProvenance.ts.
+  let fieldsApplied = 0, fieldsSkipped = 0, docsApplied = 0
   for (const [postId, fields] of Object.entries(ov.posts)) {
     const p = store.postsById.get(postId)
-    if (p) { Object.assign(p, fields); postsTouched = true }
+    if (!p) continue
+    const { apply, applied, skipped } = selectOverrideFields(
+      fields as Record<string, unknown>, ov.postMeta?.[postId], OVERRIDES_BAKED_THROUGH,
+    )
+    fieldsSkipped += skipped.length
+    if (applied.length === 0) continue
+    fieldsApplied += applied.length
+    docsApplied++
+    Object.assign(p, apply)
+    postsTouched = true
   }
+  // Counted rather than assumed. A run that silently applied nothing and a run that silently
+  // applied everything look identical from the outside, and this defect lived for months inside
+  // exactly that silence.
+  overlayReport = { docs: Object.keys(ov.posts).length, docsApplied, fieldsApplied, fieldsSkipped }
 
   for (const qe of ov.questions) {
     if (qe.deleted) {
