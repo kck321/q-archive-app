@@ -69,6 +69,74 @@ if (final.rows.length - keptRows.length !== withdrawnByRuling.size) {
   process.exit(1)
 }
 final.rows = keptRows
+
+// ── THE UNHIGHLIGHTED-SENTENCE QUEUE, RULED BY THE OWNER (2026-08-20) ────────
+//
+// audit/unhighlighted-owner-rulings.json is the one record of that batch. It is layered here
+// rather than written into claims-final.json for the same reason the predictions audit and the
+// question rulings are: the frozen artifact stays exactly as it was certified, so re-deriving the
+// claims audit can neither restore a withdrawn row nor erase a ruled one.
+//
+// Claims and Predictions both arrive from that file. They are one family internally (every row is
+// an assertion) and two sections on screen, so each ruling lands in the array its section names
+// and the displayClass written below does the rest.
+//
+// confidence OWNER_ADJUDICATED is load-bearing, not decorative. It is what exempts a row from the
+// source-material leak gate further down — the owner ruled several pasted lines to be Q's own
+// assertions, and an audit artifact frozen under an older quote detector cannot overrule that —
+// and it is what apply-context-units.mjs reads to withdraw the span from Context, because Context
+// means "reviewed, and in no semantic category" and a ruled line is no longer that.
+const RULINGS = path.join(ROOT, 'audit/unhighlighted-owner-rulings.json')
+const queueRulings = fs.existsSync(RULINGS) ? JSON.parse(fs.readFileSync(RULINGS, 'utf8')).rulings ?? [] : []
+//
+// INSERTION IS OCCURRENCE-AWARE, NOT KEY-AWARE. Q writes "Fantasy land." four times in #111 and
+// the queue carries four rows for it, because the audit emitted one row per UNIT. Deduplicating by
+// (post, key) would certify one of the four and silently drop three real occurrences — the same
+// mistake every other layer here has already made once. What is added is the SHORTFALL: how many
+// times the owner ruled it, less how many the artifact already holds.
+const stats2020 = { claimsAdded: 0, claimsAlready: 0, predsAdded: 0, predsAlready: 0 }
+const haveCount = new Map()
+for (const x of final.rows) { const k = `claims|${x.postNum}|${key(x.exactText)}`; haveCount.set(k, (haveCount.get(k) ?? 0) + 1) }
+for (const x of final.predictions) { const k = `predictions|${x.postNum}|${key(x.exactText)}`; haveCount.set(k, (haveCount.get(k) ?? 0) + 1) }
+const emitted = new Map()
+for (const r of queueRulings) {
+  if (r.section !== 'claims' && r.section !== 'predictions') continue
+  const k = `${r.section}|${r.postNum}|${key(r.sourceText)}`
+  const already = haveCount.get(k) ?? 0
+  const done = emitted.get(k) ?? 0
+  if (done < already) {
+    emitted.set(k, done + 1)
+    if (r.section === 'predictions') stats2020.predsAlready++; else stats2020.claimsAlready++
+    continue
+  }
+  emitted.set(k, done + 1)
+  const row = {
+    postNum: r.postNum,
+    postId: r.postId,
+    exactText: r.sourceText,
+    primaryClass: r.section === 'predictions' ? 'prediction' : 'claim',
+    isPrediction: r.section === 'predictions',
+    isConclusion: false,
+    // Attributes are NOT invented. The owner ruled the section; nothing in the review says an
+    // assertion is checkable or carries its source, so those stay false rather than being
+    // guessed into two certified counts that already have a meaning.
+    checkable: false,
+    sourceProvided: false,
+    telegraphic: r.section === 'claims' && r.sourceText.split(/\s+/).filter(Boolean).length <= 4,
+    confidence: 'OWNER_ADJUDICATED',
+    provenance: `owner ruling ${r.ruledOn} — unhighlighted-sentence queue`,
+  }
+  if (r.section === 'predictions') { final.predictions.push(row); stats2020.predsAdded++ }
+  else { final.rows.push(row); stats2020.claimsAdded++ }
+}
+// A LINE MAY NOT BE BOTH. The two arrays are separate sections on screen, and a ruling that landed
+// in one while an earlier certification held the same occurrence in the other would paint amber
+// and violet at once and be counted twice. Predictions win where the owner ruled Predictions.
+const ruledPrediction = new Set(queueRulings.filter(r => r.section === 'predictions').map(r => `${r.postNum}|${key(r.sourceText)}`))
+const beforeCrossPull = final.rows.length
+final.rows = final.rows.filter(r => !ruledPrediction.has(`${r.postNum}|${key(r.exactText)}`))
+const crossPulled = beforeCrossPull - final.rows.length
+
 const ph3 = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/claims-adjudicated.json'), 'utf8'))
 const v2 = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/claims-audit.json'), 'utf8'))
 
@@ -224,18 +292,27 @@ const directives = posts.reduce((n, p) => n + (p.actionRequests?.length ?? 0), 0
 const checks = [
   // 4,242 - 68 moved out to Predictions (P4) + 47 arriving from Predictions (P1) = 4,221.
   // 4,221 - 9 withdrawn to Questions by owner ruling (2026-08-19) = 4,212.
-  ['claim occurrences = 4,212', allClaims.length === 4212, allClaims.length],
+  // 4,212 + 4,716 arriving from the unhighlighted-sentence queue = 8,928. The owner ruled 4,782
+  // sentences to be Claims; 66 of those occurrences were already certified, so 4,716 are new.
+  ['claim occurrences = 8,928', allClaims.length === 8928, allClaims.length],
+  ['queue rulings applied = 4,782 claims / 250 predictions',
+    stats2020.claimsAdded + stats2020.claimsAlready === 4782 && stats2020.predsAdded + stats2020.predsAlready === 250,
+    `${stats2020.claimsAdded}+${stats2020.claimsAlready} claims, ${stats2020.predsAdded}+${stats2020.predsAlready} predictions`],
   ['all resolve to their Q source span', unresolved.length === 0, `${allClaims.length - unresolved.length}/${allClaims.length}`],
   // +11: the 47 arrivals introduce 44 wordings Claims did not already hold, while the 68
   // departures empty 33 keys entirely ("Future proves past." left every post that carried it).
   // -9: every withdrawn wording occurs in exactly one post, so each empties its own key.
-  ['distinct = 3,247', distinct.size === 3247, distinct.size],
+  // +3,581: the 4,716 new occurrences carry 3,581 wordings Claims did not already hold. The gap
+  // is in-post and cross-post repetition — "Fantasy land." alone arrives four times in #111.
+  ['distinct = 6,828', distinct.size === 6828, distinct.size],
   // +1: 17 posts gain their first claim, 16 posts lose their last one.
   // -3: #483, #2695 and #3203 each held ONE claim and it was the quoted question, so those
   // drops leave the Claims post set entirely. #2420 and #2776 keep other claims and stay.
-  ['posts = 1,980', postsWith.size === 1980, postsWith.size],
+  // +1,104: the queue reached 4,484 posts, and 1,104 of them held no certified claim before.
+  ['posts = 3,084', postsWith.size === 3084, postsWith.size],
   // 630 - 73 technical nonpredictions - 56 arguable + 66 from Claims + 28 found = 595.
-  ['predictions = 595', allPreds.length === 595, allPreds.length],
+  // 595 + 247 from the queue (250 ruled, 3 occurrences already certified) = 842.
+  ['predictions = 842', allPreds.length === 842, allPreds.length],
   // isConclusion travels with the ROW rather than with the section, so a row leaving Claims
   // takes the attribute with it. -1: #3203's quoted question was the only withdrawn row
   // carrying it. 966 - 1 = 965.
@@ -243,13 +320,21 @@ const checks = [
   // +5: 18 checkable rows arrive from Predictions, 13 checkable rows leave for Predictions.
   // Same rule, same reason: -6 of the 9 withdrawn rows were checkable (#483, #2695 x2,
   // #2776 x2, #3203). 1,931 - 6 = 1,925.
+  // UNMOVED, and deliberately. checkable and sourceProvided are attributes the claims audit
+  // established from evidence in the drop; the owner ruled a SECTION, not an attribute, so no
+  // queue row sets either. Inventing them would inflate two certified counts from a guess.
   ['checkable = 1,925', checkable === 1925, checkable],
   // +1: 5 arrive carrying sourceProvided, 4 leave with it.
   ['sourceProvided = 439', sourceProvided === 439, sourceProvided],
   // -2: two departing claims were telegraphic. Predictions never carried the attribute, so
   // nothing arrives with it.
-  ['telegraphic = 387', telegraphic === 387, telegraphic],
-  ['in-post repeats preserved = 13', repeats === 13, repeats],
+  // +3,159. telegraphic is not a judgement — it is "four words or fewer", computed the same way
+  // apply-owner-claims.mjs computes it, and the queue is overwhelmingly short label-like lines
+  // ("Poof!", "Classified.", "Ten days."). 387 + 3,159 = 3,546.
+  ['telegraphic = 3,546', telegraphic === 3546, telegraphic],
+  // 13 + 37: the queue emitted one row per UNIT, so a line Q wrote twice arrives twice and is
+  // certified twice. Collapsing them would have dropped 37 real occurrences.
+  ['in-post repeats preserved = 50', repeats === 50, repeats],
   ['no editorial paraphrase shown as Q', paraLeak.length === 0, `${paraLeak.length} leaked`],
   ['no source material shown as Q', srcLeak.length === 0, `${srcLeak.length} leaked`],
   // 6,443 + 11 arriving by owner ruling (2026-08-19) = 6,454.
@@ -264,6 +349,10 @@ console.log(`  claims written      : ${allClaims.length.toLocaleString()}`)
 console.log(`  predictions written : ${allPreds.length.toLocaleString()}`)
 console.log(`  paraphrases held    : ${posts.reduce((n, p) => n + (p.editorialParaphrases?.length ?? 0), 0).toLocaleString()} (searchable, never shown as Q)`)
 console.log(`  claimMeta entries   : ${meta.length.toLocaleString()}`)
+console.log(`\n  from the unhighlighted-sentence queue (owner ruling 2026-08-20)`)
+console.log(`    claims      +${stats2020.claimsAdded.toLocaleString()}  (${stats2020.claimsAlready} already certified)`)
+console.log(`    predictions +${stats2020.predsAdded.toLocaleString()}  (${stats2020.predsAlready} already certified)`)
+console.log(`    withdrawn from Claims because the owner ruled them Predictions: ${crossPulled}`)
 console.log('\n  QA GATE')
 let failed = 0
 for (const [label, ok, got] of checks) { if (!ok) failed++; console.log(`    ${ok ? 'PASS' : 'FAIL'}  ${label.padEnd(36)} ${got}`) }
