@@ -1,0 +1,287 @@
+{
+ "note": "Step 3B-1 DRY RUN. No classification data was written, no count moved, no seed incremented.",
+ "baselineSeed": 85,
+ "productionSeed": 78,
+ "inputs": {
+  "public/data/posts.json": "52f5fa2641183017efa4a008ff6542288119e4b6539898bb6e7cfc38b1d91120",
+  "scripts/lib/runtimeText.mjs": "5c7029a3f01b20fd29b8e7e94da98d2cd820e8aa2c254594f933e4df2573caf4",
+  "scripts/lib/sentenceLedger.mjs": "080cad201a141b5240ec761500fab7a78ca588d550827f0a69485c94e29f3897",
+  "audit/occurrence-ledger.json": "35b62c2c3439c5e2c65759be748c01b4857dcf5b4eb104f86bd2874c1a66fcb3",
+  "audit/occurrence-ledger-dryrun.json": "60468012d1d428e3a6400295cbc78157f3c746befd73c911ec71382226b00836"
+ },
+ "files": [
+  {
+   "file": "01-MULTI-PRIMARY-117.csv",
+   "rows": 117,
+   "sha256": "6a84680c605c4c47cbc8f0f57876d5f133e51b99bc8a08ac04f942024eb6773b"
+  },
+  {
+   "file": "02-PARTIAL-28.csv",
+   "rows": 28,
+   "sha256": "5d1ea67f99d7ca03e0e8c2fab7e12bf5aa6b976bb2919f701acda1c9bf2799cc"
+  },
+  {
+   "file": "03-SOURCE-DISPOSITIONS-3.csv",
+   "rows": 3,
+   "sha256": "4568ca50e2adf6757365a27837f3e69e8687b023b56247edfacbd0ecd8e52b1e"
+  },
+  {
+   "file": "04-DUPLICATE-MERGES-106.csv",
+   "rows": 148,
+   "sha256": "e2abd9a73dcc787140d2ee0eef245b198e87137c0174f81e1242a9d8e11754a2"
+  },
+  {
+   "file": "05-NESTED-OVERLAPS.csv",
+   "rows": 51,
+   "sha256": "8f144c16fade0cddfe5d84a6f89074a147a70fbf8b43444527a0fb4e381d5e83"
+  },
+  {
+   "file": "06-CONTEXT-MOVES-108.csv",
+   "rows": 108,
+   "sha256": "30e91dbe3396c2a7b6bc5249c1e9d80793377bc522e3ed14960cc388d0e06a81"
+  },
+  {
+   "file": "07-DIRECTIVE-QUESTION-UNIFIED.csv",
+   "rows": 220,
+   "sha256": "2e59b655f50d3f1b4ca8e6c2667d77d8fdb965529836d522be289ba94030b9b4"
+  },
+  {
+   "file": "08-POPULATION-INTERSECTIONS.csv",
+   "rows": 9,
+   "sha256": "17079c81f841ea95d63cd58aac780e7de525a79f7c1344d901ff5848dea27d06"
+  },
+  {
+   "file": "09-COUNT-PROJECTION.csv",
+   "rows": 9,
+   "sha256": "0f39151b5f957d905e55d16a73c8fac62d62565533285efc26c527cedd3114f0"
+  },
+  {
+   "file": "10-CONFLICTS-HELD.csv",
+   "rows": 945,
+   "sha256": "bd22274619b9dff3b4c493fbb50c391a2a077a2f2838f40db7e87ca86071e301"
+  },
+  {
+   "file": "STEP3B1-APPLY-PLAN.jsonl",
+   "rows": 340,
+   "sha256": "a6121f445631dc90837630a0dcd9f5317bd584897ba3dcb3198ac7ca112c8340"
+  },
+  {
+   "file": "00-STEP3B1-INDEX.md",
+   "rows": 75,
+   "sha256": "aea6af03144c8f38bb1fbff2e9a41cf77eb8bf83a6ef8b1f8ab1f8568fd3abbc"
+  }
+ ],
+ "counts": {
+  "ledgerRecords": 35255,
+  "actions": 340,
+  "populations": [
+   {
+    "population": "MULTI_PRIMARY_117",
+    "rawRecordCount": 117,
+    "uniqueOccurrenceKeyCount": 235,
+    "uniqueSentenceIdCount": 117
+   },
+   {
+    "population": "MULTI_PRIMARY_EXACT_89",
+    "rawRecordCount": 89,
+    "uniqueOccurrenceKeyCount": 178,
+    "uniqueSentenceIdCount": 89
+   },
+   {
+    "population": "CONTAINED_PARTIAL_28",
+    "rawRecordCount": 28,
+    "uniqueOccurrenceKeyCount": 57,
+    "uniqueSentenceIdCount": 28
+   },
+   {
+    "population": "DIRECTIVE_QUESTION_220",
+    "rawRecordCount": 220,
+    "uniqueOccurrenceKeyCount": 440,
+    "uniqueSentenceIdCount": 220
+   },
+   {
+    "population": "WRAPPED_PARTIAL_51",
+    "rawRecordCount": 51,
+    "uniqueOccurrenceKeyCount": 51,
+    "uniqueSentenceIdCount": 51
+   },
+   {
+    "population": "BOUNDARY_CROSSING_242",
+    "rawRecordCount": 242,
+    "uniqueOccurrenceKeyCount": 240,
+    "uniqueSentenceIdCount": 0
+   },
+   {
+    "population": "DUPLICATE_KEYS_148",
+    "rawRecordCount": 148,
+    "uniqueOccurrenceKeyCount": 102,
+    "uniqueSentenceIdCount": 0
+   },
+   {
+    "population": "CONTEXT_COLLISION_108",
+    "rawRecordCount": 108,
+    "uniqueOccurrenceKeyCount": 108,
+    "uniqueSentenceIdCount": 108
+   },
+   {
+    "population": "UNLOCATED_645",
+    "rawRecordCount": 645,
+    "uniqueOccurrenceKeyCount": 0,
+    "uniqueSentenceIdCount": 0
+   }
+  ],
+  "boundaryDuplicateIntersection": [
+   "2971|questions|561|799",
+   "4454|questions|238|404"
+  ],
+  "projection": [
+   {
+    "source": "q_authored",
+    "layer": "primary",
+    "category": "claim",
+    "before": 8912,
+    "delta": -83,
+    "after": 8829,
+    "headlineEligible": true
+   },
+   {
+    "source": "q_authored",
+    "layer": "primary",
+    "category": "directive",
+    "before": 3037,
+    "delta": -84,
+    "after": 2953,
+    "headlineEligible": true
+   },
+   {
+    "source": "q_authored",
+    "layer": "primary",
+    "category": "prediction",
+    "before": 847,
+    "delta": -4,
+    "after": 843,
+    "headlineEligible": true
+   },
+   {
+    "source": "q_authored",
+    "layer": "primary",
+    "category": "question",
+    "before": 6503,
+    "delta": -170,
+    "after": 6333,
+    "headlineEligible": true
+   },
+   {
+    "source": "q_authored",
+    "layer": "secondary",
+    "category": "claim",
+    "before": 0,
+    "delta": 80,
+    "after": 80,
+    "headlineEligible": false
+   },
+   {
+    "source": "q_authored",
+    "layer": "secondary",
+    "category": "directive",
+    "before": 0,
+    "delta": 84,
+    "after": 84,
+    "headlineEligible": false
+   },
+   {
+    "source": "q_authored",
+    "layer": "secondary",
+    "category": "prediction",
+    "before": 0,
+    "delta": 4,
+    "after": 4,
+    "headlineEligible": false
+   },
+   {
+    "source": "q_authored",
+    "layer": "secondary",
+    "category": "question",
+    "before": 0,
+    "delta": 170,
+    "after": 170,
+    "headlineEligible": false
+   },
+   {
+    "source": "quoted_source",
+    "layer": "primary",
+    "category": "claim",
+    "before": 0,
+    "delta": 3,
+    "after": 3,
+    "headlineEligible": false
+   }
+  ]
+ },
+ "determinism": {
+  "note": "Generated twice into separate directories and compared byte for byte. No wall clock, no randomness, and every collection is emitted in a stable order.",
+  "filesCompared": 13,
+  "identical": true
+ },
+ "duplicateSplit": {
+  "note": "The 106/42 split the review expected is correct, but not for the reason either of us thought. Once the ledger stored MATCHED characters instead of search terms, every duplicate pair read identically and the text axis stopped separating anything. The split is by IDENTITY: 42 keys are one span claimed by two canonical identities (\"Arizona\" and \"AZ\" over the same two characters).",
+  "IDENTICAL_METADATA": 106,
+  "COMPLEMENTARY_METADATA": 0,
+  "CONFLICTING_METADATA": 42
+ },
+ "entityFigures": {
+  "note": "Source-aware Q / QAnon / Anons sweep figures. Terminal-signature exclusion is POSITIONAL; source material is excluded through the archive's own sourceLines() detector.",
+  "perEntity": [
+   {
+    "term": "Q",
+    "candidates": 4521,
+    "included": 137,
+    "excluded": 4384,
+    "posts": 112
+   },
+   {
+    "term": "QAnon",
+    "candidates": 158,
+    "included": 153,
+    "excluded": 5,
+    "posts": 49
+   },
+   {
+    "term": "Anons",
+    "candidates": 112,
+    "included": 111,
+    "excluded": 1,
+    "posts": 109
+   }
+  ],
+  "unionPosts": 259,
+  "excludedTotal": 4390,
+  "exclusionsByReason": {
+   "terminal signature": 4346,
+   "URL or path": 15,
+   "Q&A — Q means Question": 8,
+   "source material — sustained prose block — pasted or quoted passage": 6,
+   "FAQ label \"Q:\" — Q means Question": 4,
+   "Q clearance / Q fever — not the persona": 2,
+   "source material — excerpt beneath a source link": 2,
+   "source material — dictionary entry (continuation)": 2,
+   "source material — greentext excerpt": 2,
+   "technical code (Q-T2810C)": 1,
+   "source material — inside a multi-line quotation": 1,
+   "source material — quoted FAQ question": 1
+  },
+  "supersedes": "The earlier 116 / 111 / 52 post figures came from a filter that removed EVERY standalone Q line rather than only the terminal signature, and from counting without source-awareness."
+ },
+ "assertions": {
+  "identityReconstructionCount": 0,
+  "runtimeSubstringMismatchCount": 0,
+  "automaticActionConsumesConflictHeldKeyCount": 0,
+  "oldOccurrenceKeyAssignedToMultipleActionsCount": 0,
+  "duplicateActionIds": 0,
+  "unifiedDirectiveQuestionActions": 220,
+  "unifiedDirectiveQuestionOldKeys": 440,
+  "actionsWithPartialQuestionSide": 51,
+  "multiPrimaryActions": 117
+ },
+ "fatal": []
+}

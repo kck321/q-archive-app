@@ -1,0 +1,109 @@
+sentenceId,postNum,reviewKind,primaryKind,start,end,text,proposedReviewDisposition
+p1077-s004,1077,context,directives,56,77,Prevent at all costs.,contextual
+p1100-s016,1100,context,directives,379,395,Drain the swamp.,contextual
+p0111-s013,111,context,directives,381,388,Repeat.,contextual
+p0112-s008,112,context,directives,362,369,Repeat.,contextual
+p0112-s015,112,context,directives,602,634,Summarize and paint the picture.,contextual
+p1124-s002,1124,context,directives,14,32,Testify then drop.,contextual
+p0116-s002,116,context,directives,47,65,Upload to graphic.,contextual
+p0118-s004,118,context,directives,147,154,Repeat.,contextual
+p1226-s009,1226,context,predictions,118,156,DNC to initiate lawsuit (pre-planned).,contextual
+p1248-s003,1248,context,directives,36,42,Fight!,contextual
+p1275-s004,1275,context,directives,151,165,No redactions.,contextual
+p0128-s041,128,context,directives,1151,1165,Be [p]repared.,contextual
+p1291-s009,1291,context,directives,273,283,Step back.,contextual
+p1318-s060,1318,context,directives,2319,2336,No outside comms.,contextual
+p1336-s020,1336,context,predictions,559,580,Future to prove past.,contextual
+p1341-s000,1341,context,directives,10,26,Time to move on.,contextual
+p1380-s007,1380,context,directives,132,138,Focus.,contextual
+p1468-s003,1468,context,predictions,68,81,More to come.,contextual
+p1496-s009,1496,context,predictions,238,260,[#3 released tomorrow],contextual
+p0153-s022,153,context,directives,1519,1525,Laugh.,contextual
+p1557-s001,1557,context,directives,33,50,Let’s start here.,contextual
+p0157-s026,157,context,directives,853,870,Rinse and repeat.,contextual
+p1575-s000,1575,context,directives,0,13,Abandon ship!,contextual
+p1645-s000,1645,context,directives,0,10,Play LOUD.,contextual
+p1792-s003,1792,context,directives,156,165,Fear not.,contextual
+p1817-s002,1817,context,directives,46,60,Say something.,contextual
+p1863-s004,1863,context,directives,72,78,FIGHT!,contextual
+p1899-s001,1899,context,directives,43,58,Travel to Rome.,contextual
+p1902-s003,1902,context,directives,66,81,Travel to Rome.,contextual
+p1916-s003,1916,context,directives,134,148,Say something.,contextual
+p1953-s003,1953,context,directives,72,88,Know your enemy.,contextual
+p2038-s002,2038,context,directives,69,75,FIGHT!,contextual
+p2039-s003,2039,context,directives,69,96,"LET FREEDOM RING, PATRIOTS.",contextual
+p2206-s012,2206,context,directives,560,566,FIGHT!,contextual
+p2239-s002,2239,context,directives,57,70,Say something,contextual
+p0225-s004,225,context,predictions,119,155,When this breaks many won’t swallow.,contextual
+p0242-s000,242,context,directives,0,17,Be here tomorrow.,contextual
+p2429-s001,2429,context,predictions,60,74,DECLAS coming.,contextual
+p2474-s002,2474,context,directives,41,47,FIGHT!,contextual
+p2499-s006,2499,context,directives,294,308,Say something.,contextual
+p2540-s003,2540,context,directives,106,133,Please allow us to counter.,contextual
+p2554-s006,2554,context,directives,231,245,Say something.,contextual
+p2604-s021,2604,context,directives,824,850,Be in control of yourself.,contextual
+p2677-s001,2677,context,directives,25,54,It's time to return publicly.,contextual
+p2710-s001,2710,context,directives,12,48,Register all data pulls to location.,contextual
+p2726-s000,2726,context,directives,0,22,Be alert next 10 days.,contextual
+p2777-s000,2777,context,directives,10,36,Disregard any misspelling.,contextual
+p2877-s000,2877,context,directives,10,46,Disregard all spelling/other errors.,contextual
+p2967-s001,2967,context,directives,22,43,Switch private_reg_C.,contextual
+p3003-s001,3003,context,predictions,78,101,[Parts 3-9 coming soon],contextual
+p3040-s005,3040,context,directives,178,195,Let Freedom Ring!,contextual
+p3072-s000,3072,context,directives,10,35,Disregard spelling error.,contextual
+p3077-s003,3077,context,directives,58,72,Say Something.,contextual
+p0310-s004,310,context,directives,140,172,Re-listen to yesterday's speech.,contextual
+p3111-s003,3111,context,directives,188,207,Let's Keep Playing…,contextual
+p3256-s001,3256,context,questions,63,78,USA v. LifeLog?,contextual
+p3308-s000,3308,context,directives,0,30,Disregard any spelling errors.,contextual
+p3373-s001,3373,context,directives,26,37,Sleep well.,contextual
+p3383-s013,3383,context,directives,762,778,DRAIN THE SWAMP.,contextual
+p0345-s001,345,context,directives,37,45,Enhance.,contextual
+p3528-s001,3528,context,directives,59,75,DRAIN THE SWAMP!,contextual
+p3568-s003,3568,context,directives,43,57,Say something.,contextual
+p3568-s004,3568,context,directives,58,94,Know your surroundings at all times.,contextual
+p3588-s026,3588,context,directives,1250,1275,Be free in your thoughts.,contextual
+p3627-s003,3627,context,directives,39,44,Watch,contextual
+p3663-s006,3663,context,directives,132,148,DRAIN THE SWAMP!,contextual
+p3748-s008,3748,context,directives,474,480,Fight!,contextual
+p3839-s001,3839,context,directives,60,81,It's time to wake up.,contextual
+p3964-s001,3964,context,directives,56,68,Be informed.,contextual
+p4089-s002,4089,context,directives,67,88,It's time to wake up.,contextual
+p4135-s001,4135,context,directives,58,79,It's time to wake up.,contextual
+p4140-s001,4140,context,directives,50,67,LET FREEDOM RING!,contextual
+p4161-s000,4161,context,directives,0,10,Disregard.,contextual
+p0425-s009,425,context,directives,201,207,TRUST.,contextual
+p4424-s003,4424,context,directives,133,151,Be All You Can Be.,contextual
+p4496-s002,4496,context,directives,79,122,Surrender to None ['Digital Battleground'].,contextual
+p4498-s002,4498,context,directives,63,84,Know your weaknesses.,contextual
+p4498-s003,4498,context,directives,85,91,Adapt.,contextual
+p4498-s004,4498,context,directives,92,101,Overcome.,contextual
+p4550-s000,4550,context,directives,10,19,Fear not.,contextual
+p4550-s015,4550,context,directives,516,536,Let light guide you.,contextual
+p4666-s001,4666,context,directives,15,29,Say something.,contextual
+p4683-s005,4683,context,directives,39,44,Know.,contextual
+p4694-s000,4694,context,directives,0,16,Know your enemy.,contextual
+p0477-s004,477,context,directives,41,71,Wind the clock w/ all markers.,contextual
+p4851-s008,4851,context,directives,431,447,DRAIN THE SWAMP.,contextual
+p4852-s001,4852,context,directives,60,87,Let's keep the party going.,contextual
+p4893-s014,4893,context,directives,573,589,DRAIN THE SWAMP.,contextual
+p0490-s002,490,context,directives,143,160,Let FREEDOM RING.,contextual
+p4962-s007,4962,context,directives,121,128,Repeat.,contextual
+p0538-s010,538,context,directives,360,366,TRUST.,contextual
+p0568-s007,568,context,directives,153,159,TRUST.,contextual
+p0059-s006,59,context,directives,281,311,Combine all posts and analyze.,contextual
+p0621-s001,621,context,directives,37,54,Let that sink in.,contextual
+p0622-s000,622,context,directives,0,20,"Time to play, Dopey.",contextual
+p0672-s005,672,context,directives,78,86,Enhance.,contextual
+p0673-s004,673,context,directives,93,102,No edits.,contextual
+p0756-s030,756,context,directives,507,543,ACTIVATE CODE: [0 0000 018739 7-ZjG],contextual
+p0780-s002,780,context,predictions,242,261,Future proves past:,contextual
+p0080-s000,80,context,directives,0,25,We need to get organized.,contextual
+p0837-s002,837,context,directives,62,68,TRUST.,contextual
+p0839-s013,839,context,directives,243,253,CHALLENGE.,contextual
+p0839-s014,839,context,directives,254,260,FIGHT.,contextual
+p0086-s004,86,context,directives,112,118,Study.,contextual
+p0868-s001,868,context,predictions,30,46,"Fail, they will.",contextual
+p0092-s022,92,context,directives,624,634,Speculate.,contextual
+p0981-s002,981,context,directives,43,63,"Sleep well, Patriot.",contextual
+p0099-s023,99,context,questions,342,370,A. Cooper family background?,contextual

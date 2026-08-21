@@ -1,0 +1,946 @@
+heldKey,reason,postNum,detail,alsoDuplicateKey
+1012|claims|9|222,BOUNDARY_CROSSING,1012,touches 2 sentences,false
+1015|claims|137|181,BOUNDARY_CROSSING,1015,touches 2 sentences,false
+102|themeAnchors|41|61,BOUNDARY_CROSSING,102,touches 2 sentences,false
+107|themeAnchors|0|134,BOUNDARY_CROSSING,107,touches 2 sentences,false
+1090|claims|137|164,BOUNDARY_CROSSING,1090,touches 2 sentences,false
+1098|claims|104|124,BOUNDARY_CROSSING,1098,touches 2 sentences,false
+1100|themeAnchors|0|51,BOUNDARY_CROSSING,1100,touches 2 sentences,false
+1192|claims|0|11,BOUNDARY_CROSSING,1192,touches 2 sentences,false
+120|claims|157|243,BOUNDARY_CROSSING,120,touches 5 sentences,false
+1237|claims|89|411,BOUNDARY_CROSSING,1237,touches 2 sentences,false
+1253|claims|0|262,BOUNDARY_CROSSING,1253,touches 2 sentences,false
+1280|claims|14|152,BOUNDARY_CROSSING,1280,touches 2 sentences,false
+1284|claims|30|274,BOUNDARY_CROSSING,1284,touches 2 sentences,false
+1285|claims|0|275,BOUNDARY_CROSSING,1285,touches 3 sentences,false
+1286|claims|306|642,BOUNDARY_CROSSING,1286,touches 3 sentences,false
+1287|claims|525|710,BOUNDARY_CROSSING,1287,touches 2 sentences,false
+1298|emphasis|10|19,BOUNDARY_CROSSING,1298,touches 0 sentences,false
+13|claims|59|99,BOUNDARY_CROSSING,13,touches 2 sentences,false
+1318|claims|1643|1781,BOUNDARY_CROSSING,1318,touches 2 sentences,false
+1318|claims|950|1037,BOUNDARY_CROSSING,1318,touches 2 sentences,false
+1318|claims|1111|1149,BOUNDARY_CROSSING,1318,touches 2 sentences,false
+1318|questions|1643|1781,BOUNDARY_CROSSING,1318,touches 2 sentences,false
+1361|claims|222|593,BOUNDARY_CROSSING,1361,touches 3 sentences,false
+1361|claims|1463|1809,BOUNDARY_CROSSING,1361,touches 3 sentences,false
+1439|claims|171|218,BOUNDARY_CROSSING,1439,touches 2 sentences,false
+1458|claims|10|422,BOUNDARY_CROSSING,1458,touches 2 sentences,false
+1481|claims|11|282,BOUNDARY_CROSSING,1481,touches 2 sentences,false
+15|claims|0|257,BOUNDARY_CROSSING,15,touches 3 sentences,false
+15|claims|307|808,BOUNDARY_CROSSING,15,touches 4 sentences,false
+1532|claims|0|110,BOUNDARY_CROSSING,1532,touches 2 sentences,false
+154|directives|995|1053,BOUNDARY_CROSSING,154,touches 2 sentences,false
+154|directives|769|820,BOUNDARY_CROSSING,154,touches 2 sentences,false
+154|directives|839|884,BOUNDARY_CROSSING,154,touches 2 sentences,false
+154|themeAnchors|885|1053,BOUNDARY_CROSSING,154,touches 5 sentences,false
+1544|claims|0|125,BOUNDARY_CROSSING,1544,touches 2 sentences,false
+1560|claims|31|224,BOUNDARY_CROSSING,1560,touches 2 sentences,false
+1589|claims|1052|1113,BOUNDARY_CROSSING,1589,touches 2 sentences,false
+16|claims|69|543,BOUNDARY_CROSSING,16,touches 5 sentences,false
+1644|claims|150|194,BOUNDARY_CROSSING,1644,touches 2 sentences,false
+1644|claims|196|227,BOUNDARY_CROSSING,1644,touches 2 sentences,false
+1695|claims|0|185,BOUNDARY_CROSSING,1695,touches 2 sentences,false
+17|claims|229|772,BOUNDARY_CROSSING,17,touches 7 sentences,false
+1708|emphasis|0|9,BOUNDARY_CROSSING,1708,touches 0 sentences,false
+1762|claims|247|685,BOUNDARY_CROSSING,1762,touches 3 sentences,false
+1764|claims|747|967,BOUNDARY_CROSSING,1764,touches 2 sentences,false
+1785|claims|0|296,BOUNDARY_CROSSING,1785,touches 3 sentences,false
+1785|claims|297|680,BOUNDARY_CROSSING,1785,touches 3 sentences,false
+1785|claims|681|981,BOUNDARY_CROSSING,1785,touches 3 sentences,false
+1785|claims|982|1320,BOUNDARY_CROSSING,1785,touches 3 sentences,false
+1790|claims|0|190,BOUNDARY_CROSSING,1790,touches 3 sentences,false
+1797|claims|331|635,BOUNDARY_CROSSING,1797,touches 3 sentences,false
+1797|claims|636|856,BOUNDARY_CROSSING,1797,touches 3 sentences,false
+1797|claims|857|1170,BOUNDARY_CROSSING,1797,touches 3 sentences,false
+1797|claims|1171|1456,BOUNDARY_CROSSING,1797,touches 3 sentences,false
+1797|claims|1457|1612,BOUNDARY_CROSSING,1797,touches 2 sentences,false
+1806|claims|43|361,BOUNDARY_CROSSING,1806,touches 3 sentences,false
+1814|claims|0|146,BOUNDARY_CROSSING,1814,touches 2 sentences,false
+1826|claims|28|270,BOUNDARY_CROSSING,1826,touches 3 sentences,false
+1826|claims|271|583,BOUNDARY_CROSSING,1826,touches 3 sentences,false
+1826|claims|584|975,BOUNDARY_CROSSING,1826,touches 3 sentences,false
+1826|claims|1324|1598,BOUNDARY_CROSSING,1826,touches 3 sentences,false
+1826|claims|1599|1874,BOUNDARY_CROSSING,1826,touches 3 sentences,false
+1826|claims|2209|2526,BOUNDARY_CROSSING,1826,touches 3 sentences,false
+1826|claims|2874|3136,BOUNDARY_CROSSING,1826,touches 3 sentences,false
+1841|claims|434|655,BOUNDARY_CROSSING,1841,touches 2 sentences,false
+1856|claims|549|827,BOUNDARY_CROSSING,1856,touches 3 sentences,false
+1856|claims|828|1147,BOUNDARY_CROSSING,1856,touches 3 sentences,false
+1856|claims|1148|1541,BOUNDARY_CROSSING,1856,touches 3 sentences,false
+1862|claims|654|842,BOUNDARY_CROSSING,1862,touches 2 sentences,false
+1880|claims|50|284,BOUNDARY_CROSSING,1880,touches 2 sentences,false
+19|claims|669|1107,BOUNDARY_CROSSING,19,touches 8 sentences,false
+1913|claims|67|257,BOUNDARY_CROSSING,1913,touches 3 sentences,false
+1915|claims|147|494,BOUNDARY_CROSSING,1915,touches 3 sentences,false
+1927|claims|2154|2399,BOUNDARY_CROSSING,1927,touches 3 sentences,false
+1927|claims|1024|1887,BOUNDARY_CROSSING,1927,touches 3 sentences,false
+1935|claims|226|514,BOUNDARY_CROSSING,1935,touches 2 sentences,false
+1939|claims|330|659,BOUNDARY_CROSSING,1939,touches 3 sentences,false
+1939|claims|660|952,BOUNDARY_CROSSING,1939,touches 3 sentences,false
+1939|claims|953|1153,BOUNDARY_CROSSING,1939,touches 3 sentences,false
+1945|claims|284|521,BOUNDARY_CROSSING,1945,touches 3 sentences,false
+1945|claims|522|819,BOUNDARY_CROSSING,1945,touches 3 sentences,false
+1945|claims|820|1179,BOUNDARY_CROSSING,1945,touches 3 sentences,false
+1945|claims|1180|1525,BOUNDARY_CROSSING,1945,touches 3 sentences,false
+1947|claims|869|1092,BOUNDARY_CROSSING,1947,touches 2 sentences,false
+1950|claims|230|402,BOUNDARY_CROSSING,1950,touches 2 sentences,false
+1982|claims|0|259,BOUNDARY_CROSSING,1982,touches 2 sentences,false
+1988|claims|71|146,BOUNDARY_CROSSING,1988,touches 2 sentences,false
+1992|claims|0|184,BOUNDARY_CROSSING,1992,touches 2 sentences,false
+1997|claims|0|268,BOUNDARY_CROSSING,1997,touches 2 sentences,false
+2003|emphasis|0|9,BOUNDARY_CROSSING,2003,touches 0 sentences,false
+2029|claims|819|1112,BOUNDARY_CROSSING,2029,touches 3 sentences,false
+2029|claims|1113|1483,BOUNDARY_CROSSING,2029,touches 3 sentences,false
+2032|claims|335|439,BOUNDARY_CROSSING,2032,touches 2 sentences,false
+2061|claims|10|70,BOUNDARY_CROSSING,2061,touches 2 sentences,false
+2061|claims|71|127,BOUNDARY_CROSSING,2061,touches 2 sentences,false
+21|claims|0|194,BOUNDARY_CROSSING,21,touches 2 sentences,false
+2107|claims|856|931,BOUNDARY_CROSSING,2107,touches 2 sentences,false
+2135|claims|129|413,BOUNDARY_CROSSING,2135,touches 2 sentences,false
+2136|claims|0|234,BOUNDARY_CROSSING,2136,touches 3 sentences,false
+2136|claims|934|1196,BOUNDARY_CROSSING,2136,touches 3 sentences,false
+2165|claims|629|889,BOUNDARY_CROSSING,2165,touches 3 sentences,false
+2171|claims|2052|2292,BOUNDARY_CROSSING,2171,touches 2 sentences,false
+2177|claims|168|578,BOUNDARY_CROSSING,2177,touches 5 sentences,false
+2180|claims|1242|1292,BOUNDARY_CROSSING,2180,touches 2 sentences,false
+23|claims|501|581,BOUNDARY_CROSSING,23,touches 2 sentences,false
+2319|claims|0|200,BOUNDARY_CROSSING,2319,touches 2 sentences,false
+2331|claims|61|355,BOUNDARY_CROSSING,2331,touches 3 sentences,false
+2351|directives|19|87,BOUNDARY_CROSSING,2351,touches 2 sentences,false
+2352|claims|98|187,BOUNDARY_CROSSING,2352,touches 2 sentences,false
+2373|claims|0|289,BOUNDARY_CROSSING,2373,touches 3 sentences,false
+2377|claims|0|232,BOUNDARY_CROSSING,2377,touches 2 sentences,false
+2378|directives|803|871,BOUNDARY_CROSSING,2378,touches 2 sentences,false
+2382|directives|90|234,BOUNDARY_CROSSING,2382,touches 3 sentences,false
+2386|claims|492|827,BOUNDARY_CROSSING,2386,touches 3 sentences,false
+2386|claims|828|1167,BOUNDARY_CROSSING,2386,touches 3 sentences,false
+2386|claims|1168|1522,BOUNDARY_CROSSING,2386,touches 3 sentences,false
+2386|claims|1768|2083,BOUNDARY_CROSSING,2386,touches 3 sentences,false
+2386|claims|2084|2344,BOUNDARY_CROSSING,2386,touches 3 sentences,false
+2386|claims|2345|2656,BOUNDARY_CROSSING,2386,touches 3 sentences,false
+2386|claims|3276|3662,BOUNDARY_CROSSING,2386,touches 3 sentences,false
+2386|claims|3987|4338,BOUNDARY_CROSSING,2386,touches 3 sentences,false
+2395|directives|99|181,BOUNDARY_CROSSING,2395,touches 2 sentences,false
+2399|claims|26|214,BOUNDARY_CROSSING,2399,touches 2 sentences,false
+24|claims|0|259,BOUNDARY_CROSSING,24,touches 3 sentences,false
+2425|emphasis|0|17,BOUNDARY_CROSSING,2425,touches 3 sentences,false
+2445|claims|222|326,BOUNDARY_CROSSING,2445,touches 2 sentences,false
+2445|claims|350|422,BOUNDARY_CROSSING,2445,touches 2 sentences,false
+246|context|0|5,BOUNDARY_CROSSING,246,touches 0 sentences,false
+25|claims|24|229,BOUNDARY_CROSSING,25,touches 3 sentences,false
+25|claims|232|355,BOUNDARY_CROSSING,25,touches 4 sentences,false
+2500|directives|118|336,BOUNDARY_CROSSING,2500,touches 2 sentences,false
+2523|claims|0|305,BOUNDARY_CROSSING,2523,touches 3 sentences,false
+2579|claims|0|175,BOUNDARY_CROSSING,2579,touches 2 sentences,false
+2590|claims|0|427,BOUNDARY_CROSSING,2590,touches 3 sentences,false
+26|claims|26|153,BOUNDARY_CROSSING,26,touches 4 sentences,false
+2692|claims|228|457,BOUNDARY_CROSSING,2692,touches 3 sentences,false
+2692|claims|510|620,BOUNDARY_CROSSING,2692,touches 3 sentences,false
+2692|claims|663|800,BOUNDARY_CROSSING,2692,touches 3 sentences,false
+27|claims|0|178,BOUNDARY_CROSSING,27,touches 2 sentences,false
+2714|claims|212|263,BOUNDARY_CROSSING,2714,touches 2 sentences,false
+2782|questions|0|104,BOUNDARY_CROSSING,2782,touches 2 sentences,false
+2801|directives|30|137,BOUNDARY_CROSSING,2801,touches 3 sentences,false
+2807|claims|259|454,BOUNDARY_CROSSING,2807,touches 3 sentences,false
+2807|claims|600|753,BOUNDARY_CROSSING,2807,touches 2 sentences,false
+2883|claims|105|294,BOUNDARY_CROSSING,2883,touches 2 sentences,false
+2894|claims|0|295,BOUNDARY_CROSSING,2894,touches 3 sentences,false
+2912|claims|63|345,BOUNDARY_CROSSING,2912,touches 3 sentences,false
+2912|claims|477|625,BOUNDARY_CROSSING,2912,touches 2 sentences,false
+292|emphasis|0|7,BOUNDARY_CROSSING,292,touches 0 sentences,false
+2938|predictions|1014|1106,BOUNDARY_CROSSING,2938,touches 2 sentences,false
+2939|claims|248|435,BOUNDARY_CROSSING,2939,touches 3 sentences,false
+2943|claims|479|763,BOUNDARY_CROSSING,2943,touches 3 sentences,false
+2968|claims|0|174,BOUNDARY_CROSSING,2968,touches 2 sentences,false
+2971|claims|248|456,BOUNDARY_CROSSING,2971,touches 2 sentences,false
+2971|claims|462|560,BOUNDARY_CROSSING,2971,touches 2 sentences,false
+2971|questions|561|799,BOUNDARY_CROSSING,2971,touches 3 sentences,true
+2971|questions|561|799,BOUNDARY_CROSSING,2971,touches 3 sentences,true
+2973|claims|32|219,BOUNDARY_CROSSING,2973,touches 3 sentences,false
+2989|questions|540|664,BOUNDARY_CROSSING,2989,touches 2 sentences,false
+3182|claims|297|461,BOUNDARY_CROSSING,3182,touches 3 sentences,false
+3316|claims|0|193,BOUNDARY_CROSSING,3316,touches 2 sentences,false
+339|emphasis|0|7,BOUNDARY_CROSSING,339,touches 0 sentences,false
+3428|directives|198|296,BOUNDARY_CROSSING,3428,touches 2 sentences,false
+3454|themeAnchors|112|416,BOUNDARY_CROSSING,3454,touches 2 sentences,false
+3580|claims|213|326,BOUNDARY_CROSSING,3580,touches 2 sentences,false
+3584|claims|37|168,BOUNDARY_CROSSING,3584,touches 2 sentences,false
+3588|claims|726|786,BOUNDARY_CROSSING,3588,touches 5 sentences,false
+3623|claims|539|631,BOUNDARY_CROSSING,3623,touches 2 sentences,false
+3623|claims|187|239,BOUNDARY_CROSSING,3623,touches 2 sentences,false
+3636|claims|177|204,BOUNDARY_CROSSING,3636,touches 2 sentences,false
+3656|directives|482|1064,BOUNDARY_CROSSING,3656,touches 2 sentences,false
+3748|claims|0|231,BOUNDARY_CROSSING,3748,touches 2 sentences,false
+3778|claims|334|619,BOUNDARY_CROSSING,3778,touches 2 sentences,false
+3809|claims|10|95,BOUNDARY_CROSSING,3809,touches 2 sentences,false
+3819|directives|0|83,BOUNDARY_CROSSING,3819,touches 2 sentences,false
+3819|directives|84|167,BOUNDARY_CROSSING,3819,touches 2 sentences,false
+3836|directives|279|384,BOUNDARY_CROSSING,3836,touches 2 sentences,false
+3896|claims|572|724,BOUNDARY_CROSSING,3896,touches 2 sentences,false
+3896|claims|1608|1714,BOUNDARY_CROSSING,3896,touches 2 sentences,false
+3896|directives|987|1095,BOUNDARY_CROSSING,3896,touches 3 sentences,false
+3909|questions|532|622,BOUNDARY_CROSSING,3909,touches 2 sentences,false
+3917|claims|0|91,BOUNDARY_CROSSING,3917,touches 2 sentences,false
+3990|questions|56|173,BOUNDARY_CROSSING,3990,touches 2 sentences,false
+3990|questions|174|248,BOUNDARY_CROSSING,3990,touches 2 sentences,false
+4|claims|723|855,BOUNDARY_CROSSING,4,touches 2 sentences,false
+4008|claims|874|944,BOUNDARY_CROSSING,4008,touches 2 sentences,false
+4122|claims|126|510,BOUNDARY_CROSSING,4122,touches 3 sentences,false
+4255|claims|44|76,BOUNDARY_CROSSING,4255,touches 7 sentences,false
+4285|claims|0|301,BOUNDARY_CROSSING,4285,touches 3 sentences,false
+4296|claims|23|55,BOUNDARY_CROSSING,4296,touches 2 sentences,false
+4320|claims|114|181,BOUNDARY_CROSSING,4320,touches 2 sentences,false
+4352|emphasis|94|1632,BOUNDARY_CROSSING,4352,touches 9 sentences,false
+4415|claims|0|420,BOUNDARY_CROSSING,4415,touches 3 sentences,false
+4437|claims|10|155,BOUNDARY_CROSSING,4437,touches 3 sentences,false
+4437|claims|252|356,BOUNDARY_CROSSING,4437,touches 3 sentences,false
+4454|questions|238|404,BOUNDARY_CROSSING,4454,touches 2 sentences,true
+4454|questions|238|404,BOUNDARY_CROSSING,4454,touches 2 sentences,true
+4494|questions|370|513,BOUNDARY_CROSSING,4494,touches 2 sentences,false
+4526|claims|86|206,BOUNDARY_CROSSING,4526,touches 2 sentences,false
+4536|questions|155|217,BOUNDARY_CROSSING,4536,touches 2 sentences,false
+4548|claims|724|954,BOUNDARY_CROSSING,4548,touches 2 sentences,false
+4555|claims|172|267,BOUNDARY_CROSSING,4555,touches 2 sentences,false
+4565|claims|106|298,BOUNDARY_CROSSING,4565,touches 2 sentences,false
+4595|claims|80|109,BOUNDARY_CROSSING,4595,touches 2 sentences,false
+4603|claims|278|369,BOUNDARY_CROSSING,4603,touches 2 sentences,false
+4620|themeAnchors|3002|3089,BOUNDARY_CROSSING,4620,touches 2 sentences,false
+4630|claims|755|999,BOUNDARY_CROSSING,4630,touches 2 sentences,false
+4635|claims|104|168,BOUNDARY_CROSSING,4635,touches 2 sentences,false
+4645|claims|369|709,BOUNDARY_CROSSING,4645,touches 3 sentences,false
+4653|claims|0|220,BOUNDARY_CROSSING,4653,touches 3 sentences,false
+4656|claims|112|156,BOUNDARY_CROSSING,4656,touches 2 sentences,false
+4656|claims|11|75,BOUNDARY_CROSSING,4656,touches 3 sentences,false
+466|questions|200|283,BOUNDARY_CROSSING,466,touches 2 sentences,false
+4668|claims|11|431,BOUNDARY_CROSSING,4668,touches 3 sentences,false
+4668|claims|432|703,BOUNDARY_CROSSING,4668,touches 2 sentences,false
+4669|claims|0|180,BOUNDARY_CROSSING,4669,touches 2 sentences,false
+4688|themeAnchors|1836|1924,BOUNDARY_CROSSING,4688,touches 2 sentences,false
+4831|claims|79|243,BOUNDARY_CROSSING,4831,touches 2 sentences,false
+484|themeAnchors|533|579,BOUNDARY_CROSSING,484,touches 2 sentences,false
+4842|claims|344|496,BOUNDARY_CROSSING,4842,touches 2 sentences,false
+4851|claims|327|430,BOUNDARY_CROSSING,4851,touches 2 sentences,false
+4872|claims|183|316,BOUNDARY_CROSSING,4872,touches 2 sentences,false
+4881|claims|456|531,BOUNDARY_CROSSING,4881,touches 2 sentences,false
+4881|emphasis|63|78,BOUNDARY_CROSSING,4881,touches 2 sentences,false
+4881|emphasis|79|99,BOUNDARY_CROSSING,4881,touches 2 sentences,false
+4881|emphasis|100|122,BOUNDARY_CROSSING,4881,touches 2 sentences,false
+4885|claims|687|776,BOUNDARY_CROSSING,4885,touches 2 sentences,false
+4887|claims|0|457,BOUNDARY_CROSSING,4887,touches 3 sentences,false
+4891|questions|187|276,BOUNDARY_CROSSING,4891,touches 2 sentences,false
+4935|claims|317|367,BOUNDARY_CROSSING,4935,touches 2 sentences,false
+497|claims|10|25,BOUNDARY_CROSSING,497,touches 2 sentences,false
+501|themeAnchors|23|64,BOUNDARY_CROSSING,501,touches 2 sentences,false
+526|claims|238|278,BOUNDARY_CROSSING,526,touches 2 sentences,false
+526|claims|427|469,BOUNDARY_CROSSING,526,touches 2 sentences,false
+64|claims|0|84,BOUNDARY_CROSSING,64,touches 2 sentences,false
+732|claims|250|527,BOUNDARY_CROSSING,732,touches 2 sentences,false
+756|context|54|89,BOUNDARY_CROSSING,756,touches 0 sentences,false
+770|claims|10|35,BOUNDARY_CROSSING,770,touches 2 sentences,false
+770|claims|37|63,BOUNDARY_CROSSING,770,touches 2 sentences,false
+859|claims|9|42,BOUNDARY_CROSSING,859,touches 2 sentences,false
+909|claims|63|91,BOUNDARY_CROSSING,909,touches 2 sentences,false
+983|emphasis|28|35,BOUNDARY_CROSSING,983,touches 2 sentences,false
+1009|namedEntities|303|305,DUPLICATE_KEY_CONFLICTING_METADATA,1009,"""AZ"" vs ""AZ""",true
+1010|namedEntities|504|507,DUPLICATE_KEY_CONFLICTING_METADATA,1010,"""GER"" vs ""GER""",true
+1195|namedEntities|29|34,DUPLICATE_KEY_CONFLICTING_METADATA,1195,"""MS_13"" vs ""MS_13""",true
+1220|namedEntities|104|108,DUPLICATE_KEY_CONFLICTING_METADATA,1220,"""CHAI"" vs ""CHAI""",true
+1445|namedEntities|123|125,DUPLICATE_KEY_CONFLICTING_METADATA,1445,"""MX"" vs ""MX""",true
+1556|namedEntities|195|202,DUPLICATE_KEY_CONFLICTING_METADATA,1556,"""Clinton"" vs ""Clinton""",true
+1745|namedEntities|322|325,DUPLICATE_KEY_CONFLICTING_METADATA,1745,"""SIS"" vs ""SIS""",true
+1830|namedEntities|0|22,DUPLICATE_KEY_CONFLICTING_METADATA,1830,"""THE CLINTON FOUNDATION"" vs ""THE CLINTON FOUNDATION""",true
+1833|namedEntities|129|131,DUPLICATE_KEY_CONFLICTING_METADATA,1833,"""NY"" vs ""NY""",true
+1870|namedEntities|25|27,DUPLICATE_KEY_CONFLICTING_METADATA,1870,"""WL"" vs ""WL""",true
+1876|namedEntities|0|5,DUPLICATE_KEY_CONFLICTING_METADATA,1876,"""GMAIL"" vs ""GMAIL""",true
+2037|namedEntities|657|659,DUPLICATE_KEY_CONFLICTING_METADATA,2037,"""NY"" vs ""NY""",true
+2165|namedEntities|449|451,DUPLICATE_KEY_CONFLICTING_METADATA,2165,"""SC"" vs ""SC""",true
+2476|namedEntities|101|103,DUPLICATE_KEY_CONFLICTING_METADATA,2476,"""PS"" vs ""PS""",true
+2476|namedEntities|160|162,DUPLICATE_KEY_CONFLICTING_METADATA,2476,"""MS"" vs ""MS""",true
+2552|namedEntities|285|307,DUPLICATE_KEY_CONFLICTING_METADATA,2552,"""THE CLINTON FOUNDATION"" vs ""THE CLINTON FOUNDATION""",true
+2653|namedEntities|1|4,DUPLICATE_KEY_CONFLICTING_METADATA,2653,"""RBG"" vs ""RBG""",true
+2686|namedEntities|110|112,DUPLICATE_KEY_CONFLICTING_METADATA,2686,"""PP"" vs ""PP""",true
+2984|namedEntities|288|290,DUPLICATE_KEY_CONFLICTING_METADATA,2984,"""PS"" vs ""PS""",true
+2984|namedEntities|309|311,DUPLICATE_KEY_CONFLICTING_METADATA,2984,"""MS"" vs ""MS""",true
+2989|namedEntities|693|698,DUPLICATE_KEY_CONFLICTING_METADATA,2989,"""HWOOD"" vs ""HWOOD""",true
+3035|namedEntities|50|57,DUPLICATE_KEY_CONFLICTING_METADATA,3035,"""Clinton"" vs ""Clinton""",true
+3065|namedEntities|131|134,DUPLICATE_KEY_CONFLICTING_METADATA,3065,"""OHR"" vs ""OHR""",true
+3133|namedEntities|251|253,DUPLICATE_KEY_CONFLICTING_METADATA,3133,"""RC"" vs ""RC""",true
+3158|namedEntities|0|18,DUPLICATE_KEY_CONFLICTING_METADATA,3158,"""THE STANDARD HOTEL"" vs ""THE STANDARD HOTEL""",true
+3383|namedEntities|487|492,DUPLICATE_KEY_CONFLICTING_METADATA,3383,"""Biden"" vs ""Biden""",true
+3408|namedEntities|117|119,DUPLICATE_KEY_CONFLICTING_METADATA,3408,"""PP"" vs ""PP""",true
+3415|namedEntities|145|147,DUPLICATE_KEY_CONFLICTING_METADATA,3415,"""PP"" vs ""PP""",true
+3595|namedEntities|0|3,DUPLICATE_KEY_CONFLICTING_METADATA,3595,"""AUS"" vs ""AUS""",true
+3634|namedEntities|650|652,DUPLICATE_KEY_CONFLICTING_METADATA,3634,"""VJ"" vs ""VJ""",true
+3778|namedEntities|137|139,DUPLICATE_KEY_CONFLICTING_METADATA,3778,"""NY"" vs ""NY""",true
+3896|namedEntities|433|457,DUPLICATE_KEY_CONFLICTING_METADATA,3896,"""University of Technology"" vs ""University of Technology""",true
+4153|namedEntities|190|192,DUPLICATE_KEY_CONFLICTING_METADATA,4153,"""WL"" vs ""WL""",true
+4156|namedEntities|115|117,DUPLICATE_KEY_CONFLICTING_METADATA,4156,"""NY"" vs ""NY""",true
+4552|namedEntities|293|295,DUPLICATE_KEY_CONFLICTING_METADATA,4552,"""PP"" vs ""PP""",true
+4555|namedEntities|304|307,DUPLICATE_KEY_CONFLICTING_METADATA,4555,"""BLM"" vs ""BLM""",true
+4586|namedEntities|123|125,DUPLICATE_KEY_CONFLICTING_METADATA,4586,"""FL"" vs ""FL""",true
+4620|namedEntities|3229|3231,DUPLICATE_KEY_CONFLICTING_METADATA,4620,"""NY"" vs ""NY""",true
+4802|namedEntities|779|781,DUPLICATE_KEY_CONFLICTING_METADATA,4802,"""NY"" vs ""NY""",true
+4820|namedEntities|0|22,DUPLICATE_KEY_CONFLICTING_METADATA,4820,"""THE CLINTON FOUNDATION"" vs ""THE CLINTON FOUNDATION""",true
+484|namedEntities|368|371,DUPLICATE_KEY_CONFLICTING_METADATA,484,"""AUS"" vs ""AUS""",true
+898|namedEntities|45|47,DUPLICATE_KEY_CONFLICTING_METADATA,898,"""HK"" vs ""HK""",true
+OVERLAP-p1824-s004,SAME_CATEGORY_PARTIAL_OVERLAP,1824,"""Market) is ESSENTIAL for every major cou"" / ""ACCESS to the AMERICAN CONSUMER (U.S. Ma""",false
+OVERLAP-p2306-s008,SAME_CATEGORY_PARTIAL_OVERLAP,2306,"""Ford's family has strong ties to SWAMP."" / ""Dr. Ford's family has strong ties to SWA""",false
+OVERLAP-p2306-s006,SAME_CATEGORY_PARTIAL_OVERLAP,2306,"""Something did happen to Dr. Ford in her "" / ""Ford in her past.""",false
+OVERLAP-p2662-s002,SAME_CATEGORY_PARTIAL_OVERLAP,2662,"""That can only happen through a federal g"" / ""Attorney in Utah who has been appointed """,false
+OVERLAP-p4310-s015,SAME_CATEGORY_PARTIAL_OVERLAP,4310,"""The recommendation, delivered to the Whi"" / ""Clapper Jr., according to several U.S. o""",false
+OVERLAP-p4310-s015,SAME_CATEGORY_PARTIAL_OVERLAP,4310,"""The recommendation, delivered to the Whi"" / ""Rogers, be removed.The recommendation, d""",false
+OVERLAP-p4521-s003,SAME_CATEGORY_PARTIAL_OVERLAP,4521,"""The Posse Comitatus Act, 18 U.S. Code, S"" / ""Code, Section 1385, an original intent o""",false
+OVERLAP-p4521-s003,SAME_CATEGORY_PARTIAL_OVERLAP,4521,"""\""The Posse Comitatus Act, 18 U.S. Code, "" / ""Code, Section 1385, an original intent o""",false
+OVERLAP-p4631-s015,SAME_CATEGORY_PARTIAL_OVERLAP,4631,"""Republican pastor Mike Hintz, whom Georg"" / ""Bush commended during the 2004 president""",false
+OVERLAP-p4631-s018,SAME_CATEGORY_PARTIAL_OVERLAP,4631,"""Republican fundraiser Richard A. Delgaud"" / ""Delgaudio was found guilty of child porn""",false
+OVERLAP-p4631-s019,SAME_CATEGORY_PARTIAL_OVERLAP,4631,"""Republican activist Mark A. Grethen conv"" / ""Grethen convicted on six counts of sex c""",false
+OVERLAP-p4632-s002,SAME_CATEGORY_PARTIAL_OVERLAP,4632,"""Republican legislative aide Howard L. Br"" / ""Brooks was charged with molesting a 12-y""",false
+OVERLAP-p4632-s013,SAME_CATEGORY_PARTIAL_OVERLAP,4632,"""Republican Councilman and former Marine "" / ""Gardner was convicted of molesting a 13-""",false
+OVERLAP-p4632-s016,SAME_CATEGORY_PARTIAL_OVERLAP,4632,"""Republican activist Parker J. Bena plead"" / ""Bena pleaded guilty to possession of chi""",false
+OVERLAP-p4633-s000,SAME_CATEGORY_PARTIAL_OVERLAP,4633,"""Republican benefactor of conservative Ch"" / ""Dasen Sr., was charged with rape for all""",false
+OVERLAP-p4801-s002,SAME_CATEGORY_PARTIAL_OVERLAP,4801,"""\""While attending college, he served as a"" / ""Biden, ....\""""",false
+UNLOCATED-1008-namedEntities,UNLOCATED_SPAN,1008,Hussein,false
+UNLOCATED-1008-namedEntities,UNLOCATED_SPAN,1008,Hussein,false
+UNLOCATED-1008-namedEntities,UNLOCATED_SPAN,1008,Hussein,false
+UNLOCATED-1008-namedEntities,UNLOCATED_SPAN,1008,America,false
+UNLOCATED-1010-namedEntities,UNLOCATED_SPAN,1010,Rothschild,false
+UNLOCATED-1010-namedEntities,UNLOCATED_SPAN,1010,The Fed,false
+UNLOCATED-1054-namedEntities,UNLOCATED_SPAN,1054,Ray Chandler,false
+UNLOCATED-1082-namedEntities,UNLOCATED_SPAN,1082,JFK Jr.,false
+UNLOCATED-1086-namedEntities,UNLOCATED_SPAN,1086,NO NAME,false
+UNLOCATED-1092-namedEntities,UNLOCATED_SPAN,1092,NO NAME,false
+UNLOCATED-1094-namedEntities,UNLOCATED_SPAN,1094,US Senate,false
+UNLOCATED-1098-namedEntities,UNLOCATED_SPAN,1098,Hussein,false
+UNLOCATED-1098-namedEntities,UNLOCATED_SPAN,1098,Hussein,false
+UNLOCATED-1102-namedEntities,UNLOCATED_SPAN,1102,Hussein,false
+UNLOCATED-1122-namedEntities,UNLOCATED_SPAN,1122,Sessions,false
+UNLOCATED-1122-namedEntities,UNLOCATED_SPAN,1122,Huber,false
+UNLOCATED-1122-namedEntities,UNLOCATED_SPAN,1122,Wray,false
+UNLOCATED-1122-namedEntities,UNLOCATED_SPAN,1122,Kansas,false
+UNLOCATED-1122-namedEntities,UNLOCATED_SPAN,1122,Horowitz,false
+UNLOCATED-1129-namedEntities,UNLOCATED_SPAN,1129,Pompeo,false
+UNLOCATED-1138-namedEntities,UNLOCATED_SPAN,1138,Ray Chandler,false
+UNLOCATED-117-namedEntities,UNLOCATED_SPAN,117,United States of America,false
+UNLOCATED-117-namedEntities,UNLOCATED_SPAN,117,Huma,false
+UNLOCATED-117-namedEntities,UNLOCATED_SPAN,117,Huma,false
+UNLOCATED-1201-namedEntities,UNLOCATED_SPAN,1201,Trump,false
+UNLOCATED-1203-namedEntities,UNLOCATED_SPAN,1203,Standard Hotel,false
+UNLOCATED-1208-namedEntities,UNLOCATED_SPAN,1208,Hussein,false
+UNLOCATED-1211-namedEntities,UNLOCATED_SPAN,1211,Agnes Nixon,false
+UNLOCATED-1217-namedEntities,UNLOCATED_SPAN,1217,WikiLeaks,false
+UNLOCATED-1217-namedEntities,UNLOCATED_SPAN,1217,Podesta,false
+UNLOCATED-1220-namedEntities,UNLOCATED_SPAN,1220,WikiLeaks,false
+UNLOCATED-1220-namedEntities,UNLOCATED_SPAN,1220,Podesta,false
+UNLOCATED-1221-namedEntities,UNLOCATED_SPAN,1221,WikiLeaks,false
+UNLOCATED-1234-namedEntities,UNLOCATED_SPAN,1234,America,false
+UNLOCATED-1235-namedEntities,UNLOCATED_SPAN,1235,Awan,false
+UNLOCATED-1235-namedEntities,UNLOCATED_SPAN,1235,NO NAME,false
+UNLOCATED-1253-namedEntities,UNLOCATED_SPAN,1253,Grassley,false
+UNLOCATED-128-namedEntities,UNLOCATED_SPAN,128,Snow White,false
+UNLOCATED-1286-namedEntities,UNLOCATED_SPAN,1286,5 Eyes,false
+UNLOCATED-1286-namedEntities,UNLOCATED_SPAN,1286,Rudy,false
+UNLOCATED-1305-namedEntities,UNLOCATED_SPAN,1305,NO NAME,false
+UNLOCATED-1318-namedEntities,UNLOCATED_SPAN,1318,Huber,false
+UNLOCATED-1318-namedEntities,UNLOCATED_SPAN,1318,Huber,false
+UNLOCATED-1318-namedEntities,UNLOCATED_SPAN,1318,Huber,false
+UNLOCATED-1326-namedEntities,UNLOCATED_SPAN,1326,NO NAME,false
+UNLOCATED-134-namedEntities,UNLOCATED_SPAN,134,Huma,false
+UNLOCATED-1341-namedEntities,UNLOCATED_SPAN,1341,Alex Jones,false
+UNLOCATED-135-namedEntities,UNLOCATED_SPAN,135,Rothschild,false
+UNLOCATED-1351-namedEntities,UNLOCATED_SPAN,1351,Sessions,false
+UNLOCATED-1359-namedEntities,UNLOCATED_SPAN,1359,France,false
+UNLOCATED-1370-namedEntities,UNLOCATED_SPAN,1370,Flynn,false
+UNLOCATED-1377-namedEntities,UNLOCATED_SPAN,1377,Sessions,false
+UNLOCATED-1377-namedEntities,UNLOCATED_SPAN,1377,Sessions,false
+UNLOCATED-145-namedEntities,UNLOCATED_SPAN,145,America,false
+UNLOCATED-1453-namedEntities,UNLOCATED_SPAN,1453,D party,false
+UNLOCATED-146-namedEntities,UNLOCATED_SPAN,146,America,false
+UNLOCATED-1483-namedEntities,UNLOCATED_SPAN,1483,Ryan,false
+UNLOCATED-1493-namedEntities,UNLOCATED_SPAN,1493,God,false
+UNLOCATED-1555-namedEntities,UNLOCATED_SPAN,1555,NO NAME,false
+UNLOCATED-1602-namedEntities,UNLOCATED_SPAN,1602,God,false
+UNLOCATED-1603-namedEntities,UNLOCATED_SPAN,1603,Putin,false
+UNLOCATED-1603-namedEntities,UNLOCATED_SPAN,1603,Putin,false
+UNLOCATED-1603-namedEntities,UNLOCATED_SPAN,1603,God,false
+UNLOCATED-1646-namedEntities,UNLOCATED_SPAN,1646,America,false
+UNLOCATED-1646-namedEntities,UNLOCATED_SPAN,1646,America,false
+UNLOCATED-1646-namedEntities,UNLOCATED_SPAN,1646,Hitler,false
+UNLOCATED-1646-namedEntities,UNLOCATED_SPAN,1646,God,false
+UNLOCATED-1686-namedEntities,UNLOCATED_SPAN,1686,Huber,false
+UNLOCATED-1702-namedEntities,UNLOCATED_SPAN,1702,America,false
+UNLOCATED-1702-namedEntities,UNLOCATED_SPAN,1702,Kansas,false
+UNLOCATED-1706-namedEntities,UNLOCATED_SPAN,1706,NO NAME,false
+UNLOCATED-1745-namedEntities,UNLOCATED_SPAN,1745,United States of America,false
+UNLOCATED-1745-namedEntities,UNLOCATED_SPAN,1745,Congress,false
+UNLOCATED-1745-namedEntities,UNLOCATED_SPAN,1745,Hussein,false
+UNLOCATED-1745-namedEntities,UNLOCATED_SPAN,1745,D party,false
+UNLOCATED-1745-namedEntities,UNLOCATED_SPAN,1745,D party,false
+UNLOCATED-1745-namedEntities,UNLOCATED_SPAN,1745,R party,false
+UNLOCATED-1745-namedEntities,UNLOCATED_SPAN,1745,Senate,false
+UNLOCATED-1745-namedEntities,UNLOCATED_SPAN,1745,Huber,false
+UNLOCATED-1745-namedEntities,UNLOCATED_SPAN,1745,US Intel,false
+UNLOCATED-1746-namedEntities,UNLOCATED_SPAN,1746,Congress,false
+UNLOCATED-1746-namedEntities,UNLOCATED_SPAN,1746,Senate,false
+UNLOCATED-1746-namedEntities,UNLOCATED_SPAN,1746,Nazi Germany,false
+UNLOCATED-1764-namedEntities,UNLOCATED_SPAN,1764,Hussein,false
+UNLOCATED-1764-namedEntities,UNLOCATED_SPAN,1764,Hussein,false
+UNLOCATED-1764-namedEntities,UNLOCATED_SPAN,1764,Hussein,false
+UNLOCATED-1764-namedEntities,UNLOCATED_SPAN,1764,Hussein,false
+UNLOCATED-1764-namedEntities,UNLOCATED_SPAN,1764,Brennan,false
+UNLOCATED-1764-namedEntities,UNLOCATED_SPAN,1764,Brennan,false
+UNLOCATED-1764-namedEntities,UNLOCATED_SPAN,1764,Brennan,false
+UNLOCATED-1764-namedEntities,UNLOCATED_SPAN,1764,Comey,false
+UNLOCATED-1764-namedEntities,UNLOCATED_SPAN,1764,Clapper,false
+UNLOCATED-1764-namedEntities,UNLOCATED_SPAN,1764,Rice,false
+UNLOCATED-1822-namedEntities,UNLOCATED_SPAN,1822,Putin,false
+UNLOCATED-1822-namedEntities,UNLOCATED_SPAN,1822,Watergate,false
+UNLOCATED-1832-namedEntities,UNLOCATED_SPAN,1832,Washington,false
+UNLOCATED-1833-namedEntities,UNLOCATED_SPAN,1833,Nunes,false
+UNLOCATED-1850-namedEntities,UNLOCATED_SPAN,1850,NO NAME,false
+UNLOCATED-1862-namedEntities,UNLOCATED_SPAN,1862,Wray,false
+UNLOCATED-1863-namedEntities,UNLOCATED_SPAN,1863,Sean Hannity,false
+UNLOCATED-1863-namedEntities,UNLOCATED_SPAN,1863,Roseanne Barr,false
+UNLOCATED-1876-namedEntities,UNLOCATED_SPAN,1876,No Such Agency,false
+UNLOCATED-1879-namedEntities,UNLOCATED_SPAN,1879,God,false
+UNLOCATED-1884-namedEntities,UNLOCATED_SPAN,1884,Epstein,false
+UNLOCATED-1884-namedEntities,UNLOCATED_SPAN,1884,Epstein Island,false
+UNLOCATED-1884-namedEntities,UNLOCATED_SPAN,1884,Cuba,false
+UNLOCATED-1884-namedEntities,UNLOCATED_SPAN,1884,Sudan,false
+UNLOCATED-1884-namedEntities,UNLOCATED_SPAN,1884,Syria,false
+UNLOCATED-1884-namedEntities,UNLOCATED_SPAN,1884,Yemen,false
+UNLOCATED-1884-namedEntities,UNLOCATED_SPAN,1884,Libya,false
+UNLOCATED-19-namedEntities,UNLOCATED_SPAN,19,Maxine Waters,false
+UNLOCATED-1910-namedEntities,UNLOCATED_SPAN,1910,INSCOM,false
+UNLOCATED-1928-namedEntities,UNLOCATED_SPAN,1928,Hussein,false
+UNLOCATED-1929-namedEntities,UNLOCATED_SPAN,1929,Hussein,false
+UNLOCATED-1935-namedEntities,UNLOCATED_SPAN,1935,Flynn,false
+UNLOCATED-1935-namedEntities,UNLOCATED_SPAN,1935,NO NAME,false
+UNLOCATED-1944-namedEntities,UNLOCATED_SPAN,1944,Hussein,false
+UNLOCATED-1948-namedEntities,UNLOCATED_SPAN,1948,Hussein,false
+UNLOCATED-1948-namedEntities,UNLOCATED_SPAN,1948,Hussein,false
+UNLOCATED-1948-namedEntities,UNLOCATED_SPAN,1948,Hussein,false
+UNLOCATED-1948-namedEntities,UNLOCATED_SPAN,1948,Hussein,false
+UNLOCATED-1948-namedEntities,UNLOCATED_SPAN,1948,Brennan,false
+UNLOCATED-1961-namedEntities,UNLOCATED_SPAN,1961,God,false
+UNLOCATED-197-namedEntities,UNLOCATED_SPAN,197,God,false
+UNLOCATED-1972-namedEntities,UNLOCATED_SPAN,1972,Watergate,false
+UNLOCATED-1974-namedEntities,UNLOCATED_SPAN,1974,Huber,false
+UNLOCATED-1978-namedEntities,UNLOCATED_SPAN,1978,Weiner,false
+UNLOCATED-1978-namedEntities,UNLOCATED_SPAN,1978,Weiner,false
+UNLOCATED-1981-namedEntities,UNLOCATED_SPAN,1981,Hussein,false
+UNLOCATED-1981-namedEntities,UNLOCATED_SPAN,1981,Hussein,false
+UNLOCATED-1981-namedEntities,UNLOCATED_SPAN,1981,Flynn,false
+UNLOCATED-1981-namedEntities,UNLOCATED_SPAN,1981,Awan,false
+UNLOCATED-1983-namedEntities,UNLOCATED_SPAN,1983,CrowdStrike,false
+UNLOCATED-1990-namedEntities,UNLOCATED_SPAN,1990,Hussein,false
+UNLOCATED-1990-namedEntities,UNLOCATED_SPAN,1990,Hussein,false
+UNLOCATED-1990-namedEntities,UNLOCATED_SPAN,1990,Hussein,false
+UNLOCATED-1990-namedEntities,UNLOCATED_SPAN,1990,Hussein,false
+UNLOCATED-1990-namedEntities,UNLOCATED_SPAN,1990,Huber,false
+UNLOCATED-2007-namedEntities,UNLOCATED_SPAN,2007,Speaker of the House,false
+UNLOCATED-2009-namedEntities,UNLOCATED_SPAN,2009,Snow White,false
+UNLOCATED-2010-namedEntities,UNLOCATED_SPAN,2010,Snow White,false
+UNLOCATED-2011-namedEntities,UNLOCATED_SPAN,2011,Snow White,false
+UNLOCATED-2012-namedEntities,UNLOCATED_SPAN,2012,Snow White,false
+UNLOCATED-2029-namedEntities,UNLOCATED_SPAN,2029,New York Post,false
+UNLOCATED-2029-namedEntities,UNLOCATED_SPAN,2029,Vice News,false
+UNLOCATED-2030-namedEntities,UNLOCATED_SPAN,2030,Sessions,false
+UNLOCATED-2035-namedEntities,UNLOCATED_SPAN,2035,Senate,false
+UNLOCATED-2035-namedEntities,UNLOCATED_SPAN,2035,House,false
+UNLOCATED-2039-namedEntities,UNLOCATED_SPAN,2039,America,false
+UNLOCATED-2039-namedEntities,UNLOCATED_SPAN,2039,God,false
+UNLOCATED-2040-namedEntities,UNLOCATED_SPAN,2040,Judicial Watch,false
+UNLOCATED-2040-namedEntities,UNLOCATED_SPAN,2040,Carter Page,false
+UNLOCATED-2043-namedEntities,UNLOCATED_SPAN,2043,Flynn,false
+UNLOCATED-2043-namedEntities,UNLOCATED_SPAN,2043,Flynn,false
+UNLOCATED-2054-namedEntities,UNLOCATED_SPAN,2054,Donald J. Trump,false
+UNLOCATED-2054-namedEntities,UNLOCATED_SPAN,2054,Donald J. Trump,false
+UNLOCATED-2058-namedEntities,UNLOCATED_SPAN,2058,Ezra Cohen-Watnick,false
+UNLOCATED-2061-namedEntities,UNLOCATED_SPAN,2061,23andMe,false
+UNLOCATED-2061-namedEntities,UNLOCATED_SPAN,2061,Moscow,false
+UNLOCATED-2072-namedEntities,UNLOCATED_SPAN,2072,Sessions,false
+UNLOCATED-2072-namedEntities,UNLOCATED_SPAN,2072,Sessions,false
+UNLOCATED-2072-namedEntities,UNLOCATED_SPAN,2072,Sessions,false
+UNLOCATED-2072-namedEntities,UNLOCATED_SPAN,2072,Sessions,false
+UNLOCATED-2072-namedEntities,UNLOCATED_SPAN,2072,Sessions,false
+UNLOCATED-2072-namedEntities,UNLOCATED_SPAN,2072,Sessions,false
+UNLOCATED-2072-namedEntities,UNLOCATED_SPAN,2072,Sessions,false
+UNLOCATED-2072-namedEntities,UNLOCATED_SPAN,2072,Sessions,false
+UNLOCATED-2072-namedEntities,UNLOCATED_SPAN,2072,Mueller,false
+UNLOCATED-2072-namedEntities,UNLOCATED_SPAN,2072,Huber,false
+UNLOCATED-2072-namedEntities,UNLOCATED_SPAN,2072,Huber,false
+UNLOCATED-2072-namedEntities,UNLOCATED_SPAN,2072,Huber,false
+UNLOCATED-2072-namedEntities,UNLOCATED_SPAN,2072,Huber,false
+UNLOCATED-2072-namedEntities,UNLOCATED_SPAN,2072,Huber,false
+UNLOCATED-2072-namedEntities,UNLOCATED_SPAN,2072,Speaker of the House,false
+UNLOCATED-2076-namedEntities,UNLOCATED_SPAN,2076,State Department OIG,false
+UNLOCATED-2107-namedEntities,UNLOCATED_SPAN,2107,Brennan,false
+UNLOCATED-2107-namedEntities,UNLOCATED_SPAN,2107,Weissmann,false
+UNLOCATED-2129-namedEntities,UNLOCATED_SPAN,2129,Hussein,false
+UNLOCATED-2129-namedEntities,UNLOCATED_SPAN,2129,Hussein,false
+UNLOCATED-2129-namedEntities,UNLOCATED_SPAN,2129,Hussein,false
+UNLOCATED-2129-namedEntities,UNLOCATED_SPAN,2129,Brennan,false
+UNLOCATED-2129-namedEntities,UNLOCATED_SPAN,2129,Clapper,false
+UNLOCATED-2136-namedEntities,UNLOCATED_SPAN,2136,CBN News,false
+UNLOCATED-2136-namedEntities,UNLOCATED_SPAN,2136,The Independent,false
+UNLOCATED-2150-namedEntities,UNLOCATED_SPAN,2150,Patriot Day,false
+UNLOCATED-2165-namedEntities,UNLOCATED_SPAN,2165,Sessions,false
+UNLOCATED-2165-namedEntities,UNLOCATED_SPAN,2165,Sessions,false
+UNLOCATED-2165-namedEntities,UNLOCATED_SPAN,2165,Sessions,false
+UNLOCATED-2165-namedEntities,UNLOCATED_SPAN,2165,Sessions,false
+UNLOCATED-2165-namedEntities,UNLOCATED_SPAN,2165,Sessions,false
+UNLOCATED-2165-namedEntities,UNLOCATED_SPAN,2165,Mueller,false
+UNLOCATED-2165-namedEntities,UNLOCATED_SPAN,2165,Flynn,false
+UNLOCATED-2180-namedEntities,UNLOCATED_SPAN,2180,Mueller,false
+UNLOCATED-2181-namedEntities,UNLOCATED_SPAN,2181,Nunes,false
+UNLOCATED-2181-namedEntities,UNLOCATED_SPAN,2181,House Intelligence,false
+UNLOCATED-2197-namedEntities,UNLOCATED_SPAN,2197,Sessions,false
+UNLOCATED-2203-namedEntities,UNLOCATED_SPAN,2203,Lynch,false
+UNLOCATED-2204-namedEntities,UNLOCATED_SPAN,2204,Sessions,false
+UNLOCATED-2204-namedEntities,UNLOCATED_SPAN,2204,Huber,false
+UNLOCATED-2205-namedEntities,UNLOCATED_SPAN,2205,Sessions,false
+UNLOCATED-2206-namedEntities,UNLOCATED_SPAN,2206,Wired,false
+UNLOCATED-2207-namedEntities,UNLOCATED_SPAN,2207,Hussein,false
+UNLOCATED-2211-namedEntities,UNLOCATED_SPAN,2211,Sessions,false
+UNLOCATED-2211-namedEntities,UNLOCATED_SPAN,2211,Sessions,false
+UNLOCATED-2211-namedEntities,UNLOCATED_SPAN,2211,Sessions,false
+UNLOCATED-2211-namedEntities,UNLOCATED_SPAN,2211,Sessions,false
+UNLOCATED-2211-namedEntities,UNLOCATED_SPAN,2211,Sessions,false
+UNLOCATED-2211-namedEntities,UNLOCATED_SPAN,2211,Sessions,false
+UNLOCATED-2211-namedEntities,UNLOCATED_SPAN,2211,Sessions,false
+UNLOCATED-2211-namedEntities,UNLOCATED_SPAN,2211,Sessions,false
+UNLOCATED-2211-namedEntities,UNLOCATED_SPAN,2211,Mueller,false
+UNLOCATED-2211-namedEntities,UNLOCATED_SPAN,2211,Huber,false
+UNLOCATED-2211-namedEntities,UNLOCATED_SPAN,2211,Huber,false
+UNLOCATED-2211-namedEntities,UNLOCATED_SPAN,2211,Huber,false
+UNLOCATED-2211-namedEntities,UNLOCATED_SPAN,2211,Huber,false
+UNLOCATED-2211-namedEntities,UNLOCATED_SPAN,2211,Huber,false
+UNLOCATED-2211-namedEntities,UNLOCATED_SPAN,2211,Huber,false
+UNLOCATED-2211-namedEntities,UNLOCATED_SPAN,2211,Speaker of the House,false
+UNLOCATED-2248-namedEntities,UNLOCATED_SPAN,2248,Nunes,false
+UNLOCATED-2261-namedEntities,UNLOCATED_SPAN,2261,Hussein,false
+UNLOCATED-2261-namedEntities,UNLOCATED_SPAN,2261,Brennan,false
+UNLOCATED-2261-namedEntities,UNLOCATED_SPAN,2261,Comey,false
+UNLOCATED-2273-namedEntities,UNLOCATED_SPAN,2273,Mueller,false
+UNLOCATED-2273-namedEntities,UNLOCATED_SPAN,2273,McCabe,false
+UNLOCATED-2274-namedEntities,UNLOCATED_SPAN,2274,Grassley,false
+UNLOCATED-2275-namedEntities,UNLOCATED_SPAN,2275,Hussein,false
+UNLOCATED-2277-namedEntities,UNLOCATED_SPAN,2277,Feinstein,false
+UNLOCATED-2281-namedEntities,UNLOCATED_SPAN,2281,Feinstein,false
+UNLOCATED-2281-namedEntities,UNLOCATED_SPAN,2281,Murkowski,false
+UNLOCATED-2326-namedEntities,UNLOCATED_SPAN,2326,Baker,false
+UNLOCATED-2335-namedEntities,UNLOCATED_SPAN,2335,People's Liberation Army,false
+UNLOCATED-2345-namedEntities,UNLOCATED_SPAN,2345,Feinstein,false
+UNLOCATED-2345-namedEntities,UNLOCATED_SPAN,2345,Murkowski,false
+UNLOCATED-2353-namedEntities,UNLOCATED_SPAN,2353,Democrat Party,false
+UNLOCATED-2356-namedEntities,UNLOCATED_SPAN,2356,Justice K,false
+UNLOCATED-236-namedEntities,UNLOCATED_SPAN,236,Huma,false
+UNLOCATED-2361-namedEntities,UNLOCATED_SPAN,2361,D party,false
+UNLOCATED-2378-namedEntities,UNLOCATED_SPAN,2378,America,false
+UNLOCATED-2381-namedEntities,UNLOCATED_SPAN,2381,Sessions,false
+UNLOCATED-2381-namedEntities,UNLOCATED_SPAN,2381,Sessions,false
+UNLOCATED-2381-namedEntities,UNLOCATED_SPAN,2381,Senate,false
+UNLOCATED-2381-namedEntities,UNLOCATED_SPAN,2381,Senate,false
+UNLOCATED-2390-namedEntities,UNLOCATED_SPAN,2390,House of Cards,false
+UNLOCATED-2396-namedEntities,UNLOCATED_SPAN,2396,Putin,false
+UNLOCATED-2397-namedEntities,UNLOCATED_SPAN,2397,Sessions,false
+UNLOCATED-2397-namedEntities,UNLOCATED_SPAN,2397,Senate,false
+UNLOCATED-2397-namedEntities,UNLOCATED_SPAN,2397,Huber,false
+UNLOCATED-2397-namedEntities,UNLOCATED_SPAN,2397,Huber,false
+UNLOCATED-2401-namedEntities,UNLOCATED_SPAN,2401,Amazon,false
+UNLOCATED-2436-namedEntities,UNLOCATED_SPAN,2436,America,false
+UNLOCATED-2436-namedEntities,UNLOCATED_SPAN,2436,America,false
+UNLOCATED-2436-namedEntities,UNLOCATED_SPAN,2436,America,false
+UNLOCATED-2436-namedEntities,UNLOCATED_SPAN,2436,America,false
+UNLOCATED-2440-namedEntities,UNLOCATED_SPAN,2440,United States of America,false
+UNLOCATED-2440-namedEntities,UNLOCATED_SPAN,2440,America,false
+UNLOCATED-2440-namedEntities,UNLOCATED_SPAN,2440,America,false
+UNLOCATED-2445-namedEntities,UNLOCATED_SPAN,2445,Grassley,false
+UNLOCATED-2453-namedEntities,UNLOCATED_SPAN,2453,Senate,false
+UNLOCATED-2462-namedEntities,UNLOCATED_SPAN,2462,D party,false
+UNLOCATED-2462-namedEntities,UNLOCATED_SPAN,2462,Senate,false
+UNLOCATED-2492-namedEntities,UNLOCATED_SPAN,2492,Arizona,false
+UNLOCATED-2495-namedEntities,UNLOCATED_SPAN,2495,Senate,false
+UNLOCATED-2495-namedEntities,UNLOCATED_SPAN,2495,Whitaker,false
+UNLOCATED-2499-namedEntities,UNLOCATED_SPAN,2499,House of Cards,false
+UNLOCATED-2500-namedEntities,UNLOCATED_SPAN,2500,Mueller,false
+UNLOCATED-2501-namedEntities,UNLOCATED_SPAN,2501,Whitaker,false
+UNLOCATED-2501-namedEntities,UNLOCATED_SPAN,2501,President,false
+UNLOCATED-2506-namedEntities,UNLOCATED_SPAN,2506,Sessions,false
+UNLOCATED-2506-namedEntities,UNLOCATED_SPAN,2506,Huber,false
+UNLOCATED-2507-namedEntities,UNLOCATED_SPAN,2507,Huber,false
+UNLOCATED-2511-namedEntities,UNLOCATED_SPAN,2511,Mueller,false
+UNLOCATED-2523-namedEntities,UNLOCATED_SPAN,2523,Kavanaugh,false
+UNLOCATED-2523-namedEntities,UNLOCATED_SPAN,2523,God,false
+UNLOCATED-2524-namedEntities,UNLOCATED_SPAN,2524,Huber,false
+UNLOCATED-2525-namedEntities,UNLOCATED_SPAN,2525,Huber,false
+UNLOCATED-2548-namedEntities,UNLOCATED_SPAN,2548,Senate,false
+UNLOCATED-2548-namedEntities,UNLOCATED_SPAN,2548,Huber,false
+UNLOCATED-2548-namedEntities,UNLOCATED_SPAN,2548,Huber,false
+UNLOCATED-2555-namedEntities,UNLOCATED_SPAN,2555,Huber,false
+UNLOCATED-2555-namedEntities,UNLOCATED_SPAN,2555,Whitaker,false
+UNLOCATED-2555-namedEntities,UNLOCATED_SPAN,2555,Horowitz,false
+UNLOCATED-2555-namedEntities,UNLOCATED_SPAN,2555,Wray,false
+UNLOCATED-2559-namedEntities,UNLOCATED_SPAN,2559,God,false
+UNLOCATED-2561-namedEntities,UNLOCATED_SPAN,2561,Sessions,false
+UNLOCATED-2561-namedEntities,UNLOCATED_SPAN,2561,Huber,false
+UNLOCATED-2561-namedEntities,UNLOCATED_SPAN,2561,Huber,false
+UNLOCATED-2561-namedEntities,UNLOCATED_SPAN,2561,Huber,false
+UNLOCATED-2561-namedEntities,UNLOCATED_SPAN,2561,Huber,false
+UNLOCATED-2568-namedEntities,UNLOCATED_SPAN,2568,Brennan,false
+UNLOCATED-2569-namedEntities,UNLOCATED_SPAN,2569,Freedom Caucus,false
+UNLOCATED-2576-namedEntities,UNLOCATED_SPAN,2576,Samantha Power,false
+UNLOCATED-2584-namedEntities,UNLOCATED_SPAN,2584,America,false
+UNLOCATED-2596-namedEntities,UNLOCATED_SPAN,2596,Merkel,false
+UNLOCATED-260-namedEntities,UNLOCATED_SPAN,260,Flynn,false
+UNLOCATED-2600-namedEntities,UNLOCATED_SPAN,2600,Sara Carter,false
+UNLOCATED-2601-namedEntities,UNLOCATED_SPAN,2601,Huber,false
+UNLOCATED-2603-namedEntities,UNLOCATED_SPAN,2603,Sessions,false
+UNLOCATED-2604-namedEntities,UNLOCATED_SPAN,2604,Sessions,false
+UNLOCATED-2604-namedEntities,UNLOCATED_SPAN,2604,Senate,false
+UNLOCATED-2604-namedEntities,UNLOCATED_SPAN,2604,Huber,false
+UNLOCATED-2604-namedEntities,UNLOCATED_SPAN,2604,Huber,false
+UNLOCATED-2633-namedEntities,UNLOCATED_SPAN,2633,US Senate,false
+UNLOCATED-2640-namedEntities,UNLOCATED_SPAN,2640,Hussein,false
+UNLOCATED-2640-namedEntities,UNLOCATED_SPAN,2640,Hussein,false
+UNLOCATED-2640-namedEntities,UNLOCATED_SPAN,2640,Hussein,false
+UNLOCATED-2640-namedEntities,UNLOCATED_SPAN,2640,Hussein,false
+UNLOCATED-2640-namedEntities,UNLOCATED_SPAN,2640,Hussein,false
+UNLOCATED-2640-namedEntities,UNLOCATED_SPAN,2640,Hussein,false
+UNLOCATED-2640-namedEntities,UNLOCATED_SPAN,2640,Hussein,false
+UNLOCATED-2643-namedEntities,UNLOCATED_SPAN,2643,Sessions,false
+UNLOCATED-2643-namedEntities,UNLOCATED_SPAN,2643,Sessions,false
+UNLOCATED-2643-namedEntities,UNLOCATED_SPAN,2643,Mueller,false
+UNLOCATED-2643-namedEntities,UNLOCATED_SPAN,2643,Mueller,false
+UNLOCATED-2643-namedEntities,UNLOCATED_SPAN,2643,Mueller,false
+UNLOCATED-2657-namedEntities,UNLOCATED_SPAN,2657,Hussein,false
+UNLOCATED-2657-namedEntities,UNLOCATED_SPAN,2657,Venezuela,false
+UNLOCATED-2657-namedEntities,UNLOCATED_SPAN,2657,Ecuador,false
+UNLOCATED-2658-namedEntities,UNLOCATED_SPAN,2658,Hussein,false
+UNLOCATED-2658-namedEntities,UNLOCATED_SPAN,2658,Senate,false
+UNLOCATED-2658-namedEntities,UNLOCATED_SPAN,2658,Syria,false
+UNLOCATED-2672-namedEntities,UNLOCATED_SPAN,2672,Mueller,false
+UNLOCATED-2673-namedEntities,UNLOCATED_SPAN,2673,Charlie Kirk,false
+UNLOCATED-2676-namedEntities,UNLOCATED_SPAN,2676,Huber,false
+UNLOCATED-2686-namedEntities,UNLOCATED_SPAN,2686,McCabe,false
+UNLOCATED-2691-namedEntities,UNLOCATED_SPAN,2691,Mueller,false
+UNLOCATED-2691-namedEntities,UNLOCATED_SPAN,2691,Mueller,false
+UNLOCATED-2691-namedEntities,UNLOCATED_SPAN,2691,Mueller,false
+UNLOCATED-2693-namedEntities,UNLOCATED_SPAN,2693,Congress,false
+UNLOCATED-2693-namedEntities,UNLOCATED_SPAN,2693,Senate,false
+UNLOCATED-2717-namedEntities,UNLOCATED_SPAN,2717,Mueller,false
+UNLOCATED-2717-namedEntities,UNLOCATED_SPAN,2717,Barr,false
+UNLOCATED-2718-namedEntities,UNLOCATED_SPAN,2718,Barr,false
+UNLOCATED-2730-namedEntities,UNLOCATED_SPAN,2730,God,false
+UNLOCATED-275-namedEntities,UNLOCATED_SPAN,275,Soros,false
+UNLOCATED-2766-namedEntities,UNLOCATED_SPAN,2766,Whitaker,false
+UNLOCATED-2768-namedEntities,UNLOCATED_SPAN,2768,Kamala Harris,false
+UNLOCATED-2768-namedEntities,UNLOCATED_SPAN,2768,Jussie Smollett,false
+UNLOCATED-2770-namedEntities,UNLOCATED_SPAN,2770,Hussein,false
+UNLOCATED-2770-namedEntities,UNLOCATED_SPAN,2770,Hussein,false
+UNLOCATED-2770-namedEntities,UNLOCATED_SPAN,2770,Hussein,false
+UNLOCATED-2770-namedEntities,UNLOCATED_SPAN,2770,Hussein,false
+UNLOCATED-2782-namedEntities,UNLOCATED_SPAN,2782,Gavin Newsom,false
+UNLOCATED-2787-namedEntities,UNLOCATED_SPAN,2787,Hussein,false
+UNLOCATED-2788-namedEntities,UNLOCATED_SPAN,2788,God,false
+UNLOCATED-2807-namedEntities,UNLOCATED_SPAN,2807,United States of America,false
+UNLOCATED-2807-namedEntities,UNLOCATED_SPAN,2807,God,false
+UNLOCATED-2838-namedEntities,UNLOCATED_SPAN,2838,Barr,false
+UNLOCATED-2841-namedEntities,UNLOCATED_SPAN,2841,Ann Coulter,false
+UNLOCATED-2844-namedEntities,UNLOCATED_SPAN,2844,Hussein,false
+UNLOCATED-2849-namedEntities,UNLOCATED_SPAN,2849,Smollett,false
+UNLOCATED-285-namedEntities,UNLOCATED_SPAN,285,Freedom Caucus,false
+UNLOCATED-2850-namedEntities,UNLOCATED_SPAN,2850,Liberals,false
+UNLOCATED-2856-namedEntities,UNLOCATED_SPAN,2856,Barr,false
+UNLOCATED-2878-namedEntities,UNLOCATED_SPAN,2878,Hillary,false
+UNLOCATED-2883-namedEntities,UNLOCATED_SPAN,2883,Hussein,false
+UNLOCATED-2935-namedEntities,UNLOCATED_SPAN,2935,Mueller,false
+UNLOCATED-2936-namedEntities,UNLOCATED_SPAN,2936,Trump,false
+UNLOCATED-2937-namedEntities,UNLOCATED_SPAN,2937,Huber,false
+UNLOCATED-2937-namedEntities,UNLOCATED_SPAN,2937,Barr,false
+UNLOCATED-2955-namedEntities,UNLOCATED_SPAN,2955,Whitaker,false
+UNLOCATED-2984-namedEntities,UNLOCATED_SPAN,2984,Hussein,false
+UNLOCATED-2984-namedEntities,UNLOCATED_SPAN,2984,Brennan,false
+UNLOCATED-2984-namedEntities,UNLOCATED_SPAN,2984,Senate,false
+UNLOCATED-2984-namedEntities,UNLOCATED_SPAN,2984,Senate,false
+UNLOCATED-2984-namedEntities,UNLOCATED_SPAN,2984,Building 8,false
+UNLOCATED-2984-namedEntities,UNLOCATED_SPAN,2984,Xbox,false
+UNLOCATED-2984-namedEntities,UNLOCATED_SPAN,2984,Amazon,false
+UNLOCATED-2989-namedEntities,UNLOCATED_SPAN,2989,United States of America,false
+UNLOCATED-2989-namedEntities,UNLOCATED_SPAN,2989,Ivy League,false
+UNLOCATED-3004-namedEntities,UNLOCATED_SPAN,3004,Sessions,false
+UNLOCATED-3004-namedEntities,UNLOCATED_SPAN,3004,Sessions,false
+UNLOCATED-3006-namedEntities,UNLOCATED_SPAN,3006,US Senate,false
+UNLOCATED-3007-namedEntities,UNLOCATED_SPAN,3007,Sara Carter,false
+UNLOCATED-3012-namedEntities,UNLOCATED_SPAN,3012,George Papa,false
+UNLOCATED-3015-namedEntities,UNLOCATED_SPAN,3015,Scaramucci,false
+UNLOCATED-3022-namedEntities,UNLOCATED_SPAN,3022,Gina,false
+UNLOCATED-3023-namedEntities,UNLOCATED_SPAN,3023,John Perry Barlow,false
+UNLOCATED-3024-namedEntities,UNLOCATED_SPAN,3024,Brennan,false
+UNLOCATED-3024-namedEntities,UNLOCATED_SPAN,3024,Snowden,false
+UNLOCATED-3024-namedEntities,UNLOCATED_SPAN,3024,Gina,false
+UNLOCATED-3028-namedEntities,UNLOCATED_SPAN,3028,Sessions,false
+UNLOCATED-3028-namedEntities,UNLOCATED_SPAN,3028,Mueller,false
+UNLOCATED-3028-namedEntities,UNLOCATED_SPAN,3028,Mueller,false
+UNLOCATED-3028-namedEntities,UNLOCATED_SPAN,3028,Mueller,false
+UNLOCATED-3028-namedEntities,UNLOCATED_SPAN,3028,America,false
+UNLOCATED-3028-namedEntities,UNLOCATED_SPAN,3028,America,false
+UNLOCATED-3028-namedEntities,UNLOCATED_SPAN,3028,Senate,false
+UNLOCATED-3028-namedEntities,UNLOCATED_SPAN,3028,Barr,false
+UNLOCATED-3028-namedEntities,UNLOCATED_SPAN,3028,Barr,false
+UNLOCATED-3028-namedEntities,UNLOCATED_SPAN,3028,Whitaker,false
+UNLOCATED-3035-namedEntities,UNLOCATED_SPAN,3035,Mueller,false
+UNLOCATED-3036-namedEntities,UNLOCATED_SPAN,3036,Sessions,false
+UNLOCATED-3036-namedEntities,UNLOCATED_SPAN,3036,Mueller,false
+UNLOCATED-3036-namedEntities,UNLOCATED_SPAN,3036,Barr,false
+UNLOCATED-3036-namedEntities,UNLOCATED_SPAN,3036,Barr,false
+UNLOCATED-3036-namedEntities,UNLOCATED_SPAN,3036,Whitaker,false
+UNLOCATED-3059-namedEntities,UNLOCATED_SPAN,3059,Barr,false
+UNLOCATED-3059-namedEntities,UNLOCATED_SPAN,3059,AG Barr,false
+UNLOCATED-3059-namedEntities,UNLOCATED_SPAN,3059,Federal Agencies,false
+UNLOCATED-3062-namedEntities,UNLOCATED_SPAN,3062,Mueller,false
+UNLOCATED-3063-namedEntities,UNLOCATED_SPAN,3063,Gang of Eight,false
+UNLOCATED-3115-namedEntities,UNLOCATED_SPAN,3115,Mueller,false
+UNLOCATED-3126-namedEntities,UNLOCATED_SPAN,3126,Hussein,false
+UNLOCATED-3134-namedEntities,UNLOCATED_SPAN,3134,Rachel Chandler,false
+UNLOCATED-3155-namedEntities,UNLOCATED_SPAN,3155,Rachel Chandler,false
+UNLOCATED-3158-namedEntities,UNLOCATED_SPAN,3158,Rachel Chandler,false
+UNLOCATED-3159-namedEntities,UNLOCATED_SPAN,3159,Paris Hilton,false
+UNLOCATED-3177-namedEntities,UNLOCATED_SPAN,3177,Mueller,false
+UNLOCATED-3177-namedEntities,UNLOCATED_SPAN,3177,Mueller,false
+UNLOCATED-3177-namedEntities,UNLOCATED_SPAN,3177,Barr,false
+UNLOCATED-3177-namedEntities,UNLOCATED_SPAN,3177,Barr,false
+UNLOCATED-3178-namedEntities,UNLOCATED_SPAN,3178,Congress,false
+UNLOCATED-3178-namedEntities,UNLOCATED_SPAN,3178,Senate,false
+UNLOCATED-3179-namedEntities,UNLOCATED_SPAN,3179,Sean Hannity,false
+UNLOCATED-3180-namedEntities,UNLOCATED_SPAN,3180,President of the United States,false
+UNLOCATED-3243-namedEntities,UNLOCATED_SPAN,3243,America,false
+UNLOCATED-3312-namedEntities,UNLOCATED_SPAN,3312,Media Matters,false
+UNLOCATED-3313-namedEntities,UNLOCATED_SPAN,3313,Sara Carter,false
+UNLOCATED-3314-namedEntities,UNLOCATED_SPAN,3314,Mueller,false
+UNLOCATED-3316-namedEntities,UNLOCATED_SPAN,3316,Mueller Report,false
+UNLOCATED-3324-namedEntities,UNLOCATED_SPAN,3324,Hussein,false
+UNLOCATED-3325-namedEntities,UNLOCATED_SPAN,3325,Hussein,false
+UNLOCATED-333-namedEntities,UNLOCATED_SPAN,333,God,false
+UNLOCATED-3330-namedEntities,UNLOCATED_SPAN,3330,Pence,false
+UNLOCATED-3352-namedEntities,UNLOCATED_SPAN,3352,God,false
+UNLOCATED-3354-namedEntities,UNLOCATED_SPAN,3354,Mueller,false
+UNLOCATED-3354-namedEntities,UNLOCATED_SPAN,3354,God,false
+UNLOCATED-3372-namedEntities,UNLOCATED_SPAN,3372,Flynn,false
+UNLOCATED-3388-namedEntities,UNLOCATED_SPAN,3388,Flynn,false
+UNLOCATED-3390-namedEntities,UNLOCATED_SPAN,3390,Flynn,false
+UNLOCATED-3424-namedEntities,UNLOCATED_SPAN,3424,Mueller,false
+UNLOCATED-3429-namedEntities,UNLOCATED_SPAN,3429,Epstein,false
+UNLOCATED-3432-namedEntities,UNLOCATED_SPAN,3432,God,false
+UNLOCATED-3458-namedEntities,UNLOCATED_SPAN,3458,Mueller,false
+UNLOCATED-3458-namedEntities,UNLOCATED_SPAN,3458,Mueller,false
+UNLOCATED-3458-namedEntities,UNLOCATED_SPAN,3458,Mueller,false
+UNLOCATED-3458-namedEntities,UNLOCATED_SPAN,3458,Mueller,false
+UNLOCATED-3473-namedEntities,UNLOCATED_SPAN,3473,Mueller,false
+UNLOCATED-3473-namedEntities,UNLOCATED_SPAN,3473,Mueller,false
+UNLOCATED-3473-namedEntities,UNLOCATED_SPAN,3473,Mueller,false
+UNLOCATED-3473-namedEntities,UNLOCATED_SPAN,3473,Mueller,false
+UNLOCATED-3501-namedEntities,UNLOCATED_SPAN,3501,Mueller,false
+UNLOCATED-3501-namedEntities,UNLOCATED_SPAN,3501,Mueller,false
+UNLOCATED-3505-namedEntities,UNLOCATED_SPAN,3505,Barr,false
+UNLOCATED-3530-namedEntities,UNLOCATED_SPAN,3530,Hussein,false
+UNLOCATED-3581-namedEntities,UNLOCATED_SPAN,3581,Sessions,false
+UNLOCATED-3588-namedEntities,UNLOCATED_SPAN,3588,WashPost,false
+UNLOCATED-3608-namedEntities,UNLOCATED_SPAN,3608,Washington,false
+UNLOCATED-3625-namedEntities,UNLOCATED_SPAN,3625,Hunter,false
+UNLOCATED-3647-namedEntities,UNLOCATED_SPAN,3647,US Senate,false
+UNLOCATED-3668-namedEntities,UNLOCATED_SPAN,3668,Barr,false
+UNLOCATED-3679-namedEntities,UNLOCATED_SPAN,3679,Nunes,false
+UNLOCATED-3680-namedEntities,UNLOCATED_SPAN,3680,Nunes,false
+UNLOCATED-3690-namedEntities,UNLOCATED_SPAN,3690,Gang of 8,false
+UNLOCATED-3693-namedEntities,UNLOCATED_SPAN,3693,Flynn,false
+UNLOCATED-3693-namedEntities,UNLOCATED_SPAN,3693,Flynn,false
+UNLOCATED-372-namedEntities,UNLOCATED_SPAN,372,Sessions,false
+UNLOCATED-372-namedEntities,UNLOCATED_SPAN,372,House of Cards,false
+UNLOCATED-3721-namedEntities,UNLOCATED_SPAN,3721,United States of America,false
+UNLOCATED-3742-namedEntities,UNLOCATED_SPAN,3742,Pelosi,false
+UNLOCATED-3754-namedEntities,UNLOCATED_SPAN,3754,Hussein,false
+UNLOCATED-3754-namedEntities,UNLOCATED_SPAN,3754,Hussein,false
+UNLOCATED-3754-namedEntities,UNLOCATED_SPAN,3754,Biden,false
+UNLOCATED-3790-namedEntities,UNLOCATED_SPAN,3790,Mueller,false
+UNLOCATED-3824-namedEntities,UNLOCATED_SPAN,3824,Michael Beatty,false
+UNLOCATED-3841-namedEntities,UNLOCATED_SPAN,3841,CrowdStrike,false
+UNLOCATED-3858-namedEntities,UNLOCATED_SPAN,3858,United States of America,false
+UNLOCATED-3900-namedEntities,UNLOCATED_SPAN,3900,President,false
+UNLOCATED-3905-namedEntities,UNLOCATED_SPAN,3905,United States of America,false
+UNLOCATED-3907-namedEntities,UNLOCATED_SPAN,3907,America,false
+UNLOCATED-3907-namedEntities,UNLOCATED_SPAN,3907,America,false
+UNLOCATED-3907-namedEntities,UNLOCATED_SPAN,3907,America,false
+UNLOCATED-3907-namedEntities,UNLOCATED_SPAN,3907,America,false
+UNLOCATED-3915-namedEntities,UNLOCATED_SPAN,3915,Biden,false
+UNLOCATED-3915-namedEntities,UNLOCATED_SPAN,3915,Biden,false
+UNLOCATED-3915-namedEntities,UNLOCATED_SPAN,3915,Biden,false
+UNLOCATED-3915-namedEntities,UNLOCATED_SPAN,3915,Biden,false
+UNLOCATED-3915-namedEntities,UNLOCATED_SPAN,3915,Biden,false
+UNLOCATED-3915-namedEntities,UNLOCATED_SPAN,3915,Sanders,false
+UNLOCATED-3990-namedEntities,UNLOCATED_SPAN,3990,Flynn,false
+UNLOCATED-3990-namedEntities,UNLOCATED_SPAN,3990,Papadopoulos,false
+UNLOCATED-3990-namedEntities,UNLOCATED_SPAN,3990,Manafort,false
+UNLOCATED-3990-namedEntities,UNLOCATED_SPAN,3990,Crowdstrike,false
+UNLOCATED-3992-namedEntities,UNLOCATED_SPAN,3992,Senate,false
+UNLOCATED-3992-namedEntities,UNLOCATED_SPAN,3992,Midterm Elections,false
+UNLOCATED-3993-namedEntities,UNLOCATED_SPAN,3993,Schiff,false
+UNLOCATED-3993-namedEntities,UNLOCATED_SPAN,3993,Nunes,false
+UNLOCATED-3993-namedEntities,UNLOCATED_SPAN,3993,Nunes,false
+UNLOCATED-3993-namedEntities,UNLOCATED_SPAN,3993,Gang of Eight,false
+UNLOCATED-4010-namedEntities,UNLOCATED_SPAN,4010,Donald J. Trump,false
+UNLOCATED-4014-namedEntities,UNLOCATED_SPAN,4014,Flynn,false
+UNLOCATED-4016-namedEntities,UNLOCATED_SPAN,4016,Brennan,false
+UNLOCATED-4063-namedEntities,UNLOCATED_SPAN,4063,God,false
+UNLOCATED-4153-namedEntities,UNLOCATED_SPAN,4153,Hussein,false
+UNLOCATED-4153-namedEntities,UNLOCATED_SPAN,4153,Mueller,false
+UNLOCATED-4153-namedEntities,UNLOCATED_SPAN,4153,Mueller,false
+UNLOCATED-4153-namedEntities,UNLOCATED_SPAN,4153,Soros,false
+UNLOCATED-4153-namedEntities,UNLOCATED_SPAN,4153,No Name,false
+UNLOCATED-4172-namedEntities,UNLOCATED_SPAN,4172,Biden,false
+UNLOCATED-4226-namedEntities,UNLOCATED_SPAN,4226,Flynn,false
+UNLOCATED-4231-namedEntities,UNLOCATED_SPAN,4231,Flynn,false
+UNLOCATED-4232-namedEntities,UNLOCATED_SPAN,4232,Kislyak,false
+UNLOCATED-4238-namedEntities,UNLOCATED_SPAN,4238,Dan Coats,false
+UNLOCATED-4241-namedEntities,UNLOCATED_SPAN,4241,Graham,false
+UNLOCATED-4241-namedEntities,UNLOCATED_SPAN,4241,Politico,false
+UNLOCATED-4245-namedEntities,UNLOCATED_SPAN,4245,Biden,false
+UNLOCATED-4245-namedEntities,UNLOCATED_SPAN,4245,Biden,false
+UNLOCATED-4247-namedEntities,UNLOCATED_SPAN,4247,USNS Comfort,false
+UNLOCATED-4293-namedEntities,UNLOCATED_SPAN,4293,Senate,false
+UNLOCATED-4310-namedEntities,UNLOCATED_SPAN,4310,Congress,false
+UNLOCATED-4310-namedEntities,UNLOCATED_SPAN,4310,Schiff,false
+UNLOCATED-4310-namedEntities,UNLOCATED_SPAN,4310,Senate,false
+UNLOCATED-4310-namedEntities,UNLOCATED_SPAN,4310,Seattle,false
+UNLOCATED-4312-namedEntities,UNLOCATED_SPAN,4312,Cambridge Dictionary,false
+UNLOCATED-433-namedEntities,UNLOCATED_SPAN,433,Wray,false
+UNLOCATED-4339-namedEntities,UNLOCATED_SPAN,4339,Michigan,false
+UNLOCATED-4340-namedEntities,UNLOCATED_SPAN,4340,New York Post,false
+UNLOCATED-4352-namedEntities,UNLOCATED_SPAN,4352,House Republicans,false
+UNLOCATED-436-namedEntities,UNLOCATED_SPAN,436,Congress,false
+UNLOCATED-436-namedEntities,UNLOCATED_SPAN,436,Hussein,false
+UNLOCATED-436-namedEntities,UNLOCATED_SPAN,436,Hussein,false
+UNLOCATED-436-namedEntities,UNLOCATED_SPAN,436,Hussein,false
+UNLOCATED-4375-namedEntities,UNLOCATED_SPAN,4375,America,false
+UNLOCATED-4387-namedEntities,UNLOCATED_SPAN,4387,America,false
+UNLOCATED-4387-namedEntities,UNLOCATED_SPAN,4387,God,false
+UNLOCATED-4398-namedEntities,UNLOCATED_SPAN,4398,Pelosi,false
+UNLOCATED-4398-namedEntities,UNLOCATED_SPAN,4398,Pelosi,false
+UNLOCATED-4398-namedEntities,UNLOCATED_SPAN,4398,Pelosi,false
+UNLOCATED-4398-namedEntities,UNLOCATED_SPAN,4398,Pelosi,false
+UNLOCATED-4401-namedEntities,UNLOCATED_SPAN,4401,Google Trends,false
+UNLOCATED-4413-namedEntities,UNLOCATED_SPAN,4413,God,false
+UNLOCATED-4414-namedEntities,UNLOCATED_SPAN,4414,Pelosi,false
+UNLOCATED-445-namedEntities,UNLOCATED_SPAN,445,CrowdStrike,false
+UNLOCATED-4457-namedEntities,UNLOCATED_SPAN,4457,Senate,false
+UNLOCATED-4461-namedEntities,UNLOCATED_SPAN,4461,God,false
+UNLOCATED-4468-namedEntities,UNLOCATED_SPAN,4468,Daily Beast,false
+UNLOCATED-4489-namedEntities,UNLOCATED_SPAN,4489,Biden,false
+UNLOCATED-4489-namedEntities,UNLOCATED_SPAN,4489,Biden,false
+UNLOCATED-4489-namedEntities,UNLOCATED_SPAN,4489,Biden,false
+UNLOCATED-4492-namedEntities,UNLOCATED_SPAN,4492,Yale Medicine,false
+UNLOCATED-4492-namedEntities,UNLOCATED_SPAN,4492,US Navy,false
+UNLOCATED-4521-namedEntities,UNLOCATED_SPAN,4521,2020 Presidential Election,false
+UNLOCATED-4526-namedEntities,UNLOCATED_SPAN,4526,The Guardian,false
+UNLOCATED-4535-namedEntities,UNLOCATED_SPAN,4535,United States of America,false
+UNLOCATED-4545-namedEntities,UNLOCATED_SPAN,4545,United Nations,false
+UNLOCATED-4559-namedEntities,UNLOCATED_SPAN,4559,God,false
+UNLOCATED-4592-namedEntities,UNLOCATED_SPAN,4592,Democrat Party,false
+UNLOCATED-4627-namedEntities,UNLOCATED_SPAN,4627,America,false
+UNLOCATED-4630-namedEntities,UNLOCATED_SPAN,4630,Harold Moody Jr,false
+UNLOCATED-4641-namedEntities,UNLOCATED_SPAN,4641,God,false
+UNLOCATED-4656-namedEntities,UNLOCATED_SPAN,4656,Renegade,false
+UNLOCATED-466-namedEntities,UNLOCATED_SPAN,466,America,false
+UNLOCATED-4773-namedEntities,UNLOCATED_SPAN,4773,Sessions,false
+UNLOCATED-48-namedEntities,UNLOCATED_SPAN,48,Canada,false
+UNLOCATED-480-namedEntities,UNLOCATED_SPAN,480,Loop Capital,false
+UNLOCATED-4802-namedEntities,UNLOCATED_SPAN,4802,Biden,false
+UNLOCATED-4802-namedEntities,UNLOCATED_SPAN,4802,Biden,false
+UNLOCATED-4802-namedEntities,UNLOCATED_SPAN,4802,Biden,false
+UNLOCATED-4802-namedEntities,UNLOCATED_SPAN,4802,Biden,false
+UNLOCATED-481-namedEntities,UNLOCATED_SPAN,481,God,false
+UNLOCATED-4820-namedEntities,UNLOCATED_SPAN,4820,White House,false
+UNLOCATED-4821-namedEntities,UNLOCATED_SPAN,4821,White House,false
+UNLOCATED-4821-namedEntities,UNLOCATED_SPAN,4821,Biden,false
+UNLOCATED-4821-namedEntities,UNLOCATED_SPAN,4821,Hunter,false
+UNLOCATED-4822-namedEntities,UNLOCATED_SPAN,4822,White House,false
+UNLOCATED-4822-namedEntities,UNLOCATED_SPAN,4822,Biden,false
+UNLOCATED-4822-namedEntities,UNLOCATED_SPAN,4822,Hunter,false
+UNLOCATED-4830-namedEntities,UNLOCATED_SPAN,4830,United States Senator,false
+UNLOCATED-4875-themeAnchors,UNLOCATED_SPAN,4875,"More 'conspiracy' [fact-less base-less claims] pushed re: violent, extremist, racist, dangerous, anti-gov, nazism, white",false
+UNLOCATED-4885-namedEntities,UNLOCATED_SPAN,4885,Jeet Heer,false
+UNLOCATED-4885-namedEntities,UNLOCATED_SPAN,4885,Erin Nanoki,false
+UNLOCATED-4886-namedEntities,UNLOCATED_SPAN,4886,Biden,false
+UNLOCATED-4949-themeAnchors,UNLOCATED_SPAN,4949,"That this nation, under God, shall have a new birth of freedom and that government of the people, by the people, for the",false
+UNLOCATED-501-namedEntities,UNLOCATED_SPAN,501,God,false
+UNLOCATED-520-namedEntities,UNLOCATED_SPAN,520,No Such Agency,false
+UNLOCATED-520-namedEntities,UNLOCATED_SPAN,520,God,false
+UNLOCATED-524-namedEntities,UNLOCATED_SPAN,524,Loop Capital,false
+UNLOCATED-524-namedEntities,UNLOCATED_SPAN,524,Banco de Mexico,false
+UNLOCATED-532-namedEntities,UNLOCATED_SPAN,532,America,false
+UNLOCATED-532-namedEntities,UNLOCATED_SPAN,532,Soros,false
+UNLOCATED-533-namedEntities,UNLOCATED_SPAN,533,United States of America,false
+UNLOCATED-533-namedEntities,UNLOCATED_SPAN,533,God,false
+UNLOCATED-537-namedEntities,UNLOCATED_SPAN,537,No Such Agency,false
+UNLOCATED-537-namedEntities,UNLOCATED_SPAN,537,Sessions,false
+UNLOCATED-56-namedEntities,UNLOCATED_SPAN,56,International Islamic Council for Da'wa and Relief,false
+UNLOCATED-563-namedEntities,UNLOCATED_SPAN,563,God,false
+UNLOCATED-577-namedEntities,UNLOCATED_SPAN,577,Snow White,false
+UNLOCATED-599-namedEntities,UNLOCATED_SPAN,599,God,false
+UNLOCATED-603-namedEntities,UNLOCATED_SPAN,603,Barack Hussein Obama,false
+UNLOCATED-603-namedEntities,UNLOCATED_SPAN,603,God,false
+UNLOCATED-609-namedEntities,UNLOCATED_SPAN,609,Hussein,false
+UNLOCATED-631-namedEntities,UNLOCATED_SPAN,631,America,false
+UNLOCATED-68-namedEntities,UNLOCATED_SPAN,68,Huma,false
+UNLOCATED-68-namedEntities,UNLOCATED_SPAN,68,Huma,false
+UNLOCATED-68-namedEntities,UNLOCATED_SPAN,68,Huma,false
+UNLOCATED-68-namedEntities,UNLOCATED_SPAN,68,Huma,false
+UNLOCATED-68-namedEntities,UNLOCATED_SPAN,68,Huma,false
+UNLOCATED-68-namedEntities,UNLOCATED_SPAN,68,Huma,false
+UNLOCATED-68-namedEntities,UNLOCATED_SPAN,68,Huma,false
+UNLOCATED-68-namedEntities,UNLOCATED_SPAN,68,Huma,false
+UNLOCATED-68-namedEntities,UNLOCATED_SPAN,68,Huma,false
+UNLOCATED-68-namedEntities,UNLOCATED_SPAN,68,Huma,false
+UNLOCATED-71-namedEntities,UNLOCATED_SPAN,71,Huma,false
+UNLOCATED-746-namedEntities,UNLOCATED_SPAN,746,Mike Wallace,false
+UNLOCATED-767-namedEntities,UNLOCATED_SPAN,767,God,false
+UNLOCATED-77-namedEntities,UNLOCATED_SPAN,77,Huma,false
+UNLOCATED-770-namedEntities,UNLOCATED_SPAN,770,Aaron Swartz,false
+UNLOCATED-778-namedEntities,UNLOCATED_SPAN,778,Hussein,false
+UNLOCATED-778-namedEntities,UNLOCATED_SPAN,778,Dems,false
+UNLOCATED-778-namedEntities,UNLOCATED_SPAN,778,Dems,false
+UNLOCATED-778-namedEntities,UNLOCATED_SPAN,778,God,false
+UNLOCATED-780-namedEntities,UNLOCATED_SPAN,780,Senate,false
+UNLOCATED-785-namedEntities,UNLOCATED_SPAN,785,London,false
+UNLOCATED-785-namedEntities,UNLOCATED_SPAN,785,Delta,false
+UNLOCATED-787-namedEntities,UNLOCATED_SPAN,787,Sessions,false
+UNLOCATED-787-namedEntities,UNLOCATED_SPAN,787,Wray,false
+UNLOCATED-790-namedEntities,UNLOCATED_SPAN,790,Snowden,false
+UNLOCATED-790-namedEntities,UNLOCATED_SPAN,790,John Perry Barlow,false
+UNLOCATED-793-namedEntities,UNLOCATED_SPAN,793,God,false
+UNLOCATED-795-namedEntities,UNLOCATED_SPAN,795,God,false
+UNLOCATED-796-namedEntities,UNLOCATED_SPAN,796,God,false
+UNLOCATED-834-namedEntities,UNLOCATED_SPAN,834,Sessions,false
+UNLOCATED-834-namedEntities,UNLOCATED_SPAN,834,Sessions,false
+UNLOCATED-837-namedEntities,UNLOCATED_SPAN,837,God,false
+UNLOCATED-855-namedEntities,UNLOCATED_SPAN,855,America,false
+UNLOCATED-855-namedEntities,UNLOCATED_SPAN,855,America,false
+UNLOCATED-857-namedEntities,UNLOCATED_SPAN,857,Reuters,false
+UNLOCATED-866-namedEntities,UNLOCATED_SPAN,866,WikiLeaks,false
+UNLOCATED-867-namedEntities,UNLOCATED_SPAN,867,WikiLeaks,false
+UNLOCATED-878-namedEntities,UNLOCATED_SPAN,878,Sessions,false
+UNLOCATED-889-namedEntities,UNLOCATED_SPAN,889,Forbidden City,false
+UNLOCATED-917-namedEntities,UNLOCATED_SPAN,917,God,false
+UNLOCATED-950-namedEntities,UNLOCATED_SPAN,950,Kansas,false
+UNLOCATED-953-namedEntities,UNLOCATED_SPAN,953,America,false
+UNLOCATED-953-namedEntities,UNLOCATED_SPAN,953,Trump,false
+UNLOCATED-953-namedEntities,UNLOCATED_SPAN,953,Flynn,false
+UNLOCATED-953-namedEntities,UNLOCATED_SPAN,953,Biden,false
+UNLOCATED-960-namedEntities,UNLOCATED_SPAN,960,Comedy Central,false
+UNLOCATED-964-namedEntities,UNLOCATED_SPAN,964,Biden,false
+UNLOCATED-964-namedEntities,UNLOCATED_SPAN,964,Amazon,false
+UNLOCATED-964-namedEntities,UNLOCATED_SPAN,964,Syria,false
+UNLOCATED-972-namedEntities,UNLOCATED_SPAN,972,Hussein,false
+UNLOCATED-972-namedEntities,UNLOCATED_SPAN,972,Amazon,false
+UNLOCATED-988-namedEntities,UNLOCATED_SPAN,988,Awan,false
+UNLOCATED-99-namedEntities,UNLOCATED_SPAN,99,Huma,false

@@ -1,0 +1,43 @@
+{
+ "note": "Source-aware Q / QAnon / Anons sweep figures. Terminal-signature exclusion is POSITIONAL; source material is excluded through the archive's own sourceLines() detector.",
+ "perEntity": [
+  {
+   "term": "Q",
+   "candidates": 4521,
+   "included": 137,
+   "excluded": 4384,
+   "posts": 112
+  },
+  {
+   "term": "QAnon",
+   "candidates": 158,
+   "included": 153,
+   "excluded": 5,
+   "posts": 49
+  },
+  {
+   "term": "Anons",
+   "candidates": 112,
+   "included": 111,
+   "excluded": 1,
+   "posts": 109
+  }
+ ],
+ "unionPosts": 259,
+ "excludedTotal": 4390,
+ "exclusionsByReason": {
+  "terminal signature": 4346,
+  "URL or path": 15,
+  "Q&A — Q means Question": 8,
+  "source material — sustained prose block — pasted or quoted passage": 6,
+  "FAQ label \"Q:\" — Q means Question": 4,
+  "Q clearance / Q fever — not the persona": 2,
+  "source material — excerpt beneath a source link": 2,
+  "source material — dictionary entry (continuation)": 2,
+  "source material — greentext excerpt": 2,
+  "technical code (Q-T2810C)": 1,
+  "source material — inside a multi-line quotation": 1,
+  "source material — quoted FAQ question": 1
+ },
+ "supersedes": "The earlier 116 / 111 / 52 post figures came from a filter that removed EVERY standalone Q line rather than only the terminal signature, and from counting without source-awareness."
+}

@@ -114,6 +114,19 @@ for (const p of posts) {
     const hit = hits[Math.min(already, hits.length - 1)]
     taken.set(usedKey, already + 1)
     const [start, end] = hit
+    // STORE THE MATCHED TEXT, NEVER THE SEARCH TERM.
+    //
+    // Two ways they differ, and both produced records whose stored text did not match the
+    // characters they claimed:
+    //   · an entity resolves through its ALIAS — "Arizona" was recorded at the offsets of "AZ",
+    //     "Germany" at "GER", "4chan" at "4ch". The canonical identity is metadata; the span
+    //     covers the spelling Q actually wrote.
+    //   · the whitespace-tolerant fallback matches across a line break, so a certified value
+    //     carrying a space sits over a body carrying a newline.
+    // 296 of 35,255 records were wrong this way, and the dry-run generator's own assertion is
+    // what found them.
+    const bodyText = runtimeText(p.text ?? '')
+    const matched = bodyText.slice(start, end)
     const holder = sentences.find(s => start >= s.start && end <= s.end)
     if (!holder) {
       crossing++
@@ -130,7 +143,11 @@ for (const p of posts) {
     }
     ledger.push({
       key: `${p.postNum}|${kind}|${start}|${end}`,
-      postNum: p.postNum, kind, layer: LAYER[kind], start, end, text,
+      postNum: p.postNum, kind, layer: LAYER[kind], start, end,
+      text: matched,
+      // What the section certified, when that differs from the characters on screen: the canonical
+      // entity identity, or a value the segmenter normalised. Metadata — never painted.
+      ...(matched === text ? {} : { certifiedValue: text }),
       ...(directiveWrapped ? { directiveWrapped: true } : {}),
       sentenceId: holder?.sentenceId ?? null,
       relation: !holder ? 'CROSSING'
@@ -283,6 +300,18 @@ const report = {
 }
 
 fs.writeFileSync(path.join(OUT, 'occurrence-ledger-dryrun.json'), JSON.stringify(report, null, 1) + '\n')
+
+// THE FULL LEDGER, with every record's complete literal text.
+//
+// The findings file above carries subsets, and several of them shorten text for readability. Any
+// consumer that needs an occurrence's identity must read it FROM HERE and never rediscover it:
+// re-locating a shortened string is exactly how one occurrence acquired two different keys.
+fs.writeFileSync(path.join(OUT, 'occurrence-ledger.json'), JSON.stringify({
+  note: 'Every certified occurrence, keyed postNum|kind|start|end into the RUNTIME body. Full literal text. No consumer may reconstruct an identity from this text - take the key.',
+  generatedBy: 'scripts/build-occurrence-ledger.mjs',
+  count: ledger.length,
+  records: ledger,
+}))
 
 console.log('\nSTEP 3A — OCCURRENCE LEDGER (DRY RUN, nothing written to public/data)\n')
 console.log(`  sentences                        ${report.totals.sentences.toLocaleString()}`)

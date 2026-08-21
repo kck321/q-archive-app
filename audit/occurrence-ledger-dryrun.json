@@ -4652,9 +4652,9 @@
    "kind": "namedEntities",
    "start": 303,
    "end": 305,
-   "textA": "Arizona",
+   "textA": "AZ",
    "textB": "AZ",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "1010|namedEntities|504|507",
@@ -4662,9 +4662,9 @@
    "kind": "namedEntities",
    "start": 504,
    "end": 507,
-   "textA": "Germany",
+   "textA": "GER",
    "textB": "GER",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "111|namedEntities|1073|1077",
@@ -4712,9 +4712,9 @@
    "kind": "namedEntities",
    "start": 29,
    "end": 34,
-   "textA": "MS-13",
+   "textA": "MS_13",
    "textB": "MS_13",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "1220|namedEntities|104|108",
@@ -4722,9 +4722,9 @@
    "kind": "namedEntities",
    "start": 104,
    "end": 108,
-   "textA": "Clinton Health Access Initiative",
+   "textA": "CHAI",
    "textB": "CHAI",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "1235|namedEntities|145|149",
@@ -4802,9 +4802,9 @@
    "kind": "namedEntities",
    "start": 123,
    "end": 125,
-   "textA": "Mexico",
+   "textA": "MX",
    "textB": "MX",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "1556|namedEntities|195|202",
@@ -4812,9 +4812,9 @@
    "kind": "namedEntities",
    "start": 195,
    "end": 202,
-   "textA": "Bill Clinton",
+   "textA": "Clinton",
    "textB": "Clinton",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "1700|directives|317|625",
@@ -4832,9 +4832,9 @@
    "kind": "namedEntities",
    "start": 322,
    "end": 325,
-   "textA": "MI6",
+   "textA": "SIS",
    "textB": "SIS",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "1796|namedEntities|343|350",
@@ -4882,9 +4882,9 @@
    "kind": "namedEntities",
    "start": 0,
    "end": 22,
-   "textA": "Clinton Foundation",
+   "textA": "THE CLINTON FOUNDATION",
    "textB": "THE CLINTON FOUNDATION",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "1833|namedEntities|129|131",
@@ -4892,9 +4892,9 @@
    "kind": "namedEntities",
    "start": 129,
    "end": 131,
-   "textA": "New York",
+   "textA": "NY",
    "textB": "NY",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "1870|namedEntities|25|27",
@@ -4902,9 +4902,9 @@
    "kind": "namedEntities",
    "start": 25,
    "end": 27,
-   "textA": "WikiLeaks",
+   "textA": "WL",
    "textB": "WL",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "1876|namedEntities|0|5",
@@ -4912,9 +4912,9 @@
    "kind": "namedEntities",
    "start": 0,
    "end": 5,
-   "textA": "Gmail",
+   "textA": "GMAIL",
    "textB": "GMAIL",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "1887|namedEntities|682|689",
@@ -4992,9 +4992,9 @@
    "kind": "namedEntities",
    "start": 657,
    "end": 659,
-   "textA": "New York",
+   "textA": "NY",
    "textB": "NY",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "2165|namedEntities|449|451",
@@ -5002,9 +5002,9 @@
    "kind": "namedEntities",
    "start": 449,
    "end": 451,
-   "textA": "Sara Carter",
+   "textA": "SC",
    "textB": "SC",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "2215|emphasis|24|35",
@@ -5322,9 +5322,9 @@
    "kind": "namedEntities",
    "start": 101,
    "end": 103,
-   "textA": "PlayStation",
+   "textA": "PS",
    "textB": "PS",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "2476|namedEntities|160|162",
@@ -5332,9 +5332,9 @@
    "kind": "namedEntities",
    "start": 160,
    "end": 162,
-   "textA": "Microsoft",
+   "textA": "MS",
    "textB": "MS",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "2519|namedEntities|158|167",
@@ -5362,9 +5362,9 @@
    "kind": "namedEntities",
    "start": 285,
    "end": 307,
-   "textA": "Clinton Foundation",
+   "textA": "THE CLINTON FOUNDATION",
    "textB": "THE CLINTON FOUNDATION",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "2627|namedEntities|231|240",
@@ -5392,9 +5392,9 @@
    "kind": "namedEntities",
    "start": 1,
    "end": 4,
-   "textA": "Ruth Bader Ginsburg",
+   "textA": "RBG",
    "textB": "RBG",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "2657|namedEntities|1310|1317",
@@ -5432,9 +5432,9 @@
    "kind": "namedEntities",
    "start": 110,
    "end": 112,
-   "textA": "Planned Parenthood",
+   "textA": "PP",
    "textB": "PP",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "2715|namedEntities|90|99",
@@ -5502,9 +5502,9 @@
    "kind": "namedEntities",
    "start": 288,
    "end": 290,
-   "textA": "PlayStation",
+   "textA": "PS",
    "textB": "PS",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "2984|namedEntities|309|311",
@@ -5512,9 +5512,9 @@
    "kind": "namedEntities",
    "start": 309,
    "end": 311,
-   "textA": "Microsoft",
+   "textA": "MS",
    "textB": "MS",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "2989|namedEntities|693|698",
@@ -5522,9 +5522,9 @@
    "kind": "namedEntities",
    "start": 693,
    "end": 698,
-   "textA": "Hollywood",
+   "textA": "HWOOD",
    "textB": "HWOOD",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "3004|namedEntities|771|776",
@@ -5552,9 +5552,9 @@
    "kind": "namedEntities",
    "start": 50,
    "end": 57,
-   "textA": "Bill Clinton",
+   "textA": "Clinton",
    "textB": "Clinton",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "3065|namedEntities|131|134",
@@ -5562,9 +5562,9 @@
    "kind": "namedEntities",
    "start": 131,
    "end": 134,
-   "textA": "Nellie Ohr",
+   "textA": "OHR",
    "textB": "OHR",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "3133|namedEntities|251|253",
@@ -5572,9 +5572,9 @@
    "kind": "namedEntities",
    "start": 251,
    "end": 253,
-   "textA": "Rachel Chandler",
+   "textA": "RC",
    "textB": "RC",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "3158|namedEntities|0|18",
@@ -5582,9 +5582,9 @@
    "kind": "namedEntities",
    "start": 0,
    "end": 18,
-   "textA": "Standard Hotel",
+   "textA": "THE STANDARD HOTEL",
    "textB": "THE STANDARD HOTEL",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "3316|namedEntities|279|286",
@@ -5633,8 +5633,8 @@
    "start": 487,
    "end": 492,
    "textA": "Biden",
-   "textB": "Joe Biden",
-   "identicalText": false
+   "textB": "Biden",
+   "identicalText": true
   },
   {
    "occurrenceKey": "3408|namedEntities|117|119",
@@ -5642,9 +5642,9 @@
    "kind": "namedEntities",
    "start": 117,
    "end": 119,
-   "textA": "Planned Parenthood",
+   "textA": "PP",
    "textB": "PP",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "3415|namedEntities|145|147",
@@ -5652,9 +5652,9 @@
    "kind": "namedEntities",
    "start": 145,
    "end": 147,
-   "textA": "Planned Parenthood",
+   "textA": "PP",
    "textB": "PP",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "3595|namedEntities|0|3",
@@ -5662,9 +5662,9 @@
    "kind": "namedEntities",
    "start": 0,
    "end": 3,
-   "textA": "Australia",
+   "textA": "AUS",
    "textB": "AUS",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "3634|namedEntities|650|652",
@@ -5672,9 +5672,9 @@
    "kind": "namedEntities",
    "start": 650,
    "end": 652,
-   "textA": "Valerie Jarrett",
+   "textA": "VJ",
    "textB": "VJ",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "3741|namedEntities|344|350",
@@ -5692,9 +5692,9 @@
    "kind": "namedEntities",
    "start": 137,
    "end": 139,
-   "textA": "New York",
+   "textA": "NY",
    "textB": "NY",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "3896|namedEntities|433|457",
@@ -5702,9 +5702,9 @@
    "kind": "namedEntities",
    "start": 433,
    "end": 457,
-   "textA": "Wuhan University of Technology",
+   "textA": "University of Technology",
    "textB": "University of Technology",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "3915|namedEntities|677|682",
@@ -5832,9 +5832,9 @@
    "kind": "namedEntities",
    "start": 190,
    "end": 192,
-   "textA": "WikiLeaks",
+   "textA": "WL",
    "textB": "WL",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "4156|namedEntities|115|117",
@@ -5842,9 +5842,9 @@
    "kind": "namedEntities",
    "start": 115,
    "end": 117,
-   "textA": "New York",
+   "textA": "NY",
    "textB": "NY",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "436|emphasis|42|47",
@@ -5902,9 +5902,9 @@
    "kind": "namedEntities",
    "start": 293,
    "end": 295,
-   "textA": "Planned Parenthood",
+   "textA": "PP",
    "textB": "PP",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "4555|namedEntities|304|307",
@@ -5912,9 +5912,9 @@
    "kind": "namedEntities",
    "start": 304,
    "end": 307,
-   "textA": "Black Lives Matter",
+   "textA": "BLM",
    "textB": "BLM",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "4586|namedEntities|123|125",
@@ -5922,9 +5922,9 @@
    "kind": "namedEntities",
    "start": 123,
    "end": 125,
-   "textA": "Florida",
+   "textA": "FL",
    "textB": "FL",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "4620|namedEntities|487|494",
@@ -5942,9 +5942,9 @@
    "kind": "namedEntities",
    "start": 3229,
    "end": 3231,
-   "textA": "New York",
+   "textA": "NY",
    "textB": "NY",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "4635|namedEntities|1782|1789",
@@ -5962,9 +5962,9 @@
    "kind": "namedEntities",
    "start": 779,
    "end": 781,
-   "textA": "New York",
+   "textA": "NY",
    "textB": "NY",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "4817|namedEntities|54|59",
@@ -5982,9 +5982,9 @@
    "kind": "namedEntities",
    "start": 0,
    "end": 22,
-   "textA": "Clinton Foundation",
+   "textA": "THE CLINTON FOUNDATION",
    "textB": "THE CLINTON FOUNDATION",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "484|namedEntities|368|371",
@@ -5992,9 +5992,9 @@
    "kind": "namedEntities",
    "start": 368,
    "end": 371,
-   "textA": "Australia",
+   "textA": "AUS",
    "textB": "AUS",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "5|namedEntities|509|516",
@@ -6102,9 +6102,9 @@
    "kind": "namedEntities",
    "start": 45,
    "end": 47,
-   "textA": "Hong Kong",
+   "textA": "HK",
    "textB": "HK",
-   "identicalText": false
+   "identicalText": true
   },
   {
    "occurrenceKey": "964|namedEntities|455|460",
@@ -20322,7 +20322,7 @@
    "layer": "inline",
    "nested": true,
    "deliberate": true,
-   "a": "Utah",
+   "a": "UT",
    "b": "UTAH"
   },
   {
@@ -21902,7 +21902,7 @@
    "layer": "inline",
    "nested": true,
    "deliberate": true,
-   "a": "ABC News",
+   "a": "ABC NEWS",
    "b": "ABC"
   },
   {
@@ -21922,7 +21922,7 @@
    "layer": "inline",
    "nested": true,
    "deliberate": true,
-   "a": "ABC News",
+   "a": "ABC NEWS",
    "b": "ABC"
   },
   {
@@ -22812,7 +22812,7 @@
    "layer": "inline",
    "nested": true,
    "deliberate": true,
-   "a": "Australia",
+   "a": "AUS",
    "b": "US"
   },
   {
@@ -23032,7 +23032,7 @@
    "layer": "inline",
    "nested": true,
    "deliberate": true,
-   "a": "New York",
+   "a": "NY",
    "b": "Rep. Jerry Nadler (D-NY) – Chair Judiciary"
   },
   {
@@ -23182,7 +23182,7 @@
    "layer": "inline",
    "nested": true,
    "deliberate": true,
-   "a": "Russia",
+   "a": "RUSSIA",
    "b": "US"
   },
   {
@@ -23772,7 +23772,7 @@
    "layer": "inline",
    "nested": true,
    "deliberate": true,
-   "a": "Russia",
+   "a": "RUSSIA",
    "b": "US"
   },
   {
@@ -24962,7 +24962,7 @@
    "layer": "inline",
    "nested": true,
    "deliberate": true,
-   "a": "Military Intelligence",
+   "a": "MILITARY INTELLIGENCE",
    "b": "MI"
   },
   {
@@ -24972,7 +24972,7 @@
    "layer": "inline",
    "nested": true,
    "deliberate": true,
-   "a": "Military Intelligence",
+   "a": "MILITARY INTELLIGENCE",
    "b": "MI"
   },
   {
@@ -24982,7 +24982,7 @@
    "layer": "inline",
    "nested": true,
    "deliberate": true,
-   "a": "Military Intelligence",
+   "a": "MILITARY INTELLIGENCE",
    "b": "MI"
   },
   {
@@ -25102,7 +25102,7 @@
    "layer": "inline",
    "nested": true,
    "deliberate": true,
-   "a": "Russia",
+   "a": "RUSSIA",
    "b": "US"
   },
   {
