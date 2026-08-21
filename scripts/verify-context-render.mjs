@@ -53,8 +53,13 @@ const checks = [
   // ── the data half: nothing was withdrawn to achieve the visual change ──────
   ['4,816 context units still certified', ctx.units === 4816, ctx.units],
   ['context still spread across 2,311 posts', ctx.withUnits === 2311, ctx.withUnits],
-  ['4,238 emphasis units still certified', emp.units === 4238, emp.units],
-  ['emphasis still spread across 1,357 posts', emp.withUnits === 1357, emp.withUnits],
+  // 4,238 -> 4,236 on 2026-08-19. UNITS, not occurrences: #2420's single parallel-phrasing
+  // occurrence contributes BOTH its lines to postAnalysis.emphasis, and the run retired when the
+  // owner ruled its second line a Question (a question carries no Emphasis). Nothing was deleted
+  // from the drop; the device simply stops being certified.
+  ['4,236 emphasis units still certified', emp.units === 4236, emp.units],
+  // -1: that run was #2420's only Emphasis, so the drop leaves the set.
+  ['emphasis still spread across 1,356 posts', emp.withUnits === 1356, emp.withUnits],
   ['13 reconstruction exceptions still tracked', exceptions.count === 13, exceptions.count],
 
   // ── the render half: neither surface paints them ──────────────────────────
