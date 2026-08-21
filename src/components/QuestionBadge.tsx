@@ -15,8 +15,23 @@ const config: Record<AnswerStatus, { bg: string; text: string; border: string; d
   unprocessed: { bg: 'bg-gray-800/60',   text: 'text-gray-400',   border: 'border-gray-600',   dot: 'bg-gray-400',   label: 'Unprocessed'    },
 }
 
+// A STATUS THIS COMPONENT DOES NOT KNOW MUST NOT BLANK THE PAGE.
+//
+// `config[status]` returned undefined for any value outside the four keys, and the next line read
+// `.bg` off it — an uncaught TypeError during render, which React turns into an empty document.
+// Three questions in the bundle carry `status: "unanswered"`, and the two drops holding them
+// (#2211, #3613) rendered as a completely blank /post/:id: no body, no analysis, no error visible
+// to the reader. The archive was unaffected, so the two surfaces disagreed about whether those
+// drops existed at all.
+//
+// "unanswered" is not a foreign value, it is this component's own LABEL for `red` used in place of
+// the key, so it resolves to red rather than being discarded. Anything genuinely unrecognised
+// degrades to `unprocessed` — the neutral state — because a badge with the wrong colour is a small
+// defect and a drop that will not render is a large one.
+const ALIASES: Record<string, AnswerStatus> = { unanswered: 'red', answered: 'green', partial: 'yellow' }
+
 export default function QuestionBadge({ status, text, onClick, small = false, highlightClass }: Props) {
-  const c = config[status]
+  const c = config[status] ?? config[ALIASES[String(status)]] ?? config.unprocessed
   return (
     <div
       onClick={onClick}
