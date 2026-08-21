@@ -3,15 +3,15 @@
 Search indexes the certified datasets and their existing metadata. It performs no classification of its own, and it duplicates no post text.
 
 
-**29,788 records.**
+**29,789 records.**
 
 
 | Section | Records |
 |---|---|
 | evidence | 6,590 |
-| questions | 6,443 |
-| claims | 4,221 |
-| emphasis | 3,112 |
+| questions | 6,454 |
+| claims | 4,212 |
+| emphasis | 3,111 |
 | themes | 2,644 |
 | directives | 2,552 |
 | editorial | 1,393 |
@@ -25,15 +25,15 @@ Search indexes the certified datasets and their existing metadata. It performs n
 
 | | Check | Observed |
 |---|---|---|
-| ✅ | Questions indexed = 6,443 | 6443 |
+| ✅ | Questions indexed = 6,454 | 6454 |
 | ✅ | Directives indexed = 2,552 | 2552 |
-| ✅ | Claims indexed = 4,221 | 4221 |
+| ✅ | Claims indexed = 4,212 | 4212 |
 | ✅ | Predictions indexed = 595 | 595 |
 | ✅ | Evidence indexed = 6,590 | 6590 |
 | ✅ | Entities indexed = 1,201 | 1201 |
 | ✅ | Themes indexed = 2,644 | 2644 |
 | ✅ | Codes indexed = 739 | 739 |
-| ✅ | Emphasis indexed = 3,112 | 3112 |
+| ✅ | Emphasis indexed = 3,111 | 3111 |
 | ✅ | Unresolved indexed = 115 | 115 |
 | ✅ | editorial rows = 134 normalisations + 1,259 paraphrases | 1393 |
 | ✅ | every editorial row is flagged not-Q-authored | 0 |

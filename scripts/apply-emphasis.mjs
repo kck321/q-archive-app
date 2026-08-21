@@ -172,7 +172,11 @@ const CERTIFIED_BY_TYPE = {
   // sat unclassified in every section. Bracketed ABBREVIATIONS ([D], [F]) are a different device
   // and stay excluded; see audit/emphasis-owner-rulings.json.
   acrostic: 3,
-  parallel_phrasing: 591,
+  // 591 -> 590 on 2026-08-19. #2420's run is "I pointed directly at it 3x." / "I turned and
+  // double pointed just to be clear." — the owner ruled the second line a Question, and the
+  // standing rule is that a question carries no Emphasis, so the run retires. The device is not
+  // reclassified and nothing is deleted from the drop; it simply stops being counted here.
+  parallel_phrasing: 590,
   bracket_emphasis: 409,
   quoted_word: 285,
   punctuation_intensity: 149,
@@ -204,15 +208,19 @@ const checks = [
   // Both halves asserted so a lost ruling fails here instead of silently reverting to 5,251.
   // 5,251 detected, less 1 owner withdrawal (#4742 [barrage] — a bracketed item, not a device).
   // 5,251 detected, less 1 owner withdrawal and 104 rows retired by the question rule.
-  ['detected occurrences = 3,109', occurrences.length - ownerAdded === 3109, occurrences.length - ownerAdded],
+  // 3,109 -> 3,108: one more run retired by the question rule after the 2026-08-19 question
+  // rulings. Not a detector change — audit/emphasis-audit.json is untouched.
+  ['detected occurrences = 3,108', occurrences.length - ownerAdded === 3108, occurrences.length - ownerAdded],
   ['question rule retired 104 rows', questionRule === 104, questionRule],
   ['question rule retired 479 parallel runs', questionRuleParallel === 479, questionRuleParallel],
   // Per-post, not corpus-wide: a question asked in one drop never retires an emphasis in another.
-  ['question rule retired 1,555 rows inside questions', questionRuleInside === 1555, questionRuleInside],
+  ['question rule retired 1,556 rows inside questions', questionRuleInside === 1556, questionRuleInside],
   ['owner withdrawals applied = 4', ownerRemoved === 4, ownerRemoved],
   ['owner acrostic rulings applied = 3', ownerAdded === 3, ownerAdded],
-  ['certified occurrences = 3,112', occurrences.length === 3112, occurrences.length],
-  ['posts = 1,357', postsWith.size === 1357, postsWith.size],
+  ['certified occurrences = 3,111', occurrences.length === 3111, occurrences.length],
+  // -1: #2420 held exactly one Emphasis occurrence and it was that parallel run, so the drop
+  // leaves the Emphasis post set entirely.
+  ['posts = 1,356', postsWith.size === 1356, postsWith.size],
   ['subtype totals reconcile exactly', mismatched.length === 0 && subtypeSum === occurrences.length,
     `${mismatched.length} mismatched, sum ${subtypeSum}`],
   ['no subtype outside the certified ten', Object.keys(byType).every(k => k in CERTIFIED_BY_TYPE),

@@ -35,6 +35,8 @@ const posts = JSON.parse(fs.readFileSync(path.join(DATA, 'posts.json'), 'utf8'))
 // untouched, and audit/predictions-audit/*.json is re-applied on every run. Re-deriving the
 // claims audit therefore cannot silently erase 403 rulings.
 //   630 -> 595 predictions, 4,242 -> 4,221 claims. See audit/predictions-audit/ledger.jsonl.
+// Owner question rulings layer the same way and withdraw their occurrence from Claims:
+//   4,221 -> 4,212 (9 quoted questions, 2026-08-19). See audit/questions-owner-rulings.json.
 const frozen = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/claims-final.json'), 'utf8'))
 const audited = applyPredictionsAudit(frozen)
 if (audited.report.errors.length) {
@@ -42,6 +44,31 @@ if (audited.report.errors.length) {
   process.exit(1)
 }
 const final = { ...frozen, rows: audited.rows, predictions: audited.predictions }
+
+// AN OWNER QUESTION RULING WITHDRAWS ITS OCCURRENCE FROM CLAIMS, IN THE SAME BREATH.
+//
+// audit/questions-owner-rulings.json is the ONE record of a line moving into Questions. A ruling
+// carrying `was: "Claim"` has to leave Claims at the moment it arrives in Questions, or the drop
+// paints the sentence blue AND amber and two certified sections each count it once. Both
+// materialisers reading the same file is what makes that impossible to get half-done.
+//
+// Layered HERE, over the frozen artifact, exactly as the predictions audit is — claims-final.json
+// is left untouched, so re-deriving the claims audit can never silently restore a withdrawn row.
+//
+// 2026-08-19, 9 occurrences: quoted questions filed as Q assertions. #2420 x3 and #2695 x2 are
+// the same drop shape (Q reports a spoken exchange); #483, #2776 x2, #3203 are quoted questions
+// reproduced from source material. Rulings marked `was: "Evidence"` are NOT withdrawn here:
+// Evidence is provenance, not a display category, and it does not paint in the drop body.
+const questionRulings = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/questions-owner-rulings.json'), 'utf8')).rulings ?? []
+const withdrawnByRuling = new Set(questionRulings.filter(r => r.was === 'Claim').map(r => `${r.postNum}|${key(r.text)}`))
+const keptRows = final.rows.filter(r => !withdrawnByRuling.has(`${r.postNum}|${key(r.exactText)}`))
+// Refuse rather than under-apply. A ruling that stops matching — a reworded artifact, a changed
+// key() definition — would otherwise leave the line certified in BOTH sections with no error.
+if (final.rows.length - keptRows.length !== withdrawnByRuling.size) {
+  console.error(`Owner question rulings: ${withdrawnByRuling.size} claim occurrence(s) to withdraw, ${final.rows.length - keptRows.length} matched.`)
+  process.exit(1)
+}
+final.rows = keptRows
 const ph3 = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/claims-adjudicated.json'), 'utf8'))
 const v2 = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/claims-audit.json'), 'utf8'))
 
@@ -196,20 +223,27 @@ const directives = posts.reduce((n, p) => n + (p.actionRequests?.length ?? 0), 0
 // none was forced; each is (removed) + (arrived) over the frozen artifact.
 const checks = [
   // 4,242 - 68 moved out to Predictions (P4) + 47 arriving from Predictions (P1) = 4,221.
-  ['claim occurrences = 4,221', allClaims.length === 4221, allClaims.length],
+  // 4,221 - 9 withdrawn to Questions by owner ruling (2026-08-19) = 4,212.
+  ['claim occurrences = 4,212', allClaims.length === 4212, allClaims.length],
   ['all resolve to their Q source span', unresolved.length === 0, `${allClaims.length - unresolved.length}/${allClaims.length}`],
   // +11: the 47 arrivals introduce 44 wordings Claims did not already hold, while the 68
   // departures empty 33 keys entirely ("Future proves past." left every post that carried it).
-  ['distinct = 3,256', distinct.size === 3256, distinct.size],
+  // -9: every withdrawn wording occurs in exactly one post, so each empties its own key.
+  ['distinct = 3,247', distinct.size === 3247, distinct.size],
   // +1: 17 posts gain their first claim, 16 posts lose their last one.
-  ['posts = 1,983', postsWith.size === 1983, postsWith.size],
+  // -3: #483, #2695 and #3203 each held ONE claim and it was the quoted question, so those
+  // drops leave the Claims post set entirely. #2420 and #2776 keep other claims and stay.
+  ['posts = 1,980', postsWith.size === 1980, postsWith.size],
   // 630 - 73 technical nonpredictions - 56 arguable + 66 from Claims + 28 found = 595.
   ['predictions = 595', allPreds.length === 595, allPreds.length],
-  // UNCHANGED, and deliberately so: isConclusion travels with the row rather than with the
-  // section, and a collapsed duplicate merges its attributes into the survivor.
-  ['conclusions = 966', conclusions === 966, conclusions],
+  // isConclusion travels with the ROW rather than with the section, so a row leaving Claims
+  // takes the attribute with it. -1: #3203's quoted question was the only withdrawn row
+  // carrying it. 966 - 1 = 965.
+  ['conclusions = 965', conclusions === 965, conclusions],
   // +5: 18 checkable rows arrive from Predictions, 13 checkable rows leave for Predictions.
-  ['checkable = 1,931', checkable === 1931, checkable],
+  // Same rule, same reason: -6 of the 9 withdrawn rows were checkable (#483, #2695 x2,
+  // #2776 x2, #3203). 1,931 - 6 = 1,925.
+  ['checkable = 1,925', checkable === 1925, checkable],
   // +1: 5 arrive carrying sourceProvided, 4 leave with it.
   ['sourceProvided = 439', sourceProvided === 439, sourceProvided],
   // -2: two departing claims were telegraphic. Predictions never carried the attribute, so
@@ -218,7 +252,8 @@ const checks = [
   ['in-post repeats preserved = 13', repeats === 13, repeats],
   ['no editorial paraphrase shown as Q', paraLeak.length === 0, `${paraLeak.length} leaked`],
   ['no source material shown as Q', srcLeak.length === 0, `${srcLeak.length} leaked`],
-  ['Questions still 6,443', questions.length === 6443, questions.length],
+  // 6,443 + 11 arriving by owner ruling (2026-08-19) = 6,454.
+  ['Questions now 6,454', questions.length === 6454, questions.length],
   // 2,422 + 2 owner rulings (#4963 'Focus.' / 'FOCUS.', ruled Directives out of Emphasis).
   // v5: Q Directives migrated to sourceSpansV2 provenance; 2,705 -> 2,552 by owner ruling.
   ['Directives still 2,552', directives === 2552, directives],

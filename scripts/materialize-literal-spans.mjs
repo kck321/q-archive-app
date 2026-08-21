@@ -89,12 +89,12 @@ const checks = [
   // 162 -> 2 after resolving against the runtime body instead of the raw archive encoding. The
   // other 160 were entity-form overrides for text the browser never displays.
   ['question literal spans = 2', questionLiterals === 2, questionLiterals],
-  ['certified questions unchanged = 6,442', questions.filter(r => r.occurrences !== undefined).length === 6443,
+  ['certified questions unchanged = 6,454', questions.filter(r => r.occurrences !== undefined).length === 6454,
     questions.filter(r => r.occurrences !== undefined).length],
-  ['claims unchanged = 4,221', counts.claims === 4221, counts.claims],
+  ['claims unchanged = 4,212', counts.claims === 4212, counts.claims],
   ['predictions unchanged = 595', counts.predictions === 595, counts.predictions],
-  ['conclusions unchanged = 966', counts.impliedConclusions === 966, counts.impliedConclusions],
-  ['checkable unchanged = 1,931', counts.verificationHooks === 1931, counts.verificationHooks],
+  ['conclusions unchanged = 965', counts.impliedConclusions === 965, counts.impliedConclusions],
+  ['checkable unchanged = 1,925', counts.verificationHooks === 1925, counts.verificationHooks],
   ['every span array matches its source array', FIELDS.every(([f]) => spanCounts[f] === counts[f]), 'ok'],
 ]
 

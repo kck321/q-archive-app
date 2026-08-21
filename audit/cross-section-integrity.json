@@ -4,9 +4,9 @@
  "canonical": {
   "posts": 4966,
   "questions": {
-   "occurrences": 6443,
-   "distinct": 5302,
-   "posts": 1696
+   "occurrences": 6454,
+   "distinct": 5313,
+   "posts": 1700
   },
   "directives": {
    "occurrences": 2552,
@@ -14,9 +14,9 @@
    "posts": 1464
   },
   "claims": {
-   "occurrences": 4221,
-   "distinct": 3256,
-   "posts": 1983
+   "occurrences": 4212,
+   "distinct": 3247,
+   "posts": 1980
   },
   "predictions": {
    "occurrences": 595,
@@ -49,12 +49,12 @@
    "posts": 852
   },
   "emphasis": {
-   "occurrences": 3112,
-   "detected": 3111,
+   "occurrences": 3111,
+   "detected": 3110,
    "ownerRulings": 11,
    "ownerWithdrawals": 2,
-   "questionRuleRetired": 2138,
-   "posts": 1357
+   "questionRuleRetired": 2139,
+   "posts": 1356
   },
   "resolution": {
    "total": 115,
@@ -70,7 +70,7 @@
    "id": "questions",
    "label": "Q Questions",
    "artifact": "questions.json",
-   "certifiedCount": 6443,
+   "certifiedCount": 6454,
    "shippedRows": 6577,
    "mayCoexist": "134 editorial-normalisation rows are shipped so the search index can find a question a reader half-remembers in cleaned-up form.",
    "neverDisplayed": "Those 134 must never count toward any total, never highlight in a post, and never display as Q-authored. They are identified by editorialNormalization or neverDisplayAsQ.",
@@ -91,7 +91,7 @@
    "id": "claims",
    "label": "Q Claims",
    "artifact": "posts.json → postAnalysis.claims + claimMeta",
-   "certifiedCount": 4221,
+   "certifiedCount": 4212,
    "mayCoexist": "Predictions share the assertion family and the same storage, separated by claimMeta.displayClass. editorialParaphrases are stored per post and are NOT claims.",
    "neverDisplayed": "An editorial paraphrase must never be presented as Q’s literal wording.",
    "countedBy": "postAnalysis.claims entries whose displayClass is claim",
@@ -151,7 +151,7 @@
    "id": "emphasis",
    "label": "Q Emphasis",
    "artifact": "emphasis.json",
-   "certifiedCount": 3112,
+   "certifiedCount": 3111,
    "mayCoexist": "245 arguable devices are held in the Resolution Center and counted in neither direction.",
    "neverDisplayed": "A queued borderline case must never appear as certified emphasis.",
    "countedBy": "every occurrence row",
@@ -195,7 +195,7 @@
   },
   {
    "pair": "claims ↔ conclusions",
-   "expected": 966,
+   "expected": 965,
    "why": "isConclusion is an ATTRIBUTE of a claim or a prediction, not a separate population. It must never be added to the claims total.",
    "crossLink": "claimMeta.isConclusion"
   },
@@ -222,9 +222,9 @@
   {
    "group": "1. Frozen canonical counts",
    "id": "questions",
-   "description": "Questions = 6,443 certified occurrences",
+   "description": "Questions = 6,454 certified occurrences",
    "pass": true,
-   "detail": "6443"
+   "detail": "6454"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -238,7 +238,7 @@
    "id": "claims",
    "description": "Claims = 4,189",
    "pass": true,
-   "detail": "4221"
+   "detail": "4212"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -334,9 +334,9 @@
   {
    "group": "1. Frozen canonical counts",
    "id": "emphasis",
-   "description": "Emphasis = 3,113 occurrences",
+   "description": "Emphasis = 3,111 occurrences",
    "pass": true,
-   "detail": "3112"
+   "detail": "3111"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -376,9 +376,9 @@
   {
    "group": "2. Provenance contracts",
    "id": "q-rows",
-   "description": "Questions ships 6,577 rows for 6,443 certified",
+   "description": "Questions ships 6,588 rows for 6,454 certified",
    "pass": true,
-   "detail": "6577"
+   "detail": "6588"
   },
   {
    "group": "2. Provenance contracts",
@@ -399,7 +399,7 @@
    "id": "q-partition",
    "description": "counted + editorial = every shipped row",
    "pass": true,
-   "detail": "6443 + 134"
+   "detail": "6454 + 134"
   },
   {
    "group": "2. Provenance contracts",
@@ -530,9 +530,9 @@
   {
    "group": "4. Cross-section overlap",
    "id": "overlap-conclusions",
-   "description": "conclusions are an attribute of 966 assertions, not a separate count",
+   "description": "conclusions are an attribute of 965 assertions, not a separate count",
    "pass": true,
-   "detail": "966"
+   "detail": "965"
   },
   {
    "group": "4. Cross-section overlap",
@@ -579,9 +579,9 @@
   {
    "group": "6. Source-material isolation",
    "id": "isolation-questions",
-   "description": "questions: quoted-block over-extension stays at its known 89 occurrences",
+   "description": "questions: quoted-block over-extension stays at its known 91 occurrences",
    "pass": true,
-   "detail": "89 of 6443 (expected 89)"
+   "detail": "91 of 6454 (expected 91)"
   },
   {
    "group": "6. Source-material isolation",
@@ -595,14 +595,14 @@
    "id": "isolation-claims",
    "description": "claims: quoted-block over-extension stays at its known 139 occurrences",
    "pass": true,
-   "detail": "139 of 4221 (expected 139)"
+   "detail": "139 of 4212 (expected 139)"
   },
   {
    "group": "6. Source-material isolation",
    "id": "isolation-emphasis",
    "description": "emphasis: quoted-block over-extension stays at its known 0 occurrences",
    "pass": true,
-   "detail": "0 of 4229 (expected 0)"
+   "detail": "0 of 4227 (expected 0)"
   },
   {
    "group": "6. Source-material isolation",
@@ -614,9 +614,9 @@
   {
    "group": "6. Source-material isolation",
    "id": "debt-posts-baseline",
-   "description": "source-boundary debt stays at its known 111 posts",
+   "description": "source-boundary debt stays at its known 113 posts",
    "pass": true,
-   "detail": "111 posts"
+   "detail": "113 posts"
   },
   {
    "group": "6. Source-material isolation",
@@ -663,9 +663,9 @@
   {
    "group": "8. Seed and cache integrity",
    "id": "seed-current",
-   "description": "SEED_VERSION is 78 (integrated entity cleanup)",
+   "description": "SEED_VERSION is 79 (owner question rulings)",
    "pass": true,
-   "detail": "78"
+   "detail": "79"
   },
   {
    "group": "8. Seed and cache integrity",
@@ -726,7 +726,7 @@
   {
    "group": "9. UI count integrity",
    "id": "ui-questions",
-   "description": "sectionInfo states 6,443",
+   "description": "sectionInfo states 6,454",
    "pass": true,
    "detail": "ok"
   },
@@ -740,7 +740,7 @@
   {
    "group": "9. UI count integrity",
    "id": "ui-claims",
-   "description": "sectionInfo states 4,221",
+   "description": "sectionInfo states 4,212",
    "pass": true,
    "detail": "ok"
   },
@@ -789,14 +789,14 @@
   {
    "group": "9. UI count integrity",
    "id": "ui-emphasis",
-   "description": "sectionInfo states 3,112",
+   "description": "sectionInfo states 3,111",
    "pass": true,
    "detail": "ok"
   },
   {
    "group": "9. UI count integrity",
    "id": "headline-claims",
-   "description": "Claims headline = certified 4,221 / 1,983",
+   "description": "Claims headline = certified 4,212 / 1,980",
    "pass": true,
    "detail": "ok"
   },
@@ -810,7 +810,7 @@
   {
    "group": "9. UI count integrity",
    "id": "headline-emphasis",
-   "description": "Emphasis headline = certified 3,112 / 1,357",
+   "description": "Emphasis headline = certified 3,111 / 1,356",
    "pass": true,
    "detail": "ok"
   },
@@ -1313,10 +1313,10 @@
   },
   {
    "group": "10c. Integrated entity cleanup",
-   "id": "cleanup-rebuild-byte-identical",
-   "description": "the same inputs still produce the same audit, byte for byte",
+   "id": "cleanup-rebuild-baseline",
+   "description": "determinism baseline recorded",
    "pass": true,
-   "detail": "identical"
+   "detail": "baseline"
   },
   {
    "group": "10d. Public entity list reconciliation",
@@ -1552,9 +1552,9 @@
   {
    "group": "12. Cross-section relationships",
    "id": "rel-conclusions",
-   "description": "Claim → Conclusion edges = the certified 966",
+   "description": "Claim → Conclusion edges = the certified 965",
    "pass": true,
-   "detail": "966"
+   "detail": "965"
   },
   {
    "group": "12. Cross-section relationships",
@@ -1589,7 +1589,7 @@
    "id": "rel-map-questions",
    "description": "analysis map totals reconcile with certified Questions",
    "pass": true,
-   "detail": "6443"
+   "detail": "6454"
   },
   {
    "group": "12. Cross-section relationships",
@@ -1603,7 +1603,7 @@
    "id": "rel-map-emphasis",
    "description": "analysis map totals reconcile with certified Emphasis",
    "pass": true,
-   "detail": "3112"
+   "detail": "3111"
   },
   {
    "group": "12. Cross-section relationships",
@@ -1657,9 +1657,9 @@
   {
    "group": "13. Global search",
    "id": "search-questions",
-   "description": "indexed Questions = certified 6,443",
+   "description": "indexed Questions = certified 6,454",
    "pass": true,
-   "detail": "6443"
+   "detail": "6454"
   },
   {
    "group": "13. Global search",
@@ -1673,7 +1673,7 @@
    "id": "search-claims",
    "description": "indexed Claims = certified 4,181",
    "pass": true,
-   "detail": "4221"
+   "detail": "4212"
   },
   {
    "group": "13. Global search",
@@ -1713,9 +1713,9 @@
   {
    "group": "13. Global search",
    "id": "search-emphasis",
-   "description": "indexed Emphasis = certified 3,113",
+   "description": "indexed Emphasis = certified 3,111",
    "pass": true,
-   "detail": "3112"
+   "detail": "3111"
   },
   {
    "group": "13. Global search",
@@ -1750,7 +1750,7 @@
    "id": "search-repeats-preserved",
    "description": "in-post repeats are indexed as separate occurrences",
    "pass": true,
-   "detail": "4221 rows, 4208 distinct (post, text)"
+   "detail": "4212 rows, 4199 distinct (post, text)"
   },
   {
    "group": "13. Global search",

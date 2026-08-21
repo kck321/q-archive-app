@@ -10,7 +10,7 @@
 // recount cannot leave a stale figure in prose.
 
 export const CERTIFIED = {
-  questions: { occurrences: 6443, distinct: 5302, posts: 1696 },
+  questions: { occurrences: 6454, distinct: 5313, posts: 1700 },
   // v5, 16 Aug 2026 — Q Directives migrated to sourceSpansV2 provenance under owner ruling.
   // 2,705 -> 2,552: 153 occurrences removed from Q Directives ONLY (quoted news, scraped code,
   // blessings, declarative-lead misreads, questions, a prediction). Nothing was deleted from the
@@ -19,11 +19,11 @@ export const CERTIFIED = {
   // what the page actually renders — the old 1,472/1,417 counted directives-final.json alone and
   // never matched the UI.
   directives: { occurrences: 2552, distinct: 1642, posts: 1464 },
-  claims: { occurrences: 4221, distinct: 3256, posts: 1983 },
+  claims: { occurrences: 4212, distinct: 3247, posts: 1980 },
   predictions: { occurrences: 595, posts: 490 },
   /** Claim attributes. `conclusions` may apply to a claim or a prediction. */
   claimAttributes: { checkable: 1926, sourceProvided: 438, conclusions: 966, telegraphic: 331 },
-  emphasis: { occurrences: 3112, posts: 1357, unresolved: 245 },
+  emphasis: { occurrences: 3111, posts: 1356, unresolved: 245 },
   /** Units that are BOTH a question and a directive. */
   overlap: 228,
   totalPosts: 4966,
@@ -51,9 +51,9 @@ export const CERTIFIED = {
  * recount cannot quietly come back.
  */
 export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number; unit: string }> = {
-  claims: { occurrences: 4221, posts: 1983, unit: 'occurrences' },
+  claims: { occurrences: 4212, posts: 1980, unit: 'occurrences' },
   predictions: { occurrences: 595, posts: 490, unit: 'occurrences' },
-  emphasis: { occurrences: 3112, posts: 1357, unit: 'occurrences' },
+  emphasis: { occurrences: 3111, posts: 1356, unit: 'occurrences' },
   // "mentions" is the right word here and the only section where it is: an entity is counted
   // once per resolved mention across the 1,066 canonical entities Q named in prose. The other 135
   // certified identities contribute none — they are linked sources, not words Q wrote — which is
@@ -398,7 +398,7 @@ export const SECTIONS: SectionInfo[] = [
     covers: 'Capitals that contrast with the text around them, bracketed words, quoted words, punctuation runs, deliberate spacing, repeated words, questions and instructions, and parallel rhetorical structure.',
     answers: 'What did Q appear to place special emphasis on?',
     note: 'Emphasis records concrete formatting, repetition, punctuation, or rhetorical structure Q used to draw attention to language. It does not infer importance merely because a phrase is cryptic, political, or written in Q’s usual style. It is an attribute, and can coexist with any other classification.',
-    certified: '3,112 occurrences across 1,357 posts, in nine device types. 245 arguable cases are held in the Resolution Center rather than counted.',
+    certified: '3,111 occurrences across 1,356 posts, in nine device types. 245 arguable cases are held in the Resolution Center rather than counted.',
   },
   {
     id: 'verificationHooks',

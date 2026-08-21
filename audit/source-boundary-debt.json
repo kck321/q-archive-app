@@ -1,9 +1,9 @@
 {
  "id": "source-boundary-over-extension",
  "priority": "highest",
- "postsAffected": 111,
+ "postsAffected": 113,
  "baseline": {
-  "questions": 89,
+  "questions": 91,
   "directives": 55,
   "claims": 139,
   "emphasis": 0
@@ -49,6 +49,7 @@
   1841,
   1911,
   1964,
+  1975,
   1990,
   2070,
   2119,
@@ -74,6 +75,7 @@
   2662,
   2682,
   2693,
+  2776,
   2788,
   2793,
   2814,

@@ -1,6 +1,6 @@
 {
  "note": "The exact source-boundary debt occurrences. Frozen as a SET so drift reports which row changed instead of only that a count moved.",
- "count": 280,
+ "count": 282,
  "occurrences": [
   "claims::1164|hussein hrc ll brennan clapper nat sec wh sit rm op uk aus assist/set up.",
   "claims::1164|not public: five eyes uk/aus potus targeting using pushed rus decoy meetings / c",
@@ -193,6 +193,7 @@
   "directives::6|focus on military intelligence/ state secrets and why might that be used vs any ",
   "directives::91|put simply, obama ultimately ok’d by using the non govt email addy to communicat",
   "directives::91|remember he lied about knowing but that ultimately came out in the dump.",
+  "questions::1975|\"what are the odds that the fbi and doj are right on top of this?\"",
   "questions::2171|\"panic in dc\" statements start a fire?",
   "questions::2180|what was the usss codename for hussein?",
   "questions::2332|why now?",
@@ -227,6 +228,7 @@
   "questions::2467|>amount of fires in ca past 12-months?",
   "questions::2467|>ca budget cuts past 12-months re: fire & prevention?",
   "questions::2467|>date fed funding cut off from ca as result of violation(s) of sanctuary state/c",
+  "questions::2776|“all charges thus far are unrelated to the original mandate - why are you still ",
   "questions::2971|define 'brainwashing'.",
   "questions::2971|proof = evidence?",
   "questions::3132|>comey connection?",
@@ -282,20 +284,5 @@
   "questions::4699|what happens when prosecutors, board of county commissioner members, volunteer f",
   "questions::520|>how about a nice game of chess?",
   "questions::520|>shall we play a game?"
- ],
- "changeLog": [
-  {
-   "date": "2026-08-16",
-   "change": "claims 147 -> 139 occurrences (6 keys removed, 0 added)",
-   "reason": "The sentence-level Predictions audit (P4) moved these 8 claim occurrences into Predictions. The quoted-block detector is unchanged; the rows left the Claims layer this guard measures.",
-   "keys": [
-    "claims::1603|attempts to frame russia / potus (optics) are failing and will soon be exposed.",
-    "claims::1603|the world will unite in this cause (g v e/r v w).",
-    "claims::2070|bruce ohr, associate deputy attorney general – demoted 2x - cooperating witness ",
-    "claims::2381|bruce ohr, associate deputy attorney general – demoted 2x - cooperating witness ",
-    "claims::4|potus will not be addressing nation on any of these issues as people begin to be",
-    "claims::6|potus will not be addressing nation on any of these issues as people begin to be"
-   ]
-  }
  ]
 }

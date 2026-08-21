@@ -218,9 +218,9 @@ const noWhy = rows.filter(r => !r.w)
 const noText = rows.filter(r => !String(r.t ?? '').trim())
 
 const checks = [
-  ['Questions indexed = 6,443', bySection.questions === 6443, bySection.questions],
+  ['Questions indexed = 6,454', bySection.questions === 6454, bySection.questions],
   ['Directives indexed = 2,552', bySection.directives === 2552, bySection.directives],
-  ['Claims indexed = 4,221', bySection.claims === 4221, bySection.claims],
+  ['Claims indexed = 4,212', bySection.claims === 4212, bySection.claims],
   ['Predictions indexed = 595', bySection.predictions === 595, bySection.predictions],
   ['Evidence indexed = 6,590', bySection.evidence === 6590, bySection.evidence],
   // 1,334: Ray Chandler ships merged into Rachel Chandler under the owner ruling.
@@ -228,7 +228,7 @@ const checks = [
     bySection.entities === CANONICAL.entities.canonical, bySection.entities],
   ['Themes indexed = 2,644', bySection.themes === 2644, bySection.themes],
   ['Codes indexed = 739', bySection.codes === 739, bySection.codes],
-  ['Emphasis indexed = 3,112', bySection.emphasis === 3112, bySection.emphasis],
+  ['Emphasis indexed = 3,111', bySection.emphasis === 3111, bySection.emphasis],
   // Read from the contract, never copied — see the same fix in build-relationships.mjs.
   [`Unresolved indexed = ${CANONICAL.resolution.total.toLocaleString()}`,
     bySection.unresolved === CANONICAL.resolution.total, bySection.unresolved],

@@ -56,7 +56,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   const codeOcc = codes.totals?.occurrences ?? 0
 
   t('posts', 'posts = 4,966', posts.length === CANONICAL.posts, posts.length)
-  t('questions', 'Questions = 6,443 certified occurrences', qCounted.length === CANONICAL.questions.occurrences, qCounted.length)
+  t('questions', 'Questions = 6,454 certified occurrences', qCounted.length === CANONICAL.questions.occurrences, qCounted.length)
   t('directives', 'Directives = 2,552', directives.length === CANONICAL.directives.occurrences, directives.length)
   t('claims', 'Claims = 4,189', claimRows.length === CANONICAL.claims.occurrences, claimRows.length)
   t('predictions', 'Predictions = 630', predRows.length === CANONICAL.predictions.occurrences, predRows.length)
@@ -129,7 +129,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     /core registry/i.test(SECTION_CONTRACTS.find(c => c.id === 'entities').mayCoexist), 'declared')
   t('themes', 'Themes = 2,393 assignments', themeAssign === CANONICAL.themes.assignments, themeAssign)
   t('codes', 'Codes = 1,949 occurrences', codeOcc === CANONICAL.codes.occurrences, codeOcc)
-  t('emphasis', 'Emphasis = 3,113 occurrences', emphasis.occurrences.length === CANONICAL.emphasis.occurrences, emphasis.occurrences.length)
+  t('emphasis', 'Emphasis = 3,111 occurrences', emphasis.occurrences.length === CANONICAL.emphasis.occurrences, emphasis.occurrences.length)
 
   const qk = {}
   for (const r of queue.rows) qk[r.kind] = (qk[r.kind] ?? 0) + 1
@@ -145,7 +145,8 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   // Questions: the 134 extra rows must be identifiable, uncounted, and never displayable.
   const editorial = questions.filter(q => q.editorialNormalization || q.neverDisplayAsQ)
   const counted = questions.filter(q => q.occurrences !== undefined)
-  t('q-rows', 'Questions ships 6,577 rows for 6,443 certified', questions.length === 6577, questions.length)
+  // +11 owner rulings, 2026-08-19. The 134 editorial normalisations are unchanged.
+  t('q-rows', 'Questions ships 6,588 rows for 6,454 certified', questions.length === 6588, questions.length)
   t('q-editorial-count', 'exactly 134 editorial-normalisation rows', editorial.length === 134, editorial.length)
   t('q-editorial-uncounted', 'no editorial row carries an occurrences field', editorial.every(q => q.occurrences === undefined), `${editorial.filter(q => q.occurrences !== undefined).length} counted`)
   t('q-partition', 'counted + editorial = every shipped row', counted.length + editorial.length === questions.length, `${counted.length} + ${editorial.length}`)
@@ -264,7 +265,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
       if (m?.isConclusion) conclusions++
     }
   }
-  t('overlap-conclusions', 'conclusions are an attribute of 966 assertions, not a separate count', conclusions === 966, conclusions)
+  t('overlap-conclusions', 'conclusions are an attribute of 965 assertions, not a separate count', conclusions === 965, conclusions)
 
   t('overlap-declared', 'every overlap pair has a written rule', OVERLAPS.every(o => o.why && o.crossLink), OVERLAPS.length)
 }
@@ -449,7 +450,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   // 208 rows and posts.json lost 951 namedEntities entries — so a returning reader stuck on 77
   // would go on seeing URL slugs and "God" inside "Godfather III" painted as certified entities,
   // while every server-side check passed.
-  t('seed-current', 'SEED_VERSION is 78 (integrated entity cleanup)', seed === 78, seed)
+  t('seed-current', 'SEED_VERSION is 79 (owner question rulings)', seed === 79, seed)
   t('seed-gate', 'seeding is gated on SEED_VERSION', /seeded === SEED_VERSION/.test(localData), 'present')
 
   // THE GUARD THAT WOULD HAVE SAVED THREE ROUND TRIPS. Changing seeded data without bumping the
@@ -492,9 +493,9 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   const t = group('9. UI count integrity')
   const info = fs.readFileSync(path.join(SRC, 'lib', 'sectionInfo.ts'), 'utf8')
   const has = n => info.includes(String(n))
-  t('ui-questions', 'sectionInfo states 6,443', has(6443), 'ok')
+  t('ui-questions', 'sectionInfo states 6,454', has(6454), 'ok')
   t('ui-directives', 'sectionInfo states 2,552', has(2552), 'ok')
-  t('ui-claims', 'sectionInfo states 4,221', has(4221), 'ok')
+  t('ui-claims', 'sectionInfo states 4,212', has(4212), 'ok')
   t('ui-evidence', 'sectionInfo states 6,590', has(6590), 'ok')
   // Read from the contract rather than frozen inline — this literal has gone stale at every
   // certification since it was written, and its label still says 1,334 and 8,239.
@@ -509,7 +510,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   t('ui-entities-submetrics', 'sectionInfo keeps 4,463 and 3,440 as provenance', has(4463) && has(3440), 'ok')
   t('ui-themes', 'sectionInfo states 2,644', has(2644), 'ok')
   t('ui-codes', 'sectionInfo states 1,949', has(1949), 'ok')
-  t('ui-emphasis', 'sectionInfo states 3,112', has(3112), 'ok')
+  t('ui-emphasis', 'sectionInfo states 3,111', has(3111), 'ok')
 
   // ── Section headlines are certified, never recounted ───────────────────────
   //
@@ -527,11 +528,11 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
       const row = totals.match(new RegExp(`${cat}:\\s*\\{[^}]*\\}`))
       return Boolean(row) && row[0].includes(String(occ)) && row[0].includes(String(posts))
     }
-    t('headline-claims', 'Claims headline = certified 4,221 / 1,983',
+    t('headline-claims', 'Claims headline = certified 4,212 / 1,980',
       stated('claims', CANONICAL.claims.occurrences, CANONICAL.claims.posts), 'ok')
     t('headline-predictions', 'Predictions headline = certified 595 / 490',
       stated('predictions', CANONICAL.predictions.occurrences, CANONICAL.predictions.posts), 'ok')
-    t('headline-emphasis', 'Emphasis headline = certified 3,112 / 1,357',
+    t('headline-emphasis', 'Emphasis headline = certified 3,111 / 1,356',
       stated('emphasis', CANONICAL.emphasis.occurrences, CANONICAL.emphasis.posts), 'ok')
     // The post count is MEASURED, not frozen. It has moved at three of the last four
     // certifications — 2,245 -> 2,240 on the Rachel Chandler merge, then 2,240 -> 2,445 when the
@@ -1337,7 +1338,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     t('rel-ce', 'Entity ↔ Code edges come from the 32 stored cross-links',
       new Set(edges.filter(e => e.type === 'entity_code').map(e => e.from.id)).size === 32,
       new Set(edges.filter(e => e.type === 'entity_code').map(e => e.from.id)).size)
-    t('rel-conclusions', 'Claim → Conclusion edges = the certified 966', bt.claim_conclusion === 966, bt.claim_conclusion)
+    t('rel-conclusions', 'Claim → Conclusion edges = the certified 965', bt.claim_conclusion === 965, bt.claim_conclusion)
     t('rel-source', 'Claim → Source provided edges = the certified 439', bt.claim_source_provided === 439, bt.claim_source_provided)
     t('rel-predictions', 'Prediction → assertion edges = the certified 595', bt.prediction_assertion === 595, bt.prediction_assertion)
     t('rel-unresolved', 'every queue row has an edge to its occurrence', bt.unresolved_occurrence === CANONICAL.resolution.total, bt.unresolved_occurrence)
@@ -1426,7 +1427,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     const bs = idx.totals.bySection
 
     t('search-derived', 'the index declares it comes from certified artifacts', idx.fromCertifiedArtifacts === true, String(idx.fromCertifiedArtifacts))
-    t('search-questions', 'indexed Questions = certified 6,443', bs.questions === CANONICAL.questions.occurrences, bs.questions)
+    t('search-questions', 'indexed Questions = certified 6,454', bs.questions === CANONICAL.questions.occurrences, bs.questions)
     t('search-directives', 'indexed Directives = certified 2,552', bs.directives === CANONICAL.directives.occurrences, bs.directives)
     t('search-claims', 'indexed Claims = certified 4,181', bs.claims === CANONICAL.claims.occurrences, bs.claims)
     t('search-predictions', 'indexed Predictions = certified 630', bs.predictions === CANONICAL.predictions.occurrences, bs.predictions)
@@ -1434,7 +1435,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     t('search-entities', 'indexed Entities = certified 1,445', bs.entities === CANONICAL.entities.canonical, bs.entities)
     t('search-themes', 'indexed Themes = certified 2,395', bs.themes === CANONICAL.themes.assignments, bs.themes)
     t('search-codes', 'indexed Codes = certified 739 distinct', bs.codes === CANONICAL.codes.distinct, bs.codes)
-    t('search-emphasis', 'indexed Emphasis = certified 3,113', bs.emphasis === CANONICAL.emphasis.occurrences, bs.emphasis)
+    t('search-emphasis', 'indexed Emphasis = certified 3,111', bs.emphasis === CANONICAL.emphasis.occurrences, bs.emphasis)
     t('search-unresolved', 'indexed unresolved = the 2,527 queue rows', bs.unresolved === CANONICAL.resolution.total, bs.unresolved)
 
     // The rule that matters most in this section: a cleaned-up sentence must never be able to

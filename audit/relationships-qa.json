@@ -1,12 +1,12 @@
 {
  "totals": {
-  "relationships": 6442,
+  "relationships": 6440,
   "byType": {
    "prediction_assertion": 595,
    "theme_support": 1719,
    "question_directive": 230,
-   "claim_conclusion": 966,
-   "emphasis_claim": 1330,
+   "claim_conclusion": 965,
+   "emphasis_claim": 1329,
    "claim_source_provided": 439,
    "emphasis_directive": 373,
    "evidence_claim": 424,
@@ -49,9 +49,9 @@
    32
   ],
   [
-   "Claim ↔ Conclusion = the certified 966",
+   "Claim ↔ Conclusion = the certified 965",
    true,
-   966
+   965
   ],
   [
    "Claim ↔ Source provided = the certified 439",

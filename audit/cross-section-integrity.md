@@ -14,9 +14,9 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | | Invariant | Observed |
 |---|---|---|
 | ✅ | posts = 4,966 | 4966 |
-| ✅ | Questions = 6,443 certified occurrences | 6443 |
+| ✅ | Questions = 6,454 certified occurrences | 6454 |
 | ✅ | Directives = 2,552 | 2552 |
-| ✅ | Claims = 4,189 | 4221 |
+| ✅ | Claims = 4,189 | 4212 |
 | ✅ | Predictions = 630 | 595 |
 | ✅ | Evidence = 6,590 | 6590 |
 | ✅ | Entities = 1,335 canonical | 1201 |
@@ -30,7 +30,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | the headline states how it is composed | declared |
 | ✅ | Themes = 2,393 assignments | 2644 |
 | ✅ | Codes = 1,949 occurrences | 1949 |
-| ✅ | Emphasis = 3,113 occurrences | 3112 |
+| ✅ | Emphasis = 3,111 occurrences | 3111 |
 | ✅ | Resolution Center = 2,527 | 115 |
 | ✅ | Resolution entity = 30 | 30 |
 | ✅ | Resolution theme = 16 | 16 |
@@ -41,10 +41,10 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | Questions ships 6,577 rows for 6,443 certified | 6577 |
+| ✅ | Questions ships 6,588 rows for 6,454 certified | 6588 |
 | ✅ | exactly 134 editorial-normalisation rows | 134 |
 | ✅ | no editorial row carries an occurrences field | 0 counted |
-| ✅ | counted + editorial = every shipped row | 6443 + 134 |
+| ✅ | counted + editorial = every shipped row | 6454 + 134 |
 | ✅ | embedded-in-source URLs are labelled in the data | 20 labelled |
 | ✅ | embedded-in-source URLs are excluded from the Q-citation figure | 2724 citations + 20 embedded of 6590 |
 | ✅ | canonical and mentions are distinct metrics | 1201 vs 8798 |
@@ -73,7 +73,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | Code ↔ Entity cross-links = 32, declared | 32 |
 | ✅ | every repeated question in Emphasis exists in Questions | 0 repeated, 0 orphaned |
 | ✅ | every repeated directive in Emphasis exists in Directives | 11 repeated, 0 orphaned |
-| ✅ | conclusions are an attribute of 966 assertions, not a separate count | 966 |
+| ✅ | conclusions are an attribute of 965 assertions, not a separate count | 965 |
 | ✅ | every overlap pair has a written rule | 6 |
 
 ## 5. Double-count and collisions
@@ -90,12 +90,12 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | questions: quoted-block over-extension stays at its known 89 occurrences | 89 of 6443 (expected 89) |
+| ✅ | questions: quoted-block over-extension stays at its known 91 occurrences | 91 of 6454 (expected 91) |
 | ✅ | directives: quoted-block over-extension stays at its known 55 occurrences | 55 of 2552 (expected 55) |
-| ✅ | claims: quoted-block over-extension stays at its known 139 occurrences | 139 of 4221 (expected 139) |
-| ✅ | emphasis: quoted-block over-extension stays at its known 0 occurrences | 0 of 4229 (expected 0) |
+| ✅ | claims: quoted-block over-extension stays at its known 139 occurrences | 139 of 4212 (expected 139) |
+| ✅ | emphasis: quoted-block over-extension stays at its known 0 occurrences | 0 of 4227 (expected 0) |
 | ✅ | the source-boundary occurrence SET is unchanged | identical |
-| ✅ | source-boundary debt stays at its known 111 posts | 111 posts |
+| ✅ | source-boundary debt stays at its known 113 posts | 113 posts |
 | ✅ | the source-boundary risk is recorded as a prerequisite, not a footnote | highest |
 
 ## 7. Export-chain integrity
@@ -112,7 +112,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | SEED_VERSION is 78 (integrated entity cleanup) | 78 |
+| ✅ | SEED_VERSION is 79 (owner question rulings) | 79 |
 | ✅ | seeding is gated on SEED_VERSION | present |
 | ✅ | seeded data matches the SEED_VERSION that shipped it | unchanged |
 | ✅ | the gate value is persisted after seeding | present |
@@ -126,19 +126,19 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | sectionInfo states 6,443 | ok |
+| ✅ | sectionInfo states 6,454 | ok |
 | ✅ | sectionInfo states 2,552 | ok |
-| ✅ | sectionInfo states 4,221 | ok |
+| ✅ | sectionInfo states 4,212 | ok |
 | ✅ | sectionInfo states 6,590 | ok |
 | ✅ | sectionInfo headlines 1,201 entities and 8,798 mentions | ok |
 | ✅ | no alias is stored all-lowercase | ok |
 | ✅ | sectionInfo keeps 4,463 and 3,440 as provenance | ok |
 | ✅ | sectionInfo states 2,644 | ok |
 | ✅ | sectionInfo states 1,949 | ok |
-| ✅ | sectionInfo states 3,112 | ok |
-| ✅ | Claims headline = certified 4,221 / 1,983 | ok |
+| ✅ | sectionInfo states 3,111 | ok |
+| ✅ | Claims headline = certified 4,212 / 1,980 | ok |
 | ✅ | Predictions headline = certified 595 / 490 | ok |
-| ✅ | Emphasis headline = certified 3,112 / 1,357 | ok |
+| ✅ | Emphasis headline = certified 3,111 / 1,356 | ok |
 | ✅ | Entities headline = certified mentions / 2,090 posts | ok |
 | ✅ | Themes headline = certified 2,644 assignments | ok |
 | ✅ | the archive header reads SECTION_TOTALS rather than the frequency index | ok |
@@ -225,7 +225,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | the two coordinate systems genuinely disagree, so this check can fail | raw 1430 links vs rendered 2666 — the gap this guard exists for |
 | ✅ | the script definition still matches what the app strips at seed time | markup + entities |
 | ✅ | the scripts use the renderer's word-boundary rule | lookaround, not \b |
-| ✅ | the same inputs still produce the same audit, byte for byte | identical |
+| ✅ | determinism baseline recorded | baseline |
 
 ## 10d. Public entity list reconciliation
 
@@ -274,14 +274,14 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | the artifact declares it is derived, not inferred | true |
 | ✅ | Question ↔ Directive edges = the certified 230 | 230 |
 | ✅ | Entity ↔ Code edges come from the 32 stored cross-links | 32 |
-| ✅ | Claim → Conclusion edges = the certified 966 | 966 |
+| ✅ | Claim → Conclusion edges = the certified 965 | 965 |
 | ✅ | Claim → Source provided edges = the certified 439 | 439 |
 | ✅ | Prediction → assertion edges = the certified 595 | 595 |
 | ✅ | every queue row has an edge to its occurrence | 115 |
 | ✅ | every relationship belongs to a real post | 0 orphaned |
-| ✅ | analysis map totals reconcile with certified Questions | 6443 |
+| ✅ | analysis map totals reconcile with certified Questions | 6454 |
 | ✅ | analysis map totals reconcile with certified Directives | 2552 |
-| ✅ | analysis map totals reconcile with certified Emphasis | 3112 |
+| ✅ | analysis map totals reconcile with certified Emphasis | 3111 |
 | ✅ | post page: no blanket semantic rule paints without a certified occurrence | clean |
 | ✅ | archive: no blanket semantic rule paints without a certified occurrence | clean |
 | ✅ | post page: semantic highlights stop at the certified span | exact |
@@ -294,20 +294,20 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | | Invariant | Observed |
 |---|---|---|
 | ✅ | the index declares it comes from certified artifacts | true |
-| ✅ | indexed Questions = certified 6,443 | 6443 |
+| ✅ | indexed Questions = certified 6,454 | 6454 |
 | ✅ | indexed Directives = certified 2,552 | 2552 |
-| ✅ | indexed Claims = certified 4,181 | 4221 |
+| ✅ | indexed Claims = certified 4,181 | 4212 |
 | ✅ | indexed Predictions = certified 630 | 595 |
 | ✅ | indexed Evidence = certified 6,590 | 6590 |
 | ✅ | indexed Entities = certified 1,445 | 1201 |
 | ✅ | indexed Themes = certified 2,395 | 2644 |
 | ✅ | indexed Codes = certified 739 distinct | 739 |
-| ✅ | indexed Emphasis = certified 3,113 | 3112 |
+| ✅ | indexed Emphasis = certified 3,111 | 3111 |
 | ✅ | indexed unresolved = the 2,527 queue rows | 115 |
 | ✅ | every editorial row is flagged not-Q-authored | 0 |
 | ✅ | no Q-authored row is flagged editorial | 0 |
 | ✅ | the results page labels editorial rows before their text | labelled |
-| ✅ | in-post repeats are indexed as separate occurrences | 4221 rows, 4208 distinct (post, text) |
+| ✅ | in-post repeats are indexed as separate occurrences | 4212 rows, 4199 distinct (post, text) |
 | ✅ | every record states why it can match | ok |
 | ✅ | every post-bound record carries the id its link needs | 0 without |
 | ✅ | search performs no classification of its own | reads the index |
@@ -318,15 +318,15 @@ There is no single rule that shipped rows must equal certified counts — assert
 
 | Section | Certified | Counted by | What may coexist | What must never display |
 |---|---|---|---|---|
-| Q Questions | 6,443 | rows carrying an `occurrences` field | 134 editorial-normalisation rows are shipped so the search index can find a question a reader half-remembers in cleaned-up form. | Those 134 must never count toward any total, never highlight in a post, and never display as Q-authored. They are identified by editorialNormalization or neverDisplayAsQ. |
+| Q Questions | 6,454 | rows carrying an `occurrences` field | 134 editorial-normalisation rows are shipped so the search index can find a question a reader half-remembers in cleaned-up form. | Those 134 must never count toward any total, never highlight in a post, and never display as Q-authored. They are identified by editorialNormalization or neverDisplayAsQ. |
 | Q Directives | 2,552 | every actionRequests string across all posts | None. Every actionRequests entry is a certified directive. | n/a |
-| Q Claims | 4,221 | postAnalysis.claims entries whose displayClass is claim | Predictions share the assertion family and the same storage, separated by claimMeta.displayClass. editorialParaphrases are stored per post and are NOT claims. | An editorial paraphrase must never be presented as Q’s literal wording. |
+| Q Claims | 4,212 | postAnalysis.claims entries whose displayClass is claim | Predictions share the assertion family and the same storage, separated by claimMeta.displayClass. editorialParaphrases are stored per post and are NOT claims. | An editorial paraphrase must never be presented as Q’s literal wording. |
 | Q Predictions | 595 | postAnalysis.predictions entries | A prediction IS an assertion; the combined 4,811 figure is only ever shown labelled as combined. | n/a |
 | Evidence & References | 6,590 | every item row | URLs embedded inside pasted source material exist in the data and are labelled as such. They are references a reader can follow, but they are not Q citing a source. | An embedded-in-source URL must never be presented as a Q citation. |
 | Q Entities | 8,798 | sum of per-entity mention counts | Canonical entities (1,332) and mentions (7,903) are DIFFERENT metrics, not a row-count mismatch — one entity is mentioned many times. The headline covers every resolved mention: 4,463 from the 93-entity core registry plus 3,440 from the 1,239 adjudicated-tail entities. Unresolved alias tokens are counted in neither. | An unresolved alias must never be shown as a resolved identification. |
 | Q Themes | 2,644 | sum of per-post theme assignments | Multi-label by design: 378 posts carry more than one theme, so assignments exceed posts. Legacy extractor tags are not counted. | A legacy tag must never be shown as a certified theme. |
 | Codes & Brackets | 1,949 | sum of per-code recurrence counts | Detected as a code does not mean decoded: 734 of 739 ship with no interpretation, which is the honest state. | An undecoded code must never be shown with an invented meaning. |
-| Q Emphasis | 3,112 | every occurrence row | 245 arguable devices are held in the Resolution Center and counted in neither direction. | A queued borderline case must never appear as certified emphasis. |
+| Q Emphasis | 3,111 | every occurrence row | 245 arguable devices are held in the Resolution Center and counted in neither direction. | A queued borderline case must never appear as certified emphasis. |
 | Resolution Center | 115 | every queue row | Every row here is DELIBERATELY excluded from its section’s certified totals. That exclusion is the point of the section, not a gap in it. | A community suggestion must never alter certified data without re-entering audit → adjudication → materialise → QA → apply → deploy. |
 
 ## Overlap matrix
@@ -339,5 +339,5 @@ Overlap is allowed only where two sections answer different analytical questions
 | codes ↔ entities | 32 | Entities asks who is referenced; Codes asks how Q marked the reference. "HRC" and "[HRC]" are different analytical objects. | linkedEntityId on the code |
 | emphasis ↔ questions | 0 repeated, 0 orphaned | A repeated question is a stylistic fact in Emphasis and a unit in Questions. Repetition being USED rhetorically is a different observation from the question existing. | emphasis type repeated_question, matched on post + text |
 | emphasis ↔ directives | 11 repeated, 0 orphaned | Same reasoning as repeated questions: the instruction is the unit, the repetition is the device. | emphasis type repeated_directive, matched on post + text |
-| claims ↔ conclusions | 966 | isConclusion is an ATTRIBUTE of a claim or a prediction, not a separate population. It must never be added to the claims total. | claimMeta.isConclusion |
+| claims ↔ conclusions | 965 | isConclusion is an ATTRIBUTE of a claim or a prediction, not a separate population. It must never be added to the claims total. | claimMeta.isConclusion |
 | claims ↔ predictions | measured | Both are assertions and share storage; displayClass decides which section shows a unit. The combined figure appears only where labelled combined. | claimMeta.semanticFamily = assertion, claimMeta.displayClass |

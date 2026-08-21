@@ -260,7 +260,7 @@ const checks = [
   ['Question ↔ Directive = the certified 230', byType.question_directive === 230, byType.question_directive ?? 0],
   ['Entity ↔ Code = the certified 32 links', new Set(edges.filter(e => e.type === 'entity_code').map(e => e.from.id)).size === 32,
     new Set(edges.filter(e => e.type === 'entity_code').map(e => e.from.id)).size],
-  ['Claim ↔ Conclusion = the certified 966', byType.claim_conclusion === 966, byType.claim_conclusion ?? 0],
+  ['Claim ↔ Conclusion = the certified 965', byType.claim_conclusion === 965, byType.claim_conclusion ?? 0],
   ['Claim ↔ Source provided = the certified 439', byType.claim_source_provided === 439, byType.claim_source_provided ?? 0],
   ['Prediction ↔ Source provided reported separately', (byType.prediction_source_provided ?? 0) > 0, byType.prediction_source_provided ?? 0],
   ['Prediction ↔ assertion family = 595', byType.prediction_assertion === 595, byType.prediction_assertion ?? 0],

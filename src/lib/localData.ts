@@ -475,7 +475,11 @@ const COLLECTIONS: CollectionName[] = ['posts', 'questions', 'topics', 'resource
 // as a person however many times the tooltip said otherwise, and would see the corrected wording
 // beside the stale category. entity-hovers.json is fetched rather than seeded and needs no bump
 // of its own; this one is required by the entity row that changed underneath it.
-export const SEED_VERSION = 78   // 78: integrated entity cleanup — entities.json 1,409->1,201 rows / 9,749->8,798 mentions and posts.json namedEntities lost 951 entries, so a reader on 77 would keep seeing URL slugs and 'God' inside 'Godfather' painted as entities
+export const SEED_VERSION = 79   // 79: owner question rulings, 2026-08-19 — 11 interrogative units moved
+// into Questions from Claims/Evidence (6,443->6,454), 9 withdrawn from Claims (4,221->4,212), and #2420's
+// parallel-phrasing Emphasis retired by the standing 'a question carries no Emphasis' rule (3,112->3,111).
+// A reader on 78 would keep seeing those eleven sentences painted amber instead of blue.
+// 78: integrated entity cleanup — entities.json 1,409->1,201 rows / 9,749->8,798 mentions and posts.json namedEntities lost 951 entries, so a reader on 77 would keep seeing URL slugs and 'God' inside 'Godfather' painted as entities
 // 77: 72: Q Directives on sourceSpansV2 — 2,552 occurrences, directiveMeta spans
 // 71: 4: final certified questions — 6,442 occurrences, exact source spans
 

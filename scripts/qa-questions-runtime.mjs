@@ -68,7 +68,7 @@ const editorial = rows.filter(r => r.editorialNormalization)
 
 const checks = [
   ['matcher read live from posts.ts', inSync, inSync ? 'yes — no local copy' : 'UNIT_START NOT FOUND'],
-  ['certified occurrences = 6,442', counted.length === 6443, counted.length],
+  ['certified occurrences = 6,454', counted.length === 6454, counted.length],
   ['every occurrence highlights', noMatch.length === 0, `${matched}/${counted.length}`],
   ['none highlights more than its count', overMatch.length === 0, `${overMatch.length} over-matching`],
   ['distinct = 5,302', distinct.size === 5302, distinct.size],

@@ -1,15 +1,114 @@
 {
- "note": "Owner Question rulings. apply-questions-final.mjs merges these after the certified set is assembled, so a re-derive cannot erase them. Same overlay pattern as entities/themes/emphasis/directives.",
- "why": "The question detector anchors on a line ENDING in '?'. A question wrapped in parentheses ends in '?)' and never matched — #524's \"(Why don't we say his name?)\" sat in Context instead. 50 lines corpus-wide have that shape; only the ones the owner rules are added.",
- "rulings": [
-  {
-   "postNum": 524,
-   "postId": "524",
-   "text": "(Why don't we say his name?)",
-   "ruledOn": "2026-08-15",
-   "was": "Context",
-   "reasoning": "Owner ruling: it is a question, so it is classified as a question. The detector missed it because the line ends in '?)' rather than '?' — the closing parenthesis defeats the question-form test.",
-   "renderNote": "Highlighted blue as a Question like any other."
-  }
- ]
+  "note": "Owner Question rulings. apply-questions-final.mjs merges these after the certified set is assembled, so a re-derive cannot erase them. Same overlay pattern as entities/themes/emphasis/directives. A ruling carrying \"was\":\"Claim\" ALSO withdraws that occurrence from Claims — apply-claims.mjs reads THIS SAME FILE, so one record moves the line and the two sections cannot drift apart. A ruling carrying \"was\":\"Evidence\" leaves the Evidence record standing: Evidence is provenance (this text is quoted source material), not a display category, and it does not paint in the drop body.",
+  "why": "The question detector anchors on a line ENDING in '?'. A question wrapped in parentheses ends in '?)' and never matched — #524's \"(Why don't we say his name?)\" sat in Context instead. 50 lines corpus-wide have that shape; only the ones the owner rules are added. — SECOND RULING SET, 2026-08-19: an archive-wide scan for units ending in \"?\" that are certified in some other section found 37 real cases (54 raw, less 17 links whose URL merely ends in \"?\"). The owner ruled the QUOTED-SPEECH family: a question Q reproduces inside quotation marks is still a question. Four candidates were deliberately NOT ruled and stay as they are — #2971 is a pasted dictionary block, and three #2776 lines each carry SEVERAL quoted questions in one unit, which is a segmentation problem to fix at the boundary rather than a misfiling to reclassify.",
+  "rulings": [
+    {
+      "postNum": 483,
+      "postId": "483",
+      "text": "“Whatever happened to this Pakistani guy who worked with the DNC?”",
+      "ruledOn": "2026-08-19",
+      "was": "Claim",
+      "reasoning": "Quoted question reproduced from source material, filed as a Claim. Interrogative; the Claim reading asserts something Q did not assert.",
+      "renderNote": "Highlighted blue as a Question. Entities and brackets inside it keep their own colours — a question is a container, not a classification of everything within it."
+    },
+    {
+      "postNum": 524,
+      "postId": "524",
+      "text": "(Why don't we say his name?)",
+      "ruledOn": "2026-08-15",
+      "was": "Context",
+      "reasoning": "Owner ruling: it is a question, so it is classified as a question. The detector missed it because the line ends in '?)' rather than '?' — the closing parenthesis defeats the question-form test.",
+      "renderNote": "Highlighted blue as a Question like any other."
+    },
+    {
+      "postNum": 1975,
+      "postId": "1975",
+      "text": "\"What are the odds that the FBI and DOJ are right on top of this?\"",
+      "ruledOn": "2026-08-19",
+      "was": "Evidence",
+      "reasoning": "Quoted question, filed only as Evidence. Evidence records that the text is quoted source material and does not paint; the question itself was never certified, so the drop showed no blue on a plain interrogative.",
+      "renderNote": "Highlighted blue as a Question. Entities and brackets inside it keep their own colours — a question is a container, not a classification of everything within it."
+    },
+    {
+      "postNum": 2420,
+      "postId": "2420",
+      "text": "\"Did they get the shot?\"",
+      "ruledOn": "2026-08-19",
+      "was": "Claim",
+      "reasoning": "Interrogative, and the subject \"they\" is right there — the detector reason that filed it as a Claim (\"finite verb but no clear subject\") is factually wrong about this line.",
+      "renderNote": "Highlighted blue as a Question. Entities and brackets inside it keep their own colours — a question is a container, not a classification of everything within it."
+    },
+    {
+      "postNum": 2420,
+      "postId": "2420",
+      "text": "\"Did they pick up the 'Boom, Boom, Boom….Something is Happening'?\"",
+      "ruledOn": "2026-08-19",
+      "was": "Claim",
+      "reasoning": "Owner ruling: interrogative unit filed in another section.",
+      "renderNote": "Highlighted blue as a Question. Entities and brackets inside it keep their own colours — a question is a container, not a classification of everything within it."
+    },
+    {
+      "postNum": 2420,
+      "postId": "2420",
+      "text": "\"I turned and double pointed just to be clear.\"",
+      "ruledOn": "2026-08-19",
+      "was": "Claim",
+      "reasoning": "Ruled a Question with the two interrogatives around it: one turn of the same quoted exchange, not a Q-authored assertion. Declarative in FORM — recorded here so the form is never mistaken for a detector result.",
+      "renderNote": "Highlighted blue as a Question. Entities and brackets inside it keep their own colours — a question is a container, not a classification of everything within it."
+    },
+    {
+      "postNum": 2695,
+      "postId": "2695",
+      "text": "POTUS \"Did they get the clip?\"",
+      "ruledOn": "2026-08-19",
+      "was": "Claim",
+      "reasoning": "Same defect as #2420 and the same drop shape: Q reports POTUS speaking and the quoted question was filed as a Q Claim. The entity POTUS opens the unit and keeps its cyan inside the blue.",
+      "renderNote": "Highlighted blue as a Question. Entities and brackets inside it keep their own colours — a question is a container, not a classification of everything within it."
+    },
+    {
+      "postNum": 2695,
+      "postId": "2695",
+      "text": "POTUS \"Did they catch all the references?\"",
+      "ruledOn": "2026-08-19",
+      "was": "Claim",
+      "reasoning": "Same defect as #2420 and the same drop shape: Q reports POTUS speaking and the quoted question was filed as a Q Claim. The entity POTUS opens the unit and keeps its cyan inside the blue.",
+      "renderNote": "Highlighted blue as a Question. Entities and brackets inside it keep their own colours — a question is a container, not a classification of everything within it."
+    },
+    {
+      "postNum": 2776,
+      "postId": "2776",
+      "text": "“Was the Steele report a ‘trusted and verified’ report per Intel to continue especially considering the funding party was the opposition party?”",
+      "ruledOn": "2026-08-19",
+      "was": "Claim",
+      "reasoning": "One of a block of quoted questions put to the Special Counsel, filed as Claims/Evidence. Interrogative and singular — the three multi-question lines in this drop are deliberately excluded and left for a segmentation pass.",
+      "renderNote": "Highlighted blue as a Question. Entities and brackets inside it keep their own colours — a question is a container, not a classification of everything within it."
+    },
+    {
+      "postNum": 2776,
+      "postId": "2776",
+      "text": "“Was FISC made aware of all details surrounding the dossier?”",
+      "ruledOn": "2026-08-19",
+      "was": "Claim",
+      "reasoning": "One of a block of quoted questions put to the Special Counsel, filed as Claims/Evidence. Interrogative and singular — the three multi-question lines in this drop are deliberately excluded and left for a segmentation pass.",
+      "renderNote": "Highlighted blue as a Question. Entities and brackets inside it keep their own colours — a question is a container, not a classification of everything within it."
+    },
+    {
+      "postNum": 2776,
+      "postId": "2776",
+      "text": "“All charges thus far are unrelated to the original mandate - why are you still active and pursuing a crime if no verifiable evidence or evidence through discovery exists?”",
+      "ruledOn": "2026-08-19",
+      "was": "Evidence",
+      "reasoning": "One of a block of quoted questions put to the Special Counsel, filed as Claims/Evidence. Interrogative and singular — the three multi-question lines in this drop are deliberately excluded and left for a segmentation pass.",
+      "renderNote": "Highlighted blue as a Question. Entities and brackets inside it keep their own colours — a question is a container, not a classification of everything within it."
+    },
+    {
+      "postNum": 3203,
+      "postId": "3203",
+      "text": "\"What happens if the phone records of SMOLLETT leak?\"",
+      "ruledOn": "2026-08-19",
+      "was": "Claim",
+      "reasoning": "Quoted question filed as a Claim. Interrogative.",
+      "renderNote": "Highlighted blue as a Question. Entities and brackets inside it keep their own colours — a question is a container, not a classification of everything within it."
+    }
+  ]
 }

@@ -14,7 +14,11 @@
 /** Frozen canonical counts. These are the numbers the whole project is certified against. */
 export const CANONICAL = {
   posts: 4966,
-  questions: { occurrences: 6443, distinct: 5302, posts: 1696 },
+  // 6,443 -> 6,454 on 2026-08-19 by owner ruling: 11 interrogative units certified in another
+  // section (9 Claims, 2 Evidence) moved to Questions. `distinct` is restated to the value the
+  // apply gate measures — it read 5,302 here against a measured 5,303 before this ruling, an
+  // ungated documentation drift, now 5,313. Rulings: audit/questions-owner-rulings.json.
+  questions: { occurrences: 6454, distinct: 5313, posts: 1700 },
   // v5, 16 Aug 2026 — Q Directives migrated to sourceSpansV2 provenance under owner ruling.
   // 2,705 -> 2,552: 153 occurrences removed from Q Directives ONLY (quoted news, scraped code,
   // blessings, declarative-lead misreads, questions, a prediction). Nothing was deleted from the
@@ -36,7 +40,10 @@ export const CANONICAL = {
   // claims), 47 moved IN from Predictions (technical nonpredictions — past mental states,
   // legal rules, blessings, contextual labels). distinct 3,245 -> 3,256 and posts 1,982 ->
   // 1,983 follow from that exchange, not from a re-derivation.
-  claims: { occurrences: 4221, distinct: 3256, posts: 1983 },
+  // 4,221 -> 4,212 on 2026-08-19: 9 quoted questions withdrawn to Questions by owner ruling.
+  // distinct -9 (each wording occurs in one post only); posts -3 (#483, #2695, #3203 each held
+  // exactly one claim, and it was the quoted question).
+  claims: { occurrences: 4212, distinct: 3247, posts: 1980 },
   // 630 -> 595: -73 technical nonpredictions, -56 arguable rows withdrawn to the review
   // backlog, +66 unique moves from Claims, +28 high-confidence predictions the extractor
   // missed. posts 520 -> 490. The 91 withdrawn/held rows are NOT deleted — they sit in
@@ -122,7 +129,10 @@ export const CANONICAL = {
   // (104 whose span WAS a question + 479 all-question parallel runs + 1,555 sitting INSIDE a
   // question line). Owner ruling 2026-08-14: "I do not want ... any emphasis connected to a
   // question ... app wide."
-  emphasis: { occurrences: 3112, detected: 3111, ownerRulings: 11, ownerWithdrawals: 2, questionRuleRetired: 2138, posts: 1357 },
+  // 3,112 -> 3,111 on 2026-08-19. #2420's parallel run retires under the standing rule that a
+  // question carries no Emphasis, because the owner ruled its second line a Question. posts
+  // 1,357 -> 1,356: that run was the drop's only Emphasis occurrence. Not a detector change.
+  emphasis: { occurrences: 3111, detected: 3110, ownerRulings: 11, ownerWithdrawals: 2, questionRuleRetired: 2139, posts: 1356 },
   // 2,527 -> 2,526 on 2026-08-14: the owner resolved #150's [L], which is one letter of the
   // [L][d][R] acrostic rather than a notation token. Held in audit/resolution-owner-resolved.json
   // so a rebuild cannot re-queue it. #1277's "[R] = Renegade" is a different case and stays.
@@ -291,7 +301,9 @@ export const OVERLAPS = [
   },
   {
     pair: 'claims ↔ conclusions',
-    expected: 966,
+    // 966 -> 965 on 2026-08-19: #3203's quoted question carried isConclusion and was withdrawn to
+    // Questions by owner ruling. The attribute travels with the row, never with the section.
+    expected: 965,
     why: 'isConclusion is an ATTRIBUTE of a claim or a prediction, not a separate population. It must never be added to the claims total.',
     crossLink: 'claimMeta.isConclusion',
   },
@@ -329,7 +341,15 @@ export const KNOWN_DEBT = {
   priority: 'highest',
   // 120 -> 111 on 2026-08-16: the approved v5 directives migration removed 153 directives,
   // 18 of them over-extending ones. Fewer directives, fewer boundary breaches. Not a detector change.
-  postsAffected: 111,
+  // 111 -> 114 on 2026-08-19, and NOT a detector change either. Two causes, both recorded:
+  //   +2  #1975 and #2776 — quoted questions the owner ruled INTO Questions. A question Q
+  //       reproduces inside a quotation is exactly the shape this tripwire tracks, so ruling it
+  //       certified legitimately adds it to the debt. The ruling was made knowing that.
+  //   +1  #4454 — apply-questions-final.mjs recomputed a unitText that questions.json had been
+  //       shipping stale. That materialiser could not COMPLETE on the committed data (its owner-
+  //       ruling gate counted pushes, and #524's ruling was already baked in, so it scored 0 of 1
+  //       and aborted), which is why the stale value survived. Fixing the gate let it run.
+  postsAffected: 113,
   // RECOMPUTED 2026-08-13 after the quote-boundary fix, not bumped to satisfy a gate.
   //
   // sourceLines() treated a line ENDING in a closing quotation mark as still inside the quote,
@@ -353,7 +373,16 @@ export const KNOWN_DEBT = {
   //   #1603 "Attempts to frame Russia / POTUS…", #1603 "The WORLD will UNITE…",
   //   #2070 and #2381 "Bruce Ohr… TERMINATION IMMINENT",
   //   #4 ×2 and #6 ×2 "POTUS will not be addressing nation…" (two overlapping spans each).
-  baseline: { questions: 89, directives: 55, claims: 139, emphasis: 0 },
+  // questions 89 -> 92 on 2026-08-19, same three occurrences as postsAffected 111 -> 114 above:
+  // two quoted questions ruled into Questions (#1975, #2776) and one stale unitText recomputed
+  // (#4454). The occurrence SET in audit/source-boundary-occurrences.json is re-frozen with them,
+  // so the next unexplained drift still prints exactly which row moved.
+  // questions 89 -> 91 on 2026-08-19, measured AFTER the full apply chain settles (not from a
+  // partial run): +2 quoted questions ruled into Questions whose text sits inside a quoted
+  // block (#1975, #2776), +1 stale unitText recomputed (#4454), -1 as #2420's Emphasis retired
+  // under the question rule and left the set. postsAffected moves 111 -> 113 for the same
+  // reasons. NOT a detector change: quotedBlocks.mjs is untouched.
+  baseline: { questions: 91, directives: 55, claims: 139, emphasis: 0 },
   // 102 -> 103 and 123 -> 124 on 2026-08-13, ruled BENIGN and documented rather than bumped
   // quietly. Cause: literal-span materialisation. The isolation test now measures the literal
   // form of a question rather than its certified normalised text, and a longer span is

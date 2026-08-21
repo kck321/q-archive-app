@@ -136,9 +136,14 @@ for (const f of ctxFinal.finals) {
 // Merged before the gate so an owner question passes the same QA as every other row.
 const QRULES = path.join(ROOT, 'audit/questions-owner-rulings.json')
 let ownerQuestions = 0
+// A ruling whose text the assembled set ALREADY holds is satisfied, not skipped. Counting only
+// the pushes made the gate read 11 of 12 after the 2026-08-19 set, which looks like a dropped
+// ruling and is not one. What has to be true is PRESENCE.
+let ownerAlreadyPresent = 0
+const ownerMissing = []
 if (fs.existsSync(QRULES)) {
   for (const r of JSON.parse(fs.readFileSync(QRULES, 'utf8')).rulings ?? []) {
-    if (rows.some(x => x.postNum === r.postNum && flat(x.text) === flat(r.text))) continue
+    if (rows.some(x => x.postNum === r.postNum && flat(x.text) === flat(r.text))) { ownerAlreadyPresent++; continue }
     const post = postByNum.get(r.postNum)
     rows.push({
       id: `q-owner-${r.postNum}-${ownerQuestions}`,
@@ -180,12 +185,16 @@ const coin = counted.filter(r => key(r.text) === key('Coincidence?'))
 const coinMentions = coin.reduce((s, r) => s + r.occurrences, 0)
 
 const checks = [
-  ['certified occurrences = 6,443', counted.length === 6443, counted.length],
-  ['owner question rulings applied = 1', ownerQuestions === 1, ownerQuestions],
+  // 6,443 + 11 owner rulings (2026-08-19): interrogative units certified in another section.
+  ['certified occurrences = 6,454', counted.length === 6454, counted.length],
+  ['every owner question ruling is in the set = 12', ownerQuestions + ownerAlreadyPresent === 12 && ownerMissing.length === 0,
+    `${ownerQuestions} added + ${ownerAlreadyPresent} already present`],
   ['all resolve to a source span', qa.missing.length === 0, `${qa.resolved}/${counted.length}`],
   ['every span is a unit or literal line', qa.notAUnit.length === 0, `${counted.length - qa.notAUnit.length}/${counted.length}`],
-  ['distinct (canonical key) = 5,303', distinct.size === 5303, distinct.size],
-  ['posts with questions = 1,696', postsWith.size === 1696, postsWith.size],
+  // +10: eleven rulings, ten wordings new to Questions.
+  ['distinct (canonical key) = 5,313', distinct.size === 5313, distinct.size],
+  // +4: #1975, #2420, #2695 and #2776 had no certified question before these rulings.
+  ['posts with questions = 1,700', postsWith.size === 1700, postsWith.size],
   ['directive-wrapped = 51, all counted', wrapped.length === 51, wrapped.length],
   ['no editorial normalisation counted', editorialLeaks.length === 0, editorialLeaks.length],
   ['"Coincidence?" = 86 posts / 88 mentions', coin.length === 86 && coinMentions === 88, `${coin.length} posts / ${coinMentions} mentions`],

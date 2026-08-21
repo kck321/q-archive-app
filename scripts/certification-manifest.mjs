@@ -72,7 +72,9 @@ const expected = {
   posts: CANONICAL.posts,
   questions: CANONICAL.questions.occurrences,
   // +1: the owner question ruling on #524 — see lib/contracts.mjs.
-  questionRowsShipped: 6577,
+  // 6,577 -> 6,588: 11 owner question rulings, 2026-08-19. The 134 editorial normalisations
+  // that make rows exceed certified occurrences are unchanged.
+  questionRowsShipped: 6588,
   directives: CANONICAL.directives.occurrences,
   claims: CANONICAL.claims.occurrences,
   predictions: CANONICAL.predictions.occurrences,
