@@ -13,12 +13,12 @@
   {
    "file": "01-MULTI-PRIMARY-117.csv",
    "rows": 117,
-   "sha256": "ffb3ca191df6883d6e61a361beeda756672c460af2678842e06c97fc87a8917b"
+   "sha256": "afc7f4d30a80d90617da767f533870917dad06e71f88d2e120272df2ed661580"
   },
   {
    "file": "02-PARTIAL-28.csv",
    "rows": 28,
-   "sha256": "085c68904d8def537d8999d7f282c46b5a05fdd0d2db90086adaa598d3380d57"
+   "sha256": "6bb95005b8a99bf4e5fb876f6909017a487a8069e0ee398d007991396d32240f"
   },
   {
    "file": "03-SOURCE-DISPOSITIONS-3.csv",
@@ -46,29 +46,34 @@
    "sha256": "2e59b655f50d3f1b4ca8e6c2667d77d8fdb965529836d522be289ba94030b9b4"
   },
   {
-   "file": "08-POPULATION-INTERSECTIONS.csv",
+   "file": "08-POPULATION-TOTALS.csv",
    "rows": 9,
    "sha256": "17079c81f841ea95d63cd58aac780e7de525a79f7c1344d901ff5848dea27d06"
   },
   {
+   "file": "08-POPULATION-INTERSECTIONS.csv",
+   "rows": 6,
+   "sha256": "cc340ea694c359e9db4ffe4992f88a9760f90979c859393b3b9cabb398d521ed"
+  },
+  {
    "file": "09-COUNT-PROJECTION.csv",
-   "rows": 10,
-   "sha256": "5ed77c141778b811b4401efaf3844891e9110f501da53229c58129ba2bc698cd"
+   "rows": 9,
+   "sha256": "b9979b2609ddb6c1ed1983f92260fb9095c4a96c7c6ca63ef9dbdc9b59a77e0c"
   },
   {
    "file": "10-CONFLICTS-HELD.csv",
    "rows": 945,
-   "sha256": "bd22274619b9dff3b4c493fbb50c391a2a077a2f2838f40db7e87ca86071e301"
+   "sha256": "71110210573ec75c8f9aa8bf2deb91c6b1f4e3abdb46b120dd879ef4ba2f1f18"
   },
   {
    "file": "STEP3B1-APPLY-PLAN.jsonl",
    "rows": 540,
-   "sha256": "75874cf2ce3227be37ae006b00d16e26810718c57412c37b6e7580f8ae798042"
+   "sha256": "8124f7a4683700851f1b05152db6d6c49a77313725cdd8481852647148f69e9f"
   },
   {
    "file": "00-STEP3B1-INDEX.md",
-   "rows": 75,
-   "sha256": "77aba468d3128b2ef06df10e090153e18fe6d291e905c6573802cb856d25fba8"
+   "rows": 76,
+   "sha256": "e4d63a666015915ee798de3f1a67dfe743b028ca9b460c75603c4255b2ddd1f8"
   }
  ],
  "counts": {
@@ -140,8 +145,8 @@
     "layer": "primary",
     "category": "claim",
     "before": 8912,
-    "delta": -99,
-    "after": 8813,
+    "delta": -92,
+    "after": 8820,
     "headlineEligible": true
    },
    {
@@ -149,17 +154,8 @@
     "layer": "primary",
     "category": "directive",
     "before": 3037,
-    "delta": 9,
-    "after": 3046,
-    "headlineEligible": true
-   },
-   {
-    "source": "q_authored",
-    "layer": "primary",
-    "category": "null",
-    "before": 0,
-    "delta": 60,
-    "after": 60,
+    "delta": -96,
+    "after": 2941,
     "headlineEligible": true
    },
    {
@@ -167,8 +163,8 @@
     "layer": "primary",
     "category": "prediction",
     "before": 847,
-    "delta": -261,
-    "after": 586,
+    "delta": -4,
+    "after": 843,
     "headlineEligible": true
    },
    {
@@ -176,8 +172,8 @@
     "layer": "primary",
     "category": "question",
     "before": 6503,
-    "delta": -188,
-    "after": 6315,
+    "delta": -179,
+    "after": 6324,
     "headlineEligible": true
    },
    {
@@ -185,8 +181,8 @@
     "layer": "secondary",
     "category": "claim",
     "before": 0,
-    "delta": 80,
-    "after": 80,
+    "delta": 18,
+    "after": 18,
     "headlineEligible": false
    },
    {
@@ -194,8 +190,8 @@
     "layer": "secondary",
     "category": "directive",
     "before": 0,
-    "delta": 84,
-    "after": 84,
+    "delta": 88,
+    "after": 88,
     "headlineEligible": false
    },
    {
@@ -212,8 +208,8 @@
     "layer": "secondary",
     "category": "question",
     "before": 0,
-    "delta": 170,
-    "after": 170,
+    "delta": 163,
+    "after": 163,
     "headlineEligible": false
    },
    {
@@ -221,15 +217,21 @@
     "layer": "primary",
     "category": "claim",
     "before": 0,
-    "delta": 2,
-    "after": 2,
+    "delta": 6,
+    "after": 6,
     "headlineEligible": false
    }
   ]
  },
+ "hashes": {
+  "note": "Two distinct values, named unambiguously because the previous handoff quoted both and defined neither. contentSetHash is over the GENERATED FILES; zipSha256 is over the DELIVERED BYTES and is stamped after packaging, since a ZIP records its own container metadata.",
+  "contentSetHash": "6c4163fb54012409e234837bdc95677078aba83805119564595def0c7371541e",
+  "zipSha256": "recorded in the handoff message; the delivered ZIP must match it",
+  "contentSetCoverage": "13 generated files, excluding the manifest itself"
+ },
  "determinism": {
   "note": "Generated twice into separate directories and compared byte for byte. No wall clock, no randomness, and every collection is emitted in a stable order.",
-  "filesCompared": 13,
+  "filesCompared": 14,
   "identical": true
  },
  "duplicateSplit": {
@@ -281,8 +283,32 @@
   },
   "supersedes": "The earlier 116 / 111 / 52 post figures came from a filter that removed EVERY standalone Q line rather than only the terminal signature, and from counting without source-awareness."
  },
+ "corrections": {
+  "file": "audit/step3b1-gpt-final-corrections.csv",
+  "note": "The owner override layer. A second category survives ONLY where it is still a genuine second speech act; prior certification alone is not sufficient.",
+  "rows": 77,
+  "applied": 69,
+  "held": 8,
+  "unmatched": []
+ },
+ "heldQueue": {
+  "rows": 945,
+  "distinctConflictIds": 945,
+  "distinctHeldKeys": 658,
+  "note": "conflictId is unique per ROW. heldKey is not: an unlocated entity key repeats when one post holds several unresolved records of the same kind, so resolving one row must never read as resolving the group.",
+  "byReason": {
+   "BOUNDARY_CROSSING": 242,
+   "DUPLICATE_KEY_CONFLICTING_METADATA": 42,
+   "SAME_CATEGORY_PARTIAL_OVERLAP": 16,
+   "UNLOCATED_SPAN": 645
+  }
+ },
  "assertions": {
   "identityReconstructionCount": 0,
+  "automaticActionMissingSentenceGeometryCount": 0,
+  "automaticActionEmptySentenceTextCount": 0,
+  "unmatchedCorrectionCount": 0,
+  "heldRowsWithoutUniqueConflictId": 0,
   "runtimeSubstringMismatchCount": 0,
   "automaticActionConsumesConflictHeldKeyCount": 0,
   "oldOccurrenceKeyAssignedToMultipleActionsCount": 0,

@@ -423,6 +423,69 @@ const blockedForGeometry = actions.filter(a => a.heldReason).length
 automaticActionMissingSentenceGeometryCount = actions.filter(a => !a.humanReviewRequired && (a.sentenceStart === null || a.sentenceEnd === null)).length
 automaticActionEmptySentenceTextCount = actions.filter(a => !a.humanReviewRequired && !String(a.sentenceText ?? '').trim()).length
 
+// ── THE OWNER OVERRIDE LAYER ─────────────────────────────────────────────────
+//
+// A ruling, not a derivation. The generator's shape rules decide what a sentence LOOKS like; they
+// cannot decide whether a second category is still a genuine second speech act. The rule the
+// generator had been applying — "it was certified in the other section before, so keep it as a
+// secondary" — is explicitly NOT the ruling. Prior certification alone is not sufficient.
+//
+//   "Patriots, get the word out." is a Directive. It does not also assert a Claim, and it was only
+//   carrying one because an older audit put it there.
+//
+// 77 rows: 49 false-secondary removals, 15 primary/secondary corrections, 4 source corrections,
+// 6 geometry holds, 1 URL/question split, 1 wrong-secondary replacement, 1 source-ownership hold.
+const CORRECTIONS = (() => {
+  const raw = fs.readFileSync(path.join(AUDIT, 'step3b1-gpt-final-corrections.csv'), 'utf8')
+  const parse = l => {
+    const out = []; let cur = '', q = false
+    for (let i = 0; i < l.length; i++) {
+      const c = l[i]
+      if (q) { if (c === '"') { if (l[i + 1] === '"') { cur += '"'; i++ } else q = false } else cur += c }
+      else if (c === '"') q = true
+      else if (c === ',') { out.push(cur); cur = '' }
+      else cur += c
+    }
+    out.push(cur); return out
+  }
+  const m = new Map()
+  for (const line of raw.split('\n').slice(1).filter(Boolean)) {
+    const [actionId, primary, secondary, source, disposition, reason] = parse(line)
+    m.set(actionId, { actionId, primary, secondary, source, disposition, reason })
+  }
+  return m
+})()
+
+const HOLD_DISPOSITIONS = new Set(['REPAIR_GEOMETRY', 'SPLIT_URL_AND_QUESTION', 'HOLD_SOURCE_OWNERSHIP'])
+let correctionsApplied = 0, correctionsHeld = 0
+const correctionsUnmatched = []
+for (const [id, c] of CORRECTIONS) {
+  const a = actions.find(x => x.actionId === id)
+  // A ruling that matches nothing is a FATAL mismatch between the ruling and the plan, not a
+  // no-op to shrug past. Either the action id moved or the population changed under the review.
+  if (!a) { correctionsUnmatched.push(id); continue }
+  a.ownerRuling = c.disposition
+  a.ownerReason = c.reason
+  if (HOLD_DISPOSITIONS.has(c.disposition)) {
+    a.humanReviewRequired = true
+    a.heldReason = `${c.disposition}: ${c.reason}`
+    for (const k of a.oldOccurrenceKeys) heldKeys.add(k)
+    correctionsHeld++
+    continue
+  }
+  a.proposedPrimaryCategory = c.primary
+  a.proposedSecondarySemantics = c.secondary
+    ? [{ category: c.secondary, reason: `owner ruling ${c.disposition}: ${c.reason}` }]
+    : []
+  a.sourceDisposition = c.source
+  a.qAuthored = c.source === 'q_authored'
+  a.ruleCode = `OWNER_${c.disposition}`
+  a.confidence = 'RULING'
+  a.humanReviewRequired = false
+  delete a.heldReason
+  correctionsApplied++
+}
+
 const oldKeyAssignments = new Map()
 for (const a of actions) for (const k of a.oldOccurrenceKeys) {
   if (!oldKeyAssignments.has(k)) oldKeyAssignments.set(k, [])
@@ -446,6 +509,12 @@ if (dqActions.length !== 220) FATAL.push(`unified directive+question actions = $
 if (dqKeys.size !== 440) FATAL.push(`unified directive+question old keys = ${dqKeys.size}, expected 440`)
 if (dqPartial !== 51) FATAL.push(`actions with a partial question side = ${dqPartial}, expected 51`)
 if (multi.length !== 117) FATAL.push(`multi-primary actions = ${multi.length}, expected 117`)
+// The geometry gate the review required, asserted on ACTIONS. A null range was previously skipped
+// rather than failed, and six actions proposing a withdrawal reported clean because of it.
+if (automaticActionMissingSentenceGeometryCount) FATAL.push(`${automaticActionMissingSentenceGeometryCount} automatic actions have no sentence range`)
+if (automaticActionEmptySentenceTextCount) FATAL.push(`${automaticActionEmptySentenceTextCount} automatic actions have empty sentence text`)
+// A ruling that matches no action means the ruling and the plan have drifted apart.
+if (correctionsUnmatched.length) FATAL.push(`${correctionsUnmatched.length} correction rows matched no action: ${correctionsUnmatched.join(' ')}`)
 
 // ── the entity sweep figures, source-aware ───────────────────────────────────
 const entityFigures = read(path.join(AUDIT, 'step3b1-entity-figures.json'))
@@ -522,7 +591,46 @@ const pop = [
 const bcKeys = new Set((findings.crossingRows ?? []).map(r => r.occurrenceKey))
 const dupKeySet = new Set((findings.duplicateRows ?? []).map(d => d.occurrenceKey))
 const bcDup = [...bcKeys].filter(k => dupKeySet.has(k)).sort()
-writeCsv('08-POPULATION-INTERSECTIONS.csv', ['population', 'rawRecordCount', 'uniqueOccurrenceKeyCount', 'uniqueSentenceIdCount'], pop)
+writeCsv('08-POPULATION-TOTALS.csv', ['population', 'rawRecordCount', 'uniqueOccurrenceKeyCount', 'uniqueSentenceIdCount'], pop)
+
+// AN INTERSECTION REPORT, NOT A LIST OF TOTALS.
+//
+// The previous 08 file repeated the nine population counts and named itself "intersections". A
+// total tells you nothing about whether one occurrence is about to be mutated twice, which is the
+// only reason to compute intersections at all. This lists the members that belong to more than one
+// population, by occurrence key AND by sentenceId, and names the single actionId that owns each.
+const memberships = new Map()   // member -> Set(population)
+const addMember = (member, population) => {
+  if (!member) return
+  if (!memberships.has(member)) memberships.set(member, new Set())
+  memberships.get(member).add(population)
+}
+for (const r of findings.crossingRows ?? []) addMember(r.occurrenceKey, 'BOUNDARY_CROSSING_242')
+for (const d of findings.duplicateRows ?? []) addMember(d.occurrenceKey, 'DUPLICATE_KEYS_148')
+for (const m of multi) { addMember(m.sentenceId, 'MULTI_PRIMARY_117'); for (const sp of m.spans) addMember(sp.occurrenceKey, 'MULTI_PRIMARY_117') }
+for (const m of pairs) { addMember(m.sentenceId, 'DIRECTIVE_QUESTION_220'); for (const sp of m.spans) addMember(sp.occurrenceKey, 'DIRECTIVE_QUESTION_220') }
+for (const c of contextMoves) addMember(c.sentenceId, 'CONTEXT_COLLISION_108')
+for (const o of (findings.sameCategoryOverlap ?? []).filter(x => x.layer === 'primary')) addMember(o.sentenceId, o.nested ? 'NESTED_OVERLAP' : 'SAME_CATEGORY_PARTIAL_OVERLAP')
+for (const a of actions.filter(x => x.kind === 'SOURCE_BOUNDARY_RESOLUTION')) { addMember(a.sentenceId, 'SOURCE_BOUNDARY_3'); for (const k of a.oldOccurrenceKeys) addMember(k, 'SOURCE_BOUNDARY_3') }
+
+const ownerOf = new Map()
+for (const a of actions) {
+  ownerOf.set(a.sentenceId, a.actionId)
+  for (const k of a.oldOccurrenceKeys) if (!ownerOf.has(k)) ownerOf.set(k, a.actionId)
+}
+const intersections = [...memberships.entries()]
+  .filter(([, pops]) => pops.size > 1)
+  .map(([member, pops]) => ({
+    member,
+    memberKind: member.includes('|') ? 'occurrenceKey' : 'sentenceId',
+    populationCount: pops.size,
+    populations: [...pops].sort().join(' + '),
+    ownedByActionId: ownerOf.get(member) ?? '(none — held, no action)',
+    actionIsHeld: (() => { const a = actions.find(x => x.actionId === ownerOf.get(member)); return a ? Boolean(a.humanReviewRequired) : '' })(),
+  }))
+  .sort((a, b) => b.populationCount - a.populationCount || String(a.member).localeCompare(String(b.member)))
+writeCsv('08-POPULATION-INTERSECTIONS.csv',
+  ['member', 'memberKind', 'populationCount', 'populations', 'ownedByActionId', 'actionIsHeld'], intersections)
 
 // ── the count projection, cross-tabbed ───────────────────────────────────────
 const before = {}
@@ -532,14 +640,51 @@ for (const r of ledgerDoc.records) {
   before[k] = (before[k] ?? 0) + 1
 }
 const deltas = {}
-const bump = (src, layer, cat, n) => { const k = `${src}|${layer}|${cat}`; deltas[k] = (deltas[k] ?? 0) + n }
+const bump = (src, layer, cat, n) => {
+  if (!cat || !n) return
+  const k = `${src}|${layer}|${cat}`
+  deltas[k] = (deltas[k] ?? 0) + n
+}
+
+// THE PROJECTION IS DECLARED PER ACTION KIND, NOT INFERRED FROM THE OLD CATEGORY STRINGS.
+//
+// Inferring it produced two wrong numbers, both from the same root: `singular()` maps the four
+// primary kinds and falls through to 'prediction' for everything else. Feeding it `namedEntities`
+// and `context` therefore charged 262 removals to PREDICTIONS — a category none of those records
+// belong to. It also credited the 60 duplicate merges with a primary of `null`, inventing a
+// category row out of nothing.
+//
+// Only these four kinds are primary. namedEntities and brackets are INLINE, context and emphasis
+// are REVIEW: none of them can move a primary count, whatever happens to their records.
+const PRIMARY_KIND = { claims: 'claim', questions: 'question', directives: 'directive', predictions: 'prediction' }
+const kindOf = oc => String(oc).split('@')[0]
+
 for (const a of actions) {
-  for (const oc of a.oldCategories) {
-    const kind = oc.split('@')[0]
-    bump('q_authored', 'primary', singular(kind), -1)
+  // A HELD ACTION MOVES NOTHING. The projection answers "what does applying the safe set do",
+  // and a held action is by definition not in it.
+  if (a.humanReviewRequired) continue
+
+  if (a.kind === 'CONTEXT_TO_DISPOSITION') {
+    // Context is a REVIEW disposition. It was never a primary count, so turning it into an
+    // explicit reviewDisposition moves no primary or secondary total. The primary named on the
+    // action is the paint that STAYS, not a paint being added.
+    continue
   }
+
+  if (a.kind === 'DUPLICATE_MERGE' || a.kind === 'NESTED_OVERLAP_COLLAPSE') {
+    // A collapse: N records over one span become 1. No category is created, and the effect lands
+    // only if the kind is a primary one at all.
+    const removed = a.kind === 'DUPLICATE_MERGE' ? (a.excessRecordsRemoved ?? 0) : a.recordsWithdrawn.length
+    const cat = PRIMARY_KIND[kindOf(a.oldCategories[0])]
+    bump('q_authored', 'primary', cat, -removed)
+    continue
+  }
+
+  // A migration: every old primary record is withdrawn and one new primary is installed, with any
+  // genuine second speech act recorded as a non-painting secondary.
+  for (const oc of a.oldCategories) bump('q_authored', 'primary', PRIMARY_KIND[kindOf(oc)], -1)
   bump(a.sourceDisposition, 'primary', a.proposedPrimaryCategory, 1)
-  for (const s of a.proposedSecondarySemantics) bump(a.sourceDisposition, 'secondary', s.category, 1)
+  for (const sec of a.proposedSecondarySemantics) bump(a.sourceDisposition, 'secondary', sec.category, 1)
 }
 const projRows = [...new Set([...Object.keys(before), ...Object.keys(deltas)])].sort().map(k => {
   const [source, layer, category] = k.split('|')
@@ -553,9 +698,37 @@ const held = [
   ...(findings.crossingRows ?? []).map(r => ({ heldKey: r.occurrenceKey, reason: 'BOUNDARY_CROSSING', postNum: r.postNum, detail: `touches ${r.sentencesTouched} sentences`, alsoDuplicateKey: dupKeySet.has(r.occurrenceKey) })),
   ...dupActions.filter(d => !d.automatic).map(d => ({ heldKey: d.occurrenceKey, reason: 'DUPLICATE_KEY_CONFLICTING_METADATA', postNum: d.postNum, detail: `${JSON.stringify(String(d.textA).slice(0, 40))} vs ${JSON.stringify(String(d.textB).slice(0, 40))}`, alsoDuplicateKey: true })),
   ...(findings.sameCategoryOverlap ?? []).filter(o => o.layer === 'primary' && !o.nested).map(o => ({ heldKey: `OVERLAP-${o.sentenceId}`, reason: 'SAME_CATEGORY_PARTIAL_OVERLAP', postNum: o.postNum, detail: `${JSON.stringify(o.a.slice(0, 40))} / ${JSON.stringify(o.b.slice(0, 40))}`, alsoDuplicateKey: false })),
-  ...(findings.unlocated ?? []).map(u => ({ heldKey: `UNLOCATED-${u.postNum}-${u.kind}`, reason: 'UNLOCATED_SPAN', postNum: u.postNum, detail: u.text, alsoDuplicateKey: false })),
+  ...(findings.unlocated ?? []).map((u, i) => ({ heldKey: `UNLOCATED-${u.postNum}-${u.kind}`, reason: 'UNLOCATED_SPAN', postNum: u.postNum, detail: u.text, alsoDuplicateKey: false,
+    certifiedValue: u.text, aliasesAttempted: (u.aliasesAttempted ?? []).join(' | '), ordinal: i })),
 ]
-writeCsv('10-CONFLICTS-HELD.csv', ['heldKey', 'reason', 'postNum', 'detail', 'alsoDuplicateKey'], held)
+
+// EVERY HELD ROW NEEDS ITS OWN IDENTITY.
+//
+// 945 rows shared only 658 distinct heldKey values, because an unlocated entity's key is
+// "UNLOCATED-<post>-<kind>" and a post can hold several unresolved entities of the same kind —
+// #1008 alone carries three separate "Hussein" records. Resolving one of those rows would have
+// read as resolving all of them. The conflictId below is unique per ROW, and the ordinal says
+// which record within the group it is.
+const seenHeld = new Map()
+for (const h of held) {
+  const n = (seenHeld.get(h.heldKey) ?? 0)
+  seenHeld.set(h.heldKey, n + 1)
+  h.occurrenceOrdinal = n
+  h.conflictId = `${h.reason}::${h.heldKey}::${n}`
+  h.sourceDisposition = h.sourceDisposition ?? 'q_authored'
+  h.certifiedValue = h.certifiedValue ?? h.detail
+  h.aliasesAttempted = h.aliasesAttempted ?? ''
+  const body = bodyOf(h.postNum) ?? ''
+  const at = h.certifiedValue ? body.indexOf(String(h.certifiedValue).slice(0, 40)) : -1
+  h.postContext = at > -1
+    ? body.slice(Math.max(0, at - 60), at + 100).replace(/\s+/g, ' ')
+    : body.slice(0, 140).replace(/\s+/g, ' ')
+}
+const heldIdCount = new Set(held.map(h => h.conflictId)).size
+writeCsv('10-CONFLICTS-HELD.csv',
+  ['conflictId', 'heldKey', 'occurrenceOrdinal', 'reason', 'postNum', 'certifiedValue', 'aliasesAttempted', 'sourceDisposition', 'detail', 'alsoDuplicateKey', 'postContext'], held)
+if (held.length !== heldIdCount) FATAL.push(`${held.length - heldIdCount} held rows share a conflictId`)
+if (held.length !== 945) FATAL.push(`held rows = ${held.length}, expected 945`)
 
 // ── the master apply plan ────────────────────────────────────────────────────
 writeText('STEP3B1-APPLY-PLAN.jsonl', actions.map(a => JSON.stringify(a)).join('\n') + '\n')
@@ -611,6 +784,11 @@ const manifest = {
     boundaryDuplicateIntersection: bcDup,
     projection: projRows,
   },
+  hashes: {
+    note: 'Two distinct values, named unambiguously because the previous handoff quoted both and defined neither. contentSetHash is over the GENERATED FILES; zipSha256 is over the DELIVERED BYTES and is stamped after packaging, since a ZIP records its own container metadata.',
+    contentSetHash: 'sha256 over the ordered "filename:sha256" lines of every generated file, computed below',
+    zipSha256: 'recorded in the handoff message; the delivered ZIP must match it',
+  },
   determinism: {
     note: 'Generated twice into separate directories and compared byte for byte. No wall clock, no randomness, and every collection is emitted in a stable order.',
     filesCompared: written.length + 1,
@@ -623,8 +801,27 @@ const manifest = {
     CONFLICTING_METADATA: dupActions.filter(d => d.metadataCompatibility === 'CONFLICTING_METADATA').length,
   },
   entityFigures,
+  corrections: {
+    file: 'audit/step3b1-gpt-final-corrections.csv',
+    note: 'The owner override layer. A second category survives ONLY where it is still a genuine second speech act; prior certification alone is not sufficient.',
+    rows: CORRECTIONS.size,
+    applied: correctionsApplied,
+    held: correctionsHeld,
+    unmatched: correctionsUnmatched,
+  },
+  heldQueue: {
+    rows: held.length,
+    distinctConflictIds: heldIdCount,
+    distinctHeldKeys: new Set(held.map(h => h.heldKey)).size,
+    note: 'conflictId is unique per ROW. heldKey is not: an unlocated entity key repeats when one post holds several unresolved records of the same kind, so resolving one row must never read as resolving the group.',
+    byReason: held.reduce((m, h) => { m[h.reason] = (m[h.reason] ?? 0) + 1; return m }, {}),
+  },
   assertions: {
     identityReconstructionCount,
+    automaticActionMissingSentenceGeometryCount,
+    automaticActionEmptySentenceTextCount,
+    unmatchedCorrectionCount: correctionsUnmatched.length,
+    heldRowsWithoutUniqueConflictId: held.length - heldIdCount,
     runtimeSubstringMismatchCount,
     automaticActionConsumesConflictHeldKeyCount,
     oldOccurrenceKeyAssignedToMultipleActionsCount,

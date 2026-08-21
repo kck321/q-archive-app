@@ -1,0 +1,78 @@
+actionId,recommendedPrimary,recommendedSecondary,recommendedSourceDisposition,disposition,reason
+A-MP-p1155-s000,directive,,q_authored,DROP_FALSE_SECONDARY,Direct guidance about where to focus; no separate factual Claim remains.
+A-MP-p1295-s012,claim,directive,q_authored,APPLY_OVERRIDE,The sentence is a normative proposition; guidance may remain secondary.
+A-MP-p1297-s006,claim,directive,q_authored,APPLY_OVERRIDE,The sentence primarily asserts why they fight and identifies a core value; the should-clause is secondary guidance.
+A-MP-p1297-s008,directive,,q_authored,DROP_FALSE_SECONDARY,Collective exhortation; the old Claim is not an independent proposition.
+A-MP-p1358-s000,claim,,q_authored,APPLY_OVERRIDE,"""Trust must be earned."" is an aphoristic proposition, not an imperative."
+A-MP-p1432-s002,claim,,quoted_source,APPLY_OVERRIDE_SOURCE,This is a declarative sentence from the quoted Ephesians passage; source-owned and not a Directive.
+A-MP-p1445-s006,directive,,q_authored,DROP_FALSE_SECONDARY,Pure research instruction.
+A-MP-p1471-s002,directive,,q_authored,DROP_FALSE_SECONDARY,Jussive command/taunt; no independent Claim.
+A-MP-p0165-s034,directive,,q_authored,DROP_FALSE_SECONDARY,Pure dissemination instruction.
+A-MP-p0166-s035,directive,,q_authored,DROP_FALSE_SECONDARY,Pure dissemination instruction.
+A-MP-p0189-s018,directive,,q_authored,DROP_FALSE_SECONDARY,Pure re-review instruction.
+A-MP-p1916-s004,directive,,q_authored,DROP_FALSE_SECONDARY,Collective exhortation; Directive is the complete speech act.
+A-MP-p1928-s012,HOLD,,HOLD,SPLIT_URL_AND_QUESTION,"The proposed sentence concatenates a URL ending in /view with ""Who is [1 of 4] FIREWALLS?""; preserve the URL as a link and classify only the actual question."
+A-MP-p1944-s014,HOLD,,HOLD,REPAIR_GEOMETRY,sentenceStart/sentenceEnd are null and sentenceText is empty; do not withdraw either old record until the complete literal sentence is reconstructed.
+A-MP-p1956-s002,directive,,q_authored,DROP_FALSE_SECONDARY,Direct command to stay together.
+A-MP-p2056-s001,claim,directive,q_authored,APPLY_OVERRIDE,The sentence is a normative assertion expressed as advice.
+A-MP-p2072-s013,HOLD,,HOLD,REPAIR_GEOMETRY,sentenceStart/sentenceEnd are null and sentenceText is empty; the source line contains multiple questions and needs exact sentence reconstruction.
+A-MP-p2211-s041,HOLD,,HOLD,REPAIR_GEOMETRY,sentenceStart/sentenceEnd are null and sentenceText is empty; do not auto-apply.
+A-MP-p2234-s002,directive,,q_authored,DROP_FALSE_SECONDARY,Direct exhortation.
+A-MP-p2369-s003,HOLD,,HOLD,REPAIR_GEOMETRY,sentenceStart/sentenceEnd are null and sentenceText is empty; do not auto-apply.
+A-MP-p2378-s001,HOLD,,HOLD,REPAIR_GEOMETRY,"sentenceStart/sentenceEnd are null and sentenceText is empty; repair the ""No. 297"" abbreviation/question boundary first."
+A-MP-p2436-s032,directive,,q_authored,DROP_FALSE_SECONDARY,Direct collective exhortation.
+A-MP-p2436-s033,directive,,q_authored,DROP_FALSE_SECONDARY,Direct collective exhortation.
+A-MP-p2436-s034,directive,,q_authored,DROP_FALSE_SECONDARY,Direct collective exhortation.
+A-MP-p2507-s001,directive,,q_authored,DROP_FALSE_SECONDARY,Prohibitive warning/instruction; no separate Claim.
+A-MP-p2661-s008,directive,,q_authored,DROP_FALSE_SECONDARY,Instruction stated in passive form; no separate factual Claim.
+A-MP-p2807-s037,directive,,q_authored,DROP_FALSE_SECONDARY,Direct collective exhortation.
+A-MP-p2807-s038,directive,,q_authored,DROP_FALSE_SECONDARY,Direct collective exhortation.
+A-MP-p2816-s017,directive,,q_authored,DROP_FALSE_SECONDARY,Direct collective exhortation.
+A-MP-p2904-s003,claim,,quoted_source,APPLY_OVERRIDE_SOURCE,"This is a declarative sentence from a quoted Ephesians passage; source-owned, not a Directive."
+A-MP-p2937-s013,question,,q_authored,DROP_FALSE_SECONDARY,Direct information-seeking question; no distinct factual Claim is asserted.
+A-MP-p2998-s001,directive,,q_authored,DROP_FALSE_SECONDARY,Advice to investigate further; no separate Claim.
+A-MP-p3053-s001,directive,,q_authored,DROP_FALSE_SECONDARY,Imperative phrase; no separate Claim.
+A-MP-p0337-s000,claim,directive,q_authored,APPLY_OVERRIDE,"The dominant proposition is ""we are in control""; ""rest assured"" is a Directive frame."
+A-MP-p0337-s006,directive,,q_authored,DROP_FALSE_SECONDARY,Pure re-review instruction.
+A-MP-p3371-s000,claim,directive,q_authored,APPLY_OVERRIDE,"This is a general proposition/maxim, not a direct command."
+A-MP-p0034-s002,HOLD,,HOLD,REPAIR_GEOMETRY,sentenceStart/sentenceEnd are null and sentenceText is empty; the old Claim and Prediction spans do not identify a complete-sentence action.
+A-MP-p0035-s001,directive,claim,q_authored,APPLY_OVERRIDE,"""It is time to take back our country..."" is an exhortation; Directive is the visible speech act."
+A-MP-p0035-s002,directive,prediction,q_authored,APPLY_OVERRIDE,"""Let us salute and pray..."" is a direct exhortation; the future clause may remain secondary Prediction."
+A-MP-p3593-s003,claim,,quoted_source,APPLY_OVERRIDE_SOURCE,"This is a declarative sentence from a quoted Ephesians passage; source-owned, not a Directive."
+A-MP-p3594-s003,claim,,quoted_source,APPLY_OVERRIDE_SOURCE,"This is a declarative sentence from a quoted Ephesians passage; source-owned, not a Directive."
+A-MP-p0037-s004,directive,,q_authored,DROP_FALSE_SECONDARY,Jussive Directive; no separate Claim.
+A-MP-p3728-s002,claim,directive,q_authored,APPLY_OVERRIDE,This is a general normative proposition; guidance is secondary.
+A-MP-p3907-s032,directive,,q_authored,DROP_FALSE_SECONDARY,Direct collective exhortation.
+A-MP-p3907-s033,directive,,q_authored,DROP_FALSE_SECONDARY,Direct collective exhortation.
+A-MP-p3907-s034,directive,,q_authored,DROP_FALSE_SECONDARY,Direct collective exhortation.
+A-MP-p3929-s000,directive,,q_authored,DROP_FALSE_SECONDARY,Direct caution/instruction.
+A-MP-p4024-s001,directive,,q_authored,DROP_FALSE_SECONDARY,Direct command.
+A-MP-p4076-s002,directive,,q_authored,DROP_FALSE_SECONDARY,Direct command.
+A-MP-p4089-s001,directive,,q_authored,DROP_FALSE_SECONDARY,Direct command.
+A-MP-p4115-s002,directive,,q_authored,DROP_FALSE_SECONDARY,Direct command.
+A-MP-p4121-s002,directive,,q_authored,DROP_FALSE_SECONDARY,Direct command.
+A-MP-p4127-s002,question,claim,q_authored,APPLY_OVERRIDE,"The full bracketed line ends with ""who controls the message?""; Question is the visible speech act."
+A-MP-p4246-s002,directive,,q_authored,DROP_FALSE_SECONDARY,Direct command.
+A-MP-p4461-s005,directive,,q_authored,DROP_FALSE_SECONDARY,Direct command.
+A-MP-p4543-s004,directive,,q_authored,DROP_FALSE_SECONDARY,Instruction stated in passive form; no separate factual Claim.
+A-MP-p4604-s001,directive,,q_authored,DROP_FALSE_SECONDARY,Pure imperative.
+A-MP-p4641-s002,directive,,q_authored,DROP_FALSE_SECONDARY,Direct command.
+A-MP-p0465-s001,claim,,q_authored,APPLY_OVERRIDE,"""No other platforms used."" is a declarative disclaimer, not an instruction."
+A-MP-p4685-s014,directive,,q_authored,DROP_FALSE_SECONDARY,Direct command.
+A-MP-p4746-s000,directive,,q_authored,DROP_FALSE_SECONDARY,Jussive Directive; no separate Claim.
+A-MP-p4772-s000,directive,,q_authored,DROP_FALSE_SECONDARY,Prohibitive imperative/maxim used as instruction; do not double-count it as Claim.
+A-MP-p4782-s015,question,directive,q_authored,REPLACE_SECONDARY,"The line is a Question containing an explicit ""_analyze %"" instruction; Directive is the genuine secondary, not Claim."
+A-MP-p4871-s000,question,,q_authored,DROP_FALSE_SECONDARY,Hypothetical/information-seeking question; no independent Claim should be retained.
+A-MP-p4888-s001,question,,q_authored,DROP_FALSE_SECONDARY,Elliptical question/proposal; no independent Claim is stated.
+A-MP-p4891-s010,question,claim,q_authored,APPLY_OVERRIDE,"Despite the final period, ""Why wouldn't..."" is interrogative syntax."
+A-MP-p4908-s001,directive,,q_authored,DROP_FALSE_SECONDARY,Direct command.
+A-MP-p4951-s012,claim,directive,q_authored,APPLY_OVERRIDE,This is a maxim/general proposition; guidance is secondary.
+A-MP-p4963-s009,directive,,q_authored,DROP_FALSE_SECONDARY,Elliptical Directive; no separate Claim.
+A-MP-p0513-s002,claim,,q_authored,APPLY_OVERRIDE,"""NO comms made outside of this platform."" states what occurred/was used; it is not a command."
+A-MP-p0515-s003,directive,,q_authored,DROP_FALSE_SECONDARY,Pure proposal/instruction.
+A-MP-p0586-s021,directive,,q_authored,APPLY_OVERRIDE,"""If you are religious, PRAY."" is a direct conditional instruction."
+A-MP-p0066-s000,directive,,q_authored,DROP_FALSE_SECONDARY,Discourse instruction to clarify; no separate Claim.
+A-MP-p0854-s007,directive,,q_authored,DROP_FALSE_SECONDARY,Direct collective exhortation.
+A-MP-p0854-s009,directive,,q_authored,DROP_FALSE_SECONDARY,Direct command.
+A-MP-p0973-s006,directive,,q_authored,DROP_FALSE_SECONDARY,Elliptical Directive; no separate Claim.
+A-SB-3071,HOLD,,HOLD,HOLD_SOURCE_OWNERSHIP,"A leading "">"" marker alone does not prove quoted_source. Unlike #2653 and #4310, the package supplies no article header/link/verbatim-quote evidence. Keep the complete line but do not move it out of Q-authored counts until ownership is proved."
