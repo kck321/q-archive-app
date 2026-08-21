@@ -46,6 +46,67 @@ const codes = audit.codes.filter(c => !rejected.has(c.key)).map(c => {
 })
 const occurrences = audit.occurrences.filter(o => !rejected.has(o.normalizedKey))
 
+// ── The unhighlighted-sentence queue, ruled by the owner (2026-08-20) ────────
+//
+// 15 lines the owner ruled to be Q's bracket notation. Seven were already certified codes; the
+// other eight are the shape the detector deliberately routed away as bracket EMPHASIS - multi-word
+// lower-case phrases like "[We hear you]", "[Impossible to defend]", "[Less than 10]". The owner
+// has now ruled them notation, and an owner ruling outranks a detector verdict.
+//
+// THE PAINT WAS NEVER THE PROBLEM HERE. bracketSpansIn() marks anything in [..] red on both
+// surfaces regardless of certification, so all fifteen already showed red in the drop body. What
+// this adds is SECTION MEMBERSHIP: they now appear in Codes & Brackets, which is where a reader
+// goes to see the notation gathered up.
+//
+// The detector's own excludedBracketEmphasis tally is left EXACTLY as the audit recorded it. That
+// number is the history of a decision the detector made, not a live population, and rewriting it
+// would erase the record of what was overruled. The movement is reported as its own submetric.
+const QUEUE = path.join(OUT, 'unhighlighted-owner-rulings.json')
+const bracketRulings = (fs.existsSync(QUEUE)
+  ? JSON.parse(fs.readFileSync(QUEUE, 'utf8')).rulings ?? [] : []).filter(r => r.section === 'brackets')
+const byNormKey = new Map(codes.map(c => [c.normalizedKey, c]))
+const haveOcc = new Set(occurrences.map(o => `${o.postNum}|${o.normalizedKey}`))
+let ruledOccurrences = 0, ruledNewCodes = 0, ruledAlready = 0
+for (const r of bracketRulings) {
+  for (const token of r.sourceText.match(/\[[^\]]*\]/g) ?? []) {
+    const k = `${r.postNum}|${token}`
+    if (haveOcc.has(k)) { ruledAlready++; continue }
+    haveOcc.add(k)
+    occurrences.push({
+      sourceText: token,
+      codeType: 'bracketed_token',
+      normalizedKey: token,
+      postNum: r.postNum,
+      postId: r.postId,
+      context: [r.sourceText],
+      interpretedMeaning: null, interpretationConfidence: null, interpretationBasis: null,
+      resolved: false,
+      provenance: `owner ruling ${r.ruledOn} - unhighlighted-sentence queue`,
+    })
+    ruledOccurrences++
+    const existing = byNormKey.get(token)
+    if (existing) {
+      existing.recurrenceCount = (existing.recurrenceCount ?? 0) + 1
+      if (!existing.posts.includes(r.postNum)) existing.posts.push(r.postNum)
+      continue
+    }
+    const row = {
+      normalizedKey: token,
+      sourceTexts: [token],
+      codeType: 'bracketed_token',
+      recurrenceCount: 1,
+      posts: [r.postNum],
+      interpretedMeaning: null, interpretationConfidence: null, interpretationBasis: null,
+      resolved: false,
+      linkedEntityId: null,
+      provenance: `owner ruling ${r.ruledOn} - unhighlighted-sentence queue`,
+    }
+    codes.push(row)
+    byNormKey.set(token, row)
+    ruledNewCodes++
+  }
+}
+
 const byType = {}
 for (const o of occurrences) byType[o.codeType] = (byType[o.codeType] ?? 0) + 1
 const linked = codes.filter(c => c.linkedEntityId)
@@ -64,6 +125,9 @@ const out = {
     inResolutionCenter: adj.decisions.filter(d => d.outcome === 'CERTIFIED_CODE_UNRESOLVED').length,
     excludedBracketEmphasis: audit.totals.routedToEmphasis,
     excludedDates: audit.totals.excludedAsDates,
+    // Occurrences the DETECTOR excluded and the OWNER ruled back in. Reported beside the
+    // detector's tally rather than subtracted from it, so both decisions stay legible.
+    ruledIntoCodesByOwner: ruledOccurrences,
   },
   typeInfo: CODE_TYPE_INFO,
   codes,
@@ -73,15 +137,25 @@ const out = {
 const invented = codes.filter(c => c.interpretedMeaning && !KNOWN_MEANINGS[c.normalizedKey])
 const missingBasis = codes.filter(c => c.interpretedMeaning && !c.interpretationBasis)
 const checks = [
-  ['code occurrences = 1,949', out.totals.occurrences === 1949, out.totals.occurrences],
-  ['distinct codes = 739', out.totals.distinctCodes === 739, out.totals.distinctCodes],
-  ['posts = 852', out.totals.posts === 852, out.totals.posts],
+  // 1,949 + 8 ruled in from the unhighlighted-sentence queue = 1,957. Seven of the 15 bracket
+  // rulings named a token already certified at that post and add nothing.
+  ['code occurrences = 1,957', out.totals.occurrences === 1957, out.totals.occurrences],
+  ['bracket rulings applied = 15', bracketRulings.length === 15 && ruledOccurrences + ruledAlready === 15,
+    `${ruledOccurrences} new + ${ruledAlready} already certified`],
+  // +8: each ruled token is a wording Codes did not hold.
+  ['distinct codes = 747', out.totals.distinctCodes === 747, out.totals.distinctCodes],
+  // +4 posts gain their first certified code.
+  ['posts = 856', out.totals.posts === 856, out.totals.posts],
   ['interpreted = 7', out.totals.interpreted === 7, out.totals.interpreted],
-  ['unresolved = 732', out.totals.unresolved === 732, out.totals.unresolved],
+  // +8, and deliberately: a bracket ruled to BE notation is not a bracket whose meaning is known.
+  ['unresolved = 740', out.totals.unresolved === 740, out.totals.unresolved],
   ['cross-linked to Entities = 32', linked.length === 32, linked.length],
   ['no interpretation without evidence', invented.length === 0, `${invented.length} invented`],
   ['every interpretation states its basis', missingBasis.length === 0, `${missingBasis.length} unstated`],
-  ['bracket-emphasis stays excluded', out.totals.excludedBracketEmphasis.occurrences === 769, out.totals.excludedBracketEmphasis.occurrences],
+  // UNCHANGED ON PURPOSE. This is the detector's record of what it routed away, not a live
+  // population; the eight the owner overruled are reported as ruledIntoCodesByOwner instead.
+  ['bracket-emphasis tally untouched', out.totals.excludedBracketEmphasis.occurrences === 769, out.totals.excludedBracketEmphasis.occurrences],
+  ['owner ruled 8 back into Codes', out.totals.ruledIntoCodesByOwner === 8, out.totals.ruledIntoCodesByOwner],
   ['dates stay excluded', out.totals.excludedDates.occurrences === 405, out.totals.excludedDates.occurrences],
   ['every code keeps its exact source text', codes.every(c => c.sourceTexts.length > 0), 'ok'],
 ]
