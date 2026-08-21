@@ -6120,3 +6120,77 @@ the case, not in the app.
 **Files:** `scripts/test-queue-ruling-paint.mjs` (new gate, #533 case corrected), `DEVLOG.md`.
 Diagnosed in `src/lib/localData.ts` (`applyCloudOverrides`), `src/lib/sync.ts` (`fetchOverrides`
 deletes `_updatedAt`, discarding the only freshness signal), `scripts/export-firestore.mjs`.
+
+---
+
+## 2026-08-21 — The overlay repair: apply only what is newer than the bundle, per FIELD
+
+Fixes the defect diagnosed in the entry above. Code only — no data touched, no Firestore document
+deleted, no bulk classification applied, no rebuild, no deploy.
+
+**The rule.** The bundle already CONTAINS every edit the last export consumed, baked and then
+repaired by the apply chain. An edit that is not newer than the bundle therefore carries nothing the
+bundle lacks, and laying it back down can only subtract. `src/lib/overrideProvenance.ts` holds the
+decision as a pure function; `selectOverrideFields()` returns the fields that may be applied and the
+fields that may not, so the overlay can report what it did instead of doing it silently.
+
+**Per FIELD, not per document — and this is the part a per-document timestamp gets wrong.**
+`pushPostEdit` writes with `{ merge: true }`, so a document accumulates fields across edits. Edit
+`correlatedNews` today and the document is restamped while a months-old `postAnalysis` sits inside it
+untouched. A per-document rule would then declare that stale snapshot newer than the bundle and lay
+it right back over the certified data — the original defect, re-entering through the repair.
+`_fieldUpdatedAt` dates each field separately so it cannot.
+
+The fallback is pessimistic on purpose. A document carrying a `_fieldUpdatedAt` map has been written
+by the new code; a field MISSING from that map was last written by the old code at an unknown time,
+so it scores 0 and is never applied. Only a fully legacy document — no map at all — falls back to
+`_updatedAt`, and every one of those is older than the bundle anyway.
+
+**`OVERRIDES_BAKED_THROUGH = 1786458148021`** (2026-08-11T14:22:28.021Z), the maximum `_updatedAt`
+across `postEdits` (1,355 docs) and `questionEdits` (153 docs). Derived from the documents, never
+from the clock, so the same Firestore state always yields the same number and the bundle stays
+reproducible. **`export-firestore.mjs` recomputes it on every export and ABORTS if the constant no
+longer covers what it is baking**, printing the value to set. A constant that has to be remembered
+is a constant that drifts; this one sits in the deploy path instead.
+
+**`OVERLAY_REPAIR = 1` — the already-poisoned caches.** The broken overlay did not merely display
+stale analysis, it persisted it: `applyCloudOverrides` ended with `idbSet('posts', …)`. A returning
+profile therefore held a corrupted `posts` collection stamped with a seed version that MATCHED, so
+the seed check short-circuited and the bundle was never re-read. Filtering Firestore fixes new loads
+and does nothing for those caches. Bumping `SEED_VERSION` would clear them but would say something
+untrue — the bundle did not change, the client's copy of it was corrupted — and would drag the seed
+fingerprint and every returning-reader gate along with a repair that is not about the bundle. This
+marker invalidates the cache exactly once, on exactly this defect.
+
+**Proof.**
+
+    warm profile — the one that actually held the corruption
+      overlay report   1,355 docs · 0 applied · 0 fields applied · 3,263 fields skipped
+      #533             WE, THE PEOPLE  cyan ×4, the WE,/THE PEOPLE split GONE
+      #3               " comments on " amber, Gowdy/Comey cyan, no violet anywhere
+      editorial and public now report identical marks on both drops
+
+    scripts/test-override-provenance.mjs   16/16, against the real module via esbuild
+      including: an unrelated newer field does NOT drag an old postAnalysis along
+      including: an edit stamped exactly at bakedThrough is already in the bundle
+      including: a genuinely newer cross-device edit still propagates
+
+    scripts/test-queue-ruling-paint.mjs    48/48 editorial :5173 · 48/48 public :5174
+
+**A second, unrelated defect found on the way, fixed in its own commit.** `QuestionBadge` read
+`config[status].bg` with no guard. Three questions carry `status: "unanswered"` — this component's
+own LABEL for `red`, used in place of the key — and the two drops holding them (#2211, #3613)
+rendered as a completely BLANK `/post/:id`: no body, no analysis, no error a reader could see. The
+archive was unaffected, so the two surfaces disagreed about whether those drops existed at all. That
+is why one paint check stayed red after the overlay was fixed. `"unanswered"` now resolves to red and
+anything unrecognised degrades to `unprocessed`: a badge with the wrong colour is a small defect, a
+drop that will not render is a large one. Both drops now render — #3613 83 marks, #2211 206 marks,
+matching the public build.
+
+**Pre-existing and NOT touched:** `test-seed-migration.mjs` scores 5/8, identically before and after
+this work — it is still pinned to `SEED_VERSION is 6`. `localData.ts` carries one pre-existing lint
+error (`'_d' is assigned a value but never used`).
+
+**Files:** `src/lib/overrideProvenance.ts` (new), `src/lib/sync.ts`, `src/lib/localData.ts`,
+`src/components/QuestionBadge.tsx`, `scripts/export-firestore.mjs`,
+`scripts/test-override-provenance.mjs` (new).
