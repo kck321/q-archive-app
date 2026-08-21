@@ -108,13 +108,17 @@ for (const m of dry.multiPrimary ?? []) {
   const target = m.certifiedOverlap ? keysOf.directiveQuestion220
     : m.spans.every(s => s.relation === 'EXACT') ? keysOf.multiPrimaryExact89
     : keysOf.multiPrimaryPartial28
-  // A sentence is not an occurrence key, so record every span's key on that sentence.
-  const post = byNum.get(m.postNum)
-  for (const sp of m.spans) {
-    const hits = occurrencesOfSpan(post?.text, sp.text)
-    if (hits.length) target.add(`${m.postNum}|${sp.kind}|${hits[0][0]}|${hits[0][1]}`)
-  }
+  // TAKE THE KEY, NEVER REBUILD IT. This used to re-locate sp.text — which the ledger exports
+  // truncated to 90 characters — and so produced a shorter span and a DIFFERENT key for the same
+  // occurrence. #153's embedded question came out as 60..150 here and 60..213 from the questions
+  // side, and the two populations then looked disjoint when they are the same records.
+  for (const sp of m.spans) if (sp.occurrenceKey) target.add(sp.occurrenceKey)
 }
+// The wrapped partials, taken from the ledger's own records for the same reason.
+for (const m of dry.multiPrimary ?? []) {
+  for (const sp of m.spans) if (sp.directiveWrapped && sp.occurrenceKey) keysOf.wrappedPartial51.add(sp.occurrenceKey)
+}
+// A wrapped partial can also sit on a sentence that never reached multiPrimary — it is still one.
 for (const [postNum, rows] of qByPost) {
   const post = byNum.get(postNum)
   for (const q of rows) {

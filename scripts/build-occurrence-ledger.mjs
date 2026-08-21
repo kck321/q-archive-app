@@ -178,7 +178,13 @@ for (const [sentenceId, occs] of bySentence) {
     const certifiedPair = kinds.length === 2 && kinds[0] === 'directives' && kinds[1] === 'questions'
     multiPrimary.push({ sentenceId, postNum: occs[0].postNum, kinds,
       certifiedOverlap: certifiedPair,
-      spans: primary.map(o => ({ kind: o.kind, relation: o.relation, text: o.text.slice(0, 90) })) })
+      // THE KEY TRAVELS WITH THE SPAN. It used to carry only a 90-character truncation of the text,
+      // and a later analysis rebuilt keys by re-locating that truncation — producing a SHORTER span
+      // and therefore a different key for the same occurrence. That is the exact defect this whole
+      // ledger exists to remove: never re-derive an identity that already exists.
+      spans: primary.map(o => ({ occurrenceKey: o.key, kind: o.kind, relation: o.relation,
+        start: o.start, end: o.end, directiveWrapped: Boolean(o.directiveWrapped),
+        text: o.text.slice(0, 90) })) })
   }
   for (const o of primary) {
     if (o.relation === 'PARTIAL') {
