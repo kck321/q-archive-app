@@ -39,9 +39,9 @@ both memberships and the boundary decision stays held.
 | `06-CONTEXT-MOVES-108.csv` | 108 |
 | `07-DIRECTIVE-QUESTION-UNIFIED.csv` | 220 |
 | `08-POPULATION-INTERSECTIONS.csv` | 9 |
-| `09-COUNT-PROJECTION.csv` | 9 |
+| `09-COUNT-PROJECTION.csv` | 10 |
 | `10-CONFLICTS-HELD.csv` | 945 |
-| `STEP3B1-APPLY-PLAN.jsonl` | 340 |
+| `STEP3B1-APPLY-PLAN.jsonl` | 540 |
 
 ## Entity sweep figures (source-aware, corrected)
 

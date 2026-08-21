@@ -13,17 +13,17 @@
   {
    "file": "01-MULTI-PRIMARY-117.csv",
    "rows": 117,
-   "sha256": "6a84680c605c4c47cbc8f0f57876d5f133e51b99bc8a08ac04f942024eb6773b"
+   "sha256": "ffb3ca191df6883d6e61a361beeda756672c460af2678842e06c97fc87a8917b"
   },
   {
    "file": "02-PARTIAL-28.csv",
    "rows": 28,
-   "sha256": "5d1ea67f99d7ca03e0e8c2fab7e12bf5aa6b976bb2919f701acda1c9bf2799cc"
+   "sha256": "085c68904d8def537d8999d7f282c46b5a05fdd0d2db90086adaa598d3380d57"
   },
   {
    "file": "03-SOURCE-DISPOSITIONS-3.csv",
    "rows": 3,
-   "sha256": "4568ca50e2adf6757365a27837f3e69e8687b023b56247edfacbd0ecd8e52b1e"
+   "sha256": "f0908b5339082b6d94bd9a2494d5de259c083b3c09dcfae2197ad968bf58d309"
   },
   {
    "file": "04-DUPLICATE-MERGES-106.csv",
@@ -52,8 +52,8 @@
   },
   {
    "file": "09-COUNT-PROJECTION.csv",
-   "rows": 9,
-   "sha256": "0f39151b5f957d905e55d16a73c8fac62d62565533285efc26c527cedd3114f0"
+   "rows": 10,
+   "sha256": "5ed77c141778b811b4401efaf3844891e9110f501da53229c58129ba2bc698cd"
   },
   {
    "file": "10-CONFLICTS-HELD.csv",
@@ -62,18 +62,18 @@
   },
   {
    "file": "STEP3B1-APPLY-PLAN.jsonl",
-   "rows": 340,
-   "sha256": "a6121f445631dc90837630a0dcd9f5317bd584897ba3dcb3198ac7ca112c8340"
+   "rows": 540,
+   "sha256": "75874cf2ce3227be37ae006b00d16e26810718c57412c37b6e7580f8ae798042"
   },
   {
    "file": "00-STEP3B1-INDEX.md",
    "rows": 75,
-   "sha256": "aea6af03144c8f38bb1fbff2e9a41cf77eb8bf83a6ef8b1f8ab1f8568fd3abbc"
+   "sha256": "77aba468d3128b2ef06df10e090153e18fe6d291e905c6573802cb856d25fba8"
   }
  ],
  "counts": {
   "ledgerRecords": 35255,
-  "actions": 340,
+  "actions": 540,
   "populations": [
    {
     "population": "MULTI_PRIMARY_117",
@@ -140,8 +140,8 @@
     "layer": "primary",
     "category": "claim",
     "before": 8912,
-    "delta": -83,
-    "after": 8829,
+    "delta": -99,
+    "after": 8813,
     "headlineEligible": true
    },
    {
@@ -149,8 +149,17 @@
     "layer": "primary",
     "category": "directive",
     "before": 3037,
-    "delta": -84,
-    "after": 2953,
+    "delta": 9,
+    "after": 3046,
+    "headlineEligible": true
+   },
+   {
+    "source": "q_authored",
+    "layer": "primary",
+    "category": "null",
+    "before": 0,
+    "delta": 60,
+    "after": 60,
     "headlineEligible": true
    },
    {
@@ -158,8 +167,8 @@
     "layer": "primary",
     "category": "prediction",
     "before": 847,
-    "delta": -4,
-    "after": 843,
+    "delta": -261,
+    "after": 586,
     "headlineEligible": true
    },
    {
@@ -167,8 +176,8 @@
     "layer": "primary",
     "category": "question",
     "before": 6503,
-    "delta": -170,
-    "after": 6333,
+    "delta": -188,
+    "after": 6315,
     "headlineEligible": true
    },
    {
@@ -212,8 +221,8 @@
     "layer": "primary",
     "category": "claim",
     "before": 0,
-    "delta": 3,
-    "after": 3,
+    "delta": 2,
+    "after": 2,
     "headlineEligible": false
    }
   ]

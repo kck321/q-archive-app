@@ -151,6 +151,7 @@ for (const m of multi) {
     ruleCode: rule,
     confidence: rule === 'R6_SOLE_CATEGORY' ? 'LOW' : 'MEDIUM',
     humanReviewRequired: rule === 'R6_SOLE_CATEGORY',
+    ...(rule === 'R6_SOLE_CATEGORY' ? { heldReason: 'NO_SHAPE_RULE_FIRED: the sentence matched none of the speech-act tests, so the painted category would be a guess rather than a ruling.' } : {}),
     beforeCountEffect: kinds.map(k => `${k}:-1`).join(' '),
     afterCountEffect: `${primary}:+1 primary${secondary.length ? ' · ' + secondary.map(x => `${x.category}:+1 secondary`).join(' ') : ''}`,
   })
@@ -194,7 +195,12 @@ for (const m of pairs) {
 // (c) the three source-boundary exceptions
 const PROVENANCE = {
   2653: { disposition: 'quoted_source', why: "the line opens with Q's \">\" greentext marker inside a run of them, reproducing a published article verbatim" },
-  3071: { disposition: 'quoted_source', why: "the line opens with Q's \">\" greentext marker" },
+  // HELD. A leading ">" on a chan board is Q's own indent marker as often as it is a quotation,
+  // and this row has no article header, no linked source and no verbatim comparison behind it.
+  // #2653 sits in a sustained excerpt beside a published article and #4310 under a "WASH POST:"
+  // header between quotation marks; this one has neither. Keeping the sentence, holding the
+  // OWNERSHIP: it is not removed from the Q-authored total until that is actually shown.
+  3071: { disposition: 'q_authored', hold: true, why: "only evidence is a leading '>' marker, which does not by itself establish an outside quotation" },
   4310: { disposition: 'quoted_source', why: 'the passage sits directly beneath a "WASH POST:" header and is reproduced verbatim between quotation marks' },
 }
 for (const e of abbrev.excluded?.spans ?? []) {
@@ -215,13 +221,16 @@ for (const e of abbrev.excluded?.spans ?? []) {
     proposedPrimaryCategory: 'claim',
     proposedSecondarySemantics: [],
     proposedReviewDispositions: ['source_boundary_exception'],
+    ...(prov.hold ? { humanReviewRequired: true, heldReason: 'SOURCE_OWNERSHIP_UNPROVEN: ' + prov.why } : {}),
     recordsWithdrawn: key ? [key] : [],
     withdrawReason: 'the partial Q-authored span is withdrawn; the complete sentence is retained as source-owned',
     metadataTransferred: key ?? '',
     relationshipsPreserved: '',
     ruleCode: 'R7_QUOTED_SOURCE',
     confidence: 'HIGH',
-    humanReviewRequired: false,
+    // NOT a literal false: the hold spread above sets this true for #3071 and an object literal
+    // takes its LAST value for a repeated key, so a trailing `false` silently un-held it.
+    humanReviewRequired: Boolean(prov.hold),
     qAuthored: false,
     provenanceEvidence: prov.why,
     beforeCountEffect: 'q_authored primary claim:-1',
@@ -261,6 +270,159 @@ for (const o of (findings.sameCategoryOverlap ?? []).filter(x => x.layer === 'pr
 for (const u of findings.unlocated ?? []) heldKeys.add(`UNLOCATED-${u.postNum}-${u.kind}`)
 
 // ── assertions on the plan ───────────────────────────────────────────────────
+// ── (f) the duplicate merges — 60 canonical actions, not 106 ────────────────
+//
+// 148 duplicate ROWS are 102 unique keys. 60 of them are non-conflicting and hold 166 ledger
+// records between them: merging leaves 60 survivors and removes 106 excess records. The other 42
+// keys hold two canonical identities over one span ("Arizona" and "AZ" over the same two
+// characters) and are held. "106 merge actions" would have been one action per removed record
+// rather than one per surviving occurrence.
+const recordsByKey = new Map()
+for (const r of ledgerDoc.records) {
+  if (!recordsByKey.has(r.key)) recordsByKey.set(r.key, [])
+  recordsByKey.get(r.key).push(r)
+}
+const boundaryKeys = new Set((findings.crossingRows ?? []).map(r => r.occurrenceKey))
+for (const d of dupActions) {
+  if (!d.automatic) continue
+  const recs = recordsByKey.get(d.occurrenceKey) ?? []
+  if (recs.length < 2) continue
+  if (actions.some(a => a.actionId === `A-DUP-${d.occurrenceKey.replace(/\|/g, '-')}`)) continue
+  const first = recs[0]
+  addAction({
+    actionId: `A-DUP-${d.occurrenceKey.replace(/\|/g, '-')}`,
+    kind: 'DUPLICATE_MERGE',
+    postNum: d.postNum, sentenceId: first.sentenceId,
+    sentenceStart: first.start, sentenceEnd: first.end, sentenceText: first.text,
+    sourceDisposition: 'q_authored',
+    // A KEY CAN BELONG TO TWO POPULATIONS AND GETS ONE ACTION, NOT TWO. Two of these keys are
+    // also boundary crossings, and merging duplicate records does NOT resolve cross-sentence
+    // geometry — they are different questions about the same span. Both memberships travel on the
+    // one action and the merge is held behind the boundary decision.
+    populationMembership: ['DUPLICATE_KEYS_148', ...(boundaryKeys.has(d.occurrenceKey) ? ['BOUNDARY_CROSSING_242'] : [])],
+    ...(boundaryKeys.has(d.occurrenceKey) ? {
+      heldReason: 'ALSO_BOUNDARY_CROSSING: the duplicate records may be safe to merge, but the span still straddles a sentence boundary. Merging does not settle that, so the action waits on it.',
+    } : {}),
+    oldOccurrenceKeys: [d.occurrenceKey],
+    oldCategories: recs.map(r => `${r.kind}@${r.start}..${r.end}`),
+    proposedPrimaryCategory: null,
+    proposedSecondarySemantics: [],
+    proposedReviewDispositions: [],
+    recordsWithdrawn: [],
+    withdrawReason: `${recs.length - 1} excess record(s) over one span merged into a single occurrence`,
+    metadataTransferred: `${recs.length} records -> 1, identity ${d.identitiesClaimed}`,
+    relationshipsPreserved: '',
+    ruleCode: 'R8_DUPLICATE_MERGE',
+    confidence: 'HIGH',
+    humanReviewRequired: boundaryKeys.has(d.occurrenceKey),
+    excessRecordsRemoved: recs.length - 1,
+    beforeCountEffect: `${recs.length} records`,
+    afterCountEffect: '1 record',
+  })
+}
+
+// ── (g) nested same-category overlaps, where the container IS the sentence ───
+//
+// Longest-wins is only safe under containment, and only when the retained span is EXACTLY one
+// complete ledger sentence. The 16 partial overlaps are not containment and stay held.
+for (const o of (findings.sameCategoryOverlap ?? []).filter(x => x.layer === 'primary' && x.nested)) {
+  const sent = sentences.get(o.sentenceId)
+  const recs = ledgerDoc.records.filter(r => r.sentenceId === o.sentenceId && r.kind === o.kind)
+  const outer = recs.find(r => sent && r.start === sent.start && r.end === sent.end)
+  const id = `A-NEST-${o.sentenceId}-${o.kind}`
+  if (actions.some(a => a.actionId === id)) continue
+  if (!outer) {
+    heldKeys.add(`OVERLAP-${o.sentenceId}`)
+    continue      // the container is not the complete sentence — not safe, stays in the held file
+  }
+  const inner = recs.filter(r => r.key !== outer.key && r.start >= outer.start && r.end <= outer.end)
+  addAction({
+    actionId: id,
+    kind: 'NESTED_OVERLAP_COLLAPSE',
+    postNum: o.postNum, sentenceId: o.sentenceId,
+    sentenceStart: sent.start, sentenceEnd: sent.end, sentenceText: sent.text,
+    sourceDisposition: 'q_authored',
+    populationMembership: ['NESTED_OVERLAP'],
+    oldOccurrenceKeys: [outer.key, ...inner.map(r => r.key)],
+    oldCategories: [outer, ...inner].map(r => `${r.kind}@${r.start}..${r.end}`),
+    proposedPrimaryCategory: singular(o.kind),
+    proposedSecondarySemantics: [],
+    proposedReviewDispositions: [],
+    recordsWithdrawn: inner.map(r => r.key),
+    withdrawReason: 'fragment contained by the complete sentence already certified in the same category',
+    metadataTransferred: inner.map(r => r.key).join(' '),
+    relationshipsPreserved: '',
+    ruleCode: 'R9_NESTED_CONTAINMENT',
+    confidence: 'HIGH',
+    humanReviewRequired: false,
+    beforeCountEffect: `${o.kind}:-${inner.length}`,
+    afterCountEffect: `${singular(o.kind)}: unchanged, one span instead of ${inner.length + 1}`,
+  })
+}
+
+// ── (h) the Context collisions become a review disposition ──────────────────
+for (const c of contextMoves) {
+  const id = `A-CTX-${c.sentenceId}-${c.start}`
+  if (actions.some(a => a.actionId === id)) continue
+  const rec = ledgerDoc.records.find(r => r.postNum === c.postNum && r.kind === 'context' && r.start === c.start && r.end === c.end)
+  addAction({
+    actionId: id,
+    kind: 'CONTEXT_TO_DISPOSITION',
+    postNum: c.postNum, sentenceId: c.sentenceId,
+    sentenceStart: c.start, sentenceEnd: c.end, sentenceText: rec?.text ?? c.text,
+    sourceDisposition: 'q_authored',
+    populationMembership: ['CONTEXT_COLLISION_108'],
+    oldOccurrenceKeys: rec ? [rec.key] : [],
+    oldCategories: [`context@${c.start}..${c.end}`],
+    proposedPrimaryCategory: singular(c.primaryKind),
+    proposedSecondarySemantics: [],
+    proposedReviewDispositions: ['contextual'],
+    recordsWithdrawn: [],
+    withdrawReason: '',
+    metadataTransferred: rec?.key ?? '',
+    relationshipsPreserved: '',
+    ruleCode: 'R10_CONTEXT_DISPOSITION',
+    confidence: 'HIGH',
+    humanReviewRequired: false,
+    beforeCountEffect: 'context:-1 (as a competing category)',
+    afterCountEffect: `${singular(c.primaryKind)} keeps the paint · context becomes reviewDisposition`,
+  })
+}
+
+// GEOMETRY IS CHECKED ON THE ACTION, NOT ONLY ON THE LEDGER RECORD.
+//
+// runtimeSubstringMismatchCount ran over ledger records and reported 0 while six automatic actions
+// carried sentenceStart: null, sentenceEnd: null and an empty sentenceText — and still proposed
+// withdrawing two records each and installing a new classification. A null range was skipped
+// rather than failed. An action with no sentence cannot replace a span with that sentence.
+//
+// A seventh is #1928, whose stored post text LOST A NEWLINE at ingest: it holds
+// "…d1-release/viewWho is [1 of 4] FIREWALLS?" where #1929, the same drop reposted, holds the
+// break. The ledger is right; the drop text is wrong. Repairing it changes certified post text,
+// which fingerprintPostText guards, so the action is held and the defect is recorded.
+const MISSING_NEWLINE_POSTS = new Set([1928])
+let automaticActionMissingSentenceGeometryCount = 0
+let automaticActionEmptySentenceTextCount = 0
+for (const a of actions) {
+  const noGeom = a.sentenceStart === null || a.sentenceEnd === null
+  const noText = !String(a.sentenceText ?? '').trim()
+  const sourceTextDefect = MISSING_NEWLINE_POSTS.has(a.postNum) && /https?:\/\/\S+[A-Z]/.test(a.sentenceText ?? '')
+  if (noGeom || noText || sourceTextDefect) {
+    if (noGeom) automaticActionMissingSentenceGeometryCount++
+    if (noText) automaticActionEmptySentenceTextCount++
+    a.humanReviewRequired = true
+    a.heldReason = sourceTextDefect
+      ? 'SOURCE_TEXT_DEFECT: the stored post text is missing a newline, so a URL and a question read as one sentence. Repair the drop text first.'
+      : 'MISSING_SENTENCE_GEOMETRY: no complete sentence resolved for this sentenceId, so there is nothing to replace the partial spans with.'
+    for (const k of a.oldOccurrenceKeys) heldKeys.add(k)
+  }
+}
+// The counts above are the number BLOCKED. Once blocked they are no longer automatic, so the
+// assertion the review asked for — that no AUTOMATIC action lacks geometry — is what is reported.
+const blockedForGeometry = actions.filter(a => a.heldReason).length
+automaticActionMissingSentenceGeometryCount = actions.filter(a => !a.humanReviewRequired && (a.sentenceStart === null || a.sentenceEnd === null)).length
+automaticActionEmptySentenceTextCount = actions.filter(a => !a.humanReviewRequired && !String(a.sentenceText ?? '').trim()).length
+
 const oldKeyAssignments = new Map()
 for (const a of actions) for (const k of a.oldOccurrenceKeys) {
   if (!oldKeyAssignments.has(k)) oldKeyAssignments.set(k, [])
