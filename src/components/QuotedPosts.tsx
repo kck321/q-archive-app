@@ -56,8 +56,13 @@ export default function QuotedPosts({
         return (
           <div
             key={`${q.boardId}-${i}`}
+            // The landing point for the ">>NNNNNNN" in the drop body above. linkify() turns a
+            // pointer at a recovered anon post into "#quoted-<boardId>", so the reader gets from
+            // the citation to the thing cited without leaving the page. scroll-mt keeps the block
+            // clear of the sticky header when the anchor jumps.
+            id={`quoted-${q.boardId}`}
             style={{ marginLeft: Math.min(depth, 3) * 16 }}
-            className={`border-l-2 rounded-r-lg bg-black/25 ${isQ ? 'border-amber-600/70' : 'border-gray-600'}`}
+            className={`scroll-mt-24 border-l-2 rounded-r-lg bg-black/25 ${isQ ? 'border-amber-600/70' : 'border-gray-600'}`}
           >
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1 px-3 pt-2 pb-1 text-[11px]">
               <span className="text-gray-500">{depth === 0 ? 'quoting' : 'which quotes'}</span>

@@ -12,6 +12,7 @@ import type { QPost, QQuestion, QTopic, QResource } from '../types'
 import { fetchOverrides } from './sync'
 import { IS_PUBLIC_SITE } from './appMode'
 import { selectOverrideFields } from './overrideProvenance'
+import { buildRefIndex } from './refIndex'
 
 export interface AnalysisConfirmedDoc { id: string; key: string; category: string }
 export interface InfographDoc { id: string; questionId?: string; [k: string]: unknown }
@@ -710,6 +711,9 @@ export function loadLocalData(): Promise<LocalStore> {
       dedupePostArrays(raw.posts as QPost[])
 
       cache = buildIndexes(raw)
+      // Where every ">>NNNNNNN" pointer goes. Built once here, not per render — resolving a
+      // pointer sits on the render path of every drop body. See src/lib/refIndex.ts.
+      buildRefIndex(raw.posts as QPost[])
       // Overlay cross-device edits from the cloud — DESKTOP/DEV ONLY.
       //
       // fetchOverrides() reads two whole collections, and Firestore bills one read per
