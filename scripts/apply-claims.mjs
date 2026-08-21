@@ -338,7 +338,9 @@ const checks = [
   ['no editorial paraphrase shown as Q', paraLeak.length === 0, `${paraLeak.length} leaked`],
   ['no source material shown as Q', srcLeak.length === 0, `${srcLeak.length} leaked`],
   // 6,443 + 11 arriving by owner ruling (2026-08-19) = 6,454.
-  ['Questions now 6,454', questions.length === 6454, questions.length],
+  // 6,454 + 65 arriving from the same owner ruling. Cross-section CHECK, not a source:
+  // apply-questions-final.mjs owns the number and runs earlier in the chain.
+  ['Questions now 6,519', questions.length === 6519, questions.length],
   // 2,422 + 2 owner rulings (#4963 'Focus.' / 'FOCUS.', ruled Directives out of Emphasis).
   // v5: Q Directives migrated to sourceSpansV2 provenance; 2,705 -> 2,552 by owner ruling.
   // 2,552 + 485 arriving from the same owner ruling. This is a cross-section CHECK, not a source:

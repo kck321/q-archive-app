@@ -157,6 +157,51 @@ if (fs.existsSync(QRULES)) {
   }
 }
 
+// ── The unhighlighted-sentence queue, ruled by the owner (2026-08-20) ────────
+//
+// 67 units the owner read as questions. Most of them do NOT end in "?" — "Don't you think POTUS
+// would be tweeting about removal given clear conflict." is interrogative in form and terminated
+// with a full stop, which is Q's habit throughout the archive. That is exactly the case
+// certifiedQuestionRegex already handles: the highlighter matches a question where it ENDS A
+// SENTENCE, on "?" or "." or "!", because requiring "?" once dropped 1,116 real questions.
+// Invariant 5 is unaffected — it governs how a question MATCHES, not which terminator it carries.
+//
+// Occurrence-aware, like Claims and Directives: one queue row per unit.
+const QUEUE = path.join(ROOT, 'audit/unhighlighted-owner-rulings.json')
+const queueRulings = (fs.existsSync(QUEUE) ? JSON.parse(fs.readFileSync(QUEUE, 'utf8')).rulings ?? [] : [])
+  .filter(r => r.section === 'questions')
+const queueStats = { added: 0, already: 0 }
+{
+  const have = new Map()
+  for (const x of rows) { const k = `${x.postNum}|${key(x.text)}`; have.set(k, (have.get(k) ?? 0) + 1) }
+  const seenQ = new Map()
+  for (const r of queueRulings) {
+    const k = `${r.postNum}|${key(r.sourceText)}`
+    const done = seenQ.get(k) ?? 0
+    seenQ.set(k, done + 1)
+    if (done < (have.get(k) ?? 0)) { queueStats.already++; continue }
+    const post = postByNum.get(r.postNum)
+    rows.push({
+      id: `q-queue-${r.postNum}-${queueStats.added}`,
+      postId: r.postId ?? post?.id ?? String(r.postNum),
+      postNum: r.postNum,
+      text: r.sourceText,
+      occurrences: 1,
+      unitText: r.sourceText,
+      status: 'unprocessed',
+      certified: true,
+      source: 'owner ruling',
+      // The segmenter splits at "Mr.", "Sen.", "vs.", "A." — so "Coincidence vs. HUBER start?" is
+      // stored as two units and is a LINE rather than a unit. Same shape, and same allowance, as
+      // recoveredFromSegmentationError below: being mis-segmented is precisely why the span had to
+      // be reassembled, so requiring it to be a unit would reject the thing the join fixed.
+      ...(r.joinedUnits || r.resolvedFromLine ? { spanFromJoinedUnits: true } : {}),
+      provenance: `owner ruling ${r.ruledOn} — unhighlighted-sentence queue`,
+    })
+    queueStats.added++
+  }
+}
+
 const counted = rows.filter(r => !r.editorialNormalization)
 const bodyOf = new Map(posts.map(p => [p.postNum, flat(p.text ?? '')]))
 const linesByPost = new Map(posts.map(p => [p.postNum, clean(p.text ?? '').split('\n').map(l => l.trim()).filter(Boolean)]))
@@ -172,7 +217,9 @@ for (const r of counted) {
   // requiring it to be a unit would reject the very thing the recovery fixed.
   const ok = r.recoveredFromSegmentationError
     ? (linesByPost.get(r.postNum) ?? []).includes(r.text)
-    : Boolean(unitContaining(r.postNum, r.text))
+    : r.spanFromJoinedUnits
+      ? (linesByPost.get(r.postNum) ?? []).some(l => flat(l).includes(flat(r.text)))
+      : Boolean(unitContaining(r.postNum, r.text))
   if (!ok) qa.notAUnit.push(r)
 }
 const distinct = new Set(counted.map(r => key(r.text)))
@@ -186,15 +233,20 @@ const coinMentions = coin.reduce((s, r) => s + r.occurrences, 0)
 
 const checks = [
   // 6,443 + 11 owner rulings (2026-08-19): interrogative units certified in another section.
-  ['certified occurrences = 6,454', counted.length === 6454, counted.length],
+  // 6,454 + 65 from the unhighlighted-sentence queue (67 ruled, 2 occurrences already certified).
+  ['certified occurrences = 6,519', counted.length === 6519, counted.length],
+  ['queue rulings applied = 67', queueStats.added + queueStats.already === 67,
+    `${queueStats.added} added + ${queueStats.already} already certified`],
   ['every owner question ruling is in the set = 12', ownerQuestions + ownerAlreadyPresent === 12 && ownerMissing.length === 0,
     `${ownerQuestions} added + ${ownerAlreadyPresent} already present`],
   ['all resolve to a source span', qa.missing.length === 0, `${qa.resolved}/${counted.length}`],
   ['every span is a unit or literal line', qa.notAUnit.length === 0, `${counted.length - qa.notAUnit.length}/${counted.length}`],
   // +10: eleven rulings, ten wordings new to Questions.
-  ['distinct (canonical key) = 5,313', distinct.size === 5313, distinct.size],
+  // +58: 65 new occurrences carrying 58 wordings Questions did not already hold.
+  ['distinct (canonical key) = 5,371', distinct.size === 5371, distinct.size],
   // +4: #1975, #2420, #2695 and #2776 had no certified question before these rulings.
-  ['posts with questions = 1,700', postsWith.size === 1700, postsWith.size],
+  // +5 posts gain their first certified question.
+  ['posts with questions = 1,705', postsWith.size === 1705, postsWith.size],
   ['directive-wrapped = 51, all counted', wrapped.length === 51, wrapped.length],
   ['no editorial normalisation counted', editorialLeaks.length === 0, editorialLeaks.length],
   ['"Coincidence?" = 86 posts / 88 mentions', coin.length === 86 && coinMentions === 88, `${coin.length} posts / ${coinMentions} mentions`],
