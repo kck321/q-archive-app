@@ -475,7 +475,12 @@ const COLLECTIONS: CollectionName[] = ['posts', 'questions', 'topics', 'resource
 // as a person however many times the tooltip said otherwise, and would see the corrected wording
 // beside the stale category. entity-hovers.json is fetched rather than seeded and needs no bump
 // of its own; this one is required by the entity row that changed underneath it.
-export const SEED_VERSION = 79   // 79: owner question rulings, 2026-08-19 — 11 interrogative units moved
+export const SEED_VERSION = 80   // 80: the unhighlighted-sentence queue, ruled 2026-08-20 — 6,108 of the
+// 6,111 queued sentences accepted into a section. Claims 4,212->8,928, Directives 2,552->3,037,
+// Predictions 595->842, Questions 6,454->6,519, Entities 1,201->1,240 rows / 8,798->8,969 mentions,
+// Codes 1,949->1,957, Emphasis 3,111->3,105, Context 4,829->1,748. A reader on 79 would keep seeing
+// four thousand sentences rendered as plain unclassified text on both the drop page and the archive.
+// 79: owner question rulings, 2026-08-19 — 11 interrogative units moved
 // into Questions from Claims/Evidence (6,443->6,454), 9 withdrawn from Claims (4,221->4,212), and #2420's
 // parallel-phrasing Emphasis retired by the standing 'a question carries no Emphasis' rule (3,112->3,111).
 // A reader on 78 would keep seeing those eleven sentences painted amber instead of blue.

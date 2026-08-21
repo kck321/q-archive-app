@@ -1,0 +1,281 @@
+{
+ "note": "Live certified entities with no GLOBAL hover synopsis yet. The gap is recorded here rather than filled, because a synopsis is authored editorial text about a real person or organisation and extract-entity-hovers.mjs refuses to publish an unreviewed one. Cross-section invariant 10b asserts this list is exactly the difference between the entity set and the published synopses, so the gap can never widen silently.",
+ "why": "All 39 arrived with the 2026-08-20 unhighlighted-sentence queue ruling, which certified 39 new identities. Nothing was removed: zero published synopses point at an entity that is no longer live.",
+ "ruledOn": "2026-08-20",
+ "count": 39,
+ "entities": [
+  {
+   "id": "qe-e7331aea9c4b",
+   "canonical": "Mainstream Media",
+   "type": "media_organization",
+   "posts": 3,
+   "mentions": 3
+  },
+  {
+   "id": "qe-8e89e8bf8a1d",
+   "canonical": "Secret Agents",
+   "type": "other_named_entity",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-3d39629f9ecd",
+   "canonical": "The Cult",
+   "type": "political_group",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-442a0d902541",
+   "canonical": "Iron Eagle",
+   "type": "coded_alias",
+   "posts": 9,
+   "mentions": 9
+  },
+  {
+   "id": "qe-73d64a484e4d",
+   "canonical": "Eye of Providence",
+   "type": "religious_spiritual",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-69bbadce263e",
+   "canonical": "Wizards & Warlocks",
+   "type": "coded_alias",
+   "posts": 2,
+   "mentions": 2
+  },
+  {
+   "id": "qe-f1c84297eabe",
+   "canonical": "The Sum of All Fears",
+   "type": "creative_work",
+   "posts": 6,
+   "mentions": 6
+  },
+  {
+   "id": "qe-2d1b610f1312",
+   "canonical": "MAGA",
+   "type": "political_group",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-6c9bfa949221",
+   "canonical": "Terminal 5",
+   "type": "facility_property",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-65a74e4e6abb",
+   "canonical": "Fox Three",
+   "type": "coded_alias",
+   "posts": 2,
+   "mentions": 2
+  },
+  {
+   "id": "qe-eb8431161eb0",
+   "canonical": "Splash",
+   "type": "coded_alias",
+   "posts": 2,
+   "mentions": 2
+  },
+  {
+   "id": "qe-63904d84edb1",
+   "canonical": "Maverick",
+   "type": "coded_alias",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-81aabd241ebe",
+   "canonical": "NAT G",
+   "type": "coded_alias",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-a8798d21e9cf",
+   "canonical": "Eye of Ra",
+   "type": "religious_spiritual",
+   "posts": 2,
+   "mentions": 2
+  },
+  {
+   "id": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "type": "political_group",
+   "posts": 29,
+   "mentions": 34
+  },
+  {
+   "id": "qe-23403a5e15c0",
+   "canonical": "WarGames",
+   "type": "creative_work",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-e6dca3536e13",
+   "canonical": "Apache",
+   "type": "coded_alias",
+   "posts": 2,
+   "mentions": 2
+  },
+  {
+   "id": "qe-ff2721b349d1",
+   "canonical": "Dopey",
+   "type": "coded_alias",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-9271dec94a20",
+   "canonical": "Hilton family",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-855d3dfd9c47",
+   "canonical": "JFK Con Room",
+   "type": "facility_property",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-22d61afede73",
+   "canonical": "M-Institute",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-2bfd139c428f",
+   "canonical": "McLean, Virginia",
+   "type": "location",
+   "posts": 2,
+   "mentions": 2
+  },
+  {
+   "id": "qe-c8500713493a",
+   "canonical": "RT Kenya",
+   "type": "media_organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-d69cccf9e5fa",
+   "canonical": "Red Castle",
+   "type": "coded_alias",
+   "posts": 2,
+   "mentions": 2
+  },
+  {
+   "id": "qe-6997635c7a7c",
+   "canonical": "The Art of the Deal",
+   "type": "creative_work",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-e40236920216",
+   "canonical": "Board of Superintendence",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-736412bb6b8a",
+   "canonical": "Vatican Bank",
+   "type": "financial_institution",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-344c28f3a086",
+   "canonical": "EH CA",
+   "type": "coded_alias",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-d7e7eeae34b1",
+   "canonical": "Ford",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-5f8841ad2402",
+   "canonical": "Fusion GPS",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-4ab13e3a5689",
+   "canonical": "Lee S",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-9b181e56a4c1",
+   "canonical": "Barcelona",
+   "type": "location",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-d7f841ca1ad1",
+   "canonical": "Shareblue",
+   "type": "media_organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-d27fa0601ace",
+   "canonical": "Mad Hatter",
+   "type": "coded_alias",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-95b35eac2da9",
+   "canonical": "F-15",
+   "type": "military_asset_vessel",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-ccc8c488181f",
+   "canonical": "Shadow Presidency",
+   "type": "political_group",
+   "posts": 7,
+   "mentions": 7
+  },
+  {
+   "id": "qe-1ef281a95f22",
+   "canonical": "Shadow Government",
+   "type": "political_group",
+   "posts": 4,
+   "mentions": 4
+  },
+  {
+   "id": "qe-40b3b980802c",
+   "canonical": "Castle Rock",
+   "type": "coded_alias",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-889c6e61bb80",
+   "canonical": "Nightwatch",
+   "type": "coded_alias",
+   "posts": 1,
+   "mentions": 1
+  }
+ ]
+}

@@ -18,7 +18,14 @@ export const CANONICAL = {
   // section (9 Claims, 2 Evidence) moved to Questions. `distinct` is restated to the value the
   // apply gate measures — it read 5,302 here against a measured 5,303 before this ruling, an
   // ungated documentation drift, now 5,313. Rulings: audit/questions-owner-rulings.json.
-  questions: { occurrences: 6454, distinct: 5313, posts: 1700 },
+  // 2026-08-20 OWNER RULING - the unhighlighted-sentence queue. The owner reviewed all 6,111 rows
+  // the unhighlighted-sentence audit produced and assigned each to a section; 6,108 were applied.
+  // Every figure this ruling moved is marked with its arithmetic below. The record is
+  // audit/unhighlighted-owner-rulings.json, and each materialiser layers it over its frozen
+  // artifact rather than writing into it, so re-deriving an audit can neither erase a ruling nor
+  // restore a withdrawn row.
+  // +65 occurrences (67 ruled, 2 already certified), +58 wordings, +5 posts.
+  questions: { occurrences: 6519, distinct: 5371, posts: 1705 },
   // v5, 16 Aug 2026 — Q Directives migrated to sourceSpansV2 provenance under owner ruling.
   // 2,705 -> 2,552: 153 occurrences removed from Q Directives ONLY (quoted news, scraped code,
   // blessings, declarative-lead misreads, questions, a prediction). Nothing was deleted from the
@@ -26,7 +33,8 @@ export const CANONICAL = {
   // `posts` are now measured over ALL certified occurrences including owner rulings, which is
   // what the page actually renders — the old 1,472/1,417 counted directives-final.json alone and
   // never matched the UI.
-  directives: { occurrences: 2552, distinct: 1642, posts: 1464 },
+  // +485 occurrences (486 ruled, 1 already certified), +185 wordings, +225 posts.
+  directives: { occurrences: 3037, distinct: 1827, posts: 1689 },
   // 4,181 -> 4,188 on 2026-08-13 by owner adjudication, not by a classifier. Six exact
   // occurrences of "Pure evil." / "PURE EVIL." plus "The 'real' racist." in #2917. The corpus
   // search that found them also showed the fuller variants ("These people are pure evil.",
@@ -43,12 +51,14 @@ export const CANONICAL = {
   // 4,221 -> 4,212 on 2026-08-19: 9 quoted questions withdrawn to Questions by owner ruling.
   // distinct -9 (each wording occurs in one post only); posts -3 (#483, #2695, #3203 each held
   // exactly one claim, and it was the quoted question).
-  claims: { occurrences: 4212, distinct: 3247, posts: 1980 },
+  // +4,716 occurrences (4,782 ruled, 66 already certified), +3,581 wordings, +1,104 posts.
+  claims: { occurrences: 8928, distinct: 6828, posts: 3084 },
   // 630 -> 595: -73 technical nonpredictions, -56 arguable rows withdrawn to the review
   // backlog, +66 unique moves from Claims, +28 high-confidence predictions the extractor
   // missed. posts 520 -> 490. The 91 withdrawn/held rows are NOT deleted — they sit in
   // audit/predictions-audit/review-backlog.md awaiting an owner ruling.
-  predictions: { occurrences: 595, posts: 490 },
+  // +247 occurrences (250 ruled, 3 already certified), +183 posts.
+  predictions: { occurrences: 842, posts: 673 },
   evidence: { occurrences: 6590, posts: 3883 },
   entities: {
     // 1,332 detected + 1 owner ruling (Dominion Voting Systems, #4963 "Dominion." — the only
@@ -86,7 +96,10 @@ export const CANONICAL = {
     // rather than minting a second identity for something the archive already named.
     // A further 135 rows have zero prose mentions and STAY, because they are still referenced as
     // the publisher of linked material or as an account Q pointed at: audit/entity-source-only-registry.json.
-    canonical: 1201, detectedCanonical: 1292, ownerRulings: 118, ownerMerges: 1,
+    // 1,201 -> 1,240: 39 identities the 2026-08-20 queue rulings introduce, declared with a type
+    // from the existing vocabulary in audit/unhighlighted-entity-identities.json. detectedCanonical
+    // stays 1,292 - an identity the owner ruled into existence is not one a detector found.
+    canonical: 1240, detectedCanonical: 1292, ownerRulings: 118, ownerMerges: 1, queueRulings: 508,
     /** Every resolved mention across all 1,334 certified entities. The headline figure. */
     // 8,227 -> 8,239: the RC alias ruling resolved 12 occurrences to Rachel Chandler. The merge
     // moved 4 mentions from the absorbed row onto hers and added none.
@@ -109,20 +122,27 @@ export const CANONICAL = {
     // Every one is reversible from audit/entity-cleanup-reversal.json, which restores each entry
     // at its original array index. Deliberately NOT included and still certified: 41
     // image-unconfirmed, 69 ambiguous, and 7 unsupported occurrences outside the approved set.
-    mentions: 8798,
+    // 8,798 -> 8,969: +171. 547 entity occurrences were ruled and 376 of them were already carried
+    // by a certified layer at that (post, alias), so only the shortfall is added - counting the rest
+    // again would show a x2 Q never wrote. The cleanup itself is unchanged: proposedWithdrawals is
+    // still 951, and re-running audit-occurrence-provenance.mjs reproduced every prior verdict.
+    mentions: 8969,
     /** How it is composed. The core figure is the section's history, not its headline. */
     // tailEntities is what the tail adjudication produced (1,239); one of them, Ray Chandler,
     // now ships merged into Rachel Chandler, so 1,238 tail rows appear in the artifact.
     // SEED 78: the cleanup fell almost entirely on the adjudicated tail, which is where the
     // URL-derived and substring-extracted rows lived. Core registry keeps all 93 rows and loses 24
     // mentions; the tail loses 246 rows and 918 mentions.
-    coreEntities: 93, coreRegistryMentions: 5328, tailEntities: 993, tailMentions: 2859,
+    // +8 core, +58 tail from the queue rulings; the remaining 105 land on owner-ruling rows.
+    coreEntities: 93, coreRegistryMentions: 5336, tailEntities: 993, tailMentions: 2917,
   },
   // 2,393 detected + 2 owner rulings ("Ascension." -> Religion & Spirituality, #4963 and #4966).
   // The rulings live in audit/themes-owner-rulings.json and are merged by apply-themes.mjs, so
   // re-deriving audit-themes.mjs cannot erase them. detected/owner are asserted separately there.
   themes: { assignments: 2644, detected: 2393, ownerRulings: 251, posts: 1898 },
-  codes: { occurrences: 1949, distinct: 739, posts: 852 },
+  // +8 occurrences: 15 bracket lines ruled, 7 already certified at their post. Each of the 8 is a
+  // wording Codes did not hold, and 4 posts gain their first certified code.
+  codes: { occurrences: 1957, distinct: 747, posts: 856 },
   // 5,251 detected + 4 owner acrostic rulings (#4951 NCSWIC, #129 NSA, #129 CIA, #150 LDR),
   // held in audit/emphasis-owner-rulings.json so re-deriving the audit cannot erase them.
   // 5,251 detected, less 2 owner withdrawals and 2,138 rows retired by the question rule
@@ -132,7 +152,11 @@ export const CANONICAL = {
   // 3,112 -> 3,111 on 2026-08-19. #2420's parallel run retires under the standing rule that a
   // question carries no Emphasis, because the owner ruled its second line a Question. posts
   // 1,357 -> 1,356: that run was the drop's only Emphasis occurrence. Not a detector change.
-  emphasis: { occurrences: 3111, detected: 3110, ownerRulings: 11, ownerWithdrawals: 2, questionRuleRetired: 2139, posts: 1356 },
+  // 3,111 -> 3,105. NOT a detector change and not a withdrawal: 65 new Questions retire the
+  // Emphasis sitting inside them under the standing rule that a question carries no Emphasis
+  // (parallel runs 479 -> 481, rows inside questions 1,556 -> 1,560), and one bracket line moved to
+  // Codes, because a span cannot be both the notation and the emphasis on it.
+  emphasis: { occurrences: 3105, detected: 3104, ownerRulings: 11, ownerWithdrawals: 2, questionRuleRetired: 2145, posts: 1356 },
   // 2,527 -> 2,526 on 2026-08-14: the owner resolved #150's [L], which is one letter of the
   // [L][d][R] acrostic rather than a notation token. Held in audit/resolution-owner-resolved.json
   // so a rebuild cannot re-queue it. #1277's "[R] = Renegade" is a different case and stays.
@@ -349,7 +373,7 @@ export const KNOWN_DEBT = {
   //       shipping stale. That materialiser could not COMPLETE on the committed data (its owner-
   //       ruling gate counted pushes, and #524's ruling was already baked in, so it scored 0 of 1
   //       and aborted), which is why the stale value survived. Fixing the gate let it run.
-  postsAffected: 113,
+  postsAffected: 234,
   // RECOMPUTED 2026-08-13 after the quote-boundary fix, not bumped to satisfy a gate.
   //
   // sourceLines() treated a line ENDING in a closing quotation mark as still inside the quote,
@@ -382,7 +406,16 @@ export const KNOWN_DEBT = {
   // block (#1975, #2776), +1 stale unitText recomputed (#4454), -1 as #2420's Emphasis retired
   // under the question rule and left the set. postsAffected moves 111 -> 113 for the same
   // reasons. NOT a detector change: quotedBlocks.mjs is untouched.
-  baseline: { questions: 91, directives: 55, claims: 139, emphasis: 0 },
+  // 2026-08-20. 91/55/139 -> 100/129/597, and 113 -> 234 posts. THE DETECTOR DID NOT MOVE:
+  // lib/sourceSpansV2.mjs and lib/quotedBlocks.mjs are untouched, and not one previously-frozen
+  // occurrence left the set (+540 / -0). What grew is the CERTIFIED population it measures - the
+  // owner's unhighlighted-sentence ruling added 6,108 occurrences, and 540 of them sit inside
+  // blocks this detector over-extends, which is exactly the shape this debt tracks.
+  //
+  // Every one of the 540 was matched back to a row in audit/unhighlighted-owner-rulings.json before
+  // the set was re-frozen; the added list is kept in audit/source-boundary-drift.json. A baseline
+  // is never moved to make a check pass, and this one moved only because each added row was named.
+  baseline: { questions: 100, directives: 129, claims: 597, emphasis: 0 },
   // 102 -> 103 and 123 -> 124 on 2026-08-13, ruled BENIGN and documented rather than bumped
   // quietly. Cause: literal-span materialisation. The isolation test now measures the literal
   // form of a question rather than its certified normalised text, and a longer span is

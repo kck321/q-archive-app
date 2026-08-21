@@ -10,7 +10,9 @@
 // recount cannot leave a stale figure in prose.
 
 export const CERTIFIED = {
-  questions: { occurrences: 6454, distinct: 5313, posts: 1700 },
+  // 2026-08-20 OWNER RULING - the unhighlighted-sentence queue. 6,108 of the 6,111 queued
+  // sentences accepted into a section; see audit/unhighlighted-owner-rulings.json.
+  questions: { occurrences: 6519, distinct: 5371, posts: 1705 },
   // v5, 16 Aug 2026 — Q Directives migrated to sourceSpansV2 provenance under owner ruling.
   // 2,705 -> 2,552: 153 occurrences removed from Q Directives ONLY (quoted news, scraped code,
   // blessings, declarative-lead misreads, questions, a prediction). Nothing was deleted from the
@@ -18,12 +20,16 @@ export const CERTIFIED = {
   // `posts` are now measured over ALL certified occurrences including owner rulings, which is
   // what the page actually renders — the old 1,472/1,417 counted directives-final.json alone and
   // never matched the UI.
-  directives: { occurrences: 2552, distinct: 1642, posts: 1464 },
-  claims: { occurrences: 4212, distinct: 3247, posts: 1980 },
-  predictions: { occurrences: 595, posts: 490 },
+  directives: { occurrences: 3037, distinct: 1827, posts: 1689 },
+  claims: { occurrences: 8928, distinct: 6828, posts: 3084 },
+  predictions: { occurrences: 842, posts: 673 },
   /** Claim attributes. `conclusions` may apply to a claim or a prediction. */
-  claimAttributes: { checkable: 1926, sourceProvided: 438, conclusions: 966, telegraphic: 331 },
-  emphasis: { occurrences: 3111, posts: 1356, unresolved: 245 },
+  // checkable, sourceProvided and conclusions do NOT move with the queue ruling: they are
+  // attributes the claims audit established from evidence inside the drop, and the owner ruled a
+  // section rather than an attribute. telegraphic does move, because it is not a judgement - it is
+  // "four words or fewer", and the queue is overwhelmingly short label-like lines.
+  claimAttributes: { checkable: 1926, sourceProvided: 438, conclusions: 966, telegraphic: 3546 },
+  emphasis: { occurrences: 3105, posts: 1356, unresolved: 245 },
   /** Units that are BOTH a question and a directive. */
   overlap: 228,
   totalPosts: 4966,
@@ -51,14 +57,14 @@ export const CERTIFIED = {
  * recount cannot quietly come back.
  */
 export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number; unit: string }> = {
-  claims: { occurrences: 4212, posts: 1980, unit: 'occurrences' },
-  predictions: { occurrences: 595, posts: 490, unit: 'occurrences' },
-  emphasis: { occurrences: 3111, posts: 1356, unit: 'occurrences' },
+  claims: { occurrences: 8928, posts: 3084, unit: 'occurrences' },
+  predictions: { occurrences: 842, posts: 673, unit: 'occurrences' },
+  emphasis: { occurrences: 3105, posts: 1356, unit: 'occurrences' },
   // "mentions" is the right word here and the only section where it is: an entity is counted
   // once per resolved mention across the 1,066 canonical entities Q named in prose. The other 135
   // certified identities contribute none — they are linked sources, not words Q wrote — which is
   // why this figure sits BESIDE the 1,201 total on the page rather than under it.
-  namedEntities: { occurrences: 8798, posts: 2090, unit: 'mentions' },
+  namedEntities: { occurrences: 8969, posts: 2124, unit: 'mentions' },
   // Themes are assignments rather than spans — a theme is inferred from a drop, not copied out
   // of it — so the unit is named accordingly. 2,393 detected + 2 owner rulings.
   themes: { occurrences: 2644, posts: 1898, unit: 'assignments' },
@@ -160,7 +166,9 @@ export const ENTITIES = {
   // each of them had was a URL fragment, a slug or an alias buried inside a longer word. Their ids
   // are reserved permanently. 135 more rows have no prose mention left but STAY — they are still
   // referenced as publishers or as accounts Q linked to, and they are shown under Sources.
-  canonical: 1201,
+  // 1,201 -> 1,240 (unhighlighted-sentence queue, 2026-08-20): 39 identities the owner's entity
+  // rulings introduce, each declared with a type from the vocabulary the registry already uses.
+  canonical: 1240,
   /**
    * THE HEADLINE COUNTS THE WHOLE SECTION.
    *
@@ -175,8 +183,10 @@ export const ENTITIES = {
   // publisher domains, accounts he linked to, and aliases found only inside longer words. Again
   // nothing left the posts: every word and image is exactly as it was, and 363 of the 951 are
   // still shown to readers, under Sources rather than as words Q wrote.
-  mentions: 8798,
-  mentionScope: 'Every resolved mention across all 1,201 certified entities: 5,328 from the 93 core-registry entities, 2,859 from the entities identified in the adjudication pass, and 611 from owner rulings. Domains, URL slugs and linked accounts are NOT counted here — they are shown under Sources. Unresolved aliases are counted in neither: they are held in the Resolution Center.',
+  // 8,798 -> 8,969 (2026-08-20): +171. 547 entity occurrences were ruled and 376 were already
+  // carried by a certified layer at that (post, alias), so only the shortfall is added.
+  mentions: 8969,
+  mentionScope: 'Every resolved mention across all 1,240 certified entities: 5,336 from the 93 core-registry entities, 2,917 from the entities identified in the adjudication pass, and 716 from owner rulings. Domains, URL slugs and linked accounts are NOT counted here — they are shown under Sources. Unresolved aliases are counted in neither: they are held in the Resolution Center.',
   coreEntities: 93,
   coreRegistryMentions: 4463,
   tailEntities: 1239,
@@ -221,11 +231,13 @@ export const THEMES_INFO = {
  * equivalent usage.
  */
 export const CODES_INFO = {
-  occurrences: 1949,
-  distinct: 739,
-  posts: 852,
+  // 2026-08-20: the owner ruled 15 bracket lines out of the unhighlighted-sentence queue; 8 were
+  // not yet certified codes and each is a wording Codes did not hold.
+  occurrences: 1957,
+  distinct: 747,
+  posts: 856,
   interpreted: 7,
-  unresolved: 732,
+  unresolved: 740,
   crossLinkedToEntities: 32,
   note: 'Codes & Brackets identifies recurring coded expressions, structured shorthand, bracketed markers, symbolic forms, and unusual notation used by Q. Inclusion in this section means the pattern appears code-like or structurally significant; it does not mean its meaning is known. Interpretations are shown only when supported by repeated context or a reviewed resolution.',
   overlap: 'A bracketed reference such as [HRC] is counted here as notation AND in Entities as a reference. The sections answer different questions — how Q marked something, and who was referenced — so each counts it once and cross-links to the other.',
@@ -370,7 +382,7 @@ export const SECTIONS: SectionInfo[] = [
     // so the ⓘ panel contradicted the header directly above it. The two components are named here
     // for the same reason they are named in the header: 1,201 with no split reads as 1,201 entities
     // Q wrote about, and 135 of them he never wrote at all.
-    certified: `${n(1201)} canonical entities (${n(1066)} named in the prose · ${n(135)} linked as a source only) · ${n(8798)} certified prose mentions`,
+    certified: `${n(1240)} canonical entities (${n(1105)} named in the prose · ${n(135)} linked as a source only) · ${n(8969)} certified prose mentions`,
     note: 'Entities are secondary tags rather than sentence types — a question, claim, prediction or directive may contain several. Names are canonicalised, so "HRC", "Hillary" and "Hillary Clinton" are one person, while Q’s exact wording is preserved in every post. Where a reference is ambiguous it is left unresolved rather than guessed.',
   },
   {
@@ -388,7 +400,7 @@ export const SECTIONS: SectionInfo[] = [
     short: 'Coded expressions, bracketed text, shorthand and unusual notation.',
     covers: 'Unusual coded expressions, abbreviations, bracketed text, shorthand, symbolic references, counters, markers and recurring phrases that appear throughout Q’s posts.',
     answers: 'What notation did Q use?',
-    certified: `${n(1949)} occurrences · ${n(739)} distinct codes · ${n(852)} posts`,
+    certified: `${n(1957)} occurrences · ${n(747)} distinct codes · ${n(856)} posts`,
     note: 'Inclusion means the pattern appears code-like or structurally significant — it does not mean its meaning is known. Only 7 of 739 codes carry an interpretation, each stating the evidence for it; the other 732 are preserved exactly as written with no meaning attached. Two of the seven — [D] for Democrat and [F] for Foreign — are owner adjudications rather than readings the corpus establishes on its own, and are labelled as such. Ordinary words in brackets are Emphasis, and dates and ALL CAPS alone are not codes.',
   },
   {

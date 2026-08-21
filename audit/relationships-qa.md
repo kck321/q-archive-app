@@ -3,20 +3,20 @@
 A product layer over frozen data. Every relationship comes from a stored cross-link, a certified span overlap, a shared certified id, or an adjudicated attribute — **none is inferred from keywords or proximity**. No certified count moves.
 
 
-**6,440 relationships** across 4,860 posts.
+**7,834 relationships** across 4,924 posts.
 
 
 ## By type
 
 | Relationship | Count | Certified basis |
 |---|---|---|
+| emphasis ↔ claim | 1,968 | certified span overlap |
 | theme ↔ support | 1,719 | `themes.evidence.anchors` |
-| emphasis ↔ claim | 1,329 | certified span overlap |
 | claim ↔ conclusion | 965 | `claimMeta.isConclusion` — an attribute, never an added population |
-| prediction ↔ assertion | 595 | `claimMeta.semanticFamily` — sections stay separate |
+| evidence ↔ claim | 907 | certified span overlap |
+| prediction ↔ assertion | 842 | `claimMeta.semanticFamily` — sections stay separate |
 | claim ↔ source ↔ provided | 439 | `claimMeta.sourceProvided` |
-| evidence ↔ claim | 424 | certified span overlap |
-| emphasis ↔ directive | 373 | certified span overlap |
+| emphasis ↔ directive | 398 | certified span overlap |
 | question ↔ directive | 230 | canonical key match or `questions.directiveSource` |
 | entity ↔ code | 180 | `codes.linkedEntityId`, the stored cross-link |
 | unresolved ↔ occurrence | 115 | resolution-queue occurrence id |
@@ -36,7 +36,7 @@ A product layer over frozen data. Every relationship comes from a stored cross-l
 | ✅ | Claim ↔ Conclusion = the certified 965 | 965 |
 | ✅ | Claim ↔ Source provided = the certified 439 | 439 |
 | ✅ | Prediction ↔ Source provided reported separately | 35 |
-| ✅ | Prediction ↔ assertion family = 595 | 595 |
+| ✅ | Prediction ↔ assertion family = 842 | 842 |
 | ✅ | unresolved edges = the 115 queue rows | 115 |
 
 ## Problems

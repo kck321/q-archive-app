@@ -420,13 +420,39 @@ if (MODE === 'rematerialise') {
   const now = read(DATA, 'entities.json')
   const at = { mentions: now.totals.mentions, entityRows: now.entities.length }
 
-  if (at.mentions === contract.countsAfter.mentions && at.entityRows === contract.countsAfter.entityRows) {
+  // POST-APPROVAL DELTAS — an owner ruling that landed AFTER this cleanup was approved.
+  //
+  // The guard below exists so a deploy cannot re-materialise from a tree nobody recognises, and
+  // that is still exactly what it does. What it must not ALSO do is read a later, separately
+  // approved ruling as drift. The 2026-08-20 unhighlighted-sentence queue added 39 entity
+  // identities and 171 occurrences upstream of this step, so the before-state and the after-state
+  // move by the same amount while the CLEANUP is unchanged — proposedWithdrawals is still 951, and
+  // re-running audit-occurrence-provenance.mjs reproduces every prior verdict.
+  //
+  // Recorded in the contract beside countsBefore/countsAfter rather than folded into them: those
+  // two are the approval record, and rewriting them would erase what the owner actually approved.
+  const delta = (contract.postApprovalDeltas ?? []).reduce((a, d) => ({
+    mentions: a.mentions + (d.mentions ?? 0),
+    entityRows: a.entityRows + (d.entityRows ?? 0),
+    rendered: a.rendered + (d.rendered ?? 0),
+  }), { mentions: 0, entityRows: 0, rendered: 0 })
+  const expectBefore = {
+    mentions: contract.countsBefore.mentions + delta.mentions,
+    entityRows: contract.countsBefore.entityRows + delta.entityRows,
+  }
+  const expectAfter = {
+    mentions: contract.countsAfter.mentions + delta.mentions,
+    entityRows: contract.countsAfter.entityRows + delta.entityRows,
+    rendered: contract.countsAfter.rendered + delta.rendered,
+  }
+
+  if (at.mentions === expectAfter.mentions && at.entityRows === expectAfter.entityRows) {
     console.log(`  already materialised — ${at.entityRows} rows / ${at.mentions} mentions. Nothing written.\n`)
     process.exit(0)
   }
-  if (at.mentions !== contract.countsBefore.mentions || at.entityRows !== contract.countsBefore.entityRows) {
-    console.error(`\n  ❌ the tree is neither the approved before-state (${contract.countsBefore.entityRows}/${contract.countsBefore.mentions})`)
-    console.error(`     nor the approved after-state (${contract.countsAfter.entityRows}/${contract.countsAfter.mentions}); it is ${at.entityRows}/${at.mentions}.`)
+  if (at.mentions !== expectBefore.mentions || at.entityRows !== expectBefore.entityRows) {
+    console.error(`\n  ❌ the tree is neither the approved before-state (${expectBefore.entityRows}/${expectBefore.mentions})`)
+    console.error(`     nor the approved after-state (${expectAfter.entityRows}/${expectAfter.mentions}); it is ${at.entityRows}/${at.mentions}.`)
     console.error('     Re-materialising from an unrecognised state would be a new decision, not a replay.\n')
     process.exit(1)
   }
@@ -438,15 +464,15 @@ if (MODE === 'rematerialise') {
     process.exit(1)
   }
   const redone = transform(DATA, plan)
-  if (redone.after.mentions !== contract.countsAfter.mentions
-    || redone.after.entityRows !== contract.countsAfter.entityRows
-    || redone.after.rendered !== contract.countsAfter.rendered) {
+  if (redone.after.mentions !== expectAfter.mentions
+    || redone.after.entityRows !== expectAfter.entityRows
+    || redone.after.rendered !== expectAfter.rendered) {
     console.error(`\n  ❌ the replay produces ${redone.after.entityRows}/${redone.after.mentions}, not the approved`)
-    console.error(`     ${contract.countsAfter.entityRows}/${contract.countsAfter.mentions}. Refusing to write.\n`)
+    console.error(`     ${expectAfter.entityRows}/${expectAfter.mentions}. Refusing to write.\n`)
     process.exit(1)
   }
   writeResult(DATA, redone)
-  console.log(`  re-materialised the approved cleanup: ${contract.countsBefore.entityRows}/${contract.countsBefore.mentions}`
+  console.log(`  re-materialised the approved cleanup: ${expectBefore.entityRows}/${expectBefore.mentions}`
     + ` -> ${redone.after.entityRows}/${redone.after.mentions}`)
   console.log(`  approval: ${contract.approvedByOwner}\n`)
   process.exit(0)

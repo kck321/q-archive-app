@@ -1,5 +1,5 @@
 {
  "note": "Determinism stamp. With the inputs unchanged, re-running audit-occurrence-provenance.mjs must reproduce occurrence-provenance-audit.json byte for byte. Delete to re-baseline after a DELIBERATE change to the derivation.",
- "inputs": "7e0f6cfe276f470e8fecfa6205b6620439ca12206a1bcb8da92c99ba72ddc287|8038573da29cc4416f5f995f38a1dc9601d971f2a1fc66cf880ba2fe9d67a051",
- "auditSha256": "402ec670426f3b0e9f6058c93c5656e68183ec13a89fbf03652d511c2bbae27b"
+ "inputs": "2b477534ff1c4520175d1b55b8c1a5c5073a0200c35388327b106f498266d4f3|5dc7d23cbf6f770d19458b0890633106cf3683cead41f43fa7fd183597e6a888",
+ "auditSha256": "6cd63d5afcd163a4a81537c6d71c1604e47963dd622ce1927cf594cb0cb487dc"
 }

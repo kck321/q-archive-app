@@ -163,7 +163,10 @@ const out = {
 
 // ── QA gate — executable assertions, not claims in a report ──────────────────
 const CERTIFIED_BY_TYPE = {
-  caps_emphasis: 1555,
+  // 1,555 -> 1,551 on 2026-08-20. Four capitals runs sit inside units the owner ruled Questions
+  // out of the unhighlighted-sentence queue, and a question carries no Emphasis. The detector is
+  // untouched: audit/emphasis-audit.json still holds all 1,555.
+  caps_emphasis: 1551,
   // ACROSTIC — a tenth device, added by owner ruling on 2026-08-14 rather than by the detector.
   // Q brackets individual letters so they spell an acronym across the line: "[N]othing [C]an
   // [S]top [W]hat [I]s [C]oming" (NCSWIC), "Operations --> [N]o [S]uch [A]gency", "[C]los[I]ng
@@ -176,8 +179,11 @@ const CERTIFIED_BY_TYPE = {
   // double pointed just to be clear." — the owner ruled the second line a Question, and the
   // standing rule is that a question carries no Emphasis, so the run retires. The device is not
   // reclassified and nothing is deleted from the drop; it simply stops being counted here.
-  parallel_phrasing: 590,
-  bracket_emphasis: 409,
+  // 590 -> 589, same 2026-08-20 ruling and the same standing rule.
+  parallel_phrasing: 589,
+  // 409 -> 408. One of the 15 bracket lines the owner ruled to be Q's notation was being counted
+  // here as bracket emphasis instead; a span cannot be both the notation and the emphasis on it.
+  bracket_emphasis: 408,
   quoted_word: 285,
   punctuation_intensity: 149,
   repeated_word: 108,
@@ -210,14 +216,16 @@ const checks = [
   // 5,251 detected, less 1 owner withdrawal and 104 rows retired by the question rule.
   // 3,109 -> 3,108: one more run retired by the question rule after the 2026-08-19 question
   // rulings. Not a detector change — audit/emphasis-audit.json is untouched.
-  ['detected occurrences = 3,108', occurrences.length - ownerAdded === 3108, occurrences.length - ownerAdded],
+  // 3,108 -> 3,102 after the 2026-08-20 queue rulings: 65 new Questions retire the Emphasis inside
+  // them and one bracket moves to Codes. Not a detector change - the audit artifact is untouched.
+  ['detected occurrences = 3,102', occurrences.length - ownerAdded === 3102, occurrences.length - ownerAdded],
   ['question rule retired 104 rows', questionRule === 104, questionRule],
-  ['question rule retired 479 parallel runs', questionRuleParallel === 479, questionRuleParallel],
+  ['question rule retired 481 parallel runs', questionRuleParallel === 481, questionRuleParallel],
   // Per-post, not corpus-wide: a question asked in one drop never retires an emphasis in another.
-  ['question rule retired 1,556 rows inside questions', questionRuleInside === 1556, questionRuleInside],
+  ['question rule retired 1,560 rows inside questions', questionRuleInside === 1560, questionRuleInside],
   ['owner withdrawals applied = 4', ownerRemoved === 4, ownerRemoved],
   ['owner acrostic rulings applied = 3', ownerAdded === 3, ownerAdded],
-  ['certified occurrences = 3,111', occurrences.length === 3111, occurrences.length],
+  ['certified occurrences = 3,105', occurrences.length === 3105, occurrences.length],
   // -1: #2420 held exactly one Emphasis occurrence and it was that parallel run, so the drop
   // leaves the Emphasis post set entirely.
   ['posts = 1,356', postsWith.size === 1356, postsWith.size],

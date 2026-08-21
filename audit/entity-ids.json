@@ -1,6 +1,6 @@
 {
  "note": "Immutable entity identity. An id is minted once and never derived from the canonical name, the type, the mention count or the row position — all of which legitimately change about an entity that is still the same entity. canonical and slug are attributes stored beside the id; previousCanonicals keeps every earlier or absorbed spelling resolving to it. auditEntityIds is the crosswalk to the ENT-#### numbers used by the 2026-08-16 hover audit, which were positional and must never be stored as identity.",
- "minted": 1409,
+ "minted": 1448,
  "entries": {
   "qe-e4b9b2985b7c": {
    "canonical": "United States",
@@ -11313,6 +11313,240 @@
    "auditEntityIds": [
     "ENT-0709"
    ]
+  },
+  "qe-e7331aea9c4b": {
+   "canonical": "Mainstream Media",
+   "slug": "mainstream-media",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-8e89e8bf8a1d": {
+   "canonical": "Secret Agents",
+   "slug": "secret-agents",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-3d39629f9ecd": {
+   "canonical": "The Cult",
+   "slug": "the-cult",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-442a0d902541": {
+   "canonical": "Iron Eagle",
+   "slug": "iron-eagle",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-73d64a484e4d": {
+   "canonical": "Eye of Providence",
+   "slug": "eye-of-providence",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-69bbadce263e": {
+   "canonical": "Wizards & Warlocks",
+   "slug": "wizards-warlocks",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-f1c84297eabe": {
+   "canonical": "The Sum of All Fears",
+   "slug": "the-sum-of-all-fears",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-2d1b610f1312": {
+   "canonical": "MAGA",
+   "slug": "maga",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-6c9bfa949221": {
+   "canonical": "Terminal 5",
+   "slug": "terminal-5",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-65a74e4e6abb": {
+   "canonical": "Fox Three",
+   "slug": "fox-three",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-eb8431161eb0": {
+   "canonical": "Splash",
+   "slug": "splash",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-63904d84edb1": {
+   "canonical": "Maverick",
+   "slug": "maverick",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-81aabd241ebe": {
+   "canonical": "NAT G",
+   "slug": "nat-g",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-a8798d21e9cf": {
+   "canonical": "Eye of Ra",
+   "slug": "eye-of-ra",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-271807d35b2e": {
+   "canonical": "We the People",
+   "slug": "we-the-people",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-23403a5e15c0": {
+   "canonical": "WarGames",
+   "slug": "wargames",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-e6dca3536e13": {
+   "canonical": "Apache",
+   "slug": "apache",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-ff2721b349d1": {
+   "canonical": "Dopey",
+   "slug": "dopey",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-9271dec94a20": {
+   "canonical": "Hilton family",
+   "slug": "hilton-family",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-855d3dfd9c47": {
+   "canonical": "JFK Con Room",
+   "slug": "jfk-con-room",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-22d61afede73": {
+   "canonical": "M-Institute",
+   "slug": "m-institute",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-2bfd139c428f": {
+   "canonical": "McLean, Virginia",
+   "slug": "mclean-virginia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-c8500713493a": {
+   "canonical": "RT Kenya",
+   "slug": "rt-kenya",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-d69cccf9e5fa": {
+   "canonical": "Red Castle",
+   "slug": "red-castle",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-6997635c7a7c": {
+   "canonical": "The Art of the Deal",
+   "slug": "the-art-of-the-deal",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-e40236920216": {
+   "canonical": "Board of Superintendence",
+   "slug": "board-of-superintendence",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-736412bb6b8a": {
+   "canonical": "Vatican Bank",
+   "slug": "vatican-bank",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-344c28f3a086": {
+   "canonical": "EH CA",
+   "slug": "eh-ca",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-d7e7eeae34b1": {
+   "canonical": "Ford",
+   "slug": "ford",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-5f8841ad2402": {
+   "canonical": "Fusion GPS",
+   "slug": "fusion-gps",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-4ab13e3a5689": {
+   "canonical": "Lee S",
+   "slug": "lee-s",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-9b181e56a4c1": {
+   "canonical": "Barcelona",
+   "slug": "barcelona",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-d7f841ca1ad1": {
+   "canonical": "Shareblue",
+   "slug": "shareblue",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-d27fa0601ace": {
+   "canonical": "Mad Hatter",
+   "slug": "mad-hatter",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-95b35eac2da9": {
+   "canonical": "F-15",
+   "slug": "f-15",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-ccc8c488181f": {
+   "canonical": "Shadow Presidency",
+   "slug": "shadow-presidency",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-1ef281a95f22": {
+   "canonical": "Shadow Government",
+   "slug": "shadow-government",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-40b3b980802c": {
+   "canonical": "Castle Rock",
+   "slug": "castle-rock",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-889c6e61bb80": {
+   "canonical": "Nightwatch",
+   "slug": "nightwatch",
+   "previousCanonicals": [],
+   "auditEntityIds": []
   }
  }
 }

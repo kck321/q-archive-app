@@ -146,7 +146,11 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   const editorial = questions.filter(q => q.editorialNormalization || q.neverDisplayAsQ)
   const counted = questions.filter(q => q.occurrences !== undefined)
   // +11 owner rulings, 2026-08-19. The 134 editorial normalisations are unchanged.
-  t('q-rows', 'Questions ships 6,588 rows for 6,454 certified', questions.length === 6588, questions.length)
+  // Derived, not written twice. This literal went stale the moment the 2026-08-20 queue ruling
+  // moved the certified figure, reporting a defect that did not exist: the shipped file is always
+  // the certified count plus the 134 editorial normalisations, and THAT is the contract.
+  t('q-rows', `Questions ships ${(CANONICAL.questions.occurrences + 134).toLocaleString()} rows for ${CANONICAL.questions.occurrences.toLocaleString()} certified`,
+    questions.length === CANONICAL.questions.occurrences + 134, questions.length)
   t('q-editorial-count', 'exactly 134 editorial-normalisation rows', editorial.length === 134, editorial.length)
   t('q-editorial-uncounted', 'no editorial row carries an occurrences field', editorial.every(q => q.occurrences === undefined), `${editorial.filter(q => q.occurrences !== undefined).length} counted`)
   t('q-partition', 'counted + editorial = every shipped row', counted.length + editorial.length === questions.length, `${counted.length} + ${editorial.length}`)
@@ -376,6 +380,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     if (added.length || removed.length) {
       for (const k of added.slice(0, 25)) console.log(`         + ${k}`)
       for (const k of removed.slice(0, 25)) console.log(`         - ${k}`)
+      fs.writeFileSync(path.join(OUT, 'source-boundary-drift.json'), JSON.stringify({ added, removed }, null, 1))
     }
   } else {
     fs.writeFileSync(occFile, JSON.stringify({
@@ -450,7 +455,10 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   // 208 rows and posts.json lost 951 namedEntities entries — so a returning reader stuck on 77
   // would go on seeing URL slugs and "God" inside "Godfather III" painted as certified entities,
   // while every server-side check passed.
-  t('seed-current', 'SEED_VERSION is 79 (owner question rulings)', seed === 79, seed)
+  // 80 carries the unhighlighted-sentence queue ruling. posts.json, questions.json, entities.json,
+  // codes.json and emphasis.json all changed, and a reader stuck on 79 would go on seeing four
+  // thousand ruled sentences rendered as plain unclassified text on both surfaces.
+  t('seed-current', 'SEED_VERSION is 80 (unhighlighted-sentence queue ruling)', seed === 80, seed)
   t('seed-gate', 'seeding is gated on SEED_VERSION', /seeded === SEED_VERSION/.test(localData), 'present')
 
   // THE GUARD THAT WOULD HAVE SAVED THREE ROUND TRIPS. Changing seeded data without bumping the
@@ -493,9 +501,12 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   const t = group('9. UI count integrity')
   const info = fs.readFileSync(path.join(SRC, 'lib', 'sectionInfo.ts'), 'utf8')
   const has = n => info.includes(String(n))
-  t('ui-questions', 'sectionInfo states 6,454', has(6454), 'ok')
-  t('ui-directives', 'sectionInfo states 2,552', has(2552), 'ok')
-  t('ui-claims', 'sectionInfo states 4,212', has(4212), 'ok')
+  // READ FROM THE CONTRACT, never a literal. These are "does the UI still state the certified
+  // figure" checks, and writing the figure twice is what made three of them fail on the
+  // 2026-08-20 queue ruling for no reason other than that the literal had gone stale.
+  t('ui-questions', `sectionInfo states ${CANONICAL.questions.occurrences.toLocaleString()}`, has(CANONICAL.questions.occurrences), 'ok')
+  t('ui-directives', `sectionInfo states ${CANONICAL.directives.occurrences.toLocaleString()}`, has(CANONICAL.directives.occurrences), 'ok')
+  t('ui-claims', `sectionInfo states ${CANONICAL.claims.occurrences.toLocaleString()}`, has(CANONICAL.claims.occurrences), 'ok')
   t('ui-evidence', 'sectionInfo states 6,590', has(6590), 'ok')
   // Read from the contract rather than frozen inline — this literal has gone stale at every
   // certification since it was written, and its label still says 1,334 and 8,239.
@@ -509,8 +520,8 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   t('ui-alias-spelling', 'no alias is stored all-lowercase', lowerOnly.length === 0, lowerOnly.join(' ') || 'ok')
   t('ui-entities-submetrics', 'sectionInfo keeps 4,463 and 3,440 as provenance', has(4463) && has(3440), 'ok')
   t('ui-themes', 'sectionInfo states 2,644', has(2644), 'ok')
-  t('ui-codes', 'sectionInfo states 1,949', has(1949), 'ok')
-  t('ui-emphasis', 'sectionInfo states 3,111', has(3111), 'ok')
+  t('ui-codes', `sectionInfo states ${CANONICAL.codes.occurrences.toLocaleString()}`, has(CANONICAL.codes.occurrences), 'ok')
+  t('ui-emphasis', `sectionInfo states ${CANONICAL.emphasis.occurrences.toLocaleString()}`, has(CANONICAL.emphasis.occurrences), 'ok')
 
   // ── Section headlines are certified, never recounted ───────────────────────
   //
@@ -528,11 +539,11 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
       const row = totals.match(new RegExp(`${cat}:\\s*\\{[^}]*\\}`))
       return Boolean(row) && row[0].includes(String(occ)) && row[0].includes(String(posts))
     }
-    t('headline-claims', 'Claims headline = certified 4,212 / 1,980',
+    t('headline-claims', 'Claims headline = certified 8,928 / 3,084',
       stated('claims', CANONICAL.claims.occurrences, CANONICAL.claims.posts), 'ok')
-    t('headline-predictions', 'Predictions headline = certified 595 / 490',
+    t('headline-predictions', 'Predictions headline = certified 842 / 673',
       stated('predictions', CANONICAL.predictions.occurrences, CANONICAL.predictions.posts), 'ok')
-    t('headline-emphasis', 'Emphasis headline = certified 3,111 / 1,356',
+    t('headline-emphasis', 'Emphasis headline = certified 3,105 / 1,356',
       stated('emphasis', CANONICAL.emphasis.occurrences, CANONICAL.emphasis.posts), 'ok')
     // The post count is MEASURED, not frozen. It has moved at three of the last four
     // certifications — 2,245 -> 2,240 on the Rachel Chandler merge, then 2,240 -> 2,445 when the
@@ -655,8 +666,30 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     // does the reader have a word to hover at all — and 376 published records failed it. Their
     // certified mention is real; its wording is simply not in the text on screen, usually because
     // it came from an image. A tooltip over an invisible word cannot render and should not ship.
-    t('hover-globals', 'one global synopsis per live entity',
-      Object.keys(hov.global ?? {}).length === CANONICAL.entities.canonical, Object.keys(hov.global ?? {}).length)
+    // ONE SYNOPSIS PER LIVE ENTITY, LESS THE ONES DELIBERATELY NOT WRITTEN YET.
+    //
+    // A global synopsis is authored editorial text about a real person or organisation, and
+    // extract-entity-hovers.mjs refuses to publish an unreviewed one - that refusal is the point of
+    // the whole allowlist. So when the 2026-08-20 queue ruling certified 39 new identities, the
+    // honest state is 1,201 synopses for 1,240 entities and a NAMED list of what is missing, not 39
+    // synopses written to make a number match.
+    //
+    // Both halves are asserted, because either one alone can hide a real defect: the pending list
+    // must be exactly the difference (so the gap cannot widen silently), and no published synopsis
+    // may point at an entity that is no longer live (so a withdrawal cannot leave a tooltip behind).
+    const pendingFile = path.join(ROOT, 'audit/entity-hover-pending.json')
+    const pending = fs.existsSync(pendingFile) ? JSON.parse(fs.readFileSync(pendingFile, 'utf8')).entities ?? [] : []
+    const globalIds = new Set(Object.keys(hov.global ?? {}))
+    const withoutSynopsis = entities.entities.filter(e => !globalIds.has(e.id)).map(e => e.id)
+    const pendingIds = new Set(pending.map(p => p.id))
+    const orphanedSynopses = [...globalIds].filter(id => !entities.entities.some(e => e.id === id))
+    t('hover-globals', `one global synopsis per live entity, less the ${pending.length} awaiting one`,
+      globalIds.size + pending.length === CANONICAL.entities.canonical
+      && withoutSynopsis.length === pending.length
+      && withoutSynopsis.every(id => pendingIds.has(id)),
+      `${globalIds.size} published + ${pending.length} pending`)
+    t('hover-no-orphans', 'no published synopsis points at an entity that is no longer live',
+      orphanedSynopses.length === 0, `${orphanedSynopses.length} orphaned`)
 
     // The four buckets must account for every audit record — 7,778, no more and no fewer. A
     // record that falls out of all of them has silently disappeared, which is worse than being
@@ -746,7 +779,30 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   const t = group('10c. Integrated entity cleanup')
   const readIf = f => { const p = path.join(OUT, f); return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : null }
   const occAudit = readIf('occurrence-provenance-audit.json')
-  const integrated = readIf('integrated-migration-plan.json')
+  const integratedRaw = readIf('integrated-migration-plan.json')
+  // THE SAME POST-APPROVAL DELTA THE REMATERIALISER READS, from the same file.
+  //
+  // integrated-migration-plan.json records what the 2026-08-17 cleanup was PROVEN to do, against
+  // the tree it was proven on. A later owner ruling that adds entities upstream moves the
+  // before-state and the after-state by the same amount without changing the cleanup at all - 951
+  // withdrawals, still. Offsetting here keeps these checks measuring the cleanup rather than
+  // re-reporting an unrelated ruling as drift, and it reads the delta from the rollback contract so
+  // there is exactly one place that says how far the tree has moved since the approval.
+  const cleanupContract = readIf('entity-cleanup-rollback-contract.json')
+  const cleanupDelta = (cleanupContract?.postApprovalDeltas ?? []).reduce((acc, d) => ({
+    mentions: acc.mentions + (d.mentions ?? 0),
+    entityRows: acc.entityRows + (d.entityRows ?? 0),
+  }), { mentions: 0, entityRows: 0 })
+  const integrated = integratedRaw && {
+    ...integratedRaw,
+    proven: {
+      ...integratedRaw.proven,
+      mentionsBefore: integratedRaw.proven.mentionsBefore + cleanupDelta.mentions,
+      mentionsAfter: integratedRaw.proven.mentionsAfter + cleanupDelta.mentions,
+      entityRowsBefore: integratedRaw.proven.entityRowsBefore + cleanupDelta.entityRows,
+      entityRowsAfter: integratedRaw.proven.entityRowsAfter + cleanupDelta.entityRows,
+    },
+  }
   const reversal = readIf('entity-cleanup-reversal.json')
   const substrings = readIf('invalid-substring-occurrences.json')
   const dormantReg = readIf('entity-dormant-registry.json')
@@ -763,9 +819,16 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     // BEFORE the apply, the audit describes the live corpus. AFTER it, the audit describes the
     // state the cleanup started from — so the comparison moves to the recorded before-figure. An
     // invariant that silently switched to comparing the audit against itself would pass forever.
+    // TWO DIFFERENT "BEFORE"S, and conflating them is what made this fail on a healthy tree.
+    //
+    // The occurrence LEDGER is the historical record of the 2026-08-17 plan: it was computed over
+    // the 9,749 that existed then and it must still add to that, whatever has happened since. The
+    // provenance AUDIT describes the corpus as it stands, so it has to cover every occurrence
+    // certified today - including the ones a later owner ruling added.
+    const ledgerBefore = applied ? integratedRaw.proven.mentionsBefore : CANONICAL.entities.mentions
     const expected = applied ? integrated.proven.mentionsBefore : CANONICAL.entities.mentions
     t('cleanup-ledger-reconciles', 'every starting mention lands in exactly one bucket',
-      led.reconciles && led.TOTAL === expected, `${led.TOTAL} of ${led.certifiedBefore}`)
+      led.reconciles && led.TOTAL === ledgerBefore, `${led.TOTAL} of ${led.certifiedBefore}`)
     t('cleanup-audit-covers-corpus', 'the provenance audit covers every certified occurrence',
       occAudit.totals.reconciles && occAudit.totals.occurrences === expected,
       `${occAudit.totals.occurrences} of ${expected}`)
@@ -1340,7 +1403,10 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
       new Set(edges.filter(e => e.type === 'entity_code').map(e => e.from.id)).size)
     t('rel-conclusions', 'Claim → Conclusion edges = the certified 965', bt.claim_conclusion === 965, bt.claim_conclusion)
     t('rel-source', 'Claim → Source provided edges = the certified 439', bt.claim_source_provided === 439, bt.claim_source_provided)
-    t('rel-predictions', 'Prediction → assertion edges = the certified 595', bt.prediction_assertion === 595, bt.prediction_assertion)
+    // Read from the contract: a prediction IS an assertion, so this edge count is Predictions'
+    // figure and not a second opinion about it. The literal went stale on the 2026-08-20 ruling.
+    t('rel-predictions', `Prediction → assertion edges = the certified ${CANONICAL.predictions.occurrences.toLocaleString()}`,
+      bt.prediction_assertion === CANONICAL.predictions.occurrences, bt.prediction_assertion)
     t('rel-unresolved', 'every queue row has an edge to its occurrence', bt.unresolved_occurrence === CANONICAL.resolution.total, bt.unresolved_occurrence)
 
     // An edge may only point at a post that exists, and the map may only count posts that exist.

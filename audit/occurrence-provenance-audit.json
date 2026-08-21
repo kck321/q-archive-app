@@ -15,21 +15,21 @@
   "ambiguous_provenance": "Attribution or URL evidence is genuinely undecidable. Retained unchanged."
  },
  "totals": {
-  "occurrences": 9749,
-  "certifiedMentions": 9749,
+  "occurrences": 9920,
+  "certifiedMentions": 9920,
   "reconciles": true,
   "attribution": {
-   "unique": 9688,
-   "ambiguous": 61
+   "unique": 9856,
+   "ambiguous": 64
   },
   "byCategory": {
-   "visible_complete_token": 8647,
+   "visible_complete_token": 8814,
    "invalid_substring_extraction": 98,
-   "visible_alias_variant": 34,
+   "visible_alias_variant": 35,
    "url_source_provenance": 646,
    "image_provenance_unconfirmed": 41,
    "no_supported_provenance": 85,
-   "ambiguous_provenance": 69,
+   "ambiguous_provenance": 72,
    "social_account_reference": 129
   },
   "urlSourceByEvidence": {
@@ -44,8 +44,8 @@
   "substringPosts": 97
  },
  "certifiedUnchanged": {
-  "entityRows": 1409,
-  "mentions": 9749
+  "entityRows": 1448,
+  "mentions": 9920
  },
  "rows": [
   {
@@ -289,6 +289,22 @@
    },
    "proposedAction": "remove-annotation",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#100:8",
+   "postNum": 100,
+   "index": 8,
+   "alias": "Cult",
+   "entityId": "qe-3d39629f9ecd",
+   "canonical": "The Cult",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#1002:0",
@@ -1493,6 +1509,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#1017:2",
+   "postNum": 1017,
+   "index": 2,
+   "alias": "The Analysis Corporation (TAC)",
+   "entityId": "qe-419754df12c0",
+   "canonical": "The Analysis Corporation",
+   "entityType": "organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#102:0",
    "postNum": 102,
    "index": 0,
@@ -1614,6 +1646,38 @@
    "entityId": "qe-810ff51ddb91",
    "canonical": "Supervisory Commission of Cardinals",
    "entityType": "organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1021:4",
+   "postNum": 1021,
+   "index": 4,
+   "alias": "Board of Superintendence",
+   "entityId": "qe-e40236920216",
+   "canonical": "Board of Superintendence",
+   "entityType": "organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1021:5",
+   "postNum": 1021,
+   "index": 5,
+   "alias": "Vatican bank",
+   "entityId": "qe-736412bb6b8a",
+   "canonical": "Vatican Bank",
+   "entityType": "financial_institution",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -2448,6 +2512,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#1071:2",
+   "postNum": 1071,
+   "index": 2,
+   "alias": "EH CA",
+   "entityId": "qe-344c28f3a086",
+   "canonical": "EH CA",
+   "entityType": "coded_alias",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1072:0",
    "postNum": 1072,
    "index": 0,
@@ -2664,6 +2744,22 @@
    "postNum": 1082,
    "index": 5,
    "alias": "JR",
+   "entityId": "qe-d2a17466a8bf",
+   "canonical": "John F. Kennedy Jr.",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1082:6",
+   "postNum": 1082,
+   "index": 6,
+   "alias": "JFK JR",
    "entityId": "qe-d2a17466a8bf",
    "canonical": "John F. Kennedy Jr.",
    "entityType": "person",
@@ -3211,6 +3307,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#110:1",
+   "postNum": 110,
+   "index": 1,
+   "alias": "MSM",
+   "entityId": "qe-e7331aea9c4b",
+   "canonical": "Mainstream Media",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1100:0",
    "postNum": 1100,
    "index": 0,
@@ -3530,6 +3642,22 @@
    "certifiedCountEffect": -1,
    "privateProvenanceReview": true,
    "withdrawalApproved": "2026-08-17 owner ruling — no text, URL, image or metadata supports this occurrence"
+  },
+  {
+   "occurrenceId": "#1104:4",
+   "postNum": 1104,
+   "index": 4,
+   "alias": "GOOG",
+   "entityId": "qe-2036752a688e",
+   "canonical": "GOOG",
+   "entityType": "technology_platform",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#1106:0",
@@ -4339,6 +4467,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#1120:4",
+   "postNum": 1120,
+   "index": 4,
+   "alias": "Ford",
+   "entityId": "qe-d7e7eeae34b1",
+   "canonical": "Ford",
+   "entityType": "organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1121:0",
    "postNum": 1121,
    "index": 0,
@@ -4814,6 +4958,22 @@
    "alias": "CBS",
    "entityId": "qe-208dba151d3e",
    "canonical": "CBS",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#113:14",
+   "postNum": 113,
+   "index": 14,
+   "alias": "MSM",
+   "entityId": "qe-e7331aea9c4b",
+   "canonical": "Mainstream Media",
    "entityType": "media_organization",
    "category": "visible_complete_token",
    "evidence": {
@@ -6531,6 +6691,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#1183:1",
+   "postNum": 1183,
+   "index": 1,
+   "alias": "We, the PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1184:0",
    "postNum": 1184,
    "index": 0,
@@ -6860,6 +7036,22 @@
    "entityId": "qe-2f1f501f35f4",
    "canonical": "Julian Assange",
    "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1195:4",
+   "postNum": 1195,
+   "index": 4,
+   "alias": "MS_13",
+   "entityId": "qe-d1aac3bf7bce",
+   "canonical": "MS-13",
+   "entityType": "organization",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -8291,6 +8483,38 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#1229:1",
+   "postNum": 1229,
+   "index": 1,
+   "alias": "Blackwater",
+   "entityId": "qe-fe6f527d014e",
+   "canonical": "Blackwater",
+   "entityType": "organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1231:0",
+   "postNum": 1231,
+   "index": 0,
+   "alias": "MOAB",
+   "entityId": "qe-224cf203fdbf",
+   "canonical": "MOAB",
+   "entityType": "military_asset_vessel",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1233:0",
    "postNum": 1233,
    "index": 0,
@@ -8882,6 +9106,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#1241:13",
+   "postNum": 1241,
+   "index": 13,
+   "alias": "President",
+   "entityId": "qe-104df6bf0208",
+   "canonical": "President",
+   "entityType": "title_role",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1242:0",
    "postNum": 1242,
    "index": 0,
@@ -9149,6 +9389,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#1245:11",
+   "postNum": 1245,
+   "index": 11,
+   "alias": "Iron Eagle",
+   "entityId": "qe-442a0d902541",
+   "canonical": "Iron Eagle",
+   "entityType": "coded_alias",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1248:0",
    "postNum": 1248,
    "index": 0,
@@ -9219,6 +9475,54 @@
    "occurrenceId": "#1249:3",
    "postNum": 1249,
    "index": 3,
+   "alias": "Red Cross",
+   "entityId": "qe-5de21273e3cd",
+   "canonical": "Red Cross",
+   "entityType": "organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1249:4",
+   "postNum": 1249,
+   "index": 4,
+   "alias": "Red Cross",
+   "entityId": "qe-5de21273e3cd",
+   "canonical": "Red Cross",
+   "entityType": "organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1249:5",
+   "postNum": 1249,
+   "index": 5,
+   "alias": "Red Cross",
+   "entityId": "qe-5de21273e3cd",
+   "canonical": "Red Cross",
+   "entityType": "organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1249:6",
+   "postNum": 1249,
+   "index": 6,
    "alias": "Red Cross",
    "entityId": "qe-5de21273e3cd",
    "canonical": "Red Cross",
@@ -9564,6 +9868,22 @@
    "entityId": "qe-f918f4a7fbe4",
    "canonical": "POTUS",
    "entityType": "title_role",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1254:3",
+   "postNum": 1254,
+   "index": 3,
+   "alias": "IRON EAGLE",
+   "entityId": "qe-442a0d902541",
+   "canonical": "Iron Eagle",
+   "entityType": "coded_alias",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -10015,6 +10335,22 @@
    "entityId": "qe-3c60a6420b68",
    "canonical": "Army",
    "entityType": "government_institution",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1268:2",
+   "postNum": 1268,
+   "index": 2,
+   "alias": "Army Lt. Gen. Paul Nakasone",
+   "entityId": "qe-aa3526a6c715",
+   "canonical": "Paul Nakasone",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -10484,6 +10820,22 @@
    "entityId": "qe-2d1cba1ee70f",
    "canonical": "National Guard",
    "entityType": "government_institution",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#128:8",
+   "postNum": 128,
+   "index": 8,
+   "alias": "Iron Eagle",
+   "entityId": "qe-442a0d902541",
+   "canonical": "Iron Eagle",
+   "entityType": "coded_alias",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -11289,6 +11641,38 @@
    "entityId": "qe-4938fd5a6aa1",
    "canonical": "Special Counsel / Mueller investigation",
    "entityType": "government_institution",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1286:41",
+   "postNum": 1286,
+   "index": 41,
+   "alias": "Fusion GPS",
+   "entityId": "qe-5f8841ad2402",
+   "canonical": "Fusion GPS",
+   "entityType": "organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1286:42",
+   "postNum": 1286,
+   "index": 42,
+   "alias": "President",
+   "entityId": "qe-104df6bf0208",
+   "canonical": "President",
+   "entityType": "title_role",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -12291,6 +12675,22 @@
    "entityId": "qe-e4b9b2985b7c",
    "canonical": "United States",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1306:11",
+   "postNum": 1306,
+   "index": 11,
+   "alias": "SUM OF ALL FEARS",
+   "entityId": "qe-f1c84297eabe",
+   "canonical": "The Sum of All Fears",
+   "entityType": "creative_work",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -14989,6 +15389,54 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#1328:3",
+   "postNum": 1328,
+   "index": 3,
+   "alias": "We, the PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1328:4",
+   "postNum": 1328,
+   "index": 4,
+   "alias": "We, the PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1328:5",
+   "postNum": 1328,
+   "index": 5,
+   "alias": "We, the PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#133:0",
    "postNum": 133,
    "index": 0,
@@ -15075,6 +15523,38 @@
    "alias": "Satan",
    "entityId": "qe-a4942c7227ca",
    "canonical": "Satan",
+   "entityType": "religious_spiritual",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#133:6",
+   "postNum": 133,
+   "index": 6,
+   "alias": "Epstein island",
+   "entityId": "qe-e37f0f1ba158",
+   "canonical": "Epstein Island",
+   "entityType": "location",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#133:7",
+   "postNum": 133,
+   "index": 7,
+   "alias": "Eye of Providence",
+   "entityId": "qe-73d64a484e4d",
+   "canonical": "Eye of Providence",
    "entityType": "religious_spiritual",
    "category": "visible_complete_token",
    "evidence": {
@@ -15649,6 +16129,22 @@
    },
    "proposedAction": "remove-annotation",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#1343:0",
+   "postNum": 1343,
+   "index": 0,
+   "alias": "We, the PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#1345:0",
@@ -17721,6 +18217,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#1373:0",
+   "postNum": 1373,
+   "index": 0,
+   "alias": "We, The PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1375:0",
    "postNum": 1375,
    "index": 0,
@@ -19458,6 +19970,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#140:16",
+   "postNum": 140,
+   "index": 16,
+   "alias": "Iron Eagle",
+   "entityId": "qe-442a0d902541",
+   "canonical": "Iron Eagle",
+   "entityType": "coded_alias",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1401:0",
    "postNum": 1401,
    "index": 0,
@@ -19785,6 +20313,22 @@
    "entityId": "qe-99b2829ea340",
    "canonical": "George Soros",
    "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#142:15",
+   "postNum": 142,
+   "index": 15,
+   "alias": "Iron Eagle",
+   "entityId": "qe-442a0d902541",
+   "canonical": "Iron Eagle",
+   "entityType": "coded_alias",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -21045,6 +21589,19 @@
     "where": "prose"
    },
    "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1443:19",
+   "postNum": 1443,
+   "index": 19,
+   "alias": "PS",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "2 live entities claim \"PS\" and list this drop: Peter Strzok, PlayStation",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {
@@ -22836,6 +23393,22 @@
    "entityId": "qe-d89374105f98",
    "canonical": "MI6",
    "entityType": "organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1493:9",
+   "postNum": 1493,
+   "index": 9,
+   "alias": "Lee S",
+   "entityId": "qe-4ab13e3a5689",
+   "canonical": "Lee S",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -25457,6 +26030,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#1528:0",
+   "postNum": 1528,
+   "index": 0,
+   "alias": "Barcelona",
+   "entityId": "qe-9b181e56a4c1",
+   "canonical": "Barcelona",
+   "entityType": "location",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#153:0",
    "postNum": 153,
    "index": 0,
@@ -27892,6 +28481,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#158:10",
+   "postNum": 158,
+   "index": 10,
+   "alias": "Iron Eagle",
+   "entityId": "qe-442a0d902541",
+   "canonical": "Iron Eagle",
+   "entityType": "coded_alias",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1581:0",
    "postNum": 1581,
    "index": 0,
@@ -29489,6 +30094,22 @@
    "certifiedCountEffect": -1
   },
   {
+   "occurrenceId": "#1641:5",
+   "postNum": 1641,
+   "index": 5,
+   "alias": "Shareblue",
+   "entityId": "qe-d7f841ca1ad1",
+   "canonical": "Shareblue",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1642:0",
    "postNum": 1642,
    "index": 0,
@@ -30017,6 +30638,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#165:15",
+   "postNum": 165,
+   "index": 15,
+   "alias": "Jason Bourne (Deep Dream)",
+   "entityId": "qe-e16178b2fd16",
+   "canonical": "Jason Bourne",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1650:0",
    "postNum": 1650,
    "index": 0,
@@ -30425,6 +31062,22 @@
    "entityId": "qe-22cd36d3d850",
    "canonical": "United States Secret Service",
    "entityType": "government_agency",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#166:15",
+   "postNum": 166,
+   "index": 15,
+   "alias": "Jason Bourne (Deep Dream)",
+   "entityId": "qe-e16178b2fd16",
+   "canonical": "Jason Bourne",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -32231,6 +32884,19 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#1708:19",
+   "postNum": 1708,
+   "index": 19,
+   "alias": "PS",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "2 live entities claim \"PS\" and list this drop: Peter Strzok, PlayStation",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1711:0",
    "postNum": 1711,
    "index": 0,
@@ -32918,6 +33584,22 @@
    "entityId": "qe-f523c4043f70",
    "canonical": "AF1",
    "entityType": "military_asset_vessel",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#173:0",
+   "postNum": 173,
+   "index": 0,
+   "alias": "Wizards & Warlocks",
+   "entityId": "qe-69bbadce263e",
+   "canonical": "Wizards & Warlocks",
+   "entityType": "coded_alias",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -33757,6 +34439,22 @@
    "entityId": "qe-7e666288b152",
    "canonical": "Patriots",
    "entityType": "title_role",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1749:2",
+   "postNum": 1749,
+   "index": 2,
+   "alias": "WE, THE PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -36857,6 +37555,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#1822:16",
+   "postNum": 1822,
+   "index": 16,
+   "alias": "WE, THE PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1823:0",
    "postNum": 1823,
    "index": 0,
@@ -38171,6 +38885,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#1830:1",
+   "postNum": 1830,
+   "index": 1,
+   "alias": "THE CLINTON FOUNDATION",
+   "entityId": "qe-50a7ff9629dd",
+   "canonical": "Clinton Foundation",
+   "entityType": "organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1831:0",
    "postNum": 1831,
    "index": 0,
@@ -38584,6 +39314,22 @@
    "entityId": "qe-f918f4a7fbe4",
    "canonical": "POTUS",
    "entityType": "title_role",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1848:0",
+   "postNum": 1848,
+   "index": 0,
+   "alias": "IRON EAGLE",
+   "entityId": "qe-442a0d902541",
+   "canonical": "Iron Eagle",
+   "entityType": "coded_alias",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -44605,6 +45351,38 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#194:9",
+   "postNum": 194,
+   "index": 9,
+   "alias": "Iran Deal",
+   "entityId": "qe-5e979d1f1824",
+   "canonical": "Iran Deal",
+   "entityType": "event_incident",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#194:10",
+   "postNum": 194,
+   "index": 10,
+   "alias": "THE SUM OF ALL FEARS",
+   "entityId": "qe-f1c84297eabe",
+   "canonical": "The Sum of All Fears",
+   "entityType": "creative_work",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1941:0",
    "postNum": 1941,
    "index": 0,
@@ -44628,6 +45406,22 @@
    "entityId": "qe-e4b9b2985b7c",
    "canonical": "United States",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1941:2",
+   "postNum": 1941,
+   "index": 2,
+   "alias": "We, the PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -45756,6 +46550,38 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#195:9",
+   "postNum": 195,
+   "index": 9,
+   "alias": "Iran Deal",
+   "entityId": "qe-5e979d1f1824",
+   "canonical": "Iran Deal",
+   "entityType": "event_incident",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#195:10",
+   "postNum": 195,
+   "index": 10,
+   "alias": "THE SUM OF ALL FEARS",
+   "entityId": "qe-f1c84297eabe",
+   "canonical": "The Sum of All Fears",
+   "entityType": "creative_work",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1950:0",
    "postNum": 1950,
    "index": 0,
@@ -45827,6 +46653,22 @@
    "entityId": "qe-e4b9b2985b7c",
    "canonical": "United States",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1951:0",
+   "postNum": 1951,
+   "index": 0,
+   "alias": "We, the PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -47624,6 +48466,22 @@
    "entityId": "qe-9fee50ff1529",
    "canonical": "Canada",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#199:11",
+   "postNum": 199,
+   "index": 11,
+   "alias": "THE SUM OF ALL FEARS",
+   "entityId": "qe-f1c84297eabe",
+   "canonical": "The Sum of All Fears",
+   "entityType": "creative_work",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -49760,6 +50618,22 @@
    "entityId": "qe-781474651855",
    "canonical": "Donald Trump",
    "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2039:4",
+   "postNum": 2039,
+   "index": 4,
+   "alias": "WE, THE PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -55902,6 +56776,22 @@
    },
    "proposedAction": "remove-annotation",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#2174:0",
+   "postNum": 2174,
+   "index": 0,
+   "alias": "WE, THE PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#2176:0",
@@ -62314,6 +63204,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#2352:6",
+   "postNum": 2352,
+   "index": 6,
+   "alias": "WE, the PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2353:0",
    "postNum": 2353,
    "index": 0,
@@ -62708,6 +63614,22 @@
    "entityId": "qe-f918f4a7fbe4",
    "canonical": "POTUS",
    "entityType": "title_role",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#236:14",
+   "postNum": 236,
+   "index": 14,
+   "alias": "The Sum of all Fears",
+   "entityId": "qe-f1c84297eabe",
+   "canonical": "The Sum of All Fears",
+   "entityType": "creative_work",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -63295,6 +64217,22 @@
    "entityId": "qe-9fee50ff1529",
    "canonical": "Canada",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#237:8",
+   "postNum": 237,
+   "index": 8,
+   "alias": "Iran deal",
+   "entityId": "qe-5e979d1f1824",
+   "canonical": "Iran Deal",
+   "entityType": "event_incident",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -64677,6 +65615,22 @@
    "certifiedCountEffect": -1
   },
   {
+   "occurrenceId": "#2386:5",
+   "postNum": 2386,
+   "index": 5,
+   "alias": "We, the PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2388:0",
    "postNum": 2388,
    "index": 0,
@@ -65741,6 +66695,22 @@
    "entityId": "qe-7e666288b152",
    "canonical": "Patriots",
    "entityType": "title_role",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2403:4",
+   "postNum": 2403,
+   "index": 4,
+   "alias": "We, the People",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -68111,6 +69081,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#2478:0",
+   "postNum": 2478,
+   "index": 0,
+   "alias": "We, the PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2479:0",
    "postNum": 2479,
    "index": 0,
@@ -69608,6 +70594,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#2515:0",
+   "postNum": 2515,
+   "index": 0,
+   "alias": "We, the PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2516:0",
    "postNum": 2516,
    "index": 0,
@@ -69903,6 +70905,22 @@
    "entityId": "qe-e44a2dd06160",
    "canonical": "Brett Kavanaugh",
    "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2523:6",
+   "postNum": 2523,
+   "index": 6,
+   "alias": "We, the PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -70943,6 +71961,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#2552:2",
+   "postNum": 2552,
+   "index": 2,
+   "alias": "THE CLINTON FOUNDATION",
+   "entityId": "qe-50a7ff9629dd",
+   "canonical": "Clinton Foundation",
+   "entityType": "organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2554:0",
    "postNum": 2554,
    "index": 0,
@@ -71191,6 +72225,22 @@
    "entityId": "qe-60b5212c9376",
    "canonical": "Twitter",
    "entityType": "organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2559:3",
+   "postNum": 2559,
+   "index": 3,
+   "alias": "WE, THE PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -71874,6 +72924,22 @@
    "entityId": "qe-f81ca76a2b94",
    "canonical": "Asia",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#258:3",
+   "postNum": 258,
+   "index": 3,
+   "alias": "RED CROSS",
+   "entityId": "qe-5de21273e3cd",
+   "canonical": "Red Cross",
+   "entityType": "organization",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -72642,6 +73708,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#2604:7",
+   "postNum": 2604,
+   "index": 7,
+   "alias": "We, the PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#261:0",
    "postNum": 261,
    "index": 0,
@@ -73361,6 +74443,38 @@
    "certifiedCountEffect": -1
   },
   {
+   "occurrenceId": "#2636:0",
+   "postNum": 2636,
+   "index": 0,
+   "alias": "ALICE",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2636:1",
+   "postNum": 2636,
+   "index": 1,
+   "alias": "MAD HATTER",
+   "entityId": "qe-d27fa0601ace",
+   "canonical": "Mad Hatter",
+   "entityType": "coded_alias",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2637:0",
    "postNum": 2637,
    "index": 0,
@@ -74024,6 +75138,22 @@
    "entityId": "qe-e4b9b2985b7c",
    "canonical": "United States",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2645:4",
+   "postNum": 2645,
+   "index": 4,
+   "alias": "WE, THE PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -76133,6 +77263,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#2670:0",
+   "postNum": 2670,
+   "index": 0,
+   "alias": "Red Castle",
+   "entityId": "qe-d69cccf9e5fa",
+   "canonical": "Red Castle",
+   "entityType": "coded_alias",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2671:0",
    "postNum": 2671,
    "index": 0,
@@ -78088,6 +79234,38 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#2695:2",
+   "postNum": 2695,
+   "index": 2,
+   "alias": "President",
+   "entityId": "qe-104df6bf0208",
+   "canonical": "President",
+   "entityType": "title_role",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2695:3",
+   "postNum": 2695,
+   "index": 3,
+   "alias": "President",
+   "entityId": "qe-104df6bf0208",
+   "canonical": "President",
+   "entityType": "title_role",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2696:0",
    "postNum": 2696,
    "index": 0,
@@ -79074,6 +80252,22 @@
    },
    "proposedAction": "remove-annotation",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#2735:0",
+   "postNum": 2735,
+   "index": 0,
+   "alias": "F15",
+   "entityId": "qe-95b35eac2da9",
+   "canonical": "F-15",
+   "entityType": "military_asset_vessel",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#2738:0",
@@ -81030,6 +82224,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#2794:1",
+   "postNum": 2794,
+   "index": 1,
+   "alias": "The Corinthia Hotel",
+   "entityId": "qe-08149ca91f36",
+   "canonical": "Corinthia Hotel",
+   "entityType": "facility_property",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2801:0",
    "postNum": 2801,
    "index": 0,
@@ -81838,6 +83048,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#281:0",
+   "postNum": 281,
+   "index": 0,
+   "alias": "MAGA",
+   "entityId": "qe-2d1b610f1312",
+   "canonical": "MAGA",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2810:0",
    "postNum": 2810,
    "index": 0,
@@ -82113,6 +83339,38 @@
    "occurrenceId": "#2840:0",
    "postNum": 2840,
    "index": 0,
+   "alias": "Mitt Romney",
+   "entityId": "qe-b5a45db8d6b0",
+   "canonical": "Mitt Romney",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2840:1",
+   "postNum": 2840,
+   "index": 1,
+   "alias": "Mitt Romney",
+   "entityId": "qe-b5a45db8d6b0",
+   "canonical": "Mitt Romney",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2840:2",
+   "postNum": 2840,
+   "index": 2,
    "alias": "Mitt Romney",
    "entityId": "qe-b5a45db8d6b0",
    "canonical": "Mitt Romney",
@@ -92448,6 +93706,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#3158:2",
+   "postNum": 3158,
+   "index": 2,
+   "alias": "THE STANDARD HOTEL",
+   "entityId": "qe-6739448ee655",
+   "canonical": "Standard Hotel",
+   "entityType": "facility_property",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#3159:0",
    "postNum": 3159,
    "index": 0,
@@ -95028,6 +96302,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#3319:1",
+   "postNum": 3319,
+   "index": 1,
+   "alias": "Rogers",
+   "entityId": "qe-c8330fb2eecc",
+   "canonical": "Rogers",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#3321:0",
    "postNum": 3321,
    "index": 0,
@@ -95131,6 +96421,22 @@
    "entityId": "qe-22cd36d3d850",
    "canonical": "United States Secret Service",
    "entityType": "government_agency",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3326:0",
+   "postNum": 3326,
+   "index": 0,
+   "alias": "We, The People",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -96218,6 +97524,55 @@
    "alias": "BC",
    "entityId": "qe-f927052c1e12",
    "canonical": "Bill Clinton",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3383:8",
+   "postNum": 3383,
+   "index": 8,
+   "alias": "Joe Biden",
+   "entityId": "qe-b80ea6d8ed16",
+   "canonical": "Joe Biden",
+   "entityType": "person",
+   "category": "visible_alias_variant",
+   "evidence": {
+    "category": "visible_alias_variant",
+    "where": "prose",
+    "via": "Biden"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3383:9",
+   "postNum": 3383,
+   "index": 9,
+   "alias": "M. Waters",
+   "entityId": "qe-9df7ca720cf1",
+   "canonical": "Maxine Waters",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3383:10",
+   "postNum": 3383,
+   "index": 10,
+   "alias": "N. Pelosi",
+   "entityId": "qe-dbbf1d039297",
+   "canonical": "Nancy Pelosi",
    "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
@@ -98177,6 +99532,22 @@
    "certifiedCountEffect": -1
   },
   {
+   "occurrenceId": "#3465:0",
+   "postNum": 3465,
+   "index": 0,
+   "alias": "We, the PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#347:0",
    "postNum": 347,
    "index": 0,
@@ -98995,6 +100366,22 @@
    "alias": "JFK",
    "entityId": "qe-b62d0adb7b6f",
    "canonical": "John F. Kennedy",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#350:12",
+   "postNum": 350,
+   "index": 12,
+   "alias": "Rice",
+   "entityId": "qe-e54ec63fdfc3",
+   "canonical": "Rice",
    "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
@@ -100059,6 +101446,22 @@
    "alias": "JFK",
    "entityId": "qe-b62d0adb7b6f",
    "canonical": "John F. Kennedy",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#354:11",
+   "postNum": 354,
+   "index": 11,
+   "alias": "Rice",
+   "entityId": "qe-e54ec63fdfc3",
+   "canonical": "Rice",
    "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
@@ -103402,6 +104805,54 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#365:10",
+   "postNum": 365,
+   "index": 10,
+   "alias": "Terminal 5",
+   "entityId": "qe-6c9bfa949221",
+   "canonical": "Terminal 5",
+   "entityType": "facility_property",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#365:11",
+   "postNum": 365,
+   "index": 11,
+   "alias": "FOX THREE",
+   "entityId": "qe-65a74e4e6abb",
+   "canonical": "Fox Three",
+   "entityType": "coded_alias",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#365:12",
+   "postNum": 365,
+   "index": 12,
+   "alias": "SPLASH",
+   "entityId": "qe-eb8431161eb0",
+   "canonical": "Splash",
+   "entityType": "coded_alias",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#3650:0",
    "postNum": 3650,
    "index": 0,
@@ -103645,6 +105096,22 @@
    "certifiedCountEffect": -1,
    "privateProvenanceReview": true,
    "withdrawalApproved": "2026-08-17 owner ruling — no text, URL, image or metadata supports this occurrence"
+  },
+  {
+   "occurrenceId": "#3656:2",
+   "postNum": 3656,
+   "index": 2,
+   "alias": "We, the People",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#3658:0",
@@ -104017,6 +105484,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#3677:0",
+   "postNum": 3677,
+   "index": 0,
+   "alias": "We, the People",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#3678:0",
    "postNum": 3678,
    "index": 0,
@@ -104191,6 +105674,22 @@
    "entityId": "qe-3ddd7cab456e",
    "canonical": "Adam Schiff",
    "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3682:0",
+   "postNum": 3682,
+   "index": 0,
+   "alias": "We, the People",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -105216,6 +106715,22 @@
    "entityId": "qe-7e666288b152",
    "canonical": "Patriots",
    "entityType": "title_role",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#373:0",
+   "postNum": 373,
+   "index": 0,
+   "alias": "MAVERICK",
+   "entityId": "qe-63904d84edb1",
+   "canonical": "Maverick",
+   "entityType": "coded_alias",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -106621,6 +108136,86 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#3778:13",
+   "postNum": 3778,
+   "index": 13,
+   "alias": "Rep. Nancy Pelosi (D-CA) – Speaker of the House",
+   "entityId": "qe-dbbf1d039297",
+   "canonical": "Nancy Pelosi",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3778:14",
+   "postNum": 3778,
+   "index": 14,
+   "alias": "Rep. Jerry Nadler (D-NY) – Chair Judiciary",
+   "entityId": "qe-5b21bdeb116e",
+   "canonical": "Jerry Nadler",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3778:15",
+   "postNum": 3778,
+   "index": 15,
+   "alias": "Rep. Adam Schiff (D-CA) – Chair Intel",
+   "entityId": "qe-3ddd7cab456e",
+   "canonical": "Adam Schiff",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3778:16",
+   "postNum": 3778,
+   "index": 16,
+   "alias": "Sen. Chuck Schumer (D-NY) – Senate Minority Leader",
+   "entityId": "qe-5339fc139782",
+   "canonical": "Chuck Schumer",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3778:17",
+   "postNum": 3778,
+   "index": 17,
+   "alias": "Sen. Dianne Feinstein (D-CA) – Ranking Mem Judiciary",
+   "entityId": "qe-ecc41732dcbc",
+   "canonical": "Dianne Feinstein",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#3779:0",
    "postNum": 3779,
    "index": 0,
@@ -107243,6 +108838,22 @@
    "entityId": "qe-2d1cba1ee70f",
    "canonical": "National Guard",
    "entityType": "government_institution",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#380:0",
+   "postNum": 380,
+   "index": 0,
+   "alias": "NAT G",
+   "entityId": "qe-81aabd241ebe",
+   "canonical": "NAT G",
+   "entityType": "coded_alias",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -113873,6 +115484,22 @@
    "certifiedCountEffect": -1
   },
   {
+   "occurrenceId": "#4051:0",
+   "postNum": 4051,
+   "index": 0,
+   "alias": "We, the PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4063:0",
    "postNum": 4063,
    "index": 0,
@@ -116123,6 +117750,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4154:2",
+   "postNum": 4154,
+   "index": 2,
+   "alias": "SHADOW PRESIDENCY",
+   "entityId": "qe-ccc8c488181f",
+   "canonical": "Shadow Presidency",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4155:0",
    "postNum": 4155,
    "index": 0,
@@ -116230,6 +117873,38 @@
    },
    "proposedAction": "migrate-to-social-account",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#4158:0",
+   "postNum": 4158,
+   "index": 0,
+   "alias": "SHADOW GOVERNMENT",
+   "entityId": "qe-1ef281a95f22",
+   "canonical": "Shadow Government",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4158:1",
+   "postNum": 4158,
+   "index": 1,
+   "alias": "SHADOW PRESIDENCY",
+   "entityId": "qe-ccc8c488181f",
+   "canonical": "Shadow Presidency",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#4159:0",
@@ -117595,6 +119270,38 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4196:45",
+   "postNum": 4196,
+   "index": 45,
+   "alias": "THE SHADOW GOVERNMENT",
+   "entityId": "qe-1ef281a95f22",
+   "canonical": "Shadow Government",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4196:46",
+   "postNum": 4196,
+   "index": 46,
+   "alias": "THE SHADOW PRESIDENCY",
+   "entityId": "qe-ccc8c488181f",
+   "canonical": "Shadow Presidency",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4198:0",
    "postNum": 4198,
    "index": 0,
@@ -118277,6 +119984,38 @@
    "entityId": "qe-e4b9b2985b7c",
    "canonical": "United States",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4235:3",
+   "postNum": 4235,
+   "index": 3,
+   "alias": "SHADOW GOVERNMENT",
+   "entityId": "qe-1ef281a95f22",
+   "canonical": "Shadow Government",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4235:4",
+   "postNum": 4235,
+   "index": 4,
+   "alias": "SHADOW PRESIDENCY",
+   "entityId": "qe-ccc8c488181f",
+   "canonical": "Shadow Presidency",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -120786,6 +122525,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4310:43",
+   "postNum": 4310,
+   "index": 43,
+   "alias": "Adm. Michael S. Rogers",
+   "entityId": "qe-63dc4df7fcc8",
+   "canonical": "Michael S. Rogers",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4311:0",
    "postNum": 4311,
    "index": 0,
@@ -120875,6 +122630,22 @@
    "certifiedCountEffect": -1
   },
   {
+   "occurrenceId": "#4314:1",
+   "postNum": 4314,
+   "index": 1,
+   "alias": "THE SHADOW PRESIDENCY",
+   "entityId": "qe-ccc8c488181f",
+   "canonical": "Shadow Presidency",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4315:0",
    "postNum": 4315,
    "index": 0,
@@ -120892,6 +122663,22 @@
    },
    "proposedAction": "remove-annotation",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#4315:1",
+   "postNum": 4315,
+   "index": 1,
+   "alias": "THE SHADOW PRESIDENCY",
+   "entityId": "qe-ccc8c488181f",
+   "canonical": "Shadow Presidency",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#4317:0",
@@ -120958,6 +122745,38 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#432:1",
+   "postNum": 432,
+   "index": 1,
+   "alias": "FOX THREE",
+   "entityId": "qe-65a74e4e6abb",
+   "canonical": "Fox Three",
+   "entityType": "coded_alias",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#432:2",
+   "postNum": 432,
+   "index": 2,
+   "alias": "SPLASH",
+   "entityId": "qe-eb8431161eb0",
+   "canonical": "Splash",
+   "entityType": "coded_alias",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4320:0",
    "postNum": 4320,
    "index": 0,
@@ -120981,6 +122800,22 @@
    "entityId": "qe-e4b9b2985b7c",
    "canonical": "United States",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4325:1",
+   "postNum": 4325,
+   "index": 1,
+   "alias": "We, the People",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -121589,6 +123424,22 @@
    },
    "proposedAction": "remove-annotation",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#435:0",
+   "postNum": 435,
+   "index": 0,
+   "alias": "Alice & Wonderland",
+   "entityId": "qe-37b07a60c52b",
+   "canonical": "Alice & Wonderland",
+   "entityType": "creative_work",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#4350:0",
@@ -122445,6 +124296,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#437:7",
+   "postNum": 437,
+   "index": 7,
+   "alias": "EYE OF RA",
+   "entityId": "qe-a8798d21e9cf",
+   "canonical": "Eye of Ra",
+   "entityType": "religious_spiritual",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4372:0",
    "postNum": 4372,
    "index": 0,
@@ -122614,6 +124481,22 @@
    "entityId": "qe-e4b9b2985b7c",
    "canonical": "United States",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#438:7",
+   "postNum": 438,
+   "index": 7,
+   "alias": "EYE OF RA",
+   "entityId": "qe-a8798d21e9cf",
+   "canonical": "Eye of Ra",
+   "entityType": "religious_spiritual",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -123456,6 +125339,22 @@
    "entityId": "qe-2df6a50f6a0e",
    "canonical": "God",
    "entityType": "religious_spiritual",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4413:3",
+   "postNum": 4413,
+   "index": 3,
+   "alias": "CASTLE_ROCK",
+   "entityId": "qe-40b3b980802c",
+   "canonical": "Castle Rock",
+   "entityType": "coded_alias",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -126020,6 +127919,22 @@
    "alias": "The Guardian",
    "entityId": "qe-081c55fb2235",
    "canonical": "The Guardian",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4526:2",
+   "postNum": 4526,
+   "index": 2,
+   "alias": "The 'Guardian'",
+   "entityId": "qe-0192c0f01e9e",
+   "canonical": "Guardian",
    "entityType": "media_organization",
    "category": "visible_complete_token",
    "evidence": {
@@ -129514,6 +131429,22 @@
    "entityId": "qe-86b1c0b77e02",
    "canonical": "Ghislaine Maxwell",
    "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4623:2",
+   "postNum": 4623,
+   "index": 2,
+   "alias": "Epstein island",
+   "entityId": "qe-e37f0f1ba158",
+   "canonical": "Epstein Island",
+   "entityType": "location",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -136397,6 +138328,22 @@
    "certifiedCountEffect": -1
   },
   {
+   "occurrenceId": "#4808:0",
+   "postNum": 4808,
+   "index": 0,
+   "alias": "Nightwatch",
+   "entityId": "qe-889c6e61bb80",
+   "canonical": "Nightwatch",
+   "entityType": "coded_alias",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#481:0",
    "postNum": 481,
    "index": 0,
@@ -136941,6 +138888,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4820:2",
+   "postNum": 4820,
+   "index": 2,
+   "alias": "THE CLINTON FOUNDATION",
+   "entityId": "qe-50a7ff9629dd",
+   "canonical": "Clinton Foundation",
+   "entityType": "organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4821:0",
    "postNum": 4821,
    "index": 0,
@@ -137429,6 +139392,38 @@
    "entityId": "qe-993b70a4d8e6",
    "canonical": "Paul Ryan",
    "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4832:0",
+   "postNum": 4832,
+   "index": 0,
+   "alias": "SHADOW GOVERNMENT",
+   "entityId": "qe-1ef281a95f22",
+   "canonical": "Shadow Government",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4832:1",
+   "postNum": 4832,
+   "index": 1,
+   "alias": "SHADOW PRESIDENT",
+   "entityId": "qe-ccc8c488181f",
+   "canonical": "Shadow Presidency",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -138361,6 +140356,22 @@
    "postNum": 4850,
    "index": 0,
    "alias": "Russia",
+   "entityId": "qe-f1095d932a99",
+   "canonical": "Russia",
+   "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4850:1",
+   "postNum": 4850,
+   "index": 1,
+   "alias": "Mr. Russia",
    "entityId": "qe-f1095d932a99",
    "canonical": "Russia",
    "entityType": "country_region",
@@ -139968,6 +141979,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#49:3",
+   "postNum": 49,
+   "index": 3,
+   "alias": "Alice & Wonderland",
+   "entityId": "qe-37b07a60c52b",
+   "canonical": "Alice & Wonderland",
+   "entityType": "creative_work",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#490:0",
    "postNum": 490,
    "index": 0,
@@ -140486,6 +142513,70 @@
    },
    "proposedAction": "remove-annotation",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#4935:10",
+   "postNum": 4935,
+   "index": 10,
+   "alias": "Gov. Andrew Cuomo, D-N.Y",
+   "entityId": "qe-eea145dc3613",
+   "canonical": "Andrew Cuomo",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4935:11",
+   "postNum": 4935,
+   "index": 11,
+   "alias": "Sen. Amy Klobuchar, D-Minn",
+   "entityId": "qe-bed631930899",
+   "canonical": "Amy Klobuchar",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4935:12",
+   "postNum": 4935,
+   "index": 12,
+   "alias": "Sen. Dianne Feinstein, D-Calif",
+   "entityId": "qe-ecc41732dcbc",
+   "canonical": "Dianne Feinstein",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4935:13",
+   "postNum": 4935,
+   "index": 13,
+   "alias": "Sen. Kirsten Gillibrand, D-N.Y",
+   "entityId": "qe-bb201845e66a",
+   "canonical": "Kirsten Gillibrand",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#4937:0",
@@ -141242,6 +143333,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#50:9",
+   "postNum": 50,
+   "index": 9,
+   "alias": "Alice & Wonderland",
+   "entityId": "qe-37b07a60c52b",
+   "canonical": "Alice & Wonderland",
+   "entityType": "creative_work",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#501:0",
    "postNum": 501,
    "index": 0,
@@ -141761,6 +143868,22 @@
    "entityId": "qe-de749ad39396",
    "canonical": "U.S. Department of State",
    "entityType": "government_agency",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#520:9",
+   "postNum": 520,
+   "index": 9,
+   "alias": "IRON EAGLE",
+   "entityId": "qe-442a0d902541",
+   "canonical": "Iron Eagle",
+   "entityType": "coded_alias",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -142293,6 +144416,70 @@
    "entityId": "qe-7e666288b152",
    "canonical": "Patriots",
    "entityType": "title_role",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#533:4",
+   "postNum": 533,
+   "index": 4,
+   "alias": "WE, THE PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#533:5",
+   "postNum": 533,
+   "index": 5,
+   "alias": "WE, THE PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#533:6",
+   "postNum": 533,
+   "index": 6,
+   "alias": "WE, THE PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#533:7",
+   "postNum": 533,
+   "index": 7,
+   "alias": "WE, THE PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -142910,6 +145097,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#558:0",
+   "postNum": 558,
+   "index": 0,
+   "alias": "STATE_OF_THE_UNION",
+   "entityId": "qe-2fb8c5dbae48",
+   "canonical": "State of the Union",
+   "entityType": "event_incident",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#559:0",
    "postNum": 559,
    "index": 0,
@@ -143310,6 +145513,38 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#559:25",
+   "postNum": 559,
+   "index": 25,
+   "alias": "JC",
+   "entityId": "qe-3cfa5668a753",
+   "canonical": "James Clapper",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#559:26",
+   "postNum": 559,
+   "index": 26,
+   "alias": "JC",
+   "entityId": "qe-3cfa5668a753",
+   "canonical": "James Clapper",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#56:0",
    "postNum": 56,
    "index": 0,
@@ -143582,6 +145817,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#568:0",
+   "postNum": 568,
+   "index": 0,
+   "alias": "WarGames",
+   "entityId": "qe-23403a5e15c0",
+   "canonical": "WarGames",
+   "entityType": "creative_work",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#57:0",
    "postNum": 57,
    "index": 0,
@@ -143781,6 +146032,22 @@
    "entityId": "qe-285e5ba8cc6f",
    "canonical": "Office of the Director of National Intelligence",
    "entityType": "government_agency",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#57:13",
+   "postNum": 57,
+   "index": 13,
+   "alias": "Alice & Wonderland",
+   "entityId": "qe-37b07a60c52b",
+   "canonical": "Alice & Wonderland",
+   "entityType": "creative_work",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -145822,6 +148089,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#622:0",
+   "postNum": 622,
+   "index": 0,
+   "alias": "Black Forest",
+   "entityId": "qe-878d5420f363",
+   "canonical": "Black Forest",
+   "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#623:0",
    "postNum": 623,
    "index": 0,
@@ -146223,6 +148506,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#636:8",
+   "postNum": 636,
+   "index": 8,
+   "alias": "Wizards & [WAR]locks",
+   "entityId": "qe-69bbadce263e",
+   "canonical": "Wizards & Warlocks",
+   "entityType": "coded_alias",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#64:0",
    "postNum": 64,
    "index": 0,
@@ -146559,6 +148858,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#646:0",
+   "postNum": 646,
+   "index": 0,
+   "alias": "APACHE",
+   "entityId": "qe-e6dca3536e13",
+   "canonical": "Apache",
+   "entityType": "coded_alias",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#65:0",
    "postNum": 65,
    "index": 0,
@@ -146678,6 +148993,22 @@
    "entityId": "qe-7ddc97a374c1",
    "canonical": "Trey Gowdy",
    "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#659:3",
+   "postNum": 659,
+   "index": 3,
+   "alias": "WE, THE PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -146895,6 +149226,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#664:4",
+   "postNum": 664,
+   "index": 4,
+   "alias": "Dopey",
+   "entityId": "qe-ff2721b349d1",
+   "canonical": "Dopey",
+   "entityType": "coded_alias",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#666:0",
    "postNum": 666,
    "index": 0,
@@ -146982,6 +149329,38 @@
    "entityId": "qe-af47be6a30dd",
    "canonical": "Clinton family / Clinton political network",
    "entityType": "organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#666:6",
+   "postNum": 666,
+   "index": 6,
+   "alias": "Hilton",
+   "entityId": "qe-9271dec94a20",
+   "canonical": "Hilton family",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#666:7",
+   "postNum": 666,
+   "index": 7,
+   "alias": "APACHE",
+   "entityId": "qe-e6dca3536e13",
+   "canonical": "Apache",
+   "entityType": "coded_alias",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -147519,6 +149898,19 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#675:4",
+   "postNum": 675,
+   "index": 4,
+   "alias": "PS",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "2 live entities claim \"PS\" and list this drop: Peter Strzok, PlayStation",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#676:0",
    "postNum": 676,
    "index": 0,
@@ -147593,6 +149985,22 @@
    "entityId": "qe-5339fc139782",
    "canonical": "Chuck Schumer",
    "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#679:0",
+   "postNum": 679,
+   "index": 0,
+   "alias": "IRON EAGLE",
+   "entityId": "qe-442a0d902541",
+   "canonical": "Iron Eagle",
+   "entityType": "coded_alias",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -148434,6 +150842,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#70:24",
+   "postNum": 70,
+   "index": 24,
+   "alias": "Alice & Wonderland",
+   "entityId": "qe-37b07a60c52b",
+   "canonical": "Alice & Wonderland",
+   "entityType": "creative_work",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#703:0",
    "postNum": 703,
    "index": 0,
@@ -148498,6 +150922,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#703:4",
+   "postNum": 703,
+   "index": 4,
+   "alias": "We, the PEOPLE",
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#708:0",
    "postNum": 708,
    "index": 0,
@@ -148537,6 +150977,22 @@
    "entityId": "qe-df3137a48249",
    "canonical": "JFK Conference Room",
    "entityType": "location",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#709:2",
+   "postNum": 709,
+   "index": 2,
+   "alias": "JFK Con Room",
+   "entityId": "qe-855d3dfd9c47",
+   "canonical": "JFK Con Room",
+   "entityType": "facility_property",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -149854,6 +152310,22 @@
    "certifiedCountEffect": -1
   },
   {
+   "occurrenceId": "#732:6",
+   "postNum": 732,
+   "index": 6,
+   "alias": "M-Institute",
+   "entityId": "qe-22d61afede73",
+   "canonical": "M-Institute",
+   "entityType": "organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#733:0",
    "postNum": 733,
    "index": 0,
@@ -150032,6 +152504,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#742:2",
+   "postNum": 742,
+   "index": 2,
+   "alias": "McLean, Virginia",
+   "entityId": "qe-2bfd139c428f",
+   "canonical": "McLean, Virginia",
+   "entityType": "location",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#743:0",
    "postNum": 743,
    "index": 0,
@@ -150055,6 +152543,22 @@
    "entityId": "qe-3bacee39eccd",
    "canonical": "John F. Kennedy / the JFK assassination record",
    "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#743:2",
+   "postNum": 743,
+   "index": 2,
+   "alias": "McLean, Virginia",
+   "entityId": "qe-2bfd139c428f",
+   "canonical": "McLean, Virginia",
+   "entityType": "location",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -150284,6 +152788,22 @@
    "entityId": "qe-5e979d1f1824",
    "canonical": "Iran Deal",
    "entityType": "event_incident",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#751:4",
+   "postNum": 751,
+   "index": 4,
+   "alias": "Operation Merlin (tech)",
+   "entityId": "qe-85b64b7f3390",
+   "canonical": "Operation Merlin",
+   "entityType": "program_operation_project",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -150844,6 +153364,22 @@
    "entityId": "qe-5339fc139782",
    "canonical": "Chuck Schumer",
    "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#76:19",
+   "postNum": 76,
+   "index": 19,
+   "alias": "Alice & Wonderland",
+   "entityId": "qe-37b07a60c52b",
+   "canonical": "Alice & Wonderland",
+   "entityType": "creative_work",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -152143,6 +154679,38 @@
    "entityId": "qe-1134b726a49b",
    "canonical": "Hawaii",
    "entityType": "location",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#78:12",
+   "postNum": 78,
+   "index": 12,
+   "alias": "Alice & Wonderland",
+   "entityId": "qe-37b07a60c52b",
+   "canonical": "Alice & Wonderland",
+   "entityType": "creative_work",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#78:13",
+   "postNum": 78,
+   "index": 13,
+   "alias": "Alice & Wonderland",
+   "entityId": "qe-37b07a60c52b",
+   "canonical": "Alice & Wonderland",
+   "entityType": "creative_work",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -153722,6 +156290,22 @@
    "entityId": "qe-cb07cff77084",
    "canonical": "Hillary Clinton",
    "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#83:8",
+   "postNum": 83,
+   "index": 8,
+   "alias": "Alice & Wonderland",
+   "entityId": "qe-37b07a60c52b",
+   "canonical": "Alice & Wonderland",
+   "entityType": "creative_work",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -155832,6 +158416,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#892:0",
+   "postNum": 892,
+   "index": 0,
+   "alias": "RT",
+   "entityId": "qe-5b797d5899a4",
+   "canonical": "Rex Tillerson",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#893:0",
    "postNum": 893,
    "index": 0,
@@ -156974,6 +159574,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#936:3",
+   "postNum": 936,
+   "index": 3,
+   "alias": "The Sum of All Fears",
+   "entityId": "qe-f1c84297eabe",
+   "canonical": "The Sum of All Fears",
+   "entityType": "creative_work",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#937:0",
    "postNum": 937,
    "index": 0,
@@ -157271,6 +159887,22 @@
    "entityId": "qe-5b797d5899a4",
    "canonical": "Rex Tillerson",
    "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#947:5",
+   "postNum": 947,
+   "index": 5,
+   "alias": "RT Kenya",
+   "entityId": "qe-c8500713493a",
+   "canonical": "RT Kenya",
+   "entityType": "media_organization",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -157847,6 +160479,22 @@
    "certifiedCountEffect": -1
   },
   {
+   "occurrenceId": "#963:0",
+   "postNum": 963,
+   "index": 0,
+   "alias": "RED_CASTLE",
+   "entityId": "qe-d69cccf9e5fa",
+   "canonical": "Red Castle",
+   "entityType": "coded_alias",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#964:0",
    "postNum": 964,
    "index": 0,
@@ -158167,6 +160815,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#964:20",
+   "postNum": 964,
+   "index": 20,
+   "alias": "Art of the Deal",
+   "entityId": "qe-6997635c7a7c",
+   "canonical": "The Art of the Deal",
+   "entityType": "creative_work",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#967:0",
    "postNum": 967,
    "index": 0,
@@ -158368,6 +161032,22 @@
    "entityId": "qe-f340ce9f7070",
    "canonical": "Military Intelligence",
    "entityType": "government_agency",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#97:9",
+   "postNum": 97,
+   "index": 9,
+   "alias": "MS13",
+   "entityId": "qe-d1aac3bf7bce",
+   "canonical": "MS-13",
+   "entityType": "organization",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -159133,6 +161813,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#989:3",
+   "postNum": 989,
+   "index": 3,
+   "alias": "GOOG",
+   "entityId": "qe-2036752a688e",
+   "canonical": "GOOG",
+   "entityType": "technology_platform",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#99:0",
    "postNum": 99,
    "index": 0,
@@ -159220,6 +161916,38 @@
    "entityId": "qe-e4b9b2985b7c",
    "canonical": "United States",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#99:6",
+   "postNum": 99,
+   "index": 6,
+   "alias": "MSM",
+   "entityId": "qe-e7331aea9c4b",
+   "canonical": "Mainstream Media",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#99:7",
+   "postNum": 99,
+   "index": 7,
+   "alias": "Secret agents",
+   "entityId": "qe-8e89e8bf8a1d",
+   "canonical": "Secret Agents",
+   "entityType": "other_named_entity",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",

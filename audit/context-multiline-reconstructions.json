@@ -1,18 +1,7 @@
 {
- "note": "CONTEXT_OR_LABEL units whose canonical text is a multi-line reconstruction, so no single contiguous source span exists. Not dropped: listed here so the acceptance contract stays 4,889 contiguous + 13 reconstructed = 4,902 (4,906 before the owner ruled four of these units to be Claims).",
- "count": 13,
+ "note": "CONTEXT_OR_LABEL units whose canonical text is a multi-line reconstruction, so no single contiguous source span exists. Not dropped: listed here so the acceptance contract still reconciles. The ledger holds 4,902 units; 3,154 have since been ruled into a section by the owner, leaving 1,736 contiguous + 12 reconstructed = 1,748.",
+ "count": 12,
  "units": [
-  {
-   "postNum": 1192,
-   "unitId": "ctx-1192-Q_A_5_min_",
-   "reconstructedText": "Q&A 5 min.",
-   "constituentLines": [
-    "Q&A ",
-    "5 min.",
-    "Q"
-   ],
-   "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
-  },
   {
    "postNum": 1438,
    "unitId": "ctx-1438-IDEN_reconf_v_",

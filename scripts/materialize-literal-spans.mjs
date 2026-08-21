@@ -88,11 +88,18 @@ const checks = [
   // against a mid-chain state; this step is deterministic from the certified artifacts.
   // 162 -> 2 after resolving against the runtime body instead of the raw archive encoding. The
   // other 160 were entity-form overrides for text the browser never displays.
-  ['question literal spans = 2', questionLiterals === 2, questionLiterals],
-  ['certified questions unchanged = 6,454', questions.filter(r => r.occurrences !== undefined).length === 6454,
+  // 2 -> 4: two of the 65 questions the owner ruled out of the unhighlighted-sentence queue were
+  // reassembled across a segmenter split, so their certified value carries a single space where
+  // the drop has a line break and needs a literal span to paint.
+  ['question literal spans = 4', questionLiterals === 4, questionLiterals],
+  // The three "unchanged" gates below are cross-section CHECKS - this step adds a parallel *Spans
+  // array and never a row. They move only when their own materialiser moved them, which is what
+  // makes them useful: 6,454 -> 6,519, 4,212 -> 8,928 and 595 -> 842 are the 2026-08-20 queue
+  // rulings arriving from apply-questions-final.mjs and apply-claims.mjs, and nothing else.
+  ['certified questions unchanged = 6,519', questions.filter(r => r.occurrences !== undefined).length === 6519,
     questions.filter(r => r.occurrences !== undefined).length],
-  ['claims unchanged = 4,212', counts.claims === 4212, counts.claims],
-  ['predictions unchanged = 595', counts.predictions === 595, counts.predictions],
+  ['claims unchanged = 8,928', counts.claims === 8928, counts.claims],
+  ['predictions unchanged = 842', counts.predictions === 842, counts.predictions],
   ['conclusions unchanged = 965', counts.impliedConclusions === 965, counts.impliedConclusions],
   ['checkable unchanged = 1,925', counts.verificationHooks === 1925, counts.verificationHooks],
   ['every span array matches its source array', FIELDS.every(([f]) => spanCounts[f] === counts[f]), 'ok'],

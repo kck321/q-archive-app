@@ -218,23 +218,29 @@ const noWhy = rows.filter(r => !r.w)
 const noText = rows.filter(r => !String(r.t ?? '').trim())
 
 const checks = [
-  ['Questions indexed = 6,454', bySection.questions === 6454, bySection.questions],
-  ['Directives indexed = 2,552', bySection.directives === 2552, bySection.directives],
-  ['Claims indexed = 4,212', bySection.claims === 4212, bySection.claims],
-  ['Predictions indexed = 595', bySection.predictions === 595, bySection.predictions],
+  // Every figure below moves with the 2026-08-20 unhighlighted-sentence queue ruling and with
+  // nothing else. This step indexes what the materialisers certified; it never decides a count.
+  ['Questions indexed = 6,519', bySection.questions === 6519, bySection.questions],
+  ['Directives indexed = 3,037', bySection.directives === 3037, bySection.directives],
+  ['Claims indexed = 8,928', bySection.claims === 8928, bySection.claims],
+  ['Predictions indexed = 842', bySection.predictions === 842, bySection.predictions],
   ['Evidence indexed = 6,590', bySection.evidence === 6590, bySection.evidence],
   // 1,334: Ray Chandler ships merged into Rachel Chandler under the owner ruling.
   [`Entities indexed = ${CANONICAL.entities.canonical.toLocaleString()}`,
     bySection.entities === CANONICAL.entities.canonical, bySection.entities],
   ['Themes indexed = 2,644', bySection.themes === 2644, bySection.themes],
-  ['Codes indexed = 739', bySection.codes === 739, bySection.codes],
-  ['Emphasis indexed = 3,111', bySection.emphasis === 3111, bySection.emphasis],
+  ['Codes indexed = 747', bySection.codes === 747, bySection.codes],
+  ['Emphasis indexed = 3,105', bySection.emphasis === 3105, bySection.emphasis],
   // Read from the contract, never copied — see the same fix in build-relationships.mjs.
   [`Unresolved indexed = ${CANONICAL.resolution.total.toLocaleString()}`,
     bySection.unresolved === CANONICAL.resolution.total, bySection.unresolved],
   // 1,393: two lines that were editorial paraphrases became certified Claims in the 2026-08-13
   // owner adjudication, and a line cannot be both Q's own wording and a paraphrase of it.
-  ['editorial rows = 134 normalisations + 1,259 paraphrases', bySection.editorial === 1393, bySection.editorial],
+  // 1,393 -> 1,290. NOT a loss: 103 editorial paraphrases named a wording the queue ruling has now
+  // certified as Q's own literal claim, and apply-claims.mjs drops a paraphrase whose key matches a
+  // certified claim rather than showing the same assertion twice - once correctly, once as "not Q's
+  // words". 134 normalisations + 1,156 paraphrases = 1,290.
+  ['editorial rows = 134 normalisations + 1,156 paraphrases', bySection.editorial === 1290, bySection.editorial],
   ['every editorial row is flagged not-Q-authored', editorialUnlabelled.length === 0, editorialUnlabelled.length],
   ['no Q-authored row is flagged editorial', qAuthoredMislabelled.length === 0, qAuthoredMislabelled.length],
   ['every record states why it can match', noWhy.length === 0, noWhy.length],
