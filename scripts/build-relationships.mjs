@@ -260,8 +260,14 @@ const checks = [
   ['Question ↔ Directive = the certified 230', byType.question_directive === 230, byType.question_directive ?? 0],
   ['Entity ↔ Code = the certified 32 links', new Set(edges.filter(e => e.type === 'entity_code').map(e => e.from.id)).size === 32,
     new Set(edges.filter(e => e.type === 'entity_code').map(e => e.from.id)).size],
-  ['Claim ↔ Conclusion = the certified 965', byType.claim_conclusion === 965, byType.claim_conclusion ?? 0],
-  ['Claim ↔ Source provided = the certified 439', byType.claim_source_provided === 439, byType.claim_source_provided ?? 0],
+  ['Claim ↔ Conclusion = the certified 964',
+    byType.claim_conclusion === 964, byType.claim_conclusion ?? 0],
+  // 965 -> 964 and 439 -> 438 on 2026-08-21: the abbreviation repair absorbed tail fragments that
+  // carried these attributes. An attribute travels with the ROW, so it leaves with the fragment
+  // rather than being re-attached to the span the fragment turned out to be part of. Both figures
+  // are Claims' and are asserted here only as a cross-section tripwire.
+  ['Claim ↔ Source provided = the certified 438',
+    byType.claim_source_provided === 438, byType.claim_source_provided ?? 0],
   ['Prediction ↔ Source provided reported separately', (byType.prediction_source_provided ?? 0) > 0, byType.prediction_source_provided ?? 0],
   // 595 -> 842 (2026-08-20 queue ruling) -> 843 (2026-08-21, #4910). A prediction IS an assertion,
   // so every one of them carries this edge — the figure is Predictions' and belongs to Predictions.

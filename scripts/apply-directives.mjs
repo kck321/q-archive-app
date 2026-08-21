@@ -37,6 +37,7 @@ import { clean, key } from './lib/segment.mjs'
 // purpose: the detector must not widen, or this batch would silently re-family certified rows.
 import { familyOf } from './lib/imperative.mjs'
 import { queueFamilyOf } from './lib/queueDirectiveFamily.mjs'
+import { loadAbbrevRepairs, assertAbbrevApplied } from './lib/abbrevRepairs.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -117,8 +118,10 @@ for (const r of final.rows) {
 }
 
 let written = 0, cleared = 0
+const abbrev = loadAbbrevRepairs(ROOT)
+let dirRepaired = 0, dirAbsorbed = 0
 for (const p of posts) {
-  const list = byPost.get(p.postNum)
+  let list = byPost.get(p.postNum)
   if (!list?.length) {
     if (p.actionRequests?.length) cleared++
     p.actionRequests = []
@@ -126,6 +129,22 @@ for (const p of posts) {
     delete p.directiveFamilies
     delete p.directiveMeta
     continue
+  }
+  // ── Abbreviation/sentence-boundary repair, BEFORE the keyed metadata is built ────────────
+  //
+  // "Thank you for your service to our Country, Mr." is cut at "Mr." and the rest of the line —
+  // "Trey Gowdy!" — is a directive of its own. directiveFamilies and directiveMeta are keyed by
+  // key(qSourceText), so the repair has to happen on the ROW before those keys are computed;
+  // rewriting p.actionRequests afterwards would leave every lookup pointing at the cut wording.
+  if (abbrev) {
+    const kept = []
+    for (const r of list) {
+      if (abbrev.isWithdrawn('directives', p.postNum, r.qSourceText)) { dirAbsorbed++; continue }
+      const full = abbrev.fullFor('directives', p.postNum, r.qSourceText)
+      if (full && full !== r.qSourceText) { r.qSourceText = full; dirRepaired++ }
+      kept.push(r)
+    }
+    list = kept
   }
   p.actionRequests = list.map(r => r.qSourceText)
   p.hasRequests = true
@@ -169,6 +188,9 @@ const certGroups = new Map()
 for (const r of final.rows) { const k = `${r.postNum}|${key(r.qSourceText)}`; certGroups.set(k, (certGroups.get(k) ?? 0) + 1) }
 const countMismatch = [...groups].filter(([k, n]) => certGroups.get(k) !== n)
 
+assertAbbrevApplied(abbrev, 'directives', { repaired: dirRepaired, withdrawn: dirAbsorbed }, 'apply-directives.mjs')
+console.log(`  abbreviation repair: ${dirRepaired} directive spans repaired, ${dirAbsorbed} fragments absorbed`)
+
 const checks = [
   // 2,552 + 485 from the unhighlighted-sentence queue (486 ruled, 1 occurrence already
   // certified) = 3,037.
@@ -182,7 +204,7 @@ const checks = [
   ['all resolve to a source span', unresolved.length === 0, `${all.length - unresolved.length}/${all.length}`],
   // +185: the 485 new occurrences carry 185 wordings Directives did not already hold. The gap is
   // repetition - "Thank you Patriots." and "Happy Hunting." recur across dozens of drops.
-  ['distinct = 1,827', distinct.size === 1827, distinct.size],
+  ['distinct = 1,829', distinct.size === 1829, distinct.size],
   // +225 posts gain their first certified directive.
   ['posts with a directive = 1,689', postsWith.size === 1689, postsWith.size],
   // directiveFamilies is a map keyed by normalised text PER POST, so the 53 in-post repeats

@@ -1,0 +1,1162 @@
+{
+ "note": "Certified spans cut short by a sentence splitter that read an ABBREVIATION as a sentence end. This is a SEGMENTATION defect, not a classification one: every span here was already certified in the right section, on the right drop, with the right count. Only where the span stopped was wrong.",
+ "why": "Q writes \"Mr. President\", \"Army Lt. Gen. Paul Nakasone\", \"Al Franken - Democratic U.S. Senate\", \"Harris v. McRae\", \"GOOD vs. EVIL.\" A splitter that ends a sentence at \".\" cuts every one of them at the abbreviation. #4898 was certified as \"Why is the FBI's top child porn lawyer involved in the H.\" and painted only that far. Recorded here rather than fixed in the deriving audits, for the same reason every other owner overlay is: a correction written into a re-derivable artifact is erased the next time its audit runs.",
+ "rule": "The full span is taken FROM THE DROP, never retyped. Starting at the truncated span, extend one sentence-terminator at a time while the span still ENDS in an abbreviation; stop at the first real sentence end, or take the rest of the line when there is none. Iterative, because a span can be cut twice (\"Army Lt.\" -> \"Army Lt. Gen.\" -> \"Army Lt. Gen. Paul Nakasone\").",
+ "withdrawalRule": "The SAME splitter certified the tail of each broken span as a span of its own, so repairing the head alone would leave one sentence certified twice - once whole, once as a fragment. That is the same-category overlap the owner ruled against on 2026-08-21. The fragment is absorbed into the full span, not deleted: the same words are certified once instead of twice.",
+ "abbreviations": [
+  "Mr",
+  "Mrs",
+  "Ms",
+  "Dr",
+  "Sen",
+  "Rep",
+  "Gen",
+  "Gov",
+  "Jr",
+  "Sr",
+  "St",
+  "Lt",
+  "Col",
+  "Adm",
+  "Capt",
+  "Prof",
+  "Inc",
+  "Corp",
+  "vs",
+  "v",
+  "U.S",
+  "U.K",
+  "D.C",
+  "single initials (A. Merkel, H. Biden, N. Korea)"
+ ],
+ "falsePositivesExcluded": "A span is only truncated if the DROP LINE CONTINUES past it. Complete Q lines that merely end in an abbreviation-shaped token - \"No.\", \"Right on Q.\", \"Picture provides 40,000ft. v.\" - are left exactly as certified. 179 spans matched the shape; 107 were genuinely cut.",
+ "ruledOn": "2026-08-21",
+ "provenance": "owner ruling on #4898 (\"this should be a full question but is partially highlighted\"), extended across every semantic category on the owner's direction of 2026-08-21.",
+ "supersedes": "audit/questions-segmentation-fixes.json — its 10 repairs and 8 withdrawals are carried in here so this is the one record of the class.",
+ "totals": {
+  "repairs": 114,
+  "byCategory": {
+   "questions": 17,
+   "claims": 64,
+   "context": 28,
+   "directives": 5
+  },
+  "withdrawals": 45,
+  "withdrawalsByCategory": {
+   "questions": 15,
+   "context": 8,
+   "claims": 22
+  },
+  "excluded": 3
+ },
+ "repairs": [
+  {
+   "category": "questions",
+   "postNum": 142,
+   "truncated": "What is A.",
+   "full": "What is A. Merkel’s family history?",
+   "dropLine": "What is A. Merkel’s family history?",
+   "appliedOn": "2026-08-21"
+  },
+  {
+   "category": "questions",
+   "postNum": 142,
+   "truncated": "Who is A.",
+   "full": "Who is A. Merkel?",
+   "dropLine": "Who is A. Merkel?",
+   "appliedOn": "2026-08-21"
+  },
+  {
+   "category": "questions",
+   "postNum": 964,
+   "truncated": "What US publicly traded co. previously entered N.",
+   "full": "What US publicly traded co. previously entered N. Korea to establish comms?",
+   "dropLine": "What US publicly traded co. previously entered N. Korea to establish comms?",
+   "appliedOn": "2026-08-21"
+  },
+  {
+   "category": "questions",
+   "postNum": 1948,
+   "truncated": "Why was the U.S.",
+   "full": "Why was the U.S. Gov't kept in the DARK?",
+   "dropLine": "Why was the U.S. Gov't kept in the DARK?",
+   "appliedOn": "2026-08-21"
+  },
+  {
+   "category": "questions",
+   "postNum": 2381,
+   "truncated": "How do you ensure 'appeals' to the U.S.",
+   "full": "How do you ensure 'appeals' to the U.S. Supreme Court are evaluated impartially > based on the RULE OF LAW?",
+   "dropLine": "How do you ensure 'appeals' to the U.S. Supreme Court are evaluated impartially > based on the RULE OF LAW?",
+   "appliedOn": "2026-08-21"
+  },
+  {
+   "category": "questions",
+   "postNum": 2645,
+   "truncated": "Are they afraid of U.S.",
+   "full": "Are they afraid of U.S. Patriots engaging in the same tactics?",
+   "dropLine": "Are they afraid of U.S. Patriots engaging in the same tactics?",
+   "appliedOn": "2026-08-21"
+  },
+  {
+   "category": "questions",
+   "postNum": 4226,
+   "truncated": "Why did U.S.",
+   "full": "Why did U.S. District Court Judge Rudolph Contreras recuse?",
+   "dropLine": "Why did U.S. District Court Judge Rudolph Contreras recuse?",
+   "appliedOn": "2026-08-21"
+  },
+  {
+   "category": "questions",
+   "postNum": 4891,
+   "truncated": "Why would H.",
+   "full": "Why would H. Biden have such material on his laptop?",
+   "dropLine": "Why would H. Biden have such material on his laptop?",
+   "appliedOn": "2026-08-21"
+  },
+  {
+   "category": "questions",
+   "postNum": 4891,
+   "truncated": "Why wouldn't H.",
+   "full": "Why wouldn't H. Biden want to reclaim *knowing* the contents on the drive could bury *Pops* & family.",
+   "dropLine": "Why wouldn't H. Biden want to reclaim *knowing* the contents on the drive could bury *Pops* & family.",
+   "appliedOn": "2026-08-21"
+  },
+  {
+   "category": "questions",
+   "postNum": 4898,
+   "truncated": "Why is the FBI's top child porn lawyer involved in the H.",
+   "full": "Why is the FBI's top child porn lawyer involved in the H. Biden laptop case?",
+   "dropLine": "Why is the FBI's top child porn lawyer involved in the H. Biden laptop case? [special agent Joshua Wilson]",
+   "appliedOn": "2026-08-21"
+  },
+  {
+   "category": "claims",
+   "postNum": 1241,
+   "truncated": "Welcome Mr.",
+   "full": "Welcome Mr. President.",
+   "dropLine": "Welcome Mr. President."
+  },
+  {
+   "category": "claims",
+   "postNum": 1268,
+   "truncated": "Army Lt.",
+   "full": "Army Lt. Gen. Paul Nakasone",
+   "dropLine": "Army Lt. Gen. Paul Nakasone"
+  },
+  {
+   "category": "claims",
+   "postNum": 1319,
+   "truncated": "Al Franken - Democratic U.S.",
+   "full": "Al Franken - Democratic U.S. Senate",
+   "dropLine": "Al Franken - Democratic U.S. Senate"
+  },
+  {
+   "category": "claims",
+   "postNum": 1319,
+   "truncated": "Blake Farenthold - Republican U.S.",
+   "full": "Blake Farenthold - Republican U.S. House",
+   "dropLine": "Blake Farenthold - Republican U.S. House"
+  },
+  {
+   "category": "claims",
+   "postNum": 1319,
+   "truncated": "Jason Chaffetz - Republican U.S.",
+   "full": "Jason Chaffetz - Republican U.S. House",
+   "dropLine": "Jason Chaffetz - Republican U.S. House"
+  },
+  {
+   "category": "claims",
+   "postNum": 1319,
+   "truncated": "John Conyers, Jr. - Democrat U.S.",
+   "full": "John Conyers, Jr. - Democrat U.S. House",
+   "dropLine": "John Conyers, Jr. - Democrat U.S. House"
+  },
+  {
+   "category": "claims",
+   "postNum": 1319,
+   "truncated": "Louise Slaughter - Democrat U.S.",
+   "full": "Louise Slaughter - Democrat U.S. House",
+   "dropLine": "Louise Slaughter - Democrat U.S. House"
+  },
+  {
+   "category": "claims",
+   "postNum": 1319,
+   "truncated": "Patrick Meehan - Republican U.S.",
+   "full": "Patrick Meehan - Republican U.S. House",
+   "dropLine": "Patrick Meehan - Republican U.S. House"
+  },
+  {
+   "category": "claims",
+   "postNum": 1319,
+   "truncated": "Thad Cochran - Republican U.S.",
+   "full": "Thad Cochran - Republican U.S. Senate",
+   "dropLine": "Thad Cochran - Republican U.S. Senate"
+  },
+  {
+   "category": "claims",
+   "postNum": 1319,
+   "truncated": "Tim Murphy - Republican U.S.",
+   "full": "Tim Murphy - Republican U.S. House",
+   "dropLine": "Tim Murphy - Republican U.S. House"
+  },
+  {
+   "category": "claims",
+   "postNum": 1319,
+   "truncated": "Trent Franks - Republican U.S.",
+   "full": "Trent Franks - Republican U.S. House",
+   "dropLine": "Trent Franks - Republican U.S. House"
+  },
+  {
+   "category": "context",
+   "postNum": 1319,
+   "truncated": "Charles W.",
+   "full": "Charles W. Dent - Republican",
+   "dropLine": "Charles W. Dent - Republican"
+  },
+  {
+   "category": "context",
+   "postNum": 1319,
+   "truncated": "Luis V.",
+   "full": "Luis V. Gutierrez - Democrat",
+   "dropLine": "Luis V. Gutierrez - Democrat"
+  },
+  {
+   "category": "context",
+   "postNum": 1319,
+   "truncated": "Ruben J.",
+   "full": "Ruben J. Kihuen - Democrat",
+   "dropLine": "Ruben J. Kihuen - Democrat"
+  },
+  {
+   "category": "claims",
+   "postNum": 1336,
+   "truncated": "U.S. [in] NZ = No Logs/No Flags/No Records = U.S.",
+   "full": "U.S. [in] NZ = No Logs/No Flags/No Records = U.S. Sec Clearance AUTH FVEY VIEW + Doc Take.",
+   "dropLine": "U.S. [in] NZ = No Logs/No Flags/No Records = U.S. Sec Clearance AUTH FVEY VIEW + Doc Take."
+  },
+  {
+   "category": "context",
+   "postNum": 1443,
+   "truncated": "GOOD vs.",
+   "full": "GOOD vs. EVIL.",
+   "dropLine": "GOOD vs. EVIL."
+  },
+  {
+   "category": "claims",
+   "postNum": 1483,
+   "truncated": "Full weight of the House v.",
+   "full": "Full weight of the House v. ARM.",
+   "dropLine": "Full weight of the House v. ARM."
+  },
+  {
+   "category": "claims",
+   "postNum": 1553,
+   "truncated": "“Attorney General Jeff Sessions has also said U.S.",
+   "full": "“Attorney General Jeff Sessions has also said U.S. Attorney John Huber is investigating claims of FBI and DOJ misconduct related to these actions, noting that Huber would be “conducting his work from outside the Washington D.C. area and “in cooperation” with Horowitz.",
+   "dropLine": "“Attorney General Jeff Sessions has also said U.S. Attorney John Huber is investigating claims of FBI and DOJ misconduct related to these actions, noting that Huber would be “conducting his work from outside the Washington D.C. area and “in cooperation” with Horowitz.”"
+  },
+  {
+   "category": "claims",
+   "postNum": 1850,
+   "truncated": "Al Franken - Democratic U.S.",
+   "full": "Al Franken - Democratic U.S. Senate",
+   "dropLine": "Al Franken - Democratic U.S. Senate"
+  },
+  {
+   "category": "claims",
+   "postNum": 1850,
+   "truncated": "Blake Farenthold - Republican U.S.",
+   "full": "Blake Farenthold - Republican U.S. House",
+   "dropLine": "Blake Farenthold - Republican U.S. House"
+  },
+  {
+   "category": "claims",
+   "postNum": 1850,
+   "truncated": "Jason Chaffetz - Republican U.S.",
+   "full": "Jason Chaffetz - Republican U.S. House",
+   "dropLine": "Jason Chaffetz - Republican U.S. House"
+  },
+  {
+   "category": "claims",
+   "postNum": 1850,
+   "truncated": "John Conyers, Jr. - Democrat U.S.",
+   "full": "John Conyers, Jr. - Democrat U.S. House",
+   "dropLine": "John Conyers, Jr. - Democrat U.S. House"
+  },
+  {
+   "category": "claims",
+   "postNum": 1850,
+   "truncated": "Louise Slaughter - Democrat U.S.",
+   "full": "Louise Slaughter - Democrat U.S. House",
+   "dropLine": "Louise Slaughter - Democrat U.S. House"
+  },
+  {
+   "category": "claims",
+   "postNum": 1850,
+   "truncated": "Patrick Meehan - Republican U.S.",
+   "full": "Patrick Meehan - Republican U.S. House",
+   "dropLine": "Patrick Meehan - Republican U.S. House"
+  },
+  {
+   "category": "claims",
+   "postNum": 1850,
+   "truncated": "Thad Cochran - Republican U.S.",
+   "full": "Thad Cochran - Republican U.S. Senate",
+   "dropLine": "Thad Cochran - Republican U.S. Senate"
+  },
+  {
+   "category": "claims",
+   "postNum": 1850,
+   "truncated": "Tim Murphy - Republican U.S.",
+   "full": "Tim Murphy - Republican U.S. House",
+   "dropLine": "Tim Murphy - Republican U.S. House"
+  },
+  {
+   "category": "claims",
+   "postNum": 1850,
+   "truncated": "Trent Franks - Republican U.S.",
+   "full": "Trent Franks - Republican U.S. House",
+   "dropLine": "Trent Franks - Republican U.S. House"
+  },
+  {
+   "category": "context",
+   "postNum": 1850,
+   "truncated": "Charles W.",
+   "full": "Charles W. Dent - Republican",
+   "dropLine": "Charles W. Dent - Republican"
+  },
+  {
+   "category": "context",
+   "postNum": 1850,
+   "truncated": "Luis V.",
+   "full": "Luis V. Gutierrez - Democrat",
+   "dropLine": "Luis V. Gutierrez - Democrat"
+  },
+  {
+   "category": "context",
+   "postNum": 1850,
+   "truncated": "Ruben J.",
+   "full": "Ruben J. Kihuen - Democrat",
+   "dropLine": "Ruben J. Kihuen - Democrat"
+  },
+  {
+   "category": "claims",
+   "postNum": 189,
+   "truncated": "40,000ft. v.",
+   "full": "40,000ft. v. (again) and need to decrease altitude to avoid ‘conspiracy’ label.",
+   "dropLine": "40,000ft. v. (again) and need to decrease altitude to avoid ‘conspiracy’ label."
+  },
+  {
+   "category": "claims",
+   "postNum": 1915,
+   "truncated": "Same day as the targeted [coordinated] attack v.",
+   "full": "Same day as the targeted [coordinated] attack v. POTUS?",
+   "dropLine": "Same day as the targeted [coordinated] attack v. POTUS?"
+  },
+  {
+   "category": "claims",
+   "postNum": 1944,
+   "truncated": "'Foreign' tangent req to obtain warrant to spy on U.S.",
+   "full": "'Foreign' tangent req to obtain warrant to spy on U.S. ORIG?",
+   "dropLine": "'Foreign' tangent req to obtain warrant to spy on U.S. ORIG?"
+  },
+  {
+   "category": "claims",
+   "postNum": 2054,
+   "truncated": "NOW, THEREFORE, I, DONALD J.",
+   "full": "NOW, THEREFORE, I, DONALD J. TRUMP, President of the United States of America, by virtue of the authority vested in me by the Constitution and the laws of the United States, do hereby proclaim September 2018 as National Preparedness Month.",
+   "dropLine": "NOW, THEREFORE, I, DONALD J. TRUMP, President of the United States of America, by virtue of the authority vested in me by the Constitution and the laws of the United States, do hereby proclaim September 2018 as National Preparedness Month. I encourage all Americans, including Federal, State, and local officials, to take action to be prepared for disaster or emergency by making and practicing their emergency response plans. Each step we take to become better prepared makes a real difference in how our families and communities will respond and persevere when faced with the unexpected."
+  },
+  {
+   "category": "claims",
+   "postNum": 2072,
+   "truncated": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v.",
+   "full": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v. X?",
+   "dropLine": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v. X?]? Coincidence vs. HUBER start?"
+  },
+  {
+   "category": "claims",
+   "postNum": 2107,
+   "truncated": "\"I declare under penalty of perjury that the foregoing information regarding Carter W.",
+   "full": "\"I declare under penalty of perjury that the foregoing information regarding Carter W. Page is TRUE and CORRECT.",
+   "dropLine": "\"I declare under penalty of perjury that the foregoing information regarding Carter W. Page is TRUE and CORRECT.\""
+  },
+  {
+   "category": "context",
+   "postNum": 2109,
+   "truncated": "Goodbye, Mr.",
+   "full": "Goodbye, Mr. Rosenstein.",
+   "dropLine": "Goodbye, Mr. Rosenstein."
+  },
+  {
+   "category": "context",
+   "postNum": 2210,
+   "truncated": "Goodbye, Mr.",
+   "full": "Goodbye, Mr. Rosenstein.",
+   "dropLine": "Goodbye, Mr. Rosenstein."
+  },
+  {
+   "category": "claims",
+   "postNum": 2211,
+   "truncated": "“Prior to joining NSA, Mr.",
+   "full": "“Prior to joining NSA, Mr. Storch served in several positions at the Department of Justice's OIG, including as Senior Counsel to the IG and Acting Deputy IG prior to his 2015 appointment as Deputy IG.",
+   "dropLine": "“Prior to joining NSA, Mr. Storch served in several positions at the Department of Justice's OIG, including as Senior Counsel to the IG and Acting Deputy IG prior to his 2015 appointment as Deputy IG. He also served as chairman of the Council of the Inspectors General on Integrity and Efficiency (CIGIE) Whistleblower Ombudsman Working Group. The Whistleblower Ombudsperson program he helped establish is widely seen as a leader in the field.”"
+  },
+  {
+   "category": "claims",
+   "postNum": 2211,
+   "truncated": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v.",
+   "full": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v. X?",
+   "dropLine": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v. X?]? Coincidence vs. HUBER start?"
+  },
+  {
+   "category": "claims",
+   "postNum": 2211,
+   "truncated": "“Earlier in his career, Mr.",
+   "full": "“Earlier in his career, Mr. Storch also worked as a federal prosecutor in the Northern District of New York, most recently serving as the Deputy Criminal Chief and Counsel to the U.S. Attorney.",
+   "dropLine": "“Earlier in his career, Mr. Storch also worked as a federal prosecutor in the Northern District of New York, most recently serving as the Deputy Criminal Chief and Counsel to the U.S. Attorney. He was also posted overseas for two years as a Department of Justice Resident Legal Advisor in Ukraine.”"
+  },
+  {
+   "category": "claims",
+   "postNum": 2211,
+   "truncated": "Federal prosecutor in N.",
+   "full": "Federal prosecutor in N. District of NY [background] important?",
+   "dropLine": "Federal prosecutor in N. District of NY [background] important?"
+  },
+  {
+   "category": "context",
+   "postNum": 2252,
+   "truncated": "Goodbye, Mr.",
+   "full": "Goodbye, Mr. Rosenstein.",
+   "dropLine": "Goodbye, Mr. Rosenstein."
+  },
+  {
+   "category": "context",
+   "postNum": 2286,
+   "truncated": "Goodbye, Mr.",
+   "full": "Goodbye, Mr. Rosenstein",
+   "dropLine": "Goodbye, Mr. Rosenstein"
+  },
+  {
+   "category": "claims",
+   "postNum": 2420,
+   "truncated": "Yes, Mr.",
+   "full": "Yes, Mr. President, Anons are actively tracking.",
+   "dropLine": "Yes, Mr. President, Anons are actively tracking. Message received."
+  },
+  {
+   "category": "directives",
+   "postNum": 2451,
+   "truncated": "Thank you for your service to our Country, Mr.",
+   "full": "Thank you for your service to our Country, Mr. Trey Gowdy!",
+   "dropLine": "Thank you for your service to our Country, Mr. Trey Gowdy!"
+  },
+  {
+   "category": "directives",
+   "postNum": 2451,
+   "truncated": "Thank you for your service to our Country, Mr.",
+   "full": "Thank you for your service to our Country, Mr. Trey Gowdy!",
+   "dropLine": "Thank you for your service to our Country, Mr. Trey Gowdy!"
+  },
+  {
+   "category": "directives",
+   "postNum": 2452,
+   "truncated": "Thank you for your service to our Country, Mr.",
+   "full": "Thank you for your service to our Country, Mr. Jeff Sessions!",
+   "dropLine": "Thank you for your service to our Country, Mr. Jeff Sessions!"
+  },
+  {
+   "category": "directives",
+   "postNum": 2502,
+   "truncated": "Thank you, Mr.",
+   "full": "Thank you, Mr. Soros.",
+   "dropLine": "Thank you, Mr. Soros."
+  },
+  {
+   "category": "claims",
+   "postNum": 2525,
+   "truncated": "\"Goodbye\" Mr.",
+   "full": "\"Goodbye\" Mr. Rosenstein.",
+   "dropLine": "\"Goodbye\" Mr. Rosenstein."
+  },
+  {
+   "category": "context",
+   "postNum": 2601,
+   "truncated": "Goodbye, Mr.",
+   "full": "Goodbye, Mr. Rosenstein.",
+   "dropLine": "Goodbye, Mr. Rosenstein."
+  },
+  {
+   "category": "claims",
+   "postNum": 2653,
+   "truncated": "Ref: 230-page book called Sex Bias in the U.S.",
+   "full": "Ref: 230-page book called Sex Bias in the U.S. Code, published in 1977 by the U.S. Commission on Civil Rights.",
+   "dropLine": "Ref: 230-page book called Sex Bias in the U.S. Code, published in 1977 by the U.S. Commission on Civil Rights."
+  },
+  {
+   "category": "claims",
+   "postNum": 2681,
+   "truncated": "UK/AUS narrative shift re: in_country spy campaign v.",
+   "full": "UK/AUS narrative shift re: in_country spy campaign v. POTUS (hops 1 to 2; 2 to 3; 3 to 4; 4 to target)",
+   "dropLine": "UK/AUS narrative shift re: in_country spy campaign v. POTUS (hops 1 to 2; 2 to 3; 3 to 4; 4 to target)"
+  },
+  {
+   "category": "claims",
+   "postNum": 2692,
+   "truncated": "Former Acting Assistant Director Jason V.",
+   "full": "Former Acting Assistant Director Jason V. Herring;",
+   "dropLine": "Former Acting Assistant Director Jason V. Herring;"
+  },
+  {
+   "category": "claims",
+   "postNum": 2695,
+   "truncated": "Yes, Mr.",
+   "full": "Yes, Mr. President.",
+   "dropLine": "Yes, Mr. President."
+  },
+  {
+   "category": "claims",
+   "postNum": 2695,
+   "truncated": "Yes, Mr.",
+   "full": "Yes, Mr. President.",
+   "dropLine": "Yes, Mr. President."
+  },
+  {
+   "category": "directives",
+   "postNum": 2695,
+   "truncated": "Thank you, Mr.",
+   "full": "Thank you, Mr. John Vineyard.",
+   "dropLine": "Thank you, Mr. John Vineyard."
+  },
+  {
+   "category": "context",
+   "postNum": 2697,
+   "truncated": "Jason V.",
+   "full": "Jason V. Herring – track & follow",
+   "dropLine": "Jason V. Herring – track & follow"
+  },
+  {
+   "category": "claims",
+   "postNum": 2804,
+   "truncated": "OIG report, DECLAS, other released facts re: 18 U.S.",
+   "full": "OIG report, DECLAS, other released facts re: 18 U.S. Code Chapter 115 - TREASON, SEDITION, AND SUBVERSIVE ACTIVITIES.",
+   "dropLine": "OIG report, DECLAS, other released facts re: 18 U.S. Code Chapter 115 - TREASON, SEDITION, AND SUBVERSIVE ACTIVITIES."
+  },
+  {
+   "category": "claims",
+   "postNum": 2807,
+   "truncated": "RETAIN CONTROL vs.",
+   "full": "RETAIN CONTROL vs. LOSE CONTROL",
+   "dropLine": "RETAIN CONTROL vs. LOSE CONTROL"
+  },
+  {
+   "category": "claims",
+   "postNum": 3049,
+   "truncated": "If [D's] FIGHT to protect, safeguard, and promote all illegal immigrants as 'rightful' U.S. citizens who should be afforded all benefits and rights accordingly, WHY THEN WOULD THEY FIGHT TO BLOCK THEM FROM BEING 'COUNTED' AS PART OF THE U.S.",
+   "full": "If [D's] FIGHT to protect, safeguard, and promote all illegal immigrants as 'rightful' U.S. citizens who should be afforded all benefits and rights accordingly, WHY THEN WOULD THEY FIGHT TO BLOCK THEM FROM BEING 'COUNTED' AS PART OF THE U.S. CENSUS?",
+   "dropLine": "If [D's] FIGHT to protect, safeguard, and promote all illegal immigrants as 'rightful' U.S. citizens who should be afforded all benefits and rights accordingly, WHY THEN WOULD THEY FIGHT TO BLOCK THEM FROM BEING 'COUNTED' AS PART OF THE U.S. CENSUS?"
+  },
+  {
+   "category": "claims",
+   "postNum": 316,
+   "truncated": "\"We love our U.S.",
+   "full": "\"We love our U.S. Military.",
+   "dropLine": "\"We love our U.S. Military. On behalf of an entire Nation, THANK YOU for your sacrifice and service!\""
+  },
+  {
+   "category": "claims",
+   "postNum": 319,
+   "truncated": "Timestamp my post re: US Military vs.",
+   "full": "Timestamp my post re: US Military vs. POTUS' Tweet.",
+   "dropLine": "Timestamp my post re: US Military vs. POTUS' Tweet."
+  },
+  {
+   "category": "context",
+   "postNum": 3256,
+   "truncated": "USA v.",
+   "full": "USA v. LifeLog?",
+   "dropLine": "USA v. LifeLog?"
+  },
+  {
+   "category": "context",
+   "postNum": 3319,
+   "truncated": "Michael S.",
+   "full": "Michael S. Rogers.",
+   "dropLine": "Michael S. Rogers."
+  },
+  {
+   "category": "context",
+   "postNum": 3383,
+   "truncated": "M.",
+   "full": "M. Waters $4mm House?",
+   "dropLine": "M. Waters $4mm House?"
+  },
+  {
+   "category": "context",
+   "postNum": 3383,
+   "truncated": "N.",
+   "full": "N. Pelosi net worth $150mm+?",
+   "dropLine": "N. Pelosi net worth $150mm+?"
+  },
+  {
+   "category": "context",
+   "postNum": 3383,
+   "truncated": "J.",
+   "full": "J. Biden son/brother net worth tens of millions?",
+   "dropLine": "J. Biden son/brother net worth tens of millions?"
+  },
+  {
+   "category": "context",
+   "postNum": 350,
+   "truncated": "Dr.",
+   "full": "Dr. Emmett J. Rice.",
+   "dropLine": "Dr. Emmett J. Rice."
+  },
+  {
+   "category": "context",
+   "postNum": 354,
+   "truncated": "Dr.",
+   "full": "Dr. Emmett J. Rice.",
+   "dropLine": "Dr. Emmett J. Rice."
+  },
+  {
+   "category": "claims",
+   "postNum": 3638,
+   "truncated": "18 U.S.",
+   "full": "18 U.S. Code § 2385.",
+   "dropLine": "18 U.S. Code § 2385. Advocating overthrow of Government."
+  },
+  {
+   "category": "context",
+   "postNum": 3785,
+   "truncated": "\"What storm, Mr.",
+   "full": "\"What storm, Mr. President?",
+   "dropLine": "\"What storm, Mr. President?\""
+  },
+  {
+   "category": "claims",
+   "postNum": 4010,
+   "truncated": "NOW, THEREFORE, I, DONALD J.",
+   "full": "NOW, THEREFORE, I, DONALD J. TRUMP, President of the United States of America, in accordance with Public Law 87–20, as amended, do hereby proclaim May 1, 2020, as Law Day, U.S.A.",
+   "dropLine": "NOW, THEREFORE, I, DONALD J. TRUMP, President of the United States of America, in accordance with Public Law 87–20, as amended, do hereby proclaim May 1, 2020, as Law Day, U.S.A. I urge all Americans, including government officials, to observe this day by reflecting upon the importance of the rule of law in our Nation and displaying the flag of the United States in support of this national observance; and I especially urge the legal profession, the press, and the radio, television, and media industries to promote and to participate in the observance of this day."
+  },
+  {
+   "category": "claims",
+   "postNum": 4293,
+   "truncated": "In a letter sent to Johnson on Tuesday, Sen.",
+   "full": "In a letter sent to Johnson on Tuesday, Sen. Kamala Harris of California renewed her calls for another COVID-19 hearing, noting that the committee hasn't held one since early March.",
+   "dropLine": "In a letter sent to Johnson on Tuesday, Sen. Kamala Harris of California renewed her calls for another COVID-19 hearing, noting that the committee hasn't held one since early March."
+  },
+  {
+   "category": "claims",
+   "postNum": 4310,
+   "truncated": "Welcome to the Shadow Presidency of Barack H.",
+   "full": "Welcome to the Shadow Presidency of Barack H. Obama.",
+   "dropLine": "Welcome to the Shadow Presidency of Barack H. Obama."
+  },
+  {
+   "category": "claims",
+   "postNum": 4521,
+   "truncated": "\"The Posse Comitatus Act, 18 U.S.",
+   "full": "\"The Posse Comitatus Act, 18 U.S. Code, Section 1385, an original intent of which was to end the use of federal troops [TO POLICE STATE ELECTIONS] in former Confederate states, proscribes the role of the Army and Air Force in executing civil laws and states.",
+   "dropLine": "\"The Posse Comitatus Act, 18 U.S. Code, Section 1385, an original intent of which was to end the use of federal troops [TO POLICE STATE ELECTIONS] in former Confederate states, proscribes the role of the Army and Air Force in executing civil laws and states.\""
+  },
+  {
+   "category": "claims",
+   "postNum": 4529,
+   "truncated": "\"The immunity of a state from suit has long been held not to extend to actions against state officials for damages arising out of willful and negligent disregard of state laws.165 The reach of the rule is evident in Scheuer v.",
+   "full": "\"The immunity of a state from suit has long been held not to extend to actions against state officials for damages arising out of willful and negligent disregard of state laws.165 The reach of the rule is evident in Scheuer v. Rhodes,166 in which the Court held that plaintiffs were not barred by the Eleventh Amendment or other immunity doctrines from suing the governor and other officials of a state alleging that they deprived plaintiffs of federal rights under color of state law and seeking damages, when it was clear that plaintiffs were seeking to impose individual and personal liability on the officials.",
+   "dropLine": "\"The immunity of a state from suit has long been held not to extend to actions against state officials for damages arising out of willful and negligent disregard of state laws.165 The reach of the rule is evident in Scheuer v. Rhodes,166 in which the Court held that plaintiffs were not barred by the Eleventh Amendment or other immunity doctrines from suing the governor and other officials of a state alleging that they deprived plaintiffs of federal rights under color of state law and seeking damages, when it was clear that plaintiffs were seeking to impose individual and personal liability on the officials. There was no “executive immunity” from suit, the Court held; rather, the immunity of state officials is qualified and varies according to the scope of discretion and responsibilities of the particular office and the circumstances existing at the time the challenged action was taken.\""
+  },
+  {
+   "category": "context",
+   "postNum": 4542,
+   "truncated": "Mr.",
+   "full": "Mr. President, my prayer is constantly turned to the beloved American nation, where I had the privilege and honor of being sent by Pope Benedict XVI as Apostolic Nuncio.",
+   "dropLine": "Mr. President, my prayer is constantly turned to the beloved American nation, where I had the privilege and honor of being sent by Pope Benedict XVI as Apostolic Nuncio. In this dramatic and decisive hour for all of humanity, I am praying for you and also for all those who are at your side in the government of the United States. I trust that the American people are united with me and you in prayer to Almighty God."
+  },
+  {
+   "category": "claims",
+   "postNum": 4630,
+   "truncated": "Democratic Former Mayor of Randolph, Nebraska, Dwayne L.",
+   "full": "Democratic Former Mayor of Randolph, Nebraska, Dwayne L. Schutt, was arrested and charged with four counts of felony third-degree sexual assault of a child and one count of intentional child abuse.",
+   "dropLine": "Democratic Former Mayor of Randolph, Nebraska, Dwayne L. Schutt, was arrested and charged with four counts of felony third-degree sexual assault of a child and one count of intentional child abuse."
+  },
+  {
+   "category": "claims",
+   "postNum": 4632,
+   "truncated": "Republican City Councilman Fred C.",
+   "full": "Republican City Councilman Fred C. Smeltzer, Jr. pleaded no contest to raping a 15 year-old girl and served 6-months in prison.",
+   "dropLine": "Republican City Councilman Fred C. Smeltzer, Jr. pleaded no contest to raping a 15 year-old girl and served 6-months in prison."
+  },
+  {
+   "category": "context",
+   "postNum": 4697,
+   "truncated": "Combat tactics, Mr.",
+   "full": "Combat tactics, Mr. Ryan.",
+   "dropLine": "Combat tactics, Mr. Ryan. By turning into the path of the torpedo, the Captain closed the distance before it could arm itself."
+  },
+  {
+   "category": "claims",
+   "postNum": 4782,
+   "truncated": "FUNDS: EXPENSES V.",
+   "full": "FUNDS: EXPENSES V. PAYOUTS [for 'causes'] _analyze % [how much of the actual donated money actually goes to help select 'causes']?",
+   "dropLine": "FUNDS: EXPENSES V. PAYOUTS [for 'causes'] _analyze % [how much of the actual donated money actually goes to help select 'causes']?"
+  },
+  {
+   "category": "context",
+   "postNum": 4784,
+   "truncated": "[Hamburg vs.",
+   "full": "[Hamburg vs. Clinton 1998 + appeal 1999 _scrubbed from net]",
+   "dropLine": "[Hamburg vs. Clinton 1998 + appeal 1999 _scrubbed from net]"
+  },
+  {
+   "category": "claims",
+   "postNum": 4801,
+   "truncated": "\"While attending college, he served as an intern in the office of Delaware Sen.",
+   "full": "\"While attending college, he served as an intern in the office of Delaware Sen. Joseph R. Biden, ....",
+   "dropLine": "\"While attending college, he served as an intern in the office of Delaware Sen. Joseph R. Biden, ....\""
+  },
+  {
+   "category": "context",
+   "postNum": 4824,
+   "truncated": "Combat tactics, Mr.",
+   "full": "Combat tactics, Mr. Ryan.",
+   "dropLine": "Combat tactics, Mr. Ryan."
+  },
+  {
+   "category": "context",
+   "postNum": 4836,
+   "truncated": "Combat tactics, Mr.",
+   "full": "Combat tactics, Mr. Ryan.",
+   "dropLine": "Combat tactics, Mr. Ryan."
+  },
+  {
+   "category": "claims",
+   "postNum": 4842,
+   "truncated": "TOTAL U.S.",
+   "full": "TOTAL U.S. DEATHS [ALL CAUSES]:",
+   "dropLine": "TOTAL U.S. DEATHS [ALL CAUSES]:"
+  },
+  {
+   "category": "claims",
+   "postNum": 4871,
+   "truncated": "NAT SEC concerns re: blackmail [gain control] of J.",
+   "full": "NAT SEC concerns re: blackmail [gain control] of J. Biden by Russia, China and/or other foreign [or domestic] entities?",
+   "dropLine": "NAT SEC concerns re: blackmail [gain control] of J. Biden by Russia, China and/or other foreign [or domestic] entities?"
+  },
+  {
+   "category": "claims",
+   "postNum": 4888,
+   "truncated": "Subpoena of all H.",
+   "full": "Subpoena of all H. Biden's financial records?",
+   "dropLine": "Subpoena of all H. Biden's financial records?"
+  },
+  {
+   "category": "context",
+   "postNum": 4935,
+   "truncated": "Gov.",
+   "full": "Gov. Andrew Cuomo, D-N.",
+   "dropLine": "Gov. Andrew Cuomo, D-N.Y"
+  },
+  {
+   "category": "claims",
+   "postNum": 4937,
+   "truncated": "Tonight, at the debate, when they push 'death count' vs.",
+   "full": "Tonight, at the debate, when they push 'death count' vs. POTUS, remember this simple fact.",
+   "dropLine": "Tonight, at the debate, when they push 'death count' vs. POTUS, remember this simple fact."
+  },
+  {
+   "category": "claims",
+   "postNum": 530,
+   "truncated": "Side-by-Side Posts vs.",
+   "full": "Side-by-Side Posts vs. Actual News.",
+   "dropLine": "Side-by-Side Posts vs. Actual News."
+  },
+  {
+   "category": "claims",
+   "postNum": 56,
+   "truncated": "Perhaps recognizing how offensive such ties will be to voters concerned over future terrorist attacks on this country by radical Muslims professing allegiance to Sharia law, the Clinton campaign on Monday tried to downplay Ms.",
+   "full": "Perhaps recognizing how offensive such ties will be to voters concerned over future terrorist attacks on this country by radical Muslims professing allegiance to Sharia law, the Clinton campaign on Monday tried to downplay Ms. Abedin’s involvement in the Journal and the Muslim Brotherhood.",
+   "dropLine": "Perhaps recognizing how offensive such ties will be to voters concerned over future terrorist attacks on this country by radical Muslims professing allegiance to Sharia law, the Clinton campaign on Monday tried to downplay Ms. Abedin’s involvement in the Journal and the Muslim Brotherhood."
+  },
+  {
+   "category": "claims",
+   "postNum": 56,
+   "truncated": "The Clinton surrogate group Media Matters claimed predictably there was “no evidence” that Ms.",
+   "full": "The Clinton surrogate group Media Matters claimed predictably there was “no evidence” that Ms. Abedin or her family had ties to the Muslim Brotherhood, and that Trump campaign staffers who spoke of these ties were conspiracy theorists.",
+   "dropLine": "The Clinton surrogate group Media Matters claimed predictably there was “no evidence” that Ms. Abedin or her family had ties to the Muslim Brotherhood, and that Trump campaign staffers who spoke of these ties were conspiracy theorists."
+  },
+  {
+   "category": "claims",
+   "postNum": 703,
+   "truncated": "“Rest in peace Mr.",
+   "full": "“Rest in peace Mr. President (JFK), through your wisdom and strength, since your tragic death, Patriots have planned, installed, and by the grace of God, activated, the beam of LIGHT.",
+   "dropLine": "“Rest in peace Mr. President (JFK), through your wisdom and strength, since your tragic death, Patriots have planned, installed, and by the grace of God, activated, the beam of LIGHT. We will forever remember your sacrifice. May you look down from above and continue to guide us as we ring the bell of FREEDOM and destroy those who wish to sacrifice our children, our way of life, and our world. We, the PEOPLE.”"
+  },
+  {
+   "category": "claims",
+   "postNum": 97,
+   "truncated": "Good v.",
+   "full": "Good v. Evil.",
+   "dropLine": "Good v. Evil."
+  },
+  {
+   "category": "context",
+   "postNum": 99,
+   "truncated": "A.",
+   "full": "A. Cooper family background?",
+   "dropLine": "A. Cooper family background?"
+  },
+  {
+   "category": "questions",
+   "postNum": 70,
+   "truncated": "What are the laws in SA v.",
+   "full": "What are the laws in SA v. US (charged criminals)?",
+   "dropLine": "What are the laws in SA v. US (charged criminals)?"
+  },
+  {
+   "category": "questions",
+   "postNum": 76,
+   "truncated": "What are the laws in SA v.",
+   "full": "What are the laws in SA v. US (charged criminals)?",
+   "dropLine": "What are the laws in SA v. US (charged criminals)?"
+  },
+  {
+   "category": "questions",
+   "postNum": 2291,
+   "truncated": "Did you see Sen.",
+   "full": "Did you see Sen. Graham's speech today?",
+   "dropLine": "Did you see Sen. Graham's speech today?"
+  },
+  {
+   "category": "questions",
+   "postNum": 2462,
+   "truncated": ">Who briefed NUNES on classified intel re: HUSSEIN spy campaign v.",
+   "full": ">Who briefed NUNES on classified intel re: HUSSEIN spy campaign v. POTUS?",
+   "dropLine": ">Who briefed NUNES on classified intel re: HUSSEIN spy campaign v. POTUS?"
+  },
+  {
+   "category": "questions",
+   "postNum": 2740,
+   "truncated": "Why did [LL] [ATTORNEY GENERAL OF THE UNITED STATES] grant 'special entry' to Natalia Veselnitskaya (Don Jr.",
+   "full": "Why did [LL] [ATTORNEY GENERAL OF THE UNITED STATES] grant 'special entry' to Natalia Veselnitskaya (Don Jr. 'set up' meeting)?",
+   "dropLine": "Why did [LL] [ATTORNEY GENERAL OF THE UNITED STATES] grant 'special entry' to Natalia Veselnitskaya (Don Jr. 'set up' meeting)?"
+  },
+  {
+   "category": "questions",
+   "postNum": 2938,
+   "truncated": "Why was it important to use sources within the UK vs.",
+   "full": "Why was it important to use sources within the UK vs. US?",
+   "dropLine": "Why was it important to use sources within the UK vs. US?"
+  },
+  {
+   "category": "questions",
+   "postNum": 3968,
+   "truncated": "Do you think it was Sen.",
+   "full": "Do you think it was Sen. Flake's choice to step down?",
+   "dropLine": "Do you think it was Sen. Flake's choice to step down?"
+  }
+ ],
+ "withdrawn": [
+  {
+   "category": "questions",
+   "postNum": 142,
+   "fragment": "Merkel’s family history?",
+   "absorbedInto": "What is A. Merkel’s family history?"
+  },
+  {
+   "category": "questions",
+   "postNum": 142,
+   "fragment": "Merkel?",
+   "absorbedInto": "Who is A. Merkel?"
+  },
+  {
+   "category": "questions",
+   "postNum": 964,
+   "fragment": "Korea to establish comms?",
+   "absorbedInto": "What US publicly traded co. previously entered N. Korea to establish comms?"
+  },
+  {
+   "category": "questions",
+   "postNum": 1948,
+   "fragment": "Gov't kept in the DARK?",
+   "absorbedInto": "Why was the U.S. Gov't kept in the DARK?"
+  },
+  {
+   "category": "questions",
+   "postNum": 2381,
+   "fragment": "Supreme Court are evaluated impartially > based on the RULE OF LAW?",
+   "absorbedInto": "How do you ensure 'appeals' to the U.S. Supreme Court are evaluated impartially > based on the RULE OF LAW?"
+  },
+  {
+   "category": "questions",
+   "postNum": 2645,
+   "fragment": "Patriots engaging in the same tactics?",
+   "absorbedInto": "Are they afraid of U.S. Patriots engaging in the same tactics?"
+  },
+  {
+   "category": "questions",
+   "postNum": 4226,
+   "fragment": "District Court Judge Rudolph Contreras recuse?",
+   "absorbedInto": "Why did U.S. District Court Judge Rudolph Contreras recuse?"
+  },
+  {
+   "category": "questions",
+   "postNum": 4891,
+   "fragment": "Biden have such material on his laptop?",
+   "absorbedInto": "Why would H. Biden have such material on his laptop?"
+  },
+  {
+   "category": "context",
+   "postNum": 1319,
+   "fragment": "Dent - Republican",
+   "absorbedInto": "Charles W. Dent - Republican"
+  },
+  {
+   "category": "context",
+   "postNum": 1319,
+   "fragment": "Gutierrez - Democrat",
+   "absorbedInto": "Luis V. Gutierrez - Democrat"
+  },
+  {
+   "category": "context",
+   "postNum": 1319,
+   "fragment": "Kihuen - Democrat",
+   "absorbedInto": "Ruben J. Kihuen - Democrat"
+  },
+  {
+   "category": "claims",
+   "postNum": 1336,
+   "fragment": "Sec Clearance AUTH FVEY VIEW + Doc Take.",
+   "absorbedInto": "U.S. [in] NZ = No Logs/No Flags/No Records = U.S. Sec Clearance AUTH FVEY VIEW + Doc Take."
+  },
+  {
+   "category": "context",
+   "postNum": 1850,
+   "fragment": "Dent - Republican",
+   "absorbedInto": "Charles W. Dent - Republican"
+  },
+  {
+   "category": "context",
+   "postNum": 1850,
+   "fragment": "Gutierrez - Democrat",
+   "absorbedInto": "Luis V. Gutierrez - Democrat"
+  },
+  {
+   "category": "context",
+   "postNum": 1850,
+   "fragment": "Kihuen - Democrat",
+   "absorbedInto": "Ruben J. Kihuen - Democrat"
+  },
+  {
+   "category": "claims",
+   "postNum": 189,
+   "fragment": "(again) and need to decrease altitude to avoid ‘conspiracy’ label.",
+   "absorbedInto": "40,000ft. v. (again) and need to decrease altitude to avoid ‘conspiracy’ label."
+  },
+  {
+   "category": "claims",
+   "postNum": 2054,
+   "fragment": "TRUMP, President of the United States of America, by virtue of the authority vested in me by the Constitution and the laws of the United States, do hereby proclaim September 2018 as National Preparedness Month.",
+   "absorbedInto": "NOW, THEREFORE, I, DONALD J. TRUMP, President of the United States of America, by virtue of the authority vested in me by the Constitution and the laws of the United States, do hereby proclaim September 2018 as National Preparedness Month."
+  },
+  {
+   "category": "claims",
+   "postNum": 2211,
+   "fragment": "Storch served in several positions at the Department of Justice's OIG, including as Senior Counsel to the IG and Acting Deputy IG prior to his 2015 appointment as Deputy IG.",
+   "absorbedInto": "“Prior to joining NSA, Mr. Storch served in several positions at the Department of Justice's OIG, including as Senior Counsel to the IG and Acting Deputy IG prior to his 2015 appointment as Deputy IG."
+  },
+  {
+   "category": "claims",
+   "postNum": 2211,
+   "fragment": "Attorney.",
+   "absorbedInto": "“Earlier in his career, Mr. Storch also worked as a federal prosecutor in the Northern District of New York, most recently serving as the Deputy Criminal Chief and Counsel to the U.S. Attorney."
+  },
+  {
+   "category": "context",
+   "postNum": 2286,
+   "fragment": "Rosenstein",
+   "absorbedInto": "Goodbye, Mr. Rosenstein"
+  },
+  {
+   "category": "claims",
+   "postNum": 2420,
+   "fragment": "President, Anons are actively tracking.",
+   "absorbedInto": "Yes, Mr. President, Anons are actively tracking."
+  },
+  {
+   "category": "claims",
+   "postNum": 2653,
+   "fragment": "Commission on Civil Rights.",
+   "absorbedInto": "Ref: 230-page book called Sex Bias in the U.S. Code, published in 1977 by the U.S. Commission on Civil Rights."
+  },
+  {
+   "category": "context",
+   "postNum": 2697,
+   "fragment": "Herring – track & follow",
+   "absorbedInto": "Jason V. Herring – track & follow"
+  },
+  {
+   "category": "claims",
+   "postNum": 2804,
+   "fragment": "Code Chapter 115 - TREASON, SEDITION, AND SUBVERSIVE ACTIVITIES.",
+   "absorbedInto": "OIG report, DECLAS, other released facts re: 18 U.S. Code Chapter 115 - TREASON, SEDITION, AND SUBVERSIVE ACTIVITIES."
+  },
+  {
+   "category": "claims",
+   "postNum": 316,
+   "fragment": "We love our U.S. Military.",
+   "absorbedInto": "\"We love our U.S. Military."
+  },
+  {
+   "category": "claims",
+   "postNum": 319,
+   "fragment": "POTUS' Tweet.",
+   "absorbedInto": "Timestamp my post re: US Military vs. POTUS' Tweet."
+  },
+  {
+   "category": "claims",
+   "postNum": 3638,
+   "fragment": "Code § 2385.",
+   "absorbedInto": "18 U.S. Code § 2385."
+  },
+  {
+   "category": "claims",
+   "postNum": 4010,
+   "fragment": "I, DONALD J. TRUMP, President of the United States of America, in accordance with Public Law 87–20, as amended, do hereby proclaim May 1, 2020, as Law Day, U.S.A.",
+   "absorbedInto": "NOW, THEREFORE, I, DONALD J. TRUMP, President of the United States of America, in accordance with Public Law 87–20, as amended, do hereby proclaim May 1, 2020, as Law Day, U.S.A."
+  },
+  {
+   "category": "claims",
+   "postNum": 4293,
+   "fragment": "Kamala Harris of California renewed her calls for another COVID-19 hearing, noting that the committee hasn't held one since early March.",
+   "absorbedInto": "In a letter sent to Johnson on Tuesday, Sen. Kamala Harris of California renewed her calls for another COVID-19 hearing, noting that the committee hasn't held one since early March."
+  },
+  {
+   "category": "claims",
+   "postNum": 4529,
+   "fragment": "Rhodes,166 in which the Court held that plaintiffs were not barred by the Eleventh Amendment or other immunity doctrines from suing the governor and other officials of a state alleging that they deprived plaintiffs of federal rights under color of state law and seeking damages, when it was clear that plaintiffs were seeking to impose individual and personal liability on the officials.",
+   "absorbedInto": "\"The immunity of a state from suit has long been held not to extend to actions against state officials for damages arising out of willful and negligent disregard of state laws.165 The reach of the rule is evident in Scheuer v. Rhodes,166 in which the Court held that plaintiffs were not barred by the Eleventh Amendment or other immunity doctrines from suing the governor and other officials of a state alleging that they deprived plaintiffs of federal rights under color of state law and seeking damages, when it was clear that plaintiffs were seeking to impose individual and personal liability on the officials."
+  },
+  {
+   "category": "claims",
+   "postNum": 4630,
+   "fragment": "Schutt, was arrested and charged with four counts of felony third-degree sexual assault of a child and one count of intentional child abuse.",
+   "absorbedInto": "Democratic Former Mayor of Randolph, Nebraska, Dwayne L. Schutt, was arrested and charged with four counts of felony third-degree sexual assault of a child and one count of intentional child abuse."
+  },
+  {
+   "category": "claims",
+   "postNum": 4632,
+   "fragment": "Smeltzer, Jr. pleaded no contest to raping a 15 year-old girl and served 6-months in prison.",
+   "absorbedInto": "Republican City Councilman Fred C. Smeltzer, Jr. pleaded no contest to raping a 15 year-old girl and served 6-months in prison."
+  },
+  {
+   "category": "claims",
+   "postNum": 4937,
+   "fragment": "POTUS, remember this simple fact.",
+   "absorbedInto": "Tonight, at the debate, when they push 'death count' vs. POTUS, remember this simple fact."
+  },
+  {
+   "category": "claims",
+   "postNum": 530,
+   "fragment": "Actual News.",
+   "absorbedInto": "Side-by-Side Posts vs. Actual News."
+  },
+  {
+   "category": "claims",
+   "postNum": 56,
+   "fragment": "Abedin’s involvement in the Journal and the Muslim Brotherhood.",
+   "absorbedInto": "Perhaps recognizing how offensive such ties will be to voters concerned over future terrorist attacks on this country by radical Muslims professing allegiance to Sharia law, the Clinton campaign on Monday tried to downplay Ms. Abedin’s involvement in the Journal and the Muslim Brotherhood."
+  },
+  {
+   "category": "claims",
+   "postNum": 56,
+   "fragment": "Abedin or her family had ties to the Muslim Brotherhood, and that Trump campaign staffers who spoke of these ties were conspiracy theorists.",
+   "absorbedInto": "The Clinton surrogate group Media Matters claimed predictably there was “no evidence” that Ms. Abedin or her family had ties to the Muslim Brotherhood, and that Trump campaign staffers who spoke of these ties were conspiracy theorists."
+  },
+  {
+   "category": "claims",
+   "postNum": 703,
+   "fragment": "President (JFK), through your wisdom and strength, since your tragic death, Patriots have planned, installed, and by the grace of God, activated, the beam of LIGHT.",
+   "absorbedInto": "“Rest in peace Mr. President (JFK), through your wisdom and strength, since your tragic death, Patriots have planned, installed, and by the grace of God, activated, the beam of LIGHT."
+  },
+  {
+   "category": "claims",
+   "postNum": 97,
+   "fragment": "Evil.",
+   "absorbedInto": "Good v. Evil."
+  },
+  {
+   "category": "questions",
+   "postNum": 70,
+   "fragment": "US (charged criminals)?",
+   "absorbedInto": "What are the laws in SA v. US (charged criminals)?"
+  },
+  {
+   "category": "questions",
+   "postNum": 76,
+   "fragment": "US (charged criminals)?",
+   "absorbedInto": "What are the laws in SA v. US (charged criminals)?"
+  },
+  {
+   "category": "questions",
+   "postNum": 2291,
+   "fragment": "Graham's speech today?",
+   "absorbedInto": "Did you see Sen. Graham's speech today?"
+  },
+  {
+   "category": "questions",
+   "postNum": 2462,
+   "fragment": "POTUS?",
+   "absorbedInto": ">Who briefed NUNES on classified intel re: HUSSEIN spy campaign v. POTUS?"
+  },
+  {
+   "category": "questions",
+   "postNum": 2740,
+   "fragment": "'set up' meeting)?",
+   "absorbedInto": "Why did [LL] [ATTORNEY GENERAL OF THE UNITED STATES] grant 'special entry' to Natalia Veselnitskaya (Don Jr. 'set up' meeting)?"
+  },
+  {
+   "category": "questions",
+   "postNum": 2938,
+   "fragment": "US?",
+   "absorbedInto": "Why was it important to use sources within the UK vs. US?"
+  },
+  {
+   "category": "questions",
+   "postNum": 3968,
+   "fragment": "Flake's choice to step down?",
+   "absorbedInto": "Do you think it was Sen. Flake's choice to step down?"
+  }
+ ],
+ "excluded": {
+  "note": "Repaired span REFUSED, because extending it would present pasted source material as Q-authored. In each case the full sentence is already recorded as an editorial paraphrase, so the repair would have made one span both Q's certified claim and a non-Q paraphrase at once - and apply-claims.mjs refuses that, correctly.",
+  "rule": "Q literal wording is never rewritten and quoted/source material stays separate from Q-authored. A truncated span left visible is a smaller defect than a pasted news sentence certified as Q asserting it. These stay truncated and stay recorded here so nobody rediscovers them as new.",
+  "count": 3,
+  "spans": [
+   {
+    "postNum": 2653,
+    "category": "claims",
+    "truncated": ">Condemned the Supreme Court’s ruling in Harris v.",
+    "wouldHaveBecome": ">Condemned the Supreme Court’s ruling in Harris v. McRae and claimed that taxpayer-funded abortions should be a constitutional right.",
+    "why": "full span is a stored editorial paraphrase (pasted source material)"
+   },
+   {
+    "postNum": 4310,
+    "category": "claims",
+    "truncated": "“The heads of the Pentagon and the nation’s intelligence community have recommended to President Obama that the director of the National Security Agency, Adm.",
+    "wouldHaveBecome": "“The heads of the Pentagon and the nation’s intelligence community have recommended to President Obama that the director of the National Security Agency, Adm. Michael S. Rogers, be removed.",
+    "why": "full span is a stored editorial paraphrase (pasted source material)"
+   },
+   {
+    "postNum": 3071,
+    "category": "claims",
+    "truncated": ">DENY PROPER COUNTING U.S.",
+    "wouldHaveBecome": ">DENY PROPER COUNTING U.S. CENSUS > AVOID PUBLIC KNOWLEDGE REAL ‘ILLEGAL’ POP TO AVOID VOTER FRAUD % RISK TO ELECTIONS",
+    "why": "full span is a stored editorial paraphrase (pasted source material)"
+   }
+  ]
+ }
+}

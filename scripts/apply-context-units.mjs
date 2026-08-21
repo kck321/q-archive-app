@@ -14,6 +14,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { clean } from './lib/segment.mjs'
 import { runtimeSpan } from './lib/runtimeText.mjs'
+import { loadAbbrevRepairs, applyAbbrevRepairs, assertAbbrevApplied } from './lib/abbrevRepairs.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -24,6 +25,8 @@ const coverage = JSON.parse(fs.readFileSync(path.join(OUT, 'source-unit-coverage
 const posts = JSON.parse(fs.readFileSync(path.join(DATA, 'posts.json'), 'utf8'))
 
 const allUnits = coverage.contextUnits ?? []
+const abbrev = loadAbbrevRepairs(ROOT)
+const nlower = t => String(t ?? '').toLowerCase().replace(/\s+/g, ' ').trim()
 
 // A unit that unitsFor() built by joining continuation lines has no contiguous span to point at:
 // "Q&A 5 min." is two lines, "_27-1_yes_USA58-A _27-1_yes_USA04" is a merged pair. That is a
@@ -146,6 +149,43 @@ for (const p of posts) {
   if (list) patched++
 }
 
+// The abbreviation/sentence-boundary repair, before anything counts. Context is cut by the same
+// splitter as Claims and Questions — "Goodbye, Mr." / "Rosenstein.", "Charles W." / "Dent -
+// Republican" — and repairing the head without absorbing the tail would leave one line certified
+// twice. See scripts/lib/abbrevRepairs.mjs.
+let absorbed = 0, collided = 0
+{
+  const r = applyAbbrevRepairs(abbrev, 'context', posts, x => x.postAnalysis?.contextUnits)
+  assertAbbrevApplied(abbrev, 'context', r, 'apply-context-units.mjs')
+  absorbed = r.withdrawn
+  // A REPAIRED CONTEXT UNIT CAN TURN OUT TO BE A SPAN ANOTHER SECTION ALREADY CERTIFIED.
+  //
+  // #2109's context was "Goodbye, Mr." and its prediction was "Goodbye, Mr. Rosenstein." — two
+  // different spans, no contradiction. Repairing the context unit made it the SAME span, and
+  // Context means "reviewed, and in no semantic category", so it cannot also be a Prediction.
+  // Eight units across six drops land this way ("Goodbye, Mr. Rosenstein.", "Combat tactics, Mr.
+  // Ryan."). They leave Context, exactly as an owner ruling would take them out.
+  //
+  // Scoped to units the repair TOUCHED. 114 other context units collide with another section for
+  // reasons that predate this work; sweeping them out here would hide a real finding inside an
+  // unrelated repair and move four certified counts without a ruling.
+  const repairedText = new Set((abbrev?.doc?.repairs ?? [])
+    .filter(x => x.category === 'context').map(x => `${x.postNum}|${nlower(x.full)}`))
+  for (const p of posts) {
+    const units = p.postAnalysis?.contextUnits
+    if (!units?.length) continue
+    const elsewhere = new Set([...(p.postAnalysis.claims ?? []), ...(p.postAnalysis.predictions ?? []),
+      ...(p.actionRequests ?? [])].map(nlower))
+    const kept = units.filter(u => {
+      const clash = elsewhere.has(nlower(u)) && repairedText.has(`${p.postNum}|${nlower(u)}`)
+      if (clash) collided++
+      return !clash
+    })
+    p.postAnalysis.contextUnits = kept
+  }
+  console.log(`  abbreviation repair: ${r.repaired} context spans repaired, ${r.withdrawn} fragments absorbed, ${collided} left Context for a section that already held the repaired span`)
+}
+
 const materialised = posts.reduce((n, p) => n + (p.postAnalysis?.contextUnits?.length ?? 0), 0)
 const postsWith = posts.filter(p => (p.postAnalysis?.contextUnits?.length ?? 0) > 0).length
 
@@ -167,14 +207,26 @@ const checks = [
   // "Husband: DOJ". All four were Context and are now Claims, so they leave by the same rule the
   // queue rulings did. #4861 and #4910 moved too but were UNCLASSIFIED, so they cost Context
   // nothing. The ledger is untouched throughout; the units moved sides.
-  ['contiguous context spans = 1,731', materialised === 1731, materialised],
+  // 1,731 -> 1,715. Eight tail fragments absorbed by the 2026-08-21 abbreviation repair, and eight
+  // repaired units that turned out to be spans another section already certified, which leave
+  // Context because Context means "reviewed, and in no semantic category". 28 more were repaired
+  // in place, which changes their text and not their number.
+  ['contiguous context spans = 1,715', materialised === 1715, materialised],
   // 13 -> 12: one of the multi-line reconstructions was ruled into a section too.
   ['multi-line reconstructions held as exceptions = 12', multiline.length === 12, multiline.length],
   // The TOTAL is the invariant and it does not move: a ruling changes which side of the ledger a
   // unit sits on, never how many units were reviewed. 1,747 + 3,155 = 4,902, as 1,748 + 3,154 did.
-  ['1,731 + 12 = 1,743, and 1,743 + 3,159 promoted = the certified 4,902',
-    materialised + multiline.length === 1743 && materialised + multiline.length + promoted.length === 4902,
-    `${materialised + multiline.length} + ${promoted.length}`],
+  // THE LEDGER TOTAL IS STILL 4,902, AND THE ABSORBED UNITS ARE WHY THE SUM NEEDS A THIRD TERM.
+  //
+  // The abbreviation repair merged 8 tail units into the heads they were split from — "Rosenstein."
+  // into "Goodbye, Mr. Rosenstein." — so 8 ledger rows no longer materialise as spans of their own.
+  // They were not dropped and they were not reclassified: two units became one, eight times.
+  // Counting them here keeps the acceptance contract honest instead of re-pinning the total to a
+  // smaller number and losing the reason.
+  ['1,715 + 12 = 1,727, + 3,159 promoted + 8 absorbed + 8 recategorised = the certified 4,902',
+    materialised + multiline.length === 1727
+      && materialised + multiline.length + promoted.length + absorbed + collided === 4902,
+    `${materialised + multiline.length} + ${promoted.length} + ${absorbed} + ${collided}`],
   // 2 themes + 3 claims (#4965 'In time.', #4963 x2) + 4 entity rulings whose span was a
   // Context line (#4963 Investigators./Researchers./Whistleblowers. and #5 is unaffected).
   // 73 + 3,081 from the unhighlighted-sentence queue = 3,154, + 1 (#4923) = 3,155,

@@ -95,22 +95,27 @@ const checks = [
   // the raw drop encodes differently from the certified value — #2381's runs through "&gt;", the
   // #142 pair through a curly apostrophe — so they need a literal span to paint. That is this
   // step's whole job: the certified value stays readable, the rendering value matches the body.
-  ['question literal spans = 7', questionLiterals === 7, questionLiterals],
+  // 7 -> 8: one more repaired question reaches text the raw drop encodes differently from the
+  // certified value, so it needs a literal span to paint.
+  ['question literal spans = 8', questionLiterals === 8, questionLiterals],
   // The three "unchanged" gates below are cross-section CHECKS - this step adds a parallel *Spans
   // array and never a row. They move only when their own materialiser moved them, which is what
   // makes them useful: 6,454 -> 6,519, 4,212 -> 8,928 and 595 -> 842 are the 2026-08-20 queue
   // rulings arriving from apply-questions-final.mjs and apply-claims.mjs, and nothing else.
   // 6,510 since the segmentation repair. "Unchanged" means THIS step must not add or drop one.
-  ['certified questions unchanged = 6,510', questions.filter(r => r.occurrences !== undefined).length === 6510,
+  ['certified questions unchanged = 6,503', questions.filter(r => r.occurrences !== undefined).length === 6503,
     questions.filter(r => r.occurrences !== undefined).length],
   // 8,929 since the 2026-08-21 owner ruling on #4923. "Unchanged" means this step must not invent
   // or drop a claim while turning stored text into runtime spans — it is a passthrough assertion,
   // so it tracks whatever apply-claims.mjs certified rather than pinning one batch's figure.
-  ['claims unchanged = 8,934', counts.claims === 8934, counts.claims],
+  ['claims unchanged = 8,912', counts.claims === 8912, counts.claims],
   // 843 since the 2026-08-21 ruling on #4910 ("Freedom of information [truth] = END").
   ['predictions unchanged = 843', counts.predictions === 843, counts.predictions],
-  ['conclusions unchanged = 965', counts.impliedConclusions === 965, counts.impliedConclusions],
-  ['checkable unchanged = 1,925', counts.verificationHooks === 1925, counts.verificationHooks],
+  ['conclusions unchanged = 964', counts.impliedConclusions === 964, counts.impliedConclusions],
+  // 1,925 -> 1,920: five absorbed claim tails carried the checkable attribute. It travels with
+  // the ROW, so it leaves with the fragment rather than being re-attached to the repaired span,
+  // which the claims audit never adjudicated as checkable.
+  ['checkable unchanged = 1,920', counts.verificationHooks === 1920, counts.verificationHooks],
   ['every span array matches its source array', FIELDS.every(([f]) => spanCounts[f] === counts[f]), 'ok'],
 ]
 

@@ -507,7 +507,12 @@ export const OVERRIDES_BAKED_THROUGH = 1786458148021   // 2026-08-11T14:22:28.02
 // overlay defect bumps it again without touching the seed.
 export const OVERLAY_REPAIR = 1
 
-export const SEED_VERSION = 83   // 83: the 2026-08-21 ruling batch — 5 Claims (#4861, #4893 x2,
+export const SEED_VERSION = 84   // 84: the abbreviation/sentence-boundary repair, 2026-08-21 —
+// 114 certified spans across Claims, Context, Directives and Questions were cut short at "Mr.",
+// "Lt. Gen.", "U.S. Senate", "Harris v."; each is extended to the full sentence and the 45 tails
+// the same splitter certified separately are absorbed. A reader on 83 keeps "Goodbye, Mr." and
+// "Welcome Mr." painted as whole classified spans.
+// 83: the 2026-08-21 ruling batch — 5 Claims (#4861, #4893 x2,
 // #4853 x2), 1 Prediction (#4910), and 10 certified questions repaired from a splitter that read an
 // INITIAL as a sentence end ("H. Biden", "A. Merkel", "N. Korea", "U.S. Supreme Court"), with the 8
 // orphaned tail fragments absorbed. A reader on 82 sees the truncated questions and none of the new

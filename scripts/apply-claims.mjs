@@ -24,12 +24,16 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { clean, key } from './lib/segment.mjs'
 import { applyPredictionsAudit } from './lib/predictionsAudit.mjs'
+import { loadAbbrevRepairs, applyAbbrevRepairs, assertAbbrevApplied } from './lib/abbrevRepairs.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
 const dry = process.argv.includes('--dry')
 
 const posts = JSON.parse(fs.readFileSync(path.join(DATA, 'posts.json'), 'utf8'))
+// The abbreviation/sentence-boundary repair. See scripts/lib/abbrevRepairs.mjs — one defect, one
+// record, one applier, shared with Context, Directives and Questions.
+const abbrev = loadAbbrevRepairs(ROOT)
 // The 2026-08-16 sentence-level Predictions audit is layered ON TOP of the frozen claims
 // artifact, exactly as the themes and entities owner rulings are: claims-final.json is left
 // untouched, and audit/predictions-audit/*.json is re-applied on every run. Re-deriving the
@@ -141,6 +145,31 @@ const ph3 = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/claims-adjudicated
 const v2 = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/claims-audit.json'), 'utf8'))
 
 const flat = t => clean(t).replace(/\s+/g, ' ').trim()
+
+// ── Abbreviation/sentence-boundary repair, ON THE ROWS ──────────────────────
+//
+// Applied to final.rows BEFORE anything is grouped or keyed, because claimMeta is keyed by
+// key(exactText): repairing p.postAnalysis.claims afterwards left all 64 repaired claims pointing
+// at a metadata key that no longer existed, and every attribute on them — checkable,
+// sourceProvided, isConclusion — silently stopped resolving. build-relationships caught it as one
+// missing Claim-Source-provided edge, which is a very quiet way to lose 64 rows' attributes.
+//
+// Both operations run together: the truncated span is replaced by the full one, and the tail the
+// same splitter certified separately is dropped, because the repaired span now contains it.
+let abbrevRepaired = 0, abbrevAbsorbed = 0
+if (abbrev) {
+  const kept = []
+  for (const r of final.rows) {
+    if (abbrev.isWithdrawn('claims', r.postNum, r.exactText)) { abbrevAbsorbed++; continue }
+    const full = abbrev.fullFor('claims', r.postNum, r.exactText)
+    if (full && full !== r.exactText) { r.exactText = full; abbrevRepaired++ }
+    kept.push(r)
+  }
+  final.rows = kept
+  assertAbbrevApplied(abbrev, 'claims', { repaired: abbrevRepaired, withdrawn: abbrevAbsorbed }, 'apply-claims.mjs')
+  console.log(`
+  abbreviation repair: ${abbrevRepaired} claim spans repaired, ${abbrevAbsorbed} fragments absorbed`)
+}
 
 const claimsByPost = new Map()
 for (const r of final.rows) {
@@ -298,7 +327,11 @@ const checks = [
   // #4861 "House resolution passed condemning 'Qanon'", #4893 "Example:" and "Federal Appeals
   // Court reinstates conviction", #4853 "Wife: CIA" and "Husband: DOJ". All recorded in
   // audit/editorial-batch-pending.json and carried in by apply-owner-claims.mjs.
-  ['claim occurrences = 8,934', allClaims.length === 8934, allClaims.length],
+  // -22 on 2026-08-21: the abbreviation repair absorbed 22 tail fragments the sentence splitter
+  // had certified as claims of their own ("Rosenstein.", "Code Chapter 115 - TREASON...", "POTUS'
+  // Tweet."). Each is now inside the repaired span rather than beside it. No claim left the
+  // archive; the same words are certified once instead of twice.
+  ['claim occurrences = 8,912', allClaims.length === 8912, allClaims.length],
   ['queue rulings applied = 4,782 claims / 250 predictions',
     stats2020.claimsAdded + stats2020.claimsAlready === 4782 && stats2020.predsAdded + stats2020.predsAlready === 250,
     `${stats2020.claimsAdded}+${stats2020.claimsAlready} claims, ${stats2020.predsAdded}+${stats2020.predsAlready} predictions`],
@@ -312,7 +345,11 @@ const checks = [
   // +4, not +5, for the five new claims: "Example:" normalises to the key "example", which
   // "Example." already holds as a certified Claim on #1015 and #1220. It joins them rather than
   // opening a key — which is also independent support for the ruling.
-  ['distinct = 6,833', distinct.size === 6833, distinct.size],
+  // -19, and every key is accounted for: 70 disappear (48 truncated wordings that occurred only
+  // as the cut form, plus the 22 absorbed tails) and 51 appear. 51 rather than 64 because the same
+  // repair recurs across drops - "Goodbye, Mr. Rosenstein." is six posts and one key, and the
+  // #1319/#1850 congressional list is the same eleven wordings twice.
+  ['distinct = 6,814', distinct.size === 6814, distinct.size],
   // +1: 17 posts gain their first claim, 16 posts lose their last one.
   // -3: #483, #2695 and #3203 each held ONE claim and it was the quoted question, so those
   // drops leave the Claims post set entirely. #2420 and #2776 keep other claims and stay.
@@ -328,16 +365,23 @@ const checks = [
   // isConclusion travels with the ROW rather than with the section, so a row leaving Claims
   // takes the attribute with it. -1: #3203's quoted question was the only withdrawn row
   // carrying it. 966 - 1 = 965.
-  ['conclusions = 965', conclusions === 965, conclusions],
+  // -1: one absorbed tail carried isConclusion. The attribute travels with the row, so it leaves
+  // with the fragment rather than being re-attached to the repaired span, which the audit never
+  // adjudicated as a conclusion.
+  ['conclusions = 964', conclusions === 964, conclusions],
   // +5: 18 checkable rows arrive from Predictions, 13 checkable rows leave for Predictions.
   // Same rule, same reason: -6 of the 9 withdrawn rows were checkable (#483, #2695 x2,
   // #2776 x2, #3203). 1,931 - 6 = 1,925.
   // UNMOVED, and deliberately. checkable and sourceProvided are attributes the claims audit
   // established from evidence in the drop; the owner ruled a SECTION, not an attribute, so no
   // queue row sets either. Inventing them would inflate two certified counts from a guess.
-  ['checkable = 1,925', checkable === 1925, checkable],
+  // 1,925 -> 1,920: five absorbed tails carried the checkable attribute. It travels with the ROW,
+  // so it leaves with the fragment rather than being re-attached to the repaired span — the claims
+  // audit adjudicated the fragment, not the sentence it turned out to be part of.
+  ['checkable = 1,920', checkable === 1920, checkable],
   // +1: 5 arrive carrying sourceProvided, 4 leave with it.
-  ['sourceProvided = 439', sourceProvided === 439, sourceProvided],
+  // -1, same rule: one absorbed tail carried sourceProvided.
+  ['sourceProvided = 438', sourceProvided === 438, sourceProvided],
   // -2: two departing claims were telegraphic. Predictions never carried the attribute, so
   // nothing arrives with it.
   // +3,159. telegraphic is not a judgement — it is "four words or fewer", computed the same way
@@ -347,7 +391,11 @@ const checks = [
   // telegraphic. Not a judgement about the ruling — the attribute is computed, not assigned.
   // +3 of the five new claims are four words or fewer: "Example:", "Wife: CIA", "Husband: DOJ".
   // The other two are five words each. Computed by the same rule, not assigned.
-  ['telegraphic = 3,550', telegraphic === 3550, telegraphic],
+  // 3,550 -> 3,543. Two causes, both the repair working: absorbed tails that were four words or
+  // fewer leave with their row, and a repaired span can outgrow the threshold — "Army Lt." is two
+  // words, "Army Lt. Gen. Paul Nakasone" is five. telegraphic is computed from the text, so a
+  // longer text is correctly no longer telegraphic.
+  ['telegraphic = 3,543', telegraphic === 3543, telegraphic],
   // 13 + 37: the queue emitted one row per UNIT, so a line Q wrote twice arrives twice and is
   // certified twice. Collapsing them would have dropped 37 real occurrences.
   ['in-post repeats preserved = 50', repeats === 50, repeats],
@@ -359,7 +407,7 @@ const checks = [
   // 6,510 since the 2026-08-21 segmentation repair: 8 orphaned tail fragments absorbed into the
   // 10 questions they were split from, plus 1 duplicate merged. Asserted here because a claim
   // ruling must not move Questions - this is a cross-section tripwire, not a Questions figure.
-  ['Questions now 6,510', questions.length === 6510, questions.length],
+  ['Questions now 6,503', questions.length === 6503, questions.length],
   // 2,422 + 2 owner rulings (#4963 'Focus.' / 'FOCUS.', ruled Directives out of Emphasis).
   // v5: Q Directives migrated to sourceSpansV2 provenance; 2,705 -> 2,552 by owner ruling.
   // 2,552 + 485 arriving from the same owner ruling. This is a cross-section CHECK, not a source:

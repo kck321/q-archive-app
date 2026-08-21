@@ -4,18 +4,18 @@
  "canonical": {
   "posts": 4966,
   "questions": {
-   "occurrences": 6510,
-   "distinct": 5363,
+   "occurrences": 6503,
+   "distinct": 5358,
    "posts": 1705
   },
   "directives": {
    "occurrences": 3037,
-   "distinct": 1827,
+   "distinct": 1829,
    "posts": 1689
   },
   "claims": {
-   "occurrences": 8934,
-   "distinct": 6833,
+   "occurrences": 8912,
+   "distinct": 6814,
    "posts": 3086
   },
   "predictions": {
@@ -71,7 +71,7 @@
    "id": "questions",
    "label": "Q Questions",
    "artifact": "questions.json",
-   "certifiedCount": 6510,
+   "certifiedCount": 6503,
    "shippedRows": 6577,
    "mayCoexist": "134 editorial-normalisation rows are shipped so the search index can find a question a reader half-remembers in cleaned-up form.",
    "neverDisplayed": "Those 134 must never count toward any total, never highlight in a post, and never display as Q-authored. They are identified by editorialNormalization or neverDisplayAsQ.",
@@ -92,7 +92,7 @@
    "id": "claims",
    "label": "Q Claims",
    "artifact": "posts.json → postAnalysis.claims + claimMeta",
-   "certifiedCount": 8934,
+   "certifiedCount": 8912,
    "mayCoexist": "Predictions share the assertion family and the same storage, separated by claimMeta.displayClass. editorialParaphrases are stored per post and are NOT claims.",
    "neverDisplayed": "An editorial paraphrase must never be presented as Q’s literal wording.",
    "countedBy": "postAnalysis.claims entries whose displayClass is claim",
@@ -196,7 +196,7 @@
   },
   {
    "pair": "claims ↔ conclusions",
-   "expected": 965,
+   "expected": 964,
    "why": "isConclusion is an ATTRIBUTE of a claim or a prediction, not a separate population. It must never be added to the claims total.",
    "crossLink": "claimMeta.isConclusion"
   },
@@ -225,7 +225,7 @@
    "id": "questions",
    "description": "Questions = 6,454 certified occurrences",
    "pass": true,
-   "detail": "6510"
+   "detail": "6503"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -239,7 +239,7 @@
    "id": "claims",
    "description": "Claims = 4,189",
    "pass": true,
-   "detail": "8934"
+   "detail": "8912"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -377,9 +377,9 @@
   {
    "group": "2. Provenance contracts",
    "id": "q-rows",
-   "description": "Questions ships 6,644 rows for 6,510 certified",
+   "description": "Questions ships 6,637 rows for 6,503 certified",
    "pass": true,
-   "detail": "6644"
+   "detail": "6637"
   },
   {
    "group": "2. Provenance contracts",
@@ -400,7 +400,7 @@
    "id": "q-partition",
    "description": "counted + editorial = every shipped row",
    "pass": true,
-   "detail": "6510 + 134"
+   "detail": "6503 + 134"
   },
   {
    "group": "2. Provenance contracts",
@@ -531,9 +531,9 @@
   {
    "group": "4. Cross-section overlap",
    "id": "overlap-conclusions",
-   "description": "conclusions are an attribute of 965 assertions, not a separate count",
+   "description": "conclusions are an attribute of 964 assertions, not a separate count",
    "pass": true,
-   "detail": "965"
+   "detail": "964"
   },
   {
    "group": "4. Cross-section overlap",
@@ -580,9 +580,9 @@
   {
    "group": "6. Source-material isolation",
    "id": "isolation-questions",
-   "description": "questions: quoted-block over-extension stays at its known 101 occurrences",
+   "description": "questions: quoted-block over-extension stays at its known 100 occurrences",
    "pass": true,
-   "detail": "101 of 6510 (expected 101)"
+   "detail": "100 of 6503 (expected 100)"
   },
   {
    "group": "6. Source-material isolation",
@@ -594,9 +594,9 @@
   {
    "group": "6. Source-material isolation",
    "id": "isolation-claims",
-   "description": "claims: quoted-block over-extension stays at its known 598 occurrences",
+   "description": "claims: quoted-block over-extension stays at its known 593 occurrences",
    "pass": true,
-   "detail": "598 of 8934 (expected 598)"
+   "detail": "593 of 8912 (expected 593)"
   },
   {
    "group": "6. Source-material isolation",
@@ -664,9 +664,9 @@
   {
    "group": "8. Seed and cache integrity",
    "id": "seed-current",
-   "description": "SEED_VERSION is 83 (2026-08-21 ruling batch + segmentation repair)",
+   "description": "SEED_VERSION is 84 (abbreviation/sentence-boundary repair)",
    "pass": true,
-   "detail": "83"
+   "detail": "84"
   },
   {
    "group": "8. Seed and cache integrity",
@@ -727,7 +727,7 @@
   {
    "group": "9. UI count integrity",
    "id": "ui-questions",
-   "description": "sectionInfo states 6,510",
+   "description": "sectionInfo states 6,503",
    "pass": true,
    "detail": "ok"
   },
@@ -741,7 +741,7 @@
   {
    "group": "9. UI count integrity",
    "id": "ui-claims",
-   "description": "sectionInfo states 8,934",
+   "description": "sectionInfo states 8,912",
    "pass": true,
    "detail": "ok"
   },
@@ -1560,16 +1560,16 @@
   {
    "group": "12. Cross-section relationships",
    "id": "rel-conclusions",
-   "description": "Claim → Conclusion edges = the certified 965",
+   "description": "Claim → Conclusion edges = the certified 964",
    "pass": true,
-   "detail": "965"
+   "detail": "964"
   },
   {
    "group": "12. Cross-section relationships",
    "id": "rel-source",
-   "description": "Claim → Source provided edges = the certified 439",
+   "description": "Claim → Source provided edges = the certified 438",
    "pass": true,
-   "detail": "439"
+   "detail": "438"
   },
   {
    "group": "12. Cross-section relationships",
@@ -1597,7 +1597,7 @@
    "id": "rel-map-questions",
    "description": "analysis map totals reconcile with certified Questions",
    "pass": true,
-   "detail": "6510"
+   "detail": "6503"
   },
   {
    "group": "12. Cross-section relationships",
@@ -1667,7 +1667,7 @@
    "id": "search-questions",
    "description": "indexed Questions = certified 6,454",
    "pass": true,
-   "detail": "6510"
+   "detail": "6503"
   },
   {
    "group": "13. Global search",
@@ -1681,7 +1681,7 @@
    "id": "search-claims",
    "description": "indexed Claims = certified 4,181",
    "pass": true,
-   "detail": "8934"
+   "detail": "8912"
   },
   {
    "group": "13. Global search",
@@ -1758,7 +1758,7 @@
    "id": "search-repeats-preserved",
    "description": "in-post repeats are indexed as separate occurrences",
    "pass": true,
-   "detail": "8934 rows, 8886 distinct (post, text)"
+   "detail": "8912 rows, 8864 distinct (post, text)"
   },
   {
    "group": "13. Global search",

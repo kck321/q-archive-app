@@ -1,14 +1,14 @@
 {
  "totals": {
-  "relationships": 7835,
+  "relationships": 7834,
   "byType": {
    "prediction_assertion": 843,
    "theme_support": 1719,
-   "evidence_claim": 907,
+   "evidence_claim": 908,
    "question_directive": 230,
-   "claim_conclusion": 965,
+   "claim_conclusion": 964,
    "emphasis_claim": 1968,
-   "claim_source_provided": 439,
+   "claim_source_provided": 438,
    "emphasis_directive": 398,
    "prediction_source_provided": 35,
    "entity_code": 180,
@@ -49,14 +49,14 @@
    32
   ],
   [
-   "Claim ↔ Conclusion = the certified 965",
+   "Claim ↔ Conclusion = the certified 964",
    true,
-   965
+   964
   ],
   [
-   "Claim ↔ Source provided = the certified 439",
+   "Claim ↔ Source provided = the certified 438",
    true,
-   439
+   438
   ],
   [
    "Prediction ↔ Source provided reported separately",

@@ -30,7 +30,11 @@ export const CANONICAL = {
   // them absorbed the 8 orphaned tail fragments the same splitter had certified separately, and one
   // repair produced a duplicate of a row already correct. No question left the archive - the same
   // words are certified once, whole, instead of twice, in halves. Posts unchanged.
-  questions: { occurrences: 6510, distinct: 5363, posts: 1705 },
+  // 2026-08-21 abbreviation/sentence-boundary repair: spans cut short at "Mr.", "Lt. Gen.",
+  // "U.S. Senate", "Harris v." are extended to the full sentence, and the tail the same splitter
+  // had certified separately is absorbed into them. Nothing left the archive - the same words are
+  // certified once, whole, instead of twice, in halves. See audit/abbreviation-span-repairs.json.
+  questions: { occurrences: 6503, distinct: 5358, posts: 1705 },
   // v5, 16 Aug 2026 — Q Directives migrated to sourceSpansV2 provenance under owner ruling.
   // 2,705 -> 2,552: 153 occurrences removed from Q Directives ONLY (quoted news, scraped code,
   // blessings, declarative-lead misreads, questions, a prediction). Nothing was deleted from the
@@ -39,7 +43,7 @@ export const CANONICAL = {
   // what the page actually renders — the old 1,472/1,417 counted directives-final.json alone and
   // never matched the UI.
   // +485 occurrences (486 ruled, 1 already certified), +185 wordings, +225 posts.
-  directives: { occurrences: 3037, distinct: 1827, posts: 1689 },
+  directives: { occurrences: 3037, distinct: 1829, posts: 1689 },
   // 4,181 -> 4,188 on 2026-08-13 by owner adjudication, not by a classifier. Six exact
   // occurrences of "Pure evil." / "PURE EVIL." plus "The 'real' racist." in #2917. The corpus
   // search that found them also showed the fuller variants ("These people are pure evil.",
@@ -61,7 +65,7 @@ export const CANONICAL = {
   // condemning 'Qanon'", #4893 "Example:" and "Federal Appeals Court reinstates conviction", #4853
   // "Wife: CIA" and "Husband: DOJ". distinct +5, not +6: "Example:" shares a key with "Example."
   // already certified on #1015 and #1220. posts +2: #4861 and #4853 gain their first claim.
-  claims: { occurrences: 8934, distinct: 6833, posts: 3086 },
+  claims: { occurrences: 8912, distinct: 6814, posts: 3086 },
   // 630 -> 595: -73 technical nonpredictions, -56 arguable rows withdrawn to the review
   // backlog, +66 unique moves from Claims, +28 high-confidence predictions the extractor
   // missed. posts 520 -> 490. The 91 withdrawn/held rows are NOT deleted — they sit in
@@ -338,7 +342,9 @@ export const OVERLAPS = [
     pair: 'claims ↔ conclusions',
     // 966 -> 965 on 2026-08-19: #3203's quoted question carried isConclusion and was withdrawn to
     // Questions by owner ruling. The attribute travels with the row, never with the section.
-    expected: 965,
+    // 965 -> 964 on 2026-08-21: the 2026-08-21 abbreviation repair absorbed tail fragments carrying the attribute; it travels with the ROW, so it leaves with the fragment rather than
+    // being re-attached to the span the fragment turned out to be part of.
+    expected: 964,
     why: 'isConclusion is an ATTRIBUTE of a claim or a prediction, not a separate population. It must never be added to the claims total.',
     crossLink: 'claimMeta.isConclusion',
   },
@@ -394,6 +400,9 @@ export const KNOWN_DEBT = {
   // recomputed spans brought others in. The set file and these counts had ALREADY been out of step
   // before this batch (set: claims 594, directives 128; baseline: 597, 129), so both records were
   // re-frozen together rather than one being patched to agree with the other.
+  // postsAffected stays 235: the repair removed six OCCURRENCES but no drop lost its last one —
+  // #2211, #4630 and #4632 still carry other over-extended spans. Occurrence count and post count
+  // move independently, which is why both are recorded.
   postsAffected: 235,
   // RECOMPUTED 2026-08-13 after the quote-boundary fix, not bumped to satisfy a gate.
   //
@@ -436,7 +445,11 @@ export const KNOWN_DEBT = {
   // Every one of the 540 was matched back to a row in audit/unhighlighted-owner-rulings.json before
   // the set was re-frozen; the added list is kept in audit/source-boundary-drift.json. A baseline
   // is never moved to make a check pass, and this one moved only because each added row was named.
-  baseline: { questions: 101, directives: 129, claims: 598, emphasis: 0 },
+  // 2026-08-21 abbreviation repair: claims 598 -> 593, questions 101 -> 100. The debt FELL, and it
+  // fell for the right reason: on each affected drop the truncated head and its orphaned tail were
+  // BOTH counted as over-extensions, and one repaired span replaces the pair. 13 rows left the set,
+  // 7 entered it, net -6. Nothing about the detector changed.
+  baseline: { questions: 100, directives: 129, claims: 593, emphasis: 0 },
   // 102 -> 103 and 123 -> 124 on 2026-08-13, ruled BENIGN and documented rather than bumped
   // quietly. Cause: literal-span materialisation. The isolation test now measures the literal
   // form of a question rather than its certified normalised text, and a longer span is

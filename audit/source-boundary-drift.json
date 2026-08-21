@@ -1,8 +1,26 @@
 {
  "added": [
-  "claims::4861|house resolution passed condemning 'qanon'"
+  "questions::2462|>who briefed nunes on classified intel re: hussein spy campaign v. potus?",
+  "claims::2211|“prior to joining nsa, mr. storch served in several positions at the department ",
+  "claims::2211|“earlier in his career, mr. storch also worked as a federal prosecutor in the no",
+  "claims::4521|\"the posse comitatus act, 18 u.s. code, section 1385, an original intent of whic",
+  "claims::4630|democratic former mayor of randolph, nebraska, dwayne l. schutt, was arrested an",
+  "claims::4632|republican city councilman fred c. smeltzer, jr. pleaded no contest to raping a ",
+  "claims::4801|\"while attending college, he served as an intern in the office of delaware sen. "
  ],
  "removed": [
-  "questions::2971|proof = evidence?"
+  "claims::2211|attorney.",
+  "claims::2211|storch served in several positions at the department of justice's oig, including",
+  "claims::2211|“earlier in his career, mr.",
+  "claims::2211|“prior to joining nsa, mr.",
+  "claims::4521|\"the posse comitatus act, 18 u.s.",
+  "claims::4529|rhodes,166 in which the court held that plaintiffs were not barred by the eleven",
+  "claims::4630|democratic former mayor of randolph, nebraska, dwayne l.",
+  "claims::4630|schutt, was arrested and charged with four counts of felony third-degree sexual ",
+  "claims::4632|republican city councilman fred c.",
+  "claims::4632|smeltzer, jr. pleaded no contest to raping a 15 year-old girl and served 6-month",
+  "claims::4801|\"while attending college, he served as an intern in the office of delaware sen.",
+  "questions::2462|>who briefed nunes on classified intel re: hussein spy campaign v.",
+  "questions::2462|potus?"
  ]
 }

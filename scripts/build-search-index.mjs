@@ -221,10 +221,10 @@ const checks = [
   // Every figure below moves with the 2026-08-20 unhighlighted-sentence queue ruling and with
   // nothing else. This step indexes what the materialisers certified; it never decides a count.
   // 6,510 after the 2026-08-21 segmentation repair (8 tails absorbed, 1 duplicate merged).
-  ['Questions indexed = 6,510', bySection.questions === 6510, bySection.questions],
+  ['Questions indexed = 6,503', bySection.questions === 6503, bySection.questions],
   ['Directives indexed = 3,037', bySection.directives === 3037, bySection.directives],
   // 8,934: #4923 "Dearest Virginia -", then the 2026-08-21 batch — #4861, #4893 x2, #4853 x2.
-  ['Claims indexed = 8,934', bySection.claims === 8934, bySection.claims],
+  ['Claims indexed = 8,912', bySection.claims === 8912, bySection.claims],
   // 843: #4910 "Freedom of information [truth] = END".
   ['Predictions indexed = 843', bySection.predictions === 843, bySection.predictions],
   ['Evidence indexed = 6,590', bySection.evidence === 6590, bySection.evidence],

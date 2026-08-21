@@ -3,9 +3,9 @@
  "priority": "highest",
  "postsAffected": 235,
  "baseline": {
-  "questions": 101,
+  "questions": 100,
   "directives": 129,
-  "claims": 598,
+  "claims": 593,
   "emphasis": 0
  },
  "occurrenceBaselineFile": "audit/source-boundary-occurrences.json",

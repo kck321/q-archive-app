@@ -269,7 +269,8 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
       if (m?.isConclusion) conclusions++
     }
   }
-  t('overlap-conclusions', 'conclusions are an attribute of 965 assertions, not a separate count', conclusions === 965, conclusions)
+  // 965 -> 964: the 2026-08-21 abbreviation repair absorbed tail fragments carrying the attribute; it travels with the ROW.
+  t('overlap-conclusions', 'conclusions are an attribute of 964 assertions, not a separate count', conclusions === 964, conclusions)
 
   t('overlap-declared', 'every overlap pair has a written rule', OVERLAPS.every(o => o.why && o.crossLink), OVERLAPS.length)
 }
@@ -461,7 +462,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   // 81 carries the 2026-08-21 owner ruling on #4923: "Dearest Virginia -" moves Context -> Claim.
   // Context does not paint, so a reader stuck on 80 sees that drop open with an unhighlighted line
   // above five classified ones — the exact complaint that produced the ruling.
-  t('seed-current', 'SEED_VERSION is 83 (2026-08-21 ruling batch + segmentation repair)', seed === 83, seed)
+  t('seed-current', 'SEED_VERSION is 84 (abbreviation/sentence-boundary repair)', seed === 84, seed)
   t('seed-gate', 'seeding is gated on SEED_VERSION', /seeded === SEED_VERSION/.test(localData), 'present')
 
   // THE GUARD THAT WOULD HAVE SAVED THREE ROUND TRIPS. Changing seeded data without bumping the
@@ -1404,8 +1405,8 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     t('rel-ce', 'Entity ↔ Code edges come from the 32 stored cross-links',
       new Set(edges.filter(e => e.type === 'entity_code').map(e => e.from.id)).size === 32,
       new Set(edges.filter(e => e.type === 'entity_code').map(e => e.from.id)).size)
-    t('rel-conclusions', 'Claim → Conclusion edges = the certified 965', bt.claim_conclusion === 965, bt.claim_conclusion)
-    t('rel-source', 'Claim → Source provided edges = the certified 439', bt.claim_source_provided === 439, bt.claim_source_provided)
+    t('rel-conclusions', 'Claim → Conclusion edges = the certified 964', bt.claim_conclusion === 964, bt.claim_conclusion)
+    t('rel-source', 'Claim → Source provided edges = the certified 438', bt.claim_source_provided === 438, bt.claim_source_provided)
     // Read from the contract: a prediction IS an assertion, so this edge count is Predictions'
     // figure and not a second opinion about it. The literal went stale on the 2026-08-20 ruling.
     t('rel-predictions', `Prediction → assertion edges = the certified ${CANONICAL.predictions.occurrences.toLocaleString()}`,

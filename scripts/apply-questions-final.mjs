@@ -25,6 +25,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { clean, key, unitsFor } from './lib/segment.mjs'
+import { loadAbbrevRepairs } from './lib/abbrevRepairs.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -216,22 +217,31 @@ const queueStats = { added: 0, already: 0 }
 //
 // Layered here for the reason every other overlay is: written into the deriving audit it would be
 // erased the next time that audit ran.
-const SEGFIX = path.join(ROOT, 'audit/questions-segmentation-fixes.json')
+// The canonical record moved: audit/abbreviation-span-repairs.json now holds this defect for EVERY
+// category, Questions included, so there is one file to read rather than one per section that
+// happened to notice it. See scripts/lib/abbrevRepairs.mjs.
+const SEGFIX = path.join(ROOT, 'audit/abbreviation-span-repairs.json')
 let segFixed = 0, segWithdrawn = 0, segMerged = 0
 if (fs.existsSync(SEGFIX)) {
-  const segFixes = JSON.parse(fs.readFileSync(SEGFIX, 'utf8')).fixes ?? []
-  const wanted = new Map(segFixes.map(f => [`${f.postNum}|${f.truncated}`, f.full]))
+  const segFixes = (JSON.parse(fs.readFileSync(SEGFIX, 'utf8')).repairs ?? []).filter(f => f.category === 'questions')
+  // Matched through the SHARED loader, which normalises whitespace and case, rather than by exact
+  // string equality. #1319 stores "Patrick Meehan - Republican	U.S." with a literal tab and the
+  // artifact records the flattened form, so an exact lookup silently missed one repair and the
+  // refuse-rather-than-under-apply gate below is what caught it. Every category now matches the
+  // same way.
+  const abbrev = loadAbbrevRepairs(ROOT)
   for (const r of rows) {
     for (const field of ['text', 'unitText']) {
-      const full = wanted.get(`${r.postNum}|${r[field]}`)
+      const full = abbrev?.fullFor('questions', r.postNum, r[field])
       if (full && r[field] !== full) { r[field] = full; segFixed++; r.segmentationFixed = true }
     }
   }
   // Refuse rather than under-apply, the same rule the question rulings use above: a fix that stops
   // matching leaves the truncated span certified with no error to show for it.
   const expect = segFixes.length
+  const nrm = t => String(t ?? '').toLowerCase().replace(/\s+/g, ' ').trim()
   const hit = new Set(rows.flatMap(r => segFixes
-    .filter(f => f.postNum === r.postNum && (r.text === f.full || r.unitText === f.full))
+    .filter(f => f.postNum === r.postNum && (nrm(r.text) === nrm(f.full) || nrm(r.unitText) === nrm(f.full)))
     .map(f => `${f.postNum}|${f.truncated}`))).size
   if (hit !== expect) {
     console.error(`\nSegmentation fixes: ${expect} recorded, ${hit} landed. Refusing to write a half-applied correction.\n`)
@@ -246,13 +256,22 @@ if (fs.existsSync(SEGFIX)) {
   // tail — one span, two Questions, the same-category overlap the owner ruled against.
   //
   // Absorbed, not deleted: the words stay in the archive inside the full span, counted once.
-  const drop = JSON.parse(fs.readFileSync(SEGFIX, 'utf8')).withdrawn?.fragments ?? []
+  const drop = (JSON.parse(fs.readFileSync(SEGFIX, 'utf8')).withdrawn ?? []).filter(w => w.category === 'questions')
   const dropKeys = new Set(drop.map(d => `${d.postNum}|${key(d.fragment)}`))
   const before = rows.length
   rows = rows.filter(r => !dropKeys.has(`${r.postNum}|${key(r.text)}`))
   segWithdrawn = before - rows.length
-  if (segWithdrawn !== drop.length) {
-    console.error(`\nSegmentation withdrawals: ${drop.length} recorded, ${segWithdrawn} matched. Refusing to half-apply.\n`)
+  // WHAT HAS TO BE TRUE IS ABSENCE, NOT A REMOVAL COUNT.
+  //
+  // Counting removals reported a half-applied correction whenever a fragment had ALREADY been
+  // absorbed on an earlier run and the sources no longer re-add it — the same false alarm the
+  // owner-ruling gate above had to be rewritten for, for the same reason. Assert that no recorded
+  // fragment is left standing, which is the property the ruling actually demands.
+  const stillThere = drop.filter(d => rows.some(r => r.postNum === d.postNum && key(r.text) === key(d.fragment)))
+  if (stillThere.length) {
+    console.error(`\nSegmentation withdrawals: ${stillThere.length} of ${drop.length} fragments are still certified. Refusing to half-apply.`)
+    for (const d of stillThere.slice(0, 10)) console.error(`   #${d.postNum} ${JSON.stringify(d.fragment).slice(0, 70)}`)
+    console.error('')
     process.exit(1)
   }
 
@@ -314,7 +333,10 @@ const checks = [
   // questions repaired from the initial-splitting defect, and one repair produced a second copy of
   // a row that was already correct. No question left the archive: the same words are certified
   // once, whole, instead of twice, in halves.
-  ['certified occurrences = 6,510', counted.length === 6510, counted.length],
+  // 6,510 -> 6,503 on 2026-08-21: seven more tail fragments absorbed by the abbreviation repair
+  // ("US?", "Graham's speech today?", "Flake's choice to step down?"). Each is now inside the
+  // repaired question rather than beside it.
+  ['certified occurrences = 6,503', counted.length === 6503, counted.length],
   ['queue rulings applied = 67', queueStats.added + queueStats.already === 67,
     `${queueStats.added} added + ${queueStats.already} already certified`],
   ['every owner question ruling is in the set = 12', ownerQuestions + ownerAlreadyPresent === 12 && ownerMissing.length === 0,
@@ -325,7 +347,10 @@ const checks = [
   // +58: 65 new occurrences carrying 58 wordings Questions did not already hold.
   // -8: each absorbed tail fragment held its own key ("Merkel?", "Gov't kept in the DARK?"). The
   // ninth removal was a duplicate, which by definition shared a key and so costs distinct nothing.
-  ['distinct (canonical key) = 5,363', distinct.size === 5363, distinct.size],
+  // -5, every key accounted for: 11 disappear (6 truncated heads plus the 5 absorbed tails that
+  // occurred nowhere else) and 6 appear — the repaired wordings. #70 and #76 ask the same question
+  // and share one key both before and after.
+  ['distinct (canonical key) = 5,358', distinct.size === 5358, distinct.size],
   // +4: #1975, #2420, #2695 and #2776 had no certified question before these rulings.
   // +5 posts gain their first certified question.
   ['posts with questions = 1,705', postsWith.size === 1705, postsWith.size],
@@ -335,7 +360,7 @@ const checks = [
 ]
 
 console.log('\nAPPLY FINAL CERTIFIED QUESTIONS\n')
-console.log(`  segmentation spans fixed  : ${segFixed} field(s) across the recorded 10 questions`)
+console.log(`  segmentation spans fixed  : ${segFixed} field(s) across the recorded question repairs`)
 console.log(`  fragment tails withdrawn  : ${segWithdrawn} (absorbed into the repaired span)`)
 console.log(`  duplicate rows merged     : ${segMerged} (repair produced a copy of a row already correct)`)
 console.log(`  carried from the live set : ${stats.carried.toLocaleString()}`)
