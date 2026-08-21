@@ -1,53 +1,87 @@
-# Q Drops — Step 3 review pack
+# Q Drops — Step 3 review pack (revision 2)
 
-Self-contained. You do not need the repository: every decision below carries its own evidence.
+Self-contained. Every decision carries its own evidence.
+
+**Revision 2 corrects three defects in revision 1**, all found by outside review:
+
+1. Context was located by matching the first 40 characters of a sentence, which returns the
+   FIRST matching line. On drops where Q repeats a line — `"Fantasy land."` four times in #111 —
+   three of four occurrences were shown the wrong context. Context is now taken from the
+   occurrence's own character offsets.
+2. The signature filter removed *every* standalone `Q` line. 15 drops carry a standalone `Q`
+   inside the body, and the ruling includes those. Signature detection is now positional.
+3. The `Q`/`QAnon`/`Anons` counts were not source-aware, so greentext excerpts and pasted
+   articles counted as Q writing the word. They now run through the archive's own
+   source-boundary detector.
+
+Row-level companions (every record, not samples):
+
+| file | contents |
+|---|---|
+| `STEP3-117-MULTI-PRIMARY.jsonl` | all 117, with sentence text and drop context |
+| `STEP3-51-SAME-CATEGORY.csv` | all 51 primary-layer same-category overlaps |
+| `STEP3-242-BOUNDARY-CROSSINGS.csv` | all 242, with every sentence each span touches |
+| `STEP3-645-UNLOCATED-ENTITIES.csv` | all 645, with the aliases attempted and the drop text |
+| `STEP3-148-DUPLICATE-KEYS.csv` | all 148, with both records' text and whether they agree |
+| `STEP3-Q-QANON-ANONS-CANDIDATES.csv` | every candidate, included AND excluded, with the reason |
 
 ---
 
 ## What this project is
 
 A research tool over the 4,966 "Q" posts (2017-2020). Every drop is decomposed into what it
-asked, claimed, predicted and named, so any phrase can be traced across the archive. The
-classifications are *certified*: each one is an adjudicated record with provenance, not a
-runtime guess. The owner rules; the code materialises the ruling.
+asked, claimed, predicted and named. Classifications are *certified*: each is an adjudicated
+record with provenance, not a runtime guess. The owner rules; the code materialises the ruling.
 
-Local build is ahead of production and **not deployed**. Production is untouched.
+Local build is ahead of production and **not deployed**.
 
-## The layer model (settled, 2026-08-21)
+## The layer model
 
 | layer | kinds | rule |
 |---|---|---|
-| **primary** | Claim, Prediction, Question, Directive | one adjudicated category per complete sentence |
+| **primary** | Claim, Prediction, Question, Directive | one *painted* category per complete sentence |
+| **secondary** | any other genuinely certified meaning | counted and searchable, **does not paint** |
 | **inline** | Named Entity, `[Bracket]` | may overlap a primary span; renders *above* it |
 | **review** | Context, Emphasis, theme anchor | a disposition, not a competing sentence colour |
 
-An occurrence is keyed `postNum | kind | startOffset | endOffset`, never by its text. Repeated
-wording therefore stays separate: `"Fantasy land."` written four times in drop #111 is four
-distinct occurrences, not one.
+The secondary layer is new in revision 2, and it resolves a contradiction revision 1 carried:
+the model said "one category per sentence" while also protecting 220 directive+question pairs.
+Both cannot be *painted*. They can both be *certified*.
 
 ## Constraints any proposal must respect
 
 1. **Q's literal wording is never rewritten.** A span is taken from the drop, never retyped.
-2. **Quoted/source material stays separate from Q-authored.** Pasted news must never be
-   certified as Q asserting it.
+2. **Quoted/source material stays separate from Q-authored.**
 3. **In-post repeats are real.** Identical wording in one drop is multiple occurrences.
-4. **No automatic category-precedence rule.** "Claim always beats Directive" is explicitly
-   rejected; a conflict needs an adjudicated answer or a stated shape rule.
-5. **Certified counts only move with a recorded reason**, asserted at the line that checks them.
-6. Two overlaps are **deliberate** and must survive: the directive+question pair (a line that is
-   grammatically an instruction and functionally a request for an answer), and nested named
-   entities (`US` inside `US Military`), which each keep their own hover explanation.
+4. **No automatic category-precedence rule.** A conflict needs an adjudicated answer or a
+   stated shape rule that can be checked afterwards.
+5. **Certified counts move only with a recorded reason**, asserted at the line that checks them.
+
+---
+
+# OPEN QUESTION — is Theme a primary category?
+
+Revision 1 defined the primary layer as Claim, Prediction, Question, Directive and said nothing
+about **Themes**, which the archive also certifies. That was an omission, not a decision.
+
+The data: themes are stored as a taxonomy label per drop (`themes`) plus a `themeAnchors` array
+naming the words in the drop that evidence the theme. An anchor is a *fragment* — `"God bless"`,
+"convicted" — not a complete sentence. On that evidence a theme anchor behaves like an inline
+annotation and a theme like a drop-level tag, and neither is a sentence-level primary category.
+
+**This needs an explicit ruling before 3B**, because if Theme *is* primary then some of the 117
+conflicts and some of the 1,531 review-layer collisions are the wrong shape.
 
 ---
 
 # DECISION 1 — 117 sentences carry two primary categories
 
-Each of these sentences is certified in **two** primary sections at once. Under the layer model
-exactly one may be primary. The other must either be withdrawn, or re-expressed as a
-non-competing layer.
+Each is certified in two primary sections at once. Under the layer model exactly one may be
+**painted**; the other becomes a non-painting secondary classification, or is withdrawn if it
+was a fragment, a splitter artifact, a duplicate or a mistake.
 
-A further **220** sentences carry the directive+question pair. Those are a *certified,*
-*deliberate* overlap and are **not** in scope here.
+A further **220** sentences carry the directive+question pair. Under revision 2 they are the
+same shape as these — one painted primary, one secondary — and are no longer treated as exempt.
 
 | combination | count |
 |---|---|
@@ -57,16 +91,7 @@ A further **220** sentences carry the directive+question pair. Those are a *cert
 | claims + questions | 19 |
 | claims + predictions | 1 |
 
-### The question for you
-
-Is there a **shape rule** that resolves each group, or must these be ruled row by row? For
-example one candidate rule is *"a line beginning `Expect ...` is a Prediction, not a Directive"*.
-If a shape rule is right, state it precisely enough to be executed and to be checked afterwards.
-If a group has no clean rule, say so — row-by-row adjudication is an acceptable answer.
-
-Also: when a sentence genuinely is both — an instruction that also asserts a fact — should the
-loser be **withdrawn entirely**, or retained as a non-painting secondary attribute (the way the
-directive+question pair is retained as a relationship edge)?
+Full rows with context: `STEP3-117-MULTI-PRIMARY.jsonl`. Reproduced below for reading.
 
 ## directives + predictions — 27 sentences
 
@@ -1165,25 +1190,25 @@ directive+question pair is retained as a relationship edge)?
 **#2072** `p2072-s013` — *claims + questions*
 
 ```
-    But… SESSIONS & HUBER are following standard DOJ open/ongoing investigation policy by not discussing [making public] so therefore nothing must be happening [FIRE SESSIONS!]
     But… HUBER [ability to prosecute + empanel a grand jury outside of DC [90%+ voted HRC (2016)], who already began the investigation(s) late last year w/ assigned team of 470 investigators (attorneys) + IG + legal jurisdiction across all 50 states, is not a ‘special counsel’ so therefore nothing is being done
     But… POTUS is attacking SESSIONS via TWITTER so therefore he is not working on behalf of the people’s interest (or POTUS’) [D’s/LEFT LOVE/TRUST SESSIONS!]
->>> But… interestingly, if nothing is being done behind the scenes, why are so many FBI & DOJ senior officials being FIRED and/or REMOVED from their respective positions of power? Who is AG? Who must sign off on each removal? DOJ in charge of FBI?
-    But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v. X?]? Coincidence vs. HUBER start?
+    But… interestingly, if nothing is being done behind the scenes, why are so many FBI & DOJ senior officials being FIRED and/or REMOVED from their respective positions of power? Who is AG? Who must sign off on each removal? DOJ in charge of FBI?
+>>> But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v. X?]? Coincidence vs. HUBER start?
     But… interestingly, if nothing is being done behind the scenes, why are many ‘powerful’ CEOs, members of Congress/ Senate, resigning? Coincidence? Example: Pre_POTUS did the SPEAKER OF THE HOUSE indicate wanting to leave politics?
     But… interestingly, if nothing is being done behind the scenes, why are human trafficking arrests SURGING?
+    ………………….
 ```
 
 **#2211** `p2211-s041` — *claims + questions*
 
 ```
-    But… SESSIONS & HUBER are following standard DOJ open/ongoing investigation policy by not discussing [making public] so therefore nothing must be happening [FIRE SESSIONS!]
     But… HUBER [ability to prosecute + empanel a grand jury outside of DC [90%+ voted HRC (2016)], who already began the investigation(s) late last year w/ assigned team of 470 investigators (attorneys) + IG + legal jurisdiction across all 50 states, is not a ‘special counsel’ so therefore nothing is being done
     But… POTUS is attacking SESSIONS via TWITTER so therefore he is not working on behalf of the people’s interest (or POTUS’) [D’s/LEFT LOVE/TRUST SESSIONS!]
->>> But… interestingly, if nothing is being done behind the scenes, why are so many FBI & DOJ senior officials being FIRED and/or REMOVED from their respective positions of power? Who is AG? Who must sign off on each removal? DOJ in charge of FBI?
-    But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v. X?]? Coincidence vs. HUBER start?
+    But… interestingly, if nothing is being done behind the scenes, why are so many FBI & DOJ senior officials being FIRED and/or REMOVED from their respective positions of power? Who is AG? Who must sign off on each removal? DOJ in charge of FBI?
+>>> But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v. X?]? Coincidence vs. HUBER start?
     But… interestingly, if nothing is being done behind the scenes, why are many ‘powerful’ CEOs, members of Congress/ Senate, resigning? Coincidence? Example: Pre_POTUS did the SPEAKER OF THE HOUSE indicate wanting to leave politics?
     But… interestingly, if nothing is being done behind the scenes, why are human trafficking arrests SURGING?
+    Nothing to See Here.
 ```
 
 **#2211** `p2211-s011` — *claims + questions*
@@ -1343,17 +1368,10 @@ directive+question pair is retained as a relationship edge)?
 
 # DECISION 2 — 51 same-category overlaps in the primary layer
 
-Two spans of the *same* category covering overlapping characters. The owner's rule is that this
-must not happen: the fuller span should replace the fragment. Most are nested.
+Two spans of the same category covering overlapping characters. Full rows with sentence text and
+context: `STEP3-51-SAME-CATEGORY.csv`.
 
-600 further overlaps sit in the inline/review layers and overlap **by design** — they are out of
-scope.
-
-### The question for you
-
-Is "keep the longer span, drop the shorter" always right here? Look especially at rows where
-`nested` is `false` — those are partial overlaps, not containment, and a longest-wins rule may
-not be safe.
+Nested (one fully contains the other): **35**. Partial overlap: **16** — longest-wins is not obviously safe for these.
 
 | post | sentence | kind | nested | span A | span B |
 |---|---|---|---|---|---|
@@ -1409,17 +1427,20 @@ not be safe.
 | #563 | `p0563-s009` | claims | true | "THEY WANT YOU DIVIDED" | "THEY WANT YOU DIVIDED." |
 | #99 | `p0099-s023` | questions | true | "Cooper family background?" | "A. Cooper family background?" |
 
+**Nested named entities** (`US` inside `US Military`) are a separate matter, and revision 1 put
+them out of scope on the grounds that each keeps its own hover explanation. Outside review
+rejected that: the no-same-category-overlap rule should hold for entities too, with both
+identities preserved as metadata on composed atomic runs rather than as two painted spans.
+There are **218** such overlaps. They are in scope for Step 4, not Step 3B.
+
 ---
 
 # DECISION 3 — 3 source-boundary exceptions
 
-A sentence splitter cut certified spans at abbreviations (`Mr.`, `Lt. Gen.`, `U.S.`, `Harris v.`).
-114 were repaired. **Three were refused**, because completing them would extend a *Q-authored*
-classification into text already recorded as an **editorial paraphrase** — pasted source
-material. Two of the three carry Q's `>` quote marker.
-
-Shipping a knowingly truncated highlight also violates the full-sentence rule, so neither
-leaving them nor completing them is currently correct.
+A splitter cut certified spans at abbreviations. 114 were repaired; **three were refused**,
+because completing them would extend a *Q-authored* classification into text already recorded as
+an editorial paraphrase. Two carry Q's `>` quote marker; the third sits under a `WASH POST:`
+header.
 
 ### #2653 — claims
 
@@ -1427,7 +1448,6 @@ leaving them nor completing them is currently correct.
 - **would have become:** ">Condemned the Supreme Court’s ruling in Harris v. McRae and claimed that taxpayer-funded abortions should be a constitutional right."
 - **refused because:** full span is a stored editorial paraphrase (pasted source material)
 
-Drop context:
 ```
     >An indefatigable censor, Ginsburg listed hundreds of “sexist” words that must be eliminated from all statutes. Among words she found offensive were: man, woman, manmade, mankind, husband, wife, mother, father, sister, brother, son, daughter, serviceman, longshoreman, postmaster, watchman, seamanship, and “to man” (a vessel). (Pages 15-16)
     >Wanted he, she, him, her, his, and hers to be dropped down the memory hole. They must be replaced by he/she, her/him, and hers/his, and federal statutes must use the bad grammar of “plural constructions to avoid third person singular pronouns.” (Page 52-53)
@@ -1442,7 +1462,6 @@ Drop context:
 - **would have become:** "“The heads of the Pentagon and the nation’s intelligence community have recommended to President Obama that the director of the National Security Agency, Adm. Michael S. Rogers, be removed."
 - **refused because:** full span is a stored editorial paraphrase (pasted source material)
 
-Drop context:
 ```
     [Brennan][Clapper][Carter] push to TERM _NSA Mike Rogers [date]?
     WASH POST:
@@ -1457,7 +1476,6 @@ Drop context:
 - **would have become:** ">DENY PROPER COUNTING U.S. CENSUS > AVOID PUBLIC KNOWLEDGE REAL ‘ILLEGAL’ POP TO AVOID VOTER FRAUD % RISK TO ELECTIONS"
 - **refused because:** full span is a stored editorial paraphrase (pasted source material)
 
-Drop context:
 ```
     >PUSH TALING POINTS RE: VOTER AGE SHOULD DECREASED FROM 18 TO 16
     >NO WALL – OPEN BORDERS – ALL WECLOME = MORE [D] VOTES
@@ -1466,116 +1484,76 @@ Drop context:
     Q
 ```
 
-### The question for you
-
-For each: reconstruct the full lifted sentence and store it as `quoted_source` / non-Q-authored,
-or withdraw the partial highlight entirely and keep a `SOURCE_BOUNDARY_EXCEPTION` record? Is
-there a principled way to tell which of the two applies, or is it case by case?
-
 ---
 
 # DECISION 4 — the conflict queue
 
-None of these is auto-resolved. Each needs a disposition.
+**Every row is in the companion CSVs.** Summary only here.
 
-## 242 spans cross a sentence boundary
+## 242 spans crossing a sentence boundary
 
-A certified span that starts in one sentence and ends in another. The ruling says do **not** cut
-them automatically. Options: re-adjudicate to one sentence, split into two occurrences, or allow
-a multi-sentence span as a legitimate shape.
+`STEP3-242-BOUNDARY-CROSSINGS.csv` — each row lists every sentence the span touches, and a flag
+for whether those sentences all sit on one line (two sentences of one line joined) or straddle a
+line break (a different problem).
 
-Examples:
+## 645 spans that could not be located in the drop text
 
-- **#1012** "\"Our thoughts and prayers are with the four U.S. Marines from the 3rd Marine Aircraft Wing who lost their lives in yesterday’s Southern California hel"
-- **#1015** "Omnibus Bill.\nThe gift that keeps on giving."
-- **#1090** "What was delivered?\nSmiles."
-- **#1098** "DC access.\nSold out."
-- **#1192** "Q&A \n5 min."
-- **#120** "They think you are stupid. Puppets w/o power. They want your guns. Why? No power left."
-- **#1237** "The Ikhwan [Muslim Brotherhood] must understand that their work in America is a kind of grand jihad in eliminating and destroying the Western civiliza"
-- **#1253** "https:// www.grassley.senate.gov/news/news-releases/grassley-refers-planned-parenthood-fetal-tissue-procurement-organizations-fbi\nhttp:// www.foxnews."
-- **#1280** "[30]\nhttp://www.foxnews.com/politics/2018/04/27/house-report-backs-claim-that-fbi-agents-did-not-think-flynn-lied-despite-guilty-plea.html"
-- **#1284** "http://www.foxnews.com/politics/2017/12/01/michael-flynn-charged-in-special-counsels-russia-investigation.html\nhttp://www.foxnews.com/politics/2018/04"
-- **#1285** "http://thehill.com/homenews/administration/337182-trump-considered-mueller-for-fbi-director-before-he-was-named-special\nhttps://www.npr.org/2017/06/09"
-- **#1286** "http://www.foxnews.com/politics/2018/04/19/rosenstein-tells-trump-is-not-target-cohen-investigation.html\nhttp://www.foxnews.com/politics/2018/04/03/mu"
-
-## 645 spans could not be located in the drop text
-
-By kind: {"namedEntities":643,"themeAnchors":2}
-
-Almost all are **named entities**. `namedEntities` records the canonical *identity* present in a
-drop, not a literal span — a post writing `BO` is recorded as `Hussein`. These resolve through an
-alias registry; the ones listed here did not resolve under the canonical name or any registered
-spelling. Examples:
-
-- **#1008** `namedEntities` "Hussein"
-- **#1008** `namedEntities` "Hussein"
-- **#1008** `namedEntities` "Hussein"
-- **#1008** `namedEntities` "America"
-- **#1010** `namedEntities` "Rothschild"
-- **#1010** `namedEntities` "The Fed"
-- **#1054** `namedEntities` "Ray Chandler"
-- **#1082** `namedEntities` "JFK Jr."
-- **#1086** `namedEntities` "NO NAME"
-- **#1092** `namedEntities` "NO NAME"
-- **#1094** `namedEntities` "US Senate"
-- **#1098** `namedEntities` "Hussein"
-
-### The question for you
-
-Is an entity whose spelling cannot be found in the drop a data defect (the identity should not
-be on that post), a *registry gap* (the spelling Q used is missing from the alias list), or a
-legitimate inference (Q referred to the person without naming them)? The answer decides whether
-these are fixed, queued for the owner, or accepted as-is.
+`STEP3-645-UNLOCATED-ENTITIES.csv` — each row carries the identity, every registered alias that
+was attempted, and the full drop text, so a reviewer can see whether the spelling Q used is
+simply missing from the registry or whether no literal reference exists at all.
 
 ## 148 duplicate occurrence keys
 
-Two records claiming the same post, kind and character range. Under the new model these are the
-same occurrence recorded twice.
+`STEP3-148-DUPLICATE-KEYS.csv`. **106** of them hold identical text and are safe to merge; **42** hold *different* text at the same offsets and need a decision.
 
 ---
 
-# DECISION 5 — the entity sweep, already ruled but not yet run
+# DECISION 5 — the Q / QAnon / Anons sweep
 
-The owner has ruled that `Q`, `QAnon` and `Anon`/`Anons` become Named Entities everywhere they
-occur meaningfully in **Q-authored body text**, with:
+`STEP3-Q-QANON-ANONS-CANDIDATES.csv` lists **every** candidate the sweep would consider —
+included and excluded — with the reason for each exclusion, at exact offsets.
 
-- terminal standalone `Q` / `Q+` signature lines excluded
-- `QAnon` as one longest-match span — no nested `Q` or `Anon` inside it
-- `Anon`/`Anons`/`Anon(s)` folded to a single `Anons` identity, no nested `Anon`
-- no `Q` from `Q&A`, URLs, `/qresearch/` paths, filenames, tripcodes, or FAQ `Q:` labels
-- no `Anon` inside `QAnon`, `anonymous`, `anonymously`
-- quoted-post and image/OCR matches kept as separate evidence, never added to Q-authored totals
+| term | candidates | included | excluded | distinct posts (included) |
+|---|---|---|---|---|
+| Q | 4521 | 137 | 4384 | 112 |
+| QAnon | 158 | 153 | 5 | 49 |
+| Anons | 112 | 111 | 1 | 109 |
 
-Current raw counts in Q-authored body text (signature lines already excluded):
+Deduplicated union of posts with at least one included occurrence: **259**.
 
-| term | posts |
+Exclusions by reason:
+
+| reason | count |
 |---|---|
-| `Q` in body | 116 |
-| `Anon`/`Anons` | 111 |
-| `QAnon` | 52 |
+| terminal signature | 4346 |
+| URL or path | 15 |
+| Q&A — Q means Question | 8 |
+| source material — sustained prose block — pasted or quoted passage | 6 |
+| FAQ label "Q:" — Q means Question | 4 |
+| Q clearance / Q fever — not the persona | 2 |
+| source material — excerpt beneath a source link | 2 |
+| source material — dictionary entry (continuation) | 2 |
+| source material — greentext excerpt | 2 |
+| technical code (Q-T2810C) | 1 |
+| source material — inside a multi-line quotation | 1 |
+| source material — quoted FAQ question | 1 |
 
 ### The question for you
 
-The exclusion list above was written from a handful of observed cases. What *else* would a
-token-aware sweep get wrong on a 4,966-post corpus of chan-board text? Q writes in fragments,
-acronyms, timestamps, tripcodes and pasted headlines. Name the failure modes worth guarding
-before this runs, and say how each should be detected.
+These exclusions were written from the ruling plus observed cases. On a 4,966-post corpus of
+chan-board text — fragments, acronyms, timestamps, tripcodes, pasted headlines — what else would
+this get wrong, and how should each failure be detected? The CSV lets you check the actual rows
+rather than reason from the rule list.
 
 ---
 
 # Summary of what is being asked
 
-1. A shape rule, or row-by-row rulings, for the 117 two-category sentences — and whether the
-   losing category is withdrawn or retained as a non-painting attribute.
-2. Whether "longest span wins" is safe for the 51 same-category overlaps, especially the
-   non-nested ones.
-3. A disposition for each of the 3 source-boundary exceptions.
-4. How to treat the conflict queue: 242 boundary-crossing spans, 645 unlocatable entities,
-   148 duplicate keys.
-5. Failure modes to guard before the archive-wide `Q` / `QAnon` / `Anons` entity sweep.
-
-Anything that changes a certified count needs a stated reason, because every count in this
-archive is asserted at the line that checks it and moving one silently is the failure mode this
-whole process exists to prevent.
+1. Is **Theme** a primary sentence category, or a drop-level tag with inline anchors?
+2. Shape rules or row-by-row rulings for the 117 — and confirmation that the losing category
+   becomes a non-painting **secondary**, not a deletion, unless it was a genuine error.
+3. Whether longest-wins is safe for the 51, especially the non-nested ones.
+4. A disposition for the 3 source-boundary exceptions.
+5. Dispositions for the conflict queue, from the full CSVs.
+6. Failure modes still missing from the entity sweep.
 

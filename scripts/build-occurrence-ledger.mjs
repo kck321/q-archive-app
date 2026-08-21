@@ -88,6 +88,7 @@ function spansOf(p) {
 
 const ledger = []
 const unlocated = []
+const crossingRows = []
 let crossing = 0
 
 for (const p of posts) {
@@ -114,7 +115,19 @@ for (const p of posts) {
     taken.set(usedKey, already + 1)
     const [start, end] = hit
     const holder = sentences.find(s => start >= s.start && end <= s.end)
-    if (!holder) crossing++
+    if (!holder) {
+      crossing++
+      // The sentences the span actually touches, so a reviewer can see whether it is two adjacent
+      // sentences wrongly joined, a quotation running into Q's own words, or a bad offset.
+      const touched = sentences.filter(s => start < s.end && s.start < end)
+      crossingRows.push({
+        occurrenceKey: `${p.postNum}|${kind}|${start}|${end}`,
+        postNum: p.postNum, kind, layer: LAYER[kind], start, end, text,
+        sentencesTouched: touched.length,
+        sentenceIds: touched.map(s => s.sentenceId),
+        sentenceTexts: touched.map(s => s.text),
+      })
+    }
     ledger.push({
       key: `${p.postNum}|${kind}|${start}|${end}`,
       postNum: p.postNum, kind, layer: LAYER[kind], start, end, text,
@@ -126,6 +139,18 @@ for (const p of posts) {
     })
   }
   for (const s of sentences) byId.set(s.sentenceId, s)
+}
+
+// Duplicate occurrence keys — two records claiming the same post, kind and range. Under the new
+// model that is one occurrence recorded twice; the rows are emitted so the metadata on each can be
+// compared before either is dropped.
+const seenKey = new Map()
+const duplicateRows = []
+for (const o of ledger) {
+  const prior = seenKey.get(o.key)
+  if (prior) duplicateRows.push({ occurrenceKey: o.key, postNum: o.postNum, kind: o.kind,
+    start: o.start, end: o.end, textA: prior.text, textB: o.text, identicalText: prior.text === o.text })
+  else seenKey.set(o.key, o)
 }
 
 // ── What 3B would do, sentence by sentence ───────────────────────────────────
@@ -242,6 +267,8 @@ const report = {
     reviewLayerCollisions: { count: contextCollision.length, note: 'A Context/Emphasis span on exactly the characters of a primary span. Becomes a reviewDisposition, not a second category.' },
     unlocatedSpans: { count: unlocated.length, note: 'A certified span the ledger could not place in the runtime body. Each is a conflict-queue row, never a silent drop.' },
   },
+  crossingRows,
+  duplicateRows,
   replacements,
   multiPrimary,
   sameCategoryOverlap,

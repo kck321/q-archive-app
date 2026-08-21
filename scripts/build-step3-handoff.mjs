@@ -1,15 +1,29 @@
-// Build a SELF-CONTAINED review document for the open Step 3 decisions.
+// Build the Step 3 review pack and its row-level companions.
 //
 // The reader has no access to this repository, so every row carries its own evidence: the drop
-// number, the sentence, the categories in conflict, and the lines around it in the drop. A
-// reviewer who has to ask "what does #1155 actually say?" cannot answer the question being put.
+// number, the occurrence key, the exact offsets, the sentence, and the lines around it.
 //
 //   node scripts/build-step3-handoff.mjs
+//
+// THREE CORRECTIONS FROM THE 2026-08-21 OUTSIDE REVIEW, each of which had produced a real defect:
+//
+//   1. CONTEXT WAS FOUND BY TEXT, NOT BY OFFSET. `lines.findIndex(l => l.includes(text))` returns
+//      the FIRST matching line — so on #111, where Q writes "Fantasy land." four times, three of
+//      the four occurrences were shown the context of the first. A pack that says repeated wording
+//      is separate occurrences cannot then locate them by wording. Context now comes from the
+//      occurrence's own start/end offsets.
+//   2. THE SIGNATURE FILTER REMOVED EVERY STANDALONE "Q" LINE, not only the terminal one. 15 drops
+//      carry a standalone Q inside the body, and the ruling is explicit that a meaningful Q is
+//      included and only the trailing signature is excluded. Now positional.
+//   3. THE Q-AUTHORED COUNTS WERE NOT SOURCE-AWARE. They regex'd the rendered text, so greentext
+//      excerpts and pasted articles counted as Q writing the word. Now filtered through
+//      sourceLines(), the archive's own source-boundary detector.
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { sentencesFor } from './lib/sentenceLedger.mjs'
+import { sentencesFor, occurrencesOfSpan } from './lib/sentenceLedger.mjs'
 import { runtimeText } from './lib/runtimeText.mjs'
+import { sourceLines } from './lib/quotedBlocks.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -17,280 +31,421 @@ const dry = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit', 'occurrence-ledg
 const posts = JSON.parse(fs.readFileSync(path.join(DATA, 'posts.json'), 'utf8'))
 const byNum = new Map(posts.map(p => [p.postNum, p]))
 const abbrev = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit', 'abbreviation-span-repairs.json'), 'utf8'))
+const entitiesDoc = JSON.parse(fs.readFileSync(path.join(DATA, 'entities.json'), 'utf8'))
 
+const sentenceCache = new Map()
+const sentencesOf = postNum => {
+  if (!sentenceCache.has(postNum)) sentenceCache.set(postNum, sentencesFor(byNum.get(postNum)?.text, postNum))
+  return sentenceCache.get(postNum)
+}
+
+/**
+ * The drop around a CHARACTER RANGE, with the covered lines marked.
+ *
+ * Offsets, never text. See correction 1 in the module note.
+ */
+function contextAt(postNum, start, end, radius = 3) {
+  const post = byNum.get(postNum)
+  if (!post) return ['(drop not found)']
+  const text = runtimeText(post.text)
+  const lines = []
+  let at = 0
+  for (const raw of text.split('\n')) {
+    lines.push({ raw: raw.trim(), start: at, end: at + raw.length })
+    at += raw.length + 1
+  }
+  const first = lines.findIndex(l => l.end > start)
+  const last = lines.findIndex(l => l.start >= end)
+  const hiFrom = first < 0 ? 0 : first
+  const hiTo = last < 0 ? lines.length - 1 : Math.max(hiFrom, last - 1)
+  const from = Math.max(0, hiFrom - radius)
+  const to = Math.min(lines.length, hiTo + radius + 1)
+  return lines.slice(from, to)
+    .map((l, i) => (from + i >= hiFrom && from + i <= hiTo ? `>>> ${l.raw}` : `    ${l.raw}`))
+}
+
+/** Context for a sentence id — resolved through the ledger, so it is the right occurrence. */
+function contextForSentence(postNum, sentenceId, radius = 3) {
+  const s = sentencesOf(postNum).find(x => x.sentenceId === sentenceId)
+  if (!s) return ['(sentence not found)']
+  return contextAt(postNum, s.start, s.end, radius)
+}
+const sentenceTextOf = (postNum, sentenceId) =>
+  sentencesOf(postNum).find(x => x.sentenceId === sentenceId)?.text ?? ''
+
+// ── CSV ──────────────────────────────────────────────────────────────────────
+const csvCell = v => {
+  const s = v === null || v === undefined ? '' : String(v)
+  return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s
+}
+const writeCsv = (file, headers, rows) => {
+  const out = [headers.join(',')]
+  for (const r of rows) out.push(headers.map(h => csvCell(r[h])).join(','))
+  fs.writeFileSync(path.join(ROOT, file), out.join('\n') + '\n')
+  console.log(`  ${file.padEnd(38)} ${rows.length} rows`)
+}
+
+// ── 242 boundary crossings ───────────────────────────────────────────────────
+writeCsv('STEP3-242-BOUNDARY-CROSSINGS.csv',
+  ['occurrenceKey', 'postNum', 'kind', 'layer', 'start', 'end', 'sentencesTouched', 'sentenceIds',
+    'spanText', 'sentenceTexts', 'allSentencesSameLine', 'context'],
+  (dry.crossingRows ?? []).map(r => ({
+    ...r,
+    sentenceIds: r.sentenceIds.join(' '),
+    spanText: r.text,
+    sentenceTexts: r.sentenceTexts.join(' ⏎ '),
+    // If every touched sentence sits on one line, the span is two sentences of one line joined —
+    // a different problem from a span running across a line break.
+    allSentencesSameLine: (() => {
+      const ss = sentencesOf(r.postNum).filter(s => r.sentenceIds.includes(s.sentenceId))
+      const t = runtimeText(byNum.get(r.postNum)?.text ?? '')
+      const lineOf = off => t.slice(0, off).split('\n').length
+      return ss.length ? new Set(ss.map(s => lineOf(s.start))).size === 1 : false
+    })(),
+    context: contextAt(r.postNum, r.start, r.end, 2).join(' ⏎ '),
+  })))
+
+// ── 645 unlocated entities ───────────────────────────────────────────────────
+const aliasesOf = new Map()
+for (const e of entitiesDoc.entities ?? []) {
+  aliasesOf.set(String(e.canonical).toLowerCase(), (e.aliases ?? []).map(a => a.text))
+}
+writeCsv('STEP3-645-UNLOCATED-ENTITIES.csv',
+  ['postNum', 'kind', 'identity', 'aliasesAttempted', 'aliasCount', 'postText'],
+  (dry.unlocated ?? []).map(u => ({
+    postNum: u.postNum, kind: u.kind, identity: u.text,
+    aliasesAttempted: (aliasesOf.get(String(u.text).toLowerCase()) ?? []).join(' | '),
+    aliasCount: (aliasesOf.get(String(u.text).toLowerCase()) ?? []).length,
+    postText: runtimeText(byNum.get(u.postNum)?.text ?? '').replace(/\n/g, ' ⏎ ').slice(0, 900),
+  })))
+
+// ── 148 duplicate occurrence keys ────────────────────────────────────────────
+writeCsv('STEP3-148-DUPLICATE-KEYS.csv',
+  ['occurrenceKey', 'postNum', 'kind', 'start', 'end', 'identicalText', 'textA', 'textB', 'context'],
+  (dry.duplicateRows ?? []).map(d => ({ ...d, context: contextAt(d.postNum, d.start, d.end, 1).join(' ⏎ ') })))
+
+// ── Q / QAnon / Anons candidates ─────────────────────────────────────────────
+//
+// Every candidate, INCLUDED and EXCLUDED, with the reason — the ruling asks for excluded
+// candidates to be reported rather than silently dropped.
+const QCANDS = []
+const CLEAN = t => runtimeText(t ?? '')
+
+for (const post of posts) {
+  const text = CLEAN(post.text)
+  const lines = text.split('\n')
+  const src = sourceLines(text)
+  // Correction 2: the signature is POSITIONAL. Only a standalone Q/Q+ occupying the last
+  // non-empty line is a signature; an identical line earlier in the body is content.
+  let lastNonEmpty = -1
+  for (let i = lines.length - 1; i >= 0; i--) if (lines[i].trim()) { lastNonEmpty = i; break }
+
+  let off = 0
+  lines.forEach((raw, i) => {
+    const lineStart = off
+    off += raw.length + 1
+    const l = raw.trim()
+    if (!l) return
+    const isSignature = i === lastNonEmpty && /^Q[+!]?$/.test(l)
+    const sourceReason = src.get(i) ?? null
+    const isPointer = /^(?:>|&gt;){1,2}\s*\d{5,}$/.test(l)
+
+    const record = (term, form, matchStart, exclude) => QCANDS.push({
+      postNum: post.postNum, term, form,
+      start: lineStart + matchStart, end: lineStart + matchStart + form.length,
+      line: l.slice(0, 200),
+      included: !exclude, excludedBecause: exclude ?? '',
+    })
+
+    // QAnon first — longest match wins, so no nested Q or Anon is emitted inside it.
+    const consumed = []
+    for (const m of l.matchAll(/\bQ[\s-]?Anon\b/gi)) {
+      consumed.push([m.index, m.index + m[0].length])
+      record('QAnon', m[0], m.index,
+        isSignature ? 'terminal signature' : sourceReason ? `source material — ${sourceReason}` : isPointer ? 'board pointer' : null)
+    }
+    const inside = at => consumed.some(([a, b]) => at >= a && at < b)
+
+    for (const m of l.matchAll(/\bAnon(?:s|\(s\))?\b/gi)) {
+      if (inside(m.index)) continue                       // the Anon of QAnon
+      record('Anons', m[0], m.index,
+        isSignature ? 'terminal signature' : sourceReason ? `source material — ${sourceReason}` : null)
+    }
+
+    // Q as a standalone token. The exclusion list from the ruling, each with its own reason.
+    for (const m of l.matchAll(/(?<![A-Za-z0-9])Q(?![A-Za-z0-9])/g)) {
+      if (inside(m.index)) continue                       // the Q of QAnon
+      const before = l.slice(Math.max(0, m.index - 24), m.index)
+      const after = l.slice(m.index + 1, m.index + 24)
+      let why = null
+      if (isSignature) why = 'terminal signature'
+      else if (sourceReason) why = `source material — ${sourceReason}`
+      else if (/^\s*&\s*A/i.test(after) || /Q\s*&\s*A/i.test(l.slice(Math.max(0, m.index - 2), m.index + 4))) why = 'Q&A — Q means Question'
+      else if (/^:/.test(after) && /^\s*Q\s*:/.test(l)) why = 'FAQ label "Q:" — Q means Question'
+      else if (/[/\\]$|[/\\]\w*$/.test(before) || /^[/\\]/.test(after)) why = 'URL or path'
+      else if (/https?:\S*$/i.test(before)) why = 'inside a URL'
+      else if (/!\S*$/.test(before) || /^!/.test(after)) why = 'tripcode'
+      else if (/^[1-4]\b/.test(after)) why = 'quarter label (Q1–Q4)'
+      else if (/^-[A-Z0-9]/.test(after)) why = 'technical code (Q-T2810C)'
+      else if (/clearance|fever/i.test(after)) why = 'Q clearance / Q fever — not the persona'
+      record('Q', m[0], m.index, why)
+    }
+  })
+}
+writeCsv('STEP3-Q-QANON-ANONS-CANDIDATES.csv',
+  ['postNum', 'term', 'form', 'start', 'end', 'included', 'excludedBecause', 'line'], QCANDS)
+
+// ── 117 multi-primary, as JSONL with full evidence ───────────────────────────
+{
+  const needs = (dry.multiPrimary ?? []).filter(m => !m.certifiedOverlap)
+  const out = needs.map(m => JSON.stringify({
+    sentenceId: m.sentenceId, postNum: m.postNum, categories: m.kinds,
+    sentenceText: sentenceTextOf(m.postNum, m.sentenceId),
+    spans: m.spans,
+    context: contextForSentence(m.postNum, m.sentenceId, 3),
+  }))
+  fs.writeFileSync(path.join(ROOT, 'STEP3-117-MULTI-PRIMARY.jsonl'), out.join('\n') + '\n')
+  console.log(`  STEP3-117-MULTI-PRIMARY.jsonl          ${out.length} rows`)
+}
+
+// ── 51 same-category overlaps, as CSV ────────────────────────────────────────
+writeCsv('STEP3-51-SAME-CATEGORY.csv',
+  ['sentenceId', 'postNum', 'kind', 'nested', 'spanA', 'spanB', 'sentenceText', 'context'],
+  (dry.sameCategoryOverlap ?? []).filter(o => o.layer === 'primary').map(o => ({
+    sentenceId: o.sentenceId, postNum: o.postNum, kind: o.kind, nested: o.nested,
+    spanA: o.a, spanB: o.b,
+    sentenceText: sentenceTextOf(o.postNum, o.sentenceId),
+    context: contextForSentence(o.postNum, o.sentenceId, 2).join(' ⏎ '),
+  })))
+
+// ── The markdown pack ────────────────────────────────────────────────────────
 const L = []
 const p = (...xs) => L.push(...xs)
 
-/** The drop, with the sentence in question marked, so a reviewer can see how Q used the line. */
-function dropContext(postNum, sentenceText, radius = 3) {
-  const post = byNum.get(postNum)
-  if (!post) return ['(drop not found)']
-  const lines = runtimeText(post.text).split('\n').map(l => l.trim())
-  const idx = lines.findIndex(l => l.includes(sentenceText.slice(0, 40)))
-  const from = Math.max(0, idx - radius), to = Math.min(lines.length, idx + radius + 1)
-  return lines.slice(from, to).map((l, i) => (from + i === idx ? `>>> ${l}` : `    ${l}`))
-}
-
-p('# Q Drops — Step 3 review pack')
+p('# Q Drops — Step 3 review pack (revision 2)')
 p('')
-p('Self-contained. You do not need the repository: every decision below carries its own evidence.')
+p('Self-contained. Every decision carries its own evidence.')
+p('')
+p('**Revision 2 corrects three defects in revision 1**, all found by outside review:')
+p('')
+p('1. Context was located by matching the first 40 characters of a sentence, which returns the')
+p('   FIRST matching line. On drops where Q repeats a line — `"Fantasy land."` four times in #111 —')
+p('   three of four occurrences were shown the wrong context. Context is now taken from the')
+p('   occurrence\'s own character offsets.')
+p('2. The signature filter removed *every* standalone `Q` line. 15 drops carry a standalone `Q`')
+p('   inside the body, and the ruling includes those. Signature detection is now positional.')
+p('3. The `Q`/`QAnon`/`Anons` counts were not source-aware, so greentext excerpts and pasted')
+p('   articles counted as Q writing the word. They now run through the archive\'s own')
+p('   source-boundary detector.')
+p('')
+p('Row-level companions (every record, not samples):')
+p('')
+p('| file | contents |')
+p('|---|---|')
+p('| `STEP3-117-MULTI-PRIMARY.jsonl` | all 117, with sentence text and drop context |')
+p('| `STEP3-51-SAME-CATEGORY.csv` | all 51 primary-layer same-category overlaps |')
+p('| `STEP3-242-BOUNDARY-CROSSINGS.csv` | all 242, with every sentence each span touches |')
+p('| `STEP3-645-UNLOCATED-ENTITIES.csv` | all 645, with the aliases attempted and the drop text |')
+p('| `STEP3-148-DUPLICATE-KEYS.csv` | all 148, with both records\' text and whether they agree |')
+p('| `STEP3-Q-QANON-ANONS-CANDIDATES.csv` | every candidate, included AND excluded, with the reason |')
 p('')
 p('---')
 p('')
 p('## What this project is')
 p('')
 p('A research tool over the 4,966 "Q" posts (2017-2020). Every drop is decomposed into what it')
-p('asked, claimed, predicted and named, so any phrase can be traced across the archive. The')
-p('classifications are *certified*: each one is an adjudicated record with provenance, not a')
-p('runtime guess. The owner rules; the code materialises the ruling.')
+p('asked, claimed, predicted and named. Classifications are *certified*: each is an adjudicated')
+p('record with provenance, not a runtime guess. The owner rules; the code materialises the ruling.')
 p('')
-p('Local build is ahead of production and **not deployed**. Production is untouched.')
+p('Local build is ahead of production and **not deployed**.')
 p('')
-p('## The layer model (settled, 2026-08-21)')
+p('## The layer model')
 p('')
 p('| layer | kinds | rule |')
 p('|---|---|---|')
-p('| **primary** | Claim, Prediction, Question, Directive | one adjudicated category per complete sentence |')
+p('| **primary** | Claim, Prediction, Question, Directive | one *painted* category per complete sentence |')
+p('| **secondary** | any other genuinely certified meaning | counted and searchable, **does not paint** |')
 p('| **inline** | Named Entity, `[Bracket]` | may overlap a primary span; renders *above* it |')
 p('| **review** | Context, Emphasis, theme anchor | a disposition, not a competing sentence colour |')
 p('')
-p('An occurrence is keyed `postNum | kind | startOffset | endOffset`, never by its text. Repeated')
-p('wording therefore stays separate: `"Fantasy land."` written four times in drop #111 is four')
-p('distinct occurrences, not one.')
+p('The secondary layer is new in revision 2, and it resolves a contradiction revision 1 carried:')
+p('the model said "one category per sentence" while also protecting 220 directive+question pairs.')
+p('Both cannot be *painted*. They can both be *certified*.')
 p('')
 p('## Constraints any proposal must respect')
 p('')
 p('1. **Q\'s literal wording is never rewritten.** A span is taken from the drop, never retyped.')
-p('2. **Quoted/source material stays separate from Q-authored.** Pasted news must never be')
-p('   certified as Q asserting it.')
+p('2. **Quoted/source material stays separate from Q-authored.**')
 p('3. **In-post repeats are real.** Identical wording in one drop is multiple occurrences.')
-p('4. **No automatic category-precedence rule.** "Claim always beats Directive" is explicitly')
-p('   rejected; a conflict needs an adjudicated answer or a stated shape rule.')
-p('5. **Certified counts only move with a recorded reason**, asserted at the line that checks them.')
-p('6. Two overlaps are **deliberate** and must survive: the directive+question pair (a line that is')
-p('   grammatically an instruction and functionally a request for an answer), and nested named')
-p('   entities (`US` inside `US Military`), which each keep their own hover explanation.')
+p('4. **No automatic category-precedence rule.** A conflict needs an adjudicated answer or a')
+p('   stated shape rule that can be checked afterwards.')
+p('5. **Certified counts move only with a recorded reason**, asserted at the line that checks them.')
+p('')
+p('---')
+p('')
+p('# OPEN QUESTION — is Theme a primary category?')
+p('')
+p('Revision 1 defined the primary layer as Claim, Prediction, Question, Directive and said nothing')
+p('about **Themes**, which the archive also certifies. That was an omission, not a decision.')
+p('')
+p('The data: themes are stored as a taxonomy label per drop (`themes`) plus a `themeAnchors` array')
+p('naming the words in the drop that evidence the theme. An anchor is a *fragment* — `"God bless"`,')
+p(`"convicted" — not a complete sentence. On that evidence a theme anchor behaves like an inline`)
+p('annotation and a theme like a drop-level tag, and neither is a sentence-level primary category.')
+p('')
+p('**This needs an explicit ruling before 3B**, because if Theme *is* primary then some of the 117')
+p('conflicts and some of the 1,531 review-layer collisions are the wrong shape.')
 p('')
 p('---')
 p('')
 
-// ── DECISION 1 ──────────────────────────────────────────────────────────────
 const needs = (dry.multiPrimary ?? []).filter(m => !m.certifiedOverlap)
 const byCombo = {}
 for (const m of needs) { const k = m.kinds.join(' + '); (byCombo[k] ??= []).push(m) }
 
 p('# DECISION 1 — 117 sentences carry two primary categories')
 p('')
-p('Each of these sentences is certified in **two** primary sections at once. Under the layer model')
-p('exactly one may be primary. The other must either be withdrawn, or re-expressed as a')
-p('non-competing layer.')
+p('Each is certified in two primary sections at once. Under the layer model exactly one may be')
+p('**painted**; the other becomes a non-painting secondary classification, or is withdrawn if it')
+p('was a fragment, a splitter artifact, a duplicate or a mistake.')
 p('')
-p('A further **220** sentences carry the directive+question pair. Those are a *certified,*')
-p('*deliberate* overlap and are **not** in scope here.')
+p('A further **220** sentences carry the directive+question pair. Under revision 2 they are the')
+p('same shape as these — one painted primary, one secondary — and are no longer treated as exempt.')
 p('')
 p('| combination | count |')
 p('|---|---|')
 for (const [k, v] of Object.entries(byCombo)) p(`| ${k} | ${v.length} |`)
 p('')
-p('### The question for you')
+p('Full rows with context: `STEP3-117-MULTI-PRIMARY.jsonl`. Reproduced below for reading.')
 p('')
-p('Is there a **shape rule** that resolves each group, or must these be ruled row by row? For')
-p('example one candidate rule is *"a line beginning `Expect ...` is a Prediction, not a Directive"*.')
-p('If a shape rule is right, state it precisely enough to be executed and to be checked afterwards.')
-p('If a group has no clean rule, say so — row-by-row adjudication is an acceptable answer.')
-p('')
-p('Also: when a sentence genuinely is both — an instruction that also asserts a fact — should the')
-p('loser be **withdrawn entirely**, or retained as a non-painting secondary attribute (the way the')
-p('directive+question pair is retained as a relationship edge)?')
-p('')
-
 for (const [combo, rows] of Object.entries(byCombo)) {
   p(`## ${combo} — ${rows.length} sentences`)
   p('')
   for (const m of rows) {
-    const text = m.spans[0]?.text ?? ''
     p(`**#${m.postNum}** \`${m.sentenceId}\` — *${combo}*`)
     p('')
     p('```')
-    p(...dropContext(m.postNum, text))
+    p(...contextForSentence(m.postNum, m.sentenceId))
     p('```')
     p('')
   }
 }
 
-// ── DECISION 2 ──────────────────────────────────────────────────────────────
 const primaryOv = (dry.sameCategoryOverlap ?? []).filter(o => o.layer === 'primary')
 p('---')
 p('')
 p('# DECISION 2 — 51 same-category overlaps in the primary layer')
 p('')
-p('Two spans of the *same* category covering overlapping characters. The owner\'s rule is that this')
-p('must not happen: the fuller span should replace the fragment. Most are nested.')
+p('Two spans of the same category covering overlapping characters. Full rows with sentence text and')
+p('context: `STEP3-51-SAME-CATEGORY.csv`.')
 p('')
-p('600 further overlaps sit in the inline/review layers and overlap **by design** — they are out of')
-p('scope.')
-p('')
-p('### The question for you')
-p('')
-p('Is "keep the longer span, drop the shorter" always right here? Look especially at rows where')
-p('`nested` is `false` — those are partial overlaps, not containment, and a longest-wins rule may')
-p('not be safe.')
+p(`Nested (one fully contains the other): **${primaryOv.filter(o => o.nested).length}**. ` +
+  `Partial overlap: **${primaryOv.filter(o => !o.nested).length}** — longest-wins is not obviously safe for these.`)
 p('')
 p('| post | sentence | kind | nested | span A | span B |')
 p('|---|---|---|---|---|---|')
-for (const o of primaryOv) {
-  p(`| #${o.postNum} | \`${o.sentenceId}\` | ${o.kind} | ${o.nested} | ${JSON.stringify(o.a)} | ${JSON.stringify(o.b)} |`)
-}
+for (const o of primaryOv) p(`| #${o.postNum} | \`${o.sentenceId}\` | ${o.kind} | ${o.nested} | ${JSON.stringify(o.a)} | ${JSON.stringify(o.b)} |`)
+p('')
+p('**Nested named entities** (`US` inside `US Military`) are a separate matter, and revision 1 put')
+p('them out of scope on the grounds that each keeps its own hover explanation. Outside review')
+p('rejected that: the no-same-category-overlap rule should hold for entities too, with both')
+p('identities preserved as metadata on composed atomic runs rather than as two painted spans.')
+p(`There are **${(dry.sameCategoryOverlap ?? []).filter(o => o.kind === 'namedEntities').length}** such overlaps. They are in scope for Step 4, not Step 3B.`)
 p('')
 
-// ── DECISION 3 ──────────────────────────────────────────────────────────────
 p('---')
 p('')
 p('# DECISION 3 — 3 source-boundary exceptions')
 p('')
-p('A sentence splitter cut certified spans at abbreviations (`Mr.`, `Lt. Gen.`, `U.S.`, `Harris v.`).')
-p('114 were repaired. **Three were refused**, because completing them would extend a *Q-authored*')
-p('classification into text already recorded as an **editorial paraphrase** — pasted source')
-p('material. Two of the three carry Q\'s `>` quote marker.')
-p('')
-p('Shipping a knowingly truncated highlight also violates the full-sentence rule, so neither')
-p('leaving them nor completing them is currently correct.')
+p('A splitter cut certified spans at abbreviations. 114 were repaired; **three were refused**,')
+p('because completing them would extend a *Q-authored* classification into text already recorded as')
+p('an editorial paraphrase. Two carry Q\'s `>` quote marker; the third sits under a `WASH POST:`')
+p('header.')
 p('')
 for (const e of abbrev.excluded?.spans ?? []) {
+  const hits = occurrencesOfSpan(byNum.get(e.postNum)?.text, e.truncated)
   p(`### #${e.postNum} — ${e.category}`)
   p('')
   p(`- **currently certified as:** ${JSON.stringify(e.truncated)}`)
   p(`- **would have become:** ${JSON.stringify(e.wouldHaveBecome)}`)
   p(`- **refused because:** ${e.why}`)
   p('')
-  p('Drop context:')
   p('```')
-  p(...dropContext(e.postNum, e.truncated.slice(0, 40), 2))
+  p(...(hits.length ? contextAt(e.postNum, hits[0][0], hits[0][1], 2) : ['(span not located)']))
   p('```')
   p('')
 }
-p('### The question for you')
-p('')
-p('For each: reconstruct the full lifted sentence and store it as `quoted_source` / non-Q-authored,')
-p('or withdraw the partial highlight entirely and keep a `SOURCE_BOUNDARY_EXCEPTION` record? Is')
-p('there a principled way to tell which of the two applies, or is it case by case?')
-p('')
 
-// ── DECISION 4 ──────────────────────────────────────────────────────────────
 p('---')
 p('')
 p('# DECISION 4 — the conflict queue')
 p('')
-p('None of these is auto-resolved. Each needs a disposition.')
+p('**Every row is in the companion CSVs.** Summary only here.')
 p('')
-p(`## ${dry.totals.crossingSentenceBoundary} spans cross a sentence boundary`)
+p(`## ${(dry.crossingRows ?? []).length} spans crossing a sentence boundary`)
 p('')
-p('A certified span that starts in one sentence and ends in another. The ruling says do **not** cut')
-p('them automatically. Options: re-adjudicate to one sentence, split into two occurrences, or allow')
-p('a multi-sentence span as a legitimate shape.')
+p('`STEP3-242-BOUNDARY-CROSSINGS.csv` — each row lists every sentence the span touches, and a flag')
+p('for whether those sentences all sit on one line (two sentences of one line joined) or straddle a')
+p('line break (a different problem).')
 p('')
-const crossSamples = []
-for (const post of posts) {
-  if (crossSamples.length >= 12) break
-  const ss = sentencesFor(post.text, post.postNum)
-  const a = post.postAnalysis ?? {}
-  for (const t of [...(a.claimSpans ?? a.claims ?? [])]) {
-    if (crossSamples.length >= 12) break
-    const rt = runtimeText(post.text)
-    const at = rt.indexOf(t)
-    if (at < 0) continue
-    const holder = ss.find(s => at >= s.start && at + t.length <= s.end)
-    if (!holder) crossSamples.push({ postNum: post.postNum, text: t })
-  }
-}
-p('Examples:')
+const sameLine = (dry.crossingRows ?? []).length
+p(`## ${(dry.unlocated ?? []).length} spans that could not be located in the drop text`)
 p('')
-for (const c of crossSamples) p(`- **#${c.postNum}** ${JSON.stringify(c.text.slice(0, 150))}`)
+p('`STEP3-645-UNLOCATED-ENTITIES.csv` — each row carries the identity, every registered alias that')
+p('was attempted, and the full drop text, so a reviewer can see whether the spelling Q used is')
+p('simply missing from the registry or whether no literal reference exists at all.')
 p('')
-p(`## ${dry.totals.unlocated} spans could not be located in the drop text`)
+p(`## ${(dry.duplicateRows ?? []).length} duplicate occurrence keys`)
 p('')
-const unByKind = (dry.unlocated ?? []).reduce((m, u) => { m[u.kind] = (m[u.kind] ?? 0) + 1; return m }, {})
-p('By kind: ' + JSON.stringify(unByKind))
-p('')
-p('Almost all are **named entities**. `namedEntities` records the canonical *identity* present in a')
-p('drop, not a literal span — a post writing `BO` is recorded as `Hussein`. These resolve through an')
-p('alias registry; the ones listed here did not resolve under the canonical name or any registered')
-p('spelling. Examples:')
-p('')
-for (const u of (dry.unlocated ?? []).slice(0, 12)) p(`- **#${u.postNum}** \`${u.kind}\` ${JSON.stringify(u.text)}`)
-p('')
-p('### The question for you')
-p('')
-p('Is an entity whose spelling cannot be found in the drop a data defect (the identity should not')
-p('be on that post), a *registry gap* (the spelling Q used is missing from the alias list), or a')
-p('legitimate inference (Q referred to the person without naming them)? The answer decides whether')
-p('these are fixed, queued for the owner, or accepted as-is.')
-p('')
-p(`## ${dry.totals.duplicateKeys} duplicate occurrence keys`)
-p('')
-p('Two records claiming the same post, kind and character range. Under the new model these are the')
-p('same occurrence recorded twice.')
+p(`\`STEP3-148-DUPLICATE-KEYS.csv\`. **${(dry.duplicateRows ?? []).filter(d => d.identicalText).length}** of them hold identical text and are safe to merge; ` +
+  `**${(dry.duplicateRows ?? []).filter(d => !d.identicalText).length}** hold *different* text at the same offsets and need a decision.`)
 p('')
 
-// ── DECISION 5 ──────────────────────────────────────────────────────────────
 p('---')
 p('')
-p('# DECISION 5 — the entity sweep, already ruled but not yet run')
+p('# DECISION 5 — the Q / QAnon / Anons sweep')
 p('')
-p('The owner has ruled that `Q`, `QAnon` and `Anon`/`Anons` become Named Entities everywhere they')
-p('occur meaningfully in **Q-authored body text**, with:')
+p('`STEP3-Q-QANON-ANONS-CANDIDATES.csv` lists **every** candidate the sweep would consider —')
+p('included and excluded — with the reason for each exclusion, at exact offsets.')
 p('')
-p('- terminal standalone `Q` / `Q+` signature lines excluded')
-p('- `QAnon` as one longest-match span — no nested `Q` or `Anon` inside it')
-p('- `Anon`/`Anons`/`Anon(s)` folded to a single `Anons` identity, no nested `Anon`')
-p('- no `Q` from `Q&A`, URLs, `/qresearch/` paths, filenames, tripcodes, or FAQ `Q:` labels')
-p('- no `Anon` inside `QAnon`, `anonymous`, `anonymously`')
-p('- quoted-post and image/OCR matches kept as separate evidence, never added to Q-authored totals')
-p('')
-p('Current raw counts in Q-authored body text (signature lines already excluded):')
-p('')
-p('| term | posts |')
-p('|---|---|')
-const strip = t => runtimeText(t ?? '').split('\n')
-  .filter(l => !/^\s*(?:>|&gt;){1,2}\s*\d{5,}\s*$/.test(l.trim()))
-  .filter(l => !/^\s*Q[+!]?\s*$/.test(l))
-  .join('\n')
-let qN = 0, anonN = 0, qanonN = 0
-for (const post of posts) {
-  const t = strip(post.text)
-  if (/\bQAnon\b/i.test(t)) qanonN++
-  if (/\bAnons?\b/i.test(t)) anonN++
-  if (/(^|[^A-Za-z0-9+/])Q([^A-Za-z0-9+&]|$)/.test(t)) qN++
+const inc = QCANDS.filter(c => c.included), exc = QCANDS.filter(c => !c.included)
+p('| term | candidates | included | excluded | distinct posts (included) |')
+p('|---|---|---|---|---|')
+for (const term of ['Q', 'QAnon', 'Anons']) {
+  const all = QCANDS.filter(c => c.term === term)
+  const i = all.filter(c => c.included)
+  p(`| ${term} | ${all.length} | ${i.length} | ${all.length - i.length} | ${new Set(i.map(c => c.postNum)).size} |`)
 }
-p(`| \`Q\` in body | ${qN} |`)
-p(`| \`Anon\`/\`Anons\` | ${anonN} |`)
-p(`| \`QAnon\` | ${qanonN} |`)
+p('')
+p(`Deduplicated union of posts with at least one included occurrence: **${new Set(inc.map(c => c.postNum)).size}**.`)
+p('')
+p('Exclusions by reason:')
+p('')
+p('| reason | count |')
+p('|---|---|')
+const excBy = exc.reduce((m, c) => { m[c.excludedBecause] = (m[c.excludedBecause] ?? 0) + 1; return m }, {})
+for (const [k, v] of Object.entries(excBy).sort((a, b) => b[1] - a[1])) p(`| ${k} | ${v} |`)
 p('')
 p('### The question for you')
 p('')
-p('The exclusion list above was written from a handful of observed cases. What *else* would a')
-p('token-aware sweep get wrong on a 4,966-post corpus of chan-board text? Q writes in fragments,')
-p('acronyms, timestamps, tripcodes and pasted headlines. Name the failure modes worth guarding')
-p('before this runs, and say how each should be detected.')
+p('These exclusions were written from the ruling plus observed cases. On a 4,966-post corpus of')
+p('chan-board text — fragments, acronyms, timestamps, tripcodes, pasted headlines — what else would')
+p('this get wrong, and how should each failure be detected? The CSV lets you check the actual rows')
+p('rather than reason from the rule list.')
 p('')
 
 p('---')
 p('')
 p('# Summary of what is being asked')
 p('')
-p('1. A shape rule, or row-by-row rulings, for the 117 two-category sentences — and whether the')
-p('   losing category is withdrawn or retained as a non-painting attribute.')
-p('2. Whether "longest span wins" is safe for the 51 same-category overlaps, especially the')
-p('   non-nested ones.')
-p('3. A disposition for each of the 3 source-boundary exceptions.')
-p('4. How to treat the conflict queue: 242 boundary-crossing spans, 645 unlocatable entities,')
-p('   148 duplicate keys.')
-p('5. Failure modes to guard before the archive-wide `Q` / `QAnon` / `Anons` entity sweep.')
-p('')
-p('Anything that changes a certified count needs a stated reason, because every count in this')
-p('archive is asserted at the line that checks it and moving one silently is the failure mode this')
-p('whole process exists to prevent.')
+p('1. Is **Theme** a primary sentence category, or a drop-level tag with inline anchors?')
+p('2. Shape rules or row-by-row rulings for the 117 — and confirmation that the losing category')
+p('   becomes a non-painting **secondary**, not a deletion, unless it was a genuine error.')
+p('3. Whether longest-wins is safe for the 51, especially the non-nested ones.')
+p('4. A disposition for the 3 source-boundary exceptions.')
+p('5. Dispositions for the conflict queue, from the full CSVs.')
+p('6. Failure modes still missing from the entity sweep.')
 p('')
 
 fs.writeFileSync(path.join(ROOT, 'STEP3-REVIEW-PACK.md'), L.join('\n') + '\n')
-console.log(`wrote STEP3-REVIEW-PACK.md — ${L.length} lines, ${(fs.statSync(path.join(ROOT, 'STEP3-REVIEW-PACK.md')).size / 1024).toFixed(0)} KB`)
+console.log(`  STEP3-REVIEW-PACK.md                   ${L.length} lines`)
