@@ -6194,3 +6194,67 @@ error (`'_d' is assigned a value but never used`).
 **Files:** `src/lib/overrideProvenance.ts` (new), `src/lib/sync.ts`, `src/lib/localData.ts`,
 `src/components/QuestionBadge.tsx`, `scripts/export-firestore.mjs`,
 `scripts/test-override-provenance.mjs` (new).
+
+---
+
+## 2026-08-21 — Owner ruling: #4923 "Dearest Virginia -" is a Claim
+
+The line was certified **Context**, and Context does not paint, so #4923 opened with an
+unhighlighted salutation above five classified lines. That is what the owner saw and ruled on.
+It is Q addressing Virginia directly and asserting the relationship the rest of the drop rests
+on; "We stand with you." / "Now and always." underneath were already certified Claims and read
+as its continuation.
+
+**The path, no step skipped** — `audit/editorial-batch-pending.json` (r10-dearest-virginia) →
+`apply-owner-claims.mjs` → `claims-final.json` → `apply-claims.mjs` → `apply-context-units.mjs`
+→ `materialize-literal-spans.mjs`.
+
+    claims-final rows       4,242 -> 4,243
+    claim occurrences       8,928 -> 8,929
+    distinct wordings       6,828 -> 6,829     (occurs nowhere else in the archive)
+    telegraphic             3,546 -> 3,547     (three tokens; computed, not assigned)
+    Context units           1,736 -> 1,735
+    promoted out of Context 3,154 -> 3,155
+    Context ledger TOTAL    4,902  UNCHANGED
+
+Every moved figure is ±1 and each is explained at the line that asserts it. The ledger total is
+the invariant and it does not move: a ruling changes which side of it a unit sits on, never how
+many units were reviewed.
+
+**`materialize-literal-spans.mjs` is not optional here.** The renderer reads
+`analysis.claimSpans ?? whole(analysis.claims)`. `claimSpans` already existed on #4923, so the
+`??` never fell through — the claim was certified, present in `claims`, and still painted
+nothing until the span was materialised. A ruling that stops one step short of the span array is
+invisible on both surfaces while every artifact-level count reconciles.
+
+**`apply-owner-claims.mjs` was single-use, and that was a trap.** `occurrences = 4,242` and
+`all 62 approved occurrences present` described the 2026-08-13 batch. The moment the owner ruled
+a tenth time both reported a defect that did not exist — the artifact is supposed to grow — and
+the script refused to write, so the only route to recording a new ruling was to edit the gate
+that was protecting it. They now assert what has to hold on EVERY run: no existing row lost
+(`totalRows === beforeRows + addedRows`), and every approved occurrence accounted for
+(`addedRows + already === approved.length`). Provenance takes its date from the ruling rather
+than from a literal, so a 2026-08-21 ruling is no longer stamped 2026-08-13.
+
+**SEED_VERSION 80 → 81.** `posts.json` changed; a reader on 80 goes on seeing the line
+unhighlighted, which is the entire complaint.
+
+**Browser-verified on both surfaces and both builds** — `/post/4923` and the Post Archive,
+editorial :5173 and public :5174, all four identical:
+
+    bg-amber-500/40 :: "Dearest "
+    bg-cyan-500/30  :: "Virginia"     <- entity keeps its own layer ON TOP of the claim fill
+    bg-amber-500/40 :: " -"
+
+That is the owner's layering rule holding: the sentence category is the base, the named entity
+sits above it.
+
+**Deferred to batch end, deliberately** (owner directive: do not re-certify per correction):
+cross-section invariants stand at 220/224. The four are `10c` determinism stamp and `11`
+frozen-section mutation — both say "inputs moved", which they did — plus their two dependants.
+They clear with the manifest re-certification that runs once, before the deploy.
+
+**Files:** `audit/editorial-batch-pending.json`, `audit/claims-final.json`,
+`scripts/apply-owner-claims.mjs`, `apply-claims.mjs`, `apply-context-units.mjs`,
+`materialize-literal-spans.mjs`, `audit-cross-section.mjs`, `src/lib/localData.ts` (SEED 80→81),
+`audit/seed-fingerprint.json`, `public/data/posts.json`.
