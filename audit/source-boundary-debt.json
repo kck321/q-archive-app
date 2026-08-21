@@ -1,11 +1,11 @@
 {
  "id": "source-boundary-over-extension",
  "priority": "highest",
- "postsAffected": 234,
+ "postsAffected": 235,
  "baseline": {
-  "questions": 100,
+  "questions": 101,
   "directives": 129,
-  "claims": 597,
+  "claims": 598,
   "emphasis": 0
  },
  "occurrenceBaselineFile": "audit/source-boundary-occurrences.json",
@@ -249,6 +249,7 @@
   4825,
   4838,
   4846,
+  4861,
   4889,
   4935
  ]

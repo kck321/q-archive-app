@@ -99787,6 +99787,71 @@
    "telegraphic": true,
    "confidence": "OWNER_ADJUDICATED",
    "provenance": "owner adjudication 2026-08-13 (r10-dearest-virginia) — Owner ruling, 2026-08-21, made while reviewing #4923. The line was certified CONTEXT, which does not paint, so the drop showed an unhighlighted opening above five classified lines. It is Q addressing Virginia directly and asserting the relationship the rest of the drop rests on; the two lines under it ('We stand with you.' / 'Now and always.') are already certified Claims and read as its continuation. The named entity Virginia keeps its own cyan layer on top of the claim fill."
+  },
+  {
+   "postNum": 4861,
+   "postId": "4861",
+   "exactText": "House resolution passed condemning 'Qanon'",
+   "primaryClass": "claim",
+   "isPrediction": false,
+   "isConclusion": false,
+   "checkable": false,
+   "sourceProvided": false,
+   "telegraphic": false,
+   "confidence": "OWNER_ADJUDICATED",
+   "provenance": "owner adjudication 2026-08-13 (r12-house-resolution-qanon) — Owner ruling, 2026-08-21. The line sits directly above 'House intel committee meeting tomorrow re: Qanon', which is ALREADY a certified Prediction. The two are the same construction one line apart; the difference is tense. A resolution that has passed is a completed event, so it is a Claim, and the pair now reads as the archive classifies it: what happened, then what is about to. House and Qanon keep their cyan entity layers on top."
+  },
+  {
+   "postNum": 4893,
+   "postId": "4893",
+   "exactText": "Example:",
+   "primaryClass": "claim",
+   "isPrediction": false,
+   "isConclusion": false,
+   "checkable": false,
+   "sourceProvided": false,
+   "telegraphic": true,
+   "confidence": "OWNER_ADJUDICATED",
+   "provenance": "owner adjudication 2026-08-13 (r13-example-and-reinstates) — Owner ruling, 2026-08-21. Both were certified Context, which does not paint, so the drop showed a numbered three-step sequence with steps 1 and 2 amber and step 3 bare. Step 3 is the same kind of assertion as the two above it — a court action that occurred. 'Example:' introduces the whole sequence as Q's evidence for HOW IS THE GAME PLAYED?. The span excludes the '3.' list marker, matching how step 1 is already stored ('Unanimous convicted by Jury', not '1. Unanimous...')."
+  },
+  {
+   "postNum": 4893,
+   "postId": "4893",
+   "exactText": "Federal Appeals Court reinstates conviction",
+   "primaryClass": "claim",
+   "isPrediction": false,
+   "isConclusion": false,
+   "checkable": false,
+   "sourceProvided": false,
+   "telegraphic": false,
+   "confidence": "OWNER_ADJUDICATED",
+   "provenance": "owner adjudication 2026-08-13 (r13-example-and-reinstates) — Owner ruling, 2026-08-21. Both were certified Context, which does not paint, so the drop showed a numbered three-step sequence with steps 1 and 2 amber and step 3 bare. Step 3 is the same kind of assertion as the two above it — a court action that occurred. 'Example:' introduces the whole sequence as Q's evidence for HOW IS THE GAME PLAYED?. The span excludes the '3.' list marker, matching how step 1 is already stored ('Unanimous convicted by Jury', not '1. Unanimous...')."
+  },
+  {
+   "postNum": 4853,
+   "postId": "4853",
+   "exactText": "Wife: CIA",
+   "primaryClass": "claim",
+   "isPrediction": false,
+   "isConclusion": false,
+   "checkable": false,
+   "sourceProvided": false,
+   "telegraphic": true,
+   "confidence": "OWNER_ADJUDICATED",
+   "provenance": "owner adjudication 2026-08-13 (r14-wife-cia-husband-doj) — Owner ruling, 2026-08-21. Both were certified Context. Each is an assertion of fact about a named pair — the drop's attached image identifies them as Nellie and Bruce Ohr — and together they set up the question underneath, 'How does one agency attach itself to another?'. Ruled as two Claims rather than one because they are two lines and a certified span must be contiguous in the drop; a single span across the newline is the multi-line reconstruction case the ledger already holds as an exception. CIA and DOJ keep their cyan entity layers on top."
+  },
+  {
+   "postNum": 4853,
+   "postId": "4853",
+   "exactText": "Husband: DOJ",
+   "primaryClass": "claim",
+   "isPrediction": false,
+   "isConclusion": false,
+   "checkable": false,
+   "sourceProvided": false,
+   "telegraphic": true,
+   "confidence": "OWNER_ADJUDICATED",
+   "provenance": "owner adjudication 2026-08-13 (r14-wife-cia-husband-doj) — Owner ruling, 2026-08-21. Both were certified Context. Each is an assertion of fact about a named pair — the drop's attached image identifies them as Nellie and Bruce Ohr — and together they set up the question underneath, 'How does one agency attach itself to another?'. Ruled as two Claims rather than one because they are two lines and a certified span must be contiguous in the drop; a single span across the newline is the multi-line reconstruction case the ledger already holds as an exception. CIA and DOJ keep their cyan entity layers on top."
   }
  ],
  "predictions": [
@@ -117384,6 +117449,19 @@
     "before": "[Pope] will be having a terrible May.",
     "after": "Dark to LIGHT."
    }
+  },
+  {
+   "postNum": 4910,
+   "postId": "4910",
+   "exactText": "Freedom of information [truth] = END",
+   "primaryClass": "prediction",
+   "klass": "Q_PREDICTION",
+   "isConclusion": false,
+   "conclusionReason": null,
+   "checkable": false,
+   "sourceProvided": false,
+   "confidence": "OWNER_ADJUDICATED",
+   "provenance": "owner adjudication 2026-08-13 (r11-freedom-of-information-end) — Owner ruling, 2026-08-21. The line was unclassified — only its [truth] bracket and END carried Emphasis, so the drop's one substantive line painted nothing. It is an assertion about an outcome, in Q's equation form: freedom of information, and specifically the truth, ENDS the thing under discussion. Future-facing, so Prediction rather than Claim. [truth] keeps its red bracket layer on top."
   }
  ]
 }

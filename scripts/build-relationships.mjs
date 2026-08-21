@@ -263,9 +263,13 @@ const checks = [
   ['Claim ↔ Conclusion = the certified 965', byType.claim_conclusion === 965, byType.claim_conclusion ?? 0],
   ['Claim ↔ Source provided = the certified 439', byType.claim_source_provided === 439, byType.claim_source_provided ?? 0],
   ['Prediction ↔ Source provided reported separately', (byType.prediction_source_provided ?? 0) > 0, byType.prediction_source_provided ?? 0],
-  // 595 -> 842: the owner's 2026-08-20 queue ruling. A prediction is an assertion, so every one of
-  // them carries this edge; the count is Predictions', not this file's.
-  ['Prediction ↔ assertion family = 842', byType.prediction_assertion === 842, byType.prediction_assertion ?? 0],
+  // 595 -> 842 (2026-08-20 queue ruling) -> 843 (2026-08-21, #4910). A prediction IS an assertion,
+  // so every one of them carries this edge — the figure is Predictions' and belongs to Predictions.
+  // It was a literal, and a literal here reports a defect that does not exist every time a genuine
+  // prediction ruling lands. Same correction the queue ruling made to four other stale literals:
+  // a number that is a copy of a relationship should BE the relationship.
+  [`Prediction ↔ assertion family = the certified ${CANONICAL.predictions.occurrences}`,
+    byType.prediction_assertion === CANONICAL.predictions.occurrences, byType.prediction_assertion ?? 0],
   // 2,245 -> 2,233: the RC alias ruling answered 12 queued rows (#2 excluded, still open).
   // Read from the contract, never copied. This gate held a hardcoded 105 and blocked the queue
   // going to 115 — a certified count in two places is a certified count that goes stale in one.

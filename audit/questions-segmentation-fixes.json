@@ -1,0 +1,116 @@
+{
+ "note": "Certified questions whose span was cut short by a sentence splitter that read an INITIAL as a sentence end. The truncation is a SEGMENTATION defect, not a classification one: every row here was already certified as a Question, on the right drop, with the right count. What was wrong is where the span stopped.",
+ "why": "Q writes \"H. Biden\", \"A. Merkel\", \"N. Korea\", \"U.S. Supreme Court\". A splitter that ends a sentence at \".\" cuts the question at the initial, so #4898 was certified as \"Why is the FBI's top child porn lawyer involved in the H.\" and painted only that far - the reader saw a question mark on screen with no blue under it. Recorded here rather than fixed in the deriving audit, for the same reason every other owner overlay is: a correction written into a re-derivable artifact is erased the next time its audit runs.",
+ "rule": "The full span is taken FROM THE DROP, never retyped: the drop line that starts with the truncated text, run to its terminal \"?\". #4891's second row ends in a period instead, which is Q's habit and which the certified question form has always accepted.",
+ "ruledOn": "2026-08-21",
+ "provenance": "owner ruling on #4898, 2026-08-21 - \"this should be a full question but is partially highlighted\". The other nine are the same defect, found by sweeping every certified question ending in an initial.",
+ "count": 10,
+ "fixes": [
+  {
+   "postNum": 142,
+   "truncated": "What is A.",
+   "full": "What is A. Merkel’s family history?",
+   "dropLine": "What is A. Merkel’s family history?"
+  },
+  {
+   "postNum": 142,
+   "truncated": "Who is A.",
+   "full": "Who is A. Merkel?",
+   "dropLine": "Who is A. Merkel?"
+  },
+  {
+   "postNum": 964,
+   "truncated": "What US publicly traded co. previously entered N.",
+   "full": "What US publicly traded co. previously entered N. Korea to establish comms?",
+   "dropLine": "What US publicly traded co. previously entered N. Korea to establish comms?"
+  },
+  {
+   "postNum": 1948,
+   "truncated": "Why was the U.S.",
+   "full": "Why was the U.S. Gov't kept in the DARK?",
+   "dropLine": "Why was the U.S. Gov't kept in the DARK?"
+  },
+  {
+   "postNum": 2381,
+   "truncated": "How do you ensure 'appeals' to the U.S.",
+   "full": "How do you ensure 'appeals' to the U.S. Supreme Court are evaluated impartially > based on the RULE OF LAW?",
+   "dropLine": "How do you ensure 'appeals' to the U.S. Supreme Court are evaluated impartially > based on the RULE OF LAW?"
+  },
+  {
+   "postNum": 2645,
+   "truncated": "Are they afraid of U.S.",
+   "full": "Are they afraid of U.S. Patriots engaging in the same tactics?",
+   "dropLine": "Are they afraid of U.S. Patriots engaging in the same tactics?"
+  },
+  {
+   "postNum": 4226,
+   "truncated": "Why did U.S.",
+   "full": "Why did U.S. District Court Judge Rudolph Contreras recuse?",
+   "dropLine": "Why did U.S. District Court Judge Rudolph Contreras recuse?"
+  },
+  {
+   "postNum": 4891,
+   "truncated": "Why would H.",
+   "full": "Why would H. Biden have such material on his laptop?",
+   "dropLine": "Why would H. Biden have such material on his laptop?"
+  },
+  {
+   "postNum": 4891,
+   "truncated": "Why wouldn't H.",
+   "full": "Why wouldn't H. Biden want to reclaim *knowing* the contents on the drive could bury *Pops* & family.",
+   "dropLine": "Why wouldn't H. Biden want to reclaim *knowing* the contents on the drive could bury *Pops* & family."
+  },
+  {
+   "postNum": 4898,
+   "truncated": "Why is the FBI's top child porn lawyer involved in the H.",
+   "full": "Why is the FBI's top child porn lawyer involved in the H. Biden laptop case?",
+   "dropLine": "Why is the FBI's top child porn lawyer involved in the H. Biden laptop case? [special agent Joshua Wilson]"
+  }
+ ],
+ "withdrawn": {
+  "note": "The SAME splitter emitted the tail of each broken question as a certified question of its own. Repairing the head without withdrawing the tail leaves one sentence certified twice - once whole, once as a fragment - which is the same-category overlap the owner ruled against on 2026-08-21. The fragment is absorbed into the full span, not deleted from the archive: it is the same words, counted once.",
+  "count": 8,
+  "fragments": [
+   {
+    "postNum": 142,
+    "fragment": "Merkel’s family history?",
+    "absorbedInto": "What is A. Merkel’s family history?"
+   },
+   {
+    "postNum": 142,
+    "fragment": "Merkel?",
+    "absorbedInto": "Who is A. Merkel?"
+   },
+   {
+    "postNum": 964,
+    "fragment": "Korea to establish comms?",
+    "absorbedInto": "What US publicly traded co. previously entered N. Korea to establish comms?"
+   },
+   {
+    "postNum": 1948,
+    "fragment": "Gov't kept in the DARK?",
+    "absorbedInto": "Why was the U.S. Gov't kept in the DARK?"
+   },
+   {
+    "postNum": 2381,
+    "fragment": "Supreme Court are evaluated impartially > based on the RULE OF LAW?",
+    "absorbedInto": "How do you ensure 'appeals' to the U.S. Supreme Court are evaluated impartially > based on the RULE OF LAW?"
+   },
+   {
+    "postNum": 2645,
+    "fragment": "Patriots engaging in the same tactics?",
+    "absorbedInto": "Are they afraid of U.S. Patriots engaging in the same tactics?"
+   },
+   {
+    "postNum": 4226,
+    "fragment": "District Court Judge Rudolph Contreras recuse?",
+    "absorbedInto": "Why did U.S. District Court Judge Rudolph Contreras recuse?"
+   },
+   {
+    "postNum": 4891,
+    "fragment": "Biden have such material on his laptop?",
+    "absorbedInto": "Why would H. Biden have such material on his laptop?"
+   }
+  ]
+ }
+}

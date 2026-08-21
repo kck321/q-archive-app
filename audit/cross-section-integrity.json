@@ -4,8 +4,8 @@
  "canonical": {
   "posts": 4966,
   "questions": {
-   "occurrences": 6519,
-   "distinct": 5371,
+   "occurrences": 6510,
+   "distinct": 5363,
    "posts": 1705
   },
   "directives": {
@@ -14,13 +14,13 @@
    "posts": 1689
   },
   "claims": {
-   "occurrences": 8928,
-   "distinct": 6828,
-   "posts": 3084
+   "occurrences": 8934,
+   "distinct": 6833,
+   "posts": 3086
   },
   "predictions": {
-   "occurrences": 842,
-   "posts": 673
+   "occurrences": 843,
+   "posts": 674
   },
   "evidence": {
    "occurrences": 6590,
@@ -71,7 +71,7 @@
    "id": "questions",
    "label": "Q Questions",
    "artifact": "questions.json",
-   "certifiedCount": 6519,
+   "certifiedCount": 6510,
    "shippedRows": 6577,
    "mayCoexist": "134 editorial-normalisation rows are shipped so the search index can find a question a reader half-remembers in cleaned-up form.",
    "neverDisplayed": "Those 134 must never count toward any total, never highlight in a post, and never display as Q-authored. They are identified by editorialNormalization or neverDisplayAsQ.",
@@ -92,7 +92,7 @@
    "id": "claims",
    "label": "Q Claims",
    "artifact": "posts.json → postAnalysis.claims + claimMeta",
-   "certifiedCount": 8928,
+   "certifiedCount": 8934,
    "mayCoexist": "Predictions share the assertion family and the same storage, separated by claimMeta.displayClass. editorialParaphrases are stored per post and are NOT claims.",
    "neverDisplayed": "An editorial paraphrase must never be presented as Q’s literal wording.",
    "countedBy": "postAnalysis.claims entries whose displayClass is claim",
@@ -102,7 +102,7 @@
    "id": "predictions",
    "label": "Q Predictions",
    "artifact": "posts.json → postAnalysis.predictions",
-   "certifiedCount": 842,
+   "certifiedCount": 843,
    "mayCoexist": "A prediction IS an assertion; the combined 4,811 figure is only ever shown labelled as combined.",
    "neverDisplayed": "n/a",
    "countedBy": "postAnalysis.predictions entries",
@@ -209,8 +209,8 @@
  ],
  "totals": {
   "invariants": 224,
-  "passed": 220,
-  "failed": 4
+  "passed": 222,
+  "failed": 2
  },
  "results": [
   {
@@ -225,7 +225,7 @@
    "id": "questions",
    "description": "Questions = 6,454 certified occurrences",
    "pass": true,
-   "detail": "6519"
+   "detail": "6510"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -238,15 +238,15 @@
    "group": "1. Frozen canonical counts",
    "id": "claims",
    "description": "Claims = 4,189",
-   "pass": false,
-   "detail": "8929"
+   "pass": true,
+   "detail": "8934"
   },
   {
    "group": "1. Frozen canonical counts",
    "id": "predictions",
    "description": "Predictions = 630",
    "pass": true,
-   "detail": "842"
+   "detail": "843"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -377,9 +377,9 @@
   {
    "group": "2. Provenance contracts",
    "id": "q-rows",
-   "description": "Questions ships 6,653 rows for 6,519 certified",
+   "description": "Questions ships 6,644 rows for 6,510 certified",
    "pass": true,
-   "detail": "6653"
+   "detail": "6644"
   },
   {
    "group": "2. Provenance contracts",
@@ -400,7 +400,7 @@
    "id": "q-partition",
    "description": "counted + editorial = every shipped row",
    "pass": true,
-   "detail": "6519 + 134"
+   "detail": "6510 + 134"
   },
   {
    "group": "2. Provenance contracts",
@@ -580,9 +580,9 @@
   {
    "group": "6. Source-material isolation",
    "id": "isolation-questions",
-   "description": "questions: quoted-block over-extension stays at its known 100 occurrences",
+   "description": "questions: quoted-block over-extension stays at its known 101 occurrences",
    "pass": true,
-   "detail": "100 of 6519 (expected 100)"
+   "detail": "101 of 6510 (expected 101)"
   },
   {
    "group": "6. Source-material isolation",
@@ -594,9 +594,9 @@
   {
    "group": "6. Source-material isolation",
    "id": "isolation-claims",
-   "description": "claims: quoted-block over-extension stays at its known 597 occurrences",
+   "description": "claims: quoted-block over-extension stays at its known 598 occurrences",
    "pass": true,
-   "detail": "597 of 8929 (expected 597)"
+   "detail": "598 of 8934 (expected 598)"
   },
   {
    "group": "6. Source-material isolation",
@@ -615,9 +615,9 @@
   {
    "group": "6. Source-material isolation",
    "id": "debt-posts-baseline",
-   "description": "source-boundary debt stays at its known 234 posts",
+   "description": "source-boundary debt stays at its known 235 posts",
    "pass": true,
-   "detail": "234 posts"
+   "detail": "235 posts"
   },
   {
    "group": "6. Source-material isolation",
@@ -664,9 +664,9 @@
   {
    "group": "8. Seed and cache integrity",
    "id": "seed-current",
-   "description": "SEED_VERSION is 80 (unhighlighted-sentence queue ruling)",
-   "pass": false,
-   "detail": "81"
+   "description": "SEED_VERSION is 83 (2026-08-21 ruling batch + segmentation repair)",
+   "pass": true,
+   "detail": "83"
   },
   {
    "group": "8. Seed and cache integrity",
@@ -727,7 +727,7 @@
   {
    "group": "9. UI count integrity",
    "id": "ui-questions",
-   "description": "sectionInfo states 6,519",
+   "description": "sectionInfo states 6,510",
    "pass": true,
    "detail": "ok"
   },
@@ -741,7 +741,7 @@
   {
    "group": "9. UI count integrity",
    "id": "ui-claims",
-   "description": "sectionInfo states 8,928",
+   "description": "sectionInfo states 8,934",
    "pass": true,
    "detail": "ok"
   },
@@ -1450,14 +1450,14 @@
    "id": "hash-stable",
    "description": "no certified artifact CHANGED CONTENT since the manifest",
    "pass": false,
-   "detail": "posts.json"
+   "detail": "posts.json, questions.json, relationships.json, search-index.json"
   },
   {
    "group": "11. Frozen-section mutation",
    "id": "hash-reserialised",
    "description": "byte-level re-serialisation reported separately, not as drift",
    "pass": true,
-   "detail": "posts.json re-serialised by the export chain"
+   "detail": "posts.json, questions.json, relationships.json, search-index.json re-serialised by the export chain"
   },
   {
    "group": "11. Frozen-section mutation",
@@ -1574,9 +1574,9 @@
   {
    "group": "12. Cross-section relationships",
    "id": "rel-predictions",
-   "description": "Prediction → assertion edges = the certified 842",
+   "description": "Prediction → assertion edges = the certified 843",
    "pass": true,
-   "detail": "842"
+   "detail": "843"
   },
   {
    "group": "12. Cross-section relationships",
@@ -1597,7 +1597,7 @@
    "id": "rel-map-questions",
    "description": "analysis map totals reconcile with certified Questions",
    "pass": true,
-   "detail": "6519"
+   "detail": "6510"
   },
   {
    "group": "12. Cross-section relationships",
@@ -1667,7 +1667,7 @@
    "id": "search-questions",
    "description": "indexed Questions = certified 6,454",
    "pass": true,
-   "detail": "6519"
+   "detail": "6510"
   },
   {
    "group": "13. Global search",
@@ -1681,14 +1681,14 @@
    "id": "search-claims",
    "description": "indexed Claims = certified 4,181",
    "pass": true,
-   "detail": "8928"
+   "detail": "8934"
   },
   {
    "group": "13. Global search",
    "id": "search-predictions",
    "description": "indexed Predictions = certified 630",
    "pass": true,
-   "detail": "842"
+   "detail": "843"
   },
   {
    "group": "13. Global search",
@@ -1758,7 +1758,7 @@
    "id": "search-repeats-preserved",
    "description": "in-post repeats are indexed as separate occurrences",
    "pass": true,
-   "detail": "8928 rows, 8880 distinct (post, text)"
+   "detail": "8934 rows, 8886 distinct (post, text)"
   },
   {
    "group": "13. Global search",

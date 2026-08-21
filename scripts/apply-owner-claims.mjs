@@ -35,14 +35,38 @@ const batch = JSON.parse(fs.readFileSync(path.join(OUT, 'editorial-batch-pending
 // Q uses '>' and '>>' (HTML-escaped as &gt;) as an indent marker on his own lines — #524 lists
 // ">&gt;Hussein [1] $29,000,000 SINGAPORE". The certified rows store the line WITHOUT the marker,
 // so the matcher has to strip it too or every such ruling is refused as "not found verbatim".
-const stripMarkers = s => String(s).replace(/^(?:\s*(?:>|&gt;))+\s*/i, '').trim()
+// AN ORDERED-LIST MARKER IS NOT PART OF THE SENTENCE EITHER.
+//
+// #4893 numbers three steps, "1." / "2." / "3.". The claims audit already certified steps 1 and 2
+// WITHOUT their markers ("Unanimous convicted by Jury", not "1. Unanimous convicted by Jury"), so
+// a ruling on step 3 that kept its "3." would be refused as not-found — and if it were forced
+// through, that one step would paint a character wider than the two above it on the same list.
+//
+// Bounded on purpose: one or two digits then a dot then a space. That is Q's list form. It cannot
+// eat "40,000ft. v. is classified." or a year, because neither is a bare number followed by a dot
+// and a space at the very start of the line.
+const stripMarkers = s => String(s)
+  .replace(/^(?:\s*(?:>|&gt;))+\s*/i, '')
+  .replace(/^\d{1,2}\.\s+/, '')
+  .trim()
 const norm = s => stripMarkers(String(s)).toLowerCase().replace(/\s+/g, ' ').trim()
 
+// PREDICTIONS TOO, because they live in the same canonical artifact.
+//
+// claims-final.json carries `rows` (Claims) and `predictions` side by side, and apply-claims.mjs
+// materialises both. This script only ever read targetCategory 'claims', so an ad-hoc Prediction
+// ruling had nowhere to go — #4910's "Freedom of information [truth] = END" would have needed
+// either a hand-edit of a certified artifact or a second script doing the same job. One path, two
+// destinations, chosen by the ruling.
+const TARGETS = { claims: 'rows', predictions: 'predictions' }
 const approved = batch.rulings
-  .filter(r => r.targetCategory === 'claims')
-  .flatMap(r => r.approved.map(a => ({ ...a, rulingId: r.id, reasoning: r.reasoning })))
+  .filter(r => TARGETS[r.targetCategory])
+  .flatMap(r => r.approved.map(a => ({
+    ...a, rulingId: r.id, reasoning: r.reasoning, targetCategory: r.targetCategory,
+  })))
 
 const beforeRows = final.rows.length
+const beforePreds = final.predictions.length
 const diff = []
 let addedRows = 0, already = 0
 
@@ -55,9 +79,33 @@ for (const occ of approved) {
   const line = (p.text ?? '').split('\n').map(l => stripMarkers(l.trim())).find(l => norm(l) === norm(occ.text))
   if (!line) { console.error(`\n"${occ.text}" not found verbatim in #${occ.postNum} — refusing to guess.\n`); process.exit(1) }
 
-  if (final.rows.some(r => r.postNum === occ.postNum && norm(r.exactText) === norm(line))) { already++; continue }
+  const isPrediction = occ.targetCategory === 'predictions'
+  const target = final[TARGETS[occ.targetCategory]]
 
-  final.rows.push({
+  // Checked against the destination array, and against the OTHER one too: a line cannot be both
+  // a Claim and a Prediction, and finding it already certified on the far side is a contradiction
+  // to stop on rather than a duplicate to skip.
+  const other = isPrediction ? final.rows : final.predictions
+  if (other.some(r => r.postNum === occ.postNum && norm(r.exactText) === norm(line))) {
+    console.error(`\n"${line}" (#${occ.postNum}) is already certified as ${isPrediction ? 'a Claim' : 'a Prediction'}.`)
+    console.error('   A span belongs to one section. Withdraw it there before ruling it here.\n')
+    process.exit(1)
+  }
+  if (target.some(r => r.postNum === occ.postNum && norm(r.exactText) === norm(line))) { already++; continue }
+
+  target.push(isPrediction ? {
+    postNum: occ.postNum,
+    postId: p.id,
+    exactText: line,
+    primaryClass: 'prediction',
+    klass: 'Q_PREDICTION',
+    isConclusion: false,
+    conclusionReason: null,
+    checkable: false,
+    sourceProvided: false,
+    confidence: 'OWNER_ADJUDICATED',
+    provenance: `owner adjudication ${occ.ruledOn ?? '2026-08-13'} (${occ.rulingId}) — ${occ.reasoning}`,
+  } : {
     postNum: occ.postNum,
     postId: p.id,
     exactText: line,
@@ -75,16 +123,22 @@ for (const occ of approved) {
     provenance: `owner adjudication ${occ.ruledOn ?? '2026-08-13'} (${occ.rulingId}) — ${occ.reasoning}`,
   })
   addedRows++
-  diff.push({ postNum: occ.postNum, text: line, was: occ.was })
+  diff.push({ postNum: occ.postNum, text: line, was: occ.was, section: occ.targetCategory })
 }
 
 const totalRows = final.rows.length
 const distinct = new Set(final.rows.map(r => key(r.exactText))).size
 const postsWith = new Set(final.rows.map(r => r.postNum)).size
 
-console.log('\nOWNER CLAIMS -> CANONICAL ARTIFACT\n')
-for (const d of diff) console.log(`  #${String(d.postNum).padEnd(6)} ${JSON.stringify(d.text).slice(0, 40).padEnd(40)} ${d.was} -> Claim`)
-console.log(`\n  rows ${beforeRows.toLocaleString()} -> ${totalRows.toLocaleString()}   (added ${addedRows}, already present ${already})`)
+const totalPreds = final.predictions.length
+
+console.log('\nOWNER RULINGS -> CANONICAL ARTIFACT\n')
+for (const d of diff) {
+  const to = d.section === 'predictions' ? 'Prediction' : 'Claim'
+  console.log(`  #${String(d.postNum).padEnd(6)} ${JSON.stringify(d.text).slice(0, 46).padEnd(46)} ${String(d.was).padEnd(12)} -> ${to}`)
+}
+console.log(`\n  claim rows  ${beforeRows.toLocaleString()} -> ${totalRows.toLocaleString()}`)
+console.log(`  predictions ${beforePreds.toLocaleString()} -> ${totalPreds.toLocaleString()}   (added ${addedRows} in total, already present ${already})`)
 console.log(`\n  RECOMPUTED from the canonical artifact — not carried forward:`)
 console.log(`    occurrences : ${totalRows.toLocaleString()}`)
 console.log(`    distinct    : ${distinct.toLocaleString()}   (was certified 3,226)`)
@@ -100,12 +154,20 @@ console.log(`    posts       : ${postsWith.toLocaleString()}   (was certified 1,
 //
 // What they assert now is the property that actually has to hold on every run: every approved
 // occurrence is accounted for, and no existing row was lost on the way.
+const grew = (totalRows - beforeRows) + (totalPreds - beforePreds)
 const checks = [
-  ['no existing row lost', totalRows === beforeRows + addedRows, `${beforeRows} + ${addedRows} = ${totalRows}`],
+  ['no existing row lost', grew === addedRows,
+    `claims +${totalRows - beforeRows}, predictions +${totalPreds - beforePreds} = ${grew} added`],
   ['every approved occurrence present', addedRows + already === approved.length,
     `${addedRows + already}/${approved.length}`],
   ['every new row carries owner provenance',
-    final.rows.filter(r => r.confidence === 'OWNER_ADJUDICATED').every(r => r.provenance?.includes('owner adjudication')), 'ok'],
+    [...final.rows, ...final.predictions].filter(r => r.confidence === 'OWNER_ADJUDICATED')
+      .every(r => r.provenance?.includes('owner adjudication')), 'ok'],
+  // A span belongs to ONE section. Cheap to assert, and the failure it catches — the same line
+  // certified as both a Claim and a Prediction — is the kind that reconciles arithmetically on
+  // both sides while the drop paints two colours over one sentence.
+  ['no span certified in both sections',
+    !final.rows.some(r => final.predictions.some(q => q.postNum === r.postNum && norm(q.exactText) === norm(r.exactText))), 'ok'],
 ]
 console.log('\n  QA')
 let failed = 0

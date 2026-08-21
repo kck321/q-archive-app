@@ -63,7 +63,7 @@ for (const q of existing) {
 let nextId = 0
 const mkId = () => `qf-${(++nextId).toString(36)}`
 
-const rows = []
+let rows = []
 const seen = new Set()
 const stats = { carried: 0, addedQuestion: 0, addedWrapped: 0, addedRecovered: 0, editorial: 0, dupSkipped: 0 }
 
@@ -202,6 +202,75 @@ const queueStats = { added: 0, already: 0 }
   }
 }
 
+// ── SEGMENTATION FIXES: a question cut short at an initial ───────────────────
+//
+// A sentence splitter that ends a sentence at "." cuts "H. Biden", "A. Merkel", "N. Korea" and
+// "U.S. Supreme Court" in half, so #4898 was certified as "Why is the FBI's top child porn lawyer
+// involved in the H." and painted only that far — a question mark on screen with no blue under it.
+// Ten certified questions across eight drops carry the same defect.
+//
+// This is a SPAN correction, not a reclassification: every row was already certified as a Question,
+// on the right drop, with the right count. Only where the span stopped was wrong. The replacement
+// text comes from audit/questions-segmentation-fixes.json, which took it from the drop rather than
+// retyping it — Q's literal wording is never rewritten by a correction file.
+//
+// Layered here for the reason every other overlay is: written into the deriving audit it would be
+// erased the next time that audit ran.
+const SEGFIX = path.join(ROOT, 'audit/questions-segmentation-fixes.json')
+let segFixed = 0, segWithdrawn = 0, segMerged = 0
+if (fs.existsSync(SEGFIX)) {
+  const segFixes = JSON.parse(fs.readFileSync(SEGFIX, 'utf8')).fixes ?? []
+  const wanted = new Map(segFixes.map(f => [`${f.postNum}|${f.truncated}`, f.full]))
+  for (const r of rows) {
+    for (const field of ['text', 'unitText']) {
+      const full = wanted.get(`${r.postNum}|${r[field]}`)
+      if (full && r[field] !== full) { r[field] = full; segFixed++; r.segmentationFixed = true }
+    }
+  }
+  // Refuse rather than under-apply, the same rule the question rulings use above: a fix that stops
+  // matching leaves the truncated span certified with no error to show for it.
+  const expect = segFixes.length
+  const hit = new Set(rows.flatMap(r => segFixes
+    .filter(f => f.postNum === r.postNum && (r.text === f.full || r.unitText === f.full))
+    .map(f => `${f.postNum}|${f.truncated}`))).size
+  if (hit !== expect) {
+    console.error(`\nSegmentation fixes: ${expect} recorded, ${hit} landed. Refusing to write a half-applied correction.\n`)
+    process.exit(1)
+  }
+
+  // AND WITHDRAW THE TAIL, or the repair creates the defect it was meant to remove.
+  //
+  // The same splitter emitted the second half of each broken question as a certified question of
+  // its own: "Why would H." and "Biden have such material on his laptop?" are one sentence filed
+  // twice. Repairing the head alone leaves #4891 certified for the whole question AND for its own
+  // tail — one span, two Questions, the same-category overlap the owner ruled against.
+  //
+  // Absorbed, not deleted: the words stay in the archive inside the full span, counted once.
+  const drop = JSON.parse(fs.readFileSync(SEGFIX, 'utf8')).withdrawn?.fragments ?? []
+  const dropKeys = new Set(drop.map(d => `${d.postNum}|${key(d.fragment)}`))
+  const before = rows.length
+  rows = rows.filter(r => !dropKeys.has(`${r.postNum}|${key(r.text)}`))
+  segWithdrawn = before - rows.length
+  if (segWithdrawn !== drop.length) {
+    console.error(`\nSegmentation withdrawals: ${drop.length} recorded, ${segWithdrawn} matched. Refusing to half-apply.\n`)
+    process.exit(1)
+  }
+
+  // DEDUPE AFTER REPAIR. push() deduplicates on the way in, and these rows only became duplicates
+  // on the way back out: #4891 already carried "Why would H. Biden have such material on his
+  // laptop?" from another pass, so repairing the truncated head produced a second copy of a row
+  // that was already correct. Deduplicating here, by the same key() push() uses, keeps the
+  // earliest row — the one holding the original id, status and createdAt.
+  const kept = new Map()
+  for (const r of rows) {
+    const k = `${r.postNum}|${key(r.text)}`
+    if (r.editorialNormalization) { kept.set(`${k}|editorial|${kept.size}`, r); continue }
+    if (!kept.has(k)) kept.set(k, r)
+    else segMerged++
+  }
+  rows = [...kept.values()]
+}
+
 const counted = rows.filter(r => !r.editorialNormalization)
 const bodyOf = new Map(posts.map(p => [p.postNum, flat(p.text ?? '')]))
 const linesByPost = new Map(posts.map(p => [p.postNum, clean(p.text ?? '').split('\n').map(l => l.trim()).filter(Boolean)]))
@@ -215,7 +284,14 @@ for (const r of counted) {
   // "Why was Sarah A. C. attacked (hack-attempt)?" is a real line that unitsFor() splits on
   // the lone initial "A." — being mis-segmented is precisely why it needed recovering, so
   // requiring it to be a unit would reject the very thing the recovery fixed.
-  const ok = r.recoveredFromSegmentationError
+  // A REPAIRED span is not a unit BY CONSTRUCTION — unitsFor() splitting it at the initial is the
+  // whole defect. Same reasoning, and the same allowance, as recoveredFromSegmentationError above:
+  // what has to be true is that the span is contiguous in the drop, which is where it came from.
+  // #4898's question is a substring of its line rather than the whole of it, because Q appended
+  // "[special agent Joshua Wilson]" after the question mark.
+  const ok = r.segmentationFixed
+    ? (linesByPost.get(r.postNum) ?? []).some(l => flat(l).includes(flat(r.text)))
+    : r.recoveredFromSegmentationError
     ? (linesByPost.get(r.postNum) ?? []).includes(r.text)
     : r.spanFromJoinedUnits
       ? (linesByPost.get(r.postNum) ?? []).some(l => flat(l).includes(flat(r.text)))
@@ -234,7 +310,11 @@ const coinMentions = coin.reduce((s, r) => s + r.occurrences, 0)
 const checks = [
   // 6,443 + 11 owner rulings (2026-08-19): interrogative units certified in another section.
   // 6,454 + 65 from the unhighlighted-sentence queue (67 ruled, 2 occurrences already certified).
-  ['certified occurrences = 6,519', counted.length === 6519, counted.length],
+  // 6,519 - 9 = 6,510 (2026-08-21). Eight orphaned tail fragments were absorbed into the ten
+  // questions repaired from the initial-splitting defect, and one repair produced a second copy of
+  // a row that was already correct. No question left the archive: the same words are certified
+  // once, whole, instead of twice, in halves.
+  ['certified occurrences = 6,510', counted.length === 6510, counted.length],
   ['queue rulings applied = 67', queueStats.added + queueStats.already === 67,
     `${queueStats.added} added + ${queueStats.already} already certified`],
   ['every owner question ruling is in the set = 12', ownerQuestions + ownerAlreadyPresent === 12 && ownerMissing.length === 0,
@@ -243,7 +323,9 @@ const checks = [
   ['every span is a unit or literal line', qa.notAUnit.length === 0, `${counted.length - qa.notAUnit.length}/${counted.length}`],
   // +10: eleven rulings, ten wordings new to Questions.
   // +58: 65 new occurrences carrying 58 wordings Questions did not already hold.
-  ['distinct (canonical key) = 5,371', distinct.size === 5371, distinct.size],
+  // -8: each absorbed tail fragment held its own key ("Merkel?", "Gov't kept in the DARK?"). The
+  // ninth removal was a duplicate, which by definition shared a key and so costs distinct nothing.
+  ['distinct (canonical key) = 5,363', distinct.size === 5363, distinct.size],
   // +4: #1975, #2420, #2695 and #2776 had no certified question before these rulings.
   // +5 posts gain their first certified question.
   ['posts with questions = 1,705', postsWith.size === 1705, postsWith.size],
@@ -253,6 +335,9 @@ const checks = [
 ]
 
 console.log('\nAPPLY FINAL CERTIFIED QUESTIONS\n')
+console.log(`  segmentation spans fixed  : ${segFixed} field(s) across the recorded 10 questions`)
+console.log(`  fragment tails withdrawn  : ${segWithdrawn} (absorbed into the repaired span)`)
+console.log(`  duplicate rows merged     : ${segMerged} (repair produced a copy of a row already correct)`)
 console.log(`  carried from the live set : ${stats.carried.toLocaleString()}`)
 console.log(`  + plain questions         : ${stats.addedQuestion}`)
 console.log(`  + directive-wrapped spans : ${stats.addedWrapped}`)

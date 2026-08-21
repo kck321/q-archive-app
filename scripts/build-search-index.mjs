@@ -220,11 +220,13 @@ const noText = rows.filter(r => !String(r.t ?? '').trim())
 const checks = [
   // Every figure below moves with the 2026-08-20 unhighlighted-sentence queue ruling and with
   // nothing else. This step indexes what the materialisers certified; it never decides a count.
-  ['Questions indexed = 6,519', bySection.questions === 6519, bySection.questions],
+  // 6,510 after the 2026-08-21 segmentation repair (8 tails absorbed, 1 duplicate merged).
+  ['Questions indexed = 6,510', bySection.questions === 6510, bySection.questions],
   ['Directives indexed = 3,037', bySection.directives === 3037, bySection.directives],
-  // 8,929 since the 2026-08-21 ruling on #4923 ("Dearest Virginia -", Context -> Claim).
-  ['Claims indexed = 8,929', bySection.claims === 8929, bySection.claims],
-  ['Predictions indexed = 842', bySection.predictions === 842, bySection.predictions],
+  // 8,934: #4923 "Dearest Virginia -", then the 2026-08-21 batch — #4861, #4893 x2, #4853 x2.
+  ['Claims indexed = 8,934', bySection.claims === 8934, bySection.claims],
+  // 843: #4910 "Freedom of information [truth] = END".
+  ['Predictions indexed = 843', bySection.predictions === 843, bySection.predictions],
   ['Evidence indexed = 6,590', bySection.evidence === 6590, bySection.evidence],
   // 1,334: Ray Chandler ships merged into Rachel Chandler under the owner ruling.
   [`Entities indexed = ${CANONICAL.entities.canonical.toLocaleString()}`,

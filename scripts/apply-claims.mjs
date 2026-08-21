@@ -294,10 +294,11 @@ const checks = [
   // 4,221 - 9 withdrawn to Questions by owner ruling (2026-08-19) = 4,212.
   // 4,212 + 4,716 arriving from the unhighlighted-sentence queue = 8,928. The owner ruled 4,782
   // sentences to be Claims; 66 of those occurrences were already certified, so 4,716 are new.
-  // 8,928 + 1 = 8,929. Owner ruling 2026-08-21 (r10-dearest-virginia): #4923 "Dearest Virginia -"
-  // moves Context -> Claim. One occurrence, recorded in audit/editorial-batch-pending.json and
-  // carried into claims-final.json by apply-owner-claims.mjs.
-  ['claim occurrences = 8,929', allClaims.length === 8929, allClaims.length],
+  // 8,928 + 1 = 8,929 (r10, #4923 "Dearest Virginia -"), + 5 = 8,934 from the 2026-08-21 batch:
+  // #4861 "House resolution passed condemning 'Qanon'", #4893 "Example:" and "Federal Appeals
+  // Court reinstates conviction", #4853 "Wife: CIA" and "Husband: DOJ". All recorded in
+  // audit/editorial-batch-pending.json and carried in by apply-owner-claims.mjs.
+  ['claim occurrences = 8,934', allClaims.length === 8934, allClaims.length],
   ['queue rulings applied = 4,782 claims / 250 predictions',
     stats2020.claimsAdded + stats2020.claimsAlready === 4782 && stats2020.predsAdded + stats2020.predsAlready === 250,
     `${stats2020.claimsAdded}+${stats2020.claimsAlready} claims, ${stats2020.predsAdded}+${stats2020.predsAlready} predictions`],
@@ -308,15 +309,22 @@ const checks = [
   // +3,581: the 4,716 new occurrences carry 3,581 wordings Claims did not already hold. The gap
   // is in-post and cross-post repetition — "Fantasy land." alone arrives four times in #111.
   // +1: "Dearest Virginia -" occurs once in the whole archive, so it opens its own key.
-  ['distinct = 6,829', distinct.size === 6829, distinct.size],
+  // +4, not +5, for the five new claims: "Example:" normalises to the key "example", which
+  // "Example." already holds as a certified Claim on #1015 and #1220. It joins them rather than
+  // opening a key — which is also independent support for the ruling.
+  ['distinct = 6,833', distinct.size === 6833, distinct.size],
   // +1: 17 posts gain their first claim, 16 posts lose their last one.
   // -3: #483, #2695 and #3203 each held ONE claim and it was the quoted question, so those
   // drops leave the Claims post set entirely. #2420 and #2776 keep other claims and stay.
   // +1,104: the queue reached 4,484 posts, and 1,104 of them held no certified claim before.
-  ['posts = 3,084', postsWith.size === 3084, postsWith.size],
+  // +2: #4861 and #4853 gain their first certified claim. #4893 and #4923 already had claims,
+  // so they were already in the set.
+  ['posts = 3,086', postsWith.size === 3086, postsWith.size],
   // 630 - 73 technical nonpredictions - 56 arguable + 66 from Claims + 28 found = 595.
   // 595 + 247 from the queue (250 ruled, 3 occurrences already certified) = 842.
-  ['predictions = 842', allPreds.length === 842, allPreds.length],
+  // +1: #4910 "Freedom of information [truth] = END" (r11), the first ad-hoc Prediction ruling to
+  // go through apply-owner-claims.mjs rather than a queue batch.
+  ['predictions = 843', allPreds.length === 843, allPreds.length],
   // isConclusion travels with the ROW rather than with the section, so a row leaving Claims
   // takes the attribute with it. -1: #3203's quoted question was the only withdrawn row
   // carrying it. 966 - 1 = 965.
@@ -337,7 +345,9 @@ const checks = [
   // ("Poof!", "Classified.", "Ten days."). 387 + 3,159 = 3,546.
   // +1: "Dearest Virginia -" is three tokens, so the same "four words or fewer" rule marks it
   // telegraphic. Not a judgement about the ruling — the attribute is computed, not assigned.
-  ['telegraphic = 3,547', telegraphic === 3547, telegraphic],
+  // +3 of the five new claims are four words or fewer: "Example:", "Wife: CIA", "Husband: DOJ".
+  // The other two are five words each. Computed by the same rule, not assigned.
+  ['telegraphic = 3,550', telegraphic === 3550, telegraphic],
   // 13 + 37: the queue emitted one row per UNIT, so a line Q wrote twice arrives twice and is
   // certified twice. Collapsing them would have dropped 37 real occurrences.
   ['in-post repeats preserved = 50', repeats === 50, repeats],
@@ -346,7 +356,10 @@ const checks = [
   // 6,443 + 11 arriving by owner ruling (2026-08-19) = 6,454.
   // 6,454 + 65 arriving from the same owner ruling. Cross-section CHECK, not a source:
   // apply-questions-final.mjs owns the number and runs earlier in the chain.
-  ['Questions now 6,519', questions.length === 6519, questions.length],
+  // 6,510 since the 2026-08-21 segmentation repair: 8 orphaned tail fragments absorbed into the
+  // 10 questions they were split from, plus 1 duplicate merged. Asserted here because a claim
+  // ruling must not move Questions - this is a cross-section tripwire, not a Questions figure.
+  ['Questions now 6,510', questions.length === 6510, questions.length],
   // 2,422 + 2 owner rulings (#4963 'Focus.' / 'FOCUS.', ruled Directives out of Emphasis).
   // v5: Q Directives migrated to sourceSpansV2 provenance; 2,705 -> 2,552 by owner ruling.
   // 2,552 + 485 arriving from the same owner ruling. This is a cross-section CHECK, not a source:

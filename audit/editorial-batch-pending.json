@@ -530,6 +530,80 @@
       ],
       "excluded": [],
       "proposedCountChange": "Claims +1 on #4923; Context -1"
+    },
+    {
+      "id": "r11-freedom-of-information-end",
+      "ruling": "#4910 'Freedom of information [truth] = END' is a Prediction",
+      "reasoning": "Owner ruling, 2026-08-21. The line was unclassified — only its [truth] bracket and END carried Emphasis, so the drop's one substantive line painted nothing. It is an assertion about an outcome, in Q's equation form: freedom of information, and specifically the truth, ENDS the thing under discussion. Future-facing, so Prediction rather than Claim. [truth] keeps its red bracket layer on top.",
+      "targetCategory": "predictions",
+      "ruledOn": "2026-08-21",
+      "approved": [
+        {
+          "postNum": 4910,
+          "text": "Freedom of information [truth] = END",
+          "was": "unclassified"
+        }
+      ],
+      "excluded": [],
+      "proposedCountChange": "Predictions +1 on #4910"
+    },
+    {
+      "id": "r12-house-resolution-qanon",
+      "ruling": "#4861 'House resolution passed condemning ‘Qanon’' is a Claim",
+      "reasoning": "Owner ruling, 2026-08-21. The line sits directly above 'House intel committee meeting tomorrow re: Qanon', which is ALREADY a certified Prediction. The two are the same construction one line apart; the difference is tense. A resolution that has passed is a completed event, so it is a Claim, and the pair now reads as the archive classifies it: what happened, then what is about to. House and Qanon keep their cyan entity layers on top.",
+      "targetCategory": "claims",
+      "ruledOn": "2026-08-21",
+      "approved": [
+        {
+          "postNum": 4861,
+          "text": "House resolution passed condemning 'Qanon'",
+          "was": "unclassified"
+        }
+      ],
+      "excluded": [],
+      "proposedCountChange": "Claims +1 on #4861"
+    },
+    {
+      "id": "r13-example-and-reinstates",
+      "ruling": "#4893 'Example:' and 'Federal Appeals Court reinstates conviction' are Claims",
+      "reasoning": "Owner ruling, 2026-08-21. Both were certified Context, which does not paint, so the drop showed a numbered three-step sequence with steps 1 and 2 amber and step 3 bare. Step 3 is the same kind of assertion as the two above it — a court action that occurred. 'Example:' introduces the whole sequence as Q's evidence for HOW IS THE GAME PLAYED?. The span excludes the '3.' list marker, matching how step 1 is already stored ('Unanimous convicted by Jury', not '1. Unanimous...').",
+      "targetCategory": "claims",
+      "ruledOn": "2026-08-21",
+      "approved": [
+        {
+          "postNum": 4893,
+          "text": "Example:",
+          "was": "Context"
+        },
+        {
+          "postNum": 4893,
+          "text": "Federal Appeals Court reinstates conviction",
+          "was": "Context"
+        }
+      ],
+      "excluded": [],
+      "proposedCountChange": "Claims +2 on #4893; Context -2"
+    },
+    {
+      "id": "r14-wife-cia-husband-doj",
+      "ruling": "#4853 'Wife: CIA' and 'Husband: DOJ' are Claims",
+      "reasoning": "Owner ruling, 2026-08-21. Both were certified Context. Each is an assertion of fact about a named pair — the drop's attached image identifies them as Nellie and Bruce Ohr — and together they set up the question underneath, 'How does one agency attach itself to another?'. Ruled as two Claims rather than one because they are two lines and a certified span must be contiguous in the drop; a single span across the newline is the multi-line reconstruction case the ledger already holds as an exception. CIA and DOJ keep their cyan entity layers on top.",
+      "targetCategory": "claims",
+      "ruledOn": "2026-08-21",
+      "approved": [
+        {
+          "postNum": 4853,
+          "text": "Wife: CIA",
+          "was": "Context"
+        },
+        {
+          "postNum": 4853,
+          "text": "Husband: DOJ",
+          "was": "Context"
+        }
+      ],
+      "excluded": [],
+      "proposedCountChange": "Claims +2 on #4853; Context -2"
     }
   ],
   "totalProposed": {

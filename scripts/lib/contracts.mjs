@@ -25,7 +25,12 @@ export const CANONICAL = {
   // artifact rather than writing into it, so re-deriving an audit can neither erase a ruling nor
   // restore a withdrawn row.
   // +65 occurrences (67 ruled, 2 already certified), +58 wordings, +5 posts.
-  questions: { occurrences: 6519, distinct: 5371, posts: 1705 },
+  // 2026-08-21 segmentation repair: -9 occurrences, -8 wordings. Ten certified questions were cut
+  // short by a splitter that read an INITIAL as a sentence end ("H. Biden", "A. Merkel"); repairing
+  // them absorbed the 8 orphaned tail fragments the same splitter had certified separately, and one
+  // repair produced a duplicate of a row already correct. No question left the archive - the same
+  // words are certified once, whole, instead of twice, in halves. Posts unchanged.
+  questions: { occurrences: 6510, distinct: 5363, posts: 1705 },
   // v5, 16 Aug 2026 — Q Directives migrated to sourceSpansV2 provenance under owner ruling.
   // 2,705 -> 2,552: 153 occurrences removed from Q Directives ONLY (quoted news, scraped code,
   // blessings, declarative-lead misreads, questions, a prediction). Nothing was deleted from the
@@ -52,13 +57,19 @@ export const CANONICAL = {
   // distinct -9 (each wording occurs in one post only); posts -3 (#483, #2695, #3203 each held
   // exactly one claim, and it was the quoted question).
   // +4,716 occurrences (4,782 ruled, 66 already certified), +3,581 wordings, +1,104 posts.
-  claims: { occurrences: 8928, distinct: 6828, posts: 3084 },
+  // +6 on 2026-08-21 by owner ruling: #4923 "Dearest Virginia -", #4861 "House resolution passed
+  // condemning 'Qanon'", #4893 "Example:" and "Federal Appeals Court reinstates conviction", #4853
+  // "Wife: CIA" and "Husband: DOJ". distinct +5, not +6: "Example:" shares a key with "Example."
+  // already certified on #1015 and #1220. posts +2: #4861 and #4853 gain their first claim.
+  claims: { occurrences: 8934, distinct: 6833, posts: 3086 },
   // 630 -> 595: -73 technical nonpredictions, -56 arguable rows withdrawn to the review
   // backlog, +66 unique moves from Claims, +28 high-confidence predictions the extractor
   // missed. posts 520 -> 490. The 91 withdrawn/held rows are NOT deleted — they sit in
   // audit/predictions-audit/review-backlog.md awaiting an owner ruling.
   // +247 occurrences (250 ruled, 3 already certified), +183 posts.
-  predictions: { occurrences: 842, posts: 673 },
+  // +1 on 2026-08-21 by owner ruling: #4910 "Freedom of information [truth] = END", which gains
+  // that drop its first certified prediction.
+  predictions: { occurrences: 843, posts: 674 },
   evidence: { occurrences: 6590, posts: 3883 },
   entities: {
     // 1,332 detected + 1 owner ruling (Dominion Voting Systems, #4963 "Dominion." — the only
@@ -373,7 +384,17 @@ export const KNOWN_DEBT = {
   //       shipping stale. That materialiser could not COMPLETE on the committed data (its owner-
   //       ruling gate counted pushes, and #524's ruling was already baked in, so it scored 0 of 1
   //       and aborted), which is why the stale value survived. Fixing the gate let it run.
-  postsAffected: 234,
+  // 234 -> 235 and claims 597 -> 598 on 2026-08-21, one cause, recorded before it was accepted:
+  //   +1  #4861 "House resolution passed condemning 'Qanon'", ruled a Claim by the owner. Q wrote
+  //       that line with his ">" indent marker, and the quoted-block detector reads a ">" line as
+  //       source material. That IS the over-extension this debt records — the certified section is
+  //       right and the detector is wrong, exactly as it is for the other 597. Not a new defect.
+  // questions 100 -> 101 in the same run, and NOT from a ruling: re-running apply-questions-final
+  // corrected a stale unitText on #2971, so "proof = evidence?" left the frozen set while the
+  // recomputed spans brought others in. The set file and these counts had ALREADY been out of step
+  // before this batch (set: claims 594, directives 128; baseline: 597, 129), so both records were
+  // re-frozen together rather than one being patched to agree with the other.
+  postsAffected: 235,
   // RECOMPUTED 2026-08-13 after the quote-boundary fix, not bumped to satisfy a gate.
   //
   // sourceLines() treated a line ENDING in a closing quotation mark as still inside the quote,
@@ -415,7 +436,7 @@ export const KNOWN_DEBT = {
   // Every one of the 540 was matched back to a row in audit/unhighlighted-owner-rulings.json before
   // the set was re-frozen; the added list is kept in audit/source-boundary-drift.json. A baseline
   // is never moved to make a check pass, and this one moved only because each added row was named.
-  baseline: { questions: 100, directives: 129, claims: 597, emphasis: 0 },
+  baseline: { questions: 101, directives: 129, claims: 598, emphasis: 0 },
   // 102 -> 103 and 123 -> 124 on 2026-08-13, ruled BENIGN and documented rather than bumped
   // quietly. Cause: literal-span materialisation. The isolation test now measures the literal
   // form of a question rather than its certified normalised text, and a longer span is

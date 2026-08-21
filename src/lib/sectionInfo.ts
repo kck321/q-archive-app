@@ -12,7 +12,7 @@
 export const CERTIFIED = {
   // 2026-08-20 OWNER RULING - the unhighlighted-sentence queue. 6,108 of the 6,111 queued
   // sentences accepted into a section; see audit/unhighlighted-owner-rulings.json.
-  questions: { occurrences: 6519, distinct: 5371, posts: 1705 },
+  questions: { occurrences: 6510, distinct: 5363, posts: 1705 },
   // v5, 16 Aug 2026 — Q Directives migrated to sourceSpansV2 provenance under owner ruling.
   // 2,705 -> 2,552: 153 occurrences removed from Q Directives ONLY (quoted news, scraped code,
   // blessings, declarative-lead misreads, questions, a prediction). Nothing was deleted from the
@@ -21,8 +21,8 @@ export const CERTIFIED = {
   // what the page actually renders — the old 1,472/1,417 counted directives-final.json alone and
   // never matched the UI.
   directives: { occurrences: 3037, distinct: 1827, posts: 1689 },
-  claims: { occurrences: 8928, distinct: 6828, posts: 3084 },
-  predictions: { occurrences: 842, posts: 673 },
+  claims: { occurrences: 8934, distinct: 6833, posts: 3086 },
+  predictions: { occurrences: 843, posts: 674 },
   /** Claim attributes. `conclusions` may apply to a claim or a prediction. */
   // checkable, sourceProvided and conclusions do NOT move with the queue ruling: they are
   // attributes the claims audit established from evidence inside the drop, and the owner ruled a
@@ -57,8 +57,8 @@ export const CERTIFIED = {
  * recount cannot quietly come back.
  */
 export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number; unit: string }> = {
-  claims: { occurrences: 8928, posts: 3084, unit: 'occurrences' },
-  predictions: { occurrences: 842, posts: 673, unit: 'occurrences' },
+  claims: { occurrences: 8934, posts: 3086, unit: 'occurrences' },
+  predictions: { occurrences: 843, posts: 674, unit: 'occurrences' },
   emphasis: { occurrences: 3105, posts: 1356, unit: 'occurrences' },
   // "mentions" is the right word here and the only section where it is: an entity is counted
   // once per resolved mention across the 1,066 canonical entities Q named in prose. The other 135

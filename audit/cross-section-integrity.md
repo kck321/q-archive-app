@@ -6,7 +6,7 @@ One question: does every certified occurrence in every section still resolve to 
 This audit validates the certified system. It reclassifies nothing and moves no count. All eight analytical sections remain frozen.
 
 
-**220 of 224 invariants pass.**
+**222 of 224 invariants pass.**
 
 
 ## 1. Frozen canonical counts
@@ -14,10 +14,10 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | | Invariant | Observed |
 |---|---|---|
 | ✅ | posts = 4,966 | 4966 |
-| ✅ | Questions = 6,454 certified occurrences | 6519 |
+| ✅ | Questions = 6,454 certified occurrences | 6510 |
 | ✅ | Directives = 2,552 | 3037 |
-| ❌ | Claims = 4,189 | 8929 |
-| ✅ | Predictions = 630 | 842 |
+| ✅ | Claims = 4,189 | 8934 |
+| ✅ | Predictions = 630 | 843 |
 | ✅ | Evidence = 6,590 | 6590 |
 | ✅ | Entities = 1,335 canonical | 1240 |
 | ✅ | Entities = 7,903 resolved mentions (headline) | 8969 |
@@ -41,10 +41,10 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | Questions ships 6,653 rows for 6,519 certified | 6653 |
+| ✅ | Questions ships 6,644 rows for 6,510 certified | 6644 |
 | ✅ | exactly 134 editorial-normalisation rows | 134 |
 | ✅ | no editorial row carries an occurrences field | 0 counted |
-| ✅ | counted + editorial = every shipped row | 6519 + 134 |
+| ✅ | counted + editorial = every shipped row | 6510 + 134 |
 | ✅ | embedded-in-source URLs are labelled in the data | 20 labelled |
 | ✅ | embedded-in-source URLs are excluded from the Q-citation figure | 2724 citations + 20 embedded of 6590 |
 | ✅ | canonical and mentions are distinct metrics | 1240 vs 8969 |
@@ -90,12 +90,12 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | questions: quoted-block over-extension stays at its known 100 occurrences | 100 of 6519 (expected 100) |
+| ✅ | questions: quoted-block over-extension stays at its known 101 occurrences | 101 of 6510 (expected 101) |
 | ✅ | directives: quoted-block over-extension stays at its known 129 occurrences | 129 of 3037 (expected 129) |
-| ✅ | claims: quoted-block over-extension stays at its known 597 occurrences | 597 of 8929 (expected 597) |
+| ✅ | claims: quoted-block over-extension stays at its known 598 occurrences | 598 of 8934 (expected 598) |
 | ✅ | emphasis: quoted-block over-extension stays at its known 0 occurrences | 0 of 4218 (expected 0) |
 | ✅ | the source-boundary occurrence SET is unchanged | identical |
-| ✅ | source-boundary debt stays at its known 234 posts | 234 posts |
+| ✅ | source-boundary debt stays at its known 235 posts | 235 posts |
 | ✅ | the source-boundary risk is recorded as a prerequisite, not a footnote | highest |
 
 ## 7. Export-chain integrity
@@ -112,7 +112,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ❌ | SEED_VERSION is 80 (unhighlighted-sentence queue ruling) | 81 |
+| ✅ | SEED_VERSION is 83 (2026-08-21 ruling batch + segmentation repair) | 83 |
 | ✅ | seeding is gated on SEED_VERSION | present |
 | ✅ | seeded data matches the SEED_VERSION that shipped it | unchanged |
 | ✅ | the gate value is persisted after seeding | present |
@@ -126,9 +126,9 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | sectionInfo states 6,519 | ok |
+| ✅ | sectionInfo states 6,510 | ok |
 | ✅ | sectionInfo states 3,037 | ok |
-| ✅ | sectionInfo states 8,928 | ok |
+| ✅ | sectionInfo states 8,934 | ok |
 | ✅ | sectionInfo states 6,590 | ok |
 | ✅ | sectionInfo headlines 1,240 entities and 8,969 mentions | ok |
 | ✅ | no alias is stored all-lowercase | ok |
@@ -254,8 +254,8 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ❌ | no certified artifact CHANGED CONTENT since the manifest | posts.json |
-| ✅ | byte-level re-serialisation reported separately, not as drift | posts.json re-serialised by the export chain |
+| ❌ | no certified artifact CHANGED CONTENT since the manifest | posts.json, questions.json, relationships.json, search-index.json |
+| ✅ | byte-level re-serialisation reported separately, not as drift | posts.json, questions.json, relationships.json, search-index.json re-serialised by the export chain |
 | ✅ | every certified artifact is on disk | 11/11 |
 | ✅ | the editorial write guard is a shared module | lib/certifiedWrite.mjs |
 | ✅ | the guard has a negative test | test-certified-write-guard.mjs |
@@ -277,10 +277,10 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | Entity ↔ Code edges come from the 32 stored cross-links | 32 |
 | ✅ | Claim → Conclusion edges = the certified 965 | 965 |
 | ✅ | Claim → Source provided edges = the certified 439 | 439 |
-| ✅ | Prediction → assertion edges = the certified 842 | 842 |
+| ✅ | Prediction → assertion edges = the certified 843 | 843 |
 | ✅ | every queue row has an edge to its occurrence | 115 |
 | ✅ | every relationship belongs to a real post | 0 orphaned |
-| ✅ | analysis map totals reconcile with certified Questions | 6519 |
+| ✅ | analysis map totals reconcile with certified Questions | 6510 |
 | ✅ | analysis map totals reconcile with certified Directives | 3037 |
 | ✅ | analysis map totals reconcile with certified Emphasis | 3105 |
 | ✅ | post page: no blanket semantic rule paints without a certified occurrence | clean |
@@ -295,10 +295,10 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | | Invariant | Observed |
 |---|---|---|
 | ✅ | the index declares it comes from certified artifacts | true |
-| ✅ | indexed Questions = certified 6,454 | 6519 |
+| ✅ | indexed Questions = certified 6,454 | 6510 |
 | ✅ | indexed Directives = certified 2,552 | 3037 |
-| ✅ | indexed Claims = certified 4,181 | 8928 |
-| ✅ | indexed Predictions = certified 630 | 842 |
+| ✅ | indexed Claims = certified 4,181 | 8934 |
+| ✅ | indexed Predictions = certified 630 | 843 |
 | ✅ | indexed Evidence = certified 6,590 | 6590 |
 | ✅ | indexed Entities = certified 1,445 | 1240 |
 | ✅ | indexed Themes = certified 2,395 | 2644 |
@@ -308,7 +308,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | every editorial row is flagged not-Q-authored | 0 |
 | ✅ | no Q-authored row is flagged editorial | 0 |
 | ✅ | the results page labels editorial rows before their text | labelled |
-| ✅ | in-post repeats are indexed as separate occurrences | 8928 rows, 8880 distinct (post, text) |
+| ✅ | in-post repeats are indexed as separate occurrences | 8934 rows, 8886 distinct (post, text) |
 | ✅ | every record states why it can match | ok |
 | ✅ | every post-bound record carries the id its link needs | 0 without |
 | ✅ | search performs no classification of its own | reads the index |
@@ -319,10 +319,10 @@ There is no single rule that shipped rows must equal certified counts — assert
 
 | Section | Certified | Counted by | What may coexist | What must never display |
 |---|---|---|---|---|
-| Q Questions | 6,519 | rows carrying an `occurrences` field | 134 editorial-normalisation rows are shipped so the search index can find a question a reader half-remembers in cleaned-up form. | Those 134 must never count toward any total, never highlight in a post, and never display as Q-authored. They are identified by editorialNormalization or neverDisplayAsQ. |
+| Q Questions | 6,510 | rows carrying an `occurrences` field | 134 editorial-normalisation rows are shipped so the search index can find a question a reader half-remembers in cleaned-up form. | Those 134 must never count toward any total, never highlight in a post, and never display as Q-authored. They are identified by editorialNormalization or neverDisplayAsQ. |
 | Q Directives | 3,037 | every actionRequests string across all posts | None. Every actionRequests entry is a certified directive. | n/a |
-| Q Claims | 8,928 | postAnalysis.claims entries whose displayClass is claim | Predictions share the assertion family and the same storage, separated by claimMeta.displayClass. editorialParaphrases are stored per post and are NOT claims. | An editorial paraphrase must never be presented as Q’s literal wording. |
-| Q Predictions | 842 | postAnalysis.predictions entries | A prediction IS an assertion; the combined 4,811 figure is only ever shown labelled as combined. | n/a |
+| Q Claims | 8,934 | postAnalysis.claims entries whose displayClass is claim | Predictions share the assertion family and the same storage, separated by claimMeta.displayClass. editorialParaphrases are stored per post and are NOT claims. | An editorial paraphrase must never be presented as Q’s literal wording. |
+| Q Predictions | 843 | postAnalysis.predictions entries | A prediction IS an assertion; the combined 4,811 figure is only ever shown labelled as combined. | n/a |
 | Evidence & References | 6,590 | every item row | URLs embedded inside pasted source material exist in the data and are labelled as such. They are references a reader can follow, but they are not Q citing a source. | An embedded-in-source URL must never be presented as a Q citation. |
 | Q Entities | 8,969 | sum of per-entity mention counts | Canonical entities (1,332) and mentions (7,903) are DIFFERENT metrics, not a row-count mismatch — one entity is mentioned many times. The headline covers every resolved mention: 4,463 from the 93-entity core registry plus 3,440 from the 1,239 adjudicated-tail entities. Unresolved alias tokens are counted in neither. | An unresolved alias must never be shown as a resolved identification. |
 | Q Themes | 2,644 | sum of per-post theme assignments | Multi-label by design: 378 posts carry more than one theme, so assignments exceed posts. Legacy extractor tags are not counted. | A legacy tag must never be shown as a certified theme. |
@@ -345,7 +345,5 @@ Overlap is allowed only where two sections answer different analytical questions
 
 ## Failures
 
-- **1. Frozen canonical counts — Claims = 4,189**: 8929
-- **8. Seed and cache integrity — SEED_VERSION is 80 (unhighlighted-sentence queue ruling)**: 81
 - **10c. Integrated entity cleanup — the same inputs still produce the same audit, byte for byte**: inputs moved
-- **11. Frozen-section mutation — no certified artifact CHANGED CONTENT since the manifest**: posts.json
+- **11. Frozen-section mutation — no certified artifact CHANGED CONTENT since the manifest**: posts.json, questions.json, relationships.json, search-index.json
