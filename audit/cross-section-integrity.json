@@ -1313,10 +1313,10 @@
   },
   {
    "group": "10c. Integrated entity cleanup",
-   "id": "cleanup-rebuild-baseline",
-   "description": "determinism baseline recorded",
+   "id": "cleanup-rebuild-byte-identical",
+   "description": "the same inputs still produce the same audit, byte for byte",
    "pass": true,
-   "detail": "baseline"
+   "detail": "identical"
   },
   {
    "group": "10d. Public entity list reconciliation",

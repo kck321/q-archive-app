@@ -225,7 +225,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | the two coordinate systems genuinely disagree, so this check can fail | raw 1430 links vs rendered 2666 — the gap this guard exists for |
 | ✅ | the script definition still matches what the app strips at seed time | markup + entities |
 | ✅ | the scripts use the renderer's word-boundary rule | lookaround, not \b |
-| ✅ | determinism baseline recorded | baseline |
+| ✅ | the same inputs still produce the same audit, byte for byte | identical |
 
 ## 10d. Public entity list reconciliation
 
