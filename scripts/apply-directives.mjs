@@ -33,6 +33,10 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { clean, key } from './lib/segment.mjs'
+// The certified family detector, and the ruleset for the residue it cannot name. Two files on
+// purpose: the detector must not widen, or this batch would silently re-family certified rows.
+import { familyOf } from './lib/imperative.mjs'
+import { queueFamilyOf } from './lib/queueDirectiveFamily.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -64,6 +68,46 @@ if (fs.existsSync(ORULES)) {
       provenance: `owner ruling ${r.ruledOn} — ${r.reasoning}`,
     })
     ownerDirectives++
+  }
+}
+
+// ── The unhighlighted-sentence queue, ruled by the owner (2026-08-20) ────────
+//
+// Same merge point, same QA, one different problem: a directive needs a FAMILY, and the review
+// named a section rather than a family. familyOf() — the detector that produced the certified
+// 2,552 and their family split — is asked first and its answer is always kept, so this batch
+// cannot re-family a single certified row. It leaves 378 of the 486 as 'other', because it keys on
+// a leading imperative verb and this queue is dominated by shapes that have none: "Logical
+// thinking.", "Worth remembering.", "Thank you Anon.", "UNITED WE STAND." Those are decided by
+// lib/queueDirectiveFamily.mjs, which states the FUNCTION each rule is claiming and returns
+// 'other' rather than absorbing anything it cannot name — the gate below then refuses.
+//
+// Occurrence-aware, like every other layer here: the audit emitted one row per UNIT, so a line Q
+// wrote twice arrives twice and is certified twice.
+const QUEUE = path.join(ROOT, 'audit/unhighlighted-owner-rulings.json')
+const queueRulings = (fs.existsSync(QUEUE) ? JSON.parse(fs.readFileSync(QUEUE, 'utf8')).rulings ?? [] : [])
+  .filter(r => r.section === 'directives')
+const queueStats = { added: 0, already: 0, byFamily: {} }
+{
+  const have = new Map()
+  for (const x of final.rows) { const k = `${x.postNum}|${key(x.qSourceText)}`; have.set(k, (have.get(k) ?? 0) + 1) }
+  const seen = new Map()
+  for (const r of queueRulings) {
+    const k = `${r.postNum}|${key(r.sourceText)}`
+    const done = seen.get(k) ?? 0
+    seen.set(k, done + 1)
+    if (done < (have.get(k) ?? 0)) { queueStats.already++; continue }
+    const detected = familyOf(r.sourceText)
+    const family = detected === 'other' ? queueFamilyOf(r.sourceText, r.postNum) : detected
+    queueStats.byFamily[family] = (queueStats.byFamily[family] ?? 0) + 1
+    final.rows.push({
+      postNum: r.postNum, postId: r.postId, qSourceText: r.sourceText,
+      family, confidence: 'OWNER', alsoCertifiedQuestion: false,
+      klass: 'Q_DIRECTIVE', storedAsActionRequest: true, source: 'owner ruling',
+      familySource: detected === 'other' ? 'queue rules' : 'detector',
+      provenance: `owner ruling ${r.ruledOn} — unhighlighted-sentence queue`,
+    })
+    queueStats.added++
   }
 }
 
@@ -126,11 +170,21 @@ for (const r of final.rows) { const k = `${r.postNum}|${key(r.qSourceText)}`; ce
 const countMismatch = [...groups].filter(([k, n]) => certGroups.get(k) !== n)
 
 const checks = [
-  ['directive occurrences = 2,552', all.length === 2552, all.length],
+  // 2,552 + 485 from the unhighlighted-sentence queue (486 ruled, 1 occurrence already
+  // certified) = 3,037.
+  ['directive occurrences = 3,037', all.length === 3037, all.length],
+  ['queue rulings applied = 486', queueStats.added + queueStats.already === 486,
+    `${queueStats.added} added + ${queueStats.already} already certified`],
+  // The detector's answer is kept wherever it has one; only its residue is decided by the queue
+  // ruleset, and nothing may land in 'other'.
+  ['no queue directive without a family', !queueStats.byFamily.other, `${queueStats.byFamily.other ?? 0} unnamed`],
   ['owner directive rulings applied = 276', ownerDirectives === 276, ownerDirectives],
   ['all resolve to a source span', unresolved.length === 0, `${all.length - unresolved.length}/${all.length}`],
-  ['distinct = 1,642', distinct.size === 1642, distinct.size],
-  ['posts with a directive = 1,464', postsWith.size === 1464, postsWith.size],
+  // +185: the 485 new occurrences carry 185 wordings Directives did not already hold. The gap is
+  // repetition - "Thank you Patriots." and "Happy Hunting." recur across dozens of drops.
+  ['distinct = 1,827', distinct.size === 1827, distinct.size],
+  // +225 posts gain their first certified directive.
+  ['posts with a directive = 1,689', postsWith.size === 1689, postsWith.size],
   // directiveFamilies is a map keyed by normalised text PER POST, so the 53 in-post repeats
   // share one entry: 2,422 occurrences - 53 repeats = 2,369 keys. The occurrence-level
   // invariant (sum of families === 2,422) is enforced upstream by reconcile-directives.mjs;
@@ -144,6 +198,10 @@ const checks = [
 console.log('\nAPPLY CERTIFIED DIRECTIVES\n')
 console.log(`  directives written        : ${written.toLocaleString()}`)
 console.log(`  posts cleared of old rows : ${cleared.toLocaleString()}`)
+console.log(`
+  from the unhighlighted-sentence queue (owner ruling 2026-08-20)`)
+console.log(`    +${queueStats.added} occurrences (${queueStats.already} already certified)`)
+console.log(`    families: ${Object.entries(queueStats.byFamily).sort((a, b) => b[1] - a[1]).map(([f, n]) => `${f} ${n}`).join(', ')}`)
 console.log('\n  by family:')
 for (const f of FAMILIES) console.log(`    ${String(famTally[f] ?? 0).padStart(5)}  ${f}`)
 console.log('\n  QA GATE')

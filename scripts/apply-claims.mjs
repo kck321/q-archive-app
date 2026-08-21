@@ -341,7 +341,9 @@ const checks = [
   ['Questions now 6,454', questions.length === 6454, questions.length],
   // 2,422 + 2 owner rulings (#4963 'Focus.' / 'FOCUS.', ruled Directives out of Emphasis).
   // v5: Q Directives migrated to sourceSpansV2 provenance; 2,705 -> 2,552 by owner ruling.
-  ['Directives still 2,552', directives === 2552, directives],
+  // 2,552 + 485 arriving from the same owner ruling. This is a cross-section CHECK, not a source:
+  // apply-directives.mjs runs immediately before this step and owns the number.
+  ['Directives now 3,037', directives === 3037, directives],
 ]
 
 console.log('\nAPPLY CERTIFIED CLAIMS\n')
