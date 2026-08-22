@@ -1,0 +1,86 @@
+{
+  "note": "Family 3 of 6 — SAME_CATEGORY_PARTIAL_OVERLAP::PARTIAL_OVERLAP_LIVE. 19 conflict rows over 16 sentences (three sentences produce more than one pair because they carry three overlapping records). Every sentence read against its drop.",
+  "family": "SAME_CATEGORY_PARTIAL_OVERLAP::PARTIAL_OVERLAP_LIVE",
+  "reviewedOn": "2026-08-22",
+  "rowsReviewed": 19,
+  "sentencesResolved": 16,
+  "whatThisFamilyTurnedOutToBe": "One defect, fifteen times. The sentence splitter ends a sentence at a full stop it should not — a middle initial (Richard A., George W., Mark A., Howard L., Jack W., Parker J., Joseph R., John W., Michael S., Ashton B.), a title (Dr., Adm., Sen.) or U.S. So one sentence was certified TWICE: a HEAD that runs from the sentence start and stops short of the final character, and a TAIL that begins after the abbreviation. Neither is the sentence, and the two overlap across the middle. The repair widens the head to the whole sentence and withdraws the tail — which is why fifteen of these are B rather than E: nothing is being removed from the archive, one correct record is replacing two wrong ones.",
+  "theSixteenthIsDifferent": "#4310 p4310-s015 is the sentence the owner already ruled on. A-SB-4310 withdrew its truncated Q-authored claim and recorded the sentence as SOURCE-OWNED — pasted Washington Post copy, `qAuthored: false`. Widening a claim back across it would undo that ruling, so the three fragments the ruling left behind are withdrawn instead, which is what A-SB-4310 says in its own words: 'the partial Q-authored span is withdrawn; the complete sentence is retained as source-owned'. Flagged for the owner because it extends a ruling of theirs.",
+  "rows": [
+    { "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p1553-s000::0", "postNum": 1553, "kind": "claims", "disposition": "B",
+      "overlapResolution": { "widen": "1553|claims|0|268", "to": { "start": 0, "end": 269 }, "withdraw": ["1553|claims|1|120"] },
+      "reason": "'U.S. Attorney' splits the sentence. The head stops one character short of the sentence end and the second record is a 119-character prefix that begins after the opening curly quote. Widened to the sentence; the prefix withdrawn." },
+
+    { "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p1824-s004::1", "postNum": 1824, "kind": "claims", "disposition": "B",
+      "overlapResolution": { "widen": "1824|claims|454|549", "to": { "start": 454, "end": 550 }, "withdraw": ["1824|claims|492|550"] },
+      "reason": "'(U.S. Market)' splits the sentence, leaving a tail that begins mid-parenthesis at 'Market) is ESSENTIAL'. The head is short by its full stop. Widened; the tail withdrawn." },
+
+    { "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p2107-s020::2", "postNum": 2107, "kind": "claims", "disposition": "B",
+      "overlapResolution": { "keep": "2107|claims|769|882", "withdraw": ["2107|claims|769|881"] },
+      "reason": "Two records over the same sentence differing by one character: one ends on the closing quotation mark, the other one before it. The exact record is kept and the short one withdrawn — nothing needs widening here." },
+
+    { "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p2306-s008::3", "postNum": 2306, "kind": "claims", "disposition": "B",
+      "overlapResolution": { "widen": "2306|claims|367|409", "to": { "start": 367, "end": 410 }, "withdraw": ["2306|claims|371|410"] },
+      "reason": "'Dr. Ford' splits the sentence: the tail begins at 'Ford's family' and drops the title. Head widened to the whole sentence, tail withdrawn." },
+
+    { "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p2306-s006::4", "postNum": 2306, "kind": "claims", "disposition": "B",
+      "overlapResolution": { "widen": "2306|claims|275|319", "to": { "start": 275, "end": 320 }, "withdraw": ["2306|claims|303|320"] },
+      "reason": "The same 'Dr. Ford' split two sentences earlier, leaving the tail 'Ford in her past.' Head widened, tail withdrawn." },
+
+    { "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p2662-s002::5", "postNum": 2662, "kind": "claims", "disposition": "B",
+      "overlapResolution": { "widen": "2662|claims|176|374", "to": { "start": 176, "end": 376 }, "withdraw": ["2662|claims|274|376"] },
+      "reason": "'the U.S. Attorney in Utah' splits the sentence. Head widened to include the closing full stop and quotation mark; the tail beginning at 'Attorney in Utah' withdrawn." },
+
+    { "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4310-s015::6", "postNum": 4310, "kind": "claims", "disposition": "E", "flagForOwner": true,
+      "overlapResolution": { "withdraw": ["4310|claims|1150|1269", "4310|claims|1169|1335", "4310|claims|1324|1399"] },
+      "reason": "This sentence is already owner-adjudicated. A-SB-4310 withdrew its truncated Q-authored claim and recorded the sentence as source-owned pasted Washington Post copy. Three fragments survived that ruling, cut apart by 'Adm.', 'Michael S.' and 'Ashton B.', and none of them is a sentence. Widening one back across the paragraph would re-certify as Q-authored the very text the ruling declared source-owned, so all three are withdrawn instead — which is what A-SB-4310 already says should happen to a partial Q-authored span here." },
+
+    { "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4310-s015::7", "postNum": 4310, "kind": "claims", "disposition": "E",
+      "coveredBy": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4310-s015::6",
+      "reason": "The second overlapping pair produced by the same three fragments on the same sentence, resolved by the same withdrawal." },
+
+    { "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4521-s003::8", "postNum": 4521, "kind": "claims", "disposition": "B",
+      "overlapResolution": { "widen": "4521|claims|169|427", "to": { "start": 169, "end": 428 }, "withdraw": ["4521|claims|170|344", "4521|claims|203|428"] },
+      "reason": "Three records over one sentence of the pasted Posse Comitatus passage: the full span short by one character, a copy of it without the opening quotation mark that stops mid-sentence, and a tail starting after '18 U.S.' at 'Code, Section 1385'. The full span is widened to the sentence and the other two withdrawn." },
+
+    { "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4521-s003::9", "postNum": 4521, "kind": "claims", "disposition": "B",
+      "coveredBy": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4521-s003::8",
+      "reason": "A second pair from the same three records on the same sentence, resolved by the same repair." },
+
+    { "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4521-s003::10", "postNum": 4521, "kind": "claims", "disposition": "B",
+      "coveredBy": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4521-s003::8",
+      "reason": "The third pair from the same three records on the same sentence, resolved by the same repair." },
+
+    { "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4631-s015::11", "postNum": 4631, "kind": "claims", "disposition": "B",
+      "overlapResolution": { "widen": "4631|claims|2025|2203", "to": { "start": 2025, "end": 2204 }, "withdraw": ["4631|claims|2070|2204"] },
+      "reason": "'George W. Bush' splits the sentence. Head widened to the whole sentence, tail beginning at 'Bush commended' withdrawn." },
+
+    { "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4631-s018::12", "postNum": 4631, "kind": "claims", "disposition": "B",
+      "overlapResolution": { "widen": "4631|claims|2454|2590", "to": { "start": 2454, "end": 2591 }, "withdraw": ["4631|claims|2487|2591"] },
+      "reason": "'Richard A. Delgaudio' splits the sentence. Head widened, tail withdrawn." },
+
+    { "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4631-s019::13", "postNum": 4631, "kind": "claims", "disposition": "B",
+      "overlapResolution": { "widen": "4631|claims|2592|2684", "to": { "start": 2592, "end": 2685 }, "withdraw": ["4631|claims|2620|2685"] },
+      "reason": "'Mark A. Grethen' splits the sentence. Head widened, tail withdrawn." },
+
+    { "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4632-s002::14", "postNum": 4632, "kind": "claims", "disposition": "B",
+      "overlapResolution": { "widen": "4632|claims|212|337", "to": { "start": 212, "end": 338 }, "withdraw": ["4632|claims|250|338"] },
+      "reason": "'Howard L. Brooks' splits the sentence. Head widened, tail withdrawn." },
+
+    { "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4632-s013::15", "postNum": 4632, "kind": "claims", "disposition": "B",
+      "overlapResolution": { "widen": "4632|claims|1912|2013", "to": { "start": 1912, "end": 2014 }, "withdraw": ["4632|claims|1960|2014"] },
+      "reason": "'Jack W. Gardner' splits the sentence. Head widened, tail withdrawn." },
+
+    { "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4632-s016::16", "postNum": 4632, "kind": "claims", "disposition": "B",
+      "overlapResolution": { "widen": "4632|claims|2268|2440", "to": { "start": 2268, "end": 2441 }, "withdraw": ["4632|claims|2298|2441"] },
+      "reason": "'Parker J. Bena' splits the sentence. Head widened, tail withdrawn." },
+
+    { "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4633-s000::17", "postNum": 4633, "kind": "claims", "disposition": "B",
+      "overlapResolution": { "widen": "4633|claims|0|147", "to": { "start": 0, "end": 148 }, "withdraw": ["4633|claims|67|148"] },
+      "reason": "'Richard A. Dasen Sr.' splits the sentence twice over. Head widened to the whole sentence, tail beginning at 'Dasen Sr.,' withdrawn." },
+
+    { "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4801-s002::18", "postNum": 4801, "kind": "claims", "disposition": "B",
+      "overlapResolution": { "widen": "4801|claims|83|184", "to": { "start": 83, "end": 185 }, "withdraw": ["4801|claims|173|185"] },
+      "reason": "'Sen. Joseph R. Biden' splits the sentence, leaving a twelve-character tail — 'Biden, ....\"' — that is a certified claim asserting nothing. Head widened, tail withdrawn." }
+  ]
+}

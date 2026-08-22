@@ -5,7 +5,7 @@
   "emphasis": 0,
   "impliedConclusions": 915,
   "conclusionSpans": 964,
-  "verificationHooks": 1773,
+  "verificationHooks": 1768,
   "checkableSpans": 1920
  },
  "claimMetaAttributesCleared": {
@@ -16,14 +16,14 @@
  "claimMetaEntriesTouched": 9695,
  "claimsAndPredictionsUnchanged": {
   "before": {
-   "claims": 8695,
-   "claimSpans": 8695,
+   "claims": 8676,
+   "claimSpans": 8676,
    "predictions": 843,
    "predictionSpans": 843
   },
   "after": {
-   "claims": 8695,
-   "claimSpans": 8695,
+   "claims": 8676,
+   "claimSpans": 8676,
    "predictions": 843,
    "predictionSpans": 843
   }

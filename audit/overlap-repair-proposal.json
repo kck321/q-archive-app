@@ -1,0 +1,539 @@
+{
+  "note": "Proposal only. Measured from the ledger; reviewed by hand before it becomes a disposition.",
+  "sentences": 16,
+  "rows": [
+    {
+      "conflictSentence": "1553|p1553-s000",
+      "postNum": 1553,
+      "kind": "claims",
+      "sentenceId": "p1553-s000",
+      "sentence": {
+        "start": 0,
+        "end": 269,
+        "text": "“Attorney General Jeff Sessions has also said U.S. Attorney John Huber is investigating claims of FBI and DOJ misconduct related to these actions, noting that Huber would be “conducting his work from outside the Washington D.C. area and “in cooperation” with Horowitz.”"
+      },
+      "alreadyExact": false,
+      "records": [
+        {
+          "key": "1553|claims|0|268",
+          "text": "“Attorney General Jeff Sessions has also said U.S. Attorney John Huber is investigating claims of FBI and DOJ misconduct related to these actions, noting that Huber would be “conducting his work from outside the Washington D.C. area and “in cooperation” with Horowitz."
+        },
+        {
+          "key": "1553|claims|1|120",
+          "text": "Attorney General Jeff Sessions has also said U.S. Attorney John Huber is investigating claims of FBI and DOJ misconduct"
+        }
+      ],
+      "proposal": {
+        "widen": "1553|claims|0|268",
+        "to": {
+          "start": 0,
+          "end": 269,
+          "expectText": "“Attorney General Jeff Sessions has also said U.S. Attorney John Huber is investigating claims of FBI and DOJ misconduct related to these actions, noting that Huber would be “conducting his work from outside the Washington D.C. area and “in cooperation” with Horowitz.”"
+        },
+        "withdraw": [
+          "1553|claims|1|120"
+        ]
+      }
+    },
+    {
+      "conflictSentence": "1824|p1824-s004",
+      "postNum": 1824,
+      "kind": "claims",
+      "sentenceId": "p1824-s004",
+      "sentence": {
+        "start": 454,
+        "end": 550,
+        "text": "ACCESS to the AMERICAN CONSUMER (U.S. Market) is ESSENTIAL for every major country in the world."
+      },
+      "alreadyExact": false,
+      "records": [
+        {
+          "key": "1824|claims|454|549",
+          "text": "ACCESS to the AMERICAN CONSUMER (U.S. Market) is ESSENTIAL for every major country in the world"
+        },
+        {
+          "key": "1824|claims|492|550",
+          "text": "Market) is ESSENTIAL for every major country in the world."
+        }
+      ],
+      "proposal": {
+        "widen": "1824|claims|454|549",
+        "to": {
+          "start": 454,
+          "end": 550,
+          "expectText": "ACCESS to the AMERICAN CONSUMER (U.S. Market) is ESSENTIAL for every major country in the world."
+        },
+        "withdraw": [
+          "1824|claims|492|550"
+        ]
+      }
+    },
+    {
+      "conflictSentence": "2107|p2107-s020",
+      "postNum": 2107,
+      "kind": "claims",
+      "sentenceId": "p2107-s020",
+      "sentence": {
+        "start": 769,
+        "end": 882,
+        "text": "\"I declare under penalty of perjury that the foregoing information regarding Carter W. Page is TRUE and CORRECT.\""
+      },
+      "alreadyExact": true,
+      "records": [
+        {
+          "key": "2107|claims|769|882",
+          "text": "\"I declare under penalty of perjury that the foregoing information regarding Carter W. Page is TRUE and CORRECT.\""
+        },
+        {
+          "key": "2107|claims|769|881",
+          "text": "\"I declare under penalty of perjury that the foregoing information regarding Carter W. Page is TRUE and CORRECT."
+        }
+      ],
+      "proposal": {
+        "keep": "2107|claims|769|882",
+        "withdraw": [
+          "2107|claims|769|881"
+        ]
+      }
+    },
+    {
+      "conflictSentence": "2306|p2306-s008",
+      "postNum": 2306,
+      "kind": "claims",
+      "sentenceId": "p2306-s008",
+      "sentence": {
+        "start": 367,
+        "end": 410,
+        "text": "Dr. Ford's family has strong ties to SWAMP."
+      },
+      "alreadyExact": false,
+      "records": [
+        {
+          "key": "2306|claims|367|409",
+          "text": "Dr. Ford's family has strong ties to SWAMP"
+        },
+        {
+          "key": "2306|claims|371|410",
+          "text": "Ford's family has strong ties to SWAMP."
+        }
+      ],
+      "proposal": {
+        "widen": "2306|claims|367|409",
+        "to": {
+          "start": 367,
+          "end": 410,
+          "expectText": "Dr. Ford's family has strong ties to SWAMP."
+        },
+        "withdraw": [
+          "2306|claims|371|410"
+        ]
+      }
+    },
+    {
+      "conflictSentence": "2306|p2306-s006",
+      "postNum": 2306,
+      "kind": "claims",
+      "sentenceId": "p2306-s006",
+      "sentence": {
+        "start": 275,
+        "end": 320,
+        "text": "Something did happen to Dr. Ford in her past."
+      },
+      "alreadyExact": false,
+      "records": [
+        {
+          "key": "2306|claims|275|319",
+          "text": "Something did happen to Dr. Ford in her past"
+        },
+        {
+          "key": "2306|claims|303|320",
+          "text": "Ford in her past."
+        }
+      ],
+      "proposal": {
+        "widen": "2306|claims|275|319",
+        "to": {
+          "start": 275,
+          "end": 320,
+          "expectText": "Something did happen to Dr. Ford in her past."
+        },
+        "withdraw": [
+          "2306|claims|303|320"
+        ]
+      }
+    },
+    {
+      "conflictSentence": "2662|p2662-s002",
+      "postNum": 2662,
+      "kind": "claims",
+      "sentenceId": "p2662-s002",
+      "sentence": {
+        "start": 176,
+        "end": 376,
+        "text": "That can only happen through a federal grand jury investigation headed by John W. Huber, the U.S. Attorney in Utah who has been appointed to investigate the FISA criminality by the Obama FBI and DOJ.\""
+      },
+      "alreadyExact": false,
+      "records": [
+        {
+          "key": "2662|claims|176|374",
+          "text": "That can only happen through a federal grand jury investigation headed by John W. Huber, the U.S. Attorney in Utah who has been appointed to investigate the FISA criminality by the Obama FBI and DOJ"
+        },
+        {
+          "key": "2662|claims|274|376",
+          "text": "Attorney in Utah who has been appointed to investigate the FISA criminality by the Obama FBI and DOJ.\""
+        }
+      ],
+      "proposal": {
+        "widen": "2662|claims|176|374",
+        "to": {
+          "start": 176,
+          "end": 376,
+          "expectText": "That can only happen through a federal grand jury investigation headed by John W. Huber, the U.S. Attorney in Utah who has been appointed to investigate the FISA criminality by the Obama FBI and DOJ.\""
+        },
+        "withdraw": [
+          "2662|claims|274|376"
+        ]
+      }
+    },
+    {
+      "conflictSentence": "4310|p4310-s015",
+      "postNum": 4310,
+      "kind": "claims",
+      "sentenceId": "p4310-s015",
+      "sentence": {
+        "start": 980,
+        "end": 1399,
+        "text": "“The heads of the Pentagon and the nation’s intelligence community have recommended to President Obama that the director of the National Security Agency, Adm. Michael S. Rogers, be removed.The recommendation, delivered to the White House last month, was made by Defense Secretary Ashton B. Carter and Director of National Intelligence James R. Clapper Jr., according to several U.S. officials familiar with the matter.”"
+      },
+      "alreadyExact": false,
+      "records": [
+        {
+          "key": "4310|claims|1150|1269",
+          "text": "Rogers, be removed.The recommendation, delivered to the White House last month, was made by Defense Secretary Ashton B."
+        },
+        {
+          "key": "4310|claims|1169|1335",
+          "text": "The recommendation, delivered to the White House last month, was made by Defense Secretary Ashton B. Carter and Director of National Intelligence James R. Clapper Jr."
+        },
+        {
+          "key": "4310|claims|1324|1399",
+          "text": "Clapper Jr., according to several U.S. officials familiar with the matter.”"
+        }
+      ],
+      "proposal": {
+        "widen": "4310|claims|1150|1269",
+        "to": {
+          "start": 980,
+          "end": 1399,
+          "expectText": "“The heads of the Pentagon and the nation’s intelligence community have recommended to President Obama that the director of the National Security Agency, Adm. Michael S. Rogers, be removed.The recommendation, delivered to the White House last month, was made by Defense Secretary Ashton B. Carter and Director of National Intelligence James R. Clapper Jr., according to several U.S. officials familiar with the matter.”"
+        },
+        "withdraw": [
+          "4310|claims|1169|1335",
+          "4310|claims|1324|1399"
+        ]
+      }
+    },
+    {
+      "conflictSentence": "4521|p4521-s003",
+      "postNum": 4521,
+      "kind": "claims",
+      "sentenceId": "p4521-s003",
+      "sentence": {
+        "start": 169,
+        "end": 428,
+        "text": "\"The Posse Comitatus Act, 18 U.S. Code, Section 1385, an original intent of which was to end the use of federal troops [TO POLICE STATE ELECTIONS] in former Confederate states, proscribes the role of the Army and Air Force in executing civil laws and states.\""
+      },
+      "alreadyExact": false,
+      "records": [
+        {
+          "key": "4521|claims|169|427",
+          "text": "\"The Posse Comitatus Act, 18 U.S. Code, Section 1385, an original intent of which was to end the use of federal troops [TO POLICE STATE ELECTIONS] in former Confederate states, proscribes the role of the Army and Air Force in executing civil laws and states."
+        },
+        {
+          "key": "4521|claims|170|344",
+          "text": "The Posse Comitatus Act, 18 U.S. Code, Section 1385, an original intent of which was to end the use of federal troops [TO POLICE STATE ELECTIONS] in former Confederate states"
+        },
+        {
+          "key": "4521|claims|203|428",
+          "text": "Code, Section 1385, an original intent of which was to end the use of federal troops [TO POLICE STATE ELECTIONS] in former Confederate states, proscribes the role of the Army and Air Force in executing civil laws and states.\""
+        }
+      ],
+      "proposal": {
+        "widen": "4521|claims|169|427",
+        "to": {
+          "start": 169,
+          "end": 428,
+          "expectText": "\"The Posse Comitatus Act, 18 U.S. Code, Section 1385, an original intent of which was to end the use of federal troops [TO POLICE STATE ELECTIONS] in former Confederate states, proscribes the role of the Army and Air Force in executing civil laws and states.\""
+        },
+        "withdraw": [
+          "4521|claims|170|344",
+          "4521|claims|203|428"
+        ]
+      }
+    },
+    {
+      "conflictSentence": "4631|p4631-s015",
+      "postNum": 4631,
+      "kind": "claims",
+      "sentenceId": "p4631-s015",
+      "sentence": {
+        "start": 2025,
+        "end": 2204,
+        "text": "Republican pastor Mike Hintz, whom George W. Bush commended during the 2004 presidential campaign, surrendered to police after admitting to a sexual affair with a female juvenile."
+      },
+      "alreadyExact": false,
+      "records": [
+        {
+          "key": "4631|claims|2025|2203",
+          "text": "Republican pastor Mike Hintz, whom George W. Bush commended during the 2004 presidential campaign, surrendered to police after admitting to a sexual affair with a female juvenile"
+        },
+        {
+          "key": "4631|claims|2070|2204",
+          "text": "Bush commended during the 2004 presidential campaign, surrendered to police after admitting to a sexual affair with a female juvenile."
+        }
+      ],
+      "proposal": {
+        "widen": "4631|claims|2025|2203",
+        "to": {
+          "start": 2025,
+          "end": 2204,
+          "expectText": "Republican pastor Mike Hintz, whom George W. Bush commended during the 2004 presidential campaign, surrendered to police after admitting to a sexual affair with a female juvenile."
+        },
+        "withdraw": [
+          "4631|claims|2070|2204"
+        ]
+      }
+    },
+    {
+      "conflictSentence": "4631|p4631-s018",
+      "postNum": 4631,
+      "kind": "claims",
+      "sentenceId": "p4631-s018",
+      "sentence": {
+        "start": 2454,
+        "end": 2591,
+        "text": "Republican fundraiser Richard A. Delgaudio was found guilty of child porn charges and paying two teenage girls to pose for sexual photos."
+      },
+      "alreadyExact": false,
+      "records": [
+        {
+          "key": "4631|claims|2454|2590",
+          "text": "Republican fundraiser Richard A. Delgaudio was found guilty of child porn charges and paying two teenage girls to pose for sexual photos"
+        },
+        {
+          "key": "4631|claims|2487|2591",
+          "text": "Delgaudio was found guilty of child porn charges and paying two teenage girls to pose for sexual photos."
+        }
+      ],
+      "proposal": {
+        "widen": "4631|claims|2454|2590",
+        "to": {
+          "start": 2454,
+          "end": 2591,
+          "expectText": "Republican fundraiser Richard A. Delgaudio was found guilty of child porn charges and paying two teenage girls to pose for sexual photos."
+        },
+        "withdraw": [
+          "4631|claims|2487|2591"
+        ]
+      }
+    },
+    {
+      "conflictSentence": "4631|p4631-s019",
+      "postNum": 4631,
+      "kind": "claims",
+      "sentenceId": "p4631-s019",
+      "sentence": {
+        "start": 2592,
+        "end": 2685,
+        "text": "Republican activist Mark A. Grethen convicted on six counts of sex crimes involving children."
+      },
+      "alreadyExact": false,
+      "records": [
+        {
+          "key": "4631|claims|2592|2684",
+          "text": "Republican activist Mark A. Grethen convicted on six counts of sex crimes involving children"
+        },
+        {
+          "key": "4631|claims|2620|2685",
+          "text": "Grethen convicted on six counts of sex crimes involving children."
+        }
+      ],
+      "proposal": {
+        "widen": "4631|claims|2592|2684",
+        "to": {
+          "start": 2592,
+          "end": 2685,
+          "expectText": "Republican activist Mark A. Grethen convicted on six counts of sex crimes involving children."
+        },
+        "withdraw": [
+          "4631|claims|2620|2685"
+        ]
+      }
+    },
+    {
+      "conflictSentence": "4632|p4632-s002",
+      "postNum": 4632,
+      "kind": "claims",
+      "sentenceId": "p4632-s002",
+      "sentence": {
+        "start": 212,
+        "end": 338,
+        "text": "Republican legislative aide Howard L. Brooks was charged with molesting a 12-year old boy and possession of child pornography."
+      },
+      "alreadyExact": false,
+      "records": [
+        {
+          "key": "4632|claims|212|337",
+          "text": "Republican legislative aide Howard L. Brooks was charged with molesting a 12-year old boy and possession of child pornography"
+        },
+        {
+          "key": "4632|claims|250|338",
+          "text": "Brooks was charged with molesting a 12-year old boy and possession of child pornography."
+        }
+      ],
+      "proposal": {
+        "widen": "4632|claims|212|337",
+        "to": {
+          "start": 212,
+          "end": 338,
+          "expectText": "Republican legislative aide Howard L. Brooks was charged with molesting a 12-year old boy and possession of child pornography."
+        },
+        "withdraw": [
+          "4632|claims|250|338"
+        ]
+      }
+    },
+    {
+      "conflictSentence": "4632|p4632-s013",
+      "postNum": 4632,
+      "kind": "claims",
+      "sentenceId": "p4632-s013",
+      "sentence": {
+        "start": 1912,
+        "end": 2014,
+        "text": "Republican Councilman and former Marine Jack W. Gardner was convicted of molesting a 13-year old girl."
+      },
+      "alreadyExact": false,
+      "records": [
+        {
+          "key": "4632|claims|1912|2013",
+          "text": "Republican Councilman and former Marine Jack W. Gardner was convicted of molesting a 13-year old girl"
+        },
+        {
+          "key": "4632|claims|1960|2014",
+          "text": "Gardner was convicted of molesting a 13-year old girl."
+        }
+      ],
+      "proposal": {
+        "widen": "4632|claims|1912|2013",
+        "to": {
+          "start": 1912,
+          "end": 2014,
+          "expectText": "Republican Councilman and former Marine Jack W. Gardner was convicted of molesting a 13-year old girl."
+        },
+        "withdraw": [
+          "4632|claims|1960|2014"
+        ]
+      }
+    },
+    {
+      "conflictSentence": "4632|p4632-s016",
+      "postNum": 4632,
+      "kind": "claims",
+      "sentenceId": "p4632-s016",
+      "sentence": {
+        "start": 2268,
+        "end": 2441,
+        "text": "Republican activist Parker J. Bena pleaded guilty to possession of child pornography on his home computer and was sentenced to 30 months in federal prison and fined $18,000."
+      },
+      "alreadyExact": false,
+      "records": [
+        {
+          "key": "4632|claims|2268|2440",
+          "text": "Republican activist Parker J. Bena pleaded guilty to possession of child pornography on his home computer and was sentenced to 30 months in federal prison and fined $18,000"
+        },
+        {
+          "key": "4632|claims|2298|2441",
+          "text": "Bena pleaded guilty to possession of child pornography on his home computer and was sentenced to 30 months in federal prison and fined $18,000."
+        }
+      ],
+      "proposal": {
+        "widen": "4632|claims|2268|2440",
+        "to": {
+          "start": 2268,
+          "end": 2441,
+          "expectText": "Republican activist Parker J. Bena pleaded guilty to possession of child pornography on his home computer and was sentenced to 30 months in federal prison and fined $18,000."
+        },
+        "withdraw": [
+          "4632|claims|2298|2441"
+        ]
+      }
+    },
+    {
+      "conflictSentence": "4633|p4633-s000",
+      "postNum": 4633,
+      "kind": "claims",
+      "sentenceId": "p4633-s000",
+      "sentence": {
+        "start": 0,
+        "end": 148,
+        "text": "Republican benefactor of conservative Christian groups, Richard A. Dasen Sr., was charged with rape for allegedly paying a 15-year old girl for sex."
+      },
+      "alreadyExact": false,
+      "records": [
+        {
+          "key": "4633|claims|0|147",
+          "text": "Republican benefactor of conservative Christian groups, Richard A. Dasen Sr., was charged with rape for allegedly paying a 15-year old girl for sex"
+        },
+        {
+          "key": "4633|claims|67|148",
+          "text": "Dasen Sr., was charged with rape for allegedly paying a 15-year old girl for sex."
+        }
+      ],
+      "proposal": {
+        "widen": "4633|claims|0|147",
+        "to": {
+          "start": 0,
+          "end": 148,
+          "expectText": "Republican benefactor of conservative Christian groups, Richard A. Dasen Sr., was charged with rape for allegedly paying a 15-year old girl for sex."
+        },
+        "withdraw": [
+          "4633|claims|67|148"
+        ]
+      }
+    },
+    {
+      "conflictSentence": "4801|p4801-s002",
+      "postNum": 4801,
+      "kind": "claims",
+      "sentenceId": "p4801-s002",
+      "sentence": {
+        "start": 83,
+        "end": 185,
+        "text": "\"While attending college, he served as an intern in the office of Delaware Sen. Joseph R. Biden, ....\""
+      },
+      "alreadyExact": false,
+      "records": [
+        {
+          "key": "4801|claims|83|184",
+          "text": "\"While attending college, he served as an intern in the office of Delaware Sen. Joseph R. Biden, ...."
+        },
+        {
+          "key": "4801|claims|173|185",
+          "text": "Biden, ....\""
+        }
+      ],
+      "proposal": {
+        "widen": "4801|claims|83|184",
+        "to": {
+          "start": 83,
+          "end": 185,
+          "expectText": "\"While attending college, he served as an intern in the office of Delaware Sen. Joseph R. Biden, ....\""
+        },
+        "withdraw": [
+          "4801|claims|173|185"
+        ]
+      }
+    }
+  ]
+}

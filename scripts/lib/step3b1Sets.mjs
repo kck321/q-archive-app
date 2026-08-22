@@ -24,4 +24,5 @@ export const EXTRA_ACTION_SETS = [
   // LANE B — the 159 human-semantic reviews, one set per family, in the order they were reviewed.
   { file: 'step3b1-lb1-actions.jsonl', sha256: '0d2670d27c5eedbf316d6253bd74fe691f861ca43de4a8447174aacba95bf740', label: 'LB1 multi-line span reviews' },
   { file: 'step3b1-lb2-actions.jsonl', sha256: '75afd5eba04e17f5fe397557bb0b7040760f0596bf75e0e181fa5105bc8b9ef8', label: 'LB2 within-line crossing reviews' },
+  { file: 'step3b1-lb3-actions.jsonl', sha256: '925292bcc367cdfa515359e9670a2247132c78a24b64bb7e95e8b2d7569fcbc5', label: 'LB3 same-category overlap reviews' },
 ]

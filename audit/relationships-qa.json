@@ -1,12 +1,12 @@
 {
  "totals": {
-  "relationships": 4122,
+  "relationships": 4121,
   "byType": {
    "prediction_assertion": 843,
    "theme_support": 1719,
    "evidence_claim": 661,
    "question_directive": 231,
-   "claim_source_provided": 338,
+   "claim_source_provided": 337,
    "prediction_source_provided": 35,
    "entity_code": 180,
    "unresolved_occurrence": 115
@@ -45,9 +45,9 @@
    32
   ],
   [
-   "Claim ↔ Source provided = the certified 338",
+   "Claim ↔ Source provided = the certified 337",
    true,
-   338
+   337
   ],
   [
    "Prediction ↔ Source provided reported separately",

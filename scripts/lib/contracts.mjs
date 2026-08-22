@@ -96,7 +96,13 @@ export const CANONICAL = {
   // early extractor left sitting on top of the sentence-level records that superseded them, plus
   // four nested fragments — two partial quotations and two segmenter-orphaned tails absorbed by a
   // widened span. Every sentence underneath keeps its own certified record.
-  claims: { occurrences: 8695, distinct: 6814, posts: 3086 },
+  // 8,695 -> 8,676: the lane-B same-category overlap reviews (2026-08-22). NOT nineteen claims
+  // lost — fifteen sentences that were certified TWICE, as a head stopping at an abbreviation and
+  // a tail starting after it. Each pair becomes one record covering the whole sentence, so the
+  // count falls by the duplicates while the text painted goes UP. The other four withdrawals are
+  // three fragments of the source-owned paragraph on #4310 and one twelve-character tail on #4801
+  // reading 'Biden, ...." ' , which asserted nothing.
+  claims: { occurrences: 8676, distinct: 6814, posts: 3086 },
   // 630 -> 595: -73 technical nonpredictions, -56 arguable rows withdrawn to the review
   // backlog, +66 unique moves from Claims, +28 high-confidence predictions the extractor
   // missed. posts 520 -> 490. The 91 withdrawn/held rows are NOT deleted — they sit in

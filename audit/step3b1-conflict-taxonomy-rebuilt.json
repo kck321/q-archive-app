@@ -1,29 +1,27 @@
 {
  "note": "Step 3B-1 conflict-queue taxonomy. Report only — nothing applied, nothing withdrawn.",
- "totalRows": 135,
+ "totalRows": 116,
  "measuredFrom": "current bundle (rebuilt)",
- "distinctConflictIds": 135,
- "distinctHeldKeys": 128,
- "distinctPosts": 112,
+ "distinctConflictIds": 116,
+ "distinctHeldKeys": 112,
+ "distinctPosts": 102,
  "byReason": {
   "UNLOCATED_SPAN": 77,
-  "BOUNDARY_CROSSING": 39,
-  "SAME_CATEGORY_PARTIAL_OVERLAP": 19
+  "BOUNDARY_CROSSING": 39
  },
  "bySourceLayer": {
   "namedEntities": 77,
   "claims": 29,
-  "(n/a)": 19,
   "questions": 5,
   "directives": 4,
   "themeAnchors": 1
  },
  "byLane": {
-  "B HUMAN_SEMANTIC_REVIEW": 116,
+  "B HUMAN_SEMANTIC_REVIEW": 97,
   "C STRUCTURAL_DATA_DEFECT": 16,
   "A DETERMINISTIC_RESOLUTION": 3
  },
- "rootCausePatterns": 12,
+ "rootCausePatterns": 11,
  "clusters": [
   {
    "signature": "UNLOCATED_SPAN::CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
@@ -118,29 +116,6 @@
      "postNum": 1192,
      "heldKey": "1192|claims|0|11",
      "value": "Q&A \n5 min."
-    }
-   ]
-  },
-  {
-   "signature": "SAME_CATEGORY_PARTIAL_OVERLAP::PARTIAL_OVERLAP_LIVE",
-   "count": 19,
-   "lane": "B",
-   "posts": 11,
-   "examples": [
-    {
-     "postNum": 1553,
-     "heldKey": "OVERLAP-p1553-s000",
-     "value": "\"Attorney General Jeff Sessions has also said U.S. Attorney John Huber \" / \"“Attorney General Jeff S"
-    },
-    {
-     "postNum": 1824,
-     "heldKey": "OVERLAP-p1824-s004",
-     "value": "\"Market) is ESSENTIAL for every major country in the world.\" / \"ACCESS to the AMERICAN CONSUMER (U.S"
-    },
-    {
-     "postNum": 2107,
-     "heldKey": "OVERLAP-p2107-s020",
-     "value": "\"\"I declare under penalty of perjury that the foregoing information reg\" / \"\"I declare under penalty"
     }
    ]
   },
@@ -2857,253 +2832,6 @@
    "locatedInQuotedPostUnder": null,
    "registryGroupsClaimingThisSpelling": 1,
    "subtype": "ABSENT_FROM_DROP_IN_EVERY_REGISTERED_FORM",
-   "lane": "B"
-  },
-  {
-   "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p1553-s000::0",
-   "reason": "SAME_CATEGORY_PARTIAL_OVERLAP",
-   "postNum": 1553,
-   "heldKey": "OVERLAP-p1553-s000",
-   "certifiedValue": "\"Attorney General Jeff Sessions has also said U.S. Attorney John Huber \" / \"“Attorney General Jeff Sessions has also said U.S. Attorney John Huber\"",
-   "alsoDuplicateKey": false,
-   "sentenceId": "p1553-s000",
-   "stillOverlapping": true,
-   "spanPreview": "\"Attorney General Jeff Sessions has also said U.S. Attorney John Huber \" / \"“Attorney General Jeff Sessions has also sai",
-   "subtype": "PARTIAL_OVERLAP_LIVE",
-   "lane": "B"
-  },
-  {
-   "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p1824-s004::1",
-   "reason": "SAME_CATEGORY_PARTIAL_OVERLAP",
-   "postNum": 1824,
-   "heldKey": "OVERLAP-p1824-s004",
-   "certifiedValue": "\"Market) is ESSENTIAL for every major country in the world.\" / \"ACCESS to the AMERICAN CONSUMER (U.S. Market) is ESSENTIAL for every m\"",
-   "alsoDuplicateKey": false,
-   "sentenceId": "p1824-s004",
-   "stillOverlapping": true,
-   "spanPreview": "\"Market) is ESSENTIAL for every major country in the world.\" / \"ACCESS to the AMERICAN CONSUMER (U.S. Market) is ESSENTI",
-   "subtype": "PARTIAL_OVERLAP_LIVE",
-   "lane": "B"
-  },
-  {
-   "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p2107-s020::2",
-   "reason": "SAME_CATEGORY_PARTIAL_OVERLAP",
-   "postNum": 2107,
-   "heldKey": "OVERLAP-p2107-s020",
-   "certifiedValue": "\"\"I declare under penalty of perjury that the foregoing information reg\" / \"\"I declare under penalty of perjury that the foregoing information reg\"",
-   "alsoDuplicateKey": false,
-   "sentenceId": "p2107-s020",
-   "stillOverlapping": true,
-   "spanPreview": "\"\"I declare under penalty of perjury that the foregoing information reg\" / \"\"I declare under penalty of perjury that the",
-   "subtype": "PARTIAL_OVERLAP_LIVE",
-   "lane": "B"
-  },
-  {
-   "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p2306-s008::3",
-   "reason": "SAME_CATEGORY_PARTIAL_OVERLAP",
-   "postNum": 2306,
-   "heldKey": "OVERLAP-p2306-s008",
-   "certifiedValue": "\"Ford's family has strong ties to SWAMP.\" / \"Dr. Ford's family has strong ties to SWAMP\"",
-   "alsoDuplicateKey": false,
-   "sentenceId": "p2306-s008",
-   "stillOverlapping": true,
-   "spanPreview": "\"Ford's family has strong ties to SWAMP.\" / \"Dr. Ford's family has strong ties to SWAMP\"",
-   "subtype": "PARTIAL_OVERLAP_LIVE",
-   "lane": "B"
-  },
-  {
-   "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p2306-s006::4",
-   "reason": "SAME_CATEGORY_PARTIAL_OVERLAP",
-   "postNum": 2306,
-   "heldKey": "OVERLAP-p2306-s006",
-   "certifiedValue": "\"Something did happen to Dr. Ford in her past\" / \"Ford in her past.\"",
-   "alsoDuplicateKey": false,
-   "sentenceId": "p2306-s006",
-   "stillOverlapping": true,
-   "spanPreview": "\"Something did happen to Dr. Ford in her past\" / \"Ford in her past.\"",
-   "subtype": "PARTIAL_OVERLAP_LIVE",
-   "lane": "B"
-  },
-  {
-   "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p2662-s002::5",
-   "reason": "SAME_CATEGORY_PARTIAL_OVERLAP",
-   "postNum": 2662,
-   "heldKey": "OVERLAP-p2662-s002",
-   "certifiedValue": "\"That can only happen through a federal grand jury investigation headed\" / \"Attorney in Utah who has been appointed to investigate the FISA crimin\"",
-   "alsoDuplicateKey": false,
-   "sentenceId": "p2662-s002",
-   "stillOverlapping": true,
-   "spanPreview": "\"That can only happen through a federal grand jury investigation headed\" / \"Attorney in Utah who has been appointed to i",
-   "subtype": "PARTIAL_OVERLAP_LIVE",
-   "lane": "B"
-  },
-  {
-   "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4310-s015::6",
-   "reason": "SAME_CATEGORY_PARTIAL_OVERLAP",
-   "postNum": 4310,
-   "heldKey": "OVERLAP-p4310-s015",
-   "certifiedValue": "\"The recommendation, delivered to the White House last month, was made \" / \"Clapper Jr., according to several U.S. officials familiar with the mat\"",
-   "alsoDuplicateKey": false,
-   "sentenceId": "p4310-s015",
-   "stillOverlapping": true,
-   "spanPreview": "\"The recommendation, delivered to the White House last month, was made \" / \"Clapper Jr., according to several U.S. offic",
-   "subtype": "PARTIAL_OVERLAP_LIVE",
-   "lane": "B"
-  },
-  {
-   "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4310-s015::7",
-   "reason": "SAME_CATEGORY_PARTIAL_OVERLAP",
-   "postNum": 4310,
-   "heldKey": "OVERLAP-p4310-s015",
-   "certifiedValue": "\"The recommendation, delivered to the White House last month, was made \" / \"Rogers, be removed.The recommendation, delivered to the White House la\"",
-   "alsoDuplicateKey": false,
-   "sentenceId": "p4310-s015",
-   "stillOverlapping": true,
-   "spanPreview": "\"The recommendation, delivered to the White House last month, was made \" / \"Rogers, be removed.The recommendation, deliv",
-   "subtype": "PARTIAL_OVERLAP_LIVE",
-   "lane": "B"
-  },
-  {
-   "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4521-s003::8",
-   "reason": "SAME_CATEGORY_PARTIAL_OVERLAP",
-   "postNum": 4521,
-   "heldKey": "OVERLAP-p4521-s003",
-   "certifiedValue": "\"The Posse Comitatus Act, 18 U.S. Code, Section 1385, an original inten\" / \"\"The Posse Comitatus Act, 18 U.S. Code, Section 1385, an original inte\"",
-   "alsoDuplicateKey": false,
-   "sentenceId": "p4521-s003",
-   "stillOverlapping": true,
-   "spanPreview": "\"The Posse Comitatus Act, 18 U.S. Code, Section 1385, an original inten\" / \"\"The Posse Comitatus Act, 18 U.S. Code, Sect",
-   "subtype": "PARTIAL_OVERLAP_LIVE",
-   "lane": "B"
-  },
-  {
-   "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4521-s003::9",
-   "reason": "SAME_CATEGORY_PARTIAL_OVERLAP",
-   "postNum": 4521,
-   "heldKey": "OVERLAP-p4521-s003",
-   "certifiedValue": "\"The Posse Comitatus Act, 18 U.S. Code, Section 1385, an original inten\" / \"Code, Section 1385, an original intent of which was to end the use of \"",
-   "alsoDuplicateKey": false,
-   "sentenceId": "p4521-s003",
-   "stillOverlapping": true,
-   "spanPreview": "\"The Posse Comitatus Act, 18 U.S. Code, Section 1385, an original inten\" / \"Code, Section 1385, an original intent of wh",
-   "subtype": "PARTIAL_OVERLAP_LIVE",
-   "lane": "B"
-  },
-  {
-   "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4521-s003::10",
-   "reason": "SAME_CATEGORY_PARTIAL_OVERLAP",
-   "postNum": 4521,
-   "heldKey": "OVERLAP-p4521-s003",
-   "certifiedValue": "\"\"The Posse Comitatus Act, 18 U.S. Code, Section 1385, an original inte\" / \"Code, Section 1385, an original intent of which was to end the use of \"",
-   "alsoDuplicateKey": false,
-   "sentenceId": "p4521-s003",
-   "stillOverlapping": true,
-   "spanPreview": "\"\"The Posse Comitatus Act, 18 U.S. Code, Section 1385, an original inte\" / \"Code, Section 1385, an original intent of wh",
-   "subtype": "PARTIAL_OVERLAP_LIVE",
-   "lane": "B"
-  },
-  {
-   "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4631-s015::11",
-   "reason": "SAME_CATEGORY_PARTIAL_OVERLAP",
-   "postNum": 4631,
-   "heldKey": "OVERLAP-p4631-s015",
-   "certifiedValue": "\"Republican pastor Mike Hintz, whom George W. Bush commended during the\" / \"Bush commended during the 2004 presidential campaign, surrendered to p\"",
-   "alsoDuplicateKey": false,
-   "sentenceId": "p4631-s015",
-   "stillOverlapping": true,
-   "spanPreview": "\"Republican pastor Mike Hintz, whom George W. Bush commended during the\" / \"Bush commended during the 2004 presidential ",
-   "subtype": "PARTIAL_OVERLAP_LIVE",
-   "lane": "B"
-  },
-  {
-   "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4631-s018::12",
-   "reason": "SAME_CATEGORY_PARTIAL_OVERLAP",
-   "postNum": 4631,
-   "heldKey": "OVERLAP-p4631-s018",
-   "certifiedValue": "\"Republican fundraiser Richard A. Delgaudio was found guilty of child p\" / \"Delgaudio was found guilty of child porn charges and paying two teenag\"",
-   "alsoDuplicateKey": false,
-   "sentenceId": "p4631-s018",
-   "stillOverlapping": true,
-   "spanPreview": "\"Republican fundraiser Richard A. Delgaudio was found guilty of child p\" / \"Delgaudio was found guilty of child porn cha",
-   "subtype": "PARTIAL_OVERLAP_LIVE",
-   "lane": "B"
-  },
-  {
-   "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4631-s019::13",
-   "reason": "SAME_CATEGORY_PARTIAL_OVERLAP",
-   "postNum": 4631,
-   "heldKey": "OVERLAP-p4631-s019",
-   "certifiedValue": "\"Republican activist Mark A. Grethen convicted on six counts of sex cri\" / \"Grethen convicted on six counts of sex crimes involving children.\"",
-   "alsoDuplicateKey": false,
-   "sentenceId": "p4631-s019",
-   "stillOverlapping": true,
-   "spanPreview": "\"Republican activist Mark A. Grethen convicted on six counts of sex cri\" / \"Grethen convicted on six counts of sex crime",
-   "subtype": "PARTIAL_OVERLAP_LIVE",
-   "lane": "B"
-  },
-  {
-   "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4632-s002::14",
-   "reason": "SAME_CATEGORY_PARTIAL_OVERLAP",
-   "postNum": 4632,
-   "heldKey": "OVERLAP-p4632-s002",
-   "certifiedValue": "\"Republican legislative aide Howard L. Brooks was charged with molestin\" / \"Brooks was charged with molesting a 12-year old boy and possession of \"",
-   "alsoDuplicateKey": false,
-   "sentenceId": "p4632-s002",
-   "stillOverlapping": true,
-   "spanPreview": "\"Republican legislative aide Howard L. Brooks was charged with molestin\" / \"Brooks was charged with molesting a 12-year ",
-   "subtype": "PARTIAL_OVERLAP_LIVE",
-   "lane": "B"
-  },
-  {
-   "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4632-s013::15",
-   "reason": "SAME_CATEGORY_PARTIAL_OVERLAP",
-   "postNum": 4632,
-   "heldKey": "OVERLAP-p4632-s013",
-   "certifiedValue": "\"Republican Councilman and former Marine Jack W. Gardner was convicted \" / \"Gardner was convicted of molesting a 13-year old girl.\"",
-   "alsoDuplicateKey": false,
-   "sentenceId": "p4632-s013",
-   "stillOverlapping": true,
-   "spanPreview": "\"Republican Councilman and former Marine Jack W. Gardner was convicted \" / \"Gardner was convicted of molesting a 13-year",
-   "subtype": "PARTIAL_OVERLAP_LIVE",
-   "lane": "B"
-  },
-  {
-   "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4632-s016::16",
-   "reason": "SAME_CATEGORY_PARTIAL_OVERLAP",
-   "postNum": 4632,
-   "heldKey": "OVERLAP-p4632-s016",
-   "certifiedValue": "\"Republican activist Parker J. Bena pleaded guilty to possession of chi\" / \"Bena pleaded guilty to possession of child pornography on his home com\"",
-   "alsoDuplicateKey": false,
-   "sentenceId": "p4632-s016",
-   "stillOverlapping": true,
-   "spanPreview": "\"Republican activist Parker J. Bena pleaded guilty to possession of chi\" / \"Bena pleaded guilty to possession of child p",
-   "subtype": "PARTIAL_OVERLAP_LIVE",
-   "lane": "B"
-  },
-  {
-   "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4633-s000::17",
-   "reason": "SAME_CATEGORY_PARTIAL_OVERLAP",
-   "postNum": 4633,
-   "heldKey": "OVERLAP-p4633-s000",
-   "certifiedValue": "\"Republican benefactor of conservative Christian groups, Richard A. Das\" / \"Dasen Sr., was charged with rape for allegedly paying a 15-year old gi\"",
-   "alsoDuplicateKey": false,
-   "sentenceId": "p4633-s000",
-   "stillOverlapping": true,
-   "spanPreview": "\"Republican benefactor of conservative Christian groups, Richard A. Das\" / \"Dasen Sr., was charged with rape for alleged",
-   "subtype": "PARTIAL_OVERLAP_LIVE",
-   "lane": "B"
-  },
-  {
-   "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p4801-s002::18",
-   "reason": "SAME_CATEGORY_PARTIAL_OVERLAP",
-   "postNum": 4801,
-   "heldKey": "OVERLAP-p4801-s002",
-   "certifiedValue": "\"\"While attending college, he served as an intern in the office of Dela\" / \"Biden, ....\"\"",
-   "alsoDuplicateKey": false,
-   "sentenceId": "p4801-s002",
-   "stillOverlapping": true,
-   "spanPreview": "\"\"While attending college, he served as an intern in the office of Dela\" / \"Biden, ....\"\"",
-   "subtype": "PARTIAL_OVERLAP_LIVE",
    "lane": "B"
   }
  ]

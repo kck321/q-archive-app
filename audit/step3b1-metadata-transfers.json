@@ -8724,6 +8724,567 @@
    "from": "526|claims|427|469",
    "kind": "claims",
    "metadata": {}
+  },
+  {
+   "actionId": "LB3-DROP-1553-claims-1-120",
+   "from": "1553|claims|1|120",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-DROP-1824-claims-492-550",
+   "from": "1824|claims|492|550",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-DROP-2107-claims-769-881",
+   "from": "2107|claims|769|881",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": true,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-DROP-2306-claims-303-320",
+   "from": "2306|claims|303|320",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-DROP-2306-claims-371-410",
+   "from": "2306|claims|371|410",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-DROP-2662-claims-274-376",
+   "from": "2662|claims|274|376",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-DROP-4310-claims-1150-1269",
+   "from": "4310|claims|1150|1269",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-DROP-4310-claims-1169-1335",
+   "from": "4310|claims|1169|1335",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-DROP-4310-claims-1324-1399",
+   "from": "4310|claims|1324|1399",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-DROP-4521-claims-170-344",
+   "from": "4521|claims|170|344",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-DROP-4521-claims-203-428",
+   "from": "4521|claims|203|428",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-DROP-4631-claims-2070-2204",
+   "from": "4631|claims|2070|2204",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-DROP-4631-claims-2487-2591",
+   "from": "4631|claims|2487|2591",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-DROP-4631-claims-2620-2685",
+   "from": "4631|claims|2620|2685",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-DROP-4632-claims-1960-2014",
+   "from": "4632|claims|1960|2014",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-DROP-4632-claims-2298-2441",
+   "from": "4632|claims|2298|2441",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-DROP-4632-claims-250-338",
+   "from": "4632|claims|250|338",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-DROP-4633-claims-67-148",
+   "from": "4633|claims|67|148",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-DROP-4801-claims-173-185",
+   "from": "4801|claims|173|185",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-SPAN-1553-claims-0-268",
+   "from": "1553|claims|0|268",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-SPAN-1824-claims-454-549",
+   "from": "1824|claims|454|549",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-SPAN-2306-claims-275-319",
+   "from": "2306|claims|275|319",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-SPAN-2306-claims-367-409",
+   "from": "2306|claims|367|409",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-SPAN-2662-claims-176-374",
+   "from": "2662|claims|176|374",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-SPAN-4521-claims-169-427",
+   "from": "4521|claims|169|427",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-SPAN-4631-claims-2025-2203",
+   "from": "4631|claims|2025|2203",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-SPAN-4631-claims-2454-2590",
+   "from": "4631|claims|2454|2590",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-SPAN-4631-claims-2592-2684",
+   "from": "4631|claims|2592|2684",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-SPAN-4632-claims-1912-2013",
+   "from": "4632|claims|1912|2013",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-SPAN-4632-claims-212-337",
+   "from": "4632|claims|212|337",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-SPAN-4632-claims-2268-2440",
+   "from": "4632|claims|2268|2440",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-SPAN-4633-claims-0-147",
+   "from": "4633|claims|0|147",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-SPAN-4801-claims-83-184",
+   "from": "4801|claims|83|184",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
   }
  ]
 }

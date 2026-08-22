@@ -9,10 +9,10 @@
  },
  "totals": {
   "sentences": 30187,
-  "occurrencesKeyed": 30860,
+  "occurrencesKeyed": 30841,
   "duplicateKeys": 57,
   "byKind": {
-   "claims": 8695,
+   "claims": 8676,
    "predictions": 843,
    "directives": 2940,
    "namedEntities": 8772,
@@ -21,8 +21,8 @@
    "context": 1605
   },
   "byRelation": {
-   "EXACT": 20518,
-   "PARTIAL": 10303,
+   "EXACT": 20532,
+   "PARTIAL": 10270,
    "CROSSING": 39
   },
   "unlocated": 77,
@@ -30,12 +30,12 @@
  },
  "findings": {
   "partialPrimarySpans": {
-   "total": 178,
-   "toReplace": 178,
+   "total": 145,
+   "toReplace": 145,
    "deliberatePartials": 0,
    "note": "A directive-wrapped question is a partial span ON PURPOSE — the embedded question is what gets counted so the Directive relationship survives. Those are excluded from the replacement set.",
    "byKind": {
-    "claims": 162,
+    "claims": 129,
     "questions": 10,
     "predictions": 6
    }
@@ -50,14 +50,13 @@
    }
   },
   "sameCategoryOverlaps": {
-   "total": 262,
-   "inPrimaryLayer": 19,
+   "total": 243,
+   "inPrimaryLayer": 0,
    "deliberateInlineOrReview": 243,
    "byKind": {
     "context": 6,
     "namedEntities": 232,
-    "themeAnchors": 5,
-    "claims": 19
+    "themeAnchors": 5
    },
    "note": "The owner rule targets the PRIMARY layer. Nested entities and acrostic emphasis overlap by design and are reported separately rather than swept up."
   },
@@ -1532,26 +1531,6 @@
    "end": 2683
   },
   {
-   "sentenceId": "p1553-s000",
-   "postNum": 1553,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Attorney General Jeff Sessions has also said U.S. Attorney John Huber is investigating claims of FBI and DOJ m",
-   "start": 1,
-   "end": 120
-  },
-  {
-   "sentenceId": "p1553-s000",
-   "postNum": 1553,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "“Attorney General Jeff Sessions has also said U.S. Attorney John Huber is investigating claims of FBI and DOJ ",
-   "start": 0,
-   "end": 268
-  },
-  {
    "sentenceId": "p1585-s004",
    "postNum": 1585,
    "kind": "claims",
@@ -1700,26 +1679,6 @@
    "partial": "WE ARE Q",
    "start": 180,
    "end": 188
-  },
-  {
-   "sentenceId": "p1824-s004",
-   "postNum": 1824,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Market) is ESSENTIAL for every major country in the world.",
-   "start": 492,
-   "end": 550
-  },
-  {
-   "sentenceId": "p1824-s004",
-   "postNum": 1824,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "ACCESS to the AMERICAN CONSUMER (U.S. Market) is ESSENTIAL for every major country in the world",
-   "start": 454,
-   "end": 549
   },
   {
    "sentenceId": "p1826-s039",
@@ -1872,16 +1831,6 @@
    "end": 33
   },
   {
-   "sentenceId": "p2107-s020",
-   "postNum": 2107,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "\"I declare under penalty of perjury that the foregoing information regarding Carter W. Page is TRUE and CORREC",
-   "start": 769,
-   "end": 881
-  },
-  {
    "sentenceId": "p2135-s001",
    "postNum": 2135,
    "kind": "claims",
@@ -1920,46 +1869,6 @@
    "partial": "SWAMP FIGHTING BACK",
    "start": 141,
    "end": 160
-  },
-  {
-   "sentenceId": "p2306-s008",
-   "postNum": 2306,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Ford's family has strong ties to SWAMP.",
-   "start": 371,
-   "end": 410
-  },
-  {
-   "sentenceId": "p2306-s008",
-   "postNum": 2306,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Dr. Ford's family has strong ties to SWAMP",
-   "start": 367,
-   "end": 409
-  },
-  {
-   "sentenceId": "p2306-s006",
-   "postNum": 2306,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Something did happen to Dr. Ford in her past",
-   "start": 275,
-   "end": 319
-  },
-  {
-   "sentenceId": "p2306-s006",
-   "postNum": 2306,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Ford in her past.",
-   "start": 303,
-   "end": 320
   },
   {
    "sentenceId": "p2321-s000",
@@ -2110,26 +2019,6 @@
    "partial": "McRae and claimed that taxpayer-funded abortions should be a constitutional right.",
    "start": 2531,
    "end": 2613
-  },
-  {
-   "sentenceId": "p2662-s002",
-   "postNum": 2662,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "That can only happen through a federal grand jury investigation headed by John W. Huber, the U.S. Attorney in ",
-   "start": 176,
-   "end": 374
-  },
-  {
-   "sentenceId": "p2662-s002",
-   "postNum": 2662,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Attorney in Utah who has been appointed to investigate the FISA criminality by the Obama FBI and DOJ.\"",
-   "start": 274,
-   "end": 376
   },
   {
    "sentenceId": "p2681-s013",
@@ -2522,36 +2411,6 @@
    "end": 61
   },
   {
-   "sentenceId": "p4310-s015",
-   "postNum": 4310,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "The recommendation, delivered to the White House last month, was made by Defense Secretary Ashton B. Carter an",
-   "start": 1169,
-   "end": 1335
-  },
-  {
-   "sentenceId": "p4310-s015",
-   "postNum": 4310,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Clapper Jr., according to several U.S. officials familiar with the matter.”",
-   "start": 1324,
-   "end": 1399
-  },
-  {
-   "sentenceId": "p4310-s015",
-   "postNum": 4310,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Rogers, be removed.The recommendation, delivered to the White House last month, was made by Defense Secretary ",
-   "start": 1150,
-   "end": 1269
-  },
-  {
    "sentenceId": "p4360-s001",
    "postNum": 4360,
    "kind": "claims",
@@ -2580,36 +2439,6 @@
    "partial": "Central communications blackout [continental US]",
    "start": 49,
    "end": 97
-  },
-  {
-   "sentenceId": "p4521-s003",
-   "postNum": 4521,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "The Posse Comitatus Act, 18 U.S. Code, Section 1385, an original intent of which was to end the use of federal",
-   "start": 170,
-   "end": 344
-  },
-  {
-   "sentenceId": "p4521-s003",
-   "postNum": 4521,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "\"The Posse Comitatus Act, 18 U.S. Code, Section 1385, an original intent of which was to end the use of federa",
-   "start": 169,
-   "end": 427
-  },
-  {
-   "sentenceId": "p4521-s003",
-   "postNum": 4521,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Code, Section 1385, an original intent of which was to end the use of federal troops [TO POLICE STATE ELECTION",
-   "start": 203,
-   "end": 428
   },
   {
    "sentenceId": "p4541-s019",
@@ -2672,146 +2501,6 @@
    "end": 270
   },
   {
-   "sentenceId": "p4631-s015",
-   "postNum": 4631,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Republican pastor Mike Hintz, whom George W. Bush commended during the 2004 presidential campaign, surrendered",
-   "start": 2025,
-   "end": 2203
-  },
-  {
-   "sentenceId": "p4631-s015",
-   "postNum": 4631,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Bush commended during the 2004 presidential campaign, surrendered to police after admitting to a sexual affair",
-   "start": 2070,
-   "end": 2204
-  },
-  {
-   "sentenceId": "p4631-s018",
-   "postNum": 4631,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Republican fundraiser Richard A. Delgaudio was found guilty of child porn charges and paying two teenage girls",
-   "start": 2454,
-   "end": 2590
-  },
-  {
-   "sentenceId": "p4631-s018",
-   "postNum": 4631,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Delgaudio was found guilty of child porn charges and paying two teenage girls to pose for sexual photos.",
-   "start": 2487,
-   "end": 2591
-  },
-  {
-   "sentenceId": "p4631-s019",
-   "postNum": 4631,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Republican activist Mark A. Grethen convicted on six counts of sex crimes involving children",
-   "start": 2592,
-   "end": 2684
-  },
-  {
-   "sentenceId": "p4631-s019",
-   "postNum": 4631,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Grethen convicted on six counts of sex crimes involving children.",
-   "start": 2620,
-   "end": 2685
-  },
-  {
-   "sentenceId": "p4632-s002",
-   "postNum": 4632,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Republican legislative aide Howard L. Brooks was charged with molesting a 12-year old boy and possession of ch",
-   "start": 212,
-   "end": 337
-  },
-  {
-   "sentenceId": "p4632-s002",
-   "postNum": 4632,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Brooks was charged with molesting a 12-year old boy and possession of child pornography.",
-   "start": 250,
-   "end": 338
-  },
-  {
-   "sentenceId": "p4632-s013",
-   "postNum": 4632,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Republican Councilman and former Marine Jack W. Gardner was convicted of molesting a 13-year old girl",
-   "start": 1912,
-   "end": 2013
-  },
-  {
-   "sentenceId": "p4632-s013",
-   "postNum": 4632,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Gardner was convicted of molesting a 13-year old girl.",
-   "start": 1960,
-   "end": 2014
-  },
-  {
-   "sentenceId": "p4632-s016",
-   "postNum": 4632,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Republican activist Parker J. Bena pleaded guilty to possession of child pornography on his home computer and ",
-   "start": 2268,
-   "end": 2440
-  },
-  {
-   "sentenceId": "p4632-s016",
-   "postNum": 4632,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Bena pleaded guilty to possession of child pornography on his home computer and was sentenced to 30 months in ",
-   "start": 2298,
-   "end": 2441
-  },
-  {
-   "sentenceId": "p4633-s000",
-   "postNum": 4633,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Republican benefactor of conservative Christian groups, Richard A. Dasen Sr., was charged with rape for allege",
-   "start": 0,
-   "end": 147
-  },
-  {
-   "sentenceId": "p4633-s000",
-   "postNum": 4633,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Dasen Sr., was charged with rape for allegedly paying a 15-year old girl for sex.",
-   "start": 67,
-   "end": 148
-  },
-  {
    "sentenceId": "p0466-s012",
    "postNum": 466,
    "kind": "claims",
@@ -2830,26 +2519,6 @@
    "partial": "Clinton 1998 + appeal 1999 _scrubbed from net]",
    "start": 59,
    "end": 105
-  },
-  {
-   "sentenceId": "p4801-s002",
-   "postNum": 4801,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "\"While attending college, he served as an intern in the office of Delaware Sen. Joseph R. Biden, ....",
-   "start": 83,
-   "end": 184
-  },
-  {
-   "sentenceId": "p4801-s002",
-   "postNum": 4801,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Biden, ....\"",
-   "start": 173,
-   "end": 185
   },
   {
    "sentenceId": "p4850-s003",
@@ -3598,16 +3267,6 @@
   {
    "sentenceId": "p1553-s000",
    "postNum": 1553,
-   "kind": "claims",
-   "layer": "primary",
-   "nested": true,
-   "deliberate": false,
-   "a": "Attorney General Jeff Sessions has also said U.S. Attorney John Huber ",
-   "b": "“Attorney General Jeff Sessions has also said U.S. Attorney John Huber"
-  },
-  {
-   "sentenceId": "p1553-s000",
-   "postNum": 1553,
    "kind": "namedEntities",
    "layer": "inline",
    "nested": true,
@@ -3694,16 +3353,6 @@
    "deliberate": true,
    "a": "US President",
    "b": "US"
-  },
-  {
-   "sentenceId": "p1824-s004",
-   "postNum": 1824,
-   "kind": "claims",
-   "layer": "primary",
-   "nested": false,
-   "deliberate": false,
-   "a": "Market) is ESSENTIAL for every major country in the world.",
-   "b": "ACCESS to the AMERICAN CONSUMER (U.S. Market) is ESSENTIAL for every m"
   },
   {
    "sentenceId": "p1871-s003",
@@ -3906,16 +3555,6 @@
    "b": "The information that will become public will further demonstrate the c"
   },
   {
-   "sentenceId": "p2107-s020",
-   "postNum": 2107,
-   "kind": "claims",
-   "layer": "primary",
-   "nested": true,
-   "deliberate": false,
-   "a": "\"I declare under penalty of perjury that the foregoing information reg",
-   "b": "\"I declare under penalty of perjury that the foregoing information reg"
-  },
-  {
    "sentenceId": "p2150-s004",
    "postNum": 2150,
    "kind": "namedEntities",
@@ -3954,26 +3593,6 @@
    "deliberate": true,
    "a": "USA_leadership change",
    "b": "SA_leadership change"
-  },
-  {
-   "sentenceId": "p2306-s008",
-   "postNum": 2306,
-   "kind": "claims",
-   "layer": "primary",
-   "nested": false,
-   "deliberate": false,
-   "a": "Ford's family has strong ties to SWAMP.",
-   "b": "Dr. Ford's family has strong ties to SWAMP"
-  },
-  {
-   "sentenceId": "p2306-s006",
-   "postNum": 2306,
-   "kind": "claims",
-   "layer": "primary",
-   "nested": false,
-   "deliberate": false,
-   "a": "Something did happen to Dr. Ford in her past",
-   "b": "Ford in her past."
   },
   {
    "sentenceId": "p2332-s001",
@@ -4104,16 +3723,6 @@
    "deliberate": true,
    "a": "POTUS",
    "b": "US"
-  },
-  {
-   "sentenceId": "p2662-s002",
-   "postNum": 2662,
-   "kind": "claims",
-   "layer": "primary",
-   "nested": false,
-   "deliberate": false,
-   "a": "That can only happen through a federal grand jury investigation headed",
-   "b": "Attorney in Utah who has been appointed to investigate the FISA crimin"
   },
   {
    "sentenceId": "p2681-s010",
@@ -4986,26 +4595,6 @@
    "b": "US"
   },
   {
-   "sentenceId": "p4310-s015",
-   "postNum": 4310,
-   "kind": "claims",
-   "layer": "primary",
-   "nested": false,
-   "deliberate": false,
-   "a": "The recommendation, delivered to the White House last month, was made ",
-   "b": "Clapper Jr., according to several U.S. officials familiar with the mat"
-  },
-  {
-   "sentenceId": "p4310-s015",
-   "postNum": 4310,
-   "kind": "claims",
-   "layer": "primary",
-   "nested": false,
-   "deliberate": false,
-   "a": "The recommendation, delivered to the White House last month, was made ",
-   "b": "Rogers, be removed.The recommendation, delivered to the White House la"
-  },
-  {
    "sentenceId": "p0432-s002",
    "postNum": 432,
    "kind": "namedEntities",
@@ -5066,36 +4655,6 @@
    "b": "Barr"
   },
   {
-   "sentenceId": "p4521-s003",
-   "postNum": 4521,
-   "kind": "claims",
-   "layer": "primary",
-   "nested": true,
-   "deliberate": false,
-   "a": "The Posse Comitatus Act, 18 U.S. Code, Section 1385, an original inten",
-   "b": "\"The Posse Comitatus Act, 18 U.S. Code, Section 1385, an original inte"
-  },
-  {
-   "sentenceId": "p4521-s003",
-   "postNum": 4521,
-   "kind": "claims",
-   "layer": "primary",
-   "nested": false,
-   "deliberate": false,
-   "a": "The Posse Comitatus Act, 18 U.S. Code, Section 1385, an original inten",
-   "b": "Code, Section 1385, an original intent of which was to end the use of "
-  },
-  {
-   "sentenceId": "p4521-s003",
-   "postNum": 4521,
-   "kind": "claims",
-   "layer": "primary",
-   "nested": false,
-   "deliberate": false,
-   "a": "\"The Posse Comitatus Act, 18 U.S. Code, Section 1385, an original inte",
-   "b": "Code, Section 1385, an original intent of which was to end the use of "
-  },
-  {
    "sentenceId": "p0453-s007",
    "postNum": 453,
    "kind": "namedEntities",
@@ -5136,56 +4695,6 @@
    "b": "Epstein island"
   },
   {
-   "sentenceId": "p4631-s015",
-   "postNum": 4631,
-   "kind": "claims",
-   "layer": "primary",
-   "nested": false,
-   "deliberate": false,
-   "a": "Republican pastor Mike Hintz, whom George W. Bush commended during the",
-   "b": "Bush commended during the 2004 presidential campaign, surrendered to p"
-  },
-  {
-   "sentenceId": "p4631-s018",
-   "postNum": 4631,
-   "kind": "claims",
-   "layer": "primary",
-   "nested": false,
-   "deliberate": false,
-   "a": "Republican fundraiser Richard A. Delgaudio was found guilty of child p",
-   "b": "Delgaudio was found guilty of child porn charges and paying two teenag"
-  },
-  {
-   "sentenceId": "p4631-s019",
-   "postNum": 4631,
-   "kind": "claims",
-   "layer": "primary",
-   "nested": false,
-   "deliberate": false,
-   "a": "Republican activist Mark A. Grethen convicted on six counts of sex cri",
-   "b": "Grethen convicted on six counts of sex crimes involving children."
-  },
-  {
-   "sentenceId": "p4632-s002",
-   "postNum": 4632,
-   "kind": "claims",
-   "layer": "primary",
-   "nested": false,
-   "deliberate": false,
-   "a": "Republican legislative aide Howard L. Brooks was charged with molestin",
-   "b": "Brooks was charged with molesting a 12-year old boy and possession of "
-  },
-  {
-   "sentenceId": "p4632-s013",
-   "postNum": 4632,
-   "kind": "claims",
-   "layer": "primary",
-   "nested": false,
-   "deliberate": false,
-   "a": "Republican Councilman and former Marine Jack W. Gardner was convicted ",
-   "b": "Gardner was convicted of molesting a 13-year old girl."
-  },
-  {
    "sentenceId": "p4632-s013",
    "postNum": 4632,
    "kind": "namedEntities",
@@ -5196,16 +4705,6 @@
    "b": "Jack"
   },
   {
-   "sentenceId": "p4632-s016",
-   "postNum": 4632,
-   "kind": "claims",
-   "layer": "primary",
-   "nested": false,
-   "deliberate": false,
-   "a": "Republican activist Parker J. Bena pleaded guilty to possession of chi",
-   "b": "Bena pleaded guilty to possession of child pornography on his home com"
-  },
-  {
    "sentenceId": "p4632-s017",
    "postNum": 4632,
    "kind": "namedEntities",
@@ -5214,16 +4713,6 @@
    "deliberate": true,
    "a": "Larry Jack Schwarz",
    "b": "Jack"
-  },
-  {
-   "sentenceId": "p4633-s000",
-   "postNum": 4633,
-   "kind": "claims",
-   "layer": "primary",
-   "nested": false,
-   "deliberate": false,
-   "a": "Republican benefactor of conservative Christian groups, Richard A. Das",
-   "b": "Dasen Sr., was charged with rape for allegedly paying a 15-year old gi"
   },
   {
    "sentenceId": "p4645-s000",
@@ -5274,16 +4763,6 @@
    "deliberate": true,
    "a": "Bill Clinton",
    "b": "Clinton"
-  },
-  {
-   "sentenceId": "p4801-s002",
-   "postNum": 4801,
-   "kind": "claims",
-   "layer": "primary",
-   "nested": false,
-   "deliberate": false,
-   "a": "\"While attending college, he served as an intern in the office of Dela",
-   "b": "Biden, ....\""
   },
   {
    "sentenceId": "p4821-s000",

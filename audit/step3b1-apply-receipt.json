@@ -2,7 +2,7 @@
  "note": "Step 3B-1 apply receipt. Measured from the bundle, not from the plan.",
  "step": "3B-1",
  "planSha256": "373ca06b1416b6707a111f2c3da8e751472c551f739500f76cdcc764d3128058",
- "actionsApplied": 739,
+ "actionsApplied": 772,
  "actionsHeld": 2,
  "heldActionIds": [
   "A-DUP-2971-questions-561-799",
@@ -10,10 +10,10 @@
  ],
  "seedVersion": 87,
  "outputs": {
-  "public/data/posts.json": "7ffd9b60d019979d41d07fc7abd223c93c13972ef89acad7e707cfb72b366a1a",
+  "public/data/posts.json": "324bc23739f0e478682e012135b57e055c6c1d93a59d35649bed2510e13befed",
   "public/data/questions.json": "d36dfc86ea8de5531183fe24030011aeefe76826df8b3579d820d24025376bad",
-  "public/data/semantics.json": "a9b93a37c141346fcb8c2a3122661db4d4d4cb180ba685577efe2b4f558a0d51",
-  "audit/occurrence-ledger.json": "453d30ef7884c6624408fd8a7d4566e54301818b4a366a59c21320ae812a754a"
+  "public/data/semantics.json": "56e8b14deb5f0ef2b4bbfa42d9227424b5dbbe6faf011da1a71e915d5de0d0d4",
+  "audit/occurrence-ledger.json": "32485142101e317cdd94390d1e097b412d92203106b6511c1beafdec91163111"
  },
  "crossTab": [
   {
@@ -23,9 +23,9 @@
    "before": 8912,
    "projectedDelta": -92,
    "projectedAfter": 8820,
-   "adjudicatedHeldDelta": -125,
-   "target": 8695,
-   "measuredAfter": 8695,
+   "adjudicatedHeldDelta": -144,
+   "target": 8676,
+   "measuredAfter": 8676,
    "headlineEligible": true,
    "matches": true,
    "measuredFrom": "audit/occurrence-ledger.json"
@@ -171,24 +171,7 @@
   {
    "finding": "the source-boundary resolution withdraws only the truncated head of a pasted sentence",
    "detail": "A-SB-2653 and A-SB-4310 withdraw one q_authored claim each. The remaining fragments of the SAME source-owned sentence are still certified as q_authored claims and still overlap each other.",
-   "sameCategoryOverlaps": [
-    {
-     "postNum": 4310,
-     "sentenceId": "p4310-s015",
-     "kind": "claims",
-     "nested": false,
-     "a": "The recommendation, delivered to the White House last month, was made ",
-     "b": "Clapper Jr., according to several U.S. officials familiar with the mat"
-    },
-    {
-     "postNum": 4310,
-     "sentenceId": "p4310-s015",
-     "kind": "claims",
-     "nested": false,
-     "a": "The recommendation, delivered to the White House last month, was made ",
-     "b": "Rogers, be removed.The recommendation, delivered to the White House la"
-    }
-   ],
+   "sameCategoryOverlaps": [],
    "supersededPartials": [
     {
      "postNum": 1928,
@@ -221,30 +204,6 @@
      "start": 334,
      "end": 483,
      "partial": "that shall safeguard the public from the primary fallout which is slated to occur 11.3 upon the arrest announc"
-    },
-    {
-     "postNum": 4310,
-     "sentenceId": "p4310-s015",
-     "kind": "claims",
-     "start": 1169,
-     "end": 1335,
-     "partial": "The recommendation, delivered to the White House last month, was made by Defense Secretary Ashton B. Carter an"
-    },
-    {
-     "postNum": 4310,
-     "sentenceId": "p4310-s015",
-     "kind": "claims",
-     "start": 1324,
-     "end": 1399,
-     "partial": "Clapper Jr., according to several U.S. officials familiar with the matter.”"
-    },
-    {
-     "postNum": 4310,
-     "sentenceId": "p4310-s015",
-     "kind": "claims",
-     "start": 1150,
-     "end": 1269,
-     "partial": "Rogers, be removed.The recommendation, delivered to the White House last month, was made by Defense Secretary "
     }
    ],
    "notWithdrawnBecause": "withdrawing them moves the q_authored claim total off the reviewed projection on an unreviewed source-ownership judgement"
@@ -285,8 +244,8 @@
  "residualsOutOfScope": {
   "note": "Explicitly left for the owner: the 10 held actions and the 945-row conflict queue.",
   "multiPrimarySentences": 0,
-  "sameCategoryPrimaryOverlaps": 19,
-  "supersededPartialPrimarySpans": 178,
+  "sameCategoryPrimaryOverlaps": 0,
+  "supersededPartialPrimarySpans": 145,
   "boundaryCrossingRecords": 39,
   "conflictQueueRows": 945
  },
@@ -299,7 +258,7 @@
   {
    "gate": "every automatic action materialised",
    "pass": true,
-   "detail": "747/747 actions, 748/748 overlay rows  (530 planned + 8 adjudicated held + 209 B2/B2b; #34 contributes two rows, one per clause)"
+   "detail": "780/780 actions, 781/781 overlay rows  (530 planned + 8 adjudicated held + 242 B2/B2b; #34 contributes two rows, one per clause)"
   },
   {
    "gate": "no held action appears in the applied overlay",
@@ -314,12 +273,12 @@
   {
    "gate": "zero duplicate action consumption",
    "pass": true,
-   "detail": "1119 distinct old keys across 747 actions"
+   "detail": "1152 distinct old keys across 780 actions"
   },
   {
    "gate": "zero runtime substring mismatch in the overlay",
    "pass": true,
-   "detail": "746 located rows verified against runtimeText()"
+   "detail": "779 located rows verified against runtimeText()"
   },
   {
    "gate": "every overlay row without offsets is a withdrawal",
@@ -329,7 +288,7 @@
   {
    "gate": "zero runtime substring mismatch in the ledger",
    "pass": true,
-   "detail": "30,860 records verified"
+   "detail": "30,841 records verified"
   },
   {
    "gate": "zero same-sentence multi-primary inside the applied scope",
@@ -344,17 +303,17 @@
   {
    "gate": "every in-scope same-category primary overlap is a named source-boundary exception",
    "pass": true,
-   "detail": "19 archive-wide; 2 in scope, all on #4310; 0 unexplained"
+   "detail": "0 archive-wide; 0 in scope, all on —; 0 unexplained"
   },
   {
    "gate": "every in-scope partial primary span is a named source-boundary exception or a declared span override",
    "pass": true,
-   "detail": "178 archive-wide; 7 in scope, all on #1928 #2653 #34 #4310; 0 unexplained"
+   "detail": "145 archive-wide; 4 in scope, all on #1928 #2653 #34; 0 unexplained"
   },
   {
    "gate": "metadata transfer recorded for every withdrawn record",
    "pass": true,
-   "detail": "877 transfers, 318 carrying certified attributes, 84 meta keys re-pointed to a widened span"
+   "detail": "910 transfers, 351 carrying certified attributes, 84 meta keys re-pointed to a widened span"
   },
   {
    "gate": "question_directive relationship preserved on every unified pair",
@@ -369,7 +328,7 @@
   {
    "gate": "the certified wording and the painted span stay index-aligned",
    "pass": true,
-   "detail": "claims 8695 = claimSpans 8695; predictions 843 = predictionSpans 843; 0 posts out of alignment"
+   "detail": "claims 8676 = claimSpans 8676; predictions 843 = predictionSpans 843; 0 posts out of alignment"
   },
   {
    "gate": "no PLAN action consumed a held-conflict key",

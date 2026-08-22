@@ -45,6 +45,71 @@ const kept = []
 const unresolved = []
 
 for (const row of disp.rows) {
+  // ── SAME-CATEGORY OVERLAPS are keyed by SENTENCE, not by record ───────────
+  //
+  // Their conflictId names the sentence two records are fighting over, so there is no single
+  // occurrence key to parse out of it. The reviewed file names the records instead: which one
+  // survives, what span it should cover, and which ones go. Three sentences produce more than one
+  // conflict row because they carry three overlapping records; the extra rows say `coveredBy` and
+  // emit nothing, so one repair is not written twice.
+  if (row.overlapResolution || row.coveredBy) {
+    if (row.coveredBy) {
+      if (!disp.rows.some(r => r.conflictId === row.coveredBy)) { problems.push(`${row.conflictId}: coveredBy names no row in this file`); continue }
+      kept.push(row); continue
+    }
+    const p0 = postByNum.get(row.postNum)
+    if (!p0) { problems.push(`${row.conflictId}: no such drop`); continue }
+    const b0 = runtimeText(p0.text ?? '')
+    const res = row.overlapResolution
+    if (res.widen) {
+      const w = parseKey(res.widen)
+      const text = b0.slice(res.to.start, res.to.end)
+      if (!text.trim()) { problems.push(`${row.conflictId}: widened span is blank`); continue }
+      if (res.to.start === w.start && res.to.end === w.end) { problems.push(`${row.conflictId}: widen is a no-op`); continue }
+      actions.push({
+        postNum: row.postNum, sentenceId: null, sourceDisposition: 'q_authored',
+        oldOccurrenceKeys: [res.widen], oldCategories: [`${w.kind}@${w.start}..${w.end}`],
+        proposedSecondarySemantics: [], proposedReviewDispositions: [],
+        recordsWithdrawn: [], withdrawReason: '',
+        metadataTransferred: res.widen, relationshipsPreserved: '',
+        confidence: 'HIGH', humanReviewRequired: false,
+        actionId: `${PREFIX}-SPAN-${row.postNum}-${w.kind}-${w.start}-${w.end}`,
+        kind: 'SPAN_TRIM',
+        sentenceStart: res.to.start, sentenceEnd: res.to.end, sentenceText: text,
+        proposedPrimaryCategory: PRIMARY_OF[w.kind] ?? null,
+        ruleCode: 'LANEB_OVERLAP_HEAD_WIDENED',
+        adjudication: 'B — REPAIR_GEOMETRY (the abbreviation-split head widened to its sentence)',
+        adjudicationReason: row.reason,
+        laneBDisposition: row.disposition, laneBFamily: disp.family,
+        spanOverride: true,
+        spanOverrideReason: 'the sentence splitter ended a sentence at an abbreviation, so the stored head stops short of the sentence it was meant to cover',
+      })
+    }
+    for (const wk of res.withdraw ?? []) {
+      const w = parseKey(wk)
+      const t = b0.slice(w.start, w.end)
+      if (!t.trim()) { problems.push(`${row.conflictId}: withdrawal span ${wk} is blank`); continue }
+      actions.push({
+        postNum: w.postNum, sentenceId: null, sourceDisposition: 'q_authored',
+        oldOccurrenceKeys: [wk], oldCategories: [`${w.kind}@${w.start}..${w.end}`],
+        proposedSecondarySemantics: [], proposedReviewDispositions: [],
+        recordsWithdrawn: [wk], withdrawReason: row.reason,
+        metadataTransferred: wk, relationshipsPreserved: '',
+        confidence: 'HIGH', humanReviewRequired: false,
+        actionId: `${PREFIX}-DROP-${w.postNum}-${w.kind}-${w.start}-${w.end}`,
+        kind: 'WITHDRAW_RECORD',
+        sentenceStart: w.start, sentenceEnd: w.end, sentenceText: t,
+        proposedPrimaryCategory: null,
+        ruleCode: 'LANEB_OVERLAP_FRAGMENT_WITHDRAWN',
+        adjudication: `${row.disposition} — the overlapping fragment withdrawn`,
+        adjudicationReason: row.reason,
+        laneBDisposition: row.disposition, laneBFamily: disp.family,
+        ...(row.flagForOwner ? { flaggedForOwner: true } : {}),
+      })
+    }
+    continue
+  }
+
   const key = keyOf(row.conflictId)
   const { postNum, kind, start, end } = parseKey(key)
   if (postNum !== row.postNum) { problems.push(`${row.conflictId}: post mismatch`); continue }
