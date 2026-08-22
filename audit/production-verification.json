@@ -1,0 +1,186 @@
+{
+  "base": "https://qdrops.app",
+  "commit": "89ac05db8c94a454bc404b2bc8f3a1fabbea8c7a",
+  "assertions": [
+    {
+      "name": "live seed == final certified seed",
+      "ok": true,
+      "detail": "live 88 / certified 88"
+    },
+    {
+      "name": "live build is clean and carries the certified manifest",
+      "ok": true,
+      "detail": "dirty false · tree df6aa7489834 · manifest 41bbf6680554"
+    },
+    {
+      "name": "live commit is the certified HEAD",
+      "ok": true,
+      "detail": "89ac05db8c94a454bc404b2bc8f3a1fabbea8c7a · 2026-08-22T13:08:52.182Z"
+    },
+    {
+      "name": "live questions == certified",
+      "ok": true,
+      "detail": "6321 / 6321"
+    },
+    {
+      "name": "live directives == certified",
+      "ok": true,
+      "detail": "2940 / 2940"
+    },
+    {
+      "name": "live claims == certified, and claimSpans agree",
+      "ok": true,
+      "detail": "8676 claims / 8676 spans / 8676 certified"
+    },
+    {
+      "name": "live predictions == certified, and predictionSpans agree",
+      "ok": true,
+      "detail": "843 / 843"
+    },
+    {
+      "name": "live entities == certified",
+      "ok": true,
+      "detail": "1214 / 1214"
+    },
+    {
+      "name": "live entity mentions == certified, registry and render agree",
+      "ok": true,
+      "detail": "registry 8821 / rendered 8821 / certified 8821"
+    },
+    {
+      "name": "retired fields absent from every drop",
+      "ok": true,
+      "detail": "all five empty on all 4,966"
+    },
+    {
+      "name": "retired claim attributes absent",
+      "ok": true,
+      "detail": "0 posts"
+    },
+    {
+      "name": "emphasis.json unavailable as JSON",
+      "ok": true,
+      "detail": "HTTP 404"
+    },
+    {
+      "name": "Emphasis absent from the search index",
+      "ok": true,
+      "detail": "questions, editorial, directives, claims, predictions, evidence, entities, sources, themes, codes, unresolved"
+    },
+    {
+      "name": "Q Conclusions absent from the search index",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "name": "Checkable Claims absent from the search index",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "name": "no retired relationship edge type",
+      "ok": true,
+      "detail": "prediction_assertion, theme_support, evidence_claim, question_directive, claim_source_provided, prediction_source_provided, entity_code, unresolved_occurrence"
+    },
+    {
+      "name": "five merged identities resolve correctly on the live site",
+      "ok": true,
+      "detail": "Wray->Christopher Wray ok, Whitaker->Matthew Whitaker ok, GANG OF 8->Gang of Eight ok, Pence->Mike Pence ok, Awan->Imran Awan ok"
+    },
+    {
+      "name": "29 withdrawn entity occurrences do not return",
+      "ok": true,
+      "detail": "0 of 29 returned"
+    },
+    {
+      "name": "lane-B occurrence decisions hold live",
+      "ok": true,
+      "detail": "0 of 28 returned"
+    },
+    {
+      "name": "#1090 claim trimmed off its question",
+      "ok": true,
+      "detail": "8 claims on #1090"
+    },
+    {
+      "name": "#3623 claim trimmed off its question",
+      "ok": true,
+      "detail": "7 claims on #3623"
+    },
+    {
+      "name": "#17 extractor blob withdrawn",
+      "ok": true,
+      "detail": "3 claims on #17"
+    },
+    {
+      "name": "#2306 abbreviation split repaired",
+      "ok": true,
+      "detail": "9 claims on #2306"
+    },
+    {
+      "name": "#526 (b. 1937) sentence made whole",
+      "ok": true,
+      "detail": "5 claims on #526"
+    },
+    {
+      "name": "#4801 twelve-character tail withdrawn",
+      "ok": true,
+      "detail": "1 claims on #4801"
+    },
+    {
+      "name": "#34 claim/prediction split renders correctly",
+      "ok": true,
+      "detail": "claim 280..333 + prediction 334..483"
+    },
+    {
+      "name": "the lane-B alias registrations reached the reader",
+      "ok": true,
+      "detail": "US SENATE, US NAVY"
+    },
+    {
+      "name": "no glossary token is shadowed by a case variant",
+      "ok": true,
+      "detail": "389 tokens, all distinct case-insensitively"
+    },
+    {
+      "name": "the root answers 200 with the app shell",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "route /posts serves the app",
+      "ok": true,
+      "detail": "HTTP 404 (Pages SPA fallback), 1301 bytes, identical to the root shell: true"
+    },
+    {
+      "name": "route /analysis serves the app",
+      "ok": true,
+      "detail": "HTTP 404 (Pages SPA fallback), 1301 bytes, identical to the root shell: true"
+    },
+    {
+      "name": "route /questions serves the app",
+      "ok": true,
+      "detail": "HTTP 404 (Pages SPA fallback), 1301 bytes, identical to the root shell: true"
+    },
+    {
+      "name": "route /requests serves the app",
+      "ok": true,
+      "detail": "HTTP 404 (Pages SPA fallback), 1301 bytes, identical to the root shell: true"
+    },
+    {
+      "name": "route /brackets serves the app",
+      "ok": true,
+      "detail": "HTTP 404 (Pages SPA fallback), 1301 bytes, identical to the root shell: true"
+    },
+    {
+      "name": "route /search serves the app",
+      "ok": true,
+      "detail": "HTTP 404 (Pages SPA fallback), 1301 bytes, identical to the root shell: true"
+    },
+    {
+      "name": "route /method serves the app",
+      "ok": true,
+      "detail": "HTTP 404 (Pages SPA fallback), 1301 bytes, identical to the root shell: true"
+    }
+  ]
+}
