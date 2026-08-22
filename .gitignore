@@ -69,6 +69,11 @@ audit/unhighlighted-sentences/unhighlighted-sentences.csv
 # Same shape: the census JSONL with a proposal object added to every row, 26MB.
 # `node scripts/classify-unhighlighted-residual.mjs` rebuilds it from the census in ~2s.
 audit/unhighlighted-sentences/residual-classified.jsonl
+# The ground-truth crawl: every painted <mark> range read out of the published site's DOM (7MB),
+# and the units measured against it (20MB). `audit-painted-truth.mjs` re-crawls all 4,735 drops in
+# ~7 minutes. truth-manifest.json IS committed — it is the evidence, and it is small.
+audit/unhighlighted-sentences/painted-truth.jsonl
+audit/unhighlighted-sentences/unhighlighted-from-truth.jsonl
 
 # Excel writes a ~$name.xlsx lock file beside any workbook you have open. The review workbook
 # lives in audit/, so opening it makes the tree dirty and preflight-deploy refuses to publish —

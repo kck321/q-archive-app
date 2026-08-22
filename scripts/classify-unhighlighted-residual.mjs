@@ -20,8 +20,15 @@ const DIR = path.join(ROOT, 'audit', 'unhighlighted-sentences')
 const DATA = path.join(ROOT, 'public', 'data')
 const read = f => JSON.parse(fs.readFileSync(path.join(DATA, f), 'utf8'))
 
-const rows = fs.readFileSync(path.join(DIR, 'unhighlighted-sentences.jsonl'), 'utf8')
+// Prefer the rows measured in the RENDERED DOM. The transcription pass models the renderer and is
+// only true until the renderer moves; the DOM pass reads the marks a reader can actually see.
+// --census forces the transcription rows, for comparing the two.
+const TRUTH = path.join(DIR, 'unhighlighted-from-truth.jsonl')
+const SRC = (!process.argv.includes('--census') && fs.existsSync(TRUTH))
+  ? TRUTH : path.join(DIR, 'unhighlighted-sentences.jsonl')
+const rows = fs.readFileSync(SRC, 'utf8')
   .split('\n').filter(l => l.trim()).map(l => JSON.parse(l))
+console.log(`\n  source: ${path.basename(SRC)}  (${rows.length.toLocaleString()} rows)`)
 const themesJson = read('themes.json')
 const entitiesJson = read('entities.json')
 

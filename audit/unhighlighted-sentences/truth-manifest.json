@@ -1,0 +1,112 @@
+{
+ "generatedAt": "2026-08-22T14:41:50.829Z",
+ "status": "AUDIT_ONLY — nothing classified, nothing rebuilt, nothing deployed",
+ "measurement": "THE RENDERED DOM. Painted ranges read from <mark> and <a> inside pre.post-text on the published site — not a transcription of the renderer.",
+ "rule": "A unit stays in the queue unless every non-whitespace character it owns is painted. Inline highlights (entity, bracket, theme anchor, link) never speak for the sentence around them.",
+ "sources": {
+  "postsFile": "public/data/posts.json",
+  "postsSha256": "79711cf841b5dee2e347ba1def4a31e066c46840f7258656034efc6c6febfe6b",
+  "postsMeasured": 4734,
+  "postsFailed": 1,
+  "coordinateSystem": "the rendered DOM on the published site — pre.post-text, its <mark> and <a> ranges",
+  "segmenter": "scripts/lib/units.mjs unitsWithOffsets() — shared with the transcription pass",
+  "paintedLayers": [
+   "question",
+   "request",
+   "requestQuestion",
+   "namedEntity",
+   "claim",
+   "prediction",
+   "theme",
+   "bracketCode",
+   "url"
+  ],
+  "sentenceLevelLayers": [
+   "question",
+   "request",
+   "requestQuestion",
+   "claim",
+   "prediction"
+  ],
+  "certifiedButUnpaintedLayers": [
+   "context",
+   "evidence",
+   "code"
+  ],
+  "notPaintedByOwnerRuling": [
+   "contextUnits (2026-08-17)"
+  ],
+  "retiredEntirely": [
+   "emphasis (2026-08-21)",
+   "impliedConclusions (2026-08-21)",
+   "verificationHooks (2026-08-21)"
+  ],
+  "unmappedMarkClasses": {}
+ },
+ "counts": {
+  "posts": 4966,
+  "postsWithText": 4734,
+  "postsRead": 4734,
+  "units": 29563,
+  "fullyPainted": 18863,
+  "paintedMarks": 53874,
+  "queued": 10700,
+  "postsInQueue": 4457,
+  "partialOnly": 2086,
+  "unhighlighted": 5842,
+  "inlineOnlyFullyPainted": 2772,
+  "punctuationOnlyUncovered": 1020,
+  "alreadyCertifiedUnpainted": 4532,
+  "quotedSource": 220,
+  "trulyUnclassified": 6168,
+  "distinctSentenceTexts": 4859,
+  "byForm": {
+   "complete_sentence": 855,
+   "fragment_or_label": 2651,
+   "q_signature": 4523,
+   "symbolic_or_numeric": 426,
+   "sentence_like_no_terminal": 480,
+   "colon_or_semicolon_block": 129,
+   "url_or_reference": 1636
+  },
+  "byHint": {
+   "RELIGIOUS_THEME_CANDIDATE": 50,
+   "CLAIM_CANDIDATE": 1273,
+   "LABEL_FRAGMENT_OR_DEVICE": 3053,
+   "Q_SIGNATURE": 4523,
+   "DIRECTIVE_CANDIDATE": 44,
+   "QUESTION_NOT_CERTIFIED": 90,
+   "LINK_OR_CITATION": 1636,
+   "PREDICTION_CANDIDATE": 30,
+   "NEEDS_CONTEXT": 1
+  },
+  "byTriageBucket": {
+   "D_INLINE_ONLY_FULLY_PAINTED": 1099,
+   "G_CERTIFIED_CONTEXT_NOT_PAINTED": 1232,
+   "C_PUNCTUATION_ONLY": 859,
+   "J_UNCLASSIFIED_PROSE": 768,
+   "H_CERTIFIED_CODE_NOT_PAINTED": 293,
+   "E_CERTIFIED_QUOTED_SOURCE": 177,
+   "B_LINK_OR_REFERENCE": 1636,
+   "A_SIGNATURE": 4523,
+   "I_CERTIFIED_EVIDENCE_NOT_PAINTED": 113
+  },
+  "distinctTextsByTriageBucket": {
+   "D_INLINE_ONLY_FULLY_PAINTED": 879,
+   "G_CERTIFIED_CONTEXT_NOT_PAINTED": 970,
+   "C_PUNCTUATION_ONLY": 445,
+   "J_UNCLASSIFIED_PROSE": 616,
+   "H_CERTIFIED_CODE_NOT_PAINTED": 259,
+   "E_CERTIFIED_QUOTED_SOURCE": 164,
+   "B_LINK_OR_REFERENCE": 1557,
+   "A_SIGNATURE": 3,
+   "I_CERTIFIED_EVIDENCE_NOT_PAINTED": 112
+  }
+ },
+ "agreement": {
+  "transcriptionQueuedOnMeasuredPosts": 10646,
+  "domQueued": 10700,
+  "transcriptionSaidUnpaintedButDomPaintsIt": 0,
+  "domSaysUnpaintedButTranscriptionMissedIt": 54
+ }
+}

@@ -32,7 +32,11 @@ const SOURCE = fs.existsSync(CLASSIFIED) ? CLASSIFIED : path.join(DIR, 'unhighli
 const rows = fs.readFileSync(SOURCE, 'utf8')
   .split('\n').filter(l => l.trim()).map(l => JSON.parse(l))
 const CLASSIFIED_IN_USE = rows.some(r => r.proposal)
-const manifest = JSON.parse(fs.readFileSync(path.join(DIR, 'manifest.json'), 'utf8'))
+// A workbook whose Summary describes a DIFFERENT measurement than its rows is worse than no
+// summary at all, so the manifest is chosen by what the rows actually are.
+const TRUTH_ROWS = rows.some(r => r.measuredIn === 'RENDERED DOM')
+const manifest = JSON.parse(fs.readFileSync(
+  path.join(DIR, TRUTH_ROWS ? 'truth-manifest.json' : 'manifest.json'), 'utf8'))
 const P = (r, k) => r.proposal?.[k] ?? ''
 
 // ── OOXML primitives ─────────────────────────────────────────────────────────
@@ -287,6 +291,11 @@ const summaryRows = [
   ['Q Drops — Unhighlighted Sentence Review', ''],
   ['Generated', manifest.generatedAt],
   ['Status', manifest.status],
+  ['MEASURED AGAINST', manifest.measurement
+    ?? 'A transcription of renderPostBody() into Node — a model of the renderer, not the rendered page.'],
+  ['Posts read', TRUTH_ROWS
+    ? `${manifest.sources.postsMeasured?.toLocaleString()} of 4,966 drops crawled on the published site${manifest.sources.postsFailed ? ` · ${manifest.sources.postsFailed} could not be read` : ''}`
+    : '—'],
   ['', ''],
   ['THE LOCKED RULE', manifest.rule],
   ['Emphasis', 'Never counts as coverage. Owner ruling 2026-08-17 removed its fill from the drop body; the certified layer is untouched.'],
