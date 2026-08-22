@@ -9,23 +9,23 @@
  },
  "totals": {
   "sentences": 30187,
-  "occurrencesKeyed": 30874,
+  "occurrencesKeyed": 30875,
   "duplicateKeys": 57,
   "byKind": {
    "claims": 8676,
    "predictions": 843,
    "directives": 2940,
-   "namedEntities": 8807,
+   "namedEntities": 8808,
    "themeAnchors": 1682,
    "questions": 6321,
    "context": 1605
   },
   "byRelation": {
    "EXACT": 20532,
-   "PARTIAL": 10305,
+   "PARTIAL": 10306,
    "CROSSING": 37
   },
-  "unlocated": 18,
+  "unlocated": 13,
   "crossingSentenceBoundary": 37
  },
  "findings": {
@@ -65,7 +65,7 @@
    "note": "A Context/Emphasis span on exactly the characters of a primary span. Becomes a reviewDisposition, not a second category."
   },
   "unlocatedSpans": {
-   "count": 18,
+   "count": 13,
    "note": "A certified span the ledger could not place in the runtime body. Each is a conflict-queue row, never a silent drop."
   }
  },
@@ -6085,11 +6085,6 @@
    "text": "France"
   },
   {
-   "postNum": 2029,
-   "kind": "namedEntities",
-   "text": "New York Post"
-  },
-  {
    "postNum": 2335,
    "kind": "namedEntities",
    "text": "People's Liberation Army"
@@ -6115,34 +6110,14 @@
    "text": "Gang of 8"
   },
   {
-   "postNum": 3900,
-   "kind": "namedEntities",
-   "text": "President"
-  },
-  {
    "postNum": 4247,
    "kind": "namedEntities",
    "text": "USNS Comfort"
   },
   {
-   "postNum": 4339,
-   "kind": "namedEntities",
-   "text": "Michigan"
-  },
-  {
-   "postNum": 4340,
-   "kind": "namedEntities",
-   "text": "New York Post"
-  },
-  {
    "postNum": 4468,
    "kind": "namedEntities",
    "text": "Daily Beast"
-  },
-  {
-   "postNum": 4492,
-   "kind": "namedEntities",
-   "text": "US Navy"
   },
   {
    "postNum": 4521,

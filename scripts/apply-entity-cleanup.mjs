@@ -80,8 +80,8 @@ const PLATFORMS = /^(twitter\.com|x\.com|youtube\.com|youtu\.be|t\.co|archive\.o
 const POST_APPROVAL_SETS = [
   { file: 'occurrence-withdrawals-owner-ruling-3.json', count: 27, label: 'Owner Ruling 3',
     sha256: '65f82ace6748eaaf1bbbdd010f8cba30802c8f9a7c918e5928be0ef2a20e21ef' },
-  { file: 'occurrence-withdrawals-lane-b.json', count: 24, label: 'lane B family 4 — UNLOCATED review',
-    sha256: '177b82b4ea532095c0eb027856a0423800d20cb819adc25bada883a617d7625c' },
+  { file: 'occurrence-withdrawals-lane-b.json', count: 28, label: 'lane B families 4-5 — UNLOCATED review',
+    sha256: 'c51a2d80ad5b65ef245ba0929b7b989ad32ead240b66521c5e0d59efe84691c6' },
 ]
 
 /** Every post-approval withdrawal row, each set verified against its pin. */

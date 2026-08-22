@@ -1,27 +1,44 @@
 {
   "note": "Lane B family 4 — entity occurrences whose only trace on the drop is a URL, a social handle or nothing at all. Read by apply-entity-cleanup.mjs as an additional, separately-pinned action set, exactly as Owner Ruling 3 is. The 2026-08-17 audit and its approval record are not modified.",
   "ruledOn": "2026-08-22",
-  "basis": "Family 4 of 6 — every UNLOCATED lane-B row (59) plus the 3 QUESTION_LITERAL_SPANS_SENTENCES rows. 62 rows, each read against its drop.",
   "layerSplit": {
     "remove-annotation": 2,
-    "migrate-to-linked-source": 17,
+    "migrate-to-linked-source": 21,
     "migrate-to-social-account": 5
   },
   "measuredAtBuildTime": {
     "entityRows": 1214,
-    "mentions": 8948,
-    "entitiesWhoseLastMentionThisWithdraws": 2,
+    "mentions": 8924,
+    "entitiesWhoseLastMentionThisWithdraws": 5,
     "zeroed": [
+      {
+        "entityId": "qe-8b68a442c3b8",
+        "canonical": "Pompeo",
+        "mentionsBefore": 1,
+        "withdrawn": 1
+      },
+      {
+        "entityId": "qe-ffa991dd5b25",
+        "canonical": "INSCOM",
+        "mentionsBefore": 1,
+        "withdrawn": 1
+      },
+      {
+        "entityId": "qe-7f7a9c8af686",
+        "canonical": "Politico",
+        "mentionsBefore": 1,
+        "withdrawn": 1
+      },
       {
         "entityId": "qe-cb78932b1fab",
         "canonical": "Reuters",
-        "mentionsBefore": 1,
+        "mentionsBefore": 0,
         "withdrawn": 1
       },
       {
         "entityId": "qe-a18fc2cdd6a8",
         "canonical": "Ann Coulter",
-        "mentionsBefore": 1,
+        "mentionsBefore": 0,
         "withdrawn": 1
       }
     ]
@@ -840,6 +857,142 @@
       "handle": null,
       "certifiedCountEffect": -1,
       "reversal": "Restore \"Sean Hannity\" at index 0 of postAnalysis.namedEntities in #1863 and add 1 to Sean Hannity."
+    },
+    {
+      "occurrenceId": "#3900:2",
+      "postNum": 3900,
+      "index": 2,
+      "alias": "President",
+      "entityId": "qe-104df6bf0208",
+      "canonical": "President",
+      "entityType": "title_role",
+      "originalCategory": "unlocated_span",
+      "originalEvidence": {
+        "category": "unlocated_span",
+        "note": "no registered spelling of this identity is findable on the drop; the trace is a URL, a handle or nothing"
+      },
+      "originalProposedAction": "keep",
+      "originalCertifiedCountEffect": 0,
+      "adjudication": "E — MIGRATE — the reference is real, the layer was wrong",
+      "reasonForWithdrawal": "The only trace is 'presidents-proclamation' inside an 1863 New York Times archive slug. A CMS slug is not Q naming the office.",
+      "ownerRuling": "Lane B family 4 (2026-08-22), under the owner instruction of the same date: every human-semantic conflict row receives one explicit disposition, and E is \"the record does not belong as Q-authored semantic paint\".",
+      "overridesProtection": null,
+      "originalIdentityText": "President",
+      "originalPostText": "https:<em>//</em>www.nytimes.com/1863/09/16/archives/presidents-proclamation-the-habeas-corpus-suspended-throughout-the.html\n2381.Treason.\n2382.Misprision of treason.\n2383.Rebellion or insurrection.\n2384.Seditious conspiracy.\n2385.Advocating overthrow of Government.\n2386.Registration of certain organizations.\n2387.Activities affecting armed forces generally.\n2388.Activities affecting armed forces during war.\n2389.Recruiting for service against United States.\n2390.Enlistment to serve against United States.\nhttps:<em>//</em>uscode.house.gov/view.xhtml?path=/prelim@title18/part1/chapter115&amp;edition=prelim\nQ\n",
+      "originalPostTextSha256": "adf466b55bb29d9e285cd463d411bd5f111b784c26f4d484440853db854b89f9",
+      "originalContext": "https://www.nytimes.com/1863/09/16/archives/presidents-proclamation-the-habeas-corpus-suspended-throughout-the.html\n2381.Treason.\n2382.Misprision of treason.\n2383.Rebellion or insurrection.\n2384.Seditious conspiracy.\n2385.Advocating overthr",
+      "rationaleCorrection": null,
+      "proposedAction": "migrate-to-linked-source",
+      "urlEvidence": "path",
+      "carriers": [
+        "https://www.nytimes.com/1863/09/16/archives/presidents-proclamation-the-habeas-corpus-suspended-throughout-the.html"
+      ],
+      "platform": null,
+      "handle": null,
+      "certifiedCountEffect": -1,
+      "reversal": "Restore \"President\" at index 2 of postAnalysis.namedEntities in #3900 and add 1 to President."
+    },
+    {
+      "occurrenceId": "#4339:0",
+      "postNum": 4339,
+      "index": 0,
+      "alias": "Michigan",
+      "entityId": "qe-764ce51d43b2",
+      "canonical": "Michigan",
+      "entityType": "location",
+      "originalCategory": "unlocated_span",
+      "originalEvidence": {
+        "category": "unlocated_span",
+        "note": "no registered spelling of this identity is findable on the drop; the trace is a URL, a handle or nothing"
+      },
+      "originalProposedAction": "keep",
+      "originalCertifiedCountEffect": 0,
+      "adjudication": "E — MIGRATE — the reference is real, the layer was wrong",
+      "reasonForWithdrawal": "The only trace is 'michigans-hapless-governor' inside a townhall.com slug.",
+      "ownerRuling": "Lane B family 4 (2026-08-22), under the owner instruction of the same date: every human-semantic conflict row receives one explicit disposition, and E is \"the record does not belong as Q-authored semantic paint\".",
+      "overridesProtection": null,
+      "originalIdentityText": "Michigan",
+      "originalPostText": "https:<em>//</em>townhall.com/columnists/larryoconnor/2020/05/28/michigans-hapless-governor-continues-deadly-covid19-nursing-home-policy-n2569605\nAt what point should this be reclassified as murder?\nAt what point is ignorance [common sense] no longer valid [excuse]?\nEvil surrounds us.\nQ\n",
+      "originalPostTextSha256": "4040a04a57bb230aeeffd117bdbce51df1671d848e674e68b8e2f6e617aa3346",
+      "originalContext": "https://townhall.com/columnists/larryoconnor/2020/05/28/michigans-hapless-governor-continues-deadly-covid19-nursing-home-policy-n2569605\nAt what point should this be reclassified as murder?\nAt what point is ignorance [common sense] no longe",
+      "rationaleCorrection": null,
+      "proposedAction": "migrate-to-linked-source",
+      "urlEvidence": "path",
+      "carriers": [
+        "https://townhall.com/columnists/larryoconnor/2020/05/28/michigans-hapless-governor-continues-deadly-covid19-nursing-home-policy-n2569605"
+      ],
+      "platform": null,
+      "handle": null,
+      "certifiedCountEffect": -1,
+      "reversal": "Restore \"Michigan\" at index 0 of postAnalysis.namedEntities in #4339 and add 1 to Michigan."
+    },
+    {
+      "occurrenceId": "#4340:1",
+      "postNum": 4340,
+      "index": 1,
+      "alias": "New York Post",
+      "entityId": "qe-d2eebf8694bd",
+      "canonical": "New York Post",
+      "entityType": "media_organization",
+      "originalCategory": "unlocated_span",
+      "originalEvidence": {
+        "category": "unlocated_span",
+        "note": "no registered spelling of this identity is findable on the drop; the trace is a URL, a handle or nothing"
+      },
+      "originalProposedAction": "keep",
+      "originalCertifiedCountEffect": 0,
+      "adjudication": "E — MIGRATE — the reference is real, the layer was wrong",
+      "reasonForWithdrawal": "The only trace is the nypost.com hostname. The domain identifies the publisher of the linked article.",
+      "ownerRuling": "Lane B family 4 (2026-08-22), under the owner instruction of the same date: every human-semantic conflict row receives one explicit disposition, and E is \"the record does not belong as Q-authored semantic paint\".",
+      "overridesProtection": null,
+      "originalIdentityText": "New York Post",
+      "originalPostText": "https:<em>//</em>nypost.com/2020/04/23/nursing-homes-cant-reject-coronavirus-patients-cuomo-says/\nAt what point should this be reclassified as murder?\nAt what point is ignorance [common sense] no longer valid [excuse]?\nEvil surrounds us.\nQ\n",
+      "originalPostTextSha256": "8b98f5d068a95fa2e6407e729fd818a6a311793fbbe353fd6cb122dc1ce0b54f",
+      "originalContext": "https://nypost.com/2020/04/23/nursing-homes-cant-reject-coronavirus-patients-cuomo-says/\nAt what point should this be reclassified as murder?\nAt what point is ignorance [common sense] no longer valid [excuse]?\nEvil surrounds us.\nQ\n",
+      "rationaleCorrection": null,
+      "proposedAction": "migrate-to-linked-source",
+      "urlEvidence": "hostname",
+      "carriers": [
+        "https://nypost.com/2020/04/23/nursing-homes-cant-reject-coronavirus-patients-cuomo-says/"
+      ],
+      "platform": null,
+      "handle": null,
+      "certifiedCountEffect": -1,
+      "reversal": "Restore \"New York Post\" at index 1 of postAnalysis.namedEntities in #4340 and add 1 to New York Post."
+    },
+    {
+      "occurrenceId": "#2029:5",
+      "postNum": 2029,
+      "index": 5,
+      "alias": "New York Post",
+      "entityId": "qe-d2eebf8694bd",
+      "canonical": "New York Post",
+      "entityType": "media_organization",
+      "originalCategory": "unlocated_span",
+      "originalEvidence": {
+        "category": "unlocated_span",
+        "note": "no registered spelling of this identity is findable on the drop; the trace is a URL, a handle or nothing"
+      },
+      "originalProposedAction": "keep",
+      "originalCertifiedCountEffect": 0,
+      "adjudication": "E — MIGRATE — the reference is real, the layer was wrong",
+      "reasonForWithdrawal": "The same: only the nypost.com hostname, one of five poll links Q posted on this drop.",
+      "ownerRuling": "Lane B family 4 (2026-08-22), under the owner instruction of the same date: every human-semantic conflict row receives one explicit disposition, and E is \"the record does not belong as Q-authored semantic paint\".",
+      "overridesProtection": null,
+      "originalIdentityText": "New York Post",
+      "originalPostText": "https:<em>//</em>www.washingtonpost.com/politics/poll-60-percent-disapprove-of-trump-while-clear-majorities-back-mueller-and-sessions/2018/08/30/4cd32174-ac7c-11e8-a8d7-0f63ab8b1370_story.html?utm_term=.8146403a7c36\nThink 'Polls' posted yesterday - [WAPO].\nWhat are the odds of that?\nNotice any similarities?\n[Sample]\nhttps:<em>//</em>www.politico.com/story/2018/08/31/trump-approval-rating-poll-washington-post-abc-805563\nhttps:<em>//</em>hillreporter.com/trumps-disapproval-rating-soars-in-latest-washington-post-abc-poll-6630\nhttps:<em>//</em>www.cnbc.com/2018/08/31/most-americans-support-robert-mueller-probe-and-ag-jeff-sessions-poll.html\nhttps:<em>//</em>www.axios.com/poll-jeff-sessions-robert-mueller-trump-7b1b514d-2cd2-4495-a129-d7c92f750135.html\nhttp:<em>//</em>thehill.com/blogs/blog-briefing-room/news/404528-poll-most-americans-side-with-sessions-over-trump\nhttps:<em>//</em>www.washingtontimes.com/news/2018/aug/31/more-americans-support-jeff-sessions-trump-poll/\nhttps:<em>//</em>nypost.com/2018/08/31/half-of-americans-favor-launching-impeachment-proceedings-poll/\nhttps:<em>//</em>www.newsweek.com/majority-americans-support-sessions-mueller-investigation-poll-finds-1099008\nhttps:<em>//</em>abcnews.go.com/Politics/trouble-trump-disapproval-high-63-back-mueller-half/story?id=57507081\nhttp:<em>//</em>www.rollcall.com/news/politics/half-of-americans-support-impeachment-process-against-trump\nhttps:<em>//</em>www.msn.com/en-xl/northamerica/northamerica-top-stories/poll-60-percent-disapprove-of-trump-while-clear-majorities-back-mueller-and-sessions/ar-BBMHdAW?li=BBKxOg5\nhttps:<em>//</em>www.realclearpolitics.com/2018/08/31/leave_jeff_sessions_alone_452019.html?ref=hvper.com&amp;utm_source=hvper.com&amp;utm_medium=website\nhttps:<em>//</em>news.vice.com/en_us/article/qvmy7v/majority-of-americans-support-mueller-and-sessions-over-trump\nhttps:<em>//</em>www.nbcnews.com/politics/donald-trump/poll-disapproval-trump-hits-new-high-n905431\nDo you believe in coincidences? \nQ\n",
+      "originalPostTextSha256": "51e2c4c4ee04d25ab6dc50adb6aea0f46a58a0369487130e6ecde07af55ac72a",
+      "originalContext": "https://www.washingtonpost.com/politics/poll-60-percent-disapprove-of-trump-while-clear-majorities-back-mueller-and-sessions/2018/08/30/4cd32174-ac7c-11e8-a8d7-0f63ab8b1370_story.html?utm_term=.8146403a7c36\nThink 'Polls' posted yesterday - ",
+      "rationaleCorrection": null,
+      "proposedAction": "migrate-to-linked-source",
+      "urlEvidence": "hostname",
+      "carriers": [
+        "https://nypost.com/2018/08/31/half-of-americans-favor-impeaching-trump-poll/"
+      ],
+      "platform": null,
+      "handle": null,
+      "certifiedCountEffect": -1,
+      "reversal": "Restore \"New York Post\" at index 5 of postAnalysis.namedEntities in #2029 and add 1 to New York Post."
     }
   ]
 }

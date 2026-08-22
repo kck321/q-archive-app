@@ -7,10 +7,10 @@
  "heldActionIds": [],
  "seedVersion": 87,
  "outputs": {
-  "public/data/posts.json": "ff9a959b3974e8c8716784a7d3af14dd0b3f3689de55f663cc365191cffae3df",
+  "public/data/posts.json": "343ed39164a80826c3890cc63bfa57d3da2986f3837045487d8276f7c309650a",
   "public/data/questions.json": "1a3787f0dceada2bbfe9c4dc9e75670e187312051cd0f5a11b2c888a18cdf253",
-  "public/data/semantics.json": "e9551312281430135847faecbe50b709c50f448a13153d3b8cbc3e957ea560a2",
-  "audit/occurrence-ledger.json": "7e9d5411a4e7c37e58e4ab83b80d6ac40a3842bee6220a943342e629019939b8"
+  "public/data/semantics.json": "826785e87a534efb177f1fa11151797f70859c8727ea3194aaa4a1c423256b50",
+  "audit/occurrence-ledger.json": "1414c1dedac870c72340287d0d9873891092dd3ca2675b476077daab8b1e70f5"
  },
  "crossTab": [
   {
@@ -262,7 +262,7 @@
   {
    "gate": "zero runtime substring mismatch in the ledger",
    "pass": true,
-   "detail": "30,874 records verified"
+   "detail": "30,875 records verified"
   },
   {
    "gate": "zero same-sentence multi-primary inside the applied scope",

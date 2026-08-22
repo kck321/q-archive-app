@@ -28,7 +28,14 @@ const DATA = path.join(ROOT, 'public', 'data')
 const rd = f => JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'))
 const sha = b => crypto.createHash('sha256').update(b).digest('hex')
 
-const disp = rd('audit/lane-b-dispositions-unlocated.json')
+// TWO reviewed files, one builder. Family 5's remaining structural rows are the same three cases
+// as family 4 — Q's own spelling, a URL-only trace, or genuinely unsettled — so they are built the
+// same way rather than through a second mechanism with a second set of checks.
+const DISPOSITION_FILES = [
+  'audit/lane-b-dispositions-unlocated.json',
+  'audit/lane-b-dispositions-structural.json',
+]
+const disp = { family: 'lane B — UNLOCATED and structural', rows: DISPOSITION_FILES.flatMap(f => rd(f).rows) }
 const posts = rd('public/data/posts.json')
 const entities = rd('public/data/entities.json')
 const audit = rd('audit/occurrence-provenance-audit.json')
@@ -78,6 +85,10 @@ for (const row of disp.rows) {
     continue
   }
   if (row.disposition === 'A') continue
+  // F and QUARANTINED are dispositions, not actions. They are recorded in the reviewed file and
+  // reported by the final reconciliation; nothing is written to the bundle for them, which is the
+  // whole point of both states.
+  if (row.disposition === 'F' || row.disposition === 'QUARANTINED') continue
   // A row resolved through another door — the held-disposition file owns the two question records
   // whose spans are what held actions A-DUP-2971 and A-DUP-4454 were waiting on. Recorded here so
   // the family is complete on the page; applied there so it supersedes the held action rather than
@@ -86,12 +97,14 @@ for (const row of disp.rows) {
 
   const p = byNum.get(row.postNum)
   if (!p) { problems.push(`#${row.postNum}: no such drop`); continue }
-  const named = p.postAnalysis?.namedEntities ?? []
-  if (!named.includes(row.identity)) { problems.push(`#${row.postNum}: "${row.identity}" is not in postAnalysis.namedEntities`); continue }
-  if (named.filter(x => x === row.identity).length > 1) {
-    problems.push(`#${row.postNum}: "${row.identity}" appears more than once — the row does not name which`)
-    continue
-  }
+  // PRESENCE IS CHECKED IN THE AUDIT'S COORDINATE SYSTEM, NOT THE FINISHED BUNDLE'S.
+  //
+  // The finished bundle no longer holds an occurrence this file has already withdrawn, so a
+  // presence check against it passes on the first build and fails on every rebuild — which is a
+  // property of when you ran it, not of whether the row is right. The audit is the fixed frame:
+  // it must hold exactly one row for this (post, alias), and that row supplies the index.
+  // apply-entity-cleanup.mjs then asserts `named[index] === alias` at apply time, against the
+  // pre-cleanup tree where that assertion actually means something.
   // THE INDEX COMES FROM THE AUDIT, NOT FROM THE BUNDLE ON DISK.
   //
   // apply-entity-cleanup.mjs runs immediately after apply-entities.mjs has rebuilt posts.json from

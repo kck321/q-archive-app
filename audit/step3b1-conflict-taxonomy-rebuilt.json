@@ -1,24 +1,24 @@
 {
  "note": "Step 3B-1 conflict-queue taxonomy. Report only — nothing applied, nothing withdrawn.",
- "totalRows": 55,
+ "totalRows": 50,
  "measuredFrom": "current bundle (rebuilt)",
- "distinctConflictIds": 55,
- "distinctHeldKeys": 55,
- "distinctPosts": 46,
+ "distinctConflictIds": 50,
+ "distinctHeldKeys": 50,
+ "distinctPosts": 41,
  "byReason": {
   "BOUNDARY_CROSSING": 37,
-  "UNLOCATED_SPAN": 18
+  "UNLOCATED_SPAN": 13
  },
  "bySourceLayer": {
   "claims": 29,
-  "namedEntities": 18,
+  "namedEntities": 13,
   "directives": 4,
   "questions": 3,
   "themeAnchors": 1
  },
  "byLane": {
   "B HUMAN_SEMANTIC_REVIEW": 37,
-  "C STRUCTURAL_DATA_DEFECT": 15,
+  "C STRUCTURAL_DATA_DEFECT": 10,
   "A DETERMINISTIC_RESOLUTION": 3
  },
  "rootCausePatterns": 8,
@@ -128,28 +128,12 @@
   },
   {
    "signature": "UNLOCATED_SPAN::CASE_VARIANT_REFUSED_D_MID_WORD_OR_FALSE_POSITIVE",
-   "count": 7,
+   "count": 2,
    "lane": "C",
-   "posts": 7,
+   "posts": 2,
    "identities": [
     [
-     "New York Post",
-     2
-    ],
-    [
      "France",
-     1
-    ],
-    [
-     "President",
-     1
-    ],
-    [
-     "Michigan",
-     1
-    ],
-    [
-     "US Navy",
      1
     ],
     [
@@ -164,14 +148,9 @@
      "value": "France"
     },
     {
-     "postNum": 2029,
-     "heldKey": "UNLOCATED-2029-namedEntities",
-     "value": "New York Post"
-    },
-    {
-     "postNum": 3900,
-     "heldKey": "UNLOCATED-3900-namedEntities",
-     "value": "President"
+     "postNum": 48,
+     "heldKey": "UNLOCATED-48-namedEntities",
+     "value": "Canada"
     }
    ]
   },
@@ -249,13 +228,9 @@
    ]
   }
  ],
- "repeatedIdentityClusters": 1,
- "singletonIdentities": 16,
+ "repeatedIdentityClusters": 0,
+ "singletonIdentities": 13,
  "largestIdentityClusters": [
-  [
-   "New York Post",
-   2
-  ],
   [
    "US Senate",
    1
@@ -285,23 +260,11 @@
    1
   ],
   [
-   "President",
-   1
-  ],
-  [
    "USNS Comfort",
    1
   ],
   [
-   "Michigan",
-   1
-  ],
-  [
    "Daily Beast",
-   1
-  ],
-  [
-   "US Navy",
    1
   ],
   [
@@ -1153,25 +1116,6 @@
    "refusedBecause": "no registered form occurs at a word boundary on this drop; the only matches are inside another word (invariant 4)"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2029-namedEntities::New York Post::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2029,
-   "heldKey": "UNLOCATED-2029-namedEntities",
-   "certifiedValue": "New York Post",
-   "alsoDuplicateKey": false,
-   "identity": "New York Post",
-   "kind": "namedEntities",
-   "registeredForms": 2,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "NY",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_REFUSED_D_MID_WORD_OR_FALSE_POSITIVE",
-   "lane": "C",
-   "refusedBecause": "no registered form occurs at a word boundary on this drop; the only matches are inside another word (invariant 4)"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2335-namedEntities::People's Liberation Army::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 2335,
@@ -1262,25 +1206,6 @@
    "lane": "A"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3900-namedEntities::President::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 3900,
-   "heldKey": "UNLOCATED-3900-namedEntities",
-   "certifiedValue": "President",
-   "alsoDuplicateKey": false,
-   "identity": "President",
-   "kind": "namedEntities",
-   "registeredForms": 2,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "President",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_REFUSED_D_MID_WORD_OR_FALSE_POSITIVE",
-   "lane": "C",
-   "refusedBecause": "no registered form occurs at a word boundary on this drop; the only matches are inside another word (invariant 4)"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-4247-namedEntities::USNS Comfort::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 4247,
@@ -1299,44 +1224,6 @@
    "lane": "C"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4339-namedEntities::Michigan::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 4339,
-   "heldKey": "UNLOCATED-4339-namedEntities",
-   "certifiedValue": "Michigan",
-   "alsoDuplicateKey": false,
-   "identity": "Michigan",
-   "kind": "namedEntities",
-   "registeredForms": 2,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Michigan",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_REFUSED_D_MID_WORD_OR_FALSE_POSITIVE",
-   "lane": "C",
-   "refusedBecause": "no registered form occurs at a word boundary on this drop; the only matches are inside another word (invariant 4)"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4340-namedEntities::New York Post::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 4340,
-   "heldKey": "UNLOCATED-4340-namedEntities",
-   "certifiedValue": "New York Post",
-   "alsoDuplicateKey": false,
-   "identity": "New York Post",
-   "kind": "namedEntities",
-   "registeredForms": 2,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "NY",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_REFUSED_D_MID_WORD_OR_FALSE_POSITIVE",
-   "lane": "C",
-   "refusedBecause": "no registered form occurs at a word boundary on this drop; the only matches are inside another word (invariant 4)"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-4468-namedEntities::Daily Beast::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 4468,
@@ -1353,25 +1240,6 @@
    "registryGroupsClaimingThisSpelling": 1,
    "subtype": "NO_ALIAS_EVER_REGISTERED",
    "lane": "C"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4492-namedEntities::US Navy::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 4492,
-   "heldKey": "UNLOCATED-4492-namedEntities",
-   "certifiedValue": "US Navy",
-   "alsoDuplicateKey": false,
-   "identity": "US Navy",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "US Navy",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_REFUSED_D_MID_WORD_OR_FALSE_POSITIVE",
-   "lane": "C",
-   "refusedBecause": "no registered form occurs at a word boundary on this drop; the only matches are inside another word (invariant 4)"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-4521-namedEntities::2020 Presidential Election::0",

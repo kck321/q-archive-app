@@ -9028,6 +9028,19 @@
    "affectedRows": 1,
    "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
    "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "US Navy",
+   "alias": "US NAVY",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "Q writes 'WHY WOULD THIS BE DIRECTED IF HOSPITALS [+US NAVY MEDICAL SHIPS [NYC-CA] …' in his own capitals. The row was refused as mid-word because the exact-case form is absent; the capitalised one is right there in his prose.",
+   "posts": [
+    4492
+   ],
+   "affectedRows": 1,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
   }
  ]
 }

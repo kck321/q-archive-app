@@ -13,7 +13,7 @@ const p = path.join(ROOT, 'audit', 'entity-cleanup-rollback-contract.json')
 const c = JSON.parse(fs.readFileSync(p, 'utf8'))
 const w = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit', 'occurrence-withdrawals-lane-b.json'), 'utf8'))
 
-if (c.postApprovalDeltas.some(d => String(d.ruling).includes('lane B family 4'))) {
+if (c.postApprovalDeltas.some(d => String(d.ruling).includes('lane B famil'))) {
   console.log('  already recorded — nothing written.'); process.exit(0)
 }
 if (c.postApprovalDeltas.length !== 4) {
@@ -23,7 +23,7 @@ if (c.postApprovalDeltas.length !== 4) {
 const byAction = w.withdrawals.reduce((m, x) => ({ ...m, [x.proposedAction]: (m[x.proposedAction] ?? 0) + 1 }), {})
 
 c.postApprovalDeltas.push({
-  ruling: 'audit/occurrence-withdrawals-lane-b.json (lane B family 4 — the UNLOCATED review)',
+  ruling: 'audit/occurrence-withdrawals-lane-b.json (lane B families 4-5 — the UNLOCATED and structural review)',
   ruledOn: '2026-08-22',
   what: `Under the owner instruction of 2026-08-22 to give every human-semantic conflict row an `
     + `explicit disposition: ${w.withdrawals.length} entity occurrences whose only trace on the drop `
@@ -32,10 +32,10 @@ c.postApprovalDeltas.push({
     + `the reference is real and only the layer was wrong — and ${byAction['remove-annotation'] ?? 0} are `
     + `withdrawn outright. Applied BY THIS STEP, so only the after-state moves.`,
   mentions: 0, entityRows: 0, rendered: 0,
-  afterOnly: { mentions: -24, entityRows: 0, rendered: -24 },
+  afterOnly: { mentions: -28, entityRows: 0, rendered: -28 },
   originalApprovalUntouched: 'audit/occurrence-provenance-audit.json is unchanged — 9,926 rows, 951 '
     + 'proposedWithdrawals, every 2026-08-17 category and evidence record intact. This is a separately '
-    + 'pinned set (sha256 177b82b4ea532095c0eb027856a0423800d20cb819adc25bada883a617d7625c) read beside it.',
+    + 'pinned set (sha256 c51a2d80ad5b65ef245ba0929b7b989ad32ead240b66521c5e0d59efe84691c6) read beside it.',
   whyThisIsNotDrift: 'The 2026-08-17 audit classified each of these occurrences `keep` because its '
     + 'matcher could see no evidence category for them at all — the identity was UNLOCATABLE on the '
     + 'drop, so no visible-token, URL-source or image test could fire and the safe answer was to leave '

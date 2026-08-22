@@ -2,25 +2,25 @@
  "note": "Conflict queue re-derived from the CURRENT bundle. Not the old CSV minus anything.",
  "measuredFrom": "audit/occurrence-ledger-dryrun.json",
  "originalRows": 945,
- "rebuiltRows": 55,
- "netChange": -890,
+ "rebuiltRows": 50,
+ "netChange": -895,
  "byReason": {
   "BOUNDARY_CROSSING": 37,
-  "UNLOCATED_SPAN": 18
+  "UNLOCATED_SPAN": 13
  },
  "byKind": {
   "claims": 29,
-  "namedEntities": 18,
+  "namedEntities": 13,
   "directives": 4,
   "questions": 3,
   "themeAnchors": 1
  },
- "distinctHeldKeys": 55,
- "distinctPosts": 46,
+ "distinctHeldKeys": 50,
+ "distinctPosts": 41,
  "resolvedSince": {
-  "count": 897,
+  "count": 902,
   "byFamily": {
-   "UNLOCATED_SPAN": 497,
+   "UNLOCATED_SPAN": 502,
    "BOUNDARY_CROSSING": 210,
    "DUPLICATE_KEY_CONFLICTING_METADATA": 42,
    "SAME_CATEGORY_PARTIAL_OVERLAP": 14
@@ -422,15 +422,6 @@
    "certifiedValue": "France"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2029-namedEntities::New York Post::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2029-namedEntities",
-   "postNum": 2029,
-   "kind": "namedEntities",
-   "detail": "New York Post",
-   "certifiedValue": "New York Post"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2335-namedEntities::People's Liberation Army::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-2335-namedEntities",
@@ -476,15 +467,6 @@
    "certifiedValue": "Gang of 8"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3900-namedEntities::President::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3900-namedEntities",
-   "postNum": 3900,
-   "kind": "namedEntities",
-   "detail": "President",
-   "certifiedValue": "President"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-4247-namedEntities::USNS Comfort::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-4247-namedEntities",
@@ -494,24 +476,6 @@
    "certifiedValue": "USNS Comfort"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4339-namedEntities::Michigan::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4339-namedEntities",
-   "postNum": 4339,
-   "kind": "namedEntities",
-   "detail": "Michigan",
-   "certifiedValue": "Michigan"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4340-namedEntities::New York Post::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4340-namedEntities",
-   "postNum": 4340,
-   "kind": "namedEntities",
-   "detail": "New York Post",
-   "certifiedValue": "New York Post"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-4468-namedEntities::Daily Beast::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-4468-namedEntities",
@@ -519,15 +483,6 @@
    "kind": "namedEntities",
    "detail": "Daily Beast",
    "certifiedValue": "Daily Beast"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4492-namedEntities::US Navy::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4492-namedEntities",
-   "postNum": 4492,
-   "kind": "namedEntities",
-   "detail": "US Navy",
-   "certifiedValue": "US Navy"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-4521-namedEntities::2020 Presidential Election::0",

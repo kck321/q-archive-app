@@ -1422,7 +1422,7 @@
   },
   "qe-104df6bf0208": {
    "aliasPosts": {
-    "President": 16
+    "President": 15
    },
    "kind": "prose",
    "perPostMentions": {
@@ -1439,11 +1439,10 @@
     "2714": 1,
     "2776": 1,
     "3411": 1,
-    "3900": 1,
     "4413": 1,
     "4541": 1
    },
-   "posts": 16,
+   "posts": 15,
    "rowId": "qe-104df6bf0208"
   },
   "qe-108cb1178105": {
@@ -8956,15 +8955,14 @@
   "qe-764ce51d43b2": {
    "aliasPosts": {
     "MI": 1,
-    "Michigan": 2
+    "Michigan": 1
    },
    "kind": "prose",
    "perPostMentions": {
     "2854": 1,
-    "4171": 1,
-    "4339": 1
+    "4171": 1
    },
-   "posts": 3,
+   "posts": 2,
    "rowId": "qe-764ce51d43b2"
   },
   "qe-76ab03a9b5f2": {
@@ -16393,16 +16391,13 @@
   },
   "qe-d2eebf8694bd": {
    "aliasPosts": {
-    "NY": 1,
-    "New York Post": 2
+    "NY": 1
    },
    "kind": "prose",
    "perPostMentions": {
-    "1515": 1,
-    "2029": 1,
-    "4340": 1
+    "1515": 1
    },
-   "posts": 3,
+   "posts": 1,
    "rowId": "qe-d2eebf8694bd"
   },
   "qe-d305710ada08": {
@@ -20475,7 +20470,7 @@
  "totals": {
   "canonicalEntities": 1214,
   "dormantReserved": 229,
-  "mentions": 8924,
+  "mentions": 8920,
   "mergedIdentities": 23,
   "mergedRows": 10,
   "proseMentioned": 1076,
