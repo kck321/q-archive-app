@@ -1,0 +1,1057 @@
+{
+ "note": "The 38 NO_ALIAS_EVER_REGISTERED rows, reviewed individually. Report only — nothing applied.",
+ "reviewed": 38,
+ "byVerdict": {
+  "F": 9,
+  "D": 14,
+  "C": 12,
+  "E": 3
+ },
+ "rows": [
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1094-namedEntities::US Senate::0",
+   "postNum": 1094,
+   "identity": "US Senate",
+   "canonical": "US Senate",
+   "registeredAliases": [
+    "US Senate"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "Senate",
+     "hits": 1
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "F",
+   "reason": "only \"Senate\" appears, and that spelling is already a registered form of \"United States Senate\" — registering it here would make one token name two identities",
+   "proposed": {
+    "needsOwnerRuling": "is \"Senate\" on #1094 a reference to US Senate?"
+   },
+   "context": " | ‘TRUSTED’ close proximity. | Refugees who work/ed US House / Senate? | Traitor. | Q | "
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1211-namedEntities::Agnes Nixon::0",
+   "postNum": 1211,
+   "identity": "Agnes Nixon",
+   "canonical": "Agnes Nixon",
+   "registeredAliases": [
+    "Agnes Nixon"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "Agnes",
+     "hits": 1
+    },
+    {
+     "word": "Nixon",
+     "hits": 1
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "D",
+   "reason": "the only trace of it is \"agnes\", and that sits on a quoted or link line — not Q-authored body text",
+   "proposed": {
+    "withdrawOccurrence": "#1211 namedEntities \"Agnes Nixon\"",
+    "why": "source material, not a Q-authored mention"
+   },
+   "context": ">>1123269 | http:// newyork.cbslocal.com/2016/09/28/agnes-nixon-soap-operas/ | Q | "
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1863-namedEntities::Roseanne Barr::0",
+   "postNum": 1863,
+   "identity": "Roseanne Barr",
+   "canonical": "Roseanne Barr",
+   "registeredAliases": [
+    "Roseanne Barr"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "C",
+   "reason": "no registered form and no distinctive part of the name appears anywhere on the drop; the identity was inferred rather than named",
+   "proposed": {
+    "withdrawOccurrence": "#1863 namedEntities \"Roseanne Barr\"",
+    "why": "inferred, not explicit"
+   },
+   "context": "@SeanHannity | @FoxNews | @TheRealRoseanne | Do not let this HYPOCRISY stand"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2029-namedEntities::Vice News::0",
+   "postNum": 2029,
+   "identity": "Vice News",
+   "canonical": "Vice News",
+   "registeredAliases": [
+    "Vice News"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "Vice",
+     "hits": 1
+    },
+    {
+     "word": "News",
+     "hits": 4
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "D",
+   "reason": "the only trace of it is \"vice\", and that sits on a quoted or link line — not Q-authored body text",
+   "proposed": {
+    "withdrawOccurrence": "#2029 namedEntities \"Vice News\"",
+    "why": "source material, not a Q-authored mention"
+   },
+   "context": "er.com&utm_source=hvper.com&utm_medium=website | https://news.vice.com/en_us/article/qvmy7v/majority-of-americans-support-mueller-an"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2040-namedEntities::Judicial Watch::0",
+   "postNum": 2040,
+   "identity": "Judicial Watch",
+   "canonical": "Judicial Watch",
+   "registeredAliases": [
+    "Judicial Watch"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "Judicial",
+     "hits": 1
+    },
+    {
+     "word": "Watch",
+     "hits": 1
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "D",
+   "reason": "the only trace of it is \"judicial\", and that sits on a quoted or link line — not Q-authored body text",
+   "proposed": {
+    "withdrawOccurrence": "#2040 namedEntities \"Judicial Watch\"",
+    "why": "source material, not a Q-authored mention"
+   },
+   "context": "665 | https://www.judicialwatch.org/press-room/press-releases/judicial-watch-justice-department-discloses-no-fisa-court-hearings-hel"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2076-namedEntities::State Department OIG::0",
+   "postNum": 2076,
+   "identity": "State Department OIG",
+   "canonical": "State Department OIG",
+   "registeredAliases": [
+    "State Department OIG"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "State",
+     "hits": 1
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "D",
+   "reason": "the only trace of it is \"state\", and that sits on a quoted or link line — not Q-authored body text",
+   "proposed": {
+    "withdrawOccurrence": "#2076 namedEntities \"State Department OIG\"",
+    "why": "source material, not a Q-authored mention"
+   },
+   "context": "https://fas.org/sgp/othergov/state-oig-email.pdf | \"as some compromised home systems have been reconf"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2136-namedEntities::CBN News::0",
+   "postNum": 2136,
+   "identity": "CBN News",
+   "canonical": "CBN News",
+   "registeredAliases": [
+    "CBN News"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "News",
+     "hits": 3
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "D",
+   "reason": "the only trace of it is \"news\", and that sits on a quoted or link line — not Q-authored body text",
+   "proposed": {
+    "withdrawOccurrence": "#2136 namedEntities \"CBN News\"",
+    "why": "source material, not a Q-authored mention"
+   },
+   "context": "-point-to-coup-in-trump-admin | https://www.independent.co.uk/news/world/americas/us-politics/trump-impeachment-robert-mueller-russi"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2136-namedEntities::The Independent::0",
+   "postNum": 2136,
+   "identity": "The Independent",
+   "canonical": "The Independent",
+   "registeredAliases": [
+    "The Independent"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "Independent",
+     "hits": 1
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "D",
+   "reason": "the only trace of it is \"independent\", and that sits on a quoted or link line — not Q-authored body text",
+   "proposed": {
+    "withdrawOccurrence": "#2136 namedEntities \"The Independent\"",
+    "why": "source material, not a Q-authored mention"
+   },
+   "context": "ent-8-times-others-point-to-coup-in-trump-admin | https://www.independent.co.uk/news/world/americas/us-politics/trump-impeachment-ro"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2181-namedEntities::House Intelligence::0",
+   "postNum": 2181,
+   "identity": "House Intelligence",
+   "canonical": "House Intelligence",
+   "registeredAliases": [
+    "House Intelligence"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "House",
+     "hits": 1
+    },
+    {
+     "word": "Intelligence",
+     "hits": 1
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "D",
+   "reason": "the only trace of it is \"house\", and that sits on a quoted or link line — not Q-authored body text",
+   "proposed": {
+    "withdrawOccurrence": "#2181 namedEntities \"House Intelligence\"",
+    "why": "source material, not a Q-authored mention"
+   },
+   "context": "p & Content. | 12:24 | 12:25 | https://dailycaller.com/2018/09/16/house-intelligence-russia-transcripts/ | NUNES | AWAKE? | HAPPY SUNDAY! | Q | "
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2335-namedEntities::People's Liberation Army::0",
+   "postNum": 2335,
+   "identity": "People's Liberation Army",
+   "canonical": "People's Liberation Army",
+   "registeredAliases": [
+    "People's Liberation Army"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "Liberation",
+     "hits": 1
+    },
+    {
+     "word": "Army",
+     "hits": 1
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "F",
+   "reason": "only \"Liberation\" appears — 42% of \"People's Liberation Army\". A fragment that short is not evidence Q named this entity; which form to register, if any, is an owner ruling",
+   "proposed": {
+    "needsOwnerRuling": "is \"Liberation\" on #2335 a reference to People's Liberation Army?"
+   },
+   "context": "wo officials say, by operatives from a unit of the People’s Liberation Army. In Supermicro, China’s spies appear to have found a p"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2523-namedEntities::Kavanaugh::0",
+   "postNum": 2523,
+   "identity": "Kavanaugh",
+   "canonical": "Kavanaugh",
+   "registeredAliases": [
+    "Kavanaugh"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "C",
+   "reason": "no registered form and no distinctive part of the name appears anywhere on the drop; the identity was inferred rather than named",
+   "proposed": {
+    "withdrawOccurrence": "#2523 namedEntities \"Kavanaugh\"",
+    "why": "inferred, not explicit"
+   },
+   "context": "http://www.theintelligencer.net/news/top-headlines/2018/12/305th-milit"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2633-namedEntities::US Senate::0",
+   "postNum": 2633,
+   "identity": "US Senate",
+   "canonical": "US Senate",
+   "registeredAliases": [
+    "US Senate"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "C",
+   "reason": "no registered form and no distinctive part of the name appears anywhere on the drop; the identity was inferred rather than named",
+   "proposed": {
+    "withdrawOccurrence": "#2633 namedEntities \"US Senate\"",
+    "why": "inferred, not explicit"
+   },
+   "context": "https://www.foxnews.com/politics/mccain-associate-gave-unverified-stee"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2673-namedEntities::Charlie Kirk::0",
+   "postNum": 2673,
+   "identity": "Charlie Kirk",
+   "canonical": "Charlie Kirk",
+   "registeredAliases": [
+    "Charlie Kirk"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "C",
+   "reason": "no registered form and no distinctive part of the name appears anywhere on the drop; the identity was inferred rather than named",
+   "proposed": {
+    "withdrawOccurrence": "#2673 namedEntities \"Charlie Kirk\"",
+    "why": "inferred, not explicit"
+   },
+   "context": "https://twitter.com/charliekirk11/status/1084488036598075393 | FAKE NEWS"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2768-namedEntities::Kamala Harris::0",
+   "postNum": 2768,
+   "identity": "Kamala Harris",
+   "canonical": "Kamala Harris",
+   "registeredAliases": [
+    "Kamala Harris"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "Harris",
+     "hits": 2
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "F",
+   "reason": "only \"Harris\" appears, and that spelling is already a registered form of \"Harris\" — registering it here would make one token name two identities",
+   "proposed": {
+    "needsOwnerRuling": "is \"Harris\" on #2768 a reference to Kamala Harris?"
+   },
+   "context": "mollett-case-after-calling-it-attempted-modern-day-lynching | Harris & Booker applying political pressure re: Chicago PD re: Smollet"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2768-namedEntities::Jussie Smollett::0",
+   "postNum": 2768,
+   "identity": "Jussie Smollett",
+   "canonical": "Jussie Smollett",
+   "registeredAliases": [
+    "Jussie Smollett"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "Smollett",
+     "hits": 5
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "D",
+   "reason": "the only trace of it is \"smollett\", and that sits on a quoted or link line — not Q-authored body text",
+   "proposed": {
+    "withdrawOccurrence": "#2768 namedEntities \"Jussie Smollett\"",
+    "why": "source material, not a Q-authored mention"
+   },
+   "context": "ww.foxnews.com/politics/cory-booker-withholding-judgment-on-smollett-case-after-calling-it-attempted-modern-day-lynching | Harris & "
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2782-namedEntities::Gavin Newsom::0",
+   "postNum": 2782,
+   "identity": "Gavin Newsom",
+   "canonical": "Gavin Newsom",
+   "registeredAliases": [
+    "Gavin Newsom"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "Gavin",
+     "hits": 1
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "D",
+   "reason": "the only trace of it is \"gavin\", and that sits on a quoted or link line — not Q-authored body text",
+   "proposed": {
+    "withdrawOccurrence": "#2782 namedEntities \"Gavin Newsom\"",
+    "why": "source material, not a Q-authored mention"
+   },
+   "context": "[Example CA] | https://calmatters.org/articles/commentary/gavin-newsoms-keeping-it-all-in-the-family/amp/? | What ‘family’ runs CA"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3012-namedEntities::George Papa::0",
+   "postNum": 3012,
+   "identity": "George Papa",
+   "canonical": "George Papa",
+   "registeredAliases": [
+    "George Papa"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "C",
+   "reason": "no registered form and no distinctive part of the name appears anywhere on the drop; the identity was inferred rather than named",
+   "proposed": {
+    "withdrawOccurrence": "#3012 namedEntities \"George Papa\"",
+    "why": "inferred, not explicit"
+   },
+   "context": "https://twitter.com/GeorgePapa19/status/1104516087981457410 | Patriots s"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3159-namedEntities::Paris Hilton::0",
+   "postNum": 3159,
+   "identity": "Paris Hilton",
+   "canonical": "Paris Hilton",
+   "registeredAliases": [
+    "Paris Hilton"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "Paris",
+     "hits": 1
+    },
+    {
+     "word": "Hilton",
+     "hits": 1
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "F",
+   "reason": "only \"Paris\" appears — 42% of \"Paris Hilton\". A fragment that short is not evidence Q named this entity; which form to register, if any, is an owner ruling",
+   "proposed": {
+    "needsOwnerRuling": "is \"Paris\" on #3159 a reference to Paris Hilton?"
+   },
+   "context": ">>5803267 | Who did Nicky Hilton (sister of Paris) marry? | James Rothschild.  | Q | "
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3647-namedEntities::US Senate::0",
+   "postNum": 3647,
+   "identity": "US Senate",
+   "canonical": "US Senate",
+   "registeredAliases": [
+    "US Senate"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "C",
+   "reason": "no registered form and no distinctive part of the name appears anywhere on the drop; the identity was inferred rather than named",
+   "proposed": {
+    "withdrawOccurrence": "#3647 namedEntities \"US Senate\"",
+    "why": "inferred, not explicit"
+   },
+   "context": "http://www.reuters.com/article/us-climate-change-accord-pelosi/us-hous"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3824-namedEntities::Michael Beatty::0",
+   "postNum": 3824,
+   "identity": "Michael Beatty",
+   "canonical": "Michael Beatty",
+   "registeredAliases": [
+    "Michael Beatty"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "C",
+   "reason": "no registered form and no distinctive part of the name appears anywhere on the drop; the identity was inferred rather than named",
+   "proposed": {
+    "withdrawOccurrence": "#3824 namedEntities \"Michael Beatty\"",
+    "why": "inferred, not explicit"
+   },
+   "context": "https://twitter.com/michaelbeatty3/status/1214427316866011136 | https://"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3990-namedEntities::Papadopoulos::0",
+   "postNum": 3990,
+   "identity": "Papadopoulos",
+   "canonical": "Papadopoulos",
+   "registeredAliases": [
+    "Papadopoulos"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "C",
+   "reason": "no registered form and no distinctive part of the name appears anywhere on the drop; the identity was inferred rather than named",
+   "proposed": {
+    "withdrawOccurrence": "#3990 namedEntities \"Papadopoulos\"",
+    "why": "inferred, not explicit"
+   },
+   "context": "FBI CHAIN OF COMMAND MIDYEAR INVESTIGATION [HRC EMAIL]? | FBI CHAIN OF C"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3990-namedEntities::Manafort::0",
+   "postNum": 3990,
+   "identity": "Manafort",
+   "canonical": "Manafort",
+   "registeredAliases": [
+    "Manafort"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "C",
+   "reason": "no registered form and no distinctive part of the name appears anywhere on the drop; the identity was inferred rather than named",
+   "proposed": {
+    "withdrawOccurrence": "#3990 namedEntities \"Manafort\"",
+    "why": "inferred, not explicit"
+   },
+   "context": "FBI CHAIN OF COMMAND MIDYEAR INVESTIGATION [HRC EMAIL]? | FBI CHAIN OF C"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4247-namedEntities::USNS Comfort::0",
+   "postNum": 4247,
+   "identity": "USNS Comfort",
+   "canonical": "USNS Comfort",
+   "registeredAliases": [
+    "USNS Comfort"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "USNS",
+     "hits": 1
+    },
+    {
+     "word": "Comfort",
+     "hits": 1
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "F",
+   "reason": "only \"USNS\" appears — 33% of \"USNS Comfort\". A fragment that short is not evidence Q named this entity; which form to register, if any, is an owner ruling",
+   "proposed": {
+    "needsOwnerRuling": "is \"USNS\" on #4247 a reference to USNS Comfort?"
+   },
+   "context": "t risk_proven] when surplus of availability in hospitals [+ USNS_Comfort]?  | Why are CDC numbers conflating COVID-19 deaths with in"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4312-namedEntities::Cambridge Dictionary::0",
+   "postNum": 4312,
+   "identity": "Cambridge Dictionary",
+   "canonical": "Cambridge Dictionary",
+   "registeredAliases": [
+    "Cambridge Dictionary"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "Cambridge",
+     "hits": 1
+    },
+    {
+     "word": "Dictionary",
+     "hits": 2
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "D",
+   "reason": "the only trace of it is \"cambridge\", and that sits on a quoted or link line — not Q-authored body text",
+   "proposed": {
+    "withdrawOccurrence": "#4312 namedEntities \"Cambridge Dictionary\"",
+    "why": "source material, not a Q-authored mention"
+   },
+   "context": "https://dictionary.cambridge.org/dictionary/english/common-sense | -the basic level of prac"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4352-namedEntities::House Republicans::0",
+   "postNum": 4352,
+   "identity": "House Republicans",
+   "canonical": "House Republicans",
+   "registeredAliases": [
+    "House Republicans"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "House",
+     "hits": 2
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "D",
+   "reason": "the only trace of it is \"house\", and that sits on a quoted or link line — not Q-authored body text",
+   "proposed": {
+    "withdrawOccurrence": "#4352 namedEntities \"House Republicans\"",
+    "why": "source material, not a Q-authored mention"
+   },
+   "context": "cities across US [pre_knowledge to group(s)]? | https://banks.house.gov/news/documentsingle.aspx?DocumentID=1548 | https://fitzpatrick"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4401-namedEntities::Google Trends::0",
+   "postNum": 4401,
+   "identity": "Google Trends",
+   "canonical": "Google Trends",
+   "registeredAliases": [
+    "Google Trends"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "Google",
+     "hits": 1
+    },
+    {
+     "word": "Trends",
+     "hits": 2
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "D",
+   "reason": "the only trace of it is \"google\", and that sits on a quoted or link line — not Q-authored body text",
+   "proposed": {
+    "withdrawOccurrence": "#4401 namedEntities \"Google Trends\"",
+    "why": "source material, not a Q-authored mention"
+   },
+   "context": "https://trends.google.com/trends/explore?date=today%205-y&geo=US&q=black%20lives%20ma"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4468-namedEntities::Daily Beast::0",
+   "postNum": 4468,
+   "identity": "Daily Beast",
+   "canonical": "Daily Beast",
+   "registeredAliases": [
+    "Daily Beast"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "Daily",
+     "hits": 1
+    },
+    {
+     "word": "Beast",
+     "hits": 1
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "F",
+   "reason": "only \"Daily\" appears — 45% of \"Daily Beast\". A fragment that short is not evidence Q named this entity; which form to register, if any, is an owner ruling",
+   "proposed": {
+    "needsOwnerRuling": "is \"Daily\" on #4468 a reference to Daily Beast?"
+   },
+   "context": "://twitter.com/MollyJongFast/status/1271909520135110658 | The Daily \"Beast.\" | Q | "
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4492-namedEntities::Yale Medicine::0",
+   "postNum": 4492,
+   "identity": "Yale Medicine",
+   "canonical": "Yale Medicine",
+   "registeredAliases": [
+    "Yale Medicine"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "Yale",
+     "hits": 1
+    },
+    {
+     "word": "Medicine",
+     "hits": 1
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "D",
+   "reason": "the only trace of it is \"yale\", and that sits on a quoted or link line — not Q-authored body text",
+   "proposed": {
+    "withdrawOccurrence": "#4492 namedEntities \"Yale Medicine\"",
+    "why": "source material, not a Q-authored mention"
+   },
+   "context": "ients back into nursing homes [hot zones]? | https://medicine.yale.edu/news/medicineatyale/why-flu-is-deadly-among-the-elderly/ | \"Eac"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4521-namedEntities::2020 Presidential Election::0",
+   "postNum": 4521,
+   "identity": "2020 Presidential Election",
+   "canonical": "2020 Presidential Election",
+   "registeredAliases": [
+    "2020 Presidential Election"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "2020",
+     "hits": 1
+    },
+    {
+     "word": "Presidential",
+     "hits": 2
+    },
+    {
+     "word": "Election",
+     "hits": 1
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "F",
+   "reason": "only \"2020\" appears — 15% of \"2020 Presidential Election\". A fragment that short is not evidence Q named this entity; which form to register, if any, is an owner ruling",
+   "proposed": {
+    "needsOwnerRuling": "is \"2020\" on #4521 a reference to 2020 Presidential Election?"
+   },
+   "context": "re]] centrally revolves around the Presidential Election of 2020. | Win by any means necessary [self-preservation].  | Q | "
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4526-namedEntities::The Guardian::0",
+   "postNum": 4526,
+   "identity": "The Guardian",
+   "canonical": "The Guardian",
+   "registeredAliases": [
+    "The Guardian"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "Guardian",
+     "hits": 1
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "F",
+   "reason": "only \"Guardian\" appears, and that spelling is already a registered form of \"Guardian\" — registering it here would make one token name two identities",
+   "proposed": {
+    "needsOwnerRuling": "is \"Guardian\" on #4526 a reference to The Guardian?"
+   },
+   "context": "comes the next day? [think battlefield and mission(s)] | The 'Guardian'.  | Information Warfare. | Q | "
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4630-namedEntities::Harold Moody Jr::0",
+   "postNum": 4630,
+   "identity": "Harold Moody Jr",
+   "canonical": "Harold Moody Jr",
+   "registeredAliases": [
+    "Harold Moody Jr"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "Harold",
+     "hits": 1
+    },
+    {
+     "word": "Moody",
+     "hits": 1
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "F",
+   "reason": "only \"Harold\" appears — 40% of \"Harold Moody Jr\". A fragment that short is not evidence Q named this entity; which form to register, if any, is an owner ruling",
+   "proposed": {
+    "needsOwnerRuling": "is \"Harold\" on #4630 a reference to Harold Moody Jr?"
+   },
+   "context": " | Democratic spokesperson for the Arkansas Democratic Party, Harold Moody, Jr, was charged with distribution and possession of chil"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4875-themeAnchors::More 'conspiracy' [fact-less base-less claims] pushed re: violent, extremist, racist, dangerous, anti-gov, nazism, white::0",
+   "postNum": 4875,
+   "identity": "More 'conspiracy' [fact-less base-less claims] pushed re: violent, extremist, racist, dangerous, anti-gov, nazism, white",
+   "canonical": null,
+   "registeredAliases": [],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "More",
+     "hits": 1
+    },
+    {
+     "word": "'conspiracy'",
+     "hits": 1
+    },
+    {
+     "word": "[fact-less",
+     "hits": 1
+    },
+    {
+     "word": "base-less",
+     "hits": 1
+    },
+    {
+     "word": "claims]",
+     "hits": 1
+    },
+    {
+     "word": "pushed",
+     "hits": 1
+    },
+    {
+     "word": "violent,",
+     "hits": 1
+    },
+    {
+     "word": "extremist,",
+     "hits": 1
+    },
+    {
+     "word": "racist,",
+     "hits": 1
+    },
+    {
+     "word": "dangerous,",
+     "hits": 1
+    },
+    {
+     "word": "anti-gov,",
+     "hits": 1
+    },
+    {
+     "word": "nazism,",
+     "hits": 1
+    },
+    {
+     "word": "white",
+     "hits": 1
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "E",
+   "reason": "the stored identity is a whole sentence, not an entity name (14 words). A sentence cannot be a named entity; the record is malformed.",
+   "proposed": {
+    "withdrawOccurrence": "#4875 namedEntities",
+    "why": "malformed entity record"
+   },
+   "context": " about the House Intel Committee meeting re: 'Qanon' today. | More 'conspiracy' [fact-less base-less claims] pushed re: violent, ext"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4885-namedEntities::Jeet Heer::0",
+   "postNum": 4885,
+   "identity": "Jeet Heer",
+   "canonical": "Jeet Heer",
+   "registeredAliases": [
+    "Jeet Heer"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "C",
+   "reason": "no registered form and no distinctive part of the name appears anywhere on the drop; the identity was inferred rather than named",
+   "proposed": {
+    "withdrawOccurrence": "#4885 namedEntities \"Jeet Heer\"",
+    "why": "inferred, not explicit"
+   },
+   "context": "[Past 5 Hours] | https://twitter.com/TMZ/status/1317525798903951360 | http"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4885-namedEntities::Erin Nanoki::0",
+   "postNum": 4885,
+   "identity": "Erin Nanoki",
+   "canonical": "Erin Nanoki",
+   "registeredAliases": [
+    "Erin Nanoki"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "C",
+   "reason": "no registered form and no distinctive part of the name appears anywhere on the drop; the identity was inferred rather than named",
+   "proposed": {
+    "withdrawOccurrence": "#4885 namedEntities \"Erin Nanoki\"",
+    "why": "inferred, not explicit"
+   },
+   "context": "[Past 5 Hours] | https://twitter.com/TMZ/status/1317525798903951360 | http"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4949-themeAnchors::That this nation, under God, shall have a new birth of freedom and that government of the people, by the people, for the::0",
+   "postNum": 4949,
+   "identity": "That this nation, under God, shall have a new birth of freedom and that government of the people, by the people, for the",
+   "canonical": null,
+   "registeredAliases": [],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "That",
+     "hits": 2
+    },
+    {
+     "word": "this",
+     "hits": 1
+    },
+    {
+     "word": "nation,",
+     "hits": 1
+    },
+    {
+     "word": "under",
+     "hits": 1
+    },
+    {
+     "word": "God,",
+     "hits": 1
+    },
+    {
+     "word": "shall",
+     "hits": 2
+    },
+    {
+     "word": "have",
+     "hits": 1
+    },
+    {
+     "word": "birth",
+     "hits": 1
+    },
+    {
+     "word": "freedom",
+     "hits": 1
+    },
+    {
+     "word": "that",
+     "hits": 2
+    },
+    {
+     "word": "government",
+     "hits": 1
+    },
+    {
+     "word": "people,",
+     "hits": 3
+    },
+    {
+     "word": "people,",
+     "hits": 3
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "E",
+   "reason": "the stored identity is a whole sentence, not an entity name (23 words). A sentence cannot be a named entity; the record is malformed.",
+   "proposed": {
+    "withdrawOccurrence": "#4949 namedEntities",
+    "why": "malformed entity record"
+   },
+   "context": "watch?v=9tjdswqGGVg&list=PLr4E97YzUfEMIr23hzOBmk9mg-z8TDOXj | that this nation, under God, shall have a new birth of freedom  and th"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-56-namedEntities::International Islamic Council for Da'wa and Relief::0",
+   "postNum": 56,
+   "identity": "International Islamic Council for Da'wa and Relief",
+   "canonical": "International Islamic Council for Da'wa and Relief",
+   "registeredAliases": [
+    "International Islamic Council for Da'wa and Relief"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "International",
+     "hits": 1
+    },
+    {
+     "word": "Islamic",
+     "hits": 1
+    },
+    {
+     "word": "Council",
+     "hits": 2
+    },
+    {
+     "word": "Relief",
+     "hits": 1
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "E",
+   "reason": "the stored identity is a whole sentence, not an entity name (7 words). A sentence cannot be a named entity; the record is malformed.",
+   "proposed": {
+    "withdrawOccurrence": "#56 namedEntities",
+    "why": "malformed entity record"
+   },
+   "context": " Saleha Abedin, sits on the Presidency Staff Council of the International Islamic Council for Da’wa and Relief, a group that is ch"
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-746-namedEntities::Mike Wallace::0",
+   "postNum": 746,
+   "identity": "Mike Wallace",
+   "canonical": "Mike Wallace",
+   "registeredAliases": [
+    "Mike Wallace"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [
+    {
+     "word": "Mike",
+     "hits": 1
+    },
+    {
+     "word": "Wallace",
+     "hits": 1
+    }
+   ],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "D",
+   "reason": "the only trace of it is \"Mike\", and that sits on a quoted or link line — not Q-authored body text",
+   "proposed": {
+    "withdrawOccurrence": "#746 namedEntities \"Mike Wallace\"",
+    "why": "source material, not a Q-authored mention"
+   },
+   "context": ">>350576 | https:// en.wikipedia.org/wiki/Mike_Wallace | You are not looking close enough. | Q | "
+  },
+  {
+   "conflictId": "UNLOCATED_SPAN::UNLOCATED-960-namedEntities::Comedy Central::0",
+   "postNum": 960,
+   "identity": "Comedy Central",
+   "canonical": "Comedy Central",
+   "registeredAliases": [
+    "Comedy Central"
+   ],
+   "literallyPresent": false,
+   "presentAs": null,
+   "distinctivePartsPresent": [],
+   "presentOnlyInQuotedMaterial": false,
+   "verdict": "C",
+   "reason": "no registered form and no distinctive part of the name appears anywhere on the drop; the identity was inferred rather than named",
+   "proposed": {
+    "withdrawOccurrence": "#960 namedEntities \"Comedy Central\"",
+    "why": "inferred, not explicit"
+   },
+   "context": "http:// www.cc.com/episodes/drc1ue/the-opposition-with-jordan-klepper-"
+  }
+ ]
+}
