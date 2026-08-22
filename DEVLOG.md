@@ -6536,3 +6536,119 @@ spelling and needed an alias, 23 were URL/handle-only and migrated to Sources, 1
 **Left for the owner:** `audit/OWNER-REVIEW.csv`, 18 rows. Two genuinely open (whether a DEMONYM
 is a mention of the country), nine owner-directed F rows, three quarantined refusals, four applied
 decisions on drops with existing rulings.
+
+---
+
+## 2026-08-22 — The census, and what every unhighlighted line actually is
+
+**Request:** move forward with the audit of the site. Take into account anything unhighlighted
+within a sentence or on any line of a Q post; research each one against the drop it sits in and
+say what it portrays as far as category; deliver the list as an Excel file for review, since GPT
+will do the same pass independently and the two will be brought together.
+
+**This is the piece of work NEXT-SESSION-HANDOFF.md named.** The census was deliberately held back
+until the Step 3B reconciliation closed, so that "what did we miss" measured unknown misses rather
+than known conflicts.
+
+### The census, re-run
+
+The last run measured `posts.json` at `2ee598af` — before the reconciliation closed. Re-run against
+`79711cf8`, the seed-88 data live at qdrops.app:
+
+| | 19 Aug | 22 Aug |
+|---|---:|---:|
+| units segmented | 29,569 | 29,569 |
+| fully painted, excluded | 13,545 | **18,921** (64.0%) |
+| QUEUED | 16,024 | **10,648** |
+| distinct wordings | 8,495 | **4,815** |
+| genuinely unclassified prose (bucket J) | 1,323 | **763** |
+| renderer misses | 0 | **0** |
+
+Renderer misses stayed at zero, which is the load-bearing number: every certified occurrence
+resolves into the rendered body, so nothing in the queue is there because a highlight is broken.
+The queue is a classification gap, not a rendering bug.
+
+`by-bucket/F_CERTIFIED_EMPHASIS_NOT_PAINTED.csv` was removed. Emphasis was retired on 21 Aug —
+data, fields, sections and UI — so the census no longer emits that bucket and the file was a stale
+19 Aug artifact that reads as live.
+
+### The classification pass — `scripts/classify-unhighlighted-residual.mjs`
+
+The census only ever answered "what is still unpainted". Every line now also carries a PROPOSED
+category against the app's **own eight live sections** in `sectionInfo.ts`, its subtype, a plain
+reading of what the line is doing in the drop, and **the evidence the proposal rests on** — so a
+proposal can be checked rather than trusted. It writes nothing into `public/data`.
+
+| Proposed | Lines | Wordings | Posts |
+|---|---:|---:|---:|
+| Signature / Sign-off | 4,374 | 6 | 4,353 |
+| Q Evidence & References | 2,577 | 2,468 | 1,828 |
+| Q Codes & Brackets | 1,536 | 984 | 802 |
+| Q Entities | 928 | 545 | 462 |
+| NEEDS CONTEXT | 717 | 469 | 482 |
+| Q Claims | 385 | 313 | 234 |
+| Q Questions | 47 | 33 | 36 |
+| Q Themes | 44 | 34 | 44 |
+| Q Directives | 27 | 19 | 25 |
+| Q Predictions | 13 | 13 | 10 |
+
+**NEEDS CONTEXT is a result, not a gap in the pass.** The archive's own rules forbid the guesses
+that would empty it: ALL CAPS alone is not a code, a bare noun phrase is not a claim, and a unit
+the segmenter cut in half at an abbreviation is not a sentence at all.
+
+Devices no mood or verb test can read were ruled by opening the drop, and the drop is cited in the
+basis string of every one: BOOM ×4 on a rising indent in #844 · `'CONSPIRACY'` ×3 inside the
+control-mechanism list in #1010 · the `-Aggression (Projection)` bullets under "Actions of
+[ANTIFA]:" in #1926 and #2171 · the traitor-synonym thesaurus block in #4603 · the Ruby/Capybara
+snippet in #4437 · `Text A/B/C` labelling the Strzok-Page messages in #1563 · `R`/`D` heading
+RED OCTOBER and DECLAS in #2300.
+
+**Four shape tests earned their place by being wrong first:**
+
+- A broadened verb list made `OP Name: Fiddler` an assertion — Name, Link, Report, Call, Point and
+  File are all nouns. Ambiguous verbs now need a complement behind them.
+- `\bw\/\b` never fired. `/` and the following space are both non-word characters, so there is no
+  boundary between them, and `(2) MISSILE FIRES W/ A STRATEGIC PURPOSE` fell to the label fallback.
+- An entity inside a line was speaking for the line, so `Target/weaken conservative base (IRS/MSM)`
+  came out as an Entity. The name must now be most of the line.
+- `God bless, Q` parsed as an imperative instructing the reader to bless. It is a valediction.
+
+### What actually has to be decided
+
+| Decision | Lines | Wordings | Posts |
+|---|---:|---:|---:|
+| POLICY RULING — one decision settles the population | 4,543 | **7** | 4,351 |
+| PAINT POLICY — certified in a layer the body does not fill | 3,321 | 3,021 | 2,133 |
+| CLASSIFY — no disposition anywhere in the archive | 1,875 | 1,419 | 789 |
+| SPAN BOUNDARY FIX — the highlight stops one character short | 909 | 478 | 540 |
+
+**Seven wordings settle 4,543 lines** — 43% of the queue. `Q`, `Q+`, `WWG1WGA`, `WRWY`,
+"God bless", "Godspeed" and the spelled-out slogan take one ruling between them.
+
+The two real questions must not be mixed. The 3,321 PAINT POLICY lines are already dispositioned
+in the data — context units, codes, evidence, quoted source — and simply carry no colour in the
+drop body; if "every sentence highlighted" means a visible fill, those layers need a visual
+treatment, not a reclassification. Only the 1,875 CLASSIFY lines are adjudication.
+
+### The deliverable
+
+`audit/unhighlighted-sentences/unhighlighted-sentence-review.xlsx`, six sheets, plus a dated copy
+on the Desktop. Two sheets are new: **Action Plan** (23 rows — the whole queue as decisions) and
+**Category Proposals**. The proposal columns sit immediately after the sentence rather than past
+thirty columns of coverage detail, and three blank **GPT** columns sit beside the owner-review
+block with an AGREE/DISAGREE/PARTIAL dropdown, so the independent pass can be pasted in and
+compared row for row.
+
+Two defects fixed in the workbook builder:
+
+- The FINAL CATEGORY dropdown still offered `EMPHASIS_DEVICE`, retired since 21 Aug — offering it
+  invites a ruling that cannot be applied. The list is now the eight live sections plus the
+  dispositions that are honest answers rather than categories.
+- The review-block offset was a typed constant. Adding eight columns pointed every dropdown eight
+  columns to the left — a validation that looks present and is not. It is computed from the header
+  now.
+
+**Verified by opening the built file, not by writing it:** zip integrity, every OOXML part parses,
+all six sheets load under openpyxl, and the dropdowns land on AK, AT and AV.
+
+**Nothing was applied, rebuilt or deployed.** Production stays at seed 88.

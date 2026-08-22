@@ -70,12 +70,33 @@ every row with its reason.
 
 ---
 
-## The next piece of work — and it is a different one
+## The census is DONE — the next work is the rulings
 
-The census. `node scripts/audit-unhighlighted-sentences.mjs` crawls the finished corpus for
-Q-authored sentences that still lack visible classification. It was deliberately NOT run as
-this pass's final measure: mixing known conflicts into a "what did we miss" population is the
-whole reason the reconciliation came first. The queue is closed now, so the census finally
-measures unknown misses instead of known ones.
+`node scripts/audit-unhighlighted-sentences.mjs` was re-run on 22 Aug 2026 against seed 88, then
+`node scripts/classify-unhighlighted-residual.mjs` proposed a category for every line it found.
 
-GPT performs the independent live-site residual audit first.
+**10,648 lines still carry text the drop body does not paint, across 4,458 posts — 4,815 distinct
+wordings.** Renderer misses: 0. The queue is a classification gap, never a broken highlight.
+
+The deliverable is `audit/unhighlighted-sentences/unhighlighted-sentence-review.xlsx` (six sheets)
+with a dated copy on the Desktop. Read `audit/unhighlighted-sentences/README.md` before it.
+
+Four decisions cover the whole queue — the **Action Plan** sheet is this table with examples:
+
+| Decision | Lines | Wordings |
+|---|---:|---:|
+| POLICY RULING — one decision settles the population | 4,543 | **7** |
+| PAINT POLICY — certified already, the body just does not fill it | 3,321 | 3,021 |
+| CLASSIFY — no disposition anywhere in the archive | 1,875 | 1,419 |
+| SPAN BOUNDARY FIX — the highlight stops one character short | 909 | 478 |
+
+**Do not mix the first two with the third.** Seven wordings — `Q`, `Q+`, `WWG1WGA`, `WRWY`,
+"God bless", "Godspeed", the spelled-out slogan — settle 43% of the queue in one ruling. The 3,321
+PAINT POLICY lines are already dispositioned as context units, codes, evidence or quoted source and
+only lack a colour; if "every sentence highlighted" means a visible fill, that is a rendering
+decision about those layers, not a reclassification. Only the 1,875 CLASSIFY lines are adjudication.
+
+GPT is running the same pass independently. The workbook has three blank GPT columns beside the
+owner-review block, with an AGREE/DISAGREE/PARTIAL dropdown, so the two passes merge row for row.
+
+Nothing was applied, rebuilt or deployed. Production stays at seed 88.
