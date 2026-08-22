@@ -6463,3 +6463,25 @@ before-state of 2026-08-17. Owner decision, fully reverted.
 
 **Final:** queue 945 → **220** (A 1 · B 158 · C 61), all 17 gates pass, seed 87, **not deployed**.
 `NEXT-SESSION-HANDOFF.md` carries the restart notes.
+
+---
+
+## 2026-08-22 (later) — Owner Rulings 1 & 2, and the 38-row entity review
+
+**`54b0141`** — five duplicate canonical identities merged (Wray/Christopher Wray,
+Whitaker/Matthew Whitaker, Pence/Mike Pence, Awan/Imran Awan, GANG OF 8/Gang of Eight). Rows
+1,448 → 1,443, **mentions 9,926 → 9,926**: identity normalization, zero occurrence deletion, as
+ruled. The cleanup guard was not bypassed — a third `postApprovalDeltas` entry records the ruling
+beside the 2026-08-17 approval, the mechanism that file already documents. Two couplings fixed by
+following the identity: the ENT-crosswalk now resolves owner merges, and the cleanup plan resolves
+retired entity ids via `audit/entity-ids.json`. Re-materialised 1,443/9,926 → 1,235/8,975.
+`relationships.json` and `search-index.json` rebuilt; seven certified constants moved with reasons
+at their lines.
+
+**`b04419b`** — the 38 `NO_ALIAS_EVER_REGISTERED` rows reviewed individually: C 12, D 14, E 3,
+F 9, **B 0**. No alias is supportable; the nine a first pass proposed were partial-name matches
+("Paris" → Paris Hilton, "Senate" → US Senate, which collides with United States Senate). Nothing
+applied: all 29 C/D/E rows resolve to withdrawing an entity occurrence, whose only path is the
+occurrence-provenance audit that feeds the owner-approved 2026-08-17 migration.
+
+**State:** queue 945 → **207** (A 3 · B 159 · C 45), all 17 gates pass, seed 87, **not deployed**.

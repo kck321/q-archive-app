@@ -10,8 +10,8 @@ inside five minutes.
 
 | | |
 |---|---|
-| HEAD | `ae3ad18` |
-| branch | `master`, 50 commits ahead of `origin/master`, tree clean |
+| HEAD | `b04419b` |
+| branch | `master`, 53 commits ahead of `origin/master`, tree clean |
 | local `SEED_VERSION` | **87** |
 | production | **still seed 78** — nothing from this work is deployed |
 | Step 3B-1 gates | 17/17 pass (`node scripts/verify-step3b1.mjs`) |
@@ -19,7 +19,7 @@ inside five minutes.
 ### Certified primary counts (all measured, all gated)
 
 ```
-questions   6,323      claims       8,721
+questions   6,323      claims       8,721      entities  1,235 canonical / 8,975 mentions
 directives  2,940      predictions    843
 ```
 
@@ -35,7 +35,7 @@ them on every rebuild, because `apply-claims.mjs` regenerates two of them from
 ### Conflict queue — rebuilt from canonical state, never by subtraction
 
 ```
-945  ->  220        lane A 1   ·   lane B 158   ·   lane C 61
+945  ->  207        lane A 3   ·   lane B 159   ·   lane C 45
 ```
 
 Rebuild it any time with:
@@ -52,43 +52,60 @@ is no deterministic work outstanding.**
 
 ## The four things left, in the order they should happen
 
-### 1. Lane C — the identity merge (16 rows) · BLOCKED ON AN OWNER RULING
+### 1. ~~Lane C — the identity merge~~ · **DONE 2026-08-22** (owner rulings 1 & 2)
 
-Five identities are in the registry twice: `Wray`/`Christopher Wray`, `Whitaker`/`Matthew
-Whitaker`, `Pence`/`Mike Pence`, `Awan`/`Imran Awan`, `GANG OF 8`/`Gang of Eight`.
+Five identities merged, occurrences fully preserved (9,926 → 9,926 across the merge; 8,975 after
+the cleanup replay). The cleanup guard was **not** weakened — a third `postApprovalDeltas` entry
+was recorded beside the 2026-08-17 approval, which is the mechanism that file already documents
+for exactly this. Two couplings were fixed by following the identity rather than loosening a check:
+the ENT-crosswalk now resolves owner merges, and the cleanup plan resolves retired entity ids
+through `audit/entity-ids.json`. See `54b0141`.
 
-The merge was attempted and **correctly refused**. Full evidence in
-`audit/step3b1-lane-c-quarantine.md`. The blocker, precisely:
+### 2. Lane C — the 38 `NO_ALIAS_EVER_REGISTERED` rows · REVIEWED, none applicable
 
-> `apply-entity-cleanup.mjs --rematerialise` refuses with *"the tree is neither the approved
-> before-state (1448/9926)"*. That step re-materialises the integrated cleanup the owner approved
-> on **2026-08-17**, and the approval is pinned to an exact before-state. Merging upstream
-> invalidates the snapshot the approval names.
+Every row reviewed individually against its drop (`audit/step3b1-entity-review.json`, commit
+`b04419b`). Result:
 
-Re-approving an approved migration against a new before-state is the owner's call. Two smaller
-fixes are already known-good and were reverted with it: teaching the ENT-crosswalk that an owner
-merge is also a merge, and moving three certified constants (1,292→1,287, 1,448→1,443,
-3,841→3,838) which are exactly "five duplicates merged".
+| | |
+|---|---|
+| **C** 12 | nothing on the drop names the identity — inferred, not written |
+| **D** 14 | the only trace is a quoted line or a URL — Vice News, Judicial Watch, Google Trends, Cambridge Dictionary, Yale Medicine, all cited by link |
+| **E** 3 | the stored "identity" is a whole SENTENCE (#4875, #4949, #56) — a malformed record |
+| **F** 9 | only a fragment of the name appears |
+| **B** 0 | **no alias is supportable** |
 
-### 2. Lane C — `NO_ALIAS_EVER_REGISTERED` (38 rows) · needs the owner
+**A cannot apply to this family** — `NO_ALIAS_EVER_REGISTERED` means the identity *is* registered,
+so "the registry has no such entity" is impossible by construction.
 
-The identity has one registered form and it appears on the drop in no casing — `US Senate`,
-`Agnes Nixon`, `Roseanne Barr`, `Ray Chandler`, `Standard Hotel`. Three different things look
-identical: a registry gap, a legitimate inference where Q named nobody, or an identity that should
-not be on the post. The evidence that separates them is not in the text.
+**B came out zero, and that is the finding.** A first pass proposed nine aliases off partial-name
+matches: "Paris" → Paris Hilton, "2020" → 2020 Presidential Election, "Daily" → Daily Beast,
+"Senate" → US Senate — and "Senate" is *already* a registered form of "United States Senate", so
+that one would have made a single token name two identities. Invariant 4 in a new costume, and
+exactly what "do not bulk-create aliases" was protecting against. A fragment now needs to be ≥60%
+of the canonical AND unclaimed by another identity; nine of nine fail.
 
-### 3. Lane B — 158 genuine semantic decisions
+**Why nothing was applied.** All 29 C/D/E rows resolve to withdrawing an entity *occurrence*, and
+the only path for that is `audit/occurrence-provenance-audit.json` — the input to the migration the
+owner approved on 2026-08-17. Adding withdrawals there re-adjudicates an approved migration and
+moves its occurrence total, which the plan builder checks against `entities.totals.mentions`.
+**That is an owner decision of the same kind as Ruling 2.**
+
+### 3. Lane B — 159 genuine semantic decisions · NOT YET ADJUDICATED
 
 | rows | family |
 |---|---|
-| 52 | `BOUNDARY_CROSSING::MULTI_LINE_SPAN` — one span over two prose lines |
-| 32 | `CASE_VARIANT_REFUSED_E` — the casing appears on drops that do not record the identity |
-| 26 | `BOUNDARY_CROSSING::WITHIN_LINE_CROSSING` |
-| 19 | `SAME_CATEGORY_PARTIAL_OVERLAP` |
-| 12 | `CASE_VARIANT_REFUSED_C` — competing candidates, the ordinal is a guess |
-| 17 | the remainder — quoted-material, absent-identity and question-literal rows |
+| ~52 | `BOUNDARY_CROSSING::MULTI_LINE_SPAN` — one span over two prose lines |
+| ~32 | `CASE_VARIANT_REFUSED_E` — the casing appears on drops that do not record the identity |
+| ~26 | `BOUNDARY_CROSSING::WITHIN_LINE_CROSSING` |
+| ~19 | `SAME_CATEGORY_PARTIAL_OVERLAP` |
+| ~12 | `CASE_VARIANT_REFUSED_C` — competing candidates, the ordinal is a guess |
+| rest | quoted-material, absent-identity and question-literal rows |
 
-Every row carries its refusal reason in `audit/step3b1-conflict-taxonomy-rebuilt.json`.
+Every row carries its refusal reason in `audit/step3b1-conflict-taxonomy-rebuilt.json`. The owner's
+standing instruction: **a multi-line or within-line crossing is not automatically a defect** — if a
+legitimate semantic unit intentionally spans lines, preserve it and mark it an intentional
+certified span rather than chopping it to satisfy a sentence boundary. Only repair geometry where a
+span accidentally swallowed quoted material, a URL, neighbouring prose or another sentence.
 
 ### 4. Deploy · AUTHORIZED BUT NOT DONE
 
