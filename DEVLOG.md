@@ -6302,3 +6302,55 @@ plan's `sentenceStart/sentenceEnd` disagree with its own `sentenceText` on those
 847→846, Directives indexed 3037→2940) because those certified constants moved. Both wrote
 nothing, so `relationships.json` and `search-index.json` are unchanged. Not deployed —
 production remains seed 78.
+
+---
+
+## 2026-08-21 — Step 3B-1 Phase A (held rows) and Phase B (conflict taxonomy)
+
+**Request.** Close or explicitly account for the 10 held actions and the 945-row conflict queue
+before any site-wide residual audit. Adjudicate the 10 individually and apply only the resolved
+subset; then taxonomise the 945 by root cause rather than adjudicating row by row. No deploy.
+
+**Phase A — commit `db0f04a`.** 7 of 10 applied, 3 still held.
+
+Six of the ten were held for "REPAIR_GEOMETRY", and five of those had never been classified at
+all: the generator called `classify(sentenceText, kinds)` with an EMPTY string, which fails R1,
+R5, R2, R3 and R2B in turn and falls out at `R4_DECLARATIVE` (its only test is
+`kinds.includes('claims')`). Since `ba8ff32` the ledger measures all six as complete sentences cut
+by `Mr.`, `U.S.`, `v.` and `No.`. Re-running the same cascade on the measured text returns
+question on five and prediction on #34. The cascade moved to `scripts/lib/shapeRules.mjs` — one
+copy, imported by the generator and the adjudication; proven behaviour-neutral (original vs
+refactored generator, same input, all 14 dry-run files byte-identical).
+
+Applied: the 5 interrogatives (question primary, claim secondary — the pattern of the 7
+R1_INTERROGATIVE rows already in `fbb5a51`); `A-MP-p1928-s012` (owner's URL ruling — a declared
+sub-sentence span, URL recorded as intentionally uncategorized); `A-SB-3071` (ownership hold
+upheld, span completed in place because a truncated highlight breaks the full-sentence rule).
+
+Still held: `A-MP-p0034-s002` (the single claims+predictions row DECISION 1 put to the owner and
+never got an answer on), and the two `A-DUP` rows, which are not benign duplicates — two different
+question identities point at one over-wide literal, and the repair belongs with its Phase B family.
+
+Held rows run through the SAME applier and the same 17 gates via
+`audit/step3b1-held-dispositions.jsonl`, pinned by sha256.
+
+**Phase B — report only, nothing applied.** `audit/step3b1-conflict-taxonomy.json`.
+
+**945 rows collapse to 12 root-cause patterns.** The dominant finding: 592 of the 645
+`UNLOCATED_SPAN` rows are ONE lookup defect. `postAnalysis.namedEntities` stores the identity the
+section recorded, which is often an ALIAS — "Hussein" is an alias of "Barack Obama", "Sessions" of
+"Jeff Sessions" — while `build-occurrence-ledger.mjs` keys its alias map by CANONICAL. The
+fallback can never fire for those. 424 resolve under a group-aware lookup; a further 168 differ
+only in case, because the drops write HUSSEIN / SESSIONS / GOD in caps and `occurrencesOfSpan` is
+`indexOf`.
+
+`audit/step3b1-conflict-batch-1-proposed.json` narrows that to 527 rows safe to resolve
+mechanically, and names the 65 it refuses: 37 where the form is "God" (≤3 chars, caps not
+registered — a short form matched case-insensitively is the invariant-4 defect), 21 where exact
+and case-insensitive bind different offsets, 7 that only match mid-word. 403 of the 527 need no
+case-insensitivity at all — the caps form is already a registered alias and appears verbatim.
+
+**Not applied, pending owner ruling.** These are inline-layer records: they move no headline
+primary total, but they DO move the certified entity mention count asserted in `lib/contracts.mjs`.
+
+**Not deployed.** Production remains seed 78.
