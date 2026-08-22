@@ -3,12 +3,34 @@
  "step": "3B-1",
  "planSha256": "373ca06b1416b6707a111f2c3da8e751472c551f739500f76cdcc764d3128058",
  "dispositionsApplied": 8,
- "actionsApplied": 1,
- "actionsAlreadyApplied": 537,
+ "actionsApplied": 538,
+ "actionsAlreadyApplied": 0,
  "actionsHeld": 2,
  "heldActionIds": [
   "A-DUP-2971-questions-561-799",
   "A-DUP-4454-questions-238-404"
+ ],
+ "duplicateMergeDeltas": [
+  {
+   "actionId": "A-DUP-2844-namedEntities-511-519",
+   "occurrenceKey": "2844|namedEntities|511|519",
+   "planExcess": 1,
+   "measuredExcess": 2,
+   "identityGroups": [
+    "Barack Obama"
+   ],
+   "why": "the repaired entity lookup reaches alias-valued identities the plan could not see"
+  },
+  {
+   "actionId": "A-DUP-3325-namedEntities-102-110",
+   "occurrenceKey": "3325|namedEntities|102|110",
+   "planExcess": 1,
+   "measuredExcess": 2,
+   "identityGroups": [
+    "Barack Obama"
+   ],
+   "why": "the repaired entity lookup reaches alias-valued identities the plan could not see"
+  }
  ],
  "occurrences": [
   {
@@ -59,6 +81,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Clinton",
+   "identityGroups": [
+    "Hillary Clinton"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-5-namedEntities-509-516",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -76,6 +102,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Trump",
+   "identityGroups": [
+    "Donald Trump"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-14-namedEntities-1319-1324",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -783,6 +813,10 @@
    "reviewDispositions": [],
    "mergedRecords": 5,
    "identity": "Huma",
+   "identityGroups": [
+    "Huma Abedin"
+   ],
+   "recordsDropped": 4,
    "actionId": "A-DUP-111-namedEntities-1073-1077",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "4 excess record(s) over one span merged into a single occurrence"
@@ -1426,6 +1460,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Iran",
+   "identityGroups": [
+    "Iran"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-194-namedEntities-86-90",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -1443,6 +1481,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Iran",
+   "identityGroups": [
+    "Iran"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-195-namedEntities-86-90",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -1460,6 +1502,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Iran",
+   "identityGroups": [
+    "Iran"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-199-namedEntities-130-134",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -1958,6 +2004,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "[DNC]",
+   "identityGroups": [
+    "[DNC]"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-436-emphasis-42-47",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -2247,6 +2297,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Hussein",
+   "identityGroups": [
+    "Barack Obama"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-559-namedEntities-414-421",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -2282,6 +2336,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "THEY WANT YOU DIVIDED.",
+   "identityGroups": [
+    "THEY WANT YOU DIVIDED."
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-563-emphasis-230-252",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -2315,6 +2373,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Hussein",
+   "identityGroups": [
+    "Barack Obama"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-570-namedEntities-451-458",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -2332,6 +2394,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Iran",
+   "identityGroups": [
+    "Iran"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-570-namedEntities-941-945",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -2349,6 +2415,10 @@
    "reviewDispositions": [],
    "mergedRecords": 3,
    "identity": "Sessions",
+   "identityGroups": [
+    "Jeff Sessions"
+   ],
+   "recordsDropped": 2,
    "actionId": "A-DUP-570-namedEntities-1821-1829",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "2 excess record(s) over one span merged into a single occurrence"
@@ -2434,6 +2504,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Mueller",
+   "identityGroups": [
+    "Robert Mueller"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-636-namedEntities-180-187",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -3111,6 +3185,10 @@
    "reviewDispositions": [],
    "mergedRecords": 3,
    "identity": "China",
+   "identityGroups": [
+    "China"
+   ],
+   "recordsDropped": 2,
    "actionId": "A-DUP-778-namedEntities-44-49",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "2 excess record(s) over one span merged into a single occurrence"
@@ -3428,6 +3506,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "China",
+   "identityGroups": [
+    "China"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-964-namedEntities-455-460",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -3445,6 +3527,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "China",
+   "identityGroups": [
+    "China"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-968-namedEntities-31-36",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -3710,6 +3796,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Huma",
+   "identityGroups": [
+    "Huma Abedin"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-1235-namedEntities-145-149",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -3960,6 +4050,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Flynn",
+   "identityGroups": [
+    "Michael Flynn"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-1265-namedEntities-155-160",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -4263,6 +4357,10 @@
    "reviewDispositions": [],
    "mergedRecords": 5,
    "identity": "Sessions",
+   "identityGroups": [
+    "Jeff Sessions"
+   ],
+   "recordsDropped": 4,
    "actionId": "A-DUP-1318-namedEntities-1067-1075",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "4 excess record(s) over one span merged into a single occurrence"
@@ -5395,6 +5493,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn that mankind are more disposed to suffer, while evils are sufferable than to right themselves by abolishing the forms to which they are accustomed.",
+   "identityGroups": [
+    "Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn that mankind are more disposed to suffer, while evils are sufferable than to right themselves by abolishing the forms to which they are accustomed."
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-1700-directives-317-625",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -5446,6 +5548,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Twitter",
+   "identityGroups": [
+    "Twitter"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-1796-namedEntities-343-350",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -5641,6 +5747,10 @@
    "reviewDispositions": [],
    "mergedRecords": 3,
    "identity": "America",
+   "identityGroups": [
+    "United States"
+   ],
+   "recordsDropped": 2,
    "actionId": "A-DUP-1824-namedEntities-326-333",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "2 excess record(s) over one span merged into a single occurrence"
@@ -5658,6 +5768,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "JC",
+   "identityGroups": [
+    "James Comey"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-1828-namedEntities-784-786",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -5869,6 +5983,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Hussein",
+   "identityGroups": [
+    "Barack Obama"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-1887-namedEntities-682-689",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -6425,6 +6543,10 @@
    "reviewDispositions": [],
    "mergedRecords": 3,
    "identity": "Putin",
+   "identityGroups": [
+    "Vladimir Putin"
+   ],
+   "recordsDropped": 2,
    "actionId": "A-DUP-1935-namedEntities-409-414",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "2 excess record(s) over one span merged into a single occurrence"
@@ -6714,6 +6836,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Iran",
+   "identityGroups": [
+    "Iran"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-1948-namedEntities-1473-1477",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -7660,6 +7786,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "PANIC IN UK",
+   "identityGroups": [
+    "PANIC IN UK"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-2215-emphasis-24-35",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -7677,6 +7807,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "PANIC IN DC",
+   "identityGroups": [
+    "PANIC IN DC"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-2215-emphasis-36-47",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -8089,6 +8223,10 @@
    "reviewDispositions": [],
    "mergedRecords": 3,
    "identity": "China",
+   "identityGroups": [
+    "China"
+   ],
+   "recordsDropped": 2,
    "actionId": "A-DUP-2378-namedEntities-379-384",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "2 excess record(s) over one span merged into a single occurrence"
@@ -8125,6 +8263,10 @@
    "reviewDispositions": [],
    "mergedRecords": 11,
    "identity": "Mueller",
+   "identityGroups": [
+    "Robert Mueller"
+   ],
+   "recordsDropped": 10,
    "actionId": "A-DUP-2381-namedEntities-2570-2577",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "10 excess record(s) over one span merged into a single occurrence"
@@ -8142,6 +8284,10 @@
    "reviewDispositions": [],
    "mergedRecords": 11,
    "identity": "Mueller",
+   "identityGroups": [
+    "Robert Mueller"
+   ],
+   "recordsDropped": 10,
    "actionId": "A-DUP-2397-namedEntities-701-708",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "10 excess record(s) over one span merged into a single occurrence"
@@ -8283,6 +8429,10 @@
    "reviewDispositions": [],
    "mergedRecords": 6,
    "identity": "Senate",
+   "identityGroups": [
+    "United States Senate"
+   ],
+   "recordsDropped": 5,
    "actionId": "A-DUP-2448-namedEntities-1007-1013",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "5 excess record(s) over one span merged into a single occurrence"
@@ -8300,6 +8450,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Thank you for your service to our Country, Mr. Trey Gowdy!",
+   "identityGroups": [
+    "Thank you for your service to our Country, Mr. Trey Gowdy!"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-2451-directives-0-58",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -8354,6 +8508,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "D party",
+   "identityGroups": [
+    "Democratic Party"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-2463-namedEntities-56-63",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -8465,6 +8623,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "WASH POST",
+   "identityGroups": [
+    "Washington Post"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-2519-namedEntities-158-167",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -8589,6 +8751,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "WASH POST",
+   "identityGroups": [
+    "Washington Post"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-2549-namedEntities-573-582",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -8760,6 +8926,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "WASH POST",
+   "identityGroups": [
+    "Washington Post"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-2627-namedEntities-231-240",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -8777,6 +8947,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "America",
+   "identityGroups": [
+    "United States"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-2640-namedEntities-466-473",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -8873,6 +9047,10 @@
    "reviewDispositions": [],
    "mergedRecords": 3,
    "identity": "Brennan",
+   "identityGroups": [
+    "John Brennan"
+   ],
+   "recordsDropped": 2,
    "actionId": "A-DUP-2657-namedEntities-1310-1317",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "2 excess record(s) over one span merged into a single occurrence"
@@ -8890,6 +9068,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Senate",
+   "identityGroups": [
+    "United States Senate"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-2657-namedEntities-1348-1354",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -9116,6 +9298,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "WASH POST",
+   "identityGroups": [
+    "Washington Post"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-2715-namedEntities-90-99",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -9423,8 +9609,12 @@
    "primaryCategory": null,
    "secondarySemantics": [],
    "reviewDispositions": [],
-   "mergedRecords": 2,
+   "mergedRecords": 3,
    "identity": "Renegade",
+   "identityGroups": [
+    "Barack Obama"
+   ],
+   "recordsDropped": 2,
    "actionId": "A-DUP-2844-namedEntities-511-519",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -9442,6 +9632,10 @@
    "reviewDispositions": [],
    "mergedRecords": 3,
    "identity": "Mueller",
+   "identityGroups": [
+    "Robert Mueller"
+   ],
+   "recordsDropped": 2,
    "actionId": "A-DUP-2856-namedEntities-1355-1362",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "2 excess record(s) over one span merged into a single occurrence"
@@ -9806,6 +10000,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Senate",
+   "identityGroups": [
+    "United States Senate"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-2943-namedEntities-1150-1156",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -10086,6 +10284,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Huber",
+   "identityGroups": [
+    "John Huber"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-3004-namedEntities-771-776",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -10103,6 +10305,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Senate",
+   "identityGroups": [
+    "United States Senate"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-3006-namedEntities-451-457",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -10503,6 +10709,10 @@
    "reviewDispositions": [],
    "mergedRecords": 3,
    "identity": "Mueller",
+   "identityGroups": [
+    "Robert Mueller"
+   ],
+   "recordsDropped": 2,
    "actionId": "A-DUP-3316-namedEntities-279-286",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "2 excess record(s) over one span merged into a single occurrence"
@@ -10544,8 +10754,12 @@
    "primaryCategory": null,
    "secondarySemantics": [],
    "reviewDispositions": [],
-   "mergedRecords": 2,
+   "mergedRecords": 3,
    "identity": "Renegade",
+   "identityGroups": [
+    "Barack Obama"
+   ],
+   "recordsDropped": 2,
    "actionId": "A-DUP-3325-namedEntities-102-110",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -10563,6 +10777,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Flynn",
+   "identityGroups": [
+    "Michael Flynn"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-3330-namedEntities-191-196",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -11292,6 +11510,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Pelosi",
+   "identityGroups": [
+    "Nancy Pelosi"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-3741-namedEntities-344-350",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -11675,6 +11897,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "China",
+   "identityGroups": [
+    "China"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-3915-namedEntities-677-682",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -11770,6 +11996,10 @@
    "reviewDispositions": [],
    "mergedRecords": 11,
    "identity": "Mueller",
+   "identityGroups": [
+    "Robert Mueller"
+   ],
+   "recordsDropped": 10,
    "actionId": "A-DUP-3992-namedEntities-76-83",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "10 excess record(s) over one span merged into a single occurrence"
@@ -12002,6 +12232,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Renegade",
+   "identityGroups": [
+    "Barack Obama"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-4098-namedEntities-69-77",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -12483,6 +12717,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "[prevent accountability]",
+   "identityGroups": [
+    "[prevent accountability]"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-4381-emphasis-349-373",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -12500,6 +12738,10 @@
    "reviewDispositions": [],
    "mergedRecords": 3,
    "identity": "America",
+   "identityGroups": [
+    "United States"
+   ],
+   "recordsDropped": 2,
    "actionId": "A-DUP-4397-namedEntities-773-780",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "2 excess record(s) over one span merged into a single occurrence"
@@ -13143,6 +13385,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "Hussein",
+   "identityGroups": [
+    "Barack Obama"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-4620-namedEntities-487-494",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -13178,6 +13424,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "America",
+   "identityGroups": [
+    "United States"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-4635-namedEntities-1782-1789",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -13711,6 +13961,10 @@
    "reviewDispositions": [],
    "mergedRecords": 2,
    "identity": "China",
+   "identityGroups": [
+    "China"
+   ],
+   "recordsDropped": 1,
    "actionId": "A-DUP-4817-namedEntities-54-59",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -14064,7 +14318,7 @@
   }
  ],
  "appliedTo": {
-  "postsSha256": "7d3a90618c0619cb19585bc866520e1517e48fa78a337043d232ca3a159aaca9",
+  "postsSha256": "b71ca4783093ca22bff0c6d9077d3a7e2a0913cea493058e98d234d2ca8cca73",
   "questionsSha256": "241dc211bf435d8522b34cdcc9f3ac8b832e06f80df346ddcb87d8ea3ee12b2f",
   "dispositionsSha256": "0df3ba934b21058af5779806eec0c6d2219d63777d85edcc48f09518646c59ce"
  }

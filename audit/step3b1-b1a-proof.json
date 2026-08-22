@@ -1,0 +1,4038 @@
+{
+ "note": "Phase B1A proof. Two bindings over one bundle: canonical-keyed vs group-aware. No data written.",
+ "before": {
+  "boundRecords": 8235,
+  "unlocated": 643
+ },
+ "after": {
+  "boundRecords": 8646,
+  "unlocated": 232
+ },
+ "newlyResolved": 412,
+ "existingRecordsChanged": 0,
+ "changedExamples": [],
+ "newlyResolvedByIdentity": [
+  [
+   "Hussein -> HUSSEIN",
+   59
+  ],
+  [
+   "Sessions -> SESSIONS",
+   50
+  ],
+  [
+   "Mueller -> MUELLER",
+   41
+  ],
+  [
+   "Huber -> HUBER",
+   38
+  ],
+  [
+   "America -> AMERICA",
+   30
+  ],
+  [
+   "Senate -> SENATE",
+   21
+  ],
+  [
+   "Biden -> BIDEN",
+   21
+  ],
+  [
+   "Huma -> HUMA",
+   17
+  ],
+  [
+   "Flynn -> FLYNN",
+   17
+  ],
+  [
+   "Barr -> BARR",
+   14
+  ],
+  [
+   "Brennan -> BRENNAN",
+   11
+  ],
+  [
+   "United States of America -> UNITED STATES OF AMERICA",
+   10
+  ],
+  [
+   "Nunes -> NUNES",
+   7
+  ],
+  [
+   "Congress -> CONGRESS",
+   6
+  ],
+  [
+   "Pelosi -> PELOSI",
+   6
+  ],
+  [
+   "D party -> D PARTY",
+   5
+  ],
+  [
+   "Snow White -> SNOW WHITE",
+   5
+  ],
+  [
+   "Putin -> PUTIN",
+   4
+  ],
+  [
+   "Trump -> TRUMP",
+   3
+  ],
+  [
+   "NO NAME -> No Name",
+   3
+  ],
+  [
+   "No Such Agency -> NO SUCH AGENCY",
+   3
+  ],
+  [
+   "Donald J. Trump -> DONALD J. TRUMP",
+   3
+  ],
+  [
+   "Soros -> SOROS",
+   3
+  ],
+  [
+   "White House -> WHITE HOUSE",
+   3
+  ],
+  [
+   "Rothschild -> ROTHSCHILD",
+   2
+  ]
+ ],
+ "everyNewMatchIsExactCase": true,
+ "matchedDiffersFromIdentity": 412,
+ "stillUnlocatedCount": 232,
+ "stillUnlocatedByIdentity": [
+  [
+   "God",
+   37
+  ],
+  [
+   "Whitaker",
+   7
+  ],
+  [
+   "NO NAME",
+   6
+  ],
+  [
+   "Wray",
+   5
+  ],
+  [
+   "WikiLeaks",
+   5
+  ],
+  [
+   "US Senate",
+   4
+  ],
+  [
+   "Amazon",
+   4
+  ],
+  [
+   "Kansas",
+   3
+  ],
+  [
+   "Grassley",
+   3
+  ],
+  [
+   "Syria",
+   3
+  ],
+  [
+   "CrowdStrike",
+   3
+  ],
+  [
+   "Speaker of the House",
+   3
+  ],
+  [
+   "Feinstein",
+   3
+  ],
+  [
+   "House of Cards",
+   3
+  ],
+  [
+   "Sara Carter",
+   3
+  ],
+  [
+   "Rachel Chandler",
+   3
+  ],
+  [
+   "Hunter",
+   3
+  ],
+  [
+   "Ray Chandler",
+   2
+  ],
+  [
+   "Horowitz",
+   2
+  ],
+  [
+   "Podesta",
+   2
+  ],
+  [
+   "Clapper",
+   2
+  ],
+  [
+   "Watergate",
+   2
+  ],
+  [
+   "Washington",
+   2
+  ],
+  [
+   "Sean Hannity",
+   2
+  ],
+  [
+   "New York Post",
+   2
+  ]
+ ],
+ "added": [
+  {
+   "postNum": 1008,
+   "key": "1008|namedEntities|888|895",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1008,
+   "key": "1008|namedEntities|903|910",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1008,
+   "key": "1008|namedEntities|920|927",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1008,
+   "key": "1008|namedEntities|993|1000",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 1010,
+   "key": "1010|namedEntities|450|460",
+   "identity": "Rothschild",
+   "via": "ROTHSCHILD",
+   "matched": "ROTHSCHILD"
+  },
+  {
+   "postNum": 1098,
+   "key": "1098|namedEntities|17|24",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1098,
+   "key": "1098|namedEntities|79|86",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1102,
+   "key": "1102|namedEntities|406|413",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1122,
+   "key": "1122|namedEntities|15|23",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 1122,
+   "key": "1122|namedEntities|73|78",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 117,
+   "key": "117|namedEntities|391|415",
+   "identity": "United States of America",
+   "via": "UNITED STATES OF AMERICA",
+   "matched": "UNITED STATES OF AMERICA"
+  },
+  {
+   "postNum": 117,
+   "key": "117|namedEntities|84|88",
+   "identity": "Huma",
+   "via": "HUMA",
+   "matched": "HUMA"
+  },
+  {
+   "postNum": 117,
+   "key": "117|namedEntities|194|198",
+   "identity": "Huma",
+   "via": "HUMA",
+   "matched": "HUMA"
+  },
+  {
+   "postNum": 1201,
+   "key": "1201|namedEntities|10|15",
+   "identity": "Trump",
+   "via": "TRUMP",
+   "matched": "TRUMP"
+  },
+  {
+   "postNum": 1208,
+   "key": "1208|namedEntities|50|57",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1234,
+   "key": "1234|namedEntities|10|17",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 1235,
+   "key": "1235|namedEntities|151|155",
+   "identity": "Awan",
+   "via": "AWAN",
+   "matched": "AWAN"
+  },
+  {
+   "postNum": 128,
+   "key": "128|namedEntities|1315|1325",
+   "identity": "Snow White",
+   "via": "Snow white",
+   "matched": "Snow white"
+  },
+  {
+   "postNum": 1286,
+   "key": "1286|namedEntities|2078|2084",
+   "identity": "5 Eyes",
+   "via": "5 eyes",
+   "matched": "5 eyes"
+  },
+  {
+   "postNum": 1318,
+   "key": "1318|namedEntities|1484|1489",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 1318,
+   "key": "1318|namedEntities|1581|1586",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 1318,
+   "key": "1318|namedEntities|1613|1618",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 1326,
+   "key": "1326|namedEntities|76|83",
+   "identity": "NO NAME",
+   "via": "No Name",
+   "matched": "No Name"
+  },
+  {
+   "postNum": 134,
+   "key": "134|namedEntities|192|196",
+   "identity": "Huma",
+   "via": "HUMA",
+   "matched": "HUMA"
+  },
+  {
+   "postNum": 135,
+   "key": "135|namedEntities|0|10",
+   "identity": "Rothschild",
+   "via": "ROTHSCHILD",
+   "matched": "ROTHSCHILD"
+  },
+  {
+   "postNum": 1351,
+   "key": "1351|namedEntities|492|500",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 1370,
+   "key": "1370|namedEntities|303|308",
+   "identity": "Flynn",
+   "via": "FLYNN",
+   "matched": "FLYNN"
+  },
+  {
+   "postNum": 1377,
+   "key": "1377|namedEntities|47|55",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 1377,
+   "key": "1377|namedEntities|137|145",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 145,
+   "key": "145|namedEntities|73|80",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 1453,
+   "key": "1453|namedEntities|336|343",
+   "identity": "D party",
+   "via": "D PARTY",
+   "matched": "D PARTY"
+  },
+  {
+   "postNum": 146,
+   "key": "146|namedEntities|73|80",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 1483,
+   "key": "1483|namedEntities|94|98",
+   "identity": "Ryan",
+   "via": "RYAN",
+   "matched": "RYAN"
+  },
+  {
+   "postNum": 1603,
+   "key": "1603|namedEntities|206|211",
+   "identity": "Putin",
+   "via": "PUTIN",
+   "matched": "PUTIN"
+  },
+  {
+   "postNum": 1603,
+   "key": "1603|namedEntities|229|234",
+   "identity": "Putin",
+   "via": "PUTIN",
+   "matched": "PUTIN"
+  },
+  {
+   "postNum": 1646,
+   "key": "1646|namedEntities|974|981",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 1646,
+   "key": "1646|namedEntities|1225|1232",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 1686,
+   "key": "1686|namedEntities|222|227",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 1702,
+   "key": "1702|namedEntities|52|59",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 1745,
+   "key": "1745|namedEntities|986|1010",
+   "identity": "United States of America",
+   "via": "UNITED STATES OF AMERICA",
+   "matched": "UNITED STATES OF AMERICA"
+  },
+  {
+   "postNum": 1745,
+   "key": "1745|namedEntities|356|364",
+   "identity": "Congress",
+   "via": "CONGRESS",
+   "matched": "CONGRESS"
+  },
+  {
+   "postNum": 1745,
+   "key": "1745|namedEntities|106|113",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1745,
+   "key": "1745|namedEntities|195|202",
+   "identity": "D party",
+   "via": "D PARTY",
+   "matched": "D PARTY"
+  },
+  {
+   "postNum": 1745,
+   "key": "1745|namedEntities|571|578",
+   "identity": "D party",
+   "via": "D PARTY",
+   "matched": "D PARTY"
+  },
+  {
+   "postNum": 1745,
+   "key": "1745|namedEntities|347|354",
+   "identity": "R party",
+   "via": "R PARTY",
+   "matched": "R PARTY"
+  },
+  {
+   "postNum": 1745,
+   "key": "1745|namedEntities|365|371",
+   "identity": "Senate",
+   "via": "SENATE",
+   "matched": "SENATE"
+  },
+  {
+   "postNum": 1745,
+   "key": "1745|namedEntities|1079|1084",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 1746,
+   "key": "1746|namedEntities|273|281",
+   "identity": "Congress",
+   "via": "CONGRESS",
+   "matched": "CONGRESS"
+  },
+  {
+   "postNum": 1746,
+   "key": "1746|namedEntities|282|288",
+   "identity": "Senate",
+   "via": "SENATE",
+   "matched": "SENATE"
+  },
+  {
+   "postNum": 1764,
+   "key": "1764|namedEntities|276|283",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1764,
+   "key": "1764|namedEntities|326|333",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1764,
+   "key": "1764|namedEntities|382|389",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1764,
+   "key": "1764|namedEntities|445|452",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1764,
+   "key": "1764|namedEntities|318|325",
+   "identity": "Brennan",
+   "via": "BRENNAN",
+   "matched": "BRENNAN"
+  },
+  {
+   "postNum": 1764,
+   "key": "1764|namedEntities|368|375",
+   "identity": "Brennan",
+   "via": "BRENNAN",
+   "matched": "BRENNAN"
+  },
+  {
+   "postNum": 1764,
+   "key": "1764|namedEntities|424|431",
+   "identity": "Brennan",
+   "via": "BRENNAN",
+   "matched": "BRENNAN"
+  },
+  {
+   "postNum": 1764,
+   "key": "1764|namedEntities|376|381",
+   "identity": "Comey",
+   "via": "COMEY",
+   "matched": "COMEY"
+  },
+  {
+   "postNum": 1822,
+   "key": "1822|namedEntities|470|475",
+   "identity": "Putin",
+   "via": "PUTIN",
+   "matched": "PUTIN"
+  },
+  {
+   "postNum": 1833,
+   "key": "1833|namedEntities|117|122",
+   "identity": "Nunes",
+   "via": "NUNES",
+   "matched": "NUNES"
+  },
+  {
+   "postNum": 1850,
+   "key": "1850|namedEntities|241|248",
+   "identity": "NO NAME",
+   "via": "No Name",
+   "matched": "No Name"
+  },
+  {
+   "postNum": 1876,
+   "key": "1876|namedEntities|849|863",
+   "identity": "No Such Agency",
+   "via": "NO SUCH AGENCY",
+   "matched": "NO SUCH AGENCY"
+  },
+  {
+   "postNum": 1884,
+   "key": "1884|namedEntities|20|27",
+   "identity": "Epstein",
+   "via": "EPSTEIN",
+   "matched": "EPSTEIN"
+  },
+  {
+   "postNum": 1928,
+   "key": "1928|namedEntities|797|804",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1929,
+   "key": "1929|namedEntities|798|805",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1935,
+   "key": "1935|namedEntities|1137|1142",
+   "identity": "Flynn",
+   "via": "FLYNN",
+   "matched": "FLYNN"
+  },
+  {
+   "postNum": 1935,
+   "key": "1935|namedEntities|1008|1015",
+   "identity": "NO NAME",
+   "via": "No Name",
+   "matched": "No Name"
+  },
+  {
+   "postNum": 1944,
+   "key": "1944|namedEntities|835|842",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1948,
+   "key": "1948|namedEntities|167|174",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1948,
+   "key": "1948|namedEntities|293|300",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1948,
+   "key": "1948|namedEntities|335|342",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1948,
+   "key": "1948|namedEntities|724|731",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1948,
+   "key": "1948|namedEntities|756|763",
+   "identity": "Brennan",
+   "via": "BRENNAN",
+   "matched": "BRENNAN"
+  },
+  {
+   "postNum": 1974,
+   "key": "1974|namedEntities|906|911",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 1978,
+   "key": "1978|namedEntities|343|349",
+   "identity": "Weiner",
+   "via": "WEINER",
+   "matched": "WEINER"
+  },
+  {
+   "postNum": 1978,
+   "key": "1978|namedEntities|414|420",
+   "identity": "Weiner",
+   "via": "WEINER",
+   "matched": "WEINER"
+  },
+  {
+   "postNum": 1981,
+   "key": "1981|namedEntities|64|71",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1981,
+   "key": "1981|namedEntities|207|214",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1981,
+   "key": "1981|namedEntities|192|197",
+   "identity": "Flynn",
+   "via": "FLYNN",
+   "matched": "FLYNN"
+  },
+  {
+   "postNum": 1981,
+   "key": "1981|namedEntities|432|436",
+   "identity": "Awan",
+   "via": "AWAN",
+   "matched": "AWAN"
+  },
+  {
+   "postNum": 1990,
+   "key": "1990|namedEntities|189|196",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1990,
+   "key": "1990|namedEntities|249|256",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1990,
+   "key": "1990|namedEntities|309|316",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1990,
+   "key": "1990|namedEntities|369|376",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 1990,
+   "key": "1990|namedEntities|932|937",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2009,
+   "key": "2009|namedEntities|0|10",
+   "identity": "Snow White",
+   "via": "SNOW WHITE",
+   "matched": "SNOW WHITE"
+  },
+  {
+   "postNum": 2010,
+   "key": "2010|namedEntities|10|20",
+   "identity": "Snow White",
+   "via": "SNOW WHITE",
+   "matched": "SNOW WHITE"
+  },
+  {
+   "postNum": 2011,
+   "key": "2011|namedEntities|10|20",
+   "identity": "Snow White",
+   "via": "SNOW WHITE",
+   "matched": "SNOW WHITE"
+  },
+  {
+   "postNum": 2012,
+   "key": "2012|namedEntities|10|20",
+   "identity": "Snow White",
+   "via": "SNOW WHITE",
+   "matched": "SNOW WHITE"
+  },
+  {
+   "postNum": 2030,
+   "key": "2030|namedEntities|168|176",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2035,
+   "key": "2035|namedEntities|83|89",
+   "identity": "Senate",
+   "via": "SENATE",
+   "matched": "SENATE"
+  },
+  {
+   "postNum": 2039,
+   "key": "2039|namedEntities|117|124",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 2043,
+   "key": "2043|namedEntities|426|431",
+   "identity": "Flynn",
+   "via": "FLYNN",
+   "matched": "FLYNN"
+  },
+  {
+   "postNum": 2043,
+   "key": "2043|namedEntities|441|446",
+   "identity": "Flynn",
+   "via": "FLYNN",
+   "matched": "FLYNN"
+  },
+  {
+   "postNum": 2054,
+   "key": "2054|namedEntities|2317|2332",
+   "identity": "Donald J. Trump",
+   "via": "DONALD J. TRUMP",
+   "matched": "DONALD J. TRUMP"
+  },
+  {
+   "postNum": 2054,
+   "key": "2054|namedEntities|3109|3124",
+   "identity": "Donald J. Trump",
+   "via": "DONALD J. TRUMP",
+   "matched": "DONALD J. TRUMP"
+  },
+  {
+   "postNum": 2072,
+   "key": "2072|namedEntities|25|33",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2072,
+   "key": "2072|namedEntities|91|99",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2072,
+   "key": "2072|namedEntities|223|231",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2072,
+   "key": "2072|namedEntities|545|553",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2072,
+   "key": "2072|namedEntities|597|605",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2072,
+   "key": "2072|namedEntities|754|762",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2072,
+   "key": "2072|namedEntities|1099|1107",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2072,
+   "key": "2072|namedEntities|1219|1227",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2072,
+   "key": "2072|namedEntities|437|444",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 2072,
+   "key": "2072|namedEntities|452|457",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2072,
+   "key": "2072|namedEntities|536|541",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2072,
+   "key": "2072|namedEntities|608|613",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2072,
+   "key": "2072|namedEntities|770|775",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2072,
+   "key": "2072|namedEntities|1631|1636",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2107,
+   "key": "2107|namedEntities|644|651",
+   "identity": "Brennan",
+   "via": "BRENNAN",
+   "matched": "BRENNAN"
+  },
+  {
+   "postNum": 2129,
+   "key": "2129|namedEntities|275|282",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 2129,
+   "key": "2129|namedEntities|502|509",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 2129,
+   "key": "2129|namedEntities|749|756",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 2129,
+   "key": "2129|namedEntities|684|691",
+   "identity": "Brennan",
+   "via": "BRENNAN",
+   "matched": "BRENNAN"
+  },
+  {
+   "postNum": 2165,
+   "key": "2165|namedEntities|180|188",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2165,
+   "key": "2165|namedEntities|244|252",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2165,
+   "key": "2165|namedEntities|308|316",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2165,
+   "key": "2165|namedEntities|573|581",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2165,
+   "key": "2165|namedEntities|598|606",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2165,
+   "key": "2165|namedEntities|435|442",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 2165,
+   "key": "2165|namedEntities|193|198",
+   "identity": "Flynn",
+   "via": "FLYNN",
+   "matched": "FLYNN"
+  },
+  {
+   "postNum": 2180,
+   "key": "2180|namedEntities|174|181",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 2181,
+   "key": "2181|namedEntities|176|181",
+   "identity": "Nunes",
+   "via": "NUNES",
+   "matched": "NUNES"
+  },
+  {
+   "postNum": 2197,
+   "key": "2197|namedEntities|10|18",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2204,
+   "key": "2204|namedEntities|12|20",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2204,
+   "key": "2204|namedEntities|23|28",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2205,
+   "key": "2205|namedEntities|12|20",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2207,
+   "key": "2207|namedEntities|155|162",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 2211,
+   "key": "2211|namedEntities|2563|2571",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2211,
+   "key": "2211|namedEntities|2629|2637",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2211,
+   "key": "2211|namedEntities|2761|2769",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2211,
+   "key": "2211|namedEntities|3083|3091",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2211,
+   "key": "2211|namedEntities|3135|3143",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2211,
+   "key": "2211|namedEntities|3292|3300",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2211,
+   "key": "2211|namedEntities|3637|3645",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2211,
+   "key": "2211|namedEntities|3757|3765",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2211,
+   "key": "2211|namedEntities|2975|2982",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 2211,
+   "key": "2211|namedEntities|2181|2186",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2211,
+   "key": "2211|namedEntities|2990|2995",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2211,
+   "key": "2211|namedEntities|3074|3079",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2211,
+   "key": "2211|namedEntities|3146|3151",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2211,
+   "key": "2211|namedEntities|3308|3313",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2211,
+   "key": "2211|namedEntities|4169|4174",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2248,
+   "key": "2248|namedEntities|158|163",
+   "identity": "Nunes",
+   "via": "NUNES",
+   "matched": "NUNES"
+  },
+  {
+   "postNum": 2261,
+   "key": "2261|namedEntities|131|138",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 2261,
+   "key": "2261|namedEntities|200|207",
+   "identity": "Brennan",
+   "via": "BRENNAN",
+   "matched": "BRENNAN"
+  },
+  {
+   "postNum": 2261,
+   "key": "2261|namedEntities|81|86",
+   "identity": "Comey",
+   "via": "COMEY",
+   "matched": "COMEY"
+  },
+  {
+   "postNum": 2273,
+   "key": "2273|namedEntities|203|210",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 2273,
+   "key": "2273|namedEntities|513|519",
+   "identity": "McCabe",
+   "via": "MCCABE",
+   "matched": "MCCABE"
+  },
+  {
+   "postNum": 2275,
+   "key": "2275|namedEntities|93|100",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 236,
+   "key": "236|namedEntities|53|57",
+   "identity": "Huma",
+   "via": "HUMA",
+   "matched": "HUMA"
+  },
+  {
+   "postNum": 2361,
+   "key": "2361|namedEntities|57|64",
+   "identity": "D party",
+   "via": "D PARTY",
+   "matched": "D PARTY"
+  },
+  {
+   "postNum": 2378,
+   "key": "2378|namedEntities|949|956",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 2381,
+   "key": "2381|namedEntities|3776|3784",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2381,
+   "key": "2381|namedEntities|3948|3956",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2381,
+   "key": "2381|namedEntities|2757|2763",
+   "identity": "Senate",
+   "via": "SENATE",
+   "matched": "SENATE"
+  },
+  {
+   "postNum": 2381,
+   "key": "2381|namedEntities|3957|3963",
+   "identity": "Senate",
+   "via": "SENATE",
+   "matched": "SENATE"
+  },
+  {
+   "postNum": 2396,
+   "key": "2396|namedEntities|14|19",
+   "identity": "Putin",
+   "via": "PUTIN",
+   "matched": "PUTIN"
+  },
+  {
+   "postNum": 2397,
+   "key": "2397|namedEntities|284|292",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2397,
+   "key": "2397|namedEntities|888|894",
+   "identity": "Senate",
+   "via": "SENATE",
+   "matched": "SENATE"
+  },
+  {
+   "postNum": 2397,
+   "key": "2397|namedEntities|225|230",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2397,
+   "key": "2397|namedEntities|256|261",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2436,
+   "key": "2436|namedEntities|77|84",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 2436,
+   "key": "2436|namedEntities|1221|1228",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 2436,
+   "key": "2436|namedEntities|1446|1453",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 2436,
+   "key": "2436|namedEntities|1617|1624",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 2440,
+   "key": "2440|namedEntities|802|826",
+   "identity": "United States of America",
+   "via": "UNITED STATES OF AMERICA",
+   "matched": "UNITED STATES OF AMERICA"
+  },
+  {
+   "postNum": 2440,
+   "key": "2440|namedEntities|802|826",
+   "identity": "America",
+   "via": "UNITED STATES OF AMERICA",
+   "matched": "UNITED STATES OF AMERICA"
+  },
+  {
+   "postNum": 2440,
+   "key": "2440|namedEntities|802|826",
+   "identity": "America",
+   "via": "UNITED STATES OF AMERICA",
+   "matched": "UNITED STATES OF AMERICA"
+  },
+  {
+   "postNum": 2453,
+   "key": "2453|namedEntities|424|430",
+   "identity": "Senate",
+   "via": "SENATE",
+   "matched": "SENATE"
+  },
+  {
+   "postNum": 2462,
+   "key": "2462|namedEntities|1851|1858",
+   "identity": "D party",
+   "via": "D PARTY",
+   "matched": "D PARTY"
+  },
+  {
+   "postNum": 2462,
+   "key": "2462|namedEntities|243|249",
+   "identity": "Senate",
+   "via": "SENATE",
+   "matched": "SENATE"
+  },
+  {
+   "postNum": 2495,
+   "key": "2495|namedEntities|115|121",
+   "identity": "Senate",
+   "via": "SENATE",
+   "matched": "SENATE"
+  },
+  {
+   "postNum": 2500,
+   "key": "2500|namedEntities|41|48",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 2506,
+   "key": "2506|namedEntities|35|43",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2506,
+   "key": "2506|namedEntities|46|51",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2507,
+   "key": "2507|namedEntities|43|48",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2511,
+   "key": "2511|namedEntities|4|11",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 2524,
+   "key": "2524|namedEntities|152|157",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2525,
+   "key": "2525|namedEntities|229|234",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2548,
+   "key": "2548|namedEntities|1126|1132",
+   "identity": "Senate",
+   "via": "SENATE",
+   "matched": "SENATE"
+  },
+  {
+   "postNum": 2548,
+   "key": "2548|namedEntities|589|594",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2548,
+   "key": "2548|namedEntities|618|623",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2555,
+   "key": "2555|namedEntities|30|35",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2561,
+   "key": "2561|namedEntities|97|105",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2561,
+   "key": "2561|namedEntities|78|83",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2561,
+   "key": "2561|namedEntities|130|135",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2561,
+   "key": "2561|namedEntities|320|325",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2561,
+   "key": "2561|namedEntities|361|366",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2568,
+   "key": "2568|namedEntities|229|236",
+   "identity": "Brennan",
+   "via": "BRENNAN",
+   "matched": "BRENNAN"
+  },
+  {
+   "postNum": 2584,
+   "key": "2584|namedEntities|329|336",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 260,
+   "key": "260|namedEntities|39|44",
+   "identity": "Flynn",
+   "via": "FLYNN",
+   "matched": "FLYNN"
+  },
+  {
+   "postNum": 2601,
+   "key": "2601|namedEntities|255|260",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2603,
+   "key": "2603|namedEntities|73|81",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2604,
+   "key": "2604|namedEntities|53|61",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2604,
+   "key": "2604|namedEntities|515|521",
+   "identity": "Senate",
+   "via": "SENATE",
+   "matched": "SENATE"
+  },
+  {
+   "postNum": 2604,
+   "key": "2604|namedEntities|17|22",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2604,
+   "key": "2604|namedEntities|87|92",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2640,
+   "key": "2640|namedEntities|62|69",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 2640,
+   "key": "2640|namedEntities|104|111",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 2640,
+   "key": "2640|namedEntities|125|132",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 2640,
+   "key": "2640|namedEntities|379|386",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 2640,
+   "key": "2640|namedEntities|483|490",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 2640,
+   "key": "2640|namedEntities|600|607",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 2640,
+   "key": "2640|namedEntities|751|758",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 2643,
+   "key": "2643|namedEntities|505|513",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2643,
+   "key": "2643|namedEntities|552|560",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 2643,
+   "key": "2643|namedEntities|677|684",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 2643,
+   "key": "2643|namedEntities|746|753",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 2643,
+   "key": "2643|namedEntities|774|781",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 2657,
+   "key": "2657|namedEntities|1322|1329",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 2658,
+   "key": "2658|namedEntities|1651|1658",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 2658,
+   "key": "2658|namedEntities|1043|1049",
+   "identity": "Senate",
+   "via": "SENATE",
+   "matched": "SENATE"
+  },
+  {
+   "postNum": 2672,
+   "key": "2672|namedEntities|175|182",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 2676,
+   "key": "2676|namedEntities|742|747",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2686,
+   "key": "2686|namedEntities|991|997",
+   "identity": "McCabe",
+   "via": "MCCABE",
+   "matched": "MCCABE"
+  },
+  {
+   "postNum": 2691,
+   "key": "2691|namedEntities|297|304",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 2691,
+   "key": "2691|namedEntities|366|373",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 2691,
+   "key": "2691|namedEntities|434|441",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 2693,
+   "key": "2693|namedEntities|206|214",
+   "identity": "Congress",
+   "via": "CONGRESS",
+   "matched": "CONGRESS"
+  },
+  {
+   "postNum": 2693,
+   "key": "2693|namedEntities|215|221",
+   "identity": "Senate",
+   "via": "SENATE",
+   "matched": "SENATE"
+  },
+  {
+   "postNum": 2717,
+   "key": "2717|namedEntities|86|93",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 2717,
+   "key": "2717|namedEntities|105|109",
+   "identity": "Barr",
+   "via": "BARR",
+   "matched": "BARR"
+  },
+  {
+   "postNum": 2718,
+   "key": "2718|namedEntities|103|107",
+   "identity": "Barr",
+   "via": "BARR",
+   "matched": "BARR"
+  },
+  {
+   "postNum": 275,
+   "key": "275|namedEntities|77|82",
+   "identity": "Soros",
+   "via": "SOROS",
+   "matched": "SOROS"
+  },
+  {
+   "postNum": 2770,
+   "key": "2770|namedEntities|119|126",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 2770,
+   "key": "2770|namedEntities|224|231",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 2770,
+   "key": "2770|namedEntities|311|318",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 2770,
+   "key": "2770|namedEntities|397|404",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 2787,
+   "key": "2787|namedEntities|481|488",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 2807,
+   "key": "2807|namedEntities|1822|1846",
+   "identity": "United States of America",
+   "via": "UNITED STATES OF AMERICA",
+   "matched": "UNITED STATES OF AMERICA"
+  },
+  {
+   "postNum": 2838,
+   "key": "2838|namedEntities|136|140",
+   "identity": "Barr",
+   "via": "BARR",
+   "matched": "BARR"
+  },
+  {
+   "postNum": 2844,
+   "key": "2844|namedEntities|511|519",
+   "identity": "Hussein",
+   "via": "Renegade",
+   "matched": "Renegade"
+  },
+  {
+   "postNum": 2856,
+   "key": "2856|namedEntities|1573|1577",
+   "identity": "Barr",
+   "via": "BARR",
+   "matched": "BARR"
+  },
+  {
+   "postNum": 2878,
+   "key": "2878|namedEntities|92|99",
+   "identity": "Hillary",
+   "via": "HILLARY",
+   "matched": "HILLARY"
+  },
+  {
+   "postNum": 2883,
+   "key": "2883|namedEntities|398|405",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 2935,
+   "key": "2935|namedEntities|157|164",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 2936,
+   "key": "2936|namedEntities|42|47",
+   "identity": "Trump",
+   "via": "TRUMP",
+   "matched": "TRUMP"
+  },
+  {
+   "postNum": 2937,
+   "key": "2937|namedEntities|976|981",
+   "identity": "Huber",
+   "via": "HUBER",
+   "matched": "HUBER"
+  },
+  {
+   "postNum": 2937,
+   "key": "2937|namedEntities|1657|1661",
+   "identity": "Barr",
+   "via": "BARR",
+   "matched": "BARR"
+  },
+  {
+   "postNum": 2984,
+   "key": "2984|namedEntities|1783|1790",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 2984,
+   "key": "2984|namedEntities|1740|1747",
+   "identity": "Brennan",
+   "via": "BRENNAN",
+   "matched": "BRENNAN"
+  },
+  {
+   "postNum": 2984,
+   "key": "2984|namedEntities|1770|1776",
+   "identity": "Senate",
+   "via": "SENATE",
+   "matched": "SENATE"
+  },
+  {
+   "postNum": 2984,
+   "key": "2984|namedEntities|1830|1836",
+   "identity": "Senate",
+   "via": "SENATE",
+   "matched": "SENATE"
+  },
+  {
+   "postNum": 2989,
+   "key": "2989|namedEntities|952|976",
+   "identity": "United States of America",
+   "via": "UNITED STATES OF AMERICA",
+   "matched": "UNITED STATES OF AMERICA"
+  },
+  {
+   "postNum": 3004,
+   "key": "3004|namedEntities|63|71",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 3004,
+   "key": "3004|namedEntities|168|176",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 3024,
+   "key": "3024|namedEntities|130|137",
+   "identity": "Brennan",
+   "via": "BRENNAN",
+   "matched": "BRENNAN"
+  },
+  {
+   "postNum": 3024,
+   "key": "3024|namedEntities|387|394",
+   "identity": "Snowden",
+   "via": "SNOWDEN",
+   "matched": "SNOWDEN"
+  },
+  {
+   "postNum": 3028,
+   "key": "3028|namedEntities|226|234",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 3028,
+   "key": "3028|namedEntities|50|57",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 3028,
+   "key": "3028|namedEntities|93|100",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 3028,
+   "key": "3028|namedEntities|442|449",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 3028,
+   "key": "3028|namedEntities|918|925",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 3028,
+   "key": "3028|namedEntities|1237|1244",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 3028,
+   "key": "3028|namedEntities|1077|1083",
+   "identity": "Senate",
+   "via": "SENATE",
+   "matched": "SENATE"
+  },
+  {
+   "postNum": 3028,
+   "key": "3028|namedEntities|387|391",
+   "identity": "Barr",
+   "via": "BARR",
+   "matched": "BARR"
+  },
+  {
+   "postNum": 3028,
+   "key": "3028|namedEntities|460|464",
+   "identity": "Barr",
+   "via": "BARR",
+   "matched": "BARR"
+  },
+  {
+   "postNum": 3035,
+   "key": "3035|namedEntities|287|294",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 3036,
+   "key": "3036|namedEntities|290|298",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 3036,
+   "key": "3036|namedEntities|151|158",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 3036,
+   "key": "3036|namedEntities|457|461",
+   "identity": "Barr",
+   "via": "BARR",
+   "matched": "BARR"
+  },
+  {
+   "postNum": 3036,
+   "key": "3036|namedEntities|620|624",
+   "identity": "Barr",
+   "via": "BARR",
+   "matched": "BARR"
+  },
+  {
+   "postNum": 3059,
+   "key": "3059|namedEntities|3|7",
+   "identity": "Barr",
+   "via": "BARR",
+   "matched": "BARR"
+  },
+  {
+   "postNum": 3062,
+   "key": "3062|namedEntities|248|255",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 3115,
+   "key": "3115|namedEntities|1|8",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 3126,
+   "key": "3126|namedEntities|12|19",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 3177,
+   "key": "3177|namedEntities|151|158",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 3177,
+   "key": "3177|namedEntities|254|261",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 3177,
+   "key": "3177|namedEntities|100|104",
+   "identity": "Barr",
+   "via": "BARR",
+   "matched": "BARR"
+  },
+  {
+   "postNum": 3177,
+   "key": "3177|namedEntities|187|191",
+   "identity": "Barr",
+   "via": "BARR",
+   "matched": "BARR"
+  },
+  {
+   "postNum": 3178,
+   "key": "3178|namedEntities|114|122",
+   "identity": "Congress",
+   "via": "CONGRESS",
+   "matched": "CONGRESS"
+  },
+  {
+   "postNum": 3178,
+   "key": "3178|namedEntities|103|109",
+   "identity": "Senate",
+   "via": "SENATE",
+   "matched": "SENATE"
+  },
+  {
+   "postNum": 3243,
+   "key": "3243|namedEntities|106|113",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 3314,
+   "key": "3314|namedEntities|0|7",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 3324,
+   "key": "3324|namedEntities|115|122",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 3325,
+   "key": "3325|namedEntities|102|110",
+   "identity": "Hussein",
+   "via": "Renegade",
+   "matched": "Renegade"
+  },
+  {
+   "postNum": 3354,
+   "key": "3354|namedEntities|100|107",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 3372,
+   "key": "3372|namedEntities|0|5",
+   "identity": "Flynn",
+   "via": "FLYNN",
+   "matched": "FLYNN"
+  },
+  {
+   "postNum": 3388,
+   "key": "3388|namedEntities|95|100",
+   "identity": "Flynn",
+   "via": "FLYNN",
+   "matched": "FLYNN"
+  },
+  {
+   "postNum": 3390,
+   "key": "3390|namedEntities|92|97",
+   "identity": "Flynn",
+   "via": "FLYNN",
+   "matched": "FLYNN"
+  },
+  {
+   "postNum": 3424,
+   "key": "3424|namedEntities|1|8",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 3429,
+   "key": "3429|namedEntities|43|50",
+   "identity": "Epstein",
+   "via": "EPSTEIN",
+   "matched": "EPSTEIN"
+  },
+  {
+   "postNum": 3458,
+   "key": "3458|namedEntities|113|120",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 3458,
+   "key": "3458|namedEntities|137|144",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 3458,
+   "key": "3458|namedEntities|291|298",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 3458,
+   "key": "3458|namedEntities|549|556",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 3473,
+   "key": "3473|namedEntities|55|62",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 3473,
+   "key": "3473|namedEntities|377|384",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 3473,
+   "key": "3473|namedEntities|391|398",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 3473,
+   "key": "3473|namedEntities|428|435",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 3501,
+   "key": "3501|namedEntities|26|33",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 3501,
+   "key": "3501|namedEntities|444|451",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 3505,
+   "key": "3505|namedEntities|50|54",
+   "identity": "Barr",
+   "via": "BARR",
+   "matched": "BARR"
+  },
+  {
+   "postNum": 3530,
+   "key": "3530|namedEntities|110|117",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 3581,
+   "key": "3581|namedEntities|564|572",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 3588,
+   "key": "3588|namedEntities|430|438",
+   "identity": "WashPost",
+   "via": "WASHPOST",
+   "matched": "WASHPOST"
+  },
+  {
+   "postNum": 3668,
+   "key": "3668|namedEntities|134|138",
+   "identity": "Barr",
+   "via": "BARR",
+   "matched": "BARR"
+  },
+  {
+   "postNum": 3679,
+   "key": "3679|namedEntities|164|169",
+   "identity": "Nunes",
+   "via": "NUNES",
+   "matched": "NUNES"
+  },
+  {
+   "postNum": 3680,
+   "key": "3680|namedEntities|164|169",
+   "identity": "Nunes",
+   "via": "NUNES",
+   "matched": "NUNES"
+  },
+  {
+   "postNum": 3693,
+   "key": "3693|namedEntities|22|27",
+   "identity": "Flynn",
+   "via": "FLYNN",
+   "matched": "FLYNN"
+  },
+  {
+   "postNum": 3693,
+   "key": "3693|namedEntities|163|168",
+   "identity": "Flynn",
+   "via": "FLYNN",
+   "matched": "FLYNN"
+  },
+  {
+   "postNum": 372,
+   "key": "372|namedEntities|68|76",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 3721,
+   "key": "3721|namedEntities|3435|3459",
+   "identity": "United States of America",
+   "via": "UNITED STATES OF AMERICA",
+   "matched": "UNITED STATES OF AMERICA"
+  },
+  {
+   "postNum": 3742,
+   "key": "3742|namedEntities|64|70",
+   "identity": "Pelosi",
+   "via": "PELOSI",
+   "matched": "PELOSI"
+  },
+  {
+   "postNum": 3754,
+   "key": "3754|namedEntities|97|104",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 3754,
+   "key": "3754|namedEntities|149|156",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 3754,
+   "key": "3754|namedEntities|158|163",
+   "identity": "Biden",
+   "via": "BIDEN",
+   "matched": "BIDEN"
+  },
+  {
+   "postNum": 3790,
+   "key": "3790|namedEntities|148|155",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 3858,
+   "key": "3858|namedEntities|3435|3459",
+   "identity": "United States of America",
+   "via": "UNITED STATES OF AMERICA",
+   "matched": "UNITED STATES OF AMERICA"
+  },
+  {
+   "postNum": 3905,
+   "key": "3905|namedEntities|3772|3796",
+   "identity": "United States of America",
+   "via": "UNITED STATES OF AMERICA",
+   "matched": "UNITED STATES OF AMERICA"
+  },
+  {
+   "postNum": 3907,
+   "key": "3907|namedEntities|77|84",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 3907,
+   "key": "3907|namedEntities|1221|1228",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 3907,
+   "key": "3907|namedEntities|1446|1453",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 3907,
+   "key": "3907|namedEntities|1584|1591",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 3915,
+   "key": "3915|namedEntities|541|546",
+   "identity": "Biden",
+   "via": "BIDEN",
+   "matched": "BIDEN"
+  },
+  {
+   "postNum": 3915,
+   "key": "3915|namedEntities|574|579",
+   "identity": "Biden",
+   "via": "BIDEN",
+   "matched": "BIDEN"
+  },
+  {
+   "postNum": 3915,
+   "key": "3915|namedEntities|619|624",
+   "identity": "Biden",
+   "via": "BIDEN",
+   "matched": "BIDEN"
+  },
+  {
+   "postNum": 3915,
+   "key": "3915|namedEntities|662|667",
+   "identity": "Biden",
+   "via": "BIDEN",
+   "matched": "BIDEN"
+  },
+  {
+   "postNum": 3915,
+   "key": "3915|namedEntities|777|782",
+   "identity": "Biden",
+   "via": "BIDEN",
+   "matched": "BIDEN"
+  },
+  {
+   "postNum": 3990,
+   "key": "3990|namedEntities|95|100",
+   "identity": "Flynn",
+   "via": "FLYNN",
+   "matched": "FLYNN"
+  },
+  {
+   "postNum": 3992,
+   "key": "3992|namedEntities|263|269",
+   "identity": "Senate",
+   "via": "SENATE",
+   "matched": "SENATE"
+  },
+  {
+   "postNum": 3993,
+   "key": "3993|namedEntities|30|41",
+   "identity": "Schiff",
+   "via": "ADAM SCHIFF",
+   "matched": "ADAM SCHIFF"
+  },
+  {
+   "postNum": 3993,
+   "key": "3993|namedEntities|617|622",
+   "identity": "Nunes",
+   "via": "NUNES",
+   "matched": "NUNES"
+  },
+  {
+   "postNum": 3993,
+   "key": "3993|namedEntities|631|636",
+   "identity": "Nunes",
+   "via": "NUNES",
+   "matched": "NUNES"
+  },
+  {
+   "postNum": 4010,
+   "key": "4010|namedEntities|98|113",
+   "identity": "Donald J. Trump",
+   "via": "DONALD J. TRUMP",
+   "matched": "DONALD J. TRUMP"
+  },
+  {
+   "postNum": 4014,
+   "key": "4014|namedEntities|810|815",
+   "identity": "Flynn",
+   "via": "FLYNN",
+   "matched": "FLYNN"
+  },
+  {
+   "postNum": 4016,
+   "key": "4016|namedEntities|39|46",
+   "identity": "Brennan",
+   "via": "BRENNAN",
+   "matched": "BRENNAN"
+  },
+  {
+   "postNum": 4153,
+   "key": "4153|namedEntities|1893|1900",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 4153,
+   "key": "4153|namedEntities|1665|1672",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 4153,
+   "key": "4153|namedEntities|1736|1743",
+   "identity": "Mueller",
+   "via": "MUELLER",
+   "matched": "MUELLER"
+  },
+  {
+   "postNum": 4153,
+   "key": "4153|namedEntities|1887|1892",
+   "identity": "Soros",
+   "via": "SOROS",
+   "matched": "SOROS"
+  },
+  {
+   "postNum": 4153,
+   "key": "4153|namedEntities|464|471",
+   "identity": "No Name",
+   "via": "NO NAME",
+   "matched": "NO NAME"
+  },
+  {
+   "postNum": 4172,
+   "key": "4172|namedEntities|431|436",
+   "identity": "Biden",
+   "via": "BIDEN",
+   "matched": "BIDEN"
+  },
+  {
+   "postNum": 4226,
+   "key": "4226|namedEntities|441|446",
+   "identity": "Flynn",
+   "via": "FLYNN",
+   "matched": "FLYNN"
+  },
+  {
+   "postNum": 4231,
+   "key": "4231|namedEntities|111|116",
+   "identity": "Flynn",
+   "via": "FLYNN",
+   "matched": "FLYNN"
+  },
+  {
+   "postNum": 4245,
+   "key": "4245|namedEntities|825|830",
+   "identity": "Biden",
+   "via": "BIDEN",
+   "matched": "BIDEN"
+  },
+  {
+   "postNum": 4245,
+   "key": "4245|namedEntities|876|881",
+   "identity": "Biden",
+   "via": "BIDEN",
+   "matched": "BIDEN"
+  },
+  {
+   "postNum": 4293,
+   "key": "4293|namedEntities|705|711",
+   "identity": "Senate",
+   "via": "SENATE",
+   "matched": "SENATE"
+  },
+  {
+   "postNum": 4310,
+   "key": "4310|namedEntities|1876|1884",
+   "identity": "Congress",
+   "via": "CONGRESS",
+   "matched": "CONGRESS"
+  },
+  {
+   "postNum": 4310,
+   "key": "4310|namedEntities|1804|1810",
+   "identity": "Schiff",
+   "via": "SCHIFF",
+   "matched": "SCHIFF"
+  },
+  {
+   "postNum": 4310,
+   "key": "4310|namedEntities|2153|2159",
+   "identity": "Senate",
+   "via": "SENATE",
+   "matched": "SENATE"
+  },
+  {
+   "postNum": 436,
+   "key": "436|namedEntities|633|641",
+   "identity": "Congress",
+   "via": "CONGRESS",
+   "matched": "CONGRESS"
+  },
+  {
+   "postNum": 436,
+   "key": "436|namedEntities|60|67",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 436,
+   "key": "436|namedEntities|192|199",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 436,
+   "key": "436|namedEntities|451|458",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 4375,
+   "key": "4375|namedEntities|53|60",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 4387,
+   "key": "4387|namedEntities|42|49",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 4398,
+   "key": "4398|namedEntities|189|195",
+   "identity": "Pelosi",
+   "via": "PELOSI",
+   "matched": "PELOSI"
+  },
+  {
+   "postNum": 4398,
+   "key": "4398|namedEntities|209|215",
+   "identity": "Pelosi",
+   "via": "PELOSI",
+   "matched": "PELOSI"
+  },
+  {
+   "postNum": 4398,
+   "key": "4398|namedEntities|428|434",
+   "identity": "Pelosi",
+   "via": "PELOSI",
+   "matched": "PELOSI"
+  },
+  {
+   "postNum": 4398,
+   "key": "4398|namedEntities|454|460",
+   "identity": "Pelosi",
+   "via": "PELOSI",
+   "matched": "PELOSI"
+  },
+  {
+   "postNum": 4414,
+   "key": "4414|namedEntities|118|124",
+   "identity": "Pelosi",
+   "via": "PELOSI",
+   "matched": "PELOSI"
+  },
+  {
+   "postNum": 4457,
+   "key": "4457|namedEntities|137|143",
+   "identity": "Senate",
+   "via": "SENATE",
+   "matched": "SENATE"
+  },
+  {
+   "postNum": 4489,
+   "key": "4489|namedEntities|690|695",
+   "identity": "Biden",
+   "via": "BIDEN",
+   "matched": "BIDEN"
+  },
+  {
+   "postNum": 4489,
+   "key": "4489|namedEntities|1048|1053",
+   "identity": "Biden",
+   "via": "BIDEN",
+   "matched": "BIDEN"
+  },
+  {
+   "postNum": 4489,
+   "key": "4489|namedEntities|1140|1145",
+   "identity": "Biden",
+   "via": "BIDEN",
+   "matched": "BIDEN"
+  },
+  {
+   "postNum": 4535,
+   "key": "4535|namedEntities|4056|4080",
+   "identity": "United States of America",
+   "via": "UNITED STATES OF AMERICA",
+   "matched": "UNITED STATES OF AMERICA"
+  },
+  {
+   "postNum": 4627,
+   "key": "4627|namedEntities|744|751",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 4656,
+   "key": "4656|namedEntities|11|19",
+   "identity": "Renegade",
+   "via": "renegade",
+   "matched": "renegade"
+  },
+  {
+   "postNum": 466,
+   "key": "466|namedEntities|339|346",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 4773,
+   "key": "4773|namedEntities|169|177",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 4802,
+   "key": "4802|namedEntities|315|320",
+   "identity": "Biden",
+   "via": "BIDEN",
+   "matched": "BIDEN"
+  },
+  {
+   "postNum": 4802,
+   "key": "4802|namedEntities|333|338",
+   "identity": "Biden",
+   "via": "BIDEN",
+   "matched": "BIDEN"
+  },
+  {
+   "postNum": 4802,
+   "key": "4802|namedEntities|366|371",
+   "identity": "Biden",
+   "via": "BIDEN",
+   "matched": "BIDEN"
+  },
+  {
+   "postNum": 4802,
+   "key": "4802|namedEntities|482|487",
+   "identity": "Biden",
+   "via": "BIDEN",
+   "matched": "BIDEN"
+  },
+  {
+   "postNum": 4820,
+   "key": "4820|namedEntities|24|35",
+   "identity": "White House",
+   "via": "WHITE HOUSE",
+   "matched": "WHITE HOUSE"
+  },
+  {
+   "postNum": 4821,
+   "key": "4821|namedEntities|206|217",
+   "identity": "White House",
+   "via": "WHITE HOUSE",
+   "matched": "WHITE HOUSE"
+  },
+  {
+   "postNum": 4821,
+   "key": "4821|namedEntities|16|21",
+   "identity": "Biden",
+   "via": "BIDEN",
+   "matched": "BIDEN"
+  },
+  {
+   "postNum": 4822,
+   "key": "4822|namedEntities|212|223",
+   "identity": "White House",
+   "via": "WHITE HOUSE",
+   "matched": "WHITE HOUSE"
+  },
+  {
+   "postNum": 4822,
+   "key": "4822|namedEntities|16|21",
+   "identity": "Biden",
+   "via": "BIDEN",
+   "matched": "BIDEN"
+  },
+  {
+   "postNum": 4886,
+   "key": "4886|namedEntities|65|70",
+   "identity": "Biden",
+   "via": "BIDEN",
+   "matched": "BIDEN"
+  },
+  {
+   "postNum": 520,
+   "key": "520|namedEntities|188|202",
+   "identity": "No Such Agency",
+   "via": "NO SUCH AGENCY",
+   "matched": "NO SUCH AGENCY"
+  },
+  {
+   "postNum": 532,
+   "key": "532|namedEntities|330|337",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 532,
+   "key": "532|namedEntities|220|225",
+   "identity": "Soros",
+   "via": "SOROS",
+   "matched": "SOROS"
+  },
+  {
+   "postNum": 533,
+   "key": "533|namedEntities|397|421",
+   "identity": "United States of America",
+   "via": "UNITED STATES OF AMERICA",
+   "matched": "UNITED STATES OF AMERICA"
+  },
+  {
+   "postNum": 537,
+   "key": "537|namedEntities|268|282",
+   "identity": "No Such Agency",
+   "via": "NO SUCH AGENCY",
+   "matched": "NO SUCH AGENCY"
+  },
+  {
+   "postNum": 537,
+   "key": "537|namedEntities|6|14",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 577,
+   "key": "577|namedEntities|115|125",
+   "identity": "Snow White",
+   "via": "SNOW WHITE",
+   "matched": "SNOW WHITE"
+  },
+  {
+   "postNum": 603,
+   "key": "603|namedEntities|24|44",
+   "identity": "Barack Hussein Obama",
+   "via": "Barack HUSSEIN Obama",
+   "matched": "Barack HUSSEIN Obama"
+  },
+  {
+   "postNum": 609,
+   "key": "609|namedEntities|165|172",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 631,
+   "key": "631|namedEntities|69|76",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 68,
+   "key": "68|namedEntities|46|50",
+   "identity": "Huma",
+   "via": "HUMA",
+   "matched": "HUMA"
+  },
+  {
+   "postNum": 68,
+   "key": "68|namedEntities|52|56",
+   "identity": "Huma",
+   "via": "HUMA",
+   "matched": "HUMA"
+  },
+  {
+   "postNum": 68,
+   "key": "68|namedEntities|58|62",
+   "identity": "Huma",
+   "via": "HUMA",
+   "matched": "HUMA"
+  },
+  {
+   "postNum": 68,
+   "key": "68|namedEntities|73|77",
+   "identity": "Huma",
+   "via": "HUMA",
+   "matched": "HUMA"
+  },
+  {
+   "postNum": 68,
+   "key": "68|namedEntities|86|90",
+   "identity": "Huma",
+   "via": "HUMA",
+   "matched": "HUMA"
+  },
+  {
+   "postNum": 68,
+   "key": "68|namedEntities|132|136",
+   "identity": "Huma",
+   "via": "HUMA",
+   "matched": "HUMA"
+  },
+  {
+   "postNum": 68,
+   "key": "68|namedEntities|163|167",
+   "identity": "Huma",
+   "via": "HUMA",
+   "matched": "HUMA"
+  },
+  {
+   "postNum": 68,
+   "key": "68|namedEntities|201|205",
+   "identity": "Huma",
+   "via": "HUMA",
+   "matched": "HUMA"
+  },
+  {
+   "postNum": 68,
+   "key": "68|namedEntities|363|367",
+   "identity": "Huma",
+   "via": "HUMA",
+   "matched": "HUMA"
+  },
+  {
+   "postNum": 68,
+   "key": "68|namedEntities|376|380",
+   "identity": "Huma",
+   "via": "HUMA",
+   "matched": "HUMA"
+  },
+  {
+   "postNum": 71,
+   "key": "71|namedEntities|7|11",
+   "identity": "Huma",
+   "via": "HUMA",
+   "matched": "HUMA"
+  },
+  {
+   "postNum": 77,
+   "key": "77|namedEntities|21|25",
+   "identity": "Huma",
+   "via": "HUMA",
+   "matched": "HUMA"
+  },
+  {
+   "postNum": 778,
+   "key": "778|namedEntities|262|269",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 778,
+   "key": "778|namedEntities|203|207",
+   "identity": "Dems",
+   "via": "DEMS",
+   "matched": "DEMS"
+  },
+  {
+   "postNum": 778,
+   "key": "778|namedEntities|237|241",
+   "identity": "Dems",
+   "via": "DEMS",
+   "matched": "DEMS"
+  },
+  {
+   "postNum": 780,
+   "key": "780|namedEntities|1030|1036",
+   "identity": "Senate",
+   "via": "senate",
+   "matched": "senate"
+  },
+  {
+   "postNum": 787,
+   "key": "787|namedEntities|6|14",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 790,
+   "key": "790|namedEntities|1|8",
+   "identity": "Snowden",
+   "via": "SNOWDEN",
+   "matched": "SNOWDEN"
+  },
+  {
+   "postNum": 834,
+   "key": "834|namedEntities|241|249",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 834,
+   "key": "834|namedEntities|334|342",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 855,
+   "key": "855|namedEntities|344|351",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 855,
+   "key": "855|namedEntities|389|396",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 878,
+   "key": "878|namedEntities|13|21",
+   "identity": "Sessions",
+   "via": "SESSIONS",
+   "matched": "SESSIONS"
+  },
+  {
+   "postNum": 953,
+   "key": "953|namedEntities|317|324",
+   "identity": "America",
+   "via": "AMERICA",
+   "matched": "AMERICA"
+  },
+  {
+   "postNum": 953,
+   "key": "953|namedEntities|420|425",
+   "identity": "Trump",
+   "via": "TRUMP",
+   "matched": "TRUMP"
+  },
+  {
+   "postNum": 953,
+   "key": "953|namedEntities|335|340",
+   "identity": "Flynn",
+   "via": "FLYNN",
+   "matched": "FLYNN"
+  },
+  {
+   "postNum": 953,
+   "key": "953|namedEntities|264|269",
+   "identity": "Biden",
+   "via": "BIDEN",
+   "matched": "BIDEN"
+  },
+  {
+   "postNum": 964,
+   "key": "964|namedEntities|882|887",
+   "identity": "Biden",
+   "via": "BIDEN",
+   "matched": "BIDEN"
+  },
+  {
+   "postNum": 972,
+   "key": "972|namedEntities|655|662",
+   "identity": "Hussein",
+   "via": "HUSSEIN",
+   "matched": "HUSSEIN"
+  },
+  {
+   "postNum": 99,
+   "key": "99|namedEntities|65|69",
+   "identity": "Huma",
+   "via": "HUMA",
+   "matched": "HUMA"
+  }
+ ],
+ "changed": [],
+ "stillUnlocated": [
+  {
+   "postNum": 1010,
+   "identity": "The Fed"
+  },
+  {
+   "postNum": 1054,
+   "identity": "Ray Chandler"
+  },
+  {
+   "postNum": 1082,
+   "identity": "JFK Jr."
+  },
+  {
+   "postNum": 1086,
+   "identity": "NO NAME"
+  },
+  {
+   "postNum": 1092,
+   "identity": "NO NAME"
+  },
+  {
+   "postNum": 1094,
+   "identity": "US Senate"
+  },
+  {
+   "postNum": 1122,
+   "identity": "Wray"
+  },
+  {
+   "postNum": 1122,
+   "identity": "Kansas"
+  },
+  {
+   "postNum": 1122,
+   "identity": "Horowitz"
+  },
+  {
+   "postNum": 1129,
+   "identity": "Pompeo"
+  },
+  {
+   "postNum": 1138,
+   "identity": "Ray Chandler"
+  },
+  {
+   "postNum": 1203,
+   "identity": "Standard Hotel"
+  },
+  {
+   "postNum": 1211,
+   "identity": "Agnes Nixon"
+  },
+  {
+   "postNum": 1217,
+   "identity": "WikiLeaks"
+  },
+  {
+   "postNum": 1217,
+   "identity": "Podesta"
+  },
+  {
+   "postNum": 1220,
+   "identity": "WikiLeaks"
+  },
+  {
+   "postNum": 1220,
+   "identity": "Podesta"
+  },
+  {
+   "postNum": 1221,
+   "identity": "WikiLeaks"
+  },
+  {
+   "postNum": 1235,
+   "identity": "NO NAME"
+  },
+  {
+   "postNum": 1253,
+   "identity": "Grassley"
+  },
+  {
+   "postNum": 1286,
+   "identity": "Rudy"
+  },
+  {
+   "postNum": 1305,
+   "identity": "NO NAME"
+  },
+  {
+   "postNum": 1341,
+   "identity": "Alex Jones"
+  },
+  {
+   "postNum": 1359,
+   "identity": "France"
+  },
+  {
+   "postNum": 1493,
+   "identity": "God"
+  },
+  {
+   "postNum": 1555,
+   "identity": "NO NAME"
+  },
+  {
+   "postNum": 1602,
+   "identity": "God"
+  },
+  {
+   "postNum": 1603,
+   "identity": "God"
+  },
+  {
+   "postNum": 1646,
+   "identity": "Hitler"
+  },
+  {
+   "postNum": 1646,
+   "identity": "God"
+  },
+  {
+   "postNum": 1702,
+   "identity": "Kansas"
+  },
+  {
+   "postNum": 1706,
+   "identity": "NO NAME"
+  },
+  {
+   "postNum": 1745,
+   "identity": "US Intel"
+  },
+  {
+   "postNum": 1746,
+   "identity": "Nazi Germany"
+  },
+  {
+   "postNum": 1764,
+   "identity": "Clapper"
+  },
+  {
+   "postNum": 1764,
+   "identity": "Rice"
+  },
+  {
+   "postNum": 1822,
+   "identity": "Watergate"
+  },
+  {
+   "postNum": 1832,
+   "identity": "Washington"
+  },
+  {
+   "postNum": 1862,
+   "identity": "Wray"
+  },
+  {
+   "postNum": 1863,
+   "identity": "Sean Hannity"
+  },
+  {
+   "postNum": 1863,
+   "identity": "Roseanne Barr"
+  },
+  {
+   "postNum": 1879,
+   "identity": "God"
+  },
+  {
+   "postNum": 1884,
+   "identity": "Epstein Island"
+  },
+  {
+   "postNum": 1884,
+   "identity": "Cuba"
+  },
+  {
+   "postNum": 1884,
+   "identity": "Sudan"
+  },
+  {
+   "postNum": 1884,
+   "identity": "Syria"
+  },
+  {
+   "postNum": 1884,
+   "identity": "Yemen"
+  },
+  {
+   "postNum": 1884,
+   "identity": "Libya"
+  },
+  {
+   "postNum": 19,
+   "identity": "Maxine Waters"
+  },
+  {
+   "postNum": 1910,
+   "identity": "INSCOM"
+  },
+  {
+   "postNum": 1961,
+   "identity": "God"
+  },
+  {
+   "postNum": 197,
+   "identity": "God"
+  },
+  {
+   "postNum": 1972,
+   "identity": "Watergate"
+  },
+  {
+   "postNum": 1983,
+   "identity": "CrowdStrike"
+  },
+  {
+   "postNum": 2007,
+   "identity": "Speaker of the House"
+  },
+  {
+   "postNum": 2029,
+   "identity": "New York Post"
+  },
+  {
+   "postNum": 2029,
+   "identity": "Vice News"
+  },
+  {
+   "postNum": 2035,
+   "identity": "House"
+  },
+  {
+   "postNum": 2039,
+   "identity": "God"
+  },
+  {
+   "postNum": 2040,
+   "identity": "Judicial Watch"
+  },
+  {
+   "postNum": 2040,
+   "identity": "Carter Page"
+  },
+  {
+   "postNum": 2058,
+   "identity": "Ezra Cohen-Watnick"
+  },
+  {
+   "postNum": 2061,
+   "identity": "23andMe"
+  },
+  {
+   "postNum": 2061,
+   "identity": "Moscow"
+  },
+  {
+   "postNum": 2072,
+   "identity": "Speaker of the House"
+  },
+  {
+   "postNum": 2076,
+   "identity": "State Department OIG"
+  },
+  {
+   "postNum": 2107,
+   "identity": "Weissmann"
+  },
+  {
+   "postNum": 2129,
+   "identity": "Clapper"
+  },
+  {
+   "postNum": 2136,
+   "identity": "CBN News"
+  },
+  {
+   "postNum": 2136,
+   "identity": "The Independent"
+  },
+  {
+   "postNum": 2150,
+   "identity": "Patriot Day"
+  },
+  {
+   "postNum": 2181,
+   "identity": "House Intelligence"
+  },
+  {
+   "postNum": 2203,
+   "identity": "Lynch"
+  },
+  {
+   "postNum": 2206,
+   "identity": "Wired"
+  },
+  {
+   "postNum": 2211,
+   "identity": "Speaker of the House"
+  },
+  {
+   "postNum": 2274,
+   "identity": "Grassley"
+  },
+  {
+   "postNum": 2277,
+   "identity": "Feinstein"
+  },
+  {
+   "postNum": 2281,
+   "identity": "Feinstein"
+  },
+  {
+   "postNum": 2281,
+   "identity": "Murkowski"
+  },
+  {
+   "postNum": 2326,
+   "identity": "Baker"
+  },
+  {
+   "postNum": 2335,
+   "identity": "People's Liberation Army"
+  },
+  {
+   "postNum": 2345,
+   "identity": "Feinstein"
+  },
+  {
+   "postNum": 2345,
+   "identity": "Murkowski"
+  },
+  {
+   "postNum": 2353,
+   "identity": "Democrat Party"
+  },
+  {
+   "postNum": 2356,
+   "identity": "Justice K"
+  },
+  {
+   "postNum": 2390,
+   "identity": "House of Cards"
+  },
+  {
+   "postNum": 2401,
+   "identity": "Amazon"
+  },
+  {
+   "postNum": 2445,
+   "identity": "Grassley"
+  },
+  {
+   "postNum": 2492,
+   "identity": "Arizona"
+  },
+  {
+   "postNum": 2495,
+   "identity": "Whitaker"
+  },
+  {
+   "postNum": 2499,
+   "identity": "House of Cards"
+  },
+  {
+   "postNum": 2501,
+   "identity": "Whitaker"
+  },
+  {
+   "postNum": 2501,
+   "identity": "President"
+  },
+  {
+   "postNum": 2523,
+   "identity": "Kavanaugh"
+  },
+  {
+   "postNum": 2523,
+   "identity": "God"
+  },
+  {
+   "postNum": 2555,
+   "identity": "Whitaker"
+  },
+  {
+   "postNum": 2555,
+   "identity": "Horowitz"
+  },
+  {
+   "postNum": 2555,
+   "identity": "Wray"
+  },
+  {
+   "postNum": 2559,
+   "identity": "God"
+  },
+  {
+   "postNum": 2569,
+   "identity": "Freedom Caucus"
+  },
+  {
+   "postNum": 2576,
+   "identity": "Samantha Power"
+  },
+  {
+   "postNum": 2596,
+   "identity": "Merkel"
+  },
+  {
+   "postNum": 2600,
+   "identity": "Sara Carter"
+  },
+  {
+   "postNum": 2633,
+   "identity": "US Senate"
+  },
+  {
+   "postNum": 2657,
+   "identity": "Venezuela"
+  },
+  {
+   "postNum": 2657,
+   "identity": "Ecuador"
+  },
+  {
+   "postNum": 2658,
+   "identity": "Syria"
+  },
+  {
+   "postNum": 2673,
+   "identity": "Charlie Kirk"
+  },
+  {
+   "postNum": 2730,
+   "identity": "God"
+  },
+  {
+   "postNum": 2766,
+   "identity": "Whitaker"
+  },
+  {
+   "postNum": 2768,
+   "identity": "Kamala Harris"
+  },
+  {
+   "postNum": 2768,
+   "identity": "Jussie Smollett"
+  },
+  {
+   "postNum": 2782,
+   "identity": "Gavin Newsom"
+  },
+  {
+   "postNum": 2788,
+   "identity": "God"
+  },
+  {
+   "postNum": 2807,
+   "identity": "God"
+  },
+  {
+   "postNum": 2841,
+   "identity": "Ann Coulter"
+  },
+  {
+   "postNum": 2849,
+   "identity": "Smollett"
+  },
+  {
+   "postNum": 285,
+   "identity": "Freedom Caucus"
+  },
+  {
+   "postNum": 2850,
+   "identity": "Liberals"
+  },
+  {
+   "postNum": 2955,
+   "identity": "Whitaker"
+  },
+  {
+   "postNum": 2984,
+   "identity": "Building 8"
+  },
+  {
+   "postNum": 2984,
+   "identity": "Xbox"
+  },
+  {
+   "postNum": 2984,
+   "identity": "Amazon"
+  },
+  {
+   "postNum": 2989,
+   "identity": "Ivy League"
+  },
+  {
+   "postNum": 3006,
+   "identity": "US Senate"
+  },
+  {
+   "postNum": 3007,
+   "identity": "Sara Carter"
+  },
+  {
+   "postNum": 3012,
+   "identity": "George Papa"
+  },
+  {
+   "postNum": 3015,
+   "identity": "Scaramucci"
+  },
+  {
+   "postNum": 3022,
+   "identity": "Gina"
+  },
+  {
+   "postNum": 3023,
+   "identity": "John Perry Barlow"
+  },
+  {
+   "postNum": 3024,
+   "identity": "Gina"
+  },
+  {
+   "postNum": 3028,
+   "identity": "Whitaker"
+  },
+  {
+   "postNum": 3036,
+   "identity": "Whitaker"
+  },
+  {
+   "postNum": 3059,
+   "identity": "AG Barr"
+  },
+  {
+   "postNum": 3059,
+   "identity": "Federal Agencies"
+  },
+  {
+   "postNum": 3063,
+   "identity": "Gang of Eight"
+  },
+  {
+   "postNum": 3134,
+   "identity": "Rachel Chandler"
+  },
+  {
+   "postNum": 3155,
+   "identity": "Rachel Chandler"
+  },
+  {
+   "postNum": 3158,
+   "identity": "Rachel Chandler"
+  },
+  {
+   "postNum": 3159,
+   "identity": "Paris Hilton"
+  },
+  {
+   "postNum": 3179,
+   "identity": "Sean Hannity"
+  },
+  {
+   "postNum": 3180,
+   "identity": "President of the United States"
+  },
+  {
+   "postNum": 3241,
+   "identity": "Gang of 8"
+  },
+  {
+   "postNum": 3312,
+   "identity": "Media Matters"
+  },
+  {
+   "postNum": 3313,
+   "identity": "Sara Carter"
+  },
+  {
+   "postNum": 3316,
+   "identity": "Mueller Report"
+  },
+  {
+   "postNum": 333,
+   "identity": "God"
+  },
+  {
+   "postNum": 3330,
+   "identity": "Pence"
+  },
+  {
+   "postNum": 3352,
+   "identity": "God"
+  },
+  {
+   "postNum": 3354,
+   "identity": "God"
+  },
+  {
+   "postNum": 3432,
+   "identity": "God"
+  },
+  {
+   "postNum": 3608,
+   "identity": "Washington"
+  },
+  {
+   "postNum": 3625,
+   "identity": "Hunter"
+  },
+  {
+   "postNum": 3647,
+   "identity": "US Senate"
+  },
+  {
+   "postNum": 3690,
+   "identity": "Gang of 8"
+  },
+  {
+   "postNum": 372,
+   "identity": "House of Cards"
+  },
+  {
+   "postNum": 3824,
+   "identity": "Michael Beatty"
+  },
+  {
+   "postNum": 3841,
+   "identity": "CrowdStrike"
+  },
+  {
+   "postNum": 3900,
+   "identity": "President"
+  },
+  {
+   "postNum": 3915,
+   "identity": "Sanders"
+  },
+  {
+   "postNum": 3990,
+   "identity": "Papadopoulos"
+  },
+  {
+   "postNum": 3990,
+   "identity": "Manafort"
+  },
+  {
+   "postNum": 3990,
+   "identity": "Crowdstrike"
+  },
+  {
+   "postNum": 3992,
+   "identity": "Midterm Elections"
+  },
+  {
+   "postNum": 3993,
+   "identity": "Gang of Eight"
+  },
+  {
+   "postNum": 4063,
+   "identity": "God"
+  },
+  {
+   "postNum": 4232,
+   "identity": "Kislyak"
+  },
+  {
+   "postNum": 4238,
+   "identity": "Dan Coats"
+  },
+  {
+   "postNum": 4241,
+   "identity": "Graham"
+  },
+  {
+   "postNum": 4241,
+   "identity": "Politico"
+  },
+  {
+   "postNum": 4247,
+   "identity": "USNS Comfort"
+  },
+  {
+   "postNum": 4310,
+   "identity": "Seattle"
+  },
+  {
+   "postNum": 4312,
+   "identity": "Cambridge Dictionary"
+  },
+  {
+   "postNum": 433,
+   "identity": "Wray"
+  },
+  {
+   "postNum": 4339,
+   "identity": "Michigan"
+  },
+  {
+   "postNum": 4340,
+   "identity": "New York Post"
+  },
+  {
+   "postNum": 4352,
+   "identity": "House Republicans"
+  },
+  {
+   "postNum": 4387,
+   "identity": "God"
+  },
+  {
+   "postNum": 4401,
+   "identity": "Google Trends"
+  },
+  {
+   "postNum": 4413,
+   "identity": "God"
+  },
+  {
+   "postNum": 445,
+   "identity": "CrowdStrike"
+  },
+  {
+   "postNum": 4461,
+   "identity": "God"
+  },
+  {
+   "postNum": 4468,
+   "identity": "Daily Beast"
+  },
+  {
+   "postNum": 4492,
+   "identity": "Yale Medicine"
+  },
+  {
+   "postNum": 4492,
+   "identity": "US Navy"
+  },
+  {
+   "postNum": 4521,
+   "identity": "2020 Presidential Election"
+  },
+  {
+   "postNum": 4526,
+   "identity": "The Guardian"
+  },
+  {
+   "postNum": 4545,
+   "identity": "United Nations"
+  },
+  {
+   "postNum": 4559,
+   "identity": "God"
+  },
+  {
+   "postNum": 4592,
+   "identity": "Democrat Party"
+  },
+  {
+   "postNum": 4630,
+   "identity": "Harold Moody Jr"
+  },
+  {
+   "postNum": 4641,
+   "identity": "God"
+  },
+  {
+   "postNum": 48,
+   "identity": "Canada"
+  },
+  {
+   "postNum": 480,
+   "identity": "Loop Capital"
+  },
+  {
+   "postNum": 481,
+   "identity": "God"
+  },
+  {
+   "postNum": 4821,
+   "identity": "Hunter"
+  },
+  {
+   "postNum": 4822,
+   "identity": "Hunter"
+  },
+  {
+   "postNum": 4830,
+   "identity": "United States Senator"
+  },
+  {
+   "postNum": 4885,
+   "identity": "Jeet Heer"
+  },
+  {
+   "postNum": 4885,
+   "identity": "Erin Nanoki"
+  },
+  {
+   "postNum": 501,
+   "identity": "God"
+  },
+  {
+   "postNum": 520,
+   "identity": "God"
+  },
+  {
+   "postNum": 524,
+   "identity": "Loop Capital"
+  },
+  {
+   "postNum": 524,
+   "identity": "Banco de Mexico"
+  },
+  {
+   "postNum": 533,
+   "identity": "God"
+  },
+  {
+   "postNum": 56,
+   "identity": "International Islamic Council for Da'wa and Relief"
+  },
+  {
+   "postNum": 563,
+   "identity": "God"
+  },
+  {
+   "postNum": 599,
+   "identity": "God"
+  },
+  {
+   "postNum": 603,
+   "identity": "God"
+  },
+  {
+   "postNum": 746,
+   "identity": "Mike Wallace"
+  },
+  {
+   "postNum": 767,
+   "identity": "God"
+  },
+  {
+   "postNum": 770,
+   "identity": "Aaron Swartz"
+  },
+  {
+   "postNum": 778,
+   "identity": "God"
+  },
+  {
+   "postNum": 785,
+   "identity": "London"
+  },
+  {
+   "postNum": 785,
+   "identity": "Delta"
+  },
+  {
+   "postNum": 787,
+   "identity": "Wray"
+  },
+  {
+   "postNum": 790,
+   "identity": "John Perry Barlow"
+  },
+  {
+   "postNum": 793,
+   "identity": "God"
+  },
+  {
+   "postNum": 795,
+   "identity": "God"
+  },
+  {
+   "postNum": 796,
+   "identity": "God"
+  },
+  {
+   "postNum": 837,
+   "identity": "God"
+  },
+  {
+   "postNum": 857,
+   "identity": "Reuters"
+  },
+  {
+   "postNum": 866,
+   "identity": "WikiLeaks"
+  },
+  {
+   "postNum": 867,
+   "identity": "WikiLeaks"
+  },
+  {
+   "postNum": 889,
+   "identity": "Forbidden City"
+  },
+  {
+   "postNum": 917,
+   "identity": "God"
+  },
+  {
+   "postNum": 950,
+   "identity": "Kansas"
+  },
+  {
+   "postNum": 960,
+   "identity": "Comedy Central"
+  },
+  {
+   "postNum": 964,
+   "identity": "Amazon"
+  },
+  {
+   "postNum": 964,
+   "identity": "Syria"
+  },
+  {
+   "postNum": 972,
+   "identity": "Amazon"
+  },
+  {
+   "postNum": 988,
+   "identity": "Awan"
+  }
+ ]
+}

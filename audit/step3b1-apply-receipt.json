@@ -2,7 +2,7 @@
  "note": "Step 3B-1 apply receipt. Measured from the bundle, not from the plan.",
  "step": "3B-1",
  "planSha256": "373ca06b1416b6707a111f2c3da8e751472c551f739500f76cdcc764d3128058",
- "actionsApplied": 1,
+ "actionsApplied": 538,
  "actionsHeld": 2,
  "heldActionIds": [
   "A-DUP-2971-questions-561-799",
@@ -10,10 +10,10 @@
  ],
  "seedVersion": 86,
  "outputs": {
-  "public/data/posts.json": "7d3a90618c0619cb19585bc866520e1517e48fa78a337043d232ca3a159aaca9",
+  "public/data/posts.json": "b71ca4783093ca22bff0c6d9077d3a7e2a0913cea493058e98d234d2ca8cca73",
   "public/data/questions.json": "241dc211bf435d8522b34cdcc9f3ac8b832e06f80df346ddcb87d8ea3ee12b2f",
-  "public/data/semantics.json": "c1efb53d7c43fa55932a2e04d4a07c4f3f8991d4c36f8f4216009eceb951cb51",
-  "audit/occurrence-ledger.json": "938f7143a30164959d49c89fa603af17e6faf833b666f2b3810d18c80ecafe8d"
+  "public/data/semantics.json": "373b1494a78a28d3f6d06d00638c2c18ca7bb3ddc56af23c5f30156642de1d2f",
+  "audit/occurrence-ledger.json": "3ea66e5a782deb1e9c06b1a13bd3cb7a4fe9735dc373172f6c5a475ead3c698e"
  },
  "crossTab": [
   {
@@ -324,7 +324,7 @@
   {
    "gate": "zero runtime substring mismatch in the ledger",
    "pass": true,
-   "detail": "34,667 records verified"
+   "detail": "35,076 records verified"
   },
   {
    "gate": "zero same-sentence multi-primary inside the applied scope",
@@ -349,7 +349,7 @@
   {
    "gate": "metadata transfer recorded for every withdrawn record",
    "pass": true,
-   "detail": "594 transfers, 199 carrying certified attributes, 4 meta keys re-pointed to a widened span"
+   "detail": "596 transfers, 199 carrying certified attributes, 4 meta keys re-pointed to a widened span"
   },
   {
    "gate": "question_directive relationship preserved on every unified pair",

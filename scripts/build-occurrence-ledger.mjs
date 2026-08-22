@@ -21,6 +21,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { sentencesFor, occurrencesOfSpan } from './lib/sentenceLedger.mjs'
 import { runtimeText } from './lib/runtimeText.mjs'
+import { buildEntityForms } from './lib/entityForms.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -47,12 +48,14 @@ const LAYER = {
 // registry doing its job. The renderer resolves them through getFullAliasGroup(); the ledger
 // resolves them through the same registry so an entity's real OFFSETS are known and 3B can
 // preserve them exactly where they sit.
+//
+// THE MAP USED TO BE KEYED BY CANONICAL, AND THAT IS WHY 412 OF THEM WERE "UNPLACEABLE".
+// namedEntities stores the identity the section recorded, which is often an ALIAS — "Hussein" is
+// an alias of "Barack Obama", "Sessions" of "Jeff Sessions". A canonical-keyed map has no key for
+// those, so this fallback could never fire and the drop's own "HUSSEIN" was never found. The
+// lookup is shared now: lib/entityForms.mjs, group-aware, still exact-case.
 const entitiesDoc = JSON.parse(fs.readFileSync(path.join(DATA, 'entities.json'), 'utf8'))
-const aliasesOf = new Map()
-for (const e of entitiesDoc.entities ?? []) {
-  const forms = [e.canonical, ...(e.aliases ?? []).map(a => a.text)].filter(Boolean)
-  aliasesOf.set(String(e.canonical).toLowerCase(), [...new Set(forms)])
-}
+const entityForms = buildEntityForms(entitiesDoc)
 
 const qByPost = new Map()
 for (const q of questions) {
@@ -114,8 +117,7 @@ for (const p of posts) {
     // An entity that does not appear under its canonical name is located under whichever registered
     // spelling the drop actually uses. Longest form first, so "US Military" wins over "US".
     if (!hits.length && kind === 'namedEntities') {
-      const forms = (aliasesOf.get(text.toLowerCase()) ?? []).slice().sort((a, b) => b.length - a.length)
-      for (const f of forms) {
+      for (const f of entityForms.formsFor(text)) {
         const h = occurrencesOfSpan(p.text, f)
         if (h.length) { hits = h; break }
       }

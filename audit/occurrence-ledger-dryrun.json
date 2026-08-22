@@ -9,24 +9,24 @@
  },
  "totals": {
   "sentences": 30187,
-  "occurrencesKeyed": 34667,
-  "duplicateKeys": 44,
+  "occurrencesKeyed": 35076,
+  "duplicateKeys": 51,
   "byKind": {
    "claims": 8814,
    "predictions": 843,
    "directives": 2940,
-   "namedEntities": 8235,
+   "namedEntities": 8644,
    "themeAnchors": 1682,
    "questions": 6324,
    "context": 1607,
    "emphasis": 4222
   },
   "byRelation": {
-   "EXACT": 22225,
-   "PARTIAL": 12200,
+   "EXACT": 22228,
+   "PARTIAL": 12606,
    "CROSSING": 242
   },
-  "unlocated": 645,
+  "unlocated": 234,
   "crossingSentenceBoundary": 242
  },
  "findings": {
@@ -51,12 +51,12 @@
    }
   },
   "sameCategoryOverlaps": {
-   "total": 616,
+   "total": 625,
    "inPrimaryLayer": 18,
-   "deliberateInlineOrReview": 598,
+   "deliberateInlineOrReview": 607,
    "byKind": {
     "context": 6,
-    "namedEntities": 216,
+    "namedEntities": 225,
     "emphasis": 371,
     "themeAnchors": 5,
     "claims": 18
@@ -68,7 +68,7 @@
    "note": "A Context/Emphasis span on exactly the characters of a primary span. Becomes a reviewDisposition, not a second category."
   },
   "unlocatedSpans": {
-   "count": 645,
+   "count": 234,
    "note": "A certified span the ledger could not place in the runtime body. Each is a conflict-queue row, never a silent drop."
   }
  },
@@ -4682,6 +4682,16 @@
    "identicalText": true
   },
   {
+   "occurrenceKey": "1235|namedEntities|151|155",
+   "postNum": 1235,
+   "kind": "namedEntities",
+   "start": 151,
+   "end": 155,
+   "textA": "AWAN",
+   "textB": "AWAN",
+   "identicalText": true
+  },
+  {
    "occurrenceKey": "1445|namedEntities|123|125",
    "postNum": 1445,
    "kind": "namedEntities",
@@ -4692,6 +4702,16 @@
    "identicalText": true
   },
   {
+   "occurrenceKey": "1483|namedEntities|94|98",
+   "postNum": 1483,
+   "kind": "namedEntities",
+   "start": 94,
+   "end": 98,
+   "textA": "RYAN",
+   "textB": "RYAN",
+   "identicalText": true
+  },
+  {
    "occurrenceKey": "1556|namedEntities|195|202",
    "postNum": 1556,
    "kind": "namedEntities",
@@ -4699,6 +4719,16 @@
    "end": 202,
    "textA": "Clinton",
    "textB": "Clinton",
+   "identicalText": true
+  },
+  {
+   "occurrenceKey": "1745|namedEntities|986|1010",
+   "postNum": 1745,
+   "kind": "namedEntities",
+   "start": 986,
+   "end": 1010,
+   "textA": "UNITED STATES OF AMERICA",
+   "textB": "UNITED STATES OF AMERICA",
    "identicalText": true
   },
   {
@@ -4752,6 +4782,16 @@
    "identicalText": true
   },
   {
+   "occurrenceKey": "1981|namedEntities|432|436",
+   "postNum": 1981,
+   "kind": "namedEntities",
+   "start": 432,
+   "end": 436,
+   "textA": "AWAN",
+   "textB": "AWAN",
+   "identicalText": true
+  },
+  {
    "occurrenceKey": "2037|namedEntities|657|659",
    "postNum": 2037,
    "kind": "namedEntities",
@@ -4769,6 +4809,26 @@
    "end": 451,
    "textA": "SC",
    "textB": "SC",
+   "identicalText": true
+  },
+  {
+   "occurrenceKey": "2440|namedEntities|802|826",
+   "postNum": 2440,
+   "kind": "namedEntities",
+   "start": 802,
+   "end": 826,
+   "textA": "UNITED STATES OF AMERICA",
+   "textB": "UNITED STATES OF AMERICA",
+   "identicalText": true
+  },
+  {
+   "occurrenceKey": "2440|namedEntities|802|826",
+   "postNum": 2440,
+   "kind": "namedEntities",
+   "start": 802,
+   "end": 826,
+   "textA": "UNITED STATES OF AMERICA",
+   "textB": "UNITED STATES OF AMERICA",
    "identicalText": true
   },
   {
@@ -4969,6 +5029,16 @@
    "end": 457,
    "textA": "University of Technology",
    "textB": "University of Technology",
+   "identicalText": true
+  },
+  {
+   "occurrenceKey": "3993|namedEntities|30|41",
+   "postNum": 3993,
+   "kind": "namedEntities",
+   "start": 30,
+   "end": 41,
+   "textA": "ADAM SCHIFF",
+   "textB": "ADAM SCHIFF",
    "identicalText": true
   },
   {
@@ -7938,6 +8008,16 @@
    "b": "Compare/contrast SOCIALISM push."
   },
   {
+   "sentenceId": "p1745-s002",
+   "postNum": 1745,
+   "kind": "namedEntities",
+   "layer": "inline",
+   "nested": true,
+   "deliberate": true,
+   "a": "HUSSEIN",
+   "b": "US"
+  },
+  {
    "sentenceId": "p1750-s003",
    "postNum": 1750,
    "kind": "emphasis",
@@ -8138,6 +8218,16 @@
    "b": "Putin"
   },
   {
+   "sentenceId": "p1935-s023",
+   "postNum": 1935,
+   "kind": "namedEntities",
+   "layer": "inline",
+   "nested": true,
+   "deliberate": true,
+   "a": "No Name Institute",
+   "b": "No Name"
+  },
+  {
    "sentenceId": "p0194-s001",
    "postNum": 194,
    "kind": "namedEntities",
@@ -8146,6 +8236,26 @@
    "deliberate": true,
    "a": "Iran",
    "b": "Iran Deal"
+  },
+  {
+   "sentenceId": "p1948-s002",
+   "postNum": 1948,
+   "kind": "namedEntities",
+   "layer": "inline",
+   "nested": true,
+   "deliberate": true,
+   "a": "HUSSEIN",
+   "b": "US"
+  },
+  {
+   "sentenceId": "p1948-s004",
+   "postNum": 1948,
+   "kind": "namedEntities",
+   "layer": "inline",
+   "nested": true,
+   "deliberate": true,
+   "a": "HUSSEIN",
+   "b": "US"
   },
   {
    "sentenceId": "p0195-s001",
@@ -9488,6 +9598,16 @@
    "b": "'ACCURATE'"
   },
   {
+   "sentenceId": "p2640-s001",
+   "postNum": 2640,
+   "kind": "namedEntities",
+   "layer": "inline",
+   "nested": true,
+   "deliberate": true,
+   "a": "HUSSEIN",
+   "b": "US"
+  },
+  {
    "sentenceId": "p2646-s006",
    "postNum": 2646,
    "kind": "emphasis",
@@ -9898,6 +10018,16 @@
    "b": "Clinton"
   },
   {
+   "sentenceId": "p2883-s008",
+   "postNum": 2883,
+   "kind": "namedEntities",
+   "layer": "inline",
+   "nested": true,
+   "deliberate": true,
+   "a": "HUSSEIN",
+   "b": "US"
+  },
+  {
    "sentenceId": "p2901-s001",
    "postNum": 2901,
    "kind": "namedEntities",
@@ -10236,6 +10366,16 @@
    "deliberate": true,
    "a": "US Military",
    "b": "US"
+  },
+  {
+   "sentenceId": "p3177-s002",
+   "postNum": 3177,
+   "kind": "namedEntities",
+   "layer": "inline",
+   "nested": true,
+   "deliberate": true,
+   "a": "BARR",
+   "b": "RR"
   },
   {
    "sentenceId": "p0321-s000",
@@ -11508,6 +11648,26 @@
    "b": "FOX THREE"
   },
   {
+   "sentenceId": "p0436-s005",
+   "postNum": 436,
+   "kind": "namedEntities",
+   "layer": "inline",
+   "nested": true,
+   "deliberate": true,
+   "a": "HUSSEIN",
+   "b": "US"
+  },
+  {
+   "sentenceId": "p0436-s017",
+   "postNum": 436,
+   "kind": "namedEntities",
+   "layer": "inline",
+   "nested": true,
+   "deliberate": true,
+   "a": "HUSSEIN",
+   "b": "US"
+  },
+  {
    "sentenceId": "p0436-s030",
    "postNum": 436,
    "kind": "namedEntities",
@@ -11598,6 +11758,16 @@
    "b": "BLM (4)-year push: Insert ANTIFA [D][F] pocket-controlled [D] safe zon"
   },
   {
+   "sentenceId": "p4489-s010",
+   "postNum": 4489,
+   "kind": "emphasis",
+   "layer": "review",
+   "nested": true,
+   "deliberate": true,
+   "a": "'self-embarrassment'",
+   "b": "Lockdown(s) +C: BIDEN hideaway prevent 'self-embarrassment'"
+  },
+  {
    "sentenceId": "p4489-s015",
    "postNum": 4489,
    "kind": "emphasis",
@@ -11666,16 +11836,6 @@
    "deliberate": true,
    "a": "COVID",
    "b": "Lockdown(s) +C: Inc death toll _[D] mayor(s)/gov(s) push COVID positiv"
-  },
-  {
-   "sentenceId": "p4489-s010",
-   "postNum": 4489,
-   "kind": "emphasis",
-   "layer": "review",
-   "nested": true,
-   "deliberate": true,
-   "a": "'self-embarrassment'",
-   "b": "Lockdown(s) +C: BIDEN hideaway prevent 'self-embarrassment'"
   },
   {
    "sentenceId": "p4509-s005",
@@ -25924,31 +26084,6 @@
  ],
  "unlocated": [
   {
-   "postNum": 1008,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1008,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1008,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1008,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
-   "postNum": 1010,
-   "kind": "namedEntities",
-   "text": "Rothschild"
-  },
-  {
    "postNum": 1010,
    "kind": "namedEntities",
    "text": "The Fed"
@@ -25979,31 +26114,6 @@
    "text": "US Senate"
   },
   {
-   "postNum": 1098,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1098,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1102,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1122,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 1122,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
    "postNum": 1122,
    "kind": "namedEntities",
    "text": "Wray"
@@ -26029,34 +26139,9 @@
    "text": "Ray Chandler"
   },
   {
-   "postNum": 117,
-   "kind": "namedEntities",
-   "text": "United States of America"
-  },
-  {
-   "postNum": 117,
-   "kind": "namedEntities",
-   "text": "Huma"
-  },
-  {
-   "postNum": 117,
-   "kind": "namedEntities",
-   "text": "Huma"
-  },
-  {
-   "postNum": 1201,
-   "kind": "namedEntities",
-   "text": "Trump"
-  },
-  {
    "postNum": 1203,
    "kind": "namedEntities",
    "text": "Standard Hotel"
-  },
-  {
-   "postNum": 1208,
-   "kind": "namedEntities",
-   "text": "Hussein"
   },
   {
    "postNum": 1211,
@@ -26089,16 +26174,6 @@
    "text": "WikiLeaks"
   },
   {
-   "postNum": 1234,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
-   "postNum": 1235,
-   "kind": "namedEntities",
-   "text": "Awan"
-  },
-  {
    "postNum": 1235,
    "kind": "namedEntities",
    "text": "NO NAME"
@@ -26107,16 +26182,6 @@
    "postNum": 1253,
    "kind": "namedEntities",
    "text": "Grassley"
-  },
-  {
-   "postNum": 128,
-   "kind": "namedEntities",
-   "text": "Snow White"
-  },
-  {
-   "postNum": 1286,
-   "kind": "namedEntities",
-   "text": "5 Eyes"
   },
   {
    "postNum": 1286,
@@ -26129,84 +26194,14 @@
    "text": "NO NAME"
   },
   {
-   "postNum": 1318,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 1318,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 1318,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 1326,
-   "kind": "namedEntities",
-   "text": "NO NAME"
-  },
-  {
-   "postNum": 134,
-   "kind": "namedEntities",
-   "text": "Huma"
-  },
-  {
    "postNum": 1341,
    "kind": "namedEntities",
    "text": "Alex Jones"
   },
   {
-   "postNum": 135,
-   "kind": "namedEntities",
-   "text": "Rothschild"
-  },
-  {
-   "postNum": 1351,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
    "postNum": 1359,
    "kind": "namedEntities",
    "text": "France"
-  },
-  {
-   "postNum": 1370,
-   "kind": "namedEntities",
-   "text": "Flynn"
-  },
-  {
-   "postNum": 1377,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 1377,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 145,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
-   "postNum": 1453,
-   "kind": "namedEntities",
-   "text": "D party"
-  },
-  {
-   "postNum": 146,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
-   "postNum": 1483,
-   "kind": "namedEntities",
-   "text": "Ryan"
   },
   {
    "postNum": 1493,
@@ -26226,27 +26221,7 @@
   {
    "postNum": 1603,
    "kind": "namedEntities",
-   "text": "Putin"
-  },
-  {
-   "postNum": 1603,
-   "kind": "namedEntities",
-   "text": "Putin"
-  },
-  {
-   "postNum": 1603,
-   "kind": "namedEntities",
    "text": "God"
-  },
-  {
-   "postNum": 1646,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
-   "postNum": 1646,
-   "kind": "namedEntities",
-   "text": "America"
   },
   {
    "postNum": 1646,
@@ -26257,16 +26232,6 @@
    "postNum": 1646,
    "kind": "namedEntities",
    "text": "God"
-  },
-  {
-   "postNum": 1686,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 1702,
-   "kind": "namedEntities",
-   "text": "America"
   },
   {
    "postNum": 1702,
@@ -26281,102 +26246,12 @@
   {
    "postNum": 1745,
    "kind": "namedEntities",
-   "text": "United States of America"
-  },
-  {
-   "postNum": 1745,
-   "kind": "namedEntities",
-   "text": "Congress"
-  },
-  {
-   "postNum": 1745,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1745,
-   "kind": "namedEntities",
-   "text": "D party"
-  },
-  {
-   "postNum": 1745,
-   "kind": "namedEntities",
-   "text": "D party"
-  },
-  {
-   "postNum": 1745,
-   "kind": "namedEntities",
-   "text": "R party"
-  },
-  {
-   "postNum": 1745,
-   "kind": "namedEntities",
-   "text": "Senate"
-  },
-  {
-   "postNum": 1745,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 1745,
-   "kind": "namedEntities",
    "text": "US Intel"
   },
   {
    "postNum": 1746,
    "kind": "namedEntities",
-   "text": "Congress"
-  },
-  {
-   "postNum": 1746,
-   "kind": "namedEntities",
-   "text": "Senate"
-  },
-  {
-   "postNum": 1746,
-   "kind": "namedEntities",
    "text": "Nazi Germany"
-  },
-  {
-   "postNum": 1764,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1764,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1764,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1764,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1764,
-   "kind": "namedEntities",
-   "text": "Brennan"
-  },
-  {
-   "postNum": 1764,
-   "kind": "namedEntities",
-   "text": "Brennan"
-  },
-  {
-   "postNum": 1764,
-   "kind": "namedEntities",
-   "text": "Brennan"
-  },
-  {
-   "postNum": 1764,
-   "kind": "namedEntities",
-   "text": "Comey"
   },
   {
    "postNum": 1764,
@@ -26391,27 +26266,12 @@
   {
    "postNum": 1822,
    "kind": "namedEntities",
-   "text": "Putin"
-  },
-  {
-   "postNum": 1822,
-   "kind": "namedEntities",
    "text": "Watergate"
   },
   {
    "postNum": 1832,
    "kind": "namedEntities",
    "text": "Washington"
-  },
-  {
-   "postNum": 1833,
-   "kind": "namedEntities",
-   "text": "Nunes"
-  },
-  {
-   "postNum": 1850,
-   "kind": "namedEntities",
-   "text": "NO NAME"
   },
   {
    "postNum": 1862,
@@ -26429,19 +26289,9 @@
    "text": "Roseanne Barr"
   },
   {
-   "postNum": 1876,
-   "kind": "namedEntities",
-   "text": "No Such Agency"
-  },
-  {
    "postNum": 1879,
    "kind": "namedEntities",
    "text": "God"
-  },
-  {
-   "postNum": 1884,
-   "kind": "namedEntities",
-   "text": "Epstein"
   },
   {
    "postNum": 1884,
@@ -26484,56 +26334,6 @@
    "text": "INSCOM"
   },
   {
-   "postNum": 1928,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1929,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1935,
-   "kind": "namedEntities",
-   "text": "Flynn"
-  },
-  {
-   "postNum": 1935,
-   "kind": "namedEntities",
-   "text": "NO NAME"
-  },
-  {
-   "postNum": 1944,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1948,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1948,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1948,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1948,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1948,
-   "kind": "namedEntities",
-   "text": "Brennan"
-  },
-  {
    "postNum": 1961,
    "kind": "namedEntities",
    "text": "God"
@@ -26549,94 +26349,14 @@
    "text": "Watergate"
   },
   {
-   "postNum": 1974,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 1978,
-   "kind": "namedEntities",
-   "text": "Weiner"
-  },
-  {
-   "postNum": 1978,
-   "kind": "namedEntities",
-   "text": "Weiner"
-  },
-  {
-   "postNum": 1981,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1981,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1981,
-   "kind": "namedEntities",
-   "text": "Flynn"
-  },
-  {
-   "postNum": 1981,
-   "kind": "namedEntities",
-   "text": "Awan"
-  },
-  {
    "postNum": 1983,
    "kind": "namedEntities",
    "text": "CrowdStrike"
   },
   {
-   "postNum": 1990,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1990,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1990,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1990,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 1990,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
    "postNum": 2007,
    "kind": "namedEntities",
    "text": "Speaker of the House"
-  },
-  {
-   "postNum": 2009,
-   "kind": "namedEntities",
-   "text": "Snow White"
-  },
-  {
-   "postNum": 2010,
-   "kind": "namedEntities",
-   "text": "Snow White"
-  },
-  {
-   "postNum": 2011,
-   "kind": "namedEntities",
-   "text": "Snow White"
-  },
-  {
-   "postNum": 2012,
-   "kind": "namedEntities",
-   "text": "Snow White"
   },
   {
    "postNum": 2029,
@@ -26649,24 +26369,9 @@
    "text": "Vice News"
   },
   {
-   "postNum": 2030,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2035,
-   "kind": "namedEntities",
-   "text": "Senate"
-  },
-  {
    "postNum": 2035,
    "kind": "namedEntities",
    "text": "House"
-  },
-  {
-   "postNum": 2039,
-   "kind": "namedEntities",
-   "text": "America"
   },
   {
    "postNum": 2039,
@@ -26682,26 +26387,6 @@
    "postNum": 2040,
    "kind": "namedEntities",
    "text": "Carter Page"
-  },
-  {
-   "postNum": 2043,
-   "kind": "namedEntities",
-   "text": "Flynn"
-  },
-  {
-   "postNum": 2043,
-   "kind": "namedEntities",
-   "text": "Flynn"
-  },
-  {
-   "postNum": 2054,
-   "kind": "namedEntities",
-   "text": "Donald J. Trump"
-  },
-  {
-   "postNum": 2054,
-   "kind": "namedEntities",
-   "text": "Donald J. Trump"
   },
   {
    "postNum": 2058,
@@ -26721,76 +26406,6 @@
   {
    "postNum": 2072,
    "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2072,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2072,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2072,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2072,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2072,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2072,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2072,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2072,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 2072,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2072,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2072,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2072,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2072,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2072,
-   "kind": "namedEntities",
    "text": "Speaker of the House"
   },
   {
@@ -26801,32 +26416,7 @@
   {
    "postNum": 2107,
    "kind": "namedEntities",
-   "text": "Brennan"
-  },
-  {
-   "postNum": 2107,
-   "kind": "namedEntities",
    "text": "Weissmann"
-  },
-  {
-   "postNum": 2129,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 2129,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 2129,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 2129,
-   "kind": "namedEntities",
-   "text": "Brennan"
   },
   {
    "postNum": 2129,
@@ -26849,59 +26439,9 @@
    "text": "Patriot Day"
   },
   {
-   "postNum": 2165,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2165,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2165,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2165,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2165,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2165,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 2165,
-   "kind": "namedEntities",
-   "text": "Flynn"
-  },
-  {
-   "postNum": 2180,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 2181,
-   "kind": "namedEntities",
-   "text": "Nunes"
-  },
-  {
    "postNum": 2181,
    "kind": "namedEntities",
    "text": "House Intelligence"
-  },
-  {
-   "postNum": 2197,
-   "kind": "namedEntities",
-   "text": "Sessions"
   },
   {
    "postNum": 2203,
@@ -26909,104 +26449,9 @@
    "text": "Lynch"
   },
   {
-   "postNum": 2204,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2204,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2205,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
    "postNum": 2206,
    "kind": "namedEntities",
    "text": "Wired"
-  },
-  {
-   "postNum": 2207,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 2211,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2211,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2211,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2211,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2211,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2211,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2211,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2211,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2211,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 2211,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2211,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2211,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2211,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2211,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2211,
-   "kind": "namedEntities",
-   "text": "Huber"
   },
   {
    "postNum": 2211,
@@ -27014,44 +26459,9 @@
    "text": "Speaker of the House"
   },
   {
-   "postNum": 2248,
-   "kind": "namedEntities",
-   "text": "Nunes"
-  },
-  {
-   "postNum": 2261,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 2261,
-   "kind": "namedEntities",
-   "text": "Brennan"
-  },
-  {
-   "postNum": 2261,
-   "kind": "namedEntities",
-   "text": "Comey"
-  },
-  {
-   "postNum": 2273,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 2273,
-   "kind": "namedEntities",
-   "text": "McCabe"
-  },
-  {
    "postNum": 2274,
    "kind": "namedEntities",
    "text": "Grassley"
-  },
-  {
-   "postNum": 2275,
-   "kind": "namedEntities",
-   "text": "Hussein"
   },
   {
    "postNum": 2277,
@@ -27099,69 +26509,9 @@
    "text": "Justice K"
   },
   {
-   "postNum": 236,
-   "kind": "namedEntities",
-   "text": "Huma"
-  },
-  {
-   "postNum": 2361,
-   "kind": "namedEntities",
-   "text": "D party"
-  },
-  {
-   "postNum": 2378,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
-   "postNum": 2381,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2381,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2381,
-   "kind": "namedEntities",
-   "text": "Senate"
-  },
-  {
-   "postNum": 2381,
-   "kind": "namedEntities",
-   "text": "Senate"
-  },
-  {
    "postNum": 2390,
    "kind": "namedEntities",
    "text": "House of Cards"
-  },
-  {
-   "postNum": 2396,
-   "kind": "namedEntities",
-   "text": "Putin"
-  },
-  {
-   "postNum": 2397,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2397,
-   "kind": "namedEntities",
-   "text": "Senate"
-  },
-  {
-   "postNum": 2397,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2397,
-   "kind": "namedEntities",
-   "text": "Huber"
   },
   {
    "postNum": 2401,
@@ -27169,69 +26519,14 @@
    "text": "Amazon"
   },
   {
-   "postNum": 2436,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
-   "postNum": 2436,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
-   "postNum": 2436,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
-   "postNum": 2436,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
-   "postNum": 2440,
-   "kind": "namedEntities",
-   "text": "United States of America"
-  },
-  {
-   "postNum": 2440,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
-   "postNum": 2440,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
    "postNum": 2445,
    "kind": "namedEntities",
    "text": "Grassley"
   },
   {
-   "postNum": 2453,
-   "kind": "namedEntities",
-   "text": "Senate"
-  },
-  {
-   "postNum": 2462,
-   "kind": "namedEntities",
-   "text": "D party"
-  },
-  {
-   "postNum": 2462,
-   "kind": "namedEntities",
-   "text": "Senate"
-  },
-  {
    "postNum": 2492,
    "kind": "namedEntities",
    "text": "Arizona"
-  },
-  {
-   "postNum": 2495,
-   "kind": "namedEntities",
-   "text": "Senate"
   },
   {
    "postNum": 2495,
@@ -27244,11 +26539,6 @@
    "text": "House of Cards"
   },
   {
-   "postNum": 2500,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
    "postNum": 2501,
    "kind": "namedEntities",
    "text": "Whitaker"
@@ -27259,26 +26549,6 @@
    "text": "President"
   },
   {
-   "postNum": 2506,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2506,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2507,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2511,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
    "postNum": 2523,
    "kind": "namedEntities",
    "text": "Kavanaugh"
@@ -27287,36 +26557,6 @@
    "postNum": 2523,
    "kind": "namedEntities",
    "text": "God"
-  },
-  {
-   "postNum": 2524,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2525,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2548,
-   "kind": "namedEntities",
-   "text": "Senate"
-  },
-  {
-   "postNum": 2548,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2548,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2555,
-   "kind": "namedEntities",
-   "text": "Huber"
   },
   {
    "postNum": 2555,
@@ -27339,36 +26579,6 @@
    "text": "God"
   },
   {
-   "postNum": 2561,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2561,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2561,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2561,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2561,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2568,
-   "kind": "namedEntities",
-   "text": "Brennan"
-  },
-  {
    "postNum": 2569,
    "kind": "namedEntities",
    "text": "Freedom Caucus"
@@ -27379,19 +26589,9 @@
    "text": "Samantha Power"
   },
   {
-   "postNum": 2584,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
    "postNum": 2596,
    "kind": "namedEntities",
    "text": "Merkel"
-  },
-  {
-   "postNum": 260,
-   "kind": "namedEntities",
-   "text": "Flynn"
   },
   {
    "postNum": 2600,
@@ -27399,104 +26599,9 @@
    "text": "Sara Carter"
   },
   {
-   "postNum": 2601,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2603,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2604,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2604,
-   "kind": "namedEntities",
-   "text": "Senate"
-  },
-  {
-   "postNum": 2604,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2604,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
    "postNum": 2633,
    "kind": "namedEntities",
    "text": "US Senate"
-  },
-  {
-   "postNum": 2640,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 2640,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 2640,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 2640,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 2640,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 2640,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 2640,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 2643,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2643,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 2643,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 2643,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 2643,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 2657,
-   "kind": "namedEntities",
-   "text": "Hussein"
   },
   {
    "postNum": 2657,
@@ -27511,22 +26616,7 @@
   {
    "postNum": 2658,
    "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 2658,
-   "kind": "namedEntities",
-   "text": "Senate"
-  },
-  {
-   "postNum": 2658,
-   "kind": "namedEntities",
    "text": "Syria"
-  },
-  {
-   "postNum": 2672,
-   "kind": "namedEntities",
-   "text": "Mueller"
   },
   {
    "postNum": 2673,
@@ -27534,64 +26624,9 @@
    "text": "Charlie Kirk"
   },
   {
-   "postNum": 2676,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2686,
-   "kind": "namedEntities",
-   "text": "McCabe"
-  },
-  {
-   "postNum": 2691,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 2691,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 2691,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 2693,
-   "kind": "namedEntities",
-   "text": "Congress"
-  },
-  {
-   "postNum": 2693,
-   "kind": "namedEntities",
-   "text": "Senate"
-  },
-  {
-   "postNum": 2717,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 2717,
-   "kind": "namedEntities",
-   "text": "Barr"
-  },
-  {
-   "postNum": 2718,
-   "kind": "namedEntities",
-   "text": "Barr"
-  },
-  {
    "postNum": 2730,
    "kind": "namedEntities",
    "text": "God"
-  },
-  {
-   "postNum": 275,
-   "kind": "namedEntities",
-   "text": "Soros"
   },
   {
    "postNum": 2766,
@@ -27609,34 +26644,9 @@
    "text": "Jussie Smollett"
   },
   {
-   "postNum": 2770,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 2770,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 2770,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 2770,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
    "postNum": 2782,
    "kind": "namedEntities",
    "text": "Gavin Newsom"
-  },
-  {
-   "postNum": 2787,
-   "kind": "namedEntities",
-   "text": "Hussein"
   },
   {
    "postNum": 2788,
@@ -27646,27 +26656,12 @@
   {
    "postNum": 2807,
    "kind": "namedEntities",
-   "text": "United States of America"
-  },
-  {
-   "postNum": 2807,
-   "kind": "namedEntities",
    "text": "God"
-  },
-  {
-   "postNum": 2838,
-   "kind": "namedEntities",
-   "text": "Barr"
   },
   {
    "postNum": 2841,
    "kind": "namedEntities",
    "text": "Ann Coulter"
-  },
-  {
-   "postNum": 2844,
-   "kind": "namedEntities",
-   "text": "Hussein"
   },
   {
    "postNum": 2849,
@@ -27684,64 +26679,9 @@
    "text": "Liberals"
   },
   {
-   "postNum": 2856,
-   "kind": "namedEntities",
-   "text": "Barr"
-  },
-  {
-   "postNum": 2878,
-   "kind": "namedEntities",
-   "text": "Hillary"
-  },
-  {
-   "postNum": 2883,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 2935,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 2936,
-   "kind": "namedEntities",
-   "text": "Trump"
-  },
-  {
-   "postNum": 2937,
-   "kind": "namedEntities",
-   "text": "Huber"
-  },
-  {
-   "postNum": 2937,
-   "kind": "namedEntities",
-   "text": "Barr"
-  },
-  {
    "postNum": 2955,
    "kind": "namedEntities",
    "text": "Whitaker"
-  },
-  {
-   "postNum": 2984,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 2984,
-   "kind": "namedEntities",
-   "text": "Brennan"
-  },
-  {
-   "postNum": 2984,
-   "kind": "namedEntities",
-   "text": "Senate"
-  },
-  {
-   "postNum": 2984,
-   "kind": "namedEntities",
-   "text": "Senate"
   },
   {
    "postNum": 2984,
@@ -27761,22 +26701,7 @@
   {
    "postNum": 2989,
    "kind": "namedEntities",
-   "text": "United States of America"
-  },
-  {
-   "postNum": 2989,
-   "kind": "namedEntities",
    "text": "Ivy League"
-  },
-  {
-   "postNum": 3004,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 3004,
-   "kind": "namedEntities",
-   "text": "Sessions"
   },
   {
    "postNum": 3006,
@@ -27811,102 +26736,17 @@
   {
    "postNum": 3024,
    "kind": "namedEntities",
-   "text": "Brennan"
-  },
-  {
-   "postNum": 3024,
-   "kind": "namedEntities",
-   "text": "Snowden"
-  },
-  {
-   "postNum": 3024,
-   "kind": "namedEntities",
    "text": "Gina"
   },
   {
    "postNum": 3028,
    "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 3028,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 3028,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 3028,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 3028,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
-   "postNum": 3028,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
-   "postNum": 3028,
-   "kind": "namedEntities",
-   "text": "Senate"
-  },
-  {
-   "postNum": 3028,
-   "kind": "namedEntities",
-   "text": "Barr"
-  },
-  {
-   "postNum": 3028,
-   "kind": "namedEntities",
-   "text": "Barr"
-  },
-  {
-   "postNum": 3028,
-   "kind": "namedEntities",
    "text": "Whitaker"
-  },
-  {
-   "postNum": 3035,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 3036,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 3036,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 3036,
-   "kind": "namedEntities",
-   "text": "Barr"
-  },
-  {
-   "postNum": 3036,
-   "kind": "namedEntities",
-   "text": "Barr"
   },
   {
    "postNum": 3036,
    "kind": "namedEntities",
    "text": "Whitaker"
-  },
-  {
-   "postNum": 3059,
-   "kind": "namedEntities",
-   "text": "Barr"
   },
   {
    "postNum": 3059,
@@ -27919,24 +26759,9 @@
    "text": "Federal Agencies"
   },
   {
-   "postNum": 3062,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
    "postNum": 3063,
    "kind": "namedEntities",
    "text": "Gang of Eight"
-  },
-  {
-   "postNum": 3115,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 3126,
-   "kind": "namedEntities",
-   "text": "Hussein"
   },
   {
    "postNum": 3134,
@@ -27959,36 +26784,6 @@
    "text": "Paris Hilton"
   },
   {
-   "postNum": 3177,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 3177,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 3177,
-   "kind": "namedEntities",
-   "text": "Barr"
-  },
-  {
-   "postNum": 3177,
-   "kind": "namedEntities",
-   "text": "Barr"
-  },
-  {
-   "postNum": 3178,
-   "kind": "namedEntities",
-   "text": "Congress"
-  },
-  {
-   "postNum": 3178,
-   "kind": "namedEntities",
-   "text": "Senate"
-  },
-  {
    "postNum": 3179,
    "kind": "namedEntities",
    "text": "Sean Hannity"
@@ -27999,9 +26794,9 @@
    "text": "President of the United States"
   },
   {
-   "postNum": 3243,
+   "postNum": 3241,
    "kind": "namedEntities",
-   "text": "America"
+   "text": "Gang of 8"
   },
   {
    "postNum": 3312,
@@ -28014,24 +26809,9 @@
    "text": "Sara Carter"
   },
   {
-   "postNum": 3314,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
    "postNum": 3316,
    "kind": "namedEntities",
    "text": "Mueller Report"
-  },
-  {
-   "postNum": 3324,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 3325,
-   "kind": "namedEntities",
-   "text": "Hussein"
   },
   {
    "postNum": 333,
@@ -28051,112 +26831,12 @@
   {
    "postNum": 3354,
    "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 3354,
-   "kind": "namedEntities",
    "text": "God"
-  },
-  {
-   "postNum": 3372,
-   "kind": "namedEntities",
-   "text": "Flynn"
-  },
-  {
-   "postNum": 3388,
-   "kind": "namedEntities",
-   "text": "Flynn"
-  },
-  {
-   "postNum": 3390,
-   "kind": "namedEntities",
-   "text": "Flynn"
-  },
-  {
-   "postNum": 3424,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 3429,
-   "kind": "namedEntities",
-   "text": "Epstein"
   },
   {
    "postNum": 3432,
    "kind": "namedEntities",
    "text": "God"
-  },
-  {
-   "postNum": 3458,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 3458,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 3458,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 3458,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 3473,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 3473,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 3473,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 3473,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 3501,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 3501,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 3505,
-   "kind": "namedEntities",
-   "text": "Barr"
-  },
-  {
-   "postNum": 3530,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 3581,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 3588,
-   "kind": "namedEntities",
-   "text": "WashPost"
   },
   {
    "postNum": 3608,
@@ -28174,74 +26854,14 @@
    "text": "US Senate"
   },
   {
-   "postNum": 3668,
-   "kind": "namedEntities",
-   "text": "Barr"
-  },
-  {
-   "postNum": 3679,
-   "kind": "namedEntities",
-   "text": "Nunes"
-  },
-  {
-   "postNum": 3680,
-   "kind": "namedEntities",
-   "text": "Nunes"
-  },
-  {
    "postNum": 3690,
    "kind": "namedEntities",
    "text": "Gang of 8"
   },
   {
-   "postNum": 3693,
-   "kind": "namedEntities",
-   "text": "Flynn"
-  },
-  {
-   "postNum": 3693,
-   "kind": "namedEntities",
-   "text": "Flynn"
-  },
-  {
-   "postNum": 372,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
    "postNum": 372,
    "kind": "namedEntities",
    "text": "House of Cards"
-  },
-  {
-   "postNum": 3721,
-   "kind": "namedEntities",
-   "text": "United States of America"
-  },
-  {
-   "postNum": 3742,
-   "kind": "namedEntities",
-   "text": "Pelosi"
-  },
-  {
-   "postNum": 3754,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 3754,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 3754,
-   "kind": "namedEntities",
-   "text": "Biden"
-  },
-  {
-   "postNum": 3790,
-   "kind": "namedEntities",
-   "text": "Mueller"
   },
   {
    "postNum": 3824,
@@ -28254,74 +26874,14 @@
    "text": "CrowdStrike"
   },
   {
-   "postNum": 3858,
-   "kind": "namedEntities",
-   "text": "United States of America"
-  },
-  {
    "postNum": 3900,
    "kind": "namedEntities",
    "text": "President"
   },
   {
-   "postNum": 3905,
-   "kind": "namedEntities",
-   "text": "United States of America"
-  },
-  {
-   "postNum": 3907,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
-   "postNum": 3907,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
-   "postNum": 3907,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
-   "postNum": 3907,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
-   "postNum": 3915,
-   "kind": "namedEntities",
-   "text": "Biden"
-  },
-  {
-   "postNum": 3915,
-   "kind": "namedEntities",
-   "text": "Biden"
-  },
-  {
-   "postNum": 3915,
-   "kind": "namedEntities",
-   "text": "Biden"
-  },
-  {
-   "postNum": 3915,
-   "kind": "namedEntities",
-   "text": "Biden"
-  },
-  {
-   "postNum": 3915,
-   "kind": "namedEntities",
-   "text": "Biden"
-  },
-  {
    "postNum": 3915,
    "kind": "namedEntities",
    "text": "Sanders"
-  },
-  {
-   "postNum": 3990,
-   "kind": "namedEntities",
-   "text": "Flynn"
   },
   {
    "postNum": 3990,
@@ -28341,27 +26901,7 @@
   {
    "postNum": 3992,
    "kind": "namedEntities",
-   "text": "Senate"
-  },
-  {
-   "postNum": 3992,
-   "kind": "namedEntities",
    "text": "Midterm Elections"
-  },
-  {
-   "postNum": 3993,
-   "kind": "namedEntities",
-   "text": "Schiff"
-  },
-  {
-   "postNum": 3993,
-   "kind": "namedEntities",
-   "text": "Nunes"
-  },
-  {
-   "postNum": 3993,
-   "kind": "namedEntities",
-   "text": "Nunes"
   },
   {
    "postNum": 3993,
@@ -28369,64 +26909,9 @@
    "text": "Gang of Eight"
   },
   {
-   "postNum": 4010,
-   "kind": "namedEntities",
-   "text": "Donald J. Trump"
-  },
-  {
-   "postNum": 4014,
-   "kind": "namedEntities",
-   "text": "Flynn"
-  },
-  {
-   "postNum": 4016,
-   "kind": "namedEntities",
-   "text": "Brennan"
-  },
-  {
    "postNum": 4063,
    "kind": "namedEntities",
    "text": "God"
-  },
-  {
-   "postNum": 4153,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 4153,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 4153,
-   "kind": "namedEntities",
-   "text": "Mueller"
-  },
-  {
-   "postNum": 4153,
-   "kind": "namedEntities",
-   "text": "Soros"
-  },
-  {
-   "postNum": 4153,
-   "kind": "namedEntities",
-   "text": "No Name"
-  },
-  {
-   "postNum": 4172,
-   "kind": "namedEntities",
-   "text": "Biden"
-  },
-  {
-   "postNum": 4226,
-   "kind": "namedEntities",
-   "text": "Flynn"
-  },
-  {
-   "postNum": 4231,
-   "kind": "namedEntities",
-   "text": "Flynn"
   },
   {
    "postNum": 4232,
@@ -28449,39 +26934,9 @@
    "text": "Politico"
   },
   {
-   "postNum": 4245,
-   "kind": "namedEntities",
-   "text": "Biden"
-  },
-  {
-   "postNum": 4245,
-   "kind": "namedEntities",
-   "text": "Biden"
-  },
-  {
    "postNum": 4247,
    "kind": "namedEntities",
    "text": "USNS Comfort"
-  },
-  {
-   "postNum": 4293,
-   "kind": "namedEntities",
-   "text": "Senate"
-  },
-  {
-   "postNum": 4310,
-   "kind": "namedEntities",
-   "text": "Congress"
-  },
-  {
-   "postNum": 4310,
-   "kind": "namedEntities",
-   "text": "Schiff"
-  },
-  {
-   "postNum": 4310,
-   "kind": "namedEntities",
-   "text": "Senate"
   },
   {
    "postNum": 4310,
@@ -28514,59 +26969,9 @@
    "text": "House Republicans"
   },
   {
-   "postNum": 436,
-   "kind": "namedEntities",
-   "text": "Congress"
-  },
-  {
-   "postNum": 436,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 436,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 436,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 4375,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
-   "postNum": 4387,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
    "postNum": 4387,
    "kind": "namedEntities",
    "text": "God"
-  },
-  {
-   "postNum": 4398,
-   "kind": "namedEntities",
-   "text": "Pelosi"
-  },
-  {
-   "postNum": 4398,
-   "kind": "namedEntities",
-   "text": "Pelosi"
-  },
-  {
-   "postNum": 4398,
-   "kind": "namedEntities",
-   "text": "Pelosi"
-  },
-  {
-   "postNum": 4398,
-   "kind": "namedEntities",
-   "text": "Pelosi"
   },
   {
    "postNum": 4401,
@@ -28579,19 +26984,9 @@
    "text": "God"
   },
   {
-   "postNum": 4414,
-   "kind": "namedEntities",
-   "text": "Pelosi"
-  },
-  {
    "postNum": 445,
    "kind": "namedEntities",
    "text": "CrowdStrike"
-  },
-  {
-   "postNum": 4457,
-   "kind": "namedEntities",
-   "text": "Senate"
   },
   {
    "postNum": 4461,
@@ -28602,21 +26997,6 @@
    "postNum": 4468,
    "kind": "namedEntities",
    "text": "Daily Beast"
-  },
-  {
-   "postNum": 4489,
-   "kind": "namedEntities",
-   "text": "Biden"
-  },
-  {
-   "postNum": 4489,
-   "kind": "namedEntities",
-   "text": "Biden"
-  },
-  {
-   "postNum": 4489,
-   "kind": "namedEntities",
-   "text": "Biden"
   },
   {
    "postNum": 4492,
@@ -28639,11 +27019,6 @@
    "text": "The Guardian"
   },
   {
-   "postNum": 4535,
-   "kind": "namedEntities",
-   "text": "United States of America"
-  },
-  {
    "postNum": 4545,
    "kind": "namedEntities",
    "text": "United Nations"
@@ -28659,11 +27034,6 @@
    "text": "Democrat Party"
   },
   {
-   "postNum": 4627,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
    "postNum": 4630,
    "kind": "namedEntities",
    "text": "Harold Moody Jr"
@@ -28672,21 +27042,6 @@
    "postNum": 4641,
    "kind": "namedEntities",
    "text": "God"
-  },
-  {
-   "postNum": 4656,
-   "kind": "namedEntities",
-   "text": "Renegade"
-  },
-  {
-   "postNum": 466,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
-   "postNum": 4773,
-   "kind": "namedEntities",
-   "text": "Sessions"
   },
   {
    "postNum": 48,
@@ -28699,59 +27054,14 @@
    "text": "Loop Capital"
   },
   {
-   "postNum": 4802,
-   "kind": "namedEntities",
-   "text": "Biden"
-  },
-  {
-   "postNum": 4802,
-   "kind": "namedEntities",
-   "text": "Biden"
-  },
-  {
-   "postNum": 4802,
-   "kind": "namedEntities",
-   "text": "Biden"
-  },
-  {
-   "postNum": 4802,
-   "kind": "namedEntities",
-   "text": "Biden"
-  },
-  {
    "postNum": 481,
    "kind": "namedEntities",
    "text": "God"
   },
   {
-   "postNum": 4820,
-   "kind": "namedEntities",
-   "text": "White House"
-  },
-  {
-   "postNum": 4821,
-   "kind": "namedEntities",
-   "text": "White House"
-  },
-  {
-   "postNum": 4821,
-   "kind": "namedEntities",
-   "text": "Biden"
-  },
-  {
    "postNum": 4821,
    "kind": "namedEntities",
    "text": "Hunter"
-  },
-  {
-   "postNum": 4822,
-   "kind": "namedEntities",
-   "text": "White House"
-  },
-  {
-   "postNum": 4822,
-   "kind": "namedEntities",
-   "text": "Biden"
   },
   {
    "postNum": 4822,
@@ -28779,11 +27089,6 @@
    "text": "Erin Nanoki"
   },
   {
-   "postNum": 4886,
-   "kind": "namedEntities",
-   "text": "Biden"
-  },
-  {
    "postNum": 4949,
    "kind": "themeAnchors",
    "text": "That this nation, under God, shall have a new birth of freedom and that government of the people, by the people, for the"
@@ -28792,11 +27097,6 @@
    "postNum": 501,
    "kind": "namedEntities",
    "text": "God"
-  },
-  {
-   "postNum": 520,
-   "kind": "namedEntities",
-   "text": "No Such Agency"
   },
   {
    "postNum": 520,
@@ -28814,34 +27114,9 @@
    "text": "Banco de Mexico"
   },
   {
-   "postNum": 532,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
-   "postNum": 532,
-   "kind": "namedEntities",
-   "text": "Soros"
-  },
-  {
-   "postNum": 533,
-   "kind": "namedEntities",
-   "text": "United States of America"
-  },
-  {
    "postNum": 533,
    "kind": "namedEntities",
    "text": "God"
-  },
-  {
-   "postNum": 537,
-   "kind": "namedEntities",
-   "text": "No Such Agency"
-  },
-  {
-   "postNum": 537,
-   "kind": "namedEntities",
-   "text": "Sessions"
   },
   {
    "postNum": 56,
@@ -28854,11 +27129,6 @@
    "text": "God"
   },
   {
-   "postNum": 577,
-   "kind": "namedEntities",
-   "text": "Snow White"
-  },
-  {
    "postNum": 599,
    "kind": "namedEntities",
    "text": "God"
@@ -28866,77 +27136,7 @@
   {
    "postNum": 603,
    "kind": "namedEntities",
-   "text": "Barack Hussein Obama"
-  },
-  {
-   "postNum": 603,
-   "kind": "namedEntities",
    "text": "God"
-  },
-  {
-   "postNum": 609,
-   "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 631,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
-   "postNum": 68,
-   "kind": "namedEntities",
-   "text": "Huma"
-  },
-  {
-   "postNum": 68,
-   "kind": "namedEntities",
-   "text": "Huma"
-  },
-  {
-   "postNum": 68,
-   "kind": "namedEntities",
-   "text": "Huma"
-  },
-  {
-   "postNum": 68,
-   "kind": "namedEntities",
-   "text": "Huma"
-  },
-  {
-   "postNum": 68,
-   "kind": "namedEntities",
-   "text": "Huma"
-  },
-  {
-   "postNum": 68,
-   "kind": "namedEntities",
-   "text": "Huma"
-  },
-  {
-   "postNum": 68,
-   "kind": "namedEntities",
-   "text": "Huma"
-  },
-  {
-   "postNum": 68,
-   "kind": "namedEntities",
-   "text": "Huma"
-  },
-  {
-   "postNum": 68,
-   "kind": "namedEntities",
-   "text": "Huma"
-  },
-  {
-   "postNum": 68,
-   "kind": "namedEntities",
-   "text": "Huma"
-  },
-  {
-   "postNum": 71,
-   "kind": "namedEntities",
-   "text": "Huma"
   },
   {
    "postNum": 746,
@@ -28949,11 +27149,6 @@
    "text": "God"
   },
   {
-   "postNum": 77,
-   "kind": "namedEntities",
-   "text": "Huma"
-  },
-  {
    "postNum": 770,
    "kind": "namedEntities",
    "text": "Aaron Swartz"
@@ -28961,27 +27156,7 @@
   {
    "postNum": 778,
    "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 778,
-   "kind": "namedEntities",
-   "text": "Dems"
-  },
-  {
-   "postNum": 778,
-   "kind": "namedEntities",
-   "text": "Dems"
-  },
-  {
-   "postNum": 778,
-   "kind": "namedEntities",
    "text": "God"
-  },
-  {
-   "postNum": 780,
-   "kind": "namedEntities",
-   "text": "Senate"
   },
   {
    "postNum": 785,
@@ -28996,17 +27171,7 @@
   {
    "postNum": 787,
    "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 787,
-   "kind": "namedEntities",
    "text": "Wray"
-  },
-  {
-   "postNum": 790,
-   "kind": "namedEntities",
-   "text": "Snowden"
   },
   {
    "postNum": 790,
@@ -29029,29 +27194,9 @@
    "text": "God"
   },
   {
-   "postNum": 834,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
-   "postNum": 834,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
    "postNum": 837,
    "kind": "namedEntities",
    "text": "God"
-  },
-  {
-   "postNum": 855,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
-   "postNum": 855,
-   "kind": "namedEntities",
-   "text": "America"
   },
   {
    "postNum": 857,
@@ -29069,11 +27214,6 @@
    "text": "WikiLeaks"
   },
   {
-   "postNum": 878,
-   "kind": "namedEntities",
-   "text": "Sessions"
-  },
-  {
    "postNum": 889,
    "kind": "namedEntities",
    "text": "Forbidden City"
@@ -29089,34 +27229,9 @@
    "text": "Kansas"
   },
   {
-   "postNum": 953,
-   "kind": "namedEntities",
-   "text": "America"
-  },
-  {
-   "postNum": 953,
-   "kind": "namedEntities",
-   "text": "Trump"
-  },
-  {
-   "postNum": 953,
-   "kind": "namedEntities",
-   "text": "Flynn"
-  },
-  {
-   "postNum": 953,
-   "kind": "namedEntities",
-   "text": "Biden"
-  },
-  {
    "postNum": 960,
    "kind": "namedEntities",
    "text": "Comedy Central"
-  },
-  {
-   "postNum": 964,
-   "kind": "namedEntities",
-   "text": "Biden"
   },
   {
    "postNum": 964,
@@ -29131,22 +27246,12 @@
   {
    "postNum": 972,
    "kind": "namedEntities",
-   "text": "Hussein"
-  },
-  {
-   "postNum": 972,
-   "kind": "namedEntities",
    "text": "Amazon"
   },
   {
    "postNum": 988,
    "kind": "namedEntities",
    "text": "Awan"
-  },
-  {
-   "postNum": 99,
-   "kind": "namedEntities",
-   "text": "Huma"
   }
  ]
 }

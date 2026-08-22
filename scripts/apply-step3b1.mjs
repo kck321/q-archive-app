@@ -39,6 +39,7 @@ import { fileURLToPath } from 'node:url'
 import { sentencesFor, occurrencesOfSpan } from './lib/sentenceLedger.mjs'
 import { runtimeText } from './lib/runtimeText.mjs'
 import { key as metaKey } from './lib/segment.mjs'
+import { buildEntityForms } from './lib/entityForms.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -157,11 +158,9 @@ const LAYER = {
 }
 const PRIMARY_KIND = { claims: 'claim', questions: 'question', directives: 'directive', predictions: 'prediction' }
 
-const aliasesOf = new Map()
-for (const e of entitiesDoc.entities ?? []) {
-  const forms = [e.canonical, ...(e.aliases ?? []).map(a => a.text)].filter(Boolean)
-  aliasesOf.set(String(e.canonical).toLowerCase(), [...new Set(forms)])
-}
+// The same group-aware lookup the ledger uses — it has to be the same one, or the applier binds a
+// record the ledger cannot see (or vice versa) and the two disagree about what an occurrence is.
+const entityForms = buildEntityForms(entitiesDoc)
 
 const postByNum = new Map(posts.map(p => [p.postNum, p]))
 const qByPost = new Map()
@@ -214,8 +213,7 @@ function buildIndex() {
     for (const src of spanSources(p)) {
       let hits = occurrencesOfSpan(p.text, src.text)
       if (!hits.length && src.kind === 'namedEntities') {
-        const forms = (aliasesOf.get(src.text.toLowerCase()) ?? []).slice().sort((a, b) => b.length - a.length)
-        for (const f of forms) { const h = occurrencesOfSpan(p.text, f); if (h.length) { hits = h; break } }
+        for (const f of entityForms.formsFor(src.text)) { const h = occurrencesOfSpan(p.text, f); if (h.length) { hits = h; break } }
       }
       if (!hits.length) continue
       const usedKey = `${src.kind}|${src.text}`
@@ -243,6 +241,7 @@ const semantics = []                // the occurrence-keyed overlay Step 4 rende
 const metaTransfers = []            // every attribute moved off a withdrawn record
 const problems = []
 const alreadyApplied = []
+const mergeDeltas = []   // duplicate merges whose measured excess differs from the plan's number
 
 // AN ALREADY-APPLIED ACTION STILL OWES ITS OVERLAY ROW.
 //
@@ -369,12 +368,38 @@ for (const a of actions) {
     const recs = resolve(k)
     const excess = a.excessRecordsRemoved ?? 0
     if (recs.length <= 1) { alreadyApplied.push(a.actionId); carryForward(a.actionId); continue }
-    if (recs.length - 1 !== excess) {
-      problems.push(`${a.actionId}: ${recs.length} records over ${k}, plan says ${excess} excess`)
-      continue
+
+    // MERGE WITHIN AN IDENTITY, NEVER ACROSS ONE.
+    //
+    // Two records over one span are the same occurrence only if they are the same THING. #2844 and
+    // #3325 both write "Renegade" once and carry three records over it — "Renegade" twice and
+    // "Hussein" once — and all three resolve to the canonical Barack Obama, so all three are one
+    // occurrence. But a span claimed by two DIFFERENT canonical identities is the
+    // TWO_IDENTITIES_ONE_SPAN conflict, and collapsing that would destroy a legitimate record to
+    // tidy a count. So records are grouped by canonical identity, merged inside each group, and one
+    // survivor is left per group for the conflict queue to rule on.
+    //
+    // The plan's excessRecordsRemoved was computed when the entity lookup could not reach
+    // alias-valued identities at all, so it can be short. The difference is REPORTED, never
+    // silently absorbed.
+    const groupKey = r => (r.kind === 'namedEntities' ? (entityForms.canonicalFor(r.certifiedValue) ?? r.certifiedValue) : r.certifiedValue)
+    const groups = new Map()
+    for (const r of recs) {
+      const g = groupKey(r)
+      if (!groups.has(g)) groups.set(g, [])
+      groups.get(g).push(r)
     }
-    // Keep the FIRST slot — the array's own order is the archive's order — and drop the rest.
-    for (const r of recs.slice(1)) {
+    const toDrop = [...groups.values()].flatMap(g => g.slice(1))
+    if (toDrop.length !== excess) {
+      mergeDeltas.push({ actionId: a.actionId, occurrenceKey: k, planExcess: excess,
+        measuredExcess: toDrop.length, identityGroups: [...groups.keys()],
+        why: groups.size > 1
+          ? 'the span is claimed by more than one canonical identity; only same-identity records were merged'
+          : 'the repaired entity lookup reaches alias-valued identities the plan could not see' })
+    }
+    if (!toDrop.length) { alreadyApplied.push(a.actionId); carryForward(a.actionId); continue }
+    // Keep the FIRST slot of each group — the array's own order is the archive's order.
+    for (const r of toDrop) {
       removeRecord(a.actionId, r, 'withdrawn')
       metaTransfers.push({ actionId: a.actionId, from: k, kind: r.kind, metadata: metaFor(p, r.kind, r.certifiedValue) })
     }
@@ -383,6 +408,7 @@ for (const a of actions) {
       text: a.sentenceText, sourceDisposition: a.sourceDisposition,
       primaryCategory: PRIMARY_KIND[recs[0].kind] ?? null, secondarySemantics: [], reviewDispositions: [],
       mergedRecords: recs.length, identity: recs[0].certifiedValue,
+      identityGroups: [...groups.keys()], recordsDropped: toDrop.length,
       actionId: a.actionId, ruleCode: a.ruleCode, withdrawReason: a.withdrawReason,
     })
     continue
@@ -736,6 +762,7 @@ const doc = {
   actionsApplied: actions.length - alreadyApplied.length,
   actionsAlreadyApplied: alreadyApplied.length, actionsHeld: held.length,
   heldActionIds: held.map(h => h.actionId).sort(),
+  ...(mergeDeltas.length ? { duplicateMergeDeltas: mergeDeltas } : {}),
   occurrences: semantics,
 }
 
@@ -760,3 +787,7 @@ console.log(`  array slots removed : ${slotsRemoved}`)
 console.log(`  question records    : ${questionEdits.size} patched`)
 console.log(`  overlay occurrences : ${semantics.length}`)
 console.log(`  metadata transfers  : ${metaTransfers.length}`)
+if (mergeDeltas.length) {
+  console.log(`  merge deltas vs plan: ${mergeDeltas.length}`)
+  for (const d of mergeDeltas) console.log(`     ${d.actionId}  plan ${d.planExcess} -> measured ${d.measuredExcess}  [${d.identityGroups.join(', ')}]`)
+}

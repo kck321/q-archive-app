@@ -40,10 +40,22 @@ function parseCsv(text) {
   return rows
 }
 
-const csv = parseCsv(fs.readFileSync(path.join(ROOT, 'STEP3B1-DRYRUN', '10-CONFLICTS-HELD.csv'), 'utf8').trim())
-const head = csv[0]
-const conflicts = csv.slice(1).map(r => Object.fromEntries(head.map((h, i) => [h, r[i] ?? ''])))
-if (conflicts.length !== 945) { console.error(`[X] expected 945 conflict rows, read ${conflicts.length}`); process.exit(1) }
+// --rebuilt taxonomises the queue MEASURED FROM THE CURRENT BUNDLE rather than the frozen CSV.
+// Same clustering, same lanes, so the two runs are directly comparable.
+const useRebuilt = process.argv.includes('--rebuilt')
+let conflicts
+if (useRebuilt) {
+  const q = JSON.parse(fs.readFileSync(path.join(OUT, 'step3b1-conflict-queue-rebuilt.json'), 'utf8'))
+  conflicts = q.rows.map(r => ({ ...r, aliasesAttempted: '', sourceDisposition: 'q_authored',
+    alsoDuplicateKey: 'false', postContext: '' }))
+  console.log(`taxonomising the REBUILT queue: ${conflicts.length} rows measured from the current bundle
+`)
+} else {
+  const csv = parseCsv(fs.readFileSync(path.join(ROOT, 'STEP3B1-DRYRUN', '10-CONFLICTS-HELD.csv'), 'utf8').trim())
+  const head = csv[0]
+  conflicts = csv.slice(1).map(r => Object.fromEntries(head.map((h, i) => [h, r[i] ?? ''])))
+  if (conflicts.length !== 945) { console.error(`[X] expected 945 conflict rows, read ${conflicts.length}`); process.exit(1) }
+}
 
 const posts = JSON.parse(fs.readFileSync(path.join(DATA, 'posts.json'), 'utf8'))
 const questions = JSON.parse(fs.readFileSync(path.join(DATA, 'questions.json'), 'utf8'))
@@ -63,13 +75,20 @@ const byNum = new Map(posts.map(p => [p.postNum, p]))
 // group, which is what the ledger's own comment says the fallback is for.
 const canonicalOnly = new Map()
 const groupForms = new Map()
+// How many registry GROUPS claim a given spelling. Two means the same person is registered twice —
+// "Wray" is its own canonical with the single alias "Wray", and "WRAY" is an alias of "Christopher
+// Wray". A lookup cannot pick between them without deciding which identity the drop meant, so it
+// takes the first registration and this counter names the ones that need a registry ruling.
+const groupsClaiming = new Map()
 for (const e of entitiesDoc.entities ?? []) {
   const forms = [...new Set([e.canonical, ...(e.aliases ?? []).map(a => a.text)].filter(Boolean))]
   canonicalOnly.set(String(e.canonical).toLowerCase(), forms)
+  const seenHere = new Set()
   for (const f of forms) {
     const k = String(f).toLowerCase()
     if (!groupForms.has(k)) groupForms.set(k, new Set())
     for (const g of forms) groupForms.get(k).add(g)
+    if (!seenHere.has(k)) { seenHere.add(k); groupsClaiming.set(k, (groupsClaiming.get(k) ?? 0) + 1) }
   }
 }
 const liveKeys = new Set(ledger.records.map(r => r.key))
@@ -119,7 +138,9 @@ const rows = conflicts.map(c => {
       locatedUnder: hitGroup ?? null,
       locatedCaseInsensitivelyUnder: hitCaseless ?? null,
       locatedInQuotedPostUnder: hitQuoted ?? null,
-      subtype: hitGroup ? 'ALIAS_KEYED_IDENTITY_LOOKUP_MISS'
+      registryGroupsClaimingThisSpelling: groupsClaiming.get(key) ?? 0,
+      subtype: (groupsClaiming.get(key) ?? 0) > 1 ? 'IDENTITY_SPLIT_ACROSS_TWO_REGISTRY_GROUPS'
+        : hitGroup ? 'ALIAS_KEYED_IDENTITY_LOOKUP_MISS'
         : hitCaseless ? 'CASE_VARIANT_NOT_REGISTERED'
         : hitQuoted ? 'PRESENT_ONLY_IN_QUOTED_MATERIAL'
         : allForms.length <= 1 ? 'NO_ALIAS_EVER_REGISTERED'
@@ -185,6 +206,8 @@ const LANE = {
   // One lookup defect, 424 rows. The identity IS registered and IS on the drop; the ledger's
   // alias map is keyed by canonical and these identities are aliases.
   ALIAS_KEYED_IDENTITY_LOOKUP_MISS: 'A',
+  // The same person registered as two canonical identities. A lookup may not choose between them.
+  IDENTITY_SPLIT_ACROSS_TWO_REGISTRY_GROUPS: 'C',
   // Same defect one layer down: the drop writes the identity in caps and the caps form is not a
   // registered alias, so even a group-aware lookup misses it. indexOf is case-sensitive.
   CASE_VARIANT_NOT_REGISTERED: 'A',
@@ -225,7 +248,7 @@ const repeatedText = Object.entries(tally(rows.filter(r => r.reason === 'UNLOCAT
 const doc = {
   note: 'Step 3B-1 conflict-queue taxonomy. Report only — nothing applied, nothing withdrawn.',
   totalRows: rows.length,
-  verified945: rows.length === 945,
+  measuredFrom: useRebuilt ? 'current bundle (rebuilt)' : 'STEP3B1-DRYRUN/10-CONFLICTS-HELD.csv (frozen)',
   distinctConflictIds: new Set(rows.map(r => r.conflictId)).size,
   distinctHeldKeys: new Set(rows.map(r => r.heldKey)).size,
   distinctPosts: new Set(rows.map(r => r.postNum)).size,
@@ -239,9 +262,9 @@ const doc = {
   largestIdentityClusters: repeatedText.slice(0, 20),
   rows,
 }
-fs.writeFileSync(path.join(OUT, 'step3b1-conflict-taxonomy.json'), JSON.stringify(doc, null, 1))
+fs.writeFileSync(path.join(OUT, useRebuilt ? 'step3b1-conflict-taxonomy-rebuilt.json' : 'step3b1-conflict-taxonomy.json'), JSON.stringify(doc, null, 1))
 
-console.log(`945 conflict rows  ->  ${clusters.length} root-cause patterns\n`)
+console.log(`${rows.length} conflict rows  ->  ${clusters.length} root-cause patterns` + String.fromCharCode(10))
 console.log('by reason        :', JSON.stringify(doc.byReason))
 console.log('by source layer  :', JSON.stringify(doc.bySourceLayer))
 console.log('distinct heldKeys:', doc.distinctHeldKeys, ' posts:', doc.distinctPosts)
