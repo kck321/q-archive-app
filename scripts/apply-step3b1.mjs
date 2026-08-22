@@ -43,6 +43,7 @@ import { sentencesFor, occurrencesOfSpan } from './lib/sentenceLedger.mjs'
 import { runtimeText } from './lib/runtimeText.mjs'
 import { key as metaKey } from './lib/segment.mjs'
 import { buildEntityForms } from './lib/entityForms.mjs'
+import { stableStringify } from './lib/stableJson.mjs'
 import { EXTRA_ACTION_SETS } from './lib/step3b1Sets.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
@@ -141,7 +142,26 @@ if (plan.length !== 540 + extraCount || actions.length !== 530 + dispositionsApp
 const postsPath = path.join(DATA, 'posts.json')
 const questionsPath = path.join(DATA, 'questions.json')
 const overlayPath = path.join(DATA, 'semantics.json')
-const fileSha = f => crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex')
+// THE STAMP HASHES CONTENT, NOT BYTE ORDER — and that distinction is what lets a deploy follow a
+// validate at all.
+//
+// This is an idempotence guard: "is the bundle in front of me already my own output?" It used to
+// hash the raw bytes of posts.json, and the two chain entry points do not produce the same bytes.
+// A fresh Firestore dump inserts postAnalysis keys in the order the chain adds them; a rebuild
+// inherits the order the file already had. Same values, same lengths, 1,365 drops with their keys
+// in a different sequence — and one hash apart.
+//
+// The consequence was a deadlock, not a cosmetic diff. validate.mjs runs rebuild-bundle and writes
+// a receipt over the resulting tree; deploy-web.sh then runs export-firestore.mjs, which rewrites
+// this one field, and preflight refuses to publish bytes that were not the bytes validated. Fix it
+// by re-validating and validate flips it straight back. The deploy could never happen.
+//
+// Hashing the parsed value with its keys sorted asks the question the guard actually means. Two
+// bundles that differ only in key order ARE the same bundle, and a bundle whose content moved by
+// one character still fails, which is the whole point.
+const contentSha = f => crypto.createHash('sha256')
+  .update(stableStringify(JSON.parse(fs.readFileSync(f, 'utf8')))).digest('hex')
+const fileSha = contentSha
 
 // RE-RUNNING ON MY OWN OUTPUT IS A NO-OP, AND IT HAS TO BE AN EXPLICIT ONE.
 //
