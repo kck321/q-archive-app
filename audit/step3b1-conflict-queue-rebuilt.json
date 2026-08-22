@@ -2,27 +2,27 @@
  "note": "Conflict queue re-derived from the CURRENT bundle. Not the old CSV minus anything.",
  "measuredFrom": "audit/occurrence-ledger-dryrun.json",
  "originalRows": 945,
- "rebuiltRows": 225,
- "netChange": -720,
+ "rebuiltRows": 222,
+ "netChange": -723,
  "byReason": {
   "UNLOCATED_SPAN": 119,
-  "BOUNDARY_CROSSING": 87,
+  "BOUNDARY_CROSSING": 84,
   "SAME_CATEGORY_PARTIAL_OVERLAP": 19
  },
  "byKind": {
   "namedEntities": 117,
   "claims": 88,
   "themeAnchors": 8,
-  "questions": 8,
+  "questions": 5,
   "directives": 4
  },
- "distinctHeldKeys": 203,
+ "distinctHeldKeys": 202,
  "distinctPosts": 175,
  "resolvedSince": {
-  "count": 724,
+  "count": 727,
   "byFamily": {
    "UNLOCATED_SPAN": 397,
-   "BOUNDARY_CROSSING": 155,
+   "BOUNDARY_CROSSING": 158,
    "DUPLICATE_KEY_CONFLICTING_METADATA": 42
   }
  },
@@ -190,15 +190,6 @@
    "kind": "claims",
    "detail": "touches 2 sentences",
    "certifiedValue": "Few have the facts.\nFew know the plan."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::1318|questions|1643|1781::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "1318|questions|1643|1781",
-   "postNum": 1318,
-   "kind": "questions",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "Department of Justice does not discuss ongoing investigations or confirm specific matters,\nWhat about the active investigation into leaks?"
   },
   {
    "conflictId": "BOUNDARY_CROSSING::15|claims|0|257::0",
@@ -525,15 +516,6 @@
    "certifiedValue": "\"you will be asked to give proof of your identity\"\nsynonyms:\tevidence, verification, corroboration, authentication, confirmation, certification, validation, attestation, demonstration, substantiation, witness, testament;\nPROOF = EVIDENCE?"
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::2971|questions|561|799::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "2971|questions|561|799",
-   "postNum": 2971,
-   "kind": "questions",
-   "detail": "touches 3 sentences",
-   "certifiedValue": "\"you will be asked to give proof of your identity\"\nsynonyms:\tevidence, verification, corroboration, authentication, confirmation, certification, validation, attestation, demonstration, substantiation, witness, testament;\nPROOF = EVIDENCE?"
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::2973|claims|32|219::0",
    "reason": "BOUNDARY_CROSSING",
    "heldKey": "2973|claims|32|219",
@@ -667,15 +649,6 @@
    "kind": "claims",
    "detail": "touches 3 sentences",
    "certifiedValue": "def enter_url_and_click_preview(url)\n    find('input.FormControl').set(url)\n    click_on('Preview card')"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::4454|questions|238|404::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "4454|questions|238|404",
-   "postNum": 4454,
-   "kind": "questions",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "At the same time, they gave more power to their obedient followers, like Antifa, while keeping the rest of us trapped at home and censored online.\"\nvirus OR ELECTION?"
   },
   {
    "conflictId": "BOUNDARY_CROSSING::4454|questions|238|404::0",

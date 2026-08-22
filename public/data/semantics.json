@@ -4,7 +4,7 @@
  "planSha256": "373ca06b1416b6707a111f2c3da8e751472c551f739500f76cdcc764d3128058",
  "dispositionsApplied": 8,
  "actionsApplied": 3,
- "actionsAlreadyApplied": 682,
+ "actionsAlreadyApplied": 685,
  "actionsHeld": 2,
  "heldActionIds": [
   "A-DUP-2971-questions-561-799",
@@ -4924,6 +4924,25 @@
    "supersededKeys": [],
    "actionId": "A-DQ-p1318-s044",
    "ruleCode": "R2_IMPERATIVE"
+  },
+  {
+   "occurrenceKey": "1318|questions|1734|1781",
+   "postNum": 1318,
+   "start": 1734,
+   "end": 1781,
+   "text": "What about the active investigation into leaks?",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "question",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "1318|questions|1643|1781",
+   "droppedLines": [
+    "Department of Justice does not discuss ongoing investigations or confirm specific matters,"
+   ],
+   "actionId": "B3-NARROW-1318-qf-1",
+   "ruleCode": "B3_NARROW_SEGMENTATION_RECOVERY",
+   "adjudication": "MODIFY_THEN_APPLY",
+   "adjudicationReason": "the segmentation recovery extended this question's literal backwards over pasted or quoted material. Narrowed to p1318-s051, which is the sentence the record's own text already names and which matches the body exactly. The co-located owner-ruling record is not touched."
   },
   {
    "occurrenceKey": "1318|directives|2319|2336",
@@ -12626,6 +12645,25 @@
    "adjudicationReason": "the certified span crossed a sentence boundary only because it swallowed 1 non-semantic line(s) — links, board pointers or bracketed labels. Trimmed to the one prose sentence it actually covers; the category is unchanged."
   },
   {
+   "occurrenceKey": "2971|questions|782|799",
+   "postNum": 2971,
+   "start": 782,
+   "end": 799,
+   "text": "PROOF = EVIDENCE?",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "question",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "2971|questions|561|799",
+   "droppedLines": [
+    "\"you will be asked to give proof of your identity\"\nsynonyms:\tevidence, verification, corroboration, authentication, conf"
+   ],
+   "actionId": "B3-NARROW-2971-qf-23",
+   "ruleCode": "B3_NARROW_SEGMENTATION_RECOVERY",
+   "adjudication": "MODIFY_THEN_APPLY",
+   "adjudicationReason": "the segmentation recovery extended this question's literal backwards over pasted or quoted material. Narrowed to p2971-s013, which is the sentence the record's own text already names and which matches the body exactly. The co-located owner-ruling record is not touched."
+  },
+  {
    "occurrenceKey": "2971|directives|847|869",
    "postNum": 2971,
    "sentenceId": "p2971-s015",
@@ -15992,6 +16030,25 @@
    "ruleCode": "R1_INTERROGATIVE"
   },
   {
+   "occurrenceKey": "4454|questions|386|404",
+   "postNum": 4454,
+   "start": 386,
+   "end": 404,
+   "text": "virus OR ELECTION?",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "question",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "4454|questions|238|404",
+   "droppedLines": [
+    "At the same time, they gave more power to their obedient followers, like Antifa, while keeping the rest of us trapped at"
+   ],
+   "actionId": "B3-NARROW-4454-qf-33",
+   "ruleCode": "B3_NARROW_SEGMENTATION_RECOVERY",
+   "adjudication": "MODIFY_THEN_APPLY",
+   "adjudicationReason": "the segmentation recovery extended this question's literal backwards over pasted or quoted material. Narrowed to p4454-s004, which is the sentence the record's own text already names and which matches the body exactly. The co-located owner-ruling record is not touched."
+  },
+  {
    "occurrenceKey": "4461|directives|331|350",
    "postNum": 4461,
    "sentenceId": "p4461-s005",
@@ -17955,11 +18012,12 @@
  ],
  "appliedTo": {
   "postsSha256": "150ef1c36913c1c5e39a403bdcebb3d95947e09967d624ec422770d1e04ed952",
-  "questionsSha256": "d92040e59ec00dc510dd059183f62df1378e886304eba7dd81685451482b18a6",
+  "questionsSha256": "540518803304a7a21226a7ae135201af4ead9279ed67dc91f9237fe1c7b1bff6",
   "dispositionsSha256": "0df3ba934b21058af5779806eec0c6d2219d63777d85edcc48f09518646c59ce",
   "extraSets": {
    "step3b1-b2-actions.jsonl": "c9c6c43a08291d2fed207f9ce573ecf526ed33751336c0bd86595fb647e53f00",
-   "step3b1-b2b-actions.jsonl": "33f26fa2d5c34c86e5e57681a9ba7613bb938e2f6fe1993e35f433fd480be6ce"
+   "step3b1-b2b-actions.jsonl": "33f26fa2d5c34c86e5e57681a9ba7613bb938e2f6fe1993e35f433fd480be6ce",
+   "step3b1-b3-actions.jsonl": "fc2f9f5a571b515fc9624f417e2abf6610e7f5a2cc8e8e0cab81a42f77df88f7"
   }
  }
 }

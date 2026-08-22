@@ -10,7 +10,7 @@
  "totals": {
   "sentences": 30187,
   "occurrencesKeyed": 30874,
-  "duplicateKeys": 58,
+  "duplicateKeys": 56,
   "byKind": {
    "claims": 8722,
    "predictions": 843,
@@ -21,12 +21,12 @@
    "context": 1605
   },
   "byRelation": {
-   "EXACT": 20496,
+   "EXACT": 20499,
    "PARTIAL": 10291,
-   "CROSSING": 87
+   "CROSSING": 84
   },
   "unlocated": 119,
-  "crossingSentenceBoundary": 87
+  "crossingSentenceBoundary": 84
  },
  "findings": {
   "partialPrimarySpans": {
@@ -345,24 +345,6 @@
    "sentenceTexts": [
     "Few have the facts.",
     "Few know the plan."
-   ]
-  },
-  {
-   "occurrenceKey": "1318|questions|1643|1781",
-   "postNum": 1318,
-   "kind": "questions",
-   "layer": "primary",
-   "start": 1643,
-   "end": 1781,
-   "text": "Department of Justice does not discuss ongoing investigations or confirm specific matters,\nWhat about the active investigation into leaks?",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p1318-s050",
-    "p1318-s051"
-   ],
-   "sentenceTexts": [
-    "Department of Justice does not discuss ongoing investigations or confirm specific matters,",
-    "What about the active investigation into leaks?"
    ]
   },
   {
@@ -1088,26 +1070,6 @@
    ]
   },
   {
-   "occurrenceKey": "2971|questions|561|799",
-   "postNum": 2971,
-   "kind": "questions",
-   "layer": "primary",
-   "start": 561,
-   "end": 799,
-   "text": "\"you will be asked to give proof of your identity\"\nsynonyms:\tevidence, verification, corroboration, authentication, confirmation, certification, validation, attestation, demonstration, substantiation, witness, testament;\nPROOF = EVIDENCE?",
-   "sentencesTouched": 3,
-   "sentenceIds": [
-    "p2971-s011",
-    "p2971-s012",
-    "p2971-s013"
-   ],
-   "sentenceTexts": [
-    "\"you will be asked to give proof of your identity\"",
-    "synonyms:\tevidence, verification, corroboration, authentication, confirmation, certification, validation, attestation, demonstration, substantiation, witness, testament;",
-    "PROOF = EVIDENCE?"
-   ]
-  },
-  {
    "occurrenceKey": "2973|claims|32|219",
    "postNum": 2973,
    "kind": "claims",
@@ -1399,24 +1361,6 @@
     "def enter_url_and_click_preview(url)",
     "find('input.FormControl').set(url)",
     "click_on('Preview card')"
-   ]
-  },
-  {
-   "occurrenceKey": "4454|questions|238|404",
-   "postNum": 4454,
-   "kind": "questions",
-   "layer": "primary",
-   "start": 238,
-   "end": 404,
-   "text": "At the same time, they gave more power to their obedient followers, like Antifa, while keeping the rest of us trapped at home and censored online.\"\nvirus OR ELECTION?",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p4454-s003",
-    "p4454-s004"
-   ],
-   "sentenceTexts": [
-    "At the same time, they gave more power to their obedient followers, like Antifa, while keeping the rest of us trapped at home and censored online.\"",
-    "virus OR ELECTION?"
    ]
   },
   {
@@ -2028,16 +1972,6 @@
    "identicalText": true
   },
   {
-   "occurrenceKey": "2971|questions|561|799",
-   "postNum": 2971,
-   "kind": "questions",
-   "start": 561,
-   "end": 799,
-   "textA": "\"you will be asked to give proof of your identity\"\nsynonyms:\tevidence, verification, corroboration, authentication, confirmation, certification, validation, attestation, demonstration, substantiation, witness, testament;\nPROOF = EVIDENCE?",
-   "textB": "\"you will be asked to give proof of your identity\"\nsynonyms:\tevidence, verification, corroboration, authentication, confirmation, certification, validation, attestation, demonstration, substantiation, witness, testament;\nPROOF = EVIDENCE?",
-   "identicalText": true
-  },
-  {
    "occurrenceKey": "2984|namedEntities|288|290",
    "postNum": 2984,
    "kind": "namedEntities",
@@ -2235,16 +2169,6 @@
    "end": 117,
    "textA": "NY",
    "textB": "NY",
-   "identicalText": true
-  },
-  {
-   "occurrenceKey": "4454|questions|238|404",
-   "postNum": 4454,
-   "kind": "questions",
-   "start": 238,
-   "end": 404,
-   "textA": "At the same time, they gave more power to their obedient followers, like Antifa, while keeping the rest of us trapped at home and censored online.\"\nvirus OR ELECTION?",
-   "textB": "At the same time, they gave more power to their obedient followers, like Antifa, while keeping the rest of us trapped at home and censored online.\"\nvirus OR ELECTION?",
    "identicalText": true
   },
   {

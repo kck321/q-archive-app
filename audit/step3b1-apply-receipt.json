@@ -11,9 +11,9 @@
  "seedVersion": 87,
  "outputs": {
   "public/data/posts.json": "150ef1c36913c1c5e39a403bdcebb3d95947e09967d624ec422770d1e04ed952",
-  "public/data/questions.json": "d92040e59ec00dc510dd059183f62df1378e886304eba7dd81685451482b18a6",
-  "public/data/semantics.json": "530c5b62dd6033bfd29038fd0aae97c4c5ba11df8438876ba39c61d6ad4aa2b3",
-  "audit/occurrence-ledger.json": "bc13ea558f7d439719910f5f7dad7eee465b65bbd647b459e4c024ba7d88ee09"
+  "public/data/questions.json": "540518803304a7a21226a7ae135201af4ead9279ed67dc91f9237fe1c7b1bff6",
+  "public/data/semantics.json": "94a6d4a17ff1d18eacae971d43ba7a5178b6db2dc518ee7ee6c78144933c6f32",
+  "audit/occurrence-ledger.json": "3692d5c7a741d60c207b00bf848e279d0d3bb1ce6774b8356d48f506d017c667"
  },
  "crossTab": [
   {
@@ -287,7 +287,7 @@
   "multiPrimarySentences": 0,
   "sameCategoryPrimaryOverlaps": 19,
   "supersededPartialPrimarySpans": 179,
-  "boundaryCrossingRecords": 87,
+  "boundaryCrossingRecords": 84,
   "conflictQueueRows": 945
  },
  "gates": [
@@ -299,7 +299,7 @@
   {
    "gate": "every automatic action materialised",
    "pass": true,
-   "detail": "685/685 actions, 686/686 overlay rows  (530 planned + 8 adjudicated held + 147 B2/B2b; #34 contributes two rows, one per clause)"
+   "detail": "685/685 actions, 689/686 overlay rows  (530 planned + 8 adjudicated held + 147 B2/B2b; #34 contributes two rows, one per clause)"
   },
   {
    "gate": "no held action appears in the applied overlay",
@@ -319,7 +319,7 @@
   {
    "gate": "zero runtime substring mismatch in the overlay",
    "pass": true,
-   "detail": "686 rows verified against runtimeText()"
+   "detail": "689 rows verified against runtimeText()"
   },
   {
    "gate": "zero runtime substring mismatch in the ledger",
