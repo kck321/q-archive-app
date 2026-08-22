@@ -4,48 +4,154 @@
   "reviewedOn": "2026-08-22",
   "rowsReviewed": 19,
   "rows": [
-    { "postNum": 4492, "identity": "US Navy", "disposition": "B", "registerAlias": "US NAVY",
-      "reason": "Q writes 'WHY WOULD THIS BE DIRECTED IF HOSPITALS [+US NAVY MEDICAL SHIPS [NYC-CA] …' in his own capitals. The row was refused as mid-word because the exact-case form is absent; the capitalised one is right there in his prose." },
-
-    { "postNum": 3900, "identity": "President", "disposition": "E", "withdrawAction": "migrate-to-linked-source", "urlEvidence": "path",
+    {
+      "postNum": 4492,
+      "identity": "US Navy",
+      "disposition": "B",
+      "registerAlias": "US NAVY",
+      "reason": "Q writes 'WHY WOULD THIS BE DIRECTED IF HOSPITALS [+US NAVY MEDICAL SHIPS [NYC-CA] …' in his own capitals. The row was refused as mid-word because the exact-case form is absent; the capitalised one is right there in his prose."
+    },
+    {
+      "postNum": 3900,
+      "identity": "President",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-linked-source",
+      "urlEvidence": "path",
       "carrierUrl": "https://www.nytimes.com/1863/09/16/archives/presidents-proclamation-the-habeas-corpus-suspended-throughout-the.html",
-      "reason": "The only trace is 'presidents-proclamation' inside an 1863 New York Times archive slug. A CMS slug is not Q naming the office." },
-    { "postNum": 4339, "identity": "Michigan", "disposition": "E", "withdrawAction": "migrate-to-linked-source", "urlEvidence": "path",
+      "reason": "The only trace is 'presidents-proclamation' inside an 1863 New York Times archive slug. A CMS slug is not Q naming the office."
+    },
+    {
+      "postNum": 4339,
+      "identity": "Michigan",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-linked-source",
+      "urlEvidence": "path",
       "carrierUrl": "https://townhall.com/columnists/larryoconnor/2020/05/28/michigans-hapless-governor-continues-deadly-covid19-nursing-home-policy-n2569605",
-      "reason": "The only trace is 'michigans-hapless-governor' inside a townhall.com slug." },
-    { "postNum": 4340, "identity": "New York Post", "disposition": "E", "withdrawAction": "migrate-to-linked-source", "urlEvidence": "hostname",
+      "reason": "The only trace is 'michigans-hapless-governor' inside a townhall.com slug."
+    },
+    {
+      "postNum": 4340,
+      "identity": "New York Post",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-linked-source",
+      "urlEvidence": "hostname",
       "carrierUrl": "https://nypost.com/2020/04/23/nursing-homes-cant-reject-coronavirus-patients-cuomo-says/",
-      "reason": "The only trace is the nypost.com hostname. The domain identifies the publisher of the linked article." },
-    { "postNum": 2029, "identity": "New York Post", "disposition": "E", "withdrawAction": "migrate-to-linked-source", "urlEvidence": "hostname",
+      "reason": "The only trace is the nypost.com hostname. The domain identifies the publisher of the linked article."
+    },
+    {
+      "postNum": 2029,
+      "identity": "New York Post",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-linked-source",
+      "urlEvidence": "hostname",
       "carrierUrl": "https://nypost.com/2018/08/31/half-of-americans-favor-impeaching-trump-poll/",
-      "reason": "The same: only the nypost.com hostname, one of five poll links Q posted on this drop." },
-
-    { "postNum": 48, "identity": "Canada", "disposition": "F", "flagForOwner": true,
+      "reason": "The same: only the nypost.com hostname, one of five poll links Q posted on this drop."
+    },
+    {
+      "postNum": 48,
+      "identity": "Canada",
+      "disposition": "F",
+      "flagForOwner": true,
       "reason": "The drop writes 'Why is the Canadian PM so important?' — the ADJECTIVE, never the country's name. Whether an adjectival form counts as naming the identity is a policy question for the whole archive, not for one row: settling it here would silently decide 'Russian', 'German', 'Iranian' and 'Chinese' as well. The occurrence is neither clearly a mention nor clearly not one, which is what F is for.",
-      "whatWouldSettleIt": "An owner ruling on whether a demonym is a mention of the country. If yes, register 'Canadian' as an alias and the row closes; if no, withdraw the occurrence." },
-    { "postNum": 1359, "identity": "France", "disposition": "F", "flagForOwner": true,
+      "whatWouldSettleIt": "An owner ruling on whether a demonym is a mention of the country. If yes, register 'Canadian' as an alias and the row closes; if no, withdraw the occurrence."
+    },
+    {
+      "postNum": 1359,
+      "identity": "France",
+      "disposition": "F",
+      "flagForOwner": true,
       "reason": "The drop writes 'Total S.A. is a French multinational integrated oil and gas company' — again the adjective, and here describing a company's nationality rather than an act of the state. Same open question as #48 and it must get the same answer.",
-      "whatWouldSettleIt": "The same owner ruling on demonyms." },
-
-    { "postNum": 1094, "identity": "US Senate", "disposition": "F", "ownerDirected": true,
-      "reason": "One of the nine F rows of the Owner Ruling 3 population. Only 'Senate' appears, and that spelling is already a registered form of 'United States Senate', so registering it here would make one token name two identities — invariant 4 in a new costume. The owner ruled on 2026-08-22: do not touch the 9 F rows; they remain explicitly unresolved unless new evidence independently settles them." },
-    { "postNum": 2335, "identity": "People's Liberation Army", "disposition": "F", "ownerDirected": true, "reason": "Owner Ruling 3 F row — left explicitly unresolved by the owner's direction of 2026-08-22." },
-    { "postNum": 2768, "identity": "Kamala Harris", "disposition": "F", "ownerDirected": true, "reason": "Owner Ruling 3 F row — left explicitly unresolved by the owner's direction of 2026-08-22." },
-    { "postNum": 3159, "identity": "Paris Hilton", "disposition": "F", "ownerDirected": true, "reason": "Owner Ruling 3 F row — left explicitly unresolved by the owner's direction of 2026-08-22. A first pass proposed 'Paris' as an alias; a fragment must be at least 60% of the canonical AND unclaimed, and this is neither." },
-    { "postNum": 4247, "identity": "USNS Comfort", "disposition": "F", "ownerDirected": true, "reason": "Owner Ruling 3 F row — left explicitly unresolved by the owner's direction of 2026-08-22." },
-    { "postNum": 4468, "identity": "Daily Beast", "disposition": "F", "ownerDirected": true, "reason": "Owner Ruling 3 F row — left explicitly unresolved by the owner's direction of 2026-08-22." },
-    { "postNum": 4521, "identity": "2020 Presidential Election", "disposition": "F", "ownerDirected": true, "reason": "Owner Ruling 3 F row — left explicitly unresolved by the owner's direction of 2026-08-22." },
-    { "postNum": 4526, "identity": "The Guardian", "disposition": "F", "ownerDirected": true, "reason": "Owner Ruling 3 F row — left explicitly unresolved by the owner's direction of 2026-08-22." },
-    { "postNum": 4630, "identity": "Harold Moody Jr", "disposition": "F", "ownerDirected": true, "reason": "Owner Ruling 3 F row — left explicitly unresolved by the owner's direction of 2026-08-22." },
-
-    { "conflictId": "BOUNDARY_CROSSING::4437|claims|0|180::0", "postNum": 4437, "kind": "claims", "disposition": "QUARANTINED", "ownerDirected": true,
+      "whatWouldSettleIt": "The same owner ruling on demonyms."
+    },
+    {
+      "postNum": 1094,
+      "identity": "US Senate",
+      "disposition": "F",
+      "ownerDirected": true,
+      "reason": "One of the nine F rows of the Owner Ruling 3 population. Only 'Senate' appears, and that spelling is already a registered form of 'United States Senate', so registering it here would make one token name two identities — invariant 4 in a new costume. The owner ruled on 2026-08-22: do not touch the 9 F rows; they remain explicitly unresolved unless new evidence independently settles them."
+    },
+    {
+      "postNum": 2335,
+      "identity": "People's Liberation Army",
+      "disposition": "F",
+      "ownerDirected": true,
+      "reason": "Owner Ruling 3 F row — left explicitly unresolved by the owner's direction of 2026-08-22."
+    },
+    {
+      "postNum": 2768,
+      "identity": "Kamala Harris",
+      "disposition": "F",
+      "ownerDirected": true,
+      "reason": "Owner Ruling 3 F row — left explicitly unresolved by the owner's direction of 2026-08-22."
+    },
+    {
+      "postNum": 3159,
+      "identity": "Paris Hilton",
+      "disposition": "F",
+      "ownerDirected": true,
+      "reason": "Owner Ruling 3 F row — left explicitly unresolved by the owner's direction of 2026-08-22. A first pass proposed 'Paris' as an alias; a fragment must be at least 60% of the canonical AND unclaimed, and this is neither."
+    },
+    {
+      "postNum": 4247,
+      "identity": "USNS Comfort",
+      "disposition": "F",
+      "ownerDirected": true,
+      "reason": "Owner Ruling 3 F row — left explicitly unresolved by the owner's direction of 2026-08-22."
+    },
+    {
+      "postNum": 4468,
+      "identity": "Daily Beast",
+      "disposition": "F",
+      "ownerDirected": true,
+      "reason": "Owner Ruling 3 F row — left explicitly unresolved by the owner's direction of 2026-08-22."
+    },
+    {
+      "postNum": 4521,
+      "identity": "2020 Presidential Election",
+      "disposition": "F",
+      "ownerDirected": true,
+      "reason": "Owner Ruling 3 F row — left explicitly unresolved by the owner's direction of 2026-08-22."
+    },
+    {
+      "postNum": 4526,
+      "identity": "The Guardian",
+      "disposition": "F",
+      "ownerDirected": true,
+      "reason": "Owner Ruling 3 F row — left explicitly unresolved by the owner's direction of 2026-08-22."
+    },
+    {
+      "postNum": 4630,
+      "identity": "Harold Moody Jr",
+      "disposition": "F",
+      "ownerDirected": true,
+      "reason": "Owner Ruling 3 F row — left explicitly unresolved by the owner's direction of 2026-08-22."
+    },
+    {
+      "conflictId": "BOUNDARY_CROSSING::4437|claims|10|155::0",
+      "postNum": 4437,
+      "kind": "claims",
+      "disposition": "QUARANTINED",
+      "ownerDirected": true,
       "reason": "Examined and REFUSED. A pasted Ruby test script — 'def visit_twitter_and_log_in / visit \\'https://cards-dev.twitter.com/validator\\' / …'. The deterministic repair would re-span it as Q semantic paint, and the owner ruled on 2026-08-22: do not convert pasted multi-sentence code or source material into Q semantic paint simply to make the lane count zero.",
-      "quarantineState": "INTENTIONALLY_NON_ACTIONABLE" },
-    { "postNum": 2955, "identity": "Whitaker", "disposition": "QUARANTINED", "ownerDirected": true,
+      "quarantineState": "INTENTIONALLY_NON_ACTIONABLE"
+    },
+    {
+      "postNum": 2955,
+      "identity": "Whitaker",
+      "disposition": "QUARANTINED",
+      "ownerDirected": true,
       "reason": "Examined and REFUSED. A case variant whose registration was declined; the owner ruled on 2026-08-22 not to reopen the three lane-A refusals merely because lane A should ideally be zero.",
-      "quarantineState": "INTENTIONALLY_NON_ACTIONABLE" },
-    { "postNum": 3690, "identity": "Gang of 8", "disposition": "QUARANTINED", "ownerDirected": true,
+      "quarantineState": "INTENTIONALLY_NON_ACTIONABLE",
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-2955-namedEntities::Whitaker::0"
+    },
+    {
+      "postNum": 3690,
+      "identity": "Gang of 8",
+      "disposition": "QUARANTINED",
+      "ownerDirected": true,
       "reason": "Examined and REFUSED, as above. 'GANG OF 8' was one of the five canonical identities Owner Ruling 1 merged into 'Gang of Eight', so a further alias here would re-open a registry question the owner has already settled once.",
-      "quarantineState": "INTENTIONALLY_NON_ACTIONABLE" }
+      "quarantineState": "INTENTIONALLY_NON_ACTIONABLE",
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-3690-namedEntities::Gang of 8::0"
+    }
   ]
 }
