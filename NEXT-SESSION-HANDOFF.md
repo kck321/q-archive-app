@@ -70,33 +70,34 @@ every row with its reason.
 
 ---
 
-## The census is DONE — the next work is the rulings
+## The census is DONE — and it was re-measured on the LIVE SITE
 
-`node scripts/audit-unhighlighted-sentences.mjs` was re-run on 22 Aug 2026 against seed 88, then
-`node scripts/classify-unhighlighted-residual.mjs` proposed a category for every line it found.
+The transcription pass was graded against the rendered DOM over all 4,734 readable drops on
+qdrops.app. **Zero false positives** — nothing it called unhighlighted is highlighted on the live
+site; it under-reported by 54 lines.
 
-**10,648 lines still carry text the drop body does not paint, across 4,458 posts — 4,815 distinct
-wordings.** Renderer misses: 0. The queue is a classification gap, never a broken highlight.
+**93.9% of all drop text is painted** (880,245 of 937,048 characters). 330 drops are painted end
+to end. **10,700 lines still carry unpainted text, across 4,457 drops — 4,859 distinct wordings.**
 
-The deliverable is `audit/unhighlighted-sentences/unhighlighted-sentence-review.xlsx` (six sheets)
-with a dated copy on the Desktop. Read `audit/unhighlighted-sentences/README.md` before it.
-
-Four decisions cover the whole queue — the **Action Plan** sheet is this table with examples:
+Deliverable: `audit/unhighlighted-sentences/unhighlighted-sentence-review.xlsx` (six sheets), with
+a dated copy on the Desktop. Read `audit/unhighlighted-sentences/README.md` first.
 
 | Decision | Lines | Wordings |
 |---|---:|---:|
-| POLICY RULING — one decision settles the population | 4,543 | **7** |
-| PAINT POLICY — certified already, the body just does not fill it | 3,321 | 3,021 |
-| CLASSIFY — no disposition anywhere in the archive | 1,875 | 1,419 |
-| SPAN BOUNDARY FIX — the highlight stops one character short | 909 | 478 |
+| POLICY RULING — one decision settles the population | 4,542 | **7** |
+| PAINT POLICY — certified already, the body just does not fill it | 3,342 | 3,042 |
+| CLASSIFY — no disposition anywhere in the archive | 1,905 | 1,447 |
+| SPAN BOUNDARY FIX — the highlight stops one character short | 911 | 481 |
 
-**Do not mix the first two with the third.** Seven wordings — `Q`, `Q+`, `WWG1WGA`, `WRWY`,
-"God bless", "Godspeed", the spelled-out slogan — settle 43% of the queue in one ruling. The 3,321
-PAINT POLICY lines are already dispositioned as context units, codes, evidence or quoted source and
-only lack a colour; if "every sentence highlighted" means a visible fill, that is a rendering
-decision about those layers, not a reclassification. Only the 1,875 CLASSIFY lines are adjudication.
+**Do not mix the first two with the third.** Seven wordings settle 42% of the queue. The PAINT
+POLICY rows are already dispositioned and only lack a colour — that is a rendering decision about
+context units, codes, evidence and quoted source, not a reclassification.
 
-GPT is running the same pass independently. The workbook has three blank GPT columns beside the
-owner-review block, with an AGREE/DISAGREE/PARTIAL dropdown, so the two passes merge row for row.
+**Re-measure rather than re-model.** `node scripts/audit-painted-truth.mjs --base https://qdrops.app`
+re-crawls the whole archive in ~7 minutes and grades any transcription against it. Never hand over
+a leftover list that has not been checked against the page.
+
+**#859 is a data defect:** its text splices a pointer inside a word
+(`These peo&gt;&gt;567493ple are stupid.`) so no rendered block matches it. Not yet fixed.
 
 Nothing was applied, rebuilt or deployed. Production stays at seed 88.

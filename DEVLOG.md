@@ -6652,3 +6652,85 @@ Two defects fixed in the workbook builder:
 all six sheets load under openpyxl, and the dropdowns land on AK, AT and AV.
 
 **Nothing was applied, rebuilt or deployed.** Production stays at seed 88.
+
+---
+
+## 2026-08-22 (later) — Stop modelling the renderer. Read the page.
+
+**Request:** "that is an old audit i want you to start over and review all the archive post again
+to see what is left over. i see the majority if not all of the last review you handed off was
+already fixed and published."
+
+The right response to that was not to re-run the same measurement. The census **transcribes**
+`renderPostBody()` into Node and measures against the transcription, and PROJECT_CONTEXT already
+names the risk in as many words: *"a near-enough reimplementation would invent uncovered text that
+is actually painted."* If the renderer had moved, every leftover in that handoff was fiction. So
+the question became: does the site paint this text or not — ask the browser.
+
+### What the renderer check found first
+
+The renderer's `Kind` union carries `topic`, `milIntel` and `qSignature`, none of which the census
+counts. Two of the three are dead — the "STATIC VOCABULARIES REMOVED" block deleted their segment
+producers — and `topic` only populates from a `?topic=` URL parameter, so it never paints on a
+normal read. The transcription was not obviously stale. That is a reason to measure, not a reason
+to relax.
+
+### The ground-truth crawl
+
+`scripts/audit-painted-truth.mjs` walks the text nodes inside `pre.post-text` on the published
+site and records which character ranges sit inside a `<mark>` or an `<a>`. **All 4,735 drops with
+body text, in ~7 minutes**, over a single page load — navigation is `pushState` and the data is
+already in IndexedDB.
+
+**Three defects in my own harness, each caught before its numbers were believed:**
+
+- A drop that QUOTES another renders **two** `pre.post-text` blocks, the quoted post first.
+  `querySelector` took the first, so every quoting drop measured the wrong body — #1010 came back
+  as #893904's text, 122 characters short. The element is now chosen by matching the text the drop
+  is supposed to have, which also *proves* the offsets align instead of assuming it.
+- The crawler stored the mark COUNT and not the mark RANGES. The downstream pass then read every
+  post as 100% unpainted and reported **29,563** leftovers with a straight face. Its
+  `marks read from the DOM: 0` line is the only reason that was caught — the never-trust-a-zero
+  rule earning its place a second time.
+- The renderer sets a BARE kind as the `title` on some marks, so 147 real highlights fell through
+  the class-based fallbacks and were reported as unmapped, inventing leftovers. The unmapped-class
+  tally is printed rather than swallowed, which is how it surfaced.
+
+### The grade
+
+| | |
+|---|---:|
+| transcription queued | 10,646 |
+| DOM queued | 10,700 |
+| **transcription WRONG — said unpainted, site paints it** | **0** |
+| transcription MISSED — site does not paint it, it said nothing | 54 |
+
+**Zero false positives.** The earlier handoff was accurate; it under-reported by 54 lines. The
+leftovers it named — `BOOM`, `Puppets w/o power.`, `Like Mother / Like Daughter`, the bare `Q`
+sign-off, the `-Aggression (Projection)` bullets, the #4603 thesaurus block — were checked one by
+one against **production** and are genuinely unpainted there. Local and production agree
+character-for-character (953 of 5,749 unpainted across the same nine drops).
+
+The warm browser profile was verified at `__seed_version__ = 88`, matching source, so this is not
+a stale-IndexedDB reading.
+
+### What the published site actually looks like
+
+**93.9% of all drop text is painted** — 880,245 of 937,048 characters. 56,803 remain, in 7,350
+runs across 4,404 drops; 330 drops are painted end to end. By sentence: 18,863 of 29,563 units
+(63.8%) fully painted, **10,700 queued across 4,457 drops, 4,859 distinct wordings**.
+
+Four decisions cover all of it: **POLICY RULING 4,542** (seven wordings — 42% of the queue),
+**PAINT POLICY 3,342**, **CLASSIFY 1,905**, **SPAN BOUNDARY FIX 911**.
+
+### Also done
+
+- `unitsWithOffsets`, `coverage`, `overlapping`, `formOf` and `hintFor` extracted to
+  `scripts/lib/units.mjs`, so the two passes cannot disagree about where a sentence starts — only
+  about what is painted. Extraction-only: the census printed identical numbers after the move.
+- The classifier and workbook prefer the DOM rows; `--census` forces the old ones so the
+  comparison stays runnable. The Summary sheet now states which measurement produced its rows.
+- **#859 cannot be read and it is a data defect:** its source text splices a pointer into the
+  middle of a word — `These peo&gt;&gt;567493ple are stupid.` — so no rendered block matches.
+
+**Nothing was applied, rebuilt or deployed.** Production stays at seed 88.
