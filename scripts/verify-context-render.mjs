@@ -51,16 +51,25 @@ const archiveLive = liveLines(archive)
 
 const checks = [
   // ── the data half: nothing was withdrawn to achieve the visual change ──────
-  ['4,816 context units still certified', ctx.units === 4816, ctx.units],
-  ['context still spread across 2,311 posts', ctx.withUnits === 2311, ctx.withUnits],
-  // 4,238 -> 4,236 on 2026-08-19. UNITS, not occurrences: #2420's single parallel-phrasing
-  // occurrence contributes BOTH its lines to postAnalysis.emphasis, and the run retired when the
-  // owner ruled its second line a Question (a question carries no Emphasis). Nothing was deleted
-  // from the drop; the device simply stops being certified.
-  ['4,236 emphasis units still certified', emp.units === 4236, emp.units],
-  // -1: that run was #2420's only Emphasis, so the drop leaves the set.
-  ['emphasis still spread across 1,356 posts', emp.withUnits === 1356, emp.withUnits],
-  ['13 reconstruction exceptions still tracked', exceptions.count === 13, exceptions.count],
+  // 4,816 -> 1,605 and 2,311 -> 795, and NOT in this pass: the figure was already 1,736/885 at
+  // seed 80 and 1,605/795 at seed 87. Context units are rebuilt by apply-context-units.mjs from
+  // the certified artifact on every chain run, and the 2026-08-20 queue rulings reclassified
+  // several thousand of them into Questions, Claims and Directives — a context unit that becomes
+  // a certified category stops being a context unit. This baseline simply was never moved with
+  // them, and nothing noticed because validate.mjs stopped at the manifest four seeds ago.
+  //
+  // What the check is FOR is unchanged and still asserted: the layer is certified and it is not
+  // painted. Withdrawing units to achieve the visual change would still fail it.
+  ['1,605 context units still certified', ctx.units === 1605, ctx.units],
+  ['context still spread across 795 posts', ctx.withUnits === 795, ctx.withUnits],
+  // EMPHASIS IS RETIRED (owner ruling, 2026-08-21) — the section, its data and its highlights.
+  // These two used to assert that 4,236 units across 1,356 posts were still certified while not
+  // being painted, which is the opposite of what must now be true. A gate asserting a retired
+  // section's figure goes green the day the section comes back.
+  ['emphasis is retired: no unit is certified', emp.units === 0, emp.units],
+  ['emphasis is retired: no post carries one', emp.withUnits === 0, emp.withUnits],
+  // 13 -> 12: one exception left the set when its span was re-adjudicated by the lane-B reviews.
+  ['12 reconstruction exceptions still tracked', exceptions.count === 12, exceptions.count],
 
   // ── the render half: neither surface paints them ──────────────────────────
   ['detail surface does not paint contextUnits',

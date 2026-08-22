@@ -124,13 +124,28 @@ for (const [label, url] of [
   ['Q [ Brackets ]', `${BASE}/brackets`],
   ['Claims',         `${BASE}/analysis?tab=claims&q=Trump`],
   ['Predictions',    `${BASE}/analysis?tab=predictions&q=will`],
-  ['Themes',         `${BASE}/analysis?tab=themes&q=control`],
+  // q=control matched NOTHING: "control" appears only inside the Censorship & Technology BLURB,
+  // and the tab searches labels and posts. A fixture that returns no rows reads as "this surface
+  // has no evidence chips" when the surface is fine — measured, q=Censorship gives 31 rows, 103
+  // post chips and 37 Pic/URL chips. The row-count assertion below is what stops the next stale
+  // fixture from being reported as a missing feature.
+  ['Themes',         `${BASE}/analysis?tab=themes&q=Censorship`],
   ['Directives',     `${BASE}/requests`],
   ['Questions',      `${BASE}/questions`],
 ]) {
   const p = await open(url)
+  // TWO DIFFERENT FAILURES, AND THEY MUST NOT LOOK ALIKE. "the fixture returned no rows" and
+  // "rows render no evidence chips" are the same red line otherwise, and the first one wasted an
+  // afternoon proving the second was false.
+  const rows = Number(await p.evaluate(`document.querySelectorAll('.bg-q-panel').length`))
+  // `\d` inside a template literal is just `d` — the backslash is dropped before the browser ever
+  // sees it, so this asked for anchors containing "#d" and found none on two healthy surfaces.
+  // Built with a character class instead, which needs no escape to survive the literal.
+  const anyChip = Number(await p.evaluate(`[...document.querySelectorAll('a')].filter(a => /#[0-9]/.test(a.textContent||'')).length`))
   const n = Number(await p.evaluate(`${CHIPS('(Pic|URL)')}.length`))
-  n > 0 ? ok(`${label} rows carry the same evidence chips (${n})`) : fail(`no evidence chips on ${label}`)
+  if (!anyChip) fail(`${label}: the fixture ${url.split('?')[1] ?? ''} returned no rows with post chips (${rows} panels) — stale fixture, not a missing feature`)
+  else if (n > 0) ok(`${label} rows carry the same evidence chips (${n})`)
+  else fail(`no evidence chips on ${label} (${anyChip} post chips present, so rows did render)`)
   await p.close()
 }
 

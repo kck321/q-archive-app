@@ -1,5 +1,5 @@
 {
- "certifiedAt": "2026-08-22T06:38:52.716Z",
+ "certifiedAt": "2026-08-22T06:42:43.734Z",
  "sections": 8,
  "seedVersion": 88,
  "note": "Every count here is recomputed from the artifacts, never copied forward. Verify with: node scripts/certification-manifest.mjs --verify",

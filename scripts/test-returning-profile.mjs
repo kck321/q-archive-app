@@ -133,7 +133,7 @@ console.log('\n4. and it stays repaired on the next load')
 const after = parse(await run(`${URL_BASE}/post/2917`, readPainted(2917), RENDERED_AND_CURRENT))
 console.log(`   seed=${after.seed}  stored claims=${JSON.stringify(after.storedClaims)}`)
 console.log(`   amber Claim marks in the drop: ${JSON.stringify(after.claimMarks)}`)
-console.log(`   'real' still certified as Emphasis in the store: ${(after.storedEmphasis ?? []).some(e => String(e).includes("'real'"))}`)
+console.log(`   Emphasis entries in the re-seeded store: ${(after.storedEmphasis ?? []).length} (retired — must be 0)`)
 
 const claimText = (after.claimMarks ?? []).join('')
 const checks = [
@@ -149,18 +149,20 @@ const checks = [
   ['"The \'real\' racist." restored to the store', (after.storedClaims ?? []).includes("The 'real' racist.")],
   ['"Pure evil." painted as a Claim in the drop', (after.claimMarks ?? []).includes('Pure evil.')],
   ['"The \'real\' racist." painted as a Claim', claimText.includes('The ') && claimText.includes(' racist.')],
-  // THE SPAN IS STILL BOTH — IT JUST NO LONGER SAYS SO IN PAINT.
+  // THIS ASSERTION HAS NOW BEEN INVERTED BY A SECOND RULING, AND IT STILL TESTS THE SAME THING.
   //
-  // This asserted that 'real' renders as a Claim+Emphasis overlap. The owner ruled the Emphasis
-  // fill out of the drop on 2026-08-17, so there is no overlap to paint and the span reads as the
-  // Claim it also is. Asserting the old paint here would have blocked the ruling from ever
-  // shipping, which is not what this test is for: its question is whether a RETURNING reader
-  // receives the current certified data, not which colour it wears.
+  // It began as "'real' renders as a Claim+Emphasis overlap". The owner ruled the Emphasis FILL out
+  // of the drop on 2026-08-17, so it moved to the seeded RECORD: the membership survived even
+  // though the paint did not. On 2026-08-21 the owner retired Emphasis outright — the section, the
+  // data and the highlights — so the membership is gone too, and asserting it would now block the
+  // retirement from ever reaching a returning reader.
   //
-  // So the membership is checked where it now lives — in the seeded record. A returning profile
-  // that re-seeded correctly still holds 'real' under Emphasis; one that did not, does not.
-  ["'real' still certified as Emphasis in the re-seeded record",
-    (after.storedEmphasis ?? []).some(e => String(e).includes("'real'"))],
+  // The question this test asks has never changed: does a RETURNING profile receive the CURRENT
+  // certified data? Under the retirement, "current" means the re-seeded record carries no Emphasis
+  // at all. A profile that re-seeded correctly has none; a stale one still holds its old array,
+  // which is exactly the failure this line is here to catch — the polarity flipped, the test did not.
+  ["the re-seeded record carries no Emphasis, because the section is retired",
+    (after.storedEmphasis ?? []).length === 0],
 ]
 console.log('\n  RESULT')
 let failed = 0

@@ -161,6 +161,37 @@ for (const g of glosses) {
 // A token whose only reading covers every post it appears in needs no post list shipped; one with
 // competing readings does. Keep the lists — they are small, and dropping them is how a popover
 // starts telling a reader that BO is Barack Obama inside a Bruce Ohr drop.
+// TWO SPELLINGS OF ONE NAME THAT DIFFER ONLY IN CASE ARE ONE TOKEN.
+//
+// The reader's matcher is case-insensitive, so of "FREEDOM CAUCUS" and "FREEDOM Caucus" — both
+// registered aliases of Freedom Caucus, added together on 2026-08-21 — exactly one can ever match.
+// The other is a glossary entry that cannot be reached, and test-multiword-gloss.mjs found it by
+// asserting that every token matches itself.
+//
+// Folded rather than deduplicated arbitrarily: the surviving spelling is the one that covers more
+// drops (ties broken alphabetically, so the output is a function of the data and not of iteration
+// order), and the post lists are UNIONED, because both spellings really do occur and a reader
+// hovering either one is asking the same question. Only case variants of the SAME entity fold —
+// two identities sharing a spelling is a registry collision and is left alone, exactly as
+// buildEntityForms leaves it.
+let caseFolded = 0
+{
+  const groups = new Map()
+  for (const [token, entries] of byToken) {
+    const k = `${token.toLowerCase()}|${entries.map(e => e.entityId ?? e.meaning).sort().join(',')}`
+    if (!groups.has(k)) groups.set(k, [])
+    groups.get(k).push(token)
+  }
+  for (const spellings of groups.values()) {
+    if (spellings.length < 2) continue
+    const postsOf = t => new Set(byToken.get(t).flatMap(e => e.posts ?? []))
+    const winner = [...spellings].sort((a, b) => postsOf(b).size - postsOf(a).size || a.localeCompare(b))[0]
+    const union = [...new Set(spellings.flatMap(t => [...postsOf(t)]))].sort((a, b) => a - b)
+    for (const e of byToken.get(winner)) e.posts = union
+    for (const t of spellings) if (t !== winner) { byToken.delete(t); caseFolded++ }
+  }
+}
+
 const out = { generated: 'scripts/build-glossary.mjs', certifiedDataUnaffected: true, tokens: {} }
 for (const [token, entries] of [...byToken].sort((a, b) => a[0].localeCompare(b[0]))) out.tokens[token] = entries
 
@@ -169,6 +200,7 @@ const multi = [...byToken.values()].filter(v => v.length > 1).length
 console.log('\nGLOSSARY\n')
 console.log(`  tokens explained        : ${byToken.size.toLocaleString()}`)
 console.log(`  with competing readings : ${multi} (disambiguated per post)`)
+console.log(`  case variants folded    : ${caseFolded}`)
 console.log(`  owner glosses (non-entity): ${glosses.length}`)
 console.log(`  acronym-named entities  : ${acronymEntities} expanded${undefinedAcronyms.length ? `, ${undefinedAcronyms.length} left undefined (${undefinedAcronyms.join(', ')})` : ''}`)
 console.log(`\n  wrote public/data/glossary.json`)

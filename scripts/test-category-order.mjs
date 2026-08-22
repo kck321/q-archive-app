@@ -27,7 +27,13 @@ const mode = args.includes('--fresh') ? 'fresh' : 'warm'
 const BASE = args.find(a => a.startsWith('http')) ?? 'http://localhost:5173'
 
 // Every category the archive lists, so a rule proved on Entities cannot quietly fail on Claims.
-const TABS = ['namedEntities', 'claims', 'predictions', 'themes', 'emphasis', 'verificationHooks']
+// Emphasis and Checkable Claims are RETIRED (owner rulings, 2026-08-21). Both used to be listed
+// here and both correctly render no rows now, which the gate reported as two failures — a list
+// that still names a retired section will always read its absence as a defect.
+const TABS = ['namedEntities', 'claims', 'predictions', 'themes']
+// And the retirement itself is asserted, so removing them from the list above cannot quietly
+// become "we stopped checking".
+const RETIRED_TABS = ['emphasis', 'verificationHooks', 'impliedConclusions']
 
 let failed = 0
 const check = (ok, label, got) => { if (!ok) failed++; console.log(`    ${ok ? 'PASS' : 'FAIL'}  ${label.padEnd(58)} ${got}`) }
@@ -141,6 +147,15 @@ for (const tab of TABS) {
   const outOfStep = ranked.filter((r, i) => i > 0 && r.rank <= ranked[i - 1].rank)
   check(outOfStep.length === 0, 'printed ranks ascend with the rendered order',
     outOfStep.length ? `${outOfStep.length} out of step` : `${ranked.length} ranked`)
+}
+
+// ── the retired tabs render nothing, and that is the assertion ──────────────
+for (const tab of RETIRED_TABS) {
+  const page = await browser.page(`${BASE}/analysis?tab=${tab}`)
+  await page.waitFor(`document.querySelectorAll('div.bg-q-panel').length > 3`, { timeout: 8000 }).catch(() => false)
+  const rows = Number(await page.evaluate(`document.querySelectorAll('div.bg-q-panel').length`))
+  await page.close()
+  check(rows <= 3, `${tab} is retired and renders no rows`, `${rows} panel(s)`)
 }
 
 // ── the reported regression, by name ────────────────────────────────────────
