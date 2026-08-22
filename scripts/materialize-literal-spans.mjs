@@ -83,21 +83,38 @@ const counts = Object.fromEntries(FIELDS.map(([f]) => [f, posts.reduce((n, p) =>
 const spanCounts = Object.fromEntries(FIELDS.map(([f, s]) => [f, posts.reduce((n, p) => n + (p.postAnalysis?.[s]?.length ?? 0), 0)]))
 
 const questionLiterals = questions.filter(r => r.literal).length
+
+// THE FIVE RECORDS THIS STEP OWES A LITERAL SPAN, PINNED BY IDENTITY RATHER THAN BY COUNT.
+//
+// 162, measured. The inline version inside apply-questions-final reported 165 because it ran
+// against a mid-chain state; this step is deterministic from the certified artifacts.
+// 162 -> 2 after resolving against the runtime body instead of the raw archive encoding. The
+// other 160 were entity-form overrides for text the browser never displays.
+// 2 -> 4: two of the 65 questions the owner ruled out of the unhighlighted-sentence queue were
+// reassembled across a segmenter split, so their certified value carries a single space where
+// the drop has a line break and needs a literal span to paint.
+//
+// THE 4 -> 7 -> 8 REVISIONS WERE MEASUREMENT ERROR, and the count is why they went unnoticed.
+// apply-step3b1.mjs runs eight steps LATER and writes `literal` onto 76 question records of its
+// own through SPAN_TRIM. Every time this step was run by hand on a tree that already carried that
+// output, it counted those 76 alongside its own recoveries, and the baseline was nudged up to
+// whatever the contaminated tree happened to hold. It was never re-measured from a clean chain,
+// because the chain had not been run end to end — the first full run measured 5 and stopped here.
+//
+// 5 is what this step actually produces from the certified artifacts, and each of the five is the
+// same defect the step exists for: the certified value carries a space where the drop has a line
+// break, so it needs a rendering form to paint. The final bundle still holds 80 — these 5 plus
+// step3b1's 76, less qc-h which step3b1 re-spans — and that total is asserted where it belongs,
+// after the step that produces it.
+//
+// Pinned by ID, so the contamination that produced 7 and 8 cannot recur silently: a stray literal
+// from a later step changes the SET, not just the number, and the check names what appeared.
+const OWED_LITERALS = ['JPIqQwo0moEuwzhHMzXL', 'q-queue-2740-35', 'q-queue-2971-39', 'q-queue-4454-53', 'qc-h']
+const gotLiterals = questions.filter(r => r.literal).map(r => r.id).sort()
+const literalsMatch = JSON.stringify(gotLiterals) === JSON.stringify([...OWED_LITERALS].sort())
 const checks = [
-  // 162, measured. The inline version inside apply-questions-final reported 165 because it ran
-  // against a mid-chain state; this step is deterministic from the certified artifacts.
-  // 162 -> 2 after resolving against the runtime body instead of the raw archive encoding. The
-  // other 160 were entity-form overrides for text the browser never displays.
-  // 2 -> 4: two of the 65 questions the owner ruled out of the unhighlighted-sentence queue were
-  // reassembled across a segmenter split, so their certified value carries a single space where
-  // the drop has a line break and needs a literal span to paint.
-  // 4 -> 7 with the 2026-08-21 segmentation repair. Three of the ten repaired spans now reach text
-  // the raw drop encodes differently from the certified value — #2381's runs through "&gt;", the
-  // #142 pair through a curly apostrophe — so they need a literal span to paint. That is this
-  // step's whole job: the certified value stays readable, the rendering value matches the body.
-  // 7 -> 8: one more repaired question reaches text the raw drop encodes differently from the
-  // certified value, so it needs a literal span to paint.
-  ['question literal spans = 8', questionLiterals === 8, questionLiterals],
+  ['question literal spans = the 5 owed records', literalsMatch,
+    literalsMatch ? questionLiterals : `${questionLiterals}: ${JSON.stringify(gotLiterals)}`],
   // The three "unchanged" gates below are cross-section CHECKS - this step adds a parallel *Spans
   // array and never a row. They move only when their own materialiser moved them, which is what
   // makes them useful: 6,454 -> 6,519, 4,212 -> 8,928 and 595 -> 842 are the 2026-08-20 queue

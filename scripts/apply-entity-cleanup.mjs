@@ -58,6 +58,43 @@ const ALL_ARTIFACTS = fs.readdirSync(DATA).filter(f => f.endsWith('.json')).sort
 // Platforms host material; they do not identify the publisher of it.
 const PLATFORMS = /^(twitter\.com|x\.com|youtube\.com|youtu\.be|t\.co|archive\.org|web\.archive\.org|docs\.google\.com|drive\.google\.com|pastebin\.com|imgur\.com|scribd\.com|documentcloud\.org|assets\.documentcloud\.org)$/
 
+// OWNER RULING 3 (2026-08-22) — 27 occurrences re-adjudicated AFTER the 2026-08-17 approval.
+//
+// A SEPARATE, SEPARATELY-PINNED SET, read beside the approved audit rather than merged into it.
+// audit/occurrence-provenance-audit.json keeps its 2026-08-17 bytes, its 9,926 rows and its 951
+// proposedWithdrawals; the approval record in the rollback contract keeps its wording and its
+// countsBefore/countsAfter. This ruling is a fourth postApprovalDeltas entry and this file.
+//
+// Why not simply edit the audit: the audit IS the approval. Rewriting it would make the guard
+// compare the tree against a before-state the owner never saw, which is the one thing the guard
+// exists to stop. Adding a set beside it leaves both the approved plan and the later ruling
+// independently readable, and a diff of either one still means what it says.
+//
+// Pinned by content for the same reason every other action set is: a ruling that can be edited
+// between review and apply was never reviewed.
+const RULING_3 = { file: 'occurrence-withdrawals-owner-ruling-3.json', count: 27,
+  sha256: '65f82ace6748eaaf1bbbdd010f8cba30802c8f9a7c918e5928be0ef2a20e21ef' }
+
+/** The ruling-3 rows, verified against their pin. Absent file = the ruling has not been built. */
+function loadRuling3() {
+  const full = path.join(OUT, RULING_3.file)
+  if (!fs.existsSync(full)) return []
+  const raw = fs.readFileSync(full)
+  const got = sha(raw)
+  if (got !== RULING_3.sha256) {
+    console.error('\n  X OWNER RULING 3 IS NOT THE REVIEWED RULING — stopped.')
+    console.error(`     expected ${RULING_3.sha256}`)
+    console.error(`     found    ${got}`)
+    process.exit(1)
+  }
+  const doc = JSON.parse(raw.toString('utf8'))
+  if (doc.withdrawals.length !== RULING_3.count) {
+    console.error(`\n  X owner ruling 3 holds ${doc.withdrawals.length} withdrawals, not ${RULING_3.count}.\n`)
+    process.exit(1)
+  }
+  return doc.withdrawals
+}
+
 // ════════════════════════════════════════════════════════════════════════════
 // THE PLAN — derived from the occurrence audit, one action per certified occurrence.
 // ════════════════════════════════════════════════════════════════════════════
@@ -154,6 +191,57 @@ function buildPlan(dataDir) {
               : r.evidence?.urlEvidence === 'query' ? 'A query term records what Q searched for, not what he wrote.'
                 : 'The domain identifies the publisher of the linked material — real information, wrong layer.',
       reversal: `Restore "${r.alias}" at index ${r.index} of postAnalysis.namedEntities in #${r.postNum} and add 1 to ${e.canonical}.`,
+    })
+  }
+
+  // ── OWNER RULING 3, folded in as actions ──────────────────────────────────
+  //
+  // Same shape, same validation, same removal path as the approved 951 — the only difference is
+  // which document authorises the row. Each one is checked against the tree exactly as the
+  // approved rows are: the occurrence must not already be claimed, the drop and the entity must
+  // exist, and the named alias must be at the named index. A ruling that does not describe the
+  // tree it is applied to is refused rather than approximated.
+  //
+  // Double subtraction is unrepresentable here for the same reason it is in the approved plan: the
+  // unit is the occurrence. `seen` is every AUDITED occurrence, most of which are keeps, so the
+  // test is against the ones that already carry an ACTION — that is what "acts on" means.
+  const ruling3 = loadRuling3()
+  const actedOn = new Set(actions.map(a => a.occurrenceId))
+  for (const w of ruling3) {
+    if (actedOn.has(w.occurrenceId)) { refusals.push(`${w.occurrenceId}: owner ruling 3 names an occurrence the approved plan already acts on`); continue }
+    if (!seen.has(w.occurrenceId)) { refusals.push(`${w.occurrenceId}: owner ruling 3 names an occurrence the 2026-08-17 audit does not cover`); continue }
+    actedOn.add(w.occurrenceId)
+    const post = postByNum.get(w.postNum)
+    const e = resolveEntity(w.entityId)
+    if (!post || !e) { refusals.push(`${w.occurrenceId}: owner ruling 3 — entity or drop has gone`); continue }
+    const named = post.postAnalysis?.namedEntities ?? []
+    if (named[w.index] !== w.alias) {
+      refusals.push(`${w.occurrenceId}: owner ruling 3 expected "${w.alias}" at index ${w.index}, found "${named[w.index]}"`)
+      continue
+    }
+    actions.push({
+      occurrenceId: w.occurrenceId,
+      postNum: w.postNum,
+      index: w.index,
+      alias: w.alias,
+      entityId: e.id, auditEntityId: w.entityId,
+      canonical: e.canonical,
+      entityType: e.type,
+      category: w.originalCategory,
+      urlEvidence: w.originalEvidence?.urlEvidence ?? null,
+      carriers: [],          // a withdrawal migrates nothing — no linked source is created
+      host: null, platform: null, handle: null,
+      action: 'remove-annotation',
+      ownerRuling: 'Owner Ruling 3 (2026-08-22)',
+      adjudication: w.adjudication,
+      before: {
+        entityMentions: e.mentions,
+        namedEntitiesInPost: named.length,
+        aliasAtIndex: named[w.index],
+        postTextSha: sha(String(post.text ?? '')).slice(0, 16),
+      },
+      justification: `Owner Ruling 3 (2026-08-22), ${w.adjudication}: ${w.reasonForWithdrawal}`,
+      reversal: w.reversal,
     })
   }
 
@@ -370,6 +458,33 @@ function transform(dataDir, { audit, actions }) {
   }
 }
 
+// THE TWO CERTIFIED ENUMERATIONS, WRITTEN WHEREVER THE PLAN IS EXECUTED.
+//
+// build-entity-public-view.mjs checks its derived rows against these by MEMBERSHIP, not merely by
+// size, which is what caught Owner Ruling 3: 21 more identities go dormant and Judicial Watch
+// becomes the 136th source-only row, so a registry frozen at 208/135 stops the build.
+//
+// They used to be written only on the --apply path, so a chain rebuild re-derived entities.json
+// and left the enumerations describing the previous ruling. That is the same defect the
+// rematerialise mode exists to fix one layer down — a bundle reproducible only by hand is not
+// reproducible — so the replay writes them too. Both paths call this, and the values come from the
+// transform rather than from a constant, so they cannot drift from the entity state they describe.
+function writeRegistries(result) {
+  fs.writeFileSync(path.join(OUT, 'entity-dormant-registry.json'), JSON.stringify({
+    note: 'Entities left with no certified mention and no bound linked source. Retired from the public bundle: excluded from Entities, search, autocomplete, global synopses and hovers. THE IDS ARE RESERVED PERMANENTLY — a later occurrence resolves back to the same qe- id rather than minting a second identity.',
+    policy: 'audit/url-derived-entity-policy.json + the 2026-08-17 boundary ruling + Owner Ruling 3 (2026-08-22)',
+    reserved: 'audit/entity-ids.json keeps every id in this list.',
+    total: result.dormant.length,
+    entities: result.dormant.map(e => ({ id: e.id, canonical: e.canonical, type: e.type, slug: e.slug })),
+  }, null, 1))
+
+  fs.writeFileSync(path.join(OUT, 'entity-source-only-registry.json'), JSON.stringify({
+    note: 'Entities with no prose mention left, but which remain referenced as the publisher of material Q linked. They stay in the public bundle and must NEVER render as a zero-mention entity page.',
+    total: result.sourceOnly.length,
+    entities: result.sourceOnly.map(e => ({ id: e.id, canonical: e.canonical, type: e.type, slug: e.slug, linkedSourcePosts: e.linkedSourcePosts })),
+  }, null, 1))
+}
+
 // ════════════════════════════════════════════════════════════════════════════
 function writeResult(dataDir, result) {
   fs.writeFileSync(path.join(dataDir, 'entities.json'), JSON.stringify(result.nextEntities))
@@ -458,19 +573,37 @@ if (MODE === 'rematerialise') {
   //
   // Recorded in the contract beside countsBefore/countsAfter rather than folded into them: those
   // two are the approval record, and rewriting them would erase what the owner actually approved.
+  //
+  // TWO KINDS OF DELTA, because two kinds of thing happened after the approval.
+  //
+  //   upstream   a ruling that changed the tree BEFORE this step runs. The before-state and the
+  //              after-state both move by the same amount and the cleanup itself is unchanged.
+  //              The 2026-08-20 sentence queue and the 2026-08-21 Nellie Ohr alias are these.
+  //   afterOnly  a ruling that changed WHAT THIS STEP DOES. The tree it starts from is untouched,
+  //              so only the after-state moves. Owner Ruling 3 is this: 27 more occurrences
+  //              withdrawn, and the identities whose last mention they were.
+  //
+  // Folding the second kind into the first would have made the guard expect a before-state that
+  // never existed, and it would have accepted a tree that had already had the ruling applied to it
+  // as if it were the starting point. They are added to different sides on purpose.
   const delta = (contract.postApprovalDeltas ?? []).reduce((a, d) => ({
     mentions: a.mentions + (d.mentions ?? 0),
     entityRows: a.entityRows + (d.entityRows ?? 0),
     rendered: a.rendered + (d.rendered ?? 0),
+  }), { mentions: 0, entityRows: 0, rendered: 0 })
+  const after = (contract.postApprovalDeltas ?? []).reduce((a, d) => ({
+    mentions: a.mentions + (d.afterOnly?.mentions ?? 0),
+    entityRows: a.entityRows + (d.afterOnly?.entityRows ?? 0),
+    rendered: a.rendered + (d.afterOnly?.rendered ?? 0),
   }), { mentions: 0, entityRows: 0, rendered: 0 })
   const expectBefore = {
     mentions: contract.countsBefore.mentions + delta.mentions,
     entityRows: contract.countsBefore.entityRows + delta.entityRows,
   }
   const expectAfter = {
-    mentions: contract.countsAfter.mentions + delta.mentions,
-    entityRows: contract.countsAfter.entityRows + delta.entityRows,
-    rendered: contract.countsAfter.rendered + delta.rendered,
+    mentions: contract.countsAfter.mentions + delta.mentions + after.mentions,
+    entityRows: contract.countsAfter.entityRows + delta.entityRows + after.entityRows,
+    rendered: contract.countsAfter.rendered + delta.rendered + after.rendered,
   }
 
   if (at.mentions === expectAfter.mentions && at.entityRows === expectAfter.entityRows) {
@@ -499,6 +632,7 @@ if (MODE === 'rematerialise') {
     process.exit(1)
   }
   writeResult(DATA, redone)
+  writeRegistries(redone)
   console.log(`  re-materialised the approved cleanup: ${expectBefore.entityRows}/${expectBefore.mentions}`
     + ` -> ${redone.after.entityRows}/${redone.after.mentions}`)
   console.log(`  approval: ${contract.approvedByOwner}\n`)
@@ -602,19 +736,7 @@ fs.writeFileSync(path.join(OUT, 'entity-cleanup-reversal.json'), JSON.stringify(
   restores: actions.map(a => ({ occurrenceId: a.occurrenceId, postNum: a.postNum, index: a.index, alias: a.alias, entityId: a.entityId, canonical: a.canonical, mentionsToRestore: 1 })),
 }, null, 1))
 
-fs.writeFileSync(path.join(OUT, 'entity-dormant-registry.json'), JSON.stringify({
-  note: 'Entities left with no certified mention and no bound linked source. Retired from the public bundle: excluded from Entities, search, autocomplete, global synopses and hovers. THE IDS ARE RESERVED PERMANENTLY — a later occurrence resolves back to the same qe- id rather than minting a second identity.',
-  policy: 'audit/url-derived-entity-policy.json + the 2026-08-17 boundary ruling',
-  reserved: 'audit/entity-ids.json keeps every id in this list.',
-  total: dormant.length,
-  entities: dormant.map(e => ({ id: e.id, canonical: e.canonical, type: e.type, slug: e.slug })),
-}, null, 1))
-
-fs.writeFileSync(path.join(OUT, 'entity-source-only-registry.json'), JSON.stringify({
-  note: 'Entities with no prose mention left, but which remain referenced as the publisher of material Q linked. They stay in the public bundle and must NEVER render as a zero-mention entity page.',
-  total: sourceOnly.length,
-  entities: sourceOnly.map(e => ({ id: e.id, canonical: e.canonical, type: e.type, slug: e.slug, linkedSourcePosts: e.linkedSourcePosts })),
-}, null, 1))
+writeRegistries(result)
 
 console.log(`\n  wrote audit/integrated-migration-plan.json, entity-cleanup-reversal.json,`)
 console.log(`        entity-dormant-registry.json, entity-source-only-registry.json`)

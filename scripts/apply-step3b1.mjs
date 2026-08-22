@@ -106,10 +106,20 @@ const EXTRA_ACTION_SETS = [
   { file: 'step3b1-b2b-actions.jsonl', sha256: '33f26fa2d5c34c86e5e57681a9ba7613bb938e2f6fe1993e35f433fd480be6ce', label: 'B2b collisions the trims uncovered' },
   { file: 'step3b1-b2c-actions.jsonl', sha256: '34fb5fedfa40a0e3ed8c1b2f6bef3ff2448467931ab72dc03db6e5cb03058678', label: 'B2c spaced-protocol link lines' },
   { file: 'step3b1-b3-actions.jsonl',  sha256: 'fc2f9f5a571b515fc9624f417e2abf6610e7f5a2cc8e8e0cab81a42f77df88f7', label: 'B3 over-extended segmentation recoveries' },
+  // OWNER RULING 3 (2026-08-22) — the two themeAnchors records in the reviewed C/D/E population.
+  // The other 27 are named-entity occurrences and go through apply-entity-cleanup.mjs, which owns
+  // the entity accounting they move. These two carry none, and themeAnchors is rebuilt by
+  // apply-themes.mjs earlier in the chain, so they belong to the applier that runs after every
+  // step that writes the arrays it edits.
+  { file: 'step3b1-r3-actions.jsonl',  sha256: '91c6bccf00928f5304cc08c44bdec473d9020c831302fbcd8ae14f2fe10bbd0c', label: 'R3 owner ruling 3 unlocated withdrawals' },
 ]
 let extraCount = 0
 const extraIds = []
 const extraStamp = {}
+// WHICH SET AN ACTION CAME FROM, kept because the sets are ordered and the order is load-bearing.
+// See the rebinding note above the action loop: an action set may target spans an earlier set
+// creates, so each one is applied against an index bound after the set before it.
+const waveOfAction = new Map()
 for (const set of EXTRA_ACTION_SETS) {
   const full = path.join(OUT, set.file)
   extraStamp[set.file] = null
@@ -127,7 +137,7 @@ for (const set of EXTRA_ACTION_SETS) {
   for (const a of rows) if (seen.has(a.actionId)) { console.error(`[X] ${set.label}: ${a.actionId} collides with an existing action`); process.exit(1) }
   plan = plan.concat(rows)
   extraCount += rows.length
-  for (const a of rows) extraIds.push(a.actionId)
+  for (const a of rows) { extraIds.push(a.actionId); waveOfAction.set(a.actionId, EXTRA_ACTION_SETS.indexOf(set) + 1) }
   extraStamp[set.file] = sha
 }
 
@@ -244,8 +254,13 @@ function spanSources(p) {
 }
 
 /** Every located record on every post, keyed by occurrenceKey. A key may hold several — that is
- *  what DUPLICATE_KEYS_148 is. */
-function buildIndex() {
+ *  what DUPLICATE_KEYS_148 is.
+ *
+ *  `skip` is the set of `${postNum}|${field}|${index}` slots already withdrawn by an earlier wave
+ *  but not yet spliced — see the rebinding note below. Removals are deferred to the end so that a
+ *  single array is edited once from the back; without this filter a rebind would hand a later wave
+ *  a record an earlier one has already spent. */
+function buildIndex(skip = new Set()) {
   const byKey = new Map()
   const sentencesByPost = new Map()
   for (const p of posts) {
@@ -259,6 +274,7 @@ function buildIndex() {
         for (const f of entityForms.formsFor(src.text)) { const h = occurrencesOfSpan(p.text, f); if (h.length) { hits = h; break } }
       }
       if (!hits.length) continue
+      if (src.origin.field !== 'questions.json' && skip.has(`${p.postNum}|${src.origin.field}|${src.origin.index}`)) continue
       const usedKey = `${src.kind}|${src.text}`
       const already = taken.get(usedKey) ?? 0
       const [start, end] = hits[Math.min(already, hits.length - 1)]
@@ -273,7 +289,7 @@ function buildIndex() {
   return { byKey, sentencesByPost }
 }
 
-const { byKey, sentencesByPost } = buildIndex()
+let { byKey, sentencesByPost } = buildIndex()
 
 // ── plan the edits ──────────────────────────────────────────────────────────────────────────
 // Nothing is written while this runs. Removals are collected as (post, field, slot) so a single
@@ -394,7 +410,34 @@ function metaFor(p, kind, text) {
   return out
 }
 
-for (const a of actions) {
+// THE INDEX IS REBOUND BETWEEN ACTION SETS, BECAUSE A SET MAY TARGET SPANS THE SET BEFORE IT MADE.
+//
+// buildIndex() binds every certified record to the characters it covers, once, before any edit.
+// That was correct while every action addressed a span the bundle already had. It stopped being
+// correct when B2b arrived: its three actions resolve collisions that only exist AFTER B2's trims
+// have run, and a trim rewrites the text in place, so the record moves to a key the index — bound
+// before the trim — does not hold.
+//
+// The consequence was silent, which is why it survived. `resolve()` returned nothing, the loop read
+// that as "already applied", and the run reported success with three multi-primary collisions left
+// unresolved: #1439, #2180 and #3623 each kept a question certified as a Claim as well. It never
+// showed up in testing because B2b was BUILT and applied in a second invocation, against a
+// posts.json the first invocation had already trimmed — so the index was right by accident of how
+// the work happened, and wrong the first time the whole chain ran in one process. Measured: claims
+// 8,721 in the committed bundle, 8,724 from a clean chain.
+//
+// The file already knew this: "B2b exists as its own set because its actions could not be written
+// until B2's trims had run." That ordering is now executed rather than merely documented. Each set
+// is a WAVE, applied in load order against an index bound after the wave before it, with the slots
+// an earlier wave withdrew — but has not yet spliced — held out of the rebind.
+const waves = [...new Set(actions.map(a => waveOfAction.get(a.actionId) ?? 0))].sort((x, y) => x - y)
+for (const wave of waves) {
+  if (wave !== waves[0]) {
+    const pending = new Set()
+    for (const [k, idx] of removals) { const [num, ...f] = k.split('|'); for (const i of idx) pending.add(`${num}|${f.join('|')}|${i}`) }
+    ;({ byKey, sentencesByPost } = buildIndex(pending))
+  }
+for (const a of actions.filter(x => (waveOfAction.get(x.actionId) ?? 0) === wave)) {
   if (onlyTheseActionIds && !onlyTheseActionIds.has(a.actionId)) { alreadyApplied.push(a.actionId); carryForward(a.actionId); continue }
   const p = postByNum.get(a.postNum)
   if (!p) { problems.push(`${a.actionId}: post #${a.postNum} not found`); continue }
@@ -430,6 +473,44 @@ for (const a of actions) {
   if (removalKeys.length && stillThere === 0) { alreadyApplied.push(a.actionId); carryForward(a.actionId); continue }
   if (stillThere && stillThere !== removalKeys.length) {
     problems.push(`${a.actionId}: ${stillThere}/${removalKeys.length} withdrawal targets resolve — partial state`)
+    continue
+  }
+
+  if (a.kind === 'WITHDRAW_UNLOCATED_RECORD') {
+    // A RECORD THE OCCURRENCE INDEX CANNOT SEE, WITHDRAWN BY ARRAY POSITION.
+    //
+    // buildIndex() drops any record whose text cannot be found in the drop (`if (!hits.length)
+    // continue`) — that is what UNLOCATED means, and it is why these two rows sat in the conflict
+    // queue: a record that binds to no characters can never be painted, so no span-keyed action
+    // can reach it either. They are addressed by (field, index, exact text) instead, and the text
+    // must still be sitting at that index or this is refused rather than guessed at.
+    //
+    // Idempotence is a slot witness, the same instrument the other removal families use: an
+    // unlocated value is by definition not a repeat that could slide into a vacated offset, so
+    // "the field no longer holds this text" is a complete and safe answer to "has this run".
+    const { field, index, text } = a.unlocatedRecord ?? {}
+    const holder = field === 'actionRequests' ? p : p.postAnalysis
+    const arr = holder?.[field]
+    if (!Array.isArray(arr)) { problems.push(`${a.actionId}: #${a.postNum} has no ${field} array`); continue }
+    if (slotCount(p, `postAnalysis.${field}`, text) === 0) { alreadyApplied.push(a.actionId); carryForward(a.actionId); continue }
+    if (String(arr[index]) !== String(text)) {
+      problems.push(`${a.actionId}: expected the reviewed record at ${field}[${index}] of #${a.postNum}, found ${JSON.stringify(arr[index])}`)
+      continue
+    }
+    removeRecord(a.actionId, { postNum: a.postNum, origin: { field: `postAnalysis.${field}`, index } }, 'withdrawn')
+    metaTransfers.push({ actionId: a.actionId, from: `${a.postNum}|${field}|unlocated|${index}`,
+      kind: field, metadata: metaFor(p, field, text) })
+    semantics.push({
+      occurrenceKey: `${a.postNum}|${field}|unlocated|${index}`,
+      postNum: a.postNum, sentenceId: null, start: null, end: null, text,
+      sourceDisposition: a.sourceDisposition, primaryCategory: null, withdrawn: true,
+      secondarySemantics: [], reviewDispositions: [],
+      actionId: a.actionId, ruleCode: a.ruleCode, withdrawReason: a.withdrawReason,
+      adjudication: a.adjudication, adjudicationReason: a.adjudicationReason,
+      ownerRuling: a.ownerRuling ?? null,
+      rationaleCorrection: a.rationaleCorrection ?? null,
+      slotWitness: { field: `postAnalysis.${field}`, text, slotsBefore: slotCount(p, `postAnalysis.${field}`, text), slotsAfter: 0 },
+    })
     continue
   }
 
@@ -873,6 +954,7 @@ for (const a of actions) {
     ...(a.spanOverride ? { spanOverride: true, spanOverrideReason: a.spanOverrideReason } : {}),
     ...(a.intentionallyUncategorized ? { intentionallyUncategorized: a.intentionallyUncategorized } : {}),
   })
+}
 }
 
 if (problems.length) {

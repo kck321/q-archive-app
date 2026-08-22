@@ -163,10 +163,25 @@ for (const a of automatic) for (const k of a.oldOccurrenceKeys ?? []) {
 gates.push(gate('zero duplicate action consumption', doubleSpend === 0, `${spend.size} distinct old keys across ${automatic.length} actions`))
 
 // Every overlay row must name an occurrence that exists in the runtime body at exactly its offsets.
+//
+// EXCEPT THE UNLOCATED WITHDRAWALS, WHICH ARE DEFINED BY NOT HAVING ONE. A record that binds to no
+// characters is precisely what UNLOCATED means: it can never be painted, which is why it sat in
+// the conflict queue and why Owner Ruling 3 withdrew it. Its overlay row records the withdrawal
+// and carries start/end of null, so it is excluded here and asserted separately below — never by
+// relaxing what "exists at exactly its offsets" means for the 691 rows that do have offsets.
 const bodyByNum = new Map(posts.map(p => [p.postNum, runtimeText(p.text ?? '')]))
-const badSpan = overlay.occurrences.filter(o => bodyByNum.get(o.postNum)?.slice(o.start, o.end) !== o.text)
+const located = overlay.occurrences.filter(o => o.start !== null && o.end !== null)
+const unlocated = overlay.occurrences.filter(o => o.start === null || o.end === null)
+const badSpan = located.filter(o => bodyByNum.get(o.postNum)?.slice(o.start, o.end) !== o.text)
 gates.push(gate('zero runtime substring mismatch in the overlay', badSpan.length === 0,
-  badSpan.length ? badSpan.slice(0, 5).map(o => o.occurrenceKey).join(', ') : `${overlay.occurrences.length} rows verified against runtimeText()`))
+  badSpan.length ? badSpan.slice(0, 5).map(o => o.occurrenceKey).join(', ') : `${located.length} located rows verified against runtimeText()`))
+
+// The unlocated rows must be withdrawals and nothing else. A row with no offsets that still claims
+// to paint something would be a record asserting a span it cannot show.
+const unlocatedNotWithdrawn = unlocated.filter(o => !o.withdrawn || o.primaryCategory)
+gates.push(gate('every overlay row without offsets is a withdrawal', unlocatedNotWithdrawn.length === 0,
+  unlocatedNotWithdrawn.length ? unlocatedNotWithdrawn.map(o => o.occurrenceKey).join(', ')
+    : `${unlocated.length} unlocated rows, all withdrawn, none painting`))
 
 // And the same for every record the ledger located, which is the whole bundle.
 const badLedger = ledger.records.filter(r => bodyByNum.get(r.postNum)?.slice(r.start, r.end) !== r.text)

@@ -150,7 +150,20 @@ for (const [postKey, records] of Object.entries(linked.byPost ?? {})) {
 }
 
 // ── Per-post mention counts, from the certified occurrence ledger ─────────────
-const SETTLED = r => /^(keep|hold)/.test(r.proposedAction ?? '')
+//
+// OWNER RULING 3 WITHDREW 27 OF THE LEDGER'S "KEEP"/"HOLD" ROWS AFTER IT WAS WRITTEN.
+//
+// The ledger keeps its 2026-08-17 bytes on purpose — it is the approval record, and rewriting it
+// would erase what the owner actually approved. So the later ruling is subtracted here rather than
+// edited in, exactly as apply-entity-cleanup.mjs applies it beside the audit rather than inside it.
+// Without this the retained count stays at 8,975 against a registry that now certifies 8,948, and
+// the guard below stops the build — which is the guard doing its job, not a number to relax.
+const ruling3Path = path.join(AUDIT, 'occurrence-withdrawals-owner-ruling-3.json')
+const ruling3Withdrawn = fs.existsSync(ruling3Path)
+  ? new Set(readAudit('occurrence-withdrawals-owner-ruling-3.json').withdrawals.map(w => w.occurrenceId))
+  : new Set()
+
+const SETTLED = r => /^(keep|hold)/.test(r.proposedAction ?? '') && !ruling3Withdrawn.has(r.occurrenceId)
 const UNSETTLED_ATTRIBUTION = r => /attribution must be settled/.test(r.proposedAction ?? '')
 
 const retained = (ledger.rows ?? []).filter(SETTLED)
