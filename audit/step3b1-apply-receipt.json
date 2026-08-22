@@ -12,7 +12,7 @@
  "outputs": {
   "public/data/posts.json": "b71ca4783093ca22bff0c6d9077d3a7e2a0913cea493058e98d234d2ca8cca73",
   "public/data/questions.json": "241dc211bf435d8522b34cdcc9f3ac8b832e06f80df346ddcb87d8ea3ee12b2f",
-  "public/data/semantics.json": "373b1494a78a28d3f6d06d00638c2c18ca7bb3ddc56af23c5f30156642de1d2f",
+  "public/data/semantics.json": "7e384660cd0e8e18dfb99e6ab4b87e98d8cbce149a5080b48c13b35a2afb6051",
   "audit/occurrence-ledger.json": "3ea66e5a782deb1e9c06b1a13bd3cb7a4fe9735dc373172f6c5a475ead3c698e"
  },
  "crossTab": [

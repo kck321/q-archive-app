@@ -85,6 +85,12 @@
     "Hillary Clinton"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Clinton",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-5-namedEntities-509-516",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -106,6 +112,12 @@
     "Donald Trump"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Trump",
+    "slotsBefore": 3,
+    "slotsAfter": 2
+   },
    "actionId": "A-DUP-14-namedEntities-1319-1324",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -436,7 +448,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0059-s006-281",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Combine all posts and analyze.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "61|predictions|209|251",
@@ -575,7 +593,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0080-s000-0",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "We need to get organized.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "86|directives|112|118",
@@ -591,7 +615,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0086-s004-112",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Study.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "92|directives|624|634",
@@ -607,7 +637,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0092-s022-624",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Speculate.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "97|directives|13|20",
@@ -727,7 +763,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0099-s023-342",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "A. Cooper family background?",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "99|questions|342|370",
@@ -798,7 +840,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0111-s013-381",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Repeat.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "111|namedEntities|1073|1077",
@@ -817,6 +865,12 @@
     "Huma Abedin"
    ],
    "recordsDropped": 4,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Huma",
+    "slotsBefore": 5,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-111-namedEntities-1073-1077",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "4 excess record(s) over one span merged into a single occurrence"
@@ -835,7 +889,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0112-s008-362",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Repeat.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "112|directives|602|634",
@@ -851,7 +911,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0112-s015-602",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Summarize and paint the picture.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "116|directives|47|65",
@@ -867,7 +933,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0116-s002-47",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Upload to graphic.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "117|directives|200|207",
@@ -909,7 +981,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0118-s004-147",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Repeat.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "119|directives|31|53",
@@ -995,7 +1073,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0128-s041-1151",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Be [p]repared.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "134|directives|93|178",
@@ -1076,7 +1160,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0153-s022-1519",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Laugh.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "157|directives|777|795",
@@ -1118,7 +1208,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0157-s026-853",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Rinse and repeat.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "157|directives|1467|1485",
@@ -1464,6 +1560,12 @@
     "Iran"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Iran",
+    "slotsBefore": 3,
+    "slotsAfter": 2
+   },
    "actionId": "A-DUP-194-namedEntities-86-90",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -1485,6 +1587,12 @@
     "Iran"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Iran",
+    "slotsBefore": 3,
+    "slotsAfter": 2
+   },
    "actionId": "A-DUP-195-namedEntities-86-90",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -1506,6 +1614,12 @@
     "Iran"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Iran",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-199-namedEntities-130-134",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -1524,7 +1638,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0225-s004-119",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "When this breaks many won’t swallow.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "236|directives|459|474",
@@ -1670,7 +1790,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0242-s000-0",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Be here tomorrow.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "243|directives|173|218",
@@ -1712,7 +1838,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0310-s004-140",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Re-listen to yesterday's speech.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "311|directives|45|52",
@@ -1860,7 +1992,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0345-s001-37",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Enhance.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "345|directives|69|112",
@@ -1963,7 +2101,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0425-s009-201",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "TRUST.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "426|directives|187|202",
@@ -2008,6 +2152,12 @@
     "[DNC]"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.emphasis",
+    "text": "[DNC]",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-436-emphasis-42-47",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -2062,7 +2212,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0477-s004-41",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Wind the clock w/ all markers.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "479|directives|141|168",
@@ -2104,7 +2260,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0490-s002-143",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Let FREEDOM RING.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "513|claims|49|88",
@@ -2282,7 +2444,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0538-s010-360",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "TRUST.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "559|namedEntities|414|421",
@@ -2301,6 +2469,12 @@
     "Barack Obama"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Hussein",
+    "slotsBefore": 3,
+    "slotsAfter": 2
+   },
    "actionId": "A-DUP-559-namedEntities-414-421",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -2340,6 +2514,12 @@
     "THEY WANT YOU DIVIDED."
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.emphasis",
+    "text": "THEY WANT YOU DIVIDED.",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-563-emphasis-230-252",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -2358,7 +2538,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0568-s007-153",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "TRUST.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "570|namedEntities|451|458",
@@ -2377,6 +2563,12 @@
     "Barack Obama"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Hussein",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-570-namedEntities-451-458",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -2398,6 +2590,12 @@
     "Iran"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Iran",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-570-namedEntities-941-945",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -2419,6 +2617,12 @@
     "Jeff Sessions"
    ],
    "recordsDropped": 2,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Sessions",
+    "slotsBefore": 3,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-570-namedEntities-1821-1829",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "2 excess record(s) over one span merged into a single occurrence"
@@ -2473,7 +2677,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0621-s001-37",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Let that sink in.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "622|directives|0|20",
@@ -2489,7 +2699,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0622-s000-0",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Time to play, Dopey.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "636|namedEntities|180|187",
@@ -2508,6 +2724,12 @@
     "Robert Mueller"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Mueller",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-636-namedEntities-180-187",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -2587,7 +2809,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0672-s005-78",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Enhance.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "673|directives|93|102",
@@ -2603,7 +2831,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0673-s004-93",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "No edits.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "725|questions|9|72",
@@ -3100,7 +3334,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0756-s030-507",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "ACTIVATE CODE: [0 0000 018739 7-ZjG]",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "759|predictions|103|148",
@@ -3189,6 +3429,12 @@
     "China"
    ],
    "recordsDropped": 2,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "China",
+    "slotsBefore": 3,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-778-namedEntities-44-49",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "2 excess record(s) over one span merged into a single occurrence"
@@ -3207,7 +3453,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0780-s002-242",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Future proves past:",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "790|questions|176|191",
@@ -3297,7 +3549,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0837-s002-62",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "TRUST.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "839|directives|243|253",
@@ -3313,7 +3571,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0839-s013-243",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "CHALLENGE.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "839|directives|254|260",
@@ -3329,7 +3593,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0839-s014-254",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "FIGHT.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "854|directives|202|224",
@@ -3456,7 +3726,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0868-s001-30",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Fail, they will.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "960|predictions|129|147",
@@ -3510,6 +3786,12 @@
     "China"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "China",
+    "slotsBefore": 3,
+    "slotsAfter": 2
+   },
    "actionId": "A-DUP-964-namedEntities-455-460",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -3531,6 +3813,12 @@
     "China"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "China",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-968-namedEntities-31-36",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -3585,7 +3873,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p0981-s002-43",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Sleep well, Patriot.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1008|directives|345|362",
@@ -3671,7 +3965,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p1077-s004-56",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Prevent at all costs.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1100|directives|379|395",
@@ -3687,7 +3987,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p1100-s016-379",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Drain the swamp.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1120|directives|0|8",
@@ -3729,7 +4035,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p1124-s002-14",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Testify then drop.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1155|directives|10|56",
@@ -3781,7 +4093,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p1226-s009-118",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "DNC to initiate lawsuit (pre-planned).",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1235|namedEntities|145|149",
@@ -3800,6 +4118,12 @@
     "Huma Abedin"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Huma",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-1235-namedEntities-145-149",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -3948,7 +4272,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p1248-s003-36",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Fight!",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1249|directives|75|90",
@@ -4054,6 +4384,12 @@
     "Michael Flynn"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Flynn",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-1265-namedEntities-155-160",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -4072,7 +4408,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p1275-s004-151",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "No redactions.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1279|directives|308|325",
@@ -4166,7 +4508,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p1291-s009-273",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Step back.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1295|claims|474|536",
@@ -4361,6 +4709,12 @@
     "Jeff Sessions"
    ],
    "recordsDropped": 4,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Sessions",
+    "slotsBefore": 6,
+    "slotsAfter": 2
+   },
    "actionId": "A-DUP-1318-namedEntities-1067-1075",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "4 excess record(s) over one span merged into a single occurrence"
@@ -4431,7 +4785,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p1318-s060-2319",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "No outside comms.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1319|directives|1871|1888",
@@ -4551,7 +4911,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p1336-s020-559",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Future to prove past.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1339|directives|938|951",
@@ -4619,7 +4985,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p1341-s000-10",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Time to move on.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1345|directives|466|479",
@@ -4814,7 +5186,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p1380-s007-132",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Focus.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1425|predictions|10|184",
@@ -4971,7 +5349,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p1468-s003-68",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "More to come.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1471|directives|119|153",
@@ -5058,7 +5442,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p1496-s009-238",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "[#3 released tomorrow]",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1557|directives|33|50",
@@ -5074,7 +5464,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p1557-s001-33",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Let’s start here.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1559|directives|101|114",
@@ -5142,7 +5538,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p1575-s000-0",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Abandon ship!",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1589|directives|178|185",
@@ -5219,7 +5621,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p1645-s000-0",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Play LOUD.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1646|questions|682|706",
@@ -5497,6 +5905,12 @@
     "Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn that mankind are more disposed to suffer, while evils are sufferable than to right themselves by abolishing the forms to which they are accustomed."
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "actionRequests",
+    "text": "Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn that mankind are more disposed to suffer, while evils are sufferable than to right themselves by abolishing the forms to which they are accustomed.",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-1700-directives-317-625",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -5533,7 +5947,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p1792-s003-156",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Fear not.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1796|namedEntities|343|350",
@@ -5552,6 +5972,12 @@
     "Twitter"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Twitter",
+    "slotsBefore": 3,
+    "slotsAfter": 2
+   },
    "actionId": "A-DUP-1796-namedEntities-343-350",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -5609,7 +6035,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p1817-s002-46",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Say something.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1822|directives|26|44",
@@ -5751,6 +6183,12 @@
     "United States"
    ],
    "recordsDropped": 2,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "America",
+    "slotsBefore": 5,
+    "slotsAfter": 3
+   },
    "actionId": "A-DUP-1824-namedEntities-326-333",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "2 excess record(s) over one span merged into a single occurrence"
@@ -5772,6 +6210,12 @@
     "James Comey"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "JC",
+    "slotsBefore": 7,
+    "slotsAfter": 6
+   },
    "actionId": "A-DUP-1828-namedEntities-784-786",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -5894,7 +6338,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p1863-s004-72",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "FIGHT!",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1873|questions|87|106",
@@ -5987,6 +6437,12 @@
     "Barack Obama"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Hussein",
+    "slotsBefore": 3,
+    "slotsAfter": 2
+   },
    "actionId": "A-DUP-1887-namedEntities-682-689",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -6031,7 +6487,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p1899-s001-43",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Travel to Rome.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1902|directives|66|81",
@@ -6047,7 +6509,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p1902-s003-66",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Travel to Rome.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1908|questions|201|292",
@@ -6139,7 +6607,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p1916-s003-134",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Say something.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1916|directives|149|203",
@@ -6547,6 +7021,12 @@
     "Vladimir Putin"
    ],
    "recordsDropped": 2,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Putin",
+    "slotsBefore": 3,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-1935-namedEntities-409-414",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "2 excess record(s) over one span merged into a single occurrence"
@@ -6840,6 +7320,12 @@
     "Iran"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Iran",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-1948-namedEntities-1473-1477",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -6910,7 +7396,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p1953-s003-72",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Know your enemy.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "1956|directives|67|90",
@@ -7132,7 +7624,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p2038-s002-69",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "FIGHT!",
+    "slotsBefore": 3,
+    "slotsAfter": 2
+   }
   },
   {
    "occurrenceKey": "2039|directives|69|96",
@@ -7148,7 +7646,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p2039-s003-69",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "LET FREEDOM RING, PATRIOTS.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "2056|claims|32|87",
@@ -7640,7 +8144,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p2206-s012-560",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "FIGHT!",
+    "slotsBefore": 3,
+    "slotsAfter": 2
+   }
   },
   {
    "occurrenceKey": "2211|questions|651|714",
@@ -7790,6 +8300,12 @@
     "PANIC IN UK"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.emphasis",
+    "text": "PANIC IN UK",
+    "slotsBefore": 3,
+    "slotsAfter": 2
+   },
    "actionId": "A-DUP-2215-emphasis-24-35",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -7811,6 +8327,12 @@
     "PANIC IN DC"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.emphasis",
+    "text": "PANIC IN DC",
+    "slotsBefore": 3,
+    "slotsAfter": 2
+   },
    "actionId": "A-DUP-2215-emphasis-36-47",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -7865,7 +8387,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p2239-s002-57",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Say something",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "2248|questions|0|91",
@@ -8227,6 +8755,12 @@
     "China"
    ],
    "recordsDropped": 2,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "China",
+    "slotsBefore": 3,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-2378-namedEntities-379-384",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "2 excess record(s) over one span merged into a single occurrence"
@@ -8267,6 +8801,12 @@
     "Robert Mueller"
    ],
    "recordsDropped": 10,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Mueller",
+    "slotsBefore": 11,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-2381-namedEntities-2570-2577",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "10 excess record(s) over one span merged into a single occurrence"
@@ -8288,6 +8828,12 @@
     "Robert Mueller"
    ],
    "recordsDropped": 10,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Mueller",
+    "slotsBefore": 12,
+    "slotsAfter": 2
+   },
    "actionId": "A-DUP-2397-namedEntities-701-708",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "10 excess record(s) over one span merged into a single occurrence"
@@ -8306,7 +8852,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p2429-s001-60",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "DECLAS coming.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "2436|directives|1493|1512",
@@ -8433,6 +8985,12 @@
     "United States Senate"
    ],
    "recordsDropped": 5,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Senate",
+    "slotsBefore": 8,
+    "slotsAfter": 3
+   },
    "actionId": "A-DUP-2448-namedEntities-1007-1013",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "5 excess record(s) over one span merged into a single occurrence"
@@ -8454,6 +9012,12 @@
     "Thank you for your service to our Country, Mr. Trey Gowdy!"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "actionRequests",
+    "text": "Thank you for your service to our Country, Mr. Trey Gowdy!",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-2451-directives-0-58",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -8512,6 +9076,12 @@
     "Democratic Party"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "D party",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-2463-namedEntities-56-63",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -8530,7 +9100,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p2474-s002-41",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "FIGHT!",
+    "slotsBefore": 3,
+    "slotsAfter": 2
+   }
   },
   {
    "occurrenceKey": "2499|directives|294|308",
@@ -8546,7 +9122,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p2499-s006-294",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Say something.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "2501|directives|215|231",
@@ -8627,6 +9209,12 @@
     "Washington Post"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "WASH POST",
+    "slotsBefore": 4,
+    "slotsAfter": 3
+   },
    "actionId": "A-DUP-2519-namedEntities-158-167",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -8736,7 +9324,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p2540-s003-106",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Please allow us to counter.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "2549|namedEntities|573|582",
@@ -8755,6 +9349,12 @@
     "Washington Post"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "WASH POST",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-2549-namedEntities-573-582",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -8791,7 +9391,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p2554-s006-231",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Say something.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "2559|directives|30|50",
@@ -8911,7 +9517,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p2604-s021-824",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Be in control of yourself.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "2627|namedEntities|231|240",
@@ -8930,6 +9542,12 @@
     "Washington Post"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "WASH POST",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-2627-namedEntities-231-240",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -8951,6 +9569,12 @@
     "United States"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "America",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-2640-namedEntities-466-473",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -9051,6 +9675,12 @@
     "John Brennan"
    ],
    "recordsDropped": 2,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Brennan",
+    "slotsBefore": 3,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-2657-namedEntities-1310-1317",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "2 excess record(s) over one span merged into a single occurrence"
@@ -9072,6 +9702,12 @@
     "United States Senate"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Senate",
+    "slotsBefore": 3,
+    "slotsAfter": 2
+   },
    "actionId": "A-DUP-2657-namedEntities-1348-1354",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -9126,7 +9762,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p2677-s001-25",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "It's time to return publicly.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "2678|questions|180|198",
@@ -9283,7 +9925,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p2710-s001-12",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Register all data pulls to location.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "2715|namedEntities|90|99",
@@ -9302,6 +9950,12 @@
     "Washington Post"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "WASH POST",
+    "slotsBefore": 3,
+    "slotsAfter": 2
+   },
    "actionId": "A-DUP-2715-namedEntities-90-99",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -9346,7 +10000,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p2726-s000-0",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Be alert next 10 days.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "2772|predictions|47|111",
@@ -9397,7 +10057,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p2777-s000-10",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Disregard any misspelling.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "2787|directives|556|576",
@@ -9615,6 +10281,12 @@
     "Barack Obama"
    ],
    "recordsDropped": 2,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Renegade",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-2844-namedEntities-511-519",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -9636,6 +10308,12 @@
     "Robert Mueller"
    ],
    "recordsDropped": 2,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Mueller",
+    "slotsBefore": 7,
+    "slotsAfter": 5
+   },
    "actionId": "A-DUP-2856-namedEntities-1355-1362",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "2 excess record(s) over one span merged into a single occurrence"
@@ -9654,7 +10332,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p2877-s000-10",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Disregard all spelling/other errors.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "2887|questions|0|143",
@@ -10004,6 +10688,12 @@
     "United States Senate"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Senate",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-2943-namedEntities-1150-1156",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -10048,7 +10738,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p2967-s001-22",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Switch private_reg_C.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "2971|directives|117|135",
@@ -10269,7 +10965,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p3003-s001-78",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "[Parts 3-9 coming soon]",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "3004|namedEntities|771|776",
@@ -10288,6 +10990,12 @@
     "John Huber"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Huber",
+    "slotsBefore": 3,
+    "slotsAfter": 2
+   },
    "actionId": "A-DUP-3004-namedEntities-771-776",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -10309,6 +11017,12 @@
     "United States Senate"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Senate",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-3006-namedEntities-451-457",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -10431,7 +11145,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p3040-s005-178",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Let Freedom Ring!",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "3049|questions|110|359",
@@ -10542,7 +11262,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p3072-s000-10",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Disregard spelling error.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "3077|directives|58|72",
@@ -10558,7 +11284,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p3077-s003-58",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Say Something.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "3111|directives|188|207",
@@ -10574,7 +11306,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p3111-s003-188",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Let's Keep Playing…",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "3130|claims|101|321",
@@ -10608,7 +11346,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p3256-s001-63",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "USA v. LifeLog?",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "3256|questions|63|78",
@@ -10668,7 +11412,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p3308-s000-0",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Disregard any spelling errors.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "3309|directives|76|90",
@@ -10713,6 +11463,12 @@
     "Robert Mueller"
    ],
    "recordsDropped": 2,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Mueller",
+    "slotsBefore": 4,
+    "slotsAfter": 2
+   },
    "actionId": "A-DUP-3316-namedEntities-279-286",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "2 excess record(s) over one span merged into a single occurrence"
@@ -10760,6 +11516,12 @@
     "Barack Obama"
    ],
    "recordsDropped": 2,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Renegade",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-3325-namedEntities-102-110",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -10781,6 +11543,12 @@
     "Michael Flynn"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Flynn",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-3330-namedEntities-191-196",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -10834,7 +11602,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p3373-s001-26",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Sleep well.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "3383|directives|762|778",
@@ -10850,7 +11624,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p3383-s013-762",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "DRAIN THE SWAMP.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "3385|predictions|142|189",
@@ -11049,7 +11829,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p3528-s001-59",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "DRAIN THE SWAMP!",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "3540|questions|77|107",
@@ -11104,7 +11890,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p3568-s003-43",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Say something.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "3568|directives|58|94",
@@ -11120,7 +11912,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p3568-s004-58",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Know your surroundings at all times.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "3582|questions|83|101",
@@ -11297,7 +12095,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p3588-s026-1250",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Be free in your thoughts.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "3593|claims|204|404",
@@ -11405,7 +12209,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p3627-s003-39",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Watch",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "3661|questions|0|41",
@@ -11460,7 +12270,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p3663-s006-132",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "DRAIN THE SWAMP!",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "3728|claims|127|186",
@@ -11514,6 +12330,12 @@
     "Nancy Pelosi"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Pelosi",
+    "slotsBefore": 3,
+    "slotsAfter": 2
+   },
    "actionId": "A-DUP-3741-namedEntities-344-350",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -11532,7 +12354,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p3748-s008-474",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Fight!",
+    "slotsBefore": 3,
+    "slotsAfter": 2
+   }
   },
   {
    "occurrenceKey": "3785|questions|10|38",
@@ -11592,7 +12420,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p3839-s001-60",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "It's time to wake up.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "3856|directives|43|84",
@@ -11901,6 +12735,12 @@
     "China"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "China",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-3915-namedEntities-677-682",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -11981,7 +12821,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p3964-s001-56",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Be informed.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "3992|namedEntities|76|83",
@@ -12000,6 +12846,12 @@
     "Robert Mueller"
    ],
    "recordsDropped": 10,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Mueller",
+    "slotsBefore": 11,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-3992-namedEntities-76-83",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "10 excess record(s) over one span merged into a single occurrence"
@@ -12152,7 +13004,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p4089-s002-67",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "It's time to wake up.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "4097|questions|252|270",
@@ -12236,6 +13094,12 @@
     "Barack Obama"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Renegade",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-4098-namedEntities-69-77",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -12389,7 +13253,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p4135-s001-58",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "It's time to wake up.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "4140|directives|50|67",
@@ -12405,7 +13275,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p4140-s001-50",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "LET FREEDOM RING!",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "4161|directives|0|10",
@@ -12421,7 +13297,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p4161-s000-0",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Disregard.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "4164|directives|435|462",
@@ -12721,6 +13603,12 @@
     "[prevent accountability]"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.emphasis",
+    "text": "[prevent accountability]",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-4381-emphasis-349-373",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -12742,6 +13630,12 @@
     "United States"
    ],
    "recordsDropped": 2,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "America",
+    "slotsBefore": 3,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-4397-namedEntities-773-780",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "2 excess record(s) over one span merged into a single occurrence"
@@ -12778,7 +13672,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p4424-s003-133",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Be All You Can Be.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "4428|questions|102|120",
@@ -12923,7 +13823,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p4496-s002-79",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Surrender to None ['Digital Battleground'].",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "4498|directives|63|84",
@@ -12939,7 +13845,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p4498-s002-63",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Know your weaknesses.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "4498|directives|85|91",
@@ -12955,7 +13867,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p4498-s003-85",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Adapt.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "4498|directives|92|101",
@@ -12971,7 +13889,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p4498-s004-92",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Overcome.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "4509|directives|477|712",
@@ -13058,7 +13982,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p4550-s000-10",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Fear not.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "4550|directives|516|536",
@@ -13074,7 +14004,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p4550-s015-516",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Let light guide you.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "4553|directives|125|142",
@@ -13389,6 +14325,12 @@
     "Barack Obama"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "Hussein",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-4620-namedEntities-487-494",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -13428,6 +14370,12 @@
     "United States"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "America",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-4635-namedEntities-1782-1789",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -13595,7 +14543,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p4666-s001-15",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Say something.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "4683|directives|39|44",
@@ -13611,7 +14565,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p4683-s005-39",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Know.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "4685|directives|507|529",
@@ -13689,7 +14649,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p4694-s000-0",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Know your enemy.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "4722|predictions|118|175",
@@ -13965,6 +14931,12 @@
     "China"
    ],
    "recordsDropped": 1,
+   "slotWitness": {
+    "field": "postAnalysis.namedEntities",
+    "text": "China",
+    "slotsBefore": 2,
+    "slotsAfter": 1
+   },
    "actionId": "A-DUP-4817-namedEntities-54-59",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
@@ -13983,7 +14955,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p4851-s008-431",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "DRAIN THE SWAMP.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "4852|directives|60|87",
@@ -13999,7 +14977,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p4852-s001-60",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Let's keep the party going.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "4871|questions|0|119",
@@ -14165,7 +15149,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p4893-s014-573",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "DRAIN THE SWAMP.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "4908|directives|47|66",
@@ -14278,7 +15268,13 @@
     "contextual"
    ],
    "actionId": "A-CTX-p4962-s007-121",
-   "ruleCode": "R10_CONTEXT_DISPOSITION"
+   "ruleCode": "R10_CONTEXT_DISPOSITION",
+   "slotWitness": {
+    "field": "postAnalysis.contextUnits",
+    "text": "Repeat.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
   },
   {
    "occurrenceKey": "4963|directives|148|171",

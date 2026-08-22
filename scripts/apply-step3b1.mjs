@@ -260,13 +260,18 @@ const priorTransfers = fs.existsSync(priorTransfersPath)
   : []
 if (fs.existsSync(priorOverlayPath)) {
   try {
-    for (const o of (JSON.parse(fs.readFileSync(priorOverlayPath, 'utf8')).occurrences ?? [])) priorByAction.set(o.actionId, o)
+    // AN ACTION CAN OWN MORE THAN ONE OVERLAY ROW. #34's clause partition owns two, one per clause,
+    // and a Map that keeps the last row per actionId silently drops the claim half on carry-forward.
+    for (const o of (JSON.parse(fs.readFileSync(priorOverlayPath, 'utf8')).occurrences ?? [])) {
+      if (!priorByAction.has(o.actionId)) priorByAction.set(o.actionId, [])
+      priorByAction.get(o.actionId).push(o)
+    }
   } catch { /* an unreadable overlay is rebuilt from scratch, and the resolution gate will say so */ }
 }
 const carryForward = actionId => {
   const prior = priorByAction.get(actionId)
-  if (prior) {
-    semantics.push(prior)
+  if (prior?.length) {
+    for (const row of prior) semantics.push(row)
     for (const t of priorTransfers) if (t.actionId === actionId) metaTransfers.push(t)
     return true
   }
@@ -274,6 +279,26 @@ const carryForward = actionId => {
   return false
 }
 const consumedKeys = new Map()      // old key -> actionId, proving no key is spent twice
+
+// SLOT REMOVAL NEEDS A WITNESS, NOT A STAMP.
+//
+// The bundle stamp makes a re-run on this step's own output a no-op, but it cannot help when the
+// bundle is PARTIALLY rebuilt — run apply-entities.mjs alone and posts.json changes while
+// contextUnits does not, so the stamp misses and the removal families re-derive. That is unsafe for
+// exactly one reason: #2038 is `FIGHT! FIGHT! FIGHT!`, three units over three positions, and the
+// plan withdraws the first. Once it is gone the SECOND unit binds to the vacated offsets, the
+// action's target resolves again, and a second pass withdraws a legitimate repeat. Measured: four
+// posts, four context units silently lost.
+//
+// So these families carry a witness — how many entries with this exact text the field should hold
+// once the action has run. The count is a property of the data, not of a file hash, so it is right
+// on a full rebuild, a partial one, and a bare re-run alike.
+const slotCount = (p, field, text) => {
+  const name = field.split('.').pop()
+  const holder = field.startsWith('postAnalysis') ? p.postAnalysis : p
+  const arr = holder?.[name]
+  return Array.isArray(arr) ? arr.filter(x => String(x) === String(text)).length : 0
+}
 
 // WITHDRAWAL HAS TWO SHAPES, BECAUSE THE TWO STORES DO.
 //
@@ -397,7 +422,13 @@ for (const a of actions) {
           ? 'the span is claimed by more than one canonical identity; only same-identity records were merged'
           : 'the repaired entity lookup reaches alias-valued identities the plan could not see' })
     }
+    const priorDup = (priorByAction.get(a.actionId) ?? [])[0]
+    if (priorDup?.slotWitness && slotCount(p, priorDup.slotWitness.field, priorDup.slotWitness.text) <= priorDup.slotWitness.slotsAfter) {
+      alreadyApplied.push(a.actionId); carryForward(a.actionId); continue
+    }
     if (!toDrop.length) { alreadyApplied.push(a.actionId); carryForward(a.actionId); continue }
+    const dupField = recs[0].origin.field, dupText = recs[0].certifiedValue
+    const dupBefore = slotCount(p, dupField, dupText)
     // Keep the FIRST slot of each group — the array's own order is the archive's order.
     for (const r of toDrop) {
       removeRecord(a.actionId, r, 'withdrawn')
@@ -409,6 +440,8 @@ for (const a of actions) {
       primaryCategory: PRIMARY_KIND[recs[0].kind] ?? null, secondarySemantics: [], reviewDispositions: [],
       mergedRecords: recs.length, identity: recs[0].certifiedValue,
       identityGroups: [...groups.keys()], recordsDropped: toDrop.length,
+      slotWitness: { field: dupField, text: dupText, slotsBefore: dupBefore,
+        slotsAfter: dupBefore - toDrop.filter(r => r.origin.field === dupField && r.certifiedValue === dupText).length },
       actionId: a.actionId, ruleCode: a.ruleCode, withdrawReason: a.withdrawReason,
     })
     continue
@@ -442,6 +475,13 @@ for (const a of actions) {
     const k = a.oldOccurrenceKeys[0]
     const recs = resolve(k)
     if (!recs.length) { alreadyApplied.push(a.actionId); carryForward(a.actionId); continue }
+    // Already applied if the field already holds the post-apply number of entries with this text.
+    const priorRow = (priorByAction.get(a.actionId) ?? [])[0]
+    if (priorRow?.slotWitness && slotCount(p, priorRow.slotWitness.field, priorRow.slotWitness.text) <= priorRow.slotWitness.slotsAfter) {
+      alreadyApplied.push(a.actionId); carryForward(a.actionId); continue
+    }
+    const witnessField = recs[0].origin.field, witnessText = recs[0].certifiedValue
+    const slotsBefore = slotCount(p, witnessField, witnessText)
     for (const r of recs) {
       removeRecord(a.actionId, r, 'withdrawn')
       metaTransfers.push({ actionId: a.actionId, from: k, kind: r.kind, metadata: {} })
@@ -452,6 +492,7 @@ for (const a of actions) {
       text: a.sentenceText, sourceDisposition: a.sourceDisposition,
       primaryCategory: a.proposedPrimaryCategory, secondarySemantics: [],
       reviewDispositions: a.proposedReviewDispositions, actionId: a.actionId, ruleCode: a.ruleCode,
+      slotWitness: { field: witnessField, text: witnessText, slotsBefore, slotsAfter: slotsBefore - recs.length },
     })
     continue
   }
