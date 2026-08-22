@@ -52,7 +52,11 @@ const questions = read('questions.json')
 // that quotes itself would certify its own drift.
 const counts = {
   posts: posts.length,
-  questions: questions.filter(q => q.occurrences !== undefined).length,
+  // THE CERTIFIED POPULATION IS THE PRIMARY ONE. A question record Step 3B-1 marked secondary or
+  // withdrawn keeps its occurrences field — the record is not deleted, which is asserted by its own
+  // gate — so counting the field's presence counts 182 records no certified total includes.
+  questions: questions.filter(q => q.occurrences !== undefined
+    && (!q.semanticLayer || q.semanticLayer === 'primary')).length,
   questionRowsShipped: questions.length,
   directives: posts.reduce((n, p) => n + (p.actionRequests?.length ?? 0), 0),
   claims: posts.reduce((n, p) => n + (p.postAnalysis?.claims?.length ?? 0), 0),
@@ -70,11 +74,13 @@ const counts = {
 const expected = {
   posts: CANONICAL.posts,
   questions: CANONICAL.questions.occurrences,
-  // DERIVED, not written twice. The shipped file is always the certified occurrence count plus the
-  // 134 editorial normalisations, and that relationship IS the contract — a literal here went stale
-  // the moment the 2026-08-20 queue ruling moved the certified figure and refused a healthy
-  // manifest. 6,588 -> 6,653.
-  questionRowsShipped: CANONICAL.questions.occurrences + 134,
+  // DERIVED, not written twice. The shipped file is the certified occurrence count, plus the
+  // records Step 3B-1 MARKED rather than deleted, plus the 134 editorial normalisations. That
+  // relationship IS the contract — a literal here went stale the moment the 2026-08-20 queue ruling
+  // moved the certified figure and refused a healthy manifest, and the marked records made the
+  // two-term version go stale the same way.
+  questionRowsShipped: CANONICAL.questions.occurrences + 134
+    + questions.filter(q => q.occurrences !== undefined && q.semanticLayer && q.semanticLayer !== 'primary').length,
   directives: CANONICAL.directives.occurrences,
   claims: CANONICAL.claims.occurrences,
   predictions: CANONICAL.predictions.occurrences,

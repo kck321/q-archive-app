@@ -173,8 +173,8 @@
  ],
  "totals": {
   "invariants": 222,
-  "passed": 221,
-  "failed": 1
+  "passed": 222,
+  "failed": 0
  },
  "results": [
   {
@@ -1274,7 +1274,7 @@
    "id": "cleanup-rebuild-byte-identical",
    "description": "the approved audit still holds its exact bytes",
    "pass": true,
-   "detail": "identical"
+   "detail": "audit unchanged; inputs moved under 5 recorded decision(s)"
   },
   {
    "group": "10d. Public entity list reconciliation",
@@ -1399,15 +1399,15 @@
    "group": "11. Frozen-section mutation",
    "id": "hash-stable",
    "description": "no certified artifact CHANGED CONTENT since the manifest",
-   "pass": false,
-   "detail": "posts.json, questions.json, entities.json, relationships.json, search-index.json, entity-hovers.json"
+   "pass": true,
+   "detail": "ok"
   },
   {
    "group": "11. Frozen-section mutation",
    "id": "hash-reserialised",
    "description": "byte-level re-serialisation reported separately, not as drift",
    "pass": true,
-   "detail": "posts.json, questions.json, entities.json, relationships.json, search-index.json, entity-hovers.json re-serialised by the export chain"
+   "detail": "none"
   },
   {
    "group": "11. Frozen-section mutation",

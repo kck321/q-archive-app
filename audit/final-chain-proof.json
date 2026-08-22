@@ -1,0 +1,105 @@
+{
+  "generated": "post-chain",
+  "assertions": [
+    {
+      "name": "questions stable",
+      "ok": true,
+      "detail": "6321"
+    },
+    {
+      "name": "directives stable",
+      "ok": true,
+      "detail": "2940"
+    },
+    {
+      "name": "claims == claimSpans",
+      "ok": true,
+      "detail": "8676 / 8676"
+    },
+    {
+      "name": "predictions == predictionSpans",
+      "ok": true,
+      "detail": "843 / 843"
+    },
+    {
+      "name": "entities stable",
+      "ok": true,
+      "detail": "1214 rows"
+    },
+    {
+      "name": "entity mentions stable",
+      "ok": true,
+      "detail": "registry 8821 / rendered 8821"
+    },
+    {
+      "name": "five approved identity merges remain merged",
+      "ok": true,
+      "detail": "5/5 from Owner Ruling 1; 9/9 merges hold overall"
+    },
+    {
+      "name": "29 entity withdrawals remain withdrawn",
+      "ok": true,
+      "detail": "27 namedEntities + 2 themeAnchors; 0 returned"
+    },
+    {
+      "name": "semantic dispositions remain applied",
+      "ok": true,
+      "detail": "179 rows reviewed, 50 conflicts survive, 0 actionable"
+    },
+    {
+      "name": "relationships stable",
+      "ok": true,
+      "detail": "4121 edges = sum of types; claim<->source 337, question<->directive 231"
+    },
+    {
+      "name": "search index stable",
+      "ok": true,
+      "detail": "31572 records"
+    },
+    {
+      "name": "transfer history preserved",
+      "ok": true,
+      "detail": "912 transfers"
+    },
+    {
+      "name": "slot witnesses on retired fields are moot because the field is gone",
+      "ok": true,
+      "detail": "5/5"
+    },
+    {
+      "name": "slot witnesses hold",
+      "ok": true,
+      "detail": "163/163"
+    },
+    {
+      "name": "secondary semantics preserved",
+      "ok": true,
+      "detail": "281 occurrences carry a non-painting secondary"
+    },
+    {
+      "name": "#34 clause partition preserved",
+      "ok": true,
+      "detail": "2 rows: claim 280..333 + prediction 334..483, disjoint"
+    },
+    {
+      "name": "no retired section fields return",
+      "ok": true,
+      "detail": "all five empty, 0 posts with a retired attribute"
+    },
+    {
+      "name": "emphasis.json is not regenerated",
+      "ok": true,
+      "detail": "absent"
+    },
+    {
+      "name": "no retired search section",
+      "ok": true,
+      "detail": "[\"questions\",\"editorial\",\"directives\",\"claims\",\"predictions\",\"evidence\",\"entities\",\"sources\",\"themes\",\"codes\",\"unresolved\"]"
+    },
+    {
+      "name": "public entity view reconciles",
+      "ok": true,
+      "detail": "1214 rows / 8821 mentions"
+    }
+  ]
+}

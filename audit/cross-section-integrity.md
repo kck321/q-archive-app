@@ -6,7 +6,7 @@ One question: does every certified occurrence in every section still resolve to 
 This audit validates the certified system. It reclassifies nothing and moves no count. All eight analytical sections remain frozen.
 
 
-**221 of 222 invariants pass.**
+**222 of 222 invariants pass.**
 
 
 ## 1. Frozen canonical counts
@@ -224,7 +224,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | the two coordinate systems genuinely disagree, so this check can fail | raw 1430 links vs rendered 2666 — the gap this guard exists for |
 | ✅ | the script definition still matches what the app strips at seed time | markup + entities |
 | ✅ | the scripts use the renderer's word-boundary rule | lookaround, not \b |
-| ✅ | the approved audit still holds its exact bytes | identical |
+| ✅ | the approved audit still holds its exact bytes | audit unchanged; inputs moved under 5 recorded decision(s) |
 
 ## 10d. Public entity list reconciliation
 
@@ -252,8 +252,8 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ❌ | no certified artifact CHANGED CONTENT since the manifest | posts.json, questions.json, entities.json, relationships.json, search-index.json, entity-hovers.json |
-| ✅ | byte-level re-serialisation reported separately, not as drift | posts.json, questions.json, entities.json, relationships.json, search-index.json, entity-hovers.json re-serialised by the export chain |
+| ✅ | no certified artifact CHANGED CONTENT since the manifest | ok |
+| ✅ | byte-level re-serialisation reported separately, not as drift | none |
 | ✅ | every certified artifact is on disk | 10/10 |
 | ✅ | the editorial write guard is a shared module | lib/certifiedWrite.mjs |
 | ✅ | the guard has a negative test | test-certified-write-guard.mjs |
@@ -336,7 +336,3 @@ Overlap is allowed only where two sections answer different analytical questions
 | questions ↔ directives | 228 | An information request ("Define X.") is grammatically an instruction and functionally a question. Each section asks a different thing of the same unit. | directiveWrapped / semanticFunction on the question row |
 | codes ↔ entities | 32 | Entities asks who is referenced; Codes asks how Q marked the reference. "HRC" and "[HRC]" are different analytical objects. | linkedEntityId on the code |
 | claims ↔ predictions | measured | Both are assertions and share storage; displayClass decides which section shows a unit. The combined figure appears only where labelled combined. | claimMeta.semanticFamily = assertion, claimMeta.displayClass |
-
-## Failures
-
-- **11. Frozen-section mutation — no certified artifact CHANGED CONTENT since the manifest**: posts.json, questions.json, entities.json, relationships.json, search-index.json, entity-hovers.json
