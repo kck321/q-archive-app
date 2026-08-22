@@ -7882,5 +7882,16 @@
    "reasoning": "Owner ruling: Black Lives Matter is a movement, not a person. political_group is the established class for exactly this — it already holds Antifa, Qanon and the Nazi movement — so no new type is created. The audit's 85 type corrections missed this row; it was found in the Stage 2 editorial sample.",
    "note": "A type is what the row IS, not how often it appears: this moves no mention and no entity row."
   }
+ ],
+ "aliasAdditions": [
+  {
+   "canonical": "God",
+   "alias": "GOD",
+   "ruledOn": "2026-08-21",
+   "reasoning": "Owner ruling: the God identity is already established and 35 drops record it while writing the name in capitals. occurrencesOfSpan() is indexOf and therefore case-sensitive, so those 35 were reported as unlocatable entities. Registering the exact spelling Q used resolves them by EXACT matching, rather than granting short tokens a global case-insensitive exemption that would re-open the invariant-4 defect (\"US\" matching \"rUSsia\", \"mUSt\", \"becaUSe\").",
+   "proof": "52 word-bounded \"GOD\" occurrences exist archive-wide. Every drop containing one already records the God identity - drops writing \"GOD\" WITHOUT the God identity: 0 - so the alias cannot capture an unrelated token. Exactly one registry group claims any casing of \"god\", so no duplicate canonical identity is created, and no group already claims the exact spelling \"GOD\". Contexts are the deity throughout: GOD SAVE US, IN GOD WE TRUST, GOD BLESS AMERICA, ONE NATION UNDER GOD, House of GOD?.",
+   "doesNotResolve": "#197 records God but writes \"the sun god Ra\" and \"the skin of the gods\" - a different identity entirely, and a data question, not a casing one. #2730 writes lowercase \"god\" (\"May god bless you and your family\"). Both stay in the conflict queue with these reasons.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  }
  ]
 }

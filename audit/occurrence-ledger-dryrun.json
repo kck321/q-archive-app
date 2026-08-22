@@ -9,13 +9,13 @@
  },
  "totals": {
   "sentences": 30187,
-  "occurrencesKeyed": 35076,
+  "occurrencesKeyed": 35111,
   "duplicateKeys": 51,
   "byKind": {
    "claims": 8814,
    "predictions": 843,
    "directives": 2940,
-   "namedEntities": 8644,
+   "namedEntities": 8679,
    "themeAnchors": 1682,
    "questions": 6324,
    "context": 1607,
@@ -23,10 +23,10 @@
   },
   "byRelation": {
    "EXACT": 22228,
-   "PARTIAL": 12606,
+   "PARTIAL": 12641,
    "CROSSING": 242
   },
-  "unlocated": 234,
+  "unlocated": 199,
   "crossingSentenceBoundary": 242
  },
  "findings": {
@@ -68,7 +68,7 @@
    "note": "A Context/Emphasis span on exactly the characters of a primary span. Becomes a reviewDisposition, not a second category."
   },
   "unlocatedSpans": {
-   "count": 234,
+   "count": 199,
    "note": "A certified span the ledger could not place in the runtime body. Each is a conflict-queue row, never a silent drop."
   }
  },
@@ -26204,34 +26204,14 @@
    "text": "France"
   },
   {
-   "postNum": 1493,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
    "postNum": 1555,
    "kind": "namedEntities",
    "text": "NO NAME"
   },
   {
-   "postNum": 1602,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
-   "postNum": 1603,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
    "postNum": 1646,
    "kind": "namedEntities",
    "text": "Hitler"
-  },
-  {
-   "postNum": 1646,
-   "kind": "namedEntities",
-   "text": "God"
   },
   {
    "postNum": 1702,
@@ -26289,11 +26269,6 @@
    "text": "Roseanne Barr"
   },
   {
-   "postNum": 1879,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
    "postNum": 1884,
    "kind": "namedEntities",
    "text": "Epstein Island"
@@ -26334,11 +26309,6 @@
    "text": "INSCOM"
   },
   {
-   "postNum": 1961,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
    "postNum": 197,
    "kind": "namedEntities",
    "text": "God"
@@ -26372,11 +26342,6 @@
    "postNum": 2035,
    "kind": "namedEntities",
    "text": "House"
-  },
-  {
-   "postNum": 2039,
-   "kind": "namedEntities",
-   "text": "God"
   },
   {
    "postNum": 2040,
@@ -26554,11 +26519,6 @@
    "text": "Kavanaugh"
   },
   {
-   "postNum": 2523,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
    "postNum": 2555,
    "kind": "namedEntities",
    "text": "Whitaker"
@@ -26572,11 +26532,6 @@
    "postNum": 2555,
    "kind": "namedEntities",
    "text": "Wray"
-  },
-  {
-   "postNum": 2559,
-   "kind": "namedEntities",
-   "text": "God"
   },
   {
    "postNum": 2569,
@@ -26647,16 +26602,6 @@
    "postNum": 2782,
    "kind": "namedEntities",
    "text": "Gavin Newsom"
-  },
-  {
-   "postNum": 2788,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
-   "postNum": 2807,
-   "kind": "namedEntities",
-   "text": "God"
   },
   {
    "postNum": 2841,
@@ -26814,29 +26759,9 @@
    "text": "Mueller Report"
   },
   {
-   "postNum": 333,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
    "postNum": 3330,
    "kind": "namedEntities",
    "text": "Pence"
-  },
-  {
-   "postNum": 3352,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
-   "postNum": 3354,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
-   "postNum": 3432,
-   "kind": "namedEntities",
-   "text": "God"
   },
   {
    "postNum": 3608,
@@ -26909,11 +26834,6 @@
    "text": "Gang of Eight"
   },
   {
-   "postNum": 4063,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
    "postNum": 4232,
    "kind": "namedEntities",
    "text": "Kislyak"
@@ -26969,29 +26889,14 @@
    "text": "House Republicans"
   },
   {
-   "postNum": 4387,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
    "postNum": 4401,
    "kind": "namedEntities",
    "text": "Google Trends"
   },
   {
-   "postNum": 4413,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
    "postNum": 445,
    "kind": "namedEntities",
    "text": "CrowdStrike"
-  },
-  {
-   "postNum": 4461,
-   "kind": "namedEntities",
-   "text": "God"
   },
   {
    "postNum": 4468,
@@ -27024,11 +26929,6 @@
    "text": "United Nations"
   },
   {
-   "postNum": 4559,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
    "postNum": 4592,
    "kind": "namedEntities",
    "text": "Democrat Party"
@@ -27039,11 +26939,6 @@
    "text": "Harold Moody Jr"
   },
   {
-   "postNum": 4641,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
    "postNum": 48,
    "kind": "namedEntities",
    "text": "Canada"
@@ -27052,11 +26947,6 @@
    "postNum": 480,
    "kind": "namedEntities",
    "text": "Loop Capital"
-  },
-  {
-   "postNum": 481,
-   "kind": "namedEntities",
-   "text": "God"
   },
   {
    "postNum": 4821,
@@ -27094,16 +26984,6 @@
    "text": "That this nation, under God, shall have a new birth of freedom and that government of the people, by the people, for the"
   },
   {
-   "postNum": 501,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
-   "postNum": 520,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
    "postNum": 524,
    "kind": "namedEntities",
    "text": "Loop Capital"
@@ -27114,29 +26994,9 @@
    "text": "Banco de Mexico"
   },
   {
-   "postNum": 533,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
    "postNum": 56,
    "kind": "namedEntities",
    "text": "International Islamic Council for Da'wa and Relief"
-  },
-  {
-   "postNum": 563,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
-   "postNum": 599,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
-   "postNum": 603,
-   "kind": "namedEntities",
-   "text": "God"
   },
   {
    "postNum": 746,
@@ -27144,19 +27004,9 @@
    "text": "Mike Wallace"
   },
   {
-   "postNum": 767,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
    "postNum": 770,
    "kind": "namedEntities",
    "text": "Aaron Swartz"
-  },
-  {
-   "postNum": 778,
-   "kind": "namedEntities",
-   "text": "God"
   },
   {
    "postNum": 785,
@@ -27179,26 +27029,6 @@
    "text": "John Perry Barlow"
   },
   {
-   "postNum": 793,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
-   "postNum": 795,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
-   "postNum": 796,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
-   "postNum": 837,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
    "postNum": 857,
    "kind": "namedEntities",
    "text": "Reuters"
@@ -27217,11 +27047,6 @@
    "postNum": 889,
    "kind": "namedEntities",
    "text": "Forbidden City"
-  },
-  {
-   "postNum": 917,
-   "kind": "namedEntities",
-   "text": "God"
   },
   {
    "postNum": 950,

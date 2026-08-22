@@ -2,16 +2,16 @@
  "note": "Conflict queue re-derived from the CURRENT bundle. Not the old CSV minus anything.",
  "measuredFrom": "audit/occurrence-ledger-dryrun.json",
  "originalRows": 945,
- "rebuiltRows": 494,
- "netChange": -451,
+ "rebuiltRows": 459,
+ "netChange": -486,
  "byReason": {
   "BOUNDARY_CROSSING": 242,
-  "UNLOCATED_SPAN": 234,
+  "UNLOCATED_SPAN": 199,
   "SAME_CATEGORY_PARTIAL_OVERLAP": 18
  },
  "byKind": {
-  "namedEntities": 232,
   "claims": 208,
+  "namedEntities": 197,
   "directives": 15,
   "questions": 14,
   "themeAnchors": 11,
@@ -19,12 +19,12 @@
   "context": 2,
   "predictions": 1
  },
- "distinctHeldKeys": 454,
- "distinctPosts": 364,
+ "distinctHeldKeys": 421,
+ "distinctPosts": 333,
  "resolvedSince": {
-  "count": 454,
+  "count": 489,
   "byFamily": {
-   "UNLOCATED_SPAN": 282,
+   "UNLOCATED_SPAN": 317,
    "DUPLICATE_KEY_CONFLICTING_METADATA": 42
   }
  },
@@ -2448,15 +2448,6 @@
    "certifiedValue": "France"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1493-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1493-namedEntities",
-   "postNum": 1493,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1555-namedEntities::NO NAME::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-1555-namedEntities",
@@ -2466,24 +2457,6 @@
    "certifiedValue": "NO NAME"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1602-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1602-namedEntities",
-   "postNum": 1602,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1603-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1603-namedEntities",
-   "postNum": 1603,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1646-namedEntities::Hitler::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-1646-namedEntities",
@@ -2491,15 +2464,6 @@
    "kind": "namedEntities",
    "detail": "Hitler",
    "certifiedValue": "Hitler"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1646-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1646-namedEntities",
-   "postNum": 1646,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1702-namedEntities::Kansas::0",
@@ -2601,15 +2565,6 @@
    "certifiedValue": "Roseanne Barr"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1879-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1879-namedEntities",
-   "postNum": 1879,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1884-namedEntities::Epstein Island::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-1884-namedEntities",
@@ -2682,15 +2637,6 @@
    "certifiedValue": "INSCOM"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1961-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1961-namedEntities",
-   "postNum": 1961,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-197-namedEntities::God::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-197-namedEntities",
@@ -2752,15 +2698,6 @@
    "kind": "namedEntities",
    "detail": "House",
    "certifiedValue": "House"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2039-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2039-namedEntities",
-   "postNum": 2039,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2040-namedEntities::Judicial Watch::0",
@@ -3078,15 +3015,6 @@
    "certifiedValue": "Kavanaugh"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2523-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2523-namedEntities",
-   "postNum": 2523,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2555-namedEntities::Whitaker::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-2555-namedEntities",
@@ -3112,15 +3040,6 @@
    "kind": "namedEntities",
    "detail": "Wray",
    "certifiedValue": "Wray"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2559-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2559-namedEntities",
-   "postNum": 2559,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2569-namedEntities::Freedom Caucus::0",
@@ -3247,24 +3166,6 @@
    "kind": "namedEntities",
    "detail": "Gavin Newsom",
    "certifiedValue": "Gavin Newsom"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2788-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2788-namedEntities",
-   "postNum": 2788,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2807-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2807-namedEntities",
-   "postNum": 2807,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2841-namedEntities::Ann Coulter::0",
@@ -3546,15 +3447,6 @@
    "certifiedValue": "Mueller Report"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-333-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-333-namedEntities",
-   "postNum": 333,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3330-namedEntities::Pence::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-3330-namedEntities",
@@ -3562,33 +3454,6 @@
    "kind": "namedEntities",
    "detail": "Pence",
    "certifiedValue": "Pence"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3352-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3352-namedEntities",
-   "postNum": 3352,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3354-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3354-namedEntities",
-   "postNum": 3354,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3432-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3432-namedEntities",
-   "postNum": 3432,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3608-namedEntities::Washington::0",
@@ -3717,15 +3582,6 @@
    "certifiedValue": "Gang of Eight"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4063-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4063-namedEntities",
-   "postNum": 4063,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-4232-namedEntities::Kislyak::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-4232-namedEntities",
@@ -3825,15 +3681,6 @@
    "certifiedValue": "House Republicans"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4387-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4387-namedEntities",
-   "postNum": 4387,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-4401-namedEntities::Google Trends::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-4401-namedEntities",
@@ -3843,15 +3690,6 @@
    "certifiedValue": "Google Trends"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4413-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4413-namedEntities",
-   "postNum": 4413,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-445-namedEntities::CrowdStrike::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-445-namedEntities",
@@ -3859,15 +3697,6 @@
    "kind": "namedEntities",
    "detail": "CrowdStrike",
    "certifiedValue": "CrowdStrike"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4461-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4461-namedEntities",
-   "postNum": 4461,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-4468-namedEntities::Daily Beast::0",
@@ -3924,15 +3753,6 @@
    "certifiedValue": "United Nations"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4559-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4559-namedEntities",
-   "postNum": 4559,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-4592-namedEntities::Democrat Party::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-4592-namedEntities",
@@ -3951,15 +3771,6 @@
    "certifiedValue": "Harold Moody Jr"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4641-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4641-namedEntities",
-   "postNum": 4641,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-48-namedEntities::Canada::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-48-namedEntities",
@@ -3976,15 +3787,6 @@
    "kind": "namedEntities",
    "detail": "Loop Capital",
    "certifiedValue": "Loop Capital"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-481-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-481-namedEntities",
-   "postNum": 481,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-4821-namedEntities::Hunter::0",
@@ -4050,24 +3852,6 @@
    "certifiedValue": "That this nation, under God, shall have a new birth of freedom and that government of the people, by the people, for the"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-501-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-501-namedEntities",
-   "postNum": 501,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-520-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-520-namedEntities",
-   "postNum": 520,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-524-namedEntities::Loop Capital::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-524-namedEntities",
@@ -4086,15 +3870,6 @@
    "certifiedValue": "Banco de Mexico"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-533-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-533-namedEntities",
-   "postNum": 533,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-56-namedEntities::International Islamic Council for Da'wa and Relief::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-56-namedEntities",
@@ -4102,33 +3877,6 @@
    "kind": "namedEntities",
    "detail": "International Islamic Council for Da'wa and Relief",
    "certifiedValue": "International Islamic Council for Da'wa and Relief"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-563-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-563-namedEntities",
-   "postNum": 563,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-599-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-599-namedEntities",
-   "postNum": 599,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-603-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-603-namedEntities",
-   "postNum": 603,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-746-namedEntities::Mike Wallace::0",
@@ -4140,15 +3888,6 @@
    "certifiedValue": "Mike Wallace"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-767-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-767-namedEntities",
-   "postNum": 767,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-770-namedEntities::Aaron Swartz::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-770-namedEntities",
@@ -4156,15 +3895,6 @@
    "kind": "namedEntities",
    "detail": "Aaron Swartz",
    "certifiedValue": "Aaron Swartz"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-778-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-778-namedEntities",
-   "postNum": 778,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-785-namedEntities::London::0",
@@ -4203,42 +3933,6 @@
    "certifiedValue": "John Perry Barlow"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-793-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-793-namedEntities",
-   "postNum": 793,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-795-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-795-namedEntities",
-   "postNum": 795,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-796-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-796-namedEntities",
-   "postNum": 796,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-837-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-837-namedEntities",
-   "postNum": 837,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-857-namedEntities::Reuters::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-857-namedEntities",
@@ -4273,15 +3967,6 @@
    "kind": "namedEntities",
    "detail": "Forbidden City",
    "certifiedValue": "Forbidden City"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-917-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-917-namedEntities",
-   "postNum": 917,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-950-namedEntities::Kansas::0",

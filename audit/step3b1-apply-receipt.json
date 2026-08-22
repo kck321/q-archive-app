@@ -2,7 +2,7 @@
  "note": "Step 3B-1 apply receipt. Measured from the bundle, not from the plan.",
  "step": "3B-1",
  "planSha256": "373ca06b1416b6707a111f2c3da8e751472c551f739500f76cdcc764d3128058",
- "actionsApplied": 538,
+ "actionsApplied": 51,
  "actionsHeld": 2,
  "heldActionIds": [
   "A-DUP-2971-questions-561-799",
@@ -12,8 +12,8 @@
  "outputs": {
   "public/data/posts.json": "b71ca4783093ca22bff0c6d9077d3a7e2a0913cea493058e98d234d2ca8cca73",
   "public/data/questions.json": "241dc211bf435d8522b34cdcc9f3ac8b832e06f80df346ddcb87d8ea3ee12b2f",
-  "public/data/semantics.json": "7e384660cd0e8e18dfb99e6ab4b87e98d8cbce149a5080b48c13b35a2afb6051",
-  "audit/occurrence-ledger.json": "3ea66e5a782deb1e9c06b1a13bd3cb7a4fe9735dc373172f6c5a475ead3c698e"
+  "public/data/semantics.json": "34cd313870f2ad9b612f5dc63474535f4faf70439b0770e6b70abf501830b857",
+  "audit/occurrence-ledger.json": "0092257d3e9f0fde6da8dc2e86c83c5cc4a1d27d6e44780fde080b98c0302ee0"
  },
  "crossTab": [
   {
@@ -324,7 +324,7 @@
   {
    "gate": "zero runtime substring mismatch in the ledger",
    "pass": true,
-   "detail": "35,076 records verified"
+   "detail": "35,111 records verified"
   },
   {
    "gate": "zero same-sentence multi-primary inside the applied scope",

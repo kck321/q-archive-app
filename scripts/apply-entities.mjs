@@ -167,6 +167,18 @@ for (const o of tailOccurrences) {
   tailPostsByCanonical.get(o.canonical).add(o.postNum)
 }
 
+// AN ALIAS THE OWNER ADDS, SYMMETRIC WITH aliasWithdrawals.
+//
+// A withdrawal removes a spelling the detector found and the owner rejected. An ADDITION registers
+// a spelling the detector never recorded but Q demonstrably wrote — "GOD" in capitals, on 35 drops
+// that already carry the God identity. It is a LOCATION aid only: an alias never adds a mention,
+// because a mention is a record a section already made. Applied after the certified set is built,
+// for the same reason the withdrawals are applied before it — so the count and the emitted aliases
+// cannot disagree.
+const aliasAdditions = fs.existsSync(path.join(OUT, 'entities-owner-rulings.json'))
+  ? JSON.parse(fs.readFileSync(path.join(OUT, 'entities-owner-rulings.json'), 'utf8')).aliasAdditions ?? []
+  : []
+
 const entities = [
   ...[...coreEntities.values()].map(e => ({
     canonical: e.canonical, type: e.type, mentions: e.mentions, posts: [...e.posts].sort((a, b) => a - b),
@@ -180,6 +192,13 @@ const entities = [
     source: 'adjudicated tail',
   })),
 ]
+
+for (const a of aliasAdditions) {
+  const target = entities.find(e => e.canonical === a.canonical)
+  if (!target) { console.error(`alias addition names an unknown canonical: ${a.canonical}`); process.exit(1) }
+  if (target.aliases.some(x => x.text === a.alias)) continue
+  target.aliases.push({ text: a.alias, n: null, ownerAdded: true })
+}
 
 // ── Owner rulings ────────────────────────────────────────────────────────────
 // Merged AFTER the certified set is assembled, from a file no derive step writes. The entity
