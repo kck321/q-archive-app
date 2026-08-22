@@ -57,6 +57,18 @@ for (const e of entitiesDoc.entities ?? []) {
 const qByPost = new Map()
 for (const q of questions) {
   if (q.occurrences === undefined) continue
+  // A MARKED QUESTION IS NOT A PRIMARY RECORD (Step 3B-1, owner ruling 2026-08-21).
+  //
+  //   secondary   the sentence was adjudicated to another primary category and this speech act is
+  //               retained as a non-painting relationship
+  //   withdrawn   a same-category fragment superseded by the complete sentence, or a record on a
+  //               sentence that turned out not to be Q's to certify
+  //
+  // Either way the record is KEPT — its id, semanticFunction, grammaticalForm, infographId and
+  // every relationship edge pointing at it survive intact — because deleting it to move one count
+  // would destroy all of that. apply-step3b1.mjs marks; this is where the mark takes effect.
+  // Counting a marked record here would report a primary total the renderer does not paint.
+  if (q.semanticLayer && q.semanticLayer !== 'primary') continue
   if (!qByPost.has(q.postNum)) qByPost.set(q.postNum, [])
   qByPost.get(q.postNum).push(q)
 }

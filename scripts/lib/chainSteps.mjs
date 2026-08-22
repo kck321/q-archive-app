@@ -146,6 +146,19 @@ export const CHAIN = [
   // than assumes, that its own components add to 1,201 and its per-entity occurrence counts never
   // exceed the 8,798. It exits non-zero instead of publishing a list that does not reconcile.
   { step: 'build-entity-public-view.mjs', kind: 'apply', args: [] },
+  // STEP 3B-1 — THE FULL-SENTENCE REPLACEMENT. It must run here and it must not be dropped.
+  //
+  // The 530 adjudicated actions resolve sentences certified in two primary categories at once,
+  // collapse same-category fragments, merge duplicate occurrence records and turn context
+  // collisions into review dispositions. Every one of those edits lands on an array that an
+  // EARLIER step in this chain rebuilds from a pre-ruling artifact — apply-questions,
+  // apply-directives, apply-claims, apply-emphasis, apply-context-units and
+  // apply-entity-cleanup all write arrays it edits. So it runs after the last of them, and
+  // before build-relationships / build-search-index, which read the finished counts.
+  //
+  // Drop it and the bundle silently reverts 530 resolved collisions while every total still
+  // reconciles — the exact failure shape this chain's header describes.
+  { step: 'apply-step3b1.mjs', kind: 'apply' },
   { step: 'build-relationships.mjs', kind: 'apply' },
   { step: 'build-search-index.mjs', kind: 'apply' },
   // Last, and read-only: the reader's acronym info box is derived from the finished entity set

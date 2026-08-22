@@ -1,0 +1,5590 @@
+{
+ "transfers": [
+  {
+   "actionId": "A-CTX-p0059-s006-281",
+   "from": "59|context|281|311",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0080-s000-0",
+   "from": "80|context|0|25",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0086-s004-112",
+   "from": "86|context|112|118",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0092-s022-624",
+   "from": "92|context|624|634",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0099-s023-342",
+   "from": "99|context|342|370",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0111-s013-381",
+   "from": "111|context|381|388",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0112-s008-362",
+   "from": "112|context|362|369",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0112-s015-602",
+   "from": "112|context|602|634",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0116-s002-47",
+   "from": "116|context|47|65",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0118-s004-147",
+   "from": "118|context|147|154",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0128-s041-1151",
+   "from": "128|context|1151|1165",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0153-s022-1519",
+   "from": "153|context|1519|1525",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0157-s026-853",
+   "from": "157|context|853|870",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0225-s004-119",
+   "from": "225|context|119|155",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0242-s000-0",
+   "from": "242|context|0|17",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0310-s004-140",
+   "from": "310|context|140|172",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0345-s001-37",
+   "from": "345|context|37|45",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0425-s009-201",
+   "from": "425|context|201|207",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0477-s004-41",
+   "from": "477|context|41|71",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0490-s002-143",
+   "from": "490|context|143|160",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0538-s010-360",
+   "from": "538|context|360|366",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0568-s007-153",
+   "from": "568|context|153|159",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0621-s001-37",
+   "from": "621|context|37|54",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0622-s000-0",
+   "from": "622|context|0|20",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0672-s005-78",
+   "from": "672|context|78|86",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0673-s004-93",
+   "from": "673|context|93|102",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0756-s030-507",
+   "from": "756|context|507|543",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0780-s002-242",
+   "from": "780|context|242|261",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0837-s002-62",
+   "from": "837|context|62|68",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0839-s013-243",
+   "from": "839|context|243|253",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0839-s014-254",
+   "from": "839|context|254|260",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0868-s001-30",
+   "from": "868|context|30|46",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p0981-s002-43",
+   "from": "981|context|43|63",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p1077-s004-56",
+   "from": "1077|context|56|77",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p1100-s016-379",
+   "from": "1100|context|379|395",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p1124-s002-14",
+   "from": "1124|context|14|32",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p1226-s009-118",
+   "from": "1226|context|118|156",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p1248-s003-36",
+   "from": "1248|context|36|42",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p1275-s004-151",
+   "from": "1275|context|151|165",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p1291-s009-273",
+   "from": "1291|context|273|283",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p1318-s060-2319",
+   "from": "1318|context|2319|2336",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p1336-s020-559",
+   "from": "1336|context|559|580",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p1341-s000-10",
+   "from": "1341|context|10|26",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p1380-s007-132",
+   "from": "1380|context|132|138",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p1468-s003-68",
+   "from": "1468|context|68|81",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p1496-s009-238",
+   "from": "1496|context|238|260",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p1557-s001-33",
+   "from": "1557|context|33|50",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p1575-s000-0",
+   "from": "1575|context|0|13",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p1645-s000-0",
+   "from": "1645|context|0|10",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p1792-s003-156",
+   "from": "1792|context|156|165",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p1817-s002-46",
+   "from": "1817|context|46|60",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p1863-s004-72",
+   "from": "1863|context|72|78",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p1899-s001-43",
+   "from": "1899|context|43|58",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p1902-s003-66",
+   "from": "1902|context|66|81",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p1916-s003-134",
+   "from": "1916|context|134|148",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p1953-s003-72",
+   "from": "1953|context|72|88",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p2038-s002-69",
+   "from": "2038|context|69|75",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p2039-s003-69",
+   "from": "2039|context|69|96",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p2206-s012-560",
+   "from": "2206|context|560|566",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p2239-s002-57",
+   "from": "2239|context|57|70",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p2429-s001-60",
+   "from": "2429|context|60|74",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p2474-s002-41",
+   "from": "2474|context|41|47",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p2499-s006-294",
+   "from": "2499|context|294|308",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p2540-s003-106",
+   "from": "2540|context|106|133",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p2554-s006-231",
+   "from": "2554|context|231|245",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p2604-s021-824",
+   "from": "2604|context|824|850",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p2677-s001-25",
+   "from": "2677|context|25|54",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p2710-s001-12",
+   "from": "2710|context|12|48",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p2726-s000-0",
+   "from": "2726|context|0|22",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p2777-s000-10",
+   "from": "2777|context|10|36",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p2877-s000-10",
+   "from": "2877|context|10|46",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p2967-s001-22",
+   "from": "2967|context|22|43",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p3003-s001-78",
+   "from": "3003|context|78|101",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p3040-s005-178",
+   "from": "3040|context|178|195",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p3072-s000-10",
+   "from": "3072|context|10|35",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p3077-s003-58",
+   "from": "3077|context|58|72",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p3111-s003-188",
+   "from": "3111|context|188|207",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p3256-s001-63",
+   "from": "3256|context|63|78",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p3308-s000-0",
+   "from": "3308|context|0|30",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p3373-s001-26",
+   "from": "3373|context|26|37",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p3383-s013-762",
+   "from": "3383|context|762|778",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p3528-s001-59",
+   "from": "3528|context|59|75",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p3568-s003-43",
+   "from": "3568|context|43|57",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p3568-s004-58",
+   "from": "3568|context|58|94",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p3588-s026-1250",
+   "from": "3588|context|1250|1275",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p3627-s003-39",
+   "from": "3627|context|39|44",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p3663-s006-132",
+   "from": "3663|context|132|148",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p3748-s008-474",
+   "from": "3748|context|474|480",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p3839-s001-60",
+   "from": "3839|context|60|81",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p3964-s001-56",
+   "from": "3964|context|56|68",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p4089-s002-67",
+   "from": "4089|context|67|88",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p4135-s001-58",
+   "from": "4135|context|58|79",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p4140-s001-50",
+   "from": "4140|context|50|67",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p4161-s000-0",
+   "from": "4161|context|0|10",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p4424-s003-133",
+   "from": "4424|context|133|151",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p4496-s002-79",
+   "from": "4496|context|79|122",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p4498-s002-63",
+   "from": "4498|context|63|84",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p4498-s003-85",
+   "from": "4498|context|85|91",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p4498-s004-92",
+   "from": "4498|context|92|101",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p4550-s000-10",
+   "from": "4550|context|10|19",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p4550-s015-516",
+   "from": "4550|context|516|536",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p4666-s001-15",
+   "from": "4666|context|15|29",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p4683-s005-39",
+   "from": "4683|context|39|44",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p4694-s000-0",
+   "from": "4694|context|0|16",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p4851-s008-431",
+   "from": "4851|context|431|447",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p4852-s001-60",
+   "from": "4852|context|60|87",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p4893-s014-573",
+   "from": "4893|context|573|589",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-CTX-p4962-s007-121",
+   "from": "4962|context|121|128",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0053-s000",
+   "from": "53|questions|0|34",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0071-s009",
+   "from": "71|questions|207|230",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0077-s010",
+   "from": "77|questions|218|241",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0097-s001",
+   "from": "97|questions|13|20",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0097-s011",
+   "from": "97|questions|182|197",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0097-s012",
+   "from": "97|questions|198|214",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0099-s003",
+   "from": "99|questions|45|52",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0100-s034",
+   "from": "100|directives|552|566",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "100#0",
+     "directiveSegments": "Define assets?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "research",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p0117-s005",
+   "from": "117|questions|200|207",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0119-s001",
+   "from": "119|questions|31|53",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0121-s019",
+   "from": "121|questions|673|678",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0134-s003",
+   "from": "134|questions|93|178",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0153-s001",
+   "from": "153|directives|27|213",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "153#0",
+     "directiveSegments": "Ask yourself an honest question, why would a billionaire who has it all, fame, fortune, a warm and loving family, friends, etc. want to endanger himself and his family by becoming POTUS?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p0157-s022",
+   "from": "157|questions|777|795",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0157-s039",
+   "from": "157|questions|1467|1485",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0157-s040",
+   "from": "157|questions|1487|1518",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0158-s005",
+   "from": "158|questions|139|157",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0158-s021",
+   "from": "158|directives|927|957",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "158#1",
+     "directiveSegments": "Define ‘lead-in’ (think play)?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "research",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p0158-s027",
+   "from": "158|questions|1110|1127",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0165-s019",
+   "from": "165|questions|642|668",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0166-s020",
+   "from": "166|questions|670|696",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0189-s000",
+   "from": "189|questions|0|29",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0236-s018",
+   "from": "236|questions|459|474",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0236-s025",
+   "from": "236|questions|690|704",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0236-s026",
+   "from": "236|questions|706|721",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0236-s027",
+   "from": "236|questions|722|745",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0236-s028",
+   "from": "236|questions|747|764",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0243-s005",
+   "from": "243|questions|173|218",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0311-s002",
+   "from": "311|questions|45|52",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0388-s000",
+   "from": "388|questions|0|18",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0425-s000",
+   "from": "425|questions|9|25",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0426-s004",
+   "from": "426|questions|187|202",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0479-s005",
+   "from": "479|questions|141|168",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0524-s012",
+   "from": "524|directives|330|340",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "524#2",
+     "directiveSegments": "Reconcile?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "research",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p0641-s003",
+   "from": "641|questions|83|95",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0725-s000",
+   "from": "725|directives|9|72",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "725#0",
+     "directiveSegments": "Ask yourself, why is NK participating in the O-games this year?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p0725-s001",
+   "from": "725|directives|74|117",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "725#1",
+     "directiveSegments": "Ask yourself, why is the 'sister' w/ Pence?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p0725-s002",
+   "from": "725|directives|118|201",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "725#2",
+     "directiveSegments": "Ask yourself, if controlled, how might you protect yourself and look for a way out?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p0725-s003",
+   "from": "725|directives|202|238",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "725#3",
+     "directiveSegments": "Ask yourself, what is a distraction?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p0725-s004",
+   "from": "725|directives|239|300",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "725#4",
+     "directiveSegments": "Ask yourself, why did Korea come together as a country v N&S?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p0725-s005",
+   "from": "725|directives|301|374",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "725#5",
+     "directiveSegments": "Ask yourself, what occurred in Asia (ref pics) just prior to the O-games?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p0725-s006",
+   "from": "725|directives|375|410",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "725#6",
+     "directiveSegments": "Ask yourself, what does FREED mean?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p0725-s007",
+   "from": "725|directives|411|442",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "725#7",
+     "directiveSegments": "Ask yourself, do we want a WAR?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p0725-s008",
+   "from": "725|directives|443|486",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "725#8",
+     "directiveSegments": "Ask yourself, who is trying to start a WAR?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p0725-s009",
+   "from": "725|directives|487|570",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "725#9",
+     "directiveSegments": "Ask yourself, if a missile was launched by rogue actors, what would be the purpose?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p0725-s010",
+   "from": "725|directives|571|627",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "725#10",
+     "directiveSegments": "Ask yourself, what would/should immediately start a WAR?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p0732-s010",
+   "from": "732|questions|528|552",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0732-s011",
+   "from": "732|questions|553|579",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p0790-s011",
+   "from": "790|directives|176|191",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "790#0",
+     "directiveSegments": "DEFINE THE END?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "research",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p0830-s012",
+   "from": "830|directives|347|365",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "830#0",
+     "directiveSegments": "Define false flag?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "research",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p0856-s002",
+   "from": "856|directives|48|66",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "856#0",
+     "directiveSegments": "Ask yourself, why?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p1008-s015",
+   "from": "1008|questions|345|362",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1021-s000",
+   "from": "1021|questions|0|53",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1120-s000",
+   "from": "1120|questions|0|8",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1241-s022",
+   "from": "1241|questions|539|564",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1241-s029",
+   "from": "1241|questions|719|735",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1241-s030",
+   "from": "1241|questions|736|754",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1245-s007",
+   "from": "1245|questions|121|136",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1245-s008",
+   "from": "1245|questions|137|155",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1249-s004",
+   "from": "1249|questions|75|90",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1250-s019",
+   "from": "1250|questions|617|635",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1279-s016",
+   "from": "1279|questions|308|325",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1280-s004",
+   "from": "1280|questions|203|220",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1280-s005",
+   "from": "1280|questions|221|240",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1306-s000",
+   "from": "1306|questions|0|42",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1306-s012",
+   "from": "1306|questions|469|482",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1318-s042",
+   "from": "1318|questions|1454|1476",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1318-s044",
+   "from": "1318|questions|1492|1502",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1319-s064",
+   "from": "1319|questions|1871|1888",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1320-s008",
+   "from": "1320|directives|338|375",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1320#0",
+     "directiveSegments": "Ask yourself, why are they panicking?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p1320-s009",
+   "from": "1320|directives|377|434",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1320#1",
+     "directiveSegments": "Ask yourself, why is UK, France, and Germany so involved?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p1339-s034",
+   "from": "1339|questions|938|951",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1339-s039",
+   "from": "1339|questions|1084|1101",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1345-s017",
+   "from": "1345|questions|466|479",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1345-s018",
+   "from": "1345|questions|480|496",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1351-s001",
+   "from": "1351|questions|20|38",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1361-s022",
+   "from": "1361|directives|1870|1888",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1361#0",
+     "directiveSegments": "Ask yourself, WHY?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p1370-s010",
+   "from": "1370|questions|315|338",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1559-s005",
+   "from": "1559|questions|101|114",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1559-s006",
+   "from": "1559|questions|115|138",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1589-s004",
+   "from": "1589|questions|178|185",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1646-s024",
+   "from": "1646|directives|682|706",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1646#0",
+     "directiveSegments": "COMPARE TO HITLER/NAZIS?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "research",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p1647-s001",
+   "from": "1647|directives|17|47",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1647#1",
+     "directiveSegments": "Ask yourself - is this normal?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p1648-s001",
+   "from": "1648|directives|27|57",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1648#1",
+     "directiveSegments": "Ask yourself - is this normal?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY",
+     "alsoQuotedInPayload": true
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p1658-s001",
+   "from": "1658|directives|15|45",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1658#0",
+     "directiveSegments": "Ask yourself - is this normal?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p1659-s000",
+   "from": "1659|directives|10|55",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1659#0",
+     "directiveSegments": "Ask yourself - who is filing the indictments?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p1660-s000",
+   "from": "1660|directives|10|82",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1660#0",
+     "directiveSegments": "Ask yourself - does Huber have the ability to file across all 50 states?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p1682-s002",
+   "from": "1682|questions|62|78",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1796-s016",
+   "from": "1796|directives|529|547",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1796#0",
+     "directiveSegments": "Ask yourself, why?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p1822-s001",
+   "from": "1822|questions|26|44",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1822-s064",
+   "from": "1822|directives|2005|2045",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1822#10",
+     "directiveSegments": "Ask yourself a simple question – WHY????",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p1841-s001",
+   "from": "1841|questions|57|81",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1862-s007",
+   "from": "1862|questions|560|580",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1862-s008",
+   "from": "1862|questions|581|607",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1862-s009",
+   "from": "1862|questions|608|652",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1873-s003",
+   "from": "1873|directives|87|106",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1873#0",
+     "directiveSegments": "Ask yourself - WHY?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p1887-s018",
+   "from": "1887|questions|955|982",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1908-s005",
+   "from": "1908|directives|201|292",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1908#1",
+     "directiveSegments": "Ask yourself, would you NOT want to be at your preferred destination PRIOR TO going public?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p1926-s000",
+   "from": "1926|questions|0|17",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1926-s002",
+   "from": "1926|questions|55|75",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1926-s004",
+   "from": "1926|questions|127|146",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1926-s006",
+   "from": "1926|questions|288|308",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1926-s009",
+   "from": "1926|questions|531|565",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1926-s011",
+   "from": "1926|questions|773|793",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1926-s013",
+   "from": "1926|questions|976|991",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1926-s015",
+   "from": "1926|questions|1070|1090",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1926-s017",
+   "from": "1926|questions|1168|1189",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1926-s022",
+   "from": "1926|questions|1446|1463",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1927-s001",
+   "from": "1927|questions|8|28",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1935-s004",
+   "from": "1935|questions|515|535",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1935-s021",
+   "from": "1935|directives|859|955",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1935#2",
+     "directiveSegments": "Ask yourself, if above are central to operational success, who would you pick to lead such orgs?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p1935-s025",
+   "from": "1935|questions|1054|1072",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1944-s005",
+   "from": "1944|questions|106|129",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1944-s023",
+   "from": "1944|questions|1246|1266",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1945-s000",
+   "from": "1945|questions|10|27",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1945-s022",
+   "from": "1945|questions|2024|2044",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1948-s044",
+   "from": "1948|questions|1780|1800",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1948-s045",
+   "from": "1948|questions|1801|1828",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p1972-s006",
+   "from": "1972|questions|191|208",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2000-s003",
+   "from": "2000|directives|131|149",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "2000#1",
+     "directiveSegments": "Ask yourself, why?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p2032-s004",
+   "from": "2032|questions|159|181",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2032-s018",
+   "from": "2032|questions|868|890",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2171-s002",
+   "from": "2171|questions|125|142",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2171-s004",
+   "from": "2171|questions|180|200",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2171-s006",
+   "from": "2171|questions|252|271",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2171-s008",
+   "from": "2171|questions|413|433",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2171-s011",
+   "from": "2171|questions|656|690",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2171-s013",
+   "from": "2171|questions|898|918",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2171-s015",
+   "from": "2171|questions|1101|1116",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2171-s017",
+   "from": "2171|questions|1195|1215",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2171-s019",
+   "from": "2171|questions|1293|1314",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2171-s024",
+   "from": "2171|questions|1571|1588",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2180-s012",
+   "from": "2180|questions|1084|1101",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2206-s001",
+   "from": "2206|questions|62|80",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2248-s000",
+   "from": "2248|directives|0|91",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "2248#0",
+     "directiveSegments": "Ask yourself, how would 'FOREIGN' Allies' KNOW what is within a US TOP SECRET FISA warrant?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p2248-s002",
+   "from": "2248|directives|164|240",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "2248#1",
+     "directiveSegments": "Ask yourself, why are [2] 'KEY' Allies' VERY CONCERNED re: DECLAS & RELEASE?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p2300-s009",
+   "from": "2300|questions|526|543",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2300-s011",
+   "from": "2300|questions|658|678",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2369-s004",
+   "from": "2369|questions|334|354",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2501-s002",
+   "from": "2501|questions|215|231",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2523-s005",
+   "from": "2523|questions|403|419",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2527-s002",
+   "from": "2527|questions|27|43",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2534-s000",
+   "from": "2534|directives|10|136",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "2534#0",
+     "directiveSegments": "Ask yourself a very simple question, why is there a  total & complete MSM blackout re: France, Belgium, Germany, EU riots etc?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p2559-s001",
+   "from": "2559|questions|30|50",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2568-s001",
+   "from": "2568|questions|59|79",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2568-s002",
+   "from": "2568|questions|80|116",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2594-s001",
+   "from": "2594|questions|35|62",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2645-s002",
+   "from": "2645|directives|96|114",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "2645#0",
+     "directiveSegments": "Ask yourself, why?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p2678-s005",
+   "from": "2678|directives|180|198",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "2678#0",
+     "directiveSegments": "Ask yourself, why?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p2682-s001",
+   "from": "2682|questions|99|119",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2691-s006",
+   "from": "2691|directives|629|647",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "2691#0",
+     "directiveSegments": "Ask yourself, why?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p2718-s004",
+   "from": "2718|questions|144|167",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2787-s005",
+   "from": "2787|questions|556|576",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2788-s017",
+   "from": "2788|directives|1024|1070",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "2788#1",
+     "directiveSegments": "Ask yourself, why are 'Liberals' always angry?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p2844-s011",
+   "from": "2844|questions|503|521",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2887-s000",
+   "from": "2887|directives|0|143",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "2887#0",
+     "directiveSegments": "Ask yourself a simple question, should a woman who travels to Syria to support and encourage 'JIHAD' against the 'West' deserve to live……………….?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p2887-s001",
+   "from": "2887|directives|145|349",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "2887#1",
+     "directiveSegments": "Ask yourself a simpler question, if brainwashed by ISIS terrorists (her husband and other close-proximity fighters), could this same woman be 'tasked' & 'trained' to carry out a TERRORIST ACT upon return?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p2893-s005",
+   "from": "2893|questions|142|155",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2937-s002",
+   "from": "2937|questions|96|117",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2937-s004",
+   "from": "2937|questions|155|176",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2937-s005",
+   "from": "2937|questions|177|201",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2937-s007",
+   "from": "2937|questions|254|285",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2937-s031",
+   "from": "2937|questions|1274|1293",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2937-s038",
+   "from": "2937|questions|1596|1622",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2958-s000",
+   "from": "2958|questions|10|31",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2971-s003",
+   "from": "2971|questions|117|135",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2971-s015",
+   "from": "2971|questions|847|869",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2988-s001",
+   "from": "2988|questions|56|81",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2988-s004",
+   "from": "2988|questions|639|651",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2989-s012",
+   "from": "2989|questions|665|687",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p2993-s006",
+   "from": "2993|directives|326|510",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "2993#0",
+     "directiveSegments": "ASK YOURSELF A VERY SIMPLE QUESTION, WOULD YOU RELEASE (GO LIVE) TO THE PUBLIC ACROSS THE MEDIA ALL HIGHLY CLASSIFIED MATERIAL (NSA) ……………PRIOR TO…………..GETTING TO YOUR END DESTINATION?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p3007-s001",
+   "from": "3007|questions|60|80",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p3020-s009",
+   "from": "3020|questions|332|360",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p3022-s007",
+   "from": "3022|questions|312|327",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p3022-s008",
+   "from": "3022|questions|328|344",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p3307-s001",
+   "from": "3307|questions|87|107",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p3309-s001",
+   "from": "3309|questions|76|90",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p3325-s001",
+   "from": "3325|questions|94|112",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p3399-s002",
+   "from": "3399|directives|88|117",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "3399#0",
+     "directiveSegments": "Ask yourself, is this normal?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p3436-s001",
+   "from": "3436|questions|53|73",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p3459-s002",
+   "from": "3459|directives|137|172",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "3459#0",
+     "directiveSegments": "Ask yourself a very simple Q - why?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p3501-s008",
+   "from": "3501|questions|635|655",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p3540-s002",
+   "from": "3540|directives|77|107",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "3540#0",
+     "directiveSegments": "Ask yourself a simple Q - why?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p3582-s002",
+   "from": "3582|directives|83|101",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "3582#0",
+     "directiveSegments": "Ask yourself, why?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p3586-s006",
+   "from": "3586|questions|182|213",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p3588-s009",
+   "from": "3588|directives|359|520",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "3588#0",
+     "directiveSegments": "Ask yourself a very basic question – would the FAKE NEWS complex [NYT, WASHPOST, NBC, ABC, BBC, ………………………………………………………….] attack us if we weren’t a ‘real’ threat?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p3588-s010",
+   "from": "3588|directives|521|622",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "3588#1",
+     "directiveSegments": "Ask yourself a very basic question – why is the ‘forum’ where [drops] are made under constant attack?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p3607-s003",
+   "from": "3607|questions|303|323",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p3661-s000",
+   "from": "3661|directives|0|41",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "3661#0",
+     "directiveSegments": "Ask yourself a very simple question, why?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p3836-s007",
+   "from": "3836|questions|446|464",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p3856-s002",
+   "from": "3856|questions|43|84",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p3856-s004",
+   "from": "3856|questions|106|143",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p3857-s002",
+   "from": "3857|directives|115|153",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "3857#0",
+     "directiveSegments": "Ask yourself a simple question —– why?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p3869-s002",
+   "from": "3869|questions|140|164",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p3881-s002",
+   "from": "3881|directives|76|118",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "3881#1",
+     "directiveSegments": "Think: re: why [no] arrests (justice) yet?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p3911-s003",
+   "from": "3911|questions|192|210",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p3920-s002",
+   "from": "3920|questions|132|149",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p4014-s023",
+   "from": "4014|questions|1382|1402",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p4097-s003",
+   "from": "4097|directives|252|270",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "4097#0",
+     "directiveSegments": "Ask yourself, why?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p4098-s001",
+   "from": "4098|questions|61|79",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p4123-s004",
+   "from": "4123|questions|225|246",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p4164-s009",
+   "from": "4164|questions|435|462",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p4337-s010",
+   "from": "4337|directives|592|717",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "4337#1",
+     "directiveSegments": "Ask yourself a very simple question - was it known [common sense and [early] medical reports] elderly community most at risk?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p4352-s014",
+   "from": "4352|questions|1687|1726",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p4352-s015",
+   "from": "4352|questions|1727|1752",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p4428-s002",
+   "from": "4428|directives|102|120",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "4428#0",
+     "directiveSegments": "Ask yourself, why?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p4553-s002",
+   "from": "4553|questions|125|142",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p4553-s004",
+   "from": "4553|questions|180|200",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p4553-s006",
+   "from": "4553|questions|252|271",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p4553-s008",
+   "from": "4553|questions|413|433",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p4553-s011",
+   "from": "4553|questions|656|690",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p4553-s013",
+   "from": "4553|questions|898|918",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p4553-s015",
+   "from": "4553|questions|1101|1116",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p4553-s017",
+   "from": "4553|questions|1195|1215",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p4553-s019",
+   "from": "4553|questions|1293|1314",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p4553-s024",
+   "from": "4553|questions|1571|1588",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p4635-s028",
+   "from": "4635|directives|1791|1864",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "4635#1",
+     "directiveSegments": "Ask yourself, why are [D] party leaders refusing to condemn the violence?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p4635-s029",
+   "from": "4635|directives|1865|1941",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "4635#2",
+     "directiveSegments": "Ask yourself, why are [D] party leaders refusing to seek a unified republic?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": true
+    }
+   }
+  },
+  {
+   "actionId": "A-DQ-p4685-s008",
+   "from": "4685|questions|507|529",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DQ-p4958-s008",
+   "from": "4958|questions|184|199",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-111-namedEntities-1073-1077",
+   "from": "111|namedEntities|1073|1077",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-111-namedEntities-1073-1077",
+   "from": "111|namedEntities|1073|1077",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-111-namedEntities-1073-1077",
+   "from": "111|namedEntities|1073|1077",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-111-namedEntities-1073-1077",
+   "from": "111|namedEntities|1073|1077",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-1235-namedEntities-145-149",
+   "from": "1235|namedEntities|145|149",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-1265-namedEntities-155-160",
+   "from": "1265|namedEntities|155|160",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-1318-namedEntities-1067-1075",
+   "from": "1318|namedEntities|1067|1075",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-1318-namedEntities-1067-1075",
+   "from": "1318|namedEntities|1067|1075",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-1318-namedEntities-1067-1075",
+   "from": "1318|namedEntities|1067|1075",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-1318-namedEntities-1067-1075",
+   "from": "1318|namedEntities|1067|1075",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-14-namedEntities-1319-1324",
+   "from": "14|namedEntities|1319|1324",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-1700-directives-317-625",
+   "from": "1700|directives|317|625",
+   "kind": "directives",
+   "metadata": {
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-DUP-1796-namedEntities-343-350",
+   "from": "1796|namedEntities|343|350",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-1824-namedEntities-326-333",
+   "from": "1824|namedEntities|326|333",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-1824-namedEntities-326-333",
+   "from": "1824|namedEntities|326|333",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-1828-namedEntities-784-786",
+   "from": "1828|namedEntities|784|786",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-1887-namedEntities-682-689",
+   "from": "1887|namedEntities|682|689",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-1935-namedEntities-409-414",
+   "from": "1935|namedEntities|409|414",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-1935-namedEntities-409-414",
+   "from": "1935|namedEntities|409|414",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-194-namedEntities-86-90",
+   "from": "194|namedEntities|86|90",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-1948-namedEntities-1473-1477",
+   "from": "1948|namedEntities|1473|1477",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-195-namedEntities-86-90",
+   "from": "195|namedEntities|86|90",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-199-namedEntities-130-134",
+   "from": "199|namedEntities|130|134",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2215-emphasis-24-35",
+   "from": "2215|emphasis|24|35",
+   "kind": "emphasis",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2215-emphasis-36-47",
+   "from": "2215|emphasis|36|47",
+   "kind": "emphasis",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2378-namedEntities-379-384",
+   "from": "2378|namedEntities|379|384",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2378-namedEntities-379-384",
+   "from": "2378|namedEntities|379|384",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2381-namedEntities-2570-2577",
+   "from": "2381|namedEntities|2570|2577",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2381-namedEntities-2570-2577",
+   "from": "2381|namedEntities|2570|2577",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2381-namedEntities-2570-2577",
+   "from": "2381|namedEntities|2570|2577",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2381-namedEntities-2570-2577",
+   "from": "2381|namedEntities|2570|2577",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2381-namedEntities-2570-2577",
+   "from": "2381|namedEntities|2570|2577",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2381-namedEntities-2570-2577",
+   "from": "2381|namedEntities|2570|2577",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2381-namedEntities-2570-2577",
+   "from": "2381|namedEntities|2570|2577",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2381-namedEntities-2570-2577",
+   "from": "2381|namedEntities|2570|2577",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2381-namedEntities-2570-2577",
+   "from": "2381|namedEntities|2570|2577",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2381-namedEntities-2570-2577",
+   "from": "2381|namedEntities|2570|2577",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2397-namedEntities-701-708",
+   "from": "2397|namedEntities|701|708",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2397-namedEntities-701-708",
+   "from": "2397|namedEntities|701|708",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2397-namedEntities-701-708",
+   "from": "2397|namedEntities|701|708",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2397-namedEntities-701-708",
+   "from": "2397|namedEntities|701|708",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2397-namedEntities-701-708",
+   "from": "2397|namedEntities|701|708",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2397-namedEntities-701-708",
+   "from": "2397|namedEntities|701|708",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2397-namedEntities-701-708",
+   "from": "2397|namedEntities|701|708",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2397-namedEntities-701-708",
+   "from": "2397|namedEntities|701|708",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2397-namedEntities-701-708",
+   "from": "2397|namedEntities|701|708",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2397-namedEntities-701-708",
+   "from": "2397|namedEntities|701|708",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2448-namedEntities-1007-1013",
+   "from": "2448|namedEntities|1007|1013",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2448-namedEntities-1007-1013",
+   "from": "2448|namedEntities|1007|1013",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2448-namedEntities-1007-1013",
+   "from": "2448|namedEntities|1007|1013",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2448-namedEntities-1007-1013",
+   "from": "2448|namedEntities|1007|1013",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2448-namedEntities-1007-1013",
+   "from": "2448|namedEntities|1007|1013",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2451-directives-0-58",
+   "from": "2451|directives|0|58",
+   "kind": "directives",
+   "metadata": {
+    "directiveFamilies": {
+     "family": "morale",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-DUP-2463-namedEntities-56-63",
+   "from": "2463|namedEntities|56|63",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2519-namedEntities-158-167",
+   "from": "2519|namedEntities|158|167",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2549-namedEntities-573-582",
+   "from": "2549|namedEntities|573|582",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2627-namedEntities-231-240",
+   "from": "2627|namedEntities|231|240",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2640-namedEntities-466-473",
+   "from": "2640|namedEntities|466|473",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2657-namedEntities-1310-1317",
+   "from": "2657|namedEntities|1310|1317",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2657-namedEntities-1310-1317",
+   "from": "2657|namedEntities|1310|1317",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2657-namedEntities-1348-1354",
+   "from": "2657|namedEntities|1348|1354",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2715-namedEntities-90-99",
+   "from": "2715|namedEntities|90|99",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2844-namedEntities-511-519",
+   "from": "2844|namedEntities|511|519",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2856-namedEntities-1355-1362",
+   "from": "2856|namedEntities|1355|1362",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2856-namedEntities-1355-1362",
+   "from": "2856|namedEntities|1355|1362",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-2943-namedEntities-1150-1156",
+   "from": "2943|namedEntities|1150|1156",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-3004-namedEntities-771-776",
+   "from": "3004|namedEntities|771|776",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-3006-namedEntities-451-457",
+   "from": "3006|namedEntities|451|457",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-3316-namedEntities-279-286",
+   "from": "3316|namedEntities|279|286",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-3316-namedEntities-279-286",
+   "from": "3316|namedEntities|279|286",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-3325-namedEntities-102-110",
+   "from": "3325|namedEntities|102|110",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-3330-namedEntities-191-196",
+   "from": "3330|namedEntities|191|196",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-3741-namedEntities-344-350",
+   "from": "3741|namedEntities|344|350",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-3915-namedEntities-677-682",
+   "from": "3915|namedEntities|677|682",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-3992-namedEntities-76-83",
+   "from": "3992|namedEntities|76|83",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-3992-namedEntities-76-83",
+   "from": "3992|namedEntities|76|83",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-3992-namedEntities-76-83",
+   "from": "3992|namedEntities|76|83",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-3992-namedEntities-76-83",
+   "from": "3992|namedEntities|76|83",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-3992-namedEntities-76-83",
+   "from": "3992|namedEntities|76|83",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-3992-namedEntities-76-83",
+   "from": "3992|namedEntities|76|83",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-3992-namedEntities-76-83",
+   "from": "3992|namedEntities|76|83",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-3992-namedEntities-76-83",
+   "from": "3992|namedEntities|76|83",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-3992-namedEntities-76-83",
+   "from": "3992|namedEntities|76|83",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-3992-namedEntities-76-83",
+   "from": "3992|namedEntities|76|83",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-4098-namedEntities-69-77",
+   "from": "4098|namedEntities|69|77",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-436-emphasis-42-47",
+   "from": "436|emphasis|42|47",
+   "kind": "emphasis",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-4381-emphasis-349-373",
+   "from": "4381|emphasis|349|373",
+   "kind": "emphasis",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-4397-namedEntities-773-780",
+   "from": "4397|namedEntities|773|780",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-4397-namedEntities-773-780",
+   "from": "4397|namedEntities|773|780",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-4620-namedEntities-487-494",
+   "from": "4620|namedEntities|487|494",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-4635-namedEntities-1782-1789",
+   "from": "4635|namedEntities|1782|1789",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-4817-namedEntities-54-59",
+   "from": "4817|namedEntities|54|59",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-5-namedEntities-509-516",
+   "from": "5|namedEntities|509|516",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-559-namedEntities-414-421",
+   "from": "559|namedEntities|414|421",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-563-emphasis-230-252",
+   "from": "563|emphasis|230|252",
+   "kind": "emphasis",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-570-namedEntities-1821-1829",
+   "from": "570|namedEntities|1821|1829",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-570-namedEntities-1821-1829",
+   "from": "570|namedEntities|1821|1829",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-570-namedEntities-451-458",
+   "from": "570|namedEntities|451|458",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-570-namedEntities-941-945",
+   "from": "570|namedEntities|941|945",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-636-namedEntities-180-187",
+   "from": "636|namedEntities|180|187",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-778-namedEntities-44-49",
+   "from": "778|namedEntities|44|49",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-778-namedEntities-44-49",
+   "from": "778|namedEntities|44|49",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-964-namedEntities-455-460",
+   "from": "964|namedEntities|455|460",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-DUP-968-namedEntities-31-36",
+   "from": "968|namedEntities|31|36",
+   "kind": "namedEntities",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-MP-p0001-s002",
+   "from": "1|directives|177|255",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1#0",
+     "directiveSegments": "Expect massive riots organized in defiance and others fleeing the US to occur.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0016-s000",
+   "from": "16|directives|0|68",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "16#0",
+     "directiveSegments": "Get the popcorn, Friday & Saturday will deliver on the MAGA promise.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "operational",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0016-s000",
+   "rekeyed": "claimMeta",
+   "from": "friday saturday will deliver on the maga promise",
+   "to": "get the popcorn friday saturday will deliver on the maga promise"
+  },
+  {
+   "actionId": "A-MP-p0035-s001",
+   "from": "35|claims|165|230",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0035-s002",
+   "from": "35|predictions|231|388",
+   "kind": "predictions",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "prediction",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": true,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0037-s004",
+   "from": "37|claims|289|311",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0038-s008",
+   "from": "38|predictions|294|332",
+   "kind": "predictions",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "prediction",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": true,
+     "telegraphic": false,
+     "confidence": "AUDIT_HIGH_CONFIDENCE"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0043-s003",
+   "from": "43|claims|247|353",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0043-s005",
+   "from": "43|predictions|434|467",
+   "kind": "predictions",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "prediction",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": true,
+     "telegraphic": false,
+     "confidence": "AUDIT_HIGH_CONFIDENCE"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0061-s004",
+   "from": "61|directives|209|251",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "61#1",
+     "directiveSegments": "Expect outages periodically (infiltrated).",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0066-s000",
+   "from": "66|claims|12|32",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0165-s034",
+   "from": "165|claims|1263|1290",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": true,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0166-s035",
+   "from": "166|claims|1291|1318",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": true,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0189-s018",
+   "from": "189|claims|652|708",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0326-s002",
+   "from": "326|directives|37|54",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "326#0",
+     "directiveSegments": "Expect fireworks.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0337-s000",
+   "from": "337|directives|0|41",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "337#2",
+     "directiveSegments": "Patriots, rest assured we are in control.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0337-s006",
+   "from": "337|claims|254|314",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0345-s003",
+   "from": "345|predictions|69|112",
+   "kind": "predictions",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "prediction",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": true,
+     "telegraphic": false,
+     "confidence": "AUDIT_HIGH_CONFIDENCE"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0465-s001",
+   "from": "465|directives|16|40",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "465#1",
+     "directiveSegments": "No other platforms used.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "prohibition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0513-s002",
+   "from": "513|directives|49|88",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "513#1",
+     "directiveSegments": "NO comms made outside of this platform.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "prohibition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0513-s003",
+   "from": "513|claims|89|185",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0515-s003",
+   "from": "515|claims|83|109",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0586-s021",
+   "from": "586|claims|937|964",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0651-s001",
+   "from": "651|directives|41|53",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "651#0",
+     "directiveSegments": "Expect more.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0759-s002",
+   "from": "759|directives|103|148",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "759#0",
+     "directiveSegments": "Make no mistake, they will all PAY THE PRICE.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "operational",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0777-s005",
+   "from": "777|claims|160|216",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0854-s007",
+   "from": "854|claims|202|224",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0854-s009",
+   "from": "854|claims|262|293",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0960-s002",
+   "from": "960|directives|129|147",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "960#1",
+     "directiveSegments": "Expect a lot more.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p0973-s006",
+   "from": "973|claims|156|177",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1155-s000",
+   "from": "1155|claims|10|56",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1261-s002",
+   "from": "1261|directives|40|61",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1261#1",
+     "directiveSegments": "Expect more (outcry).",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1295-s012",
+   "from": "1295|directives|474|536",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1295#3",
+     "directiveSegments": "The only profit we should all be striving for is TRUE FREEDOM.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1297-s006",
+   "from": "1297|directives|200|302",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1297#0",
+     "directiveSegments": "They fight unconditionally because they hold a core value, a value that we should all live in FREEDOM.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1297-s008",
+   "from": "1297|claims|318|352",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1358-s000",
+   "from": "1358|directives|0|21",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1358#6",
+     "directiveSegments": "Trust must be earned.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "morale",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1425-s000",
+   "from": "1425|directives|10|184",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1425#2",
+     "directiveSegments": "Given we have now undeniably [on purpose] verified ourselves to be an inside source, expect the MSM [Clown Army] to attack in full cooperation w/ foreign and domestic assets.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1432-s002",
+   "from": "1432|claims|151|346",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1432-s002",
+   "from": "1432|directives|147|347",
+   "kind": "directives",
+   "metadata": {
+    "directiveFamilies": {
+     "family": "morale",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1445-s006",
+   "from": "1445|claims|141|166",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1445-s011",
+   "from": "1445|directives|256|274",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1445#8",
+     "directiveSegments": "Expect A LOT more.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1471-s002",
+   "from": "1471|claims|119|153",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1489-s004",
+   "from": "1489|directives|70|89",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1489#2",
+     "directiveSegments": "Expect bigger push.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1613-s002",
+   "from": "1613|directives|123|159",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1613#0",
+     "directiveSegments": "Rest assured",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "morale",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1824-s000",
+   "from": "1824|claims|17|84",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1824-s000",
+   "from": "1824|directives|0|265",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1824#0",
+     "directiveSegments": "Ask yourself, if the U.S. GDP is greater than the total of all others  combined (G7), which allows us to negotiate from a position of strength, why would previous President's 'knowingly' [unequally] distribute America's wealth away by making unbalanced trade deals?",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1879-s004",
+   "from": "1879|directives|216|287",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1879#0",
+     "directiveSegments": "Expect MANY MANY MANY similar reports to surface from around the world.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1915-s011",
+   "from": "1915|claims|932|987",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1916-s004",
+   "from": "1916|claims|149|203",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1944-s022",
+   "from": "1944|claims|1185|1245",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1956-s002",
+   "from": "1956|claims|67|90",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1998-s003",
+   "from": "1998|directives|86|151",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "1998#0",
+     "directiveSegments": "Expect another BIG coordinated wave [#3] of attacks by FAKE NEWS.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2056-s001",
+   "from": "2056|directives|32|87",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "2056#0",
+     "directiveSegments": "Every moment together is a moment you should not waste.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2166-s007",
+   "from": "2166|directives|311|340",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "2166#2",
+     "directiveSegments": "EXPECT TWITTER/FB FORCE NEXT.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2211-s011",
+   "from": "2211|claims|651|714",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2234-s002",
+   "from": "2234|claims|117|142",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2298-s002",
+   "from": "2298|directives|138|183",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "2298#4",
+     "directiveSegments": "EXPECT COMMS BLACKOUT ATTEMPT (POTUS TWITTER)",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2436-s032",
+   "from": "2436|claims|1493|1512",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2436-s033",
+   "from": "2436|claims|1513|1533",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2436-s034",
+   "from": "2436|claims|1534|1554",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2462-s032",
+   "from": "2462|claims|1544|1616",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": true,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2507-s001",
+   "from": "2507|claims|62|109",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2661-s008",
+   "from": "2661|claims|464|543",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2689-s030",
+   "from": "2689|claims|1890|2040",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2772-s001",
+   "from": "2772|directives|47|111",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "2772#0",
+     "directiveSegments": "Expect 'attacks' to dramatically intensify across all platforms.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2807-s037",
+   "from": "2807|claims|1779|1792",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2807-s038",
+   "from": "2807|claims|1793|1807",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2816-s017",
+   "from": "2816|claims|735|772",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2904-s003",
+   "from": "2904|claims|168|363",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2904-s003",
+   "from": "2904|directives|164|364",
+   "kind": "directives",
+   "metadata": {
+    "directiveFamilies": {
+     "family": "morale",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2937-s013",
+   "from": "2937|claims|556|656",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2998-s001",
+   "from": "2998|claims|16|53",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p3049-s001",
+   "from": "3049|claims|110|359",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p3053-s001",
+   "from": "3053|claims|85|109",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p3371-s000",
+   "from": "3371|directives|10|101",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "3371#0",
+     "directiveSegments": "Sometimes you need to 'take one for the team publicly' before you are vindicated as a hero.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p3385-s002",
+   "from": "3385|directives|142|189",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "3385#0",
+     "directiveSegments": "Expect a lot more to become public (unsealing).",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p3593-s003",
+   "from": "3593|claims|208|403",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": true,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p3593-s003",
+   "from": "3593|directives|204|404",
+   "kind": "directives",
+   "metadata": {
+    "directiveFamilies": {
+     "family": "morale",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p3594-s003",
+   "from": "3594|claims|195|390",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": true,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p3594-s003",
+   "from": "3594|directives|191|391",
+   "kind": "directives",
+   "metadata": {
+    "directiveFamilies": {
+     "family": "morale",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p3728-s002",
+   "from": "3728|directives|127|186",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "3728#1",
+     "directiveSegments": "Sometimes you must sacrifice yourself for the greater good.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p3907-s032",
+   "from": "3907|claims|1493|1512",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p3907-s033",
+   "from": "3907|claims|1513|1533",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p3907-s034",
+   "from": "3907|claims|1534|1554",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p3929-s000",
+   "from": "3929|claims|0|61",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4024-s001",
+   "from": "4024|claims|47|66",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4076-s002",
+   "from": "4076|claims|135|154",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4089-s001",
+   "from": "4089|claims|47|66",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4115-s002",
+   "from": "4115|claims|202|221",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4121-s002",
+   "from": "4121|claims|91|110",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4127-s002",
+   "from": "4127|claims|85|118",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": true,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4226-s002",
+   "from": "4226|claims|82|130",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4246-s002",
+   "from": "4246|claims|101|120",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4250-s002",
+   "from": "4250|claims|93|130",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4316-s001",
+   "from": "4316|directives|57|109",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "4316#0",
+     "directiveSegments": "Fear not",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "morale",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4461-s005",
+   "from": "4461|claims|331|350",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4509-s007",
+   "from": "4509|claims|477|712",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4543-s004",
+   "from": "4543|claims|491|526",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4604-s001",
+   "from": "4604|claims|97|121",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4641-s002",
+   "from": "4641|claims|65|84",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4664-s002",
+   "from": "4664|claims|120|176",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4685-s014",
+   "from": "4685|claims|859|878",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4722-s009",
+   "from": "4722|directives|118|175",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "4722#1",
+     "directiveSegments": "Make no mistake, they will not concede on Election Night.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "operational",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4722-s010",
+   "from": "4722|directives|176|247",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "4722#2",
+     "directiveSegments": "Make no mistake, they will contest this legally in battleground states.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "operational",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4722-s011",
+   "from": "4722|directives|248|312",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "4722#3",
+     "directiveSegments": "Make no mistake, they will project doubt in the election results",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "operational",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4722-s012",
+   "from": "4722|directives|313|392",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "4722#4",
+     "directiveSegments": "Make no mistake, they will organize massive riots and attempt Anarchy-99 design",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "operational",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4746-s000",
+   "from": "4746|claims|0|22",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4772-s000",
+   "from": "4772|claims|0|60",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4782-s015",
+   "from": "4782|claims|557|687",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4871-s000",
+   "from": "4871|claims|0|119",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4888-s001",
+   "from": "4888|claims|92|137",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4891-s001",
+   "from": "4891|claims|80|121",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4891-s010",
+   "from": "4891|claims|497|582",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4908-s001",
+   "from": "4908|claims|47|66",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4951-s012",
+   "from": "4951|directives|438|508",
+   "kind": "directives",
+   "metadata": {
+    "directiveMeta": {
+     "stableOccurrenceId": "4951#0",
+     "directiveSegments": "Sometimes you must walk through the darkness before you see the light.",
+     "authorshipState": "Q_AUTHORED_CURRENT_POST",
+     "sourceType": "Q_BODY"
+    },
+    "directiveFamilies": {
+     "family": "cognition",
+     "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4963-s009",
+   "from": "4963|claims|148|171",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-NEST-p0099-s023-questions",
+   "from": "99|questions|345|370",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-NEST-p0120-s021-questions",
+   "from": "120|questions|841|852",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-NEST-p0520-s058-claims",
+   "from": "520|claims|1373|1388",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-NEST-p0563-s009-claims",
+   "from": "563|claims|230|251",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-NEST-p1010-s008-claims",
+   "from": "1010|claims|153|161",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-NEST-p1316-s014-claims",
+   "from": "1316|claims|909|961",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-NEST-p1745-s008-claims",
+   "from": "1745|claims|740|860",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-NEST-p1929-s013-questions",
+   "from": "1929|questions|504|514",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-NEST-p1991-s002-claims",
+   "from": "1991|claims|85|255",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-NEST-p2070-s024-claims",
+   "from": "2070|claims|1285|1338",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-NEST-p2072-s014-questions",
+   "from": "2072|questions|1631|1643",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-NEST-p2094-s004-claims",
+   "from": "2094|claims|124|137",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-NEST-p2211-s013-claims",
+   "from": "2211|claims|818|913",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": true,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-NEST-p2211-s016-claims",
+   "from": "2211|claims|1290|1445",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-NEST-p2211-s042-questions",
+   "from": "2211|questions|4169|4181",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-NEST-p2305-s005-questions",
+   "from": "2305|questions|139|156",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-NEST-p2359-s001-questions",
+   "from": "2359|questions|78|88",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-NEST-p2360-s002-questions",
+   "from": "2360|questions|105|115",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-NEST-p2360-s003-questions",
+   "from": "2360|questions|144|150",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-NEST-p2381-s021-claims",
+   "from": "2381|claims|1794|1847",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-NEST-p2381-s021-claims",
+   "from": "2381|claims|1790|1793",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-NEST-p2552-s001-claims",
+   "from": "2552|claims|95|223",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-NEST-p2653-s004-claims",
+   "from": "2653|claims|120|155",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-NEST-p3130-s001-claims",
+   "from": "3130|claims|164|321",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-NEST-p3256-s001-questions",
+   "from": "3256|questions|70|78",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-NEST-p3396-s001-questions",
+   "from": "3396|questions|55|58",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-NEST-p3586-s010-questions",
+   "from": "3586|questions|311|317",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-NEST-p3785-s000-questions",
+   "from": "3785|questions|27|38",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-NEST-p4398-s002-claims",
+   "from": "4398|claims|90|154",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-NEST-p4477-s002-questions",
+   "from": "4477|questions|110|126",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-NEST-p4477-s003-questions",
+   "from": "4477|questions|130|156",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-NEST-p4477-s004-questions",
+   "from": "4477|questions|160|317",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "A-NEST-p4630-s013-claims",
+   "from": "4630|claims|2089|2238",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-SB-2653",
+   "from": "2653|claims|2480|2530",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-SB-4310",
+   "from": "4310|claims|980|1138",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  }
+ ]
+}
