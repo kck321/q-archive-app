@@ -7892,6 +7892,731 @@
    "proof": "52 word-bounded \"GOD\" occurrences exist archive-wide. Every drop containing one already records the God identity - drops writing \"GOD\" WITHOUT the God identity: 0 - so the alias cannot capture an unrelated token. Exactly one registry group claims any casing of \"god\", so no duplicate canonical identity is created, and no group already claims the exact spelling \"GOD\". Contexts are the deity throughout: GOD SAVE US, IN GOD WE TRUST, GOD BLESS AMERICA, ONE NATION UNDER GOD, House of GOD?.",
    "doesNotResolve": "#197 records God but writes \"the sun god Ra\" and \"the skin of the gods\" - a different identity entirely, and a data question, not a casing one. #2730 writes lowercase \"god\" (\"May god bless you and your family\"). Both stay in the conflict queue with these reasons.",
    "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "John McCain",
+   "alias": "No name",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 5,
+   "posts": [
+    1092,
+    1235,
+    1305,
+    1555,
+    1706
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Kansas",
+   "alias": "KANSAS",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 3,
+   "posts": [
+    950,
+    1122,
+    1702
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Syria",
+   "alias": "SYRIA",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 3,
+   "posts": [
+    964,
+    1884,
+    2658
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Feinstein",
+   "alias": "FEINSTEIN",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 3,
+   "posts": [
+    2277,
+    2281,
+    2345
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Rachel Chandler",
+   "alias": "RACHEL CHANDLER",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 3,
+   "posts": [
+    3134,
+    3155,
+    3158
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Hunter",
+   "alias": "HUNTER",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 3,
+   "posts": [
+    3625,
+    4821,
+    4822
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Clapper",
+   "alias": "CLAPPER",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 2,
+   "posts": [
+    1764,
+    2129
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Washington",
+   "alias": "WASHINGTON",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 2,
+   "posts": [
+    1832,
+    3608
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Grassley",
+   "alias": "GRASSLEY",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 2,
+   "posts": [
+    2274,
+    2445
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Murkowski",
+   "alias": "MURKOWSKI",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 2,
+   "posts": [
+    2281,
+    2345
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Democrat Party",
+   "alias": "DEMOCRAT PARTY",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 2,
+   "posts": [
+    2353,
+    4592
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Gina",
+   "alias": "GINA",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 2,
+   "posts": [
+    3022,
+    3024
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "John Perry Barlow",
+   "alias": "JOHN PERRY BARLOW",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 2,
+   "posts": [
+    790,
+    3023
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Loop Capital",
+   "alias": "LOOP CAPITAL",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 2,
+   "posts": [
+    480,
+    524
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Amazon",
+   "alias": "AMAZON",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 2,
+   "posts": [
+    964,
+    972
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "The Fed",
+   "alias": "THE FED",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    1010
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "JFK Jr.",
+   "alias": "JFK JR.",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    1082
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Rudy",
+   "alias": "RUDY",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    1286
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Hitler",
+   "alias": "HITLER",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    1646
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Nazi Germany",
+   "alias": "NAZI GERMANY",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    1746
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Rice",
+   "alias": "RICE",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    1764
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Epstein Island",
+   "alias": "EPSTEIN ISLAND",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    1884
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Cuba",
+   "alias": "CUBA",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    1884
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Sudan",
+   "alias": "SUDAN",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    1884
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Yemen",
+   "alias": "YEMEN",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    1884
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Libya",
+   "alias": "LIBYA",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    1884
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "23andMe",
+   "alias": "23andme",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    2061
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Moscow",
+   "alias": "MOSCOW",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    2061
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Weissmann",
+   "alias": "WEISSMANN",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    2107
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Patriot Day",
+   "alias": "PATRIOT DAY",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    2150
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Lynch",
+   "alias": "LYNCH",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    2203
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Baker",
+   "alias": "baker",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    2326
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Justice K",
+   "alias": "JUSTICE K",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    2356
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Arizona",
+   "alias": "ARIZONA",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    2492
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Freedom Caucus",
+   "alias": "FREEDOM CAUCUS",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    2569
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Venezuela",
+   "alias": "VENEZUELA",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    2657
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Ecuador",
+   "alias": "ECUADOR",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    2657
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Freedom Caucus",
+   "alias": "FREEDOM Caucus",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    285
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Liberals",
+   "alias": "LIBERALS",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    2850
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Ivy League",
+   "alias": "Ivy league",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    2989
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Federal Agencies",
+   "alias": "FEDERAL AGENCIES",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    3059
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Sean Hannity",
+   "alias": "SEAN HANNITY",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    3179
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Media Matters",
+   "alias": "media matters",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    3312
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "House of Cards",
+   "alias": "House of cards",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    372
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Sanders",
+   "alias": "SANDERS",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    3915
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Kislyak",
+   "alias": "KISLYAK",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    4232
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Dan Coats",
+   "alias": "DAN COATS",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    4238
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Seattle",
+   "alias": "SEATTLE",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    4310
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "United Nations",
+   "alias": "united nations",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    4545
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "United States Senator",
+   "alias": "UNITED STATES SENATOR",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    4830
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Banco de México",
+   "alias": "Banco de MEXICO",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    524
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Aaron Swartz",
+   "alias": "Aaron swartz",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    770
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "London",
+   "alias": "LONDON",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    785
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Forbidden City",
+   "alias": "FORBIDDEN CITY",
+   "ruledOn": "2026-08-21",
+   "batch": "B1B case-variant family",
+   "reasoning": "The drop writes this identity in a casing the registry did not carry, and occurrencesOfSpan() is indexOf and therefore case-sensitive, so the entity was reported unlocatable. Registering the exact spelling Q used resolves it by EXACT matching — no case-insensitive fallback, no relaxed word-boundary rule, no short-token exemption.",
+   "proof": "Every drop in the archive containing this casing at a word boundary already records the same canonical identity; drops carrying it WITHOUT the identity: 0. So the alias cannot capture an unrelated token.",
+   "affectedRows": 1,
+   "posts": [
+    889
+   ],
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
   }
  ]
 }

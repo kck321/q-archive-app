@@ -1,18 +1,18 @@
 {
  "note": "Step 3B-1 conflict-queue taxonomy. Report only — nothing applied, nothing withdrawn.",
- "totalRows": 448,
+ "totalRows": 368,
  "measuredFrom": "current bundle (rebuilt)",
- "distinctConflictIds": 446,
- "distinctHeldKeys": 410,
- "distinctPosts": 326,
+ "distinctConflictIds": 366,
+ "distinctHeldKeys": 346,
+ "distinctPosts": 270,
  "byReason": {
   "BOUNDARY_CROSSING": 231,
-  "UNLOCATED_SPAN": 199,
+  "UNLOCATED_SPAN": 119,
   "SAME_CATEGORY_PARTIAL_OVERLAP": 18
  },
  "bySourceLayer": {
-  "namedEntities": 197,
   "claims": 190,
+  "namedEntities": 117,
   "(n/a)": 18,
   "directives": 15,
   "questions": 14,
@@ -21,85 +21,12 @@
   "predictions": 1
  },
  "byLane": {
-  "A DETERMINISTIC_RESOLUTION": 252,
-  "B HUMAN_SEMANTIC_REVIEW": 141,
-  "C STRUCTURAL_DATA_DEFECT": 55
+  "A DETERMINISTIC_RESOLUTION": 172,
+  "B HUMAN_SEMANTIC_REVIEW": 142,
+  "C STRUCTURAL_DATA_DEFECT": 54
  },
  "rootCausePatterns": 11,
  "clusters": [
-  {
-   "signature": "UNLOCATED_SPAN::CASE_VARIANT_NOT_REGISTERED",
-   "count": 131,
-   "lane": "A",
-   "posts": 111,
-   "identities": [
-    [
-     "NO NAME",
-     6
-    ],
-    [
-     "WikiLeaks",
-     5
-    ],
-    [
-     "Amazon",
-     4
-    ],
-    [
-     "Kansas",
-     3
-    ],
-    [
-     "Grassley",
-     3
-    ],
-    [
-     "Syria",
-     3
-    ],
-    [
-     "CrowdStrike",
-     3
-    ],
-    [
-     "Speaker of the House",
-     3
-    ],
-    [
-     "Feinstein",
-     3
-    ],
-    [
-     "Rachel Chandler",
-     3
-    ],
-    [
-     "Hunter",
-     3
-    ],
-    [
-     "Horowitz",
-     2
-    ]
-   ],
-   "examples": [
-    {
-     "postNum": 1010,
-     "heldKey": "UNLOCATED-1010-namedEntities",
-     "value": "The Fed"
-    },
-    {
-     "postNum": 1082,
-     "heldKey": "UNLOCATED-1082-namedEntities",
-     "value": "JFK Jr."
-    },
-    {
-     "postNum": 1086,
-     "heldKey": "UNLOCATED-1086-namedEntities",
-     "value": "NO NAME"
-    }
-   ]
-  },
   {
    "signature": "BOUNDARY_CROSSING::CONTAINS_URL",
    "count": 119,
@@ -147,6 +74,79 @@
    ]
   },
   {
+   "signature": "UNLOCATED_SPAN::CASE_VARIANT_NOT_REGISTERED",
+   "count": 51,
+   "lane": "A",
+   "posts": 47,
+   "identities": [
+    [
+     "WikiLeaks",
+     5
+    ],
+    [
+     "CrowdStrike",
+     3
+    ],
+    [
+     "Speaker of the House",
+     3
+    ],
+    [
+     "Horowitz",
+     2
+    ],
+    [
+     "Podesta",
+     2
+    ],
+    [
+     "Watergate",
+     2
+    ],
+    [
+     "God",
+     2
+    ],
+    [
+     "New York Post",
+     2
+    ],
+    [
+     "President",
+     2
+    ],
+    [
+     "Gang of Eight",
+     2
+    ],
+    [
+     "Pompeo",
+     1
+    ],
+    [
+     "Grassley",
+     1
+    ]
+   ],
+   "examples": [
+    {
+     "postNum": 1122,
+     "heldKey": "UNLOCATED-1122-namedEntities",
+     "value": "Horowitz"
+    },
+    {
+     "postNum": 1129,
+     "heldKey": "UNLOCATED-1129-namedEntities",
+     "value": "Pompeo"
+    },
+    {
+     "postNum": 1217,
+     "heldKey": "UNLOCATED-1217-namedEntities",
+     "value": "WikiLeaks"
+    }
+   ]
+  },
+  {
    "signature": "BOUNDARY_CROSSING::WITHIN_LINE_CROSSING",
    "count": 47,
    "lane": "B",
@@ -171,9 +171,9 @@
   },
   {
    "signature": "UNLOCATED_SPAN::NO_ALIAS_EVER_REGISTERED",
-   "count": 39,
+   "count": 38,
    "lane": "C",
-   "posts": 35,
+   "posts": 34,
    "identities": [
     [
      "US Senate",
@@ -216,11 +216,11 @@
      1
     ],
     [
-     "House of Cards",
+     "Kavanaugh",
      1
     ],
     [
-     "Kavanaugh",
+     "Charlie Kirk",
      1
     ]
    ],
@@ -312,9 +312,9 @@
   },
   {
    "signature": "UNLOCATED_SPAN::ABSENT_FROM_DROP_IN_EVERY_REGISTERED_FORM",
-   "count": 10,
+   "count": 11,
    "lane": "B",
-   "posts": 10,
+   "posts": 11,
    "identities": [
     [
      "Sara Carter",
@@ -338,6 +338,10 @@
     ],
     [
      "Carter Page",
+     1
+    ],
+    [
+     "House of Cards",
      1
     ],
     [
@@ -442,16 +446,12 @@
    ]
   }
  ],
- "repeatedIdentityClusters": 34,
- "singletonIdentities": 102,
+ "repeatedIdentityClusters": 17,
+ "singletonIdentities": 69,
  "largestIdentityClusters": [
   [
    "Whitaker",
    7
-  ],
-  [
-   "NO NAME",
-   6
   ],
   [
    "Wray",
@@ -466,22 +466,6 @@
    4
   ],
   [
-   "Amazon",
-   4
-  ],
-  [
-   "Kansas",
-   3
-  ],
-  [
-   "Grassley",
-   3
-  ],
-  [
-   "Syria",
-   3
-  ],
-  [
    "CrowdStrike",
    3
   ],
@@ -490,23 +474,7 @@
    3
   ],
   [
-   "Feinstein",
-   3
-  ],
-  [
-   "House of Cards",
-   3
-  ],
-  [
    "Sara Carter",
-   3
-  ],
-  [
-   "Rachel Chandler",
-   3
-  ],
-  [
-   "Hunter",
    3
   ],
   [
@@ -522,8 +490,44 @@
    2
   ],
   [
-   "Clapper",
+   "Watergate",
    2
+  ],
+  [
+   "God",
+   2
+  ],
+  [
+   "New York Post",
+   2
+  ],
+  [
+   "House of Cards",
+   2
+  ],
+  [
+   "President",
+   2
+  ],
+  [
+   "Gang of Eight",
+   2
+  ],
+  [
+   "Gang of 8",
+   2
+  ],
+  [
+   "Pompeo",
+   1
+  ],
+  [
+   "Standard Hotel",
+   1
+  ],
+  [
+   "Agnes Nixon",
+   1
   ]
  ],
  "rows": [
@@ -5491,24 +5495,6 @@
    "lane": "B"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1010-namedEntities::The Fed::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1010,
-   "heldKey": "UNLOCATED-1010-namedEntities",
-   "certifiedValue": "The Fed",
-   "alsoDuplicateKey": false,
-   "identity": "The Fed",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "The Fed",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1054-namedEntities::Ray Chandler::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 1054,
@@ -5517,7 +5503,7 @@
    "alsoDuplicateKey": false,
    "identity": "Ray Chandler",
    "kind": "namedEntities",
-   "registeredForms": 3,
+   "registeredForms": 4,
    "reachableByCanonicalKeyedLookup": false,
    "locatedUnder": null,
    "locatedCaseInsensitivelyUnder": null,
@@ -5525,60 +5511,6 @@
    "registryGroupsClaimingThisSpelling": 1,
    "subtype": "ABSENT_FROM_DROP_IN_EVERY_REGISTERED_FORM",
    "lane": "B"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1082-namedEntities::JFK Jr.::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1082,
-   "heldKey": "UNLOCATED-1082-namedEntities",
-   "certifiedValue": "JFK Jr.",
-   "alsoDuplicateKey": false,
-   "identity": "JFK Jr.",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "JFK Jr.",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1086-namedEntities::NO NAME::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1086,
-   "heldKey": "UNLOCATED-1086-namedEntities",
-   "certifiedValue": "NO NAME",
-   "alsoDuplicateKey": false,
-   "identity": "NO NAME",
-   "kind": "namedEntities",
-   "registeredForms": 4,
-   "reachableByCanonicalKeyedLookup": false,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "NO NAME",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1092-namedEntities::NO NAME::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1092,
-   "heldKey": "UNLOCATED-1092-namedEntities",
-   "certifiedValue": "NO NAME",
-   "alsoDuplicateKey": false,
-   "identity": "NO NAME",
-   "kind": "namedEntities",
-   "registeredForms": 4,
-   "reachableByCanonicalKeyedLookup": false,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "NO NAME",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1094-namedEntities::US Senate::0",
@@ -5615,24 +5547,6 @@
    "registryGroupsClaimingThisSpelling": 2,
    "subtype": "IDENTITY_SPLIT_ACROSS_TWO_REGISTRY_GROUPS",
    "lane": "C"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1122-namedEntities::Kansas::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1122,
-   "heldKey": "UNLOCATED-1122-namedEntities",
-   "certifiedValue": "Kansas",
-   "alsoDuplicateKey": false,
-   "identity": "Kansas",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Kansas",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1122-namedEntities::Horowitz::0",
@@ -5679,7 +5593,7 @@
    "alsoDuplicateKey": false,
    "identity": "Ray Chandler",
    "kind": "namedEntities",
-   "registeredForms": 3,
+   "registeredForms": 4,
    "reachableByCanonicalKeyedLookup": false,
    "locatedUnder": null,
    "locatedCaseInsensitivelyUnder": null,
@@ -5815,24 +5729,6 @@
    "lane": "A"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1235-namedEntities::NO NAME::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1235,
-   "heldKey": "UNLOCATED-1235-namedEntities",
-   "certifiedValue": "NO NAME",
-   "alsoDuplicateKey": false,
-   "identity": "NO NAME",
-   "kind": "namedEntities",
-   "registeredForms": 4,
-   "reachableByCanonicalKeyedLookup": false,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "NO NAME",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1253-namedEntities::Grassley::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 1253,
@@ -5841,46 +5737,10 @@
    "alsoDuplicateKey": false,
    "identity": "Grassley",
    "kind": "namedEntities",
-   "registeredForms": 1,
+   "registeredForms": 2,
    "reachableByCanonicalKeyedLookup": true,
    "locatedUnder": null,
    "locatedCaseInsensitivelyUnder": "Grassley",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1286-namedEntities::Rudy::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1286,
-   "heldKey": "UNLOCATED-1286-namedEntities",
-   "certifiedValue": "Rudy",
-   "alsoDuplicateKey": false,
-   "identity": "Rudy",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Rudy",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1305-namedEntities::NO NAME::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1305,
-   "heldKey": "UNLOCATED-1305-namedEntities",
-   "certifiedValue": "NO NAME",
-   "alsoDuplicateKey": false,
-   "identity": "NO NAME",
-   "kind": "namedEntities",
-   "registeredForms": 4,
-   "reachableByCanonicalKeyedLookup": false,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "NO NAME",
    "locatedInQuotedPostUnder": false,
    "registryGroupsClaimingThisSpelling": 1,
    "subtype": "CASE_VARIANT_NOT_REGISTERED",
@@ -5923,78 +5783,6 @@
    "lane": "A"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1555-namedEntities::NO NAME::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1555,
-   "heldKey": "UNLOCATED-1555-namedEntities",
-   "certifiedValue": "NO NAME",
-   "alsoDuplicateKey": false,
-   "identity": "NO NAME",
-   "kind": "namedEntities",
-   "registeredForms": 4,
-   "reachableByCanonicalKeyedLookup": false,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "NO NAME",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1646-namedEntities::Hitler::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1646,
-   "heldKey": "UNLOCATED-1646-namedEntities",
-   "certifiedValue": "Hitler",
-   "alsoDuplicateKey": false,
-   "identity": "Hitler",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Hitler",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1702-namedEntities::Kansas::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1702,
-   "heldKey": "UNLOCATED-1702-namedEntities",
-   "certifiedValue": "Kansas",
-   "alsoDuplicateKey": false,
-   "identity": "Kansas",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Kansas",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1706-namedEntities::NO NAME::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1706,
-   "heldKey": "UNLOCATED-1706-namedEntities",
-   "certifiedValue": "NO NAME",
-   "alsoDuplicateKey": false,
-   "identity": "NO NAME",
-   "kind": "namedEntities",
-   "registeredForms": 4,
-   "reachableByCanonicalKeyedLookup": false,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "NO NAME",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1745-namedEntities::US Intel::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 1745,
@@ -6013,60 +5801,6 @@
    "lane": "A"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1746-namedEntities::Nazi Germany::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1746,
-   "heldKey": "UNLOCATED-1746-namedEntities",
-   "certifiedValue": "Nazi Germany",
-   "alsoDuplicateKey": false,
-   "identity": "Nazi Germany",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Nazi Germany",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1764-namedEntities::Clapper::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1764,
-   "heldKey": "UNLOCATED-1764-namedEntities",
-   "certifiedValue": "Clapper",
-   "alsoDuplicateKey": false,
-   "identity": "Clapper",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Clapper",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1764-namedEntities::Rice::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1764,
-   "heldKey": "UNLOCATED-1764-namedEntities",
-   "certifiedValue": "Rice",
-   "alsoDuplicateKey": false,
-   "identity": "Rice",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Rice",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1822-namedEntities::Watergate::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 1822,
@@ -6079,24 +5813,6 @@
    "reachableByCanonicalKeyedLookup": true,
    "locatedUnder": null,
    "locatedCaseInsensitivelyUnder": "Watergate",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1832-namedEntities::Washington::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1832,
-   "heldKey": "UNLOCATED-1832-namedEntities",
-   "certifiedValue": "Washington",
-   "alsoDuplicateKey": false,
-   "identity": "Washington",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Washington",
    "locatedInQuotedPostUnder": false,
    "registryGroupsClaimingThisSpelling": 1,
    "subtype": "CASE_VARIANT_NOT_REGISTERED",
@@ -6129,7 +5845,7 @@
    "alsoDuplicateKey": false,
    "identity": "Sean Hannity",
    "kind": "namedEntities",
-   "registeredForms": 2,
+   "registeredForms": 3,
    "reachableByCanonicalKeyedLookup": true,
    "locatedUnder": null,
    "locatedCaseInsensitivelyUnder": null,
@@ -6155,114 +5871,6 @@
    "registryGroupsClaimingThisSpelling": 1,
    "subtype": "NO_ALIAS_EVER_REGISTERED",
    "lane": "C"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1884-namedEntities::Epstein Island::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1884,
-   "heldKey": "UNLOCATED-1884-namedEntities",
-   "certifiedValue": "Epstein Island",
-   "alsoDuplicateKey": false,
-   "identity": "Epstein Island",
-   "kind": "namedEntities",
-   "registeredForms": 2,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Epstein Island",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1884-namedEntities::Cuba::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1884,
-   "heldKey": "UNLOCATED-1884-namedEntities",
-   "certifiedValue": "Cuba",
-   "alsoDuplicateKey": false,
-   "identity": "Cuba",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Cuba",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1884-namedEntities::Sudan::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1884,
-   "heldKey": "UNLOCATED-1884-namedEntities",
-   "certifiedValue": "Sudan",
-   "alsoDuplicateKey": false,
-   "identity": "Sudan",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Sudan",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1884-namedEntities::Syria::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1884,
-   "heldKey": "UNLOCATED-1884-namedEntities",
-   "certifiedValue": "Syria",
-   "alsoDuplicateKey": false,
-   "identity": "Syria",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Syria",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1884-namedEntities::Yemen::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1884,
-   "heldKey": "UNLOCATED-1884-namedEntities",
-   "certifiedValue": "Yemen",
-   "alsoDuplicateKey": false,
-   "identity": "Yemen",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Yemen",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1884-namedEntities::Libya::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1884,
-   "heldKey": "UNLOCATED-1884-namedEntities",
-   "certifiedValue": "Libya",
-   "alsoDuplicateKey": false,
-   "identity": "Libya",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Libya",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-19-namedEntities::Maxine Waters::0",
@@ -6481,42 +6089,6 @@
    "lane": "B"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2061-namedEntities::23andMe::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2061,
-   "heldKey": "UNLOCATED-2061-namedEntities",
-   "certifiedValue": "23andMe",
-   "alsoDuplicateKey": false,
-   "identity": "23andMe",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "23andMe",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2061-namedEntities::Moscow::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2061,
-   "heldKey": "UNLOCATED-2061-namedEntities",
-   "certifiedValue": "Moscow",
-   "alsoDuplicateKey": false,
-   "identity": "Moscow",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Moscow",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2072-namedEntities::Speaker of the House::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 2072,
@@ -6551,42 +6123,6 @@
    "registryGroupsClaimingThisSpelling": 1,
    "subtype": "NO_ALIAS_EVER_REGISTERED",
    "lane": "C"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2107-namedEntities::Weissmann::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2107,
-   "heldKey": "UNLOCATED-2107-namedEntities",
-   "certifiedValue": "Weissmann",
-   "alsoDuplicateKey": false,
-   "identity": "Weissmann",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Weissmann",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2129-namedEntities::Clapper::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2129,
-   "heldKey": "UNLOCATED-2129-namedEntities",
-   "certifiedValue": "Clapper",
-   "alsoDuplicateKey": false,
-   "identity": "Clapper",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Clapper",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2136-namedEntities::CBN News::0",
@@ -6625,24 +6161,6 @@
    "lane": "C"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2150-namedEntities::Patriot Day::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2150,
-   "heldKey": "UNLOCATED-2150-namedEntities",
-   "certifiedValue": "Patriot Day",
-   "alsoDuplicateKey": false,
-   "identity": "Patriot Day",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Patriot Day",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2181-namedEntities::House Intelligence::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 2181,
@@ -6659,24 +6177,6 @@
    "registryGroupsClaimingThisSpelling": 1,
    "subtype": "NO_ALIAS_EVER_REGISTERED",
    "lane": "C"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2203-namedEntities::Lynch::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2203,
-   "heldKey": "UNLOCATED-2203-namedEntities",
-   "certifiedValue": "Lynch",
-   "alsoDuplicateKey": false,
-   "identity": "Lynch",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Lynch",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2206-namedEntities::Wired::0",
@@ -6715,96 +6215,6 @@
    "lane": "A"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2274-namedEntities::Grassley::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2274,
-   "heldKey": "UNLOCATED-2274-namedEntities",
-   "certifiedValue": "Grassley",
-   "alsoDuplicateKey": false,
-   "identity": "Grassley",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Grassley",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2277-namedEntities::Feinstein::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2277,
-   "heldKey": "UNLOCATED-2277-namedEntities",
-   "certifiedValue": "Feinstein",
-   "alsoDuplicateKey": false,
-   "identity": "Feinstein",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Feinstein",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2281-namedEntities::Feinstein::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2281,
-   "heldKey": "UNLOCATED-2281-namedEntities",
-   "certifiedValue": "Feinstein",
-   "alsoDuplicateKey": false,
-   "identity": "Feinstein",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Feinstein",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2281-namedEntities::Murkowski::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2281,
-   "heldKey": "UNLOCATED-2281-namedEntities",
-   "certifiedValue": "Murkowski",
-   "alsoDuplicateKey": false,
-   "identity": "Murkowski",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Murkowski",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2326-namedEntities::Baker::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2326,
-   "heldKey": "UNLOCATED-2326-namedEntities",
-   "certifiedValue": "Baker",
-   "alsoDuplicateKey": false,
-   "identity": "Baker",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Baker",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2335-namedEntities::People's Liberation Army::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 2335,
@@ -6823,78 +6233,6 @@
    "lane": "C"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2345-namedEntities::Feinstein::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2345,
-   "heldKey": "UNLOCATED-2345-namedEntities",
-   "certifiedValue": "Feinstein",
-   "alsoDuplicateKey": false,
-   "identity": "Feinstein",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Feinstein",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2345-namedEntities::Murkowski::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2345,
-   "heldKey": "UNLOCATED-2345-namedEntities",
-   "certifiedValue": "Murkowski",
-   "alsoDuplicateKey": false,
-   "identity": "Murkowski",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Murkowski",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2353-namedEntities::Democrat Party::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2353,
-   "heldKey": "UNLOCATED-2353-namedEntities",
-   "certifiedValue": "Democrat Party",
-   "alsoDuplicateKey": false,
-   "identity": "Democrat Party",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Democrat Party",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2356-namedEntities::Justice K::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2356,
-   "heldKey": "UNLOCATED-2356-namedEntities",
-   "certifiedValue": "Justice K",
-   "alsoDuplicateKey": false,
-   "identity": "Justice K",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Justice K",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2390-namedEntities::House of Cards::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 2390,
@@ -6903,64 +6241,10 @@
    "alsoDuplicateKey": false,
    "identity": "House of Cards",
    "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "House of Cards",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2401-namedEntities::Amazon::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2401,
-   "heldKey": "UNLOCATED-2401-namedEntities",
-   "certifiedValue": "Amazon",
-   "alsoDuplicateKey": false,
-   "identity": "Amazon",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Amazon",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2445-namedEntities::Grassley::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2445,
-   "heldKey": "UNLOCATED-2445-namedEntities",
-   "certifiedValue": "Grassley",
-   "alsoDuplicateKey": false,
-   "identity": "Grassley",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Grassley",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2492-namedEntities::Arizona::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2492,
-   "heldKey": "UNLOCATED-2492-namedEntities",
-   "certifiedValue": "Arizona",
-   "alsoDuplicateKey": false,
-   "identity": "Arizona",
-   "kind": "namedEntities",
    "registeredForms": 2,
    "reachableByCanonicalKeyedLookup": true,
    "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Arizona",
+   "locatedCaseInsensitivelyUnder": "House of Cards",
    "locatedInQuotedPostUnder": false,
    "registryGroupsClaimingThisSpelling": 1,
    "subtype": "CASE_VARIANT_NOT_REGISTERED",
@@ -6993,14 +6277,14 @@
    "alsoDuplicateKey": false,
    "identity": "House of Cards",
    "kind": "namedEntities",
-   "registeredForms": 1,
+   "registeredForms": 2,
    "reachableByCanonicalKeyedLookup": true,
    "locatedUnder": null,
    "locatedCaseInsensitivelyUnder": null,
    "locatedInQuotedPostUnder": null,
    "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "NO_ALIAS_EVER_REGISTERED",
-   "lane": "C"
+   "subtype": "ABSENT_FROM_DROP_IN_EVERY_REGISTERED_FORM",
+   "lane": "B"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2501-namedEntities::Whitaker::0",
@@ -7111,24 +6395,6 @@
    "lane": "C"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2569-namedEntities::Freedom Caucus::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2569,
-   "heldKey": "UNLOCATED-2569-namedEntities",
-   "certifiedValue": "Freedom Caucus",
-   "alsoDuplicateKey": false,
-   "identity": "Freedom Caucus",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Freedom Caucus",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2576-namedEntities::Samantha Power::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 2576,
@@ -7199,60 +6465,6 @@
    "registryGroupsClaimingThisSpelling": 1,
    "subtype": "NO_ALIAS_EVER_REGISTERED",
    "lane": "C"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2657-namedEntities::Venezuela::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2657,
-   "heldKey": "UNLOCATED-2657-namedEntities",
-   "certifiedValue": "Venezuela",
-   "alsoDuplicateKey": false,
-   "identity": "Venezuela",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Venezuela",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2657-namedEntities::Ecuador::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2657,
-   "heldKey": "UNLOCATED-2657-namedEntities",
-   "certifiedValue": "Ecuador",
-   "alsoDuplicateKey": false,
-   "identity": "Ecuador",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Ecuador",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2658-namedEntities::Syria::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2658,
-   "heldKey": "UNLOCATED-2658-namedEntities",
-   "certifiedValue": "Syria",
-   "alsoDuplicateKey": false,
-   "identity": "Syria",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Syria",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2673-namedEntities::Charlie Kirk::0",
@@ -7399,42 +6611,6 @@
    "lane": "A"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-285-namedEntities::Freedom Caucus::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 285,
-   "heldKey": "UNLOCATED-285-namedEntities",
-   "certifiedValue": "Freedom Caucus",
-   "alsoDuplicateKey": false,
-   "identity": "Freedom Caucus",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Freedom Caucus",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2850-namedEntities::Liberals::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2850,
-   "heldKey": "UNLOCATED-2850-namedEntities",
-   "certifiedValue": "Liberals",
-   "alsoDuplicateKey": false,
-   "identity": "Liberals",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Liberals",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2955-namedEntities::Whitaker::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 2955,
@@ -7483,42 +6659,6 @@
    "reachableByCanonicalKeyedLookup": true,
    "locatedUnder": null,
    "locatedCaseInsensitivelyUnder": "Xbox",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2984-namedEntities::Amazon::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2984,
-   "heldKey": "UNLOCATED-2984-namedEntities",
-   "certifiedValue": "Amazon",
-   "alsoDuplicateKey": false,
-   "identity": "Amazon",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Amazon",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2989-namedEntities::Ivy League::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2989,
-   "heldKey": "UNLOCATED-2989-namedEntities",
-   "certifiedValue": "Ivy League",
-   "alsoDuplicateKey": false,
-   "identity": "Ivy League",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Ivy League",
    "locatedInQuotedPostUnder": false,
    "registryGroupsClaimingThisSpelling": 1,
    "subtype": "CASE_VARIANT_NOT_REGISTERED",
@@ -7597,60 +6737,6 @@
    "lane": "A"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3022-namedEntities::Gina::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 3022,
-   "heldKey": "UNLOCATED-3022-namedEntities",
-   "certifiedValue": "Gina",
-   "alsoDuplicateKey": false,
-   "identity": "Gina",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Gina",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3023-namedEntities::John Perry Barlow::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 3023,
-   "heldKey": "UNLOCATED-3023-namedEntities",
-   "certifiedValue": "John Perry Barlow",
-   "alsoDuplicateKey": false,
-   "identity": "John Perry Barlow",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "John Perry Barlow",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3024-namedEntities::Gina::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 3024,
-   "heldKey": "UNLOCATED-3024-namedEntities",
-   "certifiedValue": "Gina",
-   "alsoDuplicateKey": false,
-   "identity": "Gina",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Gina",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3028-namedEntities::Whitaker::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 3028,
@@ -7705,24 +6791,6 @@
    "lane": "A"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3059-namedEntities::Federal Agencies::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 3059,
-   "heldKey": "UNLOCATED-3059-namedEntities",
-   "certifiedValue": "Federal Agencies",
-   "alsoDuplicateKey": false,
-   "identity": "Federal Agencies",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Federal Agencies",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3063-namedEntities::Gang of Eight::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 3063,
@@ -7735,60 +6803,6 @@
    "reachableByCanonicalKeyedLookup": true,
    "locatedUnder": null,
    "locatedCaseInsensitivelyUnder": "Gang of Eight",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3134-namedEntities::Rachel Chandler::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 3134,
-   "heldKey": "UNLOCATED-3134-namedEntities",
-   "certifiedValue": "Rachel Chandler",
-   "alsoDuplicateKey": false,
-   "identity": "Rachel Chandler",
-   "kind": "namedEntities",
-   "registeredForms": 3,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Rachel Chandler",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3155-namedEntities::Rachel Chandler::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 3155,
-   "heldKey": "UNLOCATED-3155-namedEntities",
-   "certifiedValue": "Rachel Chandler",
-   "alsoDuplicateKey": false,
-   "identity": "Rachel Chandler",
-   "kind": "namedEntities",
-   "registeredForms": 3,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Rachel Chandler",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3158-namedEntities::Rachel Chandler::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 3158,
-   "heldKey": "UNLOCATED-3158-namedEntities",
-   "certifiedValue": "Rachel Chandler",
-   "alsoDuplicateKey": false,
-   "identity": "Rachel Chandler",
-   "kind": "namedEntities",
-   "registeredForms": 3,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Rachel Chandler",
    "locatedInQuotedPostUnder": false,
    "registryGroupsClaimingThisSpelling": 1,
    "subtype": "CASE_VARIANT_NOT_REGISTERED",
@@ -7811,24 +6825,6 @@
    "registryGroupsClaimingThisSpelling": 1,
    "subtype": "NO_ALIAS_EVER_REGISTERED",
    "lane": "C"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3179-namedEntities::Sean Hannity::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 3179,
-   "heldKey": "UNLOCATED-3179-namedEntities",
-   "certifiedValue": "Sean Hannity",
-   "alsoDuplicateKey": false,
-   "identity": "Sean Hannity",
-   "kind": "namedEntities",
-   "registeredForms": 2,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Sean Hannity",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3180-namedEntities::President of the United States::0",
@@ -7865,24 +6861,6 @@
    "registryGroupsClaimingThisSpelling": 2,
    "subtype": "IDENTITY_SPLIT_ACROSS_TWO_REGISTRY_GROUPS",
    "lane": "C"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3312-namedEntities::Media Matters::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 3312,
-   "heldKey": "UNLOCATED-3312-namedEntities",
-   "certifiedValue": "Media Matters",
-   "alsoDuplicateKey": false,
-   "identity": "Media Matters",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Media Matters",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3313-namedEntities::Sara Carter::0",
@@ -7939,42 +6917,6 @@
    "lane": "C"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3608-namedEntities::Washington::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 3608,
-   "heldKey": "UNLOCATED-3608-namedEntities",
-   "certifiedValue": "Washington",
-   "alsoDuplicateKey": false,
-   "identity": "Washington",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Washington",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3625-namedEntities::Hunter::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 3625,
-   "heldKey": "UNLOCATED-3625-namedEntities",
-   "certifiedValue": "Hunter",
-   "alsoDuplicateKey": false,
-   "identity": "Hunter",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Hunter",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3647-namedEntities::US Senate::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 3647,
@@ -8009,24 +6951,6 @@
    "registryGroupsClaimingThisSpelling": 2,
    "subtype": "IDENTITY_SPLIT_ACROSS_TWO_REGISTRY_GROUPS",
    "lane": "C"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-372-namedEntities::House of Cards::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 372,
-   "heldKey": "UNLOCATED-372-namedEntities",
-   "certifiedValue": "House of Cards",
-   "alsoDuplicateKey": false,
-   "identity": "House of Cards",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "House of Cards",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3824-namedEntities::Michael Beatty::0",
@@ -8077,24 +7001,6 @@
    "reachableByCanonicalKeyedLookup": true,
    "locatedUnder": null,
    "locatedCaseInsensitivelyUnder": "President",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3915-namedEntities::Sanders::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 3915,
-   "heldKey": "UNLOCATED-3915-namedEntities",
-   "certifiedValue": "Sanders",
-   "alsoDuplicateKey": false,
-   "identity": "Sanders",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Sanders",
    "locatedInQuotedPostUnder": false,
    "registryGroupsClaimingThisSpelling": 1,
    "subtype": "CASE_VARIANT_NOT_REGISTERED",
@@ -8191,42 +7097,6 @@
    "lane": "A"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4232-namedEntities::Kislyak::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 4232,
-   "heldKey": "UNLOCATED-4232-namedEntities",
-   "certifiedValue": "Kislyak",
-   "alsoDuplicateKey": false,
-   "identity": "Kislyak",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Kislyak",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4238-namedEntities::Dan Coats::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 4238,
-   "heldKey": "UNLOCATED-4238-namedEntities",
-   "certifiedValue": "Dan Coats",
-   "alsoDuplicateKey": false,
-   "identity": "Dan Coats",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Dan Coats",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-4241-namedEntities::Graham::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 4241,
@@ -8279,24 +7149,6 @@
    "registryGroupsClaimingThisSpelling": 1,
    "subtype": "NO_ALIAS_EVER_REGISTERED",
    "lane": "C"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4310-namedEntities::Seattle::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 4310,
-   "heldKey": "UNLOCATED-4310-namedEntities",
-   "certifiedValue": "Seattle",
-   "alsoDuplicateKey": false,
-   "identity": "Seattle",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Seattle",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-4312-namedEntities::Cambridge Dictionary::0",
@@ -8515,42 +7367,6 @@
    "lane": "C"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4545-namedEntities::United Nations::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 4545,
-   "heldKey": "UNLOCATED-4545-namedEntities",
-   "certifiedValue": "United Nations",
-   "alsoDuplicateKey": false,
-   "identity": "United Nations",
-   "kind": "namedEntities",
-   "registeredForms": 2,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "United Nations",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4592-namedEntities::Democrat Party::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 4592,
-   "heldKey": "UNLOCATED-4592-namedEntities",
-   "certifiedValue": "Democrat Party",
-   "alsoDuplicateKey": false,
-   "identity": "Democrat Party",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Democrat Party",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-4630-namedEntities::Harold Moody Jr::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 4630,
@@ -8581,78 +7397,6 @@
    "reachableByCanonicalKeyedLookup": true,
    "locatedUnder": null,
    "locatedCaseInsensitivelyUnder": "CA",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-480-namedEntities::Loop Capital::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 480,
-   "heldKey": "UNLOCATED-480-namedEntities",
-   "certifiedValue": "Loop Capital",
-   "alsoDuplicateKey": false,
-   "identity": "Loop Capital",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Loop Capital",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4821-namedEntities::Hunter::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 4821,
-   "heldKey": "UNLOCATED-4821-namedEntities",
-   "certifiedValue": "Hunter",
-   "alsoDuplicateKey": false,
-   "identity": "Hunter",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Hunter",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4822-namedEntities::Hunter::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 4822,
-   "heldKey": "UNLOCATED-4822-namedEntities",
-   "certifiedValue": "Hunter",
-   "alsoDuplicateKey": false,
-   "identity": "Hunter",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Hunter",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4830-namedEntities::United States Senator::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 4830,
-   "heldKey": "UNLOCATED-4830-namedEntities",
-   "certifiedValue": "United States Senator",
-   "alsoDuplicateKey": false,
-   "identity": "United States Senator",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "United States Senator",
    "locatedInQuotedPostUnder": false,
    "registryGroupsClaimingThisSpelling": 1,
    "subtype": "CASE_VARIANT_NOT_REGISTERED",
@@ -8731,42 +7475,6 @@
    "lane": "C"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-524-namedEntities::Loop Capital::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 524,
-   "heldKey": "UNLOCATED-524-namedEntities",
-   "certifiedValue": "Loop Capital",
-   "alsoDuplicateKey": false,
-   "identity": "Loop Capital",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Loop Capital",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-524-namedEntities::Banco de Mexico::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 524,
-   "heldKey": "UNLOCATED-524-namedEntities",
-   "certifiedValue": "Banco de Mexico",
-   "alsoDuplicateKey": false,
-   "identity": "Banco de Mexico",
-   "kind": "namedEntities",
-   "registeredForms": 2,
-   "reachableByCanonicalKeyedLookup": false,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Banco de Mexico",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-56-namedEntities::International Islamic Council for Da'wa and Relief::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 56,
@@ -8803,42 +7511,6 @@
    "lane": "C"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-770-namedEntities::Aaron Swartz::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 770,
-   "heldKey": "UNLOCATED-770-namedEntities",
-   "certifiedValue": "Aaron Swartz",
-   "alsoDuplicateKey": false,
-   "identity": "Aaron Swartz",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Aaron Swartz",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-785-namedEntities::London::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 785,
-   "heldKey": "UNLOCATED-785-namedEntities",
-   "certifiedValue": "London",
-   "alsoDuplicateKey": false,
-   "identity": "London",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "London",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-785-namedEntities::Delta::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 785,
@@ -8873,24 +7545,6 @@
    "registryGroupsClaimingThisSpelling": 2,
    "subtype": "IDENTITY_SPLIT_ACROSS_TWO_REGISTRY_GROUPS",
    "lane": "C"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-790-namedEntities::John Perry Barlow::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 790,
-   "heldKey": "UNLOCATED-790-namedEntities",
-   "certifiedValue": "John Perry Barlow",
-   "alsoDuplicateKey": false,
-   "identity": "John Perry Barlow",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "John Perry Barlow",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-857-namedEntities::Reuters::0",
@@ -8947,42 +7601,6 @@
    "lane": "A"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-889-namedEntities::Forbidden City::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 889,
-   "heldKey": "UNLOCATED-889-namedEntities",
-   "certifiedValue": "Forbidden City",
-   "alsoDuplicateKey": false,
-   "identity": "Forbidden City",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Forbidden City",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-950-namedEntities::Kansas::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 950,
-   "heldKey": "UNLOCATED-950-namedEntities",
-   "certifiedValue": "Kansas",
-   "alsoDuplicateKey": false,
-   "identity": "Kansas",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Kansas",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-960-namedEntities::Comedy Central::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 960,
@@ -8999,60 +7617,6 @@
    "registryGroupsClaimingThisSpelling": 1,
    "subtype": "NO_ALIAS_EVER_REGISTERED",
    "lane": "C"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-964-namedEntities::Amazon::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 964,
-   "heldKey": "UNLOCATED-964-namedEntities",
-   "certifiedValue": "Amazon",
-   "alsoDuplicateKey": false,
-   "identity": "Amazon",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Amazon",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-964-namedEntities::Syria::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 964,
-   "heldKey": "UNLOCATED-964-namedEntities",
-   "certifiedValue": "Syria",
-   "alsoDuplicateKey": false,
-   "identity": "Syria",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Syria",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-972-namedEntities::Amazon::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 972,
-   "heldKey": "UNLOCATED-972-namedEntities",
-   "certifiedValue": "Amazon",
-   "alsoDuplicateKey": false,
-   "identity": "Amazon",
-   "kind": "namedEntities",
-   "registeredForms": 1,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Amazon",
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 1,
-   "subtype": "CASE_VARIANT_NOT_REGISTERED",
-   "lane": "A"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-988-namedEntities::Awan::0",

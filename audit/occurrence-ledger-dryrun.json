@@ -9,23 +9,23 @@
  },
  "totals": {
   "sentences": 30187,
-  "occurrencesKeyed": 30889,
+  "occurrencesKeyed": 30969,
   "duplicateKeys": 51,
   "byKind": {
    "claims": 8814,
    "predictions": 843,
    "directives": 2940,
-   "namedEntities": 8679,
+   "namedEntities": 8759,
    "themeAnchors": 1682,
    "questions": 6324,
    "context": 1607
   },
   "byRelation": {
-   "EXACT": 20446,
-   "PARTIAL": 10212,
+   "EXACT": 20447,
+   "PARTIAL": 10291,
    "CROSSING": 231
   },
-  "unlocated": 199,
+  "unlocated": 119,
   "crossingSentenceBoundary": 231
  },
  "findings": {
@@ -50,12 +50,12 @@
    }
   },
   "sameCategoryOverlaps": {
-   "total": 254,
+   "total": 261,
    "inPrimaryLayer": 18,
-   "deliberateInlineOrReview": 236,
+   "deliberateInlineOrReview": 243,
    "byKind": {
     "context": 6,
-    "namedEntities": 225,
+    "namedEntities": 232,
     "themeAnchors": 5,
     "claims": 18
    },
@@ -66,7 +66,7 @@
    "note": "A Context/Emphasis span on exactly the characters of a primary span. Becomes a reviewDisposition, not a second category."
   },
   "unlocatedSpans": {
-   "count": 199,
+   "count": 119,
    "note": "A certified span the ledger could not place in the runtime body. Each is a conflict-queue row, never a silent drop."
   }
  },
@@ -6812,6 +6812,16 @@
    "b": "US"
   },
   {
+   "sentenceId": "p1010-s021",
+   "postNum": 1010,
+   "kind": "namedEntities",
+   "layer": "inline",
+   "nested": true,
+   "deliberate": true,
+   "a": "THE FED",
+   "b": "FED"
+  },
+  {
    "sentenceId": "p1012-s000",
    "postNum": 1012,
    "kind": "namedEntities",
@@ -6870,6 +6880,36 @@
    "deliberate": true,
    "a": "CA",
    "b": "EH CA"
+  },
+  {
+   "sentenceId": "p1082-s000",
+   "postNum": 1082,
+   "kind": "namedEntities",
+   "layer": "inline",
+   "nested": true,
+   "deliberate": true,
+   "a": "JFK JR.",
+   "b": "JFK"
+  },
+  {
+   "sentenceId": "p1082-s000",
+   "postNum": 1082,
+   "kind": "namedEntities",
+   "layer": "inline",
+   "nested": true,
+   "deliberate": true,
+   "a": "JFK JR.",
+   "b": "JR"
+  },
+  {
+   "sentenceId": "p1082-s000",
+   "postNum": 1082,
+   "kind": "namedEntities",
+   "layer": "inline",
+   "nested": true,
+   "deliberate": true,
+   "a": "JFK JR.",
+   "b": "JFK JR"
   },
   {
    "sentenceId": "p1082-s000",
@@ -7272,6 +7312,16 @@
    "b": "US"
   },
   {
+   "sentenceId": "p1884-s001",
+   "postNum": 1884,
+   "kind": "namedEntities",
+   "layer": "inline",
+   "nested": true,
+   "deliberate": true,
+   "a": "EPSTEIN",
+   "b": "EPSTEIN ISLAND"
+  },
+  {
    "sentenceId": "p1887-s004",
    "postNum": 1887,
    "kind": "namedEntities",
@@ -7450,6 +7500,16 @@
    "deliberate": true,
    "a": "administration",
    "b": "The information that will become public will further demonstrate the c"
+  },
+  {
+   "sentenceId": "p2150-s004",
+   "postNum": 2150,
+   "kind": "namedEntities",
+   "layer": "inline",
+   "nested": true,
+   "deliberate": true,
+   "a": "PATRIOT DAY",
+   "b": "PATRIOT"
   },
   {
    "sentenceId": "p0217-s000",
@@ -8832,6 +8892,16 @@
    "b": "US"
   },
   {
+   "sentenceId": "p4830-s001",
+   "postNum": 4830,
+   "kind": "namedEntities",
+   "layer": "inline",
+   "nested": true,
+   "deliberate": true,
+   "a": "UNITED STATES",
+   "b": "UNITED STATES SENATOR"
+  },
+  {
    "sentenceId": "p4850-s003",
    "postNum": 4850,
    "kind": "namedEntities",
@@ -10047,29 +10117,9 @@
  ],
  "unlocated": [
   {
-   "postNum": 1010,
-   "kind": "namedEntities",
-   "text": "The Fed"
-  },
-  {
    "postNum": 1054,
    "kind": "namedEntities",
    "text": "Ray Chandler"
-  },
-  {
-   "postNum": 1082,
-   "kind": "namedEntities",
-   "text": "JFK Jr."
-  },
-  {
-   "postNum": 1086,
-   "kind": "namedEntities",
-   "text": "NO NAME"
-  },
-  {
-   "postNum": 1092,
-   "kind": "namedEntities",
-   "text": "NO NAME"
   },
   {
    "postNum": 1094,
@@ -10080,11 +10130,6 @@
    "postNum": 1122,
    "kind": "namedEntities",
    "text": "Wray"
-  },
-  {
-   "postNum": 1122,
-   "kind": "namedEntities",
-   "text": "Kansas"
   },
   {
    "postNum": 1122,
@@ -10137,24 +10182,9 @@
    "text": "WikiLeaks"
   },
   {
-   "postNum": 1235,
-   "kind": "namedEntities",
-   "text": "NO NAME"
-  },
-  {
    "postNum": 1253,
    "kind": "namedEntities",
    "text": "Grassley"
-  },
-  {
-   "postNum": 1286,
-   "kind": "namedEntities",
-   "text": "Rudy"
-  },
-  {
-   "postNum": 1305,
-   "kind": "namedEntities",
-   "text": "NO NAME"
   },
   {
    "postNum": 1341,
@@ -10167,54 +10197,14 @@
    "text": "France"
   },
   {
-   "postNum": 1555,
-   "kind": "namedEntities",
-   "text": "NO NAME"
-  },
-  {
-   "postNum": 1646,
-   "kind": "namedEntities",
-   "text": "Hitler"
-  },
-  {
-   "postNum": 1702,
-   "kind": "namedEntities",
-   "text": "Kansas"
-  },
-  {
-   "postNum": 1706,
-   "kind": "namedEntities",
-   "text": "NO NAME"
-  },
-  {
    "postNum": 1745,
    "kind": "namedEntities",
    "text": "US Intel"
   },
   {
-   "postNum": 1746,
-   "kind": "namedEntities",
-   "text": "Nazi Germany"
-  },
-  {
-   "postNum": 1764,
-   "kind": "namedEntities",
-   "text": "Clapper"
-  },
-  {
-   "postNum": 1764,
-   "kind": "namedEntities",
-   "text": "Rice"
-  },
-  {
    "postNum": 1822,
    "kind": "namedEntities",
    "text": "Watergate"
-  },
-  {
-   "postNum": 1832,
-   "kind": "namedEntities",
-   "text": "Washington"
   },
   {
    "postNum": 1862,
@@ -10230,36 +10220,6 @@
    "postNum": 1863,
    "kind": "namedEntities",
    "text": "Roseanne Barr"
-  },
-  {
-   "postNum": 1884,
-   "kind": "namedEntities",
-   "text": "Epstein Island"
-  },
-  {
-   "postNum": 1884,
-   "kind": "namedEntities",
-   "text": "Cuba"
-  },
-  {
-   "postNum": 1884,
-   "kind": "namedEntities",
-   "text": "Sudan"
-  },
-  {
-   "postNum": 1884,
-   "kind": "namedEntities",
-   "text": "Syria"
-  },
-  {
-   "postNum": 1884,
-   "kind": "namedEntities",
-   "text": "Yemen"
-  },
-  {
-   "postNum": 1884,
-   "kind": "namedEntities",
-   "text": "Libya"
   },
   {
    "postNum": 19,
@@ -10322,16 +10282,6 @@
    "text": "Ezra Cohen-Watnick"
   },
   {
-   "postNum": 2061,
-   "kind": "namedEntities",
-   "text": "23andMe"
-  },
-  {
-   "postNum": 2061,
-   "kind": "namedEntities",
-   "text": "Moscow"
-  },
-  {
    "postNum": 2072,
    "kind": "namedEntities",
    "text": "Speaker of the House"
@@ -10340,16 +10290,6 @@
    "postNum": 2076,
    "kind": "namedEntities",
    "text": "State Department OIG"
-  },
-  {
-   "postNum": 2107,
-   "kind": "namedEntities",
-   "text": "Weissmann"
-  },
-  {
-   "postNum": 2129,
-   "kind": "namedEntities",
-   "text": "Clapper"
   },
   {
    "postNum": 2136,
@@ -10362,19 +10302,9 @@
    "text": "The Independent"
   },
   {
-   "postNum": 2150,
-   "kind": "namedEntities",
-   "text": "Patriot Day"
-  },
-  {
    "postNum": 2181,
    "kind": "namedEntities",
    "text": "House Intelligence"
-  },
-  {
-   "postNum": 2203,
-   "kind": "namedEntities",
-   "text": "Lynch"
   },
   {
    "postNum": 2206,
@@ -10387,74 +10317,14 @@
    "text": "Speaker of the House"
   },
   {
-   "postNum": 2274,
-   "kind": "namedEntities",
-   "text": "Grassley"
-  },
-  {
-   "postNum": 2277,
-   "kind": "namedEntities",
-   "text": "Feinstein"
-  },
-  {
-   "postNum": 2281,
-   "kind": "namedEntities",
-   "text": "Feinstein"
-  },
-  {
-   "postNum": 2281,
-   "kind": "namedEntities",
-   "text": "Murkowski"
-  },
-  {
-   "postNum": 2326,
-   "kind": "namedEntities",
-   "text": "Baker"
-  },
-  {
    "postNum": 2335,
    "kind": "namedEntities",
    "text": "People's Liberation Army"
   },
   {
-   "postNum": 2345,
-   "kind": "namedEntities",
-   "text": "Feinstein"
-  },
-  {
-   "postNum": 2345,
-   "kind": "namedEntities",
-   "text": "Murkowski"
-  },
-  {
-   "postNum": 2353,
-   "kind": "namedEntities",
-   "text": "Democrat Party"
-  },
-  {
-   "postNum": 2356,
-   "kind": "namedEntities",
-   "text": "Justice K"
-  },
-  {
    "postNum": 2390,
    "kind": "namedEntities",
    "text": "House of Cards"
-  },
-  {
-   "postNum": 2401,
-   "kind": "namedEntities",
-   "text": "Amazon"
-  },
-  {
-   "postNum": 2445,
-   "kind": "namedEntities",
-   "text": "Grassley"
-  },
-  {
-   "postNum": 2492,
-   "kind": "namedEntities",
-   "text": "Arizona"
   },
   {
    "postNum": 2495,
@@ -10497,11 +10367,6 @@
    "text": "Wray"
   },
   {
-   "postNum": 2569,
-   "kind": "namedEntities",
-   "text": "Freedom Caucus"
-  },
-  {
    "postNum": 2576,
    "kind": "namedEntities",
    "text": "Samantha Power"
@@ -10520,21 +10385,6 @@
    "postNum": 2633,
    "kind": "namedEntities",
    "text": "US Senate"
-  },
-  {
-   "postNum": 2657,
-   "kind": "namedEntities",
-   "text": "Venezuela"
-  },
-  {
-   "postNum": 2657,
-   "kind": "namedEntities",
-   "text": "Ecuador"
-  },
-  {
-   "postNum": 2658,
-   "kind": "namedEntities",
-   "text": "Syria"
   },
   {
    "postNum": 2673,
@@ -10577,16 +10427,6 @@
    "text": "Smollett"
   },
   {
-   "postNum": 285,
-   "kind": "namedEntities",
-   "text": "Freedom Caucus"
-  },
-  {
-   "postNum": 2850,
-   "kind": "namedEntities",
-   "text": "Liberals"
-  },
-  {
    "postNum": 2955,
    "kind": "namedEntities",
    "text": "Whitaker"
@@ -10600,16 +10440,6 @@
    "postNum": 2984,
    "kind": "namedEntities",
    "text": "Xbox"
-  },
-  {
-   "postNum": 2984,
-   "kind": "namedEntities",
-   "text": "Amazon"
-  },
-  {
-   "postNum": 2989,
-   "kind": "namedEntities",
-   "text": "Ivy League"
   },
   {
    "postNum": 3006,
@@ -10632,21 +10462,6 @@
    "text": "Scaramucci"
   },
   {
-   "postNum": 3022,
-   "kind": "namedEntities",
-   "text": "Gina"
-  },
-  {
-   "postNum": 3023,
-   "kind": "namedEntities",
-   "text": "John Perry Barlow"
-  },
-  {
-   "postNum": 3024,
-   "kind": "namedEntities",
-   "text": "Gina"
-  },
-  {
    "postNum": 3028,
    "kind": "namedEntities",
    "text": "Whitaker"
@@ -10662,39 +10477,14 @@
    "text": "AG Barr"
   },
   {
-   "postNum": 3059,
-   "kind": "namedEntities",
-   "text": "Federal Agencies"
-  },
-  {
    "postNum": 3063,
    "kind": "namedEntities",
    "text": "Gang of Eight"
   },
   {
-   "postNum": 3134,
-   "kind": "namedEntities",
-   "text": "Rachel Chandler"
-  },
-  {
-   "postNum": 3155,
-   "kind": "namedEntities",
-   "text": "Rachel Chandler"
-  },
-  {
-   "postNum": 3158,
-   "kind": "namedEntities",
-   "text": "Rachel Chandler"
-  },
-  {
    "postNum": 3159,
    "kind": "namedEntities",
    "text": "Paris Hilton"
-  },
-  {
-   "postNum": 3179,
-   "kind": "namedEntities",
-   "text": "Sean Hannity"
   },
   {
    "postNum": 3180,
@@ -10705,11 +10495,6 @@
    "postNum": 3241,
    "kind": "namedEntities",
    "text": "Gang of 8"
-  },
-  {
-   "postNum": 3312,
-   "kind": "namedEntities",
-   "text": "Media Matters"
   },
   {
    "postNum": 3313,
@@ -10727,16 +10512,6 @@
    "text": "Pence"
   },
   {
-   "postNum": 3608,
-   "kind": "namedEntities",
-   "text": "Washington"
-  },
-  {
-   "postNum": 3625,
-   "kind": "namedEntities",
-   "text": "Hunter"
-  },
-  {
    "postNum": 3647,
    "kind": "namedEntities",
    "text": "US Senate"
@@ -10745,11 +10520,6 @@
    "postNum": 3690,
    "kind": "namedEntities",
    "text": "Gang of 8"
-  },
-  {
-   "postNum": 372,
-   "kind": "namedEntities",
-   "text": "House of Cards"
   },
   {
    "postNum": 3824,
@@ -10765,11 +10535,6 @@
    "postNum": 3900,
    "kind": "namedEntities",
    "text": "President"
-  },
-  {
-   "postNum": 3915,
-   "kind": "namedEntities",
-   "text": "Sanders"
   },
   {
    "postNum": 3990,
@@ -10797,16 +10562,6 @@
    "text": "Gang of Eight"
   },
   {
-   "postNum": 4232,
-   "kind": "namedEntities",
-   "text": "Kislyak"
-  },
-  {
-   "postNum": 4238,
-   "kind": "namedEntities",
-   "text": "Dan Coats"
-  },
-  {
    "postNum": 4241,
    "kind": "namedEntities",
    "text": "Graham"
@@ -10820,11 +10575,6 @@
    "postNum": 4247,
    "kind": "namedEntities",
    "text": "USNS Comfort"
-  },
-  {
-   "postNum": 4310,
-   "kind": "namedEntities",
-   "text": "Seattle"
   },
   {
    "postNum": 4312,
@@ -10887,16 +10637,6 @@
    "text": "The Guardian"
   },
   {
-   "postNum": 4545,
-   "kind": "namedEntities",
-   "text": "United Nations"
-  },
-  {
-   "postNum": 4592,
-   "kind": "namedEntities",
-   "text": "Democrat Party"
-  },
-  {
    "postNum": 4630,
    "kind": "namedEntities",
    "text": "Harold Moody Jr"
@@ -10905,26 +10645,6 @@
    "postNum": 48,
    "kind": "namedEntities",
    "text": "Canada"
-  },
-  {
-   "postNum": 480,
-   "kind": "namedEntities",
-   "text": "Loop Capital"
-  },
-  {
-   "postNum": 4821,
-   "kind": "namedEntities",
-   "text": "Hunter"
-  },
-  {
-   "postNum": 4822,
-   "kind": "namedEntities",
-   "text": "Hunter"
-  },
-  {
-   "postNum": 4830,
-   "kind": "namedEntities",
-   "text": "United States Senator"
   },
   {
    "postNum": 4875,
@@ -10947,16 +10667,6 @@
    "text": "That this nation, under God, shall have a new birth of freedom and that government of the people, by the people, for the"
   },
   {
-   "postNum": 524,
-   "kind": "namedEntities",
-   "text": "Loop Capital"
-  },
-  {
-   "postNum": 524,
-   "kind": "namedEntities",
-   "text": "Banco de Mexico"
-  },
-  {
    "postNum": 56,
    "kind": "namedEntities",
    "text": "International Islamic Council for Da'wa and Relief"
@@ -10967,16 +10677,6 @@
    "text": "Mike Wallace"
   },
   {
-   "postNum": 770,
-   "kind": "namedEntities",
-   "text": "Aaron Swartz"
-  },
-  {
-   "postNum": 785,
-   "kind": "namedEntities",
-   "text": "London"
-  },
-  {
    "postNum": 785,
    "kind": "namedEntities",
    "text": "Delta"
@@ -10985,11 +10685,6 @@
    "postNum": 787,
    "kind": "namedEntities",
    "text": "Wray"
-  },
-  {
-   "postNum": 790,
-   "kind": "namedEntities",
-   "text": "John Perry Barlow"
   },
   {
    "postNum": 857,
@@ -11007,34 +10702,9 @@
    "text": "WikiLeaks"
   },
   {
-   "postNum": 889,
-   "kind": "namedEntities",
-   "text": "Forbidden City"
-  },
-  {
-   "postNum": 950,
-   "kind": "namedEntities",
-   "text": "Kansas"
-  },
-  {
    "postNum": 960,
    "kind": "namedEntities",
    "text": "Comedy Central"
-  },
-  {
-   "postNum": 964,
-   "kind": "namedEntities",
-   "text": "Amazon"
-  },
-  {
-   "postNum": 964,
-   "kind": "namedEntities",
-   "text": "Syria"
-  },
-  {
-   "postNum": 972,
-   "kind": "namedEntities",
-   "text": "Amazon"
   },
   {
    "postNum": 988,

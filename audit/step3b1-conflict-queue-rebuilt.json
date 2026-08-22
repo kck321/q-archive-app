@@ -2,28 +2,28 @@
  "note": "Conflict queue re-derived from the CURRENT bundle. Not the old CSV minus anything.",
  "measuredFrom": "audit/occurrence-ledger-dryrun.json",
  "originalRows": 945,
- "rebuiltRows": 448,
- "netChange": -497,
+ "rebuiltRows": 368,
+ "netChange": -577,
  "byReason": {
   "BOUNDARY_CROSSING": 231,
-  "UNLOCATED_SPAN": 199,
+  "UNLOCATED_SPAN": 119,
   "SAME_CATEGORY_PARTIAL_OVERLAP": 18
  },
  "byKind": {
   "claims": 208,
-  "namedEntities": 197,
+  "namedEntities": 117,
   "directives": 15,
   "questions": 14,
   "themeAnchors": 11,
   "context": 2,
   "predictions": 1
  },
- "distinctHeldKeys": 410,
- "distinctPosts": 326,
+ "distinctHeldKeys": 346,
+ "distinctPosts": 270,
  "resolvedSince": {
-  "count": 500,
+  "count": 580,
   "byFamily": {
-   "UNLOCATED_SPAN": 317,
+   "UNLOCATED_SPAN": 397,
    "DUPLICATE_KEY_CONFLICTING_METADATA": 42,
    "BOUNDARY_CROSSING": 11
   }
@@ -2133,15 +2133,6 @@
    "certifiedValue": "We are working to END.\nEVIL."
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1010-namedEntities::The Fed::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1010-namedEntities",
-   "postNum": 1010,
-   "kind": "namedEntities",
-   "detail": "The Fed",
-   "certifiedValue": "The Fed"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1054-namedEntities::Ray Chandler::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-1054-namedEntities",
@@ -2149,33 +2140,6 @@
    "kind": "namedEntities",
    "detail": "Ray Chandler",
    "certifiedValue": "Ray Chandler"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1082-namedEntities::JFK Jr.::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1082-namedEntities",
-   "postNum": 1082,
-   "kind": "namedEntities",
-   "detail": "JFK Jr.",
-   "certifiedValue": "JFK Jr."
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1086-namedEntities::NO NAME::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1086-namedEntities",
-   "postNum": 1086,
-   "kind": "namedEntities",
-   "detail": "NO NAME",
-   "certifiedValue": "NO NAME"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1092-namedEntities::NO NAME::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1092-namedEntities",
-   "postNum": 1092,
-   "kind": "namedEntities",
-   "detail": "NO NAME",
-   "certifiedValue": "NO NAME"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1094-namedEntities::US Senate::0",
@@ -2194,15 +2158,6 @@
    "kind": "namedEntities",
    "detail": "Wray",
    "certifiedValue": "Wray"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1122-namedEntities::Kansas::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1122-namedEntities",
-   "postNum": 1122,
-   "kind": "namedEntities",
-   "detail": "Kansas",
-   "certifiedValue": "Kansas"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1122-namedEntities::Horowitz::0",
@@ -2295,15 +2250,6 @@
    "certifiedValue": "WikiLeaks"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1235-namedEntities::NO NAME::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1235-namedEntities",
-   "postNum": 1235,
-   "kind": "namedEntities",
-   "detail": "NO NAME",
-   "certifiedValue": "NO NAME"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1253-namedEntities::Grassley::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-1253-namedEntities",
@@ -2311,24 +2257,6 @@
    "kind": "namedEntities",
    "detail": "Grassley",
    "certifiedValue": "Grassley"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1286-namedEntities::Rudy::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1286-namedEntities",
-   "postNum": 1286,
-   "kind": "namedEntities",
-   "detail": "Rudy",
-   "certifiedValue": "Rudy"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1305-namedEntities::NO NAME::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1305-namedEntities",
-   "postNum": 1305,
-   "kind": "namedEntities",
-   "detail": "NO NAME",
-   "certifiedValue": "NO NAME"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1341-namedEntities::Alex Jones::0",
@@ -2349,42 +2277,6 @@
    "certifiedValue": "France"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1555-namedEntities::NO NAME::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1555-namedEntities",
-   "postNum": 1555,
-   "kind": "namedEntities",
-   "detail": "NO NAME",
-   "certifiedValue": "NO NAME"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1646-namedEntities::Hitler::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1646-namedEntities",
-   "postNum": 1646,
-   "kind": "namedEntities",
-   "detail": "Hitler",
-   "certifiedValue": "Hitler"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1702-namedEntities::Kansas::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1702-namedEntities",
-   "postNum": 1702,
-   "kind": "namedEntities",
-   "detail": "Kansas",
-   "certifiedValue": "Kansas"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1706-namedEntities::NO NAME::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1706-namedEntities",
-   "postNum": 1706,
-   "kind": "namedEntities",
-   "detail": "NO NAME",
-   "certifiedValue": "NO NAME"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1745-namedEntities::US Intel::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-1745-namedEntities",
@@ -2394,33 +2286,6 @@
    "certifiedValue": "US Intel"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1746-namedEntities::Nazi Germany::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1746-namedEntities",
-   "postNum": 1746,
-   "kind": "namedEntities",
-   "detail": "Nazi Germany",
-   "certifiedValue": "Nazi Germany"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1764-namedEntities::Clapper::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1764-namedEntities",
-   "postNum": 1764,
-   "kind": "namedEntities",
-   "detail": "Clapper",
-   "certifiedValue": "Clapper"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1764-namedEntities::Rice::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1764-namedEntities",
-   "postNum": 1764,
-   "kind": "namedEntities",
-   "detail": "Rice",
-   "certifiedValue": "Rice"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1822-namedEntities::Watergate::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-1822-namedEntities",
@@ -2428,15 +2293,6 @@
    "kind": "namedEntities",
    "detail": "Watergate",
    "certifiedValue": "Watergate"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1832-namedEntities::Washington::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1832-namedEntities",
-   "postNum": 1832,
-   "kind": "namedEntities",
-   "detail": "Washington",
-   "certifiedValue": "Washington"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1862-namedEntities::Wray::0",
@@ -2464,60 +2320,6 @@
    "kind": "namedEntities",
    "detail": "Roseanne Barr",
    "certifiedValue": "Roseanne Barr"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1884-namedEntities::Epstein Island::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1884-namedEntities",
-   "postNum": 1884,
-   "kind": "namedEntities",
-   "detail": "Epstein Island",
-   "certifiedValue": "Epstein Island"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1884-namedEntities::Cuba::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1884-namedEntities",
-   "postNum": 1884,
-   "kind": "namedEntities",
-   "detail": "Cuba",
-   "certifiedValue": "Cuba"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1884-namedEntities::Sudan::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1884-namedEntities",
-   "postNum": 1884,
-   "kind": "namedEntities",
-   "detail": "Sudan",
-   "certifiedValue": "Sudan"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1884-namedEntities::Syria::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1884-namedEntities",
-   "postNum": 1884,
-   "kind": "namedEntities",
-   "detail": "Syria",
-   "certifiedValue": "Syria"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1884-namedEntities::Yemen::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1884-namedEntities",
-   "postNum": 1884,
-   "kind": "namedEntities",
-   "detail": "Yemen",
-   "certifiedValue": "Yemen"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1884-namedEntities::Libya::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1884-namedEntities",
-   "postNum": 1884,
-   "kind": "namedEntities",
-   "detail": "Libya",
-   "certifiedValue": "Libya"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-19-namedEntities::Maxine Waters::0",
@@ -2628,24 +2430,6 @@
    "certifiedValue": "Ezra Cohen-Watnick"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2061-namedEntities::23andMe::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2061-namedEntities",
-   "postNum": 2061,
-   "kind": "namedEntities",
-   "detail": "23andMe",
-   "certifiedValue": "23andMe"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2061-namedEntities::Moscow::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2061-namedEntities",
-   "postNum": 2061,
-   "kind": "namedEntities",
-   "detail": "Moscow",
-   "certifiedValue": "Moscow"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2072-namedEntities::Speaker of the House::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-2072-namedEntities",
@@ -2662,24 +2446,6 @@
    "kind": "namedEntities",
    "detail": "State Department OIG",
    "certifiedValue": "State Department OIG"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2107-namedEntities::Weissmann::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2107-namedEntities",
-   "postNum": 2107,
-   "kind": "namedEntities",
-   "detail": "Weissmann",
-   "certifiedValue": "Weissmann"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2129-namedEntities::Clapper::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2129-namedEntities",
-   "postNum": 2129,
-   "kind": "namedEntities",
-   "detail": "Clapper",
-   "certifiedValue": "Clapper"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2136-namedEntities::CBN News::0",
@@ -2700,15 +2466,6 @@
    "certifiedValue": "The Independent"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2150-namedEntities::Patriot Day::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2150-namedEntities",
-   "postNum": 2150,
-   "kind": "namedEntities",
-   "detail": "Patriot Day",
-   "certifiedValue": "Patriot Day"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2181-namedEntities::House Intelligence::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-2181-namedEntities",
@@ -2716,15 +2473,6 @@
    "kind": "namedEntities",
    "detail": "House Intelligence",
    "certifiedValue": "House Intelligence"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2203-namedEntities::Lynch::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2203-namedEntities",
-   "postNum": 2203,
-   "kind": "namedEntities",
-   "detail": "Lynch",
-   "certifiedValue": "Lynch"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2206-namedEntities::Wired::0",
@@ -2745,51 +2493,6 @@
    "certifiedValue": "Speaker of the House"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2274-namedEntities::Grassley::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2274-namedEntities",
-   "postNum": 2274,
-   "kind": "namedEntities",
-   "detail": "Grassley",
-   "certifiedValue": "Grassley"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2277-namedEntities::Feinstein::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2277-namedEntities",
-   "postNum": 2277,
-   "kind": "namedEntities",
-   "detail": "Feinstein",
-   "certifiedValue": "Feinstein"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2281-namedEntities::Feinstein::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2281-namedEntities",
-   "postNum": 2281,
-   "kind": "namedEntities",
-   "detail": "Feinstein",
-   "certifiedValue": "Feinstein"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2281-namedEntities::Murkowski::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2281-namedEntities",
-   "postNum": 2281,
-   "kind": "namedEntities",
-   "detail": "Murkowski",
-   "certifiedValue": "Murkowski"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2326-namedEntities::Baker::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2326-namedEntities",
-   "postNum": 2326,
-   "kind": "namedEntities",
-   "detail": "Baker",
-   "certifiedValue": "Baker"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2335-namedEntities::People's Liberation Army::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-2335-namedEntities",
@@ -2799,42 +2502,6 @@
    "certifiedValue": "People's Liberation Army"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2345-namedEntities::Feinstein::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2345-namedEntities",
-   "postNum": 2345,
-   "kind": "namedEntities",
-   "detail": "Feinstein",
-   "certifiedValue": "Feinstein"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2345-namedEntities::Murkowski::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2345-namedEntities",
-   "postNum": 2345,
-   "kind": "namedEntities",
-   "detail": "Murkowski",
-   "certifiedValue": "Murkowski"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2353-namedEntities::Democrat Party::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2353-namedEntities",
-   "postNum": 2353,
-   "kind": "namedEntities",
-   "detail": "Democrat Party",
-   "certifiedValue": "Democrat Party"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2356-namedEntities::Justice K::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2356-namedEntities",
-   "postNum": 2356,
-   "kind": "namedEntities",
-   "detail": "Justice K",
-   "certifiedValue": "Justice K"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2390-namedEntities::House of Cards::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-2390-namedEntities",
@@ -2842,33 +2509,6 @@
    "kind": "namedEntities",
    "detail": "House of Cards",
    "certifiedValue": "House of Cards"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2401-namedEntities::Amazon::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2401-namedEntities",
-   "postNum": 2401,
-   "kind": "namedEntities",
-   "detail": "Amazon",
-   "certifiedValue": "Amazon"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2445-namedEntities::Grassley::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2445-namedEntities",
-   "postNum": 2445,
-   "kind": "namedEntities",
-   "detail": "Grassley",
-   "certifiedValue": "Grassley"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2492-namedEntities::Arizona::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2492-namedEntities",
-   "postNum": 2492,
-   "kind": "namedEntities",
-   "detail": "Arizona",
-   "certifiedValue": "Arizona"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2495-namedEntities::Whitaker::0",
@@ -2943,15 +2583,6 @@
    "certifiedValue": "Wray"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2569-namedEntities::Freedom Caucus::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2569-namedEntities",
-   "postNum": 2569,
-   "kind": "namedEntities",
-   "detail": "Freedom Caucus",
-   "certifiedValue": "Freedom Caucus"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2576-namedEntities::Samantha Power::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-2576-namedEntities",
@@ -2986,33 +2617,6 @@
    "kind": "namedEntities",
    "detail": "US Senate",
    "certifiedValue": "US Senate"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2657-namedEntities::Venezuela::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2657-namedEntities",
-   "postNum": 2657,
-   "kind": "namedEntities",
-   "detail": "Venezuela",
-   "certifiedValue": "Venezuela"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2657-namedEntities::Ecuador::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2657-namedEntities",
-   "postNum": 2657,
-   "kind": "namedEntities",
-   "detail": "Ecuador",
-   "certifiedValue": "Ecuador"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2658-namedEntities::Syria::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2658-namedEntities",
-   "postNum": 2658,
-   "kind": "namedEntities",
-   "detail": "Syria",
-   "certifiedValue": "Syria"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2673-namedEntities::Charlie Kirk::0",
@@ -3087,24 +2691,6 @@
    "certifiedValue": "Smollett"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-285-namedEntities::Freedom Caucus::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-285-namedEntities",
-   "postNum": 285,
-   "kind": "namedEntities",
-   "detail": "Freedom Caucus",
-   "certifiedValue": "Freedom Caucus"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2850-namedEntities::Liberals::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2850-namedEntities",
-   "postNum": 2850,
-   "kind": "namedEntities",
-   "detail": "Liberals",
-   "certifiedValue": "Liberals"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2955-namedEntities::Whitaker::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-2955-namedEntities",
@@ -3130,24 +2716,6 @@
    "kind": "namedEntities",
    "detail": "Xbox",
    "certifiedValue": "Xbox"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2984-namedEntities::Amazon::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2984-namedEntities",
-   "postNum": 2984,
-   "kind": "namedEntities",
-   "detail": "Amazon",
-   "certifiedValue": "Amazon"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2989-namedEntities::Ivy League::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2989-namedEntities",
-   "postNum": 2989,
-   "kind": "namedEntities",
-   "detail": "Ivy League",
-   "certifiedValue": "Ivy League"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3006-namedEntities::US Senate::0",
@@ -3186,33 +2754,6 @@
    "certifiedValue": "Scaramucci"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3022-namedEntities::Gina::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3022-namedEntities",
-   "postNum": 3022,
-   "kind": "namedEntities",
-   "detail": "Gina",
-   "certifiedValue": "Gina"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3023-namedEntities::John Perry Barlow::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3023-namedEntities",
-   "postNum": 3023,
-   "kind": "namedEntities",
-   "detail": "John Perry Barlow",
-   "certifiedValue": "John Perry Barlow"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3024-namedEntities::Gina::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3024-namedEntities",
-   "postNum": 3024,
-   "kind": "namedEntities",
-   "detail": "Gina",
-   "certifiedValue": "Gina"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3028-namedEntities::Whitaker::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-3028-namedEntities",
@@ -3240,15 +2781,6 @@
    "certifiedValue": "AG Barr"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3059-namedEntities::Federal Agencies::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3059-namedEntities",
-   "postNum": 3059,
-   "kind": "namedEntities",
-   "detail": "Federal Agencies",
-   "certifiedValue": "Federal Agencies"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3063-namedEntities::Gang of Eight::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-3063-namedEntities",
@@ -3258,33 +2790,6 @@
    "certifiedValue": "Gang of Eight"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3134-namedEntities::Rachel Chandler::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3134-namedEntities",
-   "postNum": 3134,
-   "kind": "namedEntities",
-   "detail": "Rachel Chandler",
-   "certifiedValue": "Rachel Chandler"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3155-namedEntities::Rachel Chandler::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3155-namedEntities",
-   "postNum": 3155,
-   "kind": "namedEntities",
-   "detail": "Rachel Chandler",
-   "certifiedValue": "Rachel Chandler"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3158-namedEntities::Rachel Chandler::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3158-namedEntities",
-   "postNum": 3158,
-   "kind": "namedEntities",
-   "detail": "Rachel Chandler",
-   "certifiedValue": "Rachel Chandler"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3159-namedEntities::Paris Hilton::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-3159-namedEntities",
@@ -3292,15 +2797,6 @@
    "kind": "namedEntities",
    "detail": "Paris Hilton",
    "certifiedValue": "Paris Hilton"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3179-namedEntities::Sean Hannity::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3179-namedEntities",
-   "postNum": 3179,
-   "kind": "namedEntities",
-   "detail": "Sean Hannity",
-   "certifiedValue": "Sean Hannity"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3180-namedEntities::President of the United States::0",
@@ -3319,15 +2815,6 @@
    "kind": "namedEntities",
    "detail": "Gang of 8",
    "certifiedValue": "Gang of 8"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3312-namedEntities::Media Matters::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3312-namedEntities",
-   "postNum": 3312,
-   "kind": "namedEntities",
-   "detail": "Media Matters",
-   "certifiedValue": "Media Matters"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3313-namedEntities::Sara Carter::0",
@@ -3357,24 +2844,6 @@
    "certifiedValue": "Pence"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3608-namedEntities::Washington::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3608-namedEntities",
-   "postNum": 3608,
-   "kind": "namedEntities",
-   "detail": "Washington",
-   "certifiedValue": "Washington"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3625-namedEntities::Hunter::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3625-namedEntities",
-   "postNum": 3625,
-   "kind": "namedEntities",
-   "detail": "Hunter",
-   "certifiedValue": "Hunter"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3647-namedEntities::US Senate::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-3647-namedEntities",
@@ -3391,15 +2860,6 @@
    "kind": "namedEntities",
    "detail": "Gang of 8",
    "certifiedValue": "Gang of 8"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-372-namedEntities::House of Cards::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-372-namedEntities",
-   "postNum": 372,
-   "kind": "namedEntities",
-   "detail": "House of Cards",
-   "certifiedValue": "House of Cards"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3824-namedEntities::Michael Beatty::0",
@@ -3427,15 +2887,6 @@
    "kind": "namedEntities",
    "detail": "President",
    "certifiedValue": "President"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3915-namedEntities::Sanders::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3915-namedEntities",
-   "postNum": 3915,
-   "kind": "namedEntities",
-   "detail": "Sanders",
-   "certifiedValue": "Sanders"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3990-namedEntities::Papadopoulos::0",
@@ -3483,24 +2934,6 @@
    "certifiedValue": "Gang of Eight"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4232-namedEntities::Kislyak::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4232-namedEntities",
-   "postNum": 4232,
-   "kind": "namedEntities",
-   "detail": "Kislyak",
-   "certifiedValue": "Kislyak"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4238-namedEntities::Dan Coats::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4238-namedEntities",
-   "postNum": 4238,
-   "kind": "namedEntities",
-   "detail": "Dan Coats",
-   "certifiedValue": "Dan Coats"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-4241-namedEntities::Graham::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-4241-namedEntities",
@@ -3526,15 +2959,6 @@
    "kind": "namedEntities",
    "detail": "USNS Comfort",
    "certifiedValue": "USNS Comfort"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4310-namedEntities::Seattle::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4310-namedEntities",
-   "postNum": 4310,
-   "kind": "namedEntities",
-   "detail": "Seattle",
-   "certifiedValue": "Seattle"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-4312-namedEntities::Cambridge Dictionary::0",
@@ -3645,24 +3069,6 @@
    "certifiedValue": "The Guardian"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4545-namedEntities::United Nations::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4545-namedEntities",
-   "postNum": 4545,
-   "kind": "namedEntities",
-   "detail": "United Nations",
-   "certifiedValue": "United Nations"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4592-namedEntities::Democrat Party::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4592-namedEntities",
-   "postNum": 4592,
-   "kind": "namedEntities",
-   "detail": "Democrat Party",
-   "certifiedValue": "Democrat Party"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-4630-namedEntities::Harold Moody Jr::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-4630-namedEntities",
@@ -3679,42 +3085,6 @@
    "kind": "namedEntities",
    "detail": "Canada",
    "certifiedValue": "Canada"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-480-namedEntities::Loop Capital::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-480-namedEntities",
-   "postNum": 480,
-   "kind": "namedEntities",
-   "detail": "Loop Capital",
-   "certifiedValue": "Loop Capital"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4821-namedEntities::Hunter::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4821-namedEntities",
-   "postNum": 4821,
-   "kind": "namedEntities",
-   "detail": "Hunter",
-   "certifiedValue": "Hunter"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4822-namedEntities::Hunter::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4822-namedEntities",
-   "postNum": 4822,
-   "kind": "namedEntities",
-   "detail": "Hunter",
-   "certifiedValue": "Hunter"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4830-namedEntities::United States Senator::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4830-namedEntities",
-   "postNum": 4830,
-   "kind": "namedEntities",
-   "detail": "United States Senator",
-   "certifiedValue": "United States Senator"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-4875-themeAnchors::More 'conspiracy' [fact-less base-less claims] pushed re: violent, extremist, racist, dangerous, anti-gov, nazism, white::0",
@@ -3753,24 +3123,6 @@
    "certifiedValue": "That this nation, under God, shall have a new birth of freedom and that government of the people, by the people, for the"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-524-namedEntities::Loop Capital::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-524-namedEntities",
-   "postNum": 524,
-   "kind": "namedEntities",
-   "detail": "Loop Capital",
-   "certifiedValue": "Loop Capital"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-524-namedEntities::Banco de Mexico::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-524-namedEntities",
-   "postNum": 524,
-   "kind": "namedEntities",
-   "detail": "Banco de Mexico",
-   "certifiedValue": "Banco de Mexico"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-56-namedEntities::International Islamic Council for Da'wa and Relief::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-56-namedEntities",
@@ -3789,24 +3141,6 @@
    "certifiedValue": "Mike Wallace"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-770-namedEntities::Aaron Swartz::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-770-namedEntities",
-   "postNum": 770,
-   "kind": "namedEntities",
-   "detail": "Aaron Swartz",
-   "certifiedValue": "Aaron Swartz"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-785-namedEntities::London::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-785-namedEntities",
-   "postNum": 785,
-   "kind": "namedEntities",
-   "detail": "London",
-   "certifiedValue": "London"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-785-namedEntities::Delta::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-785-namedEntities",
@@ -3823,15 +3157,6 @@
    "kind": "namedEntities",
    "detail": "Wray",
    "certifiedValue": "Wray"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-790-namedEntities::John Perry Barlow::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-790-namedEntities",
-   "postNum": 790,
-   "kind": "namedEntities",
-   "detail": "John Perry Barlow",
-   "certifiedValue": "John Perry Barlow"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-857-namedEntities::Reuters::0",
@@ -3861,24 +3186,6 @@
    "certifiedValue": "WikiLeaks"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-889-namedEntities::Forbidden City::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-889-namedEntities",
-   "postNum": 889,
-   "kind": "namedEntities",
-   "detail": "Forbidden City",
-   "certifiedValue": "Forbidden City"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-950-namedEntities::Kansas::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-950-namedEntities",
-   "postNum": 950,
-   "kind": "namedEntities",
-   "detail": "Kansas",
-   "certifiedValue": "Kansas"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-960-namedEntities::Comedy Central::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-960-namedEntities",
@@ -3886,33 +3193,6 @@
    "kind": "namedEntities",
    "detail": "Comedy Central",
    "certifiedValue": "Comedy Central"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-964-namedEntities::Amazon::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-964-namedEntities",
-   "postNum": 964,
-   "kind": "namedEntities",
-   "detail": "Amazon",
-   "certifiedValue": "Amazon"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-964-namedEntities::Syria::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-964-namedEntities",
-   "postNum": 964,
-   "kind": "namedEntities",
-   "detail": "Syria",
-   "certifiedValue": "Syria"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-972-namedEntities::Amazon::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-972-namedEntities",
-   "postNum": 972,
-   "kind": "namedEntities",
-   "detail": "Amazon",
-   "certifiedValue": "Amazon"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-988-namedEntities::Awan::0",

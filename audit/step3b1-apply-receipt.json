@@ -8,12 +8,12 @@
   "A-DUP-2971-questions-561-799",
   "A-DUP-4454-questions-238-404"
  ],
- "seedVersion": 86,
+ "seedVersion": 87,
  "outputs": {
   "public/data/posts.json": "2ee598af3809890ded96bb434e02c4179650e5f61b8f229198731db82c94cdba",
   "public/data/questions.json": "241dc211bf435d8522b34cdcc9f3ac8b832e06f80df346ddcb87d8ea3ee12b2f",
-  "public/data/semantics.json": "34cd313870f2ad9b612f5dc63474535f4faf70439b0770e6b70abf501830b857",
-  "audit/occurrence-ledger.json": "dedb845032feb4abe754cab69308c6f8d7b060012b4e6030973e2ce10b4daa22"
+  "public/data/semantics.json": "a378784750923df0c8ea8e96fc9ee314199143ed87ce86972a1be62240a50b24",
+  "audit/occurrence-ledger.json": "49bec4f157f537ae66ec6360e6e082457ad035641876e0c6c49b23b2e1953812"
  },
  "crossTab": [
   {
@@ -324,7 +324,7 @@
   {
    "gate": "zero runtime substring mismatch in the ledger",
    "pass": true,
-   "detail": "30,889 records verified"
+   "detail": "30,969 records verified"
   },
   {
    "gate": "zero same-sentence multi-primary inside the applied scope",
