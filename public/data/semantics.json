@@ -3,12 +3,34 @@
  "step": "3B-1",
  "planSha256": "373ca06b1416b6707a111f2c3da8e751472c551f739500f76cdcc764d3128058",
  "dispositionsApplied": 8,
- "actionsApplied": 2,
- "actionsAlreadyApplied": 688,
+ "actionsApplied": 51,
+ "actionsAlreadyApplied": 639,
  "actionsHeld": 2,
  "heldActionIds": [
   "A-DUP-2971-questions-561-799",
   "A-DUP-4454-questions-238-404"
+ ],
+ "duplicateMergeDeltas": [
+  {
+   "actionId": "A-DUP-2844-namedEntities-511-519",
+   "occurrenceKey": "2844|namedEntities|511|519",
+   "planExcess": 1,
+   "measuredExcess": 2,
+   "identityGroups": [
+    "Barack Obama"
+   ],
+   "why": "the repaired entity lookup reaches alias-valued identities the plan could not see"
+  },
+  {
+   "actionId": "A-DUP-3325-namedEntities-102-110",
+   "occurrenceKey": "3325|namedEntities|102|110",
+   "planExcess": 1,
+   "measuredExcess": 2,
+   "identityGroups": [
+    "Barack Obama"
+   ],
+   "why": "the repaired entity lookup reaches alias-valued identities the plan could not see"
+  }
  ],
  "occurrences": [
   {

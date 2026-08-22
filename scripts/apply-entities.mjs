@@ -627,12 +627,19 @@ if (stage1?.auditCrosswalk) {
     survivorOf.set(`${m.canonical} ${m.keepFrom.source}`, m.canonical)
     for (const a of m.absorb) survivorOf.set(`${a.canonical} ${a.source}`, m.canonical)
   }
+  // AN OWNER MERGE IS ALSO A MERGE. This crosswalk resolved survivors from stage1.merges alone,
+  // so a row the OWNER merged away had no survivor here and its ENT number came back unmapped.
+  // Owner merges are keyed by canonical only: entities-owner-rulings.json records no source.
+  const ownerSurvivor = new Map()
+  for (const m of merges) ownerSurvivor.set(m.from, m.into)
+  const resolveOwner = c => { let x = c, n = 0; while (ownerSurvivor.has(x) && n++ < 10) x = ownerSurvivor.get(x); return x }
+
   const withdrawn = new Set(stage1.moveOuts.map(m => m.canonical))
   const byCanonical = new Map(entities.map(e => [e.canonical, e]))
   let mapped = 0, unmapped = []
   for (const row of stage1.auditCrosswalk) {
     if (withdrawn.has(row.canonical)) continue
-    const target = survivorOf.get(`${row.canonical} ${row.source}`) ?? row.canonical
+    const target = resolveOwner(survivorOf.get(`${row.canonical} ${row.source}`) ?? row.canonical)
     const e = byCanonical.get(target)
     if (!e) { unmapped.push(`${row.entityId} ${row.canonical}`); continue }
     const entry = ledgerEntries[e.id]
@@ -857,8 +864,17 @@ const checks = [
   // queueEntitiesCreated is subtracted with ownerAdded, for the same reason: an identity the owner
   // ruled into existence is not something a detector found. Keeping this at 1,292 is what makes a
   // LOST DETECTION still fail here after 39 rulings raised the row count.
-  ['detected canonical entities = 1,292',
-    entities.length - ownerAdded - queueEntitiesCreated + ownerMerged === 1292,
+  // 1,292 -> 1,287 · 1,448 -> 1,443 · 3,841 -> 3,838 on 2026-08-22 — OWNER RULING 1, five
+  // duplicate canonical identities merged: Wray/Christopher Wray, Whitaker/Matthew Whitaker,
+  // Pence/Mike Pence, Awan/Imran Awan, GANG OF 8/Gang of Eight (the caps row additionally typed
+  // 'person' rather than government_institution).
+  //
+  // THIS IS IDENTITY NORMALIZATION, NOT OCCURRENCE DELETION, and the owner said so explicitly.
+  // Five ROWS go; no occurrence does. The archive mention total is unchanged and asserted below.
+  // The tail figure falls by 3 because three mentions RECLASSIFY: a tail row merged into a core
+  // canonical stops being tail. Populations move, evidence does not.
+  ['detected canonical entities = 1,287',
+    entities.length - ownerAdded - queueEntitiesCreated + ownerMerged === 1287,
     entities.length - ownerAdded - queueEntitiesCreated + ownerMerged],
   ['queue entity rulings accounted for = 508',
     queueEntityRulings.length === 508 && queueHits.length + queueHeld.length >= 508,
@@ -870,7 +886,7 @@ const checks = [
   // 1,445 -> 1,408: -19 rows merged away as duplicate canonicals, -18 rows withdrawn as
   // conceptual/generic labels. Both from the 2026-08-16 hover audit, Stage 1.
   // 1,409 + 39 identities the owner's queue rulings introduce = 1,448.
-  ['canonical entities = 1,448', entities.length === 1448, entities.length],
+  ['canonical entities = 1,443', entities.length === 1443, entities.length],
   // 8,227 + 12 RC. The merge moves 4 mentions between rows and adds none.
   // 9,786 -> 9,747: -39, the occurrences of the 18 withdrawn rows. The 17 merges move mentions
   // ACROSS rows and add none, so they are absent from this arithmetic by design — asserted
@@ -914,7 +930,7 @@ const checks = [
   // them land here.
   // +58: queue rulings that landed on an adjudicated-tail identity.
   // +6, the same six again - one movement, counted in three places by design.
-  ['adjudicated-tail mentions = 3,841', totals.adjudicatedTailMentions === 3841, totals.adjudicatedTailMentions],
+  ['adjudicated-tail mentions = 3,838', totals.adjudicatedTailMentions === 3838, totals.adjudicatedTailMentions],
   ['tail occurrence rows = 3,440', tailOccurrences.length === 3440, tailOccurrences.length],
   ['every tail occurrence carries a post identity', tailOccurrences.every(o => o.postNum && o.id), 'ok'],
   ['every tail entity now has post provenance',

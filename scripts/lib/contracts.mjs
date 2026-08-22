@@ -55,7 +55,8 @@ export const CANONICAL = {
   // "U.S. Senate", "Harris v." are extended to the full sentence, and the tail the same splitter
   // had certified separately is absorbed into them. Nothing left the archive - the same words are
   // certified once, whole, instead of twice, in halves. See audit/abbreviation-span-repairs.json.
-  questions: { occurrences: 6324, distinct: 5358, posts: 1705 },
+  // 6,324 -> 6,323: B2 withdrew one question whose whole span was a link line.
+  questions: { occurrences: 6323, distinct: 5358, posts: 1705 },
   // v5, 16 Aug 2026 — Q Directives migrated to sourceSpansV2 provenance under owner ruling.
   // 2,705 -> 2,552: 153 occurrences removed from Q Directives ONLY (quoted news, scraped code,
   // blessings, declarative-lead misreads, questions, a prediction). Nothing was deleted from the
@@ -86,7 +87,9 @@ export const CANONICAL = {
   // condemning 'Qanon'", #4893 "Example:" and "Federal Appeals Court reinstates conviction", #4853
   // "Wife: CIA" and "Husband: DOJ". distinct +5, not +6: "Example:" shares a key with "Example."
   // already certified on #1015 and #1220. posts +2: #4861 and #4853 gain their first claim.
-  claims: { occurrences: 8814, distinct: 6814, posts: 3086 },
+  // 8,814 -> 8,721: B2/B2b/B2c withdrew 93 claims certified over nothing but URLs, board pointers
+  // or bracketed labels. Owner ruling: a raw URL is not claim paint.
+  claims: { occurrences: 8721, distinct: 6814, posts: 3086 },
   // 630 -> 595: -73 technical nonpredictions, -56 arguable rows withdrawn to the review
   // backlog, +66 unique moves from Claims, +28 high-confidence predictions the extractor
   // missed. posts 520 -> 490. The 91 withdrawn/held rows are NOT deleted — they sit in
@@ -98,6 +101,7 @@ export const CANONICAL = {
   // posts unchanged - both drops already carried certified predictions.
   predictions: { occurrences: 843, posts: 674 },
   evidence: { occurrences: 6590, posts: 3883 },
+  // canonical 1,240 -> 1,235: Owner Ruling 1 merged five duplicate identities. No occurrence moved.
   entities: {
     // 1,332 detected + 1 owner ruling (Dominion Voting Systems, #4963 "Dominion." — the only
     // occurrence in the archive). Held in audit/entities-owner-rulings.json, outside the derive
@@ -137,7 +141,7 @@ export const CANONICAL = {
     // 1,201 -> 1,240: 39 identities the 2026-08-20 queue rulings introduce, declared with a type
     // from the existing vocabulary in audit/unhighlighted-entity-identities.json. detectedCanonical
     // stays 1,292 - an identity the owner ruled into existence is not one a detector found.
-    canonical: 1240, detectedCanonical: 1292, ownerRulings: 118, ownerMerges: 1, queueRulings: 508,
+    canonical: 1235, detectedCanonical: 1292, ownerRulings: 118, ownerMerges: 1, queueRulings: 508,
     /** Every resolved mention across all 1,334 certified entities. The headline figure. */
     // 8,227 -> 8,239: the RC alias ruling resolved 12 occurrences to Rachel Chandler. The merge
     // moved 4 mentions from the absorbed row onto hers and added none.

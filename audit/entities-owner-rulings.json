@@ -7862,6 +7862,46 @@
    "into": "McCain Institute",
    "ruledOn": "2026-08-16",
    "reasoning": "Owner ruling: NO NAME is Q's coded alias for Senator John McCain, used after Q stopped writing the name. It had never been ruled on in the entity registry — the rows sat as separate coded_alias entities, so the archive listed the codename and the man as different people."
+  },
+  {
+   "from": "Wray",
+   "into": "Christopher Wray",
+   "ruledOn": "2026-08-22",
+   "batch": "Owner Ruling 1 — duplicate canonical identities",
+   "reasoning": "Owner ruling, APPROVED: the FBI Director, carried twice: a bare-surname row aliased \"Wray\" and a full-name row aliased \"WRAY\". Two canonical rows for one identity mean the lookup takes whichever registered first and reports the other's occurrences as unlocatable — 16 rows of the Step 3B-1 conflict queue.",
+   "ownerDirective": "This is an identity normalization, not occurrence deletion. Every occurrence, post association, alias and provenance reference is preserved; only the duplicate canonical row goes."
+  },
+  {
+   "from": "Whitaker",
+   "into": "Matthew Whitaker",
+   "ruledOn": "2026-08-22",
+   "batch": "Owner Ruling 1 — duplicate canonical identities",
+   "reasoning": "Owner ruling, APPROVED: the Acting Attorney General, carried twice: a bare-surname row aliased \"Whitaker\" and a full-name row aliased \"WHITAKER\" / \"Matthew Whitaker\". Two canonical rows for one identity mean the lookup takes whichever registered first and reports the other's occurrences as unlocatable — 16 rows of the Step 3B-1 conflict queue.",
+   "ownerDirective": "This is an identity normalization, not occurrence deletion. Every occurrence, post association, alias and provenance reference is preserved; only the duplicate canonical row goes."
+  },
+  {
+   "from": "GANG OF 8",
+   "into": "Gang of Eight",
+   "ruledOn": "2026-08-22",
+   "batch": "Owner Ruling 1 — duplicate canonical identities",
+   "reasoning": "Owner ruling, APPROVED: the congressional leadership group. The all-caps row was additionally typed 'person'; the surviving row types it government_institution. Two canonical rows for one identity mean the lookup takes whichever registered first and reports the other's occurrences as unlocatable — 16 rows of the Step 3B-1 conflict queue.",
+   "ownerDirective": "This is an identity normalization, not occurrence deletion. Every occurrence, post association, alias and provenance reference is preserved; only the duplicate canonical row goes."
+  },
+  {
+   "from": "Pence",
+   "into": "Mike Pence",
+   "ruledOn": "2026-08-22",
+   "batch": "Owner Ruling 1 — duplicate canonical identities",
+   "reasoning": "Owner ruling, APPROVED: the Vice President, carried twice: a bare-surname row aliased \"Pence\" and a full-name row aliased \"PENCE\". Two canonical rows for one identity mean the lookup takes whichever registered first and reports the other's occurrences as unlocatable — 16 rows of the Step 3B-1 conflict queue.",
+   "ownerDirective": "This is an identity normalization, not occurrence deletion. Every occurrence, post association, alias and provenance reference is preserved; only the duplicate canonical row goes."
+  },
+  {
+   "from": "Awan",
+   "into": "Imran Awan",
+   "ruledOn": "2026-08-22",
+   "batch": "Owner Ruling 1 — duplicate canonical identities",
+   "reasoning": "Owner ruling, APPROVED: the House IT staffer, carried twice: a bare-surname row aliased \"Awan\" and a full-name row aliased \"Imran Awan\" / \"AWAN\". Two canonical rows for one identity mean the lookup takes whichever registered first and reports the other's occurrences as unlocatable — 16 rows of the Step 3B-1 conflict queue.",
+   "ownerDirective": "This is an identity normalization, not occurrence deletion. Every occurrence, post association, alias and provenance reference is preserved; only the duplicate canonical row goes."
   }
  ],
  "aliasWithdrawals": [

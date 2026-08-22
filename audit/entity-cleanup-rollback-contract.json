@@ -45,6 +45,91 @@
    "rendered": 6,
    "evidence": "entityRows is 0 because Nellie Ohr was ALREADY a certified identity (qe-2768b0fef8da, 8 mentions across 7 posts). The ruling adds the missing alias, not a row: she goes to 14 mentions across 9 posts, and #1928/#1929 join her post set where her husband BO was already certified on both. audit-occurrence-provenance.mjs re-run on the new tree moved exactly 4 figures and left 17 unchanged: occurrences and certifiedMentions 9,920 -> 9,926, attribution.unique 9,856 -> 9,862, and visible_complete_token 8,814 -> 8,820. All six new occurrences classify as SUPPORTED. invalid_substring_extraction (98), visible_alias_variant (35), url_source_provenance (646), image_provenance_unconfirmed (41), no_supported_provenance (85), ambiguous_provenance (72) and social_account_reference (129) are UNCHANGED, and proposedWithdrawals stays at 951 - the plan withdraws exactly the set the owner approved and touches nothing this ruling added. The alias is scoped with includePosts because /(?<![A-Za-z0-9])NO(?![A-Za-z0-9])/ matches 102 occurrences across 75 posts and almost every one is the English word.",
    "why": "The approval record above is left exactly as written. A delta is recorded beside it, so the guard still refuses an unrecognised tree while this later owner ruling does not read as drift."
+  },
+  {
+   "ruling": "audit/entities-owner-rulings.json (merges: Owner Ruling 1 — duplicate canonical identities)",
+   "ruledOn": "2026-08-22",
+   "what": "Owner ruling, APPROVED and RE-AUTHORIZED: five pairs are one underlying entity each and must not remain separate canonical registry identities — Wray/Christopher Wray, Whitaker/Matthew Whitaker, Pence/Mike Pence, Awan/Imran Awan, GANG OF 8/Gang of Eight. FIVE ROWS are removed BEFORE this step runs. No occurrence is.",
+   "entityRows": -5,
+   "mentions": 0,
+   "rendered": 0,
+   "oldApprovedSnapshot": "countsBefore 1,409 rows / 9,749 mentions (2026-08-17), carried forward by the two earlier deltas to 1,448 rows / 9,926 mentions",
+   "whyTheOldSnapshotNoLongerApplies": "The guard refused with 'the tree is neither the approved before-state (1448/9926)' and it was RIGHT to: the registry had changed underneath an approval pinned to an exact shape. The owner re-authorized rematerialization against the new state and directed that the guard NOT be bypassed or weakened. So the approval record above is left exactly as written and this delta is recorded beside it — the same mechanism the 2026-08-20 and 2026-08-21 rulings used.",
+   "preStateMeasured": {
+    "entityRows": 1448,
+    "mentions": 9926
+   },
+   "postStateMeasured": {
+    "entityRows": 1443,
+    "mentions": 9926,
+    "entitiesJsonSha256": "978feaf8510e80f38547d537240463390ae6631590bb0990379682e3b616e83e"
+   },
+   "canonicalGroupsMerged": [
+    {
+     "from": "Wray",
+     "into": "Christopher Wray",
+     "aliasMovedAcross": [
+      "Wray"
+     ],
+     "postsBefore": [
+      7,
+      3
+     ],
+     "postUnion": 10
+    },
+    {
+     "from": "Whitaker",
+     "into": "Matthew Whitaker",
+     "aliasMovedAcross": [
+      "Whitaker"
+     ],
+     "postsBefore": [
+      11,
+      6
+     ],
+     "postUnion": 17
+    },
+    {
+     "from": "GANG OF 8",
+     "into": "Gang of Eight",
+     "aliasMovedAcross": [
+      "GANG OF 8"
+     ],
+     "postsBefore": [
+      2,
+      5
+     ],
+     "postUnion": 7,
+     "note": "the retired row was additionally typed 'person'; the survivor types it government_institution"
+    },
+    {
+     "from": "Pence",
+     "into": "Mike Pence",
+     "aliasMovedAcross": [
+      "Pence"
+     ],
+     "postsBefore": [
+      3,
+      2
+     ],
+     "postUnion": 4
+    },
+    {
+     "from": "Awan",
+     "into": "Imran Awan",
+     "aliasMovedAcross": [
+      "Awan"
+     ],
+     "postsBefore": [
+      8,
+      9
+     ],
+     "postUnion": 15
+    }
+   ],
+   "occurrencesPreserved": "MENTIONS ARE UNCHANGED AT 9,926 — measured on the tree before and after apply-entities.mjs wrote the merge. Five canonical ROWS go; zero occurrences do, which is precisely the owner's instruction: 'This is an identity normalization, not occurrence deletion. Do NOT delete occurrence evidence simply to make canonical counts smaller.'",
+   "certifiedConstantsMoved": "detected canonical entities 1,292 -> 1,287, canonical entities 1,448 -> 1,443, adjudicated-tail mentions 3,841 -> 3,838. The tail figure falls by 3 because three mentions RECLASSIFY: a tail row merged into a core canonical stops being tail. Populations move, evidence does not.",
+   "why": "The approval record above is left exactly as written. A delta is recorded beside it instead, so the guard still refuses an unrecognised tree while a later owner ruling does not read as drift."
   }
  ]
 }

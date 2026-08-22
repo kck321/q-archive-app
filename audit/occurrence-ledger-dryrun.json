@@ -9,23 +9,23 @@
  },
  "totals": {
   "sentences": 30187,
-  "occurrencesKeyed": 30873,
-  "duplicateKeys": 56,
+  "occurrencesKeyed": 30886,
+  "duplicateKeys": 57,
   "byKind": {
    "claims": 8721,
    "predictions": 843,
    "directives": 2940,
-   "namedEntities": 8759,
+   "namedEntities": 8772,
    "themeAnchors": 1682,
    "questions": 6323,
    "context": 1605
   },
   "byRelation": {
    "EXACT": 20500,
-   "PARTIAL": 10291,
+   "PARTIAL": 10304,
    "CROSSING": 82
   },
-  "unlocated": 119,
+  "unlocated": 106,
   "crossingSentenceBoundary": 82
  },
  "findings": {
@@ -66,7 +66,7 @@
    "note": "A Context/Emphasis span on exactly the characters of a primary span. Becomes a reviewDisposition, not a second category."
   },
   "unlocatedSpans": {
-   "count": 119,
+   "count": 106,
    "note": "A certified span the ledger could not place in the runtime body. Each is a conflict-queue row, never a silent drop."
   }
  },
@@ -2003,6 +2003,16 @@
    "end": 18,
    "textA": "THE STANDARD HOTEL",
    "textB": "THE STANDARD HOTEL",
+   "identicalText": true
+  },
+  {
+   "occurrenceKey": "3330|namedEntities|149|154",
+   "postNum": 3330,
+   "kind": "namedEntities",
+   "start": 149,
+   "end": 154,
+   "textA": "PENCE",
+   "textB": "PENCE",
    "identicalText": true
   },
   {
@@ -7407,11 +7417,6 @@
   {
    "postNum": 1122,
    "kind": "namedEntities",
-   "text": "Wray"
-  },
-  {
-   "postNum": 1122,
-   "kind": "namedEntities",
    "text": "Horowitz"
   },
   {
@@ -7483,11 +7488,6 @@
    "postNum": 1822,
    "kind": "namedEntities",
    "text": "Watergate"
-  },
-  {
-   "postNum": 1862,
-   "kind": "namedEntities",
-   "text": "Wray"
   },
   {
    "postNum": 1863,
@@ -7605,19 +7605,9 @@
    "text": "House of Cards"
   },
   {
-   "postNum": 2495,
-   "kind": "namedEntities",
-   "text": "Whitaker"
-  },
-  {
    "postNum": 2499,
    "kind": "namedEntities",
    "text": "House of Cards"
-  },
-  {
-   "postNum": 2501,
-   "kind": "namedEntities",
-   "text": "Whitaker"
   },
   {
    "postNum": 2501,
@@ -7632,17 +7622,7 @@
   {
    "postNum": 2555,
    "kind": "namedEntities",
-   "text": "Whitaker"
-  },
-  {
-   "postNum": 2555,
-   "kind": "namedEntities",
    "text": "Horowitz"
-  },
-  {
-   "postNum": 2555,
-   "kind": "namedEntities",
-   "text": "Wray"
   },
   {
    "postNum": 2576,
@@ -7673,11 +7653,6 @@
    "postNum": 2730,
    "kind": "namedEntities",
    "text": "God"
-  },
-  {
-   "postNum": 2766,
-   "kind": "namedEntities",
-   "text": "Whitaker"
   },
   {
    "postNum": 2768,
@@ -7740,16 +7715,6 @@
    "text": "Scaramucci"
   },
   {
-   "postNum": 3028,
-   "kind": "namedEntities",
-   "text": "Whitaker"
-  },
-  {
-   "postNum": 3036,
-   "kind": "namedEntities",
-   "text": "Whitaker"
-  },
-  {
    "postNum": 3059,
    "kind": "namedEntities",
    "text": "AG Barr"
@@ -7770,11 +7735,6 @@
    "text": "President of the United States"
   },
   {
-   "postNum": 3241,
-   "kind": "namedEntities",
-   "text": "Gang of 8"
-  },
-  {
    "postNum": 3313,
    "kind": "namedEntities",
    "text": "Sara Carter"
@@ -7783,11 +7743,6 @@
    "postNum": 3316,
    "kind": "namedEntities",
    "text": "Mueller Report"
-  },
-  {
-   "postNum": 3330,
-   "kind": "namedEntities",
-   "text": "Pence"
   },
   {
    "postNum": 3647,
@@ -7858,11 +7813,6 @@
    "postNum": 4312,
    "kind": "namedEntities",
    "text": "Cambridge Dictionary"
-  },
-  {
-   "postNum": 433,
-   "kind": "namedEntities",
-   "text": "Wray"
   },
   {
    "postNum": 4339,
@@ -7958,11 +7908,6 @@
    "postNum": 785,
    "kind": "namedEntities",
    "text": "Delta"
-  },
-  {
-   "postNum": 787,
-   "kind": "namedEntities",
-   "text": "Wray"
   },
   {
    "postNum": 857,

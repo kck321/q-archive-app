@@ -68,6 +68,31 @@ function buildPlan(dataDir) {
   const byId = new Map(entities.entities.map(e => [e.id, e]))
   const postByNum = new Map(posts.map(p => [p.postNum, p]))
 
+  // A MERGED IDENTITY IS STILL THE SAME IDENTITY, so the replay follows it rather than refusing.
+  //
+  // The audit names each occurrence by the entity id it carried when the audit ran. Owner Ruling 1
+  // (2026-08-22) merged five duplicate canonical rows, so two of those ids — qe-1932f9fd0b7c
+  // ("Wray") and qe-db762af6b20d ("Whitaker") — no longer name a row, and the plan refused with
+  // "entity or drop has gone". The occurrences did not go anywhere; their canonical did.
+  //
+  // This does NOT weaken the before-state guard, which still refuses an unrecognised tree and is
+  // satisfied separately by the postApprovalDeltas entry recording the merge. It resolves a retired
+  // id through audit/entity-ids.json — which keeps retired ids on purpose, that being the point of
+  // a minted immutable id — and then through the owner's own merge list to the surviving row.
+  const idLedger = read(OUT, 'entity-ids.json').entries ?? {}
+  const ownerMerges = fs.existsSync(path.join(OUT, 'entities-owner-rulings.json'))
+    ? (read(OUT, 'entities-owner-rulings.json').merges ?? []) : []
+  const survivorOfCanonical = new Map(ownerMerges.map(m => [m.from, m.into]))
+  const followMerge = c => { let x = c, n = 0; while (survivorOfCanonical.has(x) && n++ < 10) x = survivorOfCanonical.get(x); return x }
+  const byCanonical = new Map(entities.entities.map(e => [e.canonical, e]))
+  const resolveEntity = entityId => {
+    const direct = byId.get(entityId)
+    if (direct) return direct
+    const retired = idLedger[entityId]
+    if (!retired) return null
+    return byCanonical.get(followMerge(retired.canonical)) ?? null
+  }
+
   if (audit.totals.occurrences !== entities.totals.mentions) {
     console.error(`\n  ❌ the audit covers ${audit.totals.occurrences} occurrences but ${entities.totals.mentions} are certified. Re-run audit-occurrence-provenance.mjs.\n`)
     process.exit(1)
@@ -88,7 +113,7 @@ function buildPlan(dataDir) {
     if (r.category === 'ambiguous_provenance') { refusals.push(`${r.occurrenceId}: ambiguous record has a non-keep action`); continue }
 
     const post = postByNum.get(r.postNum)
-    const e = byId.get(r.entityId)
+    const e = resolveEntity(r.entityId)
     if (!post || !e) { refusals.push(`${r.occurrenceId}: entity or drop has gone`); continue }
     const named = post.postAnalysis?.namedEntities ?? []
     if (named[r.index] !== r.alias) {
@@ -101,7 +126,9 @@ function buildPlan(dataDir) {
       postNum: r.postNum,
       index: r.index,
       alias: r.alias,
-      entityId: r.entityId,
+      // The RESOLVED id, so nothing downstream has to know a merge happened; the audit's original
+      // id is kept beside it for provenance.
+      entityId: e.id, auditEntityId: r.entityId,
       canonical: e.canonical,
       entityType: e.type,
       category: r.category,

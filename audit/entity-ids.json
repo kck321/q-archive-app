@@ -880,7 +880,8 @@
    "slug": "imran-awan",
    "previousCanonicals": [],
    "auditEntityIds": [
-    "ENT-0107"
+    "ENT-0107",
+    "ENT-0161"
    ]
   },
   "qe-fe504d63415a": {
@@ -1858,6 +1859,7 @@
    "slug": "matthew-whitaker",
    "previousCanonicals": [],
    "auditEntityIds": [
+    "ENT-0115",
     "ENT-0232"
    ]
   },
@@ -2179,7 +2181,8 @@
    "slug": "gang-of-eight",
    "previousCanonicals": [],
    "auditEntityIds": [
-    "ENT-0275"
+    "ENT-0275",
+    "ENT-0653"
    ]
   },
   "qe-30289060f382": {
@@ -2857,6 +2860,7 @@
    "slug": "christopher-wray",
    "previousCanonicals": [],
    "auditEntityIds": [
+    "ENT-0164",
     "ENT-0362"
    ]
   },
@@ -5623,6 +5627,7 @@
    "slug": "mike-pence",
    "previousCanonicals": [],
    "auditEntityIds": [
+    "ENT-0352",
     "ENT-0724"
    ]
   },

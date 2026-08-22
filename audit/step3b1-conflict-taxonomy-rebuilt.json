@@ -1,17 +1,17 @@
 {
  "note": "Step 3B-1 conflict-queue taxonomy. Report only — nothing applied, nothing withdrawn.",
- "totalRows": 220,
+ "totalRows": 207,
  "measuredFrom": "current bundle (rebuilt)",
- "distinctConflictIds": 220,
- "distinctHeldKeys": 200,
- "distinctPosts": 174,
+ "distinctConflictIds": 207,
+ "distinctHeldKeys": 191,
+ "distinctPosts": 165,
  "byReason": {
-  "UNLOCATED_SPAN": 119,
+  "UNLOCATED_SPAN": 106,
   "BOUNDARY_CROSSING": 82,
   "SAME_CATEGORY_PARTIAL_OVERLAP": 19
  },
  "bySourceLayer": {
-  "namedEntities": 117,
+  "namedEntities": 104,
   "claims": 67,
   "(n/a)": 19,
   "themeAnchors": 8,
@@ -19,9 +19,9 @@
   "directives": 4
  },
  "byLane": {
-  "B HUMAN_SEMANTIC_REVIEW": 158,
-  "C STRUCTURAL_DATA_DEFECT": 61,
-  "A DETERMINISTIC_RESOLUTION": 1
+  "B HUMAN_SEMANTIC_REVIEW": 159,
+  "C STRUCTURAL_DATA_DEFECT": 45,
+  "A DETERMINISTIC_RESOLUTION": 3
  },
  "rootCausePatterns": 12,
  "clusters": [
@@ -241,25 +241,41 @@
    ]
   },
   {
-   "signature": "UNLOCATED_SPAN::IDENTITY_SPLIT_ACROSS_TWO_REGISTRY_GROUPS",
-   "count": 16,
-   "lane": "C",
-   "posts": 15,
+   "signature": "UNLOCATED_SPAN::ABSENT_FROM_DROP_IN_EVERY_REGISTERED_FORM",
+   "count": 12,
+   "lane": "B",
+   "posts": 12,
    "identities": [
     [
-     "Whitaker",
-     7
+     "Sara Carter",
+     3
     ],
     [
-     "Wray",
-     5
-    ],
-    [
-     "Gang of 8",
+     "Ray Chandler",
      2
     ],
     [
-     "Pence",
+     "Standard Hotel",
+     1
+    ],
+    [
+     "Sean Hannity",
+     1
+    ],
+    [
+     "Maxine Waters",
+     1
+    ],
+    [
+     "Carter Page",
+     1
+    ],
+    [
+     "House of Cards",
+     1
+    ],
+    [
+     "Samantha Power",
      1
     ],
     [
@@ -269,19 +285,19 @@
    ],
    "examples": [
     {
-     "postNum": 1122,
-     "heldKey": "UNLOCATED-1122-namedEntities",
-     "value": "Wray"
+     "postNum": 1054,
+     "heldKey": "UNLOCATED-1054-namedEntities",
+     "value": "Ray Chandler"
     },
     {
-     "postNum": 1862,
-     "heldKey": "UNLOCATED-1862-namedEntities",
-     "value": "Wray"
+     "postNum": 1138,
+     "heldKey": "UNLOCATED-1138-namedEntities",
+     "value": "Ray Chandler"
     },
     {
-     "postNum": 2495,
-     "heldKey": "UNLOCATED-2495-namedEntities",
-     "value": "Whitaker"
+     "postNum": 1203,
+     "heldKey": "UNLOCATED-1203-namedEntities",
+     "value": "Standard Hotel"
     }
    ]
   },
@@ -343,63 +359,6 @@
      "postNum": 1910,
      "heldKey": "UNLOCATED-1910-namedEntities",
      "value": "INSCOM"
-    }
-   ]
-  },
-  {
-   "signature": "UNLOCATED_SPAN::ABSENT_FROM_DROP_IN_EVERY_REGISTERED_FORM",
-   "count": 11,
-   "lane": "B",
-   "posts": 11,
-   "identities": [
-    [
-     "Sara Carter",
-     3
-    ],
-    [
-     "Ray Chandler",
-     2
-    ],
-    [
-     "Standard Hotel",
-     1
-    ],
-    [
-     "Sean Hannity",
-     1
-    ],
-    [
-     "Maxine Waters",
-     1
-    ],
-    [
-     "Carter Page",
-     1
-    ],
-    [
-     "House of Cards",
-     1
-    ],
-    [
-     "Samantha Power",
-     1
-    ]
-   ],
-   "examples": [
-    {
-     "postNum": 1054,
-     "heldKey": "UNLOCATED-1054-namedEntities",
-     "value": "Ray Chandler"
-    },
-    {
-     "postNum": 1138,
-     "heldKey": "UNLOCATED-1138-namedEntities",
-     "value": "Ray Chandler"
-    },
-    {
-     "postNum": 1203,
-     "heldKey": "UNLOCATED-1203-namedEntities",
-     "value": "Standard Hotel"
     }
    ]
   },
@@ -513,6 +472,34 @@
    ]
   },
   {
+   "signature": "UNLOCATED_SPAN::CASE_VARIANT_NOT_REGISTERED",
+   "count": 2,
+   "lane": "A",
+   "posts": 2,
+   "identities": [
+    [
+     "Whitaker",
+     1
+    ],
+    [
+     "Gang of 8",
+     1
+    ]
+   ],
+   "examples": [
+    {
+     "postNum": 2955,
+     "heldKey": "UNLOCATED-2955-namedEntities",
+     "value": "Whitaker"
+    },
+    {
+     "postNum": 3690,
+     "heldKey": "UNLOCATED-3690-namedEntities",
+     "value": "Gang of 8"
+    }
+   ]
+  },
+  {
    "signature": "BOUNDARY_CROSSING::CONTAINS_URL",
    "count": 1,
    "lane": "A",
@@ -526,17 +513,9 @@
    ]
   }
  ],
- "repeatedIdentityClusters": 17,
- "singletonIdentities": 69,
+ "repeatedIdentityClusters": 14,
+ "singletonIdentities": 70,
  "largestIdentityClusters": [
-  [
-   "Whitaker",
-   7
-  ],
-  [
-   "Wray",
-   5
-  ],
   [
    "WikiLeaks",
    5
@@ -594,10 +573,6 @@
    2
   ],
   [
-   "Gang of 8",
-   2
-  ],
-  [
    "Pompeo",
    1
   ],
@@ -607,6 +582,18 @@
   ],
   [
    "Agnes Nixon",
+   1
+  ],
+  [
+   "Grassley",
+   1
+  ],
+  [
+   "Alex Jones",
+   1
+  ],
+  [
+   "France",
    1
   ]
  ],
@@ -2423,24 +2410,6 @@
    "lane": "C"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1122-namedEntities::Wray::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1122,
-   "heldKey": "UNLOCATED-1122-namedEntities",
-   "certifiedValue": "Wray",
-   "alsoDuplicateKey": false,
-   "identity": "Wray",
-   "kind": "namedEntities",
-   "registeredForms": 3,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": "WRAY",
-   "locatedCaseInsensitivelyUnder": false,
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 2,
-   "subtype": "IDENTITY_SPLIT_ACROSS_TWO_REGISTRY_GROUPS",
-   "lane": "C"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1122-namedEntities::Horowitz::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 1122,
@@ -2720,24 +2689,6 @@
    "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
    "lane": "B",
    "refusedBecause": "1 drop(s) contain word-bounded \"WATERGATE\" without recording Watergate, so this casing is not a reliable marker of the identity"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1862-namedEntities::Wray::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 1862,
-   "heldKey": "UNLOCATED-1862-namedEntities",
-   "certifiedValue": "Wray",
-   "alsoDuplicateKey": false,
-   "identity": "Wray",
-   "kind": "namedEntities",
-   "registeredForms": 3,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": "WRAY",
-   "locatedCaseInsensitivelyUnder": false,
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 2,
-   "subtype": "IDENTITY_SPLIT_ACROSS_TWO_REGISTRY_GROUPS",
-   "lane": "C"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1863-namedEntities::Sean Hannity::0",
@@ -3165,24 +3116,6 @@
    "refusedBecause": "1 drop(s) contain word-bounded \"HOUSE OF CARDS\" without recording House of Cards, so this casing is not a reliable marker of the identity"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2495-namedEntities::Whitaker::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2495,
-   "heldKey": "UNLOCATED-2495-namedEntities",
-   "certifiedValue": "Whitaker",
-   "alsoDuplicateKey": false,
-   "identity": "Whitaker",
-   "kind": "namedEntities",
-   "registeredForms": 3,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": "WHITAKER",
-   "locatedCaseInsensitivelyUnder": false,
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 2,
-   "subtype": "IDENTITY_SPLIT_ACROSS_TWO_REGISTRY_GROUPS",
-   "lane": "C"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2499-namedEntities::House of Cards::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 2499,
@@ -3199,24 +3132,6 @@
    "registryGroupsClaimingThisSpelling": 1,
    "subtype": "ABSENT_FROM_DROP_IN_EVERY_REGISTERED_FORM",
    "lane": "B"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2501-namedEntities::Whitaker::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2501,
-   "heldKey": "UNLOCATED-2501-namedEntities",
-   "certifiedValue": "Whitaker",
-   "alsoDuplicateKey": false,
-   "identity": "Whitaker",
-   "kind": "namedEntities",
-   "registeredForms": 3,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": "WHITAKER",
-   "locatedCaseInsensitivelyUnder": false,
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 2,
-   "subtype": "IDENTITY_SPLIT_ACROSS_TWO_REGISTRY_GROUPS",
-   "lane": "C"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2501-namedEntities::President::0",
@@ -3256,24 +3171,6 @@
    "lane": "C"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2555-namedEntities::Whitaker::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2555,
-   "heldKey": "UNLOCATED-2555-namedEntities",
-   "certifiedValue": "Whitaker",
-   "alsoDuplicateKey": false,
-   "identity": "Whitaker",
-   "kind": "namedEntities",
-   "registeredForms": 3,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": "WHITAKER",
-   "locatedCaseInsensitivelyUnder": false,
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 2,
-   "subtype": "IDENTITY_SPLIT_ACROSS_TWO_REGISTRY_GROUPS",
-   "lane": "C"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2555-namedEntities::Horowitz::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 2555,
@@ -3291,24 +3188,6 @@
    "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
    "lane": "B",
    "refusedBecause": "2 drop(s) contain word-bounded \"HOROWITZ\" without recording Horowitz, so this casing is not a reliable marker of the identity"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2555-namedEntities::Wray::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2555,
-   "heldKey": "UNLOCATED-2555-namedEntities",
-   "certifiedValue": "Wray",
-   "alsoDuplicateKey": false,
-   "identity": "Wray",
-   "kind": "namedEntities",
-   "registeredForms": 3,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": "WRAY",
-   "locatedCaseInsensitivelyUnder": false,
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 2,
-   "subtype": "IDENTITY_SPLIT_ACROSS_TWO_REGISTRY_GROUPS",
-   "lane": "C"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2576-namedEntities::Samantha Power::0",
@@ -3421,24 +3300,6 @@
    "refusedBecause": "\"god\" is <= 3 characters; a short token gets no blanket exemption, and it needs an owner ruling like GOD did"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2766-namedEntities::Whitaker::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 2766,
-   "heldKey": "UNLOCATED-2766-namedEntities",
-   "certifiedValue": "Whitaker",
-   "alsoDuplicateKey": false,
-   "identity": "Whitaker",
-   "kind": "namedEntities",
-   "registeredForms": 3,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": "WHITAKER",
-   "locatedCaseInsensitivelyUnder": false,
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 2,
-   "subtype": "IDENTITY_SPLIT_ACROSS_TWO_REGISTRY_GROUPS",
-   "lane": "C"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2768-namedEntities::Kamala Harris::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 2768,
@@ -3539,13 +3400,13 @@
    "identity": "Whitaker",
    "kind": "namedEntities",
    "registeredForms": 3,
-   "reachableByCanonicalKeyedLookup": true,
+   "reachableByCanonicalKeyedLookup": false,
    "locatedUnder": null,
-   "locatedCaseInsensitivelyUnder": "Whitaker",
+   "locatedCaseInsensitivelyUnder": "WHITAKER",
    "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 2,
-   "subtype": "IDENTITY_SPLIT_ACROSS_TWO_REGISTRY_GROUPS",
-   "lane": "C"
+   "registryGroupsClaimingThisSpelling": 1,
+   "subtype": "CASE_VARIANT_NOT_REGISTERED",
+   "lane": "A"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2984-namedEntities::Building 8::0",
@@ -3660,42 +3521,6 @@
    "refusedBecause": "2 drop(s) contain word-bounded \"SCARAMUCCI\" without recording Scaramucci, so this casing is not a reliable marker of the identity"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3028-namedEntities::Whitaker::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 3028,
-   "heldKey": "UNLOCATED-3028-namedEntities",
-   "certifiedValue": "Whitaker",
-   "alsoDuplicateKey": false,
-   "identity": "Whitaker",
-   "kind": "namedEntities",
-   "registeredForms": 3,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": "WHITAKER",
-   "locatedCaseInsensitivelyUnder": false,
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 2,
-   "subtype": "IDENTITY_SPLIT_ACROSS_TWO_REGISTRY_GROUPS",
-   "lane": "C"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3036-namedEntities::Whitaker::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 3036,
-   "heldKey": "UNLOCATED-3036-namedEntities",
-   "certifiedValue": "Whitaker",
-   "alsoDuplicateKey": false,
-   "identity": "Whitaker",
-   "kind": "namedEntities",
-   "registeredForms": 3,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": "WHITAKER",
-   "locatedCaseInsensitivelyUnder": false,
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 2,
-   "subtype": "IDENTITY_SPLIT_ACROSS_TWO_REGISTRY_GROUPS",
-   "lane": "C"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3059-namedEntities::AG Barr::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 3059,
@@ -3723,7 +3548,7 @@
    "alsoDuplicateKey": false,
    "identity": "Gang of Eight",
    "kind": "namedEntities",
-   "registeredForms": 2,
+   "registeredForms": 3,
    "reachableByCanonicalKeyedLookup": true,
    "locatedUnder": null,
    "locatedCaseInsensitivelyUnder": "Gang of Eight",
@@ -3771,24 +3596,6 @@
    "refusedBecause": "4 drop(s) contain word-bounded \"PRESIDENT OF THE UNITED STATES\" without recording President of the United States, so this casing is not a reliable marker of the identity"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3241-namedEntities::Gang of 8::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 3241,
-   "heldKey": "UNLOCATED-3241-namedEntities",
-   "certifiedValue": "Gang of 8",
-   "alsoDuplicateKey": false,
-   "identity": "Gang of 8",
-   "kind": "namedEntities",
-   "registeredForms": 3,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": "GANG OF 8",
-   "locatedCaseInsensitivelyUnder": false,
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 2,
-   "subtype": "IDENTITY_SPLIT_ACROSS_TWO_REGISTRY_GROUPS",
-   "lane": "C"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3313-namedEntities::Sara Carter::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 3313,
@@ -3826,24 +3633,6 @@
    "refusedBecause": "3 drop(s) contain word-bounded \"Mueller report\" without recording Mueller Report, so this casing is not a reliable marker of the identity"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3330-namedEntities::Pence::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 3330,
-   "heldKey": "UNLOCATED-3330-namedEntities",
-   "certifiedValue": "Pence",
-   "alsoDuplicateKey": false,
-   "identity": "Pence",
-   "kind": "namedEntities",
-   "registeredForms": 3,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": "PENCE",
-   "locatedCaseInsensitivelyUnder": false,
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 2,
-   "subtype": "IDENTITY_SPLIT_ACROSS_TWO_REGISTRY_GROUPS",
-   "lane": "C"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3647-namedEntities::US Senate::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 3647,
@@ -3871,13 +3660,13 @@
    "identity": "Gang of 8",
    "kind": "namedEntities",
    "registeredForms": 3,
-   "reachableByCanonicalKeyedLookup": true,
+   "reachableByCanonicalKeyedLookup": false,
    "locatedUnder": null,
    "locatedCaseInsensitivelyUnder": "Gang of 8",
    "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 2,
-   "subtype": "IDENTITY_SPLIT_ACROSS_TWO_REGISTRY_GROUPS",
-   "lane": "C"
+   "registryGroupsClaimingThisSpelling": 1,
+   "subtype": "CASE_VARIANT_NOT_REGISTERED",
+   "lane": "A"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3824-namedEntities::Michael Beatty::0",
@@ -4018,7 +3807,7 @@
    "alsoDuplicateKey": false,
    "identity": "Gang of Eight",
    "kind": "namedEntities",
-   "registeredForms": 2,
+   "registeredForms": 3,
    "reachableByCanonicalKeyedLookup": true,
    "locatedUnder": null,
    "locatedCaseInsensitivelyUnder": "Gang of Eight",
@@ -4100,24 +3889,6 @@
    "locatedInQuotedPostUnder": null,
    "registryGroupsClaimingThisSpelling": 1,
    "subtype": "NO_ALIAS_EVER_REGISTERED",
-   "lane": "C"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-433-namedEntities::Wray::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 433,
-   "heldKey": "UNLOCATED-433-namedEntities",
-   "certifiedValue": "Wray",
-   "alsoDuplicateKey": false,
-   "identity": "Wray",
-   "kind": "namedEntities",
-   "registeredForms": 3,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": "WRAY",
-   "locatedCaseInsensitivelyUnder": false,
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 2,
-   "subtype": "IDENTITY_SPLIT_ACROSS_TWO_REGISTRY_GROUPS",
    "lane": "C"
   },
   {
@@ -4469,24 +4240,6 @@
    "refusedBecause": "4 drop(s) contain word-bounded \"DELTA\" without recording Delta, so this casing is not a reliable marker of the identity"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-787-namedEntities::Wray::0",
-   "reason": "UNLOCATED_SPAN",
-   "postNum": 787,
-   "heldKey": "UNLOCATED-787-namedEntities",
-   "certifiedValue": "Wray",
-   "alsoDuplicateKey": false,
-   "identity": "Wray",
-   "kind": "namedEntities",
-   "registeredForms": 3,
-   "reachableByCanonicalKeyedLookup": true,
-   "locatedUnder": "WRAY",
-   "locatedCaseInsensitivelyUnder": false,
-   "locatedInQuotedPostUnder": false,
-   "registryGroupsClaimingThisSpelling": 2,
-   "subtype": "IDENTITY_SPLIT_ACROSS_TWO_REGISTRY_GROUPS",
-   "lane": "C"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-857-namedEntities::Reuters::0",
    "reason": "UNLOCATED_SPAN",
    "postNum": 857,
@@ -4571,13 +4324,13 @@
    "identity": "Awan",
    "kind": "namedEntities",
    "registeredForms": 3,
-   "reachableByCanonicalKeyedLookup": true,
+   "reachableByCanonicalKeyedLookup": false,
    "locatedUnder": null,
    "locatedCaseInsensitivelyUnder": null,
    "locatedInQuotedPostUnder": null,
-   "registryGroupsClaimingThisSpelling": 2,
-   "subtype": "IDENTITY_SPLIT_ACROSS_TWO_REGISTRY_GROUPS",
-   "lane": "C"
+   "registryGroupsClaimingThisSpelling": 1,
+   "subtype": "ABSENT_FROM_DROP_IN_EVERY_REGISTERED_FORM",
+   "lane": "B"
   },
   {
    "conflictId": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p1553-s000::0",

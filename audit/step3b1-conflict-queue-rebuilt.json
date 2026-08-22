@@ -2,42 +2,36 @@
  "note": "Conflict queue re-derived from the CURRENT bundle. Not the old CSV minus anything.",
  "measuredFrom": "audit/occurrence-ledger-dryrun.json",
  "originalRows": 945,
- "rebuiltRows": 220,
- "netChange": -725,
+ "rebuiltRows": 207,
+ "netChange": -738,
  "byReason": {
-  "UNLOCATED_SPAN": 119,
+  "UNLOCATED_SPAN": 106,
   "BOUNDARY_CROSSING": 82,
   "SAME_CATEGORY_PARTIAL_OVERLAP": 19
  },
  "byKind": {
-  "namedEntities": 117,
+  "namedEntities": 104,
   "claims": 86,
   "themeAnchors": 8,
   "questions": 5,
   "directives": 4
  },
- "distinctHeldKeys": 200,
- "distinctPosts": 174,
+ "distinctHeldKeys": 191,
+ "distinctPosts": 165,
  "resolvedSince": {
-  "count": 729,
+  "count": 741,
   "byFamily": {
-   "UNLOCATED_SPAN": 397,
+   "UNLOCATED_SPAN": 409,
    "BOUNDARY_CROSSING": 160,
    "DUPLICATE_KEY_CONFLICTING_METADATA": 42
   }
  },
  "appearedSince": {
-  "count": 4,
+  "count": 3,
   "byFamily": {
-   "SAME_CATEGORY_PARTIAL_OVERLAP": 3,
-   "UNLOCATED_SPAN": 1
+   "SAME_CATEGORY_PARTIAL_OVERLAP": 3
   },
   "examples": [
-   {
-    "key": "UNLOCATED_SPAN::UNLOCATED-3241-namedEntities::Gang of 8",
-    "was": 0,
-    "now": 1
-   },
    {
     "key": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p1553-s000",
     "was": 0,
@@ -813,15 +807,6 @@
    "certifiedValue": "US Senate"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1122-namedEntities::Wray::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1122-namedEntities",
-   "postNum": 1122,
-   "kind": "namedEntities",
-   "detail": "Wray",
-   "certifiedValue": "Wray"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1122-namedEntities::Horowitz::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-1122-namedEntities",
@@ -955,15 +940,6 @@
    "kind": "namedEntities",
    "detail": "Watergate",
    "certifiedValue": "Watergate"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1862-namedEntities::Wray::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1862-namedEntities",
-   "postNum": 1862,
-   "kind": "namedEntities",
-   "detail": "Wray",
-   "certifiedValue": "Wray"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1863-namedEntities::Sean Hannity::0",
@@ -1173,15 +1149,6 @@
    "certifiedValue": "House of Cards"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2495-namedEntities::Whitaker::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2495-namedEntities",
-   "postNum": 2495,
-   "kind": "namedEntities",
-   "detail": "Whitaker",
-   "certifiedValue": "Whitaker"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2499-namedEntities::House of Cards::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-2499-namedEntities",
@@ -1189,15 +1156,6 @@
    "kind": "namedEntities",
    "detail": "House of Cards",
    "certifiedValue": "House of Cards"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2501-namedEntities::Whitaker::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2501-namedEntities",
-   "postNum": 2501,
-   "kind": "namedEntities",
-   "detail": "Whitaker",
-   "certifiedValue": "Whitaker"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2501-namedEntities::President::0",
@@ -1218,15 +1176,6 @@
    "certifiedValue": "Kavanaugh"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2555-namedEntities::Whitaker::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2555-namedEntities",
-   "postNum": 2555,
-   "kind": "namedEntities",
-   "detail": "Whitaker",
-   "certifiedValue": "Whitaker"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2555-namedEntities::Horowitz::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-2555-namedEntities",
@@ -1234,15 +1183,6 @@
    "kind": "namedEntities",
    "detail": "Horowitz",
    "certifiedValue": "Horowitz"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2555-namedEntities::Wray::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2555-namedEntities",
-   "postNum": 2555,
-   "kind": "namedEntities",
-   "detail": "Wray",
-   "certifiedValue": "Wray"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2576-namedEntities::Samantha Power::0",
@@ -1297,15 +1237,6 @@
    "kind": "namedEntities",
    "detail": "God",
    "certifiedValue": "God"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2766-namedEntities::Whitaker::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2766-namedEntities",
-   "postNum": 2766,
-   "kind": "namedEntities",
-   "detail": "Whitaker",
-   "certifiedValue": "Whitaker"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2768-namedEntities::Kamala Harris::0",
@@ -1416,24 +1347,6 @@
    "certifiedValue": "Scaramucci"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3028-namedEntities::Whitaker::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3028-namedEntities",
-   "postNum": 3028,
-   "kind": "namedEntities",
-   "detail": "Whitaker",
-   "certifiedValue": "Whitaker"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3036-namedEntities::Whitaker::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3036-namedEntities",
-   "postNum": 3036,
-   "kind": "namedEntities",
-   "detail": "Whitaker",
-   "certifiedValue": "Whitaker"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3059-namedEntities::AG Barr::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-3059-namedEntities",
@@ -1470,15 +1383,6 @@
    "certifiedValue": "President of the United States"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3241-namedEntities::Gang of 8::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3241-namedEntities",
-   "postNum": 3241,
-   "kind": "namedEntities",
-   "detail": "Gang of 8",
-   "certifiedValue": "Gang of 8"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3313-namedEntities::Sara Carter::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-3313-namedEntities",
@@ -1495,15 +1399,6 @@
    "kind": "namedEntities",
    "detail": "Mueller Report",
    "certifiedValue": "Mueller Report"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3330-namedEntities::Pence::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3330-namedEntities",
-   "postNum": 3330,
-   "kind": "namedEntities",
-   "detail": "Pence",
-   "certifiedValue": "Pence"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3647-namedEntities::US Senate::0",
@@ -1630,15 +1525,6 @@
    "kind": "namedEntities",
    "detail": "Cambridge Dictionary",
    "certifiedValue": "Cambridge Dictionary"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-433-namedEntities::Wray::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-433-namedEntities",
-   "postNum": 433,
-   "kind": "namedEntities",
-   "detail": "Wray",
-   "certifiedValue": "Wray"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-4339-namedEntities::Michigan::0",
@@ -1810,15 +1696,6 @@
    "kind": "namedEntities",
    "detail": "Delta",
    "certifiedValue": "Delta"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-787-namedEntities::Wray::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-787-namedEntities",
-   "postNum": 787,
-   "kind": "namedEntities",
-   "detail": "Wray",
-   "certifiedValue": "Wray"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-857-namedEntities::Reuters::0",
