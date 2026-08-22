@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-08-19T19:28:48.093Z",
+ "generatedAt": "2026-08-22T03:36:19.559Z",
  "status": "AUDIT_ONLY — nothing classified, nothing rebuilt, nothing deployed",
  "rule": "A unit stays in the queue unless every non-whitespace character it owns is painted by an active category. Inline highlights (entity, bracket, theme anchor, link) never speak for the sentence around them.",
  "sources": {
   "postsFile": "public/data/posts.json",
-  "postsSha256": "de60265189e14af555c552a689d7375237654982cd1601219bcc25675ae00fda",
+  "postsSha256": "2ee598af3809890ded96bb434e02c4179650e5f61b8f229198731db82c94cdba",
   "postCount": 4966,
   "coordinateSystem": "runtimeText() — board markup stripped and HTML entities decoded, exactly as the browser paints",
   "segmenter": "scripts/lib/segment.mjs unitsFor(), extended with offsets",
@@ -27,78 +27,77 @@
    "prediction"
   ],
   "certifiedButUnpaintedLayers": [
-   "emphasis",
    "context",
    "evidence",
    "code"
   ],
+  "retiredEntirely": [
+   "emphasis (2026-08-21: section, data and highlights)",
+   "impliedConclusions (2026-08-21)",
+   "verificationHooks (2026-08-21)"
+  ],
   "notPaintedByOwnerRuling": [
-   "emphasis (2026-08-17)",
-   "contextUnits (2026-08-17)",
-   "impliedConclusions (retired)",
-   "verificationHooks (merged into claims)"
+   "contextUnits (2026-08-17)"
   ]
  },
  "counts": {
   "postsWithText": 4735,
   "units": 29569,
-  "fullyPainted": 13545,
-  "paintedSpans": 42367,
+  "fullyPainted": 19038,
+  "paintedSpans": 47491,
   "byForm": {
-   "complete_sentence": 6244,
-   "fragment_or_label": 2663,
+   "complete_sentence": 792,
+   "fragment_or_label": 2627,
    "q_signature": 4524,
-   "symbolic_or_numeric": 426,
-   "sentence_like_no_terminal": 399,
-   "colon_or_semicolon_block": 132,
+   "symbolic_or_numeric": 425,
+   "sentence_like_no_terminal": 397,
+   "colon_or_semicolon_block": 130,
    "url_or_reference": 1636
   },
   "byHint": {
-   "CLAIM_CANDIDATE": 6315,
-   "RELIGIOUS_THEME_CANDIDATE": 178,
-   "LABEL_FRAGMENT_OR_DEVICE": 3063,
+   "RELIGIOUS_THEME_CANDIDATE": 50,
+   "CLAIM_CANDIDATE": 1164,
+   "LABEL_FRAGMENT_OR_DEVICE": 3028,
    "Q_SIGNATURE": 4524,
-   "NEEDS_CONTEXT": 22,
-   "PREDICTION_CANDIDATE": 130,
-   "DIRECTIVE_CANDIDATE": 118,
+   "DIRECTIVE_CANDIDATE": 45,
    "LINK_OR_CITATION": 1636,
-   "QUESTION_NOT_CERTIFIED": 38
+   "QUESTION_NOT_CERTIFIED": 57,
+   "PREDICTION_CANDIDATE": 26,
+   "NEEDS_CONTEXT": 1
   },
   "posts": 4966,
-  "queued": 16024,
-  "postsInQueue": 4484,
-  "partialOnly": 3505,
-  "unhighlighted": 9898,
-  "inlineOnlyFullyPainted": 2621,
-  "punctuationOnlyUncovered": 1053,
+  "queued": 10531,
+  "postsInQueue": 4454,
+  "partialOnly": 2041,
+  "unhighlighted": 5857,
+  "inlineOnlyFullyPainted": 2633,
+  "punctuationOnlyUncovered": 1020,
   "rendererMissLikely": 0,
-  "alreadyCertifiedUnpainted": 9894,
-  "quotedSource": 767,
-  "trulyUnclassified": 6130,
-  "distinctSentenceTexts": 8495,
+  "alreadyCertifiedUnpainted": 4440,
+  "quotedSource": 213,
+  "trulyUnclassified": 6091,
+  "distinctSentenceTexts": 4702,
   "byTriageBucket": {
-   "D_INLINE_ONLY_FULLY_PAINTED": 948,
-   "G_CERTIFIED_CONTEXT_NOT_PAINTED": 4023,
-   "J_UNCLASSIFIED_PROSE": 1323,
-   "E_CERTIFIED_QUOTED_SOURCE": 728,
-   "C_PUNCTUATION_ONLY": 892,
-   "F_CERTIFIED_EMPHASIS_NOT_PAINTED": 1423,
-   "H_CERTIFIED_CODE_NOT_PAINTED": 434,
+   "D_INLINE_ONLY_FULLY_PAINTED": 960,
+   "G_CERTIFIED_CONTEXT_NOT_PAINTED": 1234,
+   "C_PUNCTUATION_ONLY": 859,
+   "J_UNCLASSIFIED_PROSE": 742,
+   "H_CERTIFIED_CODE_NOT_PAINTED": 293,
    "B_LINK_OR_REFERENCE": 1636,
    "A_SIGNATURE": 4524,
-   "I_CERTIFIED_EVIDENCE_NOT_PAINTED": 93
+   "E_CERTIFIED_QUOTED_SOURCE": 171,
+   "I_CERTIFIED_EVIDENCE_NOT_PAINTED": 112
   },
   "distinctTextsByTriageBucket": {
-   "D_INLINE_ONLY_FULLY_PAINTED": 741,
-   "G_CERTIFIED_CONTEXT_NOT_PAINTED": 2886,
-   "J_UNCLASSIFIED_PROSE": 1054,
-   "E_CERTIFIED_QUOTED_SOURCE": 624,
-   "C_PUNCTUATION_ONLY": 464,
-   "F_CERTIFIED_EMPHASIS_NOT_PAINTED": 1137,
-   "H_CERTIFIED_CODE_NOT_PAINTED": 352,
+   "D_INLINE_ONLY_FULLY_PAINTED": 749,
+   "G_CERTIFIED_CONTEXT_NOT_PAINTED": 972,
+   "C_PUNCTUATION_ONLY": 445,
+   "J_UNCLASSIFIED_PROSE": 591,
+   "H_CERTIFIED_CODE_NOT_PAINTED": 258,
    "B_LINK_OR_REFERENCE": 1557,
    "A_SIGNATURE": 3,
-   "I_CERTIFIED_EVIDENCE_NOT_PAINTED": 92
+   "E_CERTIFIED_QUOTED_SOURCE": 157,
+   "I_CERTIFIED_EVIDENCE_NOT_PAINTED": 111
   }
  }
 }

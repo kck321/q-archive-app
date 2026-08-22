@@ -29,7 +29,6 @@ export const CERTIFIED = {
   // section rather than an attribute. telegraphic does move, because it is not a judgement - it is
   // "four words or fewer", and the queue is overwhelmingly short label-like lines.
   claimAttributes: { checkable: 1926, sourceProvided: 438, conclusions: 966, telegraphic: 3546 },
-  emphasis: { occurrences: 3105, posts: 1356, unresolved: 245 },
   /** Units that are BOTH a question and a directive. */
   overlap: 228,
   totalPosts: 4966,
@@ -59,7 +58,6 @@ export const CERTIFIED = {
 export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number; unit: string }> = {
   claims: { occurrences: 8912, posts: 3086, unit: 'occurrences' },
   predictions: { occurrences: 847, posts: 674, unit: 'occurrences' },
-  emphasis: { occurrences: 3105, posts: 1356, unit: 'occurrences' },
   // "mentions" is the right word here and the only section where it is: an entity is counted
   // once per resolved mention across the 1,066 canonical entities Q named in prose. The other 135
   // certified identities contribute none — they are linked sources, not words Q wrote — which is
@@ -68,8 +66,6 @@ export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number
   // Themes are assignments rather than spans — a theme is inferred from a drop, not copied out
   // of it — so the unit is named accordingly. 2,393 detected + 2 owner rulings.
   themes: { occurrences: 2644, posts: 1898, unit: 'assignments' },
-  impliedConclusions: { occurrences: 966, posts: 596, unit: 'conclusions' },
-  verificationHooks: { occurrences: 1926, posts: 1028, unit: 'checkable claims' },
 }
 
 /**
@@ -357,14 +353,6 @@ export const SECTIONS: SectionInfo[] = [
     note: 'Predictions and Claims are both assertions and are shown as separate sections. A conditional ("If Mueller is dirty, RR must also be dirty."), a statement of intent ("We will not comply.") and a future word used as a modifier ("the coming storm") are claims, not forecasts. Predictions can be evaluated against later events without altering Q’s original wording.',
   },
   {
-    id: 'impliedConclusions',
-    title: 'Q Conclusions',
-    short: 'The takeaway Q is asking the reader to reach.',
-    covers: 'Statements where Q draws an inference, takeaway, deduction, or conclusion from information presented in the post.',
-    answers: 'What conclusion was Q drawing?',
-    note: 'This differs from a plain claim: it reflects the conclusion Q asks the reader to reach after considering the preceding facts, questions, evidence or relationships.',
-  },
-  {
     id: 'links',
     title: 'Q Evidence & References',
     short: 'Material Q cites, links to, quotes, attaches, or points readers toward.',
@@ -403,23 +391,6 @@ export const SECTIONS: SectionInfo[] = [
     answers: 'What notation did Q use?',
     certified: `${n(1957)} occurrences · ${n(747)} distinct codes · ${n(856)} posts`,
     note: 'Inclusion means the pattern appears code-like or structurally significant — it does not mean its meaning is known. Only 7 of 739 codes carry an interpretation, each stating the evidence for it; the other 732 are preserved exactly as written with no meaning attached. Two of the seven — [D] for Democrat and [F] for Foreign — are owner adjudications rather than readings the corpus establishes on its own, and are labelled as such. Ordinary words in brackets are Emphasis, and dates and ALL CAPS alone are not codes.',
-  },
-  {
-    id: 'emphasis',
-    title: 'Q Emphasis',
-    short: 'The formatting, repetition and structure Q used to draw attention to language.',
-    covers: 'Capitals that contrast with the text around them, bracketed words, quoted words, punctuation runs, deliberate spacing, repeated words, questions and instructions, and parallel rhetorical structure.',
-    answers: 'What did Q appear to place special emphasis on?',
-    note: 'Emphasis records concrete formatting, repetition, punctuation, or rhetorical structure Q used to draw attention to language. It does not infer importance merely because a phrase is cryptic, political, or written in Q’s usual style. It is an attribute, and can coexist with any other classification.',
-    certified: '3,111 occurrences across 1,356 posts, in nine device types. 245 arguable cases are held in the Resolution Center rather than counted.',
-  },
-  {
-    id: 'verificationHooks',
-    title: 'Checkable Claims',
-    short: 'Claims stated specifically enough to be checked against the record.',
-    covers: 'Assertions containing a date, number, name, document or event specific enough that someone could go and test them against an independent source.',
-    answers: 'Which claims are specific enough to check?',
-    note: 'Listing a claim here says nothing about whether it turned out to be true — only that it is specific enough to be tested.',
   },
 ]
 

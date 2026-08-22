@@ -65,7 +65,6 @@ const CAT_HL_COLORS: Record<string, string> = {
   predictions:        'bg-violet-500/60 text-violet-50',
   namedEntities:      'bg-cyan-500/60 text-cyan-50',
   themes:             'bg-indigo-500/60 text-indigo-50',
-  impliedConclusions: 'bg-orange-500/60 text-orange-50',
   verificationHooks:  'bg-fuchsia-500/60 text-fuchsia-50',
 }
 
@@ -75,7 +74,6 @@ const CAT_FLASH_ANIM: Record<string, string> = {
   predictions:        'animate-flash-predictions',
   namedEntities:      'animate-flash-entities',
   themes:             'animate-flash-themes',
-  impliedConclusions: 'animate-flash-conclusions',
   verificationHooks:  'animate-flash-hooks',
 }
 
@@ -509,8 +507,6 @@ const ANALYSIS_CAT_LABEL: Record<string, string> = {
   predictions: 'Predictions',
   namedEntities: 'Named Entities',
   themes: 'Themes',
-  impliedConclusions: 'Implied Conclusions',
-  verificationHooks: 'Checkable Claims',
   question: 'Q Questions',
   request: 'Q Directives',
   bracket: 'Q [ Brackets ]',
@@ -522,7 +518,6 @@ const ANALYSIS_CAT_BADGE: Record<string, string> = {
   predictions: 'bg-violet-900/60 text-violet-300 border-violet-700/60',
   namedEntities: 'bg-cyan-900/60 text-cyan-300 border-cyan-700/60',
   themes: 'bg-indigo-900/60 text-indigo-300 border-indigo-700/60',
-  impliedConclusions: 'bg-orange-900/60 text-orange-300 border-orange-700/60',
   verificationHooks: 'bg-fuchsia-900/60 text-fuchsia-300 border-fuchsia-700/60',
   question: 'bg-blue-900/60 text-blue-300 border-blue-700/60',
   request: 'bg-green-900/60 text-green-300 border-green-700/60',

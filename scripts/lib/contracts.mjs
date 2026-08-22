@@ -12,6 +12,27 @@
 // whether the deployed system still represents it correctly.
 
 /** Frozen canonical counts. These are the numbers the whole project is certified against. */
+// ── THREE SECTIONS RETIRED, AND FOUR COUNTS MOVED (2026-08-21) ──────────────────────────────
+//
+// EMPHASIS, Q CONCLUSIONS and CHECKABLE CLAIMS are retired by owner ruling: "get rid of the
+// emphasis category ... everything associated with it ... also Q Conclusions and Checkable Claims
+// data/highlights". Conclusions and Checkable Claims had already lost their NAV SECTIONS in
+// August; what goes now is the underlying data, because a sentence carrying only a retired span
+// reads as highlighted to a coverage scan while the reader sees nothing — and the residual census
+// this clears the way for would inherit that lie.
+//
+// The four primary counts below move for Step 3B-1, each already applied and gated:
+//
+//   questions   6,503 -> 6,324   163 unified directive+question pairs became non-painting
+//                                secondaries, 16 same-category fragments withdrawn
+//   directives  3,037 -> 2,940   97 withdrawn where another category won the complete sentence
+//   claims      8,912 -> 8,814   92 by the plan, 6 by the adjudicated held rows
+//   predictions   847 ->   843   4 withdrawn
+//
+// Claims did NOT move for the retirement. All 966 conclusions and 1,926 checkable claims were
+// already certified Claims carrying an attribute — that was the stated basis of both August
+// rulings — so retiring the attribute removes a second view of a row, never the row.
+
 export const CANONICAL = {
   posts: 4966,
   // 6,443 -> 6,454 on 2026-08-19 by owner ruling: 11 interrogative units certified in another
@@ -34,7 +55,7 @@ export const CANONICAL = {
   // "U.S. Senate", "Harris v." are extended to the full sentence, and the tail the same splitter
   // had certified separately is absorbed into them. Nothing left the archive - the same words are
   // certified once, whole, instead of twice, in halves. See audit/abbreviation-span-repairs.json.
-  questions: { occurrences: 6503, distinct: 5358, posts: 1705 },
+  questions: { occurrences: 6324, distinct: 5358, posts: 1705 },
   // v5, 16 Aug 2026 — Q Directives migrated to sourceSpansV2 provenance under owner ruling.
   // 2,705 -> 2,552: 153 occurrences removed from Q Directives ONLY (quoted news, scraped code,
   // blessings, declarative-lead misreads, questions, a prediction). Nothing was deleted from the
@@ -43,7 +64,7 @@ export const CANONICAL = {
   // what the page actually renders — the old 1,472/1,417 counted directives-final.json alone and
   // never matched the UI.
   // +485 occurrences (486 ruled, 1 already certified), +185 wordings, +225 posts.
-  directives: { occurrences: 3037, distinct: 1829, posts: 1689 },
+  directives: { occurrences: 2940, distinct: 1829, posts: 1689 },
   // 4,181 -> 4,188 on 2026-08-13 by owner adjudication, not by a classifier. Six exact
   // occurrences of "Pure evil." / "PURE EVIL." plus "The 'real' racist." in #2917. The corpus
   // search that found them also showed the fuller variants ("These people are pure evil.",
@@ -65,7 +86,7 @@ export const CANONICAL = {
   // condemning 'Qanon'", #4893 "Example:" and "Federal Appeals Court reinstates conviction", #4853
   // "Wife: CIA" and "Husband: DOJ". distinct +5, not +6: "Example:" shares a key with "Example."
   // already certified on #1015 and #1220. posts +2: #4861 and #4853 gain their first claim.
-  claims: { occurrences: 8912, distinct: 6814, posts: 3086 },
+  claims: { occurrences: 8814, distinct: 6814, posts: 3086 },
   // 630 -> 595: -73 technical nonpredictions, -56 arguable rows withdrawn to the review
   // backlog, +66 unique moves from Claims, +28 high-confidence predictions the extractor
   // missed. posts 520 -> 490. The 91 withdrawn/held rows are NOT deleted — they sit in
@@ -75,7 +96,7 @@ export const CANONICAL = {
   // that drop its first certified prediction.
   // +4 on 2026-08-21 (r15): "MOVIE 1 [Full]: The 'START'" and "MOVIE 3 - TBA" on #1928 and #1929.
   // posts unchanged - both drops already carried certified predictions.
-  predictions: { occurrences: 847, posts: 674 },
+  predictions: { occurrences: 843, posts: 674 },
   evidence: { occurrences: 6590, posts: 3883 },
   entities: {
     // 1,332 detected + 1 owner ruling (Dominion Voting Systems, #4963 "Dominion." — the only
@@ -179,7 +200,7 @@ export const CANONICAL = {
   // Emphasis sitting inside them under the standing rule that a question carries no Emphasis
   // (parallel runs 479 -> 481, rows inside questions 1,556 -> 1,560), and one bracket line moved to
   // Codes, because a span cannot be both the notation and the emphasis on it.
-  emphasis: { occurrences: 3105, detected: 3104, ownerRulings: 11, ownerWithdrawals: 2, questionRuleRetired: 2145, posts: 1356 },
+  // emphasis: RETIRED 2026-08-21. The section, its data and its highlights are gone.
   // 2,527 -> 2,526 on 2026-08-14: the owner resolved #150's [L], which is one letter of the
   // [L][d][R] acrostic rather than a notation token. Held in audit/resolution-owner-resolved.json
   // so a rebuild cannot re-queue it. #1277's "[R] = Renegade" is a different case and stays.
@@ -292,16 +313,6 @@ export const SECTION_CONTRACTS = [
     sourceResolution: 'exact characters preserved from the drop',
   },
   {
-    id: 'emphasis',
-    label: 'Q Emphasis',
-    artifact: 'emphasis.json',
-    certifiedCount: CANONICAL.emphasis.occurrences,
-    mayCoexist: '245 arguable devices are held in the Resolution Center and counted in neither direction.',
-    neverDisplayed: 'A queued borderline case must never appear as certified emphasis.',
-    countedBy: 'every occurrence row',
-    sourceResolution: 'sourceText appears within its recorded line, and the line within the post',
-  },
-  {
     id: 'resolution',
     label: 'Resolution Center',
     artifact: 'resolution-queue.json',
@@ -333,28 +344,6 @@ export const OVERLAPS = [
     expected: 32,
     why: 'Entities asks who is referenced; Codes asks how Q marked the reference. "HRC" and "[HRC]" are different analytical objects.',
     crossLink: 'linkedEntityId on the code',
-  },
-  {
-    pair: 'emphasis ↔ questions',
-    expected: null, // measured, not fixed: every repeated_question must exist in Questions
-    why: 'A repeated question is a stylistic fact in Emphasis and a unit in Questions. Repetition being USED rhetorically is a different observation from the question existing.',
-    crossLink: 'emphasis type repeated_question, matched on post + text',
-  },
-  {
-    pair: 'emphasis ↔ directives',
-    expected: null,
-    why: 'Same reasoning as repeated questions: the instruction is the unit, the repetition is the device.',
-    crossLink: 'emphasis type repeated_directive, matched on post + text',
-  },
-  {
-    pair: 'claims ↔ conclusions',
-    // 966 -> 965 on 2026-08-19: #3203's quoted question carried isConclusion and was withdrawn to
-    // Questions by owner ruling. The attribute travels with the row, never with the section.
-    // 965 -> 964 on 2026-08-21: the 2026-08-21 abbreviation repair absorbed tail fragments carrying the attribute; it travels with the ROW, so it leaves with the fragment rather than
-    // being re-attached to the span the fragment turned out to be part of.
-    expected: 964,
-    why: 'isConclusion is an ATTRIBUTE of a claim or a prediction, not a separate population. It must never be added to the claims total.',
-    crossLink: 'claimMeta.isConclusion',
   },
   {
     pair: 'claims ↔ predictions',
@@ -534,12 +523,12 @@ export const NEVER_RECOUNT_RULE = {
 
 /** The apply order the export chain must preserve. A later step must never revert an earlier one. */
 export const APPLY_ORDER = [
-  'backfill-analysis.mjs', 'detect-emphasis.mjs', 'apply-questions.mjs', 'apply-questions-final.mjs',
+  'backfill-analysis.mjs', 'apply-questions.mjs', 'apply-questions-final.mjs',
   'apply-directives.mjs', 'apply-claims.mjs', 'audit-evidence.mjs', 'apply-evidence.mjs',
   'audit-entities.mjs', 'adjudicate-entities-tail.mjs', 'adjudicate-entities-other.mjs',
   'adjudicate-entities-lowconf.mjs', 'resolve-entity-context.mjs', 'apply-entities.mjs',
   'audit-themes.mjs', 'apply-themes.mjs', 'audit-codes.mjs', 'adjudicate-codes.mjs',
-  'apply-codes.mjs', 'audit-emphasis.mjs', 'apply-emphasis.mjs', 'build-resolution-queue.mjs',
+  'apply-codes.mjs', 'retire-sections.mjs', 'build-resolution-queue.mjs',
   // Last: relationships join every section, so every section has to exist first.
   // The literal-span materialisers must run after every apply that rewrites their inputs, or the
   // next export silently reverts them — the same failure that reverted Questions to 6,299 and
@@ -557,7 +546,7 @@ export const APPLY_ORDER = [
 /** Artifacts covered by the certification manifest. */
 export const ARTIFACTS = [
   'posts.json', 'questions.json', 'evidence.json', 'entities.json', 'themes.json',
-  'codes.json', 'emphasis.json', 'resolution-queue.json', 'relationships.json', 'search-index.json',
+  'codes.json', 'resolution-queue.json', 'relationships.json', 'search-index.json',
   // Reader-facing editorial text, and the only artifact here that is prose rather than counts.
   // It is covered for exactly that reason: a silent change to what the archive SAYS about a named
   // person is harder to notice than a count that moves, and impossible to notice from a total.

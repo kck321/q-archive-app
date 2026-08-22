@@ -104,7 +104,6 @@
 // Every apply step is idempotent: running them twice produces the same bundle.
 export const CHAIN = [
   { step: 'backfill-analysis.mjs', kind: 'apply' },
-  { step: 'detect-emphasis.mjs', kind: 'apply' },
   { step: 'apply-questions.mjs', kind: 'apply' },
   { step: 'apply-questions-final.mjs', kind: 'apply' },
   { step: 'apply-directives.mjs', kind: 'apply' },
@@ -122,8 +121,10 @@ export const CHAIN = [
   { step: 'audit-codes.mjs', kind: 'derive' },
   { step: 'adjudicate-codes.mjs', kind: 'derive' },
   { step: 'apply-codes.mjs', kind: 'apply' },
-  { step: 'audit-emphasis.mjs', kind: 'derive' },
-  { step: 'apply-emphasis.mjs', kind: 'apply' },
+  // EMPHASIS IS RETIRED (owner ruling, 2026-08-21). detect-emphasis.mjs, audit-emphasis.mjs and
+  // apply-emphasis.mjs are out of the chain: a step that rebuilds a retired section is a step that
+  // silently un-retires it on the next export. The scripts are kept on disk for provenance —
+  // nothing calls them.
   { step: 'build-resolution-queue.mjs', kind: 'apply' },
   { step: 'materialize-evidence-literals.mjs', kind: 'apply' },
   { step: 'materialize-literal-spans.mjs', kind: 'apply' },
@@ -159,6 +160,11 @@ export const CHAIN = [
   // Drop it and the bundle silently reverts 530 resolved collisions while every total still
   // reconciles — the exact failure shape this chain's header describes.
   { step: 'apply-step3b1.mjs', kind: 'apply' },
+  // THE RETIRED SECTIONS, STRIPPED. apply-claims.mjs rebuilds impliedConclusions and
+  // verificationHooks from audit/claims-final.json on every run, so removing them by hand would
+  // last exactly until the next rebuild. This runs after the last step that writes them and before
+  // the two that read the finished counts, so nothing downstream ever sees a retired section.
+  { step: 'retire-sections.mjs', kind: 'apply' },
   { step: 'build-relationships.mjs', kind: 'apply' },
   { step: 'build-search-index.mjs', kind: 'apply' },
   // Last, and read-only: the reader's acronym info box is derived from the finished entity set

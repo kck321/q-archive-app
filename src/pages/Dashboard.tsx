@@ -14,7 +14,7 @@ import { MonthYearTick, yearStartsOf } from '../lib/chartAxis'
 import ScrollableChart from '../components/ScrollableChart'
 import { useAdmin } from '../components/AdminContext'
 import CoverageScan from '../components/CoverageScan'
-import { catColor, seriesColor } from '../lib/categoryColors'
+import { seriesColor } from '../lib/categoryColors'
 import type { QPost } from '../types'
 
 interface Stats {
@@ -190,8 +190,6 @@ export default function Dashboard() {
     { key: 'predictions',        label: 'Q Predictions', dataKey: 'predictions',        color: '#8b5cf6', dimColor: '#3b0764' },
     { key: 'namedEntities',      label: 'Q Entities',    dataKey: 'namedEntities',      color: '#06b6d4', dimColor: '#164e63' },
     { key: 'themes',             label: 'Q Themes',      dataKey: 'themes',             color: '#6366f1', dimColor: '#312e81' },
-    { key: 'impliedConclusions', label: 'Q Conclusions', dataKey: 'impliedConclusions', color: '#f97316', dimColor: '#7c2d12' },
-    { key: 'verificationHooks',  label: 'Checkable Claims',       dataKey: 'verificationHooks',  color: catColor('verificationHooks'), dimColor: '#701a75' },
   ]
 
   // Ingest state
@@ -1474,7 +1472,6 @@ export default function Dashboard() {
           <StatCard label="Named Entities" value={analysisTotals.namedEntities.toLocaleString()} color="text-cyan-400" to="/analysis?tab=namedEntities" />
           <StatCard label="Themes" value={analysisTotals.themes.toLocaleString()} color="text-indigo-400" to="/analysis?tab=themes" />
           <StatCard label="Impl. Conclusions" value={analysisTotals.impliedConclusions.toLocaleString()} color="text-orange-400" to="/analysis?tab=impliedConclusions" />
-          <StatCard label="Checkable Claims" value={analysisTotals.verificationHooks.toLocaleString()} color="text-fuchsia-400" to="/analysis?tab=verificationHooks" />
         </div>
       )}
 
@@ -1602,8 +1599,6 @@ export default function Dashboard() {
                           { name: 'Predictions',       color: '#8b5cf6' },
                           { name: 'Named Entities',    color: '#06b6d4' },
                           { name: 'Themes',            color: '#6366f1' },
-                          { name: 'Impl. Conclusions', color: '#f97316' },
-                          { name: 'Checkable Claims',      color: catColor('verificationHooks') },
                         )
                       } else if (!isPostsOnly && activeTab) {
                         items.push({ name: activeTab.label, color: activeTab.color })
@@ -1649,8 +1644,6 @@ export default function Dashboard() {
                       <Bar dataKey="predictions"        name="Predictions"        stackId="a" fill="#8b5cf6" radius={[0,0,0,0]} style={{ cursor: 'pointer' }} />
                       <Bar dataKey="namedEntities"      name="Named Entities"     stackId="a" fill="#06b6d4" radius={[0,0,0,0]} style={{ cursor: 'pointer' }} />
                       <Bar dataKey="themes"             name="Themes"             stackId="a" fill="#6366f1" radius={[0,0,0,0]} style={{ cursor: 'pointer' }} />
-                      <Bar dataKey="impliedConclusions" name="Impl. Conclusions"  stackId="a" fill="#f97316" radius={[0,0,0,0]} style={{ cursor: 'pointer' }} />
-                      <Bar dataKey="verificationHooks"  name="Checkable Claims" stackId="a" fill={catColor('verificationHooks')} radius={[2,2,0,0]} style={{ cursor: 'pointer' }} />
                     </>)}
 
                     {/* Single category view */}

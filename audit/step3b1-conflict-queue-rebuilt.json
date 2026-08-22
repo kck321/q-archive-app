@@ -2,10 +2,10 @@
  "note": "Conflict queue re-derived from the CURRENT bundle. Not the old CSV minus anything.",
  "measuredFrom": "audit/occurrence-ledger-dryrun.json",
  "originalRows": 945,
- "rebuiltRows": 459,
- "netChange": -486,
+ "rebuiltRows": 448,
+ "netChange": -497,
  "byReason": {
-  "BOUNDARY_CROSSING": 242,
+  "BOUNDARY_CROSSING": 231,
   "UNLOCATED_SPAN": 199,
   "SAME_CATEGORY_PARTIAL_OVERLAP": 18
  },
@@ -15,17 +15,17 @@
   "directives": 15,
   "questions": 14,
   "themeAnchors": 11,
-  "emphasis": 11,
   "context": 2,
   "predictions": 1
  },
- "distinctHeldKeys": 421,
- "distinctPosts": 333,
+ "distinctHeldKeys": 410,
+ "distinctPosts": 326,
  "resolvedSince": {
-  "count": 489,
+  "count": 500,
   "byFamily": {
    "UNLOCATED_SPAN": 317,
-   "DUPLICATE_KEY_CONFLICTING_METADATA": 42
+   "DUPLICATE_KEY_CONFLICTING_METADATA": 42,
+   "BOUNDARY_CROSSING": 11
   }
  },
  "appearedSince": {
@@ -196,15 +196,6 @@
    "kind": "claims",
    "detail": "touches 2 sentences",
    "certifiedValue": "“It shouldn’t take more than “a week or two” to come to a resolution on the probe.”\nhttp://www.foxnews.com/politics/2018/04/20/rudy-to-rescue-giuliani-vows-to-wrap-up-mueller-probe.html"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::1298|emphasis|10|19::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "1298|emphasis|10|19",
-   "postNum": 1298,
-   "kind": "emphasis",
-   "detail": "touches 0 sentences",
-   "certifiedValue": ">>1241803"
   },
   {
    "conflictId": "BOUNDARY_CROSSING::13|claims|59|99::0",
@@ -430,15 +421,6 @@
    "kind": "claims",
    "detail": "touches 7 sentences",
    "certifiedValue": "Biggest drop on Pol. \nAbove is reason why the shills are sliding. In case you didn’t know, shills log and send new info back to ASF for instruction. They use a 5 prong pre packaged injection (one post auto generates four more at random designated times). Common drive of posts they all tap into. Since they misjudged the influence of the MSM they are aggressively looking to censor throughout major platforms in exchange for CIA slush funds and WW access for expansion of said networks. Everything they do has been forecasted and prepared for."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::1708|emphasis|0|9::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "1708|emphasis|0|9",
-   "postNum": 1708,
-   "kind": "emphasis",
-   "detail": "touches 0 sentences",
-   "certifiedValue": ">>2287348"
   },
   {
    "conflictId": "BOUNDARY_CROSSING::1762|claims|247|685::0",
@@ -855,15 +837,6 @@
    "certifiedValue": "https://www.washingtonpost.com/news/monkey-cage/wp/2018/08/30/the-qanon-conspiracy-movement-is-very-unpopular-our-new-poll-finds/?utm_term=.87d889fcef0f\nhttps://www.washingtonpost.com/blogs/plum-line/wp/2018/04/24/trumps-historic-unpopularity-is-a-big-important-story/"
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::2003|emphasis|0|9::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "2003|emphasis|0|9",
-   "postNum": 2003,
-   "kind": "emphasis",
-   "detail": "touches 0 sentences",
-   "certifiedValue": ">>2798428"
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::2029|claims|819|1112::0",
    "reason": "BOUNDARY_CROSSING",
    "heldKey": "2029|claims|819|1112",
@@ -1170,15 +1143,6 @@
    "certifiedValue": "Any person making statements they will not be seeking re-election was put in submission. For the betterment of the country not all will be prosecuted and all will do as told. You will see more of this occur (not normal yet disregarded) and even on the D side."
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::2425|emphasis|0|17::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "2425|emphasis|0|17",
-   "postNum": 2425,
-   "kind": "emphasis",
-   "detail": "touches 3 sentences",
-   "certifiedValue": "VOTE! VOTE! VOTE!"
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::2445|claims|222|326::0",
    "reason": "BOUNDARY_CROSSING",
    "heldKey": "2445|claims|222|326",
@@ -1386,15 +1350,6 @@
    "certifiedValue": "No way, it’s time to stop this corrupt and illegally brought Witch Hunt. [Time to start looking at the other side where real crimes were committed]."
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::292|emphasis|0|7::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "292|emphasis|0|7",
-   "postNum": 292,
-   "kind": "emphasis",
-   "detail": "touches 0 sentences",
-   "certifiedValue": ">>50813"
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::2938|predictions|1014|1106::0",
    "reason": "BOUNDARY_CROSSING",
    "heldKey": "2938|predictions|1014|1106",
@@ -1501,15 +1456,6 @@
    "kind": "claims",
    "detail": "touches 2 sentences",
    "certifiedValue": "https://radio.foxnews.com/2019/04/19/john-dowd-rod-rosenstein-has-to-answer-for-appointing-robert-mueller-as-special-council/\nhttps://www.scribd.com/document/406725805/Mueller-Report#from_embed"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::339|emphasis|0|7::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "339|emphasis|0|7",
-   "postNum": 339,
-   "kind": "emphasis",
-   "detail": "touches 0 sentences",
-   "certifiedValue": ">>86037"
   },
   {
    "conflictId": "BOUNDARY_CROSSING::3428|directives|198|296::0",
@@ -1771,15 +1717,6 @@
    "kind": "claims",
    "detail": "touches 2 sentences",
    "certifiedValue": "Last line should clarify: \nIs this about the virus OR THE ELECTION?"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::4352|emphasis|94|1632::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "4352|emphasis|94|1632",
-   "postNum": 4352,
-   "kind": "emphasis",
-   "detail": "touches 9 sentences",
-   "certifiedValue": "Insurgency is the organized use of subversion and violence to seize, nullify or challenge political control of a region. As such, it is primarily a political struggle, in which both sides use armed force to create space for their political, economic and influence activities to be effective. Insurgency is not always conducted by a single group with a centralized, military-style command structure, but may involve a complex matrix of different actors with various aims, loosely connected in dynamic and non-hierarchical networks. To be successful, insurgencies require charismatic leadership, supporters, recruits, supplies, safe havens and funding (often from illicit activities). They only need the active support of a few enabling individuals, but the passive acquiescence of a large proportion of the contested population will give a higher probability of success. This is best achieved when the political cause of the insurgency has strong appeal, manipulating religious, tribal or local identity to exploit common societal grievances or needs. Insurgents seek to gain control of populations through a combination of persuasion, subversion and coercion while using guerrilla tactics to offset the strengths of government security forces. Their intent is usually to protract the struggle, exhaust the government and win sufficient popular support to force capitulation or political accommodation. Consequently, insurgencies evolve through a series of stages, though the progression and outcome will be different in almost every case."
   },
   {
    "conflictId": "BOUNDARY_CROSSING::4415|claims|0|420::0",
@@ -2061,33 +1998,6 @@
    "certifiedValue": "Retweet @ 17:17 had meaning. [mathematical probability _17:17 [day after]?]"
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::4881|emphasis|63|78::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "4881|emphasis|63|78",
-   "postNum": 4881,
-   "kind": "emphasis",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "There is 'Q'. 1"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::4881|emphasis|79|99::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "4881|emphasis|79|99",
-   "postNum": 4881,
-   "kind": "emphasis",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "There are 'Anons'. 2"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::4881|emphasis|100|122::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "4881|emphasis|100|122",
-   "postNum": 4881,
-   "kind": "emphasis",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "There is no 'Qanon'. 3"
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::4885|claims|687|776::0",
    "reason": "BOUNDARY_CROSSING",
    "heldKey": "4885|claims|687|776",
@@ -2221,15 +2131,6 @@
    "kind": "claims",
    "detail": "touches 2 sentences",
    "certifiedValue": "We are working to END.\nEVIL."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::983|emphasis|28|35::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "983|emphasis|28|35",
-   "postNum": 983,
-   "kind": "emphasis",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "/ SEC #"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1010-namedEntities::The Fed::0",

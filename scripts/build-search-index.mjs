@@ -33,7 +33,6 @@ const evidence = read('evidence.json')
 const entities = read('entities.json')
 const themes = read('themes.json')
 const codes = read('codes.json')
-const emphasis = read('emphasis.json')
 const queue = read('resolution-queue.json')
 
 const nlower = s => String(s ?? '').replace(/\s+/g, ' ').trim().toLowerCase()
@@ -58,6 +57,11 @@ const add = r => rows.push({ q: true, ...r, t: runtimeText(r.t ?? '') })
 
 // ── Questions ────────────────────────────────────────────────────────────────
 for (const qq of questions) {
+  // A MARKED QUESTION IS NOT A QUESTION THE READER CAN SEE. Step 3B-1 demoted 163 to non-painting
+  // secondaries and withdrew 16 same-category fragments; the records survive so their ids,
+  // relationships and metadata survive, but indexing them would offer a search hit on a section
+  // that no longer paints them. Same filter build-occurrence-ledger.mjs applies.
+  if (qq.semanticLayer && qq.semanticLayer !== 'primary') continue
   const editorial = Boolean(qq.editorialNormalization || qq.neverDisplayAsQ)
   if (editorial) {
     // Searchable, and unmistakable. A reader looking for "What is Manafort's background?" should
@@ -191,13 +195,8 @@ for (const c of codes.codes) {
 }
 
 // ── Emphasis ─────────────────────────────────────────────────────────────────
-for (const o of emphasis.occurrences) {
-  add({
-    s: 'emphasis', p: o.postNum, i: o.postId, t: o.sourceText,
-    w: `certified emphasis — ${o.type.replace(/_/g, ' ')}`,
-    f: { type: o.type, line: o.line, basis: o.basis ?? null },
-  })
-}
+// EMPHASIS IS RETIRED (owner ruling, 2026-08-21) and is no longer indexed. A search hit on a
+// section the reader cannot see is worse than no hit: it promises a highlight that is not there.
 
 // ── Unresolved ───────────────────────────────────────────────────────────────
 for (const r of queue.rows) {
@@ -221,20 +220,26 @@ const checks = [
   // Every figure below moves with the 2026-08-20 unhighlighted-sentence queue ruling and with
   // nothing else. This step indexes what the materialisers certified; it never decides a count.
   // 6,510 after the 2026-08-21 segmentation repair (8 tails absorbed, 1 duplicate merged).
-  ['Questions indexed = 6,503', bySection.questions === 6503, bySection.questions],
-  ['Directives indexed = 3,037', bySection.directives === 3037, bySection.directives],
+  // READ FROM THE CONTRACT, NEVER COPIED. These four moved for Step 3B-1 and a literal here
+  // reports a defect that does not exist every time an adjudicated ruling lands — the same
+  // correction the queue ruling made to five other stale literals in this repo.
+  [`Questions indexed = ${CANONICAL.questions.occurrences.toLocaleString()}`,
+    bySection.questions === CANONICAL.questions.occurrences, bySection.questions],
+  [`Directives indexed = ${CANONICAL.directives.occurrences.toLocaleString()}`,
+    bySection.directives === CANONICAL.directives.occurrences, bySection.directives],
   // 8,934: #4923 "Dearest Virginia -", then the 2026-08-21 batch — #4861, #4893 x2, #4853 x2.
-  ['Claims indexed = 8,912', bySection.claims === 8912, bySection.claims],
+  [`Claims indexed = ${CANONICAL.claims.occurrences.toLocaleString()}`,
+    bySection.claims === CANONICAL.claims.occurrences, bySection.claims],
   // 843: #4910 "Freedom of information [truth] = END".
   // 847: MOVIE 1 and MOVIE 3 on #1928 and #1929 (r15, 2026-08-21).
-  ['Predictions indexed = 847', bySection.predictions === 847, bySection.predictions],
+  [`Predictions indexed = ${CANONICAL.predictions.occurrences.toLocaleString()}`,
+    bySection.predictions === CANONICAL.predictions.occurrences, bySection.predictions],
   ['Evidence indexed = 6,590', bySection.evidence === 6590, bySection.evidence],
   // 1,334: Ray Chandler ships merged into Rachel Chandler under the owner ruling.
   [`Entities indexed = ${CANONICAL.entities.canonical.toLocaleString()}`,
     bySection.entities === CANONICAL.entities.canonical, bySection.entities],
   ['Themes indexed = 2,644', bySection.themes === 2644, bySection.themes],
   ['Codes indexed = 747', bySection.codes === 747, bySection.codes],
-  ['Emphasis indexed = 3,105', bySection.emphasis === 3105, bySection.emphasis],
   // Read from the contract, never copied — see the same fix in build-relationships.mjs.
   [`Unresolved indexed = ${CANONICAL.resolution.total.toLocaleString()}`,
     bySection.unresolved === CANONICAL.resolution.total, bySection.unresolved],

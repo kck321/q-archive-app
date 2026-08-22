@@ -33,7 +33,9 @@ const analysisLinks = [
   // Checkable Claims merged into Claims by owner ruling 2026-08-15. All 1,926 were ALREADY
   // certified Claims — 0 needed adding, so nothing moved and nothing was double-counted. The
   // `checkable` attribute survives on claimMeta for provenance; only the separate section goes.
-  { tab: 'emphasis',          label: 'Q Emphasis',      dot: 'bg-gray-500', color: 'text-slate-400 hover:text-slate-300' },
+  // Q Emphasis retired by owner ruling 2026-08-21, and this time the DATA went with the view:
+  // "get rid of the emphasis category ... everything associated with it". A sentence carrying only
+  // an emphasis span used to read as highlighted to a coverage scan while the reader saw nothing.
   ...(CAN_EDIT ? [OVERLAPS_LINK] : []),
 ]
 

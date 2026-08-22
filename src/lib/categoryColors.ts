@@ -10,7 +10,6 @@ export const CATEGORY_COLOR: Record<string, string> = {
   themes:             '#6366f1', // indigo
   impliedConclusions: '#f97316', // orange
   verificationHooks:  '#d946ef', // fuchsia
-  emphasis:           '#94a3b8', // slate — deliberately quiet, it is Q's punctuation
   overlaps:           '#eab308', // gold
   questionsAll:       '#3b82f6',
 }
@@ -34,10 +33,6 @@ export const SERIES_COLOR: Record<string, string> = {
   'Predictions':          CATEGORY_COLOR.predictions,
   'Named Entities':       CATEGORY_COLOR.namedEntities,
   'Themes':               CATEGORY_COLOR.themes,
-  'Impl. Conclusions':    CATEGORY_COLOR.impliedConclusions,
-  'Implied Conclusions':  CATEGORY_COLOR.impliedConclusions,
-  'Checkable Claims':     CATEGORY_COLOR.verificationHooks,
-  'Emphasis':             CATEGORY_COLOR.emphasis,
   'Brackets':             CATEGORY_COLOR.brackets,
   'brackets':             CATEGORY_COLOR.brackets,
 
@@ -49,9 +44,7 @@ export const SERIES_COLOR: Record<string, string> = {
   'Q Predictions':        CATEGORY_COLOR.predictions,
   'Q Entities':           CATEGORY_COLOR.namedEntities,
   'Q Themes':             CATEGORY_COLOR.themes,
-  'Q Conclusions':        CATEGORY_COLOR.impliedConclusions,
   'Q [ Brackets ]':       CATEGORY_COLOR.brackets,
-  'Q Emphasis':           CATEGORY_COLOR.emphasis,
 }
 
 /** Colour for a chart series by its display name; grey when unknown. */

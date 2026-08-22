@@ -64,7 +64,6 @@ const counts = {
   entitiesTailMentions: read('entities.json').entities.filter(e => e.source === 'adjudicated tail').reduce((n, e) => n + (e.mentions ?? 0), 0),
   themes: read('themes.json').totals.assignments,
   codes: read('codes.json').totals.occurrences,
-  emphasis: read('emphasis.json').occurrences.length,
   resolutionQueue: read('resolution-queue.json').rows.length,
 }
 
@@ -86,7 +85,6 @@ const expected = {
   entitiesTailMentions: CANONICAL.entities.tailMentions,
   themes: CANONICAL.themes.assignments,
   codes: CANONICAL.codes.occurrences,
-  emphasis: CANONICAL.emphasis.occurrences,
   resolutionQueue: CANONICAL.resolution.total,
 }
 

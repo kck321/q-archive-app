@@ -507,7 +507,7 @@ export const OVERRIDES_BAKED_THROUGH = 1786458148021   // 2026-08-11T14:22:28.02
 // overlay defect bumps it again without touching the seed.
 export const OVERLAY_REPAIR = 1
 
-export const SEED_VERSION = 86   // 86: Step 3B-1 applied — full-sentence primary replacement, secondaries, semantics.json
+export const SEED_VERSION = 87   // 87: Emphasis, Q Conclusions and Checkable Claims retired — data, highlights and sections
 // (6 mentions, and she gains both drops), her hover gains a real synopsis instead of the generated
 // "appears 8 times across 7 posts" line, and MOVIE 1 / MOVIE 3 join MOVIE 2 as Predictions. A
 // reader on 84 sees NO unhighlighted and two of the three MOVIE lines unclassified.

@@ -1,0 +1,31 @@
+{
+ "note": "Emphasis, Q Conclusions and Checkable Claims retired from the data by owner ruling 2026-08-21.",
+ "ruling": "get rid of the emphasis category ... everything associated with it ... also Q Conclusions and Checkable Claims data/highlights",
+ "arraysRemoved": {
+  "emphasis": 0,
+  "impliedConclusions": 0,
+  "conclusionSpans": 0,
+  "verificationHooks": 0,
+  "checkableSpans": 0
+ },
+ "claimMetaAttributesCleared": {
+  "checkable": 0,
+  "isConclusion": 0
+ },
+ "postsTouched": 0,
+ "claimMetaEntriesTouched": 0,
+ "claimsAndPredictionsUnchanged": {
+  "before": {
+   "claims": 8814,
+   "claimSpans": 8814,
+   "predictions": 843,
+   "predictionSpans": 843
+  },
+  "after": {
+   "claims": 8814,
+   "claimSpans": 8814,
+   "predictions": 843,
+   "predictionSpans": 843
+  }
+ }
+}

@@ -89,9 +89,6 @@ const CHART_TABS: { key: string; label: string; dataKey: string; color: string; 
   { key: 'namedEntities',      label: 'Q Entities',    dataKey: 'namedEntities',      color: '#06b6d4', dimColor: '#164e63', to: '/analysis?tab=namedEntities' },
   { key: 'brackets',           label: 'Q [ Brackets ]', dataKey: 'brackets',          color: '#ef4444', dimColor: '#7f1d1d', to: '/brackets' },
   { key: 'themes',             label: 'Q Themes',      dataKey: 'themes',             color: '#6366f1', dimColor: '#312e81', to: '/analysis?tab=themes' },
-  { key: 'impliedConclusions', label: 'Q Conclusions', dataKey: 'impliedConclusions', color: '#f97316', dimColor: '#7c2d12', to: '/analysis?tab=impliedConclusions' },
-  { key: 'verificationHooks',  label: 'Checkable Claims',       dataKey: 'verificationHooks',  color: '#d946ef', dimColor: '#701a75', to: '/analysis?tab=verificationHooks' },
-  { key: 'emphasis',           label: 'Q Emphasis',    dataKey: 'emphasis',           color: '#94a3b8', dimColor: '#334155', to: '/analysis?tab=emphasis' },
 ]
 
 
@@ -164,7 +161,7 @@ export default function PostArchive() {
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('desc')
 
   // Timeline chart
-  const [timeline, setTimeline] = useState<{ month: string; questions: number; posts: number; requests: number; claims: number; predictions: number; namedEntities: number; themes: number; impliedConclusions: number; verificationHooks: number; emphasis: number; brackets: number }[]>([])
+  const [timeline, setTimeline] = useState<{ month: string; questions: number; posts: number; requests: number; claims: number; predictions: number; namedEntities: number; themes: number; brackets: number }[]>([])
   const [postNumsByMonth, setPostNumsByMonth] = useState<Record<string, number[]>>({})
   // ── The month filter, shared with Analysis ────────────────────────────────
   //
@@ -500,10 +497,7 @@ export default function PostArchive() {
       predictions: acc.predictions + e.predictions,
       namedEntities: acc.namedEntities + e.namedEntities,
       themes: acc.themes + e.themes,
-      impliedConclusions: acc.impliedConclusions + e.impliedConclusions,
-      verificationHooks: acc.verificationHooks + e.verificationHooks,
-      emphasis: acc.emphasis + (e.emphasis ?? 0),
-    }), { requests: 0, claims: 0, predictions: 0, namedEntities: 0, themes: 0, impliedConclusions: 0, verificationHooks: 0, emphasis: 0 })
+    }), { requests: 0, claims: 0, predictions: 0, namedEntities: 0, themes: 0 })
   }, [timeline])
 
   // Phone-sized screens get a PINNED tooltip (see the Tooltip props below).
@@ -721,9 +715,6 @@ export default function PostArchive() {
     predictions:        analysisTotals?.predictions ?? null,
     namedEntities:      analysisTotals?.namedEntities ?? null,
     themes:             analysisTotals?.themes ?? null,
-    impliedConclusions: analysisTotals?.impliedConclusions ?? null,
-    verificationHooks:  analysisTotals?.verificationHooks ?? null,
-    emphasis:           analysisTotals?.emphasis ?? null,
     brackets:           bracketCount,
   }
 
@@ -1089,8 +1080,6 @@ export default function PostArchive() {
                         <Bar dataKey="predictions"        name="Predictions"        stackId="a" fill={catColor('predictions')} radius={[0,0,0,0]} style={{ cursor: 'pointer' }} />
                         <Bar dataKey="namedEntities"      name="Named Entities"     stackId="a" fill={catColor('namedEntities')} radius={[0,0,0,0]} style={{ cursor: 'pointer' }} />
                         <Bar dataKey="themes"             name="Themes"             stackId="a" fill={catColor('themes')} radius={[0,0,0,0]} style={{ cursor: 'pointer' }} />
-                        <Bar dataKey="impliedConclusions" name="Impl. Conclusions"  stackId="a" fill={catColor('impliedConclusions')} radius={[0,0,0,0]} style={{ cursor: 'pointer' }} />
-                        <Bar dataKey="verificationHooks"  name="Checkable Claims" stackId="a" fill={catColor('verificationHooks')} radius={[2,2,0,0]} style={{ cursor: 'pointer' }} />
                       </>)}
 
                       {/* Single category view — hidden when keyword search is active */}

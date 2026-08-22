@@ -28,7 +28,10 @@ const read = f => JSON.parse(fs.readFileSync(path.join(DATA, f), 'utf8'))
 const posts = read('posts.json')
 const themes = read('themes.json')
 const questions = read('questions.json')
-const emphasis = read('emphasis.json')
+// EMPHASIS IS RETIRED (owner ruling, 2026-08-21) — the section, its data and its artifact. Kept as
+// an empty stand-in rather than deleted from the code, so this script keeps running and reports a
+// truthful ZERO instead of crashing on a missing file.
+const emphasis = { occurrences: [] }
 
 /** Loose key for retrieval only — punctuation and case are variants worth surfacing, not deciding. */
 const key = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()

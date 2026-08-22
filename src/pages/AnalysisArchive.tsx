@@ -286,7 +286,9 @@ export default function AnalysisArchive() {
       setConfirmedMap(prev => new Map(prev).set(key, category))
 
       // Remove text from all other analysis categories on this post
-      const analysisCats = ['claims','predictions','namedEntities','themes','impliedConclusions','verificationHooks','emphasis']
+      // Emphasis, Q Conclusions and Checkable Claims retired 2026-08-21 — the sections, their data and
+  // their highlights. Nothing offers them any more, so nothing can land on an empty tab.
+  const analysisCats = ['claims','predictions','namedEntities','themes']
       const othersToRemove = allCategories
         .filter(c => c !== category && analysisCats.includes(c))
         .map(c => ({ category: c as AnalysisCategoryFreq['category'], text, postNums: [postNum] }))

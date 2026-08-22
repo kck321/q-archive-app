@@ -44,7 +44,10 @@ const posts = JSON.parse(postsRaw)
 const questions = read('questions.json')
 const aliasesJson = read('aliases.json')
 const entitiesJson = read('entities.json')
-const emphasisJson = read('emphasis.json')
+// EMPHASIS IS RETIRED (owner ruling, 2026-08-21) — the section, its data and its artifact. Kept as
+// an empty stand-in rather than deleted from the code, so this script keeps running and reports a
+// truthful ZERO instead of crashing on a missing file.
+const emphasisJson = { occurrences: [] }
 const evidenceJson = read('evidence.json')
 const codesJson = read('codes.json')
 
@@ -220,7 +223,6 @@ function spansFor(post, text) {
   // Certified but NOT painted in the body — reported so a leftover can be told apart from a
   // sentence nothing has ever looked at.
   const unpainted = []
-  for (const e of a.emphasis ?? []) addTerm(unpainted, text, e, 'emphasis')
   for (const o of emphasisByPost.get(post.postNum) ?? []) {
     const spans = o.type === 'parallel_phrasing'
       ? String(o.line ?? '').split(' / ').map(s => s.trim()).filter(Boolean)
@@ -512,7 +514,6 @@ function bucketOf(r) {
   if (r.coverageStatus === 'INLINE_ONLY_FULLY_PAINTED') return 'D_INLINE_ONLY_FULLY_PAINTED'
   if (hasCert(r, 'evidence') && r.certifiedNotPaintedLayers.includes('evidence:QUOTED_SOURCE')) return 'E_CERTIFIED_QUOTED_SOURCE'
   if (r.quotedSource) return 'E_CERTIFIED_QUOTED_SOURCE'
-  if (hasCert(r, 'emphasis')) return 'F_CERTIFIED_EMPHASIS_NOT_PAINTED'
   if (hasCert(r, 'context')) return 'G_CERTIFIED_CONTEXT_NOT_PAINTED'
   if (hasCert(r, 'code')) return 'H_CERTIFIED_CODE_NOT_PAINTED'
   if (hasCert(r, 'evidence')) return 'I_CERTIFIED_EVIDENCE_NOT_PAINTED'
@@ -592,8 +593,9 @@ const manifest = {
     segmenter: 'scripts/lib/segment.mjs unitsFor(), extended with offsets',
     paintedLayers: PAINTED,
     sentenceLevelLayers: [...SENTENCE_LEVEL],
-    certifiedButUnpaintedLayers: ['emphasis', 'context', 'evidence', 'code'],
-    notPaintedByOwnerRuling: ['emphasis (2026-08-17)', 'contextUnits (2026-08-17)', 'impliedConclusions (retired)', 'verificationHooks (merged into claims)'],
+    certifiedButUnpaintedLayers: ['context', 'evidence', 'code'],
+    retiredEntirely: ['emphasis (2026-08-21: section, data and highlights)', 'impliedConclusions (2026-08-21)', 'verificationHooks (2026-08-21)'],
+    notPaintedByOwnerRuling: ['contextUnits (2026-08-17)'],
   },
   counts: {
     ...stats,

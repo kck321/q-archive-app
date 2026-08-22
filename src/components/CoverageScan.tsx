@@ -9,8 +9,6 @@ const CLASSIFY_CATS: { key: keyof PostAnalysis; label: string }[] = [
   { key: 'claims',             label: 'Claims' },
   { key: 'predictions',        label: 'Predictions' },
   { key: 'themes',             label: 'Themes' },
-  { key: 'impliedConclusions', label: 'Impl. Conclusions' },
-  { key: 'verificationHooks',  label: 'Checkable Claims' },
 ]
 
 // Dashboard scanner: reports the % of posts with nothing highlighted, then lists every

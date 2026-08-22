@@ -1831,8 +1831,6 @@ const PRESENCE_LABELS: Record<string, string> = {
   predictions: 'Q Predictions',
   namedEntities: 'Q Entities',
   themes: 'Q Themes',
-  impliedConclusions: 'Q Conclusions',
-  verificationHooks: 'Checkable Claims',
 }
 
 function presenceRoute(key: string, term: string): string {

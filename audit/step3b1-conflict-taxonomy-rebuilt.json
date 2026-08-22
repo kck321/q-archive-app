@@ -1,12 +1,12 @@
 {
  "note": "Step 3B-1 conflict-queue taxonomy. Report only — nothing applied, nothing withdrawn.",
- "totalRows": 459,
+ "totalRows": 448,
  "measuredFrom": "current bundle (rebuilt)",
- "distinctConflictIds": 457,
- "distinctHeldKeys": 421,
- "distinctPosts": 333,
+ "distinctConflictIds": 446,
+ "distinctHeldKeys": 410,
+ "distinctPosts": 326,
  "byReason": {
-  "BOUNDARY_CROSSING": 242,
+  "BOUNDARY_CROSSING": 231,
   "UNLOCATED_SPAN": 199,
   "SAME_CATEGORY_PARTIAL_OVERLAP": 18
  },
@@ -17,13 +17,12 @@
   "directives": 15,
   "questions": 14,
   "themeAnchors": 11,
-  "emphasis": 11,
   "context": 2,
   "predictions": 1
  },
  "byLane": {
   "A DETERMINISTIC_RESOLUTION": 252,
-  "B HUMAN_SEMANTIC_REVIEW": 152,
+  "B HUMAN_SEMANTIC_REVIEW": 141,
   "C STRUCTURAL_DATA_DEFECT": 55
  },
  "rootCausePatterns": 11,
@@ -126,9 +125,9 @@
   },
   {
    "signature": "BOUNDARY_CROSSING::MULTI_LINE_SPAN",
-   "count": 58,
+   "count": 57,
    "lane": "B",
-   "posts": 47,
+   "posts": 46,
    "examples": [
     {
      "postNum": 1015,
@@ -149,9 +148,9 @@
   },
   {
    "signature": "BOUNDARY_CROSSING::WITHIN_LINE_CROSSING",
-   "count": 57,
+   "count": 47,
    "lane": "B",
-   "posts": 49,
+   "posts": 42,
    "examples": [
     {
      "postNum": 1012,
@@ -164,9 +163,9 @@
      "value": "They think you are stupid. Puppets w/o power. They want your guns. Why? No power left."
     },
     {
-     "postNum": 1298,
-     "heldKey": "1298|emphasis|10|19",
-     "value": ">>1241803"
+     "postNum": 13,
+     "heldKey": "13|claims|59|99",
+     "value": "I’ve said too much. God bless, Patriots."
     }
    ]
   },
@@ -870,24 +869,6 @@
    "lane": "A"
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::1298|emphasis|10|19::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 1298,
-   "heldKey": "1298|emphasis|10|19",
-   "certifiedValue": ">>1241803",
-   "alsoDuplicateKey": false,
-   "kind": "emphasis",
-   "start": 10,
-   "end": 19,
-   "sentencesTouched": 0,
-   "sentenceIds": [],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": ">>1241803",
-   "subtype": "WITHIN_LINE_CROSSING",
-   "lane": "B"
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::13|claims|59|99::0",
    "reason": "BOUNDARY_CROSSING",
    "postNum": 13,
@@ -1426,24 +1407,6 @@
    "questionId": null,
    "spanPreview": "Biggest drop on Pol. \nAbove is reason why the shills are sliding. In case you didn’t know, shills log and send new info ",
    "subtype": "MULTI_LINE_SPAN",
-   "lane": "B"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::1708|emphasis|0|9::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 1708,
-   "heldKey": "1708|emphasis|0|9",
-   "certifiedValue": ">>2287348",
-   "alsoDuplicateKey": false,
-   "kind": "emphasis",
-   "start": 0,
-   "end": 9,
-   "sentencesTouched": 0,
-   "sentenceIds": [],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": ">>2287348",
-   "subtype": "WITHIN_LINE_CROSSING",
    "lane": "B"
   },
   {
@@ -2451,24 +2414,6 @@
    "lane": "A"
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::2003|emphasis|0|9::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 2003,
-   "heldKey": "2003|emphasis|0|9",
-   "certifiedValue": ">>2798428",
-   "alsoDuplicateKey": false,
-   "kind": "emphasis",
-   "start": 0,
-   "end": 9,
-   "sentencesTouched": 0,
-   "sentenceIds": [],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": ">>2798428",
-   "subtype": "WITHIN_LINE_CROSSING",
-   "lane": "B"
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::2029|claims|819|1112::0",
    "reason": "BOUNDARY_CROSSING",
    "postNum": 2029,
@@ -3203,28 +3148,6 @@
    "lane": "B"
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::2425|emphasis|0|17::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 2425,
-   "heldKey": "2425|emphasis|0|17",
-   "certifiedValue": "VOTE! VOTE! VOTE!",
-   "alsoDuplicateKey": false,
-   "kind": "emphasis",
-   "start": 0,
-   "end": 17,
-   "sentencesTouched": 3,
-   "sentenceIds": [
-    "p2425-s000",
-    "p2425-s001",
-    "p2425-s002"
-   ],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": "VOTE! VOTE! VOTE!",
-   "subtype": "WITHIN_LINE_CROSSING",
-   "lane": "B"
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::2445|claims|222|326::0",
    "reason": "BOUNDARY_CROSSING",
    "postNum": 2445,
@@ -3719,24 +3642,6 @@
    "lane": "B"
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::292|emphasis|0|7::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 292,
-   "heldKey": "292|emphasis|0|7",
-   "certifiedValue": ">>50813",
-   "alsoDuplicateKey": false,
-   "kind": "emphasis",
-   "start": 0,
-   "end": 7,
-   "sentencesTouched": 0,
-   "sentenceIds": [],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": ">>50813",
-   "subtype": "WITHIN_LINE_CROSSING",
-   "lane": "B"
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::2938|predictions|1014|1106::0",
    "reason": "BOUNDARY_CROSSING",
    "postNum": 2938,
@@ -3993,24 +3898,6 @@
    "spanPreview": "https://radio.foxnews.com/2019/04/19/john-dowd-rod-rosenstein-has-to-answer-for-appointing-robert-mueller-as-special-cou",
    "subtype": "CONTAINS_URL",
    "lane": "A"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::339|emphasis|0|7::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 339,
-   "heldKey": "339|emphasis|0|7",
-   "certifiedValue": ">>86037",
-   "alsoDuplicateKey": false,
-   "kind": "emphasis",
-   "start": 0,
-   "end": 7,
-   "sentencesTouched": 0,
-   "sentenceIds": [],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": ">>86037",
-   "subtype": "WITHIN_LINE_CROSSING",
-   "lane": "B"
   },
   {
    "conflictId": "BOUNDARY_CROSSING::3428|directives|198|296::0",
@@ -4630,34 +4517,6 @@
    "questionId": null,
    "spanPreview": "Last line should clarify: \nIs this about the virus OR THE ELECTION?",
    "subtype": "MULTI_LINE_SPAN",
-   "lane": "B"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::4352|emphasis|94|1632::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 4352,
-   "heldKey": "4352|emphasis|94|1632",
-   "certifiedValue": "Insurgency is the organized use of subversion and violence to seize, nullify or challenge political control of a region. As such, it is primarily a political struggle, in which both sides use armed force to create space for their political, economic and influence activities to be effective. Insurgency is not always conducted by a single group with a centralized, military-style command structure, but may involve a complex matrix of different actors with various aims, loosely connected in dynamic and non-hierarchical networks. To be successful, insurgencies require charismatic leadership, supporters, recruits, supplies, safe havens and funding (often from illicit activities). They only need the active support of a few enabling individuals, but the passive acquiescence of a large proportion of the contested population will give a higher probability of success. This is best achieved when the political cause of the insurgency has strong appeal, manipulating religious, tribal or local identity to exploit common societal grievances or needs. Insurgents seek to gain control of populations through a combination of persuasion, subversion and coercion while using guerrilla tactics to offset the strengths of government security forces. Their intent is usually to protract the struggle, exhaust the government and win sufficient popular support to force capitulation or political accommodation. Consequently, insurgencies evolve through a series of stages, though the progression and outcome will be different in almost every case.",
-   "alsoDuplicateKey": false,
-   "kind": "emphasis",
-   "start": 94,
-   "end": 1632,
-   "sentencesTouched": 9,
-   "sentenceIds": [
-    "p4352-s003",
-    "p4352-s004",
-    "p4352-s005",
-    "p4352-s006",
-    "p4352-s007",
-    "p4352-s008",
-    "p4352-s009",
-    "p4352-s010",
-    "p4352-s011"
-   ],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": "Insurgency is the organized use of subversion and violence to seize, nullify or challenge political control of a region.",
-   "subtype": "WITHIN_LINE_CROSSING",
    "lane": "B"
   },
   {
@@ -5319,69 +5178,6 @@
    "lane": "B"
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::4881|emphasis|63|78::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 4881,
-   "heldKey": "4881|emphasis|63|78",
-   "certifiedValue": "There is 'Q'. 1",
-   "alsoDuplicateKey": false,
-   "kind": "emphasis",
-   "start": 63,
-   "end": 78,
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p4881-s001",
-    "p4881-s002"
-   ],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": "There is 'Q'. 1",
-   "subtype": "WITHIN_LINE_CROSSING",
-   "lane": "B"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::4881|emphasis|79|99::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 4881,
-   "heldKey": "4881|emphasis|79|99",
-   "certifiedValue": "There are 'Anons'. 2",
-   "alsoDuplicateKey": false,
-   "kind": "emphasis",
-   "start": 79,
-   "end": 99,
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p4881-s003",
-    "p4881-s004"
-   ],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": "There are 'Anons'. 2",
-   "subtype": "WITHIN_LINE_CROSSING",
-   "lane": "B"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::4881|emphasis|100|122::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 4881,
-   "heldKey": "4881|emphasis|100|122",
-   "certifiedValue": "There is no 'Qanon'. 3",
-   "alsoDuplicateKey": false,
-   "kind": "emphasis",
-   "start": 100,
-   "end": 122,
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p4881-s005",
-    "p4881-s006"
-   ],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": "There is no 'Qanon'. 3",
-   "subtype": "WITHIN_LINE_CROSSING",
-   "lane": "B"
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::4885|claims|687|776::0",
    "reason": "BOUNDARY_CROSSING",
    "postNum": 4885,
@@ -5691,27 +5487,6 @@
    "stillLive": true,
    "questionId": null,
    "spanPreview": "We are working to END.\nEVIL.",
-   "subtype": "MULTI_LINE_SPAN",
-   "lane": "B"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::983|emphasis|28|35::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 983,
-   "heldKey": "983|emphasis|28|35",
-   "certifiedValue": "/ SEC #",
-   "alsoDuplicateKey": false,
-   "kind": "emphasis",
-   "start": 28,
-   "end": 35,
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p0983-s006",
-    "p0983-s007"
-   ],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": "/\nSEC #",
    "subtype": "MULTI_LINE_SPAN",
    "lane": "B"
   },

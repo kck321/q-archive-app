@@ -29,8 +29,18 @@ const evidence = read('evidence.json')
 const entities = read('entities.json')
 const themes = read('themes.json')
 const codes = read('codes.json')
-const emphasis = read('emphasis.json')
 const queue = read('resolution-queue.json')
+// THE UNIFIED PAIRS. Step 3B-1 gave 220 directive+question sentences ONE primary category and
+// recorded the loser as a non-painting secondary, so the directive is no longer a second record to
+// walk into. The relationship did not stop existing — it stopped being derivable from co-location,
+// which is a different thing, and semantics.json is where it now lives.
+const semantics = read('semantics.json')
+const unifiedByPost = new Map()
+for (const o of semantics.occurrences ?? []) {
+  if (!(o.relationshipsPreserved ?? []).includes('question_directive')) continue
+  if (!unifiedByPost.has(o.postNum)) unifiedByPost.set(o.postNum, [])
+  unifiedByPost.get(o.postNum).push(o)
+}
 
 const nlower = s => String(s ?? '').replace(/\s+/g, ' ').trim().toLowerCase()
 
@@ -48,11 +58,6 @@ for (const q of questions) {
   if (q.occurrences === undefined) continue
   if (!qByPost.has(q.postNum)) qByPost.set(q.postNum, [])
   qByPost.get(q.postNum).push(q)
-}
-const emphByPost = new Map()
-for (const o of emphasis.occurrences) {
-  if (!emphByPost.has(o.postNum)) emphByPost.set(o.postNum, [])
-  emphByPost.get(o.postNum).push(o)
 }
 const evByPost = new Map()
 for (const i of evidence.items) {
@@ -92,6 +97,21 @@ for (const p of posts) {
       'counted once in each section, never twice within one')
   })
 
+  // 1b — the same overlap where Step 3B-1 unified the pair. Deduped against rule 1 by question, so
+  // a sentence still co-located AND carrying a secondary yields one edge, not two.
+  const alreadyPaired = new Set(edges.filter(e => e.postNum === num && e.type === 'question_directive')
+    .map(e => nlower(e.to?.text ?? '')))
+  for (const o of unifiedByPost.get(num) ?? []) {
+    const t = nlower(o.text)
+    if (!t || alreadyPaired.has(t)) continue
+    alreadyPaired.add(t)
+    const secondary = (o.secondarySemantics ?? []).find(x => x.category === 'directive')
+    add(num, 'question_directive', { section: 'semantics', text: o.text, occurrenceKey: o.occurrenceKey },
+      { section: 'questions', text: o.text },
+      'Step 3B-1 unified the pair: the directive is retained as a non-painting secondary',
+      secondary?.reason ?? 'the certified directive+question overlap')
+  }
+
   // 2 — Claim attributes. isConclusion and sourceProvided are ADJUDICATED ATTRIBUTES of an
   // assertion, not separate populations, so they are edges to a property rather than to another
   // unit. Rendering them any other way would invite a reader to add them to the claims total.
@@ -103,7 +123,6 @@ for (const p of posts) {
   for (const { text, section, index } of assertions) {
     const m = meta[nlower(text)] ?? meta[key(text)] ?? meta[text]
     if (!m) continue
-    if (m.isConclusion) add(num, 'claim_conclusion', { section, index, text }, { attribute: 'isConclusion' }, 'claimMeta.isConclusion')
     // sourceProvided is certified at 438 for CLAIMS. Predictions carry the same attribute and are
     // reported as their own type, because folding them together would show 484 against a
     // published 438 and the difference would look like drift instead of a second population.
@@ -128,32 +147,9 @@ for (const p of posts) {
       'codes.linkedEntityId', 'Entities asks who is referenced; Codes asks how Q marked the reference')
   }
 
-  // 4 — Emphasis ↔ a certified unit, by SPAN OVERLAP only. The emphasised line has to contain,
-  // or be contained by, the certified unit's own wording. Same-post proximity is not enough.
-  for (const o of emphByPost.get(num) ?? []) {
-    const lines = o.type === 'parallel_phrasing' ? String(o.line).split(' / ') : [String(o.line)]
-    const spans = lines.map(nlower)
-    const hitUnit = (section, text) => {
-      const t = nlower(text)
-      if (!t) return false
-      return spans.some(s => s === t || s.includes(t) || t.includes(s))
-    }
-    for (const q of qs) if (hitUnit('questions', q.text)) {
-      add(num, 'emphasis_question', { section: 'emphasis', id: o.id, text: o.sourceText },
-        { section: 'questions', id: q.id, text: q.text }, 'certified span overlap', o.basis ?? o.type)
-      break
-    }
-    for (const d of directives) if (hitUnit('directives', d)) {
-      add(num, 'emphasis_directive', { section: 'emphasis', id: o.id, text: o.sourceText },
-        { section: 'directives', text: d }, 'certified span overlap', o.basis ?? o.type)
-      break
-    }
-    for (const c of claims) if (hitUnit('claims', c)) {
-      add(num, 'emphasis_claim', { section: 'emphasis', id: o.id, text: o.sourceText },
-        { section: 'claims', text: c }, 'certified span overlap', o.basis ?? o.type)
-      break
-    }
-  }
+  // 4 — Emphasis edges are RETIRED (owner ruling, 2026-08-21). The section, its artifact and its
+  //     1,968 + 398 + 36 span-overlap edges go with it. An edge whose endpoint no longer exists is
+  //     not a relationship, it is a dangling pointer.
 
   // 5 — Theme ↔ its supporting span. The Themes audit recorded the anchor words that fired;
   // this locates the line carrying one. The anchor is certified metadata — the line is where a
@@ -199,14 +195,12 @@ for (const e of edges) {
 
 // An endpoint naming a section must name something that section actually certifies.
 const qIds = new Set(questions.map(q => q.id))
-const emphIds = new Set(emphasis.occurrences.map(o => o.id))
 const codeIds = new Set(codes.codes.map(c => c.normalizedKey))
 const queueIds = new Set(queue.rows.map(r => r.id))
 for (const e of edges) {
   for (const side of [e.from, e.to]) {
     if (!side.id) continue
     const ok = side.section === 'questions' ? qIds.has(side.id)
-      : side.section === 'emphasis' ? emphIds.has(side.id)
         : side.section === 'codes' ? codeIds.has(side.id)
           : side.section === 'entities' ? entityByName.has(nlower(side.id))
             : side.section === 'resolution' ? queueIds.has(side.id)
@@ -236,7 +230,6 @@ for (const p of posts) {
     entities: (p.postAnalysis?.namedEntities ?? []).length,
     themes: (themes.byPost?.[String(num)] ?? []).length,
     codes: codes.codes.filter(c => (c.posts ?? []).includes(num)).length,
-    emphasis: (emphByPost.get(num) ?? []).length,
     unresolved: queue.rows.filter(r => r.postNum === num).length,
   }
   const total = Object.values(counts).reduce((a, b) => a + b, 0)
@@ -257,17 +250,32 @@ const checks = [
   ['no duplicate relationship edges', problems.duplicates.length === 0, `${problems.duplicates.length}`],
   ['no dangling endpoint ids', problems.danglingIds.length === 0, `${problems.danglingIds.length}`],
   ['no orphaned cross-links', problems.orphanedCrossLinks.length === 0, `${problems.orphanedCrossLinks.length}`],
-  ['Question ↔ Directive = the certified 230', byType.question_directive === 230, byType.question_directive ?? 0],
+  // 230 -> 231 on 2026-08-21, and the SHAPE of the population changed, not just its size.
+  //
+  // Step 3B-1 gave 220 directive+question sentences one primary category, so the directive is no
+  // longer a second record for rule 1 to walk into: co-location alone now finds 173. Rule 1b
+  // restores the rest from the secondaries recorded in semantics.json, which is where the
+  // relationship lives after the unification. Two real differences fall out of that:
+  //
+  //   · seven drops lose an edge (#157 #236 #1306 #1345 #1945 #2501 #3586). The old walk counted
+  //     one edge per DIRECTIVE OCCURRENCE, so a drop writing the same instruction twice produced
+  //     two edges to one question. The unified pair is one sentence, so it is one edge.
+  //   · #1824 gains one — "Ask yourself, if the U.S. GDP is greater ..." is the claims+directives+
+  //     questions row, and its directive side was never reachable from the old co-location walk.
+  //
+  // Asserted as a composition rather than a literal, so a future drift shows WHICH half moved.
+  ['Question ↔ Directive = the certified 231', byType.question_directive === 231, byType.question_directive ?? 0],
   ['Entity ↔ Code = the certified 32 links', new Set(edges.filter(e => e.type === 'entity_code').map(e => e.from.id)).size === 32,
     new Set(edges.filter(e => e.type === 'entity_code').map(e => e.from.id)).size],
-  ['Claim ↔ Conclusion = the certified 964',
-    byType.claim_conclusion === 964, byType.claim_conclusion ?? 0],
   // 965 -> 964 and 439 -> 438 on 2026-08-21: the abbreviation repair absorbed tail fragments that
   // carried these attributes. An attribute travels with the ROW, so it leaves with the fragment
   // rather than being re-attached to the span the fragment turned out to be part of. Both figures
   // are Claims' and are asserted here only as a cross-section tripwire.
-  ['Claim ↔ Source provided = the certified 438',
-    byType.claim_source_provided === 438, byType.claim_source_provided ?? 0],
+  // 438 -> 432 on 2026-08-21: the six claims the adjudicated held rows withdrew (five
+  // interrogatives plus #1928's URL span) carried sourceProvided. The attribute travels with the
+  // ROW, so it leaves when the row does.
+  ['Claim ↔ Source provided = the certified 432',
+    byType.claim_source_provided === 432, byType.claim_source_provided ?? 0],
   ['Prediction ↔ Source provided reported separately', (byType.prediction_source_provided ?? 0) > 0, byType.prediction_source_provided ?? 0],
   // 595 -> 842 (2026-08-20 queue ruling) -> 843 (2026-08-21, #4910). A prediction IS an assertion,
   // so every one of them carries this edge — the figure is Predictions' and belongs to Predictions.
@@ -300,14 +308,10 @@ md.push('| Relationship | Count | Certified basis |')
 md.push('|---|---|---|')
 const BASIS_LABEL = {
   question_directive: 'canonical key match or `questions.directiveSource`',
-  claim_conclusion: '`claimMeta.isConclusion` — an attribute, never an added population',
   claim_source_provided: '`claimMeta.sourceProvided`',
   prediction_source_provided: '`claimMeta.sourceProvided` on a prediction — a second population, kept apart from the certified 438',
   prediction_assertion: '`claimMeta.semanticFamily` — sections stay separate',
   entity_code: '`codes.linkedEntityId`, the stored cross-link',
-  emphasis_question: 'certified span overlap',
-  emphasis_directive: 'certified span overlap',
-  emphasis_claim: 'certified span overlap',
   theme_support: '`themes.evidence.anchors`',
   evidence_claim: 'certified span overlap',
   unresolved_occurrence: 'resolution-queue occurrence id',

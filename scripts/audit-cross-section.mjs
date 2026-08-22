@@ -35,7 +35,10 @@ const evidence = read('evidence.json')
 const entities = read('entities.json')
 const themes = read('themes.json')
 const codes = read('codes.json')
-const emphasis = read('emphasis.json')
+// EMPHASIS IS RETIRED (owner ruling, 2026-08-21) — the section, its data and its artifact. Kept as
+// an empty stand-in rather than deleted from the code, so this script keeps running and reports a
+// truthful ZERO instead of crashing on a missing file.
+const emphasis = { occurrences: [] }
 const queue = read('resolution-queue.json')
 
 const byNum = new Map(posts.map(p => [p.postNum, p]))
