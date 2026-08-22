@@ -6394,3 +6394,37 @@ Lanes A 252 · B 152 · C 55, across 11 root-cause patterns.
 
 **Still open:** B1B (131 case-variant rows), B2 (119 URL boundary crossings), B3 (the two A-DUP
 rows + 2 over-extended segmentation recoveries). Not deployed.
+
+---
+
+## 2026-08-21 — Emphasis, Q Conclusions and Checkable Claims retired (`12dd399`)
+
+**Request.** "Get rid of the emphasis category ... everything associated with it ... also Q
+Conclusions and Checkable Claims data/highlights", so the coming residual census measures only
+genuinely unhighlighted Q text.
+
+**Why it mattered.** The two claim sections lost their nav in August and emphasis painting was
+already commented out, but the records survived "for provenance". A sentence carrying only an
+emphasis span read as *highlighted* to a coverage scan while the reader saw nothing — the census
+would have inherited that.
+
+**Removed.** emphasis 4,222 · impliedConclusions 951 · conclusionSpans 964 · verificationHooks
+1,875 · checkableSpans 1,920 · claimMeta.checkable 2,166 · claimMeta.isConclusion 958 ·
+`public/data/emphasis.json`. Claims unchanged at 8,814, asserted by the step.
+
+**Mechanism.** `scripts/retire-sections.mjs`, registered in `lib/chainSteps.mjs` after the last
+step that writes those fields; `detect/audit/apply-emphasis.mjs` removed from the chain. Idempotent
+(second run touches 0 posts). A hand edit would have been undone by the next `apply-claims` run.
+
+**Downstream builders write again** (both had aborted since the first 3B-1 commit):
+relationships 6,772 → 4,461; search index 35,213 → 31,730. Gate constants moved with reasons at the
+line: Q↔D 230 → 231 (rule 1b restores the 220 unified pairs from `semantics.json`; seven drops lose
+a double-counted edge, #1824 gains one), Claim↔SourceProvided 438 → 432, and the four primary
+sections now read `CANONICAL` instead of literals.
+
+**The census tool was the key consumer** — `audit-unhighlighted-sentences.mjs` counted emphasis as
+coverage and had an `F_CERTIFIED_EMPHASIS_NOT_PAINTED` bucket. Both gone.
+
+**State.** Conflict queue 448 (A 252 / B 141 / C 55). All 17 gates pass. Typecheck clean, both
+surfaces build and serve, the three labels appear zero times in either bundle. SEED_VERSION 87.
+Not deployed.
