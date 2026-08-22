@@ -33,6 +33,9 @@
 // superseded spans again; run it twice on its own output and the second pass finds the work done
 // and asserts the end state instead of failing.
 import fs from 'node:fs'
+
+/** Line splitter for the .jsonl artifacts. Tolerates CRLF, which git hands back on Windows. */
+const LINE_BREAK = new RegExp(String.fromCharCode(92) + 'r?' + String.fromCharCode(92) + 'n')
 import path from 'node:path'
 import crypto from 'node:crypto'
 import { fileURLToPath } from 'node:url'
@@ -90,10 +93,46 @@ if (fs.existsSync(dispPath)) {
   dispositionIds = new Set(disp.map(d => d.actionId))
 }
 
+// PHASE B2 — boundary repairs, executed through this applier rather than a second one, so they
+// inherit every gate: the runtime-substring check, the claims/claimSpans mirror, the metadata
+// transfer log, the slot witness and the overlay. They ADD actions rather than superseding plan
+// rows, so they carry their own actionIds.
+// Each extra set is pinned by content, loaded in order, and may only ADD actions — never redefine
+// a plan row. B2b exists as its own set because its actions could not be written until B2's trims
+// had run: a span that crosses a sentence boundary belongs to no sentence, so the collisions it was
+// hiding are invisible until it is trimmed back.
+const EXTRA_ACTION_SETS = [
+  { file: 'step3b1-b2-actions.jsonl',  sha256: 'c9c6c43a08291d2fed207f9ce573ecf526ed33751336c0bd86595fb647e53f00', label: 'B2 boundary repairs' },
+  { file: 'step3b1-b2b-actions.jsonl', sha256: '33f26fa2d5c34c86e5e57681a9ba7613bb938e2f6fe1993e35f433fd480be6ce', label: 'B2b collisions the trims uncovered' },
+]
+let extraCount = 0
+const extraIds = []
+const extraStamp = {}
+for (const set of EXTRA_ACTION_SETS) {
+  const full = path.join(OUT, set.file)
+  extraStamp[set.file] = null
+  if (!fs.existsSync(full)) continue
+  const raw = fs.readFileSync(full)
+  const sha = crypto.createHash('sha256').update(raw).digest('hex')
+  if (sha !== set.sha256) {
+    console.error(`\n[X] ${set.label} IS NOT THE REVIEWED SET — apply stopped.`)
+    console.error(`   expected ${set.sha256}`)
+    console.error(`   found    ${sha}`)
+    process.exit(1)
+  }
+  const rows = raw.toString('utf8').trim().split(LINE_BREAK).map(l => JSON.parse(l))
+  const seen = new Set(plan.map(a => a.actionId))
+  for (const a of rows) if (seen.has(a.actionId)) { console.error(`[X] ${set.label}: ${a.actionId} collides with an existing action`); process.exit(1) }
+  plan = plan.concat(rows)
+  extraCount += rows.length
+  for (const a of rows) extraIds.push(a.actionId)
+  extraStamp[set.file] = sha
+}
+
 const held = plan.filter(a => a.humanReviewRequired)
 const actions = plan.filter(a => !a.humanReviewRequired).sort((a, b) => a.actionId.localeCompare(b.actionId))
-if (plan.length !== 540 || actions.length !== 530 + dispositionsApplied || held.length !== 10 - dispositionsApplied) {
-  console.error(`[X] plan shape moved: ${plan.length} rows, ${actions.length} automatic, ${held.length} held, ${dispositionsApplied} dispositions`)
+if (plan.length !== 540 + extraCount || actions.length !== 530 + dispositionsApplied + extraCount || held.length !== 10 - dispositionsApplied) {
+  console.error(`[X] plan shape moved: ${plan.length} rows, ${actions.length} automatic, ${held.length} held, ${dispositionsApplied} dispositions, ${extraCount} extra`)
   process.exit(1)
 }
 
@@ -119,7 +158,8 @@ if (fs.existsSync(overlayPath)) {
     // The stamp covers the DISPOSITIONS too. Adjudicating a held row changes what this step owes
     // the bundle, so a bundle stamped before that adjudication is no longer "already applied".
     if (prev.appliedTo?.postsSha256 === fileSha(postsPath) && prev.appliedTo?.questionsSha256 === fileSha(questionsPath)
-        && (prev.appliedTo?.dispositionsSha256 ?? null) === (fs.existsSync(dispPath) ? DISPOSITIONS_SHA256 : null)) {
+        && (prev.appliedTo?.dispositionsSha256 ?? null) === (fs.existsSync(dispPath) ? DISPOSITIONS_SHA256 : null)
+        && JSON.stringify(prev.appliedTo?.extraSets ?? null) === JSON.stringify(extraStamp)) {
       console.log(`Step 3B-1 already applied to this exact bundle — ${prev.occurrences?.length ?? 0} overlay occurrences, ${prev.actionsHeld ?? 0} held. Nothing written.`)
       process.exit(0)
     }
@@ -141,8 +181,9 @@ if (fs.existsSync(overlayPath) && fs.existsSync(dispPath)) {
   try {
     const prev = JSON.parse(fs.readFileSync(overlayPath, 'utf8'))
     if (prev.appliedTo?.postsSha256 === fileSha(postsPath) && prev.appliedTo?.questionsSha256 === fileSha(questionsPath)
-        && prev.appliedTo?.dispositionsSha256 !== DISPOSITIONS_SHA256) {
-      onlyTheseActionIds = dispositionIds
+        && (prev.appliedTo?.dispositionsSha256 !== DISPOSITIONS_SHA256
+            || JSON.stringify(prev.appliedTo?.extraSets ?? null) !== JSON.stringify(extraStamp))) {
+      onlyTheseActionIds = new Set([...(dispositionIds ?? []), ...extraIds])
     }
   } catch { /* fall through to a full derivation */ }
 }
@@ -379,6 +420,8 @@ for (const a of actions) {
     a.kind === 'CONTEXT_TO_DISPOSITION' ? [a.oldOccurrenceKeys[0]]
     : a.kind === 'NESTED_OVERLAP_COLLAPSE' || a.kind === 'SOURCE_BOUNDARY_RESOLUTION' ? (a.recordsWithdrawn ?? [])
     : a.kind === 'DUPLICATE_MERGE' || a.kind === 'CLAUSE_PARTITION' ? []
+    : a.kind === 'WITHDRAW_RECORD' ? (a.recordsWithdrawn ?? [])
+    : a.kind === 'SPAN_TRIM' ? (a.oldOccurrenceKeys ?? [])
     : a.sourceDisposition !== 'q_authored' ? (a.oldOccurrenceKeys ?? [])
     : (a.oldOccurrenceKeys ?? []).filter(k => k.split('|')[1] !== winnerKindFor)
   const stillThere = removalKeys.filter(k => resolve(k).length).length
@@ -595,6 +638,78 @@ for (const a of actions) {
       reviewDispositions: a.proposedReviewDispositions, provenanceEvidence: a.provenanceEvidence,
       withdrewFragments: a.recordsWithdrawn, actionId: a.actionId, ruleCode: a.ruleCode,
       withdrawReason: a.withdrawReason,
+    })
+    continue
+  }
+
+  if (a.kind === 'WITHDRAW_RECORD') {
+    // Nothing to re-span to: every line the span covers is a link, a pointer or a label. The
+    // record is withdrawn whole. Its wording is kept in the overlay so the withdrawal is legible.
+    let removed = 0
+    for (const k of a.recordsWithdrawn) {
+      for (const r of resolve(k)) {
+        removeRecord(a.actionId, r, 'withdrawn'); removed++
+        metaTransfers.push({ actionId: a.actionId, from: k, kind: r.kind, metadata: metaFor(p, r.kind, r.certifiedValue) })
+      }
+    }
+    if (!removed) { alreadyApplied.push(a.actionId); carryForward(a.actionId); continue }
+    semantics.push({
+      occurrenceKey: a.oldOccurrenceKeys[0], postNum: a.postNum,
+      start: a.sentenceStart, end: a.sentenceEnd, text: a.sentenceText,
+      sourceDisposition: a.sourceDisposition, primaryCategory: null, withdrawn: true,
+      secondarySemantics: [], reviewDispositions: [],
+      actionId: a.actionId, ruleCode: a.ruleCode, withdrawReason: a.withdrawReason,
+      adjudication: a.adjudication, adjudicationReason: a.adjudicationReason,
+    })
+    continue
+  }
+
+  if (a.kind === 'SPAN_TRIM') {
+    // Geometry only. The category does not move; the span stops covering the link line beside it.
+    const trimBody = runtimeText(p.text ?? '')
+    if (trimBody.slice(a.sentenceStart, a.sentenceEnd) !== a.sentenceText) {
+      problems.push(`${a.actionId}: the trimmed span does not match the body at those offsets`); continue
+    }
+    let moved = 0
+    for (const k of a.oldOccurrenceKeys) {
+      for (const r of resolve(k)) {
+        if (r.origin.field === 'questions.json') {
+          questionEdits.set(r.origin.id, { ...(questionEdits.get(r.origin.id) ?? {}),
+            literal: a.sentenceText, step3b1ActionId: a.actionId,
+            supersededSpan: { start: r.start, end: r.end, text: r.matched } })
+          moved++
+          continue
+        }
+        const field = r.origin.field.split('.').pop()
+        const holder = field === 'actionRequests' ? p : p.postAnalysis
+        const oldText = holder[field][r.origin.index]
+        holder[field][r.origin.index] = a.sentenceText
+        const mirrorName = MIRROR[r.origin.field]
+        const mirror = mirrorName && Array.isArray(p.postAnalysis?.[mirrorName]) && p.postAnalysis[mirrorName].length === holder[field].length
+          ? p.postAnalysis[mirrorName] : null
+        if (mirrorName && !mirror) problems.push(`${a.actionId}: ${r.origin.field} has no index-aligned ${mirrorName}`)
+        if (mirror) mirror[r.origin.index] = a.sentenceText
+        for (const [map, name] of [[p.claimMeta, 'claimMeta'], [p.directiveMeta, 'directiveMeta'], [p.directiveFamilies, 'directiveFamilies']]) {
+          if (!map) continue
+          const ok = metaKey(oldText), nk = metaKey(a.sentenceText)
+          if (map[ok] !== undefined && ok !== nk) {
+            map[nk] = map[ok]; delete map[ok]
+            metaTransfers.push({ actionId: a.actionId, rekeyed: name, from: ok, to: nk })
+          }
+        }
+        moved++
+        metaTransfers.push({ actionId: a.actionId, from: k, kind: r.kind, metadata: metaFor(p, r.kind, r.certifiedValue) })
+      }
+    }
+    if (!moved) { alreadyApplied.push(a.actionId); carryForward(a.actionId); continue }
+    semantics.push({
+      occurrenceKey: `${a.postNum}|${a.oldOccurrenceKeys[0].split('|')[1]}|${a.sentenceStart}|${a.sentenceEnd}`,
+      postNum: a.postNum, start: a.sentenceStart, end: a.sentenceEnd, text: a.sentenceText,
+      sourceDisposition: a.sourceDisposition, primaryCategory: a.proposedPrimaryCategory,
+      secondarySemantics: [], reviewDispositions: [],
+      trimmedFrom: a.oldOccurrenceKeys[0], droppedLines: a.droppedLines,
+      actionId: a.actionId, ruleCode: a.ruleCode,
+      adjudication: a.adjudication, adjudicationReason: a.adjudicationReason,
     })
     continue
   }
@@ -817,7 +932,8 @@ fs.writeFileSync(postsPath, JSON.stringify(posts))
 fs.writeFileSync(questionsPath, JSON.stringify(questions))
 // Stamped with what it was applied TO, so the next run can tell "already done" from "do it again".
 doc.appliedTo = { postsSha256: fileSha(postsPath), questionsSha256: fileSha(questionsPath),
-  dispositionsSha256: fs.existsSync(dispPath) ? DISPOSITIONS_SHA256 : null }
+  dispositionsSha256: fs.existsSync(dispPath) ? DISPOSITIONS_SHA256 : null,
+  extraSets: extraStamp }
 fs.writeFileSync(overlayPath, stable(doc))
 fs.writeFileSync(path.join(OUT, 'step3b1-metadata-transfers.json'), stable({ transfers: metaTransfers }))
 

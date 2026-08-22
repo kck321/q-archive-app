@@ -5729,6 +5729,2016 @@
      "confidence": "OWNER_ADJUDICATED"
     }
    }
+  },
+  {
+   "actionId": "B2-DROP-1280-claims-14-152",
+   "from": "1280|claims|14|152",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1284-claims-30-274",
+   "from": "1284|claims|30|274",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1285-claims-0-275",
+   "from": "1285|claims|0|275",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1286-claims-306-642",
+   "from": "1286|claims|306|642",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1361-claims-1463-1809",
+   "from": "1361|claims|1463|1809",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1361-claims-222-593",
+   "from": "1361|claims|222|593",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1481-claims-11-282",
+   "from": "1481|claims|11|282",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1532-claims-0-110",
+   "from": "1532|claims|0|110",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1544-claims-0-125",
+   "from": "1544|claims|0|125",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1560-claims-31-224",
+   "from": "1560|claims|31|224",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1695-claims-0-185",
+   "from": "1695|claims|0|185",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1762-claims-247-685",
+   "from": "1762|claims|247|685",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1785-claims-0-296",
+   "from": "1785|claims|0|296",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1785-claims-297-680",
+   "from": "1785|claims|297|680",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1785-claims-681-981",
+   "from": "1785|claims|681|981",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1785-claims-982-1320",
+   "from": "1785|claims|982|1320",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1790-claims-0-190",
+   "from": "1790|claims|0|190",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1797-claims-1171-1456",
+   "from": "1797|claims|1171|1456",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1797-claims-1457-1612",
+   "from": "1797|claims|1457|1612",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1797-claims-331-635",
+   "from": "1797|claims|331|635",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1797-claims-636-856",
+   "from": "1797|claims|636|856",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1797-claims-857-1170",
+   "from": "1797|claims|857|1170",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1806-claims-43-361",
+   "from": "1806|claims|43|361",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1814-claims-0-146",
+   "from": "1814|claims|0|146",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1826-claims-1324-1598",
+   "from": "1826|claims|1324|1598",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1826-claims-1599-1874",
+   "from": "1826|claims|1599|1874",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1826-claims-2209-2526",
+   "from": "1826|claims|2209|2526",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1826-claims-271-583",
+   "from": "1826|claims|271|583",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1826-claims-28-270",
+   "from": "1826|claims|28|270",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1826-claims-2874-3136",
+   "from": "1826|claims|2874|3136",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1826-claims-584-975",
+   "from": "1826|claims|584|975",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1856-claims-1148-1541",
+   "from": "1856|claims|1148|1541",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1856-claims-549-827",
+   "from": "1856|claims|549|827",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1856-claims-828-1147",
+   "from": "1856|claims|828|1147",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1862-claims-654-842",
+   "from": "1862|claims|654|842",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1880-claims-50-284",
+   "from": "1880|claims|50|284",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1913-claims-67-257",
+   "from": "1913|claims|67|257",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1915-claims-147-494",
+   "from": "1915|claims|147|494",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1939-claims-330-659",
+   "from": "1939|claims|330|659",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1939-claims-660-952",
+   "from": "1939|claims|660|952",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1939-claims-953-1153",
+   "from": "1939|claims|953|1153",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1945-claims-1180-1525",
+   "from": "1945|claims|1180|1525",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1945-claims-284-521",
+   "from": "1945|claims|284|521",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1945-claims-522-819",
+   "from": "1945|claims|522|819",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1945-claims-820-1179",
+   "from": "1945|claims|820|1179",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1947-claims-869-1092",
+   "from": "1947|claims|869|1092",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1982-claims-0-259",
+   "from": "1982|claims|0|259",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1992-claims-0-184",
+   "from": "1992|claims|0|184",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-1997-claims-0-268",
+   "from": "1997|claims|0|268",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2029-claims-1113-1483",
+   "from": "2029|claims|1113|1483",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2029-claims-819-1112",
+   "from": "2029|claims|819|1112",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2136-claims-0-234",
+   "from": "2136|claims|0|234",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2136-claims-934-1196",
+   "from": "2136|claims|934|1196",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2165-claims-629-889",
+   "from": "2165|claims|629|889",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2171-claims-2052-2292",
+   "from": "2171|claims|2052|2292",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2319-claims-0-200",
+   "from": "2319|claims|0|200",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2373-claims-0-289",
+   "from": "2373|claims|0|289",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2377-claims-0-232",
+   "from": "2377|claims|0|232",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2386-claims-1168-1522",
+   "from": "2386|claims|1168|1522",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2386-claims-1768-2083",
+   "from": "2386|claims|1768|2083",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2386-claims-2084-2344",
+   "from": "2386|claims|2084|2344",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2386-claims-2345-2656",
+   "from": "2386|claims|2345|2656",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2386-claims-3276-3662",
+   "from": "2386|claims|3276|3662",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2386-claims-3987-4338",
+   "from": "2386|claims|3987|4338",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2386-claims-492-827",
+   "from": "2386|claims|492|827",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2386-claims-828-1167",
+   "from": "2386|claims|828|1167",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2399-claims-26-214",
+   "from": "2399|claims|26|214",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-246-context-0-5",
+   "from": "246|context|0|5",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-DROP-2523-claims-0-305",
+   "from": "2523|claims|0|305",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2579-claims-0-175",
+   "from": "2579|claims|0|175",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2590-claims-0-427",
+   "from": "2590|claims|0|427",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2782-questions-0-104",
+   "from": "2782|questions|0|104",
+   "kind": "questions",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-DROP-2807-claims-259-454",
+   "from": "2807|claims|259|454",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2807-claims-600-753",
+   "from": "2807|claims|600|753",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2894-claims-0-295",
+   "from": "2894|claims|0|295",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-2968-claims-0-174",
+   "from": "2968|claims|0|174",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-3182-claims-297-461",
+   "from": "3182|claims|297|461",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-3316-claims-0-193",
+   "from": "3316|claims|0|193",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-3748-claims-0-231",
+   "from": "3748|claims|0|231",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-3778-claims-334-619",
+   "from": "3778|claims|334|619",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-3896-claims-572-724",
+   "from": "3896|claims|572|724",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-3917-claims-0-91",
+   "from": "3917|claims|0|91",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-4285-claims-0-301",
+   "from": "4285|claims|0|301",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-4415-claims-0-420",
+   "from": "4415|claims|0|420",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-4645-claims-369-709",
+   "from": "4645|claims|369|709",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-4653-claims-0-220",
+   "from": "4653|claims|0|220",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-4668-claims-11-431",
+   "from": "4668|claims|11|431",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-4668-claims-432-703",
+   "from": "4668|claims|432|703",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-4669-claims-0-180",
+   "from": "4669|claims|0|180",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-4887-claims-0-457",
+   "from": "4887|claims|0|457",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-732-claims-250-527",
+   "from": "732|claims|250|527",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2-DROP-756-context-54-89",
+   "from": "756|context|54|89",
+   "kind": "context",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-1287-claims-525-710",
+   "rekeyed": "claimMeta",
+   "from": "it shouldn t take more than a week or two to come to a resolution on the probe http www foxnews com politics 2018 04 20 rudy to rescue giuliani vows to wrap up mueller probe html",
+   "to": "it shouldn t take more than a week or two to come to a resolution on the probe"
+  },
+  {
+   "actionId": "B2-TRIM-1287-claims-525-710",
+   "from": "1287|claims|525|710",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-1439-claims-171-218",
+   "rekeyed": "claimMeta",
+   "from": "who is missing from the scheduled meeting rr",
+   "to": "who is missing from the scheduled meeting"
+  },
+  {
+   "actionId": "B2-TRIM-1439-claims-171-218",
+   "from": "1439|claims|171|218",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-1458-claims-10-422",
+   "rekeyed": "claimMeta",
+   "from": "asked about the letter however a doj official said rosenstein is currently representing the united states in a brief unrelated visit to a foreign nation one of america s key intelligence partners indicating he would plan on responding during the previously scheduled briefing on thursday http www foxnews com politics 2018 06 11 doj refusing to give grassley access to agent who interviewed flynn html",
+   "to": "asked about the letter however a doj official said rosenstein is currently representing the united states in a brief unrelated visit to a foreign nation one of america s key intelligence partners indicating he would plan on responding during the previously scheduled briefing on thursday"
+  },
+  {
+   "actionId": "B2-TRIM-1458-claims-10-422",
+   "from": "1458|claims|10|422",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-1764-claims-747-967",
+   "rekeyed": "claimMeta",
+   "from": "furthermore haspel is seen as a russia expert and a close ally of britain s mi6 having being london station chief from 2014 to 2017 https www theguardian com us news 2018 may 08 gina haspel cia director atone past",
+   "to": "furthermore haspel is seen as a russia expert and a close ally of britain s mi6 having being london station chief from 2014 to 2017"
+  },
+  {
+   "actionId": "B2-TRIM-1764-claims-747-967",
+   "from": "1764|claims|747|967",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-1927-claims-2154-2399",
+   "rekeyed": "claimMeta",
+   "from": "45 000 sealed indictments https www military com daily news 2018 03 28 when it comes guantanamo trump truly builder chief html https www theguardian com us news 2017 feb 23 trump revives private prison program doj obama administration end",
+   "to": "45 000 sealed indictments"
+  },
+  {
+   "actionId": "B2-TRIM-1927-claims-2154-2399",
+   "from": "1927|claims|2154|2399",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-1935-claims-226-514",
+   "rekeyed": "claimMeta",
+   "from": "halper who assisted the fbi in the russia investigation appears to also have significant ties to the russian government as well as sources connected directly to president vladimir putin https saraacarter com whistleblower exposes key player in fbi russia probe it was all a set up",
+   "to": "halper who assisted the fbi in the russia investigation appears to also have significant ties to the russian government as well as sources connected directly to president vladimir putin"
+  },
+  {
+   "actionId": "B2-TRIM-1935-claims-226-514",
+   "from": "1935|claims|226|514",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-1950-claims-230-402",
+   "rekeyed": "claimMeta",
+   "from": "the holy see as the supreme body of government of the catholic church is a sovereign juridical entity under international law https www state gov r pa ei bgn 3819 htm",
+   "to": "the holy see as the supreme body of government of the catholic church is a sovereign juridical entity under international law"
+  },
+  {
+   "actionId": "B2-TRIM-1950-claims-230-402",
+   "from": "1950|claims|230|402",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-1988-claims-71-146",
+   "rekeyed": "claimMeta",
+   "from": "hannity 8 28 18 https www youtube com watchv d3p7aqtusjc feature youtu be",
+   "to": "hannity 8 28 18"
+  },
+  {
+   "actionId": "B2-TRIM-1988-claims-71-146",
+   "from": "1988|claims|71|146",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-2107-claims-856-931",
+   "rekeyed": "claimMeta",
+   "from": "page is true and correct https vault fbi gov d1 release d1 release view",
+   "to": "i declare under penalty of perjury that the foregoing information regarding carter w page is true and correct"
+  },
+  {
+   "actionId": "B2-TRIM-2107-claims-856-931",
+   "from": "2107|claims|856|931",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-2135-claims-129-413",
+   "rekeyed": "claimMeta",
+   "from": "review of the new documents raises grave concerns regarding an apparent systemic culture of media leaking by high ranking officials at the fbi and doj related to ongoing investigations https saraacarter com wp content uploads 2018 09 9 10 18 letter from mrm to dag rosenstein pdf",
+   "to": "review of the new documents raises grave concerns regarding an apparent systemic culture of media leaking by high ranking officials at the fbi and doj related to ongoing investigations"
+  },
+  {
+   "actionId": "B2-TRIM-2135-claims-129-413",
+   "from": "2135|claims|129|413",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-2180-claims-1242-1292",
+   "rekeyed": "claimMeta",
+   "from": "what was the usss codename for hussein renegade",
+   "to": "what was the usss codename for hussein"
+  },
+  {
+   "actionId": "B2-TRIM-2180-claims-1242-1292",
+   "from": "2180|claims|1242|1292",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-2331-claims-61-355",
+   "rekeyed": "claimMeta",
+   "from": "former fbi general counsel james baker met during the 2016 season with at least one attorney from perkins coie the democratic national committee s private law firm https www perkinscoie com en professionals michael sussmann html https twitter com repgoodlatte status 1045781994477637632",
+   "to": "former fbi general counsel james baker met during the 2016 season with at least one attorney from perkins coie the democratic national committee s private law firm"
+  },
+  {
+   "actionId": "B2-TRIM-2331-claims-61-355",
+   "from": "2331|claims|61|355",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-2351-directives-19-87",
+   "rekeyed": "directiveMeta",
+   "from": "do not look here china https www youtube com watch v aevrmnibjsc",
+   "to": "do not look here china"
+  },
+  {
+   "actionId": "B2-TRIM-2351-directives-19-87",
+   "rekeyed": "directiveFamilies",
+   "from": "do not look here china https www youtube com watch v aevrmnibjsc",
+   "to": "do not look here china"
+  },
+  {
+   "actionId": "B2-TRIM-2351-directives-19-87",
+   "from": "2351|directives|19|87",
+   "kind": "directives",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-2352-claims-98-187",
+   "rekeyed": "claimMeta",
+   "from": "it was our last chance to save it non force https www youtube com watch v g2qixxafxcq",
+   "to": "it was our last chance to save it non force"
+  },
+  {
+   "actionId": "B2-TRIM-2352-claims-98-187",
+   "from": "2352|claims|98|187",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-2378-directives-803-871",
+   "rekeyed": "directiveMeta",
+   "from": "do not look here china https www youtube com watch v aevrmnibjsc",
+   "to": "do not look here china"
+  },
+  {
+   "actionId": "B2-TRIM-2378-directives-803-871",
+   "rekeyed": "directiveFamilies",
+   "from": "do not look here china https www youtube com watch v aevrmnibjsc",
+   "to": "do not look here china"
+  },
+  {
+   "actionId": "B2-TRIM-2378-directives-803-871",
+   "from": "2378|directives|803|871",
+   "kind": "directives",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-2382-directives-90-234",
+   "rekeyed": "directiveMeta",
+   "from": "re read drops re polls https www oge gov web oge nsf resources political activities https osc gov resources ha 20pamphlet 20sept 202014 pdf",
+   "to": "re read drops re polls"
+  },
+  {
+   "actionId": "B2-TRIM-2382-directives-90-234",
+   "rekeyed": "directiveFamilies",
+   "from": "re read drops re polls https www oge gov web oge nsf resources political activities https osc gov resources ha 20pamphlet 20sept 202014 pdf",
+   "to": "re read drops re polls"
+  },
+  {
+   "actionId": "B2-TRIM-2382-directives-90-234",
+   "from": "2382|directives|90|234",
+   "kind": "directives",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-2395-directives-99-181",
+   "rekeyed": "directiveMeta",
+   "from": "re read drops re ms13 https twitter com repmattgaetz status 1052629557826736129",
+   "to": "re read drops re ms13"
+  },
+  {
+   "actionId": "B2-TRIM-2395-directives-99-181",
+   "rekeyed": "directiveFamilies",
+   "from": "re read drops re ms13 https twitter com repmattgaetz status 1052629557826736129",
+   "to": "re read drops re ms13"
+  },
+  {
+   "actionId": "B2-TRIM-2395-directives-99-181",
+   "from": "2395|directives|99|181",
+   "kind": "directives",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-2500-directives-118-336",
+   "rekeyed": "directiveMeta",
+   "from": "re read drops re warnings https www washingtonpost com politics new book by trump advisers calls out the presidents embedded enemies 2018 11 24 afcbd0fc ede3 11e8 baac 2a674e91502b story html utm term 80e6d1b24752",
+   "to": "re read drops re warnings"
+  },
+  {
+   "actionId": "B2-TRIM-2500-directives-118-336",
+   "rekeyed": "directiveFamilies",
+   "from": "re read drops re warnings https www washingtonpost com politics new book by trump advisers calls out the presidents embedded enemies 2018 11 24 afcbd0fc ede3 11e8 baac 2a674e91502b story html utm term 80e6d1b24752",
+   "to": "re read drops re warnings"
+  },
+  {
+   "actionId": "B2-TRIM-2500-directives-118-336",
+   "from": "2500|directives|118|336",
+   "kind": "directives",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-2801-directives-30-137",
+   "rekeyed": "directiveMeta",
+   "from": "search qanon https www nbcnews com pages search q qanon https abcnews go com search searchtext qanon",
+   "to": "search qanon"
+  },
+  {
+   "actionId": "B2-TRIM-2801-directives-30-137",
+   "rekeyed": "directiveFamilies",
+   "from": "search qanon https www nbcnews com pages search q qanon https abcnews go com search searchtext qanon",
+   "to": "search qanon"
+  },
+  {
+   "actionId": "B2-TRIM-2801-directives-30-137",
+   "from": "2801|directives|30|137",
+   "kind": "directives",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-2883-claims-105-294",
+   "rekeyed": "claimMeta",
+   "from": "2 remove control from gov t and provide to ca who controls ca https www forbes com sites jodywestby 2016 09 24 7 days before obama gives away internet national security 2129f20b30d4",
+   "to": "2 remove control from gov t and provide to ca who controls ca"
+  },
+  {
+   "actionId": "B2-TRIM-2883-claims-105-294",
+   "from": "2883|claims|105|294",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-2912-claims-477-625",
+   "rekeyed": "claimMeta",
+   "from": "no way it s time to stop this corrupt and illegally brought witch hunt time to start looking at the other side where real crimes were committed",
+   "to": "no way it s time to stop this corrupt and illegally brought witch hunt"
+  },
+  {
+   "actionId": "B2-TRIM-2912-claims-477-625",
+   "from": "2912|claims|477|625",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-2938-predictions-1014-1106",
+   "rekeyed": "claimMeta",
+   "from": "what other anchors were provided to fisc in order to gain the warrant declas will show",
+   "to": "what other anchors were provided to fisc in order to gain the warrant"
+  },
+  {
+   "actionId": "B2-TRIM-2938-predictions-1014-1106",
+   "from": "2938|predictions|1014|1106",
+   "kind": "predictions",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-2971-claims-462-560",
+   "rekeyed": "claimMeta",
+   "from": "1 evidence or argument establishing or helping to establish a fact or the truth of a statement",
+   "to": "evidence or argument establishing or helping to establish a fact or the truth of a statement"
+  },
+  {
+   "actionId": "B2-TRIM-2971-claims-462-560",
+   "from": "2971|claims|462|560",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-3428-directives-198-296",
+   "rekeyed": "directiveMeta",
+   "from": "find 4 http www zimbio com photos ghislaine maxwell 2014 etm children benefit gala vl0uc7ggk w",
+   "to": "find 4"
+  },
+  {
+   "actionId": "B2-TRIM-3428-directives-198-296",
+   "rekeyed": "directiveFamilies",
+   "from": "find 4 http www zimbio com photos ghislaine maxwell 2014 etm children benefit gala vl0uc7ggk w",
+   "to": "find 4"
+  },
+  {
+   "actionId": "B2-TRIM-3428-directives-198-296",
+   "from": "3428|directives|198|296",
+   "kind": "directives",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-3584-claims-37-168",
+   "rekeyed": "claimMeta",
+   "from": "ai manhattan project https www breitbart com tech 2019 10 14 whistleblower google is developing ai for planetary surveillance",
+   "to": "ai manhattan project"
+  },
+  {
+   "actionId": "B2-TRIM-3584-claims-37-168",
+   "from": "3584|claims|37|168",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-3623-claims-539-631",
+   "rekeyed": "claimMeta",
+   "from": "re read drops re foreign aid https www youtube com watch v g2qixxafxcq feature youtu be",
+   "to": "re read drops re foreign aid"
+  },
+  {
+   "actionId": "B2-TRIM-3623-claims-539-631",
+   "from": "3623|claims|539|631",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-3636-claims-177-204",
+   "rekeyed": "claimMeta",
+   "from": "who controls the media 6",
+   "to": "who controls the media"
+  },
+  {
+   "actionId": "B2-TRIM-3636-claims-177-204",
+   "from": "3636|claims|177|204",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-3809-claims-10-95",
+   "rekeyed": "claimMeta",
+   "from": "sc to hear case re legality of impeachment articles drafted by house clean record",
+   "to": "sc to hear case re legality of impeachment articles drafted by house"
+  },
+  {
+   "actionId": "B2-TRIM-3809-claims-10-95",
+   "from": "3809|claims|10|95",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-3819-directives-0-83",
+   "rekeyed": "directiveMeta",
+   "from": "read 1 https www miamiherald com news politics government article237959369 html",
+   "to": "read 1"
+  },
+  {
+   "actionId": "B2-TRIM-3819-directives-0-83",
+   "rekeyed": "directiveFamilies",
+   "from": "read 1 https www miamiherald com news politics government article237959369 html",
+   "to": "read 1"
+  },
+  {
+   "actionId": "B2-TRIM-3819-directives-0-83",
+   "from": "3819|directives|0|83",
+   "kind": "directives",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-3819-directives-84-167",
+   "rekeyed": "directiveMeta",
+   "from": "read 2 https www miamiherald com news politics government article214974800 html",
+   "to": "read 2"
+  },
+  {
+   "actionId": "B2-TRIM-3819-directives-84-167",
+   "rekeyed": "directiveFamilies",
+   "from": "read 2 https www miamiherald com news politics government article214974800 html",
+   "to": "read 2"
+  },
+  {
+   "actionId": "B2-TRIM-3819-directives-84-167",
+   "from": "3819|directives|84|167",
+   "kind": "directives",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-3836-directives-279-384",
+   "rekeyed": "directiveMeta",
+   "from": "think d s attack s re potus for failure to protect ukraine against russian aggression impeachment",
+   "to": "think d s attack s re potus for failure to protect ukraine against russian aggression"
+  },
+  {
+   "actionId": "B2-TRIM-3836-directives-279-384",
+   "rekeyed": "directiveFamilies",
+   "from": "think d s attack s re potus for failure to protect ukraine against russian aggression impeachment",
+   "to": "think d s attack s re potus for failure to protect ukraine against russian aggression"
+  },
+  {
+   "actionId": "B2-TRIM-3836-directives-279-384",
+   "from": "3836|directives|279|384",
+   "kind": "directives",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-3896-claims-1608-1714",
+   "rekeyed": "claimMeta",
+   "from": "d party leading nominee established super t prior to lock down take over sanders elim biden front",
+   "to": "d party leading nominee established super t prior to lock down take over"
+  },
+  {
+   "actionId": "B2-TRIM-3896-claims-1608-1714",
+   "from": "3896|claims|1608|1714",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-3896-directives-987-1095",
+   "rekeyed": "directiveMeta",
+   "from": "push new revised p 2020 vote by mail unsecure https twitter com tomfitton status 1242071506445885441",
+   "to": "push new revised p 2020 vote by mail"
+  },
+  {
+   "actionId": "B2-TRIM-3896-directives-987-1095",
+   "rekeyed": "directiveFamilies",
+   "from": "push new revised p 2020 vote by mail unsecure https twitter com tomfitton status 1242071506445885441",
+   "to": "push new revised p 2020 vote by mail"
+  },
+  {
+   "actionId": "B2-TRIM-3896-directives-987-1095",
+   "from": "3896|directives|987|1095",
+   "kind": "directives",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-4526-claims-86-206",
+   "rekeyed": "claimMeta",
+   "from": "but what are the odds this particular hit re fb censorship push comes the next day think battlefield and mission s",
+   "to": "but what are the odds this particular hit re fb censorship push comes the next day"
+  },
+  {
+   "actionId": "B2-TRIM-4526-claims-86-206",
+   "from": "4526|claims|86|206",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-4548-claims-724-954",
+   "rekeyed": "claimMeta",
+   "from": "de blasio said sunday that more than 650 inmates had been released over coronavirus concerns https www nbcnewyork com news local crime and courts released from rikers in covid measure man arrested 4 times in 3 months 2460035",
+   "to": "de blasio said sunday that more than 650 inmates had been released over coronavirus concerns"
+  },
+  {
+   "actionId": "B2-TRIM-4548-claims-724-954",
+   "from": "4548|claims|724|954",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-4565-claims-106-298",
+   "rekeyed": "claimMeta",
+   "from": "1 primary gather blackmail on elected pols dignitaries royalty hollywood influencers wall street and other financial top level players other high profile industry specific people etc",
+   "to": "primary gather blackmail on elected pols dignitaries royalty hollywood influencers wall street and other financial top level players other high profile industry specific people etc"
+  },
+  {
+   "actionId": "B2-TRIM-4565-claims-106-298",
+   "from": "4565|claims|106|298",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-4620-themeAnchors-3002-3089",
+   "from": "4620|themeAnchors|3002|3089",
+   "kind": "themeAnchors",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-4635-claims-104-168",
+   "rekeyed": "claimMeta",
+   "from": "then v now https www britannica com topic sa nazi organization",
+   "to": "then v now"
+  },
+  {
+   "actionId": "B2-TRIM-4635-claims-104-168",
+   "from": "4635|claims|104|168",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-4688-themeAnchors-1836-1924",
+   "from": "4688|themeAnchors|1836|1924",
+   "kind": "themeAnchors",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-4831-claims-79-243",
+   "rekeyed": "claimMeta",
+   "from": "what is the going rate for the speaker of the house to obstruct congressional investigations for the purposes of delaying and or eliminating its findings protect",
+   "to": "what is the going rate for the speaker of the house to obstruct congressional investigations for the purposes of delaying and or eliminating its findings"
+  },
+  {
+   "actionId": "B2-TRIM-4831-claims-79-243",
+   "from": "4831|claims|79|243",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-484-themeAnchors-533-579",
+   "from": "484|themeAnchors|533|579",
+   "kind": "themeAnchors",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-4842-claims-344-496",
+   "rekeyed": "claimMeta",
+   "from": "2020 total deaths us jan week 9 26 2 130 000 236 000 month https data cdc gov nchs weekly counts of deaths by state and select causes muzy jte6",
+   "to": "2020 total deaths us jan week 9 26 2 130 000 236 000 month"
+  },
+  {
+   "actionId": "B2-TRIM-4842-claims-344-496",
+   "from": "4842|claims|344|496",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-4851-claims-327-430",
+   "rekeyed": "claimMeta",
+   "from": "in this case does having early stage dementia help you re previous deniability harmful politically",
+   "to": "in this case does having early stage dementia help you re previous deniability"
+  },
+  {
+   "actionId": "B2-TRIM-4851-claims-327-430",
+   "from": "4851|claims|327|430",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-4872-claims-183-316",
+   "rekeyed": "claimMeta",
+   "from": "blame opponent for what they themselves are guilty of dnc media push echo submitted talking points generate false narrative",
+   "to": "blame opponent for what they themselves are guilty of"
+  },
+  {
+   "actionId": "B2-TRIM-4872-claims-183-316",
+   "from": "4872|claims|183|316",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-4881-claims-456-531",
+   "rekeyed": "claimMeta",
+   "from": "retweet 17 17 had meaning mathematical probability 17 17 day after",
+   "to": "retweet 17 17 had meaning"
+  },
+  {
+   "actionId": "B2-TRIM-4881-claims-456-531",
+   "from": "4881|claims|456|531",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-4885-claims-687-776",
+   "rekeyed": "claimMeta",
+   "from": "why are they so heavily invested in attacking forcing potus to denounce attempt 2x",
+   "to": "why are they so heavily invested in attacking forcing potus to denounce"
+  },
+  {
+   "actionId": "B2-TRIM-4885-claims-687-776",
+   "from": "4885|claims|687|776",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2-TRIM-497-claims-10-25",
+   "rekeyed": "claimMeta",
+   "from": "win when 15",
+   "to": "win when"
+  },
+  {
+   "actionId": "B2-TRIM-497-claims-10-25",
+   "from": "497|claims|10|25",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "B2B-MP-p1439-s003",
+   "from": "1439|claims|171|213",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "B2B-MP-p2180-s016",
+   "from": "2180|claims|1242|1281",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "B2B-MP-p3623-s012",
+   "from": "3623|claims|539|570",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
   }
  ]
 }

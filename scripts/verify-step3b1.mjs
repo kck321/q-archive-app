@@ -41,8 +41,13 @@ const planRows = readJsonl(path.join(OUT, 'step3b1-plan.jsonl'))
 // apply-step3b1.mjs makes, so the verifier measures the state the applier was actually asked for.
 const dispPath = path.join(OUT, 'step3b1-held-dispositions.jsonl')
 const dispositions = fs.existsSync(dispPath) ? readJsonl(dispPath) : []
+// The extra action sets the applier loads — B2's boundary repairs and the B2b collisions those
+// repairs uncovered. Read the same files it reads, so the target is derived from the same source
+// rather than typed to match what was measured.
+const extraSets = ['step3b1-b2-actions.jsonl', 'step3b1-b2b-actions.jsonl']
+  .map(f => path.join(OUT, f)).filter(f => fs.existsSync(f)).flatMap(readJsonl)
 const dispById = new Map(dispositions.map(d => [d.actionId, d]))
-const plan = planRows.map(a => dispById.get(a.actionId) ?? a)
+const plan = planRows.map(a => dispById.get(a.actionId) ?? a).concat(extraSets)
 
 const automatic = plan.filter(a => !a.humanReviewRequired)
 const held = plan.filter(a => a.humanReviewRequired)
@@ -87,6 +92,27 @@ for (const d of dispositions) {
   for (const sec of d.proposedSecondarySemantics ?? []) bump(d.sourceDisposition, 'secondary', sec.category, 1)
 }
 
+// The extra sets move counts too, by their own rules:
+//   WITHDRAW_RECORD  the span was nothing but links or labels — the record goes, so its kind -1
+//   SPAN_TRIM        geometry only; the record survives at a smaller span, so nothing moves
+//   MULTI_PRIMARY    one category keeps the sentence, each loser -1 primary and +1 secondary
+for (const a of extraSets) {
+  const bump = (src, layer, cat, n) => { if (!cat || !n) return; const k = `${src}|${layer}|${cat}`; dispDelta[k] = (dispDelta[k] ?? 0) + n }
+  if (a.kind === 'WITHDRAW_RECORD') {
+    for (const k of a.recordsWithdrawn ?? []) bump('q_authored', 'primary', PK_OF[k.split('|')[1]], -1)
+    continue
+  }
+  if (a.kind === 'SPAN_TRIM') continue
+  if (a.kind === 'MULTI_PRIMARY_RESOLUTION') {
+    const winnerKind = Object.entries(PK_OF).find(([, v]) => v === a.proposedPrimaryCategory)?.[0]
+    for (const k of a.oldOccurrenceKeys ?? []) {
+      if (k.split('|')[1] === winnerKind) continue
+      bump('q_authored', 'primary', PK_OF[k.split('|')[1]], -1)
+    }
+    for (const sec of a.proposedSecondarySemantics ?? []) bump(a.sourceDisposition, 'secondary', sec.category, 1)
+  }
+}
+
 const crossTab = manifest.counts.projection.map(r => {
   const isHeadline = r.source === 'q_authored' && r.layer === 'primary'
   const measured = isHeadline ? (primaryByKind[KW[r.category]] ?? 0) : (overlayCell[`${r.source}|${r.layer}|${r.category}`] ?? 0)
@@ -106,7 +132,7 @@ const overlayByAction = new Map(overlay.occurrences.map(o => [o.actionId, o]))
 const missing = automatic.filter(a => !overlayByAction.has(a.actionId))
 const overlayRowsExpected = automatic.reduce((n, a) => n + (a.kind === 'CLAUSE_PARTITION' ? (a.clauses ?? []).length : 1), 0)
 gates.push(gate('every automatic action materialised', missing.length === 0,
-  `${automatic.length - missing.length}/${automatic.length} actions, ${overlay.occurrences.length}/${overlayRowsExpected} overlay rows  (530 planned + ${dispositions.filter(d => !d.humanReviewRequired).length} adjudicated held; #34 contributes two rows, one per clause)`))
+  `${automatic.length - missing.length}/${automatic.length} actions, ${overlay.occurrences.length}/${overlayRowsExpected} overlay rows  (530 planned + ${dispositions.filter(d => !d.humanReviewRequired).length} adjudicated held + ${extraSets.length} B2/B2b; #34 contributes two rows, one per clause)`))
 
 const heldIds = new Set(held.map(h => h.actionId))
 const heldTouched = overlay.occurrences.filter(o => heldIds.has(o.actionId))
@@ -249,9 +275,21 @@ const conflictCsv = fs.readFileSync(path.join(ROOT, 'STEP3B1-DRYRUN', '10-CONFLI
 const conflictRows = conflictCsv.trim().split('\n').length - 1
 const heldConflictKeys = new Set(conflictCsv.trim().split('\n').slice(1)
   .map(l => (l.match(/^[^,]*,([^,]*)/) ?? [])[1]).filter(Boolean).map(s => s.replace(/^"|"$/g, '')))
-const consumedHeld = [...spend.keys()].filter(k => heldConflictKeys.has(k))
-gates.push(gate('no automatic action consumed a held-conflict key', consumedHeld.length === 0,
-  `${conflictRows} conflict rows, ${heldConflictKeys.size} distinct held keys, 0 consumed`))
+// THE PLAN MAY NOT TOUCH THE QUEUE. THE B2 SETS EXIST TO.
+//
+// Step 3B-1's 530 were gated on never consuming a conflict key — the queue was explicitly out of
+// their scope. The B2 boundary repairs are the opposite: resolving those rows is their entire
+// purpose. So the assertion is split rather than weakened, and what B2 resolved is reported.
+const extraIds = new Set(extraSets.map(a => a.actionId))
+const planSpend = new Map()
+for (const a of automatic) {
+  if (extraIds.has(a.actionId)) continue
+  for (const k of a.oldOccurrenceKeys ?? []) planSpend.set(k, a.actionId)
+}
+const consumedHeld = [...planSpend.keys()].filter(k => heldConflictKeys.has(k))
+const resolvedByB2 = new Set(extraSets.flatMap(a => (a.oldOccurrenceKeys ?? []).filter(k => heldConflictKeys.has(k))))
+gates.push(gate('no PLAN action consumed a held-conflict key', consumedHeld.length === 0,
+  `${conflictRows} rows in the frozen queue, ${heldConflictKeys.size} distinct held keys; plan consumed 0, B2/B2b deliberately resolved ${resolvedByB2.size}`))
 gates.push(gate('the 945-row conflict queue is unchanged', conflictRows === 945, `${conflictRows} rows`))
 
 // ── 7. write the receipt ────────────────────────────────────────────────────────────────────

@@ -2,7 +2,7 @@
  "note": "Step 3B-1 apply receipt. Measured from the bundle, not from the plan.",
  "step": "3B-1",
  "planSha256": "373ca06b1416b6707a111f2c3da8e751472c551f739500f76cdcc764d3128058",
- "actionsApplied": 51,
+ "actionsApplied": 3,
  "actionsHeld": 2,
  "heldActionIds": [
   "A-DUP-2971-questions-561-799",
@@ -10,10 +10,10 @@
  ],
  "seedVersion": 87,
  "outputs": {
-  "public/data/posts.json": "2ee598af3809890ded96bb434e02c4179650e5f61b8f229198731db82c94cdba",
-  "public/data/questions.json": "241dc211bf435d8522b34cdcc9f3ac8b832e06f80df346ddcb87d8ea3ee12b2f",
-  "public/data/semantics.json": "a378784750923df0c8ea8e96fc9ee314199143ed87ce86972a1be62240a50b24",
-  "audit/occurrence-ledger.json": "49bec4f157f537ae66ec6360e6e082457ad035641876e0c6c49b23b2e1953812"
+  "public/data/posts.json": "150ef1c36913c1c5e39a403bdcebb3d95947e09967d624ec422770d1e04ed952",
+  "public/data/questions.json": "d92040e59ec00dc510dd059183f62df1378e886304eba7dd81685451482b18a6",
+  "public/data/semantics.json": "530c5b62dd6033bfd29038fd0aae97c4c5ba11df8438876ba39c61d6ad4aa2b3",
+  "audit/occurrence-ledger.json": "bc13ea558f7d439719910f5f7dad7eee465b65bbd647b459e4c024ba7d88ee09"
  },
  "crossTab": [
   {
@@ -23,9 +23,9 @@
    "before": 8912,
    "projectedDelta": -92,
    "projectedAfter": 8820,
-   "adjudicatedHeldDelta": -6,
-   "target": 8814,
-   "measuredAfter": 8814,
+   "adjudicatedHeldDelta": -98,
+   "target": 8722,
+   "measuredAfter": 8722,
    "headlineEligible": true,
    "matches": true,
    "measuredFrom": "audit/occurrence-ledger.json"
@@ -65,9 +65,9 @@
    "before": 6503,
    "projectedDelta": -179,
    "projectedAfter": 6324,
-   "adjudicatedHeldDelta": 0,
-   "target": 6324,
-   "measuredAfter": 6324,
+   "adjudicatedHeldDelta": -1,
+   "target": 6323,
+   "measuredAfter": 6323,
    "headlineEligible": true,
    "matches": true,
    "measuredFrom": "audit/occurrence-ledger.json"
@@ -79,9 +79,9 @@
    "before": 0,
    "projectedDelta": 18,
    "projectedAfter": 18,
-   "adjudicatedHeldDelta": 5,
-   "target": 23,
-   "measuredAfter": 23,
+   "adjudicatedHeldDelta": 8,
+   "target": 26,
+   "measuredAfter": 26,
    "headlineEligible": false,
    "matches": true,
    "measuredFrom": "public/data/semantics.json"
@@ -285,9 +285,9 @@
  "residualsOutOfScope": {
   "note": "Explicitly left for the owner: the 10 held actions and the 945-row conflict queue.",
   "multiPrimarySentences": 0,
-  "sameCategoryPrimaryOverlaps": 18,
+  "sameCategoryPrimaryOverlaps": 19,
   "supersededPartialPrimarySpans": 179,
-  "boundaryCrossingRecords": 231,
+  "boundaryCrossingRecords": 87,
   "conflictQueueRows": 945
  },
  "gates": [
@@ -299,7 +299,7 @@
   {
    "gate": "every automatic action materialised",
    "pass": true,
-   "detail": "538/538 actions, 539/539 overlay rows  (530 planned + 8 adjudicated held; #34 contributes two rows, one per clause)"
+   "detail": "685/685 actions, 686/686 overlay rows  (530 planned + 8 adjudicated held + 147 B2/B2b; #34 contributes two rows, one per clause)"
   },
   {
    "gate": "no held action appears in the applied overlay",
@@ -314,17 +314,17 @@
   {
    "gate": "zero duplicate action consumption",
    "pass": true,
-   "detail": "909 distinct old keys across 538 actions"
+   "detail": "1059 distinct old keys across 685 actions"
   },
   {
    "gate": "zero runtime substring mismatch in the overlay",
    "pass": true,
-   "detail": "539 rows verified against runtimeText()"
+   "detail": "686 rows verified against runtimeText()"
   },
   {
    "gate": "zero runtime substring mismatch in the ledger",
    "pass": true,
-   "detail": "30,969 records verified"
+   "detail": "30,874 records verified"
   },
   {
    "gate": "zero same-sentence multi-primary inside the applied scope",
@@ -339,7 +339,7 @@
   {
    "gate": "every in-scope same-category primary overlap is a named source-boundary exception",
    "pass": true,
-   "detail": "18 archive-wide; 2 in scope, all on #4310; 0 unexplained"
+   "detail": "19 archive-wide; 2 in scope, all on #4310; 0 unexplained"
   },
   {
    "gate": "every in-scope partial primary span is a named source-boundary exception or a declared span override",
@@ -349,7 +349,7 @@
   {
    "gate": "metadata transfer recorded for every withdrawn record",
    "pass": true,
-   "detail": "596 transfers, 199 carrying certified attributes, 4 meta keys re-pointed to a widened span"
+   "detail": "793 transfers, 291 carrying certified attributes, 59 meta keys re-pointed to a widened span"
   },
   {
    "gate": "question_directive relationship preserved on every unified pair",
@@ -359,17 +359,17 @@
   {
    "gate": "no question record deleted to move a count",
    "pass": true,
-   "detail": "179 marked (163 secondary, 16 withdrawn), all retain id / text / occurrences"
+   "detail": "180 marked (163 secondary, 17 withdrawn), all retain id / text / occurrences"
   },
   {
    "gate": "the certified wording and the painted span stay index-aligned",
    "pass": true,
-   "detail": "claims 8814 = claimSpans 8814; predictions 843 = predictionSpans 843; 0 posts out of alignment"
+   "detail": "claims 8722 = claimSpans 8722; predictions 843 = predictionSpans 843; 0 posts out of alignment"
   },
   {
-   "gate": "no automatic action consumed a held-conflict key",
+   "gate": "no PLAN action consumed a held-conflict key",
    "pass": true,
-   "detail": "945 conflict rows, 658 distinct held keys, 0 consumed"
+   "detail": "945 rows in the frozen queue, 658 distinct held keys; plan consumed 0, B2/B2b deliberately resolved 144"
   },
   {
    "gate": "the 945-row conflict queue is unchanged",

@@ -16,14 +16,14 @@
  "claimMetaEntriesTouched": 0,
  "claimsAndPredictionsUnchanged": {
   "before": {
-   "claims": 8814,
-   "claimSpans": 8814,
+   "claims": 8722,
+   "claimSpans": 8722,
    "predictions": 843,
    "predictionSpans": 843
   },
   "after": {
-   "claims": 8814,
-   "claimSpans": 8814,
+   "claims": 8722,
+   "claimSpans": 8722,
    "predictions": 843,
    "predictionSpans": 843
   }
