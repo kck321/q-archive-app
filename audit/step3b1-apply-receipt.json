@@ -2,7 +2,7 @@
  "note": "Step 3B-1 apply receipt. Measured from the bundle, not from the plan.",
  "step": "3B-1",
  "planSha256": "373ca06b1416b6707a111f2c3da8e751472c551f739500f76cdcc764d3128058",
- "actionsApplied": 51,
+ "actionsApplied": 684,
  "actionsHeld": 2,
  "heldActionIds": [
   "A-DUP-2971-questions-561-799",
@@ -10,9 +10,9 @@
  ],
  "seedVersion": 87,
  "outputs": {
-  "public/data/posts.json": "38c638034937fae8ee64dd3c63fb52f8ebcd733126445a912e292c9b409a9bd0",
-  "public/data/questions.json": "540518803304a7a21226a7ae135201af4ead9279ed67dc91f9237fe1c7b1bff6",
-  "public/data/semantics.json": "8ce959bc537c5609dfb5877cc18bc9cca838da97e57dae2b3003b545cf3beeae",
+  "public/data/posts.json": "4ea1b578f1d8c9fae8a7cd74472ccd539ba752cacdab06c87f32146310e2115e",
+  "public/data/questions.json": "d36dfc86ea8de5531183fe24030011aeefe76826df8b3579d820d24025376bad",
+  "public/data/semantics.json": "c042c3b8cd27c179874828440fed735bc70a4b8971ac5d652a43b4e54d8ae4d9",
   "audit/occurrence-ledger.json": "25e29034f67bd814a22c6148a093ed2fc9152603b8417459f0b57b1a30d27490"
  },
  "crossTab": [
@@ -299,7 +299,7 @@
   {
    "gate": "every automatic action materialised",
    "pass": true,
-   "detail": "690/690 actions, 691/691 overlay rows  (530 planned + 8 adjudicated held + 152 B2/B2b; #34 contributes two rows, one per clause)"
+   "detail": "690/690 actions, 693/691 overlay rows  (530 planned + 8 adjudicated held + 152 B2/B2b; #34 contributes two rows, one per clause)"
   },
   {
    "gate": "no held action appears in the applied overlay",
@@ -319,7 +319,12 @@
   {
    "gate": "zero runtime substring mismatch in the overlay",
    "pass": true,
-   "detail": "691 rows verified against runtimeText()"
+   "detail": "691 located rows verified against runtimeText()"
+  },
+  {
+   "gate": "every overlay row without offsets is a withdrawal",
+   "pass": true,
+   "detail": "2 unlocated rows, all withdrawn, none painting"
   },
   {
    "gate": "zero runtime substring mismatch in the ledger",
@@ -349,7 +354,7 @@
   {
    "gate": "metadata transfer recorded for every withdrawn record",
    "pass": true,
-   "detail": "796 transfers, 292 carrying certified attributes, 60 meta keys re-pointed to a widened span"
+   "detail": "798 transfers, 292 carrying certified attributes, 60 meta keys re-pointed to a widened span"
   },
   {
    "gate": "question_directive relationship preserved on every unified pair",

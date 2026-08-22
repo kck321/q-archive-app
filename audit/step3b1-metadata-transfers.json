@@ -5738,7 +5738,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -5753,7 +5755,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -5768,7 +5772,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -5783,7 +5789,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -5798,7 +5806,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -5813,7 +5823,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -5828,7 +5840,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -5843,7 +5857,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -5858,7 +5874,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -5873,7 +5891,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -5888,7 +5908,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -5903,7 +5925,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -5918,7 +5942,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -5933,7 +5959,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -5948,7 +5976,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -5963,7 +5993,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -5978,7 +6010,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -5993,7 +6027,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6008,7 +6044,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6023,7 +6061,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6038,7 +6078,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6053,7 +6095,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6068,7 +6112,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6083,7 +6129,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6098,7 +6146,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6113,7 +6163,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6128,7 +6180,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6143,7 +6197,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6158,7 +6214,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6173,7 +6231,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6188,7 +6248,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6203,7 +6265,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6218,7 +6282,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6233,7 +6299,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6248,7 +6316,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": true,
      "confidence": "MEDIUM"
@@ -6263,7 +6333,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": false,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6278,7 +6350,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6293,7 +6367,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6308,7 +6384,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6323,7 +6401,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6338,7 +6418,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6353,7 +6435,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6368,7 +6452,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6383,7 +6469,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6398,7 +6486,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6413,7 +6503,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6428,7 +6520,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6443,7 +6537,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6458,7 +6554,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6473,7 +6571,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6488,7 +6588,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6503,7 +6605,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6518,7 +6622,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6533,7 +6639,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6548,7 +6656,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6563,7 +6673,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6578,7 +6690,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6593,7 +6707,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6608,7 +6724,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6623,7 +6741,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6638,7 +6758,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6653,7 +6775,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6668,7 +6792,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": false,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6683,7 +6809,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6698,7 +6826,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6713,7 +6843,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6728,7 +6860,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": true,
      "confidence": "MEDIUM"
@@ -6749,7 +6883,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6764,7 +6900,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6779,7 +6917,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6800,7 +6940,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6815,7 +6957,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6830,7 +6974,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6845,7 +6991,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6860,7 +7008,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6875,7 +7025,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6890,7 +7042,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6905,7 +7059,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6920,7 +7076,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6935,7 +7093,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": true,
      "confidence": "MEDIUM"
@@ -6950,7 +7110,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6965,7 +7127,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6980,7 +7144,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": true,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -6995,7 +7161,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -7010,7 +7178,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -7025,7 +7195,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -7040,7 +7212,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -7055,7 +7229,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -7070,7 +7246,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -7703,7 +7881,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": false,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "HIGH"
@@ -7718,7 +7898,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "HIGH"
@@ -7733,7 +7915,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "MEDIUM"
@@ -7748,7 +7932,9 @@
     "claimMeta": {
      "semanticFamily": "assertion",
      "displayClass": "claim",
+     "checkable": true,
      "sourceProvided": true,
+     "isConclusion": false,
      "isPrediction": false,
      "telegraphic": true,
      "confidence": "MEDIUM"
@@ -7765,6 +7951,18 @@
    "actionId": "B2C-TRIM-1237-claims-89-411",
    "from": "1237|claims|89|411",
    "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "R3-WITHDRAW-4875-themeAnchors-0",
+   "from": "4875|themeAnchors|unlocated|0",
+   "kind": "themeAnchors",
+   "metadata": {}
+  },
+  {
+   "actionId": "R3-WITHDRAW-4949-themeAnchors-0",
+   "from": "4949|themeAnchors|unlocated|0",
+   "kind": "themeAnchors",
    "metadata": {}
   }
  ]

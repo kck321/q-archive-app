@@ -141,7 +141,15 @@ export const CANONICAL = {
     // 1,201 -> 1,240: 39 identities the 2026-08-20 queue rulings introduce, declared with a type
     // from the existing vocabulary in audit/unhighlighted-entity-identities.json. detectedCanonical
     // stays 1,292 - an identity the owner ruled into existence is not one a detector found.
-    canonical: 1235, detectedCanonical: 1292, ownerRulings: 118, ownerMerges: 1, queueRulings: 508,
+    // 1,235 -> 1,214: OWNER RULING 3 (2026-08-22) withdrew 27 named-entity occurrences from the
+    // reviewed C/D/E population of the NO_ALIAS_EVER_REGISTERED family, and 22 of those were the
+    // last mention their identity had. 21 of the 22 go dormant (208 -> 229 reserved ids, never
+    // published); the 22nd, Judicial Watch, keeps its row as SOURCE-ONLY (135 -> 136) because 3
+    // of its 7 occurrences migrate to linked sources under the 2026-08-17 plan. detectedCanonical
+    // stays 1,292 — a withdrawal re-adjudicates what a detector found, it does not unfind it.
+    // The ruling is audit/occurrence-withdrawals-owner-ruling-3.json, applied beside the approved
+    // audit rather than inside it, and recorded as the fourth postApprovalDeltas entry.
+    canonical: 1214, detectedCanonical: 1292, ownerRulings: 118, ownerMerges: 1, queueRulings: 508,
     /** Every resolved mention across all 1,334 certified entities. The headline figure. */
     // 8,227 -> 8,239: the RC alias ruling resolved 12 occurrences to Rachel Chandler. The merge
     // moved 4 mentions from the absorbed row onto hers and added none.
@@ -173,7 +181,13 @@ export const CANONICAL = {
     // includePosts because the token matches 102 times across 75 posts and nearly all are the
     // English word. audit-occurrence-provenance.mjs re-run moved exactly four figures, classified
     // all six as visible_complete_token, and left proposedWithdrawals at 951.
-    mentions: 8975,
+    // 8,975 -> 8,948: -27 on 2026-08-22, Owner Ruling 3. Twelve INFERRED_NOT_EXPLICIT, fourteen
+    // QUOTED_OR_PASTED / URL-DERIVED and three WRONG_IDENTITY rows, each reviewed individually
+    // against its drop. NOT ONE WORD OF ANY DROP CHANGED — what moved is whether that wording is
+    // classified as a Q-authored named entity. Every one is reversible from the ruling artifact,
+    // which records the original identity, post text, adjudication letter, reason and the exact
+    // restoration. The 9 F rows of the same family are deliberately left unresolved.
+    mentions: 8948,
     /** How it is composed. The core figure is the section's history, not its headline. */
     // tailEntities is what the tail adjudication produced (1,239); one of them, Ray Chandler,
     // now ships merged into Rachel Chandler, so 1,238 tail rows appear in the artifact.

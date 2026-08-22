@@ -1,135 +1,172 @@
 {
- "note": "Written at apply time. `node scripts/apply-entity-cleanup.mjs --rollback` restores these exact bytes and verifies every hash.",
- "appliedAt": "2026-08-17T12:08:30.417Z",
- "approvedByOwner": "2026-08-17 owner approval: apply the integrated migration exactly as simulated — 951 occurrences, 588 withdrawn, 363 migrated; deploy seed 78",
- "snapshot": "entity-cleanup-2026-08-17T12-08-30-288Z",
- "before": {
-  "entities.json": "96e25a70a375aabd8e7423337beafbe32d55da5420c75cad61c6a9ba76a12cc0",
-  "posts.json": "03e5c2a85040298b900097197df39b18a2ee959c3e43aedf45eda44e915b1001"
- },
- "created": [
-  "linked-sources.json"
- ],
- "after": {
-  "entities.json": "7e0f6cfe276f470e8fecfa6205b6620439ca12206a1bcb8da92c99ba72ddc287",
-  "posts.json": "de60265189e14af555c552a689d7375237654982cd1601219bcc25675ae00fda",
-  "linked-sources.json": "82493f0e1e5f0dc498a4c45bdd4e6ba99f99d4bbea4dcaa22503adc675393b7e"
- },
- "countsBefore": {
-  "mentions": 9749,
-  "entityRows": 1409,
-  "rendered": 9749
- },
- "countsAfter": {
-  "mentions": 8798,
-  "rendered": 8798,
-  "entityRows": 1201
- },
- "postApprovalDeltas": [
-  {
-   "ruling": "audit/unhighlighted-owner-rulings.json",
-   "ruledOn": "2026-08-20",
-   "what": "The owner's review of the unhighlighted-sentence queue ruled 508 spans to be entities, adding 39 identities and 171 occurrences BEFORE this step runs.",
-   "entityRows": 39,
-   "mentions": 171,
-   "rendered": 171,
-   "evidence": "audit-occurrence-provenance.mjs re-run on the new tree reproduces every prior verdict and classifies all 171 new occurrences as supported: visible_complete_token 8,647 -> 8,814, visible_alias_variant 34 -> 35, ambiguous_provenance 69 -> 72, and 167+1+3 = 171. invalid_substring_extraction (98), url_source_provenance (646), image_provenance_unconfirmed (41), no_supported_provenance (85) and social_account_reference (129) are all UNCHANGED, and proposedWithdrawals stays at 951 - the plan withdraws exactly the set the owner approved and touches nothing this ruling added.",
-   "why": "The approval record above is left exactly as written. A delta is recorded beside it instead, so the guard still refuses an unrecognised tree while a later owner ruling does not read as drift."
+  "note": "Written at apply time. `node scripts/apply-entity-cleanup.mjs --rollback` restores these exact bytes and verifies every hash.",
+  "appliedAt": "2026-08-17T12:08:30.417Z",
+  "approvedByOwner": "2026-08-17 owner approval: apply the integrated migration exactly as simulated — 951 occurrences, 588 withdrawn, 363 migrated; deploy seed 78",
+  "snapshot": "entity-cleanup-2026-08-17T12-08-30-288Z",
+  "before": {
+    "entities.json": "96e25a70a375aabd8e7423337beafbe32d55da5420c75cad61c6a9ba76a12cc0",
+    "posts.json": "03e5c2a85040298b900097197df39b18a2ee959c3e43aedf45eda44e915b1001"
   },
-  {
-   "ruling": "audit/entities-owner-rulings.json (aliasRulings: NO -> Nellie Ohr)",
-   "ruledOn": "2026-08-21",
-   "what": "Owner ruling: NO is Nellie Ohr in #1928 and #1929, three occurrences each - twice in the '>>BO>>CS>>BO>>NO>>CS>>NO>>BO>>' chain and once in '[BO][NO]'. Six occurrences BEFORE this step runs.",
-   "entityRows": 0,
-   "mentions": 6,
-   "rendered": 6,
-   "evidence": "entityRows is 0 because Nellie Ohr was ALREADY a certified identity (qe-2768b0fef8da, 8 mentions across 7 posts). The ruling adds the missing alias, not a row: she goes to 14 mentions across 9 posts, and #1928/#1929 join her post set where her husband BO was already certified on both. audit-occurrence-provenance.mjs re-run on the new tree moved exactly 4 figures and left 17 unchanged: occurrences and certifiedMentions 9,920 -> 9,926, attribution.unique 9,856 -> 9,862, and visible_complete_token 8,814 -> 8,820. All six new occurrences classify as SUPPORTED. invalid_substring_extraction (98), visible_alias_variant (35), url_source_provenance (646), image_provenance_unconfirmed (41), no_supported_provenance (85), ambiguous_provenance (72) and social_account_reference (129) are UNCHANGED, and proposedWithdrawals stays at 951 - the plan withdraws exactly the set the owner approved and touches nothing this ruling added. The alias is scoped with includePosts because /(?<![A-Za-z0-9])NO(?![A-Za-z0-9])/ matches 102 occurrences across 75 posts and almost every one is the English word.",
-   "why": "The approval record above is left exactly as written. A delta is recorded beside it, so the guard still refuses an unrecognised tree while this later owner ruling does not read as drift."
+  "created": [
+    "linked-sources.json"
+  ],
+  "after": {
+    "entities.json": "7e0f6cfe276f470e8fecfa6205b6620439ca12206a1bcb8da92c99ba72ddc287",
+    "posts.json": "de60265189e14af555c552a689d7375237654982cd1601219bcc25675ae00fda",
+    "linked-sources.json": "82493f0e1e5f0dc498a4c45bdd4e6ba99f99d4bbea4dcaa22503adc675393b7e"
   },
-  {
-   "ruling": "audit/entities-owner-rulings.json (merges: Owner Ruling 1 — duplicate canonical identities)",
-   "ruledOn": "2026-08-22",
-   "what": "Owner ruling, APPROVED and RE-AUTHORIZED: five pairs are one underlying entity each and must not remain separate canonical registry identities — Wray/Christopher Wray, Whitaker/Matthew Whitaker, Pence/Mike Pence, Awan/Imran Awan, GANG OF 8/Gang of Eight. FIVE ROWS are removed BEFORE this step runs. No occurrence is.",
-   "entityRows": -5,
-   "mentions": 0,
-   "rendered": 0,
-   "oldApprovedSnapshot": "countsBefore 1,409 rows / 9,749 mentions (2026-08-17), carried forward by the two earlier deltas to 1,448 rows / 9,926 mentions",
-   "whyTheOldSnapshotNoLongerApplies": "The guard refused with 'the tree is neither the approved before-state (1448/9926)' and it was RIGHT to: the registry had changed underneath an approval pinned to an exact shape. The owner re-authorized rematerialization against the new state and directed that the guard NOT be bypassed or weakened. So the approval record above is left exactly as written and this delta is recorded beside it — the same mechanism the 2026-08-20 and 2026-08-21 rulings used.",
-   "preStateMeasured": {
-    "entityRows": 1448,
-    "mentions": 9926
-   },
-   "postStateMeasured": {
-    "entityRows": 1443,
-    "mentions": 9926,
-    "entitiesJsonSha256": "978feaf8510e80f38547d537240463390ae6631590bb0990379682e3b616e83e"
-   },
-   "canonicalGroupsMerged": [
+  "countsBefore": {
+    "mentions": 9749,
+    "entityRows": 1409,
+    "rendered": 9749
+  },
+  "countsAfter": {
+    "mentions": 8798,
+    "rendered": 8798,
+    "entityRows": 1201
+  },
+  "postApprovalDeltas": [
     {
-     "from": "Wray",
-     "into": "Christopher Wray",
-     "aliasMovedAcross": [
-      "Wray"
-     ],
-     "postsBefore": [
-      7,
-      3
-     ],
-     "postUnion": 10
+      "ruling": "audit/unhighlighted-owner-rulings.json",
+      "ruledOn": "2026-08-20",
+      "what": "The owner's review of the unhighlighted-sentence queue ruled 508 spans to be entities, adding 39 identities and 171 occurrences BEFORE this step runs.",
+      "entityRows": 39,
+      "mentions": 171,
+      "rendered": 171,
+      "evidence": "audit-occurrence-provenance.mjs re-run on the new tree reproduces every prior verdict and classifies all 171 new occurrences as supported: visible_complete_token 8,647 -> 8,814, visible_alias_variant 34 -> 35, ambiguous_provenance 69 -> 72, and 167+1+3 = 171. invalid_substring_extraction (98), url_source_provenance (646), image_provenance_unconfirmed (41), no_supported_provenance (85) and social_account_reference (129) are all UNCHANGED, and proposedWithdrawals stays at 951 - the plan withdraws exactly the set the owner approved and touches nothing this ruling added.",
+      "why": "The approval record above is left exactly as written. A delta is recorded beside it instead, so the guard still refuses an unrecognised tree while a later owner ruling does not read as drift."
     },
     {
-     "from": "Whitaker",
-     "into": "Matthew Whitaker",
-     "aliasMovedAcross": [
-      "Whitaker"
-     ],
-     "postsBefore": [
-      11,
-      6
-     ],
-     "postUnion": 17
+      "ruling": "audit/entities-owner-rulings.json (aliasRulings: NO -> Nellie Ohr)",
+      "ruledOn": "2026-08-21",
+      "what": "Owner ruling: NO is Nellie Ohr in #1928 and #1929, three occurrences each - twice in the '>>BO>>CS>>BO>>NO>>CS>>NO>>BO>>' chain and once in '[BO][NO]'. Six occurrences BEFORE this step runs.",
+      "entityRows": 0,
+      "mentions": 6,
+      "rendered": 6,
+      "evidence": "entityRows is 0 because Nellie Ohr was ALREADY a certified identity (qe-2768b0fef8da, 8 mentions across 7 posts). The ruling adds the missing alias, not a row: she goes to 14 mentions across 9 posts, and #1928/#1929 join her post set where her husband BO was already certified on both. audit-occurrence-provenance.mjs re-run on the new tree moved exactly 4 figures and left 17 unchanged: occurrences and certifiedMentions 9,920 -> 9,926, attribution.unique 9,856 -> 9,862, and visible_complete_token 8,814 -> 8,820. All six new occurrences classify as SUPPORTED. invalid_substring_extraction (98), visible_alias_variant (35), url_source_provenance (646), image_provenance_unconfirmed (41), no_supported_provenance (85), ambiguous_provenance (72) and social_account_reference (129) are UNCHANGED, and proposedWithdrawals stays at 951 - the plan withdraws exactly the set the owner approved and touches nothing this ruling added. The alias is scoped with includePosts because /(?<![A-Za-z0-9])NO(?![A-Za-z0-9])/ matches 102 occurrences across 75 posts and almost every one is the English word.",
+      "why": "The approval record above is left exactly as written. A delta is recorded beside it, so the guard still refuses an unrecognised tree while this later owner ruling does not read as drift."
     },
     {
-     "from": "GANG OF 8",
-     "into": "Gang of Eight",
-     "aliasMovedAcross": [
-      "GANG OF 8"
-     ],
-     "postsBefore": [
-      2,
-      5
-     ],
-     "postUnion": 7,
-     "note": "the retired row was additionally typed 'person'; the survivor types it government_institution"
+      "ruling": "audit/entities-owner-rulings.json (merges: Owner Ruling 1 — duplicate canonical identities)",
+      "ruledOn": "2026-08-22",
+      "what": "Owner ruling, APPROVED and RE-AUTHORIZED: five pairs are one underlying entity each and must not remain separate canonical registry identities — Wray/Christopher Wray, Whitaker/Matthew Whitaker, Pence/Mike Pence, Awan/Imran Awan, GANG OF 8/Gang of Eight. FIVE ROWS are removed BEFORE this step runs. No occurrence is.",
+      "entityRows": -5,
+      "mentions": 0,
+      "rendered": 0,
+      "oldApprovedSnapshot": "countsBefore 1,409 rows / 9,749 mentions (2026-08-17), carried forward by the two earlier deltas to 1,448 rows / 9,926 mentions",
+      "whyTheOldSnapshotNoLongerApplies": "The guard refused with 'the tree is neither the approved before-state (1448/9926)' and it was RIGHT to: the registry had changed underneath an approval pinned to an exact shape. The owner re-authorized rematerialization against the new state and directed that the guard NOT be bypassed or weakened. So the approval record above is left exactly as written and this delta is recorded beside it — the same mechanism the 2026-08-20 and 2026-08-21 rulings used.",
+      "preStateMeasured": {
+        "entityRows": 1448,
+        "mentions": 9926
+      },
+      "postStateMeasured": {
+        "entityRows": 1443,
+        "mentions": 9926,
+        "entitiesJsonSha256": "978feaf8510e80f38547d537240463390ae6631590bb0990379682e3b616e83e"
+      },
+      "canonicalGroupsMerged": [
+        {
+          "from": "Wray",
+          "into": "Christopher Wray",
+          "aliasMovedAcross": [
+            "Wray"
+          ],
+          "postsBefore": [
+            7,
+            3
+          ],
+          "postUnion": 10
+        },
+        {
+          "from": "Whitaker",
+          "into": "Matthew Whitaker",
+          "aliasMovedAcross": [
+            "Whitaker"
+          ],
+          "postsBefore": [
+            11,
+            6
+          ],
+          "postUnion": 17
+        },
+        {
+          "from": "GANG OF 8",
+          "into": "Gang of Eight",
+          "aliasMovedAcross": [
+            "GANG OF 8"
+          ],
+          "postsBefore": [
+            2,
+            5
+          ],
+          "postUnion": 7,
+          "note": "the retired row was additionally typed 'person'; the survivor types it government_institution"
+        },
+        {
+          "from": "Pence",
+          "into": "Mike Pence",
+          "aliasMovedAcross": [
+            "Pence"
+          ],
+          "postsBefore": [
+            3,
+            2
+          ],
+          "postUnion": 4
+        },
+        {
+          "from": "Awan",
+          "into": "Imran Awan",
+          "aliasMovedAcross": [
+            "Awan"
+          ],
+          "postsBefore": [
+            8,
+            9
+          ],
+          "postUnion": 15
+        }
+      ],
+      "occurrencesPreserved": "MENTIONS ARE UNCHANGED AT 9,926 — measured on the tree before and after apply-entities.mjs wrote the merge. Five canonical ROWS go; zero occurrences do, which is precisely the owner's instruction: 'This is an identity normalization, not occurrence deletion. Do NOT delete occurrence evidence simply to make canonical counts smaller.'",
+      "certifiedConstantsMoved": "detected canonical entities 1,292 -> 1,287, canonical entities 1,448 -> 1,443, adjudicated-tail mentions 3,841 -> 3,838. The tail figure falls by 3 because three mentions RECLASSIFY: a tail row merged into a core canonical stops being tail. Populations move, evidence does not.",
+      "why": "The approval record above is left exactly as written. A delta is recorded beside it instead, so the guard still refuses an unrecognised tree while a later owner ruling does not read as drift."
     },
     {
-     "from": "Pence",
-     "into": "Mike Pence",
-     "aliasMovedAcross": [
-      "Pence"
-     ],
-     "postsBefore": [
-      3,
-      2
-     ],
-     "postUnion": 4
-    },
-    {
-     "from": "Awan",
-     "into": "Imran Awan",
-     "aliasMovedAcross": [
-      "Awan"
-     ],
-     "postsBefore": [
-      8,
-      9
-     ],
-     "postUnion": 15
+      "ruling": "audit/occurrence-withdrawals-owner-ruling-3.json (Owner Ruling 3 — 29 reviewed C/D/E occurrence withdrawals)",
+      "ruledOn": "2026-08-22",
+      "what": "Owner ruling, APPROVED: the 29 individually reviewed C/D/E rows from the NO_ALIAS_EVER_REGISTERED family must not remain attributed as Q-authored occurrences. 27 are entries in postAnalysis.namedEntities and are withdrawn BY THIS STEP; the other 2 are themeAnchors and are withdrawn by apply-step3b1.mjs, which owns that array. This is the FIRST delta that changes what this step DOES rather than the tree it starts from, so it is recorded under afterOnly and moves the after-state only.",
+      "mentions": 0,
+      "entityRows": 0,
+      "rendered": 0,
+      "afterOnly": {
+        "mentions": -27,
+        "entityRows": -21,
+        "rendered": -27
+      },
+      "reviewedPopulation": {
+        "C": 12,
+        "D": 14,
+        "E": 3,
+        "total": 29,
+        "namedEntities": 27,
+        "themeAnchors": 2,
+        "F_left_unresolved": 9
+      },
+      "oldApprovedSnapshot": "countsBefore 1,409 rows / 9,749 mentions and countsAfter 1,201 / 8,798 (2026-08-17), carried forward by the three earlier deltas to a before-state of 1,448 / 9,926 and an after-state of 1,235 / 8,975. Neither is rewritten.",
+      "originalApprovalUntouched": "audit/occurrence-provenance-audit.json is unchanged — 9,926 rows, 951 proposedWithdrawals, every 2026-08-17 category and evidence record intact. The 27 are a separately pinned set (sha256 65f82ace6748eaaf1bbbdd010f8cba30802c8f9a7c918e5928be0ef2a20e21ef) read beside it, so the approved plan and the later ruling stay independently readable.",
+      "whyThisIsARe_adjudication": "The owner stated it plainly: \"This DOES re-adjudicate those specific occurrence decisions from the 2026-08-17 occurrence-provenance migration.\" 22 of the 27 were classified image_provenance_unconfirmed and held; 5 were classified visible_complete_token and kept. buildPlan still refuses a removal action on a visible_complete_token row IN THE APPROVED AUDIT — that check is unchanged and still governs all 9,926. These 5 are withdrawn by explicit per-occurrence ruling instead, which is how a semantic ruling is applied here: by occurrence identity, never by loosening a matcher.",
+      "effectMeasured": {
+        "occurrencesWithdrawn": 27,
+        "identitiesLosingTheirLastMention": 22,
+        "ofThoseRetiredDormant": 21,
+        "ofThoseBecomingSourceOnly": 1,
+        "sourceOnlyIdentity": "Judicial Watch — 3 of its 7 occurrences migrate to linked sources under the approved plan, so the row survives as a source-only row rather than going dormant.",
+        "beforeMentions": 8975,
+        "afterMentions": 8948,
+        "beforeEntityRows": 1235,
+        "afterEntityRows": 1214
+      },
+      "why": "The approval record above is left exactly as written. A delta is recorded beside it instead, so the guard still refuses an unrecognised tree while a later owner ruling does not read as drift. Same mechanism as the 2026-08-20, 2026-08-21 and Owner Ruling 1 entries."
     }
-   ],
-   "occurrencesPreserved": "MENTIONS ARE UNCHANGED AT 9,926 — measured on the tree before and after apply-entities.mjs wrote the merge. Five canonical ROWS go; zero occurrences do, which is precisely the owner's instruction: 'This is an identity normalization, not occurrence deletion. Do NOT delete occurrence evidence simply to make canonical counts smaller.'",
-   "certifiedConstantsMoved": "detected canonical entities 1,292 -> 1,287, canonical entities 1,448 -> 1,443, adjudicated-tail mentions 3,841 -> 3,838. The tail figure falls by 3 because three mentions RECLASSIFY: a tail row merged into a core canonical stops being tail. Populations move, evidence does not.",
-   "why": "The approval record above is left exactly as written. A delta is recorded beside it instead, so the guard still refuses an unrecognised tree while a later owner ruling does not read as drift."
-  }
- ]
+  ]
 }

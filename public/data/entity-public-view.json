@@ -1,12 +1,12 @@
 {
  "breakdown": [
   {
-   "count": 1105,
+   "count": 1078,
    "key": "prose",
    "label": "named in Q’s prose"
   },
   {
-   "count": 135,
+   "count": 136,
    "key": "sourceOnly",
    "label": "linked as a source only"
   }
@@ -45,26 +45,6 @@
    ],
    "label": "Cruz",
    "rowId": "qe-6889e8485216"
-  },
-  {
-   "identities": [
-    {
-     "canonical": "Gang of Eight",
-     "mentions": 5,
-     "posts": 5
-    },
-    {
-     "canonical": "GANG OF 8",
-     "mentions": 2,
-     "posts": 2
-    }
-   ],
-   "identityIds": [
-    "qe-aff8f73c779b",
-    "qe-c626c7ae2714"
-   ],
-   "label": "Gang of Eight",
-   "rowId": "qe-aff8f73c779b"
   },
   {
    "identities": [
@@ -117,26 +97,6 @@
    ],
    "label": "Gowdy",
    "rowId": "qe-bf67882b431d"
-  },
-  {
-   "identities": [
-    {
-     "canonical": "Imran Awan",
-     "mentions": 11,
-     "posts": 9
-    },
-    {
-     "canonical": "Awan",
-     "mentions": 8,
-     "posts": 8
-    }
-   ],
-   "identityIds": [
-    "qe-8d4eb01972fd",
-    "qe-67185825b25f"
-   ],
-   "label": "Imran Awan",
-   "rowId": "qe-8d4eb01972fd"
   },
   {
    "identities": [
@@ -197,26 +157,6 @@
    ],
    "label": "Paul Ryan",
    "rowId": "qe-993b70a4d8e6"
-  },
-  {
-   "identities": [
-    {
-     "canonical": "Pence",
-     "mentions": 3,
-     "posts": 3
-    },
-    {
-     "canonical": "Mike Pence",
-     "mentions": 2,
-     "posts": 2
-    }
-   ],
-   "identityIds": [
-    "qe-6f18be951f74",
-    "qe-73b417a034ec"
-   ],
-   "label": "Pence",
-   "rowId": "qe-6f18be951f74"
   },
   {
    "identities": [
@@ -303,46 +243,6 @@
    ],
    "label": "Washington Post",
    "rowId": "qe-48200abcb9fa"
-  },
-  {
-   "identities": [
-    {
-     "canonical": "Whitaker",
-     "mentions": 11,
-     "posts": 11
-    },
-    {
-     "canonical": "Matthew Whitaker",
-     "mentions": 6,
-     "posts": 6
-    }
-   ],
-   "identityIds": [
-    "qe-db762af6b20d",
-    "qe-50881b0f873f"
-   ],
-   "label": "Whitaker",
-   "rowId": "qe-db762af6b20d"
-  },
-  {
-   "identities": [
-    {
-     "canonical": "Wray",
-     "mentions": 7,
-     "posts": 7
-    },
-    {
-     "canonical": "Christopher Wray",
-     "mentions": 3,
-     "posts": 3
-    }
-   ],
-   "identityIds": [
-    "qe-1932f9fd0b7c",
-    "qe-cb0341c553e8"
-   ],
-   "label": "Wray",
-   "rowId": "qe-1932f9fd0b7c"
   }
  ],
  "note": "The public view of the entity registry: one row per permanent qe- identity, with the traceability that proves it belongs on screen. Derived only from committed artifacts — it changes no membership and no total.",
@@ -1949,16 +1849,14 @@
   },
   "qe-17f602fec7c9": {
    "aliasPosts": {
-    "US Senate": 4
+    "US Senate": 2
    },
    "kind": "prose",
    "perPostMentions": {
     "1094": 1,
-    "2633": 1,
-    "3006": 1,
-    "3647": 1
+    "3006": 1
    },
-   "posts": 4,
+   "posts": 2,
    "rowId": "qe-17f602fec7c9"
   },
   "qe-18bd65579fff": {
@@ -2039,23 +1937,6 @@
    },
    "posts": 45,
    "rowId": "qe-190d29e92cd1"
-  },
-  "qe-1932f9fd0b7c": {
-   "aliasPosts": {
-    "Wray": 7
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "433": 1,
-    "787": 1,
-    "1122": 1,
-    "1862": 1,
-    "2555": 1,
-    "2681": 1,
-    "4620": 1
-   },
-   "posts": 7,
-   "rowId": "qe-1932f9fd0b7c"
   },
   "qe-1963ebd3b6d1": {
    "aliasPosts": {
@@ -4441,28 +4322,6 @@
     }
    ]
   },
-  "qe-349ce0440062": {
-   "aliasPosts": {
-    "Yale Medicine": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "4492": 1
-   },
-   "posts": 1,
-   "rowId": "qe-349ce0440062"
-  },
-  "qe-34cf2565da90": {
-   "aliasPosts": {
-    "International Islamic Council for Da'wa and Relief": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "56": 1
-   },
-   "posts": 1,
-   "rowId": "qe-34cf2565da90"
-  },
   "qe-354c972a2d6c": {
    "aliasPosts": {
     "ICC": 1
@@ -5417,15 +5276,14 @@
   },
   "qe-400051bf06ed": {
    "aliasPosts": {
-    "Papadopoulos": 3
+    "Papadopoulos": 2
    },
    "kind": "prose",
    "perPostMentions": {
     "2043": 1,
-    "2116": 1,
-    "3990": 1
+    "2116": 1
    },
-   "posts": 3,
+   "posts": 2,
    "rowId": "qe-400051bf06ed"
   },
   "qe-401137a97c00": {
@@ -6583,8 +6441,8 @@
     "3015": 1,
     "3177": 1
    },
-   "posts": 6,
-   "rowId": "qe-db762af6b20d"
+   "posts": 17,
+   "rowId": "qe-50881b0f873f"
   },
   "qe-50a7ff9629dd": {
    "aliasPosts": {
@@ -7258,17 +7116,6 @@
    },
    "posts": 1,
    "rowId": "qe-581e03b88c45"
-  },
-  "qe-58247463cbd4": {
-   "aliasPosts": {
-    "George Papa": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "3012": 1
-   },
-   "posts": 1,
-   "rowId": "qe-58247463cbd4"
   },
   "qe-5827dd8740d9": {
    "aliasPosts": {
@@ -7974,17 +7821,6 @@
    "posts": 1,
    "rowId": "qe-6203243178c8"
   },
-  "qe-628d3aa3cc03": {
-   "aliasPosts": {
-    "State Department OIG": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "2076": 1
-   },
-   "posts": 1,
-   "rowId": "qe-628d3aa3cc03"
-  },
   "qe-6293dccf55fc": {
    "aliasPosts": {
     "Border Patrol": 1
@@ -8283,22 +8119,6 @@
    },
    "posts": 7,
    "rowId": "qe-67110e653ddb"
-  },
-  "qe-67185825b25f": {
-   "aliasPosts": {
-    "Awan": 6
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "71": 1,
-    "77": 1,
-    "988": 1,
-    "1008": 1,
-    "1510": 1,
-    "3634": 1
-   },
-   "posts": 8,
-   "rowId": "qe-8d4eb01972fd"
   },
   "qe-6739448ee655": {
    "aliasPosts": {
@@ -8778,29 +8598,6 @@
    "posts": 1,
    "rowId": "qe-6eeb938f0af3"
   },
-  "qe-6f18be951f74": {
-   "aliasPosts": {
-    "Pence": 2
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "725": 1,
-    "1123": 1
-   },
-   "posts": 3,
-   "rowId": "qe-6f18be951f74"
-  },
-  "qe-6f898a7508fd": {
-   "aliasPosts": {
-    "Erin Nanoki": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "4885": 1
-   },
-   "posts": 1,
-   "rowId": "qe-6f898a7508fd"
-  },
   "qe-6f9e6b15a59a": {
    "aliasPosts": {
     "RE": 1,
@@ -8963,8 +8760,8 @@
    "perPostMentions": {
     "4414": 1
    },
-   "posts": 2,
-   "rowId": "qe-6f18be951f74"
+   "posts": 4,
+   "rowId": "qe-73b417a034ec"
   },
   "qe-73d64a484e4d": {
    "aliasPosts": {
@@ -9038,17 +8835,6 @@
    },
    "posts": 3,
    "rowId": "qe-74037c4ff506"
-  },
-  "qe-746f75d548db": {
-   "aliasPosts": {
-    "House Republicans": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "4352": 1
-   },
-   "posts": 1,
-   "rowId": "qe-746f75d548db"
   },
   "qe-74b6d1b3e954": {
    "aliasPosts": {
@@ -9211,17 +8997,6 @@
    },
    "posts": 2,
    "rowId": "qe-76c94b8dbdbd"
-  },
-  "qe-76da188497d6": {
-   "aliasPosts": {
-    "Kavanaugh": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "2523": 1
-   },
-   "posts": 1,
-   "rowId": "qe-76da188497d6"
   },
   "qe-7702d84ed2d2": {
    "kind": "source_only",
@@ -11291,7 +11066,7 @@
     "1672": 1,
     "3532": 1
    },
-   "posts": 9,
+   "posts": 15,
    "rowId": "qe-8d4eb01972fd"
   },
   "qe-8da6cdc79791": {
@@ -11441,17 +11216,6 @@
      "post": 2590
     }
    ]
-  },
-  "qe-9054d5a03df4": {
-   "aliasPosts": {
-    "Comedy Central": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "960": 1
-   },
-   "posts": 1,
-   "rowId": "qe-9054d5a03df4"
   },
   "qe-90759cadd62e": {
    "aliasPosts": {
@@ -11925,17 +11689,6 @@
    },
    "posts": 1,
    "rowId": "qe-96235a100213"
-  },
-  "qe-969011b0c0c3": {
-   "aliasPosts": {
-    "Vice News": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "2029": 1
-   },
-   "posts": 1,
-   "rowId": "qe-969011b0c0c3"
   },
   "qe-9699caced7cc": {
    "aliasPosts": {
@@ -13720,17 +13473,6 @@
     }
    ]
   },
-  "qe-ad0326f3114d": {
-   "aliasPosts": {
-    "House Intelligence": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "2181": 1
-   },
-   "posts": 1,
-   "rowId": "qe-ad0326f3114d"
-  },
   "qe-ad04c66745a0": {
    "aliasPosts": {
     "Loop Capital": 3
@@ -13903,7 +13645,7 @@
     "3690": 1,
     "3993": 1
    },
-   "posts": 5,
+   "posts": 7,
    "rowId": "qe-aff8f73c779b"
   },
   "qe-b018ee884c25": {
@@ -14019,17 +13761,6 @@
    },
    "posts": 2,
    "rowId": "qe-b12cc532a74b"
-  },
-  "qe-b1a37b982806": {
-   "aliasPosts": {
-    "Jeet Heer": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "4885": 1
-   },
-   "posts": 1,
-   "rowId": "qe-b1a37b982806"
   },
   "qe-b1a7aabf738a": {
    "aliasPosts": {
@@ -14724,17 +14455,6 @@
    "posts": 2,
    "rowId": "qe-bac66fc74507"
   },
-  "qe-baf710e658c9": {
-   "aliasPosts": {
-    "Google Trends": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "4401": 1
-   },
-   "posts": 1,
-   "rowId": "qe-baf710e658c9"
-  },
   "qe-bb201845e66a": {
    "aliasPosts": {
     "Kirsten Gillibrand": 1,
@@ -14779,17 +14499,6 @@
    },
    "posts": 1,
    "rowId": "qe-bb5f80c91c8f"
-  },
-  "qe-bb91501abc09": {
-   "aliasPosts": {
-    "Roseanne Barr": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "1863": 1
-   },
-   "posts": 1,
-   "rowId": "qe-bb91501abc09"
   },
   "qe-bbaff9b89796": {
    "aliasPosts": {
@@ -14941,17 +14650,6 @@
      "post": 2654
     }
    ]
-  },
-  "qe-be9443407fad": {
-   "aliasPosts": {
-    "Michael Beatty": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "3824": 1
-   },
-   "posts": 1,
-   "rowId": "qe-be9443407fad"
   },
   "qe-beabb03fabeb": {
    "kind": "source_only",
@@ -15108,17 +14806,6 @@
    },
    "posts": 29,
    "rowId": "qe-bfee4149db99"
-  },
-  "qe-c00874e212d3": {
-   "aliasPosts": {
-    "Gavin Newsom": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "2782": 1
-   },
-   "posts": 1,
-   "rowId": "qe-c00874e212d3"
   },
   "qe-c025a9179ac6": {
    "aliasPosts": {
@@ -15281,17 +14968,6 @@
    "posts": 2,
    "rowId": "qe-c35fbc8518d3"
   },
-  "qe-c3a9237ba27a": {
-   "aliasPosts": {
-    "Agnes Nixon": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "1211": 1
-   },
-   "posts": 1,
-   "rowId": "qe-c3a9237ba27a"
-  },
   "qe-c3b3d62be606": {
    "aliasPosts": {
     "PS": 3,
@@ -15408,17 +15084,16 @@
   },
   "qe-c5bbe8dcde6b": {
    "aliasPosts": {
-    "Manafort": 5
+    "Manafort": 4
    },
    "kind": "prose",
    "perPostMentions": {
     "15": 1,
     "1008": 1,
     "1774": 1,
-    "2043": 1,
-    "3990": 1
+    "2043": 1
    },
-   "posts": 5,
+   "posts": 4,
    "rowId": "qe-c5bbe8dcde6b"
   },
   "qe-c5bea806deb9": {
@@ -15457,18 +15132,6 @@
      "post": 4481
     }
    ]
-  },
-  "qe-c626c7ae2714": {
-   "aliasPosts": {
-    "GANG OF 8": 2
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "3679": 1,
-    "3680": 1
-   },
-   "posts": 2,
-   "rowId": "qe-aff8f73c779b"
   },
   "qe-c642a316f24d": {
    "aliasPosts": {
@@ -16018,8 +15681,8 @@
     "1433": 1,
     "1812": 1
    },
-   "posts": 3,
-   "rowId": "qe-1932f9fd0b7c"
+   "posts": 10,
+   "rowId": "qe-cb0341c553e8"
   },
   "qe-cb07cff77084": {
    "aliasPosts": {
@@ -16606,17 +16269,6 @@
    "posts": 1,
    "rowId": "qe-d126e1f4e0f5"
   },
-  "qe-d18d01b68905": {
-   "aliasPosts": {
-    "CBN News": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "2136": 1
-   },
-   "posts": 1,
-   "rowId": "qe-d18d01b68905"
-  },
   "qe-d1aac3bf7bce": {
    "aliasPosts": {
     "MS-13": 3,
@@ -16679,17 +16331,6 @@
    },
    "posts": 1,
    "rowId": "qe-d27fa0601ace"
-  },
-  "qe-d29df03a2c7a": {
-   "aliasPosts": {
-    "Cambridge Dictionary": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "4312": 1
-   },
-   "posts": 1,
-   "rowId": "qe-d29df03a2c7a"
   },
   "qe-d29e14cf87d7": {
    "aliasPosts": {
@@ -16795,17 +16436,6 @@
    "posts": 3,
    "rowId": "qe-d337869555a9"
   },
-  "qe-d350ae114c30": {
-   "aliasPosts": {
-    "Mike Wallace": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "746": 1
-   },
-   "posts": 1,
-   "rowId": "qe-d350ae114c30"
-  },
   "qe-d38940e564bf": {
    "aliasPosts": {
     "Democrat": 1
@@ -16843,17 +16473,6 @@
    },
    "posts": 5,
    "rowId": "qe-d4061bc387b2"
-  },
-  "qe-d41b03d8b4e3": {
-   "aliasPosts": {
-    "The Independent": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "2136": 1
-   },
-   "posts": 1,
-   "rowId": "qe-d41b03d8b4e3"
   },
   "qe-d49aa5a9eec9": {
    "aliasPosts": {
@@ -16907,17 +16526,6 @@
    "posts": 1,
    "rowId": "qe-d4e6c41f1913"
   },
-  "qe-d4e89265e936": {
-   "aliasPosts": {
-    "Charlie Kirk": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "2673": 1
-   },
-   "posts": 1,
-   "rowId": "qe-d4e89265e936"
-  },
   "qe-d545e231cd32": {
    "aliasPosts": {
     "Andrew McCabe": 10,
@@ -16953,14 +16561,13 @@
   },
   "qe-d58d44ebad1f": {
    "aliasPosts": {
-    "Jussie Smollett": 2
+    "Jussie Smollett": 1
    },
    "kind": "prose",
    "perPostMentions": {
-    "2768": 1,
     "3255": 1
    },
-   "posts": 2,
+   "posts": 1,
    "rowId": "qe-d58d44ebad1f"
   },
   "qe-d5a72ee417a5": {
@@ -17329,27 +16936,6 @@
    },
    "posts": 2,
    "rowId": "qe-db2371a1425b"
-  },
-  "qe-db762af6b20d": {
-   "aliasPosts": {
-    "Whitaker": 11
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "2468": 1,
-    "2495": 1,
-    "2496": 1,
-    "2501": 1,
-    "2555": 1,
-    "2681": 1,
-    "2766": 1,
-    "2937": 1,
-    "2955": 1,
-    "3028": 1,
-    "3036": 1
-   },
-   "posts": 11,
-   "rowId": "qe-db762af6b20d"
   },
   "qe-db8c16f31062": {
    "aliasPosts": {
@@ -19153,14 +18739,8 @@
    ]
   },
   "qe-f0a4db3b3a2d": {
-   "aliasPosts": {
-    "Judicial Watch": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "2040": 1
-   },
-   "posts": 1,
+   "kind": "source_only",
+   "posts": 0,
    "rowId": "qe-f0a4db3b3a2d",
    "sourcePosts": [
     {
@@ -20881,15 +20461,15 @@
  "ruledOn": "2026-08-17",
  "sourceNote": "The post linked this source. It is not necessarily named in Q’s prose, and it is never counted as a mention.",
  "totals": {
-  "canonicalEntities": 1240,
-  "dormantReserved": 208,
-  "mentions": 8975,
-  "mergedIdentities": 33,
-  "mergedRows": 15,
-  "proseMentioned": 1105,
-  "publicRows": 1222,
+  "canonicalEntities": 1214,
+  "dormantReserved": 229,
+  "mentions": 8948,
+  "mergedIdentities": 23,
+  "mergedRows": 10,
+  "proseMentioned": 1078,
+  "publicRows": 1201,
   "repeatBadges": 1089,
-  "sourceOnly": 135,
+  "sourceOnly": 136,
   "sourcePostChips": 347,
   "unsettledAttributionsExcluded": 64
  }

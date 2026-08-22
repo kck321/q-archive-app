@@ -3,17 +3,17 @@
  "ruling": "get rid of the emphasis category ... everything associated with it ... also Q Conclusions and Checkable Claims data/highlights",
  "arraysRemoved": {
   "emphasis": 0,
-  "impliedConclusions": 0,
-  "conclusionSpans": 0,
-  "verificationHooks": 0,
-  "checkableSpans": 0
+  "impliedConclusions": 921,
+  "conclusionSpans": 964,
+  "verificationHooks": 1787,
+  "checkableSpans": 1920
  },
  "claimMetaAttributesCleared": {
-  "checkable": 0,
-  "isConclusion": 0
+  "checkable": 2166,
+  "isConclusion": 958
  },
- "postsTouched": 0,
- "claimMetaEntriesTouched": 0,
+ "postsTouched": 4966,
+ "claimMetaEntriesTouched": 9695,
  "claimsAndPredictionsUnchanged": {
   "before": {
    "claims": 8721,

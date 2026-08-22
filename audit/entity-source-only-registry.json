@@ -1,6 +1,6 @@
 {
  "note": "Entities with no prose mention left, but which remain referenced as the publisher of material Q linked. They stay in the public bundle and must NEVER render as a zero-mention entity page.",
- "total": 135,
+ "total": 136,
  "entities": [
   {
    "id": "qe-49b9cb60a8ac",
@@ -33,6 +33,17 @@
     2136,
     3048,
     3496
+   ]
+  },
+  {
+   "id": "qe-f0a4db3b3a2d",
+   "canonical": "Judicial Watch",
+   "type": "organization",
+   "slug": "judicial-watch",
+   "linkedSourcePosts": [
+    1815,
+    2053,
+    2364
    ]
   },
   {

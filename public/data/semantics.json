@@ -3,8 +3,8 @@
  "step": "3B-1",
  "planSha256": "373ca06b1416b6707a111f2c3da8e751472c551f739500f76cdcc764d3128058",
  "dispositionsApplied": 8,
- "actionsApplied": 51,
- "actionsAlreadyApplied": 639,
+ "actionsApplied": 684,
+ "actionsAlreadyApplied": 8,
  "actionsHeld": 2,
  "heldActionIds": [
   "A-DUP-2971-questions-561-799",
@@ -5565,7 +5565,9 @@
       "claimMeta": {
        "semanticFamily": "assertion",
        "displayClass": "claim",
+       "checkable": true,
        "sourceProvided": false,
+       "isConclusion": false,
        "isPrediction": false,
        "telegraphic": false,
        "confidence": "HIGH"
@@ -9447,7 +9449,9 @@
       "claimMeta": {
        "semanticFamily": "assertion",
        "displayClass": "claim",
+       "checkable": true,
        "sourceProvided": true,
+       "isConclusion": false,
        "isPrediction": false,
        "telegraphic": false,
        "confidence": "HIGH"
@@ -14273,7 +14277,9 @@
       "claimMeta": {
        "semanticFamily": "assertion",
        "displayClass": "claim",
+       "checkable": true,
        "sourceProvided": true,
+       "isConclusion": false,
        "isPrediction": false,
        "telegraphic": false,
        "confidence": "MEDIUM"
@@ -17705,6 +17711,36 @@
    "adjudicationReason": "the certified span crossed a sentence boundary only because it swallowed 1 non-semantic line(s) — links, board pointers or bracketed labels. Trimmed to the one prose sentence it actually covers; the category is unchanged."
   },
   {
+   "occurrenceKey": "4875|themeAnchors|unlocated|0",
+   "postNum": 4875,
+   "sentenceId": null,
+   "start": null,
+   "end": null,
+   "text": "More 'conspiracy' [fact-less base-less claims] pushed re: violent, extremist, racist, dangerous, anti-gov, nazism, white supremacy, anti-religion, anti-American, ………..",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "R3-WITHDRAW-4875-themeAnchors-0",
+   "ruleCode": "R3_OWNER_RULING_3_WITHDRAWAL",
+   "withdrawReason": "the stored identity is a whole sentence, not an entity name (14 words). A sentence cannot be a named entity; the record is malformed.",
+   "adjudication": "E — WRONG_IDENTITY",
+   "adjudicationReason": "Owner Ruling 3, 2026-08-22: APPROVED. The reviewed C/D/E population must not remain attributed as Q-authored semantic paint.",
+   "ownerRuling": "Owner Ruling 3 (2026-08-22)",
+   "rationaleCorrection": {
+    "statedReason": "the stored identity is a whole sentence, not an entity name (14 words)",
+    "correction": "It IS a whole sentence, and that is correct for a themeAnchor — themeAnchors are sentences by design, so the E test does not apply to this layer. The line is Q-authored prose. The record is unlocatable for one reason only: the anchor stores the trailing ellipsis as ……….. while the drop writes it as eleven full stops. On the evidence this is a repairable geometry defect rather than a withdrawal.",
+    "correctedAdjudication": "B — REPAIR_GEOMETRY would also close it; withdrawal applied as ruled"
+   },
+   "slotWitness": {
+    "field": "postAnalysis.themeAnchors",
+    "text": "More 'conspiracy' [fact-less base-less claims] pushed re: violent, extremist, racist, dangerous, anti-gov, nazism, white supremacy, anti-religion, anti-American, ………..",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
+  },
+  {
    "occurrenceKey": "4881|claims|456|484",
    "postNum": 4881,
    "start": 456,
@@ -17949,6 +17985,32 @@
    "ruleCode": "OWNER_DROP_FALSE_SECONDARY"
   },
   {
+   "occurrenceKey": "4949|themeAnchors|unlocated|0",
+   "postNum": 4949,
+   "sentenceId": null,
+   "start": null,
+   "end": null,
+   "text": "That this nation, under God, shall have a new birth of freedom and that government of the people, by the people, for the people, shall not perish from the earth.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "R3-WITHDRAW-4949-themeAnchors-0",
+   "ruleCode": "R3_OWNER_RULING_3_WITHDRAWAL",
+   "withdrawReason": "the stored identity is a whole sentence, not an entity name (23 words). A sentence cannot be a named entity; the record is malformed.",
+   "adjudication": "E — WRONG_IDENTITY",
+   "adjudicationReason": "Owner Ruling 3, 2026-08-22: APPROVED. The reviewed C/D/E population must not remain attributed as Q-authored semantic paint.",
+   "ownerRuling": "Owner Ruling 3 (2026-08-22)",
+   "rationaleCorrection": null,
+   "slotWitness": {
+    "field": "postAnalysis.themeAnchors",
+    "text": "That this nation, under God, shall have a new birth of freedom and that government of the people, by the people, for the people, shall not perish from the earth.",
+    "slotsBefore": 1,
+    "slotsAfter": 0
+   }
+  },
+  {
    "occurrenceKey": "4951|claims|438|508",
    "postNum": 4951,
    "sentenceId": "p4951-s012",
@@ -18069,14 +18131,15 @@
   }
  ],
  "appliedTo": {
-  "postsSha256": "38c638034937fae8ee64dd3c63fb52f8ebcd733126445a912e292c9b409a9bd0",
-  "questionsSha256": "540518803304a7a21226a7ae135201af4ead9279ed67dc91f9237fe1c7b1bff6",
+  "postsSha256": "5354364e32dd21e20b91f3b542aeb1e88439de92f838ec8d1914962e9cd22202",
+  "questionsSha256": "d36dfc86ea8de5531183fe24030011aeefe76826df8b3579d820d24025376bad",
   "dispositionsSha256": "0df3ba934b21058af5779806eec0c6d2219d63777d85edcc48f09518646c59ce",
   "extraSets": {
    "step3b1-b2-actions.jsonl": "c9c6c43a08291d2fed207f9ce573ecf526ed33751336c0bd86595fb647e53f00",
    "step3b1-b2b-actions.jsonl": "33f26fa2d5c34c86e5e57681a9ba7613bb938e2f6fe1993e35f433fd480be6ce",
    "step3b1-b2c-actions.jsonl": "34fb5fedfa40a0e3ed8c1b2f6bef3ff2448467931ab72dc03db6e5cb03058678",
-   "step3b1-b3-actions.jsonl": "fc2f9f5a571b515fc9624f417e2abf6610e7f5a2cc8e8e0cab81a42f77df88f7"
+   "step3b1-b3-actions.jsonl": "fc2f9f5a571b515fc9624f417e2abf6610e7f5a2cc8e8e0cab81a42f77df88f7",
+   "step3b1-r3-actions.jsonl": "91c6bccf00928f5304cc08c44bdec473d9020c831302fbcd8ae14f2fe10bbd0c"
   }
  }
 }

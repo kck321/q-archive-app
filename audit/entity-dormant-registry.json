@@ -1,8 +1,8 @@
 {
  "note": "Entities left with no certified mention and no bound linked source. Retired from the public bundle: excluded from Entities, search, autocomplete, global synopses and hovers. THE IDS ARE RESERVED PERMANENTLY — a later occurrence resolves back to the same qe- id rather than minting a second identity.",
- "policy": "audit/url-derived-entity-policy.json + the 2026-08-17 boundary ruling",
+ "policy": "audit/url-derived-entity-policy.json + the 2026-08-17 boundary ruling + Owner Ruling 3 (2026-08-22)",
  "reserved": "audit/entity-ids.json keeps every id in this list.",
- "total": 208,
+ "total": 229,
  "entities": [
   {
    "id": "qe-eaac939b4aaa",
@@ -15,6 +15,12 @@
    "canonical": "AC-130",
    "type": "military_asset_vessel",
    "slug": "ac-130"
+  },
+  {
+   "id": "qe-76da188497d6",
+   "canonical": "Kavanaugh",
+   "type": "person",
+   "slug": "kavanaugh"
   },
   {
    "id": "qe-ddeb9c6c71b8",
@@ -47,6 +53,12 @@
    "slug": "huffpost"
   },
   {
+   "id": "qe-bb91501abc09",
+   "canonical": "Roseanne Barr",
+   "type": "person",
+   "slug": "roseanne-barr"
+  },
+  {
    "id": "qe-e428d152c1f7",
    "canonical": "Meadows",
    "type": "person",
@@ -57,6 +69,12 @@
    "canonical": "New York Magazine",
    "type": "media_organization",
    "slug": "new-york-magazine"
+  },
+  {
+   "id": "qe-c00874e212d3",
+   "canonical": "Gavin Newsom",
+   "type": "person",
+   "slug": "gavin-newsom"
   },
   {
    "id": "qe-fe6a80bff729",
@@ -125,6 +143,12 @@
    "slug": "quartz"
   },
   {
+   "id": "qe-ad0326f3114d",
+   "canonical": "House Intelligence",
+   "type": "government_institution",
+   "slug": "house-intelligence"
+  },
+  {
    "id": "qe-ad393745af3e",
    "canonical": "Ivanka Trump",
    "type": "person",
@@ -141,6 +165,18 @@
    "canonical": "MKUltra",
    "type": "program_operation_project",
    "slug": "mkultra"
+  },
+  {
+   "id": "qe-d4e89265e936",
+   "canonical": "Charlie Kirk",
+   "type": "person",
+   "slug": "charlie-kirk"
+  },
+  {
+   "id": "qe-58247463cbd4",
+   "canonical": "George Papa",
+   "type": "person",
+   "slug": "george-papa"
   },
   {
    "id": "qe-10b46bb969e5",
@@ -231,6 +267,12 @@
    "canonical": "West Hollywood",
    "type": "country_region",
    "slug": "west-hollywood"
+  },
+  {
+   "id": "qe-c3a9237ba27a",
+   "canonical": "Agnes Nixon",
+   "type": "person",
+   "slug": "agnes-nixon"
   },
   {
    "id": "qe-25f5f64483e9",
@@ -443,6 +485,12 @@
    "slug": "admiral-rogers"
   },
   {
+   "id": "qe-969011b0c0c3",
+   "canonical": "Vice News",
+   "type": "media_organization",
+   "slug": "vice-news"
+  },
+  {
    "id": "qe-ad97b6ceea12",
    "canonical": "Paul Pelosi",
    "type": "person",
@@ -465,6 +513,12 @@
    "canonical": "National Security Adviser",
    "type": "title_role",
    "slug": "national-security-adviser"
+  },
+  {
+   "id": "qe-628d3aa3cc03",
+   "canonical": "State Department OIG",
+   "type": "organization",
+   "slug": "state-department-oig"
   },
   {
    "id": "qe-14333c452434",
@@ -501,6 +555,18 @@
    "canonical": "John Ehrlichman",
    "type": "person",
    "slug": "john-ehrlichman"
+  },
+  {
+   "id": "qe-d18d01b68905",
+   "canonical": "CBN News",
+   "type": "media_organization",
+   "slug": "cbn-news"
+  },
+  {
+   "id": "qe-d41b03d8b4e3",
+   "canonical": "The Independent",
+   "type": "media_organization",
+   "slug": "the-independent"
   },
   {
    "id": "qe-d4ba181fe676",
@@ -857,6 +923,12 @@
    "slug": "jeremy-fleming"
   },
   {
+   "id": "qe-be9443407fad",
+   "canonical": "Michael Beatty",
+   "type": "person",
+   "slug": "michael-beatty"
+  },
+  {
    "id": "qe-5be819e1275d",
    "canonical": "NYC Department of Transportation",
    "type": "organization",
@@ -977,6 +1049,12 @@
    "slug": "senate-committee"
   },
   {
+   "id": "qe-d29df03a2c7a",
+   "canonical": "Cambridge Dictionary",
+   "type": "media_organization",
+   "slug": "cambridge-dictionary"
+  },
+  {
    "id": "qe-4700f035311f",
    "canonical": "Thomas Basile",
    "type": "person",
@@ -989,6 +1067,12 @@
    "slug": "omega-kingdom-ministries"
   },
   {
+   "id": "qe-746f75d548db",
+   "canonical": "House Republicans",
+   "type": "government_institution",
+   "slug": "house-republicans"
+  },
+  {
    "id": "qe-8623046de048",
    "canonical": "Matt Finn",
    "type": "person",
@@ -999,6 +1083,12 @@
    "canonical": "Dana Boente",
    "type": "person",
    "slug": "dana-boente"
+  },
+  {
+   "id": "qe-baf710e658c9",
+   "canonical": "Google Trends",
+   "type": "technology_platform",
+   "slug": "google-trends"
   },
   {
    "id": "qe-09c79d4d4b30",
@@ -1065,6 +1155,12 @@
    "canonical": "Breakfast Club",
    "type": "facility_property",
    "slug": "breakfast-club"
+  },
+  {
+   "id": "qe-349ce0440062",
+   "canonical": "Yale Medicine",
+   "type": "organization",
+   "slug": "yale-medicine"
   },
   {
    "id": "qe-f0dcfa6db00e",
@@ -1205,6 +1301,18 @@
    "slug": "new-york-governor"
   },
   {
+   "id": "qe-b1a37b982806",
+   "canonical": "Jeet Heer",
+   "type": "person",
+   "slug": "jeet-heer"
+  },
+  {
+   "id": "qe-6f898a7508fd",
+   "canonical": "Erin Nanoki",
+   "type": "person",
+   "slug": "erin-nanoki"
+  },
+  {
    "id": "qe-dc71841cc36f",
    "canonical": "Bryan S. Ware",
    "type": "person",
@@ -1217,10 +1325,22 @@
    "slug": "marc-mezvinsky"
   },
   {
+   "id": "qe-34cf2565da90",
+   "canonical": "International Islamic Council for Da'wa and Relief",
+   "type": "organization",
+   "slug": "international-islamic-council-for-da-wa-and-relief"
+  },
+  {
    "id": "qe-f6ab5ef8147d",
    "canonical": "Carl Ghattas",
    "type": "person",
    "slug": "carl-ghattas"
+  },
+  {
+   "id": "qe-d350ae114c30",
+   "canonical": "Mike Wallace",
+   "type": "person",
+   "slug": "mike-wallace"
   },
   {
    "id": "qe-92f4051753fc",
@@ -1233,6 +1353,12 @@
    "canonical": "Jordan Klepper",
    "type": "person",
    "slug": "jordan-klepper"
+  },
+  {
+   "id": "qe-9054d5a03df4",
+   "canonical": "Comedy Central",
+   "type": "media_organization",
+   "slug": "comedy-central"
   },
   {
    "id": "qe-90704aec1d9e",
