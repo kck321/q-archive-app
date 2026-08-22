@@ -59,11 +59,40 @@ if (planSha !== PLAN_SHA256) {
   console.error(`   found    ${planSha}`)
   process.exit(1)
 }
-const plan = planRaw.toString('utf8').trim().split('\n').map(l => JSON.parse(l))
+// THE HELD ROWS COME BACK THROUGH THE SAME DOOR.
+//
+// audit/step3b1-held-dispositions.jsonl carries one row per held action, in the plan's own action
+// schema, superseding the plan row with the same actionId. Adjudicated rows arrive with
+// humanReviewRequired cleared; the ones still open keep it set and are still refused here.
+// Running them through a second applier would mean a second set of gates, and the gates are the
+// only reason any of this is trustworthy — so there is one code path and it is this one.
+const DISPOSITIONS_SHA256 = '6fee1238d6bd263f5e5dc06bbdf6db845c911c31f665b474c06776de2465cc46'
+const dispPath = path.join(OUT, 'step3b1-held-dispositions.jsonl')
+let plan = planRaw.toString('utf8').trim().split('\n').map(l => JSON.parse(l))
+let dispositionsApplied = 0
+let dispositionIds = null
+if (fs.existsSync(dispPath)) {
+  const raw = fs.readFileSync(dispPath)
+  const dSha = crypto.createHash('sha256').update(raw).digest('hex')
+  if (dSha !== DISPOSITIONS_SHA256) {
+    console.error('\n[X] THE HELD DISPOSITIONS ARE NOT THE ADJUDICATED ONES — apply stopped.')
+    console.error(`   expected ${DISPOSITIONS_SHA256}`)
+    console.error(`   found    ${dSha}`)
+    process.exit(1)
+  }
+  const disp = raw.toString('utf8').trim().split('\n').map(l => JSON.parse(l))
+  const byId = new Map(disp.map(d => [d.actionId, d]))
+  const planIds = new Set(plan.map(a => a.actionId))
+  for (const id of byId.keys()) if (!planIds.has(id)) { console.error(`[X] disposition ${id} names no plan action`); process.exit(1) }
+  plan = plan.map(a => byId.get(a.actionId) ?? a)
+  dispositionsApplied = disp.filter(d => !d.humanReviewRequired).length
+  dispositionIds = new Set(disp.map(d => d.actionId))
+}
+
 const held = plan.filter(a => a.humanReviewRequired)
 const actions = plan.filter(a => !a.humanReviewRequired).sort((a, b) => a.actionId.localeCompare(b.actionId))
-if (plan.length !== 540 || actions.length !== 530 || held.length !== 10) {
-  console.error(`[X] plan shape moved: ${plan.length} rows, ${actions.length} automatic, ${held.length} held`)
+if (plan.length !== 540 || actions.length !== 530 + dispositionsApplied || held.length !== 10 - dispositionsApplied) {
+  console.error(`[X] plan shape moved: ${plan.length} rows, ${actions.length} automatic, ${held.length} held, ${dispositionsApplied} dispositions`)
   process.exit(1)
 }
 
@@ -86,11 +115,35 @@ const fileSha = f => crypto.createHash('sha256').update(fs.readFileSync(f)).dige
 if (fs.existsSync(overlayPath)) {
   try {
     const prev = JSON.parse(fs.readFileSync(overlayPath, 'utf8'))
-    if (prev.appliedTo?.postsSha256 === fileSha(postsPath) && prev.appliedTo?.questionsSha256 === fileSha(questionsPath)) {
+    // The stamp covers the DISPOSITIONS too. Adjudicating a held row changes what this step owes
+    // the bundle, so a bundle stamped before that adjudication is no longer "already applied".
+    if (prev.appliedTo?.postsSha256 === fileSha(postsPath) && prev.appliedTo?.questionsSha256 === fileSha(questionsPath)
+        && (prev.appliedTo?.dispositionsSha256 ?? null) === (fs.existsSync(dispPath) ? DISPOSITIONS_SHA256 : null)) {
       console.log(`Step 3B-1 already applied to this exact bundle — ${prev.occurrences?.length ?? 0} overlay occurrences, ${prev.actionsHeld ?? 0} held. Nothing written.`)
       process.exit(0)
     }
   } catch { /* an unreadable overlay is rebuilt from scratch below */ }
+}
+
+// DATA UNCHANGED + DISPOSITIONS CHANGED = ONLY THE ADJUDICATED ROWS HAVE WORK TO DO.
+//
+// If posts.json and questions.json are byte-for-byte what the last run produced, every action that
+// run applied is still applied — that is what byte-identical means. Re-deriving them anyway is not
+// merely wasted: four CONTEXT actions would re-fire, because #2038 is `FIGHT! FIGHT! FIGHT!` and
+// removing the first unit slides the second onto its offsets, so the action's withdrawal target
+// resolves again and the row looks fresh. The second pass would withdraw a legitimate repeat.
+//
+// So when only the dispositions moved, the previous overlay is carried forward wholesale and just
+// the newly adjudicated actionIds are processed.
+let onlyTheseActionIds = null
+if (fs.existsSync(overlayPath) && fs.existsSync(dispPath)) {
+  try {
+    const prev = JSON.parse(fs.readFileSync(overlayPath, 'utf8'))
+    if (prev.appliedTo?.postsSha256 === fileSha(postsPath) && prev.appliedTo?.questionsSha256 === fileSha(questionsPath)
+        && prev.appliedTo?.dispositionsSha256 !== DISPOSITIONS_SHA256) {
+      onlyTheseActionIds = dispositionIds
+    }
+  } catch { /* fall through to a full derivation */ }
 }
 
 const posts = JSON.parse(fs.readFileSync(postsPath, 'utf8'))
@@ -200,6 +253,12 @@ const alreadyApplied = []
 // are carried forward: the row is the adjudication, not a side effect of the edit that produced it.
 const priorOverlayPath = path.join(DATA, 'semantics.json')
 const priorByAction = new Map()
+// The transfer log is cumulative for the same reason the overlay is: a run that re-derives only
+// the newly adjudicated rows must not drop the proof recorded for the 530 it carried forward.
+const priorTransfersPath = path.join(OUT, 'step3b1-metadata-transfers.json')
+const priorTransfers = fs.existsSync(priorTransfersPath)
+  ? (() => { try { return JSON.parse(fs.readFileSync(priorTransfersPath, 'utf8')).transfers ?? [] } catch { return [] } })()
+  : []
 if (fs.existsSync(priorOverlayPath)) {
   try {
     for (const o of (JSON.parse(fs.readFileSync(priorOverlayPath, 'utf8')).occurrences ?? [])) priorByAction.set(o.actionId, o)
@@ -207,7 +266,11 @@ if (fs.existsSync(priorOverlayPath)) {
 }
 const carryForward = actionId => {
   const prior = priorByAction.get(actionId)
-  if (prior) { semantics.push(prior); return true }
+  if (prior) {
+    semantics.push(prior)
+    for (const t of priorTransfers) if (t.actionId === actionId) metaTransfers.push(t)
+    return true
+  }
   problems.push(`${actionId}: no old key resolves and no prior overlay row exists — the bundle is neither pre- nor post-apply`)
   return false
 }
@@ -265,6 +328,7 @@ function metaFor(p, kind, text) {
 }
 
 for (const a of actions) {
+  if (onlyTheseActionIds && !onlyTheseActionIds.has(a.actionId)) { alreadyApplied.push(a.actionId); carryForward(a.actionId); continue }
   const p = postByNum.get(a.postNum)
   if (!p) { problems.push(`${a.actionId}: post #${a.postNum} not found`); continue }
   const sentences = sentencesByPost.get(a.postNum) ?? []
@@ -415,7 +479,22 @@ for (const a of actions) {
   const winnerKind = Object.entries(PRIMARY_KIND).find(([, v]) => v === a.proposedPrimaryCategory)?.[0]
   if (!winnerKind) { problems.push(`${a.actionId}: no kind for primary '${a.proposedPrimaryCategory}'`); continue }
   if (!sentence) { problems.push(`${a.actionId}: sentence ${a.sentenceId} not found`); continue }
-  if (sentence.start !== a.sentenceStart || sentence.end !== a.sentenceEnd || sentence.text !== a.sentenceText) {
+  if (a.spanOverride) {
+    // A SUB-SENTENCE TARGET, DECLARED AND CHECKED — never inferred.
+    //
+    // #1928 writes "…/d1-release/view" and "Who is [1 of 4] FIREWALLS?" with no separator, so the
+    // splitter sees one sentence and painting it would paint the URL. The owner ruled the URL stays
+    // a link. An action may therefore name a span inside its sentence, but only with a stated
+    // reason, and only if the characters there are exactly the text it claims.
+    const body = runtimeText(p.text ?? '')
+    if (!a.spanOverrideReason) { problems.push(`${a.actionId}: spanOverride without a reason`); continue }
+    if (a.sentenceStart < sentence.start || a.sentenceEnd > sentence.end) {
+      problems.push(`${a.actionId}: spanOverride ${a.sentenceStart}..${a.sentenceEnd} escapes its sentence ${sentence.start}..${sentence.end}`); continue
+    }
+    if (body.slice(a.sentenceStart, a.sentenceEnd) !== a.sentenceText) {
+      problems.push(`${a.actionId}: spanOverride text does not match the body at those offsets`); continue
+    }
+  } else if (sentence.start !== a.sentenceStart || sentence.end !== a.sentenceEnd || sentence.text !== a.sentenceText) {
     problems.push(`${a.actionId}: sentence geometry moved (${sentence.start}..${sentence.end} vs ${a.sentenceStart}..${a.sentenceEnd})`)
     continue
   }
@@ -540,6 +619,9 @@ for (const a of actions) {
     reviewDispositions: a.proposedReviewDispositions,
     relationshipsPreserved: a.relationshipsPreserved ? [a.relationshipsPreserved] : [],
     supersededKeys: a.recordsWithdrawn ?? [], actionId: a.actionId, ruleCode: a.ruleCode,
+    ...(a.adjudication ? { adjudication: a.adjudication, adjudicationReason: a.adjudicationReason } : {}),
+    ...(a.spanOverride ? { spanOverride: true, spanOverrideReason: a.spanOverrideReason } : {}),
+    ...(a.intentionallyUncategorized ? { intentionallyUncategorized: a.intentionallyUncategorized } : {}),
   })
 }
 
@@ -588,7 +670,8 @@ for (const q of questions) {
 semantics.sort((a, b) => a.postNum - b.postNum || a.start - b.start || a.occurrenceKey.localeCompare(b.occurrenceKey))
 const doc = {
   note: 'Step 3B-1 — the certified semantic overlay. Primary paint, non-painting secondaries and review dispositions, keyed by occurrence. Step 4 renders from this.',
-  step: '3B-1', planSha256: planSha, actionsApplied: actions.length - alreadyApplied.length,
+  step: '3B-1', planSha256: planSha, dispositionsApplied,
+  actionsApplied: actions.length - alreadyApplied.length,
   actionsAlreadyApplied: alreadyApplied.length, actionsHeld: held.length,
   heldActionIds: held.map(h => h.actionId).sort(),
   occurrences: semantics,
@@ -603,7 +686,8 @@ const stable = o => JSON.stringify(o, null, 1)
 fs.writeFileSync(postsPath, JSON.stringify(posts))
 fs.writeFileSync(questionsPath, JSON.stringify(questions))
 // Stamped with what it was applied TO, so the next run can tell "already done" from "do it again".
-doc.appliedTo = { postsSha256: fileSha(postsPath), questionsSha256: fileSha(questionsPath) }
+doc.appliedTo = { postsSha256: fileSha(postsPath), questionsSha256: fileSha(questionsPath),
+  dispositionsSha256: fs.existsSync(dispPath) ? DISPOSITIONS_SHA256 : null }
 fs.writeFileSync(overlayPath, stable(doc))
 fs.writeFileSync(path.join(OUT, 'step3b1-metadata-transfers.json'), stable({ transfers: metaTransfers }))
 

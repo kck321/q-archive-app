@@ -2,20 +2,14 @@
  "note": "Step 3B-1 — the certified semantic overlay. Primary paint, non-painting secondaries and review dispositions, keyed by occurrence. Step 4 renders from this.",
  "step": "3B-1",
  "planSha256": "373ca06b1416b6707a111f2c3da8e751472c551f739500f76cdcc764d3128058",
- "actionsApplied": 530,
- "actionsAlreadyApplied": 0,
- "actionsHeld": 10,
+ "dispositionsApplied": 7,
+ "actionsApplied": 7,
+ "actionsAlreadyApplied": 530,
+ "actionsHeld": 3,
  "heldActionIds": [
   "A-DUP-2971-questions-561-799",
   "A-DUP-4454-questions-238-404",
-  "A-MP-p0034-s002",
-  "A-MP-p1928-s012",
-  "A-MP-p1944-s014",
-  "A-MP-p2072-s013",
-  "A-MP-p2211-s041",
-  "A-MP-p2369-s003",
-  "A-MP-p2378-s001",
-  "A-SB-3071"
+  "A-MP-p0034-s002"
  ],
  "occurrences": [
   {
@@ -6317,6 +6311,55 @@
    "ruleCode": "R2_IMPERATIVE"
   },
   {
+   "occurrenceKey": "1928|questions|487|513",
+   "postNum": 1928,
+   "sentenceId": "p1928-s012",
+   "start": 487,
+   "end": 513,
+   "text": "Who is [1 of 4] FIREWALLS?",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "question",
+   "secondarySemantics": [],
+   "withdrawnSemantics": [
+    {
+     "category": "claim",
+     "fromOccurrenceKey": "1928|claims|439|513",
+     "certifiedValue": "https://vault.fbi.gov/d1-release/d1-release/viewWho is [1 of 4] FIREWALLS?",
+     "metadata": {
+      "claimMeta": {
+       "semanticFamily": "assertion",
+       "displayClass": "claim",
+       "checkable": true,
+       "sourceProvided": true,
+       "isConclusion": true,
+       "isPrediction": false,
+       "telegraphic": false,
+       "confidence": "MEDIUM"
+      }
+     },
+     "reason": "the claim span 439..513 opens inside a URL; the URL is a link, not a semantic unit, and only the question is painted"
+    }
+   ],
+   "reviewDispositions": [],
+   "relationshipsPreserved": [],
+   "supersededKeys": [
+    "1928|questions|503|513"
+   ],
+   "actionId": "A-MP-p1928-s012",
+   "ruleCode": "OWNER_RULING_URL_QUESTION_SPLIT",
+   "adjudication": "MODIFY_THEN_APPLY",
+   "adjudicationReason": "the owner ruled this row directly in the finalisation handoff: keep the URL a link, paint only the question.",
+   "spanOverride": true,
+   "spanOverrideReason": "the ledger sentence p1928-s012 is 439..513, because the drop writes \"…/view\" and \"Who is\" with no separator. Painting the whole sentence would paint the URL.",
+   "intentionallyUncategorized": [
+    {
+     "start": 439,
+     "end": 487,
+     "reason": "URL — a link, not a semantic unit (owner ruling)"
+    }
+   ]
+  },
+  {
    "occurrenceKey": "1929|questions|488|514",
    "postNum": 1929,
    "sentenceId": "p1929-s013",
@@ -6467,6 +6510,46 @@
    "supersededKeys": [],
    "actionId": "A-DQ-p1944-s005",
    "ruleCode": "R2_IMPERATIVE"
+  },
+  {
+   "occurrenceKey": "1944|questions|682|871",
+   "postNum": 1944,
+   "sentenceId": "p1944-s014",
+   "start": 682,
+   "end": 871,
+   "text": "Given magnitude of spy campaign (U.S. Presidential Election Republican Party Nominee Candidate + President Elect + President of the United States) would HUSSEIN be required to DIRECT ORDER?",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "question",
+   "secondarySemantics": [
+    {
+     "category": "claim",
+     "fromOccurrenceKey": "1944|claims|682|719",
+     "certifiedValue": "Given magnitude of spy campaign (U.S.",
+     "reason": "certified in this section before the 2026-08-21 ruling; retained as a non-painting secondary",
+     "metadata": {
+      "claimMeta": {
+       "semanticFamily": "assertion",
+       "displayClass": "claim",
+       "checkable": false,
+       "sourceProvided": false,
+       "isConclusion": false,
+       "isPrediction": false,
+       "telegraphic": false,
+       "confidence": "OWNER_ADJUDICATED"
+      }
+     }
+    }
+   ],
+   "reviewDispositions": [],
+   "relationshipsPreserved": [],
+   "supersededKeys": [
+    "1944|claims|682|719",
+    "1944|questions|720|871"
+   ],
+   "actionId": "A-MP-p1944-s014",
+   "ruleCode": "R1_INTERROGATIVE",
+   "adjudication": "MODIFY_THEN_APPLY",
+   "adjudicationReason": "held for REPAIR_GEOMETRY; the ledger now measures p1944-s014 at 682..871 and the shape cascade, re-run on that text, returns question/R1_INTERROGATIVE. The plan's R4_DECLARATIVE was classify('') falling through, not a reading of the sentence."
   },
   {
    "occurrenceKey": "1944|questions|1185|1245",
@@ -6960,6 +7043,46 @@
    "withdrawReason": "fragment contained by the complete sentence already certified in the same category"
   },
   {
+   "occurrenceKey": "2072|questions|1474|1614",
+   "postNum": 2072,
+   "sentenceId": "p2072-s013",
+   "start": 1474,
+   "end": 1614,
+   "text": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v. X?]?",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "question",
+   "secondarySemantics": [
+    {
+     "category": "claim",
+     "fromOccurrenceKey": "2072|claims|1474|1612",
+     "certifiedValue": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v. X?",
+     "reason": "certified in this section before the 2026-08-21 ruling; retained as a non-painting secondary",
+     "metadata": {
+      "claimMeta": {
+       "semanticFamily": "assertion",
+       "displayClass": "claim",
+       "checkable": false,
+       "sourceProvided": false,
+       "isConclusion": false,
+       "isPrediction": false,
+       "telegraphic": false,
+       "confidence": "OWNER_ADJUDICATED"
+      }
+     }
+    }
+   ],
+   "reviewDispositions": [],
+   "relationshipsPreserved": [],
+   "supersededKeys": [
+    "2072|claims|1474|1612",
+    "2072|questions|1610|1614"
+   ],
+   "actionId": "A-MP-p2072-s013",
+   "ruleCode": "R1_INTERROGATIVE",
+   "adjudication": "MODIFY_THEN_APPLY",
+   "adjudicationReason": "held for REPAIR_GEOMETRY; the ledger now measures p2072-s013 at 1474..1614 and the shape cascade, re-run on that text, returns question/R1_INTERROGATIVE. The plan's R4_DECLARATIVE was classify('') falling through, not a reading of the sentence."
+  },
+  {
    "occurrenceKey": "2072|questions|1615|1643",
    "postNum": 2072,
    "sentenceId": "p2072-s014",
@@ -7432,6 +7555,46 @@
    "withdrawReason": "fragment contained by the complete sentence already certified in the same category"
   },
   {
+   "occurrenceKey": "2211|questions|4012|4152",
+   "postNum": 2211,
+   "sentenceId": "p2211-s041",
+   "start": 4012,
+   "end": 4152,
+   "text": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v. X?]?",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "question",
+   "secondarySemantics": [
+    {
+     "category": "claim",
+     "fromOccurrenceKey": "2211|claims|4012|4150",
+     "certifiedValue": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v. X?",
+     "reason": "certified in this section before the 2026-08-21 ruling; retained as a non-painting secondary",
+     "metadata": {
+      "claimMeta": {
+       "semanticFamily": "assertion",
+       "displayClass": "claim",
+       "checkable": false,
+       "sourceProvided": false,
+       "isConclusion": false,
+       "isPrediction": false,
+       "telegraphic": false,
+       "confidence": "OWNER_ADJUDICATED"
+      }
+     }
+    }
+   ],
+   "reviewDispositions": [],
+   "relationshipsPreserved": [],
+   "supersededKeys": [
+    "2211|claims|4012|4150",
+    "2211|questions|4148|4152"
+   ],
+   "actionId": "A-MP-p2211-s041",
+   "ruleCode": "R1_INTERROGATIVE",
+   "adjudication": "MODIFY_THEN_APPLY",
+   "adjudicationReason": "held for REPAIR_GEOMETRY; the ledger now measures p2211-s041 at 4012..4152 and the shape cascade, re-run on that text, returns question/R1_INTERROGATIVE. The plan's R4_DECLARATIVE was classify('') falling through, not a reading of the sentence."
+  },
+  {
    "occurrenceKey": "2211|questions|4153|4181",
    "postNum": 2211,
    "sentenceId": "p2211-s042",
@@ -7773,6 +7936,46 @@
    "withdrawReason": "fragment contained by the complete sentence already certified in the same category"
   },
   {
+   "occurrenceKey": "2369|questions|255|333",
+   "postNum": 2369,
+   "sentenceId": "p2369-s003",
+   "start": 255,
+   "end": 333,
+   "text": "DECLAS would [PROVE] evidence v. POTUS to obtain FISA WARRANT - why the block?",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "question",
+   "secondarySemantics": [
+    {
+     "category": "claim",
+     "fromOccurrenceKey": "2369|claims|255|316",
+     "certifiedValue": "DECLAS would [PROVE] evidence v. POTUS to obtain FISA WARRANT",
+     "reason": "certified in this section before the 2026-08-21 ruling; retained as a non-painting secondary",
+     "metadata": {
+      "claimMeta": {
+       "semanticFamily": "assertion",
+       "displayClass": "claim",
+       "checkable": true,
+       "sourceProvided": true,
+       "isConclusion": true,
+       "isPrediction": false,
+       "telegraphic": false,
+       "confidence": "HIGH"
+      }
+     }
+    }
+   ],
+   "reviewDispositions": [],
+   "relationshipsPreserved": [],
+   "supersededKeys": [
+    "2369|claims|255|316",
+    "2369|questions|288|333"
+   ],
+   "actionId": "A-MP-p2369-s003",
+   "ruleCode": "R1_INTERROGATIVE",
+   "adjudication": "MODIFY_THEN_APPLY",
+   "adjudicationReason": "held for REPAIR_GEOMETRY; the ledger now measures p2369-s003 at 255..333 and the shape cascade, re-run on that text, returns question/R1_INTERROGATIVE. The plan's R4_DECLARATIVE was classify('') falling through, not a reading of the sentence."
+  },
+  {
    "occurrenceKey": "2369|directives|334|354",
    "postNum": 2369,
    "sentenceId": "p2369-s004",
@@ -7797,6 +8000,46 @@
    "supersededKeys": [],
    "actionId": "A-DQ-p2369-s004",
    "ruleCode": "R2_IMPERATIVE"
+  },
+  {
+   "occurrenceKey": "2378|questions|6|45",
+   "postNum": 2378,
+   "sentenceId": "p2378-s001",
+   "start": 6,
+   "end": 45,
+   "text": "No. 297 - where was this picture taken?",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "question",
+   "secondarySemantics": [
+    {
+     "category": "claim",
+     "fromOccurrenceKey": "2378|claims|6|9",
+     "certifiedValue": "No.",
+     "reason": "certified in this section before the 2026-08-21 ruling; retained as a non-painting secondary",
+     "metadata": {
+      "claimMeta": {
+       "semanticFamily": "assertion",
+       "displayClass": "claim",
+       "checkable": false,
+       "sourceProvided": false,
+       "isConclusion": false,
+       "isPrediction": false,
+       "telegraphic": true,
+       "confidence": "OWNER_ADJUDICATED"
+      }
+     }
+    }
+   ],
+   "reviewDispositions": [],
+   "relationshipsPreserved": [],
+   "supersededKeys": [
+    "2378|claims|6|9",
+    "2378|questions|10|45"
+   ],
+   "actionId": "A-MP-p2378-s001",
+   "ruleCode": "R1_INTERROGATIVE",
+   "adjudication": "MODIFY_THEN_APPLY",
+   "adjudicationReason": "held for REPAIR_GEOMETRY; the ledger now measures p2378-s001 at 6..45 and the shape cascade, re-run on that text, returns question/R1_INTERROGATIVE. The plan's R4_DECLARATIVE was classify('') falling through, not a reading of the sentence."
   },
   {
    "occurrenceKey": "2378|namedEntities|379|384",
@@ -10021,6 +10264,28 @@
    "supersededKeys": [],
    "actionId": "A-MP-p3053-s001",
    "ruleCode": "OWNER_DROP_FALSE_SECONDARY"
+  },
+  {
+   "occurrenceKey": "3071|claims|328|446",
+   "postNum": 3071,
+   "sentenceId": "p3071-s007",
+   "start": 328,
+   "end": 446,
+   "text": ">DENY PROPER COUNTING U.S. CENSUS > AVOID PUBLIC KNOWLEDGE REAL ‘ILLEGAL’ POP TO AVOID VOTER FRAUD % RISK TO ELECTIONS",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [
+    "source_boundary_exception"
+   ],
+   "relationshipsPreserved": [],
+   "supersededKeys": [
+    "3071|claims|328|354"
+   ],
+   "actionId": "A-SB-3071",
+   "ruleCode": "R7_SOURCE_OWNERSHIP_UNPROVED",
+   "adjudication": "MODIFY_THEN_APPLY",
+   "adjudicationReason": "the hold was about SOURCE OWNERSHIP and that hold is upheld — a leading \">\" alone does not prove quotation, so this stays q_authored and no count moves between dispositions. But the record is certified over 328..354 (\">DENY PROPER COUNTING U.S.\") while the sentence runs 328..446: the abbreviation \"U.S.\" cut it. Shipping a knowingly truncated highlight breaks the full-sentence rule, so the span is completed in place. Source ownership remains open and unchanged."
   },
   {
    "occurrenceKey": "3072|directives|10|35",
@@ -13764,7 +14029,8 @@
   }
  ],
  "appliedTo": {
-  "postsSha256": "d0c750ee500dfa8d71f7eb7ec2ffa59c37ad8d297d3fd9df10bdc8841fe335f7",
-  "questionsSha256": "4a69a07495258009fca11a3397c9c5ca320f1ba95d20a0fe76413e9154852be0"
+  "postsSha256": "493fa2f1008ad03b8f7b009d13e8733ad3fbbf2e726c511fb7d436f1138b7746",
+  "questionsSha256": "241dc211bf435d8522b34cdcc9f3ac8b832e06f80df346ddcb87d8ea3ee12b2f",
+  "dispositionsSha256": "6fee1238d6bd263f5e5dc06bbdf6db845c911c31f665b474c06776de2465cc46"
  }
 }

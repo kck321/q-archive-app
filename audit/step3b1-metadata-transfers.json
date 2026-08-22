@@ -4047,6 +4047,40 @@
    }
   },
   {
+   "actionId": "A-MP-p1928-s012",
+   "from": "1928|claims|439|513",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": true,
+     "isConclusion": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1944-s014",
+   "from": "1944|claims|682|719",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
    "actionId": "A-MP-p1944-s022",
    "from": "1944|claims|1185|1245",
    "kind": "claims",
@@ -4115,6 +4149,23 @@
    }
   },
   {
+   "actionId": "A-MP-p2072-s013",
+   "from": "2072|claims|1474|1612",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
    "actionId": "A-MP-p2166-s007",
    "from": "2166|directives|311|340",
    "kind": "directives",
@@ -4144,6 +4195,23 @@
      "isConclusion": false,
      "isPrediction": false,
      "telegraphic": true,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2211-s041",
+   "from": "2211|claims|4012|4150",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
      "confidence": "OWNER_ADJUDICATED"
     }
    }
@@ -4179,6 +4247,40 @@
     "directiveFamilies": {
      "family": "cognition",
      "alsoQuestion": false
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2369-s003",
+   "from": "2369|claims|255|316",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": true,
+     "isConclusion": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2378-s001",
+   "from": "2378|claims|6|9",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "OWNER_ADJUDICATED"
     }
    }
   },
@@ -5568,6 +5670,12 @@
      "confidence": "OWNER_ADJUDICATED"
     }
    }
+  },
+  {
+   "actionId": "A-SB-3071",
+   "rekeyed": "claimMeta",
+   "from": "deny proper counting u s",
+   "to": "deny proper counting u s census avoid public knowledge real illegal pop to avoid voter fraud risk to elections"
   },
   {
    "actionId": "A-SB-4310",

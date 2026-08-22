@@ -12,6 +12,9 @@
 // actions are explicitly out of scope and still carry their defects. Reporting a global zero would
 // be a lie, and reporting a global non-zero without the split would be useless.
 import fs from 'node:fs'
+
+/** Line splitter for the .jsonl artifacts. Tolerates CRLF, which git hands back on Windows. */
+const LINE_BREAK = new RegExp(String.fromCharCode(92) + 'r?' + String.fromCharCode(92) + 'n')
 import path from 'node:path'
 import crypto from 'node:crypto'
 import { fileURLToPath } from 'node:url'
@@ -31,7 +34,15 @@ const posts = read(path.join(DATA, 'posts.json'))
 const questions = read(path.join(DATA, 'questions.json'))
 const manifest = read(path.join(ROOT, 'STEP3B1-DRYRUN', 'STEP3B1-MANIFEST.json'))
 const transfers = read(path.join(OUT, 'step3b1-metadata-transfers.json')).transfers
-const plan = fs.readFileSync(path.join(OUT, 'step3b1-plan.jsonl'), 'utf8').trim().split('\n').map(l => JSON.parse(l))
+const readJsonl = f => fs.readFileSync(f, 'utf8').trim().split(LINE_BREAK).map(l => JSON.parse(l))
+const planRows = readJsonl(path.join(OUT, 'step3b1-plan.jsonl'))
+
+// The adjudicated held rows supersede their plan rows by actionId — the same substitution
+// apply-step3b1.mjs makes, so the verifier measures the state the applier was actually asked for.
+const dispPath = path.join(OUT, 'step3b1-held-dispositions.jsonl')
+const dispositions = fs.existsSync(dispPath) ? readJsonl(dispPath) : []
+const dispById = new Map(dispositions.map(d => [d.actionId, d]))
+const plan = planRows.map(a => dispById.get(a.actionId) ?? a)
 
 const automatic = plan.filter(a => !a.humanReviewRequired)
 const held = plan.filter(a => a.humanReviewRequired)
@@ -53,25 +64,50 @@ for (const o of overlay.occurrences) {
     overlayCell[k] = (overlayCell[k] ?? 0) + 1
   }
 }
+// THE PROJECTION PLUS THE ADJUDICATED ROWS.
+//
+// STEP3B1-MANIFEST.json projects the 530. Seven held rows have since been adjudicated and applied,
+// and each moves counts of its own. Their arithmetic is computed here with the SAME per-action
+// rule the projection generator uses, so the target stays derived rather than re-typed: a target
+// that is edited by hand to match what was measured is not a gate.
+const PK_OF = { claims: 'claim', questions: 'question', directives: 'directive', predictions: 'prediction' }
+const dispDelta = {}
+for (const d of dispositions) {
+  if (d.humanReviewRequired) continue
+  const winnerKind = Object.entries(PK_OF).find(([, v]) => v === d.proposedPrimaryCategory)?.[0]
+  const bump = (src, layer, cat, n) => { if (!cat || !n) return; const k = `${src}|${layer}|${cat}`; dispDelta[k] = (dispDelta[k] ?? 0) + n }
+  for (const k of d.oldOccurrenceKeys ?? []) {
+    // A record of the WINNING kind is widened in place, not withdrawn — no count moves.
+    if (k.split('|')[1] === winnerKind) continue
+    bump('q_authored', 'primary', PK_OF[k.split('|')[1]], -1)
+  }
+  for (const sec of d.proposedSecondarySemantics ?? []) bump(d.sourceDisposition, 'secondary', sec.category, 1)
+}
+
 const crossTab = manifest.counts.projection.map(r => {
   const isHeadline = r.source === 'q_authored' && r.layer === 'primary'
   const measured = isHeadline ? (primaryByKind[KW[r.category]] ?? 0) : (overlayCell[`${r.source}|${r.layer}|${r.category}`] ?? 0)
+  const adj = dispDelta[`${r.source}|${r.layer}|${r.category}`] ?? 0
+  const target = r.after + adj
   return { source: r.source, layer: r.layer, category: r.category, before: r.before, projectedDelta: r.delta,
-    projectedAfter: r.after, measuredAfter: measured, headlineEligible: isHeadline, matches: measured === r.after,
+    projectedAfter: r.after, adjudicatedHeldDelta: adj, target,
+    measuredAfter: measured, headlineEligible: isHeadline, matches: measured === target,
     measuredFrom: isHeadline ? 'audit/occurrence-ledger.json' : 'public/data/semantics.json' }
 })
 const gates = [gate('count cross-tab matches the projection', crossTab.every(r => r.matches),
-  crossTab.filter(r => !r.matches).map(r => `${r.source}|${r.layer}|${r.category} ${r.measuredAfter}!=${r.projectedAfter}`).join(', ') || 'all 9 cells')]
+  crossTab.filter(r => !r.matches).map(r => `${r.source}|${r.layer}|${r.category} ${r.measuredAfter}!=${r.target}`).join(', ')
+  || `all ${crossTab.length} cells (projection + ${dispositions.filter(d => !d.humanReviewRequired).length} adjudicated held rows)`)]
 
 // ── 2. every automatic action landed, no held action moved ──────────────────────────────────
 const overlayByAction = new Map(overlay.occurrences.map(o => [o.actionId, o]))
 const missing = automatic.filter(a => !overlayByAction.has(a.actionId))
-gates.push(gate('all 530 automatic actions materialised', missing.length === 0, `${automatic.length - missing.length}/530`))
+gates.push(gate('every automatic action materialised', missing.length === 0,
+  `${automatic.length - missing.length}/${automatic.length}  (530 planned + ${dispositions.filter(d => !d.humanReviewRequired).length} adjudicated held)`))
 
 const heldIds = new Set(held.map(h => h.actionId))
 const heldTouched = overlay.occurrences.filter(o => heldIds.has(o.actionId))
 gates.push(gate('no held action appears in the applied overlay', heldTouched.length === 0,
-  heldTouched.length ? heldTouched.map(o => o.actionId).join(', ') : `${held.length} held, none applied`))
+  heldTouched.length ? heldTouched.map(o => o.actionId).join(', ') : `${held.length} still held, none applied`))
 
 // A held action's records must still be LIVE in the bundle, at the offsets the plan recorded.
 const liveKeys = new Set(ledger.records.map(r => r.key))
@@ -85,7 +121,7 @@ const heldKeyState = held.map(h => ({
 // not a one-to-one count.
 const heldIntact = heldKeyState.every(h => h.keysStillLive === h.keysExpected)
 gates.push(gate('every held action\'s records are still live and unmodified', heldIntact,
-  heldKeyState.filter(h => h.keysStillLive !== h.keysExpected).map(h => h.actionId).join(', ') || 'all 10 intact'))
+  heldKeyState.filter(h => h.keysStillLive !== h.keysExpected).map(h => h.actionId).join(', ') || `all ${held.length} intact`))
 
 // ── 3. no key spent twice, no identity rebuilt ──────────────────────────────────────────────
 const spend = new Map()
@@ -94,7 +130,7 @@ for (const a of automatic) for (const k of a.oldOccurrenceKeys ?? []) {
   if (spend.has(k) && spend.get(k) !== a.actionId) doubleSpend++
   spend.set(k, a.actionId)
 }
-gates.push(gate('zero duplicate action consumption', doubleSpend === 0, `${spend.size} distinct old keys across 530 actions`))
+gates.push(gate('zero duplicate action consumption', doubleSpend === 0, `${spend.size} distinct old keys across ${automatic.length} actions`))
 
 // Every overlay row must name an occurrence that exists in the runtime body at exactly its offsets.
 const bodyByNum = new Map(posts.map(p => [p.postNum, runtimeText(p.text ?? '')]))
@@ -117,7 +153,7 @@ gates.push(gate('zero same-sentence multi-primary inside the applied scope', mul
   `${multi.length} remain archive-wide, all outside the applied set` + (multi.length ? ` (${multi.map(m => m.sentenceId).join(', ')})` : '')))
 const multiAllHeld = multi.every(m => heldSentences.has(`${m.postNum}|${m.sentenceId}`))
 gates.push(gate('every remaining multi-primary sentence is a held action', multiAllHeld,
-  multi.filter(m => !heldSentences.has(`${m.postNum}|${m.sentenceId}`)).map(m => m.sentenceId).join(', ') || `${multi.length} = the 7 held A-MP rows`))
+  multi.filter(m => !heldSentences.has(`${m.postNum}|${m.sentenceId}`)).map(m => m.sentenceId).join(', ') || `${multi.length} remaining, each one a held action`))
 
 // THE SOURCE-BOUNDARY SENTENCES ARE THE ONE NAMED EXCEPTION, AND IT WAS FOUND BY THIS GATE.
 //
@@ -133,6 +169,18 @@ gates.push(gate('every remaining multi-primary sentence is a held action', multi
 const SOURCE_BOUNDARY_EXCEPTION = new Set(automatic
   .filter(a => a.kind === 'SOURCE_BOUNDARY_RESOLUTION').map(a => `${a.postNum}|${a.sentenceId}`))
 
+// A DECLARED SUB-SENTENCE TARGET LEAVES THE REST OF ITS SENTENCE UNPAINTED, ON PURPOSE.
+//
+// #1928 runs a URL straight into "Who is [1 of 4] FIREWALLS?" with no separator, so the ledger
+// sees one sentence and the owner ruled the URL stays a link. The question therefore paints a
+// PARTIAL span and the ledger correctly reports it as one. That is the ruling working, not a
+// defect — but it is only allowed where the action declared spanOverride and said why.
+const DECLARED_PARTIAL = new Set(automatic
+  .filter(a => a.spanOverride).map(a => `${a.postNum}|${a.sentenceId}`))
+const intentionallyUncategorized = automatic
+  .filter(a => a.intentionallyUncategorized)
+  .flatMap(a => a.intentionallyUncategorized.map(u => ({ actionId: a.actionId, postNum: a.postNum, sentenceId: a.sentenceId, ...u })))
+
 const overlaps = (dryrun.sameCategoryOverlap ?? []).filter(o => !o.deliberate)
 const overlapInScope = overlaps.filter(o => appliedSentences.has(`${o.postNum}|${o.sentenceId}`))
 const overlapUnexplained = overlapInScope.filter(o => !SOURCE_BOUNDARY_EXCEPTION.has(`${o.postNum}|${o.sentenceId}`))
@@ -142,8 +190,9 @@ gates.push(gate('every in-scope same-category primary overlap is a named source-
 
 const partials = (dryrun.replacements ?? []).filter(r => !r.deliberate)
 const partialInScope = partials.filter(r => appliedSentences.has(`${r.postNum}|${r.sentenceId}`))
-const partialUnexplained = partialInScope.filter(r => !SOURCE_BOUNDARY_EXCEPTION.has(`${r.postNum}|${r.sentenceId}`))
-gates.push(gate('every in-scope superseded partial primary span is a named source-boundary exception',
+const partialUnexplained = partialInScope.filter(r => !SOURCE_BOUNDARY_EXCEPTION.has(`${r.postNum}|${r.sentenceId}`)
+  && !DECLARED_PARTIAL.has(`${r.postNum}|${r.sentenceId}`))
+gates.push(gate('every in-scope partial primary span is a named source-boundary exception or a declared span override',
   partialUnexplained.length === 0,
   `${partials.length} archive-wide; ${partialInScope.length} in scope, all on ${[...new Set(partialInScope.map(r => '#' + r.postNum))].join(' ') || '—'}; ${partialUnexplained.length} unexplained`))
 
@@ -228,6 +277,7 @@ const receipt = {
     detail: 'A-SB-2653 declares 2480..2530 (50 chars) with a 133-char sentenceText; the ledger measures the sentence at 2480..2613. A-SB-4310 declares a 189-char text where the splitter measures 419, because "be removed.The recommendation" carries no space after the period. The applier stored the MEASURED geometry and kept the plan wording as planProposedText.',
     rows: overlay.occurrences.filter(o => o.planProposedText).map(o => ({ actionId: o.actionId, occurrenceKey: o.occurrenceKey, measuredLength: o.end - o.start, planProposedLength: o.planProposedText.length })),
   }],
+  intentionallyUncategorized,
   residualsOutOfScope: {
     note: 'Explicitly left for the owner: the 10 held actions and the 945-row conflict queue.',
     multiPrimarySentences: multi.length,

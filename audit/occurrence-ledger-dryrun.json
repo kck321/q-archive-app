@@ -9,10 +9,10 @@
  },
  "totals": {
   "sentences": 30187,
-  "occurrencesKeyed": 34673,
+  "occurrencesKeyed": 34667,
   "duplicateKeys": 44,
   "byKind": {
-   "claims": 8820,
+   "claims": 8814,
    "predictions": 843,
    "directives": 2940,
    "namedEntities": 8235,
@@ -22,8 +22,8 @@
    "emphasis": 4222
   },
   "byRelation": {
-   "EXACT": 22220,
-   "PARTIAL": 12211,
+   "EXACT": 22225,
+   "PARTIAL": 12200,
    "CROSSING": 242
   },
   "unlocated": 645,
@@ -31,23 +31,22 @@
  },
  "findings": {
   "partialPrimarySpans": {
-   "total": 190,
-   "toReplace": 190,
+   "total": 179,
+   "toReplace": 179,
    "deliberatePartials": 0,
    "note": "A directive-wrapped question is a partial span ON PURPOSE — the embedded question is what gets counted so the Directive relationship survives. Those are excluded from the replacement set.",
    "byKind": {
-    "claims": 169,
-    "questions": 15,
+    "claims": 163,
+    "questions": 10,
     "predictions": 6
    }
   },
   "sentencesWithMoreThanOnePrimaryCategory": {
-   "total": 7,
+   "total": 1,
    "certifiedDirectiveQuestion": 0,
-   "needsAnAdjudicatedWinner": 7,
+   "needsAnAdjudicatedWinner": 1,
    "note": "The directive+question pairs are a CERTIFIED overlap the archive maintains on purpose. Only the rest need a ruling, and none is resolved by an automatic precedence rule.",
    "combinations": {
-    "claims+questions": 6,
     "claims+predictions": 1
    }
   },
@@ -5510,29 +5509,9 @@
    "kind": "questions",
    "deliberate": false,
    "why": null,
-   "partial": "FIREWALLS?",
-   "start": 503,
+   "partial": "Who is [1 of 4] FIREWALLS?",
+   "start": 487,
    "end": 513
-  },
-  {
-   "sentenceId": "p1944-s014",
-   "postNum": 1944,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Given magnitude of spy campaign (U.S.",
-   "start": 682,
-   "end": 719
-  },
-  {
-   "sentenceId": "p1944-s014",
-   "postNum": 1944,
-   "kind": "questions",
-   "deliberate": false,
-   "why": null,
-   "partial": "Presidential Election Republican Party Nominee Candidate + President Elect + President of the United States) w",
-   "start": 720,
-   "end": 871
   },
   {
    "sentenceId": "p1947-s014",
@@ -5605,26 +5584,6 @@
    "end": 33
   },
   {
-   "sentenceId": "p2072-s013",
-   "postNum": 2072,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments acros",
-   "start": 1474,
-   "end": 1612
-  },
-  {
-   "sentenceId": "p2072-s013",
-   "postNum": 2072,
-   "kind": "questions",
-   "deliberate": false,
-   "why": null,
-   "partial": "X?]?",
-   "start": 1610,
-   "end": 1614
-  },
-  {
    "sentenceId": "p2107-s020",
    "postNum": 2107,
    "kind": "claims",
@@ -5643,26 +5602,6 @@
    "partial": "No.",
    "start": 103,
    "end": 106
-  },
-  {
-   "sentenceId": "p2211-s041",
-   "postNum": 2211,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments acros",
-   "start": 4012,
-   "end": 4150
-  },
-  {
-   "sentenceId": "p2211-s041",
-   "postNum": 2211,
-   "kind": "questions",
-   "deliberate": false,
-   "why": null,
-   "partial": "X?]?",
-   "start": 4148,
-   "end": 4152
   },
   {
    "sentenceId": "p2211-s021",
@@ -5793,46 +5732,6 @@
    "partial": "Initial analysis of laptop – thousands emails",
    "start": 371,
    "end": 416
-  },
-  {
-   "sentenceId": "p2369-s003",
-   "postNum": 2369,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "DECLAS would [PROVE] evidence v. POTUS to obtain FISA WARRANT",
-   "start": 255,
-   "end": 316
-  },
-  {
-   "sentenceId": "p2369-s003",
-   "postNum": 2369,
-   "kind": "questions",
-   "deliberate": false,
-   "why": null,
-   "partial": "POTUS to obtain FISA WARRANT - why the block?",
-   "start": 288,
-   "end": 333
-  },
-  {
-   "sentenceId": "p2378-s001",
-   "postNum": 2378,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "No.",
-   "start": 6,
-   "end": 9
-  },
-  {
-   "sentenceId": "p2378-s001",
-   "postNum": 2378,
-   "kind": "questions",
-   "deliberate": false,
-   "why": null,
-   "partial": "297 - where was this picture taken?",
-   "start": 10,
-   "end": 45
   },
   {
    "sentenceId": "p2397-s005",
@@ -6063,16 +5962,6 @@
    "partial": "Will the next wave of [D] 2020 candidates begin to push the 'everything will be free' 'reparations for all Bla",
    "start": 142,
    "end": 314
-  },
-  {
-   "sentenceId": "p3071-s007",
-   "postNum": 3071,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": ">DENY PROPER COUNTING U.S.",
-   "start": 328,
-   "end": 354
   },
   {
    "sentenceId": "p3127-s002",
@@ -6986,180 +6875,6 @@
   }
  ],
  "multiPrimary": [
-  {
-   "sentenceId": "p1928-s012",
-   "postNum": 1928,
-   "kinds": [
-    "claims",
-    "questions"
-   ],
-   "certifiedOverlap": false,
-   "spans": [
-    {
-     "occurrenceKey": "1928|claims|439|513",
-     "kind": "claims",
-     "relation": "EXACT",
-     "start": 439,
-     "end": 513,
-     "directiveWrapped": false,
-     "text": "https://vault.fbi.gov/d1-release/d1-release/viewWho is [1 of 4] FIREWALLS?"
-    },
-    {
-     "occurrenceKey": "1928|questions|503|513",
-     "kind": "questions",
-     "relation": "PARTIAL",
-     "start": 503,
-     "end": 513,
-     "directiveWrapped": false,
-     "text": "FIREWALLS?"
-    }
-   ]
-  },
-  {
-   "sentenceId": "p1944-s014",
-   "postNum": 1944,
-   "kinds": [
-    "claims",
-    "questions"
-   ],
-   "certifiedOverlap": false,
-   "spans": [
-    {
-     "occurrenceKey": "1944|claims|682|719",
-     "kind": "claims",
-     "relation": "PARTIAL",
-     "start": 682,
-     "end": 719,
-     "directiveWrapped": false,
-     "text": "Given magnitude of spy campaign (U.S."
-    },
-    {
-     "occurrenceKey": "1944|questions|720|871",
-     "kind": "questions",
-     "relation": "PARTIAL",
-     "start": 720,
-     "end": 871,
-     "directiveWrapped": false,
-     "text": "Presidential Election Republican Party Nominee Candidate + President Elect + President of "
-    }
-   ]
-  },
-  {
-   "sentenceId": "p2072-s013",
-   "postNum": 2072,
-   "kinds": [
-    "claims",
-    "questions"
-   ],
-   "certifiedOverlap": false,
-   "spans": [
-    {
-     "occurrenceKey": "2072|claims|1474|1612",
-     "kind": "claims",
-     "relation": "PARTIAL",
-     "start": 1474,
-     "end": 1612,
-     "directiveWrapped": false,
-     "text": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ seal"
-    },
-    {
-     "occurrenceKey": "2072|questions|1610|1614",
-     "kind": "questions",
-     "relation": "PARTIAL",
-     "start": 1610,
-     "end": 1614,
-     "directiveWrapped": false,
-     "text": "X?]?"
-    }
-   ]
-  },
-  {
-   "sentenceId": "p2211-s041",
-   "postNum": 2211,
-   "kinds": [
-    "claims",
-    "questions"
-   ],
-   "certifiedOverlap": false,
-   "spans": [
-    {
-     "occurrenceKey": "2211|claims|4012|4150",
-     "kind": "claims",
-     "relation": "PARTIAL",
-     "start": 4012,
-     "end": 4150,
-     "directiveWrapped": false,
-     "text": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ seal"
-    },
-    {
-     "occurrenceKey": "2211|questions|4148|4152",
-     "kind": "questions",
-     "relation": "PARTIAL",
-     "start": 4148,
-     "end": 4152,
-     "directiveWrapped": false,
-     "text": "X?]?"
-    }
-   ]
-  },
-  {
-   "sentenceId": "p2369-s003",
-   "postNum": 2369,
-   "kinds": [
-    "claims",
-    "questions"
-   ],
-   "certifiedOverlap": false,
-   "spans": [
-    {
-     "occurrenceKey": "2369|claims|255|316",
-     "kind": "claims",
-     "relation": "PARTIAL",
-     "start": 255,
-     "end": 316,
-     "directiveWrapped": false,
-     "text": "DECLAS would [PROVE] evidence v. POTUS to obtain FISA WARRANT"
-    },
-    {
-     "occurrenceKey": "2369|questions|288|333",
-     "kind": "questions",
-     "relation": "PARTIAL",
-     "start": 288,
-     "end": 333,
-     "directiveWrapped": false,
-     "text": "POTUS to obtain FISA WARRANT - why the block?"
-    }
-   ]
-  },
-  {
-   "sentenceId": "p2378-s001",
-   "postNum": 2378,
-   "kinds": [
-    "claims",
-    "questions"
-   ],
-   "certifiedOverlap": false,
-   "spans": [
-    {
-     "occurrenceKey": "2378|claims|6|9",
-     "kind": "claims",
-     "relation": "PARTIAL",
-     "start": 6,
-     "end": 9,
-     "directiveWrapped": false,
-     "text": "No."
-    },
-    {
-     "occurrenceKey": "2378|questions|10|45",
-     "kind": "questions",
-     "relation": "PARTIAL",
-     "start": 10,
-     "end": 45,
-     "directiveWrapped": false,
-     "text": "297 - where was this picture taken?"
-    }
-   ]
-  },
   {
    "sentenceId": "p0034-s002",
    "postNum": 34,

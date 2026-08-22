@@ -2,26 +2,19 @@
  "note": "Step 3B-1 apply receipt. Measured from the bundle, not from the plan.",
  "step": "3B-1",
  "planSha256": "373ca06b1416b6707a111f2c3da8e751472c551f739500f76cdcc764d3128058",
- "actionsApplied": 530,
- "actionsHeld": 10,
+ "actionsApplied": 7,
+ "actionsHeld": 3,
  "heldActionIds": [
   "A-DUP-2971-questions-561-799",
   "A-DUP-4454-questions-238-404",
-  "A-MP-p0034-s002",
-  "A-MP-p1928-s012",
-  "A-MP-p1944-s014",
-  "A-MP-p2072-s013",
-  "A-MP-p2211-s041",
-  "A-MP-p2369-s003",
-  "A-MP-p2378-s001",
-  "A-SB-3071"
+  "A-MP-p0034-s002"
  ],
  "seedVersion": 86,
  "outputs": {
-  "public/data/posts.json": "d0c750ee500dfa8d71f7eb7ec2ffa59c37ad8d297d3fd9df10bdc8841fe335f7",
-  "public/data/questions.json": "4a69a07495258009fca11a3397c9c5ca320f1ba95d20a0fe76413e9154852be0",
-  "public/data/semantics.json": "d2e7b0836d241716b0435a5b2c2db073345d027be4c3f5c35e34fdbcf0f67ebc",
-  "audit/occurrence-ledger.json": "0f6a333bcea567471f4d2dcdce7f33552b3e8aae648ebee59d6c867f866fd4aa"
+  "public/data/posts.json": "493fa2f1008ad03b8f7b009d13e8733ad3fbbf2e726c511fb7d436f1138b7746",
+  "public/data/questions.json": "241dc211bf435d8522b34cdcc9f3ac8b832e06f80df346ddcb87d8ea3ee12b2f",
+  "public/data/semantics.json": "636d84505521bd4302abd1bada824e36f23cac65681cec7abecc65b353fd77f5",
+  "audit/occurrence-ledger.json": "0eec7f147ff2fce798ad374dcec0c5889adedd0fa70d38bee93374622f9c7de3"
  },
  "crossTab": [
   {
@@ -31,7 +24,9 @@
    "before": 8912,
    "projectedDelta": -92,
    "projectedAfter": 8820,
-   "measuredAfter": 8820,
+   "adjudicatedHeldDelta": -6,
+   "target": 8814,
+   "measuredAfter": 8814,
    "headlineEligible": true,
    "matches": true,
    "measuredFrom": "audit/occurrence-ledger.json"
@@ -43,6 +38,8 @@
    "before": 3037,
    "projectedDelta": -97,
    "projectedAfter": 2940,
+   "adjudicatedHeldDelta": 0,
+   "target": 2940,
    "measuredAfter": 2940,
    "headlineEligible": true,
    "matches": true,
@@ -55,6 +52,8 @@
    "before": 847,
    "projectedDelta": -4,
    "projectedAfter": 843,
+   "adjudicatedHeldDelta": 0,
+   "target": 843,
    "measuredAfter": 843,
    "headlineEligible": true,
    "matches": true,
@@ -67,6 +66,8 @@
    "before": 6503,
    "projectedDelta": -179,
    "projectedAfter": 6324,
+   "adjudicatedHeldDelta": 0,
+   "target": 6324,
    "measuredAfter": 6324,
    "headlineEligible": true,
    "matches": true,
@@ -79,7 +80,9 @@
    "before": 0,
    "projectedDelta": 18,
    "projectedAfter": 18,
-   "measuredAfter": 18,
+   "adjudicatedHeldDelta": 5,
+   "target": 23,
+   "measuredAfter": 23,
    "headlineEligible": false,
    "matches": true,
    "measuredFrom": "public/data/semantics.json"
@@ -91,6 +94,8 @@
    "before": 0,
    "projectedDelta": 89,
    "projectedAfter": 89,
+   "adjudicatedHeldDelta": 0,
+   "target": 89,
    "measuredAfter": 89,
    "headlineEligible": false,
    "matches": true,
@@ -103,6 +108,8 @@
    "before": 0,
    "projectedDelta": 4,
    "projectedAfter": 4,
+   "adjudicatedHeldDelta": 0,
+   "target": 4,
    "measuredAfter": 4,
    "headlineEligible": false,
    "matches": true,
@@ -115,6 +122,8 @@
    "before": 0,
    "projectedDelta": 163,
    "projectedAfter": 163,
+   "adjudicatedHeldDelta": 0,
+   "target": 163,
    "measuredAfter": 163,
    "headlineEligible": false,
    "matches": true,
@@ -127,6 +136,8 @@
    "before": 0,
    "projectedDelta": 6,
    "projectedAfter": 6,
+   "adjudicatedHeldDelta": 0,
+   "target": 6,
    "measuredAfter": 6,
    "headlineEligible": false,
    "matches": true,
@@ -134,78 +145,6 @@
   }
  ],
  "heldActions": [
-  {
-   "actionId": "A-MP-p1928-s012",
-   "ruleCode": "R1_INTERROGATIVE",
-   "postNum": 1928,
-   "sentenceId": "p1928-s012",
-   "oldOccurrenceKeys": [
-    "1928|claims|439|513",
-    "1928|questions|503|513"
-   ],
-   "keysStillLive": 2,
-   "keysExpected": 2
-  },
-  {
-   "actionId": "A-MP-p1944-s014",
-   "ruleCode": "R4_DECLARATIVE",
-   "postNum": 1944,
-   "sentenceId": "p1944-s014",
-   "oldOccurrenceKeys": [
-    "1944|claims|682|719",
-    "1944|questions|720|871"
-   ],
-   "keysStillLive": 2,
-   "keysExpected": 2
-  },
-  {
-   "actionId": "A-MP-p2072-s013",
-   "ruleCode": "R4_DECLARATIVE",
-   "postNum": 2072,
-   "sentenceId": "p2072-s013",
-   "oldOccurrenceKeys": [
-    "2072|claims|1474|1612",
-    "2072|questions|1610|1614"
-   ],
-   "keysStillLive": 2,
-   "keysExpected": 2
-  },
-  {
-   "actionId": "A-MP-p2211-s041",
-   "ruleCode": "R4_DECLARATIVE",
-   "postNum": 2211,
-   "sentenceId": "p2211-s041",
-   "oldOccurrenceKeys": [
-    "2211|claims|4012|4150",
-    "2211|questions|4148|4152"
-   ],
-   "keysStillLive": 2,
-   "keysExpected": 2
-  },
-  {
-   "actionId": "A-MP-p2369-s003",
-   "ruleCode": "R4_DECLARATIVE",
-   "postNum": 2369,
-   "sentenceId": "p2369-s003",
-   "oldOccurrenceKeys": [
-    "2369|claims|255|316",
-    "2369|questions|288|333"
-   ],
-   "keysStillLive": 2,
-   "keysExpected": 2
-  },
-  {
-   "actionId": "A-MP-p2378-s001",
-   "ruleCode": "R4_DECLARATIVE",
-   "postNum": 2378,
-   "sentenceId": "p2378-s001",
-   "oldOccurrenceKeys": [
-    "2378|claims|6|9",
-    "2378|questions|10|45"
-   ],
-   "keysStillLive": 2,
-   "keysExpected": 2
-  },
   {
    "actionId": "A-MP-p0034-s002",
    "ruleCode": "R4_DECLARATIVE",
@@ -217,17 +156,6 @@
    ],
    "keysStillLive": 2,
    "keysExpected": 2
-  },
-  {
-   "actionId": "A-SB-3071",
-   "ruleCode": "R7_QUOTED_SOURCE",
-   "postNum": 3071,
-   "sentenceId": "p3071-s007",
-   "oldOccurrenceKeys": [
-    "3071|claims|328|354"
-   ],
-   "keysStillLive": 1,
-   "keysExpected": 1
   },
   {
    "actionId": "A-DUP-2971-questions-561-799",
@@ -276,6 +204,14 @@
    ],
    "supersededPartials": [
     {
+     "postNum": 1928,
+     "sentenceId": "p1928-s012",
+     "kind": "questions",
+     "start": 487,
+     "end": 513,
+     "partial": "Who is [1 of 4] FIREWALLS?"
+    },
+    {
      "postNum": 2653,
      "sentenceId": "p2653-s022",
      "kind": "claims",
@@ -323,11 +259,21 @@
    ]
   }
  ],
+ "intentionallyUncategorized": [
+  {
+   "actionId": "A-MP-p1928-s012",
+   "postNum": 1928,
+   "sentenceId": "p1928-s012",
+   "start": 439,
+   "end": 487,
+   "reason": "URL — a link, not a semantic unit (owner ruling)"
+  }
+ ],
  "residualsOutOfScope": {
   "note": "Explicitly left for the owner: the 10 held actions and the 945-row conflict queue.",
-  "multiPrimarySentences": 7,
+  "multiPrimarySentences": 1,
   "sameCategoryPrimaryOverlaps": 18,
-  "supersededPartialPrimarySpans": 190,
+  "supersededPartialPrimarySpans": 179,
   "boundaryCrossingRecords": 242,
   "conflictQueueRows": 945
  },
@@ -335,47 +281,47 @@
   {
    "gate": "count cross-tab matches the projection",
    "pass": true,
-   "detail": "all 9 cells"
+   "detail": "all 9 cells (projection + 7 adjudicated held rows)"
   },
   {
-   "gate": "all 530 automatic actions materialised",
+   "gate": "every automatic action materialised",
    "pass": true,
-   "detail": "530/530"
+   "detail": "537/537  (530 planned + 7 adjudicated held)"
   },
   {
    "gate": "no held action appears in the applied overlay",
    "pass": true,
-   "detail": "10 held, none applied"
+   "detail": "3 still held, none applied"
   },
   {
    "gate": "every held action's records are still live and unmodified",
    "pass": true,
-   "detail": "all 10 intact"
+   "detail": "all 3 intact"
   },
   {
    "gate": "zero duplicate action consumption",
    "pass": true,
-   "detail": "894 distinct old keys across 530 actions"
+   "detail": "907 distinct old keys across 537 actions"
   },
   {
    "gate": "zero runtime substring mismatch in the overlay",
    "pass": true,
-   "detail": "530 rows verified against runtimeText()"
+   "detail": "537 rows verified against runtimeText()"
   },
   {
    "gate": "zero runtime substring mismatch in the ledger",
    "pass": true,
-   "detail": "34,673 records verified"
+   "detail": "34,667 records verified"
   },
   {
    "gate": "zero same-sentence multi-primary inside the applied scope",
    "pass": true,
-   "detail": "7 remain archive-wide, all outside the applied set (p1928-s012, p1944-s014, p2072-s013, p2211-s041, p2369-s003, p2378-s001, p0034-s002)"
+   "detail": "1 remain archive-wide, all outside the applied set (p0034-s002)"
   },
   {
    "gate": "every remaining multi-primary sentence is a held action",
    "pass": true,
-   "detail": "7 = the 7 held A-MP rows"
+   "detail": "1 remaining, each one a held action"
   },
   {
    "gate": "every in-scope same-category primary overlap is a named source-boundary exception",
@@ -383,14 +329,14 @@
    "detail": "18 archive-wide; 2 in scope, all on #4310; 0 unexplained"
   },
   {
-   "gate": "every in-scope superseded partial primary span is a named source-boundary exception",
+   "gate": "every in-scope partial primary span is a named source-boundary exception or a declared span override",
    "pass": true,
-   "detail": "190 archive-wide; 4 in scope, all on #2653 #4310; 0 unexplained"
+   "detail": "179 archive-wide; 5 in scope, all on #1928 #2653 #4310; 0 unexplained"
   },
   {
    "gate": "metadata transfer recorded for every withdrawn record",
    "pass": true,
-   "detail": "583 transfers, 193 carrying certified attributes, 1 meta keys re-pointed to a widened span"
+   "detail": "590 transfers, 199 carrying certified attributes, 2 meta keys re-pointed to a widened span"
   },
   {
    "gate": "question_directive relationship preserved on every unified pair",
@@ -405,7 +351,7 @@
   {
    "gate": "the certified wording and the painted span stay index-aligned",
    "pass": true,
-   "detail": "claims 8820 = claimSpans 8820; predictions 843 = predictionSpans 843; 0 posts out of alignment"
+   "detail": "claims 8814 = claimSpans 8814; predictions 843 = predictionSpans 843; 0 posts out of alignment"
   },
   {
    "gate": "no automatic action consumed a held-conflict key",

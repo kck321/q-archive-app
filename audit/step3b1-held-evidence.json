@@ -1,0 +1,909 @@
+{
+ "heldActions": [
+  {
+   "actionId": "A-DUP-2971-questions-561-799",
+   "ruleCode": "R8_DUPLICATE_MERGE",
+   "kind": "DUPLICATE_MERGE",
+   "postNum": 2971,
+   "heldReason": "ALSO_BOUNDARY_CROSSING: the duplicate records may be safe to merge, but the span still straddles a sentence boundary. Merging does not settle that, so the action waits on it.",
+   "ruleReRun": {
+    "onPlanText": {
+     "primary": "question",
+     "rule": "R1_INTERROGATIVE"
+    },
+    "onMeasuredSentence": null,
+    "ruleChanges": false
+   },
+   "plan": {
+    "sentenceId": null,
+    "sentenceStart": 561,
+    "sentenceEnd": 799,
+    "sentenceText": "\"you will be asked to give proof of your identity\"\nsynonyms:\tevidence, verification, corroboration, authentication, confirmation, certification, validation, attestation, demonstration, substantiation, witness, testament;\nPROOF = EVIDENCE?",
+    "proposedPrimaryCategory": null,
+    "proposedSecondarySemantics": [],
+    "sourceDisposition": "q_authored",
+    "oldCategories": [
+     "questions@561..799",
+     "questions@561..799"
+    ],
+    "excessRecordsRemoved": 1
+   },
+   "measuredNow": {
+    "namedSentence": null,
+    "planGeometryAgreesWithLedger": false,
+    "planTextIsTheWholeSentence": false,
+    "recordsSpan": [
+     561,
+     799
+    ],
+    "recordsSpanText": "\"you will be asked to give proof of your identity\"\nsynonyms:\tevidence, verification, corroboration, authentication, confirmation, certification, validation, attestation, demonstration, substantiation, witness, testament;\nPROOF = EVIDENCE?",
+    "sentencesTouched": [
+     {
+      "sentenceId": "p2971-s011",
+      "start": 561,
+      "end": 611,
+      "text": "\"you will be asked to give proof of your identity\""
+     },
+     {
+      "sentenceId": "p2971-s012",
+      "start": 612,
+      "end": 781,
+      "text": "synonyms:\tevidence, verification, corroboration, authentication, confirmation, certification, validation, attestation, demonstration, substantiation, witness, testament;"
+     },
+     {
+      "sentenceId": "p2971-s013",
+      "start": 782,
+      "end": 799,
+      "text": "PROOF = EVIDENCE?"
+     }
+    ],
+    "records": [
+     {
+      "occurrenceKey": "2971|questions|561|799",
+      "liveRecordCount": 2,
+      "kind": "questions",
+      "start": 561,
+      "end": 799,
+      "text": "\"you will be asked to give proof of your identity\"\nsynonyms:\tevidence, verification, corroboration, authentication, confirmation, certification, validation, attestation, demonstration, substantiation, witness, testament;\nPROOF = EVIDENCE?",
+      "relation": "CROSSING"
+     }
+    ],
+    "otherPrimaryOnTheseSentences": [
+     {
+      "key": "2971|questions|561|799",
+      "kind": "questions",
+      "text": "\"you will be asked to give proof of your identity\"\nsynonyms:\tevidence, verification, corro"
+     },
+     {
+      "key": "2971|questions|561|799",
+      "kind": "questions",
+      "text": "\"you will be asked to give proof of your identity\"\nsynonyms:\tevidence, verification, corro"
+     }
+    ],
+    "coverage": null,
+    "alreadyInOverlay": false
+   }
+  },
+  {
+   "actionId": "A-DUP-4454-questions-238-404",
+   "ruleCode": "R8_DUPLICATE_MERGE",
+   "kind": "DUPLICATE_MERGE",
+   "postNum": 4454,
+   "heldReason": "ALSO_BOUNDARY_CROSSING: the duplicate records may be safe to merge, but the span still straddles a sentence boundary. Merging does not settle that, so the action waits on it.",
+   "ruleReRun": {
+    "onPlanText": {
+     "primary": "question",
+     "rule": "R1_INTERROGATIVE"
+    },
+    "onMeasuredSentence": null,
+    "ruleChanges": false
+   },
+   "plan": {
+    "sentenceId": null,
+    "sentenceStart": 238,
+    "sentenceEnd": 404,
+    "sentenceText": "At the same time, they gave more power to their obedient followers, like Antifa, while keeping the rest of us trapped at home and censored online.\"\nvirus OR ELECTION?",
+    "proposedPrimaryCategory": null,
+    "proposedSecondarySemantics": [],
+    "sourceDisposition": "q_authored",
+    "oldCategories": [
+     "questions@238..404",
+     "questions@238..404"
+    ],
+    "excessRecordsRemoved": 1
+   },
+   "measuredNow": {
+    "namedSentence": null,
+    "planGeometryAgreesWithLedger": false,
+    "planTextIsTheWholeSentence": false,
+    "recordsSpan": [
+     238,
+     404
+    ],
+    "recordsSpanText": "At the same time, they gave more power to their obedient followers, like Antifa, while keeping the rest of us trapped at home and censored online.\"\nvirus OR ELECTION?",
+    "sentencesTouched": [
+     {
+      "sentenceId": "p4454-s003",
+      "start": 238,
+      "end": 385,
+      "text": "At the same time, they gave more power to their obedient followers, like Antifa, while keeping the rest of us trapped at home and censored online.\""
+     },
+     {
+      "sentenceId": "p4454-s004",
+      "start": 386,
+      "end": 404,
+      "text": "virus OR ELECTION?"
+     }
+    ],
+    "records": [
+     {
+      "occurrenceKey": "4454|questions|238|404",
+      "liveRecordCount": 2,
+      "kind": "questions",
+      "start": 238,
+      "end": 404,
+      "text": "At the same time, they gave more power to their obedient followers, like Antifa, while keeping the rest of us trapped at home and censored online.\"\nvirus OR ELECTION?",
+      "relation": "CROSSING"
+     }
+    ],
+    "otherPrimaryOnTheseSentences": [
+     {
+      "key": "4454|questions|238|404",
+      "kind": "questions",
+      "text": "At the same time, they gave more power to their obedient followers, like Antifa, while kee"
+     },
+     {
+      "key": "4454|questions|238|404",
+      "kind": "questions",
+      "text": "At the same time, they gave more power to their obedient followers, like Antifa, while kee"
+     }
+    ],
+    "coverage": null,
+    "alreadyInOverlay": false
+   }
+  },
+  {
+   "actionId": "A-MP-p0034-s002",
+   "ruleCode": "R4_DECLARATIVE",
+   "kind": "MULTI_PRIMARY_RESOLUTION",
+   "postNum": 34,
+   "heldReason": "REPAIR_GEOMETRY: sentenceStart/sentenceEnd are null and sentenceText is empty; the old Claim and Prediction spans do not identify a complete-sentence action.",
+   "ruleReRun": {
+    "onPlanText": {
+     "primary": "claim",
+     "rule": "R4_DECLARATIVE"
+    },
+    "onMeasuredSentence": {
+     "primary": "prediction",
+     "rule": "R3_FUTURE_ASSERTION"
+    },
+    "ruleChanges": true
+   },
+   "plan": {
+    "sentenceId": "p0034-s002",
+    "sentenceStart": null,
+    "sentenceEnd": null,
+    "sentenceText": "",
+    "proposedPrimaryCategory": "claim",
+    "proposedSecondarySemantics": [
+     "prediction"
+    ],
+    "sourceDisposition": "q_authored",
+    "oldCategories": [
+     "claims@457..483[PARTIAL]",
+     "predictions@280..456[PARTIAL]"
+    ],
+    "excessRecordsRemoved": null
+   },
+   "measuredNow": {
+    "namedSentence": {
+     "sentenceId": "p0034-s002",
+     "start": 280,
+     "end": 483,
+     "text": "On POTUS’ order, we have initiated certain fail-safes that shall safeguard the public from the primary fallout which is slated to occur 11.3 upon the arrest announcement of Mr. Podesta (actionable 11.4)."
+    },
+    "planGeometryAgreesWithLedger": false,
+    "planTextIsTheWholeSentence": false,
+    "recordsSpan": [
+     280,
+     483
+    ],
+    "recordsSpanText": "On POTUS’ order, we have initiated certain fail-safes that shall safeguard the public from the primary fallout which is slated to occur 11.3 upon the arrest announcement of Mr. Podesta (actionable 11.4).",
+    "sentencesTouched": [
+     {
+      "sentenceId": "p0034-s002",
+      "start": 280,
+      "end": 483,
+      "text": "On POTUS’ order, we have initiated certain fail-safes that shall safeguard the public from the primary fallout which is slated to occur 11.3 upon the arrest announcement of Mr. Podesta (actionable 11.4)."
+     }
+    ],
+    "records": [
+     {
+      "occurrenceKey": "34|claims|457|483",
+      "liveRecordCount": 1,
+      "kind": "claims",
+      "start": 457,
+      "end": 483,
+      "text": "Podesta (actionable 11.4).",
+      "relation": "PARTIAL"
+     },
+     {
+      "occurrenceKey": "34|predictions|280|456",
+      "liveRecordCount": 1,
+      "kind": "predictions",
+      "start": 280,
+      "end": 456,
+      "text": "On POTUS’ order, we have initiated certain fail-safes that shall safeguard the public from the primary fallout which is slated to occur 11.3 upon the arrest announcement of Mr.",
+      "relation": "PARTIAL"
+     }
+    ],
+    "otherPrimaryOnTheseSentences": [
+     {
+      "key": "34|claims|457|483",
+      "kind": "claims",
+      "text": "Podesta (actionable 11.4)."
+     },
+     {
+      "key": "34|predictions|280|456",
+      "kind": "predictions",
+      "text": "On POTUS’ order, we have initiated certain fail-safes that shall safeguard the public from"
+     }
+    ],
+    "coverage": {
+     "sentenceChars": 203,
+     "paintedChars": 202,
+     "fullyCovered": false
+    },
+    "alreadyInOverlay": false
+   }
+  },
+  {
+   "actionId": "A-MP-p1928-s012",
+   "ruleCode": "R1_INTERROGATIVE",
+   "kind": "MULTI_PRIMARY_RESOLUTION",
+   "postNum": 1928,
+   "heldReason": "SPLIT_URL_AND_QUESTION: The proposed sentence concatenates a URL ending in /view with \"Who is [1 of 4] FIREWALLS?\"; preserve the URL as a link and classify only the actual question.",
+   "ruleReRun": {
+    "onPlanText": {
+     "primary": "question",
+     "rule": "R1_INTERROGATIVE"
+    },
+    "onMeasuredSentence": {
+     "primary": "question",
+     "rule": "R1_INTERROGATIVE"
+    },
+    "ruleChanges": false
+   },
+   "plan": {
+    "sentenceId": "p1928-s012",
+    "sentenceStart": 439,
+    "sentenceEnd": 513,
+    "sentenceText": "https://vault.fbi.gov/d1-release/d1-release/viewWho is [1 of 4] FIREWALLS?",
+    "proposedPrimaryCategory": "question",
+    "proposedSecondarySemantics": [
+     "claim"
+    ],
+    "sourceDisposition": "q_authored",
+    "oldCategories": [
+     "claims@439..513[EXACT]",
+     "questions@503..513[PARTIAL]"
+    ],
+    "excessRecordsRemoved": null
+   },
+   "measuredNow": {
+    "namedSentence": {
+     "sentenceId": "p1928-s012",
+     "start": 439,
+     "end": 513,
+     "text": "https://vault.fbi.gov/d1-release/d1-release/viewWho is [1 of 4] FIREWALLS?"
+    },
+    "planGeometryAgreesWithLedger": true,
+    "planTextIsTheWholeSentence": true,
+    "recordsSpan": [
+     439,
+     513
+    ],
+    "recordsSpanText": "https://vault.fbi.gov/d1-release/d1-release/viewWho is [1 of 4] FIREWALLS?",
+    "sentencesTouched": [
+     {
+      "sentenceId": "p1928-s012",
+      "start": 439,
+      "end": 513,
+      "text": "https://vault.fbi.gov/d1-release/d1-release/viewWho is [1 of 4] FIREWALLS?"
+     }
+    ],
+    "records": [
+     {
+      "occurrenceKey": "1928|claims|439|513",
+      "liveRecordCount": 1,
+      "kind": "claims",
+      "start": 439,
+      "end": 513,
+      "text": "https://vault.fbi.gov/d1-release/d1-release/viewWho is [1 of 4] FIREWALLS?",
+      "relation": "EXACT"
+     },
+     {
+      "occurrenceKey": "1928|questions|503|513",
+      "liveRecordCount": 1,
+      "kind": "questions",
+      "start": 503,
+      "end": 513,
+      "text": "FIREWALLS?",
+      "relation": "PARTIAL"
+     }
+    ],
+    "otherPrimaryOnTheseSentences": [
+     {
+      "key": "1928|claims|439|513",
+      "kind": "claims",
+      "text": "https://vault.fbi.gov/d1-release/d1-release/viewWho is [1 of 4] FIREWALLS?"
+     },
+     {
+      "key": "1928|questions|503|513",
+      "kind": "questions",
+      "text": "FIREWALLS?"
+     }
+    ],
+    "coverage": {
+     "sentenceChars": 74,
+     "paintedChars": 74,
+     "fullyCovered": true
+    },
+    "alreadyInOverlay": false
+   }
+  },
+  {
+   "actionId": "A-MP-p1944-s014",
+   "ruleCode": "R4_DECLARATIVE",
+   "kind": "MULTI_PRIMARY_RESOLUTION",
+   "postNum": 1944,
+   "heldReason": "REPAIR_GEOMETRY: sentenceStart/sentenceEnd are null and sentenceText is empty; do not withdraw either old record until the complete literal sentence is reconstructed.",
+   "ruleReRun": {
+    "onPlanText": {
+     "primary": "claim",
+     "rule": "R4_DECLARATIVE"
+    },
+    "onMeasuredSentence": {
+     "primary": "question",
+     "rule": "R1_INTERROGATIVE"
+    },
+    "ruleChanges": true
+   },
+   "plan": {
+    "sentenceId": "p1944-s014",
+    "sentenceStart": null,
+    "sentenceEnd": null,
+    "sentenceText": "",
+    "proposedPrimaryCategory": "claim",
+    "proposedSecondarySemantics": [
+     "question"
+    ],
+    "sourceDisposition": "q_authored",
+    "oldCategories": [
+     "claims@682..719[PARTIAL]",
+     "questions@720..871[PARTIAL]"
+    ],
+    "excessRecordsRemoved": null
+   },
+   "measuredNow": {
+    "namedSentence": {
+     "sentenceId": "p1944-s014",
+     "start": 682,
+     "end": 871,
+     "text": "Given magnitude of spy campaign (U.S. Presidential Election Republican Party Nominee Candidate + President Elect + President of the United States) would HUSSEIN be required to DIRECT ORDER?"
+    },
+    "planGeometryAgreesWithLedger": false,
+    "planTextIsTheWholeSentence": false,
+    "recordsSpan": [
+     682,
+     871
+    ],
+    "recordsSpanText": "Given magnitude of spy campaign (U.S. Presidential Election Republican Party Nominee Candidate + President Elect + President of the United States) would HUSSEIN be required to DIRECT ORDER?",
+    "sentencesTouched": [
+     {
+      "sentenceId": "p1944-s014",
+      "start": 682,
+      "end": 871,
+      "text": "Given magnitude of spy campaign (U.S. Presidential Election Republican Party Nominee Candidate + President Elect + President of the United States) would HUSSEIN be required to DIRECT ORDER?"
+     }
+    ],
+    "records": [
+     {
+      "occurrenceKey": "1944|claims|682|719",
+      "liveRecordCount": 1,
+      "kind": "claims",
+      "start": 682,
+      "end": 719,
+      "text": "Given magnitude of spy campaign (U.S.",
+      "relation": "PARTIAL"
+     },
+     {
+      "occurrenceKey": "1944|questions|720|871",
+      "liveRecordCount": 1,
+      "kind": "questions",
+      "start": 720,
+      "end": 871,
+      "text": "Presidential Election Republican Party Nominee Candidate + President Elect + President of the United States) would HUSSEIN be required to DIRECT ORDER?",
+      "relation": "PARTIAL"
+     }
+    ],
+    "otherPrimaryOnTheseSentences": [
+     {
+      "key": "1944|claims|682|719",
+      "kind": "claims",
+      "text": "Given magnitude of spy campaign (U.S."
+     },
+     {
+      "key": "1944|questions|720|871",
+      "kind": "questions",
+      "text": "Presidential Election Republican Party Nominee Candidate + President Elect + President of "
+     }
+    ],
+    "coverage": {
+     "sentenceChars": 189,
+     "paintedChars": 188,
+     "fullyCovered": false
+    },
+    "alreadyInOverlay": false
+   }
+  },
+  {
+   "actionId": "A-MP-p2072-s013",
+   "ruleCode": "R4_DECLARATIVE",
+   "kind": "MULTI_PRIMARY_RESOLUTION",
+   "postNum": 2072,
+   "heldReason": "REPAIR_GEOMETRY: sentenceStart/sentenceEnd are null and sentenceText is empty; the source line contains multiple questions and needs exact sentence reconstruction.",
+   "ruleReRun": {
+    "onPlanText": {
+     "primary": "claim",
+     "rule": "R4_DECLARATIVE"
+    },
+    "onMeasuredSentence": {
+     "primary": "question",
+     "rule": "R1_INTERROGATIVE"
+    },
+    "ruleChanges": true
+   },
+   "plan": {
+    "sentenceId": "p2072-s013",
+    "sentenceStart": null,
+    "sentenceEnd": null,
+    "sentenceText": "",
+    "proposedPrimaryCategory": "claim",
+    "proposedSecondarySemantics": [
+     "question"
+    ],
+    "sourceDisposition": "q_authored",
+    "oldCategories": [
+     "claims@1474..1612[PARTIAL]",
+     "questions@1610..1614[PARTIAL]"
+    ],
+    "excessRecordsRemoved": null
+   },
+   "measuredNow": {
+    "namedSentence": {
+     "sentenceId": "p2072-s013",
+     "start": 1474,
+     "end": 1614,
+     "text": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v. X?]?"
+    },
+    "planGeometryAgreesWithLedger": false,
+    "planTextIsTheWholeSentence": false,
+    "recordsSpan": [
+     1474,
+     1614
+    ],
+    "recordsSpanText": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v. X?]?",
+    "sentencesTouched": [
+     {
+      "sentenceId": "p2072-s013",
+      "start": 1474,
+      "end": 1614,
+      "text": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v. X?]?"
+     }
+    ],
+    "records": [
+     {
+      "occurrenceKey": "2072|claims|1474|1612",
+      "liveRecordCount": 1,
+      "kind": "claims",
+      "start": 1474,
+      "end": 1612,
+      "text": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v. X?",
+      "relation": "PARTIAL"
+     },
+     {
+      "occurrenceKey": "2072|questions|1610|1614",
+      "liveRecordCount": 1,
+      "kind": "questions",
+      "start": 1610,
+      "end": 1614,
+      "text": "X?]?",
+      "relation": "PARTIAL"
+     }
+    ],
+    "otherPrimaryOnTheseSentences": [
+     {
+      "key": "2072|claims|1474|1612",
+      "kind": "claims",
+      "text": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ seal"
+     },
+     {
+      "key": "2072|questions|1610|1614",
+      "kind": "questions",
+      "text": "X?]?"
+     }
+    ],
+    "coverage": {
+     "sentenceChars": 140,
+     "paintedChars": 140,
+     "fullyCovered": true
+    },
+    "alreadyInOverlay": false
+   }
+  },
+  {
+   "actionId": "A-MP-p2211-s041",
+   "ruleCode": "R4_DECLARATIVE",
+   "kind": "MULTI_PRIMARY_RESOLUTION",
+   "postNum": 2211,
+   "heldReason": "REPAIR_GEOMETRY: sentenceStart/sentenceEnd are null and sentenceText is empty; do not auto-apply.",
+   "ruleReRun": {
+    "onPlanText": {
+     "primary": "claim",
+     "rule": "R4_DECLARATIVE"
+    },
+    "onMeasuredSentence": {
+     "primary": "question",
+     "rule": "R1_INTERROGATIVE"
+    },
+    "ruleChanges": true
+   },
+   "plan": {
+    "sentenceId": "p2211-s041",
+    "sentenceStart": null,
+    "sentenceEnd": null,
+    "sentenceText": "",
+    "proposedPrimaryCategory": "claim",
+    "proposedSecondarySemantics": [
+     "question"
+    ],
+    "sourceDisposition": "q_authored",
+    "oldCategories": [
+     "claims@4012..4150[PARTIAL]",
+     "questions@4148..4152[PARTIAL]"
+    ],
+    "excessRecordsRemoved": null
+   },
+   "measuredNow": {
+    "namedSentence": {
+     "sentenceId": "p2211-s041",
+     "start": 4012,
+     "end": 4152,
+     "text": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v. X?]?"
+    },
+    "planGeometryAgreesWithLedger": false,
+    "planTextIsTheWholeSentence": false,
+    "recordsSpan": [
+     4012,
+     4152
+    ],
+    "recordsSpanText": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v. X?]?",
+    "sentencesTouched": [
+     {
+      "sentenceId": "p2211-s041",
+      "start": 4012,
+      "end": 4152,
+      "text": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v. X?]?"
+     }
+    ],
+    "records": [
+     {
+      "occurrenceKey": "2211|claims|4012|4150",
+      "liveRecordCount": 1,
+      "kind": "claims",
+      "start": 4012,
+      "end": 4150,
+      "text": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v. X?",
+      "relation": "PARTIAL"
+     },
+     {
+      "occurrenceKey": "2211|questions|4148|4152",
+      "liveRecordCount": 1,
+      "kind": "questions",
+      "start": 4148,
+      "end": 4152,
+      "text": "X?]?",
+      "relation": "PARTIAL"
+     }
+    ],
+    "otherPrimaryOnTheseSentences": [
+     {
+      "key": "2211|claims|4012|4150",
+      "kind": "claims",
+      "text": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ seal"
+     },
+     {
+      "key": "2211|questions|4148|4152",
+      "kind": "questions",
+      "text": "X?]?"
+     }
+    ],
+    "coverage": {
+     "sentenceChars": 140,
+     "paintedChars": 140,
+     "fullyCovered": true
+    },
+    "alreadyInOverlay": false
+   }
+  },
+  {
+   "actionId": "A-MP-p2369-s003",
+   "ruleCode": "R4_DECLARATIVE",
+   "kind": "MULTI_PRIMARY_RESOLUTION",
+   "postNum": 2369,
+   "heldReason": "REPAIR_GEOMETRY: sentenceStart/sentenceEnd are null and sentenceText is empty; do not auto-apply.",
+   "ruleReRun": {
+    "onPlanText": {
+     "primary": "claim",
+     "rule": "R4_DECLARATIVE"
+    },
+    "onMeasuredSentence": {
+     "primary": "question",
+     "rule": "R1_INTERROGATIVE"
+    },
+    "ruleChanges": true
+   },
+   "plan": {
+    "sentenceId": "p2369-s003",
+    "sentenceStart": null,
+    "sentenceEnd": null,
+    "sentenceText": "",
+    "proposedPrimaryCategory": "claim",
+    "proposedSecondarySemantics": [
+     "question"
+    ],
+    "sourceDisposition": "q_authored",
+    "oldCategories": [
+     "claims@255..316[PARTIAL]",
+     "questions@288..333[PARTIAL]"
+    ],
+    "excessRecordsRemoved": null
+   },
+   "measuredNow": {
+    "namedSentence": {
+     "sentenceId": "p2369-s003",
+     "start": 255,
+     "end": 333,
+     "text": "DECLAS would [PROVE] evidence v. POTUS to obtain FISA WARRANT - why the block?"
+    },
+    "planGeometryAgreesWithLedger": false,
+    "planTextIsTheWholeSentence": false,
+    "recordsSpan": [
+     255,
+     333
+    ],
+    "recordsSpanText": "DECLAS would [PROVE] evidence v. POTUS to obtain FISA WARRANT - why the block?",
+    "sentencesTouched": [
+     {
+      "sentenceId": "p2369-s003",
+      "start": 255,
+      "end": 333,
+      "text": "DECLAS would [PROVE] evidence v. POTUS to obtain FISA WARRANT - why the block?"
+     }
+    ],
+    "records": [
+     {
+      "occurrenceKey": "2369|claims|255|316",
+      "liveRecordCount": 1,
+      "kind": "claims",
+      "start": 255,
+      "end": 316,
+      "text": "DECLAS would [PROVE] evidence v. POTUS to obtain FISA WARRANT",
+      "relation": "PARTIAL"
+     },
+     {
+      "occurrenceKey": "2369|questions|288|333",
+      "liveRecordCount": 1,
+      "kind": "questions",
+      "start": 288,
+      "end": 333,
+      "text": "POTUS to obtain FISA WARRANT - why the block?",
+      "relation": "PARTIAL"
+     }
+    ],
+    "otherPrimaryOnTheseSentences": [
+     {
+      "key": "2369|claims|255|316",
+      "kind": "claims",
+      "text": "DECLAS would [PROVE] evidence v. POTUS to obtain FISA WARRANT"
+     },
+     {
+      "key": "2369|questions|288|333",
+      "kind": "questions",
+      "text": "POTUS to obtain FISA WARRANT - why the block?"
+     }
+    ],
+    "coverage": {
+     "sentenceChars": 78,
+     "paintedChars": 78,
+     "fullyCovered": true
+    },
+    "alreadyInOverlay": false
+   }
+  },
+  {
+   "actionId": "A-MP-p2378-s001",
+   "ruleCode": "R4_DECLARATIVE",
+   "kind": "MULTI_PRIMARY_RESOLUTION",
+   "postNum": 2378,
+   "heldReason": "REPAIR_GEOMETRY: sentenceStart/sentenceEnd are null and sentenceText is empty; repair the \"No. 297\" abbreviation/question boundary first.",
+   "ruleReRun": {
+    "onPlanText": {
+     "primary": "claim",
+     "rule": "R4_DECLARATIVE"
+    },
+    "onMeasuredSentence": {
+     "primary": "question",
+     "rule": "R1_INTERROGATIVE"
+    },
+    "ruleChanges": true
+   },
+   "plan": {
+    "sentenceId": "p2378-s001",
+    "sentenceStart": null,
+    "sentenceEnd": null,
+    "sentenceText": "",
+    "proposedPrimaryCategory": "claim",
+    "proposedSecondarySemantics": [
+     "question"
+    ],
+    "sourceDisposition": "q_authored",
+    "oldCategories": [
+     "claims@6..9[PARTIAL]",
+     "questions@10..45[PARTIAL]"
+    ],
+    "excessRecordsRemoved": null
+   },
+   "measuredNow": {
+    "namedSentence": {
+     "sentenceId": "p2378-s001",
+     "start": 6,
+     "end": 45,
+     "text": "No. 297 - where was this picture taken?"
+    },
+    "planGeometryAgreesWithLedger": false,
+    "planTextIsTheWholeSentence": false,
+    "recordsSpan": [
+     6,
+     45
+    ],
+    "recordsSpanText": "No. 297 - where was this picture taken?",
+    "sentencesTouched": [
+     {
+      "sentenceId": "p2378-s001",
+      "start": 6,
+      "end": 45,
+      "text": "No. 297 - where was this picture taken?"
+     }
+    ],
+    "records": [
+     {
+      "occurrenceKey": "2378|claims|6|9",
+      "liveRecordCount": 1,
+      "kind": "claims",
+      "start": 6,
+      "end": 9,
+      "text": "No.",
+      "relation": "PARTIAL"
+     },
+     {
+      "occurrenceKey": "2378|questions|10|45",
+      "liveRecordCount": 1,
+      "kind": "questions",
+      "start": 10,
+      "end": 45,
+      "text": "297 - where was this picture taken?",
+      "relation": "PARTIAL"
+     }
+    ],
+    "otherPrimaryOnTheseSentences": [
+     {
+      "key": "2378|claims|6|9",
+      "kind": "claims",
+      "text": "No."
+     },
+     {
+      "key": "2378|questions|10|45",
+      "kind": "questions",
+      "text": "297 - where was this picture taken?"
+     }
+    ],
+    "coverage": {
+     "sentenceChars": 39,
+     "paintedChars": 38,
+     "fullyCovered": false
+    },
+    "alreadyInOverlay": false
+   }
+  },
+  {
+   "actionId": "A-SB-3071",
+   "ruleCode": "R7_QUOTED_SOURCE",
+   "kind": "SOURCE_BOUNDARY_RESOLUTION",
+   "postNum": 3071,
+   "heldReason": "HOLD_SOURCE_OWNERSHIP: A leading \">\" marker alone does not prove quoted_source. Unlike #2653 and #4310, the package supplies no article header/link/verbatim-quote evidence. Keep the complete line but do not move it out of Q-authored counts until ownership is proved.",
+   "ruleReRun": {
+    "onPlanText": {
+     "primary": "claim",
+     "rule": "R4_DECLARATIVE"
+    },
+    "onMeasuredSentence": {
+     "primary": "claim",
+     "rule": "R4_DECLARATIVE"
+    },
+    "ruleChanges": false
+   },
+   "plan": {
+    "sentenceId": "p3071-s007",
+    "sentenceStart": 328,
+    "sentenceEnd": 354,
+    "sentenceText": ">DENY PROPER COUNTING U.S. CENSUS > AVOID PUBLIC KNOWLEDGE REAL ‘ILLEGAL’ POP TO AVOID VOTER FRAUD % RISK TO ELECTIONS",
+    "proposedPrimaryCategory": "claim",
+    "proposedSecondarySemantics": [],
+    "sourceDisposition": "q_authored",
+    "oldCategories": [
+     "claims@328..354[truncated]"
+    ],
+    "excessRecordsRemoved": null
+   },
+   "measuredNow": {
+    "namedSentence": {
+     "sentenceId": "p3071-s007",
+     "start": 328,
+     "end": 446,
+     "text": ">DENY PROPER COUNTING U.S. CENSUS > AVOID PUBLIC KNOWLEDGE REAL ‘ILLEGAL’ POP TO AVOID VOTER FRAUD % RISK TO ELECTIONS"
+    },
+    "planGeometryAgreesWithLedger": false,
+    "planTextIsTheWholeSentence": true,
+    "recordsSpan": [
+     328,
+     354
+    ],
+    "recordsSpanText": ">DENY PROPER COUNTING U.S.",
+    "sentencesTouched": [
+     {
+      "sentenceId": "p3071-s007",
+      "start": 328,
+      "end": 446,
+      "text": ">DENY PROPER COUNTING U.S. CENSUS > AVOID PUBLIC KNOWLEDGE REAL ‘ILLEGAL’ POP TO AVOID VOTER FRAUD % RISK TO ELECTIONS"
+     }
+    ],
+    "records": [
+     {
+      "occurrenceKey": "3071|claims|328|354",
+      "liveRecordCount": 1,
+      "kind": "claims",
+      "start": 328,
+      "end": 354,
+      "text": ">DENY PROPER COUNTING U.S.",
+      "relation": "PARTIAL"
+     }
+    ],
+    "otherPrimaryOnTheseSentences": [
+     {
+      "key": "3071|claims|328|354",
+      "kind": "claims",
+      "text": ">DENY PROPER COUNTING U.S."
+     }
+    ],
+    "coverage": {
+     "sentenceChars": 118,
+     "paintedChars": 26,
+     "fullyCovered": false
+    },
+    "alreadyInOverlay": false
+   }
+  }
+ ]
+}
