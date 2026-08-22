@@ -6428,3 +6428,38 @@ coverage and had an `F_CERTIFIED_EMPHASIS_NOT_PAINTED` bucket. Both gone.
 **State.** Conflict queue 448 (A 252 / B 141 / C 55). All 17 gates pass. Typecheck clean, both
 surfaces build and serve, the three labels appear zero times in either bundle. SEED_VERSION 87.
 Not deployed.
+
+---
+
+## 2026-08-22 — B1B / B2 / B2b / B2c / B3 / lane C. Deterministic work finished.
+
+**Commits.** `d46b49d` B1B · `c4b8ffc` B2+B2b · `5e846b9` B3 · `4a1c9d3` lane C quarantine ·
+`ae3ad18` B2c and honest lane labels.
+
+**B1B** — 131 case-variant rows re-measured and split five ways; 77 applied as **54 explicit alias
+registrations** (KANSAS, SYRIA, FEINSTEIN, "No name" → John McCain …) through the same
+`aliasAdditions` hook the GOD ruling used. No case-insensitive fallback, no relaxed word boundary,
+no short-token exemption. 54 refused with evidence.
+
+**B2** — 144 boundary crossings. 90 spans covered nothing but links (89 claims + 1 question,
+withdrawn: a claim whose whole span is a URL is not a claim), 52 trimmed to their one prose
+sentence, 2 numeric noise. **87 multi-sentence spans deliberately untouched.** Claims 8,814 →
+8,722. Two wrong non-semantic tests were made first — a word-count floor threw away "Smiles." and
+"DC access."; the looser one trimmed claims down to "[30]" and "@2:20".
+
+**B2b** — the trims uncovered 3 collisions a crossing span had been hiding (p1439-s003, p2180-s016,
+p3623-s012). Resolved by the same cascade.
+
+**B3** — qf-23, qf-33, qf-1 narrowed to Q's own line. Both A-DUP owner-ruling records survive; the
+applier gained `targetQuestionId` because SPAN_TRIM would otherwise have trimmed them too.
+
+**B2c** — `runtimeText.mjs` documents that the board broke URLs after the protocol
+(`https:// www.…`); the non-semantic test's `\S+` stopped at that space, so bare link lines read as
+prose. #1253 sat in the queue because of it. Fixed: 2 more rows.
+
+**Lane C quarantined** — see `audit/step3b1-lane-c-quarantine.md`. The five-identity merge is
+blocked on `apply-entity-cleanup.mjs --rematerialise`, which pins to the owner-approved
+before-state of 2026-08-17. Owner decision, fully reverted.
+
+**Final:** queue 945 → **220** (A 1 · B 158 · C 61), all 17 gates pass, seed 87, **not deployed**.
+`NEXT-SESSION-HANDOFF.md` carries the restart notes.
