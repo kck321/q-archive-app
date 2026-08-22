@@ -554,7 +554,8 @@ for (const a of actions.filter(x => (waveOfAction.get(x.actionId) ?? 0) === wave
     // Keep the FIRST slot of each group — the array's own order is the archive's order.
     for (const r of toDrop) {
       removeRecord(a.actionId, r, 'withdrawn')
-      metaTransfers.push({ actionId: a.actionId, from: k, kind: r.kind, metadata: metaFor(p, r.kind, r.certifiedValue) })
+      metaTransfers.push({ actionId: a.actionId, from: k, kind: r.kind, metadata: metaFor(p, r.kind, r.certifiedValue),
+        ...(r.kind === 'namedEntities' ? { identity: r.certifiedValue, canonical: entityForms.canonicalFor(r.certifiedValue) } : {}) })
     }
     semantics.push({
       occurrenceKey: k, postNum: a.postNum, sentenceId: a.sentenceId, start: a.sentenceStart, end: a.sentenceEnd,
@@ -576,7 +577,8 @@ for (const a of actions.filter(x => (waveOfAction.get(x.actionId) ?? 0) === wave
       if (!recs.length) continue
       for (const r of recs) {
         removeRecord(a.actionId, r, 'withdrawn'); removed++
-        metaTransfers.push({ actionId: a.actionId, from: k, kind: r.kind, metadata: metaFor(p, r.kind, r.certifiedValue) })
+        metaTransfers.push({ actionId: a.actionId, from: k, kind: r.kind, metadata: metaFor(p, r.kind, r.certifiedValue),
+        ...(r.kind === 'namedEntities' ? { identity: r.certifiedValue, canonical: entityForms.canonicalFor(r.certifiedValue) } : {}) })
       }
     }
     if (!removed) { alreadyApplied.push(a.actionId); carryForward(a.actionId); continue }
@@ -690,7 +692,8 @@ for (const a of actions.filter(x => (waveOfAction.get(x.actionId) ?? 0) === wave
     for (const k of a.recordsWithdrawn) {
       for (const r of resolve(k)) {
         removeRecord(a.actionId, r, 'withdrawn'); removed++
-        metaTransfers.push({ actionId: a.actionId, from: k, kind: r.kind, metadata: metaFor(p, r.kind, r.certifiedValue) })
+        metaTransfers.push({ actionId: a.actionId, from: k, kind: r.kind, metadata: metaFor(p, r.kind, r.certifiedValue),
+        ...(r.kind === 'namedEntities' ? { identity: r.certifiedValue, canonical: entityForms.canonicalFor(r.certifiedValue) } : {}) })
       }
     }
     if (!removed) { alreadyApplied.push(a.actionId); carryForward(a.actionId); continue }
@@ -730,7 +733,8 @@ for (const a of actions.filter(x => (waveOfAction.get(x.actionId) ?? 0) === wave
         // Same rule as SPAN_TRIM: where a span holds more than one record, the action says which.
         if (a.targetQuestionId && r.origin.id !== a.targetQuestionId) continue
         removeRecord(a.actionId, r, 'withdrawn'); removed++
-        metaTransfers.push({ actionId: a.actionId, from: k, kind: r.kind, metadata: metaFor(p, r.kind, r.certifiedValue) })
+        metaTransfers.push({ actionId: a.actionId, from: k, kind: r.kind, metadata: metaFor(p, r.kind, r.certifiedValue),
+        ...(r.kind === 'namedEntities' ? { identity: r.certifiedValue, canonical: entityForms.canonicalFor(r.certifiedValue) } : {}) })
       }
     }
     if (!removed) { alreadyApplied.push(a.actionId); carryForward(a.actionId); continue }
@@ -783,7 +787,8 @@ for (const a of actions.filter(x => (waveOfAction.get(x.actionId) ?? 0) === wave
           }
         }
         moved++
-        metaTransfers.push({ actionId: a.actionId, from: k, kind: r.kind, metadata: metaFor(p, r.kind, r.certifiedValue) })
+        metaTransfers.push({ actionId: a.actionId, from: k, kind: r.kind, metadata: metaFor(p, r.kind, r.certifiedValue),
+        ...(r.kind === 'namedEntities' ? { identity: r.certifiedValue, canonical: entityForms.canonicalFor(r.certifiedValue) } : {}) })
       }
     }
     if (!moved) { alreadyApplied.push(a.actionId); carryForward(a.actionId); continue }

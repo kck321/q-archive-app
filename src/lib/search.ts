@@ -36,7 +36,6 @@ export type Filters = {
   family?: string
   subtype?: string
   codeType?: string
-  emphasisType?: string
   conclusion?: boolean
   checkable?: boolean
   sourceProvided?: boolean
@@ -78,7 +77,6 @@ function passes(row: SearchRow, f: Filters, postDate: Map<number, number>): bool
   if (f.family && row.f.family !== f.family) return false
   if (f.subtype && row.f.subtype !== f.subtype) return false
   if (f.codeType && row.f.codeType !== f.codeType) return false
-  if (f.emphasisType && row.f.type !== f.emphasisType) return false
   if (f.conclusion && !row.f.conclusion) return false
   if (f.checkable && !row.f.checkable) return false
   if (f.sourceProvided && !row.f.sourceProvided) return false

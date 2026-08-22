@@ -1,5 +1,8 @@
 {
- "note": "Determinism stamp. With the inputs unchanged, re-running audit-occurrence-provenance.mjs must reproduce occurrence-provenance-audit.json byte for byte. Delete to re-baseline after a DELIBERATE change to the derivation.",
- "inputs": "2b477534ff1c4520175d1b55b8c1a5c5073a0200c35388327b106f498266d4f3|5dc7d23cbf6f770d19458b0890633106cf3683cead41f43fa7fd183597e6a888",
- "auditSha256": "6cd63d5afcd163a4a81537c6d71c1604e47963dd622ce1927cf594cb0cb487dc"
+ "note": "Determinism stamp. The approved audit must keep its exact bytes; the inputs move whenever a later decision moves the certified state, and every such decision is recorded in audit/entity-cleanup-rollback-contract.json postApprovalDeltas.",
+ "rebaselinedOn": "2026-08-22",
+ "why": "The previous stamp recorded the audit as it stood BEFORE the 2026-08-21 Nellie Ohr ruling re-ran audit-occurrence-provenance.mjs (commit 32d168e). The re-run was deliberate and its evidence is in the rollback contract; the stamp simply was not re-baselined with it, and the discrepancy went unseen because audit-cross-section.mjs could not run at all while Emphasis was half-retired. The audit file is unchanged against HEAD.",
+ "previousAuditSha256": "6cd63d5afcd163a4a81537c6d71c1604e47963dd622ce1927cf594cb0cb487dc",
+ "inputs": "1409797889f2d2d6ca3b117cca28c774918de4d305736baccd2bfa4d1aaf24b5|343ed39164a80826c3890cc63bfa57d3da2986f3837045487d8276f7c309650a",
+ "auditSha256": "5db20add557c7bdb3d37ad3d4abd75e77872522358d807e67f5206d835f4e115"
 }

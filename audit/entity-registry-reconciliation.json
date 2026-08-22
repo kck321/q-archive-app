@@ -1,0 +1,176 @@
+{
+  "note": "The registry decrements that follow Step 3B-1's duplicate-record collapse. One per removed record, named by the identity that record carried. Not a recount from the render.",
+  "duplicateRecordsRemoved": 99,
+  "mentionsBefore": 8920,
+  "mentionsAfter": 8821,
+  "renderedRecords": 8821,
+  "perIdentity": [
+    {
+      "canonical": "Robert Mueller",
+      "mentionsBefore": 176,
+      "withdrawn": 35,
+      "mentionsAfter": 141
+    },
+    {
+      "canonical": "Barack Obama",
+      "mentionsBefore": 214,
+      "withdrawn": 9,
+      "mentionsAfter": 205
+    },
+    {
+      "canonical": "China",
+      "mentionsBefore": 116,
+      "withdrawn": 8,
+      "mentionsAfter": 108
+    },
+    {
+      "canonical": "United States Senate",
+      "mentionsBefore": 126,
+      "withdrawn": 8,
+      "mentionsAfter": 118
+    },
+    {
+      "canonical": "Jeff Sessions",
+      "mentionsBefore": 110,
+      "withdrawn": 6,
+      "mentionsAfter": 104
+    },
+    {
+      "canonical": "United States",
+      "mentionsBefore": 525,
+      "withdrawn": 6,
+      "mentionsAfter": 519
+    },
+    {
+      "canonical": "Huma Abedin",
+      "mentionsBefore": 45,
+      "withdrawn": 5,
+      "mentionsAfter": 40
+    },
+    {
+      "canonical": "Iran",
+      "mentionsBefore": 93,
+      "withdrawn": 5,
+      "mentionsAfter": 88
+    },
+    {
+      "canonical": "Washington Post",
+      "mentionsBefore": 12,
+      "withdrawn": 4,
+      "mentionsAfter": 8
+    },
+    {
+      "canonical": "Michael Flynn",
+      "mentionsBefore": 38,
+      "withdrawn": 2,
+      "mentionsAfter": 36
+    },
+    {
+      "canonical": "Vladimir Putin",
+      "mentionsBefore": 11,
+      "withdrawn": 2,
+      "mentionsAfter": 9
+    },
+    {
+      "canonical": "John Brennan",
+      "mentionsBefore": 36,
+      "withdrawn": 2,
+      "mentionsAfter": 34
+    },
+    {
+      "canonical": "Donald Trump",
+      "mentionsBefore": 64,
+      "withdrawn": 1,
+      "mentionsAfter": 63
+    },
+    {
+      "canonical": "Twitter",
+      "mentionsBefore": 103,
+      "withdrawn": 1,
+      "mentionsAfter": 102
+    },
+    {
+      "canonical": "James Comey",
+      "mentionsBefore": 79,
+      "withdrawn": 1,
+      "mentionsAfter": 78
+    },
+    {
+      "canonical": "Democratic Party",
+      "mentionsBefore": 48,
+      "withdrawn": 1,
+      "mentionsAfter": 47
+    },
+    {
+      "canonical": "John Huber",
+      "mentionsBefore": 104,
+      "withdrawn": 1,
+      "mentionsAfter": 103
+    },
+    {
+      "canonical": "Nancy Pelosi",
+      "mentionsBefore": 48,
+      "withdrawn": 1,
+      "mentionsAfter": 47
+    },
+    {
+      "canonical": "Hillary Clinton",
+      "mentionsBefore": 187,
+      "withdrawn": 1,
+      "mentionsAfter": 186
+    }
+  ],
+  "perIdentityAndPost": {
+    "Barack Obama|1887": 1,
+    "Barack Obama|2844": 2,
+    "Barack Obama|3325": 2,
+    "Barack Obama|4098": 1,
+    "Barack Obama|4620": 1,
+    "Barack Obama|559": 1,
+    "Barack Obama|570": 1,
+    "China|2378": 2,
+    "China|3915": 1,
+    "China|4817": 1,
+    "China|778": 2,
+    "China|964": 1,
+    "China|968": 1,
+    "Democratic Party|2463": 1,
+    "Donald Trump|14": 1,
+    "Hillary Clinton|5": 1,
+    "Huma Abedin|111": 4,
+    "Huma Abedin|1235": 1,
+    "Iran|194": 1,
+    "Iran|1948": 1,
+    "Iran|195": 1,
+    "Iran|199": 1,
+    "Iran|570": 1,
+    "James Comey|1828": 1,
+    "Jeff Sessions|1318": 4,
+    "Jeff Sessions|570": 2,
+    "John Brennan|2657": 2,
+    "John Huber|3004": 1,
+    "Michael Flynn|1265": 1,
+    "Michael Flynn|3330": 1,
+    "Nancy Pelosi|3741": 1,
+    "Robert Mueller|2381": 10,
+    "Robert Mueller|2397": 10,
+    "Robert Mueller|2856": 2,
+    "Robert Mueller|3316": 2,
+    "Robert Mueller|3992": 10,
+    "Robert Mueller|636": 1,
+    "Twitter|1796": 1,
+    "United States Senate|2448": 5,
+    "United States Senate|2657": 1,
+    "United States Senate|2943": 1,
+    "United States Senate|3006": 1,
+    "United States|1824": 2,
+    "United States|2640": 1,
+    "United States|4397": 2,
+    "United States|4635": 1,
+    "Vladimir Putin|1935": 2,
+    "Washington Post|2519": 1,
+    "Washington Post|2549": 1,
+    "Washington Post|2627": 1,
+    "Washington Post|2715": 1
+  }
+}

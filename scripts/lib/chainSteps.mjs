@@ -139,14 +139,6 @@ export const CHAIN = [
   // that read entity counts, and it re-applies the plan the owner already approved rather than
   // deciding anything: see the --rematerialise block in the applier.
   { step: 'apply-entity-cleanup.mjs', kind: 'apply', args: ['--rematerialise'] },
-  // THE PUBLIC ROW MODEL, derived from the finished entity state. It must land after
-  // apply-entity-cleanup.mjs, because it reads entities.json to decide which identities are prose
-  // rows and which are source-only, and the cleanup is what makes 135 of them source-only.
-  //
-  // Read-only with respect to every certified count: it writes one new artifact and asserts, rather
-  // than assumes, that its own components add to 1,201 and its per-entity occurrence counts never
-  // exceed the 8,798. It exits non-zero instead of publishing a list that does not reconcile.
-  { step: 'build-entity-public-view.mjs', kind: 'apply', args: [] },
   // STEP 3B-1 — THE FULL-SENTENCE REPLACEMENT. It must run here and it must not be dropped.
   //
   // The 530 adjudicated actions resolve sentences certified in two primary categories at once,
@@ -160,6 +152,27 @@ export const CHAIN = [
   // Drop it and the bundle silently reverts 530 resolved collisions while every total still
   // reconciles — the exact failure shape this chain's header describes.
   { step: 'apply-step3b1.mjs', kind: 'apply' },
+  // THE REGISTRY FOLLOWS THE RECORDS. apply-step3b1.mjs collapses duplicate entity records — 99 of
+  // them, several over one span for one identity — and entities.json never heard about it, so the
+  // registry counted 8,920 mentions while the drops rendered 8,821. Invariant 12 exists for exactly
+  // that gap and had been failing at 99 since the merges landed. This applies the EXACT decrements
+  // the adjudication recorded and refuses unless the two totals then agree.
+  { step: 'reconcile-entity-registry.mjs', kind: 'apply' },
+  // THE PUBLIC ROW MODEL, derived from the FINISHED entity state — which is here, not before
+  // apply-step3b1.mjs where it used to sit. It reads entities.json to decide which identities are
+  // prose rows and which are source-only, and until the duplicate collapse and its reconciliation
+  // had both run, "finished" was not true: the view was built from a registry 99 mentions ahead of
+  // the records it describes.
+  //
+  // Read-only with respect to every certified count: it writes one new artifact and asserts, rather
+  // than assumes, that its own components add up and that its per-entity occurrence counts never
+  // exceed the certified total. It exits non-zero instead of publishing a list that does not
+  // reconcile.
+  { step: 'build-entity-public-view.mjs', kind: 'apply', args: [] },
+  // A TOOLTIP MUST NOT OUTLIVE THE IDENTITY IT DESCRIBES. entity-hovers.json carries authored
+  // editorial text about real people, and a retired identity left 26 synopses pointing at nothing.
+  // Runs after the entity state is final and before the steps that read it.
+  { step: 'prune-entity-hovers.mjs', kind: 'apply' },
   // THE RETIRED SECTIONS, STRIPPED. apply-claims.mjs rebuilds impliedConclusions and
   // verificationHooks from audit/claims-final.json on every run, so removing them by hand would
   // last exactly until the next rebuild. This runs after the last step that writes them and before

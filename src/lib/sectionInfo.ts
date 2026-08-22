@@ -12,7 +12,10 @@
 export const CERTIFIED = {
   // 2026-08-20 OWNER RULING - the unhighlighted-sentence queue. 6,108 of the 6,111 queued
   // sentences accepted into a section; see audit/unhighlighted-owner-rulings.json.
-  questions: { occurrences: 6503, distinct: 5358, posts: 1705 },
+  // 6,503 -> 6,321. The shipped file still holds 6,503 rows with an occurrences field; 182 of
+  // them Step 3B-1 MARKED secondary or withdrawn rather than deleting, and the certified figure
+  // is the primary set. The marked records keep their id, text and count so nothing is lost.
+  questions: { occurrences: 6321, distinct: 5358, posts: 1705 },
   // v5, 16 Aug 2026 — Q Directives migrated to sourceSpansV2 provenance under owner ruling.
   // 2,705 -> 2,552: 153 occurrences removed from Q Directives ONLY (quoted news, scraped code,
   // blessings, declarative-lead misreads, questions, a prediction). Nothing was deleted from the
@@ -20,9 +23,14 @@ export const CERTIFIED = {
   // `posts` are now measured over ALL certified occurrences including owner rulings, which is
   // what the page actually renders — the old 1,472/1,417 counted directives-final.json alone and
   // never matched the UI.
-  directives: { occurrences: 3037, distinct: 1827, posts: 1689 },
-  claims: { occurrences: 8912, distinct: 6814, posts: 3086 },
-  predictions: { occurrences: 847, posts: 674 },
+  // 3,037 -> 2,940, the certified figure the search index and every gate carry. The larger number
+  // counted every actionRequests entry including the ones a later adjudication superseded.
+  directives: { occurrences: 2940, distinct: 1827, posts: 1689 },
+  // 8,912 -> 8676 across the 2026-08-22 lane-B reviews: paragraph-wide claims an early
+  // extractor left sitting on top of the sentence-level records that superseded them, plus the
+  // abbreviation-split pairs where one sentence had been certified twice.
+  claims: { occurrences: 8676, distinct: 6795, posts: 3056 },
+  predictions: { occurrences: 843, posts: 672 },
   /** Claim attributes. `conclusions` may apply to a claim or a prediction. */
   // checkable, sourceProvided and conclusions do NOT move with the queue ruling: they are
   // attributes the claims audit established from evidence inside the drop, and the owner ruled a
@@ -56,13 +64,13 @@ export const CERTIFIED = {
  * recount cannot quietly come back.
  */
 export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number; unit: string }> = {
-  claims: { occurrences: 8912, posts: 3086, unit: 'occurrences' },
-  predictions: { occurrences: 847, posts: 674, unit: 'occurrences' },
+  claims: { occurrences: 8676, posts: 3056, unit: 'occurrences' },
+  predictions: { occurrences: 843, posts: 672, unit: 'occurrences' },
   // "mentions" is the right word here and the only section where it is: an entity is counted
   // once per resolved mention across the 1,066 canonical entities Q named in prose. The other 135
   // certified identities contribute none — they are linked sources, not words Q wrote — which is
   // why this figure sits BESIDE the 1,201 total on the page rather than under it.
-  namedEntities: { occurrences: 8975, posts: 2124, unit: 'mentions' },
+  namedEntities: { occurrences: 8821, posts: 2096, unit: 'mentions' },
   // Themes are assignments rather than spans — a theme is inferred from a drop, not copied out
   // of it — so the unit is named accordingly. 2,393 detected + 2 owner rulings.
   themes: { occurrences: 2644, posts: 1898, unit: 'assignments' },
@@ -75,32 +83,10 @@ export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number
  * predictions, so `displayClass` decides where a unit appears and `semanticFamily` records what
  * it is. The combined figure is shown only where it is labelled as combined.
  */
-/**
- * Emphasis — a presentation layer, and the section most at risk of becoming a catch-all.
- *
- * Two rules keep it honest, both measured against the corpus rather than declared. Capitals
- * count only where they CONTRAST: with the surrounding line, and with the word's own usual
- * spelling — DECLAS is capitalised in 90 of its 95 appearances, so its capitals are how the word
- * is spelled, while FAKE is 207 of 284, so its capitals are a choice. Parallel phrasing counts
- * only where a rhetorical pattern actually repeats; a shared first word is not enough, and a run
- * of lines is one device rather than one device per adjacent pair.
- */
-export const EMPHASIS_INFO = {
-  types: [
-    { label: 'Capitals', count: 2418, blurb: 'Capitalised words that contrast with the surrounding lowercase text — and with how Q normally spells that word.' },
-    { label: 'Parallel phrasing', count: 631, blurb: 'A rhetorical frame repeated across consecutive lines: a cascade of three or more, a mirrored construction, or a multi-word frame repeated. Each occurrence records which pattern carried it.' },
-    { label: 'Bracket emphasis', count: 715, blurb: 'An ordinary word set in brackets to mark it out — [raid], [now], [children].' },
-    { label: 'Quoted word', count: 624, blurb: 'A single word in quotation marks, marking it as loaded or ironic.' },
-    { label: 'Punctuation intensity', count: 157, blurb: 'Runs of punctuation beyond ordinary sentence marking.' },
-    { label: 'Repeated word or phrase', count: 109, blurb: 'The same wording repeated within one drop for force.' },
-    { label: 'Repeated directive', count: 11, blurb: 'The same instruction given more than once in a drop.' },
-    { label: 'Deliberate spacing', count: 1, blurb: 'Spacing used to slow a reader down. The corpus contains one.' },
-    { label: 'Acrostic', count: 3, blurb: 'Bracketed letters spelling a word across the line — "[N]othing [C]an [S]top [W]hat [I]s [C]oming" spells NCSWIC. Added by owner ruling: the letters are not capitalised for contrast and the brackets read as notation, so no detector saw them. Bracketed abbreviations such as [D] and [F] are a different device and are not counted here.' },
-  ],
-  contrast: 'Q writes in capitals constantly, so capitals alone would tag most of the corpus. A caps word inside a line that is itself mostly capitals is Q’s baseline register, not a highlight — 7,839 such candidates are excluded on that basis, along with 1,239 words Q capitalises every time they appear.',
-  overlap: 'A repeated question is counted once here, as a stylistic fact, and once in Questions, as a unit. The two are cross-linked and never double-counted within a section — the same arrangement as the 228 Question/Directive and 32 Codes/Entities overlaps.',
-  unresolved: 'Where no structural test settles whether a device is rhetorical, the case is not forced either way. 245 are held in the Resolution Center: 141 question series where the sequence is real but extra emphasis is not established, 69 parallel constructions needing context, and 35 borderline capitalisations.',
-} as const
+// Q EMPHASIS IS RETIRED (owner ruling, 2026-08-21) — the section, its data, its highlights and
+// the paragraph that used to describe it here. The block was already unreachable: SECTIONS carries
+// no 'emphasis' id, so the Method page could not render it. Unreachable code describing a retired
+// feature is how a retired feature comes back, so it is gone rather than orphaned.
 
 export const ASSERTIONS = {
   combined: CERTIFIED.claims.occurrences + CERTIFIED.predictions.occurrences,
@@ -182,12 +168,16 @@ export const ENTITIES = {
   // 8,798 -> 8,969 (2026-08-20): +171. 547 entity occurrences were ruled and 376 were already
   // carried by a certified layer at that (post, alias), so only the shortfall is added.
   // 8,969 -> 8,975 (2026-08-21): NO is Nellie Ohr on #1928 and #1929, three occurrences each.
-  mentions: 8975,
-  mentionScope: 'Every resolved mention across all 1,240 certified entities: 5,336 from the 93 core-registry entities, 2,923 from the entities identified in the adjudication pass, and 716 from owner rulings. Domains, URL slugs and linked accounts are NOT counted here — they are shown under Sources. Unresolved aliases are counted in neither: they are held in the Resolution Center.',
+  // 8,975 -> 8821. Owner Ruling 3 and the lane-B reviews moved 55 occurrences whose only
+  // trace on a drop is a URL, a handle or nothing — most of them MIGRATED to Sources rather than
+  // deleted — and the duplicate-record reconciliation took 99 more, which were never separate
+  // mentions at all: several records over one written word.
+  mentions: 8821,
+  mentionScope: 'Every resolved mention across all 1,214 certified entities: 5,236 from the 93 core-registry entities, 2,870 from the entities identified in the adjudication pass, and 715 from owner rulings. Domains, URL slugs and linked accounts are NOT counted here — they are shown under Sources. Unresolved aliases are counted in neither: they are held in the Resolution Center.',
   coreEntities: 93,
-  coreRegistryMentions: 4463,
+  coreRegistryMentions: 5236,
   tailEntities: 1239,
-  tailMentions: 3440,
+  tailMentions: 2870,
   contextResolved: 161,
   routedToThemes: 53,
   unresolvedTokens: 1011,
@@ -209,7 +199,7 @@ export const ENTITIES = {
  * The distinction is the whole reason the ontology is controlled. The old extractor's most
  * common label was "cryptic messaging" at 401 occurrences, which describes how Q writes rather
  * than what a post is about. A coverage audit found style labels of that kind made up the
- * entire apparent gap in subject coverage. They belong to Codes & Brackets or Emphasis.
+ * entire apparent gap in subject coverage. They belong to Codes & Brackets, not to Themes.
  */
 export const THEMES_INFO = {
   parents: 18,
@@ -238,7 +228,7 @@ export const CODES_INFO = {
   crossLinkedToEntities: 32,
   note: 'Codes & Brackets identifies recurring coded expressions, structured shorthand, bracketed markers, symbolic forms, and unusual notation used by Q. Inclusion in this section means the pattern appears code-like or structurally significant; it does not mean its meaning is known. Interpretations are shown only when supported by repeated context or a reviewed resolution.',
   overlap: 'A bracketed reference such as [HRC] is counted here as notation AND in Entities as a reference. The sections answer different questions — how Q marked something, and who was referenced — so each counts it once and cross-links to the other.',
-  excluded: 'Ordinary words in brackets ([raid], [now]) are Emphasis, not codes. Dates and ALL CAPS on their own are not codes either: caps become notation only with structure, such as an underscore, a digit or a bracket.',
+  excluded: 'An ordinary word set in brackets ([raid], [now]) is not a code — the brackets mark it out, they do not encode it. Dates and ALL CAPS on their own are not codes either: caps become notation only with structure, such as an underscore, a digit or a bracket.',
 } as const
 
 export interface AttributeInfo { key: string; label: string; blurb: string; count: number }
@@ -371,7 +361,7 @@ export const SECTIONS: SectionInfo[] = [
     // so the ⓘ panel contradicted the header directly above it. The two components are named here
     // for the same reason they are named in the header: 1,201 with no split reads as 1,201 entities
     // Q wrote about, and 135 of them he never wrote at all.
-    certified: `${n(1240)} canonical entities (${n(1105)} named in the prose · ${n(135)} linked as a source only) · ${n(8975)} certified prose mentions`,
+    certified: `${n(1214)} canonical entities (${n(1076)} named in the prose · ${n(138)} linked as a source only) · ${n(8821)} certified prose mentions`,
     note: 'Entities are secondary tags rather than sentence types — a question, claim, prediction or directive may contain several. Names are canonicalised, so "HRC", "Hillary" and "Hillary Clinton" are one person, while Q’s exact wording is preserved in every post. Where a reference is ambiguous it is left unresolved rather than guessed.',
   },
   {
@@ -390,7 +380,7 @@ export const SECTIONS: SectionInfo[] = [
     covers: 'Unusual coded expressions, abbreviations, bracketed text, shorthand, symbolic references, counters, markers and recurring phrases that appear throughout Q’s posts.',
     answers: 'What notation did Q use?',
     certified: `${n(1957)} occurrences · ${n(747)} distinct codes · ${n(856)} posts`,
-    note: 'Inclusion means the pattern appears code-like or structurally significant — it does not mean its meaning is known. Only 7 of 739 codes carry an interpretation, each stating the evidence for it; the other 732 are preserved exactly as written with no meaning attached. Two of the seven — [D] for Democrat and [F] for Foreign — are owner adjudications rather than readings the corpus establishes on its own, and are labelled as such. Ordinary words in brackets are Emphasis, and dates and ALL CAPS alone are not codes.',
+    note: 'Inclusion means the pattern appears code-like or structurally significant — it does not mean its meaning is known. Only 7 of 739 codes carry an interpretation, each stating the evidence for it; the other 732 are preserved exactly as written with no meaning attached. Two of the seven — [D] for Democrat and [F] for Foreign — are owner adjudications rather than readings the corpus establishes on its own, and are labelled as such. An ordinary word in brackets is not a code, and dates and ALL CAPS alone are not codes either.',
   },
 ]
 
@@ -407,9 +397,9 @@ export const METHOD_PRINCIPLE = {
   body: [
     'The archive always preserves Q’s exact original wording. Classification is metadata layered on top of the source, and never rewrites Q’s words to make them fit a category.',
   ],
-  primary: 'Question · Directive · Claim · Prediction · Conclusion · Evidence/Reference',
+  primary: 'Question · Directive · Claim · Prediction · Evidence/Reference',
   primaryNote: 'Primary semantic categories describe what the text is doing.',
-  secondary: 'Entities · Themes · Codes/Brackets · Emphasis',
+  secondary: 'Entities · Themes · Codes/Brackets',
   secondaryNote: 'Secondary classifications describe what the text contains or how it is presented.',
   overlap: 'Some classifications legitimately overlap. Overlap is preserved with explicit cross-links rather than forcing a sentence into an inaccurate single category.',
   editorial: 'Editorial paraphrases or normalizations may be retained for search and explanation, but they always carry provenance and are never displayed as though Q literally wrote them.',

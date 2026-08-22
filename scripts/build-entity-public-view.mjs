@@ -169,10 +169,21 @@ const postApprovalRemoved = new Set(POST_APPROVAL
 const SETTLED = r => /^(keep|hold)/.test(r.proposedAction ?? '') && !postApprovalRemoved.has(r.occurrenceId)
 const UNSETTLED_ATTRIBUTION = r => /attribution must be settled/.test(r.proposedAction ?? '')
 
+// AND THE DUPLICATE RECORDS STEP 3B-1 COLLAPSED. The ledger has one row per certified occurrence
+// as the 2026-08-17 audit found them, and 99 of those rows are the same occurrence recorded more
+// than once — #111 carried "Huma" five times over one word. apply-step3b1.mjs removed the extra
+// records and reconcile-entity-registry.mjs brought the registry down to match, so the ledger's
+// raw row count is now 99 above both. Subtracted by COUNT rather than by id because the collapse
+// is keyed by span and the ledger by array index; the per-identity enumeration is in the artifact.
+const reconPath = path.join(AUDIT, 'entity-registry-reconciliation.json')
+const recon = fs.existsSync(reconPath) ? readAudit('entity-registry-reconciliation.json') : null
+const collapsedDuplicates = recon?.duplicateRecordsRemoved ?? 0
+const collapsedByIdentityAndPost = new Map(Object.entries(recon?.perIdentityAndPost ?? {}))
+
 const retained = (ledger.rows ?? []).filter(SETTLED)
-const ledgerMentions = retained.length
+const ledgerMentions = retained.length - collapsedDuplicates
 if (ledgerMentions !== (registry.totals?.mentions ?? -1)) {
-  die(`ledger retains ${ledgerMentions} occurrences, registry says ${registry.totals?.mentions} — these must agree`)
+  die(`ledger retains ${retained.length} occurrences less ${collapsedDuplicates} collapsed duplicates = ${ledgerMentions}, registry says ${registry.totals?.mentions} — these must agree`)
 }
 
 // Per-alias DISTINCT POST counts, so the row can order its spellings most-to-least as the owner
@@ -229,8 +240,11 @@ for (const e of entities) {
   // drop naming the same subject as both "POTUS" and "Trump" — twice, in Q's own words. The consumer
   // sums the identities sharing the row and badges the total.
   const perPost = {}
-  for (const [post, n] of [...(perPostByEntity.get(e.id) ?? new Map())].sort((a, b) => a[0] - b[0])) {
+  for (const [post, n0] of [...(perPostByEntity.get(e.id) ?? new Map())].sort((a, b) => a[0] - b[0])) {
     if (!postSet.has(post)) continue
+    // less the duplicate records Step 3B-1 collapsed on this drop for this identity
+    const n = n0 - (Number(collapsedByIdentityAndPost.get(e.canonical + String.fromCharCode(124) + post)) || 0)
+    if (n <= 0) continue
     perPost[String(post)] = n
     if (n > 1) repeatBadges++
   }

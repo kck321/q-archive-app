@@ -1,0 +1,135 @@
+{
+  "note": "Synopses removed because the identity they describe is no longer in the registry. The text is kept here so nothing is lost: restoring an identity can restore its synopsis verbatim.",
+  "prunedOn": "2026-08-22",
+  "why": "Owner Ruling 3 (2026-08-22) retired identities whose last certified mention it withdrew. A tooltip must not outlive the identity it describes.",
+  "globalRemoved": 26,
+  "postSynopsesRemoved": 3,
+  "removed": {
+    "global": [
+      {
+        "id": "qe-db762af6b20d",
+        "synopsis": "“Whitaker” is categorized in this archive as a person. It appears 12 times across 12 posts."
+      },
+      {
+        "id": "qe-67185825b25f",
+        "synopsis": "Within this archive, “Awan” is used for Imran Awan and is categorized as a person. Some drops widen out to his relatives and the broader congressional IT-staff "
+      },
+      {
+        "id": "qe-1932f9fd0b7c",
+        "synopsis": "Within this archive, “Wray” is used for Christopher Wray and is categorized as a person. It appears 8 times across 8 posts."
+      },
+      {
+        "id": "qe-76da188497d6",
+        "synopsis": "“Kavanaugh” is categorized in this archive as a person. It appears 6 times across 6 posts."
+      },
+      {
+        "id": "qe-bb91501abc09",
+        "synopsis": "“Roseanne Barr” is categorized in this archive as a person. It appears 3 times across 3 posts."
+      },
+      {
+        "id": "qe-6f18be951f74",
+        "synopsis": "Within this archive, “Pence” is used for Mike Pence and is categorized as a person. It appears 3 times across 3 posts."
+      },
+      {
+        "id": "qe-c00874e212d3",
+        "synopsis": "“Gavin Newsom” is categorized in this archive as a person. It appears 3 times across 3 posts."
+      },
+      {
+        "id": "qe-ad0326f3114d",
+        "synopsis": "“House Intelligence” is categorized in this archive as a government institution. It appears 2 times across 2 posts."
+      },
+      {
+        "id": "qe-d4e89265e936",
+        "synopsis": "“Charlie Kirk” is categorized in this archive as a person. It appears 2 times across 2 posts."
+      },
+      {
+        "id": "qe-58247463cbd4",
+        "synopsis": "“George Papa” is categorized in this archive as a person. It appears 2 times across 2 posts."
+      },
+      {
+        "id": "qe-c626c7ae2714",
+        "synopsis": "“GANG OF 8” is categorized in this archive as a person. It appears 2 times across 2 posts."
+      },
+      {
+        "id": "qe-c3a9237ba27a",
+        "synopsis": "“Agnes Nixon” is categorized in this archive as a person. It appears 1 times across 1 posts."
+      },
+      {
+        "id": "qe-969011b0c0c3",
+        "synopsis": "“Vice News” is categorized in this archive as a media organization. It appears 1 times across 1 posts."
+      },
+      {
+        "id": "qe-628d3aa3cc03",
+        "synopsis": "“State Department OIG” is categorized in this archive as a organization. It appears 1 times across 1 posts."
+      },
+      {
+        "id": "qe-d18d01b68905",
+        "synopsis": "“CBN News” is categorized in this archive as a media organization. It appears 1 times across 1 posts."
+      },
+      {
+        "id": "qe-d41b03d8b4e3",
+        "synopsis": "“The Independent” is categorized in this archive as a media organization. It appears 1 times across 1 posts."
+      },
+      {
+        "id": "qe-be9443407fad",
+        "synopsis": "“Michael Beatty” is categorized in this archive as a person. It appears 1 times across 1 posts."
+      },
+      {
+        "id": "qe-d29df03a2c7a",
+        "synopsis": "“Cambridge Dictionary” is categorized in this archive as a media organization. It appears 1 times across 1 posts."
+      },
+      {
+        "id": "qe-746f75d548db",
+        "synopsis": "“House Republicans” is categorized in this archive as a government institution. It appears 1 times across 1 posts."
+      },
+      {
+        "id": "qe-baf710e658c9",
+        "synopsis": "“Google Trends” is categorized in this archive as a technology platform. It appears 1 times across 1 posts."
+      },
+      {
+        "id": "qe-349ce0440062",
+        "synopsis": "“Yale Medicine” is categorized in this archive as a organization. It appears 1 times across 1 posts."
+      },
+      {
+        "id": "qe-b1a37b982806",
+        "synopsis": "“Jeet Heer” is categorized in this archive as a person. It appears 1 times across 1 posts."
+      },
+      {
+        "id": "qe-6f898a7508fd",
+        "synopsis": "“Erin Nanoki” is categorized in this archive as a person. It appears 1 times across 1 posts."
+      },
+      {
+        "id": "qe-34cf2565da90",
+        "synopsis": "“International Islamic Council for Da'wa and Relief” is categorized in this archive as a organization. It appears 1 times across 1 posts."
+      },
+      {
+        "id": "qe-d350ae114c30",
+        "synopsis": "“Mike Wallace” is categorized in this archive as a person. It appears 1 times across 1 posts."
+      },
+      {
+        "id": "qe-9054d5a03df4",
+        "synopsis": "“Comedy Central” is categorized in this archive as a media organization. It appears 1 times across 1 posts."
+      }
+    ],
+    "byPost": [
+      {
+        "id": "qe-c3a9237ba27a",
+        "posts": [
+          1211
+        ]
+      },
+      {
+        "id": "qe-34cf2565da90",
+        "posts": [
+          56
+        ]
+      },
+      {
+        "id": "qe-d350ae114c30",
+        "posts": [
+          746
+        ]
+      }
+    ]
+  }
+}

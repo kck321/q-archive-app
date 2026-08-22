@@ -507,7 +507,13 @@ export const OVERRIDES_BAKED_THROUGH = 1786458148021   // 2026-08-11T14:22:28.02
 // overlay defect bumps it again without touching the seed.
 export const OVERLAY_REPAIR = 1
 
-export const SEED_VERSION = 87   // 87: Emphasis, Q Conclusions and Checkable Claims retired — data, highlights and sections
+// 88: THE STEP 3B RECONCILIATION. Owner Ruling 3's 29 reviewed occurrence withdrawals, all 159
+//     lane-B human-semantic reviews, and the duplicate-record reconciliation that brought the
+//     entity registry down to the records it describes. Claims 8,912 -> 8,676, questions 6,323 ->
+//     6,321, entities 1,235 -> 1,214 rows and 8,975 -> 8,821 mentions. A returning reader holding
+//     87 would keep the pre-review paint on 41 drops and a registry counting one written word up
+//     to five times, so the seed has to move.
+export const SEED_VERSION = 88   // 87: Emphasis, Q Conclusions and Checkable Claims retired — data, highlights and sections
 // (6 mentions, and she gains both drops), her hover gains a real synopsis instead of the generated
 // "appears 8 times across 7 posts" line, and MOVIE 1 / MOVIE 3 join MOVIE 2 as Predictions. A
 // reader on 84 sees NO unhighlighted and two of the three MOVIE lines unclassified.

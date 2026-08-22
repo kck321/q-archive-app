@@ -2600,67 +2600,89 @@
    "actionId": "A-DUP-111-namedEntities-1073-1077",
    "from": "111|namedEntities|1073|1077",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Huma",
+   "canonical": "Huma Abedin"
   },
   {
    "actionId": "A-DUP-111-namedEntities-1073-1077",
    "from": "111|namedEntities|1073|1077",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Huma",
+   "canonical": "Huma Abedin"
   },
   {
    "actionId": "A-DUP-111-namedEntities-1073-1077",
    "from": "111|namedEntities|1073|1077",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Huma",
+   "canonical": "Huma Abedin"
   },
   {
    "actionId": "A-DUP-111-namedEntities-1073-1077",
    "from": "111|namedEntities|1073|1077",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Huma",
+   "canonical": "Huma Abedin"
   },
   {
    "actionId": "A-DUP-1235-namedEntities-145-149",
    "from": "1235|namedEntities|145|149",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Huma",
+   "canonical": "Huma Abedin"
   },
   {
    "actionId": "A-DUP-1265-namedEntities-155-160",
    "from": "1265|namedEntities|155|160",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Flynn",
+   "canonical": "Michael Flynn"
   },
   {
    "actionId": "A-DUP-1318-namedEntities-1067-1075",
    "from": "1318|namedEntities|1067|1075",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Sessions",
+   "canonical": "Jeff Sessions"
   },
   {
    "actionId": "A-DUP-1318-namedEntities-1067-1075",
    "from": "1318|namedEntities|1067|1075",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Sessions",
+   "canonical": "Jeff Sessions"
   },
   {
    "actionId": "A-DUP-1318-namedEntities-1067-1075",
    "from": "1318|namedEntities|1067|1075",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Sessions",
+   "canonical": "Jeff Sessions"
   },
   {
    "actionId": "A-DUP-1318-namedEntities-1067-1075",
    "from": "1318|namedEntities|1067|1075",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Sessions",
+   "canonical": "Jeff Sessions"
   },
   {
    "actionId": "A-DUP-14-namedEntities-1319-1324",
    "from": "14|namedEntities|1319|1324",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Trump",
+   "canonical": "Donald Trump"
   },
   {
    "actionId": "A-DUP-1700-directives-317-625",
@@ -2677,67 +2699,89 @@
    "actionId": "A-DUP-1796-namedEntities-343-350",
    "from": "1796|namedEntities|343|350",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Twitter",
+   "canonical": "Twitter"
   },
   {
    "actionId": "A-DUP-1824-namedEntities-326-333",
    "from": "1824|namedEntities|326|333",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "America",
+   "canonical": "United States"
   },
   {
    "actionId": "A-DUP-1824-namedEntities-326-333",
    "from": "1824|namedEntities|326|333",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "America",
+   "canonical": "United States"
   },
   {
    "actionId": "A-DUP-1828-namedEntities-784-786",
    "from": "1828|namedEntities|784|786",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "JC",
+   "canonical": "James Comey"
   },
   {
    "actionId": "A-DUP-1887-namedEntities-682-689",
    "from": "1887|namedEntities|682|689",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Hussein",
+   "canonical": "Barack Obama"
   },
   {
    "actionId": "A-DUP-1935-namedEntities-409-414",
    "from": "1935|namedEntities|409|414",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Putin",
+   "canonical": "Vladimir Putin"
   },
   {
    "actionId": "A-DUP-1935-namedEntities-409-414",
    "from": "1935|namedEntities|409|414",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Putin",
+   "canonical": "Vladimir Putin"
   },
   {
    "actionId": "A-DUP-194-namedEntities-86-90",
    "from": "194|namedEntities|86|90",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Iran",
+   "canonical": "Iran"
   },
   {
    "actionId": "A-DUP-1948-namedEntities-1473-1477",
    "from": "1948|namedEntities|1473|1477",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Iran",
+   "canonical": "Iran"
   },
   {
    "actionId": "A-DUP-195-namedEntities-86-90",
    "from": "195|namedEntities|86|90",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Iran",
+   "canonical": "Iran"
   },
   {
    "actionId": "A-DUP-199-namedEntities-130-134",
    "from": "199|namedEntities|130|134",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Iran",
+   "canonical": "Iran"
   },
   {
    "actionId": "A-DUP-2215-emphasis-24-35",
@@ -2755,163 +2799,217 @@
    "actionId": "A-DUP-2378-namedEntities-379-384",
    "from": "2378|namedEntities|379|384",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "China",
+   "canonical": "China"
   },
   {
    "actionId": "A-DUP-2378-namedEntities-379-384",
    "from": "2378|namedEntities|379|384",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "China",
+   "canonical": "China"
   },
   {
    "actionId": "A-DUP-2381-namedEntities-2570-2577",
    "from": "2381|namedEntities|2570|2577",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-2381-namedEntities-2570-2577",
    "from": "2381|namedEntities|2570|2577",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-2381-namedEntities-2570-2577",
    "from": "2381|namedEntities|2570|2577",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-2381-namedEntities-2570-2577",
    "from": "2381|namedEntities|2570|2577",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-2381-namedEntities-2570-2577",
    "from": "2381|namedEntities|2570|2577",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-2381-namedEntities-2570-2577",
    "from": "2381|namedEntities|2570|2577",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-2381-namedEntities-2570-2577",
    "from": "2381|namedEntities|2570|2577",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-2381-namedEntities-2570-2577",
    "from": "2381|namedEntities|2570|2577",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-2381-namedEntities-2570-2577",
    "from": "2381|namedEntities|2570|2577",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-2381-namedEntities-2570-2577",
    "from": "2381|namedEntities|2570|2577",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-2397-namedEntities-701-708",
    "from": "2397|namedEntities|701|708",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-2397-namedEntities-701-708",
    "from": "2397|namedEntities|701|708",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-2397-namedEntities-701-708",
    "from": "2397|namedEntities|701|708",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-2397-namedEntities-701-708",
    "from": "2397|namedEntities|701|708",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-2397-namedEntities-701-708",
    "from": "2397|namedEntities|701|708",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-2397-namedEntities-701-708",
    "from": "2397|namedEntities|701|708",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-2397-namedEntities-701-708",
    "from": "2397|namedEntities|701|708",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-2397-namedEntities-701-708",
    "from": "2397|namedEntities|701|708",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-2397-namedEntities-701-708",
    "from": "2397|namedEntities|701|708",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-2397-namedEntities-701-708",
    "from": "2397|namedEntities|701|708",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-2448-namedEntities-1007-1013",
    "from": "2448|namedEntities|1007|1013",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Senate",
+   "canonical": "United States Senate"
   },
   {
    "actionId": "A-DUP-2448-namedEntities-1007-1013",
    "from": "2448|namedEntities|1007|1013",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Senate",
+   "canonical": "United States Senate"
   },
   {
    "actionId": "A-DUP-2448-namedEntities-1007-1013",
    "from": "2448|namedEntities|1007|1013",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Senate",
+   "canonical": "United States Senate"
   },
   {
    "actionId": "A-DUP-2448-namedEntities-1007-1013",
    "from": "2448|namedEntities|1007|1013",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Senate",
+   "canonical": "United States Senate"
   },
   {
    "actionId": "A-DUP-2448-namedEntities-1007-1013",
    "from": "2448|namedEntities|1007|1013",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Senate",
+   "canonical": "United States Senate"
   },
   {
    "actionId": "A-DUP-2451-directives-0-58",
@@ -2928,85 +3026,113 @@
    "actionId": "A-DUP-2463-namedEntities-56-63",
    "from": "2463|namedEntities|56|63",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "D party",
+   "canonical": "Democratic Party"
   },
   {
    "actionId": "A-DUP-2519-namedEntities-158-167",
    "from": "2519|namedEntities|158|167",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "WASH POST",
+   "canonical": "Washington Post"
   },
   {
    "actionId": "A-DUP-2549-namedEntities-573-582",
    "from": "2549|namedEntities|573|582",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "WASH POST",
+   "canonical": "Washington Post"
   },
   {
    "actionId": "A-DUP-2627-namedEntities-231-240",
    "from": "2627|namedEntities|231|240",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "WASH POST",
+   "canonical": "Washington Post"
   },
   {
    "actionId": "A-DUP-2640-namedEntities-466-473",
    "from": "2640|namedEntities|466|473",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "America",
+   "canonical": "United States"
   },
   {
    "actionId": "A-DUP-2657-namedEntities-1310-1317",
    "from": "2657|namedEntities|1310|1317",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Brennan",
+   "canonical": "John Brennan"
   },
   {
    "actionId": "A-DUP-2657-namedEntities-1310-1317",
    "from": "2657|namedEntities|1310|1317",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Brennan",
+   "canonical": "John Brennan"
   },
   {
    "actionId": "A-DUP-2657-namedEntities-1348-1354",
    "from": "2657|namedEntities|1348|1354",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Senate",
+   "canonical": "United States Senate"
   },
   {
    "actionId": "A-DUP-2715-namedEntities-90-99",
    "from": "2715|namedEntities|90|99",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "WASH POST",
+   "canonical": "Washington Post"
   },
   {
    "actionId": "A-DUP-2844-namedEntities-511-519",
    "from": "2844|namedEntities|511|519",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Renegade",
+   "canonical": "Barack Obama"
   },
   {
    "actionId": "A-DUP-2844-namedEntities-511-519",
    "from": "2844|namedEntities|511|519",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Hussein",
+   "canonical": "Barack Obama"
   },
   {
    "actionId": "A-DUP-2856-namedEntities-1355-1362",
    "from": "2856|namedEntities|1355|1362",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-2856-namedEntities-1355-1362",
    "from": "2856|namedEntities|1355|1362",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-2943-namedEntities-1150-1156",
    "from": "2943|namedEntities|1150|1156",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Senate",
+   "canonical": "United States Senate"
   },
   {
    "actionId": "A-DUP-2971-questions-561-799",
@@ -3018,121 +3144,161 @@
    "actionId": "A-DUP-3004-namedEntities-771-776",
    "from": "3004|namedEntities|771|776",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Huber",
+   "canonical": "John Huber"
   },
   {
    "actionId": "A-DUP-3006-namedEntities-451-457",
    "from": "3006|namedEntities|451|457",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Senate",
+   "canonical": "United States Senate"
   },
   {
    "actionId": "A-DUP-3316-namedEntities-279-286",
    "from": "3316|namedEntities|279|286",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-3316-namedEntities-279-286",
    "from": "3316|namedEntities|279|286",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-3325-namedEntities-102-110",
    "from": "3325|namedEntities|102|110",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Renegade",
+   "canonical": "Barack Obama"
   },
   {
    "actionId": "A-DUP-3325-namedEntities-102-110",
    "from": "3325|namedEntities|102|110",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Hussein",
+   "canonical": "Barack Obama"
   },
   {
    "actionId": "A-DUP-3330-namedEntities-191-196",
    "from": "3330|namedEntities|191|196",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Flynn",
+   "canonical": "Michael Flynn"
   },
   {
    "actionId": "A-DUP-3741-namedEntities-344-350",
    "from": "3741|namedEntities|344|350",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Pelosi",
+   "canonical": "Nancy Pelosi"
   },
   {
    "actionId": "A-DUP-3915-namedEntities-677-682",
    "from": "3915|namedEntities|677|682",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "China",
+   "canonical": "China"
   },
   {
    "actionId": "A-DUP-3992-namedEntities-76-83",
    "from": "3992|namedEntities|76|83",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-3992-namedEntities-76-83",
    "from": "3992|namedEntities|76|83",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-3992-namedEntities-76-83",
    "from": "3992|namedEntities|76|83",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-3992-namedEntities-76-83",
    "from": "3992|namedEntities|76|83",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-3992-namedEntities-76-83",
    "from": "3992|namedEntities|76|83",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-3992-namedEntities-76-83",
    "from": "3992|namedEntities|76|83",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-3992-namedEntities-76-83",
    "from": "3992|namedEntities|76|83",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-3992-namedEntities-76-83",
    "from": "3992|namedEntities|76|83",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-3992-namedEntities-76-83",
    "from": "3992|namedEntities|76|83",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-3992-namedEntities-76-83",
    "from": "3992|namedEntities|76|83",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-4098-namedEntities-69-77",
    "from": "4098|namedEntities|69|77",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Renegade",
+   "canonical": "Barack Obama"
   },
   {
    "actionId": "A-DUP-436-emphasis-42-47",
@@ -3150,13 +3316,17 @@
    "actionId": "A-DUP-4397-namedEntities-773-780",
    "from": "4397|namedEntities|773|780",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "America",
+   "canonical": "United States"
   },
   {
    "actionId": "A-DUP-4397-namedEntities-773-780",
    "from": "4397|namedEntities|773|780",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "America",
+   "canonical": "United States"
   },
   {
    "actionId": "A-DUP-4454-questions-238-404",
@@ -3168,31 +3338,41 @@
    "actionId": "A-DUP-4620-namedEntities-487-494",
    "from": "4620|namedEntities|487|494",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Hussein",
+   "canonical": "Barack Obama"
   },
   {
    "actionId": "A-DUP-4635-namedEntities-1782-1789",
    "from": "4635|namedEntities|1782|1789",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "America",
+   "canonical": "United States"
   },
   {
    "actionId": "A-DUP-4817-namedEntities-54-59",
    "from": "4817|namedEntities|54|59",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "China",
+   "canonical": "China"
   },
   {
    "actionId": "A-DUP-5-namedEntities-509-516",
    "from": "5|namedEntities|509|516",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Clinton",
+   "canonical": "Hillary Clinton"
   },
   {
    "actionId": "A-DUP-559-namedEntities-414-421",
    "from": "559|namedEntities|414|421",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Hussein",
+   "canonical": "Barack Obama"
   },
   {
    "actionId": "A-DUP-563-emphasis-230-252",
@@ -3204,55 +3384,73 @@
    "actionId": "A-DUP-570-namedEntities-1821-1829",
    "from": "570|namedEntities|1821|1829",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Sessions",
+   "canonical": "Jeff Sessions"
   },
   {
    "actionId": "A-DUP-570-namedEntities-1821-1829",
    "from": "570|namedEntities|1821|1829",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Sessions",
+   "canonical": "Jeff Sessions"
   },
   {
    "actionId": "A-DUP-570-namedEntities-451-458",
    "from": "570|namedEntities|451|458",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Hussein",
+   "canonical": "Barack Obama"
   },
   {
    "actionId": "A-DUP-570-namedEntities-941-945",
    "from": "570|namedEntities|941|945",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Iran",
+   "canonical": "Iran"
   },
   {
    "actionId": "A-DUP-636-namedEntities-180-187",
    "from": "636|namedEntities|180|187",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "Mueller",
+   "canonical": "Robert Mueller"
   },
   {
    "actionId": "A-DUP-778-namedEntities-44-49",
    "from": "778|namedEntities|44|49",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "China",
+   "canonical": "China"
   },
   {
    "actionId": "A-DUP-778-namedEntities-44-49",
    "from": "778|namedEntities|44|49",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "China",
+   "canonical": "China"
   },
   {
    "actionId": "A-DUP-964-namedEntities-455-460",
    "from": "964|namedEntities|455|460",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "China",
+   "canonical": "China"
   },
   {
    "actionId": "A-DUP-968-namedEntities-31-36",
    "from": "968|namedEntities|31|36",
    "kind": "namedEntities",
-   "metadata": {}
+   "metadata": {},
+   "identity": "China",
+   "canonical": "China"
   },
   {
    "actionId": "A-MP-p0001-s002",

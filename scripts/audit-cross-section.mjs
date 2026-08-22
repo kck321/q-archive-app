@@ -50,7 +50,14 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
 // ── 1. Frozen canonical counts ───────────────────────────────────────────────
 {
   const t = group('1. Frozen canonical counts')
-  const qCounted = questions.filter(q => q.occurrences !== undefined)
+  // THE CERTIFIED POPULATION IS THE PRIMARY ONE. Step 3B-1 marks a question record `secondary`
+  // when the sentence's primary category went elsewhere and `withdrawn` when the record was
+  // superseded — 182 of them — and both keep their occurrences field, because the record is not
+  // deleted (see "no question record deleted to move a count"). The search index, the section
+  // headline and every certified total count the primary set, so this must too; counting the
+  // field's presence made it report 6,503 against a certified 6,321 and call that a defect.
+  const qCounted = questions.filter(q => q.occurrences !== undefined
+    && (!q.semanticLayer || q.semanticLayer === 'primary'))
   const directives = posts.flatMap(p => p.actionRequests ?? [])
   const claimRows = posts.flatMap(p => (p.postAnalysis?.claims ?? []).map(c => ({ p, c })))
   const predRows = posts.flatMap(p => (p.postAnalysis?.predictions ?? []))
@@ -59,7 +66,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   const codeOcc = codes.totals?.occurrences ?? 0
 
   t('posts', 'posts = 4,966', posts.length === CANONICAL.posts, posts.length)
-  t('questions', 'Questions = 6,454 certified occurrences', qCounted.length === CANONICAL.questions.occurrences, qCounted.length)
+  t('questions', `Questions = ${CANONICAL.questions.occurrences.toLocaleString()} certified primary occurrences`, qCounted.length === CANONICAL.questions.occurrences, qCounted.length)
   t('directives', 'Directives = 2,552', directives.length === CANONICAL.directives.occurrences, directives.length)
   t('claims', 'Claims = 4,189', claimRows.length === CANONICAL.claims.occurrences, claimRows.length)
   t('predictions', 'Predictions = 630', predRows.length === CANONICAL.predictions.occurrences, predRows.length)
@@ -161,8 +168,12 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   // Derived, not written twice. This literal went stale the moment the 2026-08-20 queue ruling
   // moved the certified figure, reporting a defect that did not exist: the shipped file is always
   // the certified count plus the 134 editorial normalisations, and THAT is the contract.
-  t('q-rows', `Questions ships ${(CANONICAL.questions.occurrences + 134).toLocaleString()} rows for ${CANONICAL.questions.occurrences.toLocaleString()} certified`,
-    questions.length === CANONICAL.questions.occurrences + 134, questions.length)
+  // The shipped file is the certified primary set, PLUS the records Step 3B-1 marked rather than
+  // deleted, PLUS the 134 editorial normalisations. Derived from all three rather than from a
+  // literal, because two of the three have moved since this was written and the third will.
+  const qMarked = questions.filter(q => q.occurrences !== undefined && q.semanticLayer && q.semanticLayer !== 'primary')
+  t('q-rows', `Questions ships ${CANONICAL.questions.occurrences.toLocaleString()} certified + ${qMarked.length} marked + 134 editorial`,
+    questions.length === CANONICAL.questions.occurrences + qMarked.length + 134, questions.length)
   t('q-editorial-count', 'exactly 134 editorial-normalisation rows', editorial.length === 134, editorial.length)
   t('q-editorial-uncounted', 'no editorial row carries an occurrences field', editorial.every(q => q.occurrences === undefined), `${editorial.filter(q => q.occurrences !== undefined).length} counted`)
   t('q-partition', 'counted + editorial = every shipped row', counted.length + editorial.length === questions.length, `${counted.length} + ${editorial.length}`)
@@ -184,7 +195,10 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
 
 
   // Every section declares a contract.
-  t('all-declared', 'all ten sections declare a provenance contract', SECTION_CONTRACTS.length === 10, SECTION_CONTRACTS.length)
+  // Nine, not ten: Emphasis is retired and its contract went with it. The assertion is that every
+  // section SHIPPING declares one, so the number follows the sections rather than leading them.
+  t('all-declared', `all ${SECTION_CONTRACTS.length} shipping sections declare a provenance contract`,
+    SECTION_CONTRACTS.length === 9 && SECTION_CONTRACTS.every(c => c.artifact && c.certifiedCount !== undefined), SECTION_CONTRACTS.length)
 }
 
 // ── 3. Exact source resolution ───────────────────────────────────────────────
@@ -247,7 +261,11 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   const allDirectives = posts.flatMap(p => (p.actionRequests ?? []).map(d => ({ postNum: p.postNum, text: d })))
   const dKeys = new Set(allDirectives.map(d => `${d.postNum}|${nlower(d.text)}`))
   const qd = allDirectives.filter(d => qKeys.has(`${d.postNum}|${key(d.text)}`) || qSrc.has(`${d.postNum}|${key(d.text)}`)).length
-  t('overlap-qd', 'Question ↔ Directive overlap = 228, declared', qd === 230, qd)
+  // 230 -> 173. Step 3B-1's DIRECTIVE_QUESTION_UNIFIED actions resolve a sentence that is both
+  // into ONE primary with the other recorded as a non-painting secondary, so the pair stops being
+  // two certified records over one sentence. The relationship edge is preserved either way and is
+  // asserted separately by 'question_directive relationship preserved on every unified pair'.
+  t('overlap-qd', 'Question ↔ Directive overlap = 173, declared', qd === 173, qd)
 
   const linked = codes.codes.filter(c => c.linkedEntityId).length
   t('overlap-ce', 'Code ↔ Entity cross-links = 32, declared', linked === 32, linked)
@@ -280,7 +298,11 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     }
   }
   // 965 -> 964: the 2026-08-21 abbreviation repair absorbed tail fragments carrying the attribute; it travels with the ROW.
-  t('overlap-conclusions', 'conclusions are an attribute of 964 assertions, not a separate count', conclusions === 964, conclusions)
+  // Q CONCLUSIONS IS RETIRED, like Emphasis. The gate is now that nothing regenerated it: no
+  // claimMeta.isConclusion survives retire-sections.mjs and no impliedConclusions array does.
+  t('overlap-conclusions-retired', 'Q Conclusions is retired: no conclusion attribute survives',
+    conclusions === 0 && posts.every(p => !p.postAnalysis?.impliedConclusions?.length),
+    `${conclusions} attributes, ${posts.filter(p => p.postAnalysis?.impliedConclusions?.length).length} posts with the array`)
 
   t('overlap-declared', 'every overlap pair has a written rule', OVERLAPS.every(o => o.why && o.crossLink), OVERLAPS.length)
 }
@@ -471,7 +493,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   // 81 carries the 2026-08-21 owner ruling on #4923: "Dearest Virginia -" moves Context -> Claim.
   // Context does not paint, so a reader stuck on 80 sees that drop open with an unhighlighted line
   // above five classified ones — the exact complaint that produced the ruling.
-  t('seed-current', 'SEED_VERSION is 85 (#1928/#1929 owner rulings)', seed === 85, seed)
+  t('seed-current', 'SEED_VERSION is 88 (the Step 3B reconciliation)', seed === 88, seed)
   t('seed-gate', 'seeding is gated on SEED_VERSION', /seeded === SEED_VERSION/.test(localData), 'present')
 
   // THE GUARD THAT WOULD HAVE SAVED THREE ROUND TRIPS. Changing seeded data without bumping the
@@ -531,11 +553,15 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   const editableAliases = JSON.parse(fs.readFileSync(path.join(ROOT, 'public', 'data', 'aliases.json'), 'utf8'))
   const lowerOnly = Object.values(editableAliases).flat().filter(a => /^[a-z][a-z ]*$/.test(a))
   t('ui-alias-spelling', 'no alias is stored all-lowercase', lowerOnly.length === 0, lowerOnly.join(' ') || 'ok')
-  t('ui-entities-submetrics', 'sectionInfo keeps 4,463 and 3,440 as provenance', has(4463) && has(3440), 'ok')
+  t('ui-entities-submetrics', 'sectionInfo keeps the core and tail submetrics as provenance', has(CANONICAL.entities.coreRegistryMentions) && has(CANONICAL.entities.tailMentions), 'ok')
   t('ui-themes', 'sectionInfo states 2,644', has(2644), 'ok')
   t('ui-codes', `sectionInfo states ${CANONICAL.codes.occurrences.toLocaleString()}`, has(CANONICAL.codes.occurrences), 'ok')
   // Retired: sectionInfo must NOT state an Emphasis figure any more.
-  t('ui-emphasis-gone', 'sectionInfo carries no Emphasis section', !/\bemphasis\b/i.test(info), 'ok')
+  // The assertion is that no Emphasis SECTION is offered to a reader — not that the word never
+  // appears in a comment explaining the retirement, which is exactly where it should appear.
+  t('ui-emphasis-gone', 'sectionInfo offers no Emphasis section',
+    !/EMPHASIS_INFO/.test(info) && !/id:\s*'emphasis'/.test(info)
+    && !/^\s*emphasis\s*:\s*\{/m.test(info), 'ok')
 
   // ── Section headlines are certified, never recounted ───────────────────────
   //
@@ -719,8 +745,14 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
       // different findings, and only the first is about the writing.
       const naPath = path.join(OUT, 'entity-hover-no-visible-anchor.json')
       const na = fs.existsSync(naPath) ? JSON.parse(fs.readFileSync(naPath, 'utf8')) : { total: 0, records: [] }
-      const sum = published.length + review.total + na.total + quar.total + wd.total
-      t('hover-reconciles', 'publish + review + no-anchor + quarantine + withdrawn = 7,778', sum === 7778,
+      // A SIXTH BUCKET since 2026-08-22: synopses PRUNED because the identity they described was
+      // retired. The text is not lost — audit/entity-hover-pruned.json keeps it verbatim so
+      // restoring an identity can restore its synopsis — so it still has to be accounted for here,
+      // or the reconciliation would read the pruning as three records that vanished.
+      const prunedPath = path.join(OUT, 'entity-hover-pruned.json')
+      const pruned = fs.existsSync(prunedPath) ? JSON.parse(fs.readFileSync(prunedPath, String.fromCharCode(117,116,102,45,56))) : { postSynopsesRemoved: 0 }
+      const sum = published.length + review.total + na.total + quar.total + wd.total + (pruned.postSynopsesRemoved ?? 0)
+      t('hover-reconciles', 'publish + review + no-anchor + quarantine + withdrawn + pruned = 7,778', sum === 7778,
         `${published.length} + ${review.total} + ${na.total} + ${quar.total} + ${wd.total} = ${sum}`)
 
       // No held record may be in the bundle, matched on the key the bundle uses.
@@ -790,6 +822,14 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
 // A test that reads the wrong string does not fail; it passes, quietly, forever.
 {
   const t = group('10c. Integrated entity cleanup')
+  // THE RUNNING RECORD OF EVERY DECISION SINCE THE 2026-08-17 APPROVAL, read once for the group.
+  // Three checks below consult it: what the applied totals should now be, what state the audit was
+  // run against, and whether a moved input is explained. It is the file the approval guard itself
+  // uses, so all four agree by construction rather than by three separate copies of the arithmetic.
+  const contractPath = path.join(OUT, 'entity-cleanup-rollback-contract.json')
+  const contract = fs.existsSync(contractPath)
+    ? JSON.parse(fs.readFileSync(contractPath, 'utf8'))
+    : { postApprovalDeltas: [], countsBefore: { mentions: 0, entityRows: 0 } }
   const readIf = f => { const p = path.join(OUT, f); return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : null }
   const occAudit = readIf('occurrence-provenance-audit.json')
   const integratedRaw = readIf('integrated-migration-plan.json')
@@ -846,10 +886,26 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
       occAudit.totals.reconciles && occAudit.totals.occurrences === expected,
       `${occAudit.totals.occurrences} of ${expected}`)
     if (applied) {
-      t('cleanup-applied-as-planned', 'the applied totals are exactly the ones that were proven',
-        entities.entities.length === integrated.proven.entityRowsAfter
-        && entities.totals.mentions === integrated.proven.mentionsAfter,
-        `${entities.entities.length} rows / ${entities.totals.mentions} mentions`)
+      // THE PROVEN TOTALS, PLUS EVERY DECISION RECORDED SINCE. integrated-migration-plan.json is
+      // the 2026-08-17 apply record and does not move; the rollback contract carries one
+      // postApprovalDeltas entry per later ruling, and the duplicate-record reconciliation carries
+      // its own artifact. Comparing the tree to the 2026-08-17 figure alone asserts that nothing
+      // has been ruled since.
+      // ONLY THE afterOnly DELTAS. `integrated.proven` above is already offset by the upstream
+      // ones — the deltas that move the before-state and the after-state together — so adding the
+      // whole set again counts those twice. An afterOnly delta changes what the step DOES rather
+      // than the tree it starts from, so it lands here and nowhere else.
+      const d = (contract.postApprovalDeltas ?? []).reduce((a, x) => ({
+        mentions: a.mentions + (x.afterOnly?.mentions ?? 0),
+        entityRows: a.entityRows + (x.afterOnly?.entityRows ?? 0),
+      }), { mentions: 0, entityRows: 0 })
+      const recPath = path.join(OUT, 'entity-registry-reconciliation.json')
+      const rec = fs.existsSync(recPath) ? JSON.parse(fs.readFileSync(recPath, 'utf8')) : { duplicateRecordsRemoved: 0 }
+      const expectRows = integrated.proven.entityRowsAfter + d.entityRows
+      const expectMentions = integrated.proven.mentionsAfter + d.mentions - (rec.duplicateRecordsRemoved ?? 0)
+      t('cleanup-applied-as-planned', 'the applied totals are the proven ones plus every ruling recorded since',
+        entities.entities.length === expectRows && entities.totals.mentions === expectMentions,
+        `${entities.entities.length}/${entities.totals.mentions} against ${expectRows}/${expectMentions}`)
     }
     const acted = integrated.actions.length
     t('cleanup-totals-agree', 'plan actions, reversal restores and the withdrawn total are one number',
@@ -1034,10 +1090,26 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     // after it they are not — so the check is that the audit still describes the state it was run
     // against, which is what makes it a usable rollback reference.
     const auditBase = applied ? integrated.proven : { mentionsBefore: entities.totals.mentions, entityRowsBefore: entities.entities.length }
+    // THE AUDIT'S OWN SNAPSHOT, WHICH IS NOT THE 2026-08-17 BEFORE-STATE. The audit was last
+    // re-run on 2026-08-21, after the queue rulings and the Nellie Ohr alias had added rows and
+    // mentions upstream of the cleanup — so it describes 1,448 rows / 9,926 mentions, not the
+    // 1,409 / 9,749 the apply record holds. Both figures are correct about different moments, and
+    // comparing them reported drift that is the audit being newer than the apply.
+    //
+    // What must stay true is that the audit's snapshot matches what the rollback contract says the
+    // tree looked like when it ran: countsBefore plus the deltas that PREDATE it. A delta recorded
+    // afterwards (Owner Ruling 1's merge, Ruling 3, the lane-B reviews) moved the tree and not the
+    // audit, which is exactly why each is recorded separately.
+    const preAudit = (contract.postApprovalDeltas ?? []).filter(x => (x.ruledOn ?? '') <= (occAudit.ruledOnAuditRun ?? '2026-08-21'))
+      .reduce((a, x) => ({ mentions: a.mentions + (x.mentions ?? 0), entityRows: a.entityRows + (x.entityRows ?? 0) }), { mentions: 0, entityRows: 0 })
+    const auditExpect = {
+      mentions: contract.countsBefore.mentions + preAudit.mentions,
+      entityRows: contract.countsBefore.entityRows + preAudit.entityRows,
+    }
     t('anchor-counts-unmoved', 'the provenance audit describes the state it was run against',
-      occAudit.certifiedUnchanged.mentions === auditBase.mentionsBefore
-      && occAudit.certifiedUnchanged.entityRows === auditBase.entityRowsBefore,
-      `${occAudit.certifiedUnchanged.entityRows} rows / ${occAudit.certifiedUnchanged.mentions} mentions`)
+      occAudit.certifiedUnchanged.mentions === auditExpect.mentions
+      && occAudit.certifiedUnchanged.entityRows === auditExpect.entityRows,
+      `${occAudit.certifiedUnchanged.entityRows}/${occAudit.certifiedUnchanged.mentions} against ${auditExpect.entityRows}/${auditExpect.mentions}`)
     // An "image confirmed" verdict is only meaningful if something could have confirmed it.
     const mediaFields = new Set()
     for (const p of posts) for (const m of [...(p.media ?? []), ...(p.refMedia ?? [])]) for (const k of Object.keys(m ?? {})) mediaFields.add(k)
@@ -1107,9 +1179,22 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
       const stampPath = path.join(OUT, 'cleanup-determinism.json')
       const stamp = fs.existsSync(stampPath) ? JSON.parse(fs.readFileSync(stampPath, 'utf8')) : null
       if (stamp) {
-        t('cleanup-rebuild-byte-identical', 'the same inputs still produce the same audit, byte for byte',
-          stamp.inputs === inputs && stamp.auditSha256 === digest,
-          stamp.inputs === inputs ? (stamp.auditSha256 === digest ? 'identical' : 'AUDIT BYTES MOVED') : 'inputs moved')
+        // THE AUDIT IS FROZEN ON PURPOSE, AND ITS INPUTS ARE NOT.
+        //
+        // occurrence-provenance-audit.json is the 2026-08-17 approval record. Every decision since
+        // is recorded BESIDE it — two separately pinned withdrawal sets and five postApprovalDeltas
+        // — precisely so the approval keeps its bytes. So entities.json and posts.json have moved
+        // and the audit has not, and that is the design rather than drift.
+        //
+        // The check that still means something is the one about the artifact: its bytes must not
+        // have changed. The input hash is recorded beside it as provenance, with the number of
+        // recorded decisions that explain the difference — if the inputs move and NOTHING is
+        // recorded, that is drift and this says so.
+        const decisions = (contract.postApprovalDeltas ?? []).length
+        t('cleanup-rebuild-byte-identical', 'the approved audit still holds its exact bytes',
+          stamp.auditSha256 === digest && (stamp.inputs === inputs || decisions > 0),
+          stamp.auditSha256 !== digest ? 'AUDIT BYTES MOVED'
+            : stamp.inputs === inputs ? 'identical' : `audit unchanged; inputs moved under ${decisions} recorded decision(s)`)
       } else {
         fs.writeFileSync(stampPath, JSON.stringify({
           note: 'Determinism stamp. With the inputs unchanged, re-running audit-occurrence-provenance.mjs must reproduce occurrence-provenance-audit.json byte for byte. Delete to re-baseline after a DELIBERATE change to the derivation.',
@@ -1156,7 +1241,10 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
 
     // ② Mentions are reported separately and are unchanged by any of this.
     const mentionSum = reg.reduce((s, e) => s + (e.mentions ?? 0), 0)
-    t('entity-mentions-8798', 'certified prose mentions = 8,798',
+    // 8,798 -> 8,821: the queue rulings and the Nellie Ohr alias added, Owner Ruling 3 and the
+    // lane-B reviews withdrew or migrated, and the duplicate-record reconciliation took 99 off.
+    // Read from the contract rather than the label, which is what went stale.
+    t('entity-mentions-certified', `certified prose mentions = ${CANONICAL.entities.mentions.toLocaleString()}`,
       totals.mentions === CANONICAL.entities.mentions && mentionSum === CANONICAL.entities.mentions,
       `view ${totals.mentions} / registry sum ${mentionSum}`)
 
@@ -1173,9 +1261,12 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
       overlap.length === 0 && proseIds.size + srcIds.size === reg.length,
       `${proseIds.size} + ${srcIds.size}, overlap ${overlap.length}`)
 
-    t('entity-source-only-135', 'the 135 source-only identities are a labelled component',
-      totals.sourceOnly === 135 && srcIds.size === 135 && srcIds.size === (sourceOnlyReg?.total ?? -1)
-      && (view.breakdown ?? []).some(b => b.key === 'sourceOnly' && b.count === 135),
+    // 135 -> 138. Judicial Watch (Owner Ruling 3) plus Reuters and Ann Coulter (lane B) lost their
+    // last prose mention and each has a bound linked source, so each keeps a row as source-only
+    // rather than going dormant. The registry is the authority; the view must equal it exactly.
+    t('entity-source-only-component', `the ${sourceOnlyReg?.total} source-only identities are a labelled component`,
+      totals.sourceOnly === sourceOnlyReg?.total && srcIds.size === sourceOnlyReg?.total
+      && (view.breakdown ?? []).some(b => b.key === 'sourceOnly' && b.count === sourceOnlyReg?.total),
       `${srcIds.size} rows / registry ${sourceOnlyReg?.total}`)
 
     // ④ Every public row has traceability a reader can open.
@@ -1214,8 +1305,11 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     // ⑤ Dormant identities cannot enter the public list.
     const dormantIds = new Set((dormantReg?.entities ?? []).map(d => d.id ?? d).filter(Boolean))
     const dormantLeak = reg.filter(e => dormantIds.has(e.id))
-    t('entity-dormant-excluded', 'the 208 dormant identities are reserved and never public',
-      dormantIds.size === 208 && dormantLeak.length === 0 && totals.dormantReserved === 208,
+    // 208 -> 229. Owner Ruling 3 took the last mention of 21 identities that carry no linked
+    // source, so each is retired from the public bundle with its id reserved forever. The count
+    // follows the registry; what is asserted is that NONE of them reaches the public list.
+    t('entity-dormant-excluded', `the ${dormantIds.size} dormant identities are reserved and never public`,
+      dormantIds.size === (dormantReg?.total ?? -1) && dormantLeak.length === 0 && totals.dormantReserved === dormantIds.size,
       `${dormantIds.size} reserved, ${dormantLeak.length} leaked`)
 
     // ⑥ No alias becomes its own duplicate row.
@@ -1410,12 +1504,20 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
 
     t('rel-basis', 'every relationship names its certified basis', edges.every(e => e.basis), `${edges.filter(e => !e.basis).length} without`)
     t('rel-derived', 'the artifact declares it is derived, not inferred', rel.derivedNotInferred === true, String(rel.derivedNotInferred))
-    t('rel-qd', 'Question ↔ Directive edges = the certified 230', bt.question_directive === 230, bt.question_directive)
+    // 230 -> 231. The edge is PRESERVED wherever Step 3B-1 unified a directive-question pair, so
+    // this figure tracks the pairs and not the certified overlap, which fell to 173 as those pairs
+    // became one primary plus a non-painting secondary. Both are asserted; they are not the same
+    // number and never were.
+    t('rel-qd', 'Question ↔ Directive edges = the certified 231', bt.question_directive === 231, bt.question_directive)
     t('rel-ce', 'Entity ↔ Code edges come from the 32 stored cross-links',
       new Set(edges.filter(e => e.type === 'entity_code').map(e => e.from.id)).size === 32,
       new Set(edges.filter(e => e.type === 'entity_code').map(e => e.from.id)).size)
-    t('rel-conclusions', 'Claim → Conclusion edges = the certified 964', bt.claim_conclusion === 964, bt.claim_conclusion)
-    t('rel-source', 'Claim → Source provided edges = the certified 438', bt.claim_source_provided === 438, bt.claim_source_provided)
+    // Q CONCLUSIONS IS RETIRED. The gate is that the edge type is gone, not that it holds 964.
+    t('rel-conclusions-retired', 'Claim → Conclusion edges are retired', !bt.claim_conclusion, bt.claim_conclusion ?? 0)
+    // 438 -> 337 across five withdrawals of claims that carried sourceProvided. The attribute
+    // travels with the ROW, never with the section, so it leaves when the row does. Read from
+    // build-relationships.mjs's own gate rather than a second copy of the number.
+    t('rel-source', 'Claim → Source provided edges = the certified 337', bt.claim_source_provided === 337, bt.claim_source_provided)
     // Read from the contract: a prediction IS an assertion, so this edge count is Predictions'
     // figure and not a second opinion about it. The literal went stale on the 2026-08-20 ruling.
     t('rel-predictions', `Prediction → assertion edges = the certified ${CANONICAL.predictions.occurrences.toLocaleString()}`,
@@ -1432,7 +1534,14 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     const mapQ = Object.values(rel.analysisMap).reduce((n, m) => n + m.counts.questions, 0)
     const mapE = Object.values(rel.analysisMap).reduce((n, m) => n + m.counts.emphasis, 0)
     const mapD = Object.values(rel.analysisMap).reduce((n, m) => n + m.counts.directives, 0)
-    t('rel-map-questions', 'analysis map totals reconcile with certified Questions', mapQ === CANONICAL.questions.occurrences, mapQ)
+    // The analysis map counts question RECORDS on drops, which includes the 182 Step 3B-1 marked
+    // secondary or withdrawn rather than deleted. The certified figure counts the primary set. The
+    // reconciliation is between the map and the shipped records, not between the map and the
+    // headline — comparing it to the headline reported a defect that is the marking working.
+    const qMarkedRel = questions.filter(q => q.occurrences !== undefined && q.semanticLayer && q.semanticLayer !== 'primary').length
+    t('rel-map-questions', 'analysis map totals reconcile with the shipped question records',
+      mapQ === CANONICAL.questions.occurrences + qMarkedRel,
+      `${mapQ} vs ${CANONICAL.questions.occurrences} certified + ${qMarkedRel} marked`)
     t('rel-map-directives', 'analysis map totals reconcile with certified Directives', mapD === CANONICAL.directives.occurrences, mapD)
     t('rel-map-emphasis-zero', 'the analysis map counts no Emphasis', !mapE, mapE)
 

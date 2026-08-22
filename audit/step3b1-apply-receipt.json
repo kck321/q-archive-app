@@ -5,7 +5,7 @@
  "actionsApplied": 774,
  "actionsHeld": 0,
  "heldActionIds": [],
- "seedVersion": 87,
+ "seedVersion": 88,
  "outputs": {
   "public/data/posts.json": "343ed39164a80826c3890cc63bfa57d3da2986f3837045487d8276f7c309650a",
   "public/data/questions.json": "1a3787f0dceada2bbfe9c4dc9e75670e187312051cd0f5a11b2c888a18cdf253",

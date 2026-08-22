@@ -24,7 +24,6 @@ const SECTIONS = [
   { key: 'sources', label: 'Sources' },
   { key: 'themes', label: 'Themes' },
   { key: 'codes', label: 'Codes' },
-  { key: 'emphasis', label: 'Emphasis' },
   { key: 'unresolved', label: 'Unresolved' },
   { key: 'editorial', label: 'Editorial' },
 ]
@@ -42,7 +41,6 @@ const SECTION_STYLE: Record<string, string> = {
   sources: 'text-sky-300 border-sky-700',
   themes: 'text-teal-300 border-teal-700',
   codes: 'text-rose-300 border-rose-700',
-  emphasis: 'text-pink-300 border-pink-700',
   unresolved: 'text-blue-300 border-blue-600',
   editorial: 'text-gray-400 border-gray-600 border-dashed',
 }
@@ -72,7 +70,6 @@ export default function Search() {
     family: params.get('family') || undefined,
     subtype: params.get('subtype') || undefined,
     codeType: params.get('codetype') || undefined,
-    emphasisType: params.get('emph') || undefined,
     conclusion: params.get('conclusion') === '1',
     checkable: params.get('checkable') === '1',
     sourceProvided: params.get('source') === '1',
@@ -208,7 +205,7 @@ export default function Search() {
       {!busy && !result && (
         <p className="mt-6 text-sm text-gray-500">
           Search the drops and every certified layer at once — Q’s wording, questions, directives,
-          claims, references, entities and their aliases, linked sources, themes, codes, emphasis, and the items
+          claims, references, entities and their aliases, linked sources, themes, codes, and the items
           deliberately left unresolved.
         </p>
       )}

@@ -107,7 +107,7 @@ export const CANONICAL = {
   // count falls by the duplicates while the text painted goes UP. The other four withdrawals are
   // three fragments of the source-owned paragraph on #4310 and one twelve-character tail on #4801
   // reading 'Biden, ...." ' , which asserted nothing.
-  claims: { occurrences: 8676, distinct: 6814, posts: 3086 },
+  claims: { occurrences: 8676, distinct: 6795, posts: 3056 },
   // 630 -> 595: -73 technical nonpredictions, -56 arguable rows withdrawn to the review
   // backlog, +66 unique moves from Claims, +28 high-confidence predictions the extractor
   // missed. posts 520 -> 490. The 91 withdrawn/held rows are NOT deleted — they sit in
@@ -117,7 +117,7 @@ export const CANONICAL = {
   // that drop its first certified prediction.
   // +4 on 2026-08-21 (r15): "MOVIE 1 [Full]: The 'START'" and "MOVIE 3 - TBA" on #1928 and #1929.
   // posts unchanged - both drops already carried certified predictions.
-  predictions: { occurrences: 843, posts: 674 },
+  predictions: { occurrences: 843, posts: 672 },
   evidence: { occurrences: 6590, posts: 3883 },
   // canonical 1,240 -> 1,235: Owner Ruling 1 merged five duplicate identities. No occurrence moved.
   entities: {
@@ -205,7 +205,19 @@ export const CANONICAL = {
     // classified as a Q-authored named entity. Every one is reversible from the ruling artifact,
     // which records the original identity, post text, adjudication letter, reason and the exact
     // restoration. The 9 F rows of the same family are deliberately left unresolved.
-    mentions: 8948,
+  // 8,948 -> 8,924 -> 8,920: the lane-B family 4 and 5 reviews moved 28 occurrences whose only
+  // trace on a drop is a URL slug, a hostname or a social handle. 22 MIGRATE to linked sources
+  // rather than being deleted, so the reader still sees that Q cited the publisher.
+  // 8,920 -> 8,821: -99, and NOT a withdrawal of anything. apply-step3b1.mjs collapsed 99
+  // DUPLICATE entity records — several records over the SAME characters for the SAME identity,
+  // which is one occurrence recorded more than once and not a repeat Q wrote. #111 carried
+  // "Huma" five times over one word; #1318 carried "Sessions" six times over one. The records
+  // went when the merge ran and the registry did not follow, so it counted 8,920 while the drops
+  // rendered 8,821. Invariant 12 exists for exactly that gap and had been failing at 99 since the
+  // merges landed, unseen only because audit-cross-section.mjs could not run at all while
+  // Emphasis was half-retired. reconcile-entity-registry.mjs applies the exact decrements the
+  // adjudication recorded and refuses unless the two totals then agree.
+    mentions: 8821,
     /** How it is composed. The core figure is the section's history, not its headline. */
     // tailEntities is what the tail adjudication produced (1,239); one of them, Ray Chandler,
     // now ships merged into Rachel Chandler, so 1,238 tail rows appear in the artifact.
@@ -214,7 +226,9 @@ export const CANONICAL = {
     // mentions; the tail loses 246 rows and 918 mentions.
     // +8 core, +58 tail from the queue rulings; the remaining 105 land on owner-ruling rows.
     // +6 tail: Nellie Ohr is an adjudicated-tail row.
-    coreEntities: 93, coreRegistryMentions: 5336, tailEntities: 993, tailMentions: 2923,
+    // Re-measured 2026-08-22 after the lane-B reviews and the duplicate-record reconciliation.
+    // The three components add to the headline: 5236 core + 2870 tail + 715 owner-ruling rows.
+    coreEntities: 93, coreRegistryMentions: 5236, tailEntities: 967, tailMentions: 2870,
   },
   // 2,393 detected + 2 owner rulings ("Ascension." -> Religion & Spirituality, #4963 and #4966).
   // The rulings live in audit/themes-owner-rulings.json and are merged by apply-themes.mjs, so
@@ -436,7 +450,7 @@ export const KNOWN_DEBT = {
   // postsAffected stays 235: the repair removed six OCCURRENCES but no drop lost its last one —
   // #2211, #4630 and #4632 still carry other over-extended spans. Occurrence count and post count
   // move independently, which is why both are recorded.
-  postsAffected: 235,
+  postsAffected: 234,
   // RECOMPUTED 2026-08-13 after the quote-boundary fix, not bumped to satisfy a gate.
   //
   // sourceLines() treated a line ENDING in a closing quotation mark as still inside the quote,
@@ -482,7 +496,23 @@ export const KNOWN_DEBT = {
   // fell for the right reason: on each affected drop the truncated head and its orphaned tail were
   // BOTH counted as over-extensions, and one repaired span replaces the pair. 13 rows left the set,
   // 7 entered it, net -6. Nothing about the detector changed.
-  baseline: { questions: 100, directives: 129, claims: 593, emphasis: 0 },
+  // 2026-08-22, the lane-B reviews: 37 occurrences LEAVE the debt set and 9 enter it, net -28, and
+  // every one of the 46 is a span an adjudication moved. The baseline follows the set, which is the
+  // only reason it is ever allowed to move.
+  //
+  //   -37  spans withdrawn or re-spanned off quoted material. #19's eight-sentence blob, #1841's
+  //        duplicate of two already-certified quoted sentences, #2211's two pasted biographies,
+  //        #4630's and #4632's abbreviation-split heads, #25's directive line — all gone or trimmed
+  //        back to what they actually cover.
+  //    +9  spans a repair moved ONTO quoted material, which is the honest cost of the repair and
+  //        not a new defect. #2177 trimmed to items (1)-(3) of a pasted prohibition; #2939 and
+  //        #2973 re-spanned onto "Criminal aliens." inside a quoted passage; #25 trimmed to Q's
+  //        two-sentence commentary, which sourceLines() reads as quoted because the line above it
+  //        opens a quotation; #2971 trimmed to the quoted study line it opens on.
+  //
+  // postsAffected 235 -> 234: one drop lost its last over-extended span. Occurrence count and post
+  // count move independently, which is why both are recorded.
+  baseline: { questions: 99, directives: 128, claims: 564, emphasis: 0 },
   // 102 -> 103 and 123 -> 124 on 2026-08-13, ruled BENIGN and documented rather than bumped
   // quietly. Cause: literal-span materialisation. The isolation test now measures the literal
   // form of a question rather than its certified normalised text, and a longer span is
@@ -564,7 +594,7 @@ export const APPLY_ORDER = [
   'audit-entities.mjs', 'adjudicate-entities-tail.mjs', 'adjudicate-entities-other.mjs',
   'adjudicate-entities-lowconf.mjs', 'resolve-entity-context.mjs', 'apply-entities.mjs',
   'audit-themes.mjs', 'apply-themes.mjs', 'audit-codes.mjs', 'adjudicate-codes.mjs',
-  'apply-codes.mjs', 'retire-sections.mjs', 'build-resolution-queue.mjs',
+  'apply-codes.mjs', 'build-resolution-queue.mjs',
   // Last: relationships join every section, so every section has to exist first.
   // The literal-span materialisers must run after every apply that rewrites their inputs, or the
   // next export silently reverts them — the same failure that reverted Questions to 6,299 and
@@ -576,6 +606,17 @@ export const APPLY_ORDER = [
   // bundle was reproducible only by hand for one deploy, which is to say it was not reproducible.
   // Declared here so the chain-complete invariant fails if it is ever dropped again.
   'apply-entity-cleanup.mjs',
+  // STEP 3B-1, then the two steps that finish the entity state it moved. apply-step3b1.mjs collapses
+  // duplicate entity records; reconcile-entity-registry.mjs brings entities.json down to match them;
+  // build-entity-public-view.mjs derives the public rows from the result. The view used to sit
+  // BEFORE apply-step3b1.mjs and was therefore built from a registry 99 mentions ahead of the
+  // records it described.
+  'apply-step3b1.mjs', 'reconcile-entity-registry.mjs', 'build-entity-public-view.mjs',
+  // RETIRED SECTIONS ARE STRIPPED LAST AMONG THE WRITERS. apply-claims.mjs rebuilds
+  // impliedConclusions and verificationHooks from audit/claims-final.json on every run, so this has
+  // to follow the last step that can write them — which is apply-step3b1.mjs, not apply-codes.mjs
+  // where this list had it. Declared out of order, the chain-order invariant fails, and it did.
+  'retire-sections.mjs',
   'build-relationships.mjs', 'build-search-index.mjs',
 ]
 
