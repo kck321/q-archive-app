@@ -6485,3 +6485,54 @@ applied: all 29 C/D/E rows resolve to withdrawing an entity occurrence, whose on
 occurrence-provenance audit that feeds the owner-approved 2026-08-17 migration.
 
 **State:** queue 945 → **207** (A 3 · B 159 · C 45), all 17 gates pass, seed 87, **not deployed**.
+
+---
+
+## 2026-08-22 — Step 3B reconciliation closed, seed 88 deployed
+
+**Request.** Owner Ruling 3 (approve the 29 reviewed C/D/E occurrence withdrawals), complete all
+159 human-semantic reviews family by family, rebuild the conflict queue from canonical state,
+prove the full production chain twice from the live Firestore export, re-certify, deploy and
+verify production.
+
+**Result.** Actionable conflicts 0. Queue 945 → 50, every surviving row carrying an explicit
+reviewed disposition. Full chain green twice from the live export, second run byte-identical.
+222/222 invariants. Deployed seed 88 to qdrops.app; 36/36 live assertions.
+
+    questions 6,321 · directives 2,940 · claims 8,676 · predictions 843
+    entities 1,214 rows / 8,821 mentions · relationships 4,121 · search index 31,572
+
+**Owner Ruling 3** applied through the normal migration path without weakening the snapshot
+guard: a separately sha-pinned artifact read BESIDE the approved 2026-08-17 audit, plus a fourth
+postApprovalDeltas entry using a new `afterOnly` shape — the first delta that changes what the
+step DOES rather than the tree it starts from. 27 named-entity occurrences through
+apply-entity-cleanup, 2 themeAnchors through apply-step3b1 under a new
+`WITHDRAW_UNLOCATED_RECORD` kind. The 9 F rows untouched.
+
+**The 159**, in six families. 52 multi-line spans (20 keep, 23 repair, 9 withdraw), 27 within-line
+crossings (9/6/12), 19 same-category overlaps — one defect fifteen times, an abbreviation splitting
+one sentence into a head and a tail that both got certified — 62 unlocated rows (35 were Q's own
+spelling and needed an alias, 23 were URL/handle-only and migrated to Sources, 1 wrong identity),
+19 structural, and a reporter that EXITS NON-ZERO if any surviving row lacks a disposition.
+
+**Defects found and fixed on the way**, none of them introduced by this pass:
+
+- B2b's three actions silently did nothing in a single chain run — the occurrence index is bound
+  once, before any edit, and B2b targets spans B2's trims create. Claims read 8,724 from a clean
+  chain against 8,721 committed. Action sets are now applied in WAVES against a rebound index.
+- The entity registry had drifted 99 mentions from the records since Step 3B-1 collapsed duplicate
+  entity records. Invariant 12 exists for exactly that and had been failing unseen.
+- audit-cross-section.mjs could not RUN — seven checks still read a retired CANONICAL.emphasis, so
+  the whole suite died on a TypeError and 42 things went unmeasured for two seeds.
+- 26 entity-hover synopses were left pointing at identities Ruling 3 retired.
+- The Emphasis retirement had stopped at the data: EMPHASIS_INFO, the Method page block and a
+  Search filter tab all survived.
+- Deploy-after-validate was IMPOSSIBLE. The step3b1 idempotence stamp hashed raw posts.json bytes,
+  and a Firestore dump orders postAnalysis keys differently from a rebuild — same values, 1,365
+  drops, one hash apart. It hashes content now.
+- Five browser gates asserting a past two owner rulings had replaced, and a glossary case-variant
+  collision where one of two spellings could never match.
+
+**Left for the owner:** `audit/OWNER-REVIEW.csv`, 18 rows. Two genuinely open (whether a DEMONYM
+is a mention of the country), nine owner-directed F rows, three quarantined refusals, four applied
+decisions on drops with existing rulings.
