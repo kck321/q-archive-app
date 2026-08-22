@@ -7739,6 +7739,33 @@
      "confidence": "MEDIUM"
     }
    }
+  },
+  {
+   "actionId": "B2C-DROP-1253-claims-0-262",
+   "from": "1253|claims|0|262",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "sourceProvided": true,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "B2C-TRIM-1237-claims-89-411",
+   "rekeyed": "claimMeta",
+   "from": "the ikhwan muslim brotherhood must understand that their work in america is a kind of grand jihad in eliminating and destroying the western civilization from within and sabotaging its miserable house by their hands and the hands of the believers https clarionproject org muslim brotherhood explanatory memorandum",
+   "to": "the ikhwan muslim brotherhood must understand that their work in america is a kind of grand jihad in eliminating and destroying the western civilization from within and sabotaging its miserable house by their hands and the hands of the believers"
+  },
+  {
+   "actionId": "B2C-TRIM-1237-claims-89-411",
+   "from": "1237|claims|89|411",
+   "kind": "claims",
+   "metadata": {}
   }
  ]
 }

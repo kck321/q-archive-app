@@ -2,27 +2,27 @@
  "note": "Conflict queue re-derived from the CURRENT bundle. Not the old CSV minus anything.",
  "measuredFrom": "audit/occurrence-ledger-dryrun.json",
  "originalRows": 945,
- "rebuiltRows": 222,
- "netChange": -723,
+ "rebuiltRows": 220,
+ "netChange": -725,
  "byReason": {
   "UNLOCATED_SPAN": 119,
-  "BOUNDARY_CROSSING": 84,
+  "BOUNDARY_CROSSING": 82,
   "SAME_CATEGORY_PARTIAL_OVERLAP": 19
  },
  "byKind": {
   "namedEntities": 117,
-  "claims": 88,
+  "claims": 86,
   "themeAnchors": 8,
   "questions": 5,
   "directives": 4
  },
- "distinctHeldKeys": 202,
- "distinctPosts": 175,
+ "distinctHeldKeys": 200,
+ "distinctPosts": 174,
  "resolvedSince": {
-  "count": 727,
+  "count": 729,
   "byFamily": {
    "UNLOCATED_SPAN": 397,
-   "BOUNDARY_CROSSING": 158,
+   "BOUNDARY_CROSSING": 160,
    "DUPLICATE_KEY_CONFLICTING_METADATA": 42
   }
  },
@@ -136,24 +136,6 @@
    "kind": "claims",
    "detail": "touches 5 sentences",
    "certifiedValue": "They think you are stupid. Puppets w/o power. They want your guns. Why? No power left."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::1237|claims|89|411::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "1237|claims|89|411",
-   "postNum": 1237,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "The Ikhwan [Muslim Brotherhood] must understand that their work in America is a kind of grand jihad in eliminating and destroying the Western civilization from within and ‘sabotaging’ its miserable house by their hands and the hands of the believers…”\nhttps:// clarionproject.org/muslim_brotherhood_explanatory_memorandum/"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::1253|claims|0|262::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "1253|claims|0|262",
-   "postNum": 1253,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "https:// www.grassley.senate.gov/news/news-releases/grassley-refers-planned-parenthood-fetal-tissue-procurement-organizations-fbi\nhttp:// www.foxnews.com/politics/2017/12/07/planned-parenthood-under-investigation-by-justice-department-over-sale-fetal-tissue.html"
   },
   {
    "conflictId": "BOUNDARY_CROSSING::13|claims|59|99::0",

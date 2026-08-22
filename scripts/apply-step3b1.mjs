@@ -104,6 +104,7 @@ if (fs.existsSync(dispPath)) {
 const EXTRA_ACTION_SETS = [
   { file: 'step3b1-b2-actions.jsonl',  sha256: 'c9c6c43a08291d2fed207f9ce573ecf526ed33751336c0bd86595fb647e53f00', label: 'B2 boundary repairs' },
   { file: 'step3b1-b2b-actions.jsonl', sha256: '33f26fa2d5c34c86e5e57681a9ba7613bb938e2f6fe1993e35f433fd480be6ce', label: 'B2b collisions the trims uncovered' },
+  { file: 'step3b1-b2c-actions.jsonl', sha256: '34fb5fedfa40a0e3ed8c1b2f6bef3ff2448467931ab72dc03db6e5cb03058678', label: 'B2c spaced-protocol link lines' },
   { file: 'step3b1-b3-actions.jsonl',  sha256: 'fc2f9f5a571b515fc9624f417e2abf6610e7f5a2cc8e8e0cab81a42f77df88f7', label: 'B3 over-extended segmentation recoveries' },
 ]
 let extraCount = 0

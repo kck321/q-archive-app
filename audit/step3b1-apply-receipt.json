@@ -2,7 +2,7 @@
  "note": "Step 3B-1 apply receipt. Measured from the bundle, not from the plan.",
  "step": "3B-1",
  "planSha256": "373ca06b1416b6707a111f2c3da8e751472c551f739500f76cdcc764d3128058",
- "actionsApplied": 3,
+ "actionsApplied": 2,
  "actionsHeld": 2,
  "heldActionIds": [
   "A-DUP-2971-questions-561-799",
@@ -10,10 +10,10 @@
  ],
  "seedVersion": 87,
  "outputs": {
-  "public/data/posts.json": "150ef1c36913c1c5e39a403bdcebb3d95947e09967d624ec422770d1e04ed952",
+  "public/data/posts.json": "38c638034937fae8ee64dd3c63fb52f8ebcd733126445a912e292c9b409a9bd0",
   "public/data/questions.json": "540518803304a7a21226a7ae135201af4ead9279ed67dc91f9237fe1c7b1bff6",
-  "public/data/semantics.json": "94a6d4a17ff1d18eacae971d43ba7a5178b6db2dc518ee7ee6c78144933c6f32",
-  "audit/occurrence-ledger.json": "3692d5c7a741d60c207b00bf848e279d0d3bb1ce6774b8356d48f506d017c667"
+  "public/data/semantics.json": "3b769807f16e826248d101ea682f860f7ea7837998c2cd65b5f4dd8e5bf2d690",
+  "audit/occurrence-ledger.json": "e5c9dba0092c7dc288cd6d041e42fa94a048cd020fe9fd93ee27a4a8268ca0f4"
  },
  "crossTab": [
   {
@@ -23,9 +23,9 @@
    "before": 8912,
    "projectedDelta": -92,
    "projectedAfter": 8820,
-   "adjudicatedHeldDelta": -98,
-   "target": 8722,
-   "measuredAfter": 8722,
+   "adjudicatedHeldDelta": -99,
+   "target": 8721,
+   "measuredAfter": 8721,
    "headlineEligible": true,
    "matches": true,
    "measuredFrom": "audit/occurrence-ledger.json"
@@ -287,7 +287,7 @@
   "multiPrimarySentences": 0,
   "sameCategoryPrimaryOverlaps": 19,
   "supersededPartialPrimarySpans": 179,
-  "boundaryCrossingRecords": 84,
+  "boundaryCrossingRecords": 82,
   "conflictQueueRows": 945
  },
  "gates": [
@@ -299,7 +299,7 @@
   {
    "gate": "every automatic action materialised",
    "pass": true,
-   "detail": "685/685 actions, 689/686 overlay rows  (530 planned + 8 adjudicated held + 147 B2/B2b; #34 contributes two rows, one per clause)"
+   "detail": "690/690 actions, 691/691 overlay rows  (530 planned + 8 adjudicated held + 152 B2/B2b; #34 contributes two rows, one per clause)"
   },
   {
    "gate": "no held action appears in the applied overlay",
@@ -314,17 +314,17 @@
   {
    "gate": "zero duplicate action consumption",
    "pass": true,
-   "detail": "1059 distinct old keys across 685 actions"
+   "detail": "1064 distinct old keys across 690 actions"
   },
   {
    "gate": "zero runtime substring mismatch in the overlay",
    "pass": true,
-   "detail": "689 rows verified against runtimeText()"
+   "detail": "691 rows verified against runtimeText()"
   },
   {
    "gate": "zero runtime substring mismatch in the ledger",
    "pass": true,
-   "detail": "30,874 records verified"
+   "detail": "30,873 records verified"
   },
   {
    "gate": "zero same-sentence multi-primary inside the applied scope",
@@ -349,7 +349,7 @@
   {
    "gate": "metadata transfer recorded for every withdrawn record",
    "pass": true,
-   "detail": "793 transfers, 291 carrying certified attributes, 59 meta keys re-pointed to a widened span"
+   "detail": "796 transfers, 292 carrying certified attributes, 60 meta keys re-pointed to a widened span"
   },
   {
    "gate": "question_directive relationship preserved on every unified pair",
@@ -364,12 +364,12 @@
   {
    "gate": "the certified wording and the painted span stay index-aligned",
    "pass": true,
-   "detail": "claims 8722 = claimSpans 8722; predictions 843 = predictionSpans 843; 0 posts out of alignment"
+   "detail": "claims 8721 = claimSpans 8721; predictions 843 = predictionSpans 843; 0 posts out of alignment"
   },
   {
    "gate": "no PLAN action consumed a held-conflict key",
    "pass": true,
-   "detail": "945 rows in the frozen queue, 658 distinct held keys; plan consumed 0, B2/B2b deliberately resolved 144"
+   "detail": "945 rows in the frozen queue, 658 distinct held keys; plan consumed 0, B2/B2b deliberately resolved 149"
   },
   {
    "gate": "the 945-row conflict queue is unchanged",

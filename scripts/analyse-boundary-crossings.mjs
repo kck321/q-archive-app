@@ -43,7 +43,11 @@ const isNonSemanticLine = t => {
   const s = String(t).trim()
   if (!s) return true
   if (POINTER_RE.test(s)) return true
-  const stripUrls = x => x.replace(/\S*https?:\/\/\S+/gi, ' ').replace(/\S*www\.\S+/gi, ' ')
+  // THE BOARD BROKE LONG URLS AFTER THE PROTOCOL, and lib/runtimeText.mjs documents it: a drop
+  // carries "https:// www.nbcnews.com/..." for "https://www.nbcnews.com/...". A \S+ after the
+  // protocol stops at that space, so the spaced form survived the strip and a bare link line read
+  // as prose. #1253 is two spaced links and nothing else, and it sat in the queue because of it.
+  const stripUrls = x => x.replace(/\S*https?:\/\/\s*\S+/gi, ' ').replace(/\S*www\.\S+/gi, ' ')
   if (URL_RE.test(s)) {
     // A link line: nothing but punctuation or a short label sits beside the URL.
     return stripUrls(s).replace(/[\s\[\]()<>.,;:—–-]/g, '').length <= 3

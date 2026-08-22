@@ -44,7 +44,7 @@ const dispositions = fs.existsSync(dispPath) ? readJsonl(dispPath) : []
 // The extra action sets the applier loads — B2's boundary repairs and the B2b collisions those
 // repairs uncovered. Read the same files it reads, so the target is derived from the same source
 // rather than typed to match what was measured.
-const extraSets = ['step3b1-b2-actions.jsonl', 'step3b1-b2b-actions.jsonl']
+const extraSets = ['step3b1-b2-actions.jsonl', 'step3b1-b2b-actions.jsonl', 'step3b1-b2c-actions.jsonl', 'step3b1-b3-actions.jsonl']
   .map(f => path.join(OUT, f)).filter(f => fs.existsSync(f)).flatMap(readJsonl)
 const dispById = new Map(dispositions.map(d => [d.actionId, d]))
 const plan = planRows.map(a => dispById.get(a.actionId) ?? a).concat(extraSets)

@@ -221,7 +221,28 @@ const LANE = {
   QUESTION_LITERAL_SPANS_SENTENCES: 'B', MULTI_LINE_SPAN: 'B', WITHIN_LINE_CROSSING: 'B',
   PARTIAL_OVERLAP_LIVE: 'B',
 }
-for (const r of rows) r.lane = LANE[r.subtype] ?? 'E'
+// A ROW THAT HAS BEEN EXAMINED AND REFUSED IS NOT STILL "DETERMINISTIC".
+//
+// CASE_VARIANT_NOT_REGISTERED maps to lane A because the family AS A FAMILY was mechanically
+// resolvable — 77 of it was, by explicit alias registration. What is left has been through
+// propose-case-variant-repairs.mjs and refused with evidence: the casing appears on drops that do
+// not record the identity, or two candidates compete, or the only match is mid-word. Reporting
+// those as lane A would tell the owner there is deterministic work outstanding when there is none.
+const b1bPath = path.join(OUT, 'step3b1-b1b-proposal.json')
+const b1bGroup = new Map()
+if (fs.existsSync(b1bPath)) {
+  for (const r of (JSON.parse(fs.readFileSync(b1bPath, 'utf8')).rows ?? [])) b1bGroup.set(r.conflictId, r)
+}
+const REFUSED_LANE = { C: 'B', D: 'C', E: 'B' }
+for (const r of rows) {
+  r.lane = LANE[r.subtype] ?? 'E'
+  const examined = b1bGroup.get(r.conflictId)
+  if (r.subtype === 'CASE_VARIANT_NOT_REGISTERED' && examined && examined.group !== 'A' && examined.group !== 'B') {
+    r.lane = REFUSED_LANE[examined.group] ?? 'B'
+    r.subtype = `CASE_VARIANT_REFUSED_${examined.group}_${examined.groupName}`
+    r.refusedBecause = examined.why
+  }
+}
 
 const LANE_NAME = { A: 'A DETERMINISTIC_RESOLUTION', B: 'B HUMAN_SEMANTIC_REVIEW',
   C: 'C STRUCTURAL_DATA_DEFECT', D: 'D CURRENT_STATE_ALREADY_CORRECT', E: 'E OTHER' }

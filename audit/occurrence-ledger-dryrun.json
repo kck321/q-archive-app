@@ -9,10 +9,10 @@
  },
  "totals": {
   "sentences": 30187,
-  "occurrencesKeyed": 30874,
+  "occurrencesKeyed": 30873,
   "duplicateKeys": 56,
   "byKind": {
-   "claims": 8722,
+   "claims": 8721,
    "predictions": 843,
    "directives": 2940,
    "namedEntities": 8759,
@@ -21,12 +21,12 @@
    "context": 1605
   },
   "byRelation": {
-   "EXACT": 20499,
+   "EXACT": 20500,
    "PARTIAL": 10291,
-   "CROSSING": 84
+   "CROSSING": 82
   },
   "unlocated": 119,
-  "crossingSentenceBoundary": 84
+  "crossingSentenceBoundary": 82
  },
  "findings": {
   "partialPrimarySpans": {
@@ -237,42 +237,6 @@
     "They want your guns.",
     "Why?",
     "No power left."
-   ]
-  },
-  {
-   "occurrenceKey": "1237|claims|89|411",
-   "postNum": 1237,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 89,
-   "end": 411,
-   "text": "The Ikhwan [Muslim Brotherhood] must understand that their work in America is a kind of grand jihad in eliminating and destroying the Western civilization from within and ‘sabotaging’ its miserable house by their hands and the hands of the believers…”\nhttps:// clarionproject.org/muslim_brotherhood_explanatory_memorandum/",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p1237-s001",
-    "p1237-s002"
-   ],
-   "sentenceTexts": [
-    "The Ikhwan [Muslim Brotherhood] must understand that their work in America is a kind of grand jihad in eliminating and destroying the Western civilization from within and ‘sabotaging’ its miserable house by their hands and the hands of the believers…”",
-    "https:// clarionproject.org/muslim_brotherhood_explanatory_memorandum/"
-   ]
-  },
-  {
-   "occurrenceKey": "1253|claims|0|262",
-   "postNum": 1253,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 0,
-   "end": 262,
-   "text": "https:// www.grassley.senate.gov/news/news-releases/grassley-refers-planned-parenthood-fetal-tissue-procurement-organizations-fbi\nhttp:// www.foxnews.com/politics/2017/12/07/planned-parenthood-under-investigation-by-justice-department-over-sale-fetal-tissue.html",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p1253-s000",
-    "p1253-s001"
-   ],
-   "sentenceTexts": [
-    "https:// www.grassley.senate.gov/news/news-releases/grassley-refers-planned-parenthood-fetal-tissue-procurement-organizations-fbi",
-    "http:// www.foxnews.com/politics/2017/12/07/planned-parenthood-under-investigation-by-justice-department-over-sale-fetal-tissue.html"
    ]
   },
   {

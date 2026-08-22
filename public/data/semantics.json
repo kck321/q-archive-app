@@ -3,8 +3,8 @@
  "step": "3B-1",
  "planSha256": "373ca06b1416b6707a111f2c3da8e751472c551f739500f76cdcc764d3128058",
  "dispositionsApplied": 8,
- "actionsApplied": 3,
- "actionsAlreadyApplied": 685,
+ "actionsApplied": 2,
+ "actionsAlreadyApplied": 688,
  "actionsHeld": 2,
  "heldActionIds": [
   "A-DUP-2971-questions-561-799",
@@ -4196,6 +4196,25 @@
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
   },
   {
+   "occurrenceKey": "1237|claims|89|340",
+   "postNum": 1237,
+   "start": 89,
+   "end": 340,
+   "text": "The Ikhwan [Muslim Brotherhood] must understand that their work in America is a kind of grand jihad in eliminating and destroying the Western civilization from within and ‘sabotaging’ its miserable house by their hands and the hands of the believers…”",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "1237|claims|89|411",
+   "droppedLines": [
+    "https:// clarionproject.org/muslim_brotherhood_explanatory_memorandum/"
+   ],
+   "actionId": "B2C-TRIM-1237-claims-89-411",
+   "ruleCode": "B2_TRIM_TO_PROSE_SENTENCE",
+   "adjudication": "MODIFY_THEN_APPLY",
+   "adjudicationReason": "the certified span crossed a sentence boundary only because it swallowed 1 non-semantic line(s) — links, board pointers or bracketed labels. Trimmed to the one prose sentence it actually covers; the category is unchanged."
+  },
+  {
    "occurrenceKey": "1241|directives|539|564",
    "postNum": 1241,
    "sentenceId": "p1241-s022",
@@ -4398,6 +4417,23 @@
    "supersededKeys": [],
    "actionId": "A-DQ-p1250-s019",
    "ruleCode": "R2_IMPERATIVE"
+  },
+  {
+   "occurrenceKey": "1253|claims|0|262",
+   "postNum": 1253,
+   "start": 0,
+   "end": 262,
+   "text": "https:// www.grassley.senate.gov/news/news-releases/grassley-refers-planned-parenthood-fetal-tissue-procurement-organizations-fbi\nhttp:// www.foxnews.com/politics/2017/12/07/planned-parenthood-under-investigation-by-justice-department-over-sale-fetal-tissue.html",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "B2C-DROP-1253-claims-0-262",
+   "ruleCode": "B2_SPAN_IS_ONLY_A_LINK",
+   "withdrawReason": "every line the span covers is a URL, a board pointer or a bracketed label; there is no prose to certify",
+   "adjudication": "MODIFY_THEN_APPLY",
+   "adjudicationReason": "owner ruling: a raw URL is not claim/question/directive/prediction paint. With no prose in the span there is nothing to trim to, so the record is withdrawn rather than re-spanned."
   },
   {
    "occurrenceKey": "1261|predictions|40|61",
@@ -18011,12 +18047,13 @@
   }
  ],
  "appliedTo": {
-  "postsSha256": "150ef1c36913c1c5e39a403bdcebb3d95947e09967d624ec422770d1e04ed952",
+  "postsSha256": "38c638034937fae8ee64dd3c63fb52f8ebcd733126445a912e292c9b409a9bd0",
   "questionsSha256": "540518803304a7a21226a7ae135201af4ead9279ed67dc91f9237fe1c7b1bff6",
   "dispositionsSha256": "0df3ba934b21058af5779806eec0c6d2219d63777d85edcc48f09518646c59ce",
   "extraSets": {
    "step3b1-b2-actions.jsonl": "c9c6c43a08291d2fed207f9ce573ecf526ed33751336c0bd86595fb647e53f00",
    "step3b1-b2b-actions.jsonl": "33f26fa2d5c34c86e5e57681a9ba7613bb938e2f6fe1993e35f433fd480be6ce",
+   "step3b1-b2c-actions.jsonl": "34fb5fedfa40a0e3ed8c1b2f6bef3ff2448467931ab72dc03db6e5cb03058678",
    "step3b1-b3-actions.jsonl": "fc2f9f5a571b515fc9624f417e2abf6610e7f5a2cc8e8e0cab81a42f77df88f7"
   }
  }
