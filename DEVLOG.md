@@ -6258,3 +6258,47 @@ They clear with the manifest re-certification that runs once, before the deploy.
 `scripts/apply-owner-claims.mjs`, `apply-claims.mjs`, `apply-context-units.mjs`,
 `materialize-literal-spans.mjs`, `audit-cross-section.mjs`, `src/lib/localData.ts` (SEED 80→81),
 `audit/seed-fingerprint.json`, `public/data/posts.json`.
+
+---
+
+## 2026-08-21 — Step 3B-1 applied (commit `fbb5a51`)
+
+**Request.** Apply the reconciled 530 automatic Step 3B-1 actions in one isolated local commit.
+Leave all 10 human-review-held actions and the whole 945-row conflict queue untouched. Do not
+deploy. Return the commit hash, clean-tree proof, the before/after cross-tab, transfer and
+identity-preservation proofs, overlap/population gates, confirmation the held actions and
+conflict rows are unchanged, both-surface verification, and explicit confirmation of no deploy.
+
+**Solution.** Two new scripts plus three small edits:
+
+- `scripts/apply-step3b1.mjs` — reads `audit/step3b1-plan.jsonl` (pinned by sha256
+  `373ca06b…3058`, the same value the dry-run manifest records), rebuilds the ledger's own
+  occurrence binding while tracking which array slot produced each key, and edits by slot.
+  Registered in `scripts/lib/chainSteps.mjs` between `build-entity-public-view.mjs` and
+  `build-relationships.mjs`, because apply-questions / apply-directives / apply-claims /
+  apply-emphasis / apply-context-units / apply-entity-cleanup all rebuild the arrays it edits
+  from pre-ruling artifacts.
+- `scripts/verify-step3b1.mjs` — 17 gates, writes `audit/step3b1-apply-receipt.json`.
+- `scripts/build-occurrence-ledger.mjs` — a question marked `semanticLayer` secondary/withdrawn
+  is no longer counted as a primary record.
+- `SEED_VERSION` 85 → 86.
+
+**Result.** All nine projected cells land exactly: claim 8912→8820, directive 3037→2940,
+prediction 847→843, question 6503→6324; secondaries 18/89/4/163; quoted_source primary claim 6.
+
+**Five defects the gates caught during the build**, each of which had produced a green run:
+question records routed through the array remover (`p['json']` is not an array — 16 fragments
+stayed painted); the Ephesians and lifted-news winners left in `postAnalysis.claims`; 58
+undeclared secondaries invented against the owner's `OWNER_DROP_FALSE_SECONDARY` ruling;
+`A-MP-p4782-s015`'s owner-declared secondary directive lost because it has no record to demote;
+and `claims`/`claimSpans` edited out of index alignment (contracts asserting 8,912 while the
+renderer painted 8,820).
+
+**Open, needing owner rulings** — see the receipt's `discoveredDuringApply`, and the held-action
+dispositions in the session notes: the source-boundary resolution withdraws only the truncated
+head of a pasted sentence (#2653 keeps 1 sibling fragment, #4310 keeps 3, still q_authored); the
+plan's `sentenceStart/sentenceEnd` disagree with its own `sentenceText` on those rows; and
+`build-relationships` + `build-search-index` both abort (Q↔D 230→173, Prediction↔assertion
+847→846, Directives indexed 3037→2940) because those certified constants moved. Both wrote
+nothing, so `relationships.json` and `search-index.json` are unchanged. Not deployed —
+production remains seed 78.
