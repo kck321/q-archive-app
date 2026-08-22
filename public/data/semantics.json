@@ -2,14 +2,13 @@
  "note": "Step 3B-1 — the certified semantic overlay. Primary paint, non-painting secondaries and review dispositions, keyed by occurrence. Step 4 renders from this.",
  "step": "3B-1",
  "planSha256": "373ca06b1416b6707a111f2c3da8e751472c551f739500f76cdcc764d3128058",
- "dispositionsApplied": 7,
- "actionsApplied": 7,
- "actionsAlreadyApplied": 530,
- "actionsHeld": 3,
+ "dispositionsApplied": 8,
+ "actionsApplied": 1,
+ "actionsAlreadyApplied": 537,
+ "actionsHeld": 2,
  "heldActionIds": [
   "A-DUP-2971-questions-561-799",
-  "A-DUP-4454-questions-238-404",
-  "A-MP-p0034-s002"
+  "A-DUP-4454-questions-238-404"
  ],
  "occurrences": [
   {
@@ -117,6 +116,42 @@
    ],
    "actionId": "A-MP-p0016-s000",
    "ruleCode": "R3_FUTURE_ASSERTION"
+  },
+  {
+   "occurrenceKey": "34|claims|280|333",
+   "postNum": 34,
+   "sentenceId": "p0034-s002",
+   "start": 280,
+   "end": 333,
+   "text": "On POTUS’ order, we have initiated certain fail-safes",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "clausePartitionOf": "p0034-s002",
+   "clauseReason": "a completed act, stated in the perfect: \"we have initiated\"",
+   "actionId": "A-MP-p0034-s002",
+   "ruleCode": "OWNER_RULING_MIXED_SEMANTICS_CLAUSE_PARTITION",
+   "adjudication": "MODIFY_THEN_APPLY",
+   "adjudicationReason": "owner ruling: the sentence is mixed, not won. The claim owns 280..333 and the prediction owns 334..483; they are disjoint and together cover 202 of the sentence's 203 characters, the remainder being the single separating space. The classifier rule is NOT widened — the cascade is evidence here, not the adjudicator."
+  },
+  {
+   "occurrenceKey": "34|predictions|334|483",
+   "postNum": 34,
+   "sentenceId": "p0034-s002",
+   "start": 334,
+   "end": 483,
+   "text": "that shall safeguard the public from the primary fallout which is slated to occur 11.3 upon the arrest announcement of Mr. Podesta (actionable 11.4).",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "prediction",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "clausePartitionOf": "p0034-s002",
+   "clauseReason": "what those fail-safes will do, and when — the future assertion the word \"shall\" opens",
+   "actionId": "A-MP-p0034-s002",
+   "ruleCode": "OWNER_RULING_MIXED_SEMANTICS_CLAUSE_PARTITION",
+   "adjudication": "MODIFY_THEN_APPLY",
+   "adjudicationReason": "owner ruling: the sentence is mixed, not won. The claim owns 280..333 and the prediction owns 334..483; they are disjoint and together cover 202 of the sentence's 203 characters, the remainder being the single separating space. The classifier rule is NOT widened — the cascade is evidence here, not the adjudicator."
   },
   {
    "occurrenceKey": "35|directives|165|230",
@@ -14029,8 +14064,8 @@
   }
  ],
  "appliedTo": {
-  "postsSha256": "493fa2f1008ad03b8f7b009d13e8733ad3fbbf2e726c511fb7d436f1138b7746",
+  "postsSha256": "7d3a90618c0619cb19585bc866520e1517e48fa78a337043d232ca3a159aaca9",
   "questionsSha256": "241dc211bf435d8522b34cdcc9f3ac8b832e06f80df346ddcb87d8ea3ee12b2f",
-  "dispositionsSha256": "6fee1238d6bd263f5e5dc06bbdf6db845c911c31f665b474c06776de2465cc46"
+  "dispositionsSha256": "0df3ba934b21058af5779806eec0c6d2219d63777d85edcc48f09518646c59ce"
  }
 }

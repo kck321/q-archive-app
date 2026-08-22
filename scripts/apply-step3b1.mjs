@@ -66,7 +66,7 @@ if (planSha !== PLAN_SHA256) {
 // humanReviewRequired cleared; the ones still open keep it set and are still refused here.
 // Running them through a second applier would mean a second set of gates, and the gates are the
 // only reason any of this is trustworthy — so there is one code path and it is this one.
-const DISPOSITIONS_SHA256 = '6fee1238d6bd263f5e5dc06bbdf6db845c911c31f665b474c06776de2465cc46'
+const DISPOSITIONS_SHA256 = '0df3ba934b21058af5779806eec0c6d2219d63777d85edcc48f09518646c59ce'
 const dispPath = path.join(OUT, 'step3b1-held-dispositions.jsonl')
 let plan = planRaw.toString('utf8').trim().split('\n').map(l => JSON.parse(l))
 let dispositionsApplied = 0
@@ -354,7 +354,7 @@ for (const a of actions) {
   const removalKeys =
     a.kind === 'CONTEXT_TO_DISPOSITION' ? [a.oldOccurrenceKeys[0]]
     : a.kind === 'NESTED_OVERLAP_COLLAPSE' || a.kind === 'SOURCE_BOUNDARY_RESOLUTION' ? (a.recordsWithdrawn ?? [])
-    : a.kind === 'DUPLICATE_MERGE' ? []
+    : a.kind === 'DUPLICATE_MERGE' || a.kind === 'CLAUSE_PARTITION' ? []
     : a.sourceDisposition !== 'q_authored' ? (a.oldOccurrenceKeys ?? [])
     : (a.oldOccurrenceKeys ?? []).filter(k => k.split('|')[1] !== winnerKindFor)
   const stillThere = removalKeys.filter(k => resolve(k).length).length
@@ -427,6 +427,68 @@ for (const a of actions) {
       primaryCategory: a.proposedPrimaryCategory, secondarySemantics: [],
       reviewDispositions: a.proposedReviewDispositions, actionId: a.actionId, ruleCode: a.ruleCode,
     })
+    continue
+  }
+
+  if (a.kind === 'CLAUSE_PARTITION') {
+    // A SENTENCE THAT DOES TWO THINGS, DIVIDED WHERE IT ACTUALLY DIVIDES.
+    //
+    // Owner ruling on #34: the sentence carries a completed act AND a forecast, and neither may be
+    // demoted to a non-painting secondary to satisfy a one-category-per-sentence rule. Each clause
+    // keeps its own category over its own disjoint span. This is the only such row in the archive,
+    // and it is legal precisely because the spans do not overlap — the rule it appears to bend
+    // exists to stop two categories claiming the SAME characters.
+    const bodyText = runtimeText(p.text ?? '')
+    let moved = 0
+    for (const cl of a.clauses ?? []) {
+      if (bodyText.slice(cl.start, cl.end) !== cl.text) {
+        problems.push(`${a.actionId}: clause ${cl.category} ${cl.start}..${cl.end} does not match the body`); continue
+      }
+      const recs = resolve(cl.oldOccurrenceKey)
+      if (!recs.length) continue
+      for (const r of recs) {
+        if (r.origin.field === 'questions.json') { problems.push(`${a.actionId}: clause partition over a question record is not supported`); continue }
+        const field = r.origin.field.split('.').pop()
+        const holder = field === 'actionRequests' ? p : p.postAnalysis
+        const oldText = holder[field][r.origin.index]
+        holder[field][r.origin.index] = cl.text
+        const mirrorName = MIRROR[r.origin.field]
+        const mirror = mirrorName && Array.isArray(p.postAnalysis?.[mirrorName]) && p.postAnalysis[mirrorName].length === holder[field].length
+          ? p.postAnalysis[mirrorName] : null
+        if (mirrorName && !mirror) problems.push(`${a.actionId}: ${r.origin.field} has no index-aligned ${mirrorName}`)
+        const oldWording = mirror ? mirror[r.origin.index] : oldText
+        if (mirror) mirror[r.origin.index] = cl.text
+        for (const d of DERIVED_FROM_CLAIMS) {
+          const list = p.postAnalysis?.[d]
+          if (!Array.isArray(list)) continue
+          const at = list.indexOf(oldWording)
+          if (at >= 0) list[at] = cl.text
+        }
+        for (const [map, name] of [[p.claimMeta, 'claimMeta'], [p.directiveMeta, 'directiveMeta'], [p.directiveFamilies, 'directiveFamilies']]) {
+          if (!map) continue
+          const ok = metaKey(oldWording), nk = metaKey(cl.text)
+          if (map[ok] !== undefined && ok !== nk) {
+            map[nk] = map[ok]; delete map[ok]
+            metaTransfers.push({ actionId: a.actionId, rekeyed: name, from: ok, to: nk })
+          }
+        }
+        moved++
+        metaTransfers.push({ actionId: a.actionId, from: cl.oldOccurrenceKey, kind: r.kind, metadata: metaFor(p, r.kind, r.certifiedValue) })
+      }
+    }
+    if (!moved) { alreadyApplied.push(a.actionId); carryForward(a.actionId); continue }
+    for (const cl of a.clauses ?? []) {
+      const kindOf = Object.entries(PRIMARY_KIND).find(([, v]) => v === cl.category)?.[0]
+      semantics.push({
+        occurrenceKey: `${a.postNum}|${kindOf}|${cl.start}|${cl.end}`,
+        postNum: a.postNum, sentenceId: a.sentenceId, start: cl.start, end: cl.end, text: cl.text,
+        sourceDisposition: a.sourceDisposition, primaryCategory: cl.category,
+        secondarySemantics: [], reviewDispositions: [],
+        clausePartitionOf: a.sentenceId, clauseReason: cl.why,
+        actionId: a.actionId, ruleCode: a.ruleCode,
+        adjudication: a.adjudication, adjudicationReason: a.adjudicationReason,
+      })
+    }
     continue
   }
 

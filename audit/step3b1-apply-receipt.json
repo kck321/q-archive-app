@@ -2,19 +2,18 @@
  "note": "Step 3B-1 apply receipt. Measured from the bundle, not from the plan.",
  "step": "3B-1",
  "planSha256": "373ca06b1416b6707a111f2c3da8e751472c551f739500f76cdcc764d3128058",
- "actionsApplied": 7,
- "actionsHeld": 3,
+ "actionsApplied": 1,
+ "actionsHeld": 2,
  "heldActionIds": [
   "A-DUP-2971-questions-561-799",
-  "A-DUP-4454-questions-238-404",
-  "A-MP-p0034-s002"
+  "A-DUP-4454-questions-238-404"
  ],
  "seedVersion": 86,
  "outputs": {
-  "public/data/posts.json": "493fa2f1008ad03b8f7b009d13e8733ad3fbbf2e726c511fb7d436f1138b7746",
+  "public/data/posts.json": "7d3a90618c0619cb19585bc866520e1517e48fa78a337043d232ca3a159aaca9",
   "public/data/questions.json": "241dc211bf435d8522b34cdcc9f3ac8b832e06f80df346ddcb87d8ea3ee12b2f",
-  "public/data/semantics.json": "636d84505521bd4302abd1bada824e36f23cac65681cec7abecc65b353fd77f5",
-  "audit/occurrence-ledger.json": "0eec7f147ff2fce798ad374dcec0c5889adedd0fa70d38bee93374622f9c7de3"
+  "public/data/semantics.json": "c1efb53d7c43fa55932a2e04d4a07c4f3f8991d4c36f8f4216009eceb951cb51",
+  "audit/occurrence-ledger.json": "938f7143a30164959d49c89fa603af17e6faf833b666f2b3810d18c80ecafe8d"
  },
  "crossTab": [
   {
@@ -146,18 +145,6 @@
  ],
  "heldActions": [
   {
-   "actionId": "A-MP-p0034-s002",
-   "ruleCode": "R4_DECLARATIVE",
-   "postNum": 34,
-   "sentenceId": "p0034-s002",
-   "oldOccurrenceKeys": [
-    "34|claims|457|483",
-    "34|predictions|280|456"
-   ],
-   "keysStillLive": 2,
-   "keysExpected": 2
-  },
-  {
    "actionId": "A-DUP-2971-questions-561-799",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "postNum": 2971,
@@ -220,6 +207,22 @@
      "partial": "McRae and claimed that taxpayer-funded abortions should be a constitutional right."
     },
     {
+     "postNum": 34,
+     "sentenceId": "p0034-s002",
+     "kind": "claims",
+     "start": 280,
+     "end": 333,
+     "partial": "On POTUS’ order, we have initiated certain fail-safes"
+    },
+    {
+     "postNum": 34,
+     "sentenceId": "p0034-s002",
+     "kind": "predictions",
+     "start": 334,
+     "end": 483,
+     "partial": "that shall safeguard the public from the primary fallout which is slated to occur 11.3 upon the arrest announc"
+    },
+    {
      "postNum": 4310,
      "sentenceId": "p4310-s015",
      "kind": "claims",
@@ -269,9 +272,19 @@
    "reason": "URL — a link, not a semantic unit (owner ruling)"
   }
  ],
+ "clausePartitions": [
+  {
+   "postNum": 34,
+   "sentenceId": "p0034-s002",
+   "kinds": [
+    "claims",
+    "predictions"
+   ]
+  }
+ ],
  "residualsOutOfScope": {
   "note": "Explicitly left for the owner: the 10 held actions and the 945-row conflict queue.",
-  "multiPrimarySentences": 1,
+  "multiPrimarySentences": 0,
   "sameCategoryPrimaryOverlaps": 18,
   "supersededPartialPrimarySpans": 179,
   "boundaryCrossingRecords": 242,
@@ -281,32 +294,32 @@
   {
    "gate": "count cross-tab matches the projection",
    "pass": true,
-   "detail": "all 9 cells (projection + 7 adjudicated held rows)"
+   "detail": "all 9 cells (projection + 8 adjudicated held rows)"
   },
   {
    "gate": "every automatic action materialised",
    "pass": true,
-   "detail": "537/537  (530 planned + 7 adjudicated held)"
+   "detail": "538/538 actions, 539/539 overlay rows  (530 planned + 8 adjudicated held; #34 contributes two rows, one per clause)"
   },
   {
    "gate": "no held action appears in the applied overlay",
    "pass": true,
-   "detail": "3 still held, none applied"
+   "detail": "2 still held, none applied"
   },
   {
    "gate": "every held action's records are still live and unmodified",
    "pass": true,
-   "detail": "all 3 intact"
+   "detail": "all 2 intact"
   },
   {
    "gate": "zero duplicate action consumption",
    "pass": true,
-   "detail": "907 distinct old keys across 537 actions"
+   "detail": "909 distinct old keys across 538 actions"
   },
   {
    "gate": "zero runtime substring mismatch in the overlay",
    "pass": true,
-   "detail": "537 rows verified against runtimeText()"
+   "detail": "539 rows verified against runtimeText()"
   },
   {
    "gate": "zero runtime substring mismatch in the ledger",
@@ -316,12 +329,12 @@
   {
    "gate": "zero same-sentence multi-primary inside the applied scope",
    "pass": true,
-   "detail": "1 remain archive-wide, all outside the applied set (p0034-s002)"
+   "detail": "0 remain archive-wide, all outside the applied set"
   },
   {
-   "gate": "every remaining multi-primary sentence is a held action",
+   "gate": "every remaining overlapping multi-primary sentence is a held action",
    "pass": true,
-   "detail": "1 remaining, each one a held action"
+   "detail": "0 remaining, each one a held action"
   },
   {
    "gate": "every in-scope same-category primary overlap is a named source-boundary exception",
@@ -331,12 +344,12 @@
   {
    "gate": "every in-scope partial primary span is a named source-boundary exception or a declared span override",
    "pass": true,
-   "detail": "179 archive-wide; 5 in scope, all on #1928 #2653 #4310; 0 unexplained"
+   "detail": "179 archive-wide; 7 in scope, all on #1928 #2653 #34 #4310; 0 unexplained"
   },
   {
    "gate": "metadata transfer recorded for every withdrawn record",
    "pass": true,
-   "detail": "590 transfers, 199 carrying certified attributes, 2 meta keys re-pointed to a widened span"
+   "detail": "594 transfers, 199 carrying certified attributes, 4 meta keys re-pointed to a widened span"
   },
   {
    "gate": "question_directive relationship preserved on every unified pair",

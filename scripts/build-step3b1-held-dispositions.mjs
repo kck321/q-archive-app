@@ -68,18 +68,59 @@ for (const [actionId, sentenceId, postNum] of [
   })
 }
 
-// ── #34 — NOT resolved, and the reason is not geometry ──────────────────────────────────────
+// ── #34 — OWNER RULING: MIXED SEMANTICS, PARTITIONED AT THE CLAUSE BOUNDARY ────────────────
+//
+// "Do NOT classify the whole sentence as prediction merely because 'shall' appears. Measure the
+// exact source geometry and preserve both semantic facts." (owner, 2026-08-21)
+//
+// The sentence does two things and the cascade can only return one, which is why it was held:
+//
+//   CLAIM       "On POTUS' order, we have initiated certain fail-safes"          a completed act
+//   PREDICTION  "that shall safeguard the public ... (actionable 11.4)."         what it will do
+//
+// So the sentence is PARTITIONED rather than won. The two spans are disjoint, together they cover
+// every character of the sentence except the single space that separates them, and neither
+// semantic fact is demoted to a non-painting secondary — the owner ruled both are real, and a
+// secondary is by definition not painted.
+//
+// This is the ONE case in the archive where a sentence carries two primaries, and it is legal only
+// because the spans do not overlap: "one adjudicated category per complete sentence" exists to stop
+// two categories fighting over the SAME characters, which is not what happens here. The ledger's
+// collision detector is taught the difference rather than being suppressed — see the disjoint flag
+// in build-occurrence-ledger.mjs. Nothing else in the corpus is affected: p0034-s002 is currently
+// the only multi-primary sentence left.
 {
   const h = heldById.get('A-MP-p0034-s002')
   const s = sentenceOf(34, 'p0034-s002')
-  const verdict = classify(s.text, ['claims', 'predictions'])
+  const body = runtimeText(byNum.get(34).text)
+  const CLAIM_END = s.start + s.text.indexOf(' that shall')
+  const PRED_START = CLAIM_END + 1
+  const clauses = [
+    { category: 'claim', start: s.start, end: CLAIM_END, oldOccurrenceKey: '34|claims|457|483',
+      why: 'a completed act, stated in the perfect: "we have initiated"' },
+    { category: 'prediction', start: PRED_START, end: s.end, oldOccurrenceKey: '34|predictions|280|456',
+      why: 'what those fail-safes will do, and when — the future assertion the word "shall" opens' },
+  ].map(c => ({ ...c, text: body.slice(c.start, c.end) }))
+
+  if (clauses[0].text !== "On POTUS’ order, we have initiated certain fail-safes")
+    throw new Error(`#34 claim clause measured as ${JSON.stringify(clauses[0].text)}`)
+  if (!clauses[1].text.startsWith('that shall safeguard')) throw new Error('#34 prediction clause start moved')
+  if (!/^\s$/.test(body.slice(CLAIM_END, PRED_START))) throw new Error('#34 clause separator is not whitespace')
+
   out.push({
     ...h,
+    kind: 'CLAUSE_PARTITION',
     sentenceStart: s.start, sentenceEnd: s.end, sentenceText: s.text,
-    humanReviewRequired: true,
-    adjudication: 'HUMAN_SEMANTIC_REVIEW',
-    adjudicationReason: `Geometry is now known (${s.start}..${s.end}) and the cascade returns ${verdict.primary}/${verdict.rule} on the word "shall". But the sentence asserts a COMPLETED act ("we have initiated certain fail-safes") and forecasts a future one ("slated to occur 11.3"), and this is the single claims+predictions row DECISION 1 of the Step 3 review pack put to the owner and never got an answer on. A keyword deciding the famous #34 is not an adjudication. Owner ruling required.`,
-    cascadeWouldSay: verdict,
+    clauses,
+    proposedPrimaryCategory: null,
+    proposedSecondarySemantics: [],
+    ruleCode: 'OWNER_RULING_MIXED_SEMANTICS_CLAUSE_PARTITION',
+    humanReviewRequired: false,
+    adjudication: 'MODIFY_THEN_APPLY',
+    adjudicationReason: `owner ruling: the sentence is mixed, not won. The claim owns ${clauses[0].start}..${clauses[0].end} and the prediction owns ${clauses[1].start}..${clauses[1].end}; they are disjoint and together cover ${(clauses[0].end - clauses[0].start) + (clauses[1].end - clauses[1].start)} of the sentence's ${s.end - s.start} characters, the remainder being the single separating space. The classifier rule is NOT widened — the cascade is evidence here, not the adjudicator.`,
+    coverage: { sentenceChars: s.end - s.start,
+      clauseChars: (clauses[0].end - clauses[0].start) + (clauses[1].end - clauses[1].start),
+      unpainted: 'one space at the clause boundary' },
   })
 }
 

@@ -205,8 +205,21 @@ for (const [sentenceId, occs] of bySentence) {
     // and PROJECT_CONTEXT records it as a certified overlap. Reporting these beside genuine
     // collisions would hand the owner a number that is mostly not a problem.
     const certifiedPair = kinds.length === 2 && kinds[0] === 'directives' && kinds[1] === 'questions'
+    // A COLLISION IS TWO CATEGORIES ON THE SAME CHARACTERS. A PARTITION IS NOT.
+    //
+    // "One adjudicated category per complete sentence" exists to stop two paints fighting over the
+    // same text. #34 is the case that shows the rule was stated one notch too broadly: "On POTUS'
+    // order, we have initiated certain fail-safes" is a completed act and "that shall safeguard the
+    // public ..." is a forecast, in one sentence, and the owner ruled both are real and neither may
+    // be demoted to a non-painting secondary. Those two spans are DISJOINT — they divide the
+    // sentence, they do not contest it.
+    //
+    // So the flag is reported, not assumed. Everything that overlaps still lands in the collision
+    // set exactly as before; only a clean partition is separated out. When this was introduced
+    // p0034-s002 was the sole multi-primary sentence in the archive, so nothing else moved.
+    const disjoint = primary.every((a, i) => primary.every((b, j) => i === j || a.end <= b.start || b.end <= a.start))
     multiPrimary.push({ sentenceId, postNum: occs[0].postNum, kinds,
-      certifiedOverlap: certifiedPair,
+      certifiedOverlap: certifiedPair, disjointClausePartition: disjoint,
       // THE KEY TRAVELS WITH THE SPAN. It used to carry only a 90-character truncation of the text,
       // and a later analysis rebuilt keys by re-locating that truncation — producing a SHORTER span
       // and therefore a different key for the same occurrence. That is the exact defect this whole

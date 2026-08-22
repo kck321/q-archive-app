@@ -6019,9 +6019,9 @@
    "kind": "claims",
    "deliberate": false,
    "why": null,
-   "partial": "Podesta (actionable 11.4).",
-   "start": 457,
-   "end": 483
+   "partial": "On POTUS’ order, we have initiated certain fail-safes",
+   "start": 280,
+   "end": 333
   },
   {
    "sentenceId": "p0034-s002",
@@ -6029,9 +6029,9 @@
    "kind": "predictions",
    "deliberate": false,
    "why": null,
-   "partial": "On POTUS’ order, we have initiated certain fail-safes that shall safeguard the public from the primary fallout",
-   "start": 280,
-   "end": 456
+   "partial": "that shall safeguard the public from the primary fallout which is slated to occur 11.3 upon the arrest announc",
+   "start": 334,
+   "end": 483
   },
   {
    "sentenceId": "p3409-s013",
@@ -6883,24 +6883,25 @@
     "predictions"
    ],
    "certifiedOverlap": false,
+   "disjointClausePartition": true,
    "spans": [
     {
-     "occurrenceKey": "34|claims|457|483",
+     "occurrenceKey": "34|claims|280|333",
      "kind": "claims",
      "relation": "PARTIAL",
-     "start": 457,
-     "end": 483,
+     "start": 280,
+     "end": 333,
      "directiveWrapped": false,
-     "text": "Podesta (actionable 11.4)."
+     "text": "On POTUS’ order, we have initiated certain fail-safes"
     },
     {
-     "occurrenceKey": "34|predictions|280|456",
+     "occurrenceKey": "34|predictions|334|483",
      "kind": "predictions",
      "relation": "PARTIAL",
-     "start": 280,
-     "end": 456,
+     "start": 334,
+     "end": 483,
      "directiveWrapped": false,
-     "text": "On POTUS’ order, we have initiated certain fail-safes that shall safeguard the public from"
+     "text": "that shall safeguard the public from the primary fallout which is slated to occur 11.3 upo"
     }
    ]
   }

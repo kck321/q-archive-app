@@ -74,6 +74,9 @@ const PK_OF = { claims: 'claim', questions: 'question', directives: 'directive',
 const dispDelta = {}
 for (const d of dispositions) {
   if (d.humanReviewRequired) continue
+  // A CLAUSE PARTITION MOVES NO COUNT. Both records survive; each is re-spanned onto its own
+  // clause. Nothing is withdrawn and nothing is created, so the totals are untouched.
+  if (d.kind === 'CLAUSE_PARTITION') continue
   const winnerKind = Object.entries(PK_OF).find(([, v]) => v === d.proposedPrimaryCategory)?.[0]
   const bump = (src, layer, cat, n) => { if (!cat || !n) return; const k = `${src}|${layer}|${cat}`; dispDelta[k] = (dispDelta[k] ?? 0) + n }
   for (const k of d.oldOccurrenceKeys ?? []) {
@@ -101,8 +104,9 @@ const gates = [gate('count cross-tab matches the projection', crossTab.every(r =
 // ── 2. every automatic action landed, no held action moved ──────────────────────────────────
 const overlayByAction = new Map(overlay.occurrences.map(o => [o.actionId, o]))
 const missing = automatic.filter(a => !overlayByAction.has(a.actionId))
+const overlayRowsExpected = automatic.reduce((n, a) => n + (a.kind === 'CLAUSE_PARTITION' ? (a.clauses ?? []).length : 1), 0)
 gates.push(gate('every automatic action materialised', missing.length === 0,
-  `${automatic.length - missing.length}/${automatic.length}  (530 planned + ${dispositions.filter(d => !d.humanReviewRequired).length} adjudicated held)`))
+  `${automatic.length - missing.length}/${automatic.length} actions, ${overlay.occurrences.length}/${overlayRowsExpected} overlay rows  (530 planned + ${dispositions.filter(d => !d.humanReviewRequired).length} adjudicated held; #34 contributes two rows, one per clause)`))
 
 const heldIds = new Set(held.map(h => h.actionId))
 const heldTouched = overlay.occurrences.filter(o => heldIds.has(o.actionId))
@@ -147,12 +151,15 @@ gates.push(gate('zero runtime substring mismatch in the ledger', badLedger.lengt
 const appliedSentences = new Set(automatic.map(a => `${a.postNum}|${a.sentenceId}`))
 const heldSentences = new Set(held.map(h => `${h.postNum}|${h.sentenceId}`))
 
-const multi = (dryrun.multiPrimary ?? []).filter(m => !m.certifiedOverlap)
+// A disjoint clause partition is an adjudicated division of a sentence, not a collision — see the
+// note in build-occurrence-ledger.mjs. Overlapping multi-primary sentences still count here.
+const partitions = (dryrun.multiPrimary ?? []).filter(m => !m.certifiedOverlap && m.disjointClausePartition)
+const multi = (dryrun.multiPrimary ?? []).filter(m => !m.certifiedOverlap && !m.disjointClausePartition)
 const multiInScope = multi.filter(m => appliedSentences.has(`${m.postNum}|${m.sentenceId}`))
 gates.push(gate('zero same-sentence multi-primary inside the applied scope', multiInScope.length === 0,
   `${multi.length} remain archive-wide, all outside the applied set` + (multi.length ? ` (${multi.map(m => m.sentenceId).join(', ')})` : '')))
 const multiAllHeld = multi.every(m => heldSentences.has(`${m.postNum}|${m.sentenceId}`))
-gates.push(gate('every remaining multi-primary sentence is a held action', multiAllHeld,
+gates.push(gate('every remaining overlapping multi-primary sentence is a held action', multiAllHeld,
   multi.filter(m => !heldSentences.has(`${m.postNum}|${m.sentenceId}`)).map(m => m.sentenceId).join(', ') || `${multi.length} remaining, each one a held action`))
 
 // THE SOURCE-BOUNDARY SENTENCES ARE THE ONE NAMED EXCEPTION, AND IT WAS FOUND BY THIS GATE.
@@ -176,7 +183,7 @@ const SOURCE_BOUNDARY_EXCEPTION = new Set(automatic
 // PARTIAL span and the ledger correctly reports it as one. That is the ruling working, not a
 // defect — but it is only allowed where the action declared spanOverride and said why.
 const DECLARED_PARTIAL = new Set(automatic
-  .filter(a => a.spanOverride).map(a => `${a.postNum}|${a.sentenceId}`))
+  .filter(a => a.spanOverride || a.kind === 'CLAUSE_PARTITION').map(a => `${a.postNum}|${a.sentenceId}`))
 const intentionallyUncategorized = automatic
   .filter(a => a.intentionallyUncategorized)
   .flatMap(a => a.intentionallyUncategorized.map(u => ({ actionId: a.actionId, postNum: a.postNum, sentenceId: a.sentenceId, ...u })))
@@ -278,6 +285,7 @@ const receipt = {
     rows: overlay.occurrences.filter(o => o.planProposedText).map(o => ({ actionId: o.actionId, occurrenceKey: o.occurrenceKey, measuredLength: o.end - o.start, planProposedLength: o.planProposedText.length })),
   }],
   intentionallyUncategorized,
+  clausePartitions: partitions.map(m => ({ postNum: m.postNum, sentenceId: m.sentenceId, kinds: m.kinds })),
   residualsOutOfScope: {
     note: 'Explicitly left for the owner: the 10 held actions and the 945-row conflict queue.',
     multiPrimarySentences: multi.length,
