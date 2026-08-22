@@ -6354,3 +6354,43 @@ case-insensitivity at all — the caps form is already a registered alias and ap
 primary total, but they DO move the certified entity mention count asserted in `lib/contracts.mjs`.
 
 **Not deployed.** Production remains seed 78.
+
+---
+
+## 2026-08-21 — #34 ruled, B1A applied, GOD registered
+
+**Commits.** `2ce5c28` (#34 clause partition) · `7467410` (B1A entity-lookup repair) ·
+`b7609f7` (slot-removal idempotence by witness) · `8693eef` (GOD alias).
+
+**#34 — owner ruling executed as given.** The sentence is partitioned, not won:
+claim `280..333` *"On POTUS' order, we have initiated certain fail-safes"*, prediction `334..483`
+*"that shall safeguard the public … (actionable 11.4)."* — 202 of 203 characters, the remainder
+being the separating space. Neither fact demoted to a non-painting secondary; the classifier rule
+untouched. The ledger's collision detector now reports `disjointClausePartition` beside
+`certifiedOverlap`, so a sentence DIVIDED between two categories is distinguished from one
+CONTESTED by them. Archive-wide overlapping multi-primary is now **zero**.
+
+**B1A — the lookup was keyed by canonical.** `postAnalysis.namedEntities` stores the identity a
+section recorded, which is often an alias (`Hussein` → `Barack Obama`). The alias map was keyed by
+canonical, so the fallback could never fire for those. `scripts/lib/entityForms.mjs` is now the one
+group-aware lookup, matching still exact and case-sensitive. Proven before applying: 8,235 → 8,646
+bound, **0 existing records changed**. The full-rebuild test caught two duplicate merges whose
+plan counts were computed under the broken lookup (#2844, #3325 — `Renegade` ×2 + `Hussein`, all
+Barack Obama), so merging is identity-aware now: same canonical merges, different canonicals never.
+
+**Slot removal is idempotent by witness.** A partial rebuild (`apply-entities` alone) let the
+`FIGHT! FIGHT! FIGHT!` siblings slide into vacated offsets and lose four legitimate repeats.
+`CONTEXT_TO_DISPOSITION` and `DUPLICATE_MERGE` now record how many entries with that exact text the
+field should hold after the action, which is a property of the data rather than a file hash.
+
+**GOD.** Registered as an exact alias via new `aliasAdditions` in
+`audit/entities-owner-rulings.json`, symmetric with `aliasWithdrawals`. Zero drops write
+word-bounded `GOD` without already recording the identity; one registry group claims any casing;
+mentions unchanged at 8,975. #197 (*"the sun god Ra"* — wrong identity) and #2730 (lowercase
+*"god"*) correctly stay.
+
+**Conflict queue rebuilt from canonical state (not subtraction): 945 → 459.**
+Lanes A 252 · B 152 · C 55, across 11 root-cause patterns.
+
+**Still open:** B1B (131 case-variant rows), B2 (119 URL boundary crossings), B3 (the two A-DUP
+rows + 2 over-extended segmentation recoveries). Not deployed.
