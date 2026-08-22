@@ -9,10 +9,10 @@
  },
  "totals": {
   "sentences": 30187,
-  "occurrencesKeyed": 30886,
+  "occurrencesKeyed": 30876,
   "duplicateKeys": 57,
   "byKind": {
-   "claims": 8721,
+   "claims": 8711,
    "predictions": 843,
    "directives": 2940,
    "namedEntities": 8772,
@@ -21,12 +21,12 @@
    "context": 1605
   },
   "byRelation": {
-   "EXACT": 20500,
+   "EXACT": 20517,
    "PARTIAL": 10304,
-   "CROSSING": 82
+   "CROSSING": 55
   },
-  "unlocated": 106,
-  "crossingSentenceBoundary": 82
+  "unlocated": 77,
+  "crossingSentenceBoundary": 55
  },
  "findings": {
   "partialPrimarySpans": {
@@ -62,11 +62,11 @@
    "note": "The owner rule targets the PRIMARY layer. Nested entities and acrostic emphasis overlap by design and are reported separately rather than swept up."
   },
   "reviewLayerCollisions": {
-   "count": 81,
+   "count": 86,
    "note": "A Context/Emphasis span on exactly the characters of a primary span. Becomes a reviewDisposition, not a second category."
   },
   "unlocatedSpans": {
-   "count": 106,
+   "count": 77,
    "note": "A certified span the ledger could not place in the runtime body. Each is a conflict-queue row, never a silent drop."
   }
  },
@@ -108,60 +108,6 @@
    ]
   },
   {
-   "occurrenceKey": "102|themeAnchors|41|61",
-   "postNum": 102,
-   "kind": "themeAnchors",
-   "layer": "review",
-   "start": 41,
-   "end": 61,
-   "text": "^_Sj69ETC- Godspeed.",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p0102-s002",
-    "p0102-s003"
-   ],
-   "sentenceTexts": [
-    "^_Sj69ETC-",
-    "Godspeed."
-   ]
-  },
-  {
-   "occurrenceKey": "107|themeAnchors|0|134",
-   "postNum": 107,
-   "kind": "themeAnchors",
-   "layer": "review",
-   "start": 0,
-   "end": 134,
-   "text": "Code: May God also grant all of us the wisdom to ask what concrete steps we can take to reduce the violence and weaponry in our midst.",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p0107-s000",
-    "p0107-s001"
-   ],
-   "sentenceTexts": [
-    "Code:",
-    "May God also grant all of us the wisdom to ask what concrete steps we can take to reduce the violence and weaponry in our midst."
-   ]
-  },
-  {
-   "occurrenceKey": "1090|claims|137|164",
-   "postNum": 1090,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 137,
-   "end": 164,
-   "text": "What was delivered?\nSmiles.",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p1090-s005",
-    "p1090-s006"
-   ],
-   "sentenceTexts": [
-    "What was delivered?",
-    "Smiles."
-   ]
-  },
-  {
    "occurrenceKey": "1098|claims|104|124",
    "postNum": 1098,
    "kind": "claims",
@@ -177,24 +123,6 @@
    "sentenceTexts": [
     "DC access.",
     "Sold out."
-   ]
-  },
-  {
-   "occurrenceKey": "1100|themeAnchors|0|51",
-   "postNum": 1100,
-   "kind": "themeAnchors",
-   "layer": "review",
-   "start": 0,
-   "end": 51,
-   "text": ">>XMAS IN DC Who is arranging the PRIVATE meetings?",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p1100-s000",
-    "p1100-s001"
-   ],
-   "sentenceTexts": [
-    ">>XMAS IN DC",
-    "Who is arranging the PRIVATE meetings?"
    ]
   },
   {
@@ -255,60 +183,6 @@
    "sentenceTexts": [
     "I’ve said too much.",
     "God bless, Patriots."
-   ]
-  },
-  {
-   "occurrenceKey": "1318|claims|1643|1781",
-   "postNum": 1318,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 1643,
-   "end": 1781,
-   "text": "Department of Justice does not discuss ongoing investigations or confirm specific matters,\nWhat about the active investigation into leaks?",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p1318-s050",
-    "p1318-s051"
-   ],
-   "sentenceTexts": [
-    "Department of Justice does not discuss ongoing investigations or confirm specific matters,",
-    "What about the active investigation into leaks?"
-   ]
-  },
-  {
-   "occurrenceKey": "1318|claims|950|1037",
-   "postNum": 1318,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 950,
-   "end": 1037,
-   "text": "If RR is dirty, Mueller must also be dirty.\nIf Mueller is dirty, RR must also be dirty.",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p1318-s024",
-    "p1318-s025"
-   ],
-   "sentenceTexts": [
-    "If RR is dirty, Mueller must also be dirty.",
-    "If Mueller is dirty, RR must also be dirty."
-   ]
-  },
-  {
-   "occurrenceKey": "1318|claims|1111|1149",
-   "postNum": 1318,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 1111,
-   "end": 1149,
-   "text": "Few have the facts.\nFew know the plan.",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p1318-s029",
-    "p1318-s030"
-   ],
-   "sentenceTexts": [
-    "Few have the facts.",
-    "Few know the plan."
    ]
   },
   {
@@ -432,24 +306,6 @@
    ]
   },
   {
-   "occurrenceKey": "1589|claims|1052|1113",
-   "postNum": 1589,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 1052,
-   "end": 1113,
-   "text": "THEY KNOW WE KNOW.\nBUT UNTIL THE PUBLIC KNOWS IT IS CONTAINED",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p1589-s034",
-    "p1589-s035"
-   ],
-   "sentenceTexts": [
-    "THEY KNOW WE KNOW.",
-    "BUT UNTIL THE PUBLIC KNOWS IT IS CONTAINED."
-   ]
-  },
-  {
    "occurrenceKey": "16|claims|69|543",
    "postNum": 16,
    "kind": "claims",
@@ -474,70 +330,6 @@
    ]
   },
   {
-   "occurrenceKey": "1644|claims|150|194",
-   "postNum": 1644,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 150,
-   "end": 194,
-   "text": "What do they fear the most?\nPublic awakening",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p1644-s004",
-    "p1644-s005"
-   ],
-   "sentenceTexts": [
-    "What do they fear the most?",
-    "Public awakening."
-   ]
-  },
-  {
-   "occurrenceKey": "1644|claims|196|227",
-   "postNum": 1644,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 196,
-   "end": 227,
-   "text": "If they ask.\nThey self destruct",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p1644-s006",
-    "p1644-s007"
-   ],
-   "sentenceTexts": [
-    "If they ask.",
-    "They self destruct."
-   ]
-  },
-  {
-   "occurrenceKey": "17|claims|229|772",
-   "postNum": 17,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 229,
-   "end": 772,
-   "text": "Biggest drop on Pol. \nAbove is reason why the shills are sliding. In case you didn’t know, shills log and send new info back to ASF for instruction. They use a 5 prong pre packaged injection (one post auto generates four more at random designated times). Common drive of posts they all tap into. Since they misjudged the influence of the MSM they are aggressively looking to censor throughout major platforms in exchange for CIA slush funds and WW access for expansion of said networks. Everything they do has been forecasted and prepared for.",
-   "sentencesTouched": 7,
-   "sentenceIds": [
-    "p0017-s004",
-    "p0017-s005",
-    "p0017-s006",
-    "p0017-s007",
-    "p0017-s008",
-    "p0017-s009",
-    "p0017-s010"
-   ],
-   "sentenceTexts": [
-    "Biggest drop on Pol.",
-    "Above is reason why the shills are sliding.",
-    "In case you didn’t know, shills log and send new info back to ASF for instruction.",
-    "They use a 5 prong pre packaged injection (one post auto generates four more at random designated times).",
-    "Common drive of posts they all tap into.",
-    "Since they misjudged the influence of the MSM they are aggressively looking to censor throughout major platforms in exchange for CIA slush funds and WW access for expansion of said networks.",
-    "Everything they do has been forecasted and prepared for."
-   ]
-  },
-  {
    "occurrenceKey": "1841|claims|434|655",
    "postNum": 1841,
    "kind": "claims",
@@ -553,36 +345,6 @@
    "sentenceTexts": [
     "\"The FTC's competition mission is to enforce the rules of the competitive marketplace — the antitrust laws.",
     "These laws promote vigorous competition and protect consumers from anticompetitive mergers and business practices.\""
-   ]
-  },
-  {
-   "occurrenceKey": "19|claims|669|1107",
-   "postNum": 19,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 669,
-   "end": 1107,
-   "text": "You can’t answer the above but will laugh once disclose details.\nThe network which controls this false narrative which in turns keeps the black pop under control is being dismantled.\nFalse local and national black leaders will be exposed next as shills for the D party. \nFollow the money.\nMaxine W has a $4mm home and cash assets in excess of $6mm.\nHow is that possible? One example.\nAll of these questions help to paint the full picture.",
-   "sentencesTouched": 8,
-   "sentenceIds": [
-    "p0019-s010",
-    "p0019-s011",
-    "p0019-s012",
-    "p0019-s013",
-    "p0019-s014",
-    "p0019-s015",
-    "p0019-s016",
-    "p0019-s017"
-   ],
-   "sentenceTexts": [
-    "You can’t answer the above but will laugh once disclose details.",
-    "The network which controls this false narrative which in turns keeps the black pop under control is being dismantled.",
-    "False local and national black leaders will be exposed next as shills for the D party.",
-    "Follow the money.",
-    "Maxine W has a $4mm home and cash assets in excess of $6mm.",
-    "How is that possible?",
-    "One example.",
-    "All of these questions help to paint the full picture."
    ]
   },
   {
@@ -603,24 +365,6 @@
     "\"Sec. 12.",
     "In accordance with Article 33 of the UCMJ, as amended by section 5204 of the MJA, the Secretary of Defense, in consultation with the Secretary of Homeland Security, will issue nonbinding guidance regarding factors that commanders, convening authorities, staff judge advocates, and judge advocates should take into account when exercising their duties with respect to the disposition of charges and specifications in the interest of justice and discipline under Articles 30 and 34 of the UCMJ.",
     "That guidance will take into account, with appropriate consideration of military requirements, the principles contained in official guidance of the Attorney General to attorneys for the Federal Government with respect to the disposition of Federal criminal cases in accordance with the principle of fair and evenhanded administration of Federal criminal law.\""
-   ]
-  },
-  {
-   "occurrenceKey": "2032|claims|335|439",
-   "postNum": 2032,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 335,
-   "end": 439,
-   "text": "If people believe the odds are hopeless their candidate will win…\nDo they still make the effort to vote?",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p2032-s007",
-    "p2032-s008"
-   ],
-   "sentenceTexts": [
-    "If people believe the odds are hopeless their candidate will win…",
-    "Do they still make the effort to vote?"
    ]
   },
   {
@@ -678,27 +422,25 @@
    ]
   },
   {
-   "occurrenceKey": "2177|claims|168|578",
+   "occurrenceKey": "2177|claims|164|455",
    "postNum": 2177,
    "kind": "claims",
    "layer": "primary",
-   "start": 168,
-   "end": 578,
-   "text": "In no case shall information be classified, continue to be maintained as classified, or fail to be declassified in order to:\n(1) conceal violations of law, inefficiency, or administrative error;\n(2) prevent embarrassment to a person, organization, or agency;\n(3) restrain competition; or\n(4) prevent or delay the release of information that does not require protection in the interest of the national security.",
-   "sentencesTouched": 5,
+   "start": 164,
+   "end": 455,
+   "text": "(a) In no case shall information be classified, continue to be maintained as classified, or fail to be declassified in order to:\n(1) conceal violations of law, inefficiency, or administrative error;\n(2) prevent embarrassment to a person, organization, or agency;\n(3) restrain competition; or",
+   "sentencesTouched": 4,
    "sentenceIds": [
     "p2177-s004",
     "p2177-s005",
     "p2177-s006",
-    "p2177-s007",
-    "p2177-s008"
+    "p2177-s007"
    ],
    "sentenceTexts": [
     "(a) In no case shall information be classified, continue to be maintained as classified, or fail to be declassified in order to:",
     "(1) conceal violations of law, inefficiency, or administrative error;",
     "(2) prevent embarrassment to a person, organization, or agency;",
-    "(3) restrain competition; or",
-    "(4) prevent or delay the release of information that does not require protection in the interest of the national security.\""
+    "(3) restrain competition; or"
    ]
   },
   {
@@ -740,103 +482,21 @@
    ]
   },
   {
-   "occurrenceKey": "2445|claims|222|326",
-   "postNum": 2445,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 222,
-   "end": 326,
-   "text": "What role did he play re: House investigations?\nHouse Oversight and Government Reform Committee Chairman",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p2445-s004",
-    "p2445-s005"
-   ],
-   "sentenceTexts": [
-    "What role did he play re: House investigations?",
-    "House Oversight and Government Reform Committee Chairman"
-   ]
-  },
-  {
-   "occurrenceKey": "2445|claims|350|422",
-   "postNum": 2445,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 350,
-   "end": 422,
-   "text": "What role did he play re: House investigations?\nHouse Judiciary Chairman",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p2445-s007",
-    "p2445-s008"
-   ],
-   "sentenceTexts": [
-    "What role did he play re: House investigations?",
-    "House Judiciary Chairman"
-   ]
-  },
-  {
-   "occurrenceKey": "25|claims|24|229",
+   "occurrenceKey": "25|claims|121|229",
    "postNum": 25,
    "kind": "claims",
    "layer": "primary",
-   "start": 24,
+   "start": 121,
    "end": 229,
-   "text": "Return to comments re: Pelosi and John M (some of us refuse to say his last name for a reason). \nThis all has meaning - everything stated. Big picture stuff - few positions allow for this direct knowledge.",
-   "sentencesTouched": 3,
+   "text": "This all has meaning - everything stated. Big picture stuff - few positions allow for this direct knowledge.",
+   "sentencesTouched": 2,
    "sentenceIds": [
-    "p0025-s001",
     "p0025-s002",
     "p0025-s003"
    ],
    "sentenceTexts": [
-    "Return to comments re: Pelosi and John M (some of us refuse to say his last name for a reason).",
     "This all has meaning - everything stated.",
     "Big picture stuff - few positions allow for this direct knowledge."
-   ]
-  },
-  {
-   "occurrenceKey": "25|claims|232|355",
-   "postNum": 25,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 232,
-   "end": 355,
-   "text": "Proof to begin 11.3.\nWe all sincerely appreciate the work you do. Keep up the good fight. The flow of information is vital.",
-   "sentencesTouched": 4,
-   "sentenceIds": [
-    "p0025-s004",
-    "p0025-s005",
-    "p0025-s006",
-    "p0025-s007"
-   ],
-   "sentenceTexts": [
-    "Proof to begin 11.3.",
-    "We all sincerely appreciate the work you do.",
-    "Keep up the good fight.",
-    "The flow of information is vital."
-   ]
-  },
-  {
-   "occurrenceKey": "26|claims|26|153",
-   "postNum": 26,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 26,
-   "end": 153,
-   "text": "The only way is the military. Fully controlled. Save & spread (once 11.3 verifies as 1st marker).\nBiggest advanced drop on Pol.",
-   "sentencesTouched": 4,
-   "sentenceIds": [
-    "p0026-s001",
-    "p0026-s002",
-    "p0026-s003",
-    "p0026-s004"
-   ],
-   "sentenceTexts": [
-    "The only way is the military.",
-    "Fully controlled.",
-    "Save & spread (once 11.3 verifies as 1st marker).",
-    "Biggest advanced drop on Pol."
    ]
   },
   {
@@ -860,13 +520,13 @@
    ]
   },
   {
-   "occurrenceKey": "2692|claims|510|620",
+   "occurrenceKey": "2692|claims|458|620",
    "postNum": 2692,
    "kind": "claims",
    "layer": "primary",
-   "start": 510,
+   "start": 458,
    "end": 620,
-   "text": "Priestap, now retired;\nJames Rybicki, former chief of staff to Comey;\nFBI intelligence analyst Jonathan Moffa;",
+   "text": "Then-Assistant Director of Counterintelligence E.W. Priestap, now retired;\nJames Rybicki, former chief of staff to Comey;\nFBI intelligence analyst Jonathan Moffa;",
    "sentencesTouched": 3,
    "sentenceIds": [
     "p2692-s005",
@@ -880,21 +540,19 @@
    ]
   },
   {
-   "occurrenceKey": "2692|claims|663|800",
+   "occurrenceKey": "2692|claims|672|800",
    "postNum": 2692,
    "kind": "claims",
    "layer": "primary",
-   "start": 663,
+   "start": 672,
    "end": 800,
-   "text": "Herring;\nMichael Kortan, FBI assistant director for public affairs, now retired;\nFormer principal deputy general counsel Trisha Anderson;",
-   "sentencesTouched": 3,
+   "text": "Michael Kortan, FBI assistant director for public affairs, now retired;\nFormer principal deputy general counsel Trisha Anderson;",
+   "sentencesTouched": 2,
    "sentenceIds": [
-    "p2692-s008",
     "p2692-s009",
     "p2692-s010"
    ],
    "sentenceTexts": [
-    "Former Acting Assistant Director Jason V. Herring;",
     "Michael Kortan, FBI assistant director for public affairs, now retired;",
     "Former principal deputy general counsel Trisha Anderson;"
    ]
@@ -915,24 +573,6 @@
    "sentenceTexts": [
     "Not everything can be publicly disclosed because so much ties back to foreign heads of state.",
     "Much will be revealed, we want transparency but not at a cost we can’t recover from."
-   ]
-  },
-  {
-   "occurrenceKey": "2714|claims|212|263",
-   "postNum": 2714,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 212,
-   "end": 263,
-   "text": "What do they ALL have in common?\nCLINTON CONNECTION",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p2714-s003",
-    "p2714-s004"
-   ],
-   "sentenceTexts": [
-    "What do they ALL have in common?",
-    "CLINTON CONNECTION."
    ]
   },
   {
@@ -996,24 +636,6 @@
    ]
   },
   {
-   "occurrenceKey": "2971|claims|248|456",
-   "postNum": 2971,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 248,
-   "end": 456,
-   "text": "\"the study finds little evidence of overt discrimination\"\nsynonyms:\t[proof], confirmation, verification, substantiation, corroboration, affirmation, authentication, attestation, documentation; Define 'proof'.",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p2971-s006",
-    "p2971-s007"
-   ],
-   "sentenceTexts": [
-    "\"the study finds little evidence of overt discrimination\"",
-    "synonyms:\t[proof], confirmation, verification, substantiation, corroboration, affirmation, authentication, attestation, documentation; Define 'proof'."
-   ]
-  },
-  {
    "occurrenceKey": "2971|questions|561|799",
    "postNum": 2971,
    "kind": "questions",
@@ -1051,24 +673,6 @@
     "\"They range from domestic terrorism to court-authorized wiretaps of criminal organizations to child pedophiles and those who would exploit our children.",
     "Criminal aliens.",
     "Big fraud schemes.\""
-   ]
-  },
-  {
-   "occurrenceKey": "3454|themeAnchors|112|416",
-   "postNum": 3454,
-   "kind": "themeAnchors",
-   "layer": "review",
-   "start": 112,
-   "end": 416,
-   "text": "Primary Purpose of the Article: \"A colorful building that some news reports have called the \"temple\" was actually a gym when Epstein worked out when he was on the island, Scully said, noting in an interview with ABC News that the gym had a memorable feature – a massive framed photo of a topless woman.\"",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p3454-s001",
-    "p3454-s002"
-   ],
-   "sentenceTexts": [
-    "Primary Purpose of the Article:",
-    "\"A colorful building that some news reports have called the \"temple\" was actually a gym when Epstein worked out when he was on the island, Scully said, noting in an interview with ABC News that the gym had a memorable feature – a massive framed photo of a topless woman.\""
    ]
   },
   {
@@ -1114,24 +718,6 @@
    ]
   },
   {
-   "occurrenceKey": "3623|claims|187|239",
-   "postNum": 3623,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 187,
-   "end": 239,
-   "text": "Who audits where foreign aid actually goes? \nNobody.",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p3623-s003",
-    "p3623-s004"
-   ],
-   "sentenceTexts": [
-    "Who audits where foreign aid actually goes?",
-    "Nobody."
-   ]
-  },
-  {
    "occurrenceKey": "3656|directives|482|1064",
    "postNum": 3656,
    "kind": "directives",
@@ -1165,24 +751,6 @@
    "sentenceTexts": [
     "FBI CHAIN OF COMMAND FISA-RUSSIA-POTUS-FLYNN-STONE-PAPADOP-MANAF?",
     "[CIA BRIDGE_BRENNAN_INTEL ASSESS[17]_UKRAINE_LINK]?"
-   ]
-  },
-  {
-   "occurrenceKey": "4|claims|723|855",
-   "postNum": 4,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 723,
-   "end": 855,
-   "text": "Don’t fool yourself into thinking Obama, Soros, Roth’s, Clinton’s etc have more power present day than POTUS. \nOperation Mockingbird",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p0004-s009",
-    "p0004-s010"
-   ],
-   "sentenceTexts": [
-    "Don’t fool yourself into thinking Obama, Soros, Roth’s, Clinton’s etc have more power present day than POTUS.",
-    "Operation Mockingbird"
    ]
   },
   {
@@ -1252,42 +820,6 @@
    ]
   },
   {
-   "occurrenceKey": "4296|claims|23|55",
-   "postNum": 4296,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 23,
-   "end": 55,
-   "text": "May 8, 2020 _masks on\nReconcile.",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p4296-s001",
-    "p4296-s002"
-   ],
-   "sentenceTexts": [
-    "May 8, 2020 _masks on",
-    "Reconcile."
-   ]
-  },
-  {
-   "occurrenceKey": "4320|claims|114|181",
-   "postNum": 4320,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 114,
-   "end": 181,
-   "text": "Last line should clarify: \nIs this about the virus OR THE ELECTION?",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p4320-s002",
-    "p4320-s003"
-   ],
-   "sentenceTexts": [
-    "Last line should clarify:",
-    "Is this about the virus OR THE ELECTION?"
-   ]
-  },
-  {
    "occurrenceKey": "4437|claims|10|155",
    "postNum": 4437,
    "kind": "claims",
@@ -1305,26 +837,6 @@
     "def visit_twitter_and_log_in",
     "visit 'https://cards-dev.twitter.com/validator'",
     "find('input.js-username-field').set(ENV['TWITTER_USERNAME'])"
-   ]
-  },
-  {
-   "occurrenceKey": "4437|claims|252|356",
-   "postNum": 4437,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 252,
-   "end": 356,
-   "text": "def enter_url_and_click_preview(url)\n    find('input.FormControl').set(url)\n    click_on('Preview card')",
-   "sentencesTouched": 3,
-   "sentenceIds": [
-    "p4437-s006",
-    "p4437-s007",
-    "p4437-s008"
-   ],
-   "sentenceTexts": [
-    "def enter_url_and_click_preview(url)",
-    "find('input.FormControl').set(url)",
-    "click_on('Preview card')"
    ]
   },
   {
@@ -1379,24 +891,6 @@
    "sentenceTexts": [
     "Powering Democratic candidates, committees, parties,",
     "organizations, and c4s around the country."
-   ]
-  },
-  {
-   "occurrenceKey": "4595|claims|80|109",
-   "postNum": 4595,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 80,
-   "end": 109,
-   "text": "v2_change we can believe in\nQ",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p4595-s002",
-    "p4595-s003"
-   ],
-   "sentenceTexts": [
-    "v2_change we can believe in",
-    "Q"
    ]
   },
   {
@@ -1492,13 +986,13 @@
    ]
   },
   {
-   "occurrenceKey": "4935|claims|317|367",
+   "occurrenceKey": "4935|claims|317|399",
    "postNum": 4935,
    "kind": "claims",
    "layer": "primary",
    "start": 317,
-   "end": 367,
-   "text": "Mayor Bill de Blasio, D-N.Y.C\nformer Virginia Gov.",
+   "end": 399,
+   "text": "Mayor Bill de Blasio, D-N.Y.C\nformer Virginia Gov. Terry McCauliffe, among others.",
    "sentencesTouched": 2,
    "sentenceIds": [
     "p4935-s008",
@@ -1507,24 +1001,6 @@
    "sentenceTexts": [
     "Mayor Bill de Blasio, D-N.Y.C",
     "former Virginia Gov. Terry McCauliffe, among others."
-   ]
-  },
-  {
-   "occurrenceKey": "501|themeAnchors|23|64",
-   "postNum": 501,
-   "kind": "themeAnchors",
-   "layer": "review",
-   "start": 23,
-   "end": 64,
-   "text": "_ACTION_DBF5Cz-BSY-1_y FOR GOD & COUNTRY.",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p0501-s001",
-    "p0501-s002"
-   ],
-   "sentenceTexts": [
-    "_ACTION_DBF5Cz-BSY-1_y",
-    "FOR GOD & COUNTRY."
    ]
   },
   {
@@ -6674,6 +6150,15 @@
  ],
  "contextCollision": [
   {
+   "sentenceId": "p0102-s003",
+   "postNum": 102,
+   "reviewKind": "themeAnchors",
+   "primaryKind": "directives",
+   "start": 52,
+   "end": 61,
+   "text": "Godspeed."
+  },
+  {
    "sentenceId": "p1021-s000",
    "postNum": 1021,
    "reviewKind": "themeAnchors",
@@ -6726,6 +6211,24 @@
    "start": 137,
    "end": 142,
    "text": "Pray."
+  },
+  {
+   "sentenceId": "p0107-s001",
+   "postNum": 107,
+   "reviewKind": "themeAnchors",
+   "primaryKind": "directives",
+   "start": 6,
+   "end": 134,
+   "text": "May God also grant all of us the wisdom to ask what concrete steps we can take to reduce the violenc"
+  },
+  {
+   "sentenceId": "p1100-s001",
+   "postNum": 1100,
+   "reviewKind": "themeAnchors",
+   "primaryKind": "questions",
+   "start": 13,
+   "end": 51,
+   "text": "Who is arranging the PRIVATE meetings?"
   },
   {
    "sentenceId": "p0117-s011",
@@ -7061,6 +6564,15 @@
    "text": "GOD WINS."
   },
   {
+   "sentenceId": "p3454-s002",
+   "postNum": 3454,
+   "reviewKind": "themeAnchors",
+   "primaryKind": "claims",
+   "start": 145,
+   "end": 416,
+   "text": "\"A colorful building that some news reports have called the \"temple\" was actually a gym when Epstein"
+  },
+  {
    "sentenceId": "p3493-s000",
    "postNum": 3493,
    "reviewKind": "themeAnchors",
@@ -7313,6 +6825,15 @@
    "text": "Be aware of false prophets."
   },
   {
+   "sentenceId": "p0501-s002",
+   "postNum": 501,
+   "reviewKind": "themeAnchors",
+   "primaryKind": "claims",
+   "start": 46,
+   "end": 64,
+   "text": "FOR GOD & COUNTRY."
+  },
+  {
    "sentenceId": "p0587-s000",
    "postNum": 587,
    "reviewKind": "themeAnchors",
@@ -7435,11 +6956,6 @@
    "text": "Standard Hotel"
   },
   {
-   "postNum": 1211,
-   "kind": "namedEntities",
-   "text": "Agnes Nixon"
-  },
-  {
    "postNum": 1217,
    "kind": "namedEntities",
    "text": "WikiLeaks"
@@ -7495,11 +7011,6 @@
    "text": "Sean Hannity"
   },
   {
-   "postNum": 1863,
-   "kind": "namedEntities",
-   "text": "Roseanne Barr"
-  },
-  {
    "postNum": 19,
    "kind": "namedEntities",
    "text": "Maxine Waters"
@@ -7535,19 +7046,9 @@
    "text": "New York Post"
   },
   {
-   "postNum": 2029,
-   "kind": "namedEntities",
-   "text": "Vice News"
-  },
-  {
    "postNum": 2035,
    "kind": "namedEntities",
    "text": "House"
-  },
-  {
-   "postNum": 2040,
-   "kind": "namedEntities",
-   "text": "Judicial Watch"
   },
   {
    "postNum": 2040,
@@ -7563,26 +7064,6 @@
    "postNum": 2072,
    "kind": "namedEntities",
    "text": "Speaker of the House"
-  },
-  {
-   "postNum": 2076,
-   "kind": "namedEntities",
-   "text": "State Department OIG"
-  },
-  {
-   "postNum": 2136,
-   "kind": "namedEntities",
-   "text": "CBN News"
-  },
-  {
-   "postNum": 2136,
-   "kind": "namedEntities",
-   "text": "The Independent"
-  },
-  {
-   "postNum": 2181,
-   "kind": "namedEntities",
-   "text": "House Intelligence"
   },
   {
    "postNum": 2206,
@@ -7615,11 +7096,6 @@
    "text": "President"
   },
   {
-   "postNum": 2523,
-   "kind": "namedEntities",
-   "text": "Kavanaugh"
-  },
-  {
    "postNum": 2555,
    "kind": "namedEntities",
    "text": "Horowitz"
@@ -7640,16 +7116,6 @@
    "text": "Sara Carter"
   },
   {
-   "postNum": 2633,
-   "kind": "namedEntities",
-   "text": "US Senate"
-  },
-  {
-   "postNum": 2673,
-   "kind": "namedEntities",
-   "text": "Charlie Kirk"
-  },
-  {
    "postNum": 2730,
    "kind": "namedEntities",
    "text": "God"
@@ -7658,16 +7124,6 @@
    "postNum": 2768,
    "kind": "namedEntities",
    "text": "Kamala Harris"
-  },
-  {
-   "postNum": 2768,
-   "kind": "namedEntities",
-   "text": "Jussie Smollett"
-  },
-  {
-   "postNum": 2782,
-   "kind": "namedEntities",
-   "text": "Gavin Newsom"
   },
   {
    "postNum": 2841,
@@ -7705,11 +7161,6 @@
    "text": "Sara Carter"
   },
   {
-   "postNum": 3012,
-   "kind": "namedEntities",
-   "text": "George Papa"
-  },
-  {
    "postNum": 3015,
    "kind": "namedEntities",
    "text": "Scaramucci"
@@ -7745,19 +7196,9 @@
    "text": "Mueller Report"
   },
   {
-   "postNum": 3647,
-   "kind": "namedEntities",
-   "text": "US Senate"
-  },
-  {
    "postNum": 3690,
    "kind": "namedEntities",
    "text": "Gang of 8"
-  },
-  {
-   "postNum": 3824,
-   "kind": "namedEntities",
-   "text": "Michael Beatty"
   },
   {
    "postNum": 3841,
@@ -7768,16 +7209,6 @@
    "postNum": 3900,
    "kind": "namedEntities",
    "text": "President"
-  },
-  {
-   "postNum": 3990,
-   "kind": "namedEntities",
-   "text": "Papadopoulos"
-  },
-  {
-   "postNum": 3990,
-   "kind": "namedEntities",
-   "text": "Manafort"
   },
   {
    "postNum": 3990,
@@ -7810,11 +7241,6 @@
    "text": "USNS Comfort"
   },
   {
-   "postNum": 4312,
-   "kind": "namedEntities",
-   "text": "Cambridge Dictionary"
-  },
-  {
    "postNum": 4339,
    "kind": "namedEntities",
    "text": "Michigan"
@@ -7825,16 +7251,6 @@
    "text": "New York Post"
   },
   {
-   "postNum": 4352,
-   "kind": "namedEntities",
-   "text": "House Republicans"
-  },
-  {
-   "postNum": 4401,
-   "kind": "namedEntities",
-   "text": "Google Trends"
-  },
-  {
    "postNum": 445,
    "kind": "namedEntities",
    "text": "CrowdStrike"
@@ -7843,11 +7259,6 @@
    "postNum": 4468,
    "kind": "namedEntities",
    "text": "Daily Beast"
-  },
-  {
-   "postNum": 4492,
-   "kind": "namedEntities",
-   "text": "Yale Medicine"
   },
   {
    "postNum": 4492,
@@ -7875,36 +7286,6 @@
    "text": "Canada"
   },
   {
-   "postNum": 4875,
-   "kind": "themeAnchors",
-   "text": "More 'conspiracy' [fact-less base-less claims] pushed re: violent, extremist, racist, dangerous, anti-gov, nazism, white"
-  },
-  {
-   "postNum": 4885,
-   "kind": "namedEntities",
-   "text": "Jeet Heer"
-  },
-  {
-   "postNum": 4885,
-   "kind": "namedEntities",
-   "text": "Erin Nanoki"
-  },
-  {
-   "postNum": 4949,
-   "kind": "themeAnchors",
-   "text": "That this nation, under God, shall have a new birth of freedom and that government of the people, by the people, for the"
-  },
-  {
-   "postNum": 56,
-   "kind": "namedEntities",
-   "text": "International Islamic Council for Da'wa and Relief"
-  },
-  {
-   "postNum": 746,
-   "kind": "namedEntities",
-   "text": "Mike Wallace"
-  },
-  {
    "postNum": 785,
    "kind": "namedEntities",
    "text": "Delta"
@@ -7923,11 +7304,6 @@
    "postNum": 867,
    "kind": "namedEntities",
    "text": "WikiLeaks"
-  },
-  {
-   "postNum": 960,
-   "kind": "namedEntities",
-   "text": "Comedy Central"
   },
   {
    "postNum": 988,

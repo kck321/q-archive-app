@@ -1,0 +1,222 @@
+{
+  "note": "Owner instruction of 2026-08-22: complete the 159 human-semantic reviews. Family 1 of 6 — BOUNDARY_CROSSING::MULTI_LINE_SPAN, 52 rows, every one inspected against its drop. Report + input; scripts/build-lane-b-actions.mjs turns it into applier actions.",
+  "family": "BOUNDARY_CROSSING::MULTI_LINE_SPAN",
+  "reviewedOn": "2026-08-22",
+  "rowsReviewed": 52,
+  "dispositionKey": {
+    "A": "KEEP_AS_CERTIFIED — the span/category is legitimate as stored",
+    "B": "REPAIR_GEOMETRY — the category is correct, the span boundary is wrong",
+    "C": "RECLASSIFY — the semantic category is wrong",
+    "D": "SPLIT_SEMANTIC_UNIT — one stored unit holds two independently classifiable clauses",
+    "E": "WITHDRAW — the record does not belong as Q-authored semantic paint",
+    "F": "INTENTIONALLY_UNRESOLVED — the evidence does not establish one correct answer"
+  },
+  "rulesAppliedUniformly": [
+    "A multi-line span is not a defect. Q writes one sentence over two lines constantly, and a complete semantic unit may hold line breaks, several clauses and a vocative. Where the span covers exactly one such unit it is KEPT.",
+    "A span lying ENTIRELY inside pasted or quoted material, covering exactly one complete unit of it, is KEPT. This queue is about boundary defects; whether quoted material may carry a certified category was settled elsewhere and is not re-litigated here. The prayer on #154, the Declaration on #3656, the Mueller scope order on #2943 and the three dictionary entries are all this case.",
+    "A span is REPAIRED when it swallows something that is not part of its unit: a certified record of another category, a label or cipher line, Q's signature, or a neighbouring independent sentence.",
+    "A span is WITHDRAWN when it is an extractor blob — three or more independent units, two or more of them already certified separately — so no single trim is correct. The sentences it leaves uncovered were never individually adjudicated and belong to the coverage census, not to this queue.",
+    "Where a repaired span still legitimately covers more than one sentence, the row survives the rebuild carrying an explicit reviewed disposition. That is the owner's standing instruction, not a failure to finish."
+  ],
+  "rows": [
+    { "conflictId": "BOUNDARY_CROSSING::1015|claims|137|181::0", "postNum": 1015, "disposition": "A",
+      "reason": "Both lines are Q's own prose and neither asserts anything alone — 'Omnibus Bill.' is a noun phrase, 'The gift that keeps on giving.' has no subject. Together they are one claim. The nested 'Omnibus Bill' entity is the inline layer, which overlaps by design.",
+      "retainedIntentionally": "one claim, deliberately spanning the two lines Q broke it across" },
+
+    { "conflictId": "BOUNDARY_CROSSING::102|themeAnchors|41|61::0", "postNum": 102, "disposition": "B",
+      "trimToSentences": ["p0102-s003"],
+      "reason": "The anchor swallowed '^_Sj69ETC-', a cipher line already certified as its own context unit, and reached into 'Godspeed.', which is certified as a Directive. A theme is anchored to the prose that carries it, not to the tripcode beside it." },
+
+    { "conflictId": "BOUNDARY_CROSSING::107|themeAnchors|0|134::0", "postNum": 107, "disposition": "B",
+      "trimToSentences": ["p0107-s001"],
+      "reason": "The anchor swallowed the label line 'Code:', which is certified as its own context unit. The prayer line beneath it is the passage the theme actually attaches to, and is already the Directive record at the same offsets." },
+
+    { "conflictId": "BOUNDARY_CROSSING::1090|claims|137|164::0", "postNum": 1090, "disposition": "B",
+      "trimToSentences": ["p1090-s006"],
+      "reason": "The claim swallowed 'What was delivered?', which is separately certified as a Question. Q asks and then answers; the answer 'Smiles.' is the claim." },
+
+    { "conflictId": "BOUNDARY_CROSSING::1098|claims|104|124::0", "postNum": 1098, "disposition": "A",
+      "reason": "'DC access.' and 'Sold out.' are Q's telegraphic halves of one assertion — access to DC was sold. 'Sold out.' has no subject alone. Nothing else on the drop competes for these characters.",
+      "retainedIntentionally": "one claim across the two lines Q broke it across" },
+
+    { "conflictId": "BOUNDARY_CROSSING::1100|themeAnchors|0|51::0", "postNum": 1100, "disposition": "B",
+      "trimToSentences": ["p1100-s001"],
+      "reason": "The anchor swallowed '>>XMAS IN DC', a greentext excerpt line, and covers a certified Question. Trimmed to the Q-authored sentence the theme is about." },
+
+    { "conflictId": "BOUNDARY_CROSSING::1192|claims|0|11::0", "postNum": 1192, "disposition": "A",
+      "reason": "'Q&A' / '5 min.' is one announcement. Neither line is a statement on its own and nothing else claims these characters.",
+      "retainedIntentionally": "one claim over the two lines of a two-line announcement" },
+
+    { "conflictId": "BOUNDARY_CROSSING::1318|claims|1643|1781::0", "postNum": 1318, "disposition": "B",
+      "trimToSentences": ["p1318-s050"],
+      "reason": "The claim swallowed 'What about the active investigation into leaks?', separately certified as a Question and already narrowed by B3-NARROW-1318-qf-1. The claim is the DOJ statement line above it." },
+
+    { "conflictId": "BOUNDARY_CROSSING::1318|claims|950|1037::0", "postNum": 1318, "disposition": "E",
+      "reason": "Both halves are ALREADY certified as claims in their own right — 950..993 and 994..1037. This wide record is a third copy over the same characters and paints them twice. Withdrawing it loses no coverage: the two conditionals stay exactly as they are." },
+
+    { "conflictId": "BOUNDARY_CROSSING::1318|claims|1111|1149::0", "postNum": 1318, "disposition": "B",
+      "trimToSentences": ["p1318-s030"],
+      "reason": "'Few have the facts.' is already its own claim at 1111..1130. 'Few know the plan.' has no record of its own. Re-spanning the wide record onto the second sentence gives one claim per sentence and keeps both painted." },
+
+    { "conflictId": "BOUNDARY_CROSSING::154|directives|995|1053::0", "postNum": 154, "disposition": "A",
+      "reason": "'and lead us not into temptation, but deliver us from evil.' is ONE sentence of the Lord's Prayer, broken across two lines as the prayer is always set. There is no Q prose beside it to have swallowed.",
+      "retainedIntentionally": "one petition of a recited prayer, set across two lines" },
+
+    { "conflictId": "BOUNDARY_CROSSING::154|directives|769|820::0", "postNum": 154, "disposition": "A",
+      "reason": "'Our Father who art in heaven, Hallowed be thy name.' — address and first petition, one unit of the prayer, set across two lines.",
+      "retainedIntentionally": "one unit of a recited prayer, set across two lines" },
+
+    { "conflictId": "BOUNDARY_CROSSING::154|directives|839|884::0", "postNum": 154, "disposition": "A",
+      "reason": "'Thy will be done on earth as it is in heaven.' is a single sentence with no terminator on the first line — the segmenter split it, Q did not.",
+      "retainedIntentionally": "one sentence, hard-wrapped" },
+
+    { "conflictId": "BOUNDARY_CROSSING::154|themeAnchors|885|1053::0", "postNum": 154, "disposition": "A",
+      "reason": "A theme anchor over the five closing petitions of the prayer. A passage anchor is supposed to cover a passage, and themeAnchors is a review layer that overlaps the primary paint by design.",
+      "retainedIntentionally": "a passage-level theme anchor over five lines of one recited prayer" },
+
+    { "conflictId": "BOUNDARY_CROSSING::1589|claims|1052|1113::0", "postNum": 1589, "disposition": "B",
+      "trimToSentences": ["p1589-s034"],
+      "reason": "'BUT UNTIL THE PUBLIC KNOWS IT IS CONTAINED.' is already its own claim at 1071..1114, and this record covers it truncated by its final full stop. Re-spanning onto 'THEY KNOW WE KNOW.' gives each sentence exactly one claim." },
+
+    { "conflictId": "BOUNDARY_CROSSING::1644|claims|150|194::0", "postNum": 1644, "disposition": "E",
+      "reason": "The span covers a certified Question (150..177) and a certified Claim (178..195), and truncates the claim by its full stop. Both constituents are correctly certified already; this record only paints them a second time." },
+
+    { "conflictId": "BOUNDARY_CROSSING::1644|claims|196|227::0", "postNum": 1644, "disposition": "B",
+      "trimToSentences": ["p1644-s006"],
+      "reason": "'They self destruct.' is already its own claim at 209..228, truncated here by its full stop. Re-spanning onto 'If they ask.' gives one claim per sentence." },
+
+    { "conflictId": "BOUNDARY_CROSSING::17|claims|229|772::0", "postNum": 17, "disposition": "E",
+      "reason": "543 characters over seven sentences, three of which are ALREADY separately certified claims. An extractor blob, not a semantic unit — there is no single sentence to trim it to, and every trim would keep painting one of the three twice. The four sentences it leaves uncovered were never individually adjudicated and belong to the coverage census." },
+
+    { "conflictId": "BOUNDARY_CROSSING::19|claims|669|1107::0", "postNum": 19, "disposition": "E",
+      "reason": "Eight sentences, swallowing a certified Prediction, a certified Directive, a certified Claim, a certified Question and two lines of quoted source. Five records already describe what is inside it; no trim is correct." },
+
+    { "conflictId": "BOUNDARY_CROSSING::2032|claims|335|439::0", "postNum": 2032, "disposition": "E",
+      "reason": "The span covers a certified Claim (335..400) and a certified Question (401..439). Both are already right; this record duplicates them." },
+
+    { "conflictId": "BOUNDARY_CROSSING::2061|claims|10|70::0", "postNum": 2061, "disposition": "A",
+      "reason": "'Sergey Brin - GOOG [Founder][BORN IN MOSCOW]' / 'was married to…' is one statement continued onto the next line — Q's chained-genealogy format, where the trailing ellipsis is the link to the next name.",
+      "retainedIntentionally": "one claim, continued across the line break Q wrote it with" },
+
+    { "conflictId": "BOUNDARY_CROSSING::2061|claims|71|127::0", "postNum": 2061, "disposition": "A",
+      "reason": "Same chained-genealogy format: 'Anne Wojcicki - 23andme [Founder]' / 'was brother-in-law to…' is one continued statement.",
+      "retainedIntentionally": "one claim, continued across the line break Q wrote it with" },
+
+    { "conflictId": "BOUNDARY_CROSSING::2177|claims|168|578::0", "postNum": 2177, "disposition": "B",
+      "trimToSpan": { "startSentence": "p2177-s004", "endSentence": "p2177-s007" },
+      "reason": "Item (4) of the pasted prohibition is already its own claim at 456..579, and this record covers it truncated by one character. Re-spanned to the lead-in plus items (1) to (3), so the enumeration is covered once and item (4) keeps its own record." },
+
+    { "conflictId": "BOUNDARY_CROSSING::2445|claims|222|326::0", "postNum": 2445, "disposition": "B",
+      "trimToSentences": ["p2445-s005"],
+      "reason": "The claim swallowed 'What role did he play re: House investigations?', separately certified as a Question. The claim is the office line that answers it." },
+
+    { "conflictId": "BOUNDARY_CROSSING::2445|claims|350|422::0", "postNum": 2445, "disposition": "B",
+      "trimToSentences": ["p2445-s008"],
+      "reason": "The same shape one question later: the claim swallowed the repeated certified Question. The claim is 'House Judiciary Chairman'." },
+
+    { "conflictId": "BOUNDARY_CROSSING::25|claims|24|229::0", "postNum": 25, "disposition": "B",
+      "trimToSpan": { "startSentence": "p0025-s002", "endSentence": "p0025-s003" },
+      "reason": "The claim swallowed 'Return to comments re: Pelosi and John M …', which is certified as a Directive at exactly those offsets. Trimmed off the directive; the two sentences that remain are Q's continuous commentary on the drop and stay together.",
+      "retainedIntentionally": "the repaired span still covers two sentences on one line — they are one piece of Q's commentary, not two independent assertions" },
+
+    { "conflictId": "BOUNDARY_CROSSING::25|claims|232|355::0", "postNum": 25, "disposition": "B",
+      "trimToSentences": ["p0025-s004"],
+      "reason": "The claim ran across two certified claims (253..297, 322..355) and a certified Directive (298..321). Re-spanned onto 'Proof to begin 11.3.', the one sentence in its range with no record of its own." },
+
+    { "conflictId": "BOUNDARY_CROSSING::26|claims|26|153::0", "postNum": 26, "disposition": "E",
+      "reason": "Four independent units: a certified Claim (26..55), 'Fully controlled.', a certified Directive (74..123) and 'Biggest advanced drop on Pol.'. Two are already certified and no single trim covers what is left, so the blob goes and the two uncertified sentences pass to the coverage census." },
+
+    { "conflictId": "BOUNDARY_CROSSING::2692|claims|228|457::0", "postNum": 2692, "disposition": "A",
+      "reason": "Three semicolon-terminated items of one enumeration of FBI officials, starting and ending on sentence boundaries, with nothing else claiming those characters. An enumeration is supposed to run over lines.",
+      "retainedIntentionally": "one enumeration segment, three list items" },
+
+    { "conflictId": "BOUNDARY_CROSSING::2692|claims|510|620::0", "postNum": 2692, "disposition": "B",
+      "trimToSpan": { "startSentence": "p2692-s005", "endSentence": "p2692-s007" },
+      "reason": "The span starts mid-item, at 'Priestap' rather than at 'Then-Assistant Director of Counterintelligence E.W. Priestap' — the segmenter split the line at 'E.W.'. Extended to the whole of the item it half-covers, so the enumeration is not cut through a person's title." },
+
+    { "conflictId": "BOUNDARY_CROSSING::2692|claims|663|800::0", "postNum": 2692, "disposition": "B",
+      "trimToSpan": { "startSentence": "p2692-s009", "endSentence": "p2692-s010" },
+      "reason": "The span starts mid-item at 'Herring;' — inside 'Former Acting Assistant Director Jason V. Herring;', which is already its own claim at 621..671, split there by 'V.'. Trimmed to the two items that follow it." },
+
+    { "conflictId": "BOUNDARY_CROSSING::2714|claims|212|263::0", "postNum": 2714, "disposition": "E",
+      "reason": "Covers a certified Question (212..244) and a certified Claim (245..264), the latter truncated by its full stop. Both constituents are already right." },
+
+    { "conflictId": "BOUNDARY_CROSSING::2943|claims|479|763::0", "postNum": 2943, "disposition": "A",
+      "reason": "The three enumerated clauses (i)(ii)(iii) of the Special Counsel scope order, pasted whole. The span covers exactly that enumeration, begins and ends on its boundaries, and swallows no Q prose. Nothing else claims those characters.",
+      "retainedIntentionally": "one complete pasted enumeration, three clauses" },
+
+    { "conflictId": "BOUNDARY_CROSSING::2971|claims|248|456::0", "postNum": 2971, "disposition": "B",
+      "trimToSentences": ["p2971-s006"],
+      "reason": "The span runs from a quoted study line through a pasted synonyms list and ends by swallowing Q's own 'Define 'proof'.' — three different kinds of material in one record. Trimmed to the quoted line it opens on; Q's instruction is not claim paint and the synonyms list is dictionary copy." },
+
+    { "conflictId": "BOUNDARY_CROSSING::3454|themeAnchors|112|416::0", "postNum": 3454, "disposition": "B",
+      "trimToSentences": ["p3454-s002"],
+      "reason": "The anchor swallowed 'Primary Purpose of the Article:', a label already certified as its own context unit. The quoted sentence beneath it is the passage the theme is about, and is already the Claim at the same offsets." },
+
+    { "conflictId": "BOUNDARY_CROSSING::3623|claims|187|239::0", "postNum": 3623, "disposition": "B",
+      "trimToSentences": ["p3623-s004"],
+      "reason": "The claim swallowed 'Who audits where foreign aid actually goes?', separately certified as a Question. The claim is Q's one-word answer, 'Nobody.'" },
+
+    { "conflictId": "BOUNDARY_CROSSING::3656|directives|482|1064::0", "postNum": 3656, "disposition": "A",
+      "reason": "Two sentences of the Declaration of Independence inside one pair of quotation marks — the span runs from the opening quote to the closing one and covers nothing else. A quoted passage is one unit however many sentences it holds.",
+      "retainedIntentionally": "one complete quoted passage, two sentences" },
+
+    { "conflictId": "BOUNDARY_CROSSING::4|claims|723|855::0", "postNum": 4, "disposition": "E",
+      "reason": "The span covers a sentence already certified as a Directive (723..832) and then 'Operation Mockingbird', which is a certified entity name on a line of its own. Neither part is a claim: one is a directive, the other is a label." },
+
+    { "conflictId": "BOUNDARY_CROSSING::4008|claims|874|944::0", "postNum": 4008, "disposition": "A",
+      "reason": "'Insurgency, however, can and will flourish in the modern environment.' is ONE sentence of a greentext excerpt, hard-wrapped by the board. Nothing else claims those characters.",
+      "retainedIntentionally": "one sentence, hard-wrapped mid-clause by the board" },
+
+    { "conflictId": "BOUNDARY_CROSSING::4296|claims|23|55::0", "postNum": 4296, "disposition": "B",
+      "trimToSentences": ["p4296-s001"],
+      "reason": "The claim swallowed 'Reconcile.', which is certified as a Directive at 45..55. The claim is the dated line above it." },
+
+    { "conflictId": "BOUNDARY_CROSSING::4320|claims|114|181::0", "postNum": 4320, "disposition": "B",
+      "trimToSentences": ["p4320-s002"],
+      "reason": "The claim swallowed 'Is this about the virus OR THE ELECTION?', separately certified as a Question. The lead-in line is what remains." },
+
+    { "conflictId": "BOUNDARY_CROSSING::4437|claims|252|356::0", "postNum": 4437, "disposition": "E", "flagForOwner": true,
+      "reason": "Three lines of pasted Ruby — a method definition and two statements — certified as one Claim. Three independent units of source code, not one semantic unit, so no trim is correct. This is the drop the owner named: pasted multi-sentence code must not be Q semantic paint. Withdrawing it removes code FROM the paint rather than adding it, which is the same principle applied in the other direction. Listed for the owner because #4437 has been ruled on before." },
+
+    { "conflictId": "BOUNDARY_CROSSING::4555|claims|172|267::0", "postNum": 4555, "disposition": "A",
+      "reason": "'Powering Democratic candidates, committees, parties, organizations, and c4s around the country.' is one sentence hard-wrapped after a comma. Nothing else claims those characters.",
+      "retainedIntentionally": "one sentence, hard-wrapped mid-list" },
+
+    { "conflictId": "BOUNDARY_CROSSING::4595|claims|80|109::0", "postNum": 4595, "disposition": "B",
+      "trimToSentences": ["p4595-s002"],
+      "reason": "The span swallowed Q's signature line. A signature is not part of the claim above it." },
+
+    { "conflictId": "BOUNDARY_CROSSING::4603|claims|278|369::0", "postNum": 4603, "disposition": "A",
+      "reason": "A pasted dictionary entry: headword 'ren·e·gade' and its gloss. Headword and definition are one entry, and the span covers exactly that with no Q prose beside it.",
+      "retainedIntentionally": "one pasted dictionary entry, headword plus gloss" },
+
+    { "conflictId": "BOUNDARY_CROSSING::4656|claims|112|156::0", "postNum": 4656, "disposition": "A",
+      "reason": "The adjective sense of the same pasted dictionary entry: part-of-speech label and gloss, one entry, nothing else on those characters.",
+      "retainedIntentionally": "one pasted dictionary sense, label plus gloss" },
+
+    { "conflictId": "BOUNDARY_CROSSING::4656|claims|11|75::0", "postNum": 4656, "disposition": "A",
+      "reason": "The noun sense of the same entry: headword, part of speech and gloss. One entry over three lines, which is how a dictionary entry is set.",
+      "retainedIntentionally": "one pasted dictionary sense, headword plus label plus gloss" },
+
+    { "conflictId": "BOUNDARY_CROSSING::4935|claims|317|367::0", "postNum": 4935, "disposition": "B",
+      "trimToSpan": { "startSentence": "p4935-s008", "endSentence": "p4935-s009" },
+      "reason": "The span stops at 'former Virginia Gov.' — the segmenter ended a sentence at the abbreviation 'Gov.', so the record cuts off in the middle of Terry McCauliffe's title and never reaches his name. Extended to the whole of the second line. Same defect class as audit/abbreviation-span-repairs.json." },
+
+    { "conflictId": "BOUNDARY_CROSSING::501|themeAnchors|23|64::0", "postNum": 501, "disposition": "B",
+      "trimToSentences": ["p0501-s002"],
+      "reason": "The anchor swallowed '_ACTION_DBF5Cz-BSY-1_y', a cipher line already certified as its own context unit. 'FOR GOD & COUNTRY.' is the line the theme attaches to, and is already the Claim at the same offsets." },
+
+    { "conflictId": "BOUNDARY_CROSSING::64|claims|0|84::0", "postNum": 64, "disposition": "A",
+      "reason": "'Fellow Patriots,' is the vocative opening of the sentence that finishes on the next line. Splitting it would leave a salutation and a subjectless clause.",
+      "retainedIntentionally": "one sentence: vocative address plus the statement it introduces" },
+
+    { "conflictId": "BOUNDARY_CROSSING::859|claims|9|42::0", "postNum": 859, "disposition": "A",
+      "reason": "'These people are stupid.' with a board post-pointer '>>567493' corrupting the middle of the word 'people'. The break is damage in the archived text, not a boundary Q wrote; any trim would cut a word in half.",
+      "retainedIntentionally": "one sentence, split mid-word by a board artifact in the source text" },
+
+    { "conflictId": "BOUNDARY_CROSSING::909|claims|63|91::0", "postNum": 909, "disposition": "A",
+      "pairedWithdrawal": { "occurrenceKey": "909|claims|63|85", "why": "the nested prefix 'We are working to END.' is a fragment of this claim, not a claim of its own — Q broke 'We are working to END EVIL.' across two lines for emphasis" },
+      "reason": "'We are working to END.' / 'EVIL.' is one sentence Q split for emphasis. This wide record is the complete unit; the narrower record nested inside it covers only the first half and is the defect." }
+  ]
+}

@@ -112,6 +112,10 @@ const EXTRA_ACTION_SETS = [
   // apply-themes.mjs earlier in the chain, so they belong to the applier that runs after every
   // step that writes the arrays it edits.
   { file: 'step3b1-r3-actions.jsonl',  sha256: '91c6bccf00928f5304cc08c44bdec473d9020c831302fbcd8ae14f2fe10bbd0c', label: 'R3 owner ruling 3 unlocated withdrawals' },
+  // LANE B — the 159 human-semantic reviews, one set per family, in the order they were reviewed.
+  // Each set's keys are measured against the bundle as it stands AFTER every set before it, which
+  // is what the wave rebinding below makes true rather than merely hoped for.
+  { file: 'step3b1-lb1-actions.jsonl', sha256: '0d2670d27c5eedbf316d6253bd74fe691f861ca43de4a8447174aacba95bf740', label: 'LB1 multi-line span reviews' },
 ]
 let extraCount = 0
 const extraIds = []

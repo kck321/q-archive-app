@@ -2,7 +2,7 @@
  "note": "Step 3B-1 apply receipt. Measured from the bundle, not from the plan.",
  "step": "3B-1",
  "planSha256": "373ca06b1416b6707a111f2c3da8e751472c551f739500f76cdcc764d3128058",
- "actionsApplied": 684,
+ "actionsApplied": 717,
  "actionsHeld": 2,
  "heldActionIds": [
   "A-DUP-2971-questions-561-799",
@@ -10,9 +10,9 @@
  ],
  "seedVersion": 87,
  "outputs": {
-  "public/data/posts.json": "4ea1b578f1d8c9fae8a7cd74472ccd539ba752cacdab06c87f32146310e2115e",
+  "public/data/posts.json": "a4b05218a489dc39aecd840a45fa05b31ecae72b9c38d6103ac6956731063460",
   "public/data/questions.json": "d36dfc86ea8de5531183fe24030011aeefe76826df8b3579d820d24025376bad",
-  "public/data/semantics.json": "c042c3b8cd27c179874828440fed735bc70a4b8971ac5d652a43b4e54d8ae4d9",
+  "public/data/semantics.json": "a0e379ff2298c67e17a9207a5ce008632b38973f1b06f4a57da680d30e4433e7",
   "audit/occurrence-ledger.json": "25e29034f67bd814a22c6148a093ed2fc9152603b8417459f0b57b1a30d27490"
  },
  "crossTab": [
@@ -299,7 +299,7 @@
   {
    "gate": "every automatic action materialised",
    "pass": true,
-   "detail": "690/690 actions, 693/691 overlay rows  (530 planned + 8 adjudicated held + 152 B2/B2b; #34 contributes two rows, one per clause)"
+   "detail": "690/690 actions, 726/691 overlay rows  (530 planned + 8 adjudicated held + 152 B2/B2b; #34 contributes two rows, one per clause)"
   },
   {
    "gate": "no held action appears in the applied overlay",
@@ -319,7 +319,7 @@
   {
    "gate": "zero runtime substring mismatch in the overlay",
    "pass": true,
-   "detail": "691 located rows verified against runtimeText()"
+   "detail": "724 located rows verified against runtimeText()"
   },
   {
    "gate": "every overlay row without offsets is a withdrawal",
@@ -354,7 +354,7 @@
   {
    "gate": "metadata transfer recorded for every withdrawn record",
    "pass": true,
-   "detail": "798 transfers, 292 carrying certified attributes, 60 meta keys re-pointed to a widened span"
+   "detail": "849 transfers, 302 carrying certified attributes, 78 meta keys re-pointed to a widened span"
   },
   {
    "gate": "question_directive relationship preserved on every unified pair",
@@ -369,7 +369,7 @@
   {
    "gate": "the certified wording and the painted span stay index-aligned",
    "pass": true,
-   "detail": "claims 8721 = claimSpans 8721; predictions 843 = predictionSpans 843; 0 posts out of alignment"
+   "detail": "claims 8711 = claimSpans 8711; predictions 843 = predictionSpans 843; 0 posts out of alignment"
   },
   {
    "gate": "no PLAN action consumed a held-conflict key",

@@ -2,36 +2,62 @@
  "note": "Conflict queue re-derived from the CURRENT bundle. Not the old CSV minus anything.",
  "measuredFrom": "audit/occurrence-ledger-dryrun.json",
  "originalRows": 945,
- "rebuiltRows": 207,
- "netChange": -738,
+ "rebuiltRows": 151,
+ "netChange": -794,
  "byReason": {
-  "UNLOCATED_SPAN": 106,
-  "BOUNDARY_CROSSING": 82,
+  "UNLOCATED_SPAN": 77,
+  "BOUNDARY_CROSSING": 55,
   "SAME_CATEGORY_PARTIAL_OVERLAP": 19
  },
  "byKind": {
-  "namedEntities": 104,
-  "claims": 86,
-  "themeAnchors": 8,
+  "namedEntities": 77,
+  "claims": 64,
   "questions": 5,
-  "directives": 4
+  "directives": 4,
+  "themeAnchors": 1
  },
- "distinctHeldKeys": 191,
- "distinctPosts": 165,
+ "distinctHeldKeys": 144,
+ "distinctPosts": 126,
  "resolvedSince": {
-  "count": 741,
+  "count": 802,
   "byFamily": {
-   "UNLOCATED_SPAN": 409,
-   "BOUNDARY_CROSSING": 160,
+   "UNLOCATED_SPAN": 438,
+   "BOUNDARY_CROSSING": 192,
    "DUPLICATE_KEY_CONFLICTING_METADATA": 42
   }
  },
  "appearedSince": {
-  "count": 3,
+  "count": 8,
   "byFamily": {
+   "BOUNDARY_CROSSING": 5,
    "SAME_CATEGORY_PARTIAL_OVERLAP": 3
   },
   "examples": [
+   {
+    "key": "BOUNDARY_CROSSING::2177|claims|164|455::touches 4 sentences",
+    "was": 0,
+    "now": 1
+   },
+   {
+    "key": "BOUNDARY_CROSSING::25|claims|121|229::touches 2 sentences",
+    "was": 0,
+    "now": 1
+   },
+   {
+    "key": "BOUNDARY_CROSSING::2692|claims|458|620::touches 3 sentences",
+    "was": 0,
+    "now": 1
+   },
+   {
+    "key": "BOUNDARY_CROSSING::2692|claims|672|800::touches 2 sentences",
+    "was": 0,
+    "now": 1
+   },
+   {
+    "key": "BOUNDARY_CROSSING::4935|claims|317|399::touches 2 sentences",
+    "was": 0,
+    "now": 1
+   },
    {
     "key": "SAME_CATEGORY_PARTIAL_OVERLAP::OVERLAP-p1553-s000",
     "was": 0,
@@ -69,33 +95,6 @@
    "certifiedValue": "Omnibus Bill.\nThe gift that keeps on giving."
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::102|themeAnchors|41|61::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "102|themeAnchors|41|61",
-   "postNum": 102,
-   "kind": "themeAnchors",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "^_Sj69ETC- Godspeed."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::107|themeAnchors|0|134::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "107|themeAnchors|0|134",
-   "postNum": 107,
-   "kind": "themeAnchors",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "Code: May God also grant all of us the wisdom to ask what concrete steps we can take to reduce the violence and weaponry in our midst."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::1090|claims|137|164::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "1090|claims|137|164",
-   "postNum": 1090,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "What was delivered?\nSmiles."
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::1098|claims|104|124::0",
    "reason": "BOUNDARY_CROSSING",
    "heldKey": "1098|claims|104|124",
@@ -103,15 +102,6 @@
    "kind": "claims",
    "detail": "touches 2 sentences",
    "certifiedValue": "DC access.\nSold out."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::1100|themeAnchors|0|51::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "1100|themeAnchors|0|51",
-   "postNum": 1100,
-   "kind": "themeAnchors",
-   "detail": "touches 2 sentences",
-   "certifiedValue": ">>XMAS IN DC Who is arranging the PRIVATE meetings?"
   },
   {
    "conflictId": "BOUNDARY_CROSSING::1192|claims|0|11::0",
@@ -139,33 +129,6 @@
    "kind": "claims",
    "detail": "touches 2 sentences",
    "certifiedValue": "I’ve said too much. God bless, Patriots."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::1318|claims|1643|1781::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "1318|claims|1643|1781",
-   "postNum": 1318,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "Department of Justice does not discuss ongoing investigations or confirm specific matters,\nWhat about the active investigation into leaks?"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::1318|claims|950|1037::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "1318|claims|950|1037",
-   "postNum": 1318,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "If RR is dirty, Mueller must also be dirty.\nIf Mueller is dirty, RR must also be dirty."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::1318|claims|1111|1149::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "1318|claims|1111|1149",
-   "postNum": 1318,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "Few have the facts.\nFew know the plan."
   },
   {
    "conflictId": "BOUNDARY_CROSSING::15|claims|0|257::0",
@@ -222,15 +185,6 @@
    "certifiedValue": "Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us, and lead us not into temptation, but deliver us from evil."
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::1589|claims|1052|1113::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "1589|claims|1052|1113",
-   "postNum": 1589,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "THEY KNOW WE KNOW.\nBUT UNTIL THE PUBLIC KNOWS IT IS CONTAINED"
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::16|claims|69|543::0",
    "reason": "BOUNDARY_CROSSING",
    "heldKey": "16|claims|69|543",
@@ -238,33 +192,6 @@
    "kind": "claims",
    "detail": "touches 5 sentences",
    "certifiedValue": "POTUS knows he must clean house (gov't) in order to 'free up' and demonstrate who has authority in order to pass important legislation. This was always the priority. Remember, AG Sessions cannot look like an impartial player that is out to get all former Obama team members as we need him for other important work. All will come into focus and for anyone to think POTUS is not in control is kidding themselves. Also, he's 100% insulated with zero risk of impeachment (fact)."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::1644|claims|150|194::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "1644|claims|150|194",
-   "postNum": 1644,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "What do they fear the most?\nPublic awakening"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::1644|claims|196|227::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "1644|claims|196|227",
-   "postNum": 1644,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "If they ask.\nThey self destruct"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::17|claims|229|772::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "17|claims|229|772",
-   "postNum": 17,
-   "kind": "claims",
-   "detail": "touches 7 sentences",
-   "certifiedValue": "Biggest drop on Pol. \nAbove is reason why the shills are sliding. In case you didn’t know, shills log and send new info back to ASF for instruction. They use a 5 prong pre packaged injection (one post auto generates four more at random designated times). Common drive of posts they all tap into. Since they misjudged the influence of the MSM they are aggressively looking to censor throughout major platforms in exchange for CIA slush funds and WW access for expansion of said networks. Everything they do has been forecasted and prepared for."
   },
   {
    "conflictId": "BOUNDARY_CROSSING::1841|claims|434|655::0",
@@ -276,15 +203,6 @@
    "certifiedValue": "The FTC's competition mission is to enforce the rules of the competitive marketplace — the antitrust laws. These laws promote vigorous competition and protect consumers from anticompetitive mergers and business practices."
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::19|claims|669|1107::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "19|claims|669|1107",
-   "postNum": 19,
-   "kind": "claims",
-   "detail": "touches 8 sentences",
-   "certifiedValue": "You can’t answer the above but will laugh once disclose details.\nThe network which controls this false narrative which in turns keeps the black pop under control is being dismantled.\nFalse local and national black leaders will be exposed next as shills for the D party. \nFollow the money.\nMaxine W has a $4mm home and cash assets in excess of $6mm.\nHow is that possible? One example.\nAll of these questions help to paint the full picture."
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::1927|claims|1024|1887::0",
    "reason": "BOUNDARY_CROSSING",
    "heldKey": "1927|claims|1024|1887",
@@ -292,15 +210,6 @@
    "kind": "claims",
    "detail": "touches 3 sentences",
    "certifiedValue": "\"Sec. 12.  In accordance with Article 33 of the UCMJ, as amended by section 5204 of the MJA, the Secretary of Defense, in consultation with the Secretary of Homeland Security, will issue nonbinding guidance regarding factors that commanders, convening authorities, staff judge advocates, and judge advocates should take into account when exercising their duties with respect to the disposition of charges and specifications in the interest of justice and discipline under Articles 30 and 34 of the UCMJ. That guidance will take into account, with appropriate consideration of military requirements, the principles contained in official guidance of the Attorney General to attorneys for the Federal Government with respect to the disposition of Federal criminal cases in accordance with the principle of fair and evenhanded administration of Federal criminal law.\""
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::2032|claims|335|439::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "2032|claims|335|439",
-   "postNum": 2032,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "If people believe the odds are hopeless their candidate will win…\nDo they still make the effort to vote?"
   },
   {
    "conflictId": "BOUNDARY_CROSSING::2061|claims|10|70::0",
@@ -330,13 +239,13 @@
    "certifiedValue": "I’ve dumped some crumbs like this over the weekend which started the intense shilling. At this point we are far enough along you can paint the picture without risk of jeopardizing the operation."
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::2177|claims|168|578::0",
+   "conflictId": "BOUNDARY_CROSSING::2177|claims|164|455::0",
    "reason": "BOUNDARY_CROSSING",
-   "heldKey": "2177|claims|168|578",
+   "heldKey": "2177|claims|164|455",
    "postNum": 2177,
    "kind": "claims",
-   "detail": "touches 5 sentences",
-   "certifiedValue": "In no case shall information be classified, continue to be maintained as classified, or fail to be declassified in order to:\n(1) conceal violations of law, inefficiency, or administrative error;\n(2) prevent embarrassment to a person, organization, or agency;\n(3) restrain competition; or\n(4) prevent or delay the release of information that does not require protection in the interest of the national security."
+   "detail": "touches 4 sentences",
+   "certifiedValue": "(a) In no case shall information be classified, continue to be maintained as classified, or fail to be declassified in order to:\n(1) conceal violations of law, inefficiency, or administrative error;\n(2) prevent embarrassment to a person, organization, or agency;\n(3) restrain competition; or"
   },
   {
    "conflictId": "BOUNDARY_CROSSING::23|claims|501|581::0",
@@ -357,49 +266,13 @@
    "certifiedValue": "Any person making statements they will not be seeking re-election was put in submission. For the betterment of the country not all will be prosecuted and all will do as told. You will see more of this occur (not normal yet disregarded) and even on the D side."
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::2445|claims|222|326::0",
+   "conflictId": "BOUNDARY_CROSSING::25|claims|121|229::0",
    "reason": "BOUNDARY_CROSSING",
-   "heldKey": "2445|claims|222|326",
-   "postNum": 2445,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "What role did he play re: House investigations?\nHouse Oversight and Government Reform Committee Chairman"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::2445|claims|350|422::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "2445|claims|350|422",
-   "postNum": 2445,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "What role did he play re: House investigations?\nHouse Judiciary Chairman"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::25|claims|24|229::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "25|claims|24|229",
+   "heldKey": "25|claims|121|229",
    "postNum": 25,
    "kind": "claims",
-   "detail": "touches 3 sentences",
-   "certifiedValue": "Return to comments re: Pelosi and John M (some of us refuse to say his last name for a reason). \nThis all has meaning - everything stated. Big picture stuff - few positions allow for this direct knowledge."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::25|claims|232|355::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "25|claims|232|355",
-   "postNum": 25,
-   "kind": "claims",
-   "detail": "touches 4 sentences",
-   "certifiedValue": "Proof to begin 11.3.\nWe all sincerely appreciate the work you do. Keep up the good fight. The flow of information is vital."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::26|claims|26|153::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "26|claims|26|153",
-   "postNum": 26,
-   "kind": "claims",
-   "detail": "touches 4 sentences",
-   "certifiedValue": "The only way is the military. Fully controlled. Save & spread (once 11.3 verifies as 1st marker).\nBiggest advanced drop on Pol."
+   "detail": "touches 2 sentences",
+   "certifiedValue": "This all has meaning - everything stated. Big picture stuff - few positions allow for this direct knowledge."
   },
   {
    "conflictId": "BOUNDARY_CROSSING::2692|claims|228|457::0",
@@ -411,22 +284,22 @@
    "certifiedValue": "Then-Director James Comey; since fired;\nThen-Associate Deputy Director David Bowdich, who later replaced Andrew McCabe as deputy director;\nMichael Steinbach, the F.B.I.’s former executive assistant director for national security;"
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::2692|claims|510|620::0",
+   "conflictId": "BOUNDARY_CROSSING::2692|claims|458|620::0",
    "reason": "BOUNDARY_CROSSING",
-   "heldKey": "2692|claims|510|620",
+   "heldKey": "2692|claims|458|620",
    "postNum": 2692,
    "kind": "claims",
    "detail": "touches 3 sentences",
-   "certifiedValue": "Priestap, now retired;\nJames Rybicki, former chief of staff to Comey;\nFBI intelligence analyst Jonathan Moffa;"
+   "certifiedValue": "Then-Assistant Director of Counterintelligence E.W. Priestap, now retired;\nJames Rybicki, former chief of staff to Comey;\nFBI intelligence analyst Jonathan Moffa;"
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::2692|claims|663|800::0",
+   "conflictId": "BOUNDARY_CROSSING::2692|claims|672|800::0",
    "reason": "BOUNDARY_CROSSING",
-   "heldKey": "2692|claims|663|800",
+   "heldKey": "2692|claims|672|800",
    "postNum": 2692,
    "kind": "claims",
-   "detail": "touches 3 sentences",
-   "certifiedValue": "Herring;\nMichael Kortan, FBI assistant director for public affairs, now retired;\nFormer principal deputy general counsel Trisha Anderson;"
+   "detail": "touches 2 sentences",
+   "certifiedValue": "Michael Kortan, FBI assistant director for public affairs, now retired;\nFormer principal deputy general counsel Trisha Anderson;"
   },
   {
    "conflictId": "BOUNDARY_CROSSING::27|claims|0|178::0",
@@ -436,15 +309,6 @@
    "kind": "claims",
    "detail": "touches 2 sentences",
    "certifiedValue": "Not everything can be publicly disclosed because so much ties back to foreign heads of state. Much will be revealed, we want transparency but not at a cost we can’t recover from."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::2714|claims|212|263::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "2714|claims|212|263",
-   "postNum": 2714,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "What do they ALL have in common?\nCLINTON CONNECTION"
   },
   {
    "conflictId": "BOUNDARY_CROSSING::2912|claims|63|345::0",
@@ -474,15 +338,6 @@
    "certifiedValue": "(i) any links and/or coordination between the Russian government and individuals associated with the campaign of President Donald Trump; and\n(ii) any matters that arose or may arise directly from the investigation; and\n(iii) any other matters within the scope of 28 C.F.R. § 600.4(a)."
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::2971|claims|248|456::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "2971|claims|248|456",
-   "postNum": 2971,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "\"the study finds little evidence of overt discrimination\"\nsynonyms:\t[proof], confirmation, verification, substantiation, corroboration, affirmation, authentication, attestation, documentation; Define 'proof'."
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::2971|questions|561|799::0",
    "reason": "BOUNDARY_CROSSING",
    "heldKey": "2971|questions|561|799",
@@ -499,15 +354,6 @@
    "kind": "claims",
    "detail": "touches 3 sentences",
    "certifiedValue": "They range from domestic terrorism to court-authorized wiretaps of criminal organizations to child pedophiles and those who would exploit our children. Criminal aliens. Big fraud schemes."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::3454|themeAnchors|112|416::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "3454|themeAnchors|112|416",
-   "postNum": 3454,
-   "kind": "themeAnchors",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "Primary Purpose of the Article: \"A colorful building that some news reports have called the \"temple\" was actually a gym when Epstein worked out when he was on the island, Scully said, noting in an interview with ABC News that the gym had a memorable feature – a massive framed photo of a topless woman.\""
   },
   {
    "conflictId": "BOUNDARY_CROSSING::3580|claims|213|326::0",
@@ -528,15 +374,6 @@
    "certifiedValue": "Precursor postings occurred on 4ch? FB? Twitter? Reddit? IG?"
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::3623|claims|187|239::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "3623|claims|187|239",
-   "postNum": 3623,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "Who audits where foreign aid actually goes? \nNobody."
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::3656|directives|482|1064::0",
    "reason": "BOUNDARY_CROSSING",
    "heldKey": "3656|directives|482|1064",
@@ -553,15 +390,6 @@
    "kind": "questions",
    "detail": "touches 2 sentences",
    "certifiedValue": "FBI CHAIN OF COMMAND FISA-RUSSIA-POTUS-FLYNN-STONE-PAPADOP-MANAF? [CIA BRIDGE_BRENNAN_INTEL ASSESS[17]_UKRAINE_LINK]?"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::4|claims|723|855::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "4|claims|723|855",
-   "postNum": 4,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "Don’t fool yourself into thinking Obama, Soros, Roth’s, Clinton’s etc have more power present day than POTUS. \nOperation Mockingbird"
   },
   {
    "conflictId": "BOUNDARY_CROSSING::4008|claims|874|944::0",
@@ -591,24 +419,6 @@
    "certifiedValue": "Where. We. Go. One. We. Go. All."
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::4296|claims|23|55::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "4296|claims|23|55",
-   "postNum": 4296,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "May 8, 2020 _masks on\nReconcile."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::4320|claims|114|181::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "4320|claims|114|181",
-   "postNum": 4320,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "Last line should clarify: \nIs this about the virus OR THE ELECTION?"
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::4437|claims|10|155::0",
    "reason": "BOUNDARY_CROSSING",
    "heldKey": "4437|claims|10|155",
@@ -616,15 +426,6 @@
    "kind": "claims",
    "detail": "touches 3 sentences",
    "certifiedValue": "def visit_twitter_and_log_in\n    visit 'https://cards-dev.twitter.com/validator'\n    find('input.js-username-field').set(ENV['TWITTER_USERNAME'])"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::4437|claims|252|356::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "4437|claims|252|356",
-   "postNum": 4437,
-   "kind": "claims",
-   "detail": "touches 3 sentences",
-   "certifiedValue": "def enter_url_and_click_preview(url)\n    find('input.FormControl').set(url)\n    click_on('Preview card')"
   },
   {
    "conflictId": "BOUNDARY_CROSSING::4454|questions|238|404::0",
@@ -652,15 +453,6 @@
    "kind": "claims",
    "detail": "touches 2 sentences",
    "certifiedValue": "Powering Democratic candidates, committees, parties,\norganizations, and c4s around the country."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::4595|claims|80|109::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "4595|claims|80|109",
-   "postNum": 4595,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "v2_change we can believe in\nQ"
   },
   {
    "conflictId": "BOUNDARY_CROSSING::4603|claims|278|369::0",
@@ -708,22 +500,13 @@
    "certifiedValue": "Covert OP by [CLAS-59#241-Q] to infiltrate at highest\nlevel to destroy from within?"
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::4935|claims|317|367::0",
+   "conflictId": "BOUNDARY_CROSSING::4935|claims|317|399::0",
    "reason": "BOUNDARY_CROSSING",
-   "heldKey": "4935|claims|317|367",
+   "heldKey": "4935|claims|317|399",
    "postNum": 4935,
    "kind": "claims",
    "detail": "touches 2 sentences",
-   "certifiedValue": "Mayor Bill de Blasio, D-N.Y.C\nformer Virginia Gov."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::501|themeAnchors|23|64::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "501|themeAnchors|23|64",
-   "postNum": 501,
-   "kind": "themeAnchors",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "_ACTION_DBF5Cz-BSY-1_y FOR GOD & COUNTRY."
+   "certifiedValue": "Mayor Bill de Blasio, D-N.Y.C\nformer Virginia Gov. Terry McCauliffe, among others."
   },
   {
    "conflictId": "BOUNDARY_CROSSING::526|claims|238|278::0",
@@ -843,15 +626,6 @@
    "certifiedValue": "Standard Hotel"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1211-namedEntities::Agnes Nixon::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1211-namedEntities",
-   "postNum": 1211,
-   "kind": "namedEntities",
-   "detail": "Agnes Nixon",
-   "certifiedValue": "Agnes Nixon"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1217-namedEntities::WikiLeaks::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-1217-namedEntities",
@@ -951,15 +725,6 @@
    "certifiedValue": "Sean Hannity"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1863-namedEntities::Roseanne Barr::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1863-namedEntities",
-   "postNum": 1863,
-   "kind": "namedEntities",
-   "detail": "Roseanne Barr",
-   "certifiedValue": "Roseanne Barr"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-19-namedEntities::Maxine Waters::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-19-namedEntities",
@@ -1023,15 +788,6 @@
    "certifiedValue": "New York Post"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2029-namedEntities::Vice News::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2029-namedEntities",
-   "postNum": 2029,
-   "kind": "namedEntities",
-   "detail": "Vice News",
-   "certifiedValue": "Vice News"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2035-namedEntities::House::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-2035-namedEntities",
@@ -1039,15 +795,6 @@
    "kind": "namedEntities",
    "detail": "House",
    "certifiedValue": "House"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2040-namedEntities::Judicial Watch::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2040-namedEntities",
-   "postNum": 2040,
-   "kind": "namedEntities",
-   "detail": "Judicial Watch",
-   "certifiedValue": "Judicial Watch"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2040-namedEntities::Carter Page::0",
@@ -1075,42 +822,6 @@
    "kind": "namedEntities",
    "detail": "Speaker of the House",
    "certifiedValue": "Speaker of the House"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2076-namedEntities::State Department OIG::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2076-namedEntities",
-   "postNum": 2076,
-   "kind": "namedEntities",
-   "detail": "State Department OIG",
-   "certifiedValue": "State Department OIG"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2136-namedEntities::CBN News::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2136-namedEntities",
-   "postNum": 2136,
-   "kind": "namedEntities",
-   "detail": "CBN News",
-   "certifiedValue": "CBN News"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2136-namedEntities::The Independent::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2136-namedEntities",
-   "postNum": 2136,
-   "kind": "namedEntities",
-   "detail": "The Independent",
-   "certifiedValue": "The Independent"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2181-namedEntities::House Intelligence::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2181-namedEntities",
-   "postNum": 2181,
-   "kind": "namedEntities",
-   "detail": "House Intelligence",
-   "certifiedValue": "House Intelligence"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2206-namedEntities::Wired::0",
@@ -1167,15 +878,6 @@
    "certifiedValue": "President"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2523-namedEntities::Kavanaugh::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2523-namedEntities",
-   "postNum": 2523,
-   "kind": "namedEntities",
-   "detail": "Kavanaugh",
-   "certifiedValue": "Kavanaugh"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2555-namedEntities::Horowitz::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-2555-namedEntities",
@@ -1212,24 +914,6 @@
    "certifiedValue": "Sara Carter"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2633-namedEntities::US Senate::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2633-namedEntities",
-   "postNum": 2633,
-   "kind": "namedEntities",
-   "detail": "US Senate",
-   "certifiedValue": "US Senate"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2673-namedEntities::Charlie Kirk::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2673-namedEntities",
-   "postNum": 2673,
-   "kind": "namedEntities",
-   "detail": "Charlie Kirk",
-   "certifiedValue": "Charlie Kirk"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2730-namedEntities::God::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-2730-namedEntities",
@@ -1246,24 +930,6 @@
    "kind": "namedEntities",
    "detail": "Kamala Harris",
    "certifiedValue": "Kamala Harris"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2768-namedEntities::Jussie Smollett::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2768-namedEntities",
-   "postNum": 2768,
-   "kind": "namedEntities",
-   "detail": "Jussie Smollett",
-   "certifiedValue": "Jussie Smollett"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2782-namedEntities::Gavin Newsom::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2782-namedEntities",
-   "postNum": 2782,
-   "kind": "namedEntities",
-   "detail": "Gavin Newsom",
-   "certifiedValue": "Gavin Newsom"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2841-namedEntities::Ann Coulter::0",
@@ -1329,15 +995,6 @@
    "certifiedValue": "Sara Carter"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3012-namedEntities::George Papa::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3012-namedEntities",
-   "postNum": 3012,
-   "kind": "namedEntities",
-   "detail": "George Papa",
-   "certifiedValue": "George Papa"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3015-namedEntities::Scaramucci::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-3015-namedEntities",
@@ -1401,15 +1058,6 @@
    "certifiedValue": "Mueller Report"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3647-namedEntities::US Senate::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3647-namedEntities",
-   "postNum": 3647,
-   "kind": "namedEntities",
-   "detail": "US Senate",
-   "certifiedValue": "US Senate"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3690-namedEntities::Gang of 8::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-3690-namedEntities",
@@ -1417,15 +1065,6 @@
    "kind": "namedEntities",
    "detail": "Gang of 8",
    "certifiedValue": "Gang of 8"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3824-namedEntities::Michael Beatty::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3824-namedEntities",
-   "postNum": 3824,
-   "kind": "namedEntities",
-   "detail": "Michael Beatty",
-   "certifiedValue": "Michael Beatty"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3841-namedEntities::CrowdStrike::0",
@@ -1444,24 +1083,6 @@
    "kind": "namedEntities",
    "detail": "President",
    "certifiedValue": "President"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3990-namedEntities::Papadopoulos::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3990-namedEntities",
-   "postNum": 3990,
-   "kind": "namedEntities",
-   "detail": "Papadopoulos",
-   "certifiedValue": "Papadopoulos"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3990-namedEntities::Manafort::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3990-namedEntities",
-   "postNum": 3990,
-   "kind": "namedEntities",
-   "detail": "Manafort",
-   "certifiedValue": "Manafort"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3990-namedEntities::Crowdstrike::0",
@@ -1518,15 +1139,6 @@
    "certifiedValue": "USNS Comfort"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4312-namedEntities::Cambridge Dictionary::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4312-namedEntities",
-   "postNum": 4312,
-   "kind": "namedEntities",
-   "detail": "Cambridge Dictionary",
-   "certifiedValue": "Cambridge Dictionary"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-4339-namedEntities::Michigan::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-4339-namedEntities",
@@ -1545,24 +1157,6 @@
    "certifiedValue": "New York Post"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4352-namedEntities::House Republicans::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4352-namedEntities",
-   "postNum": 4352,
-   "kind": "namedEntities",
-   "detail": "House Republicans",
-   "certifiedValue": "House Republicans"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4401-namedEntities::Google Trends::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4401-namedEntities",
-   "postNum": 4401,
-   "kind": "namedEntities",
-   "detail": "Google Trends",
-   "certifiedValue": "Google Trends"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-445-namedEntities::CrowdStrike::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-445-namedEntities",
@@ -1579,15 +1173,6 @@
    "kind": "namedEntities",
    "detail": "Daily Beast",
    "certifiedValue": "Daily Beast"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4492-namedEntities::Yale Medicine::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4492-namedEntities",
-   "postNum": 4492,
-   "kind": "namedEntities",
-   "detail": "Yale Medicine",
-   "certifiedValue": "Yale Medicine"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-4492-namedEntities::US Navy::0",
@@ -1635,60 +1220,6 @@
    "certifiedValue": "Canada"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4875-themeAnchors::More 'conspiracy' [fact-less base-less claims] pushed re: violent, extremist, racist, dangerous, anti-gov, nazism, white::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4875-themeAnchors",
-   "postNum": 4875,
-   "kind": "themeAnchors",
-   "detail": "More 'conspiracy' [fact-less base-less claims] pushed re: violent, extremist, racist, dangerous, anti-gov, nazism, white",
-   "certifiedValue": "More 'conspiracy' [fact-less base-less claims] pushed re: violent, extremist, racist, dangerous, anti-gov, nazism, white"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4885-namedEntities::Jeet Heer::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4885-namedEntities",
-   "postNum": 4885,
-   "kind": "namedEntities",
-   "detail": "Jeet Heer",
-   "certifiedValue": "Jeet Heer"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4885-namedEntities::Erin Nanoki::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4885-namedEntities",
-   "postNum": 4885,
-   "kind": "namedEntities",
-   "detail": "Erin Nanoki",
-   "certifiedValue": "Erin Nanoki"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4949-themeAnchors::That this nation, under God, shall have a new birth of freedom and that government of the people, by the people, for the::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4949-themeAnchors",
-   "postNum": 4949,
-   "kind": "themeAnchors",
-   "detail": "That this nation, under God, shall have a new birth of freedom and that government of the people, by the people, for the",
-   "certifiedValue": "That this nation, under God, shall have a new birth of freedom and that government of the people, by the people, for the"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-56-namedEntities::International Islamic Council for Da'wa and Relief::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-56-namedEntities",
-   "postNum": 56,
-   "kind": "namedEntities",
-   "detail": "International Islamic Council for Da'wa and Relief",
-   "certifiedValue": "International Islamic Council for Da'wa and Relief"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-746-namedEntities::Mike Wallace::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-746-namedEntities",
-   "postNum": 746,
-   "kind": "namedEntities",
-   "detail": "Mike Wallace",
-   "certifiedValue": "Mike Wallace"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-785-namedEntities::Delta::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-785-namedEntities",
@@ -1723,15 +1254,6 @@
    "kind": "namedEntities",
    "detail": "WikiLeaks",
    "certifiedValue": "WikiLeaks"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-960-namedEntities::Comedy Central::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-960-namedEntities",
-   "postNum": 960,
-   "kind": "namedEntities",
-   "detail": "Comedy Central",
-   "certifiedValue": "Comedy Central"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-988-namedEntities::Awan::0",

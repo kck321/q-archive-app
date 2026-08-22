@@ -89,7 +89,10 @@ export const CANONICAL = {
   // already certified on #1015 and #1220. posts +2: #4861 and #4853 gain their first claim.
   // 8,814 -> 8,721: B2/B2b/B2c withdrew 93 claims certified over nothing but URLs, board pointers
   // or bracketed labels. Owner ruling: a raw URL is not claim paint.
-  claims: { occurrences: 8721, distinct: 6814, posts: 3086 },
+  // 8,721 -> 8,711: the lane-B multi-line-span reviews (2026-08-22). Nine extractor blobs and one
+  // nested fragment withdrawn, each one a record whose characters were already covered by the
+  // constituent records certified inside it. No sentence lost its only claim.
+  claims: { occurrences: 8711, distinct: 6814, posts: 3086 },
   // 630 -> 595: -73 technical nonpredictions, -56 arguable rows withdrawn to the review
   // backlog, +66 unique moves from Claims, +28 high-confidence predictions the extractor
   // missed. posts 520 -> 490. The 91 withdrawn/held rows are NOT deleted — they sit in

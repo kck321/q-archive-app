@@ -132,7 +132,16 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     /core registry/i.test(SECTION_CONTRACTS.find(c => c.id === 'entities').mayCoexist), 'declared')
   t('themes', 'Themes = 2,393 assignments', themeAssign === CANONICAL.themes.assignments, themeAssign)
   t('codes', 'Codes = 1,949 occurrences', codeOcc === CANONICAL.codes.occurrences, codeOcc)
-  t('emphasis', 'Emphasis = 3,111 occurrences', emphasis.occurrences.length === CANONICAL.emphasis.occurrences, emphasis.occurrences.length)
+  // EMPHASIS IS RETIRED (owner ruling, 2026-08-21). The count gate is replaced by a RETIREMENT
+  // gate: what has to stay true is not "3,111 occurrences" but "nothing regenerated it". A gate
+  // asserting a retired section's figure is a gate that would go green the day the section came
+  // back, which is precisely backwards.
+  t('emphasis-retired', 'Emphasis is retired: no artifact, no field, no occurrence',
+    !fs.existsSync(path.join(DATA, 'emphasis.json'))
+      && posts.every(p => !p.postAnalysis?.emphasis?.length)
+      && emphasis.occurrences.length === 0,
+    fs.existsSync(path.join(DATA, 'emphasis.json')) ? 'emphasis.json is back'
+      : `${posts.filter(p => p.postAnalysis?.emphasis?.length).length} posts still carry the field`)
 
   const qk = {}
   for (const r of queue.rows) qk[r.kind] = (qk[r.kind] ?? 0) + 1
@@ -173,8 +182,6 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   const invented = codes.codes.filter(c => c.interpretedMeaning && !c.interpretationBasis)
   t('codes-no-invented', 'no code carries a meaning without stating its basis', invented.length === 0, `${invented.length}`)
 
-  // Emphasis: queued cases must not appear as certified.
-  t('emph-basis', 'every parallel occurrence states its structural basis', emphasis.occurrences.filter(o => o.type === 'parallel_phrasing' && !o.basis).length === 0, 'ok')
 
   // Every section declares a contract.
   t('all-declared', 'all ten sections declare a provenance contract', SECTION_CONTRACTS.length === 10, SECTION_CONTRACTS.length)
@@ -286,7 +293,6 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     for (const id of arr) { if (seen.has(id)) dup.push(id); seen.add(id) }
     return dup
   }
-  t('emph-ids', 'no duplicate Emphasis occurrence id', dupIds(emphasis.occurrences.map(o => o.id)).length === 0, `${dupIds(emphasis.occurrences.map(o => o.id)).length}`)
   t('q-ids', 'no duplicate Question row id', dupIds(questions.map(q => q.id)).length === 0, `${dupIds(questions.map(q => q.id)).length}`)
   t('queue-ids', 'no duplicate Resolution Center id', dupIds(queue.rows.map(r => r.id)).length === 0, `${dupIds(queue.rows.map(r => r.id)).length}`)
 
@@ -528,7 +534,8 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   t('ui-entities-submetrics', 'sectionInfo keeps 4,463 and 3,440 as provenance', has(4463) && has(3440), 'ok')
   t('ui-themes', 'sectionInfo states 2,644', has(2644), 'ok')
   t('ui-codes', `sectionInfo states ${CANONICAL.codes.occurrences.toLocaleString()}`, has(CANONICAL.codes.occurrences), 'ok')
-  t('ui-emphasis', `sectionInfo states ${CANONICAL.emphasis.occurrences.toLocaleString()}`, has(CANONICAL.emphasis.occurrences), 'ok')
+  // Retired: sectionInfo must NOT state an Emphasis figure any more.
+  t('ui-emphasis-gone', 'sectionInfo carries no Emphasis section', !/\bemphasis\b/i.test(info), 'ok')
 
   // ── Section headlines are certified, never recounted ───────────────────────
   //
@@ -550,8 +557,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
       stated('claims', CANONICAL.claims.occurrences, CANONICAL.claims.posts), 'ok')
     t('headline-predictions', 'Predictions headline = certified 842 / 673',
       stated('predictions', CANONICAL.predictions.occurrences, CANONICAL.predictions.posts), 'ok')
-    t('headline-emphasis', 'Emphasis headline = certified 3,105 / 1,356',
-      stated('emphasis', CANONICAL.emphasis.occurrences, CANONICAL.emphasis.posts), 'ok')
+    t('headline-emphasis-gone', 'SECTION_TOTALS carries no Emphasis row', !/emphasis\s*:/i.test(totals), 'ok')
     // The post count is MEASURED, not frozen. It has moved at three of the last four
     // certifications — 2,245 -> 2,240 on the Rachel Chandler merge, then 2,240 -> 2,445 when the
     // Stage 1 withdrawals rewrote namedEntities — and each time the stale literal failed a check
@@ -1428,7 +1434,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     const mapD = Object.values(rel.analysisMap).reduce((n, m) => n + m.counts.directives, 0)
     t('rel-map-questions', 'analysis map totals reconcile with certified Questions', mapQ === CANONICAL.questions.occurrences, mapQ)
     t('rel-map-directives', 'analysis map totals reconcile with certified Directives', mapD === CANONICAL.directives.occurrences, mapD)
-    t('rel-map-emphasis', 'analysis map totals reconcile with certified Emphasis', mapE === CANONICAL.emphasis.occurrences, mapE)
+    t('rel-map-emphasis-zero', 'the analysis map counts no Emphasis', !mapE, mapE)
 
     // NO BLANKET SEMANTIC RULES IN EITHER RENDERER.
     //
@@ -1508,7 +1514,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     t('search-entities', 'indexed Entities = certified 1,445', bs.entities === CANONICAL.entities.canonical, bs.entities)
     t('search-themes', 'indexed Themes = certified 2,395', bs.themes === CANONICAL.themes.assignments, bs.themes)
     t('search-codes', 'indexed Codes = certified 739 distinct', bs.codes === CANONICAL.codes.distinct, bs.codes)
-    t('search-emphasis', 'indexed Emphasis = certified 3,111', bs.emphasis === CANONICAL.emphasis.occurrences, bs.emphasis)
+    t('search-emphasis-gone', 'the search index carries no Emphasis section', !bs.emphasis, bs.emphasis ?? 0)
     t('search-unresolved', 'indexed unresolved = the 2,527 queue rows', bs.unresolved === CANONICAL.resolution.total, bs.unresolved)
 
     // The rule that matters most in this section: a cleaned-up sentence must never be able to

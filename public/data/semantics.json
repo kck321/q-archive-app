@@ -3,7 +3,7 @@
  "step": "3B-1",
  "planSha256": "373ca06b1416b6707a111f2c3da8e751472c551f739500f76cdcc764d3128058",
  "dispositionsApplied": 8,
- "actionsApplied": 684,
+ "actionsApplied": 717,
  "actionsAlreadyApplied": 8,
  "actionsHeld": 2,
  "heldActionIds": [
@@ -67,6 +67,23 @@
    "supersededKeys": [],
    "actionId": "A-MP-p0001-s002",
    "ruleCode": "R5_FUTURE_FRAME"
+  },
+  {
+   "occurrenceKey": "4|claims|723|855",
+   "postNum": 4,
+   "start": 723,
+   "end": 855,
+   "text": "Don’t fool yourself into thinking Obama, Soros, Roth’s, Clinton’s etc have more power present day than POTUS. \nOperation Mockingbird",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB1-DROP-4-claims-723-855",
+   "ruleCode": "LANEB_RECORD_WITHDRAWN",
+   "withdrawReason": "The span covers a sentence already certified as a Directive (723..832) and then 'Operation Mockingbird', which is a certified entity name on a line of its own. Neither part is a claim: one is a directive, the other is a label.",
+   "adjudication": "E — WITHDRAW",
+   "adjudicationReason": "The span covers a sentence already certified as a Directive (723..832) and then 'Operation Mockingbird', which is a certified entity name on a line of its own. Neither part is a claim: one is a directive, the other is a label."
   },
   {
    "occurrenceKey": "5|namedEntities|509|516",
@@ -158,6 +175,89 @@
    ],
    "actionId": "A-MP-p0016-s000",
    "ruleCode": "R3_FUTURE_ASSERTION"
+  },
+  {
+   "occurrenceKey": "17|claims|229|772",
+   "postNum": 17,
+   "start": 229,
+   "end": 772,
+   "text": "Biggest drop on Pol. \nAbove is reason why the shills are sliding. In case you didn’t know, shills log and send new info back to ASF for instruction. They use a 5 prong pre packaged injection (one post auto generates four more at random designated times). Common drive of posts they all tap into. Since they misjudged the influence of the MSM they are aggressively looking to censor throughout major platforms in exchange for CIA slush funds and WW access for expansion of said networks. Everything they do has been forecasted and prepared for.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB1-DROP-17-claims-229-772",
+   "ruleCode": "LANEB_RECORD_WITHDRAWN",
+   "withdrawReason": "543 characters over seven sentences, three of which are ALREADY separately certified claims. An extractor blob, not a semantic unit — there is no single sentence to trim it to, and every trim would keep painting one of the three twice. The four sentences it leaves uncovered were never individually adjudicated and belong to the coverage census.",
+   "adjudication": "E — WITHDRAW",
+   "adjudicationReason": "543 characters over seven sentences, three of which are ALREADY separately certified claims. An extractor blob, not a semantic unit — there is no single sentence to trim it to, and every trim would keep painting one of the three twice. The four sentences it leaves uncovered were never individually adjudicated and belong to the coverage census."
+  },
+  {
+   "occurrenceKey": "19|claims|669|1107",
+   "postNum": 19,
+   "start": 669,
+   "end": 1107,
+   "text": "You can’t answer the above but will laugh once disclose details.\nThe network which controls this false narrative which in turns keeps the black pop under control is being dismantled.\nFalse local and national black leaders will be exposed next as shills for the D party. \nFollow the money.\nMaxine W has a $4mm home and cash assets in excess of $6mm.\nHow is that possible? One example.\nAll of these questions help to paint the full picture.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB1-DROP-19-claims-669-1107",
+   "ruleCode": "LANEB_RECORD_WITHDRAWN",
+   "withdrawReason": "Eight sentences, swallowing a certified Prediction, a certified Directive, a certified Claim, a certified Question and two lines of quoted source. Five records already describe what is inside it; no trim is correct.",
+   "adjudication": "E — WITHDRAW",
+   "adjudicationReason": "Eight sentences, swallowing a certified Prediction, a certified Directive, a certified Claim, a certified Question and two lines of quoted source. Five records already describe what is inside it; no trim is correct."
+  },
+  {
+   "occurrenceKey": "25|claims|121|229",
+   "postNum": 25,
+   "start": 121,
+   "end": 229,
+   "text": "This all has meaning - everything stated. Big picture stuff - few positions allow for this direct knowledge.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "25|claims|24|229",
+   "actionId": "LB1-SPAN-25-claims-24-229",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "The claim swallowed 'Return to comments re: Pelosi and John M …', which is certified as a Directive at exactly those offsets. Trimmed off the directive; the two sentences that remain are Q's continuous commentary on the drop and stay together."
+  },
+  {
+   "occurrenceKey": "25|claims|232|252",
+   "postNum": 25,
+   "start": 232,
+   "end": 252,
+   "text": "Proof to begin 11.3.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "25|claims|232|355",
+   "actionId": "LB1-SPAN-25-claims-232-355",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "The claim ran across two certified claims (253..297, 322..355) and a certified Directive (298..321). Re-spanned onto 'Proof to begin 11.3.', the one sentence in its range with no record of its own."
+  },
+  {
+   "occurrenceKey": "26|claims|26|153",
+   "postNum": 26,
+   "start": 26,
+   "end": 153,
+   "text": "The only way is the military. Fully controlled. Save & spread (once 11.3 verifies as 1st marker).\nBiggest advanced drop on Pol.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB1-DROP-26-claims-26-153",
+   "ruleCode": "LANEB_RECORD_WITHDRAWN",
+   "withdrawReason": "Four independent units: a certified Claim (26..55), 'Fully controlled.', a certified Directive (74..123) and 'Biggest advanced drop on Pol.'. Two are already certified and no single trim covers what is left, so the blob goes and the two uncertified sentences pass to the coverage census.",
+   "adjudication": "E — WITHDRAW",
+   "adjudicationReason": "Four independent units: a certified Claim (26..55), 'Fully controlled.', a certified Directive (74..123) and 'Biggest advanced drop on Pol.'. Two are already certified and no single trim covers what is left, so the blob goes and the two uncertified sentences pass to the coverage census."
   },
   {
    "occurrenceKey": "34|claims|280|333",
@@ -825,6 +925,38 @@
    "supersededKeys": [],
    "actionId": "A-DQ-p0100-s034",
    "ruleCode": "R1_INTERROGATIVE"
+  },
+  {
+   "occurrenceKey": "102|themeAnchors|52|61",
+   "postNum": 102,
+   "start": 52,
+   "end": 61,
+   "text": "Godspeed.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "102|themeAnchors|41|61",
+   "actionId": "LB1-SPAN-102-themeAnchors-41-61",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "The anchor swallowed '^_Sj69ETC-', a cipher line already certified as its own context unit, and reached into 'Godspeed.', which is certified as a Directive. A theme is anchored to the prose that carries it, not to the tripcode beside it."
+  },
+  {
+   "occurrenceKey": "107|themeAnchors|6|134",
+   "postNum": 107,
+   "start": 6,
+   "end": 134,
+   "text": "May God also grant all of us the wisdom to ask what concrete steps we can take to reduce the violence and weaponry in our midst.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "107|themeAnchors|0|134",
+   "actionId": "LB1-SPAN-107-themeAnchors-0-134",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "The anchor swallowed the label line 'Code:', which is certified as its own context unit. The prayer line beneath it is the passage the theme actually attaches to, and is already the Directive record at the same offsets."
   },
   {
    "occurrenceKey": "111|directives|381|388",
@@ -2322,6 +2454,22 @@
    "ruleCode": "B2_TRIM_TO_PROSE_SENTENCE",
    "adjudication": "MODIFY_THEN_APPLY",
    "adjudicationReason": "the certified span crossed a sentence boundary only because it swallowed 1 non-semantic line(s) — links, board pointers or bracketed labels. Trimmed to the one prose sentence it actually covers; the category is unchanged."
+  },
+  {
+   "occurrenceKey": "501|themeAnchors|46|64",
+   "postNum": 501,
+   "start": 46,
+   "end": 64,
+   "text": "FOR GOD & COUNTRY.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "501|themeAnchors|23|64",
+   "actionId": "LB1-SPAN-501-themeAnchors-23-64",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "The anchor swallowed '_ACTION_DBF5Cz-BSY-1_y', a cipher line already certified as its own context unit. 'FOR GOD & COUNTRY.' is the line the theme attaches to, and is already the Claim at the same offsets."
   },
   {
    "occurrenceKey": "513|claims|49|88",
@@ -3824,6 +3972,23 @@
    }
   },
   {
+   "occurrenceKey": "909|claims|63|85",
+   "postNum": 909,
+   "start": 63,
+   "end": 85,
+   "text": "We are working to END.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB1-DROP-909-claims-63-85",
+   "ruleCode": "LANEB_NESTED_FRAGMENT_WITHDRAWN",
+   "withdrawReason": "the nested prefix 'We are working to END.' is a fragment of this claim, not a claim of its own — Q broke 'We are working to END EVIL.' across two lines for emphasis",
+   "adjudication": "A — KEEP_AS_CERTIFIED (wide span) with the nested fragment withdrawn",
+   "adjudicationReason": "'We are working to END.' / 'EVIL.' is one sentence Q split for emphasis. This wide record is the complete unit; the narrower record nested inside it covers only the first half and is the defect."
+  },
+  {
    "occurrenceKey": "960|predictions|129|147",
    "postNum": 960,
    "sentenceId": "p0960-s002",
@@ -4061,6 +4226,38 @@
     "slotsBefore": 1,
     "slotsAfter": 0
    }
+  },
+  {
+   "occurrenceKey": "1090|claims|157|164",
+   "postNum": 1090,
+   "start": 157,
+   "end": 164,
+   "text": "Smiles.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "1090|claims|137|164",
+   "actionId": "LB1-SPAN-1090-claims-137-164",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "The claim swallowed 'What was delivered?', which is separately certified as a Question. Q asks and then answers; the answer 'Smiles.' is the claim."
+  },
+  {
+   "occurrenceKey": "1100|themeAnchors|13|51",
+   "postNum": 1100,
+   "start": 13,
+   "end": 51,
+   "text": "Who is arranging the PRIVATE meetings?",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "1100|themeAnchors|0|51",
+   "actionId": "LB1-SPAN-1100-themeAnchors-0-51",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "The anchor swallowed '>>XMAS IN DC', a greentext excerpt line, and covers a certified Question. Trimmed to the Q-authored sentence the theme is about."
   },
   {
    "occurrenceKey": "1100|directives|379|395",
@@ -4905,6 +5102,23 @@
    "withdrawReason": "fragment contained by the complete sentence already certified in the same category"
   },
   {
+   "occurrenceKey": "1318|claims|950|1037",
+   "postNum": 1318,
+   "start": 950,
+   "end": 1037,
+   "text": "If RR is dirty, Mueller must also be dirty.\nIf Mueller is dirty, RR must also be dirty.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB1-DROP-1318-claims-950-1037",
+   "ruleCode": "LANEB_RECORD_WITHDRAWN",
+   "withdrawReason": "Both halves are ALREADY certified as claims in their own right — 950..993 and 994..1037. This wide record is a third copy over the same characters and paints them twice. Withdrawing it loses no coverage: the two conditionals stay exactly as they are.",
+   "adjudication": "E — WITHDRAW",
+   "adjudicationReason": "Both halves are ALREADY certified as claims in their own right — 950..993 and 994..1037. This wide record is a third copy over the same characters and paints them twice. Withdrawing it loses no coverage: the two conditionals stay exactly as they are."
+  },
+  {
    "occurrenceKey": "1318|namedEntities|1067|1075",
    "postNum": 1318,
    "sentenceId": "p1318-s027",
@@ -4930,6 +5144,22 @@
    "actionId": "A-DUP-1318-namedEntities-1067-1075",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "4 excess record(s) over one span merged into a single occurrence"
+  },
+  {
+   "occurrenceKey": "1318|claims|1131|1149",
+   "postNum": 1318,
+   "start": 1131,
+   "end": 1149,
+   "text": "Few know the plan.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "1318|claims|1111|1149",
+   "actionId": "LB1-SPAN-1318-claims-1111-1149",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "'Few have the facts.' is already its own claim at 1111..1130. 'Few know the plan.' has no record of its own. Re-spanning the wide record onto the second sentence gives one claim per sentence and keeps both painted."
   },
   {
    "occurrenceKey": "1318|directives|1454|1476",
@@ -4982,6 +5212,22 @@
    "supersededKeys": [],
    "actionId": "A-DQ-p1318-s044",
    "ruleCode": "R2_IMPERATIVE"
+  },
+  {
+   "occurrenceKey": "1318|claims|1643|1733",
+   "postNum": 1318,
+   "start": 1643,
+   "end": 1733,
+   "text": "Department of Justice does not discuss ongoing investigations or confirm specific matters,",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "1318|claims|1643|1781",
+   "actionId": "LB1-SPAN-1318-claims-1643-1781",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "The claim swallowed 'What about the active investigation into leaks?', separately certified as a Question and already narrowed by B3-NARROW-1318-qf-1. The claim is the DOJ statement line above it."
   },
   {
    "occurrenceKey": "1318|questions|1734|1781",
@@ -5981,6 +6227,22 @@
    "ruleCode": "R2_IMPERATIVE"
   },
   {
+   "occurrenceKey": "1589|claims|1052|1070",
+   "postNum": 1589,
+   "start": 1052,
+   "end": 1070,
+   "text": "THEY KNOW WE KNOW.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "1589|claims|1052|1113",
+   "actionId": "LB1-SPAN-1589-claims-1052-1113",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "'BUT UNTIL THE PUBLIC KNOWS IT IS CONTAINED.' is already its own claim at 1071..1114, and this record covers it truncated by its final full stop. Re-spanning onto 'THEY KNOW WE KNOW.' gives each sentence exactly one claim."
+  },
+  {
    "occurrenceKey": "1613|predictions|123|159",
    "postNum": 1613,
    "sentenceId": "p1613-s002",
@@ -6014,6 +6276,39 @@
    "supersededKeys": [],
    "actionId": "A-MP-p1613-s002",
    "ruleCode": "R5_FUTURE_FRAME"
+  },
+  {
+   "occurrenceKey": "1644|claims|150|194",
+   "postNum": 1644,
+   "start": 150,
+   "end": 194,
+   "text": "What do they fear the most?\nPublic awakening",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB1-DROP-1644-claims-150-194",
+   "ruleCode": "LANEB_RECORD_WITHDRAWN",
+   "withdrawReason": "The span covers a certified Question (150..177) and a certified Claim (178..195), and truncates the claim by its full stop. Both constituents are correctly certified already; this record only paints them a second time.",
+   "adjudication": "E — WITHDRAW",
+   "adjudicationReason": "The span covers a certified Question (150..177) and a certified Claim (178..195), and truncates the claim by its full stop. Both constituents are correctly certified already; this record only paints them a second time."
+  },
+  {
+   "occurrenceKey": "1644|claims|196|208",
+   "postNum": 1644,
+   "start": 196,
+   "end": 208,
+   "text": "If they ask.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "1644|claims|196|227",
+   "actionId": "LB1-SPAN-1644-claims-196-227",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "'They self destruct.' is already its own claim at 209..228, truncated here by its full stop. Re-spanning onto 'If they ask.' gives one claim per sentence."
   },
   {
    "occurrenceKey": "1645|directives|0|10",
@@ -8786,6 +9081,23 @@
    "ruleCode": "R2_IMPERATIVE"
   },
   {
+   "occurrenceKey": "2032|claims|335|439",
+   "postNum": 2032,
+   "start": 335,
+   "end": 439,
+   "text": "If people believe the odds are hopeless their candidate will win…\nDo they still make the effort to vote?",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB1-DROP-2032-claims-335-439",
+   "ruleCode": "LANEB_RECORD_WITHDRAWN",
+   "withdrawReason": "The span covers a certified Claim (335..400) and a certified Question (401..439). Both are already right; this record duplicates them.",
+   "adjudication": "E — WITHDRAW",
+   "adjudicationReason": "The span covers a certified Claim (335..400) and a certified Question (401..439). Both are already right; this record duplicates them."
+  },
+  {
    "occurrenceKey": "2032|directives|868|890",
    "postNum": 2032,
    "sentenceId": "p2032-s018",
@@ -9384,6 +9696,22 @@
    "withdrawReason": "every line the span covers is a URL, a board pointer or a bracketed label; there is no prose to certify",
    "adjudication": "MODIFY_THEN_APPLY",
    "adjudicationReason": "owner ruling: a raw URL is not claim/question/directive/prediction paint. With no prose in the span there is nothing to trim to, so the record is withdrawn rather than re-spanned."
+  },
+  {
+   "occurrenceKey": "2177|claims|164|455",
+   "postNum": 2177,
+   "start": 164,
+   "end": 455,
+   "text": "(a) In no case shall information be classified, continue to be maintained as classified, or fail to be declassified in order to:\n(1) conceal violations of law, inefficiency, or administrative error;\n(2) prevent embarrassment to a person, organization, or agency;\n(3) restrain competition; or",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "2177|claims|168|578",
+   "actionId": "LB1-SPAN-2177-claims-168-578",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "Item (4) of the pasted prohibition is already its own claim at 456..579, and this record covers it truncated by one character. Re-spanned to the lead-in plus items (1) to (3), so the enumeration is covered once and item (4) keeps its own record."
   },
   {
    "occurrenceKey": "2180|directives|1084|1101",
@@ -10652,6 +10980,38 @@
    "ruleCode": "OWNER_DROP_FALSE_SECONDARY"
   },
   {
+   "occurrenceKey": "2445|claims|270|326",
+   "postNum": 2445,
+   "start": 270,
+   "end": 326,
+   "text": "House Oversight and Government Reform Committee Chairman",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "2445|claims|222|326",
+   "actionId": "LB1-SPAN-2445-claims-222-326",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "The claim swallowed 'What role did he play re: House investigations?', separately certified as a Question. The claim is the office line that answers it."
+  },
+  {
+   "occurrenceKey": "2445|claims|398|422",
+   "postNum": 2445,
+   "start": 398,
+   "end": 422,
+   "text": "House Judiciary Chairman",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "2445|claims|350|422",
+   "actionId": "LB1-SPAN-2445-claims-350-422",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "The same shape one question later: the claim swallowed the repeated certified Question. The claim is 'House Judiciary Chairman'."
+  },
+  {
    "occurrenceKey": "2448|namedEntities|1007|1013",
    "postNum": 2448,
    "sentenceId": "p2448-s016",
@@ -11665,6 +12025,38 @@
    "ruleCode": "R1_INTERROGATIVE"
   },
   {
+   "occurrenceKey": "2692|claims|458|620",
+   "postNum": 2692,
+   "start": 458,
+   "end": 620,
+   "text": "Then-Assistant Director of Counterintelligence E.W. Priestap, now retired;\nJames Rybicki, former chief of staff to Comey;\nFBI intelligence analyst Jonathan Moffa;",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "2692|claims|510|620",
+   "actionId": "LB1-SPAN-2692-claims-510-620",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "The span starts mid-item, at 'Priestap' rather than at 'Then-Assistant Director of Counterintelligence E.W. Priestap' — the segmenter split the line at 'E.W.'. Extended to the whole of the item it half-covers, so the enumeration is not cut through a person's title."
+  },
+  {
+   "occurrenceKey": "2692|claims|672|800",
+   "postNum": 2692,
+   "start": 672,
+   "end": 800,
+   "text": "Michael Kortan, FBI assistant director for public affairs, now retired;\nFormer principal deputy general counsel Trisha Anderson;",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "2692|claims|663|800",
+   "actionId": "LB1-SPAN-2692-claims-663-800",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "The span starts mid-item at 'Herring;' — inside 'Former Acting Assistant Director Jason V. Herring;', which is already its own claim at 621..671, split there by 'V.'. Trimmed to the two items that follow it."
+  },
+  {
    "occurrenceKey": "2710|directives|12|48",
    "postNum": 2710,
    "sentenceId": "p2710-s001",
@@ -11685,6 +12077,23 @@
     "slotsBefore": 1,
     "slotsAfter": 0
    }
+  },
+  {
+   "occurrenceKey": "2714|claims|212|263",
+   "postNum": 2714,
+   "start": 212,
+   "end": 263,
+   "text": "What do they ALL have in common?\nCLINTON CONNECTION",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB1-DROP-2714-claims-212-263",
+   "ruleCode": "LANEB_RECORD_WITHDRAWN",
+   "withdrawReason": "Covers a certified Question (212..244) and a certified Claim (245..264), the latter truncated by its full stop. Both constituents are already right.",
+   "adjudication": "E — WITHDRAW",
+   "adjudicationReason": "Covers a certified Question (212..244) and a certified Claim (245..264), the latter truncated by its full stop. Both constituents are already right."
   },
   {
    "occurrenceKey": "2715|namedEntities|90|99",
@@ -12686,6 +13095,22 @@
    "supersededKeys": [],
    "actionId": "A-DQ-p2971-s003",
    "ruleCode": "R2_IMPERATIVE"
+  },
+  {
+   "occurrenceKey": "2971|claims|248|305",
+   "postNum": 2971,
+   "start": 248,
+   "end": 305,
+   "text": "\"the study finds little evidence of overt discrimination\"",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "2971|claims|248|456",
+   "actionId": "LB1-SPAN-2971-claims-248-456",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "The span runs from a quoted study line through a pasted synonyms list and ends by swallowing Q's own 'Define 'proof'.' — three different kinds of material in one record. Trimmed to the quoted line it opens on; Q's instruction is not claim paint and the synonyms list is dictionary copy."
   },
   {
    "occurrenceKey": "2971|claims|465|560",
@@ -13776,6 +14201,22 @@
    "ruleCode": "R2_IMPERATIVE"
   },
   {
+   "occurrenceKey": "3454|themeAnchors|145|416",
+   "postNum": 3454,
+   "start": 145,
+   "end": 416,
+   "text": "\"A colorful building that some news reports have called the \"temple\" was actually a gym when Epstein worked out when he was on the island, Scully said, noting in an interview with ABC News that the gym had a memorable feature – a massive framed photo of a topless woman.\"",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "3454|themeAnchors|112|416",
+   "actionId": "LB1-SPAN-3454-themeAnchors-112-416",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "The anchor swallowed 'Primary Purpose of the Article:', a label already certified as its own context unit. The quoted sentence beneath it is the passage the theme is about, and is already the Claim at the same offsets."
+  },
+  {
    "occurrenceKey": "3459|questions|137|172",
    "postNum": 3459,
    "sentenceId": "p3459-s002",
@@ -14238,6 +14679,22 @@
    "supersededKeys": [],
    "actionId": "A-DQ-p3607-s003",
    "ruleCode": "R2_IMPERATIVE"
+  },
+  {
+   "occurrenceKey": "3623|claims|232|239",
+   "postNum": 3623,
+   "start": 232,
+   "end": 239,
+   "text": "Nobody.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "3623|claims|187|239",
+   "actionId": "LB1-SPAN-3623-claims-187-239",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "The claim swallowed 'Who audits where foreign aid actually goes?', separately certified as a Question. The claim is Q's one-word answer, 'Nobody.'"
   },
   {
    "occurrenceKey": "3623|claims|539|570",
@@ -15795,6 +16252,22 @@
    "adjudicationReason": "owner ruling: a raw URL is not claim/question/directive/prediction paint. With no prose in the span there is nothing to trim to, so the record is withdrawn rather than re-spanned."
   },
   {
+   "occurrenceKey": "4296|claims|23|44",
+   "postNum": 4296,
+   "start": 23,
+   "end": 44,
+   "text": "May 8, 2020 _masks on",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "4296|claims|23|55",
+   "actionId": "LB1-SPAN-4296-claims-23-55",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "The claim swallowed 'Reconcile.', which is certified as a Directive at 45..55. The claim is the dated line above it."
+  },
+  {
    "occurrenceKey": "4310|claims|980|1399",
    "postNum": 4310,
    "sentenceId": "p4310-s015",
@@ -15851,6 +16324,22 @@
    "supersededKeys": [],
    "actionId": "A-MP-p4316-s001",
    "ruleCode": "R5_FUTURE_FRAME"
+  },
+  {
+   "occurrenceKey": "4320|claims|114|139",
+   "postNum": 4320,
+   "start": 114,
+   "end": 139,
+   "text": "Last line should clarify:",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "4320|claims|114|181",
+   "actionId": "LB1-SPAN-4320-claims-114-181",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "The claim swallowed 'Is this about the virus OR THE ELECTION?', separately certified as a Question. The lead-in line is what remains."
   },
   {
    "occurrenceKey": "4337|questions|592|717",
@@ -16092,6 +16581,23 @@
    ],
    "actionId": "A-DQ-p4428-s002",
    "ruleCode": "R1_INTERROGATIVE"
+  },
+  {
+   "occurrenceKey": "4437|claims|252|356",
+   "postNum": 4437,
+   "start": 252,
+   "end": 356,
+   "text": "def enter_url_and_click_preview(url)\n    find('input.FormControl').set(url)\n    click_on('Preview card')",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB1-DROP-4437-claims-252-356",
+   "ruleCode": "LANEB_RECORD_WITHDRAWN",
+   "withdrawReason": "Three lines of pasted Ruby — a method definition and two statements — certified as one Claim. Three independent units of source code, not one semantic unit, so no trim is correct. This is the drop the owner named: pasted multi-sentence code must not be Q semantic paint. Withdrawing it removes code FROM the paint rather than adding it, which is the same principle applied in the other direction. Listed for the owner because #4437 has been ruled on before.",
+   "adjudication": "E — WITHDRAW",
+   "adjudicationReason": "Three lines of pasted Ruby — a method definition and two statements — certified as one Claim. Three independent units of source code, not one semantic unit, so no trim is correct. This is the drop the owner named: pasted multi-sentence code must not be Q semantic paint. Withdrawing it removes code FROM the paint rather than adding it, which is the same principle applied in the other direction. Listed for the owner because #4437 has been ruled on before."
   },
   {
    "occurrenceKey": "4454|questions|386|404",
@@ -16740,6 +17246,22 @@
    "ruleCode": "B2_TRIM_TO_PROSE_SENTENCE",
    "adjudication": "MODIFY_THEN_APPLY",
    "adjudicationReason": "the certified span crossed a sentence boundary only because it swallowed 1 non-semantic line(s) — links, board pointers or bracketed labels. Trimmed to the one prose sentence it actually covers; the category is unchanged."
+  },
+  {
+   "occurrenceKey": "4595|claims|80|107",
+   "postNum": 4595,
+   "start": 80,
+   "end": 107,
+   "text": "v2_change we can believe in",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "4595|claims|80|109",
+   "actionId": "LB1-SPAN-4595-claims-80-109",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "The span swallowed Q's signature line. A signature is not part of the claim above it."
   },
   {
    "occurrenceKey": "4604|directives|97|121",
@@ -17985,6 +18507,22 @@
    "ruleCode": "OWNER_DROP_FALSE_SECONDARY"
   },
   {
+   "occurrenceKey": "4935|claims|317|399",
+   "postNum": 4935,
+   "start": 317,
+   "end": 399,
+   "text": "Mayor Bill de Blasio, D-N.Y.C\nformer Virginia Gov. Terry McCauliffe, among others.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "4935|claims|317|367",
+   "actionId": "LB1-SPAN-4935-claims-317-367",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "The span stops at 'former Virginia Gov.' — the segmenter ended a sentence at the abbreviation 'Gov.', so the record cuts off in the middle of Terry McCauliffe's title and never reaches his name. Extended to the whole of the second line. Same defect class as audit/abbreviation-span-repairs.json."
+  },
+  {
    "occurrenceKey": "4949|themeAnchors|unlocated|0",
    "postNum": 4949,
    "sentenceId": null,
@@ -18131,7 +18669,7 @@
   }
  ],
  "appliedTo": {
-  "postsSha256": "5354364e32dd21e20b91f3b542aeb1e88439de92f838ec8d1914962e9cd22202",
+  "postsSha256": "845d00b718ce5ab7833ccf168a9f040a9c9aeed67934100974a4b23ccc584496",
   "questionsSha256": "d36dfc86ea8de5531183fe24030011aeefe76826df8b3579d820d24025376bad",
   "dispositionsSha256": "0df3ba934b21058af5779806eec0c6d2219d63777d85edcc48f09518646c59ce",
   "extraSets": {
@@ -18139,7 +18677,8 @@
    "step3b1-b2b-actions.jsonl": "33f26fa2d5c34c86e5e57681a9ba7613bb938e2f6fe1993e35f433fd480be6ce",
    "step3b1-b2c-actions.jsonl": "34fb5fedfa40a0e3ed8c1b2f6bef3ff2448467931ab72dc03db6e5cb03058678",
    "step3b1-b3-actions.jsonl": "fc2f9f5a571b515fc9624f417e2abf6610e7f5a2cc8e8e0cab81a42f77df88f7",
-   "step3b1-r3-actions.jsonl": "91c6bccf00928f5304cc08c44bdec473d9020c831302fbcd8ae14f2fe10bbd0c"
+   "step3b1-r3-actions.jsonl": "91c6bccf00928f5304cc08c44bdec473d9020c831302fbcd8ae14f2fe10bbd0c",
+   "step3b1-lb1-actions.jsonl": "0d2670d27c5eedbf316d6253bd74fe691f861ca43de4a8447174aacba95bf740"
   }
  }
 }

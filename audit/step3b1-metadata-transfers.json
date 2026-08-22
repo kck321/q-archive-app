@@ -7964,6 +7964,422 @@
    "from": "4949|themeAnchors|unlocated|0",
    "kind": "themeAnchors",
    "metadata": {}
+  },
+  {
+   "actionId": "LB1-DROP-1318-claims-950-1037",
+   "from": "1318|claims|950|1037",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB1-DROP-1644-claims-150-194",
+   "from": "1644|claims|150|194",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB1-DROP-17-claims-229-772",
+   "from": "17|claims|229|772",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB1-DROP-19-claims-669-1107",
+   "from": "19|claims|669|1107",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB1-DROP-2032-claims-335-439",
+   "from": "2032|claims|335|439",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB1-DROP-26-claims-26-153",
+   "from": "26|claims|26|153",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB1-DROP-2714-claims-212-263",
+   "from": "2714|claims|212|263",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB1-DROP-4-claims-723-855",
+   "from": "4|claims|723|855",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB1-DROP-4437-claims-252-356",
+   "from": "4437|claims|252|356",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "LB1-DROP-909-claims-63-85",
+   "from": "909|claims|63|85",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB1-SPAN-102-themeAnchors-41-61",
+   "from": "102|themeAnchors|41|61",
+   "kind": "themeAnchors",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB1-SPAN-107-themeAnchors-0-134",
+   "from": "107|themeAnchors|0|134",
+   "kind": "themeAnchors",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB1-SPAN-1090-claims-137-164",
+   "rekeyed": "claimMeta",
+   "from": "what was delivered smiles",
+   "to": "smiles"
+  },
+  {
+   "actionId": "LB1-SPAN-1090-claims-137-164",
+   "from": "1090|claims|137|164",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB1-SPAN-1100-themeAnchors-0-51",
+   "from": "1100|themeAnchors|0|51",
+   "kind": "themeAnchors",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB1-SPAN-1318-claims-1111-1149",
+   "rekeyed": "claimMeta",
+   "from": "few have the facts few know the plan",
+   "to": "few know the plan"
+  },
+  {
+   "actionId": "LB1-SPAN-1318-claims-1111-1149",
+   "from": "1318|claims|1111|1149",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB1-SPAN-1318-claims-1643-1781",
+   "rekeyed": "claimMeta",
+   "from": "department of justice does not discuss ongoing investigations or confirm specific matters what about the active investigation into leaks",
+   "to": "department of justice does not discuss ongoing investigations or confirm specific matters"
+  },
+  {
+   "actionId": "LB1-SPAN-1318-claims-1643-1781",
+   "from": "1318|claims|1643|1781",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB1-SPAN-1589-claims-1052-1113",
+   "rekeyed": "claimMeta",
+   "from": "they know we know but until the public knows it is contained",
+   "to": "they know we know"
+  },
+  {
+   "actionId": "LB1-SPAN-1589-claims-1052-1113",
+   "from": "1589|claims|1052|1113",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB1-SPAN-1644-claims-196-227",
+   "rekeyed": "claimMeta",
+   "from": "if they ask they self destruct",
+   "to": "if they ask"
+  },
+  {
+   "actionId": "LB1-SPAN-1644-claims-196-227",
+   "from": "1644|claims|196|227",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB1-SPAN-2177-claims-168-578",
+   "rekeyed": "claimMeta",
+   "from": "in no case shall information be classified continue to be maintained as classified or fail to be declassified in order to 1 conceal violations of law inefficiency or administrative error 2 prevent embarrassment to a person organization or agency 3 restrain competition or 4 prevent or delay the release of information that does not require protection in the interest of the national security",
+   "to": "a in no case shall information be classified continue to be maintained as classified or fail to be declassified in order to 1 conceal violations of law inefficiency or administrative error 2 prevent embarrassment to a person organization or agency 3 restrain competition or"
+  },
+  {
+   "actionId": "LB1-SPAN-2177-claims-168-578",
+   "from": "2177|claims|168|578",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB1-SPAN-2445-claims-222-326",
+   "rekeyed": "claimMeta",
+   "from": "what role did he play re house investigations house oversight and government reform committee chairman",
+   "to": "house oversight and government reform committee chairman"
+  },
+  {
+   "actionId": "LB1-SPAN-2445-claims-222-326",
+   "from": "2445|claims|222|326",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB1-SPAN-2445-claims-350-422",
+   "rekeyed": "claimMeta",
+   "from": "what role did he play re house investigations house judiciary chairman",
+   "to": "house judiciary chairman"
+  },
+  {
+   "actionId": "LB1-SPAN-2445-claims-350-422",
+   "from": "2445|claims|350|422",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB1-SPAN-25-claims-232-355",
+   "rekeyed": "claimMeta",
+   "from": "proof to begin 11 3 we all sincerely appreciate the work you do keep up the good fight the flow of information is vital",
+   "to": "proof to begin 11 3"
+  },
+  {
+   "actionId": "LB1-SPAN-25-claims-232-355",
+   "from": "25|claims|232|355",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB1-SPAN-25-claims-24-229",
+   "rekeyed": "claimMeta",
+   "from": "return to comments re pelosi and john m some of us refuse to say his last name for a reason this all has meaning everything stated big picture stuff few positions allow for this direct knowledge",
+   "to": "this all has meaning everything stated big picture stuff few positions allow for this direct knowledge"
+  },
+  {
+   "actionId": "LB1-SPAN-25-claims-24-229",
+   "from": "25|claims|24|229",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB1-SPAN-2692-claims-510-620",
+   "rekeyed": "claimMeta",
+   "from": "priestap now retired james rybicki former chief of staff to comey fbi intelligence analyst jonathan moffa",
+   "to": "then assistant director of counterintelligence e w priestap now retired james rybicki former chief of staff to comey fbi intelligence analyst jonathan moffa"
+  },
+  {
+   "actionId": "LB1-SPAN-2692-claims-510-620",
+   "from": "2692|claims|510|620",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB1-SPAN-2692-claims-663-800",
+   "rekeyed": "claimMeta",
+   "from": "herring michael kortan fbi assistant director for public affairs now retired former principal deputy general counsel trisha anderson",
+   "to": "michael kortan fbi assistant director for public affairs now retired former principal deputy general counsel trisha anderson"
+  },
+  {
+   "actionId": "LB1-SPAN-2692-claims-663-800",
+   "from": "2692|claims|663|800",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB1-SPAN-2971-claims-248-456",
+   "rekeyed": "claimMeta",
+   "from": "the study finds little evidence of overt discrimination synonyms proof confirmation verification substantiation corroboration affirmation authentication attestation documentation define proof",
+   "to": "the study finds little evidence of overt discrimination"
+  },
+  {
+   "actionId": "LB1-SPAN-2971-claims-248-456",
+   "from": "2971|claims|248|456",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB1-SPAN-3454-themeAnchors-112-416",
+   "from": "3454|themeAnchors|112|416",
+   "kind": "themeAnchors",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB1-SPAN-3623-claims-187-239",
+   "rekeyed": "claimMeta",
+   "from": "who audits where foreign aid actually goes nobody",
+   "to": "nobody"
+  },
+  {
+   "actionId": "LB1-SPAN-3623-claims-187-239",
+   "from": "3623|claims|187|239",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB1-SPAN-4296-claims-23-55",
+   "rekeyed": "claimMeta",
+   "from": "may 8 2020 masks on reconcile",
+   "to": "may 8 2020 masks on"
+  },
+  {
+   "actionId": "LB1-SPAN-4296-claims-23-55",
+   "from": "4296|claims|23|55",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB1-SPAN-4320-claims-114-181",
+   "rekeyed": "claimMeta",
+   "from": "last line should clarify is this about the virus or the election",
+   "to": "last line should clarify"
+  },
+  {
+   "actionId": "LB1-SPAN-4320-claims-114-181",
+   "from": "4320|claims|114|181",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB1-SPAN-4595-claims-80-109",
+   "rekeyed": "claimMeta",
+   "from": "v2 change we can believe in q",
+   "to": "v2 change we can believe in"
+  },
+  {
+   "actionId": "LB1-SPAN-4595-claims-80-109",
+   "from": "4595|claims|80|109",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB1-SPAN-4935-claims-317-367",
+   "rekeyed": "claimMeta",
+   "from": "mayor bill de blasio d n y c former virginia gov",
+   "to": "mayor bill de blasio d n y c former virginia gov terry mccauliffe among others"
+  },
+  {
+   "actionId": "LB1-SPAN-4935-claims-317-367",
+   "from": "4935|claims|317|367",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB1-SPAN-501-themeAnchors-23-64",
+   "from": "501|themeAnchors|23|64",
+   "kind": "themeAnchors",
+   "metadata": {}
   }
  ]
 }
