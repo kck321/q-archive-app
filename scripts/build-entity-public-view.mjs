@@ -158,12 +158,15 @@ for (const [postKey, records] of Object.entries(linked.byPost ?? {})) {
 // edited in, exactly as apply-entity-cleanup.mjs applies it beside the audit rather than inside it.
 // Without this the retained count stays at 8,975 against a registry that now certifies 8,948, and
 // the guard below stops the build — which is the guard doing its job, not a number to relax.
-const ruling3Path = path.join(AUDIT, 'occurrence-withdrawals-owner-ruling-3.json')
-const ruling3Withdrawn = fs.existsSync(ruling3Path)
-  ? new Set(readAudit('occurrence-withdrawals-owner-ruling-3.json').withdrawals.map(w => w.occurrenceId))
-  : new Set()
+// Two sets now: Owner Ruling 3's 27 withdrawals and the lane-B family-4 review's 24 (22 of which
+// MIGRATE to a linked source rather than being deleted — either way they stop being a certified
+// prose mention, which is what this count measures).
+const POST_APPROVAL = ['occurrence-withdrawals-owner-ruling-3.json', 'occurrence-withdrawals-lane-b.json']
+const postApprovalRemoved = new Set(POST_APPROVAL
+  .filter(f => fs.existsSync(path.join(AUDIT, f)))
+  .flatMap(f => readAudit(f).withdrawals.map(w => w.occurrenceId)))
 
-const SETTLED = r => /^(keep|hold)/.test(r.proposedAction ?? '') && !ruling3Withdrawn.has(r.occurrenceId)
+const SETTLED = r => /^(keep|hold)/.test(r.proposedAction ?? '') && !postApprovalRemoved.has(r.occurrenceId)
 const UNSETTLED_ATTRIBUTION = r => /attribution must be settled/.test(r.proposedAction ?? '')
 
 const retained = (ledger.rows ?? []).filter(SETTLED)

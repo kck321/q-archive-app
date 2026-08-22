@@ -56,7 +56,12 @@ export const CANONICAL = {
   // had certified separately is absorbed into them. Nothing left the archive - the same words are
   // certified once, whole, instead of twice, in halves. See audit/abbreviation-span-repairs.json.
   // 6,324 -> 6,323: B2 withdrew one question whose whole span was a link line.
-  questions: { occurrences: 6323, distinct: 5358, posts: 1705 },
+  // 6,323 -> 6,321: the lane-B family-4 review withdrew the two 2026-08-20 queue-ruling question
+  // records on #2971 and #4454. Each ran from pasted material — a dictionary synonyms block, a
+  // quoted paragraph — into Q's own closing question, and that closing question is already
+  // certified on its own at 782..799 and 386..404, where B3-NARROW put it. The owner ruled the
+  // CLASSIFICATION; the span came from the segmenter and swallowed the paste.
+  questions: { occurrences: 6321, distinct: 5358, posts: 1705 },
   // v5, 16 Aug 2026 — Q Directives migrated to sourceSpansV2 provenance under owner ruling.
   // 2,705 -> 2,552: 153 occurrences removed from Q Directives ONLY (quoted news, scraped code,
   // blessings, declarative-lead misreads, questions, a prediction). Nothing was deleted from the

@@ -9,24 +9,24 @@
  },
  "totals": {
   "sentences": 30187,
-  "occurrencesKeyed": 30841,
+  "occurrencesKeyed": 30874,
   "duplicateKeys": 57,
   "byKind": {
    "claims": 8676,
    "predictions": 843,
    "directives": 2940,
-   "namedEntities": 8772,
+   "namedEntities": 8807,
    "themeAnchors": 1682,
-   "questions": 6323,
+   "questions": 6321,
    "context": 1605
   },
   "byRelation": {
    "EXACT": 20532,
-   "PARTIAL": 10270,
-   "CROSSING": 39
+   "PARTIAL": 10305,
+   "CROSSING": 37
   },
-  "unlocated": 77,
-  "crossingSentenceBoundary": 39
+  "unlocated": 18,
+  "crossingSentenceBoundary": 37
  },
  "findings": {
   "partialPrimarySpans": {
@@ -50,12 +50,12 @@
    }
   },
   "sameCategoryOverlaps": {
-   "total": 243,
+   "total": 247,
    "inPrimaryLayer": 0,
-   "deliberateInlineOrReview": 243,
+   "deliberateInlineOrReview": 247,
    "byKind": {
     "context": 6,
-    "namedEntities": 232,
+    "namedEntities": 236,
     "themeAnchors": 5
    },
    "note": "The owner rule targets the PRIMARY layer. Nested entities and acrostic emphasis overlap by design and are reported separately rather than swept up."
@@ -65,7 +65,7 @@
    "note": "A Context/Emphasis span on exactly the characters of a primary span. Becomes a reviewDisposition, not a second category."
   },
   "unlocatedSpans": {
-   "count": 77,
+   "count": 18,
    "note": "A certified span the ledger could not place in the runtime body. Each is a conflict-queue row, never a silent drop."
   }
  },
@@ -413,26 +413,6 @@
    ]
   },
   {
-   "occurrenceKey": "2971|questions|561|799",
-   "postNum": 2971,
-   "kind": "questions",
-   "layer": "primary",
-   "start": 561,
-   "end": 799,
-   "text": "\"you will be asked to give proof of your identity\"\nsynonyms:\tevidence, verification, corroboration, authentication, confirmation, certification, validation, attestation, demonstration, substantiation, witness, testament;\nPROOF = EVIDENCE?",
-   "sentencesTouched": 3,
-   "sentenceIds": [
-    "p2971-s011",
-    "p2971-s012",
-    "p2971-s013"
-   ],
-   "sentenceTexts": [
-    "\"you will be asked to give proof of your identity\"",
-    "synonyms:\tevidence, verification, corroboration, authentication, confirmation, certification, validation, attestation, demonstration, substantiation, witness, testament;",
-    "PROOF = EVIDENCE?"
-   ]
-  },
-  {
    "occurrenceKey": "3656|directives|482|1064",
    "postNum": 3656,
    "kind": "directives",
@@ -532,24 +512,6 @@
     "def visit_twitter_and_log_in",
     "visit 'https://cards-dev.twitter.com/validator'",
     "find('input.js-username-field').set(ENV['TWITTER_USERNAME'])"
-   ]
-  },
-  {
-   "occurrenceKey": "4454|questions|238|404",
-   "postNum": 4454,
-   "kind": "questions",
-   "layer": "primary",
-   "start": 238,
-   "end": 404,
-   "text": "At the same time, they gave more power to their obedient followers, like Antifa, while keeping the rest of us trapped at home and censored online.\"\nvirus OR ELECTION?",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p4454-s003",
-    "p4454-s004"
-   ],
-   "sentenceTexts": [
-    "At the same time, they gave more power to their obedient followers, like Antifa, while keeping the rest of us trapped at home and censored online.\"",
-    "virus OR ELECTION?"
    ]
   },
   {
@@ -3965,6 +3927,16 @@
    "b": "FB"
   },
   {
+   "sentenceId": "p3006-s005",
+   "postNum": 3006,
+   "kind": "namedEntities",
+   "layer": "inline",
+   "nested": true,
+   "deliberate": true,
+   "a": "US SENATE",
+   "b": "US"
+  },
+  {
    "sentenceId": "p3006-s006",
    "postNum": 3006,
    "kind": "namedEntities",
@@ -3973,6 +3945,16 @@
    "deliberate": true,
    "a": "FBI",
    "b": "FB"
+  },
+  {
+   "sentenceId": "p3059-s000",
+   "postNum": 3059,
+   "kind": "namedEntities",
+   "layer": "inline",
+   "nested": true,
+   "deliberate": true,
+   "a": "BARR",
+   "b": "AG BARR"
   },
   {
    "sentenceId": "p0310-s000",
@@ -4045,6 +4027,16 @@
    "b": "RR"
   },
   {
+   "sentenceId": "p3180-s002",
+   "postNum": 3180,
+   "kind": "namedEntities",
+   "layer": "inline",
+   "nested": true,
+   "deliberate": true,
+   "a": "UNITED STATES",
+   "b": "PRESIDENT OF THE UNITED STATES"
+  },
+  {
    "sentenceId": "p0321-s000",
    "postNum": 321,
    "kind": "namedEntities",
@@ -4063,6 +4055,16 @@
    "deliberate": true,
    "a": "POTUS",
    "b": "US"
+  },
+  {
+   "sentenceId": "p3316-s003",
+   "postNum": 3316,
+   "kind": "namedEntities",
+   "layer": "inline",
+   "nested": true,
+   "deliberate": true,
+   "a": "Mueller",
+   "b": "Mueller report"
   },
   {
    "sentenceId": "p3319-s000",
@@ -6073,69 +6075,9 @@
  ],
  "unlocated": [
   {
-   "postNum": 1054,
-   "kind": "namedEntities",
-   "text": "Ray Chandler"
-  },
-  {
    "postNum": 1094,
    "kind": "namedEntities",
    "text": "US Senate"
-  },
-  {
-   "postNum": 1122,
-   "kind": "namedEntities",
-   "text": "Horowitz"
-  },
-  {
-   "postNum": 1129,
-   "kind": "namedEntities",
-   "text": "Pompeo"
-  },
-  {
-   "postNum": 1138,
-   "kind": "namedEntities",
-   "text": "Ray Chandler"
-  },
-  {
-   "postNum": 1203,
-   "kind": "namedEntities",
-   "text": "Standard Hotel"
-  },
-  {
-   "postNum": 1217,
-   "kind": "namedEntities",
-   "text": "WikiLeaks"
-  },
-  {
-   "postNum": 1217,
-   "kind": "namedEntities",
-   "text": "Podesta"
-  },
-  {
-   "postNum": 1220,
-   "kind": "namedEntities",
-   "text": "WikiLeaks"
-  },
-  {
-   "postNum": 1220,
-   "kind": "namedEntities",
-   "text": "Podesta"
-  },
-  {
-   "postNum": 1221,
-   "kind": "namedEntities",
-   "text": "WikiLeaks"
-  },
-  {
-   "postNum": 1253,
-   "kind": "namedEntities",
-   "text": "Grassley"
-  },
-  {
-   "postNum": 1341,
-   "kind": "namedEntities",
-   "text": "Alex Jones"
   },
   {
    "postNum": 1359,
@@ -6143,84 +6085,9 @@
    "text": "France"
   },
   {
-   "postNum": 1745,
-   "kind": "namedEntities",
-   "text": "US Intel"
-  },
-  {
-   "postNum": 1822,
-   "kind": "namedEntities",
-   "text": "Watergate"
-  },
-  {
-   "postNum": 1863,
-   "kind": "namedEntities",
-   "text": "Sean Hannity"
-  },
-  {
-   "postNum": 19,
-   "kind": "namedEntities",
-   "text": "Maxine Waters"
-  },
-  {
-   "postNum": 1910,
-   "kind": "namedEntities",
-   "text": "INSCOM"
-  },
-  {
-   "postNum": 197,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
-   "postNum": 1972,
-   "kind": "namedEntities",
-   "text": "Watergate"
-  },
-  {
-   "postNum": 1983,
-   "kind": "namedEntities",
-   "text": "CrowdStrike"
-  },
-  {
-   "postNum": 2007,
-   "kind": "namedEntities",
-   "text": "Speaker of the House"
-  },
-  {
    "postNum": 2029,
    "kind": "namedEntities",
    "text": "New York Post"
-  },
-  {
-   "postNum": 2035,
-   "kind": "namedEntities",
-   "text": "House"
-  },
-  {
-   "postNum": 2040,
-   "kind": "namedEntities",
-   "text": "Carter Page"
-  },
-  {
-   "postNum": 2058,
-   "kind": "namedEntities",
-   "text": "Ezra Cohen-Watnick"
-  },
-  {
-   "postNum": 2072,
-   "kind": "namedEntities",
-   "text": "Speaker of the House"
-  },
-  {
-   "postNum": 2206,
-   "kind": "namedEntities",
-   "text": "Wired"
-  },
-  {
-   "postNum": 2211,
-   "kind": "namedEntities",
-   "text": "Speaker of the House"
   },
   {
    "postNum": 2335,
@@ -6228,59 +6095,9 @@
    "text": "People's Liberation Army"
   },
   {
-   "postNum": 2390,
-   "kind": "namedEntities",
-   "text": "House of Cards"
-  },
-  {
-   "postNum": 2499,
-   "kind": "namedEntities",
-   "text": "House of Cards"
-  },
-  {
-   "postNum": 2501,
-   "kind": "namedEntities",
-   "text": "President"
-  },
-  {
-   "postNum": 2555,
-   "kind": "namedEntities",
-   "text": "Horowitz"
-  },
-  {
-   "postNum": 2576,
-   "kind": "namedEntities",
-   "text": "Samantha Power"
-  },
-  {
-   "postNum": 2596,
-   "kind": "namedEntities",
-   "text": "Merkel"
-  },
-  {
-   "postNum": 2600,
-   "kind": "namedEntities",
-   "text": "Sara Carter"
-  },
-  {
-   "postNum": 2730,
-   "kind": "namedEntities",
-   "text": "God"
-  },
-  {
    "postNum": 2768,
    "kind": "namedEntities",
    "text": "Kamala Harris"
-  },
-  {
-   "postNum": 2841,
-   "kind": "namedEntities",
-   "text": "Ann Coulter"
-  },
-  {
-   "postNum": 2849,
-   "kind": "namedEntities",
-   "text": "Smollett"
   },
   {
    "postNum": 2955,
@@ -6288,59 +6105,9 @@
    "text": "Whitaker"
   },
   {
-   "postNum": 2984,
-   "kind": "namedEntities",
-   "text": "Building 8"
-  },
-  {
-   "postNum": 2984,
-   "kind": "namedEntities",
-   "text": "Xbox"
-  },
-  {
-   "postNum": 3006,
-   "kind": "namedEntities",
-   "text": "US Senate"
-  },
-  {
-   "postNum": 3007,
-   "kind": "namedEntities",
-   "text": "Sara Carter"
-  },
-  {
-   "postNum": 3015,
-   "kind": "namedEntities",
-   "text": "Scaramucci"
-  },
-  {
-   "postNum": 3059,
-   "kind": "namedEntities",
-   "text": "AG Barr"
-  },
-  {
-   "postNum": 3063,
-   "kind": "namedEntities",
-   "text": "Gang of Eight"
-  },
-  {
    "postNum": 3159,
    "kind": "namedEntities",
    "text": "Paris Hilton"
-  },
-  {
-   "postNum": 3180,
-   "kind": "namedEntities",
-   "text": "President of the United States"
-  },
-  {
-   "postNum": 3313,
-   "kind": "namedEntities",
-   "text": "Sara Carter"
-  },
-  {
-   "postNum": 3316,
-   "kind": "namedEntities",
-   "text": "Mueller Report"
   },
   {
    "postNum": 3690,
@@ -6348,39 +6115,9 @@
    "text": "Gang of 8"
   },
   {
-   "postNum": 3841,
-   "kind": "namedEntities",
-   "text": "CrowdStrike"
-  },
-  {
    "postNum": 3900,
    "kind": "namedEntities",
    "text": "President"
-  },
-  {
-   "postNum": 3990,
-   "kind": "namedEntities",
-   "text": "Crowdstrike"
-  },
-  {
-   "postNum": 3992,
-   "kind": "namedEntities",
-   "text": "Midterm Elections"
-  },
-  {
-   "postNum": 3993,
-   "kind": "namedEntities",
-   "text": "Gang of Eight"
-  },
-  {
-   "postNum": 4241,
-   "kind": "namedEntities",
-   "text": "Graham"
-  },
-  {
-   "postNum": 4241,
-   "kind": "namedEntities",
-   "text": "Politico"
   },
   {
    "postNum": 4247,
@@ -6396,11 +6133,6 @@
    "postNum": 4340,
    "kind": "namedEntities",
    "text": "New York Post"
-  },
-  {
-   "postNum": 445,
-   "kind": "namedEntities",
-   "text": "CrowdStrike"
   },
   {
    "postNum": 4468,
@@ -6431,31 +6163,6 @@
    "postNum": 48,
    "kind": "namedEntities",
    "text": "Canada"
-  },
-  {
-   "postNum": 785,
-   "kind": "namedEntities",
-   "text": "Delta"
-  },
-  {
-   "postNum": 857,
-   "kind": "namedEntities",
-   "text": "Reuters"
-  },
-  {
-   "postNum": 866,
-   "kind": "namedEntities",
-   "text": "WikiLeaks"
-  },
-  {
-   "postNum": 867,
-   "kind": "namedEntities",
-   "text": "WikiLeaks"
-  },
-  {
-   "postNum": 988,
-   "kind": "namedEntities",
-   "text": "Awan"
   }
  ]
 }

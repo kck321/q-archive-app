@@ -71,7 +71,7 @@ if (planSha !== PLAN_SHA256) {
 // humanReviewRequired cleared; the ones still open keep it set and are still refused here.
 // Running them through a second applier would mean a second set of gates, and the gates are the
 // only reason any of this is trustworthy — so there is one code path and it is this one.
-const DISPOSITIONS_SHA256 = '0df3ba934b21058af5779806eec0c6d2219d63777d85edcc48f09518646c59ce'
+const DISPOSITIONS_SHA256 = 'dff858e2971b426d43904cd2e0abfa2a0773a7cc2026f3092fa2b9a0b9eeb64a'
 const dispPath = path.join(OUT, 'step3b1-held-dispositions.jsonl')
 let plan = planRaw.toString('utf8').trim().split('\n').map(l => JSON.parse(l))
 let dispositionsApplied = 0
@@ -436,10 +436,16 @@ for (const a of actions.filter(x => (waveOfAction.get(x.actionId) ?? 0) === wave
 
   // Every old key this action is allowed to spend, and proof it is the only one spending it.
   const resolve = k => byKey.get(k) ?? []
+  // A KEY MAY NAME TWO RECORDS, so consumption is keyed by the RECORD, not by the characters.
+  // #2971 and #4454 each carry a segmentation-recovered question and the 2026-08-20 queue ruling's
+  // record over the same span; one action re-spans the first and another withdraws the second, and
+  // neither is spending the other's record. An action that does NOT name a target still consumes
+  // the bare key, so the original protection is unchanged for every action that has no target.
   for (const k of a.oldOccurrenceKeys ?? []) {
-    const prior = consumedKeys.get(k)
+    const slot = a.targetQuestionId ? `${k}::${a.targetQuestionId}` : k
+    const prior = consumedKeys.get(slot)
     if (prior && prior !== a.actionId) problems.push(`${a.actionId}: old key ${k} already consumed by ${prior}`)
-    consumedKeys.set(k, a.actionId)
+    consumedKeys.set(slot, a.actionId)
   }
 
   // A KEY THAT DOES NOT RESOLVE IS EITHER "ALREADY APPLIED" OR A DEFECT, AND NEVER A SHRUG.
@@ -721,6 +727,8 @@ for (const a of actions.filter(x => (waveOfAction.get(x.actionId) ?? 0) === wave
     let removed = 0
     for (const k of a.recordsWithdrawn) {
       for (const r of resolve(k)) {
+        // Same rule as SPAN_TRIM: where a span holds more than one record, the action says which.
+        if (a.targetQuestionId && r.origin.id !== a.targetQuestionId) continue
         removeRecord(a.actionId, r, 'withdrawn'); removed++
         metaTransfers.push({ actionId: a.actionId, from: k, kind: r.kind, metadata: metaFor(p, r.kind, r.certifiedValue) })
       }

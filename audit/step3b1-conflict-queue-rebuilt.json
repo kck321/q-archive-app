@@ -2,25 +2,25 @@
  "note": "Conflict queue re-derived from the CURRENT bundle. Not the old CSV minus anything.",
  "measuredFrom": "audit/occurrence-ledger-dryrun.json",
  "originalRows": 945,
- "rebuiltRows": 116,
- "netChange": -829,
+ "rebuiltRows": 55,
+ "netChange": -890,
  "byReason": {
-  "UNLOCATED_SPAN": 77,
-  "BOUNDARY_CROSSING": 39
+  "BOUNDARY_CROSSING": 37,
+  "UNLOCATED_SPAN": 18
  },
  "byKind": {
-  "namedEntities": 77,
   "claims": 29,
-  "questions": 5,
+  "namedEntities": 18,
   "directives": 4,
+  "questions": 3,
   "themeAnchors": 1
  },
- "distinctHeldKeys": 112,
- "distinctPosts": 102,
+ "distinctHeldKeys": 55,
+ "distinctPosts": 46,
  "resolvedSince": {
-  "count": 836,
+  "count": 897,
   "byFamily": {
-   "UNLOCATED_SPAN": 438,
+   "UNLOCATED_SPAN": 497,
    "BOUNDARY_CROSSING": 210,
    "DUPLICATE_KEY_CONFLICTING_METADATA": 42,
    "SAME_CATEGORY_PARTIAL_OVERLAP": 14
@@ -233,15 +233,6 @@
    "certifiedValue": "(i) any links and/or coordination between the Russian government and individuals associated with the campaign of President Donald Trump; and\n(ii) any matters that arose or may arise directly from the investigation; and\n(iii) any other matters within the scope of 28 C.F.R. § 600.4(a)."
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::2971|questions|561|799::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "2971|questions|561|799",
-   "postNum": 2971,
-   "kind": "questions",
-   "detail": "touches 3 sentences",
-   "certifiedValue": "\"you will be asked to give proof of your identity\"\nsynonyms:\tevidence, verification, corroboration, authentication, confirmation, certification, validation, attestation, demonstration, substantiation, witness, testament;\nPROOF = EVIDENCE?"
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::3656|directives|482|1064::0",
    "reason": "BOUNDARY_CROSSING",
    "heldKey": "3656|directives|482|1064",
@@ -285,15 +276,6 @@
    "kind": "claims",
    "detail": "touches 3 sentences",
    "certifiedValue": "def visit_twitter_and_log_in\n    visit 'https://cards-dev.twitter.com/validator'\n    find('input.js-username-field').set(ENV['TWITTER_USERNAME'])"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::4454|questions|238|404::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "4454|questions|238|404",
-   "postNum": 4454,
-   "kind": "questions",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "At the same time, they gave more power to their obedient followers, like Antifa, while keeping the rest of us trapped at home and censored online.\"\nvirus OR ELECTION?"
   },
   {
    "conflictId": "BOUNDARY_CROSSING::4494|questions|370|513::0",
@@ -422,15 +404,6 @@
    "certifiedValue": "We are working to END.\nEVIL."
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1054-namedEntities::Ray Chandler::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1054-namedEntities",
-   "postNum": 1054,
-   "kind": "namedEntities",
-   "detail": "Ray Chandler",
-   "certifiedValue": "Ray Chandler"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1094-namedEntities::US Senate::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-1094-namedEntities",
@@ -438,105 +411,6 @@
    "kind": "namedEntities",
    "detail": "US Senate",
    "certifiedValue": "US Senate"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1122-namedEntities::Horowitz::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1122-namedEntities",
-   "postNum": 1122,
-   "kind": "namedEntities",
-   "detail": "Horowitz",
-   "certifiedValue": "Horowitz"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1129-namedEntities::Pompeo::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1129-namedEntities",
-   "postNum": 1129,
-   "kind": "namedEntities",
-   "detail": "Pompeo",
-   "certifiedValue": "Pompeo"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1138-namedEntities::Ray Chandler::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1138-namedEntities",
-   "postNum": 1138,
-   "kind": "namedEntities",
-   "detail": "Ray Chandler",
-   "certifiedValue": "Ray Chandler"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1203-namedEntities::Standard Hotel::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1203-namedEntities",
-   "postNum": 1203,
-   "kind": "namedEntities",
-   "detail": "Standard Hotel",
-   "certifiedValue": "Standard Hotel"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1217-namedEntities::WikiLeaks::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1217-namedEntities",
-   "postNum": 1217,
-   "kind": "namedEntities",
-   "detail": "WikiLeaks",
-   "certifiedValue": "WikiLeaks"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1217-namedEntities::Podesta::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1217-namedEntities",
-   "postNum": 1217,
-   "kind": "namedEntities",
-   "detail": "Podesta",
-   "certifiedValue": "Podesta"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1220-namedEntities::WikiLeaks::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1220-namedEntities",
-   "postNum": 1220,
-   "kind": "namedEntities",
-   "detail": "WikiLeaks",
-   "certifiedValue": "WikiLeaks"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1220-namedEntities::Podesta::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1220-namedEntities",
-   "postNum": 1220,
-   "kind": "namedEntities",
-   "detail": "Podesta",
-   "certifiedValue": "Podesta"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1221-namedEntities::WikiLeaks::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1221-namedEntities",
-   "postNum": 1221,
-   "kind": "namedEntities",
-   "detail": "WikiLeaks",
-   "certifiedValue": "WikiLeaks"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1253-namedEntities::Grassley::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1253-namedEntities",
-   "postNum": 1253,
-   "kind": "namedEntities",
-   "detail": "Grassley",
-   "certifiedValue": "Grassley"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1341-namedEntities::Alex Jones::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1341-namedEntities",
-   "postNum": 1341,
-   "kind": "namedEntities",
-   "detail": "Alex Jones",
-   "certifiedValue": "Alex Jones"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-1359-namedEntities::France::0",
@@ -548,87 +422,6 @@
    "certifiedValue": "France"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1745-namedEntities::US Intel::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1745-namedEntities",
-   "postNum": 1745,
-   "kind": "namedEntities",
-   "detail": "US Intel",
-   "certifiedValue": "US Intel"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1822-namedEntities::Watergate::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1822-namedEntities",
-   "postNum": 1822,
-   "kind": "namedEntities",
-   "detail": "Watergate",
-   "certifiedValue": "Watergate"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1863-namedEntities::Sean Hannity::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1863-namedEntities",
-   "postNum": 1863,
-   "kind": "namedEntities",
-   "detail": "Sean Hannity",
-   "certifiedValue": "Sean Hannity"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-19-namedEntities::Maxine Waters::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-19-namedEntities",
-   "postNum": 19,
-   "kind": "namedEntities",
-   "detail": "Maxine Waters",
-   "certifiedValue": "Maxine Waters"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1910-namedEntities::INSCOM::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1910-namedEntities",
-   "postNum": 1910,
-   "kind": "namedEntities",
-   "detail": "INSCOM",
-   "certifiedValue": "INSCOM"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-197-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-197-namedEntities",
-   "postNum": 197,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1972-namedEntities::Watergate::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1972-namedEntities",
-   "postNum": 1972,
-   "kind": "namedEntities",
-   "detail": "Watergate",
-   "certifiedValue": "Watergate"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-1983-namedEntities::CrowdStrike::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-1983-namedEntities",
-   "postNum": 1983,
-   "kind": "namedEntities",
-   "detail": "CrowdStrike",
-   "certifiedValue": "CrowdStrike"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2007-namedEntities::Speaker of the House::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2007-namedEntities",
-   "postNum": 2007,
-   "kind": "namedEntities",
-   "detail": "Speaker of the House",
-   "certifiedValue": "Speaker of the House"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2029-namedEntities::New York Post::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-2029-namedEntities",
@@ -636,60 +429,6 @@
    "kind": "namedEntities",
    "detail": "New York Post",
    "certifiedValue": "New York Post"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2035-namedEntities::House::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2035-namedEntities",
-   "postNum": 2035,
-   "kind": "namedEntities",
-   "detail": "House",
-   "certifiedValue": "House"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2040-namedEntities::Carter Page::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2040-namedEntities",
-   "postNum": 2040,
-   "kind": "namedEntities",
-   "detail": "Carter Page",
-   "certifiedValue": "Carter Page"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2058-namedEntities::Ezra Cohen-Watnick::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2058-namedEntities",
-   "postNum": 2058,
-   "kind": "namedEntities",
-   "detail": "Ezra Cohen-Watnick",
-   "certifiedValue": "Ezra Cohen-Watnick"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2072-namedEntities::Speaker of the House::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2072-namedEntities",
-   "postNum": 2072,
-   "kind": "namedEntities",
-   "detail": "Speaker of the House",
-   "certifiedValue": "Speaker of the House"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2206-namedEntities::Wired::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2206-namedEntities",
-   "postNum": 2206,
-   "kind": "namedEntities",
-   "detail": "Wired",
-   "certifiedValue": "Wired"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2211-namedEntities::Speaker of the House::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2211-namedEntities",
-   "postNum": 2211,
-   "kind": "namedEntities",
-   "detail": "Speaker of the House",
-   "certifiedValue": "Speaker of the House"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2335-namedEntities::People's Liberation Army::0",
@@ -701,78 +440,6 @@
    "certifiedValue": "People's Liberation Army"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2390-namedEntities::House of Cards::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2390-namedEntities",
-   "postNum": 2390,
-   "kind": "namedEntities",
-   "detail": "House of Cards",
-   "certifiedValue": "House of Cards"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2499-namedEntities::House of Cards::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2499-namedEntities",
-   "postNum": 2499,
-   "kind": "namedEntities",
-   "detail": "House of Cards",
-   "certifiedValue": "House of Cards"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2501-namedEntities::President::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2501-namedEntities",
-   "postNum": 2501,
-   "kind": "namedEntities",
-   "detail": "President",
-   "certifiedValue": "President"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2555-namedEntities::Horowitz::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2555-namedEntities",
-   "postNum": 2555,
-   "kind": "namedEntities",
-   "detail": "Horowitz",
-   "certifiedValue": "Horowitz"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2576-namedEntities::Samantha Power::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2576-namedEntities",
-   "postNum": 2576,
-   "kind": "namedEntities",
-   "detail": "Samantha Power",
-   "certifiedValue": "Samantha Power"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2596-namedEntities::Merkel::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2596-namedEntities",
-   "postNum": 2596,
-   "kind": "namedEntities",
-   "detail": "Merkel",
-   "certifiedValue": "Merkel"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2600-namedEntities::Sara Carter::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2600-namedEntities",
-   "postNum": 2600,
-   "kind": "namedEntities",
-   "detail": "Sara Carter",
-   "certifiedValue": "Sara Carter"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2730-namedEntities::God::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2730-namedEntities",
-   "postNum": 2730,
-   "kind": "namedEntities",
-   "detail": "God",
-   "certifiedValue": "God"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2768-namedEntities::Kamala Harris::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-2768-namedEntities",
@@ -780,24 +447,6 @@
    "kind": "namedEntities",
    "detail": "Kamala Harris",
    "certifiedValue": "Kamala Harris"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2841-namedEntities::Ann Coulter::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2841-namedEntities",
-   "postNum": 2841,
-   "kind": "namedEntities",
-   "detail": "Ann Coulter",
-   "certifiedValue": "Ann Coulter"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2849-namedEntities::Smollett::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2849-namedEntities",
-   "postNum": 2849,
-   "kind": "namedEntities",
-   "detail": "Smollett",
-   "certifiedValue": "Smollett"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-2955-namedEntities::Whitaker::0",
@@ -809,69 +458,6 @@
    "certifiedValue": "Whitaker"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2984-namedEntities::Building 8::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2984-namedEntities",
-   "postNum": 2984,
-   "kind": "namedEntities",
-   "detail": "Building 8",
-   "certifiedValue": "Building 8"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-2984-namedEntities::Xbox::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-2984-namedEntities",
-   "postNum": 2984,
-   "kind": "namedEntities",
-   "detail": "Xbox",
-   "certifiedValue": "Xbox"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3006-namedEntities::US Senate::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3006-namedEntities",
-   "postNum": 3006,
-   "kind": "namedEntities",
-   "detail": "US Senate",
-   "certifiedValue": "US Senate"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3007-namedEntities::Sara Carter::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3007-namedEntities",
-   "postNum": 3007,
-   "kind": "namedEntities",
-   "detail": "Sara Carter",
-   "certifiedValue": "Sara Carter"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3015-namedEntities::Scaramucci::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3015-namedEntities",
-   "postNum": 3015,
-   "kind": "namedEntities",
-   "detail": "Scaramucci",
-   "certifiedValue": "Scaramucci"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3059-namedEntities::AG Barr::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3059-namedEntities",
-   "postNum": 3059,
-   "kind": "namedEntities",
-   "detail": "AG Barr",
-   "certifiedValue": "AG Barr"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3063-namedEntities::Gang of Eight::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3063-namedEntities",
-   "postNum": 3063,
-   "kind": "namedEntities",
-   "detail": "Gang of Eight",
-   "certifiedValue": "Gang of Eight"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3159-namedEntities::Paris Hilton::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-3159-namedEntities",
@@ -879,33 +465,6 @@
    "kind": "namedEntities",
    "detail": "Paris Hilton",
    "certifiedValue": "Paris Hilton"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3180-namedEntities::President of the United States::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3180-namedEntities",
-   "postNum": 3180,
-   "kind": "namedEntities",
-   "detail": "President of the United States",
-   "certifiedValue": "President of the United States"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3313-namedEntities::Sara Carter::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3313-namedEntities",
-   "postNum": 3313,
-   "kind": "namedEntities",
-   "detail": "Sara Carter",
-   "certifiedValue": "Sara Carter"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3316-namedEntities::Mueller Report::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3316-namedEntities",
-   "postNum": 3316,
-   "kind": "namedEntities",
-   "detail": "Mueller Report",
-   "certifiedValue": "Mueller Report"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3690-namedEntities::Gang of 8::0",
@@ -917,15 +476,6 @@
    "certifiedValue": "Gang of 8"
   },
   {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3841-namedEntities::CrowdStrike::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3841-namedEntities",
-   "postNum": 3841,
-   "kind": "namedEntities",
-   "detail": "CrowdStrike",
-   "certifiedValue": "CrowdStrike"
-  },
-  {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-3900-namedEntities::President::0",
    "reason": "UNLOCATED_SPAN",
    "heldKey": "UNLOCATED-3900-namedEntities",
@@ -933,51 +483,6 @@
    "kind": "namedEntities",
    "detail": "President",
    "certifiedValue": "President"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3990-namedEntities::Crowdstrike::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3990-namedEntities",
-   "postNum": 3990,
-   "kind": "namedEntities",
-   "detail": "Crowdstrike",
-   "certifiedValue": "Crowdstrike"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3992-namedEntities::Midterm Elections::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3992-namedEntities",
-   "postNum": 3992,
-   "kind": "namedEntities",
-   "detail": "Midterm Elections",
-   "certifiedValue": "Midterm Elections"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-3993-namedEntities::Gang of Eight::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-3993-namedEntities",
-   "postNum": 3993,
-   "kind": "namedEntities",
-   "detail": "Gang of Eight",
-   "certifiedValue": "Gang of Eight"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4241-namedEntities::Graham::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4241-namedEntities",
-   "postNum": 4241,
-   "kind": "namedEntities",
-   "detail": "Graham",
-   "certifiedValue": "Graham"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-4241-namedEntities::Politico::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-4241-namedEntities",
-   "postNum": 4241,
-   "kind": "namedEntities",
-   "detail": "Politico",
-   "certifiedValue": "Politico"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-4247-namedEntities::USNS Comfort::0",
@@ -1005,15 +510,6 @@
    "kind": "namedEntities",
    "detail": "New York Post",
    "certifiedValue": "New York Post"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-445-namedEntities::CrowdStrike::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-445-namedEntities",
-   "postNum": 445,
-   "kind": "namedEntities",
-   "detail": "CrowdStrike",
-   "certifiedValue": "CrowdStrike"
   },
   {
    "conflictId": "UNLOCATED_SPAN::UNLOCATED-4468-namedEntities::Daily Beast::0",
@@ -1068,51 +564,6 @@
    "kind": "namedEntities",
    "detail": "Canada",
    "certifiedValue": "Canada"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-785-namedEntities::Delta::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-785-namedEntities",
-   "postNum": 785,
-   "kind": "namedEntities",
-   "detail": "Delta",
-   "certifiedValue": "Delta"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-857-namedEntities::Reuters::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-857-namedEntities",
-   "postNum": 857,
-   "kind": "namedEntities",
-   "detail": "Reuters",
-   "certifiedValue": "Reuters"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-866-namedEntities::WikiLeaks::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-866-namedEntities",
-   "postNum": 866,
-   "kind": "namedEntities",
-   "detail": "WikiLeaks",
-   "certifiedValue": "WikiLeaks"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-867-namedEntities::WikiLeaks::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-867-namedEntities",
-   "postNum": 867,
-   "kind": "namedEntities",
-   "detail": "WikiLeaks",
-   "certifiedValue": "WikiLeaks"
-  },
-  {
-   "conflictId": "UNLOCATED_SPAN::UNLOCATED-988-namedEntities::Awan::0",
-   "reason": "UNLOCATED_SPAN",
-   "heldKey": "UNLOCATED-988-namedEntities",
-   "postNum": 988,
-   "kind": "namedEntities",
-   "detail": "Awan",
-   "certifiedValue": "Awan"
   }
  ]
 }

@@ -1,7 +1,27 @@
 {
  "note": "Entities with no prose mention left, but which remain referenced as the publisher of material Q linked. They stay in the public bundle and must NEVER render as a zero-mention entity page.",
- "total": 136,
+ "total": 138,
  "entities": [
+  {
+   "id": "qe-cb78932b1fab",
+   "canonical": "Reuters",
+   "type": "organization",
+   "slug": "reuters",
+   "linkedSourcePosts": [
+    857,
+    1138,
+    1947,
+    1982,
+    2495,
+    2855,
+    2894,
+    3625,
+    3647,
+    4115,
+    4226,
+    4847
+   ]
+  },
   {
    "id": "qe-49b9cb60a8ac",
    "canonical": "CBS_Herridge",
@@ -503,6 +523,16 @@
    "linkedSourcePosts": [
     2801,
     4653
+   ]
+  },
+  {
+   "id": "qe-a18fc2cdd6a8",
+   "canonical": "Ann Coulter",
+   "type": "person",
+   "slug": "ann-coulter",
+   "linkedSourcePosts": [
+    2841,
+    2842
    ]
   },
   {

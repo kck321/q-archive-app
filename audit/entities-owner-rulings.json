@@ -8657,6 +8657,377 @@
     889
    ],
    "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Horowitz",
+   "alias": "HOROWITZ",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "Q writes 'TRUST HOROWITZ.' in his own prose, in capitals.",
+   "posts": [
+    1122,
+    2555
+   ],
+   "affectedRows": 2,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "US Intel",
+   "alias": "US INTEL",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "Q writes 'US INTEL' inside an all-capitals line of his own prose.",
+   "posts": [
+    1745
+   ],
+   "affectedRows": 1,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Watergate",
+   "alias": "WATERGATE",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "Q writes 'WATERGATE X1000' in his own prose.",
+   "posts": [
+    1822,
+    1972
+   ],
+   "affectedRows": 2,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "CrowdStrike",
+   "alias": "CROWDSTRIKE",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "Q writes the name in capitals in his own prose.",
+   "posts": [
+    1983,
+    3990
+   ],
+   "affectedRows": 2,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Speaker of the House",
+   "alias": "SPEAKER OF THE HOUSE",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "Q writes the office in capitals in his own prose.",
+   "posts": [
+    2007,
+    2072,
+    2211
+   ],
+   "affectedRows": 3,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "House",
+   "alias": "HOUSE",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "'BOTH CHAMBERS (HOUSE / SENATE) IN SESSION ON TUES.' — the chamber, unambiguously, in Q's own line.",
+   "posts": [
+    2035
+   ],
+   "affectedRows": 1,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "House of Cards",
+   "alias": "HOUSE OF CARDS",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "Q writes the title in capitals in his own prose.",
+   "posts": [
+    2390
+   ],
+   "affectedRows": 1,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "President",
+   "alias": "PRESIDENT",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "Q writes 'ORDERED BY THE PRESIDENT OF THE UNITED STATES.' The word-bounded title is there in his own prose. Worth noting the archive registers 'President of the United States' as a separate identity and this drop does not record it — that is an identity question for the census, not a reason to leave the record unpaintable.",
+   "posts": [
+    2501
+   ],
+   "affectedRows": 1,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Merkel",
+   "alias": "MERKEL",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "Q writes the name in capitals in his own prose.",
+   "posts": [
+    2596
+   ],
+   "affectedRows": 1,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Xbox",
+   "alias": "XBOX",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "Q writes the name in capitals in his own prose.",
+   "posts": [
+    2984
+   ],
+   "affectedRows": 1,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Building 8",
+   "alias": "BUILDING 8",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "Q writes 'BUILDING 8' four times on this drop, all in his own prose. The record binds to the first, which is how the occurrence model resolves every in-post repeat.",
+   "posts": [
+    2984
+   ],
+   "affectedRows": 1,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "US Senate",
+   "alias": "US SENATE",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "Q writes the chamber in capitals in his own prose.",
+   "posts": [
+    3006
+   ],
+   "affectedRows": 1,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Scaramucci",
+   "alias": "SCARAMUCCI",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "Q writes the name in capitals in his own prose.",
+   "posts": [
+    3015
+   ],
+   "affectedRows": 1,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "AG Barr",
+   "alias": "AG BARR",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "Q opens the drop with 'AG BARR'.",
+   "posts": [
+    3059
+   ],
+   "affectedRows": 1,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Gang of Eight",
+   "alias": "GANG OF EIGHT",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "Three word-bounded occurrences, all Q's own capitals, all the same body. Every drop that writes this casing records the identity.",
+   "posts": [
+    3063,
+    3993
+   ],
+   "affectedRows": 2,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "President of the United States",
+   "alias": "PRESIDENT OF THE UNITED STATES",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "Q writes the office in full, in capitals, in his own prose.",
+   "posts": [
+    3180
+   ],
+   "affectedRows": 1,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Mueller Report",
+   "alias": "Mueller report",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "The drop writes 'Mueller report' with a lower-case r. A capitalisation of one letter.",
+   "posts": [
+    3316
+   ],
+   "affectedRows": 1,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "CrowdStrike",
+   "alias": "crowdstrike",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "The name appears twice in pasted copy on this drop. Quoted material is where a certified entity mention may legitimately sit — the 2026-08-17 audit classified such occurrences visible_complete_token with `where: quoted content` and KEPT them — so the record is right and only unlocatable.",
+   "posts": [
+    3841
+   ],
+   "affectedRows": 1,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Midterm Elections",
+   "alias": "MIDTERM ELECTIONS",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "Q writes it in capitals in his own prose.",
+   "posts": [
+    3992
+   ],
+   "affectedRows": 1,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Delta",
+   "alias": "DELTA",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "Q signs the drop 'Q, DELTA'. Delta is a certified person identity with three mentions; this is the spelling Q used.",
+   "posts": [
+    785
+   ],
+   "affectedRows": 1,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Wired",
+   "alias": "WIRED",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "The drop carries a wired.com link AND writes 'WIRED' in Q's own prose further down. The prose occurrence is the mention.",
+   "posts": [
+    2206
+   ],
+   "affectedRows": 1,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "God",
+   "alias": "god",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "'May god bless you and your family' — Q's own line, the deity, lower case. Both drops in the archive that write word-bounded 'god' record the God identity, so the spelling is unambiguous. Exact-match only: this registers the spelling, it does not grant short tokens a case-insensitive exemption.",
+   "posts": [
+    2730
+   ],
+   "affectedRows": 1,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Smollett",
+   "alias": "SMOLLETT",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "Q writes the name in capitals, twice, in his own prose.",
+   "posts": [
+    2849
+   ],
+   "affectedRows": 1,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Rachel Chandler",
+   "alias": "Ray.Chandler",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "'Look up Ray.Chandler.' — Q's own spelling with a full stop for the space. PROJECT_CONTEXT already records that this spelling does not match /\\bRay Chandler\\b/ and that the merge ruling had to move her mentions across because of it.",
+   "posts": [
+    1054,
+    1138
+   ],
+   "affectedRows": 2,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Standard Hotel",
+   "alias": "‘Standard’ Hotel",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "Q writes \"The 'Standard' Hotel.\" — quotation marks around the name are why the registered form cannot be found.",
+   "posts": [
+    1203
+   ],
+   "affectedRows": 1,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Maxine Waters",
+   "alias": "Maxine W",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "'Maxine W has a $4mm home and cash assets in excess of $6mm.' — Q's own abbreviation, unambiguous in context and claimed by no other identity.",
+   "posts": [
+    19
+   ],
+   "affectedRows": 1,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "Imran Awan",
+   "alias": "[A]wan",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "Q writes '[A]wan.' in his bracket notation, on a drop whose whole theme is bracketed [A]. The brackets are why the registered form cannot be found.",
+   "posts": [
+    988
+   ],
+   "affectedRows": 1,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
+  },
+  {
+   "canonical": "House of Cards",
+   "alias": "HouseOfCards",
+   "ruledOn": "2026-08-22",
+   "batch": "lane B family 4 — UNLOCATED review",
+   "reasoning": "Q writes '[HouseOfCards]' with the spaces closed up.",
+   "posts": [
+    2499
+   ],
+   "affectedRows": 1,
+   "proof": "Word-bounded in the drop, in Q-authored prose or in pasted material the archive already certifies entity mentions inside, and registered to no other identity. B1B refused these on the corpus test \"do any drops carry this spelling WITHOUT recording the identity\" — the right test for a rule that DERIVES occurrences, and not the test for this one.",
+   "movesNoCount": "An alias only helps LOCATE an identity a section already recorded. apply-entities.mjs pushes the spelling onto the alias list and re-scans nothing. Entity mention totals are unchanged."
   }
  ]
 }

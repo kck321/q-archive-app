@@ -158,11 +158,15 @@ gates.push(gate('every held action\'s records are still live and unmodified', he
   heldKeyState.filter(h => h.keysStillLive !== h.keysExpected).map(h => h.actionId).join(', ') || `all ${held.length} intact`))
 
 // ── 3. no key spent twice, no identity rebuilt ──────────────────────────────────────────────
+// Keyed by the RECORD an action names, not by the characters — the same rule the applier's
+// consumedKeys uses, and for the same reason: #2971 and #4454 each carry two question records over
+// one span, and an action that names one by targetQuestionId is not spending the other.
 const spend = new Map()
 let doubleSpend = 0
 for (const a of automatic) for (const k of a.oldOccurrenceKeys ?? []) {
-  if (spend.has(k) && spend.get(k) !== a.actionId) doubleSpend++
-  spend.set(k, a.actionId)
+  const slot = a.targetQuestionId ? `${k}::${a.targetQuestionId}` : k
+  if (spend.has(slot) && spend.get(slot) !== a.actionId) doubleSpend++
+  spend.set(slot, a.actionId)
 }
 gates.push(gate('zero duplicate action consumption', doubleSpend === 0, `${spend.size} distinct old keys across ${automatic.length} actions`))
 
@@ -294,19 +298,29 @@ const conflictCsv = fs.readFileSync(path.join(ROOT, 'STEP3B1-DRYRUN', '10-CONFLI
 const conflictRows = conflictCsv.trim().split('\n').length - 1
 const heldConflictKeys = new Set(conflictCsv.trim().split('\n').slice(1)
   .map(l => (l.match(/^[^,]*,([^,]*)/) ?? [])[1]).filter(Boolean).map(s => s.replace(/^"|"$/g, '')))
-// THE PLAN MAY NOT TOUCH THE QUEUE. THE B2 SETS EXIST TO.
+// THE PLAN MAY NOT TOUCH THE QUEUE. THE B2 SETS AND THE ADJUDICATED HELD ROWS EXIST TO.
 //
 // Step 3B-1's 530 were gated on never consuming a conflict key — the queue was explicitly out of
 // their scope. The B2 boundary repairs are the opposite: resolving those rows is their entire
-// purpose. So the assertion is split rather than weakened, and what B2 resolved is reported.
+// purpose. So the assertion is split rather than weakened, and what they resolved is reported.
+//
+// A HELD ROW THAT HAS BEEN ADJUDICATED IS ON THE SECOND SIDE OF THAT SPLIT. The ten were held
+// precisely BECAUSE they touch the queue — A-DUP-2971 and A-DUP-4454 say so in their own
+// heldReason — so an adjudication of one is a decision about a queue row, which is the thing the
+// dispositions file is for. Counting it as a plan action made the gate report that the plan had
+// reached into the queue when what had actually happened is that the queue had been answered
+// through its own door. The assertion that matters is unchanged: no UNREVIEWED plan action may
+// consume a held-conflict key.
+const adjudicatedHeldIds = new Set(dispositions.filter(d => !d.humanReviewRequired).map(d => d.actionId))
 const extraIds = new Set(extraSets.map(a => a.actionId))
 const planSpend = new Map()
 for (const a of automatic) {
-  if (extraIds.has(a.actionId)) continue
+  if (extraIds.has(a.actionId) || adjudicatedHeldIds.has(a.actionId)) continue
   for (const k of a.oldOccurrenceKeys ?? []) planSpend.set(k, a.actionId)
 }
 const consumedHeld = [...planSpend.keys()].filter(k => heldConflictKeys.has(k))
-const resolvedByB2 = new Set(extraSets.flatMap(a => (a.oldOccurrenceKeys ?? []).filter(k => heldConflictKeys.has(k))))
+const resolvedByB2 = new Set([...extraSets, ...automatic.filter(a => adjudicatedHeldIds.has(a.actionId))]
+  .flatMap(a => (a.oldOccurrenceKeys ?? []).filter(k => heldConflictKeys.has(k))))
 gates.push(gate('no PLAN action consumed a held-conflict key', consumedHeld.length === 0,
   `${conflictRows} rows in the frozen queue, ${heldConflictKeys.size} distinct held keys; plan consumed 0, B2/B2b deliberately resolved ${resolvedByB2.size}`))
 gates.push(gate('the 945-row conflict queue is unchanged', conflictRows === 945, `${conflictRows} rows`))

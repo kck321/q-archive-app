@@ -1,0 +1,1468 @@
+{
+  "note": "Proposal only. Measured; every row read against its drop before it becomes a disposition.",
+  "rows": 59,
+  "byBasis": {
+    "NO_TRACE": 15,
+    "PROSE_SPELLING_UNREGISTERED": 30,
+    "LINK_ONLY": 14
+  },
+  "rows_": [
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-1054-namedEntities::Ray Chandler::0",
+      "postNum": 1054,
+      "subtype": "ABSENT_FROM_DROP_IN_EVERY_REGISTERED_FORM",
+      "storedIdentity": "Ray Chandler",
+      "canonical": "Rachel Chandler",
+      "registeredForms": [
+        "Rachel Chandler",
+        "RACHEL CHANDLER",
+        "Ray Chandler",
+        "RC"
+      ],
+      "hits": [],
+      "verdictBasis": "NO_TRACE",
+      "proposedAliasAdditions": [],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-1122-namedEntities::Horowitz::0",
+      "postNum": 1122,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "Horowitz",
+      "canonical": "Horowitz",
+      "registeredForms": [
+        "Horowitz"
+      ],
+      "hits": [
+        {
+          "at": 57,
+          "spelling": "HOROWITZ",
+          "line": 4,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "Horowitz",
+          "alias": "HOROWITZ"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-1129-namedEntities::Pompeo::0",
+      "postNum": 1129,
+      "subtype": "CASE_VARIANT_REFUSED_C_AMBIGUOUS_OCCURRENCE",
+      "storedIdentity": "Pompeo",
+      "canonical": "Pompeo",
+      "registeredForms": [
+        "Pompeo"
+      ],
+      "hits": [
+        {
+          "at": 67,
+          "spelling": "pompeo",
+          "line": 0,
+          "where": "link"
+        },
+        {
+          "at": 164,
+          "spelling": "pompeo",
+          "line": 2,
+          "where": "link"
+        }
+      ],
+      "verdictBasis": "LINK_ONLY",
+      "proposedAliasAdditions": [],
+      "linkCarriers": [
+        "http:// thehill.com/homenews/administration/382714-clinton-advised-pompeo-to-stop-the-purge-of-state-dept",
+        "http:// thehill.com/homenews/administration/382765-pompeo-failed-to-disclose-ownership-in-business-connected-to-china"
+      ]
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-1138-namedEntities::Ray Chandler::0",
+      "postNum": 1138,
+      "subtype": "ABSENT_FROM_DROP_IN_EVERY_REGISTERED_FORM",
+      "storedIdentity": "Ray Chandler",
+      "canonical": "Rachel Chandler",
+      "registeredForms": [
+        "Rachel Chandler",
+        "RACHEL CHANDLER",
+        "Ray Chandler",
+        "RC"
+      ],
+      "hits": [],
+      "verdictBasis": "NO_TRACE",
+      "proposedAliasAdditions": [],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-1203-namedEntities::Standard Hotel::0",
+      "postNum": 1203,
+      "subtype": "ABSENT_FROM_DROP_IN_EVERY_REGISTERED_FORM",
+      "storedIdentity": "Standard Hotel",
+      "canonical": "Standard Hotel",
+      "registeredForms": [
+        "Standard Hotel",
+        "THE STANDARD HOTEL"
+      ],
+      "hits": [],
+      "verdictBasis": "NO_TRACE",
+      "proposedAliasAdditions": [],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-1217-namedEntities::WikiLeaks::0",
+      "postNum": 1217,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "WikiLeaks",
+      "canonical": "WikiLeaks",
+      "registeredForms": [
+        "WikiLeaks",
+        "WL",
+        "WK",
+        "Wikileaks"
+      ],
+      "hits": [
+        {
+          "at": 9,
+          "spelling": "wikileaks",
+          "line": 0,
+          "where": "link"
+        }
+      ],
+      "verdictBasis": "LINK_ONLY",
+      "proposedAliasAdditions": [],
+      "linkCarriers": [
+        "https:// wikileaks.org/podesta-emails/emailid/7524"
+      ]
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-1217-namedEntities::Podesta::0",
+      "postNum": 1217,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "Podesta",
+      "canonical": "Podesta",
+      "registeredForms": [
+        "Podesta"
+      ],
+      "hits": [
+        {
+          "at": 23,
+          "spelling": "podesta",
+          "line": 0,
+          "where": "link"
+        }
+      ],
+      "verdictBasis": "LINK_ONLY",
+      "proposedAliasAdditions": [],
+      "linkCarriers": [
+        "https:// wikileaks.org/podesta-emails/emailid/7524"
+      ]
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-1220-namedEntities::WikiLeaks::0",
+      "postNum": 1220,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "WikiLeaks",
+      "canonical": "WikiLeaks",
+      "registeredForms": [
+        "WikiLeaks",
+        "WL",
+        "WK",
+        "Wikileaks"
+      ],
+      "hits": [
+        {
+          "at": 51,
+          "spelling": "wikileaks",
+          "line": 2,
+          "where": "link"
+        }
+      ],
+      "verdictBasis": "LINK_ONLY",
+      "proposedAliasAdditions": [],
+      "linkCarriers": [
+        "https:// wikileaks.org/podesta-emails/emailid/24440"
+      ]
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-1220-namedEntities::Podesta::0",
+      "postNum": 1220,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "Podesta",
+      "canonical": "Podesta",
+      "registeredForms": [
+        "Podesta"
+      ],
+      "hits": [
+        {
+          "at": 65,
+          "spelling": "podesta",
+          "line": 2,
+          "where": "link"
+        }
+      ],
+      "verdictBasis": "LINK_ONLY",
+      "proposedAliasAdditions": [],
+      "linkCarriers": [
+        "https:// wikileaks.org/podesta-emails/emailid/24440"
+      ]
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-1221-namedEntities::WikiLeaks::0",
+      "postNum": 1221,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "WikiLeaks",
+      "canonical": "WikiLeaks",
+      "registeredForms": [
+        "WikiLeaks",
+        "WL",
+        "WK",
+        "Wikileaks"
+      ],
+      "hits": [
+        {
+          "at": 33,
+          "spelling": "wikileaks",
+          "line": 1,
+          "where": "link"
+        }
+      ],
+      "verdictBasis": "LINK_ONLY",
+      "proposedAliasAdditions": [],
+      "linkCarriers": [
+        "https:// twitter.com/wikileaks/status/987724899614674944"
+      ]
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-1253-namedEntities::Grassley::0",
+      "postNum": 1253,
+      "subtype": "CASE_VARIANT_REFUSED_C_AMBIGUOUS_OCCURRENCE",
+      "storedIdentity": "Grassley",
+      "canonical": "Grassley",
+      "registeredForms": [
+        "Grassley",
+        "GRASSLEY"
+      ],
+      "hits": [
+        {
+          "at": 13,
+          "spelling": "grassley",
+          "line": 0,
+          "where": "link"
+        },
+        {
+          "at": 52,
+          "spelling": "grassley",
+          "line": 0,
+          "where": "link"
+        }
+      ],
+      "verdictBasis": "LINK_ONLY",
+      "proposedAliasAdditions": [],
+      "linkCarriers": [
+        "www.grassley.senate.gov/news/news-releases/grassley-refers-planned-parenthood-fetal-tissue-procurement-organizations-fbi"
+      ]
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-1341-namedEntities::Alex Jones::0",
+      "postNum": 1341,
+      "subtype": "PRESENT_ONLY_IN_QUOTED_MATERIAL",
+      "storedIdentity": "Alex Jones",
+      "canonical": "Alex Jones",
+      "registeredForms": [
+        "Alex Jones",
+        "AJ"
+      ],
+      "hits": [],
+      "verdictBasis": "NO_TRACE",
+      "proposedAliasAdditions": [],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-1745-namedEntities::US Intel::0",
+      "postNum": 1745,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "US Intel",
+      "canonical": "US Intel",
+      "registeredForms": [
+        "US Intel"
+      ],
+      "hits": [
+        {
+          "at": 327,
+          "spelling": "US INTEL",
+          "line": 5,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "US Intel",
+          "alias": "US INTEL"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-1822-namedEntities::Watergate::0",
+      "postNum": 1822,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "Watergate",
+      "canonical": "Watergate",
+      "registeredForms": [
+        "Watergate"
+      ],
+      "hits": [
+        {
+          "at": 1941,
+          "spelling": "WATERGATE",
+          "line": 52,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "Watergate",
+          "alias": "WATERGATE"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-1863-namedEntities::Sean Hannity::0",
+      "postNum": 1863,
+      "subtype": "ABSENT_FROM_DROP_IN_EVERY_REGISTERED_FORM",
+      "storedIdentity": "Sean Hannity",
+      "canonical": "Sean Hannity",
+      "registeredForms": [
+        "Sean Hannity",
+        "SEAN HANNITY",
+        "SH"
+      ],
+      "hits": [],
+      "verdictBasis": "NO_TRACE",
+      "proposedAliasAdditions": [],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-19-namedEntities::Maxine Waters::0",
+      "postNum": 19,
+      "subtype": "ABSENT_FROM_DROP_IN_EVERY_REGISTERED_FORM",
+      "storedIdentity": "Maxine Waters",
+      "canonical": "Maxine Waters",
+      "registeredForms": [
+        "Maxine Waters",
+        "MW",
+        "M. Waters"
+      ],
+      "hits": [],
+      "verdictBasis": "NO_TRACE",
+      "proposedAliasAdditions": [],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-1910-namedEntities::INSCOM::0",
+      "postNum": 1910,
+      "subtype": "CASE_VARIANT_REFUSED_C_AMBIGUOUS_OCCURRENCE",
+      "storedIdentity": "INSCOM",
+      "canonical": "INSCOM",
+      "registeredForms": [
+        "INSCOM"
+      ],
+      "hits": [
+        {
+          "at": 217,
+          "spelling": "inscom",
+          "line": 3,
+          "where": "link"
+        },
+        {
+          "at": 236,
+          "spelling": "inscom",
+          "line": 4,
+          "where": "link"
+        }
+      ],
+      "verdictBasis": "LINK_ONLY",
+      "proposedAliasAdditions": [],
+      "linkCarriers": [
+        "https://www.army.mil/inscom",
+        "https://www.inscom.army.mil"
+      ]
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-197-namedEntities::God::0",
+      "postNum": 197,
+      "subtype": "CASE_VARIANT_REFUSED_C_AMBIGUOUS_OCCURRENCE",
+      "storedIdentity": "God",
+      "canonical": "God",
+      "registeredForms": [
+        "God",
+        "GOD"
+      ],
+      "hits": [
+        {
+          "at": 81,
+          "spelling": "god",
+          "line": 0,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "God",
+          "alias": "god"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-1972-namedEntities::Watergate::0",
+      "postNum": 1972,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "Watergate",
+      "canonical": "Watergate",
+      "registeredForms": [
+        "Watergate"
+      ],
+      "hits": [
+        {
+          "at": 104,
+          "spelling": "WATERGATE",
+          "line": 1,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "Watergate",
+          "alias": "WATERGATE"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-1983-namedEntities::CrowdStrike::0",
+      "postNum": 1983,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "CrowdStrike",
+      "canonical": "CrowdStrike",
+      "registeredForms": [
+        "CrowdStrike",
+        "CS",
+        "Crowdstrike"
+      ],
+      "hits": [
+        {
+          "at": 191,
+          "spelling": "CROWDSTRIKE",
+          "line": 7,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "CrowdStrike",
+          "alias": "CROWDSTRIKE"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-2007-namedEntities::Speaker of the House::0",
+      "postNum": 2007,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "Speaker of the House",
+      "canonical": "Speaker of the House",
+      "registeredForms": [
+        "Speaker of the House"
+      ],
+      "hits": [
+        {
+          "at": 704,
+          "spelling": "SPEAKER OF THE HOUSE",
+          "line": 22,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "Speaker of the House",
+          "alias": "SPEAKER OF THE HOUSE"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-2035-namedEntities::House::0",
+      "postNum": 2035,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "House",
+      "canonical": "House",
+      "registeredForms": [
+        "House"
+      ],
+      "hits": [
+        {
+          "at": 75,
+          "spelling": "HOUSE",
+          "line": 1,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "House",
+          "alias": "HOUSE"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-2040-namedEntities::Carter Page::0",
+      "postNum": 2040,
+      "subtype": "ABSENT_FROM_DROP_IN_EVERY_REGISTERED_FORM",
+      "storedIdentity": "Carter Page",
+      "canonical": "Carter Page",
+      "registeredForms": [
+        "Carter Page",
+        "CP"
+      ],
+      "hits": [],
+      "verdictBasis": "NO_TRACE",
+      "proposedAliasAdditions": [],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-2058-namedEntities::Ezra Cohen-Watnick::0",
+      "postNum": 2058,
+      "subtype": "PRESENT_ONLY_IN_QUOTED_MATERIAL",
+      "storedIdentity": "Ezra Cohen-Watnick",
+      "canonical": "Ezra Cohen-Watnick",
+      "registeredForms": [
+        "Ezra Cohen-Watnick"
+      ],
+      "hits": [],
+      "verdictBasis": "NO_TRACE",
+      "proposedAliasAdditions": [],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-2072-namedEntities::Speaker of the House::0",
+      "postNum": 2072,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "Speaker of the House",
+      "canonical": "Speaker of the House",
+      "registeredForms": [
+        "Speaker of the House"
+      ],
+      "hits": [
+        {
+          "at": 1818,
+          "spelling": "SPEAKER OF THE HOUSE",
+          "line": 11,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "Speaker of the House",
+          "alias": "SPEAKER OF THE HOUSE"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-2206-namedEntities::Wired::0",
+      "postNum": 2206,
+      "subtype": "CASE_VARIANT_REFUSED_C_AMBIGUOUS_OCCURRENCE",
+      "storedIdentity": "Wired",
+      "canonical": "Wired",
+      "registeredForms": [
+        "Wired"
+      ],
+      "hits": [
+        {
+          "at": 111,
+          "spelling": "wired",
+          "line": 3,
+          "where": "link"
+        },
+        {
+          "at": 342,
+          "spelling": "WIRED",
+          "line": 8,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "Wired",
+          "alias": "WIRED"
+        }
+      ],
+      "linkCarriers": [
+        "https://www.wired.com/story/qanon-conspiracy-facebook-meme-ai/"
+      ]
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-2211-namedEntities::Speaker of the House::0",
+      "postNum": 2211,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "Speaker of the House",
+      "canonical": "Speaker of the House",
+      "registeredForms": [
+        "Speaker of the House"
+      ],
+      "hits": [
+        {
+          "at": 4356,
+          "spelling": "SPEAKER OF THE HOUSE",
+          "line": 36,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "Speaker of the House",
+          "alias": "SPEAKER OF THE HOUSE"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-2390-namedEntities::House of Cards::0",
+      "postNum": 2390,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "House of Cards",
+      "canonical": "House of Cards",
+      "registeredForms": [
+        "House of Cards",
+        "House of cards"
+      ],
+      "hits": [
+        {
+          "at": 71,
+          "spelling": "HOUSE OF CARDS",
+          "line": 2,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "House of Cards",
+          "alias": "HOUSE OF CARDS"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-2499-namedEntities::House of Cards::0",
+      "postNum": 2499,
+      "subtype": "ABSENT_FROM_DROP_IN_EVERY_REGISTERED_FORM",
+      "storedIdentity": "House of Cards",
+      "canonical": "House of Cards",
+      "registeredForms": [
+        "House of Cards",
+        "House of cards"
+      ],
+      "hits": [],
+      "verdictBasis": "NO_TRACE",
+      "proposedAliasAdditions": [],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-2501-namedEntities::President::0",
+      "postNum": 2501,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "President",
+      "canonical": "President",
+      "registeredForms": [
+        "President"
+      ],
+      "hits": [
+        {
+          "at": 129,
+          "spelling": "PRESIDENT",
+          "line": 0,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "President",
+          "alias": "PRESIDENT"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-2555-namedEntities::Horowitz::0",
+      "postNum": 2555,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "Horowitz",
+      "canonical": "Horowitz",
+      "registeredForms": [
+        "Horowitz"
+      ],
+      "hits": [
+        {
+          "at": 20,
+          "spelling": "HOROWITZ",
+          "line": 1,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "Horowitz",
+          "alias": "HOROWITZ"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-2576-namedEntities::Samantha Power::0",
+      "postNum": 2576,
+      "subtype": "ABSENT_FROM_DROP_IN_EVERY_REGISTERED_FORM",
+      "storedIdentity": "Samantha Power",
+      "canonical": "Samantha Power",
+      "registeredForms": [
+        "Samantha Power",
+        "SP"
+      ],
+      "hits": [],
+      "verdictBasis": "NO_TRACE",
+      "proposedAliasAdditions": [],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-2596-namedEntities::Merkel::0",
+      "postNum": 2596,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "Merkel",
+      "canonical": "Merkel",
+      "registeredForms": [
+        "Merkel"
+      ],
+      "hits": [
+        {
+          "at": 94,
+          "spelling": "MERKEL",
+          "line": 3,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "Merkel",
+          "alias": "MERKEL"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-2600-namedEntities::Sara Carter::0",
+      "postNum": 2600,
+      "subtype": "ABSENT_FROM_DROP_IN_EVERY_REGISTERED_FORM",
+      "storedIdentity": "Sara Carter",
+      "canonical": "Sara Carter",
+      "registeredForms": [
+        "Sara Carter",
+        "SC"
+      ],
+      "hits": [],
+      "verdictBasis": "NO_TRACE",
+      "proposedAliasAdditions": [],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-2730-namedEntities::God::0",
+      "postNum": 2730,
+      "subtype": "CASE_VARIANT_REFUSED_C_AMBIGUOUS_OCCURRENCE",
+      "storedIdentity": "God",
+      "canonical": "God",
+      "registeredForms": [
+        "God",
+        "GOD"
+      ],
+      "hits": [
+        {
+          "at": 149,
+          "spelling": "god",
+          "line": 3,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "God",
+          "alias": "god"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-2841-namedEntities::Ann Coulter::0",
+      "postNum": 2841,
+      "subtype": "PRESENT_ONLY_IN_QUOTED_MATERIAL",
+      "storedIdentity": "Ann Coulter",
+      "canonical": "Ann Coulter",
+      "registeredForms": [
+        "Ann Coulter"
+      ],
+      "hits": [],
+      "verdictBasis": "NO_TRACE",
+      "proposedAliasAdditions": [],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-2849-namedEntities::Smollett::0",
+      "postNum": 2849,
+      "subtype": "CASE_VARIANT_REFUSED_C_AMBIGUOUS_OCCURRENCE",
+      "storedIdentity": "Smollett",
+      "canonical": "Smollett",
+      "registeredForms": [
+        "Smollett"
+      ],
+      "hits": [
+        {
+          "at": 14,
+          "spelling": "SMOLLETT",
+          "line": 0,
+          "where": "prose"
+        },
+        {
+          "at": 308,
+          "spelling": "SMOLLETT",
+          "line": 5,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "Smollett",
+          "alias": "SMOLLETT"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-2984-namedEntities::Building 8::0",
+      "postNum": 2984,
+      "subtype": "CASE_VARIANT_REFUSED_C_AMBIGUOUS_OCCURRENCE",
+      "storedIdentity": "Building 8",
+      "canonical": "Building 8",
+      "registeredForms": [
+        "Building 8"
+      ],
+      "hits": [
+        {
+          "at": 204,
+          "spelling": "BUILDING 8",
+          "line": 7,
+          "where": "prose"
+        },
+        {
+          "at": 344,
+          "spelling": "BUILDING 8",
+          "line": 11,
+          "where": "prose"
+        },
+        {
+          "at": 383,
+          "spelling": "BUILDING 8",
+          "line": 11,
+          "where": "prose"
+        },
+        {
+          "at": 834,
+          "spelling": "BUILDING 8",
+          "line": 23,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "Building 8",
+          "alias": "BUILDING 8"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-2984-namedEntities::Xbox::0",
+      "postNum": 2984,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "Xbox",
+      "canonical": "Xbox",
+      "registeredForms": [
+        "Xbox"
+      ],
+      "hits": [
+        {
+          "at": 283,
+          "spelling": "XBOX",
+          "line": 9,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "Xbox",
+          "alias": "XBOX"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-3006-namedEntities::US Senate::0",
+      "postNum": 3006,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "US Senate",
+      "canonical": "US Senate",
+      "registeredForms": [
+        "US Senate"
+      ],
+      "hits": [
+        {
+          "at": 369,
+          "spelling": "US SENATE",
+          "line": 5,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "US Senate",
+          "alias": "US SENATE"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-3007-namedEntities::Sara Carter::0",
+      "postNum": 3007,
+      "subtype": "ABSENT_FROM_DROP_IN_EVERY_REGISTERED_FORM",
+      "storedIdentity": "Sara Carter",
+      "canonical": "Sara Carter",
+      "registeredForms": [
+        "Sara Carter",
+        "SC"
+      ],
+      "hits": [],
+      "verdictBasis": "NO_TRACE",
+      "proposedAliasAdditions": [],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-3015-namedEntities::Scaramucci::0",
+      "postNum": 3015,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "Scaramucci",
+      "canonical": "Scaramucci",
+      "registeredForms": [
+        "Scaramucci"
+      ],
+      "hits": [
+        {
+          "at": 668,
+          "spelling": "SCARAMUCCI",
+          "line": 3,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "Scaramucci",
+          "alias": "SCARAMUCCI"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-3059-namedEntities::AG Barr::0",
+      "postNum": 3059,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "AG Barr",
+      "canonical": "AG Barr",
+      "registeredForms": [
+        "AG Barr"
+      ],
+      "hits": [
+        {
+          "at": 0,
+          "spelling": "AG BARR",
+          "line": 0,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "AG Barr",
+          "alias": "AG BARR"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-3063-namedEntities::Gang of Eight::0",
+      "postNum": 3063,
+      "subtype": "CASE_VARIANT_REFUSED_C_AMBIGUOUS_OCCURRENCE",
+      "storedIdentity": "Gang of Eight",
+      "canonical": "Gang of Eight",
+      "registeredForms": [
+        "Gang of Eight",
+        "Gang of 8",
+        "GANG OF 8"
+      ],
+      "hits": [
+        {
+          "at": 58,
+          "spelling": "GANG OF EIGHT",
+          "line": 1,
+          "where": "prose"
+        },
+        {
+          "at": 112,
+          "spelling": "GANG OF EIGHT",
+          "line": 2,
+          "where": "prose"
+        },
+        {
+          "at": 407,
+          "spelling": "GANG OF EIGHT",
+          "line": 4,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "Gang of Eight",
+          "alias": "GANG OF EIGHT"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-3180-namedEntities::President of the United States::0",
+      "postNum": 3180,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "President of the United States",
+      "canonical": "President of the United States",
+      "registeredForms": [
+        "President of the United States"
+      ],
+      "hits": [
+        {
+          "at": 118,
+          "spelling": "PRESIDENT OF THE UNITED STATES",
+          "line": 2,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "President of the United States",
+          "alias": "PRESIDENT OF THE UNITED STATES"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-3313-namedEntities::Sara Carter::0",
+      "postNum": 3313,
+      "subtype": "ABSENT_FROM_DROP_IN_EVERY_REGISTERED_FORM",
+      "storedIdentity": "Sara Carter",
+      "canonical": "Sara Carter",
+      "registeredForms": [
+        "Sara Carter",
+        "SC"
+      ],
+      "hits": [],
+      "verdictBasis": "NO_TRACE",
+      "proposedAliasAdditions": [],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-3316-namedEntities::Mueller Report::0",
+      "postNum": 3316,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "Mueller Report",
+      "canonical": "Mueller Report",
+      "registeredForms": [
+        "Mueller Report"
+      ],
+      "hits": [
+        {
+          "at": 279,
+          "spelling": "Mueller report",
+          "line": 3,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "Mueller Report",
+          "alias": "Mueller report"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-3841-namedEntities::CrowdStrike::0",
+      "postNum": 3841,
+      "subtype": "CASE_VARIANT_REFUSED_C_AMBIGUOUS_OCCURRENCE",
+      "storedIdentity": "CrowdStrike",
+      "canonical": "CrowdStrike",
+      "registeredForms": [
+        "CrowdStrike",
+        "CS",
+        "Crowdstrike"
+      ],
+      "hits": [
+        {
+          "at": 471,
+          "spelling": "crowdstrike",
+          "line": 6,
+          "where": "quoted"
+        },
+        {
+          "at": 558,
+          "spelling": "crowdstrike",
+          "line": 8,
+          "where": "quoted"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "CrowdStrike",
+          "alias": "crowdstrike"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-3990-namedEntities::Crowdstrike::0",
+      "postNum": 3990,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "Crowdstrike",
+      "canonical": "CrowdStrike",
+      "registeredForms": [
+        "CrowdStrike",
+        "CS",
+        "Crowdstrike"
+      ],
+      "hits": [
+        {
+          "at": 227,
+          "spelling": "CROWDSTRIKE",
+          "line": 2,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "CrowdStrike",
+          "alias": "CROWDSTRIKE"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-3992-namedEntities::Midterm Elections::0",
+      "postNum": 3992,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "Midterm Elections",
+      "canonical": "Midterm Elections",
+      "registeredForms": [
+        "Midterm Elections"
+      ],
+      "hits": [
+        {
+          "at": 220,
+          "spelling": "MIDTERM ELECTIONS",
+          "line": 2,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "Midterm Elections",
+          "alias": "MIDTERM ELECTIONS"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-3993-namedEntities::Gang of Eight::0",
+      "postNum": 3993,
+      "subtype": "CASE_VARIANT_REFUSED_C_AMBIGUOUS_OCCURRENCE",
+      "storedIdentity": "Gang of Eight",
+      "canonical": "Gang of Eight",
+      "registeredForms": [
+        "Gang of Eight",
+        "Gang of 8",
+        "GANG OF 8"
+      ],
+      "hits": [
+        {
+          "at": 58,
+          "spelling": "GANG OF EIGHT",
+          "line": 1,
+          "where": "prose"
+        },
+        {
+          "at": 112,
+          "spelling": "GANG OF EIGHT",
+          "line": 2,
+          "where": "prose"
+        },
+        {
+          "at": 407,
+          "spelling": "GANG OF EIGHT",
+          "line": 4,
+          "where": "prose"
+        },
+        {
+          "at": 539,
+          "spelling": "GANG OF EIGHT",
+          "line": 6,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "Gang of Eight",
+          "alias": "GANG OF EIGHT"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-4241-namedEntities::Graham::0",
+      "postNum": 4241,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "Graham",
+      "canonical": "Graham",
+      "registeredForms": [
+        "Graham"
+      ],
+      "hits": [
+        {
+          "at": 51,
+          "spelling": "graham",
+          "line": 1,
+          "where": "link"
+        }
+      ],
+      "verdictBasis": "LINK_ONLY",
+      "proposedAliasAdditions": [],
+      "linkCarriers": [
+        "www.politico.com/news/2019/10/31/graham-judiciary-chairmanship-grassley-062993"
+      ]
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-4241-namedEntities::Politico::0",
+      "postNum": 4241,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "Politico",
+      "canonical": "Politico",
+      "registeredForms": [
+        "Politico"
+      ],
+      "hits": [
+        {
+          "at": 22,
+          "spelling": "politico",
+          "line": 1,
+          "where": "link"
+        }
+      ],
+      "verdictBasis": "LINK_ONLY",
+      "proposedAliasAdditions": [],
+      "linkCarriers": [
+        "www.politico.com/news/2019/10/31/graham-judiciary-chairmanship-grassley-062993"
+      ]
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-445-namedEntities::CrowdStrike::0",
+      "postNum": 445,
+      "subtype": "CASE_VARIANT_REFUSED_C_AMBIGUOUS_OCCURRENCE",
+      "storedIdentity": "CrowdStrike",
+      "canonical": "CrowdStrike",
+      "registeredForms": [
+        "CrowdStrike",
+        "CS",
+        "Crowdstrike"
+      ],
+      "hits": [
+        {
+          "at": 12,
+          "spelling": "crowdstrike",
+          "line": 0,
+          "where": "link"
+        },
+        {
+          "at": 38,
+          "spelling": "crowdstrike",
+          "line": 0,
+          "where": "link"
+        }
+      ],
+      "verdictBasis": "LINK_ONLY",
+      "proposedAliasAdditions": [],
+      "linkCarriers": [
+        "https://www.crowdstrike.com/resources/crowdstrike-closes-100-million-financing-round-led-google-capital/"
+      ]
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-785-namedEntities::Delta::0",
+      "postNum": 785,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "Delta",
+      "canonical": "Delta",
+      "registeredForms": [
+        "Delta"
+      ],
+      "hits": [
+        {
+          "at": 113,
+          "spelling": "DELTA",
+          "line": 6,
+          "where": "prose"
+        }
+      ],
+      "verdictBasis": "PROSE_SPELLING_UNREGISTERED",
+      "proposedAliasAdditions": [
+        {
+          "canonical": "Delta",
+          "alias": "DELTA"
+        }
+      ],
+      "linkCarriers": []
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-857-namedEntities::Reuters::0",
+      "postNum": 857,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "Reuters",
+      "canonical": "Reuters",
+      "registeredForms": [
+        "Reuters"
+      ],
+      "hits": [
+        {
+          "at": 68,
+          "spelling": "reuters",
+          "line": 2,
+          "where": "link"
+        }
+      ],
+      "verdictBasis": "LINK_ONLY",
+      "proposedAliasAdditions": [],
+      "linkCarriers": [
+        "https:// mobile.reuters.com/article/amp/idUSKBN1GH2SM?__twitter_impression=true"
+      ]
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-866-namedEntities::WikiLeaks::0",
+      "postNum": 866,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "WikiLeaks",
+      "canonical": "WikiLeaks",
+      "registeredForms": [
+        "WikiLeaks",
+        "WL",
+        "WK",
+        "Wikileaks"
+      ],
+      "hits": [
+        {
+          "at": 9,
+          "spelling": "wikileaks",
+          "line": 0,
+          "where": "link"
+        }
+      ],
+      "verdictBasis": "LINK_ONLY",
+      "proposedAliasAdditions": [],
+      "linkCarriers": [
+        "https:// wikileaks.org/clinton-emails/emailid/629"
+      ]
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-867-namedEntities::WikiLeaks::0",
+      "postNum": 867,
+      "subtype": "CASE_VARIANT_REFUSED_E_DIFFERENT_IDENTITY",
+      "storedIdentity": "WikiLeaks",
+      "canonical": "WikiLeaks",
+      "registeredForms": [
+        "WikiLeaks",
+        "WL",
+        "WK",
+        "Wikileaks"
+      ],
+      "hits": [
+        {
+          "at": 18,
+          "spelling": "wikileaks",
+          "line": 1,
+          "where": "link"
+        }
+      ],
+      "verdictBasis": "LINK_ONLY",
+      "proposedAliasAdditions": [],
+      "linkCarriers": [
+        "https:// wikileaks.org/clinton-emails/emailid/3672"
+      ]
+    },
+    {
+      "conflictId": "UNLOCATED_SPAN::UNLOCATED-988-namedEntities::Awan::0",
+      "postNum": 988,
+      "subtype": "ABSENT_FROM_DROP_IN_EVERY_REGISTERED_FORM",
+      "storedIdentity": "Awan",
+      "canonical": "Imran Awan",
+      "registeredForms": [
+        "Imran Awan",
+        "AWAN",
+        "Awan"
+      ],
+      "hits": [],
+      "verdictBasis": "NO_TRACE",
+      "proposedAliasAdditions": [],
+      "linkCarriers": []
+    }
+  ]
+}

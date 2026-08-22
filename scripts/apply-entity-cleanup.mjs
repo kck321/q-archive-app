@@ -58,41 +58,54 @@ const ALL_ARTIFACTS = fs.readdirSync(DATA).filter(f => f.endsWith('.json')).sort
 // Platforms host material; they do not identify the publisher of it.
 const PLATFORMS = /^(twitter\.com|x\.com|youtube\.com|youtu\.be|t\.co|archive\.org|web\.archive\.org|docs\.google\.com|drive\.google\.com|pastebin\.com|imgur\.com|scribd\.com|documentcloud\.org|assets\.documentcloud\.org)$/
 
-// OWNER RULING 3 (2026-08-22) — 27 occurrences re-adjudicated AFTER the 2026-08-17 approval.
+// OCCURRENCE DECISIONS TAKEN AFTER THE 2026-08-17 APPROVAL.
 //
-// A SEPARATE, SEPARATELY-PINNED SET, read beside the approved audit rather than merged into it.
+// SEPARATELY-PINNED SETS, read BESIDE the approved audit rather than merged into it.
 // audit/occurrence-provenance-audit.json keeps its 2026-08-17 bytes, its 9,926 rows and its 951
 // proposedWithdrawals; the approval record in the rollback contract keeps its wording and its
-// countsBefore/countsAfter. This ruling is a fourth postApprovalDeltas entry and this file.
+// countsBefore/countsAfter. Each set here is recorded as its own postApprovalDeltas entry instead.
 //
 // Why not simply edit the audit: the audit IS the approval. Rewriting it would make the guard
 // compare the tree against a before-state the owner never saw, which is the one thing the guard
-// exists to stop. Adding a set beside it leaves both the approved plan and the later ruling
+// exists to stop. Adding a set beside it leaves both the approved plan and the later decision
 // independently readable, and a diff of either one still means what it says.
 //
 // Pinned by content for the same reason every other action set is: a ruling that can be edited
 // between review and apply was never reviewed.
-const RULING_3 = { file: 'occurrence-withdrawals-owner-ruling-3.json', count: 27,
-  sha256: '65f82ace6748eaaf1bbbdd010f8cba30802c8f9a7c918e5928be0ef2a20e21ef' }
+//
+// There are two. Owner Ruling 3 withdrew 27 occurrences the owner reviewed individually; the
+// lane-B family-4 review MIGRATES 22 whose only trace on the drop is a URL or a social handle and
+// withdraws 2 more. A migration is not a deletion: the reference is real and only the layer was
+// wrong, so it becomes a linked source exactly as the approved plan did with 363 of its own.
+const POST_APPROVAL_SETS = [
+  { file: 'occurrence-withdrawals-owner-ruling-3.json', count: 27, label: 'Owner Ruling 3',
+    sha256: '65f82ace6748eaaf1bbbdd010f8cba30802c8f9a7c918e5928be0ef2a20e21ef' },
+  { file: 'occurrence-withdrawals-lane-b.json', count: 24, label: 'lane B family 4 — UNLOCATED review',
+    sha256: '177b82b4ea532095c0eb027856a0423800d20cb819adc25bada883a617d7625c' },
+]
 
-/** The ruling-3 rows, verified against their pin. Absent file = the ruling has not been built. */
-function loadRuling3() {
-  const full = path.join(OUT, RULING_3.file)
-  if (!fs.existsSync(full)) return []
-  const raw = fs.readFileSync(full)
-  const got = sha(raw)
-  if (got !== RULING_3.sha256) {
-    console.error('\n  X OWNER RULING 3 IS NOT THE REVIEWED RULING — stopped.')
-    console.error(`     expected ${RULING_3.sha256}`)
-    console.error(`     found    ${got}`)
-    process.exit(1)
+/** Every post-approval withdrawal row, each set verified against its pin. */
+function loadPostApprovalWithdrawals() {
+  const out = []
+  for (const set of POST_APPROVAL_SETS) {
+    const full = path.join(OUT, set.file)
+    if (!fs.existsSync(full)) continue
+    const raw = fs.readFileSync(full)
+    const got = sha(raw)
+    if (got !== set.sha256) {
+      console.error(`\n  X ${set.label.toUpperCase()} IS NOT THE REVIEWED SET — stopped.`)
+      console.error(`     expected ${set.sha256}`)
+      console.error(`     found    ${got}`)
+      process.exit(1)
+    }
+    const doc = JSON.parse(raw.toString('utf8'))
+    if (doc.withdrawals.length !== set.count) {
+      console.error(`\n  X ${set.label} holds ${doc.withdrawals.length} withdrawals, not ${set.count}.\n`)
+      process.exit(1)
+    }
+    out.push(...doc.withdrawals.map(w => ({ ...w, _set: set.label })))
   }
-  const doc = JSON.parse(raw.toString('utf8'))
-  if (doc.withdrawals.length !== RULING_3.count) {
-    console.error(`\n  X owner ruling 3 holds ${doc.withdrawals.length} withdrawals, not ${RULING_3.count}.\n`)
-    process.exit(1)
-  }
-  return doc.withdrawals
+  return out
 }
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -205,11 +218,11 @@ function buildPlan(dataDir) {
   // Double subtraction is unrepresentable here for the same reason it is in the approved plan: the
   // unit is the occurrence. `seen` is every AUDITED occurrence, most of which are keeps, so the
   // test is against the ones that already carry an ACTION — that is what "acts on" means.
-  const ruling3 = loadRuling3()
+  const postApproval = loadPostApprovalWithdrawals()
   const actedOn = new Set(actions.map(a => a.occurrenceId))
-  for (const w of ruling3) {
-    if (actedOn.has(w.occurrenceId)) { refusals.push(`${w.occurrenceId}: owner ruling 3 names an occurrence the approved plan already acts on`); continue }
-    if (!seen.has(w.occurrenceId)) { refusals.push(`${w.occurrenceId}: owner ruling 3 names an occurrence the 2026-08-17 audit does not cover`); continue }
+  for (const w of postApproval) {
+    if (actedOn.has(w.occurrenceId)) { refusals.push(`${w.occurrenceId}: ${w._set} names an occurrence an earlier plan already acts on`); continue }
+    if (!seen.has(w.occurrenceId)) { refusals.push(`${w.occurrenceId}: ${w._set} names an occurrence the 2026-08-17 audit does not cover`); continue }
     actedOn.add(w.occurrenceId)
     const post = postByNum.get(w.postNum)
     const e = resolveEntity(w.entityId)
@@ -228,11 +241,14 @@ function buildPlan(dataDir) {
       canonical: e.canonical,
       entityType: e.type,
       category: w.originalCategory,
-      urlEvidence: w.originalEvidence?.urlEvidence ?? null,
-      carriers: [],          // a withdrawal migrates nothing — no linked source is created
-      host: null, platform: null, handle: null,
-      action: 'remove-annotation',
-      ownerRuling: 'Owner Ruling 3 (2026-08-22)',
+      // A WITHDRAWAL migrates nothing and carries no URL. A MIGRATION does: the reference is real
+      // and only the layer was wrong, so it becomes a linked source exactly as the 2026-08-17 plan
+      // made 234 publisher and 129 social-account references into linked sources.
+      urlEvidence: w.urlEvidence ?? w.originalEvidence?.urlEvidence ?? null,
+      carriers: w.carriers ?? [],
+      host: null, platform: w.platform ?? null, handle: w.handle ?? null,
+      action: w.proposedAction ?? 'remove-annotation',
+      ownerRuling: w.ownerRuling ?? w._set,
       adjudication: w.adjudication,
       before: {
         entityMentions: e.mentions,
@@ -240,7 +256,7 @@ function buildPlan(dataDir) {
         aliasAtIndex: named[w.index],
         postTextSha: sha(String(post.text ?? '')).slice(0, 16),
       },
-      justification: `Owner Ruling 3 (2026-08-22), ${w.adjudication}: ${w.reasonForWithdrawal}`,
+      justification: `${w._set} (2026-08-22), ${w.adjudication}: ${w.reasonForWithdrawal}`,
       reversal: w.reversal,
     })
   }

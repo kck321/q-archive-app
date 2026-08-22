@@ -2,14 +2,11 @@
  "note": "Step 3B-1 — the certified semantic overlay. Primary paint, non-painting secondaries and review dispositions, keyed by occurrence. Step 4 renders from this.",
  "step": "3B-1",
  "planSha256": "373ca06b1416b6707a111f2c3da8e751472c551f739500f76cdcc764d3128058",
- "dispositionsApplied": 8,
- "actionsApplied": 772,
+ "dispositionsApplied": 10,
+ "actionsApplied": 774,
  "actionsAlreadyApplied": 8,
- "actionsHeld": 2,
- "heldActionIds": [
-  "A-DUP-2971-questions-561-799",
-  "A-DUP-4454-questions-238-404"
- ],
+ "actionsHeld": 0,
+ "heldActionIds": [],
  "duplicateMergeDeltas": [
   {
    "actionId": "A-DUP-2844-namedEntities-511-519",
@@ -13598,6 +13595,23 @@
    "adjudicationReason": "the certified span crossed a sentence boundary only because it swallowed 1 non-semantic line(s) — links, board pointers or bracketed labels. Trimmed to the one prose sentence it actually covers; the category is unchanged."
   },
   {
+   "occurrenceKey": "2971|questions|561|799",
+   "postNum": 2971,
+   "start": 561,
+   "end": 799,
+   "text": "\"you will be asked to give proof of your identity\"\nsynonyms:\tevidence, verification, corroboration, authentication, confirmation, certification, validation, attestation, demonstration, substantiation, witness, testament;\nPROOF = EVIDENCE?",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "A-DUP-2971-questions-561-799",
+   "ruleCode": "LANEB_QUESTION_OVER_PASTED_MATERIAL",
+   "withdrawReason": "The two records over this span were never duplicates, and this action said so when it was held: \"qf-23\" is the segmentation-recovered question and \"q-queue-2971-39\" is the 2026-08-20 queue ruling, whose identity IS the whole joined block. The held action's own proposedRepair was to narrow the recovered literal to \"PROOF = EVIDENCE?\", and B3-NARROW did exactly that, so the duplicate key is dissolved and no merge is needed. What is left is the queue record, which runs from pasted material into Q's own closing question — and that question is already certified on its own at 782..799. Trimming the queue record to its Q-authored part collapses onto the record that already exists, so the record is withdrawn.",
+   "adjudication": "E — WITHDRAW",
+   "adjudicationReason": "The two records over this span were never duplicates, and this action said so when it was held: \"qf-23\" is the segmentation-recovered question and \"q-queue-2971-39\" is the 2026-08-20 queue ruling, whose identity IS the whole joined block. The held action's own proposedRepair was to narrow the recovered literal to \"PROOF = EVIDENCE?\", and B3-NARROW did exactly that, so the duplicate key is dissolved and no merge is needed. What is left is the queue record, which runs from pasted material into Q's own closing question — and that question is already certified on its own at 782..799. Trimming the queue record to its Q-authored part collapses onto the record that already exists, so the record is withdrawn."
+  },
+  {
    "occurrenceKey": "2971|questions|782|799",
    "postNum": 2971,
    "start": 782,
@@ -17184,6 +17198,23 @@
    "adjudicationReason": "Three lines of pasted Ruby — a method definition and two statements — certified as one Claim. Three independent units of source code, not one semantic unit, so no trim is correct. This is the drop the owner named: pasted multi-sentence code must not be Q semantic paint. Withdrawing it removes code FROM the paint rather than adding it, which is the same principle applied in the other direction. Listed for the owner because #4437 has been ruled on before."
   },
   {
+   "occurrenceKey": "4454|questions|238|404",
+   "postNum": 4454,
+   "start": 238,
+   "end": 404,
+   "text": "At the same time, they gave more power to their obedient followers, like Antifa, while keeping the rest of us trapped at home and censored online.\"\nvirus OR ELECTION?",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "A-DUP-4454-questions-238-404",
+   "ruleCode": "LANEB_QUESTION_OVER_PASTED_MATERIAL",
+   "withdrawReason": "The two records over this span were never duplicates, and this action said so when it was held: \"qf-33\" is the segmentation-recovered question and \"q-queue-4454-53\" is the 2026-08-20 queue ruling, whose identity IS the whole joined block. The held action's own proposedRepair was to narrow the recovered literal to \"virus OR ELECTION?\", and B3-NARROW did exactly that, so the duplicate key is dissolved and no merge is needed. What is left is the queue record, which runs from pasted material into Q's own closing question — and that question is already certified on its own at 386..404. Trimming the queue record to its Q-authored part collapses onto the record that already exists, so the record is withdrawn.",
+   "adjudication": "E — WITHDRAW",
+   "adjudicationReason": "The two records over this span were never duplicates, and this action said so when it was held: \"qf-33\" is the segmentation-recovered question and \"q-queue-4454-53\" is the 2026-08-20 queue ruling, whose identity IS the whole joined block. The held action's own proposedRepair was to narrow the recovered literal to \"virus OR ELECTION?\", and B3-NARROW did exactly that, so the duplicate key is dissolved and no merge is needed. What is left is the queue record, which runs from pasted material into Q's own closing question — and that question is already certified on its own at 386..404. Trimming the queue record to its Q-authored part collapses onto the record that already exists, so the record is withdrawn."
+  },
+  {
    "occurrenceKey": "4454|questions|386|404",
    "postNum": 4454,
    "start": 386,
@@ -19584,9 +19615,9 @@
   }
  ],
  "appliedTo": {
-  "postsSha256": "10476e57f0c929ef89e40915f0977ca5789b62367c3aded24b548e521f3c7825",
-  "questionsSha256": "d36dfc86ea8de5531183fe24030011aeefe76826df8b3579d820d24025376bad",
-  "dispositionsSha256": "0df3ba934b21058af5779806eec0c6d2219d63777d85edcc48f09518646c59ce",
+  "postsSha256": "3d871dd6c6b78ded37209726c5a533a2ce5c772bdf79536def09802ca9e48496",
+  "questionsSha256": "1a3787f0dceada2bbfe9c4dc9e75670e187312051cd0f5a11b2c888a18cdf253",
+  "dispositionsSha256": "dff858e2971b426d43904cd2e0abfa2a0773a7cc2026f3092fa2b9a0b9eeb64a",
   "extraSets": {
    "step3b1-b2-actions.jsonl": "c9c6c43a08291d2fed207f9ce573ecf526ed33751336c0bd86595fb647e53f00",
    "step3b1-b2b-actions.jsonl": "33f26fa2d5c34c86e5e57681a9ba7613bb938e2f6fe1993e35f433fd480be6ce",

@@ -1,0 +1,482 @@
+{
+  "note": "Family 4 of 6 — every UNLOCATED lane-B row (59) plus the 3 QUESTION_LITERAL_SPANS_SENTENCES rows. 62 rows, each read against its drop.",
+  "family": "UNLOCATED_SPAN (all subtypes) + BOUNDARY_CROSSING::QUESTION_LITERAL_SPANS_SENTENCES",
+  "reviewedOn": "2026-08-22",
+  "rowsReviewed": 62,
+  "whatThisFamilyTurnedOutToBe": "An UNLOCATED row means a section recorded an identity on a drop and no registered spelling of it can be found there, so the record binds to no characters and can never be painted. Reading all 59 against their drops, every one is one of exactly three things, and the three want opposite treatments.",
+  "theThreeCases": {
+    "PROSE": "Q wrote the name, in a spelling the registry does not carry — usually his capitals (HOROWITZ, WATERGATE, SPEAKER OF THE HOUSE, GANG OF EIGHT), sometimes his own shorthand (Ray.Chandler, [A]wan, Maxine W, [HouseOfCards], The 'Standard' Hotel). The record is CORRECT and merely unlocatable. Registering the spelling Q used fixes it and moves no count: apply-entities.mjs pushes an aliasAddition onto the alias list and re-scans nothing, so no drop that does not already record the identity is touched. 35 rows.",
+    "LINK": "The only trace is a URL slug, a hostname or a social handle. That is not a Q-authored prose mention — it is the same finding the 2026-08-17 migration made about 646 URL-derived and 129 social-account occurrences, and the same one Owner Ruling 3 made about its fourteen D rows. These are MIGRATED to linked sources rather than deleted, exactly as that migration did, so the reader still sees that Q cited the publisher. 23 rows.",
+    "WRONG_IDENTITY": "The token is there and is a different thing. One row. 1 row."
+  },
+  "whyRegisteringTheseSpellingsIsSafeWhenB1BRefusedThem": "B1B refused on the test 'do any drops carry this spelling WITHOUT recording the identity' — 2 for HOROWITZ, 9 for wikileaks, 20 for HOUSE. That test is the right one for a rule that DERIVES occurrences from a spelling. An aliasAddition derives nothing. It only lets a record a section already wrote find its own characters, so a drop that never recorded the identity gains nothing. The distinction is the difference between apply-entities.mjs's `aliasRulings` (which carry `recount: true` and rescan) and `aliasAdditions` (whose own field is named `movesNoCount`). The GOD ruling of 2026-08-21 is the precedent and it says so in those words.",
+  "rows": [
+    {
+      "postNum": 1122,
+      "identity": "Horowitz",
+      "disposition": "B",
+      "registerAlias": "HOROWITZ",
+      "reason": "Q writes 'TRUST HOROWITZ.' in his own prose, in capitals."
+    },
+    {
+      "postNum": 1745,
+      "identity": "US Intel",
+      "disposition": "B",
+      "registerAlias": "US INTEL",
+      "reason": "Q writes 'US INTEL' inside an all-capitals line of his own prose."
+    },
+    {
+      "postNum": 1822,
+      "identity": "Watergate",
+      "disposition": "B",
+      "registerAlias": "WATERGATE",
+      "reason": "Q writes 'WATERGATE X1000' in his own prose."
+    },
+    {
+      "postNum": 1972,
+      "identity": "Watergate",
+      "disposition": "B",
+      "registerAlias": "WATERGATE",
+      "reason": "The same capitalisation on a second drop."
+    },
+    {
+      "postNum": 1983,
+      "identity": "CrowdStrike",
+      "disposition": "B",
+      "registerAlias": "CROWDSTRIKE",
+      "reason": "Q writes the name in capitals in his own prose."
+    },
+    {
+      "postNum": 2007,
+      "identity": "Speaker of the House",
+      "disposition": "B",
+      "registerAlias": "SPEAKER OF THE HOUSE",
+      "reason": "Q writes the office in capitals in his own prose."
+    },
+    {
+      "postNum": 2072,
+      "identity": "Speaker of the House",
+      "disposition": "B",
+      "registerAlias": "SPEAKER OF THE HOUSE",
+      "reason": "The same capitalisation on a second drop."
+    },
+    {
+      "postNum": 2211,
+      "identity": "Speaker of the House",
+      "disposition": "B",
+      "registerAlias": "SPEAKER OF THE HOUSE",
+      "reason": "The same capitalisation on a third drop."
+    },
+    {
+      "postNum": 2035,
+      "identity": "House",
+      "disposition": "B",
+      "registerAlias": "HOUSE",
+      "reason": "'BOTH CHAMBERS (HOUSE / SENATE) IN SESSION ON TUES.' — the chamber, unambiguously, in Q's own line."
+    },
+    {
+      "postNum": 2390,
+      "identity": "House of Cards",
+      "disposition": "B",
+      "registerAlias": "HOUSE OF CARDS",
+      "reason": "Q writes the title in capitals in his own prose."
+    },
+    {
+      "postNum": 2501,
+      "identity": "President",
+      "disposition": "B",
+      "registerAlias": "PRESIDENT",
+      "reason": "Q writes 'ORDERED BY THE PRESIDENT OF THE UNITED STATES.' The word-bounded title is there in his own prose. Worth noting the archive registers 'President of the United States' as a separate identity and this drop does not record it — that is an identity question for the census, not a reason to leave the record unpaintable."
+    },
+    {
+      "postNum": 2555,
+      "identity": "Horowitz",
+      "disposition": "B",
+      "registerAlias": "HOROWITZ",
+      "reason": "The same capitalisation on a second drop."
+    },
+    {
+      "postNum": 2596,
+      "identity": "Merkel",
+      "disposition": "B",
+      "registerAlias": "MERKEL",
+      "reason": "Q writes the name in capitals in his own prose."
+    },
+    {
+      "postNum": 2984,
+      "identity": "Xbox",
+      "disposition": "B",
+      "registerAlias": "XBOX",
+      "reason": "Q writes the name in capitals in his own prose."
+    },
+    {
+      "postNum": 2984,
+      "identity": "Building 8",
+      "disposition": "B",
+      "registerAlias": "BUILDING 8",
+      "reason": "Q writes 'BUILDING 8' four times on this drop, all in his own prose. The record binds to the first, which is how the occurrence model resolves every in-post repeat."
+    },
+    {
+      "postNum": 3006,
+      "identity": "US Senate",
+      "disposition": "B",
+      "registerAlias": "US SENATE",
+      "reason": "Q writes the chamber in capitals in his own prose."
+    },
+    {
+      "postNum": 3015,
+      "identity": "Scaramucci",
+      "disposition": "B",
+      "registerAlias": "SCARAMUCCI",
+      "reason": "Q writes the name in capitals in his own prose."
+    },
+    {
+      "postNum": 3059,
+      "identity": "AG Barr",
+      "disposition": "B",
+      "registerAlias": "AG BARR",
+      "reason": "Q opens the drop with 'AG BARR'."
+    },
+    {
+      "postNum": 3063,
+      "identity": "Gang of Eight",
+      "disposition": "B",
+      "registerAlias": "GANG OF EIGHT",
+      "reason": "Three word-bounded occurrences, all Q's own capitals, all the same body. Every drop that writes this casing records the identity."
+    },
+    {
+      "postNum": 3993,
+      "identity": "Gang of Eight",
+      "disposition": "B",
+      "registerAlias": "GANG OF EIGHT",
+      "reason": "The same on a second drop."
+    },
+    {
+      "postNum": 3180,
+      "identity": "President of the United States",
+      "disposition": "B",
+      "registerAlias": "PRESIDENT OF THE UNITED STATES",
+      "reason": "Q writes the office in full, in capitals, in his own prose."
+    },
+    {
+      "postNum": 3316,
+      "identity": "Mueller Report",
+      "disposition": "B",
+      "registerAlias": "Mueller report",
+      "reason": "The drop writes 'Mueller report' with a lower-case r. A capitalisation of one letter."
+    },
+    {
+      "postNum": 3990,
+      "identity": "Crowdstrike",
+      "disposition": "B",
+      "registerAlias": "CROWDSTRIKE",
+      "reason": "Q writes the name in capitals. 'Crowdstrike' and 'CrowdStrike' are one registered identity — the second is already an alias of the first — so this registers a casing, not a second company."
+    },
+    {
+      "postNum": 3841,
+      "identity": "CrowdStrike",
+      "disposition": "B",
+      "registerAlias": "crowdstrike",
+      "reason": "The name appears twice in pasted copy on this drop. Quoted material is where a certified entity mention may legitimately sit — the 2026-08-17 audit classified such occurrences visible_complete_token with `where: quoted content` and KEPT them — so the record is right and only unlocatable."
+    },
+    {
+      "postNum": 3992,
+      "identity": "Midterm Elections",
+      "disposition": "B",
+      "registerAlias": "MIDTERM ELECTIONS",
+      "reason": "Q writes it in capitals in his own prose."
+    },
+    {
+      "postNum": 785,
+      "identity": "Delta",
+      "disposition": "B",
+      "registerAlias": "DELTA",
+      "reason": "Q signs the drop 'Q, DELTA'. Delta is a certified person identity with three mentions; this is the spelling Q used."
+    },
+    {
+      "postNum": 2206,
+      "identity": "Wired",
+      "disposition": "B",
+      "registerAlias": "WIRED",
+      "reason": "The drop carries a wired.com link AND writes 'WIRED' in Q's own prose further down. The prose occurrence is the mention."
+    },
+    {
+      "postNum": 2730,
+      "identity": "God",
+      "disposition": "B",
+      "registerAlias": "god",
+      "reason": "'May god bless you and your family' — Q's own line, the deity, lower case. Both drops in the archive that write word-bounded 'god' record the God identity, so the spelling is unambiguous. Exact-match only: this registers the spelling, it does not grant short tokens a case-insensitive exemption."
+    },
+    {
+      "postNum": 2849,
+      "identity": "Smollett",
+      "disposition": "B",
+      "registerAlias": "SMOLLETT",
+      "reason": "Q writes the name in capitals, twice, in his own prose."
+    },
+    {
+      "postNum": 1054,
+      "identity": "Ray Chandler",
+      "disposition": "B",
+      "registerAlias": "Ray.Chandler",
+      "reason": "'Look up Ray.Chandler.' — Q's own spelling with a full stop for the space. PROJECT_CONTEXT already records that this spelling does not match /\\bRay Chandler\\b/ and that the merge ruling had to move her mentions across because of it."
+    },
+    {
+      "postNum": 1138,
+      "identity": "Ray Chandler",
+      "disposition": "B",
+      "registerAlias": "Ray.Chandler",
+      "reason": "'IG (think Ray.Chandler).' — the same spelling on a second drop."
+    },
+    {
+      "postNum": 1203,
+      "identity": "Standard Hotel",
+      "disposition": "B",
+      "registerAlias": "‘Standard’ Hotel",
+      "reason": "Q writes \"The 'Standard' Hotel.\" — quotation marks around the name are why the registered form cannot be found."
+    },
+    {
+      "postNum": 19,
+      "identity": "Maxine Waters",
+      "disposition": "B",
+      "registerAlias": "Maxine W",
+      "reason": "'Maxine W has a $4mm home and cash assets in excess of $6mm.' — Q's own abbreviation, unambiguous in context and claimed by no other identity."
+    },
+    {
+      "postNum": 988,
+      "identity": "Awan",
+      "disposition": "B",
+      "registerAlias": "[A]wan",
+      "reason": "Q writes '[A]wan.' in his bracket notation, on a drop whose whole theme is bracketed [A]. The brackets are why the registered form cannot be found."
+    },
+    {
+      "postNum": 2499,
+      "identity": "House of Cards",
+      "disposition": "B",
+      "registerAlias": "HouseOfCards",
+      "reason": "Q writes '[HouseOfCards]' with the spaces closed up."
+    },
+    {
+      "postNum": 197,
+      "identity": "God",
+      "disposition": "E",
+      "withdrawAction": "remove-annotation",
+      "reason": "The token is there and is a different thing. The drop writes 'the sun god Ra' and 'the skin of the gods' — a pagan sun god, not the God identity. The 2026-08-21 GOD alias ruling names this drop in its own `doesNotResolve` field for exactly this reason."
+    },
+    {
+      "postNum": 1129,
+      "identity": "Pompeo",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-linked-source",
+      "urlEvidence": "path",
+      "reason": "The name appears only inside a thehill.com article slug. A CMS slug is not Q naming a person."
+    },
+    {
+      "postNum": 1217,
+      "identity": "WikiLeaks",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-linked-source",
+      "urlEvidence": "hostname",
+      "reason": "Only in the wikileaks.org hostname of the link Q posted. The domain identifies the publisher of the linked material."
+    },
+    {
+      "postNum": 1217,
+      "identity": "Podesta",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-linked-source",
+      "urlEvidence": "path",
+      "reason": "Only inside the 'podesta-emails' path of the same link."
+    },
+    {
+      "postNum": 1220,
+      "identity": "WikiLeaks",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-linked-source",
+      "urlEvidence": "hostname",
+      "reason": "Only in the wikileaks.org hostname."
+    },
+    {
+      "postNum": 1220,
+      "identity": "Podesta",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-linked-source",
+      "urlEvidence": "path",
+      "reason": "Only inside the 'podesta-emails' path."
+    },
+    {
+      "postNum": 1221,
+      "identity": "WikiLeaks",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-social-account",
+      "platform": "twitter.com",
+      "handle": "wikileaks",
+      "reason": "Only in the twitter.com/wikileaks handle of the tweet Q linked."
+    },
+    {
+      "postNum": 866,
+      "identity": "WikiLeaks",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-linked-source",
+      "urlEvidence": "hostname",
+      "reason": "Only in the wikileaks.org hostname."
+    },
+    {
+      "postNum": 867,
+      "identity": "WikiLeaks",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-linked-source",
+      "urlEvidence": "hostname",
+      "reason": "Only in the wikileaks.org hostname."
+    },
+    {
+      "postNum": 1253,
+      "identity": "Grassley",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-linked-source",
+      "urlEvidence": "hostname",
+      "reason": "Only in grassley.senate.gov and the article slug beneath it."
+    },
+    {
+      "postNum": 1910,
+      "identity": "INSCOM",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-linked-source",
+      "urlEvidence": "hostname",
+      "reason": "Only in army.mil/inscom and inscom.army.mil. The drop already carries two Army publisher records for the same links."
+    },
+    {
+      "postNum": 4241,
+      "identity": "Graham",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-linked-source",
+      "urlEvidence": "path",
+      "reason": "Only inside a politico.com article slug."
+    },
+    {
+      "postNum": 4241,
+      "identity": "Politico",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-linked-source",
+      "urlEvidence": "hostname",
+      "reason": "Only in the politico.com hostname."
+    },
+    {
+      "postNum": 445,
+      "identity": "CrowdStrike",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-linked-source",
+      "urlEvidence": "hostname",
+      "reason": "Only in crowdstrike.com and the slug beneath it."
+    },
+    {
+      "postNum": 857,
+      "identity": "Reuters",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-linked-source",
+      "urlEvidence": "hostname",
+      "reason": "Only in the reuters.com hostname."
+    },
+    {
+      "postNum": 1341,
+      "identity": "Alex Jones",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-linked-source",
+      "urlEvidence": "path",
+      "reason": "Only inside a foxnews.com article slug. The name is also in an ANON's quoted post, which by invariant 9 feeds search and never the analysis index."
+    },
+    {
+      "postNum": 2040,
+      "identity": "Carter Page",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-linked-source",
+      "urlEvidence": "path",
+      "reason": "Only inside the judicialwatch.org slug. Owner Ruling 3 withdrew Judicial Watch from this same drop for the same reason."
+    },
+    {
+      "postNum": 2058,
+      "identity": "Ezra Cohen-Watnick",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-linked-source",
+      "urlEvidence": "path",
+      "reason": "Only inside an nytimes.com slug. Q DID write the name — in the previous drop, #2846457, which is quoted here; a quoted post feeds search and never the analysis index, and that mention belongs to that drop."
+    },
+    {
+      "postNum": 2576,
+      "identity": "Samantha Power",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-social-account",
+      "platform": "twitter.com",
+      "handle": "SamanthaJPower",
+      "reason": "Only in the twitter handle of the tweet Q linked."
+    },
+    {
+      "postNum": 2600,
+      "identity": "Sara Carter",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-linked-source",
+      "urlEvidence": "hostname",
+      "carrierUrl": "https://saraacarter.com/clinton-whistleblowers-thursdays-public-hearing-to-reveal-explosive-information/",
+      "reason": "Only in the saraacarter.com hostname."
+    },
+    {
+      "postNum": 3007,
+      "identity": "Sara Carter",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-social-account",
+      "platform": "twitter.com",
+      "handle": "SaraCarterDC",
+      "reason": "Only in the twitter handle of the tweet Q linked."
+    },
+    {
+      "postNum": 3313,
+      "identity": "Sara Carter",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-social-account",
+      "platform": "twitter.com",
+      "handle": "SaraCarterDC",
+      "reason": "Only in the twitter handle of the tweet Q linked."
+    },
+    {
+      "postNum": 2841,
+      "identity": "Ann Coulter",
+      "disposition": "E",
+      "withdrawAction": "migrate-to-social-account",
+      "platform": "twitter.com",
+      "handle": "anncoulter",
+      "reason": "Only in the twitter handle of the tweet Q linked."
+    },
+    {
+      "postNum": 1863,
+      "identity": "Sean Hannity",
+      "disposition": "E",
+      "withdrawAction": "remove-annotation",
+      "reason": "The drop is three bare social handles and a line of Q's own. '@SeanHannity' is a handle with no link behind it, so there is no URL to migrate to a linked source and nothing to cite — the reference is real but it is not a prose mention and it carries no source to record. Owner Ruling 3 withdrew Roseanne Barr from this same drop, which is the '@TheRealRoseanne' line beside it."
+    },
+    {
+      "conflictId": "BOUNDARY_CROSSING::2971|questions|561|799::0",
+      "postNum": 2971,
+      "kind": "questions",
+      "disposition": "E",
+      "flagForOwner": true,
+      "reason": "A question record spanning a quoted line, a pasted synonyms list and Q's own 'PROOF = EVIDENCE?'. The Q-authored part is already certified on its own at 782..799 and was narrowed there by B3-NARROW-2971-qf-23. This is the 2026-08-20 queue ruling's row: the owner ruled the CLASSIFICATION — that unit is a question — and the segmenter supplied the span, which swallowed two lines of pasted dictionary copy. Trimming it to its Q-authored part collapses onto the record that already exists, so the record is withdrawn. Flagged because it originates in an owner ruling.",
+      "resolvedVia": "step3b1-held-dispositions.jsonl — this span is what held action A-DUP-2971-questions-561-799 was waiting on, so the adjudication supersedes that action rather than adding a second one beside it"
+    },
+    {
+      "conflictId": "BOUNDARY_CROSSING::4454|questions|238|404::0",
+      "postNum": 4454,
+      "kind": "questions",
+      "disposition": "E",
+      "flagForOwner": true,
+      "reason": "The same shape on #4454: the record runs from pasted quoted copy into 'virus OR ELECTION?', which is already certified at 386..404 and was narrowed there by B3-NARROW-4454-qf-33. Withdrawn for the same reason and flagged for the same reason.",
+      "resolvedVia": "step3b1-held-dispositions.jsonl — this span is what held action A-DUP-4454-questions-238-404 was waiting on, so the adjudication supersedes that action rather than adding a second one beside it"
+    },
+    {
+      "conflictId": "BOUNDARY_CROSSING::466|questions|200|283::0",
+      "postNum": 466,
+      "kind": "questions",
+      "disposition": "A",
+      "reason": "'Covert OP by [CLAS-59#241-Q] to infiltrate at highest / level to destroy from within?' is ONE question hard-wrapped between 'highest' and 'level'. The break is the board's, not Q's, and nothing else claims those characters.",
+      "retainedIntentionally": "one question, hard-wrapped mid-phrase"
+    }
+  ]
+}

@@ -1,12 +1,12 @@
 {
  "breakdown": [
   {
-   "count": 1078,
+   "count": 1076,
    "key": "prose",
    "label": "named in Q’s prose"
   },
   {
-   "count": 136,
+   "count": 138,
    "key": "sourceOnly",
    "label": "linked as a source only"
   }
@@ -50,8 +50,8 @@
    "identities": [
     {
      "canonical": "God",
-     "mentions": 162,
-     "posts": 162
+     "mentions": 161,
+     "posts": 161
     },
     {
      "canonical": "Lord",
@@ -2161,15 +2161,14 @@
   },
   "qe-1cc8ed8d66ea": {
    "aliasPosts": {
-    "Ezra Cohen-Watnick": 3
+    "Ezra Cohen-Watnick": 2
    },
    "kind": "prose",
    "perPostMentions": {
     "2057": 1,
-    "2058": 1,
     "2462": 1
    },
-   "posts": 3,
+   "posts": 2,
    "rowId": "qe-1cc8ed8d66ea"
   },
   "qe-1cca7354aa98": {
@@ -3630,7 +3629,7 @@
   },
   "qe-2df6a50f6a0e": {
    "aliasPosts": {
-    "God": 162
+    "God": 161
    },
    "kind": "prose",
    "perPostMentions": {
@@ -3665,7 +3664,6 @@
     "144": 1,
     "147": 1,
     "189": 1,
-    "197": 1,
     "244": 1,
     "264": 1,
     "323": 1,
@@ -3797,7 +3795,7 @@
     "4923": 1,
     "4949": 1
    },
-   "posts": 162,
+   "posts": 161,
    "rowId": "qe-2df6a50f6a0e"
   },
   "qe-2e11aea54808": {
@@ -3825,7 +3823,7 @@
   "qe-2eb344dfc5da": {
    "aliasPosts": {
     "CP": 3,
-    "Carter Page": 3
+    "Carter Page": 2
    },
    "kind": "prose",
    "perPostMentions": {
@@ -3833,10 +3831,9 @@
     "1910": 1,
     "1928": 1,
     "1929": 1,
-    "2040": 1,
     "3340": 1
    },
-   "posts": 6,
+   "posts": 5,
    "rowId": "qe-2eb344dfc5da"
   },
   "qe-2ec53f156afc": {
@@ -3969,7 +3966,7 @@
   },
   "qe-2fbd83ad1bd6": {
    "aliasPosts": {
-    "Graham": 8
+    "Graham": 7
    },
    "kind": "prose",
    "perPostMentions": {
@@ -3979,10 +3976,9 @@
     "2583": 1,
     "3612": 1,
     "3741": 1,
-    "4241": 1,
     "4456": 1
    },
-   "posts": 8,
+   "posts": 7,
    "rowId": "qe-2fbd83ad1bd6"
   },
   "qe-2fdbd27b24e5": {
@@ -5652,16 +5648,15 @@
   "qe-4612ac3ffbe3": {
    "aliasPosts": {
     "SH": 2,
-    "Sean Hannity": 2
+    "Sean Hannity": 1
    },
    "kind": "prose",
    "perPostMentions": {
     "571": 1,
-    "1863": 1,
     "2626": 3,
     "3179": 1
    },
-   "posts": 4,
+   "posts": 3,
    "rowId": "qe-4612ac3ffbe3"
   },
   "qe-4617bc983e6d": {
@@ -8896,16 +8891,14 @@
   },
   "qe-75d5eb424ac5": {
    "aliasPosts": {
-    "SP": 2,
-    "Samantha Power": 1
+    "SP": 2
    },
    "kind": "prose",
    "perPostMentions": {
     "1589": 1,
-    "1828": 1,
-    "2576": 1
+    "1828": 1
    },
-   "posts": 3,
+   "posts": 2,
    "rowId": "qe-75d5eb424ac5"
   },
   "qe-75de9a6f3b17": {
@@ -9805,14 +9798,13 @@
   },
   "qe-7f7a9c8af686": {
    "aliasPosts": {
-    "Politico": 2
+    "Politico": 1
    },
    "kind": "prose",
    "perPostMentions": {
-    "2648": 1,
-    "4241": 1
+    "2648": 1
    },
-   "posts": 2,
+   "posts": 1,
    "rowId": "qe-7f7a9c8af686",
    "sourcePosts": [
     {
@@ -9846,6 +9838,10 @@
     {
      "kind": "publisher",
      "post": 3183
+    },
+    {
+     "kind": "publisher",
+     "post": 4241
     },
     {
      "kind": "publisher",
@@ -10660,19 +10656,16 @@
   "qe-8948243efcca": {
    "aliasPosts": {
     "SC": 3,
-    "Sara Carter": 4
+    "Sara Carter": 1
    },
    "kind": "prose",
    "perPostMentions": {
     "2165": 1,
-    "2600": 1,
     "2626": 2,
-    "3007": 1,
-    "3313": 1,
     "3373": 1,
     "3588": 1
    },
-   "posts": 7,
+   "posts": 4,
    "rowId": "qe-8948243efcca"
   },
   "qe-89b40a740bfc": {
@@ -10837,14 +10830,13 @@
   },
   "qe-8b68a442c3b8": {
    "aliasPosts": {
-    "Pompeo": 2
+    "Pompeo": 1
    },
    "kind": "prose",
    "perPostMentions": {
-    "1129": 1,
     "1186": 1
    },
-   "posts": 2,
+   "posts": 1,
    "rowId": "qe-8b68a442c3b8"
   },
   "qe-8ba085bf6347": {
@@ -11830,12 +11822,11 @@
   "qe-98e0f85a496e": {
    "aliasPosts": {
     "CS": 1,
-    "CrowdStrike": 6,
+    "CrowdStrike": 5,
     "Crowdstrike": 5
    },
    "kind": "prose",
    "perPostMentions": {
-    "445": 1,
     "809": 1,
     "1008": 2,
     "1708": 1,
@@ -11848,8 +11839,14 @@
     "4016": 1,
     "4153": 1
    },
-   "posts": 12,
-   "rowId": "qe-98e0f85a496e"
+   "posts": 11,
+   "rowId": "qe-98e0f85a496e",
+   "sourcePosts": [
+    {
+     "kind": "publisher",
+     "post": 445
+    }
+   ]
   },
   "qe-9915f2d24b89": {
    "aliasPosts": {
@@ -12508,16 +12505,14 @@
    "rowId": "qe-a17f66851b29"
   },
   "qe-a18fc2cdd6a8": {
-   "aliasPosts": {
-    "Ann Coulter": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "2841": 1
-   },
-   "posts": 1,
+   "kind": "source_only",
+   "posts": 0,
    "rowId": "qe-a18fc2cdd6a8",
    "sourcePosts": [
+    {
+     "kind": "social_account",
+     "post": 2841
+    },
     {
      "kind": "social_account",
      "post": 2842
@@ -13695,11 +13690,10 @@
   },
   "qe-b0a544a47108": {
    "aliasPosts": {
-    "Grassley": 7
+    "Grassley": 6
    },
    "kind": "prose",
    "perPostMentions": {
-    "1253": 1,
     "1496": 1,
     "1553": 1,
     "2274": 1,
@@ -13707,9 +13701,13 @@
     "3033": 1,
     "3563": 1
    },
-   "posts": 7,
+   "posts": 6,
    "rowId": "qe-b0a544a47108",
    "sourcePosts": [
+    {
+     "kind": "publisher",
+     "post": 1253
+    },
     {
      "kind": "publisher",
      "post": 3590
@@ -15392,7 +15390,7 @@
   },
   "qe-c9d65140fa37": {
    "aliasPosts": {
-    "Podesta": 10
+    "Podesta": 8
    },
    "kind": "prose",
    "perPostMentions": {
@@ -15400,21 +15398,19 @@
     "34": 1,
     "62": 1,
     "921": 1,
-    "1217": 1,
-    "1220": 1,
     "1870": 1,
     "1899": 1,
     "3611": 1,
     "4162": 1
    },
-   "posts": 10,
+   "posts": 8,
    "rowId": "qe-c9d65140fa37"
   },
   "qe-c9f95ff52ca5": {
    "aliasPosts": {
     "WK": 1,
     "WL": 14,
-    "WikiLeaks": 8
+    "WikiLeaks": 3
    },
    "kind": "prose",
    "perPostMentions": {
@@ -15424,12 +15420,7 @@
     "575": 1,
     "675": 1,
     "836": 1,
-    "866": 1,
-    "867": 1,
     "1008": 2,
-    "1217": 1,
-    "1220": 1,
-    "1221": 1,
     "1286": 1,
     "1462": 1,
     "1515": 1,
@@ -15440,9 +15431,29 @@
     "4153": 2,
     "4162": 1
    },
-   "posts": 21,
+   "posts": 16,
    "rowId": "qe-c9f95ff52ca5",
    "sourcePosts": [
+    {
+     "kind": "publisher",
+     "post": 866
+    },
+    {
+     "kind": "publisher",
+     "post": 867
+    },
+    {
+     "kind": "publisher",
+     "post": 1217
+    },
+    {
+     "kind": "publisher",
+     "post": 1220
+    },
+    {
+     "kind": "social_account",
+     "post": 1221
+    },
     {
      "kind": "social_account",
      "post": 1595
@@ -15843,16 +15854,14 @@
    "rowId": "qe-cb6b6ead9638"
   },
   "qe-cb78932b1fab": {
-   "aliasPosts": {
-    "Reuters": 1
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "857": 1
-   },
-   "posts": 1,
+   "kind": "source_only",
+   "posts": 0,
    "rowId": "qe-cb78932b1fab",
    "sourcePosts": [
+    {
+     "kind": "publisher",
+     "post": 857
+    },
     {
      "kind": "publisher",
      "post": 1138
@@ -20316,17 +20325,15 @@
   },
   "qe-fe57ed4508a8": {
    "aliasPosts": {
-    "AJ": 3,
-    "Alex Jones": 1
+    "AJ": 3
    },
    "kind": "prose",
    "perPostMentions": {
-    "1341": 1,
     "2089": 2,
     "2123": 1,
     "2166": 1
    },
-   "posts": 4,
+   "posts": 3,
    "rowId": "qe-fe57ed4508a8"
   },
   "qe-fe6f527d014e": {
@@ -20447,15 +20454,20 @@
   },
   "qe-ffa991dd5b25": {
    "aliasPosts": {
-    "INSCOM": 2
+    "INSCOM": 1
    },
    "kind": "prose",
    "perPostMentions": {
-    "1910": 1,
     "1944": 1
    },
-   "posts": 2,
-   "rowId": "qe-ffa991dd5b25"
+   "posts": 1,
+   "rowId": "qe-ffa991dd5b25",
+   "sourcePosts": [
+    {
+     "kind": "publisher",
+     "post": 1910
+    }
+   ]
   }
  },
  "ruledOn": "2026-08-17",
@@ -20463,14 +20475,14 @@
  "totals": {
   "canonicalEntities": 1214,
   "dormantReserved": 229,
-  "mentions": 8948,
+  "mentions": 8924,
   "mergedIdentities": 23,
   "mergedRows": 10,
-  "proseMentioned": 1078,
+  "proseMentioned": 1076,
   "publicRows": 1201,
   "repeatBadges": 1089,
-  "sourceOnly": 136,
-  "sourcePostChips": 347,
+  "sourceOnly": 138,
+  "sourcePostChips": 358,
   "unsettledAttributionsExcluded": 64
  }
 }

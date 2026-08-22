@@ -2,18 +2,15 @@
  "note": "Step 3B-1 apply receipt. Measured from the bundle, not from the plan.",
  "step": "3B-1",
  "planSha256": "373ca06b1416b6707a111f2c3da8e751472c551f739500f76cdcc764d3128058",
- "actionsApplied": 772,
- "actionsHeld": 2,
- "heldActionIds": [
-  "A-DUP-2971-questions-561-799",
-  "A-DUP-4454-questions-238-404"
- ],
+ "actionsApplied": 774,
+ "actionsHeld": 0,
+ "heldActionIds": [],
  "seedVersion": 87,
  "outputs": {
-  "public/data/posts.json": "324bc23739f0e478682e012135b57e055c6c1d93a59d35649bed2510e13befed",
-  "public/data/questions.json": "d36dfc86ea8de5531183fe24030011aeefe76826df8b3579d820d24025376bad",
-  "public/data/semantics.json": "56e8b14deb5f0ef2b4bbfa42d9227424b5dbbe6faf011da1a71e915d5de0d0d4",
-  "audit/occurrence-ledger.json": "32485142101e317cdd94390d1e097b412d92203106b6511c1beafdec91163111"
+  "public/data/posts.json": "ff9a959b3974e8c8716784a7d3af14dd0b3f3689de55f663cc365191cffae3df",
+  "public/data/questions.json": "1a3787f0dceada2bbfe9c4dc9e75670e187312051cd0f5a11b2c888a18cdf253",
+  "public/data/semantics.json": "e9551312281430135847faecbe50b709c50f448a13153d3b8cbc3e957ea560a2",
+  "audit/occurrence-ledger.json": "7e9d5411a4e7c37e58e4ab83b80d6ac40a3842bee6220a943342e629019939b8"
  },
  "crossTab": [
   {
@@ -65,9 +62,9 @@
    "before": 6503,
    "projectedDelta": -179,
    "projectedAfter": 6324,
-   "adjudicatedHeldDelta": -1,
-   "target": 6323,
-   "measuredAfter": 6323,
+   "adjudicatedHeldDelta": -3,
+   "target": 6321,
+   "measuredAfter": 6321,
    "headlineEligible": true,
    "matches": true,
    "measuredFrom": "audit/occurrence-ledger.json"
@@ -143,30 +140,7 @@
    "measuredFrom": "public/data/semantics.json"
   }
  ],
- "heldActions": [
-  {
-   "actionId": "A-DUP-2971-questions-561-799",
-   "ruleCode": "R8_DUPLICATE_MERGE",
-   "postNum": 2971,
-   "sentenceId": null,
-   "oldOccurrenceKeys": [
-    "2971|questions|561|799"
-   ],
-   "keysStillLive": 1,
-   "keysExpected": 1
-  },
-  {
-   "actionId": "A-DUP-4454-questions-238-404",
-   "ruleCode": "R8_DUPLICATE_MERGE",
-   "postNum": 4454,
-   "sentenceId": null,
-   "oldOccurrenceKeys": [
-    "4454|questions|238|404"
-   ],
-   "keysStillLive": 1,
-   "keysExpected": 1
-  }
- ],
+ "heldActions": [],
  "discoveredDuringApply": [
   {
    "finding": "the source-boundary resolution withdraws only the truncated head of a pasted sentence",
@@ -246,39 +220,39 @@
   "multiPrimarySentences": 0,
   "sameCategoryPrimaryOverlaps": 0,
   "supersededPartialPrimarySpans": 145,
-  "boundaryCrossingRecords": 39,
+  "boundaryCrossingRecords": 37,
   "conflictQueueRows": 945
  },
  "gates": [
   {
    "gate": "count cross-tab matches the projection",
    "pass": true,
-   "detail": "all 9 cells (projection + 8 adjudicated held rows)"
+   "detail": "all 9 cells (projection + 10 adjudicated held rows)"
   },
   {
    "gate": "every automatic action materialised",
    "pass": true,
-   "detail": "780/780 actions, 781/781 overlay rows  (530 planned + 8 adjudicated held + 242 B2/B2b; #34 contributes two rows, one per clause)"
+   "detail": "782/782 actions, 783/783 overlay rows  (530 planned + 10 adjudicated held + 242 B2/B2b; #34 contributes two rows, one per clause)"
   },
   {
    "gate": "no held action appears in the applied overlay",
    "pass": true,
-   "detail": "2 still held, none applied"
+   "detail": "0 still held, none applied"
   },
   {
    "gate": "every held action's records are still live and unmodified",
    "pass": true,
-   "detail": "all 2 intact"
+   "detail": "all 0 intact"
   },
   {
    "gate": "zero duplicate action consumption",
    "pass": true,
-   "detail": "1152 distinct old keys across 780 actions"
+   "detail": "1154 distinct old keys across 782 actions"
   },
   {
    "gate": "zero runtime substring mismatch in the overlay",
    "pass": true,
-   "detail": "779 located rows verified against runtimeText()"
+   "detail": "781 located rows verified against runtimeText()"
   },
   {
    "gate": "every overlay row without offsets is a withdrawal",
@@ -288,7 +262,7 @@
   {
    "gate": "zero runtime substring mismatch in the ledger",
    "pass": true,
-   "detail": "30,841 records verified"
+   "detail": "30,874 records verified"
   },
   {
    "gate": "zero same-sentence multi-primary inside the applied scope",
@@ -313,7 +287,7 @@
   {
    "gate": "metadata transfer recorded for every withdrawn record",
    "pass": true,
-   "detail": "910 transfers, 351 carrying certified attributes, 84 meta keys re-pointed to a widened span"
+   "detail": "912 transfers, 351 carrying certified attributes, 84 meta keys re-pointed to a widened span"
   },
   {
    "gate": "question_directive relationship preserved on every unified pair",
@@ -323,7 +297,7 @@
   {
    "gate": "no question record deleted to move a count",
    "pass": true,
-   "detail": "180 marked (163 secondary, 17 withdrawn), all retain id / text / occurrences"
+   "detail": "182 marked (163 secondary, 19 withdrawn), all retain id / text / occurrences"
   },
   {
    "gate": "the certified wording and the painted span stay index-aligned",
