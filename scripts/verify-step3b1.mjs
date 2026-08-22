@@ -19,6 +19,7 @@ import path from 'node:path'
 import crypto from 'node:crypto'
 import { fileURLToPath } from 'node:url'
 import { runtimeText } from './lib/runtimeText.mjs'
+import { EXTRA_ACTION_SETS } from './lib/step3b1Sets.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -41,10 +42,13 @@ const planRows = readJsonl(path.join(OUT, 'step3b1-plan.jsonl'))
 // apply-step3b1.mjs makes, so the verifier measures the state the applier was actually asked for.
 const dispPath = path.join(OUT, 'step3b1-held-dispositions.jsonl')
 const dispositions = fs.existsSync(dispPath) ? readJsonl(dispPath) : []
-// The extra action sets the applier loads — B2's boundary repairs and the B2b collisions those
-// repairs uncovered. Read the same files it reads, so the target is derived from the same source
-// rather than typed to match what was measured.
-const extraSets = ['step3b1-b2-actions.jsonl', 'step3b1-b2b-actions.jsonl', 'step3b1-b2c-actions.jsonl', 'step3b1-b3-actions.jsonl']
+// THE EXTRA ACTION SETS, from the applier's own list rather than a second copy of it.
+//
+// This used to be a literal array, and it stopped at B3. Owner Ruling 3 and the lane-B reviews
+// were then added to the applier, so the cross-tab gate measured the new bundle against a target
+// computed from four of seven sets and reported a mismatch that was its own list being short.
+// The target has to be derived from the same source the applier applies, or it is not a gate.
+const extraSets = EXTRA_ACTION_SETS.map(s => s.file)
   .map(f => path.join(OUT, f)).filter(f => fs.existsSync(f)).flatMap(readJsonl)
 const dispById = new Map(dispositions.map(d => [d.actionId, d]))
 const plan = planRows.map(a => dispById.get(a.actionId) ?? a).concat(extraSets)

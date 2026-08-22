@@ -92,7 +92,11 @@ export const CANONICAL = {
   // 8,721 -> 8,711: the lane-B multi-line-span reviews (2026-08-22). Nine extractor blobs and one
   // nested fragment withdrawn, each one a record whose characters were already covered by the
   // constituent records certified inside it. No sentence lost its only claim.
-  claims: { occurrences: 8711, distinct: 6814, posts: 3086 },
+  // 8,711 -> 8,695: the lane-B within-line reviews (2026-08-22). Twelve paragraph-wide claims an
+  // early extractor left sitting on top of the sentence-level records that superseded them, plus
+  // four nested fragments — two partial quotations and two segmenter-orphaned tails absorbed by a
+  // widened span. Every sentence underneath keeps its own certified record.
+  claims: { occurrences: 8695, distinct: 6814, posts: 3086 },
   // 630 -> 595: -73 technical nonpredictions, -56 arguable rows withdrawn to the review
   // backlog, +66 unique moves from Claims, +28 high-confidence predictions the extractor
   // missed. posts 520 -> 490. The 91 withdrawn/held rows are NOT deleted — they sit in

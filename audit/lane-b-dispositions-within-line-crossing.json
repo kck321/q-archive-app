@@ -1,0 +1,108 @@
+{
+  "note": "Family 2 of 6 — BOUNDARY_CROSSING::WITHIN_LINE_CROSSING, 27 rows, every one inspected against its drop. One of the 27 (#25) is a span this pass itself repaired in family 1 and is recorded here as already reviewed.",
+  "family": "BOUNDARY_CROSSING::WITHIN_LINE_CROSSING",
+  "reviewedOn": "2026-08-22",
+  "rowsReviewed": 27,
+  "whatThisFamilyTurnedOutToBe": "Almost all of it is one defect with one cause. An early extractor certified a whole LINE as a Claim; the adjudication that followed certified each SENTENCE of that line in its proper category — claim, prediction, directive, question. Both records survived, so 13 drops carry a paragraph-wide Claim sitting on top of two to five records that already say the same thing more precisely. Where every sentence underneath is already certified the wide record is withdrawn; where exactly one sentence has no record of its own the wide record is re-spanned onto it, so nothing stops being painted.",
+  "rows": [
+    { "conflictId": "BOUNDARY_CROSSING::1012|claims|9|222::0", "postNum": 1012, "disposition": "A",
+      "reason": "One pasted tweet inside one pair of quotation marks, opening quote to closing quote. The record nested inside it starts mid-sentence at 'Marines from the 3rd Marine Aircraft Wing' — that fragment is the defect, not this span.",
+      "retainedIntentionally": "one complete quoted tweet, two sentences",
+      "pairedWithdrawal": { "occurrenceKey": "1012|claims|58|173", "why": "a mid-sentence fragment beginning at 'Marines from the 3rd Marine Aircraft Wing' — it starts inside the quoted tweet's first sentence and stops inside its second, so it is a substring of a claim rather than a claim" } },
+
+    { "conflictId": "BOUNDARY_CROSSING::120|claims|157|243::0", "postNum": 120, "disposition": "E",
+      "reason": "Five sentences on one line. 'They think you are stupid.' is already its own claim and 'Why?' is already its own question, so the wide record paints two certified records a second time. No single trim covers what is left." },
+
+    { "conflictId": "BOUNDARY_CROSSING::13|claims|59|99::0", "postNum": 13, "disposition": "B",
+      "trimToSentences": ["p0013-s002"],
+      "reason": "'I've said too much.' is already its own claim at 59..78. Re-spanned onto the sentence beside it, which has no record of its own, so both stay painted and neither is painted twice." },
+
+    { "conflictId": "BOUNDARY_CROSSING::15|claims|0|257::0", "postNum": 15, "disposition": "E",
+      "reason": "Three sentences, and all three are already certified — a Claim, a Prediction and a Directive. The wide record asserts one category over three different ones." },
+
+    { "conflictId": "BOUNDARY_CROSSING::15|claims|307|808::0", "postNum": 15, "disposition": "E",
+      "reason": "Four sentences, all four already certified: three Claims and a Prediction. Nothing is left for this record to describe." },
+
+    { "conflictId": "BOUNDARY_CROSSING::16|claims|69|543::0", "postNum": 16, "disposition": "B",
+      "trimToSentences": ["p0016-s005"],
+      "reason": "Five sentences, four already certified — two Claims, a Directive and a Prediction. Only 'Also, he's 100% insulated with zero risk of impeachment (fact).' has no record, so the wide span is re-spanned onto it." },
+
+    { "conflictId": "BOUNDARY_CROSSING::1841|claims|434|655::0", "postNum": 1841, "disposition": "E",
+      "reason": "Both sentences of the quoted FTC paragraph are already certified separately, at 433..540 and 541..656. This record is a third copy that also drops the opening quotation mark." },
+
+    { "conflictId": "BOUNDARY_CROSSING::1927|claims|1024|1887::0", "postNum": 1927, "disposition": "E",
+      "reason": "Two sentences of a pasted Executive Order section, already certified as a Claim (1035..1527) and a Directive (1528..1887). The wide record additionally swallows the 'Sec. 12.' heading." },
+
+    { "conflictId": "BOUNDARY_CROSSING::21|claims|0|194::0", "postNum": 21, "disposition": "E",
+      "reason": "Both sentences are already certified as claims of their own, at 0..86 and 87..194." },
+
+    { "conflictId": "BOUNDARY_CROSSING::23|claims|501|581::0", "postNum": 23, "disposition": "A",
+      "reason": "'Trump nominated someone new to direct every agency but one. He controls the top.' — a statement and the conclusion drawn from it, where the second sentence's subject is only resolvable from the first. Nothing else on the drop claims these characters.",
+      "retainedIntentionally": "one claim: an observation and the inference it carries, the second unreadable without the first" },
+
+    { "conflictId": "BOUNDARY_CROSSING::24|claims|0|259::0", "postNum": 24, "disposition": "E",
+      "reason": "Three sentences, all already certified — one Claim and two Predictions." },
+
+    { "conflictId": "BOUNDARY_CROSSING::25|claims|121|229::0", "postNum": 25, "disposition": "A",
+      "reason": "This span is the RESULT of a repair made earlier in this same pass (LB1-SPAN-25-claims-24-229): the record used to swallow a certified Directive and no longer does. What remains is two sentences of Q's continuous commentary on the drop, deliberately kept together.",
+      "retainedIntentionally": "already reviewed in family 1 — the repaired span intentionally covers Q's two-sentence commentary" },
+
+    { "conflictId": "BOUNDARY_CROSSING::27|claims|0|178::0", "postNum": 27, "disposition": "E",
+      "reason": "Both sentences already certified: a Claim at 0..93 and a Prediction at 94..178." },
+
+    { "conflictId": "BOUNDARY_CROSSING::2912|claims|63|345::0", "postNum": 2912, "disposition": "A",
+      "reason": "One pasted tweet, opening quotation mark to closing. The record nested inside it covers only the middle sentence and stops mid-quotation, leaving 'Oh' I see!' and the closing line unpainted.",
+      "retainedIntentionally": "one complete quoted tweet, three sentences",
+      "pairedWithdrawal": { "occurrenceKey": "2912|claims|75|302", "why": "a partial of the same quoted tweet — it starts after 'Oh' I see!' and stops before the last sentence, so it is a substring of the quotation rather than a unit of it" } },
+
+    { "conflictId": "BOUNDARY_CROSSING::2939|claims|248|435::0", "postNum": 2939, "disposition": "B",
+      "trimToSentences": ["p2939-s004"],
+      "reason": "The first and third sentences of the quoted passage are already certified, at 247..399 and 417..436. Only 'Criminal aliens.' has no record, so the wide span is re-spanned onto it." },
+
+    { "conflictId": "BOUNDARY_CROSSING::2973|claims|32|219::0", "postNum": 2973, "disposition": "B",
+      "trimToSentences": ["p2973-s003"],
+      "reason": "The same passage on another drop, and the same shape: 31..183 and 201..220 are certified, 'Criminal aliens.' is not. Re-spanned onto it." },
+
+    { "conflictId": "BOUNDARY_CROSSING::3580|claims|213|326::0", "postNum": 3580, "disposition": "E",
+      "reason": "The quoted Jefferson passage is already certified as a Directive (212..257) and a Claim (258..327), each carrying its own quotation mark. This record covers both and drops both marks." },
+
+    { "conflictId": "BOUNDARY_CROSSING::3588|claims|726|786::0", "postNum": 3588, "disposition": "E",
+      "reason": "Five sentences, and every one of them is already a certified Question — 'Precursor postings occurred on 4ch?', 'FB?', 'Twitter?', 'Reddit?', 'IG?'. A Claim over five questions is the wrong category five times over." },
+
+    { "conflictId": "BOUNDARY_CROSSING::3990|questions|56|173::0", "postNum": 3990, "disposition": "A",
+      "reason": "'FBI CHAIN OF COMMAND FISA-RUSSIA-POTUS-FLYNN-STONE-PAPADOP-MANAF? [CIA BRIDGE_BRENNAN_INTEL ASSESS[17]_UKRAINE_LINK]?' is one query in Q's bracket notation: the second question mark terminates a bracketed qualifier on the first, not a second question. Splitting it would leave a bracket with no subject.",
+      "retainedIntentionally": "one compound query; the second '?' closes a bracketed qualifier" },
+
+    { "conflictId": "BOUNDARY_CROSSING::4122|claims|126|510::0", "postNum": 4122, "disposition": "E",
+      "reason": "Three sentences of a pasted FBI answer, all three already certified as claims of their own (133..259, 260..433, 434..510). The wide record adds only the 'A: No.' label." },
+
+    { "conflictId": "BOUNDARY_CROSSING::4255|claims|44|76::0", "postNum": 4255, "disposition": "A",
+      "reason": "'Where. We. Go. One. We. Go. All.' is WWG1WGA written one word to a sentence. The full stops are the slogan's typography, not seven assertions. Chopping it is exactly the geometry-driven mistake this review is told not to make.",
+      "retainedIntentionally": "one slogan, punctuated word by word" },
+
+    { "conflictId": "BOUNDARY_CROSSING::4494|questions|370|513::0", "postNum": 4494, "disposition": "A",
+      "reason": "One question with a bracketed follow-on also terminated by '?': '… ballot recipe(s)? [secrets] to select [F] adversaries?'. The second fragment has no verb and cannot stand as a question of its own. Nothing else claims those characters.",
+      "retainedIntentionally": "one question; the trailing bracketed fragment extends it rather than starting a new one" },
+
+    { "conflictId": "BOUNDARY_CROSSING::4630|claims|755|999::0", "postNum": 4630, "disposition": "E",
+      "reason": "The record starts mid-sentence, at 'Mark Benavides,' rather than at 'Democratic Texas attorney and activist,' — and both sentences it half-covers are already certified in full at 715..946 and 947..1000." },
+
+    { "conflictId": "BOUNDARY_CROSSING::526|claims|238|278::0", "postNum": 526, "disposition": "B",
+      "trimToOffsets": { "start": 238, "end": 426, "expectText": "His father is Edward Mezvinsky (b. 1937), who embezzled more than $10 million from people via both a Ponzi scheme and the advance-fee scams, and was found guilty of fraud in 2001.[3][4][5]" },
+      "pairedWithdrawals": [ { "occurrenceKey": "526|claims|273|463", "why": "the tail the segmenter orphaned. It begins at '1937), who embezzled' and runs past the end of the father's sentence into 'His mother is Marjorie Margolies (b.' — one record spanning halves of two different people's sentences. The repaired span absorbs its content." } ],
+      "reason": "The segmenter ends a sentence at '(b.', so 'His father is Edward Mezvinsky (b. 1937), who embezzled … guilty of fraud in 2001.' was certified as a stub stopping at the birth year. Widened to the whole sentence. No sentence id could express this: the sentence boundary is itself what is wrong. Same defect class as audit/abbreviation-span-repairs.json." },
+
+    { "conflictId": "BOUNDARY_CROSSING::526|claims|427|469::0", "postNum": 526, "disposition": "B",
+      "trimToOffsets": { "start": 427, "end": 556, "expectText": "His mother is Marjorie Margolies (b. 1942), who was a TV reporter and represented Pennsylvania's 13th District from 1993 to 1995." },
+      "pairedWithdrawals": [ { "occurrenceKey": "526|claims|464|556", "why": "the matching orphaned tail, beginning at '1942), who was a TV reporter'. The repaired span absorbs it." } ],
+      "reason": "The same '(b.' split one sentence later, for the mother. Widened to the whole sentence and the orphaned tail withdrawn." },
+
+    { "conflictId": "BOUNDARY_CROSSING::770|claims|10|35::0", "postNum": 770, "disposition": "A",
+      "reason": "'>James Dolan. Dead suicide' is one entry in a greentext list: a name and what happened to him. 'Dead suicide' has no subject without the name.",
+      "retainedIntentionally": "one list entry, name plus fate" },
+
+    { "conflictId": "BOUNDARY_CROSSING::770|claims|37|63::0", "postNum": 770, "disposition": "A",
+      "reason": "The next entry in the same list, same shape.",
+      "retainedIntentionally": "one list entry, name plus fate" }
+  ]
+}

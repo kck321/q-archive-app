@@ -1,25 +1,25 @@
 {
  "note": "Step 3B-1 conflict-queue taxonomy. Report only — nothing applied, nothing withdrawn.",
- "totalRows": 151,
+ "totalRows": 135,
  "measuredFrom": "current bundle (rebuilt)",
- "distinctConflictIds": 151,
- "distinctHeldKeys": 144,
- "distinctPosts": 126,
+ "distinctConflictIds": 135,
+ "distinctHeldKeys": 128,
+ "distinctPosts": 112,
  "byReason": {
   "UNLOCATED_SPAN": 77,
-  "BOUNDARY_CROSSING": 55,
+  "BOUNDARY_CROSSING": 39,
   "SAME_CATEGORY_PARTIAL_OVERLAP": 19
  },
  "bySourceLayer": {
   "namedEntities": 77,
-  "claims": 45,
+  "claims": 29,
   "(n/a)": 19,
   "questions": 5,
   "directives": 4,
   "themeAnchors": 1
  },
  "byLane": {
-  "B HUMAN_SEMANTIC_REVIEW": 132,
+  "B HUMAN_SEMANTIC_REVIEW": 116,
   "C STRUCTURAL_DATA_DEFECT": 16,
   "A DETERMINISTIC_RESOLUTION": 3
  },
@@ -95,29 +95,6 @@
      "postNum": 1217,
      "heldKey": "UNLOCATED-1217-namedEntities",
      "value": "Podesta"
-    }
-   ]
-  },
-  {
-   "signature": "BOUNDARY_CROSSING::WITHIN_LINE_CROSSING",
-   "count": 27,
-   "lane": "B",
-   "posts": 24,
-   "examples": [
-    {
-     "postNum": 1012,
-     "heldKey": "1012|claims|9|222",
-     "value": "\"Our thoughts and prayers are with the four U.S. Marines from the 3rd Marine Aircraft Wing who lost "
-    },
-    {
-     "postNum": 120,
-     "heldKey": "120|claims|157|243",
-     "value": "They think you are stupid. Puppets w/o power. They want your guns. Why? No power left."
-    },
-    {
-     "postNum": 13,
-     "heldKey": "13|claims|59|99",
-     "value": "I’ve said too much. God bless, Patriots."
     }
    ]
   },
@@ -286,6 +263,29 @@
      "postNum": 1910,
      "heldKey": "UNLOCATED-1910-namedEntities",
      "value": "INSCOM"
+    }
+   ]
+  },
+  {
+   "signature": "BOUNDARY_CROSSING::WITHIN_LINE_CROSSING",
+   "count": 11,
+   "lane": "B",
+   "posts": 9,
+   "examples": [
+    {
+     "postNum": 1012,
+     "heldKey": "1012|claims|9|222",
+     "value": "\"Our thoughts and prayers are with the four U.S. Marines from the 3rd Marine Aircraft Wing who lost "
+    },
+    {
+     "postNum": 23,
+     "heldKey": "23|claims|501|581",
+     "value": "Trump nominated someone new to direct every agency but one. He controls the top."
+    },
+    {
+     "postNum": 25,
+     "heldKey": "25|claims|121|229",
+     "value": "This all has meaning - everything stated. Big picture stuff - few positions allow for this direct kn"
     }
    ]
   },
@@ -671,96 +671,6 @@
    "lane": "B"
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::120|claims|157|243::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 120,
-   "heldKey": "120|claims|157|243",
-   "certifiedValue": "They think you are stupid. Puppets w/o power. They want your guns. Why? No power left.",
-   "alsoDuplicateKey": false,
-   "kind": "claims",
-   "start": 157,
-   "end": 243,
-   "sentencesTouched": 5,
-   "sentenceIds": [
-    "p0120-s002",
-    "p0120-s003",
-    "p0120-s004",
-    "p0120-s005",
-    "p0120-s006"
-   ],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": "They think you are stupid. Puppets w/o power. They want your guns. Why? No power left.",
-   "subtype": "WITHIN_LINE_CROSSING",
-   "lane": "B"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::13|claims|59|99::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 13,
-   "heldKey": "13|claims|59|99",
-   "certifiedValue": "I’ve said too much. God bless, Patriots.",
-   "alsoDuplicateKey": false,
-   "kind": "claims",
-   "start": 59,
-   "end": 99,
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p0013-s001",
-    "p0013-s002"
-   ],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": "I’ve said too much. God bless, Patriots.",
-   "subtype": "WITHIN_LINE_CROSSING",
-   "lane": "B"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::15|claims|0|257::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 15,
-   "heldKey": "15|claims|0|257",
-   "certifiedValue": "There are more good people than bad. The wizards and warlocks (inside term) will not allow another Satanic Evil POS control our country. Realize Soros, Clintons, Obama, Putin, etc. are all controlled by 3 families (the 4th was removed post Trump's victory).",
-   "alsoDuplicateKey": false,
-   "kind": "claims",
-   "start": 0,
-   "end": 257,
-   "sentencesTouched": 3,
-   "sentenceIds": [
-    "p0015-s000",
-    "p0015-s001",
-    "p0015-s002"
-   ],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": "There are more good people than bad. The wizards and warlocks (inside term) will not allow another Satanic Evil POS cont",
-   "subtype": "WITHIN_LINE_CROSSING",
-   "lane": "B"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::15|claims|307|808::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 15,
-   "heldKey": "15|claims|307|808",
-   "certifiedValue": "Manafort was placed into Trump's camp (as well as others). The corruption that will come out is so serious that deals must be cut for people to walk away otherwise 70% of elected politicians would be in jail (you are seeing it already begin). A deep cleaning is occurring and the prevention and defense of pure evil is occurring on a daily basis. They never thought they were going to lose control of the Presidency (not just D's) and thought they had control since making past mistakes (JFK, Reagan).",
-   "alsoDuplicateKey": false,
-   "kind": "claims",
-   "start": 307,
-   "end": 808,
-   "sentencesTouched": 4,
-   "sentenceIds": [
-    "p0015-s005",
-    "p0015-s006",
-    "p0015-s007",
-    "p0015-s008"
-   ],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": "Manafort was placed into Trump's camp (as well as others). The corruption that will come out is so serious that deals mu",
-   "subtype": "WITHIN_LINE_CROSSING",
-   "lane": "B"
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::154|directives|995|1053::0",
    "reason": "BOUNDARY_CROSSING",
    "postNum": 154,
@@ -848,73 +758,6 @@
    "lane": "B"
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::16|claims|69|543::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 16,
-   "heldKey": "16|claims|69|543",
-   "certifiedValue": "POTUS knows he must clean house (gov't) in order to 'free up' and demonstrate who has authority in order to pass important legislation. This was always the priority. Remember, AG Sessions cannot look like an impartial player that is out to get all former Obama team members as we need him for other important work. All will come into focus and for anyone to think POTUS is not in control is kidding themselves. Also, he's 100% insulated with zero risk of impeachment (fact).",
-   "alsoDuplicateKey": false,
-   "kind": "claims",
-   "start": 69,
-   "end": 543,
-   "sentencesTouched": 5,
-   "sentenceIds": [
-    "p0016-s001",
-    "p0016-s002",
-    "p0016-s003",
-    "p0016-s004",
-    "p0016-s005"
-   ],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": "POTUS knows he must clean house (gov't) in order to 'free up' and demonstrate who has authority in order to pass importa",
-   "subtype": "WITHIN_LINE_CROSSING",
-   "lane": "B"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::1841|claims|434|655::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 1841,
-   "heldKey": "1841|claims|434|655",
-   "certifiedValue": "The FTC's competition mission is to enforce the rules of the competitive marketplace — the antitrust laws. These laws promote vigorous competition and protect consumers from anticompetitive mergers and business practices.",
-   "alsoDuplicateKey": false,
-   "kind": "claims",
-   "start": 434,
-   "end": 655,
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p1841-s005",
-    "p1841-s006"
-   ],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": "The FTC's competition mission is to enforce the rules of the competitive marketplace — the antitrust laws. These laws pr",
-   "subtype": "WITHIN_LINE_CROSSING",
-   "lane": "B"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::1927|claims|1024|1887::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 1927,
-   "heldKey": "1927|claims|1024|1887",
-   "certifiedValue": "\"Sec. 12.  In accordance with Article 33 of the UCMJ, as amended by section 5204 of the MJA, the Secretary of Defense, in consultation with the Secretary of Homeland Security, will issue nonbinding guidance regarding factors that commanders, convening authorities, staff judge advocates, and judge advocates should take into account when exercising their duties with respect to the disposition of charges and specifications in the interest of justice and discipline under Articles 30 and 34 of the UCMJ. That guidance will take into account, with appropriate consideration of military requirements, the principles contained in official guidance of the Attorney General to attorneys for the Federal Government with respect to the disposition of Federal criminal cases in accordance with the principle of fair and evenhanded administration of Federal criminal law.\"",
-   "alsoDuplicateKey": false,
-   "kind": "claims",
-   "start": 1024,
-   "end": 1887,
-   "sentencesTouched": 3,
-   "sentenceIds": [
-    "p1927-s010",
-    "p1927-s011",
-    "p1927-s012"
-   ],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": "\"Sec. 12.  In accordance with Article 33 of the UCMJ, as amended by section 5204 of the MJA, the Secretary of Defense, i",
-   "subtype": "WITHIN_LINE_CROSSING",
-   "lane": "B"
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::2061|claims|10|70::0",
    "reason": "BOUNDARY_CROSSING",
    "postNum": 2061,
@@ -954,27 +797,6 @@
    "questionId": null,
    "spanPreview": "Anne Wojcicki - 23andme [Founder]\nwas brother-in-law to…",
    "subtype": "MULTI_LINE_SPAN",
-   "lane": "B"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::21|claims|0|194::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 21,
-   "heldKey": "21|claims|0|194",
-   "certifiedValue": "I’ve dumped some crumbs like this over the weekend which started the intense shilling. At this point we are far enough along you can paint the picture without risk of jeopardizing the operation.",
-   "alsoDuplicateKey": false,
-   "kind": "claims",
-   "start": 0,
-   "end": 194,
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p0021-s000",
-    "p0021-s001"
-   ],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": "I’ve dumped some crumbs like this over the weekend which started the intense shilling. At this point we are far enough a",
-   "subtype": "WITHIN_LINE_CROSSING",
    "lane": "B"
   },
   {
@@ -1018,28 +840,6 @@
    "stillLive": true,
    "questionId": null,
    "spanPreview": "Trump nominated someone new to direct every agency but one. He controls the top.",
-   "subtype": "WITHIN_LINE_CROSSING",
-   "lane": "B"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::24|claims|0|259::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 24,
-   "heldKey": "24|claims|0|259",
-   "certifiedValue": "Any person making statements they will not be seeking re-election was put in submission. For the betterment of the country not all will be prosecuted and all will do as told. You will see more of this occur (not normal yet disregarded) and even on the D side.",
-   "alsoDuplicateKey": false,
-   "kind": "claims",
-   "start": 0,
-   "end": 259,
-   "sentencesTouched": 3,
-   "sentenceIds": [
-    "p0024-s000",
-    "p0024-s001",
-    "p0024-s002"
-   ],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": "Any person making statements they will not be seeking re-election was put in submission. For the betterment of the count",
    "subtype": "WITHIN_LINE_CROSSING",
    "lane": "B"
   },
@@ -1130,27 +930,6 @@
    "lane": "B"
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::27|claims|0|178::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 27,
-   "heldKey": "27|claims|0|178",
-   "certifiedValue": "Not everything can be publicly disclosed because so much ties back to foreign heads of state. Much will be revealed, we want transparency but not at a cost we can’t recover from.",
-   "alsoDuplicateKey": false,
-   "kind": "claims",
-   "start": 0,
-   "end": 178,
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p0027-s000",
-    "p0027-s001"
-   ],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": "Not everything can be publicly disclosed because so much ties back to foreign heads of state. Much will be revealed, we ",
-   "subtype": "WITHIN_LINE_CROSSING",
-   "lane": "B"
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::2912|claims|63|345::0",
    "reason": "BOUNDARY_CROSSING",
    "postNum": 2912,
@@ -1169,28 +948,6 @@
    "stillLive": true,
    "questionId": null,
    "spanPreview": "\"Oh’ I see! Now that the 2 year Russian Collusion case has fallen apart, there was no Collusion except [bye] Crooked Hil",
-   "subtype": "WITHIN_LINE_CROSSING",
-   "lane": "B"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::2939|claims|248|435::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 2939,
-   "heldKey": "2939|claims|248|435",
-   "certifiedValue": "They range from domestic terrorism to court-authorized wiretaps of criminal organizations to child pedophiles and those who would exploit our children. Criminal aliens. Big fraud schemes.",
-   "alsoDuplicateKey": false,
-   "kind": "claims",
-   "start": 248,
-   "end": 435,
-   "sentencesTouched": 3,
-   "sentenceIds": [
-    "p2939-s003",
-    "p2939-s004",
-    "p2939-s005"
-   ],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": "They range from domestic terrorism to court-authorized wiretaps of criminal organizations to child pedophiles and those ",
    "subtype": "WITHIN_LINE_CROSSING",
    "lane": "B"
   },
@@ -1236,73 +993,6 @@
    "questionId": "q-queue-2971-39",
    "spanPreview": "\"you will be asked to give proof of your identity\"\nsynonyms:\tevidence, verification, corroboration, authentication, conf",
    "subtype": "QUESTION_LITERAL_SPANS_SENTENCES",
-   "lane": "B"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::2973|claims|32|219::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 2973,
-   "heldKey": "2973|claims|32|219",
-   "certifiedValue": "They range from domestic terrorism to court-authorized wiretaps of criminal organizations to child pedophiles and those who would exploit our children. Criminal aliens. Big fraud schemes.",
-   "alsoDuplicateKey": false,
-   "kind": "claims",
-   "start": 32,
-   "end": 219,
-   "sentencesTouched": 3,
-   "sentenceIds": [
-    "p2973-s002",
-    "p2973-s003",
-    "p2973-s004"
-   ],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": "They range from domestic terrorism to court-authorized wiretaps of criminal organizations to child pedophiles and those ",
-   "subtype": "WITHIN_LINE_CROSSING",
-   "lane": "B"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::3580|claims|213|326::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 3580,
-   "heldKey": "3580|claims|213|326",
-   "certifiedValue": "Educate and inform the whole mass of people. They are the only sure reliance for the preservation of our liberty.",
-   "alsoDuplicateKey": false,
-   "kind": "claims",
-   "start": 213,
-   "end": 326,
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p3580-s004",
-    "p3580-s005"
-   ],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": "Educate and inform the whole mass of people. They are the only sure reliance for the preservation of our liberty.",
-   "subtype": "WITHIN_LINE_CROSSING",
-   "lane": "B"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::3588|claims|726|786::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 3588,
-   "heldKey": "3588|claims|726|786",
-   "certifiedValue": "Precursor postings occurred on 4ch? FB? Twitter? Reddit? IG?",
-   "alsoDuplicateKey": false,
-   "kind": "claims",
-   "start": 726,
-   "end": 786,
-   "sentencesTouched": 5,
-   "sentenceIds": [
-    "p3588-s012",
-    "p3588-s013",
-    "p3588-s014",
-    "p3588-s015",
-    "p3588-s016"
-   ],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": "Precursor postings occurred on 4ch? FB? Twitter? Reddit? IG?",
-   "subtype": "WITHIN_LINE_CROSSING",
    "lane": "B"
   },
   {
@@ -1366,28 +1056,6 @@
    "questionId": null,
    "spanPreview": ">Insurgency, however, can and will flourish in the\nmodern environment.",
    "subtype": "MULTI_LINE_SPAN",
-   "lane": "B"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::4122|claims|126|510::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 4122,
-   "heldKey": "4122|claims|126|510",
-   "certifiedValue": "A: No. Such information is protected from public disclosure, in accordance with current law and Department of Justice and FBI policy. This policy preserves the integrity of the investigation and the privacy of individuals involved in the investigation prior to any public charging for violations of the law. It also serves to protect the rights of people not yet charged with a crime.",
-   "alsoDuplicateKey": false,
-   "kind": "claims",
-   "start": 126,
-   "end": 510,
-   "sentencesTouched": 3,
-   "sentenceIds": [
-    "p4122-s002",
-    "p4122-s003",
-    "p4122-s004"
-   ],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": "A: No. Such information is protected from public disclosure, in accordance with current law and Department of Justice an",
-   "subtype": "WITHIN_LINE_CROSSING",
    "lane": "B"
   },
   {
@@ -1523,27 +1191,6 @@
    "lane": "B"
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::4630|claims|755|999::0",
-   "reason": "BOUNDARY_CROSSING",
-   "postNum": 4630,
-   "heldKey": "4630|claims|755|999",
-   "certifiedValue": "Mark Benavides, was charged with having sex with a minor, inducing a child under 18 to have sex and compelling prostitution of at least nine legal clients and possession of child pornography. He was found guilty on six counts of sex trafficking",
-   "alsoDuplicateKey": false,
-   "kind": "claims",
-   "start": 755,
-   "end": 999,
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p4630-s005",
-    "p4630-s006"
-   ],
-   "stillLive": true,
-   "questionId": null,
-   "spanPreview": "Mark Benavides, was charged with having sex with a minor, inducing a child under 18 to have sex and compelling prostitut",
-   "subtype": "WITHIN_LINE_CROSSING",
-   "lane": "B"
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::4656|claims|112|156::0",
    "reason": "BOUNDARY_CROSSING",
    "postNum": 4656,
@@ -1629,15 +1276,15 @@
    "lane": "B"
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::526|claims|238|278::0",
+   "conflictId": "BOUNDARY_CROSSING::526|claims|238|426::0",
    "reason": "BOUNDARY_CROSSING",
    "postNum": 526,
-   "heldKey": "526|claims|238|278",
-   "certifiedValue": "His father is Edward Mezvinsky (b. 1937)",
+   "heldKey": "526|claims|238|426",
+   "certifiedValue": "His father is Edward Mezvinsky (b. 1937), who embezzled more than $10 million from people via both a Ponzi scheme and the advance-fee scams, and was found guilty of fraud in 2001.[3][4][5]",
    "alsoDuplicateKey": false,
    "kind": "claims",
    "start": 238,
-   "end": 278,
+   "end": 426,
    "sentencesTouched": 2,
    "sentenceIds": [
     "p0526-s002",
@@ -1645,20 +1292,20 @@
    ],
    "stillLive": true,
    "questionId": null,
-   "spanPreview": "His father is Edward Mezvinsky (b. 1937)",
+   "spanPreview": "His father is Edward Mezvinsky (b. 1937), who embezzled more than $10 million from people via both a Ponzi scheme and th",
    "subtype": "WITHIN_LINE_CROSSING",
    "lane": "B"
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::526|claims|427|469::0",
+   "conflictId": "BOUNDARY_CROSSING::526|claims|427|556::0",
    "reason": "BOUNDARY_CROSSING",
    "postNum": 526,
-   "heldKey": "526|claims|427|469",
-   "certifiedValue": "His mother is Marjorie Margolies (b. 1942)",
+   "heldKey": "526|claims|427|556",
+   "certifiedValue": "His mother is Marjorie Margolies (b. 1942), who was a TV reporter and represented Pennsylvania's 13th District from 1993 to 1995.",
    "alsoDuplicateKey": false,
    "kind": "claims",
    "start": 427,
-   "end": 469,
+   "end": 556,
    "sentencesTouched": 2,
    "sentenceIds": [
     "p0526-s003",
@@ -1666,7 +1313,7 @@
    ],
    "stillLive": true,
    "questionId": null,
-   "spanPreview": "His mother is Marjorie Margolies (b. 1942)",
+   "spanPreview": "His mother is Marjorie Margolies (b. 1942), who was a TV reporter and represented Pennsylvania's 13th District from 1993",
    "subtype": "WITHIN_LINE_CROSSING",
    "lane": "B"
   },

@@ -9,10 +9,10 @@
  },
  "totals": {
   "sentences": 30187,
-  "occurrencesKeyed": 30876,
+  "occurrencesKeyed": 30860,
   "duplicateKeys": 57,
   "byKind": {
-   "claims": 8711,
+   "claims": 8695,
    "predictions": 843,
    "directives": 2940,
    "namedEntities": 8772,
@@ -21,21 +21,21 @@
    "context": 1605
   },
   "byRelation": {
-   "EXACT": 20517,
-   "PARTIAL": 10304,
-   "CROSSING": 55
+   "EXACT": 20518,
+   "PARTIAL": 10303,
+   "CROSSING": 39
   },
   "unlocated": 77,
-  "crossingSentenceBoundary": 55
+  "crossingSentenceBoundary": 39
  },
  "findings": {
   "partialPrimarySpans": {
-   "total": 179,
-   "toReplace": 179,
+   "total": 178,
+   "toReplace": 178,
    "deliberatePartials": 0,
    "note": "A directive-wrapped question is a partial span ON PURPOSE — the embedded question is what gets counted so the Directive relationship survives. Those are excluded from the replacement set.",
    "byKind": {
-    "claims": 163,
+    "claims": 162,
     "questions": 10,
     "predictions": 6
    }
@@ -144,90 +144,6 @@
    ]
   },
   {
-   "occurrenceKey": "120|claims|157|243",
-   "postNum": 120,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 157,
-   "end": 243,
-   "text": "They think you are stupid. Puppets w/o power. They want your guns. Why? No power left.",
-   "sentencesTouched": 5,
-   "sentenceIds": [
-    "p0120-s002",
-    "p0120-s003",
-    "p0120-s004",
-    "p0120-s005",
-    "p0120-s006"
-   ],
-   "sentenceTexts": [
-    "They think you are stupid.",
-    "Puppets w/o power.",
-    "They want your guns.",
-    "Why?",
-    "No power left."
-   ]
-  },
-  {
-   "occurrenceKey": "13|claims|59|99",
-   "postNum": 13,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 59,
-   "end": 99,
-   "text": "I’ve said too much. God bless, Patriots.",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p0013-s001",
-    "p0013-s002"
-   ],
-   "sentenceTexts": [
-    "I’ve said too much.",
-    "God bless, Patriots."
-   ]
-  },
-  {
-   "occurrenceKey": "15|claims|0|257",
-   "postNum": 15,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 0,
-   "end": 257,
-   "text": "There are more good people than bad. The wizards and warlocks (inside term) will not allow another Satanic Evil POS control our country. Realize Soros, Clintons, Obama, Putin, etc. are all controlled by 3 families (the 4th was removed post Trump's victory).",
-   "sentencesTouched": 3,
-   "sentenceIds": [
-    "p0015-s000",
-    "p0015-s001",
-    "p0015-s002"
-   ],
-   "sentenceTexts": [
-    "There are more good people than bad.",
-    "The wizards and warlocks (inside term) will not allow another Satanic Evil POS control our country.",
-    "Realize Soros, Clintons, Obama, Putin, etc. are all controlled by 3 families (the 4th was removed post Trump's victory)."
-   ]
-  },
-  {
-   "occurrenceKey": "15|claims|307|808",
-   "postNum": 15,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 307,
-   "end": 808,
-   "text": "Manafort was placed into Trump's camp (as well as others). The corruption that will come out is so serious that deals must be cut for people to walk away otherwise 70% of elected politicians would be in jail (you are seeing it already begin). A deep cleaning is occurring and the prevention and defense of pure evil is occurring on a daily basis. They never thought they were going to lose control of the Presidency (not just D's) and thought they had control since making past mistakes (JFK, Reagan).",
-   "sentencesTouched": 4,
-   "sentenceIds": [
-    "p0015-s005",
-    "p0015-s006",
-    "p0015-s007",
-    "p0015-s008"
-   ],
-   "sentenceTexts": [
-    "Manafort was placed into Trump's camp (as well as others).",
-    "The corruption that will come out is so serious that deals must be cut for people to walk away otherwise 70% of elected politicians would be in jail (you are seeing it already begin).",
-    "A deep cleaning is occurring and the prevention and defense of pure evil is occurring on a daily basis.",
-    "They never thought they were going to lose control of the Presidency (not just D's) and thought they had control since making past mistakes (JFK, Reagan)."
-   ]
-  },
-  {
    "occurrenceKey": "154|directives|995|1053",
    "postNum": 154,
    "kind": "directives",
@@ -306,68 +222,6 @@
    ]
   },
   {
-   "occurrenceKey": "16|claims|69|543",
-   "postNum": 16,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 69,
-   "end": 543,
-   "text": "POTUS knows he must clean house (gov't) in order to 'free up' and demonstrate who has authority in order to pass important legislation. This was always the priority. Remember, AG Sessions cannot look like an impartial player that is out to get all former Obama team members as we need him for other important work. All will come into focus and for anyone to think POTUS is not in control is kidding themselves. Also, he's 100% insulated with zero risk of impeachment (fact).",
-   "sentencesTouched": 5,
-   "sentenceIds": [
-    "p0016-s001",
-    "p0016-s002",
-    "p0016-s003",
-    "p0016-s004",
-    "p0016-s005"
-   ],
-   "sentenceTexts": [
-    "POTUS knows he must clean house (gov't) in order to 'free up' and demonstrate who has authority in order to pass important legislation.",
-    "This was always the priority.",
-    "Remember, AG Sessions cannot look like an impartial player that is out to get all former Obama team members as we need him for other important work.",
-    "All will come into focus and for anyone to think POTUS is not in control is kidding themselves.",
-    "Also, he's 100% insulated with zero risk of impeachment (fact)."
-   ]
-  },
-  {
-   "occurrenceKey": "1841|claims|434|655",
-   "postNum": 1841,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 434,
-   "end": 655,
-   "text": "The FTC's competition mission is to enforce the rules of the competitive marketplace — the antitrust laws. These laws promote vigorous competition and protect consumers from anticompetitive mergers and business practices.",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p1841-s005",
-    "p1841-s006"
-   ],
-   "sentenceTexts": [
-    "\"The FTC's competition mission is to enforce the rules of the competitive marketplace — the antitrust laws.",
-    "These laws promote vigorous competition and protect consumers from anticompetitive mergers and business practices.\""
-   ]
-  },
-  {
-   "occurrenceKey": "1927|claims|1024|1887",
-   "postNum": 1927,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 1024,
-   "end": 1887,
-   "text": "\"Sec. 12.  In accordance with Article 33 of the UCMJ, as amended by section 5204 of the MJA, the Secretary of Defense, in consultation with the Secretary of Homeland Security, will issue nonbinding guidance regarding factors that commanders, convening authorities, staff judge advocates, and judge advocates should take into account when exercising their duties with respect to the disposition of charges and specifications in the interest of justice and discipline under Articles 30 and 34 of the UCMJ. That guidance will take into account, with appropriate consideration of military requirements, the principles contained in official guidance of the Attorney General to attorneys for the Federal Government with respect to the disposition of Federal criminal cases in accordance with the principle of fair and evenhanded administration of Federal criminal law.\"",
-   "sentencesTouched": 3,
-   "sentenceIds": [
-    "p1927-s010",
-    "p1927-s011",
-    "p1927-s012"
-   ],
-   "sentenceTexts": [
-    "\"Sec. 12.",
-    "In accordance with Article 33 of the UCMJ, as amended by section 5204 of the MJA, the Secretary of Defense, in consultation with the Secretary of Homeland Security, will issue nonbinding guidance regarding factors that commanders, convening authorities, staff judge advocates, and judge advocates should take into account when exercising their duties with respect to the disposition of charges and specifications in the interest of justice and discipline under Articles 30 and 34 of the UCMJ.",
-    "That guidance will take into account, with appropriate consideration of military requirements, the principles contained in official guidance of the Attorney General to attorneys for the Federal Government with respect to the disposition of Federal criminal cases in accordance with the principle of fair and evenhanded administration of Federal criminal law.\""
-   ]
-  },
-  {
    "occurrenceKey": "2061|claims|10|70",
    "postNum": 2061,
    "kind": "claims",
@@ -401,24 +255,6 @@
    "sentenceTexts": [
     "Anne Wojcicki - 23andme [Founder]",
     "was brother-in-law to…"
-   ]
-  },
-  {
-   "occurrenceKey": "21|claims|0|194",
-   "postNum": 21,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 0,
-   "end": 194,
-   "text": "I’ve dumped some crumbs like this over the weekend which started the intense shilling. At this point we are far enough along you can paint the picture without risk of jeopardizing the operation.",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p0021-s000",
-    "p0021-s001"
-   ],
-   "sentenceTexts": [
-    "I’ve dumped some crumbs like this over the weekend which started the intense shilling.",
-    "At this point we are far enough along you can paint the picture without risk of jeopardizing the operation."
    ]
   },
   {
@@ -459,26 +295,6 @@
    "sentenceTexts": [
     "Trump nominated someone new to direct every agency but one.",
     "He controls the top."
-   ]
-  },
-  {
-   "occurrenceKey": "24|claims|0|259",
-   "postNum": 24,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 0,
-   "end": 259,
-   "text": "Any person making statements they will not be seeking re-election was put in submission. For the betterment of the country not all will be prosecuted and all will do as told. You will see more of this occur (not normal yet disregarded) and even on the D side.",
-   "sentencesTouched": 3,
-   "sentenceIds": [
-    "p0024-s000",
-    "p0024-s001",
-    "p0024-s002"
-   ],
-   "sentenceTexts": [
-    "Any person making statements they will not be seeking re-election was put in submission.",
-    "For the betterment of the country not all will be prosecuted and all will do as told.",
-    "You will see more of this occur (not normal yet disregarded) and even on the D side."
    ]
   },
   {
@@ -558,24 +374,6 @@
    ]
   },
   {
-   "occurrenceKey": "27|claims|0|178",
-   "postNum": 27,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 0,
-   "end": 178,
-   "text": "Not everything can be publicly disclosed because so much ties back to foreign heads of state. Much will be revealed, we want transparency but not at a cost we can’t recover from.",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p0027-s000",
-    "p0027-s001"
-   ],
-   "sentenceTexts": [
-    "Not everything can be publicly disclosed because so much ties back to foreign heads of state.",
-    "Much will be revealed, we want transparency but not at a cost we can’t recover from."
-   ]
-  },
-  {
    "occurrenceKey": "2912|claims|63|345",
    "postNum": 2912,
    "kind": "claims",
@@ -593,26 +391,6 @@
     "\"Oh’ I see!",
     "Now that the 2 year Russian Collusion case has fallen apart, there was no Collusion except [bye] Crooked Hillary and the Democrats, they say, “gee, I have an idea, let’s look at Trump’s finances and every deal he has ever done.",
     "Let’s follow discredited Michael Cohen…..\""
-   ]
-  },
-  {
-   "occurrenceKey": "2939|claims|248|435",
-   "postNum": 2939,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 248,
-   "end": 435,
-   "text": "They range from domestic terrorism to court-authorized wiretaps of criminal organizations to child pedophiles and those who would exploit our children. Criminal aliens. Big fraud schemes.",
-   "sentencesTouched": 3,
-   "sentenceIds": [
-    "p2939-s003",
-    "p2939-s004",
-    "p2939-s005"
-   ],
-   "sentenceTexts": [
-    "\"They range from domestic terrorism to court-authorized wiretaps of criminal organizations to child pedophiles and those who would exploit our children.",
-    "Criminal aliens.",
-    "Big fraud schemes.\""
    ]
   },
   {
@@ -653,68 +431,6 @@
     "\"you will be asked to give proof of your identity\"",
     "synonyms:\tevidence, verification, corroboration, authentication, confirmation, certification, validation, attestation, demonstration, substantiation, witness, testament;",
     "PROOF = EVIDENCE?"
-   ]
-  },
-  {
-   "occurrenceKey": "2973|claims|32|219",
-   "postNum": 2973,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 32,
-   "end": 219,
-   "text": "They range from domestic terrorism to court-authorized wiretaps of criminal organizations to child pedophiles and those who would exploit our children. Criminal aliens. Big fraud schemes.",
-   "sentencesTouched": 3,
-   "sentenceIds": [
-    "p2973-s002",
-    "p2973-s003",
-    "p2973-s004"
-   ],
-   "sentenceTexts": [
-    "\"They range from domestic terrorism to court-authorized wiretaps of criminal organizations to child pedophiles and those who would exploit our children.",
-    "Criminal aliens.",
-    "Big fraud schemes.\""
-   ]
-  },
-  {
-   "occurrenceKey": "3580|claims|213|326",
-   "postNum": 3580,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 213,
-   "end": 326,
-   "text": "Educate and inform the whole mass of people. They are the only sure reliance for the preservation of our liberty.",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p3580-s004",
-    "p3580-s005"
-   ],
-   "sentenceTexts": [
-    "\"Educate and inform the whole mass of people.",
-    "They are the only sure reliance for the preservation of our liberty.\""
-   ]
-  },
-  {
-   "occurrenceKey": "3588|claims|726|786",
-   "postNum": 3588,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 726,
-   "end": 786,
-   "text": "Precursor postings occurred on 4ch? FB? Twitter? Reddit? IG?",
-   "sentencesTouched": 5,
-   "sentenceIds": [
-    "p3588-s012",
-    "p3588-s013",
-    "p3588-s014",
-    "p3588-s015",
-    "p3588-s016"
-   ],
-   "sentenceTexts": [
-    "Precursor postings occurred on 4ch?",
-    "FB?",
-    "Twitter?",
-    "Reddit?",
-    "IG? ………….."
    ]
   },
   {
@@ -769,26 +485,6 @@
    "sentenceTexts": [
     ">Insurgency, however, can and will flourish in the",
     "modern environment."
-   ]
-  },
-  {
-   "occurrenceKey": "4122|claims|126|510",
-   "postNum": 4122,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 126,
-   "end": 510,
-   "text": "A: No. Such information is protected from public disclosure, in accordance with current law and Department of Justice and FBI policy. This policy preserves the integrity of the investigation and the privacy of individuals involved in the investigation prior to any public charging for violations of the law. It also serves to protect the rights of people not yet charged with a crime.",
-   "sentencesTouched": 3,
-   "sentenceIds": [
-    "p4122-s002",
-    "p4122-s003",
-    "p4122-s004"
-   ],
-   "sentenceTexts": [
-    "A: No. Such information is protected from public disclosure, in accordance with current law and Department of Justice and FBI policy.",
-    "This policy preserves the integrity of the investigation and the privacy of individuals involved in the investigation prior to any public charging for violations of the law.",
-    "It also serves to protect the rights of people not yet charged with a crime."
    ]
   },
   {
@@ -912,24 +608,6 @@
    ]
   },
   {
-   "occurrenceKey": "4630|claims|755|999",
-   "postNum": 4630,
-   "kind": "claims",
-   "layer": "primary",
-   "start": 755,
-   "end": 999,
-   "text": "Mark Benavides, was charged with having sex with a minor, inducing a child under 18 to have sex and compelling prostitution of at least nine legal clients and possession of child pornography. He was found guilty on six counts of sex trafficking",
-   "sentencesTouched": 2,
-   "sentenceIds": [
-    "p4630-s005",
-    "p4630-s006"
-   ],
-   "sentenceTexts": [
-    "Democratic Texas attorney and activist, Mark Benavides, was charged with having sex with a minor, inducing a child under 18 to have sex and compelling prostitution of at least nine legal clients and possession of child pornography.",
-    "He was found guilty on six counts of sex trafficking."
-   ]
-  },
-  {
    "occurrenceKey": "4656|claims|112|156",
    "postNum": 4656,
    "kind": "claims",
@@ -1004,13 +682,13 @@
    ]
   },
   {
-   "occurrenceKey": "526|claims|238|278",
+   "occurrenceKey": "526|claims|238|426",
    "postNum": 526,
    "kind": "claims",
    "layer": "primary",
    "start": 238,
-   "end": 278,
-   "text": "His father is Edward Mezvinsky (b. 1937)",
+   "end": 426,
+   "text": "His father is Edward Mezvinsky (b. 1937), who embezzled more than $10 million from people via both a Ponzi scheme and the advance-fee scams, and was found guilty of fraud in 2001.[3][4][5]",
    "sentencesTouched": 2,
    "sentenceIds": [
     "p0526-s002",
@@ -1022,13 +700,13 @@
    ]
   },
   {
-   "occurrenceKey": "526|claims|427|469",
+   "occurrenceKey": "526|claims|427|556",
    "postNum": 526,
    "kind": "claims",
    "layer": "primary",
    "start": 427,
-   "end": 469,
-   "text": "His mother is Marjorie Margolies (b. 1942)",
+   "end": 556,
+   "text": "His mother is Marjorie Margolies (b. 1942), who was a TV reporter and represented Pennsylvania's 13th District from 1993 to 1995.",
    "sentencesTouched": 2,
    "sentenceIds": [
     "p0526-s003",
@@ -1732,16 +1410,6 @@
    "partial": "RUSSIA TESTING NEW MISSILES",
    "start": 20,
    "end": 47
-  },
-  {
-   "sentenceId": "p1012-s000",
-   "postNum": 1012,
-   "kind": "claims",
-   "deliberate": false,
-   "why": null,
-   "partial": "Marines from the 3rd Marine Aircraft Wing who lost their lives in yesterday’s Southern California helicopter c",
-   "start": 58,
-   "end": 173
   },
   {
    "sentenceId": "p1072-s003",

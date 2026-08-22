@@ -8380,6 +8380,350 @@
    "from": "501|themeAnchors|23|64",
    "kind": "themeAnchors",
    "metadata": {}
+  },
+  {
+   "actionId": "LB2-DROP-1012-claims-58-173",
+   "from": "1012|claims|58|173",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "LB2-DROP-120-claims-157-243",
+   "from": "120|claims|157|243",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB2-DROP-15-claims-0-257",
+   "from": "15|claims|0|257",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB2-DROP-15-claims-307-808",
+   "from": "15|claims|307|808",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB2-DROP-1841-claims-434-655",
+   "from": "1841|claims|434|655",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": true,
+     "isConclusion": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "LB2-DROP-1927-claims-1024-1887",
+   "from": "1927|claims|1024|1887",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "LB2-DROP-21-claims-0-194",
+   "from": "21|claims|0|194",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB2-DROP-24-claims-0-259",
+   "from": "24|claims|0|259",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB2-DROP-27-claims-0-178",
+   "from": "27|claims|0|178",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB2-DROP-2912-claims-75-302",
+   "from": "2912|claims|75|302",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "LB2-DROP-3580-claims-213-326",
+   "from": "3580|claims|213|326",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "LB2-DROP-3588-claims-726-786",
+   "from": "3588|claims|726|786",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": true,
+     "isConclusion": true,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "LB2-DROP-4122-claims-126-510",
+   "from": "4122|claims|126|510",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "LB2-DROP-4630-claims-755-999",
+   "from": "4630|claims|755|999",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": false,
+     "isConclusion": true,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "LB2-DROP-526-claims-273-463",
+   "from": "526|claims|273|463",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "LB2-DROP-526-claims-464-556",
+   "from": "526|claims|464|556",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": true,
+     "sourceProvided": true,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "MEDIUM"
+    }
+   }
+  },
+  {
+   "actionId": "LB2-SPAN-13-claims-59-99",
+   "rekeyed": "claimMeta",
+   "from": "i ve said too much god bless patriots",
+   "to": "god bless patriots"
+  },
+  {
+   "actionId": "LB2-SPAN-13-claims-59-99",
+   "from": "13|claims|59|99",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB2-SPAN-16-claims-69-543",
+   "rekeyed": "claimMeta",
+   "from": "potus knows he must clean house gov t in order to free up and demonstrate who has authority in order to pass important legislation this was always the priority remember ag sessions cannot look like an impartial player that is out to get all former obama team members as we need him for other important work all will come into focus and for anyone to think potus is not in control is kidding themselves also he s 100 insulated with zero risk of impeachment fact",
+   "to": "also he s 100 insulated with zero risk of impeachment fact"
+  },
+  {
+   "actionId": "LB2-SPAN-16-claims-69-543",
+   "from": "16|claims|69|543",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB2-SPAN-2939-claims-248-435",
+   "rekeyed": "claimMeta",
+   "from": "they range from domestic terrorism to court authorized wiretaps of criminal organizations to child pedophiles and those who would exploit our children criminal aliens big fraud schemes",
+   "to": "criminal aliens"
+  },
+  {
+   "actionId": "LB2-SPAN-2939-claims-248-435",
+   "from": "2939|claims|248|435",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB2-SPAN-2973-claims-32-219",
+   "rekeyed": "claimMeta",
+   "from": "they range from domestic terrorism to court authorized wiretaps of criminal organizations to child pedophiles and those who would exploit our children criminal aliens big fraud schemes",
+   "to": "criminal aliens"
+  },
+  {
+   "actionId": "LB2-SPAN-2973-claims-32-219",
+   "from": "2973|claims|32|219",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB2-SPAN-526-claims-238-278",
+   "rekeyed": "claimMeta",
+   "from": "his father is edward mezvinsky b 1937",
+   "to": "his father is edward mezvinsky b 1937 who embezzled more than 10 million from people via both a ponzi scheme and the advance fee scams and was found guilty of fraud in 2001 3 4 5"
+  },
+  {
+   "actionId": "LB2-SPAN-526-claims-238-278",
+   "from": "526|claims|238|278",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
+   "actionId": "LB2-SPAN-526-claims-427-469",
+   "rekeyed": "claimMeta",
+   "from": "his mother is marjorie margolies b 1942",
+   "to": "his mother is marjorie margolies b 1942 who was a tv reporter and represented pennsylvania s 13th district from 1993 to 1995"
+  },
+  {
+   "actionId": "LB2-SPAN-526-claims-427-469",
+   "from": "526|claims|427|469",
+   "kind": "claims",
+   "metadata": {}
   }
  ]
 }

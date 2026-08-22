@@ -277,8 +277,10 @@ const checks = [
   // 432 -> 341 on 2026-08-22: B2 withdrew 93 claims whose whole span was a link line, and a
   // citation is exactly the kind of claim that carries sourceProvided — so the attribute left with
   // the rows, as it always does. It travels with the ROW, never with the section.
-  ['Claim ↔ Source provided = the certified 341',
-    byType.claim_source_provided === 341, byType.claim_source_provided ?? 0],
+  // 341 -> 338 on 2026-08-22: the lane-B within-line reviews withdrew three paragraph-wide claims
+  // that carried sourceProvided. Same rule for the fourth time: the attribute travels with the ROW.
+  ['Claim ↔ Source provided = the certified 338',
+    byType.claim_source_provided === 338, byType.claim_source_provided ?? 0],
   ['Prediction ↔ Source provided reported separately', (byType.prediction_source_provided ?? 0) > 0, byType.prediction_source_provided ?? 0],
   // 595 -> 842 (2026-08-20 queue ruling) -> 843 (2026-08-21, #4910). A prediction IS an assertion,
   // so every one of them carries this edge — the figure is Predictions' and belongs to Predictions.

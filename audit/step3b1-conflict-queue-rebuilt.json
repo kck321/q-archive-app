@@ -2,34 +2,34 @@
  "note": "Conflict queue re-derived from the CURRENT bundle. Not the old CSV minus anything.",
  "measuredFrom": "audit/occurrence-ledger-dryrun.json",
  "originalRows": 945,
- "rebuiltRows": 151,
- "netChange": -794,
+ "rebuiltRows": 135,
+ "netChange": -810,
  "byReason": {
   "UNLOCATED_SPAN": 77,
-  "BOUNDARY_CROSSING": 55,
+  "BOUNDARY_CROSSING": 39,
   "SAME_CATEGORY_PARTIAL_OVERLAP": 19
  },
  "byKind": {
   "namedEntities": 77,
-  "claims": 64,
+  "claims": 48,
   "questions": 5,
   "directives": 4,
   "themeAnchors": 1
  },
- "distinctHeldKeys": 144,
- "distinctPosts": 126,
+ "distinctHeldKeys": 128,
+ "distinctPosts": 112,
  "resolvedSince": {
-  "count": 802,
+  "count": 820,
   "byFamily": {
    "UNLOCATED_SPAN": 438,
-   "BOUNDARY_CROSSING": 192,
+   "BOUNDARY_CROSSING": 210,
    "DUPLICATE_KEY_CONFLICTING_METADATA": 42
   }
  },
  "appearedSince": {
-  "count": 8,
+  "count": 10,
   "byFamily": {
-   "BOUNDARY_CROSSING": 5,
+   "BOUNDARY_CROSSING": 7,
    "SAME_CATEGORY_PARTIAL_OVERLAP": 3
   },
   "examples": [
@@ -55,6 +55,16 @@
    },
    {
     "key": "BOUNDARY_CROSSING::4935|claims|317|399::touches 2 sentences",
+    "was": 0,
+    "now": 1
+   },
+   {
+    "key": "BOUNDARY_CROSSING::526|claims|238|426::touches 2 sentences",
+    "was": 0,
+    "now": 1
+   },
+   {
+    "key": "BOUNDARY_CROSSING::526|claims|427|556::touches 2 sentences",
     "was": 0,
     "now": 1
    },
@@ -113,42 +123,6 @@
    "certifiedValue": "Q&A \n5 min."
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::120|claims|157|243::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "120|claims|157|243",
-   "postNum": 120,
-   "kind": "claims",
-   "detail": "touches 5 sentences",
-   "certifiedValue": "They think you are stupid. Puppets w/o power. They want your guns. Why? No power left."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::13|claims|59|99::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "13|claims|59|99",
-   "postNum": 13,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "I’ve said too much. God bless, Patriots."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::15|claims|0|257::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "15|claims|0|257",
-   "postNum": 15,
-   "kind": "claims",
-   "detail": "touches 3 sentences",
-   "certifiedValue": "There are more good people than bad. The wizards and warlocks (inside term) will not allow another Satanic Evil POS control our country. Realize Soros, Clintons, Obama, Putin, etc. are all controlled by 3 families (the 4th was removed post Trump's victory)."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::15|claims|307|808::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "15|claims|307|808",
-   "postNum": 15,
-   "kind": "claims",
-   "detail": "touches 4 sentences",
-   "certifiedValue": "Manafort was placed into Trump's camp (as well as others). The corruption that will come out is so serious that deals must be cut for people to walk away otherwise 70% of elected politicians would be in jail (you are seeing it already begin). A deep cleaning is occurring and the prevention and defense of pure evil is occurring on a daily basis. They never thought they were going to lose control of the Presidency (not just D's) and thought they had control since making past mistakes (JFK, Reagan)."
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::154|directives|995|1053::0",
    "reason": "BOUNDARY_CROSSING",
    "heldKey": "154|directives|995|1053",
@@ -185,33 +159,6 @@
    "certifiedValue": "Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us, and lead us not into temptation, but deliver us from evil."
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::16|claims|69|543::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "16|claims|69|543",
-   "postNum": 16,
-   "kind": "claims",
-   "detail": "touches 5 sentences",
-   "certifiedValue": "POTUS knows he must clean house (gov't) in order to 'free up' and demonstrate who has authority in order to pass important legislation. This was always the priority. Remember, AG Sessions cannot look like an impartial player that is out to get all former Obama team members as we need him for other important work. All will come into focus and for anyone to think POTUS is not in control is kidding themselves. Also, he's 100% insulated with zero risk of impeachment (fact)."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::1841|claims|434|655::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "1841|claims|434|655",
-   "postNum": 1841,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "The FTC's competition mission is to enforce the rules of the competitive marketplace — the antitrust laws. These laws promote vigorous competition and protect consumers from anticompetitive mergers and business practices."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::1927|claims|1024|1887::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "1927|claims|1024|1887",
-   "postNum": 1927,
-   "kind": "claims",
-   "detail": "touches 3 sentences",
-   "certifiedValue": "\"Sec. 12.  In accordance with Article 33 of the UCMJ, as amended by section 5204 of the MJA, the Secretary of Defense, in consultation with the Secretary of Homeland Security, will issue nonbinding guidance regarding factors that commanders, convening authorities, staff judge advocates, and judge advocates should take into account when exercising their duties with respect to the disposition of charges and specifications in the interest of justice and discipline under Articles 30 and 34 of the UCMJ. That guidance will take into account, with appropriate consideration of military requirements, the principles contained in official guidance of the Attorney General to attorneys for the Federal Government with respect to the disposition of Federal criminal cases in accordance with the principle of fair and evenhanded administration of Federal criminal law.\""
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::2061|claims|10|70::0",
    "reason": "BOUNDARY_CROSSING",
    "heldKey": "2061|claims|10|70",
@@ -230,15 +177,6 @@
    "certifiedValue": "Anne Wojcicki - 23andme [Founder]\nwas brother-in-law to…"
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::21|claims|0|194::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "21|claims|0|194",
-   "postNum": 21,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "I’ve dumped some crumbs like this over the weekend which started the intense shilling. At this point we are far enough along you can paint the picture without risk of jeopardizing the operation."
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::2177|claims|164|455::0",
    "reason": "BOUNDARY_CROSSING",
    "heldKey": "2177|claims|164|455",
@@ -255,15 +193,6 @@
    "kind": "claims",
    "detail": "touches 2 sentences",
    "certifiedValue": "Trump nominated someone new to direct every agency but one. He controls the top."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::24|claims|0|259::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "24|claims|0|259",
-   "postNum": 24,
-   "kind": "claims",
-   "detail": "touches 3 sentences",
-   "certifiedValue": "Any person making statements they will not be seeking re-election was put in submission. For the betterment of the country not all will be prosecuted and all will do as told. You will see more of this occur (not normal yet disregarded) and even on the D side."
   },
   {
    "conflictId": "BOUNDARY_CROSSING::25|claims|121|229::0",
@@ -302,15 +231,6 @@
    "certifiedValue": "Michael Kortan, FBI assistant director for public affairs, now retired;\nFormer principal deputy general counsel Trisha Anderson;"
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::27|claims|0|178::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "27|claims|0|178",
-   "postNum": 27,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "Not everything can be publicly disclosed because so much ties back to foreign heads of state. Much will be revealed, we want transparency but not at a cost we can’t recover from."
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::2912|claims|63|345::0",
    "reason": "BOUNDARY_CROSSING",
    "heldKey": "2912|claims|63|345",
@@ -318,15 +238,6 @@
    "kind": "claims",
    "detail": "touches 3 sentences",
    "certifiedValue": "\"Oh’ I see! Now that the 2 year Russian Collusion case has fallen apart, there was no Collusion except [bye] Crooked Hillary and the Democrats, they say, “gee, I have an idea, let’s look at Trump’s finances and every deal he has ever done. Let’s follow discredited Michael Cohen…..\""
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::2939|claims|248|435::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "2939|claims|248|435",
-   "postNum": 2939,
-   "kind": "claims",
-   "detail": "touches 3 sentences",
-   "certifiedValue": "They range from domestic terrorism to court-authorized wiretaps of criminal organizations to child pedophiles and those who would exploit our children. Criminal aliens. Big fraud schemes."
   },
   {
    "conflictId": "BOUNDARY_CROSSING::2943|claims|479|763::0",
@@ -345,33 +256,6 @@
    "kind": "questions",
    "detail": "touches 3 sentences",
    "certifiedValue": "\"you will be asked to give proof of your identity\"\nsynonyms:\tevidence, verification, corroboration, authentication, confirmation, certification, validation, attestation, demonstration, substantiation, witness, testament;\nPROOF = EVIDENCE?"
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::2973|claims|32|219::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "2973|claims|32|219",
-   "postNum": 2973,
-   "kind": "claims",
-   "detail": "touches 3 sentences",
-   "certifiedValue": "They range from domestic terrorism to court-authorized wiretaps of criminal organizations to child pedophiles and those who would exploit our children. Criminal aliens. Big fraud schemes."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::3580|claims|213|326::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "3580|claims|213|326",
-   "postNum": 3580,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "Educate and inform the whole mass of people. They are the only sure reliance for the preservation of our liberty."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::3588|claims|726|786::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "3588|claims|726|786",
-   "postNum": 3588,
-   "kind": "claims",
-   "detail": "touches 5 sentences",
-   "certifiedValue": "Precursor postings occurred on 4ch? FB? Twitter? Reddit? IG?"
   },
   {
    "conflictId": "BOUNDARY_CROSSING::3656|directives|482|1064::0",
@@ -399,15 +283,6 @@
    "kind": "claims",
    "detail": "touches 2 sentences",
    "certifiedValue": ">Insurgency, however, can and will flourish in the\nmodern environment."
-  },
-  {
-   "conflictId": "BOUNDARY_CROSSING::4122|claims|126|510::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "4122|claims|126|510",
-   "postNum": 4122,
-   "kind": "claims",
-   "detail": "touches 3 sentences",
-   "certifiedValue": "A: No. Such information is protected from public disclosure, in accordance with current law and Department of Justice and FBI policy. This policy preserves the integrity of the investigation and the privacy of individuals involved in the investigation prior to any public charging for violations of the law. It also serves to protect the rights of people not yet charged with a crime."
   },
   {
    "conflictId": "BOUNDARY_CROSSING::4255|claims|44|76::0",
@@ -464,15 +339,6 @@
    "certifiedValue": "ren·e·gade\na person who deserts and betrays an organization, country, or set of principles."
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::4630|claims|755|999::0",
-   "reason": "BOUNDARY_CROSSING",
-   "heldKey": "4630|claims|755|999",
-   "postNum": 4630,
-   "kind": "claims",
-   "detail": "touches 2 sentences",
-   "certifiedValue": "Mark Benavides, was charged with having sex with a minor, inducing a child under 18 to have sex and compelling prostitution of at least nine legal clients and possession of child pornography. He was found guilty on six counts of sex trafficking"
-  },
-  {
    "conflictId": "BOUNDARY_CROSSING::4656|claims|112|156::0",
    "reason": "BOUNDARY_CROSSING",
    "heldKey": "4656|claims|112|156",
@@ -509,22 +375,22 @@
    "certifiedValue": "Mayor Bill de Blasio, D-N.Y.C\nformer Virginia Gov. Terry McCauliffe, among others."
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::526|claims|238|278::0",
+   "conflictId": "BOUNDARY_CROSSING::526|claims|238|426::0",
    "reason": "BOUNDARY_CROSSING",
-   "heldKey": "526|claims|238|278",
+   "heldKey": "526|claims|238|426",
    "postNum": 526,
    "kind": "claims",
    "detail": "touches 2 sentences",
-   "certifiedValue": "His father is Edward Mezvinsky (b. 1937)"
+   "certifiedValue": "His father is Edward Mezvinsky (b. 1937), who embezzled more than $10 million from people via both a Ponzi scheme and the advance-fee scams, and was found guilty of fraud in 2001.[3][4][5]"
   },
   {
-   "conflictId": "BOUNDARY_CROSSING::526|claims|427|469::0",
+   "conflictId": "BOUNDARY_CROSSING::526|claims|427|556::0",
    "reason": "BOUNDARY_CROSSING",
-   "heldKey": "526|claims|427|469",
+   "heldKey": "526|claims|427|556",
    "postNum": 526,
    "kind": "claims",
    "detail": "touches 2 sentences",
-   "certifiedValue": "His mother is Marjorie Margolies (b. 1942)"
+   "certifiedValue": "His mother is Marjorie Margolies (b. 1942), who was a TV reporter and represented Pennsylvania's 13th District from 1993 to 1995."
   },
   {
    "conflictId": "BOUNDARY_CROSSING::64|claims|0|84::0",

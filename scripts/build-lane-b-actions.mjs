@@ -54,39 +54,52 @@ for (const row of disp.rows) {
   const sentences = sentencesFor(p.text, postNum)
   const byId = new Map(sentences.map(s => [s.sentenceId, s]))
 
-  if (row.disposition === 'A') { kept.push(row); if (!row.pairedWithdrawal) continue }
+  if (row.disposition === 'A') { kept.push(row) }
   if (row.disposition === 'F') { unresolved.push(row); continue }
 
-  // ── the paired withdrawal a KEEP can carry ────────────────────────────────
-  // Keeping a wide span is only correct if the fragment nested inside it goes; otherwise the row
-  // is "resolved" while the same characters stay painted twice.
-  if (row.pairedWithdrawal) {
-    const w = parseKey(row.pairedWithdrawal.occurrenceKey)
+  // ── the paired withdrawals a row can carry ────────────────────────────────
+  // Keeping or widening a span is only correct if the fragments it covers go; otherwise the row is
+  // "resolved" while the same characters stay painted twice. A widening repair usually needs this:
+  // where the segmenter split a sentence at an abbreviation, the tail was certified as a record of
+  // its own, and absorbing it into the repaired span without withdrawing it would double-count.
+  for (const pw of row.pairedWithdrawal ? [row.pairedWithdrawal] : (row.pairedWithdrawals ?? [])) {
+    const w = parseKey(pw.occurrenceKey)
     if (body.slice(w.start, w.end).length === 0) { problems.push(`${row.conflictId}: paired withdrawal span is empty`); continue }
     actions.push({
       postNum: w.postNum, sentenceId: null, sourceDisposition: 'q_authored',
-      oldOccurrenceKeys: [row.pairedWithdrawal.occurrenceKey],
+      oldOccurrenceKeys: [pw.occurrenceKey],
       oldCategories: [`${w.kind}@${w.start}..${w.end}`],
       proposedSecondarySemantics: [], proposedReviewDispositions: [],
-      recordsWithdrawn: [row.pairedWithdrawal.occurrenceKey],
-      withdrawReason: row.pairedWithdrawal.why,
-      metadataTransferred: row.pairedWithdrawal.occurrenceKey, relationshipsPreserved: '',
+      recordsWithdrawn: [pw.occurrenceKey],
+      withdrawReason: pw.why,
+      metadataTransferred: pw.occurrenceKey, relationshipsPreserved: '',
       confidence: 'HIGH', humanReviewRequired: false,
       actionId: `${PREFIX}-DROP-${w.postNum}-${w.kind}-${w.start}-${w.end}`,
       kind: 'WITHDRAW_RECORD',
       sentenceStart: w.start, sentenceEnd: w.end, sentenceText: body.slice(w.start, w.end),
       proposedPrimaryCategory: null,
       ruleCode: 'LANEB_NESTED_FRAGMENT_WITHDRAWN',
-      adjudication: 'A — KEEP_AS_CERTIFIED (wide span) with the nested fragment withdrawn',
-      adjudicationReason: row.reason,
+      adjudication: `${row.disposition} — the nested or absorbed fragment withdrawn with it`,
+      adjudicationReason: pw.why,
       laneBDisposition: row.disposition, laneBFamily: disp.family,
     })
-    continue
   }
+  if (row.disposition === 'A') continue
 
   if (row.disposition === 'B') {
     let s0, s1
-    if (row.trimToSentences) {
+    if (row.trimToOffsets) {
+      // EXPLICIT OFFSETS, used only where the SEGMENTER is the defect. Naming a sentence id is the
+      // safe default because the ledger then supplies the boundary — but when the boundary itself
+      // is wrong (a sentence split at "(b." or "Gov."), there is no correct sentence id to name.
+      // The reviewed file must then state the exact text it expects, and this refuses if the body
+      // does not say that at those offsets.
+      s0 = row.trimToOffsets.start; s1 = row.trimToOffsets.end
+      if (body.slice(s0, s1) !== row.trimToOffsets.expectText) {
+        problems.push(`${row.conflictId}: body at ${s0}..${s1} is not the reviewed text`)
+        continue
+      }
+    } else if (row.trimToSentences) {
       const ss = row.trimToSentences.map(id => byId.get(id))
       if (ss.some(x => !x)) { problems.push(`${row.conflictId}: unknown sentence id`); continue }
       s0 = Math.min(...ss.map(x => x.start)); s1 = Math.max(...ss.map(x => x.end))

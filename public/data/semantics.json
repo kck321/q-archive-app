@@ -3,7 +3,7 @@
  "step": "3B-1",
  "planSha256": "373ca06b1416b6707a111f2c3da8e751472c551f739500f76cdcc764d3128058",
  "dispositionsApplied": 8,
- "actionsApplied": 717,
+ "actionsApplied": 739,
  "actionsAlreadyApplied": 8,
  "actionsHeld": 2,
  "heldActionIds": [
@@ -113,6 +113,22 @@
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
   },
   {
+   "occurrenceKey": "13|claims|79|99",
+   "postNum": 13,
+   "start": 79,
+   "end": 99,
+   "text": "God bless, Patriots.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "13|claims|59|99",
+   "actionId": "LB2-SPAN-13-claims-59-99",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "'I've said too much.' is already its own claim at 59..78. Re-spanned onto the sentence beside it, which has no record of its own, so both stay painted and neither is painted twice."
+  },
+  {
    "occurrenceKey": "14|namedEntities|1319|1324",
    "postNum": 14,
    "sentenceId": "p0014-s034",
@@ -138,6 +154,40 @@
    "actionId": "A-DUP-14-namedEntities-1319-1324",
    "ruleCode": "R8_DUPLICATE_MERGE",
    "withdrawReason": "1 excess record(s) over one span merged into a single occurrence"
+  },
+  {
+   "occurrenceKey": "15|claims|0|257",
+   "postNum": 15,
+   "start": 0,
+   "end": 257,
+   "text": "There are more good people than bad. The wizards and warlocks (inside term) will not allow another Satanic Evil POS control our country. Realize Soros, Clintons, Obama, Putin, etc. are all controlled by 3 families (the 4th was removed post Trump's victory).",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB2-DROP-15-claims-0-257",
+   "ruleCode": "LANEB_RECORD_WITHDRAWN",
+   "withdrawReason": "Three sentences, and all three are already certified — a Claim, a Prediction and a Directive. The wide record asserts one category over three different ones.",
+   "adjudication": "E — WITHDRAW",
+   "adjudicationReason": "Three sentences, and all three are already certified — a Claim, a Prediction and a Directive. The wide record asserts one category over three different ones."
+  },
+  {
+   "occurrenceKey": "15|claims|307|808",
+   "postNum": 15,
+   "start": 307,
+   "end": 808,
+   "text": "Manafort was placed into Trump's camp (as well as others). The corruption that will come out is so serious that deals must be cut for people to walk away otherwise 70% of elected politicians would be in jail (you are seeing it already begin). A deep cleaning is occurring and the prevention and defense of pure evil is occurring on a daily basis. They never thought they were going to lose control of the Presidency (not just D's) and thought they had control since making past mistakes (JFK, Reagan).",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB2-DROP-15-claims-307-808",
+   "ruleCode": "LANEB_RECORD_WITHDRAWN",
+   "withdrawReason": "Four sentences, all four already certified: three Claims and a Prediction. Nothing is left for this record to describe.",
+   "adjudication": "E — WITHDRAW",
+   "adjudicationReason": "Four sentences, all four already certified: three Claims and a Prediction. Nothing is left for this record to describe."
   },
   {
    "occurrenceKey": "16|predictions|0|68",
@@ -177,6 +227,22 @@
    "ruleCode": "R3_FUTURE_ASSERTION"
   },
   {
+   "occurrenceKey": "16|claims|480|543",
+   "postNum": 16,
+   "start": 480,
+   "end": 543,
+   "text": "Also, he's 100% insulated with zero risk of impeachment (fact).",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "16|claims|69|543",
+   "actionId": "LB2-SPAN-16-claims-69-543",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "Five sentences, four already certified — two Claims, a Directive and a Prediction. Only 'Also, he's 100% insulated with zero risk of impeachment (fact).' has no record, so the wide span is re-spanned onto it."
+  },
+  {
    "occurrenceKey": "17|claims|229|772",
    "postNum": 17,
    "start": 229,
@@ -209,6 +275,40 @@
    "withdrawReason": "Eight sentences, swallowing a certified Prediction, a certified Directive, a certified Claim, a certified Question and two lines of quoted source. Five records already describe what is inside it; no trim is correct.",
    "adjudication": "E — WITHDRAW",
    "adjudicationReason": "Eight sentences, swallowing a certified Prediction, a certified Directive, a certified Claim, a certified Question and two lines of quoted source. Five records already describe what is inside it; no trim is correct."
+  },
+  {
+   "occurrenceKey": "21|claims|0|194",
+   "postNum": 21,
+   "start": 0,
+   "end": 194,
+   "text": "I’ve dumped some crumbs like this over the weekend which started the intense shilling. At this point we are far enough along you can paint the picture without risk of jeopardizing the operation.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB2-DROP-21-claims-0-194",
+   "ruleCode": "LANEB_RECORD_WITHDRAWN",
+   "withdrawReason": "Both sentences are already certified as claims of their own, at 0..86 and 87..194.",
+   "adjudication": "E — WITHDRAW",
+   "adjudicationReason": "Both sentences are already certified as claims of their own, at 0..86 and 87..194."
+  },
+  {
+   "occurrenceKey": "24|claims|0|259",
+   "postNum": 24,
+   "start": 0,
+   "end": 259,
+   "text": "Any person making statements they will not be seeking re-election was put in submission. For the betterment of the country not all will be prosecuted and all will do as told. You will see more of this occur (not normal yet disregarded) and even on the D side.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB2-DROP-24-claims-0-259",
+   "ruleCode": "LANEB_RECORD_WITHDRAWN",
+   "withdrawReason": "Three sentences, all already certified — one Claim and two Predictions.",
+   "adjudication": "E — WITHDRAW",
+   "adjudicationReason": "Three sentences, all already certified — one Claim and two Predictions."
   },
   {
    "occurrenceKey": "25|claims|121|229",
@@ -258,6 +358,23 @@
    "withdrawReason": "Four independent units: a certified Claim (26..55), 'Fully controlled.', a certified Directive (74..123) and 'Biggest advanced drop on Pol.'. Two are already certified and no single trim covers what is left, so the blob goes and the two uncertified sentences pass to the coverage census.",
    "adjudication": "E — WITHDRAW",
    "adjudicationReason": "Four independent units: a certified Claim (26..55), 'Fully controlled.', a certified Directive (74..123) and 'Biggest advanced drop on Pol.'. Two are already certified and no single trim covers what is left, so the blob goes and the two uncertified sentences pass to the coverage census."
+  },
+  {
+   "occurrenceKey": "27|claims|0|178",
+   "postNum": 27,
+   "start": 0,
+   "end": 178,
+   "text": "Not everything can be publicly disclosed because so much ties back to foreign heads of state. Much will be revealed, we want transparency but not at a cost we can’t recover from.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB2-DROP-27-claims-0-178",
+   "ruleCode": "LANEB_RECORD_WITHDRAWN",
+   "withdrawReason": "Both sentences already certified: a Claim at 0..93 and a Prediction at 94..178.",
+   "adjudication": "E — WITHDRAW",
+   "adjudicationReason": "Both sentences already certified: a Claim at 0..93 and a Prediction at 94..178."
   },
   {
    "occurrenceKey": "34|claims|280|333",
@@ -1146,6 +1263,23 @@
    "supersededKeys": [],
    "actionId": "A-DQ-p0119-s001",
    "ruleCode": "R2_IMPERATIVE"
+  },
+  {
+   "occurrenceKey": "120|claims|157|243",
+   "postNum": 120,
+   "start": 157,
+   "end": 243,
+   "text": "They think you are stupid. Puppets w/o power. They want your guns. Why? No power left.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB2-DROP-120-claims-157-243",
+   "ruleCode": "LANEB_RECORD_WITHDRAWN",
+   "withdrawReason": "Five sentences on one line. 'They think you are stupid.' is already its own claim and 'Why?' is already its own question, so the wide record paints two certified records a second time. No single trim covers what is left.",
+   "adjudication": "E — WITHDRAW",
+   "adjudicationReason": "Five sentences on one line. 'They think you are stupid.' is already its own claim and 'Why?' is already its own question, so the wide record paints two certified records a second time. No single trim covers what is left."
   },
   {
    "occurrenceKey": "120|questions|784|852",
@@ -2632,6 +2766,72 @@
    "supersededKeys": [],
    "actionId": "A-DQ-p0524-s012",
    "ruleCode": "R1_INTERROGATIVE"
+  },
+  {
+   "occurrenceKey": "526|claims|238|426",
+   "postNum": 526,
+   "start": 238,
+   "end": 426,
+   "text": "His father is Edward Mezvinsky (b. 1937), who embezzled more than $10 million from people via both a Ponzi scheme and the advance-fee scams, and was found guilty of fraud in 2001.[3][4][5]",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "526|claims|238|278",
+   "actionId": "LB2-SPAN-526-claims-238-278",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "The segmenter ends a sentence at '(b.', so 'His father is Edward Mezvinsky (b. 1937), who embezzled … guilty of fraud in 2001.' was certified as a stub stopping at the birth year. Widened to the whole sentence. No sentence id could express this: the sentence boundary is itself what is wrong. Same defect class as audit/abbreviation-span-repairs.json."
+  },
+  {
+   "occurrenceKey": "526|claims|273|463",
+   "postNum": 526,
+   "start": 273,
+   "end": 463,
+   "text": "1937), who embezzled more than $10 million from people via both a Ponzi scheme and the advance-fee scams, and was found guilty of fraud in 2001.[3][4][5] His mother is Marjorie Margolies (b.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB2-DROP-526-claims-273-463",
+   "ruleCode": "LANEB_NESTED_FRAGMENT_WITHDRAWN",
+   "withdrawReason": "the tail the segmenter orphaned. It begins at '1937), who embezzled' and runs past the end of the father's sentence into 'His mother is Marjorie Margolies (b.' — one record spanning halves of two different people's sentences. The repaired span absorbs its content.",
+   "adjudication": "B — the nested or absorbed fragment withdrawn with it",
+   "adjudicationReason": "the tail the segmenter orphaned. It begins at '1937), who embezzled' and runs past the end of the father's sentence into 'His mother is Marjorie Margolies (b.' — one record spanning halves of two different people's sentences. The repaired span absorbs its content."
+  },
+  {
+   "occurrenceKey": "526|claims|427|556",
+   "postNum": 526,
+   "start": 427,
+   "end": 556,
+   "text": "His mother is Marjorie Margolies (b. 1942), who was a TV reporter and represented Pennsylvania's 13th District from 1993 to 1995.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "526|claims|427|469",
+   "actionId": "LB2-SPAN-526-claims-427-469",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "The same '(b.' split one sentence later, for the mother. Widened to the whole sentence and the orphaned tail withdrawn."
+  },
+  {
+   "occurrenceKey": "526|claims|464|556",
+   "postNum": 526,
+   "start": 464,
+   "end": 556,
+   "text": "1942), who was a TV reporter and represented Pennsylvania's 13th District from 1993 to 1995.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB2-DROP-526-claims-464-556",
+   "ruleCode": "LANEB_NESTED_FRAGMENT_WITHDRAWN",
+   "withdrawReason": "the matching orphaned tail, beginning at '1942), who was a TV reporter'. The repaired span absorbs it.",
+   "adjudication": "B — the nested or absorbed fragment withdrawn with it",
+   "adjudicationReason": "the matching orphaned tail, beginning at '1942), who was a TV reporter'. The repaired span absorbs it."
   },
   {
    "occurrenceKey": "538|directives|360|366",
@@ -4178,6 +4378,23 @@
    "actionId": "A-NEST-p1010-s008-claims",
    "ruleCode": "R9_NESTED_CONTAINMENT",
    "withdrawReason": "fragment contained by the complete sentence already certified in the same category"
+  },
+  {
+   "occurrenceKey": "1012|claims|58|173",
+   "postNum": 1012,
+   "start": 58,
+   "end": 173,
+   "text": "Marines from the 3rd Marine Aircraft Wing who lost their lives in yesterday’s Southern California helicopter crash.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB2-DROP-1012-claims-58-173",
+   "ruleCode": "LANEB_NESTED_FRAGMENT_WITHDRAWN",
+   "withdrawReason": "a mid-sentence fragment beginning at 'Marines from the 3rd Marine Aircraft Wing' — it starts inside the quoted tweet's first sentence and stops inside its second, so it is a substring of a claim rather than a claim",
+   "adjudication": "A — the nested or absorbed fragment withdrawn with it",
+   "adjudicationReason": "a mid-sentence fragment beginning at 'Marines from the 3rd Marine Aircraft Wing' — it starts inside the quoted tweet's first sentence and stops inside its second, so it is a substring of a claim rather than a claim"
   },
   {
    "occurrenceKey": "1021|directives|0|53",
@@ -7326,6 +7543,23 @@
    "ruleCode": "R2_IMPERATIVE"
   },
   {
+   "occurrenceKey": "1841|claims|434|655",
+   "postNum": 1841,
+   "start": 434,
+   "end": 655,
+   "text": "The FTC's competition mission is to enforce the rules of the competitive marketplace — the antitrust laws. These laws promote vigorous competition and protect consumers from anticompetitive mergers and business practices.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB2-DROP-1841-claims-434-655",
+   "ruleCode": "LANEB_RECORD_WITHDRAWN",
+   "withdrawReason": "Both sentences of the quoted FTC paragraph are already certified separately, at 433..540 and 541..656. This record is a third copy that also drops the opening quotation mark.",
+   "adjudication": "E — WITHDRAW",
+   "adjudicationReason": "Both sentences of the quoted FTC paragraph are already certified separately, at 433..540 and 541..656. This record is a third copy that also drops the opening quotation mark."
+  },
+  {
    "occurrenceKey": "1856|claims|549|827",
    "postNum": 1856,
    "start": 549,
@@ -8134,6 +8368,23 @@
    "supersededKeys": [],
    "actionId": "A-DQ-p1927-s001",
    "ruleCode": "R2_IMPERATIVE"
+  },
+  {
+   "occurrenceKey": "1927|claims|1024|1887",
+   "postNum": 1927,
+   "start": 1024,
+   "end": 1887,
+   "text": "\"Sec. 12.  In accordance with Article 33 of the UCMJ, as amended by section 5204 of the MJA, the Secretary of Defense, in consultation with the Secretary of Homeland Security, will issue nonbinding guidance regarding factors that commanders, convening authorities, staff judge advocates, and judge advocates should take into account when exercising their duties with respect to the disposition of charges and specifications in the interest of justice and discipline under Articles 30 and 34 of the UCMJ. That guidance will take into account, with appropriate consideration of military requirements, the principles contained in official guidance of the Attorney General to attorneys for the Federal Government with respect to the disposition of Federal criminal cases in accordance with the principle of fair and evenhanded administration of Federal criminal law.\"",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB2-DROP-1927-claims-1024-1887",
+   "ruleCode": "LANEB_RECORD_WITHDRAWN",
+   "withdrawReason": "Two sentences of a pasted Executive Order section, already certified as a Claim (1035..1527) and a Directive (1528..1887). The wide record additionally swallows the 'Sec. 12.' heading.",
+   "adjudication": "E — WITHDRAW",
+   "adjudicationReason": "Two sentences of a pasted Executive Order section, already certified as a Claim (1035..1527) and a Directive (1528..1887). The wide record additionally swallows the 'Sec. 12.' heading."
   },
   {
    "occurrenceKey": "1927|claims|2154|2181",
@@ -12747,6 +12998,23 @@
    "ruleCode": "OWNER_APPLY_OVERRIDE_SOURCE"
   },
   {
+   "occurrenceKey": "2912|claims|75|302",
+   "postNum": 2912,
+   "start": 75,
+   "end": 302,
+   "text": "Now that the 2 year Russian Collusion case has fallen apart, there was no Collusion except [bye] Crooked Hillary and the Democrats, they say, “gee, I have an idea, let’s look at Trump’s finances and every deal he has ever done.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB2-DROP-2912-claims-75-302",
+   "ruleCode": "LANEB_NESTED_FRAGMENT_WITHDRAWN",
+   "withdrawReason": "a partial of the same quoted tweet — it starts after 'Oh' I see!' and stops before the last sentence, so it is a substring of the quotation rather than a unit of it",
+   "adjudication": "A — the nested or absorbed fragment withdrawn with it",
+   "adjudicationReason": "a partial of the same quoted tweet — it starts after 'Oh' I see!' and stops before the last sentence, so it is a substring of the quotation rather than a unit of it"
+  },
+  {
    "occurrenceKey": "2912|claims|477|549",
    "postNum": 2912,
    "start": 477,
@@ -12979,6 +13247,22 @@
    "adjudicationReason": "the certified span crossed a sentence boundary only because it swallowed 1 non-semantic line(s) — links, board pointers or bracketed labels. Trimmed to the one prose sentence it actually covers; the category is unchanged."
   },
   {
+   "occurrenceKey": "2939|claims|400|416",
+   "postNum": 2939,
+   "start": 400,
+   "end": 416,
+   "text": "Criminal aliens.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "2939|claims|248|435",
+   "actionId": "LB2-SPAN-2939-claims-248-435",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "The first and third sentences of the quoted passage are already certified, at 247..399 and 417..436. Only 'Criminal aliens.' has no record, so the wide span is re-spanned onto it."
+  },
+  {
    "occurrenceKey": "2943|namedEntities|1150|1156",
    "postNum": 2943,
    "sentenceId": "p2943-s012",
@@ -13175,6 +13459,22 @@
    "supersededKeys": [],
    "actionId": "A-DQ-p2971-s015",
    "ruleCode": "R2_IMPERATIVE"
+  },
+  {
+   "occurrenceKey": "2973|claims|184|200",
+   "postNum": 2973,
+   "start": 184,
+   "end": 200,
+   "text": "Criminal aliens.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": "claim",
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "trimmedFrom": "2973|claims|32|219",
+   "actionId": "LB2-SPAN-2973-claims-32-219",
+   "ruleCode": "LANEB_SPAN_REPAIR",
+   "adjudication": "B — REPAIR_GEOMETRY",
+   "adjudicationReason": "The same passage on another drop, and the same shape: 31..183 and 201..220 are certified, 'Criminal aliens.' is not. Re-spanned onto it."
   },
   {
    "occurrenceKey": "2988|directives|56|81",
@@ -14387,6 +14687,23 @@
    }
   },
   {
+   "occurrenceKey": "3580|claims|213|326",
+   "postNum": 3580,
+   "start": 213,
+   "end": 326,
+   "text": "Educate and inform the whole mass of people. They are the only sure reliance for the preservation of our liberty.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB2-DROP-3580-claims-213-326",
+   "ruleCode": "LANEB_RECORD_WITHDRAWN",
+   "withdrawReason": "The quoted Jefferson passage is already certified as a Directive (212..257) and a Claim (258..327), each carrying its own quotation mark. This record covers both and drops both marks.",
+   "adjudication": "E — WITHDRAW",
+   "adjudicationReason": "The quoted Jefferson passage is already certified as a Directive (212..257) and a Claim (258..327), each carrying its own quotation mark. This record covers both and drops both marks."
+  },
+  {
    "occurrenceKey": "3582|questions|83|101",
    "postNum": 3582,
    "sentenceId": "p3582-s002",
@@ -14565,6 +14882,23 @@
    ],
    "actionId": "A-DQ-p3588-s010",
    "ruleCode": "R1_INTERROGATIVE"
+  },
+  {
+   "occurrenceKey": "3588|claims|726|786",
+   "postNum": 3588,
+   "start": 726,
+   "end": 786,
+   "text": "Precursor postings occurred on 4ch? FB? Twitter? Reddit? IG?",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB2-DROP-3588-claims-726-786",
+   "ruleCode": "LANEB_RECORD_WITHDRAWN",
+   "withdrawReason": "Five sentences, and every one of them is already a certified Question — 'Precursor postings occurred on 4ch?', 'FB?', 'Twitter?', 'Reddit?', 'IG?'. A Claim over five questions is the wrong category five times over.",
+   "adjudication": "E — WITHDRAW",
+   "adjudicationReason": "Five sentences, and every one of them is already a certified Question — 'Precursor postings occurred on 4ch?', 'FB?', 'Twitter?', 'Reddit?', 'IG?'. A Claim over five questions is the wrong category five times over."
   },
   {
    "occurrenceKey": "3588|directives|1250|1275",
@@ -15974,6 +16308,23 @@
    "ruleCode": "OWNER_DROP_FALSE_SECONDARY"
   },
   {
+   "occurrenceKey": "4122|claims|126|510",
+   "postNum": 4122,
+   "start": 126,
+   "end": 510,
+   "text": "A: No. Such information is protected from public disclosure, in accordance with current law and Department of Justice and FBI policy. This policy preserves the integrity of the investigation and the privacy of individuals involved in the investigation prior to any public charging for violations of the law. It also serves to protect the rights of people not yet charged with a crime.",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB2-DROP-4122-claims-126-510",
+   "ruleCode": "LANEB_RECORD_WITHDRAWN",
+   "withdrawReason": "Three sentences of a pasted FBI answer, all three already certified as claims of their own (133..259, 260..433, 434..510). The wide record adds only the 'A: No.' label.",
+   "adjudication": "E — WITHDRAW",
+   "adjudicationReason": "Three sentences of a pasted FBI answer, all three already certified as claims of their own (133..259, 260..433, 434..510). The wide record adds only the 'A: No.' label."
+  },
+  {
    "occurrenceKey": "4123|directives|225|246",
    "postNum": 4123,
    "sentenceId": "p4123-s004",
@@ -17346,6 +17697,23 @@
    "adjudicationReason": "the certified span crossed a sentence boundary only because it swallowed 1 non-semantic line(s) — links, board pointers or bracketed labels. Trimmed to the one prose sentence it actually covers; the category is unchanged."
   },
   {
+   "occurrenceKey": "4630|claims|755|999",
+   "postNum": 4630,
+   "start": 755,
+   "end": 999,
+   "text": "Mark Benavides, was charged with having sex with a minor, inducing a child under 18 to have sex and compelling prostitution of at least nine legal clients and possession of child pornography. He was found guilty on six counts of sex trafficking",
+   "sourceDisposition": "q_authored",
+   "primaryCategory": null,
+   "withdrawn": true,
+   "secondarySemantics": [],
+   "reviewDispositions": [],
+   "actionId": "LB2-DROP-4630-claims-755-999",
+   "ruleCode": "LANEB_RECORD_WITHDRAWN",
+   "withdrawReason": "The record starts mid-sentence, at 'Mark Benavides,' rather than at 'Democratic Texas attorney and activist,' — and both sentences it half-covers are already certified in full at 715..946 and 947..1000.",
+   "adjudication": "E — WITHDRAW",
+   "adjudicationReason": "The record starts mid-sentence, at 'Mark Benavides,' rather than at 'Democratic Texas attorney and activist,' — and both sentences it half-covers are already certified in full at 715..946 and 947..1000."
+  },
+  {
    "occurrenceKey": "4630|claims|2042|2239",
    "postNum": 4630,
    "sentenceId": "p4630-s013",
@@ -18669,7 +19037,7 @@
   }
  ],
  "appliedTo": {
-  "postsSha256": "845d00b718ce5ab7833ccf168a9f040a9c9aeed67934100974a4b23ccc584496",
+  "postsSha256": "1f5a5df4fa0368122f78e4bebbc10fc9cf50254f389c704922b180b02d33447f",
   "questionsSha256": "d36dfc86ea8de5531183fe24030011aeefe76826df8b3579d820d24025376bad",
   "dispositionsSha256": "0df3ba934b21058af5779806eec0c6d2219d63777d85edcc48f09518646c59ce",
   "extraSets": {
@@ -18678,7 +19046,8 @@
    "step3b1-b2c-actions.jsonl": "34fb5fedfa40a0e3ed8c1b2f6bef3ff2448467931ab72dc03db6e5cb03058678",
    "step3b1-b3-actions.jsonl": "fc2f9f5a571b515fc9624f417e2abf6610e7f5a2cc8e8e0cab81a42f77df88f7",
    "step3b1-r3-actions.jsonl": "91c6bccf00928f5304cc08c44bdec473d9020c831302fbcd8ae14f2fe10bbd0c",
-   "step3b1-lb1-actions.jsonl": "0d2670d27c5eedbf316d6253bd74fe691f861ca43de4a8447174aacba95bf740"
+   "step3b1-lb1-actions.jsonl": "0d2670d27c5eedbf316d6253bd74fe691f861ca43de4a8447174aacba95bf740",
+   "step3b1-lb2-actions.jsonl": "75afd5eba04e17f5fe397557bb0b7040760f0596bf75e0e181fa5105bc8b9ef8"
   }
  }
 }
