@@ -204,8 +204,10 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
             inExtras && !extrasOpen ? 'text-q-accent' : 'text-gray-400 hover:text-gray-200'
           }`}
         >
-          <span className="text-base">🧰</span>
-          Extras
+          {/* The grey dot, same as every Q section row above it — this reads as one of the
+              archive's own rows rather than a utility menu bolted to the bottom. */}
+          <span className="w-2 h-2 rounded-full shrink-0 bg-gray-500" />
+          Q Extras
           <span className={`ml-auto text-[10px] text-gray-500 transition-transform ${extrasOpen ? 'rotate-90' : ''}`}>▶</span>
         </button>
 
