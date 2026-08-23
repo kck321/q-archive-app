@@ -53,9 +53,7 @@ export default function Donate() {
         <div className="text-sm text-gray-400 leading-relaxed mt-3 space-y-3">
           <p>
             This project is free, open source, and has no ads, no tracking, and nothing
-            behind a paywall. It runs on time more than money — but the AI analysis behind
-            the claims, predictions, and checkable claims does cost real money to produce
-            across nearly 5,000 drops.
+            behind a paywall. It runs on time more than money.
           </p>
           <p>
             If it's been useful to you and you'd like to chip in, crypto is below. Entirely
