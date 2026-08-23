@@ -39,7 +39,11 @@ const analysisLinks = [
   ...(CAN_EDIT ? [OVERLAPS_LINK] : []),
 ]
 
-const bottomLinks = [
+// EXTRAS — collapsed by owner ruling 2026-08-23. Everything here is a reference tool or a
+// page about the site rather than one of the certified analysis sections, so the sidebar
+// keeps the archive and the sections at top level and folds these behind one row. The routes
+// are untouched; only their permanent slots go.
+const extrasLinks = [
   { to: '/tripcodes', label: 'Q Tripcodes',     icon: '🔐' },
   { to: '/topics',    label: 'Q Clusters',      icon: '📖' },
   { to: '/links',     label: 'All Q Links',     icon: '🌐' },
@@ -49,6 +53,11 @@ const bottomLinks = [
   { to: '/method',    label: 'How This Works',  icon: 'ⓘ' },
   { to: '/feedback',  label: 'Comments & Ideas', icon: '💬' },
   { to: '/download',  label: 'Get the App',     icon: '⬇️' },
+]
+
+const bottomLinks = [
+  // Support stays at top level: a donation link inside a collapsed menu is a donation link
+  // nobody finds.
   { to: '/donate',    label: 'Support',         icon: '❤️' },
   // The Dashboard is the editorial workbench, not a reader feature. CAN_EDIT folds to a
   // literal false in the public build, so this entry (and its route in App.tsx) never
@@ -67,6 +76,15 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
   const activeTab = searchParams.get('tab')
   const activeStatus = searchParams.get('status')
   const [flashKey, setFlashKey] = useState<string | null>(null)
+
+  // The Extras group starts closed, and opens by itself when the route is inside it — so a
+  // reader who arrives on one of these pages from a cross-link can see where they are. Once
+  // the reader clicks the row, their choice wins for the rest of the session; the row keeps
+  // the accent colour while a page inside it is active but folded away. Derived rather than
+  // synced in an effect, so there is no state to keep in step with the route.
+  const inExtras = extrasLinks.some(l => location.pathname === l.to)
+  const [extrasChoice, setExtrasChoice] = useState<boolean | null>(null)
+  const extrasOpen = extrasChoice ?? inExtras
 
   const flash = useCallback((key: string) => {
     setFlashKey(null)
@@ -174,6 +192,46 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
             </Fragment>
           )
         })}
+
+        {/* Extras — one row that folds the reference tools and the about-the-site pages away.
+            stopPropagation because <nav> closes the mobile drawer on any click, and toggling
+            the group is not navigating. */}
+        <button
+          type="button"
+          onClick={e => { e.stopPropagation(); setExtrasChoice(!extrasOpen) }}
+          aria-expanded={extrasOpen}
+          className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-white/5 ${
+            inExtras && !extrasOpen ? 'text-q-accent' : 'text-gray-400 hover:text-gray-200'
+          }`}
+        >
+          <span className="text-base">🧰</span>
+          Extras
+          <span className={`ml-auto text-[10px] text-gray-500 transition-transform ${extrasOpen ? 'rotate-90' : ''}`}>▶</span>
+        </button>
+
+        {extrasOpen && (
+          <div className="ml-2 pl-2 border-l border-q-border space-y-1">
+            {extrasLinks.map(l => (
+              <NavLink
+                key={l.to}
+                to={l.to}
+                onClick={() => flash(l.to)}
+                className={({ isActive }) =>
+                  // Tighter than a top-level row on purpose: the indent costs ~20px, which is
+                  // enough to wrap "Resolution Center" onto two lines at w-56.
+                  `flex items-center gap-2 px-2 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap ${flashKey === l.to ? 'animate-nav-flash' : ''} ${
+                    isActive
+                      ? 'bg-q-accent/20 text-q-accent'
+                      : 'text-gray-400 hover:text-gray-200 hover:bg-white/5'
+                  }`
+                }
+              >
+                <span className="text-base">{l.icon}</span>
+                {l.label}
+              </NavLink>
+            ))}
+          </div>
+        )}
 
         {/* Bottom links */}
         {bottomLinks.map(l => (
