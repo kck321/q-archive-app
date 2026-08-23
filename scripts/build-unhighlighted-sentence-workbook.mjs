@@ -158,6 +158,26 @@ function validationsFor(count, firstReviewCol) {
     + '</dataValidations>'
 }
 
+// ── Post numbers — every rollup row carries the drops it came from ───────────
+// A rollup row that only says "4,350 posts" cannot be checked against the archive. Excel's hard
+// cell cap is 32,767 characters, so the list spills into a continuation column when it has to,
+// and that column only exists on a sheet that actually needs it — no truncation, ever.
+const POSTS_CELL_MAX = 32000
+const postNumbers = g => (Array.isArray(g.posts) ? g.posts : [...g.posts].sort((a, b) => a - b))
+  .map(n => `#${n}`).join(' ')
+const postsSplit = t => {
+  if (t.length <= POSTS_CELL_MAX) return [t, '']
+  const i = t.lastIndexOf(' ', POSTS_CELL_MAX)
+  return i < 0 ? [t.slice(0, POSTS_CELL_MAX), t.slice(POSTS_CELL_MAX)] : [t.slice(0, i), t.slice(i + 1)]
+}
+const postsHead = g => postsSplit(postNumbers(g))[0]
+const postsTail = g => postsSplit(postNumbers(g))[1]
+/** [header, width, style, accessor] pair(s) for the complete post list of a grouped sheet. */
+const postCols = (data, header) => [
+  [header, 52, S.wrap, postsHead],
+  ...(data.some(g => postsTail(g)) ? [[`${header} (continued)`, 52, S.wrap, postsTail]] : []),
+]
+
 // ── Distinct Wordings — one ruling per wording, not per row ──────────────────
 const byWording = new Map()
 for (const r of rows) {
@@ -205,7 +225,7 @@ const WORDING_COLS = [
   ['Certified But Not Painted', 32, S.wrap, w => w.certified.join(' | ')],
   ['Quoted / Source?', 13, S.centre, w => w.quoted ? 'YES' : 'NO'],
   ['Routing Hint', 28, S.centre, w => w.hints.join(' | ')],
-  ['First 25 Post Numbers', 46, S.wrap, w => w.posts.slice(0, 25).map(n => `#${n}`).join(' ') + (w.posts.length > 25 ? ` … +${w.posts.length - 25}` : '')],
+  ...postCols(wordings, 'All Post Numbers'),
   ['FINAL CATEGORY', 28, S.review, () => ''],
   ['Subtype', 22, S.review, () => ''],
   ['Explanation / Why', 60, S.review, () => ''],
@@ -250,6 +270,7 @@ const PLAN_COLS = [
   ['Distinct Wordings', 12, S.centre, g => g.wordings.size],
   ['Posts Affected', 12, S.centre, g => g.posts.size],
   ['Example Line', 70, S.wrap, g => g.example],
+  ...postCols(planRows, 'All Post Numbers'),
   ['OWNER DECISION', 34, S.review, () => ''],
   ['Notes', 60, S.review, () => ''],
 ]
@@ -269,6 +290,7 @@ const PROPOSAL_COLS = [
   ['Distinct Wordings', 12, S.centre, g => g.wordings.size],
   ['Posts Affected', 12, S.centre, g => g.posts.size],
   ['Example Line', 70, S.wrap, g => g.example],
+  ...postCols(proposalRows, 'All Post Numbers'),
   ['OWNER DECISION', 34, S.review, () => ''],
   ['GPT CATEGORY (paste here)', 32, S.amber, () => ''],
 ]

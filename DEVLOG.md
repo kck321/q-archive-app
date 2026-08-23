@@ -6734,3 +6734,46 @@ Four decisions cover all of it: **POLICY RULING 4,542** (seven wordings — 42% 
   middle of a word — `These peo&gt;&gt;567493ple are stupid.` — so no rendered block matches.
 
 **Nothing was applied, rebuilt or deployed.** Production stays at seed 88.
+
+---
+
+## 2026-08-22 — Every rollup row in the unhighlighted-review workbook now carries its post numbers
+
+**Asked:** "I would also like the post number associated to each item that is not highlighted that
+you found in the excel file too."
+
+**What was missing.** The two per-line sheets already answered it — *Review Queue* and
+*Unclassified Prose* lead with `Q Post Number`. The three rollup sheets did not:
+
+| Sheet | Before | After |
+|---|---|---|
+| Distinct Wordings | `First 25 Post Numbers` — truncated with `… +4327` | `All Post Numbers` — every drop |
+| Action Plan | `Posts Affected` count only | + `All Post Numbers` |
+| Category Proposals | `Posts Affected` count only | + `All Post Numbers` |
+
+A rollup row that only says "4,350 posts" cannot be checked against the archive, and the 25-post
+cap hid 99% of the signature population.
+
+**Change** — `scripts/build-unhighlighted-sentence-workbook.mjs` only, no audit data touched:
+`postCols(data, header)` emits the complete `#n #n …` list. Excel's hard cell cap is 32,767
+characters, so `postsSplit()` spills into a `… (continued)` column at a space boundary, and that
+column is only added to a sheet where some row actually needs it — never a silent truncation. The
+longest list built is 25,239 chars (the `Q` sign-off, 4,352 drops), so no continuation column
+appears today. Data-validation dropdowns still land correctly: `firstReview()` finds the review
+block by header name, so inserting columns ahead of it moves the `sqref` with it.
+
+**Proof** (read back out of the written .xlsx, not out of the builder):
+
+- Post-token count equals the row's own `Distinct Posts` / `Posts Affected` figure on **all 4,983
+  rollup rows** (4,859 + 23 + 101). No duplicates, every token `#\d+`.
+- Rebuilt independently from the *Review Queue* sheet: Action Plan 23/23 and Category Proposals
+  101/101 post sets match **exactly**; Distinct Wordings 4,859/4,859 match exactly when grouped by
+  the same `normKey` the sheet groups on (`t.toLowerCase().replace(/[^a-z0-9]+/g,' ').trim()`).
+- Confirmed no owner entries existed in any `FINAL CATEGORY` / `OWNER DECISION` / `GPT` column
+  before rebuilding — nothing of the owner's was overwritten.
+
+**Delivered to** `Desktop\Q Unhighlighted Review - 2026-08-22 (post numbers).xlsx` under a new
+name because the original was open in Excel and locked (`Device or resource busy`). Swap it into
+the original filename once Excel is closed.
+
+**AUDIT_ONLY.** Nothing classified, nothing rebuilt, nothing deployed. Production stays at seed 88.
