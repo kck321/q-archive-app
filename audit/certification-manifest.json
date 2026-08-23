@@ -1,29 +1,29 @@
 {
- "certifiedAt": "2026-08-22T12:51:42.942Z",
+ "certifiedAt": "2026-08-23T22:18:47.566Z",
  "sections": 8,
- "seedVersion": 88,
+ "seedVersion": 89,
  "note": "Every count here is recomputed from the artifacts, never copied forward. Verify with: node scripts/certification-manifest.mjs --verify",
  "counts": {
   "posts": 4966,
   "questions": 6321,
   "questionRowsShipped": 6637,
-  "directives": 2940,
-  "claims": 8676,
-  "predictions": 843,
+  "directives": 2902,
+  "claims": 8631,
+  "predictions": 841,
   "evidence": 6590,
-  "entitiesCanonical": 1214,
-  "entitiesMentions": 8821,
+  "entitiesCanonical": 1223,
+  "entitiesMentions": 8831,
   "entitiesCoreMentions": 5236,
-  "entitiesTailMentions": 2870,
+  "entitiesTailMentions": 2868,
   "themes": 2644,
   "codes": 1957,
   "resolutionQueue": 115
  },
  "artifacts": {
   "posts.json": {
-   "sha256": "79711cf841b5dee2e347ba1def4a31e066c46840f7258656034efc6c6febfe6b",
-   "semanticSha256": "5d6f6b6a32581d4331de8a63a3dbd03285e7a757d388be82c5007d90ffd29ba2",
-   "bytes": 9952130
+   "sha256": "e3b25545bf12f00bfaf41cb2a4a20cc343fe779ac49996dab025adec106b58be",
+   "semanticSha256": "362af7192e35758e95dfda4bab90478e74097f366e1eb31d8f72feafd748d623",
+   "bytes": 9972843
   },
   "questions.json": {
    "sha256": "1a3787f0dceada2bbfe9c4dc9e75670e187312051cd0f5a11b2c888a18cdf253",
@@ -36,9 +36,9 @@
    "bytes": 2047538
   },
   "entities.json": {
-   "sha256": "1409797889f2d2d6ca3b117cca28c774918de4d305736baccd2bfa4d1aaf24b5",
-   "semanticSha256": "38d3cdbf6aa6a9f39ee4f80c5b1c314ed3535e3f3cd5a43b13dab2f211f31640",
-   "bytes": 425766
+   "sha256": "ad892b043781c5c13e03dd8550ac9103afb1438f0c2c31aa0c5e54cdf0c02092",
+   "semanticSha256": "af86c8d21e70da101479758c7be41103b3bc94601cfa07a1b9d3cba0d73b3031",
+   "bytes": 429788
   },
   "themes.json": {
    "sha256": "0b6395e99cd5082cf55eb676b061a3fd5342b96e35bcde17614f3c58935f33d8",
@@ -56,19 +56,19 @@
    "bytes": 122814
   },
   "relationships.json": {
-   "sha256": "90b4f01d665cf789bf242290f868e1e50370a5d39a836e57a8ff1d7e642d0cf8",
-   "semanticSha256": "71a7717761fa3f068310029187c3b771b8979a325f9d17fa851fc4b9369e59a6",
-   "bytes": 2170394
+   "sha256": "b12b6338aaaa232f60d3acfbca80a05c0cbe53b689f40b9b4e1bc450aea534ed",
+   "semanticSha256": "d6ba684213867965955559b1b44c57b984d36938935c7e62f10637a02e798daf",
+   "bytes": 2163914
   },
   "search-index.json": {
-   "sha256": "bcb1cac58d120d718f4285983188b69ab00012874ac36a82d1ed5bad4f023197",
-   "semanticSha256": "97365670aa01c3229c8dc966786c04f086c922e75092cee0525bfef3218c3b30",
-   "bytes": 7514317
+   "sha256": "d28dc1b17572cdfd8aa8b905370f61092c9b013d6195f6060974868ee7d8bb56",
+   "semanticSha256": "2d8c39e149a83552076a8a9ba9bc78ee5f934a3316872a1170682be92c9b878a",
+   "bytes": 7502332
   },
   "entity-hovers.json": {
-   "sha256": "7f6e469d6b779c70668708c95330e76078c16d1084ce272af00be42a9d492645",
-   "semanticSha256": "af319f23f988816021a9045c0141f0eb3716af0b3ab86ea43ce9dd2ef7d2e68a",
-   "bytes": 2113699
+   "sha256": "b2e2482b2d735ad444280d1f7963d78847e4b475156c5d3ea6939c3932efea97",
+   "semanticSha256": "b06f4be30ad7529cfb2e5be77c96364d31ef9de2634994ee3547355e12fd2d0e",
+   "bytes": 2112500
   }
  },
  "canonical": {
@@ -79,34 +79,34 @@
    "posts": 1705
   },
   "directives": {
-   "occurrences": 2940,
-   "distinct": 1829,
-   "posts": 1689
+   "occurrences": 2902,
+   "distinct": 1830,
+   "posts": 1696
   },
   "claims": {
-   "occurrences": 8676,
-   "distinct": 6795,
-   "posts": 3056
+   "occurrences": 8631,
+   "distinct": 6765,
+   "posts": 3050
   },
   "predictions": {
-   "occurrences": 843,
-   "posts": 672
+   "occurrences": 841,
+   "posts": 671
   },
   "evidence": {
    "occurrences": 6590,
    "posts": 3883
   },
   "entities": {
-   "canonical": 1214,
+   "canonical": 1223,
    "detectedCanonical": 1292,
    "ownerRulings": 118,
    "ownerMerges": 1,
    "queueRulings": 508,
-   "mentions": 8821,
+   "mentions": 8831,
    "coreEntities": 93,
    "coreRegistryMentions": 5236,
-   "tailEntities": 967,
-   "tailMentions": 2870
+   "tailEntities": 966,
+   "tailMentions": 2868
   },
   "themes": {
    "assignments": 2644,

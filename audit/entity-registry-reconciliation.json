@@ -2,8 +2,8 @@
   "note": "The registry decrements that follow Step 3B-1's duplicate-record collapse. One per removed record, named by the identity that record carried. Not a recount from the render.",
   "duplicateRecordsRemoved": 99,
   "mentionsBefore": 8920,
-  "mentionsAfter": 8821,
-  "renderedRecords": 8821,
+  "mentionsAfter": 8831,
+  "renderedRecords": 8831,
   "perIdentity": [
     {
       "canonical": "Robert Mueller",

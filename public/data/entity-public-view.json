@@ -1,7 +1,7 @@
 {
  "breakdown": [
   {
-   "count": 1076,
+   "count": 1085,
    "key": "prose",
    "label": "named in Q’s prose"
   },
@@ -9781,18 +9781,6 @@
      "post": 4278
     }
    ]
-  },
-  "qe-7f496c37145a": {
-   "aliasPosts": {
-    "Ephesians": 2
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "1432": 1,
-    "1886": 1
-   },
-   "posts": 2,
-   "rowId": "qe-7f496c37145a"
   },
   "qe-7f7a9c8af686": {
    "aliasPosts": {
@@ -20463,18 +20451,130 @@
      "post": 1910
     }
    ]
+  },
+  "qe-scripture-1-cor-13-4-13": {
+   "aliasPosts": {
+    "1 Cor 13:4-13": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1432": 1
+   },
+   "posts": 1,
+   "rowId": "qe-scripture-1-cor-13-4-13"
+  },
+  "qe-scripture-1-corinthians-16-13": {
+   "aliasPosts": {
+    "1 Corinthians 16:13": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "2431": 1
+   },
+   "posts": 1,
+   "rowId": "qe-scripture-1-corinthians-16-13"
+  },
+  "qe-scripture-2-thessalonians-3-3": {
+   "aliasPosts": {
+    "2 Thessalonians 3:3": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "2744": 1
+   },
+   "posts": 1,
+   "rowId": "qe-scripture-2-thessalonians-3-3"
+  },
+  "qe-scripture-colossians-3-5": {
+   "aliasPosts": {
+    "Colossians 3:5": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1712": 1
+   },
+   "posts": 1,
+   "rowId": "qe-scripture-colossians-3-5"
+  },
+  "qe-scripture-corinthians-13-4-13": {
+   "aliasPosts": {
+    "Corinthians 13:4-13": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1886": 1
+   },
+   "posts": 1,
+   "rowId": "qe-scripture-corinthians-13-4-13"
+  },
+  "qe-scripture-ephesians-6-10-18": {
+   "aliasPosts": {
+    "Ephesians 6:10-18": 3
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1432": 1,
+    "1886": 1,
+    "2403": 1
+   },
+   "posts": 3,
+   "rowId": "qe-scripture-ephesians-6-10-18"
+  },
+  "qe-scripture-jeremiah-29-11": {
+   "aliasPosts": {
+    "Jeremiah 29:11": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "522": 1
+   },
+   "posts": 1,
+   "rowId": "qe-scripture-jeremiah-29-11"
+  },
+  "qe-scripture-matthew-6-13": {
+   "aliasPosts": {
+    "Matthew 6:13": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "2744": 1
+   },
+   "posts": 1,
+   "rowId": "qe-scripture-matthew-6-13"
+  },
+  "qe-scripture-proverbs-13-9": {
+   "aliasPosts": {
+    "Proverbs 13:9": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "4390": 1
+   },
+   "posts": 1,
+   "rowId": "qe-scripture-proverbs-13-9"
+  },
+  "qe-scripture-psalm-46-1": {
+   "aliasPosts": {
+    "Psalm 46:1": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "2744": 1
+   },
+   "posts": 1,
+   "rowId": "qe-scripture-psalm-46-1"
   }
  },
  "ruledOn": "2026-08-17",
  "sourceNote": "The post linked this source. It is not necessarily named in Q’s prose, and it is never counted as a mention.",
  "totals": {
-  "canonicalEntities": 1214,
-  "dormantReserved": 229,
-  "mentions": 8821,
+  "canonicalEntities": 1223,
+  "dormantReserved": 230,
+  "mentions": 8831,
   "mergedIdentities": 23,
   "mergedRows": 10,
-  "proseMentioned": 1076,
-  "publicRows": 1201,
+  "proseMentioned": 1085,
+  "publicRows": 1210,
   "repeatBadges": 1063,
   "sourceOnly": 138,
   "sourcePostChips": 358,

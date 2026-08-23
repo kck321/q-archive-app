@@ -2,28 +2,14 @@
  "note": "Live certified entities with no GLOBAL hover synopsis yet. The gap is recorded here rather than filled, because a synopsis is authored editorial text about a real person or organisation and extract-entity-hovers.mjs refuses to publish an unreviewed one. Cross-section invariant 10b asserts this list is exactly the difference between the entity set and the published synopses, so the gap can never widen silently.",
  "why": "All 39 arrived with the 2026-08-20 unhighlighted-sentence queue ruling, which certified 39 new identities. Nothing was removed: zero published synopses point at an entity that is no longer live.",
  "ruledOn": "2026-08-20",
- "count": 39,
+ "count": 49,
  "entities": [
   {
-   "id": "qe-e7331aea9c4b",
-   "canonical": "Mainstream Media",
-   "type": "media_organization",
-   "posts": 3,
-   "mentions": 3
-  },
-  {
-   "id": "qe-8e89e8bf8a1d",
-   "canonical": "Secret Agents",
-   "type": "other_named_entity",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-3d39629f9ecd",
-   "canonical": "The Cult",
+   "id": "qe-271807d35b2e",
+   "canonical": "We the People",
    "type": "political_group",
-   "posts": 1,
-   "mentions": 1
+   "posts": 29,
+   "mentions": 34
   },
   {
    "id": "qe-442a0d902541",
@@ -33,18 +19,11 @@
    "mentions": 9
   },
   {
-   "id": "qe-73d64a484e4d",
-   "canonical": "Eye of Providence",
-   "type": "religious_spiritual",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-69bbadce263e",
-   "canonical": "Wizards & Warlocks",
-   "type": "coded_alias",
-   "posts": 2,
-   "mentions": 2
+   "id": "qe-ccc8c488181f",
+   "canonical": "Shadow Presidency",
+   "type": "political_group",
+   "posts": 7,
+   "mentions": 7
   },
   {
    "id": "qe-f1c84297eabe",
@@ -54,22 +33,57 @@
    "mentions": 6
   },
   {
-   "id": "qe-2d1b610f1312",
-   "canonical": "MAGA",
+   "id": "qe-1ef281a95f22",
+   "canonical": "Shadow Government",
    "type": "political_group",
-   "posts": 1,
-   "mentions": 1
+   "posts": 4,
+   "mentions": 4
   },
   {
-   "id": "qe-6c9bfa949221",
-   "canonical": "Terminal 5",
-   "type": "facility_property",
-   "posts": 1,
-   "mentions": 1
+   "id": "qe-scripture-ephesians-6-10-18",
+   "canonical": "Ephesians 6:10-18",
+   "type": "creative_work",
+   "posts": 3,
+   "mentions": 3
+  },
+  {
+   "id": "qe-e7331aea9c4b",
+   "canonical": "Mainstream Media",
+   "type": "media_organization",
+   "posts": 3,
+   "mentions": 3
+  },
+  {
+   "id": "qe-e6dca3536e13",
+   "canonical": "Apache",
+   "type": "coded_alias",
+   "posts": 2,
+   "mentions": 2
+  },
+  {
+   "id": "qe-a8798d21e9cf",
+   "canonical": "Eye of Ra",
+   "type": "religious_spiritual",
+   "posts": 2,
+   "mentions": 2
   },
   {
    "id": "qe-65a74e4e6abb",
    "canonical": "Fox Three",
+   "type": "coded_alias",
+   "posts": 2,
+   "mentions": 2
+  },
+  {
+   "id": "qe-2bfd139c428f",
+   "canonical": "McLean, Virginia",
+   "type": "location",
+   "posts": 2,
+   "mentions": 2
+  },
+  {
+   "id": "qe-d69cccf9e5fa",
+   "canonical": "Red Castle",
    "type": "coded_alias",
    "posts": 2,
    "mentions": 2
@@ -82,100 +96,37 @@
    "mentions": 2
   },
   {
-   "id": "qe-63904d84edb1",
-   "canonical": "Maverick",
+   "id": "qe-69bbadce263e",
+   "canonical": "Wizards & Warlocks",
    "type": "coded_alias",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-81aabd241ebe",
-   "canonical": "NAT G",
-   "type": "coded_alias",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-a8798d21e9cf",
-   "canonical": "Eye of Ra",
-   "type": "religious_spiritual",
    "posts": 2,
    "mentions": 2
   },
   {
-   "id": "qe-271807d35b2e",
-   "canonical": "We the People",
-   "type": "political_group",
-   "posts": 29,
-   "mentions": 34
-  },
-  {
-   "id": "qe-23403a5e15c0",
-   "canonical": "WarGames",
+   "id": "qe-scripture-1-cor-13-4-13",
+   "canonical": "1 Cor 13:4-13",
    "type": "creative_work",
    "posts": 1,
    "mentions": 1
   },
   {
-   "id": "qe-e6dca3536e13",
-   "canonical": "Apache",
-   "type": "coded_alias",
-   "posts": 2,
-   "mentions": 2
-  },
-  {
-   "id": "qe-ff2721b349d1",
-   "canonical": "Dopey",
-   "type": "coded_alias",
+   "id": "qe-scripture-1-corinthians-16-13",
+   "canonical": "1 Corinthians 16:13",
+   "type": "creative_work",
    "posts": 1,
    "mentions": 1
   },
   {
-   "id": "qe-9271dec94a20",
-   "canonical": "Hilton family",
-   "type": "person",
+   "id": "qe-scripture-2-thessalonians-3-3",
+   "canonical": "2 Thessalonians 3:3",
+   "type": "creative_work",
    "posts": 1,
    "mentions": 1
   },
   {
-   "id": "qe-855d3dfd9c47",
-   "canonical": "JFK Con Room",
-   "type": "facility_property",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-22d61afede73",
-   "canonical": "M-Institute",
-   "type": "organization",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-2bfd139c428f",
-   "canonical": "McLean, Virginia",
+   "id": "qe-9b181e56a4c1",
+   "canonical": "Barcelona",
    "type": "location",
-   "posts": 2,
-   "mentions": 2
-  },
-  {
-   "id": "qe-c8500713493a",
-   "canonical": "RT Kenya",
-   "type": "media_organization",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-d69cccf9e5fa",
-   "canonical": "Red Castle",
-   "type": "coded_alias",
-   "posts": 2,
-   "mentions": 2
-  },
-  {
-   "id": "qe-6997635c7a7c",
-   "canonical": "The Art of the Deal",
-   "type": "creative_work",
    "posts": 1,
    "mentions": 1
   },
@@ -187,9 +138,30 @@
    "mentions": 1
   },
   {
-   "id": "qe-736412bb6b8a",
-   "canonical": "Vatican Bank",
-   "type": "financial_institution",
+   "id": "qe-40b3b980802c",
+   "canonical": "Castle Rock",
+   "type": "coded_alias",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-scripture-colossians-3-5",
+   "canonical": "Colossians 3:5",
+   "type": "creative_work",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-scripture-corinthians-13-4-13",
+   "canonical": "Corinthians 13:4-13",
+   "type": "creative_work",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-ff2721b349d1",
+   "canonical": "Dopey",
+   "type": "coded_alias",
    "posts": 1,
    "mentions": 1
   },
@@ -197,6 +169,20 @@
    "id": "qe-344c28f3a086",
    "canonical": "EH CA",
    "type": "coded_alias",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-73d64a484e4d",
+   "canonical": "Eye of Providence",
+   "type": "religious_spiritual",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-95b35eac2da9",
+   "canonical": "F-15",
+   "type": "military_asset_vessel",
    "posts": 1,
    "mentions": 1
   },
@@ -215,6 +201,27 @@
    "mentions": 1
   },
   {
+   "id": "qe-9271dec94a20",
+   "canonical": "Hilton family",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-scripture-jeremiah-29-11",
+   "canonical": "Jeremiah 29:11",
+   "type": "creative_work",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-855d3dfd9c47",
+   "canonical": "JFK Con Room",
+   "type": "facility_property",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
    "id": "qe-4ab13e3a5689",
    "canonical": "Lee S",
    "type": "person",
@@ -222,16 +229,9 @@
    "mentions": 1
   },
   {
-   "id": "qe-9b181e56a4c1",
-   "canonical": "Barcelona",
-   "type": "location",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-d7f841ca1ad1",
-   "canonical": "Shareblue",
-   "type": "media_organization",
+   "id": "qe-22d61afede73",
+   "canonical": "M-Institute",
+   "type": "organization",
    "posts": 1,
    "mentions": 1
   },
@@ -243,29 +243,29 @@
    "mentions": 1
   },
   {
-   "id": "qe-95b35eac2da9",
-   "canonical": "F-15",
-   "type": "military_asset_vessel",
+   "id": "qe-2d1b610f1312",
+   "canonical": "MAGA",
+   "type": "political_group",
    "posts": 1,
    "mentions": 1
   },
   {
-   "id": "qe-ccc8c488181f",
-   "canonical": "Shadow Presidency",
-   "type": "political_group",
-   "posts": 7,
-   "mentions": 7
+   "id": "qe-scripture-matthew-6-13",
+   "canonical": "Matthew 6:13",
+   "type": "creative_work",
+   "posts": 1,
+   "mentions": 1
   },
   {
-   "id": "qe-1ef281a95f22",
-   "canonical": "Shadow Government",
-   "type": "political_group",
-   "posts": 4,
-   "mentions": 4
+   "id": "qe-63904d84edb1",
+   "canonical": "Maverick",
+   "type": "coded_alias",
+   "posts": 1,
+   "mentions": 1
   },
   {
-   "id": "qe-40b3b980802c",
-   "canonical": "Castle Rock",
+   "id": "qe-81aabd241ebe",
+   "canonical": "NAT G",
    "type": "coded_alias",
    "posts": 1,
    "mentions": 1
@@ -276,6 +276,77 @@
    "type": "coded_alias",
    "posts": 1,
    "mentions": 1
+  },
+  {
+   "id": "qe-scripture-proverbs-13-9",
+   "canonical": "Proverbs 13:9",
+   "type": "creative_work",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-scripture-psalm-46-1",
+   "canonical": "Psalm 46:1",
+   "type": "creative_work",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-c8500713493a",
+   "canonical": "RT Kenya",
+   "type": "media_organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-8e89e8bf8a1d",
+   "canonical": "Secret Agents",
+   "type": "other_named_entity",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-d7f841ca1ad1",
+   "canonical": "Shareblue",
+   "type": "media_organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-6c9bfa949221",
+   "canonical": "Terminal 5",
+   "type": "facility_property",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-6997635c7a7c",
+   "canonical": "The Art of the Deal",
+   "type": "creative_work",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-3d39629f9ecd",
+   "canonical": "The Cult",
+   "type": "political_group",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-736412bb6b8a",
+   "canonical": "Vatican Bank",
+   "type": "financial_institution",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-23403a5e15c0",
+   "canonical": "WarGames",
+   "type": "creative_work",
+   "posts": 1,
+   "mentions": 1
   }
- ]
+ ],
+ "scriptureCitations": "The 10 scripture reference labels added by the 2026-08-23 verse-block ruling are listed here rather than given synopses. A synopsis is authored editorial text; what Ephesians 6:10-18 is belongs to the owner to write, not to a script to invent."
 }

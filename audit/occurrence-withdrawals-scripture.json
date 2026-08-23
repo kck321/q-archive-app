@@ -1,0 +1,33 @@
+{
+  "note": "Occurrences withdrawn by the 2026-08-23 verse-block ruling, because the citation label now carries them. Read BESIDE audit/occurrence-provenance-audit.json, never merged into it.",
+  "ruledOn": "2026-08-23",
+  "writtenBy": "scripts/apply-scripture-blocks.mjs",
+  "withdrawals": [
+    {
+      "occurrenceId": "#1432:0",
+      "postNum": 1432,
+      "index": 0,
+      "alias": "Ephesians",
+      "entityId": "qe-7f496c37145a",
+      "canonical": "Ephesians",
+      "originalProposedAction": "keep",
+      "reasonForWithdrawal": "superseded by the certified citation \"Ephesians 6:10-18\" — this occurrence is the book name INSIDE that label, never a standalone mention, so counting both records the same characters under two identities and paints the label as two touching spans",
+      "ownerRuling": "Owner ruling 2026-08-23: the verse section is the entity.",
+      "proposedAction": "remove-annotation",
+      "certifiedCountEffect": -1
+    },
+    {
+      "occurrenceId": "#1886:0",
+      "postNum": 1886,
+      "index": 0,
+      "alias": "Ephesians",
+      "entityId": "qe-7f496c37145a",
+      "canonical": "Ephesians",
+      "originalProposedAction": "keep",
+      "reasonForWithdrawal": "superseded by the certified citation \"Ephesians 6:10-18\" — this occurrence is the book name INSIDE that label, never a standalone mention, so counting both records the same characters under two identities and paints the label as two touching spans",
+      "ownerRuling": "Owner ruling 2026-08-23: the verse section is the entity.",
+      "proposedAction": "remove-annotation",
+      "certifiedCountEffect": -1
+    }
+  ]
+}

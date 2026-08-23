@@ -1,0 +1,343 @@
+{
+  "note": "Owner ruling 2026-08-23: a quoted passage of scripture is ONE Directive covering the whole passage, and the reference label beside it is an Entity. Resolved against post text by scripts/build-scripture-rulings.mjs; materialised by scripts/apply-scripture-blocks.mjs.",
+  "ruledOn": "2026-08-23",
+  "reverses": "The REMOVE_QUOTED_SCRIPTURE and REMOVE_PRAYER_TEXT rulings in audit/directives-religious-adjudication.json, for the passages listed here.",
+  "totals": {
+    "blocks": 31,
+    "posts": 27,
+    "citationOccurrences": 12,
+    "distinctCitations": 10,
+    "splitTodayDirectives": 69,
+    "splitTodayClaims": 45
+  },
+  "distinctCitations": [
+    "1 Cor 13:4-13",
+    "1 Corinthians 16:13",
+    "2 Thessalonians 3:3",
+    "Colossians 3:5",
+    "Corinthians 13:4-13",
+    "Ephesians 6:10-18",
+    "Jeremiah 29:11",
+    "Matthew 6:13",
+    "Proverbs 13:9",
+    "Psalm 46:1"
+  ],
+  "citationOnly": [
+    {
+      "post": 522,
+      "citation": "Jeremiah 29:11"
+    }
+  ],
+  "blocks": [
+    {
+      "post": 35,
+      "citation": null,
+      "words": 32,
+      "splitToday": {
+        "directives": 0,
+        "claims": 1
+      },
+      "block": "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life. Love is patient, love is kind."
+    },
+    {
+      "post": 37,
+      "citation": null,
+      "words": 4,
+      "splitToday": {
+        "directives": 1,
+        "claims": 0
+      },
+      "block": "Fight the good fight."
+    },
+    {
+      "post": 54,
+      "citation": null,
+      "words": 29,
+      "splitToday": {
+        "directives": 0,
+        "claims": 1
+      },
+      "block": "For I know the plans I have for you,” declares the LORD, “plans to prosper you and not to harm you, plans to give you hope and a future."
+    },
+    {
+      "post": 69,
+      "citation": null,
+      "words": 109,
+      "splitToday": {
+        "directives": 1,
+        "claims": 6
+      },
+      "block": "The LORD is my shepherd, I lack nothing. He makes me lie down in green pastures, he leads me beside quiet waters, he refreshes my soul. He guides me along the right paths for his name’s sake. Even though I walk through the darkest valley, I will fear no evil, for you are with me; your rod and your staff, they comfort me. You prepare a table before me in the presence of my enemies. You anoint my head with oil; my cup overflows. Surely your goodness and love will follow me all the days of my life, and I will dwell in the house of the LORD forever."
+    },
+    {
+      "post": 154,
+      "citation": null,
+      "words": 55,
+      "splitToday": {
+        "directives": 4,
+        "claims": 0
+      },
+      "block": "Our Father who art in heaven,\nHallowed be thy name.\nThy kingdom come.\nThy will be done\non earth as it is in heaven.\nGive us this day our daily bread,\nand forgive us our trespasses,\nas we forgive those who trespass against us,\nand lead us not into temptation,\nbut deliver us from evil."
+    },
+    {
+      "post": 791,
+      "citation": null,
+      "words": 29,
+      "splitToday": {
+        "directives": 0,
+        "claims": 1
+      },
+      "block": "For I know the plans I have for you,” declares the Lord, “plans to prosper you and not to harm you, plans to give you hope and a future."
+    },
+    {
+      "post": 1432,
+      "citation": "Ephesians 6:10-18",
+      "words": 200,
+      "splitToday": {
+        "directives": 5,
+        "claims": 3
+      },
+      "block": "Finally, be strong in the Lord and in his mighty power. Put on the full armor of God so that you can take your stand against the devil’s schemes. For our struggle is not against flesh and blood, but against the rulers, against the authorities, against the powers of this dark world and against the spiritual forces of evil in the heavenly realms. Therefore put on the full armor of God, so that when the day of evil comes, you may be able to stand your ground, and after you have done everything, to stand. Stand firm then, with the belt of truth buckled around your waist, with the breastplate of righteousness in place, and with your feet fitted with the readiness that comes from the gospel of peace. In addition to all this, take up the shield of faith, with which you can extinguish all the flaming arrows of the evil one. Take the helmet of salvation and the sword of the Spirit, which is the word of God. And pray in the Spirit on all occasions with all kinds of prayers and requests. With this in mind, be alert and always keep on praying for all the saints."
+    },
+    {
+      "post": 1432,
+      "citation": "1 Cor 13:4-13",
+      "words": 60,
+      "splitToday": {
+        "directives": 0,
+        "claims": 6
+      },
+      "block": "Love is patient, love is kind. It does not envy, it does not boast, it is not proud. It is not rude, it is not self-seeking, it is not easily angered, it keeps no record of wrongs. Love does not delight in evil but rejoices with the truth. It always protects, always trusts, always hopes, always perseveres. Love never fails."
+    },
+    {
+      "post": 1646,
+      "citation": null,
+      "words": 13,
+      "splitToday": {
+        "directives": 1,
+        "claims": 0
+      },
+      "block": "Be on your guard; stand firm in the faith; be courageous; be strong."
+    },
+    {
+      "post": 1712,
+      "citation": "Colossians 3:5",
+      "words": 31,
+      "splitToday": {
+        "directives": 1,
+        "claims": 0
+      },
+      "block": "Put to death, therefore, whatever belongs to your earthly nature: sexual immorality, impurity, lust, evil desires and greed, which is idolatry. 6 Because of these, the wrath of God is coming."
+    },
+    {
+      "post": 1886,
+      "citation": "Ephesians 6:10-18",
+      "words": 200,
+      "splitToday": {
+        "directives": 6,
+        "claims": 3
+      },
+      "block": "Finally, be strong in the Lord and in his mighty power. Put on the full armor of God so that you can take your stand against the devil’s schemes. For our struggle is not against flesh and blood, but against the rulers, against the authorities, against the powers of this dark world and against the spiritual forces of evil in the heavenly realms. Therefore put on the full armor of God, so that when the day of evil comes, you may be able to stand your ground, and after you have done everything, to stand. Stand firm then, with the belt of truth buckled around your waist, with the breastplate of righteousness in place, and with your feet fitted with the readiness that comes from the gospel of peace. In addition to all this, take up the shield of faith, with which you can extinguish all the flaming arrows of the evil one. Take the helmet of salvation and the sword of the Spirit, which is the word of God. And pray in the Spirit on all occasions with all kinds of prayers and requests. With this in mind, be alert and always keep on praying for all the saints."
+    },
+    {
+      "post": 1886,
+      "citation": "Corinthians 13:4-13",
+      "words": 34,
+      "splitToday": {
+        "directives": 0,
+        "claims": 2
+      },
+      "block": "For now we see only a reflection as in a mirror; then we shall see face to face. Now I know in part; then I shall know fully, even as I am fully known."
+    },
+    {
+      "post": 2403,
+      "citation": "Ephesians 6:10-18",
+      "words": 200,
+      "splitToday": {
+        "directives": 6,
+        "claims": 3
+      },
+      "block": "Finally, be strong in the Lord and in his mighty power. Put on the full armor of God so that you can take your stand against the devil’s schemes. For our struggle is not against flesh and blood, but against the rulers, against the authorities, against the powers of this dark world and against the spiritual forces of evil in the heavenly realms. Therefore put on the full armor of God, so that when the day of evil comes, you may be able to stand your ground, and after you have done everything, to stand. Stand firm then, with the belt of truth buckled around your waist, with the breastplate of righteousness in place, and with your feet fitted with the readiness that comes from the gospel of peace. In addition to all this, take up the shield of faith, with which you can extinguish all the flaming arrows of the evil one. Take the helmet of salvation and the sword of the Spirit, which is the word of God. And pray in the Spirit on all occasions with all kinds of prayers and requests. With this in mind, be alert and always keep on praying for all the saints."
+    },
+    {
+      "post": 2431,
+      "citation": "1 Corinthians 16:13",
+      "words": 13,
+      "splitToday": {
+        "directives": 0,
+        "claims": 1
+      },
+      "block": "Be on your guard; stand firm in the faith; be courageous; be strong."
+    },
+    {
+      "post": 2744,
+      "citation": "2 Thessalonians 3:3",
+      "words": 17,
+      "splitToday": {
+        "directives": 0,
+        "claims": 0
+      },
+      "block": "But the Lord is faithful, and he will strengthen you and protect you from the evil one."
+    },
+    {
+      "post": 2744,
+      "citation": "Matthew 6:13",
+      "words": 13,
+      "splitToday": {
+        "directives": 0,
+        "claims": 0
+      },
+      "block": "And lead us not into temptation, but deliver us from the evil one."
+    },
+    {
+      "post": 2744,
+      "citation": "Psalm 46:1",
+      "words": 11,
+      "splitToday": {
+        "directives": 0,
+        "claims": 0
+      },
+      "block": "God is our refuge and strength, an ever-present help in trouble."
+    },
+    {
+      "post": 2904,
+      "citation": null,
+      "words": 201,
+      "splitToday": {
+        "directives": 5,
+        "claims": 3
+      },
+      "block": "Finally, be strong in the Lord and in his mighty power. Put on the full armor of God, so that you can take your stand against the devil’s schemes. For our struggle is not against flesh and blood, but against the rulers, against the authorities, against the powers of this dark world and against the spiritual forces of evil in the heavenly realms. Therefore put on the full armor of God, so that when the day of evil comes, you may be able to stand your ground, and after you have done everything, to stand. Stand firm then, with the belt of truth buckled around your waist, with the breastplate of righteousness in place, and with your feet fitted with the readiness that comes from the gospel of peace. In addition to all this, take up the shield of faith, with which you can extinguish all the flaming arrows of the evil one. Take the helmet of salvation and the sword of the Spirit, which is the word of God. And pray in the Spirit on all occasions with all kinds of prayers and requests. With this in mind, be alert and always keep on praying for all the Lord’s people."
+    },
+    {
+      "post": 3593,
+      "citation": null,
+      "words": 170,
+      "splitToday": {
+        "directives": 4,
+        "claims": 2
+      },
+      "block": "Finally, be strong in the Lord and in his mighty power. Put on the full armor of God, so that you can take your stand against the devil’s schemes. For our struggle is not against flesh and blood, but against the rulers, against the authorities, against the powers of this dark world and against the spiritual forces of evil in the heavenly realms. Therefore put on the full armor of God, so that when the day of evil comes, you may be able to stand your ground, and after you have done everything, to stand. Stand firm then, with the belt of truth buckled around your waist, with the breastplate of righteousness in place, and with your feet fitted with the readiness that comes from the gospel of peace. In addition to all this, take up the shield of faith, with which you can extinguish all the flaming arrows of the evil one. Take the helmet of salvation and the sword of the Spirit, which is the word of God."
+    },
+    {
+      "post": 3594,
+      "citation": null,
+      "words": 170,
+      "splitToday": {
+        "directives": 4,
+        "claims": 2
+      },
+      "block": "Finally, be strong in the Lord and in his mighty power. Put on the full armor of God, so that you can take your stand against the devil’s schemes. For our struggle is not against flesh and blood, but against the rulers, against the authorities, against the powers of this dark world and against the spiritual forces of evil in the heavenly realms. Therefore put on the full armor of God, so that when the day of evil comes, you may be able to stand your ground, and after you have done everything, to stand. Stand firm then, with the belt of truth buckled around your waist, with the breastplate of righteousness in place, and with your feet fitted with the readiness that comes from the gospel of peace. In addition to all this, take up the shield of faith, with which you can extinguish all the flaming arrows of the evil one. Take the helmet of salvation and the sword of the Spirit, which is the word of God."
+    },
+    {
+      "post": 3683,
+      "citation": null,
+      "words": 18,
+      "splitToday": {
+        "directives": 0,
+        "claims": 0
+      },
+      "block": "Put on the full armor of God, so that you can take your stand against the devil’s schemes."
+    },
+    {
+      "post": 3887,
+      "citation": null,
+      "words": 201,
+      "splitToday": {
+        "directives": 8,
+        "claims": 0
+      },
+      "block": "Finally, be strong in the Lord and in his mighty power. Put on the full armor of God, so that you can take your stand against the devil’s schemes. For our struggle is not against flesh and blood, but against the rulers, against the authorities, against the powers of this dark world and against the spiritual forces of evil in the heavenly realms. Therefore put on the full armor of God, so that when the day of evil comes, you may be able to stand your ground, and after you have done everything, to stand. Stand firm then, with the belt of truth buckled around your waist, with the breastplate of righteousness in place, and with your feet fitted with the readiness that comes from the gospel of peace. In addition to all this, take up the shield of faith, with which you can extinguish all the flaming arrows of the evil one. Take the helmet of salvation and the sword of the Spirit, which is the word of God.\nAnd pray in the Spirit on all occasions with all kinds of prayers and requests. With this in mind, be alert and always keep on praying for all the Lord’s people."
+    },
+    {
+      "post": 3931,
+      "citation": null,
+      "words": 13,
+      "splitToday": {
+        "directives": 0,
+        "claims": 1
+      },
+      "block": "Be on your guard; stand firm in the faith; be courageous; be strong."
+    },
+    {
+      "post": 4207,
+      "citation": null,
+      "words": 201,
+      "splitToday": {
+        "directives": 9,
+        "claims": 0
+      },
+      "block": "Finally, be strong in the Lord and in his mighty power. Put on the full armor of God, so that you can take your stand against the devil’s schemes. For our struggle is not against flesh and blood, but against the rulers, against the authorities, against the powers of this dark world and against the spiritual forces of evil in the heavenly realms. Therefore put on the full armor of God, so that when the day of evil comes, you may be able to stand your ground, and after you have done everything, to stand. Stand firm then, with the belt of truth buckled around your waist, with the breastplate of righteousness in place, and with your feet fitted with the readiness that comes from the gospel of peace. In addition to all this, take up the shield of faith, with which you can extinguish all the flaming arrows of the evil one. Take the helmet of salvation and the sword of the Spirit, which is the word of God.\nAnd pray in the Spirit on all occasions with all kinds of prayers and requests. With this in mind, be alert and always keep on praying for all the Lord’s people."
+    },
+    {
+      "post": 4298,
+      "citation": null,
+      "words": 5,
+      "splitToday": {
+        "directives": 0,
+        "claims": 0
+      },
+      "block": "Ask and you shall receive."
+    },
+    {
+      "post": 4374,
+      "citation": null,
+      "words": 5,
+      "splitToday": {
+        "directives": 0,
+        "claims": 0
+      },
+      "block": "Be strong in the Lord."
+    },
+    {
+      "post": 4390,
+      "citation": "Proverbs 13:9",
+      "words": 15,
+      "splitToday": {
+        "directives": 0,
+        "claims": 1
+      },
+      "block": "The light of the righteous shines brightly, but the lamp of the wicked is extinguished."
+    },
+    {
+      "post": 4397,
+      "citation": null,
+      "words": 18,
+      "splitToday": {
+        "directives": 1,
+        "claims": 0
+      },
+      "block": "Put on the full armor of God, so that you can take your stand against the devil's schemes."
+    },
+    {
+      "post": 4429,
+      "citation": null,
+      "words": 202,
+      "splitToday": {
+        "directives": 9,
+        "claims": 0
+      },
+      "block": "Finally, be strong in the Lord and in his mighty power. Put on the full armor of God, so that you can take your stand against the devil’s schemes. For our struggle is not against flesh and blood, but against the rulers, against the authorities, against the powers of this dark world and against the spiritual forces of evil in the heavenly realms. Therefore put on the full armor of God, so that when the day of evil comes, you may be able to stand your ground, and after you have done everything, to stand. Stand firm then, with the belt of truth buckled around your waist, with the breastplate of righteousness in place, and with your feet fitted with the readiness that comes from the gospel of peace. In addition to all this, take up the shield of faith, with which you can extinguish all the flaming arrows of the evil one. 17 Take the helmet of salvation and the sword of the Spirit, which is the word of God.\nAnd pray in the Spirit on all occasions with all kinds of prayers and requests. With this in mind, be alert and always keep on praying for all the Lord’s people."
+    },
+    {
+      "post": 4463,
+      "citation": null,
+      "words": 52,
+      "splitToday": {
+        "directives": 1,
+        "claims": 0
+      },
+      "block": "Put on the full armor of God so that you can take your stand against the devil's schemes. For our struggle is not against flesh and blood, but against the rulers, against the authorities, against the powers of this dark world and against the spiritual forces of evil in the heavenly realms."
+    },
+    {
+      "post": 4739,
+      "citation": null,
+      "words": 176,
+      "splitToday": {
+        "directives": 3,
+        "claims": 9
+      },
+      "block": "Strengthen my faith, Lord. Forgive my sins, so that I may be clean in your righteousness. Make me brave, so I can stand and fight the spiritual battles in my life and in our world. Give me your wisdom and discernment so I won't be caught off guard. Together, Lord, we'll win, because in truth, you already have. While evil still roams, the power of Your name and Your blood rises up to defeat and bring us victory against every evil planned against us. While malicious actions may disturb us, we use the armor of God You have given us to stand firm. You will bring justice in due time for all the harm and needless violence aimed at Your children. Until then, we remain in Your presence, aligned with Your purposes, and we look to You as our Supreme Commander and Protector. Help us to avoid temptation, and deliver us from evil, Lord. You are the Mighty One, the One Who will ultimately bring all evil to light. With You, Jesus, we are safe. Amen."
+    }
+  ]
+}

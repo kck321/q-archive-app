@@ -493,7 +493,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   // 81 carries the 2026-08-21 owner ruling on #4923: "Dearest Virginia -" moves Context -> Claim.
   // Context does not paint, so a reader stuck on 80 sees that drop open with an unhighlighted line
   // above five classified ones — the exact complaint that produced the ruling.
-  t('seed-current', 'SEED_VERSION is 88 (the Step 3B reconciliation)', seed === 88, seed)
+  t('seed-current', 'SEED_VERSION is 89 (the verse-block ruling)', seed === 89, seed)
   t('seed-gate', 'seeding is gated on SEED_VERSION', /seeded === SEED_VERSION/.test(localData), 'present')
 
   // THE GUARD THAT WOULD HAVE SAVED THREE ROUND TRIPS. Changing seeded data without bumping the
@@ -895,9 +895,13 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
       // ones — the deltas that move the before-state and the after-state together — so adding the
       // whole set again counts those twice. An afterOnly delta changes what the step DOES rather
       // than the tree it starts from, so it lands here and nowhere else.
+      // afterOnly AND downstream. This test measures the FINISHED bundle, so it must count both the
+      // rulings apply-entity-cleanup.mjs itself applies and the ones a later step adds — the
+      // 2026-08-23 verse-block ruling being the latter. The applier counts only the first kind,
+      // because at that point in the chain the second has not happened yet.
       const d = (contract.postApprovalDeltas ?? []).reduce((a, x) => ({
-        mentions: a.mentions + (x.afterOnly?.mentions ?? 0),
-        entityRows: a.entityRows + (x.afterOnly?.entityRows ?? 0),
+        mentions: a.mentions + (x.afterOnly?.mentions ?? 0) + (x.downstream?.mentions ?? 0),
+        entityRows: a.entityRows + (x.afterOnly?.entityRows ?? 0) + (x.downstream?.entityRows ?? 0),
       }), { mentions: 0, entityRows: 0 })
       const recPath = path.join(OUT, 'entity-registry-reconciliation.json')
       const rec = fs.existsSync(recPath) ? JSON.parse(fs.readFileSync(recPath, 'utf8')) : { duplicateRecordsRemoved: 0 }
@@ -1514,10 +1518,11 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
       new Set(edges.filter(e => e.type === 'entity_code').map(e => e.from.id)).size)
     // Q CONCLUSIONS IS RETIRED. The gate is that the edge type is gone, not that it holds 964.
     t('rel-conclusions-retired', 'Claim → Conclusion edges are retired', !bt.claim_conclusion, bt.claim_conclusion ?? 0)
-    // 438 -> 337 across five withdrawals of claims that carried sourceProvided. The attribute
-    // travels with the ROW, never with the section, so it leaves when the row does. Read from
-    // build-relationships.mjs's own gate rather than a second copy of the number.
-    t('rel-source', 'Claim → Source provided edges = the certified 337', bt.claim_source_provided === 337, bt.claim_source_provided)
+    // 438 -> 337 across five withdrawals of claims that carried sourceProvided, then 337 -> 330 on
+    // 2026-08-23 when the scripture ruling withdrew nine more (the Ephesians sentences on #2403,
+    // #3593 and #3594). The attribute travels with the ROW, never with the section, so it leaves
+    // when the row does. Read from build-relationships.mjs's own gate rather than a second copy.
+    t('rel-source', 'Claim → Source provided edges = the certified 330', bt.claim_source_provided === 330, bt.claim_source_provided)
     // Read from the contract: a prediction IS an assertion, so this edge count is Predictions'
     // figure and not a second opinion about it. The literal went stale on the 2026-08-20 ruling.
     t('rel-predictions', `Prediction → assertion edges = the certified ${CANONICAL.predictions.occurrences.toLocaleString()}`,

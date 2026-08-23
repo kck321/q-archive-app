@@ -1,0 +1,200 @@
+{
+  "note": "Occurrences ADDED to the certified entity ledger after the 2026-08-17 approval, by owner ruling 2026-08-23: the scripture reference Q prints beside a quoted passage is an entity. Read beside audit/occurrence-provenance-audit.json, never merged into it.",
+  "ruledOn": "2026-08-23",
+  "ownerRuling": "lets make the verse section example: – 1 Cor 13:4-13 and – Ephesians 6:10-18 an entity for now until i can subsect the post later.",
+  "writtenBy": "scripts/apply-scripture-blocks.mjs",
+  "additions": [
+    {
+      "occurrenceId": "#522:0",
+      "postNum": 522,
+      "index": 0,
+      "alias": "Jeremiah 29:11",
+      "entityId": "qe-scripture-jeremiah-29-11",
+      "canonical": "Jeremiah 29:11",
+      "entityType": "creative_work",
+      "category": "visible_complete_token",
+      "evidence": {
+        "category": "visible_complete_token",
+        "where": "prose"
+      },
+      "proposedAction": "keep",
+      "certifiedCountEffect": 0
+    },
+    {
+      "occurrenceId": "#1432:3",
+      "postNum": 1432,
+      "index": 3,
+      "alias": "1 Cor 13:4-13",
+      "entityId": "qe-scripture-1-cor-13-4-13",
+      "canonical": "1 Cor 13:4-13",
+      "entityType": "creative_work",
+      "category": "visible_complete_token",
+      "evidence": {
+        "category": "visible_complete_token",
+        "where": "prose"
+      },
+      "proposedAction": "keep",
+      "certifiedCountEffect": 0
+    },
+    {
+      "occurrenceId": "#1432:2",
+      "postNum": 1432,
+      "index": 2,
+      "alias": "Ephesians 6:10-18",
+      "entityId": "qe-scripture-ephesians-6-10-18",
+      "canonical": "Ephesians 6:10-18",
+      "entityType": "creative_work",
+      "category": "visible_complete_token",
+      "evidence": {
+        "category": "visible_complete_token",
+        "where": "prose"
+      },
+      "proposedAction": "keep",
+      "certifiedCountEffect": 0
+    },
+    {
+      "occurrenceId": "#1712:1",
+      "postNum": 1712,
+      "index": 1,
+      "alias": "Colossians 3:5",
+      "entityId": "qe-scripture-colossians-3-5",
+      "canonical": "Colossians 3:5",
+      "entityType": "creative_work",
+      "category": "visible_complete_token",
+      "evidence": {
+        "category": "visible_complete_token",
+        "where": "prose"
+      },
+      "proposedAction": "keep",
+      "certifiedCountEffect": 0
+    },
+    {
+      "occurrenceId": "#1886:4",
+      "postNum": 1886,
+      "index": 4,
+      "alias": "Corinthians 13:4-13",
+      "entityId": "qe-scripture-corinthians-13-4-13",
+      "canonical": "Corinthians 13:4-13",
+      "entityType": "creative_work",
+      "category": "visible_complete_token",
+      "evidence": {
+        "category": "visible_complete_token",
+        "where": "prose"
+      },
+      "proposedAction": "keep",
+      "certifiedCountEffect": 0
+    },
+    {
+      "occurrenceId": "#1886:3",
+      "postNum": 1886,
+      "index": 3,
+      "alias": "Ephesians 6:10-18",
+      "entityId": "qe-scripture-ephesians-6-10-18",
+      "canonical": "Ephesians 6:10-18",
+      "entityType": "creative_work",
+      "category": "visible_complete_token",
+      "evidence": {
+        "category": "visible_complete_token",
+        "where": "prose"
+      },
+      "proposedAction": "keep",
+      "certifiedCountEffect": 0
+    },
+    {
+      "occurrenceId": "#2403:5",
+      "postNum": 2403,
+      "index": 5,
+      "alias": "Ephesians 6:10-18",
+      "entityId": "qe-scripture-ephesians-6-10-18",
+      "canonical": "Ephesians 6:10-18",
+      "entityType": "creative_work",
+      "category": "visible_complete_token",
+      "evidence": {
+        "category": "visible_complete_token",
+        "where": "prose"
+      },
+      "proposedAction": "keep",
+      "certifiedCountEffect": 0
+    },
+    {
+      "occurrenceId": "#2431:2",
+      "postNum": 2431,
+      "index": 2,
+      "alias": "1 Corinthians 16:13",
+      "entityId": "qe-scripture-1-corinthians-16-13",
+      "canonical": "1 Corinthians 16:13",
+      "entityType": "creative_work",
+      "category": "visible_complete_token",
+      "evidence": {
+        "category": "visible_complete_token",
+        "where": "prose"
+      },
+      "proposedAction": "keep",
+      "certifiedCountEffect": 0
+    },
+    {
+      "occurrenceId": "#2744:2",
+      "postNum": 2744,
+      "index": 2,
+      "alias": "2 Thessalonians 3:3",
+      "entityId": "qe-scripture-2-thessalonians-3-3",
+      "canonical": "2 Thessalonians 3:3",
+      "entityType": "creative_work",
+      "category": "visible_complete_token",
+      "evidence": {
+        "category": "visible_complete_token",
+        "where": "prose"
+      },
+      "proposedAction": "keep",
+      "certifiedCountEffect": 0
+    },
+    {
+      "occurrenceId": "#2744:3",
+      "postNum": 2744,
+      "index": 3,
+      "alias": "Matthew 6:13",
+      "entityId": "qe-scripture-matthew-6-13",
+      "canonical": "Matthew 6:13",
+      "entityType": "creative_work",
+      "category": "visible_complete_token",
+      "evidence": {
+        "category": "visible_complete_token",
+        "where": "prose"
+      },
+      "proposedAction": "keep",
+      "certifiedCountEffect": 0
+    },
+    {
+      "occurrenceId": "#2744:4",
+      "postNum": 2744,
+      "index": 4,
+      "alias": "Psalm 46:1",
+      "entityId": "qe-scripture-psalm-46-1",
+      "canonical": "Psalm 46:1",
+      "entityType": "creative_work",
+      "category": "visible_complete_token",
+      "evidence": {
+        "category": "visible_complete_token",
+        "where": "prose"
+      },
+      "proposedAction": "keep",
+      "certifiedCountEffect": 0
+    },
+    {
+      "occurrenceId": "#4390:0",
+      "postNum": 4390,
+      "index": 0,
+      "alias": "Proverbs 13:9",
+      "entityId": "qe-scripture-proverbs-13-9",
+      "canonical": "Proverbs 13:9",
+      "entityType": "creative_work",
+      "category": "visible_complete_token",
+      "evidence": {
+        "category": "visible_complete_token",
+        "where": "prose"
+      },
+      "proposedAction": "keep",
+      "certifiedCountEffect": 0
+    }
+  ]
+}

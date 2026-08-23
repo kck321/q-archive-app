@@ -598,6 +598,12 @@ if (MODE === 'rematerialise') {
   //   afterOnly  a ruling that changed WHAT THIS STEP DOES. The tree it starts from is untouched,
   //              so only the after-state moves. Owner Ruling 3 is this: 27 more occurrences
   //              withdrawn, and the identities whose last mention they were.
+  //   downstream a ruling applied by a LATER step in the chain. NEITHER side moves here: this step
+  //              produces exactly the tree it always produced, and the addition lands after it. The
+  //              2026-08-23 verse-block ruling is this — apply-scripture-blocks.mjs adds the 10
+  //              scripture-citation identities further down. Read by audit-cross-section.mjs, which
+  //              checks the FINISHED bundle, and deliberately ignored here: expecting them at this
+  //              point would refuse the correct tree, which is exactly what it did once.
   //
   // Folding the second kind into the first would have made the guard expect a before-state that
   // never existed, and it would have accepted a tree that had already had the ruling applied to it

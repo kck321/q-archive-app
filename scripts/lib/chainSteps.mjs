@@ -152,6 +152,16 @@ export const CHAIN = [
   // Drop it and the bundle silently reverts 530 resolved collisions while every total still
   // reconciles — the exact failure shape this chain's header describes.
   { step: 'apply-step3b1.mjs', kind: 'apply' },
+  // THE VERSE BLOCKS (owner ruling 2026-08-23). A quoted passage of scripture is ONE Directive
+  // over the whole passage, and the reference label beside it is an Entity.
+  //
+  // It runs HERE for the same reason apply-step3b1.mjs does: every array it edits — actionRequests,
+  // directiveFamilies, directiveMeta, postAnalysis.claims, claimSpans, claimMeta — is rebuilt from a
+  // pre-ruling artifact by an earlier step, so anything sooner is silently overwritten on the next
+  // export. And it runs BEFORE reconcile-entity-registry.mjs and build-entity-public-view.mjs,
+  // which read the finished entity state: the 10 citation identities have to be part of what those
+  // two reconcile and publish, not an addition made behind their backs.
+  { step: 'apply-scripture-blocks.mjs', kind: 'apply' },
   // THE REGISTRY FOLLOWS THE RECORDS. apply-step3b1.mjs collapses duplicate entity records — 99 of
   // them, several over one span for one identity — and entities.json never heard about it, so the
   // registry counted 8,920 mentions while the drops rendered 8,821. Invariant 12 exists for exactly

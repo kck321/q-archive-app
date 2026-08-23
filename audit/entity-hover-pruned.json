@@ -1,9 +1,22 @@
 {
-  "note": "Synopses removed because the identity they describe is no longer in the registry. The text is kept here so nothing is lost: restoring an identity can restore its synopsis verbatim.",
-  "prunedOn": "2026-08-22",
-  "why": "Owner Ruling 3 (2026-08-22) retired identities whose last certified mention it withdrew. A tooltip must not outlive the identity it describes.",
-  "globalRemoved": 26,
-  "postSynopsesRemoved": 3,
+  "note": "Synopses removed because the identity they describe is no longer in the registry. The text is kept here so nothing is lost: restoring an identity can restore its synopsis verbatim. CUMULATIVE across every ruling that has retired an identity — see runs[].",
+  "why": "A tooltip must not outlive the identity it describes.",
+  "runs": [
+    {
+      "prunedOn": "2026-08-22",
+      "why": "Owner Ruling 3 (2026-08-22) retired identities whose last certified mention it withdrew. A tooltip must not outlive the identity it describes.",
+      "globalRemoved": 26,
+      "postSynopsesRemoved": 3
+    },
+    {
+      "prunedOn": "2026-08-23",
+      "why": "The verse-block ruling retired \"Ephesians\": both its occurrences were the book name inside \"Ephesians 6:10-18\", which is now the certified identity.",
+      "globalRemoved": 1,
+      "postSynopsesRemoved": 2
+    }
+  ],
+  "globalRemoved": 27,
+  "postSynopsesRemoved": 5,
   "removed": {
     "global": [
       {
@@ -109,6 +122,10 @@
       {
         "id": "qe-9054d5a03df4",
         "synopsis": "“Comedy Central” is categorized in this archive as a media organization. It appears 1 times across 1 posts."
+      },
+      {
+        "id": "qe-7f496c37145a",
+        "synopsis": "“Ephesians” is categorized in this archive as a person. It appears 2 times across 2 posts."
       }
     ],
     "byPost": [
@@ -128,6 +145,13 @@
         "id": "qe-d350ae114c30",
         "posts": [
           746
+        ]
+      },
+      {
+        "id": "qe-7f496c37145a",
+        "posts": [
+          1432,
+          1886
         ]
       }
     ]

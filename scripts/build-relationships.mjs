@@ -281,8 +281,11 @@ const checks = [
   // that carried sourceProvided. Same rule for the fourth time: the attribute travels with the ROW.
   // 338 -> 337: the lane-B overlap repairs withdrew one abbreviation-split fragment that carried
   // sourceProvided. Fifth time, same rule: the attribute travels with the ROW.
-  ['Claim ↔ Source provided = the certified 337',
-    byType.claim_source_provided === 337, byType.claim_source_provided ?? 0],
+  // 337 -> 330 on 2026-08-23: the scripture ruling withdrew 45 claims that were sentence-level
+  // fragments of a quoted passage, and nine of them carried sourceProvided — the Ephesians
+  // sentences on #2403, #3593 and #3594. Sixth time, same rule: the attribute travels with the ROW.
+  ['Claim ↔ Source provided = the certified 330',
+    byType.claim_source_provided === 330, byType.claim_source_provided ?? 0],
   ['Prediction ↔ Source provided reported separately', (byType.prediction_source_provided ?? 0) > 0, byType.prediction_source_provided ?? 0],
   // 595 -> 842 (2026-08-20 queue ruling) -> 843 (2026-08-21, #4910). A prediction IS an assertion,
   // so every one of them carries this edge — the figure is Predictions' and belongs to Predictions.

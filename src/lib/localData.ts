@@ -513,7 +513,11 @@ export const OVERLAY_REPAIR = 1
 //     6,321, entities 1,235 -> 1,214 rows and 8,975 -> 8,821 mentions. A returning reader holding
 //     87 would keep the pre-review paint on 41 drops and a registry counting one written word up
 //     to five times, so the seed has to move.
-export const SEED_VERSION = 88   // 87: Emphasis, Q Conclusions and Checkable Claims retired — data, highlights and sections
+export const SEED_VERSION = 89   // 89: the verse-block ruling — a quoted passage of scripture is ONE
+                                 //     Directive over the whole passage, and the reference label beside it
+                                 //     is an Entity. posts.json and entities.json both move, so a returning
+                                 //     reader must re-seed or keep 66 fragment highlights that no longer exist.
+                                 // 87: Emphasis, Q Conclusions and Checkable Claims retired — data, highlights and sections
 // (6 mentions, and she gains both drops), her hover gains a real synopsis instead of the generated
 // "appears 8 times across 7 posts" line, and MOVIE 1 / MOVIE 3 join MOVIE 2 as Predictions. A
 // reader on 84 sees NO unhighlighted and two of the three MOVIE lines unclassified.

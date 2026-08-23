@@ -161,10 +161,23 @@ for (const [postKey, records] of Object.entries(linked.byPost ?? {})) {
 // Two sets now: Owner Ruling 3's 27 withdrawals and the lane-B family-4 review's 24 (22 of which
 // MIGRATE to a linked source rather than being deleted — either way they stop being a certified
 // prose mention, which is what this count measures).
-const POST_APPROVAL = ['occurrence-withdrawals-owner-ruling-3.json', 'occurrence-withdrawals-lane-b.json']
+// The third set: the 2026-08-23 verse-block ruling withdrew the two "Ephesians" occurrences that
+// were only ever the book name inside "Ephesians 6:10-18", which is now the certified identity.
+const POST_APPROVAL = ['occurrence-withdrawals-owner-ruling-3.json', 'occurrence-withdrawals-lane-b.json',
+  'occurrence-withdrawals-scripture.json']
 const postApprovalRemoved = new Set(POST_APPROVAL
   .filter(f => fs.existsSync(path.join(AUDIT, f)))
   .flatMap(f => readAudit(f).withdrawals.map(w => w.occurrenceId)))
+
+// AND THE OCCURRENCES A LATER RULING ADDED. The mirror of POST_APPROVAL above: the 2026-08-23
+// scripture ruling made each reference label Q prints ("Ephesians 6:10-18") a certified entity, so
+// the ledger gains rows it did not have on 2026-08-17. Added here rather than written into the
+// approval record, for the same reason the withdrawals are subtracted here — that file states what
+// the owner approved that day and stays as it was. Every row arrives in ledger shape.
+const POST_APPROVAL_ADDED = ['occurrence-additions-scripture.json']
+const postApprovalAdded = POST_APPROVAL_ADDED
+  .filter(f => fs.existsSync(path.join(AUDIT, f)))
+  .flatMap(f => readAudit(f).additions ?? [])
 
 const SETTLED = r => /^(keep|hold)/.test(r.proposedAction ?? '') && !postApprovalRemoved.has(r.occurrenceId)
 const UNSETTLED_ATTRIBUTION = r => /attribution must be settled/.test(r.proposedAction ?? '')
@@ -180,7 +193,7 @@ const recon = fs.existsSync(reconPath) ? readAudit('entity-registry-reconciliati
 const collapsedDuplicates = recon?.duplicateRecordsRemoved ?? 0
 const collapsedByIdentityAndPost = new Map(Object.entries(recon?.perIdentityAndPost ?? {}))
 
-const retained = (ledger.rows ?? []).filter(SETTLED)
+const retained = [...(ledger.rows ?? []).filter(SETTLED), ...postApprovalAdded]
 const ledgerMentions = retained.length - collapsedDuplicates
 if (ledgerMentions !== (registry.totals?.mentions ?? -1)) {
   die(`ledger retains ${retained.length} occurrences less ${collapsedDuplicates} collapsed duplicates = ${ledgerMentions}, registry says ${registry.totals?.mentions} — these must agree`)

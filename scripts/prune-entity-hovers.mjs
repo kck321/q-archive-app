@@ -39,6 +39,12 @@ if (!orphanGlobals.length && !orphanPostIds.length) {
   process.exit(0)
 }
 
+// What this particular run is for. Recorded per run so the cumulative file below says WHY each
+// batch of synopses went, not merely that they did.
+const RUN_DATE = '2026-08-23'
+const RUN_WHY = 'The verse-block ruling retired "Ephesians": both its occurrences were the book name '
+  + 'inside "Ephesians 6:10-18", which is now the certified identity.'
+
 const removed = { global: [], byPost: [] }
 const next = JSON.parse(JSON.stringify(hov))
 for (const id of orphanGlobals) {
@@ -71,14 +77,37 @@ console.log('ENTITY HOVERS PRUNED TO LIVE IDENTITIES')
 console.log(`  global synopses   : ${Object.keys(hov.global ?? {}).length} -> ${next.totals.entitiesWithGlobal}   (${orphanGlobals.length} orphaned)`)
 console.log(`  per-post synopses : ${hov.totals?.postSynopses ?? '?'} -> ${next.totals.postSynopses}   (${postSynopsesRemoved} on ${orphanPostIds.length} retired identities)`)
 
-fs.writeFileSync(path.join(OUT, 'entity-hover-pruned.json'), JSON.stringify({
+// THE RECORD IS CUMULATIVE, and it has to be.
+//
+// This file writes itself each time something is pruned, and it used to write ONLY the current
+// run — so the first later retirement replaced the 2026-08-22 record of 26 global synopses and 3
+// per-post ones with its own. The loss was invisible while nothing needed pruning, because the
+// early exit above leaves the file untouched when there are no orphans; the 2026-08-23 verse-block
+// ruling retired one identity and the earlier history went with it, which is how it was found.
+//
+// A file whose stated purpose is "nothing is lost" must not lose anything. New prunings are merged
+// into what is already recorded, deduplicated by identity, and the totals are recomputed from the
+// merged set — so hover-reconciles keeps balancing across every ruling instead of only the last.
+const prunedPath = path.join(OUT, 'entity-hover-pruned.json')
+const prior = fs.existsSync(prunedPath) ? JSON.parse(fs.readFileSync(prunedPath, 'utf8')) : { removed: { global: [], byPost: [] } }
+const priorGlobal = prior.removed?.global ?? []
+const priorByPost = prior.removed?.byPost ?? []
+const mergedGlobal = [...priorGlobal, ...removed.global.filter(g => !priorGlobal.some(x => x.id === g.id))]
+const mergedByPost = [...priorByPost, ...removed.byPost.filter(g => !priorByPost.some(x => x.id === g.id))]
+const priorRuns = prior.runs ?? (prior.prunedOn ? [{ prunedOn: prior.prunedOn, why: prior.why,
+  globalRemoved: prior.globalRemoved ?? priorGlobal.length,
+  postSynopsesRemoved: prior.postSynopsesRemoved ?? priorByPost.reduce((n, r) => n + r.posts.length, 0) }] : [])
+
+fs.writeFileSync(prunedPath, JSON.stringify({
   note: 'Synopses removed because the identity they describe is no longer in the registry. The text '
-    + 'is kept here so nothing is lost: restoring an identity can restore its synopsis verbatim.',
-  prunedOn: '2026-08-22',
-  why: 'Owner Ruling 3 (2026-08-22) retired identities whose last certified mention it withdrew. A '
-    + 'tooltip must not outlive the identity it describes.',
-  globalRemoved: removed.global.length, postSynopsesRemoved,
-  removed,
+    + 'is kept here so nothing is lost: restoring an identity can restore its synopsis verbatim. '
+    + 'CUMULATIVE across every ruling that has retired an identity — see runs[].',
+  why: 'A tooltip must not outlive the identity it describes.',
+  runs: [...priorRuns, { prunedOn: RUN_DATE, why: RUN_WHY, globalRemoved: removed.global.length, postSynopsesRemoved }]
+    .filter((r, i, a) => a.findIndex(x => x.prunedOn === r.prunedOn) === i),
+  globalRemoved: mergedGlobal.length,
+  postSynopsesRemoved: mergedByPost.reduce((n, r) => n + r.posts.length, 0),
+  removed: { global: mergedGlobal, byPost: mergedByPost },
 }, null, 2) + '\n')
 
 if (!apply) { console.log('\n  dry run — nothing written. Pass --apply.\n'); process.exit(0) }

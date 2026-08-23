@@ -2,13 +2,19 @@
  "note": "Entities left with no certified mention and no bound linked source. Retired from the public bundle: excluded from Entities, search, autocomplete, global synopses and hovers. THE IDS ARE RESERVED PERMANENTLY — a later occurrence resolves back to the same qe- id rather than minting a second identity.",
  "policy": "audit/url-derived-entity-policy.json + the 2026-08-17 boundary ruling + Owner Ruling 3 (2026-08-22)",
  "reserved": "audit/entity-ids.json keeps every id in this list.",
- "total": 229,
+ "total": 230,
  "entities": [
   {
-   "id": "qe-eaac939b4aaa",
-   "canonical": "Hunter Biden",
+   "id": "qe-a67f315bc9ac",
+   "canonical": "8chan",
+   "type": "technology_platform",
+   "slug": "8chan"
+  },
+  {
+   "id": "qe-7fb3a5ba91e1",
+   "canonical": "Abigail Spanberger",
    "type": "person",
-   "slug": "hunter-biden"
+   "slug": "abigail-spanberger"
   },
   {
    "id": "qe-4ed12a591de9",
@@ -17,256 +23,28 @@
    "slug": "ac-130"
   },
   {
-   "id": "qe-76da188497d6",
-   "canonical": "Kavanaugh",
-   "type": "person",
-   "slug": "kavanaugh"
-  },
-  {
-   "id": "qe-ddeb9c6c71b8",
-   "canonical": "Senate Judiciary Committee",
-   "type": "government_institution",
-   "slug": "senate-judiciary-committee"
-  },
-  {
-   "id": "qe-e72f4b6ffdeb",
-   "canonical": "Senate Intelligence Committee",
-   "type": "government_institution",
-   "slug": "senate-intelligence-committee"
-  },
-  {
-   "id": "qe-c9e43754b98d",
-   "canonical": "Code of Federal Regulations",
-   "type": "legislation_regulation",
-   "slug": "code-of-federal-regulations"
-  },
-  {
-   "id": "qe-dbab506adc18",
-   "canonical": "Mark Levin",
-   "type": "person",
-   "slug": "mark-levin"
-  },
-  {
-   "id": "qe-583384b861a0",
-   "canonical": "HuffPost",
-   "type": "media_organization",
-   "slug": "huffpost"
-  },
-  {
-   "id": "qe-bb91501abc09",
-   "canonical": "Roseanne Barr",
-   "type": "person",
-   "slug": "roseanne-barr"
-  },
-  {
-   "id": "qe-e428d152c1f7",
-   "canonical": "Meadows",
-   "type": "person",
-   "slug": "meadows"
-  },
-  {
-   "id": "qe-33b95dc95027",
-   "canonical": "New York Magazine",
-   "type": "media_organization",
-   "slug": "new-york-magazine"
-  },
-  {
-   "id": "qe-c00874e212d3",
-   "canonical": "Gavin Newsom",
-   "type": "person",
-   "slug": "gavin-newsom"
-  },
-  {
-   "id": "qe-fe6a80bff729",
-   "canonical": "Doug Collins",
-   "type": "person",
-   "slug": "doug-collins"
-  },
-  {
-   "id": "qe-7cc41b234cd9",
-   "canonical": "Ginsburg",
-   "type": "person",
-   "slug": "ginsburg"
-  },
-  {
-   "id": "qe-5c574e817b4d",
-   "canonical": "Scribd",
-   "type": "technology_platform",
-   "slug": "scribd"
-  },
-  {
-   "id": "qe-5965f1c7f28a",
-   "canonical": "Erik Prince",
-   "type": "person",
-   "slug": "erik-prince"
-  },
-  {
-   "id": "qe-2f4bc1c87a74",
-   "canonical": "Matt Gaetz",
-   "type": "person",
-   "slug": "matt-gaetz"
-  },
-  {
-   "id": "qe-a67f315bc9ac",
-   "canonical": "8chan",
-   "type": "technology_platform",
-   "slug": "8chan"
-  },
-  {
-   "id": "qe-6eba7f9e78be",
-   "canonical": "Pizzagate",
-   "type": "person",
-   "slug": "pizzagate"
-  },
-  {
-   "id": "qe-84e6163609f3",
-   "canonical": "Gina Haspel",
-   "type": "person",
-   "slug": "gina-haspel"
-  },
-  {
-   "id": "qe-efc069a23832",
-   "canonical": "House Intelligence Committee",
-   "type": "government_institution",
-   "slug": "house-intelligence-committee"
-  },
-  {
-   "id": "qe-78b861a601cb",
-   "canonical": "Omarosa",
-   "type": "person",
-   "slug": "omarosa"
-  },
-  {
-   "id": "qe-364240bb810a",
-   "canonical": "Quartz",
-   "type": "media_organization",
-   "slug": "quartz"
-  },
-  {
-   "id": "qe-ad0326f3114d",
-   "canonical": "House Intelligence",
-   "type": "government_institution",
-   "slug": "house-intelligence"
-  },
-  {
-   "id": "qe-ad393745af3e",
-   "canonical": "Ivanka Trump",
-   "type": "person",
-   "slug": "ivanka-trump"
-  },
-  {
-   "id": "qe-9c86660b4ddb",
-   "canonical": "House Oversight Committee",
-   "type": "government_institution",
-   "slug": "house-oversight-committee"
-  },
-  {
-   "id": "qe-8897be130f69",
-   "canonical": "MKUltra",
-   "type": "program_operation_project",
-   "slug": "mkultra"
-  },
-  {
-   "id": "qe-d4e89265e936",
-   "canonical": "Charlie Kirk",
-   "type": "person",
-   "slug": "charlie-kirk"
-  },
-  {
-   "id": "qe-58247463cbd4",
-   "canonical": "George Papa",
-   "type": "person",
-   "slug": "george-papa"
-  },
-  {
-   "id": "qe-10b46bb969e5",
-   "canonical": "Anthony Comello",
-   "type": "person",
-   "slug": "anthony-comello"
-  },
-  {
-   "id": "qe-3536cd634019",
-   "canonical": "Robert Hannigan",
-   "type": "person",
-   "slug": "robert-hannigan"
-  },
-  {
-   "id": "qe-1c46e4567b2d",
-   "canonical": "Ilhan Omar",
-   "type": "person",
-   "slug": "ilhan-omar"
-  },
-  {
-   "id": "qe-4a208b7ab05a",
-   "canonical": "Burisma",
+   "id": "qe-6cacf7082c69",
+   "canonical": "Activision Blizzard",
    "type": "organization",
-   "slug": "burisma"
+   "slug": "activision-blizzard"
   },
   {
-   "id": "qe-ec290e41f3f7",
-   "canonical": "Nevada",
-   "type": "location",
-   "slug": "nevada"
+   "id": "qe-8cd60bf7677e",
+   "canonical": "Administration",
+   "type": "government_institution",
+   "slug": "administration"
   },
   {
-   "id": "qe-5d58e0f6a89b",
-   "canonical": "The Ingraham Angle",
-   "type": "creative_work",
-   "slug": "the-ingraham-angle"
-  },
-  {
-   "id": "qe-0bb4fa1b1fd7",
-   "canonical": "Cuomo",
+   "id": "qe-c44175435b4c",
+   "canonical": "Admiral Rogers",
    "type": "person",
-   "slug": "cuomo"
+   "slug": "admiral-rogers"
   },
   {
-   "id": "qe-415492f50772",
-   "canonical": "Minneapolis",
-   "type": "location",
-   "slug": "minneapolis"
-  },
-  {
-   "id": "qe-ff8fcc84e333",
-   "canonical": "Portland",
-   "type": "location",
-   "slug": "portland"
-  },
-  {
-   "id": "qe-07d627e5a17e",
-   "canonical": "Andy Ngo",
+   "id": "qe-92f4051753fc",
+   "canonical": "Adolf Hitler",
    "type": "person",
-   "slug": "andy-ngo"
-  },
-  {
-   "id": "qe-53acfcd829f3",
-   "canonical": "Fort Campbell",
-   "type": "facility_property",
-   "slug": "fort-campbell"
-  },
-  {
-   "id": "qe-85888a5a8fd4",
-   "canonical": "Joseph Schmitz",
-   "type": "person",
-   "slug": "joseph-schmitz"
-  },
-  {
-   "id": "qe-22df1db501be",
-   "canonical": "Eric Prince",
-   "type": "person",
-   "slug": "eric-prince"
-  },
-  {
-   "id": "qe-dee8e9c8635f",
-   "canonical": "Mariah Sunshine Coogan",
-   "type": "person",
-   "slug": "mariah-sunshine-coogan"
-  },
-  {
-   "id": "qe-2edf557260a3",
-   "canonical": "West Hollywood",
-   "type": "country_region",
-   "slug": "west-hollywood"
+   "slug": "adolf-hitler"
   },
   {
    "id": "qe-c3a9237ba27a",
@@ -275,34 +53,22 @@
    "slug": "agnes-nixon"
   },
   {
-   "id": "qe-25f5f64483e9",
-   "canonical": "Harvard Muslim Alumni",
-   "type": "organization",
-   "slug": "harvard-muslim-alumni"
-  },
-  {
    "id": "qe-877128f6a818",
    "canonical": "Al Gore",
    "type": "person",
    "slug": "al-gore"
   },
   {
-   "id": "qe-a66cafb88137",
-   "canonical": "Serzh Sargsyan",
+   "id": "qe-82f9daa0f19c",
+   "canonical": "Al Qaeda",
    "type": "person",
-   "slug": "serzh-sargsyan"
+   "slug": "al-qaeda"
   },
   {
-   "id": "qe-4662ccd00b39",
-   "canonical": "Lindsey Graham",
+   "id": "qe-9bd3e06680ab",
+   "canonical": "Alan Krueger",
    "type": "person",
-   "slug": "lindsey-graham"
-  },
-  {
-   "id": "qe-e2d4bc57e2a1",
-   "canonical": "Charles Barkley",
-   "type": "person",
-   "slug": "charles-barkley"
+   "slug": "alan-krueger"
   },
   {
    "id": "qe-138a4dad3666",
@@ -311,16 +77,256 @@
    "slug": "alex-rodriguez"
   },
   {
-   "id": "qe-a6c9d8148ab3",
-   "canonical": "Saturday Night Live",
-   "type": "creative_work",
-   "slug": "saturday-night-live"
+   "id": "qe-cf230e6f349c",
+   "canonical": "Ali Velshi",
+   "type": "person",
+   "slug": "ali-velshi"
   },
   {
-   "id": "qe-beca24d6a2dc",
-   "canonical": "Santa Fe",
+   "id": "qe-5afa5eb1bffc",
+   "canonical": "Amanda Hle",
+   "type": "person",
+   "slug": "amanda-hle"
+  },
+  {
+   "id": "qe-d4dd6672aea9",
+   "canonical": "American Red Cross",
+   "type": "organization",
+   "slug": "american-red-cross"
+  },
+  {
+   "id": "qe-1a3c2ae159d5",
+   "canonical": "Anderson Cooper",
+   "type": "person",
+   "slug": "anderson-cooper"
+  },
+  {
+   "id": "qe-c82ada60104d",
+   "canonical": "Andrew Jackson",
+   "type": "person",
+   "slug": "andrew-jackson"
+  },
+  {
+   "id": "qe-f0c917472c64",
+   "canonical": "Andrew Kerr",
+   "type": "person",
+   "slug": "andrew-kerr"
+  },
+  {
+   "id": "qe-a9b01b82abb3",
+   "canonical": "Andy Harris",
+   "type": "person",
+   "slug": "andy-harris"
+  },
+  {
+   "id": "qe-07d627e5a17e",
+   "canonical": "Andy Ngo",
+   "type": "person",
+   "slug": "andy-ngo"
+  },
+  {
+   "id": "qe-10b46bb969e5",
+   "canonical": "Anthony Comello",
+   "type": "person",
+   "slug": "anthony-comello"
+  },
+  {
+   "id": "qe-d3d86a00dcff",
+   "canonical": "Baghdad",
+   "type": "location",
+   "slug": "baghdad"
+  },
+  {
+   "id": "qe-5f90d4b1138a",
+   "canonical": "Benedict Arnold",
+   "type": "person",
+   "slug": "benedict-arnold"
+  },
+  {
+   "id": "qe-1180428658d7",
+   "canonical": "Bernie Sanders",
+   "type": "person",
+   "slug": "bernie-sanders"
+  },
+  {
+   "id": "qe-fd9a9466fe14",
+   "canonical": "Bloody Sunday",
+   "type": "event_incident",
+   "slug": "bloody-sunday"
+  },
+  {
+   "id": "qe-dd7daa56e017",
+   "canonical": "Bob Woodward",
+   "type": "person",
+   "slug": "bob-woodward"
+  },
+  {
+   "id": "qe-12e9d3e5fe25",
+   "canonical": "Breakfast Club",
+   "type": "facility_property",
+   "slug": "breakfast-club"
+  },
+  {
+   "id": "qe-dc71841cc36f",
+   "canonical": "Bryan S. Ware",
+   "type": "person",
+   "slug": "bryan-s-ware"
+  },
+  {
+   "id": "qe-4a208b7ab05a",
+   "canonical": "Burisma",
+   "type": "organization",
+   "slug": "burisma"
+  },
+  {
+   "id": "qe-ceae80730a2f",
+   "canonical": "Byron York",
+   "type": "person",
+   "slug": "byron-york"
+  },
+  {
+   "id": "qe-d29df03a2c7a",
+   "canonical": "Cambridge Dictionary",
+   "type": "media_organization",
+   "slug": "cambridge-dictionary"
+  },
+  {
+   "id": "qe-4c75d2db2eac",
+   "canonical": "Capital Gazette",
+   "type": "organization",
+   "slug": "capital-gazette"
+  },
+  {
+   "id": "qe-49539a6e685c",
+   "canonical": "Capitol Hill",
    "type": "country_region",
-   "slug": "santa-fe"
+   "slug": "capitol-hill"
+  },
+  {
+   "id": "qe-bf1460b00ebe",
+   "canonical": "Cardinal George Pell",
+   "type": "person",
+   "slug": "cardinal-george-pell"
+  },
+  {
+   "id": "qe-f6ab5ef8147d",
+   "canonical": "Carl Ghattas",
+   "type": "person",
+   "slug": "carl-ghattas"
+  },
+  {
+   "id": "qe-d18d01b68905",
+   "canonical": "CBN News",
+   "type": "media_organization",
+   "slug": "cbn-news"
+  },
+  {
+   "id": "qe-fadb7c27473e",
+   "canonical": "Cecile Richards",
+   "type": "person",
+   "slug": "cecile-richards"
+  },
+  {
+   "id": "qe-e2d4bc57e2a1",
+   "canonical": "Charles Barkley",
+   "type": "person",
+   "slug": "charles-barkley"
+  },
+  {
+   "id": "qe-d4e89265e936",
+   "canonical": "Charlie Kirk",
+   "type": "person",
+   "slug": "charlie-kirk"
+  },
+  {
+   "id": "qe-b23e29dfdb3e",
+   "canonical": "Chelsey Smith",
+   "type": "person",
+   "slug": "chelsey-smith"
+  },
+  {
+   "id": "qe-c62318860f90",
+   "canonical": "Chief Justice John Roberts",
+   "type": "title_role",
+   "slug": "chief-justice-john-roberts"
+  },
+  {
+   "id": "qe-426031b06175",
+   "canonical": "Chris Cox",
+   "type": "person",
+   "slug": "chris-cox"
+  },
+  {
+   "id": "qe-b23655c71613",
+   "canonical": "Chris Cuomo",
+   "type": "person",
+   "slug": "chris-cuomo"
+  },
+  {
+   "id": "qe-7a2650adef9a",
+   "canonical": "Chris Hayes",
+   "type": "person",
+   "slug": "chris-hayes"
+  },
+  {
+   "id": "qe-7ae7f3117eb2",
+   "canonical": "Christine Blasey Ford",
+   "type": "person",
+   "slug": "christine-blasey-ford"
+  },
+  {
+   "id": "qe-723f8970807f",
+   "canonical": "Cindy McCain",
+   "type": "person",
+   "slug": "cindy-mccain"
+  },
+  {
+   "id": "qe-85cd3021571b",
+   "canonical": "Civil Rights Division",
+   "type": "government_institution",
+   "slug": "civil-rights-division"
+  },
+  {
+   "id": "qe-8edddb4d46bd",
+   "canonical": "Clare Bronfman",
+   "type": "person",
+   "slug": "clare-bronfman"
+  },
+  {
+   "id": "qe-c9e43754b98d",
+   "canonical": "Code of Federal Regulations",
+   "type": "legislation_regulation",
+   "slug": "code-of-federal-regulations"
+  },
+  {
+   "id": "qe-9054d5a03df4",
+   "canonical": "Comedy Central",
+   "type": "media_organization",
+   "slug": "comedy-central"
+  },
+  {
+   "id": "qe-3f8136a79c3b",
+   "canonical": "Confederate General",
+   "type": "title_role",
+   "slug": "confederate-general"
+  },
+  {
+   "id": "qe-f0dcfa6db00e",
+   "canonical": "Cornell Law",
+   "type": "legislation_regulation",
+   "slug": "cornell-law"
+  },
+  {
+   "id": "qe-f435238cd3de",
+   "canonical": "Cornell Law School",
+   "type": "organization",
+   "slug": "cornell-law-school"
+  },
+  {
+   "id": "qe-0bb4fa1b1fd7",
+   "canonical": "Cuomo",
+   "type": "person",
+   "slug": "cuomo"
   },
   {
    "id": "qe-2d1422b846bf",
@@ -329,10 +335,232 @@
    "slug": "curt-schilling"
   },
   {
-   "id": "qe-4c75d2db2eac",
-   "canonical": "Capital Gazette",
+   "id": "qe-6ae8ccb666ea",
+   "canonical": "Daily Caller News Foundation",
+   "type": "media_organization",
+   "slug": "daily-caller-news-foundation"
+  },
+  {
+   "id": "qe-5ffea7a1d496",
+   "canonical": "Dana Boente",
+   "type": "person",
+   "slug": "dana-boente"
+  },
+  {
+   "id": "qe-9ba608d159c0",
+   "canonical": "Democratic National Convention",
+   "type": "person",
+   "slug": "democratic-national-convention"
+  },
+  {
+   "id": "qe-7049e3ac2389",
+   "canonical": "Department of Treasury",
    "type": "organization",
-   "slug": "capital-gazette"
+   "slug": "department-of-treasury"
+  },
+  {
+   "id": "qe-a3f4e1c9a5c1",
+   "canonical": "Donald Lukens",
+   "type": "person",
+   "slug": "donald-lukens"
+  },
+  {
+   "id": "qe-fe6a80bff729",
+   "canonical": "Doug Collins",
+   "type": "person",
+   "slug": "doug-collins"
+  },
+  {
+   "id": "qe-f2ba73f57644",
+   "canonical": "Earl Kimmerling",
+   "type": "person",
+   "slug": "earl-kimmerling"
+  },
+  {
+   "id": "qe-3a54a5469bcf",
+   "canonical": "Eastern Washington",
+   "type": "country_region",
+   "slug": "eastern-washington"
+  },
+  {
+   "id": "qe-6f5fab61b00b",
+   "canonical": "Ed Buck",
+   "type": "person",
+   "slug": "ed-buck"
+  },
+  {
+   "id": "qe-a6b40d70bfbf",
+   "canonical": "El Centro",
+   "type": "country_region",
+   "slug": "el-centro"
+  },
+  {
+   "id": "qe-7f496c37145a",
+   "canonical": "Ephesians",
+   "type": "person",
+   "slug": "ephesians"
+  },
+  {
+   "id": "qe-09c79d4d4b30",
+   "canonical": "Eric Garcetti",
+   "type": "person",
+   "slug": "eric-garcetti"
+  },
+  {
+   "id": "qe-22df1db501be",
+   "canonical": "Eric Prince",
+   "type": "person",
+   "slug": "eric-prince"
+  },
+  {
+   "id": "qe-5965f1c7f28a",
+   "canonical": "Erik Prince",
+   "type": "person",
+   "slug": "erik-prince"
+  },
+  {
+   "id": "qe-6f898a7508fd",
+   "canonical": "Erin Nanoki",
+   "type": "person",
+   "slug": "erin-nanoki"
+  },
+  {
+   "id": "qe-61044273b1e2",
+   "canonical": "Federal Government",
+   "type": "government_institution",
+   "slug": "federal-government"
+  },
+  {
+   "id": "qe-2ec618df3b1b",
+   "canonical": "FEMA",
+   "type": "organization",
+   "slug": "fema"
+  },
+  {
+   "id": "qe-53acfcd829f3",
+   "canonical": "Fort Campbell",
+   "type": "facility_property",
+   "slug": "fort-campbell"
+  },
+  {
+   "id": "qe-de1cd4c53026",
+   "canonical": "Fox Friends",
+   "type": "media_organization",
+   "slug": "fox-friends"
+  },
+  {
+   "id": "qe-d2b5dc7f5774",
+   "canonical": "Frank Cali",
+   "type": "person",
+   "slug": "frank-cali"
+  },
+  {
+   "id": "qe-c00874e212d3",
+   "canonical": "Gavin Newsom",
+   "type": "person",
+   "slug": "gavin-newsom"
+  },
+  {
+   "id": "qe-58247463cbd4",
+   "canonical": "George Papa",
+   "type": "person",
+   "slug": "george-papa"
+  },
+  {
+   "id": "qe-478bff189dfe",
+   "canonical": "George Papadopoulos",
+   "type": "person",
+   "slug": "george-papadopoulos"
+  },
+  {
+   "id": "qe-84e6163609f3",
+   "canonical": "Gina Haspel",
+   "type": "person",
+   "slug": "gina-haspel"
+  },
+  {
+   "id": "qe-7cc41b234cd9",
+   "canonical": "Ginsburg",
+   "type": "person",
+   "slug": "ginsburg"
+  },
+  {
+   "id": "qe-d0be1b502513",
+   "canonical": "Glenn Simpson",
+   "type": "person",
+   "slug": "glenn-simpson"
+  },
+  {
+   "id": "qe-177205440a32",
+   "canonical": "Global Health Leaders",
+   "type": "organization",
+   "slug": "global-health-leaders"
+  },
+  {
+   "id": "qe-24657d3b5b93",
+   "canonical": "Google Capital",
+   "type": "organization",
+   "slug": "google-capital"
+  },
+  {
+   "id": "qe-baf710e658c9",
+   "canonical": "Google Trends",
+   "type": "technology_platform",
+   "slug": "google-trends"
+  },
+  {
+   "id": "qe-967ea8ed2fa0",
+   "canonical": "Gregg Jarrett",
+   "type": "person",
+   "slug": "gregg-jarrett"
+  },
+  {
+   "id": "qe-42ab68084767",
+   "canonical": "Harmeet Dhillon",
+   "type": "person",
+   "slug": "harmeet-dhillon"
+  },
+  {
+   "id": "qe-ecb45b1e166d",
+   "canonical": "Harriet Cash",
+   "type": "person",
+   "slug": "harriet-cash"
+  },
+  {
+   "id": "qe-32cf6df8aa07",
+   "canonical": "Harvard Law School",
+   "type": "organization",
+   "slug": "harvard-law-school"
+  },
+  {
+   "id": "qe-25f5f64483e9",
+   "canonical": "Harvard Muslim Alumni",
+   "type": "organization",
+   "slug": "harvard-muslim-alumni"
+  },
+  {
+   "id": "qe-ff55f3f3d147",
+   "canonical": "House Clerk",
+   "type": "government_institution",
+   "slug": "house-clerk"
+  },
+  {
+   "id": "qe-64c82d1b7335",
+   "canonical": "House Democrats",
+   "type": "government_institution",
+   "slug": "house-democrats"
+  },
+  {
+   "id": "qe-ad0326f3114d",
+   "canonical": "House Intelligence",
+   "type": "government_institution",
+   "slug": "house-intelligence"
+  },
+  {
+   "id": "qe-efc069a23832",
+   "canonical": "House Intelligence Committee",
+   "type": "government_institution",
+   "slug": "house-intelligence-committee"
   },
   {
    "id": "qe-c378a7feae5f",
@@ -347,724 +575,10 @@
    "slug": "house-oversight"
   },
   {
-   "id": "qe-e86b643b6395",
-   "canonical": "Shiva Ayyadurai",
-   "type": "person",
-   "slug": "shiva-ayyadurai"
-  },
-  {
-   "id": "qe-7ee53376888c",
-   "canonical": "Mark Grant",
-   "type": "person",
-   "slug": "mark-grant"
-  },
-  {
-   "id": "qe-f189100b3bce",
-   "canonical": "Les Moonves",
-   "type": "person",
-   "slug": "les-moonves"
-  },
-  {
-   "id": "qe-7d76c2dddce5",
-   "canonical": "Ronan Farrow",
-   "type": "person",
-   "slug": "ronan-farrow"
-  },
-  {
-   "id": "qe-cf230e6f349c",
-   "canonical": "Ali Velshi",
-   "type": "person",
-   "slug": "ali-velshi"
-  },
-  {
-   "id": "qe-8dd4cfa59fce",
-   "canonical": "Joshua Adam Schulte",
-   "type": "person",
-   "slug": "joshua-adam-schulte"
-  },
-  {
-   "id": "qe-150dab1de650",
-   "canonical": "Sarah Sanders",
-   "type": "person",
-   "slug": "sarah-sanders"
-  },
-  {
-   "id": "qe-b23655c71613",
-   "canonical": "Chris Cuomo",
-   "type": "person",
-   "slug": "chris-cuomo"
-  },
-  {
-   "id": "qe-f4a4f7f7e6f6",
-   "canonical": "Phill Mudd",
-   "type": "person",
-   "slug": "phill-mudd"
-  },
-  {
-   "id": "qe-81c70fd3e376",
-   "canonical": "Rachel Maddow",
-   "type": "person",
-   "slug": "rachel-maddow"
-  },
-  {
-   "id": "qe-5382537e6076",
-   "canonical": "Telecommunications Act of 1996",
-   "type": "legislation_regulation",
-   "slug": "telecommunications-act-of-1996"
-  },
-  {
-   "id": "qe-d4b491dabbb6",
-   "canonical": "West Virginia",
-   "type": "country_region",
-   "slug": "west-virginia"
-  },
-  {
-   "id": "qe-7098d8ae0346",
-   "canonical": "James Gunn",
-   "type": "person",
-   "slug": "james-gunn"
-  },
-  {
-   "id": "qe-31664e7174cd",
-   "canonical": "New Mexico",
-   "type": "country_region",
-   "slug": "new-mexico"
-  },
-  {
-   "id": "qe-a68304393601",
-   "canonical": "Matt Doran",
-   "type": "person",
-   "slug": "matt-doran"
-  },
-  {
-   "id": "qe-35852e5aa506",
-   "canonical": "Operation Underground Railroad",
-   "type": "program_operation_project",
-   "slug": "operation-underground-railroad"
-  },
-  {
-   "id": "qe-b0925e132c0f",
-   "canonical": "Sunday Night",
-   "type": "event_incident",
-   "slug": "sunday-night"
-  },
-  {
-   "id": "qe-64d278bf9624",
-   "canonical": "Paul Combetta",
-   "type": "person",
-   "slug": "paul-combetta"
-  },
-  {
-   "id": "qe-787c735baabb",
-   "canonical": "Tony Blair",
-   "type": "person",
-   "slug": "tony-blair"
-  },
-  {
-   "id": "qe-e7cafadb1d39",
-   "canonical": "Michael Wolff",
-   "type": "person",
-   "slug": "michael-wolff"
-  },
-  {
-   "id": "qe-c24360253d0d",
-   "canonical": "Theresa May",
-   "type": "person",
-   "slug": "theresa-may"
-  },
-  {
-   "id": "qe-5f90d4b1138a",
-   "canonical": "Benedict Arnold",
-   "type": "person",
-   "slug": "benedict-arnold"
-  },
-  {
-   "id": "qe-c44175435b4c",
-   "canonical": "Admiral Rogers",
-   "type": "person",
-   "slug": "admiral-rogers"
-  },
-  {
-   "id": "qe-969011b0c0c3",
-   "canonical": "Vice News",
-   "type": "media_organization",
-   "slug": "vice-news"
-  },
-  {
-   "id": "qe-ad97b6ceea12",
-   "canonical": "Paul Pelosi",
-   "type": "person",
-   "slug": "paul-pelosi"
-  },
-  {
-   "id": "qe-c62318860f90",
-   "canonical": "Chief Justice John Roberts",
-   "type": "title_role",
-   "slug": "chief-justice-john-roberts"
-  },
-  {
-   "id": "qe-7fb3a5ba91e1",
-   "canonical": "Abigail Spanberger",
-   "type": "person",
-   "slug": "abigail-spanberger"
-  },
-  {
-   "id": "qe-e05911bf0d38",
-   "canonical": "National Security Adviser",
-   "type": "title_role",
-   "slug": "national-security-adviser"
-  },
-  {
-   "id": "qe-628d3aa3cc03",
-   "canonical": "State Department OIG",
-   "type": "organization",
-   "slug": "state-department-oig"
-  },
-  {
-   "id": "qe-14333c452434",
-   "canonical": "Jon Kyl",
-   "type": "person",
-   "slug": "jon-kyl"
-  },
-  {
-   "id": "qe-723f8970807f",
-   "canonical": "Cindy McCain",
-   "type": "person",
-   "slug": "cindy-mccain"
-  },
-  {
-   "id": "qe-e3f62badcf31",
-   "canonical": "Thomas Drake",
-   "type": "person",
-   "slug": "thomas-drake"
-  },
-  {
-   "id": "qe-dd7daa56e017",
-   "canonical": "Bob Woodward",
-   "type": "person",
-   "slug": "bob-woodward"
-  },
-  {
-   "id": "qe-fb426643f1c0",
-   "canonical": "Richard Nixon",
-   "type": "person",
-   "slug": "richard-nixon"
-  },
-  {
-   "id": "qe-a658dae7f330",
-   "canonical": "John Ehrlichman",
-   "type": "person",
-   "slug": "john-ehrlichman"
-  },
-  {
-   "id": "qe-d18d01b68905",
-   "canonical": "CBN News",
-   "type": "media_organization",
-   "slug": "cbn-news"
-  },
-  {
-   "id": "qe-d41b03d8b4e3",
-   "canonical": "The Independent",
-   "type": "media_organization",
-   "slug": "the-independent"
-  },
-  {
-   "id": "qe-d4ba181fe676",
-   "canonical": "Pope Francis",
-   "type": "person",
-   "slug": "pope-francis"
-  },
-  {
-   "id": "qe-bde83934c916",
-   "canonical": "Vice Motherboard",
-   "type": "media_organization",
-   "slug": "vice-motherboard"
-  },
-  {
-   "id": "qe-2ec618df3b1b",
-   "canonical": "FEMA",
-   "type": "organization",
-   "slug": "fema"
-  },
-  {
-   "id": "qe-967ea8ed2fa0",
-   "canonical": "Gregg Jarrett",
-   "type": "person",
-   "slug": "gregg-jarrett"
-  },
-  {
-   "id": "qe-f85eb38045e9",
-   "canonical": "Maria Wall",
-   "type": "person",
-   "slug": "maria-wall"
-  },
-  {
-   "id": "qe-7ae7f3117eb2",
-   "canonical": "Christine Blasey Ford",
-   "type": "person",
-   "slug": "christine-blasey-ford"
-  },
-  {
-   "id": "qe-49539a6e685c",
-   "canonical": "Capitol Hill",
-   "type": "country_region",
-   "slug": "capitol-hill"
-  },
-  {
-   "id": "qe-a686b214e02f",
-   "canonical": "Michael Sussmann",
-   "type": "person",
-   "slug": "michael-sussmann"
-  },
-  {
-   "id": "qe-fe23d9726244",
-   "canonical": "Peggy Grande",
-   "type": "person",
-   "slug": "peggy-grande"
-  },
-  {
-   "id": "qe-fd92e1bb64db",
-   "canonical": "Robert Bowers",
-   "type": "person",
-   "slug": "robert-bowers"
-  },
-  {
-   "id": "qe-309e76c61057",
-   "canonical": "Lisa Mei",
-   "type": "person",
-   "slug": "lisa-mei"
-  },
-  {
-   "id": "qe-ecb45b1e166d",
-   "canonical": "Harriet Cash",
-   "type": "person",
-   "slug": "harriet-cash"
-  },
-  {
-   "id": "qe-b23e29dfdb3e",
-   "canonical": "Chelsey Smith",
-   "type": "person",
-   "slug": "chelsey-smith"
-  },
-  {
-   "id": "qe-6c94d6eb1a03",
-   "canonical": "Scott Free Productions",
-   "type": "person",
-   "slug": "scott-free-productions"
-  },
-  {
-   "id": "qe-aadf4f7a7a94",
-   "canonical": "Sundar Pichai",
-   "type": "person",
-   "slug": "sundar-pichai"
-  },
-  {
-   "id": "qe-4df1e42eb9eb",
-   "canonical": "Roy Moore",
-   "type": "person",
-   "slug": "roy-moore"
-  },
-  {
-   "id": "qe-a75f41e9cff1",
-   "canonical": "Hussein Administration",
+   "id": "qe-9c86660b4ddb",
+   "canonical": "House Oversight Committee",
    "type": "government_institution",
-   "slug": "hussein-administration"
-  },
-  {
-   "id": "qe-e20723049600",
-   "canonical": "Kirk Adams",
-   "type": "person",
-   "slug": "kirk-adams"
-  },
-  {
-   "id": "qe-fadb7c27473e",
-   "canonical": "Cecile Richards",
-   "type": "person",
-   "slug": "cecile-richards"
-  },
-  {
-   "id": "qe-ff55f3f3d147",
-   "canonical": "House Clerk",
-   "type": "government_institution",
-   "slug": "house-clerk"
-  },
-  {
-   "id": "qe-98c27295dab4",
-   "canonical": "Michael Goodwin",
-   "type": "person",
-   "slug": "michael-goodwin"
-  },
-  {
-   "id": "qe-d17ccc5eb1cb",
-   "canonical": "Peter Orszag",
-   "type": "person",
-   "slug": "peter-orszag"
-  },
-  {
-   "id": "qe-79059767397e",
-   "canonical": "Lara Logan",
-   "type": "person",
-   "slug": "lara-logan"
-  },
-  {
-   "id": "qe-9e2ae0c4ed2c",
-   "canonical": "The New Yorker",
-   "type": "media_organization",
-   "slug": "the-new-yorker"
-  },
-  {
-   "id": "qe-e67c56563d17",
-   "canonical": "Jerusalem Post",
-   "type": "media_organization",
-   "slug": "jerusalem-post"
-  },
-  {
-   "id": "qe-d3d86a00dcff",
-   "canonical": "Baghdad",
-   "type": "location",
-   "slug": "baghdad"
-  },
-  {
-   "id": "qe-448c7b8f437f",
-   "canonical": "Saddam Hussein",
-   "type": "person",
-   "slug": "saddam-hussein"
-  },
-  {
-   "id": "qe-97ecb3eb1b65",
-   "canonical": "North Carolina",
-   "type": "country_region",
-   "slug": "north-carolina"
-  },
-  {
-   "id": "qe-1180428658d7",
-   "canonical": "Bernie Sanders",
-   "type": "person",
-   "slug": "bernie-sanders"
-  },
-  {
-   "id": "qe-bf1460b00ebe",
-   "canonical": "Cardinal George Pell",
-   "type": "person",
-   "slug": "cardinal-george-pell"
-  },
-  {
-   "id": "qe-64c82d1b7335",
-   "canonical": "House Democrats",
-   "type": "government_institution",
-   "slug": "house-democrats"
-  },
-  {
-   "id": "qe-be4e2eceac6c",
-   "canonical": "Senate Democrats",
-   "type": "government_institution",
-   "slug": "senate-democrats"
-  },
-  {
-   "id": "qe-fd9a9466fe14",
-   "canonical": "Bloody Sunday",
-   "type": "event_incident",
-   "slug": "bloody-sunday"
-  },
-  {
-   "id": "qe-61044273b1e2",
-   "canonical": "Federal Government",
-   "type": "government_institution",
-   "slug": "federal-government"
-  },
-  {
-   "id": "qe-478bff189dfe",
-   "canonical": "George Papadopoulos",
-   "type": "person",
-   "slug": "george-papadopoulos"
-  },
-  {
-   "id": "qe-426031b06175",
-   "canonical": "Chris Cox",
-   "type": "person",
-   "slug": "chris-cox"
-  },
-  {
-   "id": "qe-9bd3e06680ab",
-   "canonical": "Alan Krueger",
-   "type": "person",
-   "slug": "alan-krueger"
-  },
-  {
-   "id": "qe-794a3735fa02",
-   "canonical": "Sebastian Gorka",
-   "type": "person",
-   "slug": "sebastian-gorka"
-  },
-  {
-   "id": "qe-d0be1b502513",
-   "canonical": "Glenn Simpson",
-   "type": "person",
-   "slug": "glenn-simpson"
-  },
-  {
-   "id": "qe-6f5fab61b00b",
-   "canonical": "Ed Buck",
-   "type": "person",
-   "slug": "ed-buck"
-  },
-  {
-   "id": "qe-91feaf4a3236",
-   "canonical": "Judy Shelton",
-   "type": "person",
-   "slug": "judy-shelton"
-  },
-  {
-   "id": "qe-8edddb4d46bd",
-   "canonical": "Clare Bronfman",
-   "type": "person",
-   "slug": "clare-bronfman"
-  },
-  {
-   "id": "qe-33b6866304a9",
-   "canonical": "Michael Laney",
-   "type": "person",
-   "slug": "michael-laney"
-  },
-  {
-   "id": "qe-87bd761f0f71",
-   "canonical": "John Ratcliffe",
-   "type": "person",
-   "slug": "john-ratcliffe"
-  },
-  {
-   "id": "qe-f435238cd3de",
-   "canonical": "Cornell Law School",
-   "type": "organization",
-   "slug": "cornell-law-school"
-  },
-  {
-   "id": "qe-d4dd6672aea9",
-   "canonical": "American Red Cross",
-   "type": "organization",
-   "slug": "american-red-cross"
-  },
-  {
-   "id": "qe-5d35b09eef47",
-   "canonical": "Senator Grassley",
-   "type": "person",
-   "slug": "senator-grassley"
-  },
-  {
-   "id": "qe-d2b5dc7f5774",
-   "canonical": "Frank Cali",
-   "type": "person",
-   "slug": "frank-cali"
-  },
-  {
-   "id": "qe-a9499020d997",
-   "canonical": "Kim Jong",
-   "type": "person",
-   "slug": "kim-jong"
-  },
-  {
-   "id": "qe-ef41b0dc4536",
-   "canonical": "Star Wars",
-   "type": "creative_work",
-   "slug": "star-wars"
-  },
-  {
-   "id": "qe-f0c917472c64",
-   "canonical": "Andrew Kerr",
-   "type": "person",
-   "slug": "andrew-kerr"
-  },
-  {
-   "id": "qe-a5961af56db9",
-   "canonical": "New Orleans",
-   "type": "country_region",
-   "slug": "new-orleans"
-  },
-  {
-   "id": "qe-a40fa10990e2",
-   "canonical": "Waukesha South High School",
-   "type": "facility_property",
-   "slug": "waukesha-south-high-school"
-  },
-  {
-   "id": "qe-ad06365060ab",
-   "canonical": "Oshkosh Wisconsin",
-   "type": "country_region",
-   "slug": "oshkosh-wisconsin"
-  },
-  {
-   "id": "qe-cf72caa56682",
-   "canonical": "Jackson State University",
-   "type": "organization",
-   "slug": "jackson-state-university"
-  },
-  {
-   "id": "qe-6b5664b30f39",
-   "canonical": "Pearl Harbor",
-   "type": "location",
-   "slug": "pearl-harbor"
-  },
-  {
-   "id": "qe-8f2c4c83d140",
-   "canonical": "Naval Air Station",
-   "type": "facility_property",
-   "slug": "naval-air-station"
-  },
-  {
-   "id": "qe-9ee6f4494619",
-   "canonical": "Justice Department OIG",
-   "type": "organization",
-   "slug": "justice-department-oig"
-  },
-  {
-   "id": "qe-d536fab6c2ba",
-   "canonical": "Jeremy Fleming",
-   "type": "person",
-   "slug": "jeremy-fleming"
-  },
-  {
-   "id": "qe-be9443407fad",
-   "canonical": "Michael Beatty",
-   "type": "person",
-   "slug": "michael-beatty"
-  },
-  {
-   "id": "qe-5be819e1275d",
-   "canonical": "NYC Department of Transportation",
-   "type": "organization",
-   "slug": "nyc-department-of-transportation"
-  },
-  {
-   "id": "qe-5d57b70f7da5",
-   "canonical": "Jessica Schumer",
-   "type": "person",
-   "slug": "jessica-schumer"
-  },
-  {
-   "id": "qe-0074e0c7d38d",
-   "canonical": "Michael Shapiro",
-   "type": "person",
-   "slug": "michael-shapiro"
-  },
-  {
-   "id": "qe-a9b01b82abb3",
-   "canonical": "Andy Harris",
-   "type": "person",
-   "slug": "andy-harris"
-  },
-  {
-   "id": "qe-42ab68084767",
-   "canonical": "Harmeet Dhillon",
-   "type": "person",
-   "slug": "harmeet-dhillon"
-  },
-  {
-   "id": "qe-daece4fc5c9d",
-   "canonical": "Luke Goldberg",
-   "type": "person",
-   "slug": "luke-goldberg"
-  },
-  {
-   "id": "qe-6cacf7082c69",
-   "canonical": "Activision Blizzard",
-   "type": "organization",
-   "slug": "activision-blizzard"
-  },
-  {
-   "id": "qe-ca3a2efc7a40",
-   "canonical": "U.S. State Department",
-   "type": "organization",
-   "slug": "u-s-state-department"
-  },
-  {
-   "id": "qe-9ba608d159c0",
-   "canonical": "Democratic National Convention",
-   "type": "person",
-   "slug": "democratic-national-convention"
-  },
-  {
-   "id": "qe-7a2650adef9a",
-   "canonical": "Chris Hayes",
-   "type": "person",
-   "slug": "chris-hayes"
-  },
-  {
-   "id": "qe-dc51b7570403",
-   "canonical": "Jared De",
-   "type": "person",
-   "slug": "jared-de"
-  },
-  {
-   "id": "qe-85cd3021571b",
-   "canonical": "Civil Rights Division",
-   "type": "government_institution",
-   "slug": "civil-rights-division"
-  },
-  {
-   "id": "qe-ceae80730a2f",
-   "canonical": "Byron York",
-   "type": "person",
-   "slug": "byron-york"
-  },
-  {
-   "id": "qe-de1cd4c53026",
-   "canonical": "Fox Friends",
-   "type": "media_organization",
-   "slug": "fox-friends"
-  },
-  {
-   "id": "qe-1a3c2ae159d5",
-   "canonical": "Anderson Cooper",
-   "type": "person",
-   "slug": "anderson-cooper"
-  },
-  {
-   "id": "qe-4c64444515b8",
-   "canonical": "Valerie Plame",
-   "type": "person",
-   "slug": "valerie-plame"
-  },
-  {
-   "id": "qe-5afa5eb1bffc",
-   "canonical": "Amanda Hle",
-   "type": "person",
-   "slug": "amanda-hle"
-  },
-  {
-   "id": "qe-40171a5df985",
-   "canonical": "San Diego County",
-   "type": "location",
-   "slug": "san-diego-county"
-  },
-  {
-   "id": "qe-177205440a32",
-   "canonical": "Global Health Leaders",
-   "type": "organization",
-   "slug": "global-health-leaders"
-  },
-  {
-   "id": "qe-ae0f7ed45ac5",
-   "canonical": "Senate Committee",
-   "type": "government_institution",
-   "slug": "senate-committee"
-  },
-  {
-   "id": "qe-d29df03a2c7a",
-   "canonical": "Cambridge Dictionary",
-   "type": "media_organization",
-   "slug": "cambridge-dictionary"
-  },
-  {
-   "id": "qe-4700f035311f",
-   "canonical": "Thomas Basile",
-   "type": "person",
-   "slug": "thomas-basile"
-  },
-  {
-   "id": "qe-05c3b39efe82",
-   "canonical": "Omega Kingdom Ministries",
-   "type": "location",
-   "slug": "omega-kingdom-ministries"
+   "slug": "house-oversight-committee"
   },
   {
    "id": "qe-746f75d548db",
@@ -1073,40 +587,64 @@
    "slug": "house-republicans"
   },
   {
-   "id": "qe-8623046de048",
-   "canonical": "Matt Finn",
+   "id": "qe-583384b861a0",
+   "canonical": "HuffPost",
+   "type": "media_organization",
+   "slug": "huffpost"
+  },
+  {
+   "id": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
    "type": "person",
-   "slug": "matt-finn"
+   "slug": "hunter-biden"
   },
   {
-   "id": "qe-5ffea7a1d496",
-   "canonical": "Dana Boente",
+   "id": "qe-a75f41e9cff1",
+   "canonical": "Hussein Administration",
+   "type": "government_institution",
+   "slug": "hussein-administration"
+  },
+  {
+   "id": "qe-1c46e4567b2d",
+   "canonical": "Ilhan Omar",
    "type": "person",
-   "slug": "dana-boente"
+   "slug": "ilhan-omar"
   },
   {
-   "id": "qe-baf710e658c9",
-   "canonical": "Google Trends",
-   "type": "technology_platform",
-   "slug": "google-trends"
+   "id": "qe-b0da3b77f881",
+   "canonical": "Intelligence Community",
+   "type": "government_institution",
+   "slug": "intelligence-community"
   },
   {
-   "id": "qe-09c79d4d4b30",
-   "canonical": "Eric Garcetti",
-   "type": "person",
-   "slug": "eric-garcetti"
-  },
-  {
-   "id": "qe-7c11c90272b8",
-   "canonical": "Los Angeles",
-   "type": "location",
-   "slug": "los-angeles"
-  },
-  {
-   "id": "qe-2dfa3e05d6dc",
-   "canonical": "Minneapolis City Council",
+   "id": "qe-34cf2565da90",
+   "canonical": "International Islamic Council for Da'wa and Relief",
    "type": "organization",
-   "slug": "minneapolis-city-council"
+   "slug": "international-islamic-council-for-da-wa-and-relief"
+  },
+  {
+   "id": "qe-ad393745af3e",
+   "canonical": "Ivanka Trump",
+   "type": "person",
+   "slug": "ivanka-trump"
+  },
+  {
+   "id": "qe-cf72caa56682",
+   "canonical": "Jackson State University",
+   "type": "organization",
+   "slug": "jackson-state-university"
+  },
+  {
+   "id": "qe-64c77bcce503",
+   "canonical": "James Biden",
+   "type": "person",
+   "slug": "james-biden"
+  },
+  {
+   "id": "qe-7098d8ae0346",
+   "canonical": "James Gunn",
+   "type": "person",
+   "slug": "james-gunn"
   },
   {
    "id": "qe-b5bd715d185a",
@@ -1115,16 +653,178 @@
    "slug": "james-mattis"
   },
   {
+   "id": "qe-dc51b7570403",
+   "canonical": "Jared De",
+   "type": "person",
+   "slug": "jared-de"
+  },
+  {
+   "id": "qe-b1a37b982806",
+   "canonical": "Jeet Heer",
+   "type": "person",
+   "slug": "jeet-heer"
+  },
+  {
    "id": "qe-c52bf0c20672",
    "canonical": "Jeremiah Ellison",
    "type": "person",
    "slug": "jeremiah-ellison"
   },
   {
-   "id": "qe-1902640e3819",
-   "canonical": "Mike Lee",
+   "id": "qe-d536fab6c2ba",
+   "canonical": "Jeremy Fleming",
    "type": "person",
-   "slug": "mike-lee"
+   "slug": "jeremy-fleming"
+  },
+  {
+   "id": "qe-e67c56563d17",
+   "canonical": "Jerusalem Post",
+   "type": "media_organization",
+   "slug": "jerusalem-post"
+  },
+  {
+   "id": "qe-5d57b70f7da5",
+   "canonical": "Jessica Schumer",
+   "type": "person",
+   "slug": "jessica-schumer"
+  },
+  {
+   "id": "qe-a658dae7f330",
+   "canonical": "John Ehrlichman",
+   "type": "person",
+   "slug": "john-ehrlichman"
+  },
+  {
+   "id": "qe-87bd761f0f71",
+   "canonical": "John Ratcliffe",
+   "type": "person",
+   "slug": "john-ratcliffe"
+  },
+  {
+   "id": "qe-14333c452434",
+   "canonical": "Jon Kyl",
+   "type": "person",
+   "slug": "jon-kyl"
+  },
+  {
+   "id": "qe-31c5a848c624",
+   "canonical": "Jordan Klepper",
+   "type": "person",
+   "slug": "jordan-klepper"
+  },
+  {
+   "id": "qe-85888a5a8fd4",
+   "canonical": "Joseph Schmitz",
+   "type": "person",
+   "slug": "joseph-schmitz"
+  },
+  {
+   "id": "qe-8dd4cfa59fce",
+   "canonical": "Joshua Adam Schulte",
+   "type": "person",
+   "slug": "joshua-adam-schulte"
+  },
+  {
+   "id": "qe-91feaf4a3236",
+   "canonical": "Judy Shelton",
+   "type": "person",
+   "slug": "judy-shelton"
+  },
+  {
+   "id": "qe-9ee6f4494619",
+   "canonical": "Justice Department OIG",
+   "type": "organization",
+   "slug": "justice-department-oig"
+  },
+  {
+   "id": "qe-2245f17b77c6",
+   "canonical": "Kara Swisher",
+   "type": "person",
+   "slug": "kara-swisher"
+  },
+  {
+   "id": "qe-76da188497d6",
+   "canonical": "Kavanaugh",
+   "type": "person",
+   "slug": "kavanaugh"
+  },
+  {
+   "id": "qe-3a19fe52b2fe",
+   "canonical": "Kevin Spacey",
+   "type": "person",
+   "slug": "kevin-spacey"
+  },
+  {
+   "id": "qe-a9499020d997",
+   "canonical": "Kim Jong",
+   "type": "person",
+   "slug": "kim-jong"
+  },
+  {
+   "id": "qe-e20723049600",
+   "canonical": "Kirk Adams",
+   "type": "person",
+   "slug": "kirk-adams"
+  },
+  {
+   "id": "qe-b5f05a539bc1",
+   "canonical": "L.A. County",
+   "type": "location",
+   "slug": "l-a-county"
+  },
+  {
+   "id": "qe-79059767397e",
+   "canonical": "Lara Logan",
+   "type": "person",
+   "slug": "lara-logan"
+  },
+  {
+   "id": "qe-f189100b3bce",
+   "canonical": "Les Moonves",
+   "type": "person",
+   "slug": "les-moonves"
+  },
+  {
+   "id": "qe-4662ccd00b39",
+   "canonical": "Lindsey Graham",
+   "type": "person",
+   "slug": "lindsey-graham"
+  },
+  {
+   "id": "qe-309e76c61057",
+   "canonical": "Lisa Mei",
+   "type": "person",
+   "slug": "lisa-mei"
+  },
+  {
+   "id": "qe-7c11c90272b8",
+   "canonical": "Los Angeles",
+   "type": "location",
+   "slug": "los-angeles"
+  },
+  {
+   "id": "qe-daece4fc5c9d",
+   "canonical": "Luke Goldberg",
+   "type": "person",
+   "slug": "luke-goldberg"
+  },
+  {
+   "id": "qe-051753a626b3",
+   "canonical": "Marc Mezvinsky",
+   "type": "person",
+   "slug": "marc-mezvinsky"
+  },
+  {
+   "id": "qe-f85eb38045e9",
+   "canonical": "Maria Wall",
+   "type": "person",
+   "slug": "maria-wall"
+  },
+  {
+   "id": "qe-dee8e9c8635f",
+   "canonical": "Mariah Sunshine Coogan",
+   "type": "person",
+   "slug": "mariah-sunshine-coogan"
   },
   {
    "id": "qe-edf1d9b08fdc",
@@ -1133,46 +833,538 @@
    "slug": "mark-esper"
   },
   {
-   "id": "qe-24657d3b5b93",
-   "canonical": "Google Capital",
-   "type": "organization",
-   "slug": "google-capital"
+   "id": "qe-7ee53376888c",
+   "canonical": "Mark Grant",
+   "type": "person",
+   "slug": "mark-grant"
   },
   {
-   "id": "qe-3f8136a79c3b",
-   "canonical": "Confederate General",
+   "id": "qe-dbab506adc18",
+   "canonical": "Mark Levin",
+   "type": "person",
+   "slug": "mark-levin"
+  },
+  {
+   "id": "qe-a68304393601",
+   "canonical": "Matt Doran",
+   "type": "person",
+   "slug": "matt-doran"
+  },
+  {
+   "id": "qe-8623046de048",
+   "canonical": "Matt Finn",
+   "type": "person",
+   "slug": "matt-finn"
+  },
+  {
+   "id": "qe-2f4bc1c87a74",
+   "canonical": "Matt Gaetz",
+   "type": "person",
+   "slug": "matt-gaetz"
+  },
+  {
+   "id": "qe-e428d152c1f7",
+   "canonical": "Meadows",
+   "type": "person",
+   "slug": "meadows"
+  },
+  {
+   "id": "qe-be9443407fad",
+   "canonical": "Michael Beatty",
+   "type": "person",
+   "slug": "michael-beatty"
+  },
+  {
+   "id": "qe-98c27295dab4",
+   "canonical": "Michael Goodwin",
+   "type": "person",
+   "slug": "michael-goodwin"
+  },
+  {
+   "id": "qe-33b6866304a9",
+   "canonical": "Michael Laney",
+   "type": "person",
+   "slug": "michael-laney"
+  },
+  {
+   "id": "qe-0074e0c7d38d",
+   "canonical": "Michael Shapiro",
+   "type": "person",
+   "slug": "michael-shapiro"
+  },
+  {
+   "id": "qe-a686b214e02f",
+   "canonical": "Michael Sussmann",
+   "type": "person",
+   "slug": "michael-sussmann"
+  },
+  {
+   "id": "qe-e7cafadb1d39",
+   "canonical": "Michael Wolff",
+   "type": "person",
+   "slug": "michael-wolff"
+  },
+  {
+   "id": "qe-1902640e3819",
+   "canonical": "Mike Lee",
+   "type": "person",
+   "slug": "mike-lee"
+  },
+  {
+   "id": "qe-d350ae114c30",
+   "canonical": "Mike Wallace",
+   "type": "person",
+   "slug": "mike-wallace"
+  },
+  {
+   "id": "qe-415492f50772",
+   "canonical": "Minneapolis",
+   "type": "location",
+   "slug": "minneapolis"
+  },
+  {
+   "id": "qe-2dfa3e05d6dc",
+   "canonical": "Minneapolis City Council",
+   "type": "organization",
+   "slug": "minneapolis-city-council"
+  },
+  {
+   "id": "qe-8897be130f69",
+   "canonical": "MKUltra",
+   "type": "program_operation_project",
+   "slug": "mkultra"
+  },
+  {
+   "id": "qe-132c597e73ef",
+   "canonical": "National Archives and Records Administration",
+   "type": "government_agency",
+   "slug": "national-archives-and-records-administration"
+  },
+  {
+   "id": "qe-e05911bf0d38",
+   "canonical": "National Security Adviser",
    "type": "title_role",
-   "slug": "confederate-general"
+   "slug": "national-security-adviser"
+  },
+  {
+   "id": "qe-8f2c4c83d140",
+   "canonical": "Naval Air Station",
+   "type": "facility_property",
+   "slug": "naval-air-station"
+  },
+  {
+   "id": "qe-ec290e41f3f7",
+   "canonical": "Nevada",
+   "type": "location",
+   "slug": "nevada"
+  },
+  {
+   "id": "qe-31664e7174cd",
+   "canonical": "New Mexico",
+   "type": "country_region",
+   "slug": "new-mexico"
+  },
+  {
+   "id": "qe-a5961af56db9",
+   "canonical": "New Orleans",
+   "type": "country_region",
+   "slug": "new-orleans"
+  },
+  {
+   "id": "qe-ab59ea53d843",
+   "canonical": "New York Governor",
+   "type": "title_role",
+   "slug": "new-york-governor"
+  },
+  {
+   "id": "qe-33b95dc95027",
+   "canonical": "New York Magazine",
+   "type": "media_organization",
+   "slug": "new-york-magazine"
+  },
+  {
+   "id": "qe-97ecb3eb1b65",
+   "canonical": "North Carolina",
+   "type": "country_region",
+   "slug": "north-carolina"
+  },
+  {
+   "id": "qe-5be819e1275d",
+   "canonical": "NYC Department of Transportation",
+   "type": "organization",
+   "slug": "nyc-department-of-transportation"
+  },
+  {
+   "id": "qe-90704aec1d9e",
+   "canonical": "Of Montreal",
+   "type": "creative_work",
+   "slug": "of-montreal"
+  },
+  {
+   "id": "qe-78b861a601cb",
+   "canonical": "Omarosa",
+   "type": "person",
+   "slug": "omarosa"
+  },
+  {
+   "id": "qe-05c3b39efe82",
+   "canonical": "Omega Kingdom Ministries",
+   "type": "location",
+   "slug": "omega-kingdom-ministries"
+  },
+  {
+   "id": "qe-35852e5aa506",
+   "canonical": "Operation Underground Railroad",
+   "type": "program_operation_project",
+   "slug": "operation-underground-railroad"
+  },
+  {
+   "id": "qe-6b7c591f5ac2",
+   "canonical": "Oregon State Park",
+   "type": "country_region",
+   "slug": "oregon-state-park"
+  },
+  {
+   "id": "qe-ad06365060ab",
+   "canonical": "Oshkosh Wisconsin",
+   "type": "country_region",
+   "slug": "oshkosh-wisconsin"
+  },
+  {
+   "id": "qe-941a5a89c489",
+   "canonical": "Paris",
+   "type": "location",
+   "slug": "paris"
+  },
+  {
+   "id": "qe-64d278bf9624",
+   "canonical": "Paul Combetta",
+   "type": "person",
+   "slug": "paul-combetta"
+  },
+  {
+   "id": "qe-ad97b6ceea12",
+   "canonical": "Paul Pelosi",
+   "type": "person",
+   "slug": "paul-pelosi"
+  },
+  {
+   "id": "qe-6b5664b30f39",
+   "canonical": "Pearl Harbor",
+   "type": "location",
+   "slug": "pearl-harbor"
+  },
+  {
+   "id": "qe-fe23d9726244",
+   "canonical": "Peggy Grande",
+   "type": "person",
+   "slug": "peggy-grande"
+  },
+  {
+   "id": "qe-d17ccc5eb1cb",
+   "canonical": "Peter Orszag",
+   "type": "person",
+   "slug": "peter-orszag"
+  },
+  {
+   "id": "qe-f4a4f7f7e6f6",
+   "canonical": "Phill Mudd",
+   "type": "person",
+   "slug": "phill-mudd"
+  },
+  {
+   "id": "qe-6eba7f9e78be",
+   "canonical": "Pizzagate",
+   "type": "person",
+   "slug": "pizzagate"
+  },
+  {
+   "id": "qe-d4ba181fe676",
+   "canonical": "Pope Francis",
+   "type": "person",
+   "slug": "pope-francis"
+  },
+  {
+   "id": "qe-ff8fcc84e333",
+   "canonical": "Portland",
+   "type": "location",
+   "slug": "portland"
+  },
+  {
+   "id": "qe-364240bb810a",
+   "canonical": "Quartz",
+   "type": "media_organization",
+   "slug": "quartz"
+  },
+  {
+   "id": "qe-81c70fd3e376",
+   "canonical": "Rachel Maddow",
+   "type": "person",
+   "slug": "rachel-maddow"
+  },
+  {
+   "id": "qe-fb426643f1c0",
+   "canonical": "Richard Nixon",
+   "type": "person",
+   "slug": "richard-nixon"
+  },
+  {
+   "id": "qe-fd92e1bb64db",
+   "canonical": "Robert Bowers",
+   "type": "person",
+   "slug": "robert-bowers"
+  },
+  {
+   "id": "qe-3536cd634019",
+   "canonical": "Robert Hannigan",
+   "type": "person",
+   "slug": "robert-hannigan"
+  },
+  {
+   "id": "qe-ec22243e149b",
+   "canonical": "Ron Johnson",
+   "type": "person",
+   "slug": "ron-johnson"
+  },
+  {
+   "id": "qe-7d76c2dddce5",
+   "canonical": "Ronan Farrow",
+   "type": "person",
+   "slug": "ronan-farrow"
+  },
+  {
+   "id": "qe-bb91501abc09",
+   "canonical": "Roseanne Barr",
+   "type": "person",
+   "slug": "roseanne-barr"
+  },
+  {
+   "id": "qe-4df1e42eb9eb",
+   "canonical": "Roy Moore",
+   "type": "person",
+   "slug": "roy-moore"
+  },
+  {
+   "id": "qe-448c7b8f437f",
+   "canonical": "Saddam Hussein",
+   "type": "person",
+   "slug": "saddam-hussein"
+  },
+  {
+   "id": "qe-40171a5df985",
+   "canonical": "San Diego County",
+   "type": "location",
+   "slug": "san-diego-county"
+  },
+  {
+   "id": "qe-beca24d6a2dc",
+   "canonical": "Santa Fe",
+   "type": "country_region",
+   "slug": "santa-fe"
+  },
+  {
+   "id": "qe-150dab1de650",
+   "canonical": "Sarah Sanders",
+   "type": "person",
+   "slug": "sarah-sanders"
+  },
+  {
+   "id": "qe-a6c9d8148ab3",
+   "canonical": "Saturday Night Live",
+   "type": "creative_work",
+   "slug": "saturday-night-live"
+  },
+  {
+   "id": "qe-6c94d6eb1a03",
+   "canonical": "Scott Free Productions",
+   "type": "person",
+   "slug": "scott-free-productions"
+  },
+  {
+   "id": "qe-5c574e817b4d",
+   "canonical": "Scribd",
+   "type": "technology_platform",
+   "slug": "scribd"
+  },
+  {
+   "id": "qe-794a3735fa02",
+   "canonical": "Sebastian Gorka",
+   "type": "person",
+   "slug": "sebastian-gorka"
+  },
+  {
+   "id": "qe-ae0f7ed45ac5",
+   "canonical": "Senate Committee",
+   "type": "government_institution",
+   "slug": "senate-committee"
+  },
+  {
+   "id": "qe-be4e2eceac6c",
+   "canonical": "Senate Democrats",
+   "type": "government_institution",
+   "slug": "senate-democrats"
+  },
+  {
+   "id": "qe-e72f4b6ffdeb",
+   "canonical": "Senate Intelligence Committee",
+   "type": "government_institution",
+   "slug": "senate-intelligence-committee"
+  },
+  {
+   "id": "qe-ddeb9c6c71b8",
+   "canonical": "Senate Judiciary Committee",
+   "type": "government_institution",
+   "slug": "senate-judiciary-committee"
+  },
+  {
+   "id": "qe-5d35b09eef47",
+   "canonical": "Senator Grassley",
+   "type": "person",
+   "slug": "senator-grassley"
+  },
+  {
+   "id": "qe-a66cafb88137",
+   "canonical": "Serzh Sargsyan",
+   "type": "person",
+   "slug": "serzh-sargsyan"
+  },
+  {
+   "id": "qe-e86b643b6395",
+   "canonical": "Shiva Ayyadurai",
+   "type": "person",
+   "slug": "shiva-ayyadurai"
+  },
+  {
+   "id": "qe-ccd279d5087e",
+   "canonical": "Snohomish County",
+   "type": "location",
+   "slug": "snohomish-county"
+  },
+  {
+   "id": "qe-ef41b0dc4536",
+   "canonical": "Star Wars",
+   "type": "creative_work",
+   "slug": "star-wars"
+  },
+  {
+   "id": "qe-628d3aa3cc03",
+   "canonical": "State Department OIG",
+   "type": "organization",
+   "slug": "state-department-oig"
+  },
+  {
+   "id": "qe-aadf4f7a7a94",
+   "canonical": "Sundar Pichai",
+   "type": "person",
+   "slug": "sundar-pichai"
+  },
+  {
+   "id": "qe-b0925e132c0f",
+   "canonical": "Sunday Night",
+   "type": "event_incident",
+   "slug": "sunday-night"
+  },
+  {
+   "id": "qe-5382537e6076",
+   "canonical": "Telecommunications Act of 1996",
+   "type": "legislation_regulation",
+   "slug": "telecommunications-act-of-1996"
+  },
+  {
+   "id": "qe-d41b03d8b4e3",
+   "canonical": "The Independent",
+   "type": "media_organization",
+   "slug": "the-independent"
+  },
+  {
+   "id": "qe-5d58e0f6a89b",
+   "canonical": "The Ingraham Angle",
+   "type": "creative_work",
+   "slug": "the-ingraham-angle"
+  },
+  {
+   "id": "qe-9e2ae0c4ed2c",
+   "canonical": "The New Yorker",
+   "type": "media_organization",
+   "slug": "the-new-yorker"
+  },
+  {
+   "id": "qe-c24360253d0d",
+   "canonical": "Theresa May",
+   "type": "person",
+   "slug": "theresa-may"
+  },
+  {
+   "id": "qe-4700f035311f",
+   "canonical": "Thomas Basile",
+   "type": "person",
+   "slug": "thomas-basile"
+  },
+  {
+   "id": "qe-e3f62badcf31",
+   "canonical": "Thomas Drake",
+   "type": "person",
+   "slug": "thomas-drake"
+  },
+  {
+   "id": "qe-787c735baabb",
+   "canonical": "Tony Blair",
+   "type": "person",
+   "slug": "tony-blair"
+  },
+  {
+   "id": "qe-ca3a2efc7a40",
+   "canonical": "U.S. State Department",
+   "type": "organization",
+   "slug": "u-s-state-department"
+  },
+  {
+   "id": "qe-4c64444515b8",
+   "canonical": "Valerie Plame",
+   "type": "person",
+   "slug": "valerie-plame"
+  },
+  {
+   "id": "qe-bde83934c916",
+   "canonical": "Vice Motherboard",
+   "type": "media_organization",
+   "slug": "vice-motherboard"
+  },
+  {
+   "id": "qe-969011b0c0c3",
+   "canonical": "Vice News",
+   "type": "media_organization",
+   "slug": "vice-news"
+  },
+  {
+   "id": "qe-78b350851367",
+   "canonical": "Virgin Islands",
+   "type": "location",
+   "slug": "virgin-islands"
+  },
+  {
+   "id": "qe-a40fa10990e2",
+   "canonical": "Waukesha South High School",
+   "type": "facility_property",
+   "slug": "waukesha-south-high-school"
+  },
+  {
+   "id": "qe-2edf557260a3",
+   "canonical": "West Hollywood",
+   "type": "country_region",
+   "slug": "west-hollywood"
+  },
+  {
+   "id": "qe-d4b491dabbb6",
+   "canonical": "West Virginia",
+   "type": "country_region",
+   "slug": "west-virginia"
   },
   {
    "id": "qe-c41325e2d485",
    "canonical": "William H. Carney",
    "type": "person",
    "slug": "william-h-carney"
-  },
-  {
-   "id": "qe-12e9d3e5fe25",
-   "canonical": "Breakfast Club",
-   "type": "facility_property",
-   "slug": "breakfast-club"
-  },
-  {
-   "id": "qe-349ce0440062",
-   "canonical": "Yale Medicine",
-   "type": "organization",
-   "slug": "yale-medicine"
-  },
-  {
-   "id": "qe-f0dcfa6db00e",
-   "canonical": "Cornell Law",
-   "type": "legislation_regulation",
-   "slug": "cornell-law"
-  },
-  {
-   "id": "qe-82f9daa0f19c",
-   "canonical": "Al Qaeda",
-   "type": "person",
-   "slug": "al-qaeda"
   },
   {
    "id": "qe-f88414af0b11",
@@ -1187,196 +1379,10 @@
    "slug": "world-trade-organization"
   },
   {
-   "id": "qe-a6b40d70bfbf",
-   "canonical": "El Centro",
-   "type": "country_region",
-   "slug": "el-centro"
-  },
-  {
-   "id": "qe-b5f05a539bc1",
-   "canonical": "L.A. County",
-   "type": "location",
-   "slug": "l-a-county"
-  },
-  {
-   "id": "qe-c82ada60104d",
-   "canonical": "Andrew Jackson",
-   "type": "person",
-   "slug": "andrew-jackson"
-  },
-  {
-   "id": "qe-3a19fe52b2fe",
-   "canonical": "Kevin Spacey",
-   "type": "person",
-   "slug": "kevin-spacey"
-  },
-  {
-   "id": "qe-64c77bcce503",
-   "canonical": "James Biden",
-   "type": "person",
-   "slug": "james-biden"
-  },
-  {
-   "id": "qe-78b350851367",
-   "canonical": "Virgin Islands",
-   "type": "location",
-   "slug": "virgin-islands"
-  },
-  {
-   "id": "qe-a3f4e1c9a5c1",
-   "canonical": "Donald Lukens",
-   "type": "person",
-   "slug": "donald-lukens"
-  },
-  {
-   "id": "qe-f2ba73f57644",
-   "canonical": "Earl Kimmerling",
-   "type": "person",
-   "slug": "earl-kimmerling"
-  },
-  {
-   "id": "qe-7049e3ac2389",
-   "canonical": "Department of Treasury",
+   "id": "qe-349ce0440062",
+   "canonical": "Yale Medicine",
    "type": "organization",
-   "slug": "department-of-treasury"
-  },
-  {
-   "id": "qe-941a5a89c489",
-   "canonical": "Paris",
-   "type": "location",
-   "slug": "paris"
-  },
-  {
-   "id": "qe-b0da3b77f881",
-   "canonical": "Intelligence Community",
-   "type": "government_institution",
-   "slug": "intelligence-community"
-  },
-  {
-   "id": "qe-3a54a5469bcf",
-   "canonical": "Eastern Washington",
-   "type": "country_region",
-   "slug": "eastern-washington"
-  },
-  {
-   "id": "qe-6b7c591f5ac2",
-   "canonical": "Oregon State Park",
-   "type": "country_region",
-   "slug": "oregon-state-park"
-  },
-  {
-   "id": "qe-ccd279d5087e",
-   "canonical": "Snohomish County",
-   "type": "location",
-   "slug": "snohomish-county"
-  },
-  {
-   "id": "qe-2245f17b77c6",
-   "canonical": "Kara Swisher",
-   "type": "person",
-   "slug": "kara-swisher"
-  },
-  {
-   "id": "qe-8cd60bf7677e",
-   "canonical": "Administration",
-   "type": "government_institution",
-   "slug": "administration"
-  },
-  {
-   "id": "qe-32cf6df8aa07",
-   "canonical": "Harvard Law School",
-   "type": "organization",
-   "slug": "harvard-law-school"
-  },
-  {
-   "id": "qe-ec22243e149b",
-   "canonical": "Ron Johnson",
-   "type": "person",
-   "slug": "ron-johnson"
-  },
-  {
-   "id": "qe-ab59ea53d843",
-   "canonical": "New York Governor",
-   "type": "title_role",
-   "slug": "new-york-governor"
-  },
-  {
-   "id": "qe-b1a37b982806",
-   "canonical": "Jeet Heer",
-   "type": "person",
-   "slug": "jeet-heer"
-  },
-  {
-   "id": "qe-6f898a7508fd",
-   "canonical": "Erin Nanoki",
-   "type": "person",
-   "slug": "erin-nanoki"
-  },
-  {
-   "id": "qe-dc71841cc36f",
-   "canonical": "Bryan S. Ware",
-   "type": "person",
-   "slug": "bryan-s-ware"
-  },
-  {
-   "id": "qe-051753a626b3",
-   "canonical": "Marc Mezvinsky",
-   "type": "person",
-   "slug": "marc-mezvinsky"
-  },
-  {
-   "id": "qe-34cf2565da90",
-   "canonical": "International Islamic Council for Da'wa and Relief",
-   "type": "organization",
-   "slug": "international-islamic-council-for-da-wa-and-relief"
-  },
-  {
-   "id": "qe-f6ab5ef8147d",
-   "canonical": "Carl Ghattas",
-   "type": "person",
-   "slug": "carl-ghattas"
-  },
-  {
-   "id": "qe-d350ae114c30",
-   "canonical": "Mike Wallace",
-   "type": "person",
-   "slug": "mike-wallace"
-  },
-  {
-   "id": "qe-92f4051753fc",
-   "canonical": "Adolf Hitler",
-   "type": "person",
-   "slug": "adolf-hitler"
-  },
-  {
-   "id": "qe-31c5a848c624",
-   "canonical": "Jordan Klepper",
-   "type": "person",
-   "slug": "jordan-klepper"
-  },
-  {
-   "id": "qe-9054d5a03df4",
-   "canonical": "Comedy Central",
-   "type": "media_organization",
-   "slug": "comedy-central"
-  },
-  {
-   "id": "qe-90704aec1d9e",
-   "canonical": "Of Montreal",
-   "type": "creative_work",
-   "slug": "of-montreal"
-  },
-  {
-   "id": "qe-6ae8ccb666ea",
-   "canonical": "Daily Caller News Foundation",
-   "type": "media_organization",
-   "slug": "daily-caller-news-foundation"
-  },
-  {
-   "id": "qe-132c597e73ef",
-   "canonical": "National Archives and Records Administration",
-   "type": "government_agency",
-   "slug": "national-archives-and-records-administration"
+   "slug": "yale-medicine"
   }
  ]
 }

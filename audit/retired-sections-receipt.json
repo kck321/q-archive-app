@@ -9,22 +9,22 @@
   "checkableSpans": 1920
  },
  "claimMetaAttributesCleared": {
-  "checkable": 2166,
+  "checkable": 2163,
   "isConclusion": 958
  },
  "postsTouched": 4966,
- "claimMetaEntriesTouched": 9695,
+ "claimMetaEntriesTouched": 9644,
  "claimsAndPredictionsUnchanged": {
   "before": {
-   "claims": 8676,
-   "claimSpans": 8676,
-   "predictions": 843,
+   "claims": 8631,
+   "claimSpans": 8631,
+   "predictions": 841,
    "predictionSpans": 843
   },
   "after": {
-   "claims": 8676,
-   "claimSpans": 8676,
-   "predictions": 843,
+   "claims": 8631,
+   "claimSpans": 8631,
+   "predictions": 841,
    "predictionSpans": 843
   }
  }

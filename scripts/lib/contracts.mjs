@@ -70,7 +70,14 @@ export const CANONICAL = {
   // what the page actually renders — the old 1,472/1,417 counted directives-final.json alone and
   // never matched the UI.
   // +485 occurrences (486 ruled, 1 already certified), +185 wordings, +225 posts.
-  directives: { occurrences: 2940, distinct: 1829, posts: 1689 },
+  // 2,940 -> 2,902 on 2026-08-23, the scripture ruling: "i would like the whole verse to be a
+  // directive and lets make the whole verse as 1 directive not multiples at the sentence breaks."
+  // 66 sentence-level fragments of a quoted passage withdrawn, 28 whole passages written in their
+  // place (31 blocks, 3 of which were already certified verbatim as one-line directives). This
+  // REVERSES the REMOVE_QUOTED_SCRIPTURE half of the 2026-08-16 religious adjudication, by owner
+  // ruling and on purpose: the passage IS the directive now. Posts RISE by 7 — seven drops carried
+  // their scripture only as Claims and gain their first certified directive.
+  directives: { occurrences: 2902, distinct: 1830, posts: 1696 },
   // 4,181 -> 4,188 on 2026-08-13 by owner adjudication, not by a classifier. Six exact
   // occurrences of "Pure evil." / "PURE EVIL." plus "The 'real' racist." in #2917. The corpus
   // search that found them also showed the fuller variants ("These people are pure evil.",
@@ -107,7 +114,10 @@ export const CANONICAL = {
   // count falls by the duplicates while the text painted goes UP. The other four withdrawals are
   // three fragments of the source-owned paragraph on #4310 and one twelve-character tail on #4801
   // reading 'Biden, ...." ' , which asserted nothing.
-  claims: { occurrences: 8676, distinct: 6795, posts: 3056 },
+  // 8,676 -> 8,631 on 2026-08-23, the same scripture ruling. 45 claims withdrawn, each one a
+  // sentence inside a quoted passage that is now one Directive. A passage cannot be one Directive
+  // and also nine Claims — that scattering is exactly what the ruling removes.
+  claims: { occurrences: 8631, distinct: 6765, posts: 3050 },
   // 630 -> 595: -73 technical nonpredictions, -56 arguable rows withdrawn to the review
   // backlog, +66 unique moves from Claims, +28 high-confidence predictions the extractor
   // missed. posts 520 -> 490. The 91 withdrawn/held rows are NOT deleted — they sit in
@@ -117,7 +127,11 @@ export const CANONICAL = {
   // that drop its first certified prediction.
   // +4 on 2026-08-21 (r15): "MOVIE 1 [Full]: The 'START'" and "MOVIE 3 - TBA" on #1928 and #1929.
   // posts unchanged - both drops already carried certified predictions.
-  predictions: { occurrences: 843, posts: 672 },
+  // 843 -> 841 on 2026-08-23, the same scripture ruling. Two sentences inside quoted passages were
+  // certified Predictions — #35's "whoever believes in him shall not perish but have eternal life"
+  // and #1712's "Because of these, the wrath of God is coming." Same rule as the claims: a passage
+  // that is one Directive is not also a row in Predictions.
+  predictions: { occurrences: 841, posts: 671 },
   evidence: { occurrences: 6590, posts: 3883 },
   // canonical 1,240 -> 1,235: Owner Ruling 1 merged five duplicate identities. No occurrence moved.
   entities: {
@@ -167,7 +181,20 @@ export const CANONICAL = {
     // stays 1,292 — a withdrawal re-adjudicates what a detector found, it does not unfind it.
     // The ruling is audit/occurrence-withdrawals-owner-ruling-3.json, applied beside the approved
     // audit rather than inside it, and recorded as the fourth postApprovalDeltas entry.
-    canonical: 1214, detectedCanonical: 1292, ownerRulings: 118, ownerMerges: 1, queueRulings: 508,
+    // 1,214 -> 1,224 on 2026-08-23, the scripture ruling: "lets make the verse section example:
+    // – 1 Cor 13:4-13 and – Ephesians 6:10-18 an entity for now until i can subsect the post
+    // later." Ten reference labels Q prints beside a quoted passage become certified identities —
+    // Jeremiah 29:11, Ephesians 6:10-18, 1 Cor 13:4-13, Colossians 3:5, Corinthians 13:4-13,
+    // 1 Corinthians 16:13, 2 Thessalonians 3:3, Psalm 46:1, Matthew 6:13, Proverbs 13:9 — carrying
+    // 12 occurrences across 8 drops. detectedCanonical stays 1,292: an identity the owner ruled
+    // into existence is not one a detector found. Q's own label is used verbatim, including
+    // #1886's "Corinthians 13:4-13" over a quotation of 13:12, which is Q's error to keep.
+    // 1,224 -> 1,223 in the same ruling: "Ephesians" is retired. Its only two occurrences were the
+    // book name INSIDE "Ephesians 6:10-18" — the archive holds no standalone mention of the book —
+    // so once the label is the identity, keeping both counts the same characters twice and paints
+    // the label as two touching spans. The qe- id is reserved dormant (229 -> 230), so a genuine
+    // future mention of the book resolves back to it.
+    canonical: 1223, detectedCanonical: 1292, ownerRulings: 118, ownerMerges: 1, queueRulings: 508,
     /** Every resolved mention across all 1,334 certified entities. The headline figure. */
     // 8,227 -> 8,239: the RC alias ruling resolved 12 occurrences to Rachel Chandler. The merge
     // moved 4 mentions from the absorbed row onto hers and added none.
@@ -217,7 +244,10 @@ export const CANONICAL = {
   // merges landed, unseen only because audit-cross-section.mjs could not run at all while
   // Emphasis was half-retired. reconcile-entity-registry.mjs applies the exact decrements the
   // adjudication recorded and refuses unless the two totals then agree.
-    mentions: 8821,
+  // 8,821 -> 8,833 on 2026-08-23, the scripture ruling. The 12 reference labels Q prints beside a
+  // quoted passage become certified occurrences across 8 drops. They land on OWNER-RULING rows, so
+  // the core and tail components are untouched and the third component carries all 12.
+    mentions: 8831,
     /** How it is composed. The core figure is the section's history, not its headline. */
     // tailEntities is what the tail adjudication produced (1,239); one of them, Ray Chandler,
     // now ships merged into Rachel Chandler, so 1,238 tail rows appear in the artifact.
@@ -227,8 +257,10 @@ export const CANONICAL = {
     // +8 core, +58 tail from the queue rulings; the remaining 105 land on owner-ruling rows.
     // +6 tail: Nellie Ohr is an adjudicated-tail row.
     // Re-measured 2026-08-22 after the lane-B reviews and the duplicate-record reconciliation.
-    // The three components add to the headline: 5236 core + 2870 tail + 715 owner-ruling rows.
-    coreEntities: 93, coreRegistryMentions: 5236, tailEntities: 967, tailMentions: 2870,
+    // The three components add to the headline: 5236 core + 2868 tail + 727 owner-ruling rows.
+    // tail 2,870 -> 2,868: "Ephesians" was an adjudicated-tail row and takes its two occurrences
+    // with it. The 12 citation occurrences land on owner-ruling rows, so 715 -> 727 there.
+    coreEntities: 93, coreRegistryMentions: 5236, tailEntities: 966, tailMentions: 2868,
   },
   // 2,393 detected + 2 owner rulings ("Ascension." -> Religion & Spirituality, #4963 and #4966).
   // The rulings live in audit/themes-owner-rulings.json and are merged by apply-themes.mjs, so
@@ -450,7 +482,7 @@ export const KNOWN_DEBT = {
   // postsAffected stays 235: the repair removed six OCCURRENCES but no drop lost its last one —
   // #2211, #4630 and #4632 still carry other over-extended spans. Occurrence count and post count
   // move independently, which is why both are recorded.
-  postsAffected: 234,
+  postsAffected: 235,
   // RECOMPUTED 2026-08-13 after the quote-boundary fix, not bumped to satisfy a gate.
   //
   // sourceLines() treated a line ENDING in a closing quotation mark as still inside the quote,
@@ -512,7 +544,24 @@ export const KNOWN_DEBT = {
   //
   // postsAffected 235 -> 234: one drop lost its last over-extended span. Occurrence count and post
   // count move independently, which is why both are recorded.
-  baseline: { questions: 99, directives: 128, claims: 564, emphasis: 0 },
+  // postsAffected 234 -> 235 on 2026-08-23: #2744 quoted three verses and carried no certified
+  // directive or claim over any of them, so it held no debt. It now holds three verse blocks and
+  // enters the set. Nine drops appear in the drift; only this one is new to it.
+  // THE SCRIPTURE RULING MOVES THIS DEBT ON PURPOSE (2026-08-23), and it is the one case so far
+  // where a row on quoted material is the INTENDED result rather than a detector over-reach.
+  //
+  // Quoted scripture IS quoted material, so sourceLines() rightly reads a verse block as
+  // non-Q-authored — and the owner has ruled that the passage is nonetheless a certified Directive.
+  // So these rows are permanent, declared debt, not a defect awaiting a detector fix.
+  //
+  //   directives 128 -> 107   -32 sentence-level fragments of quoted passages withdrawn,
+  //                           +11 whole passages certified in their place. The same text, on the
+  //                           same quoted lines, as ONE row each instead of many.
+  //   claims     564 -> 552   -12 fragments withdrawn to the Directive that now covers them.
+  //
+  // Net: 44 debt occurrences out, 11 in. The set file is re-frozen with the ruling, and the drift
+  // that produced it is enumerated in audit/source-boundary-drift.json.
+  baseline: { questions: 99, directives: 107, claims: 552, emphasis: 0 },
   // 102 -> 103 and 123 -> 124 on 2026-08-13, ruled BENIGN and documented rather than bumped
   // quietly. Cause: literal-span materialisation. The isolation test now measures the literal
   // form of a question rather than its certified normalised text, and a longer span is
