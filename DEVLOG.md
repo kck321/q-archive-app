@@ -6777,3 +6777,53 @@ name because the original was open in Excel and locked (`Device or resource busy
 the original filename once Excel is closed.
 
 **AUDIT_ONLY.** Nothing classified, nothing rebuilt, nothing deployed. Production stays at seed 88.
+
+## 2026-08-23 — Dashboard off the public site, the sidebar folds into Extras, and the donation addresses go live
+
+Four owner requests, one local batch. Everything is committed and reviewable on the dev servers;
+nothing is deployed yet.
+
+**1. "take this line out of the support donations page."** The Support paragraph claimed the AI
+analysis "does cost real money to produce across nearly 5,000 drops". Gone; the paragraph now ends
+at "It runs on time more than money." (`ec3b685`)
+
+**2. "i want to take the dashboard off the qdrops.app."** The Dashboard was PIN-locked on the
+public site but still SHIPPED in the public bundle — the page, its admin strings and its route were
+all in the JS a visitor downloaded. The route and the sidebar entry now sit behind `CAN_EDIT`, the
+same idiom `/editorial/hover-review` already used, so Rollup drops them from that build entirely.
+Proved on a real public build: 0 occurrences of `/dashboard` and 0 of "Dashboard is locked" in
+`assets/`. The editorial build keeps all of it. (`d1fc7ac`)
+
+One loose end left deliberately: `AnalysisArchive` still tells an empty section to "run Analyze All
+Posts from the Dashboard". It is an empty-state that the seeded public site cannot reach, and the
+sentence is correct for the editorial build, so it stays.
+
+**3. "put this group of items in another tab called Extras."** Q Tripcodes, Q Clusters, All Q Links,
+Sources, Resources, Resolution Center, How This Works, Comments & Ideas and Get the App now fold
+behind one **Extras** row. Top level keeps the archive, the certified sections and Support. The
+group opens by itself when the route is inside it, keeps the accent colour while a page in it is
+active but folded, and stops propagation so toggling it does not close the mobile drawer. Open
+state is DERIVED (`choice ?? inExtras`), not synced in an effect — that is also what the
+`react-hooks/set-state-in-effect` lint rule wanted. Nested rows are `gap-2 px-2 whitespace-nowrap`
+because the indent costs ~20px, which is exactly enough to wrap "Resolution Center". Every route is
+unchanged. (`357dc7d`)
+
+**4. Donation addresses: BTC, ETH, XRP.** All three live on the Support page, ETH directly below
+BTC as asked. The QR beside each address is **generated from that address string**, never a picture
+from a wallet app, so the code and the text cannot drift apart. A wrong address here is money that
+cannot be recalled, so it was proved rather than eyeballed:
+
+- Each address passes **its own checksum**: BTC valid bech32 (hrp `bc`, witness v0, 20-byte
+  program) · ETH valid **EIP-55** casing — the mixed case is load-bearing, never lower-case it ·
+  XRP valid base58check (accountID, 20-byte payload).
+- Each QR was rendered **from the running page** at 1280px and 390px, screenshotted, and decoded
+  back with jsQR. All three decode to the exact address printed beside them.
+
+QR stacks above the address on a phone (side by side, a 104px code left the address ten characters
+of line width); side by side from `sm` up. The generator and the decoder were installed in the
+scratchpad, NOT in the project — no new dependency, and `package.json` is untouched, so this stays
+off the `full` validation floor. (`8727a10`)
+
+**OPEN — owner to answer:** does the XRP address need a **destination tag**? If it is an exchange
+deposit address it does, and a tagless send is lost. The network line claims nothing either way
+until confirmed.
