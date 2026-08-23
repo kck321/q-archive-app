@@ -554,7 +554,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   const lowerOnly = Object.values(editableAliases).flat().filter(a => /^[a-z][a-z ]*$/.test(a))
   t('ui-alias-spelling', 'no alias is stored all-lowercase', lowerOnly.length === 0, lowerOnly.join(' ') || 'ok')
   t('ui-entities-submetrics', 'sectionInfo keeps the core and tail submetrics as provenance', has(CANONICAL.entities.coreRegistryMentions) && has(CANONICAL.entities.tailMentions), 'ok')
-  t('ui-themes', 'sectionInfo states 2,644', has(2644), 'ok')
+  t('ui-themes', `sectionInfo states ${CANONICAL.themes.assignments.toLocaleString()}`, has(CANONICAL.themes.assignments), 'ok')
   t('ui-codes', `sectionInfo states ${CANONICAL.codes.occurrences.toLocaleString()}`, has(CANONICAL.codes.occurrences), 'ok')
   // Retired: sectionInfo must NOT state an Emphasis figure any more.
   // The assertion is that no Emphasis SECTION is offered to a reader — not that the word never

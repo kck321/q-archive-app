@@ -79,7 +79,7 @@ export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number
   namedEntities: { occurrences: 8831, posts: 2098, unit: 'mentions' },
   // Themes are assignments rather than spans — a theme is inferred from a drop, not copied out
   // of it — so the unit is named accordingly. 2,393 detected + 2 owner rulings.
-  themes: { occurrences: 2644, posts: 1898, unit: 'assignments' },
+  themes: { occurrences: 2646, posts: 1899, unit: 'assignments' },
 }
 
 /**
@@ -211,7 +211,7 @@ export const ENTITIES = {
  */
 export const THEMES_INFO = {
   parents: 18,
-  assignments: 2644,
+  assignments: 2646,
   posts: 1766,
   multiTheme: 378,
   unresolved: 251,
@@ -378,7 +378,7 @@ export const SECTIONS: SectionInfo[] = [
     short: 'Recurring subjects that connect posts across the archive.',
     covers: 'Recurring subjects and concepts connecting posts across the entire archive — elections, intelligence agencies, media, censorship, military matters, trafficking, financial systems, government investigations, foreign affairs, technology and other recurring topics.',
     answers: 'What larger subject was this post about?',
-    certified: `${n(2644)} assignments · ${n(1898)} posts · 18 parent themes`,
+    certified: `${n(2646)} assignments · ${n(1899)} posts · 18 parent themes`,
     note: 'Themes identify the recurring subjects Q discusses across the archive. They describe what a post is about, not how Q writes it. A post may have more than one theme — 378 do. Style features such as cryptic phrasing, repetition, coded language, or pattern-based reasoning are classified elsewhere rather than treated as subjects. A theme is assigned only on converging evidence, never on a single word appearing.',
   },
   {

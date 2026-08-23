@@ -238,7 +238,7 @@ const checks = [
   // 1,334: Ray Chandler ships merged into Rachel Chandler under the owner ruling.
   [`Entities indexed = ${CANONICAL.entities.canonical.toLocaleString()}`,
     bySection.entities === CANONICAL.entities.canonical, bySection.entities],
-  ['Themes indexed = 2,644', bySection.themes === 2644, bySection.themes],
+  ['Themes indexed = 2,646', bySection.themes === 2646, bySection.themes],
   ['Codes indexed = 747', bySection.codes === 747, bySection.codes],
   // Read from the contract, never copied — see the same fix in build-relationships.mjs.
   [`Unresolved indexed = ${CANONICAL.resolution.total.toLocaleString()}`,

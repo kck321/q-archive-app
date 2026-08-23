@@ -90,10 +90,10 @@ const checks = [
   // Both counts are asserted separately so an owner ruling can never be mistaken for detector
   // drift, and so a lost ruling fails here rather than quietly reverting the total to 2,393.
   ['detected theme assignments = 2,393', out.totals.assignments - ownerAdded === 2393, out.totals.assignments - ownerAdded],
-  ['owner theme rulings applied = 251', ownerAdded === 251, ownerAdded],
-  ['theme assignments = 2,644', out.totals.assignments === 2644, out.totals.assignments],
-  ['posts with a theme = 1,898', out.totals.postsWithAtLeastOne === 1898, out.totals.postsWithAtLeastOne],
-  ['multi-theme posts = 444', out.totals.postsWithMoreThanOne === 444, out.totals.postsWithMoreThanOne],
+  ['owner theme rulings applied = 253', ownerAdded === 253, ownerAdded],
+  ['theme assignments = 2,646', out.totals.assignments === 2646, out.totals.assignments],
+  ['posts with a theme = 1,899', out.totals.postsWithAtLeastOne === 1899, out.totals.postsWithAtLeastOne],
+  ['multi-theme posts = 445', out.totals.postsWithMoreThanOne === 445, out.totals.postsWithMoreThanOne],
   ['unresolved in Resolution Center = 251', out.totals.unresolvedInResolutionCenter === 251, out.totals.unresolvedInResolutionCenter],
   ['18 parent themes, unchanged', themeTable.length === 18, themeTable.length],
   ['no style label imported as a subject', styleLeak.length === 0, `${styleLeak.length} leaked`],

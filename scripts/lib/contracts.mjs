@@ -265,7 +265,11 @@ export const CANONICAL = {
   // 2,393 detected + 2 owner rulings ("Ascension." -> Religion & Spirituality, #4963 and #4966).
   // The rulings live in audit/themes-owner-rulings.json and are merged by apply-themes.mjs, so
   // re-deriving audit-themes.mjs cannot erase them. detected/owner are asserted separately there.
-  themes: { assignments: 2644, detected: 2393, ownerRulings: 251, posts: 1898 },
+  // 2,644 -> 2,646 on 2026-08-23: the owner ruled that every drop carrying a verse block belongs to
+  // Religion & Spirituality. 26 of the 28 already did; #37 ("Fight the good fight.") and #54
+  // (nothing but Jeremiah 29:11) did not. #54 gains its FIRST theme, so posts 1,898 -> 1,899;
+  // #37 already carried Justice & Courts, so multi-theme posts 444 -> 445.
+  themes: { assignments: 2646, detected: 2393, ownerRulings: 253, posts: 1899 },
   // +8 occurrences: 15 bracket lines ruled, 7 already certified at their post. Each of the 8 is a
   // wording Codes did not hold, and 4 posts gain their first certified code.
   codes: { occurrences: 1957, distinct: 747, posts: 856 },

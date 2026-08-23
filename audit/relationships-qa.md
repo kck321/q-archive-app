@@ -3,14 +3,14 @@
 A product layer over frozen data. Every relationship comes from a stored cross-link, a certified span overlap, a shared certified id, or an adjudicated attribute — **none is inferred from keywords or proximity**. No certified count moves.
 
 
-**4,100 relationships** across 4,918 posts.
+**4,102 relationships** across 4,918 posts.
 
 
 ## By type
 
 | Relationship | Count | Certified basis |
 |---|---|---|
-| theme ↔ support | 1,719 | `themes.evidence.anchors` |
+| theme ↔ support | 1,721 | `themes.evidence.anchors` |
 | prediction ↔ assertion | 841 | `claimMeta.semanticFamily` — sections stay separate |
 | evidence ↔ claim | 649 | certified span overlap |
 | claim ↔ source ↔ provided | 330 | `claimMeta.sourceProvided` |
