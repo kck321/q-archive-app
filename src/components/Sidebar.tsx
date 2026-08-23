@@ -50,7 +50,10 @@ const bottomLinks = [
   { to: '/feedback',  label: 'Comments & Ideas', icon: '💬' },
   { to: '/download',  label: 'Get the App',     icon: '⬇️' },
   { to: '/donate',    label: 'Support',         icon: '❤️' },
-  { to: '/dashboard', label: 'Dashboard',       icon: '⬡' },
+  // The Dashboard is the editorial workbench, not a reader feature. CAN_EDIT folds to a
+  // literal false in the public build, so this entry (and its route in App.tsx) never
+  // reaches qdrops.app. Owner ruling 2026-08-23.
+  ...(CAN_EDIT ? [{ to: '/dashboard', label: 'Dashboard', icon: '⬡' }] : []),
 ]
 
 const itemCls = (isActive: boolean, color: string, flashKey: string | null, fkey: string) =>

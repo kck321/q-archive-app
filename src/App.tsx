@@ -107,7 +107,11 @@ export default function App() {
           <ScrollRestoration containerRef={mainRef} />
           <Routes>
             <Route path="/"              element={<Navigate to="/posts" replace />} />
-            <Route path="/dashboard"     element={<Dashboard />} />
+            {/* PRIVATE. The Dashboard is the editorial workbench (ingest, bulk scans, AI
+                analysis) and by owner ruling 2026-08-23 it is off qdrops.app entirely — not
+                PIN-locked on it. CAN_EDIT folds to a literal false in the public build, so
+                the route and the page behind it are dropped from that bundle. */}
+            {CAN_EDIT && <Route path="/dashboard" element={<Dashboard />} />}
             <Route path="/posts"         element={<PostArchive />} />
             <Route path="/search"        element={<Search />} />
             <Route path="/post/:id"      element={<PostDetail />} />
