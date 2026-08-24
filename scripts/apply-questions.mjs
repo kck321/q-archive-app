@@ -30,6 +30,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { clean, key } from './lib/segment.mjs'
+import { loadAbbrevRepairs } from './lib/abbrevRepairs.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -47,6 +48,41 @@ const priorByKey = new Map()
 for (const q of existing) {
   const k = `${q.postId}|${key(q.text)}`
   if (!priorByKey.has(k)) priorByKey.set(k, q)
+}
+
+// A ROW'S ID MUST SURVIVE AN ABBREVIATION REPAIR, AND SOMETHING ELSE IS KEYED TO IT.
+//
+// This file words a row from audit/questions-final.json; apply-questions-final.mjs then REWRITES
+// that wording where audit/abbreviation-span-repairs.json says the splitter cut it short. So on
+// the next run the lookup above compares the certified artifact's short wording against a stored
+// row holding the repaired one, misses, and `mkId()` hands the row a NEW id — and mkId is a
+// sequential counter, so every row minted after it shifts too.
+//
+// That would be harmless if an id were only an id. It is not: apply-step3b1.mjs records its 163
+// demotions and 16 withdrawals as `questionEdits` keyed on this id, and applies them by id at the
+// end of the chain. Re-id the rows and those demotions land on whatever row inherited the number.
+// Adding seven repairs on 2026-08-24 did exactly that — #1944's repaired question came back
+// carrying `A-DQ-p0121-s019` and `secondaryOf: 121|directives|673|678`, demoted by an action
+// belonging to a different drop, while post 121's own demotion went missing. Four drops, silently,
+// and every total still looked plausible: 6,327 indexed questions became 6,323.
+//
+// So the repaired wording is a second key into the same row. The record that caused the rename is
+// the record that undoes it.
+const abbrev = loadAbbrevRepairs(ROOT)
+if (abbrev) {
+  for (const q of existing) {
+    const k = `${q.postId}|${key(q.text)}`
+    // Walk the repair backwards: this stored row may BE the repaired form of a shorter certified
+    // span, in which case the short form has to find it too.
+    for (const r of abbrev.doc.repairs ?? []) {
+      if (r.category !== 'questions') continue
+      if (String(r.postNum) !== String(q.postNum)) continue
+      if (key(r.full) !== key(q.text)) continue
+      const short = `${q.postId}|${key(r.truncated)}`
+      if (!priorByKey.has(short)) priorByKey.set(short, q)
+    }
+    void k
+  }
 }
 
 let nextId = 0

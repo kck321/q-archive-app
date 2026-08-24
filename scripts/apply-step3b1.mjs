@@ -1017,9 +1017,42 @@ for (const [k, idx] of removals) {
     }
   }
 }
+// A DEMOTION IS KEYED BY ROW ID, AND A ROW ID IS NOT A STABLE THING.
+//
+// apply-questions.mjs mints `qc-N` from a sequential counter for any row it cannot match to the
+// stored file by post + normalised text. An abbreviation repair CHANGES that text, so a repaired
+// row misses, gets a new number, and every row minted after it shifts one along. These patches
+// then land by id on whatever row inherited the number.
+//
+// It is not theoretical and it does not fail loudly on its own. Seven repairs on 2026-08-24 moved
+// four demotions onto the wrong drops: #1944's question came back marked `A-DQ-p0121-s019`,
+// `secondaryOf: 121|directives|673|678` — adjudicated by an action about post 121 — while post
+// 121's own demotion vanished. The indexed question total went 6,327 -> 6,323 and every other
+// figure still looked right.
+//
+// apply-questions.mjs now reunites a repaired row with its id, which is the fix. This is the
+// assertion that says so: an action names the drop it was adjudicated on, and it may only patch a
+// row on that drop. Refuse rather than mislabel.
+const misdirected = []
 for (const q of questions) {
   const patch = questionEdits.get(q.id)
-  if (patch) Object.assign(q, patch)
+  if (!patch) continue
+  const named = String(patch.step3b1ActionId ?? '').match(/p0*(\d+)|-(\d+)-questions/)
+  const onPost = named ? Number(named[1] ?? named[2]) : null
+  if (onPost !== null && onPost !== q.postNum) {
+    misdirected.push({ id: q.id, row: q.postNum, action: patch.step3b1ActionId, text: String(q.text ?? '').slice(0, 60) })
+    continue
+  }
+  Object.assign(q, patch)
+}
+if (misdirected.length) {
+  console.error(`\nStep 3B-1: ${misdirected.length} question patch(es) would land on a drop the action does not name.`)
+  console.error('   Question row ids have drifted — see the note above this check.\n')
+  for (const m of misdirected.slice(0, 10)) {
+    console.error(`   ${m.action} -> row ${m.id} on #${m.row}  ${JSON.stringify(m.text)}`)
+  }
+  console.error('\n   Refusing to write a demotion onto the wrong drop.\n')
+  process.exit(1)
 }
 
 semantics.sort((a, b) => a.postNum - b.postNum || a.start - b.start || a.occurrenceKey.localeCompare(b.occurrenceKey))
