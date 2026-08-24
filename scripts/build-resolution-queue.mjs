@@ -232,6 +232,57 @@ try {
   }
 } catch { /* the pending file is optional; the other four sources stand on their own */ }
 
+// ── The owner's own Resolution Center sheet (2026-08-24) ────────────────────
+//
+// Sheet 1 of Q_Unhighlighted FINAL 2.xlsx: 238 lines the owner read and sent HERE rather than to
+// a section. They are the comms strings — "_Conf_D-TT_^_v891_0600_yes", "jD79-x10ABy-89zBT",
+// "4920-a 293883 zAj-1 0020192" — plus coordinates and glyphs like "/_\".
+//
+// They are queued rather than certified because that is what the owner decided about them, and
+// because the alternative is worse in both directions: certifying them as Codes would claim the
+// archive knows they are notation, and leaving them out would keep 238 lines invisible in a queue
+// whose entire purpose is to show what is NOT settled. The Codes section already carries the
+// notation whose recurrence the corpus establishes; these recur too rarely for that test and
+// resolve to nothing on their own.
+//
+// Nothing here is a certified occurrence. No count moves.
+try {
+  const doc = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/unhighlighted-owner-rulings-2.json'), 'utf8'))
+  const byNum = new Map(posts.map(p => [p.postNum, p]))
+  let i = 0
+  for (const r of doc.resolutionCenter ?? []) {
+    const p = byNum.get(r.postNum)
+    const lines = clean(p?.text ?? '').split('\n')
+    // The window a reader needs to judge the string, centred on the line that holds it.
+    //
+    // Whitespace-tolerant, because four of these strings are wrapped across lines in the drop —
+    // #756's "dZ68J_729282D_B^02928xABVtZ b7al8920289-sLBTCZA99_jXK" is two lines — and an exact
+    // includes() left them with no context window at all, which is the one thing a queue row must
+    // never ship without: a reader cannot judge a comms string with nothing around it.
+    const flat = s => String(s).replace(/\s+/g, '')
+    const want = String(r.text).trim()
+    let at = lines.findIndex(l => l.includes(want))
+    if (at < 0 && flat(want)) at = lines.findIndex(l => flat(l).includes(flat(want)) || (flat(l) && flat(want).includes(flat(l))))
+    const from = Math.max(0, at - 1)
+    rows.push({
+      id: `ownerqueue-${r.postNum}-${r.sentenceIndex ?? i}-${i++}`,
+      kind: 'code',
+      token: String(r.text).trim().slice(0, 80),
+      postNum: r.postNum,
+      postId: r.postId ?? null,
+      sourceSpan: at >= 0 ? lines[at].slice(0, 300) : String(r.text).slice(0, 300),
+      context: at >= 0 ? lines.slice(from, at + 2).map(l => l.slice(0, 200)) : [String(r.text).slice(0, 200)],
+      lineIndex: at,
+      charIndex: at >= 0 ? lines[at].indexOf(String(r.text).trim()) : -1,
+      candidates: [],
+      whyUnresolved: 'The owner reviewed this line and sent it to the Resolution Center: it is a coded or structured string whose referent the drop does not establish.',
+      status: 'OPEN',
+      provenance: 'Owner review of the unhighlighted-sentence queue, round 2, 2026-08-24 — Resolution Center sheet',
+      deepLink: r.postId ? `/post/${r.postId}` : '/resolve',
+    })
+  }
+} catch { /* the round-2 rulings file is optional; the other sources stand on their own */ }
+
 // ── Owner resolutions ────────────────────────────────────────────────────────
 // A case the owner has settled must LEAVE the queue. This file is derived, so the resolution has
 // to live outside it or the next rebuild puts the row straight back. Same overlay pattern as the
