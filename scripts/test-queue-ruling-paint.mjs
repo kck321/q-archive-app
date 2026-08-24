@@ -32,6 +32,18 @@ const FILL = {
   bracketCode: 'bg-red-800',
 }
 
+// ON TOP MEANS SOLID — owner rule, 2026-08-24.
+//
+// An Entity or a Bracket covering the same characters as another category renders with an OPAQUE
+// fill instead of the translucent one, so nothing shows through and the front layer is
+// unmistakable. That is exactly what the `inside` column of every case below is testing, so the
+// on-top assertion wants the SOLID class specifically: accepting the translucent one would let the
+// rule quietly regress to the muddy blend it replaced.
+const SOLID = {
+  namedEntity: 'bg-cyan-300',
+  bracketCode: 'bg-red-700',
+}
+
 // post · the ruled sentence · the fill it must carry · an inline span inside it and ITS fill.
 //
 // Every row is a real ruling from audit/unhighlighted-owner-rulings.json. The `inside` column is
@@ -124,20 +136,22 @@ for (const c of CASES) {
       const marks = String(raw || '').split(ROW).filter(Boolean)
         .map(s => { const [cls, txt] = s.split(SEP); return { cls, txt } })
 
+      // A ruled span that is ITSELF an entity or a bracket may legitimately be solid too, when
+      // something else covers it — #533's "WE, THE PEOPLE!" is both an entity and a directive.
       const want = FILL[c.fill]
-      const painted = marks.some(m => m.cls.includes(want))
+      const painted = marks.some(m => m.cls.includes(want) || (SOLID[c.fill] && m.cls.includes(SOLID[c.fill])))
       check(painted, `#${c.post} ${where}: "${c.text.slice(0, 34)}" paints ${c.fill}`,
         painted ? want : (marks.map(m => m.cls.split(' ')[0]).join(',') || 'no mark'))
 
       if (c.inside) {
-        const insideWant = FILL[c.inside.fill]
+        const insideWant = SOLID[c.inside.fill] ?? FILL[c.inside.fill]
         const innerRaw = await page.evaluate(fillsOver(c.inside.text)).catch(() => '')
         const inner = String(innerRaw || '').split(ROW).filter(Boolean)
           .map(s => { const [cls, txt] = s.split(SEP); return { cls, txt } })
         // The inline layer must be ON TOP: a mark whose own text is the entity or the bracket,
         // carrying that layer's fill — not the sentence fill spread across it.
         const onTop = inner.some(m => m.cls.includes(insideWant))
-        check(onTop, `#${c.post} ${where}:   "${c.inside.text}" stays ${c.inside.fill} on top`,
+        check(onTop, `#${c.post} ${where}:   "${c.inside.text}" is ${c.inside.fill}, SOLID, on top`,
           onTop ? insideWant : (inner.map(m => m.cls.split(' ')[0]).join(',') || 'not painted'))
       }
     } finally {

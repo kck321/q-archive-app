@@ -4,7 +4,7 @@ import React from 'react'
 import { getAliasesFor, getFullAliasGroup } from './aliases'
 // STATIC_ENTITIES / MIL_INTEL_TERMS / Q_SIGNATURES are deliberately NOT imported: a word list
 // cannot decide membership in a certified section.
-import { HIGHLIGHT_CLS, wordBoundaryPattern } from './highlightConstants'
+import { HIGHLIGHT_CLS, HIGHLIGHT_SOLID, wordBoundaryPattern } from './highlightConstants'
 import type { PostAnalysis } from '../types'
 import { expandToSentence, questionHighlightRegex } from './posts'
 import { highlightsEnabled } from './highlightPrefs'
@@ -233,14 +233,15 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
         // data. The Emphasis layer itself is untouched; only the paint inside a question changes.
         const innerKinds = [...new Set(stackable.map(x => x.kind))].filter(k => k !== 'emphasis')
         if (innerKinds.includes('bracketCode')) {
-          nodes.push(<mark key={iStart} title="bracket"
-            className={`${cls.bracketCode ?? ''} rounded not-italic`}>{matchText}</mark>)
+          // SOLID — the question is behind it. Same rule and same classes as PostDetail.
+          nodes.push(<mark key={iStart} title="bracket — over question"
+            className={`${HIGHLIGHT_SOLID.bracketCode} rounded not-italic`}>{matchText}</mark>)
         } else if (innerKinds.includes('namedEntity')) {
           // BRACKETS AND ENTITIES ARE ALWAYS ON TOP — owner rule, inside a question as much as
           // outside one. Identical to the PostDetail branch, which is the point: these two
           // surfaces have shown different colours for the same certified data before.
-          nodes.push(<mark key={iStart} title={innerKinds.length > 1 ? `entity — also ${innerKinds.filter(k => k !== 'namedEntity').join(', ')}` : 'namedEntity (inside a question)'}
-            className={`${cls.namedEntity ?? ''} rounded not-italic`}>{matchText}</mark>)
+          nodes.push(<mark key={iStart} title={`entity — over question${innerKinds.length > 1 ? ', ' + innerKinds.filter(k => k !== 'namedEntity').join(', ') : ''}`}
+            className={`${HIGHLIGHT_SOLID.namedEntity} rounded not-italic`}>{matchText}</mark>)
         } else if (innerKinds.length === 1) {
           nodes.push(<mark key={iStart} title={`${innerKinds[0]} (inside a question)`}
             className={`${cls[innerKinds[0]] ?? ''} rounded not-italic`}>{matchText}</mark>)
@@ -265,10 +266,13 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
     } else if (stackable.length === 1) {
       nodes.push(<mark key={iStart} className={`${cls[stackable[0].kind] ?? ''} rounded not-italic`}>{matchText}</mark>)
     } else if (stackable.some(s => s.kind === 'bracketCode')) {
-      // Brackets outrank entities — owner rule, same order as PostDetail.
-      nodes.push(<mark key={iStart} className="bg-red-800/40 text-red-300 font-mono text-[0.9em] rounded not-italic">{matchText}</mark>)
+      // Brackets outrank entities — owner rule, same order as PostDetail. SOLID, because reaching
+      // this branch at all means something else covers the same characters.
+      nodes.push(<mark key={iStart} title={`bracket — over ${stackable.filter(s => s.kind !== 'bracketCode').map(s => s.kind).join(', ') || 'nothing'}`}
+        className={`${HIGHLIGHT_SOLID.bracketCode} rounded not-italic`}>{matchText}</mark>)
     } else if (stackable.some(s => s.kind === 'namedEntity')) {
-      nodes.push(<mark key={iStart} className="bg-cyan-500/30 text-cyan-200 rounded not-italic">{matchText}</mark>)
+      nodes.push(<mark key={iStart} title={`entity — over ${stackable.filter(s => s.kind !== 'namedEntity').map(s => s.kind).join(', ') || 'nothing'}`}
+        className={`${HIGHLIGHT_SOLID.namedEntity} rounded not-italic`}>{matchText}</mark>)
     } else if (stackable.some(s => s.kind === 'request' || s.kind === 'requestQuestion')) {
       const hasReqQ = stackable.some(s => s.kind === 'requestQuestion')
       nodes.push(<mark key={iStart} className={`${hasReqQ ? 'animate-req-question' : 'bg-green-500/35 text-green-200'} rounded not-italic font-medium`}>{matchText}</mark>)

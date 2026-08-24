@@ -29,7 +29,7 @@ import { CAN_EDIT } from '../lib/appMode'
 import { getAliasesFor, getFullAliasGroup, addAlias, removeAlias, subscribeAliases } from '../lib/aliases'
 // STATIC_ENTITIES / MIL_INTEL_TERMS / Q_SIGNATURES are deliberately NOT imported: a word list
 // cannot decide membership in a certified section.
-import { HIGHLIGHT_CLS, wordBoundaryPattern } from '../lib/highlightConstants'
+import { HIGHLIGHT_CLS, HIGHLIGHT_SOLID, wordBoundaryPattern } from '../lib/highlightConstants'
 import type { QPost, QQuestion, PostAnalysis, CorrelatedArticle, QuotedPost } from '../types'
 
 const STOP_WORDS = new Set(['the','and','for','with','from','this','that','are','was','were','have','been','will','into','about','its','their','which','posts'])
@@ -432,11 +432,11 @@ function renderPostBody(
         // cyan four lines down the same page. Same certified data, two answers, which is the
         // drift these two branches have produced before.
         sink.push(innerKinds.includes('bracketCode')
-          ? <mark key={iStart} title="bracket"
-              className={`${HIGHLIGHT_CLS.bracketCode ?? ''} rounded not-italic`}>{matchText}</mark>
+          ? <mark key={iStart} title="bracket — over question"
+              className={`${HIGHLIGHT_SOLID.bracketCode} rounded not-italic`}>{matchText}</mark>
           : innerKinds.includes('namedEntity')
-          ? <mark key={iStart} title={innerKinds.length > 1 ? `entity — also ${innerKinds.filter(k => k !== 'namedEntity').join(', ')}` : 'namedEntity (inside a question)'}
-              className={`${HIGHLIGHT_CLS.namedEntity ?? ''} rounded not-italic`}>{matchText}</mark>
+          ? <mark key={iStart} title={`entity — over question${innerKinds.length > 1 ? ', ' + innerKinds.filter(k => k !== 'namedEntity').join(', ') : ''}`}
+              className={`${HIGHLIGHT_SOLID.namedEntity} rounded not-italic`}>{matchText}</mark>
           : innerKinds.length === 1
           ? <mark key={iStart} title={`${innerKinds[0]} (inside a question)`}
               className={`${HIGHLIGHT_CLS[innerKinds[0]] ?? ''} rounded not-italic`}>{matchText}</mark>
@@ -475,16 +475,19 @@ function renderPostBody(
         // Single stackable kind — use its color
         sink.push(<mark key={iStart} className={`${cls[stackable[0].kind] ?? ''} rounded not-italic`}>{matchText}</mark>)
       } else if (stackable.some(s => s.kind === 'bracketCode')) {
+        // SOLID, because something IS behind it — see HIGHLIGHT_SOLID.
         // OWNER RULE: anything in brackets is red — including a bracket that contains an entity.
         //
         // namedEntity used to be tested first, which split the span: "[Mueller failed]" rendered
         // as a red "[", a cyan "Mueller" and a red " failed]". One bracket, two colours, and the
         // bracket rule visibly broken inside the very thing it governs. The entity is still
         // certified and still listed under Entities; the bracket owns the paint.
-        sink.push(<mark key={iStart} className="bg-red-800/40 text-red-300 font-mono text-[0.9em] rounded not-italic">{matchText}</mark>)
+        sink.push(<mark key={iStart} title={`bracket — over ${stackable.filter(s => s.kind !== 'bracketCode').map(s => s.kind).join(', ') || 'nothing'}`}
+          className={`${HIGHLIGHT_SOLID.bracketCode} rounded not-italic`}>{matchText}</mark>)
       } else if (stackable.some(s => s.kind === 'namedEntity')) {
         // Named entity wins solid cyan over everything except a bracket.
-        sink.push(<mark key={iStart} className="bg-cyan-500/30 text-cyan-200 rounded not-italic">{matchText}</mark>)
+        sink.push(<mark key={iStart} title={`entity — over ${stackable.filter(s => s.kind !== 'namedEntity').map(s => s.kind).join(', ') || 'nothing'}`}
+          className={`${HIGHLIGHT_SOLID.namedEntity} rounded not-italic`}>{matchText}</mark>)
       } else if (stackable.some(s => s.kind === 'request' || s.kind === 'requestQuestion')) {
         // Request wins over lower-priority analysis kinds
         const hasReqQ = stackable.some(s => s.kind === 'requestQuestion')
