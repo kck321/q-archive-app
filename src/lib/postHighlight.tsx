@@ -124,10 +124,14 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
     // running past their certified boundary. The literal span is the boundary.
     addSegs(segs, text, analysis.claimSpans ?? whole(analysis.claims), 'claim')
     addSegs(segs, text, analysis.predictionSpans ?? whole(analysis.predictions), 'prediction')
-    // ANCHORS, not labels — the same fix PostDetail got, which this surface never received.
-    // An independent audit found theme anchors rendering on /post/:id and on none of /posts,
-    // because this function was still searching for the taxonomy name. A label is not in the drop.
-    addSegs(segs, text, analysis.themeAnchors ?? [], 'theme')
+    // THEMES NO LONGER PAINT IN THE DROP — owner ruling, 2026-08-24. Same removal as PostDetail's
+    // analysis pairs, and it has to be the same on both or the two surfaces show the same drop
+    // differently, which is the drift these shared constants exist to prevent.
+    //
+    // The data is untouched: 2,646 certified theme assignments across 2,393 posts stay in
+    // posts.json and stay in their section. What goes is the indigo fill in the drop body — the
+    // one that read as Prediction violet whenever it sat inside a Claim, which was 2,153 spans.
+    //   addSegs(segs, text, analysis.themeAnchors ?? [], 'theme')
     // CONTEXT NO LONGER PAINTS IN THE DROP — owner ruling, 2026-08-17. Same removal as
     // PostDetail's analysis pairs, and it has to be the same on both or the two surfaces show the
     // same drop differently, which is the drift these shared constants exist to prevent.

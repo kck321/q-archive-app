@@ -1,0 +1,11 @@
+What,Before,After,Detail
+Theme spans inside another highlight,"2,153 spans / 1,168 drops",0,"Measured by scripts/audit-overlays.mjs, which rebuilds the segments from the same sources the renderer paints from. The before figure is the one this sheet carried at commit 1c4cb1b."
+"Rotating spans, all causes","1,676 spans / 1,058 drops",208 spans / 110 drops,"1,448 of the original 1,676 involved a Theme. What remains is 189 Question+Directive lines, which the archive documents as a real overlap, and 19 others."
+Entity/bracket over another layer,"11,254 spans / 2,142 drops",11000 spans / 2116 drops,Lower only because a Theme is no longer one of the things they can be in front of. They still render solid over everything else.
+,,,
+WHAT WAS NOT TOUCHED,,,
+Theme assignments,"2,646","2,646",The section itself. Still in the Themes tab and still listed under Themes in the panel below each drop.
+Drops carrying a theme,"1,899","1,899",
+Theme anchors recorded,"1,729","1,729","The words the fill used to be painted on. Kept, because deleting them would remove the fill AND the record of which words the taxonomy hangs on - which would look exactly like success."
+,,,
+"Both halves are asserted by scripts/verify-context-render.mjs, which is a step of the pre-deploy proof. Withdrawing the data to achieve the visual change fails it.",,,

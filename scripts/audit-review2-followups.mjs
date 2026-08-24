@@ -72,6 +72,10 @@ function sectionsHolding(postNum, span) {
   if (has(p.actionRequests)) out.push('directives')
   if (has(a.claimSpans ?? a.claims)) out.push('claims')
   if (has(a.predictionSpans ?? a.predictions)) out.push('predictions')
+  // Themes are still CERTIFIED and no longer PAINTED (owner ruling, 2026-08-24), so they still
+  // belong in this answer: the question is which sections hold the span, not which ones fill it.
+  // What changed is the consequence - a span carried in Claims and Themes no longer rotates,
+  // because only one of the two draws anything.
   if (has(a.themeAnchors)) out.push('themes')
   if (has(a.namedEntities)) out.push('entities')
   return out

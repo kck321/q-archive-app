@@ -7110,3 +7110,53 @@ an occurrence reappearing WITHOUT a record still fails, which is what the invari
 
 directives 3,304 → **3,329** · predictions 934 → **935** · entities 1,532 → **1,584** canonical,
 9,364 → **9,517** mentions · context units 468 → 445 · seed 90 · **222/222 invariants**.
+
+---
+
+## 2026-08-24 — The theme highlight is retired
+
+> *"lets start by fixing anyhting that has a theme tied to the category, please take the theme
+> highlight off anypost/category it is found in. it is no longer needed an any post"*
+
+Same retirement Context got on 2026-08-17 and Emphasis got the same day: the **fill** comes out of
+the drop body on both surfaces, and **nothing in the data moves**.
+
+### Why it was the right layer to remove
+
+A theme **anchor** is a word the taxonomy hangs on, not a span the drop is making a statement with —
+so it almost always sits inside something that is. **2,153 spans across 1,168 drops** were in that
+position, and indigo `#6366F1` is one hue from the violet Predictions use, `#8B5CF6`. That is why a
+Claim rotating with a Theme read as a Claim over a Prediction, and why **1,448 of the 1,676 rotating
+spans involved a Theme**.
+
+### Measured effect
+
+| | before | after |
+|---|---|---|
+| rotating spans (2 layers, neither entity nor bracket) | 1,676 / 1,058 drops | **208 / 110 drops** |
+| theme spans inside another highlight | 2,153 / 1,168 drops | **0** |
+| entity/bracket over another layer | 11,254 / 2,142 drops | 11,000 / 2,116 drops |
+
+Of the 208 left, **189 are `question + request`** — a line that is both a Question and a Directive
+("Define 'evidence'."), which the archive documents as a real overlap and counts 228 of. Nineteen
+are anything else.
+
+### What was deliberately not touched
+
+2,646 theme assignments across 1,899 drops, and **1,729 anchors**. The anchors matter: they are only
+ever used for painting, so deleting them would remove the fill *and* look exactly like success —
+while destroying the record of which words the taxonomy hangs on. `verify-context-render.mjs` now
+pins all four figures alongside the render half, and it is a step of the pre-deploy proof.
+
+Arriving from a Theme row still flashes the anchor; that runs through `activeHL`, which is the
+search-term layer and not this one.
+
+### Changed
+
+`PostDetail.tsx` and `postHighlight.tsx` (commented out with the ruling, same commit — those two have
+shown the same drop differently three times) · `verify-context-render.mjs` extended to Themes ·
+`audit-overlays.mjs` drops the layer so it keeps mirroring the renderer · report sheet 9 rewritten
+from "Themes that read purple" to the retirement record.
+
+**No file in `public/data` changed.** Certification manifest untouched, 222/222 invariants,
+`validate --profile full` green (tree `f99d218d6fec`).

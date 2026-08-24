@@ -1,4 +1,4 @@
-// Context and Emphasis: certified in the data, absent from the drop. Both halves asserted.
+// Context, Emphasis and Themes: certified in the data, absent from the drop. Both halves asserted.
 //
 //   node scripts/verify-context-render.mjs
 //
@@ -40,6 +40,12 @@ const tally = field => {
 }
 const ctx = tally('contextUnits')
 const emp = tally('emphasis')
+// THEMES JOINED THEM ON 2026-08-24. Two figures, because they are two different things: the
+// ANCHORS are the words the fill was painted on, and the ASSIGNMENTS are the section itself. The
+// ruling took the fill, so the anchors must still be there and unpainted, and the assignments
+// must not have moved at all.
+const thm = tally('themeAnchors')
+const thmAssign = tally('themes')
 
 const detail = src('pages/PostDetail.tsx')
 const archive = src('lib/postHighlight.tsx')
@@ -80,6 +86,19 @@ const checks = [
   // 12 -> 3: nine more multi-line reconstructions were ruled into a section by round 2.
   ['3 reconstruction exceptions still tracked', exceptions.count === 3, exceptions.count],
 
+  // THEMES NO LONGER PAINT (owner ruling, 2026-08-24): "please take the theme highlight off
+  // anypost/category it is found in. it is no longer needed an any post".
+  //
+  // The dangerous outcome is the silent one, and here it is sharper than it was for Context. A
+  // theme ANCHOR is only ever used for painting, so deleting the anchors would remove the fill and
+  // look exactly like success - while destroying the record of which words the taxonomy hangs on.
+  // So both are pinned: the anchors stay, and the ASSIGNMENTS that are the actual section stay
+  // untouched at 2,646 across 1,899 drops.
+  ['1,729 theme anchors still certified', thm.units === 1729, thm.units],
+  ['theme anchors still spread across 1,296 posts', thm.withUnits === 1296, thm.withUnits],
+  ['the Themes section is untouched: 2,646 assignments', thmAssign.units === 2646, thmAssign.units],
+  ['the Themes section is untouched: 1,899 posts', thmAssign.withUnits === 1899, thmAssign.withUnits],
+
   // ── the render half: neither surface paints them ──────────────────────────
   ['detail surface does not paint contextUnits',
     !/\['context',\s*analysis\.contextUnits/.test(detailLive), 'not fed'],
@@ -93,20 +112,29 @@ const checks = [
     !/analysis\.emphasis\s*\?\?\s*\[\],\s*'emphasis'/.test(archiveLive), 'not fed'],
   ['neither surface feeds an emphasis segment by any other route',
     !/analysis\.emphasis/.test(detailLive) && !/analysis\.emphasis/.test(archiveLive), 'no live reference'],
+  ['detail surface does not paint themeAnchors',
+    !/\['theme',\s*analysis\.themeAnchors/.test(detailLive), 'not fed'],
+  ['archive surface does not paint themeAnchors',
+    !/analysis\.themeAnchors\s*\?\?\s*\[\],\s*'theme'/.test(archiveLive), 'not fed'],
+  ['neither surface feeds a theme segment by any other route',
+    !/themeAnchors/.test(detailLive) && !/themeAnchors/.test(archiveLive), 'no live reference'],
 
   // BOTH SURFACES OR NEITHER. PostDetail and postHighlight have shown the same drop differently
   // three times, each time because a change landed on one of them. The ruling is app-wide, so the
   // absence has to be app-wide too.
   ['the two surfaces agree on context', /contextUnits/.test(detailLive) === /contextUnits/.test(archiveLive), 'both silent'],
   ['the two surfaces agree on emphasis', /analysis\.emphasis/.test(detailLive) === /analysis\.emphasis/.test(archiveLive), 'both silent'],
+  ['the two surfaces agree on themes', /themeAnchors/.test(detailLive) === /themeAnchors/.test(archiveLive), 'both silent'],
 
   // The removal is a comment-out, not a deletion, and the reasoning travels with it — a future
   // reader finding `contextUnits` in posts.json needs to find out here why nothing paints it.
   ['the ruling is recorded where the layer was fed',
     /owner ruling, 2026-08-17/i.test(detail) && /owner ruling, 2026-08-17/i.test(archive), 'documented'],
+  ['the themes ruling is recorded where the layer was fed',
+    /owner ruling, 2026-08-24/i.test(detail) && /owner ruling, 2026-08-24/i.test(archive), 'documented'],
 ]
 
-console.log('\nCONTEXT + EMPHASIS: CERTIFIED IN THE DATA, ABSENT FROM THE DROP\n')
+console.log('\nCONTEXT + EMPHASIS + THEMES: CERTIFIED IN THE DATA, ABSENT FROM THE DROP\n')
 let failed = 0
 for (const [label, ok, got] of checks) { if (!ok) failed++; console.log(`  ${ok ? 'PASS' : 'FAIL'}  ${label.padEnd(52)} ${got}`) }
 console.log(`\n  ${failed ? `❌ ${failed} failed` : '✅ both layers are intact in the data and no surface fills them'}\n`)

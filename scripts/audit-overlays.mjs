@@ -85,7 +85,13 @@ function segsFor(p) {
   add(a.namedEntities, 'namedEntity', true)
   add(a.claimSpans ?? a.claims, 'claim')
   add(a.predictionSpans ?? a.predictions, 'prediction')
-  add(a.themeAnchors, 'theme')
+  // THEMES NO LONGER PAINT - owner ruling, 2026-08-24. This file exists to measure what the
+  // renderer is being asked to draw, so it has to lose the layer at the same moment the renderer
+  // does. Left in, it would keep reporting 2,153 theme overlaps that no reader can see, and the
+  // report built from it would describe a page that no longer exists.
+  //
+  // The before/after is the point of the ruling and is recorded in the output below.
+  //   add(a.themeAnchors, 'theme')
   // brackets and URLs come from the drop text, not from a list
   for (const rx of [BRACKET_RX, URL_RX]) {
     const r = new RegExp(rx.source, 'g')

@@ -33,6 +33,9 @@ const held3 = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/unhighlighted-en
 const heldRC = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/held-entity-resolution-center.json'), 'utf8'))
 const heldDir = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/unhighlighted-owner-rulings-2-held-directives.json'), 'utf8'))
 const followups = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/review2-followups.json'), 'utf8'))
+// Read up here rather than beside sheet 8, because the summary quotes it too and a `const` used
+// above its declaration is a TDZ error, not a hoist.
+const ov = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/overlay-audit.json'), 'utf8'))
 
 const csv = (rows) => rows.map(r => r.map(v => {
   const s = v === undefined || v === null ? '' : String(v)
@@ -82,6 +85,12 @@ const summary = [
   ['White House Press', '2 drops', '#397 and #417, where Q writes WH_POTUS_PRESS inside a stringer.'],
   ['#417 (Find Post)', '1', 'Certified a Directive, family research - it tells the reader to go and locate the post the stringer points at.'],
   ['#417 News unlocks Map.', '1', 'Certified a Prediction as well as the Claim it already was. The archive already carries spans certified as both.'],
+  ['', '', ''],
+  ['THE THEME HIGHLIGHT IS RETIRED', '', ''],
+  ['Rotating spans BEFORE', '1,676 / 1,058 drops', 'Spans covered by two categories with neither an Entity nor a Bracket, so nothing won by rule and the renderer cycled the colours.'],
+  ['Rotating spans AFTER', `${ov.totals.twoLayersNeitherEntityNorBracket.spans} / ${ov.totals.twoLayersNeitherEntityNorBracket.posts} drops`, 'What is left is almost entirely the ONE overlap the archive documents on purpose: a line that is both a Question and a Directive. 189 of them.'],
+  ['Theme spans inside another highlight', '2,153 -> 0', 'The layer you could not read. Gone from the drop body on both surfaces.'],
+  ['The Themes SECTION is untouched', '2,646 assignments / 1,899 drops', 'Still certified, still in the Themes tab, still listed under Themes in the panel below each drop, and 1,729 anchors are still recorded. Only the indigo fill is gone - see sheet 9.'],
 ]
 write('1-summary', summary)
 
@@ -222,15 +231,14 @@ write('7-entity-lists', shapes)
 // ── 8 + 9. THE OVERLAYS THE OWNER ASKED ABOUT ───────────────────────────────
 //
 // Two questions, one measurement — see scripts/audit-overlays.mjs.
-const ov = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/overlay-audit.json'), 'utf8'))
 
 // 8. Everything with two layers that is NOT an entity or a bracket.
 const PAIR_NOTE = {
-  'claim + theme': 'THIS IS THE ONE YOU ARE SEEING. A Claim is amber and a Theme is INDIGO, and the span rotates between them. Indigo (#6366F1) sits one hue from the violet Predictions use (#8B5CF6) - so a Claim rotating with a Theme looks exactly like a Claim over a Prediction.',
-  'request + theme': 'A Directive (green) rotating with a Theme (indigo).',
-  'question + theme': 'A Question (blue) rotating with a Theme (indigo).',
+  'claim + theme': 'RESOLVED - the theme highlight is retired, so this pair no longer rotates.',
+  'request + theme': 'RESOLVED - the theme highlight is retired.',
+  'question + theme': 'RESOLVED - the theme highlight is retired.',
   'question + request': 'A line that is both a Question and a Directive - "Define ‘evidence’." The archive counts 228 of these on purpose; they are the documented overlap.',
-  'prediction + theme': 'A Prediction (violet) rotating with a Theme (indigo) - the two closest colours in the palette.',
+  'prediction + theme': 'RESOLVED - the theme highlight is retired.',
   'claim + prediction': 'GENUINELY a Claim over a Prediction. There are only three in the whole archive.',
 }
 const pairs = [['Two layers', 'Spans', 'What it is', 'Why you are seeing it']]
@@ -247,19 +255,27 @@ pairs.push(['Post', 'The two layers', 'The text they share', ''])
 for (const r of ov.twoLayersNeitherEntityNorBracket) pairs.push([r.postNum, r.pair, r.span, ''])
 write('8-two-layer-overlaps', pairs)
 
-// 9. Themes inside another highlight - the purple the owner cannot read.
-const themes = [['Theme anchor', 'Post', 'The text', 'What else covers it']]
-const tally = {}
-for (const r of ov.themeInsideAnotherHighlight) {
-  const k = r.themeAnchor ?? '(unnamed)'
-  tally[k] = (tally[k] ?? 0) + 1
-}
-themes.push(['- THE ANCHORS THAT DO THIS MOST -', '', '', ''])
-for (const [k, n] of Object.entries(tally).sort((a, b) => b[1] - a[1]).slice(0, 30)) themes.push([k, n + ' spans', '', ''])
+// 9. The theme highlight, retired ────────────────────────────────────────────
+//
+// This sheet used to list 2,153 spans where a Theme anchor sat inside another highlight - the
+// purple the owner could not read. The ruling of 2026-08-24 removed the layer, so the list is
+// empty by construction and a sheet of nothing would say nothing. It records what was taken off
+// and what was deliberately left alone instead.
+const themes = [['What', 'Before', 'After', 'Detail']]
+themes.push(['Theme spans inside another highlight', '2,153 spans / 1,168 drops', `${ov.totals.themeInsideAnotherHighlight.spans}`,
+  'Measured by scripts/audit-overlays.mjs, which rebuilds the segments from the same sources the renderer paints from. The before figure is the one this sheet carried at commit 1c4cb1b.'])
+themes.push(['Rotating spans, all causes', '1,676 spans / 1,058 drops', `${ov.totals.twoLayersNeitherEntityNorBracket.spans} spans / ${ov.totals.twoLayersNeitherEntityNorBracket.posts} drops`,
+  '1,448 of the original 1,676 involved a Theme. What remains is 189 Question+Directive lines, which the archive documents as a real overlap, and 19 others.'])
+themes.push(['Entity/bracket over another layer', '11,254 spans / 2,142 drops', `${ov.totals.entityOrBracketOverAnother.spans} spans / ${ov.totals.entityOrBracketOverAnother.posts} drops`,
+  'Lower only because a Theme is no longer one of the things they can be in front of. They still render solid over everything else.'])
 themes.push(['', '', '', ''])
-themes.push(['- EVERY SPAN -', '', '', ''])
-for (const r of ov.themeInsideAnotherHighlight) themes.push([r.themeAnchor, r.postNum, r.span, r.with])
-write('9-themes-that-read-purple', themes)
+themes.push(['WHAT WAS NOT TOUCHED', '', '', ''])
+themes.push(['Theme assignments', '2,646', '2,646', 'The section itself. Still in the Themes tab and still listed under Themes in the panel below each drop.'])
+themes.push(['Drops carrying a theme', '1,899', '1,899', ''])
+themes.push(['Theme anchors recorded', '1,729', '1,729', 'The words the fill used to be painted on. Kept, because deleting them would remove the fill AND the record of which words the taxonomy hangs on - which would look exactly like success.'])
+themes.push(['', '', '', ''])
+themes.push(['Both halves are asserted by scripts/verify-context-render.mjs, which is a step of the pre-deploy proof. Withdrawing the data to achieve the visual change fails it.', '', '', ''])
+write('9-themes-retired', themes)
 
 // ── 10. The follow-up checks ────────────────────────────────────────────────
 const fu = [['Check', 'Result', 'Detail']]

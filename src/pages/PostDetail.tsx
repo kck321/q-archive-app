@@ -196,9 +196,27 @@ function renderPostBody(
       ['namedEntity', analysis.namedEntities ?? []],
       ['claim', analysis.claimSpans ?? wholeSentences(analysis.claims)],
       ['prediction', analysis.predictionSpans ?? wholeSentences(analysis.predictions)],
-      // Anchors, not labels. A theme label is a taxonomy name and is almost never literal text
-      // in the drop, so highlighting on it meant themes never rendered at all.
-      ['theme', analysis.themeAnchors ?? []],
+      // THEMES NO LONGER PAINT IN THE DROP — owner ruling, 2026-08-24:
+      //
+      //   "lets start by fixing anyhting that has a theme tied to the category, please take the
+      //    theme highlight off anypost/category it is found in. it is no longer needed an any post"
+      //
+      // Same removal as postHighlight.tsx, in the same commit, for the reason those two files
+      // carry on every other retirement: they have shown the same drop differently three times
+      // and every one of those was a change that landed on only one of them.
+      //
+      // WHY IT WAS THE ONE TO GO. A theme ANCHOR is a word the taxonomy hangs on, not a span the
+      // drop is making a statement with, so it almost always sits inside something else that IS.
+      // 2,153 spans across 1,168 drops were in that position, and the fill is indigo (#6366F1)
+      // one hue from the violet Predictions use (#8B5CF6) — so a Claim rotating with a Theme read
+      // as a Claim over a Prediction. That is what made the drop body unreadable, and it is why
+      // 1,448 of the 1,676 rotating spans involved a Theme.
+      //
+      // THE LAYER IS UNTOUCHED. 2,646 assignments across 2,393 drops stay in posts.json, stay in
+      // the Themes tab, and stay listed under Themes in the Post Analysis panel below the drop.
+      // Arriving from a Theme row still flashes the anchor — that runs through activeHL, which is
+      // the search-term layer and not this one. What goes is the indigo fill, and only that.
+      //   ['theme', analysis.themeAnchors ?? []],
       // Implied conclusions / verification hooks are often paraphrases that aren't
       // verbatim in the post — they only highlight when the exact text is present.
       // Q Conclusions retired as a SECTION by owner ruling 2026-08-14 — "basically the same thing"
