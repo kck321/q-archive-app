@@ -1,0 +1,82 @@
+Check,Result,Detail
+- 1. IS EVERY ALREADY-HIGHLIGHTED ROW IN THE RIGHT CATEGORY -,,
+Rows checked,713,"Section rows only. URL and bracket rows are detectors reading the drop text, not section membership, so ""which section holds it"" has no meaning for them."
+In a DIFFERENT section than you named,0,
+Certified in NO section,0,
+Certified in MORE THAN ONE,57,This is what rotates.
+entities + themes,27,spans
+questions + themes,25,spans
+directives + themes,3,spans
+claims + entities,1,spans
+entities + questions + themes,1,spans
+,,
+Post,The span,Every section that certifies it
+14,Military Intelligence.,themes + entities
+36,Military Intelligence.,themes + entities
+99,MSM.,themes + entities
+100,Satan.,themes + entities
+110,MSM.,themes + entities
+113,MSM.,themes + entities
+133,Epstein island.,themes + entities
+158,No Such Agency.,themes + entities
+350,Federal Reserve.,themes + entities
+354,Federal Reserve.,themes + entities
+520,NO SUCH AGENCY.,themes + entities
+522,Jeremiah 29:11,themes + entities
+659,TG>,claims + entities
+1266,No Such Agency.,themes + entities
+1336,FVEY.,themes + entities
+1589,FISA.,themes + entities
+1794,FISA,themes + entities
+1794,FISA,themes + entities
+1794,FISA,themes + entities
+1816,FISA.,themes + entities
+1816,FISA.,themes + entities
+1816,FISA.,themes + entities
+2217,FVEY,themes + entities
+2561,FISA,themes + entities
+3881,Muslim Brotherhood,themes + entities
+4390,Proverbs 13:9,themes + entities
+4623,Epstein island.,themes + entities
+4963,Whistleblowers.,themes + entities
+3683,"""Put on the full armor of God, so that you can take your stand against the devil’s schemes.""",directives + themes
+4298,Ask and you shall receive.,directives + themes
+4374,Be strong in the Lord.,directives + themes
+8,"HRC, Muslim Brotherhood, or child?",questions + themes
+36,What if the wizards and warlocks tipped off a local reporter as to the supposed unscheduled stop?,questions + themes
+71,Who is the Muslim Brotherhood?,questions + themes
+77,Who is the Muslim Brotherhood?,questions + themes
+117,What church did BO attend as pre-POTUS?,questions + themes
+133,Does Satan exist?,questions + themes
+144,What council do the Wizards & Warlocks control?,questions + themes
+153,Perhaps he could not stomach the thought of mass murders occurring to satisfy Moloch?,questions + themes
+484,Who are the Muslim Brotherhood?,questions + themes
+999,Why is Epstein spending $29mm to bury the tunnels underneath is temple on Epstein Island?,questions + themes
+1100,Who is arranging the PRIVATE meetings?,questions + themes
+1630,Why are Freemasons on the scene of most shooting locations?,questions + themes
+1832,HOW MANY IN WASHINGTON AND THOSE AROUND THE WORLD (IN POWER) WORSHIP THE DEVIL?,questions + themes
+1876,Muslim Brotherhood?,questions + themes + entities
+1887,Muslim by faith?,questions + themes
+1887,Muslim by faith?,questions + themes
+1887,Muslim by faith?,questions + themes
+1916,Man of God?,questions + themes
+1981,Huma>Muslim Brotherhood?,questions + themes
+2557,What do you want for XMAS?,questions + themes
+2887,"Ask yourself a simple question, should a woman who travels to Syria to support and encourage 'JIHAD' against the 'West' deserve to live……………….?",questions + themes
+3396,Who posted 'internal security cam' pics (Temple)(IG)?,questions + themes
+3399,What does an 'OWL' symbolize (dark religion)?,questions + themes
+3917,Did you think 'spirit cooking' was just pretend?,questions + themes
+4748,Why does the media pit religion v religion?,questions + themes
+4799,When does a Church become a playground?,questions + themes
+,,
+"- 2. THE FIXES, RE-ASSERTED -",,
+Entities and brackets stay on top inside a question,PASS,both renderers import HIGHLIGHT_SOLID and the question branch of each has a namedEntity case
+Entities and brackets render SOLID over another colour,PASS,HIGHLIGHT_SOLID defines opaque fills for both kinds and both renderers use it
+Addresses Q typed with a space are one link again,PASS,linkify TOKEN_RE accepts 1-3 spaces or tabs after the scheme
+The link text still shows the space; only the href drops it,PASS,the href is normalised separately from the displayed text
+The Resolution Center carries this round's comms strings,PASS,238 queue row(s) carry a 2026-08-24 provenance
+Every entity has a hover,PASS,1584 hovers / 1584 entities
+Every hover reads the same way,PASS,0 off-pattern
+"Q is Alice, except the sign-off",PASS,the guard is defined once and used by both renderers
+,,
+- 3. URL PROBLEMS -,0,"Tested against the runtime text the browser renders, not the stored text."

@@ -2448,8 +2448,8 @@
  },
  "imageUnconfirmed55": {
   "totals": {
-   "held_image_provenance_unconfirmed": 35,
-   "held_no_identifiable_source_beyond_ruled_set": 1,
+   "held_image_provenance_unconfirmed": 34,
+   "held_no_identifiable_source_beyond_ruled_set": 2,
    "migrated_as_social_account_reference": 19
   },
   "detail": [
@@ -2577,7 +2577,7 @@
     "postNum": 1863,
     "entityId": "qe-bb91501abc09",
     "canonical": "Roseanne Barr",
-    "bucket": "held_image_provenance_unconfirmed"
+    "bucket": "held_no_identifiable_source_beyond_ruled_set"
    },
    {
     "auditOccurrenceId": "ENT-0388-P3397",

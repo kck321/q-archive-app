@@ -97,14 +97,25 @@ const queueStats = { added: 0, already: 0, byFamily: {} }
     const done = seen.get(k) ?? 0
     seen.set(k, done + 1)
     if (done < (have.get(k) ?? 0)) { queueStats.already++; continue }
+    // A RULING MAY DECLARE ITS OWN FAMILY, and when it does that is the answer.
+    //
+    // 24 rows held on the first pass for stating no instruction were certified on the owner's
+    // 2026-08-24 ruling. No detector names a bare '#1' or '_END_', and widening one to do it is
+    // the exact thing lib/queueDirectiveFamily.mjs forbids - a rule broad enough to catch those
+    // catches a great deal more. So those rulings carry the family with them, declared once each
+    // in scripts/build-held-directive-rulings.mjs beside the reason the row was held.
+    //
+    // Neither round-1 nor round-2 rulings carry the field, so this cannot re-family a single one
+    // of the 8,883 already read through here: absent the field the detector answers exactly as
+    // before.
     const detected = familyOf(r.sourceText)
-    const family = detected === 'other' ? queueFamilyOf(r.sourceText, r.postNum) : detected
+    const family = r.family ?? (detected === 'other' ? queueFamilyOf(r.sourceText, r.postNum) : detected)
     queueStats.byFamily[family] = (queueStats.byFamily[family] ?? 0) + 1
     final.rows.push({
       postNum: r.postNum, postId: r.postId, qSourceText: r.sourceText,
       family, confidence: 'OWNER', alsoCertifiedQuestion: false,
       klass: 'Q_DIRECTIVE', storedAsActionRequest: true, source: 'owner ruling',
-      familySource: detected === 'other' ? 'queue rules' : 'detector',
+      familySource: r.family ? (r.familySource ?? 'declared with the ruling') : detected === 'other' ? 'queue rules' : 'detector',
       provenance: `owner ruling ${r.ruledOn} — unhighlighted-sentence queue`,
     })
     queueStats.added++
@@ -193,27 +204,28 @@ console.log(`  abbreviation repair: ${dirRepaired} directive spans repaired, ${d
 const checks = [
   // 2,552 + 485 from the unhighlighted-sentence queue (486 ruled, 1 occurrence already
   // certified) = 3,037.
-  // 3,037 + 405 from ROUND 2 of that review (455 ruled, 50 occurrences already certified) = 3,442.
+  // 3,037 + 405 from ROUND 2 of that review (455 ruled, 50 occurrences already certified) = 3,442,
+  // + 24 rows round 2 HELD for stating no instruction and the owner ruled in on 2026-08-24 = 3,466.
   // Round 2 reviewed 479 directive rows; 24 are HELD because they state no instruction — #953's
   // "#1"/"#2" list markers, the "_END_" structural marks, two comms strings and one assertion —
   // and each is reported in audit/unhighlighted-review2-issues.json for the owner to place.
-  ['directive occurrences = 3,442', all.length === 3442, all.length],
-  // 486 (round 1) + 455 (round 2) = 941.
-  ['queue rulings applied = 941', queueStats.added + queueStats.already === 941,
+  ['directive occurrences = 3,467', all.length === 3467, all.length],
+  // 486 (round 1) + 455 (round 2) + 24 (round 2's held rows, owner-ruled 2026-08-24) = 965.
+  ['queue rulings applied = 965', queueStats.added + queueStats.already === 965,
     `${queueStats.added} added + ${queueStats.already} already certified`],
   // The detector's answer is kept wherever it has one; only its residue is decided by the queue
   // ruleset, and nothing may land in 'other'.
   ['no queue directive without a family', !queueStats.byFamily.other, `${queueStats.byFamily.other ?? 0} unnamed`],
-  ['owner directive rulings applied = 276', ownerDirectives === 276, ownerDirectives],
+  ['owner directive rulings applied = 277', ownerDirectives === 277, ownerDirectives],
   ['all resolve to a source span', unresolved.length === 0, `${all.length - unresolved.length}/${all.length}`],
   // +185: the 485 new occurrences carry 185 wordings Directives did not already hold. The gap is
   // repetition - "Thank you Patriots." and "Happy Hunting." recur across dozens of drops.
   // +101: the 405 new occurrences carry 101 wordings Directives did not already hold — the batch
   // repeats itself heavily, WWG1WGA alone accounting for ~170 of them.
-  ['distinct = 1,930', distinct.size === 1930, distinct.size],
+  ['distinct = 1,941', distinct.size === 1941, distinct.size],
   // +225 posts gain their first certified directive.
   // +228 drops gain their first certified directive.
-  ['posts with a directive = 1,917', postsWith.size === 1917, postsWith.size],
+  ['posts with a directive = 1,926', postsWith.size === 1926, postsWith.size],
   // directiveFamilies is a map keyed by normalised text PER POST, so the 53 in-post repeats
   // share one entry: 2,422 occurrences - 53 repeats = 2,369 keys. The occurrence-level
   // invariant (sum of families === 2,422) is enforced upstream by reconcile-directives.mjs;

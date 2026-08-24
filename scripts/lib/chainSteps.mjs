@@ -138,6 +138,18 @@ export const CHAIN = [
   // It runs LAST among the steps that write entities.json or posts.json and FIRST among the ones
   // that read entity counts, and it re-applies the plan the owner already approved rather than
   // deciding anything: see the --rematerialise block in the applier.
+  // THE PROVENANCE AUDIT MUST BE MEASURED HERE, immediately before the cleanup and never after.
+  //
+  // apply-entity-cleanup refuses to replay unless the audit it reads covers exactly the occurrence
+  // count in the tree, and the tree it is meant to act on is the PRE-cleanup one. Run on the
+  // finished bundle the audit records the post-cleanup totals, so the next rebuild refuses with
+  // "the audit covers N occurrences but M are certified" - which is what happened on 2026-08-24,
+  // twice, and had to be fixed by hand both times. It is also the measurement every
+  // postApprovalDeltas entry cites as its evidence, so it has to be taken at the point the delta
+  // describes.
+  // kind 'apply' with no args: it is a measurement, but only steps marked 'apply' are actually
+  // invoked by rebuild-bundle.mjs, and this one has to run. It takes no --apply flag.
+  { step: 'audit-occurrence-provenance.mjs', kind: 'apply', args: [] },
   { step: 'apply-entity-cleanup.mjs', kind: 'apply', args: ['--rematerialise'] },
   // STEP 3B-1 — THE FULL-SENTENCE REPLACEMENT. It must run here and it must not be dropped.
   //
@@ -182,6 +194,11 @@ export const CHAIN = [
   // A TOOLTIP MUST NOT OUTLIVE THE IDENTITY IT DESCRIBES. entity-hovers.json carries authored
   // editorial text about real people, and a retired identity left 26 synopses pointing at nothing.
   // Runs after the entity state is final and before the steps that read it.
+  // ONE SHAPE FOR EVERY HOVER, and it has to be in the chain or a rebuild ships 52 entities with no
+  // tooltip at all. It reads its type vocabulary and its expansion clauses from the FROZEN authored
+  // layer (audit/entity-hovers-authored.json), never from the file it writes, which is what makes
+  // running it every rebuild safe. It takes no --apply flag.
+  { step: 'normalise-entity-hovers.mjs', kind: 'apply', args: [] },
   { step: 'prune-entity-hovers.mjs', kind: 'apply' },
   // THE RETIRED SECTIONS, STRIPPED. apply-claims.mjs rebuilds impliedConclusions and
   // verificationHooks from audit/claims-final.json on every run, so removing them by hand would

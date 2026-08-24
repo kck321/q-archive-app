@@ -2,7 +2,7 @@
  "note": "Entities left with no certified mention and no bound linked source. Retired from the public bundle: excluded from Entities, search, autocomplete, global synopses and hovers. THE IDS ARE RESERVED PERMANENTLY — a later occurrence resolves back to the same qe- id rather than minting a second identity.",
  "policy": "audit/url-derived-entity-policy.json + the 2026-08-17 boundary ruling + Owner Ruling 3 (2026-08-22)",
  "reserved": "audit/entity-ids.json keeps every id in this list.",
- "total": 229,
+ "total": 227,
  "entities": [
   {
    "id": "qe-a67f315bc9ac",
@@ -51,12 +51,6 @@
    "canonical": "Agnes Nixon",
    "type": "person",
    "slug": "agnes-nixon"
-  },
-  {
-   "id": "qe-877128f6a818",
-   "canonical": "Al Gore",
-   "type": "person",
-   "slug": "al-gore"
   },
   {
    "id": "qe-82f9daa0f19c",
@@ -1125,12 +1119,6 @@
    "canonical": "Ronan Farrow",
    "type": "person",
    "slug": "ronan-farrow"
-  },
-  {
-   "id": "qe-bb91501abc09",
-   "canonical": "Roseanne Barr",
-   "type": "person",
-   "slug": "roseanne-barr"
   },
   {
    "id": "qe-4df1e42eb9eb",

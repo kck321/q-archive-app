@@ -372,7 +372,9 @@ const checks = [
   // sequence read as one prediction between two unclassified lines. Both drops, because they are
   // the same drop reposted and carried the identical gap.
   // 847 + 94 ruled - 3 already certified = 941 (round 2 rules 94 predictions).
-  ['predictions = 941', allPreds.length === 941, allPreds.length],
+  // +1 on 2026-08-24 by owner ruling: #417 'News unlocks Map.' - "is a preiction in that post as
+  // well". It stays a Claim too; the archive already carries spans certified as both.
+  ['predictions = 942', allPreds.length === 942, allPreds.length],
   // isConclusion travels with the ROW rather than with the section, so a row leaving Claims
   // takes the attribute with it. -1: #3203's quoted question was the only withdrawn row
   // carrying it. 966 - 1 = 965.
@@ -427,7 +429,8 @@ const checks = [
   // v5: Q Directives migrated to sourceSpansV2 provenance; 2,705 -> 2,552 by owner ruling.
   // 2,552 + 485 arriving from the same owner ruling. This is a cross-section CHECK, not a source:
   // apply-directives.mjs runs immediately before this step and owns the number.
-  ['Directives now 3,442', directives === 3442, directives],
+  // 3,442 + 24 rows round 2 held for stating no instruction, ruled in by the owner on 2026-08-24.
+  ['Directives now 3,467', directives === 3467, directives],
 ]
 
 console.log('\nAPPLY CERTIFIED CLAIMS\n')

@@ -7006,3 +7006,107 @@ entities 1,532 canonical · **9,271 → 9,364 mentions** · Alice 5 → 98 · 22
 Two sheets added to `Q_Unhighlighted FINAL 2 - REPORT.xlsx`: **Two-layer overlaps** and **Themes
 that read purple**, with the anchors that do it most — WWG1WGA 166, MSM 132, FAKE NEWS 124,
 FISA 116, God bless 113.
+
+---
+
+## 2026-08-24 — The held rows, researched; NAT SEC; and the follow-up checks
+
+Seven owner rulings in one batch, plus the three verification asks.
+
+### What was asked
+
+1. *"NAT SEC is an entity throughout all the post so lets fix that and give it a hover description"*
+   — and later, *"this is the same entity aka alias as NAT SEC: NAT_SEC"*.
+2. *"i want to classify all those as entities and i would like you to do the research for each post
+   they are with in to give them the best hover description you can. anything you are unsure of lets
+   put in the resolution center"* — the 128 wordings on the **Held for you** sheet.
+3. *"go ahead and push the directives in that held for you file tab as well"* — the other 24.
+4. *"in the pic WH_POTUS_PRESS is the same as white house press"*.
+5. *"this is also a directive in that post (Find Post)"* — #417.
+6. *"News unlocks Map. is a preiction in that post as well"* — #417.
+7. *"check to make sure everything on the already highlighted tab is highlighted the right category…
+   fix all the items in the fix these tab if they already arent done… any url problems go ahead and
+   fix those issues"*.
+
+### NAT SEC
+
+48 drops, three spellings Q actually writes — `NAT SEC` (41), `NATSEC` (6), `NAT_SEC` (1). Typed
+`coded_alias`, hover says it stands for **national security**. It is NOT the National Security
+Agency, which keeps its own row and its 92 mentions.
+
+Flagged at the time and worth keeping: **FISA, DECLAS, SIGINT, GITMO, MSM and EO are deliberately
+not entities** — they are domain terms, and NAT SEC is their peer. The ruling overrides that for
+NAT SEC only.
+
+### The 128 held wordings
+
+`scripts/build-held-entity-identities.mjs` — each one read against the drop it sits in.
+
+* **71 identities + 16 splits** declared. "Charles W." is `Charles W. Dent` because the line is
+  "Charles W. Dent - Republican"; "Richard -" is `Richard Pollock` because the line above it is his
+  Twitter link; "Philip Pines: Bangko Sentral ng Pilipinas" splits into the country and its bank
+  (Q typed the country as two words, which is why round 2's rule missed the line).
+* **45 to the Resolution Center**, for two different reasons and only one is uncertainty:
+  * *unsettled* — "[J C]" is Comey in one drop and reads as Clapper in the next.
+  * *would-paint-wrong-text* — the reading IS clear but an alias is a corpus-wide claim. "45" means
+    Trump in #1565 and appears **281 times across 255 drops**; "L." 157, "N." 141, "RED" 187.
+    Those need occurrence-scoped rulings, which is the owner's call.
+
+**A guard caught a bad one.** `ROTHS` was declared an alias of the Rothschild family — and its only
+occurrence is inside `+FLYROTHSFLY+`, so `audit-occurrence-provenance.mjs` classified it
+`invalid_substring_extraction` (98 → 99). Withdrawn to the Resolution Center.
+
+### The 24 held directives
+
+Pushed on the owner's word. No family was invented for them — `queueDirectiveFamily.mjs` is explicit
+that it must not become a catch-all, and `'other'` fails the QA gate — so each shape is **declared
+with the ruling** (`build-held-directive-rulings.mjs`): list markers and end-markers `attention`,
+comms strings `operational`. `apply-directives.mjs` now honours `r.family` when a ruling carries one.
+
+### Two feedback loops closed
+
+* **The builder ate its own output, again.** `build-unhighlighted-owner-rulings-2.mjs` already
+  refused a dirty `public/data`. That is necessary and not sufficient: once the batch is applied AND
+  COMMITTED the tree is clean again, and a rebuild read 2,143 of its own certified spans back as
+  "already certified" — 2,775 rulings collapsed to 656. Second guard added: if the rows this run
+  calls already-certified are the rows the last run RULED, refuse.
+* **`normalise-entity-hovers.mjs` ate its own output.** It learns the type vocabulary and the
+  expansion clauses from prose, and after the first run that prose is gone. Result, already in the
+  committed tree: every type label degraded from the corpus's words ("title or public role") to the
+  machine name ("title role"), and **30 expansions were lost** — POTUS stopped saying "President of
+  the United States". Fixed by freezing the authored layer as `audit/entity-hovers-authored.json`
+  and reading from that. Both losses recovered. The normaliser is now idempotent and IN the chain.
+
+### Two entities the cleanup had retired, back
+
+`Al Gore` (#1239) and `Roseanne Barr` (#1863) were retired because their only trace on a drop was a
+URL path or an unexamined image. #1239's first line is `@algore`; #1863's third is
+`@TheRealRoseanne`. With the handles certified, Q names them in his own visible text. Recorded as an
+`afterOnly` delta with `restoredOccurrences[]`, and `audit-cross-section.mjs` now reads that list —
+an occurrence reappearing WITHOUT a record still fails, which is what the invariant is for.
+
+### The follow-up checks — `scripts/audit-review2-followups.mjs`
+
+* **Categories.** 713 section rows re-read against all six certified sections. **0 in the wrong
+  section, 0 uncertified.** 57 are carried in more than one — 53 involve a Theme, which is the
+  indigo/violet confusion again.
+* **Fixes. 8/8**, each asserted against the file it changed rather than reported as done.
+* **URLs. 0 problems** — after the audit was corrected to read the **runtime** text. Scanning
+  `posts.json` reported 2,663 broken addresses that are live links in the browser: 1,448 drops store
+  every scheme as `https:<em>//</em>host` and `localData.ts` strips that at load. Same mistake, same
+  place, as the first URL pass.
+
+### Chain and tooling
+
+* `audit-occurrence-provenance.mjs` is now IN the chain, immediately before `apply-entity-cleanup` —
+  run anywhere else it records the wrong tree's totals, which cost two hand-fixes on the day.
+* `scripts/pack-review2-report.mjs` — the workbook was packed by a throwaway script last time and
+  could not be regenerated. Written down.
+* `apply-entities.mjs`: `aliasAdditions` moved after the owner rulings, so an addition can name an
+  entity a ruling just created; and a later round's name now lifts an earlier round's hold.
+* `apply-entity-cleanup.mjs`: a replay refusal now names the rows, not just the counts.
+
+### Counts
+
+directives 3,304 → **3,329** · predictions 934 → **935** · entities 1,532 → **1,584** canonical,
+9,364 → **9,517** mentions · context units 468 → 445 · seed 90 · **222/222 invariants**.

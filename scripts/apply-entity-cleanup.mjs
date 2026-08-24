@@ -651,6 +651,23 @@ if (MODE === 'rematerialise') {
     || redone.after.rendered !== expectAfter.rendered) {
     console.error(`\n  ❌ the replay produces ${redone.after.entityRows}/${redone.after.mentions}, not the approved`)
     console.error(`     ${expectAfter.entityRows}/${expectAfter.mentions}. Refusing to write.\n`)
+    // WHICH ROWS. The counts alone say a replay drifted and not where, and that answer was reached
+    // twice by hand-instrumenting this script. A later ruling that gives a retiring entity a
+    // supported occurrence is a legitimate reason for the after-state to grow - it has to be
+    // recorded as an afterOnly delta, and that cannot be written without knowing which rows.
+    const survivors = (redone.nextEntities?.entities ?? []).map(e => e.canonical)
+    const retired = (contract.after?.retired ?? contract.after?.entitiesRetired ?? contract.after?.rows ?? [])
+      .map(x => (typeof x === 'string' ? x : x.canonical))
+    const stillHere = survivors.filter(c => retired.includes(c))
+    if (stillHere.length) {
+      console.error(`     ${stillHere.length} row(s) the approved plan retired are still certified:`)
+      for (const c of stillHere.slice(0, 20)) console.error(`       ${c}`)
+    }
+    if (process.env.QDROPS_DUMP_SURVIVORS) {
+      fs.writeFileSync(process.env.QDROPS_DUMP_SURVIVORS, JSON.stringify({ survivors, zeroed: redone.zeroed, sourceOnly: redone.sourceOnly, dormant: redone.dormant, totals: redone.nextEntities.totals }, null, 1))
+      console.error(`     survivors written to ${process.env.QDROPS_DUMP_SURVIVORS}`)
+    }
+    console.error('')
     process.exit(1)
   }
   writeResult(DATA, redone)

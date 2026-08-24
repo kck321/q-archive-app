@@ -1,0 +1,748 @@
+{
+ "note": "The 128 wordings sheet 3 held, researched against the drop each one sits in.",
+ "ruling": "i want to classify all those as entities and i would like you to do the research for each post they are with in to give them the best hover description you can. anything you are unsure of lets put in the resolution center",
+ "ruledOn": "2026-08-24",
+ "resolutionOrder": "1. the span verbatim against canonical+alias  2. the span with titles, party suffixes, role tails and a leading 'The' removed  3. an initial+surname where exactly one certified person carries that surname  4. a connector split where EVERY part resolves  5. this file  6. refused, and listed in `held`.",
+ "typeVocabulary": "Only types already present in public/data/entities.json are used. No new type is introduced by this batch.",
+ "heldRowsIn": "audit/unhighlighted-entity-identities-2.json held[] (128 wordings)",
+ "totals": {
+  "heldRowsAddressed": 128,
+  "identitiesDeclared": 71,
+  "splitsDeclared": 16,
+  "sentToResolutionCenter": 45
+ },
+ "identities": [
+  {
+   "canonical": "Q Clearance Patriot",
+   "type": "coded_alias",
+   "spellings": [
+    "Q Clearance Patriot"
+   ],
+   "why": "The opening line of #34, the \"My fellow Americans\" drop. It is how the poster designates himself, so it is a name in the drop rather than a description of one.",
+   "expansion": "the designation the poster of these drops opens #34 with"
+  },
+  {
+   "canonical": "4,10,20",
+   "type": "coded_alias",
+   "spellings": [
+    "4,10,20",
+    "4, 10, 20"
+   ],
+   "why": "Q signs off #35, #40 and #533 with it in place of the usual \"Q\". The three numbers are positions in the alphabet — 4=D, 10=J, 20=T — and #40 spells the alphabet out on the very next line (\"A,b,c,d,e......\"), which is Q showing the reader how to read the line above.",
+   "expansion": "D.J.T. — the initials the numbers give when read as alphabet positions, which #40 demonstrates on the following line"
+  },
+  {
+   "canonical": "SEC TEST",
+   "type": "coded_alias",
+   "spellings": [
+    "SEC TEST",
+    "SEC Test 1",
+    "SEC Test 2"
+   ],
+   "why": "Whole-drop lines in #870, #871, #1003, #1004 and #1639 — a drop whose entire content is the label. Q is testing the board, and the label is the designation for that.",
+   "expansion": "a board test post — the drop contains nothing but this label and the sign-off"
+  },
+  {
+   "canonical": "VIP Patriot",
+   "type": "coded_alias",
+   "spellings": [
+    "VIP Patriot"
+   ],
+   "why": "Q writes it in #2240 and #2243 beside a linked photograph and \"Front Row.\" — a designation for a named supporter at a rally, not a description.",
+   "expansion": "a supporter Q singles out beside a rally photograph in #2240 and #2243"
+  },
+  {
+   "canonical": "+Sleepers",
+   "type": "coded_alias",
+   "spellings": [
+    "+Sleepers"
+   ],
+   "why": "A line of #3881's infiltration list, in Q's \"+\" prefix notation, between \"THE SWAMP RUNS DEEP\" and \"Backgrounds are important.\"",
+   "expansion": "placed operatives, in the \"+\" prefix notation Q uses for a category he is adding to a list"
+  },
+  {
+   "canonical": "PAN-DEM-IC",
+   "type": "coded_alias",
+   "spellings": [
+    "PAN-DEM-IC"
+   ],
+   "why": "The first line of #4294, immediately followed by \"DEM–PANIC\". Q hyphenates the word so that the same letters read as the second line, which is the point of the drop.",
+   "expansion": "Q's hyphenation of \"pandemic\", set against \"DEM–PANIC\" on the next line"
+  },
+  {
+   "canonical": "Joe 30330",
+   "type": "coded_alias",
+   "spellings": [
+    "Joe 30330"
+   ],
+   "why": "The first line of #4826, followed by \"What is 2020 [current year] divided by 30330?\" — the number is a text-to-donate shortcode Joe Biden gave in a 2019 debate, and Q treats it as a designation.",
+   "expansion": "the shortcode Joe Biden gave on a 2019 debate stage, which #4826 then divides into the year"
+  },
+  {
+   "canonical": "DECLAS CoC",
+   "type": "coded_alias",
+   "spellings": [
+    "DECLAS CoC"
+   ],
+   "why": "The heading of #3784, with the chain itself on the following lines: \"POTUS > Barr\" and \"Barr > Durham\".",
+   "expansion": "declassification chain of command — the drop lists the chain on the next two lines"
+  },
+  {
+   "canonical": "CLAS 1-99",
+   "type": "coded_alias",
+   "spellings": [
+    "CLAS 1-99",
+    "CLAS 1-99 Defense",
+    "CLAS 1-99 Intel"
+   ],
+   "why": "Q's classification-range marker, standing alone in #2776 and #3837 and split by department in #4645 (\"CLAS 1-99 Defense\", \"CLAS 1-99 Intel\").",
+   "expansion": "a classification range Q marks withheld material with, split by department in #4645"
+  },
+  {
+   "canonical": "Lord d R.",
+   "type": "coded_alias",
+   "spellings": [
+    "Lord d R."
+   ],
+   "why": "A line of #178's stringer-reading sequence, two lines above \"++\". The archive separately certifies the Rothschild family, and this is Q's abbreviated form of a title in it — which is as far as the drop goes, so no individual is named here.",
+   "expansion": "Q's abbreviated form of a Rothschild title; the drop does not name which member"
+  },
+  {
+   "canonical": "Owls",
+   "type": "coded_alias",
+   "spellings": [
+    ":Owls:",
+    ":OWLS:"
+   ],
+   "why": "The opening line of #328 and a line of #452, written inside colons both times — Q's marker form for a symbol group.",
+   "expansion": "a symbol group Q marks off inside colons"
+  },
+  {
+   "canonical": "D-Room C",
+   "type": "coded_alias",
+   "spellings": [
+    "D-Room C"
+   ],
+   "why": "One of three \"D-Room\" designations listed together in #1001, under \"Tunnels.\" and \"Table 29.\""
+  },
+  {
+   "canonical": "D-Room H",
+   "type": "coded_alias",
+   "spellings": [
+    "D-Room H"
+   ],
+   "why": "One of three \"D-Room\" designations listed together in #1001, under \"Tunnels.\" and \"Table 29.\""
+  },
+  {
+   "canonical": "D-Room R",
+   "type": "coded_alias",
+   "spellings": [
+    "D-Room R"
+   ],
+   "why": "One of three \"D-Room\" designations listed together in #1001, under \"Tunnels.\" and \"Table 29.\""
+  },
+  {
+   "canonical": "BLUE METAL",
+   "type": "coded_alias",
+   "spellings": [
+    "BLUE METAL"
+   ],
+   "why": "A line of #1473's comms block, directly under \"CASTLE ARRIVAL GOOD\" and among alphanumeric strings — a status token in the same series."
+  },
+  {
+   "canonical": "JDLKD-8382KDJDzAZ7301",
+   "type": "coded_alias",
+   "spellings": [
+    "JDLKD-8382KDJDzAZ7301"
+   ],
+   "why": "The first line of #1473's comms block, one of three alphanumeric strings above \"CASTLE ARRIVAL GOOD\"."
+  },
+  {
+   "canonical": "PACKET HDQ-7309217392",
+   "type": "coded_alias",
+   "spellings": [
+    "PACKET HDQ-7309217392"
+   ],
+   "why": "The entire content of #1839 apart from the sign-off — a packet label posted on its own."
+  },
+  {
+   "canonical": "DWS_DIR",
+   "type": "coded_alias",
+   "spellings": [
+    "DWS_DIR>",
+    "DWS_DIR"
+   ],
+   "why": "A node in #436's \"ONE OF TWENTY TWO\" chain, between \"(SR 187)(MS13 (2) 187)>\" and \"F-I/D-J ASSIST>\". DWS is the initial form Q uses for Debbie Wasserman Schultz, whom the archive certifies separately; DIR marks the role and \">\" is the chain arrow.",
+   "expansion": "the DNC chair position in #436's chain — Q's initials for Debbie Wasserman Schultz, plus the role marker"
+  },
+  {
+   "canonical": "_4ch_n",
+   "type": "coded_alias",
+   "spellings": [
+    "_4ch_n"
+   ],
+   "why": "A line of #233's code block, directly above \"_8ch_y\" and below \"Start_code_activated/instruction\". The pair reads as the two boards with a no/yes flag, which is the migration #233 is about.",
+   "expansion": "4chan, flagged \"n\", in the board pair #233 sets against \"_8ch_y\""
+  },
+  {
+   "canonical": "_8ch_y",
+   "type": "coded_alias",
+   "spellings": [
+    "_8ch_y"
+   ],
+   "why": "A line of #233's code block, directly below \"_4ch_n\". The pair reads as the two boards with a no/yes flag, which is the migration #233 is about.",
+   "expansion": "8chan, flagged \"y\", in the board pair #233 sets against \"_4ch_n\""
+  },
+  {
+   "canonical": "Kerry's son",
+   "type": "coded_alias",
+   "spellings": [
+    "Kerry's son"
+   ],
+   "why": "One of four parallel lines in #3590 — \"Pelosi's son\", \"Kerry's son\", \"Romney's son\", \"Biden's son\" — followed by \"Hint: Geo location: Ukraine\" and \"Hint: Energy\". Q names the relationship rather than the person, and that is what is recorded.",
+   "expansion": "the oblique form Q uses in #3590's Ukraine-energy list; the drop names the parent, not the son"
+  },
+  {
+   "canonical": "Romney's son",
+   "type": "coded_alias",
+   "spellings": [
+    "Romney's son"
+   ],
+   "why": "One of four parallel lines in #3590 — \"Pelosi's son\", \"Kerry's son\", \"Romney's son\", \"Biden's son\" — followed by \"Hint: Geo location: Ukraine\" and \"Hint: Energy\". Q names the relationship rather than the person, and that is what is recorded.",
+   "expansion": "the oblique form Q uses in #3590's Ukraine-energy list; the drop names the parent, not the son"
+  },
+  {
+   "canonical": "Charles W. Dent",
+   "type": "person",
+   "spellings": [
+    "Charles W."
+   ],
+   "why": "The line in #1319 and #1850 is \"Charles W. Dent - Republican\" in Q's not-seeking-re-election list. The sentence splitter cut at \"W.\" and the review ruled the fragment; the person is on the line."
+  },
+  {
+   "canonical": "John J. Duncan Jr.",
+   "type": "person",
+   "spellings": [
+    "John J."
+   ],
+   "why": "The line in #1319 and #1850 is \"John J. Duncan, Jr. - Republican\" in Q's not-seeking-re-election list. The splitter cut at \"J.\"."
+  },
+  {
+   "canonical": "Luis V. Gutierrez",
+   "type": "person",
+   "spellings": [
+    "Luis V."
+   ],
+   "why": "The line in #1319 and #1850 is \"Luis V. Gutierrez - Democrat\" in Q's not-seeking-re-election list. The splitter cut at \"V.\"."
+  },
+  {
+   "canonical": "Patrick J. Tiberi",
+   "type": "person",
+   "spellings": [
+    "Patrick J."
+   ],
+   "why": "The line in #1319 and #1850 is \"Patrick J. Tiberi - Republican U.S. House\" in Q's resigned list. The splitter cut at \"J.\"."
+  },
+  {
+   "canonical": "Ruben J. Kihuen",
+   "type": "person",
+   "spellings": [
+    "Ruben J."
+   ],
+   "why": "The line in #1319 and #1850 is \"Ruben J. Kihuen - Democrat\" in Q's not-seeking-re-election list. The splitter cut at \"J.\"."
+  },
+  {
+   "canonical": "Jason V. Herring",
+   "type": "person",
+   "spellings": [
+    "Jason V."
+   ],
+   "why": "The line in #2692 and #2697 is \"Jason V. Herring – track & follow\", among the FBI names Q lists after the Weiner-laptop passage. The splitter cut at \"V.\"."
+  },
+  {
+   "canonical": "Michael S. Rogers",
+   "type": "person",
+   "spellings": [
+    "Michael S."
+   ],
+   "why": "The whole of #3319 is \"Michael S. Rogers.\" and #4310 quotes the Washington Post on \"Adm. Michael S. Rogers\". The archive certifies him separately under Q's shorthand \"Adm R\"; this is the full name as written."
+  },
+  {
+   "canonical": "Richard Pollock",
+   "type": "person",
+   "spellings": [
+    "Richard -"
+   ],
+   "why": "The line above it in #1960 is the link https://twitter.com/rpollockDC/... and the line below is \"Pro TIP: Look @ CrowdStrike\" — Q is addressing the reporter whose account he just linked."
+  },
+  {
+   "canonical": "Renee J James",
+   "type": "person",
+   "spellings": [
+    "Renee J James"
+   ],
+   "why": "The whole of #303 apart from the sign-off. Renée James was president of Intel at the time of the drop."
+  },
+  {
+   "canonical": "Roseanne Barr",
+   "type": "person",
+   "spellings": [
+    "@TheRealRoseanne"
+   ],
+   "why": "Q lists the account in #1863 beside @SeanHannity and @FoxNews under \"Do not let this HYPOCRISY stand.\" — the handle names her."
+  },
+  {
+   "canonical": "Al Gore",
+   "type": "person",
+   "spellings": [
+    "@algore"
+   ],
+   "why": "The first line of #1239, followed by \"Today is Earth Day.\" and a Washington Post link about his green-tech investments. The handle names him."
+  },
+  {
+   "canonical": "David Muir",
+   "type": "person",
+   "spellings": [
+    "David Muir"
+   ],
+   "why": "Named in #1515's WikiLeaks media list as an ABC journalist. The name is Q's own line."
+  },
+  {
+   "canonical": "Beth Fouhy",
+   "type": "person",
+   "spellings": [
+    "Beth Fouhy"
+   ],
+   "why": "Named in #1515's WikiLeaks media list as an MSNBC journalist. The name is Q's own line."
+  },
+  {
+   "canonical": "ABC News",
+   "type": "media_organization",
+   "spellings": [
+    "ABC News"
+   ],
+   "why": "The outlet #1515's WikiLeaks media list means by \"ABC\" — a television news network, not the holding company the registry resolves the bare letters to."
+  },
+  {
+   "canonical": "FBI Portland",
+   "type": "government_agency",
+   "spellings": [
+    "@FBIPortland"
+   ],
+   "why": "Q posts the handle in #4715 directly under two Instagram links. It is the Portland field office's own account."
+  },
+  {
+   "canonical": "Federal Bureau of Investigation",
+   "type": "government_agency",
+   "spellings": [
+    "FEDERAL BUREAU OF \"INVESTIGATION\""
+   ],
+   "why": "The header Q puts over his fired/forced FBI list in #2070, #2697 and #3990, with the quotation marks his own. Already certified; this registers the spelling he heads the list with."
+  },
+  {
+   "canonical": "Department of Justice",
+   "type": "government_agency",
+   "spellings": [
+    "DEPARTMENT OF \"JUSTICE\""
+   ],
+   "why": "The header Q puts over his fired/forced DOJ list in #2070, with the quotation marks his own. Already certified; this registers the spelling he heads the list with."
+  },
+  {
+   "canonical": "Military Intelligence Team",
+   "type": "organization",
+   "spellings": [
+    "MILITARY INTELLIGENCE TEAM"
+   ],
+   "why": "One of the three unit designations #755 lists and then repeats under \"DESIGNATION:\" with unit codes beside them."
+  },
+  {
+   "canonical": "Military Intelligence Battalion (Strategic Signals Intelligence)",
+   "type": "organization",
+   "spellings": [
+    "MILITARY INTELLIGENCE BATTALION (STRATEGIC SIGNALS INTELLIGENCE)"
+   ],
+   "why": "One of the three unit designations #755 lists and then repeats under \"DESIGNATION:\" with unit codes beside them."
+  },
+  {
+   "canonical": "Military Intelligence Brigade (Strategic Signals Intelligence)",
+   "type": "organization",
+   "spellings": [
+    "MILITARY INTELLIGENCE BRIGADE (STRATEGIC SIGNALS INTELLIGENCE)"
+   ],
+   "why": "One of the three unit designations #755 lists and then repeats under \"DESIGNATION:\" with unit codes beside them, abbreviated \"MI BRIGADE (STRAT SIGINT)\" on the second pass."
+  },
+  {
+   "canonical": "Barron's",
+   "type": "media_organization",
+   "spellings": [
+    "Barron's"
+   ],
+   "why": "One of four outlet names #1718 puts under its own headline — Barron's, Fortune, Daily Mail — in a drop that stacks the same Zuckerberg story from each."
+  },
+  {
+   "canonical": "Bangko Sentral ng Pilipinas",
+   "type": "organization",
+   "spellings": [
+    "Bangko Sentral ng Pilipinas"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the Philippines' central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Philippines",
+   "type": "country",
+   "spellings": [
+    "Philip Pines"
+   ],
+   "why": "Named in Q's central-bank list (#138) as the country whose bank the same line names. Q typed it as two words, which is why the round-2 rule did not match the line."
+  },
+  {
+   "canonical": "Saudi Arabian Monetary Agency",
+   "type": "organization",
+   "spellings": [
+    "Saudi Arabian Monetary Agency"
+   ],
+   "why": "Named in Q's central-bank list (#138) as Saudi Arabia's central bank. The round-2 rule looked for \"Monetary Authority\"; this line says \"Monetary Agency\"."
+  },
+  {
+   "canonical": "Operation Cyclone",
+   "type": "program_operation",
+   "spellings": [
+    "Operation Cyclone"
+   ],
+   "why": "Q names it in #1887 and states its own subject on the same line — \"Operation Cyclone>> Mujahideen/Afghanistan\" — with the aid, withdrawal and funding lines under it."
+  },
+  {
+   "canonical": "Crossfire Typhoon",
+   "type": "program_operation",
+   "spellings": [
+    "CROSSFIRE TYPHOON"
+   ],
+   "why": "Listed in #4011 between CROSSFIRE HURRICANE, which the archive already certifies, and CROSS WIND — the three codenames of the same investigation series."
+  },
+  {
+   "canonical": "Fiddler",
+   "type": "program_operation",
+   "spellings": [
+    "Fiddler"
+   ],
+   "why": "Q gives it as \"OP Name: Fiddler\" in #836 and then uses the name again eight lines later (\"Mission 6: Fiddler > Ghost-PRIME\"), so the drop both names the operation and uses the name."
+  },
+  {
+   "canonical": "Dragonfly",
+   "type": "program_operation_project",
+   "spellings": [
+    "Dragonfly"
+   ],
+   "why": "Q writes the name in #2378 directly under an Intercept link about Google's censored Chinese search engine, and above \"Look HERE [RUSSIA] | DO NOT LOOK HERE [CHINA]\"."
+  },
+  {
+   "canonical": "Project DeepDream",
+   "type": "program_operation_project",
+   "spellings": [
+    "Project DeepDream"
+   ],
+   "why": "Q quotes his own earlier drop back in #3584 — \"[Feb 18 2018] “Project DeepDream v2[A]?” – Q\" — beside \"Project DeepMind?\" and a whistleblower story about Google planetary-surveillance AI. The original is #790's \"PROJECT DEEPDREAMv2[A]]\"."
+  },
+  {
+   "canonical": "Executive Order 13526",
+   "type": "legislation_regulation",
+   "spellings": [
+    "Executive Order 13526"
+   ],
+   "why": "Q names it in #2177, #2207 and #2501 immediately under the GPO link to its text, then quotes Sec 1.7 from it verbatim."
+  },
+  {
+   "canonical": "1996 Telecommunications Act",
+   "type": "legislation_regulation",
+   "spellings": [
+    "1996 Telecommunications Act"
+   ],
+   "why": "Q names it in #4278 under \"Corporate media control [source]:\" as \"Bill Clinton_ 1996 Telecommunications Act\"."
+  },
+  {
+   "canonical": "FBI 302",
+   "type": "legal_investigative",
+   "spellings": [
+    "302s",
+    "FBI 302's"
+   ],
+   "why": "The FBI interview form. Q lists it bare in #1443 (\"302s | Texts | Tarmac | FBI | DOJ\") and names it in full in #3330 (\"FBI 302's\"), both times among the evidence items of the same investigation."
+  },
+  {
+   "canonical": "CIA-RDP84B00049R001303260026-4",
+   "type": "other_named_entity",
+   "spellings": [
+    "CIA-RDP84B00049R001303260026-4"
+   ],
+   "why": "Q posts it in #239 directly under \"The Asia Foundation.\" and above \"Happy hunting.\" It is a CIA CREST reading-room document identifier, which is what makes the line a pointer rather than a code."
+  },
+  {
+   "canonical": "John 3:16",
+   "type": "religious_spiritual",
+   "spellings": [
+    "JOHN 3:16"
+   ],
+   "why": "The last line before the sign-off in #790, after \"THE DAY OF RECKONING IS UPON US.\" — a chapter-and-verse citation."
+  },
+  {
+   "canonical": "Senate Judiciary Chairman",
+   "type": "title_role",
+   "spellings": [
+    "Senate Judiciary Chairman"
+   ],
+   "why": "One of four committee-chair roles #2445 names in sequence — House Oversight, House Judiciary, then \"TRUST GRASSLEY\" and this line, which is the office Grassley held."
+  },
+  {
+   "canonical": "Airbus A321",
+   "type": "other_named_entity",
+   "spellings": [
+    "A321"
+   ],
+   "why": "Q gives it in #1588 under \"SFO>JFK\" and above \"Direct\" — the aircraft type on the route the drop is about."
+  },
+  {
+   "canonical": "Mujahideen",
+   "type": "political_group",
+   "spellings": [
+    "Mujahideen"
+   ],
+   "why": "Named on Q's own line in #1887, \"Operation Cyclone>> Mujahideen/Afghanistan\", with the anti-Soviet resistance lines beneath it."
+  },
+  {
+   "canonical": "The Godfather Part III",
+   "type": "creative_work",
+   "spellings": [
+    "Godfather lll"
+   ],
+   "why": "Q lists it in #75 and #84 beside \"Alice & Wonderland\" and \"Snow White\" as one of the film titles he uses as codenames. He spells the numeral with three lowercase Ls."
+  },
+  {
+   "canonical": "CrowdStrike",
+   "type": "technology_platform",
+   "spellings": [
+    "CROWDSTRIKE>"
+   ],
+   "why": "A node in #436's \"ONE OF TWENTY TWO\" chain, between \"GOOG>\" and \"DNC>\". Already certified; this registers the spelling the chain writes it in, arrow included."
+  },
+  {
+   "canonical": "Christopher Steele",
+   "type": "person",
+   "spellings": [
+    "STEELE>"
+   ],
+   "why": "A node in #436's \"ONE OF TWENTY TWO\" chain, between \"CLAS: 1-4 PAY>\" and \"PODESTA>\". Already certified; this registers the spelling the chain writes it in, arrow included."
+  },
+  {
+   "canonical": "Donald Trump",
+   "type": "person",
+   "spellings": [
+    "DONALD J."
+   ],
+   "why": "The line in #2054 and #4010 is the proclamation formula \"I, DONALD J. TRUMP, President of the United States of America\". The splitter cut at \"J.\"."
+  },
+  {
+   "canonical": "Joe Biden",
+   "type": "person",
+   "spellings": [
+    "Joseph R."
+   ],
+   "why": "The line in #4801 is \"an intern in the office of Delaware Sen. Joseph R. Biden\", quoted from Steve Scully's university biography. The splitter cut at \"R.\"."
+  },
+  {
+   "canonical": "Paul Nakasone",
+   "type": "person",
+   "spellings": [
+    "Army Lt."
+   ],
+   "why": "The line in #1268 is \"Army Lt. Gen. Paul Nakasone\", under \"Quiet.\" and above \"Good.\" The splitter cut at \"Lt.\" and the ruling landed on the rank; the person is on the line and already certified."
+  },
+  {
+   "canonical": "Jeff Sessions",
+   "type": "person",
+   "spellings": [
+    "]SESSIONS["
+   ],
+   "why": "Q writes the name inside inverted brackets in #1369, above \"We Fight!\". The bracket form is his, and the name inside it is already certified."
+  },
+  {
+   "canonical": "Jerome Corsi",
+   "type": "person",
+   "spellings": [
+    "CORSI"
+   ],
+   "why": "Q writes the surname in capitals three times in #2500 — \"CORSI > [attempt infiltrate] Q\", \"MUELLER > CORSI\", \"CORSI PLEA DEAL\". Already certified; this registers the capitalised form."
+  },
+  {
+   "canonical": "GOOG",
+   "type": "technology_platform",
+   "spellings": [
+    "+GOOG"
+   ],
+   "why": "One of three \"+\"-prefixed lines in #1841 — \"+GOOG | +FB | +TWITTER\" — under an FTC antitrust quotation. Already certified; this registers the prefixed form the list writes it in."
+  },
+  {
+   "canonical": "Fox News",
+   "type": "media_organization",
+   "spellings": [
+    "@FoxNews"
+   ],
+   "why": "Q lists the account in #1863 between @SeanHannity and @TheRealRoseanne. Already certified; this registers the handle."
+  },
+  {
+   "canonical": "Sean Hannity",
+   "type": "person",
+   "spellings": [
+    "@SeanHannity"
+   ],
+   "why": "The first line of #1863, above @FoxNews. Already certified; this registers the handle."
+  },
+  {
+   "canonical": "Edward Snowden",
+   "type": "person",
+   "spellings": [
+    "@Snowden"
+   ],
+   "why": "Q addresses the handle in #728, #731 and #790. Already certified; this registers the handle form."
+  }
+ ],
+ "splits": [
+  {
+   "spelling": "Philip Pines: Bangko Sentral ng Pilipinas",
+   "postNum": 138,
+   "into": [
+    "Philip Pines",
+    "Bangko Sentral ng Pilipinas"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted. Q typed the country as two words."
+  },
+  {
+   "spelling": "Saudi Arabia: Saudi Arabian Monetary Agency",
+   "postNum": 138,
+   "into": [
+    "Saudi Arabia",
+    "Saudi Arabian Monetary Agency"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "ABC - David Muir",
+   "postNum": 1515,
+   "into": [
+    "ABC News",
+    "David Muir"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted. This line uses a hyphen where the rest of the list uses an en dash, which is why the round-2 rule did not match it."
+  },
+  {
+   "spelling": "MSNBC - Beth Fouhy",
+   "postNum": 1515,
+   "into": [
+    "MSNBC",
+    "Beth Fouhy"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted. This line uses a hyphen where the rest of the list uses an en dash."
+  },
+  {
+   "spelling": "Tag: USSS",
+   "postNum": 347,
+   "into": [
+    "United States Secret Service"
+   ],
+   "why": "Q tags the drop with the agency's initials. The agency is already certified."
+  },
+  {
+   "spelling": "HUSSEIN CABINET / STAFF",
+   "postNum": 559,
+   "into": [
+    "Barack Obama"
+   ],
+   "why": "The header over #559's private-email list. \"Hussein\" is the form Q uses throughout for Barack Obama and is already a certified alias; \"CABINET / STAFF\" says whose list follows, not who."
+  },
+  {
+   "spelling": "@Snowden \"Truth To Power\"",
+   "postNum": 728,
+   "into": [
+    "@Snowden"
+   ],
+   "why": "A handle and a quoted phrase on one line. The handle names a certified person; the phrase is what he is being quoted saying, and is treated as quotation rather than as a name."
+  },
+  {
+   "spelling": "@Snowden \"Truth To Power\"",
+   "postNum": 731,
+   "into": [
+    "@Snowden"
+   ],
+   "why": "A handle and a quoted phrase on one line. The handle names a certified person; the phrase is what he is being quoted saying, and is treated as quotation rather than as a name."
+  },
+  {
+   "spelling": "OP Name: Fiddler",
+   "postNum": 836,
+   "into": [
+    "Fiddler"
+   ],
+   "why": "Q gives the operation's name after the label \"OP Name:\". The label is the field, the name is the value."
+  },
+  {
+   "spelling": "SUM of ALL FEARS //\\\\",
+   "postNum": 864,
+   "into": [
+    "The Sum of All Fears"
+   ],
+   "why": "Q names the Tom Clancy title and appends his own \"//\\\\\" marker. The archive already certifies the title."
+  },
+  {
+   "spelling": "-Hillary Clinton & Foundation",
+   "postNum": 2365,
+   "into": [
+    "Hillary Clinton",
+    "Clinton Foundation"
+   ],
+   "why": "A line of the IG-report notes Q quotes in #2365. Two certified entities on one line, with Q's leading dash."
+  },
+  {
+   "spelling": "Hillary Clinton & Foundation",
+   "postNum": 2697,
+   "into": [
+    "Hillary Clinton",
+    "Clinton Foundation"
+   ],
+   "why": "The same line of the same notes, quoted again in #2697 without the leading dash."
+  },
+  {
+   "spelling": "Susan Wojcicki - CEO of YouTube",
+   "postNum": 2061,
+   "into": [
+    "Susan Wojcicki",
+    "YouTube"
+   ],
+   "why": "A person and the company she led, on one line of #2061's family-tree chain. Both are already certified."
+  },
+  {
+   "spelling": "Lisa Barsoomian _former Bill Clinton attorney",
+   "postNum": 4784,
+   "into": [
+    "Lisa Barsoomian",
+    "Bill Clinton"
+   ],
+   "why": "The first line of #4784 names her and the person she is described as having represented. Both are already certified."
+  },
+  {
+   "spelling": "Today: JK & Iran",
+   "postNum": 1317,
+   "into": [
+    "JK",
+    "Iran"
+   ],
+   "why": "A person and a country on one line, under \"Re_read drops.\" The archive certifies \"JK\" already, and the drop's next line — \"Why is Hussein/JK traveling WW and meeting w/ foreign heads of state\" — is what fixes the reading."
+  },
+  {
+   "spelling": "Michael S. Rogers.",
+   "postNum": 3319,
+   "into": [
+    "Michael S."
+   ],
+   "why": "The whole of #3319 apart from the sign-off."
+  }
+ ],
+ "held": []
+}

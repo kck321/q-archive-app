@@ -1,9 +1,9 @@
 {
  "note": "Determinism stamp. The approved audit must keep its exact bytes; the inputs move whenever a later decision moves the certified state, and every such decision is recorded in audit/entity-cleanup-rollback-contract.json postApprovalDeltas.",
- "rebaselinedOn": "2026-08-24 (Q ruling)",
- "why": "Re-baselined for the Q ruling: a standalone \"Q\" that is not the sign-off is an Entity, and it is Alice. The audit was re-run because its INPUTS moved - 93 more mentions are certified before the cleanup step reaches them - and the re-run is what apply-entity-cleanup.mjs demands before it will replay. The derivation is unchanged. Same situation, and the same remedy, as the two re-baselines recorded before this one.",
- "previousAuditSha256": "db63323e2da1d3eb83efce4e77904af0a59e2cba3773e880c4aa3ff46c4ef6a8",
- "inputs": "1409797889f2d2d6ca3b117cca28c774918de4d305736baccd2bfa4d1aaf24b5|343ed39164a80826c3890cc63bfa57d3da2986f3837045487d8276f7c309650a",
- "auditSha256": "207adb4ae7c3648bb2d4db21272af4191d6ce44c4b607767c5cadd225ccd235a",
+ "rebaselinedOn": "2026-08-24 (held wordings, NAT SEC, White House Press)",
+ "why": "Re-baselined for the 2026-08-24 rulings: the 128 held wordings named and researched, NAT SEC across 48 drops, and White House Press on #397/#417. The audit was re-run because its INPUTS moved - 152 more mentions are certified before the cleanup step reaches them - and the re-run is what apply-entity-cleanup.mjs demands before it will replay. The derivation is unchanged. Same situation, and the same remedy, as the three re-baselines before this one. It is also why audit-occurrence-provenance.mjs is now IN the rebuild chain, immediately before the cleanup: run anywhere else it records the wrong tree's totals, which cost two hand-fixes on the day.",
+ "previousAuditSha256": "207adb4ae7c3648bb2d4db21272af4191d6ce44c4b607767c5cadd225ccd235a",
+ "inputs": "4770606bb394e156c1492ccfddb2519e0882c40dc31d8c905bda7014dc57ef62|6afdc1f095843be7f891e8e0f073bc38f30b83e4871d5cc131d2ed662dcb3246",
+ "auditSha256": "8d9bdd2ac7e5cc060bb747ff926a177a3e40c63042b8c3662dccdbbc917e0cb1",
  "previousWhy": "The previous stamp recorded the audit as it stood BEFORE the 2026-08-21 Nellie Ohr ruling re-ran audit-occurrence-provenance.mjs (commit 32d168e). The re-run was deliberate and its evidence is in the rollback contract; the stamp simply was not re-baselined with it."
 }

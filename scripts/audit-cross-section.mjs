@@ -938,10 +938,28 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
       leaked.length ? `${leaked.length} leaked` : `${quarantine.total} quarantined`)
   }
   if (applied && integrated) {
+    // A WITHDRAWAL CAN BE UNDONE - BUT ONLY BY A NAMED RULING.
+    //
+    // The plan withdrew #1239:0 "Al Gore" because his only trace on the drop was the path of a
+    // Washington Post URL, which a publisher's CMS generates and Q did not write. #1239's FIRST
+    // LINE is "@algore", and on 2026-08-24 that handle was certified as his alias - so the
+    // occurrence is now supported by Q's own visible text and the condition it was withdrawn under
+    // has stopped being true.
+    //
+    // That is a legitimate reason for a withdrawn occurrence to come back and it must not be a
+    // silent one. The exception is read from restoredOccurrences[] on the postApprovalDeltas entry
+    // that causes it, so an occurrence reappearing WITHOUT a record still fails - which is the
+    // thing this invariant exists to catch.
+    const restored = new Set((contract?.postApprovalDeltas ?? [])
+      .flatMap(d => d.restoredOccurrences ?? [])
+      .map(r => r.occurrenceId))
     const stillPainted = integrated.actions.filter(a =>
-      (byNum.get(a.postNum)?.postAnalysis?.namedEntities ?? [])[a.index] === a.alias)
+      (byNum.get(a.postNum)?.postAnalysis?.namedEntities ?? [])[a.index] === a.alias
+      && !restored.has(a.occurrenceId))
     t('url-fragments-withdrawn', 'no withdrawn occurrence is still a certified annotation',
-      stillPainted.length === 0, `${stillPainted.length} remaining`)
+      stillPainted.length === 0,
+      stillPainted.length ? `${stillPainted.length} remaining`
+        : restored.size ? `ok (${restored.size} restored by a recorded ruling)` : 'ok')
   }
 
   // ── 3. BOUND AND UNBOUND SOURCES. A null entityId is a decision, not a gap.

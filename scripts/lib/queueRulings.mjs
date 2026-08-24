@@ -20,6 +20,9 @@ import path from 'node:path'
 export const QUEUE_RULING_FILES = [
   'audit/unhighlighted-owner-rulings.json',
   'audit/unhighlighted-owner-rulings-2.json',
+  // Round 2's held directives, certified on the owner's 2026-08-24 ruling and emitted as a delta
+  // rather than a rebuild — build-held-directive-rulings.mjs says why the rebuild is refused.
+  'audit/unhighlighted-owner-rulings-2-held-directives.json',
 ]
 
 /**

@@ -9,7 +9,7 @@
   "checkableSpans": 1920
  },
  "claimMetaAttributesCleared": {
-  "checkable": 2163,
+  "checkable": 2164,
   "isConclusion": 958
  },
  "postsTouched": 4966,
@@ -18,14 +18,14 @@
   "before": {
    "claims": 10258,
    "claimSpans": 10258,
-   "predictions": 934,
-   "predictionSpans": 937
+   "predictions": 935,
+   "predictionSpans": 938
   },
   "after": {
    "claims": 10258,
    "claimSpans": 10258,
-   "predictions": 934,
-   "predictionSpans": 937
+   "predictions": 935,
+   "predictionSpans": 938
   }
  }
 }

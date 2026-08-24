@@ -1,7 +1,7 @@
 {
  "breakdown": [
   {
-   "count": 1398,
+   "count": 1450,
    "key": "prose",
    "label": "named in Q’s prose"
   },
@@ -207,13 +207,19 @@
     },
     {
      "canonical": "Donald Trump",
-     "mentions": 64,
+     "mentions": 65,
      "posts": 58
+    },
+    {
+     "canonical": "4,10,20",
+     "mentions": 3,
+     "posts": 3
     }
    ],
    "identityIds": [
     "qe-f918f4a7fbe4",
-    "qe-781474651855"
+    "qe-781474651855",
+    "qe-5c9028d7e5ea"
    ],
    "label": "POTUS",
    "rowId": "qe-f918f4a7fbe4"
@@ -448,6 +454,18 @@
    },
    "posts": 1,
    "rowId": "qe-01f6b93fb79b"
+  },
+  "qe-0260464eac3d": {
+   "aliasPosts": {
+    "WH_POTUS_PRESS": 2
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "397": 1,
+    "417": 1
+   },
+   "posts": 2,
+   "rowId": "qe-0260464eac3d"
   },
   "qe-0262c2ecc2d9": {
    "aliasPosts": {
@@ -1265,6 +1283,30 @@
    },
    "posts": 1,
    "rowId": "qe-0a2c7a09502d"
+  },
+  "qe-0aabb36e429e": {
+   "aliasPosts": {
+    "MILITARY INTELLIGENCE BRIGADE (STRATEGIC SIGNALS INTELLIGENCE)": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "755": 1
+   },
+   "posts": 1,
+   "rowId": "qe-0aabb36e429e"
+  },
+  "qe-0ad77f43d2df": {
+   "aliasPosts": {
+    ":OWLS": 1,
+    ":Owls": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "328": 1,
+    "452": 1
+   },
+   "posts": 2,
+   "rowId": "qe-0ad77f43d2df"
   },
   "qe-0ad9a53b7820": {
    "kind": "source_only",
@@ -2279,6 +2321,7 @@
   },
   "qe-190d29e92cd1": {
    "aliasPosts": {
+    "@Snowden": 2,
     "ES": 4,
     "Snowden": 42
    },
@@ -2291,9 +2334,9 @@
     "601": 1,
     "628": 1,
     "709": 1,
-    "728": 1,
+    "728": 2,
     "730": 1,
-    "731": 2,
+    "731": 3,
     "760": 1,
     "770": 1,
     "790": 1,
@@ -2869,6 +2912,7 @@
   },
   "qe-2036752a688e": {
    "aliasPosts": {
+    "+GOOG": 1,
     "GOOG": 18
    },
    "kind": "prose",
@@ -2883,6 +2927,7 @@
     "1286": 1,
     "1522": 1,
     "1546": 1,
+    "1841": 1,
     "1849": 1,
     "2063": 1,
     "2171": 1,
@@ -2892,7 +2937,7 @@
     "4105": 1,
     "4553": 1
    },
-   "posts": 18,
+   "posts": 19,
    "rowId": "qe-2036752a688e"
   },
   "qe-20528df2a55a": {
@@ -3019,6 +3064,17 @@
    "posts": 1,
    "rowId": "qe-218405829024"
   },
+  "qe-21e6f20b0ee8": {
+   "aliasPosts": {
+    "PAN-DEM-IC": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "4294": 1
+   },
+   "posts": 1,
+   "rowId": "qe-21e6f20b0ee8"
+  },
   "qe-21ed64cd2b73": {
    "aliasPosts": {
     "Kislyak": 3
@@ -3136,7 +3192,8 @@
    "aliasPosts": {
     "SS": 5,
     "Secret Service": 1,
-    "USSS": 22
+    "USSS": 22,
+    "United States Secret Service": 1
    },
    "kind": "prose",
    "perPostMentions": {
@@ -3149,7 +3206,7 @@
     "279": 1,
     "311": 1,
     "319": 2,
-    "347": 1,
+    "347": 2,
     "394": 1,
     "698": 1,
     "798": 1,
@@ -3601,12 +3658,13 @@
   },
   "qe-26158015bce8": {
    "aliasPosts": {
+    "John J": 2,
     "John J. Duncan, Jr.": 2
    },
    "kind": "prose",
    "perPostMentions": {
-    "1319": 1,
-    "1850": 1
+    "1319": 2,
+    "1850": 2
    },
    "posts": 2,
    "rowId": "qe-26158015bce8"
@@ -3808,12 +3866,13 @@
   },
   "qe-280afe3750cf": {
    "aliasPosts": {
+    "Patrick J": 2,
     "Patrick J. Tiberi": 2
    },
    "kind": "prose",
    "perPostMentions": {
-    "1319": 1,
-    "1850": 1
+    "1319": 2,
+    "1850": 2
    },
    "posts": 2,
    "rowId": "qe-280afe3750cf"
@@ -4255,6 +4314,17 @@
     }
    ]
   },
+  "qe-2c162458cfe3": {
+   "aliasPosts": {
+    "Lord d R": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "178": 1
+   },
+   "posts": 1,
+   "rowId": "qe-2c162458cfe3"
+  },
   "qe-2c74baf2c271": {
    "aliasPosts": {
     "Central Bank of Nicaragua": 1
@@ -4301,6 +4371,17 @@
    "posts": 3,
    "rowId": "qe-2cd70a95d2c5"
   },
+  "qe-2cdd9991ec68": {
+   "aliasPosts": {
+    "Richard -": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1960": 1
+   },
+   "posts": 1,
+   "rowId": "qe-2cdd9991ec68"
+  },
   "qe-2cf9f642e53c": {
    "aliasPosts": {
     "MSNBC": 3
@@ -4309,7 +4390,7 @@
    "perPostMentions": {
     "113": 1,
     "1063": 1,
-    "1515": 10
+    "1515": 11
    },
    "posts": 3,
    "rowId": "qe-2cf9f642e53c",
@@ -4583,6 +4664,23 @@
    },
    "posts": 1,
    "rowId": "qe-2e8a2ae51946"
+  },
+  "qe-2ea8230a7fc7": {
+   "aliasPosts": {
+    "SEC TEST": 3,
+    "SEC Test 1": 1,
+    "SEC Test 2": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "870": 1,
+    "871": 1,
+    "1003": 1,
+    "1004": 1,
+    "1639": 1
+   },
+   "posts": 5,
+   "rowId": "qe-2ea8230a7fc7"
   },
   "qe-2eb344dfc5da": {
    "aliasPosts": {
@@ -5700,6 +5798,17 @@
    "posts": 2,
    "rowId": "qe-3a6faef9cf5d"
   },
+  "qe-3ac080aab77f": {
+   "aliasPosts": {
+    "Project DeepDream": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "3584": 1
+   },
+   "posts": 1,
+   "rowId": "qe-3ac080aab77f"
+  },
   "qe-3aebb4a3835f": {
    "aliasPosts": {
     "AW": 1,
@@ -6712,6 +6821,21 @@
    "posts": 17,
    "rowId": "qe-45881247e81b"
   },
+  "qe-45c36e3fd2b2": {
+   "aliasPosts": {
+    "CLAS 1-99": 2,
+    "CLAS 1-99 Defense": 1,
+    "CLAS 1-99 Intel": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "2776": 1,
+    "3837": 1,
+    "4645": 2
+   },
+   "posts": 3,
+   "rowId": "qe-45c36e3fd2b2"
+  },
   "qe-45dc587a46de": {
    "aliasPosts": {
     "Researchers.": 1
@@ -6725,16 +6849,18 @@
   },
   "qe-4612ac3ffbe3": {
    "aliasPosts": {
+    "@SeanHannity": 1,
     "SH": 2,
     "Sean Hannity": 1
    },
    "kind": "prose",
    "perPostMentions": {
     "571": 1,
+    "1863": 1,
     "2626": 3,
     "3179": 1
    },
-   "posts": 3,
+   "posts": 4,
    "rowId": "qe-4612ac3ffbe3"
   },
   "qe-4617bc983e6d": {
@@ -6894,6 +7020,19 @@
    },
    "posts": 1,
    "rowId": "qe-47cafe71e0fe"
+  },
+  "qe-47dfd078572a": {
+   "aliasPosts": {
+    "302s": 1,
+    "FBI 302's": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1443": 1,
+    "3330": 1
+   },
+   "posts": 2,
+   "rowId": "qe-47dfd078572a"
   },
   "qe-47e444b0281a": {
    "aliasPosts": {
@@ -7228,6 +7367,17 @@
    },
    "posts": 1,
    "rowId": "qe-4b019f04cac3"
+  },
+  "qe-4b18553cc332": {
+   "aliasPosts": {
+    "Kerry's son": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "3590": 1
+   },
+   "posts": 1,
+   "rowId": "qe-4b18553cc332"
   },
   "qe-4bb3729cea4e": {
    "aliasPosts": {
@@ -7569,12 +7719,13 @@
   },
   "qe-4fa2f93b4da4": {
    "aliasPosts": {
+    "Charles W": 2,
     "Charles W. Dent": 2
    },
    "kind": "prose",
    "perPostMentions": {
-    "1319": 1,
-    "1850": 1
+    "1319": 2,
+    "1850": 2
    },
    "posts": 2,
    "rowId": "qe-4fa2f93b4da4"
@@ -7675,7 +7826,7 @@
   "qe-50a7ff9629dd": {
    "aliasPosts": {
     "CF": 27,
-    "Clinton Foundation": 18,
+    "Clinton Foundation": 20,
     "THE CLINTON FOUNDATION": 4
    },
    "kind": "prose",
@@ -7704,6 +7855,7 @@
     "1868": 2,
     "1935": 2,
     "1960": 1,
+    "2365": 1,
     "2505": 1,
     "2549": 1,
     "2552": 2,
@@ -7712,6 +7864,7 @@
     "2562": 1,
     "2581": 1,
     "2626": 1,
+    "2697": 1,
     "3125": 1,
     "3611": 3,
     "3674": 1,
@@ -7724,7 +7877,7 @@
     "4820": 2,
     "4845": 1
    },
-   "posts": 43,
+   "posts": 45,
    "rowId": "qe-50a7ff9629dd"
   },
   "qe-50bcc68b7cf5": {
@@ -8028,7 +8181,7 @@
   },
   "qe-5339fc139782": {
    "aliasPosts": {
-    "CS": 8,
+    "CS": 7,
     "Chuck Schumer": 4,
     "Chuck Schumer (D-NY) – Senate Minority Leader": 1
    },
@@ -8037,7 +8190,6 @@
     "70": 1,
     "76": 1,
     "389": 3,
-    "436": 1,
     "559": 1,
     "565": 1,
     "678": 2,
@@ -8484,6 +8636,17 @@
    "posts": 1,
    "rowId": "qe-58839de49bd1"
   },
+  "qe-58989e125d18": {
+   "aliasPosts": {
+    "Fiddler": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "836": 1
+   },
+   "posts": 1,
+   "rowId": "qe-58989e125d18"
+  },
   "qe-59748746928c": {
    "aliasPosts": {
     "Fareed Zakaria": 1
@@ -8711,6 +8874,20 @@
    "posts": 3,
    "rowId": "qe-5c4672902bdf"
   },
+  "qe-5c9028d7e5ea": {
+   "aliasPosts": {
+    "4, 10, 20": 1,
+    "4,10,20": 2
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "35": 1,
+    "40": 1,
+    "533": 1
+   },
+   "posts": 3,
+   "rowId": "qe-f918f4a7fbe4"
+  },
   "qe-5c979344b193": {
    "aliasPosts": {
     "Akin Gump Strauss Hauer & Feld LLP": 1
@@ -8841,6 +9018,17 @@
    },
    "posts": 1,
    "rowId": "qe-5d95a2ee747c"
+  },
+  "qe-5dbc0d827163": {
+   "aliasPosts": {
+    "Renee J James": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "303": 1
+   },
+   "posts": 1,
+   "rowId": "qe-5dbc0d827163"
   },
   "qe-5ddec87a5302": {
    "aliasPosts": {
@@ -9250,6 +9438,17 @@
    "posts": 1,
    "rowId": "qe-625255f02cf4"
   },
+  "qe-62666d455b71": {
+   "aliasPosts": {
+    "@FBIPortland": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "4715": 1
+   },
+   "posts": 1,
+   "rowId": "qe-62666d455b71"
+  },
   "qe-6278cb896017": {
    "aliasPosts": {
     "The People’s Bank of China": 1
@@ -9351,6 +9550,17 @@
    "posts": 1,
    "rowId": "qe-6358cee04b93"
   },
+  "qe-635dd4252645": {
+   "aliasPosts": {
+    "DWS_DIR>": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "436": 1
+   },
+   "posts": 1,
+   "rowId": "qe-635dd4252645"
+  },
   "qe-63891e8fa021": {
    "aliasPosts": {
     "Ratcliffe": 1
@@ -9387,15 +9597,27 @@
   "qe-63dc4df7fcc8": {
    "aliasPosts": {
     "Adm. Michael S. Rogers": 1,
+    "Michael S": 2,
     "Michael S. Rogers": 1
    },
    "kind": "prose",
    "perPostMentions": {
-    "3319": 1,
-    "4310": 1
+    "3319": 2,
+    "4310": 2
    },
    "posts": 2,
    "rowId": "qe-63dc4df7fcc8"
+  },
+  "qe-640dfbec0858": {
+   "aliasPosts": {
+    "1996 Telecommunications Act": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "4278": 1
+   },
+   "posts": 1,
+   "rowId": "qe-640dfbec0858"
   },
   "qe-644d3e147b9c": {
    "aliasPosts": {
@@ -9674,6 +9896,17 @@
    "posts": 1,
    "rowId": "qe-67eb8188d5f0"
   },
+  "qe-681f6e593019": {
+   "aliasPosts": {
+    "Saudi Arabian Monetary Agency": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-681f6e593019"
+  },
   "qe-685527ffce0e": {
    "kind": "source_only",
    "posts": 0,
@@ -9771,6 +10004,17 @@
    },
    "posts": 2,
    "rowId": "qe-68e9b68d6a2b"
+  },
+  "qe-694192eb891a": {
+   "aliasPosts": {
+    "_4ch_n": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "233": 1
+   },
+   "posts": 1,
+   "rowId": "qe-694192eb891a"
   },
   "qe-6964e18829c9": {
    "aliasPosts": {
@@ -10345,6 +10589,17 @@
    "posts": 1,
    "rowId": "qe-713d32ec030d"
   },
+  "qe-71421ed822a2": {
+   "aliasPosts": {
+    "D-Room C": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1001": 1
+   },
+   "posts": 1,
+   "rowId": "qe-71421ed822a2"
+  },
   "qe-71878b3acd46": {
    "aliasPosts": {
     "Snow White": 28
@@ -10593,12 +10848,13 @@
   },
   "qe-75589f8b6d78": {
    "aliasPosts": {
+    "Luis V": 2,
     "Luis V. Gutierrez": 2
    },
    "kind": "prose",
    "perPostMentions": {
-    "1319": 1,
-    "1850": 1
+    "1319": 2,
+    "1850": 2
    },
    "posts": 2,
    "rowId": "qe-75589f8b6d78"
@@ -10785,13 +11041,15 @@
   },
   "qe-773af3906078": {
    "aliasPosts": {
+    "CORSI": 1,
     "Jerome Corsi": 1
    },
    "kind": "prose",
    "perPostMentions": {
-    "2104": 1
+    "2104": 1,
+    "2500": 1
    },
-   "posts": 1,
+   "posts": 2,
    "rowId": "qe-773af3906078"
   },
   "qe-775eed4582a5": {
@@ -10829,6 +11087,7 @@
   "qe-781474651855": {
    "aliasPosts": {
     "DJT": 1,
+    "DONALD J": 1,
     "Donald J. Trump": 2,
     "Q+": 36,
     "TRUMP": 1,
@@ -10868,7 +11127,7 @@
     "1834": 1,
     "1935": 1,
     "2039": 1,
-    "2054": 3,
+    "2054": 4,
     "2095": 1,
     "2119": 1,
     "2301": 1,
@@ -11289,6 +11548,17 @@
    },
    "posts": 1,
    "rowId": "qe-7c5e6484ab7d"
+  },
+  "qe-7c88c0819296": {
+   "aliasPosts": {
+    "Operation Cyclone": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1887": 1
+   },
+   "posts": 1,
+   "rowId": "qe-7c88c0819296"
   },
   "qe-7c902a04ad02": {
    "aliasPosts": {
@@ -12255,6 +12525,17 @@
    "posts": 1,
    "rowId": "qe-8300b7eb6398"
   },
+  "qe-8340e197af4f": {
+   "aliasPosts": {
+    "Philip Pines": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-8340e197af4f"
+  },
   "qe-8352f39db177": {
    "aliasPosts": {
     "Bank of Ghana": 1
@@ -12489,12 +12770,12 @@
   "qe-85eeac4dbdc4": {
    "aliasPosts": {
     "ABC": 7,
-    "ABC News": 4
+    "ABC News": 5
    },
    "kind": "prose",
    "perPostMentions": {
     "113": 1,
-    "1515": 6,
+    "1515": 7,
     "2770": 4,
     "3454": 2,
     "3493": 2,
@@ -12554,6 +12835,18 @@
    "posts": 2,
    "rowId": "qe-876785b8585d"
   },
+  "qe-877128f6a818": {
+   "aliasPosts": {
+    "@algore": 1,
+    "Al Gore": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1239": 2
+   },
+   "posts": 1,
+   "rowId": "qe-877128f6a818"
+  },
   "qe-878d5420f363": {
    "aliasPosts": {
     "Black Forest": 3
@@ -12588,6 +12881,17 @@
    },
    "posts": 1,
    "rowId": "qe-87fc48f83573"
+  },
+  "qe-8854da4cfc5d": {
+   "aliasPosts": {
+    "Joe 30330": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "4826": 1
+   },
+   "posts": 1,
+   "rowId": "qe-8854da4cfc5d"
   },
   "qe-889c6e61bb80": {
    "aliasPosts": {
@@ -13140,16 +13444,18 @@
   },
   "qe-8dc54bc376d7": {
    "aliasPosts": {
-    "CS": 4
+    "CS": 4,
+    "STEELE>": 1
    },
    "kind": "prose",
    "perPostMentions": {
+    "436": 1,
     "1828": 3,
     "1891": 1,
     "1928": 2,
     "1929": 2
    },
-   "posts": 4,
+   "posts": 5,
    "rowId": "qe-8dc54bc376d7"
   },
   "qe-8e0d0a085b58": {
@@ -13285,6 +13591,17 @@
    },
    "posts": 1,
    "rowId": "qe-8f2804107d9f"
+  },
+  "qe-8fc3d58fafb6": {
+   "aliasPosts": {
+    "MILITARY INTELLIGENCE TEAM": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "755": 1
+   },
+   "posts": 1,
+   "rowId": "qe-8fc3d58fafb6"
   },
   "qe-8fcd408a5c2f": {
    "aliasPosts": {
@@ -13621,6 +13938,17 @@
    "posts": 1,
    "rowId": "qe-9271dec94a20"
   },
+  "qe-92c5f6119975": {
+   "aliasPosts": {
+    "Mujahideen": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1887": 1
+   },
+   "posts": 1,
+   "rowId": "qe-92c5f6119975"
+  },
   "qe-93129c25f29e": {
    "aliasPosts": {
     "Brazil": 1
@@ -13671,12 +13999,13 @@
   },
   "qe-93c0f6112353": {
    "aliasPosts": {
+    "Jason V": 1,
     "Jason V. Herring": 2
    },
    "kind": "prose",
    "perPostMentions": {
     "2692": 1,
-    "2697": 1
+    "2697": 2
    },
    "posts": 2,
    "rowId": "qe-93c0f6112353"
@@ -13998,12 +14327,14 @@
   },
   "qe-98e0f85a496e": {
    "aliasPosts": {
+    "CROWDSTRIKE>": 1,
     "CS": 1,
     "CrowdStrike": 5,
     "Crowdstrike": 5
    },
    "kind": "prose",
    "perPostMentions": {
+    "436": 1,
     "809": 1,
     "1008": 2,
     "1708": 1,
@@ -14016,7 +14347,7 @@
     "4016": 1,
     "4153": 1
    },
-   "posts": 11,
+   "posts": 12,
    "rowId": "qe-98e0f85a496e",
    "sourcePosts": [
     {
@@ -14076,6 +14407,17 @@
    },
    "posts": 1,
    "rowId": "qe-99400387b11e"
+  },
+  "qe-99673d85ae49": {
+   "aliasPosts": {
+    "CIA-RDP84B00049R001303260026-4": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "239": 1
+   },
+   "posts": 1,
+   "rowId": "qe-99673d85ae49"
   },
   "qe-999b6477ac59": {
    "aliasPosts": {
@@ -14304,6 +14646,17 @@
     }
    ]
   },
+  "qe-9bfac10b4672": {
+   "aliasPosts": {
+    "Barron's": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1718": 1
+   },
+   "posts": 1,
+   "rowId": "qe-9bfac10b4672"
+  },
   "qe-9bfbe53dfc87": {
    "aliasPosts": {
     "Netherlands Antilles": 1
@@ -14366,6 +14719,19 @@
      "post": 2548
     }
    ]
+  },
+  "qe-9cb90f274cef": {
+   "aliasPosts": {
+    "Executive Order 13526": 3
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "2177": 1,
+    "2207": 1,
+    "2501": 1
+   },
+   "posts": 3,
+   "rowId": "qe-9cb90f274cef"
   },
   "qe-9cf850ef5e1d": {
    "aliasPosts": {
@@ -14449,6 +14815,17 @@
    },
    "posts": 1,
    "rowId": "qe-9db5883ec684"
+  },
+  "qe-9dcacf0a30e9": {
+   "aliasPosts": {
+    "BLUE METAL": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1473": 1
+   },
+   "posts": 1,
+   "rowId": "qe-9dcacf0a30e9"
   },
   "qe-9df61d52a15b": {
    "aliasPosts": {
@@ -15010,6 +15387,7 @@
   },
   "qe-a3bd83a14e22": {
    "aliasPosts": {
+    "DEPARTMENT OF \"JUSTICE": 1,
     "DOJ": 108,
     "Department of Justice": 3,
     "Justice Department": 2
@@ -15066,7 +15444,7 @@
     "1978": 2,
     "2007": 1,
     "2008": 1,
-    "2070": 1,
+    "2070": 2,
     "2072": 4,
     "2107": 1,
     "2135": 2,
@@ -15723,11 +16101,13 @@
   },
   "qe-aa3526a6c715": {
    "aliasPosts": {
+    "Army Lt": 1,
+    "Army Lt. Gen. Paul Nakasone": 1,
     "Paul Nakasone": 1
    },
    "kind": "prose",
    "perPostMentions": {
-    "1268": 1
+    "1268": 3
    },
    "posts": 1,
    "rowId": "qe-aa3526a6c715"
@@ -15942,6 +16322,17 @@
    },
    "posts": 1,
    "rowId": "qe-ad3fc5ed9020"
+  },
+  "qe-ad8e4a99ada6": {
+   "aliasPosts": {
+    "_8ch_y": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "233": 1
+   },
+   "posts": 1,
+   "rowId": "qe-ad8e4a99ada6"
   },
   "qe-adac4cc3a263": {
    "aliasPosts": {
@@ -16179,6 +16570,7 @@
   },
   "qe-b0895d75ef73": {
    "aliasPosts": {
+    "@FoxNews": 1,
     "FOX": 5,
     "Fox News": 5
    },
@@ -16191,11 +16583,12 @@
     "1474": 1,
     "1791": 2,
     "1793": 1,
+    "1863": 1,
     "1893": 1,
     "2547": 1,
     "2562": 1
    },
-   "posts": 10,
+   "posts": 11,
    "rowId": "qe-b0895d75ef73"
   },
   "qe-b0a544a47108": {
@@ -16465,7 +16858,8 @@
   "qe-b4af4d0b0bbd": {
    "aliasPosts": {
     "Jeff Sessions": 2,
-    "Sessions": 59
+    "Sessions": 59,
+    "]SESSIONS[": 1
    },
    "kind": "prose",
    "perPostMentions": {
@@ -16493,6 +16887,7 @@
     "1286": 1,
     "1318": 2,
     "1351": 1,
+    "1369": 1,
     "1377": 2,
     "1433": 1,
     "1516": 1,
@@ -16531,7 +16926,7 @@
     "4153": 1,
     "4773": 1
    },
-   "posts": 61,
+   "posts": 62,
    "rowId": "qe-b4af4d0b0bbd"
   },
   "qe-b53a60146411": {
@@ -16579,6 +16974,17 @@
    },
    "posts": 1,
    "rowId": "qe-b5a45db8d6b0"
+  },
+  "qe-b5e106b15694": {
+   "aliasPosts": {
+    "Bangko Sentral ng Pilipinas": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-b5e106b15694"
   },
   "qe-b62d0adb7b6f": {
    "aliasPosts": {
@@ -16766,7 +17172,8 @@
   "qe-b80ea6d8ed16": {
    "aliasPosts": {
     "Biden": 34,
-    "Joe Biden": 3
+    "Joe Biden": 3,
+    "Joseph R": 1
    },
    "kind": "prose",
    "perPostMentions": {
@@ -16792,6 +17199,7 @@
     "4657": 3,
     "4673": 1,
     "4688": 8,
+    "4801": 1,
     "4802": 4,
     "4821": 1,
     "4822": 1,
@@ -16806,7 +17214,7 @@
     "4917": 1,
     "4920": 1
    },
-   "posts": 35,
+   "posts": 36,
    "rowId": "qe-b80ea6d8ed16"
   },
   "qe-b82a63fb9f5c": {
@@ -17120,6 +17528,17 @@
    "posts": 1,
    "rowId": "qe-bb5f80c91c8f"
   },
+  "qe-bb91501abc09": {
+   "aliasPosts": {
+    "@TheRealRoseanne": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1863": 1
+   },
+   "posts": 1,
+   "rowId": "qe-bb91501abc09"
+  },
   "qe-bb9460380aeb": {
    "aliasPosts": {
     "Bank of Albania": 1
@@ -17431,6 +17850,18 @@
    "posts": 1,
    "rowId": "qe-bf8a03e9ea4d"
   },
+  "qe-bfb98704699f": {
+   "aliasPosts": {
+    "Godfather lll": 2
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "75": 1,
+    "84": 1
+   },
+   "posts": 2,
+   "rowId": "qe-bfb98704699f"
+  },
   "qe-bfee4149db99": {
    "aliasPosts": {
     "LL": 28,
@@ -17556,6 +17987,28 @@
    "posts": 3,
    "rowId": "qe-c0facb229e6f"
   },
+  "qe-c12bca0c58c6": {
+   "aliasPosts": {
+    "Q Clearance Patriot": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "34": 1
+   },
+   "posts": 1,
+   "rowId": "qe-c12bca0c58c6"
+  },
+  "qe-c18046d7ef18": {
+   "aliasPosts": {
+    "+Sleepers": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "3881": 1
+   },
+   "posts": 1,
+   "rowId": "qe-c18046d7ef18"
+  },
   "qe-c1830b63f9c2": {
    "aliasPosts": {
     "Togo": 1
@@ -17630,6 +18083,17 @@
    },
    "posts": 20,
    "rowId": "qe-c2efbbd275fc"
+  },
+  "qe-c3229a3390b9": {
+   "aliasPosts": {
+    "JDLKD-8382KDJDzAZ7301": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1473": 1
+   },
+   "posts": 1,
+   "rowId": "qe-c3229a3390b9"
   },
   "qe-c35f4f4a35cd": {
    "aliasPosts": {
@@ -18064,6 +18528,17 @@
    "posts": 2,
    "rowId": "qe-c97170789d89"
   },
+  "qe-c98857061b62": {
+   "aliasPosts": {
+    "D-Room R": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1001": 1
+   },
+   "posts": 1,
+   "rowId": "qe-c98857061b62"
+  },
   "qe-c99809848792": {
    "aliasPosts": {
     "Randy Coleman": 5
@@ -18247,7 +18722,7 @@
     "BO": 10,
     "Barack H. Obama": 1,
     "Barack Hussein Obama": 3,
-    "Barack Obama": 2,
+    "Barack Obama": 3,
     "Hussein": 109,
     "Obama": 13,
     "Renegade": 9
@@ -18291,7 +18766,7 @@
     "479": 1,
     "484": 2,
     "524": 1,
-    "559": 2,
+    "559": 3,
     "570": 1,
     "603": 1,
     "609": 1,
@@ -18437,7 +18912,7 @@
   },
   "qe-cb07cff77084": {
    "aliasPosts": {
-    "Clinton": 24,
+    "Clinton": 22,
     "Crooked Hillary": 1,
     "H": 3,
     "HRC": 106,
@@ -18547,11 +19022,11 @@
     "2211": 1,
     "2261": 2,
     "2352": 1,
-    "2365": 2,
+    "2365": 1,
     "2640": 1,
     "2657": 1,
     "2658": 1,
-    "2697": 2,
+    "2697": 1,
     "2725": 1,
     "2787": 1,
     "2860": 1,
@@ -19037,6 +19512,17 @@
    "posts": 1,
    "rowId": "qe-d00f877907f7"
   },
+  "qe-d011173631c6": {
+   "aliasPosts": {
+    "Senate Judiciary Chairman": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "2445": 1
+   },
+   "posts": 1,
+   "rowId": "qe-d011173631c6"
+  },
   "qe-d030b96cb710": {
    "aliasPosts": {
     "Matt Bai": 1
@@ -19318,6 +19804,17 @@
    "posts": 5,
    "rowId": "qe-d4061bc387b2"
   },
+  "qe-d426aad1bb20": {
+   "aliasPosts": {
+    "PACKET HDQ-7309217392": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1839": 1
+   },
+   "posts": 1,
+   "rowId": "qe-d426aad1bb20"
+  },
   "qe-d49aa5a9eec9": {
    "aliasPosts": {
     "Randal David Ankeney": 1
@@ -19369,6 +19866,17 @@
    },
    "posts": 1,
    "rowId": "qe-d4e6c41f1913"
+  },
+  "qe-d50d415fd127": {
+   "aliasPosts": {
+    "David Muir": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-d50d415fd127"
   },
   "qe-d545e231cd32": {
    "aliasPosts": {
@@ -19437,6 +19945,17 @@
    "posts": 2,
    "rowId": "qe-d5d2803b1c75"
   },
+  "qe-d5d762457255": {
+   "aliasPosts": {
+    "D-Room H": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1001": 1
+   },
+   "posts": 1,
+   "rowId": "qe-d5d762457255"
+  },
   "qe-d6868867fb4e": {
    "aliasPosts": {
     "Deutsche Bundesbank": 1
@@ -19482,6 +20001,17 @@
    },
    "posts": 1,
    "rowId": "qe-d6d2af5606b7"
+  },
+  "qe-d6f510572d9e": {
+   "aliasPosts": {
+    "Beth Fouhy": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-d6f510572d9e"
   },
   "qe-d70d6c95a806": {
    "aliasPosts": {
@@ -19593,6 +20123,66 @@
    },
    "posts": 1,
    "rowId": "qe-d7f841ca1ad1"
+  },
+  "qe-d7fe77ea9c01": {
+   "aliasPosts": {
+    "NAT SEC": 41,
+    "NATSEC": 6,
+    "NAT_SEC": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "131": 1,
+    "325": 1,
+    "373": 1,
+    "396": 1,
+    "443": 1,
+    "631": 1,
+    "1008": 1,
+    "1127": 1,
+    "1164": 1,
+    "1278": 1,
+    "1316": 1,
+    "1552": 1,
+    "1677": 1,
+    "1828": 1,
+    "1944": 1,
+    "1981": 1,
+    "2070": 1,
+    "2381": 1,
+    "2462": 1,
+    "2502": 1,
+    "2548": 1,
+    "2567": 1,
+    "2582": 1,
+    "2593": 1,
+    "2640": 1,
+    "2647": 1,
+    "2697": 1,
+    "2700": 1,
+    "2712": 1,
+    "2814": 1,
+    "2937": 1,
+    "3020": 1,
+    "3132": 1,
+    "3595": 1,
+    "3619": 1,
+    "3630": 1,
+    "3631": 1,
+    "3634": 1,
+    "3689": 1,
+    "3837": 1,
+    "3990": 1,
+    "4124": 1,
+    "4258": 1,
+    "4620": 1,
+    "4640": 1,
+    "4645": 1,
+    "4647": 1,
+    "4871": 1
+   },
+   "posts": 48,
+   "rowId": "qe-d7fe77ea9c01"
   },
   "qe-d847317b2db6": {
    "aliasPosts": {
@@ -19857,6 +20447,18 @@
    "posts": 2,
    "rowId": "qe-db2371a1425b"
   },
+  "qe-db2e5cb791c6": {
+   "aliasPosts": {
+    "VIP Patriot": 2
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "2240": 1,
+    "2243": 1
+   },
+   "posts": 2,
+   "rowId": "qe-db2e5cb791c6"
+  },
   "qe-db8c16f31062": {
    "aliasPosts": {
     "Central African Republic": 1
@@ -20097,6 +20699,17 @@
      "post": 3199
     }
    ]
+  },
+  "qe-dd816ea71392": {
+   "aliasPosts": {
+    "Dragonfly": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "2378": 1
+   },
+   "posts": 1,
+   "rowId": "qe-dd816ea71392"
   },
   "qe-dd9972e950e3": {
    "aliasPosts": {
@@ -20562,6 +21175,17 @@
    "posts": 1,
    "rowId": "qe-e2e10c208707"
   },
+  "qe-e31fea053cb8": {
+   "aliasPosts": {
+    "MILITARY INTELLIGENCE BATTALION (STRATEGIC SIGNALS INTELLIGENCE)": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "755": 1
+   },
+   "posts": 1,
+   "rowId": "qe-e31fea053cb8"
+  },
   "qe-e3256990e4a2": {
    "aliasPosts": {
     "Bank of Jamaica": 1
@@ -20602,7 +21226,8 @@
   },
   "qe-e39142bdc502": {
    "aliasPosts": {
-    "FBI": 139
+    "FBI": 139,
+    "FEDERAL BUREAU OF \"INVESTIGATION": 3
    },
    "kind": "prose",
    "perPostMentions": {
@@ -20673,7 +21298,7 @@
     "2007": 1,
     "2008": 1,
     "2059": 2,
-    "2070": 1,
+    "2070": 2,
     "2072": 3,
     "2104": 1,
     "2107": 2,
@@ -20701,6 +21326,7 @@
     "2686": 2,
     "2692": 3,
     "2693": 1,
+    "2697": 1,
     "2714": 2,
     "2787": 2,
     "2849": 1,
@@ -20725,7 +21351,7 @@
     "3837": 1,
     "3868": 1,
     "3929": 2,
-    "3990": 3,
+    "3990": 4,
     "4016": 1,
     "4153": 18,
     "4162": 1,
@@ -20746,7 +21372,7 @@
     "4898": 1,
     "4917": 1
    },
-   "posts": 139,
+   "posts": 140,
    "rowId": "qe-e39142bdc502"
   },
   "qe-e39589907b45": {
@@ -22349,7 +22975,7 @@
    "aliasPosts": {
     "SUM OF ALL FEARS": 1,
     "THE SUM OF ALL FEARS": 3,
-    "The Sum of All Fears": 1,
+    "The Sum of All Fears": 2,
     "The Sum of all Fears": 1
    },
    "kind": "prose",
@@ -22358,10 +22984,11 @@
     "195": 1,
     "199": 1,
     "236": 1,
+    "864": 1,
     "936": 1,
     "1306": 1
    },
-   "posts": 6,
+   "posts": 7,
    "rowId": "qe-f1c84297eabe"
   },
   "qe-f1d66b4e87bc": {
@@ -22380,15 +23007,27 @@
   },
   "qe-f1f50ca9139b": {
    "aliasPosts": {
+    "Ruben J": 2,
     "Ruben J. Kihuen": 2
    },
    "kind": "prose",
    "perPostMentions": {
-    "1319": 1,
-    "1850": 1
+    "1319": 2,
+    "1850": 2
    },
    "posts": 2,
    "rowId": "qe-f1f50ca9139b"
+  },
+  "qe-f234845f4e49": {
+   "aliasPosts": {
+    "JOHN 3:16": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "790": 1
+   },
+   "posts": 1,
+   "rowId": "qe-f234845f4e49"
   },
   "qe-f236ec783e38": {
    "aliasPosts": {
@@ -22552,6 +23191,17 @@
    },
    "posts": 1,
    "rowId": "qe-f44f52d6e1f8"
+  },
+  "qe-f46fb160203e": {
+   "aliasPosts": {
+    "Romney's son": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "3590": 1
+   },
+   "posts": 1,
+   "rowId": "qe-f46fb160203e"
   },
   "qe-f4aa26f2c3a0": {
    "aliasPosts": {
@@ -23577,6 +24227,17 @@
     }
    ]
   },
+  "qe-f9601a1564c8": {
+   "aliasPosts": {
+    "CROSSFIRE TYPHOON": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "4011": 1
+   },
+   "posts": 1,
+   "rowId": "qe-f9601a1564c8"
+  },
   "qe-f96fdca16913": {
    "kind": "source_only",
    "posts": 0,
@@ -23711,6 +24372,17 @@
    "posts": 2,
    "rowId": "qe-fb2753d1ec6c"
   },
+  "qe-fb4e9743229b": {
+   "aliasPosts": {
+    "DECLAS CoC": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "3784": 1
+   },
+   "posts": 1,
+   "rowId": "qe-fb4e9743229b"
+  },
   "qe-fb7aea8d1bc2": {
    "aliasPosts": {
     "Mark Preston": 1
@@ -23813,6 +24485,17 @@
    },
    "posts": 1,
    "rowId": "qe-fda31c0fe0b5"
+  },
+  "qe-fdad9733faac": {
+   "aliasPosts": {
+    "A321": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1588": 1
+   },
+   "posts": 1,
+   "rowId": "qe-fdad9733faac"
   },
   "qe-fddea527294c": {
    "aliasPosts": {
@@ -24133,16 +24816,16 @@
  "ruledOn": "2026-08-17",
  "sourceNote": "The post linked this source. It is not necessarily named in Q’s prose, and it is never counted as a mention.",
  "totals": {
-  "canonicalEntities": 1532,
-  "dormantReserved": 229,
-  "mentions": 9364,
-  "mergedIdentities": 25,
+  "canonicalEntities": 1584,
+  "dormantReserved": 227,
+  "mentions": 9517,
+  "mergedIdentities": 26,
   "mergedRows": 11,
-  "proseMentioned": 1398,
-  "publicRows": 1518,
-  "repeatBadges": 1094,
+  "proseMentioned": 1450,
+  "publicRows": 1569,
+  "repeatBadges": 1112,
   "sourceOnly": 134,
   "sourcePostChips": 358,
-  "unsettledAttributionsExcluded": 78
+  "unsettledAttributionsExcluded": 81
  }
 }

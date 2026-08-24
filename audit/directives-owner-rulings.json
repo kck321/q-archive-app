@@ -2757,6 +2757,15 @@
    "was": "unclassified",
    "reasoning": "Owner-supplied Q-authored directive audit (2,198 entries). This occurrence was not held by the certified Directives layer. The COMPLETE sentence is certified, per the owner ruling that a partial span is expanded to the whole sentence.",
    "source": "Q_directive_audit_full.txt"
+  },
+  {
+   "postNum": 417,
+   "postId": "417",
+   "sourceText": "(Find Post)",
+   "family": "research",
+   "ruledOn": "2026-08-24",
+   "reasoning": "Owner ruling: \"this is also a directive in that post (Find Post)\". #417 is a stringer-reading drop - \"Stringers important.\", a Hint, a date, \"22_WH_POTUS_PRESS\", \"Divert-ATT_CAP_H\" - and this line tells the reader to go and locate the post those tokens point at. It is an instruction to go and look, which is the research family (\"explore\", \"dig\", \"trace\", \"source\"). The parentheses are Q's; the ruling covers the line as he wrote it.",
+   "was": "unclassified - it was carried as Context, reviewed and in no semantic category"
   }
  ]
 }

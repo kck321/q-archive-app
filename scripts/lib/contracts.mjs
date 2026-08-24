@@ -83,10 +83,14 @@ export const CANONICAL = {
   // REVERSES the REMOVE_QUOTED_SCRIPTURE half of the 2026-08-16 religious adjudication, by owner
   // ruling and on purpose: the passage IS the directive now. Posts RISE by 7 — seven drops carried
   // their scripture only as Claims and gain their first certified directive.
-  // 2,902 -> 3,304: 455 directive rulings, 50 of them on spans already certified. 24 more rows
-  // on that sheet are HELD, not applied - list markers, end-markers, two comms strings and one
-  // assertion, each of which instructs nobody to do anything.
-  directives: { occurrences: 3304, distinct: 1930, posts: 1917 },
+  // 2,902 -> 3,304: 455 directive rulings, 50 of them on spans already certified.
+  // 3,304 -> 3,328: the 24 rows on that sheet that were HELD - list markers, end-markers, two
+  // comms strings and one assertion, each of which instructs nobody - were ruled in by the owner
+  // on 2026-08-24 ("go ahead and push the directives in that held for you file tab as well").
+  // Their family is declared with the ruling rather than detected; see
+  // scripts/build-held-directive-rulings.mjs.
+  // +1 on 2026-08-24: #417 '(Find Post)', owner ruling - "this is also a directive in that post".
+  directives: { occurrences: 3329, distinct: 1941, posts: 1926 },
   // 4,181 -> 4,188 on 2026-08-13 by owner adjudication, not by a classifier. Six exact
   // occurrences of "Pure evil." / "PURE EVIL." plus "The 'real' racist." in #2917. The corpus
   // search that found them also showed the fuller variants ("These people are pure evil.",
@@ -144,7 +148,8 @@ export const CANONICAL = {
   // that is one Directive is not also a row in Predictions.
   // 841 -> 934 on 2026-08-24: round 2 of the unhighlighted-queue review ruled 94 more lines
   // Predictions; one span was already certified and Step 3B-1 withdrew none of the rest.
-  predictions: { occurrences: 934, posts: 671 },
+  // +1 on 2026-08-24 by owner ruling: #417 'News unlocks Map.', which stays a Claim as well.
+  predictions: { occurrences: 935, posts: 672 },
   evidence: { occurrences: 6590, posts: 3883 },
   // canonical 1,240 -> 1,235: Owner Ruling 1 merged five duplicate identities. No occurrence moved.
   entities: {
@@ -212,7 +217,24 @@ export const CANONICAL = {
     // 244 of the 308 are read off three lists Q pastes verbatim - the central banks of #135-#138,
     // the 'THE BRIDGE' media list in #1515, the retiring-Congress list in #1319/#1850 - where each
     // line names two things and is SPLIT rather than invented. 128 wordings are held, not named.
-    canonical: 1532, detectedCanonical: 1292, ownerRulings: 118, ownerMerges: 1, queueRulings: 1007,
+    // 1,532 -> 1,583 on 2026-08-24, from two more owner rulings on the same day:
+    //   +48  the 128 wordings held above, researched against the drop each one sits in and named
+    //        ("i want to classify all those as entities and i would like you to do the research
+    //        for each post they are with in"). 45 stayed questions and are in
+    //        audit/held-entity-resolution-center.json, not named here.
+    //   +1   NAT SEC ("NAT SEC is an entity throughout all the post"), across 48 drops in four
+    //        spellings. Distinct from the National Security Agency, which stays its own row.
+    //   +2   Al Gore and Roseanne Barr. Both rows were RETIRED by the approved entity cleanup
+    //        because their only trace on a drop was a URL path or an unexamined image. #1239's
+    //        first line is "@algore" and #1863's third is "@TheRealRoseanne"; with the handles
+    //        certified Q names them in his own visible text and the retirement condition is gone.
+    //        Recorded as an afterOnly delta in audit/entity-cleanup-rollback-contract.json.
+    // ownerRulings 118 -> 119: NAT SEC. detectedCanonical is unchanged - none of these was found
+    // by a detector.
+    //   +1   White House Press ("in the pic WH_POTUS_PRESS is the same as white house press"),
+    //        #397 and #417, where Q writes the underscored stringer form. Its own row rather than
+    //        an alias of "The White House", which the archive certifies as a location.
+    canonical: 1584, detectedCanonical: 1292, ownerRulings: 120, ownerMerges: 1, queueRulings: 1007,
     /** Every resolved mention across all 1,334 certified entities. The headline figure. */
     // 8,227 -> 8,239: the RC alias ruling resolved 12 occurrences to Rachel Chandler. The merge
     // moved 4 mentions from the absorbed row onto hers and added none.
@@ -274,7 +296,13 @@ export const CANONICAL = {
   // drops. Occurrence-scoped: 4,534 sign-off lines are excluded by the ruling itself and 65 more
   // standalone Q tokens are HELD because they name something else (Al-Qaeda, a 10-Q filing,
   // Quicken Loans Arena, the NSA Q Group, a DOE clearance level, Q+, the word "question").
-    mentions: 9364,
+    // 9,364 -> 9,517 on 2026-08-24, from the three rulings of that afternoon: the 128 held wordings
+    // named and researched, NAT SEC across 48 drops, and White House Press on #397/#417. +153, of
+    // which +110 land on the core registry and +25 on the adjudicated tail; the remaining +18 land
+    // on owner-ruling rows, which is also where Al Gore and Roseanne Barr now sit - both rows were
+    // retired by the approved cleanup for having no trace beyond a URL path or an unexamined image,
+    // and #1239's "@algore" and #1863's "@TheRealRoseanne" are Q naming them in his own text.
+    mentions: 9517,
     /** How it is composed. The core figure is the section's history, not its headline. */
     // tailEntities is what the tail adjudication produced (1,239); one of them, Ray Chandler,
     // now ships merged into Rachel Chandler, so 1,238 tail rows appear in the artifact.
@@ -287,7 +315,15 @@ export const CANONICAL = {
     // The three components add to the headline: 5297 core + 3015 tail + 1052 owner-ruling rows.
     // tail 2,870 -> 2,868: "Ephesians" was an adjudicated-tail row and takes its two occurrences
     // with it. The 12 citation occurrences land on owner-ruling rows, so 715 -> 727 there.
-    coreEntities: 93, coreRegistryMentions: 5297, tailEntities: 966, tailMentions: 3015,
+    // 5,297 + 15 core, 3,015 + 23 tail, and 1,052 + 115 on owner-ruling rows - which is where most
+    // of this batch lands, because an identity the owner ruled into existence is neither a core
+    // registry row nor an adjudicated-tail one. 5,312 + 3,038 + 1,167 = 9,517.
+    //
+    // Measured the way certification-manifest.mjs measures, by the `source` field on the artifact
+    // rows. entities.json's own totals block says 5,407/3,040 instead: it is written by
+    // apply-entity-cleanup and nine rows are re-added by later chain steps without it being
+    // recomputed. Same 9-row gap that has been there since seed 78 (1,523 written, 1,532 shipped).
+    coreEntities: 93, coreRegistryMentions: 5312, tailEntities: 970, tailMentions: 3038,
   },
   // 2,393 detected + 2 owner rulings ("Ascension." -> Religion & Spirituality, #4963 and #4966).
   // The rulings live in audit/themes-owner-rulings.json and are merged by apply-themes.mjs, so

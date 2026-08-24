@@ -1,38 +1,250 @@
 {
-  "phase": "P5",
-  "purpose": "Add high-confidence Predictions missing from the app",
-  "batches": [11],
-  "expected": { "records": 28, "additions": 28 },
-  "matchAgainst": "postText",
-  "note": "`match` is ORIGINAL_POST_WORDING and must be verbatim in the post body — it becomes the row's exactText, so the addition is anchored in Q's own words and stays highlightable. `sentence` is the audit's complete sentence and becomes the displayed text.",
-  "records": [
-    { "n": 1, "batch": 11, "post": 12, "match": "Military Intelligence ref above is the absolute biggest inside drop this board will ever receive.", "sentence": "The referenced military-intelligence material will be the biggest inside drop the board ever receives.", "why": "It makes a superlative forecast about all future drops received by the board." },
-    { "n": 2, "batch": 11, "post": 16, "match": "Friday & Saturday will deliver on the MAGA promise.", "sentence": "Friday and Saturday will deliver on the MAGA promise.", "why": "It forecasts a result for the immediately following Friday and Saturday." },
-    { "n": 3, "batch": 11, "post": 38, "match": "Note NG deployments starting tomorrow.", "sentence": "National Guard deployments will begin tomorrow.", "why": "It announces a specific future start time for deployments." },
-    { "n": 4, "batch": 11, "post": 43, "match": "Watch for confirmations tomorrow.", "sentence": "Confirmations will occur tomorrow.", "why": "Although phrased as an instruction, it presupposes and forecasts confirmations on the following day." },
-    { "n": 5, "batch": 11, "post": 225, "match": "When this breaks many won’t swallow.", "sentence": "When the referenced story breaks, many people will not accept it.", "why": "It conditionally forecasts a public reaction to a future disclosure." },
-    { "n": 6, "batch": 11, "post": 566, "match": "Release coming.", "sentence": "A release is coming.", "why": "It directly forecasts an approaching release." },
-    { "n": 7, "batch": 11, "post": 759, "match": "Make no mistake, they will all PAY THE PRICE.", "sentence": "They will all pay the price.", "why": "It explicitly forecasts a future consequence for the referenced people." },
-    { "n": 8, "batch": 11, "post": 780, "match": "Future proves past:", "sentence": "Future events will prove what happened in the past.", "why": "It forecasts that later events will validate prior information." },
-    { "n": 9, "batch": 11, "post": 868, "match": "Fail, they will.", "sentence": "They will fail.", "why": "It directly forecasts failure." },
-    { "n": 10, "batch": 11, "post": 1226, "match": "DNC to initiate lawsuit (pre-planned).", "sentence": "The Democratic National Committee will initiate a pre-planned lawsuit.", "why": "The telegraphic infinitive construction forecasts a future lawsuit." },
-    { "n": 11, "batch": 11, "post": 1336, "match": "Future to prove past.", "sentence": "Future events will prove what happened in the past.", "why": "It forecasts that later events will validate prior information." },
-    { "n": 12, "batch": 11, "post": 1468, "match": "More to come.", "sentence": "More information will come.", "why": "It directly forecasts additional information or developments." },
-    { "n": 13, "batch": 11, "post": 1496, "match": "[#3 released tomorrow]", "sentence": "Item number three will be released tomorrow.", "why": "It identifies a particular item and forecasts its release on the next day." },
-    { "n": 14, "batch": 11, "post": 1613, "match": "Rest assured JUSTICE will be served.", "sentence": "Justice will be served.", "why": "It explicitly forecasts a future administration of justice." },
-    { "n": 15, "batch": 11, "post": 1676, "match": "Fail they will.", "sentence": "They will fail.", "why": "It directly forecasts failure." },
-    { "n": 16, "batch": 11, "post": 1777, "match": "We will scrub the web to find the source no matter where posted.", "sentence": "The post's authors will search the web to find the source regardless of where it was posted.", "why": "It announces a concrete future action by the post's authors." },
-    { "n": 17, "batch": 11, "post": 2364, "match": "[CHANGE IS COMING]", "sentence": "Change is coming.", "why": "It directly forecasts change." },
-    { "n": 18, "batch": 11, "post": 2416, "match": "Uniformed and Non-Uniformed personnel will be stationed across the country in an effort to safeguard the public.", "sentence": "Uniformed and non-uniformed personnel will be stationed across the country to safeguard the public.", "why": "It forecasts a specific future deployment of personnel." },
-    { "n": 19, "batch": 11, "post": 2429, "match": "DECLAS coming.", "sentence": "Declassification is coming.", "why": "It directly forecasts declassification." },
-    { "n": 20, "batch": 11, "post": 3003, "match": "[Parts 3-9 coming soon]", "sentence": "Parts three through nine are coming soon.", "why": "It forecasts the imminent arrival of specified later parts." },
-    { "n": 21, "batch": 11, "post": 345, "match": "Archive - watchers will now erase from web.", "sentence": "Watchers will erase the referenced material from the web.", "why": "It forecasts a specific future removal of material from the web." },
-    { "n": 22, "batch": 11, "post": 4461, "match": "Only when people see the truth [for themselves] will people understand the true nature of their deception.", "sentence": "People will understand the true nature of the deception only after they see the truth for themselves.", "why": "It conditionally forecasts future understanding." },
-    { "n": 23, "batch": 11, "post": 4481, "match": "Only when people see the truth [for themselves] will people understand the true nature of their deception.", "sentence": "People will understand the true nature of the deception only after they see the truth for themselves.", "why": "It conditionally forecasts future understanding." },
-    { "n": 24, "batch": 11, "post": 4722, "match": "Make no mistake, they will not concede on Election Night.", "sentence": "They will not concede on Election Night.", "why": "It explicitly forecasts refusal to concede on a stated occasion." },
-    { "n": 25, "batch": 11, "post": 4722, "match": "Make no mistake, they will contest this legally in battleground states.", "sentence": "They will contest the election results through legal action in battleground states.", "why": "It forecasts a specific future legal strategy." },
-    { "n": 26, "batch": 11, "post": 4722, "match": "Make no mistake, they will project doubt in the election results", "sentence": "They will project doubt about the election results.", "why": "It forecasts a specific future messaging strategy." },
-    { "n": 27, "batch": 11, "post": 4722, "match": "Make no mistake, they will organize massive riots and attempt Anarchy-99 design", "sentence": "They will organize massive riots and attempt the Anarchy-99 design.", "why": "It forecasts specific future organized unrest." },
-    { "n": 28, "batch": 11, "post": 4861, "match": "House intel committee meeting tomorrow re: 'Qanon'", "sentence": "The House Intelligence Committee will meet tomorrow regarding QAnon.", "why": "The telegraphic schedule line forecasts a specific meeting on the next day." }
-  ]
+ "phase": "P5",
+ "purpose": "Add high-confidence Predictions missing from the app",
+ "batches": [
+  11
+ ],
+ "expected": {
+  "records": 29,
+  "additions": 29
+ },
+ "matchAgainst": "postText",
+ "note": "`match` is ORIGINAL_POST_WORDING and must be verbatim in the post body — it becomes the row's exactText, so the addition is anchored in Q's own words and stays highlightable. `sentence` is the audit's complete sentence and becomes the displayed text.",
+ "records": [
+  {
+   "n": 1,
+   "batch": 11,
+   "post": 12,
+   "match": "Military Intelligence ref above is the absolute biggest inside drop this board will ever receive.",
+   "sentence": "The referenced military-intelligence material will be the biggest inside drop the board ever receives.",
+   "why": "It makes a superlative forecast about all future drops received by the board."
+  },
+  {
+   "n": 2,
+   "batch": 11,
+   "post": 16,
+   "match": "Friday & Saturday will deliver on the MAGA promise.",
+   "sentence": "Friday and Saturday will deliver on the MAGA promise.",
+   "why": "It forecasts a result for the immediately following Friday and Saturday."
+  },
+  {
+   "n": 3,
+   "batch": 11,
+   "post": 38,
+   "match": "Note NG deployments starting tomorrow.",
+   "sentence": "National Guard deployments will begin tomorrow.",
+   "why": "It announces a specific future start time for deployments."
+  },
+  {
+   "n": 4,
+   "batch": 11,
+   "post": 43,
+   "match": "Watch for confirmations tomorrow.",
+   "sentence": "Confirmations will occur tomorrow.",
+   "why": "Although phrased as an instruction, it presupposes and forecasts confirmations on the following day."
+  },
+  {
+   "n": 5,
+   "batch": 11,
+   "post": 225,
+   "match": "When this breaks many won’t swallow.",
+   "sentence": "When the referenced story breaks, many people will not accept it.",
+   "why": "It conditionally forecasts a public reaction to a future disclosure."
+  },
+  {
+   "n": 6,
+   "batch": 11,
+   "post": 566,
+   "match": "Release coming.",
+   "sentence": "A release is coming.",
+   "why": "It directly forecasts an approaching release."
+  },
+  {
+   "n": 7,
+   "batch": 11,
+   "post": 759,
+   "match": "Make no mistake, they will all PAY THE PRICE.",
+   "sentence": "They will all pay the price.",
+   "why": "It explicitly forecasts a future consequence for the referenced people."
+  },
+  {
+   "n": 8,
+   "batch": 11,
+   "post": 780,
+   "match": "Future proves past:",
+   "sentence": "Future events will prove what happened in the past.",
+   "why": "It forecasts that later events will validate prior information."
+  },
+  {
+   "n": 9,
+   "batch": 11,
+   "post": 868,
+   "match": "Fail, they will.",
+   "sentence": "They will fail.",
+   "why": "It directly forecasts failure."
+  },
+  {
+   "n": 10,
+   "batch": 11,
+   "post": 1226,
+   "match": "DNC to initiate lawsuit (pre-planned).",
+   "sentence": "The Democratic National Committee will initiate a pre-planned lawsuit.",
+   "why": "The telegraphic infinitive construction forecasts a future lawsuit."
+  },
+  {
+   "n": 11,
+   "batch": 11,
+   "post": 1336,
+   "match": "Future to prove past.",
+   "sentence": "Future events will prove what happened in the past.",
+   "why": "It forecasts that later events will validate prior information."
+  },
+  {
+   "n": 12,
+   "batch": 11,
+   "post": 1468,
+   "match": "More to come.",
+   "sentence": "More information will come.",
+   "why": "It directly forecasts additional information or developments."
+  },
+  {
+   "n": 13,
+   "batch": 11,
+   "post": 1496,
+   "match": "[#3 released tomorrow]",
+   "sentence": "Item number three will be released tomorrow.",
+   "why": "It identifies a particular item and forecasts its release on the next day."
+  },
+  {
+   "n": 14,
+   "batch": 11,
+   "post": 1613,
+   "match": "Rest assured JUSTICE will be served.",
+   "sentence": "Justice will be served.",
+   "why": "It explicitly forecasts a future administration of justice."
+  },
+  {
+   "n": 15,
+   "batch": 11,
+   "post": 1676,
+   "match": "Fail they will.",
+   "sentence": "They will fail.",
+   "why": "It directly forecasts failure."
+  },
+  {
+   "n": 16,
+   "batch": 11,
+   "post": 1777,
+   "match": "We will scrub the web to find the source no matter where posted.",
+   "sentence": "The post's authors will search the web to find the source regardless of where it was posted.",
+   "why": "It announces a concrete future action by the post's authors."
+  },
+  {
+   "n": 17,
+   "batch": 11,
+   "post": 2364,
+   "match": "[CHANGE IS COMING]",
+   "sentence": "Change is coming.",
+   "why": "It directly forecasts change."
+  },
+  {
+   "n": 18,
+   "batch": 11,
+   "post": 2416,
+   "match": "Uniformed and Non-Uniformed personnel will be stationed across the country in an effort to safeguard the public.",
+   "sentence": "Uniformed and non-uniformed personnel will be stationed across the country to safeguard the public.",
+   "why": "It forecasts a specific future deployment of personnel."
+  },
+  {
+   "n": 19,
+   "batch": 11,
+   "post": 2429,
+   "match": "DECLAS coming.",
+   "sentence": "Declassification is coming.",
+   "why": "It directly forecasts declassification."
+  },
+  {
+   "n": 20,
+   "batch": 11,
+   "post": 3003,
+   "match": "[Parts 3-9 coming soon]",
+   "sentence": "Parts three through nine are coming soon.",
+   "why": "It forecasts the imminent arrival of specified later parts."
+  },
+  {
+   "n": 21,
+   "batch": 11,
+   "post": 345,
+   "match": "Archive - watchers will now erase from web.",
+   "sentence": "Watchers will erase the referenced material from the web.",
+   "why": "It forecasts a specific future removal of material from the web."
+  },
+  {
+   "n": 22,
+   "batch": 11,
+   "post": 4461,
+   "match": "Only when people see the truth [for themselves] will people understand the true nature of their deception.",
+   "sentence": "People will understand the true nature of the deception only after they see the truth for themselves.",
+   "why": "It conditionally forecasts future understanding."
+  },
+  {
+   "n": 23,
+   "batch": 11,
+   "post": 4481,
+   "match": "Only when people see the truth [for themselves] will people understand the true nature of their deception.",
+   "sentence": "People will understand the true nature of the deception only after they see the truth for themselves.",
+   "why": "It conditionally forecasts future understanding."
+  },
+  {
+   "n": 24,
+   "batch": 11,
+   "post": 4722,
+   "match": "Make no mistake, they will not concede on Election Night.",
+   "sentence": "They will not concede on Election Night.",
+   "why": "It explicitly forecasts refusal to concede on a stated occasion."
+  },
+  {
+   "n": 25,
+   "batch": 11,
+   "post": 4722,
+   "match": "Make no mistake, they will contest this legally in battleground states.",
+   "sentence": "They will contest the election results through legal action in battleground states.",
+   "why": "It forecasts a specific future legal strategy."
+  },
+  {
+   "n": 26,
+   "batch": 11,
+   "post": 4722,
+   "match": "Make no mistake, they will project doubt in the election results",
+   "sentence": "They will project doubt about the election results.",
+   "why": "It forecasts a specific future messaging strategy."
+  },
+  {
+   "n": 27,
+   "batch": 11,
+   "post": 4722,
+   "match": "Make no mistake, they will organize massive riots and attempt Anarchy-99 design",
+   "sentence": "They will organize massive riots and attempt the Anarchy-99 design.",
+   "why": "It forecasts specific future organized unrest."
+  },
+  {
+   "n": 28,
+   "batch": 11,
+   "post": 4861,
+   "match": "House intel committee meeting tomorrow re: 'Qanon'",
+   "sentence": "The House Intelligence Committee will meet tomorrow regarding QAnon.",
+   "why": "The telegraphic schedule line forecasts a specific meeting on the next day."
+  },
+  {
+   "n": 29,
+   "batch": "owner-2026-08-24",
+   "post": 417,
+   "match": "News unlocks Map.",
+   "sentence": "The news will unlock the map.",
+   "why": "OWNER RULING 2026-08-24: \"News unlocks Map. is a preiction in that post as well\". #417 is a stringer-reading drop and the line states what the news WILL do for a reader holding the map - the same forward shape as \"Future proves past.\" on the next line, which is already certified a Prediction here. It stays certified as a Claim as well: the owner said \"as well\", and the archive already carries three spans that are both.",
+   "owner": true,
+   "ruledOn": "2026-08-24"
+  }
+ ],
+ "ownerAdditions": "1 record was added after the 2026-08-16 review, by owner ruling on 2026-08-24: #417 'News unlocks Map.'. The review's own 28 are records n=1..28 and are untouched; `expected` counts the file, so it moves with it. Any later record added this way carries owner:true and ruledOn."
 }

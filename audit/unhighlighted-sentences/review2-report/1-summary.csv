@@ -4,7 +4,9 @@ Applied as new rulings,2775,"Now certified in the section your sheet named, and 
 ALREADY highlighted — not doubled,3261,"The section you named already certified that exact span, so no second record was created. This is the ""do not double-highlight"" rule doing its job."
 Sent to the Resolution Center,238,"Sheet 1. Queued, not certified: the archive now shows these as unsettled rather than as nothing."
 Duplicate rows dropped,119,"The same (post, sentence, text) appeared more than once with the same destination."
-Held for your decision,152,"Rows I would have had to guess about. Listed on the ""Held for you"" sheet."
+Held on the first pass,128,"Rows I would have had to guess about. You then ruled on all of them - see the ""Held for you"" sheet, which is now a record of what each one became."
+"   of those, now CERTIFIED",119,"The 24 directives you pushed, plus the entity wordings researched against the drop each one sits in."
+"   of those, to the Resolution Center",45,"Still questions. Either the drop does not fix what the span refers to, or the reading IS clear but certifying the alias would paint hundreds of other spans that mean nothing of the kind (""45"" appears 281 times, ""N."" 141, ""RED"" 187)."
 Refused,1,"The text is not in the drop it names. Listed on ""Data problems""."
 ,,
 SECTION COUNTS — before and after,,
@@ -22,3 +24,13 @@ Other two-layer overlaps,"1,676 spans / 1,058 drops","Sheet 8. The pair you name
 Themes inside another highlight,"2,153 spans / 1,168 drops",Sheet 9. This is the purple.
 "Every entity has a hover, all one shape","1,532","358 had none at all. All 1,532 now read the same way, and the per-post layer (842 entities, 3,693 records) is untouched."
 Q = Alice,93 occurrences / 75 drops,"Alice 5 → 98 mentions. 4,534 sign-off lines excluded as you asked; 65 more held because they name something else."
+,,
+THE 2026-08-24 FOLLOW-UPS,,
+Already-highlighted rows in the WRONG category,0,"Every one of the 713 section rows on sheet 2 was re-read against all six certified sections. None is in a section other than the one you named, and none is uncertified."
+Rows carried in MORE THAN ONE category,57,"These are the spans the renderer rotates between. 53 of them involve a Theme, which is the indigo you could not tell from Prediction violet. Listed on sheet 10."
+"Fixes on sheet 6, re-asserted",8/8,"Each one checked against the file it changed - both renderers, the linkifier, the queue, the hover file - rather than reported as done."
+URL problems left,0,"Every address-shaped token in every drop, tested against the pattern lib/linkify.tsx itself uses, on the RUNTIME text the browser renders rather than the stored text (1,448 drops store every scheme as ""https:<em>//</em>host"", and the app strips that markup at load)."
+NAT SEC,48 drops,"Certified as an entity in the three spellings Q writes - NAT SEC, NATSEC, NAT_SEC - with a hover that says it stands for national security. Distinct from the National Security Agency, which keeps its own row and its 92 mentions."
+White House Press,2 drops,"#397 and #417, where Q writes WH_POTUS_PRESS inside a stringer."
+#417 (Find Post),1,"Certified a Directive, family research - it tells the reader to go and locate the post the stringer points at."
+#417 News unlocks Map.,1,Certified a Prediction as well as the Claim it already was. The archive already carries spans certified as both.

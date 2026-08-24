@@ -65,8 +65,11 @@ const checks = [
   // Directives, Entities and the rest, and a context unit that becomes a certified category stops
   // being a context unit. Nothing was deleted - apply-context-units.mjs counts every one of them
   // as promoted and its own gate still reconciles to the certified 4,902.
-  ['468 context units still certified', ctx.units === 468, ctx.units],
-  ['context still spread across 323 posts', ctx.withUnits === 323, ctx.withUnits],
+  // 468 -> 445 and 323 -> 311 on 2026-08-24, same reason again: the owner ruled the 24 rows that
+  // had been held for stating no instruction into Directives, and 23 of them were sitting in
+  // Context. apply-context-units.mjs counts all 23 as promoted and still reconciles to 4,902.
+  ['445 context units still certified', ctx.units === 445, ctx.units],
+  ['context still spread across 311 posts', ctx.withUnits === 311, ctx.withUnits],
   // EMPHASIS IS RETIRED (owner ruling, 2026-08-21) — the section, its data and its highlights.
   // These two used to assert that 4,236 units across 1,356 posts were still certified while not
   // being painted, which is the opposite of what must now be true. A gate asserting a retired

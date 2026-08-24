@@ -39,6 +39,22 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const HOVERS = path.join(ROOT, 'public/data/entity-hovers.json')
 const check = process.argv.includes('--check')
 
+// THE AUTHORED LAYER, FROZEN - and the reason this script must not read its own output.
+//
+// The type vocabulary and the expansion clauses are both LEARNED FROM PROSE. Learning them from
+// public/data/entity-hovers.json worked exactly once: after the first run that file no longer
+// contains the prose, so the second run found no type phrasings (every label degraded from the
+// corpus's own words, "title or public role", to the machine name "title role") and no expansion
+// clauses (POTUS stopped saying "President of the United States" - 30 rows lost it). Both losses
+// reached the committed tree before they were noticed.
+//
+// audit/entity-hovers-authored.json is that prose, frozen at the last commit before this script
+// first ran. Reading it makes the normaliser idempotent, which is what lets it sit in the rebuild
+// chain, and it is what recovers the 30 expansions and the 1,143 authored type phrasings.
+const AUTHORED = path.join(ROOT, 'audit/entity-hovers-authored.json')
+const authored = fs.existsSync(AUTHORED)
+  ? JSON.parse(fs.readFileSync(AUTHORED, 'utf8')).global ?? {}
+  : {}
 const doc = JSON.parse(fs.readFileSync(HOVERS, 'utf8'))
 const ents = JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/entities.json'), 'utf8'))
 const rows = ents.entities ?? ents
@@ -49,7 +65,7 @@ const textOf = v => (typeof v === 'string' ? v : v?.synopsis) ?? ''
 // ── the label vocabulary, voted from the synopses that already exist ────────
 const TYPE_PHRASE = /categorized in this archive as an? ([^.]+)\./
 const votes = new Map()
-for (const [id, v] of Object.entries(doc.global ?? {})) {
+for (const [id, v] of Object.entries(Object.keys(authored).length ? authored : (doc.global ?? {}))) {
   const t = byId.get(id)?.type
   const m = TYPE_PHRASE.exec(textOf(v))
   if (!t || !m) continue
@@ -67,22 +83,44 @@ const article = w => (/^[aeiou]/i.test(w) ? 'an' : 'a')
 
 // ── the expansion clause, carried across from the authored text ─────────────
 // "Within this archive, “POTUS” is used for President of the United States and is categorized…"
-const EXPANSION = /is used for ([^.]+?)(?: and is categorized|\.)/
+// TWO SHAPES, because this script now reads its OWN output. The authored synopses said
+// "...is used for X and is categorized..."; the sentence written here says "...in this archive,
+// used for X.". Matching only the first meant a second run found no clause to carry and silently
+// dropped the expansion from every row whose clause was authored rather than declared. It is in
+// the rebuild chain, so a second run is the normal case, not an edge one.
+const EXPANSION = /(?:is|,) used for ([^.]+?)(?: and is categorized|\.)/
 const expansionFor = v => {
   const m = EXPANSION.exec(textOf(v))
   if (!m) return null
   return m[1].trim().replace(/\s+/g, ' ')
 }
 
+// -- the expansion an owner ruling declares, where there was none to carry ---
+// An entity certified for the first time in this batch has no authored synopsis, so there is no
+// clause to carry across and the sentence would say only what its type and counts are. Where the
+// DROPS state the expansion, build-hover-expansions.mjs records it with the drop that states it,
+// and it fills in here. An authored synopsis still wins - this never overwrites one.
+const EXPANSION_FILE = path.join(ROOT, 'audit/entity-hover-expansions.json')
+const declaredExpansions = fs.existsSync(EXPANSION_FILE)
+  ? JSON.parse(fs.readFileSync(EXPANSION_FILE, 'utf8')).expansions ?? {}
+  : {}
+
 const n = x => Number(x ?? 0).toLocaleString()
 const before = { ...(doc.global ?? {}) }
 const global = {}
-let withExpansion = 0, sourceOnly = 0, created = 0, rewritten = 0
+let withExpansion = 0, withDeclared = 0, sourceOnly = 0, created = 0, rewritten = 0
 
 for (const e of rows) {
   const label = labelFor(e.type)
-  const exp = expansionFor(before[e.id])
-  if (exp) withExpansion++
+  // Order matters and the counters have to be honest about it. The AUTHORED clause wins; then an
+  // owner-declared one; then whatever the last run wrote, which is only reached for a row that has
+  // neither and is a no-op. Checking `before` before `declared` made every declared clause report
+  // itself as "preserved" from the second run on, which is true of the text and useless as a count.
+  const carried = expansionFor(authored[e.id])
+  const declared = declaredExpansions[e.canonical]?.expansion ?? null
+  const exp = carried ?? declared ?? expansionFor(before[e.id])
+  if (carried) withExpansion++
+  else if (declared) withDeclared++
   const head = `“${e.canonical}” is ${article(label)} ${label} in this archive${exp ? `, used for ${exp}` : ''}.`
   const posts = (e.posts ?? []).length
   let tail
@@ -125,6 +163,7 @@ console.log(`  entities              : ${n(rows.length)}`)
 console.log(`    rewritten           : ${n(rewritten)}`)
 console.log(`    newly created       : ${n(created)}   (entities that had no hover at all)`)
 console.log(`  expansion preserved   : ${n(withExpansion)}`)
+console.log(`  expansion declared    : ${n(withDeclared)}   (owner rulings, for rows with no authored synopsis)`)
 console.log(`  source-only wording   : ${n(sourceOnly)}`)
 console.log(`  byPost records        : ${n(Object.keys(doc.byPost ?? {}).length)} entities, untouched`)
 console.log('\nwrote public/data/entity-hovers.json\n')

@@ -194,13 +194,6 @@ const entities = [
   })),
 ]
 
-for (const a of aliasAdditions) {
-  const target = entities.find(e => e.canonical === a.canonical)
-  if (!target) { console.error(`alias addition names an unknown canonical: ${a.canonical}`); process.exit(1) }
-  if (target.aliases.some(x => x.text === a.alias)) continue
-  target.aliases.push({ text: a.alias, n: null, ownerAdded: true })
-}
-
 // ── Owner rulings ────────────────────────────────────────────────────────────
 // Merged AFTER the certified set is assembled, from a file no derive step writes. The entity
 // pipeline is the one that already proved it re-derives itself: audit-entities.mjs reads
@@ -231,6 +224,23 @@ for (const r of ownerEntities) {
     provenance: `owner ruling ${r.ruledOn} — ${r.reasoning}`,
   })
   ownerAdded++; ownerMentions++
+}
+
+// AN ALIAS ADDITION MAY NAME AN ENTITY AN OWNER RULING JUST CREATED.
+//
+// This loop used to run BEFORE the rulings above, which meant an addition could only ever attach
+// to a canonical the derive step had already produced. The 2026-08-24 NAT SEC ruling is the first
+// that creates an entity AND registers extra spellings for it in one go - Q writes it four ways,
+// and alias matching is exact - so the addition named a canonical that did not exist yet and the
+// step refused. Running it here instead lets an addition see everything the rulings built.
+//
+// Nothing already certified moves: all 84 existing additions name canonicals the derive step
+// produces, and those are in `entities` at both points.
+for (const a of aliasAdditions) {
+  const target = entities.find(e => e.canonical === a.canonical)
+  if (!target) { console.error(`alias addition names an unknown canonical: ${a.canonical}`); process.exit(1) }
+  if (target.aliases.some(x => x.text === a.alias)) continue
+  target.aliases.push({ text: a.alias, n: null, ownerAdded: true })
 }
 // ── Owner TYPE rulings ───────────────────────────────────────────────────────
 // A type the owner corrects directly, kept here rather than in the Stage 1 rulings because that
@@ -552,7 +562,11 @@ entities.sort((a, b) => b.mentions - a.mentions)
 // fall outside them rather than naming them. Merged here for the same reason lib/queueRulings.mjs
 // merges the rulings: a resolver that reads one file and not the other reports success while
 // holding every span the other one names.
-const IDENT_FILES = ['unhighlighted-entity-identities.json', 'unhighlighted-entity-identities-2.json']
+// Round 3 is the 128 wordings round 2 HELD. The owner ruled them all Entities on 2026-08-24 and
+// asked for the research per drop, so each is named from the line it sits on; 44 that would have
+// needed a guess, or whose alias would paint the wrong text corpus-wide, are in
+// audit/held-entity-resolution-center.json instead of here.
+const IDENT_FILES = ['unhighlighted-entity-identities.json', 'unhighlighted-entity-identities-2.json', 'unhighlighted-entity-identities-3.json']
   .map(f => path.join(OUT, f)).filter(f => fs.existsSync(f))
 const queueEntityRulings = loadQueueRulings(ROOT, 'entities')
 const queueHits = []
@@ -560,11 +574,39 @@ const queueHeld = []
 let queueEntitiesCreated = 0
 if (queueEntityRulings.length && IDENT_FILES.length) {
   const docs = IDENT_FILES.map(f => JSON.parse(fs.readFileSync(f, 'utf8')))
+  // A LATER ROUND'S NAME BEATS AN EARLIER ROUND'S HOLD.
+  //
+  // makeEntityResolver checks held[] FIRST, by prefix, before any identity is consulted - which is
+  // right within one round and wrong across rounds. Round 2 held 128 wordings it would not name;
+  // round 3 is the owner's ruling that they be named, researched drop by drop. Merged naively,
+  // every one of those names would be refused by round 2's own hold and the ruling would be a
+  // no-op that still reported success.
+  //
+  // So a hold is dropped when a LATER file declares that spelling, or declares a split for it. The
+  // 44 round-3 sent to the Resolution Center instead of naming are NOT declared here, so their
+  // holds stand and they are still reported held, which is what should happen to them.
+  const declaredLater = new Set()
+  docs.forEach((d, i) => {
+    if (i === 0) return
+    for (const id of d.identities ?? []) for (const sp of id.spellings ?? []) declaredLater.add(String(sp).toLowerCase())
+    for (const sp of d.splits ?? []) declaredLater.add(String(sp.spelling).toLowerCase())
+  })
+  const heldAll = docs.flatMap((d, i) => (d.held ?? []).map(h => ({ ...h, round: i })))
+  const heldKept = heldAll.filter(h => {
+    const sp = String(h.spelling).toLowerCase()
+    if (!declaredLater.has(sp)) return true
+    // only a hold from an EARLIER file can be overridden
+    return !docs.some((d, i) => i > h.round &&
+      ((d.identities ?? []).some(id => (id.spellings ?? []).some(x => String(x).toLowerCase() === sp)) ||
+       (d.splits ?? []).some(x => String(x.spelling).toLowerCase() === sp)))
+  })
+  const holdsOverridden = heldAll.length - heldKept.length
   const merged = {
     identities: docs.flatMap(d => d.identities ?? []),
     splits: docs.flatMap(d => d.splits ?? []),
-    held: docs.flatMap(d => d.held ?? []),
+    held: heldKept,
   }
+  console.log(`  identity holds lifted : ${holdsOverridden} (named by a later round's ruling)`)
   const { resolve } = makeEntityResolver(entities, merged)
   const byCanonical = new Map(entities.map(e => [e.canonical, e]))
   for (const r of queueEntityRulings) {
@@ -894,8 +936,13 @@ const checks = [
     `${queueEntityRulings.length} ruled, ${queueHits.length} occurrences, ${queueHeld.length} held`],
   // 3 (round 1) + 185 (round 2). Round 2's held spans fall outside the three list shapes its
   // identities file covers; each is listed there and reported for the owner rather than named.
-  ['queue entity holds = 188, all listed', queueHeld.length === 188, queueHeld.length],
-  ['owner entity rulings applied = 118', ownerAdded === 118, ownerAdded],
+
+  // 2026-08-24 round 3: the owner ruled the 128 held wordings Entities and each was researched
+  // against the drop it sits in; 103 ruling rows resolved, 85 remain held and are in
+  // audit/held-entity-resolution-center.json. NAT SEC certified across 48 drops in the same batch.
+  ['queue entity holds = 86, all listed', queueHeld.length === 86, queueHeld.length],
+  // 118 + NAT SEC + White House Press = 120.
+  ['owner entity rulings applied = 120', ownerAdded === 120, ownerAdded],
   ['owner merge rulings applied = 1', ownerMerged === 1, ownerMerged],
   // 1,335 - 1: Ray Chandler is now an alias of Rachel Chandler, not a row of her own.
   // 1,445 -> 1,408: -19 rows merged away as duplicate canonicals, -18 rows withdrawn as
@@ -904,7 +951,8 @@ const checks = [
   // 1,443 + 308 identities round 2 introduces = 1,751. 151 central banks and 93 countries from
   // the list Q pastes across #135-#138, 65 journalists and their outlets from #1515's "THE BRIDGE"
   // list, and the retiring members of Congress from #1319/#1850 — every name read off Q's own line.
-  ['canonical entities = 1,751', entities.length === 1751, entities.length],
+  // 1,751 + 48 named out of round 2's held list + NAT SEC + White House Press = 1,801.
+  ['canonical entities = 1,801', entities.length === 1801, entities.length],
   // 8,227 + 12 RC. The merge moves 4 mentions between rows and adds none.
   // 9,786 -> 9,747: -39, the occurrences of the 18 withdrawn rows. The 17 merges move mentions
   // ACROSS rows and add none, so they are absent from this arithmetic by design — asserted
@@ -921,7 +969,9 @@ const checks = [
   // Q tokens are HELD because they name something else - Al-Qaeda, a 10-Q filing, Quicken Loans
   // Arena, the NSA Q Group, a DOE clearance level, Q+ and the word "question".
   // See audit/q-entity-owner-ruling.json.
-  ['resolved mentions = 10,459', totals.mentions === 10459, totals.mentions],
+  // 10,459 + 150 from round 3's identities and NAT SEC's 48 drops + 2 for WH_POTUS_PRESS
+  // (#397, #417) = 10,611.
+  ['resolved mentions = 10,611', totals.mentions === 10611, totals.mentions],
   ['stage 1: 19 rows merged away', !stage1 || s1Merged === 19, s1Merged],
   ['stage 1: 85 types corrected', !stage1 || s1Typed === 85, s1Typed],
   // 18 in the audit, 17 applied: ENT-0709 "Non-profit organization" is HELD because it
@@ -951,13 +1001,13 @@ const checks = [
   // (alias NP, 2 mentions), is held because it contradicts a standing owner ruling.
   // +8: queue rulings that landed on a core-registry identity.
   // +61: round-2 rulings that landed on a core-registry identity.
-  ['core-registry mentions = 5,421', totals.coreRegistryMentions === 5421, totals.coreRegistryMentions],
+  ['core-registry mentions = 5,436', totals.coreRegistryMentions === 5436, totals.coreRegistryMentions],
   // 3,440 + 34 C19 + 12 RC: COVID-19 and Rachel Chandler are tail entities, so alias rulings on
   // them land here.
   // +58: queue rulings that landed on an adjudicated-tail identity.
   // +6, the same six again - one movement, counted in three places by design.
   // +54: round-2 rulings that landed on an adjudicated-tail identity.
-  ['adjudicated-tail mentions = 3,985', totals.adjudicatedTailMentions === 3985, totals.adjudicatedTailMentions],
+  ['adjudicated-tail mentions = 4,007', totals.adjudicatedTailMentions === 4007, totals.adjudicatedTailMentions],
   ['tail occurrence rows = 3,440', tailOccurrences.length === 3440, tailOccurrences.length],
   ['every tail occurrence carries a post identity', tailOccurrences.every(o => o.postNum && o.id), 'ok'],
   ['every tail entity now has post provenance',

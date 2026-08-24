@@ -1,0 +1,394 @@
+{
+ "note": "Held rows that stay questions, for the Resolution Center.",
+ "ruledOn": "2026-08-24",
+ "why": "Two different things land here and only one is uncertainty. \"unsettled\" means the drop does not fix the referent. \"would-paint-wrong-text\" means the reading IS clear but the alias is corpus-wide: the renderer paints a certified alias everywhere it appears, so certifying \"45\" or \"N.\" would light up hundreds of spans that mean nothing of the kind — those need an occurrence-scoped ruling, which is the owner's call. \"not-a-name\" means the span states or points at something rather than naming it. \"defect\" is a problem found while resolving the rest.",
+ "totals": {
+  "not-a-name": 22,
+  "unsettled": 13,
+  "would-paint-wrong-text": 9,
+  "defect": 1
+ },
+ "rows": [
+  {
+   "spelling": "L.",
+   "posts": [
+    300
+   ],
+   "why": "A single initial on its own line in #300, between a question about Alwaleed and \"Heard you can't sleep anymore.\" Q is addressing someone the drop does not name. It also appears 157 times across 125 drops as an ordinary initial, so certifying it would paint all of them.",
+   "kind": "unsettled"
+  },
+  {
+   "spelling": "[J C]",
+   "posts": [
+    1541
+   ],
+   "why": "Q writes \"[J C]\" in #1541, #1546, #1559, #2070 and #2531. #1546 puts it under a Clapper article and #2531 puts it beside \"Comey testimony?\" — two different men with the same initials, and the drops do not settle which.",
+   "kind": "unsettled"
+  },
+  {
+   "spelling": "Eagle",
+   "posts": [
+    180
+   ],
+   "why": "#180 asks \"What US President was nicknamed 'Eagle' by the USSS?\" without answering. The other seven occurrences in the corpus are all \"Iron Eagle\", which the archive certifies as a separate coded alias, so certifying the bare word would paint inside them.",
+   "kind": "unsettled"
+  },
+  {
+   "spelling": "Eagles",
+   "posts": [
+    180
+   ],
+   "why": "Part of \"FlyEaglesFly\" in #180. The drop does not say whether the hashtag means the Secret Service codename it just asked about or the football team.",
+   "kind": "unsettled"
+  },
+  {
+   "spelling": "RED",
+   "posts": [
+    273
+   ],
+   "why": "#273 is three lines — \"R\", \"RED\", \"D\" — with no other text. The word appears 187 times across 88 drops (RED WAVE, RED CROSS, RED OCTOBER, Red_Red), so a single reading cannot be certified for all of them.",
+   "kind": "unsettled"
+  },
+  {
+   "spelling": "BRAVO",
+   "posts": [
+    1004
+   ],
+   "why": "A line of #1004's comms block between \"SEC TEST\" and \"B\" — the phonetic alphabet letter for the \"B\" on the next line, rather than a name.",
+   "kind": "unsettled"
+  },
+  {
+   "spelling": "AIR",
+   "posts": [
+    1010
+   ],
+   "why": "A one-word line in #1010's list of vectors — WATER, AIR, CHEMICALS, VACCINES, TOBACCO, OPIOIDS. It names a medium, not a named thing, and appears in nine drops.",
+   "kind": "unsettled"
+  },
+  {
+   "spelling": "BIG",
+   "posts": [
+    2040
+   ],
+   "why": "Three identical lines in #2040 under a Judicial Watch link. It is emphasis, and it appears 89 times across 71 drops.",
+   "kind": "unsettled"
+  },
+  {
+   "spelling": "45",
+   "posts": [
+    1565
+   ],
+   "why": "The whole of #1565 apart from a post reference. It reads as the 45th President, but the two characters appear 281 times across 255 drops as an ordinary number, so it needs an occurrence-scoped ruling rather than a corpus-wide alias.",
+   "kind": "would-paint-wrong-text"
+  },
+  {
+   "spelling": "Mr.",
+   "posts": [
+    4850
+   ],
+   "why": "The line in #4850 is \"Mr. Russia collusion pusher himself now involved?\" — a description, not a name. The abbreviation appears in 27 drops.",
+   "kind": "unsettled"
+  },
+  {
+   "spelling": "Sen.",
+   "posts": [
+    3778,
+    4935
+   ],
+   "why": "The rank prefix in front of five different senators across #3778 and #4935. It names no one on its own and appears in nine drops.",
+   "kind": "would-paint-wrong-text"
+  },
+  {
+   "spelling": "Rep.",
+   "posts": [
+    3778
+   ],
+   "why": "The rank prefix in front of three different representatives in #3778. It names no one on its own.",
+   "kind": "would-paint-wrong-text"
+  },
+  {
+   "spelling": "Gov.",
+   "posts": [
+    4935
+   ],
+   "why": "The rank prefix in front of two different governors in #4935 — Cuomo and McAuliffe.",
+   "kind": "would-paint-wrong-text"
+  },
+  {
+   "spelling": "M.",
+   "posts": [
+    3383
+   ],
+   "why": "The line in #3383 is \"M. Waters $4mm House?\" and names Maxine Waters, but the two characters appear 67 times across 57 drops as an ordinary initial.",
+   "kind": "would-paint-wrong-text"
+  },
+  {
+   "spelling": "N.",
+   "posts": [
+    3383
+   ],
+   "why": "The line in #3383 is \"N. Pelosi net worth $150mm+?\" and names Nancy Pelosi, but the two characters appear 141 times across 113 drops.",
+   "kind": "would-paint-wrong-text"
+  },
+  {
+   "spelling": "IN.",
+   "posts": [
+    4206
+   ],
+   "why": "#4206 breaks one sentence across three lines — \"PANIC.\" / \"IN.\" / \"DC.\" The middle line is a preposition and appears in 33 drops.",
+   "kind": "unsettled"
+  },
+  {
+   "spelling": "+",
+   "posts": [
+    124,
+    126,
+    134,
+    679,
+    1218,
+    2165
+   ],
+   "why": "Q writes \"+\", \"++\" and \"+++\" as a three-tier series, and #134 sets them under \"One side of the triangle removed (1st time in history).\" The drops never say who each tier is. A \"+\" also has no word boundary, so certifying the single character would paint inside \"++\", \"+++\", \"+GOOG\", \"+Sleepers\" and every arithmetic plus in the corpus.",
+   "kind": "would-paint-wrong-text"
+  },
+  {
+   "spelling": "++",
+   "posts": [
+    124,
+    126,
+    134,
+    156,
+    177,
+    178,
+    679
+   ],
+   "why": "The middle tier of the same series, 51 occurrences across 23 drops. Certifying it would paint inside every \"+++\".",
+   "kind": "would-paint-wrong-text"
+  },
+  {
+   "spelling": "+++",
+   "posts": [
+    123,
+    124,
+    126,
+    134,
+    679
+   ],
+   "why": "The top tier of the same series, 31 occurrences across 17 drops. The drops never state who it stands for.",
+   "kind": "unsettled"
+  },
+  {
+   "spelling": "***",
+   "posts": [
+    3989,
+    4506,
+    4607,
+    4762
+   ],
+   "why": "A whole-drop line in #3989 and a line above \"Are you ready to serve once again?\" in #4607. It marks something rather than naming it.",
+   "kind": "unsettled"
+  },
+  {
+   "spelling": "Mr. President, my prayer is constantly turned to the beloved American nation, …",
+   "posts": [
+    4542
+   ],
+   "why": "A paragraph of the Viganò letter #4542 reproduces. It is a quotation, not a name — the entity in it is the writer, and the drop names him elsewhere.",
+   "kind": "not-a-name"
+  },
+  {
+   "spelling": "Twitter keywords - coincidence",
+   "posts": [
+    244
+   ],
+   "why": "A line of #244's proof list, in the shape \"X - coincidence\". It states a claim about a coincidence rather than naming a thing.",
+   "kind": "not-a-name"
+  },
+  {
+   "spelling": "Twitter retweet - coincidence",
+   "posts": [
+    244
+   ],
+   "why": "A line of #244's proof list, in the shape \"X - coincidence\".",
+   "kind": "not-a-name"
+  },
+  {
+   "spelling": "Revise Constitution",
+   "posts": [
+    570
+   ],
+   "why": "A policy item in #570's \"HRC [8] WWIII\" list, beside \"Open borders\" and \"Ban sale of firearms\". It names an action, not a thing.",
+   "kind": "not-a-name"
+  },
+  {
+   "spelling": "@[19][1st]",
+   "posts": [
+    952
+   ],
+   "why": "A bracketed pointer at the top of #952, above \"@[3][1st]\" and \"The LINK.\" It indexes something rather than naming it.",
+   "kind": "not-a-name"
+  },
+  {
+   "spelling": "@[3][1st]",
+   "posts": [
+    952
+   ],
+   "why": "A bracketed pointer at the top of #952.",
+   "kind": "not-a-name"
+  },
+  {
+   "spelling": "LINE CONF B-Z",
+   "posts": [
+    983
+   ],
+   "why": "A line of #983's comms block, which is entirely \"SEC T / [ / [ / ] / SEC 1 / SEC A / SEC / / SEC # / LINE CONF B-Z / /RUN/\". A confirmation instruction, not a name.",
+   "kind": "not-a-name"
+  },
+  {
+   "spelling": "SEC A SEC /",
+   "posts": [
+    983
+   ],
+   "why": "Two adjacent lines of the same comms block, run together by the splitter.",
+   "kind": "not-a-name"
+  },
+  {
+   "spelling": "IN GOD WE TRUST.",
+   "posts": [
+    1602
+   ],
+   "why": "The last line before the sign-off in #1602, after \"RED WAVE.\" and \"WHITE SQUALL.\" The app already treats it as a recurring Q phrase and paints it as one.",
+   "kind": "not-a-name"
+  },
+  {
+   "spelling": "Bandwagon shills",
+   "posts": [
+    1796
+   ],
+   "why": "A line of #1796's attack list, beside \"Paid shills (Media Matters)\" and \"Fake MAGA supporters\". It names a category of people, not a named group.",
+   "kind": "not-a-name"
+  },
+  {
+   "spelling": "(………………..)(………………….)",
+   "posts": [
+    1871
+   ],
+   "why": "The bottom row of #1871's \"Ex 1.1\" diagram. Q leaves the two boxes blank on purpose — that is the exercise.",
+   "kind": "not-a-name"
+  },
+  {
+   "spelling": "GMAIL DRAFTS",
+   "posts": [
+    1876
+   ],
+   "why": "The header of #1876, over a list of what Q says was passed through them. It names a technique, and the platform in it is already certified.",
+   "kind": "not-a-name"
+  },
+  {
+   "spelling": "Line 4",
+   "posts": [
+    1912
+   ],
+   "why": "A pointer into the document #1912 then quotes. It names a position in a text.",
+   "kind": "not-a-name"
+  },
+  {
+   "spelling": "Sec 1.7",
+   "posts": [
+    2177,
+    2207,
+    2501
+   ],
+   "why": "The section of Executive Order 13526 that #2177, #2207 and #2501 then quote. The order itself is now certified; this is a pointer into it.",
+   "kind": "not-a-name"
+  },
+  {
+   "spelling": "FISA = FISC",
+   "posts": [
+    1944
+   ],
+   "why": "An equation Q writes in #1944 between two acronyms. The archive types neither FISA nor FISC as an entity — they sit with DECLAS, SIGINT and GITMO as domain terms — so certifying the equation would introduce them by the back door.",
+   "kind": "not-a-name"
+  },
+  {
+   "spelling": "NOFORN",
+   "posts": [
+    1944
+   ],
+   "why": "A dissemination-control marking, in the same family as CLAS and DECLAS, which the archive does not type as entities.",
+   "kind": "not-a-name"
+  },
+  {
+   "spelling": "-House testimony",
+   "posts": [
+    1986
+   ],
+   "why": "A repeated follow-on line under three different names in #1986's cooperating-witness list. It says what happened next, not who.",
+   "kind": "not-a-name"
+  },
+  {
+   "spelling": "-OIG report",
+   "posts": [
+    2681
+   ],
+   "why": "A line of #2681's sequence list, beside \"-Barr meeting Huber & OIG\". It names a document that does not exist yet in the drop.",
+   "kind": "not-a-name"
+  },
+  {
+   "spelling": "GOOG whistleblower",
+   "posts": [
+    3584
+   ],
+   "why": "The first line of #3584. It describes a person the drop does not name; the company is already certified.",
+   "kind": "not-a-name"
+  },
+  {
+   "spelling": "Desk",
+   "posts": [
+    3627
+   ],
+   "why": "One of four items in #3627's \"Future trip(c) re_verify:\" list — Notebook, Pen, Watch, Desk. They are objects to be photographed, not named things.",
+   "kind": "not-a-name"
+  },
+  {
+   "spelling": "Notebook",
+   "posts": [
+    3627
+   ],
+   "why": "One of four items in #3627's \"Future trip(c) re_verify:\" list.",
+   "kind": "not-a-name"
+  },
+  {
+   "spelling": "Pen",
+   "posts": [
+    3627
+   ],
+   "why": "One of four items in #3627's \"Future trip(c) re_verify:\" list. It also appears in 15 drops, mostly in \"Follow the pen\".",
+   "kind": "not-a-name"
+  },
+  {
+   "spelling": "Alexander Jones, 36",
+   "posts": [
+    4697
+   ],
+   "why": "A name and age from the arrest list #4697 reproduces. Certifying it would put a private individual in the registry under a name one character from Alex Jones the broadcaster, whom the archive already certifies as someone else.",
+   "kind": "unsettled"
+  },
+  {
+   "spelling": "ROTHS",
+   "posts": [
+    263
+   ],
+   "why": "Q writes it only inside a longer token - \"#FLYROTHSFLY#\" in #248, #252 and #301, \"+FLYROTHSFLY+\" in #263 - and spells the family out in full as \"ROTHSCHILD.\" in #1010 and #135. Certifying the fragment as an alias of the Rothschild family makes its ONLY occurrence a substring extraction, which audit-occurrence-provenance.mjs flags and proposes removing (it did, on the first run through: invalid_substring_extraction 98 -> 99, #263:0). The family itself is already certified, so nothing is lost by leaving the hashtag alone.",
+   "kind": "would-paint-wrong-text"
+  },
+  {
+   "spelling": "ABC → Alphabet Inc.",
+   "posts": [
+    1515
+   ],
+   "why": "NOT a held row — a defect found while resolving them. #1515's WikiLeaks media list has 16 lines reading \"ABC – <journalist>\", and the registry resolves the bare letters \"ABC\" to Alphabet Inc., so those lines certify the television network as Google's holding company. \"ABC News\" is now declared as a separate identity and this line's split points at it; the other 15 lines still point at Alphabet.",
+   "kind": "defect"
+  }
+ ]
+}

@@ -1,0 +1,647 @@
+{
+ "note": "The three follow-up checks the owner asked for on 2026-08-24.",
+ "ruling": "check to make sure everything on the already highlighted tab is highlighted the right category. and go ahead and fix all the items in the fix these tab if they already arent done. also any url problems go ahead and fix those issues please",
+ "ruledOn": "2026-08-24",
+ "categories": {
+  "what": "Every already-highlighted row re-read against all six certified sections. A row in more than one is what the renderer rotates between.",
+  "rowsChecked": 713,
+  "inMoreThanOneSection": 57,
+  "inADifferentSection": 0,
+  "notCertifiedAnywhere": 0,
+  "byPair": {
+   "entities + themes": 27,
+   "questions + themes": 25,
+   "directives + themes": 3,
+   "claims + entities": 1,
+   "entities + questions + themes": 1
+  },
+  "rows": [
+   {
+    "postNum": 14,
+    "span": "Military Intelligence.",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 36,
+    "span": "Military Intelligence.",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 99,
+    "span": "MSM.",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 100,
+    "span": "Satan.",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 110,
+    "span": "MSM.",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 113,
+    "span": "MSM.",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 133,
+    "span": "Epstein island.",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 158,
+    "span": "No Such Agency.",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 350,
+    "span": "Federal Reserve.",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 354,
+    "span": "Federal Reserve.",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 520,
+    "span": "NO SUCH AGENCY.",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 522,
+    "span": "Jeremiah 29:11",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 659,
+    "span": "TG>",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "claims",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 1266,
+    "span": "No Such Agency.",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 1336,
+    "span": "FVEY.",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 1589,
+    "span": "FISA.",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 1794,
+    "span": "FISA",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 1794,
+    "span": "FISA",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 1794,
+    "span": "FISA",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 1816,
+    "span": "FISA.",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 1816,
+    "span": "FISA.",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 1816,
+    "span": "FISA.",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 2217,
+    "span": "FVEY",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 2561,
+    "span": "FISA",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 3881,
+    "span": "Muslim Brotherhood",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 4390,
+    "span": "Proverbs 13:9",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 4623,
+    "span": "Epstein island.",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 4963,
+    "span": "Whistleblowers.",
+    "ownerSaid": "entities",
+    "certifiedIn": [
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 3683,
+    "span": "\"Put on the full armor of God, so that you can take your stand against the devil’s schemes.\"",
+    "ownerSaid": "directives",
+    "certifiedIn": [
+     "directives",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 4298,
+    "span": "Ask and you shall receive.",
+    "ownerSaid": "directives",
+    "certifiedIn": [
+     "directives",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 4374,
+    "span": "Be strong in the Lord.",
+    "ownerSaid": "directives",
+    "certifiedIn": [
+     "directives",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 8,
+    "span": "HRC, Muslim Brotherhood, or child?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 36,
+    "span": "What if the wizards and warlocks tipped off a local reporter as to the supposed unscheduled stop?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 71,
+    "span": "Who is the Muslim Brotherhood?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 77,
+    "span": "Who is the Muslim Brotherhood?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 117,
+    "span": "What church did BO attend as pre-POTUS?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 133,
+    "span": "Does Satan exist?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 144,
+    "span": "What council do the Wizards & Warlocks control?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 153,
+    "span": "Perhaps he could not stomach the thought of mass murders occurring to satisfy Moloch?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 484,
+    "span": "Who are the Muslim Brotherhood?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 999,
+    "span": "Why is Epstein spending $29mm to bury the tunnels underneath is temple on Epstein Island?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 1100,
+    "span": "Who is arranging the PRIVATE meetings?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 1630,
+    "span": "Why are Freemasons on the scene of most shooting locations?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 1832,
+    "span": "HOW MANY IN WASHINGTON AND THOSE AROUND THE WORLD (IN POWER) WORSHIP THE DEVIL?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 1876,
+    "span": "Muslim Brotherhood?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes",
+     "entities"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 1887,
+    "span": "Muslim by faith?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 1887,
+    "span": "Muslim by faith?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 1887,
+    "span": "Muslim by faith?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 1916,
+    "span": "Man of God?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 1981,
+    "span": "Huma>Muslim Brotherhood?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 2557,
+    "span": "What do you want for XMAS?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 2887,
+    "span": "Ask yourself a simple question, should a woman who travels to Syria to support and encourage 'JIHAD' against the 'West' deserve to live……………….?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 3396,
+    "span": "Who posted 'internal security cam' pics (Temple)(IG)?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 3399,
+    "span": "What does an 'OWL' symbolize (dark religion)?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 3917,
+    "span": "Did you think 'spirit cooking' was just pretend?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 4748,
+    "span": "Why does the media pit religion v religion?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   },
+   {
+    "postNum": 4799,
+    "span": "When does a Church become a playground?",
+    "ownerSaid": "questions",
+    "certifiedIn": [
+     "questions",
+     "themes"
+    ],
+    "kind": "more-than-one-section"
+   }
+  ],
+  "notFound": []
+ },
+ "fixes": {
+  "what": "Each fix on sheet 6, asserted against the thing it changed rather than reported as done.",
+  "passed": 8,
+  "total": 8,
+  "checks": [
+   {
+    "name": "Entities and brackets stay on top inside a question",
+    "ok": true,
+    "evidence": "both renderers import HIGHLIGHT_SOLID and the question branch of each has a namedEntity case"
+   },
+   {
+    "name": "Entities and brackets render SOLID over another colour",
+    "ok": true,
+    "evidence": "HIGHLIGHT_SOLID defines opaque fills for both kinds and both renderers use it"
+   },
+   {
+    "name": "Addresses Q typed with a space are one link again",
+    "ok": true,
+    "evidence": "linkify TOKEN_RE accepts 1-3 spaces or tabs after the scheme"
+   },
+   {
+    "name": "The link text still shows the space; only the href drops it",
+    "ok": true,
+    "evidence": "the href is normalised separately from the displayed text"
+   },
+   {
+    "name": "The Resolution Center carries this round's comms strings",
+    "ok": true,
+    "evidence": "238 queue row(s) carry a 2026-08-24 provenance"
+   },
+   {
+    "name": "Every entity has a hover",
+    "ok": true,
+    "evidence": "1584 hovers / 1584 entities"
+   },
+   {
+    "name": "Every hover reads the same way",
+    "ok": true,
+    "evidence": "0 off-pattern"
+   },
+   {
+    "name": "Q is Alice, except the sign-off",
+    "ok": true,
+    "evidence": "the guard is defined once and used by both renderers"
+   }
+  ]
+ },
+ "urls": {
+  "what": "Every address-shaped token in every drop, tested against the linkifier's own pattern.",
+  "patternInSyncWithLinkify": true,
+  "problems": 0,
+  "byReason": {},
+  "rows": []
+ }
+}

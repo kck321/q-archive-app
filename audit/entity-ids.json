@@ -1,6 +1,6 @@
 {
  "note": "Immutable entity identity. An id is minted once and never derived from the canonical name, the type, the mention count or the row position — all of which legitimately change about an entity that is still the same entity. canonical and slug are attributes stored beside the id; previousCanonicals keeps every earlier or absorbed spelling resolving to it. auditEntityIds is the crosswalk to the ENT-#### numbers used by the 2026-08-16 hover audit, which were positional and must never be stored as identity.",
- "minted": 1756,
+ "minted": 1806,
  "entries": {
   "qe-e4b9b2985b7c": {
    "canonical": "United States",
@@ -13398,6 +13398,306 @@
   "qe-d030b96cb710": {
    "canonical": "Matt Bai",
    "slug": "matt-bai",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-d7fe77ea9c01": {
+   "canonical": "NAT SEC",
+   "slug": "nat-sec",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-5c9028d7e5ea": {
+   "canonical": "4,10,20",
+   "slug": "4-10-20",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-bfb98704699f": {
+   "canonical": "The Godfather Part III",
+   "slug": "the-godfather-part-iii",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-2ea8230a7fc7": {
+   "canonical": "SEC TEST",
+   "slug": "sec-test",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-9cb90f274cef": {
+   "canonical": "Executive Order 13526",
+   "slug": "executive-order-13526",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-db2e5cb791c6": {
+   "canonical": "VIP Patriot",
+   "slug": "vip-patriot",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-45c36e3fd2b2": {
+   "canonical": "CLAS 1-99",
+   "slug": "clas-1-99",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-c12bca0c58c6": {
+   "canonical": "Q Clearance Patriot",
+   "slug": "q-clearance-patriot",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-8340e197af4f": {
+   "canonical": "Philippines",
+   "slug": "philippines",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-b5e106b15694": {
+   "canonical": "Bangko Sentral ng Pilipinas",
+   "slug": "bangko-sentral-ng-pilipinas",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-681f6e593019": {
+   "canonical": "Saudi Arabian Monetary Agency",
+   "slug": "saudi-arabian-monetary-agency",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-2c162458cfe3": {
+   "canonical": "Lord d R.",
+   "slug": "lord-d-r",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-694192eb891a": {
+   "canonical": "_4ch_n",
+   "slug": "4ch-n",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-ad8e4a99ada6": {
+   "canonical": "_8ch_y",
+   "slug": "8ch-y",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-99673d85ae49": {
+   "canonical": "CIA-RDP84B00049R001303260026-4",
+   "slug": "cia-rdp84b00049r001303260026-4",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-5dbc0d827163": {
+   "canonical": "Renee J James",
+   "slug": "renee-j-james",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-0ad77f43d2df": {
+   "canonical": "Owls",
+   "slug": "owls",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-635dd4252645": {
+   "canonical": "DWS_DIR",
+   "slug": "dws-dir",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-e31fea053cb8": {
+   "canonical": "Military Intelligence Battalion (Strategic Signals Intelligence)",
+   "slug": "military-intelligence-battalion-strategic-signals-intelligence",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-0aabb36e429e": {
+   "canonical": "Military Intelligence Brigade (Strategic Signals Intelligence)",
+   "slug": "military-intelligence-brigade-strategic-signals-intelligence",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-8fc3d58fafb6": {
+   "canonical": "Military Intelligence Team",
+   "slug": "military-intelligence-team",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-f234845f4e49": {
+   "canonical": "John 3:16",
+   "slug": "john-3-16",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-58989e125d18": {
+   "canonical": "Fiddler",
+   "slug": "fiddler",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-71421ed822a2": {
+   "canonical": "D-Room C",
+   "slug": "d-room-c",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-d5d762457255": {
+   "canonical": "D-Room H",
+   "slug": "d-room-h",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-c98857061b62": {
+   "canonical": "D-Room R",
+   "slug": "d-room-r",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-47dfd078572a": {
+   "canonical": "FBI 302",
+   "slug": "fbi-302",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-9dcacf0a30e9": {
+   "canonical": "BLUE METAL",
+   "slug": "blue-metal",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-c3229a3390b9": {
+   "canonical": "JDLKD-8382KDJDzAZ7301",
+   "slug": "jdlkd-8382kdjdzaz7301",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-d50d415fd127": {
+   "canonical": "David Muir",
+   "slug": "david-muir",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-d6f510572d9e": {
+   "canonical": "Beth Fouhy",
+   "slug": "beth-fouhy",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-fdad9733faac": {
+   "canonical": "Airbus A321",
+   "slug": "airbus-a321",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-9bfac10b4672": {
+   "canonical": "Barron's",
+   "slug": "barron-s",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-d426aad1bb20": {
+   "canonical": "PACKET HDQ-7309217392",
+   "slug": "packet-hdq-7309217392",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-7c88c0819296": {
+   "canonical": "Operation Cyclone",
+   "slug": "operation-cyclone",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-92c5f6119975": {
+   "canonical": "Mujahideen",
+   "slug": "mujahideen",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-2cdd9991ec68": {
+   "canonical": "Richard Pollock",
+   "slug": "richard-pollock",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-dd816ea71392": {
+   "canonical": "Dragonfly",
+   "slug": "dragonfly",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-d011173631c6": {
+   "canonical": "Senate Judiciary Chairman",
+   "slug": "senate-judiciary-chairman",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-3ac080aab77f": {
+   "canonical": "Project DeepDream",
+   "slug": "project-deepdream",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-4b18553cc332": {
+   "canonical": "Kerry's son",
+   "slug": "kerry-s-son",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-f46fb160203e": {
+   "canonical": "Romney's son",
+   "slug": "romney-s-son",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-fb4e9743229b": {
+   "canonical": "DECLAS CoC",
+   "slug": "declas-coc",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-c18046d7ef18": {
+   "canonical": "+Sleepers",
+   "slug": "sleepers",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-f9601a1564c8": {
+   "canonical": "Crossfire Typhoon",
+   "slug": "crossfire-typhoon",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-640dfbec0858": {
+   "canonical": "1996 Telecommunications Act",
+   "slug": "1996-telecommunications-act",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-21e6f20b0ee8": {
+   "canonical": "PAN-DEM-IC",
+   "slug": "pan-dem-ic",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-62666d455b71": {
+   "canonical": "FBI Portland",
+   "slug": "fbi-portland",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-8854da4cfc5d": {
+   "canonical": "Joe 30330",
+   "slug": "joe-30330",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-0260464eac3d": {
+   "canonical": "White House Press",
+   "slug": "white-house-press",
    "previousCanonicals": [],
    "auditEntityIds": []
   }

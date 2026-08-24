@@ -26,6 +26,13 @@ fs.mkdirSync(OUT, { recursive: true })
 const rulings = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/unhighlighted-owner-rulings-2.json'), 'utf8'))
 const issues = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/unhighlighted-review2-issues.json'), 'utf8'))
 const idents = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/unhighlighted-entity-identities-2.json'), 'utf8'))
+// ROUND 3, and the follow-up checks. Sheet 3 used to be a list of things NOT decided; the owner
+// ruled on 2026-08-24 that all 128 be classified and researched, so it is now a record of what
+// each one became. The rest went to the Resolution Center, which is a queue and not a refusal.
+const held3 = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/unhighlighted-entity-identities-3.json'), 'utf8'))
+const heldRC = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/held-entity-resolution-center.json'), 'utf8'))
+const heldDir = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/unhighlighted-owner-rulings-2-held-directives.json'), 'utf8'))
+const followups = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/review2-followups.json'), 'utf8'))
 
 const csv = (rows) => rows.map(r => r.map(v => {
   const s = v === undefined || v === null ? '' : String(v)
@@ -45,7 +52,9 @@ const summary = [
   ['ALREADY highlighted — not doubled', rulings.totals.alreadyCertified, 'The section you named already certified that exact span, so no second record was created. This is the "do not double-highlight" rule doing its job.'],
   ['Sent to the Resolution Center', rulings.totals.resolutionCenter, 'Sheet 1. Queued, not certified: the archive now shows these as unsettled rather than as nothing.'],
   ['Duplicate rows dropped', issues.totals.DUPLICATE_ROW_DROPPED ?? 0, 'The same (post, sentence, text) appeared more than once with the same destination.'],
-  ['Held for your decision', (issues.totals.HELD_STATES_NO_INSTRUCTION ?? 0) + idents.totals.stillHeldWordings, 'Rows I would have had to guess about. Listed on the "Held for you" sheet.'],
+  ['Held on the first pass', (issues.totals.PUSHED_ON_OWNER_RULING_STATES_NO_INSTRUCTION ?? 0) + idents.totals.stillHeldWordings, 'Rows I would have had to guess about. You then ruled on all of them - see the "Held for you" sheet, which is now a record of what each one became.'],
+  ['   of those, now CERTIFIED', heldDir.totals.ruled + held3.identities.reduce((n, i) => n + i.spellings.length, 0) + held3.splits.length, 'The 24 directives you pushed, plus the entity wordings researched against the drop each one sits in.'],
+  ['   of those, to the Resolution Center', heldRC.rows.length, 'Still questions. Either the drop does not fix what the span refers to, or the reading IS clear but certifying the alias would paint hundreds of other spans that mean nothing of the kind ("45" appears 281 times, "N." 141, "RED" 187).'],
   ['Refused', issues.totals.NO_MATCHING_Q_UNIT ?? 0, 'The text is not in the drop it names. Listed on "Data problems".'],
   ['', '', ''],
   ['SECTION COUNTS — before and after', '', ''],
@@ -63,6 +72,16 @@ const summary = [
   ['Themes inside another highlight', '2,153 spans / 1,168 drops', 'Sheet 9. This is the purple.'],
   ['Every entity has a hover, all one shape', '1,532', '358 had none at all. All 1,532 now read the same way, and the per-post layer (842 entities, 3,693 records) is untouched.'],
   ['Q = Alice', '93 occurrences / 75 drops', 'Alice 5 → 98 mentions. 4,534 sign-off lines excluded as you asked; 65 more held because they name something else.'],
+  ['', '', ''],
+  ['THE 2026-08-24 FOLLOW-UPS', '', ''],
+  ['Already-highlighted rows in the WRONG category', followups.categories.inADifferentSection, `Every one of the ${followups.categories.rowsChecked.toLocaleString()} section rows on sheet 2 was re-read against all six certified sections. None is in a section other than the one you named, and none is uncertified.`],
+  ['Rows carried in MORE THAN ONE category', followups.categories.inMoreThanOneSection, 'These are the spans the renderer rotates between. 53 of them involve a Theme, which is the indigo you could not tell from Prediction violet. Listed on sheet 10.'],
+  ['Fixes on sheet 6, re-asserted', `${followups.fixes.passed}/${followups.fixes.total}`, 'Each one checked against the file it changed - both renderers, the linkifier, the queue, the hover file - rather than reported as done.'],
+  ['URL problems left', followups.urls.problems, 'Every address-shaped token in every drop, tested against the pattern lib/linkify.tsx itself uses, on the RUNTIME text the browser renders rather than the stored text (1,448 drops store every scheme as "https:<em>//</em>host", and the app strips that markup at load).'],
+  ['NAT SEC', '48 drops', 'Certified as an entity in the three spellings Q writes - NAT SEC, NATSEC, NAT_SEC - with a hover that says it stands for national security. Distinct from the National Security Agency, which keeps its own row and its 92 mentions.'],
+  ['White House Press', '2 drops', '#397 and #417, where Q writes WH_POTUS_PRESS inside a stringer.'],
+  ['#417 (Find Post)', '1', 'Certified a Directive, family research - it tells the reader to go and locate the post the stringer points at.'],
+  ['#417 News unlocks Map.', '1', 'Certified a Prediction as well as the Claim it already was. The archive already carries spans certified as both.'],
 ]
 write('1-summary', summary)
 
@@ -87,15 +106,35 @@ already.push(['Post', 'Section', 'The span that was already certified'])
 for (const a of rulings.alreadyCertified) already.push([a.postNum, a.section, a.sourceText])
 write('2-already-highlighted', already)
 
-// ── 3. Held for your decision ───────────────────────────────────────────────
-const held = [['What', 'Post', 'The text', 'Why I did not decide it']]
-for (const i of issues.issues.filter(x => x.why === 'HELD_STATES_NO_INSTRUCTION')) {
-  held.push(['Directive that instructs nobody', i.postNum, i.drop ?? i.text, i.reason])
+// ── 3. What the held rows became ────────────────────────────────────────────
+//
+// OWNER RULING 2026-08-24: "i want to classify all those as entities and i would like you to do
+// the research for each post they are with in to give them the best hover description you can.
+// anything you are unsure of lets put in the resolution center" - and, separately, "go ahead and
+// push the directives in that held for you file tab as well".
+const held = [['What', 'Post(s)', 'The text', 'What it is now', 'How the drop says so']]
+for (const r of heldDir.rulings) {
+  held.push(['Directive that instructs nobody', r.postNum, r.sourceText,
+    `CERTIFIED as a Directive (family: ${r.family})`,
+    `Held on the first pass because it is ${r.heldReason}. Ruled in on your word; the family is declared with the ruling rather than guessed by a detector.`])
 }
-for (const h of idents.held) {
-  held.push(['Entity with no name yet', h.posts.join(' '), h.spelling,
-    'You ruled it an Entity and it is not one the registry already holds. A certified entity needs a canonical name and a type, which the review does not carry — and 244 others were named only because Q\'s own line names them (a country and its bank, an outlet and its reporter). This one is not that shape, so naming it would be a guess.'])
+for (const id of held3.identities) {
+  for (const sp of id.spellings) held.push(['Entity with no name yet', '', sp, `CERTIFIED as "${id.canonical}" [${id.type}]`, id.why])
 }
+for (const sp of held3.splits) {
+  held.push(['Entity with no name yet', sp.postNum, sp.spelling, `SPLIT into ${sp.into.join(' + ')}`, sp.why])
+}
+for (const r of heldRC.rows) {
+  const KIND = {
+    'unsettled': 'TO THE RESOLUTION CENTER - the drop does not fix what it refers to',
+    'would-paint-wrong-text': 'TO THE RESOLUTION CENTER - the reading is clear, but the alias is corpus-wide',
+    'not-a-name': 'TO THE RESOLUTION CENTER - the span points at something rather than naming it',
+    'defect': 'A DEFECT FOUND WHILE RESOLVING THESE',
+  }
+  held.push(['Entity with no name yet', r.posts.join(' '), r.spelling, KIND[r.kind] ?? r.kind, r.why])
+}
+held.push(['', '', '', '', ''])
+held.push(['WHY ANYTHING IS STILL A QUESTION', '', '', '', heldRC.why])
 write('3-held-for-you', held)
 
 // ── 4. Data problems in the drops ───────────────────────────────────────────
@@ -221,6 +260,26 @@ themes.push(['', '', '', ''])
 themes.push(['- EVERY SPAN -', '', '', ''])
 for (const r of ov.themeInsideAnotherHighlight) themes.push([r.themeAnchor, r.postNum, r.span, r.with])
 write('9-themes-that-read-purple', themes)
+
+// ── 10. The follow-up checks ────────────────────────────────────────────────
+const fu = [['Check', 'Result', 'Detail']]
+fu.push(['- 1. IS EVERY ALREADY-HIGHLIGHTED ROW IN THE RIGHT CATEGORY -', '', ''])
+fu.push(['Rows checked', followups.categories.rowsChecked, 'Section rows only. URL and bracket rows are detectors reading the drop text, not section membership, so "which section holds it" has no meaning for them.'])
+fu.push(['In a DIFFERENT section than you named', followups.categories.inADifferentSection, ''])
+fu.push(['Certified in NO section', followups.categories.notCertifiedAnywhere, ''])
+fu.push(['Certified in MORE THAN ONE', followups.categories.inMoreThanOneSection, 'This is what rotates.'])
+for (const [k, v] of Object.entries(followups.categories.byPair)) fu.push([k, v, 'spans'])
+fu.push(['', '', ''])
+fu.push(['Post', 'The span', 'Every section that certifies it'])
+for (const r of followups.categories.rows) fu.push([r.postNum, r.span, r.certifiedIn.join(' + ')])
+fu.push(['', '', ''])
+fu.push(['- 2. THE FIXES, RE-ASSERTED -', '', ''])
+for (const c of followups.fixes.checks) fu.push([c.name, c.ok ? 'PASS' : 'FAIL', c.evidence])
+fu.push(['', '', ''])
+fu.push(['- 3. URL PROBLEMS -', followups.urls.problems, 'Tested against the runtime text the browser renders, not the stored text.'])
+for (const [k, v] of Object.entries(followups.urls.byReason)) fu.push([k, v, ''])
+for (const r of followups.urls.rows.slice(0, 500)) fu.push([r.postNum, r.token, r.why])
+write('10-followup-checks', fu)
 
 
 console.log('\nREVIEW 2 — ISSUES REPORT\n')

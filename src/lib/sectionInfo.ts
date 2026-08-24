@@ -33,10 +33,11 @@ export const CERTIFIED = {
   // 2,940 -> 2,902 on 2026-08-23, the scripture ruling: a quoted passage of scripture is ONE
   // directive over the whole passage, so 66 sentence-level fragments give way to 28 whole passages.
   // Posts RISE by 7 — drops that carried their scripture only as Claims gain a directive.
-  // 2,902 -> 3,304: 455 directive rulings. 24 more rows on that sheet are held rather than
+  // 2,902 -> 3,304: 455 directive rulings. 3,304 -> 3,329: the 24 rows on that sheet that were
   // applied - list markers, end-markers, comms strings - because they instruct nobody to do
   // anything, and a directive is where Q tells the reader to act.
-  directives: { occurrences: 3304, distinct: 1930, posts: 1917 },
+  // held for stating no instruction, ruled in by the owner on 2026-08-24, plus #417 '(Find Post)'.
+  directives: { occurrences: 3329, distinct: 1941, posts: 1926 },
   // 8,912 -> 8676 across the 2026-08-22 lane-B reviews: paragraph-wide claims an early
   // extractor left sitting on top of the sentence-level records that superseded them, plus the
   // abbreviation-split pairs where one sentence had been certified twice.
@@ -46,7 +47,8 @@ export const CERTIFIED = {
   claims: { occurrences: 10258, distinct: 7777, posts: 3223 },
   // 843 -> 841 on 2026-08-23: two predictions sat inside quoted passages.
   // 841 -> 934: 94 prediction rulings.
-  predictions: { occurrences: 934, posts: 671 },
+  // 934 -> 935: #417 'News unlocks Map.', ruled a Prediction as well as the Claim it already was.
+  predictions: { occurrences: 935, posts: 672 },
   /** Claim attributes. `conclusions` may apply to a claim or a prediction. */
   // checkable, sourceProvided and conclusions do NOT move with the queue ruling: they are
   // attributes the claims audit established from evidence inside the drop, and the owner ruled a
@@ -81,12 +83,12 @@ export const CERTIFIED = {
  */
 export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number; unit: string }> = {
   claims: { occurrences: 10258, posts: 3223, unit: 'occurrences' },
-  predictions: { occurrences: 934, posts: 671, unit: 'occurrences' },
+  predictions: { occurrences: 935, posts: 672, unit: 'occurrences' },
   // "mentions" is the right word here and the only section where it is: an entity is counted
   // once per resolved mention across the 1,066 canonical entities Q named in prose. The other 135
   // certified identities contribute none — they are linked sources, not words Q wrote — which is
   // why this figure sits BESIDE the 1,201 total on the page rather than under it.
-  namedEntities: { occurrences: 9364, posts: 2117, unit: 'mentions' },
+  namedEntities: { occurrences: 9517, posts: 2136, unit: 'mentions' },
   // Themes are assignments rather than spans — a theme is inferred from a drop, not copied out
   // of it — so the unit is named accordingly. 2,393 detected + 2 owner rulings.
   themes: { occurrences: 2646, posts: 1899, unit: 'assignments' },
@@ -171,7 +173,12 @@ export const ENTITIES = {
   // a URL slug and whom #1515 names in prose. 244 of the 308 are read off three lists Q pastes
   // verbatim - the central banks of #135-#138, the media list in #1515, the retiring-Congress
   // list in #1319/#1850 - where each line names two things and is split rather than invented.
-  canonical: 1532,
+  // 1,532 -> 1,584 on 2026-08-24: the 128 wordings held above, researched against the drop each
+  // one sits in and named (45 stayed questions and went to the Resolution Center); NAT SEC, across
+  // 48 drops; White House Press on #397 and #417; and Al Gore and Roseanne Barr, whose rows the
+  // cleanup had retired for having no trace beyond a URL path or an unexamined image, and whom
+  // #1239 and #1863 name by handle in Q's own text.
+  canonical: 1584,
   /**
    * THE HEADLINE COUNTS THE WHOLE SECTION.
    *
@@ -199,12 +206,13 @@ export const ENTITIES = {
   // occurrences, and 727 were already held by a certified layer at that (post, alias), so only
   // the shortfall is added - counting the rest again would show the reader an x2 Q never wrote.
   // 9,271 -> 9,364: the Q ruling — a standalone "Q" that is not the sign-off is Alice (#74, #78).
-  mentions: 9364,
-  mentionScope: 'Every resolved mention across all 1,532 certified entities: 5,297 from the 93 core-registry entities, 3,015 from the entities identified in the adjudication pass, and 1,052 from owner rulings. Domains, URL slugs and linked accounts are NOT counted here — they are shown under Sources. Unresolved aliases are counted in neither: they are held in the Resolution Center.',
+  // 9,364 -> 9,517: the held wordings, NAT SEC and White House Press.
+  mentions: 9517,
+  mentionScope: 'Every resolved mention across all 1,584 certified entities: 5,312 from the 93 core-registry entities, 3,038 from the entities identified in the adjudication pass, and 1,167 from owner rulings. Domains, URL slugs and linked accounts are NOT counted here — they are shown under Sources. Unresolved aliases are counted in neither: they are held in the Resolution Center.',
   coreEntities: 93,
-  coreRegistryMentions: 5297,
+  coreRegistryMentions: 5312,
   tailEntities: 1238,
-  tailMentions: 3015,
+  tailMentions: 3038,
   contextResolved: 161,
   routedToThemes: 53,
   unresolvedTokens: 1011,
@@ -390,7 +398,7 @@ export const SECTIONS: SectionInfo[] = [
     // so the ⓘ panel contradicted the header directly above it. The two components are named here
     // for the same reason they are named in the header: 1,201 with no split reads as 1,201 entities
     // Q wrote about, and 135 of them he never wrote at all.
-    certified: `${n(1532)} canonical entities (${n(1398)} named in the prose · ${n(134)} linked as a source only) · ${n(9364)} certified prose mentions`,
+    certified: `${n(1584)} canonical entities (${n(1450)} named in the prose · ${n(134)} linked as a source only) · ${n(9517)} certified prose mentions`,
     note: 'Entities are secondary tags rather than sentence types — a question, claim, prediction or directive may contain several. Names are canonicalised, so "HRC", "Hillary" and "Hillary Clinton" are one person, while Q’s exact wording is preserved in every post. Where a reference is ambiguous it is left unresolved rather than guessed.',
   },
   {

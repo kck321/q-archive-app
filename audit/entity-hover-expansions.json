@@ -1,0 +1,101 @@
+{
+ "note": "What a short form stands for, for entities with no authored synopsis to carry the clause from.",
+ "ruledOn": "2026-08-24",
+ "precedence": "An authored synopsis always wins. These fill in only where normalise-entity-hovers.mjs finds no \"is used for\" clause to carry across.",
+ "sources": {
+  "audit/unhighlighted-entity-identities-3.json": 16,
+  "declared in scripts/build-hover-expansions.mjs": 1
+ },
+ "totals": {
+  "expansions": 17,
+  "collisions": 0
+ },
+ "collisions": [],
+ "expansions": {
+  "_4ch_n": {
+   "canonical": "_4ch_n",
+   "expansion": "4chan, flagged \"n\", in the board pair #233 sets against \"_8ch_y\"",
+   "why": "A line of #233's code block, directly above \"_8ch_y\" and below \"Start_code_activated/instruction\". The pair reads as the two boards with a no/yes flag, which is the migration #233 is about."
+  },
+  "_8ch_y": {
+   "canonical": "_8ch_y",
+   "expansion": "8chan, flagged \"y\", in the board pair #233 sets against \"_4ch_n\"",
+   "why": "A line of #233's code block, directly below \"_4ch_n\". The pair reads as the two boards with a no/yes flag, which is the migration #233 is about."
+  },
+  "+Sleepers": {
+   "canonical": "+Sleepers",
+   "expansion": "placed operatives, in the \"+\" prefix notation Q uses for a category he is adding to a list",
+   "why": "A line of #3881's infiltration list, in Q's \"+\" prefix notation, between \"THE SWAMP RUNS DEEP\" and \"Backgrounds are important.\""
+  },
+  "4,10,20": {
+   "canonical": "4,10,20",
+   "expansion": "D.J.T. — the initials the numbers give when read as alphabet positions, which #40 demonstrates on the following line",
+   "why": "Q signs off #35, #40 and #533 with it in place of the usual \"Q\". The three numbers are positions in the alphabet — 4=D, 10=J, 20=T — and #40 spells the alphabet out on the very next line (\"A,b,c,d,e......\"), which is Q showing the reader how to read the line above."
+  },
+  "CLAS 1-99": {
+   "canonical": "CLAS 1-99",
+   "expansion": "a classification range Q marks withheld material with, split by department in #4645",
+   "why": "Q's classification-range marker, standing alone in #2776 and #3837 and split by department in #4645 (\"CLAS 1-99 Defense\", \"CLAS 1-99 Intel\")."
+  },
+  "DECLAS CoC": {
+   "canonical": "DECLAS CoC",
+   "expansion": "declassification chain of command — the drop lists the chain on the next two lines",
+   "why": "The heading of #3784, with the chain itself on the following lines: \"POTUS > Barr\" and \"Barr > Durham\"."
+  },
+  "DWS_DIR": {
+   "canonical": "DWS_DIR",
+   "expansion": "the DNC chair position in #436's chain — Q's initials for Debbie Wasserman Schultz, plus the role marker",
+   "why": "A node in #436's \"ONE OF TWENTY TWO\" chain, between \"(SR 187)(MS13 (2) 187)>\" and \"F-I/D-J ASSIST>\". DWS is the initial form Q uses for Debbie Wasserman Schultz, whom the archive certifies separately; DIR marks the role and \">\" is the chain arrow."
+  },
+  "Joe 30330": {
+   "canonical": "Joe 30330",
+   "expansion": "the shortcode Joe Biden gave on a 2019 debate stage, which #4826 then divides into the year",
+   "why": "The first line of #4826, followed by \"What is 2020 [current year] divided by 30330?\" — the number is a text-to-donate shortcode Joe Biden gave in a 2019 debate, and Q treats it as a designation."
+  },
+  "Kerry's son": {
+   "canonical": "Kerry's son",
+   "expansion": "the oblique form Q uses in #3590's Ukraine-energy list; the drop names the parent, not the son",
+   "why": "One of four parallel lines in #3590 — \"Pelosi's son\", \"Kerry's son\", \"Romney's son\", \"Biden's son\" — followed by \"Hint: Geo location: Ukraine\" and \"Hint: Energy\". Q names the relationship rather than the person, and that is what is recorded."
+  },
+  "Lord d R.": {
+   "canonical": "Lord d R.",
+   "expansion": "Q's abbreviated form of a Rothschild title; the drop does not name which member",
+   "why": "A line of #178's stringer-reading sequence, two lines above \"++\". The archive separately certifies the Rothschild family, and this is Q's abbreviated form of a title in it — which is as far as the drop goes, so no individual is named here."
+  },
+  "NAT SEC": {
+   "canonical": "NAT SEC",
+   "expansion": "national security",
+   "why": "OWNER RULING 2026-08-24: \"NAT SEC is an entity throughout all the post so lets fix that and give it a hover description\". The drops state the expansion themselves and use it as a domain rather than as a body: \"NAT SEC laws.\" (#1127), \"Matters of NAT SEC.\" (#1981), \"sections of the IG report @ highest level of NAT SEC?\" (#1552), \"Do 'reflections' violate NAT SEC rules?\" (#1677), \">NAT SEC ADVISOR TO SESSIONS\" (#2462), \"[NAT SEC - HRC email invest]\" (#1316, #2070, #2381). It is NOT the National Security Agency, which the archive certifies separately with 92 mentions across 66 posts."
+  },
+  "Owls": {
+   "canonical": "Owls",
+   "expansion": "a symbol group Q marks off inside colons",
+   "why": "The opening line of #328 and a line of #452, written inside colons both times — Q's marker form for a symbol group."
+  },
+  "PAN-DEM-IC": {
+   "canonical": "PAN-DEM-IC",
+   "expansion": "Q's hyphenation of \"pandemic\", set against \"DEM–PANIC\" on the next line",
+   "why": "The first line of #4294, immediately followed by \"DEM–PANIC\". Q hyphenates the word so that the same letters read as the second line, which is the point of the drop."
+  },
+  "Q Clearance Patriot": {
+   "canonical": "Q Clearance Patriot",
+   "expansion": "the designation the poster of these drops opens #34 with",
+   "why": "The opening line of #34, the \"My fellow Americans\" drop. It is how the poster designates himself, so it is a name in the drop rather than a description of one."
+  },
+  "Romney's son": {
+   "canonical": "Romney's son",
+   "expansion": "the oblique form Q uses in #3590's Ukraine-energy list; the drop names the parent, not the son",
+   "why": "One of four parallel lines in #3590 — \"Pelosi's son\", \"Kerry's son\", \"Romney's son\", \"Biden's son\" — followed by \"Hint: Geo location: Ukraine\" and \"Hint: Energy\". Q names the relationship rather than the person, and that is what is recorded."
+  },
+  "SEC TEST": {
+   "canonical": "SEC TEST",
+   "expansion": "a board test post — the drop contains nothing but this label and the sign-off",
+   "why": "Whole-drop lines in #870, #871, #1003, #1004 and #1639 — a drop whose entire content is the label. Q is testing the board, and the label is the designation for that."
+  },
+  "VIP Patriot": {
+   "canonical": "VIP Patriot",
+   "expansion": "a supporter Q singles out beside a rally photograph in #2240 and #2243",
+   "why": "Q writes it in #2240 and #2243 beside a linked photograph and \"Front Row.\" — a designation for a named supporter at a rally, not a description."
+  }
+ }
+}

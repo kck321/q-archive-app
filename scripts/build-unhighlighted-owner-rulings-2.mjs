@@ -447,15 +447,23 @@ for (const [i, r] of body.entries()) {
     issue('WORKBOOK_TEXT_DIFFERS_FROM_DROP', { drop: sourceText, severity: 'warn' })
   }
 
-  // A DIRECTIVE HAS TO INSTRUCT SOMEBODY TO DO SOMETHING.
+  // A DIRECTIVE HAS TO INSTRUCT SOMEBODY TO DO SOMETHING — AND THE OWNER OVERRODE THAT.
   //
-  // Four shapes on the Q Directives sheet do not: #953's "#1"/"#2" list markers, the "_END_" and
-  // "—end—" structural marks, two comms strings, and one line that is an assertion in shape. Each
-  // would need an invented directive family, and lib/queueDirectiveFamily.mjs is explicit that a
-  // silent catch-all is the one thing it must not become. They are held and reported instead.
+  // Four shapes on the Q Directives sheet do not instruct anyone: #953's "#1"/"#2" list markers,
+  // the "_END_" and "—end—" structural marks, two comms strings, and one line that is an assertion
+  // in shape. 24 rows. They were HELD on the first pass and listed on sheet 3 of the report.
+  //
+  // OWNER RULING, 2026-08-24: "go ahead and push the directives in that held for you file tab as
+  // well". So they are certified as Directives, in the section the owner's own sheet put them.
+  //
+  // Nothing is invented to do it. lib/queueDirectiveFamily.mjs is explicit that it must not become
+  // a silent catch-all, so no new family is written for these: the detector is asked, and where it
+  // has no answer the row carries the family 'other' — which 378 of round 2's 486 already carry.
+  // The reason each was held is still recorded, as an INFO row rather than a hold, so the trail
+  // from "held" to "certified on the owner's word" stays readable in the report.
   if (section === 'directives') {
     const why = statesNoInstruction(sourceText)
-    if (why) { issue('HELD_STATES_NO_INSTRUCTION', { drop: sourceText, reason: why }); continue }
+    if (why) issue('PUSHED_ON_OWNER_RULING_STATES_NO_INSTRUCTION', { drop: sourceText, reason: why, severity: 'info' })
   }
 
   const covered = alreadyCertified(section, p, sourceText)
@@ -519,6 +527,41 @@ if (check) {
   console.log('issues:', JSON.stringify(issuesByWhy, null, 1))
   process.exit(0)
 }
+// ── AND THE OTHER HALF OF THE SAME GUARD ─────────────────────────────────────
+//
+// The clean-tree check above is necessary and NOT sufficient. It refuses a HALF-applied bundle.
+// It cannot refuse a FULLY applied one, because once this batch is materialised and committed,
+// public/data is clean again — and every ruling in it now reads back as already certified. Run
+// the builder a second time and `ruled` collapses from 2,775 to 656 while `alreadyCertified`
+// climbs from 3,261 to 5,404, silently withdrawing 2,119 certified spans. That happened, and the
+// only reason it was caught is that the totals were compared by hand.
+//
+// So the second condition is stated against the PREVIOUS OUTPUT: if the rows this run calls
+// already-certified are the rows the last run RULED, the baseline already carries this batch and
+// there is nothing to build. Amend the ruling source and re-run the chain instead; or set
+// QDROPS_REBASELINE_QUEUE=1 to deliberately rebuild against a bundle that already contains it.
+const priorRuled = fs.existsSync(OUT)
+  ? new Set((JSON.parse(fs.readFileSync(OUT, 'utf8')).rulings ?? [])
+      .map(r => `${r.postNum}|${r.section}|${loose(r.sourceText)}`))
+  : new Set()
+const withdrawn = already.filter(a => priorRuled.has(`${a.postNum}|${a.section}|${loose(a.sourceText)}`)).length
+if (withdrawn > 0 && !process.env.QDROPS_REBASELINE_QUEUE) {
+  console.error('')
+  console.error('build-unhighlighted-owner-rulings-2.mjs: the committed baseline already carries this batch.')
+  console.error('')
+  console.error(`  ${withdrawn.toLocaleString()} span(s) this run would report as ALREADY CERTIFIED are spans the`)
+  console.error('  previous run RULED. public/data is clean, but what it is clean AGAINST is a tree that')
+  console.error('  already has these rulings applied, so rebuilding here withdraws them.')
+  console.error('')
+  console.error(`  previous rulings   : ${priorRuled.size.toLocaleString()}`)
+  console.error(`  this run would rule: ${rulings.length.toLocaleString()}`)
+  console.error('')
+  console.error('  To change a ruling, edit the source and re-run the chain. To rebuild on purpose:')
+  console.error('      QDROPS_REBASELINE_QUEUE=1 node scripts/build-unhighlighted-owner-rulings-2.mjs')
+  console.error('')
+  process.exit(2)
+}
+
 fs.writeFileSync(OUT, JSON.stringify(out, null, 1))
 fs.writeFileSync(ISSUES, JSON.stringify({
   note: 'Everything in the round-2 review that could not be taken at face value. severity info = recorded and applied as read; warn = applied with a substitution; no severity = refused, nothing was applied.',
