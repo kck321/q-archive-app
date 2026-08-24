@@ -176,6 +176,36 @@ for (const p of posts) {
   written += list.length
 }
 
+// ── SPANS THE OWNER MOVED OUT OF DIRECTIVES (2026-08-24) ────────────────────
+//
+// "post 1443 i want to make the #2. a claim not a directive". The span is certified by the BASE
+// directives set, not by a queue ruling, so neither the queue path nor the corrections file can
+// reach it. See scripts/build-owner-section-moves.mjs — one mechanism, both directions, layered
+// here rather than written into the frozen artifact.
+const MOVES_FILE = path.join(ROOT, 'audit/owner-section-moves.json')
+const outOfDirectives = (fs.existsSync(MOVES_FILE)
+  ? JSON.parse(fs.readFileSync(MOVES_FILE, 'utf8')).moves ?? []
+  : []).filter(m => m.from === 'directives')
+let movedOut = 0
+for (const m of outOfDirectives) {
+  const p = posts.find(x => x.postNum === m.postNum)
+  if (!p || !Array.isArray(p.actionRequests)) continue
+  for (const t of m.certifiedAs ?? [m.text]) {
+    const at = p.actionRequests.findIndex(d => key(d) === key(t))
+    if (at >= 0) { p.actionRequests.splice(at, 1); movedOut++ }
+    if (p.directiveFamilies) delete p.directiveFamilies[key(t)]
+  }
+}
+// REFUSE RATHER THAN UNDER-APPLY, the same rule the rest of this file follows: a move that matched
+// nothing is a ruling that did not happen, and every total below would go on reconciling as if it
+// had.
+const wantOut = outOfDirectives.reduce((n, m) => n + (m.certifiedAs ?? [m.text]).length, 0)
+if (movedOut !== wantOut) {
+  console.error(`\nOwner section moves: ${wantOut} directive(s) to remove, ${movedOut} matched. Refusing.\n`)
+  process.exit(1)
+}
+if (movedOut) console.log(`  owner section moves    : ${movedOut} removed from Directives`)
+
 // ── QA gate ─────────────────────────────────────────────────────────────────
 const all = posts.flatMap(p => (p.actionRequests ?? []).map(t => ({ postNum: p.postNum, text: t })))
 const bodyOf = new Map(posts.map(p => [p.postNum, flat(p.text ?? '')]))
@@ -214,7 +244,10 @@ const checks = [
   // sign-off-shaped one carries family `morale`. These are the five that were not: #1183, #2347,
   // #2543, #2565 and #2567, each a sub-line span in a line certified in another section. Two more
   // are refused and named in the ruling: #1601 and #3660 have WWG1WGA inside a URL.
-  ['directive occurrences = 3,472', all.length === 3472, all.length],
+  // -1 on 2026-08-24: "post 1443 i want to make the #2. a claim not a directive". A line of that
+  // drop's evidence list, between "JC." and "LL." and the same shape as "302s", "Texts" and
+  // "Tarmac" around it — all Claims. It instructs nobody, which is what a Directive is for.
+  ['directive occurrences = 3,471', all.length === 3471, all.length],
   // 486 (round 1) + 455 (round 2) + 24 (round 2's held rows, owner-ruled 2026-08-24) = 965.
   // +5 on 2026-08-24: the WWG1WGA ruling above.
   ['queue rulings applied = 970', queueStats.added + queueStats.already === 970,

@@ -41,14 +41,18 @@ export const CERTIFIED = {
   // 171 of the 178 were already Directives — the archive certifies Q's valedictions — so this is
   // the five that were not. Distinct does not move; "WWG1WGA" was already a wording Directives
   // held 168 times over. Posts +2: #2347 and #2565 had no certified directive at all.
-  directives: { occurrences: 3334, distinct: 1941, posts: 1928 },
+  // -1 on 2026-08-24: #1443's "#2." moves to Claims on the owner's ruling.
+  directives: { occurrences: 3333, distinct: 1941, posts: 1928 },
   // 8,912 -> 8676 across the 2026-08-22 lane-B reviews: paragraph-wide claims an early
   // extractor left sitting on top of the sentence-level records that superseded them, plus the
   // abbreviation-split pairs where one sentence had been certified twice.
   // 8,676 -> 8,631 on 2026-08-23: 45 claims withdrawn, each a sentence inside a passage that is
   // now one Directive.
   // 8,631 -> 10,258: 1,654 claim rulings, 83 of them on spans Claims already certified.
-  claims: { occurrences: 10258, distinct: 7777, posts: 3223 },
+  // 10,258 -> 10,247 on 2026-08-24, three owner section moves: the 13 retiring-members list rows on
+  // #1850 leave Claims (already certified as the member and the party, split — a list row is not an
+  // assertion), and two arrive: #1443's "#2." from Directives and #4784's opening line.
+  claims: { occurrences: 10247, distinct: 7777, posts: 3223 },
   // 843 -> 841 on 2026-08-23: two predictions sat inside quoted passages.
   // 841 -> 934: 94 prediction rulings.
   // 934 -> 935: #417 'News unlocks Map.', ruled a Prediction as well as the Claim it already was.
@@ -91,7 +95,7 @@ export const CERTIFIED = {
  * recount cannot quietly come back.
  */
 export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number; unit: string }> = {
-  claims: { occurrences: 10258, posts: 3223, unit: 'occurrences' },
+  claims: { occurrences: 10247, posts: 3223, unit: 'occurrences' },
   predictions: { occurrences: 935, posts: 672, unit: 'occurrences' },
   // "mentions" is the right word here and the only section where it is: an entity is counted
   // once per resolved mention across the 1,066 canonical entities Q named in prose. The other 135

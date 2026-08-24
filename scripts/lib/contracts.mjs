@@ -98,7 +98,9 @@ export const CANONICAL = {
   // an address is not a word Q wrote. Distinct does not move — "WWG1WGA" and "WWG1WGA!!!" are both
   // wordings Directives already held 168 times over. Posts +2: #2347 and #2565 held no certified
   // directive at all before.
-  directives: { occurrences: 3334, distinct: 1941, posts: 1928 },
+  // -1 on 2026-08-24: #1443's "#2." moves to Claims on the owner's ruling. A line of that drop's
+  // evidence list, the same shape as "302s", "Texts" and "Tarmac" around it — all Claims.
+  directives: { occurrences: 3333, distinct: 1941, posts: 1928 },
   // 4,181 -> 4,188 on 2026-08-13 by owner adjudication, not by a classifier. Six exact
   // occurrences of "Pure evil." / "PURE EVIL." plus "The 'real' racist." in #2917. The corpus
   // search that found them also showed the fuller variants ("These people are pure evil.",
@@ -140,7 +142,10 @@ export const CANONICAL = {
   // and also nine Claims — that scattering is exactly what the ruling removes.
   // 8,631 -> 10,258 on 2026-08-24, round 2 of the queue review: 1,654 claim rulings, 83 of them
   // on spans Claims already certified, so only the shortfall is added.
-  claims: { occurrences: 10258, distinct: 7777, posts: 3223 },
+  // 10,258 -> 10,247 on 2026-08-24, three owner section moves: the 13 retiring-members list rows on
+  // #1850 leave Claims (already certified as the member and the party, split — a list row is not an
+  // assertion), and two arrive: #1443's "#2." from Directives and #4784's opening line.
+  claims: { occurrences: 10247, distinct: 7777, posts: 3223 },
   // 630 -> 595: -73 technical nonpredictions, -56 arguable rows withdrawn to the review
   // backlog, +66 unique moves from Claims, +28 high-confidence predictions the extractor
   // missed. posts 520 -> 490. The 91 withdrawn/held rows are NOT deleted — they sit in

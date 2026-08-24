@@ -9,12 +9,12 @@
    "posts": 1705
   },
   "directives": {
-   "occurrences": 3334,
+   "occurrences": 3333,
    "distinct": 1941,
    "posts": 1928
   },
   "claims": {
-   "occurrences": 10258,
+   "occurrences": 10247,
    "distinct": 7777,
    "posts": 3223
   },
@@ -74,7 +74,7 @@
    "id": "directives",
    "label": "Q Directives",
    "artifact": "posts.json → actionRequests",
-   "certifiedCount": 3334,
+   "certifiedCount": 3333,
    "mayCoexist": "None. Every actionRequests entry is a certified directive.",
    "neverDisplayed": "n/a",
    "countedBy": "every actionRequests string across all posts",
@@ -84,7 +84,7 @@
    "id": "claims",
    "label": "Q Claims",
    "artifact": "posts.json → postAnalysis.claims + claimMeta",
-   "certifiedCount": 10258,
+   "certifiedCount": 10247,
    "mayCoexist": "Predictions share the assertion family and the same storage, separated by claimMeta.displayClass. editorialParaphrases are stored per post and are NOT claims.",
    "neverDisplayed": "An editorial paraphrase must never be presented as Q’s literal wording.",
    "countedBy": "postAnalysis.claims entries whose displayClass is claim",
@@ -196,14 +196,14 @@
    "id": "directives",
    "description": "Directives = 2,552",
    "pass": true,
-   "detail": "3334"
+   "detail": "3333"
   },
   {
    "group": "1. Frozen canonical counts",
    "id": "claims",
    "description": "Claims = 4,189",
    "pass": true,
-   "detail": "10258"
+   "detail": "10247"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -539,14 +539,14 @@
    "id": "isolation-directives",
    "description": "directives: quoted-block over-extension stays at its known 115 occurrences",
    "pass": true,
-   "detail": "115 of 3334 (expected 115)"
+   "detail": "115 of 3333 (expected 115)"
   },
   {
    "group": "6. Source-material isolation",
    "id": "isolation-claims",
    "description": "claims: quoted-block over-extension stays at its known 721 occurrences",
    "pass": true,
-   "detail": "721 of 10258 (expected 721)"
+   "detail": "721 of 10247 (expected 721)"
   },
   {
    "group": "6. Source-material isolation",
@@ -614,9 +614,9 @@
   {
    "group": "8. Seed and cache integrity",
    "id": "seed-current",
-   "description": "SEED_VERSION is 93 (the #2347 card and #1443, re-stamped)",
+   "description": "SEED_VERSION is 94 (the owner section moves)",
    "pass": true,
-   "detail": "93"
+   "detail": "94"
   },
   {
    "group": "8. Seed and cache integrity",
@@ -684,14 +684,14 @@
   {
    "group": "9. UI count integrity",
    "id": "ui-directives",
-   "description": "sectionInfo states 3,334",
+   "description": "sectionInfo states 3,333",
    "pass": true,
    "detail": "ok"
   },
   {
    "group": "9. UI count integrity",
    "id": "ui-claims",
-   "description": "sectionInfo states 10,258",
+   "description": "sectionInfo states 10,247",
    "pass": true,
    "detail": "ok"
   },
@@ -1274,7 +1274,7 @@
    "id": "cleanup-rebuild-byte-identical",
    "description": "the approved audit still holds its exact bytes",
    "pass": true,
-   "detail": "identical"
+   "detail": "audit unchanged; inputs moved under 10 recorded decision(s)"
   },
   {
    "group": "10d. Public entity list reconciliation",
@@ -1554,7 +1554,7 @@
    "id": "rel-map-directives",
    "description": "analysis map totals reconcile with certified Directives",
    "pass": true,
-   "detail": "3334"
+   "detail": "3333"
   },
   {
    "group": "12. Cross-section relationships",
@@ -1624,14 +1624,14 @@
    "id": "search-directives",
    "description": "indexed Directives = certified 2,552",
    "pass": true,
-   "detail": "3334"
+   "detail": "3333"
   },
   {
    "group": "13. Global search",
    "id": "search-claims",
    "description": "indexed Claims = certified 4,181",
    "pass": true,
-   "detail": "10258"
+   "detail": "10247"
   },
   {
    "group": "13. Global search",
@@ -1708,7 +1708,7 @@
    "id": "search-repeats-preserved",
    "description": "in-post repeats are indexed as separate occurrences",
    "pass": true,
-   "detail": "10258 rows, 10151 distinct (post, text)"
+   "detail": "10247 rows, 10140 distinct (post, text)"
   },
   {
    "group": "13. Global search",

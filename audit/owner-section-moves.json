@@ -1,0 +1,203 @@
+{
+ "note": "Spans the owner moved between sections, on 2026-08-24. Layered over the base certified artifacts by apply-claims.mjs and apply-directives.mjs — never written into them, because a correction inside a re-derivable artifact is erased the next time its audit runs.",
+ "ruledOn": "2026-08-24",
+ "totals": {
+  "moves": 15,
+  "outOfClaims": 13,
+  "outOfDirectives": 1,
+  "intoClaims": 2
+ },
+ "moves": [
+  {
+   "postNum": 1443,
+   "from": "directives",
+   "to": "claims",
+   "text": "#2.",
+   "ruledOn": "2026-08-24",
+   "ruling": "post 1443 i want to make the #2. a claim not a directive",
+   "why": "A line of #1443's evidence list, between \"JC.\" and \"LL.\" — the same shape as \"302s\", \"Texts\" and \"Tarmac\" around it, which are Claims. It instructs nobody, which is what a Directive is for.",
+   "certifiedAs": [
+    "#2."
+   ]
+  },
+  {
+   "postNum": 1850,
+   "from": "claims",
+   "to": "entities",
+   "text": "Carol Shea-Porter - Democrat",
+   "alreadyCertifiedInTarget": true,
+   "ruledOn": "2026-08-24",
+   "ruling": "post 1850 lets take all these entities out of claims",
+   "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "certifiedAs": [
+    "Carol Shea-Porter - Democrat"
+   ]
+  },
+  {
+   "postNum": 1850,
+   "from": "claims",
+   "to": "entities",
+   "text": "Jeb Hensarling - Republican",
+   "alreadyCertifiedInTarget": true,
+   "ruledOn": "2026-08-24",
+   "ruling": "post 1850 lets take all these entities out of claims",
+   "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "certifiedAs": [
+    "Jeb Hensarling - Republican"
+   ]
+  },
+  {
+   "postNum": 1850,
+   "from": "claims",
+   "to": "entities",
+   "text": "Ted Poe - Republican",
+   "alreadyCertifiedInTarget": true,
+   "ruledOn": "2026-08-24",
+   "ruling": "post 1850 lets take all these entities out of claims",
+   "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "certifiedAs": [
+    "Ted Poe - Republican"
+   ]
+  },
+  {
+   "postNum": 1850,
+   "from": "claims",
+   "to": "entities",
+   "text": "Al Franken - Democratic U.S. Senate",
+   "alreadyCertifiedInTarget": true,
+   "ruledOn": "2026-08-24",
+   "ruling": "post 1850 lets take all these entities out of claims",
+   "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "certifiedAs": [
+    "Al Franken - Democratic U.S. Senate"
+   ]
+  },
+  {
+   "postNum": 1850,
+   "from": "claims",
+   "to": "entities",
+   "text": "Blake Farenthold - Republican U.S. House",
+   "alreadyCertifiedInTarget": true,
+   "ruledOn": "2026-08-24",
+   "ruling": "post 1850 lets take all these entities out of claims",
+   "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "certifiedAs": [
+    "Blake Farenthold - Republican U.S. House"
+   ]
+  },
+  {
+   "postNum": 1850,
+   "from": "claims",
+   "to": "entities",
+   "text": "Jason Chaffetz - Republican U.S. House",
+   "alreadyCertifiedInTarget": true,
+   "ruledOn": "2026-08-24",
+   "ruling": "post 1850 lets take all these entities out of claims",
+   "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "certifiedAs": [
+    "Jason Chaffetz - Republican U.S. House"
+   ]
+  },
+  {
+   "postNum": 1850,
+   "from": "claims",
+   "to": "entities",
+   "text": "John Conyers, Jr. - Democrat U.S. House",
+   "alreadyCertifiedInTarget": true,
+   "ruledOn": "2026-08-24",
+   "ruling": "post 1850 lets take all these entities out of claims",
+   "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "certifiedAs": [
+    "John Conyers, Jr. - Democrat U.S. House"
+   ]
+  },
+  {
+   "postNum": 1850,
+   "from": "claims",
+   "to": "entities",
+   "text": "Louise Slaughter - Democrat U.S. House",
+   "alreadyCertifiedInTarget": true,
+   "ruledOn": "2026-08-24",
+   "ruling": "post 1850 lets take all these entities out of claims",
+   "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "certifiedAs": [
+    "Louise Slaughter - Democrat U.S. House"
+   ]
+  },
+  {
+   "postNum": 1850,
+   "from": "claims",
+   "to": "entities",
+   "text": "Patrick Meehan - Republican U.S. House",
+   "alreadyCertifiedInTarget": true,
+   "ruledOn": "2026-08-24",
+   "ruling": "post 1850 lets take all these entities out of claims",
+   "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "certifiedAs": [
+    "Patrick Meehan - Republican U.S. House"
+   ]
+  },
+  {
+   "postNum": 1850,
+   "from": "claims",
+   "to": "entities",
+   "text": "Patrick J. Tiberi - Republican U.S. House",
+   "alreadyCertifiedInTarget": true,
+   "ruledOn": "2026-08-24",
+   "ruling": "post 1850 lets take all these entities out of claims",
+   "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "certifiedAs": [
+    "Tiberi - Republican U.S."
+   ],
+   "certifiedShorterThanTheLine": true
+  },
+  {
+   "postNum": 1850,
+   "from": "claims",
+   "to": "entities",
+   "text": "Thad Cochran - Republican U.S. Senate",
+   "alreadyCertifiedInTarget": true,
+   "ruledOn": "2026-08-24",
+   "ruling": "post 1850 lets take all these entities out of claims",
+   "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "certifiedAs": [
+    "Thad Cochran - Republican U.S. Senate"
+   ]
+  },
+  {
+   "postNum": 1850,
+   "from": "claims",
+   "to": "entities",
+   "text": "Tim Murphy - Republican U.S. House",
+   "alreadyCertifiedInTarget": true,
+   "ruledOn": "2026-08-24",
+   "ruling": "post 1850 lets take all these entities out of claims",
+   "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "certifiedAs": [
+    "Tim Murphy - Republican U.S. House"
+   ]
+  },
+  {
+   "postNum": 1850,
+   "from": "claims",
+   "to": "entities",
+   "text": "Trent Franks - Republican U.S. House",
+   "alreadyCertifiedInTarget": true,
+   "ruledOn": "2026-08-24",
+   "ruling": "post 1850 lets take all these entities out of claims",
+   "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "certifiedAs": [
+    "Trent Franks - Republican U.S. House"
+   ]
+  },
+  {
+   "postNum": 4784,
+   "from": null,
+   "to": "claims",
+   "text": "Lisa Barsoomian _former Bill Clinton attorney",
+   "ruledOn": "2026-08-24",
+   "ruling": "Post 4784: Lisa Barsoomian _former Bill Clinton attorney lets highlight as a claim",
+   "why": "The drop's opening line. It asserts who she is; the two lines under it — the scrubbed case and \"Wife of Rod Rosenstein\" — are already Claims."
+  }
+ ]
+}

@@ -125,7 +125,10 @@ const checks = [
   // 8,929 since the 2026-08-21 owner ruling on #4923. "Unchanged" means this step must not invent
   // or drop a claim while turning stored text into runtime spans — it is a passthrough assertion,
   // so it tracks whatever apply-claims.mjs certified rather than pinning one batch's figure.
-  ['claims unchanged = 10,558', counts.claims === 10558, counts.claims],
+  // 10,547 since the 2026-08-24 section moves. A passthrough assertion, as the others here: it
+  // tracks whatever apply-claims.mjs certified and says only that THIS step must not add or drop
+  // one while turning stored text into runtime spans.
+  ['claims unchanged = 10,547', counts.claims === 10547, counts.claims],
   // 843 since the 2026-08-21 ruling on #4910 ("Freedom of information [truth] = END").
   // 941 since the 2026-08-24 UPDATED-report ruling pulled #1443's "DECLAS_Public[3]" out of
   // Predictions and left it certified as a Claim. A passthrough assertion, as above: it tracks

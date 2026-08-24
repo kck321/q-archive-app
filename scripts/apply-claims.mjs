@@ -91,6 +91,22 @@ final.rows = keptRows
 // assertions, and an audit artifact frozen under an older quote detector cannot overrule that —
 // and it is what apply-context-units.mjs reads to withdraw the span from Context, because Context
 // means "reviewed, and in no semantic category" and a ruled line is no longer that.
+// ── SPANS THE OWNER MOVED BETWEEN SECTIONS (2026-08-24) ─────────────────────
+//
+// The queue path adds; the corrections file withdraws a queue ruling. Neither can touch a span the
+// BASE artifact certified, and three rulings of 2026-08-24 do exactly that — "#2." leaves
+// Directives for Claims, thirteen list rows on #1850 leave Claims for the Entities they already
+// are, and #4784's opening line joins Claims. See scripts/build-owner-section-moves.mjs.
+//
+// `certifiedAs` is what the archive actually holds, which is not always the line the ruling names:
+// the splitter cut "Patrick J. Tiberi - Republican U.S. House" at both abbreviations and Claims
+// holds "Tiberi - Republican U.S.". Removing by the ruling's wording would have removed nothing and
+// said it had.
+const MOVES_FILE = path.join(ROOT, 'audit/owner-section-moves.json')
+const sectionMoves = fs.existsSync(MOVES_FILE)
+  ? JSON.parse(fs.readFileSync(MOVES_FILE, 'utf8')).moves ?? []
+  : []
+
 const queueRulings = loadQueueRulings(ROOT)
 //
 // INSERTION IS OCCURRENCE-AWARE, NOT KEY-AWARE. Q writes "Fantasy land." four times in #111 and
@@ -170,6 +186,45 @@ if (abbrev) {
   console.log(`
   abbreviation repair: ${abbrevRepaired} claim spans repaired, ${abbrevAbsorbed} fragments absorbed`)
 }
+
+// ── THE OWNER'S SECTION MOVES, OUT OF CLAIMS AND INTO THEM ──────────────────
+//
+// AFTER the abbreviation repair, and that placement is the whole of it. The repair REWRITES a
+// truncated span into the full sentence, so #1850's "Tiberi - Republican U.S." only becomes
+// "Patrick J. Tiberi - Republican U.S. House" here. Run before it, this removed 4 of the 13 rows
+// the owner named and the guard below said so.
+// ── the owner's section moves, out of Claims and into them ──────────────────
+const movedOutKeys = new Set(sectionMoves.filter(m => m.from === 'claims')
+  .flatMap(m => (m.certifiedAs ?? [m.text]).map(t => `${m.postNum}|${key(t)}`)))
+const beforeMoveOut = final.rows.length
+final.rows = final.rows.filter(r => !movedOutKeys.has(`${r.postNum}|${key(r.exactText)}`))
+const movedOut = beforeMoveOut - final.rows.length
+// REFUSE RATHER THAN UNDER-APPLY. A move that matched nothing is a ruling that did not happen, and
+// the count below would have gone on reconciling as if it had.
+if (movedOut !== movedOutKeys.size) {
+  console.error(`\nOwner section moves: ${movedOutKeys.size} claim occurrence(s) to remove, ${movedOut} matched. Refusing.\n`)
+  process.exit(1)
+}
+let movedIn = 0
+for (const m of sectionMoves.filter(x => x.to === 'claims' && x.from !== 'claims')) {
+  const p = posts.find(x => x.postNum === m.postNum)
+  if (!p) { console.error(`\nOwner section moves: #${m.postNum} is not a drop. Refusing.\n`); process.exit(1) }
+  if (final.rows.some(r => r.postNum === m.postNum && key(r.exactText) === key(m.text))) continue
+  // Q'S OWN LINE, taken from the drop rather than from the ruling — the archive never stores a
+  // retyped version of what Q wrote.
+  const line = (p.text ?? '').split('\n').map(l => l.trim()).find(l => key(l) === key(m.text))
+  if (!line) { console.error(`\nOwner section moves: ${JSON.stringify(m.text)} is not a line in #${m.postNum}. Refusing.\n`); process.exit(1) }
+  final.rows.push({
+    postNum: m.postNum, postId: p.id, exactText: line,
+    primaryClass: 'claim', isPrediction: false, isConclusion: false,
+    checkable: false, sourceProvided: false,
+    telegraphic: line.split(/\s+/).filter(Boolean).length <= 4,
+    confidence: 'OWNER_ADJUDICATED',
+    provenance: `owner section move ${m.ruledOn} — "${m.ruling}"`,
+  })
+  movedIn++
+}
+
 
 const claimsByPost = new Map()
 for (const r of final.rows) {
@@ -334,7 +389,12 @@ const checks = [
   // 8,912 + 1,646 from ROUND 2 of the same review = 10,558. The owner ruled 1,654 more lines
   // Claims and 94 more Predictions; 70 claim and 3 prediction occurrences were already certified,
   // so only the shortfall is added.
-  ['claim occurrences = 10,558', allClaims.length === 10558, allClaims.length],
+  // -11 on 2026-08-24, from three owner section moves. -13: the retiring-members list rows on
+  // #1850 leave Claims — each names a member and a party, is already certified as both (split), and
+  // a list row is not an assertion the drop is making. +2: #1443's "#2." arrives from Directives
+  // ("i want to make the #2. a claim not a directive") and #4784's opening line
+  // "Lisa Barsoomian _former Bill Clinton attorney" is ruled a Claim.
+  ['claim occurrences = 10,547', allClaims.length === 10547, allClaims.length],
   // 4,782 + 1,654 = 6,436 claims; 250 + 94 = 344 predictions, across both rounds.
   // -1 claim, -1 prediction on 2026-08-24: two round-2 rulings the owner overrode on the UPDATED
   // report. lib/queueRulings.mjs drops them before any materialiser sees them, so the round-2
@@ -371,7 +431,11 @@ const checks = [
   // repair recurs across drops - "Goodbye, Mr. Rosenstein." is six posts and one key, and the
   // #1319/#1850 congressional list is the same eleven wordings twice.
   // +1,210: the 1,646 new occurrences carry 1,210 wordings Claims did not already hold.
-  ['distinct = 8,024', distinct.size === 8024, distinct.size],
+  // +1, and every key is accounted for. The 13 removals lose NO key: the same list is pasted on
+  // #1319 as well, so every one of those wordings is still certified there. Of the two arrivals,
+  // "#2." is already a claim key on 23 other drops and opens none; "Lisa Barsoomian _former Bill
+  // Clinton attorney" occurs once in the archive and opens its own.
+  ['distinct = 8,025', distinct.size === 8025, distinct.size],
   // +1: 17 posts gain their first claim, 16 posts lose their last one.
   // -3: #483, #2695 and #3203 each held ONE claim and it was the quoted question, so those
   // drops leave the Claims post set entirely. #2420 and #2776 keep other claims and stay.
@@ -434,7 +498,10 @@ const checks = [
   // longer text is correctly no longer telegraphic.
   // +1,128. The queue is overwhelmingly short label-like lines, and telegraphic is not a
   // judgement — it is "four words or fewer" — so it moves with the batch by construction.
-  ['telegraphic = 4,671', telegraphic === 4671, telegraphic],
+  // -3: four of the removed rows carried it — "Carol Shea-Porter - Democrat", "Jeb Hensarling -
+  // Republican", "Ted Poe - Republican" and "Tiberi - Republican U.S." are each four words or
+  // fewer — and "#2." arrives carrying it.
+  ['telegraphic = 4,668', telegraphic === 4668, telegraphic],
   // 13 + 37: the queue emitted one row per UNIT, so a line Q wrote twice arrives twice and is
   // certified twice. Collapsing them would have dropped 37 real occurrences.
   // +80: round 2 carries more lines Q writes twice in one drop, and each repeat is a real
@@ -454,7 +521,7 @@ const checks = [
   // 2,552 + 485 arriving from the same owner ruling. This is a cross-section CHECK, not a source:
   // apply-directives.mjs runs immediately before this step and owns the number.
   // 3,442 + 24 rows round 2 held for stating no instruction, ruled in by the owner on 2026-08-24.
-  ['Directives now 3,472', directives === 3472, directives],
+  ['Directives now 3,471', directives === 3471, directives],
 ]
 
 console.log('\nAPPLY CERTIFIED CLAIMS\n')
@@ -466,6 +533,7 @@ console.log(`\n  from the unhighlighted-sentence queue (owner rulings 2026-08-20
 console.log(`    claims      +${stats2020.claimsAdded.toLocaleString()}  (${stats2020.claimsAlready} already certified)`)
 console.log(`    predictions +${stats2020.predsAdded.toLocaleString()}  (${stats2020.predsAlready} already certified)`)
 console.log(`    withdrawn from Claims because the owner ruled them Predictions: ${crossPulled}`)
+console.log(`    owner section moves: ${movedOut} out of Claims, ${movedIn} into Claims`)
 console.log('\n  QA GATE')
 let failed = 0
 for (const [label, ok, got] of checks) { if (!ok) failed++; console.log(`    ${ok ? 'PASS' : 'FAIL'}  ${label.padEnd(36)} ${got}`) }

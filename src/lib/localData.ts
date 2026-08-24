@@ -513,7 +513,12 @@ export const OVERLAY_REPAIR = 1
 //     6,321, entities 1,235 -> 1,214 rows and 8,975 -> 8,821 mentions. A returning reader holding
 //     87 would keep the pre-review paint on 41 drops and a registry counting one written word up
 //     to five times, so the seed has to move.
-export const SEED_VERSION = 93   // 93: THE SAME BATCH, RE-STAMPED. 92 was recorded and then posts.json
+export const SEED_VERSION = 94   // 94: THE OWNER'S SECTION MOVES, 2026-08-24. #1443's "#2." moves
+                                 //     from Directives to Claims; the 13 retiring-members list rows
+                                 //     on #1850 leave Claims for the Entities they already are; and
+                                 //     #4784's opening line becomes a Claim. A reader on 93 keeps
+                                 //     "#2." green, thirteen amber list rows and no amber on #4784.
+                                 // 93: THE SAME BATCH, RE-STAMPED. 92 was recorded and then posts.json
                                  //     CHANGED AGAIN inside it — the #2347 Q entities landed after the
                                  //     bump, and seed-fingerprint.json was re-recorded at 92 rather
                                  //     than bumped. A browser that had loaded 92 in that window kept a
