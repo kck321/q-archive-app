@@ -60,8 +60,13 @@ const checks = [
   //
   // What the check is FOR is unchanged and still asserted: the layer is certified and it is not
   // painted. Withdrawing units to achieve the visual change would still fail it.
-  ['1,605 context units still certified', ctx.units === 1605, ctx.units],
-  ['context still spread across 795 posts', ctx.withUnits === 795, ctx.withUnits],
+  // 1,605 -> 468 and 795 -> 323 on 2026-08-24, and for the same reason the note above gives:
+  // ROUND 2 of the unhighlighted-queue review reclassified 1,154 more context units into Claims,
+  // Directives, Entities and the rest, and a context unit that becomes a certified category stops
+  // being a context unit. Nothing was deleted - apply-context-units.mjs counts every one of them
+  // as promoted and its own gate still reconciles to the certified 4,902.
+  ['468 context units still certified', ctx.units === 468, ctx.units],
+  ['context still spread across 323 posts', ctx.withUnits === 323, ctx.withUnits],
   // EMPHASIS IS RETIRED (owner ruling, 2026-08-21) — the section, its data and its highlights.
   // These two used to assert that 4,236 units across 1,356 posts were still certified while not
   // being painted, which is the opposite of what must now be true. A gate asserting a retired
@@ -69,7 +74,8 @@ const checks = [
   ['emphasis is retired: no unit is certified', emp.units === 0, emp.units],
   ['emphasis is retired: no post carries one', emp.withUnits === 0, emp.withUnits],
   // 13 -> 12: one exception left the set when its span was re-adjudicated by the lane-B reviews.
-  ['12 reconstruction exceptions still tracked', exceptions.count === 12, exceptions.count],
+  // 12 -> 3: nine more multi-line reconstructions were ruled into a section by round 2.
+  ['3 reconstruction exceptions still tracked', exceptions.count === 3, exceptions.count],
 
   // ── the render half: neither surface paints them ──────────────────────────
   ['detail surface does not paint contextUnits',

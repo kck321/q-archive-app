@@ -6827,3 +6827,111 @@ off the `full` validation floor. (`8727a10`)
 **OPEN — owner to answer:** does the XRP address need a **destination tag**? If it is an exchange
 deposit address it does, and a tagless send is lost. The network line claims nothing either way
 until confirmed.
+
+---
+
+## 2026-08-24 — Round 2 of the unhighlighted queue: 6,419 reviewed rows into the app
+
+**"i have the rest of the unhighlighted areas in a file on my desktop … the first sheet are all
+things i want to add into the resolution center and then the other tabs/sheets are self
+explainitory. if i have anything that is already highlighted in the app then lets not double
+highlight … i want entities and brackets to always be on top of whatever category they are
+highlighted on. at the end i would like a report on an excel file of any issues you found."**
+
+`Q_Unhighlighted FINAL 2.xlsx`, eight sheets, 6,419 rows. The workbook and a normalised CSV are
+committed as the source of record; `build-unhighlighted-owner-rulings-2.mjs` turns them into the
+one canonical artifact six materialisers read through `lib/queueRulings.mjs`.
+
+```
+  6,419  reviewed
+  2,775  applied as new rulings
+  3,261  ALREADY certified in the section named — no second record
+    238  Resolution Center
+    119  duplicate rows dropped
+    152  held for the owner
+      1  refused
+```
+
+**DO NOT DOUBLE-HIGHLIGHT is the whole pass, and the test reads the CERTIFIED ARTIFACTS, not the
+painted DOM.** An entity or bracket painted on top of a claim hides the claim from a crawler, so a
+DOM-based test would have duplicated every one of them. 2,099 of the 2,123 URL rows were already
+live links; 449 of the 492 bracket rows were already red.
+
+### Counts
+
+| | before | after |
+|---|---:|---:|
+| Questions | 6,321 | 6,327 |
+| Directives | 2,902 | 3,304 |
+| Claims | 8,631 | 10,258 |
+| Predictions | 841 | 934 |
+| Entities | 1,223 / 8,831 | 1,532 / 9,271 |
+| Codes | 1,957 | 1,986 |
+| Resolution Center | 115 | 353 |
+| SEED_VERSION | 89 | 90 |
+
+**222/222 invariants. Certification manifest re-verified at seed 90.**
+
+### Five gates refused, and each was a real finding
+
+**apply-directives** refused an unfamilied batch. 371 of round 2's directives fall outside both the
+detector and round 1's rules, in three shapes: `WWG1WGA` and "We, the PEOPLE" (morale), the hashtag
+(dissemination — Q posts one so the board carries it), the alert marker `::::WARNING::::`
+(attention). **24 rows are HELD**: #953's `#1`/`#2` list markers, the `_END_` marks, two comms
+strings and one assertion. A directive is where Q tells the reader to act; a counter tells nobody
+anything, and `queueDirectiveFamily.mjs` says in its own header that a silent catch-all is the one
+thing it must not become.
+
+**apply-entities** held 461 spans for want of an identity — a ruling names a SPAN, a certified row
+needs a NAME and a TYPE. 244 are three lists Q pastes verbatim: the central banks of #135–#138,
+"THE BRIDGE: PODESTA GROUP" in #1515, the retiring-Congress list in #1319/#1850. Each line names
+**two** things, so each is SPLIT and both names are read off Q's own line rather than supplied.
+128 wordings stay held.
+
+**apply-entity-cleanup** refused an unrecognised tree, correctly — its replay is not a decision.
+The delta is recorded beside the 2026-08-17 approval, which stands unedited. **Rachel Maddow** is
+named as the one row that now survives the cleanup: dormant while every mention she had was a URL
+slug, and named in prose by #1515.
+
+**apply-context-units** refused a half-applied abbreviation repair. 12 of the 28 recorded Context
+repairs describe spans Context no longer holds, because a ruled line is no longer "reviewed, and in
+no semantic category". `abbrevRepairs.mjs` now separates *not there to fix* from *not fixed*, and
+both numbers are stated rather than tolerated.
+
+**source-material isolation** moved 162 occurrences, every one a line beginning with Q's own `>`
+bullet — #3838's `>Race / >Religion / >Class`, #1749's `>GOOD v EVIL`. `sourceLines()` reads a
+leading `>` as a quotation marker. Same cause as the +1 already recorded for #4861: the certified
+sections are right, the detector is wrong, and the error still runs in the safe direction.
+
+### Two defects the pass exposed, both fixed
+
+**Entities and brackets now stay on top inside a question.** Both renderers already put brackets and
+entities above every other category — except in the question branch, where a name that was ALSO a
+Theme or a Claim rotated through two colours and rendered solid cyan four lines down the same page.
+Identical branch added to `PostDetail.tsx` and `postHighlight.tsx`, because those two surfaces have
+shown different colours for the same certified data before. (`91312ef`)
+
+**The 44 addresses Q typed with a space after the scheme are links again.** `https:// wikileaks.org/…`
+— where the host began with `www.` linkify's bare-www alternative caught it and the address was
+live, which is why this went unnoticed; where it did not, **23 addresses were plain grey text**.
+Worse: no `url` seg existed, so the renderer's URL coalescing never ran, and the entity "Clinton"
+certified inside the slug split #866 into three nodes — a reader got an anchor over
+`https:// wikileaks.org/` **pointing at the site root**. A link that looks like it worked and goes
+to the wrong page. Detection now accepts `[ \t]{0,3}` after the scheme in both renderers and in
+linkify. The link text keeps Q's space; only the href drops it. New gate:
+`test-spaced-scheme-links.mjs`. (`5fa3c87`)
+
+### One trap worth remembering
+
+`build-unhighlighted-owner-rulings-2.mjs` reads `public/data`, and `public/data` is where its
+rulings land. Build → apply → build again, and every ruling reads back as "already certified" and
+**deletes itself** — questions went 8 rulings, then 0. Subtracting the previous output was tried and
+is the wrong shape: it cannot tell a rebuilt bundle from a fresh one, so it suppressed genuine prior
+evidence and handed 387 live highlights back for re-ruling. The script now **refuses to run unless
+`public/data` is exactly what is committed**.
+
+### Deliverable
+
+`audit/unhighlighted-sentences/Q_Unhighlighted_FINAL_2_REPORT.xlsx`, seven sheets, with a copy on
+the Desktop. Generated from the artifacts so it cannot drift from what was applied: Summary ·
+Already highlighted · Held for you · Data problems · How it was read · Fixes made · Entity lists.
