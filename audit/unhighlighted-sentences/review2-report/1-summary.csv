@@ -15,3 +15,10 @@ Q Predictions,841 → 934,94 rulings
 Q Entities,"1,223 → 1,532 identities · 8,831 → 9,271 mentions",499 rulings
 Q Codes & Brackets,"1,957 → 1,986",43 rulings
 Resolution Center,115 → 353,238 rows from sheet 1
+,,
+THE 2026-08-24 ROUND — what you asked for after the first report,,
+"Entities and brackets, solid in front","11,254 spans / 2,142 drops","Where an Entity or a Bracket covers the same characters as another category it now renders OPAQUE, so nothing shows through and the front layer is unmistakable. Alone, it keeps the softer fill — there is nothing to be in front of."
+Other two-layer overlaps,"1,676 spans / 1,058 drops","Sheet 8. The pair you named — Claim over Prediction — is real but there are only THREE. What you are seeing is Claim + Theme (593), and Theme is indigo, one hue from the violet Predictions use."
+Themes inside another highlight,"2,153 spans / 1,168 drops",Sheet 9. This is the purple.
+"Every entity has a hover, all one shape","1,532","358 had none at all. All 1,532 now read the same way, and the per-post layer (842 entities, 3,693 records) is untouched."
+Q = Alice,93 occurrences / 75 drops,"Alice 5 → 98 mentions. 4,534 sign-off lines excluded as you asked; 65 more held because they name something else."

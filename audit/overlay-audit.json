@@ -4,8 +4,8 @@
  "ruledOn": "2026-08-24",
  "totals": {
   "entityOrBracketOverAnother": {
-   "spans": 11174,
-   "posts": 2132
+   "spans": 11254,
+   "posts": 2142
   },
   "twoLayersNeitherEntityNorBracket": {
    "spans": 1676,
@@ -1339,6 +1339,16 @@
   {
    "postNum": 1072,
    "span": "CA",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
+   "postNum": 1075,
+   "span": "Q",
    "kinds": [
     "claim",
     "namedEntity"
@@ -5021,6 +5031,16 @@
    ],
    "top": "namedEntity",
    "behind": "question"
+  },
+  {
+   "postNum": 1264,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
   },
   {
    "postNum": 1265,
@@ -16620,6 +16640,16 @@
   },
   {
    "postNum": 1601,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
+   "postNum": 1601,
    "span": "Patriot",
    "kinds": [
     "namedEntity",
@@ -18637,6 +18667,16 @@
    "behind": "prediction"
   },
   {
+   "postNum": 1697,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
    "postNum": 1698,
    "span": "[name]",
    "kinds": [
@@ -20378,6 +20418,16 @@
    "behind": "claim"
   },
   {
+   "postNum": 1770,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
    "postNum": 1773,
    "span": "JA",
    "kinds": [
@@ -20440,6 +20490,16 @@
   },
   {
    "postNum": 1777,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
+   "postNum": 1777,
    "span": "POTUS",
    "kinds": [
     "namedEntity",
@@ -20447,6 +20507,16 @@
    ],
    "top": "namedEntity",
    "behind": "request"
+  },
+  {
+   "postNum": 1777,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
   },
   {
    "postNum": 1783,
@@ -24217,6 +24287,16 @@
    "behind": "claim"
   },
   {
+   "postNum": 1865,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
    "postNum": 1866,
    "span": "POTUS",
    "kinds": [
@@ -24418,8 +24498,28 @@
    "behind": "claim"
   },
   {
+   "postNum": 1872,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
    "postNum": 1873,
    "span": "Hoover Dam",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
+   "postNum": 1873,
+   "span": "Q",
    "kinds": [
     "namedEntity",
     "question"
@@ -27746,6 +27846,16 @@
    ],
    "top": "namedEntity",
    "behind": "request"
+  },
+  {
+   "postNum": 1951,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
   },
   {
    "postNum": 1953,
@@ -32056,6 +32166,16 @@
   },
   {
    "postNum": 2089,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
+   "postNum": 2089,
    "span": "AJ",
    "kinds": [
     "namedEntity",
@@ -32159,12 +32279,32 @@
   },
   {
    "postNum": 2100,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
+   "postNum": 2100,
    "span": "[effort to prevent…]",
    "kinds": [
     "bracketCode",
     "question"
    ],
    "top": "bracketCode",
+   "behind": "question"
+  },
+  {
+   "postNum": 2100,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
    "behind": "question"
   },
   {
@@ -32220,6 +32360,16 @@
    "behind": "question"
   },
   {
+   "postNum": 2101,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "request"
+   ],
+   "top": "namedEntity",
+   "behind": "request"
+  },
+  {
    "postNum": 2102,
    "span": "Mueller",
    "kinds": [
@@ -32262,6 +32412,16 @@
   {
    "postNum": 2102,
    "span": "Free Speech Systems LLC",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
+   "postNum": 2102,
+   "span": "Q",
    "kinds": [
     "namedEntity",
     "question"
@@ -34739,6 +34899,16 @@
   },
   {
    "postNum": 2206,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "request"
+   ],
+   "top": "namedEntity",
+   "behind": "request"
+  },
+  {
+   "postNum": 2206,
    "span": "[2]",
    "kinds": [
     "bracketCode",
@@ -35627,6 +35797,16 @@
    ],
    "top": "namedEntity",
    "behind": "request"
+  },
+  {
+   "postNum": 2234,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
   },
   {
    "postNum": 2235,
@@ -40548,6 +40728,16 @@
    "behind": "claim"
   },
   {
+   "postNum": 2383,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "request"
+   ],
+   "top": "namedEntity",
+   "behind": "request"
+  },
+  {
    "postNum": 2386,
    "span": "4chan",
    "kinds": [
@@ -40608,6 +40798,16 @@
    "behind": "prediction"
   },
   {
+   "postNum": 2387,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
    "postNum": 2388,
    "span": "D party",
    "kinds": [
@@ -40630,6 +40830,16 @@
   {
    "postNum": 2388,
    "span": "Don McGahn",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
+   "postNum": 2388,
+   "span": "Q",
    "kinds": [
     "namedEntity",
     "question"
@@ -41769,8 +41979,28 @@
    "behind": "claim"
   },
   {
+   "postNum": 2422,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
    "postNum": 2424,
    "span": "POTUS",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
+   "postNum": 2428,
+   "span": "Q",
    "kinds": [
     "namedEntity",
     "question"
@@ -43432,6 +43662,16 @@
   },
   {
    "postNum": 2499,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "request"
+   ],
+   "top": "namedEntity",
+   "behind": "request"
+  },
+  {
+   "postNum": 2499,
    "span": "[",
    "kinds": [
     "bracketCode",
@@ -43773,6 +44013,16 @@
    "behind": "request"
   },
   {
+   "postNum": 2509,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
    "postNum": 251,
    "span": "Hussein",
    "kinds": [
@@ -43781,6 +44031,16 @@
    ],
    "top": "namedEntity",
    "behind": "request"
+  },
+  {
+   "postNum": 2510,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
   },
   {
    "postNum": 2510,
@@ -43875,6 +44135,26 @@
   {
    "postNum": 2519,
    "span": "WASH POST",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
+   "postNum": 2519,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
+   "postNum": 2519,
+   "span": "Q",
    "kinds": [
     "namedEntity",
     "question"
@@ -44431,6 +44711,16 @@
   },
   {
    "postNum": 2546,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
+   "postNum": 2546,
    "span": "FBI",
    "kinds": [
     "namedEntity",
@@ -44642,6 +44932,16 @@
   },
   {
    "postNum": 2549,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
+   "postNum": 2549,
    "span": "Huber",
    "kinds": [
     "namedEntity",
@@ -44678,6 +44978,16 @@
     "question"
    ],
    "top": "bracketCode",
+   "behind": "question"
+  },
+  {
+   "postNum": 2549,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
    "behind": "question"
   },
   {
@@ -44819,6 +45129,16 @@
    ],
    "top": "namedEntity",
    "behind": "claim"
+  },
+  {
+   "postNum": 2556,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
   },
   {
    "postNum": 2556,
@@ -45726,6 +46046,16 @@
    ],
    "top": "namedEntity",
    "behind": "request"
+  },
+  {
+   "postNum": 2604,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
   },
   {
    "postNum": 2604,
@@ -47014,6 +47344,16 @@
    ],
    "top": "namedEntity",
    "behind": "question"
+  },
+  {
+   "postNum": 2657,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
   },
   {
    "postNum": 2657,
@@ -49719,6 +50059,16 @@
   },
   {
    "postNum": 2715,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
+   "postNum": 2715,
    "span": "WASH POST",
    "kinds": [
     "namedEntity",
@@ -50854,6 +51204,16 @@
   },
   {
    "postNum": 2788,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
+   "postNum": 2788,
    "span": "4ch",
    "kinds": [
     "namedEntity",
@@ -50865,6 +51225,16 @@
   {
    "postNum": 2788,
    "span": "8ch",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
+   "postNum": 2788,
+   "span": "Q",
    "kinds": [
     "namedEntity",
     "question"
@@ -50894,7 +51264,27 @@
   },
   {
    "postNum": 2788,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
+   "postNum": 2788,
    "span": "POTUS",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
+   "postNum": 2788,
+   "span": "Q",
    "kinds": [
     "namedEntity",
     "question"
@@ -52539,6 +52929,16 @@
   },
   {
    "postNum": 2864,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
+   "postNum": 2864,
    "span": "POTUS",
    "kinds": [
     "claim",
@@ -53280,6 +53680,16 @@
   {
    "postNum": 2930,
    "span": "POTUS",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
+   "postNum": 2930,
+   "span": "Q",
    "kinds": [
     "claim",
     "namedEntity"
@@ -59485,6 +59895,16 @@
   },
   {
    "postNum": 3279,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
+   "postNum": 3279,
    "span": "[THEM]",
    "kinds": [
     "bracketCode",
@@ -59605,8 +60025,28 @@
    "behind": "question"
   },
   {
+   "postNum": 3309,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
    "postNum": 3310,
    "span": "POTUS",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
+   "postNum": 3310,
+   "span": "Q",
    "kinds": [
     "claim",
     "namedEntity"
@@ -59627,6 +60067,16 @@
   {
    "postNum": 3312,
    "span": "media matters",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
+   "postNum": 3312,
+   "span": "Q",
    "kinds": [
     "namedEntity",
     "question"
@@ -60217,7 +60667,28 @@
   },
   {
    "postNum": 335,
-   "span": "[Q]",
+   "span": "[",
+   "kinds": [
+    "bracketCode",
+    "claim"
+   ],
+   "top": "bracketCode",
+   "behind": "claim"
+  },
+  {
+   "postNum": 335,
+   "span": "Q",
+   "kinds": [
+    "bracketCode",
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity+bracketCode",
+   "behind": "claim"
+  },
+  {
+   "postNum": 335,
+   "span": "]",
    "kinds": [
     "bracketCode",
     "claim"
@@ -63180,6 +63651,16 @@
   },
   {
    "postNum": 3581,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
+   "postNum": 3581,
    "span": "Durham",
    "kinds": [
     "namedEntity",
@@ -63240,6 +63721,16 @@
   },
   {
    "postNum": 3581,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
+   "postNum": 3581,
    "span": "Patriots",
    "kinds": [
     "namedEntity",
@@ -63276,6 +63767,16 @@
     "claim"
    ],
    "top": "bracketCode",
+   "behind": "claim"
+  },
+  {
+   "postNum": 3584,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
    "behind": "claim"
   },
   {
@@ -63697,6 +64198,16 @@
   },
   {
    "postNum": 3588,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
+   "postNum": 3588,
    "span": "FVEY",
    "kinds": [
     "claim",
@@ -63908,6 +64419,16 @@
     "claim"
    ],
    "top": "bracketCode",
+   "behind": "claim"
+  },
+  {
+   "postNum": 3588,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
    "behind": "claim"
   },
   {
@@ -65688,6 +66209,16 @@
   },
   {
    "postNum": 3667,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
+   "postNum": 3667,
    "span": "POTUS",
    "kinds": [
     "namedEntity",
@@ -65759,6 +66290,16 @@
   {
    "postNum": 3673,
    "span": "Durham",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
+   "postNum": 3673,
+   "span": "Q",
    "kinds": [
     "namedEntity",
     "question"
@@ -66060,6 +66601,16 @@
    ],
    "top": "namedEntity",
    "behind": "question"
+  },
+  {
+   "postNum": 3688,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "request"
+   ],
+   "top": "namedEntity",
+   "behind": "request"
   },
   {
    "postNum": 3688,
@@ -68606,6 +69157,16 @@
    "behind": "request"
   },
   {
+   "postNum": 3800,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "request"
+   ],
+   "top": "namedEntity",
+   "behind": "request"
+  },
+  {
    "postNum": 3808,
    "span": "Whistleblower",
    "kinds": [
@@ -68914,6 +69475,16 @@
   {
    "postNum": 3836,
    "span": "Hussein",
+   "kinds": [
+    "namedEntity",
+    "request"
+   ],
+   "top": "namedEntity",
+   "behind": "request"
+  },
+  {
+   "postNum": 3836,
+   "span": "Q",
    "kinds": [
     "namedEntity",
     "request"
@@ -72978,6 +73549,16 @@
    "behind": "claim"
   },
   {
+   "postNum": 3969,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
    "postNum": 397,
    "span": "[             f   ]",
    "kinds": [
@@ -75918,6 +76499,16 @@
     "question"
    ],
    "top": "bracketCode",
+   "behind": "question"
+  },
+  {
+   "postNum": 4136,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
    "behind": "question"
   },
   {
@@ -81531,6 +82122,16 @@
   },
   {
    "postNum": 4283,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
+   "postNum": 4283,
    "span": "[you]",
    "kinds": [
     "bracketCode",
@@ -83508,6 +84109,16 @@
   {
    "postNum": 4333,
    "span": "HRC",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
+   "postNum": 4333,
+   "span": "Q",
    "kinds": [
     "namedEntity",
     "question"
@@ -85647,6 +86258,16 @@
   {
    "postNum": 4449,
    "span": "Twitter",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
+   "postNum": 4449,
+   "span": "Q",
    "kinds": [
     "claim",
     "namedEntity"
@@ -92296,6 +92917,16 @@
   },
   {
    "postNum": 4622,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
+   "postNum": 4622,
    "span": "[resources]",
    "kinds": [
     "bracketCode",
@@ -96048,6 +96679,16 @@
   },
   {
    "postNum": 4734,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "request"
+   ],
+   "top": "namedEntity",
+   "behind": "request"
+  },
+  {
+   "postNum": 4734,
    "span": "[sniffers]",
    "kinds": [
     "bracketCode",
@@ -97465,6 +98106,16 @@
   },
   {
    "postNum": 48,
+   "span": "Q",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
+   "postNum": 48,
    "span": "DOE",
    "kinds": [
     "namedEntity",
@@ -97476,6 +98127,16 @@
   {
    "postNum": 48,
    "span": "U1",
+   "kinds": [
+    "namedEntity",
+    "question"
+   ],
+   "top": "namedEntity",
+   "behind": "question"
+  },
+  {
+   "postNum": 48,
+   "span": "Q",
    "kinds": [
     "namedEntity",
     "question"
@@ -99975,6 +100636,16 @@
   },
   {
    "postNum": 4881,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
+   "postNum": 4881,
    "span": "[deliberate]",
    "kinds": [
     "bracketCode",
@@ -99991,6 +100662,16 @@
     "claim"
    ],
    "top": "bracketCode",
+   "behind": "claim"
+  },
+  {
+   "postNum": 4881,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
    "behind": "claim"
   },
   {
@@ -101189,6 +101870,16 @@
    "behind": "claim"
   },
   {
+   "postNum": 499,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
    "postNum": 5,
    "span": "Pelosi",
    "kinds": [
@@ -101429,6 +102120,26 @@
    "behind": "claim"
   },
   {
+   "postNum": 503,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
+   "postNum": 503,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
    "postNum": 505,
    "span": "[1]",
    "kinds": [
@@ -101470,6 +102181,16 @@
   },
   {
    "postNum": 506,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
+   "postNum": 506,
    "span": "POTUS",
    "kinds": [
     "claim",
@@ -101491,6 +102212,16 @@
   {
    "postNum": 506,
    "span": "POTUS",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
+   "postNum": 506,
+   "span": "Q",
    "kinds": [
     "claim",
     "namedEntity"
@@ -101627,6 +102358,16 @@
     "claim"
    ],
    "top": "bracketCode",
+   "behind": "claim"
+  },
+  {
+   "postNum": 510,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
    "behind": "claim"
   },
   {
@@ -107690,6 +108431,16 @@
   },
   {
    "postNum": 74,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
+   "postNum": 74,
    "span": "Alice",
    "kinds": [
     "claim",
@@ -107947,6 +108698,26 @@
     "claim"
    ],
    "top": "bracketCode",
+   "behind": "claim"
+  },
+  {
+   "postNum": 756,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
+   "postNum": 757,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
    "behind": "claim"
   },
   {
@@ -109064,6 +109835,16 @@
   },
   {
    "postNum": 78,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
+   "postNum": 78,
    "span": "Alice",
    "kinds": [
     "claim",
@@ -109342,6 +110123,16 @@
     "claim"
    ],
    "top": "bracketCode",
+   "behind": "claim"
+  },
+  {
+   "postNum": 785,
+   "span": "Q",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
    "behind": "claim"
   },
   {
@@ -112120,6 +112911,16 @@
   {
    "postNum": 958,
    "span": "FBI",
+   "kinds": [
+    "claim",
+    "namedEntity"
+   ],
+   "top": "namedEntity",
+   "behind": "claim"
+  },
+  {
+   "postNum": 958,
+   "span": "Q",
    "kinds": [
     "claim",
     "namedEntity"

@@ -56,6 +56,13 @@ const summary = [
   ['Q Entities', '1,223 → 1,532 identities · 8,831 → 9,271 mentions', '499 rulings'],
   ['Q Codes & Brackets', '1,957 → 1,986', '43 rulings'],
   ['Resolution Center', '115 → 353', '238 rows from sheet 1'],
+  ['', '', ''],
+  ['THE 2026-08-24 ROUND — what you asked for after the first report', '', ''],
+  ['Entities and brackets, solid in front', '11,254 spans / 2,142 drops', 'Where an Entity or a Bracket covers the same characters as another category it now renders OPAQUE, so nothing shows through and the front layer is unmistakable. Alone, it keeps the softer fill — there is nothing to be in front of.'],
+  ['Other two-layer overlaps', '1,676 spans / 1,058 drops', 'Sheet 8. The pair you named — Claim over Prediction — is real but there are only THREE. What you are seeing is Claim + Theme (593), and Theme is indigo, one hue from the violet Predictions use.'],
+  ['Themes inside another highlight', '2,153 spans / 1,168 drops', 'Sheet 9. This is the purple.'],
+  ['Every entity has a hover, all one shape', '1,532', '358 had none at all. All 1,532 now read the same way, and the per-post layer (842 entities, 3,693 records) is untouched.'],
+  ['Q = Alice', '93 occurrences / 75 drops', 'Alice 5 → 98 mentions. 4,534 sign-off lines excluded as you asked; 65 more held because they name something else.'],
 ]
 write('1-summary', summary)
 
@@ -153,6 +160,15 @@ write('6-fixes-made', [
   ['238 comms strings are visible as unsettled',
    'They were plain text in the drop and absent from every section.',
    'They are in the Resolution Center, where the archive says what it has NOT settled. Nothing about them is asserted.'],
+  ['Entities and brackets render SOLID over another colour',
+   'The ordinary fills are translucent. Over another category the colour underneath tinted them, so a name inside a Claim came out neither cyan nor amber but a muddy third thing and you could not tell which layer was in front. 11,254 spans are in that position.',
+   'An Entity or a Bracket on top of anything is now opaque. Alone, it keeps the softer fill.'],
+  ['Every entity has a hover, and they all read the same way',
+   'The hovers were authored one at a time, so there were three sentence shapes — and 358 entities had no hover at all.',
+   'One pattern for all 1,532, built from the certified record. Expansions like "POTUS — President of the United States" are carried across verbatim, never invented. The per-post layer that says how ONE drop uses the label is untouched.'],
+  ['Q is Alice, except the sign-off',
+   '#74 and #78 write "Q = Alice" in Q\'s own words. The renderer paints a certified term wherever it appears, so the closing "Q" was being painted too — the one occurrence your ruling excludes.',
+   '93 occurrences across 75 drops resolve to Alice; the sign-off is left alone; 65 homographs held.'],
 ])
 
 // ── 7. The three list shapes ────────────────────────────────────────────────
@@ -163,6 +179,49 @@ shapes.push(['Retiring members of Congress', '#1319, #1850', 'Person - Party', '
 shapes.push(['', '', '', '', ''])
 shapes.push(['Everything outside these three shapes was NOT named. It is on the "Held for you" sheet.', '', '', '', ''])
 write('7-entity-lists', shapes)
+
+// ── 8 + 9. THE OVERLAYS THE OWNER ASKED ABOUT ───────────────────────────────
+//
+// Two questions, one measurement — see scripts/audit-overlays.mjs.
+const ov = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/overlay-audit.json'), 'utf8'))
+
+// 8. Everything with two layers that is NOT an entity or a bracket.
+const PAIR_NOTE = {
+  'claim + theme': 'THIS IS THE ONE YOU ARE SEEING. A Claim is amber and a Theme is INDIGO, and the span rotates between them. Indigo (#6366F1) sits one hue from the violet Predictions use (#8B5CF6) - so a Claim rotating with a Theme looks exactly like a Claim over a Prediction.',
+  'request + theme': 'A Directive (green) rotating with a Theme (indigo).',
+  'question + theme': 'A Question (blue) rotating with a Theme (indigo).',
+  'question + request': 'A line that is both a Question and a Directive - "Define ‘evidence’." The archive counts 228 of these on purpose; they are the documented overlap.',
+  'prediction + theme': 'A Prediction (violet) rotating with a Theme (indigo) - the two closest colours in the palette.',
+  'claim + prediction': 'GENUINELY a Claim over a Prediction. There are only three in the whole archive.',
+}
+const pairs = [['Two layers', 'Spans', 'What it is', 'Why you are seeing it']]
+for (const [k, n] of Object.entries(ov.totals.byPair)) {
+  pairs.push([k, n, k.split(' + ').length + ' certified layers on the same characters',
+    PAIR_NOTE[k] ?? 'Two certified layers on one span; the renderer rotates between their colours.'])
+}
+pairs.push(['', '', '', ''])
+pairs.push(['TOTAL', ov.totals.twoLayersNeitherEntityNorBracket.spans,
+  'across ' + ov.totals.twoLayersNeitherEntityNorBracket.posts + ' drops',
+  'Entities and brackets are NOT in this list - they now render solid, in front.'])
+pairs.push(['', '', '', ''])
+pairs.push(['Post', 'The two layers', 'The text they share', ''])
+for (const r of ov.twoLayersNeitherEntityNorBracket) pairs.push([r.postNum, r.pair, r.span, ''])
+write('8-two-layer-overlaps', pairs)
+
+// 9. Themes inside another highlight - the purple the owner cannot read.
+const themes = [['Theme anchor', 'Post', 'The text', 'What else covers it']]
+const tally = {}
+for (const r of ov.themeInsideAnotherHighlight) {
+  const k = r.themeAnchor ?? '(unnamed)'
+  tally[k] = (tally[k] ?? 0) + 1
+}
+themes.push(['- THE ANCHORS THAT DO THIS MOST -', '', '', ''])
+for (const [k, n] of Object.entries(tally).sort((a, b) => b[1] - a[1]).slice(0, 30)) themes.push([k, n + ' spans', '', ''])
+themes.push(['', '', '', ''])
+themes.push(['- EVERY SPAN -', '', '', ''])
+for (const r of ov.themeInsideAnotherHighlight) themes.push([r.themeAnchor, r.postNum, r.span, r.with])
+write('9-themes-that-read-purple', themes)
+
 
 console.log('\nREVIEW 2 — ISSUES REPORT\n')
 for (const f of fs.readdirSync(OUT)) console.log('  ' + f)
