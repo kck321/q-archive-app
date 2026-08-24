@@ -513,7 +513,17 @@ export const OVERLAY_REPAIR = 1
 //     6,321, entities 1,235 -> 1,214 rows and 8,975 -> 8,821 mentions. A returning reader holding
 //     87 would keep the pre-review paint on 41 drops and a registry counting one written word up
 //     to five times, so the seed has to move.
-export const SEED_VERSION = 90   // 90: ROUND 2 of the unhighlighted-queue review — 2,799 owner rulings
+export const SEED_VERSION = 91   // 91: THE UPDATED-REPORT RULINGS, 2026-08-24. Seven sentences the
+                                 //     splitter had cut at an abbreviation are certified WHOLE as
+                                 //     Questions (#1944 #2211 #4782 #4888 #3049 #1915 #4871), #1443's
+                                 //     "DECLAS_Public[3]" moves from Predictions to Claims, and
+                                 //     #4891's "Why would H." — the head of a certified Question — is
+                                 //     withdrawn from Claims. posts.json, questions.json,
+                                 //     entity-hovers.json, relationships.json and search-index.json all
+                                 //     move. A returning reader on 90 would keep seven blue fragments
+                                 //     where the whole sentence is now the question, an amber fragment
+                                 //     inside #4891's question, and violet on #1443.
+                                 // 90: ROUND 2 of the unhighlighted-queue review — 2,799 owner rulings
                                  //     across Claims, Directives, Entities, Predictions, Brackets,
                                  //     Questions and the URL layer, plus 238 lines sent to the
                                  //     Resolution Center. posts.json, questions.json, entities.json and

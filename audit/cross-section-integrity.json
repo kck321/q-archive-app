@@ -614,9 +614,9 @@
   {
    "group": "8. Seed and cache integrity",
    "id": "seed-current",
-   "description": "SEED_VERSION is 90 (round 2 of the unhighlighted-queue review)",
+   "description": "SEED_VERSION is 91 (the UPDATED-report rulings)",
    "pass": true,
-   "detail": "90"
+   "detail": "91"
   },
   {
    "group": "8. Seed and cache integrity",
@@ -630,7 +630,7 @@
    "id": "seed-fingerprint",
    "description": "seeded data matches the SEED_VERSION that shipped it",
    "pass": true,
-   "detail": "seeded data changed and SEED_VERSION moved 89 -> 90 [posts.json, questions.json, entities.json, codes.json]"
+   "detail": "unchanged"
   },
   {
    "group": "8. Seed and cache integrity",

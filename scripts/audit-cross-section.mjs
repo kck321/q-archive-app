@@ -493,7 +493,11 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   // 81 carries the 2026-08-21 owner ruling on #4923: "Dearest Virginia -" moves Context -> Claim.
   // Context does not paint, so a reader stuck on 80 sees that drop open with an unhighlighted line
   // above five classified ones — the exact complaint that produced the ruling.
-  t('seed-current', 'SEED_VERSION is 90 (round 2 of the unhighlighted-queue review)', seed === 90, seed)
+  // 91 carries the UPDATED-report rulings of 2026-08-24. posts.json, questions.json,
+  // entity-hovers.json, relationships.json and search-index.json all change, and a reader stuck on
+  // 90 would keep seven blue FRAGMENTS where the whole sentence is now the question, an amber
+  // fragment ("Why would H.") inside #4891's question, and violet on #1443's DECLAS_Public[3].
+  t('seed-current', 'SEED_VERSION is 91 (the UPDATED-report rulings)', seed === 91, seed)
   t('seed-gate', 'seeding is gated on SEED_VERSION', /seeded === SEED_VERSION/.test(localData), 'present')
 
   // THE GUARD THAT WOULD HAVE SAVED THREE ROUND TRIPS. Changing seeded data without bumping the

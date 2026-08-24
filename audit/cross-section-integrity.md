@@ -110,9 +110,9 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | SEED_VERSION is 90 (round 2 of the unhighlighted-queue review) | 90 |
+| ✅ | SEED_VERSION is 91 (the UPDATED-report rulings) | 91 |
 | ✅ | seeding is gated on SEED_VERSION | present |
-| ✅ | seeded data matches the SEED_VERSION that shipped it | seeded data changed and SEED_VERSION moved 89 -> 90 [posts.json, questions.json, entities.json, codes.json] |
+| ✅ | seeded data matches the SEED_VERSION that shipped it | unchanged |
 | ✅ | the gate value is persisted after seeding | present |
 | ✅ | service worker cache name is versioned | qdrops-v1 |
 | ✅ | service worker does not pin /data to cache-only | data handled explicitly |
