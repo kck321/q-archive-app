@@ -7,11 +7,13 @@
   "DUPLICATE_ROW_DROPPED": 119,
   "BLANK_FINAL_CATEGORY_USED_SHEET": 689,
   "OWNER_INSTRUCTION_IN_CELL": 1,
-  "WORKBOOK_TEXT_DIFFERS_FROM_DROP": 3,
+  "SPAN_EXTENDED_BY_THE_ABBREVIATION_REPAIR": 9,
+  "WORKBOOK_TEXT_DIFFERS_FROM_DROP": 11,
   "SINGLE_CHARACTER_ENTITY": 1,
   "NO_MATCHING_Q_UNIT": 1,
   "BLANK_SENTENCE_INDEX": 1,
-  "URL_LIVE_BUT_SCHEME_ORPHANED_IN_DROP": 44
+  "URL_LIVE_BUT_SCHEME_ORPHANED_IN_DROP": 44,
+  "SPAN_IS_A_WITHDRAWN_ABBREVIATION_TAIL": 1
  },
  "issues": [
   {
@@ -1086,6 +1088,27 @@
    "severity": "info"
   },
   {
+   "row": 774,
+   "sheet": "Q Claims",
+   "postNum": 1944,
+   "sentenceIndex": "24",
+   "text": "'Foreign' tangent req to obtain warrant to spy on U.S.",
+   "why": "SPAN_EXTENDED_BY_THE_ABBREVIATION_REPAIR",
+   "from": "'Foreign' tangent req to obtain warrant to spy on U.S.",
+   "to": "'Foreign' tangent req to obtain warrant to spy on U.S. ORIG?",
+   "severity": "info"
+  },
+  {
+   "row": 774,
+   "sheet": "Q Claims",
+   "postNum": 1944,
+   "sentenceIndex": "24",
+   "text": "'Foreign' tangent req to obtain warrant to spy on U.S.",
+   "why": "WORKBOOK_TEXT_DIFFERS_FROM_DROP",
+   "drop": "'Foreign' tangent req to obtain warrant to spy on U.S. ORIG?",
+   "severity": "warn"
+  },
+  {
    "row": 780,
    "sheet": "Q Claims",
    "postNum": 1959,
@@ -1197,6 +1220,27 @@
    "text": "+Content match re: Nunes interview",
    "why": "EXCEL_TEXT_PREFIX_STRIPPED",
    "severity": "info"
+  },
+  {
+   "row": 879,
+   "sheet": "Q Claims",
+   "postNum": 2211,
+   "sentenceIndex": "11",
+   "text": "Federal prosecutor in N.",
+   "why": "SPAN_EXTENDED_BY_THE_ABBREVIATION_REPAIR",
+   "from": "Federal prosecutor in N.",
+   "to": "Federal prosecutor in N. District of NY [background] important?",
+   "severity": "info"
+  },
+  {
+   "row": 879,
+   "sheet": "Q Claims",
+   "postNum": 2211,
+   "sentenceIndex": "11",
+   "text": "Federal prosecutor in N.",
+   "why": "WORKBOOK_TEXT_DIFFERS_FROM_DROP",
+   "drop": "Federal prosecutor in N. District of NY [background] important?",
+   "severity": "warn"
   },
   {
    "row": 882,
@@ -1903,6 +1947,27 @@
    "severity": "info"
   },
   {
+   "row": 1566,
+   "sheet": "Q Claims",
+   "postNum": 4782,
+   "sentenceIndex": "15",
+   "text": "FUNDS: EXPENSES V.",
+   "why": "SPAN_EXTENDED_BY_THE_ABBREVIATION_REPAIR",
+   "from": "FUNDS: EXPENSES V.",
+   "to": "FUNDS: EXPENSES V. PAYOUTS [for 'causes'] _analyze % [how much of the actual donated money actually goes to help select 'causes']?",
+   "severity": "info"
+  },
+  {
+   "row": 1566,
+   "sheet": "Q Claims",
+   "postNum": 4782,
+   "sentenceIndex": "15",
+   "text": "FUNDS: EXPENSES V.",
+   "why": "WORKBOOK_TEXT_DIFFERS_FROM_DROP",
+   "drop": "FUNDS: EXPENSES V. PAYOUTS [for 'causes'] _analyze % [how much of the actual donated money actually goes to help select 'causes']?",
+   "severity": "warn"
+  },
+  {
    "row": 1573,
    "sheet": "Q Claims",
    "postNum": 4784,
@@ -1923,6 +1988,27 @@
    "why": "DUPLICATE_ROW_DROPPED",
    "section": "claims",
    "severity": "info"
+  },
+  {
+   "row": 1590,
+   "sheet": "Q Claims",
+   "postNum": 4888,
+   "sentenceIndex": "2",
+   "text": "Subpoena of all H.",
+   "why": "SPAN_EXTENDED_BY_THE_ABBREVIATION_REPAIR",
+   "from": "Subpoena of all H.",
+   "to": "Subpoena of all H. Biden's financial records?",
+   "severity": "info"
+  },
+  {
+   "row": 1590,
+   "sheet": "Q Claims",
+   "postNum": 4888,
+   "sentenceIndex": "2",
+   "text": "Subpoena of all H.",
+   "why": "WORKBOOK_TEXT_DIFFERS_FROM_DROP",
+   "drop": "Subpoena of all H. Biden's financial records?",
+   "severity": "warn"
   },
   {
    "row": 1592,
@@ -4819,6 +4905,27 @@
    "severity": "info"
   },
   {
+   "row": 1874,
+   "sheet": "Q Claims",
+   "postNum": 3049,
+   "sentenceIndex": "2",
+   "text": "If [D's] FIGHT to protect, safeguard, and promote all illegal immigrants as 'rightful' U.S. citizens who should be afforded all benefits and rights accordingly, WHY THEN WOULD THEY FIGHT TO BLOCK THEM FROM BEING 'COUNTED' AS PART OF THE U.S.",
+   "why": "SPAN_EXTENDED_BY_THE_ABBREVIATION_REPAIR",
+   "from": "If [D's] FIGHT to protect, safeguard, and promote all illegal immigrants as 'rightful' U.S. citizens who should be afforded all benefits and rights accordingly, WHY THEN WOULD THEY FIGHT TO BLOCK THEM FROM BEING 'COUNTED' AS PART OF THE U.S.",
+   "to": "If [D's] FIGHT to protect, safeguard, and promote all illegal immigrants as 'rightful' U.S. citizens who should be afforded all benefits and rights accordingly, WHY THEN WOULD THEY FIGHT TO BLOCK THEM FROM BEING 'COUNTED' AS PART OF THE U.S. CENSUS?",
+   "severity": "info"
+  },
+  {
+   "row": 1874,
+   "sheet": "Q Claims",
+   "postNum": 3049,
+   "sentenceIndex": "2",
+   "text": "If [D's] FIGHT to protect, safeguard, and promote all illegal immigrants as 'rightful' U.S. citizens who should be afforded all benefits and rights accordingly, WHY THEN WOULD THEY FIGHT TO BLOCK THEM FROM BEING 'COUNTED' AS PART OF THE U.S.",
+   "why": "WORKBOOK_TEXT_DIFFERS_FROM_DROP",
+   "drop": "If [D's] FIGHT to protect, safeguard, and promote all illegal immigrants as 'rightful' U.S. citizens who should be afforded all benefits and rights accordingly, WHY THEN WOULD THEY FIGHT TO BLOCK THEM FROM BEING 'COUNTED' AS PART OF THE U.S. CENSUS?",
+   "severity": "warn"
+  },
+  {
    "row": 1875,
    "sheet": "Q Claims",
    "postNum": 2545,
@@ -6329,6 +6436,27 @@
    "severity": "info"
   },
   {
+   "row": 2024,
+   "sheet": "Q Claims",
+   "postNum": 1915,
+   "sentenceIndex": "6",
+   "text": "Same day as the targeted [coordinated] attack v.",
+   "why": "SPAN_EXTENDED_BY_THE_ABBREVIATION_REPAIR",
+   "from": "Same day as the targeted [coordinated] attack v.",
+   "to": "Same day as the targeted [coordinated] attack v. POTUS?",
+   "severity": "info"
+  },
+  {
+   "row": 2024,
+   "sheet": "Q Claims",
+   "postNum": 1915,
+   "sentenceIndex": "6",
+   "text": "Same day as the targeted [coordinated] attack v.",
+   "why": "WORKBOOK_TEXT_DIFFERS_FROM_DROP",
+   "drop": "Same day as the targeted [coordinated] attack v. POTUS?",
+   "severity": "warn"
+  },
+  {
    "row": 2025,
    "sheet": "Q Claims",
    "postNum": 1939,
@@ -6997,6 +7125,27 @@
    "why": "BLANK_FINAL_CATEGORY_USED_SHEET",
    "assumed": "claims",
    "severity": "info"
+  },
+  {
+   "row": 2088,
+   "sheet": "Q Claims",
+   "postNum": 4871,
+   "sentenceIndex": "1",
+   "text": "NAT SEC concerns re: blackmail [gain control] of J.",
+   "why": "SPAN_EXTENDED_BY_THE_ABBREVIATION_REPAIR",
+   "from": "NAT SEC concerns re: blackmail [gain control] of J.",
+   "to": "NAT SEC concerns re: blackmail [gain control] of J. Biden by Russia, China and/or other foreign [or domestic] entities?",
+   "severity": "info"
+  },
+  {
+   "row": 2088,
+   "sheet": "Q Claims",
+   "postNum": 4871,
+   "sentenceIndex": "1",
+   "text": "NAT SEC concerns re: blackmail [gain control] of J.",
+   "why": "WORKBOOK_TEXT_DIFFERS_FROM_DROP",
+   "drop": "NAT SEC concerns re: blackmail [gain control] of J. Biden by Russia, China and/or other foreign [or domestic] entities?",
+   "severity": "warn"
   },
   {
    "row": 2089,
@@ -9651,8 +9800,19 @@
    "postNum": 2451,
    "sentenceIndex": "3",
    "text": "Thank you for your service to our Country,",
+   "why": "SPAN_EXTENDED_BY_THE_ABBREVIATION_REPAIR",
+   "from": "Thank you for your service to our Country, Mr.",
+   "to": "Thank you for your service to our Country, Mr. Trey Gowdy!",
+   "severity": "info"
+  },
+  {
+   "row": 6131,
+   "sheet": "Q Directives",
+   "postNum": 2451,
+   "sentenceIndex": "3",
+   "text": "Thank you for your service to our Country,",
    "why": "WORKBOOK_TEXT_DIFFERS_FROM_DROP",
-   "drop": "Thank you for your service to our Country, Mr.",
+   "drop": "Thank you for your service to our Country, Mr. Trey Gowdy!",
    "severity": "warn"
   },
   {
@@ -9786,6 +9946,15 @@
    "severity": "info"
   },
   {
+   "row": 6408,
+   "sheet": "Q Questions",
+   "postNum": 2740,
+   "sentenceIndex": "3",
+   "text": "'set up' meeting)?",
+   "why": "SPAN_IS_A_WITHDRAWN_ABBREVIATION_TAIL",
+   "drop": "'set up' meeting)?"
+  },
+  {
    "row": 6417,
    "sheet": "Q Questions",
    "postNum": 4891,
@@ -9794,6 +9963,27 @@
    "why": "BLANK_FINAL_CATEGORY_USED_SHEET",
    "assumed": "questions",
    "severity": "info"
+  },
+  {
+   "row": 6417,
+   "sheet": "Q Questions",
+   "postNum": 4891,
+   "sentenceIndex": "6",
+   "text": "Why would H.",
+   "why": "SPAN_EXTENDED_BY_THE_ABBREVIATION_REPAIR",
+   "from": "Why would H.",
+   "to": "Why would H. Biden have such material on his laptop?",
+   "severity": "info"
+  },
+  {
+   "row": 6417,
+   "sheet": "Q Questions",
+   "postNum": 4891,
+   "sentenceIndex": "6",
+   "text": "Why would H.",
+   "why": "WORKBOOK_TEXT_DIFFERS_FROM_DROP",
+   "drop": "Why would H. Biden have such material on his laptop?",
+   "severity": "warn"
   },
   {
    "row": 6418,

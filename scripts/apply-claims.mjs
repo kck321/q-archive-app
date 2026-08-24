@@ -25,6 +25,7 @@ import { fileURLToPath } from 'node:url'
 import { clean, key } from './lib/segment.mjs'
 import { applyPredictionsAudit } from './lib/predictionsAudit.mjs'
 import { loadAbbrevRepairs, applyAbbrevRepairs, assertAbbrevApplied } from './lib/abbrevRepairs.mjs'
+import { loadQueueRulings } from './lib/queueRulings.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -74,9 +75,9 @@ if (final.rows.length - keptRows.length !== withdrawnByRuling.size) {
 }
 final.rows = keptRows
 
-// ── THE UNHIGHLIGHTED-SENTENCE QUEUE, RULED BY THE OWNER (2026-08-20) ────────
+// ── THE UNHIGHLIGHTED-SENTENCE QUEUE, RULED BY THE OWNER (2026-08-20 + 2026-08-24) ──
 //
-// audit/unhighlighted-owner-rulings.json is the one record of that batch. It is layered here
+// lib/queueRulings.mjs reads BOTH rounds of that review. They are layered here
 // rather than written into claims-final.json for the same reason the predictions audit and the
 // question rulings are: the frozen artifact stays exactly as it was certified, so re-deriving the
 // claims audit can neither restore a withdrawn row nor erase a ruled one.
@@ -90,8 +91,7 @@ final.rows = keptRows
 // assertions, and an audit artifact frozen under an older quote detector cannot overrule that —
 // and it is what apply-context-units.mjs reads to withdraw the span from Context, because Context
 // means "reviewed, and in no semantic category" and a ruled line is no longer that.
-const RULINGS = path.join(ROOT, 'audit/unhighlighted-owner-rulings.json')
-const queueRulings = fs.existsSync(RULINGS) ? JSON.parse(fs.readFileSync(RULINGS, 'utf8')).rulings ?? [] : []
+const queueRulings = loadQueueRulings(ROOT)
 //
 // INSERTION IS OCCURRENCE-AWARE, NOT KEY-AWARE. Q writes "Fantasy land." four times in #111 and
 // the queue carries four rows for it, because the audit emitted one row per UNIT. Deduplicating by
@@ -424,7 +424,7 @@ console.log(`  claims written      : ${allClaims.length.toLocaleString()}`)
 console.log(`  predictions written : ${allPreds.length.toLocaleString()}`)
 console.log(`  paraphrases held    : ${posts.reduce((n, p) => n + (p.editorialParaphrases?.length ?? 0), 0).toLocaleString()} (searchable, never shown as Q)`)
 console.log(`  claimMeta entries   : ${meta.length.toLocaleString()}`)
-console.log(`\n  from the unhighlighted-sentence queue (owner ruling 2026-08-20)`)
+console.log(`\n  from the unhighlighted-sentence queue (owner rulings 2026-08-20 + 2026-08-24)`)
 console.log(`    claims      +${stats2020.claimsAdded.toLocaleString()}  (${stats2020.claimsAlready} already certified)`)
 console.log(`    predictions +${stats2020.predsAdded.toLocaleString()}  (${stats2020.predsAlready} already certified)`)
 console.log(`    withdrawn from Claims because the owner ruled them Predictions: ${crossPulled}`)

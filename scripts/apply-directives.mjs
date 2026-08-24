@@ -38,6 +38,7 @@ import { clean, key } from './lib/segment.mjs'
 import { familyOf } from './lib/imperative.mjs'
 import { queueFamilyOf } from './lib/queueDirectiveFamily.mjs'
 import { loadAbbrevRepairs, assertAbbrevApplied } from './lib/abbrevRepairs.mjs'
+import { loadQueueRulings } from './lib/queueRulings.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -85,9 +86,7 @@ if (fs.existsSync(ORULES)) {
 //
 // Occurrence-aware, like every other layer here: the audit emitted one row per UNIT, so a line Q
 // wrote twice arrives twice and is certified twice.
-const QUEUE = path.join(ROOT, 'audit/unhighlighted-owner-rulings.json')
-const queueRulings = (fs.existsSync(QUEUE) ? JSON.parse(fs.readFileSync(QUEUE, 'utf8')).rulings ?? [] : [])
-  .filter(r => r.section === 'directives')
+const queueRulings = loadQueueRulings(ROOT, 'directives')
 const queueStats = { added: 0, already: 0, byFamily: {} }
 {
   const have = new Map()

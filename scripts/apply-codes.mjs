@@ -14,6 +14,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { CODE_TYPE_INFO, KNOWN_MEANINGS } from './lib/codes.mjs'
+import { loadQueueRulings } from './lib/queueRulings.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -61,9 +62,7 @@ const occurrences = audit.occurrences.filter(o => !rejected.has(o.normalizedKey)
 // The detector's own excludedBracketEmphasis tally is left EXACTLY as the audit recorded it. That
 // number is the history of a decision the detector made, not a live population, and rewriting it
 // would erase the record of what was overruled. The movement is reported as its own submetric.
-const QUEUE = path.join(OUT, 'unhighlighted-owner-rulings.json')
-const bracketRulings = (fs.existsSync(QUEUE)
-  ? JSON.parse(fs.readFileSync(QUEUE, 'utf8')).rulings ?? [] : []).filter(r => r.section === 'brackets')
+const bracketRulings = loadQueueRulings(ROOT, 'brackets')
 const byNormKey = new Map(codes.map(c => [c.normalizedKey, c]))
 const haveOcc = new Set(occurrences.map(o => `${o.postNum}|${o.normalizedKey}`))
 let ruledOccurrences = 0, ruledNewCodes = 0, ruledAlready = 0

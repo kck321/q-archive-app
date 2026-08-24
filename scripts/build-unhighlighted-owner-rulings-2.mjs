@@ -21,10 +21,12 @@
 //   node scripts/build-unhighlighted-owner-rulings-2.mjs [--check]
 import fs from 'node:fs'
 import path from 'node:path'
+import { execFileSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 import { clean, key, unitsFor } from './lib/segment.mjs'
 import { runtimeText, runtimeSpan } from './lib/runtimeText.mjs'
 import { completeTokenRegex } from './lib/renderedMatch.mjs'
+import { loadAbbrevRepairs } from './lib/abbrevRepairs.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const REVIEW = path.join(ROOT, 'audit/unhighlighted-sentences/owner-review-final2.csv')
@@ -70,6 +72,8 @@ for (const line of fs.readFileSync(path.join(ROOT, 'audit/unhighlighted-sentence
   const d = JSON.parse(line)
   truth.set(d.postNumber + '|' + d.sentenceIndex, d)
 }
+// The 114 recorded abbreviation repairs and the 45 tails they absorb. See the block that uses it.
+const repairs = loadAbbrevRepairs(ROOT)
 const questions = JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/questions.json'), 'utf8'))
 const questionsByPost = new Map()
 for (const q of questions) {
@@ -152,6 +156,38 @@ const unitsCache = new Map()
 const unitsOf = pn => {
   if (!unitsCache.has(pn)) unitsCache.set(pn, unitsFor(byNum.get(pn)?.text ?? ''))
   return unitsCache.get(pn)
+}
+
+// ── THIS SCRIPT MUST READ THE DEPLOYED BASELINE, NOT ITS OWN OUTPUT ─────────
+//
+// The already-certified test reads public/data, and public/data is where these rulings LAND.
+// Build, apply the chain, build again — and every round-2 ruling reads back as "already
+// certified" and deletes itself. Not a hypothetical: questions went 8 rulings, then 0, and the
+// apply gate reported 65 added where the run before it had made 72.
+//
+// Subtracting the previous output was tried and is the wrong shape: it cannot tell a bundle that
+// HAS been rebuilt from one that has not, so it suppresses genuine prior evidence in the second
+// case — entities' `already certified` fell from 595 to 208 and 387 live highlights were handed
+// back for re-ruling.
+//
+// The honest condition is the one git can answer. public/data must be exactly what is committed,
+// which is the state the census was measured against and the state seed 88 shipped. Round 1's
+// 6,108 rulings are IN that baseline — they are applied, deployed and live — so a span they
+// certified reads as already certified, which is the whole point of the pass.
+if (!process.env.QDROPS_ALLOW_DIRTY_DATA) {
+  const dirty = execFileSync('git', ['status', '--porcelain', '--', 'public/data'], { cwd: ROOT, encoding: 'utf8' }).trim()
+  if (dirty) {
+    console.error('\nbuild-unhighlighted-owner-rulings-2.mjs: public/data has uncommitted changes.\n')
+    console.error('  The already-certified test reads public/data, and this script writes rulings INTO it')
+    console.error('  through the apply chain. Against a rebuilt bundle it would read its own output back')
+    console.error('  and withdraw every ruling as already certified.\n')
+    console.error('  Build the rulings from the committed baseline first:\n')
+    console.error('      git checkout -- public/data')
+    console.error('      node scripts/build-unhighlighted-owner-rulings-2.mjs')
+    console.error('      node scripts/rebuild-bundle.mjs\n')
+    console.error(dirty.split('\n').map(l => '  ' + l).join('\n') + '\n')
+    process.exit(2)
+  }
 }
 
 // ── is this span ALREADY certified in the target section? ───────────────────
@@ -376,7 +412,35 @@ for (const [i, r] of body.entries()) {
 
   if (!hit) { issue('NO_MATCHING_Q_UNIT'); continue }
 
-  const sourceText = hit.text.trim()
+  let sourceText = hit.text.trim()
+
+  // ── THE ABBREVIATION RECORD ALREADY GOVERNS SOME OF THESE SPANS ───────────
+  //
+  // audit/abbreviation-span-repairs.json holds 114 spans a sentence splitter cut at "Mr.",
+  // "Lt. Gen.", "U.S. Senate", "H. Biden", and the 45 tail fragments the same splitter certified
+  // beside them. The census segments the same way, so the owner reviewed some of those halves:
+  // ten rows land on one.
+  //
+  // A ruled TRUNCATED span means the full sentence, not the half — the repair record is the
+  // project's own statement of what that span IS, and every materialiser applies it. Storing the
+  // half would either double the sentence or fight the repair on the next run; apply-directives
+  // caught exactly that and refused to write ("repairs recorded 5, applied 6").
+  //
+  // A ruled WITHDRAWN TAIL is refused outright. That fragment was absorbed into a repaired span
+  // on purpose, and re-certifying it would restore the same-category duplicate the 2026-08-21
+  // ruling removed.
+  if (repairs) {
+    if (repairs.isWithdrawn(section, postNum, sourceText)) {
+      issue('SPAN_IS_A_WITHDRAWN_ABBREVIATION_TAIL', { drop: sourceText })
+      continue
+    }
+    const full = repairs.fullFor(section, postNum, sourceText)
+    if (full && loose(full) !== loose(sourceText)) {
+      issue('SPAN_EXTENDED_BY_THE_ABBREVIATION_REPAIR', { from: sourceText, to: full, severity: 'info' })
+      sourceText = String(full).trim()
+    }
+  }
+
   // The owner typed something the drop does not say. Q's wording wins; the divergence is reported.
   if (loose(sourceText) !== loose(wbText)) {
     issue('WORKBOOK_TEXT_DIFFERS_FROM_DROP', { drop: sourceText, severity: 'warn' })

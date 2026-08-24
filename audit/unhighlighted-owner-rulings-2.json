@@ -7,18 +7,18 @@
  "source": "audit/unhighlighted-sentences/owner-review-final2.csv (from Q_Unhighlighted FINAL 2.xlsx)",
  "totals": {
   "reviewed": 6419,
-  "ruled": 2802,
-  "alreadyCertified": 3259,
+  "ruled": 2799,
+  "alreadyCertified": 3261,
   "resolutionCenter": 238,
-  "issues": 982,
+  "issues": 1000,
   "bySection": {
    "claims": 1654,
    "entities": 499,
    "brackets": 43,
    "predictions": 94,
    "url": 24,
-   "directives": 480,
-   "questions": 8
+   "directives": 479,
+   "questions": 6
   },
   "alreadyBySection": {
    "claims": 83,
@@ -26,8 +26,8 @@
    "brackets": 449,
    "predictions": 1,
    "url": 2099,
-   "directives": 6,
-   "questions": 26
+   "directives": 7,
+   "questions": 27
   }
  },
  "resolutionCenter": [
@@ -23179,6 +23179,12 @@
    "row": 5978
   },
   {
+   "postNum": 2451,
+   "section": "directives",
+   "sourceText": "Thank you for your service to our Country, Mr. Trey Gowdy!",
+   "row": 6131
+  },
+  {
    "postNum": 3683,
    "section": "directives",
    "sourceText": "\"Put on the full armor of God, so that you can take your stand against the devil’s schemes.\"",
@@ -23351,6 +23357,12 @@
    "section": "questions",
    "sourceText": "When does a Church become a playground?",
    "row": 6416
+  },
+  {
+   "postNum": 4891,
+   "section": "questions",
+   "sourceText": "Why would H. Biden have such material on his laptop?",
+   "row": 6417
   }
  ],
  "rulings": [
@@ -27240,7 +27252,7 @@
    "postNum": 1944,
    "postId": "1944",
    "section": "claims",
-   "sourceText": "'Foreign' tangent req to obtain warrant to spy on U.S.",
+   "sourceText": "'Foreign' tangent req to obtain warrant to spy on U.S. ORIG?",
    "was": "unclassified",
    "ruledOn": "2026-08-24",
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
@@ -28069,7 +28081,7 @@
    "postNum": 2211,
    "postId": "2211",
    "section": "claims",
-   "sourceText": "Federal prosecutor in N.",
+   "sourceText": "Federal prosecutor in N. District of NY [background] important?",
    "was": "unclassified",
    "ruledOn": "2026-08-24",
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
@@ -33604,7 +33616,7 @@
    "postNum": 4782,
    "postId": "4782",
    "section": "claims",
-   "sourceText": "FUNDS: EXPENSES V.",
+   "sourceText": "FUNDS: EXPENSES V. PAYOUTS [for 'causes'] _analyze % [how much of the actual donated money actually goes to help select 'causes']?",
    "was": "unclassified",
    "ruledOn": "2026-08-24",
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
@@ -33793,7 +33805,7 @@
    "postNum": 4888,
    "postId": "4888",
    "section": "claims",
-   "sourceText": "Subpoena of all H.",
+   "sourceText": "Subpoena of all H. Biden's financial records?",
    "was": "unclassified",
    "ruledOn": "2026-08-24",
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
@@ -36354,7 +36366,7 @@
    "postNum": 3049,
    "postId": "3049",
    "section": "claims",
-   "sourceText": "If [D's] FIGHT to protect, safeguard, and promote all illegal immigrants as 'rightful' U.S. citizens who should be afforded all benefits and rights accordingly, WHY THEN WOULD THEY FIGHT TO BLOCK THEM FROM BEING 'COUNTED' AS PART OF THE U.S.",
+   "sourceText": "If [D's] FIGHT to protect, safeguard, and promote all illegal immigrants as 'rightful' U.S. citizens who should be afforded all benefits and rights accordingly, WHY THEN WOULD THEY FIGHT TO BLOCK THEM FROM BEING 'COUNTED' AS PART OF THE U.S. CENSUS?",
    "was": "unclassified",
    "ruledOn": "2026-08-24",
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
@@ -37689,7 +37701,7 @@
    "postNum": 1915,
    "postId": "1915",
    "section": "claims",
-   "sourceText": "Same day as the targeted [coordinated] attack v.",
+   "sourceText": "Same day as the targeted [coordinated] attack v. POTUS?",
    "was": "unclassified",
    "ruledOn": "2026-08-24",
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
@@ -38238,7 +38250,7 @@
    "postNum": 4871,
    "postId": "4871",
    "section": "claims",
-   "sourceText": "NAT SEC concerns re: blackmail [gain control] of J.",
+   "sourceText": "NAT SEC concerns re: blackmail [gain control] of J. Biden by Russia, China and/or other foreign [or domestic] entities?",
    "was": "unclassified",
    "ruledOn": "2026-08-24",
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
@@ -46277,16 +46289,6 @@
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
   },
   {
-   "postNum": 2451,
-   "postId": "2451",
-   "section": "directives",
-   "sourceText": "Thank you for your service to our Country, Mr.",
-   "resolvedFromIndex": true,
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
    "postNum": 2473,
    "postId": "2473",
    "section": "directives",
@@ -48565,15 +48567,6 @@
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
   },
   {
-   "postNum": 2740,
-   "postId": "2740",
-   "section": "questions",
-   "sourceText": "'set up' meeting)?",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
    "postNum": 4171,
    "postId": "4171",
    "section": "questions",
@@ -48587,15 +48580,6 @@
    "postId": "4688",
    "section": "questions",
    "sourceText": "How do you accomplish the following:",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
-   "postNum": 4891,
-   "postId": "4891",
-   "section": "questions",
-   "sourceText": "Why would H.",
    "was": "unclassified",
    "ruledOn": "2026-08-24",
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"

@@ -25,6 +25,7 @@ import { randomBytes } from 'node:crypto'
 import { clean } from './lib/segment.mjs'
 // Identity resolution for the owner's queue entity rulings - see the module for the ladder.
 import { makeEntityResolver } from './lib/queueEntityResolve.mjs'
+import { loadQueueRulings } from './lib/queueRulings.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -531,7 +532,7 @@ entities.sort((a, b) => b.mentions - a.mentions)
 // Renames are the whole point: when a canonical changes, the ledger keeps the old spelling in
 // previousCanonicals and the id survives. Merges record the absorbed spellings the same way, so a
 // link to an entity that was merged away still resolves.
-// ── THE UNHIGHLIGHTED-SENTENCE QUEUE, RULED BY THE OWNER (2026-08-20), PHASE A ──
+// ── THE UNHIGHLIGHTED-SENTENCE QUEUE, RULED BY THE OWNER (2026-08-20 + 2026-08-24), PHASE A ──
 //
 // 508 spans the owner ruled to BE entities. An entity ruling names a SPAN; a certified row needs an
 // IDENTITY, and the review carries neither a canonical name nor a type. lib/queueEntityResolve.mjs
@@ -545,10 +546,8 @@ entities.sort((a, b) => b.mentions - a.mentions)
 // minted below, but the MENTION for each ruling cannot be decided until the render map is built:
 // 313 of the 508 name an entity already certified in that very drop, and counting those again
 // would show the reader an x2 that Q never wrote. Phase B is immediately after the render map.
-const QUEUE_RULINGS = path.join(OUT, 'unhighlighted-owner-rulings.json')
 const QUEUE_IDENTS = path.join(OUT, 'unhighlighted-entity-identities.json')
-const queueEntityRulings = (fs.existsSync(QUEUE_RULINGS)
-  ? JSON.parse(fs.readFileSync(QUEUE_RULINGS, 'utf8')).rulings ?? [] : []).filter(r => r.section === 'entities')
+const queueEntityRulings = loadQueueRulings(ROOT, 'entities')
 const queueHits = []
 const queueHeld = []
 let queueEntitiesCreated = 0

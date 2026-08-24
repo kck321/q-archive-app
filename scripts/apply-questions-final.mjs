@@ -26,6 +26,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { clean, key, unitsFor } from './lib/segment.mjs'
 import { loadAbbrevRepairs } from './lib/abbrevRepairs.mjs'
+import { loadQueueRulings } from './lib/queueRulings.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -168,9 +169,7 @@ if (fs.existsSync(QRULES)) {
 // Invariant 5 is unaffected — it governs how a question MATCHES, not which terminator it carries.
 //
 // Occurrence-aware, like Claims and Directives: one queue row per unit.
-const QUEUE = path.join(ROOT, 'audit/unhighlighted-owner-rulings.json')
-const queueRulings = (fs.existsSync(QUEUE) ? JSON.parse(fs.readFileSync(QUEUE, 'utf8')).rulings ?? [] : [])
-  .filter(r => r.section === 'questions')
+const queueRulings = loadQueueRulings(ROOT, 'questions')
 const queueStats = { added: 0, already: 0 }
 {
   const have = new Map()
@@ -336,8 +335,11 @@ const checks = [
   // 6,510 -> 6,503 on 2026-08-21: seven more tail fragments absorbed by the abbreviation repair
   // ("US?", "Graham's speech today?", "Flake's choice to step down?"). Each is now inside the
   // repaired question rather than beside it.
-  ['certified occurrences = 6,503', counted.length === 6503, counted.length],
-  ['queue rulings applied = 67', queueStats.added + queueStats.already === 67,
+  // 6,503 -> 6,509 on 2026-08-24, round 2 of the unhighlighted queue: 8 lines ruled Questions,
+  // 3 of them already certified here, so 5 wordings arrive carrying 6 occurrences.
+  ['certified occurrences = 6,509', counted.length === 6509, counted.length],
+  // 67 (round 1) + 8 (round 2) = 75 rulings, of which 3 name a span Questions already holds.
+  ['queue rulings applied = 75', queueStats.added + queueStats.already === 75,
     `${queueStats.added} added + ${queueStats.already} already certified`],
   ['every owner question ruling is in the set = 12', ownerQuestions + ownerAlreadyPresent === 12 && ownerMissing.length === 0,
     `${ownerQuestions} added + ${ownerAlreadyPresent} already present`],
@@ -350,7 +352,8 @@ const checks = [
   // -5, every key accounted for: 11 disappear (6 truncated heads plus the 5 absorbed tails that
   // occurred nowhere else) and 6 appear — the repaired wordings. #70 and #76 ask the same question
   // and share one key both before and after.
-  ['distinct (canonical key) = 5,358', distinct.size === 5358, distinct.size],
+  // +5 on 2026-08-24: the 6 new occurrences carry 5 wordings Questions did not already hold.
+  ['distinct (canonical key) = 5,363', distinct.size === 5363, distinct.size],
   // +4: #1975, #2420, #2695 and #2776 had no certified question before these rulings.
   // +5 posts gain their first certified question.
   ['posts with questions = 1,705', postsWith.size === 1705, postsWith.size],

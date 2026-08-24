@@ -15,6 +15,7 @@ import { fileURLToPath } from 'node:url'
 import { clean } from './lib/segment.mjs'
 import { runtimeSpan } from './lib/runtimeText.mjs'
 import { loadAbbrevRepairs, applyAbbrevRepairs, assertAbbrevApplied } from './lib/abbrevRepairs.mjs'
+import { loadQueueRulings } from './lib/queueRulings.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -102,12 +103,9 @@ for (const r of JSON.parse(fs.readFileSync(path.join(OUT, 'claims-final.json'), 
   // is a category, so every ruled line leaves Context — Claims, Predictions, Directives,
   // Questions, Entities and Brackets alike. Leaving any of them would paint one span as both
   // classified and unclassified, which is the contradiction this block exists to prevent.
-  const QUEUE = path.join(OUT, 'unhighlighted-owner-rulings.json')
-  if (fs.existsSync(QUEUE)) {
-    for (const r of JSON.parse(fs.readFileSync(QUEUE, 'utf8')).rulings ?? []) {
-      ruledOut.add(`${r.postNum}|${String(r.sourceText).toLowerCase().trim()}`)
-      if (r.paintText) ruledOut.add(`${r.postNum}|${String(r.paintText).toLowerCase().trim()}`)
-    }
+  for (const r of loadQueueRulings(ROOT)) {
+    ruledOut.add(`${r.postNum}|${String(r.sourceText).toLowerCase().trim()}`)
+    if (r.paintText) ruledOut.add(`${r.postNum}|${String(r.paintText).toLowerCase().trim()}`)
   }
 }
 const promoted = allUnits.filter(u => ruledOut.has(`${u.postNum}|${String(u.text).toLowerCase().trim()}`))
