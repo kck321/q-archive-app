@@ -17,6 +17,14 @@ const BASE = args.find(a => a.startsWith('http')) ?? 'http://localhost:5173'
 // #534 carries NYC, a Partial-support reading — so this also proves the grade reaches the reader.
 const POST = args.find(a => /^\d+$/.test(a)) ?? '534'
 
+// THE TRIGGER IS THE ONE IN THE DROP, NOT THE FIRST ONE ON THE PAGE.
+//
+// This took `document.querySelectorAll('button[aria-expanded]')[0]` over the whole document,
+// which was the glossary trigger for exactly as long as nothing else on the page used the
+// attribute. The sidebar's "Q Extras" disclosure now does, and it comes first in DOM order, so
+// six accessibility checks failed against a sidebar row and the page under test was never
+// examined at all. Every query is scoped to pre.post-text, which is what this gate is named
+// after; the glossary triggers themselves were unchanged the whole time.
 const browser = await launch({ mode })
 let failed = 0
 const check = (ok, label, got) => { if (!ok) failed++; console.log(`    ${ok ? 'PASS' : 'FAIL'}  ${label.padEnd(52)} ${got}`) }
@@ -24,12 +32,12 @@ console.log(`\nENTITY TOOLTIP ACCESSIBILITY  (${mode}${browser.reused ? ', reuse
 const started = Date.now()
 
 const page = await browser.page(`${BASE}/post/${POST}`)
-const ready = await page.waitFor(`document.body.innerText.includes('#${POST}') && document.querySelectorAll('button[aria-expanded]').length > 0`, { timeout: 60000 })
+const ready = await page.waitFor(`document.body.innerText.includes('#${POST}') && document.querySelectorAll('pre[class*="post-text"] button[aria-expanded]').length > 0`, { timeout: 60000 })
 check(Boolean(ready), 'the drop renders with tooltip triggers', ready ? 'triggers present' : 'NONE FOUND')
 
 // ── the trigger announces itself ────────────────────────────────────────────
 const trig = await page.evaluate(`(() => {
-  const b = [...document.querySelectorAll('button[aria-expanded]')][0]
+  const b = [...document.querySelectorAll('pre[class*="post-text"] button[aria-expanded]')][0]
   if (!b) return ''
   return JSON.stringify({
     tag: b.tagName, label: b.getAttribute('aria-label'), expanded: b.getAttribute('aria-expanded'),
@@ -44,7 +52,7 @@ check(t?.focusable === true, 'it is in the tab order', t?.focusable ? 'tabbable'
 
 // ── keyboard focus opens it ─────────────────────────────────────────────────
 const onFocus = await page.evaluate(`(() => {
-  const b = [...document.querySelectorAll('button[aria-expanded]')][0]
+  const b = [...document.querySelectorAll('pre[class*="post-text"] button[aria-expanded]')][0]
   b.focus()
   return new Promise(r => setTimeout(() => {
     const card = document.querySelector('[role="tooltip"]')
@@ -83,7 +91,7 @@ check(g.overlaps === false, 'it does not cover the word it explains', g.overlaps
 const esc = await page.evaluate(`(() => {
   document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }))
   return new Promise(r => setTimeout(() => {
-    const b = [...document.querySelectorAll('button[aria-expanded]')][0]
+    const b = [...document.querySelectorAll('pre[class*="post-text"] button[aria-expanded]')][0]
     r(JSON.stringify({ open: b.getAttribute('aria-expanded'), refocused: document.activeElement === b }))
   }, 250))
 })()`)
@@ -93,7 +101,7 @@ check(e.refocused === true, 'focus returns to the trigger', e.refocused ? 'refoc
 
 // ── click toggles, outside click dismisses ──────────────────────────────────
 const outside = await page.evaluate(`(() => {
-  const b = [...document.querySelectorAll('button[aria-expanded]')][0]
+  const b = [...document.querySelectorAll('pre[class*="post-text"] button[aria-expanded]')][0]
   b.click()
   return new Promise(r => setTimeout(() => {
     const opened = b.getAttribute('aria-expanded')
@@ -108,9 +116,9 @@ check(o.closed === 'false', 'a click elsewhere dismisses it', o.closed ?? '—')
 // ── mobile ──────────────────────────────────────────────────────────────────
 const m = await browser.page(`${BASE}/post/${POST}`)
 await m.evaluate(`(() => { Object.defineProperty(window, 'innerWidth', { value: 390, configurable: true }); window.dispatchEvent(new Event('resize')); return true })()`)
-await m.waitFor(`document.querySelectorAll('button[aria-expanded]').length > 0`, { timeout: 60000 })
+await m.waitFor(`document.querySelectorAll('pre[class*="post-text"] button[aria-expanded]').length > 0`, { timeout: 60000 })
 const mob = await m.evaluate(`(() => {
-  const b = [...document.querySelectorAll('button[aria-expanded]')][0]
+  const b = [...document.querySelectorAll('pre[class*="post-text"] button[aria-expanded]')][0]
   b.click()
   return new Promise(r => setTimeout(() => {
     const c = document.querySelector('[role="tooltip"]')

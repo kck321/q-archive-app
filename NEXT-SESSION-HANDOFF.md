@@ -2,8 +2,8 @@
 
 **Read `PROJECT_CONTEXT.md` first, then this.**
 
-The Step 3B reconciliation is **CLOSED**. Seed 88 is live at https://qdrops.app and verified
-in production. Do not reopen the reconciliation machinery.
+Round 2 of the unhighlighted-sentence review is **applied and certified at seed 90**. The Step 3B
+reconciliation before it stays closed. Do not reopen either.
 
 ---
 
@@ -11,93 +11,107 @@ in production. Do not reopen the reconciliation machinery.
 
 | | |
 |---|---|
-| HEAD | see `git log -1` (deployed commit `89ac05d`) |
-| production | **seed 88, live and verified** |
-| conflict queue | 945 → **50**, actionable **0** |
+| HEAD | see `git log -1` |
+| production | **seed 88** — the round-2 batch is committed and validated but NOT deployed |
 | invariants | **222/222** |
-| validation | full profile green, 21 steps |
-| production | **36/36** live assertions |
+| manifest | verified at seed 90 |
+| conflict queue | closed, 50 rows, actionable 0 |
 
-### Certified counts (manifest, seed 88)
+### Certified counts (manifest, seed 90)
 
 ```
-questions   6,321      claims       8,676      entities  1,214 canonical / 8,821 mentions
-directives  2,940      predictions    843      relationships 4,121 · search index 31,572
+questions   6,327      claims      10,258      entities  1,532 canonical / 9,271 mentions
+directives  3,304      predictions    934      codes     1,986 · resolution queue 353
 ```
-
-`claims == claimSpans`, `predictions == predictionSpans`, and the entity registry now equals
-the rendered records exactly.
 
 ---
 
-## The conflict queue is closed
+## What round 2 did
 
-**50 rows survive and every one carries an explicit reviewed disposition.** Run
-`node scripts/report-conflict-reconciliation.mjs` — it exits NON-ZERO if any surviving row
-lacks one, which is the actual guarantee.
+`Q_Unhighlighted FINAL 2.xlsx` — 6,419 rows over eight sheets, one per destination section plus a
+Resolution Center sheet.
 
 ```
-  31 A  KEEP_AS_CERTIFIED           a span that legitimately crosses a line or sentence
-   5 B  REPAIR_GEOMETRY             repaired, and the repaired span still crosses
-  11 F  INTENTIONALLY_UNRESOLVED    9 owner-directed + 2 waiting on the demonym question
-   3 Q  INTENTIONALLY_NON_ACTIONABLE the examined-and-refused lane-A rows
+2,775  applied as new rulings
+3,261  ALREADY certified in the section named — no second record created
+  238  Resolution Center (the comms strings, coordinates and glyphs)
+  119  duplicate rows dropped
+  152  held for the owner
+    1  refused
 ```
 
-**`audit/OWNER-REVIEW.csv` — 18 rows, the only things wanting a decision.** Two are genuinely
-open (#48 "the Canadian PM", #1359 "a French multinational" — whether a DEMONYM is a mention
-of the country, which would decide Russian/German/Iranian/Chinese too). Nine are the Ruling 3
-F rows. Three are the quarantined refusals. Four are applied-and-reversible decisions on drops
-that already carried a ruling (#2971, #4454, #4310, #4437).
+**The do-not-double-highlight test reads the CERTIFIED ARTIFACTS, never the painted DOM.** An
+entity or bracket painted on top of a claim hides the claim from a crawler, so a DOM-based test
+would have duplicated every one of them.
 
-The reviews themselves are in `audit/lane-b-dispositions-*.json`, five files, one per family,
-every row with its reason.
+The report is `audit/unhighlighted-sentences/Q_Unhighlighted_FINAL_2_REPORT.xlsx` (seven sheets,
+copy on the Desktop), generated from the artifacts by `scripts/build-review2-report.mjs`.
+
+---
+
+## The trap that cost the most, and the guard that now prevents it
+
+`build-unhighlighted-owner-rulings-2.mjs` reads `public/data`, and `public/data` is where its
+rulings LAND. Build → apply the chain → build again, and every ruling reads back as "already
+certified" and **deletes itself**. Questions went 8 rulings, then 0, and the apply gate reported 65
+added where the run before it had made 72.
+
+Subtracting the previous output was tried and is the WRONG SHAPE: it cannot tell a rebuilt bundle
+from a fresh one, so it suppressed genuine prior evidence — entities' `already certified` fell from
+595 to 208 and 387 live highlights were handed back for re-ruling.
+
+**The script now refuses to run unless `public/data` is exactly what is committed.** The order is:
+
+```
+git checkout -- public/data
+node scripts/build-unhighlighted-owner-rulings-2.mjs
+node scripts/build-queue-entity-identities-2.mjs
+node scripts/rebuild-bundle.mjs
+```
+
+`audit-occurrence-provenance.mjs` must be re-run at the point in the chain where the tree is at the
+cleanup's BEFORE state — i.e. after `apply-entities` and before `apply-entity-cleanup`. Running it
+on the finished bundle records 1532/9271 and the cleanup then refuses.
 
 ---
 
 ## What must not be undone
 
-- **Emphasis · Q Conclusions · Checkable Claims are retired** — data, fields, sections, search
-  rows, relationship edges, UI. The retirement is now asserted rather than assumed in
-  audit-cross-section.mjs, verify-context-render.mjs, test-category-order.mjs and
-  test-returning-profile.mjs. `EMPHASIS_INFO` and the Method page block are gone.
-- **The chain order.** `apply-step3b1` → `reconcile-entity-registry` → `build-entity-public-view`
-  → `retire-sections`. The public view used to be built BEFORE the duplicate collapse and was
-  therefore describing a registry 99 mentions ahead of its own records.
-- **The idempotence stamp hashes CONTENT, not bytes.** A Firestore dump and a rebuild order
-  postAnalysis keys differently; hashing raw bytes made deploy-after-validate impossible.
-- **`lib/step3b1Sets.mjs` is the only copy of the action-set list.** The verifier used to keep
-  its own and it went short.
+- **`lib/queueRulings.mjs` is the only list of queue rulings.** Six materialisers read it. A second
+  copy goes short and nothing fails loudly when it does — the same lesson `lib/step3b1Sets.mjs`
+  records.
+- **`lib/queueDirectiveFamily.mjs` must never become a catch-all.** Its round-2 rules are APPENDED,
+  so round 1's first-match-wins answers cannot move. 24 rows are held by `statesNoInstruction()`
+  because they instruct nobody — list markers, end-markers, comms strings.
+- **Entity identities are RESOLVED first and created last.** 244 of round 2's 308 come from three
+  lists Q pastes verbatim, where each line names two things and is SPLIT. 128 wordings are held
+  rather than named, and naming them is a separate owner decision.
+- **The abbreviation record governs a ruled span.** A ruling that lands on a recorded truncated span
+  is extended to the sentence the record names; one that lands on a withdrawn tail is refused.
+- **Entities and brackets are on top of every category, inside a question as much as outside one.**
+  Both renderers carry the identical branch. `test-queue-ruling-paint.mjs` is the gate.
 
 ---
 
-## The census is DONE — and it was re-measured on the LIVE SITE
+## Open for the owner
 
-The transcription pass was graded against the rendered DOM over all 4,734 readable drops on
-qdrops.app. **Zero false positives** — nothing it called unhighlighted is highlighted on the live
-site; it under-reported by 54 lines.
+1. **152 held rows** — sheet "Held for you" in the report. 128 entity spans with no name yet (`L.`,
+   `+++`, `SEC TEST`, `Godfather lll`, `4,10,20`, …) and 24 directive rows that instruct nobody.
+2. **#859 is still a data defect.** Its text splices a pointer inside a word
+   (`These peo&gt;&gt;567493ple are stupid.`) so no rendered block matches it. One drop of 4,966.
+3. **The `>` bullet is read as a quotation marker.** `sourceLines()` treats a leading `>` as source,
+   so 935 certified occurrences sit in the source-boundary debt — 162 of them from this batch. The
+   certified sections are right and the detector is wrong; fixing `sourceLines()` is the standing
+   prerequisite recorded in `audit/source-boundary-debt.json`.
+4. **358 entities await a hover synopsis** (`audit/entity-hover-pending.json`). A synopsis is
+   authored editorial text about a real person or organisation, and a bank named once in a pasted
+   list is exactly where an unreviewed one would be a guess.
 
-**93.9% of all drop text is painted** (880,245 of 937,048 characters). 330 drops are painted end
-to end. **10,700 lines still carry unpainted text, across 4,457 drops — 4,859 distinct wordings.**
+---
 
-Deliverable: `audit/unhighlighted-sentences/unhighlighted-sentence-review.xlsx` (six sheets), with
-a dated copy on the Desktop. Read `audit/unhighlighted-sentences/README.md` first.
+## Re-measure rather than re-model
 
-| Decision | Lines | Wordings |
-|---|---:|---:|
-| POLICY RULING — one decision settles the population | 4,542 | **7** |
-| PAINT POLICY — certified already, the body just does not fill it | 3,342 | 3,042 |
-| CLASSIFY — no disposition anywhere in the archive | 1,905 | 1,447 |
-| SPAN BOUNDARY FIX — the highlight stops one character short | 911 | 481 |
-
-**Do not mix the first two with the third.** Seven wordings settle 42% of the queue. The PAINT
-POLICY rows are already dispositioned and only lack a colour — that is a rendering decision about
-context units, codes, evidence and quoted source, not a reclassification.
-
-**Re-measure rather than re-model.** `node scripts/audit-painted-truth.mjs --base https://qdrops.app`
-re-crawls the whole archive in ~7 minutes and grades any transcription against it. Never hand over
-a leftover list that has not been checked against the page.
-
-**#859 is a data defect:** its text splices a pointer inside a word
-(`These peo&gt;&gt;567493ple are stupid.`) so no rendered block matches it. Not yet fixed.
-
-Nothing was applied, rebuilt or deployed. Production stays at seed 88.
+`node scripts/audit-painted-truth.mjs --base https://qdrops.app` re-crawls the whole archive in
+~7 minutes and grades any transcription against the rendered DOM. Never hand over a leftover list
+that has not been checked against the page. The census that produced this batch is in
+`audit/unhighlighted-sentences/` — read its `README.md` first.
