@@ -336,8 +336,20 @@ const checks = [
   // so only the shortfall is added.
   ['claim occurrences = 10,558', allClaims.length === 10558, allClaims.length],
   // 4,782 + 1,654 = 6,436 claims; 250 + 94 = 344 predictions, across both rounds.
-  ['queue rulings applied = 6,436 claims / 344 predictions',
-    stats2020.claimsAdded + stats2020.claimsAlready === 6436 && stats2020.predsAdded + stats2020.predsAlready === 344,
+  // -1 claim, -1 prediction on 2026-08-24: two round-2 rulings the owner overrode on the UPDATED
+  // report. lib/queueRulings.mjs drops them before any materialiser sees them, so the round-2
+  // artifact stays the record of what was ruled that day and
+  // audit/unhighlighted-owner-rulings-2-corrections.json is the record of what was ruled about it.
+  //   #4891 claims  "Why would H."      — not a sentence Q wrote, but the head the splitter left
+  //                                       when it read "H." as a full stop. The whole sentence is
+  //                                       already a certified Question, so the head painted an
+  //                                       amber fragment inside a blue question.
+  //   #1443 predictions "DECLAS_Public[3]" — the owner put this line on the Claims sheet AND the
+  //                                       Predictions sheet, so it was ruled into both; the rule
+  //                                       below let Predictions win and pulled the Claim out.
+  //                                       "make this portion a claim" settles it.
+  ['queue rulings applied = 6,435 claims / 343 predictions',
+    stats2020.claimsAdded + stats2020.claimsAlready === 6435 && stats2020.predsAdded + stats2020.predsAlready === 343,
     `${stats2020.claimsAdded}+${stats2020.claimsAlready} claims, ${stats2020.predsAdded}+${stats2020.predsAlready} predictions`],
   ['all resolve to their Q source span', unresolved.length === 0, `${allClaims.length - unresolved.length}/${allClaims.length}`],
   // +11: the 47 arrivals introduce 44 wordings Claims did not already hold, while the 68
@@ -374,7 +386,12 @@ const checks = [
   // 847 + 94 ruled - 3 already certified = 941 (round 2 rules 94 predictions).
   // +1 on 2026-08-24 by owner ruling: #417 'News unlocks Map.' - "is a preiction in that post as
   // well". It stays a Claim too; the archive already carries spans certified as both.
-  ['predictions = 942', allPreds.length === 942, allPreds.length],
+  // -1 on 2026-08-24 (UPDATED report, sheet 4): #1443 "DECLAS_Public[3]" leaves Predictions on the
+  // owner's ruling "make this portion a claim". It does not leave the archive — it is certified
+  // once, in Claims, where the same round-2 review had also ruled it and where the cross-pull below
+  // had been taking it back out. Claim occurrences do not move: this arrival replaces the departure
+  // of #4891's "Why would H." exactly.
+  ['predictions = 941', allPreds.length === 941, allPreds.length],
   // isConclusion travels with the ROW rather than with the section, so a row leaving Claims
   // takes the attribute with it. -1: #3203's quoted question was the only withdrawn row
   // carrying it. 966 - 1 = 965.

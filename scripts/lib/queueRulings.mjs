@@ -25,13 +25,39 @@ export const QUEUE_RULING_FILES = [
   'audit/unhighlighted-owner-rulings-2-held-directives.json',
 ]
 
+// A LATER OWNER RULING MAY OVERRIDE AN EARLIER ROUND'S, AND THE OVERRIDE LIVES HERE TOO.
+//
+// The round-2 artifacts are the record of a review and must not be edited: deleting a row from one
+// would make the correction invisible and the round unreproducible. So a withdrawal is recorded
+// separately and applied HERE, in the one loader, rather than by each materialiser — a second copy
+// of the list is exactly the failure this module exists to prevent.
+export const QUEUE_CORRECTION_FILE = 'audit/unhighlighted-owner-rulings-2-corrections.json'
+
+const withdrawalKey = r => `${r.section}|${r.postNum}|${String(r.sourceText ?? '').toLowerCase().replace(/\s+/g, ' ').trim()}`
+
+/** Rulings a later owner ruling withdrew, as a Set of `section|postNum|text` keys. */
+export function queueRulingWithdrawals(root) {
+  const file = path.join(root, QUEUE_CORRECTION_FILE)
+  if (!fs.existsSync(file)) return new Set()
+  const doc = JSON.parse(fs.readFileSync(file, 'utf8'))
+  return new Set((doc.withdrawnRulings ?? []).map(withdrawalKey))
+}
+
+/** The withdrawal records themselves, for a caller that reports what it honoured. */
+export function queueRulingCorrections(root) {
+  const file = path.join(root, QUEUE_CORRECTION_FILE)
+  if (!fs.existsSync(file)) return []
+  return JSON.parse(fs.readFileSync(file, 'utf8')).withdrawnRulings ?? []
+}
+
 /**
- * Every ruling from every round, concatenated.
+ * Every ruling from every round, concatenated, minus any a later ruling withdrew.
  *
  * @param root repo root
  * @param section optional — return only this section's rulings
  */
 export function loadQueueRulings(root, section) {
+  const withdrawn = queueRulingWithdrawals(root)
   const out = []
   for (const rel of QUEUE_RULING_FILES) {
     const file = path.join(root, rel)
@@ -39,6 +65,7 @@ export function loadQueueRulings(root, section) {
     const doc = JSON.parse(fs.readFileSync(file, 'utf8'))
     for (const r of doc.rulings ?? []) {
       if (section && r.section !== section) continue
+      if (withdrawn.has(withdrawalKey(r))) continue
       out.push(r)
     }
   }

@@ -1,0 +1,24 @@
+{
+  "note": "Round-2 queue rulings that a LATER owner ruling overrides. Read by lib/queueRulings.mjs, which drops them before any materialiser sees them, so all six sections honour one list. Round 2's own record is NOT edited: audit/unhighlighted-owner-rulings-2.json stays the account of what was ruled on 2026-08-24, and this file is the account of what was ruled about it afterwards.",
+  "why": "A withdrawal cannot be a deletion from the round-2 artifact. That artifact is the evidence of a review; editing it would make the correction invisible and make the round unreproducible. It also cannot be a per-materialiser exclusion — six materialisers read the rulings and a second copy of the list is the failure lib/queueRulings.mjs exists to prevent.",
+  "ruledOn": "2026-08-24",
+  "source": "Q_Unhighlighted FINAL 2 - REPORT (UPDATED).xlsx, sheet 4-data-problems, owner annotations in the Problem column",
+  "withdrawnRulings": [
+    {
+      "section": "predictions",
+      "postNum": 1443,
+      "postId": "1443",
+      "sourceText": "DECLAS_Public[3]",
+      "ownerRuling": "make this portion a claim",
+      "because": "The owner put DECLAS_Public on the Q Claims sheet AND on the Q Predictions sheet in round 2, so the same line was ruled into both sections. apply-claims.mjs enforces that a line may not be both and let Predictions win, which pulled the Claim back out — so the drop showed violet where the owner's Claims row had asked for amber. The UPDATED report settles it: the portion is a Claim. The line is certified once, in Claims; the [3] is a bracket and paints red on top of it, which is the layering the owner is reading."
+    },
+    {
+      "section": "claims",
+      "postNum": 4891,
+      "postId": "4891",
+      "sourceText": "Why would H.",
+      "ownerRuling": "I want the whole sentence to be a question",
+      "because": "\"Why would H.\" is not a sentence Q wrote. It is the head the sentence splitter left when it read the abbreviation \"H.\" as a full stop, and audit/abbreviation-span-repairs.json already records the whole sentence — \"Why would H. Biden have such material on his laptop?\" — as a certified Question on this drop. Certifying the head as a Claim painted an amber fragment inside a blue question. The words are not lost: they are certified once, whole, in Questions."
+    }
+  ]
+}

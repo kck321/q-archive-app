@@ -355,7 +355,17 @@ const checks = [
   // occurred nowhere else) and 6 appear — the repaired wordings. #70 and #76 ask the same question
   // and share one key both before and after.
   // +5 on 2026-08-24: the 6 new occurrences carry 5 wordings Questions did not already hold.
-  ['distinct (canonical key) = 5,363', distinct.size === 5363, distinct.size],
+  // +1 on 2026-08-24 (UPDATED report, sheet 4): the owner ruled seven sentences to be Questions
+  // WHOLE — "this whole sentence should be a question lets fix this". Each was already recorded in
+  // audit/abbreviation-span-repairs.json, under `claims`, because that is where the splitter had
+  // put the head; what Questions actually held was the TAIL. Re-filed as tail repairs, so seven
+  // fragments become seven whole sentences. Occurrences do not move — a repair replaces, it does
+  // not add. Distinct does, and every key is accounted for: -6, because six of the seven tails
+  // ("ORIG?", "CENSUS?", "District of NY [background] important?", "Biden's financial records?",
+  // "PAYOUTS [for 'causes'] …?", "Biden by Russia, China …?") occurred on no other drop and their
+  // key leaves with them; "POTUS?" stays, being asked on #2360, #2462 and #3586 as well. +7, the
+  // seven repaired wordings, none of which Questions held. 5,363 - 6 + 7 = 5,364.
+  ['distinct (canonical key) = 5,364', distinct.size === 5364, distinct.size],
   // +4: #1975, #2420, #2695 and #2776 had no certified question before these rulings.
   // +5 posts gain their first certified question.
   ['posts with questions = 1,705', postsWith.size === 1705, postsWith.size],

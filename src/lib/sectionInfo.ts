@@ -48,7 +48,10 @@ export const CERTIFIED = {
   // 843 -> 841 on 2026-08-23: two predictions sat inside quoted passages.
   // 841 -> 934: 94 prediction rulings.
   // 934 -> 935: #417 'News unlocks Map.', ruled a Prediction as well as the Claim it already was.
-  predictions: { occurrences: 935, posts: 672 },
+  // 935 -> 934 on 2026-08-24 (UPDATED report, sheet 4): #1443's "DECLAS_Public[3]" leaves
+  // Predictions on the owner's ruling "make this portion a claim". Posts unchanged — the drop
+  // keeps "Dark to LIGHT.", certified in round 1.
+  predictions: { occurrences: 934, posts: 672 },
   /** Claim attributes. `conclusions` may apply to a claim or a prediction. */
   // checkable, sourceProvided and conclusions do NOT move with the queue ruling: they are
   // attributes the claims audit established from evidence inside the drop, and the owner ruled a
@@ -83,7 +86,7 @@ export const CERTIFIED = {
  */
 export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number; unit: string }> = {
   claims: { occurrences: 10258, posts: 3223, unit: 'occurrences' },
-  predictions: { occurrences: 935, posts: 672, unit: 'occurrences' },
+  predictions: { occurrences: 934, posts: 672, unit: 'occurrences' },
   // "mentions" is the right word here and the only section where it is: an entity is counted
   // once per resolved mention across the 1,066 canonical entities Q named in prose. The other 135
   // certified identities contribute none — they are linked sources, not words Q wrote — which is

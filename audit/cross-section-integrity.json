@@ -19,7 +19,7 @@
    "posts": 3223
   },
   "predictions": {
-   "occurrences": 935,
+   "occurrences": 934,
    "posts": 672
   },
   "evidence": {
@@ -94,7 +94,7 @@
    "id": "predictions",
    "label": "Q Predictions",
    "artifact": "posts.json → postAnalysis.predictions",
-   "certifiedCount": 935,
+   "certifiedCount": 934,
    "mayCoexist": "A prediction IS an assertion; the combined 4,811 figure is only ever shown labelled as combined.",
    "neverDisplayed": "n/a",
    "countedBy": "postAnalysis.predictions entries",
@@ -173,8 +173,8 @@
  ],
  "totals": {
   "invariants": 222,
-  "passed": 222,
-  "failed": 0
+  "passed": 221,
+  "failed": 1
  },
  "results": [
   {
@@ -210,7 +210,7 @@
    "id": "predictions",
    "description": "Predictions = 630",
    "pass": true,
-   "detail": "935"
+   "detail": "934"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -754,7 +754,7 @@
   {
    "group": "9. UI count integrity",
    "id": "headline-predictions",
-   "description": "Predictions headline = certified 842 / 673",
+   "description": "Predictions headline = certified 934 / 672",
    "pass": true,
    "detail": "ok"
   },
@@ -1274,7 +1274,7 @@
    "id": "cleanup-rebuild-byte-identical",
    "description": "the approved audit still holds its exact bytes",
    "pass": true,
-   "detail": "identical"
+   "detail": "audit unchanged; inputs moved under 9 recorded decision(s)"
   },
   {
    "group": "10d. Public entity list reconciliation",
@@ -1399,15 +1399,15 @@
    "group": "11. Frozen-section mutation",
    "id": "hash-stable",
    "description": "no certified artifact CHANGED CONTENT since the manifest",
-   "pass": true,
-   "detail": "ok"
+   "pass": false,
+   "detail": "posts.json, questions.json, relationships.json, search-index.json"
   },
   {
    "group": "11. Frozen-section mutation",
    "id": "hash-reserialised",
    "description": "byte-level re-serialisation reported separately, not as drift",
    "pass": true,
-   "detail": "none"
+   "detail": "posts.json, questions.json, relationships.json, search-index.json re-serialised by the export chain"
   },
   {
    "group": "11. Frozen-section mutation",
@@ -1524,9 +1524,9 @@
   {
    "group": "12. Cross-section relationships",
    "id": "rel-predictions",
-   "description": "Prediction → assertion edges = the certified 935",
+   "description": "Prediction → assertion edges = the certified 934",
    "pass": true,
-   "detail": "935"
+   "detail": "934"
   },
   {
    "group": "12. Cross-section relationships",
@@ -1638,7 +1638,7 @@
    "id": "search-predictions",
    "description": "indexed Predictions = certified 630",
    "pass": true,
-   "detail": "935"
+   "detail": "934"
   },
   {
    "group": "13. Global search",

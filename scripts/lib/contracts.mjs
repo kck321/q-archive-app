@@ -149,7 +149,10 @@ export const CANONICAL = {
   // 841 -> 934 on 2026-08-24: round 2 of the unhighlighted-queue review ruled 94 more lines
   // Predictions; one span was already certified and Step 3B-1 withdrew none of the rest.
   // +1 on 2026-08-24 by owner ruling: #417 'News unlocks Map.', which stays a Claim as well.
-  predictions: { occurrences: 935, posts: 672 },
+  // 935 -> 934 on 2026-08-24, the UPDATED report: #1443's "DECLAS_Public[3]" leaves Predictions on
+  // the owner's ruling "make this portion a claim". Posts unchanged — the drop keeps "Dark to
+  // LIGHT.", which round 1 certified, so it does not leave the Predictions post set.
+  predictions: { occurrences: 934, posts: 672 },
   evidence: { occurrences: 6590, posts: 3883 },
   // canonical 1,240 -> 1,235: Owner Ruling 1 merged five duplicate identities. No occurrence moved.
   entities: {

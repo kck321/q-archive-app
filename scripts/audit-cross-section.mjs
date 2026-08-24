@@ -581,7 +581,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     }
     t('headline-claims', 'Claims headline = certified 8,928 / 3,084',
       stated('claims', CANONICAL.claims.occurrences, CANONICAL.claims.posts), 'ok')
-    t('headline-predictions', 'Predictions headline = certified 842 / 673',
+    t('headline-predictions', 'Predictions headline = certified 934 / 672',
       stated('predictions', CANONICAL.predictions.occurrences, CANONICAL.predictions.posts), 'ok')
     t('headline-emphasis-gone', 'SECTION_TOTALS carries no Emphasis row', !/emphasis\s*:/i.test(totals), 'ok')
     // The post count is MEASURED, not frozen. It has moved at three of the last four

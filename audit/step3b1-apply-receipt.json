@@ -2,14 +2,14 @@
  "note": "Step 3B-1 apply receipt. Measured from the bundle, not from the plan.",
  "step": "3B-1",
  "planSha256": "373ca06b1416b6707a111f2c3da8e751472c551f739500f76cdcc764d3128058",
- "actionsApplied": 774,
+ "actionsApplied": 773,
  "actionsHeld": 0,
  "heldActionIds": [],
- "seedVersion": 88,
+ "seedVersion": 90,
  "outputs": {
-  "public/data/posts.json": "343ed39164a80826c3890cc63bfa57d3da2986f3837045487d8276f7c309650a",
-  "public/data/questions.json": "1a3787f0dceada2bbfe9c4dc9e75670e187312051cd0f5a11b2c888a18cdf253",
-  "public/data/semantics.json": "826785e87a534efb177f1fa11151797f70859c8727ea3194aaa4a1c423256b50",
+  "public/data/posts.json": "371673e71370c12157ba6b651ae4fc50985cceedd5206d889650bc5fd4b1f647",
+  "public/data/questions.json": "9407140deb4f70b4ced88bd969da14167aa1a64d770c607c3b0b6f3047a17b01",
+  "public/data/semantics.json": "2820fda6d5e9ac036c4d0d2b07d45bbd1853c08e4ed58c7c6f7d535d7a948ffc",
   "audit/occurrence-ledger.json": "1414c1dedac870c72340287d0d9873891092dd3ca2675b476077daab8b1e70f5"
  },
  "crossTab": [
@@ -78,9 +78,9 @@
    "projectedAfter": 18,
    "adjudicatedHeldDelta": 8,
    "target": 26,
-   "measuredAfter": 26,
+   "measuredAfter": 32,
    "headlineEligible": false,
-   "matches": true,
+   "matches": false,
    "measuredFrom": "public/data/semantics.json"
   },
   {
@@ -226,8 +226,8 @@
  "gates": [
   {
    "gate": "count cross-tab matches the projection",
-   "pass": true,
-   "detail": "all 9 cells (projection + 10 adjudicated held rows)"
+   "pass": false,
+   "detail": "q_authored|secondary|claim 32!=26"
   },
   {
    "gate": "every automatic action materialised",
@@ -287,7 +287,7 @@
   {
    "gate": "metadata transfer recorded for every withdrawn record",
    "pass": true,
-   "detail": "912 transfers, 351 carrying certified attributes, 84 meta keys re-pointed to a widened span"
+   "detail": "929 transfers, 364 carrying certified attributes, 84 meta keys re-pointed to a widened span"
   },
   {
    "gate": "question_directive relationship preserved on every unified pair",
@@ -301,8 +301,8 @@
   },
   {
    "gate": "the certified wording and the painted span stay index-aligned",
-   "pass": true,
-   "detail": "claims 8676 = claimSpans 8676; predictions 843 = predictionSpans 843; 0 posts out of alignment"
+   "pass": false,
+   "detail": "claims 10258 = claimSpans 10258; predictions 934 = predictionSpans 937; 3 posts out of alignment"
   },
   {
    "gate": "no PLAN action consumed a held-conflict key",
