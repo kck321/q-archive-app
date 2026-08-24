@@ -231,7 +231,9 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
             .filter(([, n]) => n > 0)
             .map(([label, n, cls]) => (
               <span key={label} className={`text-xs ${cls} border px-2 py-0.5 rounded font-medium`}>
-                {n} {label}{n === 1 ? '' : label === 'entity' ? 'ies' : 's'}
+                {/* "entity" pluralises by replacing the y, not by appending — the first cut of this
+                    table read "2 entityies". */}
+                {n} {n === 1 ? label : label === 'entity' ? 'entities' : `${label}s`}
               </span>
             ))}
           {/* Emphasis is RETIRED — the section, its data and its highlight. 0 drops carry any, so
