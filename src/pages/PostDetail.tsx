@@ -609,11 +609,29 @@ export function bracketSpansIn(text: string): string[] {
     .replace(/&quot;/gi, '"').replace(/&#0?39;|&apos;/gi, "'").replace(/&nbsp;/gi, ' ')
   const out: string[] = []
   const seen = new Set<string>()
-  const rx = /\[[^[\]\n]{1,60}\]/g
-  let m: RegExpExecArray | null
-  while ((m = rx.exec(text)) !== null) {
-    const shown = decode(m[0])
+  const add = (raw: string) => {
+    const shown = decode(raw)
     if (!seen.has(shown)) { seen.add(shown); out.push(shown) }
+  }
+  // A BRACKET INSIDE A BRACKET IS TWO BRACKETED ITEMS (owner ruling, 2026-08-24).
+  //
+  // #4881 writes "[mathematical probability _17:17 [day after]?]". The old body was [^[\]\n],
+  // which cannot cross a "[" — so it matched the INNER span only. The outer bracket got no red at
+  // all and the panel listed one item where the drop plainly shows two.
+  //
+  // ONE level of nesting, deliberately: that is the shape Q writes, and an unbounded nest needs a
+  // parser rather than a pattern. The outer match is taken first — the engine is sitting on its
+  // "[" — and its interior is then re-scanned for the inner spans, so BOTH are listed and both
+  // paint. They are the same red, so the outer reads as one red run with the inner inside it.
+  const OUTER = /\[(?:[^[\]\n]|\[[^[\]\n]{1,60}\]){1,120}\]/g
+  const INNER = /\[[^[\]\n]{1,60}\]/g
+  let m: RegExpExecArray | null
+  while ((m = OUTER.exec(text)) !== null) {
+    add(m[0])
+    const body = m[0].slice(1, -1)
+    const inner = new RegExp(INNER.source, 'g')
+    let i: RegExpExecArray | null
+    while ((i = inner.exec(body)) !== null) add(i[0])
   }
   return out
 }
@@ -630,12 +648,15 @@ const KIND_RGBA: Record<string, [string, string]> = {
   requestQuestion:   ['rgba(34,197,94,0.40)',  '#dcfce7'],
   claim:             ['rgba(245,158,11,0.40)', '#fef3c7'],
   prediction:        ['rgba(139,92,246,0.40)', '#ede9fe'],
-  namedEntity:       ['rgba(6,182,212,0.30)',  '#cffafe'],
+  // Matches HIGHLIGHT_CLS.namedEntity, which is now the solid cyan everywhere (owner ruling
+  // 2026-08-24 - one colour per category). An overlap that rotated the old translucent value
+  // would be telling the reader a colour the span never has.
+  namedEntity:       ['rgb(103,232,249)',      '#0f172a'],
   theme:             ['rgba(99,102,241,0.40)', '#e0e7ff'],
   impliedConclusion: ['rgba(249,115,22,0.40)', '#ffedd5'],
   verificationHook:  ['rgba(217,70,239,0.40)', '#fae8ff'],
   emphasis:          ['rgba(203,213,225,0.60)', '#0f172a'],
-  bracketCode:       ['rgba(153,27,27,0.50)',  '#fecaca'],
+  bracketCode:       ['rgb(185,28,28)',        '#fef2f2'],
   context:           ['rgba(107,114,128,0.35)', '#f3f4f6'],
   topic:             ['rgba(250,204,21,0.40)', '#fef9c3'],
   milIntel:          ['rgba(20,184,166,0.35)', '#ccfbf1'],

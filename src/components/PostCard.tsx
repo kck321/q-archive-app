@@ -11,6 +11,7 @@ import { linkify } from '../lib/linkify'
 import { mediaUrl, dedupeMedia } from '../lib/mediaUrl'
 import { timeAgo } from '../lib/timeAgo'
 import { highlightText } from '../lib/postHighlight'
+import { bracketSpansIn } from '../pages/PostDetail'
 import { useHighlightsEnabled } from '../lib/highlightPrefs'
 import { CAN_EDIT } from '../lib/appMode'
 import type { QPost, QQuestion, PostAnalysis } from '../types'
@@ -206,38 +207,35 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
               </a>
             )
           })()}
-          {questionTexts.length > 0 && (
-            <span className="text-xs bg-blue-900/50 text-blue-400 border border-blue-800/60 px-2 py-0.5 rounded font-medium">
-              {questionTexts.length} question{questionTexts.length !== 1 ? 's' : ''}
-            </span>
-          )}
-          {post.hasRequests && (
-            <span className="text-xs bg-green-900/50 text-green-400 border border-green-800/60 px-2 py-0.5 rounded font-medium">
-              {post.actionRequests?.length ?? 0} directive{(post.actionRequests?.length ?? 0) !== 1 ? 's' : ''}
-            </span>
-          )}
-          {post.postAnalysis && (post.postAnalysis.claims?.length ?? 0) > 0 && (
-            <span className="text-xs bg-amber-900/50 text-amber-400 border border-amber-800/60 px-2 py-0.5 rounded font-medium">
-              {post.postAnalysis.claims!.length} claim{post.postAnalysis.claims!.length !== 1 ? 's' : ''}
-            </span>
-          )}
-          {post.postAnalysis && (post.postAnalysis.predictions?.length ?? 0) > 0 && (
-            <span className="text-xs bg-violet-900/50 text-violet-400 border border-violet-800/60 px-2 py-0.5 rounded font-medium">
-              {post.postAnalysis.predictions!.length} prediction{post.postAnalysis.predictions!.length !== 1 ? 's' : ''}
-            </span>
-          )}
-          {post.postAnalysis && (post.postAnalysis.namedEntities?.length ?? 0) > 0 && (
-            <span className="text-xs bg-cyan-900/50 text-cyan-400 border border-cyan-800/60 px-2 py-0.5 rounded font-medium">
-              {post.postAnalysis.namedEntities!.length} entities
-            </span>
-          )}
-          {/* conclusions chip retired — every one is counted in the claims chip above */}
-          {/* checkable-claims chip retired — every one is counted in the claims chip */}
-          {post.postAnalysis && (post.postAnalysis.emphasis?.length ?? 0) > 0 && (
-            <span className="text-xs bg-slate-800/60 text-slate-300 border border-slate-600/60 px-2 py-0.5 rounded font-medium">
-              {post.postAnalysis.emphasis!.length} emphasis
-            </span>
-          )}
+          {/* EVERY CERTIFIED CATEGORY IN THIS DROP, AT THE TOP (owner ruling, 2026-08-24).
+              "i would like everything in the post thats categorized to be at the top like we have
+              but all the categories."
+
+              These chips were written one at a time as the sections were built, so the row showed
+              six of the eight and the two that never got a line — Themes and [ Brackets ] — simply
+              were not there. #3049 reads "2 questions · 2 claims · 1 entities" on a drop that also
+              carries two bracketed spans and a theme.
+
+              A TABLE, so the next category cannot be forgotten the same way. The order is the order
+              of SECTIONS in lib/sectionInfo.ts, and the colours are the ones the drop body paints
+              with — a chip in a colour the text never uses is a chip a reader cannot follow. */}
+          {([
+            ['question', questionTexts.length, 'bg-blue-900/50 text-blue-400 border-blue-800/60'],
+            ['directive', post.hasRequests ? (post.actionRequests?.length ?? 0) : 0, 'bg-green-900/50 text-green-400 border-green-800/60'],
+            ['claim', post.postAnalysis?.claims?.length ?? 0, 'bg-amber-900/50 text-amber-400 border-amber-800/60'],
+            ['prediction', post.postAnalysis?.predictions?.length ?? 0, 'bg-violet-900/50 text-violet-400 border-violet-800/60'],
+            ['entity', post.postAnalysis?.namedEntities?.length ?? 0, 'bg-cyan-900/50 text-cyan-400 border-cyan-800/60'],
+            ['theme', post.postAnalysis?.themes?.length ?? 0, 'bg-indigo-900/50 text-indigo-400 border-indigo-800/60'],
+            ['bracket', bracketSpansIn(post.text ?? '').length, 'bg-red-900/50 text-red-400 border-red-800/60'],
+          ] as [string, number, string][])
+            .filter(([, n]) => n > 0)
+            .map(([label, n, cls]) => (
+              <span key={label} className={`text-xs ${cls} border px-2 py-0.5 rounded font-medium`}>
+                {n} {label}{n === 1 ? '' : label === 'entity' ? 'ies' : 's'}
+              </span>
+            ))}
+          {/* Emphasis is RETIRED — the section, its data and its highlight. 0 drops carry any, so
+              the chip could only ever have rendered on data that no longer exists. */}
           {(post.qThreadReplies?.length ?? 0) > 0 && (
             <span className="text-xs bg-yellow-900/50 text-yellow-300 border border-yellow-700/60 px-2 py-0.5 rounded font-medium">
               🔐 Q replied ×{post.qThreadReplies!.length}

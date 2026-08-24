@@ -513,7 +513,14 @@ export const OVERLAY_REPAIR = 1
 //     6,321, entities 1,235 -> 1,214 rows and 8,975 -> 8,821 mentions. A returning reader holding
 //     87 would keep the pre-review paint on 41 drops and a registry counting one written word up
 //     to five times, so the seed has to move.
-export const SEED_VERSION = 92   // 92: THE #2347 CARD AND #1443, 2026-08-24. Both body Qs on #2347
+export const SEED_VERSION = 93   // 93: THE SAME BATCH, RE-STAMPED. 92 was recorded and then posts.json
+                                 //     CHANGED AGAIN inside it — the #2347 Q entities landed after the
+                                 //     bump, and seed-fingerprint.json was re-recorded at 92 rather
+                                 //     than bumped. A browser that had loaded 92 in that window kept a
+                                 //     #2347 with no entity on either Q, which is exactly what the
+                                 //     owner was looking at. The fingerprint guard is only as good as
+                                 //     the choice to BUMP rather than re-record.
+                                 // 92: THE #2347 CARD AND #1443, 2026-08-24. Both body Qs on #2347
                                  //     are Entities (the sign-off is not); WWG1WGA is a Directive on
                                  //     the five drops where it was not already one — 171 of the 178
                                  //     already were; #1443's "Texts" is a Claim and its

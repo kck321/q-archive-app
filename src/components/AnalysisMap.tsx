@@ -20,10 +20,23 @@ const LABELS: Record<string, { label: string; anchor: string }> = {
   evidence: { label: 'Evidence', anchor: 'links' },
   entities: { label: 'Entities', anchor: 'namedEntities' },
   themes: { label: 'Themes', anchor: 'themes' },
-  codes: { label: 'Codes', anchor: 'brackets' },
   emphasis: { label: 'Emphasis', anchor: 'emphasis' },
   brackets: { label: '[ Brackets ]', anchor: 'brackets' },
 }
+
+// CODES IS NOT A CATEGORY OF THIS ARCHIVE, AND THE CHIP SAID IT WAS (owner ruling, 2026-08-24).
+//
+//   "i see 'codes' we don't have this category it should be brackets right so i want to get rid
+//    of that category"
+//
+// There are EIGHT sections and none of them is "Codes" — the eighth is "Q Codes & Brackets",
+// id `brackets`. The map was drawing two chips that both linked there: `Codes`, from the certified
+// count in relationships.json, and `[ Brackets ]`, from the literal spans in the drop. A reader
+// saw a category, clicked it, and arrived somewhere else.
+//
+// The certified Codes layer is NOT touched — 1,986 items, still counted and still listed in its own
+// section. What goes is the second chip.
+const NOT_A_SECTION = new Set(['codes'])
 
 /** How each relationship reads in a sentence, and why it is allowed to exist. */
 const REL: Record<string, { label: string; why: string }> = {
@@ -59,7 +72,7 @@ export default function AnalysisMap({ postNum, onJump, extraCounts }: { postNum:
   if (!map) return null
 
   const counts = { ...map.counts, ...(extraCounts ?? {}) }
-  const entries = Object.entries(counts).filter(([k, n]) => n > 0 && k !== 'unresolved')
+  const entries = Object.entries(counts).filter(([k, n]) => n > 0 && k !== 'unresolved' && !NOT_A_SECTION.has(k))
   const byType = edges.reduce<Record<string, Edge[]>>((a, e) => { (a[e.type] ??= []).push(e); return a }, {})
 
   return (

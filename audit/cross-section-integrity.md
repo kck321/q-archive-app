@@ -110,7 +110,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | SEED_VERSION is 92 (the #2347 card and #1443) | 92 |
+| ✅ | SEED_VERSION is 93 (the #2347 card and #1443, re-stamped) | 93 |
 | ✅ | seeding is gated on SEED_VERSION | present |
 | ✅ | seeded data matches the SEED_VERSION that shipped it | unchanged |
 | ✅ | the gate value is persisted after seeding | present |

@@ -614,9 +614,9 @@
   {
    "group": "8. Seed and cache integrity",
    "id": "seed-current",
-   "description": "SEED_VERSION is 92 (the #2347 card and #1443)",
+   "description": "SEED_VERSION is 93 (the #2347 card and #1443, re-stamped)",
    "pass": true,
-   "detail": "92"
+   "detail": "93"
   },
   {
    "group": "8. Seed and cache integrity",

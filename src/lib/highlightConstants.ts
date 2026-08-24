@@ -44,8 +44,20 @@ export const URL_SRC = 'https?://[^\\s<>\'")\\]]+'
 
 // One color map for every highlight kind — used by both highlighters so a given category
 // renders the exact same shade everywhere.
+// ONE COLOUR PER CATEGORY, INCLUDING THESE TWO (owner ruling, 2026-08-24).
+//
+// Entities and brackets had TWO shades each. The 2026-08-24 solid rule gave them an opaque pair for
+// use over another category — the translucent fill was being tinted by whatever sat underneath, so
+// a name inside a Claim came out neither cyan nor amber. That fixed the muddiness and left a new
+// problem the owner then read off the page: the same category rendered in two different colours
+// depending on what happened to be behind it, so "cyan" stopped meaning one thing.
+//
+// So the SOLID pair is now the only pair. An entity is this cyan everywhere and a bracket is this
+// red everywhere, in front of whatever it covers, whether or not anything is behind it. Nothing is
+// lost from the earlier ruling — it asked for solid where something IS behind, and this is that
+// rule with the exception removed.
 export const HIGHLIGHT_CLS: Record<string, string> = {
-  namedEntity:       'bg-cyan-500/40 text-cyan-100',
+  namedEntity:       'bg-cyan-300 text-slate-900 font-medium',
   claim:             'bg-amber-500/40 text-amber-100',
   prediction:        'bg-violet-500/40 text-violet-100',
   theme:             'bg-indigo-500/40 text-indigo-100',
@@ -55,7 +67,7 @@ export const HIGHLIGHT_CLS: Record<string, string> = {
   // not tell it from unmarked text, which made the Emphasis chips look like they referred to
   // words that were never highlighted. It is a certified category and needs to read as one.
   emphasis:          'bg-slate-300/60 text-slate-900 font-medium',
-  bracketCode:       'bg-red-800/50 text-red-200 font-mono text-[0.9em]',
+  bracketCode:       'bg-red-700 text-red-50 font-mono text-[0.9em]',
   milIntel:          'bg-sky-500/40 text-sky-100 font-semibold',
   qSignature:        'bg-purple-400/30 text-purple-200 italic',
   topic:             'bg-yellow-400/40 text-yellow-100 font-semibold',
@@ -128,9 +140,14 @@ export function isSignOffMatch(text: string, start: number, end: number): boolea
 // So overlap gets its own pair of OPAQUE fills. Same hues, no alpha, dark text — nothing can show
 // through and the front layer is unmistakable. A span with nothing behind it keeps the translucent
 // fill, because there is nothing there to be in front OF.
+// KEPT, AND NOW IDENTICAL TO THE ORDINARY PAIR. The two renderers branch on "is something behind
+// this" and reach for HIGHLIGHT_SOLID when there is; test-queue-ruling-paint.mjs asserts that
+// branch by class name. Collapsing the map away would mean rewriting both renderers and the gate to
+// say the same thing a different way. The values are the same because the ruling is that they are
+// the same — read them from one place so they cannot drift apart again.
 export const HIGHLIGHT_SOLID: Record<string, string> = {
-  namedEntity: 'bg-cyan-300 text-slate-900 font-medium',
-  bracketCode: 'bg-red-700 text-red-50 font-mono text-[0.9em]',
+  namedEntity: HIGHLIGHT_CLS.namedEntity,
+  bracketCode: HIGHLIGHT_CLS.bracketCode,
 }
 
 // ─── Word-boundary matching for highlighted terms ─────────────────────────────
