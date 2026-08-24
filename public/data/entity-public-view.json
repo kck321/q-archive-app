@@ -29,6 +29,26 @@
   {
    "identities": [
     {
+     "canonical": "Alice",
+     "mentions": 98,
+     "posts": 78
+    },
+    {
+     "canonical": "Q",
+     "mentions": 10,
+     "posts": 5
+    }
+   ],
+   "identityIds": [
+    "qe-e01fe208ebaa",
+    "qe-e40b7c986dd5"
+   ],
+   "label": "Alice",
+   "rowId": "qe-e01fe208ebaa"
+  },
+  {
+   "identities": [
+    {
      "canonical": "Cruz",
      "mentions": 4,
      "posts": 4
@@ -20307,17 +20327,86 @@
   "qe-e01fe208ebaa": {
    "aliasPosts": {
     "ALICE": 1,
-    "Alice": 4
+    "Alice": 4,
+    "Q": 70
    },
    "kind": "prose",
    "perPostMentions": {
-    "74": 1,
-    "78": 1,
+    "48": 1,
+    "74": 2,
+    "78": 2,
     "80": 1,
     "83": 1,
-    "2636": 1
+    "335": 1,
+    "499": 1,
+    "503": 2,
+    "506": 2,
+    "510": 1,
+    "756": 1,
+    "757": 1,
+    "785": 1,
+    "958": 1,
+    "1075": 1,
+    "1264": 1,
+    "1601": 1,
+    "1697": 1,
+    "1770": 1,
+    "1777": 2,
+    "1865": 1,
+    "1872": 1,
+    "1873": 1,
+    "1951": 1,
+    "2089": 1,
+    "2100": 2,
+    "2101": 1,
+    "2102": 1,
+    "2206": 2,
+    "2234": 1,
+    "2383": 1,
+    "2387": 1,
+    "2388": 1,
+    "2422": 1,
+    "2428": 1,
+    "2499": 1,
+    "2500": 1,
+    "2509": 1,
+    "2510": 1,
+    "2519": 2,
+    "2546": 1,
+    "2549": 2,
+    "2556": 1,
+    "2592": 1,
+    "2604": 1,
+    "2636": 1,
+    "2657": 1,
+    "2715": 1,
+    "2788": 4,
+    "2864": 1,
+    "2930": 1,
+    "3279": 1,
+    "3309": 1,
+    "3310": 1,
+    "3312": 1,
+    "3581": 2,
+    "3583": 1,
+    "3584": 1,
+    "3588": 2,
+    "3604": 1,
+    "3667": 1,
+    "3673": 1,
+    "3688": 1,
+    "3800": 1,
+    "3836": 1,
+    "3969": 1,
+    "4136": 1,
+    "4283": 1,
+    "4333": 1,
+    "4449": 1,
+    "4622": 1,
+    "4734": 1,
+    "4881": 2
    },
-   "posts": 5,
+   "posts": 78,
    "rowId": "qe-e01fe208ebaa"
   },
   "qe-e0952c2ad775": {
@@ -20683,19 +20772,9 @@
    "rowId": "qe-e40236920216"
   },
   "qe-e40b7c986dd5": {
-   "aliasPosts": {
-    "Q": 5
-   },
    "kind": "prose",
-   "perPostMentions": {
-    "365": 5,
-    "2567": 1,
-    "2774": 1,
-    "2775": 1,
-    "2876": 2
-   },
    "posts": 5,
-   "rowId": "qe-e40b7c986dd5"
+   "rowId": "qe-e01fe208ebaa"
   },
   "qe-e417b0cf974d": {
    "aliasPosts": {
@@ -24056,14 +24135,14 @@
  "totals": {
   "canonicalEntities": 1532,
   "dormantReserved": 229,
-  "mentions": 9271,
-  "mergedIdentities": 23,
-  "mergedRows": 10,
+  "mentions": 9364,
+  "mergedIdentities": 25,
+  "mergedRows": 11,
   "proseMentioned": 1398,
-  "publicRows": 1519,
-  "repeatBadges": 1083,
+  "publicRows": 1518,
+  "repeatBadges": 1094,
   "sourceOnly": 134,
   "sourcePostChips": 358,
-  "unsettledAttributionsExcluded": 58
+  "unsettledAttributionsExcluded": 78
  }
 }

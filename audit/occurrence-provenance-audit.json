@@ -15,21 +15,21 @@
   "ambiguous_provenance": "Attribution or URL evidence is genuinely undecidable. Retained unchanged."
  },
  "totals": {
-  "occurrences": 10366,
-  "certifiedMentions": 10366,
+  "occurrences": 10459,
+  "certifiedMentions": 10459,
   "reconciles": true,
   "attribution": {
-   "unique": 10308,
-   "ambiguous": 58
+   "unique": 10381,
+   "ambiguous": 78
   },
   "byCategory": {
-   "visible_complete_token": 9265,
+   "visible_complete_token": 9338,
    "invalid_substring_extraction": 98,
    "visible_alias_variant": 39,
    "url_source_provenance": 646,
    "image_provenance_unconfirmed": 40,
    "no_supported_provenance": 83,
-   "ambiguous_provenance": 66,
+   "ambiguous_provenance": 86,
    "social_account_reference": 129
   },
   "urlSourceByEvidence": {
@@ -46,7 +46,7 @@
  "ruledOnAuditRun": "2026-08-24",
  "certifiedUnchanged": {
   "entityRows": 1751,
-  "mentions": 10366
+  "mentions": 10459
  },
  "rows": [
   {
@@ -2608,6 +2608,22 @@
     "category": "visible_alias_variant",
     "where": "prose",
     "via": "4ch"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1075:2",
+   "postNum": 1075,
+   "index": 2,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
    },
    "proposedAction": "keep",
    "certifiedCountEffect": 0
@@ -10070,6 +10086,22 @@
    "entityId": "qe-f133491e890a",
    "canonical": "France",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1264:0",
+   "postNum": 1264,
+   "index": 0,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -35361,6 +35393,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#1601:2",
+   "postNum": 1601,
+   "index": 2,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1602:0",
    "postNum": 1602,
    "index": 0,
@@ -38474,6 +38522,22 @@
    "entityId": "qe-7e666288b152",
    "canonical": "Patriots",
    "entityType": "title_role",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1697:0",
+   "postNum": 1697,
+   "index": 0,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -41693,6 +41757,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#1770:1",
+   "postNum": 1770,
+   "index": 1,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1772:0",
    "postNum": 1772,
    "index": 0,
@@ -41914,6 +41994,38 @@
    "entityId": "qe-f918f4a7fbe4",
    "canonical": "POTUS",
    "entityType": "title_role",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1777:1",
+   "postNum": 1777,
+   "index": 1,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1777:2",
+   "postNum": 1777,
+   "index": 2,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -47885,6 +47997,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#1865:2",
+   "postNum": 1865,
+   "index": 2,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1866:0",
    "postNum": 1866,
    "index": 0,
@@ -48142,6 +48270,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#1872:1",
+   "postNum": 1872,
+   "index": 1,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1873:0",
    "postNum": 1873,
    "index": 0,
@@ -48149,6 +48293,22 @@
    "entityId": "qe-2e11aea54808",
    "canonical": "Hoover Dam",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1873:1",
+   "postNum": 1873,
+   "index": 1,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -53674,6 +53834,22 @@
    "occurrenceId": "#1951:0",
    "postNum": 1951,
    "index": 0,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1951:1",
+   "postNum": 1951,
+   "index": 1,
    "alias": "We, the PEOPLE",
    "entityId": "qe-271807d35b2e",
    "canonical": "We the People",
@@ -60380,6 +60556,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#2089:3",
+   "postNum": 2089,
+   "index": 3,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#209:0",
    "postNum": 209,
    "index": 0,
@@ -60581,6 +60773,54 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#2100:2",
+   "postNum": 2100,
+   "index": 2,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2100:3",
+   "postNum": 2100,
+   "index": 3,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2101:0",
+   "postNum": 2101,
+   "index": 0,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2102:0",
    "postNum": 2102,
    "index": 0,
@@ -60652,6 +60892,22 @@
    "entityId": "qe-8e2f340277cc",
    "canonical": "Free Speech Systems LLC",
    "entityType": "organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2102:5",
+   "postNum": 2102,
+   "index": 5,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -64779,6 +65035,38 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#2206:2",
+   "postNum": 2206,
+   "index": 2,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2206:3",
+   "postNum": 2206,
+   "index": 3,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2207:0",
    "postNum": 2207,
    "index": 0,
@@ -66089,6 +66377,22 @@
    "entityId": "qe-f4dabfcc4006",
    "canonical": "Washington, D.C.",
    "entityType": "location",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2234:0",
+   "postNum": 2234,
+   "index": 0,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -72546,6 +72850,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#2383:1",
+   "postNum": 2383,
+   "index": 1,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2384:0",
    "postNum": 2384,
    "index": 0,
@@ -72668,6 +72988,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#2387:0",
+   "postNum": 2387,
+   "index": 0,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2388:0",
    "postNum": 2388,
    "index": 0,
@@ -72690,6 +73026,22 @@
    "alias": "Don McGahn",
    "entityId": "qe-602197501110",
    "canonical": "Don McGahn",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2388:2",
+   "postNum": 2388,
+   "index": 2,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
    "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
@@ -73999,6 +74351,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#2422:0",
+   "postNum": 2422,
+   "index": 0,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2424:0",
    "postNum": 2424,
    "index": 0,
@@ -74006,6 +74374,22 @@
    "entityId": "qe-f918f4a7fbe4",
    "canonical": "POTUS",
    "entityType": "title_role",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2428:0",
+   "postNum": 2428,
+   "index": 0,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -76984,6 +77368,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#2499:6",
+   "postNum": 2499,
+   "index": 6,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#25:0",
    "postNum": 25,
    "index": 0,
@@ -77087,6 +77487,22 @@
    "entityId": "qe-7e666288b152",
    "canonical": "Patriots",
    "entityType": "title_role",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2500:3",
+   "postNum": 2500,
+   "index": 3,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -77534,12 +77950,44 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#2509:0",
+   "postNum": 2509,
+   "index": 0,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#251:0",
    "postNum": 251,
    "index": 0,
    "alias": "Hussein",
    "entityId": "qe-ca3f699d20ac",
    "canonical": "Barack Obama",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2510:0",
+   "postNum": 2510,
+   "index": 0,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
    "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
@@ -77744,6 +78192,38 @@
    "category": "ambiguous_provenance",
    "detail": "2 live entities claim \"WASH POST\" and list this drop: Washington Post, WASH POST",
    "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2519:4",
+   "postNum": 2519,
+   "index": 4,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2519:5",
+   "postNum": 2519,
+   "index": 5,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
    "certifiedCountEffect": 0
   },
   {
@@ -78565,6 +79045,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#2546:4",
+   "postNum": 2546,
+   "index": 4,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2547:0",
    "postNum": 2547,
    "index": 0,
@@ -78950,6 +79446,38 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#2549:8",
+   "postNum": 2549,
+   "index": 8,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2549:9",
+   "postNum": 2549,
+   "index": 9,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2550:0",
    "postNum": 2550,
    "index": 0,
@@ -79166,6 +79694,22 @@
    "entityId": "qe-89ed7c32a320",
    "canonical": "FAKE NEWS MEDIA",
    "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2556:2",
+   "postNum": 2556,
+   "index": 2,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -79675,15 +80219,12 @@
    "postNum": 2567,
    "index": 5,
    "alias": "Q",
-   "entityId": "qe-e40b7c986dd5",
-   "canonical": "Q",
-   "entityType": "coded_alias",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "2 live entities claim \"Q\" and list this drop: Alice, Q",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {
@@ -79700,6 +80241,19 @@
     "where": "prose"
    },
    "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2567:7",
+   "postNum": 2567,
+   "index": 7,
+   "alias": "Q",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "2 live entities claim \"Q\" and list this drop: Alice, Q",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {
@@ -80407,6 +80961,22 @@
    "certifiedCountEffect": -1
   },
   {
+   "occurrenceId": "#2592:0",
+   "postNum": 2592,
+   "index": 0,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2593:0",
    "postNum": 2593,
    "index": 0,
@@ -80780,6 +81350,22 @@
    "occurrenceId": "#2604:7",
    "postNum": 2604,
    "index": 7,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2604:8",
+   "postNum": 2604,
+   "index": 8,
    "alias": "We, the PEOPLE",
    "entityId": "qe-271807d35b2e",
    "canonical": "We the People",
@@ -83815,6 +84401,22 @@
    "entityId": "qe-02d154832a55",
    "canonical": "Hong Kong",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2657:62",
+   "postNum": 2657,
+   "index": 62,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -87079,6 +87681,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#2715:7",
+   "postNum": 2715,
+   "index": 7,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2717:0",
    "postNum": 2717,
    "index": 0,
@@ -88228,15 +88846,25 @@
    "postNum": 2774,
    "index": 1,
    "alias": "Q",
-   "entityId": "qe-e40b7c986dd5",
-   "canonical": "Q",
-   "entityType": "coded_alias",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "2 live entities claim \"Q\" and list this drop: Alice, Q",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2774:2",
+   "postNum": 2774,
+   "index": 2,
+   "alias": "Q",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "2 live entities claim \"Q\" and list this drop: Alice, Q",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {
@@ -88276,15 +88904,25 @@
    "postNum": 2775,
    "index": 2,
    "alias": "Q",
-   "entityId": "qe-e40b7c986dd5",
-   "canonical": "Q",
-   "entityType": "coded_alias",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "2 live entities claim \"Q\" and list this drop: Alice, Q",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2775:3",
+   "postNum": 2775,
+   "index": 3,
+   "alias": "Q",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "2 live entities claim \"Q\" and list this drop: Alice, Q",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {
@@ -89108,6 +89746,70 @@
    "entityId": "qe-2df6a50f6a0e",
    "canonical": "God",
    "entityType": "religious_spiritual",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2788:5",
+   "postNum": 2788,
+   "index": 5,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2788:6",
+   "postNum": 2788,
+   "index": 6,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2788:7",
+   "postNum": 2788,
+   "index": 7,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2788:8",
+   "postNum": 2788,
+   "index": 8,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -91832,6 +92534,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#2864:1",
+   "postNum": 2864,
+   "index": 1,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2866:0",
    "postNum": 2866,
    "index": 0,
@@ -91988,15 +92706,12 @@
    "postNum": 2876,
    "index": 3,
    "alias": "Q",
-   "entityId": "qe-e40b7c986dd5",
-   "canonical": "Q",
-   "entityType": "coded_alias",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "2 live entities claim \"Q\" and list this drop: Alice, Q",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {
@@ -92004,15 +92719,38 @@
    "postNum": 2876,
    "index": 4,
    "alias": "Q",
-   "entityId": "qe-e40b7c986dd5",
-   "canonical": "Q",
-   "entityType": "coded_alias",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "2 live entities claim \"Q\" and list this drop: Alice, Q",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2876:5",
+   "postNum": 2876,
+   "index": 5,
+   "alias": "Q",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "2 live entities claim \"Q\" and list this drop: Alice, Q",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2876:6",
+   "postNum": 2876,
+   "index": 6,
+   "alias": "Q",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "2 live entities claim \"Q\" and list this drop: Alice, Q",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {
@@ -92926,6 +93664,22 @@
    "alias": "Ohr",
    "entityId": "qe-a273cc0d54f7",
    "canonical": "Bruce Ohr",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2930:7",
+   "postNum": 2930,
+   "index": 7,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
    "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
@@ -102835,6 +103589,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#3279:0",
+   "postNum": 3279,
+   "index": 0,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#3280:0",
    "postNum": 3280,
    "index": 0,
@@ -103056,6 +103826,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#3309:1",
+   "postNum": 3309,
+   "index": 1,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#3310:0",
    "postNum": 3310,
    "index": 0,
@@ -103088,6 +103874,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#3310:2",
+   "postNum": 3310,
+   "index": 2,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#3312:0",
    "postNum": 3312,
    "index": 0,
@@ -103111,6 +103913,22 @@
    "entityId": "qe-7feeff7362e0",
    "canonical": "Media Matters",
    "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3312:2",
+   "postNum": 3312,
+   "index": 2,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -104072,6 +104890,22 @@
    "entityId": "qe-f918f4a7fbe4",
    "canonical": "POTUS",
    "entityType": "title_role",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#335:1",
+   "postNum": 335,
+   "index": 1,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -109041,6 +109875,38 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#3581:10",
+   "postNum": 3581,
+   "index": 10,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3581:11",
+   "postNum": 3581,
+   "index": 11,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#3583:0",
    "postNum": 3583,
    "index": 0,
@@ -109067,6 +109933,38 @@
    "entityId": "qe-f918f4a7fbe4",
    "canonical": "POTUS",
    "entityType": "title_role",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3583:2",
+   "postNum": 3583,
+   "index": 2,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3584:0",
+   "postNum": 3584,
+   "index": 0,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -109740,6 +110638,38 @@
    "entityId": "qe-918bfc26a632",
    "canonical": "British Broadcasting Corporation",
    "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3588:16",
+   "postNum": 3588,
+   "index": 16,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3588:17",
+   "postNum": 3588,
+   "index": 17,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -110689,6 +111619,22 @@
    "entityId": "qe-d2e9ee564b6f",
    "canonical": "House Intel Comm",
    "entityType": "government_institution",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3604:1",
+   "postNum": 3604,
+   "index": 1,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -111837,15 +112783,12 @@
    "postNum": 365,
    "index": 5,
    "alias": "Q",
-   "entityId": "qe-e40b7c986dd5",
-   "canonical": "Q",
-   "entityType": "coded_alias",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "2 live entities claim \"Q\" and list this drop: Alice, Q",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {
@@ -111853,15 +112796,12 @@
    "postNum": 365,
    "index": 6,
    "alias": "Q",
-   "entityId": "qe-e40b7c986dd5",
-   "canonical": "Q",
-   "entityType": "coded_alias",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "2 live entities claim \"Q\" and list this drop: Alice, Q",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {
@@ -111869,15 +112809,12 @@
    "postNum": 365,
    "index": 7,
    "alias": "Q",
-   "entityId": "qe-e40b7c986dd5",
-   "canonical": "Q",
-   "entityType": "coded_alias",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "2 live entities claim \"Q\" and list this drop: Alice, Q",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {
@@ -111885,15 +112822,12 @@
    "postNum": 365,
    "index": 8,
    "alias": "Q",
-   "entityId": "qe-e40b7c986dd5",
-   "canonical": "Q",
-   "entityType": "coded_alias",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "2 live entities claim \"Q\" and list this drop: Alice, Q",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {
@@ -111901,21 +112835,83 @@
    "postNum": 365,
    "index": 9,
    "alias": "Q",
-   "entityId": "qe-e40b7c986dd5",
-   "canonical": "Q",
-   "entityType": "coded_alias",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "2 live entities claim \"Q\" and list this drop: Alice, Q",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#365:10",
    "postNum": 365,
    "index": 10,
+   "alias": "Q",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "2 live entities claim \"Q\" and list this drop: Alice, Q",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#365:11",
+   "postNum": 365,
+   "index": 11,
+   "alias": "Q",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "2 live entities claim \"Q\" and list this drop: Alice, Q",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#365:12",
+   "postNum": 365,
+   "index": 12,
+   "alias": "Q",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "2 live entities claim \"Q\" and list this drop: Alice, Q",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#365:13",
+   "postNum": 365,
+   "index": 13,
+   "alias": "Q",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "2 live entities claim \"Q\" and list this drop: Alice, Q",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#365:14",
+   "postNum": 365,
+   "index": 14,
+   "alias": "Q",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "2 live entities claim \"Q\" and list this drop: Alice, Q",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#365:15",
+   "postNum": 365,
+   "index": 15,
    "alias": "Terminal 5",
    "entityId": "qe-6c9bfa949221",
    "canonical": "Terminal 5",
@@ -111929,9 +112925,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#365:11",
+   "occurrenceId": "#365:16",
    "postNum": 365,
-   "index": 11,
+   "index": 16,
    "alias": "FOX THREE",
    "entityId": "qe-65a74e4e6abb",
    "canonical": "Fox Three",
@@ -111945,9 +112941,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#365:12",
+   "occurrenceId": "#365:17",
    "postNum": 365,
-   "index": 12,
+   "index": 17,
    "alias": "SPLASH",
    "entityId": "qe-eb8431161eb0",
    "canonical": "Splash",
@@ -112479,6 +113475,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#3667:5",
+   "postNum": 3667,
+   "index": 5,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#3668:0",
    "postNum": 3668,
    "index": 0,
@@ -112534,6 +113546,22 @@
    "alias": "Durham",
    "entityId": "qe-89ec708993ff",
    "canonical": "John Durham",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3673:1",
+   "postNum": 3673,
+   "index": 1,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
    "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
@@ -112845,6 +113873,22 @@
    "alias": "Durham",
    "entityId": "qe-89ec708993ff",
    "canonical": "John Durham",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3688:2",
+   "postNum": 3688,
+   "index": 2,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
    "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
@@ -115971,6 +117015,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#3800:1",
+   "postNum": 3800,
+   "index": 1,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#3806:0",
    "postNum": 3806,
    "index": 0,
@@ -116956,6 +118016,22 @@
    "entityId": "qe-e4b9b2985b7c",
    "canonical": "United States",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3836:38",
+   "postNum": 3836,
+   "index": 38,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -120389,6 +121465,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#3969:1",
+   "postNum": 3969,
+   "index": 1,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#397:0",
    "postNum": 397,
    "index": 0,
@@ -123364,6 +124456,22 @@
    },
    "proposedAction": "remove-annotation",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#4136:0",
+   "postNum": 4136,
+   "index": 0,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#4137:0",
@@ -128087,6 +129195,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4283:1",
+   "postNum": 4283,
+   "index": 1,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4285:0",
    "postNum": 4285,
    "index": 0,
@@ -130070,6 +131194,22 @@
    },
    "proposedAction": "migrate-to-linked-source",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#4333:3",
+   "postNum": 4333,
+   "index": 3,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#4334:0",
@@ -133112,6 +134252,22 @@
    },
    "proposedAction": "migrate-to-social-account",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#4449:2",
+   "postNum": 4449,
+   "index": 2,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#445:0",
@@ -138530,6 +139686,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4622:0",
+   "postNum": 4622,
+   "index": 0,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4623:0",
    "postNum": 4623,
    "index": 0,
@@ -143409,6 +144581,22 @@
    "certifiedCountEffect": -1
   },
   {
+   "occurrenceId": "#4734:0",
+   "postNum": 4734,
+   "index": 0,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4738:0",
    "postNum": 4738,
    "index": 0,
@@ -144992,6 +146180,22 @@
    "entityId": "qe-3c12635b1796",
    "canonical": "U.S. Department of Energy",
    "entityType": "government_agency",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#48:11",
+   "postNum": 48,
+   "index": 11,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -148231,6 +149435,38 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4881:1",
+   "postNum": 4881,
+   "index": 1,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4881:2",
+   "postNum": 4881,
+   "index": 2,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4882:0",
    "postNum": 4882,
    "index": 0,
@@ -150146,6 +151382,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#499:0",
+   "postNum": 499,
+   "index": 0,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#5:0",
    "postNum": 5,
    "index": 0,
@@ -150489,6 +151741,38 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#503:0",
+   "postNum": 503,
+   "index": 0,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#503:1",
+   "postNum": 503,
+   "index": 1,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#506:0",
    "postNum": 506,
    "index": 0,
@@ -150496,6 +151780,38 @@
    "entityId": "qe-f918f4a7fbe4",
    "canonical": "POTUS",
    "entityType": "title_role",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#506:1",
+   "postNum": 506,
+   "index": 1,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#506:2",
+   "postNum": 506,
+   "index": 2,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -150608,6 +151924,22 @@
    "entityId": "qe-f918f4a7fbe4",
    "canonical": "POTUS",
    "entityType": "title_role",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#510:1",
+   "postNum": 510,
+   "index": 1,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -159596,6 +160928,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#74:3",
+   "postNum": 74,
+   "index": 3,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#742:0",
    "postNum": 742,
    "index": 0,
@@ -160120,6 +161468,38 @@
    "entityId": "qe-67110e653ddb",
    "canonical": "Pakistan",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#756:1",
+   "postNum": 756,
+   "index": 1,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#757:0",
+   "postNum": 757,
+   "index": 0,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -161815,6 +163195,22 @@
    "occurrenceId": "#78:12",
    "postNum": 78,
    "index": 12,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#78:13",
+   "postNum": 78,
+   "index": 13,
    "alias": "Alice & Wonderland",
    "entityId": "qe-37b07a60c52b",
    "canonical": "Alice & Wonderland",
@@ -161828,9 +163224,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#78:13",
+   "occurrenceId": "#78:14",
    "postNum": 78,
-   "index": 13,
+   "index": 14,
    "alias": "Alice & Wonderland",
    "entityId": "qe-37b07a60c52b",
    "canonical": "Alice & Wonderland",
@@ -162154,6 +163550,22 @@
    "alias": "Delta",
    "entityId": "qe-4e97a299414b",
    "canonical": "Delta",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#785:2",
+   "postNum": 785,
+   "index": 2,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
    "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
@@ -167475,6 +168887,22 @@
    "entityId": "qe-14962f5a2b9c",
    "canonical": "Texas",
    "entityType": "location",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#958:2",
+   "postNum": 958,
+   "index": 2,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",

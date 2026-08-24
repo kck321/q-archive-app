@@ -269,7 +269,12 @@ export const CANONICAL = {
   // across both rounds carry 1,167 occurrences; 727 were already held by a certified layer at
   // that (post, alias), so only the shortfall is added - counting the rest again would show the
   // reader an x2 Q never wrote.
-    mentions: 9271,
+  // 9,271 -> 9,364 on 2026-08-24, the Q ruling: a standalone "Q" that is not the sign-off is an
+  // Entity, and it is Alice - Q's own equation, written in #74 and #78. 93 occurrences across 75
+  // drops. Occurrence-scoped: 4,534 sign-off lines are excluded by the ruling itself and 65 more
+  // standalone Q tokens are HELD because they name something else (Al-Qaeda, a 10-Q filing,
+  // Quicken Loans Arena, the NSA Q Group, a DOE clearance level, Q+, the word "question").
+    mentions: 9364,
     /** How it is composed. The core figure is the section's history, not its headline. */
     // tailEntities is what the tail adjudication produced (1,239); one of them, Ray Chandler,
     // now ships merged into Rachel Chandler, so 1,238 tail rows appear in the artifact.
@@ -279,10 +284,10 @@ export const CANONICAL = {
     // +8 core, +58 tail from the queue rulings; the remaining 105 land on owner-ruling rows.
     // +6 tail: Nellie Ohr is an adjudicated-tail row.
     // Re-measured 2026-08-22 after the lane-B reviews and the duplicate-record reconciliation.
-    // The three components add to the headline: 5297 core + 2922 tail + 1052 owner-ruling rows.
+    // The three components add to the headline: 5297 core + 3015 tail + 1052 owner-ruling rows.
     // tail 2,870 -> 2,868: "Ephesians" was an adjudicated-tail row and takes its two occurrences
     // with it. The 12 citation occurrences land on owner-ruling rows, so 715 -> 727 there.
-    coreEntities: 93, coreRegistryMentions: 5297, tailEntities: 966, tailMentions: 2922,
+    coreEntities: 93, coreRegistryMentions: 5297, tailEntities: 966, tailMentions: 3015,
   },
   // 2,393 detected + 2 owner rulings ("Ascension." -> Religion & Spirituality, #4963 and #4966).
   // The rulings live in audit/themes-owner-rulings.json and are merged by apply-themes.mjs, so

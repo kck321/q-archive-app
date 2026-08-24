@@ -29,7 +29,7 @@ import { CAN_EDIT } from '../lib/appMode'
 import { getAliasesFor, getFullAliasGroup, addAlias, removeAlias, subscribeAliases } from '../lib/aliases'
 // STATIC_ENTITIES / MIL_INTEL_TERMS / Q_SIGNATURES are deliberately NOT imported: a word list
 // cannot decide membership in a certified section.
-import { HIGHLIGHT_CLS, HIGHLIGHT_SOLID, wordBoundaryPattern } from '../lib/highlightConstants'
+import { HIGHLIGHT_CLS, HIGHLIGHT_SOLID, isSignOffMatch, wordBoundaryPattern } from '../lib/highlightConstants'
 import type { QPost, QQuestion, PostAnalysis, CorrelatedArticle, QuotedPost } from '../types'
 
 const STOP_WORDS = new Set(['the','and','for','with','from','this','that','are','was','were','have','been','will','into','about','its','their','which','posts'])
@@ -258,6 +258,8 @@ function renderPostBody(
         let m: RegExpExecArray | null
         while ((m = regex.exec(text)) !== null) {
           if (m.index === regex.lastIndex) regex.lastIndex++
+          // The sign-off is not a mention — owner rule. See isSignOffMatch.
+          if (kind === 'namedEntity' && isSignOffMatch(text, m.index, m.index + m[0].length)) continue
           segs.push({ start: m.index, end: m.index + m[0].length, kind, matchText: m[0] })
         }
         }

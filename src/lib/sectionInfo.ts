@@ -86,7 +86,7 @@ export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number
   // once per resolved mention across the 1,066 canonical entities Q named in prose. The other 135
   // certified identities contribute none — they are linked sources, not words Q wrote — which is
   // why this figure sits BESIDE the 1,201 total on the page rather than under it.
-  namedEntities: { occurrences: 9271, posts: 2099, unit: 'mentions' },
+  namedEntities: { occurrences: 9364, posts: 2117, unit: 'mentions' },
   // Themes are assignments rather than spans — a theme is inferred from a drop, not copied out
   // of it — so the unit is named accordingly. 2,393 detected + 2 owner rulings.
   themes: { occurrences: 2646, posts: 1899, unit: 'assignments' },
@@ -198,12 +198,13 @@ export const ENTITIES = {
   // 8,831 -> 9,271 (2026-08-24): +440. 1,007 entity rulings across both rounds carry 1,167
   // occurrences, and 727 were already held by a certified layer at that (post, alias), so only
   // the shortfall is added - counting the rest again would show the reader an x2 Q never wrote.
-  mentions: 9271,
-  mentionScope: 'Every resolved mention across all 1,532 certified entities: 5,297 from the 93 core-registry entities, 2,922 from the entities identified in the adjudication pass, and 1,052 from owner rulings. Domains, URL slugs and linked accounts are NOT counted here — they are shown under Sources. Unresolved aliases are counted in neither: they are held in the Resolution Center.',
+  // 9,271 -> 9,364: the Q ruling — a standalone "Q" that is not the sign-off is Alice (#74, #78).
+  mentions: 9364,
+  mentionScope: 'Every resolved mention across all 1,532 certified entities: 5,297 from the 93 core-registry entities, 3,015 from the entities identified in the adjudication pass, and 1,052 from owner rulings. Domains, URL slugs and linked accounts are NOT counted here — they are shown under Sources. Unresolved aliases are counted in neither: they are held in the Resolution Center.',
   coreEntities: 93,
   coreRegistryMentions: 5297,
   tailEntities: 1238,
-  tailMentions: 2922,
+  tailMentions: 3015,
   contextResolved: 161,
   routedToThemes: 53,
   unresolvedTokens: 1011,
@@ -389,7 +390,7 @@ export const SECTIONS: SectionInfo[] = [
     // so the ⓘ panel contradicted the header directly above it. The two components are named here
     // for the same reason they are named in the header: 1,201 with no split reads as 1,201 entities
     // Q wrote about, and 135 of them he never wrote at all.
-    certified: `${n(1532)} canonical entities (${n(1398)} named in the prose · ${n(134)} linked as a source only) · ${n(9271)} certified prose mentions`,
+    certified: `${n(1532)} canonical entities (${n(1398)} named in the prose · ${n(134)} linked as a source only) · ${n(9364)} certified prose mentions`,
     note: 'Entities are secondary tags rather than sentence types — a question, claim, prediction or directive may contain several. Names are canonicalised, so "HRC", "Hillary" and "Hillary Clinton" are one person, while Q’s exact wording is preserved in every post. Where a reference is ambiguous it is left unresolved rather than guessed.',
   },
   {

@@ -90,6 +90,31 @@ export const HIGHLIGHT_CLS: Record<string, string> = {
   keyword:           'bg-transparent ring-1 ring-red-400/80 underline decoration-dashed decoration-red-400/80 underline-offset-2 text-red-200 font-semibold rounded-sm',
 }
 
+// ─── THE SIGN-OFF IS NOT A MENTION ────────────────────────────────────────────
+//
+// OWNER RULE, 2026-08-24: "any other post that has Q within it that ISN'T THE SIGNATURE AT THE
+// BOTTOM — Q = Alice". So "Q" is a certified Entity resolving to Alice on 93 occurrences, and the
+// sign-off is deliberately not one of them.
+//
+// The DATA already scopes it that way — the alias ruling names line and character for every
+// occurrence it covers. The RENDERER does not: it paints each certified term wherever the term
+// appears, which is right for every other name and wrong for this one. #74 came out with its
+// closing "Q" cyan, which is precisely the occurrence the ruling excludes.
+//
+// So a match is dropped when the line it sits on IS the sign-off and nothing else. Same pattern as
+// SIGNATURE in scripts/lib/units.mjs, and it can only ever suppress a whole-line match — a "Q"
+// inside a sentence is untouched.
+const SIGN_OFF_LINE = /^(?:q\+?|q\s*!\S*|wwg1wga|ncswic|wrwy)[.!?]*$/i
+export function isSignOffMatch(text: string, start: number, end: number): boolean {
+  const lineStart = text.lastIndexOf('\n', start - 1) + 1
+  const nl = text.indexOf('\n', end)
+  const lineEnd = nl === -1 ? text.length : nl
+  const line = text.slice(lineStart, lineEnd).trim()
+  if (!SIGN_OFF_LINE.test(line)) return false
+  // Only when the match IS the line — never when it is one word of a longer one.
+  return text.slice(start, end).trim() === line
+}
+
 // ─── ON TOP, AND SOLID ABOUT IT ───────────────────────────────────────────────
 //
 // OWNER RULE: an Entity or a Bracket is always in front of whatever else covers the same

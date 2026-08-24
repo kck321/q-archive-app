@@ -237,6 +237,16 @@
     "rendered": 0,
     "what": "Rachel Maddow. The 2026-08-17 cleanup took her row dormant because every mention she had was a URL fragment - a slug in an address Q linked to, not a name Q wrote. #1515's 'THE BRIDGE: PODESTA GROUP' list names her in PROSE, so the row is no longer empty after the same withdrawals run and it survives where it used to go dormant. The cleanup itself is unchanged: it withdraws exactly the URL-derived occurrences it always withdrew, and this row simply has something left."
    }
+  },
+  {
+   "ruling": "audit/entities-owner-rulings.json (aliasRulings: Q -> Alice) + audit/q-entity-owner-ruling.json",
+   "ruledOn": "2026-08-24",
+   "what": "Owner ruling: a standalone \"Q\" that is not the sign-off is an Entity, and it is Alice - Q's own equation, written in #74 and #78. 93 occurrences across 75 drops arrive BEFORE this step runs, because apply-entities.mjs is earlier in the chain. No new identity: Alice and Q are both already certified, so entityRows does not move.",
+   "entityRows": 0,
+   "mentions": 93,
+   "rendered": 93,
+   "evidence": "OCCURRENCE-SCOPED, which is the whole safety of it. 4,534 sign-off lines are excluded by the ruling itself; of the 158 standalone Q tokens that remain, 65 are HELD because they name something else - Al-Qaeda (AL-Q), an SEC 10-Q filing, Quicken Loans Arena (\"The Q\"), the NSA Q Group, a DOE clearance level, Q+ (which PROJECT_CONTEXT invariant 6 names as a different designation) and the word \"question\". apply-entities.mjs asserts resolved mentions 10,459, owner-alias 2,198 and adjudicated-tail 3,985, each exactly +93.",
+   "why": "The 2026-08-17 approval record is left exactly as written, for the same reason as the six deltas before this one: the guard must still refuse an unrecognised tree, and a later owner ruling must not read as drift."
   }
  ]
 }

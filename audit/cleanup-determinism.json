@@ -1,9 +1,9 @@
 {
  "note": "Determinism stamp. The approved audit must keep its exact bytes; the inputs move whenever a later decision moves the certified state, and every such decision is recorded in audit/entity-cleanup-rollback-contract.json postApprovalDeltas.",
- "rebaselinedOn": "2026-08-24",
- "why": "Re-baselined for ROUND 2 of the unhighlighted-sentence review. The audit was re-run because its INPUTS moved - 499 more entity rulings and 308 identities are certified before the cleanup step reaches them - and the re-run is what apply-entity-cleanup.mjs demands before it will replay ('the audit covers N occurrences but M are certified'). The derivation is unchanged: audit-occurrence-provenance.mjs reproduces every prior verdict, proposedWithdrawals stays at 951, and the replay still lands on the approved after-state. Same situation, and the same remedy, as the 2026-08-22 re-baseline recorded below.",
- "previousAuditSha256": "5db20add557c7bdb3d37ad3d4abd75e77872522358d807e67f5206d835f4e115",
+ "rebaselinedOn": "2026-08-24 (Q ruling)",
+ "why": "Re-baselined for the Q ruling: a standalone \"Q\" that is not the sign-off is an Entity, and it is Alice. The audit was re-run because its INPUTS moved - 93 more mentions are certified before the cleanup step reaches them - and the re-run is what apply-entity-cleanup.mjs demands before it will replay. The derivation is unchanged. Same situation, and the same remedy, as the two re-baselines recorded before this one.",
+ "previousAuditSha256": "db63323e2da1d3eb83efce4e77904af0a59e2cba3773e880c4aa3ff46c4ef6a8",
  "inputs": "1409797889f2d2d6ca3b117cca28c774918de4d305736baccd2bfa4d1aaf24b5|343ed39164a80826c3890cc63bfa57d3da2986f3837045487d8276f7c309650a",
- "auditSha256": "db63323e2da1d3eb83efce4e77904af0a59e2cba3773e880c4aa3ff46c4ef6a8",
+ "auditSha256": "207adb4ae7c3648bb2d4db21272af4191d6ce44c4b607767c5cadd225ccd235a",
  "previousWhy": "The previous stamp recorded the audit as it stood BEFORE the 2026-08-21 Nellie Ohr ruling re-ran audit-occurrence-provenance.mjs (commit 32d168e). The re-run was deliberate and its evidence is in the rollback contract; the stamp simply was not re-baselined with it."
 }

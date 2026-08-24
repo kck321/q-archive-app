@@ -915,7 +915,13 @@ const checks = [
   // '>>BO>>CS>>BO>>NO>>CS>>NO>>BO>>' chain, once in '[BO][NO]'). Scoped by includePosts, because
   // the token matches 102 times across 75 posts and almost all of them are the English word.
   // +440 from round 2 of the queue review.
-  ['resolved mentions = 10,366', totals.mentions === 10366, totals.mentions],
+  // 10,366 -> 10,459 on 2026-08-24, the Q ruling: a standalone "Q" that is not the sign-off is an
+  // Entity, and it is Alice. 93 occurrences across 75 drops. OCCURRENCE-SCOPED, which is the whole
+  // safety of it: 4,534 sign-off lines are excluded by the ruling itself, and 65 more standalone
+  // Q tokens are HELD because they name something else - Al-Qaeda, a 10-Q filing, Quicken Loans
+  // Arena, the NSA Q Group, a DOE clearance level, Q+ and the word "question".
+  // See audit/q-entity-owner-ruling.json.
+  ['resolved mentions = 10,459', totals.mentions === 10459, totals.mentions],
   ['stage 1: 19 rows merged away', !stage1 || s1Merged === 19, s1Merged],
   ['stage 1: 85 types corrected', !stage1 || s1Typed === 85, s1Typed],
   // 18 in the audit, 17 applied: ENT-0709 "Non-profit organization" is HELD because it
@@ -931,7 +937,7 @@ const checks = [
   ['every entity carries a slug', entities.every(e => e.slug), 'ok'],
   // C19 34 + CCP 4 + WUT 2 + US 277 + RC 12. US is the largest single alias ruling in the corpus.
   // +6, the same six: they arrive through an owner alias ruling.
-  ['owner alias mentions = 2,105', aliasMentions === 2105, aliasMentions],
+  ['owner alias mentions = 2,198', aliasMentions === 2198, aliasMentions],
   // Every mention of the 39 is accounted for, and the submetrics move for two separate reasons.
   // MERGES move mentions ACROSS populations without changing the headline: 53 tail mentions are
   // absorbed into core-registry rows (Bill Clinton +7, Australia +6, New York +13, WikiLeaks +17,
@@ -951,7 +957,7 @@ const checks = [
   // +58: queue rulings that landed on an adjudicated-tail identity.
   // +6, the same six again - one movement, counted in three places by design.
   // +54: round-2 rulings that landed on an adjudicated-tail identity.
-  ['adjudicated-tail mentions = 3,892', totals.adjudicatedTailMentions === 3892, totals.adjudicatedTailMentions],
+  ['adjudicated-tail mentions = 3,985', totals.adjudicatedTailMentions === 3985, totals.adjudicatedTailMentions],
   ['tail occurrence rows = 3,440', tailOccurrences.length === 3440, tailOccurrences.length],
   ['every tail occurrence carries a post identity', tailOccurrences.every(o => o.postNum && o.id), 'ok'],
   ['every tail entity now has post provenance',

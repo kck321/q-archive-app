@@ -4,7 +4,7 @@ import React from 'react'
 import { getAliasesFor, getFullAliasGroup } from './aliases'
 // STATIC_ENTITIES / MIL_INTEL_TERMS / Q_SIGNATURES are deliberately NOT imported: a word list
 // cannot decide membership in a certified section.
-import { HIGHLIGHT_CLS, HIGHLIGHT_SOLID, wordBoundaryPattern } from './highlightConstants'
+import { HIGHLIGHT_CLS, HIGHLIGHT_SOLID, isSignOffMatch, wordBoundaryPattern } from './highlightConstants'
 import type { PostAnalysis } from '../types'
 import { expandToSentence, questionHighlightRegex } from './posts'
 import { highlightsEnabled } from './highlightPrefs'
@@ -53,6 +53,8 @@ function addSegs(segs: Seg[], text: string, terms: string[], kind: Kind) {
     let m: RegExpExecArray | null
     while ((m = rx.exec(text)) !== null) {
       if (m.index === rx.lastIndex) rx.lastIndex++   // extra guard against zero-length matches
+      // The sign-off is not a mention — owner rule. Identical to PostDetail.
+      if (kind === 'namedEntity' && isSignOffMatch(text, m.index, m.index + m[0].length)) continue
       segs.push({ start: m.index, end: m.index + m[0].length, kind })
     }
   }
