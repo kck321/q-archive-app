@@ -6935,3 +6935,74 @@ evidence and handed 387 live highlights back for re-ruling. The script now **ref
 `audit/unhighlighted-sentences/Q_Unhighlighted_FINAL_2_REPORT.xlsx`, seven sheets, with a copy on
 the Desktop. Generated from the artifacts so it cannot drift from what was applied: Summary ·
 Already highlighted · Held for you · Data problems · How it was read · Fixes made · Entity lists.
+
+---
+
+## 2026-08-24 (later) — Five owner rulings on the drop body
+
+**"i want all entities and brackets to be up front and solid if there is another highlighted color
+behind it … give me any items outside of entities and brackets that have 2 overlays … i want every
+entity to have a hover description … all the same look … give me all the theme inside highlighted
+areas that are purple … in post 74 i want the Q in this to be an entity and any other post that has
+Q within it that isn't the signature at the bottom Q = Alice"**
+
+### 1. Entities and brackets render SOLID over another colour
+
+The ordinary fills are translucent. Over another category the colour underneath tinted them, so a
+name inside a Claim came out neither cyan nor amber but a muddy third thing, and a reader could not
+tell which layer was in front. `HIGHLIGHT_SOLID` gives entity and bracket an OPAQUE pair — same
+hues, no alpha — used only when something IS behind. Alone, they keep the softer fill, because
+there is nothing to be in front of. **11,254 spans across 2,142 drops.**
+`test-queue-ruling-paint.mjs` now demands the solid class specifically, so the rule cannot regress
+to the blend. (`d5d5acf`)
+
+### 2. The other two-layer overlaps — and what the owner was actually seeing
+
+New `scripts/audit-overlays.mjs` rebuilds the drop body's segments from the same sources
+`renderPostBody()` paints from. **1,676 spans across 1,058 drops** carry two layers with no entity
+or bracket to win, so the renderer rotates.
+
+The owner named "claims that overlay predictions". **That pair is real and there are exactly
+THREE** — #2938 twice, #4414. What is being seen is **claim + theme at 593 spans**: a Claim is
+amber, a Theme is **indigo `#6366F1`**, and indigo sits one hue from the **violet `#8B5CF6`** that
+Predictions use. **1,448 of the 1,676 rotating spans involve a Theme.** That single fact answers
+both the "claims over predictions" question and the "themes that are purple" one.
+
+### 3. Every entity has a hover, and every hover reads the same way
+
+They differed because they were AUTHORED one per row in the upstream registry audit: most read
+"X is categorized in this archive as a TYPE…", thirty carry an extra "is used for Y" clause, and
+**358 entities certified since had none at all**. `normalise-entity-hovers.mjs` builds one pattern
+for all **1,532** from the certified record. The 30 expansions are carried across **verbatim, never
+invented**; the type label is the corpus's own most-used phrasing. 134 source-only rows say what
+they are instead of "appears 0 times". **`byPost` is untouched** — 842 entities, 3,693 records —
+which is the layer that says how ONE drop uses the label. `entity-hover-pending.json` is now empty.
+(`70f4b54`)
+
+### 4. Q = Alice, everywhere except the sign-off
+
+#74 and #78 write the equation in Q's own words. **93 occurrences across 75 drops** resolve to
+Alice (5 → 98 mentions across 78 posts). **65 are HELD**, because "Q" outside the sign-off is not
+one thing — applying the equation to all of them would have certified as Alice: **Al-Qaeda**
+("AL-Q", #1887), an **SEC 10-Q filing** (#2588), **Quicken Loans Arena** — "The Q" — (#2263), the
+**NSA Q Group** (#144, #148), a **DOE clearance level** (#34, #48), **Q+** (which PROJECT_CONTEXT
+invariant 6 names as a different designation), and ~30 lines where Q is simply the word
+**"question"**.
+
+Occurrence-scoped by line and character, which is the whole safety of it. Q keeps its own row
+(10 mentions) for what the ruling does not cover.
+
+**The sign-off needed a renderer rule too.** The data scopes by occurrence; the renderer paints a
+certified term wherever it appears, so #74 came out with its closing "Q" cyan — the one occurrence
+the ruling excludes. `isSignOffMatch()` drops a namedEntity match when the line it sits on IS the
+sign-off and the match is the whole line. New gate `test-q-alice.mjs`, 7/7. (`3d7041d`)
+
+### Counts
+
+entities 1,532 canonical · **9,271 → 9,364 mentions** · Alice 5 → 98 · 222/222 invariants.
+
+### Deliverable
+
+Two sheets added to `Q_Unhighlighted FINAL 2 - REPORT.xlsx`: **Two-layer overlaps** and **Themes
+that read purple**, with the anchors that do it most — WWG1WGA 166, MSM 132, FAKE NEWS 124,
+FISA 116, God bless 113.
