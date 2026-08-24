@@ -5,12 +5,13 @@
   "source": "Q_Unhighlighted FINAL 2 - REPORT (UPDATED).xlsx, sheet 4-data-problems, owner annotations in the Problem column",
   "withdrawnRulings": [
     {
-      "section": "predictions",
+      "section": "claims",
       "postNum": 1443,
       "postId": "1443",
       "sourceText": "DECLAS_Public[3]",
-      "ownerRuling": "make this portion a claim",
-      "because": "The owner put DECLAS_Public on the Q Claims sheet AND on the Q Predictions sheet in round 2, so the same line was ruled into both sections. apply-claims.mjs enforces that a line may not be both and let Predictions win, which pulled the Claim back out — so the drop showed violet where the owner's Claims row had asked for amber. The UPDATED report settles it: the portion is a Claim. The line is certified once, in Claims; the [3] is a bracket and paints red on top of it, which is the layering the owner is reading."
+      "ownerRuling": "DECLAS_Public should be a prediction",
+      "supersedes": "The first reading of the UPDATED report, earlier on 2026-08-24, took the sheet-4 annotation \"make this portion a claim\" to mean the line should be a Claim, and withdrew the PREDICTIONS ruling instead. The owner corrected it the same day. The correction is recorded here rather than by editing the entry, so what was ruled and what was corrected are both readable.",
+      "because": "The owner put DECLAS_Public on the Q Claims sheet AND on the Q Predictions sheet in round 2, so the same line was ruled into both sections and apply-claims.mjs's \"a line may not be both\" rule had to pick one. The owner has now picked: it is a Prediction. The line is certified once, in Predictions; the [3] is a bracket and paints red on top of it."
     },
     {
       "section": "claims",

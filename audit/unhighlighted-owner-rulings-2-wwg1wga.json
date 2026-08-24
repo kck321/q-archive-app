@@ -1,0 +1,92 @@
+{
+ "note": "The owner rulings of 2026-08-24 on the #2347 card and on #1443. Read through lib/queueRulings.mjs, like every other round.",
+ "rulings": [
+  {
+   "postNum": 1183,
+   "postId": "1183",
+   "section": "directives",
+   "sourceText": "WWG1WGA",
+   "was": "unclassified within a line certified elsewhere",
+   "ruledOn": "2026-08-24",
+   "hostLine": "WWG1WGA - JFK.",
+   "provenance": "owner ruling 2026-08-24 — \"lets make the wwg1wga a directive. lets make ALL the wwg1wga directives trough all the post\". 171 of the 178 WWG1WGA occurrences were already Directives; this is one of the five that were not, and it is a sub-line span in a line the archive certifies in another section."
+  },
+  {
+   "postNum": 2347,
+   "postId": "2347",
+   "section": "directives",
+   "sourceText": "WWG1WGA",
+   "was": "unclassified within a line certified elsewhere",
+   "ruledOn": "2026-08-24",
+   "hostLine": "The Q will be answered (((WWG1WGA))).",
+   "provenance": "owner ruling 2026-08-24 — \"lets make the wwg1wga a directive. lets make ALL the wwg1wga directives trough all the post\". 171 of the 178 WWG1WGA occurrences were already Directives; this is one of the five that were not, and it is a sub-line span in a line the archive certifies in another section."
+  },
+  {
+   "postNum": 2543,
+   "postId": "2543",
+   "section": "directives",
+   "sourceText": "WWG1WGA",
+   "was": "unclassified within a line certified elsewhere",
+   "ruledOn": "2026-08-24",
+   "hostLine": ">>WWG1WGA (from the movie)",
+   "provenance": "owner ruling 2026-08-24 — \"lets make the wwg1wga a directive. lets make ALL the wwg1wga directives trough all the post\". 171 of the 178 WWG1WGA occurrences were already Directives; this is one of the five that were not, and it is a sub-line span in a line the archive certifies in another section."
+  },
+  {
+   "postNum": 2565,
+   "postId": "2565",
+   "section": "directives",
+   "sourceText": "WWG1WGA",
+   "was": "unclassified within a line certified elsewhere",
+   "ruledOn": "2026-08-24",
+   "hostLine": "Scott Free = WWG1WGA",
+   "provenance": "owner ruling 2026-08-24 — \"lets make the wwg1wga a directive. lets make ALL the wwg1wga directives trough all the post\". 171 of the 178 WWG1WGA occurrences were already Directives; this is one of the five that were not, and it is a sub-line span in a line the archive certifies in another section."
+  },
+  {
+   "postNum": 2567,
+   "postId": "2567",
+   "section": "directives",
+   "sourceText": "WWG1WGA!!!",
+   "was": "unclassified within a line certified elsewhere",
+   "ruledOn": "2026-08-24",
+   "hostLine": "Scott Free > WWG1WGA!!!",
+   "provenance": "owner ruling 2026-08-24 — \"lets make the wwg1wga a directive. lets make ALL the wwg1wga directives trough all the post\". 171 of the 178 WWG1WGA occurrences were already Directives; this is one of the five that were not, and it is a sub-line span in a line the archive certifies in another section."
+  },
+  {
+   "postNum": 1443,
+   "postId": "1443",
+   "section": "claims",
+   "sourceText": "Texts",
+   "was": "unclassified",
+   "ruledOn": "2026-08-24",
+   "provenance": "owner ruling 2026-08-24 — \"post 1443 lets make Texts a claim.\". One of the bare evidence lines in #1443's list; \"302s\", \"Tarmac\" and \"FBI\" beside it are already certified."
+  }
+ ],
+ "ruledOn": "2026-08-24",
+ "rulingText": [
+  "lets make the wwg1wga a directive. lets make ALL the wwg1wga directives trough all the post",
+  "post 1443 lets make Texts a claim."
+ ],
+ "wwg1wga": {
+  "occurrences": 178,
+  "alreadyDirective": 171,
+  "ruledHere": 5,
+  "refusedInsideAUrl": [
+   {
+    "postNum": 1601,
+    "line": "https://www.reddit.com/r/greatawakening/comments/8tzk3w/potus_signed_my_hat_last_night_he_saw_the_wwg1wga/",
+    "why": "WWG1WGA inside a URL. Certifying a span there puts a fill inside a link and splits the anchor — the same rule that holds ROTHS inside +FLYROTHSFLY+ and the third Q on #2347 inside the handle \"Q_ANONBaby\". A word inside an address is not a word Q wrote."
+   },
+   {
+    "postNum": 3660,
+    "line": "http://twitter.com/WWG1WGA_Every1/status/1203368497750913024",
+    "why": "WWG1WGA inside a URL. Certifying a span there puts a fill inside a link and splits the anchor — the same rule that holds ROTHS inside +FLYROTHSFLY+ and the third Q on #2347 inside the handle \"Q_ANONBaby\". A word inside an address is not a word Q wrote."
+   }
+  ],
+  "family": "Not declared. lib/queueDirectiveFamily.mjs answers `morale` for WWG1WGA, which is what the 168 already-certified ones carry."
+ },
+ "totals": {
+  "ruled": 6,
+  "directives": 5,
+  "claims": 1
+ }
+}

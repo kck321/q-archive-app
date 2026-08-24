@@ -971,7 +971,12 @@ const checks = [
   // See audit/q-entity-owner-ruling.json.
   // 10,459 + 150 from round 3's identities and NAT SEC's 48 drops + 2 for WH_POTUS_PRESS
   // (#397, #417) = 10,611.
-  ['resolved mentions = 10,611', totals.mentions === 10611, totals.mentions],
+  // +2 on 2026-08-24: "lets make both the Q's an Entity (not the signiture)" on #2347. Both body
+  // Qs — "The signifier will 'force' the Q." and "The Q will be answered (((WWG1WGA)))." — were
+  // held by the "the word question" rule, which was written for those two lines; the owner read the
+  // drop and ruled otherwise. TWO, not three: the third Q on that drop is inside the twitter handle
+  // "Q_ANONBaby" and stays held, which is what includeOccurrences is for.
+  ['resolved mentions = 10,613', totals.mentions === 10613, totals.mentions],
   ['stage 1: 19 rows merged away', !stage1 || s1Merged === 19, s1Merged],
   ['stage 1: 85 types corrected', !stage1 || s1Typed === 85, s1Typed],
   // 18 in the audit, 17 applied: ENT-0709 "Non-profit organization" is HELD because it
@@ -987,7 +992,9 @@ const checks = [
   ['every entity carries a slug', entities.every(e => e.slug), 'ok'],
   // C19 34 + CCP 4 + WUT 2 + US 277 + RC 12. US is the largest single alias ruling in the corpus.
   // +6, the same six: they arrive through an owner alias ruling.
-  ['owner alias mentions = 2,198', aliasMentions === 2198, aliasMentions],
+  // +2, the two #2347 occurrences the owner ruled in. They arrive through the Q -> Alice alias
+  // ruling, which is where every occurrence of that ruling arrives.
+  ['owner alias mentions = 2,200', aliasMentions === 2200, aliasMentions],
   // Every mention of the 39 is accounted for, and the submetrics move for two separate reasons.
   // MERGES move mentions ACROSS populations without changing the headline: 53 tail mentions are
   // absorbed into core-registry rows (Bill Clinton +7, Australia +6, New York +13, WikiLeaks +17,
@@ -1007,7 +1014,8 @@ const checks = [
   // +58: queue rulings that landed on an adjudicated-tail identity.
   // +6, the same six again - one movement, counted in three places by design.
   // +54: round-2 rulings that landed on an adjudicated-tail identity.
-  ['adjudicated-tail mentions = 4,007', totals.adjudicatedTailMentions === 4007, totals.adjudicatedTailMentions],
+  // +2, the same two: Alice is an adjudicated-tail identity, so an alias ruling on it lands here.
+  ['adjudicated-tail mentions = 4,009', totals.adjudicatedTailMentions === 4009, totals.adjudicatedTailMentions],
   ['tail occurrence rows = 3,440', tailOccurrences.length === 3440, tailOccurrences.length],
   ['every tail occurrence carries a post identity', tailOccurrences.every(o => o.postNum && o.id), 'ok'],
   ['every tail entity now has post provenance',

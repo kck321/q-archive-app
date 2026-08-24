@@ -220,7 +220,9 @@ const checks = [
   // 577 -> 554. The 24 rows round 2 held for stating no instruction were ruled Directives by the
   // owner on 2026-08-24; 23 of them were sitting in Context, and a ruled line is no longer
   // "reviewed, and in no semantic category". All 23 are counted below as promoted.
-  ['contiguous context spans = 554', materialised === 554, materialised],
+  // 554 -> 553. #1443's bare evidence line "Texts" was sitting in Context and the owner ruled it a
+  // Claim on 2026-08-24. Counted below as promoted, like every other ruled line.
+  ['contiguous context spans = 553', materialised === 553, materialised],
   // 13 -> 12: one of the multi-line reconstructions was ruled into a section too.
   // 12 -> 3: nine more of the multi-line reconstructions were ruled into a section.
   ['multi-line reconstructions held as exceptions = 3', multiline.length === 3, multiline.length],
@@ -236,8 +238,8 @@ const checks = [
   // 577 + 3 = 580, and the certified 4,902 is unchanged — the units moved sides, none left the
   // archive. `absorbed` falls 8 -> 1 because seven of those tail fragments were themselves ruled
   // into a section before the repair could absorb them.
-  ['554 + 3 = 557, + 4,336 promoted + 1 absorbed + 8 recategorised = the certified 4,902',
-    materialised + multiline.length === 557
+  ['553 + 3 = 556, + 4,337 promoted + 1 absorbed + 8 recategorised = the certified 4,902',
+    materialised + multiline.length === 556
       && materialised + multiline.length + promoted.length + absorbed + collided === 4902,
     `${materialised + multiline.length} + ${promoted.length} + ${absorbed} + ${collided}`],
   // 2 themes + 3 claims (#4965 'In time.', #4963 x2) + 4 entity rulings whose span was a
@@ -246,7 +248,10 @@ const checks = [
   // + 4 (#4893 x2, #4853 x2, all 2026-08-21) = 3,159.
   // 3,159 + 1,154 from round 2 of the review = 4,313.
   // 4,313 + 23 of the 24 held directives the owner ruled in on 2026-08-24 = 4,336.
-  ['owner rulings removed from Context = 4,336', promoted.length === 4336, promoted.length],
+  // + 1 on 2026-08-24: #1443 "Texts", ruled a Claim. The five WWG1WGA directives add none — each
+  // is a sub-line span inside a line already certified in another section, so none of them was in
+  // Context to be promoted out of.
+  ['owner rulings removed from Context = 4,337', promoted.length === 4337, promoted.length],
   // Against the CLEANED text, because that is what the ledger segmented. Comparing to raw text
   // fails on the whitespace normalisation clean() applies and would report a defect that is
   // purely an artefact of checking the wrong string.

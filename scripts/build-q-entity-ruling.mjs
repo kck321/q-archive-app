@@ -70,6 +70,26 @@ const NOT_THE_PERSONA = [
   [/\bQ ?#/i, 'a drop number, not a name'],
 ]
 
+// ── THE OWNER OVERRULES A READING, OCCURRENCE BY OCCURRENCE ─────────────────
+//
+// OWNER RULING 2026-08-24, on the #2347 card: "lets make both the Q's an Entity (not the
+// signiture)".
+//
+// Both of #2347's body Qs were held above by the "the word question" rule — and that rule was
+// written FOR them: `Q will be (answered|asked)` and `force' the Q`. Reading them as the noun is
+// defensible, and the owner has read the drop and ruled the other way. The ruling stands; the rule
+// keeps the ~30 other lines it holds.
+//
+// SCOPED TO THE LINE, never to the drop. The THIRD Q on #2347 stays held: it is inside the twitter
+// handle "Q_ANONBaby" on the link line, which is not a word Q wrote — the same reason the two
+// WWG1WGAs inside URLs were refused in this batch. The sign-off never reaches any of this;
+// SIGNATURE excludes it first, which is what "(not the signiture)" asks for.
+const OWNER_OVERRIDES = [
+  { postNum: 2347, lineIndex: 3, expect: "force' the Q" },
+  { postNum: 2347, lineIndex: 4, expect: 'The Q will be answered' },
+]
+const overrideUsed = new Set()
+
 const persona = []
 const held = []
 let signatureLines = 0
@@ -84,10 +104,26 @@ for (const p of posts) {
     while ((m = rx.exec(line)) !== null) {
       const why = NOT_THE_PERSONA.find(([re]) => re.test(line))
       const row = { postNum: p.postNum, postId: p.id, lineIndex, charIndex: m.index, line: line.slice(0, 160) }
+      const override = OWNER_OVERRIDES.find(o => o.postNum === p.postNum && o.lineIndex === lineIndex)
+      if (override && line.includes(override.expect)) {
+        overrideUsed.add(`${override.postNum}|${override.lineIndex}`)
+        persona.push({ ...row, ownerOverride: 'owner ruling 2026-08-24 — "lets make both the Q\'s an Entity (not the signiture)". Held before that by: ' + (why ? why[1] : 'nothing') })
+        continue
+      }
       if (why) held.push({ ...row, names: why[1] })
       else persona.push(row)
     }
   })
+}
+
+// REFUSE RATHER THAN SILENTLY MISS. An override names a line by index and by the words on it; if
+// the drop no longer reads that way the ruling needs re-reading by a person, not dropping.
+const missed = OWNER_OVERRIDES.filter(o => !overrideUsed.has(`${o.postNum}|${o.lineIndex}`))
+if (missed.length) {
+  console.error(`\n${missed.length} owner override(s) matched no Q on the line they name:`)
+  for (const o of missed) console.error(`   #${o.postNum} line ${o.lineIndex} — expected ${JSON.stringify(o.expect)}`)
+  console.error('')
+  process.exit(1)
 }
 
 const statesTheEquation = posts
@@ -123,6 +159,47 @@ const out = {
     signatureLinesExcluded: signatureLines,
   },
   personaOccurrences: persona,
+}
+
+// THIS FILE IS THE RULING; THE ALIAS LIST IS WHAT MAKES IT PAINT, AND THEY MUST NOT DRIFT.
+//
+// The equation reaches the drop through an alias ruling in audit/entities-owner-rulings.json —
+// `{ alias: "Q", canonical: "Alice", includePosts: [...] }` — and THAT list is what apply-entities
+// reads. Ruling here and forgetting there is silent: the ruling records 76 drops, the alias paints
+// 75, and every count still reconciles because nothing ever compares them.
+//
+// It happened on 2026-08-24. The owner ruled #2347's two body Qs in; this file said so and the drop
+// went on showing no entity at all. So the two are compared, here, every run.
+{
+  const aliasFile = path.join(ROOT, 'audit/entities-owner-rulings.json')
+  if (fs.existsSync(aliasFile)) {
+    const doc = JSON.parse(fs.readFileSync(aliasFile, 'utf8'))
+    const row = (doc.aliasRulings ?? []).find(r => r.alias === 'Q' && r.canonical === 'Alice')
+    if (row) {
+      const want = [...new Set(persona.map(r => r.postNum))].sort((a, b) => a - b)
+      const have = [...(row.includePosts ?? [])].sort((a, b) => a - b)
+      const missing = want.filter(p => !have.includes(p))
+      const extra = have.filter(p => !want.includes(p))
+      // AND THE OCCURRENCES, WHICH ARE THE HALF THAT DECIDES WHAT PAINTS. includePosts is a
+      // whitelist of drops; includeOccurrences is the [lineIndex, charIndex] list within them, and
+      // it is what stops the alias claiming the "Q" inside the handle "Q_ANONBaby" on #2347. Post
+      // scope alone would have added a third mention there and painted it inside the link.
+      const wantOcc = new Set(persona.map(r => `${r.postNum}|${r.lineIndex}|${r.charIndex}`))
+      const haveOcc = new Set(Object.entries(row.includeOccurrences ?? {})
+        .flatMap(([p, pairs]) => pairs.map(([l, c]) => `${Number(p)}|${l}|${c}`)))
+      const occMissing = [...wantOcc].filter(k => !haveOcc.has(k))
+      const occExtra = [...haveOcc].filter(k => !wantOcc.has(k))
+      if (missing.length || extra.length || occMissing.length || occExtra.length) {
+        console.error('\nThe Q -> Alice alias ruling does not match this ruling.')
+        if (missing.length) console.error(`   ruled here but NOT in includePosts: ${missing.join(', ')}`)
+        if (extra.length) console.error(`   in includePosts but not ruled here : ${extra.join(', ')}`)
+        if (occMissing.length) console.error(`   ruled here but NOT in includeOccurrences: ${occMissing.slice(0, 12).join('  ')}`)
+        if (occExtra.length) console.error(`   in includeOccurrences but not ruled here: ${occExtra.slice(0, 12).join('  ')}`)
+        console.error('   audit/entities-owner-rulings.json is what apply-entities reads. Refusing.\n')
+        process.exit(1)
+      }
+    }
+  }
 }
 
 if (check) { console.log(JSON.stringify(out.totals, null, 1)); console.log(JSON.stringify(heldByReason, null, 1)); process.exit(0) }

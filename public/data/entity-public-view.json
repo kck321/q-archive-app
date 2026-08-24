@@ -30,8 +30,8 @@
    "identities": [
     {
      "canonical": "Alice",
-     "mentions": 98,
-     "posts": 78
+     "mentions": 100,
+     "posts": 79
     },
     {
      "canonical": "Q",
@@ -20941,7 +20941,7 @@
    "aliasPosts": {
     "ALICE": 1,
     "Alice": 4,
-    "Q": 70
+    "Q": 71
    },
    "kind": "prose",
    "perPostMentions": {
@@ -20975,6 +20975,7 @@
     "2102": 1,
     "2206": 2,
     "2234": 1,
+    "2347": 2,
     "2383": 1,
     "2387": 1,
     "2388": 1,
@@ -21019,7 +21020,7 @@
     "4734": 1,
     "4881": 2
    },
-   "posts": 78,
+   "posts": 79,
    "rowId": "qe-e01fe208ebaa"
   },
   "qe-e0952c2ad775": {
@@ -24818,12 +24819,12 @@
  "totals": {
   "canonicalEntities": 1584,
   "dormantReserved": 227,
-  "mentions": 9517,
+  "mentions": 9519,
   "mergedIdentities": 26,
   "mergedRows": 11,
   "proseMentioned": 1450,
   "publicRows": 1569,
-  "repeatBadges": 1112,
+  "repeatBadges": 1113,
   "sourceOnly": 134,
   "sourcePostChips": 358,
   "unsettledAttributionsExcluded": 81

@@ -348,8 +348,13 @@ const checks = [
   //                                       Predictions sheet, so it was ruled into both; the rule
   //                                       below let Predictions win and pulled the Claim out.
   //                                       "make this portion a claim" settles it.
-  ['queue rulings applied = 6,435 claims / 343 predictions',
-    stats2020.claimsAdded + stats2020.claimsAlready === 6435 && stats2020.predsAdded + stats2020.predsAlready === 343,
+  // +1 prediction on 2026-08-24, and the claims figure does not move. The owner corrected the
+  // reading of #1443: "DECLAS_Public should be a prediction", so the withdrawal above moves from
+  // the predictions ruling to the claims one and the line goes back to Predictions. Claims loses
+  // that ruling and gains "Texts" on the same drop — "post 1443 lets make Texts a claim" — so the
+  // two cancel exactly.
+  ['queue rulings applied = 6,435 claims / 344 predictions',
+    stats2020.claimsAdded + stats2020.claimsAlready === 6435 && stats2020.predsAdded + stats2020.predsAlready === 344,
     `${stats2020.claimsAdded}+${stats2020.claimsAlready} claims, ${stats2020.predsAdded}+${stats2020.predsAlready} predictions`],
   ['all resolve to their Q source span', unresolved.length === 0, `${allClaims.length - unresolved.length}/${allClaims.length}`],
   // +11: the 47 arrivals introduce 44 wordings Claims did not already hold, while the 68
@@ -391,7 +396,9 @@ const checks = [
   // once, in Claims, where the same round-2 review had also ruled it and where the cross-pull below
   // had been taking it back out. Claim occurrences do not move: this arrival replaces the departure
   // of #4891's "Why would H." exactly.
-  ['predictions = 941', allPreds.length === 941, allPreds.length],
+  // 942 again on 2026-08-24: the owner corrected the reading and #1443's "DECLAS_Public[3]" is a
+  // Prediction. Claim occurrences do not move — "Texts" arrives on the same drop as it leaves.
+  ['predictions = 942', allPreds.length === 942, allPreds.length],
   // isConclusion travels with the ROW rather than with the section, so a row leaving Claims
   // takes the attribute with it. -1: #3203's quoted question was the only withdrawn row
   // carrying it. 966 - 1 = 965.
@@ -447,7 +454,7 @@ const checks = [
   // 2,552 + 485 arriving from the same owner ruling. This is a cross-section CHECK, not a source:
   // apply-directives.mjs runs immediately before this step and owns the number.
   // 3,442 + 24 rows round 2 held for stating no instruction, ruled in by the owner on 2026-08-24.
-  ['Directives now 3,467', directives === 3467, directives],
+  ['Directives now 3,472', directives === 3472, directives],
 ]
 
 console.log('\nAPPLY CERTIFIED CLAIMS\n')

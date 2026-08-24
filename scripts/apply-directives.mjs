@@ -209,9 +209,15 @@ const checks = [
   // Round 2 reviewed 479 directive rows; 24 are HELD because they state no instruction — #953's
   // "#1"/"#2" list markers, the "_END_" structural marks, two comms strings and one assertion —
   // and each is reported in audit/unhighlighted-review2-issues.json for the owner to place.
-  ['directive occurrences = 3,467', all.length === 3467, all.length],
+  // +5 on 2026-08-24: "lets make ALL the wwg1wga directives trough all the post". 171 of the 178
+  // WWG1WGA occurrences already WERE Directives — the archive certifies Q's valedictions, and every
+  // sign-off-shaped one carries family `morale`. These are the five that were not: #1183, #2347,
+  // #2543, #2565 and #2567, each a sub-line span in a line certified in another section. Two more
+  // are refused and named in the ruling: #1601 and #3660 have WWG1WGA inside a URL.
+  ['directive occurrences = 3,472', all.length === 3472, all.length],
   // 486 (round 1) + 455 (round 2) + 24 (round 2's held rows, owner-ruled 2026-08-24) = 965.
-  ['queue rulings applied = 965', queueStats.added + queueStats.already === 965,
+  // +5 on 2026-08-24: the WWG1WGA ruling above.
+  ['queue rulings applied = 970', queueStats.added + queueStats.already === 970,
     `${queueStats.added} added + ${queueStats.already} already certified`],
   // The detector's answer is kept wherever it has one; only its residue is decided by the queue
   // ruleset, and nothing may land in 'other'.
@@ -225,7 +231,9 @@ const checks = [
   ['distinct = 1,941', distinct.size === 1941, distinct.size],
   // +225 posts gain their first certified directive.
   // +228 drops gain their first certified directive.
-  ['posts with a directive = 1,926', postsWith.size === 1926, postsWith.size],
+  // +2 on 2026-08-24: of the five WWG1WGA drops, #2347 and #2565 held no certified directive at
+  // all. #1183, #2543 and #2567 already did, so they were already in this set.
+  ['posts with a directive = 1,928', postsWith.size === 1928, postsWith.size],
   // directiveFamilies is a map keyed by normalised text PER POST, so the 53 in-post repeats
   // share one entry: 2,422 occurrences - 53 repeats = 2,369 keys. The occurrence-level
   // invariant (sum of families === 2,422) is enforced upstream by reconcile-directives.mjs;

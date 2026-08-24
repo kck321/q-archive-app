@@ -513,7 +513,15 @@ export const OVERLAY_REPAIR = 1
 //     6,321, entities 1,235 -> 1,214 rows and 8,975 -> 8,821 mentions. A returning reader holding
 //     87 would keep the pre-review paint on 41 drops and a registry counting one written word up
 //     to five times, so the seed has to move.
-export const SEED_VERSION = 91   // 91: THE UPDATED-REPORT RULINGS, 2026-08-24. Seven sentences the
+export const SEED_VERSION = 92   // 92: THE #2347 CARD AND #1443, 2026-08-24. Both body Qs on #2347
+                                 //     are Entities (the sign-off is not); WWG1WGA is a Directive on
+                                 //     the five drops where it was not already one — 171 of the 178
+                                 //     already were; #1443's "Texts" is a Claim and its
+                                 //     "DECLAS_Public[3]" goes back to Predictions, correcting the
+                                 //     reading taken from the sheet earlier the same day. A reader on
+                                 //     91 keeps #2347 with no entity on either Q and no green on
+                                 //     WWG1WGA, and #1443 amber where it should be violet.
+                                 // 91: THE UPDATED-REPORT RULINGS, 2026-08-24. Seven sentences the
                                  //     splitter had cut at an abbreviation are certified WHOLE as
                                  //     Questions (#1944 #2211 #4782 #4888 #3049 #1915 #4871), #1443's
                                  //     "DECLAS_Public[3]" moves from Predictions to Claims, and

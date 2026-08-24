@@ -130,7 +130,10 @@ const checks = [
   // 941 since the 2026-08-24 UPDATED-report ruling pulled #1443's "DECLAS_Public[3]" out of
   // Predictions and left it certified as a Claim. A passthrough assertion, as above: it tracks
   // whatever apply-claims.mjs certified and only says THIS step must not add or drop one.
-  ['predictions unchanged = 941', counts.predictions === 941, counts.predictions],
+  // 942 again — the owner corrected the reading of #1443 the same day. Still a passthrough
+  // assertion: it tracks whatever apply-claims.mjs certified and says only that THIS step must not
+  // add or drop one.
+  ['predictions unchanged = 942', counts.predictions === 942, counts.predictions],
   ['conclusions unchanged = 964', counts.impliedConclusions === 964, counts.impliedConclusions],
   // 1,925 -> 1,920: five absorbed claim tails carried the checkable attribute. It travels with
   // the ROW, so it leaves with the fragment rather than being re-attached to the repaired span,

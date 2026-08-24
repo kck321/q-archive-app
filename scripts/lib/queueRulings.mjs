@@ -23,6 +23,10 @@ export const QUEUE_RULING_FILES = [
   // Round 2's held directives, certified on the owner's 2026-08-24 ruling and emitted as a delta
   // rather than a rebuild — build-held-directive-rulings.mjs says why the rebuild is refused.
   'audit/unhighlighted-owner-rulings-2-held-directives.json',
+  // The owner's rulings on the #2347 card and on #1443, 2026-08-24: WWG1WGA is a Directive
+  // wherever it is not already one (five spans; 171 of 178 already were), and #1443's bare
+  // evidence line "Texts" is a Claim.
+  'audit/unhighlighted-owner-rulings-2-wwg1wga.json',
 ]
 
 // A LATER OWNER RULING MAY OVERRIDE AN EARLIER ROUND'S, AND THE OVERRIDE LIVES HERE TOO.

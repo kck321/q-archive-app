@@ -37,7 +37,11 @@ export const CERTIFIED = {
   // applied - list markers, end-markers, comms strings - because they instruct nobody to do
   // anything, and a directive is where Q tells the reader to act.
   // held for stating no instruction, ruled in by the owner on 2026-08-24, plus #417 '(Find Post)'.
-  directives: { occurrences: 3329, distinct: 1941, posts: 1926 },
+  // 3,329 -> 3,334 on 2026-08-24: "lets make ALL the wwg1wga directives trough all the post".
+  // 171 of the 178 were already Directives — the archive certifies Q's valedictions — so this is
+  // the five that were not. Distinct does not move; "WWG1WGA" was already a wording Directives
+  // held 168 times over. Posts +2: #2347 and #2565 had no certified directive at all.
+  directives: { occurrences: 3334, distinct: 1941, posts: 1928 },
   // 8,912 -> 8676 across the 2026-08-22 lane-B reviews: paragraph-wide claims an early
   // extractor left sitting on top of the sentence-level records that superseded them, plus the
   // abbreviation-split pairs where one sentence had been certified twice.
@@ -51,7 +55,9 @@ export const CERTIFIED = {
   // 935 -> 934 on 2026-08-24 (UPDATED report, sheet 4): #1443's "DECLAS_Public[3]" leaves
   // Predictions on the owner's ruling "make this portion a claim". Posts unchanged — the drop
   // keeps "Dark to LIGHT.", certified in round 1.
-  predictions: { occurrences: 934, posts: 672 },
+  // 934 -> 935 the same day: the owner corrected that reading — "DECLAS_Public should be a
+  // prediction" — and the line goes back.
+  predictions: { occurrences: 935, posts: 672 },
   /** Claim attributes. `conclusions` may apply to a claim or a prediction. */
   // checkable, sourceProvided and conclusions do NOT move with the queue ruling: they are
   // attributes the claims audit established from evidence inside the drop, and the owner ruled a
@@ -86,12 +92,12 @@ export const CERTIFIED = {
  */
 export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number; unit: string }> = {
   claims: { occurrences: 10258, posts: 3223, unit: 'occurrences' },
-  predictions: { occurrences: 934, posts: 672, unit: 'occurrences' },
+  predictions: { occurrences: 935, posts: 672, unit: 'occurrences' },
   // "mentions" is the right word here and the only section where it is: an entity is counted
   // once per resolved mention across the 1,066 canonical entities Q named in prose. The other 135
   // certified identities contribute none — they are linked sources, not words Q wrote — which is
   // why this figure sits BESIDE the 1,201 total on the page rather than under it.
-  namedEntities: { occurrences: 9517, posts: 2136, unit: 'mentions' },
+  namedEntities: { occurrences: 9519, posts: 2137, unit: 'mentions' },
   // Themes are assignments rather than spans — a theme is inferred from a drop, not copied out
   // of it — so the unit is named accordingly. 2,393 detected + 2 owner rulings.
   themes: { occurrences: 2646, posts: 1899, unit: 'assignments' },
@@ -210,12 +216,15 @@ export const ENTITIES = {
   // the shortfall is added - counting the rest again would show the reader an x2 Q never wrote.
   // 9,271 -> 9,364: the Q ruling — a standalone "Q" that is not the sign-off is Alice (#74, #78).
   // 9,364 -> 9,517: the held wordings, NAT SEC and White House Press.
-  mentions: 9517,
+  // 9,517 -> 9,519 on 2026-08-24: both body Qs on #2347, on the owner's ruling. Not the sign-off,
+  // and not the third Q inside the twitter handle on the link line.
+  mentions: 9519,
   mentionScope: 'Every resolved mention across all 1,584 certified entities: 5,312 from the 93 core-registry entities, 3,038 from the entities identified in the adjudication pass, and 1,167 from owner rulings. Domains, URL slugs and linked accounts are NOT counted here — they are shown under Sources. Unresolved aliases are counted in neither: they are held in the Resolution Center.',
   coreEntities: 93,
   coreRegistryMentions: 5312,
   tailEntities: 1238,
-  tailMentions: 3038,
+  // +2 on 2026-08-24: Alice is an adjudicated-tail row, so #2347's two Q occurrences land here.
+  tailMentions: 3040,
   contextResolved: 161,
   routedToThemes: 53,
   unresolvedTokens: 1011,
@@ -401,7 +410,7 @@ export const SECTIONS: SectionInfo[] = [
     // so the ⓘ panel contradicted the header directly above it. The two components are named here
     // for the same reason they are named in the header: 1,201 with no split reads as 1,201 entities
     // Q wrote about, and 135 of them he never wrote at all.
-    certified: `${n(1584)} canonical entities (${n(1450)} named in the prose · ${n(134)} linked as a source only) · ${n(9517)} certified prose mentions`,
+    certified: `${n(1584)} canonical entities (${n(1450)} named in the prose · ${n(134)} linked as a source only) · ${n(9519)} certified prose mentions`,
     note: 'Entities are secondary tags rather than sentence types — a question, claim, prediction or directive may contain several. Names are canonicalised, so "HRC", "Hillary" and "Hillary Clinton" are one person, while Q’s exact wording is preserved in every post. Where a reference is ambiguous it is left unresolved rather than guessed.',
   },
   {

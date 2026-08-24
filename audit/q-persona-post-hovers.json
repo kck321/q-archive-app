@@ -11,8 +11,8 @@
  "entityId": "qe-e01fe208ebaa",
  "canonical": "Alice",
  "totals": {
-  "occurrences": 93,
-  "dropsWithRecord": 73,
+  "occurrences": 95,
+  "dropsWithRecord": 74,
   "skippedBecauseTheyStateIt": 2
  },
  "byPost": {
@@ -228,6 +228,14 @@
    "s": "In post #2234, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
    "a": "Q",
    "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2347": {
+   "s": "In post #2347, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "prediction",
    "g": "Strong",
    "c": "High",
    "o": "owner ruling 2026-08-24"

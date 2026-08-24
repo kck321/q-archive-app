@@ -15,15 +15,15 @@
   "ambiguous_provenance": "Attribution or URL evidence is genuinely undecidable. Retained unchanged."
  },
  "totals": {
-  "occurrences": 10611,
-  "certifiedMentions": 10611,
+  "occurrences": 10613,
+  "certifiedMentions": 10613,
   "reconciles": true,
   "attribution": {
-   "unique": 10530,
+   "unique": 10532,
    "ambiguous": 81
   },
   "byCategory": {
-   "visible_complete_token": 9483,
+   "visible_complete_token": 9485,
    "invalid_substring_extraction": 98,
    "visible_alias_variant": 46,
    "url_source_provenance": 645,
@@ -46,7 +46,7 @@
  "ruledOnAuditRun": "2026-08-24",
  "certifiedUnchanged": {
   "entityRows": 1801,
-  "mentions": 10611
+  "mentions": 10613
  },
  "rows": [
   {
@@ -71190,6 +71190,38 @@
    "alias": "Murkowski",
    "entityId": "qe-ef228ad64e1c",
    "canonical": "Murkowski",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2347:0",
+   "postNum": 2347,
+   "index": 0,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2347:1",
+   "postNum": 2347,
+   "index": 1,
+   "alias": "Q",
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
    "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {

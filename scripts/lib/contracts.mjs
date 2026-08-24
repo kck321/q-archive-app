@@ -90,7 +90,15 @@ export const CANONICAL = {
   // Their family is declared with the ruling rather than detected; see
   // scripts/build-held-directive-rulings.mjs.
   // +1 on 2026-08-24: #417 '(Find Post)', owner ruling - "this is also a directive in that post".
-  directives: { occurrences: 3329, distinct: 1941, posts: 1926 },
+  // +5 on 2026-08-24: "lets make ALL the wwg1wga directives trough all the post". 171 of the 178
+  // WWG1WGA occurrences already were — the archive certifies Q's valedictions and every
+  // sign-off-shaped one carries family `morale`. These are the five that were not (#1183, #2347,
+  // #2543, #2565, #2567), each a sub-line span in a line certified in another section. Two are
+  // refused and named in the ruling: #1601 and #3660 have WWG1WGA inside a URL, and a word inside
+  // an address is not a word Q wrote. Distinct does not move — "WWG1WGA" and "WWG1WGA!!!" are both
+  // wordings Directives already held 168 times over. Posts +2: #2347 and #2565 held no certified
+  // directive at all before.
+  directives: { occurrences: 3334, distinct: 1941, posts: 1928 },
   // 4,181 -> 4,188 on 2026-08-13 by owner adjudication, not by a classifier. Six exact
   // occurrences of "Pure evil." / "PURE EVIL." plus "The 'real' racist." in #2917. The corpus
   // search that found them also showed the fuller variants ("These people are pure evil.",
@@ -152,7 +160,10 @@ export const CANONICAL = {
   // 935 -> 934 on 2026-08-24, the UPDATED report: #1443's "DECLAS_Public[3]" leaves Predictions on
   // the owner's ruling "make this portion a claim". Posts unchanged — the drop keeps "Dark to
   // LIGHT.", which round 1 certified, so it does not leave the Predictions post set.
-  predictions: { occurrences: 934, posts: 672 },
+  // 934 -> 935 the same day: the owner corrected that reading — "DECLAS_Public should be a
+  // prediction" — so the line goes back. Its place in Claims is taken by "Texts" on the same drop,
+  // which is why claim occurrences do not move either way.
+  predictions: { occurrences: 935, posts: 672 },
   evidence: { occurrences: 6590, posts: 3883 },
   // canonical 1,240 -> 1,235: Owner Ruling 1 merged five duplicate identities. No occurrence moved.
   entities: {
@@ -305,7 +316,10 @@ export const CANONICAL = {
     // on owner-ruling rows, which is also where Al Gore and Roseanne Barr now sit - both rows were
     // retired by the approved cleanup for having no trace beyond a URL path or an unexamined image,
     // and #1239's "@algore" and #1863's "@TheRealRoseanne" are Q naming them in his own text.
-    mentions: 9517,
+    // 9,517 -> 9,519 on 2026-08-24, the #2347 card: both body Qs on that drop are Entities, on the
+    // owner's ruling. +2 and not +3 — the third standalone Q there is inside the twitter handle
+    // "Q_ANONBaby" and stays held. Both land on the adjudicated tail, because Alice is a tail row.
+    mentions: 9519,
     /** How it is composed. The core figure is the section's history, not its headline. */
     // tailEntities is what the tail adjudication produced (1,239); one of them, Ray Chandler,
     // now ships merged into Rachel Chandler, so 1,238 tail rows appear in the artifact.
@@ -326,7 +340,9 @@ export const CANONICAL = {
     // rows. entities.json's own totals block says 5,407/3,040 instead: it is written by
     // apply-entity-cleanup and nine rows are re-added by later chain steps without it being
     // recomputed. Same 9-row gap that has been there since seed 78 (1,523 written, 1,532 shipped).
-    coreEntities: 93, coreRegistryMentions: 5312, tailEntities: 970, tailMentions: 3038,
+    // tail 3,038 + 2 = 3,040 on 2026-08-24: Alice is an adjudicated-tail row, so the two #2347
+    // occurrences land there. 5,312 + 3,040 + 1,167 = 9,519.
+    coreEntities: 93, coreRegistryMentions: 5312, tailEntities: 970, tailMentions: 3040,
   },
   // 2,393 detected + 2 owner rulings ("Ascension." -> Religion & Spirituality, #4963 and #4966).
   // The rulings live in audit/themes-owner-rulings.json and are merged by apply-themes.mjs, so

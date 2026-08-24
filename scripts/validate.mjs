@@ -155,6 +155,11 @@ step('fresh — a quoted drop keeps its line breaks', ['node', 'scripts/test-quo
 // in Q's own words, on the 73 that inherit it.
 step('fresh — Q is the designation, except where Q writes the equation',
   ['node', 'scripts/test-q-persona-hover.mjs', BASE, '--fresh'], 'certified')
+// WWG1WGA is a Directive on the five drops where it was not already one — and NOT on the two where
+// it sits inside a URL. The refusal is the half worth gating: a later sweep that swept the URLs in
+// would put a fill inside a link and split the anchor.
+step('fresh — WWG1WGA is a directive, except inside a URL',
+  ['node', 'scripts/test-wwg1wga-directive.mjs', BASE, '--fresh'], 'certified')
 // The month chart on its two DIFFERENT hosts (Analysis + Archive), desktop and phone. `full` sweeps
 // all seven categories; ordinary runs do not, because it is one shared module.
 if (profile !== 'full') step('fresh — month chart behaviour', ['node', 'scripts/test-month-chart-behaviour.mjs', '--url', BASE], 'standard')

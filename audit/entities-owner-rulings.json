@@ -8513,6 +8513,7 @@
     2102,
     2206,
     2234,
+    2347,
     2383,
     2387,
     2388,
@@ -8769,6 +8770,16 @@
      [
       2,
       38
+     ]
+    ],
+    "2347": [
+     [
+      3,
+      31
+     ],
+     [
+      4,
+      4
      ]
     ],
     "2383": [
@@ -9085,7 +9096,9 @@
     ]
    },
    "reasoning": "Owner ruling: \"in post 74 i want the Q in this to be an entity and any other post that has Q within it that isn't the signature at the bottom — Q = Alice\". #74 and #78 write the equation in Q's own words.",
-   "retrieval": "OCCURRENCE-SCOPED, and that is the whole safety of it. 4,534 sign-off lines are excluded by the ruling itself. Of the 158 standalone \"Q\" tokens that remain, 93 across 75 drops are the persona and carry the ruling; 65 are HELD because they name something else — 3 a comms or operation code; 8 Question & Answer; 22 the word \"question\"; 1 the idiom \"right on cue\"; 5 the word \"question\", used as a label before the question itself; 2 a drop number, not a name; 2 the NSA Q Group, a body rather than the poster; 8 part of a link or a handle, not a word Q wrote; 3 Al-Qaeda — \"AL-Q\" is Q's abbreviation for it; 1 Quicken Loans Arena in Cleveland, known as \"The Q\"; 5 Q+ — a different designation; Q and Q+ are not the same (PROJECT_CONTEXT invariant 6); 1 an SEC filing form (10-Q); 1 the LETTER Q, not the poster; 1 a quoted board header — Q's own tripcode line inside a paste; 2 a Department of Energy clearance level. Post-level scoping would have certified Al-Qaeda, an SEC filing form, Quicken Loans Arena, a DOE clearance level and the word \"question\" as Alice. See audit/q-entity-owner-ruling.json."
+   "retrieval": "OCCURRENCE-SCOPED, and that is the whole safety of it. 4,534 sign-off lines are excluded by the ruling itself. Of the 158 standalone \"Q\" tokens that remain, 93 across 75 drops are the persona and carry the ruling; 65 are HELD because they name something else — 3 a comms or operation code; 8 Question & Answer; 22 the word \"question\"; 1 the idiom \"right on cue\"; 5 the word \"question\", used as a label before the question itself; 2 a drop number, not a name; 2 the NSA Q Group, a body rather than the poster; 8 part of a link or a handle, not a word Q wrote; 3 Al-Qaeda — \"AL-Q\" is Q's abbreviation for it; 1 Quicken Loans Arena in Cleveland, known as \"The Q\"; 5 Q+ — a different designation; Q and Q+ are not the same (PROJECT_CONTEXT invariant 6); 1 an SEC filing form (10-Q); 1 the LETTER Q, not the poster; 1 a quoted board header — Q's own tripcode line inside a paste; 2 a Department of Energy clearance level. Post-level scoping would have certified Al-Qaeda, an SEC filing form, Quicken Loans Arena, a DOE clearance level and the word \"question\" as Alice. See audit/q-entity-owner-ruling.json.",
+   "includePostsSource": "audit/q-entity-owner-ruling.json — personaOccurrences, one entry per drop. build-q-entity-ruling.mjs refuses if the two disagree; they did on 2026-08-24, when the owner ruled #2347 in and this list was not the file that changed.",
+   "includeOccurrencesSource": "audit/q-entity-owner-ruling.json — personaOccurrences, as [lineIndex, charIndex], the same coordinates the Resolution Center row ids use. build-q-entity-ruling.mjs refuses if the two disagree."
   }
  ],
  "mergeRulings": [

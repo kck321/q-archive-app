@@ -52,12 +52,13 @@ fs.writeFileSync(stampPath, JSON.stringify({
   note: 'Determinism stamp. The approved audit must keep its exact bytes; the inputs move whenever a '
     + 'later decision moves the certified state, and every such decision is recorded in '
     + 'audit/entity-cleanup-rollback-contract.json postApprovalDeltas.',
-  rebaselinedOn: '2026-08-22',
-  why: 'The previous stamp recorded the audit as it stood BEFORE the 2026-08-21 Nellie Ohr ruling '
-    + 're-ran audit-occurrence-provenance.mjs (commit 32d168e). The re-run was deliberate and its '
-    + 'evidence is in the rollback contract; the stamp simply was not re-baselined with it, and the '
-    + 'discrepancy went unseen because audit-cross-section.mjs could not run at all while Emphasis '
-    + 'was half-retired. The audit file is unchanged against HEAD.',
+  rebaselinedOn: '2026-08-24 (the #2347 card)',
+  why: 'Re-baselined for the owner ruling of 2026-08-24 on #2347 — both body Qs on that drop are '
+    + 'Entities, and the sign-off is not. Two more mentions are certified before the cleanup reaches '
+    + 'them, so audit-occurrence-provenance.mjs re-derived at the before-state (10,611 -> 10,613) '
+    + 'and the re-run is what apply-entity-cleanup.mjs demands before it will replay. The delta is '
+    + 'recorded in the rollback contract; the only change in the audit is those two rows and the '
+    + 'certifiedUnchanged total.',
   previousAuditSha256: old.auditSha256,
   inputs, auditSha256: digest,
 }, null, 1) + '\n')

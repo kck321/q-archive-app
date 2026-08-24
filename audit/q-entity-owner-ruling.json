@@ -18,7 +18,7 @@
   "byReason": {
    "a comms or operation code": 3,
    "Question & Answer": 8,
-   "the word \"question\"": 22,
+   "the word \"question\"": 20,
    "the idiom \"right on cue\"": 1,
    "the word \"question\", used as a label before the question itself": 5,
    "a drop number, not a name": 2,
@@ -200,22 +200,6 @@
     "charIndex": 20,
     "line": "https://twitter.com/Q_ANONBaby/status/1048079911813107713",
     "names": "part of a link or a handle, not a word Q wrote"
-   },
-   {
-    "postNum": 2347,
-    "postId": "2347",
-    "lineIndex": 3,
-    "charIndex": 31,
-    "line": "The signifier will 'force' the Q.",
-    "names": "the word \"question\""
-   },
-   {
-    "postNum": 2347,
-    "postId": "2347",
-    "lineIndex": 4,
-    "charIndex": 4,
-    "line": "The Q will be answered (((WWG1WGA))).",
-    "names": "the word \"question\""
    },
    {
     "postNum": 2386,
@@ -556,9 +540,9 @@
   ]
  },
  "totals": {
-  "personaOccurrences": 93,
-  "personaPosts": 75,
-  "heldOccurrences": 65,
+  "personaOccurrences": 95,
+  "personaPosts": 76,
+  "heldOccurrences": 63,
   "signatureLinesExcluded": 4534
  },
  "personaOccurrences": [
@@ -694,6 +678,22 @@
    "lineIndex": 2,
    "charIndex": 38,
    "line": "You are many tens of millions strong (Q)."
+  },
+  {
+   "postNum": 2347,
+   "postId": "2347",
+   "lineIndex": 3,
+   "charIndex": 31,
+   "line": "The signifier will 'force' the Q.",
+   "ownerOverride": "owner ruling 2026-08-24 — \"lets make both the Q's an Entity (not the signiture)\". Held before that by: the word \"question\""
+  },
+  {
+   "postNum": 2347,
+   "postId": "2347",
+   "lineIndex": 4,
+   "charIndex": 4,
+   "line": "The Q will be answered (((WWG1WGA))).",
+   "ownerOverride": "owner ruling 2026-08-24 — \"lets make both the Q's an Entity (not the signiture)\". Held before that by: the word \"question\""
   },
   {
    "postNum": 2383,

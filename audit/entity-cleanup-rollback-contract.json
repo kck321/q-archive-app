@@ -274,6 +274,16 @@
     }
    ],
    "restoredOccurrencesNote": "audit-cross-section.mjs invariant 'no withdrawn occurrence is still a certified annotation' reads this list. An occurrence may be restored ONLY by being named here with the ruling that restores it - the invariant still fails for anything reappearing without a record, which is what it is for."
+  },
+  {
+   "ruling": "audit/q-entity-owner-ruling.json (OWNER_OVERRIDES) + audit/entities-owner-rulings.json (aliasRulings: Q -> Alice)",
+   "ruledOn": "2026-08-24",
+   "what": "Owner ruling on the #2347 card: \"lets make both the Q's an Entity (not the signiture)\". Both body Qs on that drop - \"The signifier will 'force' the Q.\" and \"The Q will be answered (((WWG1WGA))).\" - were held by the \"the word question\" rule, which had been written for those two lines. The owner read the drop and ruled the other way. Arrives BEFORE this step, because apply-entities.mjs is earlier in the chain. No new identity: Alice is already certified, so entityRows does not move.",
+   "entityRows": 0,
+   "mentions": 2,
+   "rendered": 2,
+   "evidence": "TWO, not three. The third standalone Q on #2347 is inside the twitter handle \"Q_ANONBaby\" on the link line and stays held - a word inside an address is not a word Q wrote, the same rule that refused WWG1WGA inside a URL on #1601 and #3660 in this batch. Post-level scope alone would have taken all three; includeOccurrences names [3,31] and [4,4] and nothing else. build-q-entity-ruling.mjs now refuses if its ruling and that occurrence list disagree - they did, which is how this was caught: the ruling said 76 drops and the alias painted 75. apply-entities.mjs asserts resolved mentions 10,613, owner-alias 2,200 and adjudicated-tail 4,009, each exactly +2.",
+   "why": "The 2026-08-17 approval record is left exactly as written, for the same reason as the eight deltas before this one: the guard must still refuse an unrecognised tree, and a later owner ruling must not read as drift."
   }
  ]
 }
