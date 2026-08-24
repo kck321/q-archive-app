@@ -1,0 +1,283 @@
+{
+ "note": "Every row of Q_Unhighlighted FINAL 2 - REPORT (UPDATED).xlsx re-read against the certified state, sheet by sheet, on the owner ruling of 2026-08-24.",
+ "ranOn": "2026-08-24",
+ "readFrom": "the artifacts build-review2-report.mjs writes the workbook from, plus public/data — never the painted DOM, because an Entity or a Bracket on top of a Claim hides the Claim from anything reading the page.",
+ "totals": {
+  "rows": 4295,
+  "verified": 4270,
+  "exceptions": 25
+ },
+ "sheets": {
+  "2-already-highlighted": {
+   "rows": 3261,
+   "verified": 3261,
+   "exceptions": 0,
+   "carriedInMoreThanOne": 57
+  },
+  "3-held-for-you": {
+   "rows": 119,
+   "verified": 119,
+   "exceptions": 0,
+   "queuedNotCertified": 45
+  },
+  "4-data-problems": {
+   "rows": 68,
+   "verified": 68,
+   "exceptions": 0,
+   "urlRows": 44,
+   "refusedRowsStillRefused": 3
+  },
+  "5-how-it-was-read": {
+   "rows": 847,
+   "verified": 822,
+   "exceptions": 25
+  }
+ },
+ "themes": {
+  "themeFillRemovedFromPostDetail": true,
+  "themeFillRemovedFromPostCard": true,
+  "themeSpansInsideAnotherHighlight": 0,
+  "rotatingSpans": {
+   "spans": 208,
+   "posts": 110
+  },
+  "rotatingPairsInvolvingATheme": [],
+  "themeAssignmentsStillCertified": 2646,
+  "themeAnchorsStillRecorded": 1729
+ },
+ "exceptionsByKind": {
+  "the archive reads this line as a PREDICTION": 2,
+  "the workbook cell took in more than Q typed on that line": 5,
+  "the cell is part of a line, and the ruling was applied to the whole line": 3,
+  "the archive reads this line as a QUESTION": 9,
+  "deliberately unsettled — awaiting a ruling": 4,
+  "the line was SPLIT, so the whole line is not the entity": 2
+ },
+ "exceptions": [
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 2347,
+   "section": "claims",
+   "text": "The signifier will 'force' the Q.",
+   "problem": "certified in predictions, not claims",
+   "kind": "the archive reads this line as a PREDICTION",
+   "whatToDo": "FOR YOU. The sheet named Claims. Say the word and it moves."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 2347,
+   "section": "claims",
+   "text": "The signifier will 'force' the Q.",
+   "problem": "certified in predictions, not claims",
+   "kind": "the archive reads this line as a PREDICTION",
+   "whatToDo": "FOR YOU. The sheet named Claims. Say the word and it moves."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 4595,
+   "section": "claims",
+   "text": "v2_change we can believe in Q",
+   "problem": "the cell over-runs the line — claims certifies \"v2_change we can believe in\"",
+   "kind": "the workbook cell took in more than Q typed on that line",
+   "whatToDo": "No action. The archive certifies the line as Q typed it; the cell reached past it into the sign-off, the bracket after it, or the words around a name."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 1439,
+   "section": "claims",
+   "text": "DECLAS_",
+   "problem": "certified in predictions + themes, not claims",
+   "kind": "the cell is part of a line, and the ruling was applied to the whole line",
+   "whatToDo": "No action. The fragment on its own matches only a theme anchor; the LINE it sits in is certified in the section your sheet named."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 1443,
+   "section": "claims",
+   "text": "DECLAS_Public",
+   "problem": "certified in themes, not claims",
+   "kind": "the cell is part of a line, and the ruling was applied to the whole line",
+   "whatToDo": "No action. The fragment on its own matches only a theme anchor; the LINE it sits in is certified in the section your sheet named."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 3049,
+   "section": "claims",
+   "text": "If [D's] FIGHT to protect, safeguard, and promote all illegal immigrants as 'rightful' U.S. citizens who should be afforded all benefits and rights accordingly, WHY THEN WOULD THEY FIGHT TO BLOCK THEM FROM BEING 'COUNTED' AS PART OF THE U.S. CENSUS?",
+   "problem": "certified in questions, not claims",
+   "kind": "the archive reads this line as a QUESTION",
+   "whatToDo": "FOR YOU. Same family as the seven you ruled on the UPDATED report: the sheet named Claims or Directives and the line ends in \"?\". Say the word and they move."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 1915,
+   "section": "claims",
+   "text": "Same day as the targeted [coordinated] attack v. POTUS?",
+   "problem": "certified in questions, not claims",
+   "kind": "the archive reads this line as a QUESTION",
+   "whatToDo": "FOR YOU. Same family as the seven you ruled on the UPDATED report: the sheet named Claims or Directives and the line ends in \"?\". Say the word and they move."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 4871,
+   "section": "claims",
+   "text": "NAT SEC concerns re: blackmail [gain control] of J. Biden by Russia, China and/or other foreign [or domestic] entities?",
+   "problem": "certified in questions, not claims",
+   "kind": "the archive reads this line as a QUESTION",
+   "whatToDo": "FOR YOU. Same family as the seven you ruled on the UPDATED report: the sheet named Claims or Directives and the line ends in \"?\". Say the word and they move."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 4881,
+   "section": "claims",
+   "text": "Retweet @ 17:17 had meaning. [mathematical probability _17:17 [day after]?]",
+   "problem": "the cell over-runs the line — claims certifies \"Retweet @ 17:17 had meaning.\"",
+   "kind": "the workbook cell took in more than Q typed on that line",
+   "whatToDo": "No action. The archive certifies the line as Q typed it; the cell reached past it into the sign-off, the bracket after it, or the words around a name."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 300,
+   "section": "entities",
+   "text": "L.",
+   "problem": "certified in NO section",
+   "kind": "deliberately unsettled — awaiting a ruling",
+   "whatToDo": "FOR YOU. \"L.\", \"45\", \"F-15\" and the like are corpus-wide aliases: certifying one would paint hundreds of spans that mean nothing of the kind, so they were queued rather than guessed."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 836,
+   "section": "entities",
+   "text": "OP Name: Fiddler",
+   "problem": "the cell over-runs the line — entities certifies \"Fiddler\"",
+   "kind": "the workbook cell took in more than Q typed on that line",
+   "whatToDo": "No action. The archive certifies the line as Q typed it; the cell reached past it into the sign-off, the bracket after it, or the words around a name."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 864,
+   "section": "entities",
+   "text": "SUM of ALL FEARS //\\\\",
+   "problem": "certified in NO section",
+   "kind": "deliberately unsettled — awaiting a ruling",
+   "whatToDo": "FOR YOU. \"L.\", \"45\", \"F-15\" and the like are corpus-wide aliases: certifying one would paint hundreds of spans that mean nothing of the kind, so they were queued rather than guessed."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 1319,
+   "section": "entities",
+   "text": "Ted Poe - Republican",
+   "problem": "certified in claims, not entities",
+   "kind": "the line was SPLIT, so the whole line is not the entity",
+   "whatToDo": "No action. \"Ted Poe - Republican\" names two things and each is certified on its own; the line itself stays a Claim."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 1565,
+   "section": "entities",
+   "text": "45",
+   "problem": "certified in NO section",
+   "kind": "deliberately unsettled — awaiting a ruling",
+   "whatToDo": "FOR YOU. \"L.\", \"45\", \"F-15\" and the like are corpus-wide aliases: certifying one would paint hundreds of spans that mean nothing of the kind, so they were queued rather than guessed."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 1850,
+   "section": "entities",
+   "text": "Ted Poe - Republican",
+   "problem": "certified in claims, not entities",
+   "kind": "the line was SPLIT, so the whole line is not the entity",
+   "whatToDo": "No action. \"Ted Poe - Republican\" names two things and each is certified on its own; the line itself stays a Claim."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 2734,
+   "section": "entities",
+   "text": "F-15",
+   "problem": "certified in NO section",
+   "kind": "deliberately unsettled — awaiting a ruling",
+   "whatToDo": "FOR YOU. \"L.\", \"45\", \"F-15\" and the like are corpus-wide aliases: certifying one would paint hundreds of spans that mean nothing of the kind, so they were queued rather than guessed."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 3383,
+   "section": "entities",
+   "text": "J. Biden",
+   "problem": "the cell over-runs the line — entities certifies \"Biden\"",
+   "kind": "the workbook cell took in more than Q typed on that line",
+   "whatToDo": "No action. The archive certifies the line as Q typed it; the cell reached past it into the sign-off, the bracket after it, or the words around a name."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 4784,
+   "section": "entities",
+   "text": "Lisa Barsoomian _former Bill Clinton attorney",
+   "problem": "the cell over-runs the line — entities certifies \"Lisa Barsoomian\"",
+   "kind": "the workbook cell took in more than Q typed on that line",
+   "whatToDo": "No action. The archive certifies the line as Q typed it; the cell reached past it into the sign-off, the bracket after it, or the words around a name."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 1443,
+   "section": "predictions",
+   "text": "DECLAS_Public",
+   "problem": "certified in themes, not predictions",
+   "kind": "the cell is part of a line, and the ruling was applied to the whole line",
+   "whatToDo": "No action. The fragment on its own matches only a theme anchor; the LINE it sits in is certified in the section your sheet named."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 3588,
+   "section": "directives",
+   "text": "Ask yourself a very basic question – why is the ‘forum’ where [drops] are made under constant attack?",
+   "problem": "certified in questions, not directives",
+   "kind": "the archive reads this line as a QUESTION",
+   "whatToDo": "FOR YOU. Same family as the seven you ruled on the UPDATED report: the sheet named Claims or Directives and the line ends in \"?\". Say the word and they move."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 3588,
+   "section": "directives",
+   "text": "Ask yourself a very basic question – would the FAKE NEWS complex [NYT, WASHPOST, NBC, ABC, BBC, ………………………………………………………….] attack us if we weren’t a ‘real’ threat?",
+   "problem": "certified in questions, not directives",
+   "kind": "the archive reads this line as a QUESTION",
+   "whatToDo": "FOR YOU. Same family as the seven you ruled on the UPDATED report: the sheet named Claims or Directives and the line ends in \"?\". Say the word and they move."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 3881,
+   "section": "directives",
+   "text": "Think: re: why [no] arrests (justice) yet?",
+   "problem": "certified in questions, not directives",
+   "kind": "the archive reads this line as a QUESTION",
+   "whatToDo": "FOR YOU. Same family as the seven you ruled on the UPDATED report: the sheet named Claims or Directives and the line ends in \"?\". Say the word and they move."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 4337,
+   "section": "directives",
+   "text": "Ask yourself a very simple question - was it known [common sense and [early] medical reports] elderly community most at risk?",
+   "problem": "certified in questions, not directives",
+   "kind": "the archive reads this line as a QUESTION",
+   "whatToDo": "FOR YOU. Same family as the seven you ruled on the UPDATED report: the sheet named Claims or Directives and the line ends in \"?\". Say the word and they move."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 2072,
+   "section": "claims",
+   "text": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v. X?",
+   "problem": "certified in questions, not claims",
+   "kind": "the archive reads this line as a QUESTION",
+   "whatToDo": "FOR YOU. Same family as the seven you ruled on the UPDATED report: the sheet named Claims or Directives and the line ends in \"?\". Say the word and they move."
+  },
+  {
+   "sheet": "5-how-it-was-read",
+   "postNum": 2211,
+   "section": "claims",
+   "text": "But… interestingly, if nothing is being done behind the scenes, why are there 50,000+ sealed indictments across the US [what % = USA v. X?",
+   "problem": "certified in questions, not claims",
+   "kind": "the archive reads this line as a QUESTION",
+   "whatToDo": "FOR YOU. Same family as the seven you ruled on the UPDATED report: the sheet named Claims or Directives and the line ends in \"?\". Say the word and they move."
+  }
+ ]
+}
