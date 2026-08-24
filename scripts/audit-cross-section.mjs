@@ -697,6 +697,14 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
     for (const [id, byPost] of Object.entries(hov.byPost ?? {})) {
       for (const [pn, v] of Object.entries(byPost)) published.push({ id, postNum: Number(pn), ...v })
     }
+    // AN OWNER-RULED READING IS NOT AN AUDIT OUTCOME, and the two checks below are both about the
+    // audit. `o` marks a byPost record the owner ruled directly — 73 of them on 2026-08-24, saying
+    // what "Q" means on the drops that inherit the Q = Alice equation rather than stating it.
+    // They are layered on top of the audit's population by apply-entity-synopses.mjs, so counting
+    // them into the audit's six-bucket reconciliation would make it fail by exactly the number of
+    // rulings the owner made.
+    const ownerRuled = published.filter(p => p.o)
+    const audited = published.filter(p => !p.o)
     // 4,177 -> 3,780. Two corrections, and the second overturned the first.
     //
     // Fixing the substring defect stopped 21 records matching inside URLs and they fell through to
@@ -751,9 +759,9 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
       // or the reconciliation would read the pruning as three records that vanished.
       const prunedPath = path.join(OUT, 'entity-hover-pruned.json')
       const pruned = fs.existsSync(prunedPath) ? JSON.parse(fs.readFileSync(prunedPath, String.fromCharCode(117,116,102,45,56))) : { postSynopsesRemoved: 0 }
-      const sum = published.length + review.total + na.total + quar.total + wd.total + (pruned.postSynopsesRemoved ?? 0)
+      const sum = audited.length + review.total + na.total + quar.total + wd.total + (pruned.postSynopsesRemoved ?? 0)
       t('hover-reconciles', 'publish + review + no-anchor + quarantine + withdrawn + pruned = 7,778', sum === 7778,
-        `${published.length} + ${review.total} + ${na.total} + ${quar.total} + ${wd.total} = ${sum}`)
+        `${audited.length} + ${review.total} + ${na.total} + ${quar.total} + ${wd.total} = ${sum}` + (ownerRuled.length ? ` (+${ownerRuled.length} owner-ruled, outside this population)` : ''))
 
       // No held record may be in the bundle, matched on the key the bundle uses.
       const held = [...review.records, ...na.records, ...quar.records, ...wd.records]
@@ -782,9 +790,16 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
         owners.get(a.text).push(e.canonical)
       }
       const sharedSet = new Set([...owners].filter(([, v]) => v.length > 1).map(([k]) => k))
-      const publishedShared = published.filter(p => sharedSet.has(p.a))
-      t('hover-shared-alias-held', 'no shared-alias occurrence is published', publishedShared.length === 0,
-        publishedShared.length ? `${publishedShared.length} published` : `${review.records.filter(r => r.sharedAlias).length} held in review`)
+      // An OWNER RULING is exempt, and only an owner ruling. The rule this guard enforces is that
+      // a global alias mapping must never decide that "BO" means one entity in every drop — it is
+      // about what a GENERATOR may infer, not about what the owner may rule. "Q" is shared between
+      // the Q designation and Alice, and the owner ruled on 2026-08-24 which reading each drop
+      // carries. Every exempt record names the ruling in its own `o` field.
+      const publishedShared = audited.filter(p => sharedSet.has(p.a))
+      t('hover-shared-alias-held', 'no shared-alias occurrence is published unless the owner ruled it',
+        publishedShared.length === 0,
+        publishedShared.length ? `${publishedShared.length} published` :
+          `${review.records.filter(r => r.sharedAlias).length} held in review, ${ownerRuled.filter(p => sharedSet.has(p.a)).length} ruled by the owner`)
 
       // Withdrawn records are audit history only.
       t('hover-withdrawn-history', 'withdrawn records are history, not review',

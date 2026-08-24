@@ -1,13 +1,13 @@
 {
  "note": "What a short form stands for, for entities with no authored synopsis to carry the clause from.",
  "ruledOn": "2026-08-24",
- "precedence": "An authored synopsis always wins. These fill in only where normalise-entity-hovers.mjs finds no \"is used for\" clause to carry across.",
+ "precedence": "An authored synopsis wins, EXCEPT where an entry carries overridesAuthored: true — an owner ruling that names the entity and says what the clause should be. Everything else fills in only where normalise-entity-hovers.mjs finds no \"is used for\" clause to carry across.",
  "sources": {
   "audit/unhighlighted-entity-identities-3.json": 16,
-  "declared in scripts/build-hover-expansions.mjs": 1
+  "declared in scripts/build-hover-expansions.mjs": 2
  },
  "totals": {
-  "expansions": 17,
+  "expansions": 18,
   "collisions": 0
  },
  "collisions": [],
@@ -76,6 +76,12 @@
    "canonical": "PAN-DEM-IC",
    "expansion": "Q's hyphenation of \"pandemic\", set against \"DEM–PANIC\" on the next line",
    "why": "The first line of #4294, immediately followed by \"DEM–PANIC\". Q hyphenates the word so that the same letters read as the second line, which is the point of the drop."
+  },
+  "Q": {
+   "canonical": "Q",
+   "expansion": "a team of fewer than 10 people, of whom Q says only three are non-military",
+   "overridesAuthored": true,
+   "why": "OWNER RULING 2026-08-24 (UPDATED report, sheet 6): \"q does = alice in the pertaining post but any other post i would make the hover synopsis that q is a group of people less than 10 or how ever q explains it somewhere in the post\". Q states it himself in #60 — \"You can count the people who have the full picture on two hands.\" / \"Of those (less than 10 people) only three are non-military.\" — and in #244, \"Less than 10 can confirm me.\" He repeats the figure when asked who can speak for the designation: #722 (\"Who are we talking to? … Less than 10.\") and #1788 (\"Who is the one person who can answer? POTUS. [Less than 10].\"). REPLACES the authored clause \"Q — the poster/persona speaking to the public through the imageboards\", which described the byline rather than what Q says the designation stands for. The Q = Alice equation is untouched: #74 and #78 write it in Q's own words and those occurrences are certified as the entity Alice, which carries its own hover."
   },
   "Q Clearance Patriot": {
    "canonical": "Q Clearance Patriot",

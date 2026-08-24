@@ -199,6 +199,18 @@ export const CHAIN = [
   // layer (audit/entity-hovers-authored.json), never from the file it writes, which is what makes
   // running it every rebuild safe. It takes no --apply flag.
   { step: 'normalise-entity-hovers.mjs', kind: 'apply', args: [] },
+  // AND THE OWNER LAYER ON TOP OF IT, or the rebuild above reverts every ruling about a hover.
+  //
+  // normalise-entity-hovers.mjs writes one generated sentence per entity from the certified
+  // record. That is right for the 1,584 rows nobody has ruled on and wrong for the ones somebody
+  // has: Nellie Ohr's authored synopsis had been silently replaced by "“Nellie Ohr” is a person in
+  // this archive." on every rebuild since, because this step was never in the chain and was only
+  // ever run by hand. It also carries the owner's post-scoped readings — what "Q" means on the 73
+  // drops that inherit the Q = Alice equation rather than stating it.
+  //
+  // Idempotent, and it refuses rather than half-apply: an id that no longer resolves to the entity
+  // the ruling names stops the run instead of attaching the wording to nothing.
+  { step: 'apply-entity-synopses.mjs', kind: 'apply' },
   { step: 'prune-entity-hovers.mjs', kind: 'apply' },
   // THE RETIRED SECTIONS, STRIPPED. apply-claims.mjs rebuilds impliedConclusions and
   // verificationHooks from audit/claims-final.json on every run, so removing them by hand would

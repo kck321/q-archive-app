@@ -1,0 +1,604 @@
+{
+ "note": "How a drop that does NOT state the Q = Alice equation uses the label \"Q\". Applied to the byPost layer of public/data/entity-hovers.json by apply-entity-synopses.mjs, under the Alice entity id.",
+ "ownerRuling": "q does = alice in the pertaining post but any other post i would make the hover synopsis that q is a group of people less than 10 or how ever q explains it somewhere in the post",
+ "ruledOn": "2026-08-24",
+ "source": "Q_Unhighlighted FINAL 2 - REPORT (UPDATED).xlsx, sheet 6-fixes-made",
+ "entityResolutionUnchanged": "The 93 occurrences stay certified as Alice. The owner named the hover synopsis, and byPost is the layer that says how ONE drop uses the label.",
+ "statedOn": [
+  74,
+  78
+ ],
+ "entityId": "qe-e01fe208ebaa",
+ "canonical": "Alice",
+ "totals": {
+  "occurrences": 93,
+  "dropsWithRecord": 73,
+  "skippedBecauseTheyStateIt": 2
+ },
+ "byPost": {
+  "48": {
+   "s": "In post #48, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "335": {
+   "s": "In post #335, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "365": {
+   "s": "In post #365, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "499": {
+   "s": "In post #499, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "503": {
+   "s": "In post #503, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "506": {
+   "s": "In post #506, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "510": {
+   "s": "In post #510, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "756": {
+   "s": "In post #756, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "757": {
+   "s": "In post #757, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "785": {
+   "s": "In post #785, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "958": {
+   "s": "In post #958, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "1075": {
+   "s": "In post #1075, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "1264": {
+   "s": "In post #1264, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "1601": {
+   "s": "In post #1601, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "1697": {
+   "s": "In post #1697, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "1770": {
+   "s": "In post #1770, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "1777": {
+   "s": "In post #1777, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "1865": {
+   "s": "In post #1865, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "1872": {
+   "s": "In post #1872, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "1873": {
+   "s": "In post #1873, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "1951": {
+   "s": "In post #1951, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2089": {
+   "s": "In post #2089, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2100": {
+   "s": "In post #2100, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2101": {
+   "s": "In post #2101, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "directive",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2102": {
+   "s": "In post #2102, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2206": {
+   "s": "In post #2206, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "directive",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2234": {
+   "s": "In post #2234, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2383": {
+   "s": "In post #2383, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "directive",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2387": {
+   "s": "In post #2387, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2388": {
+   "s": "In post #2388, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2422": {
+   "s": "In post #2422, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2428": {
+   "s": "In post #2428, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2499": {
+   "s": "In post #2499, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "directive",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2500": {
+   "s": "In post #2500, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2509": {
+   "s": "In post #2509, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2510": {
+   "s": "In post #2510, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2519": {
+   "s": "In post #2519, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2546": {
+   "s": "In post #2546, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2549": {
+   "s": "In post #2549, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2556": {
+   "s": "In post #2556, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2567": {
+   "s": "In post #2567, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2592": {
+   "s": "In post #2592, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2604": {
+   "s": "In post #2604, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2657": {
+   "s": "In post #2657, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2715": {
+   "s": "In post #2715, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2774": {
+   "s": "In post #2774, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2775": {
+   "s": "In post #2775, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2788": {
+   "s": "In post #2788, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2864": {
+   "s": "In post #2864, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2876": {
+   "s": "In post #2876, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "2930": {
+   "s": "In post #2930, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "3279": {
+   "s": "In post #3279, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "3309": {
+   "s": "In post #3309, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "3310": {
+   "s": "In post #3310, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "3312": {
+   "s": "In post #3312, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "3581": {
+   "s": "In post #3581, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "3583": {
+   "s": "In post #3583, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "statement or list",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "3584": {
+   "s": "In post #3584, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "3588": {
+   "s": "In post #3588, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "3604": {
+   "s": "In post #3604, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "3667": {
+   "s": "In post #3667, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "3673": {
+   "s": "In post #3673, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "3688": {
+   "s": "In post #3688, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "directive",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "3800": {
+   "s": "In post #3800, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "directive",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "3836": {
+   "s": "In post #3836, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "directive",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "3969": {
+   "s": "In post #3969, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "4136": {
+   "s": "In post #4136, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "4283": {
+   "s": "In post #4283, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "4333": {
+   "s": "In post #4333, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "4449": {
+   "s": "In post #4449, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "4622": {
+   "s": "In post #4622, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "question",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "4734": {
+   "s": "In post #4734, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "directive",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  },
+  "4881": {
+   "s": "In post #4881, “Q” is the designation itself. The equation Q = Alice is written by Q on #74 and #78, not here, so this drop inherits the identity rather than stating it. Q describes the designation himself: “You can count the people who have the full picture on two hands.” / “Of those (less than 10 people) only three are non-military.” (#60), and “Less than 10 can confirm me.” (#244).",
+   "a": "Q",
+   "r": "claim",
+   "g": "Strong",
+   "c": "High",
+   "o": "owner ruling 2026-08-24"
+  }
+ }
+}

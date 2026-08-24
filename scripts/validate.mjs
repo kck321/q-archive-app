@@ -146,6 +146,15 @@ step('fresh — tooltip accessibility', ['node', 'scripts/test-hover-accessibili
 step('fresh — url integrity', ['node', 'scripts/test-url-integrity.mjs'], 'standard')
 step('fresh — row evidence chips', ['node', 'scripts/test-row-evidence.mjs'], 'standard')
 step('fresh — scroll restoration', ['node', 'scripts/test-scroll-restoration.mjs'], 'standard')
+// A QUOTED DROP IS MARKED UP FROM ITS OWN CERTIFIED ANALYSIS, so it has to be shown with its own
+// line breaks. The re-scrape lost 106 of them, and on #1012 that let a Claim swallow the Question
+// beside it. Certified, because what it protects is the certified reading of a drop.
+step('fresh — a quoted drop keeps its line breaks', ['node', 'scripts/test-quoted-linebreaks.mjs', BASE, '--fresh'], 'certified')
+// The two-layer hover, on the layer that is easiest to get right in the file and wrong on screen:
+// "Q" reads as Alice on the two drops where Q writes the equation and as the designation itself,
+// in Q's own words, on the 73 that inherit it.
+step('fresh — Q is the designation, except where Q writes the equation',
+  ['node', 'scripts/test-q-persona-hover.mjs', BASE, '--fresh'], 'certified')
 // The month chart on its two DIFFERENT hosts (Analysis + Archive), desktop and phone. `full` sweeps
 // all seven categories; ordinary runs do not, because it is one shared module.
 if (profile !== 'full') step('fresh — month chart behaviour', ['node', 'scripts/test-month-chart-behaviour.mjs', '--url', BASE], 'standard')

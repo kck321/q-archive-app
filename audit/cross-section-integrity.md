@@ -167,10 +167,10 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 |---|---|---|
 | ✅ | one global synopsis per live entity, less the 0 awaiting one | 1584 published + 0 pending |
 | ✅ | no published synopsis points at an entity that is no longer live | 0 orphaned |
-| ✅ | publish + review + no-anchor + quarantine + withdrawn + pruned = 7,778 | 3693 + 3992 + 36 + 15 + 37 = 7778 |
+| ✅ | publish + review + no-anchor + quarantine + withdrawn + pruned = 7,778 | 3693 + 3992 + 36 + 15 + 37 = 7778 (+73 owner-ruled, outside this population) |
 | ✅ | no held record is in the public bundle | 4080 held back |
 | ✅ | the editorial queues are not under public/data | admin only |
-| ✅ | no shared-alias occurrence is published | 422 held in review |
+| ✅ | no shared-alias occurrence is published unless the owner ruled it | 422 held in review, 73 ruled by the owner |
 | ✅ | withdrawn records are history, not review | 37 |
 | ✅ | every hover resolves to a live entity id | 842 entities |
 | ✅ | hovers are keyed by qe- id, not by name | ok |
@@ -252,8 +252,8 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ❌ | no certified artifact CHANGED CONTENT since the manifest | posts.json, questions.json, relationships.json, search-index.json |
-| ✅ | byte-level re-serialisation reported separately, not as drift | posts.json, questions.json, relationships.json, search-index.json re-serialised by the export chain |
+| ❌ | no certified artifact CHANGED CONTENT since the manifest | posts.json, questions.json, relationships.json, search-index.json, entity-hovers.json |
+| ✅ | byte-level re-serialisation reported separately, not as drift | posts.json, questions.json, relationships.json, search-index.json, entity-hovers.json re-serialised by the export chain |
 | ✅ | every certified artifact is on disk | 10/10 |
 | ✅ | the editorial write guard is a shared module | lib/certifiedWrite.mjs |
 | ✅ | the guard has a negative test | test-certified-write-guard.mjs |
@@ -339,4 +339,4 @@ Overlap is allowed only where two sections answer different analytical questions
 
 ## Failures
 
-- **11. Frozen-section mutation — no certified artifact CHANGED CONTENT since the manifest**: posts.json, questions.json, relationships.json, search-index.json
+- **11. Frozen-section mutation — no certified artifact CHANGED CONTENT since the manifest**: posts.json, questions.json, relationships.json, search-index.json, entity-hovers.json

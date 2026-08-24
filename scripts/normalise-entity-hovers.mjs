@@ -100,6 +100,15 @@ const expansionFor = v => {
 // clause to carry across and the sentence would say only what its type and counts are. Where the
 // DROPS state the expansion, build-hover-expansions.mjs records it with the drop that states it,
 // and it fills in here. An authored synopsis still wins - this never overwrites one.
+//
+// UNLESS THE OWNER SAYS SO. `overridesAuthored` on a declared entry replaces the authored clause
+// rather than filling a gap. The rule above exists to stop a GENERATOR overwriting authored
+// editorial; it was never meant to stop the owner correcting it. Q is the first: the authored
+// clause read "Q — the poster/persona speaking to the public through the imageboards", which
+// describes the byline rather than what Q says the designation stands for, and the owner ruled on
+// 2026-08-24 that it should say what Q himself says — fewer than 10 people, only three of them
+// non-military (#60, #244). Per-entry and never a blanket change, and each such entry records in
+// its `why` which authored wording it replaces.
 const EXPANSION_FILE = path.join(ROOT, 'audit/entity-hover-expansions.json')
 const declaredExpansions = fs.existsSync(EXPANSION_FILE)
   ? JSON.parse(fs.readFileSync(EXPANSION_FILE, 'utf8')).expansions ?? {}
@@ -108,7 +117,7 @@ const declaredExpansions = fs.existsSync(EXPANSION_FILE)
 const n = x => Number(x ?? 0).toLocaleString()
 const before = { ...(doc.global ?? {}) }
 const global = {}
-let withExpansion = 0, withDeclared = 0, sourceOnly = 0, created = 0, rewritten = 0
+let withExpansion = 0, withDeclared = 0, withOverridden = 0, sourceOnly = 0, created = 0, rewritten = 0
 
 for (const e of rows) {
   const label = labelFor(e.type)
@@ -117,9 +126,12 @@ for (const e of rows) {
   // neither and is a no-op. Checking `before` before `declared` made every declared clause report
   // itself as "preserved" from the second run on, which is true of the text and useless as a count.
   const carried = expansionFor(authored[e.id])
-  const declared = declaredExpansions[e.canonical]?.expansion ?? null
-  const exp = carried ?? declared ?? expansionFor(before[e.id])
-  if (carried) withExpansion++
+  const declaredRow = declaredExpansions[e.canonical] ?? null
+  const declared = declaredRow?.expansion ?? null
+  const override = declaredRow?.overridesAuthored ? declared : null
+  const exp = override ?? carried ?? declared ?? expansionFor(before[e.id])
+  if (override) withOverridden++
+  else if (carried) withExpansion++
   else if (declared) withDeclared++
   const head = `“${e.canonical}” is ${article(label)} ${label} in this archive${exp ? `, used for ${exp}` : ''}.`
   const posts = (e.posts ?? []).length
@@ -164,6 +176,7 @@ console.log(`    rewritten           : ${n(rewritten)}`)
 console.log(`    newly created       : ${n(created)}   (entities that had no hover at all)`)
 console.log(`  expansion preserved   : ${n(withExpansion)}`)
 console.log(`  expansion declared    : ${n(withDeclared)}   (owner rulings, for rows with no authored synopsis)`)
+console.log(`  expansion overridden  : ${n(withOverridden)}   (owner rulings that REPLACE an authored clause)`)
 console.log(`  source-only wording   : ${n(sourceOnly)}`)
 console.log(`  byPost records        : ${n(Object.keys(doc.byPost ?? {}).length)} entities, untouched`)
 console.log('\nwrote public/data/entity-hovers.json\n')

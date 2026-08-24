@@ -910,7 +910,7 @@
    "id": "hover-reconciles",
    "description": "publish + review + no-anchor + quarantine + withdrawn + pruned = 7,778",
    "pass": true,
-   "detail": "3693 + 3992 + 36 + 15 + 37 = 7778"
+   "detail": "3693 + 3992 + 36 + 15 + 37 = 7778 (+73 owner-ruled, outside this population)"
   },
   {
    "group": "10b. Entity hover publication",
@@ -929,9 +929,9 @@
   {
    "group": "10b. Entity hover publication",
    "id": "hover-shared-alias-held",
-   "description": "no shared-alias occurrence is published",
+   "description": "no shared-alias occurrence is published unless the owner ruled it",
    "pass": true,
-   "detail": "422 held in review"
+   "detail": "422 held in review, 73 ruled by the owner"
   },
   {
    "group": "10b. Entity hover publication",
@@ -1400,14 +1400,14 @@
    "id": "hash-stable",
    "description": "no certified artifact CHANGED CONTENT since the manifest",
    "pass": false,
-   "detail": "posts.json, questions.json, relationships.json, search-index.json"
+   "detail": "posts.json, questions.json, relationships.json, search-index.json, entity-hovers.json"
   },
   {
    "group": "11. Frozen-section mutation",
    "id": "hash-reserialised",
    "description": "byte-level re-serialisation reported separately, not as drift",
    "pass": true,
-   "detail": "posts.json, questions.json, relationships.json, search-index.json re-serialised by the export chain"
+   "detail": "posts.json, questions.json, relationships.json, search-index.json, entity-hovers.json re-serialised by the export chain"
   },
   {
    "group": "11. Frozen-section mutation",
