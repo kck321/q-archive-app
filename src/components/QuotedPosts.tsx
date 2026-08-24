@@ -5,7 +5,7 @@ import { mediaUrl, dedupeMedia } from '../lib/mediaUrl'
 import PictureChip from './PictureChip'
 import { linkify } from '../lib/linkify'
 import { highlightText } from '../lib/postHighlight'
-import { getQuotedContext, type QuotedContext } from '../lib/references'
+import { getQuotedContext, quotedDisplayText, type QuotedContext } from '../lib/references'
 
 /**
  * The reply chain behind a drop's ">>NNNNNNN" pointers.
@@ -53,6 +53,10 @@ export default function QuotedPosts({
         const depth = q.depth ?? 0
         const drop = ctx?.byBoardId.get(q.boardId) ?? qDropFor?.(q.boardId) ?? null
         const isQ = q.name === 'Q' || !!drop
+        // The drop's own line breaks, where the re-scrape lost them — see quotedDisplayText.
+        // The markup below comes from the drop's certified analysis, and that analysis was
+        // certified against these lines, not against the scraped run-on.
+        const shown = quotedDisplayText(q.text, drop)
         return (
           <div
             key={`${q.boardId}-${i}`}
@@ -103,7 +107,7 @@ export default function QuotedPosts({
                 {linkify(
                   drop
                     ? highlightText(
-                        q.text,
+                        shown,
                         ctx?.questionsByPostId.get(drop.id) ?? [],
                         searchKeyword,
                         drop.actionRequests ?? [],
@@ -111,7 +115,7 @@ export default function QuotedPosts({
                       )
                     // No stored analysis for an anon quote — highlightText still marks
                     // entities, [brackets], mil-intel terms and the search term.
-                    : highlightText(q.text, [], searchKeyword)
+                    : highlightText(shown, [], searchKeyword)
                 )}
               </pre>
             )}

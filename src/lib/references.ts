@@ -83,3 +83,34 @@ export function resolveReferences(text: string, index: Map<string, QPost>): Reso
   const ids = [...new Set((text ?? '').match(/>>(\d+)/g) ?? [])].map(r => r.slice(2))
   return ids.map(boardId => ({ boardId, post: index.get(boardId) ?? null }))
 }
+
+/**
+ * What to RENDER for a quoted post that is itself a drop we hold.
+ *
+ * The quoted copies were re-scraped from qalerts after the `references` field was destroyed at
+ * ingest, and the re-scrape lost line breaks. 106 of the 1,320 quotes that resolve to a drop come
+ * back as the same words with different whitespace — #1012 quotes #1011 as
+ * "RUSSIA NEW THREAT.COINCIDENCE?" where the drop itself puts those on two lines.
+ *
+ * That is not cosmetic. QuotedPosts marks a resolved quote up from the DROP's certified analysis,
+ * and every matcher here is anchored to a line or a sentence end. With the break gone,
+ * `expandToSentence` cannot see a sentence end before "C" — "." followed by a letter is
+ * "twitter.com", not a full stop — so the certified Claim "RUSSIA NEW THREAT." swallowed the whole
+ * line, and `UNIT_START` needs whitespace after a terminator so the certified Question
+ * "COINCIDENCE?" could not open a unit at all. The line painted amber end to end and the question
+ * vanished, on a drop where the archive holds both rulings correctly.
+ *
+ * So where the two texts are the same characters and differ only in whitespace, the DROP's own
+ * text wins: that is the copy every ruling on it was certified against. Where they genuinely
+ * differ — 5 of the 1,320, one empty scrape and four real wording differences — the scraped text
+ * is kept, because there the quote is evidence of something the drop does not say and replacing
+ * it would be inventing a source.
+ *
+ * Both texts arrive here already cleaned by `stripBoardMarkup`, so the comparison is on runtime
+ * words and an `&amp;` never reads as a difference.
+ */
+export function quotedDisplayText(quotedText: string, drop: QPost | null | undefined): string {
+  if (!drop?.text || !quotedText) return quotedText
+  const bare = (t: string) => t.replace(/\s+/g, '')
+  return bare(quotedText) === bare(drop.text) ? drop.text : quotedText
+}
