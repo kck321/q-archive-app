@@ -1,0 +1,17 @@
+What,Count,What it means
+Rows you sent,6419,Every non-blank row across the eight sheets of Q_Unhighlighted FINAL 2.xlsx.
+Applied as new rulings,2775,"Now certified in the section your sheet named, and painting in the drop."
+ALREADY highlighted — not doubled,3261,"The section you named already certified that exact span, so no second record was created. This is the ""do not double-highlight"" rule doing its job."
+Sent to the Resolution Center,238,"Sheet 1. Queued, not certified: the archive now shows these as unsettled rather than as nothing."
+Duplicate rows dropped,119,"The same (post, sentence, text) appeared more than once with the same destination."
+Held for your decision,152,"Rows I would have had to guess about. Listed on the ""Held for you"" sheet."
+Refused,1,"The text is not in the drop it names. Listed on ""Data problems""."
+,,
+SECTION COUNTS — before and after,,
+Q Questions,"6,321 → 6,327",6 rulings
+Q Directives,"2,902 → 3,304",455 rulings
+Q Claims,"8,631 → 10,258","1,654 rulings"
+Q Predictions,841 → 934,94 rulings
+Q Entities,"1,223 → 1,532 identities · 8,831 → 9,271 mentions",499 rulings
+Q Codes & Brackets,"1,957 → 1,986",43 rulings
+Resolution Center,115 → 353,238 rows from sheet 1
