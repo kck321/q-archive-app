@@ -7160,3 +7160,138 @@ from "Themes that read purple" to the retirement record.
 
 **No file in `public/data` changed.** Certification manifest untouched, 222/222 invariants,
 `validate --profile full` green (tree `f99d218d6fec`).
+
+---
+
+## 2026-08-24 (later still) — The UPDATED report, sheet by sheet
+
+> *"in post 1012 RUSSIA NEW THREAT.COINCIDENCE? is a question not a claim"* — and nine more
+> instructions written into `Q_Unhighlighted FINAL 2 - REPORT (UPDATED).xlsx`, which is the
+> committed report at `1c4cb1b` with the owner's own text replacing the Problem column of sheet 4.
+
+### #1012, and the 106 quotes that lost their line breaks
+
+The span is ruled correctly and always was — on **#1011**, which is the drop Q wrote it in. #1012
+shows #1011 as a QUOTE, and the quoted bodies were re-scraped from qalerts after the `references`
+field was destroyed at ingest. That re-scrape **lost line breaks**: 106 of the 1,320 quotes that
+resolve to a drop we hold come back as the same characters with different whitespace.
+
+`QuotedPosts` marks a resolved quote up from the DROP's certified analysis, so a lost break breaks
+both matchers at once. `expandToSentence` reads "." followed by a letter as `twitter.com` rather
+than a full stop, so the Claim "RUSSIA NEW THREAT." swallowed the whole line; `UNIT_START` needs
+whitespace after a terminator, so the Question "COINCIDENCE?" could not open a unit at all.
+
+`quotedDisplayText()` renders the drop's own text where the two are the same characters modulo
+whitespace — the copy every ruling was certified against. Where they genuinely differ (5 of 1,320:
+one empty scrape, four real wording differences) the scraped text is kept, because there the quote
+is evidence of something the drop does not say. Gate: `test-quoted-linebreaks.mjs`, 7/7, with
+#1011's own page as the control. (`6917202`)
+
+### The latent defect that surfaced while fixing sheet 4
+
+`apply-questions.mjs` matches a stored row by post + normalised text so its id survives a rebuild.
+`apply-questions-final.mjs` then REWRITES that wording wherever the abbreviation record says the
+splitter cut it short — so the next run misses, and `mkId()`, a sequential counter, hands the row a
+new number and shifts every row minted after it.
+
+That would be harmless if an id were only an id. **`apply-step3b1.mjs` keys its 163 demotions and
+19 withdrawals on it.** Adding seven repairs moved four demotions onto the wrong drops: #1944's
+question came back carrying `A-DQ-p0121-s019` and `secondaryOf: 121|directives|673|678` — an action
+about post 121 — while post 121's own demotion went missing. Indexed questions went 6,327 → 6,323
+and every other figure still looked right.
+
+The repaired wording is now a second key into the same row, and an action may only patch a row on
+the drop it names. (`addcbb9`)
+
+### Sheet 4 — three rulings
+
+**Seven whole sentences are Questions** (#1944 #2211 #4782 #4888 #3049 #1915 #4871). Each is the
+abbreviation defect seen from the other end: `abbreviation-span-repairs.json` already held every one
+of these sentences with the full wording taken from the drop, filed under `claims` because that is
+where the splitter had put the HEAD. Claims does not hold the head any more; what Questions held was
+the TAIL — "ORIG?", "POTUS?", "CENSUS?". Re-filed as a second shape, `shape: "tail"`, extending
+BACKWARDS from the fragment. One record, one applier, two shapes.
+
+**#1443 "DECLAS_Public[3]" is a Claim.** The owner had put it on the Claims sheet AND the
+Predictions sheet in round 2, so it was ruled into both; `apply-claims.mjs`'s "a line may not be
+both" let Predictions win and pulled the Claim out. The `[3]` is a bracket and paints red on top.
+
+**#4891's "Why would H." is withdrawn.** Not a sentence Q wrote — the head the same splitter left.
+
+The two withdrawals go in a NEW artifact rather than being deleted from round 2's:
+`audit/unhighlighted-owner-rulings-2-corrections.json`, read by `lib/queueRulings.mjs` so all six
+materialisers honour one list. Round 2's record stays the account of what was ruled that day.
+(`6b37912`)
+
+### Sheet 6 — Q is the designation, except where Q writes the equation
+
+93 occurrences across 75 drops resolve to Alice. **Two of those drops write the equation** — #74 and
+#78 — and on the other 73 a reader hovering "Q" was shown only "“Alice” is a person in this
+archive."
+
+The entity resolution is NOT touched: the owner named the hover synopsis, and the hover already has
+the layer for it. The global line now reads *"a team of fewer than 10 people, of whom Q says only
+three are non-military"*, and 73 drops carry a `byPost` record quoting Q — #60's "You can count the
+people who have the full picture on two hands." / "Of those (less than 10 people) only three are
+non-military.", and #244's "Less than 10 can confirm me."
+
+Three mechanisms gave way, each narrowly: an owner ruling may REPLACE an authored expansion, not
+only fill a gap; the hover reconciliation counts audit outcomes and an owner-ruled record is not
+one; and the shared-alias guard holds "Q" in review because a GLOBAL ALIAS MAPPING may not decide
+what a label means in one drop — an owner ruling is exactly the thing that may.
+
+**And `apply-entity-synopses.mjs` is now IN the chain.** It never was, so every rebuild silently
+reverted the owner layer: Nellie Ohr's authored synopsis had been replaced by the generated line on
+every rebuild since it was written. Gate: `test-q-persona-hover.mjs`, 13/13, on the card a reader
+opens. (`e9bcda3`)
+
+### Sheets 2, 3, 4, 5 — every row re-read
+
+`audit-report-updated-sweep.mjs` asks one question of all 4,295 rows: is this exact span certified,
+on this exact drop, in the section this row names?
+
+    2-already-highlighted   3,261/3,261   clean
+    3-held-for-you            119/119     clean
+    4-data-problems            68/68      clean
+    5-how-it-was-read         822/847     25 exceptions, all classified
+
+**Four times the checker was wrong before the data was**, and each is a lesson already in this repo:
+stored text is not rendered text (1,700 bracket rows read as missing because `&gt;` folds to `gt`);
+a span of pure punctuation is still a span (#261's certified Claim `$` folded to nothing); a SPLIT
+certifies its PARTS; and the LATER ruling governs.
+
+The 25 that survive are six kinds, only two of which are questions for the owner: 9 lines the
+archive reads as Questions where the sheet said Claims or Directives, 2 it reads as Predictions,
+4 deliberately unsettled corpus-wide aliases ("L.", "45", "F-15"), and 14 explained by how the
+workbook cell was written. (`5f270f3`)
+
+### Sheets 8, 9, 10 — asserted, not assumed
+
+The theme fill is commented out in BOTH renderers, 0 theme spans sit inside another highlight
+(2,153 before), 0 rotating pairs involve a Theme, and rotating spans are 208 across 110 drops
+(1,676 / 1,058 before). The section is untouched: 2,646 assignments, 1,729 anchors.
+
+### The deliverable, and one thing that had to be put back
+
+`Q_Unhighlighted FINAL 2 - SUMMARY 2026-08-24.xlsx` — six sheets, written from
+`audit/report-updated-sweep.json` rather than from notes.
+
+The OOXML writer moved to `lib/xlsx.mjs`, because a second workbook needed it and a second COPY is
+the failure `lib/queueRulings.mjs` records. **A run made only to verify that refactor overwrote the
+Desktop report the owner was reading from** — a file they had annotated by hand and had just asked
+not to be overwritten. It was restored byte-for-byte from a copy taken at the start of the session,
+and the Desktop write now needs `--desktop`. (`591c089`)
+
+### Seed 91
+
+posts.json, questions.json, entity-hovers.json, relationships.json and search-index.json all move.
+A reader on 90 — the owner's own browser, reviewing on localhost — would have kept the three things
+the report asked to have fixed still on screen after they were fixed. `seed-fingerprint.json` was
+recorded at 89 and had been left behind by the previous batch, so the guard was comparing against a
+seed two behind. (`9e4e180`)
+
+### Counts
+
+questions distinct 5,363 → **5,364** · claim occurrences **10,558** unchanged · predictions 935 →
+**934** · post-scoped hovers 3,693 → **3,766** · **221/222 invariants**, the manifest re-certified
+at the deploy checkpoint · seed **91** · NOT DEPLOYED.

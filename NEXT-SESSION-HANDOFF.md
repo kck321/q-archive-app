@@ -2,8 +2,9 @@
 
 **Read `PROJECT_CONTEXT.md` first, then this.**
 
-Round 2 of the unhighlighted-sentence review is **applied and certified at seed 90**. The Step 3B
-reconciliation before it stays closed. Do not reopen either.
+Round 2 of the unhighlighted-sentence review is applied, and the owner's rulings on the UPDATED
+report are applied on top of it at **seed 91**. The Step 3B reconciliation before both stays closed.
+Do not reopen any of them.
 
 ---
 
@@ -12,10 +13,30 @@ reconciliation before it stays closed. Do not reopen either.
 | | |
 |---|---|
 | HEAD | see `git log -1` |
-| production | **seed 88** — the round-2 batch is committed and validated but NOT deployed |
-| invariants | **222/222** |
-| manifest | verified at seed 90 |
+| production | **seed 88** — the round-2 batch AND the UPDATED-report batch are committed but NOT deployed |
+| invariants | **221/222** — the manifest is the one outstanding, by design |
+| manifest | **NOT re-certified.** The certified sections changed; re-certify at the deploy checkpoint |
+| validation | **owed.** `batch-status.mjs` puts the floor at FULL; the receipt is stale |
 | conflict queue | closed, 50 rows, actionable 0 |
+
+### The UPDATED-report batch, 2026-08-24
+
+Seven commits, `6917202`..`9e4e180`. Full account in DEVLOG.md. The three that will matter to
+whoever reads this next:
+
+- **A quoted drop is now shown with its own line breaks.** 106 of the 1,320 quotes that resolve to a
+  drop lost theirs in the re-scrape, and the quote is marked up from the DROP's analysis — so on
+  #1012 a Claim swallowed the Question beside it. `lib/references.ts:quotedDisplayText()`.
+- **A question row's id must survive an abbreviation repair.** `mkId()` is a sequential counter and
+  `apply-step3b1.mjs` keys 182 demotions on it, so a repaired wording silently moved four demotions
+  onto the wrong drops. Both halves of the fix are in `addcbb9`, and `apply-step3b1.mjs` now refuses
+  rather than mislabel.
+- **`apply-entity-synopses.mjs` is in the chain.** It never was, so every rebuild had been reverting
+  the owner's authored hovers.
+
+**`node scripts/audit-report-updated-sweep.mjs`** re-reads all 4,295 rows of the report against the
+certified state. Sheets 2, 3 and 4 are clean; sheet 5 has 25 classified exceptions, 11 of which are
+classification questions for the owner.
 
 ### Certified counts (manifest, seed 90)
 
@@ -95,6 +116,13 @@ on the finished bundle records 1532/9271 and the cleanup then refuses.
 
 ## Open for the owner
 
+0. **Deploy.** The batch is finished and reviewed locally; production still carries seed 88. The
+   order is `node scripts/validate.mjs --profile full` → `node scripts/certification-manifest.mjs`
+   → `npm run deploy:web` → `node scripts/verify-live.mjs`.
+0b. **11 classification questions** on sheet "3-issues-for-you" of
+   `Q_Unhighlighted FINAL 2 - SUMMARY 2026-08-24.xlsx`: nine lines the archive reads as Questions
+   where the workbook said Claims or Directives — the same family as the seven just ruled — and two
+   it reads as Predictions.
 1. **152 held rows** — sheet "Held for you" in the report. 128 entity spans with no name yet (`L.`,
    `+++`, `SEC TEST`, `Godfather lll`, `4,10,20`, …) and 24 directive rows that instruct nobody.
 2. **#859 is still a data defect.** Its text splices a pointer inside a word
