@@ -278,7 +278,22 @@ function renderPostBody(
   //   if no certified occurrence supports the exact span in that post, it gets no semantic colour
 
   // URL segments (lowest priority — clickable links)
-  const urlRx = /https?:\/\/[^\s<>'")\]]+/g
+  //
+  // THE SPACE AFTER THE SCHEME IS Q'S, AND THE ADDRESS IS STILL ONE ADDRESS.
+  //
+  // 44 drops write "https:// wikileaks.org/clinton-emails/emailid/629". Without the [ \t] this
+  // matched nothing, so no `url` seg existed, so the coalescing below never ran — and the entity
+  // "Clinton" certified inside the slug split the line into three nodes. What a reader got was an
+  // anchor over "https:// wikileaks.org/" pointing at the site root: a link that looks like it
+  // worked and goes to the wrong page. That is the exact failure the coalescing block was written
+  // to end; it just never saw these 44.
+  //
+  // Only spaces and tabs, never \s — a newline after the scheme is a different shape and
+  // swallowing one would run the address into the next line of the drop.
+  // The LINK TEXT keeps Q's space; only the href drops it. A browser cannot follow a space, and
+  // this archive does not rewrite Q's wording to make an address tidy.
+  const hrefOf = (u: string) => u.replace(/^(https?:\/\/)[ \t]+/i, '$1')
+  const urlRx = /https?:\/\/[ \t]{0,3}[^\s<>'")\]]+/g
   let um: RegExpExecArray | null
   while ((um = urlRx.exec(text)) !== null) {
     segs.push({ start: um.index, end: um.index + um[0].length, kind: 'url', matchText: um[0] })
@@ -394,7 +409,7 @@ function renderPostBody(
             ? (stackable.length > 0
                 ? <mark key={iStart} className={`${HIGHLIGHT_CLS[stackable[0].kind] ?? ''} rounded not-italic`}>{matchText}</mark>
                 : matchText)
-            : <a key={iStart} href={matchText} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 underline break-all" onClick={e => e.stopPropagation()}>{matchText}</a>)
+            : <a key={iStart} href={hrefOf(matchText)} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 underline break-all" onClick={e => e.stopPropagation()}>{matchText}</a>)
       } else if (insideQuestionKinds(stackable).length > 0) {
         // CONTAINMENT IS NOT OVERLAP.
         //
@@ -500,7 +515,7 @@ function renderPostBody(
 
     pos = iEnd
     if (urlBuf && iEnd >= urlEnd) {
-      nodes.push(<a key={`url-${urlEnd}`} href={urlHref} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 underline break-all" onClick={e => e.stopPropagation()}>{urlBuf}</a>)
+      nodes.push(<a key={`url-${urlEnd}`} href={hrefOf(urlHref)} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 underline break-all" onClick={e => e.stopPropagation()}>{urlBuf}</a>)
       urlBuf = null
     }
   }

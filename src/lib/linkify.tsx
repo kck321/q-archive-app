@@ -12,9 +12,21 @@ import { resolveRef } from './refIndex'
  */
 
 // Stops at whitespace and at the quote/bracket characters that fence a URL in prose.
-// The third alternative is Q's board pointer: ">>11001375". Both are matched in ONE pass so a
+// The last alternative is Q's board pointer: ">>11001375". All are matched in ONE pass so a
 // pointer sitting inside a URL's query string cannot be linked twice.
-const TOKEN_RE = /(https?:\/\/[^\s<>"'`)\]]+|www\.[^\s<>"'`)\]]+|>>\d{4,})/g
+//
+// THE FIRST ALTERNATIVE IS Q'S OWN TYPO, AND IT HAS TO COME FIRST.
+//
+// 44 drops write the scheme with a space after it — "https:// wikileaks.org/podesta-emails/629",
+// "http:// thehill.com/homenews/...". Where the host then began with "www." the second
+// alternative still caught it and the address was live, which is why this went unnoticed; where
+// it did not, 23 addresses rendered as plain grey text and were not links at all. Matching the
+// space repairs both: the anchor now covers the whole address Q typed.
+//
+// Only spaces and tabs, never \s — a newline after the scheme is a different drop shape and
+// swallowing one would link across a line break. Leftmost-alternation means this must precede the
+// unspaced form, or that one matches "https://" and stops.
+const TOKEN_RE = /(https?:\/\/[ \t]{1,3}[^\s<>"'`)\]]+|https?:\/\/[^\s<>"'`)\]]+|www\.[^\s<>"'`)\]]+|>>\d{4,})/g
 
 /** Trailing sentence punctuation is not part of the URL: "see https://x.com/a." */
 function splitTrailing(url: string): [string, string] {
@@ -72,7 +84,12 @@ function linkifyString(text: string): React.ReactNode {
     if (part.startsWith('>>')) return refNode(part, i)
     const [url, tail] = splitTrailing(part)
     if (!url) return part
-    const href = url.startsWith('www.') ? `https://${url}` : url
+    // The LINK TEXT stays exactly what Q typed, space and all — this archive never rewrites his
+    // wording, not even a typo. Only the href is repaired, because a browser cannot follow a
+    // space and a link that does not work is worse than no link.
+    const href = url.startsWith('www.')
+      ? `https://${url}`
+      : url.replace(/^(https?:\/\/)[ \t]+/i, '$1')
     return (
       <React.Fragment key={i}>
         <a

@@ -164,7 +164,12 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
   //
   //   if no certified occurrence supports the exact span in that post, it gets no semantic colour
 
-  const urlRx = /https?:\/\/[^\s<>'")\]]+/g
+  // The space after the scheme is Q's — 44 drops write "https:// wikileaks.org/...". Matched
+  // here for the same reason as in PostDetail: identical detection on both surfaces, or the
+  // archive and the drop disagree about which addresses are links. Spaces and tabs only,
+  // never \s, so an address can never run into the next line.
+  const hrefOf = (u: string) => u.replace(/^(https?:\/\/)[ 	]+/i, '$1')
+  const urlRx = /https?:\/\/[ 	]{0,3}[^\s<>'")\]]+/g
   let um: RegExpExecArray | null
   while ((um = urlRx.exec(text)) !== null) segs.push({ start: um.index, end: um.index + um[0].length, kind: 'url' })
 
@@ -255,7 +260,7 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
         // artifact instead of the consumption is the exact failure this project keeps repeating.
         nodes.push(<mark key={iStart} className={`${cls.keyword ?? ''} not-italic`}>{matchText}</mark>)
       } else {
-        nodes.push(<a key={iStart} href={matchText} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 underline break-all" onClick={e => e.stopPropagation()}>{matchText}</a>)
+        nodes.push(<a key={iStart} href={hrefOf(matchText)} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 underline break-all" onClick={e => e.stopPropagation()}>{matchText}</a>)
       }
     } else if (stackable.length === 1) {
       nodes.push(<mark key={iStart} className={`${cls[stackable[0].kind] ?? ''} rounded not-italic`}>{matchText}</mark>)
