@@ -152,7 +152,13 @@ for (const [label, url] of [
 // ── Emphasis is excluded by owner ruling ──────────────────────────────────────
 {
   const p = await b.page(`${BASE}/analysis?tab=emphasis`, D)
-  await p.waitFor(ROWS_READY, { timeout: 120000 }).catch(() => false)
+  // WAIT FOR THE PAGE, NOT FOR ROWS THAT CANNOT COME.
+  //
+  // Emphasis is RETIRED, so this tab renders no rows BY DESIGN - which is the very thing this
+  // block asserts. Waiting on ROWS_READY therefore always ran the full 120s timeout and then
+  // carried on: two minutes of dead wait in every full validation, spent proving something the
+  // next line proves properly. The panel is the honest readiness signal.
+  await p.waitFor(`document.querySelectorAll('div.bg-q-panel').length > 0`, { timeout: 60000 }).catch(() => false)
   await new Promise(s => setTimeout(s, 6000))
   const n = Number(await p.evaluate(`${CHIPS('(Pic|URL)')}.length`))
   n === 0 ? ok('Emphasis carries no evidence chips, as ruled') : fail(`Emphasis shows ${n} evidence chips`)
