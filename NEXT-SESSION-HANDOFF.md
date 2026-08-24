@@ -2,8 +2,8 @@
 
 **Read `PROJECT_CONTEXT.md` first, then this.**
 
-Round 2 of the unhighlighted-sentence review is applied, and the owner's rulings on the UPDATED
-report are applied on top of it at **seed 91**. The Step 3B reconciliation before both stays closed.
+Round 2 of the unhighlighted-sentence review is applied, the owner's rulings on the UPDATED report
+are applied on top of it, and the rulings from the #2347 card on top of those, at **seed 92**. The Step 3B reconciliation before both stays closed.
 Do not reopen any of them.
 
 ---
@@ -15,6 +15,7 @@ Do not reopen any of them.
 | HEAD | see `git log -1` |
 | production | **seed 88** — the round-2 batch AND the UPDATED-report batch are committed but NOT deployed |
 | invariants | **221/222** — the manifest is the one outstanding, by design |
+| seed | **92** — bumped twice in this session; neither has shipped |
 | manifest | **NOT re-certified.** The certified sections changed; re-certify at the deploy checkpoint |
 | validation | **owed.** `batch-status.mjs` puts the floor at FULL; the receipt is stale |
 | conflict queue | closed, 50 rows, actionable 0 |
@@ -37,6 +38,19 @@ whoever reads this next:
 **`node scripts/audit-report-updated-sweep.mjs`** re-reads all 4,295 rows of the report against the
 certified state. Sheets 2, 3 and 4 are clean; sheet 5 has 25 classified exceptions, 11 of which are
 classification questions for the owner.
+
+### The #2347 card, 2026-08-24 (`0e221aa`)
+
+WWG1WGA is a Directive on the five drops where it was not already one — **171 of 178 already were**,
+because the archive certifies Q's valedictions — and is REFUSED on the two where it sits inside a
+URL. #2347's two body Qs are Entities; the third, inside the handle `Q_ANONBaby`, is not. #1443's
+`Texts` is a Claim and `DECLAS_Public[3]` is a Prediction again, correcting a reading taken from
+sheet 4 earlier the same day.
+
+**A guard worth knowing about.** The Q ruling lives in `audit/q-entity-owner-ruling.json`; what makes
+it PAINT is the alias ruling in `audit/entities-owner-rulings.json`, and `apply-entities.mjs` reads
+the second. They drifted — the ruling said 76 drops, the alias painted 75 — with every count still
+reconciling. `build-q-entity-ruling.mjs` now compares both lists, drops AND occurrences, and refuses.
 
 ### Certified counts (manifest, seed 90)
 

@@ -138,11 +138,35 @@ gates.push(['scripts/test-quoted-linebreaks.mjs', '7/7', 'A quoted drop is shown
 gates.push(['scripts/test-q-persona-hover.mjs', '13/13', 'Asserted on the card a reader opens, not on the file — a two-layer hover is exactly the thing that can be right in the data and invisible on screen.'])
 gates.push(['scripts/test-q-alice.mjs', '7/7', 'The Q = Alice ruling still holds, and the sign-off still carries no entity fill.'])
 gates.push(['scripts/audit-cross-section.mjs', '221/222', 'The archive\u2019s own invariants. The one outstanding is the manifest, re-certified at the end of the batch.'])
+gates.push(['scripts/test-wwg1wga-directive.mjs', '10/10', 'WWG1WGA is green on the five drops that needed it — and the two inside a URL are still one clickable address with nothing marked in them.'])
 gates.push(['scripts/audit-report-updated-sweep.mjs', `${n(sweep.totals.verified)}/${n(sweep.totals.rows)}`, 'Every row of the UPDATED report, re-read against the certified state.'])
 gates.push(['', '', ''])
 gates.push(['STILL OWED, at the deploy checkpoint', '', ''])
 gates.push(['node scripts/validate.mjs', 'not yet run', 'The profile the diff requires. This batch touches audit/ and public/data, so the floor is at least `certified` and the chain runs twice.'])
 gates.push(['node scripts/certification-manifest.mjs', 'not yet run', 'Re-certifies the changed sections and bumps the seed. Deliberately left until the batch is closed, so the whole batch is certified once.'])
+
+// ── 7. The rulings that came after the report ───────────────────────────────
+const later = [['Your words', 'What was done', 'Status']]
+later.push(['"leave pic 1 how it states but lets make both the Q\'s an Entity (not the signiture)"',
+  'Both body Qs on #2347 are Entities. Both had been held by the "the word question" rule — which was written for those two lines — and your reading of the drop overrules it; the rule keeps its other ~30 lines. The existing highlighting is exactly as it was: one Claim, three Predictions, with the entities solid in front. THE THIRD Q ON THAT DROP IS NOT RULED IN: it is inside the twitter handle "Q_ANONBaby" on the link line. The sign-off never reaches the ruling at all.',
+  'FIXED'])
+later.push(['"lets make the wwg1wga a directive. lets make ALL the wwg1wga directives trough all the post"',
+  '171 of the 178 WWG1WGA occurrences ALREADY were Directives — the archive certifies your valedictions, and every sign-off-shaped one carries the family "morale". Five were not, and are now: #1183, #2347, #2543, #2565, #2567. TWO ARE REFUSED: #1601 and #3660 write WWG1WGA inside a URL, and a span certified there puts a fill inside a link and splits the address — the same rule that keeps the handle Q out of #2347.',
+  'FIXED — 5 ruled, 2 refused'])
+later.push(['"post 1443 lets make Texts a claim. DECLAS_Public should be a prediction"',
+  '"Texts" is a Claim. "DECLAS_Public[3]" is a Prediction again — this corrects the reading taken earlier the same day from the sheet-4 note "make this portion a claim", which was applied as making the line a Claim. The correction is recorded beside the first ruling rather than replacing it, so both are readable.',
+  'FIXED — corrects an earlier reading'])
+later.push(['', '', ''])
+later.push(['FOUND WHILE DOING IT', '', ''])
+later.push(['The Q ruling and the thing that makes it paint could drift apart',
+  'The ruling lives in one file; what paints it is an alias ruling in another, and the archive reads the second. The ruling said 76 drops and the alias painted 75, silently, with every count still reconciling. The two lists — drops AND the exact occurrences inside them — are now compared on every run and refuse if they disagree.',
+  'GUARDED'])
+later.push(['"potus" is painted cyan inside a reddit link on #1601',
+  'A URL-derived entity: the word is in the address slug, not in anything you wrote. It predates this batch and nothing here created it.',
+  'FOR YOU — not fixed'])
+later.push(['The sign-off Q carries a hover card, though no fill',
+  'On every drop where Q is a certified entity, including #74, the closing "Q" has no entity colour but does open the info card. That is how it has behaved since the Q ruling; "not the signiture" was read as the colour, which is what the gate checks.',
+  'FOR YOU — say the word and it goes'])
 
 const { buf, sheets } = workbookBuffer([
   ['1-what-you-asked', asked],
@@ -151,6 +175,7 @@ const { buf, sheets } = workbookBuffer([
   ['4-counts-that-moved', counts],
   ['5-theme-layer', theme],
   ['6-what-was-proved', gates],
+  ['7-later-rulings', later],
 ])
 
 const desktop = process.argv.includes('--desktop')

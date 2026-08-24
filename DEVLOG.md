@@ -7295,3 +7295,67 @@ seed two behind. (`9e4e180`)
 questions distinct 5,363 → **5,364** · claim occurrences **10,558** unchanged · predictions 935 →
 **934** · post-scoped hovers 3,693 → **3,766** · **221/222 invariants**, the manifest re-certified
 at the deploy checkpoint · seed **91** · NOT DEPLOYED.
+
+---
+
+## 2026-08-24 (later still) — The #2347 card, WWG1WGA, and #1443 corrected
+
+> *"leave pic 1 how it states but lets make both the Q's an Entity (not the signiture) lets make the
+> wwg1wga a directive. lets make ALL the wwg1wga directives trough all the post"*
+> *"post 1443 lets make Texts a claim. DECLAS_Public should be a prediction"*
+
+### WWG1WGA — 171 of the 178 were already Directives
+
+The archive certifies Q's valedictions, and **every sign-off-shaped WWG1WGA already carried family
+`morale`** — which is also what `lib/queueDirectiveFamily.mjs` answers for the string, so no family
+was declared. Three more were already inside a longer certified directive. So "all of them" is a
+five-row ruling: **#1183, #2347, #2543, #2565, #2567**, each a sub-line span in a line the archive
+certifies in another section — the shape **139** certified directives already have (`"Define."`
+inside `"What is HUMA? Define."`).
+
+**Two are refused, and the refusal is the half worth gating.** #1601 and #3660 write WWG1WGA inside
+a URL. A span certified there puts a fill inside a link and splits the anchor — the defect the URL
+work fixed twice, and the same rule that held `ROTHS` inside `+FLYROTHSFLY+`.
+
+### #2347 — both body Qs are Entities
+
+Both were held by the `the word "question"` rule, and that rule was **written for those two lines**
+(`Q will be (answered|asked)`, `force' the Q`). The owner read the drop and ruled the other way; the
+rule keeps its other ~30 lines. Recorded as an occurrence-scoped `OWNER_OVERRIDES` entry that names
+the line *and* the words on it, and refuses if the drop no longer reads that way.
+
+**The third Q on that drop stays held** — it is inside the twitter handle `Q_ANONBaby`. The sign-off
+never reaches the ruling at all: `SIGNATURE` excludes it before anything else runs, which is what
+"(not the signiture)" asks for. The existing highlighting is untouched — one Claim, three
+Predictions, entities solid in front.
+
+### The guard that would have saved the hour this cost
+
+The ruling lives in `q-entity-owner-ruling.json`. What makes it **paint** is an alias ruling in
+`entities-owner-rulings.json` — `{alias: "Q", canonical: "Alice", includePosts, includeOccurrences}`
+— and `apply-entities.mjs` reads the second. Ruling in one and forgetting the other is silent: the
+ruling said 76 drops, the alias painted 75, and every count still reconciled because nothing
+compared them. `build-q-entity-ruling.mjs` now compares **both lists, posts AND occurrences**, and
+refuses.
+
+The occurrence half is what keeps the handle Q out. Post scope alone took **all three** Qs on #2347
+— the gates said +3 mentions — and would have painted one inside the link.
+
+### #1443 — the owner corrected the reading
+
+`Texts` is a Claim; `DECLAS_Public[3]` goes back to **Predictions**. Earlier the same day the
+sheet-4 annotation *"make this portion a claim"* was read as making the line a Claim. The correction
+is recorded **beside** the first ruling in `unhighlighted-owner-rulings-2-corrections.json` rather
+than replacing it, so what was ruled and what was corrected are both readable.
+
+### Counts
+
+directives 3,329 → **3,334**, posts 1,926 → **1,928** (#2347 and #2565 held no certified directive
+at all) · predictions 934 → **935** · claim occurrences **10,558 unchanged** — "Texts" arrives as
+DECLAS_Public leaves · entity mentions 9,517 → **9,519**, +2 and not +3 · adjudicated tail 3,038 →
+3,040 · context 554 → **553** · seed **92** · **221/222 invariants** · NOT DEPLOYED.
+
+Gate: `scripts/test-wwg1wga-directive.mjs`, 10/10, in validate at `certified`. Its "nothing is
+marked inside the link" assertion was narrowed to "no WWG1WGA is marked inside the link" — the wider
+form failed on #1601, where `potus` in the reddit slug is painted cyan. **That is a pre-existing
+URL-derived entity and a separate question for the owner**, not something this ruling created.
