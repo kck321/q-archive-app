@@ -409,10 +409,19 @@ function renderPostBody(
         // a question.
         const innerKinds = insideQuestionKinds(stackable)
         // Same rule as the general branch: distinct KINDS, not segments.
-        // Brackets are red even inside a question, and never rotate — owner rule.
+        //
+        // BRACKETS AND ENTITIES ARE ALWAYS ON TOP — owner rule, and it holds inside a question
+        // exactly as it holds outside one. The general branch below already tests bracketCode and
+        // then namedEntity before anything rotates; this branch tested only bracketCode, so a name
+        // that was also a Theme or a Claim rotated through two colours here and rendered solid
+        // cyan four lines down the same page. Same certified data, two answers, which is the
+        // drift these two branches have produced before.
         sink.push(innerKinds.includes('bracketCode')
           ? <mark key={iStart} title="bracket"
               className={`${HIGHLIGHT_CLS.bracketCode ?? ''} rounded not-italic`}>{matchText}</mark>
+          : innerKinds.includes('namedEntity')
+          ? <mark key={iStart} title={innerKinds.length > 1 ? `entity — also ${innerKinds.filter(k => k !== 'namedEntity').join(', ')}` : 'namedEntity (inside a question)'}
+              className={`${HIGHLIGHT_CLS.namedEntity ?? ''} rounded not-italic`}>{matchText}</mark>
           : innerKinds.length === 1
           ? <mark key={iStart} title={`${innerKinds[0]} (inside a question)`}
               className={`${HIGHLIGHT_CLS[innerKinds[0]] ?? ''} rounded not-italic`}>{matchText}</mark>

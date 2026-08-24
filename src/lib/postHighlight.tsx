@@ -230,6 +230,12 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
         if (innerKinds.includes('bracketCode')) {
           nodes.push(<mark key={iStart} title="bracket"
             className={`${cls.bracketCode ?? ''} rounded not-italic`}>{matchText}</mark>)
+        } else if (innerKinds.includes('namedEntity')) {
+          // BRACKETS AND ENTITIES ARE ALWAYS ON TOP — owner rule, inside a question as much as
+          // outside one. Identical to the PostDetail branch, which is the point: these two
+          // surfaces have shown different colours for the same certified data before.
+          nodes.push(<mark key={iStart} title={innerKinds.length > 1 ? `entity — also ${innerKinds.filter(k => k !== 'namedEntity').join(', ')}` : 'namedEntity (inside a question)'}
+            className={`${cls.namedEntity ?? ''} rounded not-italic`}>{matchText}</mark>)
         } else if (innerKinds.length === 1) {
           nodes.push(<mark key={iStart} title={`${innerKinds[0]} (inside a question)`}
             className={`${cls[innerKinds[0]] ?? ''} rounded not-italic`}>{matchText}</mark>)
