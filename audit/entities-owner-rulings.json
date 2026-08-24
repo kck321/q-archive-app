@@ -7826,6 +7826,616 @@
    "scopeNote": "INCLUDE, NOT EXCLUDE. An excludePosts ruling would need 73 entries and would silently capture the 74th the day a new drop said 'NO MORE'. A two-letter alias that is also a common word gets a whitelist.",
    "renderNote": "RENDERING_PROVENANCE_RULE: the renderer highlights the alias Q wrote - NO - not the canonical name. Nellie Ohr is the identity behind it and belongs in the hover, never in the drop body.",
    "readerNote": "Nellie Ohr: a Russia researcher who worked as a contractor for Fusion GPS in 2016, the year that firm commissioned the Steele dossier. She is married to Bruce Ohr, then a senior US Department of Justice official — Q's BO in these same lines. That overlap, a DOJ official whose wife worked for the firm behind the dossier, is why both became a focus of congressional inquiries into the origins of the FBI's Russia investigation."
+  },
+  {
+   "alias": "Q",
+   "canonical": "Alice",
+   "recount": true,
+   "ruledOn": "2026-08-24",
+   "renderNote": "RENDERING_PROVENANCE_RULE: the renderer highlights the token, the form Q wrote.",
+   "includePosts": [
+    48,
+    74,
+    78,
+    335,
+    365,
+    499,
+    503,
+    506,
+    510,
+    756,
+    757,
+    785,
+    958,
+    1075,
+    1264,
+    1601,
+    1697,
+    1770,
+    1777,
+    1865,
+    1872,
+    1873,
+    1951,
+    2089,
+    2100,
+    2101,
+    2102,
+    2206,
+    2234,
+    2383,
+    2387,
+    2388,
+    2422,
+    2428,
+    2499,
+    2500,
+    2509,
+    2510,
+    2519,
+    2546,
+    2549,
+    2556,
+    2567,
+    2592,
+    2604,
+    2657,
+    2715,
+    2774,
+    2775,
+    2788,
+    2864,
+    2876,
+    2930,
+    3279,
+    3309,
+    3310,
+    3312,
+    3581,
+    3583,
+    3584,
+    3588,
+    3604,
+    3667,
+    3673,
+    3688,
+    3800,
+    3836,
+    3969,
+    4136,
+    4283,
+    4333,
+    4449,
+    4622,
+    4734,
+    4881
+   ],
+   "includeOccurrences": {
+    "48": [
+     [
+      4,
+      14
+     ]
+    ],
+    "74": [
+     [
+      0,
+      0
+     ]
+    ],
+    "78": [
+     [
+      33,
+      0
+     ]
+    ],
+    "335": [
+     [
+      0,
+      11
+     ]
+    ],
+    "365": [
+     [
+      19,
+      0
+     ],
+     [
+      20,
+      0
+     ],
+     [
+      21,
+      0
+     ],
+     [
+      22,
+      0
+     ],
+     [
+      23,
+      0
+     ]
+    ],
+    "499": [
+     [
+      2,
+      4
+     ]
+    ],
+    "503": [
+     [
+      1,
+      18
+     ],
+     [
+      2,
+      19
+     ]
+    ],
+    "506": [
+     [
+      3,
+      15
+     ],
+     [
+      6,
+      12
+     ]
+    ],
+    "510": [
+     [
+      2,
+      65
+     ]
+    ],
+    "756": [
+     [
+      32,
+      0
+     ]
+    ],
+    "757": [
+     [
+      5,
+      0
+     ]
+    ],
+    "785": [
+     [
+      6,
+      0
+     ]
+    ],
+    "958": [
+     [
+      0,
+      26
+     ]
+    ],
+    "1075": [
+     [
+      4,
+      21
+     ]
+    ],
+    "1264": [
+     [
+      6,
+      27
+     ]
+    ],
+    "1601": [
+     [
+      0,
+      23
+     ]
+    ],
+    "1697": [
+     [
+      1,
+      14
+     ]
+    ],
+    "1770": [
+     [
+      3,
+      0
+     ]
+    ],
+    "1777": [
+     [
+      0,
+      27
+     ],
+     [
+      3,
+      7
+     ]
+    ],
+    "1865": [
+     [
+      3,
+      12
+     ]
+    ],
+    "1872": [
+     [
+      3,
+      32
+     ]
+    ],
+    "1873": [
+     [
+      1,
+      33
+     ]
+    ],
+    "1951": [
+     [
+      2,
+      13
+     ]
+    ],
+    "2089": [
+     [
+      2,
+      25
+     ]
+    ],
+    "2100": [
+     [
+      0,
+      63
+     ],
+     [
+      1,
+      68
+     ]
+    ],
+    "2101": [
+     [
+      2,
+      31
+     ]
+    ],
+    "2102": [
+     [
+      8,
+      53
+     ]
+    ],
+    "2206": [
+     [
+      4,
+      23
+     ],
+     [
+      8,
+      49
+     ]
+    ],
+    "2234": [
+     [
+      2,
+      38
+     ]
+    ],
+    "2383": [
+     [
+      3,
+      22
+     ]
+    ],
+    "2387": [
+     [
+      6,
+      12
+     ]
+    ],
+    "2388": [
+     [
+      0,
+      128
+     ]
+    ],
+    "2422": [
+     [
+      1,
+      12
+     ]
+    ],
+    "2428": [
+     [
+      2,
+      11
+     ]
+    ],
+    "2499": [
+     [
+      2,
+      114
+     ]
+    ],
+    "2500": [
+     [
+      1,
+      29
+     ]
+    ],
+    "2509": [
+     [
+      1,
+      0
+     ]
+    ],
+    "2510": [
+     [
+      2,
+      0
+     ]
+    ],
+    "2519": [
+     [
+      2,
+      44
+     ],
+     [
+      3,
+      40
+     ]
+    ],
+    "2546": [
+     [
+      3,
+      10
+     ]
+    ],
+    "2549": [
+     [
+      5,
+      32
+     ],
+     [
+      9,
+      81
+     ]
+    ],
+    "2556": [
+     [
+      3,
+      25
+     ]
+    ],
+    "2567": [
+     [
+      4,
+      0
+     ]
+    ],
+    "2592": [
+     [
+      1,
+      4
+     ]
+    ],
+    "2604": [
+     [
+      18,
+      35
+     ]
+    ],
+    "2657": [
+     [
+      16,
+      1
+     ]
+    ],
+    "2715": [
+     [
+      1,
+      62
+     ]
+    ],
+    "2774": [
+     [
+      1,
+      4
+     ]
+    ],
+    "2775": [
+     [
+      2,
+      19
+     ]
+    ],
+    "2788": [
+     [
+      0,
+      33
+     ],
+     [
+      1,
+      19
+     ],
+     [
+      2,
+      25
+     ],
+     [
+      4,
+      25
+     ]
+    ],
+    "2864": [
+     [
+      1,
+      25
+     ]
+    ],
+    "2876": [
+     [
+      1,
+      128
+     ],
+     [
+      2,
+      77
+     ]
+    ],
+    "2930": [
+     [
+      1,
+      38
+     ]
+    ],
+    "3279": [
+     [
+      1,
+      48
+     ]
+    ],
+    "3309": [
+     [
+      2,
+      59
+     ]
+    ],
+    "3310": [
+     [
+      1,
+      59
+     ]
+    ],
+    "3312": [
+     [
+      3,
+      64
+     ]
+    ],
+    "3581": [
+     [
+      1,
+      11
+     ],
+     [
+      10,
+      107
+     ]
+    ],
+    "3583": [
+     [
+      2,
+      45
+     ]
+    ],
+    "3584": [
+     [
+      5,
+      29
+     ]
+    ],
+    "3588": [
+     [
+      2,
+      30
+     ],
+     [
+      18,
+      185
+     ]
+    ],
+    "3604": [
+     [
+      1,
+      225
+     ]
+    ],
+    "3667": [
+     [
+      6,
+      0
+     ]
+    ],
+    "3673": [
+     [
+      1,
+      11
+     ]
+    ],
+    "3688": [
+     [
+      2,
+      6
+     ]
+    ],
+    "3800": [
+     [
+      3,
+      7
+     ]
+    ],
+    "3836": [
+     [
+      1,
+      100
+     ]
+    ],
+    "3969": [
+     [
+      4,
+      0
+     ]
+    ],
+    "4136": [
+     [
+      4,
+      81
+     ]
+    ],
+    "4283": [
+     [
+      4,
+      53
+     ]
+    ],
+    "4333": [
+     [
+      2,
+      22
+     ]
+    ],
+    "4449": [
+     [
+      3,
+      22
+     ]
+    ],
+    "4622": [
+     [
+      1,
+      23
+     ]
+    ],
+    "4734": [
+     [
+      8,
+      25
+     ]
+    ],
+    "4881": [
+     [
+      1,
+      10
+     ],
+     [
+      4,
+      72
+     ]
+    ]
+   },
+   "reasoning": "Owner ruling: \"in post 74 i want the Q in this to be an entity and any other post that has Q within it that isn't the signature at the bottom — Q = Alice\". #74 and #78 write the equation in Q's own words.",
+   "retrieval": "OCCURRENCE-SCOPED, and that is the whole safety of it. 4,534 sign-off lines are excluded by the ruling itself. Of the 158 standalone \"Q\" tokens that remain, 93 across 75 drops are the persona and carry the ruling; 65 are HELD because they name something else — 3 a comms or operation code; 8 Question & Answer; 22 the word \"question\"; 1 the idiom \"right on cue\"; 5 the word \"question\", used as a label before the question itself; 2 a drop number, not a name; 2 the NSA Q Group, a body rather than the poster; 8 part of a link or a handle, not a word Q wrote; 3 Al-Qaeda — \"AL-Q\" is Q's abbreviation for it; 1 Quicken Loans Arena in Cleveland, known as \"The Q\"; 5 Q+ — a different designation; Q and Q+ are not the same (PROJECT_CONTEXT invariant 6); 1 an SEC filing form (10-Q); 1 the LETTER Q, not the poster; 1 a quoted board header — Q's own tripcode line inside a paste; 2 a Department of Energy clearance level. Post-level scoping would have certified Al-Qaeda, an SEC filing form, Quicken Loans Arena, a DOE clearance level and the word \"question\" as Alice. See audit/q-entity-owner-ruling.json."
   }
  ],
  "mergeRulings": [

@@ -165,7 +165,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | one global synopsis per live entity, less the 358 awaiting one | 1174 published + 358 pending |
+| ✅ | one global synopsis per live entity, less the 0 awaiting one | 1532 published + 0 pending |
 | ✅ | no published synopsis points at an entity that is no longer live | 0 orphaned |
 | ✅ | publish + review + no-anchor + quarantine + withdrawn + pruned = 7,778 | 3693 + 3992 + 36 + 15 + 37 = 7778 |
 | ✅ | no held record is in the public bundle | 4080 held back |
@@ -265,7 +265,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | | Invariant | Observed |
 |---|---|---|
 | ✅ | postAnalysis entries equal certified mentions | 9271 vs 9271 |
-| ✅ | aliases carrying several canonicals are preserved | 32 aliases (e.g. SC) |
+| ✅ | aliases carrying several canonicals are preserved | 33 aliases (e.g. SC) |
 | ✅ | #1385 line 5 stays open though line 1 is ruled | open |
 | ✅ | held reference rows are open and carry a note (30 after #2774 resolved DELTA-2774-1-16) | 30/31 |
 | ✅ | 679 audit rows, unique, all adjudicated | 679 rows, 679 unique |

@@ -894,9 +894,9 @@
   {
    "group": "10b. Entity hover publication",
    "id": "hover-globals",
-   "description": "one global synopsis per live entity, less the 358 awaiting one",
+   "description": "one global synopsis per live entity, less the 0 awaiting one",
    "pass": true,
-   "detail": "1174 published + 358 pending"
+   "detail": "1532 published + 0 pending"
   },
   {
    "group": "10b. Entity hover publication",
@@ -1456,7 +1456,7 @@
    "id": "entities-multi-ruling-aliases",
    "description": "aliases carrying several canonicals are preserved",
    "pass": true,
-   "detail": "32 aliases (e.g. SC)"
+   "detail": "33 aliases (e.g. SC)"
   },
   {
    "group": "12. Cross-section relationships",

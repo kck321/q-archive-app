@@ -1,0 +1,1217 @@
+{
+ "note": "Owner ruling: a standalone \"Q\" that is not the sign-off is an Entity, and it is Alice.",
+ "ruling": "in post 74 i want the Q in this to be an entity and any other post that has Q within it that isn't the signature at the bottom   Q = Alice",
+ "ruledOn": "2026-08-24",
+ "equationStatedByQ": {
+  "posts": [
+   74,
+   78
+  ],
+  "what": "These drops write \"Q = Alice\" in Q's own words. The ruling is his equation, not an inference from context."
+ },
+ "scope": {
+  "signatureLinesExcluded": 4534,
+  "what": "A line that is only the sign-off — \"Q\", \"Q+\", a tripcode, WWG1WGA, NCSWIC, WRWY — is skipped before anything else is considered, exactly as the ruling says."
+ },
+ "held": {
+  "what": "\"Q\" outside the sign-off is not one thing. These occurrences name something else, and applying the equation to them would certify Al-Qaeda, an SEC form, a basketball arena, a clearance level and the word \"question\" as Alice.",
+  "byReason": {
+   "a comms or operation code": 3,
+   "Question & Answer": 8,
+   "the word \"question\"": 22,
+   "the idiom \"right on cue\"": 1,
+   "the word \"question\", used as a label before the question itself": 5,
+   "a drop number, not a name": 2,
+   "the NSA Q Group, a body rather than the poster": 2,
+   "part of a link or a handle, not a word Q wrote": 8,
+   "Al-Qaeda — \"AL-Q\" is Q's abbreviation for it": 3,
+   "Quicken Loans Arena in Cleveland, known as \"The Q\"": 1,
+   "Q+ — a different designation; Q and Q+ are not the same (PROJECT_CONTEXT invariant 6)": 5,
+   "an SEC filing form (10-Q)": 1,
+   "the LETTER Q, not the poster": 1,
+   "a quoted board header — Q's own tripcode line inside a paste": 1,
+   "a Department of Energy clearance level": 2
+  },
+  "rows": [
+   {
+    "postNum": 1013,
+    "postId": "1013",
+    "lineIndex": 3,
+    "charIndex": 10,
+    "line": "Operation Q-T2810C.",
+    "names": "a comms or operation code"
+   },
+   {
+    "postNum": 1192,
+    "postId": "1192",
+    "lineIndex": 0,
+    "charIndex": 0,
+    "line": "Q&A",
+    "names": "Question & Answer"
+   },
+   {
+    "postNum": 1198,
+    "postId": "1198",
+    "lineIndex": 0,
+    "charIndex": 0,
+    "line": "Q&A again.",
+    "names": "Question & Answer"
+   },
+   {
+    "postNum": 1199,
+    "postId": "1199",
+    "lineIndex": 0,
+    "charIndex": 7,
+    "line": "Answer Q re: SR.",
+    "names": "the word \"question\""
+   },
+   {
+    "postNum": 1221,
+    "postId": "1221",
+    "lineIndex": 0,
+    "charIndex": 9,
+    "line": "Right on Q.",
+    "names": "the idiom \"right on cue\""
+   },
+   {
+    "postNum": 1226,
+    "postId": "1226",
+    "lineIndex": 5,
+    "charIndex": 0,
+    "line": "Q&A.",
+    "names": "Question & Answer"
+   },
+   {
+    "postNum": 1226,
+    "postId": "1226",
+    "lineIndex": 6,
+    "charIndex": 0,
+    "line": "Q: SR",
+    "names": "the word \"question\", used as a label before the question itself"
+   },
+   {
+    "postNum": 1226,
+    "postId": "1226",
+    "lineIndex": 7,
+    "charIndex": 7,
+    "line": "Common Q.",
+    "names": "the word \"question\""
+   },
+   {
+    "postNum": 1279,
+    "postId": "1279",
+    "lineIndex": 20,
+    "charIndex": 0,
+    "line": "Q [auth478-24zgP]",
+    "names": "a comms or operation code"
+   },
+   {
+    "postNum": 1323,
+    "postId": "1323",
+    "lineIndex": 1,
+    "charIndex": 18,
+    "line": "We did not input \"Q #\" in the beginning which exposed the password.",
+    "names": "a drop number, not a name"
+   },
+   {
+    "postNum": 144,
+    "postId": "144",
+    "lineIndex": 6,
+    "charIndex": 25,
+    "line": "What is No Such Agency - Q group?",
+    "names": "the NSA Q Group, a body rather than the poster"
+   },
+   {
+    "postNum": 148,
+    "postId": "148",
+    "lineIndex": 0,
+    "charIndex": 49,
+    "line": "NYT/Clowns In America article released today re: Q-group is a DIRECT attack/warning re: what is being dropped here.",
+    "names": "the NSA Q Group, a body rather than the poster"
+   },
+   {
+    "postNum": 1582,
+    "postId": "1582",
+    "lineIndex": 1,
+    "charIndex": 27,
+    "line": "https://mobile.twitter.com/Q_ANONBaby/status/1009614122642825217/photo/1",
+    "names": "part of a link or a handle, not a word Q wrote"
+   },
+   {
+    "postNum": 1586,
+    "postId": "1586",
+    "lineIndex": 1,
+    "charIndex": 0,
+    "line": "Q&A Saturday.",
+    "names": "Question & Answer"
+   },
+   {
+    "postNum": 1587,
+    "postId": "1587",
+    "lineIndex": 0,
+    "charIndex": 0,
+    "line": "Q&A reschedule.",
+    "names": "Question & Answer"
+   },
+   {
+    "postNum": 1621,
+    "postId": "1621",
+    "lineIndex": 1,
+    "charIndex": 27,
+    "line": "https://mobile.twitter.com/Q_ANONBaby/status/1012232994646581248",
+    "names": "part of a link or a handle, not a word Q wrote"
+   },
+   {
+    "postNum": 1887,
+    "postId": "1887",
+    "lineIndex": 16,
+    "charIndex": 11,
+    "line": "Why was AL-Q deemed the primary adversary vs ISIS?",
+    "names": "Al-Qaeda — \"AL-Q\" is Q's abbreviation for it"
+   },
+   {
+    "postNum": 1887,
+    "postId": "1887",
+    "lineIndex": 17,
+    "charIndex": 78,
+    "line": "Do you believe US intel did not 'know' UBL's son was a prominent figure in AL-Q?",
+    "names": "Al-Qaeda — \"AL-Q\" is Q's abbreviation for it"
+   },
+   {
+    "postNum": 2216,
+    "postId": "2216",
+    "lineIndex": 0,
+    "charIndex": 0,
+    "line": "Q&A",
+    "names": "Question & Answer"
+   },
+   {
+    "postNum": 2263,
+    "postId": "2263",
+    "lineIndex": 3,
+    "charIndex": 23,
+    "line": "ENJOY THE RALLY @ THE 'Q' TONIGHT!",
+    "names": "Quicken Loans Arena in Cleveland, known as \"The Q\""
+   },
+   {
+    "postNum": 2347,
+    "postId": "2347",
+    "lineIndex": 0,
+    "charIndex": 20,
+    "line": "https://twitter.com/Q_ANONBaby/status/1048079911813107713",
+    "names": "part of a link or a handle, not a word Q wrote"
+   },
+   {
+    "postNum": 2347,
+    "postId": "2347",
+    "lineIndex": 3,
+    "charIndex": 31,
+    "line": "The signifier will 'force' the Q.",
+    "names": "the word \"question\""
+   },
+   {
+    "postNum": 2347,
+    "postId": "2347",
+    "lineIndex": 4,
+    "charIndex": 4,
+    "line": "The Q will be answered (((WWG1WGA))).",
+    "names": "the word \"question\""
+   },
+   {
+    "postNum": 2386,
+    "postId": "2386",
+    "lineIndex": 2,
+    "charIndex": 75,
+    "line": "Why did the FAKE NEWS media attempt to cast blame of recent events on the 'Q' movement?",
+    "names": "the word \"question\""
+   },
+   {
+    "postNum": 2401,
+    "postId": "2401",
+    "lineIndex": 2,
+    "charIndex": 60,
+    "line": "How many articles has the WASH POST released attacking the 'Q' movement?",
+    "names": "the word \"question\""
+   },
+   {
+    "postNum": 2401,
+    "postId": "2401",
+    "lineIndex": 13,
+    "charIndex": 3,
+    "line": "(((Q+)))",
+    "names": "Q+ — a different designation; Q and Q+ are not the same (PROJECT_CONTEXT invariant 6)"
+   },
+   {
+    "postNum": 2563,
+    "postId": "2563",
+    "lineIndex": 3,
+    "charIndex": 19,
+    "line": "At some point, the Q will be asked.",
+    "names": "the word \"question\""
+   },
+   {
+    "postNum": 2565,
+    "postId": "2565",
+    "lineIndex": 1,
+    "charIndex": 0,
+    "line": "Q 0 = Q+",
+    "names": "Q+ — a different designation; Q and Q+ are not the same (PROJECT_CONTEXT invariant 6)"
+   },
+   {
+    "postNum": 2565,
+    "postId": "2565",
+    "lineIndex": 1,
+    "charIndex": 6,
+    "line": "Q 0 = Q+",
+    "names": "Q+ — a different designation; Q and Q+ are not the same (PROJECT_CONTEXT invariant 6)"
+   },
+   {
+    "postNum": 2567,
+    "postId": "2567",
+    "lineIndex": 3,
+    "charIndex": 18,
+    "line": "AF1 Code Change > Q 0 > Q+",
+    "names": "Q+ — a different designation; Q and Q+ are not the same (PROJECT_CONTEXT invariant 6)"
+   },
+   {
+    "postNum": 2567,
+    "postId": "2567",
+    "lineIndex": 3,
+    "charIndex": 24,
+    "line": "AF1 Code Change > Q 0 > Q+",
+    "names": "Q+ — a different designation; Q and Q+ are not the same (PROJECT_CONTEXT invariant 6)"
+   },
+   {
+    "postNum": 2588,
+    "postId": "2588",
+    "lineIndex": 1,
+    "charIndex": 71,
+    "line": "GOOG (upcoming) financial statements should receive extra scrutiny [10-Q].",
+    "names": "an SEC filing form (10-Q)"
+   },
+   {
+    "postNum": 2593,
+    "postId": "2593",
+    "lineIndex": 0,
+    "charIndex": 20,
+    "line": "https://twitter.com/Q_ANONBaby/status/1072738984332312578",
+    "names": "part of a link or a handle, not a word Q wrote"
+   },
+   {
+    "postNum": 2593,
+    "postId": "2593",
+    "lineIndex": 1,
+    "charIndex": 10,
+    "line": "Excellent Q, VIP Patriot!",
+    "names": "the word \"question\""
+   },
+   {
+    "postNum": 2595,
+    "postId": "2595",
+    "lineIndex": 0,
+    "charIndex": 27,
+    "line": "How many names start w/ a 'Q'?",
+    "names": "the word \"question\""
+   },
+   {
+    "postNum": 2595,
+    "postId": "2595",
+    "lineIndex": 1,
+    "charIndex": 24,
+    "line": "What are the odds of a 'Q' stocking?",
+    "names": "the word \"question\""
+   },
+   {
+    "postNum": 2595,
+    "postId": "2595",
+    "lineIndex": 2,
+    "charIndex": 24,
+    "line": "What are the odds of a 'Q' stocking next to a 'T' stocking?",
+    "names": "the word \"question\""
+   },
+   {
+    "postNum": 2597,
+    "postId": "2597",
+    "lineIndex": 2,
+    "charIndex": 15,
+    "line": "'O' made into 'Q'",
+    "names": "the LETTER Q, not the poster"
+   },
+   {
+    "postNum": 2605,
+    "postId": "2605",
+    "lineIndex": 0,
+    "charIndex": 0,
+    "line": "Q&A",
+    "names": "Question & Answer"
+   },
+   {
+    "postNum": 2846,
+    "postId": "2846",
+    "lineIndex": 1,
+    "charIndex": 18,
+    "line": "Be ready for the 'Q', Anon(s).",
+    "names": "the word \"question\""
+   },
+   {
+    "postNum": 2978,
+    "postId": "2978",
+    "lineIndex": 0,
+    "charIndex": 24,
+    "line": "https://twitter.com/Sun_Q_Tzu/status/1103061455337861120",
+    "names": "part of a link or a handle, not a word Q wrote"
+   },
+   {
+    "postNum": 3063,
+    "postId": "3063",
+    "lineIndex": 3,
+    "charIndex": 8,
+    "line": "LOGICAL Q: IF ADAM SCHIFF 'KNEW' EVERYTHING HE'S INVESTIGATING AND STATING PUBLICLY TO BE KNOWINGLY 'FALSE' [DISINFORMATION] WHY THEN WOULD HE TAKE THE COURSE O",
+    "names": "the word \"question\""
+   },
+   {
+    "postNum": 3127,
+    "postId": "3127",
+    "lineIndex": 0,
+    "charIndex": 27,
+    "line": "Ask yourself a very simple Q.",
+    "names": "the word \"question\""
+   },
+   {
+    "postNum": 316,
+    "postId": "316",
+    "lineIndex": 0,
+    "charIndex": 1,
+    "line": "▶Q (You)!ITPb.qbhqo  12/09/17 (Sat) 10:34:24 571cae No.60291>>60292 >>60296 >>60297 >>60309 >>60311 >>60319 >>60328 >>60331 >>60335 >>60340 >>60349 >>60358 >>60",
+    "names": "a quoted board header — Q's own tripcode line inside a paste"
+   },
+   {
+    "postNum": 3203,
+    "postId": "3203",
+    "lineIndex": 3,
+    "charIndex": 0,
+    "line": "Q #2849",
+    "names": "a drop number, not a name"
+   },
+   {
+    "postNum": 3230,
+    "postId": "3230",
+    "lineIndex": 0,
+    "charIndex": 23,
+    "line": "Shall we play another 'Q Proof' game?",
+    "names": "the word \"question\""
+   },
+   {
+    "postNum": 3320,
+    "postId": "3320",
+    "lineIndex": 0,
+    "charIndex": 24,
+    "line": "https://twitter.com/Sun_Q_Tzu/status/1121258711253770240",
+    "names": "part of a link or a handle, not a word Q wrote"
+   },
+   {
+    "postNum": 34,
+    "postId": "34",
+    "lineIndex": 0,
+    "charIndex": 0,
+    "line": "Q Clearance Patriot",
+    "names": "a Department of Energy clearance level"
+   },
+   {
+    "postNum": 3459,
+    "postId": "3459",
+    "lineIndex": 2,
+    "charIndex": 27,
+    "line": "Ask yourself a very simple Q - why?",
+    "names": "the word \"question\""
+   },
+   {
+    "postNum": 3518,
+    "postId": "3518",
+    "lineIndex": 2,
+    "charIndex": 27,
+    "line": "Ask yourself a very simple Q -",
+    "names": "the word \"question\""
+   },
+   {
+    "postNum": 3540,
+    "postId": "3540",
+    "lineIndex": 2,
+    "charIndex": 22,
+    "line": "Ask yourself a simple Q - why?",
+    "names": "the word \"question\""
+   },
+   {
+    "postNum": 3561,
+    "postId": "3561",
+    "lineIndex": 1,
+    "charIndex": 8,
+    "line": "Logical Q.",
+    "names": "the word \"question\""
+   },
+   {
+    "postNum": 3562,
+    "postId": "3562",
+    "lineIndex": 1,
+    "charIndex": 8,
+    "line": "Logical Q.",
+    "names": "the word \"question\""
+   },
+   {
+    "postNum": 3857,
+    "postId": "3857",
+    "lineIndex": 0,
+    "charIndex": 85,
+    "line": "Highly sophisticated 'State-level' attacks [v 8kun] followed by FAKE NEWS attacks [v Q] the next day?",
+    "names": "part of a link or a handle, not a word Q wrote"
+   },
+   {
+    "postNum": 3993,
+    "postId": "3993",
+    "lineIndex": 3,
+    "charIndex": 8,
+    "line": "LOGICAL Q: IF ADAM SCHIFF 'KNEW' EVERYTHING HE'S INVESTIGATING AND STATING PUBLICLY TO BE KNOWINGLY 'FALSE' [DISINFORMATION] WHY THEN WOULD HE TAKE THE COURSE O",
+    "names": "the word \"question\""
+   },
+   {
+    "postNum": 4122,
+    "postId": "4122",
+    "lineIndex": 1,
+    "charIndex": 0,
+    "line": "Q: Can I obtain detailed information about a current FBI investigation that I see in the news?",
+    "names": "the word \"question\", used as a label before the question itself"
+   },
+   {
+    "postNum": 4185,
+    "postId": "4185",
+    "lineIndex": 0,
+    "charIndex": 32,
+    "line": "https://twitter.com/Qmap_pub_17_Q_/status/1257834426320461826",
+    "names": "part of a link or a handle, not a word Q wrote"
+   },
+   {
+    "postNum": 4477,
+    "postId": "4477",
+    "lineIndex": 2,
+    "charIndex": 0,
+    "line": "Q: can we prove it?",
+    "names": "the word \"question\", used as a label before the question itself"
+   },
+   {
+    "postNum": 4477,
+    "postId": "4477",
+    "lineIndex": 3,
+    "charIndex": 0,
+    "line": "Q: can we prove coordination?",
+    "names": "the word \"question\", used as a label before the question itself"
+   },
+   {
+    "postNum": 4477,
+    "postId": "4477",
+    "lineIndex": 4,
+    "charIndex": 0,
+    "line": "Q: can we prove deliberate action to inc death count to justify vote-by-mail, stay-at-home, bail-out-state, kill-economy, kill-P-rallies, inc unemployment, etc?",
+    "names": "the word \"question\", used as a label before the question itself"
+   },
+   {
+    "postNum": 4545,
+    "postId": "4545",
+    "lineIndex": 9,
+    "charIndex": 222,
+    "line": "Think HRC install: [2+] Supreme Court Justices, 200+ judges, rogue elements expanded inside DOJ, FBI, CIA, NSA, WH, STATE, …….removal 2nd amendment, border etc.",
+    "names": "Al-Qaeda — \"AL-Q\" is Q's abbreviation for it"
+   },
+   {
+    "postNum": 466,
+    "postId": "466",
+    "lineIndex": 7,
+    "charIndex": 26,
+    "line": "Covert OP by [CLAS-59#241-Q] to infiltrate at highest",
+    "names": "a comms or operation code"
+   },
+   {
+    "postNum": 4664,
+    "postId": "4664",
+    "lineIndex": 2,
+    "charIndex": 10,
+    "line": "Excellent Q - you should ask (as should every American).",
+    "names": "the word \"question\""
+   },
+   {
+    "postNum": 4688,
+    "postId": "4688",
+    "lineIndex": 4,
+    "charIndex": 81,
+    "line": "4. Protect Biden from embarrassment re: mental health [clear cognitive decline], Q&A, rally attendance crowd size, lack of enthusiasm, etc.",
+    "names": "Question & Answer"
+   },
+   {
+    "postNum": 48,
+    "postId": "48",
+    "lineIndex": 0,
+    "charIndex": 8,
+    "line": "What is Q Clearance?",
+    "names": "a Department of Energy clearance level"
+   }
+  ]
+ },
+ "totals": {
+  "personaOccurrences": 93,
+  "personaPosts": 75,
+  "heldOccurrences": 65,
+  "signatureLinesExcluded": 4534
+ },
+ "personaOccurrences": [
+  {
+   "postNum": 1075,
+   "postId": "1075",
+   "lineIndex": 4,
+   "charIndex": 21,
+   "line": "Narrative + anything Q."
+  },
+  {
+   "postNum": 1264,
+   "postId": "1264",
+   "lineIndex": 6,
+   "charIndex": 27,
+   "line": "We get massive amounts of ‘Q’ thank you letters from around the world every single day."
+  },
+  {
+   "postNum": 1601,
+   "postId": "1601",
+   "lineIndex": 0,
+   "charIndex": 23,
+   "line": "Fist pumps re: POTUS / Q encounter ="
+  },
+  {
+   "postNum": 1697,
+   "postId": "1697",
+   "lineIndex": 1,
+   "charIndex": 14,
+   "line": "There is only Q."
+  },
+  {
+   "postNum": 1770,
+   "postId": "1770",
+   "lineIndex": 3,
+   "charIndex": 0,
+   "line": "Q coordinated attacks."
+  },
+  {
+   "postNum": 1777,
+   "postId": "1777",
+   "lineIndex": 0,
+   "charIndex": 27,
+   "line": "To the person holding the \"Q\" cut out:"
+  },
+  {
+   "postNum": 1777,
+   "postId": "1777",
+   "lineIndex": 3,
+   "charIndex": 7,
+   "line": "WE ARE Q."
+  },
+  {
+   "postNum": 1865,
+   "postId": "1865",
+   "lineIndex": 3,
+   "charIndex": 12,
+   "line": "NBC targets Q."
+  },
+  {
+   "postNum": 1872,
+   "postId": "1872",
+   "lineIndex": 3,
+   "charIndex": 32,
+   "line": "Next: Man [caught] who follows 'Q'"
+  },
+  {
+   "postNum": 1873,
+   "postId": "1873",
+   "lineIndex": 1,
+   "charIndex": 33,
+   "line": "Armed man Hoover Dam re: link to Q?"
+  },
+  {
+   "postNum": 1951,
+   "postId": "1951",
+   "lineIndex": 2,
+   "charIndex": 13,
+   "line": "-The People (Q)"
+  },
+  {
+   "postNum": 2089,
+   "postId": "2089",
+   "lineIndex": 2,
+   "charIndex": 25,
+   "line": "Why are the majority of 'Q' attacks by \"PRO_MAGA\" supporters coming from AJ [MOS backed] and/or AJ known associates?"
+  },
+  {
+   "postNum": 2100,
+   "postId": "2100",
+   "lineIndex": 0,
+   "charIndex": 63,
+   "line": "Why, before each rally, are 'threats' now being called in re: 'Q' attendees [effort to prevent…]?"
+  },
+  {
+   "postNum": 2100,
+   "postId": "2100",
+   "lineIndex": 1,
+   "charIndex": 68,
+   "line": "Why are bots and/or paid shills tasked to down vote and/or 'shill' 'Q' discussion boards?"
+  },
+  {
+   "postNum": 2101,
+   "postId": "2101",
+   "lineIndex": 2,
+   "charIndex": 31,
+   "line": "Think 'collective' attacks v. 'Q'"
+  },
+  {
+   "postNum": 2102,
+   "postId": "2102",
+   "lineIndex": 8,
+   "charIndex": 53,
+   "line": "Why are affiliates of InfoWars constantly attacking 'Q'?"
+  },
+  {
+   "postNum": 2206,
+   "postId": "2206",
+   "lineIndex": 4,
+   "charIndex": 23,
+   "line": "THINK ABOUT REAL-TIME 'Q' TRACKING."
+  },
+  {
+   "postNum": 2206,
+   "postId": "2206",
+   "lineIndex": 8,
+   "charIndex": 49,
+   "line": "SEPT 18 [WIRED] RESPONDS [1] ARTICLE re: MEMES & Q"
+  },
+  {
+   "postNum": 2234,
+   "postId": "2234",
+   "lineIndex": 2,
+   "charIndex": 38,
+   "line": "You are many tens of millions strong (Q)."
+  },
+  {
+   "postNum": 2383,
+   "postId": "2383",
+   "lineIndex": 3,
+   "charIndex": 22,
+   "line": "Think MSM attacks re: Q (We, the People)."
+  },
+  {
+   "postNum": 2387,
+   "postId": "2387",
+   "lineIndex": 6,
+   "charIndex": 12,
+   "line": "Directed @ 'Q'"
+  },
+  {
+   "postNum": 2388,
+   "postId": "2388",
+   "lineIndex": 0,
+   "charIndex": 128,
+   "line": "Why did select senior members of the D party [6] send a letter to Don McGahn in early Oct. outlining 'Hatch Act' violations re: Q?"
+  },
+  {
+   "postNum": 2422,
+   "postId": "2422",
+   "lineIndex": 1,
+   "charIndex": 12,
+   "line": "Do you 'AIR Q'?"
+  },
+  {
+   "postNum": 2428,
+   "postId": "2428",
+   "lineIndex": 2,
+   "charIndex": 11,
+   "line": "Attack on 'Q' movement?"
+  },
+  {
+   "postNum": 2499,
+   "postId": "2499",
+   "lineIndex": 2,
+   "charIndex": 114,
+   "line": "Think timing of Tweet (above) v last drops [HouseOfCards] re: Maggie NYT re: WL 'Maggie' drops re: WL attack re: 'Q'"
+  },
+  {
+   "postNum": 2500,
+   "postId": "2500",
+   "lineIndex": 1,
+   "charIndex": 29,
+   "line": "CORSI > [attempt infiltrate] Q"
+  },
+  {
+   "postNum": 2509,
+   "postId": "2509",
+   "lineIndex": 1,
+   "charIndex": 0,
+   "line": "Q post timestamp re: DECLAS prior to/post testimony?"
+  },
+  {
+   "postNum": 2510,
+   "postId": "2510",
+   "lineIndex": 2,
+   "charIndex": 0,
+   "line": "Q post timestamp re: DECLAS prior to/post testimony?"
+  },
+  {
+   "postNum": 2519,
+   "postId": "2519",
+   "lineIndex": 2,
+   "charIndex": 44,
+   "line": "Why is the WASH POST leading the attack re: Q?"
+  },
+  {
+   "postNum": 2519,
+   "postId": "2519",
+   "lineIndex": 3,
+   "charIndex": 40,
+   "line": "How many articles have been written re: Q?"
+  },
+  {
+   "postNum": 2546,
+   "postId": "2546",
+   "lineIndex": 3,
+   "charIndex": 10,
+   "line": "When did \"Q\" go active?"
+  },
+  {
+   "postNum": 2549,
+   "postId": "2549",
+   "lineIndex": 5,
+   "charIndex": 32,
+   "line": "Role of Huber (as portrayed by 'Q')?"
+  },
+  {
+   "postNum": 2549,
+   "postId": "2549",
+   "lineIndex": 9,
+   "charIndex": 81,
+   "line": "Why does the (global) FAKE NEWS media [largest in the world] continually attack 'Q'?"
+  },
+  {
+   "postNum": 2556,
+   "postId": "2556",
+   "lineIndex": 3,
+   "charIndex": 25,
+   "line": "How much attention does \"Q\" receive from the FAKE NEWS MEDIA?"
+  },
+  {
+   "postNum": 2567,
+   "postId": "2567",
+   "lineIndex": 4,
+   "charIndex": 0,
+   "line": "Q/POTUS Twitter 0 Delta Exchanges"
+  },
+  {
+   "postNum": 2592,
+   "postId": "2592",
+   "lineIndex": 1,
+   "charIndex": 4,
+   "line": "T & Q placed together."
+  },
+  {
+   "postNum": 2604,
+   "postId": "2604",
+   "lineIndex": 18,
+   "charIndex": 35,
+   "line": "Do you think all these attacks on 'Q' (We, the People) is simply for a person on the internet who they label as a conspiracy?"
+  },
+  {
+   "postNum": 2657,
+   "postId": "2657",
+   "lineIndex": 16,
+   "charIndex": 1,
+   "line": "(Q above should scare every single American)"
+  },
+  {
+   "postNum": 2715,
+   "postId": "2715",
+   "lineIndex": 1,
+   "charIndex": 62,
+   "line": "More importantly, why is the WASH POST leading the attack vs ‘Q’?"
+  },
+  {
+   "postNum": 2774,
+   "postId": "2774",
+   "lineIndex": 1,
+   "charIndex": 4,
+   "line": "(3) Q/POTUS [0] DELTA"
+  },
+  {
+   "postNum": 2775,
+   "postId": "2775",
+   "lineIndex": 2,
+   "charIndex": 19,
+   "line": "Important to note 'Q' drops just prior to POTUS."
+  },
+  {
+   "postNum": 2788,
+   "postId": "2788",
+   "lineIndex": 0,
+   "charIndex": 33,
+   "line": "How can an entity known only as 'Q' (face-less, name-less, fame-less, etc.) begin to ask questions on 4ch (now 8ch) and build something of this magnitude?"
+  },
+  {
+   "postNum": 2788,
+   "postId": "2788",
+   "lineIndex": 1,
+   "charIndex": 19,
+   "line": "How can this same 'Q' entity garner such a massive amount of WW MSM [FAKE NEWS] attention [attacks]?"
+  },
+  {
+   "postNum": 2788,
+   "postId": "2788",
+   "lineIndex": 2,
+   "charIndex": 25,
+   "line": "How is it possible this 'Q' entity can 'forecast' future events or 'know' when the POTUS is about to Tweet?"
+  },
+  {
+   "postNum": 2788,
+   "postId": "2788",
+   "lineIndex": 4,
+   "charIndex": 25,
+   "line": "How is it possible this 'Q' entity, an entity who began by merely asking questions on 4ch/8ch, was able to ………(fill in the blank)."
+  },
+  {
+   "postNum": 2864,
+   "postId": "2864",
+   "lineIndex": 1,
+   "charIndex": 25,
+   "line": "There sure are a lot of 'Q' comments on that Tweet POTUS just referred to."
+  },
+  {
+   "postNum": 2876,
+   "postId": "2876",
+   "lineIndex": 1,
+   "charIndex": 128,
+   "line": "For those who think this war is fake, or we are not a considered a major threat, this is a direct attack by Hillary Clinton on 'Q' & 'PRO POTUS' PATRIOTS."
+  },
+  {
+   "postNum": 2876,
+   "postId": "2876",
+   "lineIndex": 2,
+   "charIndex": 77,
+   "line": "The article referenced has an embedded link that literally TARGETS PRO POTUS/Q Twitter accounts that have been IDENTIFIED by CLINTON/DS as serious threats (abil"
+  },
+  {
+   "postNum": 2930,
+   "postId": "2930",
+   "lineIndex": 1,
+   "charIndex": 38,
+   "line": "POTUS already ordered the DECLAS (per Q-proof Sep 17)."
+  },
+  {
+   "postNum": 3279,
+   "postId": "3279",
+   "lineIndex": 1,
+   "charIndex": 48,
+   "line": "Pre_Mueller restrictions re: FALSE call-ins re: Q threats by [THEM]."
+  },
+  {
+   "postNum": 3309,
+   "postId": "3309",
+   "lineIndex": 2,
+   "charIndex": 59,
+   "line": "How many FAKE NEWS Twitter journalists are tweeting about ‘Q’ today re: rally attendance last night?"
+  },
+  {
+   "postNum": 3310,
+   "postId": "3310",
+   "lineIndex": 1,
+   "charIndex": 59,
+   "line": "Other than POTUS, can you name a group more attacked than ‘Q’ by the FAKE NEWS media."
+  },
+  {
+   "postNum": 3312,
+   "postId": "3312",
+   "lineIndex": 3,
+   "charIndex": 64,
+   "line": "Why is there a constant flow of disinformation being pushed re: Q?"
+  },
+  {
+   "postNum": 335,
+   "postId": "335",
+   "lineIndex": 0,
+   "charIndex": 11,
+   "line": "Timestamp [Q] post [:03] against POTUS' Tweet [:13]."
+  },
+  {
+   "postNum": 3581,
+   "postId": "3581",
+   "lineIndex": 1,
+   "charIndex": 11,
+   "line": "Month/Day 'Q' public campaign initiated?"
+  },
+  {
+   "postNum": 3581,
+   "postId": "3581",
+   "lineIndex": 10,
+   "charIndex": 107,
+   "line": "\"What if there's another prosecutor (outside of DC) assigned by SESSIONS w/ the same mandate/authority?\" - Q"
+  },
+  {
+   "postNum": 3583,
+   "postId": "3583",
+   "lineIndex": 2,
+   "charIndex": 45,
+   "line": "He did not have his updated phone number.\" - Q"
+  },
+  {
+   "postNum": 3584,
+   "postId": "3584",
+   "lineIndex": 5,
+   "charIndex": 29,
+   "line": "“Project DeepDream v2[A]?” – Q"
+  },
+  {
+   "postNum": 3588,
+   "postId": "3588",
+   "lineIndex": 2,
+   "charIndex": 30,
+   "line": "\"SURV of SC/JS terminated.\" - Q"
+  },
+  {
+   "postNum": 3588,
+   "postId": "3588",
+   "lineIndex": 18,
+   "charIndex": 185,
+   "line": "“Increase in attacks (de-platform, shill infiltration, MSM/Fake MAGA direct, link(s) to terrorism/acts of violence) only demonstrates validity and close proximi"
+  },
+  {
+   "postNum": 3604,
+   "postId": "3604",
+   "lineIndex": 1,
+   "charIndex": 225,
+   "line": "\"Step Four: Open 'new' Fake & False investigations as CHAIRMAN of the House Intel Comm to retain disinformation campaign designed to keep liberal/D Americans on"
+  },
+  {
+   "postNum": 365,
+   "postId": "365",
+   "lineIndex": 19,
+   "charIndex": 0,
+   "line": "Q/POTUS-1"
+  },
+  {
+   "postNum": 365,
+   "postId": "365",
+   "lineIndex": 20,
+   "charIndex": 0,
+   "line": "Q/POTUS-2"
+  },
+  {
+   "postNum": 365,
+   "postId": "365",
+   "lineIndex": 21,
+   "charIndex": 0,
+   "line": "Q/POTUS-3"
+  },
+  {
+   "postNum": 365,
+   "postId": "365",
+   "lineIndex": 22,
+   "charIndex": 0,
+   "line": "Q/POTUS-4 [10]"
+  },
+  {
+   "postNum": 365,
+   "postId": "365",
+   "lineIndex": 23,
+   "charIndex": 0,
+   "line": "Q/POTUS-5"
+  },
+  {
+   "postNum": 3667,
+   "postId": "3667",
+   "lineIndex": 6,
+   "charIndex": 0,
+   "line": "Q start."
+  },
+  {
+   "postNum": 3673,
+   "postId": "3673",
+   "lineIndex": 1,
+   "charIndex": 11,
+   "line": "Month/day 'Q' public campaign initiated?"
+  },
+  {
+   "postNum": 3688,
+   "postId": "3688",
+   "lineIndex": 2,
+   "charIndex": 6,
+   "line": "Think Q/Durham start date."
+  },
+  {
+   "postNum": 3800,
+   "postId": "3800",
+   "lineIndex": 3,
+   "charIndex": 7,
+   "line": "Think 'Q' start."
+  },
+  {
+   "postNum": 3836,
+   "postId": "3836",
+   "lineIndex": 1,
+   "charIndex": 100,
+   "line": "Think Hussein 'I'll have more flexibility after the election' hot mic statement to Russian depo re: Q to Hussein re: Putin."
+  },
+  {
+   "postNum": 3969,
+   "postId": "3969",
+   "lineIndex": 4,
+   "charIndex": 0,
+   "line": "Q OP start."
+  },
+  {
+   "postNum": 4136,
+   "postId": "4136",
+   "lineIndex": 4,
+   "charIndex": 81,
+   "line": "Coordinated media roll-out designed to instill 'fear' into users re: discussing 'Q' re: risk of account termination?"
+  },
+  {
+   "postNum": 4283,
+   "postId": "4283",
+   "lineIndex": 4,
+   "charIndex": 53,
+   "line": "Critical thinking _media cluster bomb(s) [attacks] v Q [you]"
+  },
+  {
+   "postNum": 4333,
+   "postId": "4333",
+   "lineIndex": 2,
+   "charIndex": 22,
+   "line": "HRC direct attack re: Q?"
+  },
+  {
+   "postNum": 4449,
+   "postId": "4449",
+   "lineIndex": 3,
+   "charIndex": 22,
+   "line": "A creation to combat 'Q' aka 'you'."
+  },
+  {
+   "postNum": 4622,
+   "postId": "4622",
+   "lineIndex": 1,
+   "charIndex": 23,
+   "line": "Why is everything re: 'Q' being censored, banned, and attacked?"
+  },
+  {
+   "postNum": 4734,
+   "postId": "4734",
+   "lineIndex": 8,
+   "charIndex": 25,
+   "line": "Drop all references re: 'Q' 'Qanon' etc. to avoid ban/termination _censorship install."
+  },
+  {
+   "postNum": 48,
+   "postId": "48",
+   "lineIndex": 4,
+   "charIndex": 14,
+   "line": "Does stating 'Q' refer that person works in DOE?"
+  },
+  {
+   "postNum": 4881,
+   "postId": "4881",
+   "lineIndex": 1,
+   "charIndex": 10,
+   "line": "There is 'Q'. 1"
+  },
+  {
+   "postNum": 4881,
+   "postId": "4881",
+   "lineIndex": 4,
+   "charIndex": 72,
+   "line": "Media labeling as 'Qanon' is a method [deliberate] to combine [attach] 'Q' to comments _theories _suggestions _statements [and ACTIONS] made by 2."
+  },
+  {
+   "postNum": 499,
+   "postId": "499",
+   "lineIndex": 2,
+   "charIndex": 4,
+   "line": "[2] Q Chapters."
+  },
+  {
+   "postNum": 503,
+   "postId": "503",
+   "lineIndex": 1,
+   "charIndex": 18,
+   "line": "Original missing \"Q\""
+  },
+  {
+   "postNum": 503,
+   "postId": "503",
+   "lineIndex": 2,
+   "charIndex": 19,
+   "line": "Revised including \"Q\""
+  },
+  {
+   "postNum": 506,
+   "postId": "506",
+   "lineIndex": 3,
+   "charIndex": 15,
+   "line": "POTUS missing \"Q\" in select word."
+  },
+  {
+   "postNum": 506,
+   "postId": "506",
+   "lineIndex": 6,
+   "charIndex": 12,
+   "line": "POTUS adds \"Q\" in select word."
+  },
+  {
+   "postNum": 510,
+   "postId": "510",
+   "lineIndex": 2,
+   "charIndex": 65,
+   "line": "Directly after POTUS alters Tweets to [1] min interval and adds \"Q\" - use graphics."
+  },
+  {
+   "postNum": 74,
+   "postId": "74",
+   "lineIndex": 0,
+   "charIndex": 0,
+   "line": "Q = Alice"
+  },
+  {
+   "postNum": 756,
+   "postId": "756",
+   "lineIndex": 32,
+   "charIndex": 0,
+   "line": "Q, DELTA"
+  },
+  {
+   "postNum": 757,
+   "postId": "757",
+   "lineIndex": 5,
+   "charIndex": 0,
+   "line": "Q, DELTA"
+  },
+  {
+   "postNum": 78,
+   "postId": "78",
+   "lineIndex": 33,
+   "charIndex": 0,
+   "line": "Q = Alice"
+  },
+  {
+   "postNum": 785,
+   "postId": "785",
+   "lineIndex": 6,
+   "charIndex": 0,
+   "line": "Q, DELTA"
+  },
+  {
+   "postNum": 958,
+   "postId": "958",
+   "lineIndex": 0,
+   "charIndex": 26,
+   "line": "The FBI opened a case on “Q” today re: ‘Boom’ statements and now the TX bombings."
+  }
+ ]
+}
