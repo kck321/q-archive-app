@@ -3,8 +3,8 @@
  "step": "3B-1",
  "planSha256": "373ca06b1416b6707a111f2c3da8e751472c551f739500f76cdcc764d3128058",
  "dispositionsApplied": 10,
- "actionsApplied": 774,
- "actionsAlreadyApplied": 8,
+ "actionsApplied": 773,
+ "actionsAlreadyApplied": 9,
  "actionsHeld": 0,
  "heldActionIds": [],
  "duplicateMergeDeltas": [
@@ -8078,6 +8078,24 @@
        "confidence": "OWNER_ADJUDICATED"
       }
      }
+    },
+    {
+     "category": "claim",
+     "fromOccurrenceKey": "1915|claims|932|987",
+     "certifiedValue": "Same day as the targeted [coordinated] attack v. POTUS?",
+     "reason": "certified in this section before the 2026-08-21 ruling; retained as a non-painting secondary",
+     "metadata": {
+      "claimMeta": {
+       "semanticFamily": "assertion",
+       "displayClass": "claim",
+       "checkable": false,
+       "sourceProvided": false,
+       "isConclusion": false,
+       "isPrediction": false,
+       "telegraphic": false,
+       "confidence": "OWNER_ADJUDICATED"
+      }
+     }
     }
    ],
    "reviewDispositions": [],
@@ -8777,6 +8795,24 @@
        "confidence": "OWNER_ADJUDICATED"
       }
      }
+    },
+    {
+     "category": "claim",
+     "fromOccurrenceKey": "1944|claims|682|719",
+     "certifiedValue": "Given magnitude of spy campaign (U.S.",
+     "reason": "certified in this section before the 2026-08-21 ruling; retained as a non-painting secondary",
+     "metadata": {
+      "claimMeta": {
+       "semanticFamily": "assertion",
+       "displayClass": "claim",
+       "checkable": false,
+       "sourceProvided": false,
+       "isConclusion": false,
+       "isPrediction": false,
+       "telegraphic": false,
+       "confidence": "OWNER_ADJUDICATED"
+      }
+     }
     }
    ],
    "reviewDispositions": [],
@@ -8800,6 +8836,24 @@
    "sourceDisposition": "q_authored",
    "primaryCategory": "question",
    "secondarySemantics": [
+    {
+     "category": "claim",
+     "fromOccurrenceKey": "1944|claims|1185|1245",
+     "certifiedValue": "'Foreign' tangent req to obtain warrant to spy on U.S. ORIG?",
+     "reason": "certified in this section before the 2026-08-21 ruling; retained as a non-painting secondary",
+     "metadata": {
+      "claimMeta": {
+       "semanticFamily": "assertion",
+       "displayClass": "claim",
+       "checkable": false,
+       "sourceProvided": false,
+       "isConclusion": false,
+       "isPrediction": false,
+       "telegraphic": false,
+       "confidence": "OWNER_ADJUDICATED"
+      }
+     }
+    },
     {
      "category": "claim",
      "fromOccurrenceKey": "1944|claims|1185|1245",
@@ -10197,7 +10251,25 @@
        "sourceProvided": false,
        "isConclusion": false,
        "isPrediction": false,
-       "telegraphic": true,
+       "telegraphic": false,
+       "confidence": "OWNER_ADJUDICATED"
+      }
+     }
+    },
+    {
+     "category": "claim",
+     "fromOccurrenceKey": "2211|claims|651|714",
+     "certifiedValue": "Federal prosecutor in N. District of NY [background] important?",
+     "reason": "certified in this section before the 2026-08-21 ruling; retained as a non-painting secondary",
+     "metadata": {
+      "claimMeta": {
+       "semanticFamily": "assertion",
+       "displayClass": "claim",
+       "checkable": false,
+       "sourceProvided": false,
+       "isConclusion": false,
+       "isPrediction": false,
+       "telegraphic": false,
        "confidence": "OWNER_ADJUDICATED"
       }
      }
@@ -10905,6 +10977,24 @@
    "sourceDisposition": "q_authored",
    "primaryCategory": "question",
    "secondarySemantics": [
+    {
+     "category": "claim",
+     "fromOccurrenceKey": "2378|claims|6|9",
+     "certifiedValue": "No.",
+     "reason": "certified in this section before the 2026-08-21 ruling; retained as a non-painting secondary",
+     "metadata": {
+      "claimMeta": {
+       "semanticFamily": "assertion",
+       "displayClass": "claim",
+       "checkable": false,
+       "sourceProvided": false,
+       "isConclusion": false,
+       "isPrediction": false,
+       "telegraphic": true,
+       "confidence": "OWNER_ADJUDICATED"
+      }
+     }
+    },
     {
      "category": "claim",
      "fromOccurrenceKey": "2378|claims|6|9",
@@ -14056,6 +14146,24 @@
    "sourceDisposition": "q_authored",
    "primaryCategory": "question",
    "secondarySemantics": [
+    {
+     "category": "claim",
+     "fromOccurrenceKey": "3049|claims|110|359",
+     "certifiedValue": "If [D's] FIGHT to protect, safeguard, and promote all illegal immigrants as 'rightful' U.S. citizens who should be afforded all benefits and rights accordingly, WHY THEN WOULD THEY FIGHT TO BLOCK THEM FROM BEING 'COUNTED' AS PART OF THE U.S. CENSUS?",
+     "reason": "certified in this section before the 2026-08-21 ruling; retained as a non-painting secondary",
+     "metadata": {
+      "claimMeta": {
+       "semanticFamily": "assertion",
+       "displayClass": "claim",
+       "checkable": false,
+       "sourceProvided": false,
+       "isConclusion": false,
+       "isPrediction": false,
+       "telegraphic": false,
+       "confidence": "OWNER_ADJUDICATED"
+      }
+     }
+    },
     {
      "category": "claim",
      "fromOccurrenceKey": "3049|claims|110|359",
@@ -18945,7 +19053,25 @@
        "sourceProvided": false,
        "isConclusion": false,
        "isPrediction": false,
-       "telegraphic": true,
+       "telegraphic": false,
+       "confidence": "OWNER_ADJUDICATED"
+      }
+     },
+     "reason": "partial span superseded by the complete sentence"
+    },
+    {
+     "category": "claim",
+     "fromOccurrenceKey": "4782|claims|557|687",
+     "certifiedValue": "FUNDS: EXPENSES V. PAYOUTS [for 'causes'] _analyze % [how much of the actual donated money actually goes to help select 'causes']?",
+     "metadata": {
+      "claimMeta": {
+       "semanticFamily": "assertion",
+       "displayClass": "claim",
+       "checkable": false,
+       "sourceProvided": false,
+       "isConclusion": false,
+       "isPrediction": false,
+       "telegraphic": false,
        "confidence": "OWNER_ADJUDICATED"
       }
      },
@@ -19149,6 +19275,24 @@
       }
      },
      "reason": "partial span superseded by the complete sentence"
+    },
+    {
+     "category": "claim",
+     "fromOccurrenceKey": "4871|claims|0|119",
+     "certifiedValue": "NAT SEC concerns re: blackmail [gain control] of J. Biden by Russia, China and/or other foreign [or domestic] entities?",
+     "metadata": {
+      "claimMeta": {
+       "semanticFamily": "assertion",
+       "displayClass": "claim",
+       "checkable": false,
+       "sourceProvided": false,
+       "isConclusion": false,
+       "isPrediction": false,
+       "telegraphic": false,
+       "confidence": "OWNER_ADJUDICATED"
+      }
+     },
+     "reason": "partial span superseded by the complete sentence"
     }
    ],
    "reviewDispositions": [],
@@ -19286,7 +19430,25 @@
        "sourceProvided": false,
        "isConclusion": false,
        "isPrediction": false,
-       "telegraphic": true,
+       "telegraphic": false,
+       "confidence": "OWNER_ADJUDICATED"
+      }
+     },
+     "reason": "partial span superseded by the complete sentence"
+    },
+    {
+     "category": "claim",
+     "fromOccurrenceKey": "4888|claims|92|137",
+     "certifiedValue": "Subpoena of all H. Biden's financial records?",
+     "metadata": {
+      "claimMeta": {
+       "semanticFamily": "assertion",
+       "displayClass": "claim",
+       "checkable": false,
+       "sourceProvided": false,
+       "isConclusion": false,
+       "isPrediction": false,
+       "telegraphic": false,
        "confidence": "OWNER_ADJUDICATED"
       }
      },
@@ -19615,8 +19777,8 @@
   }
  ],
  "appliedTo": {
-  "postsSha256": "9630e89d51eb45f4ee4c52124efcc93c60694f3fe58e106517d4d2dea7153ef8",
-  "questionsSha256": "1c30ac869430908ab2b5aeb678e26be918aa28b1b7a5b8ef83051ff31e00c5a0",
+  "postsSha256": "b5e3fd27b5edfa6699a5ce925269c7b1d6e1c9b8e22baa3a9dd67079cd68faaa",
+  "questionsSha256": "809d82d4db7529264333cb665d4d38c4fe21bb1b489a4eb555c069b58acd5ae5",
   "dispositionsSha256": "dff858e2971b426d43904cd2e0abfa2a0773a7cc2026f3092fa2b9a0b9eeb64a",
   "extraSets": {
    "step3b1-b2-actions.jsonl": "c9c6c43a08291d2fed207f9ce573ecf526ed33751336c0bd86595fb647e53f00",

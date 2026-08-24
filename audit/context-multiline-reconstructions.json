@@ -1,6 +1,6 @@
 {
  "note": "CONTEXT_OR_LABEL units whose canonical text is a multi-line reconstruction, so no single contiguous source span exists. Not dropped: listed here so the acceptance contract still reconciles. The ledger holds 4,902 units; 3,154 have since been ruled into a section by the owner, leaving 1,736 contiguous + 12 reconstructed = 1,748.",
- "count": 12,
+ "count": 3,
  "units": [
   {
    "postNum": 1438,
@@ -18,100 +18,6 @@
    "constituentLines": [
     "_27-1_yes_USA58-A",
     "_27-1_yes_USA04"
-   ],
-   "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
-  },
-  {
-   "postNum": 2216,
-   "unitId": "ctx-2216-Q_A_Q",
-   "reconstructedText": "Q&A Q",
-   "constituentLines": [
-    "Q&A",
-    "Q"
-   ],
-   "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
-  },
-  {
-   "postNum": 2605,
-   "unitId": "ctx-2605-Q_A_Q",
-   "reconstructedText": "Q&A Q",
-   "constituentLines": [
-    "Q&A",
-    "Q"
-   ],
-   "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
-  },
-  {
-   "postNum": 3551,
-   "unitId": "ctx-3551-1_2H_insert_key",
-   "reconstructedText": "1-2H insert_key",
-   "constituentLines": [
-    "                                                1-2H",
-    "insert_key"
-   ],
-   "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
-  },
-  {
-   "postNum": 4603,
-   "unitId": "ctx-4603-702_non_702",
-   "reconstructedText": "702 non-702",
-   "constituentLines": [
-    "702",
-    "non-702"
-   ],
-   "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
-  },
-  {
-   "postNum": 4603,
-   "unitId": "ctx-4603-FVEY_non_FVEY_spy_insert",
-   "reconstructedText": "FVEY non-FVEY spy_insert_campaign[s] 1&2",
-   "constituentLines": [
-    "FVEY",
-    "non-FVEY",
-    "spy_insert_campaign[s] 1&2"
-   ],
-   "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
-  },
-  {
-   "postNum": 4603,
-   "unitId": "ctx-4603-traitor_defector_deserte",
-   "reconstructedText": "traitor defector deserter",
-   "constituentLines": [
-    "traitor",
-    "defector",
-    "deserter"
-   ],
-   "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
-  },
-  {
-   "postNum": 4603,
-   "unitId": "ctx-4603-turncoat_betrayer_rebel",
-   "reconstructedText": "turncoat betrayer rebel",
-   "constituentLines": [
-    "turncoat",
-    "betrayer",
-    "rebel"
-   ],
-   "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
-  },
-  {
-   "postNum": 4603,
-   "unitId": "ctx-4603-mutineer_quisling_fifth_",
-   "reconstructedText": "mutineer quisling fifth columnist",
-   "constituentLines": [
-    "mutineer",
-    "quisling",
-    "fifth columnist"
-   ],
-   "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
-  },
-  {
-   "postNum": 4603,
-   "unitId": "ctx-4603-renegado_tergiversator",
-   "reconstructedText": "renegado tergiversator",
-   "constituentLines": [
-    "renegado",
-    "tergiversator"
    ],
    "reason": "unitsFor() joined continuation lines; the unit never appears contiguously in the drop"
   },

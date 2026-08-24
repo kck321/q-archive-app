@@ -120,14 +120,14 @@ const checks = [
   // makes them useful: 6,454 -> 6,519, 4,212 -> 8,928 and 595 -> 842 are the 2026-08-20 queue
   // rulings arriving from apply-questions-final.mjs and apply-claims.mjs, and nothing else.
   // 6,510 since the segmentation repair. "Unchanged" means THIS step must not add or drop one.
-  ['certified questions unchanged = 6,503', questions.filter(r => r.occurrences !== undefined).length === 6503,
+  ['certified questions unchanged = 6,509', questions.filter(r => r.occurrences !== undefined).length === 6509,
     questions.filter(r => r.occurrences !== undefined).length],
   // 8,929 since the 2026-08-21 owner ruling on #4923. "Unchanged" means this step must not invent
   // or drop a claim while turning stored text into runtime spans — it is a passthrough assertion,
   // so it tracks whatever apply-claims.mjs certified rather than pinning one batch's figure.
-  ['claims unchanged = 8,912', counts.claims === 8912, counts.claims],
+  ['claims unchanged = 10,558', counts.claims === 10558, counts.claims],
   // 843 since the 2026-08-21 ruling on #4910 ("Freedom of information [truth] = END").
-  ['predictions unchanged = 847', counts.predictions === 847, counts.predictions],
+  ['predictions unchanged = 941', counts.predictions === 941, counts.predictions],
   ['conclusions unchanged = 964', counts.impliedConclusions === 964, counts.impliedConclusions],
   // 1,925 -> 1,920: five absorbed claim tails carried the checkable attribute. It travels with
   // the ROW, so it leaves with the fragment rather than being re-attached to the repaired span,

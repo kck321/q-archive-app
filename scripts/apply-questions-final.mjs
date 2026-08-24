@@ -338,8 +338,10 @@ const checks = [
   // 6,503 -> 6,509 on 2026-08-24, round 2 of the unhighlighted queue: 8 lines ruled Questions,
   // 3 of them already certified here, so 5 wordings arrive carrying 6 occurrences.
   ['certified occurrences = 6,509', counted.length === 6509, counted.length],
-  // 67 (round 1) + 8 (round 2) = 75 rulings, of which 3 name a span Questions already holds.
-  ['queue rulings applied = 75', queueStats.added + queueStats.already === 75,
+  // 67 (round 1) + 6 (round 2) = 73 rulings, of which 2 name a span Questions already holds.
+  // Round 2 reviewed 8 question rows; one span is a withdrawn abbreviation tail and is refused,
+  // and one is a truncated head the repair record extends onto a sentence already certified.
+  ['queue rulings applied = 73', queueStats.added + queueStats.already === 73,
     `${queueStats.added} added + ${queueStats.already} already certified`],
   ['every owner question ruling is in the set = 12', ownerQuestions + ownerAlreadyPresent === 12 && ownerMissing.length === 0,
     `${ownerQuestions} added + ${ownerAlreadyPresent} already present`],

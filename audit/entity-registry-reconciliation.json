@@ -1,9 +1,9 @@
 {
   "note": "The registry decrements that follow Step 3B-1's duplicate-record collapse. One per removed record, named by the identity that record carried. Not a recount from the render.",
   "duplicateRecordsRemoved": 99,
-  "mentionsBefore": 8920,
-  "mentionsAfter": 8831,
-  "renderedRecords": 8831,
+  "mentionsBefore": 9360,
+  "mentionsAfter": 9271,
+  "renderedRecords": 9271,
   "perIdentity": [
     {
       "canonical": "Robert Mueller",
@@ -13,9 +13,9 @@
     },
     {
       "canonical": "Barack Obama",
-      "mentionsBefore": 214,
+      "mentionsBefore": 215,
       "withdrawn": 9,
-      "mentionsAfter": 205
+      "mentionsAfter": 206
     },
     {
       "canonical": "China",
@@ -37,9 +37,9 @@
     },
     {
       "canonical": "United States",
-      "mentionsBefore": 525,
+      "mentionsBefore": 526,
       "withdrawn": 6,
-      "mentionsAfter": 519
+      "mentionsAfter": 520
     },
     {
       "canonical": "Huma Abedin",
@@ -79,9 +79,9 @@
     },
     {
       "canonical": "Donald Trump",
-      "mentionsBefore": 64,
+      "mentionsBefore": 65,
       "withdrawn": 1,
-      "mentionsAfter": 63
+      "mentionsAfter": 64
     },
     {
       "canonical": "Twitter",
@@ -109,15 +109,15 @@
     },
     {
       "canonical": "Nancy Pelosi",
-      "mentionsBefore": 48,
+      "mentionsBefore": 47,
       "withdrawn": 1,
-      "mentionsAfter": 47
+      "mentionsAfter": 46
     },
     {
       "canonical": "Hillary Clinton",
-      "mentionsBefore": 187,
+      "mentionsBefore": 190,
       "withdrawn": 1,
-      "mentionsAfter": 186
+      "mentionsAfter": 189
     }
   ],
   "perIdentityAndPost": {

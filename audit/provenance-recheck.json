@@ -2448,7 +2448,8 @@
  },
  "imageUnconfirmed55": {
   "totals": {
-   "held_image_provenance_unconfirmed": 36,
+   "held_image_provenance_unconfirmed": 35,
+   "held_no_identifiable_source_beyond_ruled_set": 1,
    "migrated_as_social_account_reference": 19
   },
   "detail": [
@@ -2520,7 +2521,7 @@
     "postNum": 2499,
     "entityId": "qe-07c2ac29342f",
     "canonical": "House of Cards",
-    "bucket": "held_image_provenance_unconfirmed"
+    "bucket": "held_no_identifiable_source_beyond_ruled_set"
    },
    {
     "auditOccurrenceId": "ENT-0224-P2523",

@@ -13,14 +13,6 @@
    "note": "Same evidence as the approved set, outside the population the ruling named. Held."
   },
   {
-   "occurrenceId": "#19:3",
-   "postNum": 19,
-   "entityId": "qe-9df7ca720cf1",
-   "canonical": "Maxine Waters",
-   "alias": "Maxine Waters",
-   "note": "Same evidence as the approved set, outside the population the ruling named. Held."
-  },
-  {
    "occurrenceId": "#2576:0",
    "postNum": 2576,
    "entityId": "qe-75d5eb424ac5",
@@ -50,14 +42,6 @@
    "entityId": "qe-9fee50ff1529",
    "canonical": "Canada",
    "alias": "Canada",
-   "note": "Same evidence as the approved set, outside the population the ruling named. Held."
-  },
-  {
-   "occurrenceId": "#988:10",
-   "postNum": 988,
-   "entityId": "qe-67185825b25f",
-   "canonical": "Awan",
-   "alias": "Awan",
    "note": "Same evidence as the approved set, outside the population the ruling named. Held."
   }
  ],
@@ -184,6 +168,7 @@
    "aliases": [
     "McCain",
     "John McCain",
+    "No name",
     "NO NAME",
     "No Name"
    ],
@@ -212,7 +197,10 @@
    "entityType": "political_group",
    "alias": "Freedom Caucus",
    "aliases": [
-    "Freedom Caucus"
+    "Freedom Caucus",
+    "FREEDOM CAUCUS",
+    "FREEDOM Caucus",
+    "THE FREEDOM CAUCUS (EST)"
    ],
    "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
    "evidenceSearch": {
@@ -2054,7 +2042,8 @@
    "entityType": "location",
    "alias": "Washington",
    "aliases": [
-    "Washington"
+    "Washington",
+    "WASHINGTON"
    ],
    "priorClassification": "no_supported_provenance (2026-08-16 record-level audit)",
    "evidenceSearch": {

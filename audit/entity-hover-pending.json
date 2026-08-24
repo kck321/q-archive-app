@@ -1,50 +1,15 @@
 {
  "note": "Live certified entities with no GLOBAL hover synopsis yet. The gap is recorded here rather than filled, because a synopsis is authored editorial text about a real person or organisation and extract-entity-hovers.mjs refuses to publish an unreviewed one. Cross-section invariant 10b asserts this list is exactly the difference between the entity set and the published synopses, so the gap can never widen silently.",
- "why": "All 39 arrived with the 2026-08-20 unhighlighted-sentence queue ruling, which certified 39 new identities. Nothing was removed: zero published synopses point at an entity that is no longer live.",
- "ruledOn": "2026-08-20",
- "count": 49,
+ "why": "Was 39, all from the 2026-08-20 queue ruling. Now 358: ROUND 2 of the same review (2026-08-24) certified 309 more identities and none of them has an authored synopsis yet. 244 are read off three lists Q pastes verbatim - the central banks of #135-#138, the media list in #1515, the retiring-Congress list in #1319/#1850 - and a bank or a journalist named once in a pasted list is exactly the case where an unreviewed synopsis would be a guess about a real person or organisation. Nothing was removed: zero published synopses point at an entity that is no longer live.",
+ "ruledOn": "2026-08-24",
+ "count": 358,
  "entities": [
   {
-   "id": "qe-271807d35b2e",
-   "canonical": "We the People",
-   "type": "political_group",
-   "posts": 29,
-   "mentions": 34
-  },
-  {
-   "id": "qe-442a0d902541",
-   "canonical": "Iron Eagle",
-   "type": "coded_alias",
-   "posts": 9,
-   "mentions": 9
-  },
-  {
-   "id": "qe-ccc8c488181f",
-   "canonical": "Shadow Presidency",
-   "type": "political_group",
-   "posts": 7,
-   "mentions": 7
-  },
-  {
-   "id": "qe-f1c84297eabe",
-   "canonical": "The Sum of All Fears",
-   "type": "creative_work",
-   "posts": 6,
-   "mentions": 6
-  },
-  {
-   "id": "qe-1ef281a95f22",
-   "canonical": "Shadow Government",
-   "type": "political_group",
-   "posts": 4,
-   "mentions": 4
-  },
-  {
-   "id": "qe-scripture-ephesians-6-10-18",
-   "canonical": "Ephesians 6:10-18",
-   "type": "creative_work",
-   "posts": 3,
-   "mentions": 3
+   "id": "qe-81c70fd3e376",
+   "canonical": "Rachel Maddow",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
   },
   {
    "id": "qe-e7331aea9c4b",
@@ -54,36 +19,64 @@
    "mentions": 3
   },
   {
-   "id": "qe-e6dca3536e13",
-   "canonical": "Apache",
+   "id": "qe-8e89e8bf8a1d",
+   "canonical": "Secret Agents",
+   "type": "other_named_entity",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-3d39629f9ecd",
+   "canonical": "The Cult",
+   "type": "political_group",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-442a0d902541",
+   "canonical": "Iron Eagle",
+   "type": "coded_alias",
+   "posts": 9,
+   "mentions": 9
+  },
+  {
+   "id": "qe-73d64a484e4d",
+   "canonical": "Eye of Providence",
+   "type": "religious_spiritual",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-69bbadce263e",
+   "canonical": "Wizards & Warlocks",
    "type": "coded_alias",
    "posts": 2,
    "mentions": 2
   },
   {
-   "id": "qe-a8798d21e9cf",
-   "canonical": "Eye of Ra",
-   "type": "religious_spiritual",
-   "posts": 2,
-   "mentions": 2
+   "id": "qe-f1c84297eabe",
+   "canonical": "The Sum of All Fears",
+   "type": "creative_work",
+   "posts": 6,
+   "mentions": 6
+  },
+  {
+   "id": "qe-2d1b610f1312",
+   "canonical": "MAGA",
+   "type": "political_group",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-6c9bfa949221",
+   "canonical": "Terminal 5",
+   "type": "facility_property",
+   "posts": 1,
+   "mentions": 1
   },
   {
    "id": "qe-65a74e4e6abb",
    "canonical": "Fox Three",
-   "type": "coded_alias",
-   "posts": 2,
-   "mentions": 2
-  },
-  {
-   "id": "qe-2bfd139c428f",
-   "canonical": "McLean, Virginia",
-   "type": "location",
-   "posts": 2,
-   "mentions": 2
-  },
-  {
-   "id": "qe-d69cccf9e5fa",
-   "canonical": "Red Castle",
    "type": "coded_alias",
    "posts": 2,
    "mentions": 2
@@ -96,15 +89,2381 @@
    "mentions": 2
   },
   {
-   "id": "qe-69bbadce263e",
-   "canonical": "Wizards & Warlocks",
+   "id": "qe-63904d84edb1",
+   "canonical": "Maverick",
+   "type": "coded_alias",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-81aabd241ebe",
+   "canonical": "NAT G",
+   "type": "coded_alias",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-a8798d21e9cf",
+   "canonical": "Eye of Ra",
+   "type": "religious_spiritual",
+   "posts": 2,
+   "mentions": 2
+  },
+  {
+   "id": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "type": "political_group",
+   "posts": 29,
+   "mentions": 34
+  },
+  {
+   "id": "qe-23403a5e15c0",
+   "canonical": "WarGames",
+   "type": "creative_work",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-e6dca3536e13",
+   "canonical": "Apache",
    "type": "coded_alias",
    "posts": 2,
    "mentions": 2
   },
   {
+   "id": "qe-ff2721b349d1",
+   "canonical": "Dopey",
+   "type": "coded_alias",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-9271dec94a20",
+   "canonical": "Hilton family",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-855d3dfd9c47",
+   "canonical": "JFK Con Room",
+   "type": "facility_property",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-22d61afede73",
+   "canonical": "M-Institute",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-2bfd139c428f",
+   "canonical": "McLean, Virginia",
+   "type": "location",
+   "posts": 2,
+   "mentions": 2
+  },
+  {
+   "id": "qe-c8500713493a",
+   "canonical": "RT Kenya",
+   "type": "media_organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-d69cccf9e5fa",
+   "canonical": "Red Castle",
+   "type": "coded_alias",
+   "posts": 2,
+   "mentions": 2
+  },
+  {
+   "id": "qe-6997635c7a7c",
+   "canonical": "The Art of the Deal",
+   "type": "creative_work",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-e40236920216",
+   "canonical": "Board of Superintendence",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-736412bb6b8a",
+   "canonical": "Vatican Bank",
+   "type": "financial_institution",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-344c28f3a086",
+   "canonical": "EH CA",
+   "type": "coded_alias",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-d7e7eeae34b1",
+   "canonical": "Ford",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-5f8841ad2402",
+   "canonical": "Fusion GPS",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-4ab13e3a5689",
+   "canonical": "Lee S",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-9b181e56a4c1",
+   "canonical": "Barcelona",
+   "type": "location",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-d7f841ca1ad1",
+   "canonical": "Shareblue",
+   "type": "media_organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-d27fa0601ace",
+   "canonical": "Mad Hatter",
+   "type": "coded_alias",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-95b35eac2da9",
+   "canonical": "F-15",
+   "type": "military_asset_vessel",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-ccc8c488181f",
+   "canonical": "Shadow Presidency",
+   "type": "political_group",
+   "posts": 7,
+   "mentions": 7
+  },
+  {
+   "id": "qe-1ef281a95f22",
+   "canonical": "Shadow Government",
+   "type": "political_group",
+   "posts": 4,
+   "mentions": 4
+  },
+  {
+   "id": "qe-40b3b980802c",
+   "canonical": "Castle Rock",
+   "type": "coded_alias",
+   "posts": 2,
+   "mentions": 2
+  },
+  {
+   "id": "qe-889c6e61bb80",
+   "canonical": "Nightwatch",
+   "type": "coded_alias",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-1904e9e4a5dd",
+   "canonical": "Albania",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-bb9460380aeb",
+   "canonical": "Bank of Albania",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-3d31e0b0b835",
+   "canonical": "Algeria",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-90a691405257",
+   "canonical": "Bank of Algeria",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-07f466e45a27",
+   "canonical": "Argentina",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-4e5245059c3c",
+   "canonical": "Central Bank of Argentina",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-67e6838767b1",
+   "canonical": "Aruba",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-211966e62c2a",
+   "canonical": "Central Bank of Aruba",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-2a609b3b8b75",
+   "canonical": "Azerbaijan",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-665d7430de84",
+   "canonical": "Central Bank of Azerbaijan Republic",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-305c78e19b26",
+   "canonical": "Bahamas",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-f7090c157509",
+   "canonical": "Central Bank of The Bahamas",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-6358cee04b93",
+   "canonical": "Bahrain",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-4bb3729cea4e",
+   "canonical": "Central Bank of Bahrain",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-8e4e7653f83e",
+   "canonical": "Bangladesh",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-6ab6c5afe412",
+   "canonical": "Bangladesh Bank",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-11e7e5d1735a",
+   "canonical": "Barbados",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-e910f19802e0",
+   "canonical": "Central Bank of Barbados",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-f9ef8f09e19a",
+   "canonical": "Belarus",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-14ddf83b2cf1",
+   "canonical": "National Bank of the Republic of Belarus",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-5d750b9ac02f",
+   "canonical": "Belize",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-47e444b0281a",
+   "canonical": "Central Bank of Belize",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-0cbb2892c66a",
+   "canonical": "Benin",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-5abb48de3219",
+   "canonical": "Central Bank of West African States (BCEAO)",
+   "type": "organization",
+   "posts": 4,
+   "mentions": 8
+  },
+  {
+   "id": "qe-e51ec7af5e07",
+   "canonical": "Bermuda",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-6899ccb55966",
+   "canonical": "Bermuda Monetary Authority",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-21f2b6d05394",
+   "canonical": "Bhutan",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-afce96b8c835",
+   "canonical": "Royal Monetary Authority of Bhutan",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-2be6563c2e6a",
+   "canonical": "Bolivia",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-20bf317bb5c5",
+   "canonical": "Central Bank of Bolivia",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-81fc4d7c494f",
+   "canonical": "Bosnia",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-0c7055206acc",
+   "canonical": "Central Bank of Bosnia and Herzegovina",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-98e7cc900e64",
+   "canonical": "Botswana",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-819a8f02fff4",
+   "canonical": "Bank of Botswana",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-2ff454bf465d",
+   "canonical": "Bulgaria",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-b86629998191",
+   "canonical": "Bulgarian National Bank",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-06f38ec2dcbe",
+   "canonical": "Burundi",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-00b708298d81",
+   "canonical": "Bank of the Republic of Burundi",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-758922687247",
+   "canonical": "Cambodia",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-727b1198794f",
+   "canonical": "National Bank of Cambodia",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-625255f02cf4",
+   "canonical": "Bank of Afghanistan",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-edb105bc951f",
+   "canonical": "Central Bank of Armenia",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-1b4b6e4a0c28",
+   "canonical": "Reserve Bank of Australia",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-087ab1ea32e0",
+   "canonical": "Austrian National Bank",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-ad3fc5ed9020",
+   "canonical": "National Bank of Belgium",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-10aa234f1f75",
+   "canonical": "Central Bank of Brazil",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-7a659761776f",
+   "canonical": "Bank of Canada – Banque du Canada",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-d6bf19e489c7",
+   "canonical": "Chad",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-a802edcdf65e",
+   "canonical": "Bank of Central African States",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 5
+  },
+  {
+   "id": "qe-f510ed1e8955",
+   "canonical": "Chile",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-2a786f203730",
+   "canonical": "Central Bank of Chile",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-ac07b7ec37ce",
+   "canonical": "Colombia",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-3d3879f0058d",
+   "canonical": "Bank of the Republic",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-b13879b5f596",
+   "canonical": "Comoros",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-adac4cc3a263",
+   "canonical": "Central Bank of Comoros",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-43292fba2ab7",
+   "canonical": "Congo",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-dcab58fa3e25",
+   "canonical": "Côte d’Ivoire",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-f6439dd04f8d",
+   "canonical": "Croatia",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-0fc475b60a5f",
+   "canonical": "Croatian National Bank",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-ddc7f107196a",
+   "canonical": "Cyprus",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-086f34cfcbaa",
+   "canonical": "Central Bank of Cyprus",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-4e5a256fec9a",
+   "canonical": "Denmark",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-3281edd91760",
+   "canonical": "National Bank of Denmark",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-8c5153d58668",
+   "canonical": "Estonia",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-3f2bf08a90e0",
+   "canonical": "Bank of Estonia",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-fddea527294c",
+   "canonical": "Ethiopia",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-f0140d3c36fa",
+   "canonical": "National Bank of Ethiopia",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-458786e9f8ae",
+   "canonical": "Fiji",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-9cf850ef5e1d",
+   "canonical": "Reserve Bank of Fiji",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-d950e25b51e6",
+   "canonical": "Finland",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-a3aec9e5c20e",
+   "canonical": "Bank of Finland",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-a42eb08ae846",
+   "canonical": "Gabon",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-9738833efb76",
+   "canonical": "Ghana",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-8352f39db177",
+   "canonical": "Bank of Ghana",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-2b90c0394a91",
+   "canonical": "Guatemala",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-b12c4b9bc969",
+   "canonical": "Bank of Guatemala",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-68667fe95861",
+   "canonical": "Guyana",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-239ca8bd721e",
+   "canonical": "Bank of Guyana",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-f711f3c251fa",
+   "canonical": "Honduras",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-0d86fa532496",
+   "canonical": "Central Bank of Honduras",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-16063a655590",
+   "canonical": "Hungary",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-5ddec87a5302",
+   "canonical": "Magyar Nemzeti Bank",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-441166eb4593",
+   "canonical": "Iceland",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-a76ddc866761",
+   "canonical": "Central Bank of Iceland",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-bbc2c9ac621a",
+   "canonical": "Indonesia",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-0cfd0074c34b",
+   "canonical": "Bank Indonesia",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-d847317b2db6",
+   "canonical": "The Central Bank of the Islamic Republic of Iran",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-0b8bb4ce02a9",
+   "canonical": "Cayman Islands Monetary Authority",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-6278cb896017",
+   "canonical": "The People’s Bank of China",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-999b6477ac59",
+   "canonical": "Central Bank of Costa Rica",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-c87bf20ea416",
+   "canonical": "Central Bank of Cuba",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-ed7f16592539",
+   "canonical": "Czech National Bank",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-d6d2af5606b7",
+   "canonical": "Central Bank of the Dominican Republic",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-b1a3e9924255",
+   "canonical": "East Caribbean area",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-e626e9dbcd4f",
+   "canonical": "Eastern Caribbean Central Bank",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-2be3e0cadf9a",
+   "canonical": "Central Bank of Ecuador",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-456198550a6c",
+   "canonical": "Central Bank of Egypt",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-1e504aae9963",
+   "canonical": "Central Reserve Bank of El Salvador",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-c6a6b7de830b",
+   "canonical": "European Central Bank",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-df19811280f0",
+   "canonical": "Bank of France",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-f75a910fd2a1",
+   "canonical": "Central Bank of The Gambia",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-28b599dd1096",
+   "canonical": "National Bank of Georgia",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-d6868867fb4e",
+   "canonical": "Deutsche Bundesbank",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-8c75f1b3d3f0",
+   "canonical": "Bank of Greece",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-49dc8a747f78",
+   "canonical": "Central Bank of Haiti",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-6a0b1f3ec955",
+   "canonical": "Hong Kong Monetary Authority",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-ee65da307c89",
+   "canonical": "Reserve Bank of India",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-8fcd408a5c2f",
+   "canonical": "Jamaica",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-e3256990e4a2",
+   "canonical": "Bank of Jamaica",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-d8d48e8d9887",
+   "canonical": "Kuwait",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-4be6de4cd892",
+   "canonical": "Central Bank of Kuwait",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-bf80701bf36c",
+   "canonical": "Kyrgyzstan",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-de19d7c755f2",
+   "canonical": "National Bank of the Kyrgyz Republic",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-a16b32bf1a84",
+   "canonical": "Latvia",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-e0d94e532c65",
+   "canonical": "Bank of Latvia",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-24ebee39ed01",
+   "canonical": "Lesotho",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-7c4f4e912106",
+   "canonical": "Central Bank of Lesotho",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-1cd04d0e1356",
+   "canonical": "Uruguay",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-36fdde9bc9a4",
+   "canonical": "Central Bank of Uruguay",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-32332bd225e3",
+   "canonical": "Lithuania",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-f77773770060",
+   "canonical": "Bank of Lithuania",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-cf5a43627b8a",
+   "canonical": "Luxembourg",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-b9ad89be47ef",
+   "canonical": "Central Bank of Luxembourg",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-44e8ee835bea",
+   "canonical": "Macao",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-62b2862c7fc5",
+   "canonical": "Monetary Authority of Macao",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-6da91c6113cc",
+   "canonical": "Macedonia",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-d2972fb52d6e",
+   "canonical": "National Bank of the Republic of Macedonia",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-f8958e4ddff7",
+   "canonical": "Madagascar",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-1b6219d34434",
+   "canonical": "Central Bank of Madagascar",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-09327273d684",
+   "canonical": "Malawi",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-ef96bd6455b0",
+   "canonical": "Reserve Bank of Malawi",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-a2b4e5e74ae9",
+   "canonical": "Malaysia",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-2282d0179d9d",
+   "canonical": "Central Bank of Malaysia",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-58839de49bd1",
+   "canonical": "Mali",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-6e00d0ffea74",
+   "canonical": "Malta",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-89ec4a95de39",
+   "canonical": "Central Bank of Malta",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-8a8a2100a2d4",
+   "canonical": "Mauritius",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-5be9c913dd57",
+   "canonical": "Bank of Mauritius",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-03c59b63932a",
+   "canonical": "Moldova",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-1d3dd631bd6e",
+   "canonical": "National Bank of Moldova",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-68cb332609f3",
+   "canonical": "Mongolia",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-8300b7eb6398",
+   "canonical": "Bank of Mongolia",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-0a21fec23c2b",
+   "canonical": "Montenegro",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-cb1bb14f8394",
+   "canonical": "Central Bank of Montenegro",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-227b04c2911c",
+   "canonical": "Morocco",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-3db0f81882f1",
+   "canonical": "Bank of Morocco",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-4c9420670b10",
+   "canonical": "Mozambique",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-3d56d0641f69",
+   "canonical": "Bank of Mozambique",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-702c461bb9ee",
+   "canonical": "Namibia",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-951c9bf19e70",
+   "canonical": "Bank of Namibia",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-e1802171b7dc",
+   "canonical": "Nepal",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-731304ef1302",
+   "canonical": "Central Bank of Nepal",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-a632d63bcc30",
+   "canonical": "Netherlands",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-9361f6da7bf9",
+   "canonical": "Netherlands Bank",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-38d728410fd2",
+   "canonical": "Nicaragua",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-2c74baf2c271",
+   "canonical": "Central Bank of Nicaragua",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-193dd0ceb8bf",
+   "canonical": "Niger",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-51fd389c7124",
+   "canonical": "Nigeria",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-756ff394cbdb",
+   "canonical": "Central Bank of Nigeria",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-b3d9d4d1d93d",
+   "canonical": "Oman",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-7051c43e49cd",
+   "canonical": "Central Bank of Oman",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-b1efa8294261",
+   "canonical": "Central Bank of Iraq",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-d753d553b0bb",
+   "canonical": "Central Bank and Financial Services Authority of Ireland",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-ef18b71df36a",
+   "canonical": "Bank of Israel",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-b8fa33b12aed",
+   "canonical": "Bank of Italy",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-67deaa87fbb8",
+   "canonical": "Bank of Japan",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-a7e514cf00dc",
+   "canonical": "Central Bank of Jordan",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-8af98710d8bb",
+   "canonical": "National Bank of Kazakhstan",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-6e0412301215",
+   "canonical": "Central Bank of Kenya",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-0622501e37de",
+   "canonical": "Bank of Korea",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-5d95a2ee747c",
+   "canonical": "Central Bank of Lebanon",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-647ae379a90b",
+   "canonical": "Central Bank of Libya",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-aa694e21f053",
+   "canonical": "Bank of Mexico",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-644d3e147b9c",
+   "canonical": "Bank of the Netherlands Antilles",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-df2b1dc42601",
+   "canonical": "Reserve Bank of New Zealand",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-3c9401de3e7b",
+   "canonical": "Central Bank of Norway",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-3990bf612460",
+   "canonical": "State Bank of Pakistan",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-b36aa59f8927",
+   "canonical": "Central Bank of United Arab Emirates",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-34873c677fb1",
+   "canonical": "Bank of England",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-54284b5d588b",
+   "canonical": "Federal Reserve Bank of New York",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-f1151d8741aa",
+   "canonical": "Paraguay",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-e216eb836775",
+   "canonical": "Central Bank of Paraguay",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-25e474def0c3",
+   "canonical": "Peru",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-1b1d8e954412",
+   "canonical": "Central Reserve Bank of Peru",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-713d32ec030d",
+   "canonical": "Portugal",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-522623223f78",
+   "canonical": "Bank of Portugal",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-57d98bef22fb",
+   "canonical": "Romania",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-1bac1dfb4232",
+   "canonical": "National Bank of Romania",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-38c2121422b3",
+   "canonical": "Rwanda",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-7b0046710edf",
+   "canonical": "National Bank of Rwanda",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-435bcf4ebc67",
+   "canonical": "Samoa",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-9db4ddb0f980",
+   "canonical": "Central Bank of Samoa",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-5771a0827bdf",
+   "canonical": "Senegal",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-af28a974b3f7",
+   "canonical": "Serbia",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-1f52c396c1a6",
+   "canonical": "National Bank of Serbia",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-6b04d1404cf9",
+   "canonical": "Seychelles",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-edc02b1ef89d",
+   "canonical": "Central Bank of Seychelles",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-5995f2b8cfb1",
+   "canonical": "Slovakia",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-af503f33e4d1",
+   "canonical": "National Bank of Slovakia",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-fb16e9631c61",
+   "canonical": "Slovenia",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-3b66c91a8560",
+   "canonical": "Bank of Slovenia",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-213e961d35b4",
+   "canonical": "Surinam",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-f4307a431b04",
+   "canonical": "Central Bank of Suriname",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-7fdb46aa70f0",
+   "canonical": "Swaziland",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-2b592753cf99",
+   "canonical": "The Central Bank of Swaziland",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-fcf35f14a8c6",
+   "canonical": "Tajikistan",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-dc575864fa53",
+   "canonical": "National Bank of Tajikistan",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-127f26163779",
+   "canonical": "Thailand",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-eecc9700e9ff",
+   "canonical": "Bank of Thailand",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-c1830b63f9c2",
+   "canonical": "Togo",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-6d19f0874b7e",
+   "canonical": "Tonga",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-8cb8e41b00a8",
+   "canonical": "National Reserve Bank of Tonga",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-87d622f681ec",
+   "canonical": "Trinidad and Tobago",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-b39046bae55e",
+   "canonical": "Central Bank of Trinidad and Tobago",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-dcdad92e6b0d",
+   "canonical": "Tunisia",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-a06f3b4e291d",
+   "canonical": "Central Bank of Tunisia",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-80b1e6adb830",
+   "canonical": "Uganda",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-6e990ceec0d1",
+   "canonical": "Bank of Uganda",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-7b92dffbaf4b",
+   "canonical": "Vanuatu",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-3e4957f5c7b4",
+   "canonical": "Reserve Bank of Vanuatu",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-42b58beed29a",
+   "canonical": "Zambia",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-8c38c922d71d",
+   "canonical": "Bank of Zambia",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-c034ebfdb318",
+   "canonical": "Zimbabwe",
+   "type": "country",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-18ea81c99e69",
+   "canonical": "Reserve Bank of Zimbabwe",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-cd90a46575b9",
+   "canonical": "Qatar Central Bank",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-2a365a8d6c48",
+   "canonical": "Bank of Papua New Guinea",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-e5f73d26c4da",
+   "canonical": "National Bank of Poland",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-eb7bcf55c8d7",
+   "canonical": "Central Bank of Russia",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-0b7996af88b1",
+   "canonical": "Central Bank of the Republic of San Marino",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-99f1aa7daebb",
+   "canonical": "Bank of Sierra Leone",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-03d4877efac2",
+   "canonical": "Monetary Authority of Singapore",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-e74b9eb02994",
+   "canonical": "Central Bank of Solomon Islands",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-c5a6ce5d9e24",
+   "canonical": "South African Reserve Bank",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-87fc48f83573",
+   "canonical": "Bank of Spain",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-a5ee61ab249f",
+   "canonical": "Central Bank of Sri Lanka",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-0dbd640d3610",
+   "canonical": "Bank of Sudan",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-c929fc5e4ca0",
+   "canonical": "Sveriges Riksbank",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-7bd384d179d9",
+   "canonical": "Swiss National Bank",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-8ff5c9e5ea09",
+   "canonical": "Bank of Tanzania",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-a7a6a1516734",
+   "canonical": "Central Bank of the Republic of Turkey",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-1c4435face9a",
+   "canonical": "National Bank of Ukraine",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-32c079f928e5",
+   "canonical": "Central Bank of Venezuela",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-61c5952ce101",
+   "canonical": "The State Bank of Vietnam",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-8f2804107d9f",
+   "canonical": "Central Bank of Yemen",
+   "type": "organization",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-2d48be5cfee0",
+   "canonical": "Dent",
+   "type": "person",
+   "posts": 2,
+   "mentions": 2
+  },
+  {
+   "id": "qe-0487a4a052ae",
+   "canonical": "Duncan, Jr.",
+   "type": "person",
+   "posts": 2,
+   "mentions": 2
+  },
+  {
+   "id": "qe-0c35eb7c9c49",
+   "canonical": "Gutierrez",
+   "type": "person",
+   "posts": 2,
+   "mentions": 2
+  },
+  {
+   "id": "qe-25c57ca3838c",
+   "canonical": "Kihuen",
+   "type": "person",
+   "posts": 2,
+   "mentions": 2
+  },
+  {
+   "id": "qe-f9d8060e098c",
+   "canonical": "Cecilia Vega",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-3a4680ff5ce9",
+   "canonical": "Diane Sawyer",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-ce130e7572fe",
+   "canonical": "George Stephanoplous",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-20528df2a55a",
+   "canonical": "Jon Karl",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-ad25e7885cc8",
+   "canonical": "Liz Kreutz",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-2de11fafa366",
+   "canonical": "Julie Pace",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-df17a9e55850",
+   "canonical": "Ken Thomas",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-de341ee7073e",
+   "canonical": "Lisa Lerer",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-918f540905de",
+   "canonical": "Jennifer Epstein",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-18a6c733af04",
+   "canonical": "John Heillman",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-f51df9d1e180",
+   "canonical": "Mark Halperin",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-205eab44f34d",
+   "canonical": "John Dickerson",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-9b6c1fd9bc4e",
+   "canonical": "Norah O'Donnell",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-78e0639a31ff",
+   "canonical": "Steve Chagaris",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-0262c2ecc2d9",
+   "canonical": "Vicki Gordon",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-f78336075970",
+   "canonical": "John Harwood",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-604f2d211040",
+   "canonical": "Brianna Keilar",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-a65487d04890",
+   "canonical": "Dan Merica",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-7a2c2c55fc1a",
+   "canonical": "David Chailan",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-47cafe71e0fe",
+   "canonical": "Erin Burnett",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-6964e18829c9",
+   "canonical": "Gloria Borger",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-be2d541fee10",
+   "canonical": "Jeff Zeleny",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-49f918c2b2f5",
+   "canonical": "John Berman",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-36bacd26fde5",
+   "canonical": "Kate Bouldan",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-4c94a6a06428",
+   "canonical": "Maria Cardona",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-fb7aea8d1bc2",
+   "canonical": "Mark Preston",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-467076948eb8",
+   "canonical": "Sam Feist",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-8a8a2f9e3b5f",
+   "canonical": "Jackie Kucinich",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-326da877aa4d",
+   "canonical": "Alex Seitz-Wald",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-5ff5bfe12a7c",
+   "canonical": "Alex Wagner",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-8b7ce2aa27ac",
+   "canonical": "Andrea Mitchell",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-dd9972e950e3",
+   "canonical": "Ed Schultz",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-8a164b379dfe",
+   "canonical": "Joe Scarborough",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-9db5883ec684",
+   "canonical": "Phil Griffin",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-088d9c5f3090",
+   "canonical": "Rachel Racusen",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-4ce4e0e569d4",
+   "canonical": "Thomas Roberts",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-e81d77390ac5",
+   "canonical": "Chuck Todd",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-136d33e33cea",
+   "canonical": "Mark Murray",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-9f1193aade70",
+   "canonical": "Savannah Gutherie",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-6f49ef92ebb1",
+   "canonical": "Mike Oreskes",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-e87089f18254",
+   "canonical": "Tamara Keith",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-121902823e6e",
+   "canonical": "Geofe Earl",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-ac98a5c779d1",
+   "canonical": "Amy Chozik",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-772c7e4dca65",
+   "canonical": "Carolyn Ryan",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-4852b04127e4",
+   "canonical": "Gail Collins",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-98d61d2dce95",
+   "canonical": "John Harwoodje",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-5583bba9d661",
+   "canonical": "Jonathan Martin",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-e27af6a845d1",
+   "canonical": "Pat Healey",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-699fa59a120b",
+   "canonical": "Charlie Rose",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-f4aa26f2c3a0",
+   "canonical": "Annie Karni",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-f2e77658de3a",
+   "canonical": "Gabe Debenedetti",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-e2e10c208707",
+   "canonical": "Glenn Thrush",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-76844c860b54",
+   "canonical": "Kenneth Vogel",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-e009a8631960",
+   "canonical": "Mike Allen",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-cc9487841204",
+   "canonical": "Amanda Becker",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-cda801c70bcd",
+   "canonical": "Amie Parnes",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-5a040717aa5b",
+   "canonical": "Colleen McCain Nelson",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-0aff05df6680",
+   "canonical": "Laura Meckler",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-18107b67fc6d",
+   "canonical": "Peter Nicholas",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-d030b96cb710",
+   "canonical": "Matt Bai",
+   "type": "person",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-scripture-ephesians-6-10-18",
+   "canonical": "Ephesians 6:10-18",
+   "type": "creative_work",
+   "posts": 3,
+   "mentions": 3
+  },
+  {
    "id": "qe-scripture-1-cor-13-4-13",
    "canonical": "1 Cor 13:4-13",
+   "type": "creative_work",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-scripture-colossians-3-5",
+   "canonical": "Colossians 3:5",
+   "type": "creative_work",
+   "posts": 1,
+   "mentions": 1
+  },
+  {
+   "id": "qe-scripture-corinthians-13-4-13",
+   "canonical": "Corinthians 13:4-13",
    "type": "creative_work",
    "posts": 1,
    "mentions": 1
@@ -124,162 +2483,8 @@
    "mentions": 1
   },
   {
-   "id": "qe-9b181e56a4c1",
-   "canonical": "Barcelona",
-   "type": "location",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-e40236920216",
-   "canonical": "Board of Superintendence",
-   "type": "organization",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-40b3b980802c",
-   "canonical": "Castle Rock",
-   "type": "coded_alias",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-scripture-colossians-3-5",
-   "canonical": "Colossians 3:5",
-   "type": "creative_work",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-scripture-corinthians-13-4-13",
-   "canonical": "Corinthians 13:4-13",
-   "type": "creative_work",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-ff2721b349d1",
-   "canonical": "Dopey",
-   "type": "coded_alias",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-344c28f3a086",
-   "canonical": "EH CA",
-   "type": "coded_alias",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-73d64a484e4d",
-   "canonical": "Eye of Providence",
-   "type": "religious_spiritual",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-95b35eac2da9",
-   "canonical": "F-15",
-   "type": "military_asset_vessel",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-d7e7eeae34b1",
-   "canonical": "Ford",
-   "type": "organization",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-5f8841ad2402",
-   "canonical": "Fusion GPS",
-   "type": "organization",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-9271dec94a20",
-   "canonical": "Hilton family",
-   "type": "person",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-scripture-jeremiah-29-11",
-   "canonical": "Jeremiah 29:11",
-   "type": "creative_work",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-855d3dfd9c47",
-   "canonical": "JFK Con Room",
-   "type": "facility_property",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-4ab13e3a5689",
-   "canonical": "Lee S",
-   "type": "person",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-22d61afede73",
-   "canonical": "M-Institute",
-   "type": "organization",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-d27fa0601ace",
-   "canonical": "Mad Hatter",
-   "type": "coded_alias",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-2d1b610f1312",
-   "canonical": "MAGA",
-   "type": "political_group",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
    "id": "qe-scripture-matthew-6-13",
    "canonical": "Matthew 6:13",
-   "type": "creative_work",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-63904d84edb1",
-   "canonical": "Maverick",
-   "type": "coded_alias",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-81aabd241ebe",
-   "canonical": "NAT G",
-   "type": "coded_alias",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-889c6e61bb80",
-   "canonical": "Nightwatch",
-   "type": "coded_alias",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-scripture-proverbs-13-9",
-   "canonical": "Proverbs 13:9",
    "type": "creative_work",
    "posts": 1,
    "mentions": 1
@@ -292,57 +2497,15 @@
    "mentions": 1
   },
   {
-   "id": "qe-c8500713493a",
-   "canonical": "RT Kenya",
-   "type": "media_organization",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-8e89e8bf8a1d",
-   "canonical": "Secret Agents",
-   "type": "other_named_entity",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-d7f841ca1ad1",
-   "canonical": "Shareblue",
-   "type": "media_organization",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-6c9bfa949221",
-   "canonical": "Terminal 5",
-   "type": "facility_property",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-6997635c7a7c",
-   "canonical": "The Art of the Deal",
+   "id": "qe-scripture-proverbs-13-9",
+   "canonical": "Proverbs 13:9",
    "type": "creative_work",
    "posts": 1,
    "mentions": 1
   },
   {
-   "id": "qe-3d39629f9ecd",
-   "canonical": "The Cult",
-   "type": "political_group",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-736412bb6b8a",
-   "canonical": "Vatican Bank",
-   "type": "financial_institution",
-   "posts": 1,
-   "mentions": 1
-  },
-  {
-   "id": "qe-23403a5e15c0",
-   "canonical": "WarGames",
+   "id": "qe-scripture-jeremiah-29-11",
+   "canonical": "Jeremiah 29:11",
    "type": "creative_work",
    "posts": 1,
    "mentions": 1

@@ -1,17 +1,17 @@
 {
  "totals": {
-  "relationships": 4102,
+  "relationships": 4621,
   "byType": {
-   "prediction_assertion": 841,
+   "prediction_assertion": 934,
    "theme_support": 1721,
-   "evidence_claim": 649,
+   "evidence_claim": 837,
    "question_directive": 231,
    "claim_source_provided": 330,
    "prediction_source_provided": 35,
    "entity_code": 180,
-   "unresolved_occurrence": 115
+   "unresolved_occurrence": 353
   },
-  "postsWithAnalysis": 4918
+  "postsWithAnalysis": 4942
  },
  "checks": [
   [
@@ -55,14 +55,14 @@
    35
   ],
   [
-   "Prediction ↔ assertion family = the certified 841",
+   "Prediction ↔ assertion family = the certified 934",
    true,
-   841
+   934
   ],
   [
-   "unresolved edges = the 115 queue rows",
+   "unresolved edges = the 353 queue rows",
    true,
-   115
+   353
   ]
  ],
  "problems": {

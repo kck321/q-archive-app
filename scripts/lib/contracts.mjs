@@ -61,7 +61,13 @@ export const CANONICAL = {
   // quoted paragraph — into Q's own closing question, and that closing question is already
   // certified on its own at 782..799 and 386..404, where B3-NARROW put it. The owner ruled the
   // CLASSIFICATION; the span came from the segmenter and swallowed the paste.
-  questions: { occurrences: 6321, distinct: 5358, posts: 1705 },
+  // ROUND 2 OF THE UNHIGHLIGHTED-QUEUE REVIEW, 2026-08-24. The census re-measured against the
+  // rendered DOM queued 10,700 unpainted lines; the owner reviewed them and returned
+  // Q_Unhighlighted FINAL 2.xlsx. 2,799 rulings were applied and 3,261 rows produced none at
+  // all, because the section they name already certifies that span. Record:
+  // audit/unhighlighted-owner-rulings-2.json.
+  // 6,321 -> 6,327: 6 question rulings, carrying 5 wordings Questions did not hold.
+  questions: { occurrences: 6327, distinct: 5363, posts: 1705 },
   // v5, 16 Aug 2026 — Q Directives migrated to sourceSpansV2 provenance under owner ruling.
   // 2,705 -> 2,552: 153 occurrences removed from Q Directives ONLY (quoted news, scraped code,
   // blessings, declarative-lead misreads, questions, a prediction). Nothing was deleted from the
@@ -77,7 +83,10 @@ export const CANONICAL = {
   // REVERSES the REMOVE_QUOTED_SCRIPTURE half of the 2026-08-16 religious adjudication, by owner
   // ruling and on purpose: the passage IS the directive now. Posts RISE by 7 — seven drops carried
   // their scripture only as Claims and gain their first certified directive.
-  directives: { occurrences: 2902, distinct: 1830, posts: 1696 },
+  // 2,902 -> 3,304: 455 directive rulings, 50 of them on spans already certified. 24 more rows
+  // on that sheet are HELD, not applied - list markers, end-markers, two comms strings and one
+  // assertion, each of which instructs nobody to do anything.
+  directives: { occurrences: 3304, distinct: 1930, posts: 1917 },
   // 4,181 -> 4,188 on 2026-08-13 by owner adjudication, not by a classifier. Six exact
   // occurrences of "Pure evil." / "PURE EVIL." plus "The 'real' racist." in #2917. The corpus
   // search that found them also showed the fuller variants ("These people are pure evil.",
@@ -117,7 +126,9 @@ export const CANONICAL = {
   // 8,676 -> 8,631 on 2026-08-23, the same scripture ruling. 45 claims withdrawn, each one a
   // sentence inside a quoted passage that is now one Directive. A passage cannot be one Directive
   // and also nine Claims — that scattering is exactly what the ruling removes.
-  claims: { occurrences: 8631, distinct: 6765, posts: 3050 },
+  // 8,631 -> 10,258 on 2026-08-24, round 2 of the queue review: 1,654 claim rulings, 83 of them
+  // on spans Claims already certified, so only the shortfall is added.
+  claims: { occurrences: 10258, distinct: 7777, posts: 3223 },
   // 630 -> 595: -73 technical nonpredictions, -56 arguable rows withdrawn to the review
   // backlog, +66 unique moves from Claims, +28 high-confidence predictions the extractor
   // missed. posts 520 -> 490. The 91 withdrawn/held rows are NOT deleted — they sit in
@@ -131,7 +142,9 @@ export const CANONICAL = {
   // certified Predictions — #35's "whoever believes in him shall not perish but have eternal life"
   // and #1712's "Because of these, the wrath of God is coming." Same rule as the claims: a passage
   // that is one Directive is not also a row in Predictions.
-  predictions: { occurrences: 841, posts: 671 },
+  // 841 -> 934 on 2026-08-24: round 2 of the unhighlighted-queue review ruled 94 more lines
+  // Predictions; one span was already certified and Step 3B-1 withdrew none of the rest.
+  predictions: { occurrences: 934, posts: 671 },
   evidence: { occurrences: 6590, posts: 3883 },
   // canonical 1,240 -> 1,235: Owner Ruling 1 merged five duplicate identities. No occurrence moved.
   entities: {
@@ -194,7 +207,12 @@ export const CANONICAL = {
     // so once the label is the identity, keeping both counts the same characters twice and paints
     // the label as two touching spans. The qe- id is reserved dormant (229 -> 230), so a genuine
     // future mention of the book resolves back to it.
-    canonical: 1223, detectedCanonical: 1292, ownerRulings: 118, ownerMerges: 1, queueRulings: 508,
+    // 1,223 -> 1,532 on 2026-08-24: 308 identities round 2 introduces, plus Rachel Maddow, whose
+    // row was dormant because every mention she had was a URL slug and who #1515 names in prose.
+    // 244 of the 308 are read off three lists Q pastes verbatim - the central banks of #135-#138,
+    // the 'THE BRIDGE' media list in #1515, the retiring-Congress list in #1319/#1850 - where each
+    // line names two things and is SPLIT rather than invented. 128 wordings are held, not named.
+    canonical: 1532, detectedCanonical: 1292, ownerRulings: 118, ownerMerges: 1, queueRulings: 1007,
     /** Every resolved mention across all 1,334 certified entities. The headline figure. */
     // 8,227 -> 8,239: the RC alias ruling resolved 12 occurrences to Rachel Chandler. The merge
     // moved 4 mentions from the absorbed row onto hers and added none.
@@ -247,7 +265,11 @@ export const CANONICAL = {
   // 8,821 -> 8,833 on 2026-08-23, the scripture ruling. The 12 reference labels Q prints beside a
   // quoted passage become certified occurrences across 8 drops. They land on OWNER-RULING rows, so
   // the core and tail components are untouched and the third component carries all 12.
-    mentions: 8831,
+  // 8,831 -> 9,271 on 2026-08-24: +440 from round 2 of the queue review. 1,007 entity rulings
+  // across both rounds carry 1,167 occurrences; 727 were already held by a certified layer at
+  // that (post, alias), so only the shortfall is added - counting the rest again would show the
+  // reader an x2 Q never wrote.
+    mentions: 9271,
     /** How it is composed. The core figure is the section's history, not its headline. */
     // tailEntities is what the tail adjudication produced (1,239); one of them, Ray Chandler,
     // now ships merged into Rachel Chandler, so 1,238 tail rows appear in the artifact.
@@ -257,10 +279,10 @@ export const CANONICAL = {
     // +8 core, +58 tail from the queue rulings; the remaining 105 land on owner-ruling rows.
     // +6 tail: Nellie Ohr is an adjudicated-tail row.
     // Re-measured 2026-08-22 after the lane-B reviews and the duplicate-record reconciliation.
-    // The three components add to the headline: 5236 core + 2868 tail + 727 owner-ruling rows.
+    // The three components add to the headline: 5297 core + 2922 tail + 1052 owner-ruling rows.
     // tail 2,870 -> 2,868: "Ephesians" was an adjudicated-tail row and takes its two occurrences
     // with it. The 12 citation occurrences land on owner-ruling rows, so 715 -> 727 there.
-    coreEntities: 93, coreRegistryMentions: 5236, tailEntities: 966, tailMentions: 2868,
+    coreEntities: 93, coreRegistryMentions: 5297, tailEntities: 966, tailMentions: 2922,
   },
   // 2,393 detected + 2 owner rulings ("Ascension." -> Religion & Spirituality, #4963 and #4966).
   // The rulings live in audit/themes-owner-rulings.json and are merged by apply-themes.mjs, so
@@ -272,7 +294,9 @@ export const CANONICAL = {
   themes: { assignments: 2646, detected: 2393, ownerRulings: 253, posts: 1899 },
   // +8 occurrences: 15 bracket lines ruled, 7 already certified at their post. Each of the 8 is a
   // wording Codes did not hold, and 4 posts gain their first certified code.
-  codes: { occurrences: 1957, distinct: 747, posts: 856 },
+  // 1,957 -> 1,986 on 2026-08-24: 43 bracket rulings from round 2, 14 of them on tokens the
+  // bracket detector already certifies at that post.
+  codes: { occurrences: 1986, distinct: 771, posts: 861 },
   // 5,251 detected + 4 owner acrostic rulings (#4951 NCSWIC, #129 NSA, #129 CIA, #150 LDR),
   // held in audit/emphasis-owner-rulings.json so re-deriving the audit cannot erase them.
   // 5,251 detected, less 2 owner withdrawals and 2,138 rows retired by the question rule
@@ -302,7 +326,10 @@ export const CANONICAL = {
   // Certified data is untouched — those mentions are excluded from Entities today and stay
   // excluded until ruled, which is exactly what a queue row is for.
   // Canonical file: audit/entities-quote-boundary-pending.json.
-  resolution: { total: 115, entity: 30, theme: 16, code: 28, classification: 31, source_reference: 10 },
+  // 115 -> 353 on 2026-08-24: the owner's Resolution Center sheet, 238 comms strings,
+  // coordinates and glyphs sent to the queue rather than to a section. Nothing is certified by
+  // them and no section count moves; the queue is where the archive says what it has not settled.
+  resolution: { total: 353, entity: 30, theme: 16, code: 266, classification: 31, source_reference: 10 },
 }
 
 /**
@@ -486,7 +513,15 @@ export const KNOWN_DEBT = {
   // postsAffected stays 235: the repair removed six OCCURRENCES but no drop lost its last one —
   // #2211, #4630 and #4632 still carry other over-extended spans. Occurrence count and post count
   // move independently, which is why both are recorded.
-  postsAffected: 235,
+  // 235 -> 269 on 2026-08-24, and it is the SAME cause as the +1 recorded just above for #4861:
+  // Q writes a list with his own '>' bullet, and sourceLines() reads a leading '>' as a quotation
+  // marker. #3838 lists '>Race / >Religion / >Class / >Political Affiliation / >Gender'; #1749
+  // lists '>GOOD v EVIL / >RIGHT v WRONG / >HUMANITY'. Round 2 of the unhighlighted-sentence
+  // review certified 162 such lines, every one of them Q's words with Q's punctuation in front.
+  // The certified sections are right and the detector is wrong, exactly as for the other 773,
+  // and the direction of the error is unchanged: sourceLines() over-claims source, so this guard
+  // under-reports Q-authored text rather than admitting text Q never wrote.
+  postsAffected: 269,
   // RECOMPUTED 2026-08-13 after the quote-boundary fix, not bumped to satisfy a gate.
   //
   // sourceLines() treated a line ENDING in a closing quotation mark as still inside the quote,
@@ -565,7 +600,10 @@ export const KNOWN_DEBT = {
   //
   // Net: 44 debt occurrences out, 11 in. The set file is re-frozen with the ruling, and the drift
   // that produced it is enumerated in audit/source-boundary-drift.json.
-  baseline: { questions: 99, directives: 107, claims: 552, emphasis: 0 },
+  // 2026-08-24, round 2: directives 107 -> 115, claims 552 -> 721. Questions unchanged at 99.
+  // All 162 are Q's own '>' bullet lines - see the postsAffected note above for why the count
+  // moved without the detector claiming any new territory.
+  baseline: { questions: 99, directives: 115, claims: 721, emphasis: 0 },
   // 102 -> 103 and 123 -> 124 on 2026-08-13, ruled BENIGN and documented rather than bumped
   // quietly. Cause: literal-span materialisation. The isolation test now measures the literal
   // form of a question rather than its certified normalised text, and a longer span is

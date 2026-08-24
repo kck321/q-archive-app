@@ -1,6 +1,6 @@
 {
  "note": "Immutable entity identity. An id is minted once and never derived from the canonical name, the type, the mention count or the row position — all of which legitimately change about an entity that is still the same entity. canonical and slug are attributes stored beside the id; previousCanonicals keeps every earlier or absorbed spelling resolving to it. auditEntityIds is the crosswalk to the ENT-#### numbers used by the 2026-08-16 hover audit, which were positional and must never be stored as identity.",
- "minted": 1448,
+ "minted": 1756,
  "entries": {
   "qe-e4b9b2985b7c": {
    "canonical": "United States",
@@ -11550,6 +11550,1854 @@
   "qe-889c6e61bb80": {
    "canonical": "Nightwatch",
    "slug": "nightwatch",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-1904e9e4a5dd": {
+   "canonical": "Albania",
+   "slug": "albania",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-bb9460380aeb": {
+   "canonical": "Bank of Albania",
+   "slug": "bank-of-albania",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-3d31e0b0b835": {
+   "canonical": "Algeria",
+   "slug": "algeria",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-90a691405257": {
+   "canonical": "Bank of Algeria",
+   "slug": "bank-of-algeria",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-07f466e45a27": {
+   "canonical": "Argentina",
+   "slug": "argentina",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-4e5245059c3c": {
+   "canonical": "Central Bank of Argentina",
+   "slug": "central-bank-of-argentina",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-67e6838767b1": {
+   "canonical": "Aruba",
+   "slug": "aruba",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-211966e62c2a": {
+   "canonical": "Central Bank of Aruba",
+   "slug": "central-bank-of-aruba",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-2a609b3b8b75": {
+   "canonical": "Azerbaijan",
+   "slug": "azerbaijan",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-665d7430de84": {
+   "canonical": "Central Bank of Azerbaijan Republic",
+   "slug": "central-bank-of-azerbaijan-republic",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-305c78e19b26": {
+   "canonical": "Bahamas",
+   "slug": "bahamas",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-f7090c157509": {
+   "canonical": "Central Bank of The Bahamas",
+   "slug": "central-bank-of-the-bahamas",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-6358cee04b93": {
+   "canonical": "Bahrain",
+   "slug": "bahrain",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-4bb3729cea4e": {
+   "canonical": "Central Bank of Bahrain",
+   "slug": "central-bank-of-bahrain",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-8e4e7653f83e": {
+   "canonical": "Bangladesh",
+   "slug": "bangladesh",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-6ab6c5afe412": {
+   "canonical": "Bangladesh Bank",
+   "slug": "bangladesh-bank",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-11e7e5d1735a": {
+   "canonical": "Barbados",
+   "slug": "barbados",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-e910f19802e0": {
+   "canonical": "Central Bank of Barbados",
+   "slug": "central-bank-of-barbados",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-f9ef8f09e19a": {
+   "canonical": "Belarus",
+   "slug": "belarus",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-14ddf83b2cf1": {
+   "canonical": "National Bank of the Republic of Belarus",
+   "slug": "national-bank-of-the-republic-of-belarus",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-5d750b9ac02f": {
+   "canonical": "Belize",
+   "slug": "belize",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-47e444b0281a": {
+   "canonical": "Central Bank of Belize",
+   "slug": "central-bank-of-belize",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-0cbb2892c66a": {
+   "canonical": "Benin",
+   "slug": "benin",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-5abb48de3219": {
+   "canonical": "Central Bank of West African States (BCEAO)",
+   "slug": "central-bank-of-west-african-states-bceao",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-e51ec7af5e07": {
+   "canonical": "Bermuda",
+   "slug": "bermuda",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-6899ccb55966": {
+   "canonical": "Bermuda Monetary Authority",
+   "slug": "bermuda-monetary-authority",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-21f2b6d05394": {
+   "canonical": "Bhutan",
+   "slug": "bhutan",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-afce96b8c835": {
+   "canonical": "Royal Monetary Authority of Bhutan",
+   "slug": "royal-monetary-authority-of-bhutan",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-2be6563c2e6a": {
+   "canonical": "Bolivia",
+   "slug": "bolivia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-20bf317bb5c5": {
+   "canonical": "Central Bank of Bolivia",
+   "slug": "central-bank-of-bolivia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-81fc4d7c494f": {
+   "canonical": "Bosnia",
+   "slug": "bosnia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-0c7055206acc": {
+   "canonical": "Central Bank of Bosnia and Herzegovina",
+   "slug": "central-bank-of-bosnia-and-herzegovina",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-98e7cc900e64": {
+   "canonical": "Botswana",
+   "slug": "botswana",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-819a8f02fff4": {
+   "canonical": "Bank of Botswana",
+   "slug": "bank-of-botswana",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-2ff454bf465d": {
+   "canonical": "Bulgaria",
+   "slug": "bulgaria",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-b86629998191": {
+   "canonical": "Bulgarian National Bank",
+   "slug": "bulgarian-national-bank",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-06f38ec2dcbe": {
+   "canonical": "Burundi",
+   "slug": "burundi",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-00b708298d81": {
+   "canonical": "Bank of the Republic of Burundi",
+   "slug": "bank-of-the-republic-of-burundi",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-758922687247": {
+   "canonical": "Cambodia",
+   "slug": "cambodia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-727b1198794f": {
+   "canonical": "National Bank of Cambodia",
+   "slug": "national-bank-of-cambodia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-625255f02cf4": {
+   "canonical": "Bank of Afghanistan",
+   "slug": "bank-of-afghanistan",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-edb105bc951f": {
+   "canonical": "Central Bank of Armenia",
+   "slug": "central-bank-of-armenia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-1b4b6e4a0c28": {
+   "canonical": "Reserve Bank of Australia",
+   "slug": "reserve-bank-of-australia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-087ab1ea32e0": {
+   "canonical": "Austrian National Bank",
+   "slug": "austrian-national-bank",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-ad3fc5ed9020": {
+   "canonical": "National Bank of Belgium",
+   "slug": "national-bank-of-belgium",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-10aa234f1f75": {
+   "canonical": "Central Bank of Brazil",
+   "slug": "central-bank-of-brazil",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-7a659761776f": {
+   "canonical": "Bank of Canada – Banque du Canada",
+   "slug": "bank-of-canada-banque-du-canada",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-d6bf19e489c7": {
+   "canonical": "Chad",
+   "slug": "chad",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-a802edcdf65e": {
+   "canonical": "Bank of Central African States",
+   "slug": "bank-of-central-african-states",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-f510ed1e8955": {
+   "canonical": "Chile",
+   "slug": "chile",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-2a786f203730": {
+   "canonical": "Central Bank of Chile",
+   "slug": "central-bank-of-chile",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-ac07b7ec37ce": {
+   "canonical": "Colombia",
+   "slug": "colombia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-3d3879f0058d": {
+   "canonical": "Bank of the Republic",
+   "slug": "bank-of-the-republic",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-b13879b5f596": {
+   "canonical": "Comoros",
+   "slug": "comoros",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-adac4cc3a263": {
+   "canonical": "Central Bank of Comoros",
+   "slug": "central-bank-of-comoros",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-43292fba2ab7": {
+   "canonical": "Congo",
+   "slug": "congo",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-dcab58fa3e25": {
+   "canonical": "Côte d’Ivoire",
+   "slug": "c-te-d-ivoire",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-f6439dd04f8d": {
+   "canonical": "Croatia",
+   "slug": "croatia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-0fc475b60a5f": {
+   "canonical": "Croatian National Bank",
+   "slug": "croatian-national-bank",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-ddc7f107196a": {
+   "canonical": "Cyprus",
+   "slug": "cyprus",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-086f34cfcbaa": {
+   "canonical": "Central Bank of Cyprus",
+   "slug": "central-bank-of-cyprus",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-4e5a256fec9a": {
+   "canonical": "Denmark",
+   "slug": "denmark",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-3281edd91760": {
+   "canonical": "National Bank of Denmark",
+   "slug": "national-bank-of-denmark",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-8c5153d58668": {
+   "canonical": "Estonia",
+   "slug": "estonia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-3f2bf08a90e0": {
+   "canonical": "Bank of Estonia",
+   "slug": "bank-of-estonia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-fddea527294c": {
+   "canonical": "Ethiopia",
+   "slug": "ethiopia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-f0140d3c36fa": {
+   "canonical": "National Bank of Ethiopia",
+   "slug": "national-bank-of-ethiopia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-458786e9f8ae": {
+   "canonical": "Fiji",
+   "slug": "fiji",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-9cf850ef5e1d": {
+   "canonical": "Reserve Bank of Fiji",
+   "slug": "reserve-bank-of-fiji",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-d950e25b51e6": {
+   "canonical": "Finland",
+   "slug": "finland",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-a3aec9e5c20e": {
+   "canonical": "Bank of Finland",
+   "slug": "bank-of-finland",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-a42eb08ae846": {
+   "canonical": "Gabon",
+   "slug": "gabon",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-9738833efb76": {
+   "canonical": "Ghana",
+   "slug": "ghana",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-8352f39db177": {
+   "canonical": "Bank of Ghana",
+   "slug": "bank-of-ghana",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-2b90c0394a91": {
+   "canonical": "Guatemala",
+   "slug": "guatemala",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-b12c4b9bc969": {
+   "canonical": "Bank of Guatemala",
+   "slug": "bank-of-guatemala",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-68667fe95861": {
+   "canonical": "Guyana",
+   "slug": "guyana",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-239ca8bd721e": {
+   "canonical": "Bank of Guyana",
+   "slug": "bank-of-guyana",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-f711f3c251fa": {
+   "canonical": "Honduras",
+   "slug": "honduras",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-0d86fa532496": {
+   "canonical": "Central Bank of Honduras",
+   "slug": "central-bank-of-honduras",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-16063a655590": {
+   "canonical": "Hungary",
+   "slug": "hungary",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-5ddec87a5302": {
+   "canonical": "Magyar Nemzeti Bank",
+   "slug": "magyar-nemzeti-bank",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-441166eb4593": {
+   "canonical": "Iceland",
+   "slug": "iceland",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-a76ddc866761": {
+   "canonical": "Central Bank of Iceland",
+   "slug": "central-bank-of-iceland",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-bbc2c9ac621a": {
+   "canonical": "Indonesia",
+   "slug": "indonesia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-0cfd0074c34b": {
+   "canonical": "Bank Indonesia",
+   "slug": "bank-indonesia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-d847317b2db6": {
+   "canonical": "The Central Bank of the Islamic Republic of Iran",
+   "slug": "the-central-bank-of-the-islamic-republic-of-iran",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-0b8bb4ce02a9": {
+   "canonical": "Cayman Islands Monetary Authority",
+   "slug": "cayman-islands-monetary-authority",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-6278cb896017": {
+   "canonical": "The People’s Bank of China",
+   "slug": "the-people-s-bank-of-china",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-999b6477ac59": {
+   "canonical": "Central Bank of Costa Rica",
+   "slug": "central-bank-of-costa-rica",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-c87bf20ea416": {
+   "canonical": "Central Bank of Cuba",
+   "slug": "central-bank-of-cuba",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-ed7f16592539": {
+   "canonical": "Czech National Bank",
+   "slug": "czech-national-bank",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-d6d2af5606b7": {
+   "canonical": "Central Bank of the Dominican Republic",
+   "slug": "central-bank-of-the-dominican-republic",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-b1a3e9924255": {
+   "canonical": "East Caribbean area",
+   "slug": "east-caribbean-area",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-e626e9dbcd4f": {
+   "canonical": "Eastern Caribbean Central Bank",
+   "slug": "eastern-caribbean-central-bank",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-2be3e0cadf9a": {
+   "canonical": "Central Bank of Ecuador",
+   "slug": "central-bank-of-ecuador",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-456198550a6c": {
+   "canonical": "Central Bank of Egypt",
+   "slug": "central-bank-of-egypt",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-1e504aae9963": {
+   "canonical": "Central Reserve Bank of El Salvador",
+   "slug": "central-reserve-bank-of-el-salvador",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-c6a6b7de830b": {
+   "canonical": "European Central Bank",
+   "slug": "european-central-bank",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-df19811280f0": {
+   "canonical": "Bank of France",
+   "slug": "bank-of-france",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-f75a910fd2a1": {
+   "canonical": "Central Bank of The Gambia",
+   "slug": "central-bank-of-the-gambia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-28b599dd1096": {
+   "canonical": "National Bank of Georgia",
+   "slug": "national-bank-of-georgia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-d6868867fb4e": {
+   "canonical": "Deutsche Bundesbank",
+   "slug": "deutsche-bundesbank",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-8c75f1b3d3f0": {
+   "canonical": "Bank of Greece",
+   "slug": "bank-of-greece",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-49dc8a747f78": {
+   "canonical": "Central Bank of Haiti",
+   "slug": "central-bank-of-haiti",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-6a0b1f3ec955": {
+   "canonical": "Hong Kong Monetary Authority",
+   "slug": "hong-kong-monetary-authority",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-ee65da307c89": {
+   "canonical": "Reserve Bank of India",
+   "slug": "reserve-bank-of-india",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-8fcd408a5c2f": {
+   "canonical": "Jamaica",
+   "slug": "jamaica",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-e3256990e4a2": {
+   "canonical": "Bank of Jamaica",
+   "slug": "bank-of-jamaica",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-d8d48e8d9887": {
+   "canonical": "Kuwait",
+   "slug": "kuwait",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-4be6de4cd892": {
+   "canonical": "Central Bank of Kuwait",
+   "slug": "central-bank-of-kuwait",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-bf80701bf36c": {
+   "canonical": "Kyrgyzstan",
+   "slug": "kyrgyzstan",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-de19d7c755f2": {
+   "canonical": "National Bank of the Kyrgyz Republic",
+   "slug": "national-bank-of-the-kyrgyz-republic",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-a16b32bf1a84": {
+   "canonical": "Latvia",
+   "slug": "latvia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-e0d94e532c65": {
+   "canonical": "Bank of Latvia",
+   "slug": "bank-of-latvia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-24ebee39ed01": {
+   "canonical": "Lesotho",
+   "slug": "lesotho",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-7c4f4e912106": {
+   "canonical": "Central Bank of Lesotho",
+   "slug": "central-bank-of-lesotho",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-1cd04d0e1356": {
+   "canonical": "Uruguay",
+   "slug": "uruguay",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-36fdde9bc9a4": {
+   "canonical": "Central Bank of Uruguay",
+   "slug": "central-bank-of-uruguay",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-32332bd225e3": {
+   "canonical": "Lithuania",
+   "slug": "lithuania",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-f77773770060": {
+   "canonical": "Bank of Lithuania",
+   "slug": "bank-of-lithuania",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-cf5a43627b8a": {
+   "canonical": "Luxembourg",
+   "slug": "luxembourg",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-b9ad89be47ef": {
+   "canonical": "Central Bank of Luxembourg",
+   "slug": "central-bank-of-luxembourg",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-44e8ee835bea": {
+   "canonical": "Macao",
+   "slug": "macao",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-62b2862c7fc5": {
+   "canonical": "Monetary Authority of Macao",
+   "slug": "monetary-authority-of-macao",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-6da91c6113cc": {
+   "canonical": "Macedonia",
+   "slug": "macedonia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-d2972fb52d6e": {
+   "canonical": "National Bank of the Republic of Macedonia",
+   "slug": "national-bank-of-the-republic-of-macedonia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-f8958e4ddff7": {
+   "canonical": "Madagascar",
+   "slug": "madagascar",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-1b6219d34434": {
+   "canonical": "Central Bank of Madagascar",
+   "slug": "central-bank-of-madagascar",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-09327273d684": {
+   "canonical": "Malawi",
+   "slug": "malawi",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-ef96bd6455b0": {
+   "canonical": "Reserve Bank of Malawi",
+   "slug": "reserve-bank-of-malawi",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-a2b4e5e74ae9": {
+   "canonical": "Malaysia",
+   "slug": "malaysia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-2282d0179d9d": {
+   "canonical": "Central Bank of Malaysia",
+   "slug": "central-bank-of-malaysia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-58839de49bd1": {
+   "canonical": "Mali",
+   "slug": "mali",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-6e00d0ffea74": {
+   "canonical": "Malta",
+   "slug": "malta",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-89ec4a95de39": {
+   "canonical": "Central Bank of Malta",
+   "slug": "central-bank-of-malta",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-8a8a2100a2d4": {
+   "canonical": "Mauritius",
+   "slug": "mauritius",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-5be9c913dd57": {
+   "canonical": "Bank of Mauritius",
+   "slug": "bank-of-mauritius",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-03c59b63932a": {
+   "canonical": "Moldova",
+   "slug": "moldova",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-1d3dd631bd6e": {
+   "canonical": "National Bank of Moldova",
+   "slug": "national-bank-of-moldova",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-68cb332609f3": {
+   "canonical": "Mongolia",
+   "slug": "mongolia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-8300b7eb6398": {
+   "canonical": "Bank of Mongolia",
+   "slug": "bank-of-mongolia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-0a21fec23c2b": {
+   "canonical": "Montenegro",
+   "slug": "montenegro",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-cb1bb14f8394": {
+   "canonical": "Central Bank of Montenegro",
+   "slug": "central-bank-of-montenegro",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-227b04c2911c": {
+   "canonical": "Morocco",
+   "slug": "morocco",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-3db0f81882f1": {
+   "canonical": "Bank of Morocco",
+   "slug": "bank-of-morocco",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-4c9420670b10": {
+   "canonical": "Mozambique",
+   "slug": "mozambique",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-3d56d0641f69": {
+   "canonical": "Bank of Mozambique",
+   "slug": "bank-of-mozambique",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-702c461bb9ee": {
+   "canonical": "Namibia",
+   "slug": "namibia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-951c9bf19e70": {
+   "canonical": "Bank of Namibia",
+   "slug": "bank-of-namibia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-e1802171b7dc": {
+   "canonical": "Nepal",
+   "slug": "nepal",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-731304ef1302": {
+   "canonical": "Central Bank of Nepal",
+   "slug": "central-bank-of-nepal",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-a632d63bcc30": {
+   "canonical": "Netherlands",
+   "slug": "netherlands",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-9361f6da7bf9": {
+   "canonical": "Netherlands Bank",
+   "slug": "netherlands-bank",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-38d728410fd2": {
+   "canonical": "Nicaragua",
+   "slug": "nicaragua",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-2c74baf2c271": {
+   "canonical": "Central Bank of Nicaragua",
+   "slug": "central-bank-of-nicaragua",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-193dd0ceb8bf": {
+   "canonical": "Niger",
+   "slug": "niger",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-51fd389c7124": {
+   "canonical": "Nigeria",
+   "slug": "nigeria",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-756ff394cbdb": {
+   "canonical": "Central Bank of Nigeria",
+   "slug": "central-bank-of-nigeria",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-b3d9d4d1d93d": {
+   "canonical": "Oman",
+   "slug": "oman",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-7051c43e49cd": {
+   "canonical": "Central Bank of Oman",
+   "slug": "central-bank-of-oman",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-b1efa8294261": {
+   "canonical": "Central Bank of Iraq",
+   "slug": "central-bank-of-iraq",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-d753d553b0bb": {
+   "canonical": "Central Bank and Financial Services Authority of Ireland",
+   "slug": "central-bank-and-financial-services-authority-of-ireland",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-ef18b71df36a": {
+   "canonical": "Bank of Israel",
+   "slug": "bank-of-israel",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-b8fa33b12aed": {
+   "canonical": "Bank of Italy",
+   "slug": "bank-of-italy",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-67deaa87fbb8": {
+   "canonical": "Bank of Japan",
+   "slug": "bank-of-japan",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-a7e514cf00dc": {
+   "canonical": "Central Bank of Jordan",
+   "slug": "central-bank-of-jordan",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-8af98710d8bb": {
+   "canonical": "National Bank of Kazakhstan",
+   "slug": "national-bank-of-kazakhstan",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-6e0412301215": {
+   "canonical": "Central Bank of Kenya",
+   "slug": "central-bank-of-kenya",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-0622501e37de": {
+   "canonical": "Bank of Korea",
+   "slug": "bank-of-korea",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-5d95a2ee747c": {
+   "canonical": "Central Bank of Lebanon",
+   "slug": "central-bank-of-lebanon",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-647ae379a90b": {
+   "canonical": "Central Bank of Libya",
+   "slug": "central-bank-of-libya",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-aa694e21f053": {
+   "canonical": "Bank of Mexico",
+   "slug": "bank-of-mexico",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-644d3e147b9c": {
+   "canonical": "Bank of the Netherlands Antilles",
+   "slug": "bank-of-the-netherlands-antilles",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-df2b1dc42601": {
+   "canonical": "Reserve Bank of New Zealand",
+   "slug": "reserve-bank-of-new-zealand",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-3c9401de3e7b": {
+   "canonical": "Central Bank of Norway",
+   "slug": "central-bank-of-norway",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-3990bf612460": {
+   "canonical": "State Bank of Pakistan",
+   "slug": "state-bank-of-pakistan",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-b36aa59f8927": {
+   "canonical": "Central Bank of United Arab Emirates",
+   "slug": "central-bank-of-united-arab-emirates",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-34873c677fb1": {
+   "canonical": "Bank of England",
+   "slug": "bank-of-england",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-54284b5d588b": {
+   "canonical": "Federal Reserve Bank of New York",
+   "slug": "federal-reserve-bank-of-new-york",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-f1151d8741aa": {
+   "canonical": "Paraguay",
+   "slug": "paraguay",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-e216eb836775": {
+   "canonical": "Central Bank of Paraguay",
+   "slug": "central-bank-of-paraguay",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-25e474def0c3": {
+   "canonical": "Peru",
+   "slug": "peru",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-1b1d8e954412": {
+   "canonical": "Central Reserve Bank of Peru",
+   "slug": "central-reserve-bank-of-peru",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-713d32ec030d": {
+   "canonical": "Portugal",
+   "slug": "portugal",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-522623223f78": {
+   "canonical": "Bank of Portugal",
+   "slug": "bank-of-portugal",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-57d98bef22fb": {
+   "canonical": "Romania",
+   "slug": "romania",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-1bac1dfb4232": {
+   "canonical": "National Bank of Romania",
+   "slug": "national-bank-of-romania",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-38c2121422b3": {
+   "canonical": "Rwanda",
+   "slug": "rwanda",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-7b0046710edf": {
+   "canonical": "National Bank of Rwanda",
+   "slug": "national-bank-of-rwanda",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-435bcf4ebc67": {
+   "canonical": "Samoa",
+   "slug": "samoa",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-9db4ddb0f980": {
+   "canonical": "Central Bank of Samoa",
+   "slug": "central-bank-of-samoa",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-5771a0827bdf": {
+   "canonical": "Senegal",
+   "slug": "senegal",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-af28a974b3f7": {
+   "canonical": "Serbia",
+   "slug": "serbia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-1f52c396c1a6": {
+   "canonical": "National Bank of Serbia",
+   "slug": "national-bank-of-serbia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-6b04d1404cf9": {
+   "canonical": "Seychelles",
+   "slug": "seychelles",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-edc02b1ef89d": {
+   "canonical": "Central Bank of Seychelles",
+   "slug": "central-bank-of-seychelles",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-5995f2b8cfb1": {
+   "canonical": "Slovakia",
+   "slug": "slovakia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-af503f33e4d1": {
+   "canonical": "National Bank of Slovakia",
+   "slug": "national-bank-of-slovakia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-fb16e9631c61": {
+   "canonical": "Slovenia",
+   "slug": "slovenia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-3b66c91a8560": {
+   "canonical": "Bank of Slovenia",
+   "slug": "bank-of-slovenia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-213e961d35b4": {
+   "canonical": "Surinam",
+   "slug": "surinam",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-f4307a431b04": {
+   "canonical": "Central Bank of Suriname",
+   "slug": "central-bank-of-suriname",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-7fdb46aa70f0": {
+   "canonical": "Swaziland",
+   "slug": "swaziland",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-2b592753cf99": {
+   "canonical": "The Central Bank of Swaziland",
+   "slug": "the-central-bank-of-swaziland",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-fcf35f14a8c6": {
+   "canonical": "Tajikistan",
+   "slug": "tajikistan",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-dc575864fa53": {
+   "canonical": "National Bank of Tajikistan",
+   "slug": "national-bank-of-tajikistan",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-127f26163779": {
+   "canonical": "Thailand",
+   "slug": "thailand",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-eecc9700e9ff": {
+   "canonical": "Bank of Thailand",
+   "slug": "bank-of-thailand",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-c1830b63f9c2": {
+   "canonical": "Togo",
+   "slug": "togo",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-6d19f0874b7e": {
+   "canonical": "Tonga",
+   "slug": "tonga",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-8cb8e41b00a8": {
+   "canonical": "National Reserve Bank of Tonga",
+   "slug": "national-reserve-bank-of-tonga",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-87d622f681ec": {
+   "canonical": "Trinidad and Tobago",
+   "slug": "trinidad-and-tobago",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-b39046bae55e": {
+   "canonical": "Central Bank of Trinidad and Tobago",
+   "slug": "central-bank-of-trinidad-and-tobago",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-dcdad92e6b0d": {
+   "canonical": "Tunisia",
+   "slug": "tunisia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-a06f3b4e291d": {
+   "canonical": "Central Bank of Tunisia",
+   "slug": "central-bank-of-tunisia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-80b1e6adb830": {
+   "canonical": "Uganda",
+   "slug": "uganda",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-6e990ceec0d1": {
+   "canonical": "Bank of Uganda",
+   "slug": "bank-of-uganda",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-7b92dffbaf4b": {
+   "canonical": "Vanuatu",
+   "slug": "vanuatu",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-3e4957f5c7b4": {
+   "canonical": "Reserve Bank of Vanuatu",
+   "slug": "reserve-bank-of-vanuatu",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-42b58beed29a": {
+   "canonical": "Zambia",
+   "slug": "zambia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-8c38c922d71d": {
+   "canonical": "Bank of Zambia",
+   "slug": "bank-of-zambia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-c034ebfdb318": {
+   "canonical": "Zimbabwe",
+   "slug": "zimbabwe",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-18ea81c99e69": {
+   "canonical": "Reserve Bank of Zimbabwe",
+   "slug": "reserve-bank-of-zimbabwe",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-cd90a46575b9": {
+   "canonical": "Qatar Central Bank",
+   "slug": "qatar-central-bank",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-2a365a8d6c48": {
+   "canonical": "Bank of Papua New Guinea",
+   "slug": "bank-of-papua-new-guinea",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-e5f73d26c4da": {
+   "canonical": "National Bank of Poland",
+   "slug": "national-bank-of-poland",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-eb7bcf55c8d7": {
+   "canonical": "Central Bank of Russia",
+   "slug": "central-bank-of-russia",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-0b7996af88b1": {
+   "canonical": "Central Bank of the Republic of San Marino",
+   "slug": "central-bank-of-the-republic-of-san-marino",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-99f1aa7daebb": {
+   "canonical": "Bank of Sierra Leone",
+   "slug": "bank-of-sierra-leone",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-03d4877efac2": {
+   "canonical": "Monetary Authority of Singapore",
+   "slug": "monetary-authority-of-singapore",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-e74b9eb02994": {
+   "canonical": "Central Bank of Solomon Islands",
+   "slug": "central-bank-of-solomon-islands",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-c5a6ce5d9e24": {
+   "canonical": "South African Reserve Bank",
+   "slug": "south-african-reserve-bank",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-87fc48f83573": {
+   "canonical": "Bank of Spain",
+   "slug": "bank-of-spain",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-a5ee61ab249f": {
+   "canonical": "Central Bank of Sri Lanka",
+   "slug": "central-bank-of-sri-lanka",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-0dbd640d3610": {
+   "canonical": "Bank of Sudan",
+   "slug": "bank-of-sudan",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-c929fc5e4ca0": {
+   "canonical": "Sveriges Riksbank",
+   "slug": "sveriges-riksbank",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-7bd384d179d9": {
+   "canonical": "Swiss National Bank",
+   "slug": "swiss-national-bank",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-8ff5c9e5ea09": {
+   "canonical": "Bank of Tanzania",
+   "slug": "bank-of-tanzania",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-a7a6a1516734": {
+   "canonical": "Central Bank of the Republic of Turkey",
+   "slug": "central-bank-of-the-republic-of-turkey",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-1c4435face9a": {
+   "canonical": "National Bank of Ukraine",
+   "slug": "national-bank-of-ukraine",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-32c079f928e5": {
+   "canonical": "Central Bank of Venezuela",
+   "slug": "central-bank-of-venezuela",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-61c5952ce101": {
+   "canonical": "The State Bank of Vietnam",
+   "slug": "the-state-bank-of-vietnam",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-8f2804107d9f": {
+   "canonical": "Central Bank of Yemen",
+   "slug": "central-bank-of-yemen",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-2d48be5cfee0": {
+   "canonical": "Dent",
+   "slug": "dent",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-0487a4a052ae": {
+   "canonical": "Duncan, Jr.",
+   "slug": "duncan-jr",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-0c35eb7c9c49": {
+   "canonical": "Gutierrez",
+   "slug": "gutierrez",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-25c57ca3838c": {
+   "canonical": "Kihuen",
+   "slug": "kihuen",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-f9d8060e098c": {
+   "canonical": "Cecilia Vega",
+   "slug": "cecilia-vega",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-3a4680ff5ce9": {
+   "canonical": "Diane Sawyer",
+   "slug": "diane-sawyer",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-ce130e7572fe": {
+   "canonical": "George Stephanoplous",
+   "slug": "george-stephanoplous",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-20528df2a55a": {
+   "canonical": "Jon Karl",
+   "slug": "jon-karl",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-ad25e7885cc8": {
+   "canonical": "Liz Kreutz",
+   "slug": "liz-kreutz",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-2de11fafa366": {
+   "canonical": "Julie Pace",
+   "slug": "julie-pace",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-df17a9e55850": {
+   "canonical": "Ken Thomas",
+   "slug": "ken-thomas",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-de341ee7073e": {
+   "canonical": "Lisa Lerer",
+   "slug": "lisa-lerer",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-918f540905de": {
+   "canonical": "Jennifer Epstein",
+   "slug": "jennifer-epstein",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-18a6c733af04": {
+   "canonical": "John Heillman",
+   "slug": "john-heillman",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-f51df9d1e180": {
+   "canonical": "Mark Halperin",
+   "slug": "mark-halperin",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-205eab44f34d": {
+   "canonical": "John Dickerson",
+   "slug": "john-dickerson",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-9b6c1fd9bc4e": {
+   "canonical": "Norah O'Donnell",
+   "slug": "norah-o-donnell",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-78e0639a31ff": {
+   "canonical": "Steve Chagaris",
+   "slug": "steve-chagaris",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-0262c2ecc2d9": {
+   "canonical": "Vicki Gordon",
+   "slug": "vicki-gordon",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-f78336075970": {
+   "canonical": "John Harwood",
+   "slug": "john-harwood",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-604f2d211040": {
+   "canonical": "Brianna Keilar",
+   "slug": "brianna-keilar",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-a65487d04890": {
+   "canonical": "Dan Merica",
+   "slug": "dan-merica",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-7a2c2c55fc1a": {
+   "canonical": "David Chailan",
+   "slug": "david-chailan",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-47cafe71e0fe": {
+   "canonical": "Erin Burnett",
+   "slug": "erin-burnett",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-6964e18829c9": {
+   "canonical": "Gloria Borger",
+   "slug": "gloria-borger",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-be2d541fee10": {
+   "canonical": "Jeff Zeleny",
+   "slug": "jeff-zeleny",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-49f918c2b2f5": {
+   "canonical": "John Berman",
+   "slug": "john-berman",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-36bacd26fde5": {
+   "canonical": "Kate Bouldan",
+   "slug": "kate-bouldan",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-4c94a6a06428": {
+   "canonical": "Maria Cardona",
+   "slug": "maria-cardona",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-fb7aea8d1bc2": {
+   "canonical": "Mark Preston",
+   "slug": "mark-preston",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-467076948eb8": {
+   "canonical": "Sam Feist",
+   "slug": "sam-feist",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-8a8a2f9e3b5f": {
+   "canonical": "Jackie Kucinich",
+   "slug": "jackie-kucinich",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-326da877aa4d": {
+   "canonical": "Alex Seitz-Wald",
+   "slug": "alex-seitz-wald",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-5ff5bfe12a7c": {
+   "canonical": "Alex Wagner",
+   "slug": "alex-wagner",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-8b7ce2aa27ac": {
+   "canonical": "Andrea Mitchell",
+   "slug": "andrea-mitchell",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-dd9972e950e3": {
+   "canonical": "Ed Schultz",
+   "slug": "ed-schultz",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-8a164b379dfe": {
+   "canonical": "Joe Scarborough",
+   "slug": "joe-scarborough",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-9db5883ec684": {
+   "canonical": "Phil Griffin",
+   "slug": "phil-griffin",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-088d9c5f3090": {
+   "canonical": "Rachel Racusen",
+   "slug": "rachel-racusen",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-4ce4e0e569d4": {
+   "canonical": "Thomas Roberts",
+   "slug": "thomas-roberts",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-e81d77390ac5": {
+   "canonical": "Chuck Todd",
+   "slug": "chuck-todd",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-136d33e33cea": {
+   "canonical": "Mark Murray",
+   "slug": "mark-murray",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-9f1193aade70": {
+   "canonical": "Savannah Gutherie",
+   "slug": "savannah-gutherie",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-6f49ef92ebb1": {
+   "canonical": "Mike Oreskes",
+   "slug": "mike-oreskes",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-e87089f18254": {
+   "canonical": "Tamara Keith",
+   "slug": "tamara-keith",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-121902823e6e": {
+   "canonical": "Geofe Earl",
+   "slug": "geofe-earl",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-ac98a5c779d1": {
+   "canonical": "Amy Chozik",
+   "slug": "amy-chozik",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-772c7e4dca65": {
+   "canonical": "Carolyn Ryan",
+   "slug": "carolyn-ryan",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-4852b04127e4": {
+   "canonical": "Gail Collins",
+   "slug": "gail-collins",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-98d61d2dce95": {
+   "canonical": "John Harwoodje",
+   "slug": "john-harwoodje",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-5583bba9d661": {
+   "canonical": "Jonathan Martin",
+   "slug": "jonathan-martin",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-e27af6a845d1": {
+   "canonical": "Pat Healey",
+   "slug": "pat-healey",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-699fa59a120b": {
+   "canonical": "Charlie Rose",
+   "slug": "charlie-rose",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-f4aa26f2c3a0": {
+   "canonical": "Annie Karni",
+   "slug": "annie-karni",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-f2e77658de3a": {
+   "canonical": "Gabe Debenedetti",
+   "slug": "gabe-debenedetti",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-e2e10c208707": {
+   "canonical": "Glenn Thrush",
+   "slug": "glenn-thrush",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-76844c860b54": {
+   "canonical": "Kenneth Vogel",
+   "slug": "kenneth-vogel",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-e009a8631960": {
+   "canonical": "Mike Allen",
+   "slug": "mike-allen",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-cc9487841204": {
+   "canonical": "Amanda Becker",
+   "slug": "amanda-becker",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-cda801c70bcd": {
+   "canonical": "Amie Parnes",
+   "slug": "amie-parnes",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-5a040717aa5b": {
+   "canonical": "Colleen McCain Nelson",
+   "slug": "colleen-mccain-nelson",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-0aff05df6680": {
+   "canonical": "Laura Meckler",
+   "slug": "laura-meckler",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-18107b67fc6d": {
+   "canonical": "Peter Nicholas",
+   "slug": "peter-nicholas",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-d030b96cb710": {
+   "canonical": "Matt Bai",
+   "slug": "matt-bai",
    "previousCanonicals": [],
    "auditEntityIds": []
   }

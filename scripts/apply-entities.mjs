@@ -546,13 +546,26 @@ entities.sort((a, b) => b.mentions - a.mentions)
 // minted below, but the MENTION for each ruling cannot be decided until the render map is built:
 // 313 of the 508 name an entity already certified in that very drop, and counting those again
 // would show the reader an x2 that Q never wrote. Phase B is immediately after the render map.
-const QUEUE_IDENTS = path.join(OUT, 'unhighlighted-entity-identities.json')
+// BOTH ROUNDS OF IDENTITIES, MERGED. Round 1's file is hand-authored, 41 identities and 23
+// splits. Round 2's is generated from the three list shapes Q pastes verbatim — the central-bank
+// list, the "THE BRIDGE" media list, the retiring-Congress list — and holds the 128 wordings that
+// fall outside them rather than naming them. Merged here for the same reason lib/queueRulings.mjs
+// merges the rulings: a resolver that reads one file and not the other reports success while
+// holding every span the other one names.
+const IDENT_FILES = ['unhighlighted-entity-identities.json', 'unhighlighted-entity-identities-2.json']
+  .map(f => path.join(OUT, f)).filter(f => fs.existsSync(f))
 const queueEntityRulings = loadQueueRulings(ROOT, 'entities')
 const queueHits = []
 const queueHeld = []
 let queueEntitiesCreated = 0
-if (queueEntityRulings.length && fs.existsSync(QUEUE_IDENTS)) {
-  const { resolve } = makeEntityResolver(entities, JSON.parse(fs.readFileSync(QUEUE_IDENTS, 'utf8')))
+if (queueEntityRulings.length && IDENT_FILES.length) {
+  const docs = IDENT_FILES.map(f => JSON.parse(fs.readFileSync(f, 'utf8')))
+  const merged = {
+    identities: docs.flatMap(d => d.identities ?? []),
+    splits: docs.flatMap(d => d.splits ?? []),
+    held: docs.flatMap(d => d.held ?? []),
+  }
+  const { resolve } = makeEntityResolver(entities, merged)
   const byCanonical = new Map(entities.map(e => [e.canonical, e]))
   for (const r of queueEntityRulings) {
     const res = resolve(r)
@@ -875,17 +888,23 @@ const checks = [
   ['detected canonical entities = 1,287',
     entities.length - ownerAdded - queueEntitiesCreated + ownerMerged === 1287,
     entities.length - ownerAdded - queueEntitiesCreated + ownerMerged],
-  ['queue entity rulings accounted for = 508',
-    queueEntityRulings.length === 508 && queueHits.length + queueHeld.length >= 508,
+  // 508 (round 1) + 499 (round 2) = 1,007 rulings.
+  ['queue entity rulings accounted for = 1,007',
+    queueEntityRulings.length === 1007 && queueHits.length + queueHeld.length >= 1007,
     `${queueEntityRulings.length} ruled, ${queueHits.length} occurrences, ${queueHeld.length} held`],
-  ['queue entity holds = 3, all listed', queueHeld.length === 3, queueHeld.length],
+  // 3 (round 1) + 185 (round 2). Round 2's held spans fall outside the three list shapes its
+  // identities file covers; each is listed there and reported for the owner rather than named.
+  ['queue entity holds = 188, all listed', queueHeld.length === 188, queueHeld.length],
   ['owner entity rulings applied = 118', ownerAdded === 118, ownerAdded],
   ['owner merge rulings applied = 1', ownerMerged === 1, ownerMerged],
   // 1,335 - 1: Ray Chandler is now an alias of Rachel Chandler, not a row of her own.
   // 1,445 -> 1,408: -19 rows merged away as duplicate canonicals, -18 rows withdrawn as
   // conceptual/generic labels. Both from the 2026-08-16 hover audit, Stage 1.
   // 1,409 + 39 identities the owner's queue rulings introduce = 1,448.
-  ['canonical entities = 1,443', entities.length === 1443, entities.length],
+  // 1,443 + 308 identities round 2 introduces = 1,751. 151 central banks and 93 countries from
+  // the list Q pastes across #135-#138, 65 journalists and their outlets from #1515's "THE BRIDGE"
+  // list, and the retiring members of Congress from #1319/#1850 — every name read off Q's own line.
+  ['canonical entities = 1,751', entities.length === 1751, entities.length],
   // 8,227 + 12 RC. The merge moves 4 mentions between rows and adds none.
   // 9,786 -> 9,747: -39, the occurrences of the 18 withdrawn rows. The 17 merges move mentions
   // ACROSS rows and add none, so they are absent from this arithmetic by design — asserted
@@ -895,7 +914,8 @@ const checks = [
   // +6 on 2026-08-21: NO -> Nellie Ohr, three occurrences each on #1928 and #1929 (twice in the
   // '>>BO>>CS>>BO>>NO>>CS>>NO>>BO>>' chain, once in '[BO][NO]'). Scoped by includePosts, because
   // the token matches 102 times across 75 posts and almost all of them are the English word.
-  ['resolved mentions = 9,926', totals.mentions === 9926, totals.mentions],
+  // +440 from round 2 of the queue review.
+  ['resolved mentions = 10,366', totals.mentions === 10366, totals.mentions],
   ['stage 1: 19 rows merged away', !stage1 || s1Merged === 19, s1Merged],
   ['stage 1: 85 types corrected', !stage1 || s1Typed === 85, s1Typed],
   // 18 in the audit, 17 applied: ENT-0709 "Non-profit organization" is HELD because it
@@ -924,12 +944,14 @@ const checks = [
   // The owner submetric does NOT fall: the only owner-sourced move-out, "Non-profit organization"
   // (alias NP, 2 mentions), is held because it contradicts a standing owner ruling.
   // +8: queue rulings that landed on a core-registry identity.
-  ['core-registry mentions = 5,360', totals.coreRegistryMentions === 5360, totals.coreRegistryMentions],
+  // +61: round-2 rulings that landed on a core-registry identity.
+  ['core-registry mentions = 5,421', totals.coreRegistryMentions === 5421, totals.coreRegistryMentions],
   // 3,440 + 34 C19 + 12 RC: COVID-19 and Rachel Chandler are tail entities, so alias rulings on
   // them land here.
   // +58: queue rulings that landed on an adjudicated-tail identity.
   // +6, the same six again - one movement, counted in three places by design.
-  ['adjudicated-tail mentions = 3,838', totals.adjudicatedTailMentions === 3838, totals.adjudicatedTailMentions],
+  // +54: round-2 rulings that landed on an adjudicated-tail identity.
+  ['adjudicated-tail mentions = 3,892', totals.adjudicatedTailMentions === 3892, totals.adjudicatedTailMentions],
   ['tail occurrence rows = 3,440', tailOccurrences.length === 3440, tailOccurrences.length],
   ['every tail occurrence carries a post identity', tailOccurrences.every(o => o.postNum && o.id), 'ok'],
   ['every tail entity now has post provenance',

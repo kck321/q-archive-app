@@ -13,6 +13,7 @@
   "NO_MATCHING_Q_UNIT": 1,
   "BLANK_SENTENCE_INDEX": 1,
   "URL_LIVE_BUT_SCHEME_ORPHANED_IN_DROP": 44,
+  "HELD_STATES_NO_INSTRUCTION": 24,
   "SPAN_IS_A_WITHDRAWN_ABBREVIATION_TAIL": 1
  },
  "issues": [
@@ -9635,6 +9636,16 @@
    "severity": "info"
   },
   {
+   "row": 5901,
+   "sheet": "Q Directives",
+   "postNum": 17,
+   "sentenceIndex": "7",
+   "text": "In case you didn’t know, shills log and send new info back to ASF for instruction.",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "In case you didn’t know, shills log and send new info back to ASF for instruction.",
+   "reason": "an assertion about what shills do — a Claim in shape, not an instruction"
+  },
+  {
    "row": 5913,
    "sheet": "Q Directives",
    "postNum": 155,
@@ -9643,6 +9654,16 @@
    "why": "BLANK_FINAL_CATEGORY_USED_SHEET",
    "assumed": "directives",
    "severity": "info"
+  },
+  {
+   "row": 5913,
+   "sheet": "Q Directives",
+   "postNum": 155,
+   "sentenceIndex": "3",
+   "text": "Bunker Apple Yellow Sky [… + 1]",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "Bunker Apple Yellow Sky [… + 1]",
+   "reason": "a comms string — belongs with the Resolution Center lines, not Directives"
   },
   {
    "row": 5914,
@@ -9655,6 +9676,16 @@
    "severity": "info"
   },
   {
+   "row": 5914,
+   "sheet": "Q Directives",
+   "postNum": 175,
+   "sentenceIndex": "5",
+   "text": "Bunker Apple Yellow Sky [… + 1]",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "Bunker Apple Yellow Sky [… + 1]",
+   "reason": "a comms string — belongs with the Resolution Center lines, not Directives"
+  },
+  {
    "row": 5930,
    "sheet": "Q Directives",
    "postNum": 302,
@@ -9665,6 +9696,16 @@
    "severity": "info"
   },
   {
+   "row": 5930,
+   "sheet": "Q Directives",
+   "postNum": 302,
+   "sentenceIndex": "3",
+   "text": "—end—",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "—end—",
+   "reason": "a structural end-marker, not an instruction"
+  },
+  {
    "row": 5944,
    "sheet": "Q Directives",
    "postNum": 472,
@@ -9673,6 +9714,16 @@
    "why": "BLANK_FINAL_CATEGORY_USED_SHEET",
    "assumed": "directives",
    "severity": "info"
+  },
+  {
+   "row": 5944,
+   "sheet": "Q Directives",
+   "postNum": 472,
+   "sentenceIndex": "2",
+   "text": "_END_",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "_END_",
+   "reason": "a structural end-marker, not an instruction"
   },
   {
    "row": 5947,
@@ -9693,6 +9744,16 @@
    "why": "BLANK_FINAL_CATEGORY_USED_SHEET",
    "assumed": "directives",
    "severity": "info"
+  },
+  {
+   "row": 5964,
+   "sheet": "Q Directives",
+   "postNum": 675,
+   "sentenceIndex": "5",
+   "text": "#2.",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "#2.",
+   "reason": "a list marker numbering the drop's own lines, not an instruction"
   },
   {
    "row": 5980,
@@ -9735,6 +9796,116 @@
    "severity": "info"
   },
   {
+   "row": 5997,
+   "sheet": "Q Directives",
+   "postNum": 953,
+   "sentenceIndex": "3",
+   "text": "#1",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "#1",
+   "reason": "a list marker numbering the drop's own lines, not an instruction"
+  },
+  {
+   "row": 5998,
+   "sheet": "Q Directives",
+   "postNum": 953,
+   "sentenceIndex": "4",
+   "text": "#1",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "#1",
+   "reason": "a list marker numbering the drop's own lines, not an instruction"
+  },
+  {
+   "row": 5999,
+   "sheet": "Q Directives",
+   "postNum": 953,
+   "sentenceIndex": "8",
+   "text": "#1",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "#1",
+   "reason": "a list marker numbering the drop's own lines, not an instruction"
+  },
+  {
+   "row": 6000,
+   "sheet": "Q Directives",
+   "postNum": 953,
+   "sentenceIndex": "9",
+   "text": "#1",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "#1",
+   "reason": "a list marker numbering the drop's own lines, not an instruction"
+  },
+  {
+   "row": 6001,
+   "sheet": "Q Directives",
+   "postNum": 953,
+   "sentenceIndex": "13",
+   "text": "#1",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "#1",
+   "reason": "a list marker numbering the drop's own lines, not an instruction"
+  },
+  {
+   "row": 6002,
+   "sheet": "Q Directives",
+   "postNum": 953,
+   "sentenceIndex": "14",
+   "text": "#1",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "#1",
+   "reason": "a list marker numbering the drop's own lines, not an instruction"
+  },
+  {
+   "row": 6003,
+   "sheet": "Q Directives",
+   "postNum": 953,
+   "sentenceIndex": "5",
+   "text": "#2",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "#2",
+   "reason": "a list marker numbering the drop's own lines, not an instruction"
+  },
+  {
+   "row": 6004,
+   "sheet": "Q Directives",
+   "postNum": 953,
+   "sentenceIndex": "10",
+   "text": "#2",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "#2",
+   "reason": "a list marker numbering the drop's own lines, not an instruction"
+  },
+  {
+   "row": 6010,
+   "sheet": "Q Directives",
+   "postNum": 1133,
+   "sentenceIndex": "1",
+   "text": "#17",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "#17",
+   "reason": "a list marker numbering the drop's own lines, not an instruction"
+  },
+  {
+   "row": 6039,
+   "sheet": "Q Directives",
+   "postNum": 1402,
+   "sentenceIndex": "5",
+   "text": "#64",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "#64",
+   "reason": "a list marker numbering the drop's own lines, not an instruction"
+  },
+  {
+   "row": 6040,
+   "sheet": "Q Directives",
+   "postNum": 1443,
+   "sentenceIndex": "8",
+   "text": "#2.",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "#2.",
+   "reason": "a list marker numbering the drop's own lines, not an instruction"
+  },
+  {
    "row": 6044,
    "sheet": "Q Directives",
    "postNum": 1480,
@@ -9743,6 +9914,16 @@
    "why": "BLANK_FINAL_CATEGORY_USED_SHEET",
    "assumed": "directives",
    "severity": "info"
+  },
+  {
+   "row": 6044,
+   "sheet": "Q Directives",
+   "postNum": 1480,
+   "sentenceIndex": "2",
+   "text": "Approval 58203-JX",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "Approval 58203-JX",
+   "reason": "a comms string — belongs with the Resolution Center lines, not Directives"
   },
   {
    "row": 6080,
@@ -9763,6 +9944,16 @@
    "why": "BLANK_FINAL_CATEGORY_USED_SHEET",
    "assumed": "directives",
    "severity": "info"
+  },
+  {
+   "row": 6091,
+   "sheet": "Q Directives",
+   "postNum": 1976,
+   "sentenceIndex": "2",
+   "text": "#21 - #25",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "#21 - #25",
+   "reason": "a list marker numbering the drop's own lines, not an instruction"
   },
   {
    "row": 6107,
@@ -9793,6 +9984,16 @@
    "why": "BLANK_FINAL_CATEGORY_USED_SHEET",
    "assumed": "directives",
    "severity": "info"
+  },
+  {
+   "row": 6126,
+   "sheet": "Q Directives",
+   "postNum": 2415,
+   "sentenceIndex": "3",
+   "text": "——————————–End",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "——————————–End",
+   "reason": "a structural end-marker, not an instruction"
   },
   {
    "row": 6131,
@@ -9866,6 +10067,16 @@
    "severity": "info"
   },
   {
+   "row": 6208,
+   "sheet": "Q Directives",
+   "postNum": 3186,
+   "sentenceIndex": "5",
+   "text": "#2",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "#2",
+   "reason": "a list marker numbering the drop's own lines, not an instruction"
+  },
+  {
    "row": 6214,
    "sheet": "Q Directives",
    "postNum": 3222,
@@ -9874,6 +10085,16 @@
    "why": "BLANK_FINAL_CATEGORY_USED_SHEET",
    "assumed": "directives",
    "severity": "info"
+  },
+  {
+   "row": 6214,
+   "sheet": "Q Directives",
+   "postNum": 3222,
+   "sentenceIndex": "18",
+   "text": "End_of_Topic",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "End_of_Topic",
+   "reason": "a structural end-marker, not an instruction"
   },
   {
    "row": 6253,
@@ -9904,6 +10125,16 @@
    "why": "BLANK_FINAL_CATEGORY_USED_SHEET",
    "assumed": "directives",
    "severity": "info"
+  },
+  {
+   "row": 6255,
+   "sheet": "Q Directives",
+   "postNum": 3606,
+   "sentenceIndex": "2",
+   "text": "-END-",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "-END-",
+   "reason": "a structural end-marker, not an instruction"
   },
   {
    "row": 6271,
@@ -9944,6 +10175,16 @@
    "why": "BLANK_FINAL_CATEGORY_USED_SHEET",
    "assumed": "directives",
    "severity": "info"
+  },
+  {
+   "row": 6385,
+   "sheet": "Q Directives",
+   "postNum": 4787,
+   "sentenceIndex": "2",
+   "text": "#3",
+   "why": "HELD_STATES_NO_INSTRUCTION",
+   "drop": "#3",
+   "reason": "a list marker numbering the drop's own lines, not an instruction"
   },
   {
    "row": 6408,

@@ -1,12 +1,12 @@
 {
  "breakdown": [
   {
-   "count": 1085,
+   "count": 1398,
    "key": "prose",
    "label": "named in Q’s prose"
   },
   {
-   "count": 138,
+   "count": 134,
    "key": "sourceOnly",
    "label": "linked as a source only"
   }
@@ -187,7 +187,7 @@
     },
     {
      "canonical": "Donald Trump",
-     "mentions": 63,
+     "mentions": 64,
      "posts": 58
     }
    ],
@@ -295,6 +295,17 @@
    },
    "posts": 5,
    "rowId": "qe-00b467625787"
+  },
+  "qe-00b708298d81": {
+   "aliasPosts": {
+    "Bank of the Republic of Burundi": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-00b708298d81"
   },
   "qe-00d31bb41c71": {
    "aliasPosts": {
@@ -417,6 +428,17 @@
    },
    "posts": 1,
    "rowId": "qe-01f6b93fb79b"
+  },
+  "qe-0262c2ecc2d9": {
+   "aliasPosts": {
+    "Vicki Gordon": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-0262c2ecc2d9"
   },
   "qe-02a0cbe38838": {
    "aliasPosts": {
@@ -580,6 +602,17 @@
    "posts": 2,
    "rowId": "qe-03977c35ff84"
   },
+  "qe-03c59b63932a": {
+   "aliasPosts": {
+    "Moldova": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-03c59b63932a"
+  },
   "qe-03d20718de3c": {
    "aliasPosts": {
     "Mark A. Grethen": 1
@@ -590,6 +623,17 @@
    },
    "posts": 1,
    "rowId": "qe-03d20718de3c"
+  },
+  "qe-03d4877efac2": {
+   "aliasPosts": {
+    "Monetary Authority of Singapore": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-03d4877efac2"
   },
   "qe-03e17faa22b1": {
    "aliasPosts": {
@@ -612,6 +656,18 @@
    },
    "posts": 1,
    "rowId": "qe-043dd51daca6"
+  },
+  "qe-0487a4a052ae": {
+   "aliasPosts": {
+    "Duncan, Jr.": 2
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1319": 1,
+    "1850": 1
+   },
+   "posts": 2,
+   "rowId": "qe-0487a4a052ae"
   },
   "qe-048d9a470d4a": {
    "aliasPosts": {
@@ -768,6 +824,17 @@
    "posts": 1,
    "rowId": "qe-060e173e4c2a"
   },
+  "qe-0622501e37de": {
+   "aliasPosts": {
+    "Bank of Korea": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-0622501e37de"
+  },
   "qe-062a4ee8b699": {
    "kind": "source_only",
    "posts": 0,
@@ -824,6 +891,17 @@
    "posts": 1,
    "rowId": "qe-06a34d0096b0"
   },
+  "qe-06f38ec2dcbe": {
+   "aliasPosts": {
+    "Burundi": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-06f38ec2dcbe"
+  },
   "qe-07c2ac29342f": {
    "aliasPosts": {
     "House of Cards": 6
@@ -855,6 +933,17 @@
    },
    "posts": 5,
    "rowId": "qe-07c4382e568e"
+  },
+  "qe-07f466e45a27": {
+   "aliasPosts": {
+    "Argentina": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-07f466e45a27"
   },
   "qe-08149ca91f36": {
    "aliasPosts": {
@@ -916,6 +1005,28 @@
    "posts": 1,
    "rowId": "qe-0857b9ef7ea7"
   },
+  "qe-086f34cfcbaa": {
+   "aliasPosts": {
+    "Central Bank of Cyprus": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-086f34cfcbaa"
+  },
+  "qe-087ab1ea32e0": {
+   "aliasPosts": {
+    "Austrian National Bank": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-087ab1ea32e0"
+  },
   "qe-087ea7246405": {
    "aliasPosts": {
     "Marjorie Margolies": 1
@@ -937,6 +1048,17 @@
      "post": 4707
     }
    ]
+  },
+  "qe-088d9c5f3090": {
+   "aliasPosts": {
+    "Rachel Racusen": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-088d9c5f3090"
   },
   "qe-08c421d8f81b": {
    "aliasPosts": {
@@ -985,6 +1107,17 @@
    "posts": 1,
    "rowId": "qe-090029730940"
   },
+  "qe-09327273d684": {
+   "aliasPosts": {
+    "Malawi": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-09327273d684"
+  },
   "qe-093e62558fcf": {
    "aliasPosts": {
     "Susan Wojcicki": 1
@@ -1028,7 +1161,7 @@
     "1423": 2,
     "1443": 1,
     "1455": 1,
-    "1493": 1,
+    "1493": 2,
     "1637": 1,
     "1666": 1,
     "1667": 1,
@@ -1091,6 +1224,17 @@
    "posts": 2,
    "rowId": "qe-0a1d9041b6b1"
   },
+  "qe-0a21fec23c2b": {
+   "aliasPosts": {
+    "Montenegro": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-0a21fec23c2b"
+  },
   "qe-0a2c7a09502d": {
    "aliasPosts": {
     "Emergency Broadcast System": 1
@@ -1117,6 +1261,17 @@
     }
    ]
   },
+  "qe-0aff05df6680": {
+   "aliasPosts": {
+    "Laura Meckler": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-0aff05df6680"
+  },
   "qe-0b11960f9961": {
    "aliasPosts": {
     "EPA": 2
@@ -1140,6 +1295,28 @@
    },
    "posts": 2,
    "rowId": "qe-0b7820544033"
+  },
+  "qe-0b7996af88b1": {
+   "aliasPosts": {
+    "Central Bank of the Republic of San Marino": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-0b7996af88b1"
+  },
+  "qe-0b8bb4ce02a9": {
+   "aliasPosts": {
+    "Cayman Islands Monetary Authority": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-0b8bb4ce02a9"
   },
   "qe-0b8c02f77a9a": {
    "aliasPosts": {
@@ -1173,6 +1350,29 @@
     }
    ]
   },
+  "qe-0c35eb7c9c49": {
+   "aliasPosts": {
+    "Gutierrez": 2
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1319": 1,
+    "1850": 1
+   },
+   "posts": 2,
+   "rowId": "qe-0c35eb7c9c49"
+  },
+  "qe-0c7055206acc": {
+   "aliasPosts": {
+    "Central Bank of Bosnia and Herzegovina": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-0c7055206acc"
+  },
   "qe-0cb9105ed31e": {
    "aliasPosts": {
     "SK": 1
@@ -1183,6 +1383,17 @@
    },
    "posts": 1,
    "rowId": "qe-0cb9105ed31e"
+  },
+  "qe-0cbb2892c66a": {
+   "aliasPosts": {
+    "Benin": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-0cbb2892c66a"
   },
   "qe-0ce4368723ec": {
    "aliasPosts": {
@@ -1207,6 +1418,17 @@
    },
    "posts": 2,
    "rowId": "qe-0cf9726805ed"
+  },
+  "qe-0cfd0074c34b": {
+   "aliasPosts": {
+    "Bank Indonesia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-0cfd0074c34b"
   },
   "qe-0d2c214c22fd": {
    "aliasPosts": {
@@ -1251,6 +1473,28 @@
    },
    "posts": 20,
    "rowId": "qe-0d652fbf34ee"
+  },
+  "qe-0d86fa532496": {
+   "aliasPosts": {
+    "Central Bank of Honduras": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-0d86fa532496"
+  },
+  "qe-0dbd640d3610": {
+   "aliasPosts": {
+    "Bank of Sudan": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-0dbd640d3610"
   },
   "qe-0e242c606972": {
    "aliasPosts": {
@@ -1397,6 +1641,17 @@
     }
    ]
   },
+  "qe-0fc475b60a5f": {
+   "aliasPosts": {
+    "Croatian National Bank": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-0fc475b60a5f"
+  },
   "qe-0fd54d51775b": {
    "aliasPosts": {
     "Philip Ahr": 1
@@ -1463,6 +1718,17 @@
      "post": 4215
     }
    ]
+  },
+  "qe-10aa234f1f75": {
+   "aliasPosts": {
+    "Central Bank of Brazil": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-10aa234f1f75"
   },
   "qe-10c47fe32e72": {
    "aliasPosts": {
@@ -1563,6 +1829,17 @@
    "posts": 1,
    "rowId": "qe-11b0ffd2085a"
   },
+  "qe-11e7e5d1735a": {
+   "aliasPosts": {
+    "Barbados": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-11e7e5d1735a"
+  },
   "qe-11ef7eeeb8e3": {
    "kind": "source_only",
    "posts": 0,
@@ -1573,6 +1850,17 @@
      "post": 4885
     }
    ]
+  },
+  "qe-121902823e6e": {
+   "aliasPosts": {
+    "Geofe Earl": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-121902823e6e"
   },
   "qe-127c98ea4da1": {
    "aliasPosts": {
@@ -1585,6 +1873,17 @@
    },
    "posts": 2,
    "rowId": "qe-127c98ea4da1"
+  },
+  "qe-127f26163779": {
+   "aliasPosts": {
+    "Thailand": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-127f26163779"
   },
   "qe-130c0567b723": {
    "kind": "source_only",
@@ -1607,6 +1906,17 @@
    },
    "posts": 1,
    "rowId": "qe-1358436d9fe2"
+  },
+  "qe-136d33e33cea": {
+   "aliasPosts": {
+    "Mark Murray": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-136d33e33cea"
   },
   "qe-145968fb288f": {
    "aliasPosts": {
@@ -1658,8 +1968,19 @@
     "1334": 1,
     "1385": 1
    },
-   "posts": 3,
+   "posts": 4,
    "rowId": "qe-14d1707ec42d"
+  },
+  "qe-14ddf83b2cf1": {
+   "aliasPosts": {
+    "National Bank of the Republic of Belarus": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-14ddf83b2cf1"
   },
   "qe-15179ab3b612": {
    "aliasPosts": {
@@ -1708,6 +2029,17 @@
    },
    "posts": 3,
    "rowId": "qe-157fca10431e"
+  },
+  "qe-16063a655590": {
+   "aliasPosts": {
+    "Hungary": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-16063a655590"
   },
   "qe-16098f6f50d4": {
    "aliasPosts": {
@@ -1858,6 +2190,28 @@
    "posts": 2,
    "rowId": "qe-17f602fec7c9"
   },
+  "qe-18107b67fc6d": {
+   "aliasPosts": {
+    "Peter Nicholas": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-18107b67fc6d"
+  },
+  "qe-18a6c733af04": {
+   "aliasPosts": {
+    "John Heillman": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-18a6c733af04"
+  },
   "qe-18bd65579fff": {
    "aliasPosts": {
     "Blumenthal": 1
@@ -1880,6 +2234,28 @@
    },
    "posts": 2,
    "rowId": "qe-18cce8e0379c"
+  },
+  "qe-18ea81c99e69": {
+   "aliasPosts": {
+    "Reserve Bank of Zimbabwe": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-18ea81c99e69"
+  },
+  "qe-1904e9e4a5dd": {
+   "aliasPosts": {
+    "Albania": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-1904e9e4a5dd"
   },
   "qe-190d29e92cd1": {
    "aliasPosts": {
@@ -1936,6 +2312,17 @@
    },
    "posts": 45,
    "rowId": "qe-190d29e92cd1"
+  },
+  "qe-193dd0ceb8bf": {
+   "aliasPosts": {
+    "Niger": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-193dd0ceb8bf"
   },
   "qe-1963ebd3b6d1": {
    "aliasPosts": {
@@ -2072,6 +2459,50 @@
    "posts": 2,
    "rowId": "qe-1af35088aec0"
   },
+  "qe-1b1d8e954412": {
+   "aliasPosts": {
+    "Central Reserve Bank of Peru": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-1b1d8e954412"
+  },
+  "qe-1b4b6e4a0c28": {
+   "aliasPosts": {
+    "Reserve Bank of Australia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-1b4b6e4a0c28"
+  },
+  "qe-1b6219d34434": {
+   "aliasPosts": {
+    "Central Bank of Madagascar": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-1b6219d34434"
+  },
+  "qe-1bac1dfb4232": {
+   "aliasPosts": {
+    "National Bank of Romania": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-1bac1dfb4232"
+  },
   "qe-1bc4b2ee78ab": {
    "aliasPosts": {
     "White Squall": 1
@@ -2147,6 +2578,17 @@
    "posts": 2,
    "rowId": "qe-1c2f975aefab"
   },
+  "qe-1c4435face9a": {
+   "aliasPosts": {
+    "National Bank of Ukraine": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-1c4435face9a"
+  },
   "qe-1c69bfd30988": {
    "aliasPosts": {
     "Sen Johnson": 1
@@ -2182,6 +2624,17 @@
    "posts": 2,
    "rowId": "qe-1cca7354aa98"
   },
+  "qe-1cd04d0e1356": {
+   "aliasPosts": {
+    "Uruguay": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-1cd04d0e1356"
+  },
   "qe-1d202d6b02f7": {
    "aliasPosts": {
     "SCIF": 5
@@ -2196,6 +2649,17 @@
    },
    "posts": 5,
    "rowId": "qe-1d202d6b02f7"
+  },
+  "qe-1d3dd631bd6e": {
+   "aliasPosts": {
+    "National Bank of Moldova": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-1d3dd631bd6e"
   },
   "qe-1d920608f91a": {
    "kind": "source_only",
@@ -2258,6 +2722,17 @@
    },
    "posts": 1,
    "rowId": "qe-1e23a311a297"
+  },
+  "qe-1e504aae9963": {
+   "aliasPosts": {
+    "Central Reserve Bank of El Salvador": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-1e504aae9963"
   },
   "qe-1ecf33127371": {
    "aliasPosts": {
@@ -2350,6 +2825,17 @@
    "posts": 24,
    "rowId": "qe-1f02f604ec23"
   },
+  "qe-1f52c396c1a6": {
+   "aliasPosts": {
+    "National Bank of Serbia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-1f52c396c1a6"
+  },
   "qe-1f8ca714545b": {
    "aliasPosts": {
     "JFK": 1
@@ -2363,7 +2849,7 @@
   },
   "qe-2036752a688e": {
    "aliasPosts": {
-    "GOOG": 17
+    "GOOG": 18
    },
    "kind": "prose",
    "perPostMentions": {
@@ -2383,10 +2869,33 @@
     "2375": 1,
     "2587": 1,
     "2588": 1,
+    "4105": 1,
     "4553": 1
    },
-   "posts": 17,
+   "posts": 18,
    "rowId": "qe-2036752a688e"
+  },
+  "qe-20528df2a55a": {
+   "aliasPosts": {
+    "Jon Karl": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-20528df2a55a"
+  },
+  "qe-205eab44f34d": {
+   "aliasPosts": {
+    "John Dickerson": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-205eab44f34d"
   },
   "qe-208dba151d3e": {
    "aliasPosts": {
@@ -2401,6 +2910,17 @@
    },
    "posts": 4,
    "rowId": "qe-208dba151d3e"
+  },
+  "qe-20bf317bb5c5": {
+   "aliasPosts": {
+    "Central Bank of Bolivia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-20bf317bb5c5"
   },
   "qe-20c16415cf70": {
    "aliasPosts": {
@@ -2424,6 +2944,17 @@
    "posts": 1,
    "rowId": "qe-20c73a0c96b1"
   },
+  "qe-211966e62c2a": {
+   "aliasPosts": {
+    "Central Bank of Aruba": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-211966e62c2a"
+  },
   "qe-211b42ca8ce7": {
    "aliasPosts": {
     "Charlie Dent": 1
@@ -2434,6 +2965,17 @@
    },
    "posts": 1,
    "rowId": "qe-211b42ca8ce7"
+  },
+  "qe-213e961d35b4": {
+   "aliasPosts": {
+    "Surinam": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-213e961d35b4"
   },
   "qe-2177707b6f9e": {
    "kind": "source_only",
@@ -2470,6 +3012,17 @@
    "posts": 3,
    "rowId": "qe-21ed64cd2b73"
   },
+  "qe-21f2b6d05394": {
+   "aliasPosts": {
+    "Bhutan": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-21f2b6d05394"
+  },
   "qe-222644bb62c5": {
    "kind": "source_only",
    "posts": 0,
@@ -2502,6 +3055,17 @@
    "posts": 3,
    "rowId": "qe-224cf203fdbf"
   },
+  "qe-227b04c2911c": {
+   "aliasPosts": {
+    "Morocco": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-227b04c2911c"
+  },
   "qe-227b409a9b37": {
    "aliasPosts": {
     "Weissmann": 2
@@ -2513,6 +3077,17 @@
    },
    "posts": 2,
    "rowId": "qe-227b409a9b37"
+  },
+  "qe-2282d0179d9d": {
+   "aliasPosts": {
+    "Central Bank of Malaysia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-2282d0179d9d"
   },
   "qe-228516b66ff3": {
    "aliasPosts": {
@@ -2625,6 +3200,17 @@
    "posts": 1,
    "rowId": "qe-23403a5e15c0"
   },
+  "qe-239ca8bd721e": {
+   "aliasPosts": {
+    "Bank of Guyana": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-239ca8bd721e"
+  },
   "qe-23a2744b5e20": {
    "aliasPosts": {
     "Victoria County": 1
@@ -2717,14 +3303,15 @@
   },
   "qe-2404e095b5d2": {
    "aliasPosts": {
-    "Mika Brzezinski": 2
+    "Mika Brzezinski": 3
    },
    "kind": "prose",
    "perPostMentions": {
     "742": 1,
-    "743": 1
+    "743": 1,
+    "1515": 1
    },
-   "posts": 2,
+   "posts": 3,
    "rowId": "qe-2404e095b5d2"
   },
   "qe-2417a9a7706e": {
@@ -2810,6 +3397,17 @@
    },
    "posts": 1,
    "rowId": "qe-2450aea25576"
+  },
+  "qe-24ebee39ed01": {
+   "aliasPosts": {
+    "Lesotho": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-24ebee39ed01"
   },
   "qe-253a1db2cbdb": {
    "aliasPosts": {
@@ -2933,6 +3531,29 @@
    },
    "posts": 1,
    "rowId": "qe-25b719dfbe6c"
+  },
+  "qe-25c57ca3838c": {
+   "aliasPosts": {
+    "Kihuen": 2
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1319": 1,
+    "1850": 1
+   },
+   "posts": 2,
+   "rowId": "qe-25c57ca3838c"
+  },
+  "qe-25e474def0c3": {
+   "aliasPosts": {
+    "Peru": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-25e474def0c3"
   },
   "qe-25fc4dc6168d": {
    "kind": "source_only",
@@ -3105,13 +3726,14 @@
   },
   "qe-27b1e1e4dbdf": {
    "aliasPosts": {
-    "Freedom Caucus": 4
+    "Freedom Caucus": 4,
+    "THE FREEDOM CAUCUS (EST)": 1
    },
    "kind": "prose",
    "perPostMentions": {
     "285": 1,
     "1482": 1,
-    "2569": 1,
+    "2569": 2,
     "2931": 1
    },
    "posts": 4,
@@ -3221,6 +3843,17 @@
    },
    "posts": 2,
    "rowId": "qe-28b3b6e77b6f"
+  },
+  "qe-28b599dd1096": {
+   "aliasPosts": {
+    "National Bank of Georgia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-28b599dd1096"
   },
   "qe-28cfab019ff4": {
    "aliasPosts": {
@@ -3369,6 +4002,28 @@
    "posts": 4,
    "rowId": "qe-2a0c41a53fa4"
   },
+  "qe-2a365a8d6c48": {
+   "aliasPosts": {
+    "Bank of Papua New Guinea": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-2a365a8d6c48"
+  },
+  "qe-2a609b3b8b75": {
+   "aliasPosts": {
+    "Azerbaijan": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-2a609b3b8b75"
+  },
   "qe-2a62ee2b039c": {
    "aliasPosts": {
     "Israel": 5
@@ -3383,6 +4038,17 @@
    },
    "posts": 5,
    "rowId": "qe-2a62ee2b039c"
+  },
+  "qe-2a786f203730": {
+   "aliasPosts": {
+    "Central Bank of Chile": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-2a786f203730"
   },
   "qe-2a7eb844a930": {
    "aliasPosts": {
@@ -3439,6 +4105,17 @@
    "posts": 1,
    "rowId": "qe-2b58b9238924"
   },
+  "qe-2b592753cf99": {
+   "aliasPosts": {
+    "The Central Bank of Swaziland": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-2b592753cf99"
+  },
   "qe-2b750d5f194a": {
    "aliasPosts": {
     "David Trott": 2
@@ -3462,6 +4139,17 @@
    "posts": 1,
    "rowId": "qe-2b7be3ed1577"
   },
+  "qe-2b90c0394a91": {
+   "aliasPosts": {
+    "Guatemala": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-2b90c0394a91"
+  },
   "qe-2bbf648f9aeb": {
    "aliasPosts": {
     "Jeb Hensarling": 2
@@ -3473,6 +4161,28 @@
    },
    "posts": 2,
    "rowId": "qe-2bbf648f9aeb"
+  },
+  "qe-2be3e0cadf9a": {
+   "aliasPosts": {
+    "Central Bank of Ecuador": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-2be3e0cadf9a"
+  },
+  "qe-2be6563c2e6a": {
+   "aliasPosts": {
+    "Bolivia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-2be6563c2e6a"
   },
   "qe-2bfd139c428f": {
    "aliasPosts": {
@@ -3525,6 +4235,17 @@
     }
    ]
   },
+  "qe-2c74baf2c271": {
+   "aliasPosts": {
+    "Central Bank of Nicaragua": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-2c74baf2c271"
+  },
   "qe-2ca2b8e00023": {
    "aliasPosts": {
     "John Burks": 1
@@ -3562,14 +4283,15 @@
   },
   "qe-2cf9f642e53c": {
    "aliasPosts": {
-    "MSNBC": 2
+    "MSNBC": 3
    },
    "kind": "prose",
    "perPostMentions": {
     "113": 1,
-    "1063": 1
+    "1063": 1,
+    "1515": 10
    },
-   "posts": 2,
+   "posts": 3,
    "rowId": "qe-2cf9f642e53c",
    "sourcePosts": [
     {
@@ -3615,6 +4337,18 @@
    "posts": 11,
    "rowId": "qe-2d1cba1ee70f"
   },
+  "qe-2d48be5cfee0": {
+   "aliasPosts": {
+    "Dent": 2
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1319": 1,
+    "1850": 1
+   },
+   "posts": 2,
+   "rowId": "qe-2d48be5cfee0"
+  },
   "qe-2d7f16a051df": {
    "aliasPosts": {
     "Assange": 1
@@ -3625,6 +4359,17 @@
    },
    "posts": 1,
    "rowId": "qe-2d7f16a051df"
+  },
+  "qe-2de11fafa366": {
+   "aliasPosts": {
+    "Julie Pace": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-2de11fafa366"
   },
   "qe-2df6a50f6a0e": {
    "aliasPosts": {
@@ -3991,6 +4736,17 @@
    "posts": 1,
    "rowId": "qe-2fdbd27b24e5"
   },
+  "qe-2ff454bf465d": {
+   "aliasPosts": {
+    "Bulgaria": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-2ff454bf465d"
+  },
   "qe-2ff9fe423cee": {
    "aliasPosts": {
     "Raul Labrador": 1
@@ -4026,6 +4782,17 @@
      "post": 4137
     }
    ]
+  },
+  "qe-305c78e19b26": {
+   "aliasPosts": {
+    "Bahamas": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-305c78e19b26"
   },
   "qe-30dd6b7e9408": {
    "aliasPosts": {
@@ -4188,6 +4955,17 @@
    "posts": 1,
    "rowId": "qe-3223aa69de13"
   },
+  "qe-32332bd225e3": {
+   "aliasPosts": {
+    "Lithuania": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-32332bd225e3"
+  },
   "qe-324fb132653f": {
    "aliasPosts": {
     "Betsy D": 1
@@ -4198,6 +4976,17 @@
    },
    "posts": 1,
    "rowId": "qe-324fb132653f"
+  },
+  "qe-326da877aa4d": {
+   "aliasPosts": {
+    "Alex Seitz-Wald": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-326da877aa4d"
   },
   "qe-3279a11392e6": {
    "aliasPosts": {
@@ -4210,6 +4999,17 @@
    "posts": 1,
    "rowId": "qe-3279a11392e6"
   },
+  "qe-3281edd91760": {
+   "aliasPosts": {
+    "National Bank of Denmark": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-3281edd91760"
+  },
   "qe-32a5bd2cdfe9": {
    "aliasPosts": {
     "Loop Capital Markets": 1
@@ -4220,6 +5020,17 @@
    },
    "posts": 1,
    "rowId": "qe-32a5bd2cdfe9"
+  },
+  "qe-32c079f928e5": {
+   "aliasPosts": {
+    "Central Bank of Venezuela": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-32c079f928e5"
   },
   "qe-32f8adee9548": {
    "aliasPosts": {
@@ -4293,13 +5104,14 @@
   },
   "qe-34792e9e3388": {
    "aliasPosts": {
-    "Maggie Haberman": 1
+    "Maggie Haberman": 2
    },
    "kind": "prose",
    "perPostMentions": {
+    "1515": 1,
     "2648": 1
    },
-   "posts": 1,
+   "posts": 2,
    "rowId": "qe-34792e9e3388"
   },
   "qe-347e18cc8486": {
@@ -4316,6 +5128,17 @@
      "post": 4653
     }
    ]
+  },
+  "qe-34873c677fb1": {
+   "aliasPosts": {
+    "Bank of England": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-34873c677fb1"
   },
   "qe-354c972a2d6c": {
    "aliasPosts": {
@@ -4382,6 +5205,28 @@
    },
    "posts": 7,
    "rowId": "qe-36ba0b6c5ee9"
+  },
+  "qe-36bacd26fde5": {
+   "aliasPosts": {
+    "Kate Bouldan": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-36bacd26fde5"
+  },
+  "qe-36fdde9bc9a4": {
+   "aliasPosts": {
+    "Central Bank of Uruguay": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-36fdde9bc9a4"
   },
   "qe-37306dd886d7": {
    "kind": "source_only",
@@ -4582,6 +5427,28 @@
    "posts": 1,
    "rowId": "qe-38b6f76cc6ea"
   },
+  "qe-38c2121422b3": {
+   "aliasPosts": {
+    "Rwanda": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-38c2121422b3"
+  },
+  "qe-38d728410fd2": {
+   "aliasPosts": {
+    "Nicaragua": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-38d728410fd2"
+  },
   "qe-38eea5fa3a80": {
    "aliasPosts": {
     "Michael Jarrod Bakkela": 1
@@ -4607,15 +5474,27 @@
   },
   "qe-39195a41f11b": {
    "aliasPosts": {
-    "Yahoo": 2
+    "Yahoo": 3
    },
    "kind": "prose",
    "perPostMentions": {
     "1044": 1,
+    "1515": 1,
     "2787": 1
    },
-   "posts": 2,
+   "posts": 3,
    "rowId": "qe-39195a41f11b"
+  },
+  "qe-3990bf612460": {
+   "aliasPosts": {
+    "State Bank of Pakistan": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-3990bf612460"
   },
   "qe-39a0c8f570c5": {
    "aliasPosts": {
@@ -4632,6 +5511,7 @@
    "aliasPosts": {
     "GOP": 1,
     "R party": 3,
+    "Republican": 2,
     "Republican Party": 1,
     "Republicans": 6
    },
@@ -4642,13 +5522,15 @@
     "8": 2,
     "139": 1,
     "1252": 2,
+    "1319": 26,
     "1553": 1,
     "1745": 1,
+    "1850": 26,
     "1944": 1,
     "2303": 1,
     "2927": 1
    },
-   "posts": 10,
+   "posts": 12,
    "rowId": "qe-39ac279949d9"
   },
   "qe-39e75e16fdae": {
@@ -4690,6 +5572,17 @@
    },
    "posts": 2,
    "rowId": "qe-3a32a6b1cd38"
+  },
+  "qe-3a4680ff5ce9": {
+   "aliasPosts": {
+    "Diane Sawyer": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-3a4680ff5ce9"
   },
   "qe-3a4e3df6e631": {
    "aliasPosts": {
@@ -4884,6 +5777,17 @@
    "posts": 52,
    "rowId": "qe-3b4c46b9f74d"
   },
+  "qe-3b66c91a8560": {
+   "aliasPosts": {
+    "Bank of Slovenia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-3b66c91a8560"
+  },
   "qe-3b73c1eede4c": {
    "aliasPosts": {
     "Frank LoBiondo": 3
@@ -5010,6 +5914,17 @@
    "posts": 1,
    "rowId": "qe-3c68c44c0327"
   },
+  "qe-3c9401de3e7b": {
+   "aliasPosts": {
+    "Central Bank of Norway": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-3c9401de3e7b"
+  },
   "qe-3cfa5668a753": {
    "aliasPosts": {
     "JC": 1,
@@ -5057,6 +5972,17 @@
    "posts": 1,
    "rowId": "qe-3d270b8f4a77"
   },
+  "qe-3d31e0b0b835": {
+   "aliasPosts": {
+    "Algeria": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-3d31e0b0b835"
+  },
   "qe-3d32aebdd8e9": {
    "aliasPosts": {
     "WAPO": 2,
@@ -5074,6 +6000,17 @@
    "posts": 5,
    "rowId": "qe-48200abcb9fa"
   },
+  "qe-3d3879f0058d": {
+   "aliasPosts": {
+    "Bank of the Republic": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-3d3879f0058d"
+  },
   "qe-3d39629f9ecd": {
    "aliasPosts": {
     "Cult": 1
@@ -5084,6 +6021,17 @@
    },
    "posts": 1,
    "rowId": "qe-3d39629f9ecd"
+  },
+  "qe-3d56d0641f69": {
+   "aliasPosts": {
+    "Bank of Mozambique": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-3d56d0641f69"
   },
   "qe-3d710d2ee18d": {
    "aliasPosts": {
@@ -5096,6 +6044,17 @@
    },
    "posts": 2,
    "rowId": "qe-3d710d2ee18d"
+  },
+  "qe-3db0f81882f1": {
+   "aliasPosts": {
+    "Bank of Morocco": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-3db0f81882f1"
   },
   "qe-3dc1ac583a80": {
    "aliasPosts": {
@@ -5112,7 +6071,7 @@
    "aliasPosts": {
     "AS": 19,
     "Adam Schiff": 5,
-    "Rep. Adam Schiff (D-CA) – Chair Intel": 1,
+    "Adam Schiff (D-CA) – Chair Intel": 1,
     "Schiff": 6
    },
    "kind": "prose",
@@ -5170,6 +6129,17 @@
    },
    "posts": 1,
    "rowId": "qe-3dfe6ed75038"
+  },
+  "qe-3e4957f5c7b4": {
+   "aliasPosts": {
+    "Reserve Bank of Vanuatu": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-3e4957f5c7b4"
   },
   "qe-3ec7dbd12865": {
    "kind": "source_only",
@@ -5231,6 +6201,17 @@
    },
    "posts": 1,
    "rowId": "qe-3f0f86bf8d7c"
+  },
+  "qe-3f2bf08a90e0": {
+   "aliasPosts": {
+    "Bank of Estonia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-3f2bf08a90e0"
   },
   "qe-3f91c584bbfd": {
    "aliasPosts": {
@@ -5384,13 +6365,14 @@
   },
   "qe-40b3b980802c": {
    "aliasPosts": {
-    "CASTLE_ROCK": 1
+    "CASTLE_ROCK": 2
    },
    "kind": "prose",
    "perPostMentions": {
-    "4413": 1
+    "4413": 1,
+    "4414": 1
    },
-   "posts": 1,
+   "posts": 2,
    "rowId": "qe-40b3b980802c"
   },
   "qe-40f5a7a191fb": {
@@ -5563,6 +6545,39 @@
    "posts": 1,
    "rowId": "qe-425e37bc1a31"
   },
+  "qe-42b58beed29a": {
+   "aliasPosts": {
+    "Zambia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-42b58beed29a"
+  },
+  "qe-43292fba2ab7": {
+   "aliasPosts": {
+    "Congo": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-43292fba2ab7"
+  },
+  "qe-435bcf4ebc67": {
+   "aliasPosts": {
+    "Samoa": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-435bcf4ebc67"
+  },
   "qe-43a93d5f84aa": {
    "aliasPosts": {
     "Insurrection Act of 1807": 1
@@ -5573,6 +6588,17 @@
    },
    "posts": 1,
    "rowId": "qe-43a93d5f84aa"
+  },
+  "qe-441166eb4593": {
+   "aliasPosts": {
+    "Iceland": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-441166eb4593"
   },
   "qe-442a0d902541": {
    "aliasPosts": {
@@ -5605,6 +6631,39 @@
    },
    "posts": 2,
    "rowId": "qe-44c353c59a7d"
+  },
+  "qe-44e8ee835bea": {
+   "aliasPosts": {
+    "Macao": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-44e8ee835bea"
+  },
+  "qe-456198550a6c": {
+   "aliasPosts": {
+    "Central Bank of Egypt": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-456198550a6c"
+  },
+  "qe-458786e9f8ae": {
+   "aliasPosts": {
+    "Fiji": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-458786e9f8ae"
   },
   "qe-45881247e81b": {
    "aliasPosts": {
@@ -5696,6 +6755,17 @@
    },
    "posts": 15,
    "rowId": "qe-462c7edc86af"
+  },
+  "qe-467076948eb8": {
+   "aliasPosts": {
+    "Sam Feist": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-467076948eb8"
   },
   "qe-46de0d1e7f93": {
    "aliasPosts": {
@@ -5794,6 +6864,28 @@
    "posts": 15,
    "rowId": "qe-477d37d6ce46"
   },
+  "qe-47cafe71e0fe": {
+   "aliasPosts": {
+    "Erin Burnett": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-47cafe71e0fe"
+  },
+  "qe-47e444b0281a": {
+   "aliasPosts": {
+    "Central Bank of Belize": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-47e444b0281a"
+  },
   "qe-48122f44242c": {
    "aliasPosts": {
     "Emergency Alert System": 1
@@ -5858,6 +6950,17 @@
    },
    "posts": 4,
    "rowId": "qe-4843f19dc840"
+  },
+  "qe-4852b04127e4": {
+   "aliasPosts": {
+    "Gail Collins": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-4852b04127e4"
   },
   "qe-48a8e3125601": {
    "aliasPosts": {
@@ -5991,6 +7094,28 @@
     }
    ]
   },
+  "qe-49dc8a747f78": {
+   "aliasPosts": {
+    "Central Bank of Haiti": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-49dc8a747f78"
+  },
+  "qe-49f918c2b2f5": {
+   "aliasPosts": {
+    "John Berman": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-49f918c2b2f5"
+  },
   "qe-4a641d4790cc": {
    "aliasPosts": {
     "Allison Mack": 3
@@ -6083,6 +7208,28 @@
    },
    "posts": 1,
    "rowId": "qe-4b019f04cac3"
+  },
+  "qe-4bb3729cea4e": {
+   "aliasPosts": {
+    "Central Bank of Bahrain": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-4bb3729cea4e"
+  },
+  "qe-4be6de4cd892": {
+   "aliasPosts": {
+    "Central Bank of Kuwait": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-4be6de4cd892"
   },
   "qe-4befb7b8a315": {
    "aliasPosts": {
@@ -6177,6 +7324,39 @@
    "posts": 11,
    "rowId": "qe-4c1531469e90"
   },
+  "qe-4c9420670b10": {
+   "aliasPosts": {
+    "Mozambique": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-4c9420670b10"
+  },
+  "qe-4c94a6a06428": {
+   "aliasPosts": {
+    "Maria Cardona": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-4c94a6a06428"
+  },
+  "qe-4ce4e0e569d4": {
+   "aliasPosts": {
+    "Thomas Roberts": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-4ce4e0e569d4"
+  },
   "qe-4d1bd7a13a2c": {
    "aliasPosts": {
     "Declaration of Independence": 1
@@ -6247,6 +7427,28 @@
    },
    "posts": 2,
    "rowId": "qe-4e1e6d8f2355"
+  },
+  "qe-4e5245059c3c": {
+   "aliasPosts": {
+    "Central Bank of Argentina": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-4e5245059c3c"
+  },
+  "qe-4e5a256fec9a": {
+   "aliasPosts": {
+    "Denmark": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-4e5a256fec9a"
   },
   "qe-4e97a299414b": {
    "aliasPosts": {
@@ -6424,15 +7626,27 @@
   "qe-50881b0f873f": {
    "aliasPosts": {
     "Matthew Whitaker": 1,
-    "WHITAKER": 5
+    "WHITAKER": 5,
+    "Whitaker": 11
    },
    "kind": "prose",
    "perPostMentions": {
     "2462": 1,
+    "2468": 1,
+    "2495": 1,
+    "2496": 1,
+    "2501": 1,
     "2525": 1,
     "2548": 1,
+    "2555": 1,
     "2676": 1,
+    "2681": 1,
+    "2766": 1,
+    "2937": 1,
+    "2955": 1,
     "3015": 1,
+    "3028": 1,
+    "3036": 1,
     "3177": 1
    },
    "posts": 17,
@@ -6442,7 +7656,7 @@
    "aliasPosts": {
     "CF": 27,
     "Clinton Foundation": 18,
-    "THE CLINTON FOUNDATION": 3
+    "THE CLINTON FOUNDATION": 4
    },
    "kind": "prose",
    "perPostMentions": {
@@ -6479,7 +7693,7 @@
     "2581": 1,
     "2626": 1,
     "3125": 1,
-    "3611": 2,
+    "3611": 3,
     "3674": 1,
     "4278": 1,
     "4484": 1,
@@ -6570,6 +7784,17 @@
    "posts": 2,
    "rowId": "qe-51830e745615"
   },
+  "qe-51fd389c7124": {
+   "aliasPosts": {
+    "Nigeria": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-51fd389c7124"
+  },
   "qe-5209580c7cb3": {
    "aliasPosts": {
     "Ted Poe": 2
@@ -6606,6 +7831,17 @@
      "post": 4539
     }
    ]
+  },
+  "qe-522623223f78": {
+   "aliasPosts": {
+    "Bank of Portugal": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-522623223f78"
   },
   "qe-522a62f57eb5": {
    "aliasPosts": {
@@ -6774,7 +8010,7 @@
    "aliasPosts": {
     "CS": 8,
     "Chuck Schumer": 4,
-    "Sen. Chuck Schumer (D-NY) – Senate Minority Leader": 1
+    "Chuck Schumer (D-NY) – Senate Minority Leader": 1
    },
    "kind": "prose",
    "perPostMentions": {
@@ -6900,6 +8136,17 @@
     }
    ]
   },
+  "qe-54284b5d588b": {
+   "aliasPosts": {
+    "Federal Reserve Bank of New York": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-54284b5d588b"
+  },
   "qe-54a16c15b7eb": {
    "kind": "source_only",
    "posts": 0,
@@ -6966,6 +8213,17 @@
    },
    "posts": 2,
    "rowId": "qe-48218e7ab8e3"
+  },
+  "qe-5583bba9d661": {
+   "aliasPosts": {
+    "Jonathan Martin": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-5583bba9d661"
   },
   "qe-559e34f8c247": {
    "kind": "source_only",
@@ -7089,6 +8347,28 @@
    "posts": 1,
    "rowId": "qe-5769f5486509"
   },
+  "qe-5771a0827bdf": {
+   "aliasPosts": {
+    "Senegal": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-5771a0827bdf"
+  },
+  "qe-57d98bef22fb": {
+   "aliasPosts": {
+    "Romania": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-57d98bef22fb"
+  },
   "qe-58094fa47bc8": {
    "aliasPosts": {
     "Gerry Studds": 1
@@ -7173,6 +8453,17 @@
    "posts": 3,
    "rowId": "qe-5867191b44fb"
   },
+  "qe-58839de49bd1": {
+   "aliasPosts": {
+    "Mali": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-58839de49bd1"
+  },
   "qe-59748746928c": {
    "aliasPosts": {
     "Fareed Zakaria": 1
@@ -7194,6 +8485,17 @@
    },
    "posts": 1,
    "rowId": "qe-597beaf86e6e"
+  },
+  "qe-5995f2b8cfb1": {
+   "aliasPosts": {
+    "Slovakia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-5995f2b8cfb1"
   },
   "qe-59bb69e52d4e": {
    "kind": "source_only",
@@ -7292,6 +8594,17 @@
    "posts": 1,
    "rowId": "qe-59dd10124a39"
   },
+  "qe-5a040717aa5b": {
+   "aliasPosts": {
+    "Colleen McCain Nelson": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-5a040717aa5b"
+  },
   "qe-5ab79a083e67": {
    "aliasPosts": {
     "Cassidy Hutchinson": 1
@@ -7303,10 +8616,24 @@
    "posts": 1,
    "rowId": "qe-5ab79a083e67"
   },
+  "qe-5abb48de3219": {
+   "aliasPosts": {
+    "Central Bank of West African States (BCEAO)": 4
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 2,
+    "136": 2,
+    "137": 2,
+    "138": 2
+   },
+   "posts": 4,
+   "rowId": "qe-5abb48de3219"
+  },
   "qe-5b21bdeb116e": {
    "aliasPosts": {
     "Jerry Nadler": 1,
-    "Rep. Jerry Nadler (D-NY) – Chair Judiciary": 1
+    "Jerry Nadler (D-NY) – Chair Judiciary": 1
    },
    "kind": "prose",
    "perPostMentions": {
@@ -7328,6 +8655,17 @@
    },
    "posts": 4,
    "rowId": "qe-5b797d5899a4"
+  },
+  "qe-5be9c913dd57": {
+   "aliasPosts": {
+    "Bank of Mauritius": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-5be9c913dd57"
   },
   "qe-5c2176f0b93b": {
    "aliasPosts": {
@@ -7461,6 +8799,39 @@
    },
    "posts": 2,
    "rowId": "qe-5d72b5a96e26"
+  },
+  "qe-5d750b9ac02f": {
+   "aliasPosts": {
+    "Belize": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-5d750b9ac02f"
+  },
+  "qe-5d95a2ee747c": {
+   "aliasPosts": {
+    "Central Bank of Lebanon": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-5d95a2ee747c"
+  },
+  "qe-5ddec87a5302": {
+   "aliasPosts": {
+    "Magyar Nemzeti Bank": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-5ddec87a5302"
   },
   "qe-5de21273e3cd": {
    "aliasPosts": {
@@ -7617,6 +8988,17 @@
    "posts": 1,
    "rowId": "qe-5f8841ad2402"
   },
+  "qe-5ff5bfe12a7c": {
+   "aliasPosts": {
+    "Alex Wagner": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-5ff5bfe12a7c"
+  },
   "qe-5ff9ce21d89a": {
    "aliasPosts": {
     "Beverly Russell": 1
@@ -7649,6 +9031,17 @@
    },
    "posts": 1,
    "rowId": "qe-602197501110"
+  },
+  "qe-604f2d211040": {
+   "aliasPosts": {
+    "Brianna Keilar": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-604f2d211040"
   },
   "qe-606c2ffa8ea5": {
    "aliasPosts": {
@@ -7788,6 +9181,17 @@
    "posts": 1,
    "rowId": "qe-61aefa6d4398"
   },
+  "qe-61c5952ce101": {
+   "aliasPosts": {
+    "The State Bank of Vietnam": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-61c5952ce101"
+  },
   "qe-61cd11fd746c": {
    "aliasPosts": {
     "Rudy": 6
@@ -7815,6 +9219,28 @@
    "posts": 1,
    "rowId": "qe-6203243178c8"
   },
+  "qe-625255f02cf4": {
+   "aliasPosts": {
+    "Bank of Afghanistan": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-625255f02cf4"
+  },
+  "qe-6278cb896017": {
+   "aliasPosts": {
+    "The People’s Bank of China": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-6278cb896017"
+  },
   "qe-6293dccf55fc": {
    "aliasPosts": {
     "Border Patrol": 1
@@ -7836,6 +9262,17 @@
    },
    "posts": 1,
    "rowId": "qe-629ab46ccbf8"
+  },
+  "qe-62b2862c7fc5": {
+   "aliasPosts": {
+    "Monetary Authority of Macao": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-62b2862c7fc5"
   },
   "qe-62c4280f5ad3": {
    "aliasPosts": {
@@ -7883,6 +9320,17 @@
    "posts": 1,
    "rowId": "qe-632b2c039444"
   },
+  "qe-6358cee04b93": {
+   "aliasPosts": {
+    "Bahrain": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-6358cee04b93"
+  },
   "qe-63891e8fa021": {
    "aliasPosts": {
     "Ratcliffe": 1
@@ -7929,6 +9377,17 @@
    "posts": 2,
    "rowId": "qe-63dc4df7fcc8"
   },
+  "qe-644d3e147b9c": {
+   "aliasPosts": {
+    "Bank of the Netherlands Antilles": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-644d3e147b9c"
+  },
   "qe-64638efe25c2": {
    "aliasPosts": {
     "Waters": 2
@@ -7940,6 +9399,17 @@
    },
    "posts": 2,
    "rowId": "qe-64638efe25c2"
+  },
+  "qe-647ae379a90b": {
+   "aliasPosts": {
+    "Central Bank of Libya": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-647ae379a90b"
   },
   "qe-6480d12a8c39": {
    "aliasPosts": {
@@ -8023,6 +9493,17 @@
    },
    "posts": 1,
    "rowId": "qe-6610522d53eb"
+  },
+  "qe-665d7430de84": {
+   "aliasPosts": {
+    "Central Bank of Azerbaijan Republic": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-665d7430de84"
   },
   "qe-66889b30eb08": {
    "aliasPosts": {
@@ -8140,6 +9621,28 @@
    "posts": 3,
    "rowId": "qe-67980945d1ad"
   },
+  "qe-67deaa87fbb8": {
+   "aliasPosts": {
+    "Bank of Japan": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-67deaa87fbb8"
+  },
+  "qe-67e6838767b1": {
+   "aliasPosts": {
+    "Aruba": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-67e6838767b1"
+  },
   "qe-67eb8188d5f0": {
    "aliasPosts": {
     "Federal Judiciary": 1
@@ -8165,6 +9668,17 @@
      "post": 4582
     }
    ]
+  },
+  "qe-68667fe95861": {
+   "aliasPosts": {
+    "Guyana": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-68667fe95861"
   },
   "qe-6871e3602f8d": {
    "aliasPosts": {
@@ -8192,6 +9706,17 @@
    "posts": 4,
    "rowId": "qe-6889e8485216"
   },
+  "qe-6899ccb55966": {
+   "aliasPosts": {
+    "Bermuda Monetary Authority": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-6899ccb55966"
+  },
   "qe-68af5ae89135": {
    "aliasPosts": {
     "Edward Mezvinsky": 1
@@ -8203,16 +9728,40 @@
    "posts": 1,
    "rowId": "qe-68af5ae89135"
   },
+  "qe-68cb332609f3": {
+   "aliasPosts": {
+    "Mongolia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-68cb332609f3"
+  },
   "qe-68e9b68d6a2b": {
    "aliasPosts": {
+    "MIL INTEL": 1,
     "Mil Intel": 1
    },
    "kind": "prose",
    "perPostMentions": {
+    "2561": 1,
     "3221": 1
    },
-   "posts": 1,
+   "posts": 2,
    "rowId": "qe-68e9b68d6a2b"
+  },
+  "qe-6964e18829c9": {
+   "aliasPosts": {
+    "Gloria Borger": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-6964e18829c9"
   },
   "qe-6976feaaf2a8": {
    "aliasPosts": {
@@ -8249,6 +9798,17 @@
    },
    "posts": 1,
    "rowId": "qe-6997635c7a7c"
+  },
+  "qe-699fa59a120b": {
+   "aliasPosts": {
+    "Charlie Rose": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-699fa59a120b"
   },
   "qe-69bbadce263e": {
    "aliasPosts": {
@@ -8312,6 +9872,17 @@
    "posts": 2,
    "rowId": "qe-69f070208958"
   },
+  "qe-6a0b1f3ec955": {
+   "aliasPosts": {
+    "Hong Kong Monetary Authority": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-6a0b1f3ec955"
+  },
   "qe-6a6c73a31e8c": {
    "aliasPosts": {
     "Stephen Jabbour": 1
@@ -8358,6 +9929,17 @@
     }
    ]
   },
+  "qe-6ab6c5afe412": {
+   "aliasPosts": {
+    "Bangladesh Bank": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-6ab6c5afe412"
+  },
   "qe-6af854cc00e4": {
    "aliasPosts": {
     "Ohio": 1
@@ -8368,6 +9950,17 @@
    },
    "posts": 1,
    "rowId": "qe-6af854cc00e4"
+  },
+  "qe-6b04d1404cf9": {
+   "aliasPosts": {
+    "Seychelles": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-6b04d1404cf9"
   },
   "qe-6b52d9a07e12": {
    "aliasPosts": {
@@ -8478,13 +10071,14 @@
   },
   "qe-6cbd2d0bea8d": {
    "aliasPosts": {
-    "Daily Beast": 1
+    "Daily Beast": 2
    },
    "kind": "prose",
    "perPostMentions": {
+    "1515": 1,
     "4468": 1
    },
-   "posts": 1,
+   "posts": 2,
    "rowId": "qe-6cbd2d0bea8d",
    "sourcePosts": [
     {
@@ -8528,6 +10122,28 @@
    "posts": 1,
    "rowId": "qe-6cd663c46b18"
   },
+  "qe-6d19f0874b7e": {
+   "aliasPosts": {
+    "Tonga": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-6d19f0874b7e"
+  },
+  "qe-6da91c6113cc": {
+   "aliasPosts": {
+    "Macedonia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-6da91c6113cc"
+  },
   "qe-6dcd17b8dca5": {
    "aliasPosts": {
     "ES": 8,
@@ -8559,6 +10175,28 @@
    "posts": 1,
    "rowId": "qe-6dde6b040d74"
   },
+  "qe-6e00d0ffea74": {
+   "aliasPosts": {
+    "Malta": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-6e00d0ffea74"
+  },
+  "qe-6e0412301215": {
+   "aliasPosts": {
+    "Central Bank of Kenya": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-6e0412301215"
+  },
   "qe-6e26689d7751": {
    "kind": "source_only",
    "posts": 0,
@@ -8581,6 +10219,17 @@
    "posts": 1,
    "rowId": "qe-6e636a81d436"
   },
+  "qe-6e990ceec0d1": {
+   "aliasPosts": {
+    "Bank of Uganda": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-6e990ceec0d1"
+  },
   "qe-6eeb938f0af3": {
    "aliasPosts": {
     "Bill de Blasio": 1
@@ -8591,6 +10240,17 @@
    },
    "posts": 1,
    "rowId": "qe-6eeb938f0af3"
+  },
+  "qe-6f49ef92ebb1": {
+   "aliasPosts": {
+    "Mike Oreskes": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-6f49ef92ebb1"
   },
   "qe-6f9e6b15a59a": {
    "aliasPosts": {
@@ -8605,6 +10265,17 @@
    "posts": 2,
    "rowId": "qe-6f9e6b15a59a"
   },
+  "qe-702c461bb9ee": {
+   "aliasPosts": {
+    "Namibia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-702c461bb9ee"
+  },
   "qe-7046916579e8": {
    "aliasPosts": {
     "Kim Foxx": 1
@@ -8615,6 +10286,17 @@
    },
    "posts": 1,
    "rowId": "qe-7046916579e8"
+  },
+  "qe-7051c43e49cd": {
+   "aliasPosts": {
+    "Central Bank of Oman": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-7051c43e49cd"
   },
   "qe-70951d5665ec": {
    "kind": "prose",
@@ -8631,6 +10313,17 @@
    },
    "posts": 1,
    "rowId": "qe-7135a371b4b4"
+  },
+  "qe-713d32ec030d": {
+   "aliasPosts": {
+    "Portugal": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-713d32ec030d"
   },
   "qe-71878b3acd46": {
    "aliasPosts": {
@@ -8693,6 +10386,17 @@
    "posts": 2,
    "rowId": "qe-724e84b205d4"
   },
+  "qe-727b1198794f": {
+   "aliasPosts": {
+    "National Bank of Cambodia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-727b1198794f"
+  },
   "qe-72ab4cca6d70": {
    "aliasPosts": {
     "Holy See": 2
@@ -8724,6 +10428,17 @@
    "posts": 8,
    "rowId": "qe-72c96d957a8a"
   },
+  "qe-731304ef1302": {
+   "aliasPosts": {
+    "Central Bank of Nepal": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-731304ef1302"
+  },
   "qe-736412bb6b8a": {
    "aliasPosts": {
     "Vatican bank": 1
@@ -8748,10 +10463,14 @@
   },
   "qe-73b417a034ec": {
    "aliasPosts": {
-    "PENCE": 1
+    "PENCE": 2,
+    "Pence": 3
    },
    "kind": "prose",
    "perPostMentions": {
+    "725": 1,
+    "1123": 1,
+    "3330": 2,
     "4414": 1
    },
    "posts": 4,
@@ -8864,6 +10583,17 @@
    "posts": 2,
    "rowId": "qe-75589f8b6d78"
   },
+  "qe-756ff394cbdb": {
+   "aliasPosts": {
+    "Central Bank of Nigeria": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-756ff394cbdb"
+  },
   "qe-7571fdc01b67": {
    "aliasPosts": {
     "Korea": 3
@@ -8876,6 +10606,17 @@
    },
    "posts": 3,
    "rowId": "qe-7571fdc01b67"
+  },
+  "qe-758922687247": {
+   "aliasPosts": {
+    "Cambodia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-758922687247"
   },
   "qe-75abcf44604a": {
    "aliasPosts": {
@@ -8965,6 +10706,17 @@
    "posts": 2,
    "rowId": "qe-764ce51d43b2"
   },
+  "qe-76844c860b54": {
+   "aliasPosts": {
+    "Kenneth Vogel": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-76844c860b54"
+  },
   "qe-76ab03a9b5f2": {
    "aliasPosts": {
     "Natalia Veselnitskaya": 2
@@ -8999,6 +10751,17 @@
      "post": 2591
     }
    ]
+  },
+  "qe-772c7e4dca65": {
+   "aliasPosts": {
+    "Carolyn Ryan": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-772c7e4dca65"
   },
   "qe-773af3906078": {
    "aliasPosts": {
@@ -9048,6 +10811,7 @@
     "DJT": 1,
     "Donald J. Trump": 2,
     "Q+": 36,
+    "TRUMP": 1,
     "Trump": 19
    },
    "kind": "prose",
@@ -9084,7 +10848,7 @@
     "1834": 1,
     "1935": 1,
     "2039": 1,
-    "2054": 2,
+    "2054": 3,
     "2095": 1,
     "2119": 1,
     "2301": 1,
@@ -9197,6 +10961,17 @@
    "posts": 1,
    "rowId": "qe-78dd7287490f"
   },
+  "qe-78e0639a31ff": {
+   "aliasPosts": {
+    "Steve Chagaris": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-78e0639a31ff"
+  },
   "qe-79226ca8ec7f": {
    "aliasPosts": {
     "Lisa Barsoomian": 2
@@ -9303,6 +11078,17 @@
     }
    ]
   },
+  "qe-7a2c2c55fc1a": {
+   "aliasPosts": {
+    "David Chailan": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-7a2c2c55fc1a"
+  },
   "qe-7a2e37ed6dca": {
    "kind": "source_only",
    "posts": 0,
@@ -9332,6 +11118,17 @@
    },
    "posts": 1,
    "rowId": "qe-7a5744f7791c"
+  },
+  "qe-7a659761776f": {
+   "aliasPosts": {
+    "Bank of Canada – Banque du Canada": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-7a659761776f"
   },
   "qe-7a84c62b5a0f": {
    "aliasPosts": {
@@ -9377,6 +11174,17 @@
     }
    ]
   },
+  "qe-7b0046710edf": {
+   "aliasPosts": {
+    "National Bank of Rwanda": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-7b0046710edf"
+  },
   "qe-7b41aeefc50d": {
    "kind": "source_only",
    "posts": 0,
@@ -9405,6 +11213,28 @@
    "posts": 3,
    "rowId": "qe-7b48ab004482"
   },
+  "qe-7b92dffbaf4b": {
+   "aliasPosts": {
+    "Vanuatu": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-7b92dffbaf4b"
+  },
+  "qe-7bd384d179d9": {
+   "aliasPosts": {
+    "Swiss National Bank": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-7bd384d179d9"
+  },
   "qe-7c43fdc7802f": {
    "aliasPosts": {
     "John Carlin": 3
@@ -9417,6 +11247,17 @@
    },
    "posts": 3,
    "rowId": "qe-7c43fdc7802f"
+  },
+  "qe-7c4f4e912106": {
+   "aliasPosts": {
+    "Central Bank of Lesotho": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-7c4f4e912106"
   },
   "qe-7c5e6484ab7d": {
    "aliasPosts": {
@@ -9784,13 +11625,14 @@
   },
   "qe-7f7a9c8af686": {
    "aliasPosts": {
-    "Politico": 1
+    "Politico": 2
    },
    "kind": "prose",
    "perPostMentions": {
+    "1515": 5,
     "2648": 1
    },
-   "posts": 1,
+   "posts": 2,
    "rowId": "qe-7f7a9c8af686",
    "sourcePosts": [
     {
@@ -9845,6 +11687,17 @@
    },
    "posts": 1,
    "rowId": "qe-7fad265f3ef8"
+  },
+  "qe-7fdb46aa70f0": {
+   "aliasPosts": {
+    "Swaziland": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-7fdb46aa70f0"
   },
   "qe-7fde43048a1e": {
    "aliasPosts": {
@@ -9911,6 +11764,17 @@
    },
    "posts": 1,
    "rowId": "qe-80880c226c46"
+  },
+  "qe-80b1e6adb830": {
+   "aliasPosts": {
+    "Uganda": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-80b1e6adb830"
   },
   "qe-80dcc988dd59": {
    "kind": "source_only",
@@ -10011,6 +11875,17 @@
    "posts": 1,
    "rowId": "qe-819569d92311"
   },
+  "qe-819a8f02fff4": {
+   "aliasPosts": {
+    "Bank of Botswana": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-819a8f02fff4"
+  },
   "qe-81aabd241ebe": {
    "aliasPosts": {
     "NAT G": 1
@@ -10033,6 +11908,28 @@
    },
    "posts": 2,
    "rowId": "qe-81ac44e10614"
+  },
+  "qe-81c70fd3e376": {
+   "aliasPosts": {
+    "Rachel Maddow": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-81c70fd3e376"
+  },
+  "qe-81fc4d7c494f": {
+   "aliasPosts": {
+    "Bosnia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-81fc4d7c494f"
   },
   "qe-8201c379a7e9": {
    "aliasPosts": {
@@ -10326,6 +12223,28 @@
    },
    "posts": 1,
    "rowId": "qe-82dff5f5133b"
+  },
+  "qe-8300b7eb6398": {
+   "aliasPosts": {
+    "Bank of Mongolia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-8300b7eb6398"
+  },
+  "qe-8352f39db177": {
+   "aliasPosts": {
+    "Bank of Ghana": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-8352f39db177"
   },
   "qe-8373d321bca3": {
    "aliasPosts": {
@@ -10628,6 +12547,28 @@
    "posts": 3,
    "rowId": "qe-878d5420f363"
   },
+  "qe-87d622f681ec": {
+   "aliasPosts": {
+    "Trinidad and Tobago": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-87d622f681ec"
+  },
+  "qe-87fc48f83573": {
+   "aliasPosts": {
+    "Bank of Spain": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-87fc48f83573"
+  },
   "qe-889c6e61bb80": {
    "aliasPosts": {
     "Nightwatch": 1
@@ -10675,6 +12616,17 @@
    },
    "posts": 1,
    "rowId": "qe-89dc357bdb2f"
+  },
+  "qe-89ec4a95de39": {
+   "aliasPosts": {
+    "Central Bank of Malta": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-89ec4a95de39"
   },
   "qe-89ec708993ff": {
    "aliasPosts": {
@@ -10744,6 +12696,17 @@
    "posts": 2,
    "rowId": "qe-89ee20c1631e"
   },
+  "qe-8a164b379dfe": {
+   "aliasPosts": {
+    "Joe Scarborough": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-8a164b379dfe"
+  },
   "qe-8a52a8513c94": {
    "aliasPosts": {
     "US Intel": 2
@@ -10756,6 +12719,28 @@
    "posts": 2,
    "rowId": "qe-8a52a8513c94"
   },
+  "qe-8a8a2100a2d4": {
+   "aliasPosts": {
+    "Mauritius": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-8a8a2100a2d4"
+  },
+  "qe-8a8a2f9e3b5f": {
+   "aliasPosts": {
+    "Jackie Kucinich": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-8a8a2f9e3b5f"
+  },
   "qe-8aecb81bf390": {
    "aliasPosts": {
     "George Floyd": 2
@@ -10767,6 +12752,17 @@
    },
    "posts": 2,
    "rowId": "qe-8aecb81bf390"
+  },
+  "qe-8af98710d8bb": {
+   "aliasPosts": {
+    "National Bank of Kazakhstan": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-8af98710d8bb"
   },
   "qe-8b204011d055": {
    "kind": "source_only",
@@ -10824,6 +12820,17 @@
    },
    "posts": 1,
    "rowId": "qe-8b68a442c3b8"
+  },
+  "qe-8b7ce2aa27ac": {
+   "aliasPosts": {
+    "Andrea Mitchell": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-8b7ce2aa27ac"
   },
   "qe-8ba085bf6347": {
    "aliasPosts": {
@@ -10957,6 +12964,28 @@
    "posts": 1,
    "rowId": "qe-8c36b881e497"
   },
+  "qe-8c38c922d71d": {
+   "aliasPosts": {
+    "Bank of Zambia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-8c38c922d71d"
+  },
+  "qe-8c5153d58668": {
+   "aliasPosts": {
+    "Estonia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-8c5153d58668"
+  },
   "qe-8c6efc28cfc9": {
    "aliasPosts": {
     "USNS Comfort": 3
@@ -10981,6 +13010,28 @@
    },
    "posts": 2,
    "rowId": "qe-8c71271aef2d"
+  },
+  "qe-8c75f1b3d3f0": {
+   "aliasPosts": {
+    "Bank of Greece": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-8c75f1b3d3f0"
+  },
+  "qe-8cb8e41b00a8": {
+   "aliasPosts": {
+    "National Reserve Bank of Tonga": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-8cb8e41b00a8"
   },
   "qe-8cf10da6c277": {
    "aliasPosts": {
@@ -11032,17 +13083,26 @@
   },
   "qe-8d4eb01972fd": {
    "aliasPosts": {
-    "AWAN": 7
+    "AWAN": 9,
+    "Awan": 8
    },
    "kind": "prose",
    "perPostMentions": {
+    "71": 1,
+    "77": 1,
     "484": 1,
     "674": 1,
+    "988": 1,
+    "1008": 1,
     "1097": 1,
+    "1235": 2,
     "1250": 1,
+    "1510": 1,
     "1626": 1,
     "1672": 1,
-    "3532": 1
+    "1981": 4,
+    "3532": 1,
+    "3634": 1
    },
    "posts": 15,
    "rowId": "qe-8d4eb01972fd"
@@ -11105,6 +13165,17 @@
    },
    "posts": 1,
    "rowId": "qe-8e2f340277cc"
+  },
+  "qe-8e4e7653f83e": {
+   "aliasPosts": {
+    "Bangladesh": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-8e4e7653f83e"
   },
   "qe-8e600b9e791b": {
    "aliasPosts": {
@@ -11184,6 +13255,39 @@
    "posts": 1,
    "rowId": "qe-8f149f910e98"
   },
+  "qe-8f2804107d9f": {
+   "aliasPosts": {
+    "Central Bank of Yemen": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-8f2804107d9f"
+  },
+  "qe-8fcd408a5c2f": {
+   "aliasPosts": {
+    "Jamaica": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-8fcd408a5c2f"
+  },
+  "qe-8ff5c9e5ea09": {
+   "aliasPosts": {
+    "Bank of Tanzania": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-8ff5c9e5ea09"
+  },
   "qe-90528e0b368d": {
    "kind": "source_only",
    "posts": 0,
@@ -11229,6 +13333,17 @@
    },
    "posts": 2,
    "rowId": "qe-90a4ed0a02e2"
+  },
+  "qe-90a691405257": {
+   "aliasPosts": {
+    "Bank of Algeria": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-90a691405257"
   },
   "qe-90a8d6ff2fb1": {
    "aliasPosts": {
@@ -11335,6 +13450,17 @@
    },
    "posts": 4,
    "rowId": "qe-918f1151060e"
+  },
+  "qe-918f540905de": {
+   "aliasPosts": {
+    "Jennifer Epstein": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-918f540905de"
   },
   "qe-919be23d5c52": {
    "aliasPosts": {
@@ -11497,6 +13623,17 @@
     }
    ]
   },
+  "qe-9361f6da7bf9": {
+   "aliasPosts": {
+    "Netherlands Bank": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-9361f6da7bf9"
+  },
   "qe-93c0a47d8051": {
    "aliasPosts": {
     "Iraq": 5
@@ -11542,13 +13679,14 @@
   },
   "qe-9432fc4f7685": {
    "aliasPosts": {
-    "CNBC": 1
+    "CNBC": 2
    },
    "kind": "prose",
    "perPostMentions": {
-    "554": 1
+    "554": 1,
+    "1515": 1
    },
-   "posts": 1,
+   "posts": 2,
    "rowId": "qe-9432fc4f7685",
    "sourcePosts": [
     {
@@ -11610,6 +13748,17 @@
    },
    "posts": 1,
    "rowId": "qe-95129ce4dc35"
+  },
+  "qe-951c9bf19e70": {
+   "aliasPosts": {
+    "Bank of Namibia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-951c9bf19e70"
   },
   "qe-952ca54de0b0": {
    "aliasPosts": {
@@ -11731,6 +13880,17 @@
    "posts": 2,
    "rowId": "qe-9712d2fe7d80"
   },
+  "qe-9738833efb76": {
+   "aliasPosts": {
+    "Ghana": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-9738833efb76"
+  },
   "qe-973e4489b7c2": {
    "aliasPosts": {
     "/pol/": 3
@@ -11805,6 +13965,17 @@
    "posts": 2,
    "rowId": "qe-9898be15c652"
   },
+  "qe-98d61d2dce95": {
+   "aliasPosts": {
+    "John Harwoodje": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-98d61d2dce95"
+  },
   "qe-98e0f85a496e": {
    "aliasPosts": {
     "CS": 1,
@@ -11833,6 +14004,17 @@
      "post": 445
     }
    ]
+  },
+  "qe-98e7cc900e64": {
+   "aliasPosts": {
+    "Botswana": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-98e7cc900e64"
   },
   "qe-9915f2d24b89": {
    "aliasPosts": {
@@ -11874,6 +14056,17 @@
    },
    "posts": 1,
    "rowId": "qe-99400387b11e"
+  },
+  "qe-999b6477ac59": {
+   "aliasPosts": {
+    "Central Bank of Costa Rica": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-999b6477ac59"
   },
   "qe-99b2829ea340": {
    "aliasPosts": {
@@ -11935,6 +14128,17 @@
      "post": 2801
     }
    ]
+  },
+  "qe-99f1aa7daebb": {
+   "aliasPosts": {
+    "Bank of Sierra Leone": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-99f1aa7daebb"
   },
   "qe-99f51396595b": {
    "aliasPosts": {
@@ -12039,6 +14243,17 @@
    "posts": 1,
    "rowId": "qe-9b674af7ee9f"
   },
+  "qe-9b6c1fd9bc4e": {
+   "aliasPosts": {
+    "Norah O'Donnell": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-9b6c1fd9bc4e"
+  },
   "qe-9b6de0c2fc5d": {
    "aliasPosts": {
     "Belgium": 2
@@ -12132,6 +14347,17 @@
     }
    ]
   },
+  "qe-9cf850ef5e1d": {
+   "aliasPosts": {
+    "Reserve Bank of Fiji": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-9cf850ef5e1d"
+  },
   "qe-9cfb9a554b04": {
    "aliasPosts": {
     "SDNY": 5
@@ -12182,6 +14408,28 @@
    "posts": 1,
    "rowId": "qe-9d75f69eca41"
   },
+  "qe-9db4ddb0f980": {
+   "aliasPosts": {
+    "Central Bank of Samoa": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-9db4ddb0f980"
+  },
+  "qe-9db5883ec684": {
+   "aliasPosts": {
+    "Phil Griffin": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-9db5883ec684"
+  },
   "qe-9df61d52a15b": {
    "aliasPosts": {
     "Speaker of the House": 3
@@ -12197,7 +14445,6 @@
   },
   "qe-9df7ca720cf1": {
    "aliasPosts": {
-    "M. Waters": 1,
     "MW": 6,
     "Maxine Waters": 2
    },
@@ -12210,10 +14457,9 @@
     "2087": 1,
     "2816": 1,
     "2843": 1,
-    "2856": 1,
-    "3383": 1
+    "2856": 1
    },
-   "posts": 9,
+   "posts": 8,
    "rowId": "qe-9df7ca720cf1"
   },
   "qe-9e1cfa10813f": {
@@ -12357,6 +14603,17 @@
    "posts": 9,
    "rowId": "qe-9f0b2c07f20f"
   },
+  "qe-9f1193aade70": {
+   "aliasPosts": {
+    "Savannah Gutherie": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-9f1193aade70"
+  },
   "qe-9f1d8fd8f37d": {
    "aliasPosts": {
     "US Navy": 1
@@ -12430,6 +14687,17 @@
     }
    ]
   },
+  "qe-a06f3b4e291d": {
+   "aliasPosts": {
+    "Central Bank of Tunisia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-a06f3b4e291d"
+  },
   "qe-a0807cd1d9bf": {
    "aliasPosts": {
     "Clintons": 2
@@ -12452,6 +14720,17 @@
    },
    "posts": 1,
    "rowId": "qe-a161a321241d"
+  },
+  "qe-a16b32bf1a84": {
+   "aliasPosts": {
+    "Latvia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-a16b32bf1a84"
   },
   "qe-a17124cf20e9": {
    "aliasPosts": {
@@ -12579,9 +14858,26 @@
    "posts": 1,
    "rowId": "qe-a29ec35fb871"
   },
+  "qe-a2b4e5e74ae9": {
+   "aliasPosts": {
+    "Malaysia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-a2b4e5e74ae9"
+  },
   "qe-a2c73c324528": {
-   "kind": "source_only",
-   "posts": 0,
+   "aliasPosts": {
+    "NY Post": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
    "rowId": "qe-a2c73c324528",
    "sourcePosts": [
     {
@@ -12604,13 +14900,14 @@
   },
   "qe-a2cd94cbb82e": {
    "aliasPosts": {
-    "Jeff Zucker": 1
+    "Jeff Zucker": 2
    },
    "kind": "prose",
    "perPostMentions": {
+    "1515": 1,
     "1893": 1
    },
-   "posts": 1,
+   "posts": 2,
    "rowId": "qe-a2cd94cbb82e"
   },
   "qe-a2d6cbb88ce1": {
@@ -12668,6 +14965,17 @@
    },
    "posts": 2,
    "rowId": "qe-a39a59c3f625"
+  },
+  "qe-a3aec9e5c20e": {
+   "aliasPosts": {
+    "Bank of Finland": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-a3aec9e5c20e"
   },
   "qe-a3b39eb0b09a": {
    "aliasPosts": {
@@ -12838,6 +15146,17 @@
    "posts": 1,
    "rowId": "qe-a418102909cf"
   },
+  "qe-a42eb08ae846": {
+   "aliasPosts": {
+    "Gabon": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-a42eb08ae846"
+  },
   "qe-a48269dc8815": {
    "aliasPosts": {
     "AG Barr": 3
@@ -13001,6 +15320,17 @@
    "posts": 1,
    "rowId": "qe-a5e94709bbd0"
   },
+  "qe-a5ee61ab249f": {
+   "aliasPosts": {
+    "Central Bank of Sri Lanka": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-a5ee61ab249f"
+  },
   "qe-a60008522e27": {
    "aliasPosts": {
     "Nadler": 2
@@ -13012,6 +15342,17 @@
    },
    "posts": 2,
    "rowId": "qe-a60008522e27"
+  },
+  "qe-a632d63bcc30": {
+   "aliasPosts": {
+    "Netherlands": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-a632d63bcc30"
   },
   "qe-a6367f8cb28a": {
    "aliasPosts": {
@@ -13025,6 +15366,17 @@
    },
    "posts": 1,
    "rowId": "qe-a6367f8cb28a"
+  },
+  "qe-a65487d04890": {
+   "aliasPosts": {
+    "Dan Merica": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-a65487d04890"
   },
   "qe-a67ce7720e23": {
    "aliasPosts": {
@@ -13096,6 +15448,17 @@
    "posts": 22,
    "rowId": "qe-a7426511827a"
   },
+  "qe-a76ddc866761": {
+   "aliasPosts": {
+    "Central Bank of Iceland": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-a76ddc866761"
+  },
   "qe-a7744873eef9": {
    "aliasPosts": {
     "Elizabeth Esty": 2
@@ -13107,6 +15470,17 @@
    },
    "posts": 2,
    "rowId": "qe-a7744873eef9"
+  },
+  "qe-a7a6a1516734": {
+   "aliasPosts": {
+    "Central Bank of the Republic of Turkey": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-a7a6a1516734"
   },
   "qe-a7b796486dba": {
    "aliasPosts": {
@@ -13147,6 +15521,28 @@
    },
    "posts": 8,
    "rowId": "qe-a7c928a2ae1b"
+  },
+  "qe-a7e514cf00dc": {
+   "aliasPosts": {
+    "Central Bank of Jordan": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-a7e514cf00dc"
+  },
+  "qe-a802edcdf65e": {
+   "aliasPosts": {
+    "Bank of Central African States": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 5
+   },
+   "posts": 1,
+   "rowId": "qe-a802edcdf65e"
   },
   "qe-a8363a72fe82": {
    "aliasPosts": {
@@ -13224,8 +15620,14 @@
    ]
   },
   "qe-a91226e14421": {
-   "kind": "source_only",
-   "posts": 0,
+   "aliasPosts": {
+    "Bloomberg": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 3
+   },
+   "posts": 1,
    "rowId": "qe-a91226e14421",
    "sourcePosts": [
     {
@@ -13301,12 +15703,11 @@
   },
   "qe-aa3526a6c715": {
    "aliasPosts": {
-    "Army Lt. Gen. Paul Nakasone": 1,
     "Paul Nakasone": 1
    },
    "kind": "prose",
    "perPostMentions": {
-    "1268": 2
+    "1268": 1
    },
    "posts": 1,
    "rowId": "qe-aa3526a6c715"
@@ -13335,6 +15736,17 @@
    },
    "posts": 1,
    "rowId": "qe-aa6822fc60e7"
+  },
+  "qe-aa694e21f053": {
+   "aliasPosts": {
+    "Bank of Mexico": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-aa694e21f053"
   },
   "qe-aa96dc36dd6d": {
    "aliasPosts": {
@@ -13376,7 +15788,7 @@
    },
    "kind": "prose",
    "perPostMentions": {
-    "834": 1,
+    "834": 2,
     "839": 1,
     "1044": 1,
     "1926": 1,
@@ -13388,6 +15800,17 @@
    },
    "posts": 9,
    "rowId": "qe-ab324209d2fc"
+  },
+  "qe-ac07b7ec37ce": {
+   "aliasPosts": {
+    "Colombia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-ac07b7ec37ce"
   },
   "qe-ac1d57f21cc2": {
    "aliasPosts": {
@@ -13426,6 +15849,17 @@
    },
    "posts": 6,
    "rowId": "qe-ac912941a68f"
+  },
+  "qe-ac98a5c779d1": {
+   "aliasPosts": {
+    "Amy Chozik": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-ac98a5c779d1"
   },
   "qe-acebf6618637": {
    "kind": "source_only",
@@ -13466,6 +15900,39 @@
    },
    "posts": 3,
    "rowId": "qe-ad04c66745a0"
+  },
+  "qe-ad25e7885cc8": {
+   "aliasPosts": {
+    "Liz Kreutz": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-ad25e7885cc8"
+  },
+  "qe-ad3fc5ed9020": {
+   "aliasPosts": {
+    "National Bank of Belgium": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-ad3fc5ed9020"
+  },
+  "qe-adac4cc3a263": {
+   "aliasPosts": {
+    "Central Bank of Comoros": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-adac4cc3a263"
   },
   "qe-ae16836b6583": {
    "aliasPosts": {
@@ -13574,6 +16041,17 @@
    "posts": 2,
    "rowId": "qe-af0e0c2d3a3d"
   },
+  "qe-af28a974b3f7": {
+   "aliasPosts": {
+    "Serbia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-af28a974b3f7"
+  },
   "qe-af363d875c74": {
    "aliasPosts": {
     "London": 4
@@ -13613,8 +16091,32 @@
    "posts": 4,
    "rowId": "qe-af47be6a30dd"
   },
+  "qe-af503f33e4d1": {
+   "aliasPosts": {
+    "National Bank of Slovakia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-af503f33e4d1"
+  },
+  "qe-afce96b8c835": {
+   "aliasPosts": {
+    "Royal Monetary Authority of Bhutan": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-afce96b8c835"
+  },
   "qe-aff8f73c779b": {
    "aliasPosts": {
+    "GANG OF 8": 2,
+    "GANG OF 8 (INTEL)": 1,
     "Gang of 8": 2,
     "Gang of Eight": 3
    },
@@ -13622,7 +16124,9 @@
    "perPostMentions": {
     "2294": 1,
     "3063": 1,
-    "3241": 1,
+    "3241": 2,
+    "3679": 1,
+    "3680": 1,
     "3690": 1,
     "3993": 1
    },
@@ -13734,6 +16238,17 @@
    "posts": 3,
    "rowId": "qe-b102e1982f7e"
   },
+  "qe-b12c4b9bc969": {
+   "aliasPosts": {
+    "Bank of Guatemala": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-b12c4b9bc969"
+  },
   "qe-b12cc532a74b": {
    "aliasPosts": {
     "Election Day": 2
@@ -13745,6 +16260,28 @@
    },
    "posts": 2,
    "rowId": "qe-b12cc532a74b"
+  },
+  "qe-b13879b5f596": {
+   "aliasPosts": {
+    "Comoros": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-b13879b5f596"
+  },
+  "qe-b1a3e9924255": {
+   "aliasPosts": {
+    "East Caribbean area": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-b1a3e9924255"
   },
   "qe-b1a7aabf738a": {
    "aliasPosts": {
@@ -13768,6 +16305,17 @@
    },
    "posts": 1,
    "rowId": "qe-b1ca3ee7358f"
+  },
+  "qe-b1efa8294261": {
+   "aliasPosts": {
+    "Central Bank of Iraq": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-b1efa8294261"
   },
   "qe-b30551f2c56e": {
    "aliasPosts": {
@@ -13795,6 +16343,28 @@
     }
    ]
   },
+  "qe-b36aa59f8927": {
+   "aliasPosts": {
+    "Central Bank of United Arab Emirates": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-b36aa59f8927"
+  },
+  "qe-b39046bae55e": {
+   "aliasPosts": {
+    "Central Bank of Trinidad and Tobago": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-b39046bae55e"
+  },
   "qe-b3abfa643e52": {
    "aliasPosts": {
     "ABC agency": 1
@@ -13816,6 +16386,17 @@
    },
    "posts": 1,
    "rowId": "qe-b3b0881ce1d0"
+  },
+  "qe-b3d9d4d1d93d": {
+   "aliasPosts": {
+    "Oman": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-b3d9d4d1d93d"
   },
   "qe-b3eb32dd3db7": {
    "aliasPosts": {
@@ -14018,6 +16599,7 @@
   },
   "qe-b6b4134166a1": {
    "aliasPosts": {
+    "US MILITARY": 1,
     "US Military": 8
    },
    "kind": "prose",
@@ -14029,9 +16611,10 @@
     "316": 1,
     "321": 1,
     "350": 1,
-    "521": 1
+    "521": 1,
+    "1935": 1
    },
-   "posts": 8,
+   "posts": 9,
    "rowId": "qe-b6b4134166a1"
   },
   "qe-b6c08772d6d5": {
@@ -14170,7 +16753,7 @@
     "953": 1,
     "964": 1,
     "3381": 3,
-    "3383": 2,
+    "3383": 3,
     "3590": 1,
     "3754": 1,
     "3896": 1,
@@ -14227,6 +16810,17 @@
    },
    "posts": 1,
    "rowId": "qe-b84e9c6e3c54"
+  },
+  "qe-b86629998191": {
+   "aliasPosts": {
+    "Bulgarian National Bank": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-b86629998191"
   },
   "qe-b8758c335d26": {
    "aliasPosts": {
@@ -14285,6 +16879,17 @@
    "posts": 1,
    "rowId": "qe-b8eafd94e7d4"
   },
+  "qe-b8fa33b12aed": {
+   "aliasPosts": {
+    "Bank of Italy": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-b8fa33b12aed"
+  },
   "qe-b9101d73873d": {
    "aliasPosts": {
     "Union Soldiers": 1
@@ -14331,6 +16936,17 @@
      "post": 4653
     }
    ]
+  },
+  "qe-b9ad89be47ef": {
+   "aliasPosts": {
+    "Central Bank of Luxembourg": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-b9ad89be47ef"
   },
   "qe-b9ee2a4bc6bf": {
    "aliasPosts": {
@@ -14484,6 +17100,17 @@
    "posts": 1,
    "rowId": "qe-bb5f80c91c8f"
   },
+  "qe-bb9460380aeb": {
+   "aliasPosts": {
+    "Bank of Albania": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-bb9460380aeb"
+  },
   "qe-bbaff9b89796": {
    "aliasPosts": {
     "Saleha Abedin": 1
@@ -14494,6 +17121,17 @@
    },
    "posts": 1,
    "rowId": "qe-bbaff9b89796"
+  },
+  "qe-bbc2c9ac621a": {
+   "aliasPosts": {
+    "Indonesia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-bbc2c9ac621a"
   },
   "qe-bbf1df7d1e50": {
    "aliasPosts": {
@@ -14599,6 +17237,17 @@
    },
    "posts": 1,
    "rowId": "qe-bdef94c919c6"
+  },
+  "qe-be2d541fee10": {
+   "aliasPosts": {
+    "Jeff Zeleny": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-be2d541fee10"
   },
   "qe-be69f182c59e": {
    "aliasPosts": {
@@ -14740,6 +17389,17 @@
    "posts": 3,
    "rowId": "qe-bf7e791c89a8"
   },
+  "qe-bf80701bf36c": {
+   "aliasPosts": {
+    "Kyrgyzstan": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-bf80701bf36c"
+  },
   "qe-bf8a03e9ea4d": {
    "aliasPosts": {
     "ISD": 1
@@ -14807,6 +17467,17 @@
    "posts": 5,
    "rowId": "qe-c025a9179ac6"
   },
+  "qe-c034ebfdb318": {
+   "aliasPosts": {
+    "Zimbabwe": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-c034ebfdb318"
+  },
   "qe-c0759a75049f": {
    "aliasPosts": {
     "Mike Green": 1
@@ -14864,6 +17535,17 @@
    },
    "posts": 3,
    "rowId": "qe-c0facb229e6f"
+  },
+  "qe-c1830b63f9c2": {
+   "aliasPosts": {
+    "Togo": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-c1830b63f9c2"
   },
   "qe-c1af88ce9156": {
    "aliasPosts": {
@@ -15051,6 +17733,17 @@
    "posts": 1,
    "rowId": "qe-c579c0b81f35"
   },
+  "qe-c5a6ce5d9e24": {
+   "aliasPosts": {
+    "South African Reserve Bank": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-c5a6ce5d9e24"
+  },
   "qe-c5b7ec680037": {
    "kind": "source_only",
    "posts": 0,
@@ -15139,6 +17832,17 @@
     }
    ]
   },
+  "qe-c6a6b7de830b": {
+   "aliasPosts": {
+    "European Central Bank": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-c6a6b7de830b"
+  },
   "qe-c6b50e69b504": {
    "aliasPosts": {
     "Thomas Rooney": 2
@@ -15223,6 +17927,17 @@
    "posts": 1,
    "rowId": "qe-c8500713493a"
   },
+  "qe-c87bf20ea416": {
+   "aliasPosts": {
+    "Central Bank of Cuba": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-c87bf20ea416"
+  },
   "qe-c88dc565b4f9": {
    "aliasPosts": {
     "United States Senator": 1
@@ -15294,6 +18009,17 @@
      "post": 4520
     }
    ]
+  },
+  "qe-c929fc5e4ca0": {
+   "aliasPosts": {
+    "Sveriges Riksbank": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-c929fc5e4ca0"
   },
   "qe-c95be0494915": {
    "aliasPosts": {
@@ -15578,7 +18304,7 @@
     "1332": 1,
     "1345": 2,
     "1443": 1,
-    "1445": 1,
+    "1445": 2,
     "1454": 2,
     "1465": 1,
     "1470": 1,
@@ -15670,13 +18396,21 @@
   },
   "qe-cb0341c553e8": {
    "aliasPosts": {
-    "WRAY": 3
+    "WRAY": 3,
+    "Wray": 7
    },
    "kind": "prose",
    "perPostMentions": {
+    "433": 1,
+    "787": 1,
+    "1122": 1,
     "1318": 1,
     "1433": 1,
-    "1812": 1
+    "1812": 1,
+    "1862": 1,
+    "2555": 1,
+    "2681": 1,
+    "4620": 1
    },
    "posts": 10,
    "rowId": "qe-cb0341c553e8"
@@ -15685,7 +18419,7 @@
    "aliasPosts": {
     "Clinton": 24,
     "Crooked Hillary": 1,
-    "H": 1,
+    "H": 3,
     "HRC": 106,
     "Hillary": 7,
     "Hillary Clinton": 7
@@ -15743,6 +18477,7 @@
     "895": 1,
     "953": 1,
     "977": 1,
+    "1000": 1,
     "1082": 1,
     "1102": 1,
     "1149": 2,
@@ -15754,7 +18489,7 @@
     "1318": 1,
     "1320": 1,
     "1345": 2,
-    "1445": 1,
+    "1445": 2,
     "1453": 1,
     "1496": 1,
     "1504": 1,
@@ -15808,6 +18543,7 @@
     "3015": 1,
     "3024": 1,
     "3045": 1,
+    "3354": 1,
     "3634": 1,
     "3724": 1,
     "3836": 1,
@@ -15825,8 +18561,19 @@
     "4844": 1,
     "4872": 1
    },
-   "posts": 134,
+   "posts": 136,
    "rowId": "qe-cb07cff77084"
+  },
+  "qe-cb1bb14f8394": {
+   "aliasPosts": {
+    "Central Bank of Montenegro": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-cb1bb14f8394"
   },
   "qe-cb6b6ead9638": {
    "aliasPosts": {
@@ -15840,8 +18587,14 @@
    "rowId": "qe-cb6b6ead9638"
   },
   "qe-cb78932b1fab": {
-   "kind": "source_only",
-   "posts": 0,
+   "aliasPosts": {
+    "Reuters": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
    "rowId": "qe-cb78932b1fab",
    "sourcePosts": [
     {
@@ -15902,7 +18655,7 @@
    "perPostMentions": {
     "428": 1,
     "777": 1,
-    "834": 1,
+    "834": 2,
     "839": 1,
     "862": 1,
     "1044": 1,
@@ -15938,6 +18691,17 @@
    },
    "posts": 1,
    "rowId": "qe-cc4a4c96a273"
+  },
+  "qe-cc9487841204": {
+   "aliasPosts": {
+    "Amanda Becker": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-cc9487841204"
   },
   "qe-ccb7e1c4c4f0": {
    "aliasPosts": {
@@ -16009,6 +18773,17 @@
    "posts": 1,
    "rowId": "qe-cd537a811cc3"
   },
+  "qe-cd90a46575b9": {
+   "aliasPosts": {
+    "Qatar Central Bank": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-cd90a46575b9"
+  },
   "qe-cda06644f46f": {
    "aliasPosts": {
     "Horowitz": 6
@@ -16049,6 +18824,17 @@
    "posts": 26,
    "rowId": "qe-cda28c2cb320"
   },
+  "qe-cda801c70bcd": {
+   "aliasPosts": {
+    "Amie Parnes": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-cda801c70bcd"
+  },
   "qe-cde85f950323": {
    "aliasPosts": {
     "FARM": 4
@@ -16062,6 +18848,17 @@
    },
    "posts": 4,
    "rowId": "qe-cde85f950323"
+  },
+  "qe-ce130e7572fe": {
+   "aliasPosts": {
+    "George Stephanoplous": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-ce130e7572fe"
   },
   "qe-ce43425f7c9f": {
    "kind": "source_only",
@@ -16158,6 +18955,17 @@
    "posts": 1,
    "rowId": "qe-cebccaac808f"
   },
+  "qe-cf5a43627b8a": {
+   "aliasPosts": {
+    "Luxembourg": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-cf5a43627b8a"
+  },
   "qe-cf93610ec835": {
    "aliasPosts": {
     "Merrill Robert Barter": 1
@@ -16208,6 +19016,17 @@
    },
    "posts": 1,
    "rowId": "qe-d00f877907f7"
+  },
+  "qe-d030b96cb710": {
+   "aliasPosts": {
+    "Matt Bai": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-d030b96cb710"
   },
   "qe-d0f800159d05": {
    "aliasPosts": {
@@ -16327,6 +19146,17 @@
    "posts": 1,
    "rowId": "qe-d27fa0601ace"
   },
+  "qe-d2972fb52d6e": {
+   "aliasPosts": {
+    "National Bank of the Republic of Macedonia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-d2972fb52d6e"
+  },
   "qe-d29e14cf87d7": {
    "aliasPosts": {
     "SpaceX": 4
@@ -16430,13 +19260,15 @@
   },
   "qe-d38940e564bf": {
    "aliasPosts": {
-    "Democrat": 1
+    "Democrat": 3
    },
    "kind": "prose",
    "perPostMentions": {
+    "1319": 10,
+    "1850": 10,
     "2399": 1
    },
-   "posts": 1,
+   "posts": 3,
    "rowId": "qe-d38940e564bf"
   },
   "qe-d3a2d234038e": {
@@ -16585,6 +19417,17 @@
    "posts": 2,
    "rowId": "qe-d5d2803b1c75"
   },
+  "qe-d6868867fb4e": {
+   "aliasPosts": {
+    "Deutsche Bundesbank": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-d6868867fb4e"
+  },
   "qe-d69cccf9e5fa": {
    "aliasPosts": {
     "RED_CASTLE": 1,
@@ -16598,6 +19441,28 @@
    "posts": 2,
    "rowId": "qe-d69cccf9e5fa"
   },
+  "qe-d6bf19e489c7": {
+   "aliasPosts": {
+    "Chad": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-d6bf19e489c7"
+  },
+  "qe-d6d2af5606b7": {
+   "aliasPosts": {
+    "Central Bank of the Dominican Republic": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-d6d2af5606b7"
+  },
   "qe-d70d6c95a806": {
    "aliasPosts": {
     "Jon Matthews": 1
@@ -16608,6 +19473,17 @@
    },
    "posts": 1,
    "rowId": "qe-d70d6c95a806"
+  },
+  "qe-d753d553b0bb": {
+   "aliasPosts": {
+    "Central Bank and Financial Services Authority of Ireland": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-d753d553b0bb"
   },
   "qe-d769812f3ada": {
    "aliasPosts": {
@@ -16698,6 +19574,17 @@
    "posts": 1,
    "rowId": "qe-d7f841ca1ad1"
   },
+  "qe-d847317b2db6": {
+   "aliasPosts": {
+    "The Central Bank of the Islamic Republic of Iran": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-d847317b2db6"
+  },
   "qe-d85fc0d07fb8": {
    "aliasPosts": {
     "Long Beach Port": 1
@@ -16712,7 +19599,7 @@
   "qe-d89374105f98": {
    "aliasPosts": {
     "MI6": 6,
-    "SIS": 8
+    "SIS": 7
    },
    "kind": "prose",
    "perPostMentions": {
@@ -16721,7 +19608,6 @@
     "1382": 1,
     "1443": 1,
     "1455": 2,
-    "1493": 1,
     "1745": 2,
     "1764": 1,
     "1828": 2,
@@ -16741,6 +19627,17 @@
    },
    "posts": 1,
    "rowId": "qe-d8c83e07cd8f"
+  },
+  "qe-d8d48e8d9887": {
+   "aliasPosts": {
+    "Kuwait": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-d8d48e8d9887"
   },
   "qe-d8ddb2f9d518": {
    "aliasPosts": {
@@ -16768,6 +19665,17 @@
    },
    "posts": 1,
    "rowId": "qe-d91afa533cb3"
+  },
+  "qe-d950e25b51e6": {
+   "aliasPosts": {
+    "Finland": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-d950e25b51e6"
   },
   "qe-d988b60f113c": {
    "aliasPosts": {
@@ -16942,11 +19850,10 @@
   },
   "qe-dbbf1d039297": {
    "aliasPosts": {
-    "N. Pelosi": 1,
     "NP": 6,
     "Nancy Pelosi": 2,
-    "Pelosi": 27,
-    "Rep. Nancy Pelosi (D-CA) – Speaker of the House": 1
+    "Nancy Pelosi (D-CA) – Speaker of the House": 1,
+    "Pelosi": 27
    },
    "kind": "prose",
    "perPostMentions": {
@@ -16970,7 +19877,7 @@
     "2854": 1,
     "3028": 2,
     "3370": 1,
-    "3383": 2,
+    "3383": 1,
     "3386": 1,
     "3590": 1,
     "3741": 2,
@@ -17032,6 +19939,28 @@
    "posts": 5,
    "rowId": "qe-dc417fd26c9f"
   },
+  "qe-dc575864fa53": {
+   "aliasPosts": {
+    "National Bank of Tajikistan": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-dc575864fa53"
+  },
+  "qe-dcab58fa3e25": {
+   "aliasPosts": {
+    "Côte d’Ivoire": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-dcab58fa3e25"
+  },
   "qe-dcc8d2a16648": {
    "aliasPosts": {
     "Kenya": 2
@@ -17055,6 +19984,17 @@
     }
    ]
   },
+  "qe-dcdad92e6b0d": {
+   "aliasPosts": {
+    "Tunisia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-dcdad92e6b0d"
+  },
   "qe-dd0a18741f7d": {
    "aliasPosts": {
     "Hyde Park": 1
@@ -17068,17 +20008,19 @@
   },
   "qe-dd22a6644c88": {
    "aliasPosts": {
-    "House": 31
+    "House": 33
    },
    "kind": "prose",
    "perPostMentions": {
     "139": 1,
     "970": 1,
     "1316": 1,
+    "1319": 1,
     "1483": 1,
     "1484": 1,
     "1618": 1,
     "1642": 1,
+    "1850": 1,
     "1927": 1,
     "1981": 1,
     "1986": 1,
@@ -17104,7 +20046,7 @@
     "3932": 1,
     "4861": 1
    },
-   "posts": 31,
+   "posts": 33,
    "rowId": "qe-dd22a6644c88",
    "sourcePosts": [
     {
@@ -17136,6 +20078,17 @@
     }
    ]
   },
+  "qe-dd9972e950e3": {
+   "aliasPosts": {
+    "Ed Schultz": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-dd9972e950e3"
+  },
   "qe-dd99f5bf05e8": {
    "aliasPosts": {
     "DoD": 6
@@ -17151,6 +20104,17 @@
    },
    "posts": 6,
    "rowId": "qe-dd99f5bf05e8"
+  },
+  "qe-ddc7f107196a": {
+   "aliasPosts": {
+    "Cyprus": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-ddc7f107196a"
   },
   "qe-dddf0d4d7381": {
    "aliasPosts": {
@@ -17187,6 +20151,28 @@
    "posts": 2,
    "rowId": "qe-ddfce63e5312"
   },
+  "qe-de19d7c755f2": {
+   "aliasPosts": {
+    "National Bank of the Kyrgyz Republic": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-de19d7c755f2"
+  },
+  "qe-de341ee7073e": {
+   "aliasPosts": {
+    "Lisa Lerer": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-de341ee7073e"
+  },
   "qe-de749ad39396": {
    "aliasPosts": {
     "SD": 2
@@ -17201,13 +20187,14 @@
   },
   "qe-dee4e9f335e8": {
    "aliasPosts": {
-    "Dla Piper": 1
+    "Dla Piper": 2
    },
    "kind": "prose",
    "perPostMentions": {
+    "4777": 1,
     "4782": 1
    },
-   "posts": 1,
+   "posts": 2,
    "rowId": "qe-dee4e9f335e8"
   },
   "qe-df02e7eb58cf": {
@@ -17220,6 +20207,39 @@
    },
    "posts": 1,
    "rowId": "qe-df02e7eb58cf"
+  },
+  "qe-df17a9e55850": {
+   "aliasPosts": {
+    "Ken Thomas": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-df17a9e55850"
+  },
+  "qe-df19811280f0": {
+   "aliasPosts": {
+    "Bank of France": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-df19811280f0"
+  },
+  "qe-df2b1dc42601": {
+   "aliasPosts": {
+    "Reserve Bank of New Zealand": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-df2b1dc42601"
   },
   "qe-df3137a48249": {
    "aliasPosts": {
@@ -17243,6 +20263,17 @@
    },
    "posts": 2,
    "rowId": "qe-df8fb90c2efd"
+  },
+  "qe-e009a8631960": {
+   "aliasPosts": {
+    "Mike Allen": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-e009a8631960"
   },
   "qe-e00c7b9cc917": {
    "kind": "source_only",
@@ -17299,6 +20330,17 @@
    },
    "posts": 1,
    "rowId": "qe-e0952c2ad775"
+  },
+  "qe-e0d94e532c65": {
+   "aliasPosts": {
+    "Bank of Latvia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-e0d94e532c65"
   },
   "qe-e14e019412e5": {
    "aliasPosts": {
@@ -17376,6 +20418,39 @@
    "posts": 4,
    "rowId": "qe-e16178b2fd16"
   },
+  "qe-e1802171b7dc": {
+   "aliasPosts": {
+    "Nepal": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-e1802171b7dc"
+  },
+  "qe-e216eb836775": {
+   "aliasPosts": {
+    "Central Bank of Paraguay": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-e216eb836775"
+  },
+  "qe-e27af6a845d1": {
+   "aliasPosts": {
+    "Pat Healey": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-e27af6a845d1"
+  },
   "qe-e2a0e48129ae": {
    "aliasPosts": {
     "Bernie Ward": 1
@@ -17386,6 +20461,28 @@
    },
    "posts": 1,
    "rowId": "qe-e2a0e48129ae"
+  },
+  "qe-e2e10c208707": {
+   "aliasPosts": {
+    "Glenn Thrush": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-e2e10c208707"
+  },
+  "qe-e3256990e4a2": {
+   "aliasPosts": {
+    "Bank of Jamaica": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-e3256990e4a2"
   },
   "qe-e353f8608310": {
    "aliasPosts": {
@@ -17772,7 +20869,7 @@
     "1094": 1,
     "1120": 1,
     "1164": 1,
-    "1229": 1,
+    "1229": 2,
     "1234": 1,
     "1235": 1,
     "1237": 1,
@@ -18008,6 +21105,17 @@
    "posts": 1,
    "rowId": "qe-e51882acbe2e"
   },
+  "qe-e51ec7af5e07": {
+   "aliasPosts": {
+    "Bermuda": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-e51ec7af5e07"
+  },
   "qe-e52c80835368": {
    "aliasPosts": {
     "Michael Cohen": 1
@@ -18065,6 +21173,28 @@
    },
    "posts": 1,
    "rowId": "qe-e571232e3971"
+  },
+  "qe-e5f73d26c4da": {
+   "aliasPosts": {
+    "National Bank of Poland": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-e5f73d26c4da"
+  },
+  "qe-e626e9dbcd4f": {
+   "aliasPosts": {
+    "Eastern Caribbean Central Bank": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-e626e9dbcd4f"
   },
   "qe-e62eef36e29d": {
    "aliasPosts": {
@@ -18151,6 +21281,17 @@
    },
    "posts": 3,
    "rowId": "qe-e7331aea9c4b"
+  },
+  "qe-e74b9eb02994": {
+   "aliasPosts": {
+    "Central Bank of Solomon Islands": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-e74b9eb02994"
   },
   "qe-e7692d4d50c0": {
    "aliasPosts": {
@@ -18286,6 +21427,17 @@
    "posts": 1,
    "rowId": "qe-e817d2bbf6b1"
   },
+  "qe-e81d77390ac5": {
+   "aliasPosts": {
+    "Chuck Todd": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-e81d77390ac5"
+  },
   "qe-e83854bd8947": {
    "aliasPosts": {
     "HKG": 2
@@ -18297,6 +21449,17 @@
    },
    "posts": 2,
    "rowId": "qe-e83854bd8947"
+  },
+  "qe-e87089f18254": {
+   "aliasPosts": {
+    "Tamara Keith": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-e87089f18254"
   },
   "qe-e872cf85bc4b": {
    "aliasPosts": {
@@ -18319,6 +21482,17 @@
    },
    "posts": 1,
    "rowId": "qe-e877a7739dda"
+  },
+  "qe-e910f19802e0": {
+   "aliasPosts": {
+    "Central Bank of Barbados": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-e910f19802e0"
   },
   "qe-ea2832b38e61": {
    "aliasPosts": {
@@ -18396,6 +21570,17 @@
    "posts": 2,
    "rowId": "qe-eb443f3e5c27"
   },
+  "qe-eb7bcf55c8d7": {
+   "aliasPosts": {
+    "Central Bank of Russia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-eb7bcf55c8d7"
+  },
   "qe-eb8431161eb0": {
    "aliasPosts": {
     "SPLASH": 2
@@ -18420,8 +21605,14 @@
    "rowId": "qe-ebf2f13cda9f"
   },
   "qe-ec7eb3da0f00": {
-   "kind": "source_only",
-   "posts": 0,
+   "aliasPosts": {
+    "Jake Tapper": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
    "rowId": "qe-ec7eb3da0f00",
    "sourcePosts": [
     {
@@ -18444,12 +21635,11 @@
   "qe-ecc41732dcbc": {
    "aliasPosts": {
     "Dianne Feinstein": 2,
-    "Sen. Dianne Feinstein (D-CA) – Ranking Mem Judiciary": 1,
     "Sen. Dianne Feinstein, D-Calif": 1
    },
    "kind": "prose",
    "perPostMentions": {
-    "3778": 2,
+    "3778": 1,
     "4935": 2
    },
    "posts": 2,
@@ -18478,6 +21668,17 @@
    "posts": 2,
    "rowId": "qe-ed7af8c981ab"
   },
+  "qe-ed7f16592539": {
+   "aliasPosts": {
+    "Czech National Bank": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-ed7f16592539"
+  },
   "qe-ed944f555649": {
    "aliasPosts": {
     "FED": 8,
@@ -18498,6 +21699,28 @@
    },
    "posts": 10,
    "rowId": "qe-ed944f555649"
+  },
+  "qe-edb105bc951f": {
+   "aliasPosts": {
+    "Central Bank of Armenia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-edb105bc951f"
+  },
+  "qe-edc02b1ef89d": {
+   "aliasPosts": {
+    "Central Bank of Seychelles": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-edc02b1ef89d"
   },
   "qe-edce41b4a3b0": {
    "kind": "source_only",
@@ -18557,6 +21780,17 @@
    },
    "posts": 4,
    "rowId": "qe-ee41a0b09c91"
+  },
+  "qe-ee65da307c89": {
+   "aliasPosts": {
+    "Reserve Bank of India": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-ee65da307c89"
   },
   "qe-ee68badd92de": {
    "aliasPosts": {
@@ -18632,7 +21866,7 @@
   "qe-eea145dc3613": {
    "aliasPosts": {
     "Andrew Cuomo": 1,
-    "Gov. Andrew Cuomo, D-N.Y": 1
+    "Andrew Cuomo, D-N.Y": 1
    },
    "kind": "prose",
    "perPostMentions": {
@@ -18640,6 +21874,17 @@
    },
    "posts": 1,
    "rowId": "qe-eea145dc3613"
+  },
+  "qe-eecc9700e9ff": {
+   "aliasPosts": {
+    "Bank of Thailand": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-eecc9700e9ff"
   },
   "qe-eee307446aca": {
    "aliasPosts": {
@@ -18652,6 +21897,17 @@
    },
    "posts": 2,
    "rowId": "qe-eee307446aca"
+  },
+  "qe-ef18b71df36a": {
+   "aliasPosts": {
+    "Bank of Israel": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-ef18b71df36a"
   },
   "qe-ef228ad64e1c": {
    "aliasPosts": {
@@ -18687,6 +21943,17 @@
    "posts": 11,
    "rowId": "qe-ef42c3c26493"
   },
+  "qe-ef96bd6455b0": {
+   "aliasPosts": {
+    "Reserve Bank of Malawi": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-ef96bd6455b0"
+  },
   "qe-efaf20137271": {
    "aliasPosts": {
     "Trisha Anderson": 6
@@ -18718,6 +21985,17 @@
    },
    "posts": 6,
    "rowId": "qe-efc49f61600b"
+  },
+  "qe-f0140d3c36fa": {
+   "aliasPosts": {
+    "National Bank of Ethiopia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-f0140d3c36fa"
   },
   "qe-f093e728b541": {
    "kind": "source_only",
@@ -18785,7 +22063,6 @@
   },
   "qe-f1095d932a99": {
    "aliasPosts": {
-    "Mr. Russia": 1,
     "RUS": 1,
     "Russia": 96
    },
@@ -18884,7 +22161,7 @@
     "4620": 1,
     "4802": 3,
     "4845": 1,
-    "4850": 2,
+    "4850": 1,
     "4871": 1,
     "4872": 2,
     "4886": 1
@@ -18920,6 +22197,17 @@
    },
    "posts": 8,
    "rowId": "qe-f1113eea7218"
+  },
+  "qe-f1151d8741aa": {
+   "aliasPosts": {
+    "Paraguay": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-f1151d8741aa"
   },
   "qe-f11567fff98a": {
    "aliasPosts": {
@@ -19062,6 +22350,17 @@
    "posts": 1,
    "rowId": "qe-f2a232b848b8"
   },
+  "qe-f2e77658de3a": {
+   "aliasPosts": {
+    "Gabe Debenedetti": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-f2e77658de3a"
+  },
   "qe-f2f411eaa9cc": {
    "aliasPosts": {
     "AZ": 4,
@@ -19153,6 +22452,17 @@
    "posts": 1,
    "rowId": "qe-f429c1e22833"
   },
+  "qe-f4307a431b04": {
+   "aliasPosts": {
+    "Central Bank of Suriname": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-f4307a431b04"
+  },
   "qe-f44f52d6e1f8": {
    "aliasPosts": {
     "Preet Bharara": 1
@@ -19163,6 +22473,17 @@
    },
    "posts": 1,
    "rowId": "qe-f44f52d6e1f8"
+  },
+  "qe-f4aa26f2c3a0": {
+   "aliasPosts": {
+    "Annie Karni": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-f4aa26f2c3a0"
   },
   "qe-f4cf882a56db": {
    "kind": "source_only",
@@ -19269,6 +22590,28 @@
    },
    "posts": 83,
    "rowId": "qe-f4dabfcc4006"
+  },
+  "qe-f510ed1e8955": {
+   "aliasPosts": {
+    "Chile": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-f510ed1e8955"
+  },
+  "qe-f51df9d1e180": {
+   "aliasPosts": {
+    "Mark Halperin": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-f51df9d1e180"
   },
   "qe-f523c4043f70": {
    "aliasPosts": {
@@ -19381,6 +22724,17 @@
    "posts": 1,
    "rowId": "qe-f5a573769a4e"
   },
+  "qe-f6439dd04f8d": {
+   "aliasPosts": {
+    "Croatia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-f6439dd04f8d"
+  },
   "qe-f673adf954f7": {
    "aliasPosts": {
     "Breitbart": 1
@@ -19439,6 +22793,28 @@
    "posts": 2,
    "rowId": "qe-f6a4d3663579"
   },
+  "qe-f7090c157509": {
+   "aliasPosts": {
+    "Central Bank of The Bahamas": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-f7090c157509"
+  },
+  "qe-f711f3c251fa": {
+   "aliasPosts": {
+    "Honduras": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-f711f3c251fa"
+  },
   "qe-f73ce7c87677": {
    "aliasPosts": {
     "Lewis Carroll": 4
@@ -19465,6 +22841,39 @@
    },
    "posts": 3,
    "rowId": "qe-f73f9ae47f05"
+  },
+  "qe-f75a910fd2a1": {
+   "aliasPosts": {
+    "Central Bank of The Gambia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-f75a910fd2a1"
+  },
+  "qe-f77773770060": {
+   "aliasPosts": {
+    "Bank of Lithuania": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-f77773770060"
+  },
+  "qe-f78336075970": {
+   "aliasPosts": {
+    "John Harwood": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-f78336075970"
   },
   "qe-f7f2fa7bb4c6": {
    "aliasPosts": {
@@ -19518,6 +22927,17 @@
    },
    "posts": 6,
    "rowId": "qe-f82b1d62d926"
+  },
+  "qe-f8958e4ddff7": {
+   "aliasPosts": {
+    "Madagascar": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "137": 1
+   },
+   "posts": 1,
+   "rowId": "qe-f8958e4ddff7"
   },
   "qe-f8a7a33cc54c": {
    "aliasPosts": {
@@ -20089,6 +23509,28 @@
     }
    ]
   },
+  "qe-f9d8060e098c": {
+   "aliasPosts": {
+    "Cecilia Vega": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-f9d8060e098c"
+  },
+  "qe-f9ef8f09e19a": {
+   "aliasPosts": {
+    "Belarus": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "135": 1
+   },
+   "posts": 1,
+   "rowId": "qe-f9ef8f09e19a"
+  },
   "qe-fa12130f679c": {
    "aliasPosts": {
     "United Arab Emirates": 1
@@ -20156,6 +23598,17 @@
    "posts": 1,
    "rowId": "qe-fb0fd170c80e"
   },
+  "qe-fb16e9631c61": {
+   "aliasPosts": {
+    "Slovenia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-fb16e9631c61"
+  },
   "qe-fb1d35d0a036": {
    "kind": "source_only",
    "posts": 0,
@@ -20178,6 +23631,17 @@
    },
    "posts": 2,
    "rowId": "qe-fb2753d1ec6c"
+  },
+  "qe-fb7aea8d1bc2": {
+   "aliasPosts": {
+    "Mark Preston": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-fb7aea8d1bc2"
   },
   "qe-fbd6ee3438fe": {
    "aliasPosts": {
@@ -20226,6 +23690,17 @@
    "posts": 3,
    "rowId": "qe-fc9c7f1b849a"
   },
+  "qe-fcf35f14a8c6": {
+   "aliasPosts": {
+    "Tajikistan": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "138": 1
+   },
+   "posts": 1,
+   "rowId": "qe-fcf35f14a8c6"
+  },
   "qe-fd77164fe38c": {
    "aliasPosts": {
     "Canadian PM": 2
@@ -20259,6 +23734,17 @@
    },
    "posts": 1,
    "rowId": "qe-fda31c0fe0b5"
+  },
+  "qe-fddea527294c": {
+   "aliasPosts": {
+    "Ethiopia": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "136": 1
+   },
+   "posts": 1,
+   "rowId": "qe-fddea527294c"
   },
   "qe-fdf0e237f0c5": {
    "aliasPosts": {
@@ -20325,7 +23811,7 @@
    },
    "kind": "prose",
    "perPostMentions": {
-    "1229": 1,
+    "1229": 2,
     "1441": 1
    },
    "posts": 2,
@@ -20568,16 +24054,16 @@
  "ruledOn": "2026-08-17",
  "sourceNote": "The post linked this source. It is not necessarily named in Q’s prose, and it is never counted as a mention.",
  "totals": {
-  "canonicalEntities": 1223,
-  "dormantReserved": 230,
-  "mentions": 8831,
+  "canonicalEntities": 1532,
+  "dormantReserved": 229,
+  "mentions": 9271,
   "mergedIdentities": 23,
   "mergedRows": 10,
-  "proseMentioned": 1085,
-  "publicRows": 1210,
-  "repeatBadges": 1063,
-  "sourceOnly": 138,
+  "proseMentioned": 1398,
+  "publicRows": 1519,
+  "repeatBadges": 1083,
+  "sourceOnly": 134,
   "sourcePostChips": 358,
-  "unsettledAttributionsExcluded": 64
+  "unsettledAttributionsExcluded": 58
  }
 }

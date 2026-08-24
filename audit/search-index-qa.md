@@ -3,37 +3,37 @@
 Search indexes the certified datasets and their existing metadata. It performs no classification of its own, and it duplicates no post text.
 
 
-**31,498 records.**
+**34,175 records.**
 
 
 | Section | Records |
 |---|---|
-| claims | 8,631 |
+| claims | 10,258 |
 | evidence | 6,590 |
-| questions | 6,321 |
-| directives | 2,902 |
+| questions | 6,327 |
+| directives | 3,304 |
 | themes | 2,646 |
-| editorial | 1,290 |
-| entities | 1,223 |
-| predictions | 841 |
-| codes | 747 |
+| entities | 1,532 |
+| editorial | 1,268 |
+| predictions | 934 |
+| codes | 771 |
+| unresolved | 353 |
 | sources | 192 |
-| unresolved | 115 |
 
 ## QA
 
 | | Check | Observed |
 |---|---|---|
-| ✅ | Questions indexed = 6,321 | 6321 |
-| ✅ | Directives indexed = 2,902 | 2902 |
-| ✅ | Claims indexed = 8,631 | 8631 |
-| ✅ | Predictions indexed = 841 | 841 |
+| ✅ | Questions indexed = 6,327 | 6327 |
+| ✅ | Directives indexed = 3,304 | 3304 |
+| ✅ | Claims indexed = 10,258 | 10258 |
+| ✅ | Predictions indexed = 934 | 934 |
 | ✅ | Evidence indexed = 6,590 | 6590 |
-| ✅ | Entities indexed = 1,223 | 1223 |
+| ✅ | Entities indexed = 1,532 | 1532 |
 | ✅ | Themes indexed = 2,646 | 2646 |
-| ✅ | Codes indexed = 747 | 747 |
-| ✅ | Unresolved indexed = 115 | 115 |
-| ✅ | editorial rows = 134 normalisations + 1,156 paraphrases | 1290 |
+| ✅ | Codes indexed = 771 | 771 |
+| ✅ | Unresolved indexed = 353 | 353 |
+| ✅ | editorial rows = 134 normalisations + 1,134 paraphrases | 1268 |
 | ✅ | every editorial row is flagged not-Q-authored | 0 |
 | ✅ | no Q-authored row is flagged editorial | 0 |
 | ✅ | every record states why it can match | 0 |

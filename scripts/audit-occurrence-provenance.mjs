@@ -499,6 +499,13 @@ fs.writeFileSync(path.join(OUT, 'occurrence-provenance-audit.json'), JSON.string
     substringEntities: new Set(substrings.map(s => s.entityId)).size,
     substringPosts: new Set(substrings.map(s => s.postNum)).size,
   },
+  // WHEN THIS AUDIT RAN, stated by the audit itself.
+  //
+  // audit-cross-section.mjs checks the snapshot below against countsBefore plus the rollback
+  // deltas that PREDATE the run. It had to guess the date from a hardcoded '2026-08-21'
+  // fallback, so the 2026-08-24 queue ruling re-ran the audit and the check still compared it
+  // to a tree three rulings older — reporting drift that was the audit being newer.
+  ruledOnAuditRun: '2026-08-24',
   certifiedUnchanged: { entityRows: entities.entities.length, mentions: entities.totals.mentions },
   rows,
 }, null, 1))

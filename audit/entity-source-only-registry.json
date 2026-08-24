@@ -1,27 +1,7 @@
 {
  "note": "Entities with no prose mention left, but which remain referenced as the publisher of material Q linked. They stay in the public bundle and must NEVER render as a zero-mention entity page.",
- "total": 138,
+ "total": 134,
  "entities": [
-  {
-   "id": "qe-cb78932b1fab",
-   "canonical": "Reuters",
-   "type": "organization",
-   "slug": "reuters",
-   "linkedSourcePosts": [
-    857,
-    1138,
-    1947,
-    1982,
-    2495,
-    2855,
-    2894,
-    3625,
-    3647,
-    4115,
-    4226,
-    4847
-   ]
-  },
   {
    "id": "qe-49b9cb60a8ac",
    "canonical": "CBS_Herridge",
@@ -95,19 +75,6 @@
    ]
   },
   {
-   "id": "qe-a91226e14421",
-   "canonical": "Bloomberg",
-   "type": "organization",
-   "slug": "bloomberg",
-   "linkedSourcePosts": [
-    1797,
-    2136,
-    2171,
-    4202,
-    4285
-   ]
-  },
-  {
    "id": "qe-559e34f8c247",
    "canonical": "Business Insider",
    "type": "media_organization",
@@ -129,18 +96,6 @@
     2401,
     2520,
     2631
-   ]
-  },
-  {
-   "id": "qe-a2c73c324528",
-   "canonical": "NY Post",
-   "type": "media_organization",
-   "slug": "ny-post",
-   "linkedSourcePosts": [
-    2145,
-    2171,
-    4589,
-    4869
    ]
   },
   {
@@ -1039,15 +994,6 @@
    "slug": "vanity-fair",
    "linkedSourcePosts": [
     3448
-   ]
-  },
-  {
-   "id": "qe-ec7eb3da0f00",
-   "canonical": "Jake Tapper",
-   "type": "person",
-   "slug": "jake-tapper",
-   "linkedSourcePosts": [
-    3451
    ]
   },
   {

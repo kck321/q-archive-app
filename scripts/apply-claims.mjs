@@ -331,9 +331,13 @@ const checks = [
   // had certified as claims of their own ("Rosenstein.", "Code Chapter 115 - TREASON...", "POTUS'
   // Tweet."). Each is now inside the repaired span rather than beside it. No claim left the
   // archive; the same words are certified once instead of twice.
-  ['claim occurrences = 8,912', allClaims.length === 8912, allClaims.length],
-  ['queue rulings applied = 4,782 claims / 250 predictions',
-    stats2020.claimsAdded + stats2020.claimsAlready === 4782 && stats2020.predsAdded + stats2020.predsAlready === 250,
+  // 8,912 + 1,646 from ROUND 2 of the same review = 10,558. The owner ruled 1,654 more lines
+  // Claims and 94 more Predictions; 70 claim and 3 prediction occurrences were already certified,
+  // so only the shortfall is added.
+  ['claim occurrences = 10,558', allClaims.length === 10558, allClaims.length],
+  // 4,782 + 1,654 = 6,436 claims; 250 + 94 = 344 predictions, across both rounds.
+  ['queue rulings applied = 6,436 claims / 344 predictions',
+    stats2020.claimsAdded + stats2020.claimsAlready === 6436 && stats2020.predsAdded + stats2020.predsAlready === 344,
     `${stats2020.claimsAdded}+${stats2020.claimsAlready} claims, ${stats2020.predsAdded}+${stats2020.predsAlready} predictions`],
   ['all resolve to their Q source span', unresolved.length === 0, `${allClaims.length - unresolved.length}/${allClaims.length}`],
   // +11: the 47 arrivals introduce 44 wordings Claims did not already hold, while the 68
@@ -349,14 +353,16 @@ const checks = [
   // as the cut form, plus the 22 absorbed tails) and 51 appear. 51 rather than 64 because the same
   // repair recurs across drops - "Goodbye, Mr. Rosenstein." is six posts and one key, and the
   // #1319/#1850 congressional list is the same eleven wordings twice.
-  ['distinct = 6,814', distinct.size === 6814, distinct.size],
+  // +1,210: the 1,646 new occurrences carry 1,210 wordings Claims did not already hold.
+  ['distinct = 8,024', distinct.size === 8024, distinct.size],
   // +1: 17 posts gain their first claim, 16 posts lose their last one.
   // -3: #483, #2695 and #3203 each held ONE claim and it was the quoted question, so those
   // drops leave the Claims post set entirely. #2420 and #2776 keep other claims and stay.
   // +1,104: the queue reached 4,484 posts, and 1,104 of them held no certified claim before.
   // +2: #4861 and #4853 gain their first certified claim. #4893 and #4923 already had claims,
   // so they were already in the set.
-  ['posts = 3,086', postsWith.size === 3086, postsWith.size],
+  // +170 drops gain their first certified claim.
+  ['posts = 3,256', postsWith.size === 3256, postsWith.size],
   // 630 - 73 technical nonpredictions - 56 arguable + 66 from Claims + 28 found = 595.
   // 595 + 247 from the queue (250 ruled, 3 occurrences already certified) = 842.
   // +1: #4910 "Freedom of information [truth] = END" (r11), the first ad-hoc Prediction ruling to
@@ -365,7 +371,8 @@ const checks = [
   // The archive already certified the middle instalment, "MOVIE 2 - Coming this FALL.", so the
   // sequence read as one prediction between two unclassified lines. Both drops, because they are
   // the same drop reposted and carried the identical gap.
-  ['predictions = 847', allPreds.length === 847, allPreds.length],
+  // 847 + 94 ruled - 3 already certified = 941 (round 2 rules 94 predictions).
+  ['predictions = 941', allPreds.length === 941, allPreds.length],
   // isConclusion travels with the ROW rather than with the section, so a row leaving Claims
   // takes the attribute with it. -1: #3203's quoted question was the only withdrawn row
   // carrying it. 966 - 1 = 965.
@@ -399,10 +406,14 @@ const checks = [
   // fewer leave with their row, and a repaired span can outgrow the threshold — "Army Lt." is two
   // words, "Army Lt. Gen. Paul Nakasone" is five. telegraphic is computed from the text, so a
   // longer text is correctly no longer telegraphic.
-  ['telegraphic = 3,543', telegraphic === 3543, telegraphic],
+  // +1,128. The queue is overwhelmingly short label-like lines, and telegraphic is not a
+  // judgement — it is "four words or fewer" — so it moves with the batch by construction.
+  ['telegraphic = 4,671', telegraphic === 4671, telegraphic],
   // 13 + 37: the queue emitted one row per UNIT, so a line Q wrote twice arrives twice and is
   // certified twice. Collapsing them would have dropped 37 real occurrences.
-  ['in-post repeats preserved = 50', repeats === 50, repeats],
+  // +80: round 2 carries more lines Q writes twice in one drop, and each repeat is a real
+  // occurrence — the rule the whole certified system is built on.
+  ['in-post repeats preserved = 130', repeats === 130, repeats],
   ['no editorial paraphrase shown as Q', paraLeak.length === 0, `${paraLeak.length} leaked`],
   ['no source material shown as Q', srcLeak.length === 0, `${srcLeak.length} leaked`],
   // 6,443 + 11 arriving by owner ruling (2026-08-19) = 6,454.
@@ -411,12 +422,12 @@ const checks = [
   // 6,510 since the 2026-08-21 segmentation repair: 8 orphaned tail fragments absorbed into the
   // 10 questions they were split from, plus 1 duplicate merged. Asserted here because a claim
   // ruling must not move Questions - this is a cross-section tripwire, not a Questions figure.
-  ['Questions now 6,503', questions.length === 6503, questions.length],
+  ['Questions now 6,509', questions.length === 6509, questions.length],
   // 2,422 + 2 owner rulings (#4963 'Focus.' / 'FOCUS.', ruled Directives out of Emphasis).
   // v5: Q Directives migrated to sourceSpansV2 provenance; 2,705 -> 2,552 by owner ruling.
   // 2,552 + 485 arriving from the same owner ruling. This is a cross-section CHECK, not a source:
   // apply-directives.mjs runs immediately before this step and owns the number.
-  ['Directives now 3,037', directives === 3037, directives],
+  ['Directives now 3,442', directives === 3442, directives],
 ]
 
 console.log('\nAPPLY CERTIFIED CLAIMS\n')

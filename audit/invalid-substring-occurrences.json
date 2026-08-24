@@ -9,7 +9,7 @@
   "Matt Gaetz": 2,
   "Mark Levin": 2,
   "Andy Ngo": 2,
-  "Wray": 1,
+  "Christopher Wray": 1,
   "West Hollywood": 1,
   "New York": 1,
   "Harvard Muslim Alumni": 1,
@@ -154,8 +154,8 @@
   {
    "occurrenceId": "#1172:0",
    "postNum": 1172,
-   "entityId": "qe-1932f9fd0b7c",
-   "canonical": "Wray",
+   "entityId": "qe-cb0341c553e8",
+   "canonical": "Christopher Wray",
    "aliasThatMatched": "Wray",
    "containingWords": [
     "WRAYs"

@@ -67,6 +67,77 @@ const FRAGMENTS = new Map([
 ])
 
 /** The family for one ruled directive, or 'other' when no rule states one. */
+// ── ROUND 2 OF THE REVIEW, 2026-08-24 ───────────────────────────────────────
+//
+// 479 more directives, of which 371 fall outside both the detector and the round-1 rules. They
+// are a different residue from round 1's: where that batch was nominal instructions and
+// valedictions, this one is dominated by three shapes.
+//
+//   the unity slogan       WWG1WGA!!!  ·  We, the PEOPLE.        ~200 occurrences -> morale
+//   the hashtag            #FLAGSOUT  ·  #FactsMatter  ·  #FLYROTHSFLY#          -> dissemination
+//   the alert marker       ::::WARNING::::  ·  IMPORTANT:  ·  WARNING_UK_        -> attention
+//
+// APPENDED, never interleaved, so round 1's answers cannot move: RULES is first-match-wins and
+// round 1 leaves no line unmatched, so nothing already classified can reach these.
+//
+// A HASHTAG IS AN INSTRUCTION TO SPREAD IT. That is what dissemination means here and it is why
+// the family is not a stretch — Q posts "#InternetBillOfRights" so the board carries it. But the
+// rule requires a LETTER after the hash, because "#1", "#2" and "#17" are counters and a rule
+// broad enough to take them would certify a list marker as a call to action.
+RULES.push(
+  // MORALE — the unity slogans, the seasonal and valedictory lines, and the quoted encouragement.
+  ['morale', /^["'“”\s]*wwg1wga\b|^["'“”\s]*we,?\s*the\s*people\b|^["'“”\s]*merry christmas\b|^["'“”\s]*thoughts and prayers\b|^["'“”\s]*to all americans, please pray\b|^["'“”\s]*the armor of god\b|^["'“”\s]*keep fighting\b|^["'“”\s]*feel privileged\b|^["'“”\s]*[“"]?the great awakening\b|^["'“”\s]*for anons\b|^["'“”\s]*[“"]?but the lord is faithful\b|^["'“”\s]*[“"]?when you can.t make them see the light\b|^["'“”\s]*it must be fought for\b/i],
+
+  // ATTENTION — the alert markers and the pointers. Q's ":::::Flash Traffic:::::" and
+  // "::::WARNING::::" exist to make the reader look; so do the board paths he posts bare.
+  ['attention', /^["'“”\s]*:*\s*warning\b|^warning_|^["'“”\s]*:+\s*flash traffic\b|^["'“”\s]*important( context| to remember)?\s*:|^["'“”\s]*a little perspective\b|^\/[a-z]+\/\s*$|^["'“”\s]*mayday\b/i],
+
+  // DISSEMINATION — a hashtag, in every shape Q writes one. A LETTER (or a bracket, for
+  // "#[[[RR]]]#") must follow the hash: see the note above about counters.
+  ['dissemination', /^#{1,2}[A-Za-z[]|^["'“”\s]*_the_floor_is_yours_|^#1776\b/i],
+
+  // RESEARCH — "track & follow" names a finding as the deliverable.
+  ['research', /\btrack\s*&\s*follow\b/i],
+
+  // COGNITION — the deliverable is a realisation, including the Declaration's opening, which
+  // round 1 already places here for its later paragraphs.
+  ['cognition', /^["'“”\s]*comprehend\b|^["'“”\s]*['‘]?group.think|^["'“”\s]*when in the course of human events\b/i],
+
+  // OPERATIONAL — an action or a state change, including the numbers Q posts so the reader
+  // CALLS them (the White House switchboard, the crisis line) and the instructions he quotes.
+  ['operational', /^["'“”\s]*:?\s*stay at home\b|^["'“”\s]*[“"]keep them (starved|blind|stupid)|^["'“”\s]*command away from generals\b|^["'“”\s]*[“"]set the stage\b|^["'“”\s]*\*think scramble\b|^["'“”\s]*:?protect[_ ]|^["'“”\s]*\(?\d{3}[)\s-]\s*\d{3}-\d{4}\s*$|^["'“”\s]*1-\d{3}-\d{3}-\d{4}\s*$/i],
+)
+
+// ── LINES THAT STATE NO INSTRUCTION ────────────────────────────────────────
+//
+// Four shapes on the Q Directives sheet instruct nobody to do anything, and no honest family
+// exists for them. Rather than invent one — which is what a catch-all would be — they are named
+// here, HELD out of the directive rulings, and reported for the owner to place.
+//
+//   list markers      "#1"  "#2"  "#17"  "#64"  "#21 - #25"   — #953 numbers its own lines
+//   structural ends   "_END_"  "-END-"  "—end—"  "End_of_Topic"
+//   comms strings     "Bunker Apple Yellow Sky [… + 1]"  "Approval 58203-JX"
+//   one assertion     #17's "…shills log and send new info back to ASF for instruction."
+//
+// A directive is where Q instructs the reader to act. A counter is not one, and certifying it as
+// one would put a list marker in a section that answers "what did Q tell the reader to do?".
+const NOT_AN_INSTRUCTION = [
+  // "#1776" is excluded by name: it is the founding year used as a rallying hashtag, which is the
+  // one all-digit hash in this batch that IS a call to spread something.
+  [/^#(?!1776\b)\d+(\s*[-–—]\s*#\d+)?\.?$/, 'a list marker numbering the drop\'s own lines, not an instruction'],
+  [/^[_\-–—…\s]*end([_\s]of[_\s]topic)?[_\-–—\s]*$/i, 'a structural end-marker, not an instruction'],
+  [/^bunker apple yellow sky\b/i, 'a comms string — belongs with the Resolution Center lines, not Directives'],
+  [/^approval \d+-[A-Z]+$/i, 'a comms string — belongs with the Resolution Center lines, not Directives'],
+  [/^in case you didn.t know, shills log\b/i, 'an assertion about what shills do — a Claim in shape, not an instruction'],
+]
+
+/** Why this line states no instruction, or null when it does. */
+export function statesNoInstruction(text) {
+  const bare = String(text ?? '').replace(/^[>\s]+/, '').trim()
+  for (const [rx, why] of NOT_AN_INSTRUCTION) if (rx.test(bare)) return why
+  return null
+}
+
 export function queueFamilyOf(text, postNum) {
   const bare = String(text ?? '').replace(/^[>\s]+/, '').trim()
   const frag = FRAGMENTS.get(`${postNum}|${bare}`)

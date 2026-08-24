@@ -4,22 +4,22 @@
  "canonical": {
   "posts": 4966,
   "questions": {
-   "occurrences": 6321,
-   "distinct": 5358,
+   "occurrences": 6327,
+   "distinct": 5363,
    "posts": 1705
   },
   "directives": {
-   "occurrences": 2902,
-   "distinct": 1830,
-   "posts": 1696
+   "occurrences": 3304,
+   "distinct": 1930,
+   "posts": 1917
   },
   "claims": {
-   "occurrences": 8631,
-   "distinct": 6765,
-   "posts": 3050
+   "occurrences": 10258,
+   "distinct": 7777,
+   "posts": 3223
   },
   "predictions": {
-   "occurrences": 841,
+   "occurrences": 934,
    "posts": 671
   },
   "evidence": {
@@ -27,16 +27,16 @@
    "posts": 3883
   },
   "entities": {
-   "canonical": 1223,
+   "canonical": 1532,
    "detectedCanonical": 1292,
    "ownerRulings": 118,
    "ownerMerges": 1,
-   "queueRulings": 508,
-   "mentions": 8831,
+   "queueRulings": 1007,
+   "mentions": 9271,
    "coreEntities": 93,
-   "coreRegistryMentions": 5236,
+   "coreRegistryMentions": 5297,
    "tailEntities": 966,
-   "tailMentions": 2868
+   "tailMentions": 2922
   },
   "themes": {
    "assignments": 2646,
@@ -45,15 +45,15 @@
    "posts": 1899
   },
   "codes": {
-   "occurrences": 1957,
-   "distinct": 747,
-   "posts": 856
+   "occurrences": 1986,
+   "distinct": 771,
+   "posts": 861
   },
   "resolution": {
-   "total": 115,
+   "total": 353,
    "entity": 30,
    "theme": 16,
-   "code": 28,
+   "code": 266,
    "classification": 31,
    "source_reference": 10
   }
@@ -63,7 +63,7 @@
    "id": "questions",
    "label": "Q Questions",
    "artifact": "questions.json",
-   "certifiedCount": 6321,
+   "certifiedCount": 6327,
    "shippedRows": 6577,
    "mayCoexist": "134 editorial-normalisation rows are shipped so the search index can find a question a reader half-remembers in cleaned-up form.",
    "neverDisplayed": "Those 134 must never count toward any total, never highlight in a post, and never display as Q-authored. They are identified by editorialNormalization or neverDisplayAsQ.",
@@ -74,7 +74,7 @@
    "id": "directives",
    "label": "Q Directives",
    "artifact": "posts.json → actionRequests",
-   "certifiedCount": 2902,
+   "certifiedCount": 3304,
    "mayCoexist": "None. Every actionRequests entry is a certified directive.",
    "neverDisplayed": "n/a",
    "countedBy": "every actionRequests string across all posts",
@@ -84,7 +84,7 @@
    "id": "claims",
    "label": "Q Claims",
    "artifact": "posts.json → postAnalysis.claims + claimMeta",
-   "certifiedCount": 8631,
+   "certifiedCount": 10258,
    "mayCoexist": "Predictions share the assertion family and the same storage, separated by claimMeta.displayClass. editorialParaphrases are stored per post and are NOT claims.",
    "neverDisplayed": "An editorial paraphrase must never be presented as Q’s literal wording.",
    "countedBy": "postAnalysis.claims entries whose displayClass is claim",
@@ -94,7 +94,7 @@
    "id": "predictions",
    "label": "Q Predictions",
    "artifact": "posts.json → postAnalysis.predictions",
-   "certifiedCount": 841,
+   "certifiedCount": 934,
    "mayCoexist": "A prediction IS an assertion; the combined 4,811 figure is only ever shown labelled as combined.",
    "neverDisplayed": "n/a",
    "countedBy": "postAnalysis.predictions entries",
@@ -114,7 +114,7 @@
    "id": "entities",
    "label": "Q Entities",
    "artifact": "entities.json",
-   "certifiedCount": 8831,
+   "certifiedCount": 9271,
    "mayCoexist": "Canonical entities (1,332) and mentions (7,903) are DIFFERENT metrics, not a row-count mismatch — one entity is mentioned many times. The headline covers every resolved mention: 4,463 from the 93-entity core registry plus 3,440 from the 1,239 adjudicated-tail entities. Unresolved alias tokens are counted in neither.",
    "neverDisplayed": "An unresolved alias must never be shown as a resolved identification.",
    "countedBy": "sum of per-entity mention counts",
@@ -134,7 +134,7 @@
    "id": "codes",
    "label": "Codes & Brackets",
    "artifact": "codes.json",
-   "certifiedCount": 1957,
+   "certifiedCount": 1986,
    "mayCoexist": "Detected as a code does not mean decoded: 734 of 739 ship with no interpretation, which is the honest state.",
    "neverDisplayed": "An undecoded code must never be shown with an invented meaning.",
    "countedBy": "sum of per-code recurrence counts",
@@ -144,7 +144,7 @@
    "id": "resolution",
    "label": "Resolution Center",
    "artifact": "resolution-queue.json",
-   "certifiedCount": 115,
+   "certifiedCount": 353,
    "mayCoexist": "Every row here is DELIBERATELY excluded from its section’s certified totals. That exclusion is the point of the section, not a gap in it.",
    "neverDisplayed": "A community suggestion must never alter certified data without re-entering audit → adjudication → materialise → QA → apply → deploy.",
    "countedBy": "every queue row",
@@ -187,30 +187,30 @@
   {
    "group": "1. Frozen canonical counts",
    "id": "questions",
-   "description": "Questions = 6,321 certified primary occurrences",
+   "description": "Questions = 6,327 certified primary occurrences",
    "pass": true,
-   "detail": "6321"
+   "detail": "6327"
   },
   {
    "group": "1. Frozen canonical counts",
    "id": "directives",
    "description": "Directives = 2,552",
    "pass": true,
-   "detail": "2902"
+   "detail": "3304"
   },
   {
    "group": "1. Frozen canonical counts",
    "id": "claims",
    "description": "Claims = 4,189",
    "pass": true,
-   "detail": "8631"
+   "detail": "10258"
   },
   {
    "group": "1. Frozen canonical counts",
    "id": "predictions",
    "description": "Predictions = 630",
    "pass": true,
-   "detail": "841"
+   "detail": "934"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -224,28 +224,28 @@
    "id": "entities-canonical",
    "description": "Entities = 1,335 canonical",
    "pass": true,
-   "detail": "1223"
+   "detail": "1532"
   },
   {
    "group": "1. Frozen canonical counts",
    "id": "entities-mentions",
    "description": "Entities = 7,903 resolved mentions (headline)",
    "pass": true,
-   "detail": "8831"
+   "detail": "9271"
   },
   {
    "group": "1. Frozen canonical counts",
    "id": "entities-core",
    "description": "core registry submetric = 5,273",
    "pass": true,
-   "detail": "5236"
+   "detail": "5297"
   },
   {
    "group": "1. Frozen canonical counts",
    "id": "entities-tail",
    "description": "adjudicated tail submetric = 3,476",
    "pass": true,
-   "detail": "2868"
+   "detail": "2922"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -266,14 +266,14 @@
    "id": "entities-reconcile",
    "description": "submetrics sum to the headline",
    "pass": true,
-   "detail": "5236 + 2868 + 727 = 8831"
+   "detail": "5297 + 2922 + 1052 = 9271"
   },
   {
    "group": "1. Frozen canonical counts",
    "id": "entities-artifact-headline",
    "description": "the artifact ships the headline figure",
    "pass": true,
-   "detail": "8831"
+   "detail": "9271"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -294,7 +294,7 @@
    "id": "codes",
    "description": "Codes = 1,949 occurrences",
    "pass": true,
-   "detail": "1957"
+   "detail": "1986"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -308,7 +308,7 @@
    "id": "resolution-total",
    "description": "Resolution Center = 2,527",
    "pass": true,
-   "detail": "115"
+   "detail": "353"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -327,9 +327,9 @@
   {
    "group": "1. Frozen canonical counts",
    "id": "resolution-code",
-   "description": "Resolution code = 28",
+   "description": "Resolution code = 266",
    "pass": true,
-   "detail": "28"
+   "detail": "266"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -341,9 +341,9 @@
   {
    "group": "2. Provenance contracts",
    "id": "q-rows",
-   "description": "Questions ships 6,321 certified + 182 marked + 134 editorial",
+   "description": "Questions ships 6,327 certified + 182 marked + 134 editorial",
    "pass": true,
-   "detail": "6637"
+   "detail": "6643"
   },
   {
    "group": "2. Provenance contracts",
@@ -364,7 +364,7 @@
    "id": "q-partition",
    "description": "counted + editorial = every shipped row",
    "pass": true,
-   "detail": "6503 + 134"
+   "detail": "6509 + 134"
   },
   {
    "group": "2. Provenance contracts",
@@ -385,7 +385,7 @@
    "id": "ent-two-metrics",
    "description": "canonical and mentions are distinct metrics",
    "pass": true,
-   "detail": "1223 vs 8831"
+   "detail": "1532 vs 9271"
   },
   {
    "group": "2. Provenance contracts",
@@ -455,7 +455,7 @@
    "id": "no-paraphrase-as-q",
    "description": "no editorial paraphrase is counted as a claim",
    "pass": true,
-   "detail": "1156 paraphrases held aside, 0 leaked"
+   "detail": "1134 paraphrases held aside, 0 leaked"
   },
   {
    "group": "4. Cross-section overlap",
@@ -532,21 +532,21 @@
    "id": "isolation-questions",
    "description": "questions: quoted-block over-extension stays at its known 99 occurrences",
    "pass": true,
-   "detail": "99 of 6503 (expected 99)"
+   "detail": "99 of 6509 (expected 99)"
   },
   {
    "group": "6. Source-material isolation",
    "id": "isolation-directives",
-   "description": "directives: quoted-block over-extension stays at its known 107 occurrences",
+   "description": "directives: quoted-block over-extension stays at its known 115 occurrences",
    "pass": true,
-   "detail": "107 of 2902 (expected 107)"
+   "detail": "115 of 3304 (expected 115)"
   },
   {
    "group": "6. Source-material isolation",
    "id": "isolation-claims",
-   "description": "claims: quoted-block over-extension stays at its known 552 occurrences",
+   "description": "claims: quoted-block over-extension stays at its known 721 occurrences",
    "pass": true,
-   "detail": "552 of 8631 (expected 552)"
+   "detail": "721 of 10258 (expected 721)"
   },
   {
    "group": "6. Source-material isolation",
@@ -565,9 +565,9 @@
   {
    "group": "6. Source-material isolation",
    "id": "debt-posts-baseline",
-   "description": "source-boundary debt stays at its known 235 posts",
+   "description": "source-boundary debt stays at its known 269 posts",
    "pass": true,
-   "detail": "235 posts"
+   "detail": "269 posts"
   },
   {
    "group": "6. Source-material isolation",
@@ -614,9 +614,9 @@
   {
    "group": "8. Seed and cache integrity",
    "id": "seed-current",
-   "description": "SEED_VERSION is 89 (the verse-block ruling)",
+   "description": "SEED_VERSION is 90 (round 2 of the unhighlighted-queue review)",
    "pass": true,
-   "detail": "89"
+   "detail": "90"
   },
   {
    "group": "8. Seed and cache integrity",
@@ -630,7 +630,7 @@
    "id": "seed-fingerprint",
    "description": "seeded data matches the SEED_VERSION that shipped it",
    "pass": true,
-   "detail": "unchanged"
+   "detail": "seeded data changed and SEED_VERSION moved 89 -> 90 [posts.json, questions.json, entities.json, codes.json]"
   },
   {
    "group": "8. Seed and cache integrity",
@@ -677,21 +677,21 @@
   {
    "group": "9. UI count integrity",
    "id": "ui-questions",
-   "description": "sectionInfo states 6,321",
+   "description": "sectionInfo states 6,327",
    "pass": true,
    "detail": "ok"
   },
   {
    "group": "9. UI count integrity",
    "id": "ui-directives",
-   "description": "sectionInfo states 2,902",
+   "description": "sectionInfo states 3,304",
    "pass": true,
    "detail": "ok"
   },
   {
    "group": "9. UI count integrity",
    "id": "ui-claims",
-   "description": "sectionInfo states 8,631",
+   "description": "sectionInfo states 10,258",
    "pass": true,
    "detail": "ok"
   },
@@ -705,7 +705,7 @@
   {
    "group": "9. UI count integrity",
    "id": "ui-entities",
-   "description": "sectionInfo headlines 1,223 entities and 8,831 mentions",
+   "description": "sectionInfo headlines 1,532 entities and 9,271 mentions",
    "pass": true,
    "detail": "ok"
   },
@@ -733,7 +733,7 @@
   {
    "group": "9. UI count integrity",
    "id": "ui-codes",
-   "description": "sectionInfo states 1,957",
+   "description": "sectionInfo states 1,986",
    "pass": true,
    "detail": "ok"
   },
@@ -768,7 +768,7 @@
   {
    "group": "9. UI count integrity",
    "id": "headline-entities",
-   "description": "Entities headline = certified mentions / 2,098 posts",
+   "description": "Entities headline = certified mentions / 2,099 posts",
    "pass": true,
    "detail": "ok"
   },
@@ -854,7 +854,7 @@
    "id": "rc-first-seen",
    "description": "every row carries the date it entered the queue",
    "pass": true,
-   "detail": "2 distinct dates"
+   "detail": "3 distinct dates"
   },
   {
    "group": "10. Resolution Center completeness",
@@ -889,14 +889,14 @@
    "id": "rc-source-excluded",
    "description": "none of the held mentions is counted in Entities",
    "pass": true,
-   "detail": "8831"
+   "detail": "9271"
   },
   {
    "group": "10b. Entity hover publication",
    "id": "hover-globals",
-   "description": "one global synopsis per live entity, less the 49 awaiting one",
+   "description": "one global synopsis per live entity, less the 358 awaiting one",
    "pass": true,
-   "detail": "1174 published + 49 pending"
+   "detail": "1174 published + 358 pending"
   },
   {
    "group": "10b. Entity hover publication",
@@ -959,7 +959,7 @@
    "id": "hover-counts-untouched",
    "description": "entity totals are unchanged by the import",
    "pass": true,
-   "detail": "1223 entities / 8831 mentions"
+   "detail": "1532 entities / 9271 mentions"
   },
   {
    "group": "10b. Entity hover publication",
@@ -980,14 +980,14 @@
    "id": "cleanup-audit-covers-corpus",
    "description": "the provenance audit covers every certified occurrence",
    "pass": true,
-   "detail": "9926 of 9926"
+   "detail": "10366 of 10366"
   },
   {
    "group": "10c. Integrated entity cleanup",
    "id": "cleanup-applied-as-planned",
    "description": "the applied totals are the proven ones plus every ruling recorded since",
    "pass": true,
-   "detail": "1223/8831 against 1223/8831"
+   "detail": "1532/9271 against 1532/9271"
   },
   {
    "group": "10c. Integrated entity cleanup",
@@ -1064,7 +1064,7 @@
    "id": "dormant-ids-reserved",
    "description": "every dormant id is still held in the permanent ledger",
    "pass": true,
-   "detail": "230 dormant, 0 unreserved"
+   "detail": "229 dormant, 0 unreserved"
   },
   {
    "group": "10c. Integrated entity cleanup",
@@ -1092,7 +1092,7 @@
    "id": "source-only-have-posts",
    "description": "every source-only identity keeps at least one linked drop",
    "pass": true,
-   "detail": "138 rows"
+   "detail": "134 rows"
   },
   {
    "group": "10c. Integrated entity cleanup",
@@ -1120,7 +1120,7 @@
    "id": "cleanup-ambiguous-untouched",
    "description": "every ambiguous occurrence is retained unchanged",
    "pass": true,
-   "detail": "72 ambiguous, 0 acted on"
+   "detail": "66 ambiguous, 0 acted on"
   },
   {
    "group": "10c. Integrated entity cleanup",
@@ -1155,14 +1155,14 @@
    "id": "image-unconfirmed-certified",
    "description": "image-unconfirmed occurrences keep their certified mention",
    "pass": true,
-   "detail": "41 held"
+   "detail": "40 held"
   },
   {
    "group": "10c. Integrated entity cleanup",
    "id": "image-unconfirmed-private",
    "description": "every one of them is in the private provenance queue",
    "pass": true,
-   "detail": "41 queued"
+   "detail": "40 queued"
   },
   {
    "group": "10c. Integrated entity cleanup",
@@ -1176,7 +1176,7 @@
    "id": "withdrawals-scoped-to-ruling",
    "description": "only the approved population is withdrawn",
    "pass": true,
-   "detail": "78 approved, 7 held beyond it"
+   "detail": "78 approved, 5 held beyond it"
   },
   {
    "group": "10c. Integrated entity cleanup",
@@ -1218,7 +1218,7 @@
    "id": "anchor-counts-unmoved",
    "description": "the provenance audit describes the state it was run against",
    "pass": true,
-   "detail": "1448/9926 against 1448/9926"
+   "detail": "1751/10366 against 1751/10366"
   },
   {
    "group": "10c. Integrated entity cleanup",
@@ -1232,7 +1232,7 @@
    "id": "image-unconfirmed-stay-certified",
    "description": "image-unconfirmed occurrences keep their certified mention",
    "pass": true,
-   "detail": "41 held"
+   "detail": "40 held"
   },
   {
    "group": "10c. Integrated entity cleanup",
@@ -1274,7 +1274,7 @@
    "id": "cleanup-rebuild-byte-identical",
    "description": "the approved audit still holds its exact bytes",
    "pass": true,
-   "detail": "audit unchanged; inputs moved under 6 recorded decision(s)"
+   "detail": "audit unchanged; inputs moved under 7 recorded decision(s)"
   },
   {
    "group": "10d. Public entity list reconciliation",
@@ -1288,35 +1288,35 @@
    "id": "entity-total-1201",
    "description": "public canonical identities = 1,201",
    "pass": true,
-   "detail": "view 1223 / registry 1223"
+   "detail": "view 1532 / registry 1532"
   },
   {
    "group": "10d. Public entity list reconciliation",
    "id": "entity-mentions-certified",
-   "description": "certified prose mentions = 8,831",
+   "description": "certified prose mentions = 9,271",
    "pass": true,
-   "detail": "view 8831 / registry sum 8831"
+   "detail": "view 9271 / registry sum 9271"
   },
   {
    "group": "10d. Public entity list reconciliation",
    "id": "entity-breakdown-adds",
    "description": "displayed breakdown adds exactly to the canonical total",
    "pass": true,
-   "detail": "1085 named in Q’s prose + 138 linked as a source only = 1223"
+   "detail": "1398 named in Q’s prose + 134 linked as a source only = 1532"
   },
   {
    "group": "10d. Public entity list reconciliation",
    "id": "entity-components-disjoint",
    "description": "prose and source-only components share no identity",
    "pass": true,
-   "detail": "1085 + 138, overlap 0"
+   "detail": "1398 + 134, overlap 0"
   },
   {
    "group": "10d. Public entity list reconciliation",
    "id": "entity-source-only-component",
-   "description": "the 138 source-only identities are a labelled component",
+   "description": "the 134 source-only identities are a labelled component",
    "pass": true,
-   "detail": "138 rows / registry 138"
+   "detail": "134 rows / registry 134"
   },
   {
    "group": "10d. Public entity list reconciliation",
@@ -1330,7 +1330,7 @@
    "id": "entity-source-row-has-record",
    "description": "every source-only row has at least one source record",
    "pass": true,
-   "detail": "138/138"
+   "detail": "134/134"
   },
   {
    "group": "10d. Public entity list reconciliation",
@@ -1349,9 +1349,9 @@
   {
    "group": "10d. Public entity list reconciliation",
    "id": "entity-dormant-excluded",
-   "description": "the 230 dormant identities are reserved and never public",
+   "description": "the 229 dormant identities are reserved and never public",
    "pass": true,
-   "detail": "230 reserved, 0 leaked"
+   "detail": "229 reserved, 0 leaked"
   },
   {
    "group": "10d. Public entity list reconciliation",
@@ -1365,7 +1365,7 @@
    "id": "entity-no-shared-alias-leak",
    "description": "no occurrence is claimed by two identities",
    "pass": true,
-   "detail": "9862 occurrences, 0 double-claimed"
+   "detail": "10308 occurrences, 0 double-claimed"
   },
   {
    "group": "10d. Public entity list reconciliation",
@@ -1379,7 +1379,7 @@
    "id": "entity-rows-reconcile",
    "description": "row count and identity count reconcile through the merge model",
    "pass": true,
-   "detail": "1210 rows / 1223 identities / 23 in 10 merged rows"
+   "detail": "1519 rows / 1532 identities / 23 in 10 merged rows"
   },
   {
    "group": "10d. Public entity list reconciliation",
@@ -1449,7 +1449,7 @@
    "id": "entities-render-matches-certified",
    "description": "postAnalysis entries equal certified mentions",
    "pass": true,
-   "detail": "8831 vs 8831"
+   "detail": "9271 vs 9271"
   },
   {
    "group": "12. Cross-section relationships",
@@ -1524,16 +1524,16 @@
   {
    "group": "12. Cross-section relationships",
    "id": "rel-predictions",
-   "description": "Prediction → assertion edges = the certified 841",
+   "description": "Prediction → assertion edges = the certified 934",
    "pass": true,
-   "detail": "841"
+   "detail": "934"
   },
   {
    "group": "12. Cross-section relationships",
    "id": "rel-unresolved",
    "description": "every queue row has an edge to its occurrence",
    "pass": true,
-   "detail": "115"
+   "detail": "353"
   },
   {
    "group": "12. Cross-section relationships",
@@ -1547,14 +1547,14 @@
    "id": "rel-map-questions",
    "description": "analysis map totals reconcile with the shipped question records",
    "pass": true,
-   "detail": "6503 vs 6321 certified + 182 marked"
+   "detail": "6509 vs 6327 certified + 182 marked"
   },
   {
    "group": "12. Cross-section relationships",
    "id": "rel-map-directives",
    "description": "analysis map totals reconcile with certified Directives",
    "pass": true,
-   "detail": "2902"
+   "detail": "3304"
   },
   {
    "group": "12. Cross-section relationships",
@@ -1617,28 +1617,28 @@
    "id": "search-questions",
    "description": "indexed Questions = certified 6,454",
    "pass": true,
-   "detail": "6321"
+   "detail": "6327"
   },
   {
    "group": "13. Global search",
    "id": "search-directives",
    "description": "indexed Directives = certified 2,552",
    "pass": true,
-   "detail": "2902"
+   "detail": "3304"
   },
   {
    "group": "13. Global search",
    "id": "search-claims",
    "description": "indexed Claims = certified 4,181",
    "pass": true,
-   "detail": "8631"
+   "detail": "10258"
   },
   {
    "group": "13. Global search",
    "id": "search-predictions",
    "description": "indexed Predictions = certified 630",
    "pass": true,
-   "detail": "841"
+   "detail": "934"
   },
   {
    "group": "13. Global search",
@@ -1652,7 +1652,7 @@
    "id": "search-entities",
    "description": "indexed Entities = certified 1,445",
    "pass": true,
-   "detail": "1223"
+   "detail": "1532"
   },
   {
    "group": "13. Global search",
@@ -1666,7 +1666,7 @@
    "id": "search-codes",
    "description": "indexed Codes = certified 739 distinct",
    "pass": true,
-   "detail": "747"
+   "detail": "771"
   },
   {
    "group": "13. Global search",
@@ -1680,7 +1680,7 @@
    "id": "search-unresolved",
    "description": "indexed unresolved = the 2,527 queue rows",
    "pass": true,
-   "detail": "115"
+   "detail": "353"
   },
   {
    "group": "13. Global search",
@@ -1708,7 +1708,7 @@
    "id": "search-repeats-preserved",
    "description": "in-post repeats are indexed as separate occurrences",
    "pass": true,
-   "detail": "8631 rows, 8584 distinct (post, text)"
+   "detail": "10258 rows, 10151 distinct (post, text)"
   },
   {
    "group": "13. Global search",

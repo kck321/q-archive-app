@@ -31,6 +31,11 @@ export function loadAbbrevRepairs(root) {
   const countFor = (list, cat) => (list ?? []).filter(x => x.category === cat).length
   return {
     doc,
+    /** Every recorded key for a category, so a caller can tell "absent" from "skipped". */
+    keysFor: cat => ({
+      repairs: new Set((doc.repairs ?? []).filter(r => r.category === cat).map(r => `${r.postNum}|${norm(r.truncated)}`)),
+      withdrawals: new Set((doc.withdrawn ?? []).filter(w => w.category === cat).map(w => `${w.postNum}|${norm(w.fragment)}`)),
+    }),
     /** The full span for a truncated one, or null. */
     fullFor: (category, postNum, text) => repairs.get(`${category}|${postNum}|${norm(text)}`) ?? null,
     /** Is this span a tail that the repaired span now contains? */
@@ -47,8 +52,20 @@ export function loadAbbrevRepairs(root) {
  * truncated span stays certified and nothing says so.
  */
 export function applyAbbrevRepairs(repairs, category, holders, read) {
-  if (!repairs) return { repaired: 0, withdrawn: 0, ok: true }
+  if (!repairs) return { repaired: 0, withdrawn: 0, absentRepairs: 0, absentWithdrawals: 0, ok: true }
   let repaired = 0, withdrawn = 0, merged = 0
+  // A RECORDED SPAN THAT IS NOT HERE AT ALL IS NOT A SKIPPED REPAIR.
+  //
+  // The unhighlighted-queue rulings PROMOTE units out of Context - a ruled line is no longer
+  // "reviewed, and in no semantic category" - so 12 of the 28 Context repairs describe spans this
+  // section no longer holds. Counting those as unapplied made the guard refuse a bundle in which
+  // nothing was left truncated: the guard crying wolf about its own success.
+  //
+  // So the two are separated. `repaired` is what was fixed; `absentRepairs` is what was not there
+  // to fix. The caller states BOTH numbers, so a span that vanished for some other reason still
+  // fails rather than being absorbed by a tolerance.
+  const wantKeys = repairs.keysFor(category)
+  const seenRepairs = new Set(), seenWithdrawals = new Set()
   for (const h of holders) {
     const arr = read(h)
     if (!Array.isArray(arr) || !arr.length) continue
@@ -62,10 +79,11 @@ export function applyAbbrevRepairs(repairs, category, holders, read) {
     const before = new Set(arr.map(norm))
     const out = []
     for (const t of arr) {
-      if (repairs.isWithdrawn(category, h.postNum, t)) { withdrawn++; continue }
+      if (repairs.isWithdrawn(category, h.postNum, t)) { withdrawn++; seenWithdrawals.add(`${h.postNum}|${norm(t)}`); continue }
       const full = repairs.fullFor(category, h.postNum, t)
       if (full && full !== t) {
         repaired++
+        seenRepairs.add(`${h.postNum}|${norm(t)}`)
         if (before.has(norm(full))) { merged++; continue }
         out.push(full)
         continue
@@ -75,17 +93,24 @@ export function applyAbbrevRepairs(repairs, category, holders, read) {
     arr.length = 0
     arr.push(...out)
   }
-  return { repaired, withdrawn, merged }
+  let absentRepairs = 0, absentWithdrawals = 0
+  for (const k of wantKeys.repairs) if (!seenRepairs.has(k)) absentRepairs++
+  for (const k of wantKeys.withdrawals) if (!seenWithdrawals.has(k)) absentWithdrawals++
+  return { repaired, withdrawn, merged, absentRepairs, absentWithdrawals }
 }
 
 /** Refuse rather than under-apply — see the module note. */
-export function assertAbbrevApplied(repairs, category, got, label) {
+export function assertAbbrevApplied(repairs, category, got, label, absent = { repairs: 0, withdrawals: 0 }) {
   if (!repairs) return
   const want = repairs.expected(category)
-  if (got.repaired !== want.repairs || got.withdrawn < want.withdrawals) {
+  // `absent` is how many recorded spans this section no longer holds - a STATED number, not a
+  // tolerance, so an unexpected disappearance still fails. See applyAbbrevRepairs.
+  const okRepairs = got.repaired === want.repairs - absent.repairs && (got.absentRepairs ?? 0) === absent.repairs
+  const okWithdrawals = got.withdrawn >= want.withdrawals - absent.withdrawals && (got.absentWithdrawals ?? 0) <= absent.withdrawals
+  if (!okRepairs || !okWithdrawals) {
     console.error(`\n${label}: abbreviation repair is half-applied.`)
-    console.error(`   repairs    recorded ${want.repairs}, applied ${got.repaired}`)
-    console.error(`   withdrawals recorded ${want.withdrawals}, applied ${got.withdrawn}`)
+    console.error(`   repairs    recorded ${want.repairs}, applied ${got.repaired}, not present ${got.absentRepairs ?? 0} (expected ${absent.repairs})`)
+    console.error(`   withdrawals recorded ${want.withdrawals}, applied ${got.withdrawn}, not present ${got.absentWithdrawals ?? 0} (expected ${absent.withdrawals})`)
     console.error('   A truncated span left certified says nothing is wrong. Refusing to write.\n')
     process.exit(1)
   }

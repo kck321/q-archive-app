@@ -27,6 +27,7 @@ import { clean, key, unitsFor } from './lib/segment.mjs'
 import { runtimeText, runtimeSpan } from './lib/runtimeText.mjs'
 import { completeTokenRegex } from './lib/renderedMatch.mjs'
 import { loadAbbrevRepairs } from './lib/abbrevRepairs.mjs'
+import { statesNoInstruction } from './lib/queueDirectiveFamily.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const REVIEW = path.join(ROOT, 'audit/unhighlighted-sentences/owner-review-final2.csv')
@@ -444,6 +445,17 @@ for (const [i, r] of body.entries()) {
   // The owner typed something the drop does not say. Q's wording wins; the divergence is reported.
   if (loose(sourceText) !== loose(wbText)) {
     issue('WORKBOOK_TEXT_DIFFERS_FROM_DROP', { drop: sourceText, severity: 'warn' })
+  }
+
+  // A DIRECTIVE HAS TO INSTRUCT SOMEBODY TO DO SOMETHING.
+  //
+  // Four shapes on the Q Directives sheet do not: #953's "#1"/"#2" list markers, the "_END_" and
+  // "—end—" structural marks, two comms strings, and one line that is an assertion in shape. Each
+  // would need an invented directive family, and lib/queueDirectiveFamily.mjs is explicit that a
+  // silent catch-all is the one thing it must not become. They are held and reported instead.
+  if (section === 'directives') {
+    const why = statesNoInstruction(sourceText)
+    if (why) { issue('HELD_STATES_NO_INSTRUCTION', { drop: sourceText, reason: why }); continue }
   }
 
   const covered = alreadyCertified(section, p, sourceText)

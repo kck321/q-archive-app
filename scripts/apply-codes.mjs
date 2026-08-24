@@ -138,23 +138,34 @@ const missingBasis = codes.filter(c => c.interpretedMeaning && !c.interpretation
 const checks = [
   // 1,949 + 8 ruled in from the unhighlighted-sentence queue = 1,957. Seven of the 15 bracket
   // rulings named a token already certified at that post and add nothing.
-  ['code occurrences = 1,957', out.totals.occurrences === 1957, out.totals.occurrences],
-  ['bracket rulings applied = 15', bracketRulings.length === 15 && ruledOccurrences + ruledAlready === 15,
+  // 1,957 + 29 from ROUND 2 = 1,986. Round 2 rules 43 more brackets and 14 of them name a token
+  // already certified at that post, which is the point of the pass: the bracket detector already
+  // paints 449 of the 492 lines the owner sent here, and those produce no ruling at all.
+  ['code occurrences = 1,986', out.totals.occurrences === 1986, out.totals.occurrences],
+  // 15 (round 1) + 43 (round 2) = 58 rulings, carrying 81 occurrences — a ruled token can appear
+  // more than once in its drop, and each appearance is a real occurrence. 44 of the 81 name a
+  // token the detector already certifies at that post and add nothing.
+  ['bracket rulings applied = 58, 81 occurrences',
+    bracketRulings.length === 58 && ruledOccurrences + ruledAlready === 81,
     `${ruledOccurrences} new + ${ruledAlready} already certified`],
   // +8: each ruled token is a wording Codes did not hold.
-  ['distinct codes = 747', out.totals.distinctCodes === 747, out.totals.distinctCodes],
+  // +24: the 29 new occurrences carry 24 wordings Codes did not hold.
+  ['distinct codes = 771', out.totals.distinctCodes === 771, out.totals.distinctCodes],
   // +4 posts gain their first certified code.
-  ['posts = 856', out.totals.posts === 856, out.totals.posts],
+  // +5 posts gain their first certified code.
+  ['posts = 861', out.totals.posts === 861, out.totals.posts],
   ['interpreted = 7', out.totals.interpreted === 7, out.totals.interpreted],
   // +8, and deliberately: a bracket ruled to BE notation is not a bracket whose meaning is known.
-  ['unresolved = 740', out.totals.unresolved === 740, out.totals.unresolved],
+  // +24, and deliberately: a bracket ruled to BE notation is not a bracket whose meaning is known.
+  ['unresolved = 764', out.totals.unresolved === 764, out.totals.unresolved],
   ['cross-linked to Entities = 32', linked.length === 32, linked.length],
   ['no interpretation without evidence', invented.length === 0, `${invented.length} invented`],
   ['every interpretation states its basis', missingBasis.length === 0, `${missingBasis.length} unstated`],
   // UNCHANGED ON PURPOSE. This is the detector's record of what it routed away, not a live
   // population; the eight the owner overruled are reported as ruledIntoCodesByOwner instead.
   ['bracket-emphasis tally untouched', out.totals.excludedBracketEmphasis.occurrences === 769, out.totals.excludedBracketEmphasis.occurrences],
-  ['owner ruled 8 back into Codes', out.totals.ruledIntoCodesByOwner === 8, out.totals.ruledIntoCodesByOwner],
+  // 8 (round 1) + 29 (round 2) = 37 tokens the owner ruled back in over the detector.
+  ['owner ruled 37 back into Codes', out.totals.ruledIntoCodesByOwner === 37, out.totals.ruledIntoCodesByOwner],
   ['dates stay excluded', out.totals.excludedDates.occurrences === 405, out.totals.excludedDates.occurrences],
   ['every code keeps its exact source text', codes.every(c => c.sourceTexts.length > 0), 'ok'],
 ]

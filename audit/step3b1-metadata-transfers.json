@@ -4276,6 +4276,23 @@
    }
   },
   {
+   "actionId": "A-MP-p1915-s011",
+   "from": "1915|claims|932|987",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
    "actionId": "A-MP-p1916-s004",
    "from": "1916|claims|149|203",
    "kind": "claims",
@@ -4312,6 +4329,40 @@
   {
    "actionId": "A-MP-p1944-s014",
    "from": "1944|claims|682|719",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1944-s014",
+   "from": "1944|claims|682|719",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p1944-s022",
+   "from": "1944|claims|1185|1245",
    "kind": "claims",
    "metadata": {
     "claimMeta": {
@@ -4440,7 +4491,24 @@
      "sourceProvided": false,
      "isConclusion": false,
      "isPrediction": false,
-     "telegraphic": true,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2211-s011",
+   "from": "2211|claims|651|714",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
      "confidence": "OWNER_ADJUDICATED"
     }
    }
@@ -4510,6 +4578,23 @@
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p2378-s001",
+   "from": "2378|claims|6|9",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": true,
+     "confidence": "OWNER_ADJUDICATED"
     }
    }
   },
@@ -4776,6 +4861,23 @@
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p3049-s001",
+   "from": "3049|claims|110|359",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
     }
    }
   },
@@ -5391,7 +5493,41 @@
      "sourceProvided": false,
      "isConclusion": false,
      "isPrediction": false,
-     "telegraphic": true,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4782-s015",
+   "from": "4782|claims|557|687",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4871-s000",
+   "from": "4871|claims|0|119",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
      "confidence": "OWNER_ADJUDICATED"
     }
    }
@@ -5425,7 +5561,24 @@
      "sourceProvided": false,
      "isConclusion": false,
      "isPrediction": false,
-     "telegraphic": true,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
+   "actionId": "A-MP-p4888-s001",
+   "from": "4888|claims|92|137",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
      "confidence": "OWNER_ADJUDICATED"
     }
    }
@@ -5918,10 +6071,44 @@
    }
   },
   {
+   "actionId": "A-SB-2653",
+   "from": "2653|claims|2480|2530",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
    "actionId": "A-SB-3071",
    "rekeyed": "claimMeta",
    "from": "deny proper counting u s",
    "to": "deny proper counting u s census avoid public knowledge real illegal pop to avoid voter fraud risk to elections"
+  },
+  {
+   "actionId": "A-SB-4310",
+   "from": "4310|claims|980|1138",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
   },
   {
    "actionId": "A-SB-4310",
@@ -7760,6 +7947,12 @@
    "metadata": {}
   },
   {
+   "actionId": "B2-TRIM-2912-claims-477-625",
+   "from": "2912|claims|477|625",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
    "actionId": "B2-TRIM-2938-predictions-1014-1106",
    "rekeyed": "claimMeta",
    "from": "what other anchors were provided to fisc in order to gain the warrant declas will show",
@@ -7776,6 +7969,12 @@
    "rekeyed": "claimMeta",
    "from": "1 evidence or argument establishing or helping to establish a fact or the truth of a statement",
    "to": "evidence or argument establishing or helping to establish a fact or the truth of a statement"
+  },
+  {
+   "actionId": "B2-TRIM-2971-claims-462-560",
+   "from": "2971|claims|462|560",
+   "kind": "claims",
+   "metadata": {}
   },
   {
    "actionId": "B2-TRIM-2971-claims-462-560",
@@ -7962,6 +8161,12 @@
    "rekeyed": "claimMeta",
    "from": "1 primary gather blackmail on elected pols dignitaries royalty hollywood influencers wall street and other financial top level players other high profile industry specific people etc",
    "to": "primary gather blackmail on elected pols dignitaries royalty hollywood influencers wall street and other financial top level players other high profile industry specific people etc"
+  },
+  {
+   "actionId": "B2-TRIM-4565-claims-106-298",
+   "from": "4565|claims|106|298",
+   "kind": "claims",
+   "metadata": {}
   },
   {
    "actionId": "B2-TRIM-4565-claims-106-298",
@@ -8520,6 +8725,12 @@
    "metadata": {}
   },
   {
+   "actionId": "LB1-SPAN-2971-claims-248-456",
+   "from": "2971|claims|248|456",
+   "kind": "claims",
+   "metadata": {}
+  },
+  {
    "actionId": "LB1-SPAN-3454-themeAnchors-112-416",
    "from": "3454|themeAnchors|112|416",
    "kind": "themeAnchors",
@@ -9055,6 +9266,23 @@
    }
   },
   {
+   "actionId": "LB3-DROP-4310-claims-1150-1269",
+   "from": "4310|claims|1150|1269",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
+    }
+   }
+  },
+  {
    "actionId": "LB3-DROP-4310-claims-1169-1335",
    "from": "4310|claims|1169|1335",
    "kind": "claims",
@@ -9068,6 +9296,23 @@
      "isPrediction": false,
      "telegraphic": false,
      "confidence": "HIGH"
+    }
+   }
+  },
+  {
+   "actionId": "LB3-DROP-4310-claims-1324-1399",
+   "from": "4310|claims|1324|1399",
+   "kind": "claims",
+   "metadata": {
+    "claimMeta": {
+     "semanticFamily": "assertion",
+     "displayClass": "claim",
+     "checkable": false,
+     "sourceProvided": false,
+     "isConclusion": false,
+     "isPrediction": false,
+     "telegraphic": false,
+     "confidence": "OWNER_ADJUDICATED"
     }
    }
   },

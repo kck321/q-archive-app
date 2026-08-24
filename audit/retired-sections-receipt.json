@@ -13,19 +13,19 @@
   "isConclusion": 958
  },
  "postsTouched": 4966,
- "claimMetaEntriesTouched": 9644,
+ "claimMetaEntriesTouched": 11279,
  "claimsAndPredictionsUnchanged": {
   "before": {
-   "claims": 8631,
-   "claimSpans": 8631,
-   "predictions": 841,
-   "predictionSpans": 843
+   "claims": 10258,
+   "claimSpans": 10258,
+   "predictions": 934,
+   "predictionSpans": 937
   },
   "after": {
-   "claims": 8631,
-   "claimSpans": 8631,
-   "predictions": 841,
-   "predictionSpans": 843
+   "claims": 10258,
+   "claimSpans": 10258,
+   "predictions": 934,
+   "predictionSpans": 937
   }
  }
 }

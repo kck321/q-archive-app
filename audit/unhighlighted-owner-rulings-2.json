@@ -7,17 +7,17 @@
  "source": "audit/unhighlighted-sentences/owner-review-final2.csv (from Q_Unhighlighted FINAL 2.xlsx)",
  "totals": {
   "reviewed": 6419,
-  "ruled": 2799,
+  "ruled": 2775,
   "alreadyCertified": 3261,
   "resolutionCenter": 238,
-  "issues": 1000,
+  "issues": 1024,
   "bySection": {
    "claims": 1654,
    "entities": 499,
    "brackets": 43,
    "predictions": 94,
    "url": 24,
-   "directives": 479,
+   "directives": 455,
    "questions": 6
   },
   "alreadyBySection": {
@@ -44241,15 +44241,6 @@
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
   },
   {
-   "postNum": 17,
-   "postId": "17",
-   "section": "directives",
-   "sourceText": "In case you didn’t know, shills log and send new info back to ASF for instruction.",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
    "postNum": 65,
    "postId": "65",
    "section": "directives",
@@ -44345,24 +44336,6 @@
    "postId": "155",
    "section": "directives",
    "sourceText": "Godspeed.",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
-   "postNum": 155,
-   "postId": "155",
-   "section": "directives",
-   "sourceText": "Bunker Apple Yellow Sky [… + 1]",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
-   "postNum": 175,
-   "postId": "175",
-   "section": "directives",
-   "sourceText": "Bunker Apple Yellow Sky [… + 1]",
    "was": "unclassified",
    "ruledOn": "2026-08-24",
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
@@ -44503,15 +44476,6 @@
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
   },
   {
-   "postNum": 302,
-   "postId": "302",
-   "section": "directives",
-   "sourceText": "—end—",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
    "postNum": 314,
    "postId": "314",
    "section": "directives",
@@ -44617,15 +44581,6 @@
    "postId": "443",
    "section": "directives",
    "sourceText": "Godspeed, Patriot.",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
-   "postNum": 472,
-   "postId": "472",
-   "section": "directives",
-   "sourceText": "_END_",
    "was": "unclassified",
    "ruledOn": "2026-08-24",
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
@@ -44797,15 +44752,6 @@
    "postId": "659",
    "section": "directives",
    "sourceText": "WE, THE PEOPLE.",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
-   "postNum": 675,
-   "postId": "675",
-   "section": "directives",
-   "sourceText": "#2.",
    "was": "unclassified",
    "ruledOn": "2026-08-24",
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
@@ -45082,78 +45028,6 @@
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
   },
   {
-   "postNum": 953,
-   "postId": "953",
-   "section": "directives",
-   "sourceText": "#1",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
-   "postNum": 953,
-   "postId": "953",
-   "section": "directives",
-   "sourceText": "#1",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
-   "postNum": 953,
-   "postId": "953",
-   "section": "directives",
-   "sourceText": "#1",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
-   "postNum": 953,
-   "postId": "953",
-   "section": "directives",
-   "sourceText": "#1",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
-   "postNum": 953,
-   "postId": "953",
-   "section": "directives",
-   "sourceText": "#1",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
-   "postNum": 953,
-   "postId": "953",
-   "section": "directives",
-   "sourceText": "#1",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
-   "postNum": 953,
-   "postId": "953",
-   "section": "directives",
-   "sourceText": "#2",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
-   "postNum": 953,
-   "postId": "953",
-   "section": "directives",
-   "sourceText": "#2",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
    "postNum": 992,
    "postId": "992",
    "section": "directives",
@@ -45195,15 +45069,6 @@
    "postId": "1051",
    "section": "directives",
    "sourceText": "For God & Country!",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
-   "postNum": 1133,
-   "postId": "1133",
-   "section": "directives",
-   "sourceText": "#17",
    "was": "unclassified",
    "ruledOn": "2026-08-24",
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
@@ -45461,24 +45326,6 @@
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
   },
   {
-   "postNum": 1402,
-   "postId": "1402",
-   "section": "directives",
-   "sourceText": "#64",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
-   "postNum": 1443,
-   "postId": "1443",
-   "section": "directives",
-   "sourceText": "#2.",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
    "postNum": 1443,
    "postId": "1443",
    "section": "directives",
@@ -45501,15 +45348,6 @@
    "postId": "1475",
    "section": "directives",
    "sourceText": "GODSPEED ONE AND ALL.",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
-   "postNum": 1480,
-   "postId": "1480",
-   "section": "directives",
-   "sourceText": "Approval 58203-JX",
    "was": "unclassified",
    "ruledOn": "2026-08-24",
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
@@ -45929,15 +45767,6 @@
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
   },
   {
-   "postNum": 1976,
-   "postId": "1976",
-   "section": "directives",
-   "sourceText": "#21 - #25",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
    "postNum": 2000,
    "postId": "2000",
    "section": "directives",
@@ -46239,15 +46068,6 @@
    "postId": "2403",
    "section": "directives",
    "sourceText": "WWG1WGA!!!",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
-   "postNum": 2415,
-   "postId": "2415",
-   "section": "directives",
-   "sourceText": "——————————–End",
    "was": "unclassified",
    "ruledOn": "2026-08-24",
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
@@ -46973,15 +46793,6 @@
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
   },
   {
-   "postNum": 3186,
-   "postId": "3186",
-   "section": "directives",
-   "sourceText": "#2",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
    "postNum": 3192,
    "postId": "3192",
    "section": "directives",
@@ -47022,15 +46833,6 @@
    "postId": "3218",
    "section": "directives",
    "sourceText": "#FAKENEWS",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
-   "postNum": 3222,
-   "postId": "3222",
-   "section": "directives",
-   "sourceText": "End_of_Topic",
    "was": "unclassified",
    "ruledOn": "2026-08-24",
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
@@ -47391,15 +47193,6 @@
    "postId": "3588",
    "section": "directives",
    "sourceText": "Ask yourself a very basic question – would the FAKE NEWS complex [NYT, WASHPOST, NBC, ABC, BBC, ………………………………………………………….] attack us if we weren’t a ‘real’ threat?",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
-   "postNum": 3606,
-   "postId": "3606",
-   "section": "directives",
-   "sourceText": "-END-",
    "was": "unclassified",
    "ruledOn": "2026-08-24",
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
@@ -48535,15 +48328,6 @@
    "postId": "4641",
    "section": "directives",
    "sourceText": "FOR GOD AND COUNTRY.",
-   "was": "unclassified",
-   "ruledOn": "2026-08-24",
-   "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"
-  },
-  {
-   "postNum": 4787,
-   "postId": "4787",
-   "section": "directives",
-   "sourceText": "#3",
    "was": "unclassified",
    "ruledOn": "2026-08-24",
    "provenance": "owner review of the unhighlighted-sentence queue, round 2, 2026-08-24"

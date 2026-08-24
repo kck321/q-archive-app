@@ -1,0 +1,6136 @@
+{
+ "note": "Canonical identity and type for the ROUND 2 entity rulings that do not resolve to an already-certified entity, and to the identities round 1 declared. Generated from three list shapes Q pastes verbatim; anything outside them is left held rather than named.",
+ "generatedBy": "scripts/build-queue-entity-identities-2.mjs",
+ "resolutionOrder": "1. the span verbatim against canonical+alias  2. the span with titles, party suffixes, role tails and a leading 'The' removed  3. an initial+surname where exactly one certified person carries that surname  4. a connector split where EVERY part resolves  5. this file  6. refused, and listed in `held`.",
+ "typeVocabulary": "Only types already present in public/data/entities.json are used. No new type is introduced by this batch.",
+ "shapes": {
+  "Country: Central Bank": "audit line from #135-#138 — the country and its central bank, split, both named by Q",
+  "Outlet – Journalist": "audit line from #1515 — the outlet and its reporter, split, both named by Q",
+  "Person - Party": "audit line from #1319/#1850 — the member and their party, split, both named by Q"
+ },
+ "ruledOn": "2026-08-24",
+ "totals": {
+  "entityRulings": 1007,
+  "unresolvedBeforeThisFile": 461,
+  "identitiesDeclared": 310,
+  "splitsDeclared": 284,
+  "stillHeld": 177,
+  "stillHeldWordings": 128
+ },
+ "identities": [
+  {
+   "canonical": "Bank of Albania",
+   "type": "organization",
+   "spellings": [
+    "Bank of Albania"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Albania's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Albania",
+   "type": "country",
+   "spellings": [
+    "Albania"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bank of Algeria",
+   "type": "organization",
+   "spellings": [
+    "Bank of Algeria"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Algeria's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Algeria",
+   "type": "country",
+   "spellings": [
+    "Algeria"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Argentina",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Argentina"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Argentina's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Argentina",
+   "type": "country",
+   "spellings": [
+    "Argentina"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Aruba",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Aruba"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Aruba's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Aruba",
+   "type": "country",
+   "spellings": [
+    "Aruba"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Azerbaijan Republic",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Azerbaijan Republic"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Azerbaijan's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Azerbaijan",
+   "type": "country",
+   "spellings": [
+    "Azerbaijan"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of The Bahamas",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of The Bahamas"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Bahamas's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bahamas",
+   "type": "country",
+   "spellings": [
+    "Bahamas"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Bahrain",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Bahrain"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Bahrain's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bahrain",
+   "type": "country",
+   "spellings": [
+    "Bahrain"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bangladesh Bank",
+   "type": "organization",
+   "spellings": [
+    "Bangladesh Bank"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Bangladesh's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bangladesh",
+   "type": "country",
+   "spellings": [
+    "Bangladesh"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Barbados",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Barbados"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Barbados's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Barbados",
+   "type": "country",
+   "spellings": [
+    "Barbados"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "National Bank of the Republic of Belarus",
+   "type": "organization",
+   "spellings": [
+    "National Bank of the Republic of Belarus"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Belarus's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Belarus",
+   "type": "country",
+   "spellings": [
+    "Belarus"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Belize",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Belize"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Belize's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Belize",
+   "type": "country",
+   "spellings": [
+    "Belize"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of West African States (BCEAO)",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of West African States (BCEAO)"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Benin's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Benin",
+   "type": "country",
+   "spellings": [
+    "Benin"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bermuda Monetary Authority",
+   "type": "organization",
+   "spellings": [
+    "Bermuda Monetary Authority"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Bermuda's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bermuda",
+   "type": "country",
+   "spellings": [
+    "Bermuda"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Royal Monetary Authority of Bhutan",
+   "type": "organization",
+   "spellings": [
+    "Royal Monetary Authority of Bhutan"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Bhutan's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bhutan",
+   "type": "country",
+   "spellings": [
+    "Bhutan"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Bolivia",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Bolivia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Bolivia's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bolivia",
+   "type": "country",
+   "spellings": [
+    "Bolivia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Bosnia and Herzegovina",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Bosnia and Herzegovina"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Bosnia's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bosnia",
+   "type": "country",
+   "spellings": [
+    "Bosnia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bank of Botswana",
+   "type": "organization",
+   "spellings": [
+    "Bank of Botswana"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Botswana's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Botswana",
+   "type": "country",
+   "spellings": [
+    "Botswana"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bulgarian National Bank",
+   "type": "organization",
+   "spellings": [
+    "Bulgarian National Bank"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Bulgaria's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bulgaria",
+   "type": "country",
+   "spellings": [
+    "Bulgaria"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bank of the Republic of Burundi",
+   "type": "organization",
+   "spellings": [
+    "Bank of the Republic of Burundi"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Burundi's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Burundi",
+   "type": "country",
+   "spellings": [
+    "Burundi"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "National Bank of Cambodia",
+   "type": "organization",
+   "spellings": [
+    "National Bank of Cambodia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Cambodia's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Cambodia",
+   "type": "country",
+   "spellings": [
+    "Cambodia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bank of Afghanistan",
+   "type": "organization",
+   "spellings": [
+    "Bank of Afghanistan"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Afghanistan's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Bank of Armenia",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Armenia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Armenia's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Reserve Bank of Australia",
+   "type": "organization",
+   "spellings": [
+    "Reserve Bank of Australia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Australia's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Austrian National Bank",
+   "type": "organization",
+   "spellings": [
+    "Austrian National Bank"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Austria's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "National Bank of Belgium",
+   "type": "organization",
+   "spellings": [
+    "National Bank of Belgium"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Belgium's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Bank of Brazil",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Brazil"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Brazil's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bank of Canada – Banque du Canada",
+   "type": "organization",
+   "spellings": [
+    "Bank of Canada – Banque du Canada"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Canada's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bank of Central African States",
+   "type": "organization",
+   "spellings": [
+    "Bank of Central African States"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Chad's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Chad",
+   "type": "country",
+   "spellings": [
+    "Chad"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Chile",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Chile"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Chile's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Chile",
+   "type": "country",
+   "spellings": [
+    "Chile"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bank of the Republic",
+   "type": "organization",
+   "spellings": [
+    "Bank of the Republic"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Colombia's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Colombia",
+   "type": "country",
+   "spellings": [
+    "Colombia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Comoros",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Comoros"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Comoros's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Comoros",
+   "type": "country",
+   "spellings": [
+    "Comoros"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Congo",
+   "type": "country",
+   "spellings": [
+    "Congo"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Côte d’Ivoire",
+   "type": "country",
+   "spellings": [
+    "Côte d’Ivoire"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Croatian National Bank",
+   "type": "organization",
+   "spellings": [
+    "Croatian National Bank"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Croatia's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Croatia",
+   "type": "country",
+   "spellings": [
+    "Croatia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Cyprus",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Cyprus"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Cyprus's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Cyprus",
+   "type": "country",
+   "spellings": [
+    "Cyprus"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "National Bank of Denmark",
+   "type": "organization",
+   "spellings": [
+    "National Bank of Denmark"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Denmark's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Denmark",
+   "type": "country",
+   "spellings": [
+    "Denmark"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bank of Estonia",
+   "type": "organization",
+   "spellings": [
+    "Bank of Estonia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Estonia's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Estonia",
+   "type": "country",
+   "spellings": [
+    "Estonia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "National Bank of Ethiopia",
+   "type": "organization",
+   "spellings": [
+    "National Bank of Ethiopia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Ethiopia's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Ethiopia",
+   "type": "country",
+   "spellings": [
+    "Ethiopia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Reserve Bank of Fiji",
+   "type": "organization",
+   "spellings": [
+    "Reserve Bank of Fiji"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Fiji's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Fiji",
+   "type": "country",
+   "spellings": [
+    "Fiji"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bank of Finland",
+   "type": "organization",
+   "spellings": [
+    "Bank of Finland"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Finland's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Finland",
+   "type": "country",
+   "spellings": [
+    "Finland"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Gabon",
+   "type": "country",
+   "spellings": [
+    "Gabon"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bank of Ghana",
+   "type": "organization",
+   "spellings": [
+    "Bank of Ghana"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Ghana's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Ghana",
+   "type": "country",
+   "spellings": [
+    "Ghana"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bank of Guatemala",
+   "type": "organization",
+   "spellings": [
+    "Bank of Guatemala"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Guatemala's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Guatemala",
+   "type": "country",
+   "spellings": [
+    "Guatemala"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bank of Guyana",
+   "type": "organization",
+   "spellings": [
+    "Bank of Guyana"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Guyana's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Guyana",
+   "type": "country",
+   "spellings": [
+    "Guyana"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Honduras",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Honduras"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Honduras's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Honduras",
+   "type": "country",
+   "spellings": [
+    "Honduras"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Magyar Nemzeti Bank",
+   "type": "organization",
+   "spellings": [
+    "Magyar Nemzeti Bank"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Hungary's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Hungary",
+   "type": "country",
+   "spellings": [
+    "Hungary"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Iceland",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Iceland"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Iceland's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Iceland",
+   "type": "country",
+   "spellings": [
+    "Iceland"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bank Indonesia",
+   "type": "organization",
+   "spellings": [
+    "Bank Indonesia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Indonesia's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Indonesia",
+   "type": "country",
+   "spellings": [
+    "Indonesia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "The Central Bank of the Islamic Republic of Iran",
+   "type": "organization",
+   "spellings": [
+    "The Central Bank of the Islamic Republic of Iran"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Iran's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Cayman Islands Monetary Authority",
+   "type": "organization",
+   "spellings": [
+    "Cayman Islands Monetary Authority"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Cayman Islands's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "The People’s Bank of China",
+   "type": "organization",
+   "spellings": [
+    "The People’s Bank of China"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as China's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Bank of Costa Rica",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Costa Rica"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Costa Rica's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Bank of Cuba",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Cuba"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Cuba's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Czech National Bank",
+   "type": "organization",
+   "spellings": [
+    "Czech National Bank"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Czech Republic's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Bank of the Dominican Republic",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of the Dominican Republic"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Dominican Republic's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Eastern Caribbean Central Bank",
+   "type": "organization",
+   "spellings": [
+    "Eastern Caribbean Central Bank"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as East Caribbean area's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "East Caribbean area",
+   "type": "country",
+   "spellings": [
+    "East Caribbean area"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Ecuador",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Ecuador"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Ecuador's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Bank of Egypt",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Egypt"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Egypt's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Reserve Bank of El Salvador",
+   "type": "organization",
+   "spellings": [
+    "Central Reserve Bank of El Salvador"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as El Salvador's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "European Central Bank",
+   "type": "organization",
+   "spellings": [
+    "European Central Bank"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as European Union's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bank of France",
+   "type": "organization",
+   "spellings": [
+    "Bank of France"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as France's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Bank of The Gambia",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of The Gambia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as The Gambia's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "National Bank of Georgia",
+   "type": "organization",
+   "spellings": [
+    "National Bank of Georgia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Georgia's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Deutsche Bundesbank",
+   "type": "organization",
+   "spellings": [
+    "Deutsche Bundesbank"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Germany's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bank of Greece",
+   "type": "organization",
+   "spellings": [
+    "Bank of Greece"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Greece's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Bank of Haiti",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Haiti"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Haiti's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Hong Kong Monetary Authority",
+   "type": "organization",
+   "spellings": [
+    "Hong Kong Monetary Authority"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Hong Kong's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Reserve Bank of India",
+   "type": "organization",
+   "spellings": [
+    "Reserve Bank of India"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as India's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bank of Jamaica",
+   "type": "organization",
+   "spellings": [
+    "Bank of Jamaica"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Jamaica's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Jamaica",
+   "type": "country",
+   "spellings": [
+    "Jamaica"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Kuwait",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Kuwait"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Kuwait's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Kuwait",
+   "type": "country",
+   "spellings": [
+    "Kuwait"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "National Bank of the Kyrgyz Republic",
+   "type": "organization",
+   "spellings": [
+    "National Bank of the Kyrgyz Republic"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Kyrgyzstan's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Kyrgyzstan",
+   "type": "country",
+   "spellings": [
+    "Kyrgyzstan"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bank of Latvia",
+   "type": "organization",
+   "spellings": [
+    "Bank of Latvia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Latvia's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Latvia",
+   "type": "country",
+   "spellings": [
+    "Latvia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Lesotho",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Lesotho"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Lesotho's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Lesotho",
+   "type": "country",
+   "spellings": [
+    "Lesotho"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Uruguay",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Uruguay"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Uruguay's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Uruguay",
+   "type": "country",
+   "spellings": [
+    "Uruguay"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bank of Lithuania",
+   "type": "organization",
+   "spellings": [
+    "Bank of Lithuania"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Lithuania's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Lithuania",
+   "type": "country",
+   "spellings": [
+    "Lithuania"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Luxembourg",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Luxembourg"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Luxembourg's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Luxembourg",
+   "type": "country",
+   "spellings": [
+    "Luxembourg"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Monetary Authority of Macao",
+   "type": "organization",
+   "spellings": [
+    "Monetary Authority of Macao"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Macao's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Macao",
+   "type": "country",
+   "spellings": [
+    "Macao"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "National Bank of the Republic of Macedonia",
+   "type": "organization",
+   "spellings": [
+    "National Bank of the Republic of Macedonia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Macedonia's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Macedonia",
+   "type": "country",
+   "spellings": [
+    "Macedonia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Madagascar",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Madagascar"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Madagascar's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Madagascar",
+   "type": "country",
+   "spellings": [
+    "Madagascar"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Reserve Bank of Malawi",
+   "type": "organization",
+   "spellings": [
+    "Reserve Bank of Malawi"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Malawi's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Malawi",
+   "type": "country",
+   "spellings": [
+    "Malawi"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Malaysia",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Malaysia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Malaysia's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Malaysia",
+   "type": "country",
+   "spellings": [
+    "Malaysia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Mali",
+   "type": "country",
+   "spellings": [
+    "Mali"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Malta",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Malta"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Malta's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Malta",
+   "type": "country",
+   "spellings": [
+    "Malta"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bank of Mauritius",
+   "type": "organization",
+   "spellings": [
+    "Bank of Mauritius"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Mauritius's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Mauritius",
+   "type": "country",
+   "spellings": [
+    "Mauritius"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "National Bank of Moldova",
+   "type": "organization",
+   "spellings": [
+    "National Bank of Moldova"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Moldova's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Moldova",
+   "type": "country",
+   "spellings": [
+    "Moldova"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bank of Mongolia",
+   "type": "organization",
+   "spellings": [
+    "Bank of Mongolia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Mongolia's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Mongolia",
+   "type": "country",
+   "spellings": [
+    "Mongolia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Montenegro",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Montenegro"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Montenegro's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Montenegro",
+   "type": "country",
+   "spellings": [
+    "Montenegro"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bank of Morocco",
+   "type": "organization",
+   "spellings": [
+    "Bank of Morocco"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Morocco's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Morocco",
+   "type": "country",
+   "spellings": [
+    "Morocco"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bank of Mozambique",
+   "type": "organization",
+   "spellings": [
+    "Bank of Mozambique"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Mozambique's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Mozambique",
+   "type": "country",
+   "spellings": [
+    "Mozambique"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bank of Namibia",
+   "type": "organization",
+   "spellings": [
+    "Bank of Namibia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Namibia's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Namibia",
+   "type": "country",
+   "spellings": [
+    "Namibia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Nepal",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Nepal"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Nepal's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Nepal",
+   "type": "country",
+   "spellings": [
+    "Nepal"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Netherlands Bank",
+   "type": "organization",
+   "spellings": [
+    "Netherlands Bank"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Netherlands's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Netherlands",
+   "type": "country",
+   "spellings": [
+    "Netherlands"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Nicaragua",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Nicaragua"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Nicaragua's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Nicaragua",
+   "type": "country",
+   "spellings": [
+    "Nicaragua"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Niger",
+   "type": "country",
+   "spellings": [
+    "Niger"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Nigeria",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Nigeria"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Nigeria's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Nigeria",
+   "type": "country",
+   "spellings": [
+    "Nigeria"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Oman",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Oman"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Oman's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Oman",
+   "type": "country",
+   "spellings": [
+    "Oman"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Iraq",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Iraq"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Iraq's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Bank and Financial Services Authority of Ireland",
+   "type": "organization",
+   "spellings": [
+    "Central Bank and Financial Services Authority of Ireland"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Ireland's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bank of Israel",
+   "type": "organization",
+   "spellings": [
+    "Bank of Israel"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Israel's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bank of Italy",
+   "type": "organization",
+   "spellings": [
+    "Bank of Italy"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Italy's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bank of Japan",
+   "type": "organization",
+   "spellings": [
+    "Bank of Japan"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Japan's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Bank of Jordan",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Jordan"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Jordan's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "National Bank of Kazakhstan",
+   "type": "organization",
+   "spellings": [
+    "National Bank of Kazakhstan"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Kazakhstan's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Bank of Kenya",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Kenya"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Kenya's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bank of Korea",
+   "type": "organization",
+   "spellings": [
+    "Bank of Korea"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Korea's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Bank of Lebanon",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Lebanon"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Lebanon's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Bank of Libya",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Libya"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Libya's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bank of Mexico",
+   "type": "organization",
+   "spellings": [
+    "Bank of Mexico"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Mexico's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bank of the Netherlands Antilles",
+   "type": "organization",
+   "spellings": [
+    "Bank of the Netherlands Antilles"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Netherlands Antilles's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Reserve Bank of New Zealand",
+   "type": "organization",
+   "spellings": [
+    "Reserve Bank of New Zealand"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as New Zealand's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Bank of Norway",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Norway"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Norway's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "State Bank of Pakistan",
+   "type": "organization",
+   "spellings": [
+    "State Bank of Pakistan"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Pakistan's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Bank of United Arab Emirates",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of United Arab Emirates"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as United Arab Emirates's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bank of England",
+   "type": "organization",
+   "spellings": [
+    "Bank of England"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as United Kingdom's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Federal Reserve Bank of New York",
+   "type": "organization",
+   "spellings": [
+    "Federal Reserve Bank of New York"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as United States's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Bank of Paraguay",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Paraguay"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Paraguay's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Paraguay",
+   "type": "country",
+   "spellings": [
+    "Paraguay"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Reserve Bank of Peru",
+   "type": "organization",
+   "spellings": [
+    "Central Reserve Bank of Peru"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Peru's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Peru",
+   "type": "country",
+   "spellings": [
+    "Peru"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bank of Portugal",
+   "type": "organization",
+   "spellings": [
+    "Bank of Portugal"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Portugal's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Portugal",
+   "type": "country",
+   "spellings": [
+    "Portugal"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "National Bank of Romania",
+   "type": "organization",
+   "spellings": [
+    "National Bank of Romania"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Romania's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Romania",
+   "type": "country",
+   "spellings": [
+    "Romania"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "National Bank of Rwanda",
+   "type": "organization",
+   "spellings": [
+    "National Bank of Rwanda"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Rwanda's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Rwanda",
+   "type": "country",
+   "spellings": [
+    "Rwanda"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Samoa",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Samoa"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Samoa's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Samoa",
+   "type": "country",
+   "spellings": [
+    "Samoa"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Senegal",
+   "type": "country",
+   "spellings": [
+    "Senegal"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "National Bank of Serbia",
+   "type": "organization",
+   "spellings": [
+    "National Bank of Serbia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Serbia's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Serbia",
+   "type": "country",
+   "spellings": [
+    "Serbia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Seychelles",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Seychelles"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Seychelles's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Seychelles",
+   "type": "country",
+   "spellings": [
+    "Seychelles"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "National Bank of Slovakia",
+   "type": "organization",
+   "spellings": [
+    "National Bank of Slovakia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Slovakia's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Slovakia",
+   "type": "country",
+   "spellings": [
+    "Slovakia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bank of Slovenia",
+   "type": "organization",
+   "spellings": [
+    "Bank of Slovenia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Slovenia's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Slovenia",
+   "type": "country",
+   "spellings": [
+    "Slovenia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Suriname",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Suriname"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Surinam's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Surinam",
+   "type": "country",
+   "spellings": [
+    "Surinam"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "The Central Bank of Swaziland",
+   "type": "organization",
+   "spellings": [
+    "The Central Bank of Swaziland"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Swaziland's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Swaziland",
+   "type": "country",
+   "spellings": [
+    "Swaziland"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "National Bank of Tajikistan",
+   "type": "organization",
+   "spellings": [
+    "National Bank of Tajikistan"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Tajikistan's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Tajikistan",
+   "type": "country",
+   "spellings": [
+    "Tajikistan"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bank of Thailand",
+   "type": "organization",
+   "spellings": [
+    "Bank of Thailand"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Thailand's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Thailand",
+   "type": "country",
+   "spellings": [
+    "Thailand"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Togo",
+   "type": "country",
+   "spellings": [
+    "Togo"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "National Reserve Bank of Tonga",
+   "type": "organization",
+   "spellings": [
+    "National Reserve Bank of Tonga"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Tonga's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Tonga",
+   "type": "country",
+   "spellings": [
+    "Tonga"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Trinidad and Tobago",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Trinidad and Tobago"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Trinidad and Tobago's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Trinidad and Tobago",
+   "type": "country",
+   "spellings": [
+    "Trinidad and Tobago"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Central Bank of Tunisia",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Tunisia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Tunisia's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Tunisia",
+   "type": "country",
+   "spellings": [
+    "Tunisia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bank of Uganda",
+   "type": "organization",
+   "spellings": [
+    "Bank of Uganda"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Uganda's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Uganda",
+   "type": "country",
+   "spellings": [
+    "Uganda"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Reserve Bank of Vanuatu",
+   "type": "organization",
+   "spellings": [
+    "Reserve Bank of Vanuatu"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Vanuatu's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Vanuatu",
+   "type": "country",
+   "spellings": [
+    "Vanuatu"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Bank of Zambia",
+   "type": "organization",
+   "spellings": [
+    "Bank of Zambia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Zambia's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Zambia",
+   "type": "country",
+   "spellings": [
+    "Zambia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Reserve Bank of Zimbabwe",
+   "type": "organization",
+   "spellings": [
+    "Reserve Bank of Zimbabwe"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Zimbabwe's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Zimbabwe",
+   "type": "country",
+   "spellings": [
+    "Zimbabwe"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as the country whose bank the same line names."
+  },
+  {
+   "canonical": "Qatar Central Bank",
+   "type": "organization",
+   "spellings": [
+    "Qatar Central Bank"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Qatar's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bank of Papua New Guinea",
+   "type": "organization",
+   "spellings": [
+    "Bank of Papua New Guinea"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Papua New Guinea's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "National Bank of Poland",
+   "type": "organization",
+   "spellings": [
+    "National Bank of Poland"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Poland's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Bank of Russia",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Russia"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Russia's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Bank of the Republic of San Marino",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of the Republic of San Marino"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as San Marino's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bank of Sierra Leone",
+   "type": "organization",
+   "spellings": [
+    "Bank of Sierra Leone"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Sierra Leone's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Monetary Authority of Singapore",
+   "type": "organization",
+   "spellings": [
+    "Monetary Authority of Singapore"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Singapore's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Bank of Solomon Islands",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Solomon Islands"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Solomon Islands's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "South African Reserve Bank",
+   "type": "organization",
+   "spellings": [
+    "South African Reserve Bank"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as South Africa's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bank of Spain",
+   "type": "organization",
+   "spellings": [
+    "Bank of Spain"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Spain's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Bank of Sri Lanka",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Sri Lanka"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Sri Lanka's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bank of Sudan",
+   "type": "organization",
+   "spellings": [
+    "Bank of Sudan"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Sudan's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Sveriges Riksbank",
+   "type": "organization",
+   "spellings": [
+    "Sveriges Riksbank"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Sweden's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Swiss National Bank",
+   "type": "organization",
+   "spellings": [
+    "Swiss National Bank"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Switzerland's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Bank of Tanzania",
+   "type": "organization",
+   "spellings": [
+    "Bank of Tanzania"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Tanzania's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Bank of the Republic of Turkey",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of the Republic of Turkey"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Turkey's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "National Bank of Ukraine",
+   "type": "organization",
+   "spellings": [
+    "National Bank of Ukraine"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Ukraine's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Bank of Venezuela",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Venezuela"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Venezuela's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "The State Bank of Vietnam",
+   "type": "organization",
+   "spellings": [
+    "The State Bank of Vietnam"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Vietnam's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Central Bank of Yemen",
+   "type": "organization",
+   "spellings": [
+    "Central Bank of Yemen"
+   ],
+   "why": "Named in Q's central-bank list (#135-#138) as Yemen's central bank. The name is Q's own line, not supplied."
+  },
+  {
+   "canonical": "Republican Party",
+   "type": "political_group",
+   "spellings": [
+    "Republican"
+   ],
+   "why": "The party named beside each member in Q's retiring-Congress list. Folded onto the certified plural where one exists."
+  },
+  {
+   "canonical": "Dent",
+   "type": "person",
+   "spellings": [
+    "Dent"
+   ],
+   "why": "Named in Q's list of retiring members of Congress (#1319, #1850). The name is Q's own line."
+  },
+  {
+   "canonical": "Duncan, Jr.",
+   "type": "person",
+   "spellings": [
+    "Duncan, Jr."
+   ],
+   "why": "Named in Q's list of retiring members of Congress (#1319, #1850). The name is Q's own line."
+  },
+  {
+   "canonical": "Gutierrez",
+   "type": "person",
+   "spellings": [
+    "Gutierrez"
+   ],
+   "why": "Named in Q's list of retiring members of Congress (#1319, #1850). The name is Q's own line."
+  },
+  {
+   "canonical": "Kihuen",
+   "type": "person",
+   "spellings": [
+    "Kihuen"
+   ],
+   "why": "Named in Q's list of retiring members of Congress (#1319, #1850). The name is Q's own line."
+  },
+  {
+   "canonical": "Cecilia Vega",
+   "type": "person",
+   "spellings": [
+    "Cecilia Vega"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at ABC. The name is Q's own line."
+  },
+  {
+   "canonical": "Diane Sawyer",
+   "type": "person",
+   "spellings": [
+    "Diane Sawyer"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at ABC. The name is Q's own line."
+  },
+  {
+   "canonical": "George Stephanoplous",
+   "type": "person",
+   "spellings": [
+    "George Stephanoplous"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at ABC. The name is Q's own line."
+  },
+  {
+   "canonical": "Jon Karl",
+   "type": "person",
+   "spellings": [
+    "Jon Karl"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at ABC. The name is Q's own line."
+  },
+  {
+   "canonical": "Liz Kreutz",
+   "type": "person",
+   "spellings": [
+    "Liz Kreutz"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at ABC. The name is Q's own line."
+  },
+  {
+   "canonical": "Julie Pace",
+   "type": "person",
+   "spellings": [
+    "Julie Pace"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at AP. The name is Q's own line."
+  },
+  {
+   "canonical": "Ken Thomas",
+   "type": "person",
+   "spellings": [
+    "Ken Thomas"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at AP. The name is Q's own line."
+  },
+  {
+   "canonical": "Lisa Lerer",
+   "type": "person",
+   "spellings": [
+    "Lisa Lerer"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at AP. The name is Q's own line."
+  },
+  {
+   "canonical": "Jennifer Epstein",
+   "type": "person",
+   "spellings": [
+    "Jennifer Epstein"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at Bloomberg. The name is Q's own line."
+  },
+  {
+   "canonical": "John Heillman",
+   "type": "person",
+   "spellings": [
+    "John Heillman"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at Bloomberg. The name is Q's own line."
+  },
+  {
+   "canonical": "Mark Halperin",
+   "type": "person",
+   "spellings": [
+    "Mark Halperin"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at Bloomberg. The name is Q's own line."
+  },
+  {
+   "canonical": "John Dickerson",
+   "type": "person",
+   "spellings": [
+    "John Dickerson"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at CBS. The name is Q's own line."
+  },
+  {
+   "canonical": "Norah O'Donnell",
+   "type": "person",
+   "spellings": [
+    "Norah O'Donnell"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at CBS. The name is Q's own line."
+  },
+  {
+   "canonical": "Steve Chagaris",
+   "type": "person",
+   "spellings": [
+    "Steve Chagaris"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at CBS. The name is Q's own line."
+  },
+  {
+   "canonical": "Vicki Gordon",
+   "type": "person",
+   "spellings": [
+    "Vicki Gordon"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at CBS. The name is Q's own line."
+  },
+  {
+   "canonical": "John Harwood",
+   "type": "person",
+   "spellings": [
+    "John Harwood"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at CNBC. The name is Q's own line."
+  },
+  {
+   "canonical": "Brianna Keilar",
+   "type": "person",
+   "spellings": [
+    "Brianna Keilar"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at CNN. The name is Q's own line."
+  },
+  {
+   "canonical": "Dan Merica",
+   "type": "person",
+   "spellings": [
+    "Dan Merica"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at CNN. The name is Q's own line."
+  },
+  {
+   "canonical": "David Chailan",
+   "type": "person",
+   "spellings": [
+    "David Chailan"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at CNN. The name is Q's own line."
+  },
+  {
+   "canonical": "Erin Burnett",
+   "type": "person",
+   "spellings": [
+    "Erin Burnett"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at CNN. The name is Q's own line."
+  },
+  {
+   "canonical": "Gloria Borger",
+   "type": "person",
+   "spellings": [
+    "Gloria Borger"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at CNN. The name is Q's own line."
+  },
+  {
+   "canonical": "Jeff Zeleny",
+   "type": "person",
+   "spellings": [
+    "Jeff Zeleny"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at CNN. The name is Q's own line."
+  },
+  {
+   "canonical": "John Berman",
+   "type": "person",
+   "spellings": [
+    "John Berman"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at CNN. The name is Q's own line."
+  },
+  {
+   "canonical": "Kate Bouldan",
+   "type": "person",
+   "spellings": [
+    "Kate Bouldan"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at CNN. The name is Q's own line."
+  },
+  {
+   "canonical": "Maria Cardona",
+   "type": "person",
+   "spellings": [
+    "Maria Cardona"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at CNN. The name is Q's own line."
+  },
+  {
+   "canonical": "Mark Preston",
+   "type": "person",
+   "spellings": [
+    "Mark Preston"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at CNN. The name is Q's own line."
+  },
+  {
+   "canonical": "Sam Feist",
+   "type": "person",
+   "spellings": [
+    "Sam Feist"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at CNN. The name is Q's own line."
+  },
+  {
+   "canonical": "Jackie Kucinich",
+   "type": "person",
+   "spellings": [
+    "Jackie Kucinich"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at Daily Beast. The name is Q's own line."
+  },
+  {
+   "canonical": "Alex Seitz-Wald",
+   "type": "person",
+   "spellings": [
+    "Alex Seitz-Wald"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at MSNBC. The name is Q's own line."
+  },
+  {
+   "canonical": "Alex Wagner",
+   "type": "person",
+   "spellings": [
+    "Alex Wagner"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at MSNBC. The name is Q's own line."
+  },
+  {
+   "canonical": "Andrea Mitchell",
+   "type": "person",
+   "spellings": [
+    "Andrea Mitchell"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at MSNBC. The name is Q's own line."
+  },
+  {
+   "canonical": "Ed Schultz",
+   "type": "person",
+   "spellings": [
+    "Ed Schultz"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at MSNBC. The name is Q's own line."
+  },
+  {
+   "canonical": "Joe Scarborough",
+   "type": "person",
+   "spellings": [
+    "Joe Scarborough"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at MSNBC. The name is Q's own line."
+  },
+  {
+   "canonical": "Phil Griffin",
+   "type": "person",
+   "spellings": [
+    "Phil Griffin"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at MSNBC. The name is Q's own line."
+  },
+  {
+   "canonical": "Rachel Maddow",
+   "type": "person",
+   "spellings": [
+    "Rachel Maddow"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at MSNBC. The name is Q's own line."
+  },
+  {
+   "canonical": "Rachel Racusen",
+   "type": "person",
+   "spellings": [
+    "Rachel Racusen"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at MSNBC. The name is Q's own line."
+  },
+  {
+   "canonical": "Thomas Roberts",
+   "type": "person",
+   "spellings": [
+    "Thomas Roberts"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at MSNBC. The name is Q's own line."
+  },
+  {
+   "canonical": "Chuck Todd",
+   "type": "person",
+   "spellings": [
+    "Chuck Todd"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at NBC. The name is Q's own line."
+  },
+  {
+   "canonical": "Mark Murray",
+   "type": "person",
+   "spellings": [
+    "Mark Murray"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at NBC. The name is Q's own line."
+  },
+  {
+   "canonical": "Savannah Gutherie",
+   "type": "person",
+   "spellings": [
+    "Savannah Gutherie"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at NBC. The name is Q's own line."
+  },
+  {
+   "canonical": "Mike Oreskes",
+   "type": "person",
+   "spellings": [
+    "Mike Oreskes"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at NPR. The name is Q's own line."
+  },
+  {
+   "canonical": "Tamara Keith",
+   "type": "person",
+   "spellings": [
+    "Tamara Keith"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at NPR. The name is Q's own line."
+  },
+  {
+   "canonical": "Geofe Earl",
+   "type": "person",
+   "spellings": [
+    "Geofe Earl"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at NY Post. The name is Q's own line."
+  },
+  {
+   "canonical": "Amy Chozik",
+   "type": "person",
+   "spellings": [
+    "Amy Chozik"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at NYT. The name is Q's own line."
+  },
+  {
+   "canonical": "Carolyn Ryan",
+   "type": "person",
+   "spellings": [
+    "Carolyn Ryan"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at NYT. The name is Q's own line."
+  },
+  {
+   "canonical": "Gail Collins",
+   "type": "person",
+   "spellings": [
+    "Gail Collins"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at NYT. The name is Q's own line."
+  },
+  {
+   "canonical": "John Harwoodje",
+   "type": "person",
+   "spellings": [
+    "John Harwoodje"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at NYT. The name is Q's own line."
+  },
+  {
+   "canonical": "Jonathan Martin",
+   "type": "person",
+   "spellings": [
+    "Jonathan Martin"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at NYT. The name is Q's own line."
+  },
+  {
+   "canonical": "Pat Healey",
+   "type": "person",
+   "spellings": [
+    "Pat Healey"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at NYT. The name is Q's own line."
+  },
+  {
+   "canonical": "Charlie Rose",
+   "type": "person",
+   "spellings": [
+    "Charlie Rose"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at PBS. The name is Q's own line."
+  },
+  {
+   "canonical": "Annie Karni",
+   "type": "person",
+   "spellings": [
+    "Annie Karni"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at Politico. The name is Q's own line."
+  },
+  {
+   "canonical": "Gabe Debenedetti",
+   "type": "person",
+   "spellings": [
+    "Gabe Debenedetti"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at Politico. The name is Q's own line."
+  },
+  {
+   "canonical": "Glenn Thrush",
+   "type": "person",
+   "spellings": [
+    "Glenn Thrush"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at Politico. The name is Q's own line."
+  },
+  {
+   "canonical": "Kenneth Vogel",
+   "type": "person",
+   "spellings": [
+    "Kenneth Vogel"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at Politico. The name is Q's own line."
+  },
+  {
+   "canonical": "Mike Allen",
+   "type": "person",
+   "spellings": [
+    "Mike Allen"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at Politico. The name is Q's own line."
+  },
+  {
+   "canonical": "Amanda Becker",
+   "type": "person",
+   "spellings": [
+    "Amanda Becker"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at Reuters. The name is Q's own line."
+  },
+  {
+   "canonical": "Amie Parnes",
+   "type": "person",
+   "spellings": [
+    "Amie Parnes"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at The Hill. The name is Q's own line."
+  },
+  {
+   "canonical": "Colleen McCain Nelson",
+   "type": "person",
+   "spellings": [
+    "Colleen McCain Nelson"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at WSJ. The name is Q's own line."
+  },
+  {
+   "canonical": "Laura Meckler",
+   "type": "person",
+   "spellings": [
+    "Laura Meckler"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at WSJ. The name is Q's own line."
+  },
+  {
+   "canonical": "Peter Nicholas",
+   "type": "person",
+   "spellings": [
+    "Peter Nicholas"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at WSJ. The name is Q's own line."
+  },
+  {
+   "canonical": "Matt Bai",
+   "type": "person",
+   "spellings": [
+    "Matt Bai"
+   ],
+   "why": "Named in #1515's \"THE BRIDGE: PODESTA GROUP\" list as a journalist at Yahoo. The name is Q's own line."
+  }
+ ],
+ "splits": [
+  {
+   "spelling": "Albania: Bank of Albania",
+   "postNum": 135,
+   "into": [
+    "Albania",
+    "Bank of Albania"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Algeria: Bank of Algeria",
+   "postNum": 135,
+   "into": [
+    "Algeria",
+    "Bank of Algeria"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Argentina: Central Bank of Argentina",
+   "postNum": 135,
+   "into": [
+    "Argentina",
+    "Central Bank of Argentina"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Aruba: Central Bank of Aruba",
+   "postNum": 135,
+   "into": [
+    "Aruba",
+    "Central Bank of Aruba"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Azerbaijan: Central Bank of Azerbaijan Republic",
+   "postNum": 135,
+   "into": [
+    "Azerbaijan",
+    "Central Bank of Azerbaijan Republic"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Bahamas: Central Bank of The Bahamas",
+   "postNum": 135,
+   "into": [
+    "Bahamas",
+    "Central Bank of The Bahamas"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Bahrain: Central Bank of Bahrain",
+   "postNum": 135,
+   "into": [
+    "Bahrain",
+    "Central Bank of Bahrain"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Bangladesh: Bangladesh Bank",
+   "postNum": 135,
+   "into": [
+    "Bangladesh",
+    "Bangladesh Bank"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Barbados: Central Bank of Barbados",
+   "postNum": 135,
+   "into": [
+    "Barbados",
+    "Central Bank of Barbados"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Belarus: National Bank of the Republic of Belarus",
+   "postNum": 135,
+   "into": [
+    "Belarus",
+    "National Bank of the Republic of Belarus"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Belize: Central Bank of Belize",
+   "postNum": 135,
+   "into": [
+    "Belize",
+    "Central Bank of Belize"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Benin: Central Bank of West African States (BCEAO)",
+   "postNum": 135,
+   "into": [
+    "Benin",
+    "Central Bank of West African States (BCEAO)"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Bermuda: Bermuda Monetary Authority",
+   "postNum": 135,
+   "into": [
+    "Bermuda",
+    "Bermuda Monetary Authority"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Bhutan: Royal Monetary Authority of Bhutan",
+   "postNum": 135,
+   "into": [
+    "Bhutan",
+    "Royal Monetary Authority of Bhutan"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Bolivia: Central Bank of Bolivia",
+   "postNum": 135,
+   "into": [
+    "Bolivia",
+    "Central Bank of Bolivia"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Bosnia: Central Bank of Bosnia and Herzegovina",
+   "postNum": 135,
+   "into": [
+    "Bosnia",
+    "Central Bank of Bosnia and Herzegovina"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Botswana: Bank of Botswana",
+   "postNum": 135,
+   "into": [
+    "Botswana",
+    "Bank of Botswana"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Bulgaria: Bulgarian National Bank",
+   "postNum": 135,
+   "into": [
+    "Bulgaria",
+    "Bulgarian National Bank"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Burundi: Bank of the Republic of Burundi",
+   "postNum": 135,
+   "into": [
+    "Burundi",
+    "Bank of the Republic of Burundi"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Cambodia: National Bank of Cambodia",
+   "postNum": 135,
+   "into": [
+    "Cambodia",
+    "National Bank of Cambodia"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Afghanistan: Bank of Afghanistan",
+   "postNum": 135,
+   "into": [
+    "Afghanistan",
+    "Bank of Afghanistan"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Armenia: Central Bank of Armenia",
+   "postNum": 135,
+   "into": [
+    "Armenia",
+    "Central Bank of Armenia"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Australia: Reserve Bank of Australia",
+   "postNum": 135,
+   "into": [
+    "Australia",
+    "Reserve Bank of Australia"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Austria: Austrian National Bank",
+   "postNum": 135,
+   "into": [
+    "Austria",
+    "Austrian National Bank"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Belgium: National Bank of Belgium",
+   "postNum": 135,
+   "into": [
+    "Belgium",
+    "National Bank of Belgium"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Brazil: Central Bank of Brazil",
+   "postNum": 135,
+   "into": [
+    "Brazil",
+    "Central Bank of Brazil"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Burkina Faso: Central Bank of West African States (BCEAO)",
+   "postNum": 135,
+   "into": [
+    "Burkina Faso",
+    "Central Bank of West African States (BCEAO)"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Canada: Bank of Canada – Banque du Canada",
+   "postNum": 135,
+   "into": [
+    "Canada",
+    "Bank of Canada – Banque du Canada"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Chad: Bank of Central African States",
+   "postNum": 136,
+   "into": [
+    "Chad",
+    "Bank of Central African States"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Chile: Central Bank of Chile",
+   "postNum": 136,
+   "into": [
+    "Chile",
+    "Central Bank of Chile"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Colombia: Bank of the Republic",
+   "postNum": 136,
+   "into": [
+    "Colombia",
+    "Bank of the Republic"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Comoros: Central Bank of Comoros",
+   "postNum": 136,
+   "into": [
+    "Comoros",
+    "Central Bank of Comoros"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Congo: Bank of Central African States",
+   "postNum": 136,
+   "into": [
+    "Congo",
+    "Bank of Central African States"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Côte d’Ivoire: Central Bank of West African States (BCEAO)",
+   "postNum": 136,
+   "into": [
+    "Côte d’Ivoire",
+    "Central Bank of West African States (BCEAO)"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Croatia: Croatian National Bank",
+   "postNum": 136,
+   "into": [
+    "Croatia",
+    "Croatian National Bank"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Cyprus: Central Bank of Cyprus",
+   "postNum": 136,
+   "into": [
+    "Cyprus",
+    "Central Bank of Cyprus"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Denmark: National Bank of Denmark",
+   "postNum": 136,
+   "into": [
+    "Denmark",
+    "National Bank of Denmark"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Estonia: Bank of Estonia",
+   "postNum": 136,
+   "into": [
+    "Estonia",
+    "Bank of Estonia"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Ethiopia: National Bank of Ethiopia",
+   "postNum": 136,
+   "into": [
+    "Ethiopia",
+    "National Bank of Ethiopia"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Fiji: Reserve Bank of Fiji",
+   "postNum": 136,
+   "into": [
+    "Fiji",
+    "Reserve Bank of Fiji"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Finland: Bank of Finland",
+   "postNum": 136,
+   "into": [
+    "Finland",
+    "Bank of Finland"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Gabon: Bank of Central African States",
+   "postNum": 136,
+   "into": [
+    "Gabon",
+    "Bank of Central African States"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Ghana: Bank of Ghana",
+   "postNum": 136,
+   "into": [
+    "Ghana",
+    "Bank of Ghana"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Guatemala: Bank of Guatemala",
+   "postNum": 136,
+   "into": [
+    "Guatemala",
+    "Bank of Guatemala"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Guyana: Bank of Guyana",
+   "postNum": 136,
+   "into": [
+    "Guyana",
+    "Bank of Guyana"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Honduras: Central Bank of Honduras",
+   "postNum": 136,
+   "into": [
+    "Honduras",
+    "Central Bank of Honduras"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Hungary: Magyar Nemzeti Bank",
+   "postNum": 136,
+   "into": [
+    "Hungary",
+    "Magyar Nemzeti Bank"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Iceland: Central Bank of Iceland",
+   "postNum": 136,
+   "into": [
+    "Iceland",
+    "Central Bank of Iceland"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Indonesia: Bank Indonesia",
+   "postNum": 136,
+   "into": [
+    "Indonesia",
+    "Bank Indonesia"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Iran: The Central Bank of the Islamic Republic of Iran",
+   "postNum": 136,
+   "into": [
+    "Iran",
+    "The Central Bank of the Islamic Republic of Iran"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Cayman Islands: Cayman Islands Monetary Authority",
+   "postNum": 136,
+   "into": [
+    "Cayman Islands",
+    "Cayman Islands Monetary Authority"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Central African Republic: Bank of Central African States",
+   "postNum": 136,
+   "into": [
+    "Central African Republic",
+    "Bank of Central African States"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "China: The People’s Bank of China",
+   "postNum": 136,
+   "into": [
+    "China",
+    "The People’s Bank of China"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Costa Rica: Central Bank of Costa Rica",
+   "postNum": 136,
+   "into": [
+    "Costa Rica",
+    "Central Bank of Costa Rica"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Cuba: Central Bank of Cuba",
+   "postNum": 136,
+   "into": [
+    "Cuba",
+    "Central Bank of Cuba"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Czech Republic: Czech National Bank",
+   "postNum": 136,
+   "into": [
+    "Czech Republic",
+    "Czech National Bank"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Dominican Republic: Central Bank of the Dominican Republic",
+   "postNum": 136,
+   "into": [
+    "Dominican Republic",
+    "Central Bank of the Dominican Republic"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "East Caribbean area: Eastern Caribbean Central Bank",
+   "postNum": 136,
+   "into": [
+    "East Caribbean area",
+    "Eastern Caribbean Central Bank"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Ecuador: Central Bank of Ecuador",
+   "postNum": 136,
+   "into": [
+    "Ecuador",
+    "Central Bank of Ecuador"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Egypt: Central Bank of Egypt",
+   "postNum": 136,
+   "into": [
+    "Egypt",
+    "Central Bank of Egypt"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "El Salvador: Central Reserve Bank of El Salvador",
+   "postNum": 136,
+   "into": [
+    "El Salvador",
+    "Central Reserve Bank of El Salvador"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Equatorial Guinea: Bank of Central African States",
+   "postNum": 136,
+   "into": [
+    "Equatorial Guinea",
+    "Bank of Central African States"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "European Union: European Central Bank",
+   "postNum": 136,
+   "into": [
+    "European Union",
+    "European Central Bank"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "France: Bank of France",
+   "postNum": 136,
+   "into": [
+    "France",
+    "Bank of France"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "The Gambia: Central Bank of The Gambia",
+   "postNum": 136,
+   "into": [
+    "The Gambia",
+    "Central Bank of The Gambia"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Georgia: National Bank of Georgia",
+   "postNum": 136,
+   "into": [
+    "Georgia",
+    "National Bank of Georgia"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Germany: Deutsche Bundesbank",
+   "postNum": 136,
+   "into": [
+    "Germany",
+    "Deutsche Bundesbank"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Greece: Bank of Greece",
+   "postNum": 136,
+   "into": [
+    "Greece",
+    "Bank of Greece"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Guinea Bissau: Central Bank of West African States (BCEAO)",
+   "postNum": 136,
+   "into": [
+    "Guinea Bissau",
+    "Central Bank of West African States (BCEAO)"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Haiti: Central Bank of Haiti",
+   "postNum": 136,
+   "into": [
+    "Haiti",
+    "Central Bank of Haiti"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Hong Kong: Hong Kong Monetary Authority",
+   "postNum": 136,
+   "into": [
+    "Hong Kong",
+    "Hong Kong Monetary Authority"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "India: Reserve Bank of India",
+   "postNum": 136,
+   "into": [
+    "India",
+    "Reserve Bank of India"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Jamaica: Bank of Jamaica",
+   "postNum": 137,
+   "into": [
+    "Jamaica",
+    "Bank of Jamaica"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Kuwait: Central Bank of Kuwait",
+   "postNum": 137,
+   "into": [
+    "Kuwait",
+    "Central Bank of Kuwait"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Kyrgyzstan: National Bank of the Kyrgyz Republic",
+   "postNum": 137,
+   "into": [
+    "Kyrgyzstan",
+    "National Bank of the Kyrgyz Republic"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Latvia: Bank of Latvia",
+   "postNum": 137,
+   "into": [
+    "Latvia",
+    "Bank of Latvia"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Lesotho: Central Bank of Lesotho",
+   "postNum": 137,
+   "into": [
+    "Lesotho",
+    "Central Bank of Lesotho"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Uruguay: Central Bank of Uruguay",
+   "postNum": 137,
+   "into": [
+    "Uruguay",
+    "Central Bank of Uruguay"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Lithuania: Bank of Lithuania",
+   "postNum": 137,
+   "into": [
+    "Lithuania",
+    "Bank of Lithuania"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Luxembourg: Central Bank of Luxembourg",
+   "postNum": 137,
+   "into": [
+    "Luxembourg",
+    "Central Bank of Luxembourg"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Macao: Monetary Authority of Macao",
+   "postNum": 137,
+   "into": [
+    "Macao",
+    "Monetary Authority of Macao"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Macedonia: National Bank of the Republic of Macedonia",
+   "postNum": 137,
+   "into": [
+    "Macedonia",
+    "National Bank of the Republic of Macedonia"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Madagascar: Central Bank of Madagascar",
+   "postNum": 137,
+   "into": [
+    "Madagascar",
+    "Central Bank of Madagascar"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Malawi: Reserve Bank of Malawi",
+   "postNum": 137,
+   "into": [
+    "Malawi",
+    "Reserve Bank of Malawi"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Malaysia: Central Bank of Malaysia",
+   "postNum": 137,
+   "into": [
+    "Malaysia",
+    "Central Bank of Malaysia"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Mali: Central Bank of West African States (BCEAO)",
+   "postNum": 137,
+   "into": [
+    "Mali",
+    "Central Bank of West African States (BCEAO)"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Malta: Central Bank of Malta",
+   "postNum": 137,
+   "into": [
+    "Malta",
+    "Central Bank of Malta"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Mauritius: Bank of Mauritius",
+   "postNum": 137,
+   "into": [
+    "Mauritius",
+    "Bank of Mauritius"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Moldova: National Bank of Moldova",
+   "postNum": 137,
+   "into": [
+    "Moldova",
+    "National Bank of Moldova"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Mongolia: Bank of Mongolia",
+   "postNum": 137,
+   "into": [
+    "Mongolia",
+    "Bank of Mongolia"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Montenegro: Central Bank of Montenegro",
+   "postNum": 137,
+   "into": [
+    "Montenegro",
+    "Central Bank of Montenegro"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Morocco: Bank of Morocco",
+   "postNum": 137,
+   "into": [
+    "Morocco",
+    "Bank of Morocco"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Mozambique: Bank of Mozambique",
+   "postNum": 137,
+   "into": [
+    "Mozambique",
+    "Bank of Mozambique"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Namibia: Bank of Namibia",
+   "postNum": 137,
+   "into": [
+    "Namibia",
+    "Bank of Namibia"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Nepal: Central Bank of Nepal",
+   "postNum": 137,
+   "into": [
+    "Nepal",
+    "Central Bank of Nepal"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Netherlands: Netherlands Bank",
+   "postNum": 137,
+   "into": [
+    "Netherlands",
+    "Netherlands Bank"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Nicaragua: Central Bank of Nicaragua",
+   "postNum": 137,
+   "into": [
+    "Nicaragua",
+    "Central Bank of Nicaragua"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Niger: Central Bank of West African States (BCEAO)",
+   "postNum": 137,
+   "into": [
+    "Niger",
+    "Central Bank of West African States (BCEAO)"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Nigeria: Central Bank of Nigeria",
+   "postNum": 137,
+   "into": [
+    "Nigeria",
+    "Central Bank of Nigeria"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Oman: Central Bank of Oman",
+   "postNum": 137,
+   "into": [
+    "Oman",
+    "Central Bank of Oman"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Iraq: Central Bank of Iraq",
+   "postNum": 137,
+   "into": [
+    "Iraq",
+    "Central Bank of Iraq"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Ireland: Central Bank and Financial Services Authority of Ireland",
+   "postNum": 137,
+   "into": [
+    "Ireland",
+    "Central Bank and Financial Services Authority of Ireland"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Israel: Bank of Israel",
+   "postNum": 137,
+   "into": [
+    "Israel",
+    "Bank of Israel"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Italy: Bank of Italy",
+   "postNum": 137,
+   "into": [
+    "Italy",
+    "Bank of Italy"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Japan: Bank of Japan",
+   "postNum": 137,
+   "into": [
+    "Japan",
+    "Bank of Japan"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Jordan: Central Bank of Jordan",
+   "postNum": 137,
+   "into": [
+    "Jordan",
+    "Central Bank of Jordan"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Kazakhstan: National Bank of Kazakhstan",
+   "postNum": 137,
+   "into": [
+    "Kazakhstan",
+    "National Bank of Kazakhstan"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Kenya: Central Bank of Kenya",
+   "postNum": 137,
+   "into": [
+    "Kenya",
+    "Central Bank of Kenya"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Korea: Bank of Korea",
+   "postNum": 137,
+   "into": [
+    "Korea",
+    "Bank of Korea"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Lebanon: Central Bank of Lebanon",
+   "postNum": 137,
+   "into": [
+    "Lebanon",
+    "Central Bank of Lebanon"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Libya: Central Bank of Libya (Their most recent conquest)",
+   "postNum": 137,
+   "into": [
+    "Libya",
+    "Central Bank of Libya"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Mexico: Bank of Mexico",
+   "postNum": 137,
+   "into": [
+    "Mexico",
+    "Bank of Mexico"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Netherlands Antilles: Bank of the Netherlands Antilles",
+   "postNum": 137,
+   "into": [
+    "Netherlands Antilles",
+    "Bank of the Netherlands Antilles"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "New Zealand: Reserve Bank of New Zealand",
+   "postNum": 137,
+   "into": [
+    "New Zealand",
+    "Reserve Bank of New Zealand"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Norway: Central Bank of Norway",
+   "postNum": 137,
+   "into": [
+    "Norway",
+    "Central Bank of Norway"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Pakistan: State Bank of Pakistan",
+   "postNum": 137,
+   "into": [
+    "Pakistan",
+    "State Bank of Pakistan"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "United Arab Emirates: Central Bank of United Arab Emirates",
+   "postNum": 138,
+   "into": [
+    "United Arab Emirates",
+    "Central Bank of United Arab Emirates"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "United Kingdom: Bank of England",
+   "postNum": 138,
+   "into": [
+    "United Kingdom",
+    "Bank of England"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "United States: Federal Reserve, Federal Reserve Bank of New York",
+   "postNum": 138,
+   "into": [
+    "United States",
+    "Federal Reserve",
+    "Federal Reserve Bank of New York"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Paraguay: Central Bank of Paraguay",
+   "postNum": 138,
+   "into": [
+    "Paraguay",
+    "Central Bank of Paraguay"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Peru: Central Reserve Bank of Peru",
+   "postNum": 138,
+   "into": [
+    "Peru",
+    "Central Reserve Bank of Peru"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Portugal: Bank of Portugal",
+   "postNum": 138,
+   "into": [
+    "Portugal",
+    "Bank of Portugal"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Romania: National Bank of Romania",
+   "postNum": 138,
+   "into": [
+    "Romania",
+    "National Bank of Romania"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Rwanda: National Bank of Rwanda",
+   "postNum": 138,
+   "into": [
+    "Rwanda",
+    "National Bank of Rwanda"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Samoa: Central Bank of Samoa",
+   "postNum": 138,
+   "into": [
+    "Samoa",
+    "Central Bank of Samoa"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Senegal: Central Bank of West African States (BCEAO)",
+   "postNum": 138,
+   "into": [
+    "Senegal",
+    "Central Bank of West African States (BCEAO)"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Serbia: National Bank of Serbia",
+   "postNum": 138,
+   "into": [
+    "Serbia",
+    "National Bank of Serbia"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Seychelles: Central Bank of Seychelles",
+   "postNum": 138,
+   "into": [
+    "Seychelles",
+    "Central Bank of Seychelles"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Slovakia: National Bank of Slovakia",
+   "postNum": 138,
+   "into": [
+    "Slovakia",
+    "National Bank of Slovakia"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Slovenia: Bank of Slovenia",
+   "postNum": 138,
+   "into": [
+    "Slovenia",
+    "Bank of Slovenia"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Surinam: Central Bank of Suriname",
+   "postNum": 138,
+   "into": [
+    "Surinam",
+    "Central Bank of Suriname"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Swaziland: The Central Bank of Swaziland",
+   "postNum": 138,
+   "into": [
+    "Swaziland",
+    "The Central Bank of Swaziland"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Tajikistan: National Bank of Tajikistan",
+   "postNum": 138,
+   "into": [
+    "Tajikistan",
+    "National Bank of Tajikistan"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Thailand: Bank of Thailand",
+   "postNum": 138,
+   "into": [
+    "Thailand",
+    "Bank of Thailand"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Togo: Central Bank of West African States (BCEAO)",
+   "postNum": 138,
+   "into": [
+    "Togo",
+    "Central Bank of West African States (BCEAO)"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Tonga: National Reserve Bank of Tonga",
+   "postNum": 138,
+   "into": [
+    "Tonga",
+    "National Reserve Bank of Tonga"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Trinidad and Tobago: Central Bank of Trinidad and Tobago",
+   "postNum": 138,
+   "into": [
+    "Trinidad and Tobago",
+    "Central Bank of Trinidad and Tobago"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Tunisia: Central Bank of Tunisia",
+   "postNum": 138,
+   "into": [
+    "Tunisia",
+    "Central Bank of Tunisia"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Uganda: Bank of Uganda",
+   "postNum": 138,
+   "into": [
+    "Uganda",
+    "Bank of Uganda"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Vanuatu: Reserve Bank of Vanuatu",
+   "postNum": 138,
+   "into": [
+    "Vanuatu",
+    "Reserve Bank of Vanuatu"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Zambia: Bank of Zambia",
+   "postNum": 138,
+   "into": [
+    "Zambia",
+    "Bank of Zambia"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Zimbabwe: Reserve Bank of Zimbabwe",
+   "postNum": 138,
+   "into": [
+    "Zimbabwe",
+    "Reserve Bank of Zimbabwe"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Qatar: Qatar Central Bank",
+   "postNum": 138,
+   "into": [
+    "Qatar",
+    "Qatar Central Bank"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Papua New Guinea: Bank of Papua New Guinea",
+   "postNum": 138,
+   "into": [
+    "Papua New Guinea",
+    "Bank of Papua New Guinea"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Poland: National Bank of Poland",
+   "postNum": 138,
+   "into": [
+    "Poland",
+    "National Bank of Poland"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Russia: Central Bank of Russia",
+   "postNum": 138,
+   "into": [
+    "Russia",
+    "Central Bank of Russia"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "San Marino: Central Bank of the Republic of San Marino",
+   "postNum": 138,
+   "into": [
+    "San Marino",
+    "Central Bank of the Republic of San Marino"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Sierra Leone: Bank of Sierra Leone",
+   "postNum": 138,
+   "into": [
+    "Sierra Leone",
+    "Bank of Sierra Leone"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Singapore: Monetary Authority of Singapore",
+   "postNum": 138,
+   "into": [
+    "Singapore",
+    "Monetary Authority of Singapore"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Solomon Islands: Central Bank of Solomon Islands",
+   "postNum": 138,
+   "into": [
+    "Solomon Islands",
+    "Central Bank of Solomon Islands"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "South Africa: South African Reserve Bank",
+   "postNum": 138,
+   "into": [
+    "South Africa",
+    "South African Reserve Bank"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Spain: Bank of Spain",
+   "postNum": 138,
+   "into": [
+    "Spain",
+    "Bank of Spain"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Sri Lanka: Central Bank of Sri Lanka",
+   "postNum": 138,
+   "into": [
+    "Sri Lanka",
+    "Central Bank of Sri Lanka"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Sudan: Bank of Sudan",
+   "postNum": 138,
+   "into": [
+    "Sudan",
+    "Bank of Sudan"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Sweden: Sveriges Riksbank",
+   "postNum": 138,
+   "into": [
+    "Sweden",
+    "Sveriges Riksbank"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Switzerland: Swiss National Bank",
+   "postNum": 138,
+   "into": [
+    "Switzerland",
+    "Swiss National Bank"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Tanzania: Bank of Tanzania",
+   "postNum": 138,
+   "into": [
+    "Tanzania",
+    "Bank of Tanzania"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Turkey: Central Bank of the Republic of Turkey",
+   "postNum": 138,
+   "into": [
+    "Turkey",
+    "Central Bank of the Republic of Turkey"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Ukraine: National Bank of Ukraine",
+   "postNum": 138,
+   "into": [
+    "Ukraine",
+    "National Bank of Ukraine"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Venezuela: Central Bank of Venezuela",
+   "postNum": 138,
+   "into": [
+    "Venezuela",
+    "Central Bank of Venezuela"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Vietnam: The State Bank of Vietnam",
+   "postNum": 138,
+   "into": [
+    "Vietnam",
+    "The State Bank of Vietnam"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Yemen: Central Bank of Yemen",
+   "postNum": 138,
+   "into": [
+    "Yemen",
+    "Central Bank of Yemen"
+   ],
+   "why": "A country and its central bank on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Bill Shuster - Republican",
+   "postNum": 1319,
+   "into": [
+    "Bill Shuster",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Bob Corker - Republican",
+   "postNum": 1319,
+   "into": [
+    "Bob Corker",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Bob Goodlatte - Republican",
+   "postNum": 1319,
+   "into": [
+    "Bob Goodlatte",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Darrell Issa - Republican",
+   "postNum": 1319,
+   "into": [
+    "Darrell Issa",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Dave Reichert - Republican",
+   "postNum": 1319,
+   "into": [
+    "Dave Reichert",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "David Trott - Republican",
+   "postNum": 1319,
+   "into": [
+    "David Trott",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Dennis Ross - Republican",
+   "postNum": 1319,
+   "into": [
+    "Dennis Ross",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Dent - Republican",
+   "postNum": 1319,
+   "into": [
+    "Dent",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Duncan, Jr. - Republican",
+   "postNum": 1319,
+   "into": [
+    "Duncan, Jr.",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Edward Royce - Republican",
+   "postNum": 1319,
+   "into": [
+    "Edward Royce",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Frank LoBiondo - Republican",
+   "postNum": 1319,
+   "into": [
+    "Frank LoBiondo",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Gregg Harper - Republican",
+   "postNum": 1319,
+   "into": [
+    "Gregg Harper",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Gutierrez - Democrat",
+   "postNum": 1319,
+   "into": [
+    "Gutierrez",
+    "Democrat"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Ileana Ros-Lehtinen - Republican",
+   "postNum": 1319,
+   "into": [
+    "Ileana Ros-Lehtinen",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Jeff Flake - Republican",
+   "postNum": 1319,
+   "into": [
+    "Jeff Flake",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Jim Bridenstine - Republican",
+   "postNum": 1319,
+   "into": [
+    "Jim Bridenstine",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Joe Barton - Republican",
+   "postNum": 1319,
+   "into": [
+    "Joe Barton",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Kihuen - Democrat",
+   "postNum": 1319,
+   "into": [
+    "Kihuen",
+    "Democrat"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Lamar Smith - Republican",
+   "postNum": 1319,
+   "into": [
+    "Lamar Smith",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Lynn Jenkins - Republican",
+   "postNum": 1319,
+   "into": [
+    "Lynn Jenkins",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Orrin Hatch - Republican",
+   "postNum": 1319,
+   "into": [
+    "Orrin Hatch",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Paul Ryan - Republican",
+   "postNum": 1319,
+   "into": [
+    "Paul Ryan",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Rodney Frelinghuysen - Republican",
+   "postNum": 1319,
+   "into": [
+    "Rodney Frelinghuysen",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Ryan Costello - Republican",
+   "postNum": 1319,
+   "into": [
+    "Ryan Costello",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Sam Johnson - Republican",
+   "postNum": 1319,
+   "into": [
+    "Sam Johnson",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Thomas Rooney - Republican",
+   "postNum": 1319,
+   "into": [
+    "Thomas Rooney",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Trey Gowdy - Republican",
+   "postNum": 1319,
+   "into": [
+    "Trey Gowdy",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Xavier Becerra - Democrat Attorney General of California",
+   "postNum": 1319,
+   "into": [
+    "Xavier Becerra",
+    "Democrat"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Ted Poe - Republican",
+   "postNum": 1319,
+   "into": [
+    "Ted Poe",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "ABC – Cecilia Vega",
+   "postNum": 1515,
+   "into": [
+    "ABC",
+    "Cecilia Vega"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "ABC – Diane Sawyer",
+   "postNum": 1515,
+   "into": [
+    "ABC",
+    "Diane Sawyer"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "ABC – George Stephanoplous",
+   "postNum": 1515,
+   "into": [
+    "ABC",
+    "George Stephanoplous"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "ABC – Jon Karl",
+   "postNum": 1515,
+   "into": [
+    "ABC",
+    "Jon Karl"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "ABC – Liz Kreutz",
+   "postNum": 1515,
+   "into": [
+    "ABC",
+    "Liz Kreutz"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "AP – Julie Pace",
+   "postNum": 1515,
+   "into": [
+    "AP",
+    "Julie Pace"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "AP – Ken Thomas",
+   "postNum": 1515,
+   "into": [
+    "AP",
+    "Ken Thomas"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "AP – Lisa Lerer",
+   "postNum": 1515,
+   "into": [
+    "AP",
+    "Lisa Lerer"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Bloomberg – Jennifer Epstein",
+   "postNum": 1515,
+   "into": [
+    "Bloomberg",
+    "Jennifer Epstein"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Bloomberg – John Heillman",
+   "postNum": 1515,
+   "into": [
+    "Bloomberg",
+    "John Heillman"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Bloomberg – Mark Halperin",
+   "postNum": 1515,
+   "into": [
+    "Bloomberg",
+    "Mark Halperin"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "CBS – John Dickerson",
+   "postNum": 1515,
+   "into": [
+    "CBS",
+    "John Dickerson"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "CBS – Norah O'Donnell",
+   "postNum": 1515,
+   "into": [
+    "CBS",
+    "Norah O'Donnell"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "CBS – Steve Chagaris",
+   "postNum": 1515,
+   "into": [
+    "CBS",
+    "Steve Chagaris"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "CBS – Vicki Gordon",
+   "postNum": 1515,
+   "into": [
+    "CBS",
+    "Vicki Gordon"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "CNBC – John Harwood",
+   "postNum": 1515,
+   "into": [
+    "CNBC",
+    "John Harwood"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "CNN – Brianna Keilar",
+   "postNum": 1515,
+   "into": [
+    "CNN",
+    "Brianna Keilar"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "CNN – Dan Merica",
+   "postNum": 1515,
+   "into": [
+    "CNN",
+    "Dan Merica"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "CNN – David Chailan",
+   "postNum": 1515,
+   "into": [
+    "CNN",
+    "David Chailan"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "CNN – Erin Burnett",
+   "postNum": 1515,
+   "into": [
+    "CNN",
+    "Erin Burnett"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "CNN – Gloria Borger",
+   "postNum": 1515,
+   "into": [
+    "CNN",
+    "Gloria Borger"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "CNN – Jake Tapper",
+   "postNum": 1515,
+   "into": [
+    "CNN",
+    "Jake Tapper"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "CNN – Jeff Zeleny",
+   "postNum": 1515,
+   "into": [
+    "CNN",
+    "Jeff Zeleny"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "CNN – John Berman",
+   "postNum": 1515,
+   "into": [
+    "CNN",
+    "John Berman"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "CNN – Kate Bouldan",
+   "postNum": 1515,
+   "into": [
+    "CNN",
+    "Kate Bouldan"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "CNN – Maria Cardona",
+   "postNum": 1515,
+   "into": [
+    "CNN",
+    "Maria Cardona"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "CNN – Mark Preston",
+   "postNum": 1515,
+   "into": [
+    "CNN",
+    "Mark Preston"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "CNN – Sam Feist",
+   "postNum": 1515,
+   "into": [
+    "CNN",
+    "Sam Feist"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Daily Beast – Jackie Kucinich",
+   "postNum": 1515,
+   "into": [
+    "Daily Beast",
+    "Jackie Kucinich"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "MSNBC – Alex Seitz-Wald",
+   "postNum": 1515,
+   "into": [
+    "MSNBC",
+    "Alex Seitz-Wald"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "MSNBC – Alex Wagner",
+   "postNum": 1515,
+   "into": [
+    "MSNBC",
+    "Alex Wagner"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "MSNBC – Andrea Mitchell",
+   "postNum": 1515,
+   "into": [
+    "MSNBC",
+    "Andrea Mitchell"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "MSNBC – Ed Schultz",
+   "postNum": 1515,
+   "into": [
+    "MSNBC",
+    "Ed Schultz"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "MSNBC – Joe Scarborough",
+   "postNum": 1515,
+   "into": [
+    "MSNBC",
+    "Joe Scarborough"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "MSNBC – Mika Brzezinski",
+   "postNum": 1515,
+   "into": [
+    "MSNBC",
+    "Mika Brzezinski"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "MSNBC – Phil Griffin",
+   "postNum": 1515,
+   "into": [
+    "MSNBC",
+    "Phil Griffin"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "MSNBC – Rachel Maddow",
+   "postNum": 1515,
+   "into": [
+    "MSNBC",
+    "Rachel Maddow"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "MSNBC – Rachel Racusen",
+   "postNum": 1515,
+   "into": [
+    "MSNBC",
+    "Rachel Racusen"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "MSNBC – Thomas Roberts",
+   "postNum": 1515,
+   "into": [
+    "MSNBC",
+    "Thomas Roberts"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "NBC – Chuck Todd",
+   "postNum": 1515,
+   "into": [
+    "NBC",
+    "Chuck Todd"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "NBC – Mark Murray",
+   "postNum": 1515,
+   "into": [
+    "NBC",
+    "Mark Murray"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "NBC – Savannah Gutherie",
+   "postNum": 1515,
+   "into": [
+    "NBC",
+    "Savannah Gutherie"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "NPR – Mike Oreskes",
+   "postNum": 1515,
+   "into": [
+    "NPR",
+    "Mike Oreskes"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "NPR – Tamara Keith",
+   "postNum": 1515,
+   "into": [
+    "NPR",
+    "Tamara Keith"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "NY Post – Geofe Earl",
+   "postNum": 1515,
+   "into": [
+    "NY Post",
+    "Geofe Earl"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "NYT – Amy Chozik",
+   "postNum": 1515,
+   "into": [
+    "NYT",
+    "Amy Chozik"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "NYT – Carolyn Ryan",
+   "postNum": 1515,
+   "into": [
+    "NYT",
+    "Carolyn Ryan"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "NYT – Gail Collins",
+   "postNum": 1515,
+   "into": [
+    "NYT",
+    "Gail Collins"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "NYT – John Harwoodje",
+   "postNum": 1515,
+   "into": [
+    "NYT",
+    "John Harwoodje"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "NYT – Jonathan Martin",
+   "postNum": 1515,
+   "into": [
+    "NYT",
+    "Jonathan Martin"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "NYT – Maggie Haberman",
+   "postNum": 1515,
+   "into": [
+    "NYT",
+    "Maggie Haberman"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "NYT – Pat Healey",
+   "postNum": 1515,
+   "into": [
+    "NYT",
+    "Pat Healey"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "PBS – Charlie Rose",
+   "postNum": 1515,
+   "into": [
+    "PBS",
+    "Charlie Rose"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Politico – Annie Karni",
+   "postNum": 1515,
+   "into": [
+    "Politico",
+    "Annie Karni"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Politico – Gabe Debenedetti",
+   "postNum": 1515,
+   "into": [
+    "Politico",
+    "Gabe Debenedetti"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Politico – Glenn Thrush",
+   "postNum": 1515,
+   "into": [
+    "Politico",
+    "Glenn Thrush"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Politico – Kenneth Vogel",
+   "postNum": 1515,
+   "into": [
+    "Politico",
+    "Kenneth Vogel"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Politico – Mike Allen",
+   "postNum": 1515,
+   "into": [
+    "Politico",
+    "Mike Allen"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Reuters – Amanda Becker",
+   "postNum": 1515,
+   "into": [
+    "Reuters",
+    "Amanda Becker"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "The Hill – Amie Parnes",
+   "postNum": 1515,
+   "into": [
+    "The Hill",
+    "Amie Parnes"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "WSJ – Colleen McCain Nelson",
+   "postNum": 1515,
+   "into": [
+    "WSJ",
+    "Colleen McCain Nelson"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "WSJ – Laura Meckler",
+   "postNum": 1515,
+   "into": [
+    "WSJ",
+    "Laura Meckler"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "WSJ – Peter Nicholas",
+   "postNum": 1515,
+   "into": [
+    "WSJ",
+    "Peter Nicholas"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Yahoo – Matt Bai",
+   "postNum": 1515,
+   "into": [
+    "Yahoo",
+    "Matt Bai"
+   ],
+   "why": "An outlet and one of its journalists on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Bill Shuster - Republican",
+   "postNum": 1850,
+   "into": [
+    "Bill Shuster",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Bob Corker - Republican",
+   "postNum": 1850,
+   "into": [
+    "Bob Corker",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Bob Goodlatte - Republican",
+   "postNum": 1850,
+   "into": [
+    "Bob Goodlatte",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Darrell Issa - Republican",
+   "postNum": 1850,
+   "into": [
+    "Darrell Issa",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Dave Reichert - Republican",
+   "postNum": 1850,
+   "into": [
+    "Dave Reichert",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "David Trott - Republican",
+   "postNum": 1850,
+   "into": [
+    "David Trott",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Dennis Ross - Republican",
+   "postNum": 1850,
+   "into": [
+    "Dennis Ross",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Dent - Republican",
+   "postNum": 1850,
+   "into": [
+    "Dent",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Duncan, Jr. - Republican",
+   "postNum": 1850,
+   "into": [
+    "Duncan, Jr.",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Edward Royce - Republican",
+   "postNum": 1850,
+   "into": [
+    "Edward Royce",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Frank LoBiondo - Republican",
+   "postNum": 1850,
+   "into": [
+    "Frank LoBiondo",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Gregg Harper - Republican",
+   "postNum": 1850,
+   "into": [
+    "Gregg Harper",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Gutierrez - Democrat",
+   "postNum": 1850,
+   "into": [
+    "Gutierrez",
+    "Democrat"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Ileana Ros-Lehtinen - Republican",
+   "postNum": 1850,
+   "into": [
+    "Ileana Ros-Lehtinen",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Jeff Flake - Republican",
+   "postNum": 1850,
+   "into": [
+    "Jeff Flake",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Jim Bridenstine - Republican",
+   "postNum": 1850,
+   "into": [
+    "Jim Bridenstine",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Joe Barton - Republican",
+   "postNum": 1850,
+   "into": [
+    "Joe Barton",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Kihuen - Democrat",
+   "postNum": 1850,
+   "into": [
+    "Kihuen",
+    "Democrat"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Lamar Smith - Republican",
+   "postNum": 1850,
+   "into": [
+    "Lamar Smith",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Lynn Jenkins - Republican",
+   "postNum": 1850,
+   "into": [
+    "Lynn Jenkins",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Orrin Hatch - Republican",
+   "postNum": 1850,
+   "into": [
+    "Orrin Hatch",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Paul Ryan - Republican",
+   "postNum": 1850,
+   "into": [
+    "Paul Ryan",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Rodney Frelinghuysen - Republican",
+   "postNum": 1850,
+   "into": [
+    "Rodney Frelinghuysen",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Ryan Costello - Republican",
+   "postNum": 1850,
+   "into": [
+    "Ryan Costello",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Sam Johnson - Republican",
+   "postNum": 1850,
+   "into": [
+    "Sam Johnson",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Thomas Rooney - Republican",
+   "postNum": 1850,
+   "into": [
+    "Thomas Rooney",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Trey Gowdy - Republican",
+   "postNum": 1850,
+   "into": [
+    "Trey Gowdy",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Xavier Becerra - Democrat Attorney General of California",
+   "postNum": 1850,
+   "into": [
+    "Xavier Becerra",
+    "Democrat"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  },
+  {
+   "spelling": "Ted Poe - Republican",
+   "postNum": 1850,
+   "into": [
+    "Ted Poe",
+    "Republican"
+   ],
+   "why": "A member of Congress and their party on one line of the list Q pasted."
+  }
+ ],
+ "held": [
+  {
+   "spelling": "L.",
+   "postNum": 300,
+   "posts": [
+    300,
+    300
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "IN.",
+   "postNum": 4206,
+   "posts": [
+    4206,
+    4206
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Mr. President, my prayer is constantly turned to the beloved American nation, where I had the privilege and honor of being sent by Pope Benedict XVI as Apostolic Nuncio. In this dramatic and decisive hour for all of humanity, I am praying for you and also for all those who are at your side in the government of the United States. I trust that the American people are united with me and you in prayer to Almighty God.",
+   "postNum": 4542,
+   "posts": [
+    4542
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Q Clearance Patriot",
+   "postNum": 34,
+   "posts": [
+    34
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "4,10,20",
+   "postNum": 35,
+   "posts": [
+    35,
+    40
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Godfather lll",
+   "postNum": 75,
+   "posts": [
+    75,
+    84
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "+++",
+   "postNum": 123,
+   "posts": [
+    123,
+    124,
+    126,
+    134,
+    679
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "++",
+   "postNum": 124,
+   "posts": [
+    124,
+    126,
+    134,
+    156,
+    177,
+    178,
+    679
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "+",
+   "postNum": 124,
+   "posts": [
+    124,
+    126,
+    134,
+    679,
+    1218,
+    2165
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Philip Pines: Bangko Sentral ng Pilipinas",
+   "postNum": 138,
+   "posts": [
+    138
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Saudi Arabia: Saudi Arabian Monetary Agency",
+   "postNum": 138,
+   "posts": [
+    138
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Lord d R.",
+   "postNum": 178,
+   "posts": [
+    178
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Eagle",
+   "postNum": 180,
+   "posts": [
+    180
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Eagles",
+   "postNum": 180,
+   "posts": [
+    180
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "_4ch_n",
+   "postNum": 233,
+   "posts": [
+    233
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "_8ch_y",
+   "postNum": 233,
+   "posts": [
+    233
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "CIA-RDP84B00049R001303260026-4",
+   "postNum": 239,
+   "posts": [
+    239
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Twitter keywords - coincidence",
+   "postNum": 244,
+   "posts": [
+    244
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Twitter retweet - coincidence",
+   "postNum": 244,
+   "posts": [
+    244
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "ROTHS",
+   "postNum": 263,
+   "posts": [
+    263
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "RED",
+   "postNum": 273,
+   "posts": [
+    273
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Renee J James",
+   "postNum": 303,
+   "posts": [
+    303
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": ":Owls:",
+   "postNum": 328,
+   "posts": [
+    328
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Tag: USSS",
+   "postNum": 347,
+   "posts": [
+    347
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "CROWDSTRIKE>",
+   "postNum": 436,
+   "posts": [
+    436
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "DWS_DIR>",
+   "postNum": 436,
+   "posts": [
+    436
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "STEELE>",
+   "postNum": 436,
+   "posts": [
+    436
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": ":OWLS:",
+   "postNum": 452,
+   "posts": [
+    452
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "4, 10, 20",
+   "postNum": 533,
+   "posts": [
+    533
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "HUSSEIN CABINET / STAFF",
+   "postNum": 559,
+   "posts": [
+    559
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Revise Constitution",
+   "postNum": 570,
+   "posts": [
+    570
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "@Snowden \"Truth To Power\"",
+   "postNum": 728,
+   "posts": [
+    728,
+    731
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "MILITARY INTELLIGENCE BATTALION (STRATEGIC SIGNALS INTELLIGENCE)",
+   "postNum": 755,
+   "posts": [
+    755
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "MILITARY INTELLIGENCE BRIGADE (STRATEGIC SIGNALS INTELLIGENCE)",
+   "postNum": 755,
+   "posts": [
+    755
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "MILITARY INTELLIGENCE TEAM",
+   "postNum": 755,
+   "posts": [
+    755
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "JOHN 3:16",
+   "postNum": 790,
+   "posts": [
+    790
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "OP Name: Fiddler",
+   "postNum": 836,
+   "posts": [
+    836
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "SUM of ALL FEARS //\\\\",
+   "postNum": 864,
+   "posts": [
+    864
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "SEC Test 1",
+   "postNum": 870,
+   "posts": [
+    870
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "SEC Test 2",
+   "postNum": 871,
+   "posts": [
+    871
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "@[19][1st]",
+   "postNum": 952,
+   "posts": [
+    952
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "@[3][1st]",
+   "postNum": 952,
+   "posts": [
+    952
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "LINE CONF B-Z",
+   "postNum": 983,
+   "posts": [
+    983
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "SEC A SEC /",
+   "postNum": 983,
+   "posts": [
+    983
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "D-Room C",
+   "postNum": 1001,
+   "posts": [
+    1001
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "D-Room H",
+   "postNum": 1001,
+   "posts": [
+    1001
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "D-Room R",
+   "postNum": 1001,
+   "posts": [
+    1001
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "SEC TEST",
+   "postNum": 1003,
+   "posts": [
+    1003,
+    1004,
+    1639
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "BRAVO",
+   "postNum": 1004,
+   "posts": [
+    1004
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "AIR",
+   "postNum": 1010,
+   "posts": [
+    1010
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "@algore",
+   "postNum": 1239,
+   "posts": [
+    1239
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Army Lt.",
+   "postNum": 1268,
+   "posts": [
+    1268
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Today: JK & Iran",
+   "postNum": 1317,
+   "posts": [
+    1317
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Charles W.",
+   "postNum": 1319,
+   "posts": [
+    1319,
+    1850
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "John J.",
+   "postNum": 1319,
+   "posts": [
+    1319,
+    1850
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Luis V.",
+   "postNum": 1319,
+   "posts": [
+    1319,
+    1850
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Patrick J.",
+   "postNum": 1319,
+   "posts": [
+    1319,
+    1850
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Ruben J.",
+   "postNum": 1319,
+   "posts": [
+    1319,
+    1850
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "]SESSIONS[",
+   "postNum": 1369,
+   "posts": [
+    1369
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "302s",
+   "postNum": 1443,
+   "posts": [
+    1443
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "BLUE METAL",
+   "postNum": 1473,
+   "posts": [
+    1473
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "JDLKD-8382KDJDzAZ7301",
+   "postNum": 1473,
+   "posts": [
+    1473
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "ABC - David Muir",
+   "postNum": 1515,
+   "posts": [
+    1515
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "MSNBC - Beth Fouhy",
+   "postNum": 1515,
+   "posts": [
+    1515
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "J C",
+   "postNum": 1541,
+   "posts": [
+    1541
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "45",
+   "postNum": 1565,
+   "posts": [
+    1565
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "A321",
+   "postNum": 1588,
+   "posts": [
+    1588
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "IN GOD WE TRUST.",
+   "postNum": 1602,
+   "posts": [
+    1602
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Barron's",
+   "postNum": 1718,
+   "posts": [
+    1718
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Bandwagon shills",
+   "postNum": 1796,
+   "posts": [
+    1796
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "PACKET HDQ-7309217392",
+   "postNum": 1839,
+   "posts": [
+    1839
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "+GOOG",
+   "postNum": 1841,
+   "posts": [
+    1841
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "@FoxNews",
+   "postNum": 1863,
+   "posts": [
+    1863
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "@SeanHannity",
+   "postNum": 1863,
+   "posts": [
+    1863
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "@TheRealRoseanne",
+   "postNum": 1863,
+   "posts": [
+    1863
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "(…………………..)(…………………….)",
+   "postNum": 1871,
+   "posts": [
+    1871
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "GMAIL DRAFTS",
+   "postNum": 1876,
+   "posts": [
+    1876
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Operation Cyclone",
+   "postNum": 1887,
+   "posts": [
+    1887
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Mujahideen",
+   "postNum": 1887,
+   "posts": [
+    1887
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Line 4",
+   "postNum": 1912,
+   "posts": [
+    1912
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "FISA = FISC",
+   "postNum": 1944,
+   "posts": [
+    1944
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "NOFORN",
+   "postNum": 1944,
+   "posts": [
+    1944
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Richard -",
+   "postNum": 1960,
+   "posts": [
+    1960
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "-House testimony",
+   "postNum": 1986,
+   "posts": [
+    1986,
+    1986,
+    1986
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "BIG",
+   "postNum": 2040,
+   "posts": [
+    2040,
+    2040,
+    2040
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "DONALD J.",
+   "postNum": 2054,
+   "posts": [
+    2054
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Susan Wojcicki - CEO of YouTube",
+   "postNum": 2061,
+   "posts": [
+    2061
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "DEPARTMENT OF \"JUSTICE\"",
+   "postNum": 2070,
+   "posts": [
+    2070
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "FEDERAL BUREAU OF \"INVESTIGATION\"",
+   "postNum": 2070,
+   "posts": [
+    2070,
+    2697,
+    3990
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Executive Order 13526",
+   "postNum": 2177,
+   "posts": [
+    2177,
+    2207,
+    2501
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Sec 1.7",
+   "postNum": 2177,
+   "posts": [
+    2177,
+    2207,
+    2501
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "VIP Patriot",
+   "postNum": 2240,
+   "posts": [
+    2240,
+    2243
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "-Hillary Clinton & Foundation",
+   "postNum": 2365,
+   "posts": [
+    2365
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Dragonfly",
+   "postNum": 2378,
+   "posts": [
+    2378
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Senate Judiciary Chairman",
+   "postNum": 2445,
+   "posts": [
+    2445
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "CORSI",
+   "postNum": 2500,
+   "posts": [
+    2500
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "-OIG report",
+   "postNum": 2681,
+   "posts": [
+    2681
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Hillary Clinton & Foundation",
+   "postNum": 2697,
+   "posts": [
+    2697
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Jason V.",
+   "postNum": 2697,
+   "posts": [
+    2697
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "CLAS 1-99",
+   "postNum": 2776,
+   "posts": [
+    2776,
+    3837
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Michael S.",
+   "postNum": 3319,
+   "posts": [
+    3319,
+    4310
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "FBI 302's",
+   "postNum": 3330,
+   "posts": [
+    3330
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "M.",
+   "postNum": 3383,
+   "posts": [
+    3383
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "N.",
+   "postNum": 3383,
+   "posts": [
+    3383
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "GOOG whistleblower",
+   "postNum": 3584,
+   "posts": [
+    3584
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Project DeepDream",
+   "postNum": 3584,
+   "posts": [
+    3584
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Kerry's son",
+   "postNum": 3590,
+   "posts": [
+    3590
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Romney's son",
+   "postNum": 3590,
+   "posts": [
+    3590
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Desk",
+   "postNum": 3627,
+   "posts": [
+    3627
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Notebook",
+   "postNum": 3627,
+   "posts": [
+    3627
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Pen",
+   "postNum": 3627,
+   "posts": [
+    3627
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Rep.",
+   "postNum": 3778,
+   "posts": [
+    3778,
+    3778,
+    3778
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Sen.",
+   "postNum": 3778,
+   "posts": [
+    3778,
+    3778,
+    4935,
+    4935,
+    4935
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "DECLAS CoC",
+   "postNum": 3784,
+   "posts": [
+    3784
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "+Sleepers",
+   "postNum": 3881,
+   "posts": [
+    3881
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "***",
+   "postNum": 3989,
+   "posts": [
+    3989,
+    4506,
+    4607,
+    4762
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "CROSSFIRE TYPHOON",
+   "postNum": 4011,
+   "posts": [
+    4011
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "1996 Telecommunications Act",
+   "postNum": 4278,
+   "posts": [
+    4278
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "PAN-DEM-IC",
+   "postNum": 4294,
+   "posts": [
+    4294
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "CLAS 1-99 Defense",
+   "postNum": 4645,
+   "posts": [
+    4645
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "CLAS 1-99 Intel",
+   "postNum": 4645,
+   "posts": [
+    4645
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Alexander Jones, 36",
+   "postNum": 4697,
+   "posts": [
+    4697
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "@FBIPortland",
+   "postNum": 4715,
+   "posts": [
+    4715
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Lisa Barsoomian _former Bill Clinton attorney",
+   "postNum": 4784,
+   "posts": [
+    4784
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Joseph R.",
+   "postNum": 4801,
+   "posts": [
+    4801
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Joe 30330",
+   "postNum": 4826,
+   "posts": [
+    4826
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Mr.",
+   "postNum": 4850,
+   "posts": [
+    4850
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  },
+  {
+   "spelling": "Gov.",
+   "postNum": 4935,
+   "posts": [
+    4935
+   ],
+   "why": "Outside the three list shapes. The owner ruled it an Entity; naming the referent is a separate decision and is not guessed here."
+  }
+ ]
+}

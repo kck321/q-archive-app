@@ -15,7 +15,12 @@ export const CERTIFIED = {
   // 6,503 -> 6,321. The shipped file still holds 6,503 rows with an occurrences field; 182 of
   // them Step 3B-1 MARKED secondary or withdrawn rather than deleting, and the certified figure
   // is the primary set. The marked records keep their id, text and count so nothing is lost.
-  questions: { occurrences: 6321, distinct: 5358, posts: 1705 },
+  // ROUND 2 OF THE UNHIGHLIGHTED-QUEUE REVIEW, 2026-08-24. The census re-measured against the
+  // rendered DOM queued 10,700 unpainted lines; the owner reviewed them all and returned one
+  // sheet per destination section. 2,799 rulings applied; 3,261 rows produced none, because the
+  // section they name already certifies that span. audit/unhighlighted-owner-rulings-2.json.
+  // 6,321 -> 6,327: six question rulings, carrying five wordings Questions did not hold.
+  questions: { occurrences: 6327, distinct: 5363, posts: 1705 },
   // v5, 16 Aug 2026 — Q Directives migrated to sourceSpansV2 provenance under owner ruling.
   // 2,705 -> 2,552: 153 occurrences removed from Q Directives ONLY (quoted news, scraped code,
   // blessings, declarative-lead misreads, questions, a prediction). Nothing was deleted from the
@@ -28,21 +33,26 @@ export const CERTIFIED = {
   // 2,940 -> 2,902 on 2026-08-23, the scripture ruling: a quoted passage of scripture is ONE
   // directive over the whole passage, so 66 sentence-level fragments give way to 28 whole passages.
   // Posts RISE by 7 — drops that carried their scripture only as Claims gain a directive.
-  directives: { occurrences: 2902, distinct: 1830, posts: 1696 },
+  // 2,902 -> 3,304: 455 directive rulings. 24 more rows on that sheet are held rather than
+  // applied - list markers, end-markers, comms strings - because they instruct nobody to do
+  // anything, and a directive is where Q tells the reader to act.
+  directives: { occurrences: 3304, distinct: 1930, posts: 1917 },
   // 8,912 -> 8676 across the 2026-08-22 lane-B reviews: paragraph-wide claims an early
   // extractor left sitting on top of the sentence-level records that superseded them, plus the
   // abbreviation-split pairs where one sentence had been certified twice.
   // 8,676 -> 8,631 on 2026-08-23: 45 claims withdrawn, each a sentence inside a passage that is
   // now one Directive.
-  claims: { occurrences: 8631, distinct: 6765, posts: 3050 },
+  // 8,631 -> 10,258: 1,654 claim rulings, 83 of them on spans Claims already certified.
+  claims: { occurrences: 10258, distinct: 7777, posts: 3223 },
   // 843 -> 841 on 2026-08-23: two predictions sat inside quoted passages.
-  predictions: { occurrences: 841, posts: 671 },
+  // 841 -> 934: 94 prediction rulings.
+  predictions: { occurrences: 934, posts: 671 },
   /** Claim attributes. `conclusions` may apply to a claim or a prediction. */
   // checkable, sourceProvided and conclusions do NOT move with the queue ruling: they are
   // attributes the claims audit established from evidence inside the drop, and the owner ruled a
   // section rather than an attribute. telegraphic does move, because it is not a judgement - it is
   // "four words or fewer", and the queue is overwhelmingly short label-like lines.
-  claimAttributes: { checkable: 1926, sourceProvided: 438, conclusions: 966, telegraphic: 3546 },
+  claimAttributes: { checkable: 1926, sourceProvided: 438, conclusions: 966, telegraphic: 4671 },
   /** Units that are BOTH a question and a directive. */
   overlap: 228,
   totalPosts: 4966,
@@ -70,13 +80,13 @@ export const CERTIFIED = {
  * recount cannot quietly come back.
  */
 export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number; unit: string }> = {
-  claims: { occurrences: 8631, posts: 3050, unit: 'occurrences' },
-  predictions: { occurrences: 841, posts: 671, unit: 'occurrences' },
+  claims: { occurrences: 10258, posts: 3223, unit: 'occurrences' },
+  predictions: { occurrences: 934, posts: 671, unit: 'occurrences' },
   // "mentions" is the right word here and the only section where it is: an entity is counted
   // once per resolved mention across the 1,066 canonical entities Q named in prose. The other 135
   // certified identities contribute none — they are linked sources, not words Q wrote — which is
   // why this figure sits BESIDE the 1,201 total on the page rather than under it.
-  namedEntities: { occurrences: 8831, posts: 2098, unit: 'mentions' },
+  namedEntities: { occurrences: 9271, posts: 2099, unit: 'mentions' },
   // Themes are assignments rather than spans — a theme is inferred from a drop, not copied out
   // of it — so the unit is named accordingly. 2,393 detected + 2 owner rulings.
   themes: { occurrences: 2646, posts: 1899, unit: 'assignments' },
@@ -156,7 +166,12 @@ export const ENTITIES = {
   // referenced as publishers or as accounts Q linked to, and they are shown under Sources.
   // 1,201 -> 1,240 (unhighlighted-sentence queue, 2026-08-20): 39 identities the owner's entity
   // rulings introduce, each declared with a type from the vocabulary the registry already uses.
-  canonical: 1240,
+  // 1,240 -> 1,532 (round 2 of the queue review, 2026-08-24): 308 identities the owner's entity
+  // rulings introduce, plus Rachel Maddow, whose row was dormant while every mention she had was
+  // a URL slug and whom #1515 names in prose. 244 of the 308 are read off three lists Q pastes
+  // verbatim - the central banks of #135-#138, the media list in #1515, the retiring-Congress
+  // list in #1319/#1850 - where each line names two things and is split rather than invented.
+  canonical: 1532,
   /**
    * THE HEADLINE COUNTS THE WHOLE SECTION.
    *
@@ -180,12 +195,15 @@ export const ENTITIES = {
   // mentions at all: several records over one written word.
   // 8,821 -> 8,833 on 2026-08-23: the 12 scripture reference labels Q prints beside a quoted
   // passage are certified entities by owner ruling.
-  mentions: 8831,
-  mentionScope: 'Every resolved mention across all 1,223 certified entities: 5,236 from the 93 core-registry entities, 2,868 from the entities identified in the adjudication pass, and 727 from owner rulings. Domains, URL slugs and linked accounts are NOT counted here — they are shown under Sources. Unresolved aliases are counted in neither: they are held in the Resolution Center.',
+  // 8,831 -> 9,271 (2026-08-24): +440. 1,007 entity rulings across both rounds carry 1,167
+  // occurrences, and 727 were already held by a certified layer at that (post, alias), so only
+  // the shortfall is added - counting the rest again would show the reader an x2 Q never wrote.
+  mentions: 9271,
+  mentionScope: 'Every resolved mention across all 1,532 certified entities: 5,297 from the 93 core-registry entities, 2,922 from the entities identified in the adjudication pass, and 1,052 from owner rulings. Domains, URL slugs and linked accounts are NOT counted here — they are shown under Sources. Unresolved aliases are counted in neither: they are held in the Resolution Center.',
   coreEntities: 93,
-  coreRegistryMentions: 5236,
+  coreRegistryMentions: 5297,
   tailEntities: 1238,
-  tailMentions: 2868,
+  tailMentions: 2922,
   contextResolved: 161,
   routedToThemes: 53,
   unresolvedTokens: 1011,
@@ -228,11 +246,13 @@ export const THEMES_INFO = {
 export const CODES_INFO = {
   // 2026-08-20: the owner ruled 15 bracket lines out of the unhighlighted-sentence queue; 8 were
   // not yet certified codes and each is a wording Codes did not hold.
-  occurrences: 1957,
-  distinct: 747,
-  posts: 856,
+  // 1,957 -> 1,986 (2026-08-24): 43 bracket rulings, 14 of them on tokens the bracket detector
+  // already certifies at that post - which is what the pass is for.
+  occurrences: 1986,
+  distinct: 771,
+  posts: 861,
   interpreted: 7,
-  unresolved: 740,
+  unresolved: 764,
   crossLinkedToEntities: 32,
   note: 'Codes & Brackets identifies recurring coded expressions, structured shorthand, bracketed markers, symbolic forms, and unusual notation used by Q. Inclusion in this section means the pattern appears code-like or structurally significant; it does not mean its meaning is known. Interpretations are shown only when supported by repeated context or a reviewed resolution.',
   overlap: 'A bracketed reference such as [HRC] is counted here as notation AND in Entities as a reference. The sections answer different questions — how Q marked something, and who was referenced — so each counts it once and cross-links to the other.',
@@ -369,7 +389,7 @@ export const SECTIONS: SectionInfo[] = [
     // so the ⓘ panel contradicted the header directly above it. The two components are named here
     // for the same reason they are named in the header: 1,201 with no split reads as 1,201 entities
     // Q wrote about, and 135 of them he never wrote at all.
-    certified: `${n(1223)} canonical entities (${n(1085)} named in the prose · ${n(138)} linked as a source only) · ${n(8831)} certified prose mentions`,
+    certified: `${n(1532)} canonical entities (${n(1398)} named in the prose · ${n(134)} linked as a source only) · ${n(9271)} certified prose mentions`,
     note: 'Entities are secondary tags rather than sentence types — a question, claim, prediction or directive may contain several. Names are canonicalised, so "HRC", "Hillary" and "Hillary Clinton" are one person, while Q’s exact wording is preserved in every post. Where a reference is ambiguous it is left unresolved rather than guessed.',
   },
   {

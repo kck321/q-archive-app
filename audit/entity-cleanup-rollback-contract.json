@@ -221,6 +221,22 @@
    },
    "appliedBy": "scripts/apply-scripture-blocks.mjs",
    "whichKind": "downstream — this ruling is applied by a LATER chain step, so apply-entity-cleanup.mjs produces exactly the tree it always produced and must NOT expect these 12/10. The finished bundle carries them, which is what audit-cross-section.mjs checks. Recorded as its own kind rather than squeezed into afterOnly, which would make the re-materialise guard expect an after-state this step never writes."
+  },
+  {
+   "ruling": "audit/unhighlighted-owner-rulings-2.json + audit/unhighlighted-entity-identities-2.json (round 2 of the queue review)",
+   "ruledOn": "2026-08-24",
+   "what": "Round 2 of the owner's review of the unhighlighted-sentence queue ruled 499 more spans to be entities. 308 identities and 440 occurrences arrive BEFORE this step runs, because apply-entities.mjs is earlier in the chain. 244 of the identities are read off three lists Q pastes verbatim - the central-bank list in #135-#138, the 'THE BRIDGE: PODESTA GROUP' media list in #1515, and the retiring-Congress list in #1319/#1850 - each line naming two things that are split rather than one thing that is invented. 128 wordings are HELD rather than named and are listed in the identities file.",
+   "entityRows": 308,
+   "mentions": 440,
+   "rendered": 440,
+   "evidence": "apply-entities.mjs reports 1,007 queue entity rulings carrying 1,167 occurrences with 188 held, and its own gate asserts canonical 1,751, resolved mentions 10,366, core-registry 5,421 and adjudicated-tail 3,892. The replay below reproduces the approved after-state from this tree, which is what proves the cleanup plan itself is untouched: it withdraws exactly the set the owner approved in 2026-08-17 and nothing this ruling added.",
+   "why": "The approval record above is left exactly as written, for the same reason as the five deltas before this one: the guard must still refuse an unrecognised tree, and a later owner ruling must not read as drift.",
+   "afterOnly": {
+    "entityRows": 1,
+    "mentions": 0,
+    "rendered": 0,
+    "what": "Rachel Maddow. The 2026-08-17 cleanup took her row dormant because every mention she had was a URL fragment - a slug in an address Q linked to, not a name Q wrote. #1515's 'THE BRIDGE: PODESTA GROUP' list names her in PROSE, so the row is no longer empty after the same withdrawals run and it survives where it used to go dormant. The cleanup itself is unchanged: it withdraws exactly the URL-derived occurrences it always withdrew, and this row simply has something left."
+   }
   }
  ]
 }

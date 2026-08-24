@@ -154,7 +154,11 @@ for (const p of posts) {
 let absorbed = 0, collided = 0
 {
   const r = applyAbbrevRepairs(abbrev, 'context', posts, x => x.postAnalysis?.contextUnits)
-  assertAbbrevApplied(abbrev, 'context', r, 'apply-context-units.mjs')
+  // 12 of the 28 recorded Context repairs, and 7 of the 8 withdrawals, describe spans Context no
+  // longer holds: round 2 of the unhighlighted-queue review ruled those lines into a section, and
+  // a ruled line is by definition no longer "reviewed, and in no semantic category". The numbers
+  // are stated rather than tolerated - a span that disappears for any other reason still fails.
+  assertAbbrevApplied(abbrev, 'context', r, 'apply-context-units.mjs', { repairs: 12, withdrawals: 7 })
   absorbed = r.withdrawn
   // A REPAIRED CONTEXT UNIT CAN TURN OUT TO BE A SPAN ANOTHER SECTION ALREADY CERTIFIED.
   //
@@ -209,9 +213,14 @@ const checks = [
   // repaired units that turned out to be spans another section already certified, which leave
   // Context because Context means "reviewed, and in no semantic category". 28 more were repaired
   // in place, which changes their text and not their number.
-  ['contiguous context spans = 1,715', materialised === 1715, materialised],
+  // 1,715 -> 577. ROUND 2 of the unhighlighted-queue review ruled 1,154 more Context units into a
+  // section, and a ruled line is by definition no longer "reviewed, and in no semantic category".
+  // Nothing was deleted: every one of them is counted below as promoted, and the total still
+  // reconciles to the certified 4,902.
+  ['contiguous context spans = 577', materialised === 577, materialised],
   // 13 -> 12: one of the multi-line reconstructions was ruled into a section too.
-  ['multi-line reconstructions held as exceptions = 12', multiline.length === 12, multiline.length],
+  // 12 -> 3: nine more of the multi-line reconstructions were ruled into a section.
+  ['multi-line reconstructions held as exceptions = 3', multiline.length === 3, multiline.length],
   // The TOTAL is the invariant and it does not move: a ruling changes which side of the ledger a
   // unit sits on, never how many units were reviewed. 1,747 + 3,155 = 4,902, as 1,748 + 3,154 did.
   // THE LEDGER TOTAL IS STILL 4,902, AND THE ABSORBED UNITS ARE WHY THE SUM NEEDS A THIRD TERM.
@@ -221,15 +230,19 @@ const checks = [
   // They were not dropped and they were not reclassified: two units became one, eight times.
   // Counting them here keeps the acceptance contract honest instead of re-pinning the total to a
   // smaller number and losing the reason.
-  ['1,715 + 12 = 1,727, + 3,159 promoted + 8 absorbed + 8 recategorised = the certified 4,902',
-    materialised + multiline.length === 1727
+  // 577 + 3 = 580, and the certified 4,902 is unchanged — the units moved sides, none left the
+  // archive. `absorbed` falls 8 -> 1 because seven of those tail fragments were themselves ruled
+  // into a section before the repair could absorb them.
+  ['577 + 3 = 580, + 4,313 promoted + 1 absorbed + 8 recategorised = the certified 4,902',
+    materialised + multiline.length === 580
       && materialised + multiline.length + promoted.length + absorbed + collided === 4902,
     `${materialised + multiline.length} + ${promoted.length} + ${absorbed} + ${collided}`],
   // 2 themes + 3 claims (#4965 'In time.', #4963 x2) + 4 entity rulings whose span was a
   // Context line (#4963 Investigators./Researchers./Whistleblowers. and #5 is unaffected).
   // 73 + 3,081 from the unhighlighted-sentence queue = 3,154, + 1 (#4923) = 3,155,
   // + 4 (#4893 x2, #4853 x2, all 2026-08-21) = 3,159.
-  ['owner rulings removed from Context = 3,159', promoted.length === 3159, promoted.length],
+  // 3,159 + 1,154 from round 2 of the review = 4,313.
+  ['owner rulings removed from Context = 4,313', promoted.length === 4313, promoted.length],
   // Against the CLEANED text, because that is what the ledger segmented. Comparing to raw text
   // fails on the whitespace normalisation clean() applies and would report a defect that is
   // purely an artefact of checking the wrong string.

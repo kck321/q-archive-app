@@ -239,7 +239,10 @@ const checks = [
   [`Entities indexed = ${CANONICAL.entities.canonical.toLocaleString()}`,
     bySection.entities === CANONICAL.entities.canonical, bySection.entities],
   ['Themes indexed = 2,646', bySection.themes === 2646, bySection.themes],
-  ['Codes indexed = 747', bySection.codes === 747, bySection.codes],
+  // Read from the contract rather than copied, the same correction the other seven gates here
+  // already carry: a certified count in two places is a certified count that goes stale in one.
+  [`Codes indexed = ${CANONICAL.codes.distinct.toLocaleString()}`,
+    bySection.codes === CANONICAL.codes.distinct, bySection.codes],
   // Read from the contract, never copied — see the same fix in build-relationships.mjs.
   [`Unresolved indexed = ${CANONICAL.resolution.total.toLocaleString()}`,
     bySection.unresolved === CANONICAL.resolution.total, bySection.unresolved],
@@ -249,7 +252,10 @@ const checks = [
   // certified as Q's own literal claim, and apply-claims.mjs drops a paraphrase whose key matches a
   // certified claim rather than showing the same assertion twice - once correctly, once as "not Q's
   // words". 134 normalisations + 1,156 paraphrases = 1,290.
-  ['editorial rows = 134 normalisations + 1,156 paraphrases', bySection.editorial === 1290, bySection.editorial],
+  // 1,290 -> 1,268 on 2026-08-24: 22 more editorial paraphrases named a wording round 2 of the
+  // queue review has now certified as Q's own, so the paraphrase is redundant and goes. Same
+  // movement as the round-1 drop from 1,393, and for the same reason.
+  ['editorial rows = 134 normalisations + 1,134 paraphrases', bySection.editorial === 1268, bySection.editorial],
   ['every editorial row is flagged not-Q-authored', editorialUnlabelled.length === 0, editorialUnlabelled.length],
   ['no Q-authored row is flagged editorial', qAuthoredMislabelled.length === 0, qAuthoredMislabelled.length],
   ['every record states why it can match', noWhy.length === 0, noWhy.length],
