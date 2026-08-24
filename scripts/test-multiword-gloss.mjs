@@ -71,7 +71,7 @@ const HELPERS = `
   const norm = s => (s || '').replace(/\\s+/g, ' ').trim()
   const FOCUSABLE = 'button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
   const stopsIn = el => (el.matches(FOCUSABLE) ? 1 : 0) + el.querySelectorAll(FOCUSABLE).length
-  const nestedControls = () => [...document.querySelectorAll('button')]
+  const nestedControls = () => [...document.querySelectorAll('pre[class*="post-text"] button')]
     .filter(b => b.parentElement && b.parentElement.closest('button')).length
   const occurrences = () => {
     const out = {}
@@ -110,7 +110,9 @@ const withHelpers = body => `(() => { ${HELPERS} ${body} })()`
 const PROBE = token => withHelpers(`
   const want = ${JSON.stringify(token)}
   const wantN = norm(want).toLowerCase()
-  const btns = [...document.querySelectorAll('button[aria-expanded]')]
+  // Scoped to the drop for the same reason the wait above is: a control in the page shell is not
+  // a glossary control, and counting one would put a sidebar row into duplicateTargets.
+  const btns = [...document.querySelectorAll('pre[class*="post-text"] button[aria-expanded]')]
   const mine = btns.filter(b => norm(b.textContent).toLowerCase() === wantN)
   const dupes = {}
   for (const b of btns) {
@@ -144,7 +146,14 @@ let outsideAnnotation = 0
 const splitTokens = []
 for (const [token, postNum] of target) {
   const page = await browser.page(`${BASE}/post/${postNum}`)
-  await page.waitFor(`document.querySelectorAll('button[aria-expanded]').length > 0`, { timeout: 60000 })
+  // WAIT FOR THE DROP, NOT FOR ANY BUTTON ON THE PAGE.
+  //
+  // This waited on document-wide `button[aria-expanded]`, which was the glossary control for as
+  // long as nothing else used the attribute. The sidebar's "Q Extras" disclosure now does, and it
+  // renders with the shell — so the wait returned IMMEDIATELY, the probe ran against a page whose
+  // post body did not exist yet, and all 46 tokens reported "SPLIT NOT MARKED (0 occurrence
+  // groups)". Every one of them was fine; the gate was measuring an empty page.
+  await page.waitFor(`document.querySelectorAll('pre[class*="post-text"] button[aria-expanded]').length > 0`, { timeout: 60000 })
   const raw = await page.evaluate(PROBE(token))
   const r = raw ? JSON.parse(raw) : null
   await page.close()
@@ -230,7 +239,7 @@ for (const c of SPLIT_CASES) {
     // and this asserts precisely that rather than assuming today's interval layout.
     const solo = JSON.parse(await page.evaluate(withHelpers(`
       const want = ${JSON.stringify(c.token)}.toLowerCase()
-      const mine = [...document.querySelectorAll('button[aria-expanded]')].filter(b => norm(b.textContent).toLowerCase() === want)
+      const mine = [...document.querySelectorAll('pre[class*="post-text"] button[aria-expanded]')].filter(b => norm(b.textContent).toLowerCase() === want)
       const b = mine[0]
       return JSON.stringify({ count: mine.length, tabbable: b ? b.tabIndex >= 0 : false,
         label: b ? b.getAttribute('aria-label') : null, text: b ? norm(b.textContent) : null,
@@ -302,7 +311,7 @@ for (const c of SPLIT_CASES) {
 console.log('')
 {
   const page = await browser.page(`${BASE}/post/2401`)
-  await page.waitFor(`document.querySelectorAll('button[aria-expanded]').length > 0`, { timeout: 60000 })
+  await page.waitFor(`document.querySelectorAll('pre[class*="post-text"] button[aria-expanded]').length > 0`, { timeout: 60000 })
   const r = JSON.parse(await page.evaluate(PROBE('WASH POST')))
   check(r.count === 3, '#2401 — all three WASH POST occurrences have a target', `${r.count} of 3`)
   // WHETHER this occurrence is inside an annotation depends on the build — the workbench paints an
@@ -318,11 +327,11 @@ console.log('')
 }
 {
   const page = await browser.page(`${BASE}/post/1828`)
-  await page.waitFor(`document.querySelectorAll('button[aria-expanded]').length > 0`, { timeout: 60000 })
+  await page.waitFor(`document.querySelectorAll('pre[class*="post-text"] button[aria-expanded]').length > 0`, { timeout: 60000 })
   // The drop the first attempt broke. BO and CM are single-word terms in a drop that also carries
   // NO NAME and SUPREME COURT — the exact interaction that regressed.
   const both = JSON.parse(await page.evaluate(withHelpers(`
-    const t = [...document.querySelectorAll('button[aria-expanded]')].map(b => b.textContent.trim())
+    const t = [...document.querySelectorAll('pre[class*="post-text"] button[aria-expanded]')].map(b => b.textContent.trim())
     return JSON.stringify({ bo: t.filter(x => x === 'BO').length, cm: t.filter(x => x === 'CM').length, nested: nestedControls() })`)))
   check(both.bo > 0, '#1828 — BO still has a target beside the multi-word terms', `${both.bo}`)
   check(both.cm > 0, '#1828 — CM still has a target beside the multi-word terms', `${both.cm}`)
@@ -331,9 +340,9 @@ console.log('')
 }
 {
   const page = await browser.page(`${BASE}/post/3004`)
-  await page.waitFor(`document.querySelectorAll('button[aria-expanded]').length > 0`, { timeout: 60000 })
+  await page.waitFor(`document.querySelectorAll('pre[class*="post-text"] button[aria-expanded]').length > 0`, { timeout: 60000 })
   const dag = JSON.parse(await page.evaluate(`(() => {
-    const b = [...document.querySelectorAll('button[aria-expanded]')].find(x => x.textContent.trim() === 'DAG')
+    const b = [...document.querySelectorAll('pre[class*="post-text"] button[aria-expanded]')].find(x => x.textContent.trim() === 'DAG')
     return JSON.stringify({ present: Boolean(b), label: b ? b.getAttribute('aria-label') : null })
   })()`))
   check(dag.present, '#3004 — DAG still proves office versus officeholder', dag.label ? dag.label.slice(0, 46) : 'ABSENT')
@@ -344,8 +353,8 @@ console.log('')
 console.log('')
 {
   const page = await browser.page(`${BASE}/post/2401`)
-  await page.waitFor(`document.querySelectorAll('button[aria-expanded]').length > 0`, { timeout: 60000 })
-  const pick = `[...document.querySelectorAll('button[aria-expanded]')].find(b => b.textContent.replace(/\\s+/g,' ').trim() === 'WASH POST')`
+  await page.waitFor(`document.querySelectorAll('pre[class*="post-text"] button[aria-expanded]').length > 0`, { timeout: 60000 })
+  const pick = `[...document.querySelectorAll('pre[class*="post-text"] button[aria-expanded]')].find(b => b.textContent.replace(/\\s+/g,' ').trim() === 'WASH POST')`
 
   const kbd = await page.evaluate(`(() => { const b = ${pick}; b.focus(); b.dispatchEvent(new FocusEvent('focus', {bubbles:true}));
     return JSON.stringify({ focused: document.activeElement === b, expanded: b.getAttribute('aria-expanded') }) })()`)
@@ -392,14 +401,14 @@ console.log('')
 // carries the lesson twice is that it was learned twice.
 console.log('')
 for (const [label, sel, pn] of [
-  ['contiguous', `[...document.querySelectorAll('button[aria-expanded]')].find(x => x.textContent.replace(/\\s+/g,' ').trim() === 'WASH POST')`, 2401],
+  ['contiguous', `[...document.querySelectorAll('pre[class*="post-text"] button[aria-expanded]')].find(x => x.textContent.replace(/\\s+/g,' ').trim() === 'WASH POST')`, 2401],
   // A term that is ACTUALLY split in this build. #2462 used to be the example and stopped being
   // one when the Emphasis fill came out, so the fixture is chosen from what the page does rather
   // than from what it did.
   ['split', `document.querySelector('[data-gloss-occ="${occurrenceId(1791, 'FOX NEWS', 0)}"][data-gloss-anchor]')`, 1791],
 ]) {
   const page = await browser.page(`${BASE}/post/${pn}`, { width: 390, height: 844 })
-  await page.waitFor(`document.querySelectorAll('button[aria-expanded]').length > 0`, { timeout: 60000 })
+  await page.waitFor(`document.querySelectorAll('pre[class*="post-text"] button[aria-expanded]').length > 0`, { timeout: 60000 })
   const found = await page.evaluate(`(() => { const b = ${sel}; if (!b) return 'none'; b.click(); return 'tapped' })()`)
   check(found === 'tapped', `mobile — the ${label} term is reachable at 390px`, found === 'tapped' ? 'trigger present' : 'NO TRIGGER')
   if (found !== 'tapped') { await page.close(); continue }
@@ -440,7 +449,13 @@ console.log('')
   let orphaned = 0
   for (const pn of drops) {
     const page = await browser.page(`${BASE}/post/${pn}`)
-    await page.waitFor(`document.querySelectorAll('button[aria-expanded]').length > 0`, { timeout: 60000 })
+    // THE SWEEP WAITS FOR THE DROP, NOT FOR A CONTROL IN IT.
+    //
+    // Unlike the per-token checks above, a drop with ZERO glossary controls is a valid input
+    // here - it contributes nothing to the nested/duplicate tallies and that is the correct
+    // answer. Waiting on a control made every such drop burn the full 60s timeout, which is why
+    // this sweep is the slowest thing in the suite; the body is the honest readiness condition.
+    await page.waitFor(`document.querySelectorAll('pre[class*="post-text"]').length > 0`, { timeout: 60000 })
     const r = JSON.parse(await page.evaluate(withHelpers(`
       const occs = occurrences()
       let dup = 0, orphan = 0
@@ -452,7 +467,7 @@ console.log('')
       }
       const seen = {}
       let same = 0
-      for (const b of document.querySelectorAll('button[aria-expanded]')) {
+      for (const b of document.querySelectorAll('pre[class*="post-text"] button[aria-expanded]')) {
         const r = b.getBoundingClientRect()
         const k = norm(b.textContent) + '@' + Math.round(r.left) + ',' + Math.round(r.top)
         if (seen[k]) same++; else seen[k] = 1
