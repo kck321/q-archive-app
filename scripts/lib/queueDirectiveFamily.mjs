@@ -108,6 +108,14 @@ RULES.push(
   ['operational', /^["'“”\s]*:?\s*stay at home\b|^["'“”\s]*[“"]keep them (starved|blind|stupid)|^["'“”\s]*command away from generals\b|^["'“”\s]*[“"]set the stage\b|^["'“”\s]*\*think scramble\b|^["'“”\s]*:?protect[_ ]|^["'“”\s]*\(?\d{3}[)\s-]\s*\d{3}-\d{4}\s*$|^["'“”\s]*1-\d{3}-\d{3}-\d{4}\s*$/i],
 )
 
+// APPENDED 2026-08-25 for the owner's #4949 ruling: the Gettysburg Address line ("that this
+// nation, under God, shall have a new birth of freedom…") is a Directive. Quoted patriotic
+// exhortation, the same bucket as the unity slogans and the Declaration's opening — morale.
+// Without this the span falls through to 'other', which the QA gate refuses.
+RULES.push(
+  ['morale', /^["'“”\s]*that this nation, under god\b/i],
+)
+
 // ── LINES THAT STATE NO INSTRUCTION ────────────────────────────────────────
 //
 // Four shapes on the Q Directives sheet instruct nobody to do anything, and no honest family

@@ -247,10 +247,13 @@ const checks = [
   // -1 on 2026-08-24: "post 1443 i want to make the #2. a claim not a directive". A line of that
   // drop's evidence list, between "JC." and "LL." and the same shape as "302s", "Texts" and
   // "Tarmac" around it — all Claims. It instructs nobody, which is what a Directive is for.
-  ['directive occurrences = 3,471', all.length === 3471, all.length],
+  // +1 on 2026-08-25: "Post 4949, this sentence should be a directive" — the Gettysburg Address
+  // line, attribution included, family `morale` by an appended rule in queueDirectiveFamily.mjs.
+  ['directive occurrences = 3,472', all.length === 3472, all.length],
   // 486 (round 1) + 455 (round 2) + 24 (round 2's held rows, owner-ruled 2026-08-24) = 965.
   // +5 on 2026-08-24: the WWG1WGA ruling above.
-  ['queue rulings applied = 970', queueStats.added + queueStats.already === 970,
+  // +1 on 2026-08-25: #4949's Gettysburg line.
+  ['queue rulings applied = 971', queueStats.added + queueStats.already === 971,
     `${queueStats.added} added + ${queueStats.already} already certified`],
   // The detector's answer is kept wherever it has one; only its residue is decided by the queue
   // ruleset, and nothing may land in 'other'.
@@ -261,12 +264,14 @@ const checks = [
   // repetition - "Thank you Patriots." and "Happy Hunting." recur across dozens of drops.
   // +101: the 405 new occurrences carry 101 wordings Directives did not already hold — the batch
   // repeats itself heavily, WWG1WGA alone accounting for ~170 of them.
-  ['distinct = 1,941', distinct.size === 1941, distinct.size],
+  // +1 on 2026-08-25: the Gettysburg line is a wording Directives did not hold.
+  ['distinct = 1,942', distinct.size === 1942, distinct.size],
   // +225 posts gain their first certified directive.
   // +228 drops gain their first certified directive.
   // +2 on 2026-08-24: of the five WWG1WGA drops, #2347 and #2565 held no certified directive at
   // all. #1183, #2543 and #2567 already did, so they were already in this set.
-  ['posts with a directive = 1,928', postsWith.size === 1928, postsWith.size],
+  // +1 on 2026-08-25: #4949 gains its first certified directive.
+  ['posts with a directive = 1,929', postsWith.size === 1929, postsWith.size],
   // directiveFamilies is a map keyed by normalised text PER POST, so the 53 in-post repeats
   // share one entry: 2,422 occurrences - 53 repeats = 2,369 keys. The occurrence-level
   // invariant (sum of families === 2,422) is enforced upstream by reconcile-directives.mjs;

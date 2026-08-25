@@ -10521,13 +10521,7 @@
    "rowId": "qe-6e990ceec0d1"
   },
   "qe-6eeb938f0af3": {
-   "aliasPosts": {
-    "Bill de Blasio": 1
-   },
    "kind": "prose",
-   "perPostMentions": {
-    "4935": 1
-   },
    "posts": 1,
    "rowId": "qe-6eeb938f0af3"
   },
@@ -14913,7 +14907,7 @@
   },
   "qe-9e93984165b1": {
    "aliasPosts": {
-    "Senate": 85
+    "Senate": 83
    },
    "kind": "prose",
    "perPostMentions": {
@@ -14987,7 +14981,6 @@
     "3741": 5,
     "3742": 1,
     "3774": 1,
-    "3778": 1,
     "3779": 1,
     "3806": 1,
     "3835": 1,
@@ -15000,8 +14993,7 @@
     "4457": 1,
     "4603": 1,
     "4620": 2,
-    "4817": 1,
-    "4935": 1
+    "4817": 1
    },
    "posts": 85,
    "rowId": "qe-9e93984165b1"
@@ -24867,6 +24859,6 @@
   "repeatBadges": 1113,
   "sourceOnly": 134,
   "sourcePostChips": 358,
-  "unsettledAttributionsExcluded": 88
+  "unsettledAttributionsExcluded": 91
  }
 }

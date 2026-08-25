@@ -1018,6 +1018,51 @@
    "renderAs": "Vault7",
    "renderNote": "RENDERING_PROVENANCE_RULE: the canonical identity is \"Vault 7\" and the ALIAS Q wrote is \"Vault7\". The renderer highlights the alias.",
    "canonicalExisted": false
+  },
+  {
+   "postNum": 3778,
+   "postId": "3778",
+   "canonical": "United States Senate",
+   "aliasUsed": "Senate Minority Leader",
+   "sourceText": "Senate Minority Leader",
+   "type": "political_group",
+   "was": "unclassified",
+   "ruledOn": "2026-08-25",
+   "reasoning": "Owner ruling: \"Senate Minority Leader should be a single enttity in q post 3778 and 4935\". The line is \"Sen. Chuck Schumer (D-NY) – Senate Minority Leader\"; the certified span was the bare \"Senate\" (a United States Senate alias), which boxed one word of a three-word title. Lengthened to the title as Q wrote it — one occurrence, one box.",
+   "renderAs": "Senate Minority Leader",
+   "renderNote": "RENDERING_PROVENANCE_RULE: the canonical identity is \"United States Senate\" and the ALIAS Q wrote is \"Senate Minority Leader\". The renderer highlights the alias.",
+   "replacesAliasOnPost": "Senate",
+   "canonicalExisted": true
+  },
+  {
+   "postNum": 4935,
+   "postId": "4935",
+   "canonical": "United States Senate",
+   "aliasUsed": "Senate Minority Leader",
+   "sourceText": "Senate Minority Leader",
+   "type": "political_group",
+   "was": "unclassified",
+   "ruledOn": "2026-08-25",
+   "reasoning": "Owner ruling, same sentence: the second of the two drops named. The line is \"Senate Minority Leader Chuck Schumer, D-N.Y.\" and the certified span was the bare \"Senate\". Lengthened to the full title.",
+   "renderAs": "Senate Minority Leader",
+   "renderNote": "RENDERING_PROVENANCE_RULE: the canonical identity is \"United States Senate\" and the ALIAS Q wrote is \"Senate Minority Leader\". The renderer highlights the alias.",
+   "replacesAliasOnPost": "Senate",
+   "canonicalExisted": true
+  },
+  {
+   "postNum": 4935,
+   "postId": "4935",
+   "canonical": "Bill de Blasio",
+   "aliasUsed": "Mayor Bill de Blasio",
+   "sourceText": "Mayor Bill de Blasio",
+   "type": "person",
+   "was": "unclassified",
+   "ruledOn": "2026-08-25",
+   "reasoning": "Owner ruling: \"Lets go ahead and make Mayor an entity as well and if its connected to another entity conjoine them into 1\". On #4935 Q writes \"Mayor Bill de Blasio, D-N.Y.C\" and the certified span was the name alone; Mayor is conjoined into the one span. SCOPED TO #4935 — the bare word occurs 16 more times across 7 drops and each needs its own reading; those are held for the owner.",
+   "renderAs": "Mayor Bill de Blasio",
+   "renderNote": "RENDERING_PROVENANCE_RULE: the canonical identity is \"Bill de Blasio\" and the ALIAS Q wrote is \"Mayor Bill de Blasio\". The renderer highlights the alias.",
+   "replacesAliasOnPost": "Bill de Blasio",
+   "canonicalExisted": true
   }
  ],
  "aliasRulings": [

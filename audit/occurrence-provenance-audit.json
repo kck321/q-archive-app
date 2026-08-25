@@ -19,17 +19,17 @@
   "certifiedMentions": 10623,
   "reconciles": true,
   "attribution": {
-   "unique": 10535,
-   "ambiguous": 88
+   "unique": 10532,
+   "ambiguous": 91
   },
   "byCategory": {
-   "visible_complete_token": 9488,
+   "visible_complete_token": 9485,
    "invalid_substring_extraction": 98,
    "visible_alias_variant": 46,
    "url_source_provenance": 645,
    "image_provenance_unconfirmed": 38,
    "no_supported_provenance": 83,
-   "ambiguous_provenance": 96,
+   "ambiguous_provenance": 99,
    "social_account_reference": 129
   },
   "urlSourceByEvidence": {
@@ -117959,16 +117959,13 @@
    "occurrenceId": "#3778:2",
    "postNum": 3778,
    "index": 2,
-   "alias": "Senate",
-   "entityId": "qe-9e93984165b1",
-   "canonical": "United States Senate",
-   "entityType": "political_group",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
+   "alias": "Senate Minority Leader",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "no live entity claims \"Senate Minority Leader\" in this drop",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {
@@ -153056,16 +153053,13 @@
    "occurrenceId": "#4935:0",
    "postNum": 4935,
    "index": 0,
-   "alias": "Senate",
-   "entityId": "qe-9e93984165b1",
-   "canonical": "United States Senate",
-   "entityType": "political_group",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
+   "alias": "Senate Minority Leader",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "no live entity claims \"Senate Minority Leader\" in this drop",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {
@@ -153168,16 +153162,13 @@
    "occurrenceId": "#4935:7",
    "postNum": 4935,
    "index": 7,
-   "alias": "Bill de Blasio",
-   "entityId": "qe-6eeb938f0af3",
-   "canonical": "Bill de Blasio",
-   "entityType": "person",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
+   "alias": "Mayor Bill de Blasio",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "no live entity claims \"Mayor Bill de Blasio\" in this drop",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {

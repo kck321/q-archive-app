@@ -513,7 +513,12 @@ export const OVERLAY_REPAIR = 1
 //     6,321, entities 1,235 -> 1,214 rows and 8,975 -> 8,821 mentions. A returning reader holding
 //     87 would keep the pre-review paint on 41 drops and a registry counting one written word up
 //     to five times, so the seed has to move.
-export const SEED_VERSION = 98   // 98: "Vault 7" is an Entity on #836 — the WikiLeaks release Q
+export const SEED_VERSION = 99   // 99: the owner's 2026-08-25 rulings. "Senate Minority Leader"
+                                 //     is one span on #3778 and #4935 (lengthened from the bare
+                                 //     "Senate"), "Mayor Bill de Blasio" is one span on #4935,
+                                 //     and #4949's Gettysburg Address line is a Directive —
+                                 //     directives 3,333 -> 3,334, #4949's first.
+                                 // 98: "Vault 7" is an Entity on #836 — the WikiLeaks release Q
                                  //     asks about in "Who leaked Vault7 to WL?". A corpus sweep
                                  //     returns exactly one occurrence, so "throughout all the post"
                                  //     and this one drop are the same ruling.

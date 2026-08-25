@@ -1,0 +1,14 @@
+{
+ "note": "The owner ruling of 2026-08-25 on #4949: the Gettysburg Address line is a Directive. Read through lib/queueRulings.mjs, like every other round.",
+ "rulings": [
+  {
+   "postNum": 4949,
+   "postId": "4949",
+   "section": "directives",
+   "sourceText": "that this nation, under God, shall have a new birth of freedom  and that government of the people, by the people, for the people, shall not perish from the earth. - Abraham Lincoln Nov 1863",
+   "was": "unclassified",
+   "ruledOn": "2026-08-25",
+   "provenance": "owner ruling 2026-08-25 — \"Post 4949, this sentence should be a directive\". The span is the whole line as Q rendered it, attribution included, exactly as the owner quoted it — internal double space preserved from the stripped <span> markup. Entities on the line (God, Abraham Lincoln) paint on top per the standing rule."
+  }
+ ]
+}

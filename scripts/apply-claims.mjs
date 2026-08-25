@@ -571,7 +571,8 @@ const checks = [
   // 2,552 + 485 arriving from the same owner ruling. This is a cross-section CHECK, not a source:
   // apply-directives.mjs runs immediately before this step and owns the number.
   // 3,442 + 24 rows round 2 held for stating no instruction, ruled in by the owner on 2026-08-24.
-  ['Directives now 3,471', directives === 3471, directives],
+  // +1 on 2026-08-25: #4949's Gettysburg line — see apply-directives.mjs.
+  ['Directives now 3,472', directives === 3472, directives],
 ]
 
 console.log('\nAPPLY CERTIFIED CLAIMS\n')

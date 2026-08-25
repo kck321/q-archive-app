@@ -1,13 +1,13 @@
 {
- "certifiedAt": "2026-08-25T01:23:21.775Z",
+ "certifiedAt": "2026-08-25T19:53:21.325Z",
  "sections": 8,
- "seedVersion": 98,
+ "seedVersion": 99,
  "note": "Every count here is recomputed from the artifacts, never copied forward. Verify with: node scripts/certification-manifest.mjs --verify",
  "counts": {
   "posts": 4966,
   "questions": 6327,
   "questionRowsShipped": 6643,
-  "directives": 3333,
+  "directives": 3334,
   "claims": 10237,
   "predictions": 950,
   "evidence": 6590,
@@ -21,9 +21,9 @@
  },
  "artifacts": {
   "posts.json": {
-   "sha256": "801ef06970edb07879f228519aada779bc6fc7387db41661cea34a65857cb0a3",
-   "semanticSha256": "688ca2736f39029b2ba924343acd56bba5b252d5e544f88ff855968ed8e8dae9",
-   "bytes": 10401873
+   "sha256": "f7b360fd406469b41604375058924422b5c8932f20d1cc0c3ff247a4f78b5676",
+   "semanticSha256": "3b4792589724307c5049e2c77643118e29b20f0b92beee6d3ae7b5cd1fb9095e",
+   "bytes": 10402347
   },
   "questions.json": {
    "sha256": "9407140deb4f70b4ced88bd969da14167aa1a64d770c607c3b0b6f3047a17b01",
@@ -56,14 +56,14 @@
    "bytes": 268828
   },
   "relationships.json": {
-   "sha256": "f571fd98075762ea1bfbb4f57d85ce60f1f075910916b58bb6f942014dd98eaf",
-   "semanticSha256": "c7b5ba17e730831d01fdf271971a7f66f626495a8f6d81a55e2de87d9ff651b0",
+   "sha256": "8b4dbf0c361aacc6e1b77eaf7be362917c3b1429fdae6d848261d01affb6a83c",
+   "semanticSha256": "3940c7419e9369bbdf31861e495fd73dc859c17a42eac64fbe13a76f1f598988",
    "bytes": 2350166
   },
   "search-index.json": {
-   "sha256": "299555abc3ee0604849da78729de8308139b70defd9e37a299786eed79495d78",
-   "semanticSha256": "dc4ecaa9aaf115b72fa840a585786d0ded61f159aa742aae6b20f4a7ceebf3b8",
-   "bytes": 8108999
+   "sha256": "7089b546daef715be1ed389b4e5f589d79788c2d6ee65dd7f46a0064a9a2f167",
+   "semanticSha256": "fc2bb1e66e1f5597a2a17c893ef8e9ace832cf6231da7aee3d5c470049c5ac87",
+   "bytes": 8109334
   },
   "entity-hovers.json": {
    "sha256": "e7e3752b30220bf3c8502ea5f625edbde01a04cd79a459309f9d604a313542d7",
@@ -79,9 +79,9 @@
    "posts": 1705
   },
   "directives": {
-   "occurrences": 3333,
-   "distinct": 1941,
-   "posts": 1928
+   "occurrences": 3334,
+   "distinct": 1942,
+   "posts": 1929
   },
   "claims": {
    "occurrences": 10237,

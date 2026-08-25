@@ -27,6 +27,9 @@ export const QUEUE_RULING_FILES = [
   // wherever it is not already one (five spans; 171 of 178 already were), and #1443's bare
   // evidence line "Texts" is a Claim.
   'audit/unhighlighted-owner-rulings-2-wwg1wga.json',
+  // The owner's ruling of 2026-08-25: #4949's Gettysburg Address line is a Directive,
+  // attribution included, exactly as quoted.
+  'audit/unhighlighted-owner-rulings-2026-08-25-lincoln.json',
 ]
 
 // A LATER OWNER RULING MAY OVERRIDE AN EARLIER ROUND'S, AND THE OVERRIDE LIVES HERE TOO.

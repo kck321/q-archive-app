@@ -100,7 +100,10 @@ export const CANONICAL = {
   // directive at all before.
   // -1 on 2026-08-24: #1443's "#2." moves to Claims on the owner's ruling. A line of that drop's
   // evidence list, the same shape as "302s", "Texts" and "Tarmac" around it — all Claims.
-  directives: { occurrences: 3333, distinct: 1941, posts: 1928 },
+  // +1 on 2026-08-25: "Post 4949, this sentence should be a directive" — the Gettysburg Address
+  // line, attribution included, family `morale` by an appended rule. #4949 gains its first
+  // certified directive (posts +1) and the wording is new to the section (distinct +1).
+  directives: { occurrences: 3334, distinct: 1942, posts: 1929 },
   // 4,181 -> 4,188 on 2026-08-13 by owner adjudication, not by a classifier. Six exact
   // occurrences of "Pure evil." / "PURE EVIL." plus "The 'real' racist." in #2917. The corpus
   // search that found them also showed the fuller variants ("These people are pure evil.",
