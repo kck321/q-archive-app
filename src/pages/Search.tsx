@@ -186,7 +186,7 @@ export default function Search() {
                     )}
                   </div>
                 ) : (
-                  <p className="mt-1.5 text-sm text-gray-200 whitespace-pre-wrap break-words">{h.row.t}</p>
+                  <p className="mt-1.5 text-sm text-gray-200 whitespace-pre-wrap break-words post-font">{h.row.t}</p>
                 )}
 
                 <p className="mt-1 text-[11px] text-gray-500">{h.row.w}</p>

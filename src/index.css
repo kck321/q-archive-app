@@ -163,6 +163,13 @@ body {
    theirs. 15px sits just under their 16px.
 
    `pre` still supplies the wrapping; this only sets the type. */
+/* Drop wording rendered OUTSIDE the standard post body (search result rows, etc.) takes the
+   face without the size — .post-text pins 15px, which would resize excerpts styled text-sm. */
+.post-font {
+  font-family: "Open Sans", Arial, sans-serif, "Apple Color Emoji",
+               "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
 .post-text {
   /* Open Sans to match qalerts.app's drop text (its body face) — owner ruling 2026-08-25.
      STYLE ONLY: the 15px size and line-height are the owner's and stay. */
