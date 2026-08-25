@@ -1,7 +1,7 @@
 {
  "breakdown": [
   {
-   "count": 1450,
+   "count": 1453,
    "key": "prose",
    "label": "named in Q’s prose"
   },
@@ -207,8 +207,8 @@
     },
     {
      "canonical": "Donald Trump",
-     "mentions": 65,
-     "posts": 58
+     "mentions": 66,
+     "posts": 59
     },
     {
      "canonical": "4,10,20",
@@ -3861,7 +3861,7 @@
     "3992": 3,
     "4469": 1
    },
-   "posts": 33,
+   "posts": 34,
    "rowId": "qe-27e676aae866"
   },
   "qe-280afe3750cf": {
@@ -7264,6 +7264,17 @@
    "posts": 1,
    "rowId": "qe-49dc8a747f78"
   },
+  "qe-49ef9ed98d6f": {
+   "aliasPosts": {
+    "House Oversight": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1319": 1
+   },
+   "posts": 1,
+   "rowId": "qe-49ef9ed98d6f"
+  },
   "qe-49f918c2b2f5": {
    "aliasPosts": {
     "John Berman": 1
@@ -7298,6 +7309,17 @@
    },
    "posts": 1,
    "rowId": "qe-4a82aa54ac3f"
+  },
+  "qe-4a9daff80da3": {
+   "aliasPosts": {
+    "L.": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "300": 1
+   },
+   "posts": 1,
+   "rowId": "qe-4a9daff80da3"
   },
   "qe-4ab13e3a5689": {
    "aliasPosts": {
@@ -8637,13 +8659,7 @@
    "rowId": "qe-58839de49bd1"
   },
   "qe-58989e125d18": {
-   "aliasPosts": {
-    "Fiddler": 1
-   },
    "kind": "prose",
-   "perPostMentions": {
-    "836": 1
-   },
    "posts": 1,
    "rowId": "qe-58989e125d18"
   },
@@ -9632,12 +9648,11 @@
   },
   "qe-64638efe25c2": {
    "aliasPosts": {
-    "Waters": 2
+    "Waters": 1
    },
    "kind": "prose",
    "perPostMentions": {
-    "2854": 1,
-    "3383": 1
+    "2854": 1
    },
    "posts": 2,
    "rowId": "qe-64638efe25c2"
@@ -11154,7 +11169,7 @@
     "4095": 1,
     "4793": 1
    },
-   "posts": 58,
+   "posts": 59,
    "rowId": "qe-f918f4a7fbe4"
   },
   "qe-781ec9495933": {
@@ -11481,15 +11496,16 @@
   },
   "qe-7b48ab004482": {
    "aliasPosts": {
-    "Attorney General": 3
+    "Attorney General": 4
    },
    "kind": "prose",
    "perPostMentions": {
+    "1319": 1,
     "1927": 1,
     "1991": 1,
     "4838": 1
    },
-   "posts": 3,
+   "posts": 4,
    "rowId": "qe-7b48ab004482"
   },
   "qe-7b92dffbaf4b": {
@@ -12784,6 +12800,17 @@
    },
    "posts": 7,
    "rowId": "qe-85eeac4dbdc4"
+  },
+  "qe-8649e757f65a": {
+   "aliasPosts": {
+    "Government Reform Committee": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1319": 1
+   },
+   "posts": 1,
+   "rowId": "qe-8649e757f65a"
   },
   "qe-867886019e82": {
    "aliasPosts": {
@@ -14135,13 +14162,15 @@
   },
   "qe-95b35eac2da9": {
    "aliasPosts": {
+    "F-15": 1,
     "F15": 1
    },
    "kind": "prose",
    "perPostMentions": {
+    "2734": 1,
     "2735": 1
    },
-   "posts": 1,
+   "posts": 2,
    "rowId": "qe-95b35eac2da9"
   },
   "qe-95ba4bd9b0b8": {
@@ -14369,13 +14398,14 @@
   },
   "qe-9915f2d24b89": {
    "aliasPosts": {
-    "House Committee": 1
+    "House Committee": 2
    },
    "kind": "prose",
    "perPostMentions": {
+    "1319": 1,
     "2501": 1
    },
-   "posts": 1,
+   "posts": 2,
    "rowId": "qe-9915f2d24b89"
   },
   "qe-993b70a4d8e6": {
@@ -17171,7 +17201,7 @@
   },
   "qe-b80ea6d8ed16": {
    "aliasPosts": {
-    "Biden": 34,
+    "Biden": 33,
     "Joe Biden": 3,
     "Joseph R": 1
    },
@@ -17180,7 +17210,7 @@
     "953": 1,
     "964": 1,
     "3381": 3,
-    "3383": 3,
+    "3383": 2,
     "3590": 1,
     "3754": 1,
     "3896": 1,
@@ -20475,7 +20505,7 @@
     "NP": 6,
     "Nancy Pelosi": 2,
     "Nancy Pelosi (D-CA) – Speaker of the House": 1,
-    "Pelosi": 27
+    "Pelosi": 26
    },
    "kind": "prose",
    "perPostMentions": {
@@ -20499,7 +20529,6 @@
     "2854": 1,
     "3028": 2,
     "3370": 1,
-    "3383": 1,
     "3386": 1,
     "3590": 1,
     "3741": 2,
@@ -24817,16 +24846,16 @@
  "ruledOn": "2026-08-17",
  "sourceNote": "The post linked this source. It is not necessarily named in Q’s prose, and it is never counted as a mention.",
  "totals": {
-  "canonicalEntities": 1584,
-  "dormantReserved": 227,
-  "mentions": 9519,
+  "canonicalEntities": 1587,
+  "dormantReserved": 226,
+  "mentions": 9528,
   "mergedIdentities": 26,
   "mergedRows": 11,
-  "proseMentioned": 1450,
-  "publicRows": 1569,
+  "proseMentioned": 1453,
+  "publicRows": 1572,
   "repeatBadges": 1113,
   "sourceOnly": 134,
   "sourcePostChips": 358,
-  "unsettledAttributionsExcluded": 81
+  "unsettledAttributionsExcluded": 88
  }
 }

@@ -2,7 +2,7 @@
  "note": "Entities left with no certified mention and no bound linked source. Retired from the public bundle: excluded from Entities, search, autocomplete, global synopses and hovers. THE IDS ARE RESERVED PERMANENTLY — a later occurrence resolves back to the same qe- id rather than minting a second identity.",
  "policy": "audit/url-derived-entity-policy.json + the 2026-08-17 boundary ruling + Owner Ruling 3 (2026-08-22)",
  "reserved": "audit/entity-ids.json keeps every id in this list.",
- "total": 227,
+ "total": 226,
  "entities": [
   {
    "id": "qe-a67f315bc9ac",
@@ -561,12 +561,6 @@
    "canonical": "House Judiciary",
    "type": "government_institution",
    "slug": "house-judiciary"
-  },
-  {
-   "id": "qe-49ef9ed98d6f",
-   "canonical": "House Oversight",
-   "type": "government_institution",
-   "slug": "house-oversight"
   },
   {
    "id": "qe-9c86660b4ddb",

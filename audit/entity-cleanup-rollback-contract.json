@@ -284,6 +284,22 @@
    "rendered": 2,
    "evidence": "TWO, not three. The third standalone Q on #2347 is inside the twitter handle \"Q_ANONBaby\" on the link line and stays held - a word inside an address is not a word Q wrote, the same rule that refused WWG1WGA inside a URL on #1601 and #3660 in this batch. Post-level scope alone would have taken all three; includeOccurrences names [3,31] and [4,4] and nothing else. build-q-entity-ruling.mjs now refuses if its ruling and that occurrence list disagree - they did, which is how this was caught: the ruling said 76 drops and the alias painted 75. apply-entities.mjs asserts resolved mentions 10,613, owner-alias 2,200 and adjudicated-tail 4,009, each exactly +2.",
    "why": "The 2026-08-17 approval record is left exactly as written, for the same reason as the eight deltas before this one: the guard must still refuse an unrecognised tree, and a later owner ruling must not read as drift."
+  },
+  {
+   "ruling": "audit/entities-owner-rulings.json (rulings[], 2026-08-24 post-scoped batch)",
+   "ruledOn": "2026-08-24",
+   "what": "Thirteen owner rulings, each scoped to the drop it names: \"Just classify these categories on only these specific post i gave you: not across the whole app\". #300 \"L.\", #836 \"OP Name: Fiddler\", #1319 Goodlatte / House Committee / House Oversight / Government Reform Committee / Democratic / Attorney General, #1565 \"45\" as Donald Trump, #2734 \"F-15\", #3383 \"M. Waters\" / \"N. Pelosi\" / \"J. Biden\". They arrive BEFORE this step, because apply-entities.mjs is earlier in the chain.",
+   "entityRows": 2,
+   "mentions": 9,
+   "rendered": 9,
+   "evidence": "NINE mentions, not thirteen. Four of the rulings are SPAN EXTENSIONS — #836's \"Fiddler\" and #3383's \"Waters\"/\"Pelosi\"/\"Biden\" are lengthened to the whole name Q wrote — so one occurrence stays one occurrence and only the paint changes. Of the nine, eight are a first occurrence on the drop named and one (#1319 \"Goodlatte\") is a second occurrence on a drop the identity already appears on, which is what additionalOccurrence records. TWO new rows, not three: the rulings create \"L.\", \"House Oversight\" and \"Government Reform Committee\", and one queue-created row is no longer minted because \"L.\" is now an owner identity rather than a held wording — queue holds 86 -> 85. SCOPING IS THE POINT: registering \"45\" as a corpus-wide alias of Donald Trump would have claimed 281 occurrences across 255 drops.",
+   "why": "The 2026-08-17 approval record is left exactly as written, for the same reason as the ten deltas before this one.",
+   "afterOnly": {
+    "entityRows": 1,
+    "mentions": 0,
+    "rendered": 0
+   },
+   "afterOnlyWhy": "ONE ROW, NO MENTIONS. The cleanup keeps one identity it used to withdraw — an owner ruling now holds it, and an owner ruling outranks an audit pass — but its occurrences were already counted on the BEFORE side, so the mention arithmetic does not move again. Recorded on the after side only, exactly as the Al Gore and Roseanne Barr restorations were: folding it into `mentions` would make the guard expect a starting point that never existed."
   }
  ]
 }

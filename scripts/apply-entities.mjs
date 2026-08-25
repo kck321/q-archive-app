@@ -205,9 +205,20 @@ const allPostsForAlias = JSON.parse(fs.readFileSync(path.join(DATA, 'posts.json'
 const ownerEntities = fs.existsSync(ORULES) ? JSON.parse(fs.readFileSync(ORULES, 'utf8')).rulings ?? [] : []
 let ownerAdded = 0, ownerMentions = 0
 for (const r of ownerEntities) {
+  // A SPAN EXTENSION IS NOT A NEW MENTION. #3383's list is certified as "Waters", "Pelosi",
+  // "Biden" — the initial in front of each was cut off — and the owner ruled the initial part of
+  // the name. Adding a second entry beside the first would paint a box inside a box and count one
+  // person twice on one line, so these rulings only lengthen the span the drop already carries.
+  // Applied where byPost is built; see replacesAliasOnPost there.
+  if (r.replacesAliasOnPost) continue
   const existing = entities.find(e => e.canonical === r.canonical)
   if (existing) {
-    if (existing.posts.includes(r.postNum)) continue
+    // A SECOND OCCURRENCE ON A DROP THE IDENTITY ALREADY APPEARS ON IS STILL AN OCCURRENCE.
+    // #1319 certifies "Bob Goodlatte - Republican" in the list and names him again by surname on
+    // line 59. Skipping on post membership alone would paint that second span while the count
+    // stayed put, and the materialised-vs-certified equality below would refuse the write.
+    if (existing.posts.includes(r.postNum) && !r.additionalOccurrence) continue
+    if (r.additionalOccurrence) { existing.mentions += 1; ownerMentions++; continue }
     existing.posts.push(r.postNum); existing.posts.sort((a, b) => a - b)
     existing.mentions += 1
     ownerMentions++
@@ -785,7 +796,10 @@ const unresolvedAliases = [
   // Owner rulings materialise the same way: the ALIAS Q wrote, never the canonical name. The
   // drop says "Dominion." and will never say "Dominion Voting Systems", so writing the canonical
   // here would count the mention and highlight nothing.
-  for (const r of ownerEntities) push(r.postNum, r.aliasUsed || r.sourceText)
+  for (const r of ownerEntities) {
+    if (r.replacesAliasOnPost) continue          // lengthened below, never added beside
+    push(r.postNum, r.aliasUsed || r.sourceText)
+  }
   for (const [pn, al] of aliasByPost) push(pn, al)
 
   // ── Stage 1 withdrawals leave the render layer too ─────────────────────────
@@ -940,9 +954,15 @@ const checks = [
   // 2026-08-24 round 3: the owner ruled the 128 held wordings Entities and each was researched
   // against the drop it sits in; 103 ruling rows resolved, 85 remain held and are in
   // audit/held-entity-resolution-center.json. NAT SEC certified across 48 drops in the same batch.
-  ['queue entity holds = 86, all listed', queueHeld.length === 86, queueHeld.length],
+  // -1 on 2026-08-24: "L." was one of the held wordings — a corpus-wide alias nobody had named —
+  // and the owner named it on #300. A hold lifts when a later ruling answers it.
+  ['queue entity holds = 85, all listed', queueHeld.length === 85, queueHeld.length],
   // 118 + NAT SEC + White House Press = 120.
-  ['owner entity rulings applied = 120', ownerAdded === 120, ownerAdded],
+  // 120 -> 123: three identities the 2026-08-24 post-scoped rulings create — "L." (#300),
+  // "House Oversight" and "Government Reform Committee" (#1319, one line naming two bodies). The
+  // other ten rulings reuse an identity the registry already holds, which is the point: a second
+  // row for a person the archive already knows is the duplicate-identity defect.
+  ['owner entity rulings applied = 123', ownerAdded === 123, ownerAdded],
   ['owner merge rulings applied = 1', ownerMerged === 1, ownerMerged],
   // 1,335 - 1: Ray Chandler is now an alias of Rachel Chandler, not a row of her own.
   // 1,445 -> 1,408: -19 rows merged away as duplicate canonicals, -18 rows withdrawn as
@@ -952,7 +972,9 @@ const checks = [
   // the list Q pastes across #135-#138, 65 journalists and their outlets from #1515's "THE BRIDGE"
   // list, and the retiring members of Congress from #1319/#1850 — every name read off Q's own line.
   // 1,751 + 48 named out of round 2's held list + NAT SEC + White House Press = 1,801.
-  ['canonical entities = 1,801', entities.length === 1801, entities.length],
+  // 1,801 -> 1,803. Three identities are created by the rulings above and one queue-created row
+  // is no longer minted, because "L." is now an owner identity rather than a held wording.
+  ['canonical entities = 1,803', entities.length === 1803, entities.length],
   // 8,227 + 12 RC. The merge moves 4 mentions between rows and adds none.
   // 9,786 -> 9,747: -39, the occurrences of the 18 withdrawn rows. The 17 merges move mentions
   // ACROSS rows and add none, so they are absent from this arithmetic by design — asserted
@@ -976,7 +998,15 @@ const checks = [
   // held by the "the word question" rule, which was written for those two lines; the owner read the
   // drop and ruled otherwise. TWO, not three: the third Q on that drop is inside the twitter handle
   // "Q_ANONBaby" and stays held, which is what includeOccurrences is for.
-  ['resolved mentions = 10,613', totals.mentions === 10613, totals.mentions],
+  // +9 on 2026-08-24, the post-scoped entity rulings. Eight are a first occurrence of an identity
+  // on the drop named; the ninth is #1319's "Goodlatte", a SECOND occurrence on a drop the identity
+  // already appears on — the list certifies "Bob Goodlatte - Republican" and line 59 names him
+  // again by surname.
+  //
+  // The four SPAN EXTENSIONS add nothing: #836 "Fiddler" -> "OP Name: Fiddler" and #3383's
+  // "Waters"/"Pelosi"/"Biden" -> "M. Waters"/"N. Pelosi"/"J. Biden" lengthen a span the drop
+  // already carries, so one occurrence stays one occurrence.
+  ['resolved mentions = 10,622', totals.mentions === 10622, totals.mentions],
   ['stage 1: 19 rows merged away', !stage1 || s1Merged === 19, s1Merged],
   ['stage 1: 85 types corrected', !stage1 || s1Typed === 85, s1Typed],
   // 18 in the audit, 17 applied: ENT-0709 "Non-profit organization" is HELD because it
@@ -1008,14 +1038,17 @@ const checks = [
   // (alias NP, 2 mentions), is held because it contradicts a standing owner ruling.
   // +8: queue rulings that landed on a core-registry identity.
   // +61: round-2 rulings that landed on a core-registry identity.
-  ['core-registry mentions = 5,436', totals.coreRegistryMentions === 5436, totals.coreRegistryMentions],
+  // +2: two of the nine land on a core-registry identity.
+  ['core-registry mentions = 5,438', totals.coreRegistryMentions === 5438, totals.coreRegistryMentions],
   // 3,440 + 34 C19 + 12 RC: COVID-19 and Rachel Chandler are tail entities, so alias rulings on
   // them land here.
   // +58: queue rulings that landed on an adjudicated-tail identity.
   // +6, the same six again - one movement, counted in three places by design.
   // +54: round-2 rulings that landed on an adjudicated-tail identity.
   // +2, the same two: Alice is an adjudicated-tail identity, so an alias ruling on it lands here.
-  ['adjudicated-tail mentions = 4,009', totals.adjudicatedTailMentions === 4009, totals.adjudicatedTailMentions],
+  // +4: four land on an adjudicated-tail identity. The remaining three land on owner-ruling rows,
+  // which is where an identity the owner created lives.
+  ['adjudicated-tail mentions = 4,013', totals.adjudicatedTailMentions === 4013, totals.adjudicatedTailMentions],
   ['tail occurrence rows = 3,440', tailOccurrences.length === 3440, tailOccurrences.length],
   ['every tail occurrence carries a post identity', tailOccurrences.every(o => o.postNum && o.id), 'ok'],
   ['every tail entity now has post provenance',
@@ -1101,6 +1134,36 @@ fs.writeFileSync(path.join(DATA, 'entities.json'), JSON.stringify({ certified: t
   // difference is entities Q names more than once in a drop. Writing presence would make the
   // Entities page under-report by 1,471 and the in-post repeats would vanish, which is the same
   // occurrence-identity mistake that produced every wrong count in this project.
+
+  // ── OWNER SPAN EXTENSIONS — one occurrence, spelled the way Q spelled it ────
+  //
+  // LAST, deliberately. The span being lengthened may have been pushed by ANY of the layers
+  // above — #836's "Fiddler" arrives from the queue entity rulings, hundreds of lines after the
+  // owner-ruling push — so running this earlier found nothing to lengthen and refused.
+  //
+  // "Lets make each one of these full entities you are forgetting to highlight the first letter of
+  // their names" (2026-08-24). The certified span on #3383 was "Waters"; Q wrote "M. Waters". This
+  // LENGTHENS the entry already on the drop rather than adding a second one, so the mention count
+  // does not move and the reader does not get a box inside a box.
+  //
+  // Refuses rather than under-apply: a ruling naming a span the drop does not carry is a ruling
+  // that needs re-reading, not one to drop quietly.
+  let extended = 0
+  for (const r of ownerEntities) {
+    if (!r.replacesAliasOnPost) continue
+    const list = byPost.get(r.postNum)
+    const at = list ? list.indexOf(r.replacesAliasOnPost) : -1
+    if (at < 0) {
+      console.error(`
+❌ span extension: #${r.postNum} does not carry ${JSON.stringify(r.replacesAliasOnPost)}, so it cannot be lengthened to ${JSON.stringify(r.aliasUsed)}.
+`)
+      process.exit(1)
+    }
+    list[at] = r.aliasUsed
+    extended++
+  }
+  if (extended) console.log(`  owner span extensions : ${extended} span(s) lengthened, no mention added`)
+
 
   const materialised = [...byPost.values()].reduce((n, l) => n + l.length, 0)
   if (materialised !== totals.mentions) {

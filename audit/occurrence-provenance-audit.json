@@ -15,21 +15,21 @@
   "ambiguous_provenance": "Attribution or URL evidence is genuinely undecidable. Retained unchanged."
  },
  "totals": {
-  "occurrences": 10613,
-  "certifiedMentions": 10613,
+  "occurrences": 10622,
+  "certifiedMentions": 10622,
   "reconciles": true,
   "attribution": {
-   "unique": 10532,
-   "ambiguous": 81
+   "unique": 10534,
+   "ambiguous": 88
   },
   "byCategory": {
-   "visible_complete_token": 9485,
+   "visible_complete_token": 9487,
    "invalid_substring_extraction": 98,
    "visible_alias_variant": 46,
    "url_source_provenance": 645,
    "image_provenance_unconfirmed": 38,
    "no_supported_provenance": 83,
-   "ambiguous_provenance": 89,
+   "ambiguous_provenance": 96,
    "social_account_reference": 129
   },
   "urlSourceByEvidence": {
@@ -45,8 +45,8 @@
  },
  "ruledOnAuditRun": "2026-08-24",
  "certifiedUnchanged": {
-  "entityRows": 1801,
-  "mentions": 10613
+  "entityRows": 1803,
+  "mentions": 10622
  },
  "rows": [
   {
@@ -15236,26 +15236,23 @@
    "occurrenceId": "#1319:57",
    "postNum": 1319,
    "index": 57,
-   "alias": "U.S.",
-   "entityId": "qe-e4b9b2985b7c",
-   "canonical": "United States",
-   "entityType": "country_region",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
+   "alias": "Goodlatte",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "no live entity claims \"Goodlatte\" in this drop",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#1319:58",
    "postNum": 1319,
    "index": 58,
-   "alias": "U.S.",
-   "entityId": "qe-e4b9b2985b7c",
-   "canonical": "United States",
-   "entityType": "country_region",
+   "alias": "House Committee",
+   "entityId": "qe-9915f2d24b89",
+   "canonical": "House Committee",
+   "entityType": "government_institution",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -15268,10 +15265,10 @@
    "occurrenceId": "#1319:59",
    "postNum": 1319,
    "index": 59,
-   "alias": "U.S.",
-   "entityId": "qe-e4b9b2985b7c",
-   "canonical": "United States",
-   "entityType": "country_region",
+   "alias": "House Oversight",
+   "entityId": "qe-49ef9ed98d6f",
+   "canonical": "House Oversight",
+   "entityType": "government_institution",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -15284,10 +15281,10 @@
    "occurrenceId": "#1319:60",
    "postNum": 1319,
    "index": 60,
-   "alias": "U.S.",
-   "entityId": "qe-e4b9b2985b7c",
-   "canonical": "United States",
-   "entityType": "country_region",
+   "alias": "Government Reform Committee",
+   "entityId": "qe-8649e757f65a",
+   "canonical": "Government Reform Committee",
+   "entityType": "government_institution",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -15300,26 +15297,23 @@
    "occurrenceId": "#1319:61",
    "postNum": 1319,
    "index": 61,
-   "alias": "U.S.",
-   "entityId": "qe-e4b9b2985b7c",
-   "canonical": "United States",
-   "entityType": "country_region",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
+   "alias": "Democratic",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "no live entity claims \"Democratic\" in this drop",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#1319:62",
    "postNum": 1319,
    "index": 62,
-   "alias": "U.S.",
-   "entityId": "qe-e4b9b2985b7c",
-   "canonical": "United States",
-   "entityType": "country_region",
+   "alias": "Attorney General",
+   "entityId": "qe-7b48ab004482",
+   "canonical": "Attorney General",
+   "entityType": "title_role",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -15396,10 +15390,10 @@
    "occurrenceId": "#1319:67",
    "postNum": 1319,
    "index": 67,
-   "alias": "NY",
-   "entityId": "qe-ce9b4b609ab5",
-   "canonical": "New York",
-   "entityType": "location",
+   "alias": "U.S.",
+   "entityId": "qe-e4b9b2985b7c",
+   "canonical": "United States",
+   "entityType": "country_region",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -15412,6 +15406,86 @@
    "occurrenceId": "#1319:68",
    "postNum": 1319,
    "index": 68,
+   "alias": "U.S.",
+   "entityId": "qe-e4b9b2985b7c",
+   "canonical": "United States",
+   "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1319:69",
+   "postNum": 1319,
+   "index": 69,
+   "alias": "U.S.",
+   "entityId": "qe-e4b9b2985b7c",
+   "canonical": "United States",
+   "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1319:70",
+   "postNum": 1319,
+   "index": 70,
+   "alias": "U.S.",
+   "entityId": "qe-e4b9b2985b7c",
+   "canonical": "United States",
+   "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1319:71",
+   "postNum": 1319,
+   "index": 71,
+   "alias": "U.S.",
+   "entityId": "qe-e4b9b2985b7c",
+   "canonical": "United States",
+   "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1319:72",
+   "postNum": 1319,
+   "index": 72,
+   "alias": "U.S.",
+   "entityId": "qe-e4b9b2985b7c",
+   "canonical": "United States",
+   "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1319:73",
+   "postNum": 1319,
+   "index": 73,
    "alias": "NY",
    "entityId": "qe-ce9b4b609ab5",
    "canonical": "New York",
@@ -15425,93 +15499,13 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1319:69",
-   "postNum": 1319,
-   "index": 69,
-   "alias": "Republican",
-   "entityId": "qe-39ac279949d9",
-   "canonical": "Republican Party",
-   "entityType": "political_group",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
-   "certifiedCountEffect": 0
-  },
-  {
-   "occurrenceId": "#1319:70",
-   "postNum": 1319,
-   "index": 70,
-   "alias": "Republican",
-   "entityId": "qe-39ac279949d9",
-   "canonical": "Republican Party",
-   "entityType": "political_group",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
-   "certifiedCountEffect": 0
-  },
-  {
-   "occurrenceId": "#1319:71",
-   "postNum": 1319,
-   "index": 71,
-   "alias": "Republican",
-   "entityId": "qe-39ac279949d9",
-   "canonical": "Republican Party",
-   "entityType": "political_group",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
-   "certifiedCountEffect": 0
-  },
-  {
-   "occurrenceId": "#1319:72",
-   "postNum": 1319,
-   "index": 72,
-   "alias": "Charles W",
-   "entityId": "qe-4fa2f93b4da4",
-   "canonical": "Charles W. Dent",
-   "entityType": "person",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
-   "certifiedCountEffect": 0
-  },
-  {
-   "occurrenceId": "#1319:73",
-   "postNum": 1319,
-   "index": 73,
-   "alias": "Republican",
-   "entityId": "qe-39ac279949d9",
-   "canonical": "Republican Party",
-   "entityType": "political_group",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
-   "certifiedCountEffect": 0
-  },
-  {
    "occurrenceId": "#1319:74",
    "postNum": 1319,
    "index": 74,
-   "alias": "Republican",
-   "entityId": "qe-39ac279949d9",
-   "canonical": "Republican Party",
-   "entityType": "political_group",
+   "alias": "NY",
+   "entityId": "qe-ce9b4b609ab5",
+   "canonical": "New York",
+   "entityType": "location",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -15556,22 +15550,6 @@
    "occurrenceId": "#1319:77",
    "postNum": 1319,
    "index": 77,
-   "alias": "Dent",
-   "entityId": "qe-2d48be5cfee0",
-   "canonical": "Dent",
-   "entityType": "person",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
-   "certifiedCountEffect": 0
-  },
-  {
-   "occurrenceId": "#1319:78",
-   "postNum": 1319,
-   "index": 78,
    "alias": "Republican",
    "entityId": "qe-39ac279949d9",
    "canonical": "Republican Party",
@@ -15585,13 +15563,29 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#1319:78",
+   "postNum": 1319,
+   "index": 78,
+   "alias": "Charles W",
+   "entityId": "qe-4fa2f93b4da4",
+   "canonical": "Charles W. Dent",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1319:79",
    "postNum": 1319,
    "index": 79,
-   "alias": "Duncan, Jr.",
-   "entityId": "qe-0487a4a052ae",
-   "canonical": "Duncan, Jr.",
-   "entityType": "person",
+   "alias": "Republican",
+   "entityId": "qe-39ac279949d9",
+   "canonical": "Republican Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -15636,9 +15630,9 @@
    "occurrenceId": "#1319:82",
    "postNum": 1319,
    "index": 82,
-   "alias": "Democrat",
-   "entityId": "qe-d38940e564bf",
-   "canonical": "Democrat",
+   "alias": "Republican",
+   "entityId": "qe-39ac279949d9",
+   "canonical": "Republican Party",
    "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
@@ -15652,10 +15646,10 @@
    "occurrenceId": "#1319:83",
    "postNum": 1319,
    "index": 83,
-   "alias": "Republican",
-   "entityId": "qe-39ac279949d9",
-   "canonical": "Republican Party",
-   "entityType": "political_group",
+   "alias": "Dent",
+   "entityId": "qe-2d48be5cfee0",
+   "canonical": "Dent",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -15668,9 +15662,9 @@
    "occurrenceId": "#1319:84",
    "postNum": 1319,
    "index": 84,
-   "alias": "Democrat",
-   "entityId": "qe-d38940e564bf",
-   "canonical": "Democrat",
+   "alias": "Republican",
+   "entityId": "qe-39ac279949d9",
+   "canonical": "Republican Party",
    "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
@@ -15684,6 +15678,22 @@
    "occurrenceId": "#1319:85",
    "postNum": 1319,
    "index": 85,
+   "alias": "Duncan, Jr.",
+   "entityId": "qe-0487a4a052ae",
+   "canonical": "Duncan, Jr.",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1319:86",
+   "postNum": 1319,
+   "index": 86,
    "alias": "Republican",
    "entityId": "qe-39ac279949d9",
    "canonical": "Republican Party",
@@ -15697,28 +15707,12 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1319:86",
-   "postNum": 1319,
-   "index": 86,
-   "alias": "Gutierrez",
-   "entityId": "qe-0c35eb7c9c49",
-   "canonical": "Gutierrez",
-   "entityType": "person",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
-   "certifiedCountEffect": 0
-  },
-  {
    "occurrenceId": "#1319:87",
    "postNum": 1319,
    "index": 87,
-   "alias": "Democrat",
-   "entityId": "qe-d38940e564bf",
-   "canonical": "Democrat",
+   "alias": "Republican",
+   "entityId": "qe-39ac279949d9",
+   "canonical": "Republican Party",
    "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
@@ -15732,10 +15726,10 @@
    "occurrenceId": "#1319:88",
    "postNum": 1319,
    "index": 88,
-   "alias": "House",
-   "entityId": "qe-dd22a6644c88",
-   "canonical": "House",
-   "entityType": "government_institution",
+   "alias": "Democrat",
+   "entityId": "qe-d38940e564bf",
+   "canonical": "Democrat",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -15764,9 +15758,9 @@
    "occurrenceId": "#1319:90",
    "postNum": 1319,
    "index": 90,
-   "alias": "Republican",
-   "entityId": "qe-39ac279949d9",
-   "canonical": "Republican Party",
+   "alias": "Democrat",
+   "entityId": "qe-d38940e564bf",
+   "canonical": "Democrat",
    "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
@@ -15796,10 +15790,10 @@
    "occurrenceId": "#1319:92",
    "postNum": 1319,
    "index": 92,
-   "alias": "Republican",
-   "entityId": "qe-39ac279949d9",
-   "canonical": "Republican Party",
-   "entityType": "political_group",
+   "alias": "Gutierrez",
+   "entityId": "qe-0c35eb7c9c49",
+   "canonical": "Gutierrez",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -15828,10 +15822,10 @@
    "occurrenceId": "#1319:94",
    "postNum": 1319,
    "index": 94,
-   "alias": "John J",
-   "entityId": "qe-26158015bce8",
-   "canonical": "John J. Duncan Jr.",
-   "entityType": "person",
+   "alias": "House",
+   "entityId": "qe-dd22a6644c88",
+   "canonical": "House",
+   "entityType": "government_institution",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -15844,10 +15838,10 @@
    "occurrenceId": "#1319:95",
    "postNum": 1319,
    "index": 95,
-   "alias": "Kihuen",
-   "entityId": "qe-25c57ca3838c",
-   "canonical": "Kihuen",
-   "entityType": "person",
+   "alias": "Republican",
+   "entityId": "qe-39ac279949d9",
+   "canonical": "Republican Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -15860,9 +15854,9 @@
    "occurrenceId": "#1319:96",
    "postNum": 1319,
    "index": 96,
-   "alias": "Democrat",
-   "entityId": "qe-d38940e564bf",
-   "canonical": "Democrat",
+   "alias": "Republican",
+   "entityId": "qe-39ac279949d9",
+   "canonical": "Republican Party",
    "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
@@ -15892,22 +15886,6 @@
    "occurrenceId": "#1319:98",
    "postNum": 1319,
    "index": 98,
-   "alias": "Luis V",
-   "entityId": "qe-75589f8b6d78",
-   "canonical": "Luis V. Gutierrez",
-   "entityType": "person",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
-   "certifiedCountEffect": 0
-  },
-  {
-   "occurrenceId": "#1319:99",
-   "postNum": 1319,
-   "index": 99,
    "alias": "Republican",
    "entityId": "qe-39ac279949d9",
    "canonical": "Republican Party",
@@ -15921,9 +15899,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1319:100",
+   "occurrenceId": "#1319:99",
    "postNum": 1319,
-   "index": 100,
+   "index": 99,
    "alias": "Democrat",
    "entityId": "qe-d38940e564bf",
    "canonical": "Democrat",
@@ -15937,13 +15915,29 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#1319:100",
+   "postNum": 1319,
+   "index": 100,
+   "alias": "John J",
+   "entityId": "qe-26158015bce8",
+   "canonical": "John J. Duncan Jr.",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#1319:101",
    "postNum": 1319,
    "index": 101,
-   "alias": "Republican",
-   "entityId": "qe-39ac279949d9",
-   "canonical": "Republican Party",
-   "entityType": "political_group",
+   "alias": "Kihuen",
+   "entityId": "qe-25c57ca3838c",
+   "canonical": "Kihuen",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -15956,10 +15950,10 @@
    "occurrenceId": "#1319:102",
    "postNum": 1319,
    "index": 102,
-   "alias": "Patrick J",
-   "entityId": "qe-280afe3750cf",
-   "canonical": "Patrick J. Tiberi",
-   "entityType": "person",
+   "alias": "Democrat",
+   "entityId": "qe-d38940e564bf",
+   "canonical": "Democrat",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -15988,10 +15982,10 @@
    "occurrenceId": "#1319:104",
    "postNum": 1319,
    "index": 104,
-   "alias": "Democrat",
-   "entityId": "qe-d38940e564bf",
-   "canonical": "Democrat",
-   "entityType": "political_group",
+   "alias": "Luis V",
+   "entityId": "qe-75589f8b6d78",
+   "canonical": "Luis V. Gutierrez",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -16004,9 +15998,9 @@
    "occurrenceId": "#1319:105",
    "postNum": 1319,
    "index": 105,
-   "alias": "Democrat",
-   "entityId": "qe-d38940e564bf",
-   "canonical": "Democrat",
+   "alias": "Republican",
+   "entityId": "qe-39ac279949d9",
+   "canonical": "Republican Party",
    "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
@@ -16020,9 +16014,9 @@
    "occurrenceId": "#1319:106",
    "postNum": 1319,
    "index": 106,
-   "alias": "Republican",
-   "entityId": "qe-39ac279949d9",
-   "canonical": "Republican Party",
+   "alias": "Democrat",
+   "entityId": "qe-d38940e564bf",
+   "canonical": "Democrat",
    "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
@@ -16036,10 +16030,10 @@
    "occurrenceId": "#1319:107",
    "postNum": 1319,
    "index": 107,
-   "alias": "Ruben J",
-   "entityId": "qe-f1f50ca9139b",
-   "canonical": "Ruben J. Kihuen",
-   "entityType": "person",
+   "alias": "Republican",
+   "entityId": "qe-39ac279949d9",
+   "canonical": "Republican Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -16052,10 +16046,10 @@
    "occurrenceId": "#1319:108",
    "postNum": 1319,
    "index": 108,
-   "alias": "Republican",
-   "entityId": "qe-39ac279949d9",
-   "canonical": "Republican Party",
-   "entityType": "political_group",
+   "alias": "Patrick J",
+   "entityId": "qe-280afe3750cf",
+   "canonical": "Patrick J. Tiberi",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -16100,9 +16094,9 @@
    "occurrenceId": "#1319:111",
    "postNum": 1319,
    "index": 111,
-   "alias": "Republican",
-   "entityId": "qe-39ac279949d9",
-   "canonical": "Republican Party",
+   "alias": "Democrat",
+   "entityId": "qe-d38940e564bf",
+   "canonical": "Democrat",
    "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
@@ -16132,6 +16126,54 @@
    "occurrenceId": "#1319:113",
    "postNum": 1319,
    "index": 113,
+   "alias": "Ruben J",
+   "entityId": "qe-f1f50ca9139b",
+   "canonical": "Ruben J. Kihuen",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1319:114",
+   "postNum": 1319,
+   "index": 114,
+   "alias": "Republican",
+   "entityId": "qe-39ac279949d9",
+   "canonical": "Republican Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1319:115",
+   "postNum": 1319,
+   "index": 115,
+   "alias": "Republican",
+   "entityId": "qe-39ac279949d9",
+   "canonical": "Republican Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1319:116",
+   "postNum": 1319,
+   "index": 116,
    "alias": "Democrat",
    "entityId": "qe-d38940e564bf",
    "canonical": "Democrat",
@@ -16145,9 +16187,57 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1319:114",
+   "occurrenceId": "#1319:117",
    "postNum": 1319,
-   "index": 114,
+   "index": 117,
+   "alias": "Republican",
+   "entityId": "qe-39ac279949d9",
+   "canonical": "Republican Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1319:118",
+   "postNum": 1319,
+   "index": 118,
+   "alias": "Republican",
+   "entityId": "qe-39ac279949d9",
+   "canonical": "Republican Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1319:119",
+   "postNum": 1319,
+   "index": 119,
+   "alias": "Democrat",
+   "entityId": "qe-d38940e564bf",
+   "canonical": "Democrat",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1319:120",
+   "postNum": 1319,
+   "index": 120,
    "alias": "Republican",
    "entityId": "qe-39ac279949d9",
    "canonical": "Republican Party",
@@ -34739,6 +34829,19 @@
     "where": "prose"
    },
    "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1565:0",
+   "postNum": 1565,
+   "index": 0,
+   "alias": "45",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "no live entity claims \"45\" in this drop",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {
@@ -89294,6 +89397,22 @@
    "certifiedCountEffect": -1
   },
   {
+   "occurrenceId": "#2734:0",
+   "postNum": 2734,
+   "index": 0,
+   "alias": "F-15",
+   "entityId": "qe-95b35eac2da9",
+   "canonical": "F-15",
+   "entityType": "military_asset_vessel",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2735:0",
    "postNum": 2735,
    "index": 0,
@@ -98739,6 +98858,22 @@
    "occurrenceId": "#300:2",
    "postNum": 300,
    "index": 2,
+   "alias": "L.",
+   "entityId": "qe-4a9daff80da3",
+   "canonical": "L.",
+   "entityType": "coded_alias",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#300:3",
+   "postNum": 300,
+   "index": 3,
    "alias": "US",
    "entityId": "qe-e4b9b2985b7c",
    "canonical": "United States",
@@ -98752,9 +98887,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#300:3",
+   "occurrenceId": "#300:4",
    "postNum": 300,
-   "index": 3,
+   "index": 4,
    "alias": "Clinton",
    "entityId": "qe-af47be6a30dd",
    "canonical": "Clinton family / Clinton political network",
@@ -106863,16 +106998,13 @@
    "occurrenceId": "#3383:0",
    "postNum": 3383,
    "index": 0,
-   "alias": "Pelosi",
-   "entityId": "qe-dbbf1d039297",
-   "canonical": "Nancy Pelosi",
-   "entityType": "person",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
+   "alias": "N. Pelosi",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "no live entity claims \"N. Pelosi\" in this drop",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {
@@ -106895,32 +107027,26 @@
    "occurrenceId": "#3383:2",
    "postNum": 3383,
    "index": 2,
-   "alias": "Biden",
-   "entityId": "qe-b80ea6d8ed16",
-   "canonical": "Joe Biden",
-   "entityType": "person",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
+   "alias": "J. Biden",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "no live entity claims \"J. Biden\" in this drop",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#3383:3",
    "postNum": 3383,
    "index": 3,
-   "alias": "Waters",
-   "entityId": "qe-64638efe25c2",
-   "canonical": "Waters",
-   "entityType": "person",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
+   "alias": "M. Waters",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "no live entity claims \"M. Waters\" in this drop",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {
@@ -167691,16 +167817,13 @@
    "occurrenceId": "#836:5",
    "postNum": 836,
    "index": 5,
-   "alias": "Fiddler",
-   "entityId": "qe-58989e125d18",
-   "canonical": "Fiddler",
-   "entityType": "program_operation",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
+   "alias": "OP Name: Fiddler",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "no live entity claims \"OP Name: Fiddler\" in this drop",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {

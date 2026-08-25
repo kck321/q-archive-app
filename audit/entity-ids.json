@@ -1,6 +1,6 @@
 {
  "note": "Immutable entity identity. An id is minted once and never derived from the canonical name, the type, the mention count or the row position — all of which legitimately change about an entity that is still the same entity. canonical and slug are attributes stored beside the id; previousCanonicals keeps every earlier or absorbed spelling resolving to it. auditEntityIds is the crosswalk to the ENT-#### numbers used by the 2026-08-16 hover audit, which were positional and must never be stored as identity.",
- "minted": 1806,
+ "minted": 1809,
  "entries": {
   "qe-e4b9b2985b7c": {
    "canonical": "United States",
@@ -13698,6 +13698,24 @@
   "qe-0260464eac3d": {
    "canonical": "White House Press",
    "slug": "white-house-press",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-4a9daff80da3": {
+   "canonical": "L.",
+   "slug": "l",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-e3e24652d771": {
+   "canonical": "Operation Fiddler",
+   "slug": "operation-fiddler",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-8649e757f65a": {
+   "canonical": "Government Reform Committee",
+   "slug": "government-reform-committee",
    "previousCanonicals": [],
    "auditEntityIds": []
   }

@@ -261,7 +261,11 @@ export const CANONICAL = {
     //   +1   White House Press ("in the pic WH_POTUS_PRESS is the same as white house press"),
     //        #397 and #417, where Q writes the underscored stringer form. Its own row rather than
     //        an alias of "The White House", which the archive certifies as a location.
-    canonical: 1584, detectedCanonical: 1292, ownerRulings: 120, ownerMerges: 1, queueRulings: 1007,
+    // 1,584 -> 1,587 on 2026-08-24: the post-scoped entity rulings create "L." (#300), "House
+    // Oversight" and "Government Reform Committee" (#1319). The other ten reuse an identity the
+    // registry already holds — a second row for a person the archive knows is the duplicate-identity
+    // defect the merge rulings exist to undo. ownerRulings 120 -> 123.
+    canonical: 1587, detectedCanonical: 1292, ownerRulings: 123, ownerMerges: 1, queueRulings: 1007,
     /** Every resolved mention across all 1,334 certified entities. The headline figure. */
     // 8,227 -> 8,239: the RC alias ruling resolved 12 occurrences to Rachel Chandler. The merge
     // moved 4 mentions from the absorbed row onto hers and added none.
@@ -332,7 +336,11 @@ export const CANONICAL = {
     // 9,517 -> 9,519 on 2026-08-24, the #2347 card: both body Qs on that drop are Entities, on the
     // owner's ruling. +2 and not +3 — the third standalone Q there is inside the twitter handle
     // "Q_ANONBaby" and stays held. Both land on the adjudicated tail, because Alice is a tail row.
-    mentions: 9519,
+    // 9,519 -> 9,528 on 2026-08-24: the post-scoped entity rulings. Nine occurrences — eight a
+    // first mention on the drop named, one (#1319 "Goodlatte") a second occurrence on a drop the
+    // identity already appears on. The four SPAN EXTENSIONS add nothing; they lengthen a span the
+    // drop already carries.
+    mentions: 9528,
     /** How it is composed. The core figure is the section's history, not its headline. */
     // tailEntities is what the tail adjudication produced (1,239); one of them, Ray Chandler,
     // now ships merged into Rachel Chandler, so 1,238 tail rows appear in the artifact.
@@ -355,7 +363,9 @@ export const CANONICAL = {
     // recomputed. Same 9-row gap that has been there since seed 78 (1,523 written, 1,532 shipped).
     // tail 3,038 + 2 = 3,040 on 2026-08-24: Alice is an adjudicated-tail row, so the two #2347
     // occurrences land there. 5,312 + 3,040 + 1,167 = 9,519.
-    coreEntities: 93, coreRegistryMentions: 5312, tailEntities: 970, tailMentions: 3040,
+    // core 5,312 + 2 = 5,314 and tail 3,040 + 4 = 3,044; the remaining 3 land on owner-ruling rows,
+    // which is where an identity the owner created lives. 5,314 + 3,044 + 1,170 = 9,528.
+    coreEntities: 93, coreRegistryMentions: 5314, tailEntities: 970, tailMentions: 3044,
   },
   // 2,393 detected + 2 owner rulings ("Ascension." -> Religion & Spirituality, #4963 and #4966).
   // The rulings live in audit/themes-owner-rulings.json and are merged by apply-themes.mjs, so

@@ -104,7 +104,7 @@ export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number
   // once per resolved mention across the 1,066 canonical entities Q named in prose. The other 135
   // certified identities contribute none — they are linked sources, not words Q wrote — which is
   // why this figure sits BESIDE the 1,201 total on the page rather than under it.
-  namedEntities: { occurrences: 9519, posts: 2137, unit: 'mentions' },
+  namedEntities: { occurrences: 9528, posts: 2139, unit: 'mentions' },
   // Themes are assignments rather than spans — a theme is inferred from a drop, not copied out
   // of it — so the unit is named accordingly. 2,393 detected + 2 owner rulings.
   themes: { occurrences: 2646, posts: 1899, unit: 'assignments' },
@@ -194,7 +194,8 @@ export const ENTITIES = {
   // 48 drops; White House Press on #397 and #417; and Al Gore and Roseanne Barr, whose rows the
   // cleanup had retired for having no trace beyond a URL path or an unexamined image, and whom
   // #1239 and #1863 name by handle in Q's own text.
-  canonical: 1584,
+  // 1,584 -> 1,587 on 2026-08-24: the post-scoped entity rulings.
+  canonical: 1587,
   /**
    * THE HEADLINE COUNTS THE WHOLE SECTION.
    *
@@ -225,13 +226,14 @@ export const ENTITIES = {
   // 9,364 -> 9,517: the held wordings, NAT SEC and White House Press.
   // 9,517 -> 9,519 on 2026-08-24: both body Qs on #2347, on the owner's ruling. Not the sign-off,
   // and not the third Q inside the twitter handle on the link line.
-  mentions: 9519,
+  // 9,519 -> 9,528 on 2026-08-24: the post-scoped entity rulings.
+  mentions: 9528,
   mentionScope: 'Every resolved mention across all 1,584 certified entities: 5,312 from the 93 core-registry entities, 3,038 from the entities identified in the adjudication pass, and 1,167 from owner rulings. Domains, URL slugs and linked accounts are NOT counted here — they are shown under Sources. Unresolved aliases are counted in neither: they are held in the Resolution Center.',
   coreEntities: 93,
-  coreRegistryMentions: 5312,
+  coreRegistryMentions: 5314,
   tailEntities: 1238,
   // +2 on 2026-08-24: Alice is an adjudicated-tail row, so #2347's two Q occurrences land here.
-  tailMentions: 3040,
+  tailMentions: 3044,
   contextResolved: 161,
   routedToThemes: 53,
   unresolvedTokens: 1011,
@@ -417,7 +419,7 @@ export const SECTIONS: SectionInfo[] = [
     // so the ⓘ panel contradicted the header directly above it. The two components are named here
     // for the same reason they are named in the header: 1,201 with no split reads as 1,201 entities
     // Q wrote about, and 135 of them he never wrote at all.
-    certified: `${n(1584)} canonical entities (${n(1450)} named in the prose · ${n(134)} linked as a source only) · ${n(9519)} certified prose mentions`,
+    certified: `${n(1584)} canonical entities (${n(1450)} named in the prose · ${n(134)} linked as a source only) · ${n(9528)} certified prose mentions`,
     note: 'Entities are secondary tags rather than sentence types — a question, claim, prediction or directive may contain several. Names are canonicalised, so "HRC", "Hillary" and "Hillary Clinton" are one person, while Q’s exact wording is preserved in every post. Where a reference is ambiguous it is left unresolved rather than guessed.',
   },
   {

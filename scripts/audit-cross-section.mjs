@@ -499,7 +499,7 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   // fragment ("Why would H.") inside #4891's question, and violet on #1443's DECLAS_Public[3].
   // 92 carries the #2347 card and #1443. A reader stuck on 91 keeps #2347 with no entity on either
   // Q and no green on WWG1WGA, and #1443 amber where the owner has ruled it violet.
-  t('seed-current', 'SEED_VERSION is 95 (NCSWIC, Red October and Delta)', seed === 95, seed)
+  t('seed-current', 'SEED_VERSION is 96 (the post-scoped entity rulings)', seed === 96, seed)
   t('seed-gate', 'seeding is gated on SEED_VERSION', /seeded === SEED_VERSION/.test(localData), 'present')
 
   // THE GUARD THAT WOULD HAVE SAVED THREE ROUND TRIPS. Changing seeded data without bumping the

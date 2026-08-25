@@ -1,8 +1,8 @@
 {
  "note": "Determinism stamp. The approved audit must keep its exact bytes; the inputs move whenever a later decision moves the certified state, and every such decision is recorded in audit/entity-cleanup-rollback-contract.json postApprovalDeltas.",
- "rebaselinedOn": "2026-08-24 (the #2347 card)",
- "why": "Re-baselined for the owner ruling of 2026-08-24 on #2347: both body Qs on that drop are Entities, and the sign-off is not. Two more mentions are certified before the cleanup step reaches them, so audit-occurrence-provenance.mjs re-derived at the before-state (10,611 -> 10,613) and that re-run is what apply-entity-cleanup.mjs demands before it will replay. The delta is recorded in audit/entity-cleanup-rollback-contract.json postApprovalDeltas; the only change in the audit is those two rows and the certifiedUnchanged total.",
- "previousAuditSha256": "8d9bdd2ac7e5cc060bb747ff926a177a3e40c63042b8c3662dccdbbc917e0cb1",
- "inputs": "76818378e3dd53aa29b0a7d6cb9871d9b71e11795438f7efe9ecdc1e66033df4|73c3d1c8394b647e0672c3d42efa7c746762ae0048356cf2be24a9381a56c19d",
- "auditSha256": "82005f4877aefcfc2ffc2039fde6577f2f4d59842ff98ca4cd608c9c2dd6343a"
+ "rebaselinedOn": "2026-08-24 (the post-scoped entity rulings)",
+ "why": "Re-baselined for the thirteen post-scoped entity rulings of 2026-08-24. Nine more mentions are certified before the cleanup step reaches them, so audit-occurrence-provenance.mjs re-derived at the before-state and that re-run is what apply-entity-cleanup.mjs demands before it will replay. The delta is recorded in audit/entity-cleanup-rollback-contract.json postApprovalDeltas.",
+ "previousAuditSha256": "82005f4877aefcfc2ffc2039fde6577f2f4d59842ff98ca4cd608c9c2dd6343a",
+ "inputs": "133d5728d95202ae01dd1dcec6c501cd4bf87e241bdd5e98763fb965db0bd577|ada8afe487307f8f733f089d9865e68a7c619822bc9b8eb7f8e259cf3f6d6741",
+ "auditSha256": "ab578fecd83a04f1a85d70bb937cf59a670608fac9272d37d9fae6c783e1d57e"
 }
