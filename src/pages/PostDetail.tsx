@@ -6,7 +6,7 @@ import {
   getTopics, addPostToTopic, removePostFromTopic,
   getQuestionsForPost, updatePost, addQuestions, removeQuestionById, setQuestionStatuses,
   applyAnalysisToMatchingPosts, addQuestionToMatchingPosts, addRequestToMatchingPosts, addBracketToMatchingPosts,
-  normalizeItemKey, expandToSentence, questionHighlightRegex,
+  normalizeItemKey, expandToSentence, questionHighlightRegex, paintedQuestionSpan,
 } from '../lib/posts'
 import { detectQuestionsWithVerification, classifyQuestions, detectActionRequests, analyzePost, correlateNews } from '../lib/claude'
 import QuestionBadge from '../components/QuestionBadge'
@@ -155,7 +155,10 @@ function renderPostBody(
     const isHL = !!highlight && normHL(q.text) === normHL(highlight)
     // Question FORM, not the literal string: a drop asking "Power." is credited with the
     // question "Power?", so the highlight has to accept the same variants the match did.
-    const regex = questionHighlightRegex(q.text) ?? new RegExp(wordBoundaryPattern(escapeAndNormalize(q.text), q.text), 'gi')
+    // THE WHOLE UNIT, not just the interrogative inside it — see paintedQuestionSpan. `highlight`
+    // still compares against q.text, because that is the wording a section row links through.
+    const span = paintedQuestionSpan(q)
+    const regex = questionHighlightRegex(span) ?? new RegExp(wordBoundaryPattern(escapeAndNormalize(span), span), 'gi')
     let m: RegExpExecArray | null
     while ((m = regex.exec(text)) !== null) {
       segs.push({ start: m.index, end: m.index + m[0].length, kind: isHL ? 'highlight' : 'question', matchText: m[0], questionId: q.id })

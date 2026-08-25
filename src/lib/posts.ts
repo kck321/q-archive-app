@@ -993,6 +993,25 @@ export async function mergeSimilarQuestions(
   return totalMerged
 }
 
+/**
+ * THE SPAN A QUESTION PAINTS — the whole unit, not just the interrogative inside it.
+ *
+ * 51 certified questions are DIRECTIVE-WRAPPED: Q writes "Ask yourself a very basic question –
+ * would the FAKE NEWS complex … attack us if we weren't a 'real' threat?" and the record keeps the
+ * question in `text` and the whole line in `unitText`. Painting `text` left the wrapper grey, so a
+ * reader saw a line that was half classified and half not — which is exactly what the owner
+ * reported on #3588, #3881 and #4337.
+ *
+ * The data always said the unit was the line; only the paint was short. Counts are untouched: this
+ * decides what is FILLED, and every total is still one occurrence of one certified question.
+ *
+ * ONE definition, used by all three surfaces — PostDetail, PostCard and the quoted-post renderer —
+ * because these have shown the same drop differently before.
+ */
+export function paintedQuestionSpan(q: { text: string; unitText?: string }): string {
+  return q.unitText?.trim() ? q.unitText : q.text
+}
+
 export async function getQuestionsForPost(postId: string): Promise<QQuestion[]> {
   const { questions } = await loadLocalData()
   // Editorial normalisations are paraphrases an earlier extractor wrote, not Q's wording.
@@ -1012,7 +1031,7 @@ export async function getQuestionsForPosts(
   for (const q of questions) {
     if (!want.has(q.postId)) continue
     if (!map[q.postId]) map[q.postId] = []
-    map[q.postId].push(q.text)
+    map[q.postId].push(paintedQuestionSpan(q))
   }
   return map
 }

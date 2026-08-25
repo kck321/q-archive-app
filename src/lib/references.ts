@@ -14,6 +14,7 @@
 // need scraping — a separate job.
 import type { QPost } from '../types'
 import { loadLocalData, onStoreMutated } from './localData'
+import { paintedQuestionSpan } from './posts'
 
 export interface ResolvedReference {
   /** The ">>NNNNNNN" board post id as written in the text. */
@@ -51,11 +52,15 @@ export function getQuotedContext(): Promise<QuotedContext> {
   if (!_quotedCtx) {
     _quotedCtx = loadLocalData().then(({ posts, questions }) => {
       const questionsByPostId = new Map<string, string[]>()
-      for (const q of questions as { postId?: string; text?: string }[]) {
+      for (const q of questions as { postId?: string; text?: string; unitText?: string }[]) {
         if (!q?.postId || !q.text) continue
+        // The whole unit, so a directive-wrapped question paints its wrapper too — see
+        // paintedQuestionSpan. A quoted drop is marked up from the DROP's record, so it has to
+        // reach for the same span the drop's own page does.
+        const span = paintedQuestionSpan({ text: q.text, unitText: q.unitText })
         const list = questionsByPostId.get(q.postId)
-        if (list) list.push(q.text)
-        else questionsByPostId.set(q.postId, [q.text])
+        if (list) list.push(span)
+        else questionsByPostId.set(q.postId, [span])
       }
       return { byBoardId: buildReferenceIndex(posts), questionsByPostId }
     })
