@@ -13,11 +13,11 @@ Do not reopen any of them.
 | | |
 |---|---|
 | HEAD | see `git log -1` |
-| production | **seed 88** — the round-2 batch AND the UPDATED-report batch are committed but NOT deployed |
-| invariants | **221/222** — the manifest is the one outstanding, by design |
-| seed | **97** — bumped six times on 2026-08-24; none has shipped |
-| manifest | **NOT re-certified.** The certified sections changed; re-certify at the deploy checkpoint |
-| validation | **owed.** `batch-status.mjs` puts the floor at FULL; the receipt is stale |
+| production | **seed 98, DEPLOYED 2026-08-25** — every 2026-08-24 batch (round 2, UPDATED report, #2347 card, entity rulings, Vault 7) plus the picture-audit n=851-1050 batch; `verify-live.mjs` 14/14 |
+| invariants | 222/222 — manifest re-certified at seed 98 at the deploy checkpoint |
+| seed | **98** — shipped |
+| manifest | re-certified 2026-08-25 (seed 98); context baseline moved 445→444/311→310 with #1443's `Texts` promotion (see `verify-context-render.mjs`) |
+| validation | full receipt taken 2026-08-25, tree 43707ae8c150; deploy used SKIP_EXPORT=1 (Firestore quota) per the script's own policy — a partial failed export dirtied 3 files first and was restored from git before publishing |
 | conflict queue | closed, 50 rows, actionable 0 |
 
 ### The UPDATED-report batch, 2026-08-24

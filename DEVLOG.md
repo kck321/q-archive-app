@@ -7456,3 +7456,19 @@ needsReview 20**, LF verified. NOT deployed — local per batch-deploy rule. NOT
 session was committing entity rulings tonight; two of its commits swept in-progress audit JSONL
 files into themselves (no data lost, check clean throughout) — re-check for concurrent sessions
 before the validate/deploy checkpoint.
+
+## 2026-08-25 — Deploy: seed 98 to qdrops.app (pictures + all 2026-08-24 batches)
+
+**Request:** Publish and deploy all committed work to qdrops.app for a test drive.
+
+**Solution:** Concurrent-session check first (found the other session live mid-batch the night
+before; deploy held until the owner closed it). Validation stopped twice for real reasons: (1) the
+manifest was un-re-certified by design — re-certified at seed 98; (2) the context gate's 445/311
+baseline had not moved with the owner's own #1443 "Texts"→Claim promotion in 0e221aa — proved
+promotion-not-deletion commit-by-commit, moved the baseline to 444/310 in
+`verify-context-render.mjs`. Full validate then passed (receipt tree 43707ae8c150). First deploy
+attempt died on Firestore free-tier quota AND its partial export dirtied 3 public/data files — the
+pre-flight gates blocked the publish, files restored via `git checkout -- public/data`, redeployed
+with SKIP_EXPORT=1 per the script's documented policy. Live after 42s: commit f6dcb49, seed 98,
+sw qdrops-20260825-142737. `verify-live.mjs`: **14/14 — new and returning readers both receive the
+validated build.** Production now carries 1,050 picture analyses and every 2026-08-24 ruling batch.
