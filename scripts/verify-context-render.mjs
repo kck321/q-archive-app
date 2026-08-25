@@ -74,8 +74,12 @@ const checks = [
   // 468 -> 445 and 323 -> 311 on 2026-08-24, same reason again: the owner ruled the 24 rows that
   // had been held for stating no instruction into Directives, and 23 of them were sitting in
   // Context. apply-context-units.mjs counts all 23 as promoted and still reconciles to 4,902.
-  ['445 context units still certified', ctx.units === 445, ctx.units],
-  ['context still spread across 311 posts', ctx.withUnits === 311, ctx.withUnits],
+  // 445 -> 444 and 311 -> 310 on 2026-08-24 (0e221aa): the owner ruled #1443's "Texts" a Claim
+  // on the #2347 card, and it was #1443's only context unit — promoted, not deleted. Verified
+  // against 6b37912 (context unit, no claim) vs 0e221aa (claim, no context unit) before moving
+  // this baseline.
+  ['444 context units still certified', ctx.units === 444, ctx.units],
+  ['context still spread across 310 posts', ctx.withUnits === 310, ctx.withUnits],
   // EMPHASIS IS RETIRED (owner ruling, 2026-08-21) — the section, its data and its highlights.
   // These two used to assert that 4,236 units across 1,356 posts were still certified while not
   // being painted, which is the opposite of what must now be true. A gate asserting a retired

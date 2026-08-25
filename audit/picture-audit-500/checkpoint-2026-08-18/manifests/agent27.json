@@ -1,76 +1,72 @@
 [
  {
-  "n": 398,
-  "hash": "f81dcf3c2dc808ffa91953fe43dd1723f24d64420c03a90de8f2a8a383d15643",
-  "filename": "stay the course and trust the plan.jpg",
-  "firstPost": "1969",
-  "source": "referenced",
-  "posts": [
-   {
-    "num": 1969,
-    "source": "referenced"
-   }
-  ],
-  "path": "C:\\Users\\heath\\q-app\\media-bundle\\f81dcf3c2dc808ffa91953fe43dd1723f24d64420c03a90de8f2a8a383d15643.jpg"
- },
- {
-  "n": 399,
-  "hash": "bc995027781a79fa91bb3abf6a188ee941fdfd6179735ceddb273e85bcf10480",
-  "filename": "DlxpVj8XsAA6RVz.jpg",
-  "firstPost": "1985",
+  "n": 976,
+  "hash": "054390d1f1fba28b5a698e3ef3c56510bc9504441cbcd65f36dcfb6e7a8cc16e",
+  "filename": "D-_Yr5NWwAAoMrY.jpg-large.jpg",
+  "firstPost": "3367",
   "source": "attached",
   "posts": [
    {
-    "num": 1985,
+    "num": 3367,
     "source": "attached"
    }
   ],
-  "path": "C:\\Users\\heath\\q-app\\media-bundle\\bc995027781a79fa91bb3abf6a188ee941fdfd6179735ceddb273e85bcf10480.jpg"
+  "path": "C:\\Users\\heath\\q-app\\media-bundle\\054390d1f1fba28b5a698e3ef3c56510bc9504441cbcd65f36dcfb6e7a8cc16e.jpg"
  },
  {
-  "n": 400,
-  "hash": "47ba43e4e8468d15c6fdffd9c2b00e5b2ecd4d0752d7d6d97e955ec93f92e935",
-  "filename": "DcZmBs5UwAAgbwN.jpg-large.jpg",
-  "firstPost": "1986",
+  "n": 977,
+  "hash": "eb788f84566b09c33256f57ac91bb015d025e95bc10de41bcb0125551a5f887f",
+  "filename": "July2019.jpg",
+  "firstPost": "3368",
   "source": "attached",
   "posts": [
    {
-    "num": 1986,
+    "num": 3368,
     "source": "attached"
-   },
-   {
-    "num": 1987,
-    "source": "referenced"
    }
   ],
-  "path": "C:\\Users\\heath\\q-app\\media-bundle\\47ba43e4e8468d15c6fdffd9c2b00e5b2ecd4d0752d7d6d97e955ec93f92e935.jpg"
+  "path": "C:\\Users\\heath\\q-app\\media-bundle\\eb788f84566b09c33256f57ac91bb015d025e95bc10de41bcb0125551a5f887f.jpg"
  },
  {
-  "n": 401,
-  "hash": "ae0cfa0ed47df02350b466746cc8da3ee7bf6d8b04cc78197e48092f081df8c5",
-  "filename": "ClipboardImage.png",
-  "firstPost": "1988",
+  "n": 978,
+  "hash": "e1196fbb333402229df3a693fa561659436ac288f3a10427b6e82618d5702bc0",
+  "filename": "Trust Sessions.png",
+  "firstPost": "3371",
   "source": "referenced",
   "posts": [
    {
-    "num": 1988,
+    "num": 3371,
     "source": "referenced"
    }
   ],
-  "path": "C:\\Users\\heath\\q-app\\media-bundle\\ae0cfa0ed47df02350b466746cc8da3ee7bf6d8b04cc78197e48092f081df8c5.png"
+  "path": "C:\\Users\\heath\\q-app\\media-bundle\\e1196fbb333402229df3a693fa561659436ac288f3a10427b6e82618d5702bc0.jpg"
  },
  {
-  "n": 402,
-  "hash": "2626e8d16865a64aa3a94edae0f40f2cb143d7902bb9c6b34bb39225c7582e19",
-  "filename": "ClipboardImage.png",
-  "firstPost": "1988",
+  "n": 979,
+  "hash": "27e48b9f1e47ad098e60cd0fd854bba849ba06193649c6dc0c3afc644a9040f2",
+  "filename": "PLACEHOLDER1.png",
+  "firstPost": "3376",
   "source": "referenced",
   "posts": [
    {
-    "num": 1988,
+    "num": 3376,
     "source": "referenced"
    }
   ],
-  "path": "C:\\Users\\heath\\q-app\\media-bundle\\2626e8d16865a64aa3a94edae0f40f2cb143d7902bb9c6b34bb39225c7582e19.png"
+  "path": "C:\\Users\\heath\\q-app\\media-bundle\\27e48b9f1e47ad098e60cd0fd854bba849ba06193649c6dc0c3afc644a9040f2.png"
+ },
+ {
+  "n": 980,
+  "hash": "406c5b2e30233cc4b347fcbc956373780d4ad2358247708623eb2ea173069baf",
+  "filename": "406c5b2e30233cc4b347fcbc956373780d4ad2358247708623eb2ea173069baf.gif",
+  "firstPost": "3376",
+  "source": "referenced",
+  "posts": [
+   {
+    "num": 3376,
+    "source": "referenced"
+   }
+  ],
+  "path": "C:\\Users\\heath\\q-app\\media-bundle\\406c5b2e30233cc4b347fcbc956373780d4ad2358247708623eb2ea173069baf.gif"
  }
 ]
