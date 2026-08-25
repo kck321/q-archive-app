@@ -145,7 +145,9 @@ export const CANONICAL = {
   // 10,258 -> 10,247 on 2026-08-24, three owner section moves: the 13 retiring-members list rows on
   // #1850 leave Claims (already certified as the member and the party, split — a list row is not an
   // assertion), and two arrive: #1443's "#2." from Directives and #4784's opening line.
-  claims: { occurrences: 10247, distinct: 7777, posts: 3223 },
+  // 10,247 -> 10,237 on 2026-08-24: the ten Red October / Delta lines that were Claims are
+  // Predictions now.
+  claims: { occurrences: 10237, distinct: 7777, posts: 3223 },
   // 630 -> 595: -73 technical nonpredictions, -56 arguable rows withdrawn to the review
   // backlog, +66 unique moves from Claims, +28 high-confidence predictions the extractor
   // missed. posts 520 -> 490. The 91 withdrawn/held rows are NOT deleted — they sit in
@@ -168,7 +170,13 @@ export const CANONICAL = {
   // 934 -> 935 the same day: the owner corrected that reading — "DECLAS_Public should be a
   // prediction" — so the line goes back. Its place in Claims is taken by "Texts" on the same drop,
   // which is why claim occurrences do not move either way.
-  predictions: { occurrences: 935, posts: 672 },
+  // 935 -> 950 on 2026-08-24: "i want the term NCSWIC to be a prediction because it stands for
+  // nothing can stop what is coming", "Let's do all the Red October refferences as predictions for
+  // now", "Lets do all Delta references to Predictions". Ten arrive from Claims and five from no
+  // section. TWO are refused and named in audit/owner-section-moves.json: NCSWIC inside a CISA URL,
+  // and #1176's "Delta engine fire?" — Delta AIRLINES, the same shape of homograph the Q ruling
+  // held Al-Qaeda and a 10-Q filing for.
+  predictions: { occurrences: 950, posts: 672 },
   evidence: { occurrences: 6590, posts: 3883 },
   // canonical 1,240 -> 1,235: Owner Ruling 1 merged five duplicate identities. No occurrence moved.
   entities: {

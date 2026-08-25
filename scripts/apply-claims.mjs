@@ -196,15 +196,50 @@ if (abbrev) {
 // ── the owner's section moves, out of Claims and into them ──────────────────
 const movedOutKeys = new Set(sectionMoves.filter(m => m.from === 'claims')
   .flatMap(m => (m.certifiedAs ?? [m.text]).map(t => `${m.postNum}|${key(t)}`)))
+const claimKeysBeforeMoveOut = new Set(final.rows.map(r => `${r.postNum}|${key(r.exactText)}`))
 const beforeMoveOut = final.rows.length
 final.rows = final.rows.filter(r => !movedOutKeys.has(`${r.postNum}|${key(r.exactText)}`))
 const movedOut = beforeMoveOut - final.rows.length
 // REFUSE RATHER THAN UNDER-APPLY. A move that matched nothing is a ruling that did not happen, and
 // the count below would have gone on reconciling as if it had.
 if (movedOut !== movedOutKeys.size) {
-  console.error(`\nOwner section moves: ${movedOutKeys.size} claim occurrence(s) to remove, ${movedOut} matched. Refusing.\n`)
+  // NAME THE ROWS, NOT JUST THE COUNTS. "22 of 23 matched" says a ruling half-landed and nothing
+  // about which one — the same correction apply-entity-cleanup.mjs already carries.
+  console.error(`\nOwner section moves: ${movedOutKeys.size} claim occurrence(s) to remove, ${movedOut} matched.`)
+  for (const k of movedOutKeys) {
+    if (!claimKeysBeforeMoveOut.has(k)) console.error(`   no such certified claim: ${k}`)
+  }
+  console.error('   Refusing to report a ruling as applied when it removed nothing.\n')
   process.exit(1)
 }
+// ── and out of Predictions / into Predictions ───────────────────────────────
+// Same mechanism, other array. The 2026-08-24 corpus rulings — NCSWIC, Red October, Delta — all
+// land here, most of them arriving FROM Claims.
+const predOutKeys = new Set(sectionMoves.filter(m => m.from === 'predictions')
+  .flatMap(m => (m.certifiedAs ?? [m.text]).map(t => `${m.postNum}|${key(t)}`)))
+const beforePredOut = final.predictions.length
+final.predictions = final.predictions.filter(r => !predOutKeys.has(`${r.postNum}|${key(r.exactText)}`))
+if (beforePredOut - final.predictions.length !== predOutKeys.size) {
+  console.error(`\nOwner section moves: ${predOutKeys.size} prediction(s) to remove, ${beforePredOut - final.predictions.length} matched. Refusing.\n`)
+  process.exit(1)
+}
+let predIn = 0
+for (const m of sectionMoves.filter(x => x.to === 'predictions')) {
+  const p = posts.find(x => x.postNum === m.postNum)
+  if (!p) { console.error(`\nOwner section moves: #${m.postNum} is not a drop. Refusing.\n`); process.exit(1) }
+  if (final.predictions.some(r => r.postNum === m.postNum && key(r.exactText) === key(m.text))) continue
+  const line = (p.text ?? '').split('\n').map(l => l.trim()).find(l => key(l) === key(m.text))
+  if (!line) { console.error(`\nOwner section moves: ${JSON.stringify(m.text)} is not a line in #${m.postNum}. Refusing.\n`); process.exit(1) }
+  final.predictions.push({
+    postNum: m.postNum, postId: p.id, exactText: line,
+    primaryClass: 'prediction', klass: 'Q_PREDICTION',
+    isConclusion: false, conclusionReason: null, checkable: false, sourceProvided: false,
+    confidence: 'OWNER_ADJUDICATED',
+    provenance: `owner section move ${m.ruledOn} — "${m.ruling}"`,
+  })
+  predIn++
+}
+
 let movedIn = 0
 for (const m of sectionMoves.filter(x => x.to === 'claims' && x.from !== 'claims')) {
   const p = posts.find(x => x.postNum === m.postNum)
@@ -394,7 +429,12 @@ const checks = [
   // a list row is not an assertion the drop is making. +2: #1443's "#2." arrives from Directives
   // ("i want to make the #2. a claim not a directive") and #4784's opening line
   // "Lisa Barsoomian _former Bill Clinton attorney" is ruled a Claim.
-  ['claim occurrences = 10,547', allClaims.length === 10547, allClaims.length],
+  // -10 on 2026-08-24, the corpus rulings: "Let's do all the Red October refferences as
+  // predictions for now" and "Lets do all Delta references to Predictions". Ten lines that were
+  // Claims are Predictions now; five more arrive there from no section at all, and two are REFUSED
+  // and named in audit/owner-section-moves.json — NCSWIC inside a CISA URL, and #1176's "Delta
+  // engine fire?", which is Delta AIRLINES.
+  ['claim occurrences = 10,537', allClaims.length === 10537, allClaims.length],
   // 4,782 + 1,654 = 6,436 claims; 250 + 94 = 344 predictions, across both rounds.
   // -1 claim, -1 prediction on 2026-08-24: two round-2 rulings the owner overrode on the UPDATED
   // report. lib/queueRulings.mjs drops them before any materialiser sees them, so the round-2
@@ -435,7 +475,10 @@ const checks = [
   // #1319 as well, so every one of those wordings is still certified there. Of the two arrivals,
   // "#2." is already a claim key on 23 other drops and opens none; "Lisa Barsoomian _former Bill
   // Clinton attorney" occurs once in the archive and opens its own.
-  ['distinct = 8,025', distinct.size === 8025, distinct.size],
+  // -8, and every key accounted for. Seven of the ten departing wordings occur nowhere else in
+  // Claims and take their key with them. The eighth is "Q, DELTA" — one key across #756, #757 and
+  // #785, and all three occurrences leave together.
+  ['distinct = 8,017', distinct.size === 8017, distinct.size],
   // +1: 17 posts gain their first claim, 16 posts lose their last one.
   // -3: #483, #2695 and #3203 each held ONE claim and it was the quoted question, so those
   // drops leave the Claims post set entirely. #2420 and #2776 keep other claims and stay.
@@ -443,7 +486,9 @@ const checks = [
   // +2: #4861 and #4853 gain their first certified claim. #4893 and #4923 already had claims,
   // so they were already in the set.
   // +170 drops gain their first certified claim.
-  ['posts = 3,256', postsWith.size === 3256, postsWith.size],
+  // -3: #1568, #2577 and #757 each held ONE claim and it was the Delta line, so those drops leave
+  // the Claims post set entirely.
+  ['posts = 3,253', postsWith.size === 3253, postsWith.size],
   // 630 - 73 technical nonpredictions - 56 arguable + 66 from Claims + 28 found = 595.
   // 595 + 247 from the queue (250 ruled, 3 occurrences already certified) = 842.
   // +1: #4910 "Freedom of information [truth] = END" (r11), the first ad-hoc Prediction ruling to
@@ -462,7 +507,10 @@ const checks = [
   // of #4891's "Why would H." exactly.
   // 942 again on 2026-08-24: the owner corrected the reading and #1443's "DECLAS_Public[3]" is a
   // Prediction. Claim occurrences do not move — "Texts" arrives on the same drop as it leaves.
-  ['predictions = 942', allPreds.length === 942, allPreds.length],
+  // +15 on 2026-08-24: the NCSWIC, Red October and Delta rulings. Ten arrive from Claims and five
+  // from no section at all — #4951 "NCSWIC", #2286 "RED OCTOBER?", #2458 "RED LINE ON THE
+  // ANNIVERSARY OF RED OCTOBER?", #2647 "[1 year delta]" and #3780 "Delta?".
+  ['predictions = 957', allPreds.length === 957, allPreds.length],
   // isConclusion travels with the ROW rather than with the section, so a row leaving Claims
   // takes the attribute with it. -1: #3203's quoted question was the only withdrawn row
   // carrying it. 966 - 1 = 965.
@@ -501,7 +549,9 @@ const checks = [
   // -3: four of the removed rows carried it — "Carol Shea-Porter - Democrat", "Jeb Hensarling -
   // Republican", "Ted Poe - Republican" and "Tiberi - Republican U.S." are each four words or
   // fewer — and "#2." arrives carrying it.
-  ['telegraphic = 4,668', telegraphic === 4668, telegraphic],
+  // -7: seven of the ten departing rows carried it — "[7] Delta today.", "[1] min Delta.",
+  // "DELTA [6] CONF." and the three "Q, DELTA" lines are all four words or fewer.
+  ['telegraphic = 4,661', telegraphic === 4661, telegraphic],
   // 13 + 37: the queue emitted one row per UNIT, so a line Q wrote twice arrives twice and is
   // certified twice. Collapsing them would have dropped 37 real occurrences.
   // +80: round 2 carries more lines Q writes twice in one drop, and each repeat is a real
@@ -533,7 +583,7 @@ console.log(`\n  from the unhighlighted-sentence queue (owner rulings 2026-08-20
 console.log(`    claims      +${stats2020.claimsAdded.toLocaleString()}  (${stats2020.claimsAlready} already certified)`)
 console.log(`    predictions +${stats2020.predsAdded.toLocaleString()}  (${stats2020.predsAlready} already certified)`)
 console.log(`    withdrawn from Claims because the owner ruled them Predictions: ${crossPulled}`)
-console.log(`    owner section moves: ${movedOut} out of Claims, ${movedIn} into Claims`)
+console.log(`    owner section moves: ${movedOut} out of Claims, ${movedIn} into Claims, ${predIn} into Predictions`)
 console.log('\n  QA GATE')
 let failed = 0
 for (const [label, ok, got] of checks) { if (!ok) failed++; console.log(`    ${ok ? 'PASS' : 'FAIL'}  ${label.padEnd(36)} ${got}`) }

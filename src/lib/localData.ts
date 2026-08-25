@@ -513,7 +513,12 @@ export const OVERLAY_REPAIR = 1
 //     6,321, entities 1,235 -> 1,214 rows and 8,975 -> 8,821 mentions. A returning reader holding
 //     87 would keep the pre-review paint on 41 drops and a registry counting one written word up
 //     to five times, so the seed has to move.
-export const SEED_VERSION = 94   // 94: THE OWNER'S SECTION MOVES, 2026-08-24. #1443's "#2." moves
+export const SEED_VERSION = 95   // 95: NCSWIC, RED OCTOBER AND DELTA ARE PREDICTIONS, 2026-08-24.
+                                 //     15 lines arrive in Predictions — 10 from Claims, 5 from no
+                                 //     section — and TWO are refused: NCSWIC inside a CISA URL, and
+                                 //     #1176's "Delta engine fire?", which is Delta AIRLINES. A
+                                 //     reader on 94 keeps ten amber lines that should be violet.
+                                 // 94: THE OWNER'S SECTION MOVES, 2026-08-24. #1443's "#2." moves
                                  //     from Directives to Claims; the 13 retiring-members list rows
                                  //     on #1850 leave Claims for the Entities they already are; and
                                  //     #4784's opening line becomes a Claim. A reader on 93 keeps

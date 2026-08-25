@@ -52,7 +52,9 @@ export const CERTIFIED = {
   // 10,258 -> 10,247 on 2026-08-24, three owner section moves: the 13 retiring-members list rows on
   // #1850 leave Claims (already certified as the member and the party, split — a list row is not an
   // assertion), and two arrive: #1443's "#2." from Directives and #4784's opening line.
-  claims: { occurrences: 10247, distinct: 7777, posts: 3223 },
+  // 10,247 -> 10,237 on 2026-08-24: the ten Red October / Delta lines that were Claims are
+  // Predictions now.
+  claims: { occurrences: 10237, distinct: 7777, posts: 3223 },
   // 843 -> 841 on 2026-08-23: two predictions sat inside quoted passages.
   // 841 -> 934: 94 prediction rulings.
   // 934 -> 935: #417 'News unlocks Map.', ruled a Prediction as well as the Claim it already was.
@@ -61,7 +63,8 @@ export const CERTIFIED = {
   // keeps "Dark to LIGHT.", certified in round 1.
   // 934 -> 935 the same day: the owner corrected that reading — "DECLAS_Public should be a
   // prediction" — and the line goes back.
-  predictions: { occurrences: 935, posts: 672 },
+  // 935 -> 950 on 2026-08-24: the NCSWIC, Red October and Delta rulings.
+  predictions: { occurrences: 950, posts: 672 },
   /** Claim attributes. `conclusions` may apply to a claim or a prediction. */
   // checkable, sourceProvided and conclusions do NOT move with the queue ruling: they are
   // attributes the claims audit established from evidence inside the drop, and the owner ruled a
@@ -95,8 +98,8 @@ export const CERTIFIED = {
  * recount cannot quietly come back.
  */
 export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number; unit: string }> = {
-  claims: { occurrences: 10247, posts: 3223, unit: 'occurrences' },
-  predictions: { occurrences: 935, posts: 672, unit: 'occurrences' },
+  claims: { occurrences: 10237, posts: 3223, unit: 'occurrences' },
+  predictions: { occurrences: 950, posts: 672, unit: 'occurrences' },
   // "mentions" is the right word here and the only section where it is: an entity is counted
   // once per resolved mention across the 1,066 canonical entities Q named in prose. The other 135
   // certified identities contribute none — they are linked sources, not words Q wrote — which is

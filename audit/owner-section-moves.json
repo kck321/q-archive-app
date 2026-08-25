@@ -2,11 +2,26 @@
  "note": "Spans the owner moved between sections, on 2026-08-24. Layered over the base certified artifacts by apply-claims.mjs and apply-directives.mjs — never written into them, because a correction inside a re-derivable artifact is erased the next time its audit runs.",
  "ruledOn": "2026-08-24",
  "totals": {
-  "moves": 15,
-  "outOfClaims": 13,
+  "moves": 30,
+  "outOfClaims": 23,
   "outOfDirectives": 1,
-  "intoClaims": 2
+  "intoClaims": 2,
+  "intoPredictions": 15,
+  "alreadyApplied": 14,
+  "refused": 2
  },
+ "refused": [
+  {
+   "postNum": 4951,
+   "line": "https://www.cisa.gov/safecom/NCSWIC",
+   "why": "inside a URL — a span certified there puts a fill inside a link and splits the address"
+  },
+  {
+   "postNum": 1176,
+   "line": "Delta engine fire?",
+   "why": "Delta AIRLINES — the drop asks about an engine fire, not a timestamp delta"
+  }
+ ],
  "moves": [
   {
    "postNum": 1443,
@@ -16,6 +31,7 @@
    "ruledOn": "2026-08-24",
    "ruling": "post 1443 i want to make the #2. a claim not a directive",
    "why": "A line of #1443's evidence list, between \"JC.\" and \"LL.\" — the same shape as \"302s\", \"Texts\" and \"Tarmac\" around it, which are Claims. It instructs nobody, which is what a Directive is for.",
+   "alreadyApplied": true,
    "certifiedAs": [
     "#2."
    ]
@@ -29,6 +45,7 @@
    "ruledOn": "2026-08-24",
    "ruling": "post 1850 lets take all these entities out of claims",
    "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "alreadyApplied": true,
    "certifiedAs": [
     "Carol Shea-Porter - Democrat"
    ]
@@ -42,6 +59,7 @@
    "ruledOn": "2026-08-24",
    "ruling": "post 1850 lets take all these entities out of claims",
    "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "alreadyApplied": true,
    "certifiedAs": [
     "Jeb Hensarling - Republican"
    ]
@@ -55,6 +73,7 @@
    "ruledOn": "2026-08-24",
    "ruling": "post 1850 lets take all these entities out of claims",
    "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "alreadyApplied": true,
    "certifiedAs": [
     "Ted Poe - Republican"
    ]
@@ -68,6 +87,7 @@
    "ruledOn": "2026-08-24",
    "ruling": "post 1850 lets take all these entities out of claims",
    "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "alreadyApplied": true,
    "certifiedAs": [
     "Al Franken - Democratic U.S. Senate"
    ]
@@ -81,6 +101,7 @@
    "ruledOn": "2026-08-24",
    "ruling": "post 1850 lets take all these entities out of claims",
    "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "alreadyApplied": true,
    "certifiedAs": [
     "Blake Farenthold - Republican U.S. House"
    ]
@@ -94,6 +115,7 @@
    "ruledOn": "2026-08-24",
    "ruling": "post 1850 lets take all these entities out of claims",
    "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "alreadyApplied": true,
    "certifiedAs": [
     "Jason Chaffetz - Republican U.S. House"
    ]
@@ -107,6 +129,7 @@
    "ruledOn": "2026-08-24",
    "ruling": "post 1850 lets take all these entities out of claims",
    "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "alreadyApplied": true,
    "certifiedAs": [
     "John Conyers, Jr. - Democrat U.S. House"
    ]
@@ -120,6 +143,7 @@
    "ruledOn": "2026-08-24",
    "ruling": "post 1850 lets take all these entities out of claims",
    "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "alreadyApplied": true,
    "certifiedAs": [
     "Louise Slaughter - Democrat U.S. House"
    ]
@@ -133,6 +157,7 @@
    "ruledOn": "2026-08-24",
    "ruling": "post 1850 lets take all these entities out of claims",
    "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "alreadyApplied": true,
    "certifiedAs": [
     "Patrick Meehan - Republican U.S. House"
    ]
@@ -146,10 +171,10 @@
    "ruledOn": "2026-08-24",
    "ruling": "post 1850 lets take all these entities out of claims",
    "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "alreadyApplied": true,
    "certifiedAs": [
     "Tiberi - Republican U.S."
-   ],
-   "certifiedShorterThanTheLine": true
+   ]
   },
   {
    "postNum": 1850,
@@ -160,6 +185,7 @@
    "ruledOn": "2026-08-24",
    "ruling": "post 1850 lets take all these entities out of claims",
    "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "alreadyApplied": true,
    "certifiedAs": [
     "Thad Cochran - Republican U.S. Senate"
    ]
@@ -173,6 +199,7 @@
    "ruledOn": "2026-08-24",
    "ruling": "post 1850 lets take all these entities out of claims",
    "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "alreadyApplied": true,
    "certifiedAs": [
     "Tim Murphy - Republican U.S. House"
    ]
@@ -186,8 +213,174 @@
    "ruledOn": "2026-08-24",
    "ruling": "post 1850 lets take all these entities out of claims",
    "why": "A row of the retiring-members list Q pasted. It names a member and a party and is already certified as both, split. A list row is not an assertion the drop is making, so it leaves Claims and nothing is added — the entities are already there.",
+   "alreadyApplied": true,
    "certifiedAs": [
     "Trent Franks - Republican U.S. House"
+   ]
+  },
+  {
+   "postNum": 4951,
+   "from": null,
+   "to": "predictions",
+   "text": "NCSWIC",
+   "ruledOn": "2026-08-24",
+   "ruling": "i want the term NCSWIC to be a prediction because it stands for nothing can stop what is coming",
+   "why": "Certified in no section; the owner has ruled the term a Prediction."
+  },
+  {
+   "postNum": 1958,
+   "from": "claims",
+   "to": "predictions",
+   "text": "Part (2) - Rally [RED October]",
+   "ruledOn": "2026-08-24",
+   "ruling": "Let's do all the Red October refferences as predictions for now",
+   "why": "Certified a Claim; the owner has ruled the term a Prediction.",
+   "certifiedAs": [
+    "Part (2) - Rally [RED October]"
+   ]
+  },
+  {
+   "postNum": 2286,
+   "from": null,
+   "to": "predictions",
+   "text": "RED OCTOBER?",
+   "ruledOn": "2026-08-24",
+   "ruling": "Let's do all the Red October refferences as predictions for now",
+   "why": "Certified in no section; the owner has ruled the term a Prediction."
+  },
+  {
+   "postNum": 2458,
+   "from": null,
+   "to": "predictions",
+   "text": "RED LINE ON THE ANNIVERSARY OF RED OCTOBER?",
+   "ruledOn": "2026-08-24",
+   "ruling": "Let's do all the Red October refferences as predictions for now",
+   "why": "Certified in no section; the owner has ruled the term a Prediction."
+  },
+  {
+   "postNum": 1534,
+   "from": "claims",
+   "to": "predictions",
+   "text": "[7] Delta today.",
+   "ruledOn": "2026-08-24",
+   "ruling": "Lets do all Delta references to Predictions",
+   "why": "Certified a Claim; the owner has ruled the term a Prediction.",
+   "certifiedAs": [
+    "[7] Delta today."
+   ]
+  },
+  {
+   "postNum": 1568,
+   "from": "claims",
+   "to": "predictions",
+   "text": "[1] min Delta.",
+   "ruledOn": "2026-08-24",
+   "ruling": "Lets do all Delta references to Predictions",
+   "why": "Certified a Claim; the owner has ruled the term a Prediction.",
+   "certifiedAs": [
+    "[1] min Delta."
+   ]
+  },
+  {
+   "postNum": 2567,
+   "from": "claims",
+   "to": "predictions",
+   "text": "Q/POTUS Twitter 0 Delta Exchanges",
+   "ruledOn": "2026-08-24",
+   "ruling": "Lets do all Delta references to Predictions",
+   "why": "Certified a Claim; the owner has ruled the term a Prediction.",
+   "certifiedAs": [
+    "Q/POTUS Twitter 0 Delta Exchanges"
+   ]
+  },
+  {
+   "postNum": 2577,
+   "from": "claims",
+   "to": "predictions",
+   "text": "+17 min delta between Tweets (cherry on top).",
+   "ruledOn": "2026-08-24",
+   "ruling": "Lets do all Delta references to Predictions",
+   "why": "Certified a Claim; the owner has ruled the term a Prediction.",
+   "certifiedAs": [
+    "+17 min delta between Tweets (cherry on top)."
+   ]
+  },
+  {
+   "postNum": 2647,
+   "from": null,
+   "to": "predictions",
+   "text": "[1 year delta]",
+   "ruledOn": "2026-08-24",
+   "ruling": "Lets do all Delta references to Predictions",
+   "why": "Certified in no section; the owner has ruled the term a Prediction."
+  },
+  {
+   "postNum": 2774,
+   "from": "claims",
+   "to": "predictions",
+   "text": "(3) Q/POTUS [0] DELTA",
+   "ruledOn": "2026-08-24",
+   "ruling": "Lets do all Delta references to Predictions",
+   "why": "Certified a Claim; the owner has ruled the term a Prediction.",
+   "certifiedAs": [
+    "(3) Q/POTUS [0] DELTA"
+   ]
+  },
+  {
+   "postNum": 3780,
+   "from": null,
+   "to": "predictions",
+   "text": "Delta?",
+   "ruledOn": "2026-08-24",
+   "ruling": "Lets do all Delta references to Predictions",
+   "why": "Certified in no section; the owner has ruled the term a Prediction."
+  },
+  {
+   "postNum": 756,
+   "from": "claims",
+   "to": "predictions",
+   "text": "Q, DELTA",
+   "ruledOn": "2026-08-24",
+   "ruling": "Lets do all Delta references to Predictions",
+   "why": "Certified a Claim; the owner has ruled the term a Prediction.",
+   "certifiedAs": [
+    "Q, DELTA"
+   ]
+  },
+  {
+   "postNum": 757,
+   "from": "claims",
+   "to": "predictions",
+   "text": "Q, DELTA",
+   "ruledOn": "2026-08-24",
+   "ruling": "Lets do all Delta references to Predictions",
+   "why": "Certified a Claim; the owner has ruled the term a Prediction.",
+   "certifiedAs": [
+    "Q, DELTA"
+   ]
+  },
+  {
+   "postNum": 785,
+   "from": "claims",
+   "to": "predictions",
+   "text": "Q, DELTA",
+   "ruledOn": "2026-08-24",
+   "ruling": "Lets do all Delta references to Predictions",
+   "why": "Certified a Claim; the owner has ruled the term a Prediction.",
+   "certifiedAs": [
+    "Q, DELTA"
+   ]
+  },
+  {
+   "postNum": 804,
+   "from": "claims",
+   "to": "predictions",
+   "text": "DELTA [6] CONF.",
+   "ruledOn": "2026-08-24",
+   "ruling": "Lets do all Delta references to Predictions",
+   "why": "Certified a Claim; the owner has ruled the term a Prediction.",
+   "certifiedAs": [
+    "DELTA [6] CONF."
    ]
   },
   {

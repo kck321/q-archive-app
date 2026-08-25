@@ -22,6 +22,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { execFileSync } from 'node:child_process'
 import { clean } from './lib/segment.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
@@ -32,6 +33,30 @@ const byNum = new Map(posts.map(p => [p.postNum, p]))
 const norm = s => String(s ?? '').toLowerCase().replace(/\s+/g, ' ').trim()
 
 const RULED_ON = '2026-08-24'
+
+// THIS BUILDER READS public/data, AND public/data IS WHERE ITS RULINGS LAND.
+//
+// Build -> apply -> build again, and every move reads back as "already applied", `certifiedAs`
+// comes out empty, and the next apply removes nothing while reporting success. It happened on the
+// first run of the corpus sweep: 14 of the 30 came back already-applied and the directive count
+// went the wrong way. Same trap build-unhighlighted-owner-rulings-2.mjs records, same guard.
+//
+//   git checkout -- public/data
+//   node scripts/build-owner-section-moves.mjs
+//   node scripts/rebuild-bundle.mjs
+if (!process.argv.includes('--allow-dirty')) {
+  const dirty = execFileSync('git', ['status', '--porcelain', '--', 'public/data'], { cwd: ROOT, encoding: 'utf8' }).trim()
+  if (dirty) {
+    console.error('\n  REFUSED — public/data is not what is committed.')
+    console.error('  This builder reads the bundle its own rulings land in, so a rebuilt tree makes')
+    console.error('  every move read back as already-applied and the next apply remove nothing.\n')
+    console.error('    git checkout -- public/data')
+    console.error('    node scripts/build-owner-section-moves.mjs')
+    console.error('    node scripts/rebuild-bundle.mjs\n')
+    console.error(`  changed:\n${dirty.split('\n').map(l => '    ' + l).join('\n')}\n`)
+    process.exit(1)
+  }
+}
 
 // The 13 lines on #1850. Each names a member and a party, and each is ALREADY certified as those
 // two entities — the split the round-2 entity work performed. What the owner is removing is the
@@ -73,6 +98,59 @@ for (const text of LIST_ROWS_1850) {
   })
 }
 
+// ── RED OCTOBER, NCSWIC, DELTA — corpus-wide, swept rather than typed ───────
+//
+//   "i want the term NCSWIC to be a prediction because it stands for nothing can stop what is
+//    coming"
+//   "Let's do all the Red October refferences as predictions for now"
+//   "Lets do all Delta references to Predictions"
+//
+// Swept from the drops, so the ruling covers what the corpus actually holds and the count cannot
+// drift from a hand-kept list.
+const MARKUP = /<\/?(?:em|u|span|p|b|i|strong|s)\b[^>]*>/gi
+const runtime = t => String(t || '').replace(MARKUP, '').replace(/&amp;/g, '&').replace(/&gt;/g, '>').replace(/&lt;/g, '<')
+
+const REFUSED = []
+
+/** Every line matching `rx`, with the section that holds it today. */
+function sweepToPredictions(rx, ruling, holdIf) {
+  for (const p of posts) {
+    runtime(p.text).split('\n').map(l => l.trim()).forEach(line => {
+      if (!line || !rx.test(line)) return
+      const a = p.postAnalysis ?? {}
+      const held = arr => (arr ?? []).some(x => norm(clean(x)) === norm(line))
+      // A WORD INSIDE AN ADDRESS IS NOT A WORD Q WROTE — the same refusal the WWG1WGA ruling and
+      // the Q ruling both carry. #4951 writes NCSWIC twice: once as the term, and once inside
+      // https://www.cisa.gov/safecom/NCSWIC, which is a federal interoperability council.
+      if (/https?:\/\//i.test(line)) {
+        REFUSED.push({ postNum: p.postNum, line, why: 'inside a URL — a span certified there puts a fill inside a link and splits the address' })
+        return
+      }
+      const hold = holdIf?.(p.postNum, line)
+      if (hold) { REFUSED.push({ postNum: p.postNum, line, why: hold }); return }
+      if (held(a.predictions)) return                    // already what the owner asked for
+      moves.push({
+        postNum: p.postNum, from: held(a.claims) ? 'claims' : null, to: 'predictions', text: line,
+        ruledOn: RULED_ON, ruling,
+        why: held(a.claims)
+          ? 'Certified a Claim; the owner has ruled the term a Prediction.'
+          : 'Certified in no section; the owner has ruled the term a Prediction.',
+      })
+    })
+  }
+}
+
+sweepToPredictions(/NCSWIC/i,
+  'i want the term NCSWIC to be a prediction because it stands for nothing can stop what is coming')
+sweepToPredictions(/red[ _]october/i,
+  "Let's do all the Red October refferences as predictions for now")
+sweepToPredictions(/\bdelta\b/i,
+  'Lets do all Delta references to Predictions',
+  // #1176 is Delta AIRLINES. The drop reads "Coincidence? / Delta engine fire? / Coincidence? /
+  // How rare are engine fires?" — a plane, not a timestamp delta, and the same shape of homograph
+  // the Q ruling held Al-Qaeda and a 10-Q filing for. Named here rather than swept in.
+  (postNum) => (postNum === 1176 ? 'Delta AIRLINES — the drop asks about an engine fire, not a timestamp delta' : null))
+
 // ── #4784: the opening line is a Claim ──────────────────────────────────────
 moves.push({
   postNum: 4784, from: null, to: 'claims', text: 'Lisa Barsoomian _former Bill Clinton attorney',
@@ -84,6 +162,15 @@ moves.push({
 // ── EVERY MOVE IS CHECKED AGAINST THE DROP ──────────────────────────────────
 // The text must be a line Q wrote, and where a move says `from`, the section must actually hold it.
 // A ruling that names something the archive does not have is a ruling that needs re-reading.
+// What the last run recorded, so an already-applied move can carry its span forward. Read before
+// anything is written — this file is its own prior art.
+const previous = new Map()
+if (fs.existsSync(OUT)) {
+  for (const m of JSON.parse(fs.readFileSync(OUT, 'utf8')).moves ?? []) {
+    if (m.certifiedAs?.length) previous.set(`${m.postNum}|${norm(m.text)}|${m.from}`, m.certifiedAs)
+  }
+}
+
 const problems = []
 for (const m of moves) {
   const p = byNum.get(m.postNum)
@@ -93,25 +180,61 @@ for (const m of moves) {
     problems.push(`#${m.postNum} ${JSON.stringify(m.text)} is not a line in the drop`)
     continue
   }
-  if (m.from === 'claims') {
-    const held = (p.postAnalysis?.claims ?? []).map(c => norm(clean(c)))
-    // THE CERTIFIED SPAN MAY BE SHORTER THAN THE LINE, and on this list it usually is: the sentence
+  // THIS BUILDER READS public/data, AND public/data IS WHERE ITS OUTPUT LANDS.
+  //
+  // Same trap build-unhighlighted-owner-rulings-2.mjs records: once the moves are applied, "#2." is
+  // no longer a Directive and the 13 list rows are no longer Claims, so a second run found 14
+  // rulings the archive "does not support" and refused. The ruling had not stopped being true — it
+  // had come true.
+  //
+  // So the question is not "is it still in `from`" but "is it where the ruling wants it". Already
+  // in the target is SATISFIED; still in the source is TO DO; in neither is a real problem.
+  const inSection = (sec) => {
+    if (sec === 'claims') return (p.postAnalysis?.claims ?? []).map(c => norm(clean(c)))
+    if (sec === 'predictions') return (p.postAnalysis?.predictions ?? []).map(c => norm(clean(c)))
+    if (sec === 'directives') return (p.actionRequests ?? []).map(c => norm(clean(c)))
+    if (sec === 'entities') return (p.postAnalysis?.namedEntities ?? []).map(c => norm(clean(c)))
+    return []
+  }
+  const target = m.to ? inSection(m.to) : []
+  // A target that already holds the span, whole or as the part the splitter left, is done.
+  const alreadyThere = m.alreadyCertifiedInTarget
+    || target.some(c => c === norm(m.text) || (c && norm(m.text).includes(c)))
+
+  if (m.from) {
+    const held = inSection(m.from)
+    // THE CERTIFIED SPAN MAY BE SHORTER THAN THE LINE, and on #1850's list it usually is: the
     // splitter cut "Patrick J. Tiberi - Republican U.S. House" at BOTH abbreviations and Claims
-    // holds "Tiberi - Republican U.S.". The ruling names the LINE, because that is what the owner
-    // reads; what has to leave Claims is whatever Claims actually holds inside it. Recorded on the
-    // move, so the applier removes a span the archive has rather than one the ruling assumed.
+    // held "Tiberi - Republican U.S.". The ruling names the LINE, because that is what the owner
+    // reads; what has to move is whatever the section actually holds inside it.
     const exact = held.find(c => c === norm(m.text))
     const inside = held.filter(c => c && norm(m.text).includes(c))
-    if (exact) m.certifiedAs = [m.text]
+    const raw = m.from === 'directives' ? (p.actionRequests ?? [])
+      : m.from === 'claims' ? (p.postAnalysis?.claims ?? [])
+      : m.from === 'predictions' ? (p.postAnalysis?.predictions ?? []) : []
+    if (exact) m.certifiedAs = raw.filter(c => norm(clean(c)) === norm(m.text))
     else if (inside.length) {
-      m.certifiedAs = (p.postAnalysis?.claims ?? []).filter(c => inside.includes(norm(clean(c))))
+      m.certifiedAs = raw.filter(c => inside.includes(norm(clean(c))))
       m.certifiedShorterThanTheLine = true
-    } else problems.push(`#${m.postNum} ${JSON.stringify(m.text)} is not a certified Claim, whole or truncated`)
-  }
-  if (m.from === 'directives') {
-    const held = (p.actionRequests ?? []).find(c => norm(clean(c)) === norm(m.text))
-    if (held) m.certifiedAs = [held]
-    else problems.push(`#${m.postNum} ${JSON.stringify(m.text)} is not a certified Directive`)
+    } else if (alreadyThere) {
+      // ALREADY APPLIED — AND THE SPAN STILL HAS TO BE CARRIED.
+      //
+      // Once the move is in the committed bundle the source section no longer holds the span, so
+      // there is nothing left to derive `certifiedAs` from. Writing an empty list here would make
+      // the NEXT rebuild silently restore it: apply-directives rebuilds actionRequests from the
+      // certified set every run, and a move with nothing to remove removes nothing while reporting
+      // success. That is exactly what happened — "#2." came back green and the count read 3,472.
+      //
+      // So the previous record is carried forward. The artifact is the ruling; a re-run of its
+      // builder must not be able to forget what the ruling was about.
+      m.alreadyApplied = true
+      m.certifiedAs = previous.get(`${m.postNum}|${norm(m.text)}|${m.from}`) ?? [m.text]
+    } else {
+      problems.push(`#${m.postNum} ${JSON.stringify(m.text)} is in neither ${m.from} nor ${m.to}`)
+    }
+  } else if (!alreadyThere && !target.length) {
+    // An add-only move with an empty target is fine on the first run; it is only worth reporting
+    // when the target section does not exist at all, which cannot happen here.
   }
 }
 if (problems.length) {
@@ -129,7 +252,13 @@ const out = {
     outOfClaims: moves.filter(m => m.from === 'claims').length,
     outOfDirectives: moves.filter(m => m.from === 'directives').length,
     intoClaims: moves.filter(m => m.to === 'claims').length,
+    intoPredictions: moves.filter(m => m.to === 'predictions').length,
+    alreadyApplied: moves.filter(m => m.alreadyApplied).length,
+    refused: REFUSED.length,
   },
+  // NAMED, NEVER SILENTLY SKIPPED. A sweep that quietly dropped what it could not take would read
+  // as "the ruling covered everything" — which is the one thing it must not be able to say.
+  refused: REFUSED,
   moves,
 }
 
@@ -138,7 +267,13 @@ for (const m of moves) {
   const as = m.certifiedShorterThanTheLine ? `   certified as ${JSON.stringify(m.certifiedAs)}`.slice(0, 62) : ''
   console.log(`  #${String(m.postNum).padEnd(6)} ${String(m.from ?? '—').padEnd(11)} -> ${String(m.to).padEnd(10)} ${JSON.stringify(m.text).slice(0, 50)}${as}`)
 }
-console.log(`\n  ${moves.length} moves · out of Claims ${out.totals.outOfClaims} · out of Directives ${out.totals.outOfDirectives} · into Claims ${out.totals.intoClaims}\n`)
+console.log(`\n  ${moves.length} moves · out of Claims ${out.totals.outOfClaims} · out of Directives ${out.totals.outOfDirectives}`
+  + ` · into Claims ${out.totals.intoClaims} · into Predictions ${out.totals.intoPredictions} · already applied ${out.totals.alreadyApplied}`)
+if (REFUSED.length) {
+  console.log(`\n  REFUSED (${REFUSED.length}) — named, never silently skipped:`)
+  for (const r of REFUSED) console.log(`    #${String(r.postNum).padEnd(6)} ${JSON.stringify(r.line.slice(0, 44)).padEnd(48)} ${r.why}`)
+}
+console.log('')
 if (dry) { console.log('  --dry: nothing written\n'); process.exit(0) }
 fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n')
 console.log(`  wrote ${path.relative(ROOT, OUT)}\n`)
