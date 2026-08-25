@@ -1063,6 +1063,76 @@
    "renderNote": "RENDERING_PROVENANCE_RULE: the canonical identity is \"Bill de Blasio\" and the ALIAS Q wrote is \"Mayor Bill de Blasio\". The renderer highlights the alias.",
    "replacesAliasOnPost": "Bill de Blasio",
    "canonicalExisted": true
+  },
+  {
+   "postNum": 4935,
+   "postId": "4935",
+   "canonical": "Andrew Cuomo",
+   "aliasUsed": "Gov. Andrew Cuomo, D-N.Y",
+   "sourceText": "Gov. Andrew Cuomo, D-N.Y",
+   "type": "person",
+   "was": "unclassified",
+   "ruledOn": "2026-08-25",
+   "reasoning": "Owner ruling: title+suffix conjoining. The certified span already carried the party-state suffix (\"Andrew Cuomo, D-N.Y\") but not the title; Q's line is \"Gov. Andrew Cuomo, D-N.Y\" and this lengthens to it.",
+   "renderAs": "Gov. Andrew Cuomo, D-N.Y",
+   "renderNote": "RENDERING_PROVENANCE_RULE: the canonical identity is \"Andrew Cuomo\" and the ALIAS Q wrote is \"Gov. Andrew Cuomo, D-N.Y\". The renderer highlights the alias.",
+   "replacesAliasOnPost": "Andrew Cuomo, D-N.Y"
+  },
+  {
+   "postNum": 4935,
+   "postId": "4935",
+   "canonical": "Bill de Blasio",
+   "aliasUsed": "Mayor Bill de Blasio, D-N.Y.C",
+   "sourceText": "Mayor Bill de Blasio, D-N.Y.C",
+   "type": "person",
+   "was": "unclassified",
+   "ruledOn": "2026-08-25",
+   "reasoning": "Owner ruling: second extension of the Mayor ruling above, for the trailing party-city suffix Q wrote — \"Mayor Bill de Blasio, D-N.Y.C\". Applied in sequence after the first extension, on the alias it produced.",
+   "renderAs": "Mayor Bill de Blasio, D-N.Y.C",
+   "renderNote": "RENDERING_PROVENANCE_RULE: the canonical identity is \"Bill de Blasio\" and the ALIAS Q wrote is \"Mayor Bill de Blasio, D-N.Y.C\". The renderer highlights the alias.",
+   "replacesAliasOnPost": "Mayor Bill de Blasio"
+  },
+  {
+   "postNum": 4935,
+   "postId": "4935",
+   "canonical": "Terry McCauliffe",
+   "aliasUsed": "Gov. Terry McCauliffe",
+   "sourceText": "Gov. Terry McCauliffe",
+   "type": "person",
+   "was": "unclassified",
+   "ruledOn": "2026-08-25",
+   "reasoning": "Owner ruling: \"Terry McCauliffe has a Gov. title in front of his name that is not captured as the title with his name as 1 entity\". The certified span was the bare name; Q's line is \"former Virginia Gov. Terry McCauliffe\" and the immediate title is conjoined into the one span.",
+   "renderAs": "Gov. Terry McCauliffe",
+   "renderNote": "RENDERING_PROVENANCE_RULE: the canonical identity is \"Terry McCauliffe\" and the ALIAS Q wrote is \"Gov. Terry McCauliffe\". The renderer highlights the alias.",
+   "replacesAliasOnPost": "Terry McCauliffe"
+  },
+  {
+   "postNum": 4935,
+   "postId": "4935",
+   "canonical": "Kamala Harris",
+   "aliasUsed": "Harris, D-Calif.",
+   "sourceText": "Harris, D-Calif.",
+   "type": "person",
+   "was": "unclassified",
+   "ruledOn": "2026-08-25",
+   "reasoning": "Owner ruling: \"Harris, D-Calif (Kamala Harris, Democrat in California) lets make sure we also capture that within the name of the entity\". The bare surname was certified under a separate duplicate \"Harris\" canonical (see the merges[] entry folding it into Kamala Harris below); this replaces that occurrence with the party-state suffix Q wrote, resolved to the real identity.",
+   "renderAs": "Harris, D-Calif.",
+   "renderNote": "RENDERING_PROVENANCE_RULE: the canonical identity is \"Kamala Harris\" and the ALIAS Q wrote is \"Harris, D-Calif.\". The renderer highlights the alias.",
+   "replacesAliasOnPost": "Harris",
+   "mergeDependsOn": "Harris"
+  },
+  {
+   "postNum": 4926,
+   "postId": "4926",
+   "canonical": "Central Intelligence Agency",
+   "aliasUsed": "CIA",
+   "sourceText": "CIA",
+   "type": "government_agency",
+   "was": "unclassified",
+   "ruledOn": "2026-08-25",
+   "reasoning": "Owner ruling: \"Post 4926 has CIA a known entity in the app but did not get caught in this post. lets classify this as a CIA entity and highlight the CIA\". The whole drop is \"Non_CIA_background next?\" — CIA is a certified alias of the Central Intelligence Agency identity everywhere else in the corpus; this post simply never fired.",
+   "renderAs": "CIA",
+   "renderNote": "RENDERING_PROVENANCE_RULE: the canonical identity is \"Central Intelligence Agency\" and the ALIAS Q wrote is \"CIA\". The renderer highlights the alias."
   }
  ],
  "aliasRulings": [
@@ -9421,6 +9491,12 @@
    "batch": "Owner Ruling 1 — duplicate canonical identities",
    "reasoning": "Owner ruling, APPROVED: the House IT staffer, carried twice: a bare-surname row aliased \"Awan\" and a full-name row aliased \"Imran Awan\" / \"AWAN\". Two canonical rows for one identity mean the lookup takes whichever registered first and reports the other's occurrences as unlocatable — 16 rows of the Step 3B-1 conflict queue.",
    "ownerDirective": "This is an identity normalization, not occurrence deletion. Every occurrence, post association, alias and provenance reference is preserved; only the duplicate canonical row goes."
+  },
+  {
+   "from": "Harris",
+   "into": "Kamala Harris",
+   "ruledOn": "2026-08-25",
+   "reasoning": "Discovered while conjoining #4935's title: a separate \"Harris\" canonical (2 mentions, #2854 and #4935) duplicates Kamala Harris. #2854 lists her alongside Pelosi/Waters/Schiff/Feinstein as sitting California officials of that era, and #4935 is the same Fox News contacts list this ruling extends — both are her, not a second person named Harris. Folded so the corpus counts one identity, not two."
   }
  ],
  "aliasWithdrawals": [

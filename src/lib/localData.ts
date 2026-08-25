@@ -513,7 +513,13 @@ export const OVERLAY_REPAIR = 1
 //     6,321, entities 1,235 -> 1,214 rows and 8,975 -> 8,821 mentions. A returning reader holding
 //     87 would keep the pre-review paint on 41 drops and a registry counting one written word up
 //     to five times, so the seed has to move.
-export const SEED_VERSION = 99   // 99: the owner's 2026-08-25 rulings. "Senate Minority Leader"
+export const SEED_VERSION = 100  // 100: a second 2026-08-25 batch. #4935's Cuomo, McCauliffe and
+                                 //     Harris get the same title/party-suffix conjoining as
+                                 //     Schumer and de Blasio; Harris was certified under a
+                                 //     duplicate "Harris" canonical and is merged into Kamala
+                                 //     Harris (1,588 -> 1,587 rows); #4926's CIA — a corpus-wide
+                                 //     entity that simply never fired on that drop — is added.
+                                 // 99: the owner's 2026-08-25 rulings. "Senate Minority Leader"
                                  //     is one span on #3778 and #4935 (lengthened from the bare
                                  //     "Senate"), "Mayor Bill de Blasio" is one span on #4935,
                                  //     and #4949's Gettysburg Address line is a Directive —

@@ -1,7 +1,7 @@
 {
  "breakdown": [
   {
-   "count": 1454,
+   "count": 1453,
    "key": "prose",
    "label": "named in Q’s prose"
   },
@@ -4068,14 +4068,16 @@
   },
   "qe-297b738014e9": {
    "aliasPosts": {
+    "Harris": 1,
     "Kamala Harris": 2
    },
    "kind": "prose",
    "perPostMentions": {
     "2768": 1,
+    "2854": 1,
     "4293": 1
    },
-   "posts": 2,
+   "posts": 4,
    "rowId": "qe-297b738014e9"
   },
   "qe-2a0c41a53fa4": {
@@ -5717,7 +5719,7 @@
    "aliasPosts": {
     "ABC": 2,
     "C-A": 1,
-    "CIA": 31,
+    "CIA": 32,
     "C_A": 37
    },
    "kind": "prose",
@@ -5792,9 +5794,10 @@
     "4838": 2,
     "4839": 1,
     "4845": 1,
-    "4853": 1
+    "4853": 1,
+    "4926": 1
    },
-   "posts": 71,
+   "posts": 72,
    "rowId": "qe-3a4e3df6e631"
   },
   "qe-3a6faef9cf5d": {
@@ -7161,18 +7164,6 @@
      "post": 2945
     }
    ]
-  },
-  "qe-48d2cf387501": {
-   "aliasPosts": {
-    "Harris": 2
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "2854": 1,
-    "4935": 1
-   },
-   "posts": 2,
-   "rowId": "qe-48d2cf387501"
   },
   "qe-491a7667227c": {
    "kind": "source_only",
@@ -20261,13 +20252,7 @@
    "rowId": "qe-d89374105f98"
   },
   "qe-d8c83e07cd8f": {
-   "aliasPosts": {
-    "Terry McCauliffe": 1
-   },
    "kind": "prose",
-   "perPostMentions": {
-    "4935": 1
-   },
    "posts": 1,
    "rowId": "qe-d8c83e07cd8f"
   },
@@ -22603,12 +22588,11 @@
   },
   "qe-eea145dc3613": {
    "aliasPosts": {
-    "Andrew Cuomo": 1,
-    "Andrew Cuomo, D-N.Y": 1
+    "Andrew Cuomo": 1
    },
    "kind": "prose",
    "perPostMentions": {
-    "4935": 2
+    "4935": 1
    },
    "posts": 1,
    "rowId": "qe-eea145dc3613"
@@ -24849,16 +24833,16 @@
  "ruledOn": "2026-08-17",
  "sourceNote": "The post linked this source. It is not necessarily named in Q’s prose, and it is never counted as a mention.",
  "totals": {
-  "canonicalEntities": 1588,
+  "canonicalEntities": 1587,
   "dormantReserved": 226,
-  "mentions": 9529,
+  "mentions": 9530,
   "mergedIdentities": 26,
   "mergedRows": 11,
-  "proseMentioned": 1454,
-  "publicRows": 1573,
-  "repeatBadges": 1113,
+  "proseMentioned": 1453,
+  "publicRows": 1572,
+  "repeatBadges": 1112,
   "sourceOnly": 134,
   "sourcePostChips": 358,
-  "unsettledAttributionsExcluded": 91
+  "unsettledAttributionsExcluded": 94
  }
 }

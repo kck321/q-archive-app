@@ -2448,8 +2448,8 @@
  },
  "imageUnconfirmed55": {
   "totals": {
-   "held_image_provenance_unconfirmed": 34,
-   "held_no_identifiable_source_beyond_ruled_set": 2,
+   "held_image_provenance_unconfirmed": 33,
+   "held_no_identifiable_source_beyond_ruled_set": 3,
    "migrated_as_social_account_reference": 19
   },
   "detail": [
@@ -2619,7 +2619,7 @@
     "postNum": 2768,
     "entityId": "qe-297b738014e9",
     "canonical": "Kamala Harris",
-    "bucket": "held_image_provenance_unconfirmed"
+    "bucket": "held_no_identifiable_source_beyond_ruled_set"
    },
    {
     "auditOccurrenceId": "ENT-0418-P2945",

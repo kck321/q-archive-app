@@ -269,7 +269,14 @@ export const CANONICAL = {
     // registry already holds — a second row for a person the archive knows is the duplicate-identity
     // defect the merge rulings exist to undo. ownerRulings 120 -> 123.
     // +1: "Vault 7" (#836), typed creative_work like the Steele Dossier.
-    canonical: 1588, detectedCanonical: 1292, ownerRulings: 124, ownerMerges: 1, queueRulings: 1007,
+    // 1,588 -> 1,587 on 2026-08-25: the Harris merge retires a duplicate "Harris" canonical
+    // (2 mentions, #2854 and #4935, both actually Kamala Harris) into the survivor. ownerMerges
+    // 1 -> 2. ownerRulings is UNCHANGED at 124 — this field tracks brand-new canonical rows
+    // (apply-entities.mjs's `ownerAdded`), and none of the day's six rulings mint one: five are
+    // span extensions on an existing canonical (never counted here) and the sixth, #4926's CIA,
+    // lands on the existing Central Intelligence Agency row (counted in `ownerMentions`, a
+    // different tally, not this one).
+    canonical: 1587, detectedCanonical: 1292, ownerRulings: 124, ownerMerges: 2, queueRulings: 1007,
     /** Every resolved mention across all 1,334 certified entities. The headline figure. */
     // 8,227 -> 8,239: the RC alias ruling resolved 12 occurrences to Rachel Chandler. The merge
     // moved 4 mentions from the absorbed row onto hers and added none.
@@ -345,7 +352,10 @@ export const CANONICAL = {
     // identity already appears on. The four SPAN EXTENSIONS add nothing; they lengthen a span the
     // drop already carries.
     // +1 for Vault 7 — one occurrence in the whole corpus.
-    mentions: 9529,
+    // +1 on 2026-08-25: #4926's CIA. The five span extensions that day (Senate Minority Leader x2,
+    // Mayor de Blasio x2, Gov. Cuomo, Gov. McCauliffe, Harris) add nothing; the Harris merge moves
+    // mentions between rows and adds none. CIA lands on the core registry — see below.
+    mentions: 9530,
     /** How it is composed. The core figure is the section's history, not its headline. */
     // tailEntities is what the tail adjudication produced (1,239); one of them, Ray Chandler,
     // now ships merged into Rachel Chandler, so 1,238 tail rows appear in the artifact.
@@ -370,7 +380,8 @@ export const CANONICAL = {
     // occurrences land there. 5,312 + 3,040 + 1,167 = 9,519.
     // core 5,312 + 2 = 5,314 and tail 3,040 + 4 = 3,044; the remaining 3 land on owner-ruling rows,
     // which is where an identity the owner created lives. 5,314 + 3,044 + 1,170 = 9,528.
-    coreEntities: 93, coreRegistryMentions: 5314, tailEntities: 970, tailMentions: 3044,
+    // core 5,314 + 1 = 5,315 on 2026-08-25: #4926's CIA, a core-registry identity.
+    coreEntities: 93, coreRegistryMentions: 5315, tailEntities: 970, tailMentions: 3044,
   },
   // 2,393 detected + 2 owner rulings ("Ascension." -> Religion & Spirituality, #4963 and #4966).
   // The rulings live in audit/themes-owner-rulings.json and are merged by apply-themes.mjs, so

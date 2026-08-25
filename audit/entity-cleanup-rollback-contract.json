@@ -300,6 +300,15 @@
     "rendered": 0
    },
    "afterOnlyWhy": "ONE ROW, NO MENTIONS. The cleanup keeps one identity it used to withdraw — an owner ruling now holds it, and an owner ruling outranks an audit pass — but its occurrences were already counted on the BEFORE side, so the mention arithmetic does not move again. Recorded on the after side only, exactly as the Al Gore and Roseanne Barr restorations were: folding it into `mentions` would make the guard expect a starting point that never existed."
+  },
+  {
+   "ruling": "audit/entities-owner-rulings.json (rulings[]/merges[], 2026-08-25 batch)",
+   "ruledOn": "2026-08-25",
+   "what": "Six owner rulings on #4935/#3778/#4926: \"Senate Minority Leader\" lengthened on both drops, \"Mayor Bill de Blasio\" conjoined then extended to \"Mayor Bill de Blasio, D-N.Y.C\", \"Gov. Andrew Cuomo, D-N.Y\" and \"Gov. Terry McCauliffe\" title-conjoined, \"Harris, D-Calif.\" resolved to Kamala Harris via a merge of a duplicate \"Harris\" canonical discovered while conjoining, and #4926's CIA (\"Post 4926 has CIA a known entity in the app but did not get caught in this post\"). They arrive BEFORE this step, because apply-entities.mjs is earlier in the chain.",
+   "entityRows": -1,
+   "mentions": 1,
+   "rendered": 1,
+   "evidence": "ONE mention, not six: five of the six rulings are SPAN EXTENSIONS or a MERGE, which relabel or fold an existing occurrence rather than adding one — \"Senate Minority Leader\" x2, \"Mayor Bill de Blasio\" x2 (conjoined, then extended again), \"Gov. Andrew Cuomo, D-N.Y\", \"Gov. Terry McCauliffe\", and \"Harris, D-Calif.\" (the merge target) all lengthen or relabel a span the drop already carried. CIA on #4926 is the one genuinely new occurrence — \"Non_CIA_background next?\" never fired before. MINUS ONE ROW: the Harris merge retires a duplicate \"Harris\" canonical (2 mentions, #2854 and #4935, both actually Kamala Harris) into the survivor — same shape as the Patriot -> Patriots merge, one row absorbed, its mentions and posts move across."
   }
  ]
 }

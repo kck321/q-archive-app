@@ -941,8 +941,12 @@ const checks = [
   // Five ROWS go; no occurrence does. The archive mention total is unchanged and asserted below.
   // The tail figure falls by 3 because three mentions RECLASSIFY: a tail row merged into a core
   // canonical stops being tail. Populations move, evidence does not.
-  ['detected canonical entities = 1,287',
-    entities.length - ownerAdded - queueEntitiesCreated + ownerMerged === 1287,
+  // 1,287 -> 1,286 on 2026-08-25: the Harris merge, via merges[] (from/into) like Patriot ->
+  // Patriots before it — NOT mergeRulings[] (canonical/absorb), which is what `ownerMerged` counts
+  // and what this formula adds back. A merges[]-mechanism merge falls straight through uncompensated,
+  // same as Patriot's did.
+  ['detected canonical entities = 1,286',
+    entities.length - ownerAdded - queueEntitiesCreated + ownerMerged === 1286,
     entities.length - ownerAdded - queueEntitiesCreated + ownerMerged],
   // 508 (round 1) + 499 (round 2) = 1,007 rulings.
   ['queue entity rulings accounted for = 1,007',
@@ -977,7 +981,10 @@ const checks = [
   // 1,801 -> 1,803. Three identities are created by the rulings above and one queue-created row
   // is no longer minted, because "L." is now an owner identity rather than a held wording.
   // +1: Vault 7.
-  ['canonical entities = 1,804', entities.length === 1804, entities.length],
+  // 1,804 -> 1,803 on 2026-08-25: the "Harris" merge. A separate "Harris" canonical (2 mentions,
+  // #2854 and #4935) duplicated Kamala Harris — both occurrences are her, not a second Harris —
+  // and one row is retired into the survivor.
+  ['canonical entities = 1,803', entities.length === 1803, entities.length],
   // 8,227 + 12 RC. The merge moves 4 mentions between rows and adds none.
   // 9,786 -> 9,747: -39, the occurrences of the 18 withdrawn rows. The 17 merges move mentions
   // ACROSS rows and add none, so they are absent from this arithmetic by design — asserted
@@ -1012,7 +1019,13 @@ const checks = [
   // +1 on 2026-08-24: "in post 836 i want Vault7 or any Vault 7 to be classified as an entitiy
   // throughout all the post". A corpus sweep returns exactly ONE occurrence — "Who leaked Vault7 to
   // WL?" — so corpus-wide and post-scoped are the same ruling here.
-  ['resolved mentions = 10,623', totals.mentions === 10623, totals.mentions],
+  //
+  // 10,623 -> 10,624 on 2026-08-25: #4926's CIA. Five span extensions on that day (Senate Minority
+  // Leader x2, Mayor de Blasio x2, Gov. Cuomo, Gov. McCauliffe, Harris) add nothing — same shape as
+  // Fiddler/Waters/Pelosi/Biden above, one occurrence lengthened, not doubled. The Harris merge
+  // moves mentions between rows and adds none, same as every merge above. CIA is the one drop that
+  // gains a mention it did not certify before: "Non_CIA_background next?" never fired.
+  ['resolved mentions = 10,624', totals.mentions === 10624, totals.mentions],
   ['stage 1: 19 rows merged away', !stage1 || s1Merged === 19, s1Merged],
   ['stage 1: 85 types corrected', !stage1 || s1Typed === 85, s1Typed],
   // 18 in the audit, 17 applied: ENT-0709 "Non-profit organization" is HELD because it
@@ -1045,7 +1058,9 @@ const checks = [
   // +8: queue rulings that landed on a core-registry identity.
   // +61: round-2 rulings that landed on a core-registry identity.
   // +2: two of the nine land on a core-registry identity.
-  ['core-registry mentions = 5,438', totals.coreRegistryMentions === 5438, totals.coreRegistryMentions],
+  // +1 on 2026-08-25: #4926's CIA, a core-registry identity (126 mentions before this). The Harris
+  // merge does not move this figure — Harris and Kamala Harris are both tail-population rows.
+  ['core-registry mentions = 5,439', totals.coreRegistryMentions === 5439, totals.coreRegistryMentions],
   // 3,440 + 34 C19 + 12 RC: COVID-19 and Rachel Chandler are tail entities, so alias rulings on
   // them land here.
   // +58: queue rulings that landed on an adjudicated-tail identity.

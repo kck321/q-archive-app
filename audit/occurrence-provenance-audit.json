@@ -15,21 +15,21 @@
   "ambiguous_provenance": "Attribution or URL evidence is genuinely undecidable. Retained unchanged."
  },
  "totals": {
-  "occurrences": 10623,
-  "certifiedMentions": 10623,
+  "occurrences": 10624,
+  "certifiedMentions": 10624,
   "reconciles": true,
   "attribution": {
-   "unique": 10532,
-   "ambiguous": 91
+   "unique": 10530,
+   "ambiguous": 94
   },
   "byCategory": {
-   "visible_complete_token": 9485,
+   "visible_complete_token": 9483,
    "invalid_substring_extraction": 98,
-   "visible_alias_variant": 46,
+   "visible_alias_variant": 47,
    "url_source_provenance": 645,
-   "image_provenance_unconfirmed": 38,
+   "image_provenance_unconfirmed": 37,
    "no_supported_provenance": 83,
-   "ambiguous_provenance": 99,
+   "ambiguous_provenance": 102,
    "social_account_reference": 129
   },
   "urlSourceByEvidence": {
@@ -45,8 +45,8 @@
  },
  "ruledOnAuditRun": "2026-08-24",
  "certifiedUnchanged": {
-  "entityRows": 1804,
-  "mentions": 10623
+  "entityRows": 1803,
+  "mentions": 10624
  },
  "rows": [
   {
@@ -89883,14 +89883,14 @@
    "entityId": "qe-297b738014e9",
    "canonical": "Kamala Harris",
    "entityType": "person",
-   "category": "image_provenance_unconfirmed",
+   "category": "visible_alias_variant",
    "evidence": {
-    "category": "image_provenance_unconfirmed",
-    "images": 1
+    "category": "visible_alias_variant",
+    "where": "prose",
+    "via": "Harris"
    },
-   "proposedAction": "hold — certified until an editor examines the source image; no public text hover",
-   "certifiedCountEffect": 0,
-   "privateProvenanceReview": true
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#2768:3",
@@ -93194,8 +93194,8 @@
    "postNum": 2854,
    "index": 8,
    "alias": "Harris",
-   "entityId": "qe-48d2cf387501",
-   "canonical": "Harris",
+   "entityId": "qe-297b738014e9",
+   "canonical": "Kamala Harris",
    "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
@@ -152932,6 +152932,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4926:0",
+   "postNum": 4926,
+   "index": 0,
+   "alias": "CIA",
+   "entityId": "qe-3a4e3df6e631",
+   "canonical": "Central Intelligence Agency",
+   "entityType": "government_agency",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#493:0",
    "postNum": 493,
    "index": 0,
@@ -153066,16 +153082,13 @@
    "occurrenceId": "#4935:1",
    "postNum": 4935,
    "index": 1,
-   "alias": "Harris",
-   "entityId": "qe-48d2cf387501",
-   "canonical": "Harris",
-   "entityType": "person",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
+   "alias": "Harris, D-Calif.",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "no live entity claims \"Harris, D-Calif.\" in this drop",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {
@@ -153162,12 +153175,12 @@
    "occurrenceId": "#4935:7",
    "postNum": 4935,
    "index": 7,
-   "alias": "Mayor Bill de Blasio",
+   "alias": "Mayor Bill de Blasio, D-N.Y.C",
    "entityId": null,
    "canonical": null,
    "entityType": null,
    "category": "ambiguous_provenance",
-   "detail": "no live entity claims \"Mayor Bill de Blasio\" in this drop",
+   "detail": "no live entity claims \"Mayor Bill de Blasio, D-N.Y.C\" in this drop",
    "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
@@ -153175,16 +153188,13 @@
    "occurrenceId": "#4935:8",
    "postNum": 4935,
    "index": 8,
-   "alias": "Terry McCauliffe",
-   "entityId": "qe-d8c83e07cd8f",
-   "canonical": "Terry McCauliffe",
-   "entityType": "person",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
+   "alias": "Gov. Terry McCauliffe",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "no live entity claims \"Gov. Terry McCauliffe\" in this drop",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {
@@ -153258,16 +153268,13 @@
    "occurrenceId": "#4935:13",
    "postNum": 4935,
    "index": 13,
-   "alias": "Andrew Cuomo, D-N.Y",
-   "entityId": "qe-eea145dc3613",
-   "canonical": "Andrew Cuomo",
-   "entityType": "person",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
+   "alias": "Gov. Andrew Cuomo, D-N.Y",
+   "entityId": null,
+   "canonical": null,
+   "entityType": null,
+   "category": "ambiguous_provenance",
+   "detail": "no live entity claims \"Gov. Andrew Cuomo, D-N.Y\" in this drop",
+   "proposedAction": "keep — attribution must be settled by an occurrence-level ruling, not by a matcher",
    "certifiedCountEffect": 0
   },
   {
