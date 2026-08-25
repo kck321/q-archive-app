@@ -15,7 +15,7 @@ Do not reopen any of them.
 | HEAD | see `git log -1` |
 | production | **seed 88** — the round-2 batch AND the UPDATED-report batch are committed but NOT deployed |
 | invariants | **221/222** — the manifest is the one outstanding, by design |
-| seed | **92** — bumped twice in this session; neither has shipped |
+| seed | **97** — bumped six times on 2026-08-24; none has shipped |
 | manifest | **NOT re-certified.** The certified sections changed; re-certify at the deploy checkpoint |
 | validation | **owed.** `batch-status.mjs` puts the floor at FULL; the receipt is stale |
 | conflict queue | closed, 50 rows, actionable 0 |
@@ -130,6 +130,10 @@ on the finished bundle records 1532/9271 and the cleanup then refuses.
 
 ## Open for the owner
 
+0a. **The quoted-post rulings.** `Q Quoted Posts - REVIEW 2026-08-24.xlsx` proposes a reading for
+   2,800 lines in the 1,077 quoted blocks that are not drops. NOTHING IS APPLIED — invariant 9 keeps
+   quoted text out of the analysis index, and 1,046 of those blocks are anons. Sheet 2 is the 326
+   lines Q himself wrote, which is the set a ruling could certify safely.
 0. **Deploy.** The batch is finished and reviewed locally; production still carries seed 88. The
    order is `node scripts/validate.mjs --profile full` → `node scripts/certification-manifest.mjs`
    → `npm run deploy:web` → `node scripts/verify-live.mjs`.

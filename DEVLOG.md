@@ -7359,3 +7359,84 @@ Gate: `scripts/test-wwg1wga-directive.mjs`, 10/10, in validate at `certified`. I
 marked inside the link" assertion was narrowed to "no WWG1WGA is marked inside the link" — the wider
 form failed on #1601, where `potus` in the reddit slug is painted cyan. **That is a pre-existing
 URL-derived entity and a separate question for the owner**, not something this ruling created.
+
+---
+
+## 2026-08-24 (last of the day) — The four remaining items
+
+### Thirteen entity rulings, each scoped to the drop it names
+
+> *"Just classify these categories on only these specific post i gave you: not across the whole app"*
+
+That scoping is why they go through `rulings[]` and not an alias. A ruling adds ONE mention on ONE
+drop and pushes the alias Q wrote into that drop's `namedEntities`; nothing else moves. An alias is
+corpus-wide — registering `45` as an alias of Donald Trump would have claimed **281 occurrences
+across 255 drops**.
+
+`#300` `L.` · `#836` `OP Name: Fiddler` · `#1319` Goodlatte / House Committee / House Oversight /
+Government Reform Committee / Democratic / Attorney General · `#1565` `45` → Donald Trump · `#2734`
+`F-15` · `#3383` `M. Waters` / `N. Pelosi` / `J. Biden`.
+
+**The identity is reused wherever the archive has one** — only three rows are new. A second row for
+a person the registry already holds is the duplicate-identity defect the merge rulings exist to undo.
+
+Two shapes the applier did not have, both added narrowly:
+
+* **`replacesAliasOnPost`** — #3383 was certified as "Waters", "Pelosi", "Biden" with the initial cut
+  off. Adding "M. Waters" BESIDE "Waters" would paint a box inside a box and count one person twice
+  on one line, so the ruling lengthens the span already there. Runs LAST, after every layer that
+  pushes: #836's "Fiddler" arrives from the queue rulings hundreds of lines after the owner-ruling
+  push, and an earlier placement found nothing to lengthen and refused.
+* **`additionalOccurrence`** — #1319 certifies "Bob Goodlatte - Republican" in the list and names him
+  again on line 59. Skipping on post membership alone would have painted that span while the count
+  stayed put.
+
+mentions 9,519 → **9,528** · canonical 1,584 → **1,587** · queue holds 86 → 85, because `L.` was a
+held wording and the owner named it. (`5b7f590`)
+
+### #2347's directive is the whole `(((WWG1WGA)))`
+
+Q sets the phrase in triple parentheses; the first pass took the token and left a green word inside
+grey brackets. `lib/queueDirectiveFamily.mjs` learned to look through Q's wrapping — it already
+stripped a leading `>` for the same reason — symmetric, so only paired marks are stripped and a
+phrase can never be shortened into a different phrase. (`4eb51e4`)
+
+### The quoted posts the archive does not hold
+
+`Q Quoted Posts - REVIEW 2026-08-24.xlsx`. 1,320 of the 2,785 quoted blocks resolve to a drop and are
+already marked up from its certified analysis. **1,077 do not and still have writing — 2,800 lines
+nothing in the archive classifies.**
+
+**Who wrote them is the first question, and the board's answer is useless**: the scrape recorded
+almost all as "Anonymous ID: 000000". A tripcode or a body closing with the sign-off is the evidence.
+On that test **31 blocks are Q's own** and 1,046 are anons.
+
+That decides #4965: `Q & A ?` is an ANON asking, and Q replying "In time." Certifying it as a Q
+Question is what invariant 9 exists to prevent. So the file RULES and does not apply, and sheet 2 is
+the 326 lines Q wrote on their own.
+
+The reading uses the archive's own rules and no new ones; a line neither would place is left blank
+and says so — 1,146, and they are handles, names, meme captions and fragments with no terminal
+punctuation.
+
+```
+947 Claim · 395 Question · 193 sign-off or bare URL · 111 Directive · 8 [ Bracket ] · 1,146 not placed
+```
+
+**One bug worth the note.** `imperativeMood` returns `{imperative, why}`, not a boolean, and the
+first cut tested the object for truthiness — 2,212 of 2,800 came back Directives. 79% is not a
+strange corpus, it is a broken reading, which is the only reason it was caught. (`142824e`)
+
+### Three builders now refuse a rebuilt tree
+
+`build-owner-section-moves.mjs` and `build-owner-rulings-wwg1wga.mjs` join
+`build-unhighlighted-owner-rulings-2.mjs`. Both read `public/data` and both LAND in it, and both
+lost something before the guard went in: the section moves came back "already applied" with an empty
+`certifiedAs` so the next apply removed nothing, and the WWG1WGA builder wrote an EMPTY ruling list
+over its own record — directives fell 3,471 → 3,466 and all five rulings were gone until git restored
+them.
+
+### Counts
+
+seed **97** · **221/222 invariants**, the manifest re-certified at the deploy checkpoint · NOT
+DEPLOYED.
