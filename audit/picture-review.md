@@ -103,6 +103,7 @@ No content details are recorded here; the owner reviews the image directly.
 |---------|------|-----------------|----------|--------|--------|-----------|
 | 308 | #1779 | `488babf81f742bb2262cb0976324aa1216a5f3b46b80c607c57fbdbdc4b9c685` | #1.png | referenced | review_required | withheld |
 | 554 | #2362 | `ecaa72306e61f77fc86a22f16483c111a2677bad2ffa8853bf3502dcc441a8ce` | patriotic-flag-american-freedom-708237-4487849.jpg | attached | review_required | withheld |
+| 881 | #3144 | `a59bcc1ae7edcaa18c0d79acde88af0345d0f8f25623603649b953752ab9a8f7` | Screen Shot 2019-03-20 at 9.47.21 PM.png | referenced | review_required | withheld |
 
 ## Rule going forward
 
