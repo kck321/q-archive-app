@@ -28,6 +28,7 @@ export const SERIES_COLOR: Record<string, string> = {
   'Questions':            CATEGORY_COLOR.questions,
   'Q Questions':          CATEGORY_COLOR.questions,
   'Requests':             CATEGORY_COLOR.requests,
+  'Directives':           CATEGORY_COLOR.requests,
   'Q Directives':           CATEGORY_COLOR.requests,
   'Claims':               CATEGORY_COLOR.claims,
   'Predictions':          CATEGORY_COLOR.predictions,

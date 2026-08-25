@@ -1637,7 +1637,7 @@ export default function Dashboard() {
                           } />
                         ))}
                       </Bar>
-                      <Bar dataKey="requests"           name="Requests"           radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }}>
+                      <Bar dataKey="requests"           name="Directives"           radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }}>
                         {timeline.map(e => <Cell key={e.month} fill={!selectedMonth || selectedMonth === e.month ? '#22c55e' : '#14532d'} />)}
                       </Bar>
                       <Bar dataKey="claims"             name="Claims"             stackId="a" fill="#f59e0b" radius={[0,0,0,0]} style={{ cursor: 'pointer' }} />

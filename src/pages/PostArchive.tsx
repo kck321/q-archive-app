@@ -663,13 +663,25 @@ export default function PostArchive() {
   // Month tapped on a phone, for the readout under the chart.
   const [tappedMonth, setTappedMonth] = useState<string | null>(null)
 
-  // First month present for each year — where the year label and its tick are drawn.
-  const yearStarts = useMemo(() => yearStartsOf(timeline), [timeline])
-
   const chartData = useMemo(
     () => timeline.map(e => ({ ...e, matches: chartMatchMonths?.get(e.month) ?? 0 })),
     [timeline, chartMatchMonths],
   )
+
+  // OWNER RULING, 2026-08-25: an open month owns the chart. Dimming the other 59 months
+  // still left every category painted across the whole timeline, so "show me March 2018"
+  // read as "show me everything, slightly grey". With a month open (and no keyword search
+  // painting the chart), the chart holds ONLY that month — its posts bar beside its
+  // category bars. The month strip below keeps every month, so jumping stays one click.
+  const displayedChartData = useMemo(
+    () => (selectedMonth && !chartMatchMonths ? chartData.filter(e => e.month === selectedMonth) : chartData),
+    [chartData, selectedMonth, chartMatchMonths],
+  )
+  const monthIsolated = !!selectedMonth && !chartMatchMonths && displayedChartData.length === 1
+
+  // First month present for each year — where the year label and its tick are drawn.
+  // Derived from what the chart actually shows, so an isolated month keeps its year label.
+  const yearStarts = useMemo(() => yearStartsOf(displayedChartData), [displayedChartData])
 
   // Which analysis sections carry the searched term — drives the tab strip below so it
   // shows the term's own counts and hides sections the term never appears in.
@@ -719,7 +731,13 @@ export default function PostArchive() {
   }
 
 
-  const browsePosts = posts
+  // OWNER RULING, 2026-08-25: an open month fills the reading list too. The chips grid names
+  // the month's posts, but the cards under it still showed the archive newest-first (#4966
+  // under a March 2018 grid). With a month open, the cards ARE that month, oldest first —
+  // #882 → #982 for March 2018 — so the chips and the readable posts agree.
+  const browsePosts = selectedMonth && !isSearchMode && monthPosts.length
+    ? [...monthPosts].sort((a, b) => a.postNum - b.postNum)
+    : posts
 
   return (
     <div className="flex flex-col">
@@ -999,10 +1017,10 @@ export default function PostArchive() {
                     )}
                   </div>
 
-                  <ScrollableChart minWidth={920} centerAt={centerAt}><ResponsiveContainer width="100%" height={240}>
+                  <ScrollableChart minWidth={monthIsolated ? 360 : 920} centerAt={monthIsolated ? undefined : centerAt}><ResponsiveContainer width="100%" height={240}>
                     {/* NO onMouseMove / onMouseLeave: they tracked the hovered month only so the
                         jump-chips below could pulse. Hover is the tooltip and nothing else. */}
-                    <BarChart data={chartData} margin={{ top: chartMatchMonths ? 22 : 4, right: 8, left: -16, bottom: 0 }}
+                    <BarChart data={displayedChartData} margin={{ top: chartMatchMonths ? 22 : 4, right: 8, left: -16, bottom: 0 }}
                       onClick={d => { const p = (d as { activePayload?: { payload: { month: string } }[] }); if (p) handleBarClick(p.activePayload?.[0]?.payload) }}>
                       <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
                       <XAxis dataKey="month" tick={(props: any) => <MonthYearTick {...props} yearStarts={yearStarts} />} interval={0} height={52} />
@@ -1043,7 +1061,7 @@ export default function PostArchive() {
                       {/* Posts bar — always shown */}
                       <Bar yAxisId="left" dataKey="posts" name="Q Posts" radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }}
                         onClick={(d: { month?: string; payload?: { month?: string } }) => handleBarClick({ month: d?.month ?? d?.payload?.month ?? '' })}>
-                        {chartData.map(entry => (
+                        {displayedChartData.map(entry => (
                           <Cell key={entry.month} fill={!selectedMonth || selectedMonth === entry.month ? '#9ca3af' : '#374151'} />
                         ))}
                       </Bar>
@@ -1053,7 +1071,7 @@ export default function PostArchive() {
                         <Bar yAxisId="matches" dataKey="matches" name={`"${chartSearch}" matches`} radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }} minPointSize={3}
                           onClick={(d: { month?: string; payload?: { month?: string } }) => handleBarClick({ month: d?.month ?? d?.payload?.month ?? '' })}>
                           <LabelList dataKey="matches" position="top" content={MatchCountLabel} />
-                          {chartData.map(entry => (
+                          {displayedChartData.map(entry => (
                             <Cell
                               key={entry.month}
                               fill={
@@ -1069,12 +1087,12 @@ export default function PostArchive() {
                       {/* All categories view — hidden when keyword search is active */}
                       {isAll && !chartMatchMonths && (<>
                         <Bar dataKey="questions" name="Questions" radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }}>
-                          {timeline.map(entry => (
+                          {displayedChartData.map(entry => (
                             <Cell key={entry.month} fill={!selectedMonth || selectedMonth === entry.month ? '#3b82f6' : '#1e3a5f'} />
                           ))}
                         </Bar>
-                        <Bar dataKey="requests"           name="Requests"           radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }}>
-                          {timeline.map(e => <Cell key={e.month} fill={!selectedMonth || selectedMonth === e.month ? '#22c55e' : '#14532d'} />)}
+                        <Bar dataKey="requests"           name="Directives"           radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }}>
+                          {displayedChartData.map(e => <Cell key={e.month} fill={!selectedMonth || selectedMonth === e.month ? '#22c55e' : '#14532d'} />)}
                         </Bar>
                         <Bar dataKey="claims"             name="Claims"             stackId="a" fill={catColor('claims')} radius={[0,0,0,0]} style={{ cursor: 'pointer' }} />
                         <Bar dataKey="predictions"        name="Predictions"        stackId="a" fill={catColor('predictions')} radius={[0,0,0,0]} style={{ cursor: 'pointer' }} />
@@ -1085,7 +1103,7 @@ export default function PostArchive() {
                       {/* Single category view — hidden when keyword search is active */}
                       {!isAll && !isPostsOnly && !chartMatchMonths && activeTab && (
                         <Bar dataKey={activeTab.dataKey} name={activeTab.label} radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }}>
-                          {timeline.map(entry => (
+                          {displayedChartData.map(entry => (
                             <Cell key={entry.month} fill={!selectedMonth || selectedMonth === entry.month ? activeTab.color : activeTab.dimColor} />
                           ))}
                         </Bar>
@@ -1441,13 +1459,17 @@ export default function PostArchive() {
         ) : (
           /* Browse mode */
           <>
-            {loading ? (
+            {loading || (selectedMonth && monthPostsLoading) ? (
               <div className="text-center py-12 text-gray-500">Loading posts…</div>
             ) : !error && browsePosts.length === 0 ? (
               <div className="text-center py-12 text-gray-500">No posts found.</div>
             ) : (
               <>
-                <p className="text-xs text-gray-500">{browsePosts.length} posts shown</p>
+                <p className="text-xs text-gray-500">
+                  {selectedMonth && monthPosts.length
+                    ? `${browsePosts.length} posts in ${formatMonth(selectedMonth)} — #${browsePosts[0]?.postNum} → #${browsePosts[browsePosts.length - 1]?.postNum}`
+                    : `${browsePosts.length} posts shown`}
+                </p>
                 <div className="grid gap-3 w-full max-w-3xl">
                   {browsePosts.map(p => (
                     <PostCard key={p.id} post={p}
@@ -1456,7 +1478,9 @@ export default function PostArchive() {
                     />
                   ))}
                 </div>
-                {hasMore && (
+                {/* A month's list is complete by construction — "Load More" would page the
+                    unfiltered archive in under it, so it hides while a month is open. */}
+                {hasMore && !(selectedMonth && monthPosts.length) && (
                   <button
                     onClick={() => load(false)}
                     disabled={loadingMore}

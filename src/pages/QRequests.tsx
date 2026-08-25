@@ -361,7 +361,7 @@ export default function QRequests() {
                   ))}
                 </Bar>
               ) : (
-                <Bar yAxisId="left" dataKey="requests" name="Requests" radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }} onClick={(d: { month?: string; payload?: { month?: string } }) => handleBarClick({ month: d?.month ?? d?.payload?.month })}>
+                <Bar yAxisId="left" dataKey="requests" name="Directives" radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }} onClick={(d: { month?: string; payload?: { month?: string } }) => handleBarClick({ month: d?.month ?? d?.payload?.month })}>
                   {timeline.map(entry => (
                     <Cell key={entry.month} fill={!selectedMonth || selectedMonth === entry.month ? '#22c55e' : '#14532d'} />
                   ))}
