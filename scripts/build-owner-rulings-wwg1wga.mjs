@@ -30,6 +30,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { execFileSync } from 'node:child_process'
 import { clean } from './lib/segment.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
@@ -38,6 +39,28 @@ const dry = process.argv.includes('--dry')
 const posts = JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/posts.json'), 'utf8'))
 const byNum = new Map(posts.map(p => [p.postNum, p]))
 const norm = s => String(s ?? '').toLowerCase().replace(/[^a-z0-9]+/g, '')
+
+// THIS BUILDER READS public/data, AND ITS RULINGS LAND IN public/data.
+//
+// It decides what to rule by asking which WWG1WGA occurrences are NOT yet Directives — so once the
+// batch is applied the answer is "none", and a re-run wrote an EMPTY ruling list over the record.
+// Directives fell 3,471 -> 3,466 and the five rulings were gone. Same trap
+// build-unhighlighted-owner-rulings-2.mjs and build-owner-section-moves.mjs both record.
+//
+//   git checkout -- public/data
+//   node scripts/build-owner-rulings-wwg1wga.mjs
+//   node scripts/rebuild-bundle.mjs
+if (!process.argv.includes('--allow-dirty')) {
+  const dirty = execFileSync('git', ['status', '--porcelain', '--', 'public/data'], { cwd: ROOT, encoding: 'utf8' }).trim()
+  if (dirty) {
+    console.error('
+  REFUSED — public/data is not what is committed.')
+    console.error('  This builder asks which occurrences are NOT yet Directives, so a rebuilt tree')
+    console.error('  makes the answer "none" and the record is overwritten with nothing.
+')
+    process.exit(1)
+  }
+}
 
 const RULED_ON = '2026-08-24'
 const WWG = 'lets make the wwg1wga a directive. lets make ALL the wwg1wga directives trough all the post'
@@ -77,7 +100,11 @@ const toRule = occurrences.filter(o => !o.alreadyDirective && !o.inUrl)
 // "Define." inside "What is HUMA? Define." — so this is the archive's existing shape, not a new one.
 const rulings = []
 for (const o of toRule) {
-  const m = o.line.match(/WWG1WGA[!.?]*/i)
+  // THE WRAPPER IS PART OF THE SPAN WHERE Q WROTE ONE (owner ruling, 2026-08-24: "#2347 it bothers
+  // me that (((WWG1WGA))) isn't all a directive"). Q sets the phrase inside triple parentheses on
+  // #2347 and the ruling is about what a reader sees — a green word inside grey brackets reads as
+  // half a decision. Taken from the line, so the marks are Q's own and nothing is invented.
+  const m = o.line.match(/\(\(\(\s*WWG1WGA[!.?]*\s*\)\)\)|WWG1WGA[!.?]*/i)
   if (!m) { console.error(`#${o.postNum}: no WWG1WGA token on ${JSON.stringify(o.line)} — refusing.`); process.exit(1) }
   rulings.push({
     postNum: o.postNum, postId: o.postId, section: 'directives',

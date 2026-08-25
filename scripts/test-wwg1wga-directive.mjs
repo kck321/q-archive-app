@@ -50,8 +50,10 @@ for (const n of [1183, 2347, 2543, 2565, 2567, 1227]) {
     await page.waitFor(DROP_READY, { timeout: 60000 })
     const raw = await page.waitFor(MARKS, { timeout: 25000 }).catch(() => '[]')
     const marks = raw.startsWith('[') ? JSON.parse(raw) : []
-    const hit = marks.find(m => /^WWG1WGA/i.test(m.t))
-    check(Boolean(hit) && /green/.test(hit.c), `#${n} WWG1WGA is green`, hit ? hit.c.slice(0, 30) : 'no mark')
+    // THE WRAPPER COUNTS. #2347's span is "(((WWG1WGA)))" — the owner ruled the brackets in, so a
+    // pattern anchored on the bare token would report the ruling as broken the moment it landed.
+    const hit = marks.find(m => /^\(*\s*WWG1WGA/i.test(m.t))
+    check(Boolean(hit) && /green/.test(hit.c), `#${n} WWG1WGA is green`, hit ? `${JSON.stringify(hit.t)} ${hit.c.slice(0, 22)}` : 'no mark')
   } finally { await page.close() }
 }
 

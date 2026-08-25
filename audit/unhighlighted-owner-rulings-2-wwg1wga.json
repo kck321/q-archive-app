@@ -15,11 +15,14 @@
    "postNum": 2347,
    "postId": "2347",
    "section": "directives",
-   "sourceText": "WWG1WGA",
+   "sourceText": "(((WWG1WGA)))",
    "was": "unclassified within a line certified elsewhere",
    "ruledOn": "2026-08-24",
    "hostLine": "The Q will be answered (((WWG1WGA))).",
-   "provenance": "owner ruling 2026-08-24 — \"lets make the wwg1wga a directive. lets make ALL the wwg1wga directives trough all the post\". 171 of the 178 WWG1WGA occurrences were already Directives; this is one of the five that were not, and it is a sub-line span in a line the archive certifies in another section."
+   "provenance": "owner ruling 2026-08-24 — \"lets make the wwg1wga a directive. lets make ALL the wwg1wga directives trough all the post\". 171 of the 178 WWG1WGA occurrences were already Directives; this is one of the five that were not, and it is a sub-line span in a line the archive certifies in another section.",
+   "spanWidenedOn": "2026-08-24",
+   "spanWidenedRuling": "#2347 it bothers me that (((WWG1WGA))) isn't all a directive if we could make that change",
+   "spanWidenedWhy": "Q sets the phrase inside triple parentheses on this drop. The first pass took the token alone, which left a green word inside grey brackets — half a decision, as the owner read it. The builder's pattern now prefers the wrapped form where Q wrote one, so a regeneration from a pre-ruling tree produces this span; the value is corrected here because the builder cannot regenerate against a tree its own rulings are already in."
   },
   {
    "postNum": 2543,

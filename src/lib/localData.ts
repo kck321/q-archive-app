@@ -513,7 +513,11 @@ export const OVERLAY_REPAIR = 1
 //     6,321, entities 1,235 -> 1,214 rows and 8,975 -> 8,821 mentions. A returning reader holding
 //     87 would keep the pre-review paint on 41 drops and a registry counting one written word up
 //     to five times, so the seed has to move.
-export const SEED_VERSION = 96   // 96: THE POST-SCOPED ENTITY RULINGS, 2026-08-24. #300 "L.",
+export const SEED_VERSION = 97   // 97: #2347's directive is the WHOLE "(((WWG1WGA)))", brackets
+                                 //     included — "it bothers me that (((WWG1WGA))) isn't all a
+                                 //     directive". A reader on 96 keeps a green word inside grey
+                                 //     brackets.
+                                 // 96: THE POST-SCOPED ENTITY RULINGS, 2026-08-24. #300 "L.",
                                  //     #836 "OP Name: Fiddler", six on #1319, "45" on #1565, "F-15"
                                  //     on #2734 and the three initials on #3383. Four are span
                                  //     EXTENSIONS — the short form goes and the whole name Q wrote

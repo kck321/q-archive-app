@@ -110,7 +110,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | SEED_VERSION is 96 (the post-scoped entity rulings) | 96 |
+| ✅ | SEED_VERSION is 97 (#2347 (((WWG1WGA)))) | 97 |
 | ✅ | seeding is gated on SEED_VERSION | present |
 | ✅ | seeded data matches the SEED_VERSION that shipped it | unchanged |
 | ✅ | the gate value is persisted after seeding | present |
@@ -224,7 +224,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | the two coordinate systems genuinely disagree, so this check can fail | raw 1430 links vs rendered 2666 — the gap this guard exists for |
 | ✅ | the script definition still matches what the app strips at seed time | markup + entities |
 | ✅ | the scripts use the renderer's word-boundary rule | lookaround, not \b |
-| ✅ | the approved audit still holds its exact bytes | identical |
+| ✅ | the approved audit still holds its exact bytes | audit unchanged; inputs moved under 11 recorded decision(s) |
 
 ## 10d. Public entity list reconciliation
 

@@ -139,7 +139,16 @@ export function statesNoInstruction(text) {
 }
 
 export function queueFamilyOf(text, postNum) {
-  const bare = String(text ?? '').replace(/^[>\s]+/, '').trim()
+  // Q'S OWN WRAPPING IS NOT PART OF THE PHRASE. He writes "(((WWG1WGA)))" on #2347 and "WWG1WGA" on
+  // 168 other drops — the same valediction, and the same family. The leading ">" strip was already
+  // here for the same reason; triple parentheses are the other wrapper he uses, and without this a
+  // span the owner widened to include them fell through to 'other', which the QA gate refuses.
+  //
+  // Symmetric on purpose: only marks that come in pairs are stripped, so a phrase is never
+  // shortened into a different phrase.
+  const wrapped = String(text ?? '').trim().match(/^(\(+)\s*([\s\S]*?)\s*(\)+)$/)
+  const unwrapped = wrapped && wrapped[1].length === wrapped[3].length ? wrapped[2] : text
+  const bare = String(unwrapped ?? '').replace(/^[>\s]+/, '').trim()
   const frag = FRAGMENTS.get(`${postNum}|${bare}`)
   if (frag) return frag
   for (const [family, rx] of RULES) if (rx.test(bare)) return family

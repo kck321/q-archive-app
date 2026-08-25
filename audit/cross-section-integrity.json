@@ -614,9 +614,9 @@
   {
    "group": "8. Seed and cache integrity",
    "id": "seed-current",
-   "description": "SEED_VERSION is 96 (the post-scoped entity rulings)",
+   "description": "SEED_VERSION is 97 (#2347 (((WWG1WGA))))",
    "pass": true,
-   "detail": "96"
+   "detail": "97"
   },
   {
    "group": "8. Seed and cache integrity",
@@ -1274,7 +1274,7 @@
    "id": "cleanup-rebuild-byte-identical",
    "description": "the approved audit still holds its exact bytes",
    "pass": true,
-   "detail": "identical"
+   "detail": "audit unchanged; inputs moved under 11 recorded decision(s)"
   },
   {
    "group": "10d. Public entity list reconciliation",
