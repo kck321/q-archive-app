@@ -23,6 +23,7 @@ transcribe them freely; the notes below say exactly where to look.
 | 685 | #2735 | E4242FFD-58A5-4FCD-A339-C17643530834.jpeg | fetched/`25f8432e7342338fe8749350632082d53113e83396e66fe6213fbbe615544993.jpeg` | 93×399 |
 | 712 | #2775 | Screenshot 2019-02-17_19-00-19-862.jpg | `634a07c79c3a9801b48f6ec1393de6d429032a16e1584c38e7a216098b0ab950.jpg` | 1600×894 |
 | 795 | #2940 | Feb Count.JPG | `eb226a9748f6fafca7a81506ff23e60b0e12f4f0e0cca8f886dd74f0b4d250c0.jpg` | 1135×818 |
+| 925 | #3207 | 7day BING QAnon search results.png | `8ee07c0c262d7126f8304593acea3d96e85cd3b17429073a053a8c2796140e69.jpg` | 286×4096 |
 
 ## What each contains (from the completed visual pass)
 
@@ -67,6 +68,11 @@ transcribe them freely; the notes below say exactly where to look.
 - **#2940 (n795):** Another sealed-proceedings count table (~90 districts × 6 columns);
   headers, totals, footnotes and sample rows transcribed — the full per-cell grid remains,
   same shape as n257/n328.
+- **#3207 (n925):** "7day BING QAnon search results" — a very tall, very narrow (286px-wide)
+  capture of a Bing news-results page, ~80–100 result rows about QAnon over a 7-day window.
+  Individual headlines are below legible resolution at this width; layout and subject are
+  described, no verbatim rows could be extracted. Like n685, a human pass needs a
+  better-resolution source copy rather than better reading.
 - **#132 (n98):** "Q Graphic" — the community's cleaned November 2017 compilation.
   Contains the `Q !ITPb.qbhqo` tripcode era posts and the Spy.png / AF1 photo inserts.
   Substantial overlap with the archive's own ingested drops #1–#112.
