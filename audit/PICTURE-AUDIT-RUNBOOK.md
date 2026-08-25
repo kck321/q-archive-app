@@ -1,10 +1,13 @@
 # Picture audit — the runbook
 
-**The format is the point.** 850 images are analysed and published; ~840 remain. The next batch
+**The format is the point.** 1,050 images are analysed and compiled; ~640 remain. The next batch
 must look and read EXACTLY like the ones already live, or the archive ends up with two standards.
 This file exists so that can be reproduced months later without re-deriving anything.
 
-Written 19 Aug 2026, at 850 images compiled, with the audit paused for token budget.
+Written 19 Aug 2026 at 850 images compiled, with the audit paused for token budget.
+Updated 24 Aug 2026: batch n=851-1050 (200 images) compiled via `build_next200.py` /
+`merge1050.py` — same loop, 41 agents, one content-filter withhold (n=951), two partial
+transcriptions queued (n=925, n=950).
 
 ---
 
@@ -36,9 +39,12 @@ Written 19 Aug 2026, at 850 images compiled, with the audit paused for token bud
 | first 100 | n=1-100   | published |
 | 500       | n=101-600 | published |
 | 250       | n=601-850 | published |
-| **next**  | **n=851-**  | **not started** |
+| 200       | n=851-1050 | compiled, NOT yet deployed |
+| **next**  | **n=1051-** | **not started** |
 
-The archive holds **1,690 distinct images**. 850 done, ~840 to go.
+The archive holds **1,690 distinct images**. 1,050 done, ~640 to go. The n=851-1050 batch
+used `build_next200.py` → `batch1050.json`, `fetch_missing1050.py`, `make_manifests1050.py`,
+`merge1050.py` — same pattern, verified 850/850 before emitting.
 
 ## 3. Starting the next batch
 
@@ -77,7 +83,7 @@ the triggering content nowhere:
      "needsReview": true, "ocrStatus": "withheld"}
 
 Then add a row to the **"Withheld analyses"** table in `audit/picture-review.md` (seq, post, hash,
-filename, source, `review_required`, `withheld`). Two so far: **308** and **554**.
+filename, source, `review_required`, `withheld`). Four so far: **308**, **554**, **881**, **951**.
 
 **Incomplete transcription.** Keep the partial OCR — it is real evidence and must not be thrown
 away — summarise per SPEC rule 3, set `needsReview: true`, and add a flag beginning
@@ -107,7 +113,10 @@ Per-image cost, measured over 51 Fable 5 agents: **~7,700 tokens**; a 25-image g
 including orchestration. Roughly **1.7%** of images end up `needsReview` — a batch that flags far
 more than that means something is wrong with the run, not with the archive.
 
-Current published totals: **850 images, 767 posts, green 699 / yellow 118 / red 33, needsReview 16.**
+Current compiled totals: **1,050 images, 938 posts, green 838 / yellow 167 / red 45, needsReview 20.**
+(The n=851-1050 range runs yellower/redder than the first 850 because it crosses the Rachel
+Chandler / Instagram-screenshot stretch, which is dense with unidentifiable private individuals —
+that is the material, not the run.)
 
 ## 8. Interruptions are normal — this is how they were handled
 

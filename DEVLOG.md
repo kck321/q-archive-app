@@ -7440,3 +7440,19 @@ them.
 
 seed **97** · **221/222 invariants**, the manifest re-certified at the deploy checkpoint · NOT
 DEPLOYED.
+
+## 2026-08-24 — Picture audit batch n=851-1050 (200 images)
+
+**Request:** Resume the picture audit; do a batch of 200 with as much detail as the photos give.
+
+**Solution:** `build_next200.py` reproduced the enumeration 850/850 hash-for-hash before emitting
+`batch1050.json` (2 fetched, 0 videos). Ran the frozen loop — 8 groups of 25, 5 agents x 5 images,
+one attempt per image, append-immediately, `merge1050.py check` + commit per group. One agent was
+killed by content filtering on n=851's group-5 first image (n=951): exact withheld record written, review-table
+row added, continuation agent covered the 4 never-attempted rows. Two partial transcriptions queued
+(n=925 Bing strip 286x4096; n=950 USC Ch.115 FireShot — paste canonical statute text instead of
+reading the image). Compiled +200 -> **1,050 images / 938 posts, green 838 / yellow 167 / red 45,
+needsReview 20**, LF verified. NOT deployed — local per batch-deploy rule. NOTE: a concurrent
+session was committing entity rulings tonight; two of its commits swept in-progress audit JSONL
+files into themselves (no data lost, check clean throughout) — re-check for concurrent sessions
+before the validate/deploy checkpoint.
