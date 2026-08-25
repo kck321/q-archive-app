@@ -86,8 +86,8 @@ const CHART_TABS: { key: string; label: string; dataKey: string; color: string; 
   { key: 'requests',           label: 'Q Directives',    dataKey: 'requests',           color: '#22c55e', dimColor: '#14532d', to: '/requests' },
   { key: 'claims',             label: 'Q Claims',      dataKey: 'claims',             color: '#f59e0b', dimColor: '#78350f', to: '/analysis?tab=claims' },
   { key: 'predictions',        label: 'Q Predictions', dataKey: 'predictions',        color: '#8b5cf6', dimColor: '#3b0764', to: '/analysis?tab=predictions' },
-  { key: 'namedEntities',      label: 'Q Entities',    dataKey: 'namedEntities',      color: '#06b6d4', dimColor: '#164e63', to: '/analysis?tab=namedEntities' },
-  { key: 'brackets',           label: 'Q [ Brackets ]', dataKey: 'brackets',          color: '#ef4444', dimColor: '#7f1d1d', to: '/brackets' },
+  { key: 'namedEntities',      label: 'Q Entities',    dataKey: 'namedEntities',      color: '#0891b2', dimColor: '#164e63', to: '/analysis?tab=namedEntities' },
+  { key: 'brackets',           label: 'Q [ Brackets ]', dataKey: 'brackets',          color: '#dc2626', dimColor: '#7f1d1d', to: '/brackets' },
   { key: 'themes',             label: 'Q Themes',      dataKey: 'themes',             color: '#6366f1', dimColor: '#312e81', to: '/analysis?tab=themes' },
 ]
 
@@ -826,18 +826,18 @@ export default function PostArchive() {
             {/* Sort direction — inline next to Go to Post */}
             <div className="flex gap-1 bg-q-panel border border-q-border rounded-lg p-1 shrink-0">
               <button
-                onClick={() => setSortDir('asc')}
-                title="Post #1 → #4966 (oldest first)"
-                className={`px-2 sm:px-3 py-1 rounded text-xs font-medium transition-colors whitespace-nowrap ${sortDir === 'asc' ? 'bg-gray-600 text-white' : 'text-gray-400 hover:text-white'}`}
-              >
-                <span className="sm:hidden">↑ Oldest</span><span className="hidden sm:inline">#1 → #4966</span>
-              </button>
-              <button
                 onClick={() => setSortDir('desc')}
                 title="Post #4966 → #1 (newest first)"
                 className={`px-2 sm:px-3 py-1 rounded text-xs font-medium transition-colors whitespace-nowrap ${sortDir === 'desc' ? 'bg-gray-600 text-white' : 'text-gray-400 hover:text-white'}`}
               >
                 <span className="sm:hidden">↓ Newest</span><span className="hidden sm:inline">#4966 → #1</span>
+              </button>
+              <button
+                onClick={() => setSortDir('asc')}
+                title="Post #1 → #4966 (oldest first)"
+                className={`px-2 sm:px-3 py-1 rounded text-xs font-medium transition-colors whitespace-nowrap ${sortDir === 'asc' ? 'bg-gray-600 text-white' : 'text-gray-400 hover:text-white'}`}
+              >
+                <span className="sm:hidden">↑ Oldest</span><span className="hidden sm:inline">#1 → #4966</span>
               </button>
             </div>
             {postNumError && (

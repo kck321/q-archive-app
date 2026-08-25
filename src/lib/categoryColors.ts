@@ -5,8 +5,8 @@ export const CATEGORY_COLOR: Record<string, string> = {
   requests:           '#22c55e', // green
   claims:             '#f59e0b', // amber
   predictions:        '#8b5cf6', // violet
-  namedEntities:      '#06b6d4', // cyan
-  brackets:           '#ef4444', // red
+  namedEntities:      '#0891b2', // cyan-600 — softened from #06b6d4, owner ruling 2026-08-25 ('too intense')
+  brackets:           '#dc2626', // red-600 — softened from #ef4444, same ruling
   themes:             '#6366f1', // indigo
   impliedConclusions: '#f97316', // orange
   verificationHooks:  '#d946ef', // fuchsia

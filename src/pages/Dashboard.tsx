@@ -188,7 +188,7 @@ export default function Dashboard() {
     { key: 'requests',           label: 'Q Directives',    dataKey: 'requests',           color: '#22c55e', dimColor: '#14532d' },
     { key: 'claims',             label: 'Q Claims',      dataKey: 'claims',             color: '#f59e0b', dimColor: '#78350f' },
     { key: 'predictions',        label: 'Q Predictions', dataKey: 'predictions',        color: '#8b5cf6', dimColor: '#3b0764' },
-    { key: 'namedEntities',      label: 'Q Entities',    dataKey: 'namedEntities',      color: '#06b6d4', dimColor: '#164e63' },
+    { key: 'namedEntities',      label: 'Q Entities',    dataKey: 'namedEntities',      color: '#0891b2', dimColor: '#164e63' },
     { key: 'themes',             label: 'Q Themes',      dataKey: 'themes',             color: '#6366f1', dimColor: '#312e81' },
   ]
 
@@ -1597,7 +1597,7 @@ export default function Dashboard() {
                           { name: 'Requests',          color: '#22c55e' },
                           { name: 'Claims',            color: '#f59e0b' },
                           { name: 'Predictions',       color: '#8b5cf6' },
-                          { name: 'Named Entities',    color: '#06b6d4' },
+                          { name: 'Named Entities',    color: '#0891b2' },
                           { name: 'Themes',            color: '#6366f1' },
                         )
                       } else if (!isPostsOnly && activeTab) {
@@ -1642,7 +1642,7 @@ export default function Dashboard() {
                       </Bar>
                       <Bar dataKey="claims"             name="Claims"             stackId="a" fill="#f59e0b" radius={[0,0,0,0]} style={{ cursor: 'pointer' }} />
                       <Bar dataKey="predictions"        name="Predictions"        stackId="a" fill="#8b5cf6" radius={[0,0,0,0]} style={{ cursor: 'pointer' }} />
-                      <Bar dataKey="namedEntities"      name="Named Entities"     stackId="a" fill="#06b6d4" radius={[0,0,0,0]} style={{ cursor: 'pointer' }} />
+                      <Bar dataKey="namedEntities"      name="Named Entities"     stackId="a" fill="#0891b2" radius={[0,0,0,0]} style={{ cursor: 'pointer' }} />
                       <Bar dataKey="themes"             name="Themes"             stackId="a" fill="#6366f1" radius={[0,0,0,0]} style={{ cursor: 'pointer' }} />
                     </>)}
 
