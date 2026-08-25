@@ -56,8 +56,13 @@ export const URL_SRC = 'https?://[^\\s<>\'")\\]]+'
 // red everywhere, in front of whatever it covers, whether or not anything is behind it. Nothing is
 // lost from the earlier ruling — it asked for solid where something IS behind, and this is that
 // rule with the exception removed.
+// OWNER RULING, 2026-08-25: entities and brackets flip to CHIP colours — coloured text on a
+// solid dark ground (cyan-300 on cyan-900, red-300 on red-900), the same look as the entity
+// chips on the detail page. The light-background pair read as "too intense" against the dark
+// posts. The grounds stay OPAQUE on purpose: the 2026-08-24 solid rule (nothing shows through
+// when a span sits over another category) survives the recolour untouched.
 export const HIGHLIGHT_CLS: Record<string, string> = {
-  namedEntity:       'bg-cyan-300 text-slate-900 font-medium',
+  namedEntity:       'bg-cyan-900 text-cyan-300 font-medium',
   claim:             'bg-amber-500/40 text-amber-100',
   prediction:        'bg-violet-500/40 text-violet-100',
   theme:             'bg-indigo-500/40 text-indigo-100',
@@ -67,7 +72,7 @@ export const HIGHLIGHT_CLS: Record<string, string> = {
   // not tell it from unmarked text, which made the Emphasis chips look like they referred to
   // words that were never highlighted. It is a certified category and needs to read as one.
   emphasis:          'bg-slate-300/60 text-slate-900 font-medium',
-  bracketCode:       'bg-red-700 text-red-50 font-mono text-[0.9em]',
+  bracketCode:       'bg-red-900 text-red-300 font-mono text-[0.9em]',
   milIntel:          'bg-sky-500/40 text-sky-100 font-semibold',
   qSignature:        'bg-purple-400/30 text-purple-200 italic',
   topic:             'bg-yellow-400/40 text-yellow-100 font-semibold',

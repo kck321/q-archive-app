@@ -28,8 +28,8 @@ const FILL = {
   prediction: 'bg-violet-500',
   request: 'bg-green-500',        // Q Directives
   question: 'bg-blue-500',
-  namedEntity: 'bg-cyan-500',
-  bracketCode: 'bg-red-800',
+  namedEntity: 'bg-cyan-900',
+  bracketCode: 'bg-red-900',
 }
 
 // ON TOP MEANS SOLID — owner rule, 2026-08-24.
@@ -39,9 +39,11 @@ const FILL = {
 // unmistakable. That is exactly what the `inside` column of every case below is testing, so the
 // on-top assertion wants the SOLID class specifically: accepting the translucent one would let the
 // rule quietly regress to the muddy blend it replaced.
+// 2026-08-25: the chip recolour keeps CLS and SOLID identical (one colour per category),
+// so both maps name the same dark grounds.
 const SOLID = {
-  namedEntity: 'bg-cyan-300',
-  bracketCode: 'bg-red-700',
+  namedEntity: 'bg-cyan-900',
+  bracketCode: 'bg-red-900',
 }
 
 // post · the ruled sentence · the fill it must carry · an inline span inside it and ITS fill.
