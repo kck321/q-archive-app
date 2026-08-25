@@ -1017,6 +1017,9 @@ export default function PostArchive() {
                     )}
                   </div>
 
+                  {/* An isolated month is seven slim bars — full panel width made them read as
+                      slabs, so the chart is capped at ~36rem and the bars at 34px. */}
+                  <div className={monthIsolated ? 'max-w-xl' : undefined}>
                   <ScrollableChart minWidth={monthIsolated ? 360 : 920} centerAt={monthIsolated ? undefined : centerAt}><ResponsiveContainer width="100%" height={240}>
                     {/* NO onMouseMove / onMouseLeave: they tracked the hovered month only so the
                         jump-chips below could pulse. Hover is the tooltip and nothing else. */}
@@ -1058,13 +1061,16 @@ export default function PostArchive() {
                           />
                         )} />
 
-                      {/* Posts bar — always shown */}
-                      <Bar yAxisId="left" dataKey="posts" name="Q Posts" radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }}
-                        onClick={(d: { month?: string; payload?: { month?: string } }) => handleBarClick({ month: d?.month ?? d?.payload?.month ?? '' })}>
-                        {displayedChartData.map(entry => (
-                          <Cell key={entry.month} fill={!selectedMonth || selectedMonth === entry.month ? '#9ca3af' : '#374151'} />
-                        ))}
-                      </Bar>
+                      {/* Posts bar — leads the timeline view. In an isolated month it is
+                          rendered LAST instead (below), so the category bars line up to its left. */}
+                      {!monthIsolated && (
+                        <Bar yAxisId="left" dataKey="posts" name="Q Posts" radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }}
+                          onClick={(d: { month?: string; payload?: { month?: string } }) => handleBarClick({ month: d?.month ?? d?.payload?.month ?? '' })}>
+                          {displayedChartData.map(entry => (
+                            <Cell key={entry.month} fill={!selectedMonth || selectedMonth === entry.month ? '#9ca3af' : '#374151'} />
+                          ))}
+                        </Bar>
+                      )}
 
                       {/* Matches — its own bar on its own axis, green (few) → red (many). */}
                       {chartMatchMonths && (
@@ -1084,8 +1090,11 @@ export default function PostArchive() {
                         </Bar>
                       )}
 
-                      {/* All categories view — hidden when keyword search is active */}
-                      {isAll && !chartMatchMonths && (<>
+                      {/* All categories view — hidden when keyword search is active.
+                          Timeline: two lead bars + a stack, the shape that reads at 60 months.
+                          Isolated month: the stack un-stacks — six slim bars in one line,
+                          category order matching the tab strip, grey Q Posts at the right end. */}
+                      {isAll && !chartMatchMonths && !monthIsolated && (<>
                         <Bar dataKey="questions" name="Questions" radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }}>
                           {displayedChartData.map(entry => (
                             <Cell key={entry.month} fill={!selectedMonth || selectedMonth === entry.month ? '#3b82f6' : '#1e3a5f'} />
@@ -1099,6 +1108,18 @@ export default function PostArchive() {
                         <Bar dataKey="namedEntities"      name="Named Entities"     stackId="a" fill={catColor('namedEntities')} radius={[0,0,0,0]} style={{ cursor: 'pointer' }} />
                         <Bar dataKey="themes"             name="Themes"             stackId="a" fill={catColor('themes')} radius={[0,0,0,0]} style={{ cursor: 'pointer' }} />
                       </>)}
+                      {isAll && !chartMatchMonths && monthIsolated && (<>
+                        <Bar dataKey="questions"     name="Questions"      maxBarSize={34} fill={catColor('questions')} radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }} />
+                        <Bar dataKey="requests"      name="Directives"     maxBarSize={34} fill={catColor('requests')} radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }} />
+                        <Bar dataKey="claims"        name="Claims"         maxBarSize={34} fill={catColor('claims')} radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }} />
+                        <Bar dataKey="predictions"   name="Predictions"    maxBarSize={34} fill={catColor('predictions')} radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }} />
+                        <Bar dataKey="namedEntities" name="Named Entities" maxBarSize={34} fill={catColor('namedEntities')} radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }} />
+                        <Bar dataKey="themes"        name="Themes"         maxBarSize={34} fill={catColor('themes')} radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }} />
+                      </>)}
+                      {monthIsolated && (
+                        <Bar yAxisId="left" dataKey="posts" name="Q Posts" maxBarSize={34} fill="#9ca3af" radius={[2, 2, 0, 0]} style={{ cursor: 'pointer' }}
+                          onClick={(d: { month?: string; payload?: { month?: string } }) => handleBarClick({ month: d?.month ?? d?.payload?.month ?? '' })} />
+                      )}
 
                       {/* Single category view — hidden when keyword search is active */}
                       {!isAll && !isPostsOnly && !chartMatchMonths && activeTab && (
@@ -1110,6 +1131,7 @@ export default function PostArchive() {
                       )}
                     </BarChart>
                   </ResponsiveContainer></ScrollableChart>
+                  </div>
 
                   {/* THE KEYBOARD AND TOUCH PATH, the same component Analysis uses. A recharts bar is
                       an SVG rect that cannot take focus, and the axis only draws a tick at year
