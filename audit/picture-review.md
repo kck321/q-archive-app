@@ -24,6 +24,7 @@ transcribe them freely; the notes below say exactly where to look.
 | 712 | #2775 | Screenshot 2019-02-17_19-00-19-862.jpg | `634a07c79c3a9801b48f6ec1393de6d429032a16e1584c38e7a216098b0ab950.jpg` | 1600×894 |
 | 795 | #2940 | Feb Count.JPG | `eb226a9748f6fafca7a81506ff23e60b0e12f4f0e0cca8f886dd74f0b4d250c0.jpg` | 1135×818 |
 | 925 | #3207 | 7day BING QAnon search results.png | `8ee07c0c262d7126f8304593acea3d96e85cd3b17429073a053a8c2796140e69.jpg` | 286×4096 |
+| 950 | #3253 | FireShot Capture 001 - [USC10] 18 USC Ch. 115… uscode.house.gov.png | `e50c9682eb0fc4e7699f7da907f4676ccfcaa16d0d1c4a7b56e45e03d348d538.jpg` | 719×4096 |
 
 ## What each contains (from the completed visual pass)
 
@@ -73,6 +74,11 @@ transcribe them freely; the notes below say exactly where to look.
   Individual headlines are below legible resolution at this width; layout and subject are
   described, no verbatim rows could be extracted. Like n685, a human pass needs a
   better-resolution source copy rather than better reading.
+- **#3253 (n950):** Full-page FireShot capture of 18 U.S.C. Chapter 115 (Treason, Sedition,
+  and Subversive Activities) from uscode.house.gov. The chapter heading, section list and the
+  full §2381 text are transcribed; the thousands of words of remaining statutory text and
+  notes render too small for verbatim transcription. The source is public statute — a human
+  can paste the canonical text from uscode.house.gov rather than reading the image.
 - **#132 (n98):** "Q Graphic" — the community's cleaned November 2017 compilation.
   Contains the `Q !ITPb.qbhqo` tripcode era posts and the Spy.png / AF1 photo inserts.
   Substantial overlap with the archive's own ingested drops #1–#112.
