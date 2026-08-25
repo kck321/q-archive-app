@@ -15,15 +15,15 @@
   "ambiguous_provenance": "Attribution or URL evidence is genuinely undecidable. Retained unchanged."
  },
  "totals": {
-  "occurrences": 10622,
-  "certifiedMentions": 10622,
+  "occurrences": 10623,
+  "certifiedMentions": 10623,
   "reconciles": true,
   "attribution": {
-   "unique": 10534,
+   "unique": 10535,
    "ambiguous": 88
   },
   "byCategory": {
-   "visible_complete_token": 9487,
+   "visible_complete_token": 9488,
    "invalid_substring_extraction": 98,
    "visible_alias_variant": 46,
    "url_source_provenance": 645,
@@ -45,8 +45,8 @@
  },
  "ruledOnAuditRun": "2026-08-24",
  "certifiedUnchanged": {
-  "entityRows": 1803,
-  "mentions": 10622
+  "entityRows": 1804,
+  "mentions": 10623
  },
  "rows": [
   {
@@ -167801,6 +167801,22 @@
    "occurrenceId": "#836:4",
    "postNum": 836,
    "index": 4,
+   "alias": "Vault7",
+   "entityId": "qe-21f56aeb1ef3",
+   "canonical": "Vault 7",
+   "entityType": "creative_work",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#836:5",
+   "postNum": 836,
+   "index": 5,
    "alias": "WL",
    "entityId": "qe-c9f95ff52ca5",
    "canonical": "WikiLeaks",
@@ -167814,9 +167830,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#836:5",
+   "occurrenceId": "#836:6",
    "postNum": 836,
-   "index": 5,
+   "index": 6,
    "alias": "OP Name: Fiddler",
    "entityId": null,
    "canonical": null,

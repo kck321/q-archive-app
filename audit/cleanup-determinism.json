@@ -1,8 +1,8 @@
 {
  "note": "Determinism stamp. The approved audit must keep its exact bytes; the inputs move whenever a later decision moves the certified state, and every such decision is recorded in audit/entity-cleanup-rollback-contract.json postApprovalDeltas.",
- "rebaselinedOn": "2026-08-24 (the post-scoped entity rulings)",
- "why": "Re-baselined for the thirteen post-scoped entity rulings of 2026-08-24. Nine more mentions are certified before the cleanup step reaches them, so audit-occurrence-provenance.mjs re-derived at the before-state and that re-run is what apply-entity-cleanup.mjs demands before it will replay. The delta is recorded in audit/entity-cleanup-rollback-contract.json postApprovalDeltas.",
- "previousAuditSha256": "82005f4877aefcfc2ffc2039fde6577f2f4d59842ff98ca4cd608c9c2dd6343a",
- "inputs": "133d5728d95202ae01dd1dcec6c501cd4bf87e241bdd5e98763fb965db0bd577|ada8afe487307f8f733f089d9865e68a7c619822bc9b8eb7f8e259cf3f6d6741",
- "auditSha256": "ab578fecd83a04f1a85d70bb937cf59a670608fac9272d37d9fae6c783e1d57e"
+ "rebaselinedOn": "2026-08-24 (Vault 7)",
+ "why": "Re-baselined for the Vault 7 ruling of 2026-08-24, added to the same post-scoped batch. One more mention is certified before the cleanup step reaches it, so audit-occurrence-provenance.mjs re-derived at the before-state and that re-run is what apply-entity-cleanup.mjs demands before it will replay. The delta is recorded in audit/entity-cleanup-rollback-contract.json postApprovalDeltas.",
+ "previousAuditSha256": "ab578fecd83a04f1a85d70bb937cf59a670608fac9272d37d9fae6c783e1d57e",
+ "inputs": "81e559a7bb81ee7ce150a01c4c3950828a204116c58f0bd97c995850d918fd69|801ef06970edb07879f228519aada779bc6fc7387db41661cea34a65857cb0a3",
+ "auditSha256": "6f37982a16daf5aec9cad878fc7b23fe2cd55b036a5e674efdd748757f992a30"
 }

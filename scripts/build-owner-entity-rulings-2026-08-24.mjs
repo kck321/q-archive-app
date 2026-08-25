@@ -79,6 +79,17 @@ const NEW = [
   R(1319, 'Attorney General', 'Attorney General', 'title_role',
     'Owner ruling. Line 53, "Xavier Becerra - Democrat Attorney General of California". Reuses the certified Attorney General identity.'),
 
+  // ── #836, again ───────────────────────────────────────────────────────────
+  // "in post 836 i want Vault7 or any Vault 7 to be classified as an entitiy throughout all the
+  // post". Swept first: the corpus writes it ONCE, "Who leaked Vault7 to WL?" on #836, spelled
+  // without a space and nowhere else. So corpus-wide and post-scoped are the same ruling here, and
+  // the ruling is recorded on the drop that has it.
+  //
+  // TYPED LIKE THE STEELE DOSSIER, which the archive already carries as a creative_work. Vault 7 is
+  // the same shape of thing: a named document release, not an organisation and not an event.
+  R(836, 'Vault 7', 'Vault7', 'creative_work',
+    'Owner ruling: "in post 836 i want Vault7 or any Vault 7 to be classified as an entitiy throughout all the post". The WikiLeaks publication of March 2017 that released CIA hacking tools — Q asks "Who leaked Vault7 to WL?" and WL is already the certified WikiLeaks. A corpus sweep for vault7 / vault 7 returns exactly one occurrence, so this covers every one of them.'),
+
   // ── #1565 ─────────────────────────────────────────────────────────────────
   R(1565, 'Donald Trump', '45', 'person',
     'Owner ruling: "45 is an entity and is also the nuber trump was in his last term so it is an alias for trump". The whole drop is the single line "45", replying to an anon asking who is in a photo. SCOPED TO #1565: "45" occurs 281 times across 255 drops — page numbers, counts, timestamps — and registering it as a corpus-wide alias would name Trump in every one of them.'),

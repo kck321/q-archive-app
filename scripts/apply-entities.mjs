@@ -962,7 +962,9 @@ const checks = [
   // "House Oversight" and "Government Reform Committee" (#1319, one line naming two bodies). The
   // other ten rulings reuse an identity the registry already holds, which is the point: a second
   // row for a person the archive already knows is the duplicate-identity defect.
-  ['owner entity rulings applied = 123', ownerAdded === 123, ownerAdded],
+  // 123 -> 124: "Vault 7" (#836). Typed creative_work, like the Steele Dossier the archive already
+  // carries — a named document release, not an organisation and not an event.
+  ['owner entity rulings applied = 124', ownerAdded === 124, ownerAdded],
   ['owner merge rulings applied = 1', ownerMerged === 1, ownerMerged],
   // 1,335 - 1: Ray Chandler is now an alias of Rachel Chandler, not a row of her own.
   // 1,445 -> 1,408: -19 rows merged away as duplicate canonicals, -18 rows withdrawn as
@@ -974,7 +976,8 @@ const checks = [
   // 1,751 + 48 named out of round 2's held list + NAT SEC + White House Press = 1,801.
   // 1,801 -> 1,803. Three identities are created by the rulings above and one queue-created row
   // is no longer minted, because "L." is now an owner identity rather than a held wording.
-  ['canonical entities = 1,803', entities.length === 1803, entities.length],
+  // +1: Vault 7.
+  ['canonical entities = 1,804', entities.length === 1804, entities.length],
   // 8,227 + 12 RC. The merge moves 4 mentions between rows and adds none.
   // 9,786 -> 9,747: -39, the occurrences of the 18 withdrawn rows. The 17 merges move mentions
   // ACROSS rows and add none, so they are absent from this arithmetic by design — asserted
@@ -1006,7 +1009,10 @@ const checks = [
   // The four SPAN EXTENSIONS add nothing: #836 "Fiddler" -> "OP Name: Fiddler" and #3383's
   // "Waters"/"Pelosi"/"Biden" -> "M. Waters"/"N. Pelosi"/"J. Biden" lengthen a span the drop
   // already carries, so one occurrence stays one occurrence.
-  ['resolved mentions = 10,622', totals.mentions === 10622, totals.mentions],
+  // +1 on 2026-08-24: "in post 836 i want Vault7 or any Vault 7 to be classified as an entitiy
+  // throughout all the post". A corpus sweep returns exactly ONE occurrence — "Who leaked Vault7 to
+  // WL?" — so corpus-wide and post-scoped are the same ruling here.
+  ['resolved mentions = 10,623', totals.mentions === 10623, totals.mentions],
   ['stage 1: 19 rows merged away', !stage1 || s1Merged === 19, s1Merged],
   ['stage 1: 85 types corrected', !stage1 || s1Typed === 85, s1Typed],
   // 18 in the audit, 17 applied: ENT-0709 "Non-profit organization" is HELD because it

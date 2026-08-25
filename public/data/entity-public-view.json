@@ -1,7 +1,7 @@
 {
  "breakdown": [
   {
-   "count": 1453,
+   "count": 1454,
    "key": "prose",
    "label": "named in Q’s prose"
   },
@@ -3098,6 +3098,17 @@
    },
    "posts": 1,
    "rowId": "qe-21f2b6d05394"
+  },
+  "qe-21f56aeb1ef3": {
+   "aliasPosts": {
+    "Vault7": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "836": 1
+   },
+   "posts": 1,
+   "rowId": "qe-21f56aeb1ef3"
   },
   "qe-222644bb62c5": {
    "kind": "source_only",
@@ -24846,13 +24857,13 @@
  "ruledOn": "2026-08-17",
  "sourceNote": "The post linked this source. It is not necessarily named in Q’s prose, and it is never counted as a mention.",
  "totals": {
-  "canonicalEntities": 1587,
+  "canonicalEntities": 1588,
   "dormantReserved": 226,
-  "mentions": 9528,
+  "mentions": 9529,
   "mergedIdentities": 26,
   "mergedRows": 11,
-  "proseMentioned": 1453,
-  "publicRows": 1572,
+  "proseMentioned": 1454,
+  "publicRows": 1573,
   "repeatBadges": 1113,
   "sourceOnly": 134,
   "sourcePostChips": 358,

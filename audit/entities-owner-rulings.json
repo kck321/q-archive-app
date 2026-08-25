@@ -1004,6 +1004,20 @@
    "renderNote": "RENDERING_PROVENANCE_RULE: the canonical identity is \"Joe Biden\" and the ALIAS Q wrote is \"J. Biden\". The renderer highlights the alias.",
    "replacesAliasOnPost": "Biden",
    "canonicalExisted": true
+  },
+  {
+   "postNum": 836,
+   "postId": "836",
+   "canonical": "Vault 7",
+   "aliasUsed": "Vault7",
+   "sourceText": "Vault7",
+   "type": "creative_work",
+   "was": "unclassified",
+   "ruledOn": "2026-08-24",
+   "reasoning": "Owner ruling: \"in post 836 i want Vault7 or any Vault 7 to be classified as an entitiy throughout all the post\". The WikiLeaks publication of March 2017 that released CIA hacking tools — Q asks \"Who leaked Vault7 to WL?\" and WL is already the certified WikiLeaks. A corpus sweep for vault7 / vault 7 returns exactly one occurrence, so this covers every one of them.",
+   "renderAs": "Vault7",
+   "renderNote": "RENDERING_PROVENANCE_RULE: the canonical identity is \"Vault 7\" and the ALIAS Q wrote is \"Vault7\". The renderer highlights the alias.",
+   "canonicalExisted": false
   }
  ],
  "aliasRulings": [

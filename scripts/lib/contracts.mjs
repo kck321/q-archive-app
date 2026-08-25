@@ -265,7 +265,8 @@ export const CANONICAL = {
     // Oversight" and "Government Reform Committee" (#1319). The other ten reuse an identity the
     // registry already holds — a second row for a person the archive knows is the duplicate-identity
     // defect the merge rulings exist to undo. ownerRulings 120 -> 123.
-    canonical: 1587, detectedCanonical: 1292, ownerRulings: 123, ownerMerges: 1, queueRulings: 1007,
+    // +1: "Vault 7" (#836), typed creative_work like the Steele Dossier.
+    canonical: 1588, detectedCanonical: 1292, ownerRulings: 124, ownerMerges: 1, queueRulings: 1007,
     /** Every resolved mention across all 1,334 certified entities. The headline figure. */
     // 8,227 -> 8,239: the RC alias ruling resolved 12 occurrences to Rachel Chandler. The merge
     // moved 4 mentions from the absorbed row onto hers and added none.
@@ -340,7 +341,8 @@ export const CANONICAL = {
     // first mention on the drop named, one (#1319 "Goodlatte") a second occurrence on a drop the
     // identity already appears on. The four SPAN EXTENSIONS add nothing; they lengthen a span the
     // drop already carries.
-    mentions: 9528,
+    // +1 for Vault 7 — one occurrence in the whole corpus.
+    mentions: 9529,
     /** How it is composed. The core figure is the section's history, not its headline. */
     // tailEntities is what the tail adjudication produced (1,239); one of them, Ray Chandler,
     // now ships merged into Rachel Chandler, so 1,238 tail rows appear in the artifact.
