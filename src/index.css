@@ -164,8 +164,9 @@ body {
 
    `pre` still supplies the wrapping; this only sets the type. */
 .post-text {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-               "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+  /* Open Sans to match qalerts.app's drop text (its body face) — owner ruling 2026-08-25.
+     STYLE ONLY: the 15px size and line-height are the owner's and stay. */
+  font-family: "Open Sans", Arial, sans-serif, "Apple Color Emoji",
                "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 15px;
   line-height: 1.6;
