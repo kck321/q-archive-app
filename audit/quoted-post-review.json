@@ -1,0 +1,19 @@
+{
+ "note": "Quoted posts the archive does not hold as drops, with a proposed reading for every line. A RULING SHEET, not a change: invariant 9 keeps quoted text out of the analysis index, so nothing here is applied until the owner rules.",
+ "ranOn": "2026-08-24",
+ "totals": {
+  "quotedBlocks": 2785,
+  "resolveToADrop": 1320,
+  "orphansWithWriting": 1077,
+  "lines": 2800,
+  "linesQWrote": 326
+ },
+ "byCategory": {
+  "Claim": 947,
+  "(not placed)": 1146,
+  "Directive": 111,
+  "—": 193,
+  "Question": 395,
+  "[ Bracket ]": 8
+ }
+}
