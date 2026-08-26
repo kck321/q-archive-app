@@ -478,7 +478,7 @@ export default function QBrackets() {
                     {/* REPEATED badge removed — "×N posts" says it, in the same place
                         every other section says it. */}
                     <p className="mb-1">
-                      <span className="inline-block font-mono text-sm leading-relaxed px-2 py-1 rounded bg-red-500/25 text-red-300 border border-red-700/50">
+                      <span className="inline-block text-sm leading-relaxed px-2 py-1 rounded bg-red-500/25 text-red-300 border border-red-700/50">
                         {entry.code}
                       </span>
                     </p>

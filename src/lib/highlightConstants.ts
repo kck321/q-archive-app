@@ -72,7 +72,10 @@ export const HIGHLIGHT_CLS: Record<string, string> = {
   // not tell it from unmarked text, which made the Emphasis chips look like they referred to
   // words that were never highlighted. It is a certified category and needs to read as one.
   emphasis:          'bg-slate-300/60 text-slate-900 font-medium',
-  bracketCode:       'bg-red-900 text-red-300 font-mono text-[0.9em]',
+  // OWNER RULING, 2026-08-26: dropped font-mono and the 90% size — the only category rendering
+  // in a different font family and smaller than the rest. "text within the post and in these
+  // sections [should be] the same size and style as all the other categories."
+  bracketCode:       'bg-red-900 text-red-300',
   milIntel:          'bg-sky-500/40 text-sky-100 font-semibold',
   qSignature:        'bg-purple-400/30 text-purple-200 italic',
   topic:             'bg-yellow-400/40 text-yellow-100 font-semibold',

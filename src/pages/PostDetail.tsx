@@ -2418,7 +2418,7 @@ export default function PostDetail() {
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {allBrackets.map((code, i) => (
-                        <span key={i} className="text-xs border border-red-700/50 bg-red-900/20 text-red-300 px-2 py-0.5 rounded flex items-center gap-1 group font-mono">
+                        <span key={i} className="text-xs border border-red-700/50 bg-red-900/20 text-red-300 px-2 py-0.5 rounded flex items-center gap-1 group">
                           {/* Clickable, like every other analysis chip: searching the archive for
                               the span shows every other drop it appears in — or none, which is an
                               answer too. Brackets were the only section whose chips were dead
@@ -2448,7 +2448,7 @@ export default function PostDetail() {
                           </summary>
                           <div className="flex flex-wrap gap-1.5 mt-1">
                             {excludedBrackets.map((code, i) => (
-                              <span key={i} className="text-xs border border-gray-700 bg-gray-800 text-gray-500 px-2 py-0.5 rounded flex items-center gap-1 font-mono line-through">
+                              <span key={i} className="text-xs border border-gray-700 bg-gray-800 text-gray-500 px-2 py-0.5 rounded flex items-center gap-1 line-through">
                                 {code}
                                 {CAN_EDIT && <button onClick={() => handleRestoreBracket(code)}
                                   className="text-[10px] text-gray-500 hover:text-lime-400 transition-colors no-underline leading-none">↩</button>}
