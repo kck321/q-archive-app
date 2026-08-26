@@ -10140,6 +10140,12 @@
    "reasoning": "Owner ruling, third pass: the bracket \"[D]\" form of the D's/R's ruling, applied only where a per-occurrence review confirmed it means the party. Six reviewers read all 120 posts carrying a real \"[D]\"/\"[R]\" token and judged each occurrence PARTY / NOT_PARTY / UNCLEAR; this list is every post whose \"[D]\" occurrence(s) were judged PARTY. Traps excluded by name in the script header (D-Day, Renegade, delta markers, DARPA, a Coats/Declas letter-code); genuinely ambiguous cases held for later, not guessed. #4325 is occurrence-scoped to its one certified \"[D]\" — see includeOccurrences and the header note.",
    "retrieval": "dr-bracket-review sweep, 2026-08-25: 6 agents, 120 posts, 227 bracket occurrences read individually against the post's full text.",
    "renderNote": "RENDERING_PROVENANCE_RULE: the renderer highlights the token, the bracketed form Q wrote."
+  },
+  {
+   "canonical": "Hunter Biden",
+   "alias": "H. Biden",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: \"H. Biden\" is Hunter Biden, not Joe Biden. The bare \"Biden\" inside it was matching the certified Joe Biden entity instead (withdrawn above, scoped to these same posts). Six occurrences corpus-wide: #4888, #4891 (x3), #4893, #4898 — verified against the full corpus, no others exist."
   }
  ],
  "mergeRulings": [
@@ -10150,6 +10156,12 @@
    "reasoning": "Owner ruling: 'RC is RACHEL CHANDLER aka Ray Chandler as well so lets make this an entity and have Rachel Chandler the main and the other 2 aliases'. One person, certified twice — Rachel Chandler (5 mentions, #3133/#3134/#3136/#3155/#3158) and Ray Chandler (4 mentions, #1054/#1138/#3156/#3157). Rachel Chandler is the canonical; Ray Chandler becomes an alias.",
    "retrieval": "Corpus search 2026-08-14, word-boundary: 'Rachel Chandler' 1 occurrence (#3136) plus the uppercase 'RACHEL CHANDLER' in #3134/#3155/#3158 and rachelchandler.us in #3133; 'Ray Chandler' 2 occurrences (#3156, #3157); 'Ray.Chandler' — the period form — in #1054 and #1138. The absorbed row's certified mentions are moved across rather than rescanned, because /\bRay Chandler\b/ does not match 'Ray.Chandler' and a rescan would drop those two posts.",
    "renderNote": "RENDERING_PROVENANCE_RULE: the renderer highlights the alias Q wrote — Ray Chandler, Ray.Chandler, RC — not the canonical name."
+  },
+  {
+   "canonical": "Hunter Biden",
+   "absorb": "Hunter",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: \"Hunter is the alias for Hunter Biden or H. Biden so lets tie them together.\" Two canonical rows for one identity: \"Hunter\" (6 mentions, #3625/#4821/#4822/#4881/#4890/#4959 — Burisma, Ukraine, bribes, 'Pop') and \"Hunter Biden\" (a separate adjudicated-tail row — ENT-0136/ENT-0170 in the 2026-08-16 hover audit, both \"Keep\"). \"Hunter Biden\" is the more identifying spelling, so it is the canonical; \"Hunter\"/\"HUNTER\" carry forward as aliases of the survivor."
   }
  ],
  "merges": [
@@ -10222,6 +10234,12 @@
    "into": "Kamala Harris",
    "ruledOn": "2026-08-25",
    "reasoning": "Discovered while conjoining #4935's title: a separate \"Harris\" canonical (2 mentions, #2854 and #4935) duplicates Kamala Harris. #2854 lists her alongside Pelosi/Waters/Schiff/Feinstein as sitting California officials of that era, and #4935 is the same Fox News contacts list this ruling extends — both are her, not a second person named Harris. Folded so the corpus counts one identity, not two."
+  },
+  {
+   "from": "Hunter",
+   "into": "Hunter Biden",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Crosswalk bridge for the mergeRulings entry above (see doc.mergeRulings) — the row consolidation itself happens there. The 2026-08-16 hover audit's ENT-0170 refers to this identity as \"Hunter\"; the ENT-#### resolver needs the old->new name to find it after the merge."
   }
  ],
  "aliasWithdrawals": [
@@ -10267,6 +10285,28 @@
    ],
    "ruledOn": "2026-08-25",
    "reasoning": "Discovered verifying today's #4935 title-conjoining ruling. The certified bare \"Andrew Cuomo\" alias and the \"Gov. Andrew Cuomo, D-N.Y\" alias this session extended both fire on the same \"Gov. Andrew Cuomo, D-N.Y\" line. An adjudicated-tail identity; #4935 is his only certified occurrence, so this and a corpus-wide withdrawal are the same ruling here, but scoped for consistency with the other three."
+  },
+  {
+   "canonical": "Hunter Biden",
+   "alias": "Hunter Biden",
+   "onlyPosts": [
+    4888,
+    4893
+   ],
+   "ruledOn": "2026-08-26",
+   "reasoning": "Neither #4888 nor #4893 writes \"Hunter Biden\" in the drop text — both only say \"H. Biden\". The certified \"Hunter Biden\" mention on each came from the source-link URL slug (\"hunter-biden-reportedly...\", \"hunter-biden-business-partner...\"), the same class of defect the 2026-08-17 CMS/URL-slug cleanup targeted; this pair predates that pass. Withdrawn so the real \"H. Biden\" occurrence (see rulings below) is what paints instead of a URL artifact."
+  },
+  {
+   "canonical": "Joe Biden",
+   "alias": "Biden",
+   "onlyPosts": [
+    4888,
+    4891,
+    4893,
+    4898
+   ],
+   "ruledOn": "2026-08-26",
+   "reasoning": "Every \"Biden\" occurrence on #4888, #4891, #4893 and #4898 is part of \"H. Biden\" (Hunter Biden's laptop, financial records, the Southern District of New York case) — none independently name Joe Biden. Checked line by line before withdrawing. The bare \"Biden\" alias's occurrences on every OTHER post are untouched."
   }
  ],
  "typeRulings": [

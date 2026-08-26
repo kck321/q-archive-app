@@ -1061,7 +1061,12 @@ const checks = [
   // Mastramonoco, Jon Allen, Anne Gearan, Greg Sargent. Vice, Vox and Washington Post (WaPo x2)
   // reuse existing canonicals and are NOT counted here — see ownerMentions / tail mentions below.
   ['owner entity rulings applied = 159', ownerAdded === 159, ownerAdded],
-  ['owner merge rulings applied = 1', ownerMerged === 1, ownerMerged],
+  // 1 -> 2 on 2026-08-26: Hunter -> Hunter Biden. Both rows already existed (adjudicated tail,
+  // ENT-0170 and ENT-0136 in the 2026-08-16 hover audit) — the same duplicate-identity shape as
+  // Rachel/Ray Chandler, so mergeRulings (direct mentions/posts transfer) is used, not merges[]
+  // (which loses mentions here — "Hunter" carries 2 aliases, both n:null, so merges[]'s per-alias
+  // transfer falls back to 0 for each rather than guess how the 6 mentions split between them).
+  ['owner merge rulings applied = 2', ownerMerged === 2, ownerMerged],
   // 1,335 - 1: Ray Chandler is now an alias of Rachel Chandler, not a row of her own.
   // 1,445 -> 1,408: -19 rows merged away as duplicate canonicals, -18 rows withdrawn as
   // conceptual/generic labels. Both from the 2026-08-16 hover audit, Stage 1.
@@ -1078,7 +1083,9 @@ const checks = [
   // and one row is retired into the survivor.
   // 1,803 -> 1,834 on 2026-08-26: +31 new canonicals from #1515's reporter-roll ruling above.
   // 1,834 -> 1,838 on 2026-08-26, addendum: +4 new canonicals (the four reporters named above).
-  ['canonical entities = 1,838', entities.length === 1838, entities.length],
+  // 1,838 -> 1,837 on 2026-08-26: the Hunter -> Hunter Biden merge (see mergeRulings above) retires
+  // one row.
+  ['canonical entities = 1,837', entities.length === 1837, entities.length],
   // 8,227 + 12 RC. The merge moves 4 mentions between rows and adds none.
   // 9,786 -> 9,747: -39, the occurrences of the 18 withdrawn rows. The 17 merges move mentions
   // ACROSS rows and add none, so they are absent from this arithmetic by design — asserted
@@ -1131,7 +1138,11 @@ const checks = [
   // one is exactly one occurrence, whether it creates a canonical or is an additionalOccurrence.
   // 10,923 -> 10,931 on 2026-08-26, addendum: +8, every ruling row in the addendum batch (Vice,
   // Alyssa Mastramonoco, Vox, Jon Allen, Washington Post x2 as "WaPo", Anne Gearan, Greg Sargent).
-  ['resolved mentions = 10,931', totals.mentions === 10931, totals.mentions],
+  // 10,931 -> 10,929 on 2026-08-26, Hunter Biden: -2 (the #4888/#4893 URL-slug false-positive
+  // withdrawal) + 6 ("H. Biden" alias ruling) - 6 (the wrong "Biden" -> Joe Biden withdrawal on
+  // the same 4 posts) + 0 (the Hunter -> Hunter Biden merge moves mentions within the corpus, adds
+  // none) = -2.
+  ['resolved mentions = 10,929', totals.mentions === 10929, totals.mentions],
   ['stage 1: 19 rows merged away', !stage1 || s1Merged === 19, s1Merged],
   ['stage 1: 85 types corrected', !stage1 || s1Typed === 85, s1Typed],
   // 18 in the audit, 17 applied: ENT-0709 "Non-profit organization" is HELD because it
@@ -1154,7 +1165,8 @@ const checks = [
   // bracket "[D]"/"[R]" forms (D-Day on #2629, "[R] = Renegade" on #1277, delta markers "[D][1-6]"
   // on #3604/#3654 — the same shape as the owner's own "D5 is a prediction not a democrat" caution).
   // +184 on 2026-08-25: the bracket "[D]"/"[R]" ruling, entirely alias-mechanism mentions.
-  ['owner alias mentions = 2,466', aliasMentions === 2466, aliasMentions],
+  // +6 on 2026-08-26: "H. Biden" -> Hunter Biden, corpus-wide (#4888, #4891 x3, #4893, #4898).
+  ['owner alias mentions = 2,472', aliasMentions === 2472, aliasMentions],
   // Every mention of the 39 is accounted for, and the submetrics move for two separate reasons.
   // MERGES move mentions ACROSS populations without changing the headline: 53 tail mentions are
   // absorbed into core-registry rows (Bill Clinton +7, Australia +6, New York +13, WikiLeaks +17,
@@ -1175,7 +1187,9 @@ const checks = [
   // core-registry canonicals) minus 2 for the Pelosi and Schiff duplicate-span withdrawals on
   // #3778, both core-registry people.
   // +184 on 2026-08-25: the bracket ruling, both parties being core-registry canonicals.
-  ['core-registry mentions = 5,703', totals.coreRegistryMentions === 5703, totals.coreRegistryMentions],
+  // -6 on 2026-08-26: the bare "Biden" -> Joe Biden withdrawal on #4888/#4891/#4893/#4898 (a
+  // core-registry identity) — every "Biden" on those posts is "H. Biden", i.e. Hunter Biden.
+  ['core-registry mentions = 5,697', totals.coreRegistryMentions === 5697, totals.coreRegistryMentions],
   // 3,440 + 34 C19 + 12 RC: COVID-19 and Rachel Chandler are tail entities, so alias rulings on
   // them land here.
   // +58: queue rulings that landed on an adjudicated-tail identity.
@@ -1190,10 +1204,15 @@ const checks = [
   // +2 on 2026-08-26, addendum: Vice and Vox are pre-existing adjudicated-tail identities
   // (source-only until now — Q linked to both without naming them in text), so their first real
   // text mentions on #1515 land here rather than on an owner-ruling row.
-  ['adjudicated-tail mentions = 4,013', totals.adjudicatedTailMentions === 4013, totals.adjudicatedTailMentions],
+  // +4 on 2026-08-26, Hunter Biden: -2 (the #4888/#4893 URL-slug false-positive withdrawal) + 6
+  // ("H. Biden" alias ruling) + 0 (the Hunter -> Hunter Biden merge moves 6 mentions from one tail
+  // row to another — both already tail, so the population subtotal is unchanged by the move).
+  ['adjudicated-tail mentions = 4,017', totals.adjudicatedTailMentions === 4017, totals.adjudicatedTailMentions],
   // -2 on 2026-08-25: the same two withdrawn render records (Nadler #3778, Cuomo #4935) drop out
   // of the occurrence-provenance list itself.
-  ['tail occurrence rows = 3,438', tailOccurrences.length === 3438, tailOccurrences.length],
+  // -2 on 2026-08-26: the #4888/#4893 URL-slug false-positive "Hunter Biden" tail occurrences,
+  // withdrawn (see aliasWithdrawals) — they were never Q's own text, just a source-link slug.
+  ['tail occurrence rows = 3,436', tailOccurrences.length === 3436, tailOccurrences.length],
   ['every tail occurrence carries a post identity', tailOccurrences.every(o => o.postNum && o.id), 'ok'],
   ['every tail entity now has post provenance',
     [...merged.values()].every(e => (tailPostsByCanonical.get(e.canonical) ?? new Set()).size > 0),

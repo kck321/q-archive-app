@@ -415,7 +415,15 @@ export const CANONICAL = {
     // tail 3,044 - 2 = 3,042: the Nadler/Cuomo withdrawals, both adjudicated-tail identities.
     // core 5,395 + 184 = 5,579: the bracket ruling, both parties core-registry canonicals.
     // tail 3,042 -> 3,044 on 2026-08-26, addendum: Vice and Vox's first real text mentions.
-    coreEntities: 93, coreRegistryMentions: 5579, tailEntities: 970, tailMentions: 3044,
+    // core 5,579 -> 5,573 on 2026-08-26, Hunter Biden: -6, the wrong "Biden" -> Joe Biden match
+    // (core-registry) withdrawn on #4888/#4891/#4893/#4898 — every "Biden" there is "H. Biden".
+    // tail 3,044 -> 3,050: +6. Before this ruling, "Hunter Biden" stood alone with 10 mentions,
+    // every one a URL-slug artifact, so the cleanup step withdrew all 10 and the row went dormant
+    // (0 surviving tail mentions from it); "Hunter"'s 6 genuine mentions survived on their own
+    // row. The merge folds "Hunter"'s 6 plus the new "H. Biden" alias's 6 into the same row — 12
+    // mentions the URL-slug withdrawal never touches — so the row survives cleanup instead of
+    // going dormant: 12 tail mentions where there were 6, +6 net.
+    coreEntities: 93, coreRegistryMentions: 5573, tailEntities: 970, tailMentions: 3050,
   },
   // 2,393 detected + 2 owner rulings ("Ascension." -> Religion & Spirituality, #4963 and #4966).
   // The rulings live in audit/themes-owner-rulings.json and are merged by apply-themes.mjs, so

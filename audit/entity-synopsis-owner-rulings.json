@@ -1334,6 +1334,13 @@
    "ruledOn": "2026-08-26",
    "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
    "synopsis": "Jack Dorsey is an American entrepreneur who co-founded and served as CEO of Twitter, and who separately founded the payments company Square, later renamed Block."
+  },
+  {
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"Hunter is the alias for Hunter Biden or H. Biden so lets tie them together and also make it known in the hover over synopsis.\"",
+   "synopsis": "Hunter Biden is an American lawyer and businessman, the son of Joe Biden, who served on the board of the Ukrainian energy company Burisma Holdings and whose business dealings and a personal laptop became the subject of extensive public scrutiny and a federal investigation, resulting in gun and tax convictions in 2024 (later pardoned by his father). In the drops, Q refers to him as \"Hunter\" or \"H. Biden.\""
   }
  ]
 }

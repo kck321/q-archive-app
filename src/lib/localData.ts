@@ -513,7 +513,16 @@ export const OVERLAY_REPAIR = 1
 //     6,321, entities 1,235 -> 1,214 rows and 8,975 -> 8,821 mentions. A returning reader holding
 //     87 would keep the pre-review paint on 41 drops and a registry counting one written word up
 //     to five times, so the seed has to move.
-export const SEED_VERSION = 109  // 109: 2026-08-26 — real researched synopses for the archive's
+export const SEED_VERSION = 110  // 110: 2026-08-26 — "Hunter" merged into "Hunter Biden" (one
+                                 //     identity, was two duplicate canonical rows), "H. Biden"
+                                 //     registered as its alias (6 occurrences: #4888, #4891 x3,
+                                 //     #4893, #4898 — was wrongly matching Joe Biden), a
+                                 //     pre-existing URL-slug false-positive "Hunter Biden"
+                                 //     occurrence on #4888/#4893 withdrawn, and a real researched
+                                 //     synopsis naming both spellings. posts.json, entities.json,
+                                 //     entity-hovers.json and search-index.json all changed
+                                 //     content.
+                                 // 109: 2026-08-26 — real researched synopses for the archive's
                                  //     82 highest-mention entities (tier 1: mentions >= 20 —
                                  //     United States, POTUS, Barack Obama, Hillary Clinton, FBI,
                                  //     CIA, DOJ, God, Alice, Godfather III, ...), replacing the

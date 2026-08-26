@@ -17670,7 +17670,7 @@
   },
   "qe-b80ea6d8ed16": {
    "aliasPosts": {
-    "Biden": 33,
+    "Biden": 29,
     "Joe Biden": 3,
     "Joseph R": 1
    },
@@ -17706,14 +17706,10 @@
     "4871": 1,
     "4872": 1,
     "4886": 1,
-    "4888": 1,
-    "4891": 3,
-    "4893": 1,
-    "4898": 1,
     "4917": 1,
     "4920": 1
    },
-   "posts": 36,
+   "posts": 32,
    "rowId": "qe-b80ea6d8ed16"
   },
   "qe-b82a63fb9f5c": {
@@ -22844,6 +22840,27 @@
    "posts": 1,
    "rowId": "qe-ea9d46d58a96"
   },
+  "qe-eaac939b4aaa": {
+   "aliasPosts": {
+    "H. Biden": 4,
+    "Hunter": 6
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "3625": 1,
+    "4821": 1,
+    "4822": 1,
+    "4881": 1,
+    "4888": 1,
+    "4890": 1,
+    "4891": 3,
+    "4893": 1,
+    "4898": 1,
+    "4959": 1
+   },
+   "posts": 10,
+   "rowId": "qe-eaac939b4aaa"
+  },
   "qe-eaf697f0676f": {
    "kind": "source_only",
    "posts": 0,
@@ -23270,22 +23287,6 @@
    },
    "posts": 6,
    "rowId": "qe-efaf20137271"
-  },
-  "qe-efc49f61600b": {
-   "aliasPosts": {
-    "Hunter": 6
-   },
-   "kind": "prose",
-   "perPostMentions": {
-    "3625": 1,
-    "4821": 1,
-    "4822": 1,
-    "4881": 1,
-    "4890": 1,
-    "4959": 1
-   },
-   "posts": 6,
-   "rowId": "qe-efc49f61600b"
   },
   "qe-f0140d3c36fa": {
    "aliasPosts": {
@@ -25413,7 +25414,7 @@
  "sourceNote": "The post linked this source. It is not necessarily named in Q’s prose, and it is never counted as a mention.",
  "totals": {
   "canonicalEntities": 1622,
-  "dormantReserved": 226,
+  "dormantReserved": 225,
   "mentions": 9837,
   "mergedIdentities": 28,
   "mergedRows": 12,

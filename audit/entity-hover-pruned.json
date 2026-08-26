@@ -16,7 +16,7 @@
     }
   ],
   "globalRemoved": 27,
-  "postSynopsesRemoved": 7,
+  "postSynopsesRemoved": 13,
   "removed": {
     "global": [
       {
@@ -159,6 +159,17 @@
         "posts": [
           2854,
           4935
+        ]
+      },
+      {
+        "id": "qe-efc49f61600b",
+        "posts": [
+          3625,
+          4821,
+          4822,
+          4881,
+          4890,
+          4959
         ]
       }
     ]

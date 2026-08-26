@@ -15,38 +15,38 @@
   "ambiguous_provenance": "Attribution or URL evidence is genuinely undecidable. Retained unchanged."
  },
  "totals": {
-  "occurrences": 10931,
-  "certifiedMentions": 10931,
+  "occurrences": 10929,
+  "certifiedMentions": 10929,
   "reconciles": true,
   "attribution": {
-   "unique": 10837,
+   "unique": 10835,
    "ambiguous": 94
   },
   "byCategory": {
    "visible_complete_token": 9790,
    "invalid_substring_extraction": 98,
    "visible_alias_variant": 47,
-   "url_source_provenance": 645,
+   "url_source_provenance": 643,
    "image_provenance_unconfirmed": 37,
    "no_supported_provenance": 83,
    "ambiguous_provenance": 102,
    "social_account_reference": 129
   },
   "urlSourceByEvidence": {
-   "path": 407,
+   "path": 405,
    "hostname": 118,
    "hostname_glued": 116,
    "query": 4
   },
-  "proposedWithdrawals": 950,
+  "proposedWithdrawals": 948,
   "substringOccurrences": 98,
   "substringEntities": 51,
   "substringPosts": 97
  },
  "ruledOnAuditRun": "2026-08-24",
  "certifiedUnchanged": {
-  "entityRows": 1838,
-  "mentions": 10931
+  "entityRows": 1837,
+  "mentions": 10929
  },
  "rows": [
   {
@@ -64457,8 +64457,8 @@
    "postNum": 2136,
    "index": 6,
    "alias": "Hunter",
-   "entityId": "qe-efc49f61600b",
-   "canonical": "Hunter",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
    "entityType": "person",
    "category": "url_source_provenance",
    "evidence": {
@@ -116109,8 +116109,8 @@
    "postNum": 3625,
    "index": 1,
    "alias": "Hunter",
-   "entityId": "qe-efc49f61600b",
-   "canonical": "Hunter",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
    "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
@@ -154342,8 +154342,8 @@
    "postNum": 4821,
    "index": 5,
    "alias": "Hunter",
-   "entityId": "qe-efc49f61600b",
-   "canonical": "Hunter",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
    "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
@@ -154470,8 +154470,8 @@
    "postNum": 4822,
    "index": 5,
    "alias": "Hunter",
-   "entityId": "qe-efc49f61600b",
-   "canonical": "Hunter",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
    "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
@@ -156497,8 +156497,8 @@
    "postNum": 4881,
    "index": 0,
    "alias": "Hunter",
-   "entityId": "qe-efc49f61600b",
-   "canonical": "Hunter",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
    "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
@@ -156927,41 +156927,6 @@
    "occurrenceId": "#4888:0",
    "postNum": 4888,
    "index": 0,
-   "alias": "Biden",
-   "entityId": "qe-b80ea6d8ed16",
-   "canonical": "Joe Biden",
-   "entityType": "person",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
-   "certifiedCountEffect": 0
-  },
-  {
-   "occurrenceId": "#4888:1",
-   "postNum": 4888,
-   "index": 1,
-   "alias": "Hunter Biden",
-   "entityId": "qe-eaac939b4aaa",
-   "canonical": "Hunter Biden",
-   "entityType": "person",
-   "category": "url_source_provenance",
-   "evidence": {
-    "category": "url_source_provenance",
-    "urlEvidence": "path",
-    "carriers": [
-     "https://nypost.com/2020/10/17/hunter-biden-reportedly-also-had-business-ties-in-kazakhstan/"
-    ]
-   },
-   "proposedAction": "remove-annotation",
-   "certifiedCountEffect": -1
-  },
-  {
-   "occurrenceId": "#4888:2",
-   "postNum": 4888,
-   "index": 2,
    "alias": "Kazakhstan",
    "entityId": "qe-a5e94709bbd0",
    "canonical": "Kazakhstan",
@@ -156976,6 +156941,22 @@
    },
    "proposedAction": "remove-annotation",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#4888:1",
+   "postNum": 4888,
+   "index": 1,
+   "alias": "H. Biden",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#489:0",
@@ -157078,8 +157059,8 @@
    "postNum": 4890,
    "index": 0,
    "alias": "Hunter",
-   "entityId": "qe-efc49f61600b",
-   "canonical": "Hunter",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
    "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
@@ -157109,9 +157090,9 @@
    "occurrenceId": "#4891:0",
    "postNum": 4891,
    "index": 0,
-   "alias": "Biden",
-   "entityId": "qe-b80ea6d8ed16",
-   "canonical": "Joe Biden",
+   "alias": "H. Biden",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
    "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
@@ -157125,9 +157106,9 @@
    "occurrenceId": "#4891:1",
    "postNum": 4891,
    "index": 1,
-   "alias": "Biden",
-   "entityId": "qe-b80ea6d8ed16",
-   "canonical": "Joe Biden",
+   "alias": "H. Biden",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
    "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
@@ -157141,9 +157122,9 @@
    "occurrenceId": "#4891:2",
    "postNum": 4891,
    "index": 2,
-   "alias": "Biden",
-   "entityId": "qe-b80ea6d8ed16",
-   "canonical": "Joe Biden",
+   "alias": "H. Biden",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
    "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
@@ -157157,41 +157138,6 @@
    "occurrenceId": "#4893:0",
    "postNum": 4893,
    "index": 0,
-   "alias": "Biden",
-   "entityId": "qe-b80ea6d8ed16",
-   "canonical": "Joe Biden",
-   "entityType": "person",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
-   "certifiedCountEffect": 0
-  },
-  {
-   "occurrenceId": "#4893:1",
-   "postNum": 4893,
-   "index": 1,
-   "alias": "Hunter Biden",
-   "entityId": "qe-eaac939b4aaa",
-   "canonical": "Hunter Biden",
-   "entityType": "person",
-   "category": "url_source_provenance",
-   "evidence": {
-    "category": "url_source_provenance",
-    "urlEvidence": "path",
-    "carriers": [
-     "https://www.politico.com/news/2020/10/08/hunter-biden-business-partner-fraud-428154"
-    ]
-   },
-   "proposedAction": "remove-annotation",
-   "certifiedCountEffect": -1
-  },
-  {
-   "occurrenceId": "#4893:2",
-   "postNum": 4893,
-   "index": 2,
    "alias": "Judge Ronnie Abrams",
    "entityId": "qe-670e8f5dc8ca",
    "canonical": "Judge Ronnie Abrams",
@@ -157205,12 +157151,28 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#4893:3",
+   "occurrenceId": "#4893:1",
    "postNum": 4893,
-   "index": 3,
+   "index": 1,
    "alias": "Greg Andres",
    "entityId": "qe-28cfab019ff4",
    "canonical": "Greg Andres",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4893:2",
+   "postNum": 4893,
+   "index": 2,
+   "alias": "H. Biden",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
    "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
@@ -157320,22 +157282,6 @@
    "occurrenceId": "#4898:0",
    "postNum": 4898,
    "index": 0,
-   "alias": "Biden",
-   "entityId": "qe-b80ea6d8ed16",
-   "canonical": "Joe Biden",
-   "entityType": "person",
-   "category": "visible_complete_token",
-   "evidence": {
-    "category": "visible_complete_token",
-    "where": "prose"
-   },
-   "proposedAction": "keep",
-   "certifiedCountEffect": 0
-  },
-  {
-   "occurrenceId": "#4898:1",
-   "postNum": 4898,
-   "index": 1,
    "alias": "FBI",
    "entityId": "qe-e39142bdc502",
    "canonical": "Federal Bureau of Investigation",
@@ -157349,12 +157295,28 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#4898:2",
+   "occurrenceId": "#4898:1",
    "postNum": 4898,
-   "index": 2,
+   "index": 1,
    "alias": "Joshua Wilson",
    "entityId": "qe-aa6822fc60e7",
    "canonical": "Joshua Wilson",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4898:2",
+   "postNum": 4898,
+   "index": 2,
+   "alias": "H. Biden",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
    "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
@@ -157704,8 +157666,8 @@
    "postNum": 4931,
    "index": 0,
    "alias": "Hunter",
-   "entityId": "qe-efc49f61600b",
-   "canonical": "Hunter",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
    "entityType": "person",
    "category": "url_source_provenance",
    "evidence": {
@@ -158317,8 +158279,8 @@
    "postNum": 4959,
    "index": 4,
    "alias": "Hunter",
-   "entityId": "qe-efc49f61600b",
-   "canonical": "Hunter",
+   "entityId": "qe-eaac939b4aaa",
+   "canonical": "Hunter Biden",
    "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
