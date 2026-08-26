@@ -289,7 +289,11 @@ export const CANONICAL = {
     // instead of getting entity treatment. ownerRulings 124 -> 155 (31 new canonicals + 6
     // additionalOccurrence rulings on repeated outlets = 37 ruling rows, matching
     // apply-entities.mjs's `ownerAdded`).
-    canonical: 1618, detectedCanonical: 1292, ownerRulings: 155, ownerMerges: 2, queueRulings: 1007,
+    // 1,618 -> 1,622 on 2026-08-26, addendum: four more #1515 lines the first pass missed
+    // entirely (Vice/Alyssa Mastramonoco, Vox/Jon Allen, WaPo/Anne Gearan, WaPo/Greg Sargent).
+    // Only the 4 people mint a canonical — Vice, Vox and Washington Post (WaPo) all already
+    // existed. ownerRulings 155 -> 159.
+    canonical: 1622, detectedCanonical: 1292, ownerRulings: 159, ownerMerges: 2, queueRulings: 1007,
     /** Every resolved mention across all 1,334 certified entities. The headline figure. */
     // 8,227 -> 8,239: the RC alias ruling resolved 12 occurrences to Rachel Chandler. The merge
     // moved 4 mentions from the absorbed row onto hers and added none.
@@ -376,7 +380,11 @@ export const CANONICAL = {
     // 9,792 -> 9,829 on 2026-08-26: +37, #1515's reporter-roll ruling. All 37 land on owner-ruling
     // rows (new canonicals or additionalOccurrence increments) — core (5,579) and tail (3,042) are
     // untouched, so 5,579 + 3,042 + 1,208 = 9,829.
-    mentions: 9829,
+    // 9,829 -> 9,837 on 2026-08-26, addendum: +8. Vice and Vox are pre-existing adjudicated-tail
+    // identities (their first real text mentions), so tail 3,042 -> 3,044. The 4 new people and
+    // the 2 Washington Post (WaPo) mentions land on owner-ruling rows: 1,208 -> 1,214. Core
+    // (5,579) untouched. 5,579 + 3,044 + 1,214 = 9,837.
+    mentions: 9837,
     /** How it is composed. The core figure is the section's history, not its headline. */
     // tailEntities is what the tail adjudication produced (1,239); one of them, Ray Chandler,
     // now ships merged into Rachel Chandler, so 1,238 tail rows appear in the artifact.
@@ -406,7 +414,8 @@ export const CANONICAL = {
     // Pelosi/Schiff withdrawals on #3778, both core-registry people.
     // tail 3,044 - 2 = 3,042: the Nadler/Cuomo withdrawals, both adjudicated-tail identities.
     // core 5,395 + 184 = 5,579: the bracket ruling, both parties core-registry canonicals.
-    coreEntities: 93, coreRegistryMentions: 5579, tailEntities: 970, tailMentions: 3042,
+    // tail 3,042 -> 3,044 on 2026-08-26, addendum: Vice and Vox's first real text mentions.
+    coreEntities: 93, coreRegistryMentions: 5579, tailEntities: 970, tailMentions: 3044,
   },
   // 2,393 detected + 2 owner rulings ("Ascension." -> Religion & Spirituality, #4963 and #4966).
   // The rulings live in audit/themes-owner-rulings.json and are merged by apply-themes.mjs, so

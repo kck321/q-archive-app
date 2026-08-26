@@ -43,7 +43,14 @@ const analysisLinks = [
 // page about the site rather than one of the certified analysis sections, so the sidebar
 // keeps the archive and the sections at top level and folds these behind one row. The routes
 // are untouched; only their permanent slots go.
+//
+// Resolution Center / Comments & Ideas moved OUT to their own rows below Support on
+// 2026-08-26, then back in the same day: "i don't like the resolutionn center and the coments
+// and ideas outside of the extras. lets put them back in the extras but have them at the top
+// of the list." First two rows in the fold, not their old middle slots.
 const extrasLinks = [
+  { to: '/resolve',   label: 'Resolution Center', icon: '🔎' },
+  { to: '/feedback',  label: 'Comments & Ideas', icon: '💬' },
   { to: '/tripcodes', label: 'Q Tripcodes',     icon: '🔐' },
   { to: '/topics',    label: 'Q Clusters',      icon: '📖' },
   { to: '/links',     label: 'All Q Links',     icon: '🌐' },
@@ -57,15 +64,6 @@ const bottomLinks = [
   // Support stays at top level: a donation link inside a collapsed menu is a donation link
   // nobody finds.
   { to: '/donate',    label: 'Support',         icon: '❤️' },
-]
-
-// BELOW SUPPORT, OWNER RULING 2026-08-26: "i would also like the resolution center and
-// comments and ideas below the Support icon." Pulled out of the collapsed Q Extras fold —
-// where a click to open the group came before either was even visible — and given their own
-// permanent rows, same treatment Support itself already gets and for the same reason.
-const afterSupportLinks = [
-  { to: '/resolve',  label: 'Resolution Center', icon: '🔎' },
-  { to: '/feedback', label: 'Comments & Ideas',  icon: '💬' },
   // The Dashboard is the editorial workbench, not a reader feature. CAN_EDIT folds to a
   // literal false in the public build, so this entry (and its route in App.tsx) never
   // reaches qdrops.app. Owner ruling 2026-08-23.
@@ -242,10 +240,8 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
           </div>
         )}
 
-        {/* Bottom links — Support, then Resolution Center / Comments & Ideas / Dashboard
-            directly below it (owner ruling, 2026-08-26). One list, one row style throughout,
-            so the ordering reads as intentional rather than two unrelated groups stacked. */}
-        {[...bottomLinks, ...afterSupportLinks].map(l => (
+        {/* Bottom links */}
+        {bottomLinks.map(l => (
           <NavLink
             key={l.to}
             to={l.to}

@@ -1546,6 +1546,95 @@
    "was": "unclassified",
    "ruledOn": "2026-08-26",
    "reasoning": "Owner ruling: #1515's reporter roll — this \"OUTLET – Name\" line was certified as a single Claim rather than as the entity mention every other line on the same list correctly got. Maria-Elena Salinas is the reporter named."
+  },
+  {
+   "postNum": 1515,
+   "postId": "1515",
+   "canonical": "Vice",
+   "aliasUsed": "Vice",
+   "sourceText": "Vice",
+   "type": "media_organization",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: #1515's reporter roll, missed entirely by the first pass. Vice was already a certified source-only identity (Q linked to vice.com on #1560/#2801 without naming it in text) — this is its first real text mention."
+  },
+  {
+   "postNum": 1515,
+   "postId": "1515",
+   "canonical": "Alyssa Mastramonoco",
+   "aliasUsed": "Alyssa Mastramonoco",
+   "sourceText": "Alyssa Mastramonoco",
+   "type": "person",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: #1515's reporter roll — the reporter named on the Vice line."
+  },
+  {
+   "postNum": 1515,
+   "postId": "1515",
+   "canonical": "Vox",
+   "aliasUsed": "Vox",
+   "sourceText": "Vox",
+   "type": "media_organization",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: #1515's reporter roll, missed entirely by the first pass. Vox was already a certified source-only identity (Q linked to vox.com on #1797/#2801 without naming it in text) — this is its first real text mention."
+  },
+  {
+   "postNum": 1515,
+   "postId": "1515",
+   "canonical": "Jon Allen",
+   "aliasUsed": "Jon Allen",
+   "sourceText": "Jon Allen",
+   "type": "person",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: #1515's reporter roll — the reporter named on the Vox line."
+  },
+  {
+   "postNum": 1515,
+   "postId": "1515",
+   "canonical": "Washington Post",
+   "aliasUsed": "WaPo",
+   "sourceText": "WaPo",
+   "type": "media_organization",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: #1515's reporter roll, missed entirely by the first pass. \"WaPo\" is Q's abbreviation for the already-certified Washington Post identity (which so far only carried the \"WASH POST\" alias) — this registers the new spelling and its first occurrence on this drop."
+  },
+  {
+   "postNum": 1515,
+   "postId": "1515",
+   "canonical": "Anne Gearan",
+   "aliasUsed": "Anne Gearan",
+   "sourceText": "Anne Gearan",
+   "type": "person",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: #1515's reporter roll — the reporter named on the first WaPo line."
+  },
+  {
+   "postNum": 1515,
+   "postId": "1515",
+   "canonical": "Washington Post",
+   "aliasUsed": "WaPo",
+   "sourceText": "WaPo",
+   "type": "media_organization",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: #1515's reporter roll — the second WaPo line on this same drop.",
+   "additionalOccurrence": true
+  },
+  {
+   "postNum": 1515,
+   "postId": "1515",
+   "canonical": "Greg Sargent",
+   "aliasUsed": "Greg Sargent",
+   "sourceText": "Greg Sargent",
+   "type": "person",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: #1515's reporter roll — the reporter named on the second WaPo line."
   }
  ],
  "aliasRulings": [

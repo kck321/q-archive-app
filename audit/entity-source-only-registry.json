@@ -1,6 +1,6 @@
 {
  "note": "Entities with no prose mention left, but which remain referenced as the publisher of material Q linked. They stay in the public bundle and must NEVER render as a zero-mention entity page.",
- "total": 134,
+ "total": 132,
  "entities": [
   {
    "id": "qe-49b9cb60a8ac",
@@ -364,16 +364,6 @@
    ]
   },
   {
-   "id": "qe-6b91c2e9c140",
-   "canonical": "Vice",
-   "type": "media_organization",
-   "slug": "vice",
-   "linkedSourcePosts": [
-    1560,
-    2801
-   ]
-  },
-  {
    "id": "qe-80eaf709c7f7",
    "canonical": "Avenatti",
    "type": "person",
@@ -390,16 +380,6 @@
    "linkedSourcePosts": [
     1782,
     4278
-   ]
-  },
-  {
-   "id": "qe-b3334eb51117",
-   "canonical": "Vox",
-   "type": "media_organization",
-   "slug": "vox",
-   "linkedSourcePosts": [
-    1797,
-    2801
    ]
   },
   {

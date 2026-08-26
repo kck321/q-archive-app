@@ -133,20 +133,80 @@ export default function Donate() {
       <BackButton />
 
       <div className="bg-q-panel border border-q-border rounded-xl p-6">
-        <h1 className="text-2xl font-bold text-white">Support Qdrops</h1>
+        <h1 className="text-2xl font-bold text-white">Support Qdrops.app</h1>
+        <p className="text-xs text-gray-500 mt-1">Launched 8/23/26</p>
         <div className="text-sm text-gray-400 leading-relaxed mt-3 space-y-3">
           <p>
-            I built Qdrops because I wanted this record to exist somewhere complete,
-            searchable, and honest — every drop, every source, with nothing hidden behind a
-            login or a fee. It's free, open source, has no ads, no tracking, and nothing sits
-            behind a paywall. It runs on time far more than money, and most of that time is
-            mine.
+            Qdrops.app was created to make the complete Q post archive easier to search,
+            study, and understand based on the language used throughout all{' '}
+            <span className="font-semibold text-gray-200">4,966 Q Drops</span>.
           </p>
           <p>
-            If it's helped you find something, understand something, or just made the archive
-            easier to sit with, and you'd like to say thanks — crypto is below. It's entirely
-            optional. Whether you send something or not, this stays free for everyone, always.
+            Rather than simply presenting the original posts, the site organizes the material
+            into searchable categories, including:
           </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Q Questions</li>
+            <li>Q Directives</li>
+            <li>Q Claims</li>
+            <li>Q Predictions</li>
+            <li>Q Entities — people, places, organizations, and other named subjects</li>
+            <li>Q Brackets — terms, codes, and language found within brackets</li>
+            <li>Links and images</li>
+            <li>Tripcodes</li>
+            <li>Related post clusters</li>
+            <li>17 overarching themes</li>
+            <li>And much more</li>
+          </ul>
+          <p>
+            The goal is to help visitors examine the archive more clearly, follow references
+            between posts, compare related information, discover connections, and review the
+            material for themselves.
+          </p>
+        </div>
+      </div>
+
+      <div className="bg-q-panel border border-q-border rounded-xl p-6 space-y-5">
+        <div>
+          <h2 className="font-semibold text-white mb-2">Thank You for Being Here</h2>
+          <div className="text-sm text-gray-400 leading-relaxed space-y-3">
+            <p>
+              Thank you to everyone who uses Qdrops.app, shares it with others, reports an
+              issue, points out a missing or incorrect highlight, or sends feedback and
+              suggestions.
+            </p>
+            <p>
+              This project continues to improve because of the people who take the time to
+              review the information and help identify areas that may need correction,
+              clarification, or additional context.
+            </p>
+            <p>
+              Every report, suggestion, and contribution helps make Qdrops.app more complete,
+              accurate, and useful for everyone.
+            </p>
+          </div>
+        </div>
+        <div>
+          <h2 className="font-semibold text-white mb-2">Help Support the Project</h2>
+          <div className="text-sm text-gray-400 leading-relaxed space-y-3">
+            <p>
+              Maintaining and improving Qdrops.app requires ongoing development, research,
+              data review, hosting, and other operating costs.
+            </p>
+            <p>
+              If the site has been useful to you and you would like to support its continued
+              development, you can contribute using one of the cryptocurrency QR codes or
+              wallet addresses below.
+            </p>
+            <p>
+              Your support is sincerely appreciated, but it is never required to use, search,
+              or explore the site.
+            </p>
+            <p>
+              Thank you for visiting Qdrops.app, providing feedback, and helping the project
+              continue to grow.
+            </p>
+          </div>
         </div>
       </div>
 

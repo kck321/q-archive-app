@@ -1,12 +1,12 @@
 {
  "breakdown": [
   {
-   "count": 1484,
+   "count": 1490,
    "key": "prose",
    "label": "named in Q’s prose"
   },
   {
-   "count": 134,
+   "count": 132,
    "key": "sourceOnly",
    "label": "linked as a source only"
   }
@@ -268,8 +268,8 @@
    "identities": [
     {
      "canonical": "Washington Post",
-     "mentions": 8,
-     "posts": 7
+     "mentions": 10,
+     "posts": 8
     },
     {
      "canonical": "The Washington Post",
@@ -2293,6 +2293,17 @@
    },
    "posts": 2,
    "rowId": "qe-17f602fec7c9"
+  },
+  "qe-17fc82255128": {
+   "aliasPosts": {
+    "Alyssa Mastramonoco": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-17fc82255128"
   },
   "qe-18107b67fc6d": {
    "aliasPosts": {
@@ -7347,15 +7358,17 @@
   },
   "qe-48200abcb9fa": {
    "aliasPosts": {
-    "WASH POST": 3
+    "WASH POST": 3,
+    "WaPo": 1
    },
    "kind": "prose",
    "perPostMentions": {
+    "1515": 2,
     "2401": 3,
     "2468": 1,
     "4310": 1
    },
-   "posts": 7,
+   "posts": 8,
    "rowId": "qe-48200abcb9fa"
   },
   "qe-48218e7ab8e3": {
@@ -10563,8 +10576,14 @@
    "rowId": "qe-6b83c5c2a080"
   },
   "qe-6b91c2e9c140": {
-   "kind": "source_only",
-   "posts": 0,
+   "aliasPosts": {
+    "Vice": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
    "rowId": "qe-6b91c2e9c140",
    "sourcePosts": [
     {
@@ -11332,6 +11351,17 @@
    },
    "posts": 1,
    "rowId": "qe-76844c860b54"
+  },
+  "qe-769e5ec6769b": {
+   "aliasPosts": {
+    "Anne Gearan": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-769e5ec6769b"
   },
   "qe-76ab03a9b5f2": {
    "aliasPosts": {
@@ -13267,6 +13297,17 @@
    "posts": 1,
    "rowId": "qe-87fc48f83573"
   },
+  "qe-88238dc0104e": {
+   "aliasPosts": {
+    "Jon Allen": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-88238dc0104e"
+  },
   "qe-8854da4cfc5d": {
    "aliasPosts": {
     "Joe 30330": 1
@@ -14685,6 +14726,17 @@
    },
    "posts": 3,
    "rowId": "qe-9780fb4a0f29"
+  },
+  "qe-97ad895aa3ca": {
+   "aliasPosts": {
+    "Greg Sargent": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-97ad895aa3ca"
   },
   "qe-97d9b95412ad": {
    "aliasPosts": {
@@ -17172,8 +17224,14 @@
    "rowId": "qe-b30551f2c56e"
   },
   "qe-b3334eb51117": {
-   "kind": "source_only",
-   "posts": 0,
+   "aliasPosts": {
+    "Vox": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
    "rowId": "qe-b3334eb51117",
    "sourcePosts": [
     {
@@ -25354,15 +25412,15 @@
  "ruledOn": "2026-08-17",
  "sourceNote": "The post linked this source. It is not necessarily named in Q’s prose, and it is never counted as a mention.",
  "totals": {
-  "canonicalEntities": 1618,
+  "canonicalEntities": 1622,
   "dormantReserved": 226,
-  "mentions": 9829,
+  "mentions": 9837,
   "mergedIdentities": 28,
   "mergedRows": 12,
-  "proseMentioned": 1484,
-  "publicRows": 1602,
-  "repeatBadges": 1170,
-  "sourceOnly": 134,
+  "proseMentioned": 1490,
+  "publicRows": 1606,
+  "repeatBadges": 1171,
+  "sourceOnly": 132,
   "sourcePostChips": 358,
   "unsettledAttributionsExcluded": 94
  }

@@ -337,6 +337,16 @@
    "rendered": 37,
    "evidence": "audit-occurrence-provenance.mjs re-run on the new tree (this same rebuild pass) examined 10,923 occurrences with the boundary-defect list unchanged from prior runs (God 41, Sara Carter 3, Doug Collins 3, ...) — none of the 37 new mentions appear in it. All 37 are plain verbatim name matches, not image- or URL-provenance cases.",
    "why": "The approval record above is left exactly as written. A delta is recorded beside it instead, so the guard still refuses an unrecognised tree while a later owner ruling does not read as drift."
+  },
+  {
+   "ruling": "audit/entities-owner-rulings.json (2026-08-26 addendum: #1515 reporter roll, 4 missed lines)",
+   "ruledOn": "2026-08-26",
+   "what": "Owner ruling: \"these were not made an entity on 1515: Vice – Alyssa Mastramonoco / Vox – Jon Allen / WaPo – Anne Gearan / WaPo – Greg Sargent\" — four lines the first #1515 pass missed entirely. Adds 4 new canonicals (the four reporters) and 8 occurrences BEFORE this step runs: 4 new-canonical mentions (the reporters) + 2 first-real-mentions on pre-existing source-only tail identities (Vice, Vox) + 2 mentions on the pre-existing Washington Post identity (WaPo x2).",
+   "entityRows": 4,
+   "mentions": 8,
+   "rendered": 8,
+   "evidence": "audit-occurrence-provenance.mjs re-run on the new tree examined the updated mention count with no new boundary-defect entries — all 8 are plain verbatim name/abbreviation matches, not image- or URL-provenance cases.",
+   "why": "The approval record above is left exactly as written. A delta is recorded beside it instead, so the guard still refuses an unrecognised tree while a later owner ruling does not read as drift."
   }
  ]
 }

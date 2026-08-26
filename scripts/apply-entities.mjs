@@ -1056,7 +1056,11 @@ const checks = [
   // got. 31 new canonicals (11 outlets, 20 people; CBS/Bloomberg/MSNBC needed no new ruling,
   // already certified corpus-wide) + 6 additionalOccurrence rulings (HuffPo x4, Buzzfeed/LAT/New
   // Yorker x2 each on this post) = 37 ruling rows, 31 of them creating a canonical.
-  ['owner entity rulings applied = 155', ownerAdded === 155, ownerAdded],
+  // 155 -> 159 on 2026-08-26, addendum: four #1515 reporter-roll lines the first pass missed
+  // entirely (not miscategorised — never certified as anything). Four new canonicals: Alyssa
+  // Mastramonoco, Jon Allen, Anne Gearan, Greg Sargent. Vice, Vox and Washington Post (WaPo x2)
+  // reuse existing canonicals and are NOT counted here — see ownerMentions / tail mentions below.
+  ['owner entity rulings applied = 159', ownerAdded === 159, ownerAdded],
   ['owner merge rulings applied = 1', ownerMerged === 1, ownerMerged],
   // 1,335 - 1: Ray Chandler is now an alias of Rachel Chandler, not a row of her own.
   // 1,445 -> 1,408: -19 rows merged away as duplicate canonicals, -18 rows withdrawn as
@@ -1073,7 +1077,8 @@ const checks = [
   // #2854 and #4935) duplicated Kamala Harris — both occurrences are her, not a second Harris —
   // and one row is retired into the survivor.
   // 1,803 -> 1,834 on 2026-08-26: +31 new canonicals from #1515's reporter-roll ruling above.
-  ['canonical entities = 1,834', entities.length === 1834, entities.length],
+  // 1,834 -> 1,838 on 2026-08-26, addendum: +4 new canonicals (the four reporters named above).
+  ['canonical entities = 1,838', entities.length === 1838, entities.length],
   // 8,227 + 12 RC. The merge moves 4 mentions between rows and adds none.
   // 9,786 -> 9,747: -39, the occurrences of the 18 withdrawn rows. The 17 merges move mentions
   // ACROSS rows and add none, so they are absent from this arithmetic by design — asserted
@@ -1124,7 +1129,9 @@ const checks = [
   // "[D]"; its second, paired "[D]&[F]" occurrence is held, not counted.
   // 10,886 -> 10,923 on 2026-08-26: +37, every ruling row in #1515's reporter-roll batch — each
   // one is exactly one occurrence, whether it creates a canonical or is an additionalOccurrence.
-  ['resolved mentions = 10,923', totals.mentions === 10923, totals.mentions],
+  // 10,923 -> 10,931 on 2026-08-26, addendum: +8, every ruling row in the addendum batch (Vice,
+  // Alyssa Mastramonoco, Vox, Jon Allen, Washington Post x2 as "WaPo", Anne Gearan, Greg Sargent).
+  ['resolved mentions = 10,931', totals.mentions === 10931, totals.mentions],
   ['stage 1: 19 rows merged away', !stage1 || s1Merged === 19, s1Merged],
   ['stage 1: 85 types corrected', !stage1 || s1Typed === 85, s1Typed],
   // 18 in the audit, 17 applied: ENT-0709 "Non-profit organization" is HELD because it
@@ -1180,7 +1187,10 @@ const checks = [
   // -2 on 2026-08-25: the Nadler and Cuomo duplicate-span withdrawals on #3778/#4935, both
   // adjudicated-tail identities. Decremented on `merged` directly (see the withdrawal block
   // above tailPostsByCanonical) so the count falls with the occurrence, not just the render list.
-  ['adjudicated-tail mentions = 4,011', totals.adjudicatedTailMentions === 4011, totals.adjudicatedTailMentions],
+  // +2 on 2026-08-26, addendum: Vice and Vox are pre-existing adjudicated-tail identities
+  // (source-only until now — Q linked to both without naming them in text), so their first real
+  // text mentions on #1515 land here rather than on an owner-ruling row.
+  ['adjudicated-tail mentions = 4,013', totals.adjudicatedTailMentions === 4013, totals.adjudicatedTailMentions],
   // -2 on 2026-08-25: the same two withdrawn render records (Nadler #3778, Cuomo #4935) drop out
   // of the occurrence-provenance list itself.
   ['tail occurrence rows = 3,438', tailOccurrences.length === 3438, tailOccurrences.length],
