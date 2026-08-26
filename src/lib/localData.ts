@@ -513,7 +513,17 @@ export const OVERLAY_REPAIR = 1
 //     6,321, entities 1,235 -> 1,214 rows and 8,975 -> 8,821 mentions. A returning reader holding
 //     87 would keep the pre-review paint on 41 drops and a registry counting one written word up
 //     to five times, so the seed has to move.
-export const SEED_VERSION = 100  // 100: a second 2026-08-25 batch. #4935's Cuomo, McCauliffe and
+export const SEED_VERSION = 101  // 101: a third 2026-08-25 batch. "D's"/"R's" are Democratic/
+                                 //     Republican Party wherever the census verified them (82
+                                 //     occurrences, 61 posts) — the bracket "[D]"/"[R]" forms are
+                                 //     held for per-post review, since a full-corpus scan found
+                                 //     real collisions (D-Day, delta markers) the owner's own "D5
+                                 //     is a prediction not a democrat" caution anticipated. Also:
+                                 //     four pre-existing duplicate spans withdrawn (Pelosi, Schiff,
+                                 //     Nadler on #3778; Cuomo on #4935) — each carried a bare alias
+                                 //     AND a fuller descriptor-line alias for one mention, boxing
+                                 //     it twice. Not caused by today's rulings; found verifying them.
+                                 // 100: a second 2026-08-25 batch. #4935's Cuomo, McCauliffe and
                                  //     Harris get the same title/party-suffix conjoining as
                                  //     Schumer and de Blasio; Harris was certified under a
                                  //     duplicate "Harris" canonical and is merged into Kamala

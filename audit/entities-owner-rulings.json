@@ -9415,6 +9415,89 @@
    "retrieval": "OCCURRENCE-SCOPED, and that is the whole safety of it. 4,534 sign-off lines are excluded by the ruling itself. Of the 158 standalone \"Q\" tokens that remain, 93 across 75 drops are the persona and carry the ruling; 65 are HELD because they name something else — 3 a comms or operation code; 8 Question & Answer; 22 the word \"question\"; 1 the idiom \"right on cue\"; 5 the word \"question\", used as a label before the question itself; 2 a drop number, not a name; 2 the NSA Q Group, a body rather than the poster; 8 part of a link or a handle, not a word Q wrote; 3 Al-Qaeda — \"AL-Q\" is Q's abbreviation for it; 1 Quicken Loans Arena in Cleveland, known as \"The Q\"; 5 Q+ — a different designation; Q and Q+ are not the same (PROJECT_CONTEXT invariant 6); 1 an SEC filing form (10-Q); 1 the LETTER Q, not the poster; 1 a quoted board header — Q's own tripcode line inside a paste; 2 a Department of Energy clearance level. Post-level scoping would have certified Al-Qaeda, an SEC filing form, Quicken Loans Arena, a DOE clearance level and the word \"question\" as Alice. See audit/q-entity-owner-ruling.json.",
    "includePostsSource": "audit/q-entity-owner-ruling.json — personaOccurrences, one entry per drop. build-q-entity-ruling.mjs refuses if the two disagree; they did on 2026-08-24, when the owner ruled #2347 in and this list was not the file that changed.",
    "includeOccurrencesSource": "audit/q-entity-owner-ruling.json — personaOccurrences, as [lineIndex, charIndex], the same coordinates the Resolution Center row ids use. build-q-entity-ruling.mjs refuses if the two disagree."
+  },
+  {
+   "alias": "D's",
+   "canonical": "Democratic Party",
+   "type": "political_group",
+   "includePosts": [
+    15,
+    47,
+    48,
+    52,
+    68,
+    70,
+    76,
+    88,
+    243,
+    247,
+    337,
+    520,
+    551,
+    636,
+    1009,
+    1453,
+    1935,
+    2200,
+    2296,
+    2327,
+    2354,
+    2355,
+    2358,
+    2368,
+    2369,
+    2392,
+    2397,
+    2554,
+    2582,
+    2630,
+    2646,
+    2650,
+    2658,
+    2681,
+    2682,
+    2686,
+    2689,
+    2738,
+    2754,
+    2850,
+    2856,
+    2901,
+    2941,
+    2943,
+    2981,
+    3049,
+    3383,
+    3405,
+    3458,
+    3533,
+    3539,
+    3590
+   ],
+   "ruledOn": "2026-08-25",
+   "reasoning": "Owner ruling: \"can we also classiffy any D's or R's as entitites if it pertains to democrats and republicans\" (with the follow-up: \"D5 is a prediction not a democrat so make sure we are only classifying the d's and r's that pertain to democrats/republicans\"). Census-verified: every possessive \"D's\" occurrence in the corpus reads as Democrat(s) — \"D's SCREAM when POTUS meets w/ PUTIN?\", \"Red-State D's who voted 'no'\", \"R's v D's\" — with none of the bracket form's collisions (D-Day, delta markers). Scoped by includePosts to the exact 52 drops the census found, so a future retyping of the token elsewhere is not silently claimed.",
+   "retrieval": "Corpus regex census, 2026-08-25: /\\b([DR])'s\\b/ against every post's runtime text, all matches read individually before this ruling was written.",
+   "renderNote": "RENDERING_PROVENANCE_RULE: the renderer highlights the token, the form Q wrote."
+  },
+  {
+   "alias": "R's",
+   "canonical": "Republican Party",
+   "type": "political_group",
+   "includePosts": [
+    52,
+    88,
+    247,
+    1100,
+    1453,
+    2327,
+    2630,
+    2650,
+    2943
+   ],
+   "ruledOn": "2026-08-25",
+   "reasoning": "Owner ruling, same as the \"D's\" entry above, for the Republican half of it. Census-verified: every possessive \"R's\" occurrence reads as Republican(s) — \"R's v D's\", \"R's targeted (censorship/anti R = more $)\", \"R's easier to remove than D's?\" — 9 posts, no exceptions found.",
+   "retrieval": "Corpus regex census, 2026-08-25: /\\b([DR])'s\\b/ against every post's runtime text, all matches read individually before this ruling was written.",
+   "renderNote": "RENDERING_PROVENANCE_RULE: the renderer highlights the token, the form Q wrote."
   }
  ],
  "mergeRulings": [
@@ -9506,6 +9589,42 @@
    "ruledOn": "2026-08-15",
    "reasoning": "Owner ruling: lowercase 'sessions' is not the man. It matched 'friendly therapy sessions' in #2319, and the other lowercase occurrences sit inside news URLs (nypost.com/…/sessions-investigating…, breitbart.com/…/turley-sessions-using…). Q writes 'Sessions' or 'SESSIONS' when he names him — 108 of the 113 mentions.",
    "keeps": "SESSIONS (56), Sessions (52), Jeff Sessions (2) are untouched."
+  },
+  {
+   "canonical": "Nancy Pelosi",
+   "alias": "Nancy Pelosi",
+   "onlyPosts": [
+    3778
+   ],
+   "ruledOn": "2026-08-25",
+   "reasoning": "Pre-existing duplicate span, found while conjoining #3778's titles. The certified \"Nancy Pelosi\" bare alias (2 mentions total) and the full-line \"Nancy Pelosi (D-CA) – Speaker of the House\" alias (1 mention) both fire on #3778, boxing the same name twice. The bare alias's OTHER occurrence is #2036, an unrelated drop, and stays untouched — scoped to #3778 only."
+  },
+  {
+   "canonical": "Adam Schiff",
+   "alias": "Adam Schiff",
+   "onlyPosts": [
+    3778
+   ],
+   "ruledOn": "2026-08-25",
+   "reasoning": "Same defect as Nancy Pelosi above, same drop. The bare \"Adam Schiff\" alias (3 mentions total, corroborated against audit/entities-audit.json: #325, #3778, #4521) and the full-line \"Adam Schiff (D-CA) – Chair Intel\" alias both fire on #3778. #325 and #4521 stay untouched."
+  },
+  {
+   "canonical": "Jerry Nadler",
+   "alias": "Jerry Nadler",
+   "onlyPosts": [
+    3778
+   ],
+   "ruledOn": "2026-08-25",
+   "reasoning": "Same defect, same drop, an adjudicated-tail identity rather than core registry. The bare \"Jerry Nadler\" alias and the full-line \"Jerry Nadler (D-NY) – Chair Judiciary\" alias both fire on #3778. Scoped rather than corpus-wide because audit/entities-tail-occurrences.json also carries a #2136 occurrence of the bare alias that this ruling must not touch."
+  },
+  {
+   "canonical": "Andrew Cuomo",
+   "alias": "Andrew Cuomo",
+   "onlyPosts": [
+    4935
+   ],
+   "ruledOn": "2026-08-25",
+   "reasoning": "Discovered verifying today's #4935 title-conjoining ruling. The certified bare \"Andrew Cuomo\" alias and the \"Gov. Andrew Cuomo, D-N.Y\" alias this session extended both fire on the same \"Gov. Andrew Cuomo, D-N.Y\" line. An adjudicated-tail identity; #4935 is his only certified occurrence, so this and a corpus-wide withdrawal are the same ruling here, but scoped for consistency with the other three."
   }
  ],
  "typeRulings": [

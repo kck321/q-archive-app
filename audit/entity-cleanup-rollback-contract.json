@@ -309,6 +309,15 @@
    "mentions": 1,
    "rendered": 1,
    "evidence": "ONE mention, not six: five of the six rulings are SPAN EXTENSIONS or a MERGE, which relabel or fold an existing occurrence rather than adding one — \"Senate Minority Leader\" x2, \"Mayor Bill de Blasio\" x2 (conjoined, then extended again), \"Gov. Andrew Cuomo, D-N.Y\", \"Gov. Terry McCauliffe\", and \"Harris, D-Calif.\" (the merge target) all lengthen or relabel a span the drop already carried. CIA on #4926 is the one genuinely new occurrence — \"Non_CIA_background next?\" never fired before. MINUS ONE ROW: the Harris merge retires a duplicate \"Harris\" canonical (2 mentions, #2854 and #4935, both actually Kamala Harris) into the survivor — same shape as the Patriot -> Patriots merge, one row absorbed, its mentions and posts move across."
+  },
+  {
+   "ruling": "audit/entities-owner-rulings.json (aliasRulings[]/aliasWithdrawals[], 2026-08-25 second batch)",
+   "ruledOn": "2026-08-25",
+   "what": "\"can we also classiffy any D's or R's as entitites if it pertains to democrats and republicans\" (\"D5 is a prediction not a democrat so make sure we are only classifying the d's and r's that pertain to democrats/republicans\") plus four duplicate-span withdrawals discovered while conjoining #4935's titles: Nancy Pelosi, Adam Schiff and Jerry Nadler on #3778, and Andrew Cuomo on #4935 each carried a bare short alias AND a fuller descriptor-line alias for the SAME single mention. They arrive BEFORE this step, because apply-entities.mjs is earlier in the chain.",
+   "entityRows": 0,
+   "mentions": 78,
+   "rendered": 78,
+   "evidence": "+82 mentions from the D's/R's ruling (a census-verified corpus-wide alias addition: 52 posts for \"D's\" -> Democratic Party, 9 posts for \"R's\" -> Republican Party, every occurrence read individually, the bracket \"[D]\"/\"[R]\" forms deliberately excluded as too noisy — D-Day on #2629, \"[R] = Renegade\" on #1277, delta markers \"[D][1-6]\"/\"[D6]\" on #3604/#3654). -4 mentions from the four withdrawals, each an occurrence-count decrement paired with its render-list removal so the count and the paint fall together, same rule as every other withdrawal in apply-entities.mjs. No entity ROWS created or retired: the party canonicals already existed, and a withdrawal removes a duplicate SPAN, not the identity."
   }
  ]
 }

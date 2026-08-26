@@ -355,7 +355,10 @@ export const CANONICAL = {
     // +1 on 2026-08-25: #4926's CIA. The five span extensions that day (Senate Minority Leader x2,
     // Mayor de Blasio x2, Gov. Cuomo, Gov. McCauliffe, Harris) add nothing; the Harris merge moves
     // mentions between rows and adds none. CIA lands on the core registry — see below.
-    mentions: 9530,
+    // 9,530 -> 9,608 on 2026-08-25, a second batch: +82 from the "D's"/"R's" party alias ruling,
+    // -4 from four pre-existing duplicate-span withdrawals (Pelosi, Schiff, Nadler, Cuomo) found
+    // while conjoining #3778/#4935's titles. 82 - 4 = 78.
+    mentions: 9608,
     /** How it is composed. The core figure is the section's history, not its headline. */
     // tailEntities is what the tail adjudication produced (1,239); one of them, Ray Chandler,
     // now ships merged into Rachel Chandler, so 1,238 tail rows appear in the artifact.
@@ -381,7 +384,10 @@ export const CANONICAL = {
     // core 5,312 + 2 = 5,314 and tail 3,040 + 4 = 3,044; the remaining 3 land on owner-ruling rows,
     // which is where an identity the owner created lives. 5,314 + 3,044 + 1,170 = 9,528.
     // core 5,314 + 1 = 5,315 on 2026-08-25: #4926's CIA, a core-registry identity.
-    coreEntities: 93, coreRegistryMentions: 5315, tailEntities: 970, tailMentions: 3044,
+    // core 5,315 + 80 = 5,395: +82 D's/R's (both parties are core-registry canonicals) - 2 for the
+    // Pelosi/Schiff withdrawals on #3778, both core-registry people.
+    // tail 3,044 - 2 = 3,042: the Nadler/Cuomo withdrawals, both adjudicated-tail identities.
+    coreEntities: 93, coreRegistryMentions: 5395, tailEntities: 970, tailMentions: 3042,
   },
   // 2,393 detected + 2 owner rulings ("Ascension." -> Religion & Spirituality, #4963 and #4966).
   // The rulings live in audit/themes-owner-rulings.json and are merged by apply-themes.mjs, so

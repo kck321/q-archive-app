@@ -97,11 +97,35 @@ for (const e of tailFinal) {
 // Sessions and matched "friendly therapy sessions" (#2319) and a dozen news URLs — the man is
 // always "Sessions" or "SESSIONS" when Q names him. Filtered HERE, before the mentions are
 // counted, so the count and the emitted occurrences drop together instead of disagreeing.
-const withdrawnAliases = new Set((fs.existsSync(path.join(OUT, 'entities-owner-rulings.json'))
+//
+// POST-SCOPED WITHDRAWAL, added 2026-08-25 for a different shape of the same defect. Every
+// withdrawal above removes an alias CORPUS-WIDE because the alias itself is always wrong
+// ("sessions" never means the man). #3778/#4935's problem is the opposite: "Nancy Pelosi" IS
+// Nancy Pelosi everywhere, including #2036 where it is the only span on the line — but on #3778
+// it is a SECOND, redundant span duplicating the fuller "Nancy Pelosi (D-CA) – Speaker of the
+// House" alias the owner's title-conjoining ruling already extends. Withdrawing it corpus-wide
+// would silently un-highlight #2036 too. An optional `onlyPosts` on the withdrawal entry scopes
+// it to the exact drop(s) named; omitting it keeps every existing entry's corpus-wide behaviour
+// unchanged. Consumed here for core-registry mentions and again below for the adjudicated tail
+// (Andrew Cuomo, Jerry Nadler), because a duplicate-span identity can live in either population.
+const aliasWithdrawalRulings = fs.existsSync(path.join(OUT, 'entities-owner-rulings.json'))
   ? JSON.parse(fs.readFileSync(path.join(OUT, 'entities-owner-rulings.json'), 'utf8')).aliasWithdrawals ?? []
-  : []).map(w => `${w.canonical}|${w.alias}`))
+  : []
+const withdrawnAliases = new Set(aliasWithdrawalRulings.filter(w => !w.onlyPosts).map(w => `${w.canonical}|${w.alias}`))
+const withdrawnAliasesScoped = new Map()
+for (const w of aliasWithdrawalRulings) {
+  if (!w.onlyPosts) continue
+  const key = `${w.canonical}|${w.alias}`
+  if (!withdrawnAliasesScoped.has(key)) withdrawnAliasesScoped.set(key, new Set())
+  for (const pn of w.onlyPosts) withdrawnAliasesScoped.get(key).add(pn)
+}
+const isWithdrawn = (canonical, alias, postNum) => {
+  if (withdrawnAliases.has(`${canonical}|${alias}`)) return true
+  const scoped = withdrawnAliasesScoped.get(`${canonical}|${alias}`)
+  return scoped ? scoped.has(postNum) : false
+}
 const coreMentions = audit.mentions
-  .filter(m => !withdrawnAliases.has(`${m.canonicalEntity}|${m.sourceText}`))
+  .filter(m => !isWithdrawn(m.canonicalEntity, m.sourceText, m.postNum))
   .filter(m => m.inQAuthoredText && m.canonicalEntity)
 const coreEntities = new Map()
 for (const m of coreMentions) {
@@ -161,11 +185,48 @@ if (fs.existsSync(TAIL_OCC)) {
     occurrences: tailOccurrences,
   }, null, 1))
 }
+// Same post-scoped withdrawal as the core registry above (isWithdrawn), applied here because a
+// duplicate-span identity can be a TAIL row: Andrew Cuomo and Jerry Nadler on #3778/#4935 are
+// both "adjudicated tail", not core registry.
+//
+// THE COUNT MUST FALL WITH THE OCCURRENCE, same rule as every withdrawal in this file. A tail
+// row's `mentions` comes from `merged` (built at the top of the file from tailFinal), entirely
+// separate from tailOccurrences — filtering the render list alone would leave Cuomo/Nadler's
+// mentions count one higher than what actually renders, the exact count-vs-paint disagreement
+// this file's comments warn against everywhere else. Decremented on `merged` directly, before the
+// `entities` array reads `e.occurrences` from it.
+const withdrawnTailPosts = new Map()   // canonical -> Set<postNum> the withdrawal fired on
+{
+  const withdrawnTailCount = new Map()
+  for (const o of tailOccurrences) {
+    if (!isWithdrawn(o.canonical, o.sourceText, o.postNum)) continue
+    withdrawnTailCount.set(o.canonical, (withdrawnTailCount.get(o.canonical) ?? 0) + 1)
+    if (!withdrawnTailPosts.has(o.canonical)) withdrawnTailPosts.set(o.canonical, new Set())
+    withdrawnTailPosts.get(o.canonical).add(o.postNum)
+  }
+  for (const [canonical, n] of withdrawnTailCount) {
+    const row = merged.get(canonical)
+    if (!row) { console.error(`tail withdrawal: canonical "${canonical}" not found in merged tail rows`); process.exit(1) }
+    row.occurrences -= n
+  }
+}
+tailOccurrences = tailOccurrences.filter(o => !isWithdrawn(o.canonical, o.sourceText, o.postNum))
 
 const tailPostsByCanonical = new Map()
 for (const o of tailOccurrences) {
   if (!tailPostsByCanonical.has(o.canonical)) tailPostsByCanonical.set(o.canonical, new Set())
   tailPostsByCanonical.get(o.canonical).add(o.postNum)
+}
+// A WITHDRAWN OCCURRENCE'S POST STAYS ON THE RECORD IF AN EXTENSION KEEPS THE IDENTITY THERE.
+// Cuomo's only tail-occurrence record was the bare "Andrew Cuomo" on #4935 — the ONLY thing that
+// had been putting #4935 in his posts list — and withdrawing it left him with mentions but no
+// post, which the QA gate below correctly refuses. The drop still names him; it is rendered now
+// through the OWNER EXTENSION below ("Gov. Andrew Cuomo, D-N.Y"), a mechanism this array is built
+// before running. So the withdrawn post is added back for exactly the canonicals it was withdrawn
+// from — the identity's presence on the drop is unchanged, only which words are boxed moved.
+for (const [canonical, postSet] of withdrawnTailPosts) {
+  if (!tailPostsByCanonical.has(canonical)) tailPostsByCanonical.set(canonical, new Set())
+  for (const pn of postSet) tailPostsByCanonical.get(canonical).add(pn)
 }
 
 // AN ALIAS THE OWNER ADDS, SYMMETRIC WITH aliasWithdrawals.
@@ -1025,7 +1086,10 @@ const checks = [
   // Fiddler/Waters/Pelosi/Biden above, one occurrence lengthened, not doubled. The Harris merge
   // moves mentions between rows and adds none, same as every merge above. CIA is the one drop that
   // gains a mention it did not certify before: "Non_CIA_background next?" never fired.
-  ['resolved mentions = 10,624', totals.mentions === 10624, totals.mentions],
+  // 10,624 -> 10,702 on 2026-08-25: +82 from the "D's"/"R's" party alias ruling, -4 from the four
+  // duplicate-span withdrawals (Pelosi, Schiff, Nadler, Cuomo) discovered while conjoining titles.
+  // 82 - 4 = 78; 10,624 + 78 = 10,702.
+  ['resolved mentions = 10,702', totals.mentions === 10702, totals.mentions],
   ['stage 1: 19 rows merged away', !stage1 || s1Merged === 19, s1Merged],
   ['stage 1: 85 types corrected', !stage1 || s1Typed === 85, s1Typed],
   // 18 in the audit, 17 applied: ENT-0709 "Non-profit organization" is HELD because it
@@ -1043,7 +1107,11 @@ const checks = [
   // +6, the same six: they arrive through an owner alias ruling.
   // +2, the two #2347 occurrences the owner ruled in. They arrive through the Q -> Alice alias
   // ruling, which is where every occurrence of that ruling arrives.
-  ['owner alias mentions = 2,200', aliasMentions === 2200, aliasMentions],
+  // +82 on 2026-08-25: the "D's" (52 posts) / "R's" (9 posts) party alias ruling — a corpus census
+  // that read all 82 occurrences individually before writing the ruling, deliberately excluding the
+  // bracket "[D]"/"[R]" forms (D-Day on #2629, "[R] = Renegade" on #1277, delta markers "[D][1-6]"
+  // on #3604/#3654 — the same shape as the owner's own "D5 is a prediction not a democrat" caution).
+  ['owner alias mentions = 2,282', aliasMentions === 2282, aliasMentions],
   // Every mention of the 39 is accounted for, and the submetrics move for two separate reasons.
   // MERGES move mentions ACROSS populations without changing the headline: 53 tail mentions are
   // absorbed into core-registry rows (Bill Clinton +7, Australia +6, New York +13, WikiLeaks +17,
@@ -1060,7 +1128,10 @@ const checks = [
   // +2: two of the nine land on a core-registry identity.
   // +1 on 2026-08-25: #4926's CIA, a core-registry identity (126 mentions before this). The Harris
   // merge does not move this figure — Harris and Kamala Harris are both tail-population rows.
-  ['core-registry mentions = 5,439', totals.coreRegistryMentions === 5439, totals.coreRegistryMentions],
+  // +80 on 2026-08-25: +82 from the D's/R's ruling (Democratic Party and Republican Party are both
+  // core-registry canonicals) minus 2 for the Pelosi and Schiff duplicate-span withdrawals on
+  // #3778, both core-registry people.
+  ['core-registry mentions = 5,519', totals.coreRegistryMentions === 5519, totals.coreRegistryMentions],
   // 3,440 + 34 C19 + 12 RC: COVID-19 and Rachel Chandler are tail entities, so alias rulings on
   // them land here.
   // +58: queue rulings that landed on an adjudicated-tail identity.
@@ -1069,8 +1140,13 @@ const checks = [
   // +2, the same two: Alice is an adjudicated-tail identity, so an alias ruling on it lands here.
   // +4: four land on an adjudicated-tail identity. The remaining three land on owner-ruling rows,
   // which is where an identity the owner created lives.
-  ['adjudicated-tail mentions = 4,013', totals.adjudicatedTailMentions === 4013, totals.adjudicatedTailMentions],
-  ['tail occurrence rows = 3,440', tailOccurrences.length === 3440, tailOccurrences.length],
+  // -2 on 2026-08-25: the Nadler and Cuomo duplicate-span withdrawals on #3778/#4935, both
+  // adjudicated-tail identities. Decremented on `merged` directly (see the withdrawal block
+  // above tailPostsByCanonical) so the count falls with the occurrence, not just the render list.
+  ['adjudicated-tail mentions = 4,011', totals.adjudicatedTailMentions === 4011, totals.adjudicatedTailMentions],
+  // -2 on 2026-08-25: the same two withdrawn render records (Nadler #3778, Cuomo #4935) drop out
+  // of the occurrence-provenance list itself.
+  ['tail occurrence rows = 3,438', tailOccurrences.length === 3438, tailOccurrences.length],
   ['every tail occurrence carries a post identity', tailOccurrences.every(o => o.postNum && o.id), 'ok'],
   ['every tail entity now has post provenance',
     [...merged.values()].every(e => (tailPostsByCanonical.get(e.canonical) ?? new Set()).size > 0),
