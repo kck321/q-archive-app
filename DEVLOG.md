@@ -7618,3 +7618,25 @@ instead — an overlapping-alias precedence bug that predates this session (the 
 2026-08-24 owner ruling); confirmed via direct JSON read that the new synopsis IS correctly stored
 under the right entity id, so this is a rendering-precedence issue, not a data problem.
 **Still open:** tier 4 (mentions 1–4, ~1,272 entities) — by far the largest remaining slice.
+
+## 2026-08-26 — Bracket/entity text lightened to near-white; highlights toggle added to Post Archive bar
+
+**Request:** Two screenshots — move the "Turn OFF Language Highlights" toggle into the Post
+Archive's search/sort bar so it hides on scroll the way that bar does; and "the brackets and
+entities text is still a little off" after the font fix above — research how the near-white text
+in Claims/Questions/Predictions/etc. blends, and bring brackets/entities in line without changing
+to the same translucent-overlay treatment (their solid backgrounds are load-bearing for the overlap
+rule).
+
+**Solution:** Confirmed the toggle question first — keep both copies (top bar stays, add a second
+inside the Post Archive bar) rather than moving it. Added `<HighlightToggle />` to the "Post # jump
++ sort direction" row in `PostArchive.tsx`, inside the same `hideBar`-controlled sticky container
+the search bar already uses, so it inherits the scroll-hide behavior for free. For the text color:
+every translucent category (Claims, Predictions, Themes, etc.) pairs a `-500/40` background with
+`-100`-level (near-white) text; Entities and Brackets keep a SOLID `-900` background (a 2026-08-24
+owner ruling, needed so nothing shows through when a span overlaps another category) but were
+paired with `-300`-level (more saturated, less white) text from the 2026-08-25 recolor. Lightened
+`HIGHLIGHT_CLS.namedEntity` and `.bracketCode` from `text-cyan-300`/`text-red-300` to
+`text-cyan-100`/`text-red-100` — backgrounds untouched, so the overlap rule is unaffected — and the
+text now reads the same near-white as everything else. Verified live via Playwright on #4742
+(brackets) and #4888 (the "H. Biden" entity from today's Hunter Biden merge). `tsc --noEmit` clean.
