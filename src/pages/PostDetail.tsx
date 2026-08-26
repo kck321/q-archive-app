@@ -463,15 +463,15 @@ function renderPostBody(
         // cyan four lines down the same page. Same certified data, two answers, which is the
         // drift these two branches have produced before.
         sink.push(innerKinds.includes('bracketCode')
-          ? <mark key={iStart} title="bracket — over question"
+          ? <mark key={iStart}
               className={`${HIGHLIGHT_SOLID.bracketCode} rounded not-italic`}>{matchText}</mark>
           : innerKinds.includes('namedEntity')
-          ? <mark key={iStart} title={`entity — over question${innerKinds.length > 1 ? ', ' + innerKinds.filter(k => k !== 'namedEntity').join(', ') : ''}`}
+          ? <mark key={iStart}
               className={`${HIGHLIGHT_SOLID.namedEntity} rounded not-italic`}>{matchText}</mark>
           : innerKinds.length === 1
-          ? <mark key={iStart} title={`${innerKinds[0]} (inside a question)`}
+          ? <mark key={iStart}
               className={`${HIGHLIGHT_CLS[innerKinds[0]] ?? ''} rounded not-italic`}>{matchText}</mark>
-          : <mark key={iStart} title={`${innerKinds.length} certified layers: ${innerKinds.join(', ')}`}
+          : <mark key={iStart}
               style={overlapStyle(innerKinds)?.style}
               className={`${overlapStyle(innerKinds)?.className ?? ''} rounded not-italic`}>{matchText}</mark>,
         )
@@ -489,7 +489,6 @@ function renderPostBody(
               // Emphasis is filtered here too: under the owner ruling a question does not carry
               // it, so the drop must not claim it on hover either. The span is still listed in
               // the Emphasis section — the certified layer is untouched, only this drop's paint.
-              title={insideQuestionKinds(stackable).length ? `also: ${insideQuestionKinds(stackable).join(', ')}` : undefined}
               className={`rounded not-italic ${newIds?.has(qSeg.questionId ?? '') ? 'bg-purple-500/30 text-purple-200' : 'bg-blue-500/30 text-blue-200'}`}>{matchText}</mark>
             {onRemoveQuestion && qSeg.questionId && (
               <button onClick={e => { e.stopPropagation(); onRemoveQuestion(qSeg.questionId!) }}
@@ -513,11 +512,11 @@ function renderPostBody(
         // as a red "[", a cyan "Mueller" and a red " failed]". One bracket, two colours, and the
         // bracket rule visibly broken inside the very thing it governs. The entity is still
         // certified and still listed under Entities; the bracket owns the paint.
-        sink.push(<mark key={iStart} title={`bracket — over ${stackable.filter(s => s.kind !== 'bracketCode').map(s => s.kind).join(', ') || 'nothing'}`}
+        sink.push(<mark key={iStart}
           className={`${HIGHLIGHT_SOLID.bracketCode} rounded not-italic`}>{matchText}</mark>)
       } else if (stackable.some(s => s.kind === 'namedEntity')) {
         // Named entity wins solid cyan over everything except a bracket.
-        sink.push(<mark key={iStart} title={`entity — over ${stackable.filter(s => s.kind !== 'namedEntity').map(s => s.kind).join(', ') || 'nothing'}`}
+        sink.push(<mark key={iStart}
           className={`${HIGHLIGHT_SOLID.namedEntity} rounded not-italic`}>{matchText}</mark>)
       } else if (stackable.some(s => s.kind === 'request' || s.kind === 'requestQuestion')) {
         // Request wins over lower-priority analysis kinds
@@ -538,10 +537,10 @@ function renderPostBody(
         // two different categories.
         const kinds = [...new Set(stackable.map(s => s.kind))]
         sink.push(kinds.length > 1
-          ? <mark key={iStart} title={`${kinds.length} certified layers: ${kinds.join(', ')}`}
+          ? <mark key={iStart}
               style={overlapStyle(kinds)?.style}
               className={`${overlapStyle(kinds)?.className ?? ''} rounded not-italic`}>{matchText}</mark>
-          : <mark key={iStart} title={kinds[0]}
+          : <mark key={iStart}
               className={`${HIGHLIGHT_CLS[kinds[0]] ?? ''} rounded not-italic`}>{matchText}</mark>,
         )
       }

@@ -262,19 +262,19 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
         const innerKinds = [...new Set(stackable.map(x => x.kind))].filter(k => k !== 'emphasis')
         if (innerKinds.includes('bracketCode')) {
           // SOLID — the question is behind it. Same rule and same classes as PostDetail.
-          sink.push(<mark key={iStart} title="bracket — over question"
+          sink.push(<mark key={iStart}
             className={`${HIGHLIGHT_SOLID.bracketCode} rounded not-italic`}>{matchText}</mark>)
         } else if (innerKinds.includes('namedEntity')) {
           // BRACKETS AND ENTITIES ARE ALWAYS ON TOP — owner rule, inside a question as much as
           // outside one. Identical to the PostDetail branch, which is the point: these two
           // surfaces have shown different colours for the same certified data before.
-          sink.push(<mark key={iStart} title={`entity — over question${innerKinds.length > 1 ? ', ' + innerKinds.filter(k => k !== 'namedEntity').join(', ') : ''}`}
+          sink.push(<mark key={iStart}
             className={`${HIGHLIGHT_SOLID.namedEntity} rounded not-italic`}>{matchText}</mark>)
         } else if (innerKinds.length === 1) {
-          sink.push(<mark key={iStart} title={`${innerKinds[0]} (inside a question)`}
+          sink.push(<mark key={iStart}
             className={`${cls[innerKinds[0]] ?? ''} rounded not-italic`}>{matchText}</mark>)
         } else if (innerKinds.length > 1) {
-          sink.push(<mark key={iStart} title={`${innerKinds.length} certified layers: ${innerKinds.join(', ')}`}
+          sink.push(<mark key={iStart}
             style={overlapStyle(innerKinds)?.style}
             className={`${overlapStyle(innerKinds)?.className ?? ''} rounded not-italic`}>{matchText}</mark>)
         } else {
@@ -291,7 +291,7 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
         // back to the plain red ring only when nothing certified sits behind the match.
         const underKind = keywordUnderKind(stackable)
         sink.push(underKind
-          ? <mark key={iStart} title={`search match — ${underKind}`}
+          ? <mark key={iStart}
               className={`${cls[underKind] ?? ''} rounded not-italic ${HIGHLIGHT_FLASH[underKind] ?? 'animate-search-flash-generic'}`}>{matchText}</mark>
           : <mark key={iStart} className={`${cls.keyword ?? ''} not-italic`}>{matchText}</mark>)
       } else if (top.kind === 'url') {
@@ -313,10 +313,10 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
     } else if (stackable.some(s => s.kind === 'bracketCode')) {
       // Brackets outrank entities — owner rule, same order as PostDetail. SOLID, because reaching
       // this branch at all means something else covers the same characters.
-      sink.push(<mark key={iStart} title={`bracket — over ${stackable.filter(s => s.kind !== 'bracketCode').map(s => s.kind).join(', ') || 'nothing'}`}
+      sink.push(<mark key={iStart}
         className={`${HIGHLIGHT_SOLID.bracketCode} rounded not-italic`}>{matchText}</mark>)
     } else if (stackable.some(s => s.kind === 'namedEntity')) {
-      sink.push(<mark key={iStart} title={`entity — over ${stackable.filter(s => s.kind !== 'namedEntity').map(s => s.kind).join(', ') || 'nothing'}`}
+      sink.push(<mark key={iStart}
         className={`${HIGHLIGHT_SOLID.namedEntity} rounded not-italic`}>{matchText}</mark>)
     } else if (stackable.some(s => s.kind === 'request' || s.kind === 'requestQuestion')) {
       const hasReqQ = stackable.some(s => s.kind === 'requestQuestion')
@@ -326,10 +326,10 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
       // Distinct KINDS, not segments: the same kind matching twice is one classification.
       const kinds = [...new Set(stackable.map(s => s.kind))]
       sink.push(kinds.length > 1
-        ? <mark key={iStart} title={`${kinds.length} certified layers: ${kinds.join(', ')}`}
+        ? <mark key={iStart}
             style={overlapStyle(kinds)?.style}
             className={`${overlapStyle(kinds)?.className ?? ''} rounded not-italic`}>{matchText}</mark>
-        : <mark key={iStart} title={kinds[0]}
+        : <mark key={iStart}
             className={`${cls[kinds[0]] ?? ''} rounded not-italic`}>{matchText}</mark>,
       )
     }
