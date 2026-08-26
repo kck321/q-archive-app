@@ -15,15 +15,15 @@
   "ambiguous_provenance": "Attribution or URL evidence is genuinely undecidable. Retained unchanged."
  },
  "totals": {
-  "occurrences": 10702,
-  "certifiedMentions": 10702,
+  "occurrences": 10886,
+  "certifiedMentions": 10886,
   "reconciles": true,
   "attribution": {
-   "unique": 10608,
+   "unique": 10792,
    "ambiguous": 94
   },
   "byCategory": {
-   "visible_complete_token": 9561,
+   "visible_complete_token": 9745,
    "invalid_substring_extraction": 98,
    "visible_alias_variant": 47,
    "url_source_provenance": 645,
@@ -46,7 +46,7 @@
  "ruledOnAuditRun": "2026-08-24",
  "certifiedUnchanged": {
   "entityRows": 1803,
-  "mentions": 10702
+  "mentions": 10886
  },
  "rows": [
   {
@@ -75333,6 +75333,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#2398:5",
+   "postNum": 2398,
+   "index": 5,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2399:0",
    "postNum": 2399,
    "index": 0,
@@ -83893,6 +83909,22 @@
    "certifiedCountEffect": -1
   },
   {
+   "occurrenceId": "#2635:2",
+   "postNum": 2635,
+   "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2636:0",
    "postNum": 2636,
    "index": 0,
@@ -87068,6 +87100,22 @@
    "proposedAction": "hold — certified until an editor examines the source image; no public text hover",
    "certifiedCountEffect": 0,
    "privateProvenanceReview": true
+  },
+  {
+   "occurrenceId": "#2673:1",
+   "postNum": 2673,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#2674:0",
@@ -91127,6 +91175,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#2770:21",
+   "postNum": 2770,
+   "index": 21,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2771:0",
    "postNum": 2771,
    "index": 0,
@@ -94969,6 +95033,22 @@
    "certifiedCountEffect": -1
   },
   {
+   "occurrenceId": "#2868:1",
+   "postNum": 2868,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2869:0",
    "postNum": 2869,
    "index": 0,
@@ -97121,6 +97201,38 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#2943:10",
+   "postNum": 2943,
+   "index": 10,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2943:11",
+   "postNum": 2943,
+   "index": 11,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2945:0",
    "postNum": 2945,
    "index": 0,
@@ -97524,6 +97636,22 @@
    "certifiedCountEffect": -1
   },
   {
+   "occurrenceId": "#2971:0",
+   "postNum": 2971,
+   "index": 0,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#2973:0",
    "postNum": 2973,
    "index": 0,
@@ -97642,6 +97770,22 @@
    "postNum": 2981,
    "index": 1,
    "alias": "D's",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#2981:2",
+   "postNum": 2981,
+   "index": 2,
+   "alias": "[D]",
    "entityId": "qe-27e676aae866",
    "canonical": "Democratic Party",
    "entityType": "political_group",
@@ -100620,6 +100764,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#3006:29",
+   "postNum": 3006,
+   "index": 29,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#3007:0",
    "postNum": 3007,
    "index": 0,
@@ -100767,6 +100927,22 @@
    "entityId": "qe-cb07cff77084",
    "canonical": "Hillary Clinton",
    "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3016:0",
+   "postNum": 3016,
+   "index": 0,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -101714,6 +101890,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#3028:23",
+   "postNum": 3028,
+   "index": 23,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#303:0",
    "postNum": 303,
    "index": 0,
@@ -102571,6 +102763,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#3049:5",
+   "postNum": 3049,
+   "index": 5,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#3050:0",
    "postNum": 3050,
    "index": 0,
@@ -103174,6 +103382,38 @@
    "entityId": "qe-e4b9b2985b7c",
    "canonical": "United States",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3071:1",
+   "postNum": 3071,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3071:2",
+   "postNum": 3071,
+   "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -104225,6 +104465,38 @@
    "entityId": "qe-e4b9b2985b7c",
    "canonical": "United States",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3175:0",
+   "postNum": 3175,
+   "index": 0,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3176:0",
+   "postNum": 3176,
+   "index": 0,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -105344,6 +105616,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#3220:1",
+   "postNum": 3220,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#3221:0",
    "postNum": 3221,
    "index": 0,
@@ -105657,6 +105945,22 @@
    },
    "proposedAction": "remove-annotation",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#3243:2",
+   "postNum": 3243,
+   "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#3248:0",
@@ -106400,6 +106704,22 @@
    },
    "proposedAction": "migrate-to-linked-source",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#3304:3",
+   "postNum": 3304,
+   "index": 3,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#3305:0",
@@ -108243,6 +108563,22 @@
    "entityId": "qe-838607b59e0a",
    "canonical": "William Barr",
    "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3386:2",
+   "postNum": 3386,
+   "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -114518,6 +114854,38 @@
    "certifiedCountEffect": -1
   },
   {
+   "occurrenceId": "#3607:0",
+   "postNum": 3607,
+   "index": 0,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3607:1",
+   "postNum": 3607,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#3608:0",
    "postNum": 3608,
    "index": 0,
@@ -114720,6 +115088,22 @@
    "entityId": "qe-917c1a0ae395",
    "canonical": "2016 election",
    "entityType": "event_incident",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3613:3",
+   "postNum": 3613,
+   "index": 3,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -115408,6 +115792,22 @@
    "entityId": "qe-8cf10da6c277",
    "canonical": "Valerie Jarrett",
    "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3634:10",
+   "postNum": 3634,
+   "index": 10,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -116125,6 +116525,22 @@
    "occurrenceId": "#3656:2",
    "postNum": 3656,
    "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3656:3",
+   "postNum": 3656,
+   "index": 3,
    "alias": "We, the People",
    "entityId": "qe-271807d35b2e",
    "canonical": "We the People",
@@ -117396,6 +117812,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#3712:0",
+   "postNum": 3712,
+   "index": 0,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#3715:0",
    "postNum": 3715,
    "index": 0,
@@ -117595,6 +118027,22 @@
    "entityId": "qe-f918f4a7fbe4",
    "canonical": "POTUS",
    "entityType": "title_role",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3721:3",
+   "postNum": 3721,
+   "index": 3,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -118327,6 +118775,54 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#3749:2",
+   "postNum": 3749,
+   "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3749:3",
+   "postNum": 3749,
+   "index": 3,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3749:4",
+   "postNum": 3749,
+   "index": 4,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#3750:0",
    "postNum": 3750,
    "index": 0,
@@ -118900,6 +119396,54 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#3768:1",
+   "postNum": 3768,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3770:0",
+   "postNum": 3770,
+   "index": 0,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3770:1",
+   "postNum": 3770,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#3774:0",
    "postNum": 3774,
    "index": 0,
@@ -119019,6 +119563,22 @@
    "entityId": "qe-e4b9b2985b7c",
    "canonical": "United States",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3774:8",
+   "postNum": 3774,
+   "index": 8,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -119192,6 +119752,54 @@
    "occurrenceId": "#3778:10",
    "postNum": 3778,
    "index": 10,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3778:11",
+   "postNum": 3778,
+   "index": 11,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3778:12",
+   "postNum": 3778,
+   "index": 12,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3778:13",
+   "postNum": 3778,
+   "index": 13,
    "alias": "Adam Schiff (D-CA) – Chair Intel",
    "entityId": "qe-3ddd7cab456e",
    "canonical": "Adam Schiff",
@@ -119205,9 +119813,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#3778:11",
+   "occurrenceId": "#3778:14",
    "postNum": 3778,
-   "index": 11,
+   "index": 14,
    "alias": "Chuck Schumer (D-NY) – Senate Minority Leader",
    "entityId": "qe-5339fc139782",
    "canonical": "Chuck Schumer",
@@ -119221,9 +119829,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#3778:12",
+   "occurrenceId": "#3778:15",
    "postNum": 3778,
-   "index": 12,
+   "index": 15,
    "alias": "Jerry Nadler (D-NY) – Chair Judiciary",
    "entityId": "qe-5b21bdeb116e",
    "canonical": "Jerry Nadler",
@@ -119237,9 +119845,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#3778:13",
+   "occurrenceId": "#3778:16",
    "postNum": 3778,
-   "index": 13,
+   "index": 16,
    "alias": "Nancy Pelosi (D-CA) – Speaker of the House",
    "entityId": "qe-dbbf1d039297",
    "canonical": "Nancy Pelosi",
@@ -120119,6 +120727,22 @@
    },
    "proposedAction": "migrate-to-linked-source",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#3819:1",
+   "postNum": 3819,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#382:0",
@@ -121773,6 +122397,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#3858:3",
+   "postNum": 3858,
+   "index": 3,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#3859:0",
    "postNum": 3859,
    "index": 0,
@@ -121963,6 +122603,38 @@
    "entityId": "qe-99b2829ea340",
    "canonical": "George Soros",
    "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3869:1",
+   "postNum": 3869,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3869:2",
+   "postNum": 3869,
+   "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -122752,6 +123424,38 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#3896:14",
+   "postNum": 3896,
+   "index": 14,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3896:15",
+   "postNum": 3896,
+   "index": 15,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#3897:0",
    "postNum": 3897,
    "index": 0,
@@ -122768,6 +123472,22 @@
    },
    "proposedAction": "remove-annotation",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#3897:1",
+   "postNum": 3897,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#3898:0",
@@ -123074,6 +123794,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#3905:3",
+   "postNum": 3905,
+   "index": 3,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#3907:0",
    "postNum": 3907,
    "index": 0,
@@ -123253,6 +123989,38 @@
    "certifiedCountEffect": -1
   },
   {
+   "occurrenceId": "#3909:2",
+   "postNum": 3909,
+   "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3909:3",
+   "postNum": 3909,
+   "index": 3,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#391:0",
    "postNum": 391,
    "index": 0,
@@ -123308,6 +124076,22 @@
    "entityId": "qe-e4b9b2985b7c",
    "canonical": "United States",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3911:2",
+   "postNum": 3911,
+   "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -124421,6 +125205,22 @@
    "entityId": "qe-993b70a4d8e6",
    "canonical": "Paul Ryan",
    "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#3968:1",
+   "postNum": 3968,
+   "index": 1,
+   "alias": "[R]",
+   "entityId": "qe-39ac279949d9",
+   "canonical": "Republican Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -126228,6 +127028,54 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4014:8",
+   "postNum": 4014,
+   "index": 8,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4014:9",
+   "postNum": 4014,
+   "index": 9,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4014:10",
+   "postNum": 4014,
+   "index": 10,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4016:0",
    "postNum": 4016,
    "index": 0,
@@ -126690,6 +127538,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4045:5",
+   "postNum": 4045,
+   "index": 5,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4048:0",
    "postNum": 4048,
    "index": 0,
@@ -126827,6 +127691,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4076:2",
+   "postNum": 4076,
+   "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4078:0",
    "postNum": 4078,
    "index": 0,
@@ -126934,6 +127814,38 @@
    "certifiedCountEffect": -1
   },
   {
+   "occurrenceId": "#4088:1",
+   "postNum": 4088,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4088:2",
+   "postNum": 4088,
+   "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4090:0",
    "postNum": 4090,
    "index": 0,
@@ -126955,6 +127867,22 @@
    },
    "proposedAction": "migrate-to-social-account",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#4090:1",
+   "postNum": 4090,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#4094:0",
@@ -127012,6 +127940,38 @@
    "entityId": "qe-2930bf2822b7",
    "canonical": "China",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4097:2",
+   "postNum": 4097,
+   "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4097:3",
+   "postNum": 4097,
+   "index": 3,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -127551,6 +128511,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4136:1",
+   "postNum": 4136,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4137:0",
    "postNum": 4137,
    "index": 0,
@@ -127920,6 +128896,22 @@
    },
    "proposedAction": "remove-annotation",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#4152:0",
+   "postNum": 4152,
+   "index": 0,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#4153:0",
@@ -129145,6 +130137,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4156:4",
+   "postNum": 4156,
+   "index": 4,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4157:0",
    "postNum": 4157,
    "index": 0,
@@ -129364,6 +130372,22 @@
    },
    "proposedAction": "remove-annotation",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#4164:3",
+   "postNum": 4164,
+   "index": 3,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#4165:0",
@@ -129772,6 +130796,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4173:0",
+   "postNum": 4173,
+   "index": 0,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4181:0",
    "postNum": 4181,
    "index": 0,
@@ -129793,6 +130833,22 @@
    },
    "proposedAction": "migrate-to-social-account",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#4181:1",
+   "postNum": 4181,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#4191:0",
@@ -130837,6 +131893,22 @@
    "certifiedCountEffect": -1
   },
   {
+   "occurrenceId": "#4219:2",
+   "postNum": 4219,
+   "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4220:0",
    "postNum": 4220,
    "index": 0,
@@ -131414,6 +132486,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4239:0",
+   "postNum": 4239,
+   "index": 0,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4241:0",
    "postNum": 4241,
    "index": 0,
@@ -131523,6 +132611,54 @@
    "entityId": "qe-f918f4a7fbe4",
    "canonical": "POTUS",
    "entityType": "title_role",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4245:3",
+   "postNum": 4245,
+   "index": 3,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4245:4",
+   "postNum": 4245,
+   "index": 4,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4245:5",
+   "postNum": 4245,
+   "index": 5,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -132304,6 +133440,166 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4282:4",
+   "postNum": 4282,
+   "index": 4,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4282:5",
+   "postNum": 4282,
+   "index": 5,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4282:6",
+   "postNum": 4282,
+   "index": 6,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4282:7",
+   "postNum": 4282,
+   "index": 7,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4282:8",
+   "postNum": 4282,
+   "index": 8,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4282:9",
+   "postNum": 4282,
+   "index": 9,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4282:10",
+   "postNum": 4282,
+   "index": 10,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4282:11",
+   "postNum": 4282,
+   "index": 11,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4282:12",
+   "postNum": 4282,
+   "index": 12,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4282:13",
+   "postNum": 4282,
+   "index": 13,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4283:0",
    "postNum": 4283,
    "index": 0,
@@ -132645,6 +133941,54 @@
    },
    "proposedAction": "remove-annotation",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#4293:8",
+   "postNum": 4293,
+   "index": 8,
+   "alias": "[R]",
+   "entityId": "qe-39ac279949d9",
+   "canonical": "Republican Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4293:9",
+   "postNum": 4293,
+   "index": 9,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4293:10",
+   "postNum": 4293,
+   "index": 10,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#4294:0",
@@ -133192,6 +134536,22 @@
    },
    "proposedAction": "remove-annotation",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#4307:1",
+   "postNum": 4307,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#431:0",
@@ -134102,6 +135462,102 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4317:2",
+   "postNum": 4317,
+   "index": 2,
+   "alias": "[R]",
+   "entityId": "qe-39ac279949d9",
+   "canonical": "Republican Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4317:3",
+   "postNum": 4317,
+   "index": 3,
+   "alias": "[R]",
+   "entityId": "qe-39ac279949d9",
+   "canonical": "Republican Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4317:4",
+   "postNum": 4317,
+   "index": 4,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4317:5",
+   "postNum": 4317,
+   "index": 5,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4317:6",
+   "postNum": 4317,
+   "index": 6,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4317:7",
+   "postNum": 4317,
+   "index": 7,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4319:0",
    "postNum": 4319,
    "index": 0,
@@ -134201,6 +135657,22 @@
    "occurrenceId": "#4325:1",
    "postNum": 4325,
    "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4325:2",
+   "postNum": 4325,
+   "index": 2,
    "alias": "We, the People",
    "entityId": "qe-271807d35b2e",
    "canonical": "We the People",
@@ -134526,6 +135998,38 @@
    "entityId": "qe-914c66c7e5ec",
    "canonical": "New Jersey",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4337:7",
+   "postNum": 4337,
+   "index": 7,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4337:8",
+   "postNum": 4337,
+   "index": 8,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -134912,6 +136416,38 @@
    "entityId": "qe-e4b9b2985b7c",
    "canonical": "United States",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4352:2",
+   "postNum": 4352,
+   "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4352:3",
+   "postNum": 4352,
+   "index": 3,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -135780,6 +137316,22 @@
    "certifiedCountEffect": -1
   },
   {
+   "occurrenceId": "#4373:0",
+   "postNum": 4373,
+   "index": 0,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4375:0",
    "postNum": 4375,
    "index": 0,
@@ -135819,6 +137371,22 @@
    "entityId": "qe-a9b6aac6da0e",
    "canonical": "MSNBC (pejorative variants MSDNC/MSDEN)",
    "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4379:0",
+   "postNum": 4379,
+   "index": 0,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -135988,6 +137556,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4380:2",
+   "postNum": 4380,
+   "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4381:0",
    "postNum": 4381,
    "index": 0,
@@ -136004,12 +137588,76 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4381:1",
+   "postNum": 4381,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4381:2",
+   "postNum": 4381,
+   "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4382:0",
    "postNum": 4382,
    "index": 0,
    "alias": "ANTIFA",
    "entityId": "qe-4ead3b5cebe9",
    "canonical": "Antifa",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4382:1",
+   "postNum": 4382,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4382:2",
+   "postNum": 4382,
+   "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
    "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
@@ -136750,6 +138398,38 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4409:0",
+   "postNum": 4409,
+   "index": 0,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4409:1",
+   "postNum": 4409,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4413:0",
    "postNum": 4413,
    "index": 0,
@@ -137039,6 +138719,22 @@
    "entityId": "qe-d9d07dd12ec3",
    "canonical": "United States Military",
    "entityType": "government_institution",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4415:4",
+   "postNum": 4415,
+   "index": 4,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -137433,6 +139129,38 @@
    "certifiedCountEffect": -1
   },
   {
+   "occurrenceId": "#4443:0",
+   "postNum": 4443,
+   "index": 0,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4447:0",
+   "postNum": 4447,
+   "index": 0,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4449:0",
    "postNum": 4449,
    "index": 0,
@@ -137522,6 +139250,22 @@
    },
    "proposedAction": "remove-annotation",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#4451:0",
+   "postNum": 4451,
+   "index": 0,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#4454:0",
@@ -137707,6 +139451,38 @@
    "certifiedCountEffect": -1
   },
   {
+   "occurrenceId": "#4458:1",
+   "postNum": 4458,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4458:2",
+   "postNum": 4458,
+   "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4461:0",
    "postNum": 4461,
    "index": 0,
@@ -137870,6 +139646,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4471:0",
+   "postNum": 4471,
+   "index": 0,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4473:0",
    "postNum": 4473,
    "index": 0,
@@ -137896,6 +139688,22 @@
    "entityId": "qe-4c00a2e32fc2",
    "canonical": "MSDNC",
    "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4473:2",
+   "postNum": 4473,
+   "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -138023,6 +139831,38 @@
    "alias": "BLM",
    "entityId": "qe-72c96d957a8a",
    "canonical": "Black Lives Matter",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4476:8",
+   "postNum": 4476,
+   "index": 8,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4476:9",
+   "postNum": 4476,
+   "index": 9,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
    "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
@@ -138726,6 +140566,118 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4489:24",
+   "postNum": 4489,
+   "index": 24,
+   "alias": "[R]",
+   "entityId": "qe-39ac279949d9",
+   "canonical": "Republican Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4489:25",
+   "postNum": 4489,
+   "index": 25,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4489:26",
+   "postNum": 4489,
+   "index": 26,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4489:27",
+   "postNum": 4489,
+   "index": 27,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4489:28",
+   "postNum": 4489,
+   "index": 28,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4489:29",
+   "postNum": 4489,
+   "index": 29,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4489:30",
+   "postNum": 4489,
+   "index": 30,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4490:0",
    "postNum": 4490,
    "index": 0,
@@ -138837,6 +140789,54 @@
    "entityId": "qe-40fbc6a6e6a7",
    "canonical": "California",
    "entityType": "location",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4492:6",
+   "postNum": 4492,
+   "index": 6,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4492:7",
+   "postNum": 4492,
+   "index": 7,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4492:8",
+   "postNum": 4492,
+   "index": 8,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -139395,6 +141395,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4522:1",
+   "postNum": 4522,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4524:0",
    "postNum": 4524,
    "index": 0,
@@ -139402,6 +141418,38 @@
    "entityId": "qe-2930bf2822b7",
    "canonical": "China",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4524:1",
+   "postNum": 4524,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4524:2",
+   "postNum": 4524,
+   "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -139723,6 +141771,54 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4535:6",
+   "postNum": 4535,
+   "index": 6,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4535:7",
+   "postNum": 4535,
+   "index": 7,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4536:0",
+   "postNum": 4536,
+   "index": 0,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4537:0",
    "postNum": 4537,
    "index": 0,
@@ -139746,6 +141842,22 @@
    "entityId": "qe-4c00a2e32fc2",
    "canonical": "MSDNC",
    "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4537:2",
+   "postNum": 4537,
+   "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -139808,6 +141920,22 @@
    },
    "proposedAction": "migrate-to-social-account",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#4539:3",
+   "postNum": 4539,
+   "index": 3,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#4541:0",
@@ -140647,6 +142775,38 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4552:4",
+   "postNum": 4552,
+   "index": 4,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4552:5",
+   "postNum": 4552,
+   "index": 5,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4553:0",
    "postNum": 4553,
    "index": 0,
@@ -140750,6 +142910,22 @@
    "entityId": "qe-ab324209d2fc",
    "canonical": "YouTube",
    "entityType": "organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4553:7",
+   "postNum": 4553,
+   "index": 7,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -140910,6 +143086,22 @@
    "entityId": "qe-03271d245ad7",
    "canonical": "National Action Network",
    "entityType": "organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4554:10",
+   "postNum": 4554,
+   "index": 10,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -141115,6 +143307,54 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4555:12",
+   "postNum": 4555,
+   "index": 12,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4555:13",
+   "postNum": 4555,
+   "index": 13,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4555:14",
+   "postNum": 4555,
+   "index": 14,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4556:0",
    "postNum": 4556,
    "index": 0,
@@ -141122,6 +143362,22 @@
    "entityId": "qe-4c00a2e32fc2",
    "canonical": "MSDNC",
    "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4556:1",
+   "postNum": 4556,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -141550,6 +143806,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4584:3",
+   "postNum": 4584,
+   "index": 3,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4586:0",
    "postNum": 4586,
    "index": 0,
@@ -141742,6 +144014,86 @@
    "entityId": "qe-4c00a2e32fc2",
    "canonical": "MSDNC",
    "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4592:2",
+   "postNum": 4592,
+   "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4592:3",
+   "postNum": 4592,
+   "index": 3,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4592:4",
+   "postNum": 4592,
+   "index": 4,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4592:5",
+   "postNum": 4592,
+   "index": 5,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4592:6",
+   "postNum": 4592,
+   "index": 6,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -141960,6 +144312,22 @@
    "entityId": "qe-4ac310ee36a2",
    "canonical": "Five Eyes",
    "entityType": "organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4603:3",
+   "postNum": 4603,
+   "index": 3,
+   "alias": "[R]",
+   "entityId": "qe-39ac279949d9",
+   "canonical": "Republican Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -142904,6 +145272,118 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4620:51",
+   "postNum": 4620,
+   "index": 51,
+   "alias": "[R]",
+   "entityId": "qe-39ac279949d9",
+   "canonical": "Republican Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4620:52",
+   "postNum": 4620,
+   "index": 52,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4620:53",
+   "postNum": 4620,
+   "index": 53,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4620:54",
+   "postNum": 4620,
+   "index": 54,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4620:55",
+   "postNum": 4620,
+   "index": 55,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4620:56",
+   "postNum": 4620,
+   "index": 56,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4620:57",
+   "postNum": 4620,
+   "index": 57,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4621:0",
    "postNum": 4621,
    "index": 0,
@@ -143080,6 +145560,70 @@
    "entityId": "qe-2df6a50f6a0e",
    "canonical": "God",
    "entityType": "religious_spiritual",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4627:2",
+   "postNum": 4627,
+   "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4627:3",
+   "postNum": 4627,
+   "index": 3,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4627:4",
+   "postNum": 4627,
+   "index": 4,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4627:5",
+   "postNum": 4627,
+   "index": 5,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -145358,6 +147902,102 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4635:13",
+   "postNum": 4635,
+   "index": 13,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4635:14",
+   "postNum": 4635,
+   "index": 14,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4635:15",
+   "postNum": 4635,
+   "index": 15,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4635:16",
+   "postNum": 4635,
+   "index": 16,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4635:17",
+   "postNum": 4635,
+   "index": 17,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4635:18",
+   "postNum": 4635,
+   "index": 18,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4637:0",
    "postNum": 4637,
    "index": 0,
@@ -145733,6 +148373,22 @@
    "entityId": "qe-e4b9b2985b7c",
    "canonical": "United States",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4644:1",
+   "postNum": 4644,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -146741,6 +149397,38 @@
    "certifiedCountEffect": -1
   },
   {
+   "occurrenceId": "#4680:1",
+   "postNum": 4680,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4680:2",
+   "postNum": 4680,
+   "index": 2,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4685:0",
    "postNum": 4685,
    "index": 0,
@@ -147148,6 +149836,86 @@
    "entityId": "qe-e4b9b2985b7c",
    "canonical": "United States",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4688:21",
+   "postNum": 4688,
+   "index": 21,
+   "alias": "[R]",
+   "entityId": "qe-39ac279949d9",
+   "canonical": "Republican Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4688:22",
+   "postNum": 4688,
+   "index": 22,
+   "alias": "[R]",
+   "entityId": "qe-39ac279949d9",
+   "canonical": "Republican Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4688:23",
+   "postNum": 4688,
+   "index": 23,
+   "alias": "[R]",
+   "entityId": "qe-39ac279949d9",
+   "canonical": "Republican Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4688:24",
+   "postNum": 4688,
+   "index": 24,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4688:25",
+   "postNum": 4688,
+   "index": 25,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -147579,6 +150347,22 @@
    },
    "proposedAction": "remove-annotation",
    "certifiedCountEffect": -1
+  },
+  {
+   "occurrenceId": "#4699:4",
+   "postNum": 4699,
+   "index": 4,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#47:0",
@@ -148398,6 +151182,38 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4750:11",
+   "postNum": 4750,
+   "index": 11,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4750:12",
+   "postNum": 4750,
+   "index": 12,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4754:0",
    "postNum": 4754,
    "index": 0,
@@ -148524,6 +151340,22 @@
    "entityId": "qe-2a0c41a53fa4",
    "canonical": "Ku Klux Klan",
    "entityType": "organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4766:3",
+   "postNum": 4766,
+   "index": 3,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -150016,6 +152848,22 @@
    "certifiedCountEffect": 0
   },
   {
+   "occurrenceId": "#4802:23",
+   "postNum": 4802,
+   "index": 23,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
    "occurrenceId": "#4803:0",
    "postNum": 4803,
    "index": 0,
@@ -150039,6 +152887,54 @@
    "entityId": "qe-60b5212c9376",
    "canonical": "Twitter",
    "entityType": "organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4805:0",
+   "postNum": 4805,
+   "index": 0,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4806:0",
+   "postNum": 4806,
+   "index": 0,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4806:1",
+   "postNum": 4806,
+   "index": 1,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -151835,6 +154731,38 @@
    "entityId": "qe-e4b9b2985b7c",
    "canonical": "United States",
    "entityType": "country_region",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4842:8",
+   "postNum": 4842,
+   "index": 8,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#4842:9",
+   "postNum": 4842,
+   "index": 9,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -154381,6 +157309,22 @@
    "certifiedCountEffect": -1,
    "privateProvenanceReview": true,
    "withdrawalApproved": "2026-08-17 owner ruling — no text, URL, image or metadata supports this occurrence"
+  },
+  {
+   "occurrenceId": "#4940:0",
+   "postNum": 4940,
+   "index": 0,
+   "alias": "[D]",
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "entityType": "political_group",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
   },
   {
    "occurrenceId": "#4942:0",

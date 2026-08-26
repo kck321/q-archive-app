@@ -318,6 +318,15 @@
    "mentions": 78,
    "rendered": 78,
    "evidence": "+82 mentions from the D's/R's ruling (a census-verified corpus-wide alias addition: 52 posts for \"D's\" -> Democratic Party, 9 posts for \"R's\" -> Republican Party, every occurrence read individually, the bracket \"[D]\"/\"[R]\" forms deliberately excluded as too noisy — D-Day on #2629, \"[R] = Renegade\" on #1277, delta markers \"[D][1-6]\"/\"[D6]\" on #3604/#3654). -4 mentions from the four withdrawals, each an occurrence-count decrement paired with its render-list removal so the count and the paint fall together, same rule as every other withdrawal in apply-entities.mjs. No entity ROWS created or retired: the party canonicals already existed, and a withdrawal removes a duplicate SPAN, not the identity."
+  },
+  {
+   "ruling": "audit/entities-owner-rulings.json (aliasRulings[], 2026-08-25 third batch)",
+   "ruledOn": "2026-08-25",
+   "what": "The bracket \"[D]\"/\"[R]\" party forms, the follow-up to the possessive \"D's\"/\"R's\" ruling. Six reviewers read all 120 posts carrying a real \"[D]\"/\"[R]\" token (mid-word artifacts like \"whe[R]e\" and \"[D]ec 5\" excluded before review) and judged each of 227 occurrences PARTY/NOT_PARTY/UNCLEAR individually. 103 posts for \"[D]\", 7 for \"[R]\" passed review; traps excluded by name (D-Day #2629, Renegade code-name #1277/#1279/#286/#299/#311/#312, delta markers #3604/#3654, DARPA #4105, a Coats/Declas letter-code #3570) and genuinely ambiguous cases held (#623, #2369, #3772, #4325's second occurrence, #4354). Arrives BEFORE this step, because apply-entities.mjs is earlier in the chain.",
+   "entityRows": 0,
+   "mentions": 184,
+   "rendered": 184,
+   "evidence": "184 new mentions, all landing on the core registry (Democratic Party and Republican Party both being core-registry canonicals) and all via the alias-ruling mechanism. No entity ROWS created: both party canonicals already existed. Building this ruling also found and fixed a real gap in apply-entities.mjs's shared alias-matching regex: a leading \b cannot match immediately before punctuation (the same reason a trailing \b cannot match after it, which the file already handled) and a self-delimited bracket alias needs no trailing guard at all, since its own closing bracket is the boundary — without both fixes the ruling matched zero of its 103+7 named posts, a silent no-op the QA gate did not catch on its own (the fix is symmetric and additive: verified no other alias in the corpus starts or ends with punctuation, so no existing ruling's behaviour changed)."
   }
  ]
 }

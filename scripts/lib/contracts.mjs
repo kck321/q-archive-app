@@ -358,7 +358,9 @@ export const CANONICAL = {
     // 9,530 -> 9,608 on 2026-08-25, a second batch: +82 from the "D's"/"R's" party alias ruling,
     // -4 from four pre-existing duplicate-span withdrawals (Pelosi, Schiff, Nadler, Cuomo) found
     // while conjoining #3778/#4935's titles. 82 - 4 = 78.
-    mentions: 9608,
+    // 9,608 -> 9,792 on 2026-08-25, a third batch: +184 from the bracket "[D]"/"[R]" party ruling
+    // (103 + 7 posts, six-reviewer occurrence-by-occurrence census).
+    mentions: 9792,
     /** How it is composed. The core figure is the section's history, not its headline. */
     // tailEntities is what the tail adjudication produced (1,239); one of them, Ray Chandler,
     // now ships merged into Rachel Chandler, so 1,238 tail rows appear in the artifact.
@@ -387,7 +389,8 @@ export const CANONICAL = {
     // core 5,315 + 80 = 5,395: +82 D's/R's (both parties are core-registry canonicals) - 2 for the
     // Pelosi/Schiff withdrawals on #3778, both core-registry people.
     // tail 3,044 - 2 = 3,042: the Nadler/Cuomo withdrawals, both adjudicated-tail identities.
-    coreEntities: 93, coreRegistryMentions: 5395, tailEntities: 970, tailMentions: 3042,
+    // core 5,395 + 184 = 5,579: the bracket ruling, both parties core-registry canonicals.
+    coreEntities: 93, coreRegistryMentions: 5579, tailEntities: 970, tailMentions: 3042,
   },
   // 2,393 detected + 2 owner rulings ("Ascension." -> Religion & Spirituality, #4963 and #4966).
   // The rulings live in audit/themes-owner-rulings.json and are merged by apply-themes.mjs, so

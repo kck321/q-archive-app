@@ -513,7 +513,16 @@ export const OVERLAY_REPAIR = 1
 //     6,321, entities 1,235 -> 1,214 rows and 8,975 -> 8,821 mentions. A returning reader holding
 //     87 would keep the pre-review paint on 41 drops and a registry counting one written word up
 //     to five times, so the seed has to move.
-export const SEED_VERSION = 101  // 101: a third 2026-08-25 batch. "D's"/"R's" are Democratic/
+export const SEED_VERSION = 102  // 102: a fourth 2026-08-25 batch, the bracket "[D]"/"[R]" party
+                                 //     form — six reviewers judged all 227 occurrences of a real
+                                 //     "[D]"/"[R]" token individually; 103+7 posts passed, traps
+                                 //     held (D-Day, Renegade code-names, delta markers, DARPA, a
+                                 //     Coats/Declas letter-code, #4325's ambiguous second pairing).
+                                 //     Building it fixed a real gap in the shared alias-matching
+                                 //     regex — a leading \b cannot match before punctuation, and a
+                                 //     self-delimited bracket alias needs no trailing guard either
+                                 //     — which without the fix silently matched zero occurrences.
+                                 // 101: a third 2026-08-25 batch. "D's"/"R's" are Democratic/
                                  //     Republican Party wherever the census verified them (82
                                  //     occurrences, 61 posts) — the bracket "[D]"/"[R]" forms are
                                  //     held for per-post review, since a full-corpus scan found

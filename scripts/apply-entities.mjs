@@ -396,9 +396,30 @@ for (const r of aliasRulings) {
   // A trailing \\b cannot match after punctuation: "U.S." found 2 of its 72 occurrences and
   // looked like the corpus lacked them. Aliases ending in a word character keep \\b exactly as
   // certified; only the punctuation-ending ones switch to a lookahead.
+  //
+  // THE MIRROR CASE, added 2026-08-25 for "[D]"/"[R]": a LEADING \b cannot match before
+  // punctuation either, and for the same reason — \b needs a word/non-word transition, and
+  // punctuation on both sides of the boundary (a space then "[", or start-of-line then "[") is
+  // non-word on both sides, no transition, no match. "[D]" -> Democratic Party matched 0 of its
+  // 103 named occurrences with a bare leading \b; every existing alias in the corpus starts with
+  // a letter or digit, so this is the first ruling the gap ever affected. Symmetric with endsWord:
+  // aliases starting with a word character keep \b exactly as certified, the punctuation-starting
+  // ones switch to a lookbehind.
+  const startsWord = /^[A-Za-z0-9]/.test(r.alias)
+  // A SELF-DELIMITED ALIAS NEEDS NO TRAILING GUARD EITHER. The trailing (?![A-Za-z0-9]) exists to
+  // stop a shorter alias matching a PREFIX of a longer word — "COVID" inside "COVID-19". "[D]"
+  // cannot have that problem: its own closing bracket is part of the literal match, so nothing can
+  // extend it into a longer token the way letters extend "COVID" into "COVID-19". But the ordinary
+  // endsWord=false path assumes the opposite risk — a WORD CHARACTER immediately after means the
+  // match continued into something else — and "[D]s" (Democrats, certified) is indistinguishable
+  // by that rule from "[D]ec" (December, excluded) explored the same day: both are "[D]" directly
+  // followed by a lowercase letter. Six reviewers already told the two apart by reading the whole
+  // post; the regex cannot and must not try to re-decide it. So an alias ending in a closing
+  // bracket/paren/brace skips the trailing check entirely — its own punctuation is the boundary.
+  const selfDelimited = /[)\]}]$/.test(r.alias)
   const endsWord = /[A-Za-z0-9]$/.test(r.alias)
   const rx = new RegExp(
-    `\\b${r.alias.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}${endsWord ? '\\b' : '(?![A-Za-z0-9])'}${r.notFollowedBy ? `(?!${r.notFollowedBy})` : ''}`, 'g')
+    `${startsWord ? '\\b' : '(?<![A-Za-z0-9])'}${r.alias.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}${selfDelimited ? '' : endsWord ? '\\b' : '(?![A-Za-z0-9])'}${r.notFollowedBy ? `(?!${r.notFollowedBy})` : ''}`, 'g')
   // `excludePosts` is the same idea as `notFollowedBy` at the level of MEANING rather than
   // spelling: the token is the right token and still names something else in that drop. RC is
   // Rachel Chandler across the 2019 Epstein drops, but #2 asks "Why would he place all his funds
@@ -1089,7 +1110,12 @@ const checks = [
   // 10,624 -> 10,702 on 2026-08-25: +82 from the "D's"/"R's" party alias ruling, -4 from the four
   // duplicate-span withdrawals (Pelosi, Schiff, Nadler, Cuomo) discovered while conjoining titles.
   // 82 - 4 = 78; 10,624 + 78 = 10,702.
-  ['resolved mentions = 10,702', totals.mentions === 10702, totals.mentions],
+  // +184 on 2026-08-25, third pass: the bracket "[D]"/"[R]" party ruling, applied only to the 103
+  // (D) + 7 (R) posts a six-reviewer sweep confirmed occurrence-by-occurrence. Traps excluded by
+  // name: D-Day, Renegade code-names, delta markers, DARPA, a Coats/Declas letter-code — none of
+  // those posts are in the ruling's includePosts. #4325 is occurrence-scoped to its one certified
+  // "[D]"; its second, paired "[D]&[F]" occurrence is held, not counted.
+  ['resolved mentions = 10,886', totals.mentions === 10886, totals.mentions],
   ['stage 1: 19 rows merged away', !stage1 || s1Merged === 19, s1Merged],
   ['stage 1: 85 types corrected', !stage1 || s1Typed === 85, s1Typed],
   // 18 in the audit, 17 applied: ENT-0709 "Non-profit organization" is HELD because it
@@ -1111,7 +1137,8 @@ const checks = [
   // that read all 82 occurrences individually before writing the ruling, deliberately excluding the
   // bracket "[D]"/"[R]" forms (D-Day on #2629, "[R] = Renegade" on #1277, delta markers "[D][1-6]"
   // on #3604/#3654 — the same shape as the owner's own "D5 is a prediction not a democrat" caution).
-  ['owner alias mentions = 2,282', aliasMentions === 2282, aliasMentions],
+  // +184 on 2026-08-25: the bracket "[D]"/"[R]" ruling, entirely alias-mechanism mentions.
+  ['owner alias mentions = 2,466', aliasMentions === 2466, aliasMentions],
   // Every mention of the 39 is accounted for, and the submetrics move for two separate reasons.
   // MERGES move mentions ACROSS populations without changing the headline: 53 tail mentions are
   // absorbed into core-registry rows (Bill Clinton +7, Australia +6, New York +13, WikiLeaks +17,
@@ -1131,7 +1158,8 @@ const checks = [
   // +80 on 2026-08-25: +82 from the D's/R's ruling (Democratic Party and Republican Party are both
   // core-registry canonicals) minus 2 for the Pelosi and Schiff duplicate-span withdrawals on
   // #3778, both core-registry people.
-  ['core-registry mentions = 5,519', totals.coreRegistryMentions === 5519, totals.coreRegistryMentions],
+  // +184 on 2026-08-25: the bracket ruling, both parties being core-registry canonicals.
+  ['core-registry mentions = 5,703', totals.coreRegistryMentions === 5703, totals.coreRegistryMentions],
   // 3,440 + 34 C19 + 12 RC: COVID-19 and Rachel Chandler are tail entities, so alias rulings on
   // them land here.
   // +58: queue rulings that landed on an adjudicated-tail identity.
