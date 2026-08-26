@@ -1691,6 +1691,769 @@
    "ruledOn": "2026-08-26",
    "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
    "synopsis": "The Centers for Disease Control and Prevention is the United States' national public health agency, operating under the Department of Health and Human Services, responsible for disease control and prevention, public health research, and health-related emergency response."
+  },
+  {
+   "entityId": "qe-1df932e91ff0",
+   "canonical": "Deputy Attorney General",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Deputy Attorney General is the second-highest-ranking official at the U.S. Department of Justice, overseeing the department's day-to-day operations and stepping in as acting Attorney General when needed. Q references the office generically across different dates rather than one specific officeholder. Rod Rosenstein held the position for much of the early Q-drop era."
+  },
+  {
+   "entityId": "qe-b6b4134166a1",
+   "canonical": "US Military",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "US Military refers collectively to the armed forces of the United States, comprising the Army, Navy, Air Force, Marine Corps, Coast Guard, and, since 2019, Space Force, operating under the President as commander-in-chief."
+  },
+  {
+   "entityId": "qe-208dba151d3e",
+   "canonical": "CBS",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "CBS (Columbia Broadcasting System) is one of the major American television and radio broadcast networks, headquartered in New York and known for its CBS News division and long-running programs like 60 Minutes."
+  },
+  {
+   "entityId": "qe-f1113eea7218",
+   "canonical": "Clapper",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Clapper refers to James Clapper, who served as U.S. Director of National Intelligence from 2010 to 2017 under President Obama, overseeing the U.S. intelligence community through the 2016 election period."
+  },
+  {
+   "entityId": "qe-030d323da585",
+   "canonical": "Adm R",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Adm R is a coded alias appearing early in the Q-drop timeline, spanning posts #8 through #1380, almost certainly shorthand for Admiral Mike Rogers, who served as NSA Director during that period. Q never explicitly confirmed the identification."
+  },
+  {
+   "entityId": "qe-1ae380b4a9bf",
+   "canonical": "U.S. National Security Council",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "U.S. National Security Council is the principal forum within the Executive Office of the President for coordinating national security and foreign policy decisions, chaired by the President and staffed by the National Security Advisor."
+  },
+  {
+   "entityId": "qe-36ba0b6c5ee9",
+   "canonical": "4chan",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "4chan is an anonymous English-language imageboard site launched in 2003, notable as the platform where the first Q posts appeared in October 2017 before the account moved to 8chan."
+  },
+  {
+   "entityId": "qe-cfb7af562908",
+   "canonical": "Mike Kortan",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Mike Kortan is Michael P. Kortan, who served as the FBI's Assistant Director for Public Affairs from 2009 until resigning in February 2018. He was the bureau's chief spokesman under Director James Comey, including during the Hillary Clinton email investigation."
+  },
+  {
+   "entityId": "qe-f2f411eaa9cc",
+   "canonical": "Arizona",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Arizona is a southwestern U.S. state bordering Mexico, discussed in Q-related contexts primarily as a contested battleground state, including the 2020 Maricopa County election audit."
+  },
+  {
+   "entityId": "qe-7f7a9c8af686",
+   "canonical": "Politico",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Politico is an American political journalism organization founded in 2007 that covers politics, policy, and government, primarily for a Washington, D.C. audience."
+  },
+  {
+   "entityId": "qe-2a62ee2b039c",
+   "canonical": "Israel",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Israel is a country in the Middle East established in 1948, and a longstanding U.S. ally frequently referenced in discussions of foreign policy and intelligence relationships."
+  },
+  {
+   "entityId": "qe-7d4ca6d5e135",
+   "canonical": "8ch",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "8ch, commonly known as 8chan, is an anonymous imageboard site that became the primary platform hosting Q's posts from November 2017 onward, after the account left 4chan."
+  },
+  {
+   "entityId": "qe-1134b726a49b",
+   "canonical": "Hawaii",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Hawaii is a U.S. state made up of an island chain in the Pacific Ocean, notable in Q-related discussion as Barack Obama's birthplace and as home to major U.S. military commands, including U.S. Pacific Command."
+  },
+  {
+   "entityId": "qe-2eb344dfc5da",
+   "canonical": "Carter Page",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Carter Page is a former foreign policy adviser to Donald Trump's 2016 presidential campaign whose past business dealings in Russia made him the subject of a contested FBI FISA surveillance warrant during the Trump-Russia investigation."
+  },
+  {
+   "entityId": "qe-b6f239d26215",
+   "canonical": "Coats",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Coats refers to Dan Coats, who served as U.S. Director of National Intelligence from 2017 to 2019 under President Trump, overseeing the intelligence community during the early years of the Q-drop period."
+  },
+  {
+   "entityId": "qe-00b467625787",
+   "canonical": "Clowns In America",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Clowns In America is one of Q's recurring nicknames for the Central Intelligence Agency, a piece of wordplay in which the phrase's initials spell out CIA."
+  },
+  {
+   "entityId": "qe-1d202d6b02f7",
+   "canonical": "SCIF",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "SCIF stands for Sensitive Compartmented Information Facility, a secure, access-controlled space used by government and military personnel to handle classified information."
+  },
+  {
+   "entityId": "qe-30289060f382",
+   "canonical": "Microsoft",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Microsoft is an American multinational technology corporation founded in 1975 by Bill Gates and Paul Allen, best known for its Windows operating system and Office software suite."
+  },
+  {
+   "entityId": "qe-2ea8230a7fc7",
+   "canonical": "SEC TEST",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "SEC TEST, also appearing as SEC Test 1 and SEC Test 2, reads as Q literally testing the tripcode and posting security setup on the board rather than referring to any real-world organization or person."
+  },
+  {
+   "entityId": "qe-4fbf8afe3c93",
+   "canonical": "Vladimir Putin",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Vladimir Putin is a Russian politician who has served as President of Russia (previously also as Prime Minister) since the early 2000s, after a career as a KGB intelligence officer. He is the country's dominant political figure and has drawn international attention for Russia's foreign policy actions and its role in global affairs."
+  },
+  {
+   "entityId": "qe-f523c4043f70",
+   "canonical": "AF1",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "AF1 (Air Force One) is the official air traffic control call sign for any United States Air Force aircraft carrying the President of the United States, most commonly a specially configured Boeing VC-25. It functions as a mobile command center and is a widely recognized symbol of the U.S. presidency."
+  },
+  {
+   "entityId": "qe-02f967f942a9",
+   "canonical": "Osama bin Laden",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Osama bin Laden was the founder and first leader of the militant Islamist organization al-Qaeda, responsible for orchestrating the September 11, 2001 attacks on the United States along with other terrorist attacks. He was killed by U.S. Navy SEALs in a raid on his compound in Abbottabad, Pakistan, in May 2011."
+  },
+  {
+   "entityId": "qe-02d154832a55",
+   "canonical": "Hong Kong",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Hong Kong is a Special Administrative Region of China located on the country's southern coast, known for its dense urban skyline, status as a major global financial center, and its distinct legal and economic system established under the \"one country, two systems\" framework following the 1997 handover from British rule."
+  },
+  {
+   "entityId": "qe-c89c81c4ff0e",
+   "canonical": "Sally Yates",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Sally Yates is an American attorney who served as Deputy Attorney General under President Obama and briefly as Acting Attorney General at the start of the Trump administration in January 2017. She was fired by President Trump after directing the Justice Department not to defend his executive order on immigration, and she later testified before Congress regarding the Trump-Russia investigation."
+  },
+  {
+   "entityId": "qe-aff8f73c779b",
+   "canonical": "Gang of Eight",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "The Gang of Eight is an informal term for a group of eight senior U.S. congressional leaders — the top Democratic and Republican leaders of the House and Senate, plus the chairs and ranking members of the House and Senate intelligence committees — who are briefed on the most sensitive classified intelligence and covert action programs."
+  },
+  {
+   "entityId": "qe-3baafa6d1077",
+   "canonical": "Jared Kushner",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Jared Kushner is an American businessman who served as Senior Advisor to President Donald Trump during his first administration. He is married to Ivanka Trump and, prior to his White House role, ran his family's real estate business and owned the New York Observer newspaper."
+  },
+  {
+   "entityId": "qe-da6af1f4e691",
+   "canonical": "Rachel Brand",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Rachel Brand is an American attorney who served as Associate Attorney General, the third-highest-ranking official at the U.S. Department of Justice, during the early Trump administration in 2017-2018. She had previously served in various legal and policy roles under President George W. Bush, including on the Privacy and Civil Liberties Oversight Board, before leaving DOJ for the private sector."
+  },
+  {
+   "entityId": "qe-4f8c4e3758bd",
+   "canonical": "Antonin Scalia",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Antonin Scalia was an American jurist who served as an Associate Justice of the U.S. Supreme Court from 1986 until his death in 2016. A leading proponent of originalism and textualism in constitutional interpretation, he was one of the most influential conservative justices in the Court's modern history, and his death led to a prolonged fight over his replacement."
+  },
+  {
+   "entityId": "qe-5141965c8358",
+   "canonical": "AG",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "AG is a common abbreviation for Attorney General, the title of the U.S. cabinet officer who heads the Department of Justice and serves as the federal government's chief law enforcement officer. The term is used generically for the office rather than any single officeholder."
+  },
+  {
+   "entityId": "qe-3d32aebdd8e9",
+   "canonical": "The Washington Post",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "The Washington Post is a major American daily newspaper based in Washington, D.C., known for its coverage of national politics and government and for investigative journalism including its Watergate reporting in the 1970s. It has been owned by Amazon founder Jeff Bezos since 2013."
+  },
+  {
+   "entityId": "qe-07c2ac29342f",
+   "canonical": "House of Cards",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "House of Cards is a fictional American political drama television series produced by Netflix, which premiered in 2013 and starred Kevin Spacey and Robin Wright. The show depicted a ruthless politician's rise to power through manipulation, corruption, and murder, and is not a real event or organization."
+  },
+  {
+   "entityId": "qe-4612ac3ffbe3",
+   "canonical": "Sean Hannity",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Sean Hannity is an American conservative media personality, host of the Fox News television program \"Hannity\" and a nationally syndicated radio talk show. He has been a prominent commentator on American politics for decades and was a vocal supporter of Donald Trump's presidency."
+  },
+  {
+   "entityId": "qe-8948243efcca",
+   "canonical": "Sara Carter",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Sara Carter is an American journalist and political commentator known for reporting on national security, immigration, and government investigations, including coverage of the Trump-Russia probe. She has contributed to outlets such as Fox News and previously worked as an investigative reporter for the Washington Times and other publications."
+  },
+  {
+   "entityId": "qe-86b1c0b77e02",
+   "canonical": "Ghislaine Maxwell",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Ghislaine Maxwell is a British socialite and former associate of financier Jeffrey Epstein. In 2021 she was convicted in U.S. federal court on charges including sex trafficking of minors for her role in facilitating Epstein's abuse, and she is currently serving a 20-year prison sentence."
+  },
+  {
+   "entityId": "qe-27b1e1e4dbdf",
+   "canonical": "Freedom Caucus",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "The Freedom Caucus is a group of conservative Republican members of the U.S. House of Representatives, formed in 2015, that generally advocates for limited government, reduced federal spending, and adherence to strict constitutional interpretation. It has been known for pressuring House Republican leadership on legislative priorities."
+  },
+  {
+   "entityId": "qe-ccf350286e63",
+   "canonical": "LifeLog",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "LifeLog was a research program run by the U.S. Defense Advanced Research Projects Agency (DARPA) in the early 2000s that aimed to create a searchable digital record of everything an individual experienced, including communications, media consumption, and physical activities. DARPA officially cancelled the program in 2004, the same day the social network Facebook launched, which fueled public speculation about a connection between the two, though no evidence supports such a link."
+  },
+  {
+   "entityId": "qe-af47be6a30dd",
+   "canonical": "Clinton family / Clinton political network",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "The Clinton family refers collectively to former President Bill Clinton, former Secretary of State and Senator Hillary Clinton, and their family, along with the broader network of political associates, staff, and affiliated organizations such as the Clinton Foundation and their various campaigns. It is a descriptive label for this network rather than the name of a single formal organization."
+  },
+  {
+   "entityId": "qe-04b7fdb16791",
+   "canonical": "Amazon",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Amazon is a multinational technology and e-commerce company founded by Jeff Bezos in 1994, originally as an online bookseller. It grew into one of the world's largest corporations, with major businesses in online retail, cloud computing (Amazon Web Services), streaming, and logistics."
+  },
+  {
+   "entityId": "qe-018a09d785ed",
+   "canonical": "President of the United States",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "The President of the United States is the head of state and head of government of the United States, and commander-in-chief of the armed forces. The office is established by Article II of the U.S. Constitution and is filled through a four-year electoral term, regardless of who currently holds it."
+  },
+  {
+   "entityId": "qe-a7c928a2ae1b",
+   "canonical": "President's Daily Brief",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "The President's Daily Brief (PDB) is a classified U.S. intelligence document prepared and delivered daily to the President, summarizing the most sensitive and current intelligence assessments on national security matters. It is compiled by the Office of the Director of National Intelligence with input from the CIA and other intelligence agencies, and has been a fixture of the modern presidency since the 1960s."
+  },
+  {
+   "entityId": "qe-67110e653ddb",
+   "canonical": "Pakistan",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Pakistan is a country in South Asia bordering India, Afghanistan, Iran, and China, with a coastline on the Arabian Sea. It is a nuclear-armed republic with a large military and intelligence establishment (the ISI), and has been a frequent subject of U.S. foreign policy and counterterrorism discussions."
+  },
+  {
+   "entityId": "qe-a4dcf8f2fd63",
+   "canonical": "Lord",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Lord is a generic religious and honorific term. In a Judeo-Christian context it most commonly refers to God or Jesus Christ; in a British or Commonwealth context it is a title of nobility or an honorific for certain officeholders. The specific meaning depends on the context in which it is used."
+  },
+  {
+   "entityId": "qe-5de21273e3cd",
+   "canonical": "Red Cross",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "The Red Cross refers to the International Red Cross and Red Crescent Movement, a global humanitarian network that provides disaster relief, emergency assistance, and health services. Its national affiliates, such as the American Red Cross, operate under the same emblem and mission of neutrality and humanitarian aid."
+  },
+  {
+   "entityId": "qe-2fbd83ad1bd6",
+   "canonical": "Graham",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Graham most likely refers to Lindsey Graham, a Republican U.S. Senator from South Carolina first elected in 2002, who previously served in the U.S. House of Representatives. He has held senior positions on the Senate Judiciary and Armed Services committees and has been a prominent voice on foreign policy, judicial nominations, and national security matters."
+  },
+  {
+   "entityId": "qe-2b53a4ff22db",
+   "canonical": "Michael Steinbach",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Michael Steinbach is a former FBI official who served as the Bureau's Executive Assistant Director for the National Security Branch and previously headed its Counterterrorism Division. He retired from the FBI in 2016 after a lengthy career in national security and counterterrorism, later moving into private-sector corporate security."
+  },
+  {
+   "entityId": "qe-f1c84297eabe",
+   "canonical": "The Sum of All Fears",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "The Sum of All Fears is a fictional 1991 techno-thriller novel by Tom Clancy, part of his Jack Ryan series, centering on a plot to detonate a nuclear weapon on U.S. soil. It was adapted into a 2002 film of the same name starring Ben Affleck as Jack Ryan."
+  },
+  {
+   "entityId": "qe-14962f5a2b9c",
+   "canonical": "Texas",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Texas is a large U.S. state in the South Central region, bordering Mexico and the Gulf of Mexico. It is the second-most populous and second-largest U.S. state by area, known for its energy industry, agriculture, and significant military and political influence."
+  },
+  {
+   "entityId": "qe-d10ba5e383d6",
+   "canonical": "Merkel",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Merkel most likely refers to Angela Merkel, a German politician who served as Chancellor of Germany from 2005 to 2021, leading the Christian Democratic Union. She was one of the longest-serving and most prominent European leaders of her era, playing a central role in EU policy, the eurozone crisis, and Germany's migration policy."
+  },
+  {
+   "entityId": "qe-d8ddb2f9d518",
+   "canonical": "Constitution",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "The Constitution refers to the Constitution of the United States, the foundational legal document adopted in 1787 that establishes the structure of the federal government and the framework for its three branches. It has been amended 27 times, including the Bill of Rights, and remains the supreme law of the United States."
+  },
+  {
+   "entityId": "qe-69e264872848",
+   "canonical": "Great Awakening community/board",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "The Great Awakening community/board refers to a message board or subforum within the imageboard ecosystem (such as 4chan or 8chan) that served as a gathering space for discussion and analysis related to the Q movement. It functioned as an online community hub distinct from \"The Great Awakening\" as a broader phrase used to describe public political awareness."
+  },
+  {
+   "entityId": "qe-64d8ddac64e7",
+   "canonical": "Steele",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Steele refers to Christopher Steele, a former British intelligence officer who worked for MI6 and later ran a private intelligence firm, Orbis Business Intelligence. He authored the so-called Steele dossier, a set of memos containing unverified allegations about Donald Trump's ties to Russia, compiled during the 2016 U.S. presidential campaign."
+  },
+  {
+   "entityId": "qe-50bcc68b7cf5",
+   "canonical": "Kansas",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Kansas is a U.S. state in the Midwest, known for its agricultural production, particularly wheat farming, and its central geographic location. It is bordered by Nebraska, Missouri, Oklahoma, and Colorado."
+  },
+  {
+   "entityId": "qe-d4061bc387b2",
+   "canonical": "John M",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "John M is an early, unidentified initials reference appearing in the first Q drops from November 2017. No specific individual can be confidently identified from the surrounding archive context, and the reference has remained a matter of speculation rather than confirmed identification."
+  },
+  {
+   "entityId": "qe-dc417fd26c9f",
+   "canonical": "Singapore",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Singapore is a city-state and island country in Southeast Asia, known for its status as a major global financial and shipping hub. It has hosted several high-profile international diplomatic events, including the 2018 Trump-Kim summit between the United States and North Korea."
+  },
+  {
+   "entityId": "qe-73b417a034ec",
+   "canonical": "Mike Pence",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Mike Pence is an American politician who served as the 48th Vice President of the United States from 2017 to 2021 under President Donald Trump. He previously served as Governor of Indiana and as a U.S. Representative from Indiana, and later ran his own campaign for the presidency."
+  },
+  {
+   "entityId": "qe-7ddc97a374c1",
+   "canonical": "Trey Gowdy",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Trey Gowdy is a former Republican U.S. Representative from South Carolina who served from 2011 to 2019. A former federal prosecutor, he chaired the House Oversight and Government Reform Committee and the House Select Committee on Benghazi, which investigated the 2012 attack on the U.S. diplomatic compound in Libya."
+  },
+  {
+   "entityId": "qe-c025a9179ac6",
+   "canonical": "Las Vegas",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Las Vegas is a city in Nevada known as a major resort, casino, and entertainment destination centered on the Las Vegas Strip. On October 1, 2017, a gunman opened fire on a concert crowd from a hotel room overlooking the Strip, killing 60 people in what was, at the time, the deadliest mass shooting in modern U.S. history."
+  },
+  {
+   "entityId": "qe-8dc54bc376d7",
+   "canonical": "Christopher Steele",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Christopher Steele is a former British intelligence officer who worked for MI6, including as head of its Russia desk. After leaving government service he ran a private intelligence firm and authored the so-called Steele dossier, a set of memos containing unverified allegations about ties between Donald Trump and Russia during the 2016 election."
+  },
+  {
+   "entityId": "qe-9c020c2a6872",
+   "canonical": "Reagan",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Reagan refers to Ronald Reagan, the 40th President of the United States, who served from 1981 to 1989 as a Republican. Before his presidency he was a Hollywood actor and served as Governor of California from 1967 to 1975."
+  },
+  {
+   "entityId": "qe-ae22b1ee0d99",
+   "canonical": "Gmail",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Gmail is a free email service developed by Google, launched in 2004. It is one of the most widely used email platforms in the world, integrated with other Google services like Drive and Calendar."
+  },
+  {
+   "entityId": "qe-c3b3d62be606",
+   "canonical": "PlayStation",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "PlayStation is a video game console brand owned by Sony Interactive Entertainment, first launched in 1994. It has released successive console generations along with handheld devices, online services, and controllers under the same brand."
+  },
+  {
+   "entityId": "qe-760ea1772348",
+   "canonical": "Scaramucci",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Scaramucci refers to Anthony Scaramucci, an American financier and entrepreneur who served as White House Communications Director for roughly ten days in July 2017 under President Trump. He was removed from the position shortly after an expletive-laden interview became public, making his tenure one of the shortest in the role's history."
+  },
+  {
+   "entityId": "qe-a880f5a3ef6f",
+   "canonical": "Kevin Clinesmith",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Kevin Clinesmith is a former FBI attorney who worked on the bureau's investigation into Russian interference in the 2016 election. In 2020 he pleaded guilty to altering an email used in a FISA surveillance application targeting former Trump campaign adviser Carter Page, and was sentenced to probation."
+  },
+  {
+   "entityId": "qe-ccc8c488181f",
+   "canonical": "Shadow Presidency",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Shadow Presidency is a phrase describing the idea of an unelected, unaccountable power structure allegedly operating behind or alongside the officially elected presidency. It is a conspiracy-theory-adjacent concept rather than a formal or documented organization, and has circulated in various political and online commentary rather than being an established institution."
+  },
+  {
+   "entityId": "qe-ae7dd14411da",
+   "canonical": "Japan",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Japan is an island nation in East Asia and one of the world's largest economies. It is a constitutional monarchy with a parliamentary government and maintains a long-standing security and trade alliance with the United States."
+  },
+  {
+   "entityId": "qe-cda06644f46f",
+   "canonical": "Horowitz",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Horowitz refers to Michael Horowitz, who has served as Inspector General of the U.S. Department of Justice since 2012. His office has produced high-profile reports examining FBI and DOJ conduct, including reviews of the Clinton email investigation and the FBI's FISA surveillance process during the Crossfire Hurricane investigation."
+  },
+  {
+   "entityId": "qe-efaf20137271",
+   "canonical": "Trisha Anderson",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Trisha Anderson is a former FBI Deputy General Counsel who reported to then-FBI General Counsel James Baker. She was involved in the bureau's Crossfire Hurricane investigation, including matters related to the FISA surveillance application targeting Carter Page, and later testified to congressional investigators about the handling of that process."
+  },
+  {
+   "entityId": "qe-2fb8c5dbae48",
+   "canonical": "State of the Union",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "The State of the Union is an annual address delivered by the President of the United States to a joint session of Congress, as required or informed by Article II of the U.S. Constitution. It typically reports on the condition of the nation and outlines the administration's legislative agenda."
+  },
+  {
+   "entityId": "qe-ff61ffd06288",
+   "canonical": "Florida",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Florida is a state in the southeastern United States, known for its Atlantic and Gulf coastlines, tourism industry, and large population of retirees. It is the third most populous U.S. state and a frequent focus of national politics as a key presidential swing state."
+  },
+  {
+   "entityId": "qe-93c0a47d8051",
+   "canonical": "Iraq",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Iraq is a country in the Middle East that was the site of the 2003 U.S.-led invasion and subsequent Iraq War, which toppled Saddam Hussein's government. It remained a focus of ongoing U.S. military and counterterrorism involvement in the years that followed, including operations against ISIS."
+  },
+  {
+   "entityId": "qe-2b54fac7dce3",
+   "canonical": "US President",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "US President refers to the President of the United States, the head of state and head of government of the federal government, and commander-in-chief of the armed forces. The office is filled through a national election held every four years, and the term refers to the position generically rather than any single officeholder."
+  },
+  {
+   "entityId": "qe-e7692d4d50c0",
+   "canonical": "Tashina Gauhar",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Tashina Gauhar is a former U.S. Department of Justice attorney who served as Deputy Assistant Attorney General in the National Security Division, where she worked on FISA applications and related national security matters. She was involved in DOJ processes touching the Carter Page FISA application and the Russia investigation, and participated in the March 2017 meeting that led to Attorney General Jeff Sessions' recusal from the matter."
+  },
+  {
+   "entityId": "qe-5b797d5899a4",
+   "canonical": "Rex Tillerson",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Rex Tillerson is an American businessman who served as chairman and CEO of ExxonMobil before being appointed U.S. Secretary of State by President Trump, serving from 2017 to 2018. He was dismissed from the position amid reported policy disagreements with the president and was succeeded by Mike Pompeo."
+  },
+  {
+   "entityId": "qe-9df7ca720cf1",
+   "canonical": "Maxine Waters",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Maxine Waters is a Democratic member of the U.S. House of Representatives from California, serving continuously since 1991. She has chaired the House Financial Services Committee and became known as one of the most vocal Democratic critics of Donald Trump, calling publicly for his impeachment well before formal proceedings began."
+  },
+  {
+   "entityId": "qe-93c2eb5a8931",
+   "canonical": "Hydroxychloroquine",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Hydroxychloroquine is a prescription drug primarily used to treat and prevent malaria and to manage autoimmune conditions such as lupus and rheumatoid arthritis. It received significant public attention in 2020 amid debate, including from President Trump, over its use as a potential COVID-19 treatment."
+  },
+  {
+   "entityId": "qe-442a0d902541",
+   "canonical": "Iron Eagle",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "\"Iron Eagle\" is one of several recurring phrases Q calls \"signatures\" (drop #87: \"My signatures all reference upcoming events about to drop\"), appearing alongside \"Snow White\" and \"Godfather III.\" Q states these carry meaning but never defines them; it is commonly read by researchers as an allusion to the 1986 film Iron Eagle, about a fighter pilot, though Q never confirms this."
+  },
+  {
+   "entityId": "qe-386cabbda8b6",
+   "canonical": "Ryan",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "In this archive, the bare surname \"Ryan\" most likely refers to Paul Ryan, the Republican who served as Speaker of the U.S. House of Representatives from 2015 to 2019 and was the GOP's 2012 vice-presidential nominee. Context in a given drop could in principle point to another Ryan, but Speaker Ryan is the figure most consistent with the era Q was posting in."
+  },
+  {
+   "entityId": "qe-c4f9916f779c",
+   "canonical": "Mexico",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Mexico is a country in North America that shares a nearly 2,000-mile border with the United States. In the Q drops it is referenced mainly in connection with border security, immigration, and drug-trafficking discussions."
+  },
+  {
+   "entityId": "qe-5abb48de3219",
+   "canonical": "Central Bank of West African States (BCEAO)",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "The Central Bank of West African States (BCEAO) is the shared central bank of the eight-nation West African Economic and Monetary Union, headquartered in Dakar, Senegal. It issues the West African CFA franc and sets monetary policy for its member states, which include Benin, Burkina Faso, Cote d'Ivoire, Guinea-Bissau, Mali, Niger, Senegal, and Togo."
+  },
+  {
+   "entityId": "qe-39e75e16fdae",
+   "canonical": "John Perry Barlow",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "John Perry Barlow was an American writer, poet, and internet civil-liberties activist, best known as a lyricist for the Grateful Dead and as a co-founder of the Electronic Frontier Foundation. He authored the widely circulated 1996 essay \"A Declaration of the Independence of Cyberspace\" and died in February 2018."
+  },
+  {
+   "entityId": "qe-7776fc740c92",
+   "canonical": "Hollywood",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Hollywood is a neighborhood in Los Angeles, California, and, by extension, the common shorthand for the American film and television industry historically centered there."
+  },
+  {
+   "entityId": "qe-b0a544a47108",
+   "canonical": "Grassley",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "In this archive, \"Grassley\" refers to Chuck Grassley, the Republican U.S. Senator from Iowa who has served since 1981 and is a longtime chairman of the Senate Judiciary Committee."
+  },
+  {
+   "entityId": "qe-f39790088805",
+   "canonical": "Page",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "The bare surname \"Page\" is ambiguous in this archive between two Trump-era figures Q references. Lisa Page was an FBI lawyer on the Crossfire Hurricane investigation team known for anti-Trump text messages exchanged with agent Peter Strzok, while Carter Page was a foreign-policy adviser to the 2016 Trump campaign who became the subject of a FISA surveillance warrant; which one a given drop means depends on context."
+  },
+  {
+   "entityId": "qe-f82b1d62d926",
+   "canonical": "Bolton",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "In this archive, \"Bolton\" refers to John Bolton, who served as U.S. National Security Advisor under President Trump from 2018 to 2019 and previously as U.S. Ambassador to the United Nations under President George W. Bush."
+  },
+  {
+   "entityId": "qe-dd99f5bf05e8",
+   "canonical": "DoD",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "DoD is the abbreviation for the U.S. Department of Defense, the federal executive department responsible for the U.S. armed forces and national military policy."
+  },
+  {
+   "entityId": "qe-e16178b2fd16",
+   "canonical": "Jason Bourne",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Jason Bourne is a fictional character, not a real person: the amnesiac former CIA-trained assassin who is the protagonist of Robert Ludlum's spy novels and the Matt Damon film franchise they inspired. References to him invoke the character as shorthand for a rogue or \"off the books\" intelligence operative."
+  },
+  {
+   "entityId": "qe-241b091bbd1a",
+   "canonical": "John Podesta",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "John Podesta is an American political consultant and Democratic operative who served as White House Chief of Staff under President Bill Clinton and as a senior counselor to President Obama. He chaired Hillary Clinton's 2016 presidential campaign, during which his hacked personal emails were published by WikiLeaks."
+  },
+  {
+   "entityId": "qe-6141e7c880b7",
+   "canonical": "AG Sessions",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "AG Sessions refers to Jeff Sessions, the former U.S. Senator from Alabama who served as U.S. Attorney General under President Trump from 2017 to 2018. He recused himself from the Justice Department's Russia investigation, a decision that drew repeated public criticism from Trump."
+  },
+  {
+   "entityId": "qe-82c76941cbde",
+   "canonical": "John Glacalone",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "\"John Glacalone\" appears to be a misspelling of John Giacalone, who served as the FBI's Executive Assistant Director for the National Security Branch from 2014 until his 2016 retirement, overseeing the bureau's counterterrorism and counterintelligence programs. He later became a vice president at Hilton Worldwide."
+  },
+  {
+   "entityId": "qe-07c4382e568e",
+   "canonical": "Sally Moyer",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Sally Moyer is a former FBI supervisory attorney in the bureau's Office of the General Counsel who was part of the Crossfire Hurricane investigation into the 2016 Trump campaign and Russia, including work touching the Carter Page FISA process. She later became Director of Investigations at Booz Allen Hamilton."
+  },
+  {
+   "entityId": "qe-e37f0f1ba158",
+   "canonical": "Epstein Island",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Epstein Island is the popular name for Little Saint James, a private island in the U.S. Virgin Islands owned by financier Jeffrey Epstein, where he was accused of trafficking and abusing victims."
+  },
+  {
+   "entityId": "qe-02fc2176f249",
+   "canonical": "NBC News",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "NBC News is the television news division of the American broadcast network NBC, producing programs including the Today show, NBC Nightly News, and Meet the Press. It is one of the major U.S. broadcast news organizations, headquartered at 30 Rockefeller Plaza in New York."
+  },
+  {
+   "entityId": "qe-b7dc0d4a800a",
+   "canonical": "U.S. Department of Homeland Security",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "The U.S. Department of Homeland Security (DHS) is a cabinet-level federal department created in 2002, after the September 11 attacks, to coordinate national efforts against terrorism and other threats. It oversees agencies handling border security, immigration enforcement, disaster response, and cybersecurity, including ICE, CBP, FEMA, TSA, and the Secret Service."
+  },
+  {
+   "entityId": "qe-c9d65140fa37",
+   "canonical": "Podesta",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Podesta is a surname most often referring to one of two prominent brothers in Democratic politics and Washington lobbying: John Podesta, a longtime Democratic strategist who chaired Hillary Clinton's 2016 presidential campaign and served in senior White House roles, or Tony Podesta, a Washington lobbyist and founder of the Podesta Group. Depending on context, references to \"Podesta\" alone may denote either brother."
+  },
+  {
+   "entityId": "qe-e01394898913",
+   "canonical": "Qanon",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Qanon (more commonly stylized QAnon) is a political movement and conspiracy theory that coalesced around a series of anonymous online posts, beginning in October 2017, attributed to a figure known as \"Q,\" who claimed insider government knowledge. Adherents interpreted the posts as coded messages about a secret struggle between a hidden power structure and the Trump administration, and the movement grew through message boards and social media into a broader set of beliefs and communities. This archive collects and organizes the original Q posts that gave rise to the movement."
+  },
+  {
+   "entityId": "qe-a507c9f40918",
+   "canonical": "U.S. Immigration and Customs Enforcement",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "U.S. Immigration and Customs Enforcement (ICE) is a federal law enforcement agency within the Department of Homeland Security, established in 2003. It is responsible for enforcing immigration law and investigating cross-border crime, including customs violations, human trafficking, and smuggling, through its two main components: Enforcement and Removal Operations and Homeland Security Investigations."
+  },
+  {
+   "entityId": "qe-bf67882b431d",
+   "canonical": "Gowdy",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Trey Gowdy is a former Republican U.S. Representative from South Carolina who served from 2011 to 2019. A former federal prosecutor, he chaired the House Select Committee on Benghazi and later the House Oversight and Government Reform Committee, and became a prominent questioner in hearings involving Hillary Clinton and FBI officials before leaving Congress in 2019."
+  },
+  {
+   "entityId": "qe-793ac8287941",
+   "canonical": "Jim Rybicki",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Jim Rybicki is a former FBI official who served as chief of staff to FBI Director James Comey and, after Comey's 2017 firing, briefly continued in that role under his successor Christopher Wray before leaving the bureau in early 2018. He had worked in various Justice Department national security roles before joining the FBI leadership office."
+  },
+  {
+   "entityId": "qe-2f9496726375",
+   "canonical": "New Zealand",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "New Zealand is an island country in the southwestern Pacific Ocean, made up of the North Island, South Island, and numerous smaller islands. A parliamentary democracy and member of the Commonwealth, it is known for its geographic isolation, Maori and European cultural heritage, and distinctive landscapes."
+  },
+  {
+   "entityId": "qe-a939139b5dc3",
+   "canonical": "Pentagon",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "The Pentagon is the headquarters building of the U.S. Department of Defense, located in Arlington, Virginia, across the Potomac River from Washington, D.C. Completed in 1943, it is one of the world's largest office buildings and houses the offices of the Secretary of Defense and the U.S. military's top leadership."
+  },
+  {
+   "entityId": "qe-ac912941a68f",
+   "canonical": "Feinstein",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Dianne Feinstein was a Democratic U.S. Senator from California who served from 1992 until her death in office in September 2023, making her one of the longest-serving senators in U.S. history. She previously served as Mayor of San Francisco and, in the Senate, chaired the Judiciary and Intelligence Committees at various points in her career."
+  },
+  {
+   "entityId": "qe-61cd11fd746c",
+   "canonical": "Rudy",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Rudy Giuliani is a former federal prosecutor who served as Mayor of New York City from 1994 to 2001, gaining national prominence for his leadership after the September 11 attacks. He later became a personal attorney to President Donald Trump, notably representing him during the 2020 election disputes."
+  },
+  {
+   "entityId": "qe-5ede28f83e7a",
+   "canonical": "Secretary of State",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "The Secretary of State is the head of the U.S. Department of State and a member of the President's cabinet, responsible for overseeing American foreign policy and diplomatic relations with other nations. The office is fourth in the presidential line of succession."
+  },
+  {
+   "entityId": "qe-48218e7ab8e3",
+   "canonical": "Utah",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Utah is a state in the western United States, known for its mountainous terrain, national parks, and as the headquarters of The Church of Jesus Christ of Latter-day Saints. Its capital and largest city is Salt Lake City."
+  },
+  {
+   "entityId": "qe-9cfb9a554b04",
+   "canonical": "SDNY",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "SDNY refers to the Southern District of New York, encompassing both the U.S. District Court for that district and the U.S. Attorney's Office that prosecutes federal cases there. Covering Manhattan and several surrounding counties, it is one of the most prominent federal jurisdictions in the country, known for handling many high-profile financial, political, and organized-crime prosecutions."
+  },
+  {
+   "entityId": "qe-8522f272947e",
+   "canonical": "Josh Campbell",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Josh Campbell is a former FBI special agent who spent over a decade with the bureau, including service as a supervisory special agent and special assistant to FBI Director James Comey. He left the FBI in 2018 and became a journalist, working as a CNN correspondent and analyst covering national security and law enforcement."
+  },
+  {
+   "entityId": "qe-c99809848792",
+   "canonical": "Randy Coleman",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "Randy Coleman (Randall C. Coleman) is a former senior FBI official who served as Assistant Director of the FBI's Counterintelligence Division beginning in 2014 and was later named Executive Assistant Director of the Criminal, Cyber, Response, and Services Branch. He joined the FBI in 1997 after nine years as a U.S. Army officer."
+  },
+  {
+   "entityId": "qe-918f1151060e",
+   "canonical": "David Laufman",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "David Laufman is a former Justice Department official who served as Chief of the Counterintelligence and Export Control Section from 2014 to 2018, a role in which he was involved in the Hillary Clinton email investigation and the early Russia investigation. He previously served as Chief of Staff to the Deputy Attorney General and as a federal prosecutor, and now practices law privately."
+  },
+  {
+   "entityId": "qe-a802edcdf65e",
+   "canonical": "Bank of Central African States",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 3: mentions 5-9.",
+   "synopsis": "The Bank of Central African States (BEAC) is the shared central bank for the six-member Economic and Monetary Community of Central Africa (Cameroon, Central African Republic, Congo, Gabon, Equatorial Guinea, and Chad). Headquartered in Yaounde, Cameroon, it was established in 1972 and manages the Central African CFA franc."
   }
  ]
 }

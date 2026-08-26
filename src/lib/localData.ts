@@ -513,7 +513,10 @@ export const OVERLAY_REPAIR = 1
 //     6,321, entities 1,235 -> 1,214 rows and 8,975 -> 8,821 mentions. A returning reader holding
 //     87 would keep the pre-review paint on 41 drops and a registry counting one written word up
 //     to five times, so the seed has to move.
-export const SEED_VERSION = 111  // 111: 2026-08-26 — real researched synopses for tier 2 (50
+export const SEED_VERSION = 112  // 112: 2026-08-26 — real researched synopses for tier 3 (109
+                                 //     entities, mentions 5-9), continuing the synopsis sweep.
+                                 //     entity-hovers.json changed content.
+                                 // 111: 2026-08-26 — real researched synopses for tier 2 (50
                                  //     entities, mentions 10-19: ABC News, Seth Rich, Julian
                                  //     Assange, Q, CodeMonkey, MS-13, ...), continuing the
                                  //     synopsis sweep. entity-hovers.json changed content.
