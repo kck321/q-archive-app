@@ -7591,3 +7591,30 @@ existing per-post disambiguation note instead of the new global synopsis on drop
 have "2 readings" — confirmed via direct JSON read that the new synopsis IS correctly stored; the
 disambiguation display is an existing, unrelated mechanism, not a regression.
 **Still open:** tier 3 (mentions 5–9, ~109 entities) and tier 4 (mentions 1–4, ~1,272 entities).
+
+## 2026-08-26 — Entity synopsis sweep, tier 3 (mentions 5–9, 109 entities)
+
+**Request:** Continuing the synopsis sweep (owner: "yes lets finish 1").
+
+**Solution:** All 109 remaining mentions-5–9 entities, split into 6 batches of ~18 and researched
+via parallel background agents, same standard as tiers 1–2. Notable special cases beyond the usual
+generic-title-role and bare-surname handling: "Jason Bourne" is typed `person` in the registry but
+is a fictional character (Ludlum novels / Matt Damon films) — written as such rather than treated
+as real, same for "House of Cards" and "The Sum of All Fears" (both `creative_work`, both
+fictional). "Las Vegas" is typed `person` (a registry quirk, not corrected) but is a city — written
+about what it actually is. "Iron Eagle" is one of Q's own recurring "signature" phrases (drop #87:
+"My signatures all reference upcoming events about to drop"), same family as Godfather III/Snow
+White handled in tier 1 — written as an unexplained in-universe phrase, not researched as a real
+subject. "Clowns In America" (Q's CIA wordplay) and "SEC TEST" (reads as Q literally testing the
+posting/tripcode security setup, not a real organization) written directly. Genuine ambiguity kept
+rather than forced: "Page" notes both Lisa Page and Carter Page; "Podesta" notes both John and Tony
+Podesta; "John M" (posts #5–#52, Nov 2017) is written as an unidentified early reference rather than
+a guess. One validation failure on the first pass — "Qanon" (the archive's exact casing) vs. the
+agent's "QAnon" — fixed by adding a "(more commonly stylized QAnon)" clause. Full rebuild,
+SEED_VERSION 111 → 112, `certification-manifest.mjs --verify` clean, `tsc --noEmit` clean,
+spot-verified live via Playwright (Adm R, Trey Gowdy). Noted in passing, not fixed: hovering "SEC
+TEST" text on #870 shows the pre-existing "SEC" (Securities and Exchange Commission) entity's card
+instead — an overlapping-alias precedence bug that predates this session (the entity itself is a
+2026-08-24 owner ruling); confirmed via direct JSON read that the new synopsis IS correctly stored
+under the right entity id, so this is a rendering-precedence issue, not a data problem.
+**Still open:** tier 4 (mentions 1–4, ~1,272 entities) — by far the largest remaining slice.
