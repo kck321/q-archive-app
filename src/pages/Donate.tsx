@@ -171,18 +171,9 @@ export default function Donate() {
           <h2 className="font-semibold text-white mb-2">Thank You for Being Here</h2>
           <div className="text-sm text-gray-400 leading-relaxed space-y-3">
             <p>
-              Thank you to everyone who uses Qdrops.app, shares it with others, reports an
-              issue, points out a missing or incorrect highlight, or sends feedback and
-              suggestions.
-            </p>
-            <p>
-              This project continues to improve because of the people who take the time to
-              review the information and help identify areas that may need correction,
-              clarification, or additional context.
-            </p>
-            <p>
-              Every report, suggestion, and contribution helps make Qdrops.app more complete,
-              accurate, and useful for everyone.
+              Thank you for test driving Qdrops.app, please share with others, report any
+              issues, point out any missing or incorrect highlighted categories, your feedback
+              is appreciated and will take this app to the next level with time!
             </p>
           </div>
         </div>
