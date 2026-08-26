@@ -1154,6 +1154,11 @@ export default function PostArchive() {
                     onSelect={m => handleBarClick({ month: m })}
                     label={chartMatchMonths ? `matches for "${chartSearch}"` : (activeTab?.label ?? 'posts').toLowerCase()}
                     accent={activeTab?.color ?? '#9ca3af'}
+                    // A keyword search colours the chart green->red by density; the chips below
+                    // now match it exactly (same gradientColor, same chartMatchMax) and carry the
+                    // count on their own face — owner ruling 2026-08-25.
+                    colorOf={chartMatchMonths ? (m => gradientColor(chartMatchMonths.get(m) ?? 0, chartMatchMax)) : undefined}
+                    showCounts={!!chartMatchMonths}
                   />
 
                   {/* Phone readout. Sits UNDER the chart, so it hides none of it, and closes

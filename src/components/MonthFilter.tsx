@@ -60,7 +60,7 @@ export function MonthTooltip({ active, payload, label, colorOf, extra }: {
  * second code path that could diverge. It is also the only comfortable way to pick a month on a
  * phone, where 60 bars in a scrolling chart are about four pixels each.
  */
-export function MonthPicker({ months, counts, selectedMonth, onSelect, label, accent = '#9ca3af' }: {
+export function MonthPicker({ months, counts, selectedMonth, onSelect, label, accent = '#9ca3af', colorOf, showCounts }: {
   /** Every month with data, "YYYY-MM", oldest first. */
   months: string[]
   /** month -> the count this chart is showing for it, spoken in the button's label. */
@@ -70,6 +70,21 @@ export function MonthPicker({ months, counts, selectedMonth, onSelect, label, ac
   /** What the counts are, for the spoken label: "42 posts", "42 claims". */
   label: string
   accent?: string
+  // OWNER RULING, 2026-08-25: "make the q months below the graph highlighted the color that we
+  // see for that month in the graph w/how many times the term is found in that month as well".
+  // A keyword search colours its chart bars green→red by density (lib/chartSearch's
+  // gradientColor), but the chips below stayed flat grey except for whichever ONE was selected —
+  // the reader had to look back up at the chart to see which months actually mattered.
+  //
+  // `colorOf`, when given, replaces the plain grey/accent scheme for EVERY chip, matched or not,
+  // so the picker reads as a second copy of the chart's own colour-by-density instead of a
+  // separate flat control. Optional, and default-omitted: Analysis's category picker and the
+  // Post Archive's own non-search (browse-by-category) picker pass neither prop and render
+  // exactly as before — this is additive, not a restyle of the shared component.
+  colorOf?: (month: string, count: number) => string
+  // Shows the count on the chip face rather than only in the hover title/aria-label — the reader
+  // asked to see "how many" without a hover, the same reason the chart bars carry LabelList totals.
+  showCounts?: boolean
 }) {
   const byYear = useMemo(() => {
     const out = new Map<string, string[]>()
@@ -105,6 +120,11 @@ export function MonthPicker({ months, counts, selectedMonth, onSelect, label, ac
           {ms.map(m => {
             const selected = selectedMonth === m
             const n = counts?.[m] ?? 0
+            // colorOf owns the whole chip's colour, selected or not, when given — it IS the
+            // density colour the chart drew for this month, so "selected" still needs its own
+            // signal (the ring) rather than a colour change that would otherwise look identical
+            // to the unselected chip beside it.
+            const bg = colorOf ? colorOf(m, n) : (selected ? accent : undefined)
             return (
               <button
                 key={m}
@@ -129,14 +149,17 @@ export function MonthPicker({ months, counts, selectedMonth, onSelect, label, ac
                 }}
                 className={`text-[10px] leading-none px-1.5 py-1 rounded border tabular-nums transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 ${
                   selected
-                    ? 'text-black font-bold border-transparent'
-                    : n > 0
-                      ? 'bg-gray-800 text-gray-300 border-gray-700 hover:border-gray-400 hover:text-white'
-                      : 'bg-gray-900 text-gray-600 border-gray-800 hover:border-gray-600'
+                    ? `font-bold border-transparent ${colorOf ? 'ring-2 ring-white' : 'text-black'}`
+                    : bg
+                      ? 'border-transparent'
+                      : n > 0
+                        ? 'bg-gray-800 text-gray-300 border-gray-700 hover:border-gray-400 hover:text-white'
+                        : 'bg-gray-900 text-gray-600 border-gray-800 hover:border-gray-600'
                 }`}
-                style={selected ? { background: accent } : undefined}
+                style={bg ? { background: bg, color: colorOf ? '#0a0a0f' : undefined } : undefined}
               >
                 {SHORT[Number(m.slice(5, 7)) - 1]}
+                {showCounts && n > 0 && <span className="ml-0.5 font-bold">{n}</span>}
               </button>
             )
           })}
