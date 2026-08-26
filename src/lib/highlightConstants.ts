@@ -62,7 +62,7 @@ export const URL_SRC = 'https?://[^\\s<>\'")\\]]+'
 // posts. The grounds stay OPAQUE on purpose: the 2026-08-24 solid rule (nothing shows through
 // when a span sits over another category) survives the recolour untouched.
 export const HIGHLIGHT_CLS: Record<string, string> = {
-  namedEntity:       'bg-cyan-900 text-cyan-300 font-medium',
+  namedEntity:       'bg-cyan-900 text-cyan-100 font-medium',
   claim:             'bg-amber-500/40 text-amber-100',
   prediction:        'bg-violet-500/40 text-violet-100',
   theme:             'bg-indigo-500/40 text-indigo-100',
@@ -75,7 +75,7 @@ export const HIGHLIGHT_CLS: Record<string, string> = {
   // OWNER RULING, 2026-08-26: dropped font-mono and the 90% size — the only category rendering
   // in a different font family and smaller than the rest. "text within the post and in these
   // sections [should be] the same size and style as all the other categories."
-  bracketCode:       'bg-red-900 text-red-300',
+  bracketCode:       'bg-red-900 text-red-100',
   milIntel:          'bg-sky-500/40 text-sky-100 font-semibold',
   qSignature:        'bg-purple-400/30 text-purple-200 italic',
   topic:             'bg-yellow-400/40 text-yellow-100 font-semibold',
