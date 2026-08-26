@@ -198,6 +198,23 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
 
   const cls = HIGHLIGHT_CLS
 
+  // A URL IS ONE LINK, NO MATTER HOW MANY CLASSIFICATIONS LAND INSIDE IT.
+  //
+  // "the url link in the post is brokken. when you hover over it, it only highlights a portion
+  // of the url and you can highlight different segments of it which takes you to the wrong
+  // site." The interval decomposition below splits text at EVERY span boundary, and `url` sat
+  // near the fallback branch with no special handling — so a certified term landing inside an
+  // address (POTUS's own slug text: "trump-cia-firing-intelligence-community-white-house")
+  // split the URL into several separate <a> tags, each carrying only ITS OWN FRAGMENT as the
+  // href ("trump", "cia", "-firing-intelligence-community-white-house" …) — every one of them a
+  // broken, garbage relative link. PostDetail's renderer already carries the fix; this is the
+  // same mechanism, ported: the whole URL is collected into ONE anchor with the FULL address,
+  // and the marks that fall inside it render as its children.
+  const urlSegs = segs.filter(s => s.kind === 'url')
+  let urlBuf: (string | React.JSX.Element)[] | null = null
+  let urlEnd = -1
+  let urlHref = ''
+
   const nodes: (string | React.JSX.Element)[] = []
   let pos = 0
 
@@ -206,6 +223,11 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
     const active = segs.filter(s => s.start <= iStart && s.end >= iEnd)
     if (active.length === 0) continue
     if (iStart > pos) nodes.push(text.slice(pos, iStart))
+
+    const uHere = urlSegs.find(u => iStart >= u.start && iStart < u.end)
+    if (uHere && !urlBuf) { urlBuf = []; urlEnd = uHere.end; urlHref = text.slice(uHere.start, uHere.end) }
+    const sink = urlBuf ?? nodes
+
     const matchText = text.slice(iStart, iEnd)
     const dominant = active.filter(s => DOMINANT_KINDS.has(s.kind))
     const allStackable = active.filter(s => !DOMINANT_KINDS.has(s.kind))
@@ -240,23 +262,23 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
         const innerKinds = [...new Set(stackable.map(x => x.kind))].filter(k => k !== 'emphasis')
         if (innerKinds.includes('bracketCode')) {
           // SOLID — the question is behind it. Same rule and same classes as PostDetail.
-          nodes.push(<mark key={iStart} title="bracket — over question"
+          sink.push(<mark key={iStart} title="bracket — over question"
             className={`${HIGHLIGHT_SOLID.bracketCode} rounded not-italic`}>{matchText}</mark>)
         } else if (innerKinds.includes('namedEntity')) {
           // BRACKETS AND ENTITIES ARE ALWAYS ON TOP — owner rule, inside a question as much as
           // outside one. Identical to the PostDetail branch, which is the point: these two
           // surfaces have shown different colours for the same certified data before.
-          nodes.push(<mark key={iStart} title={`entity — over question${innerKinds.length > 1 ? ', ' + innerKinds.filter(k => k !== 'namedEntity').join(', ') : ''}`}
+          sink.push(<mark key={iStart} title={`entity — over question${innerKinds.length > 1 ? ', ' + innerKinds.filter(k => k !== 'namedEntity').join(', ') : ''}`}
             className={`${HIGHLIGHT_SOLID.namedEntity} rounded not-italic`}>{matchText}</mark>)
         } else if (innerKinds.length === 1) {
-          nodes.push(<mark key={iStart} title={`${innerKinds[0]} (inside a question)`}
+          sink.push(<mark key={iStart} title={`${innerKinds[0]} (inside a question)`}
             className={`${cls[innerKinds[0]] ?? ''} rounded not-italic`}>{matchText}</mark>)
         } else if (innerKinds.length > 1) {
-          nodes.push(<mark key={iStart} title={`${innerKinds.length} certified layers: ${innerKinds.join(', ')}`}
+          sink.push(<mark key={iStart} title={`${innerKinds.length} certified layers: ${innerKinds.join(', ')}`}
             style={overlapStyle(innerKinds)?.style}
             className={`${overlapStyle(innerKinds)?.className ?? ''} rounded not-italic`}>{matchText}</mark>)
         } else {
-          nodes.push(<mark key={iStart} className="bg-blue-500/30 text-blue-200 rounded not-italic">{matchText}</mark>)
+          sink.push(<mark key={iStart} className="bg-blue-500/30 text-blue-200 rounded not-italic">{matchText}</mark>)
         }
       } else if (top.kind === 'keyword') {
         // A SEARCH MATCH SHOWS ITS CATEGORY — owner ruling, 2026-08-26.
@@ -268,31 +290,42 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
         // shared with PostDetail's chip-click flash) so the flash IS the classification. Falls
         // back to the plain red ring only when nothing certified sits behind the match.
         const underKind = keywordUnderKind(stackable)
-        nodes.push(underKind
+        sink.push(underKind
           ? <mark key={iStart} title={`search match — ${underKind}`}
               className={`${cls[underKind] ?? ''} rounded not-italic ${HIGHLIGHT_FLASH[underKind] ?? 'animate-search-flash-generic'}`}>{matchText}</mark>
           : <mark key={iStart} className={`${cls.keyword ?? ''} not-italic`}>{matchText}</mark>)
+      } else if (top.kind === 'url') {
+        // Inside the wrapping anchor the link is already whole, so `url` no longer has to own
+        // the span to stay clickable — which means a classification falling inside the address
+        // can finally SHOW. It renders as a mark nested in the link: the context is visible and
+        // the href is still the complete URL. Identical to PostDetail's renderer.
+        sink.push(
+          urlBuf
+            ? (stackable.length > 0
+                ? <mark key={iStart} className={`${cls[stackable[0].kind] ?? ''} rounded not-italic`}>{matchText}</mark>
+                : matchText)
+            : <a key={iStart} href={hrefOf(matchText)} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 underline break-all" onClick={e => e.stopPropagation()}>{matchText}</a>)
       } else {
-        nodes.push(<a key={iStart} href={hrefOf(matchText)} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 underline break-all" onClick={e => e.stopPropagation()}>{matchText}</a>)
+        sink.push(<a key={iStart} href={hrefOf(matchText)} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 underline break-all" onClick={e => e.stopPropagation()}>{matchText}</a>)
       }
     } else if (stackable.length === 1) {
-      nodes.push(<mark key={iStart} className={`${cls[stackable[0].kind] ?? ''} rounded not-italic`}>{matchText}</mark>)
+      sink.push(<mark key={iStart} className={`${cls[stackable[0].kind] ?? ''} rounded not-italic`}>{matchText}</mark>)
     } else if (stackable.some(s => s.kind === 'bracketCode')) {
       // Brackets outrank entities — owner rule, same order as PostDetail. SOLID, because reaching
       // this branch at all means something else covers the same characters.
-      nodes.push(<mark key={iStart} title={`bracket — over ${stackable.filter(s => s.kind !== 'bracketCode').map(s => s.kind).join(', ') || 'nothing'}`}
+      sink.push(<mark key={iStart} title={`bracket — over ${stackable.filter(s => s.kind !== 'bracketCode').map(s => s.kind).join(', ') || 'nothing'}`}
         className={`${HIGHLIGHT_SOLID.bracketCode} rounded not-italic`}>{matchText}</mark>)
     } else if (stackable.some(s => s.kind === 'namedEntity')) {
-      nodes.push(<mark key={iStart} title={`entity — over ${stackable.filter(s => s.kind !== 'namedEntity').map(s => s.kind).join(', ') || 'nothing'}`}
+      sink.push(<mark key={iStart} title={`entity — over ${stackable.filter(s => s.kind !== 'namedEntity').map(s => s.kind).join(', ') || 'nothing'}`}
         className={`${HIGHLIGHT_SOLID.namedEntity} rounded not-italic`}>{matchText}</mark>)
     } else if (stackable.some(s => s.kind === 'request' || s.kind === 'requestQuestion')) {
       const hasReqQ = stackable.some(s => s.kind === 'requestQuestion')
-      nodes.push(<mark key={iStart} className={`${hasReqQ ? 'animate-req-question' : 'bg-green-500/35 text-green-200'} rounded not-italic font-medium`}>{matchText}</mark>)
+      sink.push(<mark key={iStart} className={`${hasReqQ ? 'animate-req-question' : 'bg-green-500/35 text-green-200'} rounded not-italic font-medium`}>{matchText}</mark>)
     } else {
       // Rotate through every covering category's colour — see PostDetail for the reasoning.
       // Distinct KINDS, not segments: the same kind matching twice is one classification.
       const kinds = [...new Set(stackable.map(s => s.kind))]
-      nodes.push(kinds.length > 1
+      sink.push(kinds.length > 1
         ? <mark key={iStart} title={`${kinds.length} certified layers: ${kinds.join(', ')}`}
             style={overlapStyle(kinds)?.style}
             className={`${overlapStyle(kinds)?.className ?? ''} rounded not-italic`}>{matchText}</mark>
@@ -301,6 +334,10 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
       )
     }
     pos = iEnd
+    if (urlBuf && iEnd >= urlEnd) {
+      nodes.push(<a key={`url-${urlEnd}`} href={hrefOf(urlHref)} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 underline break-all" onClick={e => e.stopPropagation()}>{urlBuf}</a>)
+      urlBuf = null
+    }
   }
   if (pos < text.length) nodes.push(text.slice(pos))
   // ONE insertion point for the reader's info box, shared with PostDetail's renderer so the two
