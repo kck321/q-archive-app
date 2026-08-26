@@ -7569,3 +7569,25 @@ fixing Brackets only. Removed `font-mono`/`text-[0.9em]` from `HIGHLIGHT_CLS.bra
 `PostDetail.tsx`, and the bracket-code chip in `QBrackets.tsx` (left its post-number reference pills
 monospace — an unrelated, consistent convention for post numbers across the app). Verified live via
 Playwright on #4742 and `/brackets`. `tsc --noEmit` clean.
+
+## 2026-08-26 — Entity synopsis sweep, tier 2 (mentions 10–19, 50 entities)
+
+**Request:** Continuing the synopsis sweep — owner confirmed "yes lets finish 1" while approving
+the Hunter Biden fix above.
+
+**Solution:** Identified the 50 remaining entities with 10–19 mentions, split into 3 batches of
+~17 and researched via parallel background agents against the same tier-1 standard (who/what the
+entity IS, no adoption of Q's framing, strictly neutral tone for anything politically charged).
+Notable cases: "President" and "Board Owner" are generic `title_role` terms, written directly
+rather than researched as one specific person; "Q" and "CodeMonkey" are real, documented facts
+about the archive's own source material (Q = the anonymous drop author; CodeMonkey = Ron Watkins,
+the 8chan/8kun admin); "Justice K" (posts #2296–#2648, Sept–Oct 2018) is an INFERRED identification
+as Brett Kavanaugh from drop-date correlation with his Supreme Court confirmation fight, phrased as
+inferred rather than asserted. All 50 passed the QA gate (synopsis must literally contain the
+canonical's first word) on the first pass. `scripts/build-owner-rulings-2026-08-26-synopses-tier2.mjs`.
+Full rebuild, SEED_VERSION 110 → 111, `certification-manifest.mjs --verify` clean, spot-verified
+live via Playwright (Seth Rich, Julian Assange). Noted in passing: "Q" shows a different, pre-
+existing per-post disambiguation note instead of the new global synopsis on drops where Q/Alice
+have "2 readings" — confirmed via direct JSON read that the new synopsis IS correctly stored; the
+disambiguation display is an existing, unrelated mechanism, not a regression.
+**Still open:** tier 3 (mentions 5–9, ~109 entities) and tier 4 (mentions 1–4, ~1,272 entities).
