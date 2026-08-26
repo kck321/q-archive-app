@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import type { QPost, QuotedPost } from '../types'
 import { mediaUrl, dedupeMedia } from '../lib/mediaUrl'
 import PictureChip from './PictureChip'
+import { CroppedMedia } from './CroppedMedia'
 import { linkify } from '../lib/linkify'
 import { highlightText } from '../lib/postHighlight'
 import { getQuotedContext, quotedDisplayText, type QuotedContext } from '../lib/references'
@@ -125,11 +126,11 @@ export default function QuotedPosts({
                 {dedupeMedia(q.media).map((m, j) => (
                   <div key={j}>
                     <a href={mediaUrl(m.url)} target="_blank" rel="noopener noreferrer">
-                      <img
-                        src={mediaUrl(m.url)}
+                      <CroppedMedia
+                        url={mediaUrl(m.url)}
                         alt={m.filename ?? 'quoted attachment'}
-                        loading="lazy"
-                        className="max-w-full h-auto block rounded border border-gray-700 hover:border-gray-500"
+                        className="rounded border border-gray-700 hover:border-gray-500"
+                        imgClassName="max-w-full h-auto block"
                       />
                     </a>
                     <PictureChip url={m.url} />

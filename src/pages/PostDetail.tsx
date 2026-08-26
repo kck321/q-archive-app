@@ -20,6 +20,7 @@ import { mediaUrl, dedupeMedia } from '../lib/mediaUrl'
 import { resolveReferences, getQuotedContext, type QuotedContext } from '../lib/references'
 import QuotedPosts from '../components/QuotedPosts'
 import PictureChip from '../components/PictureChip'
+import { CroppedMedia } from '../components/CroppedMedia'
 import UnresolvedInPost from '../components/UnresolvedInPost'
 import LinkedSources from '../components/LinkedSources'
 import { highlightText } from '../lib/postHighlight'
@@ -1642,13 +1643,13 @@ export default function PostDetail() {
                     {dedupeMedia(rp.media).length > 0 && (
                       <div data-focus={isCurrent ? 'pictures' : undefined} className="mt-3 space-y-2">
                         {dedupeMedia(rp.media).map(m => (
-                          <div key={m.url}>
-                            <img
-                              src={mediaUrl(m.url)}
+                          <div key={m.url} className="feed-attachment">
+                            <CroppedMedia
+                              url={mediaUrl(m.url)}
                               alt={m.filename}
-                              loading="lazy"
-                              className="max-w-full h-auto block rounded-lg border border-gray-700"
-                              onError={e => { const w = e.currentTarget.closest('div'); if (w) (w as HTMLElement).style.display = 'none' }}
+                              className="rounded-lg border border-gray-700"
+                              imgClassName="max-w-full h-auto block"
+                              onError={e => { const w = e.currentTarget.closest('.feed-attachment'); if (w) (w as HTMLElement).style.display = 'none' }}
                             />
                             <PictureChip url={m.url} />
                           </div>
@@ -1886,10 +1887,10 @@ export default function PostDetail() {
               ) : (
                 <div key={m.url}>
                   <div className="rounded-lg overflow-hidden border border-gray-700">
-                    <img
-                      src={mediaUrl(m.url)}
+                    <CroppedMedia
+                      url={mediaUrl(m.url)}
                       alt={m.filename}
-                      className="max-w-full h-auto block"
+                      imgClassName="max-w-full h-auto block"
                       loading="lazy"
                       onError={e => { (e.currentTarget.closest('.rounded-lg') as HTMLElement).style.display = 'none' }}
                     />

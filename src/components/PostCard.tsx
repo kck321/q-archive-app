@@ -7,6 +7,7 @@ import { getAliasesFor, addAlias, removeAlias, subscribeAliases } from '../lib/a
 import { sourceLink } from '../lib/sourceLink'
 import QuotedPosts from './QuotedPosts'
 import PictureChip from './PictureChip'
+import { CroppedMedia } from './CroppedMedia'
 import { linkify } from '../lib/linkify'
 import { mediaUrl, dedupeMedia } from '../lib/mediaUrl'
 import { timeAgo } from '../lib/timeAgo'
@@ -290,11 +291,10 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
               <div key={m.url}>
                 <a href={mediaUrl(m.url)} target="_blank" rel="noreferrer"
                   className="block rounded-lg overflow-hidden border border-gray-700 hover:border-gray-500">
-                  <img
-                    src={mediaUrl(m.url)}
+                  <CroppedMedia
+                    url={mediaUrl(m.url)}
                     alt={m.filename}
-                    loading="lazy"
-                    className="max-w-full h-auto block"
+                    imgClassName="max-w-full h-auto block"
                     onError={e => { (e.currentTarget.closest('a') as HTMLElement).style.display = 'none' }}
                   />
                 </a>

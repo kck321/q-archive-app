@@ -5,6 +5,7 @@ import type { QPost, QMedia } from '../types'
 import { mediaUrl } from '../lib/mediaUrl'
 import PictureChip from '../components/PictureChip'
 import { loadPictureAnalysis, getPictureInfoSync, pictureHaystack } from '../lib/pictureAnalysis'
+import { MEDIA_CROP } from '../lib/mediaCrop'
 
 const IMAGE_EXT_RX = /\.(jpg|jpeg|png|gif|webp|bmp|svg|tiff?|ico|avif|heic|heif)(\?[^\s]*)?$/i
 const IMAGE_PATH_RX = /\/(media|image|img|file_store|thumb|photos?|pictures?|uploads?)\//i
@@ -191,6 +192,19 @@ export default function QPostPics() {
                     src={mediaUrl(media.url)}
                     alt={media.filename}
                     className="w-full h-48 object-cover"
+                    // This fixed-height thumbnail already covers the whole tile with
+                    // object-fit: cover, centered on the image's geometric middle by default —
+                    // which is exactly wrong when a chunk of that image is a baked-in black
+                    // letterbox border (owner ruling, 2026-08-26: "there is alot of blank
+                    // space... i just want the main portion of the picture showing"). Biasing
+                    // object-position to the CENTER OF THE DETECTED CONTENT BOX instead keeps
+                    // the simple cover-crop this grid needs, but points it at the real photo.
+                    style={media.url && MEDIA_CROP[mediaUrl(media.url)] ? (() => {
+                      const c = MEDIA_CROP[mediaUrl(media.url)]!
+                      const cx = ((c.cropX + c.cropWidth / 2) / c.naturalWidth) * 100
+                      const cy = ((c.cropY + c.cropHeight / 2) / c.naturalHeight) * 100
+                      return { objectPosition: `${cx}% ${cy}%` }
+                    })() : undefined}
                     loading="lazy"
                     onLoad={handleLoad}
                     onError={e => {
