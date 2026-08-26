@@ -513,7 +513,13 @@ export const OVERLAY_REPAIR = 1
 //     6,321, entities 1,235 -> 1,214 rows and 8,975 -> 8,821 mentions. A returning reader holding
 //     87 would keep the pre-review paint on 41 drops and a registry counting one written word up
 //     to five times, so the seed has to move.
-export const SEED_VERSION = 106  // 106: 2026-08-26 — #1515 addendum. 4 more reporters the first
+export const SEED_VERSION = 107  // 107: 2026-08-26 — every certified entity gets a hover, not
+                                 //     just shorthand. build-glossary.mjs dropped the
+                                 //     isShorthand() gate; glossary.json tokens 403 -> 1,715, so
+                                 //     full names (Hussein, Barack Obama, Trump, ...) now show
+                                 //     the same info box acronyms already did. glossary.json
+                                 //     changed content; a returning reader must reseed.
+                                 // 106: 2026-08-26 — #1515 addendum. 4 more reporters the first
                                  //     pass missed entirely (Vice/Alyssa Mastramonoco,
                                  //     Vox/Jon Allen, WaPo/Anne Gearan, WaPo/Greg Sargent).
                                  //     posts.json, entities.json, entity-hovers.json,

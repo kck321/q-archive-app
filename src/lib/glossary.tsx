@@ -65,6 +65,35 @@ export function useGlossary(): Record<string, GlossEntry[]> {
   return g
 }
 
+// CASE-INSENSITIVE FALLBACK FOR THE EXACT-KEY LOOKUP BELOW.
+//
+// The token map is keyed by whichever single spelling case-folding kept — "HUSSEIN" (65
+// occurrences) folds into "Hussein" (95) because the renderer's own matching is case-insensitive,
+// so having both as separate tokens would leave one of them permanently unmatched anyway (see
+// build-glossary.mjs). But the LITERAL text a reader hovers is whatever Q actually wrote at that
+// spot, which is "HUSSEIN" on plenty of drops — and a bare `gloss[token]` object lookup is
+// case-SENSITIVE, so every all-caps occurrence of a mixed-case-keyed token silently matched
+// nothing. Surfaced by the 2026-08-26 broadening: full names fold by case far more than the
+// original ~400 acronym tokens ever did (158 folds against 1), so this had to actually be fixed
+// rather than continuing to work by accident.
+//
+// Memoized per `gloss` object (a new object only arrives when the glossary reloads), so this is
+// one pass over the keys per session rather than one per hover.
+const lowerIndexCache = new WeakMap<object, Map<string, string>>()
+function lowerIndex(gloss: Record<string, GlossEntry[]>): Map<string, string> {
+  let idx = lowerIndexCache.get(gloss)
+  if (idx) return idx
+  idx = new Map()
+  for (const key of Object.keys(gloss)) {
+    const k = key.toLowerCase()
+    // First (i.e. any) mapping wins — this is a fallback for when the exact key misses, not a
+    // second source of truth, so a collision here just means the exact-case path already had it.
+    if (!idx.has(k)) idx.set(k, key)
+  }
+  lowerIndexCache.set(gloss, idx)
+  return idx
+}
+
 /**
  * The reading that applies IN THIS DROP.
  *
@@ -73,7 +102,7 @@ export function useGlossary(): Record<string, GlossEntry[]> {
  * "most common" is exactly how Bruce Ohr becomes Barack Obama.
  */
 export function glossFor(token: string, postNum: number, gloss = glossarySync()): GlossEntry | null {
-  const entries = gloss[token]
+  const entries = gloss[token] ?? gloss[lowerIndex(gloss).get(token.toLowerCase()) ?? '']
   if (!entries?.length) return null
   // A per-post note outranks the ruling-wide one: DAG is always the Deputy Attorney General, but
   // WHICH officeholder is meant changes drop by drop, and that is the part a reader needs here.

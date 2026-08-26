@@ -1,7 +1,13 @@
-// Build the reader-facing glossary: what does this acronym mean, IN THIS DROP?
+// Build the reader-facing glossary: who or what is this, IN THIS DROP?
 //
-// The owner's ask: "all the acronyms and initialed names to have an info box if you hover over it
-// or press it so the reader knows who he or she is looking at app wide on any post."
+// The owner's original ask: "all the acronyms and initialed names to have an info box if you
+// hover over it or press it so the reader knows who he or she is looking at app wide on any
+// post." Broadened by owner ruling, 2026-08-26: "hussein is the alias for barrak obama but i do
+// want it site wide if we have identified the entity i would like a synopsis of who it is and
+// how it pertains to that post if there is any clarity on that front." Every certified alias of
+// every certified entity now gets a token — full names ("Hussein", "Barack Obama") included, not
+// only shorthand. The mechanism does not change: still post-scoped, still one insertion point
+// (applyGlossary), still the same per-post disambiguation for a name with competing readings.
 //
 // Two populations, one lookup:
 //   certified entities   entities.json — alias -> canonical, type, mention count
@@ -27,11 +33,9 @@ const entities = JSON.parse(fs.readFileSync(path.join(DATA, 'entities.json'), 'u
 const glossPath = path.join(ROOT, 'audit', 'notation-glossary.json')
 const glosses = fs.existsSync(glossPath) ? JSON.parse(fs.readFileSync(glossPath, 'utf8')).glosses ?? [] : []
 
-// Only shorthand needs explaining. "Hillary Clinton" spelled out explains itself, and glossing
-// every ordinary name would put a popover on half the corpus.
-// Two-word all-caps names count too: "WASH POST" is one entity, and excluding it would leave
-// the name the owner just asked to join with no info box at all.
-const isShorthand = t => /^[A-Z0-9][A-Z0-9._+/-]{0,6}$/.test(t) || /^[A-Z]\.[A-Z]\.?$/.test(t) || /^[A-Z][a-z]+ [A-Z]$/.test(t) || /^[A-Z]{2,8} [A-Z][A-Za-z]{1,10}$/.test(t)
+// FORMERLY gated to isShorthand(text) — "Hillary Clinton spelled out explains itself" — which
+// excluded every full name. Removed by the 2026-08-26 broadening; every certified alias, short
+// or long, now becomes a token. See the file header for the ruling.
 
 // Reader-facing category names. A type missing from here falls back to "Named entity", which is
 // not wrong but says nothing — the Black Lives Matter correction landed on political_group and the
@@ -96,12 +100,15 @@ const literalCache = new Map()
 for (const e of entities) {
   for (const a of e.aliases ?? []) {
     const text = a.text
-    if (!text || text === e.canonical || !isShorthand(text)) continue
+    if (!text) continue
     const ruled = ruledScope.get(`${e.canonical}|${text}`)
     if (!literalCache.has(text)) literalCache.set(text, literalPosts(text))
     const where = ruled
       ? literalCache.get(text).filter(n => ruled.has(n))
       : literalCache.get(text).filter(n => (e.posts ?? []).includes(n))
+    // A spelling with no literal occurrence on any of this entity's own posts resolves nowhere —
+    // publishing it would be a token nothing can ever match.
+    if (!where.length) continue
     add(text, {
       meaning: e.canonical,
       // The PERMANENT id, so the reader's info box can look up this entity's post-specific
