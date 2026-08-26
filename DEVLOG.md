@@ -7640,3 +7640,54 @@ paired with `-300`-level (more saturated, less white) text from the 2026-08-25 r
 `text-cyan-100`/`text-red-100` — backgrounds untouched, so the overlap rule is unaffected — and the
 text now reads the same near-white as everything else. Verified live via Playwright on #4742
 (brackets) and #4888 (the "H. Biden" entity from today's Hunter Biden merge). `tsc --noEmit` clean.
+
+## 2026-08-26 — Entity synopsis sweep, tier 4 (mentions 1–4, 1,140 entities, final mentions-based tier)
+
+**Request:** "lets move onto tear 4" — proceeding into the largest remaining slice of the synopsis
+sweep after the owner reviewed tiers 1–3 live.
+
+**Solution:** All 1,140 remaining mentions-1–4 entities, split into 29 batches of ~39 and researched
+via parallel background agents, same standard as tiers 1–3. Same special-case categories applied at
+scale: central/national banks and countries got short factual sentences; generic title_role/
+government_institution rows described the office, not one holder; registry quirks where the type
+label doesn't match the real thing (e.g. "Holy See" typed `person`, "Titanic" typed
+`military_asset_vessel`, "Law Day" typed `person`) were written as what the entity actually is,
+type field left alone; fictional/creative works marked as such (WarGames, The Matrix, The Godfather
+Part III) written as fiction; Q's own archive-specific coded_alias terms (Q Clearance Patriot,
+Wizards & Warlocks, VIP Patriot, obfuscated spellings like _4ch_n/_8ch_y/PAN-DEM-IC) written
+directly; bare surnames/first names resolved to the most contextually likely person, with genuine
+ambiguity (Maria, Alan, Wendy, Bakers, Romney's son) noted rather than forced; duplicate registry
+rows for the same real person/place (Dent/Charles W. Dent/Charlie Dent; JFK Conference Room/JFK Con
+Room) written consistently; obscure single-mention names given honest "cannot be verified"
+synopses rather than fabrication. Two validation failures on the first pass — "Côte d'Ivoire" and
+"The People's Bank of China" — both a curly-vs-straight apostrophe mismatch between research-agent
+output and the archive's stored spelling; fixed with a code-level normalization in the validation
+script rather than editing 29 files by hand. `scripts/build-owner-rulings-2026-08-26-synopses-
+tier4.mjs`. Full rebuild, SEED_VERSION 112 → 113, `certification-manifest.mjs --verify` clean,
+`tsc --noEmit` clean.
+**Discovered immediately after, not yet fixed at the time:** a coverage check (entity count vs.
+synopsis count) turned up 132 entities still missing a synopsis — every one with `mentions: 0`,
+meaning Q linked to it via a URL/source citation but never wrote its name directly in drop text.
+Every tier so far had queried on `mentions >= 1`, so this whole category was invisible to the sweep
+until now. Addressed immediately below as tier 5.
+
+## 2026-08-26 — Entity synopsis sweep, tier 5 (source-only, 132 entities, sweep complete)
+
+**Request:** Continuation of the same sweep — closing the source-only gap tier 4 exposed, so the
+full multi-session synopsis project ("yes lets finish 1" → tier 2 → tier 3 → tier 4) actually
+reaches "every certified entity has a real hover" rather than stopping one category short.
+
+**Solution:** Found via `entities.filter(e => mentions === 0 && no synopsis yet)` — 132 rows, split
+into 4 batches of ~32–34 and researched via parallel background agents. Almost entirely real media
+outlets (Epoch Times, Zero Hedge, TMZ, The Lancet, Moscow Times, etc.), real people (Marsha
+Blackburn, Tucker Carlson, Rudy Giuliani, Shannon Bream, etc.), and a handful of Twitter/X handles
+resolved to their real owner where confidently known (@GeorgePapa19 → George Papadopoulos,
+@Scavino45 → Dan Scavino) or left honestly unresolved where not (@michaelbeatty3, @M2Madness). A
+few names (Rochelle Coombs, Greg Kotseos, Tito Calloway, Titus Nation, Bill Slater, Todd Penley,
+Lars Printzen, Daniel Pressley) had no verifiable public record — written as honest
+"cannot-confirm" synopses rather than fabricated. All 132 passed the QA gate on the first pass.
+`scripts/build-owner-rulings-2026-08-26-synopses-tier5-sourceonly.mjs`. Full rebuild, SEED_VERSION
+113 → 114, `certification-manifest.mjs --verify` clean, `tsc --noEmit` clean. Confirmed full
+coverage directly against `entity-hovers.json`'s `totals.entitiesWithGlobal` and the live
+`global` map: 1,622 of 1,622 certified entities now have a synopsis — 0 remaining. This closes the
+entity-synopsis sweep the owner opened across tiers 1–5.
