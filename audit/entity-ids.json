@@ -1,6 +1,6 @@
 {
  "note": "Immutable entity identity. An id is minted once and never derived from the canonical name, the type, the mention count or the row position — all of which legitimately change about an entity that is still the same entity. canonical and slug are attributes stored beside the id; previousCanonicals keeps every earlier or absorbed spelling resolving to it. auditEntityIds is the crosswalk to the ENT-#### numbers used by the 2026-08-16 hover audit, which were positional and must never be stored as identity.",
- "minted": 1810,
+ "minted": 1841,
  "entries": {
   "qe-e4b9b2985b7c": {
    "canonical": "United States",
@@ -13723,6 +13723,192 @@
   "qe-21f56aeb1ef3": {
    "canonical": "Vault 7",
    "slug": "vault-7",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-a56f76c6ac6a": {
+   "canonical": "HuffPo",
+   "slug": "huffpo",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-2355b6b6c443": {
+   "canonical": "Buzzfeed",
+   "slug": "buzzfeed-2355b6",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-07d56f0f5765": {
+   "canonical": "LAT",
+   "slug": "lat",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-83a0325c2d43": {
+   "canonical": "New Yorker",
+   "slug": "new-yorker",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-6e107898fd4b": {
+   "canonical": "Ben Smith",
+   "slug": "ben-smith",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-30fdc4d56467": {
+   "canonical": "Ruby Cramer",
+   "slug": "ruby-cramer",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-762d4ad77746": {
+   "canonical": "Gayle King",
+   "slug": "gayle-king",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-8f32b60fbf7a": {
+   "canonical": "AURN",
+   "slug": "aurn",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-8db42a2f97d0": {
+   "canonical": "April Ryan",
+   "slug": "april-ryan",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-b947eb216f5e": {
+   "canonical": "Jonathan Alter",
+   "slug": "jonathan-alter",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-bc06cc9ddf5a": {
+   "canonical": "GPG",
+   "slug": "gpg",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-1b22567b6fd1": {
+   "canonical": "Mike Feldman",
+   "slug": "mike-feldman",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-2466b4af6c00": {
+   "canonical": "Amanda Terkel",
+   "slug": "amanda-terkel",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-ba1c6ef92eea": {
+   "canonical": "Arianna Huffington",
+   "slug": "arianna-huffington",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-75be73c02fe0": {
+   "canonical": "Sam Stein",
+   "slug": "sam-stein",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-c714045631fd": {
+   "canonical": "Whitney Snyder",
+   "slug": "whitney-snyder",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-b5b833db00d8": {
+   "canonical": "Evan Handler",
+   "slug": "evan-handler",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-7bb3ed56a0b3": {
+   "canonical": "Mike Memoli",
+   "slug": "mike-memoli",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-df8ff87a5e36": {
+   "canonical": "McClatchy",
+   "slug": "mcclatchy",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-c84a4dc1cbd0": {
+   "canonical": "Anita Kumar",
+   "slug": "anita-kumar",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-74a000cad9fe": {
+   "canonical": "MORE",
+   "slug": "more",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-7fdfa9aff195": {
+   "canonical": "Betsy Fisher Martin",
+   "slug": "betsy-fisher-martin",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-09b59345cc2a": {
+   "canonical": "National Journal",
+   "slug": "national-journal",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-6268825e021e": {
+   "canonical": "Emily Schultheis",
+   "slug": "emily-schultheis",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-cccc95afbe20": {
+   "canonical": "David Remnick",
+   "slug": "david-remnick",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-471d18693bdb": {
+   "canonical": "Ryan Liza",
+   "slug": "ryan-liza",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-d67c102f50c5": {
+   "canonical": "People",
+   "slug": "people",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-bd408e0c8642": {
+   "canonical": "Sandra Sobieraj Westfall",
+   "slug": "sandra-sobieraj-westfall",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-8c23d918b7ac": {
+   "canonical": "Tina Brown",
+   "slug": "tina-brown",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-25b87e8de5fb": {
+   "canonical": "Univision",
+   "slug": "univision",
+   "previousCanonicals": [],
+   "auditEntityIds": []
+  },
+  "qe-c8fa0a1c60cb": {
+   "canonical": "Maria-Elena Salinas",
+   "slug": "maria-elena-salinas",
    "previousCanonicals": [],
    "auditEntityIds": []
   }

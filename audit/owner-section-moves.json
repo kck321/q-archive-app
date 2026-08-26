@@ -2,8 +2,8 @@
  "note": "Spans the owner moved between sections, on 2026-08-24. Layered over the base certified artifacts by apply-claims.mjs and apply-directives.mjs — never written into them, because a correction inside a re-derivable artifact is erased the next time its audit runs.",
  "ruledOn": "2026-08-24",
  "totals": {
-  "moves": 32,
-  "outOfClaims": 23,
+  "moves": 52,
+  "outOfClaims": 43,
   "outOfDirectives": 2,
   "intoClaims": 4,
   "intoPredictions": 15,
@@ -409,6 +409,246 @@
    "ruledOn": "2026-08-25",
    "ruling": "i want air (that's not categorized) higlighted as a claim",
    "why": "The line directly under WATER in the same list, certified in no section. Same shape as every other item on it."
+  },
+  {
+   "postNum": 1515,
+   "from": "claims",
+   "to": "entities",
+   "text": "Buzzfeed – Ben Smith",
+   "ruledOn": "2026-08-26",
+   "ruling": "in post 1515 all these are reporters you have a handfull listed as a claim and some aren't even listed as an entity. lets fix this",
+   "why": "A row of #1515's WikiLeaks-named-reporters roll, \"OUTLET – Name\" per line. It names an outlet and a person and is now certified as both, split (see audit/entities-owner-rulings.json, 2026-08-26). A list row is not an assertion the drop is making, so it leaves Claims and nothing is added here — the entities are certified separately. ",
+   "certifiedAs": [
+    "Buzzfeed – Ben Smith"
+   ]
+  },
+  {
+   "postNum": 1515,
+   "from": "claims",
+   "to": "entities",
+   "text": "Buzzfeed – Ruby Cramer",
+   "ruledOn": "2026-08-26",
+   "ruling": "in post 1515 all these are reporters you have a handfull listed as a claim and some aren't even listed as an entity. lets fix this",
+   "why": "A row of #1515's WikiLeaks-named-reporters roll, \"OUTLET – Name\" per line. It names an outlet and a person and is now certified as both, split (see audit/entities-owner-rulings.json, 2026-08-26). A list row is not an assertion the drop is making, so it leaves Claims and nothing is added here — the entities are certified separately. ",
+   "certifiedAs": [
+    "Buzzfeed – Ruby Cramer"
+   ]
+  },
+  {
+   "postNum": 1515,
+   "from": "claims",
+   "to": "entities",
+   "text": "CBS – Gayle King",
+   "ruledOn": "2026-08-26",
+   "ruling": "in post 1515 all these are reporters you have a handfull listed as a claim and some aren't even listed as an entity. lets fix this",
+   "why": "A row of #1515's WikiLeaks-named-reporters roll, \"OUTLET – Name\" per line. It names an outlet and a person and is now certified as both, split (see audit/entities-owner-rulings.json, 2026-08-26). A list row is not an assertion the drop is making, so it leaves Claims and nothing is added here — the entities are certified separately. CBS was already certified corpus-wide.",
+   "certifiedAs": [
+    "CBS – Gayle King"
+   ]
+  },
+  {
+   "postNum": 1515,
+   "from": "claims",
+   "to": "entities",
+   "text": "AURN – April Ryan",
+   "ruledOn": "2026-08-26",
+   "ruling": "in post 1515 all these are reporters you have a handfull listed as a claim and some aren't even listed as an entity. lets fix this",
+   "why": "A row of #1515's WikiLeaks-named-reporters roll, \"OUTLET – Name\" per line. It names an outlet and a person and is now certified as both, split (see audit/entities-owner-rulings.json, 2026-08-26). A list row is not an assertion the drop is making, so it leaves Claims and nothing is added here — the entities are certified separately. ",
+   "certifiedAs": [
+    "AURN – April Ryan"
+   ]
+  },
+  {
+   "postNum": 1515,
+   "from": "claims",
+   "to": "entities",
+   "text": "Bloomberg/MSNBC – Jonathan Alter",
+   "ruledOn": "2026-08-26",
+   "ruling": "in post 1515 all these are reporters you have a handfull listed as a claim and some aren't even listed as an entity. lets fix this",
+   "why": "A row of #1515's WikiLeaks-named-reporters roll, \"OUTLET – Name\" per line. It names an outlet and a person and is now certified as both, split (see audit/entities-owner-rulings.json, 2026-08-26). A list row is not an assertion the drop is making, so it leaves Claims and nothing is added here — the entities are certified separately. Bloomberg and MSNBC were already certified corpus-wide.",
+   "certifiedAs": [
+    "Bloomberg/MSNBC – Jonathan Alter"
+   ]
+  },
+  {
+   "postNum": 1515,
+   "from": "claims",
+   "to": "entities",
+   "text": "GPG – Mike Feldman",
+   "ruledOn": "2026-08-26",
+   "ruling": "in post 1515 all these are reporters you have a handfull listed as a claim and some aren't even listed as an entity. lets fix this",
+   "why": "A row of #1515's WikiLeaks-named-reporters roll, \"OUTLET – Name\" per line. It names an outlet and a person and is now certified as both, split (see audit/entities-owner-rulings.json, 2026-08-26). A list row is not an assertion the drop is making, so it leaves Claims and nothing is added here — the entities are certified separately. ",
+   "certifiedAs": [
+    "GPG – Mike Feldman"
+   ]
+  },
+  {
+   "postNum": 1515,
+   "from": "claims",
+   "to": "entities",
+   "text": "HuffPo – Amanda Terkel",
+   "ruledOn": "2026-08-26",
+   "ruling": "in post 1515 all these are reporters you have a handfull listed as a claim and some aren't even listed as an entity. lets fix this",
+   "why": "A row of #1515's WikiLeaks-named-reporters roll, \"OUTLET – Name\" per line. It names an outlet and a person and is now certified as both, split (see audit/entities-owner-rulings.json, 2026-08-26). A list row is not an assertion the drop is making, so it leaves Claims and nothing is added here — the entities are certified separately. ",
+   "certifiedAs": [
+    "HuffPo – Amanda Terkel"
+   ]
+  },
+  {
+   "postNum": 1515,
+   "from": "claims",
+   "to": "entities",
+   "text": "HuffPo – Arianna Huffington",
+   "ruledOn": "2026-08-26",
+   "ruling": "in post 1515 all these are reporters you have a handfull listed as a claim and some aren't even listed as an entity. lets fix this",
+   "why": "A row of #1515's WikiLeaks-named-reporters roll, \"OUTLET – Name\" per line. It names an outlet and a person and is now certified as both, split (see audit/entities-owner-rulings.json, 2026-08-26). A list row is not an assertion the drop is making, so it leaves Claims and nothing is added here — the entities are certified separately. ",
+   "certifiedAs": [
+    "HuffPo – Arianna Huffington"
+   ]
+  },
+  {
+   "postNum": 1515,
+   "from": "claims",
+   "to": "entities",
+   "text": "HuffPo – Sam Stein",
+   "ruledOn": "2026-08-26",
+   "ruling": "in post 1515 all these are reporters you have a handfull listed as a claim and some aren't even listed as an entity. lets fix this",
+   "why": "A row of #1515's WikiLeaks-named-reporters roll, \"OUTLET – Name\" per line. It names an outlet and a person and is now certified as both, split (see audit/entities-owner-rulings.json, 2026-08-26). A list row is not an assertion the drop is making, so it leaves Claims and nothing is added here — the entities are certified separately. ",
+   "certifiedAs": [
+    "HuffPo – Sam Stein"
+   ]
+  },
+  {
+   "postNum": 1515,
+   "from": "claims",
+   "to": "entities",
+   "text": "HuffPo – Whitney Snyder",
+   "ruledOn": "2026-08-26",
+   "ruling": "in post 1515 all these are reporters you have a handfull listed as a claim and some aren't even listed as an entity. lets fix this",
+   "why": "A row of #1515's WikiLeaks-named-reporters roll, \"OUTLET – Name\" per line. It names an outlet and a person and is now certified as both, split (see audit/entities-owner-rulings.json, 2026-08-26). A list row is not an assertion the drop is making, so it leaves Claims and nothing is added here — the entities are certified separately. ",
+   "certifiedAs": [
+    "HuffPo – Whitney Snyder"
+   ]
+  },
+  {
+   "postNum": 1515,
+   "from": "claims",
+   "to": "entities",
+   "text": "LAT – Evan Handler",
+   "ruledOn": "2026-08-26",
+   "ruling": "in post 1515 all these are reporters you have a handfull listed as a claim and some aren't even listed as an entity. lets fix this",
+   "why": "A row of #1515's WikiLeaks-named-reporters roll, \"OUTLET – Name\" per line. It names an outlet and a person and is now certified as both, split (see audit/entities-owner-rulings.json, 2026-08-26). A list row is not an assertion the drop is making, so it leaves Claims and nothing is added here — the entities are certified separately. ",
+   "certifiedAs": [
+    "LAT – Evan Handler"
+   ]
+  },
+  {
+   "postNum": 1515,
+   "from": "claims",
+   "to": "entities",
+   "text": "LAT – Mike Memoli",
+   "ruledOn": "2026-08-26",
+   "ruling": "in post 1515 all these are reporters you have a handfull listed as a claim and some aren't even listed as an entity. lets fix this",
+   "why": "A row of #1515's WikiLeaks-named-reporters roll, \"OUTLET – Name\" per line. It names an outlet and a person and is now certified as both, split (see audit/entities-owner-rulings.json, 2026-08-26). A list row is not an assertion the drop is making, so it leaves Claims and nothing is added here — the entities are certified separately. ",
+   "certifiedAs": [
+    "LAT – Mike Memoli"
+   ]
+  },
+  {
+   "postNum": 1515,
+   "from": "claims",
+   "to": "entities",
+   "text": "McClatchy – Anita Kumar",
+   "ruledOn": "2026-08-26",
+   "ruling": "in post 1515 all these are reporters you have a handfull listed as a claim and some aren't even listed as an entity. lets fix this",
+   "why": "A row of #1515's WikiLeaks-named-reporters roll, \"OUTLET – Name\" per line. It names an outlet and a person and is now certified as both, split (see audit/entities-owner-rulings.json, 2026-08-26). A list row is not an assertion the drop is making, so it leaves Claims and nothing is added here — the entities are certified separately. ",
+   "certifiedAs": [
+    "McClatchy – Anita Kumar"
+   ]
+  },
+  {
+   "postNum": 1515,
+   "from": "claims",
+   "to": "entities",
+   "text": "MORE – Betsy Fisher Martin",
+   "ruledOn": "2026-08-26",
+   "ruling": "in post 1515 all these are reporters you have a handfull listed as a claim and some aren't even listed as an entity. lets fix this",
+   "why": "A row of #1515's WikiLeaks-named-reporters roll, \"OUTLET – Name\" per line. It names an outlet and a person and is now certified as both, split (see audit/entities-owner-rulings.json, 2026-08-26). A list row is not an assertion the drop is making, so it leaves Claims and nothing is added here — the entities are certified separately. ",
+   "certifiedAs": [
+    "MORE – Betsy Fisher Martin"
+   ]
+  },
+  {
+   "postNum": 1515,
+   "from": "claims",
+   "to": "entities",
+   "text": "National Journal – Emily Schultheis",
+   "ruledOn": "2026-08-26",
+   "ruling": "in post 1515 all these are reporters you have a handfull listed as a claim and some aren't even listed as an entity. lets fix this",
+   "why": "A row of #1515's WikiLeaks-named-reporters roll, \"OUTLET – Name\" per line. It names an outlet and a person and is now certified as both, split (see audit/entities-owner-rulings.json, 2026-08-26). A list row is not an assertion the drop is making, so it leaves Claims and nothing is added here — the entities are certified separately. ",
+   "certifiedAs": [
+    "National Journal – Emily Schultheis"
+   ]
+  },
+  {
+   "postNum": 1515,
+   "from": "claims",
+   "to": "entities",
+   "text": "New Yorker – David Remnick",
+   "ruledOn": "2026-08-26",
+   "ruling": "in post 1515 all these are reporters you have a handfull listed as a claim and some aren't even listed as an entity. lets fix this",
+   "why": "A row of #1515's WikiLeaks-named-reporters roll, \"OUTLET – Name\" per line. It names an outlet and a person and is now certified as both, split (see audit/entities-owner-rulings.json, 2026-08-26). A list row is not an assertion the drop is making, so it leaves Claims and nothing is added here — the entities are certified separately. ",
+   "certifiedAs": [
+    "New Yorker – David Remnick"
+   ]
+  },
+  {
+   "postNum": 1515,
+   "from": "claims",
+   "to": "entities",
+   "text": "New Yorker – Ryan Liza",
+   "ruledOn": "2026-08-26",
+   "ruling": "in post 1515 all these are reporters you have a handfull listed as a claim and some aren't even listed as an entity. lets fix this",
+   "why": "A row of #1515's WikiLeaks-named-reporters roll, \"OUTLET – Name\" per line. It names an outlet and a person and is now certified as both, split (see audit/entities-owner-rulings.json, 2026-08-26). A list row is not an assertion the drop is making, so it leaves Claims and nothing is added here — the entities are certified separately. ",
+   "certifiedAs": [
+    "New Yorker – Ryan Liza"
+   ]
+  },
+  {
+   "postNum": 1515,
+   "from": "claims",
+   "to": "entities",
+   "text": "People – Sandra Sobieraj Westfall",
+   "ruledOn": "2026-08-26",
+   "ruling": "in post 1515 all these are reporters you have a handfull listed as a claim and some aren't even listed as an entity. lets fix this",
+   "why": "A row of #1515's WikiLeaks-named-reporters roll, \"OUTLET – Name\" per line. It names an outlet and a person and is now certified as both, split (see audit/entities-owner-rulings.json, 2026-08-26). A list row is not an assertion the drop is making, so it leaves Claims and nothing is added here — the entities are certified separately. ",
+   "certifiedAs": [
+    "People – Sandra Sobieraj Westfall"
+   ]
+  },
+  {
+   "postNum": 1515,
+   "from": "claims",
+   "to": "entities",
+   "text": "Tina Brown – Tina Brown",
+   "ruledOn": "2026-08-26",
+   "ruling": "in post 1515 all these are reporters you have a handfull listed as a claim and some aren't even listed as an entity. lets fix this",
+   "why": "A row of #1515's WikiLeaks-named-reporters roll, \"OUTLET – Name\" per line. It names an outlet and a person and is now certified as both, split (see audit/entities-owner-rulings.json, 2026-08-26). A list row is not an assertion the drop is making, so it leaves Claims and nothing is added here — the entities are certified separately. The outlet and the person are the same name here; one entity covers both.",
+   "certifiedAs": [
+    "Tina Brown – Tina Brown"
+   ]
+  },
+  {
+   "postNum": 1515,
+   "from": "claims",
+   "to": "entities",
+   "text": "Univision – Maria-Elena Salinas",
+   "ruledOn": "2026-08-26",
+   "ruling": "in post 1515 all these are reporters you have a handfull listed as a claim and some aren't even listed as an entity. lets fix this",
+   "why": "A row of #1515's WikiLeaks-named-reporters roll, \"OUTLET – Name\" per line. It names an outlet and a person and is now certified as both, split (see audit/entities-owner-rulings.json, 2026-08-26). A list row is not an assertion the drop is making, so it leaves Claims and nothing is added here — the entities are certified separately. ",
+   "certifiedAs": [
+    "Univision – Maria-Elena Salinas"
+   ]
   }
  ]
 }

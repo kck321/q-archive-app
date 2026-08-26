@@ -153,7 +153,12 @@ export const CANONICAL = {
   // 10,247 -> 10,237 on 2026-08-24: the ten Red October / Delta lines that were Claims are
   // Predictions now.
   // +2 on 2026-08-25: #1010's WATER/AIR owner ruling.
-  claims: { occurrences: 10239, distinct: 7777, posts: 3223 },
+  // -20 on 2026-08-26: #1515's reporter-roll withdrawal — 20 "OUTLET – Name" lines leave Claims
+  // once the entities are certified separately (audit/entities-owner-rulings.json, same day).
+  // distinct/posts re-measured directly against the finished bundle (after retire-sections.mjs,
+  // apply-scripture-blocks.mjs etc., which also move claim rows) rather than carried forward from
+  // apply-claims.mjs's own immediate output.
+  claims: { occurrences: 10219, distinct: 7899, posts: 3220 },
   // 630 -> 595: -73 technical nonpredictions, -56 arguable rows withdrawn to the review
   // backlog, +66 unique moves from Claims, +28 high-confidence predictions the extractor
   // missed. posts 520 -> 490. The 91 withdrawn/held rows are NOT deleted — they sit in
@@ -279,7 +284,12 @@ export const CANONICAL = {
     // span extensions on an existing canonical (never counted here) and the sixth, #4926's CIA,
     // lands on the existing Central Intelligence Agency row (counted in `ownerMentions`, a
     // different tally, not this one).
-    canonical: 1587, detectedCanonical: 1292, ownerRulings: 124, ownerMerges: 2, queueRulings: 1007,
+    // 1,587 -> 1,618 on 2026-08-26: #1515's reporter-roll ruling mints 31 new canonicals (11
+    // outlets, 20 people) — the 20 "OUTLET – Name" lines that were certified as a single Claim
+    // instead of getting entity treatment. ownerRulings 124 -> 155 (31 new canonicals + 6
+    // additionalOccurrence rulings on repeated outlets = 37 ruling rows, matching
+    // apply-entities.mjs's `ownerAdded`).
+    canonical: 1618, detectedCanonical: 1292, ownerRulings: 155, ownerMerges: 2, queueRulings: 1007,
     /** Every resolved mention across all 1,334 certified entities. The headline figure. */
     // 8,227 -> 8,239: the RC alias ruling resolved 12 occurrences to Rachel Chandler. The merge
     // moved 4 mentions from the absorbed row onto hers and added none.
@@ -363,7 +373,10 @@ export const CANONICAL = {
     // while conjoining #3778/#4935's titles. 82 - 4 = 78.
     // 9,608 -> 9,792 on 2026-08-25, a third batch: +184 from the bracket "[D]"/"[R]" party ruling
     // (103 + 7 posts, six-reviewer occurrence-by-occurrence census).
-    mentions: 9792,
+    // 9,792 -> 9,829 on 2026-08-26: +37, #1515's reporter-roll ruling. All 37 land on owner-ruling
+    // rows (new canonicals or additionalOccurrence increments) — core (5,579) and tail (3,042) are
+    // untouched, so 5,579 + 3,042 + 1,208 = 9,829.
+    mentions: 9829,
     /** How it is composed. The core figure is the section's history, not its headline. */
     // tailEntities is what the tail adjudication produced (1,239); one of them, Ray Chandler,
     // now ships merged into Rachel Chandler, so 1,238 tail rows appear in the artifact.

@@ -1,7 +1,7 @@
 {
  "breakdown": [
   {
-   "count": 1453,
+   "count": 1484,
    "key": "prose",
    "label": "named in Q’s prose"
   },
@@ -45,6 +45,26 @@
    ],
    "label": "Alice",
    "rowId": "qe-e01fe208ebaa"
+  },
+  {
+   "identities": [
+    {
+     "canonical": "BuzzFeed",
+     "mentions": 2,
+     "posts": 2
+    },
+    {
+     "canonical": "Buzzfeed",
+     "mentions": 2,
+     "posts": 1
+    }
+   ],
+   "identityIds": [
+    "qe-9bee875e94c2",
+    "qe-2355b6b6c443"
+   ],
+   "label": "BuzzFeed",
+   "rowId": "qe-9bee875e94c2"
   },
   {
    "identities": [
@@ -972,6 +992,17 @@
    "posts": 5,
    "rowId": "qe-07c4382e568e"
   },
+  "qe-07d56f0f5765": {
+   "aliasPosts": {
+    "LAT": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 2
+   },
+   "posts": 1,
+   "rowId": "qe-07d56f0f5765"
+  },
   "qe-07f466e45a27": {
    "aliasPosts": {
     "Argentina": 1
@@ -1177,6 +1208,17 @@
    },
    "posts": 1,
    "rowId": "qe-09886649e991"
+  },
+  "qe-09b59345cc2a": {
+   "aliasPosts": {
+    "National Journal": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-09b59345cc2a"
   },
   "qe-09f72af3159d": {
    "aliasPosts": {
@@ -2533,6 +2575,17 @@
    "posts": 1,
    "rowId": "qe-1b1d8e954412"
   },
+  "qe-1b22567b6fd1": {
+   "aliasPosts": {
+    "Mike Feldman": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-1b22567b6fd1"
+  },
   "qe-1b4b6e4a0c28": {
    "aliasPosts": {
     "Reserve Bank of Australia": 1
@@ -3288,6 +3341,17 @@
    "posts": 1,
    "rowId": "qe-23403a5e15c0"
   },
+  "qe-2355b6b6c443": {
+   "aliasPosts": {
+    "Buzzfeed": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 2
+   },
+   "posts": 1,
+   "rowId": "qe-9bee875e94c2"
+  },
   "qe-239ca8bd721e": {
    "aliasPosts": {
     "Bank of Guyana": 1
@@ -3486,6 +3550,17 @@
    "posts": 1,
    "rowId": "qe-2450aea25576"
   },
+  "qe-2466b4af6c00": {
+   "aliasPosts": {
+    "Amanda Terkel": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-2466b4af6c00"
+  },
   "qe-24ebee39ed01": {
    "aliasPosts": {
     "Lesotho": 1
@@ -3619,6 +3694,17 @@
    },
    "posts": 1,
    "rowId": "qe-25b719dfbe6c"
+  },
+  "qe-25b87e8de5fb": {
+   "aliasPosts": {
+    "Univision": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-25b87e8de5fb"
   },
   "qe-25c57ca3838c": {
    "aliasPosts": {
@@ -5178,6 +5264,17 @@
    },
    "posts": 82,
    "rowId": "qe-30f4e75293aa"
+  },
+  "qe-30fdc4d56467": {
+   "aliasPosts": {
+    "Ruby Cramer": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-30fdc4d56467"
   },
   "qe-3108d68923a0": {
    "aliasPosts": {
@@ -7104,6 +7201,17 @@
    },
    "posts": 1,
    "rowId": "qe-46de0d1e7f93"
+  },
+  "qe-471d18693bdb": {
+   "aliasPosts": {
+    "Ryan Liza": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-471d18693bdb"
   },
   "qe-47254187e336": {
    "aliasPosts": {
@@ -9633,6 +9741,17 @@
    "posts": 1,
    "rowId": "qe-62666d455b71"
   },
+  "qe-6268825e021e": {
+   "aliasPosts": {
+    "Emily Schultheis": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-6268825e021e"
+  },
   "qe-6278cb896017": {
    "aliasPosts": {
     "The People’s Bank of China": 1
@@ -10644,6 +10763,17 @@
    "posts": 1,
    "rowId": "qe-6e0412301215"
   },
+  "qe-6e107898fd4b": {
+   "aliasPosts": {
+    "Ben Smith": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-6e107898fd4b"
+  },
   "qe-6e26689d7751": {
    "kind": "source_only",
    "posts": 0,
@@ -11001,6 +11131,17 @@
    "posts": 3,
    "rowId": "qe-74037c4ff506"
   },
+  "qe-74a000cad9fe": {
+   "aliasPosts": {
+    "MORE": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-74a000cad9fe"
+  },
   "qe-74b6d1b3e954": {
    "aliasPosts": {
     "SFO": 1
@@ -11082,6 +11223,17 @@
    "posts": 1,
    "rowId": "qe-75abcf44604a"
   },
+  "qe-75be73c02fe0": {
+   "aliasPosts": {
+    "Sam Stein": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-75be73c02fe0"
+  },
   "qe-75d5eb424ac5": {
    "aliasPosts": {
     "SP": 2
@@ -11145,6 +11297,17 @@
    },
    "posts": 7,
    "rowId": "qe-760ea1772348"
+  },
+  "qe-762d4ad77746": {
+   "aliasPosts": {
+    "Gayle King": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-762d4ad77746"
   },
   "qe-764ce51d43b2": {
    "aliasPosts": {
@@ -11681,6 +11844,17 @@
    "posts": 1,
    "rowId": "qe-7b92dffbaf4b"
   },
+  "qe-7bb3ed56a0b3": {
+   "aliasPosts": {
+    "Mike Memoli": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-7bb3ed56a0b3"
+  },
   "qe-7bd384d179d9": {
    "aliasPosts": {
     "Swiss National Bank": 1
@@ -12178,6 +12352,17 @@
    },
    "posts": 2,
    "rowId": "qe-7fde43048a1e"
+  },
+  "qe-7fdfa9aff195": {
+   "aliasPosts": {
+    "Betsy Fisher Martin": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-7fdfa9aff195"
   },
   "qe-7feeff7362e0": {
    "aliasPosts": {
@@ -12787,6 +12972,17 @@
    "posts": 29,
    "rowId": "qe-838607b59e0a"
   },
+  "qe-83a0325c2d43": {
+   "aliasPosts": {
+    "New Yorker": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 2
+   },
+   "posts": 1,
+   "rowId": "qe-83a0325c2d43"
+  },
   "qe-83f99db9f924": {
    "kind": "source_only",
    "posts": 0,
@@ -13367,6 +13563,17 @@
    "posts": 1,
    "rowId": "qe-8c1439131044"
   },
+  "qe-8c23d918b7ac": {
+   "aliasPosts": {
+    "Tina Brown": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-8c23d918b7ac"
+  },
   "qe-8c25bdd604b1": {
    "aliasPosts": {
     "Apple Inc.": 1
@@ -13631,6 +13838,17 @@
    "posts": 1,
    "rowId": "qe-8da6cdc79791"
   },
+  "qe-8db42a2f97d0": {
+   "aliasPosts": {
+    "April Ryan": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-8db42a2f97d0"
+  },
   "qe-8dc54bc376d7": {
    "aliasPosts": {
     "CS": 4,
@@ -13780,6 +13998,17 @@
    },
    "posts": 1,
    "rowId": "qe-8f2804107d9f"
+  },
+  "qe-8f32b60fbf7a": {
+   "aliasPosts": {
+    "AURN": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-8f32b60fbf7a"
   },
   "qe-8fc3d58fafb6": {
    "aliasPosts": {
@@ -15852,6 +16081,17 @@
    "posts": 2,
    "rowId": "qe-a54ddc12fea9"
   },
+  "qe-a56f76c6ac6a": {
+   "aliasPosts": {
+    "HuffPo": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 4
+   },
+   "posts": 1,
+   "rowId": "qe-a56f76c6ac6a"
+  },
   "qe-a59e5b6d633d": {
    "aliasPosts": {
     "IFRC": 1
@@ -17165,6 +17405,17 @@
    "posts": 1,
    "rowId": "qe-b5a45db8d6b0"
   },
+  "qe-b5b833db00d8": {
+   "aliasPosts": {
+    "Evan Handler": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-b5b833db00d8"
+  },
   "qe-b5e106b15694": {
    "aliasPosts": {
     "Bangko Sentral ng Pilipinas": 1
@@ -17544,6 +17795,17 @@
    "posts": 1,
    "rowId": "qe-b9446aa2ab6f"
   },
+  "qe-b947eb216f5e": {
+   "aliasPosts": {
+    "Jonathan Alter": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-b947eb216f5e"
+  },
   "qe-b99c97767c77": {
    "kind": "source_only",
    "posts": 0,
@@ -17578,6 +17840,17 @@
    },
    "posts": 2,
    "rowId": "qe-6889e8485216"
+  },
+  "qe-ba1c6ef92eea": {
+   "aliasPosts": {
+    "Arianna Huffington": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-ba1c6ef92eea"
   },
   "qe-ba4129c9665d": {
    "aliasPosts": {
@@ -17773,6 +18046,17 @@
    "posts": 1,
    "rowId": "qe-bbf1df7d1e50"
   },
+  "qe-bc06cc9ddf5a": {
+   "aliasPosts": {
+    "GPG": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-bc06cc9ddf5a"
+  },
   "qe-bcb1d1b2970f": {
    "aliasPosts": {
     "Investigators.": 1
@@ -17814,6 +18098,17 @@
      "post": 4552
     }
    ]
+  },
+  "qe-bd408e0c8642": {
+   "aliasPosts": {
+    "Sandra Sobieraj Westfall": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-bd408e0c8642"
   },
   "qe-bd6a74b04e4b": {
    "aliasPosts": {
@@ -18529,6 +18824,17 @@
    "posts": 2,
    "rowId": "qe-c6b50e69b504"
   },
+  "qe-c714045631fd": {
+   "aliasPosts": {
+    "Whitney Snyder": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-c714045631fd"
+  },
   "qe-c78beb81ff8a": {
    "aliasPosts": {
     "JS": 4
@@ -18589,6 +18895,17 @@
    },
    "posts": 4,
    "rowId": "qe-c8330fb2eecc"
+  },
+  "qe-c84a4dc1cbd0": {
+   "aliasPosts": {
+    "Anita Kumar": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-c84a4dc1cbd0"
   },
   "qe-c8500713493a": {
    "aliasPosts": {
@@ -18653,6 +18970,17 @@
    },
    "posts": 2,
    "rowId": "qe-c8edf4a0658a"
+  },
+  "qe-c8fa0a1c60cb": {
+   "aliasPosts": {
+    "Maria-Elena Salinas": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-c8fa0a1c60cb"
   },
   "qe-c92352382b30": {
    "aliasPosts": {
@@ -19432,6 +19760,17 @@
    "posts": 1,
    "rowId": "qe-ccca026ad8f1"
   },
+  "qe-cccc95afbe20": {
+   "aliasPosts": {
+    "David Remnick": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-cccc95afbe20"
+  },
   "qe-ccf350286e63": {
    "aliasPosts": {
     "LifeLog": 5
@@ -20145,6 +20484,17 @@
    },
    "posts": 1,
    "rowId": "qe-d5d762457255"
+  },
+  "qe-d67c102f50c5": {
+   "aliasPosts": {
+    "People": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-d67c102f50c5"
   },
   "qe-d6868867fb4e": {
    "aliasPosts": {
@@ -21079,6 +21429,17 @@
    },
    "posts": 2,
    "rowId": "qe-df8fb90c2efd"
+  },
+  "qe-df8ff87a5e36": {
+   "aliasPosts": {
+    "McClatchy": 1
+   },
+   "kind": "prose",
+   "perPostMentions": {
+    "1515": 1
+   },
+   "posts": 1,
+   "rowId": "qe-df8ff87a5e36"
   },
   "qe-e009a8631960": {
    "aliasPosts": {
@@ -24993,14 +25354,14 @@
  "ruledOn": "2026-08-17",
  "sourceNote": "The post linked this source. It is not necessarily named in Q’s prose, and it is never counted as a mention.",
  "totals": {
-  "canonicalEntities": 1587,
+  "canonicalEntities": 1618,
   "dormantReserved": 226,
-  "mentions": 9792,
-  "mergedIdentities": 26,
-  "mergedRows": 11,
-  "proseMentioned": 1453,
-  "publicRows": 1572,
-  "repeatBadges": 1166,
+  "mentions": 9829,
+  "mergedIdentities": 28,
+  "mergedRows": 12,
+  "proseMentioned": 1484,
+  "publicRows": 1602,
+  "repeatBadges": 1170,
   "sourceOnly": 134,
   "sourcePostChips": 358,
   "unsettledAttributionsExcluded": 94

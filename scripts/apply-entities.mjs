@@ -1050,7 +1050,13 @@ const checks = [
   // row for a person the archive already knows is the duplicate-identity defect.
   // 123 -> 124: "Vault 7" (#836). Typed creative_work, like the Steele Dossier the archive already
   // carries — a named document release, not an organisation and not an event.
-  ['owner entity rulings applied = 124', ownerAdded === 124, ownerAdded],
+  // 124 -> 155 on 2026-08-26: #1515's reporter roll, 20 stragglers the 2026-08-24 pass ("65
+  // journalists and their outlets") missed — they were certified as one Claim (the whole
+  // "OUTLET – Name" line) instead of getting the entity treatment every other row on the list
+  // got. 31 new canonicals (11 outlets, 20 people; CBS/Bloomberg/MSNBC needed no new ruling,
+  // already certified corpus-wide) + 6 additionalOccurrence rulings (HuffPo x4, Buzzfeed/LAT/New
+  // Yorker x2 each on this post) = 37 ruling rows, 31 of them creating a canonical.
+  ['owner entity rulings applied = 155', ownerAdded === 155, ownerAdded],
   ['owner merge rulings applied = 1', ownerMerged === 1, ownerMerged],
   // 1,335 - 1: Ray Chandler is now an alias of Rachel Chandler, not a row of her own.
   // 1,445 -> 1,408: -19 rows merged away as duplicate canonicals, -18 rows withdrawn as
@@ -1066,7 +1072,8 @@ const checks = [
   // 1,804 -> 1,803 on 2026-08-25: the "Harris" merge. A separate "Harris" canonical (2 mentions,
   // #2854 and #4935) duplicated Kamala Harris — both occurrences are her, not a second Harris —
   // and one row is retired into the survivor.
-  ['canonical entities = 1,803', entities.length === 1803, entities.length],
+  // 1,803 -> 1,834 on 2026-08-26: +31 new canonicals from #1515's reporter-roll ruling above.
+  ['canonical entities = 1,834', entities.length === 1834, entities.length],
   // 8,227 + 12 RC. The merge moves 4 mentions between rows and adds none.
   // 9,786 -> 9,747: -39, the occurrences of the 18 withdrawn rows. The 17 merges move mentions
   // ACROSS rows and add none, so they are absent from this arithmetic by design — asserted
@@ -1115,7 +1122,9 @@ const checks = [
   // name: D-Day, Renegade code-names, delta markers, DARPA, a Coats/Declas letter-code — none of
   // those posts are in the ruling's includePosts. #4325 is occurrence-scoped to its one certified
   // "[D]"; its second, paired "[D]&[F]" occurrence is held, not counted.
-  ['resolved mentions = 10,886', totals.mentions === 10886, totals.mentions],
+  // 10,886 -> 10,923 on 2026-08-26: +37, every ruling row in #1515's reporter-roll batch — each
+  // one is exactly one occurrence, whether it creates a canonical or is an additionalOccurrence.
+  ['resolved mentions = 10,923', totals.mentions === 10923, totals.mentions],
   ['stage 1: 19 rows merged away', !stage1 || s1Merged === 19, s1Merged],
   ['stage 1: 85 types corrected', !stage1 || s1Typed === 85, s1Typed],
   // 18 in the audit, 17 applied: ENT-0709 "Non-profit organization" is HELD because it

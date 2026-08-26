@@ -1,18 +1,18 @@
 {
- "certifiedAt": "2026-08-26T04:31:07.445Z",
+ "certifiedAt": "2026-08-26T11:51:37.493Z",
  "sections": 8,
- "seedVersion": 104,
+ "seedVersion": 105,
  "note": "Every count here is recomputed from the artifacts, never copied forward. Verify with: node scripts/certification-manifest.mjs --verify",
  "counts": {
   "posts": 4966,
   "questions": 6327,
   "questionRowsShipped": 6643,
   "directives": 3333,
-  "claims": 10239,
+  "claims": 10219,
   "predictions": 950,
   "evidence": 6590,
-  "entitiesCanonical": 1587,
-  "entitiesMentions": 9792,
+  "entitiesCanonical": 1618,
+  "entitiesMentions": 9829,
   "entitiesCoreMentions": 5579,
   "entitiesTailMentions": 3042,
   "themes": 2685,
@@ -21,9 +21,9 @@
  },
  "artifacts": {
   "posts.json": {
-   "sha256": "ce12cd95b03541a76370a5393740c0096b17e2e4b3ca2211726ec2dadb8edb97",
-   "semanticSha256": "7e52980a11473e1729ed1125fbf130ee5ff6e2c0687e5687999c931d40634fa3",
-   "bytes": 10406601
+   "sha256": "bfab0fe8b05dfdf12a84d9cade451d39f164a7c7895211d75e3d7d0639ac8634",
+   "semanticSha256": "fb47cd5a1b1eb70445a4b7af8e7ca23be10b014ae1cf9fc71198aa41c261a837",
+   "bytes": 10402460
   },
   "questions.json": {
    "sha256": "9407140deb4f70b4ced88bd969da14167aa1a64d770c607c3b0b6f3047a17b01",
@@ -36,9 +36,9 @@
    "bytes": 2047538
   },
   "entities.json": {
-   "sha256": "0a7bd4446efb09c140a45f4ee7b1bddbfb8661b33e58576a44907c9542e8b4b4",
-   "semanticSha256": "b41e894a7cce6d96413589d36202d0b85f574a20d1ae5c35402b32c2519d313c",
-   "bytes": 531875
+   "sha256": "4e14771d506e2fb9722e9e1cbe7fdf5873ee5ce42613cc9f96a710f3260c0cff",
+   "semanticSha256": "8f1d0101cfb990078c340c0be5371a04e8e1975b23cb5d336ec658784da7ddfa",
+   "bytes": 546192
   },
   "themes.json": {
    "sha256": "1c081daf0aef13c0644e36bf82a64cddd46214cbe3d9e0ecbaf90727c8a7db9c",
@@ -56,19 +56,19 @@
    "bytes": 268828
   },
   "relationships.json": {
-   "sha256": "7799c45990b8c8e1267e5bcabc3c8484cda723c153500d11e6052eb02192cc70",
-   "semanticSha256": "4b07124107ed8ececb79b7cdf8b7beab011c010a68526c0cd9345bfc9b285ac7",
-   "bytes": 2362990
+   "sha256": "cdd2c4964f4903ccfdb4b6f15b1d5b086ff49077c9304def8566078a7d7ac7c8",
+   "semanticSha256": "83798bc79b3424a3a9c2f1972cf33c0923b3c5cd865f2b28d9a197594f4001b1",
+   "bytes": 2362989
   },
   "search-index.json": {
-   "sha256": "9372653a8fccdf7f5abf536b86d8d7ad7cc6fabe6f77febb61d50d507c5b1745",
-   "semanticSha256": "f458bbdd036b03977fc17ecfe1b03228a8f36cdd22adfbef7e182150a0fc1b6a",
-   "bytes": 8119320
+   "sha256": "c830ece3a57c43631fc34e1e0d20125769022b1884a7db7ca3d873822d0d4a12",
+   "semanticSha256": "a000b997d8bf9af0f19a67f83a8dd8bab279c2c00f424bb3f6aec8cb27023621",
+   "bytes": 8120454
   },
   "entity-hovers.json": {
-   "sha256": "b616b24babb76ebe86726009e7f1550bd2b6a516b41672d7a189455fa6631426",
-   "semanticSha256": "235f052fc4bf6767efdde6ac1f20f8be82b6e08fd6d87889a4c641f885f06c20",
-   "bytes": 2182022
+   "sha256": "897808c1e792b219d7746a1d59895440e3821216eb519e06b0aed9688218e59d",
+   "semanticSha256": "3b43da5f7a26c33ba4da8316a60c3fefedffabd6215b663b0b654e9d14ef83fa",
+   "bytes": 2185259
   }
  },
  "canonical": {
@@ -84,9 +84,9 @@
    "posts": 1928
   },
   "claims": {
-   "occurrences": 10239,
-   "distinct": 7777,
-   "posts": 3223
+   "occurrences": 10219,
+   "distinct": 7899,
+   "posts": 3220
   },
   "predictions": {
    "occurrences": 950,
@@ -97,12 +97,12 @@
    "posts": 3883
   },
   "entities": {
-   "canonical": 1587,
+   "canonical": 1618,
    "detectedCanonical": 1292,
-   "ownerRulings": 124,
+   "ownerRulings": 155,
    "ownerMerges": 2,
    "queueRulings": 1007,
-   "mentions": 9792,
+   "mentions": 9829,
    "coreEntities": 93,
    "coreRegistryMentions": 5579,
    "tailEntities": 970,

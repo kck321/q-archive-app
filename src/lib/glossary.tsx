@@ -16,7 +16,7 @@
 // READ-ONLY. Nothing here mutates certified data; the box has no controls.
 import { cloneElement, useEffect, useState, type ReactElement, type ReactNode } from 'react'
 import { HoverCard } from '../components/HoverCard'
-import { entityHoversSync, loadEntityHovers, postHoverFor, GRADE_LABEL, GRADE_STYLE, type SupportGrade } from './entityHovers'
+import { entityHoversSync, loadEntityHovers, postHoverFor, globalHoverFor, GRADE_LABEL, GRADE_STYLE, type SupportGrade } from './entityHovers'
 import { segmentGloss, multiWordTokens } from './glossSegments'
 import { occurrenceId, planSplitOccurrences } from './glossOccurrence'
 
@@ -114,6 +114,20 @@ export function glossFor(token: string, postNum: number, gloss = glossarySync())
 function InfoCard({ entry, token, postNum }: { entry: GlossEntry; token: string; postNum: number }) {
   const post = postHoverFor(entityHoversSync(), entry.entityId, postNum)
   const grade = post?.g as SupportGrade | undefined
+  // WHAT THIS ENTITY IS, ARCHIVE-WIDE — owner ruling, 2026-08-26.
+  //
+  // "i would like all our entity hover info synopsises to be uniform... if you hover over hussein
+  // it doesn't have one listed... get the best synopsis like we have for ES that gives some
+  // detail and context for that entity." entity-hovers.json's `global` layer was already built to
+  // answer exactly this ("what this entity is, wherever it appears" — see entityHovers.ts) and
+  // was already generated for every certified entity, but nothing in the app ever rendered it —
+  // globalHoverFor() had no caller. What a reader actually saw here was the amber note below,
+  // which only exists for the narrow case of an ambiguous token that needs a disambiguation
+  // reason (ES has one because "ES" also reads as Edward Snowden elsewhere; Hussein has none
+  // because it was never ambiguous, not because it lacks a synopsis) — so most entities showed
+  // nothing at all. Every entity now gets this line; the amber note still follows for the
+  // narrower case where THIS specific reading needs its own explanation.
+  const synopsis = entry.kind === 'entity' ? globalHoverFor(entityHoversSync(), entry.entityId) : null
   return (
     <>
       <span className="block text-[11px] uppercase tracking-wide text-gray-500">
@@ -125,6 +139,7 @@ function InfoCard({ entry, token, postNum }: { entry: GlossEntry; token: string;
           {entry.type}{typeof entry.mentions === 'number' ? ` · ${entry.mentions.toLocaleString()} mentions in the archive` : ''}
         </span>
       )}
+      {synopsis && <span className="mt-1 block text-[11px] leading-snug text-gray-300">{synopsis}</span>}
       {/* Owner note for readers — e.g. SS in #1151 is written SS but read as SC. Shown for
           entities too: a typo reading needs explaining precisely because the canonical name
           alone would look like a mistake. */}

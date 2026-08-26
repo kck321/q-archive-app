@@ -327,6 +327,16 @@
    "mentions": 184,
    "rendered": 184,
    "evidence": "184 new mentions, all landing on the core registry (Democratic Party and Republican Party both being core-registry canonicals) and all via the alias-ruling mechanism. No entity ROWS created: both party canonicals already existed. Building this ruling also found and fixed a real gap in apply-entities.mjs's shared alias-matching regex: a leading \b cannot match immediately before punctuation (the same reason a trailing \b cannot match after it, which the file already handled) and a self-delimited bracket alias needs no trailing guard at all, since its own closing bracket is the boundary — without both fixes the ruling matched zero of its 103+7 named posts, a silent no-op the QA gate did not catch on its own (the fix is symmetric and additive: verified no other alias in the corpus starts or ends with punctuation, so no existing ruling's behaviour changed)."
+  },
+  {
+   "ruling": "audit/entities-owner-rulings.json (2026-08-26 batch: #1515 reporter roll)",
+   "ruledOn": "2026-08-26",
+   "what": "Owner ruling: \"in post 1515 all these are reporters you have a handfull listed as a claim and some aren't even listed as an entity. lets fix this\" — 20 \"OUTLET – Name\" lines were certified as a single Claim instead of getting entity treatment. Adds 31 identities (11 outlets, 20 people) and 37 occurrences BEFORE this step runs.",
+   "entityRows": 31,
+   "mentions": 37,
+   "rendered": 37,
+   "evidence": "audit-occurrence-provenance.mjs re-run on the new tree (this same rebuild pass) examined 10,923 occurrences with the boundary-defect list unchanged from prior runs (God 41, Sara Carter 3, Doug Collins 3, ...) — none of the 37 new mentions appear in it. All 37 are plain verbatim name matches, not image- or URL-provenance cases.",
+   "why": "The approval record above is left exactly as written. A delta is recorded beside it instead, so the guard still refuses an unrecognised tree while a later owner ruling does not read as drift."
   }
  ]
 }

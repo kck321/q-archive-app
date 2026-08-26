@@ -15,15 +15,15 @@
   "ambiguous_provenance": "Attribution or URL evidence is genuinely undecidable. Retained unchanged."
  },
  "totals": {
-  "occurrences": 10886,
-  "certifiedMentions": 10886,
+  "occurrences": 10923,
+  "certifiedMentions": 10923,
   "reconciles": true,
   "attribution": {
-   "unique": 10792,
+   "unique": 10829,
    "ambiguous": 94
   },
   "byCategory": {
-   "visible_complete_token": 9745,
+   "visible_complete_token": 9782,
    "invalid_substring_extraction": 98,
    "visible_alias_variant": 47,
    "url_source_provenance": 645,
@@ -45,8 +45,8 @@
  },
  "ruledOnAuditRun": "2026-08-24",
  "certifiedUnchanged": {
-  "entityRows": 1803,
-  "mentions": 10886
+  "entityRows": 1834,
+  "mentions": 10923
  },
  "rows": [
   {
@@ -30871,9 +30871,9 @@
    "occurrenceId": "#1515:39",
    "postNum": 1515,
    "index": 39,
-   "alias": "NY",
-   "entityId": "qe-d2eebf8694bd",
-   "canonical": "New York Post",
+   "alias": "Buzzfeed",
+   "entityId": "qe-2355b6b6c443",
+   "canonical": "Buzzfeed",
    "entityType": "media_organization",
    "category": "visible_complete_token",
    "evidence": {
@@ -30887,10 +30887,10 @@
    "occurrenceId": "#1515:40",
    "postNum": 1515,
    "index": 40,
-   "alias": "ABC",
-   "entityId": "qe-85eeac4dbdc4",
-   "canonical": "ABC News",
-   "entityType": "media_organization",
+   "alias": "Ben Smith",
+   "entityId": "qe-6e107898fd4b",
+   "canonical": "Ben Smith",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -30903,9 +30903,9 @@
    "occurrenceId": "#1515:41",
    "postNum": 1515,
    "index": 41,
-   "alias": "ABC",
-   "entityId": "qe-85eeac4dbdc4",
-   "canonical": "ABC News",
+   "alias": "Buzzfeed",
+   "entityId": "qe-2355b6b6c443",
+   "canonical": "Buzzfeed",
    "entityType": "media_organization",
    "category": "visible_complete_token",
    "evidence": {
@@ -30919,10 +30919,10 @@
    "occurrenceId": "#1515:42",
    "postNum": 1515,
    "index": 42,
-   "alias": "ABC",
-   "entityId": "qe-85eeac4dbdc4",
-   "canonical": "ABC News",
-   "entityType": "media_organization",
+   "alias": "Ruby Cramer",
+   "entityId": "qe-30fdc4d56467",
+   "canonical": "Ruby Cramer",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -30935,10 +30935,10 @@
    "occurrenceId": "#1515:43",
    "postNum": 1515,
    "index": 43,
-   "alias": "ABC",
-   "entityId": "qe-85eeac4dbdc4",
-   "canonical": "ABC News",
-   "entityType": "media_organization",
+   "alias": "Gayle King",
+   "entityId": "qe-762d4ad77746",
+   "canonical": "Gayle King",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -30951,9 +30951,9 @@
    "occurrenceId": "#1515:44",
    "postNum": 1515,
    "index": 44,
-   "alias": "ABC",
-   "entityId": "qe-85eeac4dbdc4",
-   "canonical": "ABC News",
+   "alias": "AURN",
+   "entityId": "qe-8f32b60fbf7a",
+   "canonical": "AURN",
    "entityType": "media_organization",
    "category": "visible_complete_token",
    "evidence": {
@@ -30967,10 +30967,10 @@
    "occurrenceId": "#1515:45",
    "postNum": 1515,
    "index": 45,
-   "alias": "ABC",
-   "entityId": "qe-85eeac4dbdc4",
-   "canonical": "ABC News",
-   "entityType": "media_organization",
+   "alias": "April Ryan",
+   "entityId": "qe-8db42a2f97d0",
+   "canonical": "April Ryan",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -30983,10 +30983,10 @@
    "occurrenceId": "#1515:46",
    "postNum": 1515,
    "index": 46,
-   "alias": "CBS",
-   "entityId": "qe-208dba151d3e",
-   "canonical": "CBS",
-   "entityType": "media_organization",
+   "alias": "Jonathan Alter",
+   "entityId": "qe-b947eb216f5e",
+   "canonical": "Jonathan Alter",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -30999,9 +30999,9 @@
    "occurrenceId": "#1515:47",
    "postNum": 1515,
    "index": 47,
-   "alias": "CBS",
-   "entityId": "qe-208dba151d3e",
-   "canonical": "CBS",
+   "alias": "GPG",
+   "entityId": "qe-bc06cc9ddf5a",
+   "canonical": "GPG",
    "entityType": "media_organization",
    "category": "visible_complete_token",
    "evidence": {
@@ -31015,10 +31015,10 @@
    "occurrenceId": "#1515:48",
    "postNum": 1515,
    "index": 48,
-   "alias": "CBS",
-   "entityId": "qe-208dba151d3e",
-   "canonical": "CBS",
-   "entityType": "media_organization",
+   "alias": "Mike Feldman",
+   "entityId": "qe-1b22567b6fd1",
+   "canonical": "Mike Feldman",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -31031,9 +31031,9 @@
    "occurrenceId": "#1515:49",
    "postNum": 1515,
    "index": 49,
-   "alias": "CBS",
-   "entityId": "qe-208dba151d3e",
-   "canonical": "CBS",
+   "alias": "HuffPo",
+   "entityId": "qe-a56f76c6ac6a",
+   "canonical": "HuffPo",
    "entityType": "media_organization",
    "category": "visible_complete_token",
    "evidence": {
@@ -31047,10 +31047,10 @@
    "occurrenceId": "#1515:50",
    "postNum": 1515,
    "index": 50,
-   "alias": "CBS",
-   "entityId": "qe-208dba151d3e",
-   "canonical": "CBS",
-   "entityType": "media_organization",
+   "alias": "Amanda Terkel",
+   "entityId": "qe-2466b4af6c00",
+   "canonical": "Amanda Terkel",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -31063,10 +31063,10 @@
    "occurrenceId": "#1515:51",
    "postNum": 1515,
    "index": 51,
-   "alias": "JP",
-   "entityId": "qe-241b091bbd1a",
-   "canonical": "John Podesta",
-   "entityType": "person",
+   "alias": "HuffPo",
+   "entityId": "qe-a56f76c6ac6a",
+   "canonical": "HuffPo",
+   "entityType": "media_organization",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -31079,10 +31079,10 @@
    "occurrenceId": "#1515:52",
    "postNum": 1515,
    "index": 52,
-   "alias": "AP",
-   "entityId": "qe-2f3d0f74a507",
-   "canonical": "Associated Press",
-   "entityType": "media_organization",
+   "alias": "Arianna Huffington",
+   "entityId": "qe-ba1c6ef92eea",
+   "canonical": "Arianna Huffington",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -31095,9 +31095,9 @@
    "occurrenceId": "#1515:53",
    "postNum": 1515,
    "index": 53,
-   "alias": "AP",
-   "entityId": "qe-2f3d0f74a507",
-   "canonical": "Associated Press",
+   "alias": "HuffPo",
+   "entityId": "qe-a56f76c6ac6a",
+   "canonical": "HuffPo",
    "entityType": "media_organization",
    "category": "visible_complete_token",
    "evidence": {
@@ -31111,10 +31111,10 @@
    "occurrenceId": "#1515:54",
    "postNum": 1515,
    "index": 54,
-   "alias": "AP",
-   "entityId": "qe-2f3d0f74a507",
-   "canonical": "Associated Press",
-   "entityType": "media_organization",
+   "alias": "Sam Stein",
+   "entityId": "qe-75be73c02fe0",
+   "canonical": "Sam Stein",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -31127,9 +31127,9 @@
    "occurrenceId": "#1515:55",
    "postNum": 1515,
    "index": 55,
-   "alias": "NPR",
-   "entityId": "qe-1963ebd3b6d1",
-   "canonical": "National Public Radio",
+   "alias": "HuffPo",
+   "entityId": "qe-a56f76c6ac6a",
+   "canonical": "HuffPo",
    "entityType": "media_organization",
    "category": "visible_complete_token",
    "evidence": {
@@ -31143,10 +31143,10 @@
    "occurrenceId": "#1515:56",
    "postNum": 1515,
    "index": 56,
-   "alias": "NPR",
-   "entityId": "qe-1963ebd3b6d1",
-   "canonical": "National Public Radio",
-   "entityType": "media_organization",
+   "alias": "Whitney Snyder",
+   "entityId": "qe-c714045631fd",
+   "canonical": "Whitney Snyder",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -31159,9 +31159,9 @@
    "occurrenceId": "#1515:57",
    "postNum": 1515,
    "index": 57,
-   "alias": "PBS",
-   "entityId": "qe-a3ed3ef4fd47",
-   "canonical": "Public Broadcasting Service",
+   "alias": "LAT",
+   "entityId": "qe-07d56f0f5765",
+   "canonical": "LAT",
    "entityType": "media_organization",
    "category": "visible_complete_token",
    "evidence": {
@@ -31175,10 +31175,10 @@
    "occurrenceId": "#1515:58",
    "postNum": 1515,
    "index": 58,
-   "alias": "WSJ",
-   "entityId": "qe-ccca026ad8f1",
-   "canonical": "The Wall Street Journal",
-   "entityType": "media_organization",
+   "alias": "Evan Handler",
+   "entityId": "qe-b5b833db00d8",
+   "canonical": "Evan Handler",
+   "entityType": "person",
    "category": "visible_complete_token",
    "evidence": {
     "category": "visible_complete_token",
@@ -31191,9 +31191,9 @@
    "occurrenceId": "#1515:59",
    "postNum": 1515,
    "index": 59,
-   "alias": "WSJ",
-   "entityId": "qe-ccca026ad8f1",
-   "canonical": "The Wall Street Journal",
+   "alias": "LAT",
+   "entityId": "qe-07d56f0f5765",
+   "canonical": "LAT",
    "entityType": "media_organization",
    "category": "visible_complete_token",
    "evidence": {
@@ -31207,6 +31207,566 @@
    "occurrenceId": "#1515:60",
    "postNum": 1515,
    "index": 60,
+   "alias": "Mike Memoli",
+   "entityId": "qe-7bb3ed56a0b3",
+   "canonical": "Mike Memoli",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:61",
+   "postNum": 1515,
+   "index": 61,
+   "alias": "McClatchy",
+   "entityId": "qe-df8ff87a5e36",
+   "canonical": "McClatchy",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:62",
+   "postNum": 1515,
+   "index": 62,
+   "alias": "Anita Kumar",
+   "entityId": "qe-c84a4dc1cbd0",
+   "canonical": "Anita Kumar",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:63",
+   "postNum": 1515,
+   "index": 63,
+   "alias": "MORE",
+   "entityId": "qe-74a000cad9fe",
+   "canonical": "MORE",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:64",
+   "postNum": 1515,
+   "index": 64,
+   "alias": "Betsy Fisher Martin",
+   "entityId": "qe-7fdfa9aff195",
+   "canonical": "Betsy Fisher Martin",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:65",
+   "postNum": 1515,
+   "index": 65,
+   "alias": "National Journal",
+   "entityId": "qe-09b59345cc2a",
+   "canonical": "National Journal",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:66",
+   "postNum": 1515,
+   "index": 66,
+   "alias": "Emily Schultheis",
+   "entityId": "qe-6268825e021e",
+   "canonical": "Emily Schultheis",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:67",
+   "postNum": 1515,
+   "index": 67,
+   "alias": "New Yorker",
+   "entityId": "qe-83a0325c2d43",
+   "canonical": "New Yorker",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:68",
+   "postNum": 1515,
+   "index": 68,
+   "alias": "David Remnick",
+   "entityId": "qe-cccc95afbe20",
+   "canonical": "David Remnick",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:69",
+   "postNum": 1515,
+   "index": 69,
+   "alias": "New Yorker",
+   "entityId": "qe-83a0325c2d43",
+   "canonical": "New Yorker",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:70",
+   "postNum": 1515,
+   "index": 70,
+   "alias": "Ryan Liza",
+   "entityId": "qe-471d18693bdb",
+   "canonical": "Ryan Liza",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:71",
+   "postNum": 1515,
+   "index": 71,
+   "alias": "People",
+   "entityId": "qe-d67c102f50c5",
+   "canonical": "People",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:72",
+   "postNum": 1515,
+   "index": 72,
+   "alias": "Sandra Sobieraj Westfall",
+   "entityId": "qe-bd408e0c8642",
+   "canonical": "Sandra Sobieraj Westfall",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:73",
+   "postNum": 1515,
+   "index": 73,
+   "alias": "Tina Brown",
+   "entityId": "qe-8c23d918b7ac",
+   "canonical": "Tina Brown",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:74",
+   "postNum": 1515,
+   "index": 74,
+   "alias": "Univision",
+   "entityId": "qe-25b87e8de5fb",
+   "canonical": "Univision",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:75",
+   "postNum": 1515,
+   "index": 75,
+   "alias": "Maria-Elena Salinas",
+   "entityId": "qe-c8fa0a1c60cb",
+   "canonical": "Maria-Elena Salinas",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:76",
+   "postNum": 1515,
+   "index": 76,
+   "alias": "NY",
+   "entityId": "qe-d2eebf8694bd",
+   "canonical": "New York Post",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:77",
+   "postNum": 1515,
+   "index": 77,
+   "alias": "ABC",
+   "entityId": "qe-85eeac4dbdc4",
+   "canonical": "ABC News",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:78",
+   "postNum": 1515,
+   "index": 78,
+   "alias": "ABC",
+   "entityId": "qe-85eeac4dbdc4",
+   "canonical": "ABC News",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:79",
+   "postNum": 1515,
+   "index": 79,
+   "alias": "ABC",
+   "entityId": "qe-85eeac4dbdc4",
+   "canonical": "ABC News",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:80",
+   "postNum": 1515,
+   "index": 80,
+   "alias": "ABC",
+   "entityId": "qe-85eeac4dbdc4",
+   "canonical": "ABC News",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:81",
+   "postNum": 1515,
+   "index": 81,
+   "alias": "ABC",
+   "entityId": "qe-85eeac4dbdc4",
+   "canonical": "ABC News",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:82",
+   "postNum": 1515,
+   "index": 82,
+   "alias": "ABC",
+   "entityId": "qe-85eeac4dbdc4",
+   "canonical": "ABC News",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:83",
+   "postNum": 1515,
+   "index": 83,
+   "alias": "CBS",
+   "entityId": "qe-208dba151d3e",
+   "canonical": "CBS",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:84",
+   "postNum": 1515,
+   "index": 84,
+   "alias": "CBS",
+   "entityId": "qe-208dba151d3e",
+   "canonical": "CBS",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:85",
+   "postNum": 1515,
+   "index": 85,
+   "alias": "CBS",
+   "entityId": "qe-208dba151d3e",
+   "canonical": "CBS",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:86",
+   "postNum": 1515,
+   "index": 86,
+   "alias": "CBS",
+   "entityId": "qe-208dba151d3e",
+   "canonical": "CBS",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:87",
+   "postNum": 1515,
+   "index": 87,
+   "alias": "CBS",
+   "entityId": "qe-208dba151d3e",
+   "canonical": "CBS",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:88",
+   "postNum": 1515,
+   "index": 88,
+   "alias": "JP",
+   "entityId": "qe-241b091bbd1a",
+   "canonical": "John Podesta",
+   "entityType": "person",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:89",
+   "postNum": 1515,
+   "index": 89,
+   "alias": "AP",
+   "entityId": "qe-2f3d0f74a507",
+   "canonical": "Associated Press",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:90",
+   "postNum": 1515,
+   "index": 90,
+   "alias": "AP",
+   "entityId": "qe-2f3d0f74a507",
+   "canonical": "Associated Press",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:91",
+   "postNum": 1515,
+   "index": 91,
+   "alias": "AP",
+   "entityId": "qe-2f3d0f74a507",
+   "canonical": "Associated Press",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:92",
+   "postNum": 1515,
+   "index": 92,
+   "alias": "NPR",
+   "entityId": "qe-1963ebd3b6d1",
+   "canonical": "National Public Radio",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:93",
+   "postNum": 1515,
+   "index": 93,
+   "alias": "NPR",
+   "entityId": "qe-1963ebd3b6d1",
+   "canonical": "National Public Radio",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:94",
+   "postNum": 1515,
+   "index": 94,
+   "alias": "PBS",
+   "entityId": "qe-a3ed3ef4fd47",
+   "canonical": "Public Broadcasting Service",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:95",
+   "postNum": 1515,
+   "index": 95,
    "alias": "WSJ",
    "entityId": "qe-ccca026ad8f1",
    "canonical": "The Wall Street Journal",
@@ -31220,9 +31780,41 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:61",
+   "occurrenceId": "#1515:96",
    "postNum": 1515,
-   "index": 61,
+   "index": 96,
+   "alias": "WSJ",
+   "entityId": "qe-ccca026ad8f1",
+   "canonical": "The Wall Street Journal",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:97",
+   "postNum": 1515,
+   "index": 97,
+   "alias": "WSJ",
+   "entityId": "qe-ccca026ad8f1",
+   "canonical": "The Wall Street Journal",
+   "entityType": "media_organization",
+   "category": "visible_complete_token",
+   "evidence": {
+    "category": "visible_complete_token",
+    "where": "prose"
+   },
+   "proposedAction": "keep",
+   "certifiedCountEffect": 0
+  },
+  {
+   "occurrenceId": "#1515:98",
+   "postNum": 1515,
+   "index": 98,
    "alias": "Cecilia Vega",
    "entityId": "qe-f9d8060e098c",
    "canonical": "Cecilia Vega",
@@ -31236,9 +31828,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:62",
+   "occurrenceId": "#1515:99",
    "postNum": 1515,
-   "index": 62,
+   "index": 99,
    "alias": "ABC News",
    "entityId": "qe-85eeac4dbdc4",
    "canonical": "ABC News",
@@ -31253,9 +31845,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:63",
+   "occurrenceId": "#1515:100",
    "postNum": 1515,
-   "index": 63,
+   "index": 100,
    "alias": "David Muir",
    "entityId": "qe-d50d415fd127",
    "canonical": "David Muir",
@@ -31269,9 +31861,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:64",
+   "occurrenceId": "#1515:101",
    "postNum": 1515,
-   "index": 64,
+   "index": 101,
    "alias": "Diane Sawyer",
    "entityId": "qe-3a4680ff5ce9",
    "canonical": "Diane Sawyer",
@@ -31285,9 +31877,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:65",
+   "occurrenceId": "#1515:102",
    "postNum": 1515,
-   "index": 65,
+   "index": 102,
    "alias": "George Stephanoplous",
    "entityId": "qe-ce130e7572fe",
    "canonical": "George Stephanoplous",
@@ -31301,9 +31893,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:66",
+   "occurrenceId": "#1515:103",
    "postNum": 1515,
-   "index": 66,
+   "index": 103,
    "alias": "Jon Karl",
    "entityId": "qe-20528df2a55a",
    "canonical": "Jon Karl",
@@ -31317,9 +31909,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:67",
+   "occurrenceId": "#1515:104",
    "postNum": 1515,
-   "index": 67,
+   "index": 104,
    "alias": "Liz Kreutz",
    "entityId": "qe-ad25e7885cc8",
    "canonical": "Liz Kreutz",
@@ -31333,9 +31925,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:68",
+   "occurrenceId": "#1515:105",
    "postNum": 1515,
-   "index": 68,
+   "index": 105,
    "alias": "Julie Pace",
    "entityId": "qe-2de11fafa366",
    "canonical": "Julie Pace",
@@ -31349,9 +31941,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:69",
+   "occurrenceId": "#1515:106",
    "postNum": 1515,
-   "index": 69,
+   "index": 106,
    "alias": "Ken Thomas",
    "entityId": "qe-df17a9e55850",
    "canonical": "Ken Thomas",
@@ -31365,9 +31957,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:70",
+   "occurrenceId": "#1515:107",
    "postNum": 1515,
-   "index": 70,
+   "index": 107,
    "alias": "Lisa Lerer",
    "entityId": "qe-de341ee7073e",
    "canonical": "Lisa Lerer",
@@ -31381,9 +31973,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:71",
+   "occurrenceId": "#1515:108",
    "postNum": 1515,
-   "index": 71,
+   "index": 108,
    "alias": "Bloomberg",
    "entityId": "qe-a91226e14421",
    "canonical": "Bloomberg",
@@ -31397,9 +31989,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:72",
+   "occurrenceId": "#1515:109",
    "postNum": 1515,
-   "index": 72,
+   "index": 109,
    "alias": "Jennifer Epstein",
    "entityId": "qe-918f540905de",
    "canonical": "Jennifer Epstein",
@@ -31413,9 +32005,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:73",
+   "occurrenceId": "#1515:110",
    "postNum": 1515,
-   "index": 73,
+   "index": 110,
    "alias": "Bloomberg",
    "entityId": "qe-a91226e14421",
    "canonical": "Bloomberg",
@@ -31429,9 +32021,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:74",
+   "occurrenceId": "#1515:111",
    "postNum": 1515,
-   "index": 74,
+   "index": 111,
    "alias": "John Heillman",
    "entityId": "qe-18a6c733af04",
    "canonical": "John Heillman",
@@ -31445,9 +32037,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:75",
+   "occurrenceId": "#1515:112",
    "postNum": 1515,
-   "index": 75,
+   "index": 112,
    "alias": "Bloomberg",
    "entityId": "qe-a91226e14421",
    "canonical": "Bloomberg",
@@ -31461,9 +32053,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:76",
+   "occurrenceId": "#1515:113",
    "postNum": 1515,
-   "index": 76,
+   "index": 113,
    "alias": "Mark Halperin",
    "entityId": "qe-f51df9d1e180",
    "canonical": "Mark Halperin",
@@ -31477,9 +32069,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:77",
+   "occurrenceId": "#1515:114",
    "postNum": 1515,
-   "index": 77,
+   "index": 114,
    "alias": "John Dickerson",
    "entityId": "qe-205eab44f34d",
    "canonical": "John Dickerson",
@@ -31493,9 +32085,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:78",
+   "occurrenceId": "#1515:115",
    "postNum": 1515,
-   "index": 78,
+   "index": 115,
    "alias": "Norah O'Donnell",
    "entityId": "qe-9b6c1fd9bc4e",
    "canonical": "Norah O'Donnell",
@@ -31509,9 +32101,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:79",
+   "occurrenceId": "#1515:116",
    "postNum": 1515,
-   "index": 79,
+   "index": 116,
    "alias": "Steve Chagaris",
    "entityId": "qe-78e0639a31ff",
    "canonical": "Steve Chagaris",
@@ -31525,9 +32117,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:80",
+   "occurrenceId": "#1515:117",
    "postNum": 1515,
-   "index": 80,
+   "index": 117,
    "alias": "Vicki Gordon",
    "entityId": "qe-0262c2ecc2d9",
    "canonical": "Vicki Gordon",
@@ -31541,9 +32133,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:81",
+   "occurrenceId": "#1515:118",
    "postNum": 1515,
-   "index": 81,
+   "index": 118,
    "alias": "CNBC",
    "entityId": "qe-9432fc4f7685",
    "canonical": "CNBC",
@@ -31557,9 +32149,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:82",
+   "occurrenceId": "#1515:119",
    "postNum": 1515,
-   "index": 82,
+   "index": 119,
    "alias": "John Harwood",
    "entityId": "qe-f78336075970",
    "canonical": "John Harwood",
@@ -31573,9 +32165,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:83",
+   "occurrenceId": "#1515:120",
    "postNum": 1515,
-   "index": 83,
+   "index": 120,
    "alias": "Brianna Keilar",
    "entityId": "qe-604f2d211040",
    "canonical": "Brianna Keilar",
@@ -31589,9 +32181,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:84",
+   "occurrenceId": "#1515:121",
    "postNum": 1515,
-   "index": 84,
+   "index": 121,
    "alias": "Dan Merica",
    "entityId": "qe-a65487d04890",
    "canonical": "Dan Merica",
@@ -31605,9 +32197,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:85",
+   "occurrenceId": "#1515:122",
    "postNum": 1515,
-   "index": 85,
+   "index": 122,
    "alias": "David Chailan",
    "entityId": "qe-7a2c2c55fc1a",
    "canonical": "David Chailan",
@@ -31621,9 +32213,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:86",
+   "occurrenceId": "#1515:123",
    "postNum": 1515,
-   "index": 86,
+   "index": 123,
    "alias": "Erin Burnett",
    "entityId": "qe-47cafe71e0fe",
    "canonical": "Erin Burnett",
@@ -31637,9 +32229,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:87",
+   "occurrenceId": "#1515:124",
    "postNum": 1515,
-   "index": 87,
+   "index": 124,
    "alias": "Gloria Borger",
    "entityId": "qe-6964e18829c9",
    "canonical": "Gloria Borger",
@@ -31653,9 +32245,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:88",
+   "occurrenceId": "#1515:125",
    "postNum": 1515,
-   "index": 88,
+   "index": 125,
    "alias": "Jake Tapper",
    "entityId": "qe-ec7eb3da0f00",
    "canonical": "Jake Tapper",
@@ -31669,9 +32261,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:89",
+   "occurrenceId": "#1515:126",
    "postNum": 1515,
-   "index": 89,
+   "index": 126,
    "alias": "Jeff Zeleny",
    "entityId": "qe-be2d541fee10",
    "canonical": "Jeff Zeleny",
@@ -31685,9 +32277,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:90",
+   "occurrenceId": "#1515:127",
    "postNum": 1515,
-   "index": 90,
+   "index": 127,
    "alias": "Jeff Zucker",
    "entityId": "qe-a2cd94cbb82e",
    "canonical": "Jeff Zucker",
@@ -31701,9 +32293,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:91",
+   "occurrenceId": "#1515:128",
    "postNum": 1515,
-   "index": 91,
+   "index": 128,
    "alias": "John Berman",
    "entityId": "qe-49f918c2b2f5",
    "canonical": "John Berman",
@@ -31717,9 +32309,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:92",
+   "occurrenceId": "#1515:129",
    "postNum": 1515,
-   "index": 92,
+   "index": 129,
    "alias": "Kate Bouldan",
    "entityId": "qe-36bacd26fde5",
    "canonical": "Kate Bouldan",
@@ -31733,9 +32325,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:93",
+   "occurrenceId": "#1515:130",
    "postNum": 1515,
-   "index": 93,
+   "index": 130,
    "alias": "Maria Cardona",
    "entityId": "qe-4c94a6a06428",
    "canonical": "Maria Cardona",
@@ -31749,9 +32341,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:94",
+   "occurrenceId": "#1515:131",
    "postNum": 1515,
-   "index": 94,
+   "index": 131,
    "alias": "Mark Preston",
    "entityId": "qe-fb7aea8d1bc2",
    "canonical": "Mark Preston",
@@ -31765,9 +32357,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:95",
+   "occurrenceId": "#1515:132",
    "postNum": 1515,
-   "index": 95,
+   "index": 132,
    "alias": "Sam Feist",
    "entityId": "qe-467076948eb8",
    "canonical": "Sam Feist",
@@ -31781,9 +32373,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:96",
+   "occurrenceId": "#1515:133",
    "postNum": 1515,
-   "index": 96,
+   "index": 133,
    "alias": "Daily Beast",
    "entityId": "qe-6cbd2d0bea8d",
    "canonical": "Daily Beast",
@@ -31797,9 +32389,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:97",
+   "occurrenceId": "#1515:134",
    "postNum": 1515,
-   "index": 97,
+   "index": 134,
    "alias": "Jackie Kucinich",
    "entityId": "qe-8a8a2f9e3b5f",
    "canonical": "Jackie Kucinich",
@@ -31813,9 +32405,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:98",
+   "occurrenceId": "#1515:135",
    "postNum": 1515,
-   "index": 98,
+   "index": 135,
    "alias": "MSNBC",
    "entityId": "qe-2cf9f642e53c",
    "canonical": "MSNBC",
@@ -31829,9 +32421,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:99",
+   "occurrenceId": "#1515:136",
    "postNum": 1515,
-   "index": 99,
+   "index": 136,
    "alias": "Alex Seitz-Wald",
    "entityId": "qe-326da877aa4d",
    "canonical": "Alex Seitz-Wald",
@@ -31845,9 +32437,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:100",
+   "occurrenceId": "#1515:137",
    "postNum": 1515,
-   "index": 100,
+   "index": 137,
    "alias": "MSNBC",
    "entityId": "qe-2cf9f642e53c",
    "canonical": "MSNBC",
@@ -31861,9 +32453,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:101",
+   "occurrenceId": "#1515:138",
    "postNum": 1515,
-   "index": 101,
+   "index": 138,
    "alias": "Alex Wagner",
    "entityId": "qe-5ff5bfe12a7c",
    "canonical": "Alex Wagner",
@@ -31877,9 +32469,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:102",
+   "occurrenceId": "#1515:139",
    "postNum": 1515,
-   "index": 102,
+   "index": 139,
    "alias": "MSNBC",
    "entityId": "qe-2cf9f642e53c",
    "canonical": "MSNBC",
@@ -31893,9 +32485,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:103",
+   "occurrenceId": "#1515:140",
    "postNum": 1515,
-   "index": 103,
+   "index": 140,
    "alias": "Andrea Mitchell",
    "entityId": "qe-8b7ce2aa27ac",
    "canonical": "Andrea Mitchell",
@@ -31909,9 +32501,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:104",
+   "occurrenceId": "#1515:141",
    "postNum": 1515,
-   "index": 104,
+   "index": 141,
    "alias": "MSNBC",
    "entityId": "qe-2cf9f642e53c",
    "canonical": "MSNBC",
@@ -31925,9 +32517,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:105",
+   "occurrenceId": "#1515:142",
    "postNum": 1515,
-   "index": 105,
+   "index": 142,
    "alias": "Beth Fouhy",
    "entityId": "qe-d6f510572d9e",
    "canonical": "Beth Fouhy",
@@ -31941,9 +32533,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:106",
+   "occurrenceId": "#1515:143",
    "postNum": 1515,
-   "index": 106,
+   "index": 143,
    "alias": "MSNBC",
    "entityId": "qe-2cf9f642e53c",
    "canonical": "MSNBC",
@@ -31957,9 +32549,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:107",
+   "occurrenceId": "#1515:144",
    "postNum": 1515,
-   "index": 107,
+   "index": 144,
    "alias": "Ed Schultz",
    "entityId": "qe-dd9972e950e3",
    "canonical": "Ed Schultz",
@@ -31973,9 +32565,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:108",
+   "occurrenceId": "#1515:145",
    "postNum": 1515,
-   "index": 108,
+   "index": 145,
    "alias": "MSNBC",
    "entityId": "qe-2cf9f642e53c",
    "canonical": "MSNBC",
@@ -31989,9 +32581,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:109",
+   "occurrenceId": "#1515:146",
    "postNum": 1515,
-   "index": 109,
+   "index": 146,
    "alias": "Joe Scarborough",
    "entityId": "qe-8a164b379dfe",
    "canonical": "Joe Scarborough",
@@ -32005,9 +32597,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:110",
+   "occurrenceId": "#1515:147",
    "postNum": 1515,
-   "index": 110,
+   "index": 147,
    "alias": "MSNBC",
    "entityId": "qe-2cf9f642e53c",
    "canonical": "MSNBC",
@@ -32021,9 +32613,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:111",
+   "occurrenceId": "#1515:148",
    "postNum": 1515,
-   "index": 111,
+   "index": 148,
    "alias": "Mika Brzezinski",
    "entityId": "qe-2404e095b5d2",
    "canonical": "Mika Brzezinski",
@@ -32037,9 +32629,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:112",
+   "occurrenceId": "#1515:149",
    "postNum": 1515,
-   "index": 112,
+   "index": 149,
    "alias": "MSNBC",
    "entityId": "qe-2cf9f642e53c",
    "canonical": "MSNBC",
@@ -32053,9 +32645,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:113",
+   "occurrenceId": "#1515:150",
    "postNum": 1515,
-   "index": 113,
+   "index": 150,
    "alias": "Phil Griffin",
    "entityId": "qe-9db5883ec684",
    "canonical": "Phil Griffin",
@@ -32069,9 +32661,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:114",
+   "occurrenceId": "#1515:151",
    "postNum": 1515,
-   "index": 114,
+   "index": 151,
    "alias": "MSNBC",
    "entityId": "qe-2cf9f642e53c",
    "canonical": "MSNBC",
@@ -32085,9 +32677,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:115",
+   "occurrenceId": "#1515:152",
    "postNum": 1515,
-   "index": 115,
+   "index": 152,
    "alias": "Rachel Maddow",
    "entityId": "qe-81c70fd3e376",
    "canonical": "Rachel Maddow",
@@ -32101,9 +32693,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:116",
+   "occurrenceId": "#1515:153",
    "postNum": 1515,
-   "index": 116,
+   "index": 153,
    "alias": "MSNBC",
    "entityId": "qe-2cf9f642e53c",
    "canonical": "MSNBC",
@@ -32117,9 +32709,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:117",
+   "occurrenceId": "#1515:154",
    "postNum": 1515,
-   "index": 117,
+   "index": 154,
    "alias": "Rachel Racusen",
    "entityId": "qe-088d9c5f3090",
    "canonical": "Rachel Racusen",
@@ -32133,9 +32725,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:118",
+   "occurrenceId": "#1515:155",
    "postNum": 1515,
-   "index": 118,
+   "index": 155,
    "alias": "MSNBC",
    "entityId": "qe-2cf9f642e53c",
    "canonical": "MSNBC",
@@ -32149,9 +32741,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:119",
+   "occurrenceId": "#1515:156",
    "postNum": 1515,
-   "index": 119,
+   "index": 156,
    "alias": "Thomas Roberts",
    "entityId": "qe-4ce4e0e569d4",
    "canonical": "Thomas Roberts",
@@ -32165,9 +32757,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:120",
+   "occurrenceId": "#1515:157",
    "postNum": 1515,
-   "index": 120,
+   "index": 157,
    "alias": "Chuck Todd",
    "entityId": "qe-e81d77390ac5",
    "canonical": "Chuck Todd",
@@ -32181,9 +32773,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:121",
+   "occurrenceId": "#1515:158",
    "postNum": 1515,
-   "index": 121,
+   "index": 158,
    "alias": "Mark Murray",
    "entityId": "qe-136d33e33cea",
    "canonical": "Mark Murray",
@@ -32197,9 +32789,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:122",
+   "occurrenceId": "#1515:159",
    "postNum": 1515,
-   "index": 122,
+   "index": 159,
    "alias": "Savannah Gutherie",
    "entityId": "qe-9f1193aade70",
    "canonical": "Savannah Gutherie",
@@ -32213,9 +32805,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:123",
+   "occurrenceId": "#1515:160",
    "postNum": 1515,
-   "index": 123,
+   "index": 160,
    "alias": "Mike Oreskes",
    "entityId": "qe-6f49ef92ebb1",
    "canonical": "Mike Oreskes",
@@ -32229,9 +32821,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:124",
+   "occurrenceId": "#1515:161",
    "postNum": 1515,
-   "index": 124,
+   "index": 161,
    "alias": "Tamara Keith",
    "entityId": "qe-e87089f18254",
    "canonical": "Tamara Keith",
@@ -32245,9 +32837,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:125",
+   "occurrenceId": "#1515:162",
    "postNum": 1515,
-   "index": 125,
+   "index": 162,
    "alias": "NY Post",
    "entityId": "qe-a2c73c324528",
    "canonical": "NY Post",
@@ -32261,9 +32853,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:126",
+   "occurrenceId": "#1515:163",
    "postNum": 1515,
-   "index": 126,
+   "index": 163,
    "alias": "Geofe Earl",
    "entityId": "qe-121902823e6e",
    "canonical": "Geofe Earl",
@@ -32277,9 +32869,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:127",
+   "occurrenceId": "#1515:164",
    "postNum": 1515,
-   "index": 127,
+   "index": 164,
    "alias": "Amy Chozik",
    "entityId": "qe-ac98a5c779d1",
    "canonical": "Amy Chozik",
@@ -32293,9 +32885,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:128",
+   "occurrenceId": "#1515:165",
    "postNum": 1515,
-   "index": 128,
+   "index": 165,
    "alias": "Carolyn Ryan",
    "entityId": "qe-772c7e4dca65",
    "canonical": "Carolyn Ryan",
@@ -32309,9 +32901,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:129",
+   "occurrenceId": "#1515:166",
    "postNum": 1515,
-   "index": 129,
+   "index": 166,
    "alias": "Gail Collins",
    "entityId": "qe-4852b04127e4",
    "canonical": "Gail Collins",
@@ -32325,9 +32917,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:130",
+   "occurrenceId": "#1515:167",
    "postNum": 1515,
-   "index": 130,
+   "index": 167,
    "alias": "John Harwoodje",
    "entityId": "qe-98d61d2dce95",
    "canonical": "John Harwoodje",
@@ -32341,9 +32933,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:131",
+   "occurrenceId": "#1515:168",
    "postNum": 1515,
-   "index": 131,
+   "index": 168,
    "alias": "Jonathan Martin",
    "entityId": "qe-5583bba9d661",
    "canonical": "Jonathan Martin",
@@ -32357,9 +32949,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:132",
+   "occurrenceId": "#1515:169",
    "postNum": 1515,
-   "index": 132,
+   "index": 169,
    "alias": "Maggie Haberman",
    "entityId": "qe-34792e9e3388",
    "canonical": "Maggie Haberman",
@@ -32373,9 +32965,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:133",
+   "occurrenceId": "#1515:170",
    "postNum": 1515,
-   "index": 133,
+   "index": 170,
    "alias": "Pat Healey",
    "entityId": "qe-e27af6a845d1",
    "canonical": "Pat Healey",
@@ -32389,9 +32981,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:134",
+   "occurrenceId": "#1515:171",
    "postNum": 1515,
-   "index": 134,
+   "index": 171,
    "alias": "Charlie Rose",
    "entityId": "qe-699fa59a120b",
    "canonical": "Charlie Rose",
@@ -32405,9 +32997,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:135",
+   "occurrenceId": "#1515:172",
    "postNum": 1515,
-   "index": 135,
+   "index": 172,
    "alias": "Politico",
    "entityId": "qe-7f7a9c8af686",
    "canonical": "Politico",
@@ -32421,9 +33013,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:136",
+   "occurrenceId": "#1515:173",
    "postNum": 1515,
-   "index": 136,
+   "index": 173,
    "alias": "Annie Karni",
    "entityId": "qe-f4aa26f2c3a0",
    "canonical": "Annie Karni",
@@ -32437,9 +33029,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:137",
+   "occurrenceId": "#1515:174",
    "postNum": 1515,
-   "index": 137,
+   "index": 174,
    "alias": "Politico",
    "entityId": "qe-7f7a9c8af686",
    "canonical": "Politico",
@@ -32453,9 +33045,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:138",
+   "occurrenceId": "#1515:175",
    "postNum": 1515,
-   "index": 138,
+   "index": 175,
    "alias": "Gabe Debenedetti",
    "entityId": "qe-f2e77658de3a",
    "canonical": "Gabe Debenedetti",
@@ -32469,9 +33061,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:139",
+   "occurrenceId": "#1515:176",
    "postNum": 1515,
-   "index": 139,
+   "index": 176,
    "alias": "Politico",
    "entityId": "qe-7f7a9c8af686",
    "canonical": "Politico",
@@ -32485,9 +33077,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:140",
+   "occurrenceId": "#1515:177",
    "postNum": 1515,
-   "index": 140,
+   "index": 177,
    "alias": "Glenn Thrush",
    "entityId": "qe-e2e10c208707",
    "canonical": "Glenn Thrush",
@@ -32501,9 +33093,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:141",
+   "occurrenceId": "#1515:178",
    "postNum": 1515,
-   "index": 141,
+   "index": 178,
    "alias": "Politico",
    "entityId": "qe-7f7a9c8af686",
    "canonical": "Politico",
@@ -32517,9 +33109,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:142",
+   "occurrenceId": "#1515:179",
    "postNum": 1515,
-   "index": 142,
+   "index": 179,
    "alias": "Kenneth Vogel",
    "entityId": "qe-76844c860b54",
    "canonical": "Kenneth Vogel",
@@ -32533,9 +33125,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:143",
+   "occurrenceId": "#1515:180",
    "postNum": 1515,
-   "index": 143,
+   "index": 180,
    "alias": "Politico",
    "entityId": "qe-7f7a9c8af686",
    "canonical": "Politico",
@@ -32549,9 +33141,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:144",
+   "occurrenceId": "#1515:181",
    "postNum": 1515,
-   "index": 144,
+   "index": 181,
    "alias": "Mike Allen",
    "entityId": "qe-e009a8631960",
    "canonical": "Mike Allen",
@@ -32565,9 +33157,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:145",
+   "occurrenceId": "#1515:182",
    "postNum": 1515,
-   "index": 145,
+   "index": 182,
    "alias": "Reuters",
    "entityId": "qe-cb78932b1fab",
    "canonical": "Reuters",
@@ -32581,9 +33173,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:146",
+   "occurrenceId": "#1515:183",
    "postNum": 1515,
-   "index": 146,
+   "index": 183,
    "alias": "Amanda Becker",
    "entityId": "qe-cc9487841204",
    "canonical": "Amanda Becker",
@@ -32597,9 +33189,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:147",
+   "occurrenceId": "#1515:184",
    "postNum": 1515,
-   "index": 147,
+   "index": 184,
    "alias": "Amie Parnes",
    "entityId": "qe-cda801c70bcd",
    "canonical": "Amie Parnes",
@@ -32613,9 +33205,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:148",
+   "occurrenceId": "#1515:185",
    "postNum": 1515,
-   "index": 148,
+   "index": 185,
    "alias": "Colleen McCain Nelson",
    "entityId": "qe-5a040717aa5b",
    "canonical": "Colleen McCain Nelson",
@@ -32629,9 +33221,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:149",
+   "occurrenceId": "#1515:186",
    "postNum": 1515,
-   "index": 149,
+   "index": 186,
    "alias": "Laura Meckler",
    "entityId": "qe-0aff05df6680",
    "canonical": "Laura Meckler",
@@ -32645,9 +33237,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:150",
+   "occurrenceId": "#1515:187",
    "postNum": 1515,
-   "index": 150,
+   "index": 187,
    "alias": "Peter Nicholas",
    "entityId": "qe-18107b67fc6d",
    "canonical": "Peter Nicholas",
@@ -32661,9 +33253,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:151",
+   "occurrenceId": "#1515:188",
    "postNum": 1515,
-   "index": 151,
+   "index": 188,
    "alias": "Yahoo",
    "entityId": "qe-39195a41f11b",
    "canonical": "Yahoo",
@@ -32677,9 +33269,9 @@
    "certifiedCountEffect": 0
   },
   {
-   "occurrenceId": "#1515:152",
+   "occurrenceId": "#1515:189",
    "postNum": 1515,
-   "index": 152,
+   "index": 189,
    "alias": "Matt Bai",
    "entityId": "qe-d030b96cb710",
    "canonical": "Matt Bai",

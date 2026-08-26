@@ -436,7 +436,11 @@ const checks = [
   // engine fire?", which is Delta AIRLINES.
   // +2 on 2026-08-25: #1010's WATER (moved from Directives) and AIR (previously uncategorised),
   // owner ruling — see build-owner-section-moves.mjs.
-  ['claim occurrences = 10,539', allClaims.length === 10539, allClaims.length],
+  // -20 on 2026-08-26: #1515's reporter roll. 20 "OUTLET – Name" lines were certified as a single
+  // Claim apiece instead of getting the entity treatment every other line on the same list got —
+  // a list row asserts nothing, so it leaves Claims once the entities are certified separately
+  // (audit/entities-owner-rulings.json, same day).
+  ['claim occurrences = 10,519', allClaims.length === 10519, allClaims.length],
   // 4,782 + 1,654 = 6,436 claims; 250 + 94 = 344 predictions, across both rounds.
   // -1 claim, -1 prediction on 2026-08-24: two round-2 rulings the owner overrode on the UPDATED
   // report. lib/queueRulings.mjs drops them before any materialiser sees them, so the round-2
@@ -481,7 +485,9 @@ const checks = [
   // Claims and take their key with them. The eighth is "Q, DELTA" — one key across #756, #757 and
   // #785, and all three occurrences leave together.
   // +2 on 2026-08-25: WATER and AIR are both new wordings to the section.
-  ['distinct = 8,019', distinct.size === 8019, distinct.size],
+  // -20 on 2026-08-26: #1515's reporter roll withdrawal. Each "OUTLET – Name" wording is unique in
+  // the corpus (no other drop pastes the same reporter list), so all 20 take their key with them.
+  ['distinct = 7,999', distinct.size === 7999, distinct.size],
   // +1: 17 posts gain their first claim, 16 posts lose their last one.
   // -3: #483, #2695 and #3203 each held ONE claim and it was the quoted question, so those
   // drops leave the Claims post set entirely. #2420 and #2776 keep other claims and stay.
@@ -555,7 +561,10 @@ const checks = [
   // -7: seven of the ten departing rows carried it — "[7] Delta today.", "[1] min Delta.",
   // "DELTA [6] CONF." and the three "Q, DELTA" lines are all four words or fewer.
   // +2 on 2026-08-25: WATER and AIR are both one-word claims (<=4 words).
-  ['telegraphic = 4,663', telegraphic === 4663, telegraphic],
+  // -14 on 2026-08-26: 14 of #1515's 20 removed rows are four words or fewer ("Buzzfeed – Ben
+  // Smith" is 4: outlet, en-dash, first name, last name). The other 6 have a two-word outlet or a
+  // three-word name and run to 5.
+  ['telegraphic = 4,649', telegraphic === 4649, telegraphic],
   // 13 + 37: the queue emitted one row per UNIT, so a line Q wrote twice arrives twice and is
   // certified twice. Collapsing them would have dropped 37 real occurrences.
   // +80: round 2 carries more lines Q writes twice in one drop, and each repeat is a real
@@ -577,6 +586,14 @@ const checks = [
   // 3,442 + 24 rows round 2 held for stating no instruction, ruled in by the owner on 2026-08-24.
   // +1 on 2026-08-25: #4949's Gettysburg line — see apply-directives.mjs.
   // -1 on 2026-08-25: #1010's WATER moves out of Directives — see apply-directives.mjs.
+  //
+  // 2026-08-26 FALSE ALARM, LOGGED SO IT IS NOT RE-CHASED: running apply-claims.mjs STANDALONE
+  // (not through rebuild-bundle.mjs) read posts.json before apply-directives.mjs had a chance to
+  // refresh it in this pass, and this check saw the stale 3,333 sitting there and briefly looked
+  // like drift. Run in the correct pipeline order (apply-directives.mjs THEN apply-claims.mjs,
+  // exactly what rebuild-bundle.mjs does), apply-directives.mjs writes 3,471 first and this check
+  // sees the real, current number. Nothing was actually wrong; always read this value from a
+  // full rebuild-bundle.mjs run, never from apply-claims.mjs run in isolation.
   ['Directives now 3,471', directives === 3471, directives],
 ]
 
