@@ -569,8 +569,13 @@ export default function PostArchive() {
             .map(p => p.postNum)
         : []
     )
-    const rank = (p: QPost) => searched.has(p.postNum) ? 0 : viaQuote.has(p.postNum) ? 1 : viaPic.has(p.postNum) ? 2 : 3
-    const ordered = [...searchResults].sort((a, b) => rank(a) - rank(b) || a.postNum - b.postNum)
+    // OWNER RULING, 2026-08-25: "put the post numbers in order versus if they are within a post
+    // or a picture etc... lets just do in order from oldest to newest". Results no longer group
+    // by HOW a post matched (exact / quoted / picture) — every post sorts by postNum alone, oldest
+    // first, so a reader with no context on the match-kind buckets sees one simple, predictable
+    // order. searchedNums/quotedNums/picNums are kept: they still drive the per-card badges and
+    // colour-coding below, just not the ordering.
+    const ordered = [...searchResults].sort((a, b) => a.postNum - b.postNum)
     return { searchedNums: searched, quotedNums: viaQuote, picNums: viaPic, orderedResults: ordered }
   }, [searchResults, searchTerm, picTextByPost])
 
@@ -1342,9 +1347,9 @@ export default function PostArchive() {
                     count: searchResults.filter(p => holds(p, g)).length,
                   })).sort((a, b) => (b.isSearched ? 1 : 0) - (a.isSearched ? 1 : 0) || b.count - a.count)
                 : []
-              // searched-term posts first, then the rest
-              const ordered = [...searchResults].sort((a, b) =>
-                (searchedNums.has(a.postNum) ? 0 : 1) - (searchedNums.has(b.postNum) ? 0 : 1) || a.postNum - b.postNum)
+              // Oldest to newest, full stop — owner ruling 2026-08-25: no grouping by how a post
+              // matched (exact / quoted / picture), just postNum order.
+              const ordered = [...searchResults].sort((a, b) => a.postNum - b.postNum)
               return (
                 <div className="bg-q-panel border border-q-border rounded-xl p-3 space-y-2">
                   {breakdown.length > 0 && (
@@ -1438,25 +1443,10 @@ export default function PostArchive() {
               </div>
               ) : (
               <div className="grid gap-3 w-full max-w-3xl">
-                {orderedResults.map((p, i) => {
+                {orderedResults.map((p) => {
                   const exact = searchedNums.has(p.postNum)
-                  const bucketOf = (x: QPost) =>
-                    searchedNums.has(x.postNum) ? 0 : quotedNums.has(x.postNum) ? 1 : picNums.has(x.postNum) ? 2 : 3
-                  const bucket = bucketOf(p)
-                  const prev = orderedResults[i - 1]
-                  const prevBucket = !prev ? -1 : bucketOf(prev)
                   return (
                     <div key={p.id}>
-                      {/* divider each time the match kind changes */}
-                      {i > 0 && bucket !== prevBucket && (
-                        <p className="text-xs text-gray-500 mb-3 mt-1 border-t border-q-border pt-3">
-                          {bucket === 1
-                            ? <>↓ Posts where "{searchTerm}" is in the post being replied to</>
-                            : bucket === 2
-                            ? <>📷 Posts where "{searchTerm}" matched inside an attached picture</>
-                            : <>↓ Other posts via alias (don't contain "{searchTerm}" exactly)</>}
-                        </p>
-                      )}
                       {/* The pic-matched drop opens like every other result, in its ordered
                           place — this tag on the card says WHY it is here. */}
                       {picNums.has(p.postNum) && (
