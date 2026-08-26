@@ -1341,6 +1341,356 @@
    "ruledOn": "2026-08-26",
    "provenance": "Owner ruling: \"Hunter is the alias for Hunter Biden or H. Biden so lets tie them together and also make it known in the hover over synopsis.\"",
    "synopsis": "Hunter Biden is an American lawyer and businessman, the son of Joe Biden, who served on the board of the Ukrainian energy company Burisma Holdings and whose business dealings and a personal laptop became the subject of extensive public scrutiny and a federal investigation, resulting in gun and tax convictions in 2024 (later pardoned by his father). In the drops, Q refers to him as \"Hunter\" or \"H. Biden.\""
+  },
+  {
+   "entityId": "qe-85eeac4dbdc4",
+   "canonical": "ABC News",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "ABC News is the news division of the American Broadcasting Company (ABC), a national television network owned by the Walt Disney Company. It produces programs including World News Tonight, Good Morning America, and Nightline, and is one of the major U.S. broadcast news organizations."
+  },
+  {
+   "entityId": "qe-10c47fe32e72",
+   "canonical": "Haiti",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Haiti is a country occupying the western third of the island of Hispaniola in the Caribbean, with its capital at Port-au-Prince. It shares the island with the Dominican Republic and is the only nation in the Western Hemisphere founded by a successful slave revolt."
+  },
+  {
+   "entityId": "qe-66e950ae7246",
+   "canonical": "Seth Rich",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Seth Rich was a Democratic National Committee staffer who was shot and killed in Washington, D.C. in July 2016, in a case police attributed to a botched robbery attempt. His death became the subject of widely circulated but unsubstantiated conspiracy theories linking him to the 2016 DNC email leaks."
+  },
+  {
+   "entityId": "qe-477d37d6ce46",
+   "canonical": "Devin Nunes",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Devin Nunes is an American Republican politician who represented California's 22nd congressional district in the U.S. House of Representatives from 2003 to 2022, including as chairman of the House Intelligence Committee. He resigned from Congress in 2022 to become CEO of Trump Media & Technology Group."
+  },
+  {
+   "entityId": "qe-104df6bf0208",
+   "canonical": "President",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "\"President\" is a generic title, not a specific named individual in this archive — the head of state and/or government of a country, most often referring to the President of the United States in context. The specific officeholder meant depends on the date and surrounding context of each reference."
+  },
+  {
+   "entityId": "qe-d89374105f98",
+   "canonical": "MI6",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "MI6, formally the Secret Intelligence Service (SIS), is the United Kingdom's foreign intelligence agency, responsible for gathering intelligence outside British territory. It is a counterpart to the United States' CIA and works alongside Britain's domestic security service, MI5."
+  },
+  {
+   "entityId": "qe-2f1f501f35f4",
+   "canonical": "Julian Assange",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Julian Assange is an Australian editor and activist who founded WikiLeaks, an organization that publishes leaked and classified documents. He spent years evading extradition, including nearly seven years inside Ecuador's London embassy, before being imprisoned in the UK and pleading guilty in 2024 to a U.S. espionage-related charge in exchange for his release."
+  },
+  {
+   "entityId": "qe-8cf10da6c277",
+   "canonical": "Valerie Jarrett",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Valerie Jarrett is an American businesswoman and attorney who served as Senior Advisor to President Barack Obama throughout his administration, from 2009 to 2017. She was regarded as one of Obama's closest confidantes, working on public engagement and intergovernmental affairs."
+  },
+  {
+   "entityId": "qe-d4cb63800d61",
+   "canonical": "Ruth Bader Ginsburg",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Ruth Bader Ginsburg was an American jurist who served as an Associate Justice of the U.S. Supreme Court from 1993 until her death in September 2020. Appointed by President Bill Clinton, she was known for her opinions and dissents on gender equality and civil rights."
+  },
+  {
+   "entityId": "qe-2cf9f642e53c",
+   "canonical": "MSNBC",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "MSNBC is an American cable news television channel owned by NBCUniversal, a subsidiary of Comcast, launched in 1996. It is generally regarded as having a left-leaning editorial stance in its opinion programming."
+  },
+  {
+   "entityId": "qe-3aebb4a3835f",
+   "canonical": "Anthony Weiner",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Anthony Weiner is a former American Democratic congressman from New York who resigned in 2011 after a sexting scandal. A 2016 investigation into his laptop, seized in connection with another such case, led the FBI to review emails related to Hillary Clinton, whose aide Huma Abedin was Weiner's wife at the time."
+  },
+  {
+   "entityId": "qe-b0895d75ef73",
+   "canonical": "Fox News",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Fox News is an American cable news television channel launched in 1996 and owned by Fox Corporation. It is generally regarded as having a conservative-leaning editorial stance, particularly in its opinion programming, and has consistently ranked among the most-watched cable news networks."
+  },
+  {
+   "entityId": "qe-4c1531469e90",
+   "canonical": "Board Owner",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "\"Board Owner\" is a generic technical and administrative role, not a fixed name — the person who owns and controls an imageboard site such as 8chan/8kun. During the period Q posted, the site's owner was Jim Watkins, with his son Ron Watkins serving as site administrator; Q has at times addressed posts directly to whoever held this role."
+  },
+  {
+   "entityId": "qe-cb89efb25df6",
+   "canonical": "Google",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Google is a multinational technology company and subsidiary of Alphabet Inc., best known for its internet search engine and for products including Android, YouTube, and Gmail. It is one of the largest and most influential technology companies in the world."
+  },
+  {
+   "entityId": "qe-f133491e890a",
+   "canonical": "France",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "France is a country in Western Europe with its capital at Paris, a founding member of the European Union and a permanent member of the United Nations Security Council."
+  },
+  {
+   "entityId": "qe-9fee50ff1529",
+   "canonical": "Canada",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Canada is a country in North America with its capital at Ottawa, a member of the G7 and the Commonwealth, bordering the United States along the world's longest international land border."
+  },
+  {
+   "entityId": "qe-e40b7c986dd5",
+   "canonical": "Q",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Q, the namesake of QAnon, is the anonymous or pseudonymous online persona who began posting on the imageboard 4chan in October 2017, claiming to hold high-level ('Q clearance') U.S. government security access. Q later moved to 8chan and then 8kun, and the posts, known as Q drops, spawned a broad political movement and conspiracy theory; the identity of the person or people behind Q has never been officially confirmed."
+  },
+  {
+   "entityId": "qe-8d4eb01972fd",
+   "canonical": "Imran Awan",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Imran Awan is a Pakistani-American IT professional who worked as a technology aide for Democratic members of the U.S. House of Representatives, including Debbie Wasserman Schultz, for over a decade. In 2017 he became the subject of an investigation into irregularities in congressional equipment procurement and data access, which fueled online speculation about a broader security breach. He ultimately pleaded guilty to an unrelated bank fraud charge, with prosecutors stating they had found no evidence to support the more serious allegations."
+  },
+  {
+   "entityId": "qe-d1aac3bf7bce",
+   "canonical": "MS-13",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "MS-13, also known as Mara Salvatrucha, is a transnational criminal gang that originated among Salvadoran immigrants in Los Angeles in the 1980s and later spread through Central America and the United States. It is associated with violent crime, including extortion, drug trafficking, and gang-related killings, and has been designated a transnational criminal organization by U.S. authorities."
+  },
+  {
+   "entityId": "qe-1ac4620e5a5f",
+   "canonical": "Lisa Page",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Lisa Page is a former FBI lawyer who served as special counsel to then-Deputy Director Andrew McCabe and worked on both the Hillary Clinton email investigation and the early Russia investigation. She became a focus of public controversy in 2017-2018 after text messages exchanged with FBI agent Peter Strzok, with whom she was having an affair, showed personal anti-Trump commentary. She left the FBI in 2018."
+  },
+  {
+   "entityId": "qe-6dcd17b8dca5",
+   "canonical": "Eric Schmidt",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Eric Schmidt is an American businessman and computer scientist who served as CEO of Google from 2001 to 2011 and later as executive chairman of Google and its parent company Alphabet. He has also advised the U.S. Department of Defense on technology issues and chaired federal advisory bodies on artificial intelligence."
+  },
+  {
+   "entityId": "qe-2d1cba1ee70f",
+   "canonical": "National Guard",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "The National Guard is a reserve military force of the United States, organized by state and territory, whose units can be activated by state governors for domestic emergencies such as natural disasters and civil unrest, or federalized by the President for national defense missions. It traces its roots to colonial-era militias and serves as a reserve component of both the Army and Air Force."
+  },
+  {
+   "entityId": "qe-89ed7c32a320",
+   "canonical": "FAKE NEWS MEDIA",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "FAKE NEWS MEDIA is not the name of any single outlet but a recurring phrase Q uses in the drops as a blanket, derogatory label for mainstream media organizations Q characterizes as biased or dishonest. The term echoes rhetoric popularized by Donald Trump and his supporters and functions in this archive as a collective label rather than a specific, identifiable company."
+  },
+  {
+   "entityId": "qe-1732c368d7ce",
+   "canonical": "Syria",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Syria is a country in the Middle East that has been the site of a prolonged, multi-sided civil war since 2011, involving the Syrian government, opposition and jihadist factions, and various foreign and international actors."
+  },
+  {
+   "entityId": "qe-e14e019412e5",
+   "canonical": "James Baker",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "James A. Baker is an attorney who served as General Counsel of the FBI from 2014 to 2018, a tenure spanning the Hillary Clinton email investigation and the opening of the Russia investigation. He came under scrutiny in later congressional and Justice Department reviews over contacts with journalists and handling of politically sensitive matters, including allegations, which he denied, of discussing the Steele dossier with a reporter."
+  },
+  {
+   "entityId": "qe-fe504d63415a",
+   "canonical": "CodeMonkey",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "CodeMonkey is the online handle of Ron Watkins, an American who administered the 8chan (later renamed 8kun) imageboard where the Q drops were originally posted. Watkins took over day-to-day site administration after founder Fredrick Brennan departed, and has been publicly identified as CodeMonkey by researchers and journalists, including in the HBO documentary series on QAnon."
+  },
+  {
+   "entityId": "qe-cda28c2cb320",
+   "canonical": "Peter Strzok",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Peter Strzok is a former FBI counterintelligence agent who led both the Hillary Clinton email investigation and the early stages of the Russia investigation into the 2016 election. He was removed from the Russia investigation and later fired from the FBI in 2018 after text messages exchanged with FBI lawyer Lisa Page, with whom he was having an affair, revealed personal anti-Trump opinions."
+  },
+  {
+   "entityId": "qe-522a62f57eb5",
+   "canonical": "Justice K",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Justice K is read in this archive as Q's shorthand for Brett Kavanaugh, since the drops using this alias (roughly posts #2296-#2648) fall in September-October 2018, the exact period of Kavanaugh's contentious Supreme Court confirmation fight; this identification is inferred from timing and is not stated explicitly in the drops. Brett Kavanaugh is an American judge who was confirmed to the U.S. Supreme Court in October 2018 after a confirmation process marked by sexual assault allegations that he denied."
+  },
+  {
+   "entityId": "qe-4156dad3e3a4",
+   "canonical": "Mark Zuckerberg",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Mark Zuckerberg is an American technology entrepreneur who co-founded Facebook in 2004 and has served as its CEO, later renaming the parent company Meta Platforms. He has faced repeated congressional scrutiny over data privacy, content moderation, and the platform's influence on elections."
+  },
+  {
+   "entityId": "qe-993b70a4d8e6",
+   "canonical": "Paul Ryan",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Paul Ryan is an American Republican politician who represented Wisconsin in the U.S. House of Representatives and served as Speaker of the House from 2015 to 2019. He was also the Republican vice-presidential nominee in the 2012 election alongside Mitt Romney."
+  },
+  {
+   "entityId": "qe-4070f82717b6",
+   "canonical": "Reddit",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Reddit is an American social news aggregation and discussion website where registered users submit content and participate in topic-specific communities called subreddits, with posts ranked by user voting. Founded in 2005, it is one of the most visited websites in the world."
+  },
+  {
+   "entityId": "qe-cb0341c553e8",
+   "canonical": "Christopher Wray",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Christopher Wray is an American attorney who served as Director of the Federal Bureau of Investigation from 2017 to 2025, after being nominated by President Trump to succeed James Comey. He previously worked as a federal prosecutor and led the U.S. Department of Justice's Criminal Division."
+  },
+  {
+   "entityId": "qe-be69f182c59e",
+   "canonical": "United States federal government",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "The United States federal government is the national governing authority of the United States, a federal republic composed of three branches: the legislative (Congress), the executive (led by the President), and the judicial (headed by the Supreme Court)."
+  },
+  {
+   "entityId": "qe-ab324209d2fc",
+   "canonical": "YouTube",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "YouTube is an American online video-sharing platform launched in 2005 and acquired by Google in 2006, where users can upload, view, and comment on videos. It is one of the most widely used websites in the world and has faced ongoing debate over its content moderation and recommendation algorithms."
+  },
+  {
+   "entityId": "qe-99f51396595b",
+   "canonical": "Planned Parenthood",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Planned Parenthood is a nonprofit organization that provides reproductive health care services, including contraception, family planning, cancer screenings, and abortion, through clinics across the United States. Founded in the early 20th century, it is one of the largest providers of reproductive health services in the country and a frequent subject of political debate over abortion policy."
+  },
+  {
+   "entityId": "qe-2036752a688e",
+   "canonical": "GOOG",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "GOOG is the NASDAQ stock ticker symbol for Alphabet Inc., the parent company of Google. It represents one of Alphabet's two classes of publicly traded common stock, the other being GOOGL."
+  },
+  {
+   "entityId": "qe-50881b0f873f",
+   "canonical": "Matthew Whitaker",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Matthew Whitaker is an American attorney who served as Acting United States Attorney General from November 2018 to February 2019 under President Donald Trump. He previously served as chief of staff to Attorney General Jeff Sessions and, before that, as the U.S. Attorney for the Southern District of Iowa."
+  },
+  {
+   "entityId": "qe-5339fc139782",
+   "canonical": "Chuck Schumer",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Chuck Schumer is an American politician and member of the Democratic Party who has represented New York in the United States Senate since 1999. He has led the Senate Democratic caucus since 2017, serving as Senate Majority Leader or Minority Leader depending on which party holds the chamber."
+  },
+  {
+   "entityId": "qe-f81ca76a2b94",
+   "canonical": "Asia",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Asia is the world's largest and most populous continent, spanning a broad region that includes East, South, Southeast, Central, and West Asia and dozens of individual countries."
+  },
+  {
+   "entityId": "qe-ed944f555649",
+   "canonical": "Federal Reserve",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "The Federal Reserve is the central banking system of the United States, established in 1913. It sets U.S. monetary policy, supervises and regulates banks, and works to maintain financial stability."
+  },
+  {
+   "entityId": "qe-b62d0adb7b6f",
+   "canonical": "John F. Kennedy",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "John F. Kennedy was the 35th President of the United States, a Democrat who served from 1961 until his assassination in Dallas, Texas in November 1963. His presidency included the Cuban Missile Crisis and early civil rights and space program initiatives, and his assassination has been the subject of extensive official investigation and numerous conspiracy theories."
+  },
+  {
+   "entityId": "qe-98e0f85a496e",
+   "canonical": "CrowdStrike",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "CrowdStrike is an American cybersecurity company, founded in 2011, that provides cloud-based endpoint protection, threat intelligence, and incident response services. It became widely known for investigating major cyberattacks and, in July 2024, for a faulty software update that triggered a global IT outage."
+  },
+  {
+   "entityId": "qe-b3eb32dd3db7",
+   "canonical": "Director of National Intelligence",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "The Director of National Intelligence is a U.S. cabinet-level official who heads the Office of the Director of National Intelligence and serves as the leader of the U.S. intelligence community, overseeing coordination among the nation's intelligence agencies. The position was created in 2004 following recommendations of the 9/11 Commission."
+  },
+  {
+   "entityId": "qe-3d24e35ca2ae",
+   "canonical": "Rothschild family",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "The Rothschild family is a European banking dynasty founded in the late 18th century by Mayer Amschel Rothschild in Frankfurt, whose sons established banking houses in major European cities and built one of the most prominent financial institutions of the 19th century. Descendants remain active in finance, wine, and philanthropy today, and the Rothschild name is frequently invoked in conspiracy theories about global financial and political control, distinct from the family's documented business history."
+  },
+  {
+   "entityId": "qe-ef42c3c26493",
+   "canonical": "Germany",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Germany is a country in Central Europe and the most populous member state of the European Union, organized as a federal parliamentary republic."
+  },
+  {
+   "entityId": "qe-9f0b2c07f20f",
+   "canonical": "Operation Mockingbird",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Operation Mockingbird is the name given to an alleged Central Intelligence Agency program said to have begun in the early Cold War era, purportedly recruiting or influencing journalists and news outlets to shape media coverage. Aspects of CIA-media relationships from that period were documented by congressional investigations such as the 1975 Church Committee, but the full scope and existence of a coordinated program under this name remains historically disputed."
+  },
+  {
+   "entityId": "qe-d9fadf1fc394",
+   "canonical": "New York City",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "New York City is the most populous city in the United States, located in the state of New York at the mouth of the Hudson River. It is a global center for finance, media, and culture, comprising five boroughs."
+  },
+  {
+   "entityId": "qe-48200abcb9fa",
+   "canonical": "Washington Post",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "The Washington Post is an American daily newspaper based in Washington, D.C., founded in 1877. It is known for its coverage of national politics and government, including its reporting on the Watergate scandal in the 1970s."
+  },
+  {
+   "entityId": "qe-0b8c02f77a9a",
+   "canonical": "Bill Priestap",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "Bill Priestap is a former FBI official who served as Assistant Director of the FBI's Counterintelligence Division from 2015 to 2018. In that role he oversaw the bureau's investigation into Russian interference in the 2016 election, known as Crossfire Hurricane, before leaving the FBI in December 2018."
+  },
+  {
+   "entityId": "qe-5f70c7dc4854",
+   "canonical": "Centers for Disease Control and Prevention",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes lets finish 1\" (continuing the entity-synopsis sweep). Tier 2: mentions 10-19.",
+   "synopsis": "The Centers for Disease Control and Prevention is the United States' national public health agency, operating under the Department of Health and Human Services, responsible for disease control and prevention, public health research, and health-related emergency response."
   }
  ]
 }

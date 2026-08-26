@@ -1,7 +1,7 @@
 {
- "certifiedAt": "2026-08-26T15:04:40.637Z",
+ "certifiedAt": "2026-08-26T16:04:56.742Z",
  "sections": 8,
- "seedVersion": 110,
+ "seedVersion": 111,
  "note": "Every count here is recomputed from the artifacts, never copied forward. Verify with: node scripts/certification-manifest.mjs --verify",
  "counts": {
   "posts": 4966,
@@ -66,9 +66,9 @@
    "bytes": 8121262
   },
   "entity-hovers.json": {
-   "sha256": "b394b805bae4412b82865c8411470d73a636fd6f15960c4a82b0abfabafe59b3",
-   "semanticSha256": "d1afe890bcf3522791179c2ba114b28f1a97a94d909396b9897a0a6544daf6de",
-   "bytes": 2201680
+   "sha256": "21e2188ad2384940a7800c1905cbb61d61bce1cb649ef09c426ad10432d78ac3",
+   "semanticSha256": "d1d312d568c4b36d657ba6b297d15f51b99444c5baac28000bb49f9ac09ee0b9",
+   "bytes": 2212626
   }
  },
  "canonical": {
