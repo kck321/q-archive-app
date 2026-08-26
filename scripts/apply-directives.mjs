@@ -249,7 +249,10 @@ const checks = [
   // "Tarmac" around it — all Claims. It instructs nobody, which is what a Directive is for.
   // +1 on 2026-08-25: "Post 4949, this sentence should be a directive" — the Gettysburg Address
   // line, attribution included, family `morale` by an appended rule in queueDirectiveFamily.mjs.
-  ['directive occurrences = 3,472', all.length === 3472, all.length],
+  // -1 on 2026-08-25: #1010's "WATER" moves to Claims (owner ruling — see
+  // build-owner-section-moves.mjs). Same shape as the neighbouring list items PHARMA/CHEMICALS/
+  // VACCINES/TOBACCO/OPIOIDS, all already Claims; it instructed nobody.
+  ['directive occurrences = 3,471', all.length === 3471, all.length],
   // 486 (round 1) + 455 (round 2) + 24 (round 2's held rows, owner-ruled 2026-08-24) = 965.
   // +5 on 2026-08-24: the WWG1WGA ruling above.
   // +1 on 2026-08-25: #4949's Gettysburg line.
@@ -271,7 +274,8 @@ const checks = [
   // +2 on 2026-08-24: of the five WWG1WGA drops, #2347 and #2565 held no certified directive at
   // all. #1183, #2543 and #2567 already did, so they were already in this set.
   // +1 on 2026-08-25: #4949 gains its first certified directive.
-  ['posts with a directive = 1,929', postsWith.size === 1929, postsWith.size],
+  // -1 on 2026-08-25: #1010 loses its only certified directive (WATER, moved to Claims).
+  ['posts with a directive = 1,928', postsWith.size === 1928, postsWith.size],
   // directiveFamilies is a map keyed by normalised text PER POST, so the 53 in-post repeats
   // share one entry: 2,422 occurrences - 53 repeats = 2,369 keys. The occurrence-level
   // invariant (sum of families === 2,422) is enforced upstream by reconcile-directives.mjs;

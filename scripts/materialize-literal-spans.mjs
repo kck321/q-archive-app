@@ -129,7 +129,8 @@ const checks = [
   // tracks whatever apply-claims.mjs certified and says only that THIS step must not add or drop
   // one while turning stored text into runtime spans.
   // 10,537 since the corpus rulings of 2026-08-24. Passthrough, as the rest here.
-  ['claims unchanged = 10,537', counts.claims === 10537, counts.claims],
+  // +2 on 2026-08-25: #1010's WATER/AIR owner ruling — see build-owner-section-moves.mjs.
+  ['claims unchanged = 10,539', counts.claims === 10539, counts.claims],
   // 843 since the 2026-08-21 ruling on #4910 ("Freedom of information [truth] = END").
   // 941 since the 2026-08-24 UPDATED-report ruling pulled #1443's "DECLAS_Public[3]" out of
   // Predictions and left it certified as a Claim. A passthrough assertion, as above: it tracks

@@ -2,10 +2,10 @@
  "note": "Spans the owner moved between sections, on 2026-08-24. Layered over the base certified artifacts by apply-claims.mjs and apply-directives.mjs — never written into them, because a correction inside a re-derivable artifact is erased the next time its audit runs.",
  "ruledOn": "2026-08-24",
  "totals": {
-  "moves": 30,
+  "moves": 32,
   "outOfClaims": 23,
-  "outOfDirectives": 1,
-  "intoClaims": 2,
+  "outOfDirectives": 2,
+  "intoClaims": 4,
   "intoPredictions": 15,
   "alreadyApplied": 14,
   "refused": 2
@@ -391,6 +391,24 @@
    "ruledOn": "2026-08-24",
    "ruling": "Post 4784: Lisa Barsoomian _former Bill Clinton attorney lets highlight as a claim",
    "why": "The drop's opening line. It asserts who she is; the two lines under it — the scrubbed case and \"Wife of Rod Rosenstein\" — are already Claims."
+  },
+  {
+   "postNum": 1010,
+   "from": "directives",
+   "to": "claims",
+   "text": "WATER",
+   "ruledOn": "2026-08-25",
+   "ruling": "in post 1010 i see water is a directive but it should be a claim",
+   "why": "A line of the MONEY/POWER/CONTROL list, between \"PHARMA [CLAS-D]\" and \"AIR\" — both Claims (AIR joins them in this same ruling). It names a thing the list asserts is controlled; it instructs nobody, which is what a Directive is for."
+  },
+  {
+   "postNum": 1010,
+   "from": null,
+   "to": "claims",
+   "text": "AIR",
+   "ruledOn": "2026-08-25",
+   "ruling": "i want air (that's not categorized) higlighted as a claim",
+   "why": "The line directly under WATER in the same list, certified in no section. Same shape as every other item on it."
   }
  ]
 }

@@ -103,7 +103,9 @@ export const CANONICAL = {
   // +1 on 2026-08-25: "Post 4949, this sentence should be a directive" — the Gettysburg Address
   // line, attribution included, family `morale` by an appended rule. #4949 gains its first
   // certified directive (posts +1) and the wording is new to the section (distinct +1).
-  directives: { occurrences: 3334, distinct: 1942, posts: 1929 },
+  // -1 on 2026-08-25: #1010's WATER moves to Claims (owner ruling). posts -1 too — it was #1010's
+  // only certified directive.
+  directives: { occurrences: 3333, distinct: 1942, posts: 1928 },
   // 4,181 -> 4,188 on 2026-08-13 by owner adjudication, not by a classifier. Six exact
   // occurrences of "Pure evil." / "PURE EVIL." plus "The 'real' racist." in #2917. The corpus
   // search that found them also showed the fuller variants ("These people are pure evil.",
@@ -150,7 +152,8 @@ export const CANONICAL = {
   // assertion), and two arrive: #1443's "#2." from Directives and #4784's opening line.
   // 10,247 -> 10,237 on 2026-08-24: the ten Red October / Delta lines that were Claims are
   // Predictions now.
-  claims: { occurrences: 10237, distinct: 7777, posts: 3223 },
+  // +2 on 2026-08-25: #1010's WATER/AIR owner ruling.
+  claims: { occurrences: 10239, distinct: 7777, posts: 3223 },
   // 630 -> 595: -73 technical nonpredictions, -56 arguable rows withdrawn to the review
   // backlog, +66 unique moves from Claims, +28 high-confidence predictions the extractor
   // missed. posts 520 -> 490. The 91 withdrawn/held rows are NOT deleted — they sit in

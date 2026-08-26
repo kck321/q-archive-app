@@ -159,6 +159,30 @@ moves.push({
   why: 'The drop\'s opening line. It asserts who she is; the two lines under it — the scrubbed case and "Wife of Rod Rosenstein" — are already Claims.',
 })
 
+// ── #1010: WATER is a Claim, not a Directive; AIR joins it ──────────────────
+//
+//   "in post 1010 i see water is a directive but it should be a claim and i want air (that's
+//    not categorized) higlighted as a claim"
+//
+// #1010 is a one-word-per-line list of things Q asserts are harmful or controlled — MONEY,
+// POWER, CONTROL, PHARMA [CLAS-D], CHEMICALS, VACCINES, TOBACCO, OPIOIDS — every neighbour
+// already certified as a Claim. WATER sits between PHARMA and AIR in that same list and was
+// certified a Directive instead; AIR was certified in no section at all. Neither line instructs
+// anyone to do anything — they are items on the list, the same shape as the Claims beside them.
+const RULED_ON_1010 = '2026-08-25'
+moves.push({
+  postNum: 1010, from: 'directives', to: 'claims', text: 'WATER',
+  ruledOn: RULED_ON_1010,
+  ruling: 'in post 1010 i see water is a directive but it should be a claim',
+  why: 'A line of the MONEY/POWER/CONTROL list, between "PHARMA [CLAS-D]" and "AIR" — both Claims (AIR joins them in this same ruling). It names a thing the list asserts is controlled; it instructs nobody, which is what a Directive is for.',
+})
+moves.push({
+  postNum: 1010, from: null, to: 'claims', text: 'AIR',
+  ruledOn: RULED_ON_1010,
+  ruling: 'i want air (that\'s not categorized) higlighted as a claim',
+  why: 'The line directly under WATER in the same list, certified in no section. Same shape as every other item on it.',
+})
+
 // ── EVERY MOVE IS CHECKED AGAINST THE DROP ──────────────────────────────────
 // The text must be a line Q wrote, and where a move says `from`, the section must actually hold it.
 // A ruling that names something the archive does not have is a ruling that needs re-reading.

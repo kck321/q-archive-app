@@ -434,7 +434,9 @@ const checks = [
   // Claims are Predictions now; five more arrive there from no section at all, and two are REFUSED
   // and named in audit/owner-section-moves.json — NCSWIC inside a CISA URL, and #1176's "Delta
   // engine fire?", which is Delta AIRLINES.
-  ['claim occurrences = 10,537', allClaims.length === 10537, allClaims.length],
+  // +2 on 2026-08-25: #1010's WATER (moved from Directives) and AIR (previously uncategorised),
+  // owner ruling — see build-owner-section-moves.mjs.
+  ['claim occurrences = 10,539', allClaims.length === 10539, allClaims.length],
   // 4,782 + 1,654 = 6,436 claims; 250 + 94 = 344 predictions, across both rounds.
   // -1 claim, -1 prediction on 2026-08-24: two round-2 rulings the owner overrode on the UPDATED
   // report. lib/queueRulings.mjs drops them before any materialiser sees them, so the round-2
@@ -478,7 +480,8 @@ const checks = [
   // -8, and every key accounted for. Seven of the ten departing wordings occur nowhere else in
   // Claims and take their key with them. The eighth is "Q, DELTA" — one key across #756, #757 and
   // #785, and all three occurrences leave together.
-  ['distinct = 8,017', distinct.size === 8017, distinct.size],
+  // +2 on 2026-08-25: WATER and AIR are both new wordings to the section.
+  ['distinct = 8,019', distinct.size === 8019, distinct.size],
   // +1: 17 posts gain their first claim, 16 posts lose their last one.
   // -3: #483, #2695 and #3203 each held ONE claim and it was the quoted question, so those
   // drops leave the Claims post set entirely. #2420 and #2776 keep other claims and stay.
@@ -551,7 +554,8 @@ const checks = [
   // fewer — and "#2." arrives carrying it.
   // -7: seven of the ten departing rows carried it — "[7] Delta today.", "[1] min Delta.",
   // "DELTA [6] CONF." and the three "Q, DELTA" lines are all four words or fewer.
-  ['telegraphic = 4,661', telegraphic === 4661, telegraphic],
+  // +2 on 2026-08-25: WATER and AIR are both one-word claims (<=4 words).
+  ['telegraphic = 4,663', telegraphic === 4663, telegraphic],
   // 13 + 37: the queue emitted one row per UNIT, so a line Q wrote twice arrives twice and is
   // certified twice. Collapsing them would have dropped 37 real occurrences.
   // +80: round 2 carries more lines Q writes twice in one drop, and each repeat is a real
@@ -572,7 +576,8 @@ const checks = [
   // apply-directives.mjs runs immediately before this step and owns the number.
   // 3,442 + 24 rows round 2 held for stating no instruction, ruled in by the owner on 2026-08-24.
   // +1 on 2026-08-25: #4949's Gettysburg line — see apply-directives.mjs.
-  ['Directives now 3,472', directives === 3472, directives],
+  // -1 on 2026-08-25: #1010's WATER moves out of Directives — see apply-directives.mjs.
+  ['Directives now 3,471', directives === 3471, directives],
 ]
 
 console.log('\nAPPLY CERTIFIED CLAIMS\n')
