@@ -7472,3 +7472,100 @@ pre-flight gates blocked the publish, files restored via `git checkout -- public
 with SKIP_EXPORT=1 per the script's documented policy. Live after 42s: commit f6dcb49, seed 98,
 sw qdrops-20260825-142737. `verify-live.mjs`: **14/14 — new and returning readers both receive the
 validated build.** Production now carries 1,050 picture analyses and every 2026-08-24 ruling batch.
+
+## 2026-08-26 — Picture cropping, #1515 stragglers, entity hover uniformity, URL-anchor fix, Support page rewrite
+
+**Request:** Several rounds in one session — trim black/dead space around attachment pictures;
+finish #1515's missed reporter entities; make entity hover synopses uniform site-wide instead of
+gated to shorthand only; fix a broken URL link on #1538 where hovering only highlighted a fragment
+of the address; move Resolution Center/Comments & Ideas around the sidebar (then revert;) rewrite
+the Support page's copy to be heartfelt and match two supplied screenshots verbatim.
+
+**Solution:**
+- `scripts/build-media-crop.mjs` + `src/components/CroppedMedia.tsx`: detects black letterbox
+  borders via pixel-scanning (corner-reference colour, per-row/col flatness test with gap tolerance
+  for thin foreign UI elements like scroll pills), stores crop boxes keyed by the RESOLVED
+  (post-`mediaUrl()`) url so a source post and a quote of the same image converge on one key.
+  `MAX_CROP_FRACTION` raised 0.45→0.8 after a legit letterboxed photo got refused; added
+  `BOTH_AXES_FRACTION` (0.10) after a Punisher-skull wallpaper got cropped down to just the skull —
+  cropping both axes at once is the signature of centered artwork, not letterboxing.
+- Added 4 more #1515 reporter entities the first #1515 pass missed entirely (Vice/Alyssa
+  Mastramonoco, Vox/Jon Allen, WaPo/Anne Gearan, WaPo/Greg Sargent), on top of the earlier 31.
+- `build-glossary.mjs`: removed the `isShorthand()` gate entirely so every certified entity gets a
+  hover, not just acronyms — tokens 403 → 1,715. Fixed a case-sensitivity bug this exposed:
+  case-folding at build time collapses spelling variants to one surviving key, but the runtime
+  `glossFor()` lookup was case-sensitive, so the non-surviving spelling (e.g. "HUSSEIN" when
+  "Hussein" survived) matched nothing — fixed with a memoized case-insensitive fallback index.
+  Removed the internal "entity — over claim" precedence tooltips from `<mark>` elements app-wide
+  (native browser tooltip, separate from the custom hover card, and not something a reader needs).
+- `postHighlight.tsx`: ported PostDetail.tsx's `urlBuf`/`urlEnd`/`urlHref` buffering mechanism so a
+  certified term whose span falls INSIDE a URL no longer splits the anchor into multiple
+  `<a href={fragment}>` pieces, each pointing at a broken partial address.
+- Sidebar: Resolution Center and Comments & Ideas tried outside Extras, then put back inside Extras
+  at the top of the list per the owner's follow-up.
+- `src/pages/Donate.tsx`: retitled "Support Qdrops.app", rewrote the About/Thank-You/Help-Support
+  sections to the owner's supplied wording (screenshots), then shortened the Thank-You section again
+  per a follow-up edit.
+
+## 2026-08-26 — Entity synopsis mass-authoring sweep (tier 1: mentions ≥ 20 + archive-specific terms)
+
+**Request:** "lets put a synopsis or an explanation for any entity that doesn't [have one]... lets
+search the internet to give some insight on who the entities are." Confirmed site-wide, replacing
+the generic boilerplate synopsis entirely and dropping the secondary "Entity — over Claim" hover box.
+
+**Solution:** `audit/entity-synopsis-owner-rulings.json` grew from 1 entry (Nellie Ohr) to 190:
+WikiLeaks + all 106 of #1515's reporters/outlets researched via parallel background research agents,
+then the archive's 82 highest-mention entities (tier 1, mentions ≥ 20), plus 10 archive-specific
+terms written by hand rather than researched (Alice, Godfather III, Alice & Wonderland, NAT SEC,
+Patriots, We the People, Democrat, God, MSDNC, Project Snow White) — in-universe Q conventions or
+generic terms with no independent real-world subject to look up. `apply-entity-synopses.mjs`
+replaces `hovers.global[entityId]` outright; QA gate requires the synopsis literally contain the
+canonical's first word, which caught and fixed 5 wording mismatches (Geoff Earle, Evan Handler,
+Maria-Elena Salinas, Gabriel Debenedetti, BuzzFeed casing). SEED_VERSION 104 → 109 across the batch.
+**Still open:** tiers 2–4 (mentions 1–19, roughly 1,300 more entities) — the owner confirmed
+"yes lets finish 1", not yet resumed this session.
+
+## 2026-08-26 — Merge "Hunter" into "Hunter Biden", register "H. Biden" as its alias
+
+**Request:** "just a heads up Hunter is the alias for Hunter Biden or H. Biden so lets tie them
+together and also make it known in the hover over synopsis."
+
+**Solution:** Found "Hunter" (6 mentions, adjudicated tail) and "Hunter Biden" (a separate
+adjudicated-tail row, both "Keep — valid named entity" in the 2026-08-16 hover audit as ENT-0170
+and ENT-0136) were two duplicate canonical rows for one person. First attempt invented a new
+`canonicalRulings` in-place-rename mechanism — wrong, because a genuine second row already existed;
+reverted it and used the existing `mergeRulings` (canonical/absorb, direct mentions transfer)
+instead, which is exactly what it's for. Also added a `merges` (from/into) entry purely to bridge
+the ENT-#### hover-audit crosswalk, which resolves survivors independently of `mergeRulings`.
+Registered "H. Biden" as a proper corpus-wide `aliasRulings` entry (not per-post occurrence rulings,
+which bump a count but never register a matchable alias) — 6 occurrences: #4888, #4891 x3, #4893,
+#4898 — and withdrew the bare "Biden" → Joe Biden mismatch those same spans were wrongly resolving
+to. Found and withdrew a second, unrelated defect while validating: #4888 and #4893 were ALREADY
+certified with a "Hunter Biden" mention that traced only to a source-link URL slug
+("hunter-biden-reportedly...", not drop text) — the same class of defect the 2026-08-17 CMS/URL-slug
+cleanup targeted, this pair predates it. `apply-entity-cleanup.mjs --rematerialise` needed a new
+`postApprovalDeltas` entry with BOTH a flat (before-state) delta and an `afterOnly` correction — the
+merge means "Hunter Biden" no longer goes fully dormant under the approved cleanup plan the way it
+did standalone, the same shape as the existing Rachel Maddow/Al Gore precedents in that file. Full
+rebuild, SEED_VERSION 109 → 110, `certification-manifest.mjs --verify` clean, verified live via
+Playwright that "Hunter", "HUNTER" and "H. Biden" all resolve to the same Hunter Biden synopsis.
+**Noted in passing, not fixed:** the site-wide glossary case-insensitive matching (this session,
+above) now also lights up the lowercase "hunter" substring inside the raw URL text on #4888 — a
+pre-existing gap where `applyGlossary()`'s post-render pass doesn't know to skip anchor/URL text the
+way the certified named-entity highlighter does. Flagged to the owner, not fixed this session.
+
+## 2026-08-26 — Bracket highlight: drop monospace font and 90% size
+
+**Request:** "for the brackets and the entities can we have the text within the post and in these
+sections the same size and style as all the other categories."
+
+**Solution:** Investigated both; only Brackets had an actual font-family/size deviation —
+`font-mono text-[0.9em]` in-post, plus a separate hardcoded `font-mono` in the PostDetail `[
+Brackets ]` chip row and the standalone `/brackets` archive page. Entities' in-post highlight and
+its "Named Entities" chip row already matched the plain sans-serif, full-size look of Claims/
+Predictions/etc. (just a `font-medium` weight several other categories also carry) — owner confirmed
+fixing Brackets only. Removed `font-mono`/`text-[0.9em]` from `HIGHLIGHT_CLS.bracketCode`
+(`src/lib/highlightConstants.ts`), the two hardcoded `font-mono` bracket chip spans in
+`PostDetail.tsx`, and the bracket-code chip in `QBrackets.tsx` (left its post-number reference pills
+monospace — an unrelated, consistent convention for post numbers across the app). Verified live via
+Playwright on #4742 and `/brackets`. `tsc --noEmit` clean.
