@@ -18,6 +18,7 @@ import { matchAxisMax, MatchCountLabel, NO_MATCH_GREY } from '../lib/chartSearch
 import { getTermMatchesInSection, type TermSectionMatch } from '../lib/posts'
 import { getPictureTextByPost } from '../lib/pictureAnalysis'
 import { catColor, seriesColor } from '../lib/categoryColors'
+import { resolveRef } from '../lib/refIndex'
 import { CAN_EDIT, IS_PUBLIC_SITE } from '../lib/appMode'
 
 function gradientColor(count: number, maxCount: number, dark = false): string {
@@ -1464,7 +1465,31 @@ export default function PostArchive() {
                           "{searchTerm}" matched inside this post's picture
                         </p>
                       )}
-                      <div className={exact ? 'ring-1 ring-red-700/50 rounded-xl' : picNums.has(p.postNum) ? 'ring-1 ring-teal-700/50 rounded-xl' : ''}>
+                      {/* Same reasoning as the pic tag: a quote-chain match can sit two replies
+                          back (this drop's reply-parent's OWN reply-parent), a span the reader
+                          would otherwise have to click "show earlier posts" to ever see. Silent
+                          matches like this read as wrong; naming the drop it came from doesn't. */}
+                      {quotedNums.has(p.postNum) && (() => {
+                        const hit = (p.quotedPosts ?? []).find(q => (q.depth ?? 0) <= 1
+                          && (q.text ?? '').toLowerCase().includes(searchTerm.toLowerCase().trim()))
+                        const resolved = hit?.boardId ? resolveRef(hit.boardId) : null
+                        const twoHops = (hit?.depth ?? 0) >= 1
+                        const label = resolved?.postNum ? `#${resolved.postNum}` : hit?.boardId ? `board #${hit.boardId}` : 'an earlier post'
+                        return (
+                          <p className="text-xs text-amber-300 mb-1 flex items-center gap-1.5">
+                            {resolved?.postNum ? (
+                              <Link to={`/post/${resolved.postNum}?flash=1&highlight=${encodeURIComponent(searchTerm)}`}
+                                className="px-1.5 py-0.5 rounded font-mono bg-amber-900/40 border border-amber-700/50 hover:bg-amber-800/50 hover:text-amber-100 transition-colors">
+                                ↩ via {label}
+                              </Link>
+                            ) : (
+                              <span className="px-1.5 py-0.5 rounded font-mono bg-amber-900/40 border border-amber-700/50">↩ via {label}</span>
+                            )}
+                            "{searchTerm}" matched in the post {twoHops ? 'this reply-chain leads back to' : 'this drop replies to'}, not #{p.postNum}'s own words
+                          </p>
+                        )
+                      })()}
+                      <div className={exact ? 'ring-1 ring-red-700/50 rounded-xl' : picNums.has(p.postNum) ? 'ring-1 ring-teal-700/50 rounded-xl' : quotedNums.has(p.postNum) ? 'ring-1 ring-amber-700/50 rounded-xl' : ''}>
                         <PostCard post={p}
                           questionTexts={postQuestions[p.id]}
                           searchKeyword={searchTerm}
