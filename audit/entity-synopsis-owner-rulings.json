@@ -760,6 +760,580 @@
    "ruledOn": "2026-08-26",
    "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
    "synopsis": "An Office of the Inspector General is an independent watchdog office within a U.S. federal agency, such as the Department of Justice, that conducts audits and investigations of the agency's programs and personnel to identify waste, fraud, abuse, and misconduct."
+  },
+  {
+   "entityId": "qe-e01fe208ebaa",
+   "canonical": "Alice",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis]... lets search the internet.\" Written directly rather than researched — an in-universe Q convention or a generic term, not an independently researchable real-world subject.",
+   "synopsis": "Alice is the name Q equates with himself/the person(s) writing the drops. The equation \"Q = Alice\" is stated directly in drop #74, and every other occurrence in the archive is read as inheriting that identity rather than restating it."
+  },
+  {
+   "entityId": "qe-37b07a60c52b",
+   "canonical": "Alice & Wonderland",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis]... lets search the internet.\" Written directly rather than researched — an in-universe Q convention or a generic term, not an independently researchable real-world subject.",
+   "synopsis": "\"Alice & Wonderland\" is a phrase Q introduces in the same drop that states \"Q = Alice\" (#74: \"You'll soon understand the meaning behind Alice '&' Wonderland\"), tying it to that equation. Q never explains the phrase further; it recurs afterward alongside other unexplained signature phrases like \"Snow White\" and \"Iron Eagle.\""
+  },
+  {
+   "entityId": "qe-a7426511827a",
+   "canonical": "Godfather III",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis]... lets search the internet.\" Written directly rather than researched — an in-universe Q convention or a generic term, not an independently researchable real-world subject.",
+   "synopsis": "\"Godfather III\" is one of several recurring phrases Q calls \"signatures\" (#87: \"My signatures all reference upcoming events about to drop\"), appearing alongside \"Snow White\" and \"Iron Eagle.\" Q states these carry meaning but never defines them; it is commonly read by researchers as an allusion to the 1990 film The Godfather Part III, though Q never confirms this."
+  },
+  {
+   "entityId": "qe-d7fe77ea9c01",
+   "canonical": "NAT SEC",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis]... lets search the internet.\" Written directly rather than researched — an in-universe Q convention or a generic term, not an independently researchable real-world subject.",
+   "synopsis": "NAT SEC is Q's shorthand for \"national security,\" used across dozens of drops as a general reference to national-security matters rather than as the name of a specific organization."
+  },
+  {
+   "entityId": "qe-7e666288b152",
+   "canonical": "Patriots",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis]... lets search the internet.\" Written directly rather than researched — an in-universe Q convention or a generic term, not an independently researchable real-world subject.",
+   "synopsis": "\"Patriots\" is Q's recurring term for supporters of the movement and, more broadly, for Americans loyal to the country — a label for a group of people rather than the name of a specific person or organization."
+  },
+  {
+   "entityId": "qe-271807d35b2e",
+   "canonical": "We the People",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis]... lets search the internet.\" Written directly rather than researched — an in-universe Q convention or a generic term, not an independently researchable real-world subject.",
+   "synopsis": "\"We the People\" is the opening phrase of the preamble to the U.S. Constitution. Q uses it as a recurring reference to the American public/citizenry rather than as the name of a specific organization."
+  },
+  {
+   "entityId": "qe-d38940e564bf",
+   "canonical": "Democrat",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis]... lets search the internet.\" Written directly rather than researched — an in-universe Q convention or a generic term, not an independently researchable real-world subject.",
+   "synopsis": "\"Democrat\" here is a general term for a member of, or affiliation with, the U.S. Democratic Party — distinct in this archive from the \"Democratic Party\" entity itself, since Q most often uses \"Democrat\" to describe individuals rather than the organization."
+  },
+  {
+   "entityId": "qe-2df6a50f6a0e",
+   "canonical": "God",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis]... lets search the internet.\" Written directly rather than researched — an in-universe Q convention or a generic term, not an independently researchable real-world subject.",
+   "synopsis": "God is referenced across the drops, most often in phrases like \"God bless,\" \"In God we trust,\" or \"For God and country.\" The archive records where and how often the term appears without asserting any particular theological claim."
+  },
+  {
+   "entityId": "qe-4c00a2e32fc2",
+   "canonical": "MSDNC",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis]... lets search the internet.\" Written directly rather than researched — an in-universe Q convention or a generic term, not an independently researchable real-world subject.",
+   "synopsis": "MSDNC is a derogatory portmanteau of \"MSNBC\" and \"DNC\" (Democratic National Committee), used to imply the network is politically aligned with the Democratic Party — not the network's actual name."
+  },
+  {
+   "entityId": "qe-71878b3acd46",
+   "canonical": "Project Snow White",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis]... lets search the internet.\" Written directly rather than researched — an in-universe Q convention or a generic term, not an independently researchable real-world subject.",
+   "synopsis": "Project Snow White was a real covert operation in the 1970s by the Church of Scientology to infiltrate and steal documents from U.S. government agencies, uncovered by the FBI in 1977 — at the time, the largest known infiltration of the U.S. federal government by a private organization. Q's own drops also use the shorter phrase \"Snow White\" as one of several recurring unexplained signature phrases; this entity reflects the real historical operation researchers commonly connect it to."
+  },
+  {
+   "entityId": "qe-e4b9b2985b7c",
+   "canonical": "United States",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "The United States is a federal republic of 50 states in North America and the world's largest economy, exercising global military and diplomatic influence through institutions like the presidency, Congress, and the federal court system."
+  },
+  {
+   "entityId": "qe-f918f4a7fbe4",
+   "canonical": "POTUS",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "POTUS is the standard abbreviation for \"President of the United States,\" the head of state and head of government of the U.S. and commander-in-chief of its armed forces, elected to a four-year term."
+  },
+  {
+   "entityId": "qe-27e676aae866",
+   "canonical": "Democratic Party",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "The Democratic Party is one of the two major political parties in the United States, generally associated with liberal and progressive policy positions, that has held the presidency and majorities in Congress at various points in U.S. history."
+  },
+  {
+   "entityId": "qe-e39142bdc502",
+   "canonical": "Federal Bureau of Investigation",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "The Federal Bureau of Investigation (FBI) is the United States' principal federal law enforcement and domestic intelligence agency, operating under the Department of Justice to investigate federal crimes and threats to national security."
+  },
+  {
+   "entityId": "qe-ca3f699d20ac",
+   "canonical": "Barack Obama",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Barack Obama is an American politician and attorney who served as the 44th President of the United States from 2009 to 2017, the first African American to hold the office."
+  },
+  {
+   "entityId": "qe-cb07cff77084",
+   "canonical": "Hillary Clinton",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Hillary Clinton is an American politician and attorney who served as U.S. Secretary of State (2009-2013), a U.S. Senator from New York, and First Lady, and was the Democratic Party's presidential nominee in 2016."
+  },
+  {
+   "entityId": "qe-8206c14d727c",
+   "canonical": "Rod Rosenstein",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Rod Rosenstein was the U.S. Deputy Attorney General from 2017 to 2019, who appointed Robert Mueller as special counsel to lead the investigation into Russian interference in the 2016 election."
+  },
+  {
+   "entityId": "qe-f1095d932a99",
+   "canonical": "Russia",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Russia is the world's largest country by land area, spanning Eastern Europe and northern Asia, and a nuclear-armed global power whose government under Vladimir Putin has been a major factor in U.S. foreign policy and intelligence matters."
+  },
+  {
+   "entityId": "qe-a3bd83a14e22",
+   "canonical": "Department of Justice",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "The Department of Justice (DOJ) is the U.S. federal executive department responsible for enforcing federal law, headed by the Attorney General, and overseeing agencies including the FBI."
+  },
+  {
+   "entityId": "qe-30f4e75293aa",
+   "canonical": "Robert Mueller",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Robert Mueller is an American lawyer who served as FBI Director from 2001 to 2013 and later served as special counsel from 2017 to 2019, leading the Department of Justice investigation into Russian interference in the 2016 U.S. election."
+  },
+  {
+   "entityId": "qe-59d19d09a92e",
+   "canonical": "Saudi Arabia",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Saudi Arabia is an absolute monarchy on the Arabian Peninsula and one of the world's largest oil producers, and a longstanding U.S. security and economic partner in the Middle East."
+  },
+  {
+   "entityId": "qe-e7ce1dad3228",
+   "canonical": "FISA Court",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "The FISA Court (formally the Foreign Intelligence Surveillance Court) is a specialized U.S. federal court, established in 1978, that reviews government applications for surveillance and search warrants in foreign intelligence investigations, typically in closed, classified proceedings."
+  },
+  {
+   "entityId": "qe-3a4e3df6e631",
+   "canonical": "Central Intelligence Agency",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "The Central Intelligence Agency (CIA) is the U.S. federal agency responsible for gathering, analyzing, and acting on foreign intelligence and national security information, operating independently of the FBI's domestic law enforcement role."
+  },
+  {
+   "entityId": "qe-9e93984165b1",
+   "canonical": "United States Senate",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "The United States Senate is the upper chamber of the U.S. Congress, composed of 100 members (two per state), with powers including confirming presidential appointments, ratifying treaties, and trying impeachments."
+  },
+  {
+   "entityId": "qe-2930bf2822b7",
+   "canonical": "China",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "China is the world's most populous country and a major global economic and military power, governed as a one-party state by the Chinese Communist Party, and a central subject of U.S. trade, security, and diplomatic policy."
+  },
+  {
+   "entityId": "qe-f932f71142c9",
+   "canonical": "The White House",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "The White House is the official residence and workplace of the President of the United States, located in Washington, D.C., and a common shorthand for the presidency and its executive staff."
+  },
+  {
+   "entityId": "qe-f4dabfcc4006",
+   "canonical": "Washington, D.C.",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Washington, D.C. is the capital city of the United States, seat of the federal government, and home to the White House, Congress, and the Supreme Court."
+  },
+  {
+   "entityId": "qe-b4af4d0b0bbd",
+   "canonical": "Jeff Sessions",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Jeff Sessions is an American politician and attorney who served as a U.S. Senator from Alabama and as U.S. Attorney General from 2017 to 2018, recusing himself from the Russia investigation due to his role in the Trump campaign."
+  },
+  {
+   "entityId": "qe-5307e91b2681",
+   "canonical": "John Huber",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "John Huber is the former U.S. Attorney for Utah whom Attorney General Jeff Sessions assigned in 2017 to review the FBI and DOJ's handling of the Clinton Foundation inquiry and the FISA warrant process; the review closed in early 2020 without producing charges."
+  },
+  {
+   "entityId": "qe-60b5212c9376",
+   "canonical": "Twitter",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Twitter was a social media platform for short public posts, founded in 2006, that Elon Musk acquired in 2022 and rebranded as X the following year."
+  },
+  {
+   "entityId": "qe-8c2a4a24bf3c",
+   "canonical": "National Security Agency",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "The National Security Agency is a U.S. Department of Defense intelligence agency responsible for signals intelligence collection and cryptologic operations, including foreign communications interception and cybersecurity."
+  },
+  {
+   "entityId": "qe-374b8e34afd1",
+   "canonical": "North Korea",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "North Korea is an East Asian nation ruled since its 1948 founding by the Kim family under a one-party communist system, known internationally for its nuclear weapons program and diplomatic isolation."
+  },
+  {
+   "entityId": "qe-23b3f3882ba3",
+   "canonical": "Iran",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Iran is a Middle Eastern country governed since its 1979 Islamic Revolution as a theocratic republic under a Supreme Leader, and has long been a focus of U.S. sanctions and nuclear-proliferation diplomacy."
+  },
+  {
+   "entityId": "qe-39ac279949d9",
+   "canonical": "Republican Party",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "The Republican Party is one of the two major political parties in the United States, generally associated with conservative policy positions, founded in 1854."
+  },
+  {
+   "entityId": "qe-3b4c46b9f74d",
+   "canonical": "James Comey",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "James Comey was director of the FBI from 2013 until President Trump fired him in May 2017, a dismissal that led to the appointment of Special Counsel Robert Mueller."
+  },
+  {
+   "entityId": "qe-82b9af384407",
+   "canonical": "Facebook",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Facebook is a social networking platform launched by Mark Zuckerberg in 2004 that is now operated by parent company Meta Platforms."
+  },
+  {
+   "entityId": "qe-190d29e92cd1",
+   "canonical": "Edward Snowden",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Edward Snowden is a former NSA contractor who in 2013 leaked classified documents revealing the scope of U.S. government mass surveillance programs, after which he fled the U.S. and was granted asylum in Russia."
+  },
+  {
+   "entityId": "qe-09f72af3159d",
+   "canonical": "United Kingdom",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "The United Kingdom is a sovereign country in northwestern Europe comprising England, Scotland, Wales, and Northern Ireland, and one of the United States' closest intelligence and diplomatic allies."
+  },
+  {
+   "entityId": "qe-253d3de45502",
+   "canonical": "Securities and Exchange Commission",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "The Securities and Exchange Commission is the U.S. federal agency responsible for regulating securities markets, enforcing securities laws, and protecting investors."
+  },
+  {
+   "entityId": "qe-781474651855",
+   "canonical": "Donald Trump",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Donald Trump is an American businessman and politician who served as the 45th U.S. president from 2017 to 2021 and was elected to a second, non-consecutive term as the 47th president."
+  },
+  {
+   "entityId": "qe-b80ea6d8ed16",
+   "canonical": "Joe Biden",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Joe Biden is an American politician who served as vice president under Barack Obama from 2009 to 2017 and as the 46th president of the United States from 2021 to 2025."
+  },
+  {
+   "entityId": "qe-50a7ff9629dd",
+   "canonical": "Clinton Foundation",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "The Clinton Foundation is a charitable organization established by Bill Clinton in 1997 that funds global health, economic development, and other philanthropic programs."
+  },
+  {
+   "entityId": "qe-40fbc6a6e6a7",
+   "canonical": "California",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "California is the most populous U.S. state, located on the Pacific coast, home to Silicon Valley's technology industry and Hollywood's entertainment industry."
+  },
+  {
+   "entityId": "qe-9218c9c91be5",
+   "canonical": "COVID-19",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "COVID-19 is the infectious respiratory disease caused by the SARS-CoV-2 virus, first identified in Wuhan, China, in late 2019, which spread globally and was declared a pandemic by the World Health Organization in March 2020."
+  },
+  {
+   "entityId": "qe-838607b59e0a",
+   "canonical": "William Barr",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "William Barr served as U.S. Attorney General from February 2019 to December 2020 under President Trump, and had previously held the same post under President George H.W. Bush from 1991 to 1993."
+  },
+  {
+   "entityId": "qe-4938fd5a6aa1",
+   "canonical": "Special Counsel / Mueller investigation",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "The Special Counsel investigation was a Justice Department inquiry led by former FBI Director Robert Mueller from 2017 to 2019 into Russian interference in the 2016 U.S. election and related matters, which resulted in numerous indictments but no criminal charges against Trump himself."
+  },
+  {
+   "entityId": "qe-99b2829ea340",
+   "canonical": "George Soros",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "George Soros is a Hungarian-American billionaire investor and philanthropist who built his fortune in hedge-fund management and founded the Open Society Foundations, which funds pro-democracy, human-rights, and progressive causes worldwide."
+  },
+  {
+   "entityId": "qe-e6feac51369e",
+   "canonical": "Supreme Court",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "The Supreme Court is the highest federal court in the United States, with final authority to interpret the U.S. Constitution and federal law and to review decisions of lower courts."
+  },
+  {
+   "entityId": "qe-3ddd7cab456e",
+   "canonical": "Adam Schiff",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Adam Schiff is an American Democratic politician who represented California in the U.S. House of Representatives for over two decades, chairing the House Intelligence Committee, before being elected to the U.S. Senate in 2024."
+  },
+  {
+   "entityId": "qe-dbbf1d039297",
+   "canonical": "Nancy Pelosi",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Nancy Pelosi is an American Democratic politician from California who served as Speaker of the U.S. House of Representatives (2007-2011 and 2019-2023), the first woman to hold that position."
+  },
+  {
+   "entityId": "qe-2417a9a7706e",
+   "canonical": "United States Congress",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "The United States Congress is the bicameral national legislature of the United States, composed of the Senate and the House of Representatives, responsible for writing federal law."
+  },
+  {
+   "entityId": "qe-08c421d8f81b",
+   "canonical": "Democratic National Committee",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "The Democratic National Committee is the formal governing body of the U.S. Democratic Party, responsible for coordinating national campaign strategy, fundraising, and organizing the party's presidential nominating convention."
+  },
+  {
+   "entityId": "qe-bfee4149db99",
+   "canonical": "Loretta Lynch",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Loretta Lynch is an American attorney who served as U.S. Attorney General from 2015 to 2017 under President Barack Obama, the first Black woman to hold that office."
+  },
+  {
+   "entityId": "qe-73ee55145bd3",
+   "canonical": "Huma Abedin",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Huma Abedin is an American political aide who served as deputy chief of staff to Hillary Clinton at the U.S. State Department and as a longtime senior advisor throughout Clinton's political career."
+  },
+  {
+   "entityId": "qe-474a80e57429",
+   "canonical": "European Union",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "The European Union is a political and economic union of 27 member states, primarily in Europe, that operates through shared institutions and a common set of laws governing trade, travel, and other policy areas among members."
+  },
+  {
+   "entityId": "qe-4ead3b5cebe9",
+   "canonical": "Antifa",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Antifa is a decentralized, loosely organized political movement made up of autonomous groups and individuals who oppose fascism and far-right extremism, sometimes through direct-action protest tactics, rather than a formal or unified organization."
+  },
+  {
+   "entityId": "qe-0e4a61226ee3",
+   "canonical": "Uranium One",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Uranium One was a Canadian-based uranium mining company whose 2010 sale, approved by a U.S. interagency review committee, gave Russia's state nuclear agency Rosatom majority ownership and control of a share of American uranium extraction capacity."
+  },
+  {
+   "entityId": "qe-22cd36d3d850",
+   "canonical": "United States Secret Service",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "The United States Secret Service is a federal law enforcement agency, part of the Department of Homeland Security, responsible for protecting current and former national leaders and investigating financial and cyber crimes."
+  },
+  {
+   "entityId": "qe-f55feaee1a46",
+   "canonical": "Michael Flynn",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Michael Flynn is a retired U.S. Army lieutenant general who directed the Defense Intelligence Agency from 2012 to 2014 and briefly served as National Security Advisor under President Trump in early 2017 before resigning."
+  },
+  {
+   "entityId": "qe-f927052c1e12",
+   "canonical": "Bill Clinton",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Bill Clinton is an American politician who served as the 42nd President of the United States from 1993 to 2001, after previously serving as Governor of Arkansas."
+  },
+  {
+   "entityId": "qe-a273cc0d54f7",
+   "canonical": "Bruce Ohr",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Bruce Ohr is a career U.S. Department of Justice attorney who headed its Organized Crime and Racketeering Section and later served as an Associate Deputy Attorney General, a senior post he was demoted from in 2017."
+  },
+  {
+   "entityId": "qe-c9af2e3ab31e",
+   "canonical": "Ukraine",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Ukraine is a country in Eastern Europe bordering Russia, Belarus, and Poland among others, and a former Soviet republic that regained independence in 1991."
+  },
+  {
+   "entityId": "qe-c2efbbd275fc",
+   "canonical": "Australia",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Australia is a country occupying the Australian continent along with the island of Tasmania and numerous smaller islands, and a member of the Commonwealth of Nations."
+  },
+  {
+   "entityId": "qe-e15775752e6e",
+   "canonical": "John Brennan",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "John Brennan is an American intelligence official who served as Director of the Central Intelligence Agency from 2013 to 2017 under President Barack Obama."
+  },
+  {
+   "entityId": "qe-dd22a6644c88",
+   "canonical": "House",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "The House, formally the United States House of Representatives, is the lower chamber of the U.S. Congress, whose members are elected from congressional districts to represent the population of each state."
+  },
+  {
+   "entityId": "qe-4ac310ee36a2",
+   "canonical": "Five Eyes",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Five Eyes is an intelligence-sharing alliance among the United States, United Kingdom, Canada, Australia, and New Zealand, formed around a shared signals-intelligence agreement dating to the mid-20th century."
+  },
+  {
+   "entityId": "qe-5d44c220df65",
+   "canonical": "John McCain",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "John McCain was a U.S. Senator from Arizona and Republican Party presidential nominee in 2008, and a former Navy pilot who was held as a prisoner of war during the Vietnam War."
+  },
+  {
+   "entityId": "qe-ce9b4b609ab5",
+   "canonical": "New York",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "New York refers to the U.S. state in the northeastern United States or, in narrower usage, to New York City, the state's largest city and the most populous city in the country."
+  },
+  {
+   "entityId": "qe-32f8adee9548",
+   "canonical": "ISIS",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "ISIS, also known as the Islamic State, is a militant Islamist group and former self-declared caliphate that seized and held territory across parts of Iraq and Syria before losing most of its territorial control."
+  },
+  {
+   "entityId": "qe-f340ce9f7070",
+   "canonical": "Military Intelligence",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Military Intelligence is a general term for the intelligence-gathering and analysis components within the U.S. armed forces, including branch-level units such as the Army's Military Intelligence Corps and defense-wide bodies such as the Defense Intelligence Agency."
+  },
+  {
+   "entityId": "qe-d9d07dd12ec3",
+   "canonical": "United States Military",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "The United States Military is the armed forces of the United States, comprising the Army, Navy, Air Force, Marine Corps, Space Force, and Coast Guard under the authority of the Department of Defense (and Department of Homeland Security for the Coast Guard)."
+  },
+  {
+   "entityId": "qe-1f02f604ec23",
+   "canonical": "Jeffrey Epstein",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Jeffrey Epstein was an American financier who was convicted in 2008 of soliciting prostitution from a minor and was later federally indicted on sex-trafficking charges involving multiple underage girls before he died by suicide in jail in 2019."
+  },
+  {
+   "entityId": "qe-72c96d957a8a",
+   "canonical": "Black Lives Matter",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Black Lives Matter is a decentralized political and social movement, originating in the United States in 2013, that campaigns against violence and systemic racism directed at Black people."
+  },
+  {
+   "entityId": "qe-d545e231cd32",
+   "canonical": "Andrew McCabe",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Andrew McCabe is a former FBI official who served as Deputy Director of the FBI and briefly as acting director in 2017 before being fired in 2018."
+  },
+  {
+   "entityId": "qe-89ec708993ff",
+   "canonical": "John Durham",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "John Durham is a federal prosecutor who served as U.S. Attorney for the District of Connecticut and was appointed by the Justice Department to lead an investigation into the origins of the FBI's Russia probe of the 2016 Trump campaign."
+  },
+  {
+   "entityId": "qe-ee9037e0a937",
+   "canonical": "CNN",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "CNN, short for Cable News Network, is an American cable and digital news outlet that broadcasts national and international news coverage around the clock."
+  },
+  {
+   "entityId": "qe-9699caced7cc",
+   "canonical": "Muslim Brotherhood",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "The Muslim Brotherhood is a transnational Sunni Islamist organization founded in Egypt in 1928 that has operated as a religious, social, and political movement across the Middle East and beyond."
+  },
+  {
+   "entityId": "qe-8233a383ef14",
+   "canonical": "The New York Times",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "The New York Times is an American daily newspaper based in New York City, widely regarded as one of the country's newspapers of record."
+  },
+  {
+   "entityId": "qe-0d652fbf34ee",
+   "canonical": "Grand Jury",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "A Grand Jury is a body of citizens in the U.S. legal system, convened by a prosecutor, that reviews evidence presented to it to decide whether there is sufficient cause to formally charge someone with a crime."
+  },
+  {
+   "entityId": "qe-ca21097a3dd5",
+   "canonical": "DARPA",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "DARPA, the Defense Advanced Research Projects Agency, is a U.S. Department of Defense agency responsible for funding and developing emerging technologies for military use."
+  },
+  {
+   "entityId": "qe-462c7edc86af",
+   "canonical": "Rachel Chandler",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Rachel Chandler is an American fashion photographer and co-founder of the Midland modeling and casting agency, known for casting work in the fashion industry."
+  },
+  {
+   "entityId": "qe-45881247e81b",
+   "canonical": "Jack Dorsey",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"yes i want it uniform across the app so i want to get rid of the genaric synopsis and give the detail we did.\" Researched via web search (tier 1: mentions >= 20).",
+   "synopsis": "Jack Dorsey is an American entrepreneur who co-founded and served as CEO of Twitter, and who separately founded the payments company Square, later renamed Block."
   }
  ]
 }
