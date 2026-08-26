@@ -133,15 +133,19 @@ export default function Donate() {
       <BackButton />
 
       <div className="bg-q-panel border border-q-border rounded-xl p-6">
-        <h1 className="text-2xl font-bold text-white">Support the Archive</h1>
+        <h1 className="text-2xl font-bold text-white">Support Qdrops</h1>
         <div className="text-sm text-gray-400 leading-relaxed mt-3 space-y-3">
           <p>
-            This project is free, open source, and has no ads, no tracking, and nothing
-            behind a paywall. It runs on time more than money.
+            I built Qdrops because I wanted this record to exist somewhere complete,
+            searchable, and honest — every drop, every source, with nothing hidden behind a
+            login or a fee. It's free, open source, has no ads, no tracking, and nothing sits
+            behind a paywall. It runs on time far more than money, and most of that time is
+            mine.
           </p>
           <p>
-            If it's been useful to you and you'd like to chip in, crypto is below. Entirely
-            optional — the whole archive stays free either way.
+            If it's helped you find something, understand something, or just made the archive
+            easier to sit with, and you'd like to say thanks — crypto is below. It's entirely
+            optional. Whether you send something or not, this stays free for everyone, always.
           </p>
         </div>
       </div>

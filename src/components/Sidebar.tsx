@@ -49,9 +49,7 @@ const extrasLinks = [
   { to: '/links',     label: 'All Q Links',     icon: '🌐' },
   { to: '/sources',   label: 'Sources',         icon: '📰' },
   { to: '/resources', label: 'Resources',       icon: '🔗' },
-  { to: '/resolve',   label: 'Resolution Center', icon: '🔎' },
   { to: '/method',    label: 'How This Works',  icon: 'ⓘ' },
-  { to: '/feedback',  label: 'Comments & Ideas', icon: '💬' },
   { to: '/download',  label: 'Get the App',     icon: '⬇️' },
 ]
 
@@ -59,6 +57,15 @@ const bottomLinks = [
   // Support stays at top level: a donation link inside a collapsed menu is a donation link
   // nobody finds.
   { to: '/donate',    label: 'Support',         icon: '❤️' },
+]
+
+// BELOW SUPPORT, OWNER RULING 2026-08-26: "i would also like the resolution center and
+// comments and ideas below the Support icon." Pulled out of the collapsed Q Extras fold —
+// where a click to open the group came before either was even visible — and given their own
+// permanent rows, same treatment Support itself already gets and for the same reason.
+const afterSupportLinks = [
+  { to: '/resolve',  label: 'Resolution Center', icon: '🔎' },
+  { to: '/feedback', label: 'Comments & Ideas',  icon: '💬' },
   // The Dashboard is the editorial workbench, not a reader feature. CAN_EDIT folds to a
   // literal false in the public build, so this entry (and its route in App.tsx) never
   // reaches qdrops.app. Owner ruling 2026-08-23.
@@ -235,8 +242,10 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
           </div>
         )}
 
-        {/* Bottom links */}
-        {bottomLinks.map(l => (
+        {/* Bottom links — Support, then Resolution Center / Comments & Ideas / Dashboard
+            directly below it (owner ruling, 2026-08-26). One list, one row style throughout,
+            so the ordering reads as intentional rather than two unrelated groups stacked. */}
+        {[...bottomLinks, ...afterSupportLinks].map(l => (
           <NavLink
             key={l.to}
             to={l.to}
