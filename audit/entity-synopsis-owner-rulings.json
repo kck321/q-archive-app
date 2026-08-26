@@ -11,6 +11,755 @@
    "provenance": "Owner ruling on #1929: 'this is Nellie Ohr (Bruce Ohr's Wife) ... lets make a little synopsis about who she is so if we hover over the term readers know.'",
    "synopsis": "Nellie Ohr is a Russia researcher who worked as a contractor for the private research firm Fusion GPS during 2016, the year it commissioned the Steele dossier. She is married to Bruce Ohr, then a senior official at the US Department of Justice. Their overlap — a DOJ official whose wife worked for the firm behind the dossier — made both of them a focus of congressional inquiries into the origins of the FBI's Russia investigation. Q writes her as the initials NO, almost always paired with her husband's BO.",
    "note": "Q's pairing of the two sets of initials is what fixes the reference; the synopsis records the relationship without adopting any claim the drops make about it."
+  },
+  {
+   "entityId": "qe-0262c2ecc2d9",
+   "canonical": "Vicki Gordon",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Vicki Gordon is a longtime CBS News producer who worked as a senior producer and executive story editor on 60 Minutes."
+  },
+  {
+   "entityId": "qe-088d9c5f3090",
+   "canonical": "Rachel Racusen",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Rachel Racusen is a communications executive who served as a senior Obama administration and 2012 campaign spokesperson before holding communications leadership roles at MSNBC and the news startup Semafor."
+  },
+  {
+   "entityId": "qe-0aff05df6680",
+   "canonical": "Laura Meckler",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Laura Meckler is a Washington Post journalist covering national education policy, who previously reported on the White House and politics for the Wall Street Journal and on health and social policy for the Associated Press."
+  },
+  {
+   "entityId": "qe-121902823e6e",
+   "canonical": "Geofe Earl",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Geofe Earl — better known as Geoff Earle — is a Washington-based political journalist who served as the New York Post's Washington bureau chief for over a decade before moving to the Daily Mail."
+  },
+  {
+   "entityId": "qe-136d33e33cea",
+   "canonical": "Mark Murray",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Mark Murray is a political journalist who spent many years as NBC News's senior political editor, writing and editing the network's First Read political briefing."
+  },
+  {
+   "entityId": "qe-17fc82255128",
+   "canonical": "Alyssa Mastramonoco",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Alyssa Mastromonaco is a former White House deputy chief of staff for operations under President Obama who later held media and communications executive roles at Vice Media and A&E Networks."
+  },
+  {
+   "entityId": "qe-18107b67fc6d",
+   "canonical": "Peter Nicholas",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Peter Nicholas is a political journalist who covered the White House for the Wall Street Journal and later reported for The Atlantic and NBC News."
+  },
+  {
+   "entityId": "qe-18a6c733af04",
+   "canonical": "John Heillman",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "John Heilemann is a political journalist and analyst for NBC News and MSNBC, co-author of the bestselling campaign books Game Change and Double Down, and host of Showtime's The Circus."
+  },
+  {
+   "entityId": "qe-1b22567b6fd1",
+   "canonical": "Mike Feldman",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Mike Feldman is a Democratic communications strategist who served as a senior advisor and traveling chief of staff to Vice President Al Gore before co-founding the consulting firm Glover Park Group."
+  },
+  {
+   "entityId": "qe-20528df2a55a",
+   "canonical": "Jon Karl",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Jon Karl is ABC News's chief Washington correspondent and co-anchor of This Week with George Stephanopoulos, having covered the White House and Washington politics since the 1990s."
+  },
+  {
+   "entityId": "qe-205eab44f34d",
+   "canonical": "John Dickerson",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "John Dickerson is a veteran journalist known for hosting CBS's Face the Nation and later co-anchoring the CBS Evening News, as well as co-hosting Slate's Political Gabfest podcast."
+  },
+  {
+   "entityId": "qe-2404e095b5d2",
+   "canonical": "Mika Brzezinski",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Mika Brzezinski is a broadcast journalist who has co-hosted the morning program Morning Joe alongside Joe Scarborough on MSNBC since 2007."
+  },
+  {
+   "entityId": "qe-2466b4af6c00",
+   "canonical": "Amanda Terkel",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Amanda Terkel is a political journalist who served as HuffPost's Washington bureau chief and editorial director for over a decade before joining NBC News as a senior politics editor."
+  },
+  {
+   "entityId": "qe-2de11fafa366",
+   "canonical": "Julie Pace",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Julie Pace is a journalist who covered the White House for the Associated Press before becoming the AP's executive editor and senior vice president."
+  },
+  {
+   "entityId": "qe-30fdc4d56467",
+   "canonical": "Ruby Cramer",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Ruby Cramer is a political journalist who covered presidential campaigns for BuzzFeed News before later writing for Politico Magazine and The Washington Post."
+  },
+  {
+   "entityId": "qe-326da877aa4d",
+   "canonical": "Alex Seitz-Wald",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Alex Seitz-Wald is a political journalist who spent about a decade as a senior national politics reporter for NBC News, covering national campaigns, before joining a Maine local newspaper as deputy editor."
+  },
+  {
+   "entityId": "qe-34792e9e3388",
+   "canonical": "Maggie Haberman",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Maggie Haberman is a Pulitzer Prize-winning New York Times senior political correspondent and chief White House correspondent, and a CNN political analyst."
+  },
+  {
+   "entityId": "qe-36bacd26fde5",
+   "canonical": "Kate Bouldan",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Kate Bolduan is a CNN anchor who co-hosts the network's CNN News Central and the daily briefing 5 Things with Kate Bolduan."
+  },
+  {
+   "entityId": "qe-3a4680ff5ce9",
+   "canonical": "Diane Sawyer",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Diane Sawyer is a longtime ABC News anchor who co-anchored Good Morning America and later anchored World News with Diane Sawyer, after an earlier career at CBS News that included being the first woman correspondent on 60 Minutes."
+  },
+  {
+   "entityId": "qe-467076948eb8",
+   "canonical": "Sam Feist",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Sam Feist is a media executive who served as CNN's Washington bureau chief and senior vice president, overseeing shows like The Situation Room and The Lead, before becoming CEO of C-SPAN in 2024."
+  },
+  {
+   "entityId": "qe-471d18693bdb",
+   "canonical": "Ryan Liza",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Ryan Lizza is a political journalist who served as The New Yorker's Washington correspondent and Politico's chief Washington correspondent, and later worked as a senior political analyst for CNN."
+  },
+  {
+   "entityId": "qe-47cafe71e0fe",
+   "canonical": "Erin Burnett",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Erin Burnett is a CNN anchor who hosts the nightly program Erin Burnett OutFront and serves as the network's chief business and economics correspondent."
+  },
+  {
+   "entityId": "qe-4852b04127e4",
+   "canonical": "Gail Collins",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Gail Collins is a longtime New York Times op-ed columnist who previously served as the paper's editorial page editor, the first woman to hold that post."
+  },
+  {
+   "entityId": "qe-49f918c2b2f5",
+   "canonical": "John Berman",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "John Berman is a CNN anchor who co-anchors CNN News Central, having joined the network in 2012 after nearly 17 years as a correspondent for ABC News."
+  },
+  {
+   "entityId": "qe-4c94a6a06428",
+   "canonical": "Maria Cardona",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Maria Cardona is a Democratic political strategist and a CNN and CNN en Espanol political commentator who previously served as communications director for the Democratic National Committee."
+  },
+  {
+   "entityId": "qe-4ce4e0e569d4",
+   "canonical": "Thomas Roberts",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Thomas Roberts is a television journalist who anchored MSNBC Live for seven years and worked as an NBC News correspondent and fill-in anchor for Today and NBC Nightly News."
+  },
+  {
+   "entityId": "qe-5583bba9d661",
+   "canonical": "Jonathan Martin",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Jonathan Martin is Politico's politics bureau chief and senior political columnist, and a CNN political analyst, having previously served as senior political correspondent for The New York Times."
+  },
+  {
+   "entityId": "qe-5a040717aa5b",
+   "canonical": "Colleen McCain Nelson",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Colleen McCain Nelson is a journalist who covered the White House for The Wall Street Journal and won the Pulitzer Prize for editorial writing while at The Dallas Morning News."
+  },
+  {
+   "entityId": "qe-5ff5bfe12a7c",
+   "canonical": "Alex Wagner",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Alex Wagner is a journalist and MSNBC host, currently anchoring Alex Wagner Tonight, who previously hosted NOW with Alex Wagner on MSNBC and co-anchored CBS This Morning: Saturday."
+  },
+  {
+   "entityId": "qe-604f2d211040",
+   "canonical": "Brianna Keilar",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Brianna Keilar is a CNN anchor who co-anchors CNN News Central, having previously served as CNN's senior Washington correspondent."
+  },
+  {
+   "entityId": "qe-6268825e021e",
+   "canonical": "Emily Schultheis",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Emily Schultheis is a journalist who covered U.S. national politics and elections for Politico, National Journal, and CBS News in the mid-2010s, and has since reported on European politics for Politico Europe."
+  },
+  {
+   "entityId": "qe-6964e18829c9",
+   "canonical": "Gloria Borger",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Gloria Borger is CNN's chief political analyst, who previously worked as CBS News' national political correspondent and as a political columnist for U.S. News & World Report."
+  },
+  {
+   "entityId": "qe-699fa59a120b",
+   "canonical": "Charlie Rose",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Charlie Rose is a television journalist who hosted the interview program Charlie Rose on PBS from 1991 to 2017 and co-anchored CBS This Morning."
+  },
+  {
+   "entityId": "qe-6e107898fd4b",
+   "canonical": "Ben Smith",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Ben Smith is a journalist and co-founder and editor-in-chief of the news site Semafor, having previously served as editor-in-chief of BuzzFeed News from 2011 to 2020."
+  },
+  {
+   "entityId": "qe-6f49ef92ebb1",
+   "canonical": "Mike Oreskes",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Mike Oreskes is a journalist and editor who served as NPR's senior vice president of news and editorial director, after earlier roles as Associated Press senior managing editor and Washington bureau chief of The New York Times."
+  },
+  {
+   "entityId": "qe-75be73c02fe0",
+   "canonical": "Sam Stein",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Sam Stein is a journalist who was HuffPost's founding Washington reporter and later its senior politics editor, and who now serves as Politico's deputy managing editor for politics and an MSNBC contributor."
+  },
+  {
+   "entityId": "qe-762d4ad77746",
+   "canonical": "Gayle King",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Gayle King is a CBS News broadcast journalist and co-host of the network's morning program (CBS This Morning, later CBS Mornings), and also serves as editor-at-large of Oprah Daily."
+  },
+  {
+   "entityId": "qe-76844c860b54",
+   "canonical": "Kenneth Vogel",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Kenneth Vogel is a reporter who covers money in politics and lobbying, having served as Politico's founding chief investigative reporter before joining The New York Times' Washington bureau in 2017."
+  },
+  {
+   "entityId": "qe-769e5ec6769b",
+   "canonical": "Anne Gearan",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Anne Gearan is a Washington Post journalist who covered the White House, State Department and national security, joining the paper in 2012 after a career at the Associated Press that included serving as chief diplomatic correspondent."
+  },
+  {
+   "entityId": "qe-772c7e4dca65",
+   "canonical": "Carolyn Ryan",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Carolyn Ryan is a New York Times editor who has held roles including national politics editor and metro editor at the paper, and became one of its managing editors in 2022."
+  },
+  {
+   "entityId": "qe-78e0639a31ff",
+   "canonical": "Steve Chagaris",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Steve Chaggaris is a journalist who spent nearly two decades at CBS News, rising to political director in 2017, and later worked as Al Jazeera Digital's politics editor and as Washington bureau chief for Sinclair."
+  },
+  {
+   "entityId": "qe-7a2c2c55fc1a",
+   "canonical": "David Chailan",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "David Chalian is CNN's political director, later promoted to senior vice president and Washington bureau chief, overseeing the network's political coverage, polling and decision-desk operations since joining in 2013."
+  },
+  {
+   "entityId": "qe-7bb3ed56a0b3",
+   "canonical": "Mike Memoli",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Mike Memoli is an NBC News journalist who has covered national politics and the White House, including extensive coverage of Joe Biden, after earlier reporting stints with RealClearPolitics and Tribune Media's Washington bureau."
+  },
+  {
+   "entityId": "qe-7fdfa9aff195",
+   "canonical": "Betsy Fisher Martin",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Betsy Fischer Martin is a television news executive who spent 23 years at NBC News, including 11 years as executive producer of Meet the Press, before becoming managing editor of NBC News political programming."
+  },
+  {
+   "entityId": "qe-81c70fd3e376",
+   "canonical": "Rachel Maddow",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Rachel Maddow is an MSNBC host and political commentator who has anchored The Rachel Maddow Show since its 2008 launch."
+  },
+  {
+   "entityId": "qe-88238dc0104e",
+   "canonical": "Jon Allen",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Jon Allen is a political journalist who served as Vox's chief political correspondent in 2016 and later as a senior political analyst for NBC News, and co-authored the book Shattered: Inside Hillary Clinton's Doomed Campaign with Amie Parnes."
+  },
+  {
+   "entityId": "qe-8a164b379dfe",
+   "canonical": "Joe Scarborough",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Joe Scarborough is a former Republican congressman from Florida who has co-hosted MSNBC's Morning Joe with Mika Brzezinski since 2007."
+  },
+  {
+   "entityId": "qe-8a8a2f9e3b5f",
+   "canonical": "Jackie Kucinich",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Jackie Kucinich is a journalist who has covered Washington politics for outlets including USA Today, Roll Call, The Washington Post and The Daily Beast, later becoming Washington bureau chief for The Boston Globe."
+  },
+  {
+   "entityId": "qe-8b7ce2aa27ac",
+   "canonical": "Andrea Mitchell",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Andrea Mitchell is NBC News' chief Washington correspondent and chief foreign affairs correspondent, having covered every U.S. presidential campaign for the network since 1980."
+  },
+  {
+   "entityId": "qe-8c23d918b7ac",
+   "canonical": "Tina Brown",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Tina Brown is a magazine editor and writer who led Tatler, Vanity Fair and The New Yorker before founding The Daily Beast in 2008, later also serving as editor-in-chief of Newsweek."
+  },
+  {
+   "entityId": "qe-8db42a2f97d0",
+   "canonical": "April Ryan",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "April Ryan is a veteran White House correspondent who covered the White House for American Urban Radio Networks from the Clinton era through 2020, later joining CNN and then theGrio as a White House correspondent."
+  },
+  {
+   "entityId": "qe-918f540905de",
+   "canonical": "Jennifer Epstein",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Jennifer Epstein is a Bloomberg News reporter who covered the White House and national politics after joining Bloomberg from Politico in 2015, spending about a decade with the outlet."
+  },
+  {
+   "entityId": "qe-97ad895aa3ca",
+   "canonical": "Greg Sargent",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Greg Sargent is a political columnist who wrote the Washington Post's Plum Line blog from 2010 to 2024 before becoming a staff writer at The New Republic."
+  },
+  {
+   "entityId": "qe-98d61d2dce95",
+   "canonical": "John Harwoodje",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "John Harwood is a political journalist who served as CNBC's chief Washington correspondent and wrote the \"Political Memo\" column for The New York Times, after earlier covering politics for The Wall Street Journal."
+  },
+  {
+   "entityId": "qe-9b6c1fd9bc4e",
+   "canonical": "Norah O'Donnell",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Norah O'Donnell is a CBS News journalist who anchored the CBS Evening News from 2019 to 2025 and previously served as the network's chief White House correspondent and co-anchor of CBS This Morning."
+  },
+  {
+   "entityId": "qe-9db5883ec684",
+   "canonical": "Phil Griffin",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Phil Griffin was president of MSNBC from 2008 to 2021, having joined the network at its 1996 launch and overseen the debuts of shows like Morning Joe and The Rachel Maddow Show."
+  },
+  {
+   "entityId": "qe-9f1193aade70",
+   "canonical": "Savannah Gutherie",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Savannah Guthrie is a co-anchor of NBC's Today show, a position she has held since 2012, and also serves as NBC News' chief legal correspondent."
+  },
+  {
+   "entityId": "qe-a2cd94cbb82e",
+   "canonical": "Jeff Zucker",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Jeff Zucker was president of CNN Worldwide from 2013 until his resignation in 2022, and previously served as president and CEO of NBCUniversal."
+  },
+  {
+   "entityId": "qe-a65487d04890",
+   "canonical": "Dan Merica",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Dan Merica is a political reporter who covered Hillary Clinton's 2016 presidential campaign and later the White House for CNN, before moving to The Washington Post."
+  },
+  {
+   "entityId": "qe-ac98a5c779d1",
+   "canonical": "Amy Chozik",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Amy Chozik is a journalist and author who served as a national political reporter for The New York Times covering Hillary Clinton's 2016 presidential campaign, later writing the memoir Chasing Hillary."
+  },
+  {
+   "entityId": "qe-ad25e7885cc8",
+   "canonical": "Liz Kreutz",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Liz Kreutz is a national correspondent for NBC News who, while at ABC News, was the network's embedded political reporter covering Hillary Clinton's 2016 presidential campaign."
+  },
+  {
+   "entityId": "qe-b5b833db00d8",
+   "canonical": "Evan Handler",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "The \"Evan Handler\" listed here is recorded in press contacts as a Los Angeles Times reporter or contact from the mid-2010s — not the actor of the same name — and no further biographical detail could be independently verified."
+  },
+  {
+   "entityId": "qe-b947eb216f5e",
+   "canonical": "Jonathan Alter",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Jonathan Alter is an author, columnist, and political analyst who spent 28 years at Newsweek as a senior editor and columnist and now writes for The Daily Beast and appears on NBC News and MSNBC."
+  },
+  {
+   "entityId": "qe-ba1c6ef92eea",
+   "canonical": "Arianna Huffington",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Arianna Huffington is the co-founder and former editor-in-chief of The Huffington Post, which she led from its 2005 launch until 2016, and is now founder and CEO of Thrive Global."
+  },
+  {
+   "entityId": "qe-bd408e0c8642",
+   "canonical": "Sandra Sobieraj Westfall",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Sandra Sobieraj Westfall is a journalist who covered the White House for the Associated Press before becoming Washington bureau chief and national political correspondent for People magazine."
+  },
+  {
+   "entityId": "qe-be2d541fee10",
+   "canonical": "Jeff Zeleny",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Jeff Zeleny is CNN's chief national affairs correspondent, having previously served as the network's senior Washington and senior White House correspondent, and before that as national political correspondent for The New York Times."
+  },
+  {
+   "entityId": "qe-c714045631fd",
+   "canonical": "Whitney Snyder",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Whitney Snyder is a HuffPost journalist and editor who joined the outlet in 2008, oversaw its politics and breaking-news coverage, and became its editor-in-chief in 2025."
+  },
+  {
+   "entityId": "qe-c84a4dc1cbd0",
+   "canonical": "Anita Kumar",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Anita Kumar is a journalist who covered the White House for McClatchy's newspaper chain before joining Politico in 2019 as a White House correspondent and associate editor."
+  },
+  {
+   "entityId": "qe-c8fa0a1c60cb",
+   "canonical": "Maria-Elena Salinas",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Maria-Elena Salinas (also written Maria Elena Salinas) is a broadcast journalist who co-anchored Univision's Noticiero Univision for 36 years, becoming one of the most recognized Hispanic television news anchors in the United States."
+  },
+  {
+   "entityId": "qe-cc9487841204",
+   "canonical": "Amanda Becker",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Amanda Becker is a journalist who covered national politics and Congress for Reuters starting in 2013 before becoming Washington correspondent for The 19th."
+  },
+  {
+   "entityId": "qe-cccc95afbe20",
+   "canonical": "David Remnick",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "David Remnick is a Pulitzer Prize-winning writer who has served as editor of The New Yorker since 1998."
+  },
+  {
+   "entityId": "qe-cda801c70bcd",
+   "canonical": "Amie Parnes",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Amie Parnes is a political journalist and senior correspondent for The Hill who has co-authored best-selling books on Hillary Clinton's presidential campaigns with fellow reporter Jonathan Allen."
+  },
+  {
+   "entityId": "qe-ce130e7572fe",
+   "canonical": "George Stephanoplous",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "George Stephanopoulos is the chief anchor of ABC News, co-anchoring Good Morning America and hosting the Sunday program This Week."
+  },
+  {
+   "entityId": "qe-d030b96cb710",
+   "canonical": "Matt Bai",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Matt Bai is a political journalist and author who served as chief political correspondent for the New York Times Magazine and national political columnist for Yahoo News before becoming a columnist for Rolling Stone."
+  },
+  {
+   "entityId": "qe-d50d415fd127",
+   "canonical": "David Muir",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "David Muir is the anchor and managing editor of ABC's World News Tonight."
+  },
+  {
+   "entityId": "qe-d6f510572d9e",
+   "canonical": "Beth Fouhy",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Beth Fouhy is a senior politics editor at NBC News and MSNBC, previously a political reporter for the Associated Press."
+  },
+  {
+   "entityId": "qe-dd9972e950e3",
+   "canonical": "Ed Schultz",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Ed Schultz was a broadcaster who hosted the political talk program The Ed Show on MSNBC before later hosting a show on RT America; he died in 2018."
+  },
+  {
+   "entityId": "qe-de341ee7073e",
+   "canonical": "Lisa Lerer",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Lisa Lerer is a national political correspondent for the New York Times, previously a national political writer for the Associated Press."
+  },
+  {
+   "entityId": "qe-df17a9e55850",
+   "canonical": "Ken Thomas",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Ken Thomas is a national political and White House reporter for the Wall Street Journal who spent nearly two decades at the Associated Press covering national politics."
+  },
+  {
+   "entityId": "qe-e009a8631960",
+   "canonical": "Mike Allen",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Mike Allen is a co-founder of Axios who writes its Axios AM newsletter, having previously written Politico's Playbook."
+  },
+  {
+   "entityId": "qe-e27af6a845d1",
+   "canonical": "Pat Healey",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Patrick Healy is the deputy editor of Opinion at the New York Times, having previously worked there as a political reporter, culture editor, and politics editor."
+  },
+  {
+   "entityId": "qe-e2e10c208707",
+   "canonical": "Glenn Thrush",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Glenn Thrush is a New York Times reporter who has covered the White House and national politics, and later poverty and the social safety net."
+  },
+  {
+   "entityId": "qe-e81d77390ac5",
+   "canonical": "Chuck Todd",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Chuck Todd is a political journalist who moderated NBC's Meet the Press from 2014 to 2023 and later served as the network's chief political analyst before departing NBC in 2025."
+  },
+  {
+   "entityId": "qe-e87089f18254",
+   "canonical": "Tamara Keith",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Tamara Keith is a White House correspondent for NPR."
+  },
+  {
+   "entityId": "qe-ec7eb3da0f00",
+   "canonical": "Jake Tapper",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Jake Tapper is a CNN anchor and chief Washington correspondent, hosting The Lead and State of the Union."
+  },
+  {
+   "entityId": "qe-f2e77658de3a",
+   "canonical": "Gabe Debenedetti",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Gabe Debenedetti (Gabriel Debenedetti) is a national correspondent at New York Magazine, previously a politics reporter for Politico and Reuters."
+  },
+  {
+   "entityId": "qe-f4aa26f2c3a0",
+   "canonical": "Annie Karni",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Annie Karni is a congressional correspondent for the New York Times, having previously covered the White House there and worked as a politics reporter at Politico."
+  },
+  {
+   "entityId": "qe-f51df9d1e180",
+   "canonical": "Mark Halperin",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Mark Halperin is a political journalist who has covered U.S. elections for ABC News, Time, Bloomberg Politics and NBC News over several decades."
+  },
+  {
+   "entityId": "qe-f78336075970",
+   "canonical": "John Harwood",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "John Harwood is a political journalist who covered Washington for the Wall Street Journal, the New York Times and CNBC before serving as a CNN White House correspondent until 2022."
+  },
+  {
+   "entityId": "qe-f9d8060e098c",
+   "canonical": "Cecilia Vega",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Cecilia Vega is a journalist who spent 12 years at ABC News, including as chief White House correspondent, before joining CBS's 60 Minutes as a correspondent in 2023."
+  },
+  {
+   "entityId": "qe-fb7aea8d1bc2",
+   "canonical": "Mark Preston",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Mark Preston is a senior political analyst and executive editor of CNN Politics."
+  },
+  {
+   "entityId": "qe-c9f95ff52ca5",
+   "canonical": "WikiLeaks",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "WikiLeaks is a nonprofit organization that publishes leaked and classified documents from anonymous sources, founded by Julian Assange in 2006."
+  },
+  {
+   "entityId": "qe-07d56f0f5765",
+   "canonical": "LAT",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "The Los Angeles Times, often abbreviated LAT, is a major daily newspaper based in Los Angeles and one of the largest metropolitan newspapers in the United States."
+  },
+  {
+   "entityId": "qe-09b59345cc2a",
+   "canonical": "National Journal",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "National Journal is a Washington, D.C.-based media company, founded in 1969, that publishes journalism and analysis on U.S. politics, policy, and government for a professional audience."
+  },
+  {
+   "entityId": "qe-2355b6b6c443",
+   "canonical": "Buzzfeed",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Buzzfeed (stylized BuzzFeed) is an American internet media company, founded in 2006, known for viral content and listicles as well as its former BuzzFeed News division."
+  },
+  {
+   "entityId": "qe-25b87e8de5fb",
+   "canonical": "Univision",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Univision is an American Spanish-language media company operating a broadcast television network and news division that serves Hispanic audiences in the United States."
+  },
+  {
+   "entityId": "qe-6b91c2e9c140",
+   "canonical": "Vice",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Vice (Vice Media) is an American digital media and broadcasting company, including its Vice News division, that covers youth culture, current events, and international affairs."
+  },
+  {
+   "entityId": "qe-6cbd2d0bea8d",
+   "canonical": "Daily Beast",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "The Daily Beast is an American news and opinion website covering politics, media, and entertainment, launched in 2008."
+  },
+  {
+   "entityId": "qe-74a000cad9fe",
+   "canonical": "MORE",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "MORE was a women's lifestyle magazine published by Meredith Corporation and aimed at women over 40, in print from 1997 until it ceased publication in 2016."
+  },
+  {
+   "entityId": "qe-8f32b60fbf7a",
+   "canonical": "AURN",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "AURN (American Urban Radio Networks) is an African-American-owned radio network, formed in 1991, that distributes news, sports, and entertainment programming to Black-audience radio stations across the United States."
+  },
+  {
+   "entityId": "qe-a56f76c6ac6a",
+   "canonical": "HuffPo",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "HuffPost, originally The Huffington Post and often shortened to HuffPo, is an American online news and opinion website founded in 2005."
+  },
+  {
+   "entityId": "qe-b3334eb51117",
+   "canonical": "Vox",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "Vox is an American news and opinion website, part of Vox Media, known for explanatory journalism on politics, policy, and current events."
+  },
+  {
+   "entityId": "qe-bc06cc9ddf5a",
+   "canonical": "GPG",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "GPG (Global Strategy Group) is a Democratic-aligned public relations, polling, and communications consulting firm based in New York."
+  },
+  {
+   "entityId": "qe-df8ff87a5e36",
+   "canonical": "McClatchy",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "McClatchy was an American newspaper publishing company that owned dozens of daily newspapers across the United States, including the Miami Herald and Sacramento Bee, before filing for bankruptcy in 2020."
+  },
+  {
+   "entityId": "qe-f8a7a33cc54c",
+   "canonical": "The Hill",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "The Hill is an American political news website based in Washington, D.C., covering Congress, the White House, and federal policy, founded in 1994."
+  },
+  {
+   "entityId": "qe-f1d66b4e87bc",
+   "canonical": "Podesta Group",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "The Podesta Group was a Washington, D.C. lobbying and public affairs firm founded in 1988 by brothers Tony and John Podesta; it closed in 2017."
+  },
+  {
+   "entityId": "qe-78bf450b35a7",
+   "canonical": "Office of the Inspector General",
+   "ruledOn": "2026-08-26",
+   "provenance": "Owner ruling: \"for any entity that doesn't [have a synopsis], for example wikileaks... also all these reporters don't have a synopsis... lets search the internet.\" Researched via web search.",
+   "synopsis": "An Office of the Inspector General is an independent watchdog office within a U.S. federal agency, such as the Department of Justice, that conducts audits and investigations of the agency's programs and personnel to identify waste, fraud, abuse, and misconduct."
   }
  ]
 }
