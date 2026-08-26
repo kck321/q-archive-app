@@ -1,9 +1,9 @@
 {
  "totals": {
-  "relationships": 4637,
+  "relationships": 4675,
   "byType": {
    "prediction_assertion": 950,
-   "theme_support": 1721,
+   "theme_support": 1759,
    "evidence_claim": 837,
    "question_directive": 231,
    "claim_source_provided": 330,

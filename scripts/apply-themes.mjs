@@ -86,14 +86,20 @@ const out = {
 const styleLeak = audit.assignments.filter(a => STYLE_LABELS.test(a.label))
 const unknownTheme = audit.assignments.filter(a => !THEME_BY_KEY.has(a.theme))
 const checks = [
-  // 2,393 detected + 2 owner rulings ("Ascension." -> Religion & Spirituality on #4963 and #4966).
-  // Both counts are asserted separately so an owner ruling can never be mistaken for detector
-  // drift, and so a lost ruling fails here rather than quietly reverting the total to 2,393.
+  // 2,393 detected + 292 owner rulings. Both counts are asserted separately so an owner ruling
+  // can never be mistaken for detector drift, and so a lost ruling fails here rather than
+  // quietly reverting the total to 2,393.
+  //
+  // 2026-08-26: +39 Health & Medicine (disease/medical-authority sweep — AIDS/HIV, cancer, CDC,
+  // opioid, illness, hospital, doctor, and the 27-post COVID/C19/virus cluster). 253 -> 292 owner
+  // rulings, 2,646 -> 2,685 assignments. Of the 39: 13 posts had no theme at all (1,899 -> 1,912
+  // with a theme), 21 had exactly one other theme and are now multi-theme (445 -> 466), and 5
+  // were already multi-theme so a third assignment moves neither counter — 13+21+5 = 39.
   ['detected theme assignments = 2,393', out.totals.assignments - ownerAdded === 2393, out.totals.assignments - ownerAdded],
-  ['owner theme rulings applied = 253', ownerAdded === 253, ownerAdded],
-  ['theme assignments = 2,646', out.totals.assignments === 2646, out.totals.assignments],
-  ['posts with a theme = 1,899', out.totals.postsWithAtLeastOne === 1899, out.totals.postsWithAtLeastOne],
-  ['multi-theme posts = 445', out.totals.postsWithMoreThanOne === 445, out.totals.postsWithMoreThanOne],
+  ['owner theme rulings applied = 292', ownerAdded === 292, ownerAdded],
+  ['theme assignments = 2,685', out.totals.assignments === 2685, out.totals.assignments],
+  ['posts with a theme = 1,912', out.totals.postsWithAtLeastOne === 1912, out.totals.postsWithAtLeastOne],
+  ['multi-theme posts = 466', out.totals.postsWithMoreThanOne === 466, out.totals.postsWithMoreThanOne],
   ['unresolved in Resolution Center = 251', out.totals.unresolvedInResolutionCenter === 251, out.totals.unresolvedInResolutionCenter],
   ['18 parent themes, unchanged', themeTable.length === 18, themeTable.length],
   ['no style label imported as a subject', styleLeak.length === 0, `${styleLeak.length} leaked`],

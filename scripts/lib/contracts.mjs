@@ -402,7 +402,11 @@ export const CANONICAL = {
   // Religion & Spirituality. 26 of the 28 already did; #37 ("Fight the good fight.") and #54
   // (nothing but Jeremiah 29:11) did not. #54 gains its FIRST theme, so posts 1,898 -> 1,899;
   // #37 already carried Justice & Courts, so multi-theme posts 444 -> 445.
-  themes: { assignments: 2646, detected: 2393, ownerRulings: 253, posts: 1899 },
+  // 2,646 -> 2,685 on 2026-08-26: +39 owner-ruled Health & Medicine assignments (disease/medical-
+  // authority sweep — AIDS/HIV, cancer, CDC, opioid, illness, hospital, doctor, COVID/C19/virus
+  // cluster). 13 posts gain their FIRST theme (posts 1,899 -> 1,912); 21 more already carried
+  // exactly one other theme and are now multi-theme (445 -> 466, tracked outside this object).
+  themes: { assignments: 2685, detected: 2393, ownerRulings: 292, posts: 1912 },
   // +8 occurrences: 15 bracket lines ruled, 7 already certified at their post. Each of the 8 is a
   // wording Codes did not hold, and 4 posts gain their first certified code.
   // 1,957 -> 1,986 on 2026-08-24: 43 bracket rulings from round 2, 14 of them on tokens the

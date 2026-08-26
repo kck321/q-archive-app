@@ -238,7 +238,8 @@ const checks = [
   // 1,334: Ray Chandler ships merged into Rachel Chandler under the owner ruling.
   [`Entities indexed = ${CANONICAL.entities.canonical.toLocaleString()}`,
     bySection.entities === CANONICAL.entities.canonical, bySection.entities],
-  ['Themes indexed = 2,646', bySection.themes === 2646, bySection.themes],
+  // 2026-08-26: +39 owner-ruled Health & Medicine assignments (disease/medical-authority sweep).
+  ['Themes indexed = 2,685', bySection.themes === 2685, bySection.themes],
   // Read from the contract rather than copied, the same correction the other seven gates here
   // already carry: a certified count in two places is a certified count that goes stale in one.
   [`Codes indexed = ${CANONICAL.codes.distinct.toLocaleString()}`,

@@ -6315,6 +6315,396 @@
    "ruledOn": "2026-08-14",
    "reasoning": "Owner ruling. Same wording, same standalone-line position, same reasoning as #4963.",
    "coexistsWith": "This post carries no other theme assignment."
+  },
+  {
+   "postNum": 249,
+   "postId": "249",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "Hussein AIDS Video",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: AIDS sweep. \"Focus on Hussein AIDS Video\" — a named disease referenced as the subject of a specific claimed video."
+  },
+  {
+   "postNum": 251,
+   "postId": "251",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "Focus on Hussein AIDS Video",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: AIDS sweep, the follow-up drop re-reviewing the same claimed video."
+  },
+  {
+   "postNum": 252,
+   "postId": "252",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "Diseases created by families in power (pop control + pharma billions kb).\nThink AIDS.",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: the post the owner named directly — \"post 252 talks about aids and disease but it is not within the medical.\""
+  },
+  {
+   "postNum": 1220,
+   "postId": "1220",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "HIV/AIDS.",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: AIDS/HIV sweep. Same drop also names \"CHAI discounted pharmaceuticals\" and \"Pharma alliance\" — the whole drop is Clinton Foundation pharma/disease-conflict content."
+  },
+  {
+   "postNum": 2651,
+   "postId": "2651",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "The corruption (infiltration) at the top (WW) has spread like cancer.",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: cancer sweep, named explicitly (\"lets do all aids covid cancer\"). The sentence uses cancer as a simile for corruption rather than discussing the disease itself — included per the owner's broader instruction to sweep the term, not excluded for being metaphorical the way the general theme standard would."
+  },
+  {
+   "postNum": 1609,
+   "postId": "1609",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "POTUS combatting opioids - not good enough - IMPEACH.",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: opioid sweep — the opioid crisis as a named policy subject."
+  },
+  {
+   "postNum": 4645,
+   "postId": "4645",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "Centers for Disease Control and Prevention?",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: \"cdc ... should be used as a term\" — CDC spelled out in full here."
+  },
+  {
+   "postNum": 732,
+   "postId": "732",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "Wonder if his so-called illness/condition will flare up.",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: illness sweep — a public figure's health condition as the subject."
+  },
+  {
+   "postNum": 776,
+   "postId": "776",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "Target subjects are pre disposable to certain mental illnesses.",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: illness sweep — mental illness named as a targeting criterion."
+  },
+  {
+   "postNum": 3926,
+   "postId": "3926",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "cbs-news-caught-broadcasting-fake-hospital-footage",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: hospital sweep. COVID-era fake-footage claim (Breitbart URL slug); the subject is hospital/pandemic coverage, not the shock-value hyperbole #111/#142 use the word for."
+  },
+  {
+   "postNum": 1573,
+   "postId": "1573",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "Doctor(s) treating.",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: doctor sweep — medical treatment named directly, the same drop as \"These people are SICK.\""
+  },
+  {
+   "postNum": 4631,
+   "postId": "4631",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "offering a bounty to anybody who murders an abortion doctor",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: doctor sweep — a medical-procedure provider named as the subject of the sentence."
+  },
+  {
+   "postNum": 3909,
+   "postId": "3909",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "coronavirus-elections-wisconsin",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: covid sweep, named explicitly (\"lets do all aids covid cancer\")."
+  },
+  {
+   "postNum": 4172,
+   "postId": "4172",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "FIRST case of COVID-19 lands in UNITED STATES",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: covid sweep."
+  },
+  {
+   "postNum": 4239,
+   "postId": "4239",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "Refusal to testify re: fear of COVID-19",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: covid sweep."
+  },
+  {
+   "postNum": 4339,
+   "postId": "4339",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "deadly-covid19-nursing-home-policy",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: covid sweep."
+  },
+  {
+   "postNum": 4409,
+   "postId": "4409",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "attempt to prevent a 'medically verifiable' solution [prevention] re: COVID-19",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: covid sweep."
+  },
+  {
+   "postNum": 4583,
+   "postId": "4583",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "What would be the primary purpose of inflating C19 numbers?",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: covid sweep (Q's own C19 shorthand)."
+  },
+  {
+   "postNum": 4587,
+   "postId": "4587",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "C19 narrative kill date: Election Day +1",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: covid sweep."
+  },
+  {
+   "postNum": 4635,
+   "postId": "4635",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "force economic hardships [C19]?",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: covid sweep."
+  },
+  {
+   "postNum": 4639,
+   "postId": "4639",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "C19 aid package(s) have failed?",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: covid sweep."
+  },
+  {
+   "postNum": 4817,
+   "postId": "4817",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "1st C19 case lands @ Seattle-Tacoma Airport",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: covid sweep, the same case referenced from #4172."
+  },
+  {
+   "postNum": 3896,
+   "postId": "3896",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "“the CHINA virus”",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: virus/covid sweep."
+  },
+  {
+   "postNum": 4114,
+   "postId": "4114",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "for both viruses, the viral proteins used for host cell entry",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: virus sweep — literal virology content."
+  },
+  {
+   "postNum": 4157,
+   "postId": "4157",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "Is this about the virus OR THE ELECTION?",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: virus/covid sweep, the recurring 2020 \"virus or election\" framing — included broadly per the owner's instruction even where the post's emphasis is political."
+  },
+  {
+   "postNum": 4170,
+   "postId": "4170",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "Is this about the virus OR THE ELECTION?",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: virus/covid sweep, same recurring framing."
+  },
+  {
+   "postNum": 4219,
+   "postId": "4219",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "Is this about the virus OR THE ELECTION?",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: virus/covid sweep, same recurring framing."
+  },
+  {
+   "postNum": 4245,
+   "postId": "4245",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "IS THIS ABOUT THE ELECTION OR THE VIRUS?",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: virus/covid sweep, same recurring framing."
+  },
+  {
+   "postNum": 4254,
+   "postId": "4254",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "Is this about the virus OR THE ELECTION?",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: virus/covid sweep, same recurring framing."
+  },
+  {
+   "postNum": 4305,
+   "postId": "4305",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "Is this about the virus OR SOMETHING ELSE?",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: virus/covid sweep, same recurring framing."
+  },
+  {
+   "postNum": 4316,
+   "postId": "4316",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "Is this about the virus OR THE ELECTION?",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: virus/covid sweep, same recurring framing."
+  },
+  {
+   "postNum": 4327,
+   "postId": "4327",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "australian-researchers-see-virus-design-manipulati",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: virus/covid sweep — origin/lab-manipulation claim."
+  },
+  {
+   "postNum": 4328,
+   "postId": "4328",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "Was this ever about the virus?",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: virus/covid sweep, same recurring framing."
+  },
+  {
+   "postNum": 4494,
+   "postId": "4494",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "Is this about the virus OR THE ELECTION?",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: virus/covid sweep, same recurring framing."
+  },
+  {
+   "postNum": 4551,
+   "postId": "4551",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "Is this about the virus OR THE ELECTION?",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: virus/covid sweep, same recurring framing."
+  },
+  {
+   "postNum": 4687,
+   "postId": "4687",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "Virus or election?",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: virus/covid sweep, same recurring framing, shortened form."
+  },
+  {
+   "postNum": 4722,
+   "postId": "4722",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "1. Virus",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: virus/covid sweep — virus named as the first item of a three-item 2020 crisis list."
+  },
+  {
+   "postNum": 4754,
+   "postId": "4754",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "Virus or Election?",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: virus/covid sweep, same recurring framing, shortened form."
+  },
+  {
+   "postNum": 4825,
+   "postId": "4825",
+   "theme": "health_medicine",
+   "label": "Health & Medicine",
+   "anchor": "Was this ever about the virus?",
+   "was": "unclassified",
+   "ruledOn": "2026-08-26",
+   "reasoning": "Owner ruling: virus/covid sweep, same recurring framing."
   }
  ]
 }

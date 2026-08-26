@@ -4,7 +4,7 @@ import React from 'react'
 import { getAliasesFor, getFullAliasGroup } from './aliases'
 // STATIC_ENTITIES / MIL_INTEL_TERMS / Q_SIGNATURES are deliberately NOT imported: a word list
 // cannot decide membership in a certified section.
-import { HIGHLIGHT_CLS, HIGHLIGHT_SOLID, isSignOffMatch, wordBoundaryPattern } from './highlightConstants'
+import { HIGHLIGHT_CLS, HIGHLIGHT_FLASH, HIGHLIGHT_SOLID, isSignOffMatch, keywordUnderKind, wordBoundaryPattern } from './highlightConstants'
 import type { PostAnalysis } from '../types'
 import { expandToSentence, questionHighlightRegex } from './posts'
 import { highlightsEnabled } from './highlightPrefs'
@@ -259,13 +259,19 @@ export function highlightText(text: string, questionTexts: string[], keyword: st
           nodes.push(<mark key={iStart} className="bg-blue-500/30 text-blue-200 rounded not-italic">{matchText}</mark>)
         }
       } else if (top.kind === 'keyword') {
-        // SEARCH STATE, AND IT MUST NOT LOOK CERTIFIED.
+        // A SEARCH MATCH SHOWS ITS CATEGORY — owner ruling, 2026-08-26.
         //
-        // This hardcoded a flashing red fill and never read cls.keyword, so changing the style
-        // constant fixed nothing — the audit that checked the constant reported success while the
-        // live page kept painting a fill indistinguishable from a semantic category. Verifying the
-        // artifact instead of the consumption is the exact failure this project keeps repeating.
-        nodes.push(<mark key={iStart} className={`${cls.keyword ?? ''} not-italic`}>{matchText}</mark>)
+        // A search hit used to paint flat red no matter what certified layer sat underneath —
+        // the reader could see WHERE the term was but not WHAT it was. It still has to stand out
+        // as "this is the thing you searched for", which is why keyword stays a DOMINANT kind and
+        // still flashes — it just borrows the exact hue of whatever's behind it (HIGHLIGHT_FLASH,
+        // shared with PostDetail's chip-click flash) so the flash IS the classification. Falls
+        // back to the plain red ring only when nothing certified sits behind the match.
+        const underKind = keywordUnderKind(stackable)
+        nodes.push(underKind
+          ? <mark key={iStart} title={`search match — ${underKind}`}
+              className={`${cls[underKind] ?? ''} rounded not-italic ${HIGHLIGHT_FLASH[underKind] ?? 'animate-search-flash-generic'}`}>{matchText}</mark>
+          : <mark key={iStart} className={`${cls.keyword ?? ''} not-italic`}>{matchText}</mark>)
       } else {
         nodes.push(<a key={iStart} href={hrefOf(matchText)} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 underline break-all" onClick={e => e.stopPropagation()}>{matchText}</a>)
       }

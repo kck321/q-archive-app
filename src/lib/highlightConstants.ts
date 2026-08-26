@@ -107,6 +107,50 @@ export const HIGHLIGHT_CLS: Record<string, string> = {
   keyword:           'bg-transparent ring-1 ring-red-400/80 underline decoration-dashed decoration-red-400/80 underline-offset-2 text-red-200 font-semibold rounded-sm',
 }
 
+// ─── A SEARCH MATCH SHOWS ITS CATEGORY — owner ruling, 2026-08-26 ─────────────
+//
+// "i want the search term/phrase to not just show up red... i want it to flash back to the
+// color highlight that is behind it to help the user find it and also so they can see what the
+// term is classified as as far as category."
+//
+// A search hit used to paint the SAME flat red ring everywhere, whether it landed on plain
+// prose or sat inside a certified Entity or Claim — the reader could see WHERE the term was but
+// never WHAT it was without leaving the page to check. It still needs to stand out as "this is
+// the thing you searched for, not the thing the audit certified" (that is the whole reason
+// `keyword` is a DOMINANT kind and paints on top), so it still flashes. It just borrows the
+// hue of whatever certified layer sits underneath it instead of a hue that means nothing.
+//
+// RED↔category-colour, not white↔category-colour — corrected same day, 2026-08-26: "you have it
+// turning white to the highlight color. i still wanted to do red." A chip click already told you
+// the category, so ITS flash goes white↔colour (animate-flash-claims etc. in index.css) — pure
+// "here it is". A free-text search match is found BY its red, so the flash has to keep that red
+// identity and alternate red↔colour (animate-search-flash-claims etc., a separate set of
+// keyframes in index.css). Only when NOTHING certified is behind the match does it fall back to
+// the old plain, non-animated red ring in HIGHLIGHT_CLS.keyword — there is no category to reflect.
+export const HIGHLIGHT_FLASH: Record<string, string> = {
+  namedEntity:       'animate-search-flash-entities',
+  claim:             'animate-search-flash-claims',
+  prediction:        'animate-search-flash-predictions',
+  theme:             'animate-search-flash-themes',
+  impliedConclusion: 'animate-search-flash-conclusions',
+  verificationHook:  'animate-search-flash-hooks',
+  bracketCode:       'animate-search-flash-bracket',
+  request:           'animate-search-flash-request',
+  requestQuestion:   'animate-search-flash-request',
+}
+
+// Which certified layer a search match sitting over MULTIPLE kinds should show — same
+// precedence the ordinary renderers already use (brackets and entities are always on top;
+// Directives/requests next; then whatever else is left, context excluded since it means
+// "reviewed, no category"). Shared so PostCard/PostArchive's highlighter and PostDetail's own
+// renderer answer this identically instead of drifting into two different guesses.
+export function keywordUnderKind(stackable: { kind: string }[]): string | undefined {
+  if (stackable.some(s => s.kind === 'bracketCode')) return 'bracketCode'
+  if (stackable.some(s => s.kind === 'namedEntity')) return 'namedEntity'
+  if (stackable.some(s => s.kind === 'request' || s.kind === 'requestQuestion')) return 'request'
+  return stackable.find(s => s.kind !== 'context')?.kind
+}
+
 // ─── THE SIGN-OFF IS NOT A MENTION ────────────────────────────────────────────
 //
 // OWNER RULE, 2026-08-24: "any other post that has Q within it that ISN'T THE SIGNATURE AT THE

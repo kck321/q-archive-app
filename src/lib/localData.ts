@@ -513,7 +513,14 @@ export const OVERLAY_REPAIR = 1
 //     6,321, entities 1,235 -> 1,214 rows and 8,975 -> 8,821 mentions. A returning reader holding
 //     87 would keep the pre-review paint on 41 drops and a registry counting one written word up
 //     to five times, so the seed has to move.
-export const SEED_VERSION = 103  // 103: a fifth 2026-08-25 batch. #1010's WATER moves from
+export const SEED_VERSION = 104  // 104: 2026-08-26 — the disease/medical-authority theme sweep.
+                                 //     +39 owner-ruled Health & Medicine assignments (AIDS/HIV,
+                                 //     cancer, CDC, opioid, illness, hospital, doctor, and the
+                                 //     COVID/C19/virus cluster — 27 posts). posts.json,
+                                 //     themes.json, relationships.json and search-index.json all
+                                 //     changed content, so a returning reader's IndexedDB must
+                                 //     reseed or the new theme tags never show up locally.
+                                 // 103: a fifth 2026-08-25 batch. #1010's WATER moves from
                                  //     Directives to Claims and AIR (uncategorised) joins it —
                                  //     both are list items in the MONEY/POWER/CONTROL list, the
                                  //     same shape as PHARMA/CHEMICALS/VACCINES/TOBACCO/OPIOIDS

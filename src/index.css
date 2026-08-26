@@ -109,6 +109,71 @@ body {
 }
 .animate-flash-hooks { animation: flash-hooks 3s ease-in-out infinite; }
 
+/* SEARCH MATCH FLASH — owner ruling 2026-08-26, corrected same day.
+   "you have it turning white to the highlight color. i still wanted to do red."
+   The chip-click flashes above (flash-claims etc.) go white↔category because the click
+   already told you the category — the flash is purely "here it is". A free-text SEARCH match
+   is different: red is what marks it as a search hit in the first place, so the flash has to
+   KEEP that red identity and alternate red↔category-colour, never white↔category-colour. */
+@keyframes search-flash-claims {
+  0%, 100% { background-color: rgba(239,68,68,0.75); color: rgb(254,242,242); }
+  50%       { background-color: rgba(245,158,11,0.65); color: rgb(255,251,235); }
+}
+.animate-search-flash-claims { animation: search-flash-claims 3s ease-in-out infinite; }
+
+@keyframes search-flash-predictions {
+  0%, 100% { background-color: rgba(239,68,68,0.75); color: rgb(254,242,242); }
+  50%       { background-color: rgba(139,92,246,0.65); color: rgb(245,243,255); }
+}
+.animate-search-flash-predictions { animation: search-flash-predictions 3s ease-in-out infinite; }
+
+@keyframes search-flash-entities {
+  0%, 100% { background-color: rgba(239,68,68,0.75); color: rgb(254,242,242); }
+  50%       { background-color: rgba(6,182,212,0.65); color: rgb(236,254,255); }
+}
+.animate-search-flash-entities { animation: search-flash-entities 3s ease-in-out infinite; }
+
+@keyframes search-flash-themes {
+  0%, 100% { background-color: rgba(239,68,68,0.75); color: rgb(254,242,242); }
+  50%       { background-color: rgba(99,102,241,0.65); color: rgb(238,242,255); }
+}
+.animate-search-flash-themes { animation: search-flash-themes 3s ease-in-out infinite; }
+
+@keyframes search-flash-conclusions {
+  0%, 100% { background-color: rgba(239,68,68,0.75); color: rgb(254,242,242); }
+  50%       { background-color: rgba(249,115,22,0.65); color: rgb(255,247,237); }
+}
+.animate-search-flash-conclusions { animation: search-flash-conclusions 3s ease-in-out infinite; }
+
+@keyframes search-flash-hooks {
+  0%, 100% { background-color: rgba(239,68,68,0.75); color: rgb(254,242,242); }
+  50%       { background-color: rgba(234,179,8,0.65); color: rgb(254,252,232); }
+}
+.animate-search-flash-hooks { animation: search-flash-hooks 3s ease-in-out infinite; }
+
+@keyframes search-flash-request {
+  0%, 100% { background-color: rgba(239,68,68,0.75); color: rgb(254,242,242); }
+  50%       { background-color: rgba(34,197,94,0.65); color: rgb(240,253,244); }
+}
+.animate-search-flash-request { animation: search-flash-request 3s ease-in-out infinite; }
+
+/* Brackets are already red, so there is no second hue to alternate to — the match still
+   pulses (a flat mark would look inert next to every other animated hit), cycling between
+   the two reds the bracket style itself uses (its light ring red and its solid red-900). */
+@keyframes search-flash-bracket {
+  0%, 100% { background-color: rgba(239,68,68,0.55); color: rgb(254,242,242); }
+  50%       { background-color: rgba(127,29,29,0.95); color: rgb(252,165,165); }
+}
+.animate-search-flash-bracket { animation: search-flash-bracket 3s ease-in-out infinite; }
+
+/* Fallback for a certified kind with no dedicated pair above (emphasis, context, milIntel,
+   qSignature, topic) — still red-based, never white-based, per the same correction. */
+@keyframes search-flash-generic {
+  0%, 100% { background-color: rgba(239,68,68,0.75); color: rgb(254,242,242); }
+  50%       { background-color: rgba(107,114,128,0.55); color: rgb(243,244,246); }
+}
+.animate-search-flash-generic { animation: search-flash-generic 3s ease-in-out infinite; }
+
 /* Sidebar link click flash — brief white overlay fading out */
 @keyframes nav-flash {
   0%   { background-color: rgba(255, 255, 255, 0.22); }
@@ -191,7 +256,10 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .animate-flash-red, .animate-flash, .animate-flash-claims, .animate-flash-predictions,
   .animate-flash-entities, .animate-flash-themes, .animate-flash-conclusions,
-  .animate-flash-hooks, .animate-req-question, .animate-chip-pulse {
+  .animate-flash-hooks, .animate-search-flash-claims, .animate-search-flash-predictions,
+  .animate-search-flash-entities, .animate-search-flash-themes, .animate-search-flash-conclusions,
+  .animate-search-flash-hooks, .animate-search-flash-request, .animate-search-flash-bracket,
+  .animate-search-flash-generic, .animate-req-question, .animate-chip-pulse {
     animation: none !important;
   }
 }

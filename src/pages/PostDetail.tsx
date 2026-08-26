@@ -29,7 +29,7 @@ import { CAN_EDIT } from '../lib/appMode'
 import { getAliasesFor, getFullAliasGroup, addAlias, removeAlias, subscribeAliases } from '../lib/aliases'
 // STATIC_ENTITIES / MIL_INTEL_TERMS / Q_SIGNATURES are deliberately NOT imported: a word list
 // cannot decide membership in a certified section.
-import { HIGHLIGHT_CLS, HIGHLIGHT_SOLID, isSignOffMatch, wordBoundaryPattern } from '../lib/highlightConstants'
+import { HIGHLIGHT_CLS, HIGHLIGHT_FLASH, HIGHLIGHT_SOLID, isSignOffMatch, keywordUnderKind, wordBoundaryPattern } from '../lib/highlightConstants'
 import type { QPost, QQuestion, PostAnalysis, CorrelatedArticle, QuotedPost } from '../types'
 
 const STOP_WORDS = new Set(['the','and','for','with','from','this','that','are','was','were','have','been','will','into','about','its','their','which','posts'])
@@ -408,14 +408,21 @@ function renderPostBody(
         const isFirst = firstHL; firstHL = false
         const catClass = highlightCat ? CAT_HL_COLORS[highlightCat] : null
         const flashAnim = highlightCat ? (CAT_FLASH_ANIM[highlightCat] ?? 'animate-flash') : 'animate-flash'
+        // A SEARCH MATCH SHOWS ITS CATEGORY — owner ruling, 2026-08-26. Chip-click navigation
+        // arrives already knowing its category (?cat=namedEntities etc.) and gets catClass above.
+        // Free-text search arrives with NO cat — the term could land anywhere in the drop — so
+        // the category is read off whatever's actually stacked underneath this exact span, same
+        // precedence as the archive's own highlighter (keywordUnderKind), and painted with the
+        // SAME flash it would get there. Only when nothing certified is behind the match does it
+        // fall back to the plain red ring — there's no category to reflect.
+        const underKind = !catClass ? keywordUnderKind(stackable) : undefined
         // Always animate the term you came here to see. It used to depend on a ?flash=1
         // arrival, so opening a post from a term chip showed a static red mark that was easy
         // to lose inside a long drop — which is exactly the case the flash exists for.
         const hlClass = catClass
           ? `rounded not-italic ${catClass} ${flashAnim}`
-          // SEARCH STATE, NOT CLASSIFICATION. This was a filled red flashing mark, visually
-          // indistinguishable from a semantic category — the live audit failed it on exactly that.
-          // The archive uses the same outline treatment; both surfaces must agree.
+          : underKind
+          ? `rounded not-italic ${HIGHLIGHT_CLS[underKind] ?? ''} ${HIGHLIGHT_FLASH[underKind] ?? 'animate-search-flash-generic'}`
           : `not-italic font-semibold bg-transparent ring-1 ring-red-400/80 underline decoration-dashed decoration-red-400/80 underline-offset-2 text-red-200 rounded-sm`
         sink.push(<mark key={iStart} {...(isFirst ? { 'data-hl': '1' } : {})} className={hlClass}>{matchText}</mark>)
       } else if (top.kind === 'requestQuestion') {
