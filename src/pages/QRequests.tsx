@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo, useRef } from 'react'
 import SectionInfo from '../components/SectionInfo'
-import RowEvidenceChips from '../components/RowEvidenceChips'
+import { useEvidenceChips, mergeRowChips, type RowChip } from '../components/RowEvidenceChips'
 import { Link, useSearchParams } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import SearchBar from '../components/SearchBar'
@@ -26,6 +26,60 @@ interface RequestFreq {
   occurrences: number
   /** postNum → times the phrase occurs INSIDE that post (only when > 1). */
   repeats: Record<number, number>
+}
+
+/**
+ * A directive's post chips, pictures and links — merged into one row, oldest → newest. Its own
+ * component (rather than inline in the parent's `.map()`) because `useEvidenceChips` is a hook
+ * and every row needs its own call, not one call per iteration of a loop.
+ */
+function RequestChips({ item, monthPostNums, hoverPostNums, flashMonth, expanded, onToggle, chipsCap }: {
+  item: RequestFreq
+  monthPostNums: Set<number> | null
+  hoverPostNums: Set<number> | null
+  flashMonth: boolean
+  expanded: boolean
+  onToggle: () => void
+  chipsCap: number
+}) {
+  // A selected month narrows the CERTIFIED chips to that month's posts; evidence chips are not
+  // month-filtered, matching this row's existing behaviour before the merge.
+  const mn = monthPostNums ? item.postNums.filter(n => monthPostNums.has(n)) : item.postNums
+  const certifiedChips: RowChip[] = mn.map(num => {
+    const inMonth = monthPostNums?.has(num) ?? null
+    const pulsing = hoverPostNums?.has(num) ?? false
+    return {
+      num,
+      node: (
+        <Link key={num} to={`/post/${num}?flash=1&highlight=${encodeURIComponent(item.text)}&rk=request`}
+          title={inMonth ? 'in the selected month' : undefined}
+          className={`text-xs bg-gray-800 hover:bg-gray-700 border border-gray-700 hover:border-green-700 text-gray-400 hover:text-green-300 rounded px-1.5 py-0.5 transition-all font-mono ${
+            inMonth ? 'ring-2 ring-white/70 text-white font-bold' : ''
+          } ${item.repeats[num] > 1 ? 'border-amber-500/70' : ''} ${pulsing || (inMonth && flashMonth) ? 'animate-chip-pulse font-bold z-10 relative' : ''}`}>
+          #{num}
+          {item.repeats[num] > 1 && (
+            <span className="ml-1 text-amber-300 font-bold">×{item.repeats[num]}</span>
+          )}
+        </Link>
+      ),
+    }
+  })
+  const evidenceChips = useEvidenceChips(item.text, item.postNums, '&rk=request')
+  const merged = mergeRowChips(certifiedChips, evidenceChips)
+  const shown = expanded ? merged : merged.slice(0, chipsCap)
+  return (
+    <div className="flex flex-wrap gap-1.5">
+      {shown.map(c => c.node)}
+      {merged.length > chipsCap && (
+        <button
+          onClick={onToggle}
+          className="text-xs px-2 py-0.5 rounded border border-gray-600 bg-gray-800 text-gray-300 hover:text-white hover:border-gray-400 transition-colors font-mono"
+        >
+          {expanded ? '− show fewer' : `+${(merged.length - chipsCap).toLocaleString()} more`}
+        </button>
+      )}
+    </div>
+  )
 }
 
 interface TimelineEntry {
@@ -434,42 +488,14 @@ export default function QRequests() {
                         {item.text}
                       </span>
                     </p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {/* A selected month narrows each row to THAT month's posts. Without
-                          this the row kept every post it ever had, so the month you clicked
-                          could sit past the chip cap and the row looked empty of it. */}
-                      {(() => { const mn = monthPostNums ? item.postNums.filter(n => monthPostNums.has(n)) : item.postNums; return (expandedChips.has(item.text) ? mn : mn.slice(0, CHIPS)) })().map(num => {
-                        const inMonth = monthPostNums?.has(num) ?? null
-                        const pulsing = hoverPostNums?.has(num) ?? false
-                        return (
-                          <Link key={num} to={`/post/${num}?flash=1&highlight=${encodeURIComponent(item.text)}&rk=request`}
-                            title={inMonth ? 'in the selected month' : undefined}
-                            className={`text-xs bg-gray-800 hover:bg-gray-700 border border-gray-700 hover:border-green-700 text-gray-400 hover:text-green-300 rounded px-1.5 py-0.5 transition-all font-mono ${
-                              inMonth ? 'ring-2 ring-white/70 text-white font-bold' : ''
-                            } ${item.repeats[num] > 1 ? 'border-amber-500/70' : ''} ${pulsing || (inMonth && flashMonth) ? 'animate-chip-pulse font-bold z-10 relative' : ''}`}>
-                            #{num}
-                            {item.repeats[num] > 1 && (
-                              <span className="ml-1 text-amber-300 font-bold">×{item.repeats[num]}</span>
-                            )}
-                          </Link>
-                        )
-                      })}
-                      {item.postNums.length > CHIPS && (
-                        <button
-                          onClick={() => setExpandedChips(prev => {
-                            const next = new Set(prev)
-                            if (next.has(item.text)) next.delete(item.text); else next.add(item.text)
-                            return next
-                          })}
-                          className="text-xs px-2 py-0.5 rounded border border-gray-600 bg-gray-800 text-gray-300 hover:text-white hover:border-gray-400 transition-colors font-mono"
-                        >
-                          {expandedChips.has(item.text) ? '− show fewer' : `+${(item.postNums.length - CHIPS).toLocaleString()} more`}
-                        </button>
-                      )}
-                    </div>
-                    {/* Pictures and links tied to this directive — separate from the certified
-                        chips above, which stay exactly as adjudicated. */}
-                    <RowEvidenceChips term={item.text} certifiedPosts={item.postNums} linkParams="&rk=request" />
+                    <RequestChips item={item} monthPostNums={monthPostNums} hoverPostNums={hoverPostNums} flashMonth={flashMonth}
+                      chipsCap={CHIPS}
+                      expanded={expandedChips.has(item.text)}
+                      onToggle={() => setExpandedChips(prev => {
+                        const next = new Set(prev)
+                        if (next.has(item.text)) next.delete(item.text); else next.add(item.text)
+                        return next
+                      })} />
                   </div>
                 </div>
               </div>

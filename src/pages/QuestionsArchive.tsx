@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState, useRef } from 'react'
 import SectionInfo from '../components/SectionInfo'
-import RowEvidenceChips from '../components/RowEvidenceChips'
+import { useEvidenceChips, mergeRowChips, type RowChip } from '../components/RowEvidenceChips'
 import { Link, useSearchParams } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import { makeTermMatcher, normalizeItemKey, getQuestionFrequency, getQuestionsTimeline, getPostNumsByMonth, mergeSimilarQuestions, type QuestionFrequency, type SimilarGroup } from '../lib/posts'
@@ -96,7 +96,28 @@ function QuestionCard({ r, selectedNums, hoverNums, flashNums, rank, monthOf }: 
   // A selected month narrows the row to THAT month's posts — otherwise the month clicked
   // could sit past the chip cap, and the row read as if it had none of it.
   const nums = selectedNums ? r.postNums.filter(n => selectedNums.has(n)) : r.postNums
-  const shown = expanded ? nums : nums.slice(0, CHIPS)
+  const certifiedChips: RowChip[] = nums.map(num => ({
+    num,
+    node: (
+      <Link
+        key={num}
+        to={`/post/${num}?highlight=${encodeURIComponent(r.text)}&rk=question&flash=1`}
+        className={`text-xs px-2 py-0.5 rounded transition-all ${
+          selectedNums?.has(num)
+            ? 'bg-blue-900/60 text-blue-300 border border-blue-600'
+            : 'bg-gray-800 hover:bg-blue-900/50 text-gray-400 hover:text-blue-300'
+        } ${(r.repeats?.[num] ?? 0) > 1 ? 'border border-amber-500/70' : ''} ${hoverNums?.has(num) || (flashNums?.has(num)) ? 'animate-chip-pulse font-bold z-10 relative' : ''}`}
+      >
+        #{num}
+        {(r.repeats?.[num] ?? 0) > 1 && (
+          <span className="ml-1 text-amber-300 font-bold">×{r.repeats[num]}</span>
+        )}
+      </Link>
+    ),
+  }))
+  const evidenceChips = useEvidenceChips(r.text, nums, '&rk=question')
+  const merged = mergeRowChips(certifiedChips, evidenceChips)
+  const shown = expanded ? merged : merged.slice(0, CHIPS)
   return (
     <div className="bg-q-panel border border-q-border rounded-xl p-4">
       <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3">
@@ -128,33 +149,19 @@ function QuestionCard({ r, selectedNums, hoverNums, flashNums, rank, monthOf }: 
           </span>
         </p>
         <div className="flex flex-wrap gap-1 mt-2">
-          {shown.map(num => (
-            <Link
-              key={num}
-              to={`/post/${num}?highlight=${encodeURIComponent(r.text)}&rk=question&flash=1`}
-              className={`text-xs px-2 py-0.5 rounded transition-all ${
-                selectedNums?.has(num)
-                  ? 'bg-blue-900/60 text-blue-300 border border-blue-600'
-                  : 'bg-gray-800 hover:bg-blue-900/50 text-gray-400 hover:text-blue-300'
-              } ${(r.repeats?.[num] ?? 0) > 1 ? 'border border-amber-500/70' : ''} ${hoverNums?.has(num) || (flashNums?.has(num)) ? 'animate-chip-pulse font-bold z-10 relative' : ''}`}
-            >
-              #{num}
-              {(r.repeats?.[num] ?? 0) > 1 && (
-                <span className="ml-1 text-amber-300 font-bold">×{r.repeats[num]}</span>
-              )}
-            </Link>
-          ))}
-          {nums.length > CHIPS && (
+          {/* Certified post numbers, pictures and links — one merged row, oldest → newest.
+              Pictures and links still read as their own kind of evidence (icon, color, and
+              dimming for an associated rather than direct match); they are just interleaved by
+              post number instead of stacked in their own rows underneath. */}
+          {shown.map(c => c.node)}
+          {merged.length > CHIPS && (
             <button
               onClick={() => setExpanded(v => !v)}
               className="text-xs px-2 py-0.5 rounded border border-gray-600 bg-gray-800 text-gray-300 hover:text-white hover:border-gray-400 transition-colors font-mono"
             >
-              {expanded ? '− show fewer' : `+${(nums.length - CHIPS).toLocaleString()} more`}
+              {expanded ? '− show fewer' : `+${(merged.length - CHIPS).toLocaleString()} more`}
             </button>
           )}
-          {/* Pictures and links tied to this question — separate from the certified chips
-              above, which stay exactly as adjudicated. */}
-          <RowEvidenceChips term={r.text} certifiedPosts={nums} linkParams="&rk=question" />
         </div>
       </div>
       </div>

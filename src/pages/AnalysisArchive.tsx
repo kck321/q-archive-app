@@ -11,7 +11,7 @@ import {
 } from '../lib/posts'
 import { getAliasesFor, getAliasGroup, getAliasSet, getCertifiedEntityAliasSet, getCertifiedEntities, getEntityPublicView, subscribeAliases, displayAlias, type SourceKind } from '../lib/aliases'
 import PostCard from '../components/PostCard'
-import RowEvidenceChips from '../components/RowEvidenceChips'
+import { useEvidenceChips, mergeRowChips, type RowChip } from '../components/RowEvidenceChips'
 import ReaderSentinel from '../components/ReaderSentinel'
 import { loadLocalData } from '../lib/localData'
 import type { QPost } from '../types'
@@ -130,6 +130,104 @@ function overlapConfirmKey(postNum: number, text: string) {
 }
 function itemConfirmKey(category: string, text: string) {
   return `global|${category}|${normalizeItemKey(text)}`
+}
+
+/**
+ * A row's post chips, pictures and links — merged into one row, oldest → newest — plus the
+ * expander and "read N drops" button that sit at the end of it. Its own component (rather than
+ * inline in the parent's `.map()`) because `useEvidenceChips` is a hook and every row needs its
+ * own call, not one call per iteration of a loop.
+ */
+function ItemChipRow({
+  item, monthChips, expanded, onToggleExpand, isReading, onToggleReading, termColor, showEvidence, chipsCap,
+}: {
+  item: { category: AnalysisCategoryFreq['category']; text: string; repeats: Record<number, number> }
+  monthChips: { num: number; term: string; sourceKind?: SourceKind }[]
+  expanded: boolean
+  onToggleExpand: () => void
+  isReading: boolean
+  onToggleReading: () => void
+  termColor: Map<string, string>
+  showEvidence: boolean
+  chipsCap: number
+}) {
+  const certifiedChips: RowChip[] = monthChips.map(({ num, term, sourceKind }) => {
+    // NO MONTH DECORATION ON THE CHIP.
+    //
+    // `monthChips` is already filtered to the selected month, so every chip here IS in that
+    // month — the ring marked all of them and distinguished nothing, and the flash animated the
+    // whole row for five seconds to say so. The selected month is stated once, above the list.
+    //
+    // A SOURCE CHIP SAYS WHAT THE LINK WAS. "Publisher link", "Social account" or the generic
+    // "Linked source" where one drop carries both — never a mention.
+    const srcLabel = sourceKind ? getEntityPublicView()?.kindLabels?.[sourceKind] ?? 'Linked source' : null
+    return {
+      num,
+      node: (
+        <Link
+          key={num}
+          to={`/post/${num}?flash=1${sourceKind ? '' : `&highlight=${encodeURIComponent(term)}&cat=${item.category}`}`}
+          title={
+            srcLabel
+              ? `${srcLabel} — #${num} linked this source. It is not necessarily named in Q’s prose.`
+              : term !== item.text ? `mentions "${term}"` : undefined
+          }
+          className={`text-xs px-2 py-0.5 border rounded font-mono transition-colors ${
+            sourceKind
+              ? 'bg-sky-950/70 text-sky-200 border-sky-800/70 hover:border-sky-500'
+              : termColor.get(term.toLowerCase()) ?? CANON_CHIP
+          } ${item.repeats[num] > 1 ? 'border-amber-500/70' : ''}`}
+        >
+          #{num}
+          {srcLabel && <span className="ml-1 text-sky-400/90 text-[10px]">{srcLabel}</span>}
+          {item.repeats[num] > 1 && (
+            <span className="ml-1 text-amber-300 font-bold">×{item.repeats[num]}</span>
+          )}
+        </Link>
+      ),
+    }
+  })
+  // Evidence chips are gated the same way the old RowEvidenceChips render was — only the
+  // categories in EVIDENCE_CATS, decided by the caller. Calling the hook unconditionally (and
+  // discarding its result when not shown) keeps the Rules of Hooks call order stable regardless
+  // of which category is active.
+  const evidenceChips = useEvidenceChips(item.text, monthChips.map(c => c.num), `&cat=${item.category}`)
+  const merged = showEvidence ? mergeRowChips(certifiedChips, evidenceChips) : certifiedChips
+  const shown = expanded ? merged : merged.slice(0, chipsCap)
+  return (
+    <div className="flex flex-wrap gap-1 mb-2">
+      {shown.map(c => c.node)}
+      {/* Owner ruling: the rest of the post numbers come FIRST. You decide which drops you are
+          looking at before you are offered to read them, so the expander sits next to the chips
+          it expands and "read N drops" lands on the right, at the end of the row. Applies to
+          every category — this one renderer serves them all. */}
+      {merged.length > chipsCap && (
+        <button
+          onClick={onToggleExpand}
+          className="text-xs px-2 py-0.5 rounded border border-gray-600 bg-gray-800 text-gray-300 hover:text-white hover:border-gray-400 transition-colors font-mono"
+        >
+          {expanded ? '− show fewer' : `+${(merged.length - chipsCap).toLocaleString()} more`}
+        </button>
+      )}
+      {/* Open the drops themselves, in post order, underneath the numbers. The chips say WHICH
+          posts; this says what they contain, without leaving the row you are reading. Certified
+          posts only — a picture or link chip is evidence about the subject, not a drop Q wrote
+          the term in, so it is not one of the drops this button opens. */}
+      {monthChips.length > 0 && (
+        <button
+          onClick={onToggleReading}
+          className={`text-xs px-2 py-0.5 rounded border font-mono transition-colors ${
+            isReading
+              ? 'border-cyan-500 bg-cyan-900/50 text-cyan-200'
+              : 'border-gray-600 bg-gray-800 text-gray-300 hover:text-white hover:border-gray-400'
+          }`}
+          title={isReading ? 'Close the drops' : `Read all ${monthChips.length} drops here, in post order`}
+        >
+          {isReading ? '− close drops' : `▼ read ${monthChips.length.toLocaleString()} drop${monthChips.length !== 1 ? 's' : ''}`}
+        </button>
+      )}
+    </div>
+  )
 }
 
 export default function AnalysisArchive() {
@@ -1356,86 +1454,21 @@ export default function AnalysisArchive() {
                         </Link>
                       </p>
                     )}
-                    <div className="flex flex-wrap gap-1 mb-2">
-                      {(expandedChips.has(key) ? monthChips : monthChips.slice(0, CHIPS)).map(({ num, term, sourceKind }) => {
-                        // NO MONTH DECORATION ON THE CHIP.
-                        //
-                        // `monthChips` is already filtered to the selected month, so every chip here
-                        // IS in that month — the ring marked all of them and distinguished nothing,
-                        // and the flash animated the whole row for five seconds to say so. The
-                        // selected month is stated once, above the list, where it can be read.
-                        //
-                        // A SOURCE CHIP SAYS WHAT THE LINK WAS. "Publisher link", "Social account" or
-                        // the generic "Linked source" where one drop carries both — never a mention.
-                        const srcLabel = sourceKind ? getEntityPublicView()?.kindLabels?.[sourceKind] ?? 'Linked source' : null
-                        return (
-                          <Link
-                            key={num}
-                            to={`/post/${num}?flash=1${sourceKind ? '' : `&highlight=${encodeURIComponent(term)}&cat=${item.category}`}`}
-                            title={
-                              srcLabel
-                                ? `${srcLabel} — #${num} linked this source. It is not necessarily named in Q’s prose.`
-                                : term !== item.text ? `mentions "${term}"` : undefined
-                            }
-                            className={`text-xs px-2 py-0.5 border rounded font-mono transition-colors ${
-                              sourceKind
-                                ? 'bg-sky-950/70 text-sky-200 border-sky-800/70 hover:border-sky-500'
-                                : termColor.get(term.toLowerCase()) ?? CANON_CHIP
-                            } ${item.repeats[num] > 1 ? 'border-amber-500/70' : ''}`}
-                          >
-                            #{num}
-                            {srcLabel && <span className="ml-1 text-sky-400/90 text-[10px]">{srcLabel}</span>}
-                            {item.repeats[num] > 1 && (
-                              <span className="ml-1 text-amber-300 font-bold">×{item.repeats[num]}</span>
-                            )}
-                          </Link>
-                        )
+                    <ItemChipRow
+                      item={item} monthChips={monthChips} termColor={termColor}
+                      showEvidence={EVIDENCE_CATS.has(activeTab)} chipsCap={CHIPS}
+                      expanded={expandedChips.has(key)}
+                      onToggleExpand={() => setExpandedChips(prev => {
+                        const next = new Set(prev)
+                        if (next.has(key)) next.delete(key); else next.add(key)
+                        return next
                       })}
-                      {/* Owner ruling: the rest of the post numbers come FIRST. You decide which
-                          drops you are looking at before you are offered to read them, so the
-                          expander sits next to the chips it expands and "read N drops" lands on
-                          the right, at the end of the row. Applies to every category — this one
-                          renderer serves them all. */}
-                      {monthChips.length > CHIPS && (
-                        <button
-                          onClick={() => setExpandedChips(prev => {
-                            const next = new Set(prev)
-                            if (next.has(key)) next.delete(key); else next.add(key)
-                            return next
-                          })}
-                          className="text-xs px-2 py-0.5 rounded border border-gray-600 bg-gray-800 text-gray-300 hover:text-white hover:border-gray-400 transition-colors font-mono"
-                        >
-                          {expandedChips.has(key)
-                            ? '− show fewer'
-                            : `+${(monthChips.length - CHIPS).toLocaleString()} more`}
-                        </button>
-                      )}
-                      {/* Open the drops themselves, in post order, underneath the numbers.
-                          The chips say WHICH posts; this says what they contain, without
-                          leaving the row you are reading. */}
-                      {monthChips.length > 0 && (
-                        <button
-                          onClick={() => {
-                            setReadLimit(READ_PAGE)
-                            setReadingKey(prev => (prev === key ? null : key))
-                          }}
-                          className={`text-xs px-2 py-0.5 rounded border font-mono transition-colors ${
-                            readingKey === key
-                              ? 'border-cyan-500 bg-cyan-900/50 text-cyan-200'
-                              : 'border-gray-600 bg-gray-800 text-gray-300 hover:text-white hover:border-gray-400'
-                          }`}
-                          title={readingKey === key ? 'Close the drops' : `Read all ${monthChips.length} drops here, in post order`}
-                        >
-                          {readingKey === key ? '− close drops' : `▼ read ${monthChips.length.toLocaleString()} drop${monthChips.length !== 1 ? 's' : ''}`}
-                        </button>
-                      )}
-                    </div>
-                    {/* Supporting evidence, in its own labelled groups BELOW the certified chips.
-                        Every active category except Emphasis — the counts above are adjudicated
-                        and nothing here may touch them. */}
-                    {EVIDENCE_CATS.has(activeTab) && (
-                      <RowEvidenceChips term={item.text} certifiedPosts={monthChips.map(c => c.num)} linkParams={`&cat=${item.category}`} />
-                    )}
+                      isReading={readingKey === key}
+                      onToggleReading={() => {
+                        setReadLimit(READ_PAGE)
+                        setReadingKey(prev => (prev === key ? null : key))
+                      }}
+                    />
                     {readingKey === key && (
                       <div className="mt-2 mb-3 border-t border-q-border pt-3 space-y-3">
                         {readLoading && <p className="text-xs text-gray-500 animate-pulse">opening drops…</p>}

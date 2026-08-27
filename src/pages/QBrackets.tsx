@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo, useRef } from 'react'
 import SectionInfo from '../components/SectionInfo'
-import RowEvidenceChips from '../components/RowEvidenceChips'
+import { useEvidenceChips, mergeRowChips, type RowChip } from '../components/RowEvidenceChips'
 import { Link, useSearchParams } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import { getAllPosts, makeTermMatcher } from '../lib/posts'
@@ -35,6 +35,63 @@ interface TimelineEntry {
 
 // Matches [[X]] and [X] where X is uppercase/numeric, 1–30 chars
 const BRACKET_RX = /\[\[?([A-Z0-9][A-Z0-9 _\-]{0,29})\]?\]/g
+
+/**
+ * A bracketed term's post chips, pictures and links — merged into one row, oldest → newest.
+ * Its own component (rather than inline in the parent's `.map()`) because `useEvidenceChips` is
+ * a hook and every row needs its own call, not one call per iteration of a loop.
+ */
+function BracketChips({ entry, monthPostNums, hoverPostNums, flashMonth, expanded, onToggle, chipsCap }: {
+  entry: BracketEntry
+  monthPostNums: Set<number> | null
+  hoverPostNums: Set<number> | null
+  flashMonth: boolean
+  expanded: boolean
+  onToggle: () => void
+  chipsCap: number
+}) {
+  // A selected month narrows the CERTIFIED chips to that month's posts; evidence chips are not
+  // month-filtered, matching this row's existing behaviour before the merge.
+  const mn = monthPostNums ? entry.postNums.filter(n => monthPostNums.has(n)) : entry.postNums
+  const certifiedChips: RowChip[] = mn.map(num => {
+    const inMonth = monthPostNums?.has(num) ?? null
+    const pulsing = hoverPostNums?.has(num) ?? false
+    return {
+      num,
+      node: (
+        <Link
+          key={num}
+          to={`/post/${num}?flash=1&highlight=${encodeURIComponent(entry.code)}&rk=bracket`}
+          title={inMonth ? 'in the selected month' : undefined}
+          className={`text-xs bg-gray-800 hover:bg-gray-700 border border-gray-700 hover:border-red-700 text-gray-400 hover:text-red-300 rounded px-1.5 py-0.5 transition-all font-mono ${
+            inMonth ? 'ring-2 ring-white/70 text-white font-bold' : ''
+          } ${(entry.repeats?.[num] ?? 0) > 1 ? 'border-amber-500/70' : ''} ${pulsing || (inMonth && flashMonth) ? 'animate-chip-pulse font-bold z-10 relative' : ''}`}
+        >
+          #{num}
+          {(entry.repeats?.[num] ?? 0) > 1 && (
+            <span className="ml-1 text-amber-300 font-bold">×{entry.repeats?.[num]}</span>
+          )}
+        </Link>
+      ),
+    }
+  })
+  const evidenceChips = useEvidenceChips(entry.code, entry.postNums, '&rk=bracket')
+  const merged = mergeRowChips(certifiedChips, evidenceChips)
+  const shown = expanded ? merged : merged.slice(0, chipsCap)
+  return (
+    <div className="flex flex-wrap gap-1.5">
+      {shown.map(c => c.node)}
+      {merged.length > chipsCap && (
+        <button
+          onClick={onToggle}
+          className="text-xs px-2 py-0.5 rounded border border-gray-600 bg-gray-800 text-gray-300 hover:text-white hover:border-gray-400 transition-colors font-mono"
+        >
+          {expanded ? '− show fewer' : `+${(merged.length - chipsCap).toLocaleString()} more`}
+        </button>
+      )}
+    </div>
+  )
+}
 
 function extractBrackets(text: string): string[] {
   const results: string[] = []
@@ -482,47 +539,14 @@ export default function QBrackets() {
                         {entry.code}
                       </span>
                     </p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {/* A selected month narrows the row to THAT month's posts; otherwise
-                          the month clicked could sit past the chip cap. */}
-                      {(() => { const mn = monthPostNums ? entry.postNums.filter(n => monthPostNums.has(n)) : entry.postNums; return (expandedChips.has(entry.code) ? mn : mn.slice(0, CHIPS)) })().map(num => {
-                        const inMonth = monthPostNums?.has(num) ?? null
-                        const pulsing = hoverPostNums?.has(num) ?? false
-                        return (
-                        <Link
-                          key={num}
-                          to={`/post/${num}?flash=1&highlight=${encodeURIComponent(entry.code)}&rk=bracket`}
-                          title={inMonth ? 'in the selected month' : undefined}
-                          className={`text-xs bg-gray-800 hover:bg-gray-700 border border-gray-700 hover:border-red-700 text-gray-400 hover:text-red-300 rounded px-1.5 py-0.5 transition-all font-mono ${
-                            inMonth ? 'ring-2 ring-white/70 text-white font-bold' : ''
-                          } ${(entry.repeats?.[num] ?? 0) > 1 ? 'border-amber-500/70' : ''} ${pulsing || (inMonth && flashMonth) ? 'animate-chip-pulse font-bold z-10 relative' : ''}`}
-                        >
-                          #{num}
-                          {(entry.repeats?.[num] ?? 0) > 1 && (
-                            <span className="ml-1 text-amber-300 font-bold">×{entry.repeats?.[num]}</span>
-                          )}
-                        </Link>
-                        )
-                      })}
-                      {entry.postNums.length > CHIPS && (
-                        <button
-                          onClick={() => setExpandedChips(prev => {
-                            const next = new Set(prev)
-                            if (next.has(entry.code)) next.delete(entry.code); else next.add(entry.code)
-                            return next
-                          })}
-                          className="text-xs px-2 py-0.5 rounded border border-gray-600 bg-gray-800 text-gray-300 hover:text-white hover:border-gray-400 transition-colors font-mono"
-                        >
-                          {expandedChips.has(entry.code) ? '− show fewer' : `+${((monthPostNums ? entry.postNums.filter(n => monthPostNums.has(n)) : entry.postNums).length - CHIPS).toLocaleString()} more`}
-                        </button>
-                      )}
-                      {entry.postNums.length > 30 && (
-                        <span className="text-xs text-gray-600 self-center">+{entry.postNums.length - 30} more</span>
-                      )}
-                    </div>
-                    {/* Pictures and links tied to this bracketed term — separate from the
-                        certified chips above, which stay exactly as adjudicated. */}
-                    <RowEvidenceChips term={entry.code} certifiedPosts={entry.postNums} linkParams="&rk=bracket" />
+                    <BracketChips entry={entry} monthPostNums={monthPostNums} hoverPostNums={hoverPostNums} flashMonth={flashMonth}
+                      chipsCap={CHIPS}
+                      expanded={expandedChips.has(entry.code)}
+                      onToggle={() => setExpandedChips(prev => {
+                        const next = new Set(prev)
+                        if (next.has(entry.code)) next.delete(entry.code); else next.add(entry.code)
+                        return next
+                      })} />
                   </div>
                 </div>
               </div>
