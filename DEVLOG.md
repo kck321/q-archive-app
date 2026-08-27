@@ -7800,3 +7800,34 @@ duplicated the toggle into the search/sort bar.
 copies are the same shared component, so this is the single change needed for every surface — the
 "3rd spot on the phone app" the owner described and the "upper right" the owner pointed at on
 desktop were the same instance.
+
+## 2026-08-27 — Fix chip-scroll race and touch-only month-chart taps
+
+**Request:** "when i click on a picture chip it just brings me to the beginning of all the list...
+i want it to bring you to the post number that the chip relates to" / "when i click on may 2018 it
+brings up the info... however when i have using my phone i do not get the ledgend for that isolated
+month on the graph."
+
+**Solution:** Both reports were "works on desktop, not on my phone" for features that already had
+the right intent, not the wrong design. Investigated the reader-feed centering first: a chip click
+opens `/post/:id?cat=...`, which activates a shared reading feed (pre-existing, unrelated to
+tonight's chip merge) that's supposed to scroll to and highlight the clicked post's own card. The
+effect that does that fired once after a fixed 80ms delay — fine for a short list, but the merge
+means a row like POTUS now opens a feed of 1,000+ cards, and a slower device may not have finished
+laying them all out by 80ms; when that race is lost the feed silently stays at scrollTop 0, which
+reads exactly like "every chip goes to the beginning" no matter which post was actually clicked.
+Reproduced directly: under simulated 6x CPU throttling, the old single-attempt code measured
+scrollTop 0 shortly after the cards existed and never recovered; a poll-until-ready rewrite
+(matching the same file's existing Pic/URL focus-into-view effect) correctly reached the clicked
+post. For the month chart, the owner's screenshot showed the desktop hover tooltip working
+correctly; the intended mobile equivalent is a tap-triggered info box under the chart (hover
+tooltips don't work with a finger), gated on a `max-width: 639px` media query. A touch device that
+happens to report a wider viewport — landscape, a large phone, "Request desktop site" — satisfies
+neither the hover tooltip (no such thing as a persistent hover on touch) nor the width-gated
+readout, so a tap does nothing visible. Added an `ontouchstart`/`navigator.maxTouchPoints` check
+alongside the width check as an OR condition, so a bar tap always has somewhere for its breakdown
+to land regardless of how the device reports its viewport. Verified directly: dispatching a real
+click on a bar element with touch capability emulated produces the full breakdown box
+("August 2018 · Posts 266 · Q Questions 478 · ..."), matching the desktop hover tooltip's content
+exactly. Validated at the `standard` profile, full pass green including `fresh — month chart
+behaviour` and `fresh — scroll restoration`.
