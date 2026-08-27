@@ -13,7 +13,23 @@ createRoot(document.getElementById('root')!).render(
 // the first paint or the initial data seed.
 if ('serviceWorker' in navigator && import.meta.env.PROD) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').catch(() => { /* unsupported or blocked */ })
+    navigator.serviceWorker.register('/sw.js').then(reg => {
+      // FORCE THE FRESHNESS CHECK. register() alone does not reliably re-check an
+      // already-registered worker for new bytes — browsers throttle the automatic check to
+      // roughly once every 24 hours, and installed/standalone PWAs (the home-screen-icon case)
+      // are the least likely to hit that window on their own. A visitor who opens the app once
+      // a day forever could sit behind a stale service worker indefinitely, holding stale
+      // /data/*.json in its cache-first store even though index.html and the JS bundle are
+      // fetched network-first and would otherwise look current.
+      //
+      // update() bypasses that throttle and asks the browser to re-fetch /sw.js right now, byte
+      // for byte, so a deploy reaches an already-installed app on its very next open rather than
+      // waiting on the browser's own schedule.
+      reg.update().catch(() => {})
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') reg.update().catch(() => {})
+      })
+    }).catch(() => { /* unsupported or blocked */ })
   })
 
   // Reload once when a new build takes over.
