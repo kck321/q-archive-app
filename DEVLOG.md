@@ -7726,3 +7726,77 @@ fix (`Rod Rosenstein`'s split anchor sits on segment 1 via the pre-existing ROSE
 segment 0 with no existing control, as the fixture had recorded). Every fix reconciles a check to
 data already certified elsewhere or a direct live measurement — nothing certified was changed.
 Confirmed via a full `node scripts/validate.mjs` pass: all steps green, receipt written.
+
+## 2026-08-27 — Pushed 173 stranded commits to GitHub, diagnosed a stale phone service worker
+
+**Request:** "please make sure you pushed every commit i asked and publish/deploy them" — after
+noticing the Gettysburg Address directive on #4949 wasn't showing on their phone, though it was
+correct on the laptop.
+
+**Solution:** `git status -sb` showed local `master` was 173 commits ahead of `origin/master` —
+every deploy this whole time had pushed the built site to the separate `gh-pages` branch, but the
+actual source history had never reached GitHub. Confirmed it was a clean fast-forward
+(`git merge-base --is-ancestor origin/master master`) and pushed. Separately, confirmed #4949's
+Gettysburg Address directive was correctly live (`actionRequests` on qdrops.app's own
+`data/posts.json` matches the certified local bundle) — the phone was serving a stale service
+worker that a restart doesn't clear (it's disk-persisted Cache Storage, not memory). Walked the
+owner through Android's "Clear storage" on the installed PWA, which fixed it — confirming the
+diagnosis and motivating the service-worker fix logged below.
+
+## 2026-08-27 — Force a service-worker freshness check on every app open
+
+**Request:** "the bigger issue will be if I make an update I want it to naturally flow through to
+the app on the phone. I don't want to have my users jump through these kind of hurdles" — after
+the phone-cache incident above.
+
+**Solution:** Browsers throttle a registered service worker's automatic freshness check to roughly
+once every 24 hours, and an installed/standalone PWA opened once a day is the least likely case to
+land inside that window — worse, `/data/*.json` is cached cache-first under the OLD worker
+indefinitely until it updates, even though `index.html` and the JS bundle are network-first and
+would otherwise look current. `src/main.tsx` now calls `registration.update()` right after
+registering and again on every `visibilitychange` to `visible`, bypassing the browser's own
+throttle so a deploy reaches an already-installed app on its very next open — no manual cache
+clear required going forward. Validated at the `standard` profile (this is a `src/main.tsx` change,
+`scripts/lib/pipeline.mjs`'s RULES table floors it there) — `tsc` clean, full pass green.
+
+## 2026-08-27 — Merge post/picture/URL chips into one row, sorted oldest → newest
+
+**Request:** "when I click on the category you have 3 different sections under each term or
+phrase (the post #s, the pictures, and the urls). let's put them together and organize them in
+order from oldest to newest. it takes up too much space having them all 3 separated."
+
+**Solution:** `RowEvidenceChips` used to be a self-rendering component: certified post chips were
+mapped inline by each page, then `<RowEvidenceChips>` rendered pictures and links as two more
+labelled block-level groups stacked underneath — three visually separate rows per term. Redesigned
+it as data instead of a renderer: `useEvidenceChips()` returns `{num, node}` pairs for the picture
+and link chips (same styling, tooltips and hrefs as before), and `mergeRowChips()` combines them
+with a caller's own certified-chip array and sorts the whole thing by post number (a stable sort,
+so same-number ties keep post-before-picture-before-link order). Each of the four pages that used
+the old component (Analysis Archive, Q[Brackets], Q Directives, Q Questions) now builds its own
+certified chips into that same `{num, node}` shape — unchanged styling, unchanged per-page
+behavior (month-filter rings, hover pulse, source labels, amber repeat counts) — and renders one
+merged, sorted row with a single combined "+N more" control instead of three. Since
+`useEvidenceChips` is a hook, each page's per-row JSX had to move out of the parent's `.map()` into
+its own row component (`ItemChipRow`, `BracketChips`, `RequestChips`, and `QuestionCard` in
+`QuestionsArchive` which already was one) so the hook has a real per-instance call site rather than
+running inside a loop. The "read N drops" button stays scoped to certified posts only — a picture
+or link is evidence about the subject, not a drop Q wrote the term in, so it's not one of the drops
+that button opens. Verified directly against the live DOM before deploying: the POTUS entity row
+merges to 1,002 chips, strictly sorted by post number, with (for example) #14's picture chip
+landing immediately after #14's certified chip and before #15. `scripts/test-row-evidence.mjs`
+passed unmodified — its assertions check chip counts, ordering, hrefs and tooltips, none of which
+depend on the old 3-block DOM layout. Validated at the `standard` profile, full pass green.
+
+## 2026-08-27 — Remove the duplicate highlights toggle from the Post Archive search bar
+
+**Request:** "lets keep the turn off language highlights on the top bar where it is permanent and
+lets take [it out from] under the post number because it is overkill having it in a 3rd spot on
+the phone app" / "on [desktop] lets just get rid of the highlights on/off feature in the upper
+right hand side... again it is overkill" — reversing the 2026-08-26 change that intentionally
+duplicated the toggle into the search/sort bar.
+
+**Solution:** Removed the `<HighlightToggle />` copy from `PostArchive.tsx`'s search/sort bar
+(and its now-unused import), leaving only the original permanent copy in the top bar. The two
+copies are the same shared component, so this is the single change needed for every surface — the
+"3rd spot on the phone app" the owner described and the "upper right" the owner pointed at on
+desktop were the same instance.
