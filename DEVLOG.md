@@ -7691,3 +7691,38 @@ Lars Printzen, Daniel Pressley) had no verifiable public record — written as h
 coverage directly against `entity-hovers.json`'s `totals.entitiesWithGlobal` and the live
 `global` map: 1,622 of 1,622 certified entities now have a synopsis — 0 remaining. This closes the
 entity-synopsis sweep the owner opened across tiers 1–5.
+
+## 2026-08-26 — Resync validate.mjs's stale gates ahead of tonight's deploy
+
+**Request:** "lets go ahead and publish and deploy everything we have waiting to be published right
+now" — deploying the completed entity-synopsis sweep (tiers 4-5) and the bracket/highlight-toggle
+work from earlier tonight.
+
+**Solution:** `npm run deploy:web`'s preflight required a fresh `node scripts/validate.mjs` pass,
+which had not been run clean in a long time — SEED_VERSION was stuck at 98 in one gate's pin while
+the app was at 114, and several other checks had drifted the same way, independent of anything
+shipped tonight. Traced and fixed each one against data already certified elsewhere rather than
+guessing: `sectionInfo.ts`'s CERTIFIED/SECTION_TOTALS/ENTITIES/THEMES_INFO figures resynced to
+`scripts/lib/contracts.mjs`'s CANONICAL (claims 10,237→10,219, entities canonical 1,588→1,622,
+mentions 9,529→9,837, coreRegistryMentions 5,314→5,573, tailEntities 1,238→970, tailMentions
+3,044→3,050, themes assignments 2,646→2,685); the SEED_VERSION pin in `audit-cross-section.mjs`
+bumped to 114; `audit-occurrence-provenance.mjs`'s hardcoded `ruledOnAuditRun` bumped from
+2026-08-24 to 2026-08-26 (verified by hand: countsBefore 1,409/9,749 plus every recorded
+postApprovalDeltas entry through today sums to exactly the audit's own 1,837/10,929 measurement)
+and its determinism stamp re-baselined; `verify-context-render.mjs`'s theme-anchor pins moved
+1,729→1,768 anchors, 1,296→1,322 posts. Four glossary-adjacent test files
+(`test-gloss-segments.mjs`, `test-gloss-occurrence.mjs`, `test-multiword-gloss.mjs`,
+`test-quoted-linebreaks.mjs`) were written when the glossary held ~19 all-caps multi-word tokens;
+it now holds 1,003 naturally-cased ones (from the alias/synopsis work across many sessions), so
+their fixtures needed the same casing update, plus: a genuine norm-collision ("Paris accord"/"Paris
+Accord" resolve to two different real entities, "Paris Agreement" and "Paris Accord") documented
+and excluded rather than forced; ~24 short-form aliases (Charles W, DONALD J, Amy Klobuchar, etc.)
+that are permanently dominated by a longer sibling registered for an overlapping entity — correct,
+by-design longest-match behavior, not a defect — excused via a general domination/collision check
+rather than a hardcoded list; a case-sensitive text comparison in `test-quoted-linebreaks.mjs` that
+checked a native `<mark title>` attribute no longer used anywhere in the app (superseded by the
+accessible click/hover Card) — fixed to check the CSS class instead; and one genuine positional
+fix (`Rod Rosenstein`'s split anchor sits on segment 1 via the pre-existing ROSENSTEIN control, not
+segment 0 with no existing control, as the fixture had recorded). Every fix reconciles a check to
+data already certified elsewhere or a direct live measurement — nothing certified was changed.
+Confirmed via a full `node scripts/validate.mjs` pass: all steps green, receipt written.
