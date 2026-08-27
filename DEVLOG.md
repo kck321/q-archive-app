@@ -7831,3 +7831,31 @@ click on a bar element with touch capability emulated produces the full breakdow
 ("August 2018 · Posts 266 · Q Questions 478 · ..."), matching the desktop hover tooltip's content
 exactly. Validated at the `standard` profile, full pass green including `fresh — month chart
 behaviour` and `fresh — scroll restoration`.
+
+## 2026-08-27 — Consent-gated Google Analytics 4
+
+**Request:** "i also want to make sure we have the ability to track user interaction on the site so
+i can use that for future changes to the site... has this been implemented before i launch the app
+out in the interwebs for people to start using?" Checked first — confirmed nothing existed
+anywhere (no gtag/GA script in index.html, no Firebase Analytics config, no third-party library).
+Owner chose Google Analytics 4 over Plausible/Fathom or Firebase Analytics.
+
+**Solution:** `src/lib/analytics.ts` holds gtag.js loading behind explicit consent — nothing is
+injected, not even the script tag, until a visitor accepts `CookieConsent.tsx`'s banner (stronger
+than Google's own Consent Mode pattern, which loads the script by default and only restricts what
+it sends). The choice is stored in localStorage so a visitor is asked once, and a prior "granted"
+resumes tracking automatically on the next visit via `initAnalyticsIfConsented()`.
+`AnalyticsTracker.tsx` (mounted inside `<BrowserRouter>`, same pattern as the existing
+`ScrollRestoration`) sends one `page_view` per route change, since a React Router navigation never
+touches the browser's real history the way a full page load does — without this GA would only ever
+see the very first screen a visitor lands on. `trackEvent()` is exported now so future custom-event
+instrumentation (a search performed, a chip clicked, the highlight toggle flipped) needs no new
+plumbing, just a call site. Gated on `IS_PUBLIC_SITE` (the same flag that strips editing UI from
+the public build) so the owner's own desktop/dev sessions are never tracked, and the measurement ID
+tree-shakes out of that build's JS entirely rather than merely hiding at runtime. Needs
+`VITE_GA_MEASUREMENT_ID` in the gitignored local `.env` — not committed, so it has to be added by
+hand before the id will actually reach a build. Verified end-to-end against a throwaway public-mode
+dev server with a test measurement id: no `gtag` script and no `window.gtag` before consent; both
+present immediately on Accept, with `dataLayer` holding the `js`/`config` calls; a simulated
+client-side route change (`pushState` + `popstate`) pushed new `dataLayer` entries, confirming the
+per-navigation pageview actually fires. Validated at the `standard` profile, full pass green.
