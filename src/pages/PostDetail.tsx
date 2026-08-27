@@ -972,17 +972,32 @@ export default function PostDetail() {
 
   // Center the current post inside the reader feed once the related posts render,
   // so the user starts on the post they clicked and can scroll up/down to the others.
+  //
+  // A single fixed-delay attempt is not reliable here: a chip on a large row (POTUS runs to
+  // 1,000+ merged chips now) can open a feed of hundreds of cards, and a slower device — a
+  // phone, in particular — may not have finished laying every one of them out by the time a
+  // fixed 80ms fires. When that race is lost the container is left at scrollTop 0, which reads
+  // exactly like "every chip just opens the start of the list" no matter which post was clicked.
+  // Poll instead, the same way the Pic/URL focus effect above does: keep trying until the
+  // current card actually has a measurable position, then scroll to it.
   useEffect(() => {
     if (!relatedPosts || !relatedOpen) return
-    const t = setTimeout(() => {
+    let cancelled = false
+    let tries = 0
+    const tick = () => {
+      if (cancelled) return
       const c = feedRef.current
       const card = currentCardRef.current
-      if (!c || !card) return
-      const cRect = c.getBoundingClientRect()
-      const rRect = card.getBoundingClientRect()
-      c.scrollTop += rRect.top - cRect.top - 12
-    }, 80)
-    return () => clearTimeout(t)
+      if (c && card && card.offsetHeight > 0) {
+        const cRect = c.getBoundingClientRect()
+        const rRect = card.getBoundingClientRect()
+        c.scrollTop += rRect.top - cRect.top - 12
+        return
+      }
+      if (tries++ < 40) setTimeout(tick, 100)
+    }
+    const t = setTimeout(tick, 80)
+    return () => { cancelled = true; clearTimeout(t) }
   }, [relatedPosts, relatedOpen])
 
   async function handleAddToTopic(topicId: string, topicName: string) {

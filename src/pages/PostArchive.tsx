@@ -510,6 +510,12 @@ export default function PostArchive() {
     mq.addEventListener('change', on)
     return () => mq.removeEventListener('change', on)
   }, [])
+  // A touch device can report a viewport at or above the 639px cutoff — landscape, a large
+  // phone, "Request desktop site" — and a hover-only hover-tooltip is still unreachable there,
+  // since nothing ever produces a hover with a finger. The tap readout below is gated on this
+  // OR the width check, not the width check alone, so a tap on a bar always has somewhere to
+  // land regardless of how the device happens to report its viewport.
+  const isTouchCapable = typeof window !== 'undefined' && (('ontouchstart' in window) || navigator.maxTouchPoints > 0)
 
   // Close any open chart tooltip when the page scrolls.
   //
@@ -1048,7 +1054,7 @@ export default function PostArchive() {
                         offset={28}
                         // Suppressed on phones — the readout is rendered under the chart
                         // instead, so it covers nothing and has a visible way to close.
-                        active={isNarrow ? false : undefined}
+                        active={(isNarrow || isTouchCapable) ? false : undefined}
                         cursor={{ fill: 'rgba(255,255,255,0.06)' }} wrapperStyle={{ zIndex: 10 }}
                         // One tooltip component, shared with Analysis: the month and its counts.
                         content={props => (
@@ -1164,7 +1170,7 @@ export default function PostArchive() {
                   {/* Phone readout. Sits UNDER the chart, so it hides none of it, and closes
                       on demand — a touch tooltip never receives a "pointer left" event, which
                       is why the floating one stayed on screen after you lifted your finger. */}
-                  {isNarrow && tappedMonth && (() => {
+                  {(isNarrow || isTouchCapable) && tappedMonth && (() => {
                     const row = chartData.find(d => d.month === tappedMonth)
                     if (!row) return null
                     const series = (isAll
