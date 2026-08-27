@@ -20,7 +20,6 @@ import { getPictureTextByPost } from '../lib/pictureAnalysis'
 import { catColor, seriesColor } from '../lib/categoryColors'
 import { resolveRef } from '../lib/refIndex'
 import { CAN_EDIT, IS_PUBLIC_SITE } from '../lib/appMode'
-import HighlightToggle from '../components/HighlightToggle'
 
 function gradientColor(count: number, maxCount: number, dark = false): string {
   if (count === 0 || maxCount === 0) return dark ? '#14532d' : '#1f2937'
@@ -850,9 +849,6 @@ export default function PostArchive() {
             {postNumError && (
               <span className="text-red-400 text-xs">{postNumError}</span>
             )}
-            {/* Second copy of the toggle already in the top bar — this one lives inside the
-                search/sort bar so it hides on scroll along with it, rather than staying fixed. */}
-            <div className="ml-auto"><HighlightToggle /></div>
           </div>
 
 
