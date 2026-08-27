@@ -51,31 +51,37 @@ const shape = texts => plan(texts).map(p => ({
 // These sibling lists are not invented. Each one is the rendered segmentation read out of the live
 // DOM for that drop, so a change in how the annotation layer cuts a line shows up here as a failing
 // case rather than as a term that quietly stops having a box.
+// 2026-08-26: the entity-synopsis sweep and the alias work before it normalised several glossary
+// keys out of all-caps into their natural entity-canonical casing (matching is case-insensitive
+// either way, so the rendered text and the reassembly are unaffected) and registered "THE CLINTON
+// FOUNDATION" alongside the bare "CLINTON FOUNDATION" — a real, more specific multi-word term Q
+// also writes, so the planner now correctly extends the match across the leading "THE " sibling
+// too rather than starting at "CLINTON".
 group('the six split terms, as the certified intervals actually split them')
 {
   check('ABC NEWS — entity mark, then the rest of the phrase',
     shape(['ABC', ' NEWS']),
-    [{ token: 'ABC NEWS', parts: '0[0,3) + 1[0,5)', rebuilt: 'ABC NEWS' }])
+    [{ token: 'ABC News', parts: '0[0,3) + 1[0,5)', rebuilt: 'ABC NEWS' }])
 
   check('FOX NEWS — same shape, control on the first segment',
     shape(['Did you notice the ', 'FOX', ' NEWS', " coverage of 'Qanon' last night?"]),
-    [{ token: 'FOX NEWS', parts: '1[0,3) + 2[0,5)', rebuilt: 'FOX NEWS' }])
+    [{ token: 'Fox News', parts: '1[0,3) + 2[0,5)', rebuilt: 'FOX NEWS' }])
 
   check('ADAM SCHIFF — the control is on the SECOND segment',
     shape(['ADAM ', 'SCHIFF', ' IS PART OF THE ']),
-    [{ token: 'ADAM SCHIFF', parts: '0[0,5) + 1[0,6)', rebuilt: 'ADAM SCHIFF' }])
+    [{ token: 'Adam Schiff', parts: '0[0,5) + 1[0,6)', rebuilt: 'ADAM SCHIFF' }])
 
-  check('CLINTON FOUNDATION — two marks, neither of them a control',
+  check('CLINTON FOUNDATION — three marks, the leading "THE " now part of the match',
     shape(['THE ', 'CLINTON', ' FOUNDATION', '.']),
-    [{ token: 'CLINTON FOUNDATION', parts: '1[0,7) + 2[0,11)', rebuilt: 'CLINTON FOUNDATION' }])
+    [{ token: 'THE CLINTON FOUNDATION', parts: '0[0,4) + 1[0,7) + 2[0,11)', rebuilt: 'THE CLINTON FOUNDATION' }])
 
   check('ROD ROSENSTEIN — the space belongs to the first segment',
     shape([' REMOVAL OF ', 'ROD ', 'ROSENSTEIN', '.']),
-    [{ token: 'ROD ROSENSTEIN', parts: '1[0,4) + 2[0,10)', rebuilt: 'ROD ROSENSTEIN' }])
+    [{ token: 'Rod Rosenstein', parts: '1[0,4) + 2[0,10)', rebuilt: 'ROD ROSENSTEIN' }])
 
   check('SUPREME COURT — THREE segments, the middle one being the space',
     shape(['a majority in the ', 'SUPREME', ' ', 'COURT', ' [CONSTITUTION']),
-    [{ token: 'SUPREME COURT', parts: '1[0,7) + 2[0,1) + 3[0,5)', rebuilt: 'SUPREME COURT' }])
+    [{ token: 'Supreme Court', parts: '1[0,7) + 2[0,1) + 3[0,5)', rebuilt: 'SUPREME COURT' }])
 }
 
 // ── what must NOT be planned ────────────────────────────────────────────────

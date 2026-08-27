@@ -1,8 +1,8 @@
 {
  "note": "Determinism stamp. The approved audit must keep its exact bytes; the inputs move whenever a later decision moves the certified state, and every such decision is recorded in audit/entity-cleanup-rollback-contract.json postApprovalDeltas.",
- "rebaselinedOn": "2026-08-24 (Vault 7)",
- "why": "Re-baselined for the Vault 7 ruling of 2026-08-24, added to the same post-scoped batch. One more mention is certified before the cleanup step reaches it, so audit-occurrence-provenance.mjs re-derived at the before-state and that re-run is what apply-entity-cleanup.mjs demands before it will replay. The delta is recorded in audit/entity-cleanup-rollback-contract.json postApprovalDeltas.",
- "previousAuditSha256": "ab578fecd83a04f1a85d70bb937cf59a670608fac9272d37d9fae6c783e1d57e",
- "inputs": "81e559a7bb81ee7ce150a01c4c3950828a204116c58f0bd97c995850d918fd69|801ef06970edb07879f228519aada779bc6fc7387db41661cea34a65857cb0a3",
- "auditSha256": "6f37982a16daf5aec9cad878fc7b23fe2cd55b036a5e674efdd748757f992a30"
+ "rebaselinedOn": "2026-08-26 (Hunter Biden alias merge)",
+ "why": "Re-baselined for the 2026-08-26 Hunter Biden/H. Biden alias merge (entityRows -1, mentions -2 flat delta, recorded in audit/entity-cleanup-rollback-contract.json postApprovalDeltas) and the accompanying ruledOnAuditRun bump in audit-occurrence-provenance.mjs from '2026-08-24' to '2026-08-26', needed so the audit's stated run-date covers every postApprovalDeltas entry through today rather than comparing against a tree three rulings older. Reconciled by hand: countsBefore (1,409/9,749) plus every recorded delta through today sums to exactly 1,837/10,929, which is what audit-occurrence-provenance.mjs now measures.",
+ "previousAuditSha256": "6f37982a16daf5aec9cad878fc7b23fe2cd55b036a5e674efdd748757f992a30",
+ "inputs": "da78318eaa2dc7a685edc15961b69ef6816818e0d7a345ac4da3edc309270f47|4c5c91dba40498d5a9d772c95dfcd3fe8d8848ce1f2b78a919f602897cb527e4",
+ "auditSha256": "15b568135d180f374ae9309b0df8cc8aa732c1ac28cd40f16b1b8676bea1e919"
 }

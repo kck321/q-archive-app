@@ -499,7 +499,13 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   // fragment ("Why would H.") inside #4891's question, and violet on #1443's DECLAS_Public[3].
   // 92 carries the #2347 card and #1443. A reader stuck on 91 keeps #2347 with no entity on either
   // Q and no green on WWG1WGA, and #1443 amber where the owner has ruled it violet.
-  t('seed-current', 'SEED_VERSION is 98 (Vault 7)', seed === 98, seed)
+  // 98-113 carry the Hunter Biden alias merge and the tier 1-4 entity-synopsis research sweep;
+  // entity-hovers.json changed content at each step, so a reader stuck on an earlier seed keeps
+  // showing placeholder or missing hovers for entities the sweep had already researched.
+  // 114 carries tier 5, the source-only entities (mentions: 0, cited only via URL/source
+  // metadata) that every mentions-based tier query had missed — the sweep's final gap. A reader
+  // stuck on 113 would keep showing no hover at all for those 132 entities.
+  t('seed-current', 'SEED_VERSION is 114 (entity synopsis sweep complete)', seed === 114, seed)
   t('seed-gate', 'seeding is gated on SEED_VERSION', /seeded === SEED_VERSION/.test(localData), 'present')
 
   // THE GUARD THAT WOULD HAVE SAVED THREE ROUND TRIPS. Changing seeded data without bumping the

@@ -505,7 +505,12 @@ fs.writeFileSync(path.join(OUT, 'occurrence-provenance-audit.json'), JSON.string
   // deltas that PREDATE the run. It had to guess the date from a hardcoded '2026-08-21'
   // fallback, so the 2026-08-24 queue ruling re-ran the audit and the check still compared it
   // to a tree three rulings older — reporting drift that was the audit being newer.
-  ruledOnAuditRun: '2026-08-24',
+  // 2026-08-24 -> 2026-08-26: the same staleness recurred across five more postApprovalDeltas
+  // entries (2026-08-24 held-directive/queue rulings, 2026-08-25 lane-B reviews, and the
+  // 2026-08-26 Hunter Biden merge) — reconciled by hand: countsBefore (1,409/9,749) plus every
+  // recorded delta through today sums to exactly 1,837/10,929, which is what this audit measures
+  // right now. Bumping this to today's date is what makes the check compare like against like.
+  ruledOnAuditRun: '2026-08-26',
   certifiedUnchanged: { entityRows: entities.entities.length, mentions: entities.totals.mentions },
   rows,
 }, null, 1))

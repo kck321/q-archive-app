@@ -9,6 +9,15 @@
 // Certified counts are written in ONE place (CERTIFIED below) and interpolated, so a future
 // recount cannot leave a stale figure in prose.
 
+// 2026-08-26 RESYNC — this file's CERTIFIED/SECTION_TOTALS/ENTITIES/THEMES_INFO figures had
+// drifted from scripts/lib/contracts.mjs's CANONICAL (the actual certified state
+// certification-manifest.mjs --verify checks against) across several sessions where deploys did
+// not run and only the data-layer gates (not the full validate.mjs UI-parity check) were
+// exercised. Every figure touched below is read verbatim off the current CANONICAL contract, not
+// re-derived or guessed: claims 10,237/7,777/3,223 -> 10,219/7,899/3,220; entities canonical
+// 1,588 -> 1,622, mentions 9,529 -> 9,837, coreRegistryMentions 5,314 -> 5,573, tailEntities
+// 1,238 -> 970, tailMentions 3,044 -> 3,050; themes assignments 2,646 -> 2,685, posts 1,766/1,899
+// -> 1,912. No underlying data moved — only this display file's literals were stale.
 export const CERTIFIED = {
   // 2026-08-20 OWNER RULING - the unhighlighted-sentence queue. 6,108 of the 6,111 queued
   // sentences accepted into a section; see audit/unhighlighted-owner-rulings.json.
@@ -54,7 +63,7 @@ export const CERTIFIED = {
   // assertion), and two arrive: #1443's "#2." from Directives and #4784's opening line.
   // 10,247 -> 10,237 on 2026-08-24: the ten Red October / Delta lines that were Claims are
   // Predictions now.
-  claims: { occurrences: 10237, distinct: 7777, posts: 3223 },
+  claims: { occurrences: 10219, distinct: 7899, posts: 3220 },
   // 843 -> 841 on 2026-08-23: two predictions sat inside quoted passages.
   // 841 -> 934: 94 prediction rulings.
   // 934 -> 935: #417 'News unlocks Map.', ruled a Prediction as well as the Claim it already was.
@@ -98,16 +107,16 @@ export const CERTIFIED = {
  * recount cannot quietly come back.
  */
 export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number; unit: string }> = {
-  claims: { occurrences: 10237, posts: 3223, unit: 'occurrences' },
+  claims: { occurrences: 10219, posts: 3220, unit: 'occurrences' },
   predictions: { occurrences: 950, posts: 672, unit: 'occurrences' },
   // "mentions" is the right word here and the only section where it is: an entity is counted
   // once per resolved mention across the 1,066 canonical entities Q named in prose. The other 135
   // certified identities contribute none — they are linked sources, not words Q wrote — which is
   // why this figure sits BESIDE the 1,201 total on the page rather than under it.
-  namedEntities: { occurrences: 9529, posts: 2139, unit: 'mentions' },
+  namedEntities: { occurrences: 9837, posts: 2178, unit: 'mentions' },
   // Themes are assignments rather than spans — a theme is inferred from a drop, not copied out
   // of it — so the unit is named accordingly. 2,393 detected + 2 owner rulings.
-  themes: { occurrences: 2646, posts: 1899, unit: 'assignments' },
+  themes: { occurrences: 2685, posts: 1912, unit: 'assignments' },
 }
 
 /**
@@ -195,7 +204,7 @@ export const ENTITIES = {
   // cleanup had retired for having no trace beyond a URL path or an unexamined image, and whom
   // #1239 and #1863 name by handle in Q's own text.
   // 1,584 -> 1,587 on 2026-08-24: the post-scoped entity rulings.
-  canonical: 1588,
+  canonical: 1622,
   /**
    * THE HEADLINE COUNTS THE WHOLE SECTION.
    *
@@ -227,13 +236,13 @@ export const ENTITIES = {
   // 9,517 -> 9,519 on 2026-08-24: both body Qs on #2347, on the owner's ruling. Not the sign-off,
   // and not the third Q inside the twitter handle on the link line.
   // 9,519 -> 9,528 on 2026-08-24: the post-scoped entity rulings.
-  mentions: 9529,
-  mentionScope: 'Every resolved mention across all 1,584 certified entities: 5,312 from the 93 core-registry entities, 3,038 from the entities identified in the adjudication pass, and 1,167 from owner rulings. Domains, URL slugs and linked accounts are NOT counted here — they are shown under Sources. Unresolved aliases are counted in neither: they are held in the Resolution Center.',
+  mentions: 9837,
+  mentionScope: 'Every resolved mention across all 1,622 certified entities. Domains, URL slugs and linked accounts are NOT counted here — they are shown under Sources. Unresolved aliases are counted in neither: they are held in the Resolution Center.',
   coreEntities: 93,
-  coreRegistryMentions: 5314,
-  tailEntities: 1238,
+  coreRegistryMentions: 5573,
+  tailEntities: 970,
   // +2 on 2026-08-24: Alice is an adjudicated-tail row, so #2347's two Q occurrences land here.
-  tailMentions: 3044,
+  tailMentions: 3050,
   contextResolved: 161,
   routedToThemes: 53,
   unresolvedTokens: 1011,
@@ -259,8 +268,8 @@ export const ENTITIES = {
  */
 export const THEMES_INFO = {
   parents: 18,
-  assignments: 2646,
-  posts: 1766,
+  assignments: 2685,
+  posts: 1912,
   multiTheme: 378,
   unresolved: 251,
   note: 'Themes identify the recurring subjects Q discusses across the archive. They describe what a post is about, not how Q writes it. A post may have more than one theme. Style features such as cryptic phrasing, repetition, coded language, or pattern-based reasoning are classified elsewhere rather than treated as subjects.',

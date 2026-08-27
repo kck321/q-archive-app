@@ -97,11 +97,16 @@ const checks = [
   // theme ANCHOR is only ever used for painting, so deleting the anchors would remove the fill and
   // look exactly like success - while destroying the record of which words the taxonomy hangs on.
   // So both are pinned: the anchors stay, and the ASSIGNMENTS that are the actual section stay
-  // untouched at 2,646 across 1,899 drops.
-  ['1,729 theme anchors still certified', thm.units === 1729, thm.units],
-  ['theme anchors still spread across 1,296 posts', thm.withUnits === 1296, thm.withUnits],
-  ['the Themes section is untouched: 2,646 assignments', thmAssign.units === 2646, thmAssign.units],
-  ['the Themes section is untouched: 1,899 posts', thmAssign.withUnits === 1899, thmAssign.withUnits],
+  // untouched at the certified figure.
+  // 2026-08-26: same staleness as the Context baseline above — validate.mjs had not run these
+  // pins since before several owner rulings (the 2026-08-24/25/26 entity and queue work) moved
+  // the certified state. 1,729 -> 1,768 anchors, 1,296 -> 1,322 posts; assignments 2,646 -> 2,685
+  // and posts 1,899 -> 1,912 match scripts/lib/contracts.mjs CANONICAL.themes exactly. Nothing
+  // was withdrawn — the pin was just never moved with the rulings that grew it.
+  ['1,768 theme anchors still certified', thm.units === 1768, thm.units],
+  ['theme anchors still spread across 1,322 posts', thm.withUnits === 1322, thm.withUnits],
+  ['the Themes section is untouched: 2,685 assignments', thmAssign.units === 2685, thmAssign.units],
+  ['the Themes section is untouched: 1,912 posts', thmAssign.withUnits === 1912, thmAssign.withUnits],
 
   // ── the render half: neither surface paints them ──────────────────────────
   ['detail surface does not paint contextUnits',

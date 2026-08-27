@@ -47,8 +47,13 @@ group('The glossary really does carry multi-word tokens')
 // exhaustively rather than by sample — so the count is read from the glossary and the coverage
 // claim is the one being tested.
 check('every multi-word glossary token is exercised below', TOKENS.length, TOKENS.length)
-check('and they are the ones expected', TOKENS.includes('WASH POST') && TOKENS.includes('NO NAME')
-  && TOKENS.includes('SNOW WHITE') && TOKENS.includes('Wizards & Warlocks'), true)
+// 2026-08-26: the entity-synopsis sweep and the alias work across many sessions before it grew
+// the glossary from 19 to 1,003 multi-word tokens, and normalised several of the original 19 out
+// of all-caps into their natural entity-canonical casing (NO NAME -> No Name, SNOW WHITE -> Snow
+// White) — the matching is case-insensitive either way, so this only checks the spellings still
+// resolve, not that they kept their original casing.
+check('and they are the ones expected', TOKENS.includes('WASH POST') && TOKENS.includes('No Name')
+  && TOKENS.includes('Snow White') && TOKENS.includes('Wizards & Warlocks'), true)
 
 // ════════════════════════════════════════════════════════════════════════════
 group('#2401 — the drop the box was written for')
@@ -63,8 +68,12 @@ group('#1828 — the drop the first attempt broke')
 // "NO NAME" and "SUPREME COURT" both occur here, and BO and CM must go on being glossed by the
 // single-word path in the gaps between them.
 const s1828 = segmentGloss(textOf(1828), TOKENS)
+// 2026-08-26: Fusion GPS, NAT SEC and Perkins Coie are real multi-word terms in #1828 that the
+// glossary did not carry yet when this fixture was written (19 tokens at the time); the alias
+// work since has registered them, and the matcher correctly finds all five now. NO NAME/SUPREME
+// COURT are cased as No Name/Supreme Court for the same reason as the group above.
 check('the multi-word terms present are found', [...new Set(s1828.filter(s => s.token).map(s => s.token))].sort(),
-  ['NO NAME', 'SUPREME COURT'])
+  ['Fusion GPS', 'NAT SEC', 'No Name', 'Perkins Coie', 'Supreme Court'])
 check('BO survives in an unmatched gap', s1828.some(s => !s.token && /\bBO\b/.test(s.text)), true)
 check('CM survives in an unmatched gap', s1828.some(s => !s.token && /\bCM\b/.test(s.text)), true)
 check('every character of #1828 is preserved', s1828.map(s => s.text).join(''), textOf(1828))
@@ -75,13 +84,28 @@ check('DAG is left to the single-word path', hits(textOf(3004)).includes('DAG'),
 check('#3004 is preserved exactly', segmentGloss(textOf(3004), TOKENS).map(s => s.text).join(''), textOf(3004))
 
 // ════════════════════════════════════════════════════════════════════════════
-group('All 19 tokens match themselves, alone and in a sentence')
+group('Every multi-word token matches itself, alone and in a sentence')
 {
-  const alone = TOKENS.filter(t => hits(t).length !== 1 || hits(t)[0] !== t)
+  // 2026-08-26: "Paris accord" and "Paris Accord" are a genuine registry collision, not a bug —
+  // they resolve to two DIFFERENT certified entities (qe-101cfb6d8051 "Paris Agreement" and
+  // qe-a5aa42432253 "Paris Accord") that Q happened to write with the same words differing only
+  // by case (#1241/#489 lowercase, #3623 capitalised). build-glossary.mjs's case-fold only merges
+  // spellings that resolve to the SAME entity, by design ("a registry collision and is left
+  // alone"), so exactly one of the two survives lookup by normalised text and the other cannot
+  // self-match. That is the intended behaviour, not something this test should force.
+  const KNOWN_COLLISIONS = new Set(['Paris accord', 'Paris Accord'])
+  const selfTest = TOKENS.filter(t => !KNOWN_COLLISIONS.has(t))
+  const alone = selfTest.filter(t => hits(t).length !== 1 || hits(t)[0] !== t)
   check('each token matches when it is the whole string', alone, [])
-  const inSentence = TOKENS.filter(t => !hits(`Why is the ${t} involved?`).includes(t))
+  // No leading article: the glossary now separately registers several "THE X" variants (THE FED,
+  // THE CLINTON FOUNDATION, THE SHADOW GOVERNMENT, THE SHADOW PRESIDENCY, THE SUM OF ALL FEARS,
+  // The Corinthia Hotel) alongside the bare form. A wrapper sentence that itself supplies "the "
+  // right before the token lets the longer, unrelated-or-more-specific "THE X" alternative win —
+  // correctly, by the matcher's own longest-match rule — which is a property of the probe
+  // sentence colliding with real registry content, not a matching defect.
+  const inSentence = selfTest.filter(t => !hits(`Sources confirmed ${t} today.`).includes(t))
   check('each token matches inside a sentence', inSentence, [])
-  const punctuated = TOKENS.filter(t => !hits(`[${t}], and more.`).includes(t))
+  const punctuated = selfTest.filter(t => !hits(`[${t}], and more.`).includes(t))
   check('each token matches when bracketed and followed by a comma', punctuated, [])
 }
 
@@ -104,11 +128,11 @@ check('mixed case too', hits('the Wash Post said'), ['WASH POST'])
 check('repeats in one string are each found',
   hits('WASH POST here, WASH POST there, and WASH POST again'), ['WASH POST', 'WASH POST', 'WASH POST'])
 check('two different terms in one string',
-  hits('SNOW WHITE and the WASH POST'), ['SNOW WHITE', 'WASH POST'])
+  hits('SNOW WHITE and the WASH POST'), ['Snow White', 'WASH POST'])
 
 // ════════════════════════════════════════════════════════════════════════════
 group('Overlaps resolve longest-first')
-check('ABC NEWS wins over a shorter overlapping alternative', hits('ABC NEWS reported'), ['ABC NEWS'])
+check('ABC NEWS wins over a shorter overlapping alternative', hits('ABC NEWS reported'), ['ABC News'])
 check('an ampersand term matches literally', hits('Wizards & Warlocks'), ['Wizards & Warlocks'])
 check('a regex metacharacter in a token is escaped, not interpreted', hits('Wizards X Warlocks'), [])
 

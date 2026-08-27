@@ -74,8 +74,12 @@ console.log(`\nA QUOTED DROP KEEPS ITS LINE BREAKS  (${mode}${browser.reused ? '
 
     // The entity RUSSIA is certified inside the claim and renders solid in front of it, so the
     // claim reaches the DOM as the tail " NEW THREAT." — the same two marks #1011's own page has.
-    const ent = got.marks.find(m => m.t.trim() === 'RUSSIA' && /entity/.test(m.ti))
-    check(Boolean(ent), 'RUSSIA is still the entity, solid, in front', ent ? ent.ti : 'no mark')
+    // 2026-08-26: native <mark title> attributes are no longer how an entity identifies itself —
+    // that moved to the accessible click/hover Card (see test-tooltip-accessibility.mjs) and every
+    // mark's title is now empty by design, on #1011's own page exactly as much as here. "Solid, in
+    // front" is the bg-cyan-900 entity background class, which is what the check now reads.
+    const ent = got.marks.find(m => m.t.trim() === 'RUSSIA' && /bg-cyan-900/.test(m.c))
+    check(Boolean(ent), 'RUSSIA is still the entity, solid, in front', ent ? ent.c : 'no mark')
     const claim = got.marks.find(m => m.t.trim() === 'NEW THREAT.')
     check(Boolean(claim), 'the rest of the claim is still a claim', claim ? claim.c.slice(0, 40) : 'no mark')
   } finally { await page.close() }
