@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import { search, type Filters, type Hit } from '../lib/search'
+import { sidebarOrder } from '../lib/sectionInfo'
 
 // Global search across every certified section.
 //
@@ -13,6 +14,10 @@ import { search, type Filters, type Hit } from '../lib/search'
 // Filters live in the URL so a result set can be shared, which matters for a research archive
 // where the interesting output is often "look at this specific slice".
 
+// Chips render in SIDEBAR ORDER (owner ruling 2026-08-28): Post text first like the Post
+// Archive row, the seven categories most → least by certified count, then the Extras-fold
+// rows in the fold's own order. The sort runs once at module load off the same constants
+// the sidebar ranks by, so the two surfaces cannot disagree.
 const SECTIONS = [
   { key: 'post', label: 'Post text' },
   { key: 'questions', label: 'Questions' },
@@ -26,7 +31,7 @@ const SECTIONS = [
   { key: 'codes', label: 'Codes' },
   { key: 'unresolved', label: 'Unresolved' },
   { key: 'editorial', label: 'Editorial' },
-]
+].sort((a, b) => sidebarOrder(a.key, b.key))
 
 const SECTION_STYLE: Record<string, string> = {
   post: 'text-gray-300 border-gray-600',

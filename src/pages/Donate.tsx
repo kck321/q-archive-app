@@ -145,17 +145,21 @@ export default function Donate() {
             Rather than simply presenting the original posts, the site organizes the material
             into searchable categories, including:
           </p>
+          {/* Sidebar order (owner ruling 2026-08-28: every list on the site follows the
+              sidebar) — the seven Q sections most → least by certified count, then the
+              Extras-fold items in the fold's own order. If the sidebar re-ranks itself
+              after a recertification, re-order these bullets to match. */}
           <ul className="list-disc pl-5 space-y-1">
+            <li>Q Claims</li>
+            <li>Q Entities — people, places, organizations, and other named subjects</li>
             <li>Q Questions</li>
             <li>Q Directives</li>
-            <li>Q Claims</li>
-            <li>Q Predictions</li>
-            <li>Q Entities — people, places, organizations, and other named subjects</li>
+            <li>17 overarching themes</li>
             <li>Q Brackets — terms, codes, and language found within brackets</li>
-            <li>Links and images</li>
+            <li>Q Predictions</li>
             <li>Tripcodes</li>
             <li>Related post clusters</li>
-            <li>17 overarching themes</li>
+            <li>Links and images</li>
             <li>And much more</li>
           </ul>
           <p>

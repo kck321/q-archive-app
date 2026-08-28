@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { loadRelationships, type PostMap, type Edge } from '../lib/relationships'
+import { sidebarOrder } from '../lib/sectionInfo'
 
 // The Analysis Map — everything certified about one drop, in one place.
 //
@@ -72,7 +73,11 @@ export default function AnalysisMap({ postNum, onJump, extraCounts }: { postNum:
   if (!map) return null
 
   const counts = { ...map.counts, ...(extraCounts ?? {}) }
-  const entries = Object.entries(counts).filter(([k, n]) => n > 0 && k !== 'unresolved' && !NOT_A_SECTION.has(k))
+  // Chips in sidebar order (owner ruling 2026-08-28) — Object.entries would otherwise hand
+  // back whatever key order relationships.json was serialized in.
+  const entries = Object.entries(counts)
+    .filter(([k, n]) => n > 0 && k !== 'unresolved' && !NOT_A_SECTION.has(k))
+    .sort(([a], [b]) => sidebarOrder(a, b))
   const byType = edges.reduce<Record<string, Edge[]>>((a, e) => { (a[e.type] ??= []).push(e); return a }, {})
 
   return (

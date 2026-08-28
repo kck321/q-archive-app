@@ -2101,10 +2101,13 @@ export default function PostDetail() {
       {/* Post Analysis panel — always shown so user can add items even on unanalyzed posts */}
       {(() => {
         // Themes first, by owner request: the subject of a drop is the orienting fact, so it
-        // belongs at the top of the analysis rather than six rows down.
+        // belongs at the top of the analysis rather than six rows down. (Themes renders in its
+        // own block above the map; it is excluded from this loop.) The rows HERE follow the
+        // sidebar order — Claims before Entities before Predictions — per the 2026-08-28
+        // uniform-listing ruling.
         const CATS: { key: keyof PostAnalysis; label: string; color: string; chip: string }[] = [
-          { key: 'namedEntities',      label: 'Named Entities',      color: 'text-cyan-400',   chip: 'bg-cyan-500/20 text-cyan-200 border-cyan-700/50' },
           { key: 'claims',             label: 'Claims',              color: 'text-amber-400',  chip: 'bg-amber-500/20 text-amber-200 border-amber-700/50' },
+          { key: 'namedEntities',      label: 'Named Entities',      color: 'text-cyan-400',   chip: 'bg-cyan-500/20 text-cyan-200 border-cyan-700/50' },
           { key: 'predictions',        label: 'Predictions',         color: 'text-violet-400', chip: 'bg-violet-500/20 text-violet-200 border-violet-700/50' },
           // Implied Conclusions row retired — see the note on the highlight layer above.
       // Checkable Claims merged into Claims by owner ruling 2026-08-15. All 1,926 were ALREADY

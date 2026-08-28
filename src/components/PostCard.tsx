@@ -65,13 +65,15 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
   useEffect(() => subscribeAliases(() => setAliasTick(t => t + 1)), [])
   useHighlightsEnabled()   // re-render this card when the language toggle flips
 
+  // Rows in sidebar order (owner ruling 2026-08-28: every list follows the sidebar) —
+  // Claims, Entities, Themes, Predictions by certified count, retired Emphasis last.
   const CATS: { key: keyof PostAnalysis; label: string; color: string; chip: string }[] = [
-    { key: 'namedEntities',      label: 'Named Entities',      color: 'text-cyan-400',   chip: 'bg-cyan-500/20 text-cyan-200 border-cyan-700/50' },
     { key: 'claims',             label: 'Claims',              color: 'text-amber-400',  chip: 'bg-amber-500/20 text-amber-200 border-amber-700/50' },
-    { key: 'predictions',        label: 'Predictions',         color: 'text-violet-400', chip: 'bg-violet-500/20 text-violet-200 border-violet-700/50' },
+    { key: 'namedEntities',      label: 'Named Entities',      color: 'text-cyan-400',   chip: 'bg-cyan-500/20 text-cyan-200 border-cyan-700/50' },
     // Impl. Conclusions retired as a section — every row is a certified Claim (owner ruling).
     // Checkable Claims merged into Claims by owner ruling 2026-08-15. All 1,926 were ALREADY
     { key: 'themes',             label: 'Themes',              color: 'text-indigo-400', chip: 'bg-indigo-500/20 text-indigo-200 border-indigo-700/50' },
+    { key: 'predictions',        label: 'Predictions',         color: 'text-violet-400', chip: 'bg-violet-500/20 text-violet-200 border-violet-700/50' },
     { key: 'emphasis',           label: 'Emphasis',            color: 'text-slate-400',  chip: 'bg-slate-500/20 text-slate-200 border-slate-600/50' },
   ]
 
