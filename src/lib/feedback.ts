@@ -19,8 +19,9 @@
 //
 // The caps are enforced here too, but client-side limits are a courtesy, not a control —
 // the rule is what actually stops a crafted request.
-import { db } from '../firebase'
-import { collection, addDoc } from 'firebase/firestore'
+// Firestore comes through the lazy fire() door, never a static import — a submission is the
+// ONLY moment the public site touches Firestore, so the SDK loads then and only then.
+import { fire } from './fire'
 
 export const FEEDBACK_KINDS = [
   { key: 'comment',    label: '💬 Comment' },
@@ -58,5 +59,6 @@ export async function submitFeedback(draft: FeedbackDraft): Promise<void> {
     payload.postNum = draft.postNum
   }
 
+  const { db, collection, addDoc } = await fire()
   await addDoc(collection(db, 'feedback'), payload)
 }

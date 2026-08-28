@@ -48,6 +48,29 @@ const base = process.env.DEPLOY_TARGET === 'pages' ? '/q-archive-app/' : '/'
 export default defineConfig({
   base,
   plugins: [react(), editorialQueues()],
+  build: {
+    rollupOptions: {
+      output: {
+        // Vendor libraries split into their own chunks, for CACHING more than for size.
+        //
+        // One monolithic chunk meant every deploy changed its hash, so every returning visitor
+        // re-downloaded ~1.4 MB of JS in which React and recharts were byte-identical to what
+        // their cache already held. Split out, the vendor chunks keep their hashes across app
+        // deploys — a returning visitor after a deploy re-fetches only the app's own code.
+        //
+        // firebase gets a named chunk too: after the fire() refactor it is only ever reached by
+        // dynamic import, so on the public site this chunk is not fetched until a visitor
+        // actually submits feedback or a resolution suggestion.
+        manualChunks(id: string) {
+          if (!id.includes('node_modules')) return undefined
+          if (/[\\/]node_modules[\\/](recharts|victory-vendor|d3-|internmap|delaunator|robust-predicates)/.test(id)) return 'charts'
+          if (/[\\/]node_modules[\\/](@firebase|firebase)[\\/]/.test(id)) return 'firebase'
+          if (/[\\/]node_modules[\\/](react|react-dom|react-router|react-router-dom|scheduler)[\\/]/.test(id)) return 'react'
+          return undefined
+        },
+      },
+    },
+  },
   // Allow access through a tunnel domain (e.g. *.trycloudflare.com) for phone testing.
   preview: { allowedHosts: true },
   server: {

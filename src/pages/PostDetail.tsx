@@ -8,7 +8,9 @@ import {
   applyAnalysisToMatchingPosts, addQuestionToMatchingPosts, addRequestToMatchingPosts, addBracketToMatchingPosts,
   normalizeItemKey, expandToSentence, questionHighlightRegex, paintedQuestionSpan,
 } from '../lib/posts'
-import { detectQuestionsWithVerification, classifyQuestions, detectActionRequests, analyzePost, correlateNews } from '../lib/claude'
+// The Claude client (and the @anthropic-ai/sdk behind it) loads lazily at the moment an AI
+// action is clicked — every caller below is an async handler, and the public build's main chunk
+// must not carry the SDK for PIN-gated tools visitors cannot use.
 import QuestionBadge from '../components/QuestionBadge'
 import BackButton from '../components/BackButton'
 import AnalysisMap from '../components/AnalysisMap'
@@ -1207,6 +1209,7 @@ export default function PostDetail() {
     setDetectError('')
     try {
       // Use the verified multi-pass pipeline: regex scan + Claude chunks + verification
+      const { detectQuestionsWithVerification } = await import('../lib/claude')
       const detected = await detectQuestionsWithVerification(post.text)
 
       // Filter to only questions that actually exist in the post body
@@ -1256,6 +1259,7 @@ export default function PostDetail() {
     if (!post) return
     setDetectingRequests(true)
     try {
+      const { detectActionRequests } = await import('../lib/claude')
       const found = await detectActionRequests(post.text)
       // Merge with existing, deduplicate
       const combined = [...new Set([...actionRequests, ...found])]
@@ -1417,6 +1421,7 @@ export default function PostDetail() {
     if (!post) return
     setAnalyzingPost(true)
     try {
+      const { analyzePost } = await import('../lib/claude')
       const analysis = await analyzePost(post.text)
       setPostAnalysis(analysis)
       setAnalysisOpen(true)
@@ -1440,6 +1445,7 @@ export default function PostDetail() {
     setResearchingNews(true)
     setNewsError('')
     try {
+      const { correlateNews } = await import('../lib/claude')
       const found = await correlateNews({ text: post.text, timestamp: post.timestamp, postAnalysis: postAnalysis ?? undefined })
       const articles: CorrelatedArticle[] = found.map(a => ({
         ...a,
@@ -1501,6 +1507,7 @@ export default function PostDetail() {
     if (questions.length === 0) return
     setClassifying(true)
     try {
+      const { classifyQuestions } = await import('../lib/claude')
       const statuses = await classifyQuestions(
         questions.map(q => ({ id: q.id, text: q.text })),
         'Q post archive — political/government research posts from 2017-2020'

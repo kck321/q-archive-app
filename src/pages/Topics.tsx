@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getTopics, getAllPosts } from '../lib/posts'
 import { loadLocalData, mutateStore } from '../lib/localData'
-import { clusterTopics } from '../lib/claude'
 import PostCard from '../components/PostCard'
 import type { QTopic, QPost } from '../types'
 import { CAN_EDIT } from '../lib/appMode'
@@ -53,6 +52,7 @@ export default function Topics() {
     try {
       const allPosts = await getAllPosts()
       const posts = allPosts.slice(0, 200).map(p => ({ id: p.id, text: p.text }))
+      const { clusterTopics } = await import('../lib/claude')
       const results = await clusterTopics(posts)
       const saved: QTopic[] = results.map(r => ({
         id: crypto.randomUUID(),

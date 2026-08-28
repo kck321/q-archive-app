@@ -1,8 +1,9 @@
 // Global alias map: a canonical analysis term (e.g. "Anthony Weiner") can carry alternate
 // spellings (e.g. "Anthony Wiener", "Wiener") that all highlight under the same name.
 // Stored in localStorage for instant offline reads and synced to Firestore (one JSON doc).
-import { db } from '../firebase'
-import { doc, getDoc, setDoc } from 'firebase/firestore'
+// Firestore comes through the lazy fire() door, never a static import — the public build's
+// main chunk must not carry the SDK for paths it can never reach (see src/lib/fire.ts).
+import { fire } from './fire'
 import { IS_PUBLIC_SITE } from './appMode'
 
 const LS_KEY = 'q_aliases_v1'
@@ -19,7 +20,10 @@ function persistLocal() {
 }
 async function persistCloud() {
   if (IS_PUBLIC_SITE) return                 // public build never writes
-  try { await setDoc(doc(db, 'app', 'aliases'), { json: JSON.stringify(map), _updatedAt: Date.now() }) } catch { /* offline */ }
+  try {
+    const { db, doc, setDoc } = await fire()
+    await setDoc(doc(db, 'app', 'aliases'), { json: JSON.stringify(map), _updatedAt: Date.now() })
+  } catch { /* offline */ }
 }
 
 // ── Certified entity aliases ────────────────────────────────────────────────
@@ -445,6 +449,7 @@ export async function loadAliasesFromCloud(): Promise<void> {
     return
   }
   try {
+    const { db, doc, getDoc } = await fire()
     const snap = await getDoc(doc(db, 'app', 'aliases'))
     if (!snap.exists()) return
     const cloud = JSON.parse((snap.data() as { json?: string }).json ?? '{}') as Record<string, string[]>

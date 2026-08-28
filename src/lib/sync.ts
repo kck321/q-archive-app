@@ -4,8 +4,9 @@
 //
 // We deliberately use tiny side collections (postEdits / questionEdits) that only hold
 // CHANGED items, so load stays fast — we never re-download the full posts collection.
-import { db } from '../firebase'
-import { collection, doc, getDocs, setDoc } from 'firebase/firestore'
+// Firestore comes through the lazy fire() door, never a static import — every function here is
+// desktop/dev-only at runtime, and the public main chunk must not carry the SDK for it.
+import { fire } from './fire'
 import type { QPost, QQuestion } from '../types'
 import type { EditMeta } from './overrideProvenance'
 
@@ -47,18 +48,21 @@ export async function pushPostEdit(postId: string, fields: Partial<QPost>): Prom
     // that stale snapshot as newer than the bundle and lay it back over the certified data.
     // Firestore deep-merges map fields, so this accumulates one date per field.
     payload._fieldUpdatedAt = touched
+    const { db, doc, setDoc } = await fire()
     await setDoc(doc(db, POST_EDITS, postId), payload, { merge: true })
   } catch { /* offline / rules — local copy already saved, will retry on next edit */ }
 }
 
 export async function pushQuestionAdd(q: QQuestion): Promise<void> {
   try {
+    const { db, doc, setDoc } = await fire()
     await setDoc(doc(db, QUESTION_EDITS, q.id), clean({ ...q, deleted: false, _updatedAt: Date.now() }), { merge: true })
   } catch { /* best-effort */ }
 }
 
 export async function pushQuestionDelete(id: string): Promise<void> {
   try {
+    const { db, doc, setDoc } = await fire()
     await setDoc(doc(db, QUESTION_EDITS, id), { deleted: true, _updatedAt: Date.now() }, { merge: true })
   } catch { /* best-effort */ }
 }
@@ -76,6 +80,7 @@ export interface CloudOverrides {
 // Pull all edits. Returns null on failure/offline (caller keeps local data only).
 export async function fetchOverrides(): Promise<CloudOverrides | null> {
   try {
+    const { db, collection, getDocs } = await fire()
     const res = await timeout(Promise.all([
       getDocs(collection(db, POST_EDITS)),
       getDocs(collection(db, QUESTION_EDITS)),

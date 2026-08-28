@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom'
 import { isTauri, openExternal } from './lib/openExternal'
 import { initLocalMedia } from './lib/localMedia'
@@ -7,7 +7,15 @@ import HighlightToggle from './components/HighlightToggle'
 import { loadAliasesFromCloud, loadCertifiedEntityAliases } from './lib/aliases'
 import Sidebar from './components/Sidebar'
 import UpdateBanner from './components/UpdateBanner'
-import Dashboard from './pages/Dashboard'
+// EDITOR-ONLY PAGES LOAD LAZILY — and that is a bundle-size decision, not a UX one.
+//
+// A static `import Dashboard` kept the whole editorial subtree (ingest, bulkScan, the Claude AI
+// client, their static Firestore imports) in the MAIN chunk of every build, including the public
+// one — CAN_EDIT folding to false removes the <Route>, but rollup still bundles a statically
+// imported module. React.lazy turns the reference into a dynamic import: the editor pages become
+// their own chunk, fetched the first time the owner opens them, and in the public build that
+// chunk is never requested at all.
+const Dashboard = lazy(() => import('./pages/Dashboard'))
 import PostArchive from './pages/PostArchive'
 import Search from './pages/Search'
 import PostDetail from './pages/PostDetail'
@@ -27,7 +35,7 @@ import Download from './pages/Download'
 import Method from './pages/Method'
 import { CAN_EDIT } from './lib/appMode'
 import ResolutionCenter from './pages/ResolutionCenter'
-import HoverReview from './pages/HoverReview'
+const HoverReview = lazy(() => import('./pages/HoverReview'))
 import { AdminProvider } from './components/AdminContext'
 import ScrollRestoration from './components/ScrollRestoration'
 
@@ -111,7 +119,7 @@ export default function App() {
                 analysis) and by owner ruling 2026-08-23 it is off qdrops.app entirely — not
                 PIN-locked on it. CAN_EDIT folds to a literal false in the public build, so
                 the route and the page behind it are dropped from that bundle. */}
-            {CAN_EDIT && <Route path="/dashboard" element={<Dashboard />} />}
+            {CAN_EDIT && <Route path="/dashboard" element={<Suspense fallback={null}><Dashboard /></Suspense>} />}
             <Route path="/posts"         element={<PostArchive />} />
             <Route path="/search"        element={<Search />} />
             <Route path="/post/:id"      element={<PostDetail />} />
@@ -131,7 +139,7 @@ export default function App() {
             {/* PRIVATE. CAN_EDIT folds to a literal false in the public build, so this route and
                 the page behind it are dropped from that bundle rather than hidden in it. The data
                 it reads is not in public/ either — see the editorialQueues plugin in vite.config. */}
-            {CAN_EDIT && <Route path="/editorial/hover-review" element={<HoverReview />} />}
+            {CAN_EDIT && <Route path="/editorial/hover-review" element={<Suspense fallback={null}><HoverReview /></Suspense>} />}
             <Route path="/method"       element={<Method />} />
             <Route path="/download"      element={<Download />} />
           </Routes>
