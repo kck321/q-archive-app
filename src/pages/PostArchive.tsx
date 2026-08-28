@@ -918,7 +918,7 @@ export default function PostArchive() {
         {timeline.length > 0 && (
           <div className="bg-q-panel border border-q-border rounded-xl p-5">
             {/* Tab strip */}
-            <div className="flex flex-wrap gap-1.5 mb-4">
+            <div className="flex flex-wrap justify-center gap-1.5 mb-4">
               <button
                 onClick={() => { setChartTab('all'); setChartMatchMonths(null); setChartSearch(''); clearMonth() }}
                 onMouseEnter={() => setHoverTab('all')}

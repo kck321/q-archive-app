@@ -7878,3 +7878,14 @@ dev/desktop builds entirely, and it no-ops silently until `VITE_CF_ANALYTICS_TOK
 the gitignored `.env`. Deployed the removal immediately (GA was live with a real measurement id
 and the owner had ruled it out); the Cloudflare token follows once the owner creates the site in
 their Cloudflare dashboard.
+
+## 2026-08-28 — Center the timeline tab strip over the chart (Post Archive)
+
+**Request:** "can we have the bar above the graph centered over the graph its a little to left"
+— the All / category / Q Posts button row above the Q Post Timeline sat left-aligned while the
+chart fills the panel width.
+
+**Solution:** Added `justify-center` to the tab-strip flex row in `src/pages/PostArchive.tsx`
+so the buttons center over the chart at every width (the row already wraps with `flex-wrap`).
+Post Archive only — the Dashboard has its own simpler strip, left untouched pending a ruling.
+Held locally for batch review on the editorial server; not deployed.
