@@ -454,7 +454,19 @@ export default function PostArchive() {
     const nums = postNumsByMonth[selectedMonth] ?? []
     if (nums.length === 0) { setMonthPosts([]); return }
     setMonthPostsLoading(true)
-    getPostsByNums(nums).then(setMonthPosts).finally(() => setMonthPostsLoading(false))
+    getPostsByNums(nums).then(posts => {
+      setMonthPosts(posts)
+      // The browse and search paths both fetch questions for the posts they show; this path
+      // did not, so a month-opened card rendered with questionTexts undefined — no blue
+      // question highlights and no question badge on any post the pager had not already
+      // loaded (owner caught it on #834, March 2018). Same recipe as the other two paths.
+      const ids = posts.filter(p => p.hasQuestions).map(p => p.id)
+      if (ids.length > 0) {
+        getQuestionsForPosts(ids).then(qMap =>
+          setPostQuestions(prev => ({ ...prev, ...qMap }))
+        )
+      }
+    }).finally(() => setMonthPostsLoading(false))
   }, [selectedMonth, postNumsByMonth])
 
   // Recharts delivers one click to BOTH the chart-level handler and the bar under the
