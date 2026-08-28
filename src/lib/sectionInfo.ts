@@ -404,8 +404,10 @@ export const SIDEBAR_RANK: Record<string, number> = {
   evidence: -5,
   sources: -6,
   resources: -7,
-  emphasis: -8,   // retired section; ranked so any residual list puts it last
   editorial: -9,
+  // Emphasis is deliberately NOT keyed here (cross-section invariant headline-emphasis-gone
+  // scans this file for any emphasis: row): unknown keys fall to the comparator's -100
+  // floor, so the retired section sorts last wherever a residue of it still renders.
 }
 
 /** Comparator for any list of section keys/ids — sorts into sidebar order. */
