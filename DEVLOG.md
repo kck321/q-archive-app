@@ -7995,3 +7995,16 @@ oldest→newest order — only WHICH chips make the collapsed cut changed; expan
 everything, and the "+N more" arithmetic is unchanged. Applied to all four merged-row surfaces
 (AnalysisArchive, QBrackets, QRequests, QuestionsArchive). Verified: the reconciliation gate
 passes 14/14 against localhost.
+
+## 2026-08-28 — Collapsed chip cap: evidence reserve beside the certified guarantee
+
+**Request:** (Gate-caught again, run 2 of the full validation.) The certified-first cap from the
+previous fix swung too far: a Themes row with 66 certified chips now filled every collapsed slot
+with certified chips and showed zero 📷/🔗 evidence, failing `row evidence chips → Themes` — the
+mirror image of the crowd-out it fixed.
+
+**Solution:** `visibleRowChips()` now reserves up to 6 collapsed slots for evidence when any
+exists; certified chips take the rest and reclaim the reserve when evidence runs short. Both
+invariants hold at once — a collapsed row always shows the certified posts it is about, AND its
+evidence kind stays discoverable without expanding. Verified both previously-failing gates green
+against localhost (entity reconciliation 14/14, row evidence GREEN).
