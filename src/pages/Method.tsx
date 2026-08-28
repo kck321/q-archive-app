@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import { SECTIONS, DIRECTIVE_FAMILIES, CLAIM_ATTRIBUTES, ASSERTIONS, EVIDENCE, ENTITIES, CODES_INFO, METHOD_INTRO, METHOD_PRINCIPLE, CERTIFIED } from '../lib/sectionInfo'
 
@@ -219,6 +220,20 @@ export default function Method() {
         Classification is applied to {CERTIFIED.totalPosts.toLocaleString()} posts. Where a section
         shows a certified dataset, those figures have been audited against the source text and each
         entry resolves to Q’s exact wording.
+      </p>
+
+      {/* The museum sign — added by owner ruling 2026-08-28 as part of the legality review.
+          Two things in one breath: displaying is not endorsing, and rights-holders have an
+          easy path to ask before anything escalates. */}
+      <p className="mt-3 text-xs text-gray-600">
+        Q Drops is an archival research resource. It presents historical posts, and the material
+        they referenced, as a record — displaying that material is not an endorsement of any claim
+        it contains. If you own material shown here and would like it reviewed or removed, contact
+        us through{' '}
+        <Link to="/feedback" className="text-gray-500 underline hover:text-gray-300">
+          Comments &amp; Ideas
+        </Link>{' '}
+        and it will be addressed.
       </p>
     </div>
   )

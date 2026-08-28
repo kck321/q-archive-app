@@ -172,7 +172,7 @@ export default function Donate() {
           <div className="text-sm text-gray-400 leading-relaxed space-y-3">
             <p>
               Thank you for test driving Qdrops.app, please share with others, report any
-              issues, point out any missing or incorrect highlighted categories, your feedback
+              issues, point out any missing or incorrect highlighted categories. Your feedback
               is appreciated and will take this app to the next level with time!
             </p>
           </div>

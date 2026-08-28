@@ -84,3 +84,13 @@ audit/unhighlighted-sentences/unhighlighted-from-truth.jsonl
 # underscore, is not a gate and must not become a permanent script — anything under scripts/
 # raises the validation floor to certified for every future deploy.
 scripts/_*.mjs
+
+# Editorial working files about named people — deliberately NOT in the public repo.
+# The site never serves them (vite.config's editorialQueues middleware is dev-only and the
+# public flag refuses them even there), but the repo is public for GitHub Pages, so keeping
+# them tracked published on GitHub the very drafts the site withholds. Untracked 2026-08-28
+# as part of the legality review; the files stay on the owner's machine for the editorial
+# workflow, and hover-review work happens locally.
+audit/entity-hover-review-queue.json
+audit/entity-hover-url-quarantine.json
+audit/entity-hover-withdrawn.json

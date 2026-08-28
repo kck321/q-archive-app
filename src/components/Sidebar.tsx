@@ -119,13 +119,20 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
 
   return (
     <aside className={`fixed inset-y-0 left-0 z-40 w-56 bg-q-panel border-r border-q-border flex flex-col overflow-y-auto transform transition-transform duration-200 lg:static lg:translate-x-0 ${open ? 'translate-x-0' : '-translate-x-full'}`}>
-      {/* Logo */}
-      <div className="px-5 py-5 border-b border-q-border">
-        <Link to="/" onClick={onClose} className="flex items-center gap-2 group">
-          <span className="text-2xl font-black text-gray-400 group-hover:text-gray-300 tracking-wider transition-colors">Q</span>
-          <span className="text-lg font-semibold text-gray-200 group-hover:text-white transition-colors">Drops</span>
+      {/* Logo — the app icon itself (the popcorn bucket and DROPS inside the Q), centered in
+          the column by owner ruling 2026-08-28, replacing the old left-aligned "Q Drops" text.
+          The icon already carries the wordmark, so no text sits beside it. */}
+      <div className="px-5 py-5 border-b border-q-border flex flex-col items-center text-center">
+        <Link to="/" onClick={onClose} className="group" aria-label="Q Drops — home">
+          <img
+            src={`${import.meta.env.BASE_URL}icon-192-v2.png`}
+            alt="Q Drops"
+            width={96}
+            height={96}
+            className="w-24 h-24 rounded-xl group-hover:brightness-110 transition-[filter]"
+          />
         </Link>
-        <p className="text-xs text-gray-500 mt-1">4,966 Intelligence Drops</p>
+        <p className="text-xs text-gray-500 mt-2">4,966 Intelligence Drops</p>
         <div className="mt-2"><HighlightToggle /></div>
       </div>
 
