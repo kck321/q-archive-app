@@ -8008,3 +8008,20 @@ exists; certified chips take the rest and reclaim the reserve when evidence runs
 invariants hold at once — a collapsed row always shows the certified posts it is about, AND its
 evidence kind stays discoverable without expanding. Verified both previously-failing gates green
 against localhost (entity reconciliation 14/14, row evidence GREEN).
+
+## 2026-08-28 — Categories ordered most → least, sidebar and chart tab strip
+
+**Request:** "can we organize the categories on the left and above the graph in order from most to
+least top bottom on left and left to right over graph."
+
+**Solution:** Both surfaces now sort themselves at module load over the same certified constants
+their counts display, so the order is derived, not hardcoded — a future recertification reorders
+both by itself, and the order can never contradict the numbers under the labels. In the sidebar
+this collapsed the three historically-hardcoded row blocks (Questions and Directives had their own
+NavLinks above the analysis list; Brackets was injected mid-list after Entities) into one sorted
+`categoryLinks` map, preserving the Questions row's ?status= active-state quirk; the
+editing-build-only Overlaps row sits below the ranked list. In PostArchive the `tabCounts` map
+hoisted to module level as `TAB_COUNTS` and CHART_TABS sorts over it; "All" and "Q Posts" stay
+pinned at the ends — they are the archive, not categories. Both surfaces verified in the browser
+rendering identically: Claims 10,219 → Entities 9,837 → Questions 6,327 → Directives 3,333 →
+Themes 2,685 → Brackets 1,986 → Predictions 950.
