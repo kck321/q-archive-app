@@ -222,14 +222,16 @@ export default function PostCard({ post, questionTexts = [], searchKeyword = '',
               A TABLE, so the next category cannot be forgotten the same way. The order is the order
               of SECTIONS in lib/sectionInfo.ts, and the colours are the ones the drop body paints
               with — a chip in a colour the text never uses is a chip a reader cannot follow. */}
+          {/* Sidebar order (owner ruling 2026-08-28) — the same most → least ranking SECTIONS
+              now sorts to, so the chip row reads like the sidebar does. */}
           {([
+            ['claim', post.postAnalysis?.claims?.length ?? 0, 'bg-amber-900/50 text-amber-400 border-amber-800/60'],
+            ['entity', post.postAnalysis?.namedEntities?.length ?? 0, 'bg-cyan-900/50 text-cyan-400 border-cyan-800/60'],
             ['question', questionTexts.length, 'bg-blue-900/50 text-blue-400 border-blue-800/60'],
             ['directive', post.hasRequests ? (post.actionRequests?.length ?? 0) : 0, 'bg-green-900/50 text-green-400 border-green-800/60'],
-            ['claim', post.postAnalysis?.claims?.length ?? 0, 'bg-amber-900/50 text-amber-400 border-amber-800/60'],
-            ['prediction', post.postAnalysis?.predictions?.length ?? 0, 'bg-violet-900/50 text-violet-400 border-violet-800/60'],
-            ['entity', post.postAnalysis?.namedEntities?.length ?? 0, 'bg-cyan-900/50 text-cyan-400 border-cyan-800/60'],
             ['theme', post.postAnalysis?.themes?.length ?? 0, 'bg-indigo-900/50 text-indigo-400 border-indigo-800/60'],
             ['bracket', bracketSpansIn(post.text ?? '').length, 'bg-red-900/50 text-red-400 border-red-800/60'],
+            ['prediction', post.postAnalysis?.predictions?.length ?? 0, 'bg-violet-900/50 text-violet-400 border-violet-800/60'],
           ] as [string, number, string][])
             .filter(([, n]) => n > 0)
             .map(([label, n, cls]) => (
