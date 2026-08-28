@@ -7977,3 +7977,21 @@ owner ruling the anniversary form (bare month + day, no year) is now calendar-on
 exactly the posts published on that day across the years. Month+year and full-date query forms
 keep the combined date-or-text behaviour. Verified in the browser: the Aug 28 delta now reads 38
 posts matched, agreeing with the banner, December chip gone.
+
+## 2026-08-28 — Certified chips always survive the collapsed cap in merged chip rows
+
+**Request:** (Caught by the gate suite, not the owner.) The first FULL-profile validation since
+the 2026-08-27 chip merge failed `entity list reconciliation → every-row-has-a-post-chip`: two
+of 1,606 entity rows rendered zero certified `#N` chips.
+
+**Solution:** The merge capped the collapsed row with `merged.slice(0, 40)` over the
+by-post-number ordering — so a row whose 📷/🔗 evidence chips outnumbered AND pre-dated its
+certified mentions (rank-132 entity: 14 mentions, dozens of earlier-numbered evidence chips)
+filled all 40 visible slots with evidence and showed not one post where Q actually wrote the
+term. The 2026-08-27 standard-profile validations passed because this gate only runs at full.
+New `visibleRowChips()` in RowEvidenceChips.tsx: certified chips are guaranteed the cap first,
+evidence fills the remaining room (earliest first), and the survivors still render in merged
+oldest→newest order — only WHICH chips make the collapsed cut changed; expanding still shows
+everything, and the "+N more" arithmetic is unchanged. Applied to all four merged-row surfaces
+(AnalysisArchive, QBrackets, QRequests, QuestionsArchive). Verified: the reconciliation gate
+passes 14/14 against localhost.
