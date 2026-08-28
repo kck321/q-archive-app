@@ -8091,3 +8091,32 @@ drafts the site withholds. The files stay on the owner's machine for the editori
 Caveat recorded honestly: they remain reachable in OLD git history unless that is scrubbed with
 history-rewriting tools — forward removal was judged proportionate to the content (descriptive
 per-post usage notes, not editorial assertions), revisit if that judgement changes.
+
+## 2026-08-28 — Sidebar order everywhere, stale entity ⓘ figures, month-view question highlights
+
+**Request:** "can we put anything listed within the site in the order we have in the categories on
+the side bar. like in the how this works section, the support section and so on so the site is
+uniform" / "just want to make sure these numbers are correct in the information box in the
+entities section too" (the ⓘ popover read 1,584 / 1,450 / 134 / 9,529 against a header reading
+1,622 / 9,837) / "i also notice when i click a month below the graph allot of the data that
+should be highlighted isn't. we have to get this issue fixed" (#834 in Mar 2018: no blue
+question highlights, no question chip).
+
+**Solution:** (1) `sectionInfo.ts` gains `SIDEBAR_RANK` + `sidebarOrder()` — one comparator
+ranking every section key (aliases included: requests/directives, entities/namedEntities,
+brackets/codes, links/evidence) by the same certified counts the sidebar sorts on, with Post
+text above the categories and the Extras-fold keys below them in the fold's own order. `SECTIONS`
+itself now sorts through it, so the Method page reordered without an edit; the Support bullets,
+search chips, analysis-map chips, PostCard chip row and both post-analysis row lists were
+reordered to match (PostDetail keeps its standing Themes-first block). Resulting order:
+Claims · Entities · Questions · Directives · Themes · Brackets · Predictions, Evidence last.
+(2) The entities ⓘ "Certified" line now interpolates ENTITIES.canonical/proseNamed/sourceOnly/
+mentions (1,622 · 1,490 · 132 · 9,837 — proseNamed/sourceOnly added verbatim from
+entity-public-view totals); the brackets and themes certified lines interpolate CODES_INFO
+(1,986/771/861, note's "7 of 771"/764) and THEMES_INFO too. This line had gone stale twice;
+literals in prose are now treated as the defect. (3) The month path in PostArchive fetched
+posts but never their questions — browse and search both call `getQuestionsForPosts`, the
+month effect didn't, so any month-opened card the pager hadn't already loaded rendered with
+`questionTexts` undefined. It now fetches them the same way. Browser-proved on the public
+build: Mar 2018 → #834 shows "6 questions" chip and 14 blue question marks (was none), chips
+in sidebar order. Four commits, not deployed — batch open.
