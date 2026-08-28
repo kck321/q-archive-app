@@ -2,6 +2,10 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
+import { initCloudflareAnalytics } from './lib/cloudflareAnalytics'
+
+// Cookieless visitor counting on the public site — no-op in dev and the desktop build.
+initCloudflareAnalytics()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

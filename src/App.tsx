@@ -30,8 +30,6 @@ import ResolutionCenter from './pages/ResolutionCenter'
 import HoverReview from './pages/HoverReview'
 import { AdminProvider } from './components/AdminContext'
 import ScrollRestoration from './components/ScrollRestoration'
-import AnalyticsTracker from './components/AnalyticsTracker'
-import CookieConsent from './components/CookieConsent'
 
 export default function App() {
   const [navOpen, setNavOpen] = useState(false)
@@ -88,7 +86,6 @@ export default function App() {
     <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
       <div className="flex min-h-screen lg:h-screen lg:overflow-hidden bg-q-dark overflow-x-clip">
         <UpdateBanner />
-        <CookieConsent />
 
         {/* Mobile top bar with hamburger (hidden on lg+) */}
         <header className="lg:hidden fixed top-0 inset-x-0 z-30 h-[calc(3rem+env(safe-area-inset-top))] pt-[env(safe-area-inset-top)] bg-q-panel border-b border-q-border flex items-center gap-3 px-4">
@@ -108,7 +105,6 @@ export default function App() {
         <Sidebar open={navOpen} onClose={() => setNavOpen(false)} />
         <main ref={mainRef} className="flex-1 min-w-0 relative lg:overflow-y-auto pt-[calc(3rem+env(safe-area-inset-top))] lg:pt-0 pb-[env(safe-area-inset-bottom)]">
           <ScrollRestoration containerRef={mainRef} />
-          <AnalyticsTracker />
           <Routes>
             <Route path="/"              element={<Navigate to="/posts" replace />} />
             {/* PRIVATE. The Dashboard is the editorial workbench (ingest, bulk scans, AI
