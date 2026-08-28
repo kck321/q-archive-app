@@ -7907,3 +7907,33 @@ NEVER_RECOUNT_RULE — the sidebar shows exactly the numbers each destination pa
 deliberately differ from the Post Archive chart tab strip (that strip sums the timeline series, a
 different measurement). Overlaps (edit-build-only) carries no count. Verified by screenshot on the
 dev server before validating.
+
+## 2026-08-28 — Bundle optimization: 21% lighter first load, 63% lighter post-deploy re-downloads
+
+**Request:** "go through the app and clean up anything that would slow down the users interaction
+with the app... i would like to do what we can to optimize the users interaction if you can let me
+know if anything can be done on that front." (The sidebar-count half of the same message was
+already built and validated by a concurrent session — this session deployed it.)
+
+**Solution:** Measured first: the public build shipped ONE monolithic 1,397 KB chunk (428 KB gzip),
+and the two biggest tenants were code no visitor can ever run. (1) The Firestore SDK (~117 KB
+gzip) — the public runtime never reads Firestore at startup (aliases and edits ship baked into the
+bundle, both paths IS_PUBLIC_SITE-gated), but static `import { db }` chains in aliases.ts, sync.ts
+and feedback.ts bound the SDK into the main chunk anyway. New `src/lib/fire.ts` is a lazy async
+door (`const { db, doc, getDoc } = await fire()`); all 11 call sites across the three files go
+through it, so the SDK now loads only when something actually talks to Firestore — a feedback
+submission on the public site, an edit sync on the desktop. (2) The editorial subtree — Dashboard
+and HoverReview were statically imported in App.tsx; CAN_EDIT folding removed the <Route> but NOT
+the modules, so ingest.ts, bulkScan.ts and the @anthropic-ai/sdk all rode in the public chunk
+(verified: "anthropic" appeared in the shipped JS; the API key itself was never exposed —
+.env.production already blanks VITE_ANTHROPIC_API_KEY by design). Both pages are React.lazy now,
+and PostDetail/Topics' six PIN-gated AI handlers dynamic-import ../lib/claude at click time.
+(3) Vendor chunking (vite.config manualChunks): react and charts (recharts + d3) split into
+cache-stable chunks, so a future deploy invalidates only the ~159 KB gzip app chunk instead of
+all 428 — the biggest win for returning readers given how often this site deploys. Result, measured
+on a real public build: startup JS 428 → 339 KB gzip across index/react/charts; firebase (117 KB)
+and Dashboard+AI (44 KB) load on demand or never; the main chunk carries no firebase modulepreload
+and zero anthropic references. Also noted for the record, not changed: the 9.4 MB data bundle
+dominates a FIRST visit and is already mitigated (gzip on the wire, IndexedDB seed paid once per
+seed version, service-worker cache-first thereafter), and the analysis index is already pre-warmed
+at startup and cached per data version — the earlier "indexing" work the owner remembered.
