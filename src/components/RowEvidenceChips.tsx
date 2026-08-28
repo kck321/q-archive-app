@@ -69,15 +69,22 @@ export function mergeRowChips(certifiedChips: RowChip[], evidenceChips: RowChip[
  * order is untouched: the survivors still render merged, oldest → newest; only WHICH chips make
  * the collapsed cut changes. Expanding shows everything, exactly as before.
  */
+// How many collapsed slots evidence keeps when certified chips alone could fill the cap. Small
+// on purpose: the certified chips are the row's subject, the reserve just keeps the 📷/🔗 kind
+// DISCOVERABLE — without it a 66-mention theme hid its evidence entirely and the row-evidence
+// gate failed, the mirror image of the crowd-out this function exists to prevent.
+const EVIDENCE_RESERVE = 6
+
 export function visibleRowChips(
   certifiedChips: RowChip[], evidenceChips: RowChip[], cap: number, expanded: boolean,
 ): { shown: RowChip[]; merged: RowChip[] } {
   const merged = mergeRowChips(certifiedChips, evidenceChips)
   if (expanded || merged.length <= cap) return { shown: merged, merged }
-  const chosen = new Set<RowChip>(certifiedChips.slice(0, cap))
-  if (chosen.size < cap) {
-    const byNum = [...evidenceChips].sort((a, b) => a.num - b.num)
-    for (const c of byNum) { if (chosen.size >= cap) break; chosen.add(c) }
-  }
+  const evByNum = [...evidenceChips].sort((a, b) => a.num - b.num)
+  const evQuota = Math.min(evByNum.length, EVIDENCE_RESERVE)
+  const chosen = new Set<RowChip>(certifiedChips.slice(0, Math.max(0, cap - evQuota)))
+  for (const c of evByNum) { if (chosen.size >= cap) break; chosen.add(c) }
+  // Evidence ran out before the cap? The leftover slots go back to certified chips.
+  if (chosen.size < cap) for (const c of certifiedChips) { if (chosen.size >= cap) break; chosen.add(c) }
   return { shown: merged.filter(c => chosen.has(c)), merged }
 }
