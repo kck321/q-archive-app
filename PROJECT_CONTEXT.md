@@ -406,6 +406,32 @@ it is counting before assuming the maths is broken.**
 - Tagline (public build only): "Built for researching the language of the Q posts. Every drop
   broken down into what it asked, claimed, predicted and named."
 
+## Sidebar order is the site's one listing order (owner ruling, 28 Aug 2026)
+
+Every list of the sections follows the sidebar: categories MOST → LEAST by certified count
+(Claims · Entities · Questions · Directives · Themes · Brackets · Predictions), Post text above
+them, the Extras fold below in its own order. `sidebarOrder`/`SIDEBAR_RANK` in
+`src/lib/sectionInfo.ts` is the one comparator — SECTIONS sorts through it (the Method page
+inherits), and the search chips, analysis-map chips, Support bullets and post-card chip/row
+lists all follow it. PostDetail keeps its Themes-first block by its own standing ruling. Certified
+figures in SECTIONS are INTERPOLATED from the constants, never typed — the entities ⓘ line went
+stale twice before this. Trap: the `headline-emphasis-gone` invariant text-scans sectionInfo.ts
+after SECTION_TOTALS for any `emphasis` key — comments included — so the retired section must not
+be named with a colon anywhere below that line. The mobile top bar stays TEXT-ONLY (a 28px icon
+was tried and pulled the same day).
+
+## EXPORT PATH BLOCKED for data deploys (28 Aug 2026)
+
+`export-firestore.mjs` currently FAILS the pinned literal-spans QA: the Firestore dump carries
+hash-id question rows on #1915 and #1944 that no longer prior-match local `questions.json`, so
+the minted `qc-` ids shift (qc-h → qc-f) and `materialize-literal-spans.mjs` aborts. UI-only
+deploys can ship the certified committed bundle with `SKIP_EXPORT=1` (Firestore has been
+write-frozen since the 12 Aug rules, so the bundle IS current — that is why the escape is
+honest). Before the next DATA deploy, reconcile Firestore's questions collection with local.
+Do NOT edit `OWED_LITERALS` to make it pass — the pin is doing its job; find why the two drops
+stopped prior-matching. If the export aborts it leaves posts/questions/entities.json half
+rebuilt — `git restore` them.
+
 ## Still open before launch
 
 1. **Firestore rules are DEPLOYED and verified** (`firestore.rules`, 12 Aug 2026). Reads are
