@@ -6706,5 +6706,14 @@
    "ruledOn": "2026-08-26",
    "reasoning": "Owner ruling: virus/covid sweep, same recurring framing."
   }
+ ],
+ "merges": [
+  {
+   "from": "justice_courts",
+   "into": "law_enforcement",
+   "newLabel": "Law Enforcement & Justice",
+   "ruledOn": "2026-08-28",
+   "reasoning": "Owner ruling: \"what we could combine 1 theme to another to have 17 themes because the 17th letter of the alphabet is Q and is significant.\" Justice & Courts chosen for the merge because courts adjudicate exactly what investigations produce - the tightest pairing in the taxonomy - keeping signature standalone subjects (Elections & Voting, Trafficking & Exploitation) distinct. Anchors, support signals and subthemes of both themes are preserved in full on the merged key."
+  }
  ]
 }

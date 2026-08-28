@@ -116,7 +116,9 @@ export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number
   namedEntities: { occurrences: 9837, posts: 2178, unit: 'mentions' },
   // Themes are assignments rather than spans — a theme is inferred from a drop, not copied out
   // of it — so the unit is named accordingly. 2,393 detected + 2 owner rulings.
-  themes: { occurrences: 2685, posts: 1912, unit: 'assignments' },
+  // 2,685 -> 2,675 on 2026-08-28: the 17-theme merge (justice_courts -> law_enforcement);
+  // ten both-theme posts each collapse one assignment. See scripts/lib/contracts.mjs.
+  themes: { occurrences: 2675, posts: 1912, unit: 'assignments' },
 }
 
 /**
@@ -267,10 +269,14 @@ export const ENTITIES = {
  * entire apparent gap in subject coverage. They belong to Codes & Brackets, not to Themes.
  */
 export const THEMES_INFO = {
-  parents: 18,
-  assignments: 2685,
+  // 18 -> 17 on 2026-08-28, owner ruling: Justice & Courts merged into Law Enforcement &
+  // Justice - 17 themes because Q is the 17th letter of the alphabet.
+  parents: 17,
+  assignments: 2675,
   posts: 1912,
-  multiTheme: 378,
+  // 378 was stale (predates the queue rulings); 466 -> 463 with the merge: three of the ten
+  // both-theme posts had no third theme, so they are single-theme now.
+  multiTheme: 463,
   unresolved: 251,
   note: 'Themes identify the recurring subjects Q discusses across the archive. They describe what a post is about, not how Q writes it. A post may have more than one theme. Style features such as cryptic phrasing, repetition, coded language, or pattern-based reasoning are classified elsewhere rather than treated as subjects.',
 } as const
@@ -437,8 +443,11 @@ export const SECTIONS: SectionInfo[] = [
     short: 'Recurring subjects that connect posts across the archive.',
     covers: 'Recurring subjects and concepts connecting posts across the entire archive — elections, intelligence agencies, media, censorship, military matters, trafficking, financial systems, government investigations, foreign affairs, technology and other recurring topics.',
     answers: 'What larger subject was this post about?',
-    certified: `${n(2646)} assignments · ${n(1899)} posts · 18 parent themes`,
-    note: 'Themes identify the recurring subjects Q discusses across the archive. They describe what a post is about, not how Q writes it. A post may have more than one theme — 378 do. Style features such as cryptic phrasing, repetition, coded language, or pattern-based reasoning are classified elsewhere rather than treated as subjects. A theme is assigned only on converging evidence, never on a single word appearing.',
+    // 2026-08-28: figures resynced (they still read 2,646/1,899/18 from before the Health &
+    // Medicine sweep) AND the taxonomy is 17 parents now — the owner's Justice & Courts →
+    // Law Enforcement & Justice merge, 17 themes because Q is the 17th letter of the alphabet.
+    certified: `${n(2675)} assignments · ${n(1912)} posts · 17 parent themes`,
+    note: 'Themes identify the recurring subjects Q discusses across the archive. They describe what a post is about, not how Q writes it. A post may have more than one theme — 463 do. Style features such as cryptic phrasing, repetition, coded language, or pattern-based reasoning are classified elsewhere rather than treated as subjects. A theme is assigned only on converging evidence, never on a single word appearing.',
   },
   {
     id: 'brackets',

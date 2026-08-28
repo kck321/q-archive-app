@@ -32,9 +32,54 @@ const audit = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/themes-audit.jso
 // Same shape as Claims, where the seven owner rows live in claims-final.json rather than in the
 // postAnalysis cache that apply-claims rebuilds.
 const RULINGS = path.join(ROOT, 'audit/themes-owner-rulings.json')
-const ownerRulings = fs.existsSync(RULINGS) ? JSON.parse(fs.readFileSync(RULINGS, 'utf8')).rulings ?? [] : []
+const rulingsDoc = fs.existsSync(RULINGS) ? JSON.parse(fs.readFileSync(RULINGS, 'utf8')) : {}
+const ownerRulings = rulingsDoc.rulings ?? []
+
+// ── Theme merges (owner rulings) ─────────────────────────────────────────────
+// A merge retires one parent theme into another — the taxonomy in lib/themes.mjs already holds
+// the combined entry, and this remaps the FROZEN audit's assignments (audit-themes.mjs is a
+// derive step that does not run in the chain, so its artifact still names the retired key).
+// 2026-08-28: justice_courts → law_enforcement as "Law Enforcement & Justice", bringing the
+// taxonomy to 17 parents by owner ruling. Where one post carried BOTH themes, the two
+// assignments collapse into one: the survivor keeps the higher confidence and the UNION of both
+// evidence anchor sets, so every word that used to highlight still highlights.
+const merges = rulingsDoc.merges ?? []
+const mergeMap = new Map(merges.map(m => [m.from, m]))
+const CONF_RANK = { OWNER_ADJUDICATED: 3, HIGH: 2, MEDIUM: 1, LOW: 0 }
+let mergedAway = 0
+if (merges.length) {
+  for (const a of audit.assignments) {
+    const m = mergeMap.get(a.theme)
+    if (m) { a.theme = m.into; a.label = m.newLabel }
+    // The surviving key's own rows carry the OLD label string — relabel them too.
+    const into = merges.find(x => x.into === a.theme)
+    if (into) a.label = into.newLabel
+  }
+  // Collapse duplicates the remap created: one (post, theme) row survives per pair.
+  const byKey = new Map()
+  for (const a of audit.assignments) {
+    const k = `${a.postNum}|${a.theme}`
+    const prev = byKey.get(k)
+    if (!prev) { byKey.set(k, a); continue }
+    mergedAway++
+    const winner = (CONF_RANK[a.confidence] ?? 0) > (CONF_RANK[prev.confidence] ?? 0) ? a : prev
+    const loser = winner === a ? prev : a
+    winner.evidence = {
+      ...winner.evidence,
+      anchors: [...new Set([...(winner.evidence?.anchors ?? []), ...(loser.evidence?.anchors ?? [])])],
+    }
+    byKey.set(k, winner)
+  }
+  audit.assignments = [...byKey.values()]
+}
+
 let ownerAdded = 0
 for (const r of ownerRulings) {
+  // Rulings recorded before a merge may still name the retired key — remap them the same way.
+  const rm = mergeMap.get(r.theme)
+  if (rm) { r.theme = rm.into; r.label = rm.newLabel }
+  const rInto = merges.find(x => x.into === r.theme)
+  if (rInto) r.label = rInto.newLabel
   // A post may legitimately carry more than one theme, so this adds rather than replaces — but
   // the same theme must never be assigned twice to one post.
   if (audit.assignments.some(a => a.postNum === r.postNum && a.theme === r.theme)) continue
@@ -95,13 +140,20 @@ const checks = [
   // rulings, 2,646 -> 2,685 assignments. Of the 39: 13 posts had no theme at all (1,899 -> 1,912
   // with a theme), 21 had exactly one other theme and are now multi-theme (445 -> 466), and 5
   // were already multi-theme so a third assignment moves neither counter — 13+21+5 = 39.
-  ['detected theme assignments = 2,393', out.totals.assignments - ownerAdded === 2393, out.totals.assignments - ownerAdded],
+  // 2026-08-28, THE 17-THEME MERGE: justice_courts → law_enforcement ("Law Enforcement &
+  // Justice"), by owner ruling — 17 themes because Q is the 17th letter. Ten posts carried BOTH
+  // themes, so ten derived pairs collapse to one row each: detected 2,393 -> 2,383, assignments
+  // 2,685 -> 2,675, and the ten survivors keep the union of both anchor sets. Three of the ten
+  // had no third theme, so multi-theme 466 -> 463. Owner rulings (292) and posts with a theme
+  // (1,912) do not move — no ruling named the retired key on a post its survivor did not cover,
+  // and merging two labels on one post cannot untag the post.
+  ['detected theme assignments = 2,383', out.totals.assignments - ownerAdded === 2383, out.totals.assignments - ownerAdded],
   ['owner theme rulings applied = 292', ownerAdded === 292, ownerAdded],
-  ['theme assignments = 2,685', out.totals.assignments === 2685, out.totals.assignments],
+  ['theme assignments = 2,675', out.totals.assignments === 2675, out.totals.assignments],
   ['posts with a theme = 1,912', out.totals.postsWithAtLeastOne === 1912, out.totals.postsWithAtLeastOne],
-  ['multi-theme posts = 466', out.totals.postsWithMoreThanOne === 466, out.totals.postsWithMoreThanOne],
+  ['multi-theme posts = 463', out.totals.postsWithMoreThanOne === 463, out.totals.postsWithMoreThanOne],
   ['unresolved in Resolution Center = 251', out.totals.unresolvedInResolutionCenter === 251, out.totals.unresolvedInResolutionCenter],
-  ['18 parent themes, unchanged', themeTable.length === 18, themeTable.length],
+  ['17 parent themes (the 2026-08-28 merge)', themeTable.length === 17, themeTable.length],
   ['no style label imported as a subject', styleLeak.length === 0, `${styleLeak.length} leaked`],
   ['every assignment names a known parent', unknownTheme.length === 0, `${unknownTheme.length} unknown`],
   ['every assignment carries evidence', audit.assignments.every(a => a.evidence), 'ok'],

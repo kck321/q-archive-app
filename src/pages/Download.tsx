@@ -79,14 +79,9 @@ export default function Download() {
           means "unsigned", not "unsafe" — the source is public and every build is produced
           in the open by GitHub from that source, so you can check exactly what went in.
         </p>
-        <a
-          href={`${REPO}/actions`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block text-xs text-blue-400 hover:text-blue-300 hover:underline"
-        >
-          See how each build was produced →
-        </a>
+        {/* The "See how each build was produced →" link to the GitHub Actions page was removed
+            by owner ruling 2026-08-28 — readers don't need the build machinery, and the paragraph
+            above already says the source is public. */}
       </div>
 
       {IS_PUBLIC_SITE && (

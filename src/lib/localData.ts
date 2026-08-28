@@ -513,7 +513,14 @@ export const OVERLAY_REPAIR = 1
 //     6,321, entities 1,235 -> 1,214 rows and 8,975 -> 8,821 mentions. A returning reader holding
 //     87 would keep the pre-review paint on 41 drops and a registry counting one written word up
 //     to five times, so the seed has to move.
-export const SEED_VERSION = 114  // 114: 2026-08-26 — real researched synopses for tier 5 (132
+export const SEED_VERSION = 115  // 115: 2026-08-28 — THE 17-THEME MERGE. Justice & Courts merges
+                                 //     into Law Enforcement & Justice by owner ruling (17 themes,
+                                 //     Q being the 17th letter). themes.json and posts.json both
+                                 //     change (postAnalysis.themes labels, merged anchor unions),
+                                 //     so a returning reader stuck on 114 would keep seeing 18
+                                 //     themes and the two old labels while the archive certifies
+                                 //     17 and one.
+                                 // 114: 2026-08-26 — real researched synopses for tier 5 (132
                                  //     source-only entities, mentions: 0 — linked via URL/source
                                  //     metadata but never named in drop text, missed by every
                                  //     mentions-based tier query). This is the true completion of

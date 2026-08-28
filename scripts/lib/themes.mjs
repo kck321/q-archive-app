@@ -41,18 +41,22 @@ export const THEMES = [
     subthemes: ['Surveillance programs', 'Agency operations', 'Classification'],
   },
   {
-    key: 'law_enforcement', label: 'Law Enforcement & Investigations',
-    blurb: 'Investigations, agencies, indictments, arrests, prosecutions and internal misconduct.',
-    anchors: [/\b(special counsel|grand jury|indict\w+|subpoena|investigat\w+ into|criminal referral|sealed indictment|IG report)\b/i],
-    support: [/\bFBI\b/, /\bDOJ\b/, /\bprosecut\w+/i, /\barrest\w*/i, /\bcharges?\b/i, /\bevidence\b/i, /\btestimony\b/i, /\bwitness\b/i],
-    subthemes: ['Investigations', 'Prosecutions', 'Agency misconduct'],
-  },
-  {
-    key: 'justice_courts', label: 'Justice & Courts',
-    blurb: 'Courts, judges, rulings, sentencing and the administration of justice.',
-    anchors: [/\b(supreme court|SCOTUS|federal judge|court ruling|sentenc\w+|plea deal|acquitt\w+|convict\w+)\b/i],
-    support: [/\bcourt\b/i, /\bjudge\b/i, /\bjustice\b/i, /\btrial\b/i, /\bjury\b/i, /\bappeal\b/i, /\bruling\b/i],
-    subthemes: ['Courts', 'Rulings', 'Sentencing'],
+    // JUSTICE & COURTS MERGED IN, owner ruling 2026-08-28: "what we could combine 1 theme to
+    // another to have 17 themes because the 17th letter of the alphabet is Q and is significant."
+    // Chosen over the other candidates because the pairing is the tightest in the taxonomy —
+    // courts adjudicate exactly what investigations produce, and Q treats the two as one
+    // pipeline (investigate → indict → convict). The anchors, support signals and subthemes of
+    // both former themes are kept in full, so nothing that used to fire either theme goes dark;
+    // apply-themes.mjs remaps the frozen audit's justice_courts assignments onto this key.
+    key: 'law_enforcement', label: 'Law Enforcement & Justice',
+    blurb: 'Investigations, agencies, indictments, arrests and prosecutions — and the courts, judges, rulings and sentencing that follow them.',
+    anchors: [
+      /\b(special counsel|grand jury|indict\w+|subpoena|investigat\w+ into|criminal referral|sealed indictment|IG report)\b/i,
+      /\b(supreme court|SCOTUS|federal judge|court ruling|sentenc\w+|plea deal|acquitt\w+|convict\w+)\b/i,
+    ],
+    support: [/\bFBI\b/, /\bDOJ\b/, /\bprosecut\w+/i, /\barrest\w*/i, /\bcharges?\b/i, /\bevidence\b/i, /\btestimony\b/i, /\bwitness\b/i,
+      /\bcourt\b/i, /\bjudge\b/i, /\bjustice\b/i, /\btrial\b/i, /\bjury\b/i, /\bappeal\b/i, /\bruling\b/i],
+    subthemes: ['Investigations', 'Prosecutions', 'Agency misconduct', 'Courts', 'Rulings', 'Sentencing'],
   },
   {
     key: 'media_information', label: 'Media & Information',
@@ -186,7 +190,8 @@ export const LEGACY_HINTS = [
   [/\bgovern|political|congress|senate|policy|legislat/i, 'government_politics'],
   [/\bintel|surveil|fisa|classif|covert|spy/i, 'intelligence_surveillance'],
   [/\bfbi|doj|investigat|prosecut|indict|law enforcement/i, 'law_enforcement'],
-  [/\bcourt|judge|justice|trial|sentenc/i, 'justice_courts'],
+  // justice_courts merged into law_enforcement, owner ruling 2026-08-28 — same hints, one key.
+  [/\bcourt|judge|justice|trial|sentenc/i, 'law_enforcement'],
   [/\bmedia|news|narrative|press|journalis/i, 'media_information'],
   [/\bcensor|platform|tech|algorithm|social media/i, 'censorship_technology'],
   [/\bmilitary|defen[cs]e|war|troop|national security/i, 'national_security_military'],

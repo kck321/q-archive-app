@@ -105,7 +105,8 @@ const checks = [
   // was withdrawn — the pin was just never moved with the rulings that grew it.
   ['1,768 theme anchors still certified', thm.units === 1768, thm.units],
   ['theme anchors still spread across 1,322 posts', thm.withUnits === 1322, thm.withUnits],
-  ['the Themes section is untouched: 2,685 assignments', thmAssign.units === 2685, thmAssign.units],
+  // 2,685 -> 2,675 on 2026-08-28: the 17-theme merge collapses the ten both-theme pairs.
+  ['the Themes section is untouched: 2,675 assignments', thmAssign.units === 2675, thmAssign.units],
   ['the Themes section is untouched: 1,912 posts', thmAssign.withUnits === 1912, thmAssign.withUnits],
 
   // ── the render half: neither surface paints them ──────────────────────────
