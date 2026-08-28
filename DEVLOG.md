@@ -8120,3 +8120,28 @@ month effect didn't, so any month-opened card the pager hadn't already loaded re
 `questionTexts` undefined. It now fetches them the same way. Browser-proved on the public
 build: Mar 2018 → #834 shows "6 questions" chip and 14 blue question marks (was none), chips
 in sidebar order. Four commits, not deployed — batch open.
+
+## 2026-08-28 — Deploy of the uniform-order batch; top-bar logo tried and pulled; export QA blocker
+
+**Request:** "go ahead and deploy, but i want you to go ahead and put the qdrops logo on Q drops.
+but lets make it small to fit in that space" — then, seeing it: "that logo is too small so lets
+just take it off for now and leave the old q drops logo on there for now".
+
+**Solution:** The 28px icon went into the mobile top bar beside the wordmark and was pulled the
+same hour on the owner's word; a comment in App.tsx records that the bar stays text-only and any
+future logo there needs a simplified small-size asset, not icon-192 shrunk. Deploy: committing the
+regenerated audit reports raised the floor to CERTIFIED; the full certified validation passed
+(222/222 invariants after two fixes: SIDEBAR_RANK dropped its emphasis key, then the explanatory
+comment was reworded, because headline-emphasis-gone text-scans everything after SECTION_TOTALS —
+comments included). First deploy attempt refused on the audit-report dirty tree (committed, same
+receipt tree — the designed path). Second attempt died in export-firestore: the Firestore dump now
+carries hash-id question rows on #1915 and #1944 that no longer prior-match the local
+questions.json, shifting the minted qc- ids (qc-h → qc-f) and tripping the pinned literal-spans
+QA. The half-written posts/questions/entities.json were restored from HEAD. Since Firestore has
+been write-frozen since the 12 Aug rules and the committed bundle had just been proved by the full
+certified run, the deploy used SKIP_EXPORT=1 — the escape deploy-web itself prescribes for a
+certified-and-current bundle. Live after 47s, verify-live 16/16.
+
+**OPEN:** reconcile the Firestore questions collection with local before the next DATA deploy —
+the export path is blocked on the qc-pin until then. Do not "fix" it by editing OWED_LITERALS;
+find why #1915/#1944 stopped prior-matching first.
