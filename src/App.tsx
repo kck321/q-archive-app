@@ -100,6 +100,9 @@ export default function App() {
           <button onClick={() => setNavOpen(true)} aria-label="Open menu" className="text-gray-300 hover:text-white p-1 -ml-1">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
           </button>
+          {/* Owner ruling 2026-08-28: the top bar stays TEXT-ONLY. The 28px app icon was tried
+              beside the wordmark and pulled the same day — too small to read as the mark. If a
+              logo returns here it needs a simplified small-size asset, not icon-192 shrunk. */}
           <Link to="/" className="text-base font-semibold text-gray-200 hover:text-white transition-colors shrink-0"><span className="font-black text-gray-400 mr-1">Q</span>Drops</Link>
           {/* Sits beside the brand so it is reachable from every page, not just the archive. */}
           <div className="ml-auto overflow-x-auto"><HighlightToggle /></div>
