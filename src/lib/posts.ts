@@ -871,6 +871,16 @@ export async function searchAllPosts(term: string, exact = false): Promise<QPost
   // it is Q-authored and none of it may reach the analysis index. See lib/pictureAnalysis.
   const picText = await getPictureTextByPost()
   const dateQuery = parseDateQuery(lower)
+  // A DELTA query — a bare month + day, no year ("Aug 28") — is a question about the CALENDAR:
+  // which drops were POSTED on this day, across every year of the archive. Text mentions are
+  // excluded by owner ruling 2026-08-28: today's-delta for Aug 28 showed a lone December post
+  // because its body happened to quote the date, and a delta that mixes "posted on Aug 28"
+  // with "mentions Aug 28" reads as wrong data. Month+year and full-date queries keep the
+  // combined behaviour — only the anniversary form is calendar-only.
+  if (dateQuery && dateQuery.month !== undefined && dateQuery.day !== undefined && dateQuery.year === undefined) {
+    const { posts } = await loadLocalData()
+    return posts.filter(p => dateMatches(p.timestamp, dateQuery))
+  }
   // Expand to the term's alias group so searching one name (e.g. "Hillary") also finds
   // posts using its other names ("Hillary Clinton", "HRC").
   const group = [...new Set([lower, ...getFullAliasGroup(term).map(t => t.toLowerCase().trim())])].filter(Boolean)
