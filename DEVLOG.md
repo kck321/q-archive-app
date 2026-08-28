@@ -8064,3 +8064,30 @@ and the Dashboard, PIN prompts, editing UI and AI tools are compiled OUT of the 
 installers, same as qdrops.app. Checked the built public bundle for the admin PIN string: the only
 "1624" occurrence is an image's naturalWidth in picture-analysis data — the PIN itself does not
 ship. No change needed; the release workflow already does this by design.
+
+## 2026-08-28 — XRP off, Support period, centered logo, museum sign, worksheets untracked
+
+**Request:** "take the xrp qr code and address off... it's a bankers coin and q is semi anti
+banker" / "in the support section i want the last sentence to have a period" / "i would also like
+our logo for the icon in this q drops area with the popcorn / drops inside the Q... centered in
+the column" / "yes lets proceed with your recommendations" (the legality review's #1 and #4).
+
+**Solution:** (1) The XRP wallet row, its QR asset and its import are deleted from
+`src/lib/donations.ts` — removed entirely rather than emptied, so the address can never resurface
+by accident; the never-resolved destination-tag question dies with it. (2) The Support "Thank You"
+paragraph splits its run-on: "...categories. Your feedback is appreciated..." per the owner's
+wording. (3) The sidebar header now renders the app icon itself (`icon-192-v2.png`, the popcorn
+bucket and DROPS wordmark inside the silver Q) at 96px, centered in the column with the subtitle
+and highlight toggle centered beneath — replacing the left-aligned text wordmark; the icon carries
+the wordmark so no text repeats beside it. (4) The Method page gains the "museum sign": a closing
+note stating Q Drops is an archival research resource, that displaying material is not endorsing
+it, and that rights-holders can request review/removal through Comments & Ideas — the good-faith
+takedown path the legality review recommended, placed where the methodology already lives. (5) The
+three editorial hover worksheets about named people (`entity-hover-review-queue.json`,
+`entity-hover-url-quarantine.json`, `entity-hover-withdrawn.json`) are `git rm --cached`-ed and
+gitignored: the site never serves them (vite's dev-only middleware refuses them under the public
+flag), but the repo is public for GitHub Pages, so tracking them published on GitHub the exact
+drafts the site withholds. The files stay on the owner's machine for the editorial workflow.
+Caveat recorded honestly: they remain reachable in OLD git history unless that is scrubbed with
+history-rewriting tools — forward removal was judged proportionate to the content (descriptive
+per-post usage notes, not editorial assertions), revisit if that judgement changes.
