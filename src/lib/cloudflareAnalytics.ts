@@ -19,7 +19,9 @@ const TOKEN = import.meta.env.VITE_CF_ANALYTICS_TOKEN as string | undefined
 export function initCloudflareAnalytics() {
   if (!IS_PUBLIC_SITE || !TOKEN) return
   const s = document.createElement('script')
-  s.defer = true
+  // type='module', exactly as Cloudflare's own install snippet ships it — modules are deferred
+  // by definition, and loading the file the way its authors serve it is the safe choice.
+  s.type = 'module'
   s.src = 'https://static.cloudflareinsights.com/beacon.min.js'
   s.setAttribute('data-cf-beacon', JSON.stringify({ token: TOKEN }))
   document.head.appendChild(s)
