@@ -1,5 +1,5 @@
 import { NavLink, Link, useLocation } from 'react-router-dom'
-import { useState, useCallback, Fragment } from 'react'
+import { useState, useCallback } from 'react'
 import { CAN_EDIT } from '../lib/appMode'
 import HighlightToggle from './HighlightToggle'
 // Owner ruling 2026-08-28: every category row carries its count, underneath the label. The
@@ -38,24 +38,25 @@ const CountedLabel = ({ label, count }: { label: string; count?: number }) => (
 // view for fixing them, not research. It is appended for the editing build only.
 const OVERLAPS_LINK = { tab: 'overlaps', label: '⚠ Overlaps', dot: 'bg-gray-500', color: 'text-yellow-500 hover:text-yellow-400', count: undefined as number | undefined }
 
-const analysisLinks = [
-  { tab: 'claims',            label: 'Q Claims',       dot: 'bg-gray-500',  color: 'text-amber-500 hover:text-amber-400', count: SECTION_TOTALS.claims.occurrences },
-  { tab: 'predictions',       label: 'Q Predictions',  dot: 'bg-gray-500', color: 'text-violet-500 hover:text-violet-400', count: SECTION_TOTALS.predictions.occurrences },
-  { tab: 'namedEntities',     label: 'Q Entities',     dot: 'bg-gray-500',   color: 'text-cyan-500 hover:text-cyan-400', count: SECTION_TOTALS.namedEntities.occurrences },
-  { tab: 'themes',            label: 'Q Themes',       dot: 'bg-gray-500', color: 'text-indigo-500 hover:text-indigo-400', count: SECTION_TOTALS.themes.occurrences },
-  // Q Conclusions retired as a section by owner ruling 2026-08-14: "implied conclusions ...
-  // is basically the same thing" as a Claim. All 966 were ALREADY certified Claims carrying
-  // isConclusion — the section was a second view of the same rows, so it is the view that goes,
-  // not the data. The attribute survives on claimMeta for provenance.
-
-  // Checkable Claims merged into Claims by owner ruling 2026-08-15. All 1,926 were ALREADY
-  // certified Claims — 0 needed adding, so nothing moved and nothing was double-counted. The
-  // `checkable` attribute survives on claimMeta for provenance; only the separate section goes.
-  // Q Emphasis retired by owner ruling 2026-08-21, and this time the DATA went with the view:
-  // "get rid of the emphasis category ... everything associated with it". A sentence carrying only
-  // an emphasis span used to read as highlighted to a coverage scan while the reader saw nothing.
-  ...(CAN_EDIT ? [OVERLAPS_LINK] : []),
-]
+// EVERY Q section in ONE list, ordered MOST → LEAST by certified count (owner ruling
+// 2026-08-28: "organize the categories on the left ... in order from most to least top
+// bottom"). The sort runs over the same constants the counts display, so a future
+// recertification reorders the sidebar by itself — the order can never contradict the
+// numbers printed under the labels. Questions/Directives/Brackets used to be hardcoded
+// rows outside this array, which is why the list mixes plain paths and /analysis tabs.
+//
+// Q Conclusions retired 2026-08-14 (a second view of certified Claims), Checkable Claims
+// merged into Claims 2026-08-15, Q Emphasis retired with its data 2026-08-21 — see git
+// history for the full rulings.
+const categoryLinks = [
+  { key: 'questions',     label: 'Q Questions',    color: 'text-blue-500 hover:text-blue-400',     count: CERTIFIED.questions.occurrences,       to: '/questions',                    tab: null },
+  { key: 'requests',      label: 'Q Directives',   color: 'text-green-500 hover:text-green-400',   count: CERTIFIED.directives.occurrences,      to: '/requests',                     tab: null },
+  { key: 'claims',        label: 'Q Claims',       color: 'text-amber-500 hover:text-amber-400',   count: SECTION_TOTALS.claims.occurrences,     to: '/analysis?tab=claims',          tab: 'claims' },
+  { key: 'predictions',   label: 'Q Predictions',  color: 'text-violet-500 hover:text-violet-400', count: SECTION_TOTALS.predictions.occurrences, to: '/analysis?tab=predictions',    tab: 'predictions' },
+  { key: 'namedEntities', label: 'Q Entities',     color: 'text-cyan-500 hover:text-cyan-400',     count: SECTION_TOTALS.namedEntities.occurrences, to: '/analysis?tab=namedEntities', tab: 'namedEntities' },
+  { key: 'themes',        label: 'Q Themes',       color: 'text-indigo-500 hover:text-indigo-400', count: SECTION_TOTALS.themes.occurrences,     to: '/analysis?tab=themes',          tab: 'themes' },
+  { key: 'brackets',      label: 'Q [ Brackets ]', color: 'text-red-500 hover:text-red-400',       count: CODES_INFO.occurrences,                to: '/brackets',                     tab: null },
+].sort((a, b) => b.count - a.count)
 
 // EXTRAS — collapsed by owner ruling 2026-08-23. Everything here is a reference tool or a
 // page about the site rather than one of the certified analysis sections, so the sidebar
@@ -150,72 +151,43 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
           </NavLink>
         ))}
 
-        {/* Q Questions — above Q Claims */}
-        <NavLink
-          to="/questions"
-          end
-          onClick={() => flash('questions')}
-          className={({ isActive }) =>
-            itemCls(isActive && !activeStatus, 'text-blue-500 hover:text-blue-400', flashKey, 'questions')
-          }
-        >
-          <span className="w-2 h-2 rounded-full shrink-0 bg-gray-500" />
-          <CountedLabel label="Q Questions" count={CERTIFIED.questions.occurrences} />
-        </NavLink>
-
-        {/* Q Directives — same level as Q Questions */}
-        <NavLink
-          to="/requests"
-          onClick={() => flash('requests')}
-          className={({ isActive }) =>
-            itemCls(isActive, 'text-green-500 hover:text-green-400', flashKey, 'requests')
-          }
-        >
-          <span className="w-2 h-2 rounded-full shrink-0 bg-gray-500" />
-          <CountedLabel label="Q Directives" count={CERTIFIED.directives.occurrences} />
-        </NavLink>
-
-        {/* Analysis category links */}
-        {analysisLinks.map(a => {
-          const isActive = location.pathname === '/analysis' && activeTab === a.tab
-          const fkey = `an-${a.tab}`
+        {/* Every Q section, most → least. One map over the pre-sorted list — the three
+            hardcoded blocks this replaces are what made the old order arbitrary. */}
+        {categoryLinks.map(c => {
+          const isActive = c.tab
+            ? location.pathname === '/analysis' && activeTab === c.tab
+            // The Questions row keeps its old quirk: a ?status= view of /questions is a
+            // different screen, so the row does not read as active there.
+            : location.pathname === c.to && (c.key !== 'questions' || !activeStatus)
+          const fkey = c.tab ? `an-${c.tab}` : c.to
           return (
-            <Fragment key={a.tab}>
-              <NavLink
-                to={`/analysis?tab=${a.tab}`}
-                onClick={() => flash(fkey)}
-                className={itemCls(isActive, a.color, flashKey, fkey)}
-              >
-                <span className={`w-2 h-2 rounded-full shrink-0 ${a.dot}`} />
-                <CountedLabel label={a.label} count={a.count} />
-              </NavLink>
-              {a.tab === 'emphasis' && (
-                <NavLink
-                  to="/pics"
-                  onClick={() => flash('/pics')}
-                  className={({ isActive: pa }) =>
-                    itemCls(pa, 'text-teal-400 hover:text-teal-300', flashKey, '/pics')
-                  }
-                >
-                  <span className="w-2 h-2 rounded-full shrink-0 bg-gray-500" />
-                  Q Post Pics
-                </NavLink>
-              )}
-              {a.tab === 'namedEntities' && (
-                <NavLink
-                  to="/brackets"
-                  onClick={() => flash('/brackets')}
-                  className={({ isActive: ba }) =>
-                    itemCls(ba, 'text-red-500 hover:text-red-400', flashKey, '/brackets')
-                  }
-                >
-                  <span className="w-2 h-2 rounded-full shrink-0 bg-gray-500" />
-                  <CountedLabel label="Q [ Brackets ]" count={CODES_INFO.occurrences} />
-                </NavLink>
-              )}
-            </Fragment>
+            <NavLink
+              key={c.key}
+              to={c.to}
+              onClick={() => flash(fkey)}
+              className={itemCls(isActive, c.color, flashKey, fkey)}
+            >
+              <span className="w-2 h-2 rounded-full shrink-0 bg-gray-500" />
+              <CountedLabel label={c.label} count={c.count} />
+            </NavLink>
           )
         })}
+
+        {/* Overlaps — a data-quality view, editing build only, below the ranked sections. */}
+        {CAN_EDIT && (() => {
+          const isActive = location.pathname === '/analysis' && activeTab === OVERLAPS_LINK.tab
+          const fkey = `an-${OVERLAPS_LINK.tab}`
+          return (
+            <NavLink
+              to={`/analysis?tab=${OVERLAPS_LINK.tab}`}
+              onClick={() => flash(fkey)}
+              className={itemCls(isActive, OVERLAPS_LINK.color, flashKey, fkey)}
+            >
+              <span className={`w-2 h-2 rounded-full shrink-0 ${OVERLAPS_LINK.dot}`} />
+              <CountedLabel label={OVERLAPS_LINK.label} count={OVERLAPS_LINK.count} />
+            </NavLink>
+          )
+        })()}
 
         {/* Extras — one row that folds the reference tools and the about-the-site pages away.
             stopPropagation because <nav> closes the mobile drawer on any click, and toggling

@@ -83,6 +83,22 @@ function MonthPostsPanel({ month, posts, loading, onClose }: {
 // the one on Analysis, different markup, different wording, and free to drift from it. Both pages
 // now render MonthTooltip from components/MonthFilter, which is the point of that module.
 
+// Certified totals per category — the figures under each tab label AND the strip's own order.
+// Read from sectionInfo's constants (never recounted), same as the sidebar and section headers.
+const TAB_COUNTS: Record<string, number> = {
+  questions:     CERTIFIED.questions.occurrences,
+  requests:      CERTIFIED.directives.occurrences,
+  claims:        SECTION_TOTALS.claims.occurrences,
+  predictions:   SECTION_TOTALS.predictions.occurrences,
+  namedEntities: SECTION_TOTALS.namedEntities.occurrences,
+  themes:        SECTION_TOTALS.themes.occurrences,
+  brackets:      CODES_INFO.occurrences,
+}
+
+// Ordered MOST → LEAST, left to right (owner ruling 2026-08-28), by the same certified counts
+// the tabs display — so the strip's order matches the sidebar's and can never contradict the
+// numbers it shows. The sort runs once at module load over the constants above; a future
+// recertification reorders both surfaces by itself.
 const CHART_TABS: { key: string; label: string; dataKey: string; color: string; dimColor: string; to: string }[] = [
   { key: 'questions',          label: 'Q Questions',   dataKey: 'questions',          color: '#3b82f6', dimColor: '#1e3a5f', to: '/questions' },
   { key: 'requests',           label: 'Q Directives',    dataKey: 'requests',           color: '#22c55e', dimColor: '#14532d', to: '/requests' },
@@ -91,7 +107,7 @@ const CHART_TABS: { key: string; label: string; dataKey: string; color: string; 
   { key: 'namedEntities',      label: 'Q Entities',    dataKey: 'namedEntities',      color: '#0891b2', dimColor: '#164e63', to: '/analysis?tab=namedEntities' },
   { key: 'brackets',           label: 'Q [ Brackets ]', dataKey: 'brackets',          color: '#dc2626', dimColor: '#7f1d1d', to: '/brackets' },
   { key: 'themes',             label: 'Q Themes',      dataKey: 'themes',             color: '#6366f1', dimColor: '#312e81', to: '/analysis?tab=themes' },
-]
+].sort((a, b) => (TAB_COUNTS[b.key] ?? 0) - (TAB_COUNTS[a.key] ?? 0))
 
 
 /**
@@ -730,16 +746,9 @@ export default function PostArchive() {
   // one true count. Same rule as the AnalysisArchive header and the sidebar: read the certified
   // constant, so this strip, the sidebar, and the section pages can never drift apart again.
   // (The chart BARS keep their per-month detected counts — they show distribution over time,
-  // and the certified artifacts do not carry per-month figures.)
-  const tabCounts: Record<string, number | null> = {
-    questions:          CERTIFIED.questions.occurrences,
-    requests:           CERTIFIED.directives.occurrences,
-    claims:             SECTION_TOTALS.claims.occurrences,
-    predictions:        SECTION_TOTALS.predictions.occurrences,
-    namedEntities:      SECTION_TOTALS.namedEntities.occurrences,
-    themes:             SECTION_TOTALS.themes.occurrences,
-    brackets:           CODES_INFO.occurrences,
-  }
+  // and the certified artifacts do not carry per-month figures.) The map itself now lives at
+  // module level as TAB_COUNTS, because the strip's ORDER is derived from it too.
+  const tabCounts: Record<string, number | null> = TAB_COUNTS
 
 
   // OWNER RULING, 2026-08-25: an open month fills the reading list too. The chips grid names
