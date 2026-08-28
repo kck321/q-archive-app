@@ -7889,3 +7889,21 @@ chart fills the panel width.
 so the buttons center over the chart at every width (the row already wraps with `flex-wrap`).
 Post Archive only — the Dashboard has its own simpler strip, left untouched pending a ruling.
 Held locally for batch review on the editorial server; not deployed.
+
+## 2026-08-28 — Sidebar: grey dot on Support, certified counts under every category
+
+**Request:** "can we take the heart away from the support section and put the same grey dot. also
+in the left hand column with all the categories can we go ahead and put the number count for each
+category underneath each one."
+
+**Solution:** `Sidebar.tsx` only. The ❤️ on Support gives way to the same `w-2 h-2` grey dot every
+Q section row carries (the Sidebar's own Q Extras comment already argued this reads as one of the
+archive's rows rather than a bolted-on utility — Support now follows the same rule). A shared
+`CountedLabel` helper renders each category label with its count underneath in small grey
+tabular-nums text: Post Archive 4,966, Questions 6,327, Directives 3,333, Claims 10,219,
+Predictions 950, Entities 9,837 mentions, Brackets 1,986, Themes 2,685. Every figure is READ from
+`sectionInfo.ts`'s certified constants (`CERTIFIED`/`SECTION_TOTALS`/`CODES_INFO`) per the
+NEVER_RECOUNT_RULE — the sidebar shows exactly the numbers each destination page headlines, which
+deliberately differ from the Post Archive chart tab strip (that strip sums the timeline series, a
+different measurement). Overlaps (edit-build-only) carries no count. Verified by screenshot on the
+dev server before validating.
