@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo, useRef } from 'react'
 import SectionInfo from '../components/SectionInfo'
-import { useEvidenceChips, mergeRowChips, type RowChip } from '../components/RowEvidenceChips'
+import { useEvidenceChips, visibleRowChips, type RowChip } from '../components/RowEvidenceChips'
 import { Link, useSearchParams } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import SearchBar from '../components/SearchBar'
@@ -65,8 +65,7 @@ function RequestChips({ item, monthPostNums, hoverPostNums, flashMonth, expanded
     }
   })
   const evidenceChips = useEvidenceChips(item.text, item.postNums, '&rk=request')
-  const merged = mergeRowChips(certifiedChips, evidenceChips)
-  const shown = expanded ? merged : merged.slice(0, chipsCap)
+  const { shown, merged } = visibleRowChips(certifiedChips, evidenceChips, chipsCap, expanded)
   return (
     <div className="flex flex-wrap gap-1.5">
       {shown.map(c => c.node)}

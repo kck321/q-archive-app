@@ -11,7 +11,7 @@ import {
 } from '../lib/posts'
 import { getAliasesFor, getAliasGroup, getAliasSet, getCertifiedEntityAliasSet, getCertifiedEntities, getEntityPublicView, subscribeAliases, displayAlias, type SourceKind } from '../lib/aliases'
 import PostCard from '../components/PostCard'
-import { useEvidenceChips, mergeRowChips, type RowChip } from '../components/RowEvidenceChips'
+import { useEvidenceChips, visibleRowChips, type RowChip } from '../components/RowEvidenceChips'
 import ReaderSentinel from '../components/ReaderSentinel'
 import { loadLocalData } from '../lib/localData'
 import type { QPost } from '../types'
@@ -192,8 +192,7 @@ function ItemChipRow({
   // discarding its result when not shown) keeps the Rules of Hooks call order stable regardless
   // of which category is active.
   const evidenceChips = useEvidenceChips(item.text, monthChips.map(c => c.num), `&cat=${item.category}`)
-  const merged = showEvidence ? mergeRowChips(certifiedChips, evidenceChips) : certifiedChips
-  const shown = expanded ? merged : merged.slice(0, chipsCap)
+  const { shown, merged } = visibleRowChips(certifiedChips, showEvidence ? evidenceChips : [], chipsCap, expanded)
   return (
     <div className="flex flex-wrap gap-1 mb-2">
       {shown.map(c => c.node)}

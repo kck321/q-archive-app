@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo, useRef } from 'react'
 import SectionInfo from '../components/SectionInfo'
-import { useEvidenceChips, mergeRowChips, type RowChip } from '../components/RowEvidenceChips'
+import { useEvidenceChips, visibleRowChips, type RowChip } from '../components/RowEvidenceChips'
 import { Link, useSearchParams } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import { getAllPosts, makeTermMatcher } from '../lib/posts'
@@ -76,8 +76,7 @@ function BracketChips({ entry, monthPostNums, hoverPostNums, flashMonth, expande
     }
   })
   const evidenceChips = useEvidenceChips(entry.code, entry.postNums, '&rk=bracket')
-  const merged = mergeRowChips(certifiedChips, evidenceChips)
-  const shown = expanded ? merged : merged.slice(0, chipsCap)
+  const { shown, merged } = visibleRowChips(certifiedChips, evidenceChips, chipsCap, expanded)
   return (
     <div className="flex flex-wrap gap-1.5">
       {shown.map(c => c.node)}

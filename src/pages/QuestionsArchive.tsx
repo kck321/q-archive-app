@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState, useRef } from 'react'
 import SectionInfo from '../components/SectionInfo'
-import { useEvidenceChips, mergeRowChips, type RowChip } from '../components/RowEvidenceChips'
+import { useEvidenceChips, visibleRowChips, type RowChip } from '../components/RowEvidenceChips'
 import { Link, useSearchParams } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import { makeTermMatcher, normalizeItemKey, getQuestionFrequency, getQuestionsTimeline, getPostNumsByMonth, mergeSimilarQuestions, type QuestionFrequency, type SimilarGroup } from '../lib/posts'
@@ -116,8 +116,7 @@ function QuestionCard({ r, selectedNums, hoverNums, flashNums, rank, monthOf }: 
     ),
   }))
   const evidenceChips = useEvidenceChips(r.text, nums, '&rk=question')
-  const merged = mergeRowChips(certifiedChips, evidenceChips)
-  const shown = expanded ? merged : merged.slice(0, CHIPS)
+  const { shown, merged } = visibleRowChips(certifiedChips, evidenceChips, CHIPS, expanded)
   return (
     <div className="bg-q-panel border border-q-border rounded-xl p-4">
       <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3">

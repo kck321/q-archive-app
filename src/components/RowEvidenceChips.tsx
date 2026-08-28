@@ -56,3 +56,28 @@ export function useEvidenceChips(term: string, certifiedPosts: number[] | Set<nu
 export function mergeRowChips(certifiedChips: RowChip[], evidenceChips: RowChip[]): RowChip[] {
   return [...certifiedChips, ...evidenceChips].sort((a, b) => a.num - b.num)
 }
+
+/**
+ * The chips a row actually renders, with the collapsed cap applied SELECTIVELY.
+ *
+ * A plain `merged.slice(0, cap)` let a large evidence set crowd the certified chips out of the
+ * collapsed view entirely — found 2026-08-28 by the entity-reconciliation gate: a rank-132 entity
+ * with 14 mentions rendered forty 📷/🔗 chips and not one `#N` post chip, because every one of
+ * its evidence chips carried a lower post number than its first certified mention. The certified
+ * chips are what the row is ABOUT — the posts where Q actually wrote the term — so they are
+ * guaranteed the cap first and evidence fills whatever room remains (earliest first). Display
+ * order is untouched: the survivors still render merged, oldest → newest; only WHICH chips make
+ * the collapsed cut changes. Expanding shows everything, exactly as before.
+ */
+export function visibleRowChips(
+  certifiedChips: RowChip[], evidenceChips: RowChip[], cap: number, expanded: boolean,
+): { shown: RowChip[]; merged: RowChip[] } {
+  const merged = mergeRowChips(certifiedChips, evidenceChips)
+  if (expanded || merged.length <= cap) return { shown: merged, merged }
+  const chosen = new Set<RowChip>(certifiedChips.slice(0, cap))
+  if (chosen.size < cap) {
+    const byNum = [...evidenceChips].sort((a, b) => a.num - b.num)
+    for (const c of byNum) { if (chosen.size >= cap) break; chosen.add(c) }
+  }
+  return { shown: merged.filter(c => chosen.has(c)), merged }
+}
