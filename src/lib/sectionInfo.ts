@@ -405,9 +405,10 @@ export const SIDEBAR_RANK: Record<string, number> = {
   sources: -6,
   resources: -7,
   editorial: -9,
-  // Emphasis is deliberately NOT keyed here (cross-section invariant headline-emphasis-gone
-  // scans this file for any emphasis: row): unknown keys fall to the comparator's -100
-  // floor, so the retired section sorts last wherever a residue of it still renders.
+  // The retired Emphasis section is deliberately NOT keyed here — the cross-section
+  // invariant headline-emphasis-gone scans this file for any such key (comments included).
+  // Unknown keys fall to the comparator's -100 floor, so it sorts last anywhere a residue
+  // of it still renders.
 }
 
 /** Comparator for any list of section keys/ids — sorts into sidebar order. */

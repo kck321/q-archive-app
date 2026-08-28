@@ -173,8 +173,8 @@
  ],
  "totals": {
   "invariants": 222,
-  "passed": 222,
-  "failed": 0
+  "passed": 221,
+  "failed": 1
  },
  "results": [
   {
@@ -762,7 +762,7 @@
    "group": "9. UI count integrity",
    "id": "headline-emphasis-gone",
    "description": "SECTION_TOTALS carries no Emphasis row",
-   "pass": true,
+   "pass": false,
    "detail": "ok"
   },
   {

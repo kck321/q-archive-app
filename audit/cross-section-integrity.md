@@ -6,7 +6,7 @@ One question: does every certified occurrence in every section still resolve to 
 This audit validates the certified system. It reclassifies nothing and moves no count. All eight analytical sections remain frozen.
 
 
-**222 of 222 invariants pass.**
+**221 of 222 invariants pass.**
 
 
 ## 1. Frozen canonical counts
@@ -136,7 +136,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | sectionInfo offers no Emphasis section | ok |
 | ✅ | Claims headline = certified 8,928 / 3,084 | ok |
 | ✅ | Predictions headline = certified 950 / 672 | ok |
-| ✅ | SECTION_TOTALS carries no Emphasis row | ok |
+| ❌ | SECTION_TOTALS carries no Emphasis row | ok |
 | ✅ | Entities headline = certified mentions / 2,178 posts | ok |
 | ✅ | Themes headline = certified 2,644 assignments | ok |
 | ✅ | the archive header reads SECTION_TOTALS rather than the frequency index | ok |
@@ -336,3 +336,7 @@ Overlap is allowed only where two sections answer different analytical questions
 | questions ↔ directives | 228 | An information request ("Define X.") is grammatically an instruction and functionally a question. Each section asks a different thing of the same unit. | directiveWrapped / semanticFunction on the question row |
 | codes ↔ entities | 32 | Entities asks who is referenced; Codes asks how Q marked the reference. "HRC" and "[HRC]" are different analytical objects. | linkedEntityId on the code |
 | claims ↔ predictions | measured | Both are assertions and share storage; displayClass decides which section shows a unit. The combined figure appears only where labelled combined. | claimMeta.semanticFamily = assertion, claimMeta.displayClass |
+
+## Failures
+
+- **9. UI count integrity — SECTION_TOTALS carries no Emphasis row**: ok
