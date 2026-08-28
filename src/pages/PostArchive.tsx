@@ -2,7 +2,7 @@ import { useEffect, useState, useMemo, useRef } from 'react'
 import {  Link, useSearchParams } from 'react-router-dom'
 import { getFullAliasGroup, subscribeAliases } from '../lib/aliases'
 import { SEARCHED_CHIP, assignAliasColors } from '../lib/aliasColors'
-import { countPhraseOccurrences, normalizeItemKey, countPostsOnMonthDay, parseDateQuery, getTermPresence, type TermPresence, getPosts, searchAllPosts, getQuestionsForPosts, addManualQuestion, getQuestionsTimeline, getPostNumsByMonth, getPostsByNums, getStats, countPostsWithBrackets, getBracketsByMonth } from '../lib/posts'
+import { countPhraseOccurrences, normalizeItemKey, countPostsOnMonthDay, parseDateQuery, getTermPresence, type TermPresence, getPosts, searchAllPosts, getQuestionsForPosts, addManualQuestion, getQuestionsTimeline, getPostNumsByMonth, getPostsByNums, getStats, getBracketsByMonth } from '../lib/posts'
 import PostCard from '../components/PostCard'
 import type { QPost } from '../types'
 import {
@@ -20,6 +20,7 @@ import { getPictureTextByPost } from '../lib/pictureAnalysis'
 import { catColor, seriesColor } from '../lib/categoryColors'
 import { resolveRef } from '../lib/refIndex'
 import { CAN_EDIT, IS_PUBLIC_SITE } from '../lib/appMode'
+import { CERTIFIED, SECTION_TOTALS, CODES_INFO } from '../lib/sectionInfo'
 
 function gradientColor(count: number, maxCount: number, dark = false): string {
   if (count === 0 || maxCount === 0) return dark ? '#14532d' : '#1f2937'
@@ -155,7 +156,6 @@ export default function PostArchive() {
 
   // Stats
   const [stats, setStats] = useState<{ totalPosts: number; totalQuestions: number; greenCount: number; yellowCount: number; redCount: number } | null>(null)
-  const [bracketCount, setBracketCount] = useState<number | null>(null)
 
   // Sort direction
   // Newest first: the archive opens on the most recent drops rather than October 2017.
@@ -215,7 +215,6 @@ export default function PostArchive() {
       setTimeline(tl.map(e => ({ ...e, brackets: bm[e.month] ?? 0 }))))
     getPostNumsByMonth().then(setPostNumsByMonth)
     getStats().then(setStats)
-    countPostsWithBrackets().then(setBracketCount)
   }, [])
 
   // Auto-run search from URL params (restores state when navigating back)
@@ -490,17 +489,6 @@ export default function PostArchive() {
     return idx < 0 ? null : (idx + 0.5) / timeline.length
   }, [chartMatchMonths, timeline])
 
-  const analysisTotals = useMemo(() => {
-    if (timeline.length === 0) return null
-    return timeline.reduce((acc, e) => ({
-      requests: acc.requests + e.requests,
-      claims: acc.claims + e.claims,
-      predictions: acc.predictions + e.predictions,
-      namedEntities: acc.namedEntities + e.namedEntities,
-      themes: acc.themes + e.themes,
-    }), { requests: 0, claims: 0, predictions: 0, namedEntities: 0, themes: 0 })
-  }, [timeline])
-
   // Phone-sized screens get a PINNED tooltip (see the Tooltip props below).
   const [isNarrow, setIsNarrow] = useState(() =>
     typeof window !== 'undefined' && window.matchMedia('(max-width: 639px)').matches)
@@ -731,15 +719,26 @@ export default function PostArchive() {
     return { aliasColor: colorOf, postColor: byPost }
   }, [searchResults, searchTerm])
 
-  // Total connections per category — shown under each chart tab label.
+  // Total per category, shown under each chart tab label — CERTIFIED figures, never recounted.
+  //
+  // These used to be sums over the timeline index and raw post arrays, and every one of them
+  // disagreed with the number its own destination page headlines: Questions showed shipped ROWS
+  // (6,643, superseded records included) against the certified 6,327; Claims/Predictions/
+  // Entities counted distinct texts per post so in-post repeats vanished (10,112 against
+  // 10,219); Brackets counted POSTS containing a bracket (1,018) against 1,986 occurrences.
+  // The owner saw the sidebar (certified) and this strip disagree on 2026-08-28 and ruled for
+  // one true count. Same rule as the AnalysisArchive header and the sidebar: read the certified
+  // constant, so this strip, the sidebar, and the section pages can never drift apart again.
+  // (The chart BARS keep their per-month detected counts — they show distribution over time,
+  // and the certified artifacts do not carry per-month figures.)
   const tabCounts: Record<string, number | null> = {
-    questions:          stats?.totalQuestions ?? null,
-    requests:           analysisTotals?.requests ?? null,
-    claims:             analysisTotals?.claims ?? null,
-    predictions:        analysisTotals?.predictions ?? null,
-    namedEntities:      analysisTotals?.namedEntities ?? null,
-    themes:             analysisTotals?.themes ?? null,
-    brackets:           bracketCount,
+    questions:          CERTIFIED.questions.occurrences,
+    requests:           CERTIFIED.directives.occurrences,
+    claims:             SECTION_TOTALS.claims.occurrences,
+    predictions:        SECTION_TOTALS.predictions.occurrences,
+    namedEntities:      SECTION_TOTALS.namedEntities.occurrences,
+    themes:             SECTION_TOTALS.themes.occurrences,
+    brackets:           CODES_INFO.occurrences,
   }
 
 

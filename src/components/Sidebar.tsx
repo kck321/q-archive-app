@@ -18,12 +18,15 @@ const links = [
 
 ]
 
-/** The label with its certified count underneath — the shape every category row shares. */
+/** The label with its certified count underneath — the shape every category row shares.
+    Owner ruling 2026-08-28: the count wears the CATEGORY'S OWN COLOR (inherited from the row,
+    so it also brightens on hover exactly as the label does) and sits centered under the label,
+    not grey and left-flushed. */
 const CountedLabel = ({ label, count }: { label: string; count?: number }) => (
   <span className="flex flex-col leading-tight">
     <span>{label}</span>
     {count !== undefined && (
-      <span className="text-[10px] text-gray-500 font-normal tabular-nums">{count.toLocaleString()}</span>
+      <span className="self-center text-[10px] font-normal tabular-nums opacity-90">{count.toLocaleString()}</span>
     )}
   </span>
 )
