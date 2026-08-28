@@ -7962,3 +7962,18 @@ and count together) and is centered under the label via `self-center`, replacing
 left-flushed rendering. Verified in the browser: all seven categories read identically in the
 sidebar and the strip (6,327 / 3,333 / 10,219 / 950 / 9,837 / 1,986 / 2,685), each count centered
 in its category color.
+
+## 2026-08-28 — A delta query is calendar-only
+
+**Request:** "how come for todays deltas i see one in december? it should only reflect what post
+were laid out on the current day across the whole timeline of the qpost."
+
+**Solution:** `searchAllPosts` treated a parsed date query as one more way to match — a post
+qualified if it was POSTED on that month/day of any year OR if its searchable text (body,
+attachment filenames, quoted material, picture-analysis text) merely contained the date string.
+For "Aug 28" that admitted one Dec 2018 post whose body quotes the date, so the chart said "39
+posts matched" against the delta banner's certified 38, with a stray green chip on December. By
+owner ruling the anniversary form (bare month + day, no year) is now calendar-only: it returns
+exactly the posts published on that day across the years. Month+year and full-date query forms
+keep the combined date-or-text behaviour. Verified in the browser: the Aug 28 delta now reads 38
+posts matched, agreeing with the banner, December chip gone.
