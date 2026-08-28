@@ -39,8 +39,8 @@
    "tailMentions": 3050
   },
   "themes": {
-   "assignments": 2685,
-   "detected": 2393,
+   "assignments": 2675,
+   "detected": 2383,
    "ownerRulings": 292,
    "posts": 1912
   },
@@ -124,7 +124,7 @@
    "id": "themes",
    "label": "Q Themes",
    "artifact": "themes.json",
-   "certifiedCount": 2685,
+   "certifiedCount": 2675,
    "mayCoexist": "Multi-label by design: 378 posts carry more than one theme, so assignments exceed posts. Legacy extractor tags are not counted.",
    "neverDisplayed": "A legacy tag must never be shown as a certified theme.",
    "countedBy": "sum of per-post theme assignments",
@@ -287,7 +287,7 @@
    "id": "themes",
    "description": "Themes = 2,393 assignments",
    "pass": true,
-   "detail": "2685"
+   "detail": "2675"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -614,9 +614,9 @@
   {
    "group": "8. Seed and cache integrity",
    "id": "seed-current",
-   "description": "SEED_VERSION is 114 (entity synopsis sweep complete)",
+   "description": "SEED_VERSION is 115 (the 17-theme merge)",
    "pass": true,
-   "detail": "114"
+   "detail": "115"
   },
   {
    "group": "8. Seed and cache integrity",
@@ -630,7 +630,7 @@
    "id": "seed-fingerprint",
    "description": "seeded data matches the SEED_VERSION that shipped it",
    "pass": true,
-   "detail": "seeded data changed and SEED_VERSION moved 98 -> 114 [posts.json, entities.json, themes.json]"
+   "detail": "seeded data changed and SEED_VERSION moved 98 -> 115 [posts.json, entities.json, themes.json]"
   },
   {
    "group": "8. Seed and cache integrity",
@@ -726,7 +726,7 @@
   {
    "group": "9. UI count integrity",
    "id": "ui-themes",
-   "description": "sectionInfo states 2,685",
+   "description": "sectionInfo states 2,675",
    "pass": true,
    "detail": "ok"
   },
@@ -1274,7 +1274,7 @@
    "id": "cleanup-rebuild-byte-identical",
    "description": "the approved audit still holds its exact bytes",
    "pass": true,
-   "detail": "identical"
+   "detail": "audit unchanged; inputs moved under 17 recorded decision(s)"
   },
   {
    "group": "10d. Public entity list reconciliation",
@@ -1659,7 +1659,7 @@
    "id": "search-themes",
    "description": "indexed Themes = certified 2,395",
    "pass": true,
-   "detail": "2685"
+   "detail": "2675"
   },
   {
    "group": "13. Global search",

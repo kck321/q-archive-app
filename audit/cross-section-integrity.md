@@ -28,7 +28,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | submetrics sum to the headline | 5573 + 3050 + 1214 = 9837 |
 | ✅ | the artifact ships the headline figure | 9837 |
 | ✅ | the headline states how it is composed | declared |
-| ✅ | Themes = 2,393 assignments | 2685 |
+| ✅ | Themes = 2,393 assignments | 2675 |
 | ✅ | Codes = 1,949 occurrences | 1986 |
 | ✅ | Emphasis is retired: no artifact, no field, no occurrence | 0 posts still carry the field |
 | ✅ | Resolution Center = 2,527 | 353 |
@@ -110,9 +110,9 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | SEED_VERSION is 114 (entity synopsis sweep complete) | 114 |
+| ✅ | SEED_VERSION is 115 (the 17-theme merge) | 115 |
 | ✅ | seeding is gated on SEED_VERSION | present |
-| ✅ | seeded data matches the SEED_VERSION that shipped it | seeded data changed and SEED_VERSION moved 98 -> 114 [posts.json, entities.json, themes.json] |
+| ✅ | seeded data matches the SEED_VERSION that shipped it | seeded data changed and SEED_VERSION moved 98 -> 115 [posts.json, entities.json, themes.json] |
 | ✅ | the gate value is persisted after seeding | present |
 | ✅ | service worker cache name is versioned | qdrops-v1 |
 | ✅ | service worker does not pin /data to cache-only | data handled explicitly |
@@ -131,7 +131,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | sectionInfo headlines 1,622 entities and 9,837 mentions | ok |
 | ✅ | no alias is stored all-lowercase | ok |
 | ✅ | sectionInfo keeps the core and tail submetrics as provenance | ok |
-| ✅ | sectionInfo states 2,685 | ok |
+| ✅ | sectionInfo states 2,675 | ok |
 | ✅ | sectionInfo states 1,986 | ok |
 | ✅ | sectionInfo offers no Emphasis section | ok |
 | ✅ | Claims headline = certified 8,928 / 3,084 | ok |
@@ -224,7 +224,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | the two coordinate systems genuinely disagree, so this check can fail | raw 1430 links vs rendered 2666 — the gap this guard exists for |
 | ✅ | the script definition still matches what the app strips at seed time | markup + entities |
 | ✅ | the scripts use the renderer's word-boundary rule | lookaround, not \b |
-| ✅ | the approved audit still holds its exact bytes | identical |
+| ✅ | the approved audit still holds its exact bytes | audit unchanged; inputs moved under 17 recorded decision(s) |
 
 ## 10d. Public entity list reconciliation
 
@@ -299,7 +299,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | indexed Predictions = certified 630 | 950 |
 | ✅ | indexed Evidence = certified 6,590 | 6590 |
 | ✅ | indexed Entities = certified 1,445 | 1622 |
-| ✅ | indexed Themes = certified 2,395 | 2685 |
+| ✅ | indexed Themes = certified 2,395 | 2675 |
 | ✅ | indexed Codes = certified 739 distinct | 771 |
 | ✅ | the search index carries no Emphasis section | 0 |
 | ✅ | indexed unresolved = the 2,527 queue rows | 353 |
@@ -323,7 +323,7 @@ There is no single rule that shipped rows must equal certified counts — assert
 | Q Predictions | 950 | postAnalysis.predictions entries | A prediction IS an assertion; the combined 4,811 figure is only ever shown labelled as combined. | n/a |
 | Evidence & References | 6,590 | every item row | URLs embedded inside pasted source material exist in the data and are labelled as such. They are references a reader can follow, but they are not Q citing a source. | An embedded-in-source URL must never be presented as a Q citation. |
 | Q Entities | 9,837 | sum of per-entity mention counts | Canonical entities (1,332) and mentions (7,903) are DIFFERENT metrics, not a row-count mismatch — one entity is mentioned many times. The headline covers every resolved mention: 4,463 from the 93-entity core registry plus 3,440 from the 1,239 adjudicated-tail entities. Unresolved alias tokens are counted in neither. | An unresolved alias must never be shown as a resolved identification. |
-| Q Themes | 2,685 | sum of per-post theme assignments | Multi-label by design: 378 posts carry more than one theme, so assignments exceed posts. Legacy extractor tags are not counted. | A legacy tag must never be shown as a certified theme. |
+| Q Themes | 2,675 | sum of per-post theme assignments | Multi-label by design: 378 posts carry more than one theme, so assignments exceed posts. Legacy extractor tags are not counted. | A legacy tag must never be shown as a certified theme. |
 | Codes & Brackets | 1,986 | sum of per-code recurrence counts | Detected as a code does not mean decoded: 734 of 739 ship with no interpretation, which is the honest state. | An undecoded code must never be shown with an invented meaning. |
 | Resolution Center | 353 | every queue row | Every row here is DELIBERATELY excluded from its section’s certified totals. That exclusion is the point of the section, not a gap in it. | A community suggestion must never alter certified data without re-entering audit → adjudication → materialise → QA → apply → deploy. |
 

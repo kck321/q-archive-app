@@ -505,7 +505,10 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   // 114 carries tier 5, the source-only entities (mentions: 0, cited only via URL/source
   // metadata) that every mentions-based tier query had missed — the sweep's final gap. A reader
   // stuck on 113 would keep showing no hover at all for those 132 entities.
-  t('seed-current', 'SEED_VERSION is 114 (entity synopsis sweep complete)', seed === 114, seed)
+  // 115 carries the 17-theme merge (Justice & Courts -> Law Enforcement & Justice, owner ruling
+  // 2026-08-28). themes.json and posts.json both changed, so a reader stuck on 114 would keep
+  // the 18-theme taxonomy and the two old labels while the archive certifies 17 and one.
+  t('seed-current', 'SEED_VERSION is 115 (the 17-theme merge)', seed === 115, seed)
   t('seed-gate', 'seeding is gated on SEED_VERSION', /seeded === SEED_VERSION/.test(localData), 'present')
 
   // THE GUARD THAT WOULD HAVE SAVED THREE ROUND TRIPS. Changing seeded data without bumping the
