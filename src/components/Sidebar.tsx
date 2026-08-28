@@ -2,9 +2,14 @@ import { NavLink, Link, useLocation } from 'react-router-dom'
 import { useState, useCallback, Fragment } from 'react'
 import { CAN_EDIT } from '../lib/appMode'
 import HighlightToggle from './HighlightToggle'
+// Owner ruling 2026-08-28: every category row carries its count, underneath the label. The
+// figures are READ from sectionInfo's certified constants, never recounted here — the same
+// NEVER_RECOUNT_RULE the section headers follow, and the same numbers each destination page
+// headlines, so the sidebar can never disagree with the page it opens.
+import { CERTIFIED, SECTION_TOTALS, CODES_INFO } from '../lib/sectionInfo'
 
 const links = [
-  { to: '/posts',     label: 'Post Archive', icon: '📜' },
+  { to: '/posts',     label: 'Post Archive', icon: '📜', count: CERTIFIED.totalPosts },
   // Search crosses every certified section, so it belongs beside the archive rather than inside
   // any one layer's list.
   // Search removed from the sidebar by owner ruling 2026-08-14. The ROUTE stays live —
@@ -13,18 +18,28 @@ const links = [
 
 ]
 
+/** The label with its certified count underneath — the shape every category row shares. */
+const CountedLabel = ({ label, count }: { label: string; count?: number }) => (
+  <span className="flex flex-col leading-tight">
+    <span>{label}</span>
+    {count !== undefined && (
+      <span className="text-[10px] text-gray-500 font-normal tabular-nums">{count.toLocaleString()}</span>
+    )}
+  </span>
+)
+
 
 // Colors here mirror src/lib/categoryColors.ts (tailwind -500 == those hex values) so the
 // sidebar matches the chart tabs/bars exactly.
 // Overlaps shows items the extractor filed under two categories at once — a data-quality
 // view for fixing them, not research. It is appended for the editing build only.
-const OVERLAPS_LINK = { tab: 'overlaps', label: '⚠ Overlaps', dot: 'bg-gray-500', color: 'text-yellow-500 hover:text-yellow-400' }
+const OVERLAPS_LINK = { tab: 'overlaps', label: '⚠ Overlaps', dot: 'bg-gray-500', color: 'text-yellow-500 hover:text-yellow-400', count: undefined as number | undefined }
 
 const analysisLinks = [
-  { tab: 'claims',            label: 'Q Claims',       dot: 'bg-gray-500',  color: 'text-amber-500 hover:text-amber-400' },
-  { tab: 'predictions',       label: 'Q Predictions',  dot: 'bg-gray-500', color: 'text-violet-500 hover:text-violet-400' },
-  { tab: 'namedEntities',     label: 'Q Entities',     dot: 'bg-gray-500',   color: 'text-cyan-500 hover:text-cyan-400' },
-  { tab: 'themes',            label: 'Q Themes',       dot: 'bg-gray-500', color: 'text-indigo-500 hover:text-indigo-400' },
+  { tab: 'claims',            label: 'Q Claims',       dot: 'bg-gray-500',  color: 'text-amber-500 hover:text-amber-400', count: SECTION_TOTALS.claims.occurrences },
+  { tab: 'predictions',       label: 'Q Predictions',  dot: 'bg-gray-500', color: 'text-violet-500 hover:text-violet-400', count: SECTION_TOTALS.predictions.occurrences },
+  { tab: 'namedEntities',     label: 'Q Entities',     dot: 'bg-gray-500',   color: 'text-cyan-500 hover:text-cyan-400', count: SECTION_TOTALS.namedEntities.occurrences },
+  { tab: 'themes',            label: 'Q Themes',       dot: 'bg-gray-500', color: 'text-indigo-500 hover:text-indigo-400', count: SECTION_TOTALS.themes.occurrences },
   // Q Conclusions retired as a section by owner ruling 2026-08-14: "implied conclusions ...
   // is basically the same thing" as a Claim. All 966 were ALREADY certified Claims carrying
   // isConclusion — the section was a second view of the same rows, so it is the view that goes,
@@ -62,12 +77,13 @@ const extrasLinks = [
 
 const bottomLinks = [
   // Support stays at top level: a donation link inside a collapsed menu is a donation link
-  // nobody finds.
-  { to: '/donate',    label: 'Support',         icon: '❤️' },
+  // nobody finds. No icon — owner ruling 2026-08-28 replaced the ❤️ with the same grey dot
+  // every Q section row carries, so it reads as one of the archive's own rows.
+  { to: '/donate',    label: 'Support',         icon: null as string | null },
   // The Dashboard is the editorial workbench, not a reader feature. CAN_EDIT folds to a
   // literal false in the public build, so this entry (and its route in App.tsx) never
   // reaches qdrops.app. Owner ruling 2026-08-23.
-  ...(CAN_EDIT ? [{ to: '/dashboard', label: 'Dashboard', icon: '⬡' }] : []),
+  ...(CAN_EDIT ? [{ to: '/dashboard', label: 'Dashboard', icon: '⬡' as string | null }] : []),
 ]
 
 const itemCls = (isActive: boolean, color: string, flashKey: string | null, fkey: string) =>
@@ -127,7 +143,7 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
             }
           >
             <span className="text-base">{l.icon}</span>
-            {l.label}
+            <CountedLabel label={l.label} count={l.count} />
           </NavLink>
         ))}
 
@@ -141,7 +157,7 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
           }
         >
           <span className="w-2 h-2 rounded-full shrink-0 bg-gray-500" />
-          Q Questions
+          <CountedLabel label="Q Questions" count={CERTIFIED.questions.occurrences} />
         </NavLink>
 
         {/* Q Directives — same level as Q Questions */}
@@ -153,7 +169,7 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
           }
         >
           <span className="w-2 h-2 rounded-full shrink-0 bg-gray-500" />
-          Q Directives
+          <CountedLabel label="Q Directives" count={CERTIFIED.directives.occurrences} />
         </NavLink>
 
         {/* Analysis category links */}
@@ -168,7 +184,7 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
                 className={itemCls(isActive, a.color, flashKey, fkey)}
               >
                 <span className={`w-2 h-2 rounded-full shrink-0 ${a.dot}`} />
-                {a.label}
+                <CountedLabel label={a.label} count={a.count} />
               </NavLink>
               {a.tab === 'emphasis' && (
                 <NavLink
@@ -191,7 +207,7 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
                   }
                 >
                   <span className="w-2 h-2 rounded-full shrink-0 bg-gray-500" />
-                  Q [ Brackets ]
+                  <CountedLabel label="Q [ Brackets ]" count={CODES_INFO.occurrences} />
                 </NavLink>
               )}
             </Fragment>
@@ -254,7 +270,9 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
               }`
             }
           >
-            <span className="text-base">{l.icon}</span>
+            {l.icon
+              ? <span className="text-base">{l.icon}</span>
+              : <span className="w-2 h-2 rounded-full shrink-0 bg-gray-500" />}
             {l.label}
           </NavLink>
         ))}
