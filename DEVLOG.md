@@ -7859,3 +7859,22 @@ dev server with a test measurement id: no `gtag` script and no `window.gtag` bef
 present immediately on Accept, with `dataLayer` holding the `js`/`config` calls; a simulated
 client-side route change (`pushState` + `popstate`) pushed new `dataLayer` entries, confirming the
 per-navigation pageview actually fires. Validated at the `standard` profile, full pass green.
+
+## 2026-08-28 — Replace Google Analytics with Cloudflare Web Analytics
+
+**Request:** "i do not want google analytics anymore i want to use cloudflare so it doesn't ask
+you any questions once you jump into the site. lets take google analytics out and put cloudflare
+in" — reversing yesterday's GA4 choice one day after it shipped, before any real audience saw it.
+
+**Solution:** The GA4 implementation is fully removed, not disabled: `src/lib/analytics.ts`,
+`src/components/CookieConsent.tsx`, `src/components/AnalyticsTracker.tsx`, their three wiring
+points in `App.tsx`, and the `VITE_GA_MEASUREMENT_ID` line in the local `.env` are all gone.
+In their place, `src/lib/cloudflareAnalytics.ts` injects Cloudflare's beacon from `main.tsx` —
+far less machinery than GA needed, for two reasons that are the point of the switch: the beacon
+is cookieless and collects no personal data, so no consent banner is required and visitors are
+never interrupted; and it hooks `history.pushState` itself, so SPA route changes are counted
+with no router-level tracking component. Same guards as before: `IS_PUBLIC_SITE` keeps it out of
+dev/desktop builds entirely, and it no-ops silently until `VITE_CF_ANALYTICS_TOKEN` is set in
+the gitignored `.env`. Deployed the removal immediately (GA was live with a real measurement id
+and the owner had ruled it out); the Cloudflare token follows once the owner creates the site in
+their Cloudflare dashboard.
