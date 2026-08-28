@@ -8025,3 +8025,42 @@ hoisted to module level as `TAB_COUNTS` and CHART_TABS sorts over it; "All" and 
 pinned at the ends — they are the archive, not categories. Both surfaces verified in the browser
 rendering identically: Claims 10,219 → Entities 9,837 → Questions 6,327 → Directives 3,333 →
 Themes 2,685 → Brackets 1,986 → Predictions 950.
+
+## 2026-08-28 — THE 17-THEME MERGE; Download page build link removed; installer audit
+
+**Request:** "i was wanting to figure out what we could combine 1 theme to another to have 17
+themes because the 17th letter of the alphabet is Q and is significant. can you please guide me on
+what we can shift over to make a total of 17, what makes sense to combine? also the pic i would
+like the link taken out. people really don't need to see this page right? also want to make sure
+on the downloads they can't see any important things the users eyes don't need to see like the
+dashboard and pin area."
+
+**Solution (themes):** Presented four merge candidates with computed overlap: Justice & Courts →
+Law Enforcement (10 both-theme posts), Finance → Corruption (6), Elections → Government (23),
+Social Movements → Q Movement (3). The owner chose Justice & Courts → Law Enforcement, relabelled
+"Law Enforcement & Justice" — courts adjudicate exactly what investigations produce, the tightest
+pairing, and it keeps signature standalone subjects (Elections & Voting, Trafficking &
+Exploitation) distinct. Recorded as `merges[]` in `audit/themes-owner-rulings.json`; applied by
+`apply-themes.mjs` over the frozen derive artifact (assignments remap to the survivor; where one
+post carried both themes the pair collapses to one row keeping the higher confidence and the UNION
+of both anchor sets, so nothing that highlighted goes dark). Taxonomy in `scripts/lib/themes.mjs`
+carries the combined entry — both anchor regexes, all support signals, all six subthemes — and the
+legacy court/judge/trial hint remaps to the surviving key. Measured and reconciled: assignments
+2,685 → 2,675 (ten pairs), detected 2,393 → 2,383, multi-theme 466 → 463 (three pairs had no third
+theme), posts 1,912 / owner rulings 292 / theme anchors 1,768 across 1,322 posts all unchanged;
+theme_support relationships 1,759 → 1,757 self-adjusted. Constants moved in apply-themes' QA gate,
+contracts CANONICAL.themes, build-search-index's gate, verify-context-render's pin, and
+sectionInfo (THEMES_INFO parents 18 → 17 + its long-stale 2,646/1,899/378 literals and the Themes
+card's certified string). SEED_VERSION 114 → 115. Sidebar and tab-strip counts re-sort themselves
+(Themes stays 5th at 2,675).
+
+**Solution (Download page):** The "See how each build was produced →" GitHub Actions link is
+removed by owner ruling; the paragraph already says the source is public.
+
+**Solution (installer audit):** Verified the distributed desktop apps CANNOT show editorial
+surfaces: `tauri.conf.json` builds via `npm run build:app:public` (vite `--mode public` →
+`.env.public` sets VITE_PUBLIC_SITE=1 and blanks the Anthropic key), so CAN_EDIT folds to false
+and the Dashboard, PIN prompts, editing UI and AI tools are compiled OUT of the release
+installers, same as qdrops.app. Checked the built public bundle for the admin PIN string: the only
+"1624" occurrence is an image's naturalWidth in picture-analysis data — the PIN itself does not
+ship. No change needed; the release workflow already does this by design.
