@@ -207,6 +207,13 @@ export const ENTITIES = {
   // #1239 and #1863 name by handle in Q's own text.
   // 1,584 -> 1,587 on 2026-08-24: the post-scoped entity rulings.
   canonical: 1622,
+  // The prose / source-only split of `canonical`, read verbatim from
+  // entity-public-view.json's totals (proseMentioned / sourceOnly) — the same artifact the
+  // section header renders. The ⓘ popover interpolates these, so it can no longer disagree
+  // with the header above it: on 2026-08-28 the owner caught the popover still reading
+  // 1,584 (1,450 · 134) · 9,529 — four figures, all stale, because they were typed literals.
+  proseNamed: 1490,
+  sourceOnly: 132,
   /**
    * THE HEADLINE COUNTS THE WHOLE SECTION.
    *
@@ -358,6 +365,53 @@ export const DIRECTIVE_FAMILIES: DirectiveFamily[] = [
   { key: 'prohibition', label: 'Prohibition', blurb: 'Instructions telling someone not to do something, or to stop or avoid an action.', examples: ['Do not forget.', 'Never give up.'] },
 ]
 
+/**
+ * SIDEBAR ORDER IS THE SITE'S ONE LISTING ORDER (owner ruling 2026-08-28: "put anything
+ * listed within the site in the order we have in the categories on the side bar … so the
+ * site is uniform").
+ *
+ * The sidebar ranks the Q sections MOST → LEAST by certified occurrences — the same
+ * constants read here, so a recertification reorders every listing at once and no surface
+ * can contradict the sidebar. Above the categories sits the Post Archive; below them, the
+ * Extras fold in its own fixed order, then Support. Surfaces that list non-category rows
+ * (search chips, the analysis map) rank those with the negative values so the whole list
+ * still reads top-to-bottom like the sidebar.
+ *
+ * Alias keys are included because the surfaces never agreed on names: requests/directives,
+ * namedEntities/entities, brackets/codes, links/evidence all mean the same sections.
+ */
+const CATEGORY_RANK: Record<string, number> = {
+  claims: SECTION_TOTALS.claims.occurrences,
+  namedEntities: SECTION_TOTALS.namedEntities.occurrences,
+  questions: CERTIFIED.questions.occurrences,
+  requests: CERTIFIED.directives.occurrences,
+  themes: SECTION_TOTALS.themes.occurrences,
+  brackets: CODES_INFO.occurrences,
+  predictions: CERTIFIED.predictions.occurrences,
+}
+export const SIDEBAR_RANK: Record<string, number> = {
+  post: Number.MAX_SAFE_INTEGER, // the Post Archive row sits above every category
+  ...CATEGORY_RANK,
+  directives: CATEGORY_RANK.requests,
+  entities: CATEGORY_RANK.namedEntities,
+  codes: CATEGORY_RANK.brackets,
+  // The Extras fold, in the fold's own order (see Sidebar.tsx extrasLinks).
+  unresolved: -1, // Resolution Center
+  feedback: -2,   // Comments & Ideas
+  tripcodes: -3,
+  clusters: -4,
+  links: -5,      // All Q Links — the Evidence & References section
+  evidence: -5,
+  sources: -6,
+  resources: -7,
+  emphasis: -8,   // retired section; ranked so any residual list puts it last
+  editorial: -9,
+}
+
+/** Comparator for any list of section keys/ids — sorts into sidebar order. */
+export const sidebarOrder = (a: string, b: string) =>
+  (SIDEBAR_RANK[b] ?? -100) - (SIDEBAR_RANK[a] ?? -100)
+
 export interface SectionInfo {
   /** Matches the route or the ?tab= value, so a page can look itself up. */
   id: string
@@ -375,6 +429,10 @@ export interface SectionInfo {
   note?: string
 }
 
+// Authored in the historical order below, PUBLISHED in sidebar order — the .sort at the end
+// of the array is what the Method page (and any other consumer) actually receives. Evidence &
+// References ('links') has no category row, so it ranks with its Extras slot (All Q Links)
+// and lands after the seven categories, exactly where the sidebar puts it.
 export const SECTIONS: SectionInfo[] = [
   {
     id: 'questions',
@@ -430,11 +488,12 @@ export const SECTIONS: SectionInfo[] = [
     short: 'The people, organizations, agencies and places Q named.',
     covers: 'Important people, organizations, agencies, companies, governments, countries, locations, programs, operations, institutions and other named subjects appearing throughout the posts.',
     answers: 'Who or what was Q talking about?',
-    // Was 1,332 canonical / 7,903 mentions — both left behind by the 2026-08-17 integrated cleanup,
-    // so the ⓘ panel contradicted the header directly above it. The two components are named here
-    // for the same reason they are named in the header: 1,201 with no split reads as 1,201 entities
-    // Q wrote about, and 135 of them he never wrote at all.
-    certified: `${n(1584)} canonical entities (${n(1450)} named in the prose · ${n(134)} linked as a source only) · ${n(9529)} certified prose mentions`,
+    // INTERPOLATED, NEVER TYPED. This line has now been caught stale twice (1,332/7,903 after
+    // the 2026-08-17 cleanup, then 1,584/1,450/134/9,529 on 2026-08-28) — both times because the
+    // figures were literals while the header above the popover read the live artifact. The two
+    // components stay named for the same reason they are named in the header: a total with no
+    // split reads as entities Q wrote about, and the source-only rows he never wrote at all.
+    certified: `${n(ENTITIES.canonical)} canonical entities (${n(ENTITIES.proseNamed)} named in the prose · ${n(ENTITIES.sourceOnly)} linked as a source only) · ${n(ENTITIES.mentions)} certified prose mentions`,
     note: 'Entities are secondary tags rather than sentence types — a question, claim, prediction or directive may contain several. Names are canonicalised, so "HRC", "Hillary" and "Hillary Clinton" are one person, while Q’s exact wording is preserved in every post. Where a reference is ambiguous it is left unresolved rather than guessed.',
   },
   {
@@ -446,7 +505,8 @@ export const SECTIONS: SectionInfo[] = [
     // 2026-08-28: figures resynced (they still read 2,646/1,899/18 from before the Health &
     // Medicine sweep) AND the taxonomy is 17 parents now — the owner's Justice & Courts →
     // Law Enforcement & Justice merge, 17 themes because Q is the 17th letter of the alphabet.
-    certified: `${n(2675)} assignments · ${n(1912)} posts · 17 parent themes`,
+    // Interpolated from THEMES_INFO rather than typed, so the next resync is one edit.
+    certified: `${n(THEMES_INFO.assignments)} assignments · ${n(THEMES_INFO.posts)} posts · ${THEMES_INFO.parents} parent themes`,
     note: 'Themes identify the recurring subjects Q discusses across the archive. They describe what a post is about, not how Q writes it. A post may have more than one theme — 463 do. Style features such as cryptic phrasing, repetition, coded language, or pattern-based reasoning are classified elsewhere rather than treated as subjects. A theme is assigned only on converging evidence, never on a single word appearing.',
   },
   {
@@ -455,10 +515,12 @@ export const SECTIONS: SectionInfo[] = [
     short: 'Coded expressions, bracketed text, shorthand and unusual notation.',
     covers: 'Unusual coded expressions, abbreviations, bracketed text, shorthand, symbolic references, counters, markers and recurring phrases that appear throughout Q’s posts.',
     answers: 'What notation did Q use?',
-    certified: `${n(1957)} occurrences · ${n(747)} distinct codes · ${n(856)} posts`,
-    note: 'Inclusion means the pattern appears code-like or structurally significant — it does not mean its meaning is known. Only 7 of 739 codes carry an interpretation, each stating the evidence for it; the other 732 are preserved exactly as written with no meaning attached. Two of the seven — [D] for Democrat and [F] for Foreign — are owner adjudications rather than readings the corpus establishes on its own, and are labelled as such. An ordinary word in brackets is not a code, and dates and ALL CAPS alone are not codes either.',
+    // Interpolated from CODES_INFO — this line and its note were still reading 1,957/747/856
+    // and "7 of 739" after the 2026-08-24 bracket rulings moved the section to 1,986/771/861.
+    certified: `${n(CODES_INFO.occurrences)} occurrences · ${n(CODES_INFO.distinct)} distinct codes · ${n(CODES_INFO.posts)} posts`,
+    note: `Inclusion means the pattern appears code-like or structurally significant — it does not mean its meaning is known. Only ${CODES_INFO.interpreted} of ${n(CODES_INFO.distinct)} codes carry an interpretation, each stating the evidence for it; the other ${n(CODES_INFO.unresolved)} are preserved exactly as written with no meaning attached. Two of the seven — [D] for Democrat and [F] for Foreign — are owner adjudications rather than readings the corpus establishes on its own, and are labelled as such. An ordinary word in brackets is not a code, and dates and ALL CAPS alone are not codes either.`,
   },
-]
+].sort((a, b) => sidebarOrder(a.id, b.id))
 
 export const SECTION_BY_ID = new Map(SECTIONS.map(s => [s.id, s]))
 
@@ -473,7 +535,10 @@ export const METHOD_PRINCIPLE = {
   body: [
     'The archive always preserves Q’s exact original wording. Classification is metadata layered on top of the source, and never rewrites Q’s words to make them fit a category.',
   ],
-  primary: 'Question · Directive · Claim · Prediction · Evidence/Reference',
+  // Sidebar order within the family (owner ruling 2026-08-28) — Claim leads because it is
+  // the largest certified section, then Question, Directive, Prediction; Evidence last,
+  // matching its Extras slot. The secondary line already reads Entities · Themes · Codes.
+  primary: 'Claim · Question · Directive · Prediction · Evidence/Reference',
   primaryNote: 'Primary semantic categories describe what the text is doing.',
   secondary: 'Entities · Themes · Codes/Brackets',
   secondaryNote: 'Secondary classifications describe what the text contains or how it is presented.',
