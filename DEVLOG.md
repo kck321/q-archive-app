@@ -7937,3 +7937,28 @@ and zero anthropic references. Also noted for the record, not changed: the 9.4 M
 dominates a FIRST visit and is already mitigated (gzip on the wire, IndexedDB seed paid once per
 seed version, service-worker cache-first thereafter), and the analysis index is already pre-warmed
 at startup and cached per data version — the earlier "indexing" work the owner remembered.
+
+## 2026-08-28 — One true count: tab strip reads certified figures; sidebar counts colored + centered
+
+**Request:** "how come the post sidebar counts do not read the same as the counts above the graph
+this is a problem i want the true current count for all categories. also i want the count of the
+color to be the same color as the category and centered under each category."
+
+**Solution:** The Post Archive tab strip was a RECOUNT surface — sums over the timeline index and
+raw per-post arrays — and every figure disagreed with the certified number its own destination
+page headlines, each for a different structural reason: Questions showed 6,643 shipped rows
+(superseded records included) against the certified 6,327 primaries; Claims 10,112 / Predictions
+921 / Entities 7,808 counted distinct texts per post, so in-post repeats vanished (certified:
+10,219 / 950 / 9,837); Brackets showed 1,018 posts-containing-a-bracket against 1,986 certified
+occurrences. This is precisely the defect the `headline-not-recounted` invariant fixed on
+AnalysisArchive in an earlier session — the tab strip was the surface that never got the rule.
+`tabCounts` now reads the same certified constants the sidebar reads (CERTIFIED / SECTION_TOTALS
+/ CODES_INFO), so the sidebar, the strip and the section pages can never drift apart; the
+now-dead recount plumbing (`analysisTotals` memo, `countPostsWithBrackets` state and call) is
+removed rather than left orphaned. The chart BARS keep their per-month detected counts — they
+show distribution over time, and the certified artifacts carry no per-month figures. Sidebar
+styling: the count under each category now inherits the row's own color (so hover brightens label
+and count together) and is centered under the label via `self-center`, replacing the grey
+left-flushed rendering. Verified in the browser: all seven categories read identically in the
+sidebar and the strip (6,327 / 3,333 / 10,219 / 950 / 9,837 / 1,986 / 2,685), each count centered
+in its category color.
