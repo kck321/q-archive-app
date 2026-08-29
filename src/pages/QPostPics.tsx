@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { getAllPostsWithMedia } from '../lib/posts'
-import type { QPost, QMedia } from '../types'
+import type { QPost } from '../types'
 import { mediaUrl } from '../lib/mediaUrl'
 import PictureChip from '../components/PictureChip'
 import { loadPictureAnalysis, getPictureInfoSync, pictureHaystack } from '../lib/pictureAnalysis'
