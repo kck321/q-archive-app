@@ -28,6 +28,7 @@ transcribe them freely; the notes below say exactly where to look.
 | 1071 | #3632 | IMG_1303.JPG | `e5745f537c2085a5fa7d04e3380af8815cb57b1276dc9d53913f7a4a60957c42.jpg` | 1600×967 |
 | 1246 | #4104 | EXM5NBpWsAAPRNh.jpg | `0a071ae2764a17aea71f6d22d9bb283478c5c9a582c41519f63115ef11606cd8.jpg` | 1408×1252 |
 | 1258 | #4136 | EXa_OTX0AEp3bC.jpg | `6af0a607dcc3adc910e3c82256a938e9be1389c15377281cc12ba90c7e9f551e.jpg` | 1600×934 |
+| 1376 | #454 | 9A47B7E5-08EF-42B2-A720-374C8B587981.jpg | `107ef80ccd0053a2aa8502a4b079f538f0a21d95ca5b58a518f4aeb2cb389bd6.jpg` | n/a (HTML placeholder) |
 
 ## What each contains (from the completed visual pass)
 
@@ -96,6 +97,11 @@ transcribe them freely; the notes below say exactly where to look.
   QAnon takedowns and disinfo-network removals). All headlines and outlets indexed verbatim;
   the per-item body snippets are summarised — the remaining snippet text is what a human pass
   would add. Same shape as n1246.
+- **#454 (n1376):** The bundled file is not an image at all — it is a saved 8ch.net "loading"
+  HTML placeholder page with a .jpg extension, pointing at the original media.8ch.net
+  file_store URL. No visual content exists to analyse. Like n685, a human pass needs a
+  better source copy (try the qalerts mirror under the same content hash) rather than
+  better reading.
 - **#132 (n98):** "Q Graphic" — the community's cleaned November 2017 compilation.
   Contains the `Q !ITPb.qbhqo` tripcode era posts and the Spy.png / AF1 photo inserts.
   Substantial overlap with the archive's own ingested drops #1–#112.
