@@ -8192,3 +8192,20 @@ bucket qdrops-media + media.qdrops.app custom domain (free egress behind the pro
 creating bucket + API token; then upload, set the env, deploy. ~200 text-extracted news/4plebs
 images never came from qalerts and stay remote. Batch of 3 code commits + this entry NOT yet
 deployed — floor next time is FULL (verify-live.mjs touched).
+
+## 2026-08-28/29 — qalerts out: media self-hosted on R2, deployed
+
+**Request:** R2 setup walked through in-dashboard (bucket qdrops-media, custom domain
+media.qdrops.app, scoped Object R&W token) / deploy the batch.
+
+**Solution:** scripts/upload-media-r2.mjs pushed all 1,653 bundle images (192MB, zero
+failures; content-hash names cached immutable, manifest 1h). App wiring: WEB_MEDIA_BASE
+constant in localMedia.ts (env vars are all gitignored here — a constant survives machines),
+manifest served SAME-ORIGIN as public/media-manifest.json (a fetch needs CORS, an <img> does
+not), and cropKey() in mediaUrl.ts maps self-hosted URLs back to the crop manifest's mirror
+keys so letterbox crops survive the flip (CroppedMedia + /pics both look up through it).
+R2 creds live in gitignored .env. FULL validation green (an earlier run's verdict was lost
+to a `| tail` pipe — re-run clean; never pipe validate through tail), deployed with
+SKIP_EXPORT=1, live in 36s, verify-live 16/16, live manifest and a sample image confirmed
+serving from media.qdrops.app. qalerts remains only as the fail-soft fallback; ~200
+text-extracted news/4plebs images never came from it and stay remote.
