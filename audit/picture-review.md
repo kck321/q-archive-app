@@ -29,6 +29,8 @@ transcribe them freely; the notes below say exactly where to look.
 | 1246 | #4104 | EXM5NBpWsAAPRNh.jpg | `0a071ae2764a17aea71f6d22d9bb283478c5c9a582c41519f63115ef11606cd8.jpg` | 1408×1252 |
 | 1258 | #4136 | EXa_OTX0AEp3bC.jpg | `6af0a607dcc3adc910e3c82256a938e9be1389c15377281cc12ba90c7e9f551e.jpg` | 1600×934 |
 | 1376 | #454 | 9A47B7E5-08EF-42B2-A720-374C8B587981.jpg | `107ef80ccd0053a2aa8502a4b079f538f0a21d95ca5b58a518f4aeb2cb389bd6.jpg` | n/a (HTML placeholder) |
+| 1419 | #4660 | 1.png | `acda356c58c37ab0119df250af553fdf5e89a9f092b7b3fbbf768150a1dbdd37.png` | 1000×1000 |
+| 1420 | #4660 | 2.png | `e0300f5310383a85a0fe1a18ba54a29b531b3a7f9268496b639e0d68eca35733.png` | 1000×1000 |
 
 ## What each contains (from the completed visual pass)
 
@@ -102,6 +104,11 @@ transcribe them freely; the notes below say exactly where to look.
   file_store URL. No visual content exists to analyse. Like n685, a human pass needs a
   better source copy (try the qalerts mirror under the same content hash) rather than
   better reading.
+- **#4660 (n1419, n1420):** Companion PNGs "1.png"/"2.png" that render as a white field with
+  only four black squares (corners on 1419, edge midpoints on 1420) — the visible content was
+  likely carried in a transparency/alpha layer that a white-background render flattens away.
+  A human pass should re-render on a dark or checkered background (or inspect the alpha
+  channel) to recover what the images actually show.
 - **#132 (n98):** "Q Graphic" — the community's cleaned November 2017 compilation.
   Contains the `Q !ITPb.qbhqo` tripcode era posts and the Spy.png / AF1 photo inserts.
   Substantial overlap with the archive's own ingested drops #1–#112.
