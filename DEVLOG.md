@@ -8241,3 +8241,41 @@ identifiers deliberately withheld per the privacy rule; review decision is edito
 +200 -> **1,450 images / 1,320 posts, green 1,188 / yellow 209 / red 53, needsReview 28**, LF
 verified (0 CRLF). Runbook updated (n=1451 next, final 240 remain). NOT deployed — local per
 batch-deploy rule; no SEED_VERSION bump needed.
+
+## 2026-08-29 — Deploy: seed 115 to qdrops.app (both 200-photo batches, 1,450 pictures live)
+
+**Request:** Push the 400 new photos through to the app.
+
+**Solution:** Concurrent-session check first (three other claude.exe processes found, all idle — CPU
+flat over 4s, no git locks, no foreign file activity). `batch-status.mjs`: 19 undeployed commits,
+tree clean, floor CERTIFIED.
+
+**The first validate FAILED and cost 45 minutes — the cause was the machine, not the app.** It
+stopped at `fresh — multi-word glossary terms` on ONE assertion out of thousands
+(`Fox News in #1791 — tapping a non-anchor segment opens the card DID NOT OPEN`) while *hovering*
+the same segment, the mobile card suite and the identical `ABC News in #2770` case all passed. That
+gate alone burned 2322s against a ~129s baseline — 18x. Root cause: **75 orphaned headless Chrome
+processes** on temp `qdrops-*` profiles, left by abandoned runs on 26-28 Aug, holding 1.5 GB while
+the box sat at 9.4% free RAM. Killed only `--headless` chrome (harness profiles are disposable; the
+owner's real Chrome/VS Code/Edge untouched) and the assertion passed on the re-run. **A tap that
+never paints inside its timeout is what memory thrash looks like — check RAM and stray harness
+Chromes before believing a lone browser-gate failure.**
+
+**`--only <gate>` does not narrow the run.** It ADDS a targeted step to the full profile: header read
+`profile CERTIFIED ... steps: 27` (vs 26 without it) and it wrote a normal certified receipt. So the
+re-run WAS the deploy-grade validation — no second full pass needed. 2,829 assertions, 0 failures,
+receipt tree b036b46c, chain true.
+
+**The deploy then failed on a pre-existing export blocker** — `materialize-literal-spans.mjs --apply`
+aborted on `question literal spans = the 5 owed records`. Verified it was unrelated to this work:
+across all 19 commits `public/data` changed in exactly ONE file, `picture-analysis.json`. The aborted
+export had dirtied entities/posts/questions.json (the documented trap); restored via
+`git checkout -- public/data`. Re-deployed with `SKIP_EXPORT=1` per the script's documented condition
+(bundle already certified and current; Firestore writes are denied so no unbaked edits exist).
+Blocker recorded as item 0c in NEXT-SESSION-HANDOFF.md — it is NOT fixed.
+
+**Live after 42s:** commit 3470aef, seed 115, sw qdrops-20260829-184718, `dirty: false`, and
+production's stamped tree b036b46c matches the validation receipt exactly — proved -> committed ->
+built -> served, one comparable value the whole way. `verify-live.mjs`: **16/16**. Confirmed against
+the live artifact: **1,450 images / 1,320 posts, green 1,188 / yellow 209 / red 53, needsReview 28.**
+240 images remain (n=1451-1690) to finish the archive.

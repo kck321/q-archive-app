@@ -13,7 +13,7 @@ Do not reopen any of them.
 | | |
 |---|---|
 | HEAD | see `git log -1` |
-| production | **seed 98, DEPLOYED 2026-08-25** — every 2026-08-24 batch (round 2, UPDATED report, #2347 card, entity rulings, Vault 7) plus the picture-audit n=851-1050 batch; `verify-live.mjs` 14/14 |
+| production | **seed 115, DEPLOYED 2026-08-29** — commit 3470aef, tree b036b46c, sw qdrops-20260829-184718; carries the picture-audit batches n=1051-1250 and n=1251-1450 (1,450 images / 1,320 posts); `verify-live.mjs` 16/16. Deployed with `SKIP_EXPORT=1` — see the literal-spans blocker below |
 | invariants | 222/222 — manifest re-certified at seed 98 at the deploy checkpoint |
 | seed | **98** — shipped |
 | manifest | re-certified 2026-08-25 (seed 98); context baseline moved 445→444/311→310 with #1443's `Texts` promotion (see `verify-context-render.mjs`) |
@@ -129,6 +129,28 @@ on the finished bundle records 1532/9271 and the cleanup then refuses.
 ---
 
 ## Open for the owner
+
+0c. **The Firestore export is BLOCKED — fix before any deploy that needs real edits baked.**
+   `export-firestore.mjs` runs `materialize-literal-spans.mjs --apply`, which now ABORTS:
+
+       FAIL  question literal spans = the 5 owed records
+             ["JPIqQwo0moEuwzhHMzXL","q-queue-2740-35","q-queue-2971-39","q-queue-4454-53","qc-f"]
+       Aborting: 1 QA check(s) failed. Nothing written.
+
+   Every other QA check in that materialiser passes (certified questions 6,509 / claims 10,519 /
+   predictions 957 / conclusions 964 / checkable 1,920, all unchanged; every span array matches its
+   source). The wrapper then prints "export failed (quota/offline)", which is a generic catch-all and
+   is MISLEADING — this is a QA refusal, not the 2026-08-25 quota problem.
+
+   The 2026-08-29 deploy shipped with `SKIP_EXPORT=1` under the script's documented condition (the
+   bundle was already certified and current, and Firestore writes are denied so no unbaked edits can
+   exist). That is safe for a picture-only batch and is NOT a fix. It was latent before this session:
+   the 2026-08-25 deploy died at the quota before ever reaching this check.
+
+   **The trap that costs time:** the aborted export still dirties `public/data/entities.json`,
+   `posts.json` and `questions.json` before it gives up, and `preflight-deploy.mjs` then refuses the
+   publish. Restore with `git checkout -- public/data` — do not reach for a flag.
+
 
 0a. **The quoted-post rulings.** `Q Quoted Posts - REVIEW 2026-08-24.xlsx` proposes a reading for
    2,800 lines in the 1,077 quoted blocks that are not drops. NOTHING IS APPLIED — invariant 9 keeps
