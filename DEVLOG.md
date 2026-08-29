@@ -8170,3 +8170,25 @@ with the 1,870 count; month click writes ?m=2018-03; browser Back AND the in-app
 return to the month view with scroll restored to the pixel. An earlier in-app-Back "failure" was
 the probe misfiring on a contended warm browser — the mechanism (navigate(-1)) was always the
 same as history.back().
+
+## 2026-08-28 — Cloudflare in front, pics batching, self-hosted media groundwork
+
+**Request:** capacity review ("is it ready to handle a lot of users at once? ... what resources
+will get exhausted") → "walk me through 1" (Cloudflare proxy) / "i really want to take qalerts
+out of the mix" / "lets do 100 pictures at a time".
+
+**Solution:** (1) Owner flipped the five DNS records to Proxied, set SSL Full (strict) and
+Always Use HTTPS with step-by-step guidance; verified from here: Cloudflare IPs, Server:
+cloudflare, HTTP→HTTPS 301, www→apex 301. GitHub Pages' ~100GB/month bandwidth ceiling is
+effectively gone. verify-live's data-files check then false-failed — the edge reports the
+COMPRESSED content-length even for accept-encoding: identity HEADs. Proved delivery intact
+first (live posts.json sha-identical to disk, 10,401,384 bytes both), then rewrote the check
+to hash every file's decompressed body. 16/16 through the proxy. (2) /pics mounts 100 tiles
+and grows by 100 near the bottom (sentinel + IntersectionObserver); images were already lazy —
+this fixes phone memory and first paint. (3) qalerts removal: the desktop bundle already holds
+all 1,653 attachments re-encoded to 192MB with a URL-keyed manifest; the web build now honors
+VITE_MEDIA_BASE (dormant until set) via initWebMedia() — fail-soft to the mirror. Plan: R2
+bucket qdrops-media + media.qdrops.app custom domain (free egress behind the proxy), owner
+creating bucket + API token; then upload, set the env, deploy. ~200 text-extracted news/4plebs
+images never came from qalerts and stay remote. Batch of 3 code commits + this entry NOT yet
+deployed — floor next time is FULL (verify-live.mjs touched).
