@@ -12,7 +12,7 @@ import { setLocalMedia } from './mediaUrl'
  */
 export async function initLocalMedia(): Promise<void> {
   const w = window as unknown as { __TAURI_INTERNALS__?: unknown; __TAURI__?: unknown }
-  if (!w.__TAURI_INTERNALS__ && !w.__TAURI__) return
+  if (!w.__TAURI_INTERNALS__ && !w.__TAURI__) return initWebMedia()
 
   try {
     const [{ resolveResource }, { convertFileSrc }] = await Promise.all([
@@ -35,5 +35,31 @@ export async function initLocalMedia(): Promise<void> {
     console.info(`[media] offline bundle active — ${Object.keys(manifest).length} attachments`)
   } catch {
     /* no bundle in this build, or resource lookup unavailable — stay on the mirror */
+  }
+}
+
+/**
+ * Self-hosted media for the WEB build (owner directive 2026-08-28: "i really want to take
+ * qalerts out of the mix on my app").
+ *
+ * The same 1,653-image bundle the desktop app ships (media-bundle/, built by
+ * scripts/build-media-bundle.mjs) is uploaded to our own hosting; VITE_MEDIA_BASE names its
+ * base URL at build time (e.g. https://media.qdrops.app). When set, every attachment the
+ * manifest covers is served from there and qalerts is never contacted; when unset — or if
+ * the manifest fails to load — mediaUrl() falls through to the mirror exactly as before,
+ * so a hosting outage degrades to today's behaviour, never to broken images.
+ */
+async function initWebMedia(): Promise<void> {
+  const base = (import.meta.env.VITE_MEDIA_BASE as string | undefined)?.replace(/\/+$/, '')
+  if (!base) return
+  try {
+    const res = await fetch(`${base}/manifest.json`)
+    if (!res.ok) return
+    const manifest = (await res.json()) as Record<string, string>
+    if (!manifest || typeof manifest !== 'object') return
+    setLocalMedia(`${base}/`, manifest)
+    console.info(`[media] self-hosted bundle active — ${Object.keys(manifest).length} attachments`)
+  } catch {
+    /* hosting unreachable — stay on the mirror */
   }
 }
