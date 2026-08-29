@@ -155,23 +155,22 @@ check('deployed-tree', 'production names the tree of the bytes that were built',
 {
   const dataDir = path.join(DIST, 'data')
   const files = fs.existsSync(dataDir) ? fs.readdirSync(dataDir).filter(f => f.endsWith('.json')).sort() : []
-  const HASH_UNDER = 2 * 1024 * 1024
   let sizeOk = 0, hashOk = 0
   const bad = []
   for (const f of files) {
     const local = fs.readFileSync(path.join(dataDir, f))
     const url = bust(`${LIVE}/data/${f}`)
     try {
-      if (local.length <= HASH_UNDER) {
-        const buf = Buffer.from(await (await fetch(url, { cache: 'no-store' })).arrayBuffer())
-        if (sha(buf) === sha(local)) { hashOk++; sizeOk++ } else bad.push(`${f} content differs (${buf.length} vs ${local.length} bytes)`)
-      } else {
-        // Identity encoding, or content-length reports the gzipped size and every large file "differs".
-        const r = await fetch(url, { method: 'HEAD', headers: { 'accept-encoding': 'identity' }, cache: 'no-store' })
-        const len = Number(r.headers.get('content-length'))
-        if (r.ok && len === local.length) sizeOk++
-        else bad.push(`${f} ${r.status} length ${len} vs ${local.length}`)
-      }
+      // Full body + hash for EVERY file, large ones included. The old fast path HEAD-compared
+      // content-length with `accept-encoding: identity`, and the Cloudflare edge answers that
+      // with the COMPRESSED length — 28 Aug 2026, the day the proxy went in front of the site,
+      // every large data file "differed" by exactly its gzip ratio while the decompressed bytes
+      // were verified identical (posts.json sha-matched to the byte). fetch() decompresses
+      // transparently, so hashing the body is immune to whatever encoding the edge negotiates,
+      // and byte identity is the stronger claim this check always wanted to make. Costs ~30 MB
+      // of transfer per verify, through a CDN, once per deploy — proof is worth that.
+      const buf = Buffer.from(await (await fetch(url, { cache: 'no-store' })).arrayBuffer())
+      if (sha(buf) === sha(local)) { hashOk++; sizeOk++ } else bad.push(`${f} content differs (${buf.length} vs ${local.length} bytes)`)
     } catch (err) { bad.push(`${f} ${String(err?.message ?? err)}`) }
   }
   check('data-files-published', `all ${files.length} data artifacts are served and match the bundle`,
