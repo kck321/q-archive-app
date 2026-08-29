@@ -8224,3 +8224,20 @@ snippets condensed). Compiled +200 -> **1,250 images / 1,129 posts, green 1,020 
 red 45, needsReview 22**, LF verified (0 CRLF). Runbook coverage table updated (n=1251 next,
 440 remain). NOT deployed — local per batch-deploy rule; no SEED_VERSION bump needed
 (picture-analysis.json is fetched, not seeded).
+
+## 2026-08-29 — Picture audit batch n=1251-1450 (200 images)
+
+**Request:** Another round of 200 (same session as the n=1051-1250 batch).
+
+**Solution:** `build_next200_1450.py` reproduced the enumeration 1250/1250 hash-for-hash before
+emitting `batch1450.json` (1 fetched from the qalerts mirror: n=1343; 0 videos). Ran the frozen
+loop — 8 groups of 25, 5 agents x 5 images, one attempt per image, append-immediately,
+`merge1450.py check` + commit per group. No content-filter withholds. Six review rows queued in
+`audit/picture-review.md`: n=1258 (#4136 news-results compilation, snippets condensed), n=1376
+(#454 — bundled file is a saved 8ch HTML placeholder, not an image; needs a better source copy),
+n=1419/n=1420 (#4660 companion PNGs whose content lives in an alpha layer and renders blank on
+white), and n=1444/n=1445 (#4702/#4704 doxxing collages — key phrases indexed, all personal
+identifiers deliberately withheld per the privacy rule; review decision is editorial). Compiled
++200 -> **1,450 images / 1,320 posts, green 1,188 / yellow 209 / red 53, needsReview 28**, LF
+verified (0 CRLF). Runbook updated (n=1451 next, final 240 remain). NOT deployed — local per
+batch-deploy rule; no SEED_VERSION bump needed.

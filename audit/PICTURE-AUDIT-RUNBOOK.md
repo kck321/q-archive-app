@@ -11,6 +11,11 @@ transcriptions queued (n=925, n=950).
 Updated 29 Aug 2026: batch n=1051-1250 (200 images) compiled via `build_next200_1250.py` /
 `merge1250.py` — same loop, 40 agents, no withholds, two partial transcriptions queued
 (n=1071 headline collage, n=1246 search-results compilation).
+Updated 29 Aug 2026 (later): batch n=1251-1450 (200 images) compiled via
+`build_next200_1450.py` / `merge1450.py` — same loop, 40 agents, no withholds, six review
+rows: n=1258 (compilation partial), n=1376 (source file is an 8ch HTML placeholder, not an
+image), n=1419/n=1420 (alpha-layer PNGs render as blank fields), n=1444/n=1445 (doxxing
+collages — identifiers deliberately withheld).
 
 ---
 
@@ -44,11 +49,12 @@ Updated 29 Aug 2026: batch n=1051-1250 (200 images) compiled via `build_next200_
 | 250       | n=601-850 | published |
 | 200       | n=851-1050 | published (seed 98, 2026-08-25) |
 | 200       | n=1051-1250 | compiled, NOT yet deployed |
-| **next**  | **n=1251-** | **not started** |
+| 200       | n=1251-1450 | compiled, NOT yet deployed |
+| **next**  | **n=1451-** | **not started (final 240)** |
 
-The archive holds **1,690 distinct images**. 1,250 done, 440 to go. The n=1051-1250 batch
-used `build_next200_1250.py` → `batch1250.json`, `fetch_missing1250.py`,
-`make_manifests1250.py`, `merge1250.py` — same pattern, verified 1050/1050 before emitting.
+The archive holds **1,690 distinct images**. 1,450 done, 240 to go. The n=1251-1450 batch
+used `build_next200_1450.py` → `batch1450.json`, `fetch_missing1450.py`,
+`make_manifests1450.py`, `merge1450.py` — same pattern, verified 1250/1250 before emitting.
 
 ## 3. Starting the next batch
 
@@ -118,7 +124,7 @@ Per-image cost, measured over 51 Fable 5 agents: **~7,700 tokens**; a 25-image g
 including orchestration. Roughly **1.7%** of images end up `needsReview` — a batch that flags far
 more than that means something is wrong with the run, not with the archive.
 
-Current compiled totals: **1,250 images, 1,129 posts, green 1,020 / yellow 185 / red 45, needsReview 22.**
+Current compiled totals: **1,450 images, 1,320 posts, green 1,188 / yellow 209 / red 53, needsReview 28.**
 (The n=851-1050 range runs yellower/redder than the first 850 because it crosses the Rachel
 Chandler / Instagram-screenshot stretch, which is dense with unidentifiable private individuals —
 that is the material, not the run. The n=1051-1250 range produced no reds at all — mostly
