@@ -395,6 +395,9 @@ export const SIDEBAR_RANK: Record<string, number> = {
   directives: CATEGORY_RANK.requests,
   entities: CATEGORY_RANK.namedEntities,
   codes: CATEGORY_RANK.brackets,
+  // Q Pictures sits between the ranked categories and the Extras fold (owner row, 2026-08-28).
+  pictures: 0,
+  pics: 0,
   // The Extras fold, in the fold's own order (see Sidebar.tsx extrasLinks).
   unresolved: -1, // Resolution Center
   feedback: -2,   // Comments & Ideas

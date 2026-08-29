@@ -6,52 +6,9 @@ import { mediaUrl } from '../lib/mediaUrl'
 import PictureChip from '../components/PictureChip'
 import { loadPictureAnalysis, getPictureInfoSync, pictureHaystack } from '../lib/pictureAnalysis'
 import { MEDIA_CROP } from '../lib/mediaCrop'
-
-const IMAGE_EXT_RX = /\.(jpg|jpeg|png|gif|webp|bmp|svg|tiff?|ico|avif|heic|heif)(\?[^\s]*)?$/i
-const IMAGE_PATH_RX = /\/(media|image|img|file_store|thumb|photos?|pictures?|uploads?)\//i
-const TEXT_URL_RX = /https?:\/\/[^\s<>"')\]]+/g
-
-// Anything whose extension says it is NOT a picture. The path heuristic below matches on
-// /media/ and /uploads/, which is exactly where a news site keeps its PDFs.
-const NON_IMAGE_EXT_RX = /\.(pdf|html?|php|aspx?|docx?|xlsx?|txt|json|xml)(\?[^\s]*)?$/i
-
-function isImageUrl(url: string): boolean {
-  if (!url) return false
-  if (NON_IMAGE_EXT_RX.test(url)) return false
-  if (IMAGE_EXT_RX.test(url)) return true
-  // Path-only match: require the LAST segment to look like a filename.
-  //
-  // Without this, every one of the six URLs pulled out of drop text was a false positive —
-  // a Hill article under /homenews/media/, three government and news PDFs under /uploads/,
-  // and a Twitter photo PAGE at /photo/1. None is an image, so each rendered as a dead tile
-  // and was counted against the archive as a broken CDN link.
-  if (!IMAGE_PATH_RX.test(url)) return false
-  const last = url.split('?')[0].split('/').filter(Boolean).pop() ?? ''
-  return last.includes('.')
-}
-
-function extractTextImages(text: string): QMedia[] {
-  if (!text) return []
-  const found: QMedia[] = []
-  const seen = new Set<string>()
-  for (const match of text.matchAll(TEXT_URL_RX)) {
-    const url = match[0].replace(/[.,;:!?]+$/, '')
-    if (!seen.has(url) && isImageUrl(url)) {
-      seen.add(url)
-      found.push({ url, filename: url.split('/').pop()?.split('?')[0] ?? '' })
-    }
-  }
-  return found
-}
-
-interface ImageItem {
-  post: QPost
-  media: QMedia
-  source: string
-  /** Stable position in allItems. Carried on the item because deriving it per tile with
-      findIndex is O(n squared) — see the note where allItems is built. */
-  idx: number
-}
+// What counts as a picture lives in lib/postPics — the sidebar's Q Pictures count reads the
+// same definition, so this page and that number can never disagree (owner row, 2026-08-28).
+import { buildPicItems, type PicItem as ImageItem } from '../lib/postPics'
 
 type ShowMode = 'all' | 'loaded'
 
@@ -82,27 +39,7 @@ export default function QPostPics() {
   // delayed the first paint after Back for long enough that the scroll restorer's retry window
   // expired and the page landed at the top, which the scroll gate caught as an intermittent
   // failure on /pics.
-  const allItems: ImageItem[] = useMemo(() => posts.flatMap(p => {
-    const seen = new Set<string>()
-    const items: ImageItem[] = []
-    function add(m: QMedia, source: string) {
-      // Key on the RESOLVED url. 82 posts record the same picture twice — once on qalerts and
-      // once on the onion or 8kun mirror — and more record a thumbnail beside the full file.
-      // Those are different strings but the same image, so deduping on the recorded url let
-      // them through and the page showed the same picture twice, side by side, under one post
-      // number. mediaUrl() collapses them to a single address, which is what the reader sees.
-      const key = m.url ? mediaUrl(m.url) : ''
-      if (key && !seen.has(key)) {
-        seen.add(key)
-        items.push({ post: p, media: m, source, idx: -1 })
-      }
-    }
-    for (const m of p.media) if (m.url) add(m, 'attached')
-    for (const m of (p.refMedia ?? [])) if (m.url) add(m, 'referenced')
-    for (const m of extractTextImages(p.text ?? '')) add(m, 'text')
-    if (p.link && isImageUrl(p.link)) add({ url: p.link, filename: p.link.split('/').pop()?.split('?')[0] ?? '' }, 'link')
-    return items
-  }).map((it, i) => { it.idx = i; return it }), [posts])
+  const allItems: ImageItem[] = useMemo(() => buildPicItems(posts), [posts])
 
   const searched = useMemo(() => !search ? allItems
     : allItems.filter(({ post, media }) => {

@@ -1,7 +1,8 @@
 import { NavLink, Link, useLocation } from 'react-router-dom'
-import { useState, useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { CAN_EDIT } from '../lib/appMode'
 import HighlightToggle from './HighlightToggle'
+import { countPostPics } from '../lib/postPics'
 // Owner ruling 2026-08-28: every category row carries its count, underneath the label. The
 // figures are READ from sectionInfo's certified constants, never recounted here — the same
 // NEVER_RECOUNT_RULE the section headers follow, and the same numbers each destination page
@@ -102,6 +103,12 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
   const activeStatus = searchParams.get('status')
   const [flashKey, setFlashKey] = useState<string | null>(null)
 
+  // The Q Pictures count. Loaded async because it is derived from the posts themselves —
+  // there is no certified constant for pictures — and cached in lib/postPics after the
+  // first computation, so this costs one pass per app load, not one per navigation.
+  const [picCount, setPicCount] = useState<number | undefined>(undefined)
+  useEffect(() => { countPostPics().then(setPicCount).catch(() => {}) }, [])
+
   // The Extras group starts closed, and opens by itself when the route is inside it — so a
   // reader who arrives on one of these pages from a cross-link can see where they are. Once
   // the reader clicks the row, their choice wins for the rest of the session; the row keeps
@@ -179,6 +186,26 @@ export default function Sidebar({ open = false, onClose }: { open?: boolean; onC
             </NavLink>
           )
         })}
+
+        {/* Q Pictures — owner ruling 2026-08-28: its own row directly below Q Predictions,
+            grey dot like the section rows, the number of pictures underneath. It is not a
+            certified section so it sits AFTER the ranked sort, not inside it, and its count
+            is the /pics headline's own computation (lib/postPics) — the same definition, so
+            the row and the page cannot disagree. */}
+        <NavLink
+          to="/pics"
+          onClick={() => flash('/pics')}
+          className={({ isActive }) =>
+            `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${flashKey === '/pics' ? 'animate-nav-flash' : ''} ${
+              isActive
+                ? 'bg-q-accent/20 text-q-accent'
+                : 'text-gray-400 hover:text-gray-200 hover:bg-white/5'
+            }`
+          }
+        >
+          <span className="w-2 h-2 rounded-full shrink-0 bg-gray-500" />
+          <CountedLabel label="Q Pictures" count={picCount} />
+        </NavLink>
 
         {/* Overlaps — a data-quality view, editing build only, below the ranked sections. */}
         {CAN_EDIT && (() => {
