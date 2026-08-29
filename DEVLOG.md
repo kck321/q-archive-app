@@ -8145,3 +8145,28 @@ certified-and-current bundle. Live after 47s, verify-live 16/16.
 **OPEN:** reconcile the Firestore questions collection with local before the next DATA deploy —
 the export path is blocked on the qc-pin until then. Do not "fix" it by editing OWED_LITERALS;
 find why #1915/#1944 stopped prior-matching first.
+
+## 2026-08-28 — Q Pictures sidebar row, month-in-URL Back fix, deployed
+
+**Request:** "where is my Q Pictures tab on the left hand side? lets put the grey dot below Q
+predictions and also have the number of pictures below that" / "once you get the picture tab
+committed go ahead and deploy and publish it. i also want you to make sure that if you click on
+any series of links through the app that we go straight back to the previous point if we hit the
+back button up top or the back button within the app".
+
+**Solution:** (1) Q Pictures row in the sidebar directly below Q Predictions — grey dot, count
+underneath (1,870). The counting moved from pages/QPostPics.tsx into lib/postPics.ts so the row
+and the /pics headline are ONE computation; the page imports it back, and pictures/pics are keyed
+in SIDEBAR_RANK between the categories and the Extras fold. (2) Verifying back-navigation exposed
+a real bug: the selected month lived only in React state, so Back from a drop remounted the
+archive UNFILTERED and aimed the saved month-list scroll at the wrong list. The month now lives
+in the URL (?m=YYYY-MM, useMonthFilter derives from useSearchParams): each selection is a history
+step, the scroll store keys the month view separately by construction, and a new search still
+clears it. (3) tsc -b caught an unused QMedia import the extraction left behind — the quick
+`tsc --noEmit` outside build mode had missed it. Standard validation green (328s), deployed with
+SKIP_EXPORT=1 (export path still blocked by the qc-pin issue, data unchanged), live after 42s,
+verify-live 16/16. Browser-proved on PRODUCTION: sidebar row between Q Predictions and Q Extras
+with the 1,870 count; month click writes ?m=2018-03; browser Back AND the in-app ← Back both
+return to the month view with scroll restored to the pixel. An earlier in-app-Back "failure" was
+the probe misfiring on a contended warm browser — the mechanism (navigate(-1)) was always the
+same as history.back().
