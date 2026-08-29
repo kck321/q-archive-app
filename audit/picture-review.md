@@ -31,6 +31,8 @@ transcribe them freely; the notes below say exactly where to look.
 | 1376 | #454 | 9A47B7E5-08EF-42B2-A720-374C8B587981.jpg | `107ef80ccd0053a2aa8502a4b079f538f0a21d95ca5b58a518f4aeb2cb389bd6.jpg` | n/a (HTML placeholder) |
 | 1419 | #4660 | 1.png | `acda356c58c37ab0119df250af553fdf5e89a9f092b7b3fbbf768150a1dbdd37.png` | 1000×1000 |
 | 1420 | #4660 | 2.png | `e0300f5310383a85a0fe1a18ba54a29b531b3a7f9268496b639e0d68eca35733.png` | 1000×1000 |
+| 1444 | #4702 | 1600101032858.jpg | `f1c466b2204e46ae1c4f2162c399b2b4cd15f76d06fe8904701aea79264b05f5.jpg` | 1024×721 |
+| 1445 | #4704 | 1600086662539.jpg | `6082b57f2586ef3dfc5ef24c90ba2d05a4ba6f3fc34e2cafbc81b5422f62e0dd.jpg` | 1600×1920 |
 
 ## What each contains (from the completed visual pass)
 
@@ -109,6 +111,11 @@ transcribe them freely; the notes below say exactly where to look.
   likely carried in a transparency/alpha layer that a white-background render flattens away.
   A human pass should re-render on a dark or checkered background (or inspect the alpha
   channel) to recover what the images actually show.
+- **#4702 (n1444) / #4704 (n1445):** Two versions of an annotated doxxing collage targeting a
+  private Portland individual over Sept 2020 "antifa fires" claims (the larger adds mugshots,
+  VINE lookup, plates/VINs, parole claims). Key phrases are indexed; **all personal
+  identifiers were deliberately withheld per the privacy rule and must stay withheld** — the
+  review decision here is editorial (whether/how to present these at all), not transcription.
 - **#132 (n98):** "Q Graphic" — the community's cleaned November 2017 compilation.
   Contains the `Q !ITPb.qbhqo` tripcode era posts and the Spy.png / AF1 photo inserts.
   Substantial overlap with the archive's own ingested drops #1–#112.
