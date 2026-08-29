@@ -25,6 +25,7 @@ transcribe them freely; the notes below say exactly where to look.
 | 795 | #2940 | Feb Count.JPG | `eb226a9748f6fafca7a81506ff23e60b0e12f4f0e0cca8f886dd74f0b4d250c0.jpg` | 1135×818 |
 | 925 | #3207 | 7day BING QAnon search results.png | `8ee07c0c262d7126f8304593acea3d96e85cd3b17429073a053a8c2796140e69.jpg` | 286×4096 |
 | 950 | #3253 | FireShot Capture 001 - [USC10] 18 USC Ch. 115… uscode.house.gov.png | `e50c9682eb0fc4e7699f7da907f4676ccfcaa16d0d1c4a7b56e45e03d348d538.jpg` | 719×4096 |
+| 1071 | #3632 | IMG_1303.JPG | `e5745f537c2085a5fa7d04e3380af8815cb57b1276dc9d53913f7a4a60957c42.jpg` | 1600×967 |
 
 ## What each contains (from the completed visual pass)
 
@@ -79,6 +80,11 @@ transcribe them freely; the notes below say exactly where to look.
   full §2381 text are transcribed; the thousands of words of remaining statutory text and
   notes render too small for verbatim transcription. The source is public statute — a human
   can paste the canonical text from uscode.house.gov rather than reading the image.
+- **#3632 (n1071):** Stitched collage of ~100+ news headlines/screenshots about QAnon
+  (Newsweek, NYT, WaPo, Guardian, Mother Jones, Rolling Stone, Daily Beast, The Hill,
+  BuzzFeed, Vox, MSNBC and many foreign-language outlets, circa Aug 2019). Key headlines
+  and outlet names indexed; the full per-headline verbatim transcription remains for a
+  human — same treatment as the other giant compilations above.
 - **#132 (n98):** "Q Graphic" — the community's cleaned November 2017 compilation.
   Contains the `Q !ITPb.qbhqo` tripcode era posts and the Spy.png / AF1 photo inserts.
   Substantial overlap with the archive's own ingested drops #1–#112.
