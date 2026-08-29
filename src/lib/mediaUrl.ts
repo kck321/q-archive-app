@@ -38,10 +38,30 @@ const FILE_STORE = /^(?:https?:)?\/\/[^/]*(?:8ch\.net|8kun\.net|8kun\.top|\.onio
  */
 let localBase: string | null = null
 let localNames: Record<string, string> | null = null
+// bundled filename → the MIRROR form of its original URL. Per-image records (the crop
+// manifest) are keyed by the mirror form, so a self-hosted URL needs a way back to it.
+let localReverse: Record<string, string> | null = null
 
 export function setLocalMedia(base: string, manifest: Record<string, string>): void {
   localBase = base.endsWith('/') ? base : `${base}/`
   localNames = manifest
+  localReverse = {}
+  for (const [orig, file] of Object.entries(manifest)) localReverse[file] = remoteUrl(orig)
+}
+
+/**
+ * The key other per-image records are indexed by, for an already-resolved URL.
+ *
+ * MEDIA_CROP is keyed by the mirror form (qalerts.app/media/<hash>). While the self-hosted
+ * bundle is active, mediaUrl() resolves to media.qdrops.app and a direct MEDIA_CROP lookup
+ * misses — every letterbox crop silently vanishes. This maps a self-hosted URL back through
+ * the manifest to the mirror key; any other URL is returned unchanged.
+ */
+export function cropKey(resolved: string): string {
+  if (localBase && localReverse && resolved.startsWith(localBase)) {
+    return localReverse[resolved.slice(localBase.length)] ?? resolved
+  }
+  return resolved
 }
 
 /** A loadable URL for an attachment, rewriting hosts that no longer serve. */

@@ -43,23 +43,28 @@ export async function initLocalMedia(): Promise<void> {
  * qalerts out of the mix on my app").
  *
  * The same 1,653-image bundle the desktop app ships (media-bundle/, built by
- * scripts/build-media-bundle.mjs) is uploaded to our own hosting; VITE_MEDIA_BASE names its
- * base URL at build time (e.g. https://media.qdrops.app). When set, every attachment the
- * manifest covers is served from there and qalerts is never contacted; when unset — or if
- * the manifest fails to load — mediaUrl() falls through to the mirror exactly as before,
- * so a hosting outage degrades to today's behaviour, never to broken images.
+ * scripts/build-media-bundle.mjs) lives in the Cloudflare R2 bucket behind WEB_MEDIA_BASE
+ * (uploaded by scripts/upload-media-r2.mjs). A constant, not an env var: .env* is entirely
+ * gitignored here, so an env-based base would silently vanish on any other machine and the
+ * site would quietly fall back to hotlinking qalerts again.
+ *
+ * The manifest is fetched SAME-ORIGIN (public/media-manifest.json, a committed copy of the
+ * bundle's manifest) rather than from the media host — a cross-origin fetch() needs CORS
+ * where a plain <img> does not, and this way the manifest is versioned with the deploy it
+ * shipped in. If it fails to load, mediaUrl() falls through to the mirror exactly as
+ * before: an outage degrades to today's behaviour, never to broken images.
  */
+const WEB_MEDIA_BASE = 'https://media.qdrops.app/'
+
 async function initWebMedia(): Promise<void> {
-  const base = (import.meta.env.VITE_MEDIA_BASE as string | undefined)?.replace(/\/+$/, '')
-  if (!base) return
   try {
-    const res = await fetch(`${base}/manifest.json`)
+    const res = await fetch(`${import.meta.env.BASE_URL}media-manifest.json`)
     if (!res.ok) return
     const manifest = (await res.json()) as Record<string, string>
     if (!manifest || typeof manifest !== 'object') return
-    setLocalMedia(`${base}/`, manifest)
+    setLocalMedia(WEB_MEDIA_BASE, manifest)
     console.info(`[media] self-hosted bundle active — ${Object.keys(manifest).length} attachments`)
   } catch {
-    /* hosting unreachable — stay on the mirror */
+    /* manifest missing — stay on the mirror */
   }
 }

@@ -1,5 +1,6 @@
 import type { ReactEventHandler } from 'react'
 import { MEDIA_CROP } from '../lib/mediaCrop'
+import { cropKey } from '../lib/mediaUrl'
 
 // TRIM THE BAKED-IN BLACK BORDER — owner ruling, 2026-08-26.
 //
@@ -33,7 +34,9 @@ export function CroppedMedia({
   onError?: ReactEventHandler<HTMLImageElement>
   onLoad?: ReactEventHandler<HTMLImageElement>
 }) {
-  const crop = MEDIA_CROP[url]
+  // Direct hit first (mirror-resolved URLs), then via cropKey — when the self-hosted bundle
+  // is active the resolved URL is ours and the crop manifest is keyed by the mirror form.
+  const crop = MEDIA_CROP[url] ?? MEDIA_CROP[cropKey(url)]
 
   // No recorded border for this attachment — render exactly as before. Most attachments (917 of
   // 1,688 scanned) take this path untouched.

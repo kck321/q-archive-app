@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback, useMemo, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { getAllPostsWithMedia } from '../lib/posts'
 import type { QPost } from '../types'
-import { mediaUrl } from '../lib/mediaUrl'
+import { mediaUrl, cropKey } from '../lib/mediaUrl'
 import PictureChip from '../components/PictureChip'
 import { loadPictureAnalysis, getPictureInfoSync, pictureHaystack } from '../lib/pictureAnalysis'
 import { MEDIA_CROP } from '../lib/mediaCrop'
@@ -161,8 +161,8 @@ export default function QPostPics() {
                     // space... i just want the main portion of the picture showing"). Biasing
                     // object-position to the CENTER OF THE DETECTED CONTENT BOX instead keeps
                     // the simple cover-crop this grid needs, but points it at the real photo.
-                    style={media.url && MEDIA_CROP[mediaUrl(media.url)] ? (() => {
-                      const c = MEDIA_CROP[mediaUrl(media.url)]!
+                    style={media.url && (MEDIA_CROP[mediaUrl(media.url)] ?? MEDIA_CROP[cropKey(mediaUrl(media.url))]) ? (() => {
+                      const c = (MEDIA_CROP[mediaUrl(media.url)] ?? MEDIA_CROP[cropKey(mediaUrl(media.url))])!
                       const cx = ((c.cropX + c.cropWidth / 2) / c.naturalWidth) * 100
                       const cy = ((c.cropY + c.cropHeight / 2) / c.naturalHeight) * 100
                       return { objectPosition: `${cx}% ${cy}%` }
