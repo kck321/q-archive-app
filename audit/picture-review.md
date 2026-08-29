@@ -26,6 +26,7 @@ transcribe them freely; the notes below say exactly where to look.
 | 925 | #3207 | 7day BING QAnon search results.png | `8ee07c0c262d7126f8304593acea3d96e85cd3b17429073a053a8c2796140e69.jpg` | 286×4096 |
 | 950 | #3253 | FireShot Capture 001 - [USC10] 18 USC Ch. 115… uscode.house.gov.png | `e50c9682eb0fc4e7699f7da907f4676ccfcaa16d0d1c4a7b56e45e03d348d538.jpg` | 719×4096 |
 | 1071 | #3632 | IMG_1303.JPG | `e5745f537c2085a5fa7d04e3380af8815cb57b1276dc9d53913f7a4a60957c42.jpg` | 1600×967 |
+| 1246 | #4104 | EXM5NBpWsAAPRNh.jpg | `0a071ae2764a17aea71f6d22d9bb283478c5c9a582c41519f63115ef11606cd8.jpg` | 1408×1252 |
 
 ## What each contains (from the completed visual pass)
 
@@ -85,6 +86,11 @@ transcribe them freely; the notes below say exactly where to look.
   BuzzFeed, Vox, MSNBC and many foreign-language outlets, circa Aug 2019). Key headlines
   and outlet names indexed; the full per-headline verbatim transcription remains for a
   human — same treatment as the other giant compilations above.
+- **#4104 (n1246):** Compilation of ~23 news search results on the April 2020 VA
+  hydroxychloroquine study, red boxes highlighting the repeated "more deaths, no benefit"
+  phrasing. All headlines and outlets transcribed; the near-identical per-outlet body
+  snippets were condensed to one representative passage — the remaining per-outlet snippet
+  text is what a human pass would add.
 - **#132 (n98):** "Q Graphic" — the community's cleaned November 2017 compilation.
   Contains the `Q !ITPb.qbhqo` tripcode era posts and the Spy.png / AF1 photo inserts.
   Substantial overlap with the archive's own ingested drops #1–#112.
