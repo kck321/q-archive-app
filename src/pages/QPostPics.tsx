@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useMemo } from 'react'
+import { useEffect, useState, useCallback, useMemo, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { getAllPostsWithMedia } from '../lib/posts'
 import type { QPost } from '../types'
@@ -59,6 +59,31 @@ export default function QPostPics() {
     ? searched.filter(it => !failedKeys.has(it.idx))
     : searched
 
+  // 100 TILES AT A TIME (owner ruling 2026-08-28: "lets do 100 pictures at a time").
+  //
+  // The images were already loading="lazy", so the network was never the problem — mounting
+  // 1,870 <img> tiles at once was: layout and memory on phones, and a slow first paint. The
+  // grid now renders a window that grows by BATCH whenever the reader nears the bottom
+  // (the sentinel below the grid, rootMargin so growth starts before they hit the edge).
+  // A new search or mode flip resets the window. Back-navigation still restores: each time
+  // the restorer's target clamps to the bottom of the current window, the sentinel enters
+  // view, the window grows, and the restorer re-applies — the growth-aware retry in
+  // ScrollRestoration was built for exactly this shape of late-arriving height.
+  const BATCH = 100
+  const [visibleCount, setVisibleCount] = useState(BATCH)
+  useEffect(() => { setVisibleCount(BATCH) }, [search, showMode])
+  const shown = displayed.slice(0, visibleCount)
+  const sentinelRef = useRef<HTMLDivElement | null>(null)
+  useEffect(() => {
+    const el = sentinelRef.current
+    if (!el || visibleCount >= displayed.length) return
+    const ob = new IntersectionObserver(entries => {
+      if (entries.some(e => e.isIntersecting)) setVisibleCount(c => c + BATCH)
+    }, { rootMargin: '800px' })
+    ob.observe(el)
+    return () => ob.disconnect()
+  }, [visibleCount, displayed.length])
+
   const handleLoad = useCallback(() => {
     setLoadedCount(c => c + 1)
   }, [])
@@ -115,7 +140,7 @@ export default function QPostPics() {
         <div className="text-gray-500">No images found. Make sure posts are ingested.</div>
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-          {displayed.map(({ post, media, source, idx: origIdx }) => {
+          {shown.map(({ post, media, source, idx: origIdx }) => {
             const date = new Date(post.timestamp * 1000).toLocaleDateString('en-US', {
               year: 'numeric', month: 'short', day: 'numeric',
             })
@@ -181,6 +206,13 @@ export default function QPostPics() {
               </div>
             )
           })}
+        </div>
+      )}
+      {/* The growth sentinel — rendered only while more tiles remain, so the observer can
+          disconnect cleanly at the end of the list. */}
+      {!loading && visibleCount < displayed.length && (
+        <div ref={sentinelRef} className="py-6 text-center text-xs text-gray-600">
+          Showing {shown.length.toLocaleString()} of {displayed.length.toLocaleString()} — scroll for more…
         </div>
       )}
     </div>
