@@ -8209,3 +8209,18 @@ to a `| tail` pipe — re-run clean; never pipe validate through tail), deployed
 SKIP_EXPORT=1, live in 36s, verify-live 16/16, live manifest and a sample image confirmed
 serving from media.qdrops.app. qalerts remains only as the fail-soft fallback; ~200
 text-extracted news/4plebs images never came from it and stay remote.
+
+## 2026-08-29 — Picture audit batch n=1051-1250 (200 images)
+
+**Request:** Do another round of 200 photos.
+
+**Solution:** `build_next200_1250.py` reproduced the enumeration 1050/1050 hash-for-hash before
+emitting `batch1250.json` (2 fetched from the qalerts mirror: n=1126/1127; 1 video n=1061, 3
+frames extracted). Ran the frozen loop — 8 groups of 25, 5 agents x 5 images, one attempt per
+image, append-immediately, `merge1250.py check` + commit per group. No content-filter withholds
+this range. Two partial transcriptions queued in `audit/picture-review.md`: n=1071 (#3632,
+~100-headline QAnon media collage) and n=1246 (#4104, ~23 hydroxychloroquine search results,
+snippets condensed). Compiled +200 -> **1,250 images / 1,129 posts, green 1,020 / yellow 185 /
+red 45, needsReview 22**, LF verified (0 CRLF). Runbook coverage table updated (n=1251 next,
+440 remain). NOT deployed — local per batch-deploy rule; no SEED_VERSION bump needed
+(picture-analysis.json is fetched, not seeded).
