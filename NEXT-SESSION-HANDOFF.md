@@ -142,10 +142,21 @@ on the finished bundle records 1532/9271 and the cleanup then refuses.
    source). The wrapper then prints "export failed (quota/offline)", which is a generic catch-all and
    is MISLEADING — this is a QA refusal, not the 2026-08-25 quota problem.
 
-   The 2026-08-29 deploy shipped with `SKIP_EXPORT=1` under the script's documented condition (the
-   bundle was already certified and current, and Firestore writes are denied so no unbaked edits can
-   exist). That is safe for a picture-only batch and is NOT a fix. It was latent before this session:
-   the 2026-08-25 deploy died at the quota before ever reaching this check.
+   **KNOWN SINCE 2026-08-27 — this is the "qc-pin issue", already root-caused. Read that DEVLOG
+   entry before touching it.** Cause recorded there: the Firestore dump carries hash-id question
+   rows on #1915 and #1944 that no longer prior-match the local questions.json, so the locally
+   minted qc- ids shift by one position (qc-h -> qc-f). Those ids are POSITIONAL, and rulings are
+   keyed on them — `apply-step3b1.mjs` keys 182 demotions on question-row ids — so a shifted id can
+   land a ruling on the WRONG drop, silently. That is what the pin is for.
+
+   **Do NOT "fix" it by editing OWED_LITERALS to accept qc-f.** Find why #1915/#1944 stopped
+   prior-matching. A durable fix is to make qc- ids content-derived (postNum + text) rather than
+   sequential, which retires the whole class of bug.
+
+   Three consecutive deploys have now shipped with `SKIP_EXPORT=1` under the script's documented
+   condition (2026-08-27, 08-28, 08-29) — safe only because Firestore has been write-frozen since
+   the 12 Aug rules, so no unbaked owner edits can exist, and each bundle was certified first.
+   It is a standing workaround, NOT a fix.
 
    **The trap that costs time:** the aborted export still dirties `public/data/entities.json`,
    `posts.json` and `questions.json` before it gives up, and `preflight-deploy.mjs` then refuses the
