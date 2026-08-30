@@ -614,9 +614,9 @@
   {
    "group": "8. Seed and cache integrity",
    "id": "seed-current",
-   "description": "SEED_VERSION is 115 (the 17-theme merge)",
+   "description": "SEED_VERSION is 116 (#4688 items 1-17 are Directives)",
    "pass": true,
-   "detail": "115"
+   "detail": "116"
   },
   {
    "group": "8. Seed and cache integrity",
@@ -630,7 +630,7 @@
    "id": "seed-fingerprint",
    "description": "seeded data matches the SEED_VERSION that shipped it",
    "pass": true,
-   "detail": "seeded data changed and SEED_VERSION moved 98 -> 115 [posts.json, entities.json, themes.json]"
+   "detail": "unchanged"
   },
   {
    "group": "8. Seed and cache integrity",

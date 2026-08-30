@@ -110,9 +110,9 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 
 | | Invariant | Observed |
 |---|---|---|
-| ✅ | SEED_VERSION is 115 (the 17-theme merge) | 115 |
+| ✅ | SEED_VERSION is 116 (#4688 items 1-17 are Directives) | 116 |
 | ✅ | seeding is gated on SEED_VERSION | present |
-| ✅ | seeded data matches the SEED_VERSION that shipped it | seeded data changed and SEED_VERSION moved 98 -> 115 [posts.json, entities.json, themes.json] |
+| ✅ | seeded data matches the SEED_VERSION that shipped it | unchanged |
 | ✅ | the gate value is persisted after seeding | present |
 | ✅ | service worker cache name is versioned | qdrops-v1 |
 | ✅ | service worker does not pin /data to cache-only | data handled explicitly |

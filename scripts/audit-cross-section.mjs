@@ -508,7 +508,12 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
   // 115 carries the 17-theme merge (Justice & Courts -> Law Enforcement & Justice, owner ruling
   // 2026-08-28). themes.json and posts.json both changed, so a reader stuck on 114 would keep
   // the 18-theme taxonomy and the two old labels while the archive certifies 17 and one.
-  t('seed-current', 'SEED_VERSION is 115 (the 17-theme merge)', seed === 115, seed)
+  // 116 carries the #4688 ruling (items 1-17 are Directives, owner ruling 2026-08-30). Six lines
+  // leave Claims and item 2 is added, so posts.json changed; a reader stuck on 115 reads posts
+  // from IndexedDB and would go on painting six of the seventeen amber as Claims while the
+  // archive certifies them green as Directives. Caught by the owner on the rendered page, which
+  // is exactly the layer this pin exists to protect.
+  t('seed-current', 'SEED_VERSION is 116 (#4688 items 1-17 are Directives)', seed === 116, seed)
   t('seed-gate', 'seeding is gated on SEED_VERSION', /seeded === SEED_VERSION/.test(localData), 'present')
 
   // THE GUARD THAT WOULD HAVE SAVED THREE ROUND TRIPS. Changing seeded data without bumping the
