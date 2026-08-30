@@ -5,25 +5,25 @@
   "emphasis": 0,
   "impliedConclusions": 915,
   "conclusionSpans": 964,
-  "verificationHooks": 1768,
-  "checkableSpans": 1920
+  "verificationHooks": 1766,
+  "checkableSpans": 1918
  },
  "claimMetaAttributesCleared": {
-  "checkable": 2164,
+  "checkable": 2162,
   "isConclusion": 958
  },
  "postsTouched": 4966,
- "claimMetaEntriesTouched": 11255,
+ "claimMetaEntriesTouched": 11249,
  "claimsAndPredictionsUnchanged": {
   "before": {
-   "claims": 10219,
-   "claimSpans": 10219,
+   "claims": 10213,
+   "claimSpans": 10213,
    "predictions": 950,
    "predictionSpans": 953
   },
   "after": {
-   "claims": 10219,
-   "claimSpans": 10219,
+   "claims": 10213,
+   "claimSpans": 10213,
    "predictions": 950,
    "predictionSpans": 953
   }
