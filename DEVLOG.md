@@ -8405,3 +8405,81 @@ materialised byte-faithfully. Widening `.gitattributes` to cover `audit/` would 
 #4686 work, and `audit/owner-section-moves.json` untouched — its builder was reconfirmed absent from
 `chainSteps.mjs`, `rebuild-bundle.mjs` and `export-firestore.mjs`. `validate --profile full` was not
 run: it is a browser deploy gate needing a served build, and Stage B does not deploy.
+
+## 2026-08-30 — Stage B acceptance pass: three defects closed, byte-identical paths, still not merged
+
+**Request:** harden the existing `stage-b-question-identity-registry` branch rather than restart it.
+Five gaps were named for closing before any merge decision. Nothing merged, pushed, deployed, or
+written to Firestore; #4686 "WATERGATE x1000" stays deferred and untouched.
+
+**1. `--retire-old` did nothing, and said it did.** `amend-question-signature.mjs` stamped a
+`retired` field and its comment promised the wording "stops resolving". `loadRegistry()` indexed
+**every** `acceptedSignatures` record without reading the flag, so a retired wording resolved for
+ever. The fix is behavioural: the active index is built from non-retired signatures only, retired
+ones move to a separate `byRetiredSignature` index, and a build that meets one **fails closed with
+`RETIRED_SIGNATURE`** and is told which wordings are current. An entry whose every signature is
+retired is now rejected at load — nothing could ever resolve to it again, so that is a broken
+registry, not a valid one. Five new tests (31-35) prove retire → refuse → replacement still resolves
+to the **unchanged** id → reload does not reactivate.
+
+**2. "Nothing mints an ID" was not yet true.** Removing the five positional allocators left
+`backfill-analysis.mjs` handing unknown proposals a content-addressed `bf-uncertified-…` id and
+**writing them into `public/data/questions.json`**, on the reasoning that `apply-questions.mjs`
+discards them a step later. True — until the chain stops in between. A quota death, a failing gate,
+a Ctrl-C each strand identities no registry issued inside the certified dataset. Now a proposal is
+recorded in `audit/question-identity-proposals.jsonl` and **its row is not written at all**;
+`transientIdFor()` is deleted.
+
+**3. Whichever duplicate document matched the text became the metadata authority.** `prior` came
+from a TEXT index, and on an export `existing` is the raw dump — 10,158 documents for 6,643
+questions. Whichever duplicate the dump listed first supplied `status`, `createdAt` and
+`infographId`. For #1915/#1944 that rewrote `qc-b`/`qc-c`'s published `createdAt` to the documents'
+own creation instants — the only two rows keeping rebuild and export from being byte-identical, and
+a change to published data nobody approved. **Identity is resolved first; metadata is read from the
+prior row carrying that canonical id.** An alias supplies identity and nothing else. No status was
+reset — the two documents already agreed on every field except `createdAt`.
+
+**A fourth defect, introduced by fix 2 and caught by fix 3.** A proposal whose wording the registry
+knows now resolves to the REAL canonical id, so appending it put **two rows under one id**, and the
+later one won the metadata lookup — silently resetting six rows on #3721, #3858 and #3905 to status
+"unanswered". `backfill` now refuses to add an identity its input already holds. `ownQ` compares the
+drop LINE, so a certified span that is only part of its line never looked like coverage.
+
+**Result: `9407140deb4f70b4…` from both paths.** Rebuild twice, and the export input (dump + all 153
+`questionEdits`, baked exactly as the exporter bakes it) through the full chain — both byte-identical
+to the deployed seed-116 baseline, row order included, no field differing on any row.
+
+**Row-level, not summary:** 182 semanticLayer rows, 247 `step3b1ActionId` rows and all 153
+`questionEdits` now have one evidence row each. Zero movement. The crosswalk names the **52**
+certified rows a canonicalised deletion would have hit — `qf-3g`, `qf-3h` and `qf-1l` among them —
+which is why `questionEdits` handling stays deliberately unchanged.
+
+**Full local validation passed:** `--profile full` against a dev server started from the *branch*
+worktree on port 5199, proved editorial (`MODE development`, `VITE_PUBLIC_SITE` unset). 28 steps,
+**0 FAIL**, chain true, seed 116, `only[]` empty, 2,975s. 12 stale headless test browsers were
+stopped first; no ordinary browser, VS Code or other application was touched.
+
+**The CRLF trap is closed at the root.** `.gitattributes` now pins LF for `audit/**/*.{json,jsonl,md,csv,tsv,txt}`,
+`identity/*.json` and the evidence package — scope derived from the pin consumers, not guessed.
+Nothing stored is normalised: of 1,165 text-ish tracked files exactly **four** carry a CR in their
+blob, none under `audit/`, none pinned. Proved on a brand-new worktree with **no workaround** and the
+inherited `core.autocrlf=true` still in effect: clean on checkout, 2/2 pins matching, chain exit 0,
+baseline SHA, **clean again after the run**, 61/61.
+
+**Two gates stay open, and are reported rather than papered over.**
+1. **Two live Firestore exports.** The free tier allows 50,000 reads/day; today's window had already
+   spent ~44,349 (a 10,311-doc audit and two ~17,019-doc exports), leaving ~5,650 against a ~17,019
+   cost. Neither run could start, so **zero Firestore reads** were made this session and the export
+   path was reproduced offline from the saved dump instead. An apply-chain rerun is *not* a second
+   export and is not claimed as one.
+2. **A pre-existing cross-section drift.** `audit/cross-section-integrity.json` is committed at 222
+   invariants; a fresh `audit-cross-section.mjs` run emits **216**, dropping six `hover-*` /
+   `url-excluded-from-hovers` entries. **This reproduces on pristine `b870be5` with every
+   acceptance-pass change stashed**, so it is not from this work and was not committed. Invariant 10b
+   (Entity hover publication) still runs and passes 6/6. It is the only reason the validator's
+   receipt tree (`75773f99`) differs from the committed tree — `git diff-tree` names those two paths
+   and nothing else.
+
+**Branch state:** `stage-b-question-identity-registry` — `da214a4`, `b870be5`, `734f771`, `5c36e3a`,
+plus this entry. Master untouched at `ad2de36`. **Not merged, not pushed, not deployed**, so
+production still ships through `SKIP_EXPORT=1`.
