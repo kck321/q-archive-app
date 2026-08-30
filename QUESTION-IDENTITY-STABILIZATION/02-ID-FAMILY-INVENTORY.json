@@ -1,0 +1,30 @@
+{
+ "totalRows": 6643,
+ "crossTab": {
+  "firestore-20": 6380,
+  "qc": 30,
+  "uuid": 5,
+  "bf": 3,
+  "qf": 143,
+  "q-owner": 12,
+  "q-queue": 70
+ },
+ "orderDependentFamilies": {
+  "qc": 30,
+  "qf": 143,
+  "q-queue": 70,
+  "q-owner": 12,
+  "bf": 3
+ },
+ "orderDependentTotal": 258,
+ "nonPositional": {
+  "firestore-20": 6380,
+  "uuid": 5
+ },
+ "unclassified": 0,
+ "correctionToPriorSession": {
+  "claimed": "154 order-dependent ids; 30 qc, 70 q-queue, 39 qf, 12 q-owner, 3 bf; 104 ids uncharacterised",
+  "measured": "258 order-dependent ids; qf is 143, not 39",
+  "explanation": "The prior regex matched only single-character base-36 qf suffixes. 108 of the 143 qf ids carry a two-character suffix (qf-10 … qf-3z). 143 - 39 = 104, which is exactly the \"uncharacterised\" residue. There are zero unclassified ids."
+ }
+}

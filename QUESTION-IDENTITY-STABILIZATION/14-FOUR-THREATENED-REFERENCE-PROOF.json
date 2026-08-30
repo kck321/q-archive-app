@@ -1,0 +1,47 @@
+{
+ "references": [
+  {
+   "id": "qc-h",
+   "intendedPostNum": 2782,
+   "baseline": 2782,
+   "pathA": 2782,
+   "pathB": 2782,
+   "underTheOldCodePathB": {
+    "postNum": 2989,
+    "text": "How do you keep the project running w/o 'public' taxpayer fu"
+   },
+   "holds": true
+  },
+  {
+   "id": "qc-l",
+   "intendedPostNum": 311,
+   "baseline": 311,
+   "pathA": 311,
+   "pathB": 311,
+   "underTheOldCodePathB": {
+    "postNum": 365,
+    "text": "Unlock?"
+   },
+   "holds": true
+  },
+  {
+   "id": "qc-v",
+   "intendedPostNum": 53,
+   "baseline": 53,
+   "pathA": 53,
+   "pathB": 53,
+   "underTheOldCodePathB": "the id did not exist on that path",
+   "holds": true
+  },
+  {
+   "id": "qc-w",
+   "intendedPostNum": 97,
+   "baseline": 97,
+   "pathA": 97,
+   "pathB": 97,
+   "underTheOldCodePathB": "the id did not exist on that path",
+   "holds": true
+  }
+ ],
+ "note": "The prior session predicted qc-h would shift onto #2360 \"POTUS?\". Measured: it shifts onto #2989. #2360 is where qc-f lands."
+}

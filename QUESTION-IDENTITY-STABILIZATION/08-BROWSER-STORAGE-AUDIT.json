@@ -1,0 +1,18 @@
+{
+ "indexedDB": {
+  "db": "src/lib/localData.ts",
+  "caches": "whole collections including `questions`",
+  "questionIdsPersisted": true,
+  "gate": "__seed_version__ / SEED_VERSION"
+ },
+ "localStorage": [
+  "alias map (src/lib/aliases.ts)",
+  "highlight preference"
+ ],
+ "sessionStorage": [
+  "scroll restoration map"
+ ],
+ "serviceWorkerCaches": "static bundle assets; no question ids",
+ "savedEditQueues": "questionEdits are written straight to Firestore, not queued locally",
+ "conclusion": "Question ids ARE browser-persisted inside the cached questions collection. Because all 6,643 published canonical ids are unchanged, every cached id remains valid, neither Firestore alias replaces a cached id, and no browser migration is required."
+}

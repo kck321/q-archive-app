@@ -1,0 +1,62 @@
+{
+ "owed": [
+  {
+   "id": "JPIqQwo0moEuwzhHMzXL",
+   "baseline": {
+    "postNum": 466,
+    "text": "Covert OP by [CLAS-59#241-Q] to infiltrate at highest level to destroy"
+   },
+   "pathA": 466,
+   "pathB": 466,
+   "underTheOldCodePathB": 466
+  },
+  {
+   "id": "q-queue-2740-35",
+   "baseline": {
+    "postNum": 2740,
+    "text": "Why did [LL] [ATTORNEY GENERAL OF THE UNITED STATES] grant 'special en"
+   },
+   "pathA": 2740,
+   "pathB": 2740,
+   "underTheOldCodePathB": 2740
+  },
+  {
+   "id": "q-queue-2971-39",
+   "baseline": {
+    "postNum": 2971,
+    "text": "\"you will be asked to give proof of your identity\" synonyms:\tevidence,"
+   },
+   "pathA": 2971,
+   "pathB": 2971,
+   "underTheOldCodePathB": 2971
+  },
+  {
+   "id": "q-queue-4454-53",
+   "baseline": {
+    "postNum": 4454,
+    "text": "At the same time, they gave more power to their obedient followers, li"
+   },
+   "pathA": 4454,
+   "pathB": 4454,
+   "underTheOldCodePathB": 4454
+  },
+  {
+   "id": "qc-h",
+   "baseline": {
+    "postNum": 2782,
+    "text": "[Example CA] https://calmatters.org/articles/commentary/gavin-newsoms-"
+   },
+   "pathA": 2782,
+   "pathB": 2782,
+   "underTheOldCodePathB": 2989
+  }
+ ],
+ "literalCarryingRows": {
+  "baseline": 70,
+  "pathA": 70,
+  "pathB": 70
+ },
+ "targetMovements": 0,
+ "gate": "materialize-literal-spans.mjs \"question literal spans = the 5 owed records\" passes on both paths with no freehand pin edit",
+ "underTheOldCode": "the same gate FAILED on the export path, reporting qc-f where qc-h was owed"
+}

@@ -1,0 +1,2 @@
+{"ref":"DEVLOG.md / HANDOFF*.md narrative mentions of qc-*","kind":"historical only, no runtime effect"}
+{"ref":"audit/*.json review artifacts naming ids","kind":"historical only unless read by an apply step"}

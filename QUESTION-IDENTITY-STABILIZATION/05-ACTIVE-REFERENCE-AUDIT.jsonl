@@ -1,0 +1,4 @@
+{"ref":"materialize-literal-spans.mjs OWED_LITERALS","ids":["JPIqQwo0moEuwzhHMzXL","q-queue-2740-35","q-queue-2971-39","q-queue-4454-53","qc-h"],"kind":"active gate"}
+{"ref":"apply-step3b1.mjs questionEdits keyed by question id","rows":247,"kind":"active, applied by id"}
+{"ref":"Firestore questionEdits documents","count":153,"kind":"active external mutation surface"}
+{"ref":"browser IndexedDB cached questions collection","kind":"active, per-visitor cache keyed by SEED_VERSION"}

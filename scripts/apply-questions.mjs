@@ -31,6 +31,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { clean, key } from './lib/segment.mjs'
 import { loadAbbrevRepairs } from './lib/abbrevRepairs.mjs'
+import { createResolver } from './lib/questionIdentity.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -55,19 +56,21 @@ for (const q of existing) {
 // This file words a row from audit/questions-final.json; apply-questions-final.mjs then REWRITES
 // that wording where audit/abbreviation-span-repairs.json says the splitter cut it short. So on
 // the next run the lookup above compares the certified artifact's short wording against a stored
-// row holding the repaired one, misses, and `mkId()` hands the row a NEW id — and mkId is a
-// sequential counter, so every row minted after it shifts too.
+// row holding the repaired one and misses.
 //
-// That would be harmless if an id were only an id. It is not: apply-step3b1.mjs records its 163
-// demotions and 16 withdrawals as `questionEdits` keyed on this id, and applies them by id at the
+// That would be harmless if an id were only an id. It is not: apply-step3b1.mjs records its
+// demotions and withdrawals as `questionEdits` keyed on this id, and applies them by id at the
 // end of the chain. Re-id the rows and those demotions land on whatever row inherited the number.
 // Adding seven repairs on 2026-08-24 did exactly that — #1944's repaired question came back
 // carrying `A-DQ-p0121-s019` and `secondaryOf: 121|directives|673|678`, demoted by an action
 // belonging to a different drop, while post 121's own demotion went missing. Four drops, silently,
 // and every total still looked plausible: 6,327 indexed questions became 6,323.
 //
-// So the repaired wording is a second key into the same row. The record that caused the rename is
-// the record that undoes it.
+// The id no longer depends on this lookup at all — identity/question-identity-registry.json
+// decides it, and the registry holds BOTH wordings as accepted signatures of the same entry, so a
+// repair cannot rename anything. The walk below survives because status, createdAt and
+// infographId are still carried forward from the stored row, and those genuinely are looked up by
+// wording. The record that caused the rename is still the record that undoes it.
 const abbrev = loadAbbrevRepairs(ROOT)
 if (abbrev) {
   for (const q of existing) {
@@ -85,22 +88,51 @@ if (abbrev) {
   }
 }
 
-let nextId = 0
-const mkId = () => `qc-${(++nextId).toString(36)}`
+// THE POSITIONAL COUNTER IS GONE.
+//
+// This was `let nextId = 0; const mkId = () => \`qc-${(++nextId).toString(36)}\``, reached
+// whenever the lookup above missed. A counter makes a row's id a function of how many rows were
+// written before it, so the id moved whenever the prior baseline changed — and the prior baseline
+// IS different between a rebuild (this chain's own previous output) and an export (the raw
+// Firestore dump). Measured on the seed-116 tree, an export moved 20 qc-* rows: #1915 and #1944
+// legitimately match Firestore documents and adopt their ids, consuming two fewer counter values,
+// so qc-h slid onto #2989 and #2782's CalMatters row — pinned by name in
+// materialize-literal-spans.mjs — lost it.
+//
+// There is no fallback here on purpose. A candidate the registry does not recognise stops the
+// build; it never receives a manufactured id. See scripts/lib/questionIdentity.mjs.
+const identity = createResolver(ROOT, { step: 'apply-questions.mjs' })
 
 const rows = []
-const stats = { kept: 0, added: 0, editorial: 0, droppedDirective: 0, droppedHeading: 0, droppedFragment: 0, droppedRemoved: 0 }
+const stats = { kept: 0, added: 0, editorial: 0, droppedDirective: 0, droppedHeading: 0, droppedFragment: 0, droppedRemoved: 0, withdrawnFragment: 0 }
 
 for (const f of final.finals) {
   const post = postById.get(String(f.postNum)) ?? postByNum.get(f.postNum)
   if (!post) continue
 
   if (f.countsTowardQQuestionTotal) {
+    // A FRAGMENT THE REPAIR RECORD HAS ALREADY ABSORBED IS NEVER GIVEN AN IDENTITY.
+    //
+    // The sentence splitter certified both halves of fifteen questions, and
+    // audit/abbreviation-span-repairs.json records the tail of each as withdrawn — absorbed into
+    // the repaired span, counted once. apply-questions-final.mjs has always deleted them a few
+    // steps later; until now this file materialised them first, and they consumed the first
+    // fifteen values of the qc-* counter on every run. That is how "Merkel?" came to hold qc-1
+    // while the published qc-1 belongs to #1021, and why the surviving qc-* ids could never be
+    // re-derived from the artifacts — they were carried forward from an older bundle, not built.
+    //
+    // A row that is certain to be withdrawn is not a certified question, so it gets no canonical
+    // identity. The withdrawal record is the same one apply-questions-final.mjs reads, and that
+    // file's "what has to be true is ABSENCE" gate still passes: the fragment is simply never
+    // there to remove.
+    if (abbrev?.isWithdrawn('questions', post.postNum, f.qSourceText)) { stats.withdrawnFragment++; continue }
+
     const k = `${post.id}|${key(f.qSourceText)}`
     const prior = priorByKey.get(k)
     if (prior) stats.kept++; else stats.added++
     rows.push({
-      id: prior?.id ?? mkId(),
+      id: identity.resolve({ postId: post.id, postNum: post.postNum, text: f.qSourceText,
+        incomingId: prior?.id ?? null, site: 'certified-q-authored' }),
       text: f.qSourceText,                       // EXACT Q wording
       status: prior?.status ?? 'unprocessed',
       postId: post.id,
@@ -120,7 +152,8 @@ for (const f of final.finals) {
     const prior = priorByKey.get(k)
     stats.editorial++
     rows.push({
-      id: prior?.id ?? mkId(),
+      id: identity.resolve({ postId: post.id, postNum: post.postNum, text,
+        incomingId: prior?.id ?? null, site: 'editorial-normalisation' }),
       text,
       status: prior?.status ?? 'unprocessed',
       postId: post.id,
@@ -141,6 +174,10 @@ for (const f of final.finals) {
   else if (f.finalClass === 'SEGMENTATION_ERROR') stats.droppedFragment++
   else if (f.finalClass === 'REMOVE') stats.droppedRemoved++
 }
+
+// EVERY ROW MUST HAVE RESOLVED THROUGH THE REGISTRY. Checked before the span QA below, because
+// an unresolved identity is a worse failure than an unresolved span and should be the one reported.
+identity.assertResolved()
 
 // ── QA: every Q-authored row must resolve to an exact span in its post ───────
 const qa = { checked: 0, exact: 0, missing: [] }
@@ -168,6 +205,7 @@ console.log(`    directives              : ${stats.droppedDirective.toLocaleStri
 console.log(`    statements / headings   : ${stats.droppedHeading.toLocaleString()}`)
 console.log(`    segmentation fragments  : ${stats.droppedFragment.toLocaleString()}`)
 console.log(`    removed outright        : ${stats.droppedRemoved.toLocaleString()}`)
+console.log(`    absorbed tail fragments : ${stats.withdrawnFragment.toLocaleString()}  (audit/abbreviation-span-repairs.json)`)
 console.log('\n  QA — every question resolves to an exact span in its post:')
 console.log(`    checked                 : ${qa.checked.toLocaleString()}`)
 console.log(`    exact match             : ${qa.exact.toLocaleString()}`)

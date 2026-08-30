@@ -1,0 +1,11 @@
+{
+ "questionIdsInRoutes": 0,
+ "routes": [
+  "/post/:id  — :id is the DROP number, never a question id"
+ ],
+ "questionLinkShape": "/post/<number>?flash=1&highlight=<TEXT>&rk=question",
+ "queryParamsCarryingAQuestionId": 0,
+ "fragmentsCarryingAQuestionId": 0,
+ "copiedLinksCarryingAQuestionId": 0,
+ "conclusion": "No public URL references a question id, so no public alias resolver is needed. Every published id is unchanged in any case."
+}

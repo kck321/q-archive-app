@@ -1,0 +1,28 @@
+{"canonicalisation":{"encoding":"UTF-8","lineEndings":"CRLF and lone CR are normalised to LF","unicode":"NFC","caseSensitive":true,"punctuationSensitive":true,"whitespaceSensitive":true,"payload":"[\"qsig/1\", postId, canonicalisedText]  JSON-serialised, then sha256","excluded":["canonicalId","status","semanticFunction","grammaticalForm","certified","createdAt","infographId","occurrences","every array and every classification field"]}}
+{"entries":6643,"acceptedSignatures":6668,"entriesWithMoreThanOneSignature":24}
+{"signatureCollisions":0,"ambiguity":0,"rowsWithNoUniqueStrictSignature":0}
+{"extraSignatureSources":["audit/abbreviation-span-repairs.json (pre-repair wording)","audit/questions-owner-rulings.json","the unhighlighted-sentence queue rulings"]}
+{"canonicalId":"q-queue-70-2","postNum":70,"wordings":["What are the laws in SA v. US (charged criminals)?","What are the laws in SA v."]}
+{"canonicalId":"q-queue-76-3","postNum":76,"wordings":["What are the laws in SA v. US (charged criminals)?","What are the laws in SA v."]}
+{"canonicalId":"q-queue-142-5","postNum":142,"wordings":["What is A. Merkel’s family history?","What is A."]}
+{"canonicalId":"q-queue-142-6","postNum":142,"wordings":["Who is A. Merkel?","Who is A."]}
+{"canonicalId":"q-queue-964-9","postNum":964,"wordings":["What US publicly traded co. previously entered N. Korea to establish comms?","What US publicly traded co. previously entered N."]}
+{"canonicalId":"qc-b","postNum":1915,"wordings":["Same day as the targeted [coordinated] attack v. POTUS?","POTUS?"]}
+{"canonicalId":"qc-c","postNum":1944,"wordings":["'Foreign' tangent req to obtain warrant to spy on U.S. ORIG?","ORIG?"]}
+{"canonicalId":"q-queue-1948-16","postNum":1948,"wordings":["Why was the U.S. Gov't kept in the DARK?","Why was the U.S."]}
+{"canonicalId":"F23GC2IdnjtLN4rwjlGT","postNum":2211,"wordings":["Federal prosecutor in N. District of NY [background] important?","District of NY [background] important?"]}
+{"canonicalId":"q-queue-2291-23","postNum":2291,"wordings":["Did you see Sen. Graham's speech today?","Did you see Sen."]}
+{"canonicalId":"q-queue-2381-28","postNum":2381,"wordings":["How do you ensure 'appeals' to the U.S. Supreme Court are evaluated impartially > based on the RULE OF LAW?","How do you ensure 'appeals' to the U.S."]}
+{"canonicalId":"q-queue-2462-29","postNum":2462,"wordings":[">Who briefed NUNES on classified intel re: HUSSEIN spy campaign v. POTUS?",">Who briefed NUNES on classified intel re: HUSSEIN spy campaign v."]}
+{"canonicalId":"q-queue-2645-31","postNum":2645,"wordings":["Are they afraid of U.S. Patriots engaging in the same tactics?","Are they afraid of U.S."]}
+{"canonicalId":"q-queue-2740-35","postNum":2740,"wordings":["Why did [LL] [ATTORNEY GENERAL OF THE UNITED STATES] grant 'special entry' to Natalia Veselnitskaya (Don Jr. 'set up' meeting)?","Why did [LL] [ATTORNEY GENERAL OF THE UNITED STATES] grant 'special entry' to Natalia Veselnitskaya (Don Jr.","Why did [LL]  [ATTORNEY GENERAL OF THE UNITED STATES] grant 'special entry' to Natalia Veselnitskaya (Don Jr."]}
+{"canonicalId":"q-queue-2938-38","postNum":2938,"wordings":["Why was it important to use sources within the UK vs. US?","Why was it important to use sources within the UK vs."]}
+{"canonicalId":"qc-k","postNum":3049,"wordings":["If [D's] FIGHT to protect, safeguard, and promote all illegal immigrants as 'rightful' U.S. citizens who should be afforded all benefits and rights accordingly, WHY THEN WOULD THEY FIGHT TO BLOCK THEM FROM BEING 'COUNTED' AS PART OF THE U.S. CENSUS?","CENSUS?"]}
+{"canonicalId":"q-queue-3968-48","postNum":3968,"wordings":["Do you think it was Sen. Flake's choice to step down?","Do you think it was Sen."]}
+{"canonicalId":"q-queue-4226-51","postNum":4226,"wordings":["Why did U.S. District Court Judge Rudolph Contreras recuse?","Why did U.S."]}
+{"canonicalId":"XxV041paAjLP8xuIxpKJ","postNum":4782,"wordings":["FUNDS: EXPENSES V. PAYOUTS [for 'causes'] _analyze % [how much of the actual donated money actually goes to help select 'causes']?","PAYOUTS [for 'causes'] _analyze % [how much of the actual donated money actually goes to help select 'causes']?"]}
+{"canonicalId":"5PjH3TFEQYDnjD3NwdnK","postNum":4871,"wordings":["NAT SEC concerns re: blackmail [gain control] of J. Biden by Russia, China and/or other foreign [or domestic] entities?","Biden by Russia, China and/or other foreign [or domestic] entities?"]}
+{"canonicalId":"WeM2FMYWJSaxPHnoz2Rk","postNum":4888,"wordings":["Subpoena of all H. Biden's financial records?","Biden's financial records?"]}
+{"canonicalId":"q-queue-4891-61","postNum":4891,"wordings":["Why would H. Biden have such material on his laptop?","Why would H."]}
+{"canonicalId":"q-queue-4891-63","postNum":4891,"wordings":["Why wouldn't H. Biden want to reclaim *knowing* the contents on the drive could bury *Pops* & family.","Why wouldn't H."]}
+{"canonicalId":"q-queue-4898-64","postNum":4898,"wordings":["Why is the FBI's top child porn lawyer involved in the H. Biden laptop case?","Why is the FBI's top child porn lawyer involved in the H."]}

@@ -117,6 +117,9 @@ step('seed fingerprint', ['node', 'scripts/seed-fingerprint.mjs'])
 step('rendered-text matcher', ['node', 'scripts/test-rendered-match.mjs'])
 step('multi-word glossary segmentation', ['node', 'scripts/test-gloss-segments.mjs'])
 step('split glossary occurrences', ['node', 'scripts/test-gloss-occurrence.mjs'])
+// A question's id must not depend on where its row sits, what its neighbours are, how it is
+// classified, or which baseline the chain started from. Pure and offline, so it runs in `fast`.
+step('canonical question identity', ['node', 'scripts/test-question-identity.mjs'])
 // Context is certified in the data and absent from the drop.
 step('context + emphasis: certified, not painted', ['node', 'scripts/verify-context-render.mjs'])
 

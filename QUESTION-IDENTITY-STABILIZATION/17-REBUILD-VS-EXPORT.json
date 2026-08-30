@@ -1,0 +1,42 @@
+{
+ "pathA": {
+  "command": "node scripts/rebuild-bundle.mjs",
+  "questionsSha256": "9407140deb4f70b4ced88bd969da14167aa1a64d770c607c3b0b6f3047a17b01",
+  "rows": 6643,
+  "byteIdenticalToDeployedBaseline": true
+ },
+ "pathB": {
+  "command": "node scripts/export-firestore.mjs (read-only Firestore, no SKIP_EXPORT)",
+  "questionsSha256": "ecbb216995e6b59ad97b4f79a952f1e94dd754857e32b859cfdad6a3ed1084c1",
+  "rows": 6643,
+  "byteIdenticalToDeployedBaseline": false
+ },
+ "canonicalIdsIdentical": true,
+ "idsOnlyInOnePath": 0,
+ "rowOrderIdentical": true,
+ "fieldLevelDifferences": [
+  {
+   "id": "qc-b",
+   "postNum": 1915,
+   "field": "createdAt",
+   "baseline": 1786492800000,
+   "pathB": 1772769521909
+  },
+  {
+   "id": "qc-c",
+   "postNum": 1944,
+   "field": "createdAt",
+   "baseline": 1786492800000,
+   "pathB": 1772769758449
+  }
+ ],
+ "explanation": "qc-b and qc-c are the two rows that legitimately match Firestore documents. On the export path their prior row IS that document, so they inherit its real creation timestamp; a rebuild has no access to it and keeps the 2026-08-12 default the bundle was seeded with. This is Firestore truth arriving for the first time, not an identity defect, and it is confined to a non-identity field on two rows. Production was published through SKIP_EXPORT, which is why the deployed bundle carries the default.",
+ "underTheOldCode": {
+  "rowsWhoseIdChanged": 23,
+  "families": {
+   "qc": 20,
+   "bf": 3
+  },
+  "andTheChainAborted": "materialize-literal-spans.mjs literal-span gate"
+ }
+}

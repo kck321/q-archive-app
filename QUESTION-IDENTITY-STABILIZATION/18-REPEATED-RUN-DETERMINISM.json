@@ -1,0 +1,15 @@
+{
+ "pathARunTwice": {
+  "byteIdentical": true,
+  "evidence": "two consecutive rebuild-bundle runs; questions.json sha256 unchanged and git status empty"
+ },
+ "pathBApplyHalfRerun": {
+  "byteIdentical": true,
+  "evidence": "the full apply chain re-run over the Path B bundle changed no file"
+ },
+ "pathBFullSecondExport": {
+  "run": false,
+  "reason": "a second full export costs another ~15,500 Firestore reads and the free-tier daily read quota was already committed to the audit read and two exports. Path B is (pure read) then (apply chain); the read performs no writes and the apply half is measured idempotent above."
+ },
+ "chainIdempotence": "the unmodified chain was also confirmed idempotent before any change was made (control run: zero files changed)"
+}

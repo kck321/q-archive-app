@@ -1,0 +1,25 @@
+{
+ "deployedProductionBaseline": {
+  "commit": "0e968f3f2285e744a70d91b387dc16a189e436da",
+  "tree": "ad244e7e5beec0e73003fb8cd240142a9d74bd77",
+  "seed": 116,
+  "serviceWorker": "qdrops-20260830-122844",
+  "verifyLive": "16/16"
+ },
+ "implementationBaseline": {
+  "startedFrom": "ad2de3607276964064c291d6e4add89079b88ff4",
+  "startedFromTree": "1dd7468eca7fa9e2c05d5b7ebe922c99ecd85d77",
+  "branch": "stage-b-question-identity-registry",
+  "headAtEvidenceTime": "ad2de3607276964064c291d6e4add89079b88ff4"
+ },
+ "questionsJson": {
+  "rows": 6643,
+  "sha256": "9407140deb4f70b4ced88bd969da14167aa1a64d770c607c3b0b6f3047a17b01"
+ },
+ "note": "public/data/questions.json is byte-identical at 0e968f3 and ad2de36, so the implementation baseline carries the deployed data exactly.",
+ "environmentFinding": {
+  "what": "core.autocrlf=true globally, while .gitattributes pins only public/data/*.json to LF.",
+  "effect": "A fresh worktree checkout rewrites every audit/*.json to CRLF, so the sha256 content pins in apply-entity-cleanup.mjs (Owner Ruling 3, lane B) fail and the chain refuses to run.",
+  "resolution": "Worktrees were re-materialised byte-faithfully and core.autocrlf was set to false repo-locally. The canonical checkout was already LF and stayed clean throughout."
+ }
+}

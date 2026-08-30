@@ -27,6 +27,7 @@ import { fileURLToPath } from 'node:url'
 import { clean, key, unitsFor } from './lib/segment.mjs'
 import { loadAbbrevRepairs } from './lib/abbrevRepairs.mjs'
 import { loadQueueRulings } from './lib/queueRulings.mjs'
+import { createResolver } from './lib/questionIdentity.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
@@ -62,8 +63,19 @@ for (const q of existing) {
   const k = `${q.postId}|${key(q.text)}`
   if (!priorByKey.has(k)) priorByKey.set(k, q)
 }
-let nextId = 0
-const mkId = () => `qf-${(++nextId).toString(36)}`
+// THE POSITIONAL COUNTERS ARE GONE — all three of them.
+//
+// This file minted from three order-dependent allocators: `qf-${(++nextId).toString(36)}` from a
+// global counter, `q-owner-${postNum}-${ownerQuestions}` and `q-queue-${postNum}-${queueStats.added}`
+// from running counters over the ruling files. The last two did not even consult a prior row, so
+// they re-derived an id from array position on EVERY run: insert one ruling near the top of
+// audit/questions-owner-rulings.json and every id after it moves onto a different question, with
+// apply-step3b1.mjs's demotions and materialize-literal-spans.mjs's pins following them.
+//
+// Those 225 ids (143 qf, 70 q-queue, 12 q-owner) are unchanged and always will be. They are now
+// opaque strings owned by identity/question-identity-registry.json rather than the output of a
+// counter, so where a row sits in an artifact no longer has anything to do with what it is called.
+const identity = createResolver(ROOT, { step: 'apply-questions-final.mjs' })
 
 let rows = []
 const seen = new Set()
@@ -99,7 +111,8 @@ for (const f of ctxFinal.finals) {
     wrapped ? stats.addedWrapped++ : stats.addedQuestion++
     const prior = priorByKey.get(`${post.id}|${key(span)}`)
     push({
-      id: prior?.id ?? mkId(),
+      id: identity.resolve({ postId: post.id, postNum: post.postNum, text: span,
+        incomingId: prior?.id ?? null, site: 'uncovered-question-pass' }),
       text: span,
       status: prior?.status ?? 'unprocessed',
       postId: post.id,
@@ -118,7 +131,8 @@ for (const f of ctxFinal.finals) {
     stats.addedRecovered++
     const prior = priorByKey.get(`${post.id}|${key(f.recoveredQuestion)}`)
     push({
-      id: prior?.id ?? mkId(),
+      id: identity.resolve({ postId: post.id, postNum: post.postNum, text: f.recoveredQuestion,
+        incomingId: prior?.id ?? null, site: 'recovered-from-segmentation-error' }),
       text: f.recoveredQuestion,
       status: prior?.status ?? 'unprocessed',
       postId: post.id,
@@ -147,9 +161,11 @@ if (fs.existsSync(QRULES)) {
   for (const r of JSON.parse(fs.readFileSync(QRULES, 'utf8')).rulings ?? []) {
     if (rows.some(x => x.postNum === r.postNum && flat(x.text) === flat(r.text))) { ownerAlreadyPresent++; continue }
     const post = postByNum.get(r.postNum)
+    const ownerPostId = r.postId ?? String(r.postNum)
     rows.push({
-      id: `q-owner-${r.postNum}-${ownerQuestions}`,
-      postId: r.postId ?? String(r.postNum), postNum: r.postNum,
+      id: identity.resolve({ postId: ownerPostId, postNum: r.postNum, text: r.text,
+        site: 'owner-question-ruling' }),
+      postId: ownerPostId, postNum: r.postNum,
       text: r.text, occurrences: 1,
       status: 'unprocessed',
       source: 'owner ruling',
@@ -181,9 +197,11 @@ const queueStats = { added: 0, already: 0 }
     seenQ.set(k, done + 1)
     if (done < (have.get(k) ?? 0)) { queueStats.already++; continue }
     const post = postByNum.get(r.postNum)
+    const queuePostId = r.postId ?? post?.id ?? String(r.postNum)
     rows.push({
-      id: `q-queue-${r.postNum}-${queueStats.added}`,
-      postId: r.postId ?? post?.id ?? String(r.postNum),
+      id: identity.resolve({ postId: queuePostId, postNum: r.postNum, text: r.sourceText,
+        site: 'unhighlighted-sentence-queue' }),
+      postId: queuePostId,
       postNum: r.postNum,
       text: r.sourceText,
       occurrences: 1,
@@ -288,6 +306,10 @@ if (fs.existsSync(SEGFIX)) {
   }
   rows = [...kept.values()]
 }
+
+// EVERY ROW MUST HAVE RESOLVED THROUGH THE REGISTRY, before any count is reported — an
+// unresolved identity invalidates every number below it.
+identity.assertResolved()
 
 const counted = rows.filter(r => !r.editorialNormalization)
 const bodyOf = new Map(posts.map(p => [p.postNum, flat(p.text ?? '')]))

@@ -1,0 +1,169 @@
+{
+ "stage": "Stage B — canonical question identity registry",
+ "productionComparisonBaseline": {
+  "commit": "0e968f3f2285e744a70d91b387dc16a189e436da",
+  "tree": "ad244e7e5beec0e73003fb8cd240142a9d74bd77",
+  "seed": 116
+ },
+ "implementationBaseline": {
+  "startedFrom": "ad2de3607276964064c291d6e4add89079b88ff4",
+  "tree": "1dd7468eca7fa9e2c05d5b7ebe922c99ecd85d77",
+  "branch": "stage-b-question-identity-registry"
+ },
+ "finalQuestionCount": 6643,
+ "idFamilyCrossTab": {
+  "firestore-20": 6380,
+  "qc": 30,
+  "uuid": 5,
+  "bf": 3,
+  "qf": 143,
+  "q-owner": 12,
+  "q-queue": 70
+ },
+ "positionalLookingIdsPreserved": 258,
+ "registryEntries": 6643,
+ "acceptedSignatures": 6668,
+ "externalAliases": 2,
+ "activeReferences": 4,
+ "historicalReferences": 2,
+ "publicUrlReferences": 0,
+ "browserPersistedReferences": "the whole questions collection is cached in IndexedDB; all ids unchanged",
+ "firestoreQuestionEdits": 153,
+ "deletionEdits": 78,
+ "signatureCollisions": 0,
+ "canonicalIdCollisions": 0,
+ "ambiguityCount": 0,
+ "unregisteredFinalRows": 0,
+ "demotionTargetMovements": 0,
+ "literalPinTargetMovements": 0,
+ "questionEditSemanticMovements": 0,
+ "validation": {
+  "control rebuild before any change": "byte-identical, zero files changed",
+  "Path A rebuild with registry": "questions.json byte-identical to the deployed baseline",
+  "Path A run twice": "byte-identical",
+  "Path B export (read-only, no SKIP_EXPORT)": "completed; all 6,643 canonical ids and row order identical; createdAt differs on 2 rows",
+  "apply chain re-run over the Path B bundle": "zero files changed",
+  "scripts/test-question-identity.mjs": "46 passed, 0 failed",
+  "certification-manifest --verify": "every certified count, artifact hash and seed version matches; seed 116",
+  "npm run build": "passed",
+  "offline test scripts": "test-rendered-match, test-gloss-segments, test-gloss-occurrence, test-certified-write-guard, test-occurrence-model, test-prediction-sentences, test-category-order — all exit 0",
+  "validate --profile full (browser)": "NOT RUN — it is a deploy gate needing a served build, and Stage B does not deploy"
+ },
+ "confirmations": {
+  "firestoreWrites": 0,
+  "deployment": "none",
+  "remotePush": "none",
+  "dnsChanges": "none",
+  "productionChanged": false,
+  "post4686WatergateWork": "not started — deferred as instructed",
+  "ownerSectionMovesRegenerated": false,
+  "ownerSectionMovesJsonByteIdentical": true,
+  "seedVersion": 116,
+  "feedbackTimestampAndRuleBehaviour": "unchanged",
+  "post4688Data": "unchanged"
+ },
+ "files": [
+  "01-BASELINES.json",
+  "02-ID-FAMILY-INVENTORY.json",
+  "03-ID-MINTER-INVENTORY.jsonl",
+  "04-OTHER-ID-FAMILY-AUDIT.jsonl",
+  "05-ACTIVE-REFERENCE-AUDIT.jsonl",
+  "06-HISTORICAL-REFERENCE-AUDIT.jsonl",
+  "07-PUBLIC-URL-AUDIT.json",
+  "08-BROWSER-STORAGE-AUDIT.json",
+  "09-FIRESTORE-QUESTION-EDITS-AUDIT.jsonl",
+  "10-FIRESTORE-ALIAS-CROSSWALK.jsonl",
+  "11-REGISTRY-SIGNATURE-AUDIT.jsonl",
+  "12-CANONICAL-REGISTRY-AUDIT.jsonl",
+  "13-FIVE-LITERAL-PIN-PROOF.json",
+  "14-FOUR-THREATENED-REFERENCE-PROOF.json",
+  "15-DEMOTION-182-PROOF.jsonl",
+  "16-QUESTION-EDITS-SEMANTIC-PROOF.jsonl",
+  "17-REBUILD-VS-EXPORT.json",
+  "18-REPEATED-RUN-DETERMINISM.json",
+  "19-FAIL-CLOSED-TESTS.json",
+  "20-FIRESTORE-READ-WRITE-AUDIT.json"
+ ],
+ "filesWithHashes": [
+  {
+   "file": "01-BASELINES.json",
+   "sha256": "76c768dc8fad2f50446b722d50e34d3062f92c018dda909fdbeb239a10918ee2"
+  },
+  {
+   "file": "02-ID-FAMILY-INVENTORY.json",
+   "sha256": "0e3c0fa811a4b47c268e420655495ce572e87dbe07d658aa5510b755f211fb1f"
+  },
+  {
+   "file": "03-ID-MINTER-INVENTORY.jsonl",
+   "sha256": "16d3279aa43e243c6cda42e5ae0446999f0a73b60d74f017998496c7e3338ab6"
+  },
+  {
+   "file": "04-OTHER-ID-FAMILY-AUDIT.jsonl",
+   "sha256": "2e473c5d7ddff4017329e4ef2b251b344e5e4e6c55a6a6ceb5d90ba27fa90af2"
+  },
+  {
+   "file": "05-ACTIVE-REFERENCE-AUDIT.jsonl",
+   "sha256": "7dd7617af2aeabb913ed58f27bf602dad5897dd589bc51f20c1b89838d90f0e8"
+  },
+  {
+   "file": "06-HISTORICAL-REFERENCE-AUDIT.jsonl",
+   "sha256": "7089054cda77ac1c2ee91aeffe2fda7358039ad5b41736a31596577712452976"
+  },
+  {
+   "file": "07-PUBLIC-URL-AUDIT.json",
+   "sha256": "d4e0b6ed2f4f0e7b8483765839404b9b2bb58e64695eeb3511fc096379bf3768"
+  },
+  {
+   "file": "08-BROWSER-STORAGE-AUDIT.json",
+   "sha256": "35a1080760c0fdde40eda75b11e32545b5bb28cb7d1f1ef681cd9799dc4a7709"
+  },
+  {
+   "file": "09-FIRESTORE-QUESTION-EDITS-AUDIT.jsonl",
+   "sha256": "eabcc50fbbc4c6c793e987b5963002e588f47902d3f1f527c145fdae82c57826"
+  },
+  {
+   "file": "10-FIRESTORE-ALIAS-CROSSWALK.jsonl",
+   "sha256": "e0a8359449e1a806afe93f53bf4ba48e6d688dc1e9d6171fe90620cda09f8752"
+  },
+  {
+   "file": "11-REGISTRY-SIGNATURE-AUDIT.jsonl",
+   "sha256": "392590c8e136b8e9a4d9d1c310d5f17f1685094a80278a104e32a5bc2d8784cb"
+  },
+  {
+   "file": "12-CANONICAL-REGISTRY-AUDIT.jsonl",
+   "sha256": "4381cbcebfac2cf7e8f76d1c607df947f16d692d44fcea15c291abbd82e47a59"
+  },
+  {
+   "file": "13-FIVE-LITERAL-PIN-PROOF.json",
+   "sha256": "ec576525227cecbae0fdbad08a169f733c9d9840971db83f1be35ddedae602d5"
+  },
+  {
+   "file": "14-FOUR-THREATENED-REFERENCE-PROOF.json",
+   "sha256": "5f44c14438aa35674ca91dc394dabbc252e9023af40a66fd4c29ac193d82114a"
+  },
+  {
+   "file": "15-DEMOTION-182-PROOF.jsonl",
+   "sha256": "ad869abdaca4594daa8e02772bcf3684d32dd7499e7fd28b81b37638405cca6e"
+  },
+  {
+   "file": "16-QUESTION-EDITS-SEMANTIC-PROOF.jsonl",
+   "sha256": "3f3bf4f6343a8a57eeff295c046a81b68ca1b298c5817622fbd051437415f56d"
+  },
+  {
+   "file": "17-REBUILD-VS-EXPORT.json",
+   "sha256": "a9aab03fe8c29823b9876eaf4eff3bac51e8612d6fbd6b6cefc601922a55b72e"
+  },
+  {
+   "file": "18-REPEATED-RUN-DETERMINISM.json",
+   "sha256": "76172ceec9d69bdeda6e3d3995f850b0cfdcfa15a399015011b5a406e1c5a441"
+  },
+  {
+   "file": "19-FAIL-CLOSED-TESTS.json",
+   "sha256": "e648a4a02af20073202f28a83d25f18096e6792c9e447962c022f1d1e809ffb1"
+  },
+  {
+   "file": "20-FIRESTORE-READ-WRITE-AUDIT.json",
+   "sha256": "691af369d82c9cd48811b031c3a68ecbe5beb6f29469ef6c71478dc14e9375cd"
+  }
+ ]
+}

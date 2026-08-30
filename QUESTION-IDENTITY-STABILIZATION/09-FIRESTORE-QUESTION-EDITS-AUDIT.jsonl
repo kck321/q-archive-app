@@ -1,0 +1,8 @@
+{"total":153,"deletions":78,"upserts":75}
+{"docIdFamilyDistribution":{"uuid":75,"firestore-20":78}}
+{"deletionDocIdFamilies":{"firestore-20":78}}
+{"upsertDocIdFamilies":{"uuid":75}}
+{"embeddedQuestionIdsInsideDocumentBodies":0,"fieldsPresent":["id","postNum","deleted","createdAt","_updatedAt","postId","infographId","status","text"]}
+{"deletionsTargetingACertifiedCanonicalId":0}
+{"upsertsTargetingACertifiedCanonicalId":5}
+{"correctionToPriorSession":"the prior session reported every questionEdits document id as a UUID. Measured: 75 UUID (all upserts) and 78 Firestore-20 (all deletions)."}

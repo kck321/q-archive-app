@@ -18,10 +18,12 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { createResolver } from './lib/questionIdentity.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'public', 'data')
 const apply = process.argv.includes('--apply')
+const identity = createResolver(ROOT, { step: 'backfill-analysis.mjs' })
 
 const posts = JSON.parse(fs.readFileSync(path.join(DATA, 'posts.json'), 'utf8'))
 const questions = JSON.parse(fs.readFileSync(path.join(DATA, 'questions.json'), 'utf8'))
@@ -119,7 +121,20 @@ for (const p of posts) {
     const qHit = questionText.get(k)
     if (qHit && !known.has(k) && trustworthy(qHit, k)) {
       newQuestions.push({
-        id: `bf-${p.postNum}-${newQuestions.length}`,
+        // WAS `bf-${p.postNum}-${newQuestions.length}` — a running counter over every post, so a
+        // backfilled row's id depended on how many other posts happened to be backfilled before
+        // it. The raw Firestore dump and the certified bundle disagree about that, and all three
+        // surviving bf-* rows moved between the two paths (bf-2211-19 came back as bf-2211-0).
+        //
+        // A row offered here is a PROPOSAL. apply-questions.mjs runs next and rebuilds
+        // questions.json from the certified artifact, so every proposal is discarded — a rebuild
+        // offers none at all, an export offers 54, and neither number reaches production. The
+        // three published bf-* ids are not made here; they are carried by the registry, which is
+        // why `uncertified` is safe: a proposal the registry already knows still resolves to its
+        // permanent id, and only a genuinely unknown one gets a transient, content-addressed
+        // marker that cannot become canonical.
+        id: identity.resolve({ postId: p.id, postNum: p.postNum, text: qHit.text,
+          site: 'analysis-backfill', uncertified: true }),
         postId: p.id,
         postNum: p.postNum,
         text: qHit.text,
@@ -156,6 +171,14 @@ console.log(`lines newly categorised             : ${linesFilled.toLocaleString(
 for (const [c, n] of Object.entries(added).sort((a, b) => b[1] - a[1])) console.log(`   ${c.padEnd(20)} ${String(n).padStart(5)}`)
 console.log('\nexamples:')
 for (const [n, c, l] of examples) console.log(`   #${String(n).padEnd(5)} ${c.padEnd(18)} ${l.slice(0, 66)}`)
+
+// Checked even on a dry run: a backfilled row that CONTRADICTS a known identity is a finding, and
+// a dry run is exactly where it should surface.
+identity.assertResolved()
+if (identity.transient.length) {
+  console.log(`\n   ${identity.transient.length} proposal(s) carry a transient uncertified id ` +
+    '(discarded by apply-questions.mjs; never published)')
+}
 
 if (!apply) { console.log('\n(dry run — pass --apply to write)'); process.exit(0) }
 

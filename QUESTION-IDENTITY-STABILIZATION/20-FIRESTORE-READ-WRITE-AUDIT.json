@@ -1,0 +1,27 @@
+{
+ "writesPerformed": 0,
+ "staticProof": {
+  "export-firestore.mjs imports": "initializeApp, getFirestore, collection, getDocs, doc, getDoc — read APIs only",
+  "write APIs referenced": "none (setDoc/updateDoc/addDoc/deleteDoc/writeBatch/runTransaction absent)",
+  "chain steps referencing a write API": 0
+ },
+ "readsPerformed": [
+  {
+   "purpose": "read-only audit of questions + questionEdits",
+   "documents": 10311
+  },
+  {
+   "purpose": "export run 1 (stopped fail-closed at backfill-analysis)",
+   "documents": "~15,500"
+  },
+  {
+   "purpose": "export run 2 (completed)",
+   "documents": "~15,500"
+  }
+ ],
+ "deployment": "none",
+ "remotePush": "none",
+ "dnsChanges": "none",
+ "productionChanges": "none",
+ "ownerSectionMovesBuilder": "not run; reconfirmed absent from chainSteps.mjs, rebuild-bundle.mjs and export-firestore.mjs"
+}

@@ -1,0 +1,10 @@
+{"finding":"zero ids are unclassified once qf is matched with a full base-36 suffix"}
+{"family":"qf","total":143,"singleCharSuffix":35,"twoCharSuffix":108}
+{"disposition":"the 104 previously uncharacterised ids are qf-* with two-character base-36 suffixes","examples":["qf-10","qf-11","qf-12","qf-13","qf-14","qf-15","qf-16","qf-17","qf-18","qf-19","qf-1a","qf-1b"]}
+{"family":"qc","count":30}
+{"family":"qf","count":143}
+{"family":"q-owner","count":12}
+{"family":"q-queue","count":70}
+{"family":"bf","count":3}
+{"family":"uuid","count":5}
+{"family":"firestore-20","count":6380}

@@ -1,0 +1,7 @@
+{"firestoreQuestionDocuments":10158,"certifiedRows":6643}
+{"documentsWhoseStrictSignatureMatchesACertifiedRow":8505}
+{"candidatesWhoseDocIdDiffersFromTheCanonicalId":2125}
+{"ambiguous":162,"acrossCanonicalRows":81}
+{"REGISTERED_ALIASES":2,"aliases":[{"canonicalId":"qc-b","postNum":1915,"aliases":["5n1ZTUuUTW8PKpvHTk1Z"]},{"canonicalId":"qc-c","postNum":1944,"aliases":["nZW8pYgbnneY3vmbsfOJ"]}]}
+{"whyTheRestAreNotAliases":"Firestore holds 10158 documents for 6643 certified questions, so most matches are duplicate documents rather than the identity of a row. 53 of the 78 questionEdits deletions name one. Today each removes a duplicate from the raw dump and the certified row survives; canonicalising them would land three deletions on certified rows qf-3g, qf-3h and qf-1l and delete them. A deletion must never move to another question, so a duplicate document is not an alias."}
+{"deletionsThatWouldHaveLandedOnACertifiedRowIfCanonicalised":[{"doc":"HcznJKIdurxlHiWLrGkK","wouldDelete":"qf-3g"},{"doc":"Uky2rG7S6KlenP43aB8D","wouldDelete":"qf-3h"},{"doc":"a9r4bYErqCcDV8mTcpfv","wouldDelete":"qf-1l"}]}
