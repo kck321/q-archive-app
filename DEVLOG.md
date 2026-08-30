@@ -8336,3 +8336,72 @@ the numeral "1." amber (Claim). 22 bare numerals remain Claims, as ruled. Deploy
 shows a real date and the clock is the server's. `firestore.rules` asserted `createdAt is number`, so
 the rule was widened to accept number OR timestamp and **DEPLOYED FIRST** — the other order denies
 every submission. Number stays allowed for visitors on cached JS.
+
+## 2026-08-30 — Stage B: a question's id becomes permanent (canonical identity registry, not deployed)
+
+**Request:** stabilise every canonical question id and unblock the Firestore export, using a
+source-controlled registry as the identity authority. Not deployed; the owner's #4686 "WATERGATE
+x1000" ruling stays deferred until Stage B is reviewed and closed.
+
+**The defect, reproduced rather than argued.** `apply-questions.mjs` decided identity with
+`id: prior?.id ?? mkId()`, where `prior` comes from `public/data/questions.json` — the chain's OWN
+previous output on a rebuild, and the RAW FIRESTORE DUMP on an export. A real export moved **23
+rows**: #1915 and #1944 genuinely match documents `5n1ZTUuUTW8PKpvHTk1Z` and `nZW8pYgbnneY3vmbsfOJ`
+and adopt those ids, consuming two fewer counter values, so every later `qc-*` slid down by two and
+the three `bf-*` rows moved on their own counter. The export then **died** on
+`materialize-literal-spans.mjs`, which owes a literal span to `qc-h`: it got `qc-f`.
+
+**Two corrections to the earlier diagnosis, both measured.**
+1. **The blast radius was 258 ids, not 154.** `qf-*` is **143** rows, not 39 — the earlier regex
+   matched only single-character base-36 suffixes, and 108 ids carry two (`qf-10` … `qf-3z`).
+   `143 - 39 = 104`, which is exactly the "104 uncharacterised" residue. **Zero ids are unclassified.**
+2. **There are exactly TWO Firestore aliases, and 2,123 look-alikes that must NOT become aliases.**
+   Firestore holds 10,158 question documents for 6,643 certified questions. 2,125 share a drop and a
+   wording with a certified row, but they are duplicates — and **53 of the 78 `questionEdits`
+   deletions name one**. Canonicalising them would land three deletions on certified rows `qf-3g`,
+   `qf-3h` and `qf-1l` **and delete them**. A deletion must never move to another question, so
+   `questionEdits` handling is deliberately UNCHANGED. (The earlier note that all 153 edit document
+   ids are UUIDs is also wrong: 75 UUID upserts, 78 Firestore-20 deletions.)
+
+**Why the qc-* ids could never be re-derived.** `apply-questions.mjs` materialised the 15 tail
+fragments that `audit/abbreviation-span-repairs.json` already records as withdrawn; they were deleted
+a few steps later, but while they existed they consumed **the first fifteen qc-* counter values**.
+That is how "Merkel?" came to hold `qc-1` while the published `qc-1` belongs to #1021 — the surviving
+ids were carried forward from an older bundle, never built. A row certain to be withdrawn now gets no
+identity at all, which is also what the spec asks: an excluded row needs no canonical id.
+
+**The design.** `identity/question-identity-registry.json` is the authority — 6,643 permanent
+entries, every published id unchanged, including all 258 that merely look positional. A **signature
+is a witness, never the identity**: postId plus the exact wording (UTF-8, LF, NFC, nothing case- or
+punctuation-folded), and an entry may accept several. 25 record a reviewed pre-repair wording, so one
+question is recognised under several wordings while keeping ONE id. The id is **not** derived from
+text and cannot be — editorial text is repairable, and a text-derived id would rename the question on
+every span repair, which is the failure being removed.
+
+**Nothing mints an id.** All five positional allocators are gone with **no hidden fallback**: an
+unrecognised candidate STOPS the build and writes `audit/question-identity-unregistered.jsonl`. New
+question -> `scripts/allocate-question-id.mjs` (opaque UUID; never a counter, never a hash of the
+text). Repaired wording -> `scripts/amend-question-signature.mjs` (adds a signature, keeps the id).
+Neither is reachable from `rebuild-bundle.mjs` or `export-firestore.mjs`.
+
+**Proofs, in an isolated worktree, Firestore read but never written.** Control: the unmodified chain
+already reproduced `questions.json` byte-for-byte, so any drift would have been mine. With the
+registry: rebuild byte-identical, twice. A real export — **read-only, no `SKIP_EXPORT`** — completes
+and yields **all 6,643 canonical ids and the same row order**; the only delta is `createdAt` on
+`qc-b` and `qc-c`, where the export picks up their true Firestore creation times for the first time
+(production carries the 2026-08-12 default because it shipped through `SKIP_EXPORT`). The five
+`OWED_LITERALS` pins, the four threatened references, the 182 `semanticLayer` rows and the 247
+step3b1 rulings all hold: **zero target movements, against 10 under the old code.** 46 regression
+assertions (registered in `validate.mjs`), `certification-manifest --verify` at seed 116, and
+`npm run build` all pass. Evidence: `QUESTION-IDENTITY-STABILIZATION/` (20 files + manifest).
+
+**An environment trap worth remembering.** `core.autocrlf=true` is set globally while
+`.gitattributes` pins only `public/data/*.json` to LF, so a **fresh worktree checkout rewrites every
+`audit/*.json` to CRLF** and the raw-sha256 content pins in `apply-entity-cleanup.mjs` (Owner Ruling
+3, lane B) fail — the chain refuses to run on a clean checkout of its own tree. Worktrees have to be
+materialised byte-faithfully. Widening `.gitattributes` to cover `audit/` would close it for good.
+
+**Not done, deliberately:** no deploy, no push, no Firestore write, no DNS or production change, no
+#4686 work, and `audit/owner-section-moves.json` untouched — its builder was reconfirmed absent from
+`chainSteps.mjs`, `rebuild-bundle.mjs` and `export-firestore.mjs`. `validate --profile full` was not
+run: it is a browser deploy gate needing a served build, and Stage B does not deploy.
