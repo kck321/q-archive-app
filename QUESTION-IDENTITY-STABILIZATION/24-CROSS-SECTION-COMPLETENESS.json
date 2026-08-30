@@ -1,0 +1,54 @@
+{
+ "reportedProblem": "the committed audit/cross-section-integrity.json holds 222 invariants; a fresh run produced 216 and dropped six hover checks",
+ "dispositionOffered": [
+  "A: superseded by the Entity Hover Publication checks",
+  "B: accidentally dropped"
+ ],
+ "actualDisposition": "NEITHER — the six are alive, correct, and conditional on data that is deliberately untracked",
+ "proof": "copying the three editorial queue files into a clean worktree and re-running the generator reproduces the committed artifact BYTE FOR BYTE at 222 invariants, with git diff empty. The generator and the artifact never disagreed.",
+ "theSixChecks": [
+  {
+   "id": "hover-reconciles",
+   "disposition": "alive; runs when the queues are present"
+  },
+  {
+   "id": "hover-no-review-leak",
+   "disposition": "alive; runs when the queues are present"
+  },
+  {
+   "id": "hover-queues-private",
+   "disposition": "alive; runs when the queues are present"
+  },
+  {
+   "id": "hover-shared-alias-held",
+   "disposition": "alive; runs when the queues are present"
+  },
+  {
+   "id": "hover-withdrawn-history",
+   "disposition": "alive; runs when the queues are present"
+  },
+  {
+   "id": "url-excluded-from-hovers",
+   "disposition": "alive; runs when the queues are present"
+  }
+ ],
+ "gatedOn": [
+  "audit/entity-hover-review-queue.json",
+  "audit/entity-hover-url-quarantine.json",
+  "audit/entity-hover-withdrawn.json"
+ ],
+ "whyUntracked": "they hold thousands of unreviewed synopses about named people. The privacy guarantee is the ABSENCE of the bytes rather than a permission check: .gitignore keeps them out of the repository and vite.config.ts serves them to the editorial dev server only.",
+ "theRealDefect": "the skip was SILENT. The audit emitted 216 invariants, reported \"216/216 pass\", and overwrote the certified 222-invariant report with the shorter one — so anyone running it in a fresh worktree quietly downgraded a certified artifact while every number still looked perfect. It is also why the earlier full-validation receipt tree did not match the committed tree: the validator’s own audit step rewrote the artifact underneath it.",
+ "fix": [
+  "a skipped invariant is recorded rather than omitted, and named on stdout with the reason",
+  "a run with any skip REFUSES TO WRITE, leaving the complete committed report intact",
+  "failures among the checks that did run still fail the step",
+  "scripts/test-cross-section-completeness.mjs asserts that running the audit changes no tracked file, and is registered in validate.mjs"
+ ],
+ "finalInvariantCount": 222,
+ "verified": {
+  "withQueuesPresent": "audit reruns, 222 invariants, tracked artifacts byte-identical",
+  "withQueuesAbsent": "audit reports 216 of 222, names all six, writes nothing, artifact on disk stays at 222",
+  "regressionSuite": "9 assertions, passing in BOTH environments"
+ }
+}

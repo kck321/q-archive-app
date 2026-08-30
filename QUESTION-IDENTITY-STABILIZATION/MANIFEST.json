@@ -85,7 +85,10 @@
   "19-FAIL-CLOSED-TESTS.json",
   "20-FIRESTORE-READ-WRITE-AUDIT.json",
   "21-FULL-VALIDATION.json",
-  "22-FRESH-WORKTREE-CRLF-PROOF.json"
+  "22-FRESH-WORKTREE-CRLF-PROOF.json",
+  "23-SECRET-EXPOSURE-AUDIT.json",
+  "24-CROSS-SECTION-COMPLETENESS.json",
+  "25-INTERIM-VALIDATION.json"
  ],
  "filesWithHashes": [
   {
@@ -179,6 +182,18 @@
   {
    "file": "22-FRESH-WORKTREE-CRLF-PROOF.json",
    "sha256": "654624eb8b70cecf37145b2f5a915f835dd30d3a2e598b70f37c08a6dde76267"
+  },
+  {
+   "file": "23-SECRET-EXPOSURE-AUDIT.json",
+   "sha256": "19664871a9bb41361f0d9e66fc8d8bdfcdbff526800fc6260f1be6030e58cdb8"
+  },
+  {
+   "file": "24-CROSS-SECTION-COMPLETENESS.json",
+   "sha256": "8cab73bef7d564549a9a72b07d260d3d3c69858ef0971e6ac3d2c9972f51dfb5"
+  },
+  {
+   "file": "25-INTERIM-VALIDATION.json",
+   "sha256": "bb3f06bbdaab213a2079fcd2b8238121571b573431de9bb497018e2b6fb3e926"
   }
  ],
  "acceptancePass": {
@@ -215,5 +230,12 @@
   "freshWorktreeCleanWithoutWorkaround": true,
   "regressionAssertions": 61,
   "firestoreReadsThisSession": 0
- }
+ },
+ "acceptanceGates": {
+  "gate 0 — exposed Anthropic key": "CLOSED — design removed, all shipped and live bundles proven clean, owner revokes the key",
+  "gate 1 — cross-section 222 vs 216": "CLOSED — no drift existed; silent skipping fixed and covered by a test",
+  "gate 2 — two live Firestore exports": "OPEN — blocked on the daily read quota",
+  "gate 3 — final validation on the final head": "OPEN — must re-run after gate 2 moves HEAD; an interim full run at a690bd1 passed 0 FAIL with a matching receipt tree"
+ },
+ "deployedBaselineSha256": "9407140deb4f70b4ced88bd969da14167aa1a64d770c607c3b0b6f3047a17b01"
 }

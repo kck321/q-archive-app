@@ -1,0 +1,30 @@
+{
+ "note": "This receipt covers Gates 0 and 1. It is NOT the final acceptance receipt: the two live Firestore exports (Gate 2) and their evidence commit still have to land, which will move HEAD again.",
+ "command": "node scripts/validate.mjs --profile full --base http://localhost:5203",
+ "servedFrom": "a dev server started from the Stage B worktree; MODE \"development\", VITE_PUBLIC_SITE unset, so editorial",
+ "secretCheckOnTheRunningServer": "the served src/lib/appMode.ts contained 0 sk-ant- matches",
+ "verdict": "full validation complete",
+ "exit": 0,
+ "steps": 29,
+ "stepsPassed": 41,
+ "stepsFailed": 0,
+ "totalSeconds": 2878.8,
+ "receipt": {
+  "at": "2026-08-30T22:36:32.331Z",
+  "profile": "full",
+  "requiredProfile": "full",
+  "chain": true,
+  "tree": "ac91501614c52b36311b632e0387d6644c9584f1",
+  "headAtValidation": "a690bd15e1b59c6a60eaa7329f01caca6b908e2a",
+  "seed": 116,
+  "only": []
+ },
+ "receiptTreeNowMatches": {
+  "headTreeAtValidation": "ac91501614c52b36311b632e0387d6644c9584f1",
+  "receiptTree": "ac91501614c52b36311b632e0387d6644c9584f1",
+  "match": true,
+  "why": "the cross-section fix stopped the validator’s own audit step from rewriting a tracked artifact mid-run"
+ },
+ "gitStatusAfterValidation": 0,
+ "newStepRegistered": "cross-section report completeness (3.0s)"
+}
