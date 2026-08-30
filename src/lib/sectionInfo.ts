@@ -51,7 +51,7 @@ export const CERTIFIED = {
   // the five that were not. Distinct does not move; "WWG1WGA" was already a wording Directives
   // held 168 times over. Posts +2: #2347 and #2565 had no certified directive at all.
   // -1 on 2026-08-24: #1443's "#2." moves to Claims on the owner's ruling.
-  directives: { occurrences: 3333, distinct: 1941, posts: 1928 },
+  directives: { occurrences: 3340, distinct: 1941, posts: 1928 },
   // 8,912 -> 8676 across the 2026-08-22 lane-B reviews: paragraph-wide claims an early
   // extractor left sitting on top of the sentence-level records that superseded them, plus the
   // abbreviation-split pairs where one sentence had been certified twice.
@@ -63,7 +63,7 @@ export const CERTIFIED = {
   // assertion), and two arrive: #1443's "#2." from Directives and #4784's opening line.
   // 10,247 -> 10,237 on 2026-08-24: the ten Red October / Delta lines that were Claims are
   // Predictions now.
-  claims: { occurrences: 10219, distinct: 7899, posts: 3220 },
+  claims: { occurrences: 10213, distinct: 7899, posts: 3220 },
   // 843 -> 841 on 2026-08-23: two predictions sat inside quoted passages.
   // 841 -> 934: 94 prediction rulings.
   // 934 -> 935: #417 'News unlocks Map.', ruled a Prediction as well as the Claim it already was.
@@ -107,7 +107,7 @@ export const CERTIFIED = {
  * recount cannot quietly come back.
  */
 export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number; unit: string }> = {
-  claims: { occurrences: 10219, posts: 3220, unit: 'occurrences' },
+  claims: { occurrences: 10213, posts: 3220, unit: 'occurrences' },
   predictions: { occurrences: 950, posts: 672, unit: 'occurrences' },
   // "mentions" is the right word here and the only section where it is: an entity is counted
   // once per resolved mention across the 1,066 canonical entities Q named in prose. The other 135
