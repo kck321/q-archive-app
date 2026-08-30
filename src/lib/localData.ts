@@ -513,7 +513,14 @@ export const OVERLAY_REPAIR = 1
 //     6,321, entities 1,235 -> 1,214 rows and 8,975 -> 8,821 mentions. A returning reader holding
 //     87 would keep the pre-review paint on 41 drops and a registry counting one written word up
 //     to five times, so the seed has to move.
-export const SEED_VERSION = 115  // 115: 2026-08-28 — THE 17-THEME MERGE. Justice & Courts merges
+export const SEED_VERSION = 116  // 116: 2026-08-30 — #4688 ITEMS 1-17 ARE DIRECTIVES. Six lines
+                                 //     leave Claims and item 2 is added, so posts.json changes
+                                 //     (postAnalysis.claims, actionRequests, directiveFamilies).
+                                 //     A returning reader stuck on 115 reads posts from IndexedDB
+                                 //     and never re-fetches, so the list would go on painting six
+                                 //     of the seventeen amber as Claims while the archive
+                                 //     certifies them green as Directives.
+                                 // 115: 2026-08-28 — THE 17-THEME MERGE. Justice & Courts merges
                                  //     into Law Enforcement & Justice by owner ruling (17 themes,
                                  //     Q being the 17th letter). themes.json and posts.json both
                                  //     change (postAnalysis.themes labels, merged anchor unions),

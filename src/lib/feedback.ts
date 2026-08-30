@@ -48,17 +48,24 @@ export async function submitFeedback(draft: FeedbackDraft): Promise<void> {
   const message = draft.message.trim().slice(0, MAX_MESSAGE)
   if (!message) throw new Error('Please write a message first.')
 
+  // fire() FIRST: serverTimestamp() is one of its exports, so the payload cannot be built
+  // before this line resolves.
+  const { db, collection, addDoc, serverTimestamp } = await fire()
+
   // Keys must match the rule's hasOnly() list exactly, so only send fields with values.
   const payload: Record<string, unknown> = {
     kind: draft.kind,
     message,
     contact: (draft.contact ?? '').trim().slice(0, MAX_CONTACT),
-    createdAt: Date.now(),
+    // serverTimestamp(), not Date.now(): the Firebase console renders a real date instead of
+    // epoch millis, and the time is the SERVER's rather than whatever the visitor's clock says.
+    // The rule accepts number OR timestamp, and it was widened and DEPLOYED before this line
+    // changed - a timestamp is not a number, so the other order denies every submission.
+    createdAt: serverTimestamp(),
   }
   if (typeof draft.postNum === 'number' && Number.isFinite(draft.postNum)) {
     payload.postNum = draft.postNum
   }
 
-  const { db, collection, addDoc } = await fire()
   await addDoc(collection(db, 'feedback'), payload)
 }

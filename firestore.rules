@@ -50,7 +50,13 @@ service cloud.firestore {
                     && request.resource.data.message.size() <= 2000
                     && request.resource.data.contact is string
                     && request.resource.data.contact.size() <= 200
-                    && request.resource.data.createdAt is number
+                    // 2026-08-30: accepts EITHER, and the order matters. The client moved from
+                    // Date.now() to serverTimestamp() so the console shows a real date instead of
+                    // epoch millis; a timestamp is not a number, so this rule had to widen FIRST or
+                    // every submission would have been denied. Number stays allowed because a
+                    // visitor running cached JS is still sending one.
+                    && (request.resource.data.createdAt is number
+                        || request.resource.data.createdAt is timestamp)
                     && (!('postNum' in request.resource.data) || request.resource.data.postNum is number);
       allow read, update, delete: if false;
     }
