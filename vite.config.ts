@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import fs from 'node:fs'
 import path from 'node:path'
@@ -45,7 +45,15 @@ function editorialQueues() {
 // Desktop (Tauri) and the tunnel preview keep the root base "/".
 const base = process.env.DEPLOY_TARGET === 'pages' ? '/q-archive-app/' : '/'
 
-export default defineConfig({
+export default defineConfig(({ mode }) => {
+  // Loaded with an EMPTY prefix, so this sees ANTHROPIC_API_KEY as well as the VITE_ ones.
+  // It is read here, in the config, which runs in Node — nothing below puts it into `define`,
+  // so it cannot reach a browser bundle. See the dev proxy in `server.proxy` and the comment
+  // at the top of src/lib/claude.ts.
+  const env = loadEnv(mode, process.cwd(), '')
+  const anthropicKey = env.ANTHROPIC_API_KEY ?? process.env.ANTHROPIC_API_KEY ?? ''
+
+  return {
   base,
   plugins: [react(), editorialQueues()],
   build: {
@@ -76,6 +84,29 @@ export default defineConfig({
   server: {
     allowedHosts: true,
     proxy: {
+      // THE KEY IS ATTACHED HERE, ON THE SERVER, AND NEVER SENT TO THE BROWSER.
+      //
+      // src/lib/claude.ts points the Anthropic SDK at this path in dev with a placeholder key.
+      // The placeholder is what browser JavaScript holds; the real header is written below, in
+      // the Node process, on its way out. Vite's dev transform inlines the whole
+      // `import.meta.env` object into every module that touches it, so a VITE_-prefixed secret
+      // is served to the browser inside unrelated files — which is exactly how a key was
+      // disclosed. ANTHROPIC_API_KEY has no VITE_ prefix and is therefore never in that object.
+      '/anthropic-proxy': {
+        target: 'https://api.anthropic.com',
+        changeOrigin: true,
+        rewrite: (path: string) => path.replace(/^\/anthropic-proxy/, ''),
+        configure: (proxy) => {
+          proxy.on('proxyReq', proxyReq => {
+            if (anthropicKey) proxyReq.setHeader('x-api-key', anthropicKey)
+            // Never forward the browser's placeholder, and never leak an Origin that would make
+            // Anthropic treat this as a browser call.
+            proxyReq.removeHeader('authorization')
+            proxyReq.removeHeader('origin')
+            proxyReq.removeHeader('referer')
+          })
+        },
+      },
       '/qalerts-proxy': {
         target: 'https://qalerts.app',
         changeOrigin: true,
@@ -103,4 +134,5 @@ export default defineConfig({
       },
     },
   },
+  }
 })

@@ -1,28 +1,60 @@
 import Anthropic from '@anthropic-ai/sdk'
 import type { AnswerStatus, PostAnalysis, CorrelatedArticle } from '../types'
 
-// The API key is resolved at RUNTIME so it is never embedded in the shipped build:
+// THE API KEY IS NEVER HANDED TO BROWSER JAVASCRIPT — not in a build, not in dev.
+//
 //   • Desktop (Tauri): ask the Rust backend (`get_anthropic_key`), which reads the
 //     ANTHROPIC_API_KEY env var or `<app_config_dir>/anthropic_key.txt` on the local
 //     machine. A shared copy with neither has no key → AI stays disabled (can't spend).
-//   • Dev (browser): fall back to the dev .env key for convenience.
+//   • Dev (browser): talk to /anthropic-proxy on the Vite dev server, which injects the key
+//     server-side. The browser sends a placeholder and never learns the real value.
+//   • Anything else (the published site): no key, no proxy — AI is simply unavailable, which
+//     is what the public build has always done.
+//
+// WHY THE DEV PROXY EXISTS.
+//
+// This used to read `import.meta.env.VITE_ANTHROPIC_API_KEY` as a dev convenience, and the
+// VITE_ prefix is what made that a leak. Vite does not substitute one property — in dev it
+// replaces `import.meta.env` with the WHOLE env object, inlined into every module that touches
+// it. So the key was served inside modules that have nothing to do with Anthropic:
+// src/lib/appMode.ts asks only whether this is the public build, and the dev server handed out
+// the API key with the answer. Anyone who could read a dev module — a screenshot, a pasted
+// snippet, a browser devtools pane, anything on the network if --host was ever used — had the
+// key. One was disclosed exactly that way and had to be revoked.
+//
+// A secret must therefore never carry the VITE_ prefix. `ANTHROPIC_API_KEY` is read by
+// vite.config.ts on the SERVER side and attached to proxied requests there; `import.meta.env`
+// no longer contains it in any mode, so there is nothing for a module dump to reveal.
+const DEV_PROXY = '/anthropic-proxy'
+
 let _client: Anthropic | null = null
 async function getClient(): Promise<Anthropic> {
   if (_client) return _client
-  let key = ''
+
   const w = window as unknown as { __TAURI_INTERNALS__?: unknown; __TAURI__?: unknown }
   if (w.__TAURI_INTERNALS__ || w.__TAURI__) {
     try {
       const { invoke } = await import('@tauri-apps/api/core')
-      key = await invoke<string>('get_anthropic_key')
-    } catch { /* fall through to dev key */ }
+      const key = await invoke<string>('get_anthropic_key')
+      if (key) {
+        _client = new Anthropic({ apiKey: key, dangerouslyAllowBrowser: true })
+        return _client
+      }
+    } catch { /* fall through — the desktop shell may not expose the command */ }
   }
-  if (!key) key = import.meta.env.VITE_ANTHROPIC_API_KEY ?? ''
-  if (!key) {
-    throw new Error('AI features are not configured on this device. Set the ANTHROPIC_API_KEY environment variable, or add anthropic_key.txt to the app config folder.')
+
+  // Dev only. The placeholder is what the browser holds; vite.config.ts replaces the
+  // x-api-key header with the real one before the request leaves this machine.
+  if (import.meta.env.DEV) {
+    _client = new Anthropic({
+      apiKey: 'proxied-by-the-dev-server',
+      baseURL: DEV_PROXY,
+      dangerouslyAllowBrowser: true,
+    })
+    return _client
   }
-  _client = new Anthropic({ apiKey: key, dangerouslyAllowBrowser: true })
-  return _client
+
+  throw new Error('AI features are not configured on this device. Set the ANTHROPIC_API_KEY environment variable, or add anthropic_key.txt to the app config folder.')
 }
 
 // ─── Question Detection ───────────────────────────────────────────────────────
