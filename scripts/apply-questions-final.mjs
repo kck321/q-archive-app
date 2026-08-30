@@ -63,6 +63,11 @@ for (const q of existing) {
   const k = `${q.postId}|${key(q.text)}`
   if (!priorByKey.has(k)) priorByKey.set(k, q)
 }
+// Metadata is read from the row that IS this canonical identity, never from whichever row merely
+// matched the text — the same precedence rule apply-questions.mjs documents at length. `existing`
+// here is that file's output rather than a Firestore dump, so no duplicate can win; the rule is
+// applied anyway so both appliers behave identically and neither can drift into text-authority.
+const priorById = new Map(existing.map(q => [String(q.id), q]))
 // THE POSITIONAL COUNTERS ARE GONE — all three of them.
 //
 // This file minted from three order-dependent allocators: `qf-${(++nextId).toString(36)}` from a
@@ -110,15 +115,17 @@ for (const f of ctxFinal.finals) {
     const wrapped = f.finalClass === 'Q_DIRECTIVE_WITH_EMBEDDED_QUESTION'
     wrapped ? stats.addedWrapped++ : stats.addedQuestion++
     const prior = priorByKey.get(`${post.id}|${key(span)}`)
+    const spanId = identity.resolve({ postId: post.id, postNum: post.postNum, text: span,
+      incomingId: prior?.id ?? null, site: 'uncovered-question-pass' })
+    const spanMeta = spanId === null ? null : priorById.get(spanId) ?? null
     push({
-      id: identity.resolve({ postId: post.id, postNum: post.postNum, text: span,
-        incomingId: prior?.id ?? null, site: 'uncovered-question-pass' }),
+      id: spanId,
       text: span,
-      status: prior?.status ?? 'unprocessed',
+      status: spanMeta?.status ?? 'unprocessed',
       postId: post.id,
       postNum: post.postNum,
-      createdAt: prior?.createdAt ?? Date.parse('2026-08-12T00:00:00Z'),
-      infographId: prior?.infographId ?? null,
+      createdAt: spanMeta?.createdAt ?? Date.parse('2026-08-12T00:00:00Z'),
+      infographId: spanMeta?.infographId ?? null,
       certified: true,
       occurrences: occurrencesOf(post.postNum, wrapped ? f.qSourceText : span),
       unitText: f.qSourceText,
@@ -130,15 +137,17 @@ for (const f of ctxFinal.finals) {
   if (f.recoveredCounts && f.recoveredQuestion) {
     stats.addedRecovered++
     const prior = priorByKey.get(`${post.id}|${key(f.recoveredQuestion)}`)
+    const recId = identity.resolve({ postId: post.id, postNum: post.postNum, text: f.recoveredQuestion,
+      incomingId: prior?.id ?? null, site: 'recovered-from-segmentation-error' })
+    const recMeta = recId === null ? null : priorById.get(recId) ?? null
     push({
-      id: identity.resolve({ postId: post.id, postNum: post.postNum, text: f.recoveredQuestion,
-        incomingId: prior?.id ?? null, site: 'recovered-from-segmentation-error' }),
+      id: recId,
       text: f.recoveredQuestion,
-      status: prior?.status ?? 'unprocessed',
+      status: recMeta?.status ?? 'unprocessed',
       postId: post.id,
       postNum: post.postNum,
-      createdAt: prior?.createdAt ?? Date.parse('2026-08-12T00:00:00Z'),
-      infographId: prior?.infographId ?? null,
+      createdAt: recMeta?.createdAt ?? Date.parse('2026-08-12T00:00:00Z'),
+      infographId: recMeta?.infographId ?? null,
       certified: true,
       occurrences: occurrencesOf(post.postNum, f.recoveredQuestion),
       unitText: f.recoveredQuestion,

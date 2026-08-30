@@ -1,5 +1,0 @@
-{"edits":153,"deletions":78,"upserts":75}
-{"applicationUnchanged":"export-firestore.mjs applies questionEdits exactly as before; no alias canonicalisation was introduced, on the evidence in 10-FIRESTORE-ALIAS-CROSSWALK.jsonl"}
-{"measuredEffect":"the export ran end to end and produced a bundle whose 6,643 canonical ids and row order are identical to the deployed baseline"}
-{"rowsDeletedFromTheCertifiedPopulation":0,"duplicateCertifiedIdentitiesCreated":0,"unregisteredFinalRows":0}
-{"theOnlyFieldDelta":"createdAt on qc-b (#1915) and qc-c (#1944)"}

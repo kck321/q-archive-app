@@ -13,8 +13,8 @@ import path from 'node:path'
 import os from 'node:os'
 import { fileURLToPath } from 'node:url'
 import {
-  signatureOf, canonicaliseText, loadRegistry, createResolver, transientIdFor,
-  TRANSIENT_PREFIX, SCHEMA_VERSION, SIGNATURE_VERSION, REGISTRY_RELPATH,
+  signatureOf, canonicaliseText, loadRegistry, createResolver,
+  FORBIDDEN_ID_PREFIXES, PROPOSALS_RELPATH, SCHEMA_VERSION, SIGNATURE_VERSION, REGISTRY_RELPATH,
 } from './lib/questionIdentity.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
@@ -266,13 +266,105 @@ check('23. post #97 "Define." remains qc-w', byId.get('qc-w')?.postNum === 97 &&
   eq('no registry entry is orphaned', orphan, 0)
   const unresolved = questions.filter(q => reg.bySignature.get(signatureOf(q.postId, q.text))?.canonicalId !== q.id).length
   eq('every published row resolves to itself by signature', unresolved, 0)
-  check('a transient id is content-addressed and prefixed',
-    transientIdFor('p', 'x?') === transientIdFor('p', 'x?') &&
-    transientIdFor('p', 'x?').startsWith(TRANSIENT_PREFIX) &&
-    transientIdFor('p', 'x?') !== transientIdFor('p', 'y?'))
-  const transientCanonical = reg.entries.filter(e => String(e.canonicalId).startsWith(TRANSIENT_PREFIX)).length
-  eq('no transient id is a canonical id', transientCanonical, 0)
+  const forbiddenCanonical = reg.entries.filter(e => FORBIDDEN_ID_PREFIXES.some(p => String(e.canonicalId).startsWith(p))).length
+  eq('no forbidden-prefix id is a canonical id', forbiddenCanonical, 0)
   eq('canonicalisation is idempotent', canonicaliseText(canonicaliseText('a\r\nb')), canonicaliseText('a\r\nb'))
+}
+
+// ── 31-35: RETIRED SIGNATURES ARE TRULY INACTIVE ─────────────────────────────
+//
+// The first version of this file set a `retired` flag that loadRegistry() then ignored, so a
+// retired wording went on resolving for ever and --retire-old documented a behaviour the code did
+// not have. These five assertions are what makes the flag mean something.
+{
+  const q = sample[0]
+  const OLD = q.text, NEW = q.text + ' REPAIRED'
+  const mk = (retireOld) => ([{
+    schemaVersion: SCHEMA_VERSION, canonicalId: q.id, postId: q.postId, postNum: q.postNum,
+    originFamily: 'test',
+    acceptedSignatures: [
+      { signatureVersion: SIGNATURE_VERSION, signature: signatureOf(q.postId, OLD),
+        auditFields: { postId: q.postId, text: OLD }, reason: 'original',
+        ...(retireOld ? { retired: { reason: 'approved repair', retiredBy: 'amend-question-signature.mjs' } } : {}) },
+      { signatureVersion: SIGNATURE_VERSION, signature: signatureOf(q.postId, NEW),
+        auditFields: { postId: q.postId, text: NEW }, reason: 'approved repair' },
+    ],
+    externalAliases: [],
+  }])
+
+  withRegistry(mk(false), dir => {
+    const got = createResolver(dir, { step: 't' }).resolve({ postId: q.postId, text: OLD, site: 't' })
+    check('31. the old wording resolves BEFORE retirement', got === q.id, String(got))
+  })
+  withRegistry(mk(true), dir => {
+    const r = createResolver(dir, { step: 't' })
+    const got = r.resolve({ postId: q.postId, text: OLD, site: 't' })
+    check('32. after retirement the old wording fails closed',
+      got === null && r.failures.at(-1)?.reason === 'RETIRED_SIGNATURE',
+      `${got} / ${r.failures.at(-1)?.reason}`)
+
+    const rep = createResolver(dir, { step: 't' }).resolve({ postId: q.postId, text: NEW, site: 't' })
+    check('33. the replacement wording resolves to the UNCHANGED canonical id', rep === q.id, String(rep))
+
+    // Reload from the same bytes: a retired signature must not creep back into the active index.
+    const again = loadRegistry(dir)
+    check('34. reloading the registry does not reactivate a retired signature',
+      !again.bySignature.has(signatureOf(q.postId, OLD)) &&
+      again.byRetiredSignature.has(signatureOf(q.postId, OLD)) &&
+      again.bySignature.has(signatureOf(q.postId, NEW)))
+
+    eq('35. retired/active signature counts are reported separately',
+      [again.signatureCount, again.activeSignatureCount, again.retiredSignatureCount], [2, 1, 1])
+  })
+
+  // An entry whose every wording is retired could never resolve again — that is a broken registry,
+  // not a valid state, so the loader refuses it rather than leaving a dead id behind.
+  const allRetired = mk(true)
+  allRetired[0].acceptedSignatures[1].retired = { reason: 'also retired' }
+  const msg = withRegistry(allRetired, dir => throws(() => loadRegistry(dir)))
+  check('35b. an entry with no ACTIVE signature fails closed', !!msg && /no ACTIVE accepted signature/.test(msg), msg ?? 'no error')
+
+  eq('35c. the live registry has no retired signatures yet', reg.retiredSignatureCount, 0)
+  eq('35d. live active signatures equal total signatures', reg.activeSignatureCount, reg.signatureCount)
+}
+
+// ── 36-40: NO TRANSIENT IDENTITY MAY ENTER ANY questions.json ────────────────
+{
+  const proposalSrc = fs.readFileSync(path.join(ROOT, 'scripts', 'backfill-analysis.mjs'), 'utf8')
+  check('36. an excluded backfill proposal is recorded outside the question dataset',
+    /resolveProposal\(/.test(proposalSrc) && /writeProposals\(/.test(proposalSrc) &&
+    PROPOSALS_RELPATH.includes('audit'))
+  // The push must be guarded on BOTH conditions: a resolved identity, and one the input does not
+  // already hold. Dropping the second guard put two rows under one canonical id and let the later
+  // one win the metadata lookup, which reset six rows to status "unanswered".
+  check('37. a dropped proposal is not pushed into the rows array',
+    /if \(id !== null && !idsInInput\.has\(id\)\) \{\s*\n\s*newQuestions\.push/.test(proposalSrc),
+    'backfill must guard the push on a resolved id AND on the identity being absent from the input')
+  check('37b. backfill indexes the identities its input already holds',
+    /const idsInInput = new Set\(questions\.map/.test(proposalSrc))
+
+  // resolveProposal returns null (drop the row) for an unknown wording, and never an id.
+  const r = createResolver(ROOT, { step: 'test' })
+  const got = r.resolveProposal({ postId: 'no-such-post', postNum: 0, text: 'a question nobody wrote?', site: 't' })
+  check('38. an unregistered proposal yields NO id at all',
+    got === null && r.proposals.length === 1 && r.failures.length === 0)
+  check('38b. …and a proposal the registry DOES know still resolves to its permanent id',
+    createResolver(ROOT, { step: 'test' })
+      .resolveProposal({ postId: sample[0].postId, postNum: 0, text: sample[0].text, site: 't' }) === sample[0].id)
+
+  // A genuinely surviving new certified question still fails closed — resolve(), not resolveProposal().
+  const r2 = createResolver(ROOT, { step: 'test' })
+  check('39. a surviving new certified question fails closed',
+    r2.resolve({ postId: sample[0].postId, postNum: 0, text: 'a brand new certified question?', site: 't' }) === null &&
+    r2.failures.at(-1)?.reason === 'UNREGISTERED_QUESTION_IDENTITY')
+
+  // The published dataset itself carries no forbidden-prefix id.
+  const bad = questions.filter(q => FORBIDDEN_ID_PREFIXES.some(p => String(q.id).startsWith(p)))
+  eq('40. no generated questions.json row carries a transient-prefix id', bad.length, 0)
+  const stillMints = /transientIdFor|bf-uncertified-\$\{|`bf-uncertified-/.test(
+    fs.readFileSync(path.join(ROOT, 'scripts', 'lib', 'questionIdentity.mjs'), 'utf8')
+      .split('\n').filter(l => !/^\s*(\/\/|\*|\/\*)/.test(l)).join('\n'))
+  check('40b. the transient minter no longer exists in the library', !stillMints)
 }
 
 // ── report ───────────────────────────────────────────────────────────────────

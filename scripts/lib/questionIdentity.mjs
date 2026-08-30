@@ -87,34 +87,19 @@ export function signatureOf(postId, text) {
 export function registryPath(root) { return path.join(root, REGISTRY_RELPATH) }
 export function registryExists(root) { return fs.existsSync(registryPath(root)) }
 
-/** The prefix every non-certified, intermediate-only row id carries. */
-export const TRANSIENT_PREFIX = 'bf-uncertified-'
-
 /**
- * An id for a row that is a PROPOSAL, not a certified question.
+ * Every id-like prefix that must never appear in a generated questions.json.
  *
- * backfill-analysis.mjs runs first in the chain and offers rows it thinks fill a hole. On an
- * export it offers 54 of them; apply-questions.mjs then rebuilds questions.json from the
- * certified artifact and every one of them is discarded. They are never published, never
- * canonical, and never seen by a reader — but they need SOME id while they exist.
- *
- * This is deliberately NOT a canonical id and must never become one:
- *
- *   - it is content-addressed, so re-ordering the posts cannot move it (the old
- *     `bf-${postNum}-${newQuestions.length}` was a running counter over every drop, and all
- *     three surviving bf-* rows moved between the rebuild and export paths because of it)
- *   - it is prefixed, so it is recognisable on sight and assertable in a test
- *   - it can never reach public/data/questions.json, because identity there comes from the
- *     registry and the registry contains no entry whose canonicalId carries this prefix
- *
- * Content-addressing an id is exactly what the registry forbids for a CANONICAL id, because a
- * canonical id must survive an editorial repair. A row that is deleted a step later has no
- * identity to preserve, so the objection does not apply.
+ * `bf-uncertified-` was a real mechanism here for one commit: backfill-analysis.mjs gave unknown
+ * proposals a content-addressed id so the chain could carry them to apply-questions.mjs, which
+ * discards them. It is gone. A proposal is now recorded outside the dataset and its row is not
+ * written at all, so no interrupted chain can strand a hash-derived identity in certified data.
+ * The prefix is kept here only so the regression suite can assert its continued absence.
  */
-export function transientIdFor(postId, text) {
-  const h = crypto.createHash('sha256').update(JSON.stringify([String(postId), canonicaliseText(text)]), 'utf8').digest('hex')
-  return TRANSIENT_PREFIX + h.slice(0, 16)
-}
+export const FORBIDDEN_ID_PREFIXES = ['bf-uncertified-']
+
+/** Where a step records the questions it proposed but did not write. */
+export const PROPOSALS_RELPATH = path.join('audit', 'question-identity-proposals.jsonl')
 
 /** Load and index the registry, failing closed on any internal inconsistency. */
 export function loadRegistry(root) {
@@ -128,22 +113,48 @@ export function loadRegistry(root) {
     throw new Error(`registry schemaVersion ${doc.schemaVersion}, expected ${SCHEMA_VERSION}`)
   }
   const byCanonicalId = new Map()
-  const bySignature = new Map()
+  const bySignature = new Map()        // ACTIVE signatures only — what a build may resolve through
+  const byRetiredSignature = new Map() // retired ones, kept so a build can SAY the wording was retired
   const byAlias = new Map()
-  let signatureCount = 0, aliasCount = 0
+  let signatureCount = 0, activeSignatureCount = 0, retiredSignatureCount = 0, aliasCount = 0
+
+  // A RETIRED SIGNATURE MUST NOT RESOLVE.
+  //
+  // amend-question-signature.mjs --retire-old stamps `retired` on the wordings an approved repair
+  // replaced, and the whole point of retiring one is that the old wording stops being accepted.
+  // Indexing it here anyway would keep it resolving for ever, so the flag would document a
+  // behaviour the code did not have — the tool would say "it stops resolving" and it would not.
+  // It stays in the FILE as historical identity evidence, and in byRetiredSignature so the resolver
+  // can fail closed with the real reason instead of a bare "unregistered".
   for (const e of doc.entries) {
     if (byCanonicalId.has(e.canonicalId)) throw new Error(`registry: duplicate canonicalId ${e.canonicalId}`)
     byCanonicalId.set(e.canonicalId, e)
     for (const s of e.acceptedSignatures) {
+      signatureCount++
+      if (s.retired) {
+        retiredSignatureCount++
+        // A retired wording may legitimately be retired on more than one entry over time; what it
+        // must never do is resolve. Collisions among retired signatures are recorded, not fatal.
+        if (!byRetiredSignature.has(s.signature)) byRetiredSignature.set(s.signature, e)
+        continue
+      }
       const prev = bySignature.get(s.signature)
       if (prev && prev.canonicalId !== e.canonicalId) {
         throw new Error(`registry: signature ${s.signature.slice(0, 20)} is accepted by both ` +
           `${prev.canonicalId} and ${e.canonicalId}`)
       }
       bySignature.set(s.signature, e)
-      signatureCount++
+      activeSignatureCount++
+    }
+    if (e.acceptedSignatures.length && !e.acceptedSignatures.some(s => !s.retired)) {
+      throw new Error(`registry: ${e.canonicalId} has no ACTIVE accepted signature — every wording ` +
+        'was retired, so nothing could ever resolve to it again')
     }
   }
+  // An active signature and a retired one are different things and are allowed to coexist; a
+  // signature that is active on one entry while retired on another is recorded for the audit,
+  // because the active one wins and that should never be silent.
+  const retiredAlsoActive = [...byRetiredSignature.keys()].filter(s => bySignature.has(s))
   // Aliases are indexed in a second pass so that "an alias collides with a canonical id" is
   // decided against the COMPLETE set of canonical ids, not just the ones seen so far.
   for (const e of doc.entries) {
@@ -160,7 +171,8 @@ export function loadRegistry(root) {
       aliasCount++
     }
   }
-  return { doc, entries: doc.entries, byCanonicalId, bySignature, byAlias, signatureCount, aliasCount }
+  return { doc, entries: doc.entries, byCanonicalId, bySignature, byRetiredSignature, byAlias,
+    signatureCount, activeSignatureCount, retiredSignatureCount, retiredAlsoActive, aliasCount }
 }
 
 /** One machine-readable record per candidate the registry could not resolve. */
@@ -191,15 +203,9 @@ export function createResolver(root, { step }) {
   const emitted = new Map()
   const failures = []
 
-  const transient = []
+  const proposals = []
 
-  /**
-   * `uncertified: true` says this candidate is a proposal that a later step will discard, so an
-   * unknown signature is expected rather than a defect. Every OTHER stop condition still applies:
-   * a proposal whose signature the registry DOES know still resolves to the canonical id, and a
-   * proposal that contradicts a known id still stops the build.
-   */
-  const resolve = ({ postId, postNum, text, incomingId = null, site = 'unknown', uncertified = false, extra = {} }) => {
+  const resolve = ({ postId, postNum, text, incomingId = null, site = 'unknown', extra = {} }) => {
     const signature = signatureOf(postId, text)
     const bySig = reg.bySignature.get(signature) ?? null
     const byId = incomingId
@@ -211,10 +217,17 @@ export function createResolver(root, { step }) {
         signature, incomingId, signatureResolvesTo: bySig.canonicalId, idResolvesTo: byId.canonicalId, ...extra })
       return null
     }
-    if (!bySig && uncertified) {
-      const id = transientIdFor(postId, text)
-      transient.push({ id, postId, postNum, text, site })
-      return id
+    // A wording an amendment retired is not merely unknown — it is known and refused. Saying so
+    // is the difference between "someone must register this" and "this was replaced on purpose".
+    const retired = !bySig ? (reg.byRetiredSignature.get(signature) ?? null) : null
+    if (retired) {
+      failures.push({ reason: 'RETIRED_SIGNATURE', step, site, postId, postNum, text,
+        signature, incomingId, retiredFrom: retired.canonicalId,
+        activeWordings: retired.acceptedSignatures.filter(s => !s.retired).map(s => s.auditFields?.text ?? null),
+        why: 'this wording was retired by scripts/amend-question-signature.mjs and no longer resolves. ' +
+          'The source artifact still carries the old wording, or the retirement was a mistake.',
+        ...extra })
+      return null
     }
     if (!bySig) {
       failures.push({ reason: 'UNREGISTERED_QUESTION_IDENTITY', step, site, postId, postNum, text,
@@ -241,6 +254,37 @@ export function createResolver(root, { step }) {
     return id
   }
 
+  /**
+   * For a step that PROPOSES questions rather than certifying them — today only
+   * backfill-analysis.mjs, which offers rows it thinks fill a hole in a drop's analysis.
+   *
+   * Returns the permanent canonical id when the registry already knows the wording, and `null`
+   * when it does not. `null` means DROP THE ROW: the caller must not write it, and must not give
+   * it an id of any kind.
+   *
+   * An earlier version of this file handed unknown proposals a content-addressed `bf-uncertified-…`
+   * id and let them into the intermediate public/data/questions.json on the grounds that
+   * apply-questions.mjs discards them a step later. That is true right up until the chain is
+   * interrupted between the two steps — an export that dies on a quota error, a Ctrl-C, a failing
+   * gate — and then a hash-derived identity is sitting in the certified dataset on disk with
+   * nothing left to remove it. The registry is supposed to be the only source of identity in that
+   * file, so the proposal is recorded OUTSIDE it instead and the row is simply not written.
+   *
+   * Every other stop condition still applies: a proposal that contradicts a known id still fails
+   * closed, and a proposal whose wording was retired still fails closed.
+   */
+  const resolveProposal = ({ postId, postNum, text, site = 'proposal', extra = {} }) => {
+    const signature = signatureOf(postId, text)
+    const bySig = reg.bySignature.get(signature) ?? null
+    if (bySig) return resolve({ postId, postNum, text, site, extra })
+    if (reg.byRetiredSignature.has(signature)) return resolve({ postId, postNum, text, site, extra })
+    proposals.push({ step, site, postId, postNum, text, signature,
+      possibleMatches: candidatesFor(reg, postId, text),
+      disposition: 'not written to public/data/questions.json — no identity assigned',
+      ...extra })
+    return null
+  }
+
   /** Stop the build unless every candidate resolved. */
   const assertResolved = () => {
     if (!failures.length) return
@@ -260,9 +304,25 @@ export function createResolver(root, { step }) {
     process.exit(1)
   }
 
-  return { resolve, assertResolved, registry: reg,
+  /**
+   * Record the proposals this step declined to write.
+   *
+   * Always called, so a run that proposes nothing REMOVES a file left by an earlier run rather
+   * than leaving a stale list of questions that are no longer being proposed. A rebuild proposes
+   * none, so on the certified tree this file does not exist — which is why it is a finding when
+   * it does.
+   */
+  const writeProposals = () => {
+    const file = path.join(root, PROPOSALS_RELPATH)
+    if (!proposals.length) { if (fs.existsSync(file)) fs.rmSync(file); return file }
+    fs.mkdirSync(path.dirname(file), { recursive: true })
+    fs.writeFileSync(file, proposals.map(r => JSON.stringify(r)).join('\n') + '\n')
+    return file
+  }
+
+  return { resolve, resolveProposal, assertResolved, writeProposals, registry: reg,
     get failures() { return failures },
-    get transient() { return transient } }
+    get proposals() { return proposals } }
 }
 
 /** Best-effort neighbours for the review artifact — never used to resolve anything. */

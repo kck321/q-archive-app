@@ -1,15 +1,27 @@
 {
  "pathARunTwice": {
   "byteIdentical": true,
-  "evidence": "two consecutive rebuild-bundle runs; questions.json sha256 unchanged and git status empty"
+  "sha256": "9407140deb4f70b4ced88bd969da14167aa1a64d770c607c3b0b6f3047a17b01",
+  "evidence": "two consecutive rebuild-bundle runs on the hardened branch; questions.json sha unchanged and git status empty"
  },
- "pathBApplyHalfRerun": {
+ "pathBApplyChain": {
   "byteIdentical": true,
-  "evidence": "the full apply chain re-run over the Path B bundle changed no file"
+  "sha256": "9407140deb4f70b4ced88bd969da14167aa1a64d770c607c3b0b6f3047a17b01",
+  "evidence": "the export input (Firestore dump plus the 153 questionEdits, baked exactly as export-firestore.mjs bakes it) run through the full apply chain"
  },
- "pathBFullSecondExport": {
+ "pathAEqualsPathB": true,
+ "twoFullLiveExports": {
   "run": false,
-  "reason": "a second full export costs another ~15,500 Firestore reads and the free-tier daily read quota was already committed to the audit read and two exports. Path B is (pure read) then (apply chain); the read performs no writes and the apply half is measured idempotent above."
+  "gate": "OPEN",
+  "why": "Firestore free tier allows 50,000 document reads per day. Today’s window had already spent about 44,349 — a 10,311-document read-only audit and two ~17,019-document exports. About 5,650 remained and one export costs about 17,019, so neither run could start. The instruction is explicit: do not begin a run when the remaining quota is insufficient.",
+  "whatWasDoneInstead": "the export path was reproduced offline from the saved read-only dump — the same technique that previously predicted the live export’s exact failure (qc-f where qc-h was owed) before it was run",
+  "whatItDoesNotProve": "that two LIVE exports are byte-identical to each other. That gate stays open.",
+  "howToClose": [
+   "wait for the quota reset at 00:00 America/Los_Angeles",
+   "in two clean worktrees of the branch run: node scripts/export-firestore.mjs   (no SKIP_EXPORT)",
+   "compare questions.json, relationships.json, semantics.json, search-index.json, manifest.json and every other generated file",
+   "expect questions.json to equal 9407140deb4f70b4ced88bd969da14167aa1a64d770c607c3b0b6f3047a17b01 on both runs"
+  ]
  },
- "chainIdempotence": "the unmodified chain was also confirmed idempotent before any change was made (control run: zero files changed)"
+ "firestoreReadsThisSession": 0
 }

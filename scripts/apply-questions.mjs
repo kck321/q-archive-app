@@ -51,6 +51,25 @@ for (const q of existing) {
   if (!priorByKey.has(k)) priorByKey.set(k, q)
 }
 
+// METADATA COMES FROM THE ROW THAT *IS* THIS IDENTITY, NEVER FROM WHATEVER MATCHED THE TEXT.
+//
+// priorByKey is a TEXT index, and on an export `existing` is the raw Firestore dump: 10,158
+// documents for 6,643 certified questions. Thousands of drops therefore hold several documents
+// with the same wording, `if (!priorByKey.has(k))` keeps whichever one the dump happened to list
+// first, and that document then supplies status, createdAt and infographId. Which duplicate wins
+// is an accident of iteration order — exactly the kind of "arbitrary document becomes the
+// authority" the registry exists to end.
+//
+// It is not hypothetical. #1915 and #1944 match documents 5n1ZTUuUTW8PKpvHTk1Z and
+// nZW8pYgbnneY3vmbsfOJ, and reading metadata off them rewrote qc-b's and qc-c's published
+// createdAt from 1786492800000 to the documents' own creation instants — the only two rows that
+// stopped a rebuild and an export from being byte-identical.
+//
+// So identity is resolved FIRST, and metadata is then read from the prior row carrying that
+// canonical id. An alias supplies identity and nothing else. A row with no prior under its own id
+// takes the documented defaults, which is what a rebuild already gave it.
+const priorById = new Map(existing.map(q => [String(q.id), q]))
+
 // A ROW'S ID MUST SURVIVE AN ABBREVIATION REPAIR, AND SOMETHING ELSE IS KEYED TO IT.
 //
 // This file words a row from audit/questions-final.json; apply-questions-final.mjs then REWRITES
@@ -130,15 +149,17 @@ for (const f of final.finals) {
     const k = `${post.id}|${key(f.qSourceText)}`
     const prior = priorByKey.get(k)
     if (prior) stats.kept++; else stats.added++
+    const id = identity.resolve({ postId: post.id, postNum: post.postNum, text: f.qSourceText,
+      incomingId: prior?.id ?? null, site: 'certified-q-authored' })
+    const meta = id === null ? null : priorById.get(id) ?? null
     rows.push({
-      id: identity.resolve({ postId: post.id, postNum: post.postNum, text: f.qSourceText,
-        incomingId: prior?.id ?? null, site: 'certified-q-authored' }),
+      id,
       text: f.qSourceText,                       // EXACT Q wording
-      status: prior?.status ?? 'unprocessed',
+      status: meta?.status ?? 'unprocessed',
       postId: post.id,
       postNum: post.postNum,
-      createdAt: prior?.createdAt ?? Date.parse('2026-08-12T00:00:00Z'),
-      infographId: prior?.infographId ?? null,
+      createdAt: meta?.createdAt ?? Date.parse('2026-08-12T00:00:00Z'),
+      infographId: meta?.infographId ?? null,
       semanticFunction: f.semanticFunction,      // question | information_request
       grammaticalForm: f.grammaticalForm,
       certified: true,
@@ -151,15 +172,17 @@ for (const f of final.finals) {
     const k = `${post.id}|${key(text)}`
     const prior = priorByKey.get(k)
     stats.editorial++
+    const id = identity.resolve({ postId: post.id, postNum: post.postNum, text,
+      incomingId: prior?.id ?? null, site: 'editorial-normalisation' })
+    const meta = id === null ? null : priorById.get(id) ?? null
     rows.push({
-      id: identity.resolve({ postId: post.id, postNum: post.postNum, text,
-        incomingId: prior?.id ?? null, site: 'editorial-normalisation' }),
+      id,
       text,
-      status: prior?.status ?? 'unprocessed',
+      status: meta?.status ?? 'unprocessed',
       postId: post.id,
       postNum: post.postNum,
-      createdAt: prior?.createdAt ?? Date.parse('2026-08-12T00:00:00Z'),
-      infographId: prior?.infographId ?? null,
+      createdAt: meta?.createdAt ?? Date.parse('2026-08-12T00:00:00Z'),
+      infographId: meta?.infographId ?? null,
       // Searchable, never Q's words.
       editorialNormalization: true,
       neverDisplayAsQ: true,

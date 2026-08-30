@@ -1,0 +1,42 @@
+{
+ "command": "node scripts/validate.mjs --profile full --base http://localhost:5199",
+ "servedFrom": "a dev server started from the BRANCH worktree, not canonical master",
+ "mode": "editorial — MODE \"development\", VITE_PUBLIC_SITE unset, so CAN_EDIT is true",
+ "portProof": "port 5199 chosen after confirming only 5173 and 5174 were listening; the serving process command line resolves to the worktree path",
+ "verdict": "full validation complete",
+ "exit": 0,
+ "steps": 28,
+ "stepsPassed": 40,
+ "stepsFailed": 0,
+ "requiredProfile": "full",
+ "totalSeconds": 2975.1,
+ "receipt": {
+  "at": "2026-08-30T20:41:39.340Z",
+  "profile": "full",
+  "chain": true,
+  "tree": "75773f99ea6ccc46e7f42a19b4a5ff24bc8c5553",
+  "headAtValidation": "b870be509c5fadaf63bd60268ebfc3f518dfdd57",
+  "seed": 116,
+  "only": []
+ },
+ "receiptTreeReconciliation": {
+  "note": "validate computes its receipt tree with read-tree HEAD then add -A on a temporary index, so it includes untracked files and anything the run itself regenerated",
+  "difference": "the receipt tree equals the committed tree plus the regenerated audit/cross-section-integrity.json and .md",
+  "provedBy": "git diff-tree between the receipt tree and the worktree tree named exactly those two paths and nothing else",
+  "isThatDriftFromThisWork": "no — with every acceptance-pass change stashed, a pristine b870be5 regenerates the same file with 216 invariants against the committed 222, so the drift is pre-existing and is reported rather than committed",
+  "sixInvariantsNoLongerEmitted": [
+   "hover-reconciles",
+   "hover-no-review-leak",
+   "hover-queues-private",
+   "hover-shared-alias-held",
+   "hover-withdrawn-history",
+   "url-excluded-from-hovers"
+  ],
+  "forOwnerReview": "these six are absent from a fresh audit-cross-section run on the branch AND on pristine b870be5. Cross-section invariant 10b, Entity hover publication, still runs and passes 6/6 inside the full validation."
+ },
+ "stalenessControls": {
+  "staleHeadlessTestBrowsersStopped": 12,
+  "ownerApplicationsTouched": "none — 53 ordinary browser windows, VS Code and every other application left running",
+  "availableMemoryAtStart": "1.3 GB of 15.7 GB; the machine was already paging. Recorded because contention is the documented cause of past flaky gates, and this run had zero failures anyway."
+ }
+}

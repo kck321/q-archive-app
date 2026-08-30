@@ -3,40 +3,34 @@
   "command": "node scripts/rebuild-bundle.mjs",
   "questionsSha256": "9407140deb4f70b4ced88bd969da14167aa1a64d770c607c3b0b6f3047a17b01",
   "rows": 6643,
-  "byteIdenticalToDeployedBaseline": true
+  "byteIdenticalToDeployedBaseline": true,
+  "runTwice": "byte-identical"
  },
  "pathB": {
-  "command": "node scripts/export-firestore.mjs (read-only Firestore, no SKIP_EXPORT)",
-  "questionsSha256": "ecbb216995e6b59ad97b4f79a952f1e94dd754857e32b859cfdad6a3ed1084c1",
+  "command": "the export input — Firestore dump plus the 153 questionEdits, baked exactly as export-firestore.mjs bakes it — through the full apply chain",
+  "questionsSha256": "9407140deb4f70b4ced88bd969da14167aa1a64d770c607c3b0b6f3047a17b01",
   "rows": 6643,
-  "byteIdenticalToDeployedBaseline": false
+  "byteIdenticalToDeployedBaseline": true,
+  "liveExport": "NOT re-run in the acceptance pass; see 18-REPEATED-RUN-DETERMINISM.json for the open two-export gate"
  },
+ "pathAEqualsPathB": true,
  "canonicalIdsIdentical": true,
  "idsOnlyInOnePath": 0,
  "rowOrderIdentical": true,
- "fieldLevelDifferences": [
+ "fieldLevelDifferences": [],
+ "historyOfThisResult": [
   {
-   "id": "qc-b",
-   "postNum": 1915,
-   "field": "createdAt",
-   "baseline": 1786492800000,
-   "pathB": 1772769521909
+   "stage": "before the registry",
+   "result": "23 rows changed id on the export path (20 qc-*, 3 bf-*), and the chain aborted on the materialize-literal-spans literal-span gate with qc-f where qc-h was owed"
   },
   {
-   "id": "qc-c",
-   "postNum": 1944,
-   "field": "createdAt",
-   "baseline": 1786492800000,
-   "pathB": 1772769758449
+   "stage": "registry commit da214a4",
+   "result": "all 6,643 ids and the row order matched, but createdAt on qc-b (#1915) and qc-c (#1944) came from the matching Firestore documents — 1772769521909 and 1772769758449 against the published 1786492800000 — so the paths were not byte-identical"
+  },
+  {
+   "stage": "acceptance pass",
+   "result": "metadata is now read from the prior row carrying the resolved canonical id rather than from whichever document matched the text, so an alias supplies identity and nothing else. Both paths produce 9407140deb4f70b4ced88bd969da14167aa1a64d770c607c3b0b6f3047a17b01.",
+   "alsoFixed": "a proposal whose wording the registry already knew was being appended as a second row under an existing canonical id, and the later row won the metadata lookup — silently resetting six rows on #3721, #3858 and #3905 to status \"unanswered\" with a default createdAt. backfill now refuses to add an identity its input already holds."
   }
- ],
- "explanation": "qc-b and qc-c are the two rows that legitimately match Firestore documents. On the export path their prior row IS that document, so they inherit its real creation timestamp; a rebuild has no access to it and keeps the 2026-08-12 default the bundle was seeded with. This is Firestore truth arriving for the first time, not an identity defect, and it is confined to a non-identity field on two rows. Production was published through SKIP_EXPORT, which is why the deployed bundle carries the default.",
- "underTheOldCode": {
-  "rowsWhoseIdChanged": 23,
-  "families": {
-   "qc": 20,
-   "bf": 3
-  },
-  "andTheChainAborted": "materialize-literal-spans.mjs literal-span gate"
- }
+ ]
 }

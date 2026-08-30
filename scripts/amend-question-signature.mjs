@@ -12,11 +12,18 @@
 // belongs to. A person then confirms the repair and runs this, which adds the new wording as an
 // additional accepted signature of the SAME entry.
 //
-// The old signature is KEPT by default. It is historical identity evidence: it is what the row
-// was called when earlier rulings were written against it, and an artifact that still carries the
-// old wording must still resolve. --retire-old marks it retired (it stops resolving) for the rare
-// case where the old wording was genuinely wrong rather than merely older; the record of it stays
-// in the file either way, because deleting the evidence defeats the purpose of keeping it.
+// The old signature is KEPT and stays ACTIVE by default. It is historical identity evidence: it is
+// what the row was called when earlier rulings were written against it, and an artifact that still
+// carries the old wording must still resolve.
+//
+// --retire-old is for the rare case where the old wording was genuinely wrong rather than merely
+// older. A retired signature stays in the FILE as evidence but is no longer indexed by
+// loadRegistry(), so it stops resolving and a build that meets it fails closed with
+// RETIRED_SIGNATURE. That is enforced in lib/questionIdentity.mjs and covered by tests 31-35;
+// an earlier version set the flag and indexed the signature anyway, so retirement did nothing.
+//
+// An entry cannot have every wording retired — nothing could ever resolve to it again, so the
+// loader refuses that registry outright.
 //
 // What this will not do:
 //   - move a signature between entries       (that is two questions, not one repair)
@@ -94,7 +101,9 @@ entry.acceptedSignatures.push({
 console.log('\nAMEND ACCEPTED SIGNATURE\n')
 console.log(`  canonical id (UNCHANGED)  : ${canonicalId}`)
 console.log(`  drop                      : #${entry.postNum}`)
-console.log(`  accepted signatures       : ${entry.acceptedSignatures.length - 1} -> ${entry.acceptedSignatures.length}`)
+const active = entry.acceptedSignatures.filter(s => !s.retired).length
+console.log(`  accepted signatures       : ${entry.acceptedSignatures.length - 1} -> ${entry.acceptedSignatures.length}` +
+  `  (active ${active}, retired ${entry.acceptedSignatures.length - active})`)
 for (const b of before) console.log(`    kept${has('retire-old') ? ' (retired)' : ''} : ${JSON.stringify(String(b).slice(0, 70))}`)
 console.log(`    added        : ${JSON.stringify(text.slice(0, 70))}`)
 console.log(`  reason                    : ${reason}`)

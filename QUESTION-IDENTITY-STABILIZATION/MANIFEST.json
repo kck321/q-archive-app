@@ -77,12 +77,15 @@
   "12-CANONICAL-REGISTRY-AUDIT.jsonl",
   "13-FIVE-LITERAL-PIN-PROOF.json",
   "14-FOUR-THREATENED-REFERENCE-PROOF.json",
-  "15-DEMOTION-182-PROOF.jsonl",
-  "16-QUESTION-EDITS-SEMANTIC-PROOF.jsonl",
+  "15-SEMANTIC-LAYER-182-PROOF.jsonl",
+  "15b-STEP3B1-247-PROOF.jsonl",
+  "16-QUESTION-EDITS-153-PROOF.jsonl",
   "17-REBUILD-VS-EXPORT.json",
   "18-REPEATED-RUN-DETERMINISM.json",
   "19-FAIL-CLOSED-TESTS.json",
-  "20-FIRESTORE-READ-WRITE-AUDIT.json"
+  "20-FIRESTORE-READ-WRITE-AUDIT.json",
+  "21-FULL-VALIDATION.json",
+  "22-FRESH-WORKTREE-CRLF-PROOF.json"
  ],
  "filesWithHashes": [
   {
@@ -142,28 +145,75 @@
    "sha256": "5f44c14438aa35674ca91dc394dabbc252e9023af40a66fd4c29ac193d82114a"
   },
   {
-   "file": "15-DEMOTION-182-PROOF.jsonl",
-   "sha256": "ad869abdaca4594daa8e02772bcf3684d32dd7499e7fd28b81b37638405cca6e"
+   "file": "15-SEMANTIC-LAYER-182-PROOF.jsonl",
+   "sha256": "b0195ccd26fd8fa7b7978f662e88c6fff597a8c2ffa3f5c6851b750eaf98f841"
   },
   {
-   "file": "16-QUESTION-EDITS-SEMANTIC-PROOF.jsonl",
-   "sha256": "3f3bf4f6343a8a57eeff295c046a81b68ca1b298c5817622fbd051437415f56d"
+   "file": "15b-STEP3B1-247-PROOF.jsonl",
+   "sha256": "62dd7403a330e480d19bb5ed264ab7616ea64a5a9ae244d965fe7ac2a077a74c"
+  },
+  {
+   "file": "16-QUESTION-EDITS-153-PROOF.jsonl",
+   "sha256": "6802822d9179de3f459592f7a9f06b21fd1c850777acf056ec0fd31cc32ca1e1"
   },
   {
    "file": "17-REBUILD-VS-EXPORT.json",
-   "sha256": "a9aab03fe8c29823b9876eaf4eff3bac51e8612d6fbd6b6cefc601922a55b72e"
+   "sha256": "df6c23ef731ed62f1b5841098f6ee4bc8489c24e8db9e8978aa62eec7d58150d"
   },
   {
    "file": "18-REPEATED-RUN-DETERMINISM.json",
-   "sha256": "76172ceec9d69bdeda6e3d3995f850b0cfdcfa15a399015011b5a406e1c5a441"
+   "sha256": "a0a96d15a582e5308d20167d575f95ae44cdac626716b21af7f981005695ae8b"
   },
   {
    "file": "19-FAIL-CLOSED-TESTS.json",
-   "sha256": "e648a4a02af20073202f28a83d25f18096e6792c9e447962c022f1d1e809ffb1"
+   "sha256": "fe3e7d90ccfde64d8bc9b74fc31ab2df27ff2a59c9c76568e6245db6e1be1d4a"
   },
   {
    "file": "20-FIRESTORE-READ-WRITE-AUDIT.json",
    "sha256": "691af369d82c9cd48811b031c3a68ecbe5beb6f29469ef6c71478dc14e9375cd"
+  },
+  {
+   "file": "21-FULL-VALIDATION.json",
+   "sha256": "0187b77f2308aec2cd16ab398cb46d0ad1a0d969209031aacc0fd0dc1f91f55b"
+  },
+  {
+   "file": "22-FRESH-WORKTREE-CRLF-PROOF.json",
+   "sha256": "654624eb8b70cecf37145b2f5a915f835dd30d3a2e598b70f37c08a6dde76267"
   }
- ]
+ ],
+ "acceptancePass": {
+  "date": "2026-08-30",
+  "retiredSignatureContract": "loadRegistry indexes ACTIVE signatures only; retired ones resolve to RETIRED_SIGNATURE and fail closed",
+  "transientIds": "removed — an unregistered proposal is recorded in audit/question-identity-proposals.jsonl and no row is written",
+  "metadataPrecedence": "status/createdAt/infographId come from the prior row carrying the resolved canonical id, never from whichever document matched the text",
+  "backfillDuplicateGuard": "a proposal whose identity the input already holds is not re-added",
+  "pathAQuestionsSha256": "9407140deb4f70b4ced88bd969da14167aa1a64d770c607c3b0b6f3047a17b01",
+  "pathBQuestionsSha256": "9407140deb4f70b4ced88bd969da14167aa1a64d770c607c3b0b6f3047a17b01",
+  "deployedBaselineSha256": "9407140deb4f70b4ced88bd969da14167aa1a64d770c607c3b0b6f3047a17b01",
+  "pathsByteIdentical": true,
+  "registryEntries": 6643,
+  "totalSignatures": 6668,
+  "activeSignatures": 6668,
+  "retiredSignatures": 0,
+  "externalAliases": 2,
+  "rowLevelProofs": {
+   "15-SEMANTIC-LAYER-182-PROOF.jsonl": 182,
+   "15b-STEP3B1-247-PROOF.jsonl": 247,
+   "16-QUESTION-EDITS-153-PROOF.jsonl": 153
+  },
+  "openGates": {
+   "twoFullFirestoreExports": "OPEN — insufficient daily read quota; see 18-REPEATED-RUN-DETERMINISM.json"
+  },
+  "fullValidation": {
+   "exit": 0,
+   "verdict": "complete",
+   "steps": 28,
+   "failed": 0,
+   "chain": true,
+   "seed": 116
+  },
+  "freshWorktreeCleanWithoutWorkaround": true,
+  "regressionAssertions": 61,
+  "firestoreReadsThisSession": 0
+ }
 }

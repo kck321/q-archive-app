@@ -1,0 +1,37 @@
+{
+ "problem": "core.autocrlf is true for this repository (set outside the repo) and .gitattributes pinned only public/data, so a plain git worktree add rewrote every audit/*.json to CRLF and the raw-byte sha256 pins stopped matching",
+ "beforeTheFix": {
+  "pinnedArtifact": "audit/occurrence-withdrawals-owner-ruling-3.json",
+  "expected": "65f82ace6748eaaf1bbbdd010f8cba30802c8f9a7c918e5928be0ef2a20e21ef",
+  "got": "a09291ed06713bf7ad247331a3912c7f91f78e42f9a5ad5f537813f0ce3ad397",
+  "consequence": "apply-entity-cleanup.mjs refused to run, so the chain could not complete on a clean checkout of its own tree"
+ },
+ "fix": ".gitattributes now pins LF for audit/**/*.{json,jsonl,md,csv,tsv,txt}, identity/*.json and the evidence package",
+ "scopeDerivedFrom": [
+  "apply-entity-cleanup.mjs POST_APPROVAL_SETS — Owner Ruling 3, lane B families 4-5",
+  "scripts/lib/step3b1Sets.mjs — eight pinned action sets",
+  "apply-step3b1.mjs — plan and held dispositions",
+  "QUESTION-IDENTITY-STABILIZATION/MANIFEST.json — hashes the evidence package"
+ ],
+ "blobImpact": {
+  "textishTrackedFiles": 1165,
+  "blobsContainingCR": 4,
+  "files": [
+   "audit/preserved-lanes/2026-08-16T12-30Z/scripts__apply-reference-audit.mjs",
+   "scripts/adjudicate-entities-other.mjs",
+   "scripts/apply-reference-audit.mjs",
+   "scripts/extract-entity-hovers.mjs"
+  ],
+  "hashPinnedAmongThem": 0,
+  "conclusion": "no stored blob is normalised by these rules; the three pinned artifacts checked hash to the same blob before and after"
+ },
+ "afterTheFix": {
+  "workaroundApplied": "none — the repo-local core.autocrlf override was removed first, leaving the inherited true in effect",
+  "statusOnCheckout": 0,
+  "pinsMatching": "2/2",
+  "controlChain": "node scripts/rebuild-bundle.mjs — exit 0",
+  "questionsSha256": "9407140deb4f70b4ced88bd969da14167aa1a64d770c607c3b0b6f3047a17b01",
+  "statusAfterAFullChainRun": 0,
+  "identityTests": "61 passed, 0 failed"
+ }
+}

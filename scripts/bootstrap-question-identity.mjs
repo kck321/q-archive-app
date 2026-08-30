@@ -227,12 +227,16 @@ for (const a of PROVEN_ALIASES) if (!entries.some(e => e.externalAliases.include
 const famTally = {}
 for (const e of entries) famTally[e.originFamily] = (famTally[e.originFamily] ?? 0) + 1
 const signatureCount = entries.reduce((n, e) => n + e.acceptedSignatures.length, 0)
+const activeSignatureCount = entries.reduce((n, e) => n + e.acceptedSignatures.filter(s => !s.retired).length, 0)
+const retiredSignatureCount = signatureCount - activeSignatureCount
 const aliasCount = entries.reduce((n, e) => n + e.externalAliases.length, 0)
 
 console.log('\nBOOTSTRAP QUESTION IDENTITY REGISTRY\n')
 console.log(`  baseline questions.json   : ${rows.length.toLocaleString()} rows, sha256 ${gotSha.slice(0, 16)}…`)
 console.log(`  registry entries          : ${entries.length.toLocaleString()}`)
 console.log(`  accepted signatures       : ${signatureCount.toLocaleString()}  (+${extraSignatures} pre-repair wordings)`)
+console.log(`    active (resolvable)     : ${activeSignatureCount.toLocaleString()}`)
+console.log(`    retired (evidence only) : ${retiredSignatureCount.toLocaleString()}`)
 console.log(`  external aliases          : ${aliasCount}`)
 console.log(`  id families preserved     : ${Object.entries(famTally).map(([k, v]) => `${k} ${v}`).join(' · ')}`)
 console.log('\n  COLLISION AUDIT')

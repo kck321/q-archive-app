@@ -83,6 +83,10 @@ function trustworthy(entry, k) {
   return entry.sources.size >= CORROBORATED || k.split(' ').length >= LONG_ENOUGH
 }
 
+// Every identity the input already holds, so a proposal can never become a second row under one.
+const idsInInput = new Set(questions.map(q => String(q.id)))
+let alreadyPresent = 0
+
 const qByPost = new Map()
 for (const q of questions) {
   if (!q?.postId) continue
@@ -120,27 +124,42 @@ for (const p of posts) {
 
     const qHit = questionText.get(k)
     if (qHit && !known.has(k) && trustworthy(qHit, k)) {
-      newQuestions.push({
-        // WAS `bf-${p.postNum}-${newQuestions.length}` — a running counter over every post, so a
-        // backfilled row's id depended on how many other posts happened to be backfilled before
-        // it. The raw Firestore dump and the certified bundle disagree about that, and all three
-        // surviving bf-* rows moved between the two paths (bf-2211-19 came back as bf-2211-0).
-        //
-        // A row offered here is a PROPOSAL. apply-questions.mjs runs next and rebuilds
-        // questions.json from the certified artifact, so every proposal is discarded — a rebuild
-        // offers none at all, an export offers 54, and neither number reaches production. The
-        // three published bf-* ids are not made here; they are carried by the registry, which is
-        // why `uncertified` is safe: a proposal the registry already knows still resolves to its
-        // permanent id, and only a genuinely unknown one gets a transient, content-addressed
-        // marker that cannot become canonical.
-        id: identity.resolve({ postId: p.id, postNum: p.postNum, text: qHit.text,
-          site: 'analysis-backfill', uncertified: true }),
-        postId: p.id,
-        postNum: p.postNum,
-        text: qHit.text,
-        status: 'unanswered',
-        backfilled: true,
-      })
+      // A ROW OFFERED HERE IS A PROPOSAL, AND AN UNREGISTERED PROPOSAL IS NOT WRITTEN AT ALL.
+      //
+      // WAS `bf-${p.postNum}-${newQuestions.length}` — a running counter over every drop, so a
+      // backfilled row's id depended on how many other drops happened to be backfilled first. The
+      // raw Firestore dump and the certified bundle disagree about that, and all three surviving
+      // bf-* rows moved between the two paths (bf-2211-19 came back as bf-2211-0).
+      //
+      // The commit that removed the counter replaced it with a content-addressed
+      // `bf-uncertified-…` id, reasoning that apply-questions.mjs rebuilds questions.json from the
+      // certified artifact a step later and discards every proposal anyway. True — until the chain
+      // stops in between. An export that dies on a quota error, a failing gate, a Ctrl-C, all leave
+      // public/data/questions.json on disk holding identities that no registry ever issued.
+      //
+      // So resolveProposal() returns an id only when the registry ALREADY knows this wording, and
+      // null otherwise. null means the row is not written and gets no id of any kind; the proposal
+      // is recorded in audit/question-identity-proposals.jsonl for review. The counters below still
+      // move, because what this script tells the reader about a drop's coverage has not changed.
+      const id = identity.resolveProposal({ postId: p.id, postNum: p.postNum, text: qHit.text,
+        site: 'analysis-backfill' })
+      // AND NEVER A SECOND ROW UNDER AN IDENTITY THE INPUT ALREADY HOLDS.
+      //
+      // `ownQ` compares the DROP LINE against the stored wording, so a certified span that is only
+      // part of its line does not look like coverage and the hole detector offers it again. While
+      // proposals carried their own `bf-…` ids that produced a harmless duplicate row which
+      // apply-questions.mjs discarded. Now that a known proposal resolves to the REAL canonical id,
+      // appending it puts two rows under one id in questions.json — and the later one wins the
+      // metadata lookup, which silently reset six rows on three drops (#3721, #3858, #3905) to
+      // status "unanswered" with a default createdAt.
+      //
+      // A question the archive already holds is not a hole. Backfill fills holes.
+      if (id !== null && !idsInInput.has(id)) {
+        newQuestions.push({ id, postId: p.id, postNum: p.postNum, text: qHit.text, status: 'unanswered', backfilled: true })
+        idsInInput.add(id)
+      } else if (id !== null) {
+        alreadyPresent++
+      }
       ownQ.add(k)
       added.questions = (added.questions ?? 0) + 1
       linesFilled++; touched = true
@@ -175,9 +194,12 @@ for (const [n, c, l] of examples) console.log(`   #${String(n).padEnd(5)} ${c.pa
 // Checked even on a dry run: a backfilled row that CONTRADICTS a known identity is a finding, and
 // a dry run is exactly where it should surface.
 identity.assertResolved()
-if (identity.transient.length) {
-  console.log(`\n   ${identity.transient.length} proposal(s) carry a transient uncertified id ` +
-    '(discarded by apply-questions.mjs; never published)')
+const proposalFile = identity.writeProposals()
+if (alreadyPresent) console.log(`
+   ${alreadyPresent} proposal(s) name a question the archive already holds (not re-added)`)
+if (identity.proposals.length) {
+  console.log(`\n   ${identity.proposals.length} proposed question(s) were NOT written to questions.json`)
+  console.log(`   (no identity assigned; recorded for review in ${path.relative(ROOT, proposalFile)})`)
 }
 
 if (!apply) { console.log('\n(dry run — pass --apply to write)'); process.exit(0) }
