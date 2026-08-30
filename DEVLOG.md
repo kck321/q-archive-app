@@ -8483,3 +8483,77 @@ baseline SHA, **clean again after the run**, 61/61.
 **Branch state:** `stage-b-question-identity-registry` — `da214a4`, `b870be5`, `734f771`, `5c36e3a`,
 plus this entry. Master untouched at `ad2de36`. **Not merged, not pushed, not deployed**, so
 production still ships through `SKIP_EXPORT=1`.
+
+## 2026-08-30 — Gates 0 and 1: a leaked API key, and an audit that quietly downgraded itself
+
+**Request:** close the four remaining acceptance gates before Stage B can merge. Two are closed
+here; two are blocked on the Firestore daily read quota and stay open.
+
+### Gate 0 — an Anthropic API key was disclosed, and the design that allowed it is gone
+
+**I caused this.** A browser-mode proof printed the dev server's transformed `src/lib/appMode.ts`,
+and that output went into a transcript. The key must be revoked and replaced.
+
+**The root cause is the `VITE_` prefix, not the one proof.** Vite does not substitute a single
+property of `import.meta.env` — in dev it inlines the **entire env object** into every module that
+references it. So the key was served inside modules with no Anthropic involvement whatsoever:
+`appMode.ts` asks only whether this is the public build, and the answer came back with the API key
+attached. Any screenshot, pasted snippet or devtools pane of a dev module was a disclosure, and
+`--host` would have put it on the network.
+
+**Shipped builds were already clean**, which is why this is not a production incident:
+`.env.production` and `.env.public` blank the key, and the desktop build takes it from the Rust
+backend at runtime. Proven rather than assumed — **13 live `qdrops.app` JS assets** walked across
+the full import graph, **6,567 git objects / 3,321 text blobs**, and both builds: **zero** `sk-ant-`
+matches, zero exact matches of any `.env` secret, zero mentions of the variable name. The key was
+never committed, so no history rewrite is needed.
+
+**The fix:** the variable loses the prefix and becomes `ANTHROPIC_API_KEY`. `vite.config.ts` reads
+it with `loadEnv(mode, cwd, '')` — in Node, in the config — and attaches it to `/anthropic-proxy`
+requests in a `proxyReq` hook, stripping `authorization`/`origin`/`referer`. Browser JavaScript
+holds only the placeholder `proxied-by-the-dev-server`. Desktop is unchanged; the published site is
+unchanged (no key, no proxy, AI unavailable). Dev server **before**: `appMode.ts` and `claude.ts`
+each served 1 `sk-ant-` match. **After**: 0 and 0. `VITE_FIREBASE_*` and `VITE_CF_ANALYTICS_TOKEN`
+keep their prefix deliberately — a Firebase web config and a Cloudflare beacon token are public by
+design. **No secret value was printed at any point in this work.**
+
+### Gate 1 — the 222-versus-216 cross-section drift was never drift
+
+Neither offered disposition was right. The six `hover-*` invariants were **not** superseded and
+**not** accidentally dropped. They are alive and correct, and gated on three files that are
+deliberately untracked — `entity-hover-review-queue.json`, `entity-hover-url-quarantine.json`,
+`entity-hover-withdrawn.json` — because they hold thousands of unreviewed synopses about named
+people, and the privacy guarantee is the **absence of the bytes** rather than a permission check.
+
+Copy those three into a clean worktree, rerun the generator, and it reproduces the committed
+artifact **byte for byte at 222 invariants**. The generator and the artifact never disagreed.
+
+**The actual defect was the silence.** A checkout without the queues emitted 216 invariants,
+reported "216/216 pass", and **overwrote the certified 222-invariant report with the shorter one**.
+Anyone running the audit in a worktree quietly downgraded it, and every number still looked
+perfect. It is also exactly why the earlier full-validation receipt tree did not match the
+committed tree: the validator's own audit step was rewriting a tracked artifact mid-run.
+
+Now a skipped invariant is **recorded, named on stdout with its reason, and the run refuses to
+write** — a partial run reports what it could and could not check and leaves the file alone. Real
+failures among the checks that did run still fail. `scripts/test-cross-section-completeness.mjs`
+asserts the property that protects the report — running the audit changes no tracked file — and
+passes in both environments (9 assertions). Registered in `validate.mjs`.
+
+**Full validation at `a690bd1`: 29 steps, 41 passed, 0 FAIL, chain true, seed 116, `only[]` empty,
+2,878s — and for the first time a receipt tree (`ac91501614c5`) equal to the committed tree, with
+`git status` empty afterwards.** That is the receipt-tree gate mechanically closed; the receipt
+itself is interim, because Gate 2 will move HEAD.
+
+### Still open
+
+**Gate 2 — two live Firestore exports.** Blocked: the free tier allows 50,000 reads/day and today's
+window was already spent (~44,349 of 50,000). Zero Firestore reads were made in this session. Two
+exports cost ~34,000, so they belong in the next quota window, and a normal deployment belongs in
+the one after that.
+
+**Gate 3 — final validation on the final head.** Must be re-run once Gate 2's evidence lands. The
+mechanism is now proven to produce a matching receipt.
+
+Branch: `da214a4`, `b870be5`, `734f771`, `5c36e3a`, `99b8dfd`, `5ad9b61`, `a690bd1`, `338bff4`,
+plus this entry. Master untouched at `ad2de36`. Not merged, not pushed, not deployed.
