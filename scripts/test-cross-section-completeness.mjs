@@ -64,17 +64,48 @@ check('the committed report has no failures', committed.totals.failed === 0, Str
     src.indexOf('if (skipped.length)') < src.indexOf("writeFileSync(path.join(OUT, 'cross-section-integrity.json')"))
 }
 
-// ── THE PROPERTY THAT MATTERS: running it changes no tracked file ────────────
+// ── the incomplete path FAILS CLOSED ─────────────────────────────────────────
+//
+// Refusing to overwrite the report was only half the contract. Exiting 0 let a certified
+// validation report success while six invariants had not run at all.
 {
+  check('an incomplete run exits non-zero', /process\.exit\(2\)/.test(src))
+  check('--allow-incomplete exists for manual inspection only', /--allow-incomplete/.test(src))
+  // Comments in validate.mjs discuss the flag on purpose; what must never happen is PASSING it,
+  // so the check reads code rather than prose.
+  const validate = fs.readFileSync(path.join(ROOT, 'scripts', 'validate.mjs'), 'utf8')
+  const validateCode = validate.split('\n').filter(l => !/^\s*(\/\/|\*|\/\*)/.test(l)).join('\n')
+  check('validate.mjs never passes --allow-incomplete', !validateCode.includes('--allow-incomplete'))
+  check('the audit is a validator step', /audit-cross-section\.mjs/.test(validate))
+}
+
+// ── THE PROPERTY THAT MATTERS: running it changes no tracked file ────────────
+const run = (...args) => {
   const before = { json: sha(JSON_ARTIFACT), md: sha(MD_ARTIFACT) }
-  let ran = true
-  try { execFileSync(process.execPath, [path.join(ROOT, 'scripts', 'audit-cross-section.mjs')], { cwd: ROOT, stdio: 'pipe' }) }
-  catch { ran = false }
+  let code = 0, out = ''
+  try { out = execFileSync(process.execPath, [path.join(ROOT, 'scripts', 'audit-cross-section.mjs'), ...args],
+    { cwd: ROOT, stdio: 'pipe' }).toString() }
+  catch (e) { code = e.status ?? 1; out = `${e.stdout ?? ''}${e.stderr ?? ''}` }
   const after = { json: sha(JSON_ARTIFACT), md: sha(MD_ARTIFACT) }
-  check('the audit exits cleanly', ran)
-  check(`running the audit rewrites nothing (${haveQueues ? 'queues present — reproduces 222 byte for byte' : 'queues absent — refuses to write'})`,
-    before.json === after.json && before.md === after.md,
-    before.json === after.json ? '' : 'the artifact changed')
+  return { code, out, unchanged: before.json === after.json && before.md === after.md }
+}
+{
+  const plain = run()
+  if (haveQueues) {
+    check('queues present: the audit exits 0', plain.code === 0, `exit ${plain.code}`)
+    check('queues present: it reproduces the committed artifact byte for byte', plain.unchanged)
+  } else {
+    check('queues absent: the audit exits 2 (incomplete)', plain.code === 2, `exit ${plain.code}`)
+    check('queues absent: it still rewrites nothing', plain.unchanged)
+    check('queues absent: it names the incompleteness', /INCOMPLETE/.test(plain.out))
+
+    const allow = run('--allow-incomplete')
+    check('--allow-incomplete exits 0', allow.code === 0, `exit ${allow.code}`)
+    check('--allow-incomplete reports 216 of 222', /216 of 222/.test(allow.out))
+    const named = GATED.filter(id => allow.out.includes(id))
+    check('--allow-incomplete names all six skipped invariants', named.length === 6, `${named.length}/6`)
+    check('--allow-incomplete still rewrites nothing', allow.unchanged)
+  }
   const now = JSON.parse(fs.readFileSync(JSON_ARTIFACT, 'utf8'))
   check('the report on disk is still the complete one', now.totals.invariants === 222, String(now.totals.invariants))
 }

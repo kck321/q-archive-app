@@ -109,6 +109,13 @@ step('typecheck (tsc -b)', ['npx', 'tsc', '-b'])
 
 // ── CHEAP CERTIFIED-DATA INVARIANTS — every profile, always. ~6s for all of it. ────────────────
 step('certification manifest', ['node', 'scripts/certification-manifest.mjs', '--verify'])
+// ALL 222 INVARIANTS MUST ACTUALLY RUN, not merely not-fail.
+//
+// Six of them read the editorial review queues, which are deliberately untracked. A checkout
+// without those files can only reach 216, and the audit used to skip them silently and exit 0 —
+// so this gate reported success on a tree where it had not checked what it claims to check.
+// audit-cross-section.mjs now exits 2 when any invariant is skipped, which fails this step.
+// --allow-incomplete exists for manual inspection and is deliberately NOT passed here.
 step('cross-section invariants', ['node', 'scripts/audit-cross-section.mjs'])
 step('seed fingerprint', ['node', 'scripts/seed-fingerprint.mjs'])
 // The pure matchers. Milliseconds each, and each has already caught a defect that would otherwise

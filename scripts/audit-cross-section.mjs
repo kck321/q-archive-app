@@ -1754,6 +1754,16 @@ for (const r of results) (byGroup[r.group] ??= []).push(r)
 //
 // So a partial run reports what it could and could not check, and leaves the file alone. The
 // checks that DID run still ran, and a real failure among them is still a failure below.
+// AN INCOMPLETE RUN IS A FAILURE, NOT A PASS.
+//
+// Refusing to overwrite the complete report was only half the contract. Exiting 0 meant
+// `validate --profile full` could still report success while six of the 222 invariants had not
+// run at all — the certified gate would be green on a checkout that could not check the thing.
+// Missing required input is now a nonzero result (exit code 2, distinct from a real invariant
+// failure), and --allow-incomplete exists solely for manual inspection: it prints what could be
+// checked, names what could not, writes nothing, and returns 0. validate.mjs never passes it.
+const allowIncomplete = process.argv.includes('--allow-incomplete')
+
 if (skipped.length) {
   console.log('')
   console.log(`  ${results.length} of ${results.length + skipped.length} invariants could be checked here.`)
@@ -1775,7 +1785,16 @@ if (skipped.length) {
     for (const f of failed) console.error(`    ${f.id}  ${f.detail}`)
     process.exit(1)
   }
-  process.exit(0)
+  if (allowIncomplete) {
+    console.log('  --allow-incomplete: reporting only. This run proves nothing about the six above.')
+    console.log('')
+    process.exit(0)
+  }
+  console.error('  INCOMPLETE: this run cannot certify the cross-section audit.')
+  console.error('  Run it where the editorial queues exist, or pass --allow-incomplete to inspect')
+  console.error('  what can be checked here without claiming the rest passed.')
+  console.error('')
+  process.exit(2)
 }
 
 fs.writeFileSync(path.join(OUT, 'cross-section-integrity.json'), JSON.stringify({
