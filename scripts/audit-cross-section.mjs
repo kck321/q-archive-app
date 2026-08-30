@@ -47,6 +47,20 @@ const textOf = new Map(posts.map(p => [p.postNum, nlower(clean(p.text ?? ''))]))
 const results = []
 const group = g => (id, description, ok, detail) => results.push({ group: g, id, description, pass: Boolean(ok), detail: String(detail) })
 
+// INVARIANTS THAT COULD NOT RUN, AND WHY.
+//
+// Six hover checks read the editorial review queues, which are deliberately untracked: they hold
+// thousands of unreviewed synopses about named people, and the privacy guarantee is the ABSENCE of
+// the bytes rather than a permission check (see the editorialQueues plugin in vite.config.ts).
+// A checkout that does not have them cannot run those six.
+//
+// That used to happen SILENTLY. The audit simply emitted 216 invariants instead of 222, reported
+// "216/216 pass", and overwrote the committed 222-invariant report with the shorter one — so a
+// fresh worktree quietly downgraded a certified artifact and every number still looked perfect.
+// Skipping is now recorded, said out loud, and — below — makes the run refuse to write.
+const skipped = []
+const skip = (group, id, description, reason) => skipped.push({ group, id, description, reason })
+
 // ── 1. Frozen canonical counts ───────────────────────────────────────────────
 {
   const t = group('1. Frozen canonical counts')
@@ -824,6 +838,15 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
       // Withdrawn records are audit history only.
       t('hover-withdrawn-history', 'withdrawn records are history, not review',
         wd.category === 'withdrawn_entity_occurrence' && wd.total === 37, `${wd.total}`)
+    } else {
+      const missing = [rq, q, w].filter(f => !fs.existsSync(f)).map(f => path.relative(ROOT, f))
+      const why = `editorial queue artifact(s) not in this checkout: ${missing.join(', ')}`
+      skip('10b. Entity hover publication', 'hover-reconciles', 'every audited record is published, held or withdrawn', why)
+      skip('10b. Entity hover publication', 'hover-no-review-leak', 'no held record is in the public bundle', why)
+      skip('10b. Entity hover publication', 'hover-queues-private', 'the editorial queues are not under public/data', why)
+      skip('10b. Entity hover publication', 'hover-shared-alias-held', 'every shared-alias occurrence stays in review', why)
+      skip('10b. Entity hover publication', 'hover-withdrawn-history', 'withdrawn records are history, not review', why)
+      skip('10b. Entity hover publication', 'url-excluded-from-hovers', 'URL-derived records are excluded from hovers', why)
     }
 
     // Every hover must resolve to a live entity BY ID — the whole point of minting them.
@@ -1720,6 +1743,40 @@ const group = g => (id, description, ok, detail) => results.push({ group: g, id,
 const failed = results.filter(r => !r.pass)
 const byGroup = {}
 for (const r of results) (byGroup[r.group] ??= []).push(r)
+
+// AN INCOMPLETE RUN DOES NOT GET TO REPLACE A COMPLETE REPORT.
+//
+// The committed artifact is the 222-invariant one, produced where the editorial queues exist. A
+// checkout without them can only reach 216, and writing that here is how a certified report gets
+// silently downgraded by anyone who happens to run the audit in a fresh worktree — which is
+// exactly what made the committed file and its generator look like they disagreed. They never
+// did: given the same inputs this script reproduces the committed bytes exactly.
+//
+// So a partial run reports what it could and could not check, and leaves the file alone. The
+// checks that DID run still ran, and a real failure among them is still a failure below.
+if (skipped.length) {
+  console.log('')
+  console.log(`  ${results.length} of ${results.length + skipped.length} invariants could be checked here.`)
+  console.log(`  ${skipped.length} SKIPPED - not run, not passed:`)
+  console.log('')
+  for (const s of skipped) console.log(`    ${s.id.padEnd(26)} ${s.description}`)
+  console.log('')
+  console.log(`  why: ${skipped[0].reason}`)
+  console.log('')
+  console.log('  These read the editorial review queues, which are deliberately untracked because')
+  console.log('  they hold unreviewed synopses about named people. Run the audit where they exist')
+  console.log('  to check them.')
+  console.log('')
+  console.log('  audit/cross-section-integrity.json was NOT rewritten - a partial run must not')
+  console.log('  replace the complete committed report.')
+  console.log('')
+  if (failed.length) {
+    console.error(`  ${failed.length} of the invariants that DID run failed:`)
+    for (const f of failed) console.error(`    ${f.id}  ${f.detail}`)
+    process.exit(1)
+  }
+  process.exit(0)
+}
 
 fs.writeFileSync(path.join(OUT, 'cross-section-integrity.json'), JSON.stringify({
   scope: 'whole-app cross-section integrity audit',

@@ -120,6 +120,10 @@ step('split glossary occurrences', ['node', 'scripts/test-gloss-occurrence.mjs']
 // A question's id must not depend on where its row sits, what its neighbours are, how it is
 // classified, or which baseline the chain started from. Pure and offline, so it runs in `fast`.
 step('canonical question identity', ['node', 'scripts/test-question-identity.mjs'])
+// An incomplete cross-section run must not replace the complete committed report. Six of its
+// invariants read editorial queues that are deliberately untracked, and skipping them used to be
+// silent — 216 invariants, "216/216 pass", and the 222-invariant artifact overwritten.
+step('cross-section report completeness', ['node', 'scripts/test-cross-section-completeness.mjs'])
 // Context is certified in the data and absent from the drop.
 step('context + emphasis: certified, not painted', ['node', 'scripts/verify-context-render.mjs'])
 
