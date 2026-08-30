@@ -1,7 +1,7 @@
 {
- "certifiedAt": "2026-08-30T14:50:27.428Z",
+ "certifiedAt": "2026-08-30T15:33:58.958Z",
  "sections": 8,
- "seedVersion": 115,
+ "seedVersion": 116,
  "note": "Every count here is recomputed from the artifacts, never copied forward. Verify with: node scripts/certification-manifest.mjs --verify",
  "counts": {
   "posts": 4966,
