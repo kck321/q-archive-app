@@ -2,6 +2,7 @@ import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import fs from 'node:fs'
 import path from 'node:path'
+import { checkAnthropicProxyRequest, ANTHROPIC_PROXY_PREFIX } from './scripts/lib/anthropicProxyGuard.mjs'
 
 /**
  * Serve the editorial review queues to the EDITORIAL BUILD ONLY.
@@ -41,6 +42,47 @@ function editorialQueues() {
   }
 }
 
+/**
+ * REFUSE EVERY NON-LOCAL REQUEST BEFORE THE KEY IS ATTACHED.
+ *
+ * /anthropic-proxy adds the owner's Anthropic key server-side, which keeps it out of browser
+ * JavaScript and simultaneously turns the endpoint into an unauthenticated way to spend money.
+ * The dev server is deliberately reachable off-machine — `allowedHosts: true` and the qalerts /
+ * 4plebs / 8kun proxies exist so the archive can be opened on a phone through a Cloudflare tunnel
+ * — so anyone who reached that tunnel would reach this too.
+ *
+ * A plugin's configureServer middleware is installed BEFORE Vite's internal ones, so this runs
+ * ahead of the proxy and can refuse a request while it is still just bytes. The decision itself
+ * lives in scripts/lib/anthropicProxyGuard.mjs, as a pure function, and is tested there.
+ *
+ * The deliberate outcome: AI works on the local desktop editorial server and is unavailable
+ * through a phone-testing tunnel.
+ */
+function anthropicProxyGuard() {
+  return {
+    name: 'anthropic-proxy-guard',
+    apply: 'serve' as const,
+    configureServer(server: { middlewares: { use: (fn: (req: any, res: any, next: () => void) => void) => void } }) {
+      server.middlewares.use((req, res, next) => {
+        if (!String(req.url ?? '').startsWith(ANTHROPIC_PROXY_PREFIX)) return next()
+        const verdict = checkAnthropicProxyRequest({
+          method: req.method,
+          url: req.url,
+          headers: req.headers ?? {},
+          remoteAddress: req.socket?.remoteAddress,
+          isPublicSite: process.env.VITE_PUBLIC_SITE === '1',
+          isDev: true,
+        })
+        if (verdict.allow) return next()
+        console.warn(`  [anthropic-proxy] refused: ${verdict.reason}`)
+        res.statusCode = verdict.status
+        res.setHeader('Content-Type', 'text/plain')
+        return res.end('the AI proxy is available on this machine only')
+      })
+    },
+  }
+}
+
 // When DEPLOY_TARGET=pages, build for GitHub Pages under the repo subpath.
 // Desktop (Tauri) and the tunnel preview keep the root base "/".
 const base = process.env.DEPLOY_TARGET === 'pages' ? '/q-archive-app/' : '/'
@@ -55,7 +97,7 @@ export default defineConfig(({ mode }) => {
 
   return {
   base,
-  plugins: [react(), editorialQueues()],
+  plugins: [react(), anthropicProxyGuard(), editorialQueues()],
   build: {
     rollupOptions: {
       output: {
@@ -98,7 +140,7 @@ export default defineConfig(({ mode }) => {
         rewrite: (path: string) => path.replace(/^\/anthropic-proxy/, ''),
         configure: (proxy) => {
           proxy.on('proxyReq', proxyReq => {
-            if (anthropicKey) proxyReq.setHeader('x-api-key', anthropicKey)
+            if (anthropicKey && process.env.VITE_PUBLIC_SITE !== '1') proxyReq.setHeader('x-api-key', anthropicKey)
             // Never forward the browser's placeholder, and never leak an Origin that would make
             // Anthropic treat this as a browser call.
             proxyReq.removeHeader('authorization')

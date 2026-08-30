@@ -124,6 +124,9 @@ step('canonical question identity', ['node', 'scripts/test-question-identity.mjs
 // invariants read editorial queues that are deliberately untracked, and skipping them used to be
 // silent — 216 invariants, "216/216 pass", and the 222-invariant artifact overwritten.
 step('cross-section report completeness', ['node', 'scripts/test-cross-section-completeness.mjs'])
+// The dev AI proxy attaches the owner's Anthropic key server-side, so it must refuse every request
+// that is not this machine — the dev server is deliberately tunnel-reachable for phone testing.
+step('anthropic dev proxy is local-only', ['node', 'scripts/test-anthropic-proxy-guard.mjs'])
 // Context is certified in the data and absent from the drop.
 step('context + emphasis: certified, not painted', ['node', 'scripts/verify-context-render.mjs'])
 
