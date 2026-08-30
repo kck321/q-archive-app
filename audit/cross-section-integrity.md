@@ -15,8 +15,8 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 |---|---|---|
 | ✅ | posts = 4,966 | 4966 |
 | ✅ | Questions = 6,327 certified primary occurrences | 6327 |
-| ✅ | Directives = 2,552 | 3333 |
-| ✅ | Claims = 4,189 | 10219 |
+| ✅ | Directives = 2,552 | 3340 |
+| ✅ | Claims = 4,189 | 10213 |
 | ✅ | Predictions = 630 | 950 |
 | ✅ | Evidence = 6,590 | 6590 |
 | ✅ | Entities = 1,335 canonical | 1622 |
@@ -89,8 +89,8 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | | Invariant | Observed |
 |---|---|---|
 | ✅ | questions: quoted-block over-extension stays at its known 99 occurrences | 99 of 6509 (expected 99) |
-| ✅ | directives: quoted-block over-extension stays at its known 115 occurrences | 115 of 3333 (expected 115) |
-| ✅ | claims: quoted-block over-extension stays at its known 721 occurrences | 721 of 10219 (expected 721) |
+| ✅ | directives: quoted-block over-extension stays at its known 115 occurrences | 115 of 3340 (expected 115) |
+| ✅ | claims: quoted-block over-extension stays at its known 721 occurrences | 721 of 10213 (expected 721) |
 | ✅ | emphasis: quoted-block over-extension stays at its known 0 occurrences | 0 of 0 (expected 0) |
 | ✅ | the source-boundary occurrence SET is unchanged | identical |
 | ✅ | source-boundary debt stays at its known 269 posts | 269 posts |
@@ -125,8 +125,8 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | | Invariant | Observed |
 |---|---|---|
 | ✅ | sectionInfo states 6,327 | ok |
-| ✅ | sectionInfo states 3,333 | ok |
-| ✅ | sectionInfo states 10,219 | ok |
+| ✅ | sectionInfo states 3,340 | ok |
+| ✅ | sectionInfo states 10,213 | ok |
 | ✅ | sectionInfo states 6,590 | ok |
 | ✅ | sectionInfo headlines 1,622 entities and 9,837 mentions | ok |
 | ✅ | no alias is stored all-lowercase | ok |
@@ -279,7 +279,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | every queue row has an edge to its occurrence | 353 |
 | ✅ | every relationship belongs to a real post | 0 orphaned |
 | ✅ | analysis map totals reconcile with the shipped question records | 6509 vs 6327 certified + 182 marked |
-| ✅ | analysis map totals reconcile with certified Directives | 3333 |
+| ✅ | analysis map totals reconcile with certified Directives | 3340 |
 | ✅ | the analysis map counts no Emphasis | NaN |
 | ✅ | post page: no blanket semantic rule paints without a certified occurrence | clean |
 | ✅ | archive: no blanket semantic rule paints without a certified occurrence | clean |
@@ -294,8 +294,8 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 |---|---|---|
 | ✅ | the index declares it comes from certified artifacts | true |
 | ✅ | indexed Questions = certified 6,454 | 6327 |
-| ✅ | indexed Directives = certified 2,552 | 3333 |
-| ✅ | indexed Claims = certified 4,181 | 10219 |
+| ✅ | indexed Directives = certified 2,552 | 3340 |
+| ✅ | indexed Claims = certified 4,181 | 10213 |
 | ✅ | indexed Predictions = certified 630 | 950 |
 | ✅ | indexed Evidence = certified 6,590 | 6590 |
 | ✅ | indexed Entities = certified 1,445 | 1622 |
@@ -306,7 +306,7 @@ This audit validates the certified system. It reclassifies nothing and moves no 
 | ✅ | every editorial row is flagged not-Q-authored | 0 |
 | ✅ | no Q-authored row is flagged editorial | 0 |
 | ✅ | the results page labels editorial rows before their text | labelled |
-| ✅ | in-post repeats are indexed as separate occurrences | 10219 rows, 10112 distinct (post, text) |
+| ✅ | in-post repeats are indexed as separate occurrences | 10213 rows, 10106 distinct (post, text) |
 | ✅ | every record states why it can match | ok |
 | ✅ | every post-bound record carries the id its link needs | 0 without |
 | ✅ | search performs no classification of its own | reads the index |
@@ -318,8 +318,8 @@ There is no single rule that shipped rows must equal certified counts — assert
 | Section | Certified | Counted by | What may coexist | What must never display |
 |---|---|---|---|---|
 | Q Questions | 6,327 | rows carrying an `occurrences` field | 134 editorial-normalisation rows are shipped so the search index can find a question a reader half-remembers in cleaned-up form. | Those 134 must never count toward any total, never highlight in a post, and never display as Q-authored. They are identified by editorialNormalization or neverDisplayAsQ. |
-| Q Directives | 3,333 | every actionRequests string across all posts | None. Every actionRequests entry is a certified directive. | n/a |
-| Q Claims | 10,219 | postAnalysis.claims entries whose displayClass is claim | Predictions share the assertion family and the same storage, separated by claimMeta.displayClass. editorialParaphrases are stored per post and are NOT claims. | An editorial paraphrase must never be presented as Q’s literal wording. |
+| Q Directives | 3,340 | every actionRequests string across all posts | None. Every actionRequests entry is a certified directive. | n/a |
+| Q Claims | 10,213 | postAnalysis.claims entries whose displayClass is claim | Predictions share the assertion family and the same storage, separated by claimMeta.displayClass. editorialParaphrases are stored per post and are NOT claims. | An editorial paraphrase must never be presented as Q’s literal wording. |
 | Q Predictions | 950 | postAnalysis.predictions entries | A prediction IS an assertion; the combined 4,811 figure is only ever shown labelled as combined. | n/a |
 | Evidence & References | 6,590 | every item row | URLs embedded inside pasted source material exist in the data and are labelled as such. They are references a reader can follow, but they are not Q citing a source. | An embedded-in-source URL must never be presented as a Q citation. |
 | Q Entities | 9,837 | sum of per-entity mention counts | Canonical entities (1,332) and mentions (7,903) are DIFFERENT metrics, not a row-count mismatch — one entity is mentioned many times. The headline covers every resolved mention: 4,463 from the 93-entity core registry plus 3,440 from the 1,239 adjudicated-tail entities. Unresolved alias tokens are counted in neither. | An unresolved alias must never be shown as a resolved identification. |
