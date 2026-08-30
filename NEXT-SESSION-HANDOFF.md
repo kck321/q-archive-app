@@ -13,7 +13,7 @@ Do not reopen any of them.
 | | |
 |---|---|
 | HEAD | see `git log -1` |
-| production | **seed 115, DEPLOYED 2026-08-29** — commit 3470aef, tree b036b46c, sw qdrops-20260829-184718; carries the picture-audit batches n=1051-1250 and n=1251-1450 (1,450 images / 1,320 posts); `verify-live.mjs` 16/16. Deployed with `SKIP_EXPORT=1` — see the literal-spans blocker below |
+| production | **seed 116, DEPLOYED 2026-08-30** — commit 0e968f3, tree ad244e7e5bee, sw qdrops-20260830-122844; #4688 items 1-17 ruled Directives on top of the two picture batches (1,450 images); `verify-live.mjs` 16/16, live render proved green. Deployed with `SKIP_EXPORT=1` — see the qc-pin blocker below |
 | invariants | 222/222 — manifest re-certified at seed 98 at the deploy checkpoint |
 | seed | **98** — shipped |
 | manifest | re-certified 2026-08-25 (seed 98); context baseline moved 445→444/311→310 with #1443's `Texts` promotion (see `verify-context-render.mjs`) |

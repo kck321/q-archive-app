@@ -8279,3 +8279,60 @@ production's stamped tree b036b46c matches the validation receipt exactly — pr
 built -> served, one comparable value the whole way. `verify-live.mjs`: **16/16**. Confirmed against
 the live artifact: **1,450 images / 1,320 posts, green 1,188 / yellow 209 / red 53, needsReview 28.**
 240 images remain (n=1451-1690) to finish the archive.
+
+## 2026-08-30 — #4688 items 1-17 are Directives — deployed (seed 116)
+
+**Request:** "for this post in the resolution center i would actually like to change 1-17 in the post
+to Directives if they are not already classified as a directive" / "q is asking how do you accomplish
+the following which is a question: i feel like 1-17 are all directives to 'accomplish' the goal w/ the
+numbers 1-17 being set as a claim ... take the current claims out of the claim basket and put them in
+the directive basket."
+
+**Solution.** The owner's reading matches the archive: "How do you accomplish the following:" is
+already a certified Question, and ten of the seventeen numbered lines were already Directives — none
+of those ten also carrying a Claim. Seven needed a ruling (1, 2, 3, 4, 11, 13, 14); six of them were
+Claims and item 2 was in no section. Additions via `audit/directives-owner-rulings.json` (277 -> 284)
+because that path carries the family the move mechanism cannot: item 4 `morale` from familyOf(), the
+other six `operational` declared with the ruling since the detector returns 'other'. Withdrawals via
+`audit/owner-section-moves.json` (52 -> 58).
+
+**THREE TRAPS, ALL CAUGHT BEFORE THEY SHIPPED.**
+
+1. **`owner-section-moves.json` is NOT regenerable.** Its builder emits 23 of the 52 committed moves,
+   so running it DELETED 29 owner rulings — the NCSWIC Prediction and the 20 #1515 reporter-roll
+   withdrawals among them. The QA gate caught it and the arithmetic was exact: 10,519 + 24 not-removed
+   - 6 = 10,537. The artifact was restored and the six moves APPENDED instead. **Do not run that
+   builder.** Repairing it (merge instead of overwrite) is still open.
+2. **Substring inference would have deleted the bare numerals.** The builder resolves `certifiedAs` by
+   asking which certified claims are CONTAINED IN the ruled line, and `norm("11. Propaganda...")`
+   contains `"1."`. It would have removed markers 1., 3., 4., 11., 13., 14. — which the owner
+   explicitly wanted kept as Claims. Each move pins `certifiedAs` to the item body only.
+3. **The ruling could not reach the reader without a SEED bump.** localData.ts re-fetches only when
+   SEED_VERSION moves; the owner's browser held 115 and went on painting six lines amber. **The owner
+   caught this on the rendered page, not a gate** — seed-fingerprint compares against the last
+   RECORDED seed (98), so it passed. SEED_VERSION 115 -> 116, manifest re-certified, invariant 8 pin
+   moved.
+
+**Counts:** directives 3,471 -> 3,478 (occurrences), 1,942 -> 1,949 (distinct); claims 10,519 ->
+10,513, distinct 7,999 -> 7,993, checkable 1,920 -> 1,918. Passthrough pins updated in
+apply-directives, apply-claims, materialize-literal-spans, lib/contracts and sectionInfo (invariant 9
+requires every VISIBLE figure to be the certified one). **`OWED_LITERALS` untouched.**
+
+**Four validation runs stopped, none of them the ruling's data:** stale UI figures (invariant 9), a
+dev server up since 26 Aug, the seed bump outrunning the manifest, and the scroll-restoration gate.
+That last one is worth recording: it failed on a WARM browser at 67.6s and passed COLD at 29.7s, the
+failure moved between /posts and /pics across runs, and **the identical failure reproduced on the
+pre-ruling commit** — contention, not a defect. Killing only stale headless Chrome and restarting the
+dev server fixed it. The passing run: exit 0, 26 gates, 0 FAIL, receipt tree ad244e7e5bee == git
+write-tree, seed 116, chain true, `only[]` empty.
+
+**Live:** commit 0e968f3, tree ad244e7e5bee, seed 116, sw qdrops-20260830-122844, dirty false, live
+after 45s. `verify-live.mjs` 16/16. Production proof at BOTH layers: all 17 lines directive=True /
+claim=False in the live posts.json, and the rendered page paints items 1/11/14 green (Directive) with
+the numeral "1." amber (Claim). 22 bare numerals remain Claims, as ruled. Deployed with SKIP_EXPORT=1
+— temporary containment while the qc-pin blocks the export, NOT the repair.
+
+**Also shipped:** feedback `createdAt` moves from `Date.now()` to `serverTimestamp()` so the console
+shows a real date and the clock is the server's. `firestore.rules` asserted `createdAt is number`, so
+the rule was widened to accept number OR timestamp and **DEPLOYED FIRST** — the other order denies
+every submission. Number stays allowed for visitors on cached JS.
