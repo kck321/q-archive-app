@@ -131,7 +131,9 @@ const checks = [
   // 10,537 since the corpus rulings of 2026-08-24. Passthrough, as the rest here.
   // +2 on 2026-08-25: #1010's WATER/AIR owner ruling — see build-owner-section-moves.mjs.
   // -20 on 2026-08-26: #1515's reporter-roll withdrawal — see apply-claims.mjs.
-  ['claims unchanged = 10,519', counts.claims === 10519, counts.claims],
+  // -6 on 2026-08-30: #4688's items 1, 3, 4, 11, 13, 14 left Claims for Directives (owner
+  // ruling). Passthrough, as the rest here: it tracks whatever apply-claims.mjs certified.
+  ['claims unchanged = 10,513', counts.claims === 10513, counts.claims],
   // 843 since the 2026-08-21 ruling on #4910 ("Freedom of information [truth] = END").
   // 941 since the 2026-08-24 UPDATED-report ruling pulled #1443's "DECLAS_Public[3]" out of
   // Predictions and left it certified as a Claim. A passthrough assertion, as above: it tracks
@@ -145,7 +147,9 @@ const checks = [
   // 1,925 -> 1,920: five absorbed claim tails carried the checkable attribute. It travels with
   // the ROW, so it leaves with the fragment rather than being re-attached to the repaired span,
   // which the claims audit never adjudicated as checkable.
-  ['checkable unchanged = 1,920', counts.verificationHooks === 1920, counts.verificationHooks],
+    // -2 on 2026-08-30: two of the six #4688 lines that left Claims were also Checkable.
+  // Passthrough, tracking apply-claims.mjs.
+['checkable unchanged = 1,918', counts.verificationHooks === 1918, counts.verificationHooks],
   ['every span array matches its source array', FIELDS.every(([f]) => spanCounts[f] === counts[f]), 'ok'],
 ]
 

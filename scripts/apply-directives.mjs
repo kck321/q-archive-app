@@ -252,7 +252,12 @@ const checks = [
   // -1 on 2026-08-25: #1010's "WATER" moves to Claims (owner ruling — see
   // build-owner-section-moves.mjs). Same shape as the neighbouring list items PHARMA/CHEMICALS/
   // VACCINES/TOBACCO/OPIOIDS, all already Claims; it instructed nobody.
-  ['directive occurrences = 3,471', all.length === 3471, all.length],
+  // +7 on 2026-08-30: #4688 items 1-17 ruled Directives by the owner. Ten of the seventeen were
+  // already certified; six left Claims (audit/owner-section-moves.json) and item 2 was in no
+  // section. All seven are added by audit/directives-owner-rulings.json, which carries the family
+  // the move mechanism cannot: item 4 'morale' from familyOf(), the other six 'operational'
+  // declared with the ruling because the detector returns 'other' for them.
+  ['directive occurrences = 3,478', all.length === 3478, all.length],
   // 486 (round 1) + 455 (round 2) + 24 (round 2's held rows, owner-ruled 2026-08-24) = 965.
   // +5 on 2026-08-24: the WWG1WGA ruling above.
   // +1 on 2026-08-25: #4949's Gettysburg line.
@@ -261,14 +266,16 @@ const checks = [
   // The detector's answer is kept wherever it has one; only its residue is decided by the queue
   // ruleset, and nothing may land in 'other'.
   ['no queue directive without a family', !queueStats.byFamily.other, `${queueStats.byFamily.other ?? 0} unnamed`],
-  ['owner directive rulings applied = 277', ownerDirectives === 277, ownerDirectives],
+  // +7 on 2026-08-30: the #4688 items 1-17 ruling.
+  ['owner directive rulings applied = 284', ownerDirectives === 284, ownerDirectives],
   ['all resolve to a source span', unresolved.length === 0, `${all.length - unresolved.length}/${all.length}`],
   // +185: the 485 new occurrences carry 185 wordings Directives did not already hold. The gap is
   // repetition - "Thank you Patriots." and "Happy Hunting." recur across dozens of drops.
   // +101: the 405 new occurrences carry 101 wordings Directives did not already hold — the batch
   // repeats itself heavily, WWG1WGA alone accounting for ~170 of them.
   // +1 on 2026-08-25: the Gettysburg line is a wording Directives did not hold.
-  ['distinct = 1,942', distinct.size === 1942, distinct.size],
+  // +7 on 2026-08-30: each #4688 line is a wording Directives did not already hold.
+  ['distinct = 1,949', distinct.size === 1949, distinct.size],
   // +225 posts gain their first certified directive.
   // +228 drops gain their first certified directive.
   // +2 on 2026-08-24: of the five WWG1WGA drops, #2347 and #2565 held no certified directive at

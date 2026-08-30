@@ -2,8 +2,8 @@
  "note": "Spans the owner moved between sections, on 2026-08-24. Layered over the base certified artifacts by apply-claims.mjs and apply-directives.mjs — never written into them, because a correction inside a re-derivable artifact is erased the next time its audit runs.",
  "ruledOn": "2026-08-24",
  "totals": {
-  "moves": 52,
-  "outOfClaims": 43,
+  "moves": 58,
+  "outOfClaims": 49,
   "outOfDirectives": 2,
   "intoClaims": 4,
   "intoPredictions": 15,
@@ -649,6 +649,84 @@
    "certifiedAs": [
     "Univision – Maria-Elena Salinas"
    ]
+  },
+  {
+   "postNum": 4688,
+   "from": "claims",
+   "to": "directives",
+   "text": "1. Terminate history-making economic gains made by POTUS prior to the election",
+   "certifiedAs": [
+    "Terminate history-making economic gains made by POTUS prior to the election"
+   ],
+   "certifiedShorterThanTheLine": true,
+   "ruledOn": "2026-08-30",
+   "ruling": "Post #4688: change 1-17 to Directives if not already, and take the current claims out of the claim basket into the directive basket",
+   "why": "Item 1 of the list Q introduces with the certified Question \"How do you accomplish the following:\". Every numbered line is an instruction for accomplishing it; ten of the seventeen were already certified Directives and none of those ten is also a Claim. certifiedAs is pinned to the item body ONLY - the bare \"1.\" marker stays a Claim, and substring inference would have removed it and other markers."
+  },
+  {
+   "postNum": 4688,
+   "from": "claims",
+   "to": "directives",
+   "text": "3. Terminate [hold] POTUS record attendance rallies across USA _deplete and remove enthusiasm",
+   "certifiedAs": [
+    "Terminate [hold] POTUS record attendance rallies across USA _deplete and remove enthusiasm"
+   ],
+   "certifiedShorterThanTheLine": true,
+   "ruledOn": "2026-08-30",
+   "ruling": "Post #4688: change 1-17 to Directives if not already, and take the current claims out of the claim basket into the directive basket",
+   "why": "Item 3 of the list Q introduces with the certified Question \"How do you accomplish the following:\". Every numbered line is an instruction for accomplishing it; ten of the seventeen were already certified Directives and none of those ten is also a Claim. certifiedAs is pinned to the item body ONLY - the bare \"3.\" marker stays a Claim, and substring inference would have removed it and other markers."
+  },
+  {
+   "postNum": 4688,
+   "from": "claims",
+   "to": "directives",
+   "text": "4. Protect Biden from embarrassment re: mental health [clear cognitive decline], Q&A, rally attendance crowd size, lack of enthusiasm, etc.",
+   "certifiedAs": [
+    "Protect Biden from embarrassment re: mental health [clear cognitive decline], Q&A, rally attendance crowd size, lack of enthusiasm, etc."
+   ],
+   "certifiedShorterThanTheLine": true,
+   "ruledOn": "2026-08-30",
+   "ruling": "Post #4688: change 1-17 to Directives if not already, and take the current claims out of the claim basket into the directive basket",
+   "why": "Item 4 of the list Q introduces with the certified Question \"How do you accomplish the following:\". Every numbered line is an instruction for accomplishing it; ten of the seventeen were already certified Directives and none of those ten is also a Claim. certifiedAs is pinned to the item body ONLY - the bare \"4.\" marker stays a Claim, and substring inference would have removed it and other markers."
+  },
+  {
+   "postNum": 4688,
+   "from": "claims",
+   "to": "directives",
+   "text": "11. Propaganda blame attack current administration economic hardship(s), death toll, attack plan re: safety and wellbeing re: C19 failed _push Biden _stage Biden had answer to Pandemic early on _country will heal w: Biden victory _violence will end w: Biden victory",
+   "certifiedAs": [
+    "Propaganda blame attack current administration economic hardship(s), death toll, attack plan re: safety and wellbeing re: C19 failed _push Biden _stage Biden had answer to Pandemic early on _country will heal w: Biden victory _violence will end w: Biden victory"
+   ],
+   "certifiedShorterThanTheLine": true,
+   "ruledOn": "2026-08-30",
+   "ruling": "Post #4688: change 1-17 to Directives if not already, and take the current claims out of the claim basket into the directive basket",
+   "why": "Item 11 of the list Q introduces with the certified Question \"How do you accomplish the following:\". Every numbered line is an instruction for accomplishing it; ten of the seventeen were already certified Directives and none of those ten is also a Claim. certifiedAs is pinned to the item body ONLY - the bare \"11.\" marker stays a Claim, and substring inference would have removed it and other markers."
+  },
+  {
+   "postNum": 4688,
+   "from": "claims",
+   "to": "directives",
+   "text": "13. Isolate faithful from each other _remove ability to attend Church [house of worship]",
+   "certifiedAs": [
+    "Isolate faithful from each other _remove ability to attend Church [house of worship]"
+   ],
+   "certifiedShorterThanTheLine": true,
+   "ruledOn": "2026-08-30",
+   "ruling": "Post #4688: change 1-17 to Directives if not already, and take the current claims out of the claim basket into the directive basket",
+   "why": "Item 13 of the list Q introduces with the certified Question \"How do you accomplish the following:\". Every numbered line is an instruction for accomplishing it; ten of the seventeen were already certified Directives and none of those ten is also a Claim. certifiedAs is pinned to the item body ONLY - the bare \"13.\" marker stays a Claim, and substring inference would have removed it and other markers."
+  },
+  {
+   "postNum": 4688,
+   "from": "claims",
+   "to": "directives",
+   "text": "14. Justify social media censorship by using C19 W.H.O. claims as primary foundation _extend beyond C19 to other 'political' areas to remove and cut off forms of anti-narrative communication [seize control]",
+   "certifiedAs": [
+    "Justify social media censorship by using C19 W.H.O. claims as primary foundation _extend beyond C19 to other 'political' areas to remove and cut off forms of anti-narrative communication [seize control]"
+   ],
+   "certifiedShorterThanTheLine": true,
+   "ruledOn": "2026-08-30",
+   "ruling": "Post #4688: change 1-17 to Directives if not already, and take the current claims out of the claim basket into the directive basket",
+   "why": "Item 14 of the list Q introduces with the certified Question \"How do you accomplish the following:\". Every numbered line is an instruction for accomplishing it; ten of the seventeen were already certified Directives and none of those ten is also a Claim. certifiedAs is pinned to the item body ONLY - the bare \"14.\" marker stays a Claim, and substring inference would have removed it and other markers."
   }
  ]
 }

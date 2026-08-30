@@ -440,7 +440,11 @@ const checks = [
   // Claim apiece instead of getting the entity treatment every other line on the same list got —
   // a list row asserts nothing, so it leaves Claims once the entities are certified separately
   // (audit/entities-owner-rulings.json, same day).
-  ['claim occurrences = 10,519', allClaims.length === 10519, allClaims.length],
+    // -6 on 2026-08-30: #4688's items 1, 3, 4, 11, 13 and 14 leave Claims for Directives on the
+  // owner's ruling that items 1-17 of that list are Directives. The bare "N." numerals stay
+  // Claims - each move pins certifiedAs to the item body, because substring inference would have
+  // taken "1." out with line 1 and again with line 11.
+['claim occurrences = 10,513', allClaims.length === 10513, allClaims.length],
   // 4,782 + 1,654 = 6,436 claims; 250 + 94 = 344 predictions, across both rounds.
   // -1 claim, -1 prediction on 2026-08-24: two round-2 rulings the owner overrode on the UPDATED
   // report. lib/queueRulings.mjs drops them before any materialiser sees them, so the round-2
@@ -487,7 +491,9 @@ const checks = [
   // +2 on 2026-08-25: WATER and AIR are both new wordings to the section.
   // -20 on 2026-08-26: #1515's reporter roll withdrawal. Each "OUTLET – Name" wording is unique in
   // the corpus (no other drop pastes the same reporter list), so all 20 take their key with them.
-  ['distinct = 7,999', distinct.size === 7999, distinct.size],
+  // -6 on 2026-08-30: the six #4688 lines that left Claims for Directives were each a wording
+  // Claims held once, so distinct falls by the same six as the occurrence count.
+  ['distinct = 7,993', distinct.size === 7993, distinct.size],
   // +1: 17 posts gain their first claim, 16 posts lose their last one.
   // -3: #483, #2695 and #3203 each held ONE claim and it was the quoted question, so those
   // drops leave the Claims post set entirely. #2420 and #2776 keep other claims and stay.
@@ -536,7 +542,9 @@ const checks = [
   // 1,925 -> 1,920: five absorbed tails carried the checkable attribute. It travels with the ROW,
   // so it leaves with the fragment rather than being re-attached to the repaired span — the claims
   // audit adjudicated the fragment, not the sentence it turned out to be part of.
-  ['checkable = 1,920', checkable === 1920, checkable],
+  // -2 on 2026-08-30: two of the six #4688 lines that left Claims were also carried as
+  // Checkable Claims. They leave with the row; the other four were not checkable.
+  ['checkable = 1,918', checkable === 1918, checkable],
   // +1: 5 arrive carrying sourceProvided, 4 leave with it.
   // -1, same rule: one absorbed tail carried sourceProvided.
   ['sourceProvided = 438', sourceProvided === 438, sourceProvided],
@@ -594,7 +602,9 @@ const checks = [
   // exactly what rebuild-bundle.mjs does), apply-directives.mjs writes 3,471 first and this check
   // sees the real, current number. Nothing was actually wrong; always read this value from a
   // full rebuild-bundle.mjs run, never from apply-claims.mjs run in isolation.
-  ['Directives now 3,471', directives === 3471, directives],
+  // +7 on 2026-08-30: the #4688 items 1-17 ruling. This is the cross-section view of the same
+  // seven apply-directives.mjs certifies.
+  ['Directives now 3,478', directives === 3478, directives],
 ]
 
 console.log('\nAPPLY CERTIFIED CLAIMS\n')

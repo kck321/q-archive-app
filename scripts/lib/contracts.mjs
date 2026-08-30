@@ -105,7 +105,10 @@ export const CANONICAL = {
   // certified directive (posts +1) and the wording is new to the section (distinct +1).
   // -1 on 2026-08-25: #1010's WATER moves to Claims (owner ruling). posts -1 too — it was #1010's
   // only certified directive.
-  directives: { occurrences: 3333, distinct: 1942, posts: 1928 },
+  // 2026-08-30: +7 occurrences / +7 distinct. #4688's items 1-17 ruled Directives by the owner;
+  // ten were already certified, six moved out of Claims and item 2 was in no section. posts is
+  // unchanged because #4688 already carried directives.
+  directives: { occurrences: 3340, distinct: 1949, posts: 1928 },
   // 4,181 -> 4,188 on 2026-08-13 by owner adjudication, not by a classifier. Six exact
   // occurrences of "Pure evil." / "PURE EVIL." plus "The 'real' racist." in #2917. The corpus
   // search that found them also showed the fuller variants ("These people are pure evil.",
@@ -158,7 +161,9 @@ export const CANONICAL = {
   // distinct/posts re-measured directly against the finished bundle (after retire-sections.mjs,
   // apply-scripture-blocks.mjs etc., which also move claim rows) rather than carried forward from
   // apply-claims.mjs's own immediate output.
-  claims: { occurrences: 10219, distinct: 7899, posts: 3220 },
+  // 2026-08-30: -6 occurrences. The same six #4688 lines left Claims for Directives. posts is
+  // unchanged - the bare "N." numerals on that drop stay Claims, as the owner ruled.
+  claims: { occurrences: 10213, distinct: 7899, posts: 3220 },
   // 630 -> 595: -73 technical nonpredictions, -56 arguable rows withdrawn to the review
   // backlog, +66 unique moves from Claims, +28 high-confidence predictions the extractor
   // missed. posts 520 -> 490. The 91 withdrawn/held rows are NOT deleted — they sit in
