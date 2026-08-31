@@ -1,0 +1,36 @@
+{
+ "item": "owner closure item 1 — every browser gate must use the --base it is given",
+ "defect": {
+  "symptom": "validate.mjs --profile full --base http://localhost:5291 ran three browser gates against http://localhost:5173 instead",
+  "gatesAffected": ["fresh — url integrity", "fresh — row evidence chips", "fresh — scroll restoration"],
+  "rootCause": "the GATES allowlist declared these three url: 'none', so gateArgv built an argv with no URL and validate.mjs registered them with no BASE; each then resolved process.env.QDROPS_BASE ?? 'http://localhost:5173' on its own",
+  "alsoAffected": "--only <gate> --base X ignored X for the same three gates",
+  "observedCost": "a 48-minute full run stopped at url integrity with 14 FAILs (13 'drop body never rendered' plus 'no posts with URLs were checked'), 1683s of it spent timing out against a port that was deliberately stopped",
+  "worseCase": "with any server listening on 5173 those three gates pass against a checkout that is not the one under validation, while the receipt still records the branch tree — a gate reporting success on work it never did"
+ },
+ "fix": {
+  "resolveBase": "scripts/lib/pipeline.mjs — one place decides where a gate points: explicit URL first, QDROPS_BASE second, literal default last",
+  "gatesAllowlist": "url-integrity, row-evidence and scroll-restoration are now url: 'positional', so gateArgv carries the base into their argv",
+  "callSites": "the three gate scripts call resolveBase(process.argv.slice(2)); validate.mjs registers all three with BASE",
+  "unchanged": "QDROPS_BASE still works for standalone runs, it simply cannot overrule the caller"
+ },
+ "regressionCoverage": {
+  "file": "scripts/test-validate-base-plumbing.mjs",
+  "registeredIn": "validate.mjs, profile fast — 'every browser gate uses the --base it is given'",
+  "assertions": 25,
+  "result": "25 passed, 0 failed",
+  "covers": [
+   "resolveBase precedence: explicit URL > QDROPS_BASE > default, first URL wins, a non-URL argument never becomes the base, https honoured",
+   "no gate declares url: 'none'",
+   "gateArgv puts the base into all 14 gate argvs",
+   "every gate reads the URL shape it declares (positional or --url) and none reads QDROPS_BASE ahead of its arguments",
+   "every browser gate registered in validate.mjs carries BASE, matching whole step() calls so multi-line registrations are not missed"
+  ],
+  "mutationTested": [
+   {"mutation": "restore url: 'none' on url-integrity", "result": "2 assertions fail"},
+   {"mutation": "restore the env-first BASE in the gate script", "result": "1 assertion fails"},
+   {"mutation": "drop BASE from the validate.mjs registration", "result": "2 assertions fail"}
+  ]
+ },
+ "liveProof": "the Gate 3 re-run printed 'browser on :9333 (warm) against http://localhost:5291' and passed url integrity in 29.2s, against 1683.2s failing"
+}

@@ -1,0 +1,38 @@
+{
+ "item": "owner closure item 2 — resolve the verified export-vs-committed bundle drift",
+ "ownerRuling": "the two independent live exports are authoritative because they are byte-identical to each other; commit one verified export's posts.json and manifest.json; change no semantic count, classification, span, id or post value",
+ "manifestJson": {
+  "status": "DONE, hash-verified",
+  "before": {"sha256": "11c2f8fa0426e8a77b9fc155ae022907ca69d0216b1aeda738b5322f7327e81c", "totalBytes": 11892314},
+  "after": {"sha256": "842d4868fc9e37c4d1892f8e2d809aeb20b591c544157f07f3707b385271eafb", "totalBytes": 12340347},
+  "equalsWhatBothLiveExportsWrote": true,
+  "derivation": "totalBytes = size(public/data/posts.json) + the five non-posts collections (1,940,184)",
+  "whyTheCommittedValueWasWrong": "11892314 - 1940184 = 9952130, but the committed posts.json is 10400163 bytes; the manifest described a bundle that is not the one beside it",
+  "correctArithmetic": "10400163 + 1940184 = 12340347",
+  "method": "the single field was rewritten in place and the resulting file hashed; it matches the value two independent live exports recorded, so these are the export's bytes rather than a retyped figure",
+  "perCollectionCountsAndBytes": "untouched",
+  "semanticChanges": 0
+ },
+ "postsJson": {
+  "status": "DEFERRED BY OWNER RULING to the deploy's own export",
+  "why": "its export-path bytes were deleted with the Gate 2 worktrees, as that gate's cleanup step required, and no live export may be spent here",
+  "reconstructionAttempted": true,
+  "reconstructionResult": "rejected — a deterministic rebuild of the committed documents came out 10,381,020 bytes against the required 10,400,163, so it could not be proven byte-identical to sha256 48544362d81763feac312cc1db285b002c25fdbb70c3870a875b8bc5299b70b1",
+  "principle": "a certified artifact is not committed from a reconstruction that cannot be proven",
+  "driftIsOrderOnly": {
+   "documents": 4966, "added": 0, "removed": 0,
+   "differing": 352, "differingOnlyByKeyOrder": 352, "withAnyChangedValue": 0,
+   "byteSizeIdentical": true,
+   "where": "the chain-appended claimMeta and directiveFamilies, and some nested postAnalysis key order"
+  },
+  "quotaContext": "Gate 2's two exports spent roughly 33,300 of the daily 50,000 reads; a third would cost about 16,600 and would leave nothing for the deploy that must run one anyway",
+  "closedBy": "the deploy export in the next quota window, whose posts.json is the authoritative source"
+ },
+ "afterTheseChanges": {
+  "chainRun1": "exit 0, working tree clean",
+  "chainRun2": "exit 0, working tree clean (idempotent)",
+  "certificationManifestVerify": "PASS — 8 sections, seed version 116",
+  "questionsJson": "9407140deb4f70b4ced88bd969da14167aa1a64d770c607c3b0b6f3047a17b01, unchanged",
+  "suites": {"question-identity": "61/61", "cross-section-completeness": "18/18", "anthropic-proxy-guard": "33/33", "validate-base-plumbing": "25/25", "proposals-artifact": "11/11"}
+ }
+}

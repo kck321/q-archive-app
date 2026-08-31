@@ -8628,3 +8628,77 @@ tree rather than committed.
 
 Not merged, not pushed, not deployed. No Firestore write, no DNS change, no #4686 work, no
 `build-owner-section-moves.mjs` run. Master untouched at `ad2de36`.
+
+---
+
+## 2026-08-31 — Stage B closure pass: the gate that pointed at the wrong server
+
+Gate 2 and Gate 3 were accepted. Three things stood between them and a merge, and none of them
+needed another Firestore read.
+
+### A gate is only worth the server it is aimed at
+
+`validate --profile full --base http://localhost:5291` reached twenty browser gates and silently
+missed three. url-integrity, row-evidence and scroll-restoration were declared `url: 'none'` in the
+GATES allowlist, so `gateArgv` built an argv with no URL in it and `validate.mjs` registered them
+with no BASE; each then resolved `process.env.QDROPS_BASE ?? 'http://localhost:5173'` on its own.
+`--only url-integrity --base X` ignored X for the same reason.
+
+Against a deliberately stopped 5173 the bill was legible: a 48-minute run, 1,683s of it timing out,
+stopping at "drop body never rendered" thirteen times. The expensive version is the quiet one —
+with any server alive on 5173, a stale editorial server or another worktree or master, those three
+gates go green against a checkout nobody asked about while the receipt still records the branch
+tree. **That is a gate reporting success on work it never did, which is exactly the defect Gate 1
+removed from the cross-section audit.** It had a second home here.
+
+Where a gate points is now decided once, in `resolveBase(argv)`: the explicit URL wins, QDROPS_BASE
+remains for standalone runs but can no longer overrule the caller, and the literal default is the
+last resort. `scripts/test-validate-base-plumbing.mjs` (25 assertions, in `fast`) holds it there,
+including matching whole `step()` calls rather than lines, since two registrations span lines.
+Restoring any of the three original mistakes turns it red — checked, one at a time.
+
+### A review list was one `git status` away from refusing a release
+
+`audit/question-identity-proposals.jsonl` is where backfill records the questions it proposed and
+did not write. It was untracked *and* unignored, and `preflight-deploy.mjs` judges the tree with
+`git status --porcelain`, which counts untracked files. Both Gate 2 exports left 54 proposals in it,
+byte-identical. So the first honest export in a long time would have produced a tree that refuses
+to publish, over a file holding no certified data — unseen until now only because deploys were
+going out under SKIP_EXPORT, and a rebuild proposes none.
+
+It is now declared what it always was: a local review list, gitignored, with the signal left where
+it belongs — the run's own stdout still says "54 proposed question(s) were NOT written to
+questions.json". `scripts/test-proposals-artifact.mjs` (11 assertions) drives the real resolver
+against a temporary root to pin both halves of the contract: a run proposing nothing deletes a list
+left behind, a run proposing something writes one parseable line per proposal, and the path stays
+ignored so a review list can never veto a deploy. **The 54 proposals themselves are untouched and
+still want an owner ruling.** None of them reaches questions.json.
+
+### The manifest disagreed with the bundle sitting beside it
+
+`totalBytes` is posts.json's size plus the five non-posts collections (1,940,184). The committed
+11,892,314 implies a posts.json of 9,952,130 bytes; the committed posts.json is 10,400,163. Both
+live exports independently wrote 12,340,347. The field was rewritten and the file hashed: it comes
+out `842d4868…`, byte-for-byte what both exports produced — the export's bytes, not a figure
+retyped from a log.
+
+**posts.json was not rebaselined, by owner ruling.** Its export-path bytes were deleted with the
+Gate 2 worktrees, as that gate's own cleanup required. A reconstruction was attempted and rejected:
+it landed 19,143 bytes short of the required 10,400,163, and a certified artifact is not committed
+from a reconstruction that cannot be proven byte-identical. The drift remains order-only — 4,966
+documents, none added or removed, 352 differing solely in where the chain-appended `claimMeta` and
+`directiveFamilies` sit, all 352 deep-equal, identical byte size — and the deploy's own export,
+which has to run anyway, is the authoritative source that closes it.
+
+### After all three
+
+Chain run twice, clean both times. `certification-manifest --verify` passes at seed 116.
+questions.json is still `9407140deb4f70b4…`. Suites: identity 61/61, cross-section 18/18, proxy
+guard 33/33, base plumbing 25/25, proposals artifact 11/11. Zero Firestore reads in this pass, zero
+semantic changes.
+
+Also found, and left for the owner: `@anthropic-ai/sdk` is declared in package.json but missing
+from the canonical `node_modules`, so `tsc -b` fails there on master too until `npm ci` is run.
+
+Not merged, not pushed, not deployed. No Firestore write, no DNS change, no #4686 work, no
+owner-section-moves regeneration. Master untouched at `ad2de36`.

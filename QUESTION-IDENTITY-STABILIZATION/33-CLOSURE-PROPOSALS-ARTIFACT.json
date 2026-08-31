@@ -1,0 +1,29 @@
+{
+ "item": "owner closure item 3 — audit/question-identity-proposals.jsonl must not be left unexplained",
+ "determination": "an intentionally local review list, now declared as one",
+ "whatItIs": "backfill-analysis.mjs offers questions its hole-detector found; one the registry does not know is given no identity and no row, and the proposal is recorded here for review",
+ "notEmpty": "both Gate 2 live exports recorded 54 proposals, byte-identical (16,945 bytes, sha256 46d7f2eecf6eba7ce3b8daf95e8f87dd36a3f83f1db1c000a0bed145374fdf2a), so 'remove it when empty' would not have applied — that behaviour already existed and is preserved",
+ "theRealProblem": {
+  "finding": "the file was untracked AND unignored, and preflight-deploy.mjs judges the tree with `git status --porcelain`, which counts untracked files",
+  "consequence": "the first genuine export in a long while would have left a tree that refuses to publish, over a file holding no certified data",
+  "whyUnseen": "deploys were going out under SKIP_EXPORT — the rebuild path proposes none, so the file never appeared"
+ },
+ "resolution": "the path is gitignored with the reasoning recorded in .gitignore; the run's own stdout keeps the signal ('54 proposed question(s) were NOT written to questions.json'), and the file itself remains readable when the owner wants it",
+ "notDone": "the 54 proposals are untouched and remain for the owner to adjudicate; none of them reaches questions.json, which is byte-identical to the certified baseline on both export paths",
+ "regressionCoverage": {
+  "file": "scripts/test-proposals-artifact.mjs",
+  "registeredIn": "validate.mjs — 'the proposals review list cannot go stale or block a deploy'",
+  "assertions": 11,
+  "result": "11 passed, 0 failed",
+  "covers": [
+   "the path is gitignored and untracked, so it can never dirty a tree or refuse a deploy",
+   "preflight still counts untracked files, so the ignore is what protects the release",
+   "driving the real resolver against a temporary root: a run proposing nothing deletes a list an earlier run left",
+   "a run proposing something writes one parseable JSON line per proposal, naming the step and saying the row was not written",
+   "an unregistered proposal is still given no identity of any kind",
+   "the run reports what it declined to write and names where it recorded it"
+  ],
+  "mutationTested": [{"mutation": "un-ignore the path", "result": "1 assertion fails"}]
+ },
+ "verifiedAfterTheChain": "a rebuild proposes none and the file is absent from the worktree"
+}

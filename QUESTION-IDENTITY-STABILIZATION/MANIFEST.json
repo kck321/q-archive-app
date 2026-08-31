@@ -94,7 +94,10 @@
   "28-GATE2-AB-BUNDLE-COMPARISON.json",
   "29-GATE2-ZERO-WRITE-PROOF.json",
   "30-GATE2-BUNDLE-DRIFT-VS-COMMITTED.json",
-  "31-GATE2-ROW-LEVEL-PROOFS.json"
+  "31-GATE2-ROW-LEVEL-PROOFS.json",
+  "32-CLOSURE-BASE-PLUMBING.json",
+  "33-CLOSURE-PROPOSALS-ARTIFACT.json",
+  "34-CLOSURE-MANIFEST-REBASELINE.json"
  ],
  "filesWithHashes": [
   {
@@ -224,6 +227,18 @@
   {
    "file": "31-GATE2-ROW-LEVEL-PROOFS.json",
    "sha256": "ec91ee9b0d833e7600045200a0a8a4589cea4dfc19fecefa43bbb48010725867"
+  },
+  {
+   "file": "32-CLOSURE-BASE-PLUMBING.json",
+   "sha256": "21f2cde976b9002151273aaab69d0a073b2c3e8188e0951892957c6d4d467328"
+  },
+  {
+   "file": "33-CLOSURE-PROPOSALS-ARTIFACT.json",
+   "sha256": "cfefa499edbca26274f2cdd94eb3434f5153e336f09b42fd1828ba093c103d6b"
+  },
+  {
+   "file": "34-CLOSURE-MANIFEST-REBASELINE.json",
+   "sha256": "bce18a87d63f6e4b9ed39bfd80c7285c1aa7dfef33f6f4705c0dc2466915c878"
   }
  ],
  "acceptancePass": {
@@ -288,5 +303,15 @@
   ],
   "certifiedValueMovements": 0,
   "seeAlso": "30-GATE2-BUNDLE-DRIFT-VS-COMMITTED.json"
+ },
+ "closurePass": {
+  "date": "2026-08-31",
+  "ruling": "owner-directed closure pass after Gate 2 and Gate 3 were accepted",
+  "item1": "CLOSED — every browser gate uses the --base it is given; resolveBase is the single decision point; 25-assertion regression suite, mutation-tested",
+  "item2": "PARTIAL BY OWNER RULING — manifest.json rebaselined to the exports byte-for-byte (842d4868...); posts.json deferred to the deploy export because its bytes were deleted with the Gate 2 worktrees and may not be reconstructed unproven",
+  "item3": "CLOSED — the proposals list is declared a local review artifact, gitignored so it cannot refuse a deploy; 11-assertion regression suite, mutation-tested",
+  "item4": "CLOSED — chain run twice, both clean; certification-manifest --verify passes at seed 116",
+  "semanticChanges": 0,
+  "firestoreReads": 0
  }
 }
