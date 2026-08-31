@@ -94,3 +94,18 @@ scripts/_*.mjs
 audit/entity-hover-review-queue.json
 audit/entity-hover-url-quarantine.json
 audit/entity-hover-withdrawn.json
+
+# A LOCAL REVIEW LIST, NOT A DELIVERABLE — AND NOT A REASON A DEPLOY CANNOT SHIP.
+#
+# backfill-analysis.mjs offers questions its hole-detector found. One the registry does not know
+# gets NO identity and NO row: the proposal is recorded here instead, and the run says so on
+# stdout ("54 proposed question(s) were NOT written to questions.json"). The list is rebuilt from
+# scratch every run and deleted outright when a run proposes nothing, so it never goes stale.
+#
+# It was untracked and unignored, and `preflight-deploy.mjs` reads `git status --porcelain`, which
+# counts untracked files. So the first genuine export in a long while — Gate 2 — would have left a
+# tree that refuses to publish, for a file holding no certified data. Deploys had been going out
+# under SKIP_EXPORT, which is the rebuild path, and a rebuild proposes none; that is why nobody had
+# seen it. Ignoring it keeps the signal where it belongs — in the run's own output and in this
+# file when you want to read it — without letting a review list veto a release.
+audit/question-identity-proposals.jsonl
