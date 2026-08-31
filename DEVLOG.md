@@ -8557,3 +8557,74 @@ mechanism is now proven to produce a matching receipt.
 
 Branch: `da214a4`, `b870be5`, `734f771`, `5c36e3a`, `99b8dfd`, `5ad9b61`, `a690bd1`, `338bff4`,
 plus this entry. Master untouched at `ad2de36`. Not merged, not pushed, not deployed.
+
+---
+
+## 2026-08-31 — Gate 2: the export, run twice, off live Firestore
+
+The quota window reset at 00:00 PT and the two exports were its first Firestore reads — no
+preliminary count, no diagnostic query, nothing spent before the thing being measured.
+
+Two worktrees, both detached at `f100d4d`, node_modules junctioned, each given a temporary `.env`
+holding only the six `VITE_FIREBASE_*` values the exporter parses — no `ANTHROPIC_API_KEY`, no R2
+credentials. `node scripts/export-firestore.mjs`, once each, no `SKIP_EXPORT`. Export A ran 34s,
+export B 40s, both exit 0. Reads per run: 4,966 posts, 10,158 questions, 100 topics, 286
+analysisConfirmed, 153 questionEdits, the postEdits collection, and the single `app/aliases`
+document.
+
+**The two bundles are byte-identical.** All 21 files under `public/data` match across the runs in
+name, byte size and SHA-256 — the comparison is the full bundle, not `questions.json` alone, and
+not a semantic diff. `questions.json` is
+`9407140deb4f70b4ced88bd969da14167aa1a64d770c607c3b0b6f3047a17b01` at 6,643 rows in both, equal to
+the certified baseline.
+
+**Zero writes**, proven twice over. Statically, 38 files — exporter, rebuilder, `chainSteps` and
+every one of the 35 CHAIN steps — contain no `setDoc`, `updateDoc`, `addDoc`, `deleteDoc`,
+`writeBatch` or `runTransaction`, and the one firestore import is
+`getFirestore, collection, getDocs, doc, getDoc`. At runtime, B read the same database immediately
+after A and saw identical counts everywhere; had A written, B would have seen it.
+
+### The part that did not match, stated plainly
+
+The handoff expected a clean tree after each export. It was not clean. Two tracked files differ
+from the committed bundle — the same two, identically, in both independent runs:
+
+`posts.json` is the same 10,400,163 bytes with the same 4,966 documents, none added, none removed.
+352 documents serialise differently, and after recursive key canonicalisation all 352 are
+deep-equal: the chain-appended `claimMeta` and `directiveFamilies` land in either order. **Zero
+values changed.** The dumped collection is the same size and count the committed manifest records,
+so there is no live-data drift behind it.
+
+`manifest.json` keeps every per-collection count and byte figure; only `totalBytes` moves. That
+field is `posts.json`'s size plus the five non-posts collections (1,940,184). The committed value,
+11,892,314, implies a `posts.json` of 9,952,130 bytes — but the committed `posts.json` is
+10,400,163. The committed manifest disagrees with its own bundle; a full export recomputes the
+field correctly at 12,340,347. Bookkeeping, not certified content.
+
+Also visible in `git status`: `audit/question-identity-proposals.jsonl`, produced by the chain,
+byte-identical in both runs, untracked and not ignored.
+
+**Nothing generated was committed.** Rebaselining a certified artifact is an owner ruling, not a
+move a verification gate makes on its own authority. The two files are recorded in
+`30-GATE2-BUNDLE-DRIFT-VS-COMMITTED.json` for that decision.
+
+Nothing certified moved: 5 literal pins, 4 threatened references, 182 `semanticLayer` rows, 247
+`step3b1ActionId` rows and 153 `questionEdits` all hold; the id-family cross-tab is exactly
+6380/143/70/30/12/5/3 with 258 positional-looking ids preserved and 0 forbidden prefixes; the
+registry holds 6,643 entries over 6,668 signatures with no orphan and no unregistered row;
+`certification-manifest --verify` passes at seed 116; identity 61/61, cross-section 18/18, proxy
+guard 33/33 in both worktrees. `audit/owner-section-moves.json` is untouched and its builder was
+never run.
+
+Evidence: `26-GATE2-EXPORT-A.json`, `27-GATE2-EXPORT-B.json`,
+`28-GATE2-AB-BUNDLE-COMPARISON.json`, `29-GATE2-ZERO-WRITE-PROOF.json`,
+`30-GATE2-BUNDLE-DRIFT-VS-COMMITTED.json`, `31-GATE2-ROW-LEVEL-PROOFS.json`, in commit `0588b71`.
+
+### Still open
+
+**Gate 3 — final validation on the final head.** Runs on the HEAD this entry creates. Its receipt
+is produced after the last commit by construction, so it is delivered to the owner outside the
+tree rather than committed.
+
+Not merged, not pushed, not deployed. No Firestore write, no DNS change, no #4686 work, no
+`build-owner-section-moves.mjs` run. Master untouched at `ad2de36`.
