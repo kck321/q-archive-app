@@ -96,14 +96,30 @@ export const GATES = {
   'month-chart': { file: 'scripts/test-month-chart-behaviour.mjs', url: 'flag', what: 'the month chart on both hosts' },
   'multiword-gloss': { file: 'scripts/test-multiword-gloss.mjs', url: 'positional', what: 'multi-word glossary terms, including the six the annotation layer splits' },
   'returning-profile': { file: 'scripts/test-returning-profile.mjs', url: 'flag', what: 'a returning/stale reader repairs itself' },
-  'url-integrity': { file: 'scripts/test-url-integrity.mjs', url: 'none', what: 'a URL in a drop is one link carrying the whole address' },
-  'row-evidence': { file: 'scripts/test-row-evidence.mjs', url: 'none', what: 'Pic/URL evidence chips sit beside a row without joining its certified counts' },
-  'scroll-restoration': { file: 'scripts/test-scroll-restoration.mjs', url: 'none', what: 'Back returns you to where you were, at both breakpoints' },
+  'url-integrity': { file: 'scripts/test-url-integrity.mjs', url: 'positional', what: 'a URL in a drop is one link carrying the whole address' },
+  'row-evidence': { file: 'scripts/test-row-evidence.mjs', url: 'positional', what: 'Pic/URL evidence chips sit beside a row without joining its certified counts' },
+  'scroll-restoration': { file: 'scripts/test-scroll-restoration.mjs', url: 'positional', what: 'Back returns you to where you were, at both breakpoints' },
   'section-headlines': { file: 'scripts/verify-section-headlines.mjs', url: 'flag', what: 'the certified headline figures, on the page' },
   'term-info': { file: 'scripts/test-term-info.mjs', url: 'positional', what: 'the acronym info box means the right person per drop' },
 }
 
 /** argv for a named gate, or null with the reason printed by the caller. */
+// WHERE A BROWSER GATE POINTS IS DECIDED HERE, ONCE.
+//
+// url: 'none' used to mean "this gate takes no URL", and gateArgv duly built an argv without one.
+// The three gates that carried it - url-integrity, row-evidence, scroll-restoration - then fell
+// back to QDROPS_BASE ?? http://localhost:5173 on their own. So `--base http://localhost:5291`
+// reached twenty gates and silently missed three. On a stopped 5173 that is 14 confusing FAILs;
+// with ANY server alive on 5173 it is far worse - three gates go green against a checkout nobody
+// asked about, while the receipt still records the branch tree. That is a gate reporting success
+// on work it never did, which is the defect Gate 1 removed from the cross-section audit.
+//
+// An explicit URL always wins. QDROPS_BASE stays as the standalone convenience it was, but it can
+// no longer overrule the caller, and the literal default is the last resort rather than the first.
+export function resolveBase(argv = [], { env = process.env, fallback = 'http://localhost:5173' } = {}) {
+  return argv.find(a => typeof a === 'string' && a.startsWith('http')) ?? env.QDROPS_BASE ?? fallback
+}
+
 export function gateArgv(name, base) {
   const g = GATES[name]
   if (!g) return null

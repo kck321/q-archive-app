@@ -134,6 +134,15 @@ step('cross-section report completeness', ['node', 'scripts/test-cross-section-c
 // The dev AI proxy attaches the owner's Anthropic key server-side, so it must refuse every request
 // that is not this machine — the dev server is deliberately tunnel-reachable for phone testing.
 step('anthropic dev proxy is local-only', ['node', 'scripts/test-anthropic-proxy-guard.mjs'])
+// --base names one server and every browser gate must use it. Three gates were declared
+// `url: 'none'`, took no URL, and fell back to :5173 on their own; a run aimed at a branch server
+// then proved nothing about three of its gates while the receipt still recorded the branch tree.
+// Pure and offline, so it runs in `fast`.
+step('every browser gate uses the --base it is given', ['node', 'scripts/test-validate-base-plumbing.mjs'])
+// A proposal the registry does not know is recorded for review, never written as a row. That list
+// must not go stale, and must not dirty the tree — preflight counts untracked files, so an
+// unignored review list would turn an honest export into a deploy that refuses to publish.
+step('the proposals review list cannot go stale or block a deploy', ['node', 'scripts/test-proposals-artifact.mjs'])
 // Context is certified in the data and absent from the drop.
 step('context + emphasis: certified, not painted', ['node', 'scripts/verify-context-render.mjs'])
 
@@ -160,9 +169,9 @@ step('fresh — tooltip accessibility', ['node', 'scripts/test-hover-accessibili
 // importantly, NOT folded into the certified chips or counts that row is adjudicated with.
 // A URL in a drop must be ONE link carrying the WHOLE address: a term classified inside a link
 // used to take the span for itself and leave a truncated href, which looks like it worked.
-step('fresh — url integrity', ['node', 'scripts/test-url-integrity.mjs'], 'standard')
-step('fresh — row evidence chips', ['node', 'scripts/test-row-evidence.mjs'], 'standard')
-step('fresh — scroll restoration', ['node', 'scripts/test-scroll-restoration.mjs'], 'standard')
+step('fresh — url integrity', ['node', 'scripts/test-url-integrity.mjs', BASE], 'standard')
+step('fresh — row evidence chips', ['node', 'scripts/test-row-evidence.mjs', BASE], 'standard')
+step('fresh — scroll restoration', ['node', 'scripts/test-scroll-restoration.mjs', BASE], 'standard')
 // A QUOTED DROP IS MARKED UP FROM ITS OWN CERTIFIED ANALYSIS, so it has to be shown with its own
 // line breaks. The re-scrape lost 106 of them, and on #1012 that let a Claim swallow the Question
 // beside it. Certified, because what it protects is the certified reading of a drop.

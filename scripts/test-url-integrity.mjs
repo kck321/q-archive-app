@@ -7,9 +7,10 @@
 // fragment. The visible link went to a truncated URL, which is worse than no link — it looks like
 // it worked. This asserts the whole address is one anchor, and that the marks inside it survive.
 import { launch, DROP_READY } from './lib/browser.mjs'
+import { resolveBase } from './lib/pipeline.mjs'
 import fs from 'node:fs'
 
-const BASE = process.env.QDROPS_BASE ?? 'http://localhost:5173'
+const BASE = resolveBase(process.argv.slice(2))
 const D = { width: 1500, height: 950, deviceScaleFactor: 1, mobile: false, touch: false }
 const fail = m => { console.error(`FAIL: ${m}`); process.exitCode = 1 }
 const ok = m => console.log(`ok: ${m}`)

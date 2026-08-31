@@ -9,8 +9,9 @@
 // this gate was written for only ever showed on desktop, because the save and the restore
 // were both aimed at the document while <main> was the element actually moving.
 import { launch } from './lib/browser.mjs'
+import { resolveBase } from './lib/pipeline.mjs'
 
-const BASE = process.env.QDROPS_BASE ?? 'http://localhost:5173'
+const BASE = resolveBase(process.argv.slice(2))
 const fail = m => { console.error(`FAIL: ${m}`); process.exitCode = 1 }
 const ok = m => console.log(`ok: ${m}`)
 

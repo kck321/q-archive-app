@@ -9,8 +9,9 @@
 // Reads are deliberately PRIMITIVE (numbers and strings). Returning a JSON blob through the
 // harness sometimes arrives parsed and sometimes as text, and guessing which cost an afternoon.
 import { launch, ROWS_READY, DROP_READY } from './lib/browser.mjs'
+import { resolveBase } from './lib/pipeline.mjs'
 
-const BASE = process.env.QDROPS_BASE ?? 'http://localhost:5173'
+const BASE = resolveBase(process.argv.slice(2))
 const D = { width: 1600, height: 1000, deviceScaleFactor: 1, mobile: false, touch: false }
 const fail = m => { console.error(`FAIL: ${m}`); process.exitCode = 1 }
 const ok = m => console.log(`ok: ${m}`)
