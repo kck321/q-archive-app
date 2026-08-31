@@ -1,0 +1,46 @@
+{
+ "finding": "the handoff expected each export to leave the tracked worktree clean. It did not. Two tracked files under public/data differ from the committed certified bundle, identically in both independent exports. No certified value moved.",
+ "filesReproducedByteForByte": 19,
+ "filesDifferingFromTheCommittedBundle": 2,
+ "identicalInBothExports": true,
+ "questionsJsonAffected": false,
+ "posts.json": {
+  "committedSha256": "a052c051ea1ecdb310c7f4c0e1cdc3944f3bb085f71388de0db6a8a1172f4e0a",
+  "exportedSha256": "48544362d81763feac312cc1db285b002c25fdbb70c3870a875b8bc5299b70b1",
+  "committedBytes": 10400163,
+  "exportedBytes": 10400163,
+  "byteSizeIdentical": true,
+  "documentCount": {"committed": 4966, "exported": 4966},
+  "documentsAdded": 0,
+  "documentsRemoved": 0,
+  "documentsDiffering": 352,
+  "documentsDifferingOnlyByKeyOrder": 352,
+  "documentsWithAnyChangedValue": 0,
+  "proofMethod": "every document was compared after recursive key canonicalisation; all 352 differing documents are deep-equal, so the difference is serialisation order alone",
+  "whereTheOrderDiffers": "the chain-appended fields claimMeta and directiveFamilies are emitted in either order after the alphabetically sorted dump keys, and some nested postAnalysis objects likewise",
+  "firestoreDataDrift": "none - the dumped posts collection is byte-for-byte the same size (6545584) and count (4966) recorded in the committed manifest"
+ },
+ "manifest.json": {
+  "committedSha256": "11c2f8fa0426e8a77b9fc155ae022907ca69d0216b1aeda738b5322f7327e81c",
+  "exportedSha256": "842d4868fc9e37c4d1892f8e2d809aeb20b591c544157f07f3707b385271eafb",
+  "perCollectionCountsAndBytes": "unchanged - every collection count and byte figure is identical to the committed manifest",
+  "onlyChangedField": "totalBytes",
+  "committedTotalBytes": 11892314,
+  "exportedTotalBytes": 12340347,
+  "derivation": "totalBytes = statSync(public/data/posts.json).size + the five non-posts collection byte counts (1940184)",
+  "arithmetic": "the committed manifest is internally inconsistent: 11892314 - 1940184 = 9952130, but the committed posts.json is 10400163 bytes. The committed totalBytes therefore records a posts.json size that the committed bundle does not contain. A full live export recomputes the field consistently: 10400163 + 1940184 = 12340347.",
+  "conclusion": "the exported manifest is arithmetically correct and the committed one is stale; this is a bookkeeping field, not certified content"
+ },
+ "untrackedArtifact": {
+  "file": "audit/question-identity-proposals.jsonl",
+  "producedBy": "the apply chain",
+  "bytes": 16945,
+  "sha256": "46d7f2eecf6eba7ce3b8daf95e8f87dd36a3f83f1db1c000a0bed145374fdf2a",
+  "identicalInBothExports": true,
+  "gitignored": false,
+  "note": "it is untracked and not ignored, so a full export leaves it visible in git status"
+ },
+ "determinism": "the two independent exports produced byte-identical bundles, so the pipeline is deterministic on the current live data; the delta is a property of the committed bundle, not of these runs",
+ "actionTaken": "none - no generated public/data change is committed by this session. Rebaselining the certified bundle would move a certified artifact and is an owner ruling, not a gate task.",
+ "certifiedImpact": "none - questions.json, aliases.json and the other 17 generated files reproduce byte-for-byte, certification-manifest --verify passes at seed 116, and every row-level identity proof holds"
+}

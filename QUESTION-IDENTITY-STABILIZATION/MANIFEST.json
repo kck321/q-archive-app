@@ -88,7 +88,13 @@
   "22-FRESH-WORKTREE-CRLF-PROOF.json",
   "23-SECRET-EXPOSURE-AUDIT.json",
   "24-CROSS-SECTION-COMPLETENESS.json",
-  "25-INTERIM-VALIDATION.json"
+  "25-INTERIM-VALIDATION.json",
+  "26-GATE2-EXPORT-A.json",
+  "27-GATE2-EXPORT-B.json",
+  "28-GATE2-AB-BUNDLE-COMPARISON.json",
+  "29-GATE2-ZERO-WRITE-PROOF.json",
+  "30-GATE2-BUNDLE-DRIFT-VS-COMMITTED.json",
+  "31-GATE2-ROW-LEVEL-PROOFS.json"
  ],
  "filesWithHashes": [
   {
@@ -194,6 +200,30 @@
   {
    "file": "25-INTERIM-VALIDATION.json",
    "sha256": "bb3f06bbdaab213a2079fcd2b8238121571b573431de9bb497018e2b6fb3e926"
+  },
+  {
+   "file": "26-GATE2-EXPORT-A.json",
+   "sha256": "16cc1a33a206290839be9993515cc40dc8d57da01e19435c8d6e2ffea0ef7a9b"
+  },
+  {
+   "file": "27-GATE2-EXPORT-B.json",
+   "sha256": "9cf3bce573b6e7dd62d4da23418e2a1b2f22ac9dc4736fbfcdbfce09e31878b7"
+  },
+  {
+   "file": "28-GATE2-AB-BUNDLE-COMPARISON.json",
+   "sha256": "44ae6df97bc7ab65248b2753d22cbef44eb4c3f930233582d18bafd80a69c9ad"
+  },
+  {
+   "file": "29-GATE2-ZERO-WRITE-PROOF.json",
+   "sha256": "cf8983d84aa35086e6854ac5dc992878a2b8096531d0071f37d31918906329d0"
+  },
+  {
+   "file": "30-GATE2-BUNDLE-DRIFT-VS-COMMITTED.json",
+   "sha256": "c4d750df22032d9c209d88a2667331c09788bf256e50f230d94f9a3b5df15c74"
+  },
+  {
+   "file": "31-GATE2-ROW-LEVEL-PROOFS.json",
+   "sha256": "ec91ee9b0d833e7600045200a0a8a4589cea4dfc19fecefa43bbb48010725867"
   }
  ],
  "acceptancePass": {
@@ -234,8 +264,29 @@
  "acceptanceGates": {
   "gate 0 — exposed Anthropic key": "CLOSED — design removed, all shipped and live bundles proven clean, owner revokes the key",
   "gate 1 — cross-section 222 vs 216": "CLOSED — no drift existed; silent skipping fixed and covered by a test",
-  "gate 2 — two live Firestore exports": "OPEN — blocked on the daily read quota",
-  "gate 3 — final validation on the final head": "OPEN — must re-run after gate 2 moves HEAD; an interim full run at a690bd1 passed 0 FAIL with a matching receipt tree"
+  "gate 2 — two live Firestore exports": "CLOSED — two independent read-only exports on 2026-08-31 both exited 0 and produced byte-identical bundles; questions.json equals the certified baseline; zero Firestore writes; 19 of 21 generated files reproduce byte-for-byte, the other two differ only in key order and in the totalBytes bookkeeping field (see 30-GATE2-BUNDLE-DRIFT-VS-COMMITTED.json)",
+  "gate 3 — final validation on the final head": "runs on the Gate 2 evidence HEAD; by design the receipt is produced after the last commit and is delivered to the owner outside the tree, so no commit may follow it"
  },
- "deployedBaselineSha256": "9407140deb4f70b4ced88bd969da14167aa1a64d770c607c3b0b6f3047a17b01"
+ "deployedBaselineSha256": "9407140deb4f70b4ced88bd969da14167aa1a64d770c607c3b0b6f3047a17b01",
+ "gate2": {
+  "status": "CLOSED",
+  "quotaWindow": "America/Los_Angeles daily window beginning 2026-08-31 00:00 PT; the two exports were the first Firestore reads in it",
+  "exports": 2,
+  "independentWorktrees": true,
+  "skipExportUsed": false,
+  "bothExitedZero": true,
+  "bundlesByteIdenticalAcrossRuns": true,
+  "filesComparedPerRun": 21,
+  "questionsJsonSha256": "9407140deb4f70b4ced88bd969da14167aa1a64d770c607c3b0b6f3047a17b01",
+  "questionsJsonMatchesCertifiedBaseline": true,
+  "questionPopulation": 6643,
+  "firestoreWrites": 0,
+  "filesReproducedByteForByte": 19,
+  "filesDifferingFromCommittedBundle": [
+   "public/data/posts.json (key order only - 352 documents deep-equal, identical byte size)",
+   "public/data/manifest.json (the totalBytes bookkeeping field, recomputed correctly)"
+  ],
+  "certifiedValueMovements": 0,
+  "seeAlso": "30-GATE2-BUNDLE-DRIFT-VS-COMMITTED.json"
+ }
 }

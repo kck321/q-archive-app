@@ -1,0 +1,29 @@
+{
+ "claim": "the two Gate 2 exports performed live Firestore reads only and wrote nothing to Firestore",
+ "staticProof": {
+  "filesScanned": 38,
+  "scope": "scripts/export-firestore.mjs, scripts/rebuild-bundle.mjs, scripts/lib/chainSteps.mjs and every one of the 35 CHAIN step scripts",
+  "writeApisSearched": ["setDoc", "updateDoc", "addDoc", "deleteDoc", "writeBatch", "runTransaction", "deleteField", "batch.commit"],
+  "writeApiOccurrences": 0,
+  "firestoreImportSites": 1,
+  "theOnlyFirestoreImport": "scripts/export-firestore.mjs: import { getFirestore, collection, getDocs, doc, getDoc } from 'firebase/firestore'",
+  "readOnlyCallSites": ["getDocs(collection(db, name))", "getDocs(collection(db,'postEdits'))", "getDocs(collection(db,'questionEdits'))", "getDoc(doc(db,'app','aliases'))"],
+  "buildOwnerSectionMovesInChain": false,
+  "buildOwnerSectionMovesReferencedByExportOrRebuildOrChain": false
+ },
+ "runtimeProof": {
+  "method": "export B read the same live database immediately after export A; had export A written anything, export B would have observed it",
+  "collectionCountsExportA": {"posts": 4966, "questions": 10158, "topics": 100, "resources": 0, "analysisConfirmed": 286, "infographs": 0, "aliasGroups": 9},
+  "collectionCountsExportB": {"posts": 4966, "questions": 10158, "topics": 100, "resources": 0, "analysisConfirmed": 286, "infographs": 0, "aliasGroups": 9},
+  "countsIdentical": true,
+  "bundlesByteIdentical": true,
+  "conclusion": "the live database was in exactly the same state for both reads"
+ },
+ "firestoreWrites": 0,
+ "skipExportUsed": false,
+ "deployment": "none",
+ "remotePush": "none",
+ "dnsChange": "none",
+ "ownerSectionMovesRegenerated": false,
+ "issue4686Work": "none"
+}

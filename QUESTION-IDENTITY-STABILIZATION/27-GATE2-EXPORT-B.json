@@ -1,0 +1,163 @@
+{
+ "worktree": "C:/Users/heath/AppData/Local/Temp/claude/C--Users-heath/2d96e20c-11b5-4388-854b-4d47f61e482c/scratchpad/gate2-export-b",
+ "independence": "a separate git worktree created from the canonical repository and checked out detached at the same commit; neither export was run twice in the same worktree",
+ "sourceCommit": "f100d4d4fce627b4153731291e367b1eb99cab9a",
+ "sourceTree": "e7249c9f9555816723a136714f47f9ceae2a1bc4",
+ "headAtRun": "f100d4d4fce627b4153731291e367b1eb99cab9a",
+ "command": "node scripts/export-firestore.mjs",
+ "skipExportUsed": false,
+ "exitStatus": 0,
+ "startUtc": "2026-08-31T11:32:34Z",
+ "endUtc": "2026-08-31T11:33:14Z",
+ "durationSeconds": 40,
+ "documentReads": {
+  "posts": 4966,
+  "questions": 10158,
+  "topics": 100,
+  "resources": 0,
+  "analysisConfirmed": 286,
+  "infographs": 0,
+  "questionEdits": 153,
+  "appAliasesSingleDoc": 1,
+  "postEdits": "at least 1355 (documents applied; the exporter does not print the collection size)",
+  "countedSubtotal": 15664,
+  "note": "the two exports together are consistent with the ~34,000-read estimate in the handoff"
+ },
+ "statusShortAfterRun": [
+  " M public/data/manifest.json",
+  " M public/data/posts.json",
+  "?? audit/question-identity-proposals.jsonl"
+ ],
+ "diffNameOnlyAfterRun": [
+  "public/data/manifest.json",
+  "public/data/posts.json"
+ ],
+ "questionsJsonSha256": "9407140deb4f70b4ced88bd969da14167aa1a64d770c607c3b0b6f3047a17b01",
+ "questionsJsonMatchesCertifiedBaseline": true,
+ "questionPopulation": 6643,
+ "overlayBake": "complete - edits baked through 1786458148021, constant declares 1786458148021; 1355 posts patched, 75 questions upserted, 78 removed",
+ "applyChain": "complete - 26 apply invocations of the 35-step CHAIN",
+ "chainReachedApplyStep3b1": true,
+ "literalSpanGate": "PASS - question literal spans = the 5 owed records",
+ "certificationManifestVerify": "PASS - 8 sections, seed version 116",
+ "testQuestionIdentity": "61 passed, 0 failed",
+ "testCrossSectionCompleteness": "18 passed, 0 failed",
+ "testAnthropicProxyGuard": "33 passed, 0 failed",
+ "ownerSectionMovesSha256": "d0399176877be0bca9cd77c68429e47134e0027b1075bbee433d6fe0036fd524",
+ "ownerSectionMovesUnchanged": true,
+ "ownerSectionMovesBuilderRun": false,
+ "firestoreWrites": 0,
+ "deployment": "none",
+ "remotePush": "none",
+ "bundleFileCount": 21,
+ "bundleTotalBytes": 33083941,
+ "logSha256": "7d276d1eee299b499cd6c6b47a53a301946cc6cac684be328e68850853f7ef17",
+ "logPath": "C:/Users/heath/AppData/Local/Temp/claude/C--Users-heath/2d96e20c-11b5-4388-854b-4d47f61e482c/scratchpad/logs/export-b.log",
+ "publicDataInventory": [
+  {
+   "file": "public/data/aliases.json",
+   "bytes": 476,
+   "sha256": "6a947a8c00c18e99d11e19eb26ee7f21165ce83a4f20d1b4123b100752d87685"
+  },
+  {
+   "file": "public/data/analysisConfirmed.json",
+   "bytes": 40684,
+   "sha256": "3531cbbbf4a533c8969235fe7efe43e50c6fa722502fc89aa1913e472b643d8d"
+  },
+  {
+   "file": "public/data/codes.json",
+   "bytes": 223555,
+   "sha256": "72afdef2f76b2998097f0b195ce73d00f967298a75c7ece322f88cb3334cbb05"
+  },
+  {
+   "file": "public/data/entities.json",
+   "bytes": 548040,
+   "sha256": "da78318eaa2dc7a685edc15961b69ef6816818e0d7a345ac4da3edc309270f47"
+  },
+  {
+   "file": "public/data/entity-hovers.json",
+   "bytes": 2288534,
+   "sha256": "7ec3e684d5b9b1bd843c83db0071cb1bce42f1522f1f4b9881b9ff7d347793f9"
+  },
+  {
+   "file": "public/data/entity-public-view.json",
+   "bytes": 412256,
+   "sha256": "ab094ee25e3c377b2f73f86e7cf78a3f5583cbe9ac60d57297dd5b15ad6821c3"
+  },
+  {
+   "file": "public/data/evidence.json",
+   "bytes": 2047538,
+   "sha256": "e21a91dfbe39432c8b571365d9a5826622b33455991fe8b0e17b0c37b9705098"
+  },
+  {
+   "file": "public/data/glossary.json",
+   "bytes": 333104,
+   "sha256": "50db0a9fa8f1162a89a9b0541d1ec18d0524603aadbfd38894aff51f3e10d7a6"
+  },
+  {
+   "file": "public/data/infographs.json",
+   "bytes": 2,
+   "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+   "file": "public/data/linked-sources.json",
+   "bytes": 151643,
+   "sha256": "97b5c43a7f87e6695b4a28e16befe8a61284ad626a2d5f591e296951bf17062b"
+  },
+  {
+   "file": "public/data/manifest.json",
+   "bytes": 450,
+   "sha256": "842d4868fc9e37c4d1892f8e2d809aeb20b591c544157f07f3707b385271eafb"
+  },
+  {
+   "file": "public/data/picture-analysis.json",
+   "bytes": 2419050,
+   "sha256": "61f43b18e5052eff2c5f8c2c2ddd0f576241ab1ac404149ebf717eb0e772a210"
+  },
+  {
+   "file": "public/data/posts.json",
+   "bytes": 10400163,
+   "sha256": "48544362d81763feac312cc1db285b002c25fdbb70c3870a875b8bc5299b70b1"
+  },
+  {
+   "file": "public/data/questions.json",
+   "bytes": 2255423,
+   "sha256": "9407140deb4f70b4ced88bd969da14167aa1a64d770c607c3b0b6f3047a17b01"
+  },
+  {
+   "file": "public/data/relationships.json",
+   "bytes": 2362089,
+   "sha256": "b1e8137aefd5d6de4d7d237636e92fbffcf3ebed6b5a55b827eb58d2a25f9e70"
+  },
+  {
+   "file": "public/data/resolution-queue.json",
+   "bytes": 268828,
+   "sha256": "bc0902e0d011aeb48709b4e4c178343ff2b79401c60614928f17b7aba000a9a8"
+  },
+  {
+   "file": "public/data/resources.json",
+   "bytes": 2,
+   "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+   "file": "public/data/search-index.json",
+   "bytes": 8118601,
+   "sha256": "035104b1c275db11685e79bc67950549d9a06c112ea8c06c363e249042d9b6cb"
+  },
+  {
+   "file": "public/data/semantics.json",
+   "bytes": 680803,
+   "sha256": "d0a5ae3cc52b9ea761a487e5dba03a38da259e15b8cc5265e726d0f86296d160"
+  },
+  {
+   "file": "public/data/themes.json",
+   "bytes": 498606,
+   "sha256": "d93d5202564176155acf4a3c24313cc1fe69c5b0a4e39b92a90d0696560be3aa"
+  },
+  {
+   "file": "public/data/topics.json",
+   "bytes": 34094,
+   "sha256": "41012c01611e9417950b3994a18761b2dc8fe061b05a79351245a8eba46aa031"
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+{
+ "measuredAgainst": "the questions.json produced by the two Gate 2 live exports (byte-identical in both runs)",
+ "questionPopulation": 6643,
+ "uniqueCanonicalIds": 6643,
+ "duplicateIds": 0,
+ "forbiddenOrTransientPrefixIds": 0,
+ "idFamilyCrossTab": {"firestore-20": 6380, "qf": 143, "q-queue": 70, "qc": 30, "q-owner": 12, "uuid": 5, "bf": 3},
+ "idFamilyCrossTabMatchesExpected": true,
+ "positionalLookingIdsPreserved": 258,
+ "positionalLookingIdsDerivation": "the order-dependent families qf(143) + q-queue(70) + qc(30) + q-owner(12) + bf(3) = 258",
+ "sixKnownIdTargets": [
+  {"id": "qc-b", "expectedPostNum": 1915, "observedPostNum": 1915, "holds": true},
+  {"id": "qc-c", "expectedPostNum": 1944, "observedPostNum": 1944, "holds": true},
+  {"id": "qc-h", "expectedPostNum": 2782, "observedPostNum": 2782, "observedText": "[Example CA] https://calmatters.org/articles/commentary/gavi...", "holds": true},
+  {"id": "qc-l", "expectedPostNum": 311, "observedPostNum": 311, "observedText": "Define.", "holds": true},
+  {"id": "qc-v", "expectedPostNum": 53, "observedPostNum": 53, "observedText": "List out all who have foundations.", "holds": true},
+  {"id": "qc-w", "expectedPostNum": 97, "observedPostNum": 97, "observedText": "Define.", "holds": true}
+ ],
+ "fiveLiteralPins": {"checked": 5, "holding": 5, "movements": 0},
+ "fourThreatenedReferences": {"checked": 4, "holding": 4, "movements": 0},
+ "semanticLayer182": {"rows": 182, "preservingBothPathAAndPathBTargets": 182, "movements": 0},
+ "step3b1ActionId247": {"rows": 247, "preservingTargets": 247, "movements": 0},
+ "questionEdits153": {"rows": 153, "verified": 153, "noCertifiedRowCarriesTheId": 148, "certifiedRowSurvivesAtItsPost": 5, "measuredEffectChanges": 0},
+ "registry": {"entries": 6643, "totalSignatures": 6668, "externalAliases": 2, "orphanEntriesWithNoBundleRow": 0, "bundleRowsWithNoRegistryEntry": 0, "signatureCollisions": 0, "canonicalIdCollisions": 0, "ambiguities": 0},
+ "danglingAliases": 0,
+ "publicLinkBreaks": 0,
+ "publicLinkBasis": "public/data/aliases.json reproduced byte-identically in both exports; the audited public URL reference count for question ids is 0",
+ "browserPersistedIdBreaks": 0,
+ "browserPersistedBasis": "the whole questions collection is cached in IndexedDB by canonical id; every id in the exported bundle is unchanged from the certified baseline"
+}
