@@ -168,6 +168,8 @@ No content details are recorded here; the owner reviews the image directly.
 | 951 | #3254 | `3c3a3a351dd2fe6f934645a08554d299c2cab213cdd6cbd924b908a806f7ee3b` | D2w86F1WsAUhspR.png-large.png | attached | review_required | withheld |
 | 1574 | #4941 | `d7d8f7f0cf1fe554e1a5d28b05301ccd60b90c52faf5d9d2460b352e05df950e` | Elf4vVlWoAAJHjQ.jpg | attached | review_required | withheld |
 | 1575 | #4941 | `712c1e2a48b6c96fcc21896ad8ac5101c23a150131f5add92057fd4da797327f` | Elf4vVoW0AUO87D.jpg | attached | review_required | withheld |
+| 1576 | #4941 | `73196f8987cf930ee17301b1e092fa4c3c79f64bd1cef6de91aac6cae8e950c3` | Elf4vVkX0AAMM0b.jpg | attached | review_required | withheld |
+| 1577 | #4941 | `b76f543d78517a4fe7e639923a6496fa35bdcc30ff6a306cf848c6dce2d99edc` | Elf4vVpXUAE04fm.jpg | attached | review_required | withheld |
 
 ## Rule going forward
 
