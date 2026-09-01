@@ -1407,7 +1407,7 @@
    "id": "hash-reserialised",
    "description": "byte-level re-serialisation reported separately, not as drift",
    "pass": true,
-   "detail": "none"
+   "detail": "posts.json re-serialised by the export chain"
   },
   {
    "group": "11. Frozen-section mutation",
