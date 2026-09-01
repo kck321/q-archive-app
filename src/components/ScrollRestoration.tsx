@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, type RefObject } from 'react'
 import { useLocation, useNavigationType } from 'react-router-dom'
+import { decideScrollAction, pendingAfterRestoreEnds } from '../lib/scrollPolicy.mjs'
 
 // Remember where you were on every page, and put you back there when you go Back.
 //
@@ -19,6 +20,20 @@ import { useLocation, useNavigationType } from 'react-router-dom'
 // Pages fetch and render thousands of rows after mount, so at restore time the container
 // is usually still short and scrollTop silently clamps. We re-apply across animation
 // frames until it sticks, then confirm it holds for a few frames before stopping.
+//
+// ── The page that replaces its own URL mid-restore ───────────────────────────
+// Because that loop runs for many frames, a navigation can land in the middle of it — and
+// PostArchive issues one on every visit, syncing its search state with
+// `setUrlParams({}, { replace: true })`. With no search active that REPLACE keeps the SAME scroll
+// key, but React Router still reports navType 'REPLACE': the layout effect re-ran, its cleanup
+// cancelled the in-flight restore, and the new body treated it as a new page and wrote
+// scrollTop = 0. The scroll listener then recorded that forced zero over the reader's position.
+// Traced 1 Sep 2026 — /posts saved 1500, Back started the loop, a same-key REPLACE zeroed it six
+// milliseconds later — and it reproduced on the then-live commit ad2de36, so it was never new.
+//
+// The decision now lives in lib/scrollPolicy.mjs as a pure function, where each transition is
+// proved directly rather than through a browser gate that has to win a race to observe it. The
+// target outlives the effect in `pendingRestore` so a same-key REPLACE can pick it back up.
 
 // Budget measured from the last time the page STOPPED GROWING, not from the restore starting.
 //
@@ -77,6 +92,10 @@ export default function ScrollRestoration({ containerRef }: { containerRef: RefO
   const navType = useNavigationType()
   const key = location.pathname + location.search
   const positions = useRef<Record<string, number>>(loadPositions())
+  // The scroll key we last laid out for, and a restore target that has to outlive the effect when
+  // a same-key REPLACE tears it down mid-flight.
+  const previousScrollKey = useRef<string | null>(null)
+  const pendingRestore = useRef<{ key: string; target: number } | null>(null)
 
   // Keep the stored position current while the page is on screen, so a refresh or a
   // browser-level restore has something to work with too.
@@ -102,35 +121,44 @@ export default function ScrollRestoration({ containerRef }: { containerRef: RefO
     const { el } = scroller(containerRef)
     if (!el) return
 
+    const decision = decideScrollAction({
+      navType,
+      key,
+      previousKey: previousScrollKey.current,
+      pending: pendingRestore.current,
+      saved: positions.current[key],
+    })
+    previousScrollKey.current = key
+    pendingRestore.current = decision.pending
+
     let raf = 0
-    if (navType === 'POP') {
-      const target = positions.current[key] ?? 0
-      if (target > 0) {
-        let deadline = performance.now() + RETRY_MS
-        const hardStop = performance.now() + MAX_MS
-        let lastHeight = el.scrollHeight
-        let settled = 0
-        const restore = () => {
-          // Still filling in? Then we have not had our chance yet — reset the budget.
-          if (el.scrollHeight !== lastHeight) {
-            lastHeight = el.scrollHeight
-            deadline = performance.now() + RETRY_MS
-          }
-          if (Math.abs(el.scrollTop - target) > 2) {
-            el.scrollTop = target
-            settled = 0
-          } else {
-            settled++
-          }
-          const now = performance.now()
-          if (settled < SETTLE_FRAMES && now < deadline && now < hardStop) {
-            raf = requestAnimationFrame(restore)
-          }
+    if (decision.action === 'restore') {
+      const target = decision.target
+      let deadline = performance.now() + RETRY_MS
+      const hardStop = performance.now() + MAX_MS
+      let lastHeight = el.scrollHeight
+      let settled = 0
+      const restore = () => {
+        // Still filling in? Then we have not had our chance yet — reset the budget.
+        if (el.scrollHeight !== lastHeight) {
+          lastHeight = el.scrollHeight
+          deadline = performance.now() + RETRY_MS
         }
-        raf = requestAnimationFrame(restore)
-      } else {
-        el.scrollTop = 0
+        if (Math.abs(el.scrollTop - target) > 2) {
+          el.scrollTop = target
+          settled = 0
+        } else {
+          settled++
+        }
+        const now = performance.now()
+        if (settled < SETTLE_FRAMES && now < deadline && now < hardStop) {
+          raf = requestAnimationFrame(restore)
+        } else {
+          // Settled, or out of patience. Either way this target is spent.
+          pendingRestore.current = pendingAfterRestoreEnds(pendingRestore.current, key)
+        }
       }
+      raf = requestAnimationFrame(restore)
     } else {
       // Opening something new always starts at the top.
       el.scrollTop = 0

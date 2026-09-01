@@ -60,6 +60,76 @@ await check('desktop /posts', DESKTOP, '/posts', String.raw`/^\/post\//`)
 await check('phone /posts',   PHONE, '/posts', String.raw`/^\/post\//`)
 await check('desktop /pics',  DESKTOP, '/pics',  String.raw`/^\/post\//`)
 
+// ── The archive replaces its own URL, end to end ─────────────────────────────
+//
+// PostArchive syncs its search state with `setUrlParams({}, { replace: true })`, a REPLACE onto the
+// SAME scroll key. That used to cancel an in-flight Back restoration and reset the reader to the
+// top. The RULE is proved deterministically by scripts/test-scroll-navigation-policy.mjs; this is
+// the integration half — that the rule is actually wired to a real browser, a real router and the
+// real <main>, in one document.
+//
+// It is NOT a differentiator. Whether it catches the old implementation depends on winning the same
+// race the policy test removed, so it is not asked to. /pics is deliberately absent: QPostPics
+// issues no navigation at all, so it cannot produce this REPLACE and has no place in a check named
+// for it. /pics keeps the ordinary restoration check above.
+async function archiveReplaceIntegration(path, linkPattern) {
+  const p = await b.page(`${BASE}${path}`, DESKTOP)
+  await p.waitFor(`${SCROLLER}.scrollHeight > ${SCROLLER}.clientHeight + 800`, { timeout: 60000 })
+
+  // The harness must be driving the element the app actually scrolls, or this proves nothing.
+  const sameEl = await p.evaluate(`${SCROLLER} === document.querySelector('main')`)
+  if (String(sameEl) !== 'true') { fail(`${path}: the harness is not driving the app's <main>`); await p.close(); return }
+
+  // And a full document load would exercise none of the routing, so prove one document throughout.
+  await p.evaluate(`window.__scrollProofDoc = (window.__scrollProofDoc || Math.random().toString(36).slice(2))`)
+  const doc0 = await p.evaluate(`window.__scrollProofDoc`)
+
+  // Ordinary reader pacing on purpose. Forcing the scroll and the click into one task is what
+  // made this shape of check flaky — it turns the gate into a race for the restore loop to win.
+  // The archive issues its same-key REPLACE on every visit regardless, so ordinary pacing still
+  // exercises it; the deterministic proof of the rule lives in the policy test, not here.
+  await p.evaluate(`${SCROLLER}.scrollTop = 1500`)
+  await p.waitFor(`${SCROLLER}.scrollTop > 1400`, { timeout: 10000 })
+  const before = Number(await p.evaluate(`${SCROLLER}.scrollTop`))
+  const clicked = await p.evaluate(`(() => {
+    const a = [...document.querySelectorAll('a')].find(x => ${linkPattern}.test(x.getAttribute('href') || ''))
+    if (!a) return 'none'
+    a.click(); return 'ok'
+  })()`)
+  if (clicked !== 'ok') { fail(`${path} (archive REPLACE): found no link matching ${linkPattern}`); await p.close(); return }
+
+  await p.waitFor(`location.pathname !== ${JSON.stringify(path)}`, { timeout: 20000 })
+  await p.evaluate(`history.back()`)
+  await p.waitFor(`location.pathname === ${JSON.stringify(path)}`, { timeout: 20000 })
+
+  const restored = await p.waitFor(`${SCROLLER}.scrollTop > 1200`, { timeout: 15000 })
+  const after = Number(await p.evaluate(`${SCROLLER}.scrollTop`))
+  const doc1 = await p.evaluate(`window.__scrollProofDoc`)
+
+  if (doc0 !== doc1 || !doc1) fail(`${path} (archive REPLACE): the navigation left the document — this run proves nothing`)
+  else if (restored) ok(`${path} (archive REPLACE): Back restored ${after}px in one document, through the archive's own same-key replacement`)
+  else fail(`${path} (archive REPLACE): Back landed at ${after}px, expected ~${before}px`)
+  await p.close()
+}
+
+// The phone checks above are only controls if they genuinely exercise the document scroller.
+async function phoneUsesDocumentScroller(path) {
+  const p = await b.page(`${BASE}${path}`, PHONE)
+  await p.waitFor(`document.querySelector('main') !== null`, { timeout: 60000 })
+  const out = JSON.parse(await p.evaluate(`(() => {
+    const m = document.querySelector('main')
+    const oy = getComputedStyle(m).overflowY
+    return JSON.stringify({ overflowY: oy, mainScrolls: oy === 'auto' || oy === 'scroll' })
+  })()`))
+  if (out.mainScrolls) fail(`phone ${path}: <main> owns the scrollbar (overflowY ${out.overflowY}) — the phone control is not testing the document`)
+  else ok(`phone ${path}: the document owns the scrollbar (<main> overflowY ${out.overflowY})`)
+  await p.close()
+}
+
+await archiveReplaceIntegration('/posts', String.raw`/^\/post\//`)
+await phoneUsesDocumentScroller('/posts')
+await phoneUsesDocumentScroller('/pics')
+
 // ── One scrollbar, not two ───────────────────────────────────────────────────
 //
 // On desktop <main> owns the scrollbar and the document must not scroll at all. A second bar

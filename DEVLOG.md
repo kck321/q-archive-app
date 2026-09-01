@@ -8702,3 +8702,67 @@ from the canonical `node_modules`, so `tsc -b` fails there on master too until `
 
 Not merged, not pushed, not deployed. No Firestore write, no DNS change, no #4686 work, no
 owner-section-moves regeneration. Master untouched at `ad2de36`.
+
+## 1 Sep 2026 — The flaky scroll gate was a real defect, and the archive was causing it
+
+**Request.** Stage B was one passing validation from deploying, and `fresh — scroll restoration`
+kept stopping the run. It had been treated as browser contention twice before and "fixed" by killing
+stale headless Chrome.
+
+**It was not contention.** A controlled baseline settled that first: a detached worktree at
+`ad2de36` — the commit then LIVE in production — reproduced the identical `desktop /posts` failure
+at exactly 0px, cold, on the second of three runs. Stage B was exonerated, and the defect had been
+shipping to readers.
+
+**Two wrong diagnoses before the right one, both disproved by A/B rather than argument.** First: a
+pending `requestAnimationFrame` in the save listener writing the new page's 0 over the old page's
+offset. Making that write synchronous changed nothing — old and repaired failed identically, so the
+repair was reverted unshipped. Second: `scroller()` resolving `documentElement` because the layout
+effect runs before React attaches the parent's ref. Real, and visible in the trace, but every record
+in the actual failing navigation resolved `main` correctly, so it was not this either. A
+`.matches('.lg\:overflow-y-auto')` fallback was proposed and rejected: the class is in the markup at
+every breakpoint, so it would have claimed `<main>` on phones, where the document scrolls.
+
+**What the trace showed.** Append-only, sequence-numbered, with document-instance ids proving the
+navigation never left the document:
+
+    seq 10  scroll-write   map /posts = 1500
+    seq 11  cleanup-save   atUnmount 1500, written 1500          ← the save was always correct
+    seq 15  restore-enter  targetFromMap 1500, loopStarts true   ← Back started restoring
+    seq 18  cleanup-save   the restore effect torn down 6ms later
+    seq 20  listener-attach navType REPLACE, same key /posts     ← the archive replaced its own URL
+    seq 21  scroll-write   map /posts = 0                        ← the forced zero, recorded
+
+`PostArchive` syncs its search state with `setUrlParams({}, { replace: true })`. With no search
+active that REPLACE keeps the SAME scroll key, but React Router still reports `REPLACE`: the layout
+effect re-ran, its cleanup cancelled the in-flight restore, and the new body treated it as opening a
+new page and wrote `scrollTop = 0`. Intermittent only because the restore usually finished first —
+it needs many frames while the archive re-renders, so Back timing decided the winner.
+
+**The repair.** `previousScrollKey` + `pendingRestore`, and the decision extracted into
+`src/lib/scrollPolicy.mjs` as a pure function. POP with a positive saved position restores and holds
+that target pending; a same-key REPLACE while it is pending resumes it — from `pending`, not the
+positions map, which the forced zero has already corrupted; everything else starts at the top,
+same-key PUSH included; the pending target clears when the loop settles or expires. Retry budget,
+settle frames, thresholds, and desktop/mobile scroller selection are untouched.
+
+**The regression is a rule, not a race.** `scripts/test-scroll-navigation-policy.mjs`, 14 cases, no
+browser, no server, no clock — registered in `validate.mjs` and cheap enough for `fast`. Proved it
+bites: reinstating the pre-repair rule fails exactly two cases, the same-key-REPLACE resume and the
+non-vacuity check. The browser gate keeps one honest `/posts` integration check — same `<main>`,
+one document, Back restores ~1500 through the archive's own replacement — deliberately at ordinary
+reader pacing, because forcing the scroll and click into one task is what made this shape of check
+flaky in the first place.
+
+**`/pics` is a SEPARATE, UNFIXED problem.** It cannot produce this REPLACE — `QPostPics` issues no
+navigation at all — so it is deliberately absent from the REPLACE check. Under the harsher forced
+timing it still failed once in three cold runs: ~1,870 tiles are still arriving from IndexedDB after
+Back, the scroller stays too short, and the requested position clamps to 0. That is the content-
+arrival problem `RETRY_MS` was written to fight, it is untouched by this repair, and it keeps its
+present threshold and timeout in the full profile. It needs its own diagnostic.
+
+**Acceptance:** policy 14/14; identity, cross-section completeness, proxy guard, base plumbing and
+proposals-artifact suites all pass; `tsc -b` clean; rebuild-bundle leaves `posts.json`
+`48544362…` at 10,400,163 bytes and `questions.json` `9407140d…` byte-identical; certification
+verifies at seed 116; production and public builds pass; one cold browser run GREEN, on top of three
+earlier cold repaired runs whose `/posts` checks passed 3 of 3.

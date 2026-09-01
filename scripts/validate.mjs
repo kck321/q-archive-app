@@ -143,6 +143,11 @@ step('every browser gate uses the --base it is given', ['node', 'scripts/test-va
 // must not go stale, and must not dirty the tree — preflight counts untracked files, so an
 // unignored review list would turn an honest export into a deploy that refuses to publish.
 step('the proposals review list cannot go stale or block a deploy', ['node', 'scripts/test-proposals-artifact.mjs'])
+// What a navigation does to the scroll position is a RULE, not a race. The browser gate could only
+// see the defect when a Back restoration happened to still be running as PostArchive replaced its
+// own URL — it caught it about three runs in four, which is why a real bug read as flaky Chrome and
+// was twice "fixed" by killing stale processes. Pure and offline, so it runs in `fast`.
+step('scroll navigation policy', ['node', 'scripts/test-scroll-navigation-policy.mjs'])
 // Context is certified in the data and absent from the drop.
 step('context + emphasis: certified, not painted', ['node', 'scripts/verify-context-render.mjs'])
 
