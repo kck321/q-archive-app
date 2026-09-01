@@ -73,7 +73,10 @@ export const CERTIFIED = {
   // 934 -> 935 the same day: the owner corrected that reading — "DECLAS_Public should be a
   // prediction" — and the line goes back.
   // 935 -> 950 on 2026-08-24: the NCSWIC, Red October and Delta rulings.
-  predictions: { occurrences: 950, posts: 672 },
+  // 950 -> 951 on 1 Sep 2026: #4686's "WATERGATE x1000" is a Prediction (owner ruling
+  // 2026-08-30). It was certified in no painted section before, so no other figure moves;
+  // its contextUnit and themeAnchor entries are untouched.
+  predictions: { occurrences: 951, posts: 673 },
   /** Claim attributes. `conclusions` may apply to a claim or a prediction. */
   // checkable, sourceProvided and conclusions do NOT move with the queue ruling: they are
   // attributes the claims audit established from evidence inside the drop, and the owner ruled a
@@ -108,7 +111,7 @@ export const CERTIFIED = {
  */
 export const SECTION_TOTALS: Record<string, { occurrences: number; posts: number; unit: string }> = {
   claims: { occurrences: 10213, posts: 3220, unit: 'occurrences' },
-  predictions: { occurrences: 950, posts: 672, unit: 'occurrences' },
+  predictions: { occurrences: 951, posts: 673, unit: 'occurrences' },
   // "mentions" is the right word here and the only section where it is: an entity is counted
   // once per resolved mention across the 1,066 canonical entities Q named in prose. The other 135
   // certified identities contribute none — they are linked sources, not words Q wrote — which is

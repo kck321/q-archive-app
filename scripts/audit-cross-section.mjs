@@ -527,7 +527,7 @@ const skip = (group, id, description, reason) => skipped.push({ group, id, descr
   // from IndexedDB and would go on painting six of the seventeen amber as Claims while the
   // archive certifies them green as Directives. Caught by the owner on the rendered page, which
   // is exactly the layer this pin exists to protect.
-  t('seed-current', 'SEED_VERSION is 116 (#4688 items 1-17 are Directives)', seed === 116, seed)
+  t('seed-current', 'SEED_VERSION is 117 (#4686 WATERGATE x1000 is a Prediction)', seed === 117, seed)
   t('seed-gate', 'seeding is gated on SEED_VERSION', /seeded === SEED_VERSION/.test(localData), 'present')
 
   // THE GUARD THAT WOULD HAVE SAVED THREE ROUND TRIPS. Changing seeded data without bumping the

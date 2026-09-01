@@ -513,7 +513,13 @@ export const OVERLAY_REPAIR = 1
 //     6,321, entities 1,235 -> 1,214 rows and 8,975 -> 8,821 mentions. A returning reader holding
 //     87 would keep the pre-review paint on 41 drops and a registry counting one written word up
 //     to five times, so the seed has to move.
-export const SEED_VERSION = 116  // 116: 2026-08-30 — #4688 ITEMS 1-17 ARE DIRECTIVES. Six lines
+export const SEED_VERSION = 117  // 117: 2026-08-30 ruling, shipped 1 Sep 2026 — #4686's
+                                 //     "WATERGATE x1000" IS A PREDICTION. posts.json changes
+                                 //     (postAnalysis.predictions), and a reader stuck on 116
+                                 //     reads posts from IndexedDB and never re-fetches, so the
+                                 //     line would go on painting unclassified. The owner caught
+                                 //     exactly this on the #4688 ruling, on the rendered page.
+                                 // 116: 2026-08-30 — #4688 ITEMS 1-17 ARE DIRECTIVES. Six lines
                                  //     leave Claims and item 2 is added, so posts.json changes
                                  //     (postAnalysis.claims, actionRequests, directiveFamilies).
                                  //     A returning reader stuck on 115 reads posts from IndexedDB

@@ -8766,3 +8766,45 @@ proposals-artifact suites all pass; `tsc -b` clean; rebuild-bundle leaves `posts
 `48544362…` at 10,400,163 bytes and `questions.json` `9407140d…` byte-identical; certification
 verifies at seed 116; production and public builds pass; one cold browser run GREEN, on top of three
 earlier cold repaired runs whose `/posts` checks passed 3 of 3.
+
+## 1 Sep 2026 — #4686: "WATERGATE x1000" is a Prediction
+
+**Request.** The owner's 2026-08-30 ruling, queued behind Stage B and applied now that Stage B is
+closed.
+
+**It was not a Claim.** The ruling reads like a reclassification, but Claims, Directives and
+Predictions all passed over that line. It was certified in exactly one place: the archive's 444
+`contextUnits`, with "WATERGATE" also a `themeAnchor` of the same drop. So nothing left a painted
+section for it — `from` is null, the shape #4951's NCSWIC ruling already used.
+
+**The contextUnit stays, and that is a decision, not an oversight.** contextUnits are a certified
+data layer no surface fills — the validate gate "context + emphasis: certified, not painted" asserts
+exactly that — so an entry there does not compete with a painted section. #2647's "[1 year delta]"
+is already both a contextUnit and a Prediction, so the overlap has precedent and the invariants
+accept it. Removing it would have meant building a `from: contextUnits` path the materialiser has
+never had, to alter a separately certified layer the ruling does not mention.
+
+**Applied by appending to `audit/owner-section-moves.json` — the builder was NOT run.**
+`scripts/build-owner-section-moves.mjs` emits 23 of the committed moves and would delete the rest;
+the diff here is 11 insertions and 2 deletions, and the only deletions are the two `totals` lines it
+replaces. moves 58 -> 59, intoPredictions 15 -> 16.
+
+**Counts.** predictions 957 -> 958 in the chain (`apply-claims`, `materialize-literal-spans`), and
+the certified painted figure 950 -> 951 with posts 672 -> 673 in `lib/contracts.mjs` and
+`sectionInfo.ts` — invariant 9 requires every visible figure to be the certified one. No claim,
+directive, entity or theme figure moves.
+
+**SEED_VERSION 116 -> 117**, because posts.json changes. A reader stuck on 116 reads posts from
+IndexedDB and never re-fetches, so the line would go on painting unclassified — the owner caught
+that failure mode himself on #4688, on the rendered page rather than through a gate.
+
+**Local state:** chain exit 0, twice; certification re-certified and verified at seed 117; 222/222
+cross-section invariants; `tsc -b` clean.
+
+**NOT VALIDATED AND NOT DEPLOYED, deliberately.** A concurrent session is running a picture audit in
+this same working tree — `checkpoint-2026-08-18/batch1690.json` and `manifests/agent81.json` were
+written seconds apart while this ruling was being applied. A full validation receipt pins the
+working TREE, so any commit from that session voids it, and this drop is not shippable until the
+repo goes quiet. Only this ruling's own paths were committed; none of the picture-audit batch is in
+this commit. Firestore is also nearly out of quota for the day (~34k of 50k used by the morning's
+authoritative export and the Stage B deploy export), so the deploy needs a fresh Pacific window.

@@ -525,7 +525,10 @@ const checks = [
   // +15 on 2026-08-24: the NCSWIC, Red October and Delta rulings. Ten arrive from Claims and five
   // from no section at all — #4951 "NCSWIC", #2286 "RED OCTOBER?", #2458 "RED LINE ON THE
   // ANNIVERSARY OF RED OCTOBER?", #2647 "[1 year delta]" and #3780 "Delta?".
-  ['predictions = 957', allPreds.length === 957, allPreds.length],
+  // +1 on 2026-08-30 ruling, applied 1 Sep 2026: #4686's "WATERGATE x1000" is a Prediction.
+  // Certified in no painted section beforehand, so nothing left Claims for it — see
+  // audit/owner-section-moves.json. Its contextUnit and themeAnchor entries are untouched.
+  ['predictions = 958', allPreds.length === 958, allPreds.length],
   // isConclusion travels with the ROW rather than with the section, so a row leaving Claims
   // takes the attribute with it. -1: #3203's quoted question was the only withdrawn row
   // carrying it. 966 - 1 = 965.

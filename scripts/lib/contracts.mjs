@@ -192,7 +192,10 @@ export const CANONICAL = {
   // section. TWO are refused and named in audit/owner-section-moves.json: NCSWIC inside a CISA URL,
   // and #1176's "Delta engine fire?" — Delta AIRLINES, the same shape of homograph the Q ruling
   // held Al-Qaeda and a 10-Q filing for.
-  predictions: { occurrences: 950, posts: 672 },
+  // 950 -> 951 on 1 Sep 2026: #4686's "WATERGATE x1000" is a Prediction (owner ruling
+  // 2026-08-30). It was certified in no painted section before, so no other figure moves;
+  // its contextUnit and themeAnchor entries are untouched.
+  predictions: { occurrences: 951, posts: 673 },
   evidence: { occurrences: 6590, posts: 3883 },
   // canonical 1,240 -> 1,235: Owner Ruling 1 merged five duplicate identities. No occurrence moved.
   entities: {

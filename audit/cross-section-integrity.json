@@ -19,8 +19,8 @@
    "posts": 3220
   },
   "predictions": {
-   "occurrences": 950,
-   "posts": 672
+   "occurrences": 951,
+   "posts": 673
   },
   "evidence": {
    "occurrences": 6590,
@@ -94,7 +94,7 @@
    "id": "predictions",
    "label": "Q Predictions",
    "artifact": "posts.json → postAnalysis.predictions",
-   "certifiedCount": 950,
+   "certifiedCount": 951,
    "mayCoexist": "A prediction IS an assertion; the combined 4,811 figure is only ever shown labelled as combined.",
    "neverDisplayed": "n/a",
    "countedBy": "postAnalysis.predictions entries",
@@ -210,7 +210,7 @@
    "id": "predictions",
    "description": "Predictions = 630",
    "pass": true,
-   "detail": "950"
+   "detail": "951"
   },
   {
    "group": "1. Frozen canonical counts",
@@ -614,9 +614,9 @@
   {
    "group": "8. Seed and cache integrity",
    "id": "seed-current",
-   "description": "SEED_VERSION is 116 (#4688 items 1-17 are Directives)",
+   "description": "SEED_VERSION is 117 (#4686 WATERGATE x1000 is a Prediction)",
    "pass": true,
-   "detail": "116"
+   "detail": "117"
   },
   {
    "group": "8. Seed and cache integrity",
@@ -630,7 +630,7 @@
    "id": "seed-fingerprint",
    "description": "seeded data matches the SEED_VERSION that shipped it",
    "pass": true,
-   "detail": "unchanged"
+   "detail": "seeded data changed and SEED_VERSION moved 116 -> 117 [posts.json]"
   },
   {
    "group": "8. Seed and cache integrity",
@@ -1407,7 +1407,7 @@
    "id": "hash-reserialised",
    "description": "byte-level re-serialisation reported separately, not as drift",
    "pass": true,
-   "detail": "posts.json re-serialised by the export chain"
+   "detail": "none"
   },
   {
    "group": "11. Frozen-section mutation",
@@ -1524,9 +1524,9 @@
   {
    "group": "12. Cross-section relationships",
    "id": "rel-predictions",
-   "description": "Prediction → assertion edges = the certified 950",
+   "description": "Prediction → assertion edges = the certified 951",
    "pass": true,
-   "detail": "950"
+   "detail": "951"
   },
   {
    "group": "12. Cross-section relationships",
@@ -1638,7 +1638,7 @@
    "id": "search-predictions",
    "description": "indexed Predictions = certified 630",
    "pass": true,
-   "detail": "950"
+   "detail": "951"
   },
   {
    "group": "13. Global search",

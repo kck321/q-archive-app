@@ -142,7 +142,7 @@ const checks = [
   // assertion: it tracks whatever apply-claims.mjs certified and says only that THIS step must not
   // add or drop one.
   // 957 since the NCSWIC / Red October / Delta rulings of 2026-08-24. Passthrough.
-  ['predictions unchanged = 957', counts.predictions === 957, counts.predictions],
+  ['predictions unchanged = 958', counts.predictions === 958, counts.predictions],
   ['conclusions unchanged = 964', counts.impliedConclusions === 964, counts.impliedConclusions],
   // 1,925 -> 1,920: five absorbed claim tails carried the checkable attribute. It travels with
   // the ROW, so it leaves with the fragment rather than being re-attached to the repaired span,

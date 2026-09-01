@@ -2,11 +2,11 @@
  "note": "Spans the owner moved between sections, on 2026-08-24. Layered over the base certified artifacts by apply-claims.mjs and apply-directives.mjs — never written into them, because a correction inside a re-derivable artifact is erased the next time its audit runs.",
  "ruledOn": "2026-08-24",
  "totals": {
-  "moves": 58,
+  "moves": 59,
   "outOfClaims": 49,
   "outOfDirectives": 2,
   "intoClaims": 4,
-  "intoPredictions": 15,
+  "intoPredictions": 16,
   "alreadyApplied": 14,
   "refused": 2
  },
@@ -727,6 +727,15 @@
    "ruledOn": "2026-08-30",
    "ruling": "Post #4688: change 1-17 to Directives if not already, and take the current claims out of the claim basket into the directive basket",
    "why": "Item 14 of the list Q introduces with the certified Question \"How do you accomplish the following:\". Every numbered line is an instruction for accomplishing it; ten of the seventeen were already certified Directives and none of those ten is also a Claim. certifiedAs is pinned to the item body ONLY - the bare \"14.\" marker stays a Claim, and substring inference would have removed it and other markers."
+  },
+  {
+   "postNum": 4686,
+   "from": null,
+   "to": "predictions",
+   "text": "WATERGATE x1000",
+   "ruledOn": "2026-08-30",
+   "ruling": "WATERGATE x1000 is a Prediction",
+   "why": "Certified in no PAINTED section - Claims, Directives and Predictions all pass over it, so there is nothing to move out of and `from` is null, exactly as #4951's NCSWIC ruling was recorded. It is not uncategorised in the data, though: it is one of the archive's 444 contextUnits, and \"WATERGATE\" is a themeAnchor of the same drop. Both stay. contextUnits are a certified data layer that no surface fills - the validate gate 'context + emphasis: certified, not painted' asserts precisely that - so an entry there does not compete with a painted section, and #2647's \"[1 year delta]\" is already both a contextUnit and a Prediction. Removing it would mean building a from:contextUnits path the materialiser has never had, to alter a separately certified layer the ruling does not mention."
   }
  ]
 }
