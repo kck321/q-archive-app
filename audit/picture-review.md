@@ -166,6 +166,8 @@ No content details are recorded here; the owner reviews the image directly.
 | 554 | #2362 | `ecaa72306e61f77fc86a22f16483c111a2677bad2ffa8853bf3502dcc441a8ce` | patriotic-flag-american-freedom-708237-4487849.jpg | attached | review_required | withheld |
 | 881 | #3144 | `a59bcc1ae7edcaa18c0d79acde88af0345d0f8f25623603649b953752ab9a8f7` | Screen Shot 2019-03-20 at 9.47.21 PM.png | referenced | review_required | withheld |
 | 951 | #3254 | `3c3a3a351dd2fe6f934645a08554d299c2cab213cdd6cbd924b908a806f7ee3b` | D2w86F1WsAUhspR.png-large.png | attached | review_required | withheld |
+| 1574 | #4941 | `d7d8f7f0cf1fe554e1a5d28b05301ccd60b90c52faf5d9d2460b352e05df950e` | Elf4vVlWoAAJHjQ.jpg | attached | review_required | withheld |
+| 1575 | #4941 | `712c1e2a48b6c96fcc21896ad8ac5101c23a150131f5add92057fd4da797327f` | Elf4vVoW0AUO87D.jpg | attached | review_required | withheld |
 
 ## Rule going forward
 
