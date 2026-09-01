@@ -33,6 +33,7 @@ transcribe them freely; the notes below say exactly where to look.
 | 1420 | #4660 | 2.png | `e0300f5310383a85a0fe1a18ba54a29b531b3a7f9268496b639e0d68eca35733.png` | 1000×1000 |
 | 1444 | #4702 | 1600101032858.jpg | `f1c466b2204e46ae1c4f2162c399b2b4cd15f76d06fe8904701aea79264b05f5.jpg` | 1024×721 |
 | 1445 | #4704 | 1600086662539.jpg | `6082b57f2586ef3dfc5ef24c90ba2d05a4ba6f3fc34e2cafbc81b5422f62e0dd.jpg` | 1600×1920 |
+| 1497 | #4796 | ClipboardImage.png | `8194537c75469cac1598d941880a80f211e21d74486891cb60af1cb452bf1dfd.png` | 240×240 |
 
 ## What each contains (from the completed visual pass)
 
@@ -116,6 +117,12 @@ transcribe them freely; the notes below say exactly where to look.
   VINE lookup, plates/VINs, parole claims). Key phrases are indexed; **all personal
   identifiers were deliberately withheld per the privacy rule and must stay withheld** — the
   review decision here is editorial (whether/how to present these at all), not transcription.
+- **#4796 (n1497):** 240×240 three-panel collage (apparent DOJ letter + Susman Godfrey
+  profile of Lucas Issacharoff + the Biography Pedia article on Maurene Comey, the pieces
+  n1494–n1498 carry individually at full size). The top-left letter panel is too small and
+  low-resolution to transcribe or identify beyond an apparent DOJ letterhead. A human pass
+  needs a larger source copy of the letter — the other two panels are already covered by
+  their standalone entries.
 - **#132 (n98):** "Q Graphic" — the community's cleaned November 2017 compilation.
   Contains the `Q !ITPb.qbhqo` tripcode era posts and the Spy.png / AF1 photo inserts.
   Substantial overlap with the archive's own ingested drops #1–#112.
