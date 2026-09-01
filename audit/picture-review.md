@@ -34,6 +34,7 @@ transcribe them freely; the notes below say exactly where to look.
 | 1444 | #4702 | 1600101032858.jpg | `f1c466b2204e46ae1c4f2162c399b2b4cd15f76d06fe8904701aea79264b05f5.jpg` | 1024×721 |
 | 1445 | #4704 | 1600086662539.jpg | `6082b57f2586ef3dfc5ef24c90ba2d05a4ba6f3fc34e2cafbc81b5422f62e0dd.jpg` | 1600×1920 |
 | 1497 | #4796 | ClipboardImage.png | `8194537c75469cac1598d941880a80f211e21d74486891cb60af1cb452bf1dfd.png` | 240×240 |
+| 1534 | #4862 | Screenshot_2020_10_14_qanon_Bing_News.jpg | `08ab079aa760cbd6aa55d0f41459c054d6f9dd506452e9ea6d7ff88258fc5b71.jpg` | 1156×8610 |
 
 ## What each contains (from the completed visual pass)
 
@@ -117,6 +118,10 @@ transcribe them freely; the notes below say exactly where to look.
   VINE lookup, plates/VINs, parole claims). Key phrases are indexed; **all personal
   identifiers were deliberately withheld per the privacy rule and must stay withheld** — the
   review decision here is editorial (whether/how to present these at all), not transcription.
+- **#4862 (n1534):** 1156×8610 stitched Bing News results page for "qanon" (Oct 14 2020),
+  ~50 headlines. All headlines and outlets are indexed in `text`; the per-item body
+  snippets render too small to read — the remaining snippet text is what a human pass
+  would add. Same shape as n925, n1246 and n1258.
 - **#4796 (n1497):** 240×240 three-panel collage (apparent DOJ letter + Susman Godfrey
   profile of Lucas Issacharoff + the Biography Pedia article on Maurene Comey, the pieces
   n1494–n1498 carry individually at full size). The top-left letter panel is too small and
