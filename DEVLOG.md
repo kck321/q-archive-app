@@ -8875,3 +8875,125 @@ owner's Claim rulings restored and zero Emphasis entries).
 **Confirmed live:** `https://qdrops.app/data/picture-analysis.json` serves **1,690 images across
 1,514 posts — green 1,369 / yellow 260 / red 61, needsReview 37**. The picture audit is fully
 published for the first time.
+
+---
+
+## Session — 2026-09-02 (afternoon) · SECURITY: Anthropic removed from q-app, permanently
+
+### Owner ruling: no Anthropic API key is to be associated with this application, in any form
+
+**The ruling.** The owner does not want an Anthropic API key associated with q-app in any form.
+There will be **no replacement key**. The previously exposed key is revoked by the owner directly
+through Anthropic — this session neither waited for, requested, nor generated a replacement, and
+asked the owner to paste nothing.
+
+**What was removed — the ACTIVE integration and the credential pathway, nothing else.**
+
+*Credential storage (local, never printed or read into output):*
+- `ANTHROPIC_API_KEY` stripped from `.env`, along with its section comment. No `VITE_`-prefixed
+  Anthropic variable remained to remove. The eleven surviving variable names are the six
+  `VITE_FIREBASE_*`, `VITE_CF_ANALYTICS_TOKEN` and the four `R2_*`.
+- `%APPDATA%\com.qarchive.desktop\anthropic_key.txt` — the desktop app-config copy written for
+  this machine — deleted. The directory is now empty.
+- A scoped scan for a complete `sk-ant-…` token found exactly **two** q-app-owned copies, both
+  above; **zero** in tracked files, **zero** across the last 200 commits' trees, and zero in
+  `dist/`, `audit/`, `identity/`, `media-bundle/` and `node_modules/.vite`. Counts only were
+  reported; no value was ever printed.
+
+*Browser and Vite:*
+- `src/lib/claude.ts` deleted — the whole client, including both
+  `new Anthropic({ … dangerouslyAllowBrowser: true })` constructions.
+- `vite.config.ts`: the `/anthropic-proxy` `server.proxy` entry, the `anthropicProxyGuard()`
+  plugin and its registration, the `loadEnv(mode, cwd, '')` call that existed only to read the
+  unprefixed key, and the now-unused `loadEnv` import. The config no longer reads any env file.
+- `scripts/lib/anthropicProxyGuard.mjs`, its `.d.mts`, and `scripts/test-anthropic-proxy-guard.mjs`
+  deleted — the guard existed solely to protect that proxy.
+
+*Application code and UI — no button left that fails when clicked, no dead import:*
+- `src/lib/bulkScan.ts`: `bulkScanAllPosts`, `bulkScanAllRequests`, `bulkScanAllAnalysis`,
+  `bulkClassifyQuestions`, `bulkScanThreadAnswers` and the two reset helpers that existed only to
+  re-run them. 644 lines to 152. `bulkScanRefImages`, `bulkScanStaticEntities` and
+  `STATIC_ENTITIES` — all non-AI — are untouched.
+- `src/pages/Dashboard.tsx`: the Intelligence Scan Suite panel, the two qanon.pub AI scan panels
+  (Claims, Requests), the Question Classification panel and the 8kun Thread Reply Scan panel, with
+  their state and handlers. 87.7 KB to 57.1 KB.
+- **Kept, deliberately:** the *Question Funnel* was step 3 of the removed suite and is not AI — it
+  is a pure local text scan over data already in the archive. It now has its own card and handler
+  rather than disappearing with the panel that happened to host it.
+- `src/pages/PostDetail.tsx`: `handleDetectQuestions`, `handleDetectRequests`, `handleAnalyzePost`,
+  `handleResearchNews`, `handleClassify`, the "Research news" PIN gate (and the hardcoded
+  `AI_PIN`), and the five buttons that called them. The News Correlation panel still **displays**
+  stored articles — that is existing data, not an integration.
+- `src/pages/Topics.tsx`: `handleCluster` and the "Generate Chapters with Claude" button.
+- Copy that told the owner to configure or use AI was corrected in `App.tsx`, `AdminContext.tsx`,
+  `appMode.ts` and the Dashboard lock screen. Comments that explain the *provenance of stored
+  data* ("the AI only tags a phrase where it noticed it") were left alone — they are accurate
+  history about records the ruling explicitly does not rewrite.
+
+*Desktop (Tauri):*
+- `src-tauri/src/lib.rs`: the `get_anthropic_key` command, its `ANTHROPIC_API_KEY` env read, its
+  `<app_config_dir>/anthropic_key.txt` lookup, the `invoke_handler` registration, and the
+  now-unused `use tauri::Manager`. `cargo check` clean. A shared desktop copy can no longer look
+  for or accept an Anthropic key.
+
+*Dependency:*
+- `npm uninstall @anthropic-ai/sdk` — gone from `package.json` and `package-lock.json` (51 lines).
+  The lockfile was not hand-edited. The orphaned `node_modules/@anthropic-ai/` directory npm left
+  behind was removed too.
+
+*Environment templates:*
+- `.env.example`, `.env.production` and `.env.public` rewritten with no Anthropic entry. The
+  VITE_-prefix warning stays — it is the lesson, and it applies to anything added later.
+- `PROJECT_CONTEXT.md` invariant 3 and the `.gitignore` header now say `.env` holds **no**
+  Anthropic key and that no replacement will be issued.
+
+**Historical evidence preserved, on purpose.** Everything above this entry in this DEVLOG, and
+`QUESTION-IDENTITY-STABILIZATION/23-SECRET-EXPOSURE-AUDIT.json`, still describe the original
+integration and the disclosure incident exactly as they did. An accurate record of a security
+event is evidence, not a regression. Certified Qdrop data was not touched: `public/data` is
+byte-identical and `SEED_VERSION` did not move.
+
+**The permanent regression.** `scripts/test-no-anthropic-integration.mjs`, registered in
+`scripts/validate.mjs` as `no anthropic integration` (replacing the proxy-guard step). **37
+assertions**, fails closed on: an Anthropic dependency in `package.json` or the lockfile, an SDK
+import or `new Anthropic(` or `dangerouslyAllowBrowser` anywhere in `src/`, `ANTHROPIC_API_KEY` /
+`VITE_ANTHROPIC_API_KEY` / `ANTHROPIC_BASE_URL` in any active env template, `/anthropic-proxy` in
+the Vite config or source, `get_anthropic_key` / `anthropic_key.txt` in the Tauri app, any of the
+eleven removed UI control labels still rendered, a complete `sk-ant-` token in any active file,
+and — byte-wise, not by filename — any of `sk-ant-`, `ANTHROPIC_API_KEY`, `VITE_ANTHROPIC_API_KEY`,
+`/anthropic-proxy`, `@anthropic-ai/sdk` or `dangerouslyAllowBrowser` in a built asset graph. It
+reads **nothing** under `DEVLOG.md`, `QUESTION-IDENTITY-STABILIZATION/` or `public/data`, so the
+history stays free to be accurate.
+
+The test earned its keep immediately: its first run failed on the **then-current `dist/`** — the
+deployed `9136952` build, which still carried `ANTHROPIC_API_KEY` and `dangerouslyAllowBrowser`
+inside `Dashboard-CBSLYMqX.js`. That is the shipped bundle the ruling is about.
+
+### Acceptance proof
+
+| Check | Result |
+|---|---|
+| `.env` q-app Anthropic variable names | **0** |
+| Anthropic SDK imports in active source | **0** |
+| Direct Anthropic dependency in package + lockfile | **0** |
+| `/anthropic-proxy` in Vite | **0** |
+| Tauri key command / key-file lookup | **0** (`cargo check` clean) |
+| `tsc --noEmit` on the app project | clean |
+| `npm run build` (production) | built in 15.28s |
+| `npm run build:app:public` (public) | built in 5.62s |
+| Banned strings in either built asset graph | **0 of 6 patterns, 38 files each** |
+| `scripts/test-no-anthropic-integration.mjs` | **37/37 pass** on both builds |
+| App loads, no dead AI control, clean console | **15/15** on :5173 and again on :5174 |
+| ESLint on the five rewritten files | 11 problems — **identical to the pre-change baseline** |
+| `public/data` | **unchanged** |
+| `SEED_VERSION` | **unchanged** |
+
+The `Dashboard` chunk fell from 82 KB to **51.3 KB** — the SDK and the AI panels leaving the bundle.
+
+One pre-existing lint error surfaced when the change was made: removing `handleCluster` let the
+React Compiler analyse `Topics.tsx`, which then flagged a `setState` called synchronously in an
+effect body. That effect was rewritten to derive `clusterPosts` and `loadingPosts` from a
+`{ index, posts }` pair set only in the async callback — which also closes the frame in which the
+previous chapter's posts could still be on screen. Lint is back to the exact pre-change baseline.
+
+**Not deployed.** Held for owner review, per instruction.

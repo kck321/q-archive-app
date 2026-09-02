@@ -42,8 +42,11 @@ made once and only caught by grepping the built file.
 2. **`scripts/export-firestore.mjs` must run before every deploy.** It bakes `postEdits`
    (1,353 posts), `questionEdits` and `aliases.json` into `public/data`. Skipping it silently
    publishes a site missing months of analysis. `deploy-web.sh` runs it and aborts on failure.
-3. **`.env` is gitignored and must stay that way.** It holds the live Anthropic key and the
-   GitHub repo is public.
+3. **`.env` is gitignored and must stay that way.** It holds this machine's Firebase and
+   Cloudflare R2 values and the GitHub repo is public. It holds **no Anthropic key**: by owner
+   ruling of 2026-09-02 Anthropic is removed from q-app permanently — client, dev proxy, Tauri
+   key command and dependency — and **no replacement key will be issued**. Do not add one back;
+   `scripts/test-no-anthropic-integration.mjs` fails the build if any of it returns.
 4. **Word-boundary matching everywhere.** Substring matching makes "US" match "rUSsia",
    "mUSt", "becaUSe". Bitten in five separate places: search, highlighting, alias post-lists,
    bulk-apply, and the question backfill.

@@ -1,6 +1,6 @@
 // Types for the plain-JS scroll navigation policy, so ScrollRestoration.tsx can import it under
 // `tsc -b`. The implementation is .mjs because it is also loaded directly by its Node test —
-// the same arrangement scripts/lib/anthropicProxyGuard.mjs uses.
+// the same arrangement scripts/lib/certifiedWrite.mjs uses.
 
 export interface PendingRestore {
   key: string

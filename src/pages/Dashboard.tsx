@@ -2,7 +2,7 @@ import { useEffect, useState, useRef, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { getStats, getTopRatedPosts, getRecentPosts, getQuestionsTimeline, getQuestionsForPosts, getPostNumsByMonth, getPostsByNums, funnelRequestQuestionsToCollection, searchAllPosts, migrateLocalEditsToCloud } from '../lib/posts'
 import { fetchAndIngestPosts, patchRefMedia, patchMediaFromQanonPub } from '../lib/ingest'
-import { bulkScanAllPosts, resetForRescan, bulkScanAllRequests, bulkScanAllAnalysis, bulkScanRefImages, bulkScanStaticEntities, bulkClassifyQuestions, bulkScanThreadAnswers, resetThreadScan, STATIC_ENTITIES, type ScanProgress, type RequestScanProgress, type AnalysisScanProgress, type StaticEntityScanProgress, type ClassifyProgress, type ThreadScanProgress } from '../lib/bulkScan'
+import { bulkScanRefImages, bulkScanStaticEntities, STATIC_ENTITIES, type StaticEntityScanProgress } from '../lib/bulkScan'
 import PostCard from '../components/PostCard'
 import RenewalReminder from '../components/RenewalReminder'
 import { postPreview } from '../lib/references'
@@ -198,56 +198,11 @@ export default function Dashboard() {
   const [ingestDone, setIngestDone] = useState(false)
   const [ingestError, setIngestError] = useState('')
 
-  // Bulk scan state
-  const [scanning, setScanning] = useState(false)
-  const [scanProgress, setScanProgress] = useState<ScanProgress | null>(null)
-  const [scanDone, setScanDone] = useState(false)
-  const [scanError, setScanError] = useState('')
-  const abortRef = useRef<AbortController | null>(null)
-
-  // Reset + re-scan state
-  const [resetting, setResetting] = useState(false)
-  const [resetMsg, setResetMsg] = useState('')
-
-  // Request scan state
-  const [reqScanning, setReqScanning] = useState(false)
-  const [reqProgress, setReqProgress] = useState<RequestScanProgress | null>(null)
-  const [reqDone, setReqDone] = useState(false)
-  const [reqError, setReqError] = useState('')
-
   // Funnel request questions state
   const [funnelRunning, setFunnelRunning] = useState(false)
   const [funnelMsg, setFunnelMsg] = useState('')
   const [funnelResult, setFunnelResult] = useState<{ found: number; added: number } | null>(null)
   const [funnelError, setFunnelError] = useState('')
-
-  // Full scan suite state
-  const [fullScanRunning, setFullScanRunning] = useState(false)
-  const [fullScanStep, setFullScanStep] = useState(0) // 0=idle 1-4=active step 5=done
-  const [fullScanError, setFullScanError] = useState('')
-  const fullScanAbortRef = useRef<AbortController | null>(null)
-
-  // Analysis scan state
-  const [anScanning, setAnScanning] = useState(false)
-  const [anProgress, setAnProgress] = useState<AnalysisScanProgress | null>(null)
-  const [anDone, setAnDone] = useState(false)
-  const [anError, setAnError] = useState('')
-
-  // Question classification state
-  const [clScanning, setClScanning] = useState(false)
-  const [clProgress, setClProgress] = useState<ClassifyProgress | null>(null)
-  const [clDone, setClDone] = useState(false)
-  const [clError, setClError] = useState('')
-  const clAbortRef = useRef<AbortController | null>(null)
-
-  // Thread reply scan state
-  const [thScanning, setThScanning] = useState(false)
-  const [thProgress, setThProgress] = useState<ThreadScanProgress | null>(null)
-  const [thDone, setThDone] = useState(false)
-  const [thError, setThError] = useState('')
-  const thAbortRef = useRef<AbortController | null>(null)
-  const [thResetting, setThResetting] = useState(false)
-  const [thResetMsg, setThResetMsg] = useState('')
 
   // Referenced image scan state
   const [refScanning, setRefScanning] = useState(false)
@@ -414,133 +369,6 @@ export default function Dashboard() {
     finally { setBracketRunning(false) }
   }
 
-  // qanon.pub claims scan state
-  const [qpubClaimsRunning, setQpubClaimsRunning] = useState(false)
-  const [qpubClaimsProgress, setQpubClaimsProgress] = useState<{ done: number; total: number; found: number; newFound: number } | null>(null)
-  const [qpubClaimsDone, setQpubClaimsDone] = useState<{ scanned: number; found: number; newFound: number } | null>(null)
-  const [qpubClaimsError, setQpubClaimsError] = useState('')
-
-  async function handleScanQpubClaims() {
-    setQpubClaimsRunning(true); setQpubClaimsDone(null); setQpubClaimsError('')
-    setQpubClaimsProgress({ done: 0, total: 0, found: 0, newFound: 0 })
-    try {
-      const { getDocs: gd, collection: col, writeBatch: wb, doc: d, query: q, orderBy: ob, limit: lim } = await import('firebase/firestore')
-      const { db: firedb } = await import('../firebase')
-      const { analyzePost } = await import('../lib/claude')
-
-      const [rawRes, snap] = await Promise.all([
-        fetch('/qanonpub-proxy/data/json/posts.json'),
-        gd(q(col(firedb, 'posts'), ob('postNum'), lim(5000))),
-      ])
-      if (!rawRes.ok) throw new Error(`qanon.pub fetch failed: ${rawRes.status}`)
-      const raw: { id: string | number; text?: string; timestamp?: number; number?: number }[] = await rawRes.json()
-
-      raw.sort((a, b) => (a.timestamp ?? 0) - (b.timestamp ?? 0))
-
-      const qpubMap = new Map<number, string>()
-      raw.forEach((r, i) => {
-        const num = (r as { number?: number }).number ?? (i + 1)
-        if (r.text) qpubMap.set(num, r.text)
-      })
-
-      const posts = snap.docs
-        .map(dc => ({ id: dc.id, ...(dc.data() as { postNum: number; claimsScanned?: boolean; postAnalysis?: { claims?: string[] } }) }))
-        .filter(p => !p.claimsScanned && qpubMap.has(p.postNum))
-
-      const total = posts.length
-      let done = 0, found = 0, newFound = 0
-      setQpubClaimsProgress({ done, total, found, newFound })
-
-      for (let i = 0; i < posts.length; i += 3) {
-        const chunk = posts.slice(i, i + 3)
-        const batch = wb(firedb)
-        for (const post of chunk) {
-          const text = qpubMap.get(post.postNum) ?? ''
-          const analysis = await analyzePost(text)
-          const claims = analysis.claims ?? []
-          const existingNorm = new Set((post.postAnalysis?.claims ?? []).map(c => c.toLowerCase().trim()))
-          const novelClaims = claims.filter(c => !existingNorm.has(c.toLowerCase().trim()))
-          batch.update(d(col(firedb, 'posts'), post.id), {
-            'postAnalysis.claims': claims,
-            claimsScanned: true,
-          })
-          found += claims.length
-          newFound += novelClaims.length
-          done++
-          setQpubClaimsProgress({ done, total, found, newFound })
-        }
-        await batch.commit()
-        if (i + 3 < posts.length) await new Promise(r => setTimeout(r, 8000))
-      }
-      setQpubClaimsDone({ scanned: done, found, newFound })
-    } catch (e) { setQpubClaimsError(String(e)) }
-    finally { setQpubClaimsRunning(false) }
-  }
-
-  // qanon.pub requests scan state
-  const [qpubReqRunning, setQpubReqRunning] = useState(false)
-  const [qpubReqProgress, setQpubReqProgress] = useState<{ done: number; total: number; found: number; newFound: number } | null>(null)
-  const [qpubReqDone, setQpubReqDone] = useState<{ scanned: number; found: number; newFound: number } | null>(null)
-  const [qpubReqError, setQpubReqError] = useState('')
-
-  async function handleScanQpubRequests() {
-    setQpubReqRunning(true); setQpubReqDone(null); setQpubReqError('')
-    setQpubReqProgress({ done: 0, total: 0, found: 0, newFound: 0 })
-    try {
-      const { getDocs: gd, collection: col, writeBatch: wb, doc: d, query: q, orderBy: ob, limit: lim } = await import('firebase/firestore')
-      const { db: firedb } = await import('../firebase')
-      const { detectActionRequests } = await import('../lib/claude')
-
-      const [rawRes, snap] = await Promise.all([
-        fetch('/qanonpub-proxy/data/json/posts.json'),
-        gd(q(col(firedb, 'posts'), ob('postNum'), lim(5000))),
-      ])
-      if (!rawRes.ok) throw new Error(`qanon.pub fetch failed: ${rawRes.status}`)
-      const raw: { id: string | number; text?: string; timestamp?: number; number?: number }[] = await rawRes.json()
-
-      raw.sort((a, b) => (a.timestamp ?? 0) - (b.timestamp ?? 0))
-
-      const qpubMap = new Map<number, string>()
-      raw.forEach((r, i) => {
-        const num = (r as { number?: number }).number ?? (i + 1)
-        if (r.text) qpubMap.set(num, r.text)
-      })
-
-      const posts = snap.docs
-        .map(dc => ({ id: dc.id, ...(dc.data() as { postNum: number; qpubRequestsScanned?: boolean; actionRequests?: string[] }) }))
-        .filter(p => !p.qpubRequestsScanned && qpubMap.has(p.postNum))
-
-      const total = posts.length
-      let done = 0, found = 0, newFound = 0
-      setQpubReqProgress({ done, total, found, newFound })
-
-      for (let i = 0; i < posts.length; i += 3) {
-        const chunk = posts.slice(i, i + 3)
-        const batch = wb(firedb)
-        for (const post of chunk) {
-          const text = qpubMap.get(post.postNum) ?? ''
-          const requests = await detectActionRequests(text)
-          const existingNorm = new Set((post.actionRequests ?? []).map(r => r.toLowerCase().trim()))
-          const novelReqs = requests.filter(r => !existingNorm.has(r.toLowerCase().trim()))
-          batch.update(d(col(firedb, 'posts'), post.id), {
-            actionRequests: requests,
-            requestsScanned: true,
-            hasRequests: requests.length > 0,
-            qpubRequestsScanned: true,
-          })
-          found += requests.length
-          newFound += novelReqs.length
-          done++
-          setQpubReqProgress({ done, total, found, newFound })
-        }
-        await batch.commit()
-        if (i + 3 < posts.length) await new Promise(r => setTimeout(r, 8000))
-      }
-      setQpubReqDone({ scanned: done, found, newFound })
-    } catch (e) { setQpubReqError(String(e)) }
-    finally { setQpubReqRunning(false) }
-  }
-
   // Raw posts.json debug inspector
   const [debugResult, setDebugResult] = useState('')
   const [debugLoading, setDebugLoading] = useState(false)
@@ -604,7 +432,7 @@ export default function Dashboard() {
       const ids = [...new Set([...r.map(p => p.id), ...tr.map(p => p.id)])]
       getQuestionsForPosts(ids).then(setPostQuestions)
     })
-  }, [ingestDone, scanDone])
+  }, [ingestDone, funnelResult])
 
   async function handleIngest() {
     setIngesting(true)
@@ -619,68 +447,17 @@ export default function Dashboard() {
     }
   }
 
-  async function handleResetAndRescan() {
-    if (!window.confirm('This will DELETE all detected questions and re-scan every post from scratch with the improved prompt. This cannot be undone. Continue?')) return
-    setResetting(true)
-    setResetMsg('')
-    setScanError('')
-    setScanDone(false)
+  async function handleQuestionFunnel() {
+    setFunnelRunning(true)
+    setFunnelError('')
+    setFunnelResult(null)
     try {
-      await resetForRescan(msg => setResetMsg(msg))
-      setResetting(false)
-      // Now run the full scan
-      setScanning(true)
-      abortRef.current = new AbortController()
-      await bulkScanAllPosts(p => setScanProgress(p), abortRef.current.signal)
-      setScanDone(true)
-      getStats().then(setStats)
+      setFunnelResult(await funnelRequestQuestionsToCollection(msg => setFunnelMsg(msg)))
     } catch (e) {
-      setScanError(String(e))
+      setFunnelError(String(e))
     } finally {
-      setResetting(false)
-      setScanning(false)
+      setFunnelRunning(false)
     }
-  }
-
-  async function handleClassifyQuestions() {
-    setClScanning(true); setClDone(false); setClError('')
-    clAbortRef.current = new AbortController()
-    try {
-      await bulkClassifyQuestions(p => setClProgress(p), clAbortRef.current.signal)
-      setClDone(true)
-    } catch (e) {
-      setClError(String(e))
-    } finally {
-      setClScanning(false)
-    }
-  }
-
-  function handleStopClassify() {
-    clAbortRef.current?.abort()
-  }
-
-  async function handleThreadScan() {
-    setThScanning(true); setThDone(false); setThError('')
-    thAbortRef.current = new AbortController()
-    try {
-      await bulkScanThreadAnswers(p => setThProgress(p), thAbortRef.current.signal)
-      setThDone(true)
-    } catch (e) {
-      setThError(String(e))
-    } finally {
-      setThScanning(false)
-    }
-  }
-
-  function handleStopThreadScan() {
-    thAbortRef.current?.abort()
-  }
-
-  async function handleResetThreadScan() {
-    if (!confirm('Reset thread scan? This keeps all found answers but allows every thread to be re-scanned.')) return
-    setThResetting(true); setThResetMsg('')
-    await resetThreadScan(msg => setThResetMsg(msg))
-    setThResetting(false); setThDone(false); setThProgress(null)
   }
 
   async function handleStaticEntityScan() {
@@ -698,62 +475,6 @@ export default function Dashboard() {
 
   function handleStopStaticEntityScan() {
     seAbortRef.current?.abort()
-  }
-
-  async function handleFullScan() {
-    setFullScanRunning(true)
-    setFullScanError('')
-    setFullScanStep(0)
-    fullScanAbortRef.current = new AbortController()
-    const signal = fullScanAbortRef.current.signal
-    try {
-      // Reset all states upfront
-      setScanProgress(null); setScanDone(false); setScanError('')
-      setReqProgress(null); setReqDone(false); setReqError('')
-      setFunnelResult(null); setFunnelMsg(''); setFunnelError('')
-      setAnProgress(null); setAnDone(false); setAnError('')
-
-      // Steps 1, 2→3, and 4 run in parallel — step 3 chains after step 2 completes
-      setScanning(true); setReqScanning(true); setAnScanning(true)
-      await Promise.all([
-        // Step 1: Question Detection
-        bulkScanAllPosts(p => setScanProgress(p), signal)
-          .then(() => { setScanning(false); if (!signal.aborted) setScanDone(true) })
-          .catch(e => { setScanning(false); setScanError(String(e)) }),
-
-        // Step 2: Request Detection → Step 3: Question Funnel
-        bulkScanAllRequests(p => setReqProgress(p), signal)
-          .then(async () => {
-            setReqScanning(false)
-            if (signal.aborted) return
-            setReqDone(true)
-            setFunnelRunning(true)
-            const funnelRes = await funnelRequestQuestionsToCollection(msg => setFunnelMsg(msg))
-            setFunnelRunning(false)
-            if (!signal.aborted) setFunnelResult(funnelRes)
-          })
-          .catch(e => { setReqScanning(false); setFunnelRunning(false); setReqError(String(e)) }),
-
-        // Step 4: Deep Analysis
-        bulkScanAllAnalysis(p => setAnProgress(p), signal)
-          .then(() => { setAnScanning(false); if (!signal.aborted) setAnDone(true) })
-          .catch(e => { setAnScanning(false); setAnError(String(e)) }),
-      ])
-
-      if (!signal.aborted) {
-        setFullScanStep(5)
-        getStats().then(setStats)
-      }
-    } catch (e) {
-      setFullScanError(String(e))
-    } finally {
-      setFullScanRunning(false)
-      setScanning(false); setReqScanning(false); setAnScanning(false); setFunnelRunning(false)
-    }
-  }
-
-  function handleStopFullScan() {
-    fullScanAbortRef.current?.abort()
   }
 
   async function handleChartSearch() {
@@ -806,7 +527,7 @@ export default function Dashboard() {
           <div className="text-4xl">🔒</div>
           <h1 className="text-xl font-bold text-white">Dashboard is locked</h1>
           <p className="text-gray-400 text-sm">
-            The Dashboard holds the admin tools (ingest, bulk scans, AI analysis). Enter the admin PIN to access it.
+            The Dashboard holds the admin tools (ingest, image and entity scans, editorial exports). Enter the admin PIN to access it.
           </p>
           <button
             onClick={() => requireAdmin('access the Dashboard', () => {})}
@@ -887,140 +608,32 @@ export default function Dashboard() {
         <div className="bg-red-900/30 border border-red-700 rounded-xl p-4 text-red-400 text-sm">Error: {ingestError}</div>
       )}
 
-      {/* Intelligence Scan Suite — single unified panel */}
-      {stats && stats.totalPosts > 0 && (
-        <div className="bg-q-panel border border-q-border rounded-xl p-5">
-          <div className="flex items-start justify-between mb-5">
-            <div>
-              <p className="text-white font-bold text-base">🧠 Intelligence Scan Suite</p>
-              <p className="text-gray-400 text-sm mt-1">
-                Runs all 4 scans in sequence across all {stats.totalPosts.toLocaleString()} posts.
-                Each step skips already-processed posts — safe to stop and resume at any time.
+      {/* Question Funnel — pure text scan, no external service */}
+      <div className="bg-q-panel border border-blue-800/50 rounded-xl p-5">
+        <div className="flex items-start gap-4">
+          <div className="flex-1 min-w-0">
+            <p className="text-white font-semibold">❓ Question Funnel</p>
+            <p className="text-gray-400 text-sm mt-0.5">
+              Scans every stored directive for a sentence containing “?” and moves it into the
+              Q Questions list — catching questions the directive pass picked up. Pure local text
+              scan over data already in the archive; runs instantly and calls no outside service.
+            </p>
+            {funnelRunning && funnelMsg && <p className="text-xs text-gray-400 mt-2 animate-pulse">{funnelMsg}</p>}
+            {funnelResult && (
+              <p className="text-xs text-blue-400 mt-2 font-semibold">
+                ✓ Done — {funnelResult.found} directives with “?” found · <span className="text-white">{funnelResult.added} new questions added</span>
               </p>
-            </div>
-            <div className="shrink-0 ml-4 flex flex-col gap-2 items-end">
-              {!fullScanRunning ? (
-                <>
-                  <button onClick={handleFullScan}
-                    className="bg-q-accent hover:bg-q-accent/80 text-white font-bold px-5 py-2.5 rounded-lg transition-colors text-sm whitespace-nowrap">
-                    Run All Scans
-                  </button>
-                  <button onClick={handleResetAndRescan}
-                    className="bg-red-900/60 hover:bg-red-700 text-red-300 hover:text-white border border-red-700 px-4 py-1.5 rounded-lg transition-colors text-xs whitespace-nowrap">
-                    ↺ Reset &amp; Re-scan Questions
-                  </button>
-                </>
-              ) : (
-                <button onClick={handleStopFullScan}
-                  className="bg-red-600 hover:bg-red-500 text-white font-medium px-5 py-2.5 rounded-lg transition-colors text-sm">
-                  Stop
-                </button>
-              )}
-            </div>
+            )}
+            {funnelError && <p className="text-xs text-red-400 mt-1">{funnelError}</p>}
           </div>
-
-          <div className="space-y-2">
-            {([
-              {
-                step: 1,
-                icon: '🔍',
-                label: 'Question Detection',
-                desc: 'Sends each post to Claude AI and extracts every question asked. Questions appear highlighted in blue on each post and are collected in the Q Questions archive for Green / Yellow / Red classification.',
-                barColor: 'bg-blue-500',
-                activeStyle: 'bg-blue-950/30 border-blue-800/50',
-                isActive: scanning || fullScanStep === 1,
-                isDone: scanDone || (fullScanStep > 1 && fullScanStep !== 0),
-                progressLabel: scanProgress ? `Post #${scanProgress.currentPost} · ${scanProgress.questionsFound} questions found` : null,
-                progressValue: scanProgress ? scanProgress.scanned / Math.max(scanProgress.total, 1) : null,
-                resultMsg: scanDone ? `${scanProgress?.questionsFound ?? 0} questions found across ${scanProgress?.scanned ?? 0} posts` : null,
-              },
-              {
-                step: 2,
-                icon: '🟢',
-                label: 'Request Detection',
-                desc: 'Finds sentences where Q directs readers to take action — "Dig", "Follow the money", "Spread the word", etc. Requests appear highlighted in green on posts and collected in the Q Directives archive.',
-                barColor: 'bg-green-500',
-                activeStyle: 'bg-green-950/30 border-green-800/50',
-                isActive: reqScanning || fullScanStep === 2,
-                isDone: reqDone || (fullScanStep > 2 && fullScanStep !== 0),
-                progressLabel: reqProgress ? `Post #${reqProgress.currentPost} · ${reqProgress.requestsFound} requests found` : null,
-                progressValue: reqProgress ? reqProgress.scanned / Math.max(reqProgress.total, 1) : null,
-                resultMsg: reqDone ? `${reqProgress?.requestsFound ?? 0} requests found across ${reqProgress?.scanned ?? 0} posts` : null,
-              },
-              {
-                step: 3,
-                icon: '❓',
-                label: 'Question Funnel',
-                desc: 'Scans all detected requests for sentences containing "?" and moves them into the Q Questions list. Catches questions that the request scanner picked up but the question scanner missed. No Claude call — runs instantly.',
-                barColor: 'bg-blue-400',
-                activeStyle: 'bg-blue-950/20 border-blue-800/40',
-                isActive: funnelRunning || fullScanStep === 3,
-                isDone: funnelResult !== null || (fullScanStep > 3 && fullScanStep !== 0),
-                progressLabel: funnelMsg || null,
-                progressValue: null,
-                resultMsg: funnelResult ? `${funnelResult.found} requests with "?" found · ${funnelResult.added} new questions added` : null,
-              },
-              {
-                step: 4,
-                icon: '🔬',
-                label: 'Deep Analysis',
-                desc: 'Extracts 7 intelligence categories from each post: claims, predictions, named entities, themes, implied conclusions, emotional tone, and checkable claims. Results stored on each post and browsable in the Post Analysis archive.',
-                barColor: 'bg-violet-500',
-                activeStyle: 'bg-violet-950/30 border-violet-800/50',
-                isActive: anScanning || fullScanStep === 4,
-                isDone: anDone || fullScanStep === 5,
-                progressLabel: anProgress ? `Post #${anProgress.currentPost} · ${anProgress.scanned} / ${anProgress.total} · ${anProgress.questionsFound} questions` : null,
-                progressValue: anProgress ? anProgress.scanned / Math.max(anProgress.total, 1) : null,
-                resultMsg: anDone ? `${anProgress?.scanned ?? 0} posts analyzed · ${anProgress?.questionsFound ?? 0} questions detected` : null,
-              },
-            ] as const).map(s => (
-              <div key={s.step} className={`flex items-start gap-3 rounded-lg p-3 border transition-all ${
-                s.isActive ? s.activeStyle : s.isDone ? 'bg-gray-800/20 border-gray-700/30' : 'bg-transparent border-gray-800/40'
-              }`}>
-                <div className="shrink-0 mt-1 w-5 text-center">
-                  {s.isDone
-                    ? <span className="text-green-400 font-bold text-sm">✓</span>
-                    : s.isActive
-                    ? <span className="text-gray-300 text-sm animate-pulse">⟳</span>
-                    : <span className="text-gray-700 text-xs font-bold">{s.step}</span>
-                  }
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm">{s.icon}</span>
-                    <span className={`text-sm font-semibold ${s.isActive ? 'text-white' : s.isDone ? 'text-gray-400' : 'text-gray-600'}`}>
-                      {s.label}
-                    </span>
-                  </div>
-                  <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">{s.desc}</p>
-                  {s.isActive && s.progressLabel && (
-                    <div className="mt-2 space-y-1">
-                      <p className="text-xs text-gray-400">{s.progressLabel}</p>
-                      {s.progressValue !== null && (
-                        <div className="h-1.5 bg-gray-800 rounded-full overflow-hidden">
-                          <div className={`h-full ${s.barColor} rounded-full transition-all`}
-                            style={{ width: `${s.progressValue * 100}%` }} />
-                        </div>
-                      )}
-                    </div>
-                  )}
-                  {!s.isActive && s.isDone && s.resultMsg && (
-                    <p className="text-xs text-green-400 mt-1">{s.resultMsg}</p>
-                  )}
-                </div>
-              </div>
-            ))}
+          <div className="shrink-0">
+            <button onClick={handleQuestionFunnel} disabled={funnelRunning}
+              className="bg-blue-700 hover:bg-blue-600 disabled:opacity-50 text-white font-bold px-4 py-2 rounded-lg transition-colors text-sm">
+              {funnelRunning ? 'Running…' : 'Run Funnel'}
+            </button>
           </div>
-
-          {fullScanStep === 5 && !fullScanRunning && (
-            <p className="mt-4 text-green-400 text-sm font-semibold">✓ All scans complete — archive is fully up to date!</p>
-          )}
-          {resetting && resetMsg && <p className="mt-3 text-yellow-400 text-sm animate-pulse">{resetMsg}</p>}
-          {(fullScanError || scanError || reqError || funnelError || anError) && (
-            <p className="mt-3 text-red-400 text-sm">{fullScanError || scanError || reqError || funnelError || anError}</p>
-          )}
         </div>
-      )}
+      </div>
 
       {/* Raw Posts Inspector */}
       <div className="bg-q-panel border border-q-border rounded-xl p-5">
@@ -1267,186 +880,6 @@ export default function Dashboard() {
             <button onClick={handleScanBrackets} disabled={bracketRunning}
               className="bg-lime-700 hover:bg-lime-600 disabled:opacity-50 text-white font-bold px-4 py-2 rounded-lg transition-colors text-sm">
               {bracketRunning ? 'Scanning…' : 'Scan Brackets'}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* qanon.pub Claims scan panel */}
-      <div className="bg-q-panel border border-amber-800/50 rounded-xl p-5">
-        <div className="flex items-start gap-4">
-          <div className="flex-1 min-w-0">
-            <p className="text-white font-semibold">🔶 Scan qanon.pub for Claims</p>
-            <p className="text-gray-400 text-sm mt-0.5">
-              Uses qanon.pub post text as the source and runs Claude AI to extract factual claims from each post. Only processes posts not yet claims-scanned. Results saved to <span className="font-mono text-amber-400">postAnalysis.claims</span>.
-            </p>
-            {qpubClaimsProgress && (
-              <div className="mt-2">
-                <p className="text-xs text-gray-400 mb-1">
-                  {qpubClaimsProgress.done} / {qpubClaimsProgress.total} posts
-                  {qpubClaimsProgress.newFound > 0 && <span className="text-amber-400 ml-2">· {qpubClaimsProgress.newFound} new claims</span>}
-                  {qpubClaimsProgress.found > qpubClaimsProgress.newFound && <span className="text-gray-500 ml-1">({qpubClaimsProgress.found - qpubClaimsProgress.newFound} already existed)</span>}
-                </p>
-                <div className="h-1.5 bg-gray-700 rounded-full overflow-hidden">
-                  <div className="h-full bg-amber-500 transition-all duration-300 rounded-full"
-                    style={{ width: `${(qpubClaimsProgress.done / Math.max(qpubClaimsProgress.total, 1)) * 100}%` }} />
-                </div>
-              </div>
-            )}
-            {qpubClaimsDone && (
-              <p className="text-xs text-amber-400 mt-2 font-semibold">
-                ✓ Done — {qpubClaimsDone.scanned} posts scanned · <span className="text-white">{qpubClaimsDone.newFound} new claims</span>{qpubClaimsDone.found > qpubClaimsDone.newFound && <span className="text-gray-500"> · {qpubClaimsDone.found - qpubClaimsDone.newFound} already existed</span>}
-              </p>
-            )}
-            {qpubClaimsError && <p className="text-xs text-red-400 mt-1">{qpubClaimsError}</p>}
-          </div>
-          <div className="shrink-0">
-            <button onClick={handleScanQpubClaims} disabled={qpubClaimsRunning}
-              className="bg-amber-700 hover:bg-amber-600 disabled:opacity-50 text-white font-bold px-4 py-2 rounded-lg transition-colors text-sm">
-              {qpubClaimsRunning ? 'Scanning…' : 'Scan Claims'}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* qanon.pub Requests scan panel */}
-      <div className="bg-q-panel border border-green-800/50 rounded-xl p-5">
-        <div className="flex items-start gap-4">
-          <div className="flex-1 min-w-0">
-            <p className="text-white font-semibold">🟢 Scan qanon.pub for Requests</p>
-            <p className="text-gray-400 text-sm mt-0.5">
-              Uses qanon.pub post text as the source and runs Claude AI to extract action requests / directives from each post. Only processes posts not yet requests-scanned. Results saved to <span className="font-mono text-green-400">actionRequests</span>.
-            </p>
-            {qpubReqProgress && (
-              <div className="mt-2">
-                <p className="text-xs text-gray-400 mb-1">
-                  {qpubReqProgress.done} / {qpubReqProgress.total} posts
-                  {qpubReqProgress.newFound > 0 && <span className="text-green-400 ml-2">· {qpubReqProgress.newFound} new requests</span>}
-                  {qpubReqProgress.found > qpubReqProgress.newFound && <span className="text-gray-500 ml-1">({qpubReqProgress.found - qpubReqProgress.newFound} already existed)</span>}
-                </p>
-                <div className="h-1.5 bg-gray-700 rounded-full overflow-hidden">
-                  <div className="h-full bg-green-500 transition-all duration-300 rounded-full"
-                    style={{ width: `${(qpubReqProgress.done / Math.max(qpubReqProgress.total, 1)) * 100}%` }} />
-                </div>
-              </div>
-            )}
-            {qpubReqDone && (
-              <p className="text-xs text-green-400 mt-2 font-semibold">
-                ✓ Done — {qpubReqDone.scanned} posts scanned · <span className="text-white">{qpubReqDone.newFound} new requests</span>{qpubReqDone.found > qpubReqDone.newFound && <span className="text-gray-500"> · {qpubReqDone.found - qpubReqDone.newFound} already existed</span>}
-              </p>
-            )}
-            {qpubReqError && <p className="text-xs text-red-400 mt-1">{qpubReqError}</p>}
-          </div>
-          <div className="shrink-0">
-            <button onClick={handleScanQpubRequests} disabled={qpubReqRunning}
-              className="bg-green-700 hover:bg-green-600 disabled:opacity-50 text-white font-bold px-4 py-2 rounded-lg transition-colors text-sm">
-              {qpubReqRunning ? 'Scanning…' : 'Scan Requests'}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Question Classification panel */}
-      <div className="bg-q-panel border border-blue-800/50 rounded-xl p-5">
-        <div className="flex items-start gap-4">
-          <div className="flex-1 min-w-0">
-            <p className="text-white font-semibold">🔍 Classify Questions Against Archive</p>
-            <p className="text-gray-400 text-sm mt-0.5">
-              For each unprocessed question, finds the most relevant Q posts by keyword match, then asks Claude whether those posts answer the question.
-              Sets status to <span className="text-green-400 font-semibold">Answered</span>, <span className="text-yellow-400 font-semibold">Partial</span>, or <span className="text-red-400 font-semibold">Unanswered</span> based solely on what appears in the archive.
-            </p>
-            {clProgress && (
-              <div className="mt-2 space-y-1.5">
-                <p className="text-xs text-gray-400">
-                  {clProgress.done} / {clProgress.total} processed
-                  {clProgress.currentQuestion && <span className="text-gray-600 ml-2">· "{clProgress.currentQuestion}…"</span>}
-                </p>
-                <div className="flex gap-3 text-xs">
-                  <span className="text-green-400">✓ Answered: {clProgress.greenFound}</span>
-                  <span className="text-yellow-400">~ Partial: {clProgress.yellowFound}</span>
-                  <span className="text-red-400">✗ Unanswered: {clProgress.redFound}</span>
-                  {clProgress.samePostFound > 0 && <span className="text-cyan-400">⚡ Same-post: {clProgress.samePostFound}</span>}
-                </div>
-                <div className="h-1.5 bg-gray-700 rounded-full overflow-hidden">
-                  <div className="h-full bg-blue-500 transition-all duration-300 rounded-full"
-                    style={{ width: `${(clProgress.done / Math.max(clProgress.total, 1)) * 100}%` }} />
-                </div>
-              </div>
-            )}
-            {clDone && (
-              <p className="text-xs text-blue-400 mt-2 font-semibold">
-                ✓ Done — <span className="text-green-400">{clProgress?.greenFound ?? 0} Answered</span> · <span className="text-yellow-400">{clProgress?.yellowFound ?? 0} Partial</span> · <span className="text-red-400">{clProgress?.redFound ?? 0} Unanswered</span>
-                {(clProgress?.samePostFound ?? 0) > 0 && <span className="text-cyan-400 ml-1">· {clProgress?.samePostFound} answered in same post</span>}
-              </p>
-            )}
-            {clError && <p className="text-xs text-red-400 mt-1">{clError}</p>}
-          </div>
-          <div className="shrink-0 flex flex-col gap-2 items-end">
-            {!clScanning ? (
-              <button onClick={handleClassifyQuestions}
-                className="bg-blue-700 hover:bg-blue-600 text-white font-bold px-4 py-2 rounded-lg transition-colors text-sm">
-                Classify Questions
-              </button>
-            ) : (
-              <button onClick={handleStopClassify}
-                className="bg-red-600 hover:bg-red-500 text-white font-medium px-4 py-2 rounded-lg transition-colors text-sm">
-                Stop
-              </button>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* 8kun Thread Reply Scan panel */}
-      <div className="bg-q-panel border border-orange-800/50 rounded-xl p-5">
-        <div className="flex items-start gap-4">
-          <div className="flex-1 min-w-0">
-            <p className="text-white font-semibold">🔗 Scan Thread Replies for Answers (4chan / 8chan / 8kun)</p>
-            <p className="text-gray-400 text-sm mt-0.5">
-              For each Q post with a board link, fetches the full thread from 4chan, 8chan, or 8kun and checks whether anonymous users answered Q's questions. Also detects any follow-up posts Q made in the same thread using a Q tripcode. Results stored per post and visible in Post Detail.
-            </p>
-            <p className="text-xs text-orange-400/70 mt-1">
-              Note: Uses a CORS proxy to reach the boards. Rate limited to ~1 post every 2s to avoid throttling.
-            </p>
-            {thProgress && (
-              <div className="mt-2 space-y-1.5">
-                <p className="text-xs text-gray-400">
-                  Post #{thProgress.currentPost} · {thProgress.done} / {thProgress.total} processed
-                  {thProgress.fetchFailed > 0 && <span className="text-red-500/70 ml-2">· {thProgress.fetchFailed} unreachable (CORS/network)</span>}
-                </p>
-                <div className="flex gap-3 text-xs flex-wrap">
-                  <span className="text-blue-400">💬 Anon replies: {thProgress.repliesFound}</span>
-                  <span className="text-yellow-400">🔐 Q replies in thread: {thProgress.qRepliesFound}</span>
-                  <span className="text-green-400">✓ Answers found: {thProgress.answersFound}</span>
-                </div>
-                <div className="h-1.5 bg-gray-700 rounded-full overflow-hidden">
-                  <div className="h-full bg-orange-500 transition-all duration-300 rounded-full"
-                    style={{ width: `${(thProgress.done / Math.max(thProgress.total, 1)) * 100}%` }} />
-                </div>
-              </div>
-            )}
-            {thDone && (
-              <p className="text-xs text-orange-400 mt-2 font-semibold">
-                ✓ Done — <span className="text-white">{(thProgress?.done ?? 0) - (thProgress?.fetchFailed ?? 0)} threads fetched</span> · <span className="text-green-400">{thProgress?.answersFound ?? 0} answers found</span> · <span className="text-yellow-400">{thProgress?.qRepliesFound ?? 0} Q replies</span> · <span className="text-blue-400">{thProgress?.repliesFound ?? 0} anon replies</span>{(thProgress?.fetchFailed ?? 0) > 0 && <span className="text-red-400/70"> · {thProgress?.fetchFailed} unreachable</span>}
-              </p>
-            )}
-            {thError && <p className="text-xs text-red-400 mt-1">{thError}</p>}
-          </div>
-          <div className="shrink-0 flex flex-col gap-2 items-end">
-            {!thScanning ? (
-              <button onClick={handleThreadScan}
-                className="bg-orange-700 hover:bg-orange-600 text-white font-bold px-4 py-2 rounded-lg transition-colors text-sm">
-                Scan Threads
-              </button>
-            ) : (
-              <button onClick={handleStopThreadScan}
-                className="bg-red-600 hover:bg-red-500 text-white font-medium px-4 py-2 rounded-lg transition-colors text-sm">
-                Stop
-              </button>
-            )}
-            <button onClick={handleResetThreadScan} disabled={thScanning || thResetting}
-              className="bg-gray-700 hover:bg-gray-600 disabled:opacity-40 text-gray-300 font-medium px-4 py-1.5 rounded-lg transition-colors text-xs">
-              {thResetting ? thResetMsg || 'Resetting…' : '↺ Reset & Rescan All'}
             </button>
           </div>
         </div>

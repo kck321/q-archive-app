@@ -20,7 +20,6 @@
     "build:app:public": "tsc -b && vite build --mode public"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.78.0",
     "@tauri-apps/api": "^2.11.1",
     "@tauri-apps/plugin-opener": "^2.5.4",
     "@tauri-apps/plugin-process": "^2.3.1",

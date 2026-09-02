@@ -1,8 +1,7 @@
-import { defineConfig, loadEnv } from 'vite'
+import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import fs from 'node:fs'
 import path from 'node:path'
-import { checkAnthropicProxyRequest, ANTHROPIC_PROXY_PREFIX } from './scripts/lib/anthropicProxyGuard.mjs'
 
 /**
  * Serve the editorial review queues to the EDITORIAL BUILD ONLY.
@@ -42,62 +41,18 @@ function editorialQueues() {
   }
 }
 
-/**
- * REFUSE EVERY NON-LOCAL REQUEST BEFORE THE KEY IS ATTACHED.
- *
- * /anthropic-proxy adds the owner's Anthropic key server-side, which keeps it out of browser
- * JavaScript and simultaneously turns the endpoint into an unauthenticated way to spend money.
- * The dev server is deliberately reachable off-machine — `allowedHosts: true` and the qalerts /
- * 4plebs / 8kun proxies exist so the archive can be opened on a phone through a Cloudflare tunnel
- * — so anyone who reached that tunnel would reach this too.
- *
- * A plugin's configureServer middleware is installed BEFORE Vite's internal ones, so this runs
- * ahead of the proxy and can refuse a request while it is still just bytes. The decision itself
- * lives in scripts/lib/anthropicProxyGuard.mjs, as a pure function, and is tested there.
- *
- * The deliberate outcome: AI works on the local desktop editorial server and is unavailable
- * through a phone-testing tunnel.
- */
-function anthropicProxyGuard() {
-  return {
-    name: 'anthropic-proxy-guard',
-    apply: 'serve' as const,
-    configureServer(server: { middlewares: { use: (fn: (req: any, res: any, next: () => void) => void) => void } }) {
-      server.middlewares.use((req, res, next) => {
-        if (!String(req.url ?? '').startsWith(ANTHROPIC_PROXY_PREFIX)) return next()
-        const verdict = checkAnthropicProxyRequest({
-          method: req.method,
-          url: req.url,
-          headers: req.headers ?? {},
-          remoteAddress: req.socket?.remoteAddress,
-          isPublicSite: process.env.VITE_PUBLIC_SITE === '1',
-          isDev: true,
-        })
-        if (verdict.allow) return next()
-        console.warn(`  [anthropic-proxy] refused: ${verdict.reason}`)
-        res.statusCode = verdict.status
-        res.setHeader('Content-Type', 'text/plain')
-        return res.end('the AI proxy is available on this machine only')
-      })
-    },
-  }
-}
-
 // When DEPLOY_TARGET=pages, build for GitHub Pages under the repo subpath.
 // Desktop (Tauri) and the tunnel preview keep the root base "/".
 const base = process.env.DEPLOY_TARGET === 'pages' ? '/q-archive-app/' : '/'
 
-export default defineConfig(({ mode }) => {
-  // Loaded with an EMPTY prefix, so this sees ANTHROPIC_API_KEY as well as the VITE_ ones.
-  // It is read here, in the config, which runs in Node — nothing below puts it into `define`,
-  // so it cannot reach a browser bundle. See the dev proxy in `server.proxy` and the comment
-  // at the top of src/lib/claude.ts.
-  const env = loadEnv(mode, process.cwd(), '')
-  const anthropicKey = env.ANTHROPIC_API_KEY ?? process.env.ANTHROPIC_API_KEY ?? ''
-
+// The config no longer reads any environment file. Vite's own `import.meta.env` still carries
+// the VITE_-prefixed public values; nothing here loads an unprefixed secret, because the only
+// unprefixed secret this config ever read — the Anthropic API key — has been removed from the
+// project entirely (owner ruling, 2026-09-02). See DEVLOG "Anthropic removed from q-app".
+export default defineConfig(() => {
   return {
   base,
-  plugins: [react(), anthropicProxyGuard(), editorialQueues()],
+  plugins: [react(), editorialQueues()],
   build: {
     rollupOptions: {
       output: {
@@ -126,29 +81,6 @@ export default defineConfig(({ mode }) => {
   server: {
     allowedHosts: true,
     proxy: {
-      // THE KEY IS ATTACHED HERE, ON THE SERVER, AND NEVER SENT TO THE BROWSER.
-      //
-      // src/lib/claude.ts points the Anthropic SDK at this path in dev with a placeholder key.
-      // The placeholder is what browser JavaScript holds; the real header is written below, in
-      // the Node process, on its way out. Vite's dev transform inlines the whole
-      // `import.meta.env` object into every module that touches it, so a VITE_-prefixed secret
-      // is served to the browser inside unrelated files — which is exactly how a key was
-      // disclosed. ANTHROPIC_API_KEY has no VITE_ prefix and is therefore never in that object.
-      '/anthropic-proxy': {
-        target: 'https://api.anthropic.com',
-        changeOrigin: true,
-        rewrite: (path: string) => path.replace(/^\/anthropic-proxy/, ''),
-        configure: (proxy) => {
-          proxy.on('proxyReq', proxyReq => {
-            if (anthropicKey && process.env.VITE_PUBLIC_SITE !== '1') proxyReq.setHeader('x-api-key', anthropicKey)
-            // Never forward the browser's placeholder, and never leak an Origin that would make
-            // Anthropic treat this as a browser call.
-            proxyReq.removeHeader('authorization')
-            proxyReq.removeHeader('origin')
-            proxyReq.removeHeader('referer')
-          })
-        },
-      },
       '/qalerts-proxy': {
         target: 'https://qalerts.app',
         changeOrigin: true,

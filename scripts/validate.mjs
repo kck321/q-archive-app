@@ -131,9 +131,12 @@ step('canonical question identity', ['node', 'scripts/test-question-identity.mjs
 // invariants read editorial queues that are deliberately untracked, and skipping them used to be
 // silent — 216 invariants, "216/216 pass", and the 222-invariant artifact overwritten.
 step('cross-section report completeness', ['node', 'scripts/test-cross-section-completeness.mjs'])
-// The dev AI proxy attaches the owner's Anthropic key server-side, so it must refuse every request
-// that is not this machine — the dev server is deliberately tunnel-reachable for phone testing.
-step('anthropic dev proxy is local-only', ['node', 'scripts/test-anthropic-proxy-guard.mjs'])
+// Anthropic is removed from q-app permanently (owner ruling 2026-09-02) and no replacement key
+// will be issued. The dev proxy that attached the key, the browser client, the Tauri key command
+// and the SDK are all gone; this fails closed if any of them — or a key token in a built bundle —
+// comes back. Scoped to the ACTIVE runtime and configuration surface: DEVLOG and the security
+// audit records describe the incident and must keep saying so.
+step('no anthropic integration', ['node', 'scripts/test-no-anthropic-integration.mjs'])
 // --base names one server and every browser gate must use it. Three gates were declared
 // `url: 'none'`, took no URL, and fell back to :5173 on their own; a run aimed at a branch server
 // then proved nothing about three of its gates while the receipt still recorded the branch tree.

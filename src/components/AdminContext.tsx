@@ -2,7 +2,7 @@ import { createContext, useContext, useState, type ReactNode } from 'react'
 import { CAN_EDIT } from '../lib/appMode'
 
 // App-wide "admin mode". Entering the PIN once unlocks every gated action for the
-// session: editing post analysis, the AI Analyze button, bulk classify, adding
+// session: editing post analysis, bulk classify, adding
 // questions, and the Dashboard tools.
 //
 // The PIN is a convenience latch that stops accidental edits on your own machine — it

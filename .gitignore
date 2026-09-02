@@ -12,8 +12,9 @@ dist
 dist-ssr
 *.local
 
-# Secrets — .env holds the live Anthropic API key. The repo is PUBLIC; pushing source
-# without this ignored publishes the key and anyone can spend against the account.
+# Secrets — .env holds the Firebase and Cloudflare R2 values this machine builds with. The repo
+# is PUBLIC; pushing source without this ignored publishes them. (It held an Anthropic key until
+# the 2026-09-02 owner ruling removed Anthropic from q-app entirely; there is no such key now.)
 .env
 .env.*
 !.env.example

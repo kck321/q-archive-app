@@ -5,7 +5,7 @@
 // at all. `scripts/deploy-web.sh` sets VITE_PUBLIC_SITE=1 for that build only.
 //
 // The Tauri desktop build (and `npm run dev`) leaves the flag unset, so it keeps the
-// full workbench — per-post editing, bulk operations, the AI tools, and the Dashboard.
+// full workbench — per-post editing, bulk operations, and the Dashboard.
 //
 // IMPORTANT — import CAN_EDIT directly in components. Do NOT route it through React
 // context. Vite inlines `import.meta.env.VITE_PUBLIC_SITE`, so `CAN_EDIT` folds to a

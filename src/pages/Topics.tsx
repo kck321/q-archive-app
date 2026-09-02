@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { getTopics, getAllPosts } from '../lib/posts'
-import { loadLocalData, mutateStore } from '../lib/localData'
+import { getTopics } from '../lib/posts'
+import { loadLocalData } from '../lib/localData'
 import PostCard from '../components/PostCard'
 import type { QTopic, QPost } from '../types'
-import { CAN_EDIT } from '../lib/appMode'
 
 function sortedIds(ids: string[]): string[] {
   return [...ids].sort((a, b) => {
@@ -16,15 +15,16 @@ function sortedIds(ids: string[]): string[] {
 export default function Topics() {
   const [topics, setTopics] = useState<QTopic[]>([])
   const [loading, setLoading] = useState(true)
-  const [clustering, setClustering] = useState(false)
-  const [error, setError] = useState('')
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
 
-  // Full post content for the selected cluster
-  const [clusterPosts, setClusterPosts] = useState<QPost[]>([])
-  const [loadingPosts, setLoadingPosts] = useState(false)
+  // Full post content for the selected cluster. Stored WITH the index it was loaded for, so
+  // "which posts belong to the cluster on screen" is derived rather than reset by an effect —
+  // switching chapters cannot leave the previous chapter's posts on screen for a frame.
+  const [loaded, setLoaded] = useState<{ index: number; posts: QPost[] } | null>(null)
 
   const selected = selectedIndex !== null ? topics[selectedIndex] ?? null : null
+  const clusterPosts = loaded && loaded.index === selectedIndex ? loaded.posts : []
+  const loadingPosts = selected !== null && (!loaded || loaded.index !== selectedIndex)
 
   useEffect(() => {
     getTopics().then(t => {
@@ -35,41 +35,16 @@ export default function Topics() {
 
   // Fetch full post content whenever the selected cluster changes
   useEffect(() => {
-    if (!selected) { setClusterPosts([]); return }
-    setLoadingPosts(true)
-    setClusterPosts([])
+    if (selectedIndex === null || !selected) return
+    const index = selectedIndex
     const ids = sortedIds(selected.postIds)
-    loadLocalData()
-      .then(store => {
-        setClusterPosts(ids.map(id => store.postsById.get(id)).filter(Boolean) as QPost[])
-      })
-      .finally(() => setLoadingPosts(false))
+    let cancelled = false
+    loadLocalData().then(store => {
+      if (cancelled) return
+      setLoaded({ index, posts: ids.map(id => store.postsById.get(id)).filter(Boolean) as QPost[] })
+    })
+    return () => { cancelled = true }
   }, [selectedIndex])
-
-  async function handleCluster() {
-    setClustering(true)
-    setError('')
-    try {
-      const allPosts = await getAllPosts()
-      const posts = allPosts.slice(0, 200).map(p => ({ id: p.id, text: p.text }))
-      const { clusterTopics } = await import('../lib/claude')
-      const results = await clusterTopics(posts)
-      const saved: QTopic[] = results.map(r => ({
-        id: crypto.randomUUID(),
-        name: r.name,
-        description: r.description,
-        postIds: r.postIds,
-        createdAt: Date.now(),
-      }))
-      await mutateStore('topics', store => { store.topics.push(...saved) })
-      setTopics(saved)
-      setSelectedIndex(saved.length > 0 ? 0 : null)
-    } catch (e) {
-      setError(String(e))
-    } finally {
-      setClustering(false)
-    }
-  }
 
   function goPrev() {
     if (selectedIndex === null || topics.length === 0) return
@@ -91,17 +66,7 @@ export default function Topics() {
             <h1 className="text-xl font-bold text-white leading-tight">Q Clusters</h1>
             <p className="text-gray-500 text-xs mt-0.5">Posts grouped by theme — each cluster is a chapter</p>
           </div>
-          {CAN_EDIT && (
-          <button
-            onClick={handleCluster}
-            disabled={clustering}
-            className="shrink-0 bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-4 py-2 rounded-lg text-sm transition-colors disabled:opacity-50"
-          >
-            {clustering ? 'Clustering…' : topics.length > 0 ? '↺ Regenerate Chapters' : '📖 Generate Chapters with Claude'}
-          </button>
-          )}
         </div>
-        {error && <p className="text-red-400 text-sm mt-2">{error}</p>}
       </div>
 
       {/* ── Body ───────────────────────────────────────────────────────── */}
@@ -110,7 +75,7 @@ export default function Topics() {
       ) : topics.length === 0 ? (
         <div className="text-center py-12">
           <p className="text-gray-500 mb-4">No chapters generated yet.</p>
-          <p className="text-gray-600 text-sm">Click "Generate Chapters with Claude" to automatically cluster posts by topic.</p>
+          <p className="text-gray-600 text-sm">Chapters are built from the certified archive data; none are stored for this build.</p>
         </div>
       ) : (
         <div className="flex flex-1 min-h-0 gap-4 px-6 py-4">

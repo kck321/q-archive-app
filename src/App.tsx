@@ -9,8 +9,8 @@ import Sidebar from './components/Sidebar'
 import UpdateBanner from './components/UpdateBanner'
 // EDITOR-ONLY PAGES LOAD LAZILY — and that is a bundle-size decision, not a UX one.
 //
-// A static `import Dashboard` kept the whole editorial subtree (ingest, bulkScan, the Claude AI
-// client, their static Firestore imports) in the MAIN chunk of every build, including the public
+// A static `import Dashboard` kept the whole editorial subtree (ingest, bulkScan and their
+// static Firestore imports) in the MAIN chunk of every build, including the public
 // one — CAN_EDIT folding to false removes the <Route>, but rollup still bundles a statically
 // imported module. React.lazy turns the reference into a dynamic import: the editor pages become
 // their own chunk, fetched the first time the owner opens them, and in the public build that
@@ -118,8 +118,8 @@ export default function App() {
           <ScrollRestoration containerRef={mainRef} />
           <Routes>
             <Route path="/"              element={<Navigate to="/posts" replace />} />
-            {/* PRIVATE. The Dashboard is the editorial workbench (ingest, bulk scans, AI
-                analysis) and by owner ruling 2026-08-23 it is off qdrops.app entirely — not
+            {/* PRIVATE. The Dashboard is the editorial workbench (ingest, image and entity
+                scans) and by owner ruling 2026-08-23 it is off qdrops.app entirely — not
                 PIN-locked on it. CAN_EDIT folds to a literal false in the public build, so
                 the route and the page behind it are dropped from that bundle. */}
             {CAN_EDIT && <Route path="/dashboard" element={<Suspense fallback={null}><Dashboard /></Suspense>} />}

@@ -4,13 +4,10 @@ import { useParams, Link, useNavigate, useSearchParams } from 'react-router-dom'
 import {
   getPost, getQuestionFrequency, getAnalysisFrequency, getPostsByNums, getPostNumsContaining, searchAllPosts,
   getTopics, addPostToTopic, removePostFromTopic,
-  getQuestionsForPost, updatePost, addQuestions, removeQuestionById, setQuestionStatuses,
+  getQuestionsForPost, updatePost, addQuestions, removeQuestionById,
   applyAnalysisToMatchingPosts, addQuestionToMatchingPosts, addRequestToMatchingPosts, addBracketToMatchingPosts,
   normalizeItemKey, expandToSentence, questionHighlightRegex, paintedQuestionSpan,
 } from '../lib/posts'
-// The Claude client (and the @anthropic-ai/sdk behind it) loads lazily at the moment an AI
-// action is clicked — every caller below is an async handler, and the public build's main chunk
-// must not carry the SDK for PIN-gated tools visitors cannot use.
 import QuestionBadge from '../components/QuestionBadge'
 import BackButton from '../components/BackButton'
 import AnalysisMap from '../components/AnalysisMap'
@@ -36,9 +33,6 @@ import { HIGHLIGHT_CLS, HIGHLIGHT_FLASH, HIGHLIGHT_SOLID, isSignOffMatch, keywor
 import type { QPost, QQuestion, PostAnalysis, CorrelatedArticle, QuotedPost } from '../types'
 
 const STOP_WORDS = new Set(['the','and','for','with','from','this','that','are','was','were','have','been','will','into','about','its','their','which','posts'])
-
-// PIN that gates the paid AI "Research news" feature (soft lock — stops casual/accidental use).
-const AI_PIN = '162424'
 
 
 // Returns true only if the question text literally appears in the post body
@@ -722,22 +716,11 @@ export default function PostDetail() {
   const [post, setPost] = useState<QPost | null>(null)
   const [questions, setQuestions] = useState<QQuestion[]>([])
   const [loading, setLoading] = useState(true)
-  const [processing, setProcessing] = useState(false)
-  const [classifying, setClassifying] = useState(false)
-  const [detectError, setDetectError] = useState('')
   const [freqMap, setFreqMap] = useState<Map<string, { count: number; postNums: number[] }>>(new Map())
   const [activeFreqQ, setActiveFreqQ] = useState<string | null>(null)
   const [newQuestionIds, setNewQuestionIds] = useState<Set<string>>(new Set())
   const [actionRequests, setActionRequests] = useState<string[]>([])
-  const [detectingRequests, setDetectingRequests] = useState(false)
   const [postAnalysis, setPostAnalysis] = useState<PostAnalysis | null>(null)
-  const [analyzingPost, setAnalyzingPost] = useState(false)
-  const [researchingNews, setResearchingNews] = useState(false)
-  const [newsError, setNewsError] = useState('')
-  const [aiUnlocked, setAiUnlocked] = useState(false)
-  const [pinPromptOpen, setPinPromptOpen] = useState(false)
-  const [pinInput, setPinInput] = useState('')
-  const [pinError, setPinError] = useState('')
   // App-wide admin gate (shared with Dashboard, bulk classify, etc.)
   const { unlocked: adminUnlocked, requireAdmin } = useAdmin()
   useHighlightsEnabled()   // re-render the body when the language toggle flips
@@ -1203,70 +1186,12 @@ export default function PostDetail() {
     return () => document.removeEventListener('click', close)
   }, [activeFreqQ])
 
-  async function handleDetectQuestions() {
-    if (!post) return
-    setProcessing(true)
-    setDetectError('')
-    try {
-      // Use the verified multi-pass pipeline: regex scan + Claude chunks + verification
-      const { detectQuestionsWithVerification } = await import('../lib/claude')
-      const detected = await detectQuestionsWithVerification(post.text)
-
-      // Filter to only questions that actually exist in the post body
-      const valid = detected.filter(q => questionExistsInPost(q.text, post.text))
-
-      // Deduplicate against questions already stored for this post
-      const normalize = (t: string) => t.toLowerCase().trim().replace(/\s+/g, ' ').replace(/[?.!,;:]+$/, '')
-      const existingKeys = new Set(questions.map(q => normalize(q.text)))
-
-      const batch: QQuestion[] = []
-      for (const q of valid) {
-        if (existingKeys.has(normalize(q.text))) continue
-        batch.push({ id: crypto.randomUUID(), postId: post.id, postNum: post.postNum, text: q.text, status: 'unprocessed', infographId: null, createdAt: Date.now() })
-      }
-      await addQuestions(batch)
-
-      const allQuestions = [...questions, ...batch]
-      await updatePost(post.id, { hasQuestions: allQuestions.length > 0 })
-      setPost(prev => prev ? { ...prev, hasQuestions: allQuestions.length > 0 } : prev)
-      // Sort merged list by position in post
-      const lower = post.text.toLowerCase()
-      allQuestions.sort((a, b) => {
-        const pa = lower.indexOf(a.text.toLowerCase().trim())
-        const pb = lower.indexOf(b.text.toLowerCase().trim())
-        return (pa === -1 ? Infinity : pa) - (pb === -1 ? Infinity : pb)
-      })
-      setNewQuestionIds(new Set(batch.map(q => q.id)))
-      setQuestions(allQuestions)
-      if (batch.length === 0 && questions.length === 0) setDetectError('No questions found in this post.')
-    } catch (e) {
-      setDetectError(String(e))
-    } finally {
-      setProcessing(false)
-    }
-  }
-
   async function handleRemoveQuestion(questionId: string) {
     removeQuestionById(questionId).catch(() => {})   // also recomputes the post's hasQuestions in the store
     const remaining = questions.filter(q => q.id !== questionId)
     setQuestions(remaining)
     if (remaining.length === 0 && post) {
       setPost(prev => prev ? { ...prev, hasQuestions: false } : prev)
-    }
-  }
-
-  async function handleDetectRequests() {
-    if (!post) return
-    setDetectingRequests(true)
-    try {
-      const { detectActionRequests } = await import('../lib/claude')
-      const found = await detectActionRequests(post.text)
-      // Merge with existing, deduplicate
-      const combined = [...new Set([...actionRequests, ...found])]
-      setActionRequests(combined)
-      await updatePost(post.id, { actionRequests: combined, hasRequests: combined.length > 0 })
-    } finally {
-      setDetectingRequests(false)
     }
   }
 
@@ -1417,77 +1342,6 @@ export default function PostDetail() {
     await updatePost(post.id, { excludedBrackets: updated })
   }
 
-  async function handleAnalyzePost() {
-    if (!post) return
-    setAnalyzingPost(true)
-    try {
-      const { analyzePost } = await import('../lib/claude')
-      const analysis = await analyzePost(post.text)
-      setPostAnalysis(analysis)
-      setAnalysisOpen(true)
-      await updatePost(post.id, { postAnalysis: analysis, analysisScanned: true })
-      // Refresh frequency map
-      getAnalysisFrequency().then(freqs => {
-        const map = new Map<string, { count: number; postNums: number[] }>()
-        for (const f of freqs) {
-          map.set(`${f.category}::${normalizeItemKey(f.text)}`, { count: f.count, postNums: f.postNums })
-        }
-        setAnalysisFreqMap(map)
-      })
-    } finally {
-      setAnalyzingPost(false)
-    }
-  }
-
-  // News Correlator — on-demand web research for date-correlated articles
-  async function handleResearchNews() {
-    if (!post) return
-    setResearchingNews(true)
-    setNewsError('')
-    try {
-      const { correlateNews } = await import('../lib/claude')
-      const found = await correlateNews({ text: post.text, timestamp: post.timestamp, postAnalysis: postAnalysis ?? undefined })
-      const articles: CorrelatedArticle[] = found.map(a => ({
-        ...a,
-        id: crypto.randomUUID(),
-        userRating: null,
-        credibility: 'unverified',
-        notes: '',
-        addedAt: Date.now(),
-      }))
-      // Merge with any existing, de-duplicating by URL
-      const existing = post.correlatedNews ?? []
-      const seen = new Set(existing.map(a => a.url))
-      const merged = [...existing, ...articles.filter(a => !seen.has(a.url))]
-      setPost(prev => prev ? { ...prev, correlatedNews: merged, newsScanned: true } : prev)
-      await updatePost(post.id, { correlatedNews: merged, newsScanned: true })
-      if (articles.length === 0) setNewsError('No corroborating articles found for this post.')
-    } catch (e) {
-      setNewsError(String(e instanceof Error ? e.message : e))
-    } finally {
-      setResearchingNews(false)
-    }
-  }
-
-  // PIN gate — the AI research is paid, so require the PIN once per session before running it.
-  function requestResearch() {
-    if (aiUnlocked) { handleResearchNews(); return }
-    setPinError('')
-    setPinPromptOpen(true)
-  }
-  function submitPin(e: React.FormEvent) {
-    e.preventDefault()
-    if (pinInput === AI_PIN) {
-      setAiUnlocked(true)
-      setPinPromptOpen(false)
-      setPinInput('')
-      setPinError('')
-      handleResearchNews()
-    } else {
-      setPinError('Incorrect PIN.')
-    }
-  }
-
   // Local honesty layer — update one article's rating/credibility/notes, persist locally
   async function updateArticle(id: string, patch: Partial<CorrelatedArticle>) {
     if (!post) return
@@ -1501,29 +1355,6 @@ export default function PostDetail() {
     const updated = (post.correlatedNews ?? []).filter(a => a.id !== id)
     setPost(prev => prev ? { ...prev, correlatedNews: updated } : prev)
     await updatePost(post.id, { correlatedNews: updated })
-  }
-
-  async function handleClassify() {
-    if (questions.length === 0) return
-    setClassifying(true)
-    try {
-      const { classifyQuestions } = await import('../lib/claude')
-      const statuses = await classifyQuestions(
-        questions.map(q => ({ id: q.id, text: q.text })),
-        'Q post archive — political/government research posts from 2017-2020'
-      )
-      const statusMap: Record<string, QQuestion['status']> = {}
-      const updated: QQuestion[] = []
-      for (const q of questions) {
-        const status = statuses[q.id] ?? 'unprocessed'
-        statusMap[q.id] = status
-        updated.push({ ...q, status })
-      }
-      await setQuestionStatuses(statusMap)
-      setQuestions(updated)
-    } finally {
-      setClassifying(false)
-    }
   }
 
   if (loading) return <div className="p-6 text-gray-500">Loading…</div>
@@ -1991,48 +1822,12 @@ export default function PostDetail() {
               <div>
                 <h2 className="font-semibold text-white">🔎 News Correlation <span className="text-gray-500 font-normal text-sm">— future proves past</span></h2>
                 <p className="text-xs text-gray-500 mt-0.5">
-                  {CAN_EDIT
-                    ? 'AI searches the web for real articles dated around this drop. Rate each one to keep the proof honest.'
-                    : 'Real news articles dated around this drop, rated for credibility.'}
+                  Real news articles dated around this drop, rated for credibility.
                 </p>
               </div>
-              {CAN_EDIT && (
-              <button
-                onClick={requestResearch}
-                disabled={researchingNews}
-                className="text-xs bg-emerald-800 hover:bg-emerald-700 text-emerald-100 font-medium px-3 py-1.5 rounded-lg transition-colors disabled:opacity-50"
-                title={aiUnlocked ? '' : 'PIN required (paid AI feature)'}
-              >
-                {researchingNews ? '🌐 Researching…' : !aiUnlocked ? '🔒 Research news' : articles.length > 0 ? '🔄 Find more' : '🌐 Research news'}
-              </button>
-              )}
             </div>
 
-            {/* PIN gate for the paid AI feature */}
-            {CAN_EDIT && pinPromptOpen && !aiUnlocked && (
-              <form onSubmit={submitPin} className="flex items-center gap-2 flex-wrap mt-2 bg-black/30 border border-emerald-800/40 rounded-lg px-3 py-2">
-                <span className="text-xs text-gray-400">🔒 Enter PIN to use AI research:</span>
-                <input
-                  autoFocus
-                  type="password"
-                  inputMode="numeric"
-                  value={pinInput}
-                  onChange={e => { setPinInput(e.target.value); setPinError('') }}
-                  placeholder="••••••"
-                  className="w-24 bg-gray-900 border border-gray-700 rounded px-2 py-1 text-xs text-white tracking-widest text-center focus:outline-none focus:border-emerald-600"
-                />
-                <button type="submit" className="text-xs bg-emerald-800 hover:bg-emerald-700 text-emerald-100 px-2 py-1 rounded transition-colors">Unlock</button>
-                <button type="button" onClick={() => { setPinPromptOpen(false); setPinInput(''); setPinError('') }} className="text-xs text-gray-500 hover:text-white px-1">Cancel</button>
-                {pinError && <span className="text-xs text-red-400">{pinError}</span>}
-              </form>
-            )}
 
-            {newsError && (
-              <p className="text-xs text-amber-400 bg-amber-900/20 border border-amber-800/50 rounded-lg px-3 py-2 mt-2">{newsError}</p>
-            )}
-            {researchingNews && (
-              <p className="text-xs text-gray-400 animate-pulse mt-2">Searching the web and cross-checking dates… this can take 20–60s.</p>
-            )}
 
             {articles.length > 0 && (
               <div className="space-y-2 mt-3">
@@ -2507,50 +2302,13 @@ export default function PostDetail() {
                 + Add Question Found
               </button>
             )}
-            {questions.length > 0 && questions.some(q => q.status === 'unprocessed') && (
-              <button
-                onClick={handleClassify}
-                disabled={classifying}
-                className="text-xs bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg transition-colors disabled:opacity-50"
-              >
-                {classifying ? 'Classifying…' : '🟢 Classify Status'}
-              </button>
-            )}
-            <button
-              onClick={handleDetectRequests}
-              disabled={detectingRequests}
-              className="text-xs bg-green-800 hover:bg-green-700 text-green-100 font-medium px-3 py-1.5 rounded-lg transition-colors disabled:opacity-50"
-            >
-              {detectingRequests ? 'Detecting…' : '🟢 Detect Requests'}
-            </button>
-            <button
-              onClick={handleDetectQuestions}
-              disabled={processing}
-              className="text-xs bg-gray-600 hover:bg-gray-500 text-white font-medium px-3 py-1.5 rounded-lg transition-colors disabled:opacity-50"
-            >
-              {processing ? 'Detecting…' : '🔍 Detect Questions'}
-            </button>
-            <button
-              onClick={() => requireAdmin('analyze this post with AI', handleAnalyzePost)}
-              disabled={analyzingPost}
-              title={adminUnlocked ? '' : 'Admin PIN required'}
-              className="text-xs bg-violet-800 hover:bg-violet-700 text-violet-100 font-medium px-3 py-1.5 rounded-lg transition-colors disabled:opacity-50"
-            >
-              {analyzingPost ? 'Analyzing…' : adminUnlocked ? '🔬 Analyze Post' : '🔒 Analyze Post'}
-            </button>
           </div>
           )}
         </div>
 
-        {detectError && (
-          <p className="text-red-400 text-sm mb-3 bg-red-900/20 border border-red-800 rounded-lg p-3">{detectError}</p>
-        )}
-
         {questions.length === 0 ? (
           <p className="text-gray-500 text-sm">
-            {CAN_EDIT
-              ? 'No questions extracted yet. Click "Detect Questions" to run AI analysis.'
-              : 'No questions have been extracted from this post yet.'}
+            No questions have been extracted from this post yet.
           </p>
         ) : (
           <div className="space-y-2">
