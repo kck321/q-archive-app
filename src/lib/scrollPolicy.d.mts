@@ -27,3 +27,14 @@ export declare function pendingAfterRestoreEnds(
   pending: PendingRestore | null,
   key: string,
 ): PendingRestore | null
+
+export declare function shouldRecordScroll(input: {
+  restoringKey: string | null
+  key: string
+}): boolean
+
+export declare function positionToRecord(input: {
+  atUnmount: number
+  tracked: number | null | undefined
+  restoringTarget: number | null
+}): number

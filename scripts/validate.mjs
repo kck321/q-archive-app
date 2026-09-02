@@ -194,6 +194,12 @@ step('fresh — tooltip accessibility', ['node', 'scripts/test-hover-accessibili
 step('fresh — url integrity', ['node', 'scripts/test-url-integrity.mjs', BASE], 'standard')
 step('fresh — row evidence chips', ['node', 'scripts/test-row-evidence.mjs', BASE], 'standard')
 step('fresh — scroll restoration', ['node', 'scripts/test-scroll-restoration.mjs', BASE], 'standard')
+// /pics restores by CLIMBING: 1,870 tiles mount 100 at a time, so a Back to a deep position is
+// ~19 clamped writes over 7-8 seconds. Every one of them fired a scroll event, and those were
+// being recorded as the reader's position - so the climb wrote over the target it was climbing to,
+// and each interrupted Back saved a smaller number. This causes the condition rather than waiting
+// for it, and asserts on a stored number rather than a rendered pixel.
+step('fresh - an interrupted /pics restore keeps its target', ['node', 'scripts/test-pics-restore-ratchet.mjs', BASE], 'standard')
 // A phone is not a narrow desktop. The category header opened with two 2xl figures, a heading and
 // a provenance line, so on a 390px screen the search box — the one control a reader came for —
 // was below the fold on all four category pages. It collapses there now, behind a real

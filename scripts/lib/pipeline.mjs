@@ -96,6 +96,7 @@ export const GATES = {
   'mobile-category-header': { file: 'scripts/test-mobile-category-header.mjs', url: 'positional', what: 'the category header collapses on a phone and is untouched on a desktop' },
   'month-chart': { file: 'scripts/test-month-chart-behaviour.mjs', url: 'flag', what: 'the month chart on both hosts' },
   'multiword-gloss': { file: 'scripts/test-multiword-gloss.mjs', url: 'positional', what: 'multi-word glossary terms, including the six the annotation layer splits' },
+  'pics-restore-ratchet': { file: 'scripts/test-pics-restore-ratchet.mjs', url: 'positional', what: 'an interrupted /pics restoration does not destroy the position it is restoring to' },
   'returning-profile': { file: 'scripts/test-returning-profile.mjs', url: 'flag', what: 'a returning/stale reader repairs itself' },
   'url-integrity': { file: 'scripts/test-url-integrity.mjs', url: 'positional', what: 'a URL in a drop is one link carrying the whole address' },
   'row-evidence': { file: 'scripts/test-row-evidence.mjs', url: 'positional', what: 'Pic/URL evidence chips sit beside a row without joining its certified counts' },

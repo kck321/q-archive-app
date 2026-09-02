@@ -56,3 +56,67 @@ export function decideScrollAction({ navType, key, previousKey, pending, saved }
 export function pendingAfterRestoreEnds(pending, key) {
   return pending && pending.key === key ? null : pending
 }
+
+// ── WHAT COUNTS AS A POSITION THE READER CHOSE ─────────────────────────────────────────────────
+//
+// A restoration on /pics is a CLIMB, not a jump. The saved target sits inside 1,870 tiles that
+// mount 100 at a time, so the restorer writes scrollTop = target, the browser clamps it to the
+// bottom of the ~9,800px that exist so far, that clamp brings the grid's sentinel into view, the
+// window grows by a batch, and it writes again. Measured: ~19 cycles and 7-8 seconds to reach a
+// position 150,000px down.
+//
+// Every one of those writes fires a scroll event, and the passive listener recorded each one as
+// the reader's position. So the whole climb was being written over the target it was climbing to.
+// Leave the page mid-climb and the last clamped intermediate is what persists:
+//
+//     reader sits at            150000
+//     saved on leaving          150000   (faithful)
+//     mid-climb, interrupting    55665   (600 of 1,870 tiles rendered)
+//     saved after interruption   65185
+//     second Back lands at       65185   — 85,000px lost
+//
+// And it RATCHETS. Each interrupted Back saves a smaller number, so the next one starts lower and
+// has less climbing to do before the reader gives up on it — walking the saved position down
+// towards the top of the grid. That is the "/pics occasionally lands at the top" report: not a
+// timeout that needs to be longer, but a restoration that destroys its own target.
+//
+// The contract these two functions state:
+//
+//   1. A scroll position produced BY a restoration is not a position the reader chose. While a
+//      restoration for this key is in flight, nothing is recorded.
+//   2. A restoration that is interrupted before it arrives must not teach the app a smaller
+//      number. The target is still the best record of where the reader was, so it is what gets
+//      saved — and the next Back tries again from the truth rather than from the failure.
+//
+// Neither of these makes the app wait longer for anything. They say which numbers are evidence.
+
+/**
+ * Should this scroll event be recorded as the reader's position?
+ * @param {{ restoringKey: string|null, key: string }} input
+ * @returns {boolean}
+ */
+export function shouldRecordScroll({ restoringKey, key }) {
+  return restoringKey !== key
+}
+
+/**
+ * The position to persist for a page being left.
+ *
+ * @param {{ atUnmount: number, tracked: number|null|undefined, restoringTarget: number|null }} input
+ *   atUnmount        scrollTop read in the layout cleanup. The incoming route's markup is already
+ *                    committed, so a shorter next page has clamped this to something the reader
+ *                    never chose.
+ *   tracked          what the scroll listener recorded while the page was live.
+ *   restoringTarget  the target of a restoration still in flight, or null.
+ * @returns {number}
+ */
+export function positionToRecord({ atUnmount, tracked, restoringTarget }) {
+  // Still climbing. The reader asked to be at `restoringTarget` and we never got them there;
+  // recording where we happened to have reached would be recording our own failure as their
+  // intent, and that is the ratchet.
+  if (restoringTarget != null) return restoringTarget
+  // Otherwise the existing rule: prefer the live reading, fall back to what was tracked when the
+  // swap to a shorter page has clamped it to zero.
+  if (atUnmount > 0) return atUnmount
+  return tracked ?? 0
+}

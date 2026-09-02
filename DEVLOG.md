@@ -9292,3 +9292,95 @@ claim every image was fully analysed; and that the app renders the two groups se
 
 `public/data` unchanged, `SEED_VERSION` unchanged — this corrects how the audit is *described*,
 not the audit.
+
+---
+
+## 2026-09-02 — /pics: the restoration was destroying the position it was restoring to
+
+**Request.** The remaining `/pics` issue, separate from the shipped `/posts` same-route REPLACE
+repair: `/pics` can land at the top after Back while ~1,870 IndexedDB-backed tiles rebuild.
+Instrument it, test cold and warm, build a deterministic old-versus-repaired regression, and do
+**not** solve it by extending the timeout — find the contract and repair it.
+
+**The `/posts` policy was not touched.** `decideScrollAction` is byte-identical, and
+`test-scroll-restoration.mjs` is green on every one of its 11 checks including the archive's own
+same-key replacement.
+
+**What instrumentation showed.** A restoration on `/pics` is a **climb**, not a jump. Tiles mount
+100 at a time behind an IntersectionObserver sentinel, so on Back the container is ~9,800px tall
+while the saved target may be 150,000. The restorer writes `scrollTop = target`, the browser
+**clamps** it to the bottom of what exists, that clamp brings the sentinel into view, the window
+grows by a batch, and it writes again. Measured on the editorial server, a Back to 150,000:
+
+```
+  t(ms)  scrollTop  scrollHeight  tiles
+    317      27665         28294    300
+    637      37185         37814    400
+   1004      55665         56294    600
+   …          …             …        …
+   7301     150000        159054   1700   ← arrived, after ~19 cycles
+```
+
+Warm profile: arrives. Cold profile (no cached picture index): arrives. **The retry budget was
+never the problem** — which is why extending it would have proved nothing.
+
+**The defect.** Every one of those ~19 writes fires a scroll event, and the passive listener
+recorded each as the reader's position. The climb was continuously being written over the target
+it was climbing to. Leave mid-climb and the last clamped intermediate is what persists:
+
+```
+  reader sits at            150000
+  saved on leaving          150000   (faithful)
+  mid-climb, interrupting    55665   (600 of 1,870 tiles rendered)
+  saved after interruption   65185
+  second Back lands at       65185   — 85,000px short
+```
+
+And it **ratchets**. Each interrupted Back saves a smaller number, so the next starts lower and
+has less climbing to do before it is interrupted again — walking the saved position down towards
+the top of the grid. Reproduced at four interrupt offsets (600ms → 46,425; 900ms → 65,185;
+1200ms → 65,185; 2000ms → 83,665), losing 75,000-104,000px each time. That is the report.
+
+**The contract, and the repair.** Two sentences, both in `src/lib/scrollPolicy.mjs` as pure
+functions so they are decidable without a browser or a clock:
+
+1. **A scroll position produced BY a restoration is not a position the reader chose.** While a
+   restoration for this key is in flight, nothing is recorded — `shouldRecordScroll`.
+2. **A restoration interrupted before it arrives must not teach the app a smaller number.** The
+   target is still the best record of where the reader was, so it is what gets saved, and the next
+   Back tries again from the truth rather than from the failure — `positionToRecord`.
+
+`ScrollRestoration.tsx` gains one ref, `restoring`, set when the climb starts and cleared when it
+settles *or gives up* — so once the loop ends the reader's own scrolling is theirs again. Nothing
+waits longer for anything; the change says which numbers are evidence.
+
+**Coverage.**
+
+- `scripts/test-scroll-navigation-policy.mjs` grows from 14 to **25 cases**, pure and offline,
+  including the non-vacuity check: the same clamped reading of 65,185 is *kept* when nothing was
+  climbing and *discarded* when we put it there.
+- `scripts/test-pics-restore-ratchet.mjs` — the browser regression, registered as `fresh - an
+  interrupted /pics restore keeps its target` and as `pics-restore-ratchet` in `GATES`. It is
+  deterministic because it **causes** the condition rather than waiting for a race: the climb
+  genuinely takes seconds, so interrupting at a fixed offset is reliable, and it asserts on a
+  stored number rather than a rendered pixel. It also asserts its own premise — that the
+  restoration really was still climbing when interrupted — so it cannot pass vacuously.
+
+**Old versus repaired, same test, same server:**
+
+| | |
+|---|---|
+| Pre-repair (repair stashed) | **FAIL** — `150000 -> 74425 (lost 75575px)`, second Back lands at 74,425 |
+| Repaired | **PASS 8/8** — `still 150000`, second Back lands at 150,000 |
+
+Stable across five consecutive runs and on both servers: 3× on :5173, 2× on :5174, plus a cold
+profile run. UI-only: `public/data` unchanged, `SEED_VERSION` unchanged, lint identical to
+baseline (one pre-existing warning).
+
+**Still open, and stated rather than quietly fixed.** The climb only makes progress because
+clamping to the bottom happens to bring the sentinel into view — the restorer is *triggering*
+content growth as a side effect rather than asking for it. That works and is now safe against
+interruption, but a restoration that knows it is short could request the batches directly instead
+of discovering them. `MAX_MS = 20000` also still caps the climb; 150,000px took 7-8s here, so a
+much slower device could hit it. Neither is the reported defect and neither is a data risk — the
+saved target now survives both, so the next Back simply tries again.

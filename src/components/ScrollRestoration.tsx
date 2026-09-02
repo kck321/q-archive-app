@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, type RefObject } from 'react'
 import { useLocation, useNavigationType } from 'react-router-dom'
-import { decideScrollAction, pendingAfterRestoreEnds } from '../lib/scrollPolicy.mjs'
+import { decideScrollAction, pendingAfterRestoreEnds, shouldRecordScroll, positionToRecord } from '../lib/scrollPolicy.mjs'
 
 // Remember where you were on every page, and put you back there when you go Back.
 //
@@ -96,6 +96,13 @@ export default function ScrollRestoration({ containerRef }: { containerRef: RefO
   // a same-key REPLACE tears it down mid-flight.
   const previousScrollKey = useRef<string | null>(null)
   const pendingRestore = useRef<{ key: string; target: number } | null>(null)
+  // A restoration that is CURRENTLY CLIMBING, and to where.
+  //
+  // Separate from pendingRestore, which exists so a same-key REPLACE can pick a target back up
+  // after its effect was torn down. This one answers a different question — "is the scroll
+  // position right now something we are doing, rather than something the reader did?" — and it is
+  // what stops the climb from being recorded over its own target. See lib/scrollPolicy.mjs.
+  const restoring = useRef<{ key: string; target: number } | null>(null)
 
   // Keep the stored position current while the page is on screen, so a refresh or a
   // browser-level restore has something to work with too.
@@ -107,6 +114,10 @@ export default function ScrollRestoration({ containerRef }: { containerRef: RefO
       if (frame) return
       frame = requestAnimationFrame(() => {
         frame = 0
+        // A position the RESTORER produced is not a position the reader chose. On /pics the
+        // restore is a climb of ~19 clamped writes over 7-8 seconds, and recording those wrote
+        // the whole climb over the target it was climbing to.
+        if (!shouldRecordScroll({ restoringKey: restoring.current?.key ?? null, key })) return
         positions.current[key] = el.scrollTop
       })
     }
@@ -138,6 +149,7 @@ export default function ScrollRestoration({ containerRef }: { containerRef: RefO
       const hardStop = performance.now() + MAX_MS
       let lastHeight = el.scrollHeight
       let settled = 0
+      restoring.current = { key, target }
       const restore = () => {
         // Still filling in? Then we have not had our chance yet — reset the budget.
         if (el.scrollHeight !== lastHeight) {
@@ -154,13 +166,16 @@ export default function ScrollRestoration({ containerRef }: { containerRef: RefO
         if (settled < SETTLE_FRAMES && now < deadline && now < hardStop) {
           raf = requestAnimationFrame(restore)
         } else {
-          // Settled, or out of patience. Either way this target is spent.
+          // Settled, or out of patience. Either way this target is spent, and from here the
+          // reader's own scrolling is theirs again.
           pendingRestore.current = pendingAfterRestoreEnds(pendingRestore.current, key)
+          restoring.current = null
         }
       }
       raf = requestAnimationFrame(restore)
     } else {
       // Opening something new always starts at the top.
+      restoring.current = null
       el.scrollTop = 0
     }
 
@@ -179,9 +194,19 @@ export default function ScrollRestoration({ containerRef }: { containerRef: RefO
       // trust that when the element now reads 0. A reader who genuinely sat at the top has 0
       // recorded there too, so nothing is lost by preferring it.
       if (raf) cancelAnimationFrame(raf)
-      const atUnmount = el.scrollTop
-      const tracked = positions.current[key]
-      positions.current[key] = atUnmount > 0 ? atUnmount : (tracked ?? 0)
+      // AND A RESTORATION THAT NEVER ARRIVED MUST NOT TEACH THE APP A SMALLER NUMBER.
+      //
+      // Leaving /pics 1.2s into an 8-second climb used to persist wherever the climb had reached
+      // — 150,000 became 65,185, and the next Back landed 85,000px short. Worse, it ratcheted:
+      // each interrupted Back saved a smaller number, walking the position down towards the top
+      // of the grid. That is the "/pics occasionally lands at the top" report.
+      const stillClimbing = restoring.current?.key === key ? restoring.current.target : null
+      restoring.current = null
+      positions.current[key] = positionToRecord({
+        atUnmount: el.scrollTop,
+        tracked: positions.current[key],
+        restoringTarget: stillClimbing,
+      })
       savePositions(positions.current)
     }
   }, [key, navType, containerRef])

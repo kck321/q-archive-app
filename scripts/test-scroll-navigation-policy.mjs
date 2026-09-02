@@ -9,7 +9,7 @@
 //
 // The transition that was wrong: a REPLACE onto the SAME scroll key, while a POP restoration was
 // pending, was treated as opening a new page and reset the reader to the top.
-import { decideScrollAction, pendingAfterRestoreEnds } from '../src/lib/scrollPolicy.mjs'
+import { decideScrollAction, pendingAfterRestoreEnds, shouldRecordScroll, positionToRecord } from '../src/lib/scrollPolicy.mjs'
 
 let failures = 0
 const eq = (label, got, want) => {
@@ -90,8 +90,47 @@ const pushed = decideScrollAction({ navType: 'PUSH', key: '/posts', previousKey:
 eq('the same key with the same pending target decides differently for REPLACE and PUSH',
   { replace: resumed.action, push: pushed.action }, { replace: 'restore', push: 'top' })
 
+console.log('\n  Which numbers are evidence - the /pics ratchet')
+// A restoration on /pics is a CLIMB: ~19 clamped writes over 7-8 seconds while the grid mounts
+// 100 tiles at a time. Measured on the editorial server, a Back to 150,000 passed through 27,665
+// / 37,185 / 46,425 / 55,665 / 65,185 ... on its way. Every one of those fired a scroll event.
+eq('a scroll event during this key’s own restoration is not the reader’s position',
+  shouldRecordScroll({ restoringKey: '/pics', key: '/pics' }), false)
+eq('a scroll event on a page that is NOT restoring is recorded',
+  shouldRecordScroll({ restoringKey: null, key: '/pics' }), true)
+eq('a restoration of ANOTHER key does not silence this one',
+  shouldRecordScroll({ restoringKey: '/posts', key: '/pics' }), true)
+
+// Leaving mid-climb. The old rule recorded wherever the climb had reached; measured, that turned
+// a faithful 150,000 into 65,185, and it RATCHETED — each interrupted Back saved a smaller number
+// and walked the reader towards the top of the grid.
+eq('leaving mid-climb records the TARGET, not where the climb had reached',
+  positionToRecord({ atUnmount: 65185, tracked: 65185, restoringTarget: 150000 }), 150000)
+eq('the ratchet cannot start: a second interruption still records the target',
+  positionToRecord({ atUnmount: 27665, tracked: 46425, restoringTarget: 150000 }), 150000)
+eq('a climb interrupted at the very first frame still records the target',
+  positionToRecord({ atUnmount: 0, tracked: 0, restoringTarget: 150000 }), 150000)
+
+// With no restoration in flight the existing rule is untouched, including the clamp-to-zero
+// fallback this file's component already had for a shorter next page.
+eq('with nothing climbing, the live reading wins',
+  positionToRecord({ atUnmount: 4200, tracked: 3000, restoringTarget: null }), 4200)
+eq('a swap to a shorter page that clamps to zero falls back to what was tracked',
+  positionToRecord({ atUnmount: 0, tracked: 9100, restoringTarget: null }), 9100)
+eq('a reader genuinely at the top records zero',
+  positionToRecord({ atUnmount: 0, tracked: 0, restoringTarget: null }), 0)
+eq('a reader genuinely at the top with nothing tracked records zero',
+  positionToRecord({ atUnmount: 0, tracked: undefined, restoringTarget: null }), 0)
+
+// Not vacuous: the same unmount reading decides differently depending on whether a restoration
+// was in flight. If it did not, the ratchet would still be open.
+eq('the same clamped reading is kept or discarded depending on whether we put it there',
+  { climbing: positionToRecord({ atUnmount: 65185, tracked: 65185, restoringTarget: 150000 }),
+    idle: positionToRecord({ atUnmount: 65185, tracked: 65185, restoringTarget: null }) },
+  { climbing: 150000, idle: 65185 })
+
 if (failures) {
   console.error(`\nSCROLL NAVIGATION POLICY: FAILED (${failures})\n`)
   process.exit(1)
 }
-console.log('\n  ✅ all 14 cases pass\n')
+console.log('\n  ✅ all 25 cases pass\n')
