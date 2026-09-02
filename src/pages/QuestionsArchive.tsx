@@ -8,6 +8,8 @@ import { loadLocalData } from '../lib/localData'
 import { findSimilarGroups } from '../lib/similarity'
 import SearchBar from '../components/SearchBar'
 import CategoryHeader from '../components/CategoryHeader'
+import InlineDropReader, { ReadDropsButton, ReadablePhrase } from '../components/InlineDropReader'
+import { useInlineDropReader, type InlineReader } from '../lib/inlineDropReader'
 import TimeframeBreakdown from '../components/TimeframeBreakdown'
 import { CAN_EDIT } from '../lib/appMode'
 import {
@@ -90,7 +92,7 @@ function HoverTip({ children, tip }: { children: React.ReactNode; tip: string })
 
 const CHIPS = 40
 
-function QuestionCard({ r, selectedNums, hoverNums, flashNums, rank, monthOf }: { r: QuestionFrequency; selectedNums: Set<number> | null; hoverNums: Set<number> | null; flashNums: Set<number> | null; rank: number; monthOf: (n: number) => string | undefined }) {
+function QuestionCard({ r, selectedNums, hoverNums, flashNums, rank, monthOf, isReading, onToggleReading, reader }: { r: QuestionFrequency; selectedNums: Set<number> | null; hoverNums: Set<number> | null; flashNums: Set<number> | null; rank: number; monthOf: (n: number) => string | undefined; isReading: boolean; onToggleReading: () => void; reader: InlineReader }) {
   const span = monthSpanLabel(r.postNums, monthOf)
   // Same 40-chip cap as every other section.
   const [expanded, setExpanded] = useState(false)
@@ -144,9 +146,13 @@ function QuestionCard({ r, selectedNums, hoverNums, flashNums, rank, monthOf }: 
 
       <div className="flex-1 min-w-0">
         <p className="mb-1">
-          <span className="inline-block text-sm leading-relaxed px-2 py-1 rounded bg-blue-500/25 text-blue-300 border border-blue-700/50">
-            {r.text}
-          </span>
+          {/* THE QUESTION ITSELF IS THE CONTROL, exactly as on Claims and Named Entities. */}
+          <ReadablePhrase
+            text={r.text}
+            isReading={isReading}
+            onToggle={onToggleReading}
+            className="inline-block text-sm leading-relaxed px-2 py-1 rounded bg-blue-500/25 text-blue-300 border border-blue-700/50"
+          />
         </p>
         <div className="flex flex-wrap gap-1 mt-2">
           {/* Certified post numbers, pictures and links — one merged row, oldest → newest.
@@ -162,7 +168,9 @@ function QuestionCard({ r, selectedNums, hoverNums, flashNums, rank, monthOf }: 
               {expanded ? '− show fewer' : `+${(merged.length - CHIPS).toLocaleString()} more`}
             </button>
           )}
+          <ReadDropsButton count={nums.length} isReading={isReading} onToggle={onToggleReading} />
         </div>
+        {isReading && <InlineDropReader reader={reader} term={r.text} />}
       </div>
       </div>
     </div>
@@ -332,6 +340,19 @@ export default function QuestionsArchive() {
     if (searchLower)  out = out.filter(r => termMatcher.matches(r.text))
     return out
   }, [singlesAll, statusFilter, selectedNums, searchLower, termMatcher])
+
+  // ── Read the drops inline ────────────────────────────────────────────────
+  // The same reader Claims and Named Entities have had. The machinery is shared
+  // (components/InlineDropReader); what belongs here is which drops a row means — and, as on the
+  // chips above, a selected month narrows the row to that month's posts.
+  const [readingKey, setReadingKey] = useState<string | null>(null)
+  const readingNums = useMemo(() => {
+    if (!readingKey) return null
+    const r = [...repeatedFiltered, ...singlesFiltered].find(x => normalizeItemKey(x.text) === readingKey)
+    if (!r) return null
+    return selectedNums ? r.postNums.filter(n => selectedNums.has(n)) : r.postNums
+  }, [readingKey, repeatedFiltered, singlesFiltered, selectedNums])
+  const reader = useInlineDropReader(readingKey, readingNums)
 
   // Post number → its month. Built once per data change, not on every keystroke.
   const postNumToMonth = useMemo(() => {
@@ -754,7 +775,10 @@ export default function QuestionsArchive() {
             ) : (
               <div className="space-y-2">
                 {repeatedFiltered.slice(0, visibleRepeated).map((r, i) => (
-                  <QuestionCard key={i} r={r} selectedNums={selectedNums} hoverNums={hoverNums} flashNums={flashMonth ? selectedNums : null} rank={rankByQuestion.get(normalizeItemKey(r.text)) ?? i + 1} monthOf={n => postNumToMonth[n]} />
+                  <QuestionCard key={i} r={r} selectedNums={selectedNums} hoverNums={hoverNums} flashNums={flashMonth ? selectedNums : null} rank={rankByQuestion.get(normalizeItemKey(r.text)) ?? i + 1} monthOf={n => postNumToMonth[n]}
+                    isReading={readingKey === normalizeItemKey(r.text)}
+                    onToggleReading={() => setReadingKey(prev => { const k = normalizeItemKey(r.text); return prev === k ? null : k })}
+                    reader={reader} />
                 ))}
                 {repeatedFiltered.length > visibleRepeated && (
                   <div className="flex items-center justify-center gap-3 py-3">
@@ -791,7 +815,10 @@ export default function QuestionsArchive() {
             ) : (
               <div className="space-y-2">
                 {singlesFiltered.slice(0, visibleSingles).map((r, i) => (
-                  <QuestionCard key={i} r={r} selectedNums={selectedNums} hoverNums={hoverNums} flashNums={flashMonth ? selectedNums : null} rank={rankByQuestion.get(normalizeItemKey(r.text)) ?? repeatedAll.length + i + 1} monthOf={n => postNumToMonth[n]} />
+                  <QuestionCard key={i} r={r} selectedNums={selectedNums} hoverNums={hoverNums} flashNums={flashMonth ? selectedNums : null} rank={rankByQuestion.get(normalizeItemKey(r.text)) ?? repeatedAll.length + i + 1} monthOf={n => postNumToMonth[n]}
+                    isReading={readingKey === normalizeItemKey(r.text)}
+                    onToggleReading={() => setReadingKey(prev => { const k = normalizeItemKey(r.text); return prev === k ? null : k })}
+                    reader={reader} />
                 ))}
                 {singlesFiltered.length > visibleSingles && (
                   <div className="flex items-center justify-center gap-3 py-3">

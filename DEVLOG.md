@@ -9152,3 +9152,68 @@ control and reported four working toggles as broken. It now matches on `aria-exp
 
 UI-only: `public/data` unchanged, `SEED_VERSION` unchanged, no owner ruling touched. Lint
 identical to the pre-change baseline (12 problems on these four files, before and after).
+
+---
+
+## 2026-09-02 — One inline drop reader, serving all four sections
+
+**Request.** Claims and Named Entities already let a reader click the term itself and open every
+matching Q post inline. Give Questions, Directives and Brackets the same behaviour — and do not
+copy and paste three implementations; extract the machinery from `AnalysisArchive.tsx`.
+
+**The extraction.** The reader was 90 lines of state, one effect and one render block living
+inside a 1,688-line page. It is now two files, and `AnalysisArchive` is the first caller rather
+than the owner:
+
+- `src/lib/inlineDropReader.ts` — `READ_PAGE = 25`, the `InlineReader` type, and
+  `useInlineDropReader(readingKey, postNums)`: loads via `loadLocalData` (not `getPosts`, which
+  pages and would silently drop rows past the first page), sorts **oldest first** by the drop's
+  own timestamp with the post number breaking ties, and fetches the questions separately because
+  they are not on the post record.
+- `src/components/InlineDropReader.tsx` — the open panel with its `ReaderSentinel` and "+ N more",
+  the `ReadDropsButton`, and `ReadablePhrase`.
+
+**What the caller keeps, and why.** The hook owns loading, ordering and paging; the caller owns
+`readingKey` and the post numbers it means. That split is not arbitrary — Analysis intersects a
+row with the selected month, and so, now, do Questions, Directives and Brackets, each against
+their own month state. Putting the resolution in the caller keeps the shared file free of any
+page's rules.
+
+**One correctness improvement fell out of the extraction.** Paging used to be a separate
+`readLimit` reset by hand at every call site (`setReadLimit(READ_PAGE)` beside every
+`setReadingKey`). It is now `{ key, n }` — one value that says *how far into which row* — so
+opening a different row is already back at page one by construction. Three hand-resets deleted,
+and no window in which a new row can render with the previous row's limit.
+
+**The phrase is the control on all four pages.** `ReadablePhrase` is a real `<button>` with
+`aria-expanded`, not a styled `<span>` with `onClick`: the row is a disclosure and a keyboard or
+screen-reader user has to be able to work it. Each section passes its own colour classes, so
+nothing about the rows' appearance changes.
+
+**Coverage.** `scripts/test-standalone-inline-reader.mjs`, registered as `fresh — the standalone
+inline reader` and as `standalone-inline-reader` in `GATES`. **108 assertions**, three pages ×
+both widths, and for each: the phrase is a real button reporting `aria-expanded=false`; a "read N
+drops" control is offered too; clicking the phrase opens the drops; the phrase reports itself
+expanded; drop bodies render; the control flips to "close drops"; **the drops are oldest first**;
+the panel holds that row's own drops and no more than it promised; a row larger than a page
+renders **25, not all 61**, and offers "+ 25 more (25 of 61)"; the **search term is still in the
+box** while open and after closing; and closing removes the panel and restores the compact row.
+108/108 on the editorial server and 108/108 on the public one.
+
+The existing `test-inline-drop-reader.mjs` is the extraction's real proof: it watches Analysis and
+was left asserting the same things throughout. It caught a genuine regression mid-refactor — the
+panel's `mb-3` became `mb-1`, and the gate selected the panel by its exact Tailwind margin
+classes, so a working reader reported as broken. The spacing is restored and the gate now selects
+`[data-drop-reader]`.
+
+The new gate found its own version of the same problem: it first identified the phrase control as
+"a button with `aria-expanded` and no `aria-controls`", which also matches the sidebar's **Q
+Extras** disclosure — so it clicked the sidebar, saw no drops, and reported all three sections
+broken across 36 assertions. The control now carries `data-read-phrase` and says what it is.
+
+Also split out for a lint reason worth stating: the hook and the components had to live in
+separate files because a module exporting both breaks Fast Refresh, and `react-refresh/
+only-export-components` is an error in this project. The two new files add **zero** lint problems;
+the four pages are unchanged from their pre-existing baseline of 12.
+
+UI-only: `public/data` unchanged, `SEED_VERSION` unchanged, no owner ruling touched.

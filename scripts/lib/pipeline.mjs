@@ -100,6 +100,7 @@ export const GATES = {
   'url-integrity': { file: 'scripts/test-url-integrity.mjs', url: 'positional', what: 'a URL in a drop is one link carrying the whole address' },
   'row-evidence': { file: 'scripts/test-row-evidence.mjs', url: 'positional', what: 'Pic/URL evidence chips sit beside a row without joining its certified counts' },
   'scroll-restoration': { file: 'scripts/test-scroll-restoration.mjs', url: 'positional', what: 'Back returns you to where you were, at both breakpoints' },
+  'standalone-inline-reader': { file: 'scripts/test-standalone-inline-reader.mjs', url: 'positional', what: 'Questions, Directives and Brackets read inline like Claims and Named Entities' },
   'section-headlines': { file: 'scripts/verify-section-headlines.mjs', url: 'flag', what: 'the certified headline figures, on the page' },
   'term-info': { file: 'scripts/test-term-info.mjs', url: 'positional', what: 'the acronym info box means the right person per drop' },
 }

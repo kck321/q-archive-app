@@ -5,6 +5,8 @@ import { Link, useSearchParams } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import SearchBar from '../components/SearchBar'
 import CategoryHeader from '../components/CategoryHeader'
+import InlineDropReader, { ReadDropsButton, ReadablePhrase } from '../components/InlineDropReader'
+import { useInlineDropReader } from '../lib/inlineDropReader'
 // The text-scanning helpers are deliberately NOT imported: this page renders certified
 // occurrences and must not re-derive membership or counts from raw post text.
 import { getAllPosts, normalizeItemKey, makeTermMatcher } from '../lib/posts'
@@ -34,7 +36,7 @@ interface RequestFreq {
  * component (rather than inline in the parent's `.map()`) because `useEvidenceChips` is a hook
  * and every row needs its own call, not one call per iteration of a loop.
  */
-function RequestChips({ item, monthPostNums, hoverPostNums, flashMonth, expanded, onToggle, chipsCap }: {
+function RequestChips({ item, monthPostNums, hoverPostNums, flashMonth, expanded, onToggle, chipsCap, isReading, onToggleReading }: {
   item: RequestFreq
   monthPostNums: Set<number> | null
   hoverPostNums: Set<number> | null
@@ -42,6 +44,8 @@ function RequestChips({ item, monthPostNums, hoverPostNums, flashMonth, expanded
   expanded: boolean
   onToggle: () => void
   chipsCap: number
+  isReading: boolean
+  onToggleReading: () => void
 }) {
   // A selected month narrows the CERTIFIED chips to that month's posts; evidence chips are not
   // month-filtered, matching this row's existing behaviour before the merge.
@@ -78,6 +82,9 @@ function RequestChips({ item, monthPostNums, hoverPostNums, flashMonth, expanded
           {expanded ? '− show fewer' : `+${(merged.length - chipsCap).toLocaleString()} more`}
         </button>
       )}
+      {/* Same control, same wording and same place as Claims and Named Entities. The chips say
+          WHICH drops; this says what they contain, without leaving the row. */}
+      <ReadDropsButton count={mn.length} isReading={isReading} onToggle={onToggleReading} />
     </div>
   )
 }
@@ -260,6 +267,19 @@ export default function QRequests() {
     () => timeline.map(e => ({ ...e, matches: searchMatchMonths?.get(e.month) ?? 0 })),
     [timeline, searchMatchMonths],
   )
+
+  // ── Read the drops inline ────────────────────────────────────────────────
+  // The same reader Claims and Named Entities have had: clicking the directive itself opens every
+  // matching drop underneath the row, oldest first, paged. The machinery is shared
+  // (components/InlineDropReader); what belongs here is which drops a row means.
+  const [readingKey, setReadingKey] = useState<string | null>(null)
+  const readingNums = useMemo(() => {
+    if (!readingKey) return null
+    const item = filtered.find(r => normalizeItemKey(r.text) === readingKey)
+    if (!item) return null
+    return monthPostNums ? item.postNums.filter(n => monthPostNums.has(n)) : item.postNums
+  }, [readingKey, filtered, monthPostNums])
+  const reader = useInlineDropReader(readingKey, readingNums)
 
   const listRef = useRef<HTMLDivElement | null>(null)
 
@@ -466,7 +486,10 @@ export default function QRequests() {
           )}
 
           <div ref={listRef} className="grid gap-3 scroll-mt-24">
-            {filtered.slice(0, visibleCount).map((item, idx) => (
+            {filtered.slice(0, visibleCount).map((item, idx) => {
+              // One identity per row, matching the one readingNums resolves against.
+              const readKey = normalizeItemKey(item.text)
+              return (
               <div key={idx} className="bg-q-panel border border-q-border rounded-xl p-4 transition-colors">
                 <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3">
                   {/* Same left column as every other section. */}
@@ -499,9 +522,16 @@ export default function QRequests() {
                     {/* REPEATED badge removed — "×N posts" already says it, in the same
                         place every other section says it. */}
                     <p className="mb-1">
-                      <span className="inline-block text-sm leading-relaxed px-2 py-1 rounded bg-green-500/25 text-green-300 border border-green-700/50">
-                        {item.text}
-                      </span>
+                      {/* THE PHRASE ITSELF IS THE CONTROL, exactly as on Claims and Named
+                          Entities. It is the thing the reader is interested in, so it is the
+                          thing they reach for; the explicit "read N drops" button stays beside
+                          the chips for anyone who does not discover that. */}
+                      <ReadablePhrase
+                        text={item.text}
+                        isReading={readingKey === readKey}
+                        onToggle={() => setReadingKey(prev => (prev === readKey ? null : readKey))}
+                        className="inline-block text-sm leading-relaxed px-2 py-1 rounded bg-green-500/25 text-green-300 border border-green-700/50"
+                      />
                     </p>
                     <RequestChips item={item} monthPostNums={monthPostNums} hoverPostNums={hoverPostNums} flashMonth={flashMonth}
                       chipsCap={CHIPS}
@@ -510,11 +540,15 @@ export default function QRequests() {
                         const next = new Set(prev)
                         if (next.has(item.text)) next.delete(item.text); else next.add(item.text)
                         return next
-                      })} />
+                      })}
+                      isReading={readingKey === readKey}
+                      onToggleReading={() => setReadingKey(prev => (prev === readKey ? null : readKey))} />
+                    {readingKey === readKey && <InlineDropReader reader={reader} term={item.text} />}
                   </div>
                 </div>
               </div>
-            ))}
+              )
+            })}
             {filtered.length > visibleCount && (
               <div className="flex items-center justify-center gap-3 py-3">
                 <button

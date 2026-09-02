@@ -4,18 +4,16 @@ import { Link, useSearchParams } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import SearchBar from '../components/SearchBar'
 import CategoryHeader from '../components/CategoryHeader'
+import InlineDropReader, { ReadDropsButton, ReadablePhrase } from '../components/InlineDropReader'
+import { useInlineDropReader } from '../lib/inlineDropReader'
 import TimeframeBreakdown from '../components/TimeframeBreakdown'
 import {
   getAnalysisFrequency, getOverlappingItems, loadAnalysisConfirmed, saveAnalysisConfirmed, removeAnalysisConfirmed,
   clearAnalysisCategoriesFromPosts, getQuestionsTimeline, getPostNumsByMonth, getPostNumsContaining,
-  OVERLAP_CAT_LABELS, normalizeItemKey, makeTermMatcher, getQuestionsForPosts, type AnalysisCategoryFreq, type OverlapItem, type OverlapCat,
+  OVERLAP_CAT_LABELS, normalizeItemKey, makeTermMatcher, type AnalysisCategoryFreq, type OverlapItem, type OverlapCat,
 } from '../lib/posts'
 import { getAliasesFor, getAliasGroup, getAliasSet, getCertifiedEntityAliasSet, getCertifiedEntities, getEntityPublicView, subscribeAliases, displayAlias, type SourceKind } from '../lib/aliases'
-import PostCard from '../components/PostCard'
 import { useEvidenceChips, visibleRowChips, type RowChip } from '../components/RowEvidenceChips'
-import ReaderSentinel from '../components/ReaderSentinel'
-import { loadLocalData } from '../lib/localData'
-import type { QPost } from '../types'
 import { SECTION_TOTALS } from '../lib/sectionInfo'
 import { CANON_CHIP, ALIAS_CHIP_PALETTE } from '../lib/aliasColors'
 import {
@@ -213,19 +211,7 @@ function ItemChipRow({
           posts; this says what they contain, without leaving the row you are reading. Certified
           posts only — a picture or link chip is evidence about the subject, not a drop Q wrote
           the term in, so it is not one of the drops this button opens. */}
-      {monthChips.length > 0 && (
-        <button
-          onClick={onToggleReading}
-          className={`text-xs px-2 py-0.5 rounded border font-mono transition-colors ${
-            isReading
-              ? 'border-cyan-500 bg-cyan-900/50 text-cyan-200'
-              : 'border-gray-600 bg-gray-800 text-gray-300 hover:text-white hover:border-gray-400'
-          }`}
-          title={isReading ? 'Close the drops' : `Read all ${monthChips.length} drops here, in post order`}
-        >
-          {isReading ? '− close drops' : `▼ read ${monthChips.length.toLocaleString()} drop${monthChips.length !== 1 ? 's' : ''}`}
-        </button>
-      )}
+      <ReadDropsButton count={monthChips.length} isReading={isReading} onToggle={onToggleReading} />
     </div>
   )
 }
@@ -245,19 +231,17 @@ export default function AnalysisArchive() {
   // Rows with hundreds of post chips (Twitter has 962) dominate the DOM. Show a slice and
   // let the row expand on demand — nothing is hidden, it just isn't all mounted at once.
   const CHIPS = 40
-  // Opened a page at a time: a theme can carry 300+ drops, and rendering every one of them
-  // at once turns a scan into a freeze.
-  const READ_PAGE = 25
   const [expandedChips, setExpandedChips] = useState<Set<string>>(new Set())
   // ── Read the posts inline ────────────────────────────────────────────────
   // The chips answer "which posts", and then made you leave the page to find out what they SAY —
   // one post per round trip, losing the row you were reading. This opens the drops themselves
   // underneath, in post order, so a theme can be scanned in one pass.
+  //
+  // The loading, ordering and paging now live in components/InlineDropReader so that Questions,
+  // Directives and Brackets get the same reader rather than three copies of it. What stays here
+  // is the one thing that is genuinely this page's: a row's drops are intersected with the
+  // selected month.
   const [readingKey, setReadingKey] = useState<string | null>(null)
-  const [readPosts, setReadPosts] = useState<QPost[]>([])
-  const [readLoading, setReadLoading] = useState(false)
-  const [readLimit, setReadLimit] = useState(READ_PAGE)
-  const [readQuestions, setReadQuestions] = useState<Record<string, string[]>>({})
   const breakdownRef = useRef<HTMLDivElement | null>(null)
   const listRef = useRef<HTMLDivElement | null>(null)
 
@@ -729,37 +713,19 @@ export default function AnalysisArchive() {
   // Ranked by TOTAL MENTIONS — a term said 124 times in one drop outranks one mentioned
   // once across three. Posts break ties so equal-mention items still read sensibly, and
   // post number orders the single-mention tail chronologically.
-  // Load the drops for whichever row is open, in POST ORDER — the order Q wrote them, which is
-  // the only order a scan can be resumed in.
-  useEffect(() => {
-    if (!readingKey) { setReadPosts([]); return }
-    // itemConfirmKey is the row identity used in the markup — the rank map uses a DIFFERENT
-    // format ('cat::text'), and matching on that one found nothing, so the panel opened empty.
-    // The row's FINAL post set, so "read N drops" opens exactly the N the badge promised.
+  // WHICH DROPS THE OPEN ROW MEANS. This is the page-specific half, and the only half:
+  // Analysis intersects the row with the selected month, the standalone sections do not.
+  //
+  // itemConfirmKey is the row identity used in the markup — the rank map uses a DIFFERENT format
+  // ('cat::text'), and matching on that one found nothing, so the panel opened empty.
+  const readingNums = useMemo(() => {
+    if (!readingKey) return null
     const item = rows.find(i => itemConfirmKey(i.category, i.text) === readingKey)
-    if (!item) { setReadPosts([]); return }
-    let cancelled = false
-    setReadLoading(true)
-    const wanted = new Set(monthPostNums ? item.postNums.filter(n => monthPostNums.has(n)) : item.postNums)
-    // loadLocalData, not getPosts: getPosts pages at PAGE_SIZE, so a row whose drops sit past the
-    // first page would open with most of them silently missing.
-    loadLocalData()
-      .then(({ posts: all }) => {
-        if (cancelled) return
-        // Oldest -> latest, by the drop's own timestamp. Post-number order was checked against
-        // time order across all 4,966 posts and they agree in every case, so this is the same
-        // sequence — it just says what it means rather than relying on the numbering holding.
-        const list = all.filter(pp => wanted.has(pp.postNum))
-          .sort((x, y) => (x.timestamp ?? 0) - (y.timestamp ?? 0) || x.postNum - y.postNum)
-        setReadPosts(list)
-        // Questions are NOT on the post record — they live in their own collection — so a card
-        // rendered without them paints every layer except the blue ones. That is why drops opened
-        // HERE showed no questions while the same drop on /posts and /post/:id showed them all.
-        getQuestionsForPosts(list.map(pp => pp.id)).then(qMap => { if (!cancelled) setReadQuestions(qMap) })
-      })
-      .finally(() => { if (!cancelled) setReadLoading(false) })
-    return () => { cancelled = true }
+    if (!item) return null
+    return monthPostNums ? item.postNums.filter(n => monthPostNums.has(n)) : item.postNums
   }, [readingKey, rows, monthPostNums])
+  const reader = useInlineDropReader(readingKey, readingNums)
+
 
   // Alias rows are folded into their canonical row. Two registries feed this and they have
   // different scopes: the owner-editable groups apply to every category (that is how "HRC" folds
@@ -864,7 +830,6 @@ export default function AnalysisArchive() {
     const only = itemConfirmKey(filtered[0].category, filtered[0].text)
     if (autoOpened.current === only) return
     autoOpened.current = only
-    setReadLimit(READ_PAGE)
     setReadingKey(only)
   }, [search, filtered])
 
@@ -1445,18 +1410,12 @@ export default function AnalysisArchive() {
                           right here, oldest first — the same thing the "read N drops" button does.
                           It used to navigate to this section filtered to this row, which took you
                           to another screen to do what the row can do in place. */}
-                      <button
-                        onClick={() => {
-                          setReadLimit(READ_PAGE)
-                          setReadingKey(prev => (prev === key ? null : key))
-                        }}
-                        title={readingKey === key
-                          ? 'Close the drops'
-                          : `Read all ${monthChips.length} drop${monthChips.length !== 1 ? 's' : ''} containing "${item.text}", oldest first`}
-                        className={`inline-block text-left text-sm leading-relaxed px-2 py-1 rounded transition-all hover:brightness-125 hover:underline underline-offset-2 cursor-pointer ${CAT_COLORS[item.category]} ${readingKey === key ? 'ring-1 ring-white/40' : ''}`}
-                      >
-                        {item.text}
-                      </button>
+                      <ReadablePhrase
+                        text={item.text}
+                        isReading={readingKey === key}
+                        onToggle={() => setReadingKey(prev => (prev === key ? null : key))}
+                        className={`inline-block text-sm leading-relaxed px-2 py-1 rounded ${CAT_COLORS[item.category]}`}
+                      />
                     </p>
                     {aliases.length > 0 && (
                       <p className="text-xs text-gray-400 mb-2 px-2 flex items-center gap-1.5 flex-wrap">
@@ -1492,42 +1451,9 @@ export default function AnalysisArchive() {
                         return next
                       })}
                       isReading={readingKey === key}
-                      onToggleReading={() => {
-                        setReadLimit(READ_PAGE)
-                        setReadingKey(prev => (prev === key ? null : key))
-                      }}
+                      onToggleReading={() => setReadingKey(prev => (prev === key ? null : key))}
                     />
-                    {readingKey === key && (
-                      <div className="mt-2 mb-3 border-t border-q-border pt-3 space-y-3">
-                        {readLoading && <p className="text-xs text-gray-500 animate-pulse">opening drops…</p>}
-                        {!readLoading && readPosts.length === 0 && (
-                          <p className="text-xs text-gray-500">No drops loaded for this row.</p>
-                        )}
-                        {readPosts.slice(0, readLimit).map(rp => (
-                          <div key={rp.id ?? rp.postNum}>
-                            {/* searchKeyword carries the row's own term, so the phrase that put
-                                the drop in this list is highlighted inside it. */}
-                            <PostCard post={rp} questionTexts={readQuestions[rp.id]} searchKeyword={item.text} />
-                          </div>
-                        ))}
-                        {/* Scrolling IS the request for more. The sentinel loads the next batch
-                            as it comes into view, so every drop opens as you scan without a
-                            click — while still mounting them in batches, because 404 PostCards
-                            rendered at once locks the tab. */}
-                        {readPosts.length > readLimit && (
-                          <ReaderSentinel onEnter={() => setReadLimit(n => n + READ_PAGE)} />
-                        )}
-                        {readPosts.length > readLimit && (
-                          <button
-                            onClick={() => setReadLimit(n => n + READ_PAGE)}
-                            className="text-xs px-3 py-1 rounded border border-gray-600 bg-gray-800 text-gray-300 hover:text-white hover:border-gray-400 transition-colors font-mono"
-                          >
-                            + {Math.min(READ_PAGE, readPosts.length - readLimit)} more
-                            <span className="text-gray-500"> ({readLimit.toLocaleString()} of {readPosts.length.toLocaleString()})</span>
-                          </button>
-                        )}
-                      </div>
-                    )}
+                    {readingKey === key && <InlineDropReader reader={reader} term={item.text} />}
                     {/* Hover confirm + delete actions — EDITING. Not compiled into the
                         public build; these write to Firestore. */}
                     {CAN_EDIT && (isHovered || confirmed || isDeleting) && (

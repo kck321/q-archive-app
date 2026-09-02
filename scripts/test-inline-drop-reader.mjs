@@ -32,11 +32,11 @@ check(Boolean(label), 'the row offers a "read drops" control', label || 'MISSING
 if (label) {
   await page.evaluate(`(() => { const b = ${READER_BUTTON}; b?.click(); return true })()`)
   // Wait for the panel to actually contain drops, rather than for a guessed number of seconds.
-  await page.waitFor(`document.querySelectorAll('div.mt-2.mb-3.border-t div.bg-q-panel').length > 1`, { timeout: 45000 })
+  await page.waitFor(`document.querySelectorAll('[data-drop-reader] div.bg-q-panel').length > 1`, { timeout: 45000 })
 
   mark('drops opened')
   const state = await page.evaluate(`(() => {
-    const panel = document.querySelector('div.mt-2.mb-3.border-t')
+    const panel = document.querySelector('[data-drop-reader]')
     const cards = panel ? [...panel.querySelectorAll('div.bg-q-panel')] : []
     // parseInt, not a regex: see the note in test-alias-visibility.mjs.
     const nums = cards.map(c => parseInt(((c.innerText ?? '').split('#')[1] ?? '').trim(), 10)).filter(n => Number.isFinite(n))

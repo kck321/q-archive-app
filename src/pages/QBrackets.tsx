@@ -17,6 +17,8 @@ import ScrollableChart from '../components/ScrollableChart'
 import TermPresenceBar from '../components/TermPresenceBar'
 import SearchBar from '../components/SearchBar'
 import CategoryHeader from '../components/CategoryHeader'
+import InlineDropReader, { ReadDropsButton, ReadablePhrase } from '../components/InlineDropReader'
+import { useInlineDropReader } from '../lib/inlineDropReader'
 
 interface BracketEntry {
   /** Total mentions across its posts — a code can repeat inside one drop. */
@@ -43,7 +45,7 @@ const BRACKET_RX = /\[\[?([A-Z0-9][A-Z0-9 _\-]{0,29})\]?\]/g
  * Its own component (rather than inline in the parent's `.map()`) because `useEvidenceChips` is
  * a hook and every row needs its own call, not one call per iteration of a loop.
  */
-function BracketChips({ entry, monthPostNums, hoverPostNums, flashMonth, expanded, onToggle, chipsCap }: {
+function BracketChips({ entry, monthPostNums, hoverPostNums, flashMonth, expanded, onToggle, chipsCap, isReading, onToggleReading }: {
   entry: BracketEntry
   monthPostNums: Set<number> | null
   hoverPostNums: Set<number> | null
@@ -51,6 +53,8 @@ function BracketChips({ entry, monthPostNums, hoverPostNums, flashMonth, expande
   expanded: boolean
   onToggle: () => void
   chipsCap: number
+  isReading: boolean
+  onToggleReading: () => void
 }) {
   // A selected month narrows the CERTIFIED chips to that month's posts; evidence chips are not
   // month-filtered, matching this row's existing behaviour before the merge.
@@ -90,6 +94,7 @@ function BracketChips({ entry, monthPostNums, hoverPostNums, flashMonth, expande
           {expanded ? '− show fewer' : `+${(merged.length - chipsCap).toLocaleString()} more`}
         </button>
       )}
+      <ReadDropsButton count={mn.length} isReading={isReading} onToggle={onToggleReading} />
     </div>
   )
 }
@@ -267,6 +272,19 @@ export default function QBrackets() {
     () => timeline.map(e => ({ ...e, matches: searchMatchMonths?.get(e.month) ?? 0 })),
     [timeline, searchMatchMonths],
   )
+
+  // ── Read the drops inline ────────────────────────────────────────────────
+  // The same reader Claims and Named Entities have had. The machinery is shared
+  // (components/InlineDropReader); what belongs here is which drops a row means. A bracket code
+  // is its own row identity, so it is the key.
+  const [readingKey, setReadingKey] = useState<string | null>(null)
+  const readingNums = useMemo(() => {
+    if (!readingKey) return null
+    const entry = filtered.find(b => b.code === readingKey)
+    if (!entry) return null
+    return monthPostNums ? entry.postNums.filter(n => monthPostNums.has(n)) : entry.postNums
+  }, [readingKey, filtered, monthPostNums])
+  const reader = useInlineDropReader(readingKey, readingNums)
 
   const listRef = useRef<HTMLDivElement | null>(null)
 
@@ -550,9 +568,13 @@ export default function QBrackets() {
                     {/* REPEATED badge removed — "×N posts" says it, in the same place
                         every other section says it. */}
                     <p className="mb-1">
-                      <span className="inline-block text-sm leading-relaxed px-2 py-1 rounded bg-red-500/25 text-red-300 border border-red-700/50">
-                        {entry.code}
-                      </span>
+                      {/* THE CODE ITSELF IS THE CONTROL, exactly as on Claims and Named Entities. */}
+                      <ReadablePhrase
+                        text={entry.code}
+                        isReading={readingKey === entry.code}
+                        onToggle={() => setReadingKey(prev => (prev === entry.code ? null : entry.code))}
+                        className="inline-block text-sm leading-relaxed px-2 py-1 rounded bg-red-500/25 text-red-300 border border-red-700/50"
+                      />
                     </p>
                     <BracketChips entry={entry} monthPostNums={monthPostNums} hoverPostNums={hoverPostNums} flashMonth={flashMonth}
                       chipsCap={CHIPS}
@@ -561,7 +583,10 @@ export default function QBrackets() {
                         const next = new Set(prev)
                         if (next.has(entry.code)) next.delete(entry.code); else next.add(entry.code)
                         return next
-                      })} />
+                      })}
+                      isReading={readingKey === entry.code}
+                      onToggleReading={() => setReadingKey(prev => (prev === entry.code ? null : entry.code))} />
+                    {readingKey === entry.code && <InlineDropReader reader={reader} term={entry.code} />}
                   </div>
                 </div>
               </div>

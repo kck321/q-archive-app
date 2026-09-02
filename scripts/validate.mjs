@@ -168,6 +168,11 @@ if (!noChain) {
 // ── BROWSER: a first-time visitor. ─────────────────────────────────────────────────────────────
 step('fresh — alias visibility', ['node', 'scripts/test-alias-visibility.mjs', BASE, '--fresh'], 'standard')
 step('fresh — inline drop reader', ['node', 'scripts/test-inline-drop-reader.mjs', BASE, '--fresh'], 'standard')
+// The same reader, on the three standalone sections that used to show their phrase as inert text.
+// The machinery is shared, so a regression is a regression on all four pages at once and the
+// Analysis gate above only watches one of them. Both widths: a row is laid out differently at
+// 390px than at 1280px, so "it opened on a desktop" is not evidence about a phone.
+step('fresh — the standalone inline reader', ['node', 'scripts/test-standalone-inline-reader.mjs', BASE], 'standard')
 // The acronym info box asserts MEANING per drop, not merely that a box opened. BO is three
 // different people depending on the drop, so "it popped up" is not the property that matters.
 step('fresh — reader info box', ['node', 'scripts/test-term-info.mjs', BASE, '--fresh'], 'standard')
