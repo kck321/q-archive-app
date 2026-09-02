@@ -9384,3 +9384,42 @@ interruption, but a restoration that knows it is short could request the batches
 of discovering them. `MAX_MS = 20000` also still caps the climb; 150,000px took 7-8s here, so a
 much slower device could hit it. Neither is the reported defect and neither is a data risk — the
 saved target now survives both, so the next Back simply tries again.
+
+---
+
+## 2026-09-02 — The headless harness window is 762px, six pixels under `md`
+
+Found by the FULL validation run, which stopped at `fresh — entity list reconciliation`:
+
+```
+  FAIL  header-carries-every-figure   header states total, both components, rows and dormant
+        ↳ missing total=1622, prose component=1490, source-only component=132,
+          rows=1606, dormant=225
+```
+
+Nothing about the reconciliation had changed. The gate reads the entity figures out of the page
+header, and since this batch the header collapses below Tailwind's `md` breakpoint (768px) behind
+a real `aria-expanded` button. **The harness's headless window reports `innerWidth = 762`** —
+`window.matchMedia('(min-width: 768px)').matches === false` — so the gate was laid out as a phone
+and found only the compact summary line.
+
+**This is bigger than the one gate, and is left as a finding rather than quietly changed.** Every
+browser gate that does not set an explicit viewport has been running six pixels inside the mobile
+layout, for as long as the harness has existed. `test-scroll-restoration.mjs` and the two gates
+added in this batch emulate their widths deliberately and are unaffected; the rest inherit 762px
+and have therefore never exercised the desktop layout they read as testing.
+
+Raising the harness default to a real desktop width is the systemic repair, and it is deliberately
+**not** done here: it would change the conditions under which ~20 gates run, any of which could
+legitimately flip, and that is not a change to make unreviewed at the end of a batch. Recommended
+as its own reviewed piece of work.
+
+**What was fixed** is the one gate that broke: `test-entity-reconciliation.mjs` now opens the
+header disclosure if one is rendered and visible, then reads it. That is width-independent — on a
+desktop there is no disclosure and the click is a no-op — and it keeps the gate's assertion on the
+thing it exists for, which is whether the figures RECONCILE. Whether they are visible without a
+tap is the mobile header gate's business, and that gate asserts it at both widths explicitly.
+
+14/14 against `http://localhost:5173`, exercising the collapsed path. (It also passes against
+production, where no disclosure exists — which is exactly the no-op case, and is why an earlier
+run against the default `https://qdrops.app` base proved nothing about the change.)

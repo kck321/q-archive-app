@@ -75,9 +75,35 @@ const browser = await launch({ mode: 'fresh' })
   if (!up) check('list-renders', 'the Named Entities list renders at all', false, 'never became ready')
   await page.evaluate(INSTALL)
 
+  // OPEN THE HEADER IF IT IS COLLAPSED, THEN READ IT.
+  //
+  // The figures are what this gate is about; which widths show them without a tap is the mobile
+  // header gate's business. Since 2026-09-02 the statistics block collapses below Tailwind's `md`
+  // breakpoint (768px) behind a real aria-expanded button — and the headless harness window is
+  // 762px, SIX PIXELS UNDER IT, so a gate that sets no viewport is laid out as a phone. Reading
+  // the header without opening it therefore found only the compact summary line, and reported the
+  // reconciliation as broken when nothing about the reconciliation had changed.
+  //
+  // Expanding first is width-independent: on a desktop the disclosure is not rendered and this is
+  // a no-op, on a phone it opens the same block. Either way the assertion below is about whether
+  // the numbers RECONCILE, which is the thing that must never regress.
+  await page.evaluate(`(() => {
+    const t = [...document.querySelectorAll('button[aria-expanded][aria-controls]')]
+      .find(b => getComputedStyle(b).display !== 'none' && b.getAttribute('aria-expanded') === 'false')
+    if (t) t.click()
+    return true
+  })()`)
+  await page.waitFor(`(() => {
+    const t = [...document.querySelectorAll('button[aria-expanded][aria-controls]')]
+      .find(b => getComputedStyle(b).display !== 'none')
+    if (!t) return true                       // desktop: no disclosure to open
+    const r = document.getElementById(t.getAttribute('aria-controls'))
+    return r && getComputedStyle(r).display !== 'none' ? true : null
+  })()`, { timeout: 8000 })
+
   const header = await page.evaluate(`(() => {
     const main = document.querySelector('main') || document.body
-    return (main.innerText || '').split(String.fromCharCode(10)).filter(Boolean).slice(0, 8).join(' | ')
+    return (main.innerText || '').split(String.fromCharCode(10)).filter(Boolean).slice(0, 12).join(' | ')
   })()`)
   const line = typeof header === 'string' ? header : ''
 
