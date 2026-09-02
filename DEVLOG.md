@@ -8808,3 +8808,36 @@ working TREE, so any commit from that session voids it, and this drop is not shi
 repo goes quiet. Only this ruling's own paths were committed; none of the picture-audit batch is in
 this commit. Firestore is also nearly out of quota for the day (~34k of 50k used by the morning's
 authoritative export and the Stage B deploy export), so the deploy needs a fresh Pacific window.
+
+## 2026-09-01 — Picture audit COMPLETE: final batch n=1451-1690 (240 images)
+
+**Request.** "Lets finish the remaining photos that we have to scan — approx 241 left."
+
+**What ran.** The runbook's own loop, unchanged: `build_next240_1690.py` reproduced the
+enumeration 1450/1450 hash-for-hash before emitting `batch1690.json` (240 rows, 0 videos);
+groups of 25 as 5 agents x 5 images (agents 81-128 + recovery agents 129-132), one JSONL
+line per image, one attempt per image; `merge1690.py check` after every group; one commit
+per group, explicit paths only. Nine commits, `14f215b` .. the compile commit.
+
+**Recoveries the run needed.**
+- Two media-bundle gaps (n=1634, n=1644, both 4plebs-era): 4plebs blocks direct fetches and
+  Wayback rate-limited; both recovered from the qalerts mirror (`https://qalerts.app/media/<file>`),
+  decode-verified. n=1634 only survives at 225x225 and still analysed green.
+- The #4941 tweet's four attached images (n=1574-1577) each hard-blocked the API mid-flight,
+  killing the agent rather than returning a refusal. Per runbook section 5 the orchestrator
+  wrote the exact withheld record for each and added the private withheld-table rows —
+  audit withholds 5-8, all four from that single post.
+- A session rate-limit killed agents 122/124/125 on their REPORT turn; every append had
+  already landed, so the interruption cost zero images and zero retries.
+
+**Results.** 240/240 entries, 0 dupes, 0 problems at every checkpoint. Batch confidence
+181 green / 51 yellow / 8 red; 9 needsReview (4 withheld above + 5 partials queued in
+picture-review.md: n=1497 tiny collage, n=1534 Bing News stitch, and n=1644/1669/1687 —
+three more variants of the Nov-2017 "Bread Crumbs" crumb sheet, n98's family).
+`merge1690.py compile` appended all 240: **picture-analysis.json now holds all 1,690
+distinct images across 1,514 posts — green 1,369 / yellow 260 / red 61, needsReview 37.**
+Runbook updated to COMPLETE; coverage table shows n=1051-1450 shipped with the 09-01
+deploy (live file verified at 1,450) and this batch as compiled-not-yet-deployed.
+
+**Still open.** The final 240 ship with the next deploy (UI-only path needs `SKIP_EXPORT=1`
+while the qc-pin export blocker stands). The 9 review rows await the owner's pass.

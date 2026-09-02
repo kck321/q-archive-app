@@ -1,8 +1,9 @@
 # Picture audit — the runbook
 
-**The format is the point.** 1,050 images are analysed and compiled; ~640 remain. The next batch
-must look and read EXACTLY like the ones already live, or the archive ends up with two standards.
-This file exists so that can be reproduced months later without re-deriving anything.
+**THE AUDIT IS COMPLETE (1 Sep 2026): all 1,690 distinct images are analysed and compiled.**
+The format is the point. Any future re-run or correction must look and read EXACTLY like what
+is live, or the archive ends up with two standards. This file exists so that can be reproduced
+months later without re-deriving anything.
 
 Written 19 Aug 2026 at 850 images compiled, with the audit paused for token budget.
 Updated 24 Aug 2026: batch n=851-1050 (200 images) compiled via `build_next200.py` /
@@ -16,6 +17,15 @@ Updated 29 Aug 2026 (later): batch n=1251-1450 (200 images) compiled via
 rows: n=1258 (compilation partial), n=1376 (source file is an 8ch HTML placeholder, not an
 image), n=1419/n=1420 (alpha-layer PNGs render as blank fields), n=1444/n=1445 (doxxing
 collages — identifiers deliberately withheld).
+Updated 1 Sep 2026: FINAL batch n=1451-1690 (240 images) compiled via `build_next240_1690.py`
+/ `merge1690.py` — same loop, 48 agents (81-128) + recovery agents, batch confidence
+181 green / 51 yellow / 8 red. FOUR withholds, all one post: n=1574-1577, the four images
+attached to #4941's tweet, each hard-blocked at the API level (agents terminated, records
+written by the orchestrator per section 5). Five review rows: n=1497 (240x240 collage,
+DOJ-letter panel illegible), n=1534 (1156x8610 Bing News stitch), and n=1644/n=1669/n=1687
+(three more Nov-2017 "Bread Crumbs" crumb-sheet variants, n98's family). Two media-bundle
+gaps (n=1634, n=1644) recovered from the qalerts mirror; 4plebs blocks fetches and Wayback
+rate-limits. One session-limit interruption cost nothing: all appends had landed.
 
 ---
 
@@ -48,13 +58,13 @@ collages — identifiers deliberately withheld).
 | 500       | n=101-600 | published |
 | 250       | n=601-850 | published |
 | 200       | n=851-1050 | published (seed 98, 2026-08-25) |
-| 200       | n=1051-1250 | compiled, NOT yet deployed |
-| 200       | n=1251-1450 | compiled, NOT yet deployed |
-| **next**  | **n=1451-** | **not started (final 240)** |
+| 200       | n=1051-1250 | published (2026-09-01 deploy) |
+| 200       | n=1251-1450 | published (2026-09-01 deploy) |
+| 240       | n=1451-1690 | compiled 2026-09-01, NOT yet deployed (final batch) |
 
-The archive holds **1,690 distinct images**. 1,450 done, 240 to go. The n=1251-1450 batch
-used `build_next200_1450.py` → `batch1450.json`, `fetch_missing1450.py`,
-`make_manifests1450.py`, `merge1450.py` — same pattern, verified 1250/1250 before emitting.
+The archive holds **1,690 distinct images**. **All 1,690 done.** The final batch used
+`build_next240_1690.py` → `batch1690.json`, `fetch_missing1690.py`, `make_manifests1690.py`,
+`merge1690.py` — same pattern, verified 1450/1450 before emitting.
 
 ## 3. Starting the next batch
 
@@ -93,8 +103,9 @@ the triggering content nowhere:
      "needsReview": true, "ocrStatus": "withheld"}
 
 Then add a row to the **"Withheld analyses"** table in `audit/picture-review.md` (seq, post, hash,
-filename, source, `review_required`, `withheld`). Four so far: **308**, **554**, **881**, **951**
-(none in n=1051-1250).
+filename, source, `review_required`, `withheld`). Eight total: **308**, **554**, **881**, **951**,
+and **1574-1577** (the four images of #4941's tweet — these blocked at the API level, killing the
+agent, so the orchestrator wrote the records).
 
 **Incomplete transcription.** Keep the partial OCR — it is real evidence and must not be thrown
 away — summarise per SPEC rule 3, set `needsReview: true`, and add a flag beginning
@@ -124,7 +135,7 @@ Per-image cost, measured over 51 Fable 5 agents: **~7,700 tokens**; a 25-image g
 including orchestration. Roughly **1.7%** of images end up `needsReview` — a batch that flags far
 more than that means something is wrong with the run, not with the archive.
 
-Current compiled totals: **1,450 images, 1,320 posts, green 1,188 / yellow 209 / red 53, needsReview 28.**
+Final compiled totals: **1,690 images, 1,514 posts, green 1,369 / yellow 260 / red 61, needsReview 37.**
 (The n=851-1050 range runs yellower/redder than the first 850 because it crosses the Rachel
 Chandler / Instagram-screenshot stretch, which is dense with unidentifiable private individuals —
 that is the material, not the run. The n=1051-1250 range produced no reds at all — mostly
