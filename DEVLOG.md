@@ -8841,3 +8841,37 @@ deploy (live file verified at 1,450) and this batch as compiled-not-yet-deployed
 
 **Still open.** The final 240 ship with the next deploy (UI-only path needs `SKIP_EXPORT=1`
 while the qc-pin export blocker stands). The 9 review rows await the owner's pass.
+
+## 2026-09-02 — Deploy: the complete picture audit + the #4686 ruling
+
+**Request.** "Lets deploy and publish everything we have to date."
+
+**The batch.** 12 commits between production and HEAD: the 11 picture-audit commits from
+2026-09-01 (the final 240 images, n=1451-1690) plus `224ef91` (#4686 "WATERGATE x1000" ruled
+a Prediction, from a concurrent session that finished 16:43 the previous day). Manifests for
+agents 81-132 were committed first to clean the tree (`9136952`).
+
+**Concurrency check came BEFORE validating**, per the standing note: HEAD static since the last
+commit, tree clean, no `node ... q-app ... scripts` process — only the two vite dev servers from
+09-01 09:53 (5173 editorial, 5174 `--mode public`, both `--strictPort`).
+
+**Validation.** Floor CERTIFIED, set by the changed `audit/` and `public/data/` paths — the diff
+chose it, not us. 32 steps, chain run twice, **2696.4s total** (far above the ~390s note because
+this diff touches 133 paths and buys that many fresh browser profiles). Everything green:
+typecheck, certification manifest at seed 117, 222/222 cross-section invariants, seed fingerprint
+116 -> 117 (moved for posts.json, the #4686 ruling), all 54 rendered-text matcher cases, both
+apply-chain runs idempotent. Receipt tree `3e3270f7253f`, chain true.
+
+**Deploy.** `SKIP_EXPORT=1 npm run deploy:web` — the fifth consecutive deploy on that documented
+workaround while the qc-pin export blocker stands; honest only because Firestore has been
+write-frozen since the 12 Aug rules, so the committed bundle IS current. Pages served the new
+build in **57s** (normal is 33-75s). Live: commit `9136952`, seed 117, sw `qdrops-20260902-075015`.
+
+**Delivery proof.** `verify-live.mjs` 16/16 — deployed commit/seed/manifest hash, hashed assets,
+service-worker CACHE_VERSION, every published data file against disk, a fresh reader and a
+returning one (profile genuinely downgraded to seed 6 first, then re-seeded to 117 with the
+owner's Claim rulings restored and zero Emphasis entries).
+
+**Confirmed live:** `https://qdrops.app/data/picture-analysis.json` serves **1,690 images across
+1,514 posts — green 1,369 / yellow 260 / red 61, needsReview 37**. The picture audit is fully
+published for the first time.
