@@ -1,5 +1,5 @@
 {
- "certifiedAt": "2026-09-01T20:41:25.790Z",
+ "certifiedAt": "2026-09-02T17:57:42.645Z",
  "sections": 8,
  "seedVersion": 117,
  "note": "Every count here is recomputed from the artifacts, never copied forward. Verify with: node scripts/certification-manifest.mjs --verify",
@@ -21,7 +21,7 @@
  },
  "artifacts": {
   "posts.json": {
-   "sha256": "20e3c280c025cce4b92b2a6fe6a568b837d53b2b584ee2f95fa9c4ff905416b8",
+   "sha256": "69d345ec96f1887f062cb00d50b87d903c0776bfd9c8e3b8af548d9bf9ce3491",
    "semanticSha256": "1f17fd924d5444b701a4e65417dca7098bde47c3bbfab04f24196212232c3501",
    "bytes": 10400391
   },
