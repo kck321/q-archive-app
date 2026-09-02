@@ -4,7 +4,8 @@ import BackButton from '../components/BackButton'
 import { loadQueue, submitSuggestion, sentSubmissions, type QueueData, type QueueItem } from '../lib/resolution'
 import { guideFor } from '../lib/resolutionKinds'
 import ReaderSentinel from '../components/ReaderSentinel'
-import { loadPictureAnalysis, type PictureInfo } from '../lib/pictureAnalysis'
+import { loadPictureAnalysis, pictureReviewQueue, type PictureInfo } from '../lib/pictureAnalysis'
+import { CAN_EDIT } from '../lib/appMode'
 
 // The Resolution Center.
 //
@@ -36,47 +37,104 @@ const STATUS_STYLE: Record<string, string> = {
  * counts. Any future image flagged during the audit appears automatically; clearing the
  * flag in the data removes it here and reverts the chip to one dot.
  */
+function PictureRow({ i, tone }: { i: PictureInfo; tone: 'withheld' | 'partial' }) {
+  const flag = i.flags.find(f => f.startsWith('FLAGGED'))
+  // The withhold flag says only that the analysis was withheld — there is no stored content to
+  // show, and none is invented here. The partial flag says what is missing, which is the whole
+  // instruction for clearing the row, so it is shown in full.
+  const note = tone === 'withheld'
+    ? 'No description or extracted text is stored for this image. It needs your own look.'
+    : flag?.replace(/^FLAGGED FOR MANUAL REVIEW:\s*/, '')
+  return (
+    <div className="rounded border border-q-border bg-black/20 px-3 py-2">
+      <div className="flex flex-wrap items-center gap-2 text-xs">
+        {/* n= is the identity the runbooks and audit/picture-review.md use. Without it a row here
+            cannot be matched to the notes written about it. */}
+        <span className="font-mono text-[11px] text-gray-500 tabular-nums">n={i.n}</span>
+        <span className="text-gray-200 font-mono truncate max-w-60">{i.filename}</span>
+        <span className="text-teal-400">{i.kind}</span>
+        <span className={`text-[10px] px-1.5 py-0.5 rounded border font-medium ${
+          i.confidence === 'green' ? 'text-green-300 border-green-700/50 bg-green-900/30'
+            : i.confidence === 'yellow' ? 'text-yellow-300 border-yellow-700/50 bg-yellow-900/30'
+            : 'text-red-300 border-red-700/50 bg-red-900/30'}`}>{i.confidence}</span>
+        <span className="text-gray-500">in</span>
+        {i.posts.map(p => (
+          <Link key={`${p.num}-${p.source}`} to={`/post/${p.num}?flash=1`} className="text-blue-400 hover:underline font-mono">#{p.num}</Link>
+        ))}
+      </div>
+      {note && <p className={`mt-1 text-[11px] ${tone === 'withheld' ? 'text-rose-300/90' : 'text-amber-300/90'}`}>⚠ {note}</p>}
+    </div>
+  )
+}
+
+/**
+ * Pictures flagged for the owner's manual pass (the two-red-dot chips).
+ *
+ * A separate layer from the certified queue on purpose: the queue file is rebuilt from scratch by
+ * the editorial pipeline and its totals are certified, so picture items live in
+ * picture-analysis.json (`needsReview: true`) and render here without touching those counts. Any
+ * future image flagged during the audit appears automatically; clearing the flag in the data
+ * removes it here and reverts the chip to one dot.
+ *
+ * SPLIT BY WHAT IT TAKES TO CLEAR THE ROW. Reported as one count of 37 these read as one kind of
+ * problem, and they are not: a partial has a description to extend, while a withhold has nothing
+ * stored at all and needs the owner's own look. Four of the eight withholds are #4941.
+ */
 function PictureReviewSection() {
-  const [items, setItems] = useState<PictureInfo[]>([])
-  useEffect(() => {
-    loadPictureAnalysis().then(map => {
-      const flagged = [...map.values()].filter(i => i.needsReview)
-      flagged.sort((a, b) => (a.posts[0]?.num ?? 0) - (b.posts[0]?.num ?? 0))
-      setItems(flagged)
-    })
-  }, [])
-  if (items.length === 0) return null
+  const [q, setQ] = useState<{ withheld: PictureInfo[]; partial: PictureInfo[]; total: number } | null>(null)
+  useEffect(() => { loadPictureAnalysis().then(map => setQ(pictureReviewQueue(map))) }, [])
+  if (!q || q.total === 0) return null
   return (
     <div className="mt-3 rounded-lg border border-teal-800/50 bg-q-panel p-4">
       <h2 className="text-sm font-bold text-teal-300 flex items-center gap-2">
         📷 Pictures needing review
-        <span className="text-xs font-mono bg-teal-900/40 border border-teal-700/50 rounded px-1.5 py-0.5">{items.length}</span>
+        <span className="text-xs font-mono bg-teal-900/40 border border-teal-700/50 rounded px-1.5 py-0.5">{q.total}</span>
         <span className="flex items-center gap-0.5 ml-1" title="Shown as two red dots on the Picture chip">
           <span className="inline-block w-2 h-2 rounded-full bg-red-500" />
           <span className="inline-block w-2 h-2 rounded-full bg-red-500" />
         </span>
       </h2>
-      <p className="mt-1 text-xs text-gray-500">
-        Images whose analysis is incomplete — the chip carries a summary, but the full
-        extraction still needs a human pass. Working notes: <span className="font-mono">audit/picture-review.md</span>.
+      {/* SAY WHAT "PROCESSED" MEANS. Every image record is published; that is not the same as
+          every image having a complete interpretation, and the difference is stated rather than
+          left to be inferred from a red dot. */}
+      <p className="mt-1 text-xs text-gray-400">
+        All <span className="text-white font-semibold">1,690</span> image records are processed and
+        published. <span className="text-white font-semibold">{(1690 - q.total).toLocaleString()}</span> carry a
+        complete analysis; the <span className="text-white font-semibold">{q.total}</span> below are
+        published but not finished being interpreted —{' '}
+        <span className="text-amber-300">{q.partial.length} partial</span> and{' '}
+        <span className="text-rose-300">{q.withheld.length} withheld by the content filter</span>.
       </p>
-      <div className="mt-2 space-y-2">
-        {items.map(i => (
-          <div key={i.hash} className="rounded border border-q-border bg-black/20 px-3 py-2">
-            <div className="flex flex-wrap items-center gap-2 text-xs">
-              <span className="text-gray-200 font-mono truncate max-w-60">{i.filename}</span>
-              <span className="text-teal-400">{i.kind}</span>
-              <span className="text-gray-500">in</span>
-              {i.posts.map(p => (
-                <Link key={`${p.num}-${p.source}`} to={`/post/${p.num}?flash=1`} className="text-blue-400 hover:underline font-mono">#{p.num}</Link>
-              ))}
-            </div>
-            {i.flags.filter(f => f.startsWith('FLAGGED')).map(f => (
-              <p key={f} className="mt-1 text-[11px] text-amber-300/90">⚠ {f}</p>
-            ))}
+      {CAN_EDIT && (
+        <p className="mt-1 text-[11px] text-gray-600">
+          Working notes: <span className="font-mono">audit/picture-review.md</span> · runbook:{' '}
+          <span className="font-mono">audit/PICTURE-AUDIT-RUNBOOK.md</span>
+        </p>
+      )}
+
+      {q.withheld.length > 0 && (
+        <>
+          <h3 className="mt-3 text-xs font-semibold text-rose-300">
+            Withheld by the content filter — {q.withheld.length}
+            <span className="ml-2 font-normal text-gray-500">nothing is stored for these; they need your own look</span>
+          </h3>
+          <div className="mt-1.5 space-y-2">
+            {q.withheld.map(i => <PictureRow key={i.hash} i={i} tone="withheld" />)}
           </div>
-        ))}
-      </div>
+        </>
+      )}
+
+      {q.partial.length > 0 && (
+        <>
+          <h3 className="mt-4 text-xs font-semibold text-amber-300">
+            Partial analyses — {q.partial.length}
+            <span className="ml-2 font-normal text-gray-500">described and indexed; the note says what is missing</span>
+          </h3>
+          <div className="mt-1.5 space-y-2">
+            {q.partial.map(i => <PictureRow key={i.hash} i={i} tone="partial" />)}
+          </div>
+        </>
+      )}
     </div>
   )
 }

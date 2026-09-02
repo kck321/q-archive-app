@@ -23,9 +23,47 @@ export interface PictureInfo {
   terms: string[]
   flags: string[]
   confidence: 'green' | 'yellow' | 'red'
-  /** Owner review queue: analysis exists but is incomplete (e.g. a giant compilation whose
-      full transcript needs a human pass). Rendered as TWO red dots on the chip. */
+  /** Owner review queue: the record is published but not finished being interpreted. Rendered
+      as TWO red dots on the chip. Two different situations carry it — see reviewKindOf. */
   needsReview?: boolean
+  /** 1-based position in the audit's own record list, so a row here can be matched to the
+      n= numbering the batch runbooks and the review notes use. Assigned at load. */
+  n?: number
+}
+
+/**
+ * WHY A FLAGGED RECORD IS FLAGGED. Two situations, and they need different work from the owner.
+ *
+ *   'partial'  the audit described the image and indexed its phrases, but some content could not
+ *              be transcribed — a stitched compilation of dozens of posts, or text below the
+ *              resolution the image carries. There is something to correct and extend.
+ *   'withheld' the provider declined to analyse the image at all. The record carries no
+ *              description and no extracted text, so there is nothing to correct: it needs the
+ *              owner's own look. Four of the eight are #4941.
+ *
+ * Reported as one undifferentiated count of 37, these read as one kind of problem. They are not.
+ */
+export type PictureReviewKind = 'partial' | 'withheld'
+
+const WITHHELD_FLAG = /analysis withheld/i
+
+export function reviewKindOf(info: PictureInfo): PictureReviewKind {
+  return info.flags.some(f => WITHHELD_FLAG.test(f)) ? 'withheld' : 'partial'
+}
+
+/** The owner's picture queue, split by what it will take to clear each row. */
+export function pictureReviewQueue(map: Map<string, PictureInfo>): {
+  withheld: PictureInfo[]
+  partial: PictureInfo[]
+  total: number
+} {
+  const flagged = [...map.values()].filter(i => i.needsReview)
+  const byPost = (a: PictureInfo, b: PictureInfo) => (a.posts[0]?.num ?? 0) - (b.posts[0]?.num ?? 0) || (a.n ?? 0) - (b.n ?? 0)
+  return {
+    withheld: flagged.filter(i => reviewKindOf(i) === 'withheld').sort(byPost),
+    partial: flagged.filter(i => reviewKindOf(i) === 'partial').sort(byPost),
+    total: flagged.length,
+  }
 }
 
 let _cache: Map<string, PictureInfo> | null = null
@@ -52,9 +90,13 @@ export function loadPictureAnalysis(): Promise<Map<string, PictureInfo>> {
       if (!res.ok) throw new Error(`picture-analysis.json ${res.status}`)
       const data = await res.json()
       const map = new Map<string, PictureInfo>()
-      for (const img of (data.images ?? []) as PictureInfo[]) {
+      // The record's position IS its n= identity in the runbooks and the review notes, and it is
+      // lost the moment the array becomes a hash map. Carry it.
+      const list = (data.images ?? []) as PictureInfo[]
+      list.forEach((img, i) => {
+        img.n = i + 1
         map.set(img.hash.toLowerCase(), img)
-      }
+      })
       _cache = map
     } catch {
       // No analysis file (or fetch failed): every lookup misses, nothing renders.

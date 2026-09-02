@@ -9217,3 +9217,78 @@ only-export-components` is an error in this project. The two new files add **zer
 the four pages are unchanged from their pre-existing baseline of 12.
 
 UI-only: `public/data` unchanged, `SEED_VERSION` unchanged, no owner ruling touched.
+
+---
+
+## 2026-09-02 — "Processed and published" is not "fully interpreted", and the queue now says which
+
+**Request.** Verify the local and live picture-review state; confirm the nine newly highlighted
+records are in the private review queue and make them easy for the owner to review; correct the
+active wording to "All 1,690 image records are processed and published"; and distinguish complete
+analyses, partial analyses, content-filter withholds and records requiring an owner pass — without
+exposing private review text or withheld-image details on the public site.
+
+**Verified first, from disk and from production.**
+
+| | |
+|---|---|
+| Local `public/data/picture-analysis.json` | **1,690** records across **1,514** posts |
+| Live `https://qdrops.app/data/picture-analysis.json` | SHA-256 **identical** to the local file |
+| Confidence | **1,369 green · 260 yellow · 61 red** |
+| `needsReview: true` | **37** |
+
+Every figure in the deployment report holds. What the report did not say is what the 37 *are*, and
+they are two different things:
+
+- **29 partial analyses** — described and indexed, but some content could not be transcribed:
+  usually a stitched compilation of dozens of posts, sometimes text below the resolution the image
+  carries. Each record's flag says exactly what is missing.
+- **8 content-filter withholds** — the provider declined to analyse the image. The record carries
+  no description, no extracted text and no indexed terms. **Four of the eight are #4941**
+  (n=1574-1577).
+- **1,653 complete analyses**, with no review flag at all.
+
+Confidence and completeness are **different axes** and the queue no longer implies otherwise: 20
+of the 29 partials are *green*, because a compilation can have an unmistakable subject and still be
+too large to transcribe.
+
+**The nine are all present and correctly classified.** n=1574-1577 (#4941) are the four withholds;
+n=1497 (#4796), n=1534 (#4862), n=1644 (#79), n=1669 (#89) and n=1687 (#98) are partials.
+
+**Making them reviewable.** The Resolution Center's picture section was one flat list of 37 rows
+sorted by post, which is exactly the presentation that makes them read as one kind of problem. Now:
+
+- The two groups render **separately**, each with its own count and a line saying what clearing a
+  row takes — *"nothing is stored for these; they need your own look"* vs *"described and indexed;
+  the note says what is missing"*.
+- Every row carries its **`n=` identity**, which is how the runbooks and `audit/picture-review.md`
+  refer to it. The n= was being thrown away at load, where the record array became a hash map;
+  `pictureAnalysis.ts` now assigns it. Without it a row on screen could not be matched to the notes
+  written about it.
+- Every row shows its confidence grade beside its kind, so the two axes are visibly separate.
+- A withheld row states **"No description or extracted text is stored for this image. It needs your
+  own look."** rather than repeating the raw flag — same information, and it makes explicit that
+  there is nothing to correct.
+
+**Nothing private reaches the public site.** The pointer to `audit/picture-review.md` and the
+runbook is now behind `CAN_EDIT` — proved on both servers: present on :5173, absent on :5174. The
+withheld records were checked byte-wise and store nothing about the image they withheld: 0
+characters of extracted text, an 18-character placeholder description, and **0** indexed
+people/orgs/objects/places/terms, on all eight.
+
+**Wording corrected.** `audit/PICTURE-AUDIT-RUNBOOK.md` led with *"all 1,690 distinct images are
+analysed and compiled"*; it now leads with *"all 1,690 image records are processed and published"*
+followed by the completeness table, and states plainly that processed is not the same as fully
+interpreted. `audit/picture-review.md` opened with *"all three are giant stitched compilations"* —
+written when the queue held three rows, and left standing at 37. Corrected in place with a dated
+note saying what it used to say.
+
+**Coverage.** `scripts/test-picture-review-accuracy.mjs`, registered in `validate.mjs` as `picture
+review accuracy`. **40 assertions**, pure and offline — no Firestore, no browser: the totals; the
+1,653/29/8 split and that it sums to 1,690; that completeness is not confidence renamed; that every
+withhold is flagged; that **no withheld record stores an analysis of the image it withheld**; that
+each of the nine is present, flagged and of the stated kind; that the runbook and notes do not
+claim every image was fully analysed; and that the app renders the two groups separately.
+
+`public/data` unchanged, `SEED_VERSION` unchanged — this corrects how the audit is *described*,
+not the audit.

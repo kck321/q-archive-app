@@ -141,6 +141,11 @@ step('no anthropic integration', ['node', 'scripts/test-no-anthropic-integration
 // consecutive deploys did exactly that, and by the last of them the qc-pin blocker they cited had
 // been closed for a day and an export had already shipped through it. Pure and offline.
 step('export policy', ['node', 'scripts/test-export-policy.mjs'])
+// "The picture audit is complete" means all 1,690 records are PROCESSED AND PUBLISHED. It does
+// not mean every image received a complete interpretation: 29 are partial and 8 were withheld by
+// the content filter (four of them #4941). This holds the counts, the distinction, and the fact
+// that a withheld record stores no analysis of the image it withheld. Pure and offline.
+step('picture review accuracy', ['node', 'scripts/test-picture-review-accuracy.mjs'])
 // --base names one server and every browser gate must use it. Three gates were declared
 // `url: 'none'`, took no URL, and fell back to :5173 on their own; a run aimed at a branch server
 // then proved nothing about three of its gates while the receipt still recorded the branch tree.

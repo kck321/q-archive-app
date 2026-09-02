@@ -1,11 +1,24 @@
 # Picture review queue — images needing a manual pass
 
 Images whose Picture chip shows **two red dots** (`needsReview: true` in
-`public/data/picture-analysis.json`). The vision audit described each one and indexed its
-key phrases, but the FULL verbatim text could not be machine-extracted: all three are giant
-stitched compilations of hundreds of forum posts, and automated transcription of that
-content at that volume is blocked by the AI provider's content policy. A human can
-transcribe them freely; the notes below say exactly where to look.
+`public/data/picture-analysis.json`). **37 records**, and they are not all the same thing:
+
+- **29 partial analyses.** The vision audit described the image and indexed its key phrases, but
+  the FULL verbatim text could not be machine-extracted — usually a giant stitched compilation of
+  dozens or hundreds of forum posts, sometimes text below the resolution the image carries. A
+  human can transcribe them freely; each record's `FLAGGED FOR MANUAL REVIEW:` line says exactly
+  what is missing, and the notes below say where to look.
+- **8 content-filter withholds.** The provider declined to analyse the image at all. Those records
+  carry no description and no extracted text — only the flag. **Four of the eight are #4941**
+  (n=1574-1577). Nothing about their content is stored, so there is nothing to correct: they need
+  an owner's own look.
+
+The rest of the archive — **1,653 of 1,690** — is a complete analysis with no review flag. All
+1,690 records are processed and published; this file is the list of the 37 that are not finished
+being *interpreted*.
+
+*(Corrected 2026-09-02: this intro previously said "all three", written when the queue held three
+rows. It holds 37.)*
 
 | # | Post | Filename | Local file (media-bundle) | Size |
 |---|------|----------|---------------------------|------|

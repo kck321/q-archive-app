@@ -1,6 +1,21 @@
 # Picture audit — the runbook
 
-**THE AUDIT IS COMPLETE (1 Sep 2026): all 1,690 distinct images are analysed and compiled.**
+**THE AUDIT IS COMPLETE (1 Sep 2026): all 1,690 image records are processed and published.**
+
+*Processed and published is not the same as fully interpreted, and the difference is stated so
+nobody has to infer it.* Of the 1,690:
+
+| | | |
+|---|---|---|
+| **1,653** | complete analyses | described, indexed, no review flag |
+| **29** | partial analyses | described and indexed, but some content could not be transcribed — usually a stitched compilation of dozens of posts, or text below the resolution the image carries. The flag on each record says exactly what is missing. |
+| **8** | content-filter withholds | the provider declined to analyse the image. The record exists, carries no description or extracted text, and is flagged. Four of the eight are #4941 (n=1574-1577). |
+| **37** | **require an owner pass** | the 29 partials plus the 8 withholds — `needsReview: true`, two red dots on the Picture chip, listed in the Resolution Center |
+
+Confidence, which is a different axis: **green 1,369 · yellow 260 · red 61**. A record can be
+green and still be a partial (a compilation whose subject is unambiguous but whose text is too
+large to transcribe), so the two breakdowns do not line up and are not meant to.
+
 The format is the point. Any future re-run or correction must look and read EXACTLY like what
 is live, or the archive ends up with two standards. This file exists so that can be reproduced
 months later without re-deriving anything.
@@ -62,7 +77,7 @@ rate-limits. One session-limit interruption cost nothing: all appends had landed
 | 200       | n=1251-1450 | published (2026-09-01 deploy) |
 | 240       | n=1451-1690 | compiled 2026-09-01, NOT yet deployed (final batch) |
 
-The archive holds **1,690 distinct images**. **All 1,690 done.** The final batch used
+The archive holds **1,690 distinct images**. **All 1,690 processed and published.** The final batch used
 `build_next240_1690.py` → `batch1690.json`, `fetch_missing1690.py`, `make_manifests1690.py`,
 `merge1690.py` — same pattern, verified 1450/1450 before emitting.
 
@@ -135,7 +150,9 @@ Per-image cost, measured over 51 Fable 5 agents: **~7,700 tokens**; a 25-image g
 including orchestration. Roughly **1.7%** of images end up `needsReview` — a batch that flags far
 more than that means something is wrong with the run, not with the archive.
 
-Final compiled totals: **1,690 images, 1,514 posts, green 1,369 / yellow 260 / red 61, needsReview 37.**
+Final compiled totals: **1,690 image records across 1,514 posts — all processed and published.**
+Confidence: **green 1,369 / yellow 260 / red 61**. Completeness: **1,653 complete · 29 partial ·
+8 content-filter withholds**, so **37 need an owner pass** (`needsReview: true`).
 (The n=851-1050 range runs yellower/redder than the first 850 because it crosses the Rachel
 Chandler / Instagram-screenshot stretch, which is dense with unidentifiable private individuals —
 that is the material, not the run. The n=1051-1250 range produced no reds at all — mostly
