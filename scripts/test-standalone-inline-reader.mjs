@@ -161,3 +161,11 @@ if (fail) {
   process.exit(1)
 }
 console.log('')
+// EXIT EXPLICITLY, EVEN ON SUCCESS.
+//
+// The browser harness keeps a warm Chrome and its debugging sockets alive on purpose, so a
+// gate that merely falls off the end never drains its event loop and never exits. Inside
+// validate.mjs that is indistinguishable from a hung test: this gate printed '108 passed, 0
+// failed' and then held the whole 38-step suite for an hour. Every other browser gate in
+// scripts/ ends this way for the same reason.
+process.exit(0)

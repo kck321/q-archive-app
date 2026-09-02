@@ -161,3 +161,9 @@ if (fail) {
   process.exit(1)
 }
 console.log('')
+// EXIT EXPLICITLY, EVEN ON SUCCESS. The browser harness keeps a warm Chrome and its debugging
+// sockets alive on purpose, so a gate that merely falls off the end can fail to drain its event
+// loop and never exit - inside validate.mjs that is indistinguishable from a hung test, which is
+// exactly how the standalone-reader gate held a 38-step suite for an hour after passing 108/108.
+// Every other browser gate in scripts/ ends this way for the same reason.
+process.exit(0)
