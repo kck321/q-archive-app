@@ -36,6 +36,7 @@ transcribe them freely; the notes below say exactly where to look.
 | 1497 | #4796 | ClipboardImage.png | `8194537c75469cac1598d941880a80f211e21d74486891cb60af1cb452bf1dfd.png` | 240×240 |
 | 1534 | #4862 | Screenshot_2020_10_14_qanon_Bing_News.jpg | `08ab079aa760cbd6aa55d0f41459c054d6f9dd506452e9ea6d7ff88258fc5b71.jpg` | 1156×8610 |
 | 1644 | #79 | 1509840715226.png | fetched/`1509759704722.png` | 1694×4096 |
+| 1669 | #89 | qupdated11-4v3.png | `1509863149244.jpg` | 1600×2943 |
 
 ## What each contains (from the completed visual pass)
 
@@ -124,6 +125,10 @@ transcribe them freely; the notes below say exactly where to look.
   original went unreachable). Summary and key phrases indexed; the full per-post verbatim
   transcription remains for a human — same treatment as n98/n1071, and like n98 the content
   substantially overlaps the archive's own ingested early drops.
+- **#89 (n1669):** 1600×2943 four-column "Bread Crumbs – Q Clearance Patriot" compilation
+  (qupdated11-4v3.png, the community's updated 11/4 crumb sheet, Oct 31 – Nov 4 2017).
+  Headings, recurring phrases and signatures indexed; per-post verbatim transcription
+  remains for a human. Same family as n98/n1644 — content overlaps ingested drops #1–#112.
 - **#4862 (n1534):** 1156×8610 stitched Bing News results page for "qanon" (Oct 14 2020),
   ~50 headlines. All headlines and outlets are indexed in `text`; the per-item body
   snippets render too small to read — the remaining snippet text is what a human pass
