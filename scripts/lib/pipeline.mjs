@@ -93,6 +93,7 @@ export const GATES = {
   'entity-reconciliation': { file: 'scripts/test-entity-reconciliation.mjs', url: 'flag', what: 'the entity list reconciles at the layer the reader sees' },
   'hover-accessibility': { file: 'scripts/test-hover-accessibility.mjs', url: 'positional', what: 'every route into the hover card' },
   'inline-drop-reader': { file: 'scripts/test-inline-drop-reader.mjs', url: 'positional', what: 'the inline drop reader' },
+  'mobile-category-header': { file: 'scripts/test-mobile-category-header.mjs', url: 'positional', what: 'the category header collapses on a phone and is untouched on a desktop' },
   'month-chart': { file: 'scripts/test-month-chart-behaviour.mjs', url: 'flag', what: 'the month chart on both hosts' },
   'multiword-gloss': { file: 'scripts/test-multiword-gloss.mjs', url: 'positional', what: 'multi-word glossary terms, including the six the annotation layer splits' },
   'returning-profile': { file: 'scripts/test-returning-profile.mjs', url: 'flag', what: 'a returning/stale reader repairs itself' },

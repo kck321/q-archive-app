@@ -184,6 +184,12 @@ step('fresh — tooltip accessibility', ['node', 'scripts/test-hover-accessibili
 step('fresh — url integrity', ['node', 'scripts/test-url-integrity.mjs', BASE], 'standard')
 step('fresh — row evidence chips', ['node', 'scripts/test-row-evidence.mjs', BASE], 'standard')
 step('fresh — scroll restoration', ['node', 'scripts/test-scroll-restoration.mjs', BASE], 'standard')
+// A phone is not a narrow desktop. The category header opened with two 2xl figures, a heading and
+// a provenance line, so on a 390px screen the search box — the one control a reader came for —
+// was below the fold on all four category pages. It collapses there now, behind a real
+// aria-expanded button, and is untouched at md and above. Asserted at BOTH widths: a change that
+// quietly collapsed the desktop header would be invisible from a phone.
+step('fresh — the mobile category header', ['node', 'scripts/test-mobile-category-header.mjs', BASE], 'standard')
 // A QUOTED DROP IS MARKED UP FROM ITS OWN CERTIFIED ANALYSIS, so it has to be shown with its own
 // line breaks. The re-scrape lost 106 of them, and on #1012 that let a Claim swallow the Question
 // beside it. Certified, because what it protects is the certified reading of a drop.

@@ -3,6 +3,7 @@ import SectionInfo from '../components/SectionInfo'
 import { Link, useSearchParams } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import SearchBar from '../components/SearchBar'
+import CategoryHeader from '../components/CategoryHeader'
 import TimeframeBreakdown from '../components/TimeframeBreakdown'
 import {
   getAnalysisFrequency, getOverlappingItems, loadAnalysisConfirmed, saveAnalysisConfirmed, removeAnalysisConfirmed,
@@ -988,6 +989,33 @@ export default function AnalysisArchive() {
       {/* Sticky toolbar */}
       <div className="sticky top-0 z-20 bg-[#0a0e1a] border-b border-q-border px-6 pt-5 pb-4 space-y-3 shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
         <BackButton />
+
+        <CategoryHeader
+          section={activeTab === 'all' ? 'Post Analysis' : activeTab === 'overlaps' ? 'Overlaps' : `Q ${CAT_LABELS[activeTab as AnalysisCategoryFreq['category']] ?? ''}`}
+          summary={
+            <p className="flex items-baseline gap-2 leading-none tracking-tight min-w-0">
+              <span
+                className="text-base font-bold truncate"
+                style={{
+                  color: activeTab === 'all' ? '#f3f4f6'
+                    : activeTab === 'overlaps' ? '#eab308'
+                    : catColor(activeTab),
+                }}
+              >
+                {activeTab === 'all' ? 'Post Analysis' : activeTab === 'overlaps' ? '⚠ Overlaps' : `Q ${CAT_LABELS[activeTab as AnalysisCategoryFreq['category']]}`}
+              </span>
+              {tabStats && (
+                <span className="text-sm font-black text-amber-300/90 shrink-0">
+                  {(tabStats.entities ? tabStats.entities.totals.mentions : tabStats.occurrences).toLocaleString()}
+                  <span className="text-[10px] font-medium text-gray-500 ml-1">
+                    {tabStats.entities ? 'mentions' : tabStats.unit}
+                  </span>
+                </span>
+              )}
+            </p>
+          }
+          search={<SearchBar value={search} onChange={setSearch} placeholder="Search within category…" />}
+          details={<>
         <div className="flex items-center justify-between gap-3 flex-wrap">
           <div>
             {/* Total items in this section, above the title — the headline number for
@@ -1098,7 +1126,8 @@ export default function AnalysisArchive() {
             </p>
           </div>
         </div>
-        <SearchBar value={search} onChange={setSearch} placeholder="Search within category…" />
+          </>}
+        />
       </div>
 
       <div className="p-6 space-y-6">

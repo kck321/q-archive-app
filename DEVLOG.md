@@ -9095,3 +9095,60 @@ pattern was broadened and the handoff corrected.
 
 **No Firestore was read for any of this.** The correction is entirely from git, disk and the
 existing evidence artifacts. `public/data` unchanged; `SEED_VERSION` unchanged. Not deployed.
+
+---
+
+## 2026-09-02 — The category header, sized for the screen it is on
+
+**Request.** The owner's parked mobile item: on phone-sized screens the large category
+statistics/title/explanation area should be collapsed by default so it does not consume most of
+the screen; the search box stays visible and sticky; the statistics stay reachable through a
+compact control; desktop unchanged; and the same principle applied to the standalone Questions,
+Directives and Brackets pages, with Brackets given a proper search box.
+
+**The problem, measured.** On a 390×844 phone, `/questions` opened with two 2xl figures, the
+heading with its ⓘ, the repeated/asked-once line and three status chips before the search box —
+which sat at **y≈460**, more than half the viewport down. `/requests`, `/brackets` and `/analysis`
+were the same shape. Reaching the one control a reader on a phone actually came for meant
+scrolling past the numbers, every visit, on every page.
+
+**The change.** One shared `src/components/CategoryHeader.tsx` wired into all four pages. It takes
+a `summary` (a one-line identity that survives collapse — the coloured section name and its
+headline count), a `details` block (everything that was there before, verbatim), a `search`, and
+optional `controls`.
+
+- On phone widths the details block starts **collapsed** and the search sits directly under the
+  summary. Measured after: search top **y=144**, bottom **y=182**, in the top third of an 844px
+  screen on all four pages.
+- A real `<button>` opens it, carrying `aria-expanded`, `aria-controls` pointing at the region it
+  owns, and an `aria-label` that names the section — "Show Q Directives statistics and
+  provenance", not a fourth anonymous "Details".
+- **Visibility is CSS, state is not.** The region is `hidden md:block` and the button is
+  `md:hidden`, so the desktop never depends on the toggle: no media query in JS, no width measured
+  at mount, no flash of a collapsed header on a wide screen, and no way for a later breakpoint
+  refactor to leave desktop readers collapsed. `open` only ever *adds* visibility on small screens.
+
+**Brackets also gained the shared search box.** It was the one section still using a bare
+`<input>` — no search icon, no clear button, a different focus ring, and sort buttons a size
+larger than every other page's. It uses `SearchBar` now, like the other three.
+
+**Desktop is untouched, and that is proved rather than asserted.** Before/after screenshots at
+1280×900: `/questions`, `/requests` and `/analysis` are **byte-identical PNGs**. `/brackets`
+differs only by the intended search-box swap — everything above the search is identical.
+
+**Coverage.** `scripts/test-mobile-category-header.mjs`, registered in `validate.mjs` as `fresh —
+the mobile category header` and in the `GATES` table as `mobile-category-header`. **71
+assertions**, four pages × both widths: the toggle is a real button with both ARIA attributes and
+a section-specific label; the default mobile state is collapsed; the search is visible, unscrolled,
+and in the top third; expanding flips `aria-expanded`, reveals the statistics and the full `<h1>`,
+and keeps the search visible; collapsing restores the compact row; and on desktop the statistics
+and title are visible with no interaction while the toggle is **not shown**. 71/71 on the
+editorial server and 71/71 again on the public one.
+
+That gate caught a defect in its own first draft: it matched the toggle on `aria-expanded` alone,
+which is also carried by the section ⓘ (`SectionInfo`) that renders first — so it read the wrong
+control and reported four working toggles as broken. It now matches on `aria-expanded` **and**
+`aria-controls`, the same predicate the probe uses.
+
+UI-only: `public/data` unchanged, `SEED_VERSION` unchanged, no owner ruling touched. Lint
+identical to the pre-change baseline (12 problems on these four files, before and after).

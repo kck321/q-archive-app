@@ -15,6 +15,8 @@ import {
 import { MonthYearTick, yearStartsOf } from '../lib/chartAxis'
 import ScrollableChart from '../components/ScrollableChart'
 import TermPresenceBar from '../components/TermPresenceBar'
+import SearchBar from '../components/SearchBar'
+import CategoryHeader from '../components/CategoryHeader'
 
 interface BracketEntry {
   /** Total mentions across its posts — a code can repeat inside one drop. */
@@ -291,6 +293,42 @@ export default function QBrackets() {
       {/* Sticky header */}
       <div className="sticky top-0 z-20 bg-[#0a0e1a] border-b border-q-border px-6 pt-5 pb-4 space-y-3 shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
         <BackButton />
+
+        <CategoryHeader
+          section="Q Brackets"
+          summary={
+            <p className="flex items-baseline gap-2 leading-none tracking-tight min-w-0">
+              <span className="text-base font-bold truncate" style={{ color: catColor('brackets') }}>Q [ Brackets ]</span>
+              {!loading && (
+                <span className="text-sm font-black text-amber-300/90 shrink-0">
+                  {totalOccurrences.toLocaleString()}
+                  <span className="text-[10px] font-medium text-gray-500 ml-1">mentions</span>
+                </span>
+              )}
+            </p>
+          }
+          // Brackets was the one section whose search was a bare <input> rather than the shared
+          // SearchBar: no icon, no clear button, and a different focus ring from every other
+          // category page. It is the same control everywhere now, and on a phone it is the first
+          // thing under the title instead of the last thing under the totals.
+          search={<SearchBar value={search} onChange={setSearch} placeholder="Search bracket codes…" />}
+          controls={
+            <div className="flex gap-2">
+              <button
+                onClick={() => setSortBy('count')}
+                className={`px-3 py-1 rounded-lg text-xs font-medium transition-colors border ${sortBy === 'count' ? 'bg-red-700/40 border-red-600 text-red-200' : 'bg-gray-800/50 text-gray-500 border-gray-700 hover:border-gray-500 hover:text-gray-300'}`}
+              >
+                Most Used
+              </button>
+              <button
+                onClick={() => setSortBy('alpha')}
+                className={`px-3 py-1 rounded-lg text-xs font-medium transition-colors border ${sortBy === 'alpha' ? 'bg-red-700/40 border-red-600 text-red-200' : 'bg-gray-800/50 text-gray-500 border-gray-700 hover:border-gray-500 hover:text-gray-300'}`}
+              >
+                A–Z
+              </button>
+            </div>
+          }
+          details={<>
         <div>
           {!loading && (
             <p className="flex items-baseline gap-3 leading-none tracking-tight">
@@ -319,30 +357,8 @@ export default function QBrackets() {
           <p className="text-gray-500 text-xs mt-1">Every bracket code found across all Q posts — names, agencies, and markers.</p>
         </div>
 
-        {/* Controls */}
-        <div className="flex gap-3 flex-wrap">
-          <input
-            type="text"
-            value={search}
-            onChange={e => setSearch(e.target.value)}
-            placeholder="Search bracket codes..."
-            className="flex-1 min-w-[200px] bg-q-panel border border-q-border rounded-lg px-4 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-red-600"
-          />
-          <div className="flex gap-2">
-            <button
-              onClick={() => setSortBy('count')}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors border ${sortBy === 'count' ? 'bg-red-700/40 border-red-600 text-red-200' : 'bg-q-panel border-q-border text-gray-400 hover:text-white'}`}
-            >
-              Most Used
-            </button>
-            <button
-              onClick={() => setSortBy('alpha')}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors border ${sortBy === 'alpha' ? 'bg-red-700/40 border-red-600 text-red-200' : 'bg-q-panel border-q-border text-gray-400 hover:text-white'}`}
-            >
-              A–Z
-            </button>
-          </div>
-        </div>
+          </>}
+        />
       </div>
 
       <div className="p-6 space-y-6">

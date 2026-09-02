@@ -7,6 +7,7 @@ import { makeTermMatcher, normalizeItemKey, getQuestionFrequency, getQuestionsTi
 import { loadLocalData } from '../lib/localData'
 import { findSimilarGroups } from '../lib/similarity'
 import SearchBar from '../components/SearchBar'
+import CategoryHeader from '../components/CategoryHeader'
 import TimeframeBreakdown from '../components/TimeframeBreakdown'
 import { CAN_EDIT } from '../lib/appMode'
 import {
@@ -391,6 +392,19 @@ export default function QuestionsArchive() {
 
         <BackButton />
 
+        <CategoryHeader
+          section="Q Questions"
+          summary={
+            <p className="flex items-baseline gap-2 leading-none tracking-tight min-w-0">
+              <span className="text-base font-bold truncate" style={{ color: catColor('questions') }}>Q Questions</span>
+              <span className="text-sm font-black text-amber-300/90 shrink-0">
+                {allFetched.reduce((n, q) => n + (q.occurrences ?? q.count), 0).toLocaleString()}
+                <span className="text-[10px] font-medium text-gray-500 ml-1">mentions</span>
+              </span>
+            </p>
+          }
+          search={<SearchBar value={search} onChange={setSearch} placeholder="Search all questions…" />}
+          details={<>
         {/* Title + counts */}
         <div className="flex items-center justify-between gap-3 flex-wrap">
           <div>
@@ -435,9 +449,8 @@ export default function QuestionsArchive() {
             )}
           </div>
         </div>
-
-        {/* Search */}
-        <SearchBar value={search} onChange={setSearch} placeholder="Search all questions…" />
+          </>}
+        />
 
         {/* Keyword stats — shown when a search is active */}
         {keywordStats && (

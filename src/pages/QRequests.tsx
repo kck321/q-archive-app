@@ -4,6 +4,7 @@ import { useEvidenceChips, visibleRowChips, type RowChip } from '../components/R
 import { Link, useSearchParams } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import SearchBar from '../components/SearchBar'
+import CategoryHeader from '../components/CategoryHeader'
 // The text-scanning helpers are deliberately NOT imported: this page renders certified
 // occurrences and must not re-derive membership or counts from raw post text.
 import { getAllPosts, normalizeItemKey, makeTermMatcher } from '../lib/posts'
@@ -297,6 +298,20 @@ export default function QRequests() {
       {/* Sticky toolbar */}
       <div className="sticky top-0 z-20 bg-[#0a0e1a] border-b border-q-border px-6 pt-5 pb-4 space-y-3 shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
         <BackButton />
+
+        <CategoryHeader
+          section="Q Directives"
+          summary={
+            <p className="flex items-baseline gap-2 leading-none tracking-tight min-w-0">
+              <span className="text-base font-bold truncate" style={{ color: catColor('requests') }}>Q Directives</span>
+              <span className="text-sm font-black text-amber-300/90 shrink-0">
+                {allRequests.reduce((n, r) => n + r.occurrences, 0).toLocaleString()}
+                <span className="text-[10px] font-medium text-gray-500 ml-1">mentions</span>
+              </span>
+            </p>
+          }
+          search={<SearchBar value={search} onChange={setSearch} placeholder="Search all requests…" />}
+          details={<>
         <div className="flex items-center justify-between gap-3 flex-wrap">
           <div>
             <p className="flex items-baseline gap-3 leading-none tracking-tight">
@@ -327,7 +342,8 @@ export default function QRequests() {
             </button>
           </div>
         </div>
-        <SearchBar value={search} onChange={setSearch} placeholder="Search all requests…" />
+          </>}
+        />
       </div>
 
       <div className="flex-1 overflow-y-auto bg-q-bg p-6 space-y-6">
