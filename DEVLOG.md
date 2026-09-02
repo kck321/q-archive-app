@@ -9471,3 +9471,63 @@ present: **222/222, 0 skipped**. `SEED_VERSION` 117. #4686 still a Prediction. P
 a clean 38-step FULL validation. It surfaced only by spending a real export during a deployment.
 Nothing recomputes `public/data/manifest.json`'s byte accounting through the exporter's own
 function. Recorded as a follow-up; not fixed in this commit.
+
+---
+
+## 2026-09-02 — DEPLOYED: the batch is live, and the export reproduced the bundle exactly
+
+**This entry is documentation only and was committed AFTER the deploy.**
+
+- **Deployed commit: `f8241d7f478a32027ad061c30fe96c7a149e36f0`** (tree
+  `3362202c5e63ce22a0b81ee309269ba1fd20402b`) — the export-byte rebaseline.
+- This DEVLOG entry is a **later, local-only commit** and is **not** part of the deployed build.
+
+**The deploy ran the ordinary path — `npm run deploy:web`, no `SKIP_EXPORT`.** That matters twice
+over: it is the first ordinary export since the qc-pin correction, and it is the proof the
+rebaseline was right. The export re-dumped Firestore, replayed the whole apply chain, and left the
+repository **completely clean — zero tracked or untracked differences**. `posts.json` and
+`manifest.json` came back at exactly the hashes that were committed and validated. Where the
+previous attempt had been blocked by two changed files, this one had nothing to change.
+
+**Live:**
+
+| | |
+|---|---|
+| commit | `f8241d7` |
+| tree | `3362202c5e63ce22a0b81ee309269ba1fd20402b` |
+| seed | 117 |
+| service worker | `qdrops-20260902-145812` |
+| certifiedAt | 2026-09-02T17:57:42.645Z |
+| built | 2026-09-02T18:58:12.486Z |
+| `posts.json` | `69d345ec96f1887f062cb00d50b87d903c0776bfd9c8e3b8af548d9bf9ce3491` |
+| `manifest.json` | `603b68a612d9a5a8f2e02a0a583446294ea41ef28b5ecdb7ac319281acf7f355` |
+| `manifest.totalBytes` | **12,340,575** — the corrected aggregate |
+
+**Verification against production, not against the build directory:**
+
+- `verify-live.mjs` — **16/16**, fresh reader and returning reader (profile genuinely downgraded
+  to seed 6 first, then re-seeded to 117 with the owner's Claim rulings restored).
+- **Anthropic: zero.** The complete live JavaScript graph was fetched — index.html, every asset it
+  names, `sw.js`, and the lazy chunks they reference (18 files, 1.3 MB) — and swept for `sk-ant-`,
+  `ANTHROPIC_API_KEY`, `VITE_ANTHROPIC_API_KEY`, `/anthropic-proxy`, `@anthropic-ai/sdk`,
+  `dangerouslyAllowBrowser`, `get_anthropic_key`, `anthropic_key.txt` and `api.anthropic.com`:
+  **0 files each**, and **0 files** matching `anthropic` case-insensitively at all.
+- Inline reader on Questions, Directives and Brackets: **108/108** against production, both widths.
+- Mobile category header: **71/71** against production, both widths.
+- `/pics` interrupted-restore: **8/8** against production — the climb was genuinely interrupted at
+  102,570 of 150,000 with 1,100 of 1,870 tiles rendered, the saved target survived, and the second
+  Back landed at 150,000.
+- Scroll restoration overall: **GREEN**, including the `/posts` same-key REPLACE path that shipped
+  earlier — unregressed.
+- Eight live routes swept: **0 dead AI controls, 0 console errors**.
+- Pictures live: **1,690 records across 1,514 posts — 1,653 complete · 29 partial · 8
+  content-filter withholds · 37 needing an owner pass**, confidence green 1,369 / yellow 260 /
+  red 61. The Resolution Center states it in those words.
+- #4686 live with `["WATERGATE x1000"]` as a Prediction.
+
+**What shipped in this batch** (9136952 → f8241d7): Anthropic removed from q-app permanently; the
+stale qc-pin/`SKIP_EXPORT` guidance corrected and made enforceable; the mobile category header;
+the shared inline drop reader; the picture-review language and queue; the `/pics` saved-target
+repair; two test-harness fixes; and the export-byte rebaseline.
+
+**Not pushed.** `master` remains ahead of `origin/master` and no push was made.
